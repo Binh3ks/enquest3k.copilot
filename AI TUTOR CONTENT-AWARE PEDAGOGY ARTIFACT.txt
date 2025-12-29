@@ -1,0 +1,783 @@
+📘 AI TUTOR CONTENT-AWARE PEDAGOGY ARTIFACT (FOR COPILOT)
+MỤC TIÊU
+
+AI Tutor phải hoạt động như giáo viên ESL có giáo án, không phải chatbot.
+Mọi output (story, hint, feedback) BẮT BUỘC tuân theo:
+
+Tuần học (Week)
+
+Grammar scope
+
+Vocabulary scope
+
+Communicative goal
+
+1️⃣ CONTENT AWARENESS – NGUYÊN TẮC BẮT BUỘC
+AI Tutor phải luôn biết:
+{
+  week: number,
+  grammarAllowed: string[],
+  vocabAllowed: string[],
+  sentencePatterns: string[],
+  bannedGrammar: string[]
+}
+
+Ví dụ – WEEK 1 (The Young Scholar):
+{
+  "week": 1,
+  "grammarAllowed": [
+    "present simple",
+    "there is / there are",
+    "where is / where are",
+    "my / your"
+  ],
+  "bannedGrammar": [
+    "past simple",
+    "future",
+    "perfect tense",
+    "complex clauses"
+  ],
+  "sentencePatterns": [
+    "Where is my ___?",
+    "I cannot find my ___",
+    "This is my ___"
+  ]
+}
+
+
+👉 Nếu AI generate từ/cấu trúc ngoài scope → đó là BUG, không phải feature
+
+2️⃣ TENSE GUARD (CÁI ĐANG BỊ SAI Ở ẢNH)
+Quy tắc cứng:
+
+❌ AI Tutor KHÔNG ĐƯỢC:
+
+Gợi ý
+
+Hint
+
+Model sentence
+
+Feedback
+
+chứa thì chưa được học
+
+Ví dụ BUG hiện tại:
+Hints:
+[I] [saw] [library]
+
+
+❌ Sai vì:
+
+“saw” = past simple
+
+Week 1 chưa học quá khứ
+
+Trẻ bị ép dùng cấu trúc chưa biết
+
+Hành vi ĐÚNG:
+Hints:
+[I] [am] [in] [library]
+
+
+hoặc
+
+Hints:
+[Where] [is] [my] [backpack]
+
+3️⃣ HINT GENERATION – PHẢI CONTENT AWARE
+Hint không được random theo AI intuition
+
+👉 Hint phải sinh từ syllabus
+
+Pseudo-logic cho Copilot:
+generateHints(context) {
+  const allowedVocab = context.weekVocab;
+  const allowedPatterns = context.sentencePatterns;
+
+  return {
+    level1: selectWords(allowedVocab),
+    level2: selectSentenceStarter(allowedPatterns),
+    level3: generateModelSentence(allowedPatterns),
+  };
+}
+
+4️⃣ HINT LEVEL RULES (BEGINNER – WEEK 1)
+🔹 Level 1 – Word Bank (default)
+
+3–5 từ
+
+100% nằm trong vocab tuần
+
+KHÔNG chia thì phức tạp
+
+✅ Đúng:
+
+[my] [backpack] [book]
+
+
+❌ Sai:
+
+[saw] [found] [library]
+
+🔹 Level 2 – Sentence Starter
+
+Lấy trực tiếp từ sentencePatterns
+
+Cố tình để trống object
+
+✅ Đúng:
+
+Where is my ___?
+
+🔹 Level 3 – Model Sentence (cực hiếm)
+
+Phải match grammar tuần
+
+Không được chấp nhận y nguyên
+
+✅ Đúng:
+
+I cannot find my backpack.
+
+5️⃣ GRAMMAR CORRECTION – KHÔNG ĐƯỢC DẠY TRƯỚC
+Nếu trẻ viết:
+where is my backpack
+
+AI Tutor phải:
+
+Chấp nhận nội dung
+
+Sửa nhẹ, không giảng bài
+
+✅ Feedback đúng:
+
+“Good! Let’s add a question mark:
+Where is my backpack?”
+
+❌ Feedback sai:
+
+“This is present simple interrogative…”
+(❌ overload, sai pedagogy)
+
+6️⃣ STORY PROGRESSION – CONTENT AWARE
+Story không được:
+
+Nhảy thì
+
+Nhảy bối cảnh
+
+Đòi cấu trúc chưa học
+
+Story phải:
+
+Dùng cùng grammar pattern lặp lại
+
+Thay đổi object/context
+
+Ví dụ progression đúng (Week 1):
+
+Where is my backpack?
+
+Where is my book?
+
+This is my backpack.
+
+I have my backpack.
+
+7️⃣ FAIL-SAFE RULE (CỰC QUAN TRỌNG)
+
+Nếu AI:
+
+Gợi ý sai thì
+
+Gợi ý ngoài vocab
+
+Dùng cấu trúc chưa học
+
+👉 Đó là regression bug, không phải “AI thông minh”.
+
+Copilot phải:
+
+Roll back output
+
+Regenerate theo grammarAllowed
+
+8️⃣ ARTIFACT – CONSTITUTION (DÁN NGUYÊN KHỐI)
+AI Tutor must be content-aware by week.
+
+Rules:
+- Never generate hints, examples, or feedback outside the current week grammar.
+- Past tense, future tense, or complex clauses are forbidden if not in syllabus.
+- Hints must be derived from allowed vocabulary and sentence patterns.
+- The tutor teaches production, not explanation.
+- If output allows copy-and-pass or uses unlearned grammar, it is wrong.
+
+AI Tutor behaves as a teacher following a lesson plan, not a chatbot.
+
+9️⃣ KẾT LUẬN THẲNG
+
+✔️ Bạn bắt đúng lỗi rất sâu
+✔️ Nếu không chặn tense từ bây giờ → AI Tutor sẽ:
+
+Dạy sai
+
+Làm trẻ rối
+
+Mất giá trị giáo dục
+1) 🛡️ ARTIFACT — tutorGuards/grammarGuard MODULE SPEC
+1.1 Mục tiêu
+
+Ngăn AI Tutor tạo ra nội dung không content-aware, đặc biệt:
+
+sai thì (past/future/perfect)
+
+sai mẫu câu (complex clauses, advanced grammar)
+
+hint/model sentence chứa từ/cấu trúc ngoài tuần
+
+Quy tắc: AI output phải “pass guard” trước khi render UI.
+
+1.2 Inputs / Outputs (Contract)
+Input: TutorContext
+type TutorContext = {
+  weekId: number
+  level: "beginner" | "elementary" | "intermediate"
+  mode: "chat" | "story" | "pronunciation" | "quiz" | "debate"
+  topic: string
+  grammarAllowed: string[]         // e.g. ["present_simple", "where_is", "my_your"]
+  grammarBanned: string[]          // e.g. ["past_simple", "future", "present_perfect"]
+  sentencePatterns: string[]       // e.g. ["Where is my ___?", "I cannot find my ___."]
+  vocabCore: string[]
+  vocabAllowed: string[]           // core + bonus within week
+}
+
+Input: TutorOutput (parsed JSON từ AI)
+type TutorOutput = {
+  uiMode: "storyMission" | "chat" | "quiz" | "pronunciation" | "debate"
+  textBlocks: string[]             // story beats / prompts / feedback lines
+  hints?: {
+    level1Words?: string[]
+    level2Starter?: string
+    level3Model?: string
+  }
+  corrections?: Array<{ original: string; fixed: string; tip?: string }>
+}
+
+Output: GuardResult
+type GuardResult = {
+  ok: boolean
+  violations: Array<{
+    type: "TENSE" | "PATTERN" | "VOCAB" | "LENGTH" | "STYLE"
+    severity: "warn" | "block"
+    message: string
+    evidence?: string
+  }>
+  sanitizedOutput?: TutorOutput
+  regenInstruction?: string        // nếu block → instruction để promptBuilder regenerate
+}
+
+1.3 Guard Rules (cứng)
+Rule A — Tense / Grammar banned (BLOCK)
+
+Nếu phát hiện dấu hiệu past simple: \b(was|were|did|went|saw|had)\b hoặc verb-ed phổ biến (\b\w+ed\b) → block khi past_simple nằm trong grammarBanned
+
+Nếu phát hiện will, going to → block nếu future banned
+
+Nếu phát hiện have/has + V3 (present perfect) → block nếu banned
+
+Lưu ý: không cần perfect NLP. Beginner stage: heuristic đủ, sai thì “regen”.
+
+Rule B — Pattern scope (BLOCK)
+
+Nếu mode = storyMission, mọi prompt chính phải match 1 trong sentencePatterns hoặc là biến thể đơn giản (thay ___).
+
+Nếu không match → block.
+
+Rule C — Hint vocab scope (BLOCK)
+
+hints.level1Words phải nằm trong vocabAllowed hoặc là function words whitelist (I, my, your, a, the, is, are, in, at, where… tuỳ tuần).
+
+Không được có động từ/word thuộc banned tense. Ví dụ Week 1: “saw”, “went” → block.
+
+Rule D — “Teacher talk too much” (WARN/BLOCK theo mode)
+
+Nếu total AI words > total userMinWords target * 2 ở beginner → warn.
+
+Nếu vượt quá hard limit (VD 40 words/turn) ở beginner → block.
+
+1.4 Sanitization / Regenerate Strategy
+Nếu vi phạm nhẹ (WARN)
+
+sanitizeHints():
+
+loại bỏ từ ngoài vocabAllowed
+
+thay bằng từ core chưa dùng (từ context.vocabCore)
+
+Nếu vi phạm nặng (BLOCK)
+
+trả regenInstruction kiểu:
+
+“Regenerate output using ONLY present simple and these patterns: …”
+
+“Replace any past tense with present simple equivalents.”
+
+1.5 Public API
+export function runGrammarGuard(context: TutorContext, output: TutorOutput): GuardResult
+
+export function sanitizeHints(context: TutorContext, hints: TutorOutput["hints"]): TutorOutput["hints"]
+
+export function detectTenseViolations(context: TutorContext, text: string): GuardResult["violations"]
+
+export function buildRegenInstruction(context: TutorContext, violations: GuardResult["violations"]): string
+
+1.6 Copilot Implementation Notes (quan trọng)
+
+Guard chạy sau schemaParser, trước UI render
+
+Nếu block:
+
+gọi tutorEngine.regenerate({ regenInstruction })
+
+giới hạn retry 1–2 lần
+
+nếu vẫn fail → fallback “safe template” (hard-coded patterns tuần)
+
+2) 🧩 ARTIFACT — AUTO “SYLLABUS → PROMPT COMPILER” SPEC
+2.1 Mục tiêu
+
+Từ syllabus/blueprint (Week data) → tạo ra TutorContext + Prompt Pack chuẩn:
+
+consistent
+
+có patterns
+
+có vocab lists
+
+có banned grammar
+
+có constraints cho từng mode
+
+Prompt không viết tay rải rác nữa. Prompt được “compile”.
+
+2.2 Data Sources (inputs)
+
+syllabus (theo tuần): topic, objectives, grammar focus, core vocab
+
+blueprint (app behavior): modes, UI schemas, pedagogy rules
+
+Output artifacts
+
+weekContext.json (per week)
+
+promptPack.json (per week + per mode)
+
+guardConfig.json (per week)
+
+2.3 Compiler Pipeline (phải có)
+Step 1 — Parse Week Spec
+
+Tạo cấu trúc normalized:
+
+type WeekSpec = {
+  weekId: number
+  title: string
+  topic: string
+  grammarFocus: string[]
+  coreVocab: string[]
+  bonusVocab?: string[]
+  sampleSentences?: string[]
+}
+
+Step 2 — Build Allowed/Banned Grammar
+
+Rule of thumb:
+
+Nếu week grammarFocus có “present simple” → banned: past, future, perfect
+
+Nếu week focus có “past simple” → allow past; still ban perfect/complex
+
+Step 3 — Build Sentence Patterns
+
+Từ grammarFocus + sampleSentences:
+
+Convert thành patterns có placeholder ___
+
+Ensure 5–12 patterns/tuần (beginner: 5–8)
+
+Ví dụ Week 1 patterns:
+
+“Where is my ___?”
+
+“I cannot find my ___.”
+
+“This is my ___.”
+
+“I am at ___.”
+
+Step 4 — Build Vocab Allowlist
+
+vocabAllowed = core + bonus + functionWordsWhitelist(weekLevel)
+Function words whitelist chia theo level:
+
+beginner: I, my, you, is, are, at, in, where, this, a, the, can/cannot…
+
+Step 5 — Emit Prompt Packs per mode
+
+Mỗi mode có:
+
+system rules
+
+schema instruction
+
+constraints (max words, hint levels)
+
+style (kid-friendly)
+
+type PromptPack = {
+  weekId: number
+  mode: TutorContext["mode"]
+  system: string
+  developer: string
+  userTemplate: string       // filled by promptBuilder
+  constraints: {
+    maxAiWords: number
+    requireStudentOutput: boolean
+    hintLevelsEnabled: (1|2|3|4)[]
+  }
+}
+
+2.4 PromptPack Templates (Copilot must follow)
+Story Mission (beginner)
+
+AI output JSON includes: storyBeat, task, hints(level1..3), successCriteria
+
+Use only patterns & vocab in context
+
+Chat
+
+Still learning-goal; not free chat
+
+Ask questions that elicit target patterns
+
+Quiz
+
+Must align to week vocab/grammar only (no “science quiz” nếu tuần không có)
+
+2.5 Compiler API (để Copilot code)
+export function compileWeekAssets(weekSpec: WeekSpec): {
+  context: TutorContext
+  promptPacks: PromptPack[]
+  guardConfig: any
+}
+
+export function compileAllWeeks(syllabus: WeekSpec[]): CompiledAssets
+
+2.6 Runtime usage (rất quan trọng)
+
+UI route /week/:weekId/... → load compiled context + promptPack from local data/compiled/
+
+promptBuilder chỉ “fill template”, không được tự phát minh rules
+
+3) ✅ ARTIFACT — TEST CASE CHECKLIST (GOLDEN TESTS)
+
+Mục tiêu test: bắt lỗi “không content-aware” (như saw) trước khi lên production.
+
+Bạn nên có 3 tầng test:
+
+Unit tests (guards/compiler)
+
+Integration tests (engine pipeline)
+
+Golden snapshot tests (output JSON)
+
+3.1 Unit Tests — Grammar Guard
+TENSE BLOCK
+
+ Week 1 banned past → output chứa “saw” → block
+
+ Week 1 banned past → “went” → block
+
+ Week 1 banned future → “will” → block
+
+ Week 1 allowed present simple → “is/are” → ok
+
+HINT VOCAB SCOPE
+
+ hints words ngoài vocabAllowed → sanitize hoặc block
+
+ hints chứa past verb (“saw”) → block
+
+ hints chỉ function words + core vocab → ok
+
+PATTERN MATCH
+
+ Story prompt không match patterns tuần → block
+
+ Prompt match “Where is my ___?” → ok
+
+3.2 Unit Tests — Compiler
+PATTERN COUNT
+
+ mỗi tuần beginner phải có ≥ 5 patterns
+
+ không pattern nào chứa banned tense ở beginner tuần 1
+
+VOCAB ALLOWLIST
+
+ vocabAllowed phải chứa tất cả core vocab
+
+ functionWords whitelist được merge đúng
+
+GUARD CONFIG
+
+ grammarBanned đúng theo grammarFocus
+
+3.3 Integration Tests — Engine Pipeline
+PIPELINE ORDER (must)
+
+ schemaParser chạy trước guard
+
+ guard block → engine regenerate
+
+ regenerate fail 2 lần → fallback safe template
+
+MODE LOCK
+
+ Story tab chỉ gọi storyMission promptPack
+
+ Không được dùng chat promptPack cho story
+
+3.4 Golden Tests — Week 1 Story Mission
+
+Tạo golden JSON outputs (snapshots) cho 3 mission:
+
+Mission “Lost Backpack”
+
+ storyBeat present simple
+
+ hints Level1: [my, backpack, book, notebook] (no past verbs)
+
+ starter: “Where is my ___?”
+
+ model: “I cannot find my backpack.”
+
+ successCriteria: contains “backpack” + >= 3 words
+
+Regression test specifically for bug “saw”
+
+ assert not contains /\bsaw\b/ in:
+
+storyBeat
+
+hints
+
+starter
+
+model
+
+feedback
+
+3.5 CI Gate Rules (pass/fail)
+
+Nếu bất kỳ test nào phát hiện banned tense → fail build
+
+Nếu story mission output không match patterns tuần → fail build
+
+Nếu hint contains word outside allowlist → fail build (hoặc auto-sanitize + warn, tuỳ config)
+
+📌 COPILOT MASTER INSERT (DÁN NGUYÊN KHỐI)
+Implement 3 components with tests:
+
+1) tutorGuards/grammarGuard
+- Block banned tenses by week (esp. past tense in Week 1).
+- Validate story prompts match allowed sentencePatterns.
+- Validate hints are from vocabAllowed + functionWords whitelist.
+- On block: return regenInstruction for engine.
+
+2) syllabusPromptCompiler
+- Compile weekSpec into TutorContext + PromptPacks + GuardConfig.
+- Derive grammarAllowed/banned and sentencePatterns.
+- Create vocabAllowed = core + bonus + functionWords whitelist.
+
+3) Tests (golden + unit + integration)
+- Add regression tests that prevent “saw/went/did/will” in Week 1 outputs.
+- Ensure engine pipeline: parse → guard → regenerate → fallback.
+✅ ARTIFACT A — VERB WHITELIST (PER WEEK, BEGINNER-FIRST)
+A1. Mục tiêu
+
+Ở giai đoạn đầu (Beginner), chỉ cần 1–2 động từ sai là trẻ “rụng” content awareness.
+Vì vậy, ngoài grammarAllowed/banned, ta thêm verbAllowlist theo tuần.
+
+Rule: Beginner mode → verbs trong output/hints/models phải nằm trong allowlist, nếu không → block/regenerate.
+
+A2. Schema bổ sung vào TutorContext
+type TutorContext = {
+  ...
+  verbAllowlist?: string[]           // e.g. ["am","is","are","have","has","can","find","see"]
+  verbBlocklist?: string[]           // e.g. ["saw","went","did","had","was","were"]
+  functionWordsWhitelist: string[]   // e.g. ["I","my","your","where","is","are","a","the","in","at"]
+}
+
+A3. Week 1 (Beginner) — Recommended Allowlist
+
+Tuần 1 chủ đề trường học → needs only simple verbs.
+
+Verb Allowlist (Week 1)
+
+Be: am, is, are
+
+Have: have, has
+
+Can / cannot: can, cannot (treat "cannot" as token)
+
+Find: find
+
+See (optional, present only): see
+
+Verb Blocklist (Week 1)
+
+past: was, were, did, went, saw, had, found
+
+future: will
+
+perfect helpers: have/has + V3 patterns (guard riêng)
+
+📌 Gợi ý: “found” (past) hay bị AI dùng; nên block.
+
+A4. Extraction heuristic (không cần NLP nặng)
+
+Ta chỉ cần bắt “động từ phổ biến” + dạng sai rõ ràng.
+
+Detect verbs by keyword sets
+
+Check tokens in output against:
+
+verbBlocklist (hard fail)
+
+verbAllowlist (hard pass)
+
+Check for \b\w+ed\b (likely past) → block nếu week ban past
+
+A5. Guard behavior
+When to apply
+
+context.level === "beginner" OR context.enforceVerbWhitelist === true
+
+What to validate
+
+All textBlocks
+
+hints.level2Starter
+
+hints.level3Model
+
+correction.fixed
+
+Result
+
+If verb in blocklist → BLOCK
+
+If verb not in allowlist but looks like verb (heuristic) → BLOCK in beginner
+
+Otherwise OK
+
+A6. Copilot instructions
+Implement verbWhitelistGuard(context, output):
+- If beginner:
+  - Block any token in verbBlocklist.
+  - Block any detected past markers (\w+ed) unless past_simple allowed.
+  - Optionally block any verb-like token not in verbAllowlist.
+- Return regenInstruction to rewrite using allowed verbs only.
+
+✅ ARTIFACT B — POS-STYLE BLACKLIST (VBD/VBN HEURISTIC GUARD)
+B1. Mục tiêu
+
+Không cần POS tagger.
+Chỉ cần heuristic để bắt các dạng “past tense / V3”:
+
+VBD: went, saw, did, was, were, had
+
+VBN: broken, written, eaten (thường có have/has + V3)
+
+B2. Add morphologyGuardConfig into context
+type MorphologyGuardConfig = {
+  banPastMarkers: boolean
+  banEdEnding: boolean
+  banHaveHasPlusV3: boolean
+  irregularPastList: string[]     // week-specific
+  irregularV3List: string[]       // optional
+}
+
+Week 1 config
+{
+  "banPastMarkers": true,
+  "banEdEnding": true,
+  "banHaveHasPlusV3": true,
+  "irregularPastList": ["went","saw","did","was","were","had","found"],
+  "irregularV3List": ["gone","seen","done","been","had","found"]
+}
+
+B3. Detection rules (heuristic, high precision)
+Rule 1 — Irregular past
+
+If token in irregularPastList → BLOCK
+
+Rule 2 — -ed verbs
+
+Regex: \b([a-z]{3,}ed)\b
+
+Exemptions (not verbs): red, bed, tired (tuỳ whitelist)
+
+Beginner Week 1: block all -ed except adjectives in whitelist
+
+Rule 3 — have/has + V3 (present perfect)
+
+Regex approx:
+
+\b(have|has)\s+\w+(ed|en)\b
+
+or \b(have|has)\s+(gone|seen|done|been|had|found)\b
+
+If banHaveHasPlusV3 true → BLOCK
+
+B4. Safe replacements (regenerate instruction)
+
+Nếu phát hiện past/perfect:
+
+Replace with present simple
+
+Use patterns from context.sentencePatterns
+
+Example regen instruction:
+
+“Rewrite in present simple only. Use patterns: ‘Where is my ___?’, ‘I cannot find my ___.’ Avoid past tense words: went, saw, did, was, were…”
+
+B5. Copilot instructions
+Implement morphologyGuard(context, output):
+- Scan all output strings.
+- If banPastMarkers:
+  - block irregularPastList words
+  - block "did/was/were/had/went/saw"
+- If banEdEnding:
+  - block \w+ed (except adjective whitelist)
+- If banHaveHasPlusV3:
+  - block have/has + (V3 list or ed/en ending)
+Return regenInstruction that forces present simple patterns.
+
+✅ MASTER INSERT FOR COPILOT (DÁN NGUYÊN KHỐI)
+Add two guards to AI Tutor V2:
+
+(1) Verb Whitelist Guard (beginner)
+- context.verbAllowlist + verbBlocklist per week.
+- Block any blocklist verb (saw/went/did/was/were/had/found).
+- Block likely past markers like \w+ed when past is banned.
+- Enforce allowed verbs only in hints/starters/models.
+
+(2) Morphology (POS-style) Guard
+- Heuristics to block past tense and present perfect:
+  - irregular past list
+  - ed-ending verbs
+  - have/has + V3 patterns
+- On violation: regenInstruction to rewrite using allowed sentencePatterns 

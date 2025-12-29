@@ -65,7 +65,7 @@ async function callGroq(prompt) {
 // MAIN API - Try providers in order
 // ============================================
 
-async function callAI(prompt, type = 'chat') {
+export async function callAI(prompt, type = 'chat') {
   const startTime = Date.now();
   
   // Try Gemini first

@@ -90,25 +90,33 @@ export const QuizResponseSchema = {
 /**
  * Parse AI response with tolerance
  * @param {string} rawText - Raw AI response
- * @param {Object} schema - Expected schema
+ * @param {string} mode - Tutor mode
  * @returns {Object} Parsed data
  */
-export function parseResponse(rawText, schema) {
+export function parseResponse(rawText, mode) {
+  // Clean text
+  let cleanText = rawText.trim();
+  
+  // Try to extract JSON if wrapped in markdown
+  const jsonMatch = cleanText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/);
+  if (jsonMatch) {
+    cleanText = jsonMatch[1];
+  }
+  
   try {
     // Try JSON first
-    const parsed = JSON.parse(rawText);
+    const parsed = JSON.parse(cleanText);
     return parsed;
   } catch (e) {
     // Tolerant parsing for common formats
     console.warn('[SchemaParser] JSON parse failed, using tolerant parser');
+    console.warn('[SchemaParser] Raw text:', cleanText.substring(0, 200));
     
-    if (schema === StoryMissionSchema) {
-      return parseStoryMission(rawText);
-    } else if (schema === ChatResponseSchema) {
-      return parseChatResponse(rawText);
+    if (mode === 'story' || mode === 'STORY_MISSION') {
+      return parseStoryMission(cleanText);
+    } else {
+      return parseChatResponse(cleanText);
     }
-    
-    throw new Error('[SchemaParser] Cannot parse response');
   }
 }
 
@@ -116,8 +124,43 @@ export function parseResponse(rawText, schema) {
  * Tolerant parser for Story Mission format
  */
 function parseStoryMission(text) {
-  const storyMatch = text.match(/STORY[:\s]+(.+?)(?=TASK:|$)/is);
-  const taskMatch = text.match(/TASK[:\s]+(.+?)(?=VOCAB:|REQUIRED:|$)/is);
+  // Try to extract key parts even if format is wrong
+  const result = {
+    story_beat: '',
+    task: '',
+    required_vocab: [],
+    scaffold: {
+      hints: [],
+      sentence_starter: ''
+    }
+  };
+  
+  // Extract story beat (first sentence or paragraph)
+  const firstSentence = text.match(/^[^.!?]+[.!?]/);
+  if (firstSentence) {
+    result.story_beat = firstSentence[0].trim();
+  } else {
+    // Take first line as story beat
+    result.story_beat = text.split('\n')[0].trim();
+  }
+  
+  // Extract task if present
+  const taskMatch = text.match(/(?:TASK|task|Task)[:\s]+([^.\n]+)/i);
+  if (taskMatch) {
+    result.task = taskMatch[1].trim();
+  }
+  
+  // Extract hints (look for word lists in brackets or arrays)
+  const hintsMatch = text.match(/hints?[:\s]*\[([^\]]+)\]/i);
+  if (hintsMatch) {
+    result.scaffold.hints = hintsMatch[1]
+      .split(',')
+      .map(h => h.trim().replace(/['"]/g, ''))
+      .filter(h => h.length > 0);
+  }
+  
+  return result;
+}
   const vocabMatch = text.match(/(?:VOCAB|REQUIRED)[:\s]+(.+?)(?=HINTS:|SCAFFOLD:|$)/is);
   const hintsMatch = text.match(/HINTS[:\s]+(.+?)(?=$)/is);
   

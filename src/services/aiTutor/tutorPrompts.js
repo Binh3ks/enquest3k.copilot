@@ -22,10 +22,42 @@ export function buildPrompt(mode, context, userInput, options = {}) {
 }
 
 /**
+ * Get grammar rules by week
+ */
+function getGrammarRules(weekId) {
+  const rules = {
+    1: {
+      allowed: ['present simple: I am, you are', 'where is/are', 'my/your', 'this is'],
+      banned: ['past tense (was/were/did/-ed)', 'future (will/going to)', 'perfect tense', 'complex clauses'],
+      patterns: ['Where is my ___?', 'I am a ___', 'This is my ___', 'My ___ is ___']
+    },
+    2: {
+      allowed: ['present simple', 'has/have', 'family pronouns'],
+      banned: ['past tense', 'future', 'conditionals'],
+      patterns: ['I have a ___', 'My ___ is ___', 'This is my ___']
+    }
+  };
+  
+  // Default for weeks not specified
+  if (!rules[weekId]) {
+    return weekId <= 14 ? rules[1] : {
+      allowed: ['present simple', 'basic structures'],
+      banned: ['complex grammar'],
+      patterns: ['Simple sentences']
+    };
+  }
+  
+  return rules[weekId];
+}
+
+/**
  * System prompt (applies to ALL modes)
  */
 function buildSystemPrompt(context) {
   const { weekId, unitTitle, learner, constraints } = context;
+  
+  // Grammar rules by week
+  const grammarRules = getGrammarRules(weekId);
   
   return `You are an ESL teacher for ${learner.level} learners (Week ${weekId}: "${unitTitle}").
 
@@ -35,7 +67,18 @@ CORE RULES:
 - Student target: ${constraints.userMinWords}-${constraints.userTargetWords} words
 - If student doesn't speak enough, USE SCAFFOLD (don't answer for them)
 - Stay on topic: "${context.topic}"
-- Focus grammar: "${context.grammarFocus}"
+
+GRAMMAR SCOPE (CRITICAL - Week ${weekId}):
+${grammarRules.allowed.map(g => `✅ ${g}`).join('\n')}
+
+BANNED GRAMMAR (DO NOT USE OR SUGGEST):
+${grammarRules.banned.map(g => `❌ ${g}`).join('\n')}
+
+CONTENT-AWARE RULES:
+- ALL hints must use only allowed grammar
+- NO past tense if not in scope (no was/were/did/went/saw/-ed verbs)
+- NO future tense if not in scope (no will/going to)
+- Sentence patterns: ${grammarRules.patterns.join(' | ')}
 
 ${learner.style === 'shy' ? '⚠️ Learner is shy - scaffold early, be encouraging' : ''}
 ${learner.style === 'confident' ? '⚠️ Learner is confident - challenge more, less scaffold' : ''}`;
@@ -61,30 +104,40 @@ function buildModePrompt(mode, context, userInput, options) {
   }
 }
 
-/**
- * Chat mode prompt
- */
-function buildChatPrompt(context, userInput, options) {
-  const history = options.history || [];
-  const historyText = history.slice(-6).map(m => 
-    `${m.role === 'user' ? 'Student' : 'Tutor'}: ${m.content}`
-  ).join('\n');
+/*const grammarRules = getGrammarRules(context.weekId);
   
-  const scenario = options.scenario || 'conversation';
+  const historyText = storyHistory.slice(-6).map(s => s.text).join(' ');
   
-  return `Scenario: ${scenario}
+  return `Story Mission: ${mission.title || 'Creative Writing'}
 Topic: ${context.topic}
-Core vocabulary: ${context.coreVocab.slice(0, 5).join(', ')}
+Required vocabulary: ${mission.requiredVocab?.join(', ') || context.coreVocab.slice(0, 5).join(', ')}
 
-${historyText}
-Student: ${userInput}
+GRAMMAR SCOPE - Week ${context.weekId}:
+✅ Allowed: ${grammarRules.allowed.join(' | ')}
+❌ Banned: ${grammarRules.banned.join(' | ')}
 
-Respond naturally in 1 short sentence. Stay on topic "${context.topic}". Ask 1 simple question about "${context.topic}".
+Story so far: ${historyText || '(starting)'}
 
-Tutor:`;
+Student wrote: "${userInput}"
+
+Continue story with ONE sentence (3-8 words) using ONLY allowed grammar.
+Then provide task and hints using ONLY present simple.
+
+CRITICAL: Hints must ONLY use allowed grammar patterns!
+
+Format as JSON:
+{
+  "story_beat": "...",
+  "task": "...",
+  "required_vocab": ["...", "..."],
+  "scaffold": {
+    "hints": ["word1", "word2", "word3"],
+    "sentence_starter": "..."
+  }
 }
 
-/**
+Example hints (Week 1): ["My", "book", "is", "in"]
+NEVER use: ["I", "saw", "went", "was"]**
  * Story Mission prompt
  */
 function buildStoryMissionPrompt(context, userInput, options) {
