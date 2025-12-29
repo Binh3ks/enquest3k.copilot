@@ -1,0 +1,3306 @@
+# ENGQUEST MASTER PROMPT V23-FINAL (UPDATED)
+
+## CRITICAL: DATA MUST BE GENERATED FROM SYLLABUS AND BLUEPRINT
+- For every new week, you MUST:
+  - Read and extract all requirements from `src/data/syllabus_database.js` (week title, grammar, topic, math, science)
+  - Follow all pedagogical/content rules in `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt` (structure, morphing, scaffolding, UI/UX)
+- DO NOT copy content from another week. All data/content must be generated fresh for the target week, strictly following these sources.
+
+## 0.0. CRITICAL DATA SOURCES (MANDATORY)
+- **ALWAYS** read and extract all week-specific requirements from:
+  - `src/data/syllabus_database.js` (for week title, grammar, topic, math, science)
+  - `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt` (for pedagogical rules, content morphing, station structure, scaffolding, UI/UX)
+- **DO NOT** copy content from another week. All data/content must be generated fresh for the target week, strictly following these sources.
+
+
+## 0. MASS-PRODUCE WORKFLOW (NEW, STRICT)
+### 0.0. File Structure & Mapping (MANDATORY)
+For every new week, you MUST create **exactly 14 JS files** for BOTH advanced and easy modes, in folders:
+  - `src/data/weeks/week_XX/` (Advanced)
+  - `src/data/weeks_easy/week_XX/` (Easy)
+The files must be named and mapped exactly as in week 19:
+  - ask_ai.js
+  - daily_watch.js
+  - dictation.js
+  - explore.js
+  - grammar.js
+  - index.js (must import all stations and map keys as in week_19/index.js)
+  - logic.js
+  - mindmap.js
+  - read.js
+  - shadowing.js
+  - vocab.js
+  - word_match.js
+  - word_power.js
+  - writing.js
+**index.js** must import all station files and map station keys exactly as in week 19 (see week_19/index.js for reference).
+
+**⚠️ CRITICAL: Station Key Mapping (MUST MATCH WEEK 19 EXACTLY)**
+Week 1 had WRONG mapping. New weeks MUST use Week 19 keys:
+
+```javascript
+// ✅ CORRECT (Week 19 standard):
+import word_power from './word_power.js';  // ← Underscore filename
+
+stations: {
+  read_explore: read,        // ✅ Key: read_explore
+  new_words: vocab,          // ✅ Key: new_words
+  word_match: word_match,
+  grammar: grammar,
+  ask_ai: ask_ai,
+  logic_lab: logic,          // ✅ Key: logic_lab (NOT 'logic')
+  dictation: dictation,
+  shadowing: shadowing,
+  video: writing,            // ✅ Has 'video' key
+  writing: writing,          // ✅ AND 'writing' key (both point to same file)
+  explore: explore,
+  word_power: word_power,    // ✅ Key: word_power (underscore)
+  daily_watch: daily_watch,
+  mindmap_speaking: mindmap  // ✅ Key: mindmap_speaking (NOT 'mindmap')
+}
+
+// ❌ WRONG (Week 1 had these errors):
+import wordpower from './wordpower.js';  // ❌ No underscore
+stations: {
+  word_power: wordpower,     // ❌ Inconsistent with import name
+  logic_lab: logic,          // ❌ But imported as 'logic'
+  mindmap_speaking: mindmap, // ❌ But imported as 'mindmap'
+  quiz: quiz                 // ❌ Extra station not in Week 19
+}
+```
+
+### 0.1. Data Schema (STRICT)
+Each file must follow the schema and field order exactly as in week 19 (see week_19/*.js for reference).
+All required fields must be present (e.g. audio_url=null, image_url, collocation, model_sentence, min_words, etc.).
+No extra or missing fields allowed.
+Easy/Advanced morphing/scaffolding must follow blueprint rules.
+
+### 0.2. Asset Generation & Naming
+For every week, all assets (audio, image, video) must be generated for all stations, following the naming convention and mapping as in week 19.
+Audio/image/video scripts must read API keys from API keys.txt, try keys in order, never hardcode.
+If asset generation fails due to missing file, field, or asset, report error and halt.
+
+**⚠️ Audio Path Naming Convention (MANDATORY):**
+- Week 1-9: `/audio/week1/`, `/audio/week2/`, ... (NO leading zero)
+- Week 10+: `/audio/week10/`, `/audio/week19/`, `/audio/week144/` (NO leading zero)
+- Easy mode: `/audio/week1_easy/`, `/audio/week19_easy/`, `/audio/week144_easy/`
+- ❌ WRONG: `/audio/week01/`, `/audio/week001/`, `/audio/wk1/` (don't use leading zeros or abbreviations)
+
+### 0.3. Content Generation (MANDATORY)
+All content for each week must be generated from:
+  - `src/data/syllabus_database.js` (for week title, grammar, topic, math, science)
+  - `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt` (for pedagogical rules, morphing, scaffolding, UI/UX)
+**DO NOT copy content from any other week.**
+All station content must be unique, syllabus-aligned, and blueprint-compliant.
+
+### 0.4. Validation & Error Handling
+Before asset generation, validate:
+  - All 14 files exist for both modes
+  - All files match schema and mapping of week 19
+  - All required fields are present
+  - All assets can be generated with valid API keys
+If any check fails, abort and report error.
+
+### 0.5. API Key Handling
+All asset scripts/prompts must read API keys from `API keys.txt` (try all keys in order per service).
+If file missing/unreadable, create `.env` for manual copy-paste.
+
+### 0.6. Summary
+The workflow must guarantee that every new week (e.g. week 1, week 20, etc.) will have:
+  - Data structure, schema, mapping, and asset set identical to week 19
+  - Content generated from syllabus and blueprint, not copied
+  - Assets generated and named as in week 19
+  - API keys loaded dynamically
+  - Full error validation before asset generation
+- **Step 0: Review the syllabus and blueprint.**
+  - Open `src/data/syllabus_database.js` and `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt`.
+  - Extract the correct week title, grammar, topic, math, science, and all pedagogical/content rules for the target week.
+  - All generated data/content for the week must strictly follow these sources.
+- **Step 0: Review the syllabus and blueprint.**
+  - Open `src/data/syllabus_database.js` and `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt`.
+  - Extract the correct week title, grammar, topic, math, science, and all pedagogical/content rules for the target week.
+  - All generated data/content for the week must strictly follow these sources.
+- **Step 1: Generate ALL 14 data files for BOTH advanced and easy modes.**
+  - Each week folder (src/data/weeks/week_XX/ and src/data/weeks_easy/week_XX/) MUST contain:
+    - ask_ai.js
+    - daily_watch.js
+    - dictation.js
+    - explore.js
+    - grammar.js
+    - index.js
+    - logic.js
+    - mindmap.js
+    - read.js
+    - shadowing.js
+    - vocab.js
+    - word_match.js
+    - word_power.js
+    - writing.js
+- **Step 1.1: Create bridge files for BOTH advanced and easy modes.**
+  - Required for every new week:
+    - src/data/weeks/week_XX.js → `export { default } from './week_XX/index.js';`
+    - src/data/weeks_easy/week_XX.js → `export { default } from './week_XX/index.js';`
+  - If these files are missing, the week will NOT show up in the app UI.
+- **Step 2: Fill in content, vocab, and unique voiceConfig for the week.**
+- **Step 3: Run ALL asset generation commands (audio, image, video) for the week.**
+- **⚠️ MANDATORY: voiceConfig per week** - Each week MUST have unique voices to ensure variety
+- **Image covers:** Always generated as wide landscape, full-width 16:9, with prompt: "wide landscape, full-width 16:9 banner, show all content, do not crop any part, all important details must be visible within the frame."
+- **Ask-AI audio:** Each ask_ai prompt must have audio generated and injected, and UI must play correct file.
+- **UI image fitting:** All cover images must be displayed with `w-full h-auto` (full width, auto height, no crop) in the app.
+- **Video:** Video search and selection is automated by script, using week topic/grammar.
+- **No code changes required for new weeks.**
+- **If ANY data file is missing, asset generation will FAIL.**
+
+## 0.1. voiceConfig (⚠️ MANDATORY PER WEEK)
+```javascript
+// In week_XX/index.js
+export default {
+  weekId: XX,
+  // ⚠️ voiceConfig is MANDATORY - MUST specify unique voices per week
+  voiceConfig: {
+    narration: 'en-GB-Neural2-A',   // Choose from: en-US/GB/AU-Neural2-A to J
+    vocabulary: 'en-AU-Neural2-B',  // MUST be different from previous week
+    dictation: 'en-US-Neural2-E',   // Rotate voices to maintain student interest
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-F'
+  },
+  stations: { ... }
+}
+```
+- **⚠️ MANDATORY FIELD** - All 3 audio generation tools will throw error if missing
+- **Requirement:** Each week MUST use different voice combinations than previous week
+- **Available voices:** 
+  - US: en-US-Neural2-A to J (10 voices)
+  - UK: en-GB-Neural2-A to F (6 voices)
+  - AU: en-AU-Neural2-A to D (4 voices)
+- **Voice rotation strategy:**
+  - Week 1: US voices (en-US-Neural2-D, F, E)
+  - Week 2: GB voices (en-GB-Neural2-A, B, C)
+  - Week 3: AU voices (en-AU-Neural2-A, B, C)
+  - Week 4: Mix (en-US-Neural2-G, en-GB-Neural2-D, en-AU-Neural2-D)
+  - Continue rotating to maintain variety
+- **⚠️ CRITICAL: Audio Emotion Requirement (Blueprint Compliance)**
+  - **Requirement:** "Giọng đọc phải diễn cảm (như kể chuyện), có cảm xúc vui/buồn rõ ràng"
+  - **Voice selection guidance:**
+    - **Narration (stories):** Use expressive voices (Neural2-D Male or Neural2-F Female)
+    - **Vocabulary/Questions:** Use clear, neutral voices (Neural2-E)
+    - **CLIL content (Explore):** Use authoritative voices (Neural2-A or Neural2-G)
+  - **Emotion markup:** When generating audio, add SSML emphasis for key moments:
+    - Happy: `<prosody rate="110%" pitch="+5%">excited!</prosody>`
+    - Sad: `<prosody rate="90%" pitch="-5%">sadly</prosody>`
+    - Surprised: `<prosody pitch="+10%">Wow!</prosody>`
+  - **Implementation:** generate_audio.js supports SSML tags in text content
+- **How it works:** 
+  - `generate_audio.js`: Reads voiceConfig, throws error if missing
+  - `create_audio_tasks_only.js`: Reads voiceConfig, throws error if missing
+  - Admin Panel: UI selection for voiceConfig (auto-validates)
+- **Emergency override:** Use environment variables ONLY for testing:
+  ```bash
+  VOICE_NARRATION=en-GB-Neural2-B node tools/generate_audio.js 19 20
+  ```
+  ```
+- **Note:** `create_audio_tasks_only.js` uses HARDCODED voices (does NOT read voiceConfig from week data)
+
+## 0.1.1. PROGRESSIVE SAVING REQUIREMENTS (NEW - MANDATORY UI FEATURE)
+**Background:** Core saving logic already exists (`saveStationProgress()`, `getWeekProgress()`), but lacks visual feedback.
+
+### A. Toast Notifications (MANDATORY)
+```jsx
+Component: SaveToast.jsx
+Location: Fixed bottom-right corner (z-index: 50)
+Trigger: Every time onReportProgress() is called
+Duration: 2 seconds auto-dismiss
+Animation: Slide-up from bottom
+
+Types:
+  - Success (green): "Progress saved: 85%" (CheckCircle2 icon)
+  - Saving (blue): "Saving..." (Save icon with pulse animation)
+
+Implementation:
+  - Create: src/components/common/SaveToast.jsx
+  - Import in: src/App.jsx
+  - Add state: const [saveToast, setSaveToast] = useState({visible, message, type})
+  - Update handleReportProgress() to show toast
+  - Auto-dismiss after 2000ms
+```
+
+### B. Progress Indicators in Sidebar (MANDATORY)
+```jsx
+Component: Update Sidebar.jsx
+Visual: Small badge on each station icon showing % completion
+
+Display Rules:
+  - 0%: Badge hidden (station appears gray/inactive)
+  - 1-99%: Yellow/Orange badge with percentage text
+  - 100%: Green checkmark badge
+
+Styling:
+  - Position: absolute, -top-1 -right-1
+  - Size: 24px circle
+  - Font: 8px, bold, white text
+  - Background: gradient (yellow → orange for partial, solid green for complete)
+
+Data Source:
+  - Read from: currentUser.progress[weekId][stationKey]
+  - Update on: Every onReportProgress() call
+  - Persist via: localStorage (already implemented)
+```
+
+### C. Auto-Save Indicator (MANDATORY)
+```jsx
+Component: AutoSaveIndicator.jsx
+Location: Header, next to user profile icon
+
+States:
+  - Idle: Hidden (display: none)
+  - Saving: CloudUpload icon spinning + "Saving..." text
+  - Saved: CheckCircle icon + "Saved" text (1s display, then fadeout)
+
+Animation:
+  - Saving: rotate 360deg infinite (1s duration)
+  - Saved: fadeOut after 1000ms
+
+Implementation:
+  - Create: src/components/common/AutoSaveIndicator.jsx
+  - Import in: src/App.jsx header section
+  - Trigger on: handleReportProgress() start/end
+```
+
+### D. Continue Learning Card (MANDATORY)
+```jsx
+Component: New card in Sidebar.jsx
+Display Condition: Only if currentUser has progress data
+
+Content:
+  - Heading: "Continue Learning" (text-xs, uppercase, bold)
+  - Week Number: Large, bold (text-2xl) - last accessed week
+  - Station Name: Last accessed station
+  - Progress: % completion of that week
+  - Button: "Resume →" (navigates to /week/{lastWeek}/{lastStation})
+
+Data Tracking:
+  - Add to user object: lastWeek, lastStation (update on every station access)
+  - Persist via: saveUserToDB()
+  - Read from: currentUser.lastWeek, currentUser.lastStation
+
+Styling:
+  - Background: gradient-to-r from-indigo-500 to-purple-500
+  - Text: white
+  - Rounded: 2xl
+  - Padding: 4
+  - Position: Top of sidebar, below user profile
+```
+
+## 0.1.2. WEEK COMPLETION CELEBRATION (NEW - MANDATORY GAMIFICATION)
+**Trigger:** When weekProgress reaches 100% (all stations complete)
+
+### A. Confetti Animation
+```jsx
+Library: react-confetti (already in package.json)
+Trigger: useEffect watching weekProgress
+Condition: if (weekProgress === 100 && !weekCelebrated)
+Duration: 5 seconds
+Full screen: true
+Colors: Match theme (indigo, purple, green)
+
+Implementation:
+  - Import: react-confetti in App.jsx
+  - Add state: const [showConfetti, setShowConfetti] = useState(false)
+  - Add useEffect: Monitor weekProgress, trigger confetti
+  - Cleanup: setShowConfetti(false) after 5000ms
+```
+
+### B. Congratulations Modal
+```jsx
+Component: CongratulationsModal.jsx
+Display: Center of screen (z-index: 60, backdrop blur)
+
+Content:
+  - Emoji: 🎉 (large, animated)
+  - Heading: "Week {weekId} Complete!"
+  - Subheading: "You earned 50 bonus stars!"
+  - Stats Display:
+    * Total time spent (if tracked)
+    * Stations completed: 15/15
+    * Accuracy average (if tracked)
+  - Message: "Next: Week {weekId + 1}"
+  - Buttons:
+    * "Continue to Week {weekId + 1}" (primary)
+    * "Review Week {weekId}" (secondary)
+
+Actions:
+  - Award Stars: user.stats.stars += 50 (saveUserToDB())
+  - Mark Week Certified: user.certified_weeks[weekId] = true
+  - Unlock Next Week: user.unlocked_weeks[weekId + 1] = true (if using progression lock)
+  - Dispatch Event: window.dispatchEvent(new Event('week-completed'))
+
+Implementation:
+  - Create: src/components/common/CongratulationsModal.jsx
+  - Import in: src/App.jsx
+  - Trigger: When weekProgress === 100
+  - Close: User clicks button or backdrop
+```
+
+### C. Week Badge System (OPTIONAL ENHANCEMENT)
+```jsx
+Concept: Visual badges for week completion milestones
+
+Badges:
+  - Bronze: Complete 1 week (any mode)
+  - Silver: Complete 5 weeks
+  - Gold: Complete 10 weeks
+  - Platinum: Complete 20 weeks
+  - Diamond: Complete all Phase 1 (54 weeks)
+
+Display:
+  - In user profile modal
+  - In sidebar header
+  - In celebration modal
+
+Data:
+  - Store in: user.badges = ['bronze', 'silver', ...]
+  - Calculate on: Every week completion
+```
+
+## 0.2. Image Generation Prompt (COVERS)
+- Prompt for covers: `Wide landscape educational illustration for [title]. Context: [first 100 chars]. Render as a full-width 16:9 banner, show all content, do not crop any part, all important details must be visible within the frame.`
+- Ratio: `16:9` for covers, `1:1` for vocab/wordpower.
+
+## 0.3. UI Image Fitting
+- All cover images must be displayed in the app with:
+  - Container: `w-full bg-slate-900 relative overflow-hidden`
+  - Image: `w-full h-auto` (no crop, full width, auto height)
+
+## 0.4. Ask-AI Audio
+- Each ask_ai prompt must have audio generated (`ask_ai_[id].mp3` from `context_en`).
+- Audio URL is injected by script, and UI must play correct file.
+
+## 0.5. Video Generation (UPDATED - EXACTLY 5 VIDEOS MANDATORY)
+**CRITICAL:** Week 1 initially had 3 videos (WRONG). Master Prompt V23 now enforces EXACTLY 5 videos per week.
+
+### Video Requirements
+```javascript
+// daily_watch.js structure
+export default {
+  videos: [
+    { id: 1, videoId: '...', title: '...', duration: 180, sim_duration: 3, thumb: '...', purpose: 'GRAMMAR' },
+    { id: 2, videoId: '...', title: '...', duration: 240, sim_duration: 4, thumb: '...', purpose: 'TOPIC' },
+    { id: 3, videoId: '...', title: '...', duration: 300, sim_duration: 5, thumb: '...', purpose: 'TOPIC' },
+    { id: 4, videoId: '...', title: '...', duration: 420, sim_duration: 7, thumb: '...', purpose: 'SCIENCE' },
+    { id: 5, videoId: '...', title: '...', duration: 360, sim_duration: 6, thumb: '...', purpose: 'SCIENCE' }
+  ]
+};
+```
+
+### Video Distribution
+- **GRAMMAR:** 1-2 videos (must directly teach week's grammar focus)
+  - Example: Week 19 (Past Simple) → "Past Tense Song" + "Was/Were Explained"
+- **TOPIC:** 2 videos (related to week's theme)
+  - Example: Week 1 (Identity) → "All About Me" + "Family Members"
+- **SCIENCE/CLIL:** 1-2 videos (content-based learning)
+  - Example: Week 5 (Nature) → "Plant Life Cycle" + "Water Cycle for Kids"
+
+### Video Curation Process
+```bash
+# Step 1: Create video_queries.json (MANUAL)
+File: src/data/weeks/week_XX/video_queries.json
+Structure:
+{
+  "masterQuery": "Week XX {topic} + {grammar} for kids",
+  "grammar": "{grammar focus} explained simply",
+  "videos": [
+    { "id": 1, "query": "...", "purpose": "GRAMMAR" },
+    { "id": 2, "query": "...", "purpose": "TOPIC" },
+    { "id": 3, "query": "...", "purpose": "TOPIC" },
+    { "id": 4, "query": "...", "purpose": "SCIENCE" },
+    { "id": 5, "query": "...", "purpose": "SCIENCE" }
+  ]
+}
+
+# Step 2: Run automated search (AUTO)
+Command: node tools/update_videos.js XX
+Process:
+  - Searches YouTube using queries
+  - Filters by WHITELIST channels (British Council, English Singsing, etc.)
+  - Applies GRAMMAR_REQUIREMENTS (strict keyword matching)
+  - Validates duration (60-900 seconds)
+  - Outputs EXACTLY 5 videos to daily_watch.js
+
+# Step 3: Validation
+Check: grep -c '"videoId"' src/data/weeks/week_XX/daily_watch.js
+Expected: 5 (no more, no less)
+If not 5: Manual review and regeneration required
+```
+
+### WHITELIST Channels (Priority Search)
+**MUST search these channels FIRST before expanding search:**
+
+**Grammar/English Skills (12 channels):**
+- British Council | LearnEnglish Kids ⭐
+- English Singsing ⭐
+- WOW English TV
+- Dream English Kids
+- Fun Kids English
+- Pinkfong English
+- (See Blueprint Section II.4 for full list)
+
+**Math (ESL-friendly, 12 channels):**
+- Numberblocks ⭐
+- Math Antics
+- Khan Academy Kids
+- Jack Hartmann Kids Music Channel
+- (See Blueprint Section II.4 for full list)
+
+**Science (12 channels):**
+- SciShow Kids ⭐
+- National Geographic Kids
+- Peekaboo Kidz
+- (See Blueprint Section II.4 for full list)
+
+### Video Quality Standards
+- **Duration:** 60-900 seconds (1-15 minutes)
+- **Language:** Clear English (no heavy accents)
+- **Visuals:** Engaging for ages 7-12
+- **Content:** Educational, age-appropriate
+- **No ads:** Prefer channels with minimal interruptions
+- **Validity:** Check video not deleted/restricted (run validation)
+
+### Validation Commands
+```bash
+# Check video count
+grep -c '"videoId"' src/data/weeks/week_XX/daily_watch.js  # Must output: 5
+
+# Verify videos load (manual)
+Open app → Week XX → Daily Watch → Click each video → Verify plays
+
+# Check for 404s (automated)
+node tools/verify_videos.js XX  # (Create this tool if not exists)
+```
+
+
+
+## 0.6. Mass-Produce Command Sequence (STRICT, FULLY AUTOMATED)
+
+### SINGLE COMMAND WORKFLOW (RECOMMENDED)
+When you receive request to create a new week (e.g. "create week 20" or "generate week 1 data and assets"), you MUST execute this complete workflow in ONE GO:
+
+**Step 0: Clean Old Data (if exists)**
+```bash
+# Remove all old data files for the target week (both modes)
+rm -rf src/data/weeks/week_<WEEK_ID>/*
+rm -rf src/data/weeks_easy/week_<WEEK_ID>/*
+rm -rf public/audio/week<WEEK_ID>/*
+rm -rf public/audio/week<WEEK_ID>_easy/*
+rm -rf public/images/week<WEEK_ID>/*
+rm -rf public/images/week<WEEK_ID>_easy/*
+```
+
+**Step 1: Read Syllabus and Blueprint**
+```bash
+# Extract week requirements from syllabus_database.js
+# Extract pedagogical rules from ENGQUEST APP MASTER BLUEPRINT-FINAL.txt
+# This step is MANDATORY before generating any content
+```
+
+**Step 2: Generate ALL 14 Data Files (Both Modes)**
+For each week, you MUST create these files with content generated from syllabus and blueprint (NOT copied from other weeks):
+
+**Advanced Mode** (`src/data/weeks/week_XX/`):
+1. **read.js** - Story from syllabus topic
+   - ⚠️ **MANDATORY: 8-12 sentences** (Blueprint requirement for Advanced mode)
+   - ⚠️ **MANDATORY: Exactly 10 bold words** using Markdown `**word**` (Blueprint UI requirement)
+   - **CRITICAL SYNTAX:** Use DOUBLE ASTERISKS `**word**` (NOT single `*word*`)
+     - ✅ CORRECT: `"My **name** is Alex. I am a **student** in a **school**."`
+     - ❌ WRONG: `"My *name* is Alex."` (single asterisk = italic, NOT bold, UI WON'T WORK)
+   - Bold words MUST match first 10 words from vocab.js (UI click-to-define feature)
+   - Grammar: Use complex sentences (because, although, if, relative clauses)
+   - Validation: Search for `**` in content_en - should find exactly 20 matches (10 words × 2 asterisks)
+2. **explore.js** - CLIL article from syllabus science/global theme
+   - ⚠️ **MANDATORY: 8-12 sentences** (Blueprint requirement for Advanced mode)
+   - ⚠️ **MANDATORY: Exactly 10 bold words** using Markdown `**word**` (Blueprint UI requirement)
+   - **CRITICAL SYNTAX:** Use DOUBLE ASTERISKS `**word**` (NOT single `*word*`)
+     - ✅ CORRECT: `"**Scientists** use special **tools** to learn."`
+     - ❌ WRONG: `"*Scientists* use special *tools*."` (italic, NOT bold, breaks UI)
+   - Bold words MUST match vocab.js or be domain-specific terms
+   - Focus: Academic language, facts, data
+   - Validation: Search for `**` in content_en - should find exactly 20 matches
+3. vocab.js - 10 words from syllabus vocab list
+4. word_power.js - 3 phrasal verbs related to topic
+5. grammar.js - Grammar focus from syllabus + 20 exercises
+6. logic.js - 5 contextual math/logic problems
+7. ask_ai.js - 5 question prompts related to topic
+8. dictation.js - 8-10 sentences from read.js story
+9. shadowing.js - Same 8-10 sentences as dictation
+10. mindmap.js - 6 stems + 36 branches for speaking (nested object structure)
+11. daily_watch.js - EXACTLY 5 YouTube videos (MANDATORY, auto-generated by script)
+12. writing.js - 1 writing prompt related to topic
+13. word_match.js - Placeholder `{ pairs: [1-10] }`
+14. index.js - Import all files and map stations
+
+**Easy Mode** (`src/data/weeks_easy/week_XX/`):
+- Same 14 files, but with simplified content following blueprint morphing rules:
+  - **read.js & explore.js:**
+    - ⚠️ **MANDATORY: 6-8 sentences** (Blueprint requirement for Easy mode)
+    - ⚠️ **MANDATORY: Exactly 10 bold words** using Markdown `**word**` (same as Advanced)
+    - ⚠️ **CRITICAL MORPHING RULE:** SIMPLIFY Advanced content, DON'T REPLACE IT!
+      - ✅ CORRECT: Keep same topic/story/characters, simplify grammar + vocabulary
+      - ❌ WRONG: Change topic entirely (e.g., Advanced = scientific tools, Easy = school items)
+    - Grammar: Use simple/compound sentences (and, but, so)
+    - Vocabulary: Use simpler synonyms (e.g., "big" instead of "enormous")
+    - **Example Morphing:**
+      ```
+      Advanced: "Scientists use microscopes to observe tiny microorganisms."
+      Easy:     "Scientists use microscopes to see very small things."
+      
+      Advanced: "Tom was excited about the archaeological expedition."
+      Easy:     "Tom was happy about the trip to see old things."
+      ```
+  - **vocab.js:** Same 10 words, but simpler definitions
+  - **All other files:** Simplified language, same structure
+  
+**⚠️ EASY MODE VALIDATION CHECKLIST:**
+1. Same topic as Advanced? ✅
+2. Same story characters as Advanced? ✅
+3. Same 10 vocab words as Advanced? ✅
+4. Simpler grammar (no complex sentences)? ✅
+5. Shorter sentences (under 10 words)? ✅
+
+**Step 3: Create Bridge Files**
+```bash
+# Advanced mode bridge
+echo "export { default } from './week_<WEEK_ID>/index.js';" > src/data/weeks/week_<WEEK_ID>.js
+
+# Easy mode bridge
+echo "export { default } from './week_<WEEK_ID>/index.js';" > src/data/weeks_easy/week_<WEEK_ID>.js
+```
+
+**Step 4: Validate Data Files (PRE-FLIGHT CHECKS - MANDATORY)**
+Before generating assets, run ALL these validation checks:
+
+**4.1. File Count Validation:**
+```bash
+ls src/data/weeks/week_XX/*.js | wc -l          # Must be 14
+ls src/data/weeks_easy/week_XX/*.js | wc -l     # Must be 14
+```
+If ≠ 14, STOP and fix.
+
+**4.2. Bold Words Validation (CRITICAL - Week 1 had 0 bold words!):**
+```bash
+# Advanced mode - must find exactly 10 matches per file
+grep -o '\*\*[^*]*\*\*' src/data/weeks/week_XX/read.js | wc -l     # Must be 10
+grep -o '\*\*[^*]*\*\*' src/data/weeks/week_XX/explore.js | wc -l  # Must be 10
+
+# Easy mode - must find exactly 10 matches per file
+grep -o '\*\*[^*]*\*\*' src/data/weeks_easy/week_XX/read.js | wc -l     # Must be 10
+grep -o '\*\*[^*]*\*\*' src/data/weeks_easy/week_XX/explore.js | wc -l  # Must be 10
+```
+If any count ≠ 10, STOP and add bold words using `**word**` syntax.
+
+**4.3. Sentence Count Validation:**
+```bash
+# Advanced: 8-12 sentences required
+grep 'content_en' src/data/weeks/week_XX/read.js | grep -o '\.' | wc -l     # 8-12
+grep 'content_en' src/data/weeks/week_XX/explore.js | grep -o '\.' | wc -l  # 8-12
+
+# Easy: 6-8 sentences required
+grep 'content_en' src/data/weeks_easy/week_XX/read.js | grep -o '\.' | wc -l     # 6-8
+grep 'content_en' src/data/weeks_easy/week_XX/explore.js | grep -o '\.' | wc -l  # 6-8
+```
+If out of range, STOP and regenerate content.
+
+**4.4. WordPower Schema Validation:**
+```bash
+# Check for REQUIRED fields (must all exist)
+grep -c '"id":' src/data/weeks/week_XX/word_power.js              # Must be 3
+grep -c 'pronunciation:' src/data/weeks/week_XX/word_power.js      # Must be 3
+grep -c 'cefr_level:' src/data/weeks/week_XX/word_power.js         # Must be 3
+grep -c 'collocation:' src/data/weeks/week_XX/word_power.js        # Must be 3
+
+# Check for FORBIDDEN fields (must NOT exist)
+grep 'example_en\|example_vi' src/data/weeks/week_XX/word_power.js       # Must be empty
+grep 'model_sentence_en\|model_sentence_vi' src/data/weeks/week_XX/word_power.js  # Must be empty
+grep 'audio_word\|audio_def' src/data/weeks/week_XX/word_power.js        # Must be empty
+```
+If any check fails, STOP and fix schema.
+
+**4.5. Station Key Mapping Validation:**
+```bash
+# Verify index.js uses Week 19 keys (not Week 1 keys)
+grep 'logic_lab:' src/data/weeks/week_XX/index.js         # Must exist
+grep 'mindmap_speaking:' src/data/weeks/week_XX/index.js  # Must exist
+grep 'word_power:' src/data/weeks/week_XX/index.js        # Must exist
+grep 'quiz:' src/data/weeks/week_XX/index.js              # Must NOT exist
+```
+If wrong keys found, STOP and fix mapping.
+
+**⚠️ CRITICAL: If ANY validation fails, DO NOT proceed to Step 5 (asset generation)!**
+
+**Step 5: Generate ALL Assets (Auto-read from API keys.txt)**
+
+**Option A: Single Command (Recommended - generates all assets in one run):**
+```bash
+# Create wrapper script for one-command generation
+cat > tools/generate_week_assets.sh << 'EOF'
+#!/bin/bash
+WEEK_ID=$1
+
+if [ -z "$WEEK_ID" ]; then
+  echo "❌ Usage: ./generate_week_assets.sh <WEEK_ID>"
+  exit 1
+fi
+
+echo "🎵 Step 1/3: Generating audio for Week $WEEK_ID..."
+node tools/generate_audio.js $WEEK_ID $WEEK_ID
+if [ $? -ne 0 ]; then echo "❌ Audio generation failed"; exit 1; fi
+
+echo "🖼️  Step 2/3: Generating images for Week $WEEK_ID..."
+node tools/batch_manager.js $WEEK_ID $WEEK_ID
+if [ $? -ne 0 ]; then echo "❌ Image generation failed"; exit 1; fi
+
+echo "📹 Step 3/3: Generating videos for Week $WEEK_ID..."
+YOUTUBE_API_KEY=$(grep YOUTUBE_API_KEY "API keys.txt" | head -1 | cut -d= -f2) \
+node tools/update_videos.js $WEEK_ID --reset
+if [ $? -ne 0 ]; then echo "❌ Video generation failed"; exit 1; fi
+
+echo "✅ All assets generated successfully for Week $WEEK_ID!"
+EOF
+
+chmod +x tools/generate_week_assets.sh
+
+# Run it:
+./tools/generate_week_assets.sh <WEEK_ID>
+```
+
+**Option B: Manual (Run each command separately):**
+```bash
+# Audio (scripts will auto-load keys from API keys.txt)
+node tools/generate_audio.js <WEEK_ID> <WEEK_ID>
+
+# Images (scripts will auto-load keys from API keys.txt)
+node tools/batch_manager.js <WEEK_ID> <WEEK_ID>
+
+# Video (scripts will auto-load keys from API keys.txt)
+YOUTUBE_API_KEY="your_key" node tools/update_videos.js <WEEK_ID> --reset
+```
+
+**⚠️ IMPORTANT:** Asset generation will auto-read API keys from `API keys.txt`. Ensure file exists and has valid keys before running.
+
+**Step 6: Verify Asset Generation**
+```bash
+# Check audio count (varies by content: typically ~120-130 per mode)
+ls public/audio/week<WEEK_ID>/*.mp3 | wc -l
+ls public/audio/week<WEEK_ID>_easy/*.mp3 | wc -l
+
+# Check image count (15 per mode)
+ls public/images/week<WEEK_ID>/*.jpg | wc -l
+ls public/images/week<WEEK_ID>_easy/*.jpg | wc -l
+
+# Check video data (EXACTLY 5 videos required)
+grep -c "videoId" src/data/weeks/week_<WEEK_ID>/daily_watch.js
+```
+
+**Step 7: Final Validation**
+- Confirm all data files have correct schema
+- Confirm all assets generated successfully
+- Confirm week shows up in app UI
+- Report completion with full checklist
+
+### CRITICAL RULES:
+1. **NEVER skip Step 0** (clean old data) - always start fresh
+2. **NEVER copy content** from other weeks - always generate from syllabus/blueprint
+3. **NEVER proceed to Step 5** if Step 4 validation fails
+4. **ALWAYS use API keys.txt** - scripts will auto-load keys, no manual input needed
+5. **ALWAYS verify assets** after generation - if count incorrect, report error and halt
+
+### WHEN USER SAYS "create week X" OR "generate week X":
+You MUST execute ALL 7 steps above in sequence, without stopping to ask questions. If any step fails, report error immediately and halt. Do not proceed to next step until current step is verified successful.
+
+---
+
+### API KEYS FOR ASSET GENERATION (REQUIRED, DYNAMIC)
+
+- **All asset generation scripts (audio, image, video) MUST read API keys from the file:**
+  - `Engquest3k/API keys.txt` (one key per line, multiple keys allowed per service)
+  - Use the first valid key for each service (YouTube, Gemini, Google TTS, OpenAI, etc.). If a key fails, try the next one in the list.
+  - If `API keys.txt` is missing or unreadable, fallback to `.env` file in the project root (same key names, one per line).
+  - If neither file is available, prompt the user to provide the keys.
+
+- **YouTube API Key:** Use all keys listed under "Youtube Data API key" in `API keys.txt` (try in order).
+- **Gemini API Key:** Use all keys listed under "GEMINI_API_KEY" in `API keys.txt` (try in order).
+- **Google TTS API Key:** Use all keys listed under "Google Cloude Text to speech API key" in `API keys.txt` (try in order).
+- **OpenAI TTS Key:** Use all keys listed under "OpenAI TTS key" in `API keys.txt` (try in order).
+
+**All scripts and prompts must reference these keys dynamically, not hardcoded.**
+**If a script or prompt cannot read the file, create a `.env` file in the project root with the same keys for manual copy-paste.**
+
+**Example .env format:**
+```
+YOUTUBE_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
+GOOGLE_API_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
+```
+
+**These keys must be used in the relevant commands above for successful asset generation.**
+
+
+
+## 0.7. Checklist (MUST, STRICT)
+- [ ] Each week has unique `voiceConfig` (no default fallback)
+- [ ] All 14 data files exist for BOTH advanced and easy modes (see list above)
+- [ ] Bridge files exist for BOTH advanced and easy modes (src/data/weeks/week_XX.js and src/data/weeks_easy/week_XX.js)
+- [ ] All data/content for the week is generated using `syllabus_database.js` and `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt` (not copied from another week)
+- [ ] All station content (titles, grammar, vocab, logic, etc.) matches the syllabus and follows blueprint rules for sentence length, scaffolding, morphing, context, and UI/UX
+- [ ] All data/content for the week is generated using `syllabus_database.js` and `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt` (not copied from another week)
+- [ ] All station content (titles, grammar, vocab, logic, etc.) matches the syllabus and follows blueprint rules for sentence length, scaffolding, morphing, context, and UI/UX
+- [ ] All cover images are 16:9, full-width, no crop, all content visible
+- [ ] All ask_ai prompts have audio and UI plays correct file
+- [ ] **All audio, image, and video assets are generated for the week using the asset generation commands above**
+- [ ] UI displays images with `w-full h-auto` (no crop)
+- [ ] No code changes required for new weeks
+- [ ] If any file is missing, asset generation will fail
+
+---
+
+## I. OVERALL INSTRUCTIONS
+- **Objective:** Generate a complete set of JS data files for a specific week of the EngQuest curriculum.
+- **Modes:** You must generate content for BOTH "Advanced" and "Easy" modes.
+- **Source of Truth:** The weekly theme, grammar, and topics are defined in the `syllabus_database.js` file. All generated content must strictly adhere to the syllabus for the given week.
+- **Blueprint Adherence:** All content must follow the pedagogical principles outlined in the `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt`, especially regarding "morphing and scaffolding" for vocabulary and sentence structure complexity between Easy and Advanced modes.
+- **File Naming:** All generated files must be named correctly (e.g., `read.js`, `vocab.js`) and placed in the correct directory structure: `src/data/weeks/week_XX/` for Advanced and `src/data/weeks_easy/week_XX/` for Easy.
+- **CRITICAL - Audio URLs:** Audio URLs are **NOT** stored in the data files. The audio generation script (`create_audio_tasks_only.js`) reads the text content and generates audio files automatically. Only `image_url` fields are included in the data.
+
+### I.1 CONTEXT REQUIREMENTS (MANDATORY)
+**Blueprint requirement:** "Luôn có context (ngữ cảnh) cho các câu hỏi, theo đúng văn phong bản xứ"
+
+All questions, prompts, and exercises MUST follow natural native-speaker storytelling format with rich context. NEVER use bare academic formats. This is CRITICAL for ESL learners to understand language in authentic situations.
+
+#### 1. **Logic Puzzles (logic.js):**
+- ✅ **CORRECT:** "Tom had 5 apples in his backpack. At lunch, he gave 2 apples to his sister Mary because she forgot her snack. How many apples does Tom have now?"
+  - Character names: Tom, Mary
+  - Situation: School lunch, sharing
+  - Details: backpack, forgot snack (relatable)
+  - Word count: 28 words (meets 30-50 target)
+  
+- ❌ **WRONG:** "5 - 2 = ?" or "Tom has 5 apples. He gives away 2. How many left?"
+  - No context or character details
+  - Sounds like a math drill, not a story
+  
+- **Requirements:**
+  - Use character names (Tom, Alex, Maria, etc.)
+  - Create relatable situations (sharing food, playing games, organizing toys)
+  - Minimum 30-50 words per puzzle
+  - Include sensory/emotional details ("excited", "carefully counted", "happily shared")
+  - Follow Blueprint math language patterns (see Section IV.7)
+
+#### 2. **Ask AI Prompts (ask_ai.js):**
+- ✅ **CORRECT:** "You are sitting with your grandparents, looking through an old photo album. The pictures are black and white, and the paper feels soft and fragile. Your parents look so young in the photos—almost like kids! Some pictures show places that don't exist anymore, like your grandpa's old school. You feel curious about their stories..."
+  - Scenario: Looking at photos with grandparents
+  - Sensory details: black and white, soft paper, fragile
+  - Emotional context: curious, nostalgic
+  - Word count: 62 words
+  
+- ❌ **WRONG:** "What are old photos like?" or "Ask AI about memories from the past."
+  - Direct question format (not a scenario)
+  - No immersion or context
+  
+- **Requirements:**
+  - Provide scenario/situation, NOT direct questions
+  - Set the scene with sensory details (see, hear, touch, feel)
+  - Minimum 30-50 words per prompt
+  - Use second-person "You" perspective to immerse student
+  - Student should naturally want to ask questions after reading the context
+
+#### 3. **Dictation & Shadowing (dictation.js, shadowing.js):**
+- **Requirements:**
+  - Minimum 5 words per sentence
+  - MUST be extracted DIRECTLY from read.js story (NOT new sentences)
+  - EXACT SAME sentences for BOTH dictation and shadowing
+  - Typically 8 sentences total (can be 6-10 depending on story length)
+  - Shadowing MUST include:
+    - `audio_url` field for each sentence (e.g., `shadowing_1.mp3`)
+    - `audio_full` field for complete passage (e.g., `shadowing_full.mp3`)
+  - Sentences should be complete thoughts, not fragments
+  
+- **Example (from Week 19 read.js):**
+  ```javascript
+  // dictation.js AND shadowing.js use SAME 8 sentences:
+  { id: 1, text: "When I was young, my town was very quiet.", ... },
+  { id: 2, text: "There were no big buildings or busy streets.", ... },
+  // ... 6 more sentences from the story
+  ```
+
+#### 4. **Grammar Exercises (grammar.js):**
+- **Requirements:**
+  - Use context similar to read.js story structure
+  - Embed grammar in meaningful sentences, NOT bare drills
+  - Each sentence should be a complete thought with context
+  - Target grammar structure should be natural, not forced
+  
+- ✅ **CORRECT:** "When I was young, I ___ very curious about everything." (was/were focus, relates to childhood theme)
+- ❌ **WRONG:** "I ___ happy. She ___ tired. They ___ friends." (no context, disconnected drills)
+  
+- **Example set (Week 19 - Past Simple: was/were):**
+  ```javascript
+  { id: 1, question: "My town ___ very different in the past.", options: ["was", "were"], answer: "was" },
+  { id: 2, question: "There ___ many trees near my house.", options: ["was", "were"], answer: "were" },
+  // All 20 questions relate to Week 19 theme (Looking Back)
+  ```
+
+#### 5. **Read & Explore (read.js, explore.js):**
+- **Bold Words Requirement:**
+  - EXACTLY 10 bold words per passage
+  - Use SINGLE asterisk syntax: `*word*` (not `**word**`)
+  - Words should be scattered naturally throughout text
+  - Bold words = core vocabulary from week's vocab list
+  
+- **Comprehension Questions:**
+  - read.js: 3 `comprehension_questions` (NOT `check_questions`)
+  - explore.js: 3 `check_questions` (factual) + 1 `question` object (open-ended)
+  - Each question must have `answer` array (multiple acceptable answers)
+  - Include `hint_en` and `hint_vi` for scaffolding
+
+---
+
+**WHY CONTEXT MATTERS:**
+Blueprint states ESL learners need authentic language situations to:
+1. Understand words/grammar in real-world usage
+2. Build mental models of when/how to use language
+3. Stay engaged through storytelling (not drills)
+4. Develop natural fluency (not just accuracy)
+
+---
+
+## II. STATION-BY-STATION DATA SCHEMA
+
+### 1. `read.js`
+- **Description:** The main story for the week. **CRITICAL: MUST have EXACTLY 10 bold words + 3 comprehension questions**
+- **Schema:**
+  ```javascript
+  export default {
+    title: "Story Title",
+    image_url: "/images/weekXX/read_cover_wXX.jpg",
+    content_en: "Story text in English (~100-150 words). **MUST** have **EXACTLY** **10** **bold** **words** scattered **naturally** throughout the **text** using *word* syntax (SINGLE asterisk, NOT double).",
+    content_vi: "Bản dịch tiếng Việt của câu chuyện.",
+    audio_url: null, // Audio is auto-generated, set to null in data
+    comprehension_questions: [ // MANDATORY: EXACTLY 3 questions
+      { id: 1, question_en: "Question 1?", answer: ["Answer 1", "Alt answer"], hint_en: "Hint 1", hint_vi: "Gợi ý 1" },
+      { id: 2, question_en: "Question 2?", answer: ["Answer 2"], hint_en: "Hint 2", hint_vi: "Gợi ý 2" },
+      { id: 3, question_en: "Question 3?", answer: ["Answer 3"], hint_en: "Hint 3", hint_vi: "Gợi ý 3" }
+    ]
+  };
+  ```
+- **Note:** Audio `read_main.mp3` is auto-generated from `content_en`.
+
+### 2. `explore.js`
+- **Description:** A non-fiction article on a global theme. **CRITICAL: MUST have EXACTLY 10 bold words + 3 check questions + 1 open-ended question**
+- **Schema:**
+  ```javascript
+  export default {
+    title_en: "Article Title",
+    title_vi: "Tiêu đề tiếng Việt",
+    image_url: "/images/weekXX/explore_cover_wXX.jpg",
+    content_en: "Article text in English (~120-180 words). **MUST** have **EXACTLY** **10** **bold** **words** scattered **naturally** throughout using *word* syntax (SINGLE asterisk, NOT double).",
+    content_vi: "Bản dịch tiếng Việt.",
+    check_questions: [ // MANDATORY: EXACTLY 3 factual questions
+      { id: 1, question_en: "Factual Question 1?", answer: ["Answer 1", "Alt"], hint_en: "Hint...", hint_vi: "Gợi ý..." },
+      { id: 2, question_en: "Factual Question 2?", answer: ["Answer 2"], hint_en: "Hint...", hint_vi: "Gợi ý..." },
+      { id: 3, question_en: "Factual Question 3?", answer: ["Answer 3"], hint_en: "Hint...", hint_vi: "Gợi ý..." }
+    ],
+    question: { // MANDATORY: 1 open-ended critical thinking question
+      text_en: "Open-ended critical thinking question?",
+      text_vi: "Câu hỏi tư duy tiếng Việt?",
+      min_words: 20,
+      hint_en: "I would like to...",
+      hint_vi: "Tôi muốn..."
+    }
+  };
+  ```
+- **Note:** Audio `explore_main.mp3` is auto-generated from `content_en`.
+
+### 3. `vocab.js` (New Words)
+- **Description:** Object containing array of 10 core vocabulary words.
+- **Schema:**
+  ```javascript
+  export default {
+    vocab: [
+      {
+        id: 1,
+        word: "vocabulary_word",
+        pronunciation: "/prəˌnʌnsiˈeɪʃən/",
+        definition_en: "English definition of the word.",
+        definition_vi: "Nghĩa tiếng Việt của từ.",
+        example: "An example sentence using the word.",
+        collocation: "A common phrase using the word.",
+        image_url: "/images/weekXX/[word].jpg"
+      },
+      // ... 10 items total
+    ]
+  };
+  ```
+- **Image naming:** `[word].jpg` (no prefix, e.g., `archaeologist.jpg`)
+- **Audio Generated (4 per word, 40 total):**
+  - `vocab_[word].mp3` - from `word`
+  - `vocab_def_[word].mp3` - from `definition_en`
+  - `vocab_ex_[word].mp3` - from `example`
+  - `vocab_coll_[word].mp3` - from `collocation`
+
+### 4. `word_power.js`
+- **Description:** Object containing array of phrasal verbs/collocations with PHASE-BASED COUNT.
+- **CRITICAL Phase Morphing (Blueprint requirement):**
+  
+  **Phase 1 (Weeks 1-54): 3 Simple Collocations**
+  - Count: EXACTLY 3 items per week
+  - Type: Simple verb-noun collocations (e.g., "do homework", "take notes", "pay attention")
+  - Audio: 12 files (3 words × 4 each: word, def, ex, model)
+  
+  **Phase 2 (Weeks 55-120): 5 Synonyms/Antonyms**
+  - Count: EXACTLY 5 items per week
+  - Type: Synonym pairs or antonym pairs (e.g., "big = huge", "small >< tiny", "happy = joyful")
+  - Audio: 20 files (5 words × 4 each)
+  
+  **Phase 3 (Weeks 121+): 7 Idioms/Phrasal Verbs**
+  - Count: EXACTLY 7 items per week
+  - Type: Academic idioms and phrasal verbs (e.g., "figure out", "point out", "break down")
+  - Audio: 28 files (7 words × 4 each)
+  
+- **Audio per item:** 4 files (word, def, example, model_sentence)
+- **Total audio impact:** Phase 1 = 12 files, Phase 2 = 20 files, Phase 3 = 28 files per week
+
+- **⚠️ REQUIRED FIELDS (Must Include All):**
+  - `id` - Sequential number (1, 2, 3...)
+  - `word` - Collocation phrase (string)
+  - `pronunciation` - IPA format (e.g., "/duː ˈhoʊmwɜːrk/")
+  - `cefr_level` - CEFR level ("A1", "A2", "B1")
+  - `definition_en` - English definition (string)
+  - `definition_vi` - Vietnamese definition (string)
+  - `example` - English example sentence ONLY (NO _en suffix, NO _vi field)
+  - `model_sentence` - English model sentence ONLY (NO _en suffix, NO _vi field)
+  - `collocation` - Common usage pattern (string)
+  - `image_url` - Path to image (string)
+
+- **❌ FORBIDDEN FIELDS (Do NOT Include):**
+  - `example_en`, `example_vi` - Use `example` only (English text)
+  - `model_sentence_en`, `model_sentence_vi` - Use `model_sentence` only (English text)
+  - `audio_word`, `audio_def`, `audio_ex`, `audio_model` - Script auto-generates these
+
+- **Schema (CORRECT FORMAT):**
+  ```javascript
+  export default {
+    words: [
+      {
+        id: 1,                    // ✅ REQUIRED
+        word: "do homework",       // ✅ REQUIRED
+        pronunciation: "/duː ˈhoʊmwɜːrk/",  // ✅ REQUIRED
+        cefr_level: "A2",         // ✅ REQUIRED
+        definition_en: "Complete school assignments at home.",  // ✅ REQUIRED
+        definition_vi: "Hoàn thành bài tập ở nhà.",  // ✅ REQUIRED
+        example: "I do my homework after dinner.",  // ✅ CORRECT (no _en suffix)
+        model_sentence: "Every night, I do my homework before bed.",  // ✅ CORRECT
+        collocation: "do your homework",  // ✅ REQUIRED
+        image_url: "/images/week1/wordpower_do_homework.jpg"  // ✅ REQUIRED
+      },
+      // ... 3 items total for Phase 1
+    ]
+  };
+  ```
+- **Image naming:** `wordpower_[word].jpg` (e.g., `wordpower_do_homework.jpg`)
+- **Audio Generated (4 per word, 12 total - script auto-injects paths):**
+  - `wordpower_[word].mp3` - from `word`
+  - `wordpower_def_[word].mp3` - from `definition_en`
+  - `wordpower_ex_[word].mp3` - from `example`
+  - `wordpower_model_[word].mp3` - from `model_sentence`
+
+### 5. `daily_watch.js`
+- **Description:** EXACTLY 5 curated YouTube videos per week (both Advanced and Easy modes).
+- **CRITICAL:** Blueprint requires "Tối thiểu 5 videos per week". Advanced and Easy modes share same videos.
+- **Video Types:**
+  1. **GRAMMAR** (1-2 videos): Must match week's grammar focus
+  2. **TOPIC** (1-2 videos): Related to week's theme
+  3. **SCIENCE/CLIL** (1-2 videos): Science/social studies content
+- **Schema:**
+  ```javascript
+  export default {
+    videos: [
+      { 
+        id: 1, 
+        title: "Video Title from YouTube", 
+        videoId: "youtube_video_id", 
+        duration: "MM:SS", 
+        sim_duration: seconds_as_number,
+        thumb: "https://img.youtube.com/vi/[videoId]/mqdefault.jpg"
+      },
+      // ... EXACTLY 5 items total
+    ],
+    bonus_games: [{title: "Game", url: "#", description: "Review"}]
+  };
+  ```
+- **Video Generation:** Use `tools/update_videos.js <WEEK_ID>` which reads from `video_queries.json` and searches YouTube API.
+- **Important:** Each week must have `video_queries.json` file with 5 search queries (1 grammar + 2 topic + 2 science/clil).
+
+### 6. `grammar.js`
+- **Description:** Object with grammar explanation and 20 exercises (mixed types: mc, fill, unscramble).
+- **Schema:**
+  ```javascript
+  export default {
+    grammar_explanation: {
+      title_en: "Grammar Point Title",
+      title_vi: "Tiêu đề tiếng Việt",
+      rules: [
+        { type: "rule", icon: "1️⃣", rule_en: "Rule in English.", rule_vi: "Quy tắc tiếng Việt." },
+        { type: "rule", icon: "2️⃣", rule_en: "Rule 2 in English.", rule_vi: "Quy tắc 2 tiếng Việt." }
+      ]
+    },
+    exercises: [
+      { id: 1, type: "mc", question: "Sentence with ___ blank.", options: ["a", "b"], answer: "a", hint: "Hint" },
+      { id: 2, type: "fill", question: "Sentence with _____ (verb) blank.", answer: "was", hint: "Singular" },
+      { id: 3, type: "unscramble", question: "Order:", words: ["word1", "word2", "word3"], answer: "word1 word2 word3.", hint: "S + V..." },
+      // ... EXACTLY 20 exercises total (mix of mc, fill, unscramble)
+    ]
+  };
+  ```
+- **CRITICAL:** **Grammar exercises do NOT generate audio files.** This station is text-only interactive exercises. Audio count = 0.
+
+### 6. `logic.js` (NOT logic_lab.js)
+- **Description:** Object containing array of 5 contextual word problems for Logic Lab. 
+- **CRITICAL CONTEXT REQUIREMENTS (Blueprint: "Luôn có context cho các câu hỏi"):**
+  - ✅ **CORRECT:** "Tom had 5 apples. He gave 2 to his sister. How many does Tom have now?" (Character + scenario + narrative)
+  - ❌ **WRONG:** "5 - 2 = ?" (Bare math, no context)
+  - Every puzzle MUST use storytelling format with character names and situations (30-50 words)
+- **Phase Morphing:**
+  - Phase 1: 5 puzzles
+  - Phase 2: 7 puzzles
+  - Phase 3: 10 puzzles
+- **Schema:**
+  ```javascript
+  export default {
+    puzzles: [
+      {
+        id: 1,
+        type: "logic", // or "math", "mc", "pattern"
+        title_en: "Problem Title in English", // Descriptive title (e.g., "Birthday Candles")
+        title_vi: "Tiêu đề bài toán tiếng Việt",
+        question_en: "Last year, Tom was 7 years old. He had 7 candles on his cake. This year, how many candles will he have?", // RICH CONTEXT (30-50 words)
+        question_vi: "Năm ngoái, Tom 7 tuổi. Cậu ấy có 7 ngọn nến trên bánh. Năm nay, cậu ấy sẽ có bao nhiêu ngọn nến?",
+        options: ["Option 1", "Option 2", "Option 3"], // optional, for mc type
+        answer: ["Correct Answer", "Alternative answer"], // array of acceptable answers
+        target_number: 5, // optional, for numeric problems
+        unit: "apples", // optional, for counting problems
+        hint_en: "A hint for solving.",
+        hint_vi: "Gợi ý tiếng Việt."
+      },
+      // ... 5 items total
+    ]
+  };
+  ```
+- **Audio Generated:** `logic_[id].mp3` - from `question_en` (5 audio files)
+
+### 7. `ask_ai.js`
+- **Description:** Object containing array of 5 scenarios to prompt student questions.
+- **CRITICAL CONTEXT REQUIREMENTS (Blueprint: "Must provide scenario/situation"):**
+  - ✅ **CORRECT:** "You are looking at your parents' old wedding photo. The picture is in black and white, and your parents look very young. You want to know about that day." (30-50 words rich scenario)
+  - ❌ **WRONG:** "What are old photos like?" (Direct question, no context)
+  - Each context_en MUST be 30-50 words describing a situation student experiences, NOT asking direct questions
+- **Schema:**
+  ```javascript
+  export default {
+    prompts: [
+      {
+        id: 1,
+        context_en: "You are looking at your parents' old wedding photo. The picture is in black and white, and your parents look very young. You want to know about that day.", // RICH SCENARIO (30-50 words)
+        context_vi: "Bạn đang xem ảnh cưới cũ của bố mẹ. Bức ảnh đen trắng, và bố mẹ trông rất trẻ. Bạn muốn biết về ngày hôm đó.",
+        answer: ["How old were you?", "What was the weather like?", "Were you happy?"], // Example questions student might ask
+        hint: "How old... / What was..."
+      },
+      // ... EXACTLY 5 items total
+    ]
+  };
+  ```
+- **Audio Generated:** `ask_ai_[id].mp3` - from `context_en` (5 audio files)
+
+### 8. `dictation.js`
+- **Description:** Object containing array of sentences for dictation (SAME as shadowing count, copied from read.js content).
+- **IMPORTANT:** Dictation sentences = Shadowing sentences (both copied from `read.js` story).
+- **Schema:**
+  ```javascript
+  export default {
+    sentences: [
+      { 
+        id: 1, 
+        text: "Sentence 1 from the read.js story.", 
+        meaning: "Nghĩa tiếng Việt của câu."
+      },
+      // ... 8-10 items total (SAME count as shadowing)
+    ]
+  };
+  ```
+- **Audio Generated:** `dictation_[id].mp3` - from `text`
+
+### 9. `shadowing.js`
+- **Description:** 8-10 conversational sentences for pronunciation practice (COPIED from `read.js` story).
+- **IMPORTANT:** Shadowing sentences = Dictation sentences = read.js content split into sentences.
+- **Schema:**
+  ```javascript
+  export default {
+    title: "Same as read.js title",
+    audio_full: "/audio/weekXX/shadowing_full.mp3", // Full audio for all sentences
+    script: [
+      { id: 1, text: "Sentence 1 from read.js.", vi: "Bản dịch tiếng Việt.", audio_url: "/audio/weekXX/shadowing_1.mp3" },
+      // ... 8-10 items total (SAME count as dictation)
+    ]
+  };
+  ```
+- **CRITICAL:** Each sentence MUST have `audio_url` field for individual playback.
+- **Audio Generated:** `shadowing_[id].mp3` - from each `script[].text` + `shadowing_full.mp3` for full audio
+
+### 10. `mindmap.js`
+- **Description:** Data for the Mindmap Speaking activity (6 stems × 6 branches = 42 audio).
+- **CRITICAL STRUCTURE:** `branchLabels` is a **NESTED OBJECT**, NOT a flat array!
+
+- **✅ CORRECT Structure (Week 19 example):**
+  ```javascript
+  export default {
+    centerStems: [
+      "When I was young, I ___.",
+      "My favorite memory was ___.",
+      "There was a place where I ___.",
+      "My family was ___.",
+      "I was happy because ___.",
+      "In the past, life was ___."
+    ],
+    branchLabels: {
+      "When I was young, I ___.": [
+        "played with my friends",
+        "lived in a small house",
+        "went to kindergarten",
+        "loved my toys",
+        "was very curious",
+        "had a pet dog"
+      ],
+      "My favorite memory was ___.": [
+        "my birthday party",
+        "playing in the rain",
+        "going to the beach",
+        "visiting grandma's house",
+        "my first day of school",
+        "learning to ride a bike"
+      ],
+      // ... 4 more stems (6 total)
+    }
+  };
+  ```
+
+- **❌ WRONG Structure (DO NOT USE):**
+  ```javascript
+  // This is INCORRECT - flat array format
+  branchLabels: [
+    { id: 1, text_en: "played with my friends", ... },
+    { id: 2, text_en: "lived in a small house", ... }
+  ]
+  ```
+
+- **Structure Rules:**
+  1. `centerStems`: Simple array of 6 sentence starter strings
+  2. `branchLabels`: Object where:
+     - **Keys** = exact text from `centerStems` (including trailing punctuation like `___.`)
+     - **Values** = array of 6 completion strings per stem
+  3. Each stem MUST have exactly 6 branches
+  4. Total branches = 36 (6 stems × 6 branches)
+
+- **Audio Generated:**
+  - `mindmap_stem_[1-6].mp3` - from each centerStems item (6 files)
+  - `mindmap_branch_[1-36].mp3` - from branches **SEQUENTIALLY numbered 1-36**
+  - **Total: 42 audio files**
+
+- **Audio Naming CRITICAL:** 
+  - Branches numbered SEQUENTIALLY across ALL stems, NOT nested per stem
+  - Week 19 example: Stem 1 branches = 1-6, Stem 2 branches = 7-12, Stem 3 = 13-18, etc.
+  - `generate_audio.js` handles this automatically by flattening the nested structure
+
+### 11. `word_match.js`
+- **Description:** A single writing prompt.
+- **Schema:**
+  ```javascript
+  export default {
+    title: "Writing Activity Title",
+    min_words: 40,
+    model_sentence: "A model paragraph showing good writing...",
+    instruction_en: "Clear instructions for the writing task.",
+    instruction_vi: "Hướng dẫn tiếng Việt.",
+    prompt_en: "Question prompts to guide the writing.",
+    prompt_vi: "Câu hỏi gợi ý tiếng Việt.",
+    keywords: ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
+  };
+  ```
+- **Note:** No audio generated for this station.
+
+### 13. `word_match.js`
+- **Description:** Placeholder for word matching game (uses vocab data).
+- **Schema:**
+  ```javascript
+  export default { pairs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };
+  ```
+
+### 14. `index.js` (Required for each week folder)
+- **Description:** Main index file that imports and exports all station data.
+- **Schema:**
+  ```javascript
+  import read from './read.js';
+  import vocab from './vocab.js';
+  import grammar from './grammar.js';
+  import ask_ai from './ask_ai.js';
+  import logic from './logic.js';
+  import dictation from './dictation.js';
+  import shadowing from './shadowing.js';
+  import writing from './writing.js';
+  import explore from './explore.js';
+  import word_power from './word_power.js';
+  import daily_watch from './daily_watch.js';
+  import word_match from './word_match.js';
+  import mindmap from './mindmap.js';
+
+  const weekData = {
+    weekId: XX,
+    weekTitle_en: "Week Title in English",
+    weekTitle_vi: "Tiêu đề tuần tiếng Việt",
+    grammar_focus: "Grammar Point",
+    global_vocab: vocab.vocab,
+    stations: {
+      read_explore: read,
+      new_words: vocab,
+      word_match: word_match,
+      grammar: grammar,
+      ask_ai: ask_ai,
+      logic_lab: logic,
+      dictation: dictation,
+      shadowing: shadowing,
+      video: writing,
+      writing: writing,
+      explore: explore,
+      word_power: word_power,
+      daily_watch: daily_watch,
+      mindmap_speaking: mindmap
+    }
+  };
+  export default weekData;
+  ```
+
+---
+
+## III. ASSET SUMMARY
+
+### Audio Files (VARIABLE count per week - depends on CONTENT, auto-generated by script)
+**CRITICAL:** Audio count is NOT fixed - it depends on week content structure per Blueprint morphing rules.
+
+**How generate_audio.js works:**
+1. Loads week data from `src/data/weeks/week_XX/index.js`
+2. Scans ALL stations for text content that needs audio
+3. Generates audio ONLY for fields that exist (skips missing optional fields)
+4. Uses week-specific `voiceConfig` if present, otherwise uses global defaults
+5. Saves MP3 files to `public/audio/weekXX/` (or `weekXX_easy/` for Easy mode)
+
+**Base formula (Phase 1, weeks 1-54):**
+```
+read: 1 (read_explore_main.mp3)
+explore: 1 (explore_main.mp3)
+vocab: 40 (10 words × 4 each: word, def, ex, coll)
+word_power: 12 (3 words × 4 each: word, def, ex, model) *Phase 1 only*
+dictation: 8 (8 sentences from read.js)
+shadowing: 9 (8 sentences + 1 full audio)
+logic: 5 (5 puzzles) *Phase 1 only*
+ask_ai: 5 (5 prompts)
+mindmap: 42 (6 stems + 36 branches)
+---
+BASE TOTAL: ~123 files (Phase 1)
+```
+
+**Phase Morphing (affects count):**
+- **word_power:** Phase 1 = 12 files (3×4), Phase 2 = 20 files (5×4), Phase 3 = 28 files (7×4)
+- **logic:** Phase 1 = 5 files, Phase 2 = 7 files, Phase 3 = 10 files
+- **dictation/shadowing:** Varies by story length (typically 8, can be 6-10)
+
+**Variable factors (+/- files):**
+- `vocab[].collocation` optional → ±10 files (if missing)
+- `word_power[].model_sentence` optional → ±3-7 files (if missing)
+- Dictation/shadowing count varies by story → ±2-4 files
+- Grammar examples audio: 0-16 files (week-specific, rare)
+
+**Typical ranges:**
+- Phase 1 (weeks 1-54): 115-135 files per mode
+- Phase 2 (weeks 55-120): 125-145 files per mode (more word_power + logic)
+- Phase 3 (weeks 121+): 130-155 files per mode (max word_power + logic)
+
+**Example: Week 19 (Phase 1) = 138 files**
+| Station | Count | Naming Pattern |
+|---------|-------|----------------|
+| read | 1 | `read_explore_main.mp3` |
+| explore | 1 | `explore_main.mp3` |
+| vocab | 40 | `vocab_[word].mp3`, `vocab_def_[word].mp3`, `vocab_ex_[word].mp3`, `vocab_coll_[word].mp3` |
+| word_power | 12 | `wordpower_[word].mp3`, `wordpower_def_[word].mp3`, `wordpower_ex_[word].mp3`, `wordpower_model_[word].mp3` |
+| dictation | 8 | `dictation_[1-8].mp3` |
+| shadowing | 9 | `shadowing_[1-8].mp3` + `shadowing_full.mp3` |
+| mindmap | 42 | `mindmap_stem_[1-6].mp3`, `mindmap_branch_[1-36].mp3` |
+| logic | 5 | `logic_[1-5].mp3` |
+| ask_ai | 5 | `ask_ai_[1-5].mp3` |
+| grammar | 16 | `grammar_ex_[1-16].mp3` *(Week 19 specific, rare)* |
+| **TOTAL** | **139** | *(Variable per week)* |
+
+**Generation command:**
+```bash
+node tools/generate_audio.js <START_WEEK> <END_WEEK>
+# Reads API keys from API keys.txt automatically
+# Generates all audio for both Advanced and Easy modes
+```
+
+### Image Files (FIXED 15 per mode, auto-generated by Gemini Imagen API)
+**CRITICAL:** Image count is FIXED at 15 per mode regardless of content phase.
+
+**How batch_manager.js works:**
+1. Loads week data from `src/data/weeks/week_XX/index.js`
+2. Extracts image requirements:
+   - 2 cover images (read + explore) from titles/content
+   - 10 vocab images from `new_words.vocab[]`
+   - 3 word_power images from `word_power.words[]` (Phase 1 only)
+3. Generates educational illustration prompts for each image
+4. Calls Gemini Imagen API (**Imagen 3** for cost efficiency: $0.02/image vs Imagen 4 $0.04/image)
+   - Aspect ratios: Covers `16:9`, Vocab/Word Power `1:1`
+   - **Optimization:** Easy mode reuses vocab images from Advanced folder (30-40% savings)
+   - **Skip-exists:** Checks if image already generated to prevent duplicates during retries
+5. Saves JPG files to `public/images/weekXX/` (or `weekXX_easy/`)
+
+**Naming Convention:**
+| Station | Count | Naming Pattern | Aspect Ratio |
+|---------|-------|----------------|-------------|
+| read | 1 | `read_cover_wXX.jpg` (e.g., `read_cover_w19.jpg`) | 16:9 |
+| explore | 1 | `explore_cover_wXX.jpg` (e.g., `explore_cover_w19.jpg`) | 16:9 |
+| vocab | 10 | `[word].jpg` (lowercase, underscore for spaces, e.g., `archaeologist.jpg`) | 1:1 |
+| word_power | 3 | `wordpower_[word].jpg` (WITH prefix, e.g., `wordpower_artifact.jpg`) | 1:1 |
+| **TOTAL** | **15** | | |
+
+**Cover Image Prompt Template:**
+```
+Wide landscape educational illustration for [title]. 
+Context: [first 100 chars of content]. 
+Render as a full-width 16:9 banner, show all content, 
+do not crop any part, all important details must be 
+visible within the frame. Child-friendly, colorful, ESL.
+```
+
+**Vocab/Word Power Prompt Template:**
+```
+Simple educational illustration of [word]: [definition]. 
+Child-friendly, clear, colorful, suitable for ESL vocabulary learning.
+```
+
+**Generation command:**
+```bash
+node tools/batch_manager.js <START_WEEK> <END_WEEK>
+# Reads Gemini API key from API keys.txt automatically
+# Generates 15 images for both Advanced and Easy modes
+```
+
+**Phase Impact on Images:**
+- Phase 1 (weeks 1-54): 15 images (3 word_power)
+- Phase 2 (weeks 55-120): 17 images (5 word_power) ← Count increases
+- Phase 3 (weeks 121+): 19 images (7 word_power) ← Count increases
+
+**Note:** Despite phase morphing, base requirement is 15 images for Phase 1.
+
+---
+
+## IV. FINAL CHECKLIST
+- [ ] Generated files for ALL 14 stations for BOTH Easy and Advanced modes?
+- [ ] Created `index.js` file that imports and exports all stations?
+- [ ] Content strictly follows the `syllabus` for the target week?
+- [ ] Vocabulary and sentence complexity adheres to the `blueprint` for each mode?
+  - Easy: Simple S-V-O sentences with "and/but" connectors
+  - Advanced: Compound sentences, vocabulary one CEFR level higher
+- [ ] All `image_url` paths are correctly formatted placeholders?
+- [ ] **NO** `audio_url` fields in the data files (audio is auto-generated)?
+- [ ] All data wrapped in correct object structure (`{ vocab: [...] }`, `{ words: [...] }`, etc.)?
+
+**STATION-SPECIFIC CHECKS:**
+- [ ] **read.js:** EXACTLY 10 bold words using `**word**` syntax (DOUBLE asterisk) + 8-12 sentences (Advanced) or 6-8 (Easy) + 3 comprehension_questions?
+  - ⚠️ VALIDATION: Count sentences by splitting on period (.) - if wrong, REGENERATE content!
+- [ ] **explore.js:** EXACTLY 10 bold words using `**word**` syntax (DOUBLE asterisk) + 8-12 sentences (Advanced) or 6-8 (Easy) + 3 check_questions + 1 open-ended question object?
+  - ⚠️ VALIDATION: Count sentences - if wrong, REGENERATE content before proceeding!
+- [ ] **vocab:** Exactly 10 words with all required fields (word, definition_en/vi, example, collocation, image_url)?
+- [ ] **word_power:** Exactly 3 items for Phase 1 (5 for Phase 2, 7 for Phase 3)?
+- [ ] **grammar.js:** EXACTLY 20 exercises (mix of mc, fill, unscramble)? **NO AUDIO generated for this station**
+- [ ] **logic.js:** EXACTLY 5 puzzles with RICH CONTEXT (30-50 words storytelling, NOT bare math)?
+- [ ] **ask_ai.js:** EXACTLY 5 prompts with RICH SCENARIOS (30-50 words context_en, NOT direct questions)?
+- [ ] **dictation.js:** Exactly 8 sentences (copied from read.js story)?
+- [ ] **shadowing.js:** SAME 8 sentences as dictation (EXACT same text field)?
+- [ ] **mindmap.js:** 6 stems + NESTED OBJECT branchLabels with 6 branches per stem (NOT flat array)?
+- [ ] **daily_watch.js:** EXACTLY 5 videos (MANDATORY) with videoId field?
+
+---
+
+## V. GENERATION COMMANDS (After data files created)
+```bash
+# 1. Generate audio tasks
+node tools/create_audio_tasks_only.js [WEEK_NUM] [WEEK_NUM]
+
+# 2. Generate audio files (requires OPENAI_API_KEY)
+export OPENAI_API_KEY="your-key-here"
+python3 tools/generate_audio.py --provider openai --voice "nova"
+```
+
+---
+
+## VI. WEEK 19 AS REFERENCE TEMPLATE (MANDATORY)
+
+### Why Week 19?
+Week 19 is the **GOLD STANDARD** for all new weeks. It contains:
+- Complete, correct schema for all 14 files
+- Proper field naming and order
+- Correct asset naming and mapping
+- Proper index.js station mapping
+- Valid audio/image/video integration
+
+### Critical Week 19 Files to Reference:
+1. `src/data/weeks/week_19/index.js` - Station mapping, weekId, global_vocab structure
+2. `src/data/weeks/week_19/read.js` - Story schema with comprehension_questions (not check_questions)
+3. `src/data/weeks/week_19/explore.js` - Article schema with check_questions and question object
+4. `src/data/weeks/week_19/vocab.js` - 10 words, exact field order
+5. `src/data/weeks/week_19/word_power.js` - 3 items, cefr_level, model_sentence
+6. `src/data/weeks/week_19/grammar.js` - grammar_explanation + 20 exercises
+7. `src/data/weeks/week_19/logic.js` - 5 puzzles, target_number, unit fields
+8. `src/data/weeks/week_19/ask_ai.js` - 5 prompts, audio_url field, hint (not hint_en/vi)
+9. `src/data/weeks/week_19/dictation.js` - 8 sentences, text + meaning
+10. `src/data/weeks/week_19/shadowing.js` - title + 8 script items (SAME count as dictation)
+11. `src/data/weeks/week_19/mindmap.js` - 6 centerStems, branchLabels object
+12. `src/data/weeks/week_19/daily_watch.js` - videos array, videoId field
+13. `src/data/weeks/week_19/writing.js` - min_words, model_sentence, keywords array
+14. `src/data/weeks/week_19/word_match.js` - pairs array [1-10]
+
+### Schema Validation Rules (from Week 19):
+- **read.js**: Must have `comprehension_questions` (NOT `check_questions`)
+- **explore.js**: Must have `check_questions` (3 items) AND `question` (1 object)
+- **vocab.js**: Must have `collocation` field (NOT `collocations`)
+- **word_power.js**: Must have `cefr_level` and `model_sentence` fields
+- **ask_ai.js**: Must have `audio_url` field (even if null), `hint` (NOT `hint_en/vi`)
+- **dictation.js**: Must have `meaning` field (NOT `translation`)
+- **shadowing.js**: Must have `vi` field (NOT `meaning` or `translation`)
+- **logic.js**: Must have `target_number` and `unit` for math/mc types
+- **mindmap.js**: `branchLabels` is an OBJECT (not array), keys = centerStems
+- **daily_watch.js**: Must have `videoId` (NOT `video_id`), `sim_duration` field
+- **index.js**: Station keys MUST match week_19/index.js mapping (e.g. `logic_lab: logic`, `mindmap_speaking: mindmap`)
+
+---
+
+## VII. VALIDATION WORKFLOW (MANDATORY BEFORE ASSET GENERATION)
+
+### Step 1: File Existence Check
+For each new week (e.g. week 1, 20, etc.), verify:
+```bash
+# Advanced mode
+ls src/data/weeks/week_XX/*.js | wc -l  # Should be 14
+# Easy mode
+ls src/data/weeks_easy/week_XX/*.js | wc -l  # Should be 14
+```
+If count ≠ 14, **ABORT** and report missing files.
+
+### Step 2: Schema Validation
+For each file, validate:
+1. All required fields present (see Week 19 reference above)
+2. Field names match exactly (case-sensitive)
+3. Field types correct (array vs object, string vs number)
+4. No extra/unknown fields
+
+### Step 3: Data Validation
+1. **vocab.js**: Exactly 10 items, each with all 7 required fields
+2. **word_power.js**: Exactly 3 items (Phase 1), each with all 9 required fields
+3. **grammar.js**: Exactly 20 exercises, mixed types (mc, fill, unscramble)
+4. **logic.js**: Exactly 5 puzzles, `answer` is array
+5. **ask_ai.js**: Exactly 5 prompts, `answer` is array
+6. **dictation.js**: 8-10 sentences (MUST match shadowing count)
+7. **shadowing.js**: 8-10 script items (MUST match dictation count)
+8. **mindmap.js**: 6 centerStems, 6 branches per stem (42 audio)
+9. **daily_watch.js**: EXACTLY 5 videos (MANDATORY), all with valid `videoId`
+10. **index.js**: `global_vocab` = vocab.vocab, all 13 stations mapped
+
+### Step 4: Asset Path Validation
+1. All `image_url` fields use correct pattern: `/images/weekXX/[filename].jpg`
+2. All `audio_url` fields set to `null` or use correct pattern: `/audio/weekXX/[filename].mp3`
+3. Cover images use `read_cover_wXX.jpg` and `explore_cover_wXX.jpg` (NOT `read_cover_weekXX.jpg`)
+4. Vocab images use `[word].jpg` (NO prefix, lowercase, underscore for spaces)
+5. Word power images use `wordpower_[word].jpg` (WITH prefix)
+
+### Step 5: Content Validation
+1. All content generated from `syllabus_database.js` (correct week title, grammar, topic)
+2. All content follows `ENGQUEST APP MASTER BLUEPRINT-FINAL.txt` rules:
+   - Easy mode: Simple S-V-O, "and/but" connectors, CEFR A1-A2
+   - Advanced mode: Compound sentences, richer vocab, CEFR A2-B1
+3. No content copied from other weeks (verify uniqueness)
+4. Grammar focus in all stations matches syllabus (e.g. "Past Simple: was/were")
+
+### Step 6: API Key Validation
+1. Verify `API keys.txt` file exists and readable
+2. Parse and extract all keys (YouTube, Gemini, Google TTS, OpenAI)
+3. Test first key for each service (or use fallback)
+4. If all keys invalid, create `.env` template and prompt user
+
+### Step 7: Asset Generation Validation
+After running asset commands:
+```bash
+# Check audio count (typically ~120-130 per mode, varies by content)
+ls public/audio/weekXX/*.mp3 | wc -l
+ls public/audio/weekXX_easy/*.mp3 | wc -l
+
+# Check image count (should be 15 per mode)
+ls public/images/weekXX/*.jpg | wc -l
+ls public/images/weekXX_easy/*.jpg | wc -l
+
+# Check video data (should have EXACTLY 5 videos)
+grep -c "videoId" src/data/weeks/week_XX/daily_watch.js
+```
+If counts incorrect, **ABORT** and report missing assets.
+
+---
+
+## VIII. ERROR HANDLING & REPORTING
+
+### Common Errors + Automated Fixes:
+
+**1. Missing Bold Words (Week 1 Error)**
+```bash
+# Error: read.js or explore.js has 0 bold words
+# Fix: Use sed to convert first 10 meaningful words to bold
+# Manual review required after automated fix
+```
+
+**2. Wrong WordPower Schema (Week 1 Error)**
+```bash
+# Error: Missing id, pronunciation, cefr_level, collocation fields
+# Error: Has example_en/vi instead of example
+# Fix: Run schema migration script:
+node tools/fix_wordpower_schema.js <WEEK_ID>
+```
+
+**3. Wrong Audio Path Format (Week 1 Error)**
+```bash
+# Error: Uses /audio/week01/ instead of /audio/week1/
+# Fix: Run path correction script:
+node tools/fix_audio_paths.js <WEEK_ID>
+```
+
+**4. Sentence Count Violation (Week 1 Error)**
+```bash
+# Error: Easy mode read.js has 9 sentences (should be 6-8)
+# Fix: Manually remove/combine sentences until count is correct
+# No automated fix - requires content editing
+```
+
+**5. Wrong Station Keys (Week 1 Error)**
+```bash
+# Error: index.js uses 'quiz' key not in Week 19
+# Error: Uses 'wordpower' instead of 'word_power'
+# Fix: Run station key migration:
+node tools/fix_station_keys.js <WEEK_ID>
+```
+
+**Standard Errors:**
+6. **Missing file**: "❌ File not found: src/data/weeks/week_XX/[file].js"
+7. **Schema mismatch**: "❌ [file].js missing required field: [field_name]"
+8. **Wrong field name**: "❌ [file].js uses 'check_questions' but should use 'comprehension_questions'"
+9. **Count mismatch**: "❌ dictation.js has 9 sentences but shadowing.js has 8 (must match)"
+10. **Invalid key**: "❌ API key invalid or expired, please update API keys.txt"
+11. **Asset missing**: "❌ Audio file not generated: public/audio/weekXX/vocab_apple.mp3"
+
+### Error Resolution:
+- **DO NOT proceed** with asset generation if validation fails
+- **Report all errors** clearly with file path and line number (if applicable)
+- **Suggest fix** based on Week 19 reference
+- **Verify fix** by re-running validation before continuing
+
+---
+
+## IX. FINAL SUMMARY
+
+### What This Prompt Guarantees:
+1. Every new week will have **identical structure, schema, and asset set** to Week 19
+2. All content will be **generated from syllabus and blueprint**, never copied
+3. All assets will be **auto-generated with correct naming and mapping**
+4. All API keys will be **loaded dynamically from API keys.txt**, never hardcoded
+5. All errors will be **caught before asset generation**, not after
+6. **Bold words** will use `**word**` syntax (NOT `*word*` or plain text)
+7. **Sentence counts** will match requirements (Easy: 6-8, Advanced: 8-12)
+8. **WordPower schema** will have all required fields (id, pronunciation, cefr_level, collocation)
+9. **Station keys** will match Week 19 exactly (logic_lab, mindmap_speaking, word_power)
+10. **Easy mode** will SIMPLIFY Advanced content, not replace it with different topic
+
+### What You Must Do:
+1. **Read syllabus and blueprint** for the target week FIRST
+2. **Generate all 14 files** for BOTH modes, following Week 19 schema EXACTLY
+3. **Validate all files** using the validation workflow above
+4. **Run asset generation** commands ONLY after validation passes
+5. **Verify assets** using the asset count checks above
+6. **Report completion** with full checklist confirmation
+
+This prompt is the definitive guide. Do not deviate.
+
+---
+
+## VII. DATA STRUCTURE VALIDATION (WEEK 1 FINDINGS - MANDATORY)
+
+### 7.1 CRITICAL STRUCTURAL ERRORS TO AVOID
+
+Based on Week 1 regeneration findings (December 28, 2025), these structural errors caused **app crashes** and **blank screens** despite having correct content. All AI assistants MUST follow these rules when generating week data.
+
+---
+
+### 7.2 MINDMAP STRUCTURE (CRITICAL)
+
+**❌ WRONG (Week 1 had this - caused React error "Objects are not valid as a React child"):**
+```javascript
+export default {
+  centerStems: [
+    { id: 1, text: "My School", audio_url: null },  // ❌ Object with id field
+    { id: 2, text: "My Teacher", audio_url: null }
+  ],
+  branchLabels: {
+    1: [  // ❌ Number key
+      { id: 1, text: "Where is your school?", audio_url: null },  // ❌ Object format
+      { id: 2, text: "How do you go to school?", audio_url: null }
+    ],
+    2: [...]  // ❌ Number key
+  }
+};
+```
+
+**✅ CORRECT (Week 19 pattern - MUST follow exactly):**
+```javascript
+// ADVANCED MODE - WEEK 19
+const mindMapContent = {
+  centerStems: [
+    "When I was young, I ___.",  // ✅ Plain string
+    "My favorite memory was ___."  // ✅ Plain string
+  ],
+  branchLabels: {
+    "When I was young, I ___.": [  // ✅ STRING KEY matching centerStems text exactly
+      "played with my friends",  // ✅ Plain string
+      "lived in a small house",
+      "went to kindergarten"
+    ],
+    "My favorite memory was ___.": [  // ✅ STRING KEY matching centerStems text exactly
+      "my birthday party",
+      "playing in the rain"
+    ]
+  }
+};
+
+export default mindMapContent;
+```
+
+**RULES:**
+1. `centerStems`: Array of PLAIN STRINGS (not objects)
+2. `branchLabels`: Object with STRING KEYS that match centerStems text EXACTLY
+   - Include trailing punctuation (e.g., `"___."``)
+   - Keys are case-sensitive
+   - NO number keys (1, 2, 3)
+3. Each branch: Array of PLAIN STRINGS (not objects with id/text fields)
+4. NO `audio_url` fields in data (script auto-generates)
+
+---
+
+### 7.3 WRITING STATION STRUCTURE (CRITICAL)
+
+**❌ WRONG (Week 1 had this - caused "No content" display):**
+```javascript
+export default {
+  topicPrompts: [  // ❌ Array of prompts
+    {
+      id: 1,
+      prompt_en: "Write about your school day...",
+      prompt_vi: "Viết về ngày học...",
+      min_words: 50
+    },
+    { id: 2, ... },
+    { id: 3, ... }
+  ],
+  grammarPrompts: [  // ❌ Array of prompts
+    {
+      id: 1,
+      prompt_en: "Write 5 sentences using 'I am...'",
+      grammar_focus: "Subject Pronouns & Verb to be",
+      example: "I am a student. I am happy."
+    },
+    { id: 2, ... }
+  ]
+};
+```
+
+**✅ CORRECT (Week 19 pattern - MUST follow exactly):**
+```javascript
+export default {
+  title: "My Childhood Memory",  // ✅ Single object structure
+  min_words: 40,
+  model_sentence: "When I was five years old, I lived in a small house. There was a big garden...",
+  instruction_en: "Write about a happy memory from when you were younger.",
+  instruction_vi: "Viết về một kỷ niệm vui từ khi bạn còn nhỏ.",
+  prompt_en: "Where were you? Who was with you? What was special about that time?",
+  prompt_vi: "Bạn ở đâu? Ai ở cùng bạn? Điều gì đặc biệt về thời gian đó?",
+  keywords: ["was", "were", "memory", "happy", "when I was"]
+};
+```
+
+**RULES:**
+1. Single object (NOT arrays `topicPrompts[]` or `grammarPrompts[]`)
+2. Required fields:
+   - `title` - Writing activity title
+   - `min_words` - Word count requirement
+   - `model_sentence` - Example paragraph
+   - `instruction_en/vi` - Task instructions
+   - `prompt_en/vi` - Guiding questions
+   - `keywords` - Array of target grammar/vocab
+3. NO `id` field
+4. NO separate grammar prompts
+
+---
+
+### 7.4 VIDEO GENERATION (CRITICAL)
+
+**❌ WRONG (Week 1 had this - all videos were deadlinks):**
+```javascript
+// daily_watch.js with HARDCODED videoIds
+export default {
+  videos: [
+    {
+      id: 1,
+      title: "Subject Pronouns Song - I, You, He, She, We, They",
+      videoId: "5bLp0mYeYBE",  // ❌ Hardcoded ID from AI storage (doesn't exist on YouTube)
+      duration: "3:42",
+      thumb: "https://img.youtube.com/vi/5bLp0mYeYBE/mqdefault.jpg"
+    },
+    // ... all 5 videos with fake IDs
+  ]
+};
+```
+
+**NO `video_queries.json` file** = videos never validated
+
+**✅ CORRECT (Week 19 pattern - MUST follow process):**
+
+**Step 1: Create `video_queries.json` FIRST:**
+```json
+{
+  "masterQuery": "past simple was were childhood memories for kids ESL",
+  "grammar": "past simple was were verb to be past tense",
+  "videos": [
+    {
+      "id": 1,
+      "query": "past simple was were song for kids",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 2,
+      "query": "childhood memories for kids educational",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 3,
+      "query": "old toys games from the past for kids",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 4,
+      "query": "history how things changed for kids",
+      "purpose": "SCIENCE"
+    },
+    {
+      "id": 5,
+      "query": "what was life like in the past for kids",
+      "purpose": "SCIENCE"
+    }
+  ]
+}
+```
+
+**Step 2: Run `update_videos.js` to search YouTube:**
+```bash
+YOUTUBE_API_KEY="your_key" node tools/update_videos.js 19 --reset
+```
+
+**Result: Real validated YouTube IDs:**
+```javascript
+export default {
+  videos: [
+    {
+      id: 1,
+      title: "Pronouns / I ,you ,we ,they ,he ,she ,it / Subject Pronouns",
+      videoId: "iSybXF9qou0",  // ✅ Real YouTube ID (validated)
+      duration: "03:35",
+      sim_duration: 215,
+      thumb: "https://img.youtube.com/vi/iSybXF9qou0/mqdefault.jpg",
+      query: "subject pronouns song I you he she we they for kids",
+      purpose: "GRAMMAR"
+    }
+  ]
+};
+```
+
+**RULES:**
+1. **NEVER hardcode videoIds** - always use video_queries.json + update_videos.js
+2. **ALWAYS create video_queries.json** with 5 search queries
+3. **Query types:**
+   - 1-2 GRAMMAR: Match week's grammar focus with keywords
+   - 1-2 TOPIC: Match week's theme
+   - 1-2 SCIENCE/CLIL: Match week's science/global theme
+4. **Purpose labels:** Must be one of: `GRAMMAR`, `TOPIC`, `SCIENCE`
+5. **Validation:** Script checks video exists, filters out music/lyrics/non-English
+6. **Easy mode:** Same videos as Advanced (script auto-syncs)
+
+---
+
+### 7.5 IMAGE ASSETS (VALIDATION GAPS)
+
+**Issue:** Week 1 reported "15 images to generate" but only created 13.
+
+**Missing files:**
+- `read_cover_w01.jpg` (story cover, 16:9)
+- `name.jpg` (vocab word image, 1:1)
+
+**Root Cause:** Smart check counted **expected** images, not **actual** generated images.
+
+**Required images per week (15 total):**
+| Type | Count | Naming Pattern | Aspect Ratio |
+|------|-------|----------------|-------------|
+| Read cover | 1 | `read_cover_wXX.jpg` | 16:9 |
+| Explore cover | 1 | `explore_cover_wXX.jpg` | 16:9 |
+| Vocab | 10 | `[word].jpg` | 1:1 |
+| Word Power | 3 | `wordpower_[word].jpg` | 1:1 |
+
+**VALIDATION FIX:**
+After running `batch_manager.js`, verify actual file count:
+```bash
+ls -1 public/images/weekXX/*.{jpg,png,webp} | wc -l  # Must be 15
+ls -1 public/images/weekXX_easy/*.{jpg,png,webp} | wc -l  # Must be 15
+```
+If count ≠ 15, report error and regenerate missing images.
+
+---
+
+### 7.6 EASY MODE INHERITANCE (CRITICAL)
+
+**❌ WRONG (Week 1 Easy mode had same structural errors as Advanced):**
+- Easy mindmap: Used number keys (same error as Advanced)
+- Easy writing: Used array structure (same error as Advanced)
+
+**✅ CORRECT:**
+Easy mode MUST inherit STRUCTURE from Advanced, then simplify CONTENT:
+
+**Structure inheritance:**
+- Mindmap: String keys ← Advanced
+- Writing: Single object ← Advanced
+- Videos: Same 5 videos ← Advanced
+- Logic Lab: 5 puzzles ← Advanced (same count)
+- All files: Same schema ← Advanced
+
+**Content morphing:**
+- Sentences: Shorter (6-8 vs 8-12)
+- Vocabulary: Simpler synonyms
+- Grammar: Simple/compound only (no complex)
+
+**Example:**
+```
+Advanced mindmap stem: "When I was young, I played with my friends every day after school."
+Easy mindmap branch: "When I was young, I played with friends." (same structure, simpler text)
+
+Advanced writing prompt: "Write about a happy memory from when you were younger. Describe where you were, who was with you, what you did, and why it was special."
+Easy writing prompt: "Write about a happy memory. Where were you? Who was with you?" (same structure, shorter text)
+```
+
+---
+
+### 7.7 LOGIC LAB - CORRECT STRUCTURE (VERIFIED)
+
+**✅ Week 1 Logic Lab was CORRECT** - no changes needed.
+
+**Required structure (30-50 words context per puzzle):**
+```javascript
+{
+  id: 1,
+  context_en: "Alex's classroom has 20 desks arranged in rows. Each row has 4 desks. Alex sits in the third row from the front. In the morning, 3 students are absent, so some desks are empty.",
+  context_vi: "Lớp học của Alex có 20 cái bàn xếp thành hàng...",
+  question_en: "How many rows of desks are there in Alex's classroom?",
+  question_vi: "Có bao nhiêu hàng bàn trong lớp học của Alex?",
+  answer: ["5", "5 rows", "five", "five rows"]
+}
+```
+
+**Blueprint requirement met:**
+- ✅ Character names (Alex)
+- ✅ Situation (classroom, desks, absent students)
+- ✅ Rich narrative (30-50 words)
+- ✅ NOT bare math ("5 × 4 = ?")
+
+---
+
+### 7.8 PRE-GENERATION VALIDATION (MANDATORY)
+
+Before running asset generation, run these checks:
+
+**Check 1: File count**
+```bash
+ls src/data/weeks/week_XX/*.js | wc -l          # Must be 14
+ls src/data/weeks_easy/week_XX/*.js | wc -l     # Must be 14
+```
+
+**Check 2: Mindmap structure**
+```bash
+# Check for number keys (WRONG)
+grep -E '^\s*[0-9]+:' src/data/weeks/week_XX/mindmap.js
+# Output should be EMPTY. If not, mindmap has number keys - FIX IT!
+
+# Check for string keys (CORRECT)
+grep -E '^\s*".*":' src/data/weeks/week_XX/mindmap.js
+# Output should show multiple matches (6+ lines)
+```
+
+**Check 3: Writing structure**
+```bash
+# Check for array format (WRONG)
+grep 'topicPrompts\|grammarPrompts' src/data/weeks/week_XX/writing.js
+# Output should be EMPTY. If not, writing has array structure - FIX IT!
+
+# Check for single object (CORRECT)
+grep 'title:' src/data/weeks/week_XX/writing.js
+grep 'model_sentence:' src/data/weeks/week_XX/writing.js
+# Both should have output
+```
+
+**Check 4: Video queries exist**
+```bash
+ls src/data/weeks/week_XX/video_queries.json
+# File must exist BEFORE running update_videos.js
+```
+
+**Check 5: Asset counts AFTER generation**
+```bash
+# Audio: Variable (typically 120-130)
+ls -1 public/audio/weekXX/*.mp3 | wc -l
+ls -1 public/audio/weekXX_easy/*.mp3 | wc -l
+
+# Images: EXACTLY 15
+ls -1 public/images/weekXX/*.{jpg,png,webp} | wc -l     # Must be 15
+ls -1 public/images/weekXX_easy/*.{jpg,png,webp} | wc -l  # Must be 15
+
+# Videos: EXACTLY 5
+grep -c '"id":' src/data/weeks/week_XX/daily_watch.js  # Must be 5
+```
+
+---
+
+### 7.9 TOOL COMPATIBILITY ISSUES
+
+**Week Folder Naming Inconsistency:**
+- Data uses: `week_01`, `week_02`, ... (zero-padded)
+- Tools expect: `week_1`, `week_2`, ... (no padding)
+
+**Workaround:**
+```bash
+# Create temp folder for tools
+mkdir -p src/data/weeks/week_1
+cp src/data/weeks/week_01/video_queries.json src/data/weeks/week_1/
+
+# Run tool
+YOUTUBE_API_KEY="key" node tools/update_videos.js 1 --reset
+
+# Copy back
+cp src/data/weeks/week_1/daily_watch.js src/data/weeks/week_01/
+cp src/data/weeks/week_1/daily_watch.js src/data/weeks_easy/week_01/
+rm -rf src/data/weeks/week_1
+```
+
+**Long-term fix:** Update all tools to handle both formats (`week_1` and `week_01`).
+
+---
+
+### 7.10 AUTOMATED FIX SCRIPTS (TO BE CREATED)
+
+Create these tools to prevent future errors:
+
+**1. `tools/validate_week_structure.js`**
+```bash
+node tools/validate_week_structure.js 1
+# Output:
+# ✅ File count: 14/14 (Advanced + Easy)
+# ✅ Mindmap: String keys
+# ✅ Writing: Single object
+# ✅ video_queries.json exists
+# ✅ Bold words: 10/10 (read.js + explore.js)
+# ✅ Sentence count: 8-12 (Advanced), 6-8 (Easy)
+# ⚠️  Images: 13/15 (missing read_cover_w01.jpg, name.jpg)
+```
+
+**2. `tools/fix_mindmap_keys.js`**
+```bash
+node tools/fix_mindmap_keys.js 1
+# Converts number keys to string keys automatically
+```
+
+**3. `tools/fix_writing_structure.js`**
+```bash
+node tools/fix_writing_structure.js 1
+# Converts array structure to single object
+```
+
+**4. `tools/audit_asset_counts.js`**
+```bash
+node tools/audit_asset_counts.js 1
+# Reports actual vs expected asset counts after generation
+```
+
+---
+
+### 7.11 SUMMARY: LESSONS FROM WEEK 1
+
+**Content was correct:**
+- ✅ Grammar focus: Subject Pronouns & Verb to be
+- ✅ Vocabulary: 10 school-related words
+- ✅ Science theme: Scientist tools
+- ✅ Logic Lab: Story-based math problems
+
+**Structure was WRONG:**
+- ❌ Mindmap: Number keys instead of string keys
+- ❌ Writing: Arrays instead of single object
+- ❌ Videos: Hardcoded IDs without validation
+- ❌ Images: Missing 2 files
+
+**Key Learning:**
+Master Prompt V23 previously focused on **content generation** (grammar, vocab, topics) but lacked **structural validation**. This section (VII) now provides explicit structure requirements with code examples to prevent future errors.
+
+**CRITICAL RULE:**
+When generating new weeks, ALWAYS follow Week 19 structure EXACTLY. Content can be different, but STRUCTURE must be identical.
+
+---
+
+
+
+### 7.12 GRAMMAR STRUCTURE (CRITICAL - WEEK 1 ERROR)
+
+**Problem Found in Week 1:**
+Grammar.js used WRONG structure that broke Grammar Engine component.
+
+**❌ WRONG Structure (Week 1 had this):**
+```javascript
+export default {
+  focus: "Subject Pronouns and Verb to Be",
+  exercises: [
+    {
+      id: 1,
+      type: "mc",
+      question_en: "I _____ happy.",  // ❌ WRONG: question_en
+      question_vi: "Tôi vui vẻ.",     // ❌ WRONG: question_vi
+      options: ["am", "is", "are"],
+      answer: 0,                       // ❌ WRONG: index instead of string
+      // ❌ Missing hint
+    }
+  ]
+}
+```
+
+**✅ CORRECT Structure (Week 19 - MANDATORY):**
+```javascript
+export default {
+  grammar_explanation: {              // ✅ REQUIRED object
+    title_en: "Subject Pronouns and Verb to Be",
+    title_vi: "Đại từ nhân xưng và động từ to be",
+    rules: [
+      {
+        type: "rule",
+        icon: "1️⃣",
+        rule_en: "I use 'am'",
+        rule_vi: "Tôi dùng 'am'",
+        examples: [
+          { text_en: "I am a student", text_vi: "Tôi là học sinh" }
+        ]
+      }
+      // ... more rules
+    ]
+  },
+  exercises: [
+    {
+      id: 1,
+      type: "mc",
+      question: "I _____ happy.",      // ✅ CORRECT: question (not question_en)
+      options: ["am", "is", "are"],
+      answer: "am",                    // ✅ CORRECT: string (not index)
+      hint: "I + am"                   // ✅ CORRECT: hint present
+    },
+    {
+      id: 2,
+      type: "unscramble",
+      question: "Unscramble: are / you / student / a / ?",
+      answer: "Are you a student?",
+      hint: "Start with 'Are'"
+    }
+    // ... 18 more exercises (total 20)
+  ]
+}
+```
+
+**MANDATORY Requirements:**
+1. **grammar_explanation object** - MUST exist with title_en/title_vi/rules array
+2. **exercise.question** - Use `question` NOT `question_en/question_vi`
+3. **exercise.answer** - String value ("am") NOT index (0)
+4. **exercise.hint** - MUST exist for all exercises
+5. **Total exercises** - EXACTLY 20 (mix of mc, fill, unscramble)
+
+**Why This Structure:**
+- GrammarEngine.jsx expects `data.grammar_explanation` object
+- Component renders rules with icons before exercises
+- Answer validation uses string comparison, not index lookup
+- Hint system requires hint field in each exercise
+
+---
+
+### 7.13 LOGIC LAB AUDIO GENERATION (CRITICAL - WEEK 1 ERROR)
+
+**Problem Found in Week 1:**
+Audio only read question without context - meaningless audio ("How many rows of desks are there?" with no story).
+
+**Root Cause:**
+`tools/generate_audio.js` line 257 only passed `question_en` to TTS, ignored `context_en`.
+
+**❌ WRONG Code (Before):**
+```javascript
+// Logic Lab section in generate_audio.js
+if (logic && logic.puzzles) {
+  for (const p of logic.puzzles) {
+    addTask(p.question_en, `logic_${p.id}`, voices.questions);  // ❌ Only question
+  }
+}
+```
+
+**✅ CORRECT Code (After - MANDATORY):**
+```javascript
+// Logic Lab section in generate_audio.js
+if (logic && logic.puzzles) {
+  for (const p of logic.puzzles) {
+    // ✅ Concatenate context + question
+    const fullText = p.context_en 
+      ? `${p.context_en} ${p.question_en}` 
+      : p.question_en;
+    addTask(fullText, `logic_${p.id}`, voices.questions);
+  }
+}
+```
+
+**Data Structure (logic.js):**
+```javascript
+export default {
+  puzzles: [
+    {
+      id: 1,
+      context_en: "There are 5 rows of desks in the classroom. Each row has 4 desks.", // ✅ 30-50 words
+      context_vi: "Có 5 hàng bàn...",
+      question_en: "How many rows of desks are there?",  // ✅ Short question
+      question_vi: "Có bao nhiêu hàng bàn?",
+      answer: "5",
+      unit: "rows"
+    }
+  ]
+}
+```
+
+**Audio Behavior:**
+- User clicks audio button in Logic Lab
+- Audio plays: "[Context story - 50 words] ... [Question]"
+- User hears full problem before answering
+
+**Blueprint Requirement:**
+Logic Lab problems are **story-based math** - audio MUST narrate full story context before asking question.
+
+---
+
+### 7.14 SMARTCHECK FEATURE (REQUIRED - WEEK 1 MISSING)
+
+**Problem Found in Week 1:**
+SmartCheck feature completely broken in BOTH Read and Explore stations.
+
+**SmartCheck Purpose:**
+Progressive disclosure system - students try answering first, then click hint icon if stuck.
+
+**Component Requirements:**
+
+**1. Read Station (SmartCheck for Comprehension):**
+
+**❌ WRONG Structure (Week 1):**
+```javascript
+// read.js
+comprehension_questions: [
+  {
+    id: 1,
+    question_en: "Where does Anna go?",
+    question_vi: "Anna đi đâu?",
+    answer_en: "to school",           // ❌ WRONG: single string
+    answer_vi: "đến trường"           // ❌ WRONG: Vietnamese answer
+    // ❌ Missing: hint_en, hint_vi
+  }
+]
+```
+
+**✅ CORRECT Structure (Week 19 - MANDATORY):**
+```javascript
+// read.js
+comprehension_questions: [
+  {
+    id: 1,
+    question_en: "Where does Anna go?",
+    answer: [                          // ✅ CORRECT: array of acceptable answers
+      "to school",
+      "school",
+      "to the school",
+      "she goes to school"
+    ],
+    hint_en: "Look at the first sentence",  // ✅ REQUIRED
+    hint_vi: "Xem câu đầu tiên"             // ✅ REQUIRED
+  }
+  // ... 2 more questions (total 3)
+]
+```
+
+**2. Explore Station (SmartCheck + Writing Prompt):**
+
+**❌ WRONG Structure (Week 1):**
+```javascript
+// explore.js
+export default {
+  title_en: "Scientists and Their Tools",
+  content_en: "Scientists use many tools...",
+  // ❌ MISSING: check_questions array
+  // ❌ MISSING: question object (writing prompt)
+}
+```
+
+**✅ CORRECT Structure (Week 19 - MANDATORY):**
+```javascript
+// explore.js
+export default {
+  title_en: "Scientists and Their Tools",
+  content_en: "Scientists use many tools...",
+  
+  check_questions: [                  // ✅ REQUIRED: SmartCheck questions
+    {
+      id: 1,
+      question_en: "What do scientists use to see tiny things?",
+      answer: ["microscope", "microscopes", "a microscope"],
+      hint_en: "It makes small things look bigger",
+      hint_vi: "Nó làm cho vật nhỏ trông to hơn"
+    }
+    // ... 2 more questions (total 3)
+  ],
+  
+  question: {                         // ✅ REQUIRED: Writing prompt
+    text_en: "Describe a tool scientists use and explain why it's important.",
+    text_vi: "Mô tả một công cụ mà nhà khoa học sử dụng và giải thích tại sao nó quan trọng.",
+    min_words: 20,                    // ✅ REQUIRED: minimum word count
+    hint_en: "Choose one tool from the text and explain its purpose",
+    hint_vi: "Chọn một công cụ từ bài đọc và giải thích mục đích của nó"
+  }
+}
+```
+
+**UI Behavior:**
+- Read station: 3 comprehension questions below passage → click lightbulb icon → hint appears
+- Explore station: Scroll to bottom → 3 SmartCheck questions + writing prompt with word counter
+
+**Component Files:**
+- `src/modules/ReadingExplore/Read.js` expects `comprehension_questions` with hints
+- `src/modules/Explore/Explore.js` expects `check_questions` + `question` object
+
+---
+
+### 7.15 AUDIO REGENERATION WORKFLOW (CRITICAL)
+
+**Problem Found in Week 1:**
+After fixing Grammar/Logic/SmartCheck data structures, old audio files still existed → script skipped ALL regeneration → audio didn't match new data.
+
+**Root Cause:**
+`generate_audio.js` checks file existence BEFORE reading data:
+```javascript
+if (fs.existsSync(outputPath)) {
+  console.log(`   ⏭️  Skipping ${filename} (exists)`);
+  continue;  // ❌ Skips even if data structure changed
+}
+```
+
+**MANDATORY Workflow When Data Structure Changes:**
+
+**Step 1: Backup Old Audio**
+```bash
+cd /path/to/Engquest3k
+mv public/audio/weekXX public/audio/weekXX_OLD_BACKUP
+mv public/audio/weekXX_easy public/audio/weekXX_easy_OLD_BACKUP
+```
+
+**Step 2: Verify Folders Cleared**
+```bash
+ls public/audio/ | grep weekXX
+# Should show ONLY weekXX_OLD_BACKUP, NOT weekXX
+```
+
+**Step 3: Regenerate Audio**
+```bash
+node tools/generate_audio.js XX XX [GOOGLE_TTS_API_KEY]
+# Script will generate ALL files (no skipping)
+```
+
+**Step 4: Verify New Audio Count**
+```bash
+ls -1 public/audio/weekXX/*.mp3 | wc -l     # Should be ~120-130
+ls -1 public/audio/weekXX_easy/*.mp3 | wc -l  # Should be ~120-130
+```
+
+**Step 5: Test in App**
+```bash
+npm run dev
+# Open http://localhost:5174
+# Test Grammar, Logic Lab, Read, Explore audio buttons
+```
+
+**When to Clear Audio:**
+- Changed grammar.js structure (question_en → question, added grammar_explanation)
+- Changed Logic Lab (added context reading)
+- Changed Read/Explore SmartCheck (added hints)
+- Changed any audio-related data field (definitions, examples, collocations)
+
+**When NOT to Clear Audio:**
+- Only changed non-audio fields (images, video IDs, colors)
+- Only fixed typos in existing audio text
+- Only added new stations (old audio still valid)
+
+**Blueprint Alignment:**
+Audio files MUST match data structure exactly - mismatch breaks station functionality.
+
+---
+
+## END OF MASTER PROMPT V23-FINAL (UPDATED WITH WEEK 1 LEARNINGS)
+
+### 7.16 PYTHON AUDIO GENERATION SCRIPT (CRITICAL BUG FIX)
+
+**Problem Found:**
+Python script `tools/generate_audio.py` had critical bug that caused immediate skip of ALL files when folder exists but is empty.
+
+**Root Cause:**
+Script used `os.path.exists()` to check if audio file exists - but this function returns `True` for BOTH folders AND files:
+```python
+# ❌ WRONG CODE (BEFORE):
+if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+    count_skipped += 1
+    continue
+```
+
+**Behavior:**
+1. Folder `public/audio/week1/` exists (empty)
+2. Script checks: `os.path.exists("/path/to/week1/vocab_student.mp3")` → False (file doesn't exist)
+3. BUT `os.path.exists("/path/to/week1/")` → True (folder exists)
+4. Bug in path checking logic caused script to think files already exist
+5. Script skips ALL 246 files → Reports "complete" immediately → 0 files generated
+
+**✅ CORRECT CODE (FIXED):**
+```python
+# ✅ Use os.path.isfile() - only returns True for actual FILES
+if os.path.isfile(output_path) and os.path.getsize(output_path) > 0:
+    count_skipped += 1
+    continue
+```
+
+**Why This Fix Works:**
+- `os.path.isfile()` returns `True` ONLY if path points to an actual file (not folder)
+- Empty folder no longer triggers skip logic
+- Script correctly generates all files
+
+---
+
+### 7.17 AUDIO GENERATION WORKFLOW (ADMIN PANEL + PYTHON)
+
+**Recommended Workflow (2-Step Process):**
+
+**Step 1: Create JSON Task List (Admin Panel or Node.js)**
+
+Option A - Admin Panel (Recommended for single weeks):
+1. Open app: `npm run dev` → http://localhost:5174
+2. Login as admin
+3. Click "Studio" tab → Select "Audio" mode
+4. Select week number → Click "Generate Tasks JSON"
+5. File saved to: `tools/audio_tasks.json`
+
+Option B - Command Line (Recommended for batch):
+```bash
+node tools/create_audio_tasks_only.js <START_WEEK> <END_WEEK>
+# Example: node tools/create_audio_tasks_only.js 1 1
+# Creates: tools/audio_tasks.json (246 tasks for week 1)
+```
+
+**Step 2: Generate Audio Files (Python Script)**
+
+```bash
+# Set OpenAI API key
+export OPENAI_API_KEY="sk-proj-..."
+
+# Run generation (creates 246 MP3 files)
+python3 tools/generate_audio.py --provider openai --voice nova
+
+# Output:
+# 🚀 BẮT ĐẦU XỬ LÝ 246 FILE AUDIO...
+#    🎙️  [1/246] Generating: read_explore_main.mp3...
+#    🎙️  [2/246] Generating: explore_main.mp3...
+#    ...
+#    ✅ Đã tạo mới: 246
+```
+
+**Voice Options:**
+- `--voice nova` (Female - recommended for vocab/definitions)
+- `--voice alloy` (Male - recommended for reading/logic)
+- `--voice echo` (Deep male - recommended for dictation)
+- `--voice fable` (British male)
+- `--voice onyx` (Deep voice)
+- `--voice shimmer` (Female energetic)
+
+**Script Features:**
+- **Auto-skip:** If file exists with size > 0, skips regeneration
+- **Voice mapping:** Reads voice config from JSON (e.g., Neural2-F → nova, Neural2-D → alloy)
+- **Error handling:** Reports failed files at end
+- **Progress tracking:** Shows current file number (e.g., [123/246])
+
+**Verification:**
+```bash
+# Check file count
+ls -1 public/audio/week1/*.mp3 | wc -l        # Should be ~123
+ls -1 public/audio/week1_easy/*.mp3 | wc -l   # Should be ~123
+
+# Test in app
+npm run dev
+# Click audio buttons in Grammar, Logic Lab, Read, Explore
+```
+
+---
+
+### 7.18 COMMON AUDIO GENERATION ERRORS & FIXES
+
+**Error 1: "BỎ QUA TẤT CẢ - 0 FILES GENERATED"**
+- **Cause:** Script uses old `os.path.exists()` logic
+- **Fix:** Update `tools/generate_audio.py` line 52 to use `os.path.isfile()`
+- **Verification:** Check `wc -l tools/generate_audio.py` should be 100+ lines with fixed code
+
+**Error 2: "LỖI: Thiếu biến môi trường OPENAI_API_KEY"**
+- **Cause:** Environment variable not set
+- **Fix:** `export OPENAI_API_KEY="sk-proj-..."`
+- **Note:** Get key from `API keys.txt` file
+
+**Error 3: "Folder week1/ not found"**
+- **Cause:** Running from wrong directory
+- **Fix:** `cd /path/to/Engquest3k` before running script
+- **Verification:** `pwd` should end with `/Engquest3k`
+
+**Error 4: "JSON file not found: tools/audio_tasks.json"**
+- **Cause:** Skipped Step 1 (create JSON)
+- **Fix:** Run `node tools/create_audio_tasks_only.js 1 1` first
+
+**Error 5: "API rate limit exceeded"**
+- **Cause:** Too many requests to OpenAI API
+- **Fix:** Wait 60 seconds, then resume (script auto-skips completed files)
+
+**Error 6: "Audio doesn't match new data structure"**
+- **Cause:** Data changed but audio not regenerated
+- **Fix:** Delete old audio first:
+  ```bash
+  rm -rf public/audio/week1 public/audio/week1_easy
+  # Then regenerate
+  ```
+
+---
+
+### 7.19 AUDIO GENERATION CHECKLIST (BEFORE MASS PRODUCTION)
+
+Before generating audio for remaining 143 weeks, verify:
+
+**Prerequisites:**
+- [ ] `tools/generate_audio.py` has `os.path.isfile()` fix (not `os.path.exists()`)
+- [ ] OpenAI API key in `API keys.txt` is valid
+- [ ] Tested Week 1 audio generation successfully (246 files)
+- [ ] All Week 1 audio files play correctly in app
+
+**For Each New Week:**
+- [ ] Week data files complete (14 files in both modes)
+- [ ] Grammar has `grammar_explanation` object
+- [ ] Logic Lab has `context_en` field (30-50 words)
+- [ ] Read has `comprehension_questions` with hints
+- [ ] Explore has `check_questions` + `question` object
+- [ ] Run structural validation: `node tools/validate_week_structure.js XX`
+- [ ] Generate JSON: `node tools/create_audio_tasks_only.js XX XX`
+- [ ] Verify JSON: Check file count (~240-250 tasks)
+- [ ] Generate audio: `python3 tools/generate_audio.py --provider openai --voice nova`
+- [ ] Verify audio count: `ls -1 public/audio/weekXX/*.mp3 | wc -l` (~120-130)
+- [ ] Test in app: Click audio buttons in 3-5 stations
+
+**Batch Generation (Recommended for Speed):**
+```bash
+# Generate JSON for weeks 1-10
+for i in {1..10}; do
+  node tools/create_audio_tasks_only.js $i $i
+  python3 tools/generate_audio.py --provider openai --voice nova
+  echo "✅ Week $i complete"
+done
+```
+
+**Cost Estimation (Updated December 2025):**
+- **Images (Gemini Imagen 3):** $0.02/image (50% cheaper than Imagen 4)
+  - Advanced mode: 15 images/week × $0.02 = $0.30
+  - Easy mode: ~5 images/week (reuses 10 vocab from Advanced) = $0.10
+  - Total per week: ~$0.40/week
+  - **Week 1-20:** ~$8 for images
+- **Audio (Google TTS Neural2):** $16/1M characters, FREE tier 1M chars/month
+  - Average week: ~50,000 characters (both modes)
+  - Total Week 1-20: ~1M characters = **$0** (within free tier)
+- **Videos (YouTube Data API v3):** FREE tier 10K queries/day
+  - 5 videos/week × 20 weeks = 100 queries = **$0** (within free tier)
+- **TOTAL Week 1-20:** ~$8 (images only)
+- **TOTAL 144 weeks:** ~$58 (images only, audio/video free)
+
+---
+
+## END OF MASTER PROMPT V23-FINAL (UPDATED WITH WEEK 1 LEARNINGS + AUDIO FIX)
+
+### 7.20 SMARTCHECK FEATURE - COMPLETE COVERAGE (CRITICAL)
+
+**Problem Found:**
+Week 1 had SmartCheck PARTIALLY implemented - worked in Read/Explore but MISSING in Logic Lab and Ask AI.
+
+**SmartCheck Purpose:**
+Progressive disclosure learning system - students attempt answer first, then request hint if needed. Builds problem-solving confidence and reduces guessing.
+
+**Stations Requiring SmartCheck:**
+
+**1. Read Station** (`comprehension_questions`) - ✅ Week 1 Fixed
+```javascript
+comprehension_questions: [
+  {
+    id: 1,
+    question_en: "Where does Anna go?",
+    answer: ["to school", "school", "to the school"],  // ✅ Array of acceptable answers
+    hint_en: "Look at the first sentence",             // ✅ REQUIRED
+    hint_vi: "Xem câu đầu tiên"                        // ✅ REQUIRED
+  }
+]
+```
+
+**2. Explore Station** (`check_questions`) - ✅ Week 1 Fixed
+```javascript
+check_questions: [
+  {
+    id: 1,
+    question_en: "What do scientists use?",
+    answer: ["microscope", "microscopes", "a microscope"],
+    hint_en: "It makes small things bigger",           // ✅ REQUIRED
+    hint_vi: "Nó làm vật nhỏ to hơn"                   // ✅ REQUIRED
+  }
+]
+```
+
+**3. Logic Lab Station** (`puzzles`) - ❌ Week 1 Missing → ✅ Fixed
+
+**Problem:** All 5 puzzles had NO hints - students got stuck with no help.
+
+**❌ WRONG Structure (Week 1 before fix):**
+```javascript
+puzzles: [
+  {
+    id: 1,
+    context_en: "Alex's classroom has 20 desks arranged in rows...",
+    question_en: "How many rows of desks are there?",
+    answer: ["5", "5 rows", "five", "five rows"]
+    // ❌ NO hint_en
+    // ❌ NO hint_vi
+  }
+]
+```
+
+**✅ CORRECT Structure (Week 19 + Week 1 fixed):**
+```javascript
+puzzles: [
+  {
+    id: 1,
+    context_en: "Alex's classroom has 20 desks arranged in rows. Each row has 4 desks...",
+    question_en: "How many rows of desks are there?",
+    answer: ["5", "5 rows", "five", "five rows"],
+    hint_en: "20 desks ÷ 4 desks per row",             // ✅ REQUIRED - Math hint
+    hint_vi: "20 bàn ÷ 4 bàn mỗi hàng"                 // ✅ REQUIRED
+  }
+]
+```
+
+**Hint Guidelines for Logic Lab:**
+- Show math operation (e.g., "20 ÷ 4", "3 + 3")
+- OR show formula breakdown (e.g., "Backpack (2kg) + Books (3kg)")
+- Keep hints SHORT (under 10 words)
+- Don't give direct answer, give method
+
+**4. Ask AI Station** (`prompts`) - ❌ Week 1 Wrong Field Names → ✅ Fixed
+
+**Problem:** Used `acceptable_answers` instead of `answer`, and completely missing `hint` field.
+
+**❌ WRONG Structure (Week 1 before fix):**
+```javascript
+prompts: [
+  {
+    id: 1,
+    context_en: "Alex is a young student who loves learning...",
+    question_en: "How do you think children go to school?",
+    acceptable_answers: ["By bus", "By boat", "By walking"]  // ❌ WRONG field name
+    // ❌ NO hint field
+    // ❌ NO audio_url field
+  }
+]
+```
+
+**✅ CORRECT Structure (Week 19 + Week 1 fixed):**
+```javascript
+prompts: [
+  {
+    id: 1,
+    context_en: "You are looking at your parents' wedding photo...",
+    audio_url: "/audio/week1/ask_ai_1.mp3",           // ✅ REQUIRED
+    answer: ["How old were you?", "What was the weather like?"],  // ✅ Correct field name
+    hint: "How old... / What was..."                   // ✅ REQUIRED - Question patterns
+  }
+]
+```
+
+**Hint Guidelines for Ask AI:**
+- Show question PATTERNS (e.g., "How... / What... / Why...")
+- NOT specific answers - guide question formation
+- Help students phrase critical thinking questions
+- Examples: "How do they... / By bus / By boat" OR "What tool... / Which tool..."
+
+---
+
+### 7.21 SMARTCHECK VALIDATION CHECKLIST
+
+**Before generating any new week, verify ALL 4 stations have hints:**
+
+**Structural Validation:**
+```bash
+# Check Read station
+grep -A5 'comprehension_questions' src/data/weeks/week_XX/read.js | grep 'hint_en'
+# Should return 3 matches (one per question)
+
+# Check Explore station
+grep -A5 'check_questions' src/data/weeks/week_XX/explore.js | grep 'hint_en'
+# Should return 3 matches
+
+# Check Logic Lab
+grep -A5 'puzzles' src/data/weeks/week_XX/logic.js | grep 'hint_en'
+# Should return 5 matches (one per puzzle)
+
+# Check Ask AI
+grep 'hint:' src/data/weeks/week_XX/ask_ai.js
+# Should return 5 matches
+grep 'answer:' src/data/weeks/week_XX/ask_ai.js
+# Should return 5 matches (NOT 'acceptable_answers')
+```
+
+**Functional Validation (In-App Test):**
+1. **Read**: Click comprehension question → Enter wrong answer → Click lightbulb icon → Hint appears
+2. **Explore**: Scroll to bottom → Click SmartCheck question → Wrong answer → Click lightbulb → Hint appears
+3. **Logic Lab**: Click puzzle → Wrong answer → Click "Show Hint" button → Hint displays below input
+4. **Ask AI**: Click situation → Type response → (Hint shows question patterns to guide student)
+
+**Component Files That Use SmartCheck:**
+- `/src/modules/read/ReadingExplore.jsx` - Lines 198 (hint display)
+- `/src/modules/explore/Explore.jsx` - Lines 142 (hint display)
+- `/src/modules/logic/LogicLab.jsx` - Lines 139 (hint display)
+- `/src/modules/ai_tutor/AITutor.jsx` - Lines 5 (uses analyzeAnswer)
+- `/src/utils/smartCheck.js` - Core validation logic
+
+**Why SmartCheck Matters:**
+- Pedagogical: Promotes self-correction and critical thinking
+- UX: Reduces frustration - students never "stuck" permanently
+- Engagement: Interactive feedback loop (try → fail → hint → try again → success)
+- Scaffolding: Hints bridge gap between "I don't know" and "I got it"
+
+---
+
+### 7.22 COMMON SMARTCHECK ERRORS & PREVENTION
+
+**Error 1: Missing Hints in Logic Lab**
+- **Symptom:** "Show Hint" button appears but shows nothing
+- **Root Cause:** Puzzles have no `hint_en`/`hint_vi` fields
+- **Prevention:** Copy Week 19 Logic structure EXACTLY, ensure all 5 puzzles have hints
+- **Fix:** Add hint showing math operation or formula breakdown
+
+**Error 2: Wrong Field Names in Ask AI**
+- **Symptom:** Answer validation not working
+- **Root Cause:** Using `acceptable_answers` instead of `answer`
+- **Prevention:** Use Week 19 Ask AI as template (has `answer` + `hint` + `audio_url`)
+- **Fix:** Rename field + add `hint` with question patterns
+
+**Error 3: Hints Too Specific**
+- **Symptom:** Hint gives away the answer directly
+- **Root Cause:** Hint says "The answer is..." instead of guiding thinking
+- **Prevention:** 
+  - Logic Lab: Show operation ("20 ÷ 4") not answer ("5")
+  - Read/Explore: Show location ("Look at paragraph 2") not answer
+  - Ask AI: Show pattern ("How do...") not full question
+- **Fix:** Rewrite hints as guidance not solutions
+
+**Error 4: Missing SmartCheck in Easy Mode**
+- **Symptom:** Easy mode has questions but no hints
+- **Root Cause:** Forgot to add hints when creating Easy mode files
+- **Prevention:** When copying Advanced → Easy, keep SAME hint structure (just simplify content)
+- **Fix:** Copy hint structure from Advanced mode
+
+**Error 5: Hint Icon Not Clickable**
+- **Symptom:** Lightbulb icon shows but clicking does nothing
+- **Root Cause:** Component expects `hint_en`/`hint_vi` but field is `hint` or missing
+- **Prevention:** 
+  - Read/Explore: Use `hint_en` + `hint_vi`
+  - Logic Lab: Use `hint_en` + `hint_vi`
+  - Ask AI: Use `hint` (single field, not _en/_vi)
+- **Fix:** Check component code to see which field name expected
+
+---
+
+### 7.23 SMARTCHECK SUMMARY (WEEK 1 LEARNINGS)
+
+**Stations Audited:** 4 out of 15 (Read, Explore, Logic Lab, Ask AI)
+
+**Errors Found:**
+- Error 11: Logic Lab missing hints (0/5 puzzles had hints)
+- Error 12: Ask AI wrong field names + missing hints
+
+**Fixes Applied:**
+- Logic Lab: Added `hint_en` + `hint_vi` to all 5 puzzles
+- Ask AI: Renamed `acceptable_answers` → `answer`, added `hint` field to all 5 prompts
+- Easy mode: Applied same fixes
+
+**Impact Prevention:**
+- 143 remaining weeks now have SmartCheck validation in checklist
+- Section 7.21 provides grep commands to verify before asset generation
+- Section 7.22 prevents 5 common SmartCheck mistakes
+
+**Blueprint Alignment:**
+SmartCheck is core pedagogical feature - ALL stations with student-answered questions MUST have hints. Without hints, feature is broken and students lose learning support.
+
+---
+
+## END OF MASTER PROMPT V23-FINAL (UPDATED: WEEK 1 + AUDIO FIX + SMARTCHECK COMPLETE)
+
+### 7.24 CONTENT SIMPLIFICATION FOR BEGINNER ESL (A0+/A1)
+
+**Issue Discovered:**
+Week 1 Ask AI and Logic Lab content was structurally correct (proper keys, hints, SmartCheck) BUT pedagogically wrong for absolute beginners. Contexts used complex sentences, advanced vocabulary, and assumed prior language knowledge students don't have yet.
+
+**Root Cause:**
+- Misunderstood target audience reading level
+- Forgot to check SYLLABUS for Week 1 scope: "I am", "This is", numbers 1-10, basic nouns
+- Applied Week 19 STRUCTURE but not Week 19 PEDAGOGY (scaffolded, age-appropriate)
+- Content creators must consult syllabus BEFORE writing to match student level
+
+**Syllabus Context - Week 1: "Hello, World!" (Identity)**
+```
+- Topic: Introduction & Superheroes (Creating a "Hero Identity")
+- Key Learning Outcome: Say and write sentences introducing name/age naturally
+- Grammar Focus (Implicit): Pattern "I am..." (Identity)
+- Vocabulary Focus: name, age, student, hero, power, boy, girl, numbers 1-10
+- Target Level: A0+ (absolute beginners, 6-8 years old)
+```
+
+**Ask AI Simplification Rules for Early Weeks:**
+
+1. **Sentence Length:** 
+   - Advanced mode: MAX 10 words per sentence
+   - Easy mode: MAX 5 words per sentence
+   - Example:
+     - ❌ "You are looking at a picture of a school in another country where children travel in many different ways"
+     - ✅ "You see a photo. Children go to school. Some walk. Some ride bikes."
+
+2. **Explicit Scaffolding:**
+   - MUST end with "You want to know [QUESTION WORD]. How do you ask?"
+   - Examples:
+     - "You see children. You want to know HOW they go. How do you ask?"
+     - "You see a tool. You want to know WHAT it is. How do you ask?"
+   - This teaches question formation explicitly (Shadow Asking per Blueprint Phase 1)
+
+3. **Vocabulary Constraints:**
+   - Use ONLY words from syllabus weeks 1-current
+   - Avoid academic vocabulary (e.g., "microscope" → "tool that makes things BIG")
+   - Check: Can a 6-year-old with 50 English words understand this?
+
+4. **Context Setup:**
+   - Show → Tell → Ask pattern
+   - "You see X" (visual anchor)
+   - "You want to know Y" (explicit goal)
+   - "How do you ask?" (explicit instruction)
+
+**Logic Lab Simplification Rules for Early Weeks:**
+
+1. **Number Constraints:**
+   - Week 1-4: Numbers 1-10 ONLY
+   - Operations: Simple addition (2+1), simple multiplication (2×3)
+   - NO operations requiring carrying/borrowing
+   - Example:
+     - ❌ "10 students × 2 pencils = 20" (answer beyond 10)
+     - ✅ "3 students × 2 pencils = 6" (stays within 1-10 range)
+
+2. **Context Brevity:**
+   - Advanced mode: 15-20 words total
+   - Easy mode: 10-12 words total
+   - Remove all unnecessary adjectives/clauses
+   - Example:
+     - ❌ "Ms. Johnson gives each student 2 pencils and 1 eraser. There are 10 students in the class today."
+     - ✅ "Teacher gives 2 pencils. You are 3 students. How many pencils?"
+
+3. **Single-Step Problems:**
+   - Early weeks should require ONE operation only
+   - NO multi-step reasoning until Week 10+
+   - Week 1-5 examples:
+     - Count pattern (star, moon, star, moon → next?)
+     - Simple addition (2 books + 1 book = ?)
+     - Simple multiplication (3 students × 2 pencils = ?)
+
+4. **Visual Clarity:**
+   - Use emojis when possible (⭐🌙 instead of "star and moon")
+   - Concrete objects only (pencils, books, backpack)
+   - NO abstract concepts until Week 20+
+
+**Comparison Table - Before/After:**
+
+| Aspect | ❌ BEFORE (Too Complex) | ✅ AFTER (A0+ Appropriate) |
+|--------|------------------------|---------------------------|
+| **Ask AI Context** | "You are looking at a picture of a school in another country. The school building looks very different from your school. Some children are walking, some are on bicycles, and some are in boats on a river." (34 words) | "You see a photo. Children go to school. Some walk. Some ride bikes. You want to know HOW they go to school. How do you ask?" (25 words, shorter sentences) |
+| **Ask AI Answer** | ["How do children go to school there?", "What time does school start?", "Is the school big or small?"] | ["How do they go to school?", "How do you go to school?"] (Simpler structure) |
+| **Logic Lab Problem** | "Ms. Johnson gives each student 2 pencils and 1 eraser. There are 10 students in the class today. How many pencils does Ms. Johnson need in total?" (25 words, answer=20) | "Teacher gives 2 pencils to each student. There are 5 students. How many pencils?" (14 words, answer=10) |
+| **Logic Lab Answer** | Answer requires calculation beyond syllabus number range (20) | Answer stays within Week 1 range (10) |
+
+**Blueprint Compliance Check:**
+
+**Ask AI Phase 1 (Weeks 1-18): "Shadow Asking"**
+```
+Goal: Luyện ngữ điệu câu hỏi (Mimicry)
+Method: "You want to know... How do you ask?"
+Example: Hỏi người trông thú sư tử ăn gì: "What do lions eat?"
+→ Week 1 MUST use this exact pattern
+```
+
+**Logic Lab Phase 1 (Weeks 1-54): "Vocab & Patterns (Math Bridge)"**
+```
+Content: Nối hình với từ, Quy luật màu sắc, Đọc phép tính
+Văn phong: Theo đúng văn phong bản xứ trong SGK (textbook word problems)
+CẤM: Tính toán đố mẹo phức tạp hoặc toán lời văn dài dòng ở Easy Mode
+→ Week 1 must use 1-10 numbers, single operations, <15 words
+```
+
+**Implementation Checklist for Future Weeks:**
+
+Before writing ANY content for Weeks 1-20:
+- [ ] Read syllabus entry for that week (vocabulary scope, grammar focus, target structures)
+- [ ] Check previous week content to ensure progression (don't jump vocabulary tiers)
+- [ ] Sentence length test: Read aloud - can a 6-year-old follow?
+- [ ] Vocabulary test: Are all words within syllabus weeks 1-current?
+- [ ] Number test (Logic Lab): Do answers stay within syllabus number range?
+- [ ] Scaffolding test (Ask AI): Does context end with "How do you ask?" pattern?
+
+**Error Prevention Strategy:**
+
+When creating Week N content:
+1. Open `1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt`
+2. Find Week N entry
+3. Extract: Vocabulary Focus, Grammar Focus (Implicit), Key Learning Outcome
+4. Write content using ONLY those constraints
+5. Compare to Week N-1 (is this a natural progression?)
+6. Compare to Week 19 (same scaffolding level for similar pedagogical goals?)
+
+**Audio Regeneration Impact:**
+
+After content simplification:
+- Ask AI: 10 files need regeneration (5 Advanced + 5 Easy)
+  - `ask_ai_1.mp3` through `ask_ai_5.mp3` (both modes)
+- Logic Lab: 10 files need regeneration (5 Advanced + 5 Easy)
+  - `logic_1.mp3` through `logic_5.mp3` (both modes)
+- **Total: 20 audio files**
+
+**Command to regenerate:**
+```bash
+node tools/create_audio_tasks_only.js 1 1
+python3 tools/generate_audio.py --provider openai --voice nova
+```
+
+
+### 7.25 ADVANCED VS EASY MODE DIFFERENTIATION
+
+**Issue Discovered:**
+Content in Advanced and Easy modes was too similar - just shortened text, not true pedagogical differentiation. Additionally, symbols (⭐🌙) were used in Logic Lab instead of text/audio, violating speaking/listening practice requirements.
+
+**Root Cause:**
+- Easy mode created by copy-paste + shortening, not rethinking content
+- Forgot that Easy mode serves DIFFERENT learning needs (slower pace, more scaffolding)
+- Used visual symbols instead of audio/text (prevents speaking/listening practice)
+
+**Critical Requirements:**
+
+1. **NO SYMBOLS/EMOJIS in Logic Lab Content**
+   - ❌ WRONG: "Look: ⭐🌙⭐🌙⭐___. What next?"
+   - ✅ RIGHT: "Teacher says: star, moon, star, moon, star. What comes next?"
+   - **Reason**: Students must HEAR pattern via audio, SPEAK answer aloud
+   - Symbols bypass listening/speaking practice (students just look and click)
+
+2. **Easy Mode ≠ Shortened Advanced Mode**
+   - Easy mode serves students who need:
+     - Different content (not just shorter)
+     - More scaffolding (not less)
+     - Simpler vocabulary (not truncated sentences)
+   - Example:
+     - Advanced Logic Puzzle 2: "star, moon" pattern
+     - Easy Logic Puzzle 2: "apple, banana" pattern (DIFFERENT items, simpler)
+
+3. **Answer Variations Must Be Complete**
+   - ❌ WRONG (Easy mode): answer: ["How do they go?", "How?"]
+   - ✅ RIGHT (Easy mode): answer: ["How do they go to school?", "How?"]
+   - **Reason**: First answer MUST be complete sentence (teaching correct structure)
+   - Additional shortened versions OK as alternates
+
+**Differentiation Strategy:**
+
+**Ask AI Advanced vs Easy:**
+| Aspect | Advanced Mode | Easy Mode |
+|--------|--------------|-----------|
+| **Context length** | 15-25 words | 10-15 words |
+| **Sentence structure** | 10 words/sentence | 5 words/sentence |
+| **Answer variations** | 3-4 variations | 1-2 variations (first MUST be complete) |
+| **Vocabulary** | Full syllabus week | Core 50% of syllabus week |
+| **Scaffold detail** | "You want to know HOW they go" | "You want to know HOW" |
+
+**Example - Ask AI Prompt 1:**
+```javascript
+// Advanced:
+context_en: "You see a photo. Children go to school. Some walk. Some ride bikes. You want to know HOW they go to school. How do you ask?"
+answer: ["How do they go to school?", "How do children go to school?", "How do you go to school?"]
+
+// Easy:
+context_en: "You see a photo. Children go to school. You want to know HOW. How do you ask?"
+answer: ["How do they go to school?", "How?"]
+// Note: First answer complete, second simplified
+```
+
+**Logic Lab Advanced vs Easy:**
+| Aspect | Advanced Mode | Easy Mode |
+|--------|--------------|-----------|
+| **Numbers** | 1-10 (Week 1-4) | 1-5 preferred (Week 1) |
+| **Operations** | 5×2=10 | 3×2=6 |
+| **Pattern items** | Star/moon (celestial) | Apple/banana (familiar food) |
+| **Context length** | 14-20 words | 10-12 words |
+| **Answer precision** | Multiple units (10 pencils, ten) | Simpler (6, six) |
+
+**Example - Logic Lab Puzzle 2:**
+```javascript
+// Advanced:
+question_en: "Teacher says: star, moon, star, moon, star. What comes next?"
+answer: ["moon", "the moon", "a moon"]
+// Pattern: Celestial objects (more abstract)
+
+// Easy:
+question_en: "Teacher says: apple, banana, apple, banana. What is next?"
+answer: ["apple", "an apple"]
+// Pattern: Familiar foods (concrete, daily life)
+```
+
+**Symbol/Emoji Prohibition:**
+
+**Logic Lab Rules:**
+- NEVER use ⭐🌙🔺⬜ or any visual symbols in question text
+- ALWAYS write out words: "star, moon, triangle, square"
+- ALWAYS provide audio of teacher reading pattern aloud
+- **Reason**: Forces listening practice, enables speaking practice
+
+**Exception - Images Only:**
+- Vocab images CAN use symbols/illustrations (learning aid)
+- Word Power images CAN show visual concepts
+- BUT question/answer TEXT must be words, not symbols
+
+**Validation Checklist:**
+
+Before finalizing ANY content:
+- [ ] **Symbol check**: Grep question_en for emoji/symbols (⭐🌙🔺⬜❤️🎨)
+- [ ] **Pattern check (Easy)**: Does Easy mode use DIFFERENT items than Advanced?
+- [ ] **Answer check (Easy)**: Is first answer a complete sentence?
+- [ ] **Answer variety (Advanced)**: Are there 3+ variations showing different structures?
+- [ ] **Audio check**: Does text make sense when read aloud (no symbols)?
+
+**Implementation Example - Week 1 Fixed:**
+
+**Logic Lab Puzzle 2:**
+| Mode | Question | Answer | Reasoning |
+|------|----------|--------|-----------|
+| Advanced | "Teacher says: star, moon, star, moon, star. What comes next?" | ["moon", "the moon", "a moon"] | Abstract celestial pattern, 3 answer variations |
+| Easy | "Teacher says: apple, banana, apple, banana. What is next?" | ["apple", "an apple"] | Concrete food pattern, 2 answer variations |
+
+**Ask AI Prompt 1:**
+| Mode | Context | Answer | Reasoning |
+|------|---------|--------|-----------|
+| Advanced | "You see a photo. Children go to school. Some walk. Some ride bikes. You want to know HOW they go to school. How do you ask?" | ["How do they go to school?", "How do children go to school?", "How do you go to school?"] | Full scaffold, 3 structural variations (they/children/you) |
+| Easy | "You see a photo. Children go to school. You want to know HOW. How do you ask?" | ["How do they go to school?", "How?"] | Simplified scaffold, complete sentence first + ultra-short alternate |
+
+**Error Prevention Strategy:**
+
+When creating Easy mode:
+1. Start with Advanced mode content
+2. **Change content** (not just shorten):
+   - Logic Lab: Use DIFFERENT pattern items (apple/banana vs star/moon)
+   - Ask AI: Simplify context BUT keep answer complete
+3. **Reduce variations** (not remove scaffolding):
+   - Advanced: 3-4 answer variations
+   - Easy: 1-2 answer variations (first complete)
+4. **Verify audio-readability**:
+   - Read question_en aloud
+   - If you say emoji/symbol name instead of word → WRONG
+   - If text reads naturally → CORRECT
+
+**Audio Regeneration Impact:**
+
+After differentiation fixes:
+- Logic Lab Puzzle 2: 2 files (Advanced + Easy) - different text now
+- Ask AI Prompts 1-5: 10 files (5 Advanced + 5 Easy) - varied answers
+- **Total: 12 audio files need regeneration**
+
+**Command:**
+```bash
+node tools/create_audio_tasks_only.js 1 1
+python3 tools/generate_audio.py --provider openai --voice nova
+```
+
+**Blueprint Compliance:**
+
+**Audio-First Learning (Blueprint Core Principle):**
+> "Zero L1 Input (The Visual Anchor): All new concepts are introduced through a 'Visual Anchor'—a short video or engaging picture. The teacher uses Zero L1 (no native language), relying on gestures, miming, and expressions (Total Physical Response) to create a shared, non-verbal understanding before introducing English vocabulary."
+
+Logic Lab patterns with symbols VIOLATE this:
+- Student sees ⭐🌙 → recognizes visually → no listening
+- Correct: Student HEARS "star, moon, star, moon" → must listen → speaks answer
+
+**Key Learning:**
+- Easy mode serves DIFFERENT students (not just shorter content for SAME students)
+- Visual shortcuts (symbols) bypass audio practice
+- First answer in Easy mode must be complete (teaching correct structure)
+- Differentiation = different content/patterns, not just length reduction
+
+
+---
+
+### 7.26 SMARTCHECK ANSWER VALIDATION & ASK AI STATION INTEGRITY
+
+**Date Added:** 2025-12-28 Evening  
+**Issues Fixed:** Errors 19-23  
+**Impact:** Critical quality control failures in Logic Lab + Ask AI
+
+---
+
+#### Error 19-20: Logic Lab SmartCheck - Units Not Enforced
+
+**Problem:** SmartCheck accepted bare numbers without units in math problems.
+
+**Example:**
+```javascript
+// ❌ BEFORE (Week 1 Logic Puzzle 1):
+question_en: "Teacher gives 2 pencils to each student. There are 5 students. How many pencils?"
+answer: ["10", "10 pencils", "ten", "ten pencils"]
+hint_en: "5 students × 2 pencils"
+
+// Issue: Student types "10" → ✅ Accepted
+// But "10" is incomplete (missing unit)
+```
+
+**Root Cause:**
+- SmartCheck validates against `answer` array
+- Array included both "10" (no unit) and "10 pencils" (with unit)
+- Students could bypass unit requirement by typing bare number
+
+**Fix Applied:**
+```javascript
+// ✅ AFTER:
+answer: ["10 pencils", "ten pencils"]  // Removed "10", "ten"
+hint_en: "Remember to write the UNIT: ___ pencils"
+
+// Now: Student types "10" → ❌ Rejected
+// Must type "10 pencils" or "ten pencils" → ✅ Accepted
+```
+
+**Impact:** 3 math puzzles × 2 modes = 6 puzzles fixed
+
+**Pedagogical Rationale:**
+- Math answers MUST include units (Blueprint: "hands-on, real-world context")
+- "10" means nothing without context (10 what? Apples? Cars? Dollars?)
+- Teaching proper mathematical communication
+
+**Hint Strategy:**
+- Advanced: "Remember to write the UNIT: ___ [unit]" (explicit instruction)
+- Easy: "Write: ___ [unit]" (simpler phrasing, same requirement)
+
+---
+
+#### Error 21-22: Ask AI Station Purpose Violation
+
+**Problem:** Easy mode Ask AI had students ANSWERING questions instead of ASKING questions.
+
+**Example:**
+```javascript
+// ❌ BEFORE (Week 1 Easy Prompt 1):
+context_en: "Your friend asks: 'Do you go to school?' You want to explain HOW you go. What do you say?"
+answer: ["I go by bus", "I walk", "I go by bike"]
+
+// Issue: Students are ANSWERING, not ASKING
+// Station purpose violated: Ask AI = Students learn to ASK questions
+```
+
+**Root Cause:**
+- Misunderstood station purpose
+- Thought Easy mode meant "simpler answers" → changed from questions to statements
+- Forgot Blueprint requirement: "Shadow Asking Phase 1... học sinh có thể suy diễn ra được câu hỏi"
+
+**Fix Applied:**
+```javascript
+// ✅ AFTER:
+context_en: "You see a picture. A child is going to school. You want to know HOW. What do you ask?"
+answer: ["How do you go?", "How do you go to school?", "How?"]
+hint: "How..."
+
+// Now: Students learn to ASK "How do you go to school?" (correct station purpose)
+```
+
+**Reference: Week 19 Easy Ask AI Pattern:**
+```javascript
+context_en: "You see an old photo of yourself as a baby... You want to know more"
+answer: ["Was I cute?", "How old was I?", "Was I a good baby?"]
+hint: "Was I..."
+```
+
+**Station Purpose Rules:**
+1. **Ask AI = Students MUST ASK questions** (never answer questions)
+2. Easy mode = Simpler questions (fewer words), not different activity
+3. First answer in Easy mode should be complete question
+4. Additional shortened versions allowed ("How?" after "How do you go?")
+
+**Hint Patterns:**
+- Advanced: Multiple patterns ("How do they... / How do you...")
+- Easy: Single simple pattern ("How...", "Was I...", "Where are...")
+
+---
+
+#### Error 23: Ask AI Answer Missing Key Nouns
+
+**Problem:** Answer variations omitted important keywords from context.
+
+**Example:**
+```javascript
+// ❌ BEFORE (Week 1 Easy Prompt 3):
+context_en: "You are at the library. You want ANIMAL books. You want to know WHERE"
+answer: ["Where are the books?", "Where is it?"]
+//         ❌ Missing "animal" keyword
+
+// Issue: Context says "animal books" but answer just says "books"
+```
+
+**Root Cause:**
+- Over-simplified for Easy mode
+- Thought removing adjectives made questions "easier"
+- Forgot: Keywords teach students to ask about SPECIFIC things
+
+**Fix Applied:**
+```javascript
+// ✅ AFTER:
+answer: ["Where are the animal books?", "Where are animal books?"]
+//         ✅ Includes "animal" keyword
+
+// Now teaches: Ask about SPECIFIC type of books (animal books vs story books vs science books)
+```
+
+**Comparison:**
+- Advanced: ["Where are the animal books?", "Where can I find animal books?", "Where are animal books?"]  
+  → 3 variations, ALL include "animal" ✅
+- Easy: ["Where are the animal books?", "Where are animal books?"]  
+  → 2 variations, ALL include "animal" ✅
+
+**Key Learning:**
+- **Answer MUST include all key nouns from context**
+- If context says "animal books", answer must say "animal books"
+- If context says "magnifying glass", answer must say "magnifying glass"
+- Easy mode can have fewer variations, but must keep keywords
+- Simplification = shorter phrasing, NOT omitting information
+
+---
+
+#### Validation Checklist (Pre-Publication)
+
+**Logic Lab Math Problems:**
+- [ ] Answer array contains ONLY answers with units (no bare numbers)
+- [ ] Hint reminds about units: "Remember to write: ___ [unit]"
+- [ ] Question clearly states what unit is expected (pencils, books, kg, etc.)
+- [ ] SmartCheck will reject incomplete answers (test with bare number)
+
+**Ask AI Prompts:**
+- [ ] Station purpose: Students ASK questions (not answer questions)
+- [ ] Context ends with: "How do you ask?" or "What do you ask?"
+- [ ] ALL answer variations are QUESTIONS (end with ? or use question structure)
+- [ ] Answer includes ALL key nouns from context (check for missing keywords)
+- [ ] Easy mode: First answer is complete question (additional shortened versions OK)
+- [ ] Hint pattern matches answer structure ("How...", "Where are...", "Was I...")
+
+**Error Prevention Strategy:**
+1. **Before writing Ask AI prompts:**
+   - Re-read station purpose: Students must ASK questions
+   - Check Week 19 examples for pattern reference
+   - Verify ALL answers are questions (not statements)
+
+2. **Before removing content for Easy mode:**
+   - List ALL key nouns in context (adjectives + nouns)
+   - Verify ALL answers contain ALL key nouns
+   - Simplify structure, not information
+
+3. **Before accepting SmartCheck answers:**
+   - For math: Require units in ALL answer variations
+   - Remove any answers without units
+   - Update hint to remind about units
+
+---
+
+#### Audio Regeneration Impact
+
+**Files Regenerated:**
+- `week1_easy/ask_ai_1.mp3` (Fixed station purpose - from answer to ask)
+- `week1_easy/ask_ai_3.mp3` (Added missing "animal" keyword)
+
+**Total:** 2 audio files regenerated
+
+**Note:** Logic Lab audio unchanged (questions stayed same, only `answer` arrays modified - no audio impact)
+
+---
+
+#### Statistics
+
+**Errors Fixed:**
+| Error | Type | Station | Impact |
+|-------|------|---------|--------|
+| 19 | SmartCheck | Logic Lab | 6 puzzles (removed bare numbers from answers) |
+| 20 | Hints | Logic Lab | 6 puzzles (changed hints to remind about units) |
+| 21 | Context | Ask AI Easy | 1 prompt (context didn't match answer type) |
+| 22 | Station Purpose | Ask AI Easy | 1 prompt (students answered instead of asked) |
+| 23 | Keywords | Ask AI Easy | 1 prompt (missing "animal" keyword) |
+
+**Total Errors Fixed:** 23  
+**Total Files Modified:** 3 (logic.js × 2, ask_ai.js × 1)  
+**Total Audio Regenerated:** 2 files
+
+---
+
+#### Master Prompt V23 Line Count Update
+
+- **Before Section 7.26:** 2822 lines
+- **After Section 7.26:** ~2980 lines (+158 lines)
+- **Total Growth:** +1160 lines from original (64% increase)
+- **Sections Added:** 26 total (0.1-7.26)
+
+---
+

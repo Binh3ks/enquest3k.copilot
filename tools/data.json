@@ -1,0 +1,438 @@
+{
+  "batchId": 1764843230080,
+  "voice": "female_3",
+  "weekTasks": [
+    {
+      "weekId": 3,
+      "tasks": [
+        {
+          "filename": "reading.mp3",
+          "text": "As a scholar, I **compare** things. The elephant is **bigger** than the mouse. The mouse is **smaller** but **faster**. The sun is **hotter** than the moon. A book is **more useful** than a toy. Observing differences helps me classify the world.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_1_word.mp3",
+          "text": "compare",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_1_def.mp3",
+          "text": "To examine differences.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_1_sent.mp3",
+          "text": "compare carefully",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_2_word.mp3",
+          "text": "different",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_2_def.mp3",
+          "text": "Not the same.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_2_sent.mp3",
+          "text": "very different",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_3_word.mp3",
+          "text": "similar",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_3_def.mp3",
+          "text": "Almost the same.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_3_sent.mp3",
+          "text": "look similar",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_4_word.mp3",
+          "text": "heavy",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_4_def.mp3",
+          "text": "Has much weight.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_4_sent.mp3",
+          "text": "heavy load",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_5_word.mp3",
+          "text": "light",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_5_def.mp3",
+          "text": "Has little weight.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_5_sent.mp3",
+          "text": "light as a feather",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_6_word.mp3",
+          "text": "fast",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_6_def.mp3",
+          "text": "Moves quickly.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_6_sent.mp3",
+          "text": "run fast",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_7_word.mp3",
+          "text": "slow",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_7_def.mp3",
+          "text": "Not quick.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_7_sent.mp3",
+          "text": "move slow",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_8_word.mp3",
+          "text": "useful",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_8_def.mp3",
+          "text": "Helps you do things.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_8_sent.mp3",
+          "text": "very useful",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_9_word.mp3",
+          "text": "difficult",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_9_def.mp3",
+          "text": "Hard to do.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_9_sent.mp3",
+          "text": "difficult task",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_10_word.mp3",
+          "text": "size",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_10_def.mp3",
+          "text": "How big something is.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_10_sent.mp3",
+          "text": "large size",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_1.mp3",
+          "text": "A is bigger than B. B is bigger than C. Which is the smallest?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_2.mp3",
+          "text": "Box A is 5kg. Box B is 2kg heavier than A. How heavy is B?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_3.mp3",
+          "text": "Car is faster than Bike. Bike is faster than Walk. Which is fastest?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_4.mp3",
+          "text": "Big, Small, Big, Small, ____?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_5.mp3",
+          "text": "Tree A is 10m. Tree B is 6m. What is the difference?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_1.mp3",
+          "text": "The elephant is bigger.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_2.mp3",
+          "text": "This book is useful.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_3.mp3",
+          "text": "Summer is hotter.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_4.mp3",
+          "text": "I am faster than you.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_5.mp3",
+          "text": "It is a heavy rock.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "shadowing_full.mp3",
+          "text": "The sun is hotter.. The mouse is smaller.. A car is faster.. This task is difficult.. I can compare them.",
+          "voice": "female_3",
+          "rate": "-20%"
+        }
+      ]
+    },
+    {
+      "weekId": 4,
+      "tasks": [
+        {
+          "filename": "reading.mp3",
+          "text": "I am a scholar, so I make choices. I **prefer** reading to playing games **because** I love stories. I choose healthy food **so** I can be strong. Every choice has a **reason**. I study hard **because** I want to discover the world. Why do you make your choices?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_1_word.mp3",
+          "text": "prefer",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_1_def.mp3",
+          "text": "To like better.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_1_sent.mp3",
+          "text": "prefer reading",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_2_word.mp3",
+          "text": "choice",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_2_def.mp3",
+          "text": "An act of choosing.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_2_sent.mp3",
+          "text": "make a choice",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_3_word.mp3",
+          "text": "reason",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_3_def.mp3",
+          "text": "Why something happens.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_3_sent.mp3",
+          "text": "good reason",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_4_word.mp3",
+          "text": "because",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_4_def.mp3",
+          "text": "For the reason that.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_4_sent.mp3",
+          "text": "because of",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_5_word.mp3",
+          "text": "result",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_5_def.mp3",
+          "text": "What happens at the end.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_5_sent.mp3",
+          "text": "final result",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_6_word.mp3",
+          "text": "healthy",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_6_def.mp3",
+          "text": "Good for your body.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_6_sent.mp3",
+          "text": "healthy food",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_7_word.mp3",
+          "text": "habit",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_7_def.mp3",
+          "text": "Something you do often.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_7_sent.mp3",
+          "text": "daily habit",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_8_word.mp3",
+          "text": "decide",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_8_def.mp3",
+          "text": "To make a choice.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_8_sent.mp3",
+          "text": "decide quickly",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_9_word.mp3",
+          "text": "energy",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_9_def.mp3",
+          "text": "Power to work.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_9_sent.mp3",
+          "text": "more energy",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_10_word.mp3",
+          "text": "goal",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_10_def.mp3",
+          "text": "Something you want to do.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "vocab_10_sent.mp3",
+          "text": "set a goal",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_1.mp3",
+          "text": "The ground is wet. Why? (Sun / Rain)",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_2.mp3",
+          "text": "I want to read 10 books. I read 4. How many more?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_3.mp3",
+          "text": "If you touch fire, what happens? (Burn / Freeze)",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_4.mp3",
+          "text": "Rain -> Wet. Sun -> Dry. Snow -> ____?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "logic_5.mp3",
+          "text": "3 apples and 2 oranges. How many fruit choices?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_1.mp3",
+          "text": "I run because I am late.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_2.mp3",
+          "text": "It is cold so I wear a coat.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_3.mp3",
+          "text": "This is a good choice.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_4.mp3",
+          "text": "What is the reason?",
+          "voice": "female_3"
+        },
+        {
+          "filename": "dictation_5.mp3",
+          "text": "I have a goal.",
+          "voice": "female_3"
+        },
+        {
+          "filename": "shadowing_full.mp3",
+          "text": "I make choices every day.. I study because I like it.. I am tired, so I sleep.. I have a reason for this.. My goal is to be smart.",
+          "voice": "female_3",
+          "rate": "-20%"
+        }
+      ]
+    }
+  ]
+}
