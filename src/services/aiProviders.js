@@ -122,12 +122,12 @@ export async function chatAI(userMessage, ctx = {}) {
     .join('\n');
 
   const prompt = level === 'beginner'
-    ? `Friendly tutor for 6-year-old (Week ${weekId}: "${topic}"). Vocab: ${vocab}
+    ? `Warm tutor for 6-year-old (Week ${weekId}: "${topic}").
 
 ${history}
 Student: ${userMessage}
 
-Reply in 1 SHORT sentence (5-8 words). Use ONLY: ${vocab}. Ask 1 simple question.
+Reply naturally in 1 short sentence. Stay on topic "${topic}". Ask 1 simple question about "${topic}".
 Tutor:`
     : level === 'intermediate'
     ? `Friendly tutor (Week ${weekId}). Topic: ${topic}
@@ -276,20 +276,20 @@ export async function storyAI(storyParts, ctx = {}) {
     return { text: starter, provider: 'Static', duration: 0 };
   }
   
-  // Continue existing story - keep it simple
+  // Continue existing story - natural progression
   const story = storyParts.map(p => `${p.role === 'user' ? 'Child' : 'Tutor'}: ${p.text}`).join('\n');
   
   const prompt = level === 'beginner'
-    ? `Week ${weekId}. Story about "${topic}". Vocab: ${weekVocab}
+    ? `Story about "${topic}" (Week ${weekId}).
 
 ${story}
 
-Add 1 sentence (3-5 words) about ${topic}. Use ONLY: ${weekVocab}
+Add 1 short sentence about "${topic}" (3-5 words). Keep talking about ${topic}, not other things.
 
 Format:
-STORY: [3-5 words]
-QUESTIONS: [YES/NO?] | [YES/NO?]
-HINTS: [word1] | [word2] | [word3]`
+STORY: [sentence about ${topic}]
+QUESTIONS: [question?] | [question?]
+HINTS: [word] | [word] | [word]`
     : `Continue story (1-2 sentences):
 
 ${story}
