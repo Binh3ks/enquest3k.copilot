@@ -96,12 +96,39 @@ function buildModePrompt(mode, context, userInput, options) {
     case TutorModes.QUIZ:
       return buildQuizPrompt(context, options);
     case TutorModes.PRONUNCIATION:
-      return buildPronunciationPrompt(context, options);
+      return buildPronunciationPrompt();
     case TutorModes.DEBATE:
       return buildDebatePrompt(context, userInput, options);
     default:
       throw new Error(`Unknown mode: ${mode}`);
   }
+}
+
+/**
+ * Chat mode prompt
+ */
+function buildChatPrompt(context, userInput, options) {
+  const history = options.history || [];
+  const historyText = history.slice(-6).map(m => 
+    `${m.role === 'user' ? 'Student' : 'Tutor'}: ${m.content}`
+  ).join('\n');
+  
+  const scenario = options.scenario || 'conversation';
+  const grammarRules = getGrammarRules(context.weekId);
+  
+  return `Scenario: ${scenario}
+Topic: ${context.topic}
+Core vocabulary: ${context.coreVocab.slice(0, 5).join(', ')}
+
+Grammar scope: ${grammarRules.allowed.join(' | ')}
+
+${historyText}
+Student: ${userInput}
+
+Respond naturally in 1 short sentence (present simple only for Week ${context.weekId < 15 ? '1-14' : context.weekId}).
+Ask 1 simple question about "${context.topic}".
+
+Tutor:`;
 }
 
 /*const grammarRules = getGrammarRules(context.weekId);
@@ -215,7 +242,7 @@ Format as JSON:
 /**
  * Pronunciation prompt (not used for AI, but for consistency)
  */
-function buildPronunciationPrompt(context, options) {
+function buildPronunciationPrompt() {
   // Pronunciation uses speech recognition, not AI
   return '';
 }
