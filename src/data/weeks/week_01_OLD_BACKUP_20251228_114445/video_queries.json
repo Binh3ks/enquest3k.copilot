@@ -1,0 +1,32 @@
+{
+  "masterQuery": "School supplies and classroom for kids ESL",
+  "grammar": "subject pronouns verb to be for kids",
+  "videos": [
+    {
+      "id": 1,
+      "query": "school supplies vocabulary for kids ESL English Singsing",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 2,
+      "query": "subject pronouns I you he she we they song for kids",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 3,
+      "query": "scientist tools for kids science",
+      "purpose": "SCIENCE"
+    },
+    {
+      "id": 4,
+      "query": "verb to be am is are for kids ESL",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 5,
+      "query": "counting 1 to 10 for children educational",
+      "purpose": "TOPIC"
+    }
+  ]
+}
+

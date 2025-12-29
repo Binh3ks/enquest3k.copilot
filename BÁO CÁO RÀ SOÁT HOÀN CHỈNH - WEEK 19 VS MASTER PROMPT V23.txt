@@ -1,0 +1,90 @@
+BÁO CÁO RÀ SOÁT HOÀN CHỈNH - WEEK 19 VS MASTER PROMPT V23
+Sau khi đọc kỹ Syllabus, Blueprint, Master Prompt V23, và toàn bộ data Week 19, tôi xác nhận:
+
+✅ WEEK 19 LÀ CHUẨN VÀNG (Verified)
+Data structure Week 19 hoàn hảo:
+
+✅ 15 files (14 stations + video_queries.json)
+✅ 5 videos trong daily_watch.js (verified)
+✅ 138 audio files (verified actual count in public/audio/week19/)
+✅ 15 image files (verified actual count in public/images/week19/)
+✅ Nested object mindmap structure (branchLabels is object, not array)
+✅ Rich context trong logic puzzles và ask_ai prompts
+❌ MASTER PROMPT V23 CẦN CẬP NHẬT 7 SECTIONS
+Tôi đã xác định 7 vấn đề chính cần fix:
+
+1. VIDEO REQUIREMENTS (Section II.5 - daily_watch.js)
+Hiện tại: "3-5 videos"
+Cần sửa: "EXACTLY 5 videos (MANDATORY)"
+Lý do:
+
+Blueprint yêu cầu: "Tối thiểu 5 videos/tuần"
+Week 19 có đúng 5 videos
+Cả Advanced & Easy mode dùng chung 5 videos
+2. AUDIO COUNT (Section 0.6 & III)
+Hiện tại: "118 audio per mode"
+Cần sửa: "138 audio per mode"
+Breakdown chi tiết:
+
+3. MINDMAP STRUCTURE (Section II.10 - mindmap.js)
+Hiện tại: Không nói rõ structure
+Cần thêm:
+
+Audio naming: Branches numbered SEQUENTIALLY 1-36 (not nested)
+
+4. WORD POWER MORPHING (Section II.4 - word_power.js)
+Hiện tại: Không nêu rõ phase progression
+Cần bổ sung:
+
+5. CONTEXT REQUIREMENTS (NEW SECTION - Section I.1)
+Blueprint yêu cầu: "Luôn có context cho các câu hỏi, theo đúng văn phong bản xứ"
+
+Cần thêm section mới:
+
+6. GRAMMAR EXAMPLES AUDIO (Section III - Asset Summary)
+Hiện tại: Không đề cập
+Cần thêm:
+
+7. STATION KEY MAPPING (Section II.14 - index.js)
+Hiện tại: Không nêu rõ mapping inconsistency
+Cần warning:
+
+📁 TO-DO LIST CHI TIẾT (15 tasks)
+Tôi đã tạo todo list với 15 bước cụ thể. Các task được phân loại:
+
+URGENT (Tasks 1-7): Update Master Prompt V23
+HIGH PRIORITY (Tasks 8-11): Verify & update generation scripts
+MEDIUM (Tasks 12-14): Fix Week 1 errors
+VALIDATION (Task 15): Test complete workflow
+
+🔍 SCRIPTS SYNCHRONIZATION STATUS
+Script	Mindmap Handling	API Key Source	Audio Count	Status
+generate_audio.js	✅ Fixed (array)	✅ API keys.txt	✅ 122+	VERIFIED
+create_audio_tasks_only.js	❓ Need check	⚠️ Env vars?	❓ Need verify	PENDING
+generate_audio.py	❓ Need check	⚠️ Env vars?	❓ Need verify	PENDING
+batch_manager.js	N/A (images)	❓ Need check	N/A	PENDING
+update_videos.js	N/A (videos)	❓ Need check	N/A	NEEDS UPDATE
+⚠️ CRITICAL FINDINGS
+Video count inconsistency: Master prompt nói "3-5" nhưng Blueprint & Week 19 đều yêu cầu EXACTLY 5
+Audio count mismatch: Prompt nói 118, thực tế Week 19 có 138 files
+Mindmap structure không rõ: Dễ dẫn đến tạo sai structure (flat array thay vì nested object)
+Context requirements thiếu: Không nhấn mạnh storytelling format → dễ tạo content "academic" không tự nhiên
+Station key mapping confusing: logic.js → logic_lab:, mindmap.js → mindmap_speaking: (không intuitive)
+✅ RECOMMENDATIONS
+Ưu tiên cao nhất:
+
+Update Master Prompt V23 với 7 sections trên NGAY
+Add explicit examples cho mỗi station schema (copy từ Week 19)
+Create validation checklist trong prompt (15-point checklist)
+Add ERROR HANDLING section với common mistakes
+Cải thiện workflow:
+5. Tạo script validate_week_data.js để check structure trước khi generate assets
+6. Sync API key handling across all 3 generation methods
+7. Document grammar examples audio rules (khi nào cần 16 files)
+
+Bạn muốn tôi bắt đầu implement các updates này không? Tôi có thể:
+
+Update Master Prompt V23 với 7 sections chi tiết
+Verify & fix scripts (create_audio_tasks_only.js, update_videos.js)
+Fix Week 1 (videos + mindmap structure)
+Create validation script để check week data trước khi generate
