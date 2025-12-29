@@ -34,9 +34,8 @@ export async function runTutor({ mode, weekData, userInput = '', options = {} })
   // 4. ROUTE TO AI PROVIDER
   const rawResponse = await routeAI(prompt, mode);
   
-  // 5. PARSE WITH SCHEMA
-  const schema = getSchemaForMode(mode);
-  const parsed = parseResponse(rawResponse.text, schema);
+  // 5. PARSE WITH MODE (not schema object)
+  const parsed = parseResponse(rawResponse.text, mode);
   
   // 6. RETURN STRUCTURED RESPONSE
   return {
@@ -48,22 +47,6 @@ export async function runTutor({ mode, weekData, userInput = '', options = {} })
       mode
     }
   };
-}
-
-/**
- * Get appropriate schema for mode
- */
-function getSchemaForMode(mode) {
-  switch (mode) {
-    case TutorModes.CHAT:
-      return ChatResponseSchema;
-    case TutorModes.STORY_MISSION:
-      return StoryMissionSchema;
-    case TutorModes.QUIZ:
-      return QuizResponseSchema;
-    default:
-      return ChatResponseSchema;
-  }
 }
 
 /**

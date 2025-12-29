@@ -33,21 +33,21 @@ export const Week1Missions = [
         aiPrompt: "Nice to meet you, {{NAME}}! Are you a student?",
         expectedType: "yes_no",
         requiredVocab: ['student'],
-        hints: ["Yes", "I", "am", "student"]
+        hints: ["Yes", "I", "am", "a", "student"]
       },
       {
         beatId: 2,
-        aiPrompt: "Great! Do you go to school every day?",
-        expectedType: "yes_no",
+        aiPrompt: "Great! Where is your school?",
+        expectedType: "short_answer",
         requiredVocab: ['school'],
-        hints: ["Yes", "I", "go", "school"]
+        hints: ["My", "school", "is", "in"]
       },
       {
         beatId: 3,
-        aiPrompt: "Awesome! What do you have in your backpack?",
+        aiPrompt: "Awesome! What is in your backpack?",
         expectedType: "short_answer",
         requiredVocab: ['backpack', 'book'],
-        hints: ["I", "have", "book", "backpack"]
+        hints: ["My", "backpack", "book", "is"]
       }
     ]
   },
@@ -81,21 +81,21 @@ export const Week1Missions = [
         aiPrompt: "Good! What is in your backpack?",
         expectedType: "short_answer",
         requiredVocab: ['book', 'notebook', 'backpack'],
-        hints: ["My", "book", "notebook", "backpack"]
+        hints: ["My", "book", "and", "notebook", "are"]
       },
       {
         beatId: 2,
-        aiPrompt: "Where did you see it last? In the library or in class?",
+        aiPrompt: "Where is your backpack? In the library or in class?",
         expectedType: "location",
         requiredVocab: ['library'],
-        hints: ["I", "saw", "library"]
+        hints: ["I", "am", "in", "library"]
       },
       {
         beatId: 3,
-        aiPrompt: "Let's tell the school office. Say: 'I am a student. I lost my backpack.'",
+        aiPrompt: "Let's tell the school office. Say: 'I cannot find my backpack.'",
         expectedType: "copy_model",
-        requiredVocab: ['student', 'backpack'],
-        hints: ["I", "am", "student", "lost", "backpack"]
+        requiredVocab: ['backpack'],
+        hints: ["I", "cannot", "find", "my", "backpack"]
       }
     ]
   },
@@ -121,28 +121,28 @@ export const Week1Missions = [
       mustUseWords: ['library', 'book', 'notebook'],
       targetSentenceLength: 5
     },
-    opener: "Hello! I am your teacher. Today we go to the library. Do you like the library?",
+    opener: "Hello! I am your teacher. We are in the library. Where is your book?",
     beats: [
       {
         beatId: 1,
-        aiPrompt: "Nice! What book do you want to read?",
+        aiPrompt: "Nice! Where is your notebook?",
         expectedType: "short_answer",
-        requiredVocab: ['book'],
-        hints: ["I", "want", "book", "about"]
+        requiredVocab: ['notebook'],
+        hints: ["My", "notebook", "is", "in"]
       },
       {
         beatId: 2,
-        aiPrompt: "Good choice! Do you write in a notebook at school?",
-        expectedType: "yes_no",
-        requiredVocab: ['notebook', 'school'],
-        hints: ["Yes", "I", "write", "notebook"]
+        aiPrompt: "Good! What is in the library?",
+        expectedType: "short_answer",
+        requiredVocab: ['library', 'book'],
+        hints: ["There", "are", "books", "in", "library"]
       },
       {
         beatId: 3,
-        aiPrompt: "Great! Try to say: 'I write in my notebook at school every day.'",
+        aiPrompt: "Great! Try to say: 'My book is in the library.'",
         expectedType: "copy_model",
-        requiredVocab: ['notebook', 'school'],
-        hints: ["I", "write", "notebook", "school", "every", "day"]
+        requiredVocab: ['book', 'library'],
+        hints: ["My", "book", "is", "in", "library"]
       }
     ]
   }
