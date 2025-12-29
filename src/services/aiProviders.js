@@ -114,41 +114,35 @@ async function callAI(prompt, type = 'chat') {
 export async function chatAI(userMessage, ctx = {}) {
   const weekId = ctx.weekId || 1;
   const topic = ctx.scenario?.title || ctx.weekInfo?.topic?.[0] || 'English';
-  const grammar = ctx.weekInfo?.grammar?.join(', ') || '';
-  const math = ctx.weekInfo?.math || 'counting';
-  const science = ctx.weekInfo?.science || 'observation';
+  const vocab = (ctx.vocabList || []).slice(0, 5).map(v => v.word).join(', ');
   const level = weekId <= 14 ? 'beginner' : weekId <= 50 ? 'intermediate' : 'advanced';
   
-  // Build conversation as simple text
   const history = (ctx.conversationHistory || [])
     .map(m => `${m.role === 'user' ? 'Student' : 'Tutor'}: ${m.content}`)
     .join('\n');
 
-  // Week-specific vocab hints (first 5 words)
-  const vocabHints = (ctx.vocabList || []).slice(0, 5).map(v => v.word).join(', ');
-
-  // Length guide based on level
-  const lengthGuide = level === 'beginner' 
-    ? 'Reply in 1-2 SHORT sentences. Use simple words. Include counting (numbers 1-10) and science concepts naturally when relevant. ALWAYS end with a simple question.'
-    : level === 'intermediate'
-    ? 'Reply in 2-3 sentences. Keep it simple. End with a follow-up question.'
-    : 'Reply naturally. Ask a follow-up question.';
-
-  const grammarContext = grammar ? `\nGrammar: ${grammar}` : '';
-  const vocabContext = vocabHints ? `\nVocabulary: ${vocabHints}` : '';
-  const mathContext = level === 'beginner' ? `\nMath: ${math} (include counting naturally)` : '';
-  const scienceContext = level === 'beginner' ? `\nScience: ${science} (mention naturally)` : '';
-
-  const prompt = `Friendly tutor for ${level} ESL child (Week ${weekId}).
-Topic: ${topic}${grammarContext}${vocabContext}${mathContext}${scienceContext}
+  const prompt = level === 'beginner'
+    ? `Friendly tutor for 6-year-old (Week ${weekId}: "${topic}"). Vocab: ${vocab}
 
 ${history}
 Student: ${userMessage}
 
-${lengthGuide}
+Reply in 1 SHORT sentence (5-8 words). Use ONLY: ${vocab}. Ask 1 simple question.
+Tutor:`
+    : level === 'intermediate'
+    ? `Friendly tutor (Week ${weekId}). Topic: ${topic}
+
+${history}
+Student: ${userMessage}
+
+Reply in 2-3 sentences. End with question.
+Tutor:`
+    : `Week ${weekId}. ${history}
+Student: ${userMessage}
+
+Reply naturally. Ask follow-up.
 Tutor:`;
 
-  console.log('[Chat Prompt]', prompt);
   return callAI(prompt, 'chat');
 }
 
@@ -226,13 +220,13 @@ export function getStoryTopics(weekId, weekInfo = {}) {
   const weekTopic = weekInfo.topic?.[0];
   
   if (weekId <= 14) {
-    // Topics MUST match their context - no mixing!
+    // Beginner topics - starters MUST talk about the topic
     const base = [
       { id: 'school', label: '📚 At School', starter: 'I am at school.' },
-      { id: 'home', label: '🏠 My Home', starter: 'I am at home.' },
+      { id: 'home', label: '🏠 My Home', starter: 'I see my home.' },
       { id: 'family', label: '👨‍👩‍👧 My Family', starter: 'I see my family.' },
       { id: 'friend', label: '👫 My Friend', starter: 'I have a friend.' },
-      { id: 'pet', label: '🐕 My Pet', starter: 'I have a pet.' },
+      { id: 'pet', label: '🐕 My Pet', starter: 'I see my pet.' },
       { id: 'toy', label: '🧸 My Toy', starter: 'I see my toy.' }
     ];
     return weekTopic ? [{ id: 'week', label: `📖 ${weekTopic}`, starter: `I see ${weekTopic.toLowerCase()}.` }, ...base] : base;
@@ -267,89 +261,41 @@ export async function storyAI(storyParts, ctx = {}) {
   const weekTitle = ctx.weekTitle || 'English Learning';
   const weekVocab = (ctx.vocabList || []).slice(0, 10).map(v => v.word).join(', ');
   
-  // If generating opening, create week-specific starter
+  // If generating opening, create simple topic-specific starter
   if (ctx.generateOpening) {
-    let prompt;
+    const starters = {
+      school: 'I am at school.',
+      home: 'I see my home.',
+      family: 'I see my family.',
+      friend: 'I have a friend.',
+      pet: 'I see my pet.',
+      toy: 'I see my toy.'
+    };
     
-    if (level === 'beginner') {
-      // Week 1-14: EXTREMELY simple, 1 sentence only
-      prompt = `Write ONE very simple sentence (3-5 words ONLY) about "${topic}" for a 6-year-old beginner in Week ${weekId}.
-Week ${weekId} vocabulary: ${weekVocab}
-Week topic: ${weekTitle}
-
-RULES:
-- Use ONLY present simple: "I have...", "I am...", "I see..."
-- Maximum 5 words
-- Use ONLY words from vocabulary list
-- NO complex ideas, NO past tense
-
-EXAMPLES:
-- "I have a dog."
-- "I am a student."
-- "I see the teacher."
-
-Write ONE sentence now (3-5 words):`;
-    } else if (level === 'intermediate') {
-      prompt = `Write 1-2 short sentences about "${topic}" for an intermediate student in Week ${weekId}.
-Week topic: ${weekTitle}
-Vocabulary: ${weekVocab}
-Use present or present progressive tense.
-Keep it simple and engaging.`;
-    } else {
-      prompt = `Write 2-3 sentences about "${topic}" for an advanced student in Week ${weekId}.
-Week topic: ${weekTitle}
-Make it interesting and use varied vocabulary.`;
-    }
-    
-    return callAI(prompt, 'story');
+    const starter = starters[topic] || `I see ${topic}.`;
+    return { text: starter, provider: 'Static', duration: 0 };
   }
   
-  // Continue existing story WITH TOPIC CONTEXT
+  // Continue existing story - keep it simple
   const story = storyParts.map(p => `${p.role === 'user' ? 'Child' : 'Tutor'}: ${p.text}`).join('\n');
   
-  // Guiding questions format - help kids think about what to say
-  const formatGuide = level === 'beginner'
-    ? `You are helping a 6-year-old (Week ${weekId}: "${weekTitle}").
+  const prompt = level === 'beginner'
+    ? `Week ${weekId}. Story about "${topic}". Vocab: ${weekVocab}
 
-📖 STORY TOPIC: "${topic}"
-Vocabulary ONLY: ${weekVocab}
-
-STAY ON TOPIC "${topic}"! Your sentence MUST be about ${topic}:
-- If topic=home → talk ONLY about home
-- If topic=school → talk ONLY about school
-- If topic=family → talk ONLY about family
-- If topic=pet → talk ONLY about pet
-- If topic=toy → talk ONLY about toy
-
-Add ONE sentence (3-5 words) about ${topic}.
-Use ONLY: ${weekVocab}
-Present simple ONLY: "I have", "I am", "I see"
-
-Format:
-STORY: [3-5 words about ${topic}]
-QUESTIONS: [YES/NO about ${topic}?] | [YES/NO about ${topic}?]
-HINTS: [word1] | [word2] | [word3]
-
-Example for "home":
-STORY: I see my home.
-QUESTIONS: Is your home big? | Do you have a book at home?
-HINTS: book | name | student`
-    : level === 'intermediate'
-    ? `Continue this story with 1-2 sentences. Ask 1-2 questions to guide the child's next response.
-
-Format:
-STORY: [1-2 sentences]
-QUESTIONS: [1-2 guiding questions]
-HINTS: [3-4 vocabulary words]`
-    : `Continue the story naturally with 2-3 sentences. Suggest vocabulary if helpful.`;
-  
-  const prompt = `${formatGuide}
-
-Story so far:
 ${story}
 
-Continue now:`;
+Add 1 sentence (3-5 words) about ${topic}. Use ONLY: ${weekVocab}
 
+Format:
+STORY: [3-5 words]
+QUESTIONS: [YES/NO?] | [YES/NO?]
+HINTS: [word1] | [word2] | [word3]`
+    : `Continue story (1-2 sentences):
+
+${story}
+
+Format: STORY: [text] | QUESTIONS: [q1] [q2] | HINTS: [w1] [w2]`;
+  
   const result = await callAI(prompt, 'story');
   
   // Parse response

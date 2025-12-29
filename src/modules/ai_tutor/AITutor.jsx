@@ -251,24 +251,27 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
   // CHAT HANDLERS
   const startRolePlay = (scenario) => {
     setRolePlayScenario(scenario);
-    setActiveScenario(scenario); // Mark scenario as active
+    setActiveScenario(scenario);
     setTurnCount(0);
     
-    // Context-aware openings based on week topic
+    // Simple openings - 1 short question
     const openings = {
-      school: weekId <= 3 ? "What do you do at school?" : "Tell me about your favorite school subject!",
-      family: weekId === 2 ? "Who is in your family?" : weekId <= 14 ? "How many people are in your family?" : "What do you like about your family?",
-      math: weekId <= 8 ? "Let's count items! How many pencils do you have?" : "Let's solve a problem! If you have 5 apples and eat 2, how many left?",
-      restaurant: "Welcome! What would you like to eat today?",
+      school: "What do you do at school?",
+      family: "How many people are in your family?",
+      math: "Let's count! How many pencils do you have?",
+      restaurant: "What would you like to eat?",
       navigation: "Where do you want to go?",
       shopping: "What do you want to buy?",
       social: "Hi! What's your name?",
-      health: weekId <= 6 ? "Do you feel healthy?" : "What do you eat for breakfast?"
+      health: "Do you feel healthy?"
     };
-    const startMsg = openings[scenario.context] || `Let's practice! ${scenario.context}`;
+    const startMsg = openings[scenario.context] || scenario.title;
     messageHistoryRef.current = [];
     setChatMessages([{ role: 'ai', text: startMsg }]);
     messageHistoryRef.current.push({ role: 'assistant', content: startMsg });
+    
+    // TTS immediately on open
+    speakText(startMsg);
   };
 
   const generateResponse = async (userMsg) => {
