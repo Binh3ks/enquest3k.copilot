@@ -115,6 +115,8 @@ export async function chatAI(userMessage, ctx = {}) {
   const weekId = ctx.weekId || 1;
   const topic = ctx.scenario?.title || ctx.weekInfo?.topic?.[0] || 'English';
   const grammar = ctx.weekInfo?.grammar?.join(', ') || '';
+  const math = ctx.weekInfo?.math || 'counting';
+  const science = ctx.weekInfo?.science || 'observation';
   const level = weekId <= 14 ? 'beginner' : weekId <= 50 ? 'intermediate' : 'advanced';
   
   // Build conversation as simple text
@@ -127,16 +129,18 @@ export async function chatAI(userMessage, ctx = {}) {
 
   // Length guide based on level
   const lengthGuide = level === 'beginner' 
-    ? 'Reply in 1-2 SHORT sentences. Use simple words. ALWAYS end with a simple question.'
+    ? 'Reply in 1-2 SHORT sentences. Use simple words. Include counting (numbers 1-10) and science concepts naturally when relevant. ALWAYS end with a simple question.'
     : level === 'intermediate'
     ? 'Reply in 2-3 sentences. Keep it simple. End with a follow-up question.'
     : 'Reply naturally. Ask a follow-up question.';
 
-  const grammarContext = grammar ? `\nGrammar Focus: ${grammar}. Gently use or model this grammar when natural.` : '';
-  const vocabContext = vocabHints ? `\nWeek Vocabulary: ${vocabHints}` : '';
+  const grammarContext = grammar ? `\nGrammar: ${grammar}` : '';
+  const vocabContext = vocabHints ? `\nVocabulary: ${vocabHints}` : '';
+  const mathContext = level === 'beginner' ? `\nMath: ${math} (include counting naturally)` : '';
+  const scienceContext = level === 'beginner' ? `\nScience: ${science} (mention naturally)` : '';
 
-  const prompt = `You are a friendly English tutor for a ${level} ESL child (Week ${weekId}).
-Topic: ${topic}${grammarContext}${vocabContext}
+  const prompt = `Friendly tutor for ${level} ESL child (Week ${weekId}).
+Topic: ${topic}${grammarContext}${vocabContext}${mathContext}${scienceContext}
 
 ${history}
 Student: ${userMessage}
@@ -222,13 +226,14 @@ export function getStoryTopics(weekId, weekInfo = {}) {
   const weekTopic = weekInfo.topic?.[0];
   
   if (weekId <= 14) {
+    // Topics MUST match their context - no mixing!
     const base = [
       { id: 'school', label: '📚 At School', starter: 'I am at school.' },
       { id: 'home', label: '🏠 My Home', starter: 'I am at home.' },
-      { id: 'family', label: '👨‍👩‍👧 My Family', starter: 'I have a family.' },
+      { id: 'family', label: '👨‍👩‍👧 My Family', starter: 'I see my family.' },
       { id: 'friend', label: '👫 My Friend', starter: 'I have a friend.' },
       { id: 'pet', label: '🐕 My Pet', starter: 'I have a pet.' },
-      { id: 'toy', label: '🧸 My Toy', starter: 'I have a toy.' }
+      { id: 'toy', label: '🧸 My Toy', starter: 'I see my toy.' }
     ];
     return weekTopic ? [{ id: 'week', label: `📖 ${weekTopic}`, starter: `I see ${weekTopic.toLowerCase()}.` }, ...base] : base;
   } else if (weekId <= 50) {
@@ -299,31 +304,36 @@ Make it interesting and use varied vocabulary.`;
     return callAI(prompt, 'story');
   }
   
-  // Continue existing story
+  // Continue existing story WITH TOPIC CONTEXT
   const story = storyParts.map(p => `${p.role === 'user' ? 'Child' : 'Tutor'}: ${p.text}`).join('\n');
   
   // Guiding questions format - help kids think about what to say
   const formatGuide = level === 'beginner'
-    ? `You are helping a 6-year-old child in Week ${weekId} (${weekTitle}).
-Vocabulary: ${weekVocab}
+    ? `You are helping a 6-year-old (Week ${weekId}: "${weekTitle}").
 
-Your job: Add ONE very short sentence (3-5 words).
+📖 STORY TOPIC: "${topic}"
+Vocabulary ONLY: ${weekVocab}
 
-RULES:
-- Use ONLY present simple tense
-- Use ONLY vocabulary: ${weekVocab}
-- Maximum 5 words per sentence
-- Give 2 simple YES/NO questions
+STAY ON TOPIC "${topic}"! Your sentence MUST be about ${topic}:
+- If topic=home → talk ONLY about home
+- If topic=school → talk ONLY about school
+- If topic=family → talk ONLY about family
+- If topic=pet → talk ONLY about pet
+- If topic=toy → talk ONLY about toy
+
+Add ONE sentence (3-5 words) about ${topic}.
+Use ONLY: ${weekVocab}
+Present simple ONLY: "I have", "I am", "I see"
 
 Format:
-STORY: [3-5 word sentence]
-QUESTIONS: [YES/NO question 1?] | [YES/NO question 2?]
+STORY: [3-5 words about ${topic}]
+QUESTIONS: [YES/NO about ${topic}?] | [YES/NO about ${topic}?]
 HINTS: [word1] | [word2] | [word3]
 
-Example:
-STORY: I have a book.
-QUESTIONS: Is the book big? | Do you have a notebook?
-HINTS: teacher | school | student`
+Example for "home":
+STORY: I see my home.
+QUESTIONS: Is your home big? | Do you have a book at home?
+HINTS: book | name | student`
     : level === 'intermediate'
     ? `Continue this story with 1-2 sentences. Ask 1-2 questions to guide the child's next response.
 
