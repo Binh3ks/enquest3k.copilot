@@ -13,6 +13,7 @@ import {
   validateMathAnswer,
   getStoryTopics
 } from '../../services/aiProviders';
+import StoryMissionTab from './tabs/StoryMissionTab';
 
 const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -1016,89 +1017,12 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
           </div>
         )}
 
-        {/* STORY BUILDER TAB */}
+        {/* STORY MISSION TAB (NEW Phase 2) */}
         {activeTab === 'story' && (
-          <div className="space-y-3">
-            {storyParts.length === 0 ? (
-              <div className="text-center py-6">
-                <BookText size={48} className="mx-auto text-purple-600 opacity-50 mb-3"/>
-                <p className="text-sm font-bold text-slate-700 mb-2">📖 Let's Write a Story!</p>
-                <p className="text-xs text-slate-600 mb-3 px-4">Pick a topic you like:</p>
-                
-                <div className="space-y-2">
-                  {getStoryTopics(weekId, weekInfo).map(topic => (
-                    <button
-                      key={topic.id}
-                      onClick={() => startStory(topic)}
-                      className="w-full p-3 bg-white border-2 border-purple-100 rounded-xl text-sm font-bold text-slate-700 hover:bg-purple-50 hover:border-purple-300 transition-all flex items-center gap-3"
-                    >
-                      <span className="text-xl">{topic.label.split(' ')[0]}</span>
-                      <span>{topic.label.split(' ').slice(1).join(' ')}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <>
-                {/* Story topic badge */}
-                {storyTopic && (
-                  <div className="text-center text-xs text-purple-600 font-bold">
-                    {storyTopic.label}
-                  </div>
-                )}
-                
-                {storyParts.map((part, i) => (
-                  <div key={i} className={`p-3 rounded-xl ${
-                    part.role === 'system'
-                      ? 'bg-amber-50 border-2 border-amber-200 text-amber-700 text-xs'
-                      : part.role === 'ai'
-                      ? 'bg-purple-50 border-2 border-purple-200 text-purple-900'
-                      : 'bg-white border-2 border-slate-200 text-slate-800'
-                  }`}>
-                    <p className="text-sm font-bold">{part.text}</p>
-                  </div>
-                ))}
-                
-                {/* Guiding Questions - help kids know what to say */}
-                {storyQuestions && storyQuestions.length > 0 && (
-                  <div className="p-3 bg-green-50 border-2 border-green-200 rounded-xl">
-                    <p className="text-[10px] font-black text-green-600 mb-2">💬 Think about these questions:</p>
-                    <div className="space-y-1">
-                      {storyQuestions.map((q, i) => (
-                        <p key={i} className="text-xs text-green-700 font-medium">• {q}</p>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                
-                {/* Word hints to help vocabulary */}
-                {storyHints && storyHints.length > 0 && (
-                  <div className="p-2 bg-amber-50 border-2 border-amber-200 rounded-xl">
-                    <p className="text-[10px] font-black text-amber-600 mb-1">🔤 Words you can use:</p>
-                    <div className="flex flex-wrap gap-1">
-                      {storyHints.map((word, i) => (
-                        <button 
-                          key={i}
-                          onClick={() => setStoryInput(prev => prev + (prev ? ' ' : '') + word)}
-                          className="px-2 py-1 bg-white border border-amber-300 rounded-lg text-xs font-bold text-amber-700 hover:bg-amber-100 transition-all"
-                        >
-                          {word}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                
-                <button 
-                  onClick={() => { setStoryParts([]); setStoryInput(''); setStoryQuestions(null); setStoryHints(null); setStoryTopic(null); }}
-                  className="w-full p-2 text-xs font-bold text-slate-500 hover:text-purple-600 flex items-center justify-center gap-1"
-                >
-                  <RotateCcw size={12}/>Start New Story
-                </button>
-                <div ref={scrollRef} />
-              </>
-            )}
-          </div>
+          <StoryMissionTab 
+            weekData={weekData}
+            recognitionRef={recognitionRef}
+          />
         )}
 
         {/* DEBATE TAB */}
@@ -1174,39 +1098,6 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
             className="p-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 disabled:opacity-50 transition-all"
           >
             {chatLoading ? <Loader2 size={16} className="animate-spin"/> : <Send size={16}/>}
-          </button>
-          </div>
-        </div>
-      )}
-
-      {activeTab === 'story' && storyParts.length > 0 && (
-        <div className="p-3 bg-white border-t shrink-0">
-          <div className="flex gap-2 items-center mb-2">
-            <div className="flex-1 bg-purple-50 rounded-lg p-2 text-[10px] font-bold text-purple-600 flex items-center gap-1">
-              <Mic size={12}/> <span>Tip: Use voice for better speaking practice!</span>
-            </div>
-          </div>
-          <div className="flex gap-2">
-          <button
-            onClick={toggleStoryVoice}
-            className={`p-2.5 rounded-full transition-all ${isStoryListening ? 'bg-red-500 text-white animate-pulse' : 'bg-slate-100 text-slate-600 hover:bg-purple-100 hover:text-purple-600'}`}
-          >
-            {isStoryListening ? <MicOff size={16}/> : <Mic size={16}/>}
-          </button>
-          <input
-            value={storyInput}
-            onChange={e => setStoryInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && addStoryPart()}
-            placeholder={isStoryListening ? "Listening..." : "Type or speak..."}
-            className="flex-1 p-2.5 bg-slate-50 border-2 border-slate-200 rounded-[15px] outline-none text-xs font-bold focus:border-purple-300"
-            disabled={isStoryListening}
-          />
-          <button
-            onClick={addStoryPart}
-            disabled={isStoryListening}
-            className="p-2.5 bg-purple-600 text-white rounded-full hover:bg-purple-700 disabled:opacity-50 transition-all"
-          >
-            <Send size={16}/>
           </button>
           </div>
         </div>
