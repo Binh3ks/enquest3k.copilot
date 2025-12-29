@@ -1,0 +1,151 @@
+EngQuest – AI Tutor Role-play (Learning Mode) Spec
+Week 1: "The Young Scholar" – New Words / Story integration
+
+Version	1.0
+Audience	Product, Design, Frontend, Backend/LLM
+Goal	Add a structured 'Learning Role-play' layer that practices today’s vocabulary and can be tracked.
+Out of scope	Free Chat role-play scenarios (already exist in Chat tab).
+
+1. Why a second role-play layer?
+You already have Free Role-play in the Chat tab (e.g., At School / With Family / Math Helper). This spec describes a separate Learning Role-play used inside lesson flows (New Words / Story) to ensure students actively use the target vocabulary and to enable measurable progress.
+2. Modes and guardrails
+Two distinct behaviors should be enforced at runtime:
+Dimension	Free Chat Role-play (existing)	Learning Role-play (this spec)
+Vocabulary constraints	Loose / optional	Required target words (soft-enforced)
+Teaching behavior	Natural conversation	Guided conversation + gentle correction
+Assessment & tracking	Hard to measure	Scorable: word usage, turns, success criteria
+
+Guardrails for Learning Role-play:
+•	Ask one question at a time (kids-friendly).
+•	If the student avoids target words, provide a scaffold sentence they can repeat.
+•	Keep turns short in Easy Mode (1–2 sentences per turn).
+•	Correct gently: praise → tiny correction → give a better sentence.
+3. UX placement
+Recommended placement inside the lesson pages:
+•	New Words card: button 'Practice with Professor Paws' (Learning Role-play).
+•	Story panel: 'Continue the story' role-play (student choices drive the next lines).
+•	End of role-play: CTA to jump to Free Chat Role-play (optional), e.g., 'Try At School in Chat'.
+4. Data model
+Use a single, reusable JSON payload for all Learning Role-play scenarios. This allows the backend to generate prompts consistently and the frontend to render steps, hints, and scoring.
+4.1 JSON schema (practical)
+roleplay_scenario = {
+  "id": "W1_NW_STUDENT_TEACHER_01",
+  "title": "First day at school",
+  "level": "easy",                       // easy | normal | challenge
+  "context": {
+    "weekId": 1,
+    "lessonId": "new_words",
+    "unit": "The Young Scholar"
+  },
+  "roles": {
+    "ai": {"name": "Professor Paws", "persona": "kind teacher"},
+    "student": {"name": "Learner", "persona": "new student"}
+  },
+  "targetVocabulary": [
+    {"word": "student", "mustUse": true},
+    {"word": "teacher", "mustUse": true},
+    {"word": "school", "mustUse": true},
+    {"word": "backpack", "mustUse": false},
+    {"word": "book", "mustUse": false},
+    {"word": "notebook", "mustUse": false},
+    {"word": "library", "mustUse": false},
+    {"word": "name", "mustUse": true}
+  ],
+  "successCriteria": {
+    "minTurns": 6,
+    "mustUseWords": ["student", "teacher", "school", "name"],
+    "optionalWordBonus": ["backpack", "book", "notebook", "library"]
+  },
+  "steps": [
+    {
+      "stepId": 1,
+      "aiPrompt": "Hi! I am your teacher. What is your name?",
+      "expected": {"type": "short_answer", "hints": ["My name is ..."]},
+      "repair": {"ifEmpty": "Say: My name is ____."}
+    },
+    {
+      "stepId": 2,
+      "aiPrompt": "Nice to meet you, __NAME__! Are you a student?",
+      "expected": {"type": "yes_no", "hints": ["Yes, I am a student."]},
+      "repair": {"ifWrong": "Try: Yes, I am a student."}
+    }
+  ],
+  "postRoleplay": {
+    "microFeedback": true,
+    "cta": {"label": "Try free role-play in Chat", "target": "chat_roleplay_menu"}
+  }
+}
+4.2 Frontend rendering notes
+Minimum UI requirements:
+•	Scenario list (title, level badge, play icon).
+•	In-session view: AI bubble, student input, mic button, hint chip(s).
+•	A 'Try this sentence' chip that can auto-fill the input box.
+•	End screen: score + words used + 'Try again' + optional CTA to Chat.
+5. Prompting strategy (LLM)
+5.1 System prompt template
+SYSTEM (Learning Role-play):
+You are "Professor Paws", an ESL tutor for children.
+Level: {level}. Keep replies short and friendly.
+Goal: make the student use today’s vocabulary: {target_words}.
+Rules:
+- Ask ONE question at a time.
+- If the student does not use a required word after 2 turns, give a scaffold sentence to repeat.
+- Always respond as the role in the scenario (do not break character).
+- Gentle correction format: Praise → Fix (very short) → Better sentence.
+- End when success criteria are met; then show a short recap (words used + 1 tip).
+5.2 Developer prompt assembly
+At runtime, build the prompt from:
+•	Scenario context (week/unit/lesson).
+•	Roles/personas.
+•	Target vocabulary list (mustUse vs optional).
+•	Current step + placeholders (e.g., __NAME__).
+•	Conversation history (last ~8 turns).
+6. Week 1 – Complete scenario scripts
+Below are three Learning Role-play scenarios aligned to Week 1 vocabulary. All are designed for kids (A1–A2).
+6.1 Scenario A: First day at school (Easy)
+Target words: student (must), teacher (must), school (must), name (must), backpack (bonus), book (bonus).
+Speaker	Line
+AI	Hi! I am your teacher. What is your name?
+Student	My name is _____.
+AI	Nice to meet you, _____! Are you a student?
+Student	Yes, I am a student.
+AI	Great! Do you go to school every day?
+Student	Yes, I go to school every day.
+AI	Awesome! What is in your backpack?
+Student	I have a book in my backpack.
+AI	Great job! You used: student, teacher, school, name, backpack, book. One tip: Say full sentences.
+
+6.2 Scenario B: At the library (Normal)
+Target words: library (bonus), book (bonus), notebook (bonus), school (must), teacher (must).
+Speaker	Line
+AI	Hello! I am your teacher. Today we go to the library. Do you like the library?
+Student	Yes, I like the library.
+AI	Nice! What book do you want to read?
+Student	I want to read a book about animals.
+AI	Good choice. Do you write in a notebook at school?
+Student	Yes, I write in my notebook at school.
+AI	Great! Quick upgrade: 'I write in my notebook at school every day.' Can you try?
+
+6.3 Scenario C: Lost backpack (Challenge)
+Goal: encourage problem-solving language while still using core vocabulary.
+Speaker	Line
+AI	Oh no! You are at school. You cannot find your backpack. I am your teacher. What do you say?
+Student	Teacher, I cannot find my backpack.
+AI	Good! What is in your backpack?
+Student	My book and my notebook are in my backpack.
+AI	Great. Where did you see it last? In the library or in class?
+Student	I saw it in the library.
+AI	Nice speaking! Let’s tell the school office. Say: 'I am a student. I lost my backpack.'
+7. Scoring & progress tracking
+Suggested scoring (simple and explainable to kids):
+•	Required words used: +10 each (max 40).
+•	Bonus words used: +3 each (max 12).
+•	Full sentence answers (>= 4 words): +2 each (max 10).
+•	Gentle penalty: if 3+ consecutive one-word answers, show a 'Try a full sentence' hint (no negative points).
+8. Integration checklist
+•	Backend: store scenarios per week/lesson; return scenario + targetVocabulary + successCriteria.
+•	Frontend: render scenario list + in-session hints + end summary.
+•	LLM: enforce Learning Role-play system prompt; limit history; stop conditions on successCriteria.
+•	Analytics: log turns, words used, completion, retries, average score.
+
+Appendix: You can reuse the same schema for Week 2–Week N by swapping targetVocabulary and scripts.

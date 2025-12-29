@@ -1,0 +1,250 @@
+🚀 ENGQUEST AI TUTOR – MASTER ARTIFACT (WOW VERSION)
+
+Scope: Onboarding + KPI + AI Behavior Guardrails
+
+PHẦN A — AI TUTOR ONBOARDING (3–5 PHÚT, PHẢI WOW)
+🎯 Mục tiêu onboarding
+
+Sau onboarding, trẻ phải:
+
+Hiểu AI Tutor là giáo viên, không phải chatbot
+
+Biết mình phải nói / viết, không được im lặng
+
+Cảm thấy: “Nói được tiếng Anh là vui, không sợ sai”
+
+A1. ONBOARDING PRINCIPLES (Copilot phải tuân)
+
+❌ Không giải thích dài
+
+❌ Không hướng dẫn bằng text thuần
+
+✅ Học thông qua trải nghiệm ngay
+
+✅ Mỗi bước onboarding = 1 hành động ngôn ngữ của trẻ
+
+A2. ONBOARDING FLOW (CHUẨN SẢN PHẨM)
+STEP 0 — Meet the Tutor (30s)
+
+AI Persona: Professor Paws
+
+1 câu, rất ngắn:
+
+“Hi! I’m Professor Paws. I will help you speak English.”
+
+❌ Không hỏi
+❌ Không giải thích
+
+STEP 1 — First Success (NÓI NGAY – 45s)
+AI: Tell me your name.
+Hint: My name is ___.
+
+
+➡️ Trẻ trả lời
+➡️ AI phản hồi:
+
+“Great! You spoke English already!”
+
+📌 Cố ý cho trẻ thành công sớm.
+
+STEP 2 — Rule of the Game (30s)
+
+AI nói đúng 1 câu duy nhất:
+
+“I will not answer for you. You must speak.”
+
+👉 Không giải thích thêm
+👉 Đây là luật nền tảng cho cả app
+
+STEP 3 — Scaffold Demo (1 phút)
+
+AI cố tình hỏi câu hơi khó:
+
+AI: Where are you now?
+
+
+Nếu trẻ im lặng / trả lời kém:
+
+Hint words: school
+
+Sentence starter: I am at...
+
+Model sentence: I am at school.
+
+➡️ Trẻ thấy AI giúp nhưng không làm hộ
+
+STEP 4 — Mini Mission Complete (1 phút)
+
+AI kết thúc:
+
+“🎉 You finished your first mission!”
+
+Hiển thị:
+
+✔ Words used
+
+🌟 Bonus words
+
+👍 One short tip
+
+📌 Không có điểm số phức tạp lúc onboarding
+
+A3. ONBOARDING SUCCESS CRITERIA (CHO AI & DEV)
+
+Copilot phải đảm bảo:
+
+Trẻ nói/viết ít nhất 3 lần
+
+AI không nói quá 2 câu liên tiếp
+
+Có scaffold thật (không fake)
+
+PHẦN B — AI TUTOR KPI (KHÔNG PHẢI KPI CHAT)
+
+❗ Đây là phần khiến AI Tutor vượt Duolingo
+
+B1. TRIẾT LÝ KPI
+
+❌ Không đo:
+
+Số tin nhắn
+
+Thời gian chat
+
+Số token
+
+✅ Chỉ đo:
+
+Student language production
+
+Progress theo tuần
+
+Độ độc lập của trẻ
+
+B2. CORE LEARNING KPI (BẮT BUỘC)
+1️⃣ Language Production Rate (LPR)
+
+Trẻ tạo ra ngôn ngữ bao nhiêu?
+
+LPR = student_outputs / total_turns
+
+
+🎯 Target:
+
+Beginner: ≥ 60%
+
+Intermediate: ≥ 75%
+
+➡️ Nếu LPR thấp → AI nói quá nhiều → FAIL
+
+2️⃣ Core Vocab Usage
+used_core_vocab / total_core_vocab
+
+
+🎯 Target:
+
+≥ 80% mỗi mission
+
+➡️ AI phải chủ động ép vocab, không chờ trẻ tự dùng
+
+3️⃣ Sentence Growth Index (SGI)
+
+So sánh:
+
+Độ dài câu đầu mission
+
+Độ dài câu cuối mission
+
+🎯 Target:
+
++30% length
+
++1 grammar structure
+
+📌 Đây là chỉ số “trẻ đang giỏi lên”
+
+4️⃣ Scaffold Dependency Score (SDS)
+scaffold_level_used
+
+Level	Ý nghĩa
+1	Hint words
+2	Sentence starter
+3	Model sentence
+4	Copy only
+
+🎯 Goal:
+
+SDS giảm dần theo tuần
+
+➡️ AI Tutor thành công khi trẻ không cần AI nữa
+
+B3. WEEKLY PROGRESS KPI (CONTENT-AWARE)
+
+Mỗi tuần AI phải trả lời được:
+
+“So với tuần trước, trẻ giỏi hơn ở điểm nào?”
+
+Ví dụ summary:
+
+This week:
+✔ Used all core words
+✔ Longer sentences
+→ Next week: try asking questions
+
+
+📌 Không bao giờ so sánh với người khác
+
+PHẦN C — COPILOT MASTER DIRECTIVE (DÁN NGUYÊN KHỐI)
+You are implementing EngQuest AI Tutor.
+
+This is NOT a chatbot.
+
+Core rules:
+1. AI Tutor is strictly content-aware by week and syllabus.
+2. Every AI interaction must force student language production.
+3. AI uses scaffolding, never answers for the student.
+4. AI speaks less than the student.
+5. Success is measured by learning KPIs, not chat metrics.
+
+Implement:
+- Onboarding flow that forces speaking/writing within 30 seconds.
+- Mission-based learning, not free chat.
+- Story as turn-based role-play with required vocab.
+- Learning KPIs: LPR, Core Vocab Usage, Sentence Growth, Scaffold Dependency.
+
+Never:
+- Let AI explain grammar rules.
+- Let AI generate long content.
+- Let AI chat without a learning goal.
+
+PHẦN D — TẠI SAO ARTIFACT NÀY “WOW” CHO COPILOT
+
+Vì nó:
+
+Không mơ hồ
+
+Không thiên về prompt
+
+Không lệ thuộc UI
+
+Không để Copilot “sáng tạo bừa”
+
+👉 Copilot chỉ có 1 con đường đúng để code.
+
+🔚 KẾT LUẬN (RẤT THẲNG)
+
+Bạn đang làm:
+
+AI-native ESL product
+
+Không phải “ESL + AI”
+
+Không phải chatbot
+
+Nếu bạn giữ vững artifact này:
+
+AI Tutor sẽ là USP lớn nhất
+
+Trẻ thích học thật
+
+Giá trị sản phẩm cao hơn hẳn các app phổ thông
