@@ -181,7 +181,7 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     
     // INTENT 1: What is your name?
     if (prompt.includes('what is your name') || prompt.includes("what's your name")) {
-      return ['My', 'name', 'is', context.learnerName || 'Alex'];
+      return ['My', 'name', 'is', context?.learnerName || 'Alex'];
     }
     
     // INTENT 2: Are you a student? (Yes/No question about identity)
