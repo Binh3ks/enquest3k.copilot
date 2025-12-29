@@ -1,0 +1,32 @@
+{
+  "masterQuery": "subject pronouns verb to be school for kids ESL",
+  "grammar": "subject pronouns I you he she we they verb to be am is are",
+  "videos": [
+    {
+      "id": 1,
+      "query": "subject pronouns song I you he she we they for kids",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 2,
+      "query": "verb to be am is are for kids ESL",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 3,
+      "query": "school day for kids educational",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 4,
+      "query": "science tools microscope magnifying glass for kids",
+      "purpose": "SCIENCE"
+    },
+    {
+      "id": 5,
+      "query": "what scientists do for kids",
+      "purpose": "SCIENCE"
+    }
+  ]
+}
+

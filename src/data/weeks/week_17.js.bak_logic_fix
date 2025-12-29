@@ -1,0 +1,149 @@
+const weekData = {
+  weekId: 17,
+  weekTitle_en: "Biography of Inventors",
+  weekTitle_vi: "Tiểu Sử Nhà Phát Minh",
+  grammar_focus: "Sequencing Words (First, Next, Then, Finally)",
+  global_vocab: [
+    { word: "inventor", definition_en: "A person who creates new things.", definition_vi: "Nhà phát minh" },
+    { word: "biography", definition_en: "The story of a person's life.", definition_vi: "Tiểu sử" },
+    { word: "sequence", definition_en: "The order of events.", definition_vi: "Trình tự" },
+    { word: "first", definition_en: "Coming before all others.", definition_vi: "Đầu tiên" },
+    { word: "next", definition_en: "Coming immediately after.", definition_vi: "Tiếp theo" },
+    { word: "then", definition_en: "At that time; after that.", definition_vi: "Sau đó" },
+    { word: "finally", definition_en: "At the end.", definition_vi: "Cuối cùng" },
+    { word: "experiment", definition_en: "A scientific test.", definition_vi: "Thí nghiệm" },
+    { word: "success", definition_en: "Achieving a goal.", definition_vi: "Thành công" },
+    { word: "fail", definition_en: "Not succeed.", definition_vi: "Thất bại" }
+  ],
+  stations: {
+    read_explore: {
+      title: "Thomas Edison's Light",
+      image_url: "/images/week17/read_cover_w17.jpg",
+      content_en: "Thomas Edison was a great **inventor**. His **biography** is full of hard work. **First**, he had an idea for a light bulb. **Next**, he did many **experiments**. He failed many times, but he did not stop. **Then**, he found the right material. **Finally**, the light bulb glowed brightly. His **success** changed the world. This **sequence** of events shows his persistence.",
+      content_vi: "Thomas Edison là một nhà phát minh vĩ đại. Tiểu sử của ông đầy ắp sự làm việc chăm chỉ. Đầu tiên, ông có ý tưởng về bóng đèn. Tiếp theo, ông làm nhiều thí nghiệm. Ông thất bại nhiều lần nhưng không dừng lại. Sau đó, ông tìm ra vật liệu phù hợp. Cuối cùng, bóng đèn sáng rực. Thành công của ông đã thay đổi thế giới. Trình tự các sự kiện này cho thấy sự kiên trì của ông.",
+      audio_url: null,
+      comprehension_questions: [
+        { id: 1, question_en: "What did Edison invent?", answer: ["The light bulb."], hint_en: "He invented the...", hint_vi: "Ông ấy phát minh..." },
+        { id: 2, question_en: "What did he do after having an idea?", answer: ["Experiments."], hint_en: "He did...", hint_vi: "Ông ấy làm..." },
+        { id: 3, question_en: "Did he succeed immediately?", answer: ["No, he failed many times."], hint_en: "He failed...", hint_vi: "Ông ấy đã thất bại..." }
+      ]
+    },
+    new_words: {
+      vocab: [
+        { id: 1, word: "inventor", pronunciation: "/ɪnˈvɛntə/", definition_vi: "Nhà phát minh", definition_en: "Creator of new things.", example: "Edison was a famous inventor.", collocation: "great inventor", image_url: "/images/week17/inventor.jpg" },
+        { id: 2, word: "biography", pronunciation: "/bʌɪˈɒɡrəfi/", definition_vi: "Tiểu sử", definition_en: "Life story.", example: "I read a biography.", collocation: "write a biography", image_url: "/images/week17/biography.jpg" },
+        { id: 3, word: "experiment", pronunciation: "/ɪkˈspɛrɪm(ə)nt/", definition_vi: "Thí nghiệm", definition_en: "Scientific test.", example: "We do an experiment.", collocation: "conduct an experiment", image_url: "/images/week17/experiment.jpg" },
+        { id: 4, word: "first", pronunciation: "/fəːst/", definition_vi: "Đầu tiên", definition_en: "Number one.", example: "First, wash hands.", collocation: "first step", image_url: "/images/week17/first.jpg" },
+        { id: 5, word: "next", pronunciation: "/nɛkst/", definition_vi: "Tiếp theo", definition_en: "After this.", example: "Next, add sugar.", collocation: "next time", image_url: "/images/week17/next.jpg" },
+        { id: 6, word: "then", pronunciation: "/ðɛn/", definition_vi: "Sau đó", definition_en: "After that.", example: "Then, mix it.", collocation: "and then", image_url: "/images/week17/then.jpg" },
+        { id: 7, word: "finally", pronunciation: "/ˈfʌɪnəli/", definition_vi: "Cuối cùng", definition_en: "At the end.", example: "Finally, serve it.", collocation: "finally done", image_url: "/images/week17/finally.jpg" },
+        { id: 8, word: "fail", pronunciation: "/feɪl/", definition_vi: "Thất bại", definition_en: "Not succeed.", example: "Don't be afraid to fail.", collocation: "fail a test", image_url: "/images/week17/fail.jpg" },
+        { id: 9, word: "succeed", pronunciation: "/səkˈsiːd/", definition_vi: "Thành công", definition_en: "Reach a goal.", example: "Work hard to succeed.", collocation: "succeed in", image_url: "/images/week17/succeed.jpg" },
+        { id: 10, word: "idea", pronunciation: "/ʌɪˈdɪə/", definition_vi: "Ý tưởng", definition_en: "A thought.", example: "Good idea.", collocation: "bright idea", image_url: "/images/week17/idea.jpg" }
+      ]
+    },
+    word_match: { pairs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+    grammar: {
+      grammar_explanation: {
+        title_en: "Sequencing", title_vi: "Trình tự",
+        rules: [
+          { type: "1", icon: "1️⃣", rule_en: "First...", rule_vi: "Đầu tiên...", example: "First, wake up." },
+          { type: "2", icon: "➡️", rule_en: "Next / Then...", rule_vi: "Tiếp theo...", example: "Next, eat." },
+          { type: "3", icon: "🏁", rule_en: "Finally...", rule_vi: "Cuối cùng...", example: "Finally, go." }
+        ]
+      },
+      exercises: [
+        { id: 1, type: "mc", question: "_____ , I wake up.", options: ["First", "Finally"], answer: "First", hint: "Start" },
+        { id: 2, type: "mc", question: "_____ , I sleep.", options: ["Next", "Finally"], answer: "Finally", hint: "End" },
+        { id: 3, type: "fill", question: "_____, wash hands.", answer: "First", hint: "Start" },
+        { id: 4, type: "fill", question: "_____, eat.", answer: "Next", hint: "2nd" },
+        { id: 5, type: "fill", question: "_____, go.", answer: "Then", hint: "3rd" },
+        { id: 6, type: "mc", question: "First A, _____ B.", options: ["then", "first"], answer: "then", hint: "After" },
+        { id: 7, type: "unscramble", question: "Sort:", words: ["First,", "look"], answer: "First, look.", hint: "First..." },
+        { id: 8, type: "fill", question: "_____, stop.", answer: "Finally", hint: "End" },
+        { id: 9, type: "mc", question: "Do _____.", options: ["next", "first"], answer: "next", hint: "2nd" },
+        { id: 10, type: "fill", question: "_____, run.", answer: "Then", hint: "3rd" },
+        { id: 11, type: "unscramble", question: "Sort:", words: ["Finally,", "win"], answer: "Finally, win.", hint: "End" },
+        { id: 12, type: "mc", question: "Start _____.", options: ["first", "last"], answer: "first", hint: "1" },
+        { id: 13, type: "fill", question: "_____, read.", answer: "Next", hint: "2" },
+        { id: 14, type: "fill", question: "_____, write.", answer: "Then", hint: "3" },
+        { id: 15, type: "mc", question: "End _____.", options: ["finally", "next"], answer: "finally", hint: "End" },
+        { id: 16, type: "unscramble", question: "Sort:", words: ["Next,", "try"], answer: "Next, try.", hint: "2" },
+        { id: 17, type: "fill", question: "_____, sit.", answer: "First", hint: "1" },
+        { id: 18, type: "mc", question: "After _____.", options: ["then", "first"], answer: "then", hint: "After" },
+        { id: 19, type: "fill", question: "_____, stand.", answer: "Finally", hint: "End" },
+        { id: 20, type: "fill", question: "_____, clap.", answer: "Next", hint: "2" }
+      ]
+    },
+    ask_ai: {
+      prompts: [
+        { id: 1, context_vi: "Bạn đang phỏng vấn Thomas Edison cho bài báo tường. Hãy hỏi ông ấy phát minh nổi tiếng nhất của ông là gì.", context_en: "You are interviewing Thomas Edison for the school newspaper. Ask him what his most famous invention is.", answer: ["What is your most famous invention?"], hint: "What is..." },
+        { id: 2, context_vi: "Bạn đang xem một bộ phim về các nhà phát minh. Bạn không hiểu từ 'biography'. Hãy hỏi xem nó nghĩa là gì.", context_en: "You are watching a documentary about inventors. You are confused about the word 'biography'. Ask what it means.", answer: ["What does biography mean?"], hint: "What does..." },
+        { id: 3, context_vi: "Bạn đang làm thí nghiệm khoa học nhưng bị mắc kẹt. Hãy hỏi giáo viên xem bước tiếp theo là gì.", context_en: "You are doing a science experiment but stuck. Ask your teacher what the next step is.", answer: ["What is the next step?"], hint: "What is..." },
+        { id: 4, context_vi: "Bạn đọc thấy Edison đã thất bại nhiều lần. Hãy hỏi tại sao ông ấy không bỏ cuộc.", context_en: "You read that Edison failed many times. Ask why he didn't give up.", answer: ["Why didn't you give up?"], hint: "Why didn't..." },
+        { id: 5, context_vi: "Bạn muốn biết trình tự làm một bóng đèn. Hãy hỏi xem điều gì xảy ra đầu tiên.", context_en: "You want to know the order of events in making a light bulb. Ask what happened first.", answer: ["What happened first?"], hint: "What happened..." }
+      ]
+    },
+    explore: {
+      title_en: "Invention Process", title_vi: "Quy trình Phát minh",
+      image_url: "/images/week17/explore_cover_w17.jpg",
+      content_en: "Invention is a **process**. It follows a **sequence**. **First**, the **inventor** finds a problem. **Next**, they think of an **idea**. **Then**, they build a model. Often, they **fail**. But they try again. **Finally**, they **succeed**.",
+      content_vi: "Phát minh là một quy trình. Nó theo một trình tự. Đầu tiên, nhà phát minh tìm vấn đề. Tiếp theo, họ nghĩ ra ý tưởng. Sau đó, họ xây mô hình. Thường họ thất bại. Nhưng họ thử lại. Cuối cùng, họ thành công.",
+      check_questions: [
+        { id: 1, question_en: "What comes first?", answer: ["Find a problem."], hint_en: "First...", hint_vi: "Đầu tiên..." },
+        { id: 2, question_en: "What do they build?", answer: ["A model."], hint_en: "They build...", hint_vi: "Họ xây..." },
+        { id: 3, question_en: "Do they stop if they fail?", answer: ["No, they try again."], hint_en: "They try...", hint_vi: "Họ thử..." }
+      ],
+      question: { text_en: "What do you do first in the morning?", text_vi: "Bạn làm gì đầu tiên vào buổi sáng?", min_words: 5, hint_en: "First, I...", hint_vi: "Đầu tiên, tôi...", model_answer: "First, I wake up." }
+    },
+    logic_lab: {
+      puzzles: [
+        { id: 1, type: "logic", title_en: "Order", title_vi: "Thứ tự", question_en: "1. Eat, 2. Cook. What is the correct order?", question_vi: "1. Ăn, 2. Nấu. Thứ tự đúng là gì?", answer: ["2, 1"], target_number: 0, unit: "", hint_en: "Cook first", hint_vi: "Nấu trước" },
+        { id: 2, type: "math", title_en: "Time", title_vi: "Thời gian", question_en: "I study for 1 hour. I play for 2 hours. How many hours in total?", question_vi: "Tôi học 1 giờ. Tôi chơi 2 giờ. Tổng cộng bao nhiêu giờ?", answer: ["3 hours"], target_number: 3, unit: "hours", hint_en: "1 + 2", hint_vi: "1 + 2" },
+        { id: 3, type: "logic", title_en: "Plant", title_vi: "Cây", question_en: "First: Seed. Finally: ??? (What does it become?)", question_vi: "Đầu: Hạt. Cuối: ??? (Nó trở thành gì?)", answer: ["Plant", "Flower"], target_number: 0, unit: "", hint_en: "Grow", hint_vi: "Lớn" },
+        { id: 4, type: "pattern", title_en: "Shape", title_vi: "Hình", question_en: "A, B, A, B, ... What comes next?", question_vi: "A, B, A, B, ... Cái gì tiếp theo?", answer: ["A"], target_number: 0, unit: "", hint_en: "A", hint_vi: "A" },
+        { id: 5, type: "logic", title_en: "Story", title_vi: "Truyện", question_en: "Does the word 'Finally' usually start a story? Yes or No?", question_vi: "Từ 'Finally' có thường bắt đầu câu chuyện không? Có hay Không?", answer: ["No"], target_number: 0, unit: "", hint_en: "End", hint_vi: "Kết thúc" }
+      ]
+    },
+    dictation: {
+      sentences: [
+        { id: 1, text: "First, he had a great idea for a new invention.", meaning: "Đầu tiên, anh ấy có một ý tưởng tuyệt vời cho một phát minh mới." },
+        { id: 2, text: "Next, she worked hard in the lab all day long.", meaning: "Tiếp theo, cô ấy làm việc chăm chỉ trong phòng thí nghiệm cả ngày." },
+        { id: 3, text: "Then, they tested the new machine many times.", meaning: "Sau đó, họ thử nghiệm cỗ máy mới nhiều lần." },
+        { id: 4, text: "Finally, the experiment was a very big success.", meaning: "Cuối cùng, thí nghiệm đã thành công rất lớn." },
+        { id: 5, text: "The sequence of events is very important in stories.", meaning: "Trình tự các sự kiện rất quan trọng trong các câu chuyện." }
+      ]
+    },
+    shadowing: {
+      title: "Edison",
+      script: [
+        { id: 1, text: "Edison was a great inventor.", vi: "Edison là nhà phát minh vĩ đại." },
+        { id: 2, text: "First, he had an idea.", vi: "Đầu tiên, ông có ý tưởng." },
+        { id: 3, text: "Next, he did experiments.", vi: "Tiếp theo, ông làm thí nghiệm." },
+        { id: 4, text: "Then, he found the material.", vi: "Sau đó, ông tìm ra vật liệu." },
+        { id: 5, text: "Finally, the light glowed.", vi: "Cuối cùng, đèn sáng." }
+      ]
+    },
+    writing: {
+      title: "Brush Teeth", instruction_en: "Write 4 sentences.", instruction_vi: "Viết 4 câu.", prompt_en: "First? Next?", prompt_vi: "Đầu? Tiếp?", model_sentence: "First, get brush. Next, add paste. Then, brush. Finally, rinse.", min_words: 20, keywords: ["First", "Next"]
+    },
+    word_power: {
+      words: [
+        { id: 1, word: "process", pronunciation: "/ˈprəʊsɛs/", definition_en: "Steps.", definition_vi: "Quy trình", example: "A long process.", model_sentence: "Follow the process.", collocation: "good process", cefr_level: "B1", image_url: "/images/week17/process.jpg" },
+        { id: 2, word: "result", pronunciation: "/rɪˈzʌlt/", definition_en: "Outcome.", definition_vi: "Kết quả", example: "Good result.", model_sentence: "See the result.", collocation: "final result", cefr_level: "A2", image_url: "/images/week17/result.jpg" },
+        { id: 3, word: "solve", pronunciation: "/sɒlv/", definition_en: "Fix.", definition_vi: "Giải quyết", example: "Solve it.", model_sentence: "We solve problems.", collocation: "solve problem", cefr_level: "A2", image_url: "/images/week17/solve.jpg" }
+      ]
+    },
+    daily_watch: {
+      videos: [
+        { id: 1, title: "Thomas Edison for Kids", videoId: "HQdiS359-Wk", duration: "4:00", sim_duration: 240 },
+        { id: 2, title: "Sequencing Words Song", videoId: "F7R-0e0j6g", duration: "3:00", sim_duration: 180 },
+        { id: 3, title: "Inventions", videoId: "bNUZpT8f8", duration: "5:00", sim_duration: 300 },
+        { id: 4, title: "Plant a Seed Sequence", videoId: "9u9t9g8f", duration: "3:30", sim_duration: 210 },
+        { id: 5, title: "First Next Then Finally", videoId: "8j8j8j8j", duration: "2:30", sim_duration: 150 }
+      ],
+      bonus_games: []
+    }
+  }
+};
+export default weekData;

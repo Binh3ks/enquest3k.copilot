@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+}
+
+/* --- UI STYLES --- */
+.btn-3d { transition: all 0.1s; transform: translateY(0); box-shadow: 0 4px 0 0 rgba(0,0,0,0.2); }
+.btn-3d:active { transform: translateY(4px); box-shadow: 0 0 0 0 rgba(0,0,0,0.2); }
+.card-3d { background-color: white; border-width: 2px; border-radius: 1rem; box-shadow: 0 6px 0 0 rgba(0,0,0,0.1); transition: all 0.3s; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.dict-popup { animation: popIn 0.2s ease-out forwards; }
+@keyframes popIn { 0% { opacity: 0; transform: scale(0.9) translateY(10px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+
+/* --- PRINT STYLES (OPTIMIZED FLOW) --- */
+@media print {
+  @page { margin: 1cm; size: A4 portrait; }
+  
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .screen-only { display: none !important; }
+  
+  .printable-worksheet { 
+    display: block !important; 
+    width: 100%;
+    position: relative; 
+  }
+
+  /* Tự động tránh cắt đôi nội dung */
+  .section-container {
+    break-inside: avoid;
+    margin-bottom: 1.5rem; /* Khoảng cách giữa các bài */
+    border-bottom: 1px dashed #ccc; /* Dòng kẻ ngăn cách nhẹ */
+    padding-bottom: 1.5rem;
+  }
+  
+  /* Ngắt trang bắt buộc cho Writing */
+  .force-break-before { page-break-before: always; }
+}
+
+/* Progressive Saving Animations - Master Prompt V23 Section 0.1.1 */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+/* 3D Flip Utilities */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }

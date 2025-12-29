@@ -1,0 +1,1203 @@
+The Integrated English Program Framework - 3 Year Pathway (Final Version)
+(Khung Chương trình Tiếng Anh Tích hợp - Lộ trình 3 Năm (Phiên bản Cuối cùng))
+
+I. Guiding Philosophy (Triết lý Dẫn dắt)
+This program is built on the core philosophy of Content and Language Integrated Learning (CLIL), where English is not just a subject to be learned, but a tool to explore the world. We teach academic subjects through English, enabling students to master both content and language simultaneously. Our methodology is rooted in modern pedagogical principles including Spaced Repetition (SRS) to ensure long-term retention, Project-Based Learning to make learning meaningful, and a Production-Oriented approach that requires students to actively use the language they acquire. (Chương trình này được xây dựng trên triết lý cốt lõi của Học Tích hợp Nội dung và Ngôn ngữ (CLIL), nơi tiếng Anh không chỉ là một môn học, mà là một công cụ để khám phá thế giới. Chúng tôi dạy các môn học thuật thông qua tiếng Anh, cho phép học sinh làm chủ cả nội dung và ngôn ngữ cùng một lúc. Phương pháp luận của chúng tôi bắt nguồn từ các nguyên tắc sư phạm hiện đại bao gồm Lặp lại Ngắt quãng (SRS) để đảm bảo ghi nhớ dài hạn, Học theo Dự án để việc học trở nên có ý nghĩa, và một phương pháp Lấy Sản phẩm làm Trung tâm yêu cầu học sinh phải chủ động sử dụng ngôn ngữ mà các em tiếp thu được.)
+
+II. Overall Goal (Mục tiêu Tổng thể)
+After 3 years (equivalent to ~144 weeks, ~576 guided learning hours), students will be able to use English as an academic tool to comprehend specialized texts, interpret complex data, solve multi-step word problems, and write structured expository and argumentative essays. (Sau 3 năm (tương đương ~144 tuần, ~576 giờ học có định hướng), học viên sẽ có khả năng sử dụng tiếng Anh như một công cụ học thuật để hiểu các văn bản chuyên ngành, diễn giải dữ liệu phức tạp, giải các bài toán có lời văn nhiều bước, và viết các bài luận giải thích cũng như nghị luận có cấu trúc.)
+The program equips students with the comprehensive skillset and confidence to achieve a B1+ (High Intermediate) level on the Common European Framework of Reference (CEFR), equivalent to an IELTS score of 5.0 - 5.5, a solid foundation for pursuing American elementary and middle school programs. (Chương trình trang bị cho học viên bộ kỹ năng toàn diện và sự tự tin để đạt được trình độ B1+ (High Intermediate) theo Khung tham chiếu Châu Âu (CEFR), tương đương mức điểm IELTS 5.0 - 5.5, một nền tảng vững chắc để theo học các chương trình giáo dục tiểu học và trung học cơ sở của Mỹ.)
+
+III. Principles for Teaching Skills (WHAT to Teach) / Nguyên tắc về Kỹ năng Giảng dạy (WHAT to Teach)
+	•	Academic Vocabulary: Systematically teach Tier 2 (high-frequency academic) and Tier 3 (subject-specific) vocabulary. (Từ vựng Học thuật: Dạy một cách có hệ thống từ vựng Cấp 2 (học thuật tần suất cao) và Cấp 3 (chuyên ngành).)
+	•	Grammar in Context: Teach grammatical structures not as isolated rules, but as tools for expressing complex ideas within the context of the unit's theme. (Ngữ pháp trong Ngữ cảnh: Dạy các cấu trúc ngữ pháp không phải như những quy tắc riêng lẻ, mà như những công cụ để diễn đạt các ý tưởng phức tạp trong ngữ cảnh của chủ đề học phần.)
+	•	Structured Writing: Scaffold writing skills progressively, from sentences to paragraphs, and finally to multi-paragraph essays. Key text types include Narrative, Descriptive, Expository, Procedural, and Argumentative. (Viết có Cấu trúc: Hỗ trợ các kỹ năng viết một cách lũy tiến, từ câu đến đoạn văn, và cuối cùng là các bài luận nhiều đoạn. Các loại văn bản chính bao gồm Tường thuật, Miêu tả, Giải thích, Thủ tục, và Nghị luận.)
+	•	Critical Thinking & Logic: Explicitly teach logical reasoning skills (Cause & Effect, Problem & Solution, Comparison) as a core competency, integrated into both ELA and Math. (Tư duy Phản biện & Logic: Dạy một cách tường minh các kỹ năng suy luận logic (Nguyên nhân & Kết quả, Vấn đề & Giải pháp, So sánh) như một năng lực cốt lõi, được tích hợp vào cả ELA và Toán.)
+	•	Data Literacy: Teach students how to read, interpret, and draw simple conclusions from various data representations (tables, bar charts, pictographs, line graphs). (Hiểu biết về Dữ liệu: Dạy học sinh cách đọc, diễn giải và rút ra các kết luận đơn giản từ các dạng biểu diễn dữ liệu khác nhau.)
+
+IV. Principles for Teaching Methods (HOW to Teach) / Nguyên tắc về Phương pháp Giảng dạy (HOW to Teach)
+	•	Thematic Hybrid Model: Every unit is driven by a Core Academic Topic and framed within an engaging Creative Lens (Conan, Doraemon, etc.) to create an immersive learning adventure. (Mô hình Kết hợp theo Chủ đề: Mỗi học phần được dẫn dắt bởi một Chủ đề Học thuật Cốt lõi và được đóng khung trong một Lăng kính Sáng tạo hấp dẫn để tạo ra một cuộc phiêu lưu học tập nhập vai.)
+	•	Zero L1 Input (The Visual Anchor): All new concepts are introduced through a "Visual Anchor"—a short video or engaging picture. The teacher uses Zero L1 (no native language), relying on gestures, miming, and expressions (Total Physical Response) to create a shared, non-verbal understanding before introducing English vocabulary. (Tiếp thu Zero L1 (Mỏ neo Thị giác): Tất cả các khái niệm mới được giới thiệu thông qua một "Mỏ neo Thị giác"—một video ngắn hoặc hình ảnh hấp dẫn. Giáo viên sử dụng Zero L1 (không dùng tiếng mẹ đẻ), dựa vào cử chỉ, diễn tả và biểu cảm để tạo ra sự hiểu biết chung phi ngôn ngữ trước khi giới thiệu từ vựng tiếng Anh.)
+	•	Active Questioning Skill Practice: The "Focus on Questioning Skill" section is a mandatory 2-step process: Step 1: Modeling (Teacher-led) and Step 2: Paired Practice (Student-led) where students must practice asking questions. (Thực hành Kỹ năng Đặt câu hỏi Chủ động: Phần "Tập trung vào Kỹ năng Đặt câu hỏi" là một quy trình 2 bước bắt buộc: Bước 1: Làm mẫu và Bước 2: Thực hành theo cặp, nơi học sinh bắt buộc phải thực hành đặt câu hỏi.)
+	•	Structured CLIL Pathways: (Lộ trình CLIL có Cấu trúc:)
+	•	Math as a Language Pathway: Each new math concept is taught via a 3-step language-focused process: 1) Language Tools (numerical problems), 2) Guided Word Problems (bilingual with C.U.B.E.S.), and 3) Independent Application (English-only word problems). (Lộ trình Toán như một Ngôn ngữ: Mỗi khái niệm toán mới được dạy qua quy trình 3 bước: 1) Công cụ Ngôn ngữ (bài toán số học), 2) Bài toán có lời văn có Hướng dẫn (song ngữ với C.U.B.E.S.), và 3) Ứng dụng Độc lập (bài toán có lời văn bằng tiếng Anh).)
+	•	Science/Social Studies Integration: These subjects are integrated into the ELA and Math blocks as content drivers, not taught as separate subjects in the early phases. (Tích hợp Khoa học/Xã hội học: Các môn học này được tích hợp vào các khối ELA và Toán như là động lực nội dung, không được dạy như các môn riêng biệt trong các giai đoạn đầu.)
+
+V. Principles for Environment & Assessment (HOW to Ensure Success) / Nguyên tắc về Môi trường & Đánh giá (HOW to Ensure Success)
+	•	English-Rich Environment (Brain Soak): Simple, repetitive classroom instructions are always delivered in English to maximize language immersion. (Môi trường Giàu Tiếng Anh (Tắm ngôn ngữ): Các mệnh lệnh đơn giản, lặp đi lặp lại trong lớp học luôn được nói bằng tiếng Anh.)
+	•	Effective Homework: Homework is a focused 10-15 minute session with varied activities, including a "Priming" activity to prepare for the next lesson and an "Audio Mission" for speaking practice. (Bài tập về nhà Hiệu quả: Bài tập về nhà là một buổi làm bài tập trung từ 10-15 phút với các hoạt động đa dạng, bao gồm hoạt động "Mồi" và "Nhiệm vụ Âm thanh".)
+	•	Assessment for Learning: Assessment is primarily formative, using in-class tasks and homework to provide immediate, constructive feedback. Summative assessments occur at the end of major projects. (Đánh giá vì sự Tiến bộ: Đánh giá chủ yếu là đánh giá quá trình. Đánh giá tổng kết diễn ra vào cuối các dự án lớn.)
+
+VI. Optimized Phase Structure (The 3-Year Pathway) / Cấu trúc Giai đoạn Tối ưu (Lộ trình 3 Năm)
+Phase 1: Foundational Fluency (Approx. 42 Weeks) (Giai đoạn 1: Nền tảng Trôi chảy (Khoảng 42 Tuần))
+	•	Content Weeks (Tuần Nội dung): 36 weeks
+	•	Review & Project Weeks (Tuần Ôn tập & Dự án): 6 weeks (2 weeks inserted after every 12 weeks of content)
+	•	Goal: Master foundational vocabulary and grammar. Write simple descriptive, narrative, and procedural paragraphs. Build confidence in speaking and basic production. (Mục tiêu: Làm chủ từ vựng và ngữ pháp nền tảng. Viết các đoạn văn miêu tả, tường thuật, và thủ tục đơn giản. Xây dựng sự tự tin trong việc nói và sản xuất ngôn ngữ cơ bản.)
+	•	Time Allocation (Phân bổ Thời lượng):
+	•	Session 1 (120 mins): 120 mins English Language Arts.
+	•	Session 2 (120 mins): 120 mins English Language Arts. (Toàn bộ thời gian được dành cho ELA để xây dựng nền tảng ngôn ngữ vững chắc.)
+Phase 2: Academic Application (Approx. 70 Weeks) (Giai đoạn 2: Ứng dụng Học thuật (Khoảng 70 Tuần))
+	•	Content Weeks (Tuần Nội dung): 60 weeks
+	•	Review & Application Weeks (Tuần Ôn tập & Ứng dụng): 10 weeks (2 weeks inserted after every 12 weeks of content)
+	•	Goal: Transition from personal to academic writing. Use English to learn and explain concepts in Math, Science, and Social Studies. Master structured expository and simple persuasive paragraphs. (Mục tiêu: Chuyển từ viết cá nhân sang viết học thuật. Sử dụng tiếng Anh để học và giải thích các khái niệm trong Toán, Khoa học, và Xã hội học. Làm chủ các đoạn văn giải thích và thuyết phục đơn giản có cấu trúc.)
+	•	Time Allocation (Phân bổ Thời lượng):
+	•	Session 1 (120 mins): 60 mins English Math + 60 mins English Language Arts.
+	•	Session 2 (120 mins): 40 mins Science (as content for ELA) + 40 mins English Language Arts (production task) + 40 mins Social Studies (as content for ELA). (Phân bổ thời lượng kế thừa trực tiếp từ cấu trúc của Giai đoạn 2 trong khung chương trình 2.5 năm cũ.)
+Phase 3: Advanced Synthesis & Debate (24 Weeks) (Giai đoạn 3: Tổng hợp Nâng cao & Tranh luận (24 Tuần))
+	•	Structure: Three distinct 8-week project cycles (Research -> 5-Paragraph Essay -> Debate).
+	•	Project Cycle 1: Homework: A Helper or a Burden?
+	•	Project Cycle 2: Video Games: More Than Just a Game?
+	•	Project Cycle 3: Smartphones for Kids: A Tool or a Distraction?
+	•	Goal: Achieve academic autonomy. Students will independently research topics, construct complex argumentative essays, and defend their opinions in formal debates, demonstrating a B1+ level of proficiency. (Mục tiêu: Đạt được sự tự chủ trong học thuật. Học sinh sẽ tự nghiên cứu chủ đề, xây dựng các bài luận nghị luận phức tạp, và bảo vệ quan điểm trong các cuộc tranh luận chính thức.)
+	•	Time Allocation (Phân bổ Thời lượng):
+	•	Session 1 (120 mins): 60 mins Research & Writing Workshop (làm việc trên dự án) + 60 mins Skill Building (học kỹ năng mới cho dự án, ví dụ: cách viết câu luận đề).
+	•	Session 2 (120 mins): 60 mins Application & Practice (áp dụng kỹ năng mới vào dự án) + 60 mins Debate Preparation & Practice (luyện tập tranh luận). (Thời lượng được tái cấu trúc để phục vụ hoàn toàn cho các giai đoạn của dự án.)
+VII. Optimized Phase Structure & Detailed Curriculum (Cấu trúc Giai đoạn Tối ưu & Chương trình Chi tiết)
+Phase 1: Foundational Fluency 🚀 (42 Weeks: Weeks 1-42) (Giai đoạn 1: Nền tảng Trôi chảy 🚀 (42 Tuần: Tuần 1-42))
+	•	Goal: Master foundational vocabulary and grammar. Write simple descriptive, narrative, and procedural paragraphs. Build confidence in speaking and basic production. (Mục tiêu: Làm chủ từ vựng và ngữ pháp nền tảng. Viết các đoạn văn miêu tả, tường thuật, và thủ tục đơn giản. Xây dựng sự tự tin trong việc nói và sản xuất ngôn ngữ cơ bản.)
+	•	Time Allocation: 120 mins ELA per session. No separate Math block. (Phân bổ Thời lượng: 120 phút Ngữ văn Anh mỗi buổi. Không có phần Toán riêng biệt.)
+	•	Structure: Three 12-week content cycles, each followed by a 2-week Review & Project period. (Cấu trúc: Ba chu trình nội dung 12 tuần, mỗi chu trình được theo sau bởi một giai đoạn Ôn tập & Dự án 2 tuần.)
+	•	Cycle 1.1 (Weeks 1-14): Core Description (Miêu tả Cốt lõi)
+	•	Weeks 1-12: Content (Unit 1: Describing People & Places) (Tuần 1-12: Nội dung)
+	•	Weeks 13-14: Review & Project 1 (Tuần 13-14: Ôn tập & Dự án 1)
+	•	Cycle 1.2 (Weeks 15-28): Recounting & Reasoning (Kể lại & Lập luận)
+	•	Weeks 15-26: Content (Unit 2: Recounting the Past & Expressing Opinions) (Tuần 15-26: Nội dung)
+	•	Weeks 27-28: Review & Project 2 (Tuần 27-28: Ôn tập & Dự án 2)
+	•	Cycle 1.3 (Weeks 29-42): Procedural & Expository Writing (Viết theo Quy trình & Viết Giải thích)
+	•	Weeks 29-40: Content (Unit 3 & 4: How-To Guides & The Natural World) (Tuần 29-40: Nội dung)
+	•	Weeks 41-42: Review & Application Week (Tuần 41-42: Tuần Ôn tập & Ứng dụng)
+
+Phase 2: Academic Application 🧠 (70 Weeks: Weeks 43-112) (Giai đoạn 2: Ứng dụng Học thuật 🧠 (70 Tuần: Tuần 43-112))
+	•	Goal: Transition from personal to academic writing. Use English to learn and explain concepts in Math, Science, and Social Studies. Master structured expository and simple persuasive paragraphs. (Mục tiêu: Chuyển từ viết cá nhân sang viết học thuật. Sử dụng tiếng Anh để học và giải thích các khái niệm trong Toán, Khoa học, và Xã hội học. Làm chủ các đoạn văn giải thích và thuyết phục đơn giản có cấu trúc.)
+	•	Time Allocation Logic: This phase is divided into two distinct time allocation structures. (Logic Phân bổ Thời lượng: Giai đoạn này được chia thành hai cấu trúc phân bổ thời gian riêng biệt.)
+	•	Cycle 2.1 (Weeks 43-70): Logical Thinking & Integrated Math Introduction (Tư duy Logic & Giới thiệu Toán Tích hợp)
+	•	Time Allocation: 80 mins ELA + 40 mins English Math per session. (Phân bổ Thời lượng: 80 phút ELA + 40 phút Toán Tiếng Anh mỗi buổi.)
+	•	Structure: Two 12-week content cycles, each followed by a 2-week Review & Application period.
+	•	Weeks 43-54: Content (Unit 5: Logical Thinking & Unit 6: Communication & Data) (Tuần 43-54: Nội dung)
+	•	Weeks 55-56: Review & Application Week (Tuần 55-56: Tuần Ôn tập & Ứng dụng)
+	•	Weeks 57-68: Content (Unit 7: Persuasion & Unit 8: Natural Systems) (Tuần 57-68: Nội dung)
+	•	Weeks 69-70: Review & Application Week (Tuần 69-70: Tuần Ôn tập & Ứng dụng)
+	•	Cycle 2.2 (Weeks 71-98): Fully Integrated Content Learning (Học Nội dung Tích hợp Toàn phần)
+	•	Time Allocation:
+	•	Session 1 (120 mins): 60 mins English Math + 60 mins ELA (Skill Building).
+	•	Session 2 (120 mins): 40 mins Science (Input) + 40 mins ELA (Application) + 40 mins Social Studies (Input).
+	•	Structure: Two 12-week content cycles, each followed by a 2-week Review & Project period.
+	•	Weeks 71-82: Content (Unit 9: Geography & Unit 10: Advanced Science) (Tuần 71-82: Nội dung)
+	•	Weeks 83-84: Review & Application Week (Tuần 83-84: Tuần Ôn tập & Ứng dụng)
+	•	Weeks 85-96: Content (Unit 11: Government & Unit 12: Basic Economics) (Tuần 85-96: Nội dung)
+	•	Weeks 97-98: Review & Project 3: "My Passion Project" Part 1 (Tuần 97-98: Ôn tập & Dự án 3, Phần 1)
+	•	Cycle 2.3 (Weeks 99-112): "My Passion Project" Completion (Hoàn thành "Dự án Đam mê")
+	•	Time Allocation: Continues the fully integrated structure. (Tiếp tục cấu trúc tích hợp toàn phần.)
+	•	Structure: Continues the multi-week project.
+	•	Weeks 99-110: Project Work (Research, Drafting, Editing). (Tuần 99-110: Làm dự án)
+	•	Weeks 111-112: Finalizing & Presentation. (Tuần 111-112: Hoàn thiện & Thuyết trình)
+
+Phase 3: Advanced Synthesis & Debate 🎓 (32 Weeks: Weeks 113-144) (Giai đoạn 3: Tổng hợp Nâng cao & Tranh luận 🎓 (32 Tuần: Tuần 113-144))
+	•	Goal: Achieve academic autonomy. Students will independently research topics, construct complex argumentative essays, and defend their opinions in formal debates. (Mục tiêu: Đạt được sự tự chủ trong học thuật. Học sinh sẽ tự nghiên cứu chủ đề, xây dựng các bài luận nghị luận phức tạp, và bảo vệ quan điểm trong các cuộc tranh luận chính thức.)
+	•	Structure: Three distinct 8-week project cycles, followed by a final consolidation period. (Cấu trúc: Ba chu trình dự án 8 tuần riêng biệt, theo sau là một giai đoạn củng cố cuối cùng.)
+	•	Time Allocation: Reconfigured to fully support the project-based workflow. (Phân bổ Thời lượng: Được tái cấu trúc để phục vụ hoàn toàn cho quy trình làm việc theo dự án.)
+	•	Session 1 (120 mins): 60 mins Research & Writing Workshop + 60 mins Skill Building.
+	•	Session 2 (120 mins): 60 mins Application & Practice + 60 mins Debate Preparation & Practice.
+	•	Project Cycle 1 (Weeks 113-120): Homework: A Helper or a Burden? (Chu trình Dự án 1 (Tuần 113-120): Bài tập về nhà: Người giúp đỡ hay Gánh nặng?)
+	•	Core Debate Question: "Should homework be banned in primary schools?" (Câu hỏi Tranh luận Cốt lõi: "Có nên cấm hoàn toàn bài tập về nhà ở bậc tiểu học không?")
+	•	Project Cycle 2 (Weeks 121-128): Video Games: More Than Just a Game? (Chu trình Dự án 2 (Tuần 121-128): Trò chơi Điện tử: Hơn cả một trò chơi?)
+	•	Core Debate Question: "Should primary school students be allowed to play video games every day?" (Câu hỏi Tranh luận Cốt lõi: "Học sinh tiểu học có nên được phép chơi trò chơi điện tử mỗi ngày không?")
+	•	Project Cycle 3 (Weeks 129-136): Smartphones for Kids: A Tool or a Distraction? (Chu trình Dự án 3 (Tuần 129-136): Điện thoại Thông minh cho Trẻ em: Công cụ hay Sự xao lãng?)
+	•	Core Debate Question: "Should children under 12 be allowed to have their own smartphones?" (Câu hỏi Tranh luận Cốt lõi: "Trẻ em dưới 12 tuổi có nên được phép sở hữu điện thoại thông minh riêng không?")
+	•	Final Consolidation & Graduation Prep (Weeks 137-144) (Giai đoạn Củng cố & Chuẩn bị Tốt nghiệp (Tuần 137-144))
+	•	Goal: Review all major writing genres and academic skills. Students engage in timed writing, impromptu speaking, and a final capstone presentation to showcase their overall proficiency. (Mục tiêu: Ôn tập tất cả các thể loại viết và kỹ năng học thuật chính. Học sinh tham gia viết có giới hạn thời gian, nói ứng biến, và một bài thuyết trình tổng kết cuối cùng để thể hiện trình độ tổng thể của mình.)
+
+THE INTEGRATED ENGLISH PROGRAM FRAMEWORK - REVISED MASTER BLUEPRINT
+(KHUNG CHƯƠNG TRÌNH TIẾNG ANH TÍCH HỢP - BẢN THIẾT KẾ CHI TIẾT ĐIỀU CHỈNH)
+PART I. GUIDING PHILOSOPHY (TRIẾT LÝ DẪN DẮT)
+(Giữ nguyên nguyên tắc cốt lõi từ Source 1, bổ sung triết lý cho giai đoạn mở rộng)
+	•	The "Trojan Horse" Strategy (Chiến lược "Ngựa Gỗ"): 
+	•	Rule: Không dạy ngữ pháp khô khan (Explicit Grammar Rules).
+	•	Action: Giấu ngữ pháp vào trong các chủ đề thú vị. Học sinh dùng đúng vì ngữ cảnh yêu cầu.
+	•	Smart Theming (Chủ đề Thông minh): 
+	•	Rule: Không bao giờ đặt tên bài học là tên kỹ năng. Tên bài học phải là một cuộc phiêu lưu.
+	•	The "Slow-Cook" Principle (Nguyên tắc "Nấu Chậm" - MỚI cho A1):
+	•	Rule: Với học sinh mới bắt đầu (A1), một thì (Tense) cần ít nhất 4-6 tuần thẩm thấu trước khi chuyển sang thì mới.
+	•	Action: Tách thì Quá khứ đơn thành 3 giai đoạn: Trạng thái (Was/Were) -> Quy tắc (-ed) -> Bất quy tắc (Irregular).
+
+PART II. DETAILED SYLLABUS: PHASE 1 (WEEKS 1-54)
+(PHẦN II. CHƯƠNG TRÌNH CHI TIẾT: GIAI ĐOẠN 1 - NỀN TẢNG & PHẢN XẠ)
+Goal: Master foundational vocabulary, Present Simple, Present Continuous, and Past Simple (Basic). Build confidence in speaking. 
+🟢 BLOCK A: THE "HERE & NOW" (HIỆN TẠI & TÔI) - WEEKS 1-18
+Unit 1: Identity & Environment (Weeks 1-8)
+(Nội dung gốc được giữ nguyên, dạy kỹ hơn)
+	•	Week 1: Hello, World! (Identity) (Tuần 1: Chào Thế giới!) 
+	•	Topic: Introduction & Superheroes (Creating a "Hero Identity").
+	•	Key Learning Outcome: Say and write sentences introducing name/age naturally.
+	•	Grammar Focus (Implicit): Pattern "I am..." (Identity).
+	•	Vocabulary Focus: name, age, student, hero, power, boy, girl, numbers 1-10.
+	•	Week 2: My Family Squad (Relationships) (Tuần 2: Biệt đội Gia đình) 
+	•	Topic: Family members as a team.
+	•	Key Learning Outcome: Point to a photo and describe roles using "My".
+	•	Grammar Focus (Implicit): "This is my..." (Possession).
+	•	Vocabulary Focus: mother, father, brother, sister, team, leader, helper.
+	•	Week 3: The Mirror Game (Appearance) (Tuần 3: Trò chơi Soi gương) 
+	•	Topic: Describing physical traits.
+	•	Key Learning Outcome: Describe self/others using "is" vs "has".
+	•	Grammar Focus (Implicit): "She is tall" vs "She has long hair".
+	•	Vocabulary Focus: tall, short, hair, eyes, long, curly, straight, glasses.
+	•	Week 4: My Happy Jar (Personality) (Tuần 4: Chiếc hũ Hạnh phúc) 
+	•	Topic: Emotions and Likes.
+	•	Key Learning Outcome: Connect feelings with hobbies.
+	•	Grammar Focus (Implicit): "I like + V-ing" (Patterns).
+	•	Vocabulary Focus: funny, friendly, happy, playing, reading, drawing.
+	•	Week 5: The Mystery House (Nouns) (Tuần 5: Ngôi nhà Bí ẩn) 
+	•	Topic: Exploring rooms and furniture.
+	•	Key Learning Outcome: Label parts of a house correctly.
+	•	Grammar Focus (Implicit): Articles "A/An".
+	•	Vocabulary Focus: bedroom, kitchen, bathroom, living room, bed, chair, table.
+	•	Week 6: Treasure Hunt at Home (Location) (Tuần 6: Truy tìm Kho báu) 
+	•	Topic: Hiding and finding objects.
+	•	Key Learning Outcome: Describe location using prepositions.
+	•	Grammar Focus (Implicit): Prepositions (In, On, Under, Next to).
+	•	Vocabulary Focus: box, desk, floor, wall, window, door, hide, seek.
+	•	Week 7: Inside My Backpack (Singular) (Tuần 7: Trong Balo của tôi) 
+	•	Topic: School supplies (One item).
+	•	Key Learning Outcome: State what exists (Singular).
+	•	Grammar Focus (Implicit): "There is a...".
+	•	Vocabulary Focus: whiteboard, teacher, computer, pen, ruler, eraser, book.
+	•	Week 8: The Busy Classroom (Plural) (Tuần 8: Lớp học Bận rộn) 
+	•	Topic: Counting classroom items.
+	•	Key Learning Outcome: Differentiate singular vs. plural.
+	•	Grammar Focus (Implicit): "There are..." + Plural Nouns.
+	•	Vocabulary Focus: desks, pencils, students, bags, markers, chairs.
+Unit 2: Community & Routines (Weeks 9-14)
+(Mở rộng chủ đề cộng đồng và thói quen hàng ngày)
+	•	Week 9: City Sounds & Sights (Adjectives) (Tuần 9: Âm thanh & Hình ảnh Thành phố) 
+	•	Topic: Sensory description of a city.
+	•	Key Learning Outcome: Use adjectives before nouns.
+	•	Grammar Focus (Implicit): "It is a noisy city" (Adj + Noun).
+	•	Vocabulary Focus: city, street, noisy, busy, tall, modern, car, bus.
+	•	Week 10: The Farm Adventure (Contrast) (Tuần 10: Cuộc phiêu lưu Nông trại) 
+	•	Topic: Contrast between City and Farm.
+	•	Key Learning Outcome: Make contrasting statements.
+	•	Grammar Focus (Implicit): "The city is noisy, but the farm is quiet."
+	•	Vocabulary Focus: countryside, farm, quiet, clean, peaceful, animals.
+	•	Week 11: Weekend Fun Spots (Places) (Tuần 11: Điểm vui chơi Cuối tuần) 
+	•	Topic: Places and actions.
+	•	Key Learning Outcome: Connect place + action.
+	•	Grammar Focus (Implicit): Preposition "At" (I play at the park).
+	•	Vocabulary Focus: park, school, library, supermarket, play, read, buy.
+	•	Week 12: The Talent Show (Abilities) (Tuần 12: Cuộc thi Tài năng) 
+	•	Topic: Showcasing skills.
+	•	Key Learning Outcome: Talk about abilities.
+	•	Grammar Focus (Implicit): "I can / I can't".
+	•	Vocabulary Focus: sing, dance, run, jump, climb, ride a bike, draw.
+	•	Week 13: Daily Routines (Simple Present) (Tuần 13: Thói quen Hàng ngày)
+	•	Topic: A Day in My Life. (Chủ đề: Một ngày của em.)
+	•	Key Learning Outcome: Describe daily activities in order.
+	•	Grammar Focus: Present Simple (I wake up, I go).
+	•	Vocabulary Focus: wake up, brush teeth, eat breakfast, go to school, sleep.
+	•	Math Focus: Telling Time (O'clock).
+	•	Week 14: Project 1 Showcase: "Welcome to My World" (Tuần 14: Trình diễn Dự án 1) 
+	•	Topic: Presentation Day.
+	•	Task: Students present a poster about themselves, their family, and what they can do.
+Unit 3: Action! (Present Continuous) (Weeks 15-18) - NEW UNIT
+(Bổ sung để lấp lỗ hổng về thì Tiếp diễn)
+	•	Week 15: The Busy Park (Actions Now) (Tuần 15: Công viên Bận rộn - Hành động ngay lúc này)
+	•	Topic: Observing people in a park. (Chủ đề: Quan sát mọi người trong công viên.)
+	•	Key Learning Outcome: Describe what is happening right now.
+	•	Grammar Focus: Present Continuous: S + am/is/are + V-ing.
+	•	Vocabulary Focus: running, walking, sitting, eating, flying, playing.
+	•	Week 16: Sports Commentary (Dynamic Verbs) (Tuần 16: Bình luận Thể thao)
+	•	Topic: Describing a sports game. (Chủ đề: Miêu tả trận đấu.)
+	•	Key Learning Outcome: Use action verbs with energy.
+	•	Grammar Focus: "He is kicking the ball", "They are running".
+	•	Vocabulary Focus: kick, throw, catch, hit, score, win.
+	•	Week 17: Weather & Clothes (Cause/Effect) (Tuần 17: Thời tiết & Trang phục)
+	•	Topic: Dressing for the weather. (Chủ đề: Mặc đồ theo thời tiết.)
+	•	Key Learning Outcome: Explain clothing choices based on weather.
+	•	Grammar Focus: "It is raining, so I am wearing a raincoat."
+	•	Vocabulary Focus: raining, snowing, sunny, wearing, coat, boots, hat.
+	•	Week 18: Review & Checkpoint 1 (Tuần 18: Ôn tập & Kiểm tra mốc 1)
+	•	Activity: "The Live Reporter" - Students describe a live scene in the classroom.
+
+🟠 BLOCK B: THE "FIRST STEPS BACK" (BƯỚC VỀ QUÁ KHỨ) - WEEKS 19-36
+(Chia nhỏ quá trình học Quá khứ để tránh sốc ngôn ngữ)
+Unit 4: Memories (Past State & Regular Verbs) (Weeks 19-28)
+	•	Week 19: When I Was Small (Past State) (Tuần 19: Khi tôi còn bé)
+	•	Topic: Looking at baby photos. (Chủ đề: Xem ảnh hồi bé.)
+	•	Key Learning Outcome: Contrast current state vs. past state.
+	•	Grammar Focus: Was / Were (No action verbs). "I am big. I was small."
+	•	Vocabulary Focus: baby, cute, little, noisy, quiet, kindergarten.
+	•	Week 20: The Old Town (Existence) (Tuần 20: Thị trấn Cũ)
+	•	Topic: History of my city. (Chủ đề: Lịch sử thành phố.)
+	•	Key Learning Outcome: Describe what existed before.
+	•	Grammar Focus: "There was a...", "There were...".
+	•	Vocabulary Focus: old, new, building, tree, river, road.
+	•	Week 21: Yesterday's Diary (Regular Verbs -ed) (Tuần 21: Nhật ký Hôm qua) 
+	•	Topic: Investigating clues from yesterday.
+	•	Key Learning Outcome: Describe finished actions using regular verbs.
+	•	Grammar Focus: Past Simple Regular (-ed).
+	•	Phonetics Focus: /t/, /d/, /id/ endings.
+	•	Vocabulary Focus: walked, looked, cooked, played, watched, cleaned.
+	•	Week 22: The Time Detective (Questions) (Tuần 22: Thám tử Thời gian)
+	•	Topic: Interrogating a suspect. (Chủ đề: Thẩm vấn.)
+	•	Key Learning Outcome: Ask and answer Yes/No questions about the past.
+	•	Grammar Focus: "Did you play...?", "Yes, I did / No, I didn't".
+	•	Vocabulary Focus: yesterday, last night, last week.
+	•	Week 23: The Art Class (Creative Regular Verbs) (Tuần 23: Lớp học Mỹ thuật - Động từ có quy tắc)
+	•	Topic: Describing what we created yesterday. (Chủ đề: Miêu tả những gì đã tạo ra hôm qua.)
+	•	Key Learning Outcome: Use regular verbs related to arts and crafts in the past tense. (Kết quả: Sử dụng động từ có quy tắc liên quan đến thủ công trong quá khứ.)
+	•	Skill Focus: Describing a process (Past). (Kỹ năng: Miêu tả quy trình trong quá khứ.)
+	•	Grammar Focus (Explicit): Regular Verbs ending in -ed (pronounced /t/ or /d/): paint/painted, color/colored. (Ngữ pháp: Động từ có quy tắc đuôi -ed.)
+	•	Vocabulary Focus: paint, color, glue, fold, cut (irregular but intro here), picture, scissors.
+	•	Week 24: Feelings in the Past (Was/Were + Adjectives) (Tuần 24: Cảm xúc trong Quá khứ)
+	•	Topic: Why were you sad/happy yesterday? (Chủ đề: Tại sao hôm qua bạn buồn/vui?)
+	•	Key Learning Outcome: Express past emotions and reasons. (Kết quả: Diễn đạt cảm xúc và lý do trong quá khứ.)
+	•	Skill Focus: Expressing Empathy. (Kỹ năng: Thể hiện sự đồng cảm.)
+	•	Grammar Focus: "I was [feeling] because..." / "They were...". (Ngữ pháp: Câu trần thuật với Was/Were.)
+	•	Vocabulary Focus: scared, tired, hungry, thirsty, excited, bored, surprised.
+	•	Week 25: Sequencing Actions (First, Then) (Tuần 25: Sắp xếp Trình tự Hành động)
+	•	Topic: How I made a sandwich / How I brushed my teeth. (Chủ đề: Cách tớ làm bánh mì / Cách tớ đánh răng.)
+	•	Key Learning Outcome: Retell a simple sequence of events using connectors. (Kết quả: Kể lại chuỗi sự kiện đơn giản dùng từ nối.)
+	•	Skill Focus: Sequencing Logic. (Kỹ năng: Logic trình tự.)
+	•	Grammar Focus: Sequence Connectors: First, Next, Then, Finally. (Ngữ pháp: Từ nối trình tự.)
+	•	Vocabulary Focus: bread, jam, spread, knife, toothpaste, brush, rinse.
+	•	Week 26: Review & Project 2: "My Weekend Comic" (Tuần 26: Ôn tập & Dự án 2: "Truyện tranh Cuối tuần của em")
+	•	Topic: Drawing and writing a 4-panel comic strip about last weekend. (Chủ đề: Vẽ và viết truyện tranh 4 khung về cuối tuần trước.)
+	•	Key Learning Outcome: Combine Past Simple sentences with pictures. (Kết quả: Kết hợp câu quá khứ đơn với hình ảnh.)
+	•	Skill Focus: Creative Writing. (Kỹ năng: Viết sáng tạo.)
+	•	Grammar Review: Regular Verbs (-ed) & Was/Were.
+	•	Week 27: Nature Sequencing (Plant Growth) (Tuần 27: Trình tự Tự nhiên - Cây lớn lên)
+	•	Topic: How a seed becomes a plant. (Chủ đề: Hạt giống thành cây như thế nào.)
+	•	Key Learning Outcome: Describe a natural process using sequence words. (Kết quả: Miêu tả quy trình tự nhiên dùng từ chỉ trình tự.)
+	•	Skill Focus: Scientific Observation (Introduction). (Kỹ năng: Quan sát khoa học - Giới thiệu.)
+	•	Grammar Focus: Present Simple for Facts (It grows, It needs). (Ngữ pháp: Hiện tại đơn cho sự thật hiển nhiên.)
+	•	Vocabulary Focus: seed, soil, water, sun, root, stem, leaf, flower.
+	•	Week 28: Story Retell (The Tortoise and the Hare) (Tuần 28: Kể lại chuyện - Rùa và Thỏ)
+	•	Topic: Retelling a famous fable. (Chủ đề: Kể lại chuyện ngụ ngôn nổi tiếng.)
+	•	Key Learning Outcome: Retell a story with a clear Beginning, Middle, and End. (Kết quả: Kể lại chuyện có Mở, Thân, Kết rõ ràng.)
+	•	Skill Focus: Oral Narrative. (Kỹ năng: Kể chuyện miệng.)
+	•	Grammar Focus: Past Simple (Introduction to Irregular Verbs in context: ran, slept, won). (Ngữ pháp: Giới thiệu động từ bất quy tắc trong ngữ cảnh.)
+	•	Vocabulary Focus: fast, slow, race, sleep, win, lose.
+	•	Week 29: The Magic Trip (Irregular Verbs 1: Movement) (Tuần 29: Chuyến đi Kỳ diệu - Động từ Bất quy tắc nhóm 1)
+	•	Topic: A holiday trip story. (Chủ đề: Câu chuyện đi nghỉ mát.)
+	•	Key Learning Outcome: Use common irregular movement verbs correctly. (Kết quả: Sử dụng đúng các động từ di chuyển bất quy tắc phổ biến.)
+	•	Grammar Focus (Explicit): Go -> Went, Come -> Came, Run -> Ran, Fly -> Flew. (Ngữ pháp: Go-Went, Come-Came...)
+	•	Vocabulary Focus: trip, holiday, beach, mountain, airplane, car.
+	•	Week 30: The Picnic (Irregular Verbs 2: Consumption) (Tuần 30: Chuyến Dã ngoại - Động từ Bất quy tắc nhóm 2)
+	•	Topic: Eating and drinking at a picnic. (Chủ đề: Ăn uống tại buổi dã ngoại.)
+	•	Key Learning Outcome: Describe what was eaten/drunk. (Kết quả: Miêu tả những gì đã ăn/uống.)
+	•	Grammar Focus (Explicit): Eat -> Ate, Drink -> Drank, Buy -> Bought, Give -> Gave. (Ngữ pháp: Eat-Ate, Drink-Drank...)
+	•	Vocabulary Focus: picnic, basket, apple, juice, sandwich, share.
+	•	Week 31: The Senses (Irregular Verbs 3: Perception) (Tuần 31: Giác quan - Động từ Bất quy tắc nhóm 3)
+	•	Topic: What did you see/hear in the forest? (Chủ đề: Bạn đã thấy/nghe gì trong rừng?)
+	•	Key Learning Outcome: Describe sensory experiences in the past. (Kết quả: Miêu tả trải nghiệm giác quan trong quá khứ.)
+	•	Grammar Focus (Explicit): See -> Saw, Hear -> Heard, Feel -> Felt, Smell -> Smelt. (Ngữ pháp: See-Saw, Hear-Heard...)
+	•	Vocabulary Focus: bird, song, soft, hard, loud, beautiful.
+	•	Week 32: The Busy Day (Irregular Verbs 4: Tasks) (Tuần 32: Ngày Bận rộn - Động từ Bất quy tắc nhóm 4)
+	•	Topic: Doing chores and tasks. (Chủ đề: Làm việc nhà và nhiệm vụ.)
+	•	Key Learning Outcome: Describe completed tasks. (Kết quả: Miêu tả các nhiệm vụ đã hoàn thành.)
+	•	Grammar Focus (Explicit): Do -> Did, Make -> Made, Have -> Had, Take -> Took. (Ngữ pháp: Do-Did, Make-Made...)
+	•	Vocabulary Focus: homework, bed, breakfast, shower, mess, clean.
+	•	Week 33: The Mistake (Irregular Verbs 5: Accidents) (Tuần 33: Lỗi lầm - Động từ Bất quy tắc nhóm 5)
+	•	Topic: Accidents happen! (Chủ đề: Tai nạn xảy ra!)
+	•	Key Learning Outcome: Explain an accidental event. (Kết quả: Giải thích một sự cố ngẫu nhiên.)
+	•	Grammar Focus (Explicit): Break -> Broke, Fall -> Fell, Lose -> Lost, Hurt -> Hurt. (Ngữ pháp: Break-Broke, Fall-Fell...)
+	•	Vocabulary Focus: mistake, accident, fix, sorry, careful, clumsy.
+	•	Week 34: Storytelling Practice 1 (Fable) (Tuần 34: Luyện Kể chuyện 1 - Truyện Ngụ ngôn)
+	•	Topic: "The Lion and the Mouse". (Chủ đề: Sư tử và Chuột.)
+	•	Key Learning Outcome: Retell a story using mixed past tense verbs. (Kết quả: Kể lại chuyện dùng hỗn hợp động từ quá khứ.)
+	•	Skill Focus: Pronunciation of Past Tense endings and forms. (Kỹ năng: Phát âm đuôi và dạng quá khứ.)
+	•	Grammar Review: Mixed Regular and Irregular Verbs.
+	•	Vocabulary Focus: net, trap, roar, help, friend, tiny, huge.
+	•	Week 35: Storytelling Practice 2 (Personal Recount) (Tuần 35: Luyện Kể chuyện 2 - Kể lại trải nghiệm cá nhân)
+	•	Topic: "The Best Day Ever". (Chủ đề: Ngày tuyệt vời nhất.)
+	•	Key Learning Outcome: Write a short paragraph (5-6 sentences) about a personal memory. (Kết quả: Viết đoạn văn ngắn 5-6 câu về kỷ niệm cá nhân.)
+	•	Skill Focus: Using adjectives to make the story interesting. (Kỹ năng: Dùng tính từ để câu chuyện thú vị hơn.)
+	•	Grammar Focus: Past Simple + Adjectives.
+	•	Week 36: Review & Project 3: "My Adventure Book" (Tuần 36: Ôn tập & Dự án 3: "Sách Phiêu lưu của em")
+	•	Topic: Creating a mini-book. (Chủ đề: Tạo sách nhỏ.)
+	•	Key Learning Outcome: Produce a completed story with illustrations and text. (Kết quả: Sản xuất một câu chuyện hoàn chỉnh với hình minh họa và văn bản.)
+	•	Activity: Students write about an imaginary or real trip, using at least 5 irregular verbs.
+
+🟢 BLOCK C: CLIL FOUNDATIONS (KHOA HỌC, TOÁN & LOGIC) - WEEKS 37-54
+(Mục tiêu: Xây dựng vốn từ vựng học thuật cơ bản để chuẩn bị cho Phase 2)
+Unit 6: Nature's Rules (Science CLIL) (Weeks 37-42)
+	•	Week 37: Living vs. Non-Living (Reasoning) (Tuần 37: Vật sống & Không sống)
+	•	Topic: Investigating clues in nature. (Chủ đề: Điều tra manh mối trong tự nhiên.)
+	•	Key Learning Outcome: Explain why something is living or non-living using "Because". (Kết quả: Giải thích tại sao vật là sống/không sống dùng "Because".)
+	•	Skill Focus: Logical Reasoning. (Kỹ năng: Tư duy logic.)
+	•	Grammar Focus: "It is living because it breathes/grows." (Ngữ pháp: Nó là vật sống vì nó thở/lớn lên.)
+	•	Vocabulary Focus: living, non-living, breathe, grow, need, food, water, rock, plastic.
+	•	Week 38: Animal Abilities (Modals) (Tuần 38: Khả năng Động vật)
+	•	Topic: Comparing animal abilities. (Chủ đề: So sánh khả năng động vật.)
+	•	Key Learning Outcome: Describe what animals can and cannot do. (Kết quả: Miêu tả điều động vật làm được/không làm được.)
+	•	Skill Focus: Classification. (Kỹ năng: Phân loại.)
+	•	Grammar Focus: Can / Cannot (Can't). (Ngữ pháp: Can/Can't.)
+	•	Vocabulary Focus: jump, fly, swim, hunt, climb, run, heavy, fast.
+	•	Week 39: Habitats (Persuasion Intro) (Tuần 39: Môi trường sống)
+	•	Topic: Matching animals to habitats. (Chủ đề: Ghép động vật vào môi trường sống.)
+	•	Key Learning Outcome: Give an opinion on where an animal belongs. (Kết quả: Đưa ý kiến về nơi ở của động vật.)
+	•	Skill Focus: Persuasion (Simple). (Kỹ năng: Thuyết phục đơn giản.)
+	•	Grammar Focus: "I think the [animal] lives in the [place]." (Ngữ pháp: Mẫu câu Tôi nghĩ...)
+	•	Vocabulary Focus: habitat, desert, rainforest, ocean, polar region, safe, dangerous.
+	•	Week 40: Beast Battle (Comparisons) (Tuần 40: Cuộc chiến Quái thú)
+	•	Topic: Comparing predators. (Chủ đề: So sánh thú săn mồi.)
+	•	Key Learning Outcome: Compare size, speed, strength of two animals. (Kết quả: So sánh kích thước, tốc độ, sức mạnh.)
+	•	Skill Focus: Making Comparisons. (Kỹ năng: So sánh.)
+	•	Grammar Focus: Comparatives (-er than): faster, stronger, bigger. (Ngữ pháp: So sánh hơn.)
+	•	Vocabulary Focus: teeth, claws, fur, skin, heavy, light.
+	•	Week 41: Life Cycles (Process) (Tuần 41: Vòng đời)
+	•	Topic: Butterfly or Frog Life Cycle. (Chủ đề: Vòng đời Bướm hoặc Ếch.)
+	•	Key Learning Outcome: Explain a natural cycle using sequence words. (Kết quả: Giải thích chu trình tự nhiên dùng từ nối.)
+	•	Skill Focus: Scientific Description. (Kỹ năng: Mô tả khoa học.)
+	•	Grammar Focus: Present Simple 3rd Person (It changes, It grows, It becomes). (Ngữ pháp: Hiện tại đơn ngôi 3.)
+	•	Vocabulary Focus: egg, hatch, caterpillar/tadpole, chrysalis, butterfly/frog.
+	•	Week 42: The Water Journey (Cycle) (Tuần 42: Hành trình của Nước)
+	•	Topic: The Water Cycle Story. (Chủ đề: Câu chuyện Vòng tuần hoàn nước.)
+	•	Key Learning Outcome: Sequence nature's events. (Kết quả: Sắp xếp sự kiện tự nhiên.)
+	•	Skill Focus: Understanding Cycles. (Kỹ năng: Hiểu về chu trình.)
+	•	Grammar Focus: Review Sequencing + Present Tense.
+	•	Vocabulary Focus: sun, cloud, rain, river, ocean, evaporation (intro), go up, come down.
+Unit 7: The Math Bridge (Math CLIL) (Weeks 43-48)
+(Mục tiêu: Học tiếng Anh qua Toán học, không dạy tính toán phức tạp)
+	•	Week 43: The "Plus" Machine (Addition Language) (Tuần 43: Cỗ máy "Cộng" - Ngôn ngữ Phép cộng)
+	•	Topic: Reading math stories. (Chủ đề: Đọc truyện toán học.)
+	•	Key Learning Outcome: Read equations as sentences. (Kết quả: Đọc phép tính như câu văn.)
+	•	Skill Focus: Math Literacy. (Kỹ năng: Đọc hiểu toán.)
+	•	Grammar Focus: "2 plus 2 equals 4" / "2 and 2 is 4". (Ngữ pháp: Cấu trúc câu cộng.)
+	•	Vocabulary Focus: add, plus, combine, total, together, equals.
+	•	Week 44: The Cookie Monster (Subtraction Language) (Tuần 44: Quái vật Bánh quy - Ngôn ngữ Phép trừ)
+	•	Topic: Taking things away. (Chủ đề: Lấy bớt đi.)
+	•	Key Learning Outcome: Explain subtraction concepts in English. (Kết quả: Giải thích khái niệm trừ bằng tiếng Anh.)
+	•	Skill Focus: Inverse Logic. (Kỹ năng: Logic ngược.)
+	•	Grammar Focus: "Take away", "Left", "Minus". (Ngữ pháp: Cấu trúc câu trừ.)
+	•	Vocabulary Focus: minus, subtract, take away, how many left, lose.
+	•	Week 45: Shape Detectives (Geometry) (Tuần 45: Thám tử Hình khối - Hình học)
+	•	Topic: Finding shapes in the classroom. (Chủ đề: Tìm hình khối trong lớp.)
+	•	Key Learning Outcome: Describe objects using shape words. (Kết quả: Miêu tả vật dùng từ hình học.)
+	•	Skill Focus: Geometric Description. (Kỹ năng: Miêu tả hình học.)
+	•	Grammar Focus: "It has [number] sides", "It is round". (Ngữ pháp: Nó có...)
+	•	Vocabulary Focus: square, circle, triangle, rectangle, side, corner, round, straight.
+	•	Week 46: The Pattern Code (Logic) (Tuần 46: Mật mã Quy luật - Logic)
+	•	Topic: Cracking visual codes (Red-Blue-Red-?). (Chủ đề: Giải mã quy luật hình ảnh.)
+	•	Key Learning Outcome: Predict the next item in a sequence. (Kết quả: Dự đoán vật tiếp theo.)
+	•	Skill Focus: Logical Thinking. (Kỹ năng: Tư duy logic.)
+	•	Grammar Focus: "If [square], then [red]". (Ngữ pháp: Nếu... thì...)
+	•	Vocabulary Focus: pattern, next, repeat, sequence, before, after.
+	•	Week 47: Big Numbers (Place Value) (Tuần 47: Số lớn - Giá trị hàng)
+	•	Topic: Counting stars / Population of a village. (Chủ đề: Đếm sao / Dân số làng.)
+	•	Key Learning Outcome: Read and write numbers up to 100 correctly in English. (Kết quả: Đọc và viết số đến 100 đúng tiếng Anh.)
+	•	Skill Focus: Number Literacy. (Kỹ năng: Đọc hiểu số.)
+	•	Grammar Focus: hyphenated numbers (twenty-one). (Ngữ pháp: Số có gạch nối.)
+	•	Vocabulary Focus: ten, twenty, thirty... hundred, count, how many.
+	•	Week 48: Measuring Up (Length) (Tuần 48: Đo lường - Độ dài)
+	•	Topic: Who is taller? (Chủ đề: Ai cao hơn?)
+	•	Key Learning Outcome: Measure objects using rulers and state length. (Kết quả: Đo vật dùng thước và nói độ dài.)
+	•	Skill Focus: Measurement. (Kỹ năng: Đo lường.)
+	•	Grammar Focus: "It is [number] centimeters long/tall." (Ngữ pháp: Nó dài/cao...)
+	•	Vocabulary Focus: long, short, tall, measure, ruler, centimeter (cm), meter.
+Unit 8: Graduation Prep (Weeks 49-54)
+	•	Week 49: Future Dreams (Future Tense) (Tuần 49: Ước mơ Tương lai)
+	•	Topic: When I grow up. (Chủ đề: Khi em lớn lên.)
+	•	Key Learning Outcome: State intentions/dreams using "Want to". (Kết quả: Nêu dự định/ước mơ dùng "Want to".)
+	•	Grammar Focus: "I want to be a [job]" / "I am going to be...".
+	•	Vocabulary Focus: doctor, teacher, pilot, artist, scientist, dream.
+	•	Week 50: Review Station 1 (Grammar Mix) (Tuần 50: Trạm Ôn tập 1 - Ngữ pháp Tổng hợp)
+	•	Topic: Past, Present, Future Mix. (Chủ đề: Trộn lẫn Quá khứ, Hiện tại, Tương lai.)
+	•	Activity: Board game where students must choose the right tense to answer.
+	•	Week 51: Review Station 2 (Vocab & CLIL) (Tuần 51: Trạm Ôn tập 2 - Từ vựng & CLIL)
+	•	Topic: Nature, Home, School, Math. (Chủ đề: Tự nhiên, Nhà, Trường, Toán.)
+	•	Activity: Categorization game (Put words into the right box).
+	•	Week 52: "Have You Ever" Bingo (Seeding) (Tuần 52: Bingo "Bạn đã bao giờ...?" - Gieo hạt)
+	•	Topic: Experiences. (Chủ đề: Trải nghiệm.)
+	•	Key Learning Outcome: Use specific chunks to ask about experiences (Preparation for Phase 2). (Kết quả: Dùng cụm từ để hỏi trải nghiệm.)
+	•	Grammar Focus: Present Perfect Chunks ONLY (Memorize: "Have you ever...?"). (Ngữ pháp: Cụm từ Hiện tại hoàn thành - Học thuộc lòng.)
+	•	Vocabulary Focus: seen, been, eaten (Sight words - Participles).
+	•	Week 53: Project 4 Prep - "My Year in Review" (Tuần 53: Chuẩn bị Dự án 4 - "Năm học của em")
+	•	Task: Select best work from the year (Drawings, Writings). Write an "About Me" introduction. (Nhiệm vụ: Chọn bài làm tốt nhất. Viết giới thiệu bản thân.)
+	•	Skill Focus: Portfolio Curation. (Kỹ năng: Sắp xếp hồ sơ năng lực.)
+	•	Week 54: PHASE 1 GRADUATION SHOWCASE (Tuần 54: BUỔI TRÌNH DIỄN TỐT NGHIỆP GIAI ĐOẠN 1)
+	•	Event: Parents invited. Students present their portfolios and recite a short speech about their favorite memory of the year. (Sự kiện: Mời phụ huynh. Học sinh trình bày hồ sơ và bài nói ngắn về kỷ niệm yêu thích.)
+🧠 PHASE 2: ACADEMIC APPLICATION (WEEKS 55-120)
+(GIAI ĐOẠN 2: ỨNG DỤNG HỌC THUẬT - 66 TUẦN) Goal: Transition from personal to academic writing. Use English to learn Math, Science, Social Studies. Master structured paragraphs.
+🟤 UNIT 9: LOGICAL THINKING & EXPLANATION (TƯ DUY LOGIC & GIẢI THÍCH) - WEEKS 55-66
+(Tương ứng nội dung gốc Cycle 2.1)
+	•	Week 55: ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping (Tuần 55: ELA: Nguyên nhân & Kết quả (Câu) / Toán: Phép cộng có nhớ)
+	•	Topic (ELA): The "Why" Game (Connecting ideas logically). (Chủ đề: Trò chơi "Tại sao" - Kết nối ý tưởng logic.)
+	•	Key Learning Outcome (ELA): Write compound sentences using "because" and "so" to link events. (Kết quả: Viết câu ghép dùng "because" và "so" để nối sự kiện.)
+	•	Writing Skill Focus: Sentence combining. (Kỹ năng Viết: Kết hợp câu.)
+	•	Grammar Focus (Explicit): Conjunctions: "Because" (reason) vs. "So" (result). (Ngữ pháp: Liên từ Because/So.)
+	•	Vocabulary Focus: cause, effect, reason, result, happen, connect, therefore.
+	•	Topic (Math): The Language of Carrying Over. (Toán: Ngôn ngữ của phép nhớ.)
+	•	Key Learning Outcome (Math): Explain the "carry over" process in English. (Kết quả: Giải thích quy trình "nhớ".)
+	•	Math Vocabulary: column, digit, carry over, sum, ones, tens, place value.
+	•	Week 56: ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping (Tuần 56: ELA: Nguyên nhân & Kết quả (Đoạn văn) / Toán: Phép trừ có nhớ)
+	•	Topic (ELA): The Chain Reaction (Explaining a sequence of events). (Chủ đề: Phản ứng dây chuyền - Giải thích chuỗi sự kiện.)
+	•	Key Learning Outcome (ELA): Write a paragraph structured as: Effect -> Cause 1 -> Cause 2. (Kết quả: Viết đoạn văn: Kết quả -> Nguyên nhân 1 -> Nguyên nhân 2.)
+	•	Writing Skill Focus: Logical Sequencing. (Kỹ năng Viết: Sắp xếp logic.)
+	•	Grammar Focus: Sentence Connectors: "This leads to...", "As a result...". (Ngữ pháp: Từ nối câu.)
+	•	Vocabulary Focus: lead to, due to, consequently, start, end, first, finally.
+	•	Topic (Math): The Language of Borrowing. (Toán: Ngôn ngữ của phép mượn.)
+	•	Key Learning Outcome (Math): Explain the "borrow/regroup" process. (Kết quả: Giải thích quy trình "mượn/đổi nhóm".)
+	•	Math Vocabulary: borrow, regroup, difference, minus, top number, bottom number.
+	•	Week 57: ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts (Tuần 57: ELA: Vấn đề & Giải pháp (Câu) / Toán: Khái niệm Phép nhân)
+	•	Topic (ELA): The Fix-It Squad (Identifying problems and suggesting fixes). (Chủ đề: Biệt đội Sửa chữa - Nhận diện và gợi ý cách sửa.)
+	•	Key Learning Outcome (ELA): Write sentences proposing a solution using modals. (Kết quả: Viết câu đề xuất giải pháp dùng động từ khuyết thiếu.)
+	•	Writing Skill Focus: Problem identification. (Kỹ năng Viết: Nhận diện vấn đề.)
+	•	Grammar Focus: Modals of Possibility: "We can...", "We could...", "We should...". (Ngữ pháp: We can/could/should.)
+	•	Vocabulary Focus: problem, solution, fix, solve, idea, suggest, broken, repair.
+	•	Topic (Math): The Language of "Groups of". (Toán: Ngôn ngữ của "Các nhóm".)
+	•	Key Learning Outcome (Math): Explain multiplication as repeated addition. (Kết quả: Giải thích phép nhân là cộng lặp lại.)
+	•	Math Vocabulary: times, multiply, groups of, product, array, repeated addition.
+	•	Week 58: ELA: Problem & Solution (Paragraph) / Math: Division Concepts (Tuần 58: ELA: Vấn đề & Giải pháp (Đoạn văn) / Toán: Khái niệm Phép chia)
+	•	Topic (ELA): The Master Plan (Writing a detailed solution plan). (Chủ đề: Kế hoạch Lớn - Viết kế hoạch giải pháp chi tiết.)
+	•	Key Learning Outcome (ELA): Write a paragraph: Problem -> Solution Steps -> Result. (Kết quả: Viết đoạn văn: Vấn đề -> Các bước giải pháp -> Kết quả.)
+	•	Writing Skill Focus: Elaboration (Adding details). (Kỹ năng Viết: Phát triển ý.)
+	•	Grammar Focus: First Conditional (Simple): "If we [fix it], it will be [better]." (Ngữ pháp: Câu điều kiện loại 1 đơn giản.)
+	•	Vocabulary Focus: plan, step, improve, better, success, fail, strategy.
+	•	Topic (Math): The Language of Sharing. (Toán: Ngôn ngữ của Phép chia.)
+	•	Key Learning Outcome (Math): Explain division as "sharing equally". (Kết quả: Giải thích phép chia là chia đều.)
+	•	Math Vocabulary: divide, share equally, split, quotient, fair share.
+	•	Week 59: ELA: Message in a Bottle (Informal Writing) / Math: Remainders (Tuần 59: ELA: Thông điệp trong Chai - Viết Thân mật / Toán: Số dư)
+	•	Topic (ELA): Writing a letter to a mysterious friend. (Chủ đề: Viết thư cho người bạn bí ẩn.)
+	•	Key Learning Outcome (ELA): Write an informal letter with correct format. (Kết quả: Viết thư thân mật đúng thể thức.)
+	•	Grammar Focus: Informal Tone (Contractions: I'm, It's; Greetings: Hi, Hey). (Ngữ pháp: Giọng văn thân mật.)
+	•	Vocabulary Focus: dear, best, friend, write, news, fun, reply, miss you.
+	•	Topic (Math): Division with Remainders. (Toán: Phép chia có dư.)
+	•	Key Learning Outcome (Math): Explain what is left over. (Kết quả: Giải thích phần còn thừa.)
+	•	Math Vocabulary: remainder, left over, extra, not equal.
+	•	Week 60: ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations (Tuần 60: ELA: Yêu cầu gửi Thị trưởng - Viết Trang trọng / Toán: Thứ tự phép tính)
+	•	Topic (ELA): Writing to improve the city. (Chủ đề: Viết thư cải thiện thành phố.)
+	•	Key Learning Outcome (ELA): Write a polite formal request. (Kết quả: Viết yêu cầu trang trọng lịch sự.)
+	•	Grammar Focus: Polite Modals (May I, Could you, Would like). (Ngữ pháp: Động từ khuyết thiếu lịch sự.)
+	•	Vocabulary Focus: Sir, Madam, sincerely, request, improve, community, library, park.
+	•	Topic (Math): PEMDAS Intro. (Toán: Giới thiệu về thứ tự ưu tiên.)
+	•	Key Learning Outcome (Math): Explain which operation comes first. (Kết quả: Giải thích phép tính nào làm trước.)
+	•	Math Vocabulary: order, operation, first, bracket, parenthesis.
+	•	Week 61: ELA: Main Idea Hunter / Math: Word Problems (Tuần 61: ELA: Thợ săn Ý chính / Toán: Toán đố)
+	•	Topic (ELA): Finding the "Gem" (Main Idea) in a text. (Chủ đề: Tìm ý chính trong văn bản.)
+	•	Key Learning Outcome (ELA): Distinguish Main Idea vs. Details. (Kết quả: Phân biệt Ý chính và Chi tiết.)
+	•	Skill Focus: Reading Comprehension. (Kỹ năng: Đọc hiểu.)
+	•	Grammar Focus: Subject + Verb Identification (Core sentence). (Ngữ pháp: Xác định nòng cốt câu.)
+	•	Vocabulary Focus: main idea, detail, support, topic, important, about, title.
+	•	Topic (Math): Two-Step Word Problems. (Toán: Bài toán đố 2 bước.)
+	•	Key Learning Outcome (Math): Identify the hidden question in a problem. (Kết quả: Xác định câu hỏi ẩn.)
+	•	Math Vocabulary: step, first, then, total, solve.
+	•	Week 62: ELA: The Movie Trailer (Summarizing) / Math: Rounding (Tuần 62: ELA: Trailer Phim - Tóm tắt / Toán: Làm tròn)
+	•	Topic (ELA): Retelling a story briefly. (Chủ đề: Kể lại chuyện ngắn gọn.)
+	•	Key Learning Outcome (ELA): Paraphrase a text in 3 sentences. (Kết quả: Diễn giải lại văn bản trong 3 câu.)
+	•	Skill Focus: Paraphrasing. (Kỹ năng: Diễn giải.)
+	•	Grammar Focus: Reported Speech Basic (He said that...). (Ngữ pháp: Câu tường thuật cơ bản.)
+	•	Vocabulary Focus: summary, short, retell, story, scene, character, plot.
+	•	Topic (Math): Rounding & Estimation. (Toán: Làm tròn & Ước lượng.)
+	•	Key Learning Outcome (Math): Estimate an answer before calculating. (Kết quả: Ước lượng đáp án trước khi tính.)
+	•	Math Vocabulary: round up, round down, estimate, close to, about, nearly.
+	•	Week 63: ELA: Reading Maps / Math: Coordinates (Tuần 63: ELA: Đọc Bản đồ / Toán: Tọa độ)
+	•	Topic (ELA): Directions and Location. (Chủ đề: Truy tìm kho báu - Chỉ đường và Vị trí.)
+	•	Key Learning Outcome (ELA): Describe exact locations using compass points. (Kết quả: Miêu tả vị trí chính xác dùng hướng la bàn.)
+	•	Writing Skill Focus: Spatial description. (Kỹ năng Viết: Miêu tả không gian.)
+	•	Grammar Focus: Prepositions of Location (North of, to the East of). (Ngữ pháp: Giới từ chỉ vị trí địa lý.)
+	•	Vocabulary Focus: North, South, East, West, compass, map, key, direction, straight, turn.
+	•	Topic (Math): Grids & Coordinates. (Toán: Lưới & Tọa độ.)
+	•	Key Learning Outcome (Math): Locate points on an alphanumeric grid (A1, B5). (Kết quả: Xác định điểm trên lưới chữ-số.)
+	•	Math Vocabulary: grid, coordinate, axis, point, locate, row, column.
+	•	Week 64: ELA: Data Stories / Math: Pictographs (Tuần 64: ELA: Câu chuyện Dữ liệu / Toán: Biểu đồ tranh)
+	•	Topic (ELA): What the Picture Says (Describing a chart). (Chủ đề: Bức tranh nói gì - Miêu tả biểu đồ.)
+	•	Key Learning Outcome (ELA): Write sentences summarizing data findings (Most/Least). (Kết quả: Viết câu tóm tắt dữ liệu tìm được.)
+	•	Writing Skill Focus: Factual reporting. (Kỹ năng Viết: Báo cáo sự thật.)
+	•	Grammar Focus: Quantifiers: "The majority of...", "Most...", "Few...". (Ngữ pháp: Lượng từ.)
+	•	Vocabulary Focus: chart, graph, show, data, popular, least, number, information.
+	•	Topic (Math): Interpreting Pictographs. (Toán: Diễn giải Biểu đồ tranh.)
+	•	Key Learning Outcome (Math): Answer questions using a key (e.g., 1 icon = 10 items). (Kết quả: Trả lời câu hỏi dùng chú giải.)
+	•	Math Vocabulary: symbol, key, represent, value, count, picture.
+	•	Week 65: Review & Consolidation (Cycle 2.1) (Tuần 65: Ôn tập & Củng cố Chu trình 2.1)
+	•	Topic (ELA): Logic & Data Review. (Chủ đề: Ôn tập Logic & Dữ liệu.)
+	•	Activity: Creating a class newsletter with Data and Letters. (Hoạt động: Làm bản tin lớp học với Dữ liệu và Thư từ.)
+	•	Vocabulary Focus: Review all keywords from Weeks 55-64.
+	•	Math Focus: Mixed Review (Operations & Graphs).
+	•	Week 66: Micro-Debate 1: "Email vs Handwritten Letters" (Tuần 66: Tranh luận nhỏ 1: Email hay Thư tay)
+	•	Topic: Which is better? (Chủ đề: Cái nào tốt hơn?)
+	•	Activity: "Stand Your Ground" (Students choose a corner and speak). (Hoạt động: Chọn phe và phát biểu.)
+	•	Review Goal: Consolidate Opinion sentences + Logical connectors. (Mục tiêu: Củng cố câu quan điểm + từ nối logic.)
+	•	Grammar Review: Modals, Comparatives, Because/So.
+	•	Vocabulary Focus: faster, slower, personal, easy, hard, keep, delete.
+🟣 UNIT 10: PERSUASION & SYSTEMS (THUYẾT PHỤC & CÁC HỆ THỐNG) - WEEKS 67-84
+(Tương ứng nội dung gốc Cycle 2.1 phần sau và Cycle 2.2 phần đầu)
+	•	Week 67: ELA: The OREO Structure / Math: Measuring Mass (Tuần 67: ELA: Cấu trúc OREO / Toán: Đo khối lượng)
+	•	Topic (ELA): The Opinion Sandwich (Intro to Persuasion). (Chủ đề: Bánh kẹp Quan điểm - Giới thiệu Thuyết phục.)
+	•	Key Learning Outcome (ELA): Identify and label parts: Opinion, Reason, Example, Opinion Restated. (Kết quả: Xác định các phần O-R-E-O.)
+	•	Writing Skill Focus: Structural awareness. (Kỹ năng Viết: Nhận thức cấu trúc.)
+	•	Grammar Focus: Opinion Phrases: "I strongly believe...", "In my view...". (Ngữ pháp: Cụm từ chỉ quan điểm.)
+	•	Vocabulary Focus: opinion, believe, think, agree, disagree, reason, example.
+	•	Topic (Math): Measuring Mass. (Toán: Đo khối lượng.)
+	•	Key Learning Outcome (Math): Read scales (g, kg). (Kết quả: Đọc cân.)
+	•	Math Vocabulary: gram, kilogram, heavy, light, weigh, scale, weight.
+	•	Week 68: ELA: Strong Reasons / Math: Bar Graphs (Tuần 68: ELA: Lý do Đanh thép / Toán: Biểu đồ cột)
+	•	Topic (ELA): Supporting the Argument. (Chủ đề: Hỗ trợ lập luận.)
+	•	Key Learning Outcome (ELA): Write the "Reason" and "Example" sentences for an OREO paragraph. (Kết quả: Viết câu Lý do và Ví dụ.)
+	•	Writing Skill Focus: Developing ideas. (Kỹ năng Viết: Phát triển ý.)
+	•	Grammar Focus: Connectors of Addition: "Furthermore", "In addition", "For example". (Ngữ pháp: Từ nối bổ sung.)
+	•	Vocabulary Focus: support, detail, fact, true, prove, clear.
+	•	Topic (Math): Scaled Bar Graphs. (Toán: Biểu đồ cột có thang đo.)
+	•	Key Learning Outcome (Math): Read graphs where 1 unit = 2, 5, or 10 items. (Kết quả: Đọc biểu đồ có thang đo lớn hơn 1.)
+	•	Math Vocabulary: scale, axis, bar, height, value, skip counting.
+	•	Week 69: Science/ELA: Environmental Protection / Math: Line Plots (Tuần 69: Khoa học/ELA: Bảo vệ Môi trường / Toán: Biểu đồ điểm)
+	•	Topic (Science): Save the Earth (Persuading people to protect nature). (Chủ đề: Cứu Trái đất - Thuyết phục bảo vệ thiên nhiên.)
+	•	Key Learning Outcome (ELA): Write a persuasive paragraph giving advice on environment. (Kết quả: Viết đoạn văn thuyết phục về môi trường.)
+	•	Writing Skill Focus: Persuasive Tone. (Kỹ năng Viết: Giọng văn thuyết phục.)
+	•	Grammar Focus (Explicit): Modals of Obligation: "Should", "Must", "Have to". (Ngữ pháp: Động từ chỉ sự bắt buộc/khuyên bảo.)
+	•	Vocabulary Focus: protect, save, environment, pollution, waste, recycle, clean, dirty.
+	•	Topic (Math): Reading Line Plots. (Toán: Đọc biểu đồ điểm.)
+	•	Key Learning Outcome (Math): Interpret frequency data (X marks). (Kết quả: Diễn giải dữ liệu tần suất.)
+	•	Math Vocabulary: plot, frequency, most common, outlier, x-mark.
+	•	Week 70: ELA: Presentation "My Green Idea" / Math: Graph Review (Tuần 70: ELA: Thuyết trình "Ý tưởng Xanh" / Toán: Ôn tập Biểu đồ)
+	•	Topic (ELA): Speaking for the Planet. (Chủ đề: Lên tiếng vì Hành tinh.)
+	•	Key Learning Outcome (ELA): Deliver a 1-minute persuasive speech using OREO. (Kết quả: Trình bày bài nói thuyết phục 1 phút dùng OREO.)
+	•	Skill Focus (Speaking): Public Speaking (Volume, Eye contact). (Kỹ năng Nói: Âm lượng, Giao tiếp mắt.)
+	•	Grammar Focus: Speaking Transitions: "First of all...", "Finally...". (Ngữ pháp: Từ chuyển tiếp trong văn nói.)
+	•	Vocabulary Focus: speech, present, voice, loud, clear, audience, listen.
+	•	Topic (Math): Graph Review. (Toán: Ôn tập Biểu đồ.)
+	•	Key Learning Outcome (Math): Choose the right graph for the data. (Kết quả: Chọn đúng biểu đồ cho dữ liệu.)
+	•	Math Vocabulary: Review all graph terms (bar, line, pictograph).
+	•	Week 71: Science/ELA: The Solar System / Math: Large Numbers (Tuần 71: Khoa học/ELA: Hệ Mặt trời / Toán: Số lớn)
+	•	Topic (Science): Space Giants. (Chủ đề: Những gã khổng lồ vũ trụ.)
+	•	Key Learning Outcome (ELA): Write a descriptive paragraph about a planet. (Kết quả: Viết đoạn văn miêu tả hành tinh.)
+	•	Writing Skill Focus: Using factual adjectives. (Kỹ năng Viết: Dùng tính từ thực tế.)
+	•	Grammar Focus: Superlative Adjectives: "The biggest", "The furthest", "The hottest". (Ngữ pháp: So sánh nhất.)
+	•	Vocabulary Focus: planet, solar system, orbit, sun, moon, star, space, telescope.
+	•	Topic (Math): Millions and Billions. (Toán: Hàng triệu và Tỷ.)
+	•	Key Learning Outcome (Math): Read and write large numbers (Space distances). (Kết quả: Đọc viết số lớn.)
+	•	Math Vocabulary: million, billion, place value, zero, comma.
+	•	Week 72: Science/ELA: Photosynthesis / Math: Area & Perimeter (Tuần 72: Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi)
+	•	Topic (Science): Plant Power (How plants eat). (Chủ đề: Sức mạnh thực vật - Cây ăn thế nào.)
+	•	Key Learning Outcome (ELA): Explain the process of photosynthesis. (Kết quả: Giải thích quy trình quang hợp.)
+	•	Writing Skill Focus: Explaining a process. (Kỹ năng Viết: Giải thích quy trình.)
+	•	Grammar Focus: Passive Voice (Intro - Simple Present): "Sunlight is absorbed". (Ngữ pháp: Bị động thì hiện tại đơn - Giới thiệu.)
+	•	Vocabulary Focus: photosynthesis, sunlight, water, carbon dioxide, oxygen, energy, absorb, make.
+	•	Topic (Math): Space vs. Edge. (Toán: Không gian vs Viền.)
+	•	Key Learning Outcome (Math): Distinguish Area and Perimeter. (Kết quả: Phân biệt Diện tích và Chu vi.)
+	•	Math Vocabulary: area, perimeter, inside, around, square units, measure.
+	•	Week 73: Science/ELA: The Water Cycle (Advanced) / Math: Volume (Tuần 73: Khoa học/ELA: Vòng tuần hoàn Nước Nâng cao / Toán: Thể tích)
+	•	Topic (Science): The Never-Ending Journey. (Chủ đề: Hành trình bất tận.)
+	•	Key Learning Outcome (ELA): Write an expository paragraph with advanced sequencing. (Kết quả: Viết đoạn văn giải thích với trình tự nâng cao.)
+	•	Writing Skill Focus: Scientific explanation. (Kỹ năng Viết: Giải thích khoa học.)
+	•	Grammar Focus: Sequence Connectors (Advanced): "Subsequently", "Following this", "Eventually". (Ngữ pháp: Từ nối trình tự nâng cao.)
+	•	Vocabulary Focus: evaporation, condensation, precipitation, collection, vapor, turn into, cycle.
+	•	Topic (Math): 3D Space. (Toán: Không gian 3D.)
+	•	Key Learning Outcome (Math): Calculate volume by counting cubes. (Kết quả: Tính thể tích bằng đếm khối.)
+	•	Math Vocabulary: volume, cubic unit, fill, space, 3D, cube, block.
+	•	Week 74: Science/ELA: Food Chains / Math: Complex Charts (Tuần 74: Khoa học/ELA: Chuỗi thức ăn / Toán: Biểu đồ phức tạp)
+	•	Topic (Science): Who Eats Who? (Energy flow). (Chủ đề: Ai ăn ai? - Dòng năng lượng.)
+	•	Key Learning Outcome (ELA): Write a paragraph explaining dependency in nature. (Kết quả: Viết đoạn văn giải thích sự phụ thuộc trong tự nhiên.)
+	•	Writing Skill Focus: Cause-Effect in systems. (Kỹ năng Viết: Nguyên nhân-Kết quả trong hệ thống.)
+	•	Grammar Focus: Zero Conditional (Scientific Facts): "If plants die, animals have no food." (Ngữ pháp: Câu điều kiện loại 0.)
+	•	Vocabulary Focus: producer, consumer, predator, prey, energy, flow, eat, eaten by.
+	•	Topic (Math): Multi-Set Data. (Toán: Dữ liệu đa bộ.)
+	•	Key Learning Outcome (Math): Read charts comparing two groups (e.g., Lions vs. Zebras). (Kết quả: Đọc biểu đồ so sánh 2 nhóm.)
+	•	Math Vocabulary: compare, both, set, legend, double bar graph.
+	•	Week 75: History/ELA: Ancient Egypt / Math: Timelines (Tuần 75: Lịch sử/ELA: Ai Cập Cổ đại / Toán: Dòng thời gian)
+	•	Topic (History): Pyramids and Pharaohs. (Chủ đề: Kim tự tháp và Pharaoh.)
+	•	Key Learning Outcome (ELA): Write a descriptive paragraph about Ancient Egypt. (Kết quả: Viết đoạn văn miêu tả Ai Cập.)
+	•	Writing Skill Focus: Historical description. (Kỹ năng Viết: Miêu tả lịch sử.)
+	•	Grammar Focus: "Used to" / "Would" (Past habits): "Egyptians used to build...". (Ngữ pháp: Thói quen quá khứ.)
+	•	Vocabulary Focus: pyramid, mummy, tomb, desert, ancient, civilization, king, build.
+	•	Topic (Math): History Math. (Toán: Toán Lịch sử.)
+	•	Key Learning Outcome (Math): Calculate duration between dates (BC/AD). (Kết quả: Tính khoảng thời gian.)
+	•	Math Vocabulary: timeline, duration, century, year, past, ago, BC, AD.
+	•	Week 76: History/ELA: Explorers / Math: Map Scales (Tuần 76: Lịch sử/ELA: Các nhà Thám hiểm / Toán: Tỷ lệ Bản đồ)
+	•	Topic (History): Great Voyages. (Chủ đề: Những chuyến hải trình lớn.)
+	•	Key Learning Outcome (ELA): Write a short biography of an explorer. (Kết quả: Viết tiểu sử ngắn.)
+	•	Writing Skill Focus: Biographical writing. (Kỹ năng Viết: Viết tiểu sử.)
+	•	Grammar Focus: Prepositions of Movement (Across, Around, Through). (Ngữ pháp: Giới từ chỉ di chuyển.)
+	•	Vocabulary Focus: explore, voyage, ship, ocean, discover, map, captain, sail.
+	•	Topic (Math): Real Distances. (Toán: Khoảng cách thực.)
+	•	Key Learning Outcome (Math): Use a map scale to calculate distance. (Kết quả: Dùng tỷ lệ bản đồ tính khoảng cách.)
+	•	Math Vocabulary: scale, distance, measure, kilometer, represent, map unit.
+	•	Week 77: Social Studies/ELA: World Landmarks / Math: 3D Geometry (Tuần 77: Xã hội/ELA: Kỳ quan Thế giới / Toán: Hình học 3D)
+	•	Topic (Social): Famous Buildings. (Chủ đề: Các công trình nổi tiếng.)
+	•	Key Learning Outcome (ELA): Write a technical description of a landmark. (Kết quả: Viết miêu tả kỹ thuật về danh thắng.)
+	•	Writing Skill Focus: Descriptive precision. (Kỹ năng Viết: Sự chính xác trong miêu tả.)
+	•	Grammar Focus: Adjectives of Material/Shape: "It is made of...", "It is shaped like...". (Ngữ pháp: Tính từ chất liệu/hình dáng.)
+	•	Vocabulary Focus: tower, bridge, wall, stone, steel, ancient, modern, famous, statue.
+	•	Topic (Math): Building Blocks. (Toán: Khối xây dựng.)
+	•	Key Learning Outcome (Math): Identify faces, edges, vertices of 3D shapes. (Kết quả: Xác định mặt, cạnh, đỉnh.)
+	•	Math Vocabulary: cube, sphere, pyramid, cylinder, face, edge, vertex, solid.
+	•	Week 78: Social Studies/ELA: Cultures / Math: Surveys (Tuần 78: Xã hội/ELA: Văn hóa / Toán: Khảo sát)
+	•	Topic (Social): Traditions Around the World. (Chủ đề: Truyền thống thế giới.)
+	•	Key Learning Outcome (ELA): Write a paragraph comparing two traditions. (Kết quả: Viết đoạn văn so sánh 2 truyền thống.)
+	•	Writing Skill Focus: Cultural comparison. (Kỹ năng Viết: So sánh văn hóa.)
+	•	Grammar Focus: Comparative Structures: "Unlike...", "Similar to...", "Whereas...". (Ngữ pháp: Cấu trúc so sánh nâng cao.)
+	•	Vocabulary Focus: tradition, culture, holiday, celebrate, food, clothes, festival, same, different.
+	•	Topic (Math): Collecting Data. (Toán: Thu thập dữ liệu.)
+	•	Key Learning Outcome (Math): Design a survey and collect answers. (Kết quả: Thiết kế khảo sát và thu thập câu trả lời.)
+	•	Math Vocabulary: survey, question, tally, vote, result, ask.
+	•	Weeks 79-80: Review & Micro-Debate 2 (Tuần 79-80: Ôn tập & Tranh luận nhỏ 2)
+	•	Topic: "Space Exploration vs. Earth Fix". (Chủ đề: Khám phá Vũ trụ hay Sửa chữa Trái đất?)
+	•	Activity: Micro-Debate. (Hoạt động: Tranh luận nhỏ.)
+	•	Skill Focus: Rebuttal Intro ("Yes, but..."). (Kỹ năng: Giới thiệu Phản biện.)
+	•	Grammar Review: Passive Voice, Conditionals, Comparatives.
+	•	Vocabulary Focus: space, earth, money, spend, fix, problem, important.
+	•	Week 81: ELA: The Master Architect (Structure) / Math: Graphing Data (Tuần 81: ELA: Kiến Trúc Sư Tài Ba - Cấu trúc / Toán: Biểu diễn Dữ liệu)
+	•	Topic (ELA): Planning an essay like building a house. (Chủ đề: Lập kế hoạch bài luận như xây nhà.)
+	•	Key Learning Outcome (ELA): Create a 5-paragraph outline. (Kết quả: Tạo dàn ý 5 đoạn.)
+	•	Writing Skill Focus: Outlining. (Kỹ năng: Lập dàn ý.)
+	•	Grammar Focus: Transition Signals (Firstly, Secondly, In conclusion). (Ngữ pháp: Tín hiệu chuyển đoạn.)
+	•	Vocabulary Focus: introduction, body, conclusion, outline, structure, paragraph, main point.
+	•	Topic (Math): Representing Data. (Toán: Biểu diễn Dữ liệu.)
+	•	Key Learning Outcome (Math): Create a bar graph from a data set. (Kết quả: Tạo biểu đồ cột từ bộ dữ liệu.)
+	•	Math Vocabulary: axis, label, title, scale, bar, plot.
+	•	Week 82: ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data (Tuần 82: ELA: Vlogger Du Lịch - Viết nháp / Toán: Phân tích Dữ liệu)
+	•	Topic (ELA): Describing a favorite place. (Chủ đề: Miêu tả nơi yêu thích.)
+	•	Key Learning Outcome (ELA): Write a descriptive essay draft. (Kết quả: Viết nháp bài văn miêu tả.)
+	•	Writing Skill Focus: Drafting. (Kỹ năng: Viết nháp.)
+	•	Grammar Focus: Adjectives & Sensory Words (Sight, Sound, Smell). (Ngữ pháp: Tính từ & Từ chỉ giác quan.)
+	•	Vocabulary Focus: beautiful, amazing, see, hear, smell, taste, landscape, view, delicious.
+	•	Topic (Math): Data Analysis (Most/Least). (Toán: Phân tích dữ liệu.)
+	•	Key Learning Outcome (Math): Interpret data to answer questions. (Kết quả: Diễn giải dữ liệu để trả lời câu hỏi.)
+	•	Math Vocabulary: most, least, difference, total, combine.
+	•	Week 83: Geography/ELA: Landforms / Math: Decimals Intro (Tuần 83: Địa lý/ELA: Địa hình / Toán: Giới thiệu Thập phân)
+	•	Topic (Geography): The Face of the Earth. (Chủ đề: Gương mặt Trái đất.)
+	•	Key Learning Outcome (ELA): Write definitions of landforms. (Kết quả: Viết định nghĩa địa hình.)
+	•	Writing Skill Focus: Definition writing. (Kỹ năng Viết: Viết định nghĩa.)
+	•	Grammar Focus: Relative Clauses (Defining): "A mountain is a landform that is high." (Ngữ pháp: Mệnh đề quan hệ xác định.)
+	•	Vocabulary Focus: mountain, valley, plain, island, definition, feature, land, water.
+	•	Topic (Math): Parts of a Whole. (Toán: Các phần của tổng thể.)
+	•	Key Learning Outcome (Math): Understand tenths as decimals (0.1). (Kết quả: Hiểu hàng phần mười.)
+	•	Math Vocabulary: decimal, point, tenth, whole, part, fraction.
+	•	Week 84: Science/ELA: Volcanoes / Math: Adding Decimals (Tuần 84: Khoa học/ELA: Núi lửa / Toán: Cộng Thập phân)
+	•	Topic (Science): Boom! (Eruptions). (Chủ đề: Bùm! - Phun trào.)
+	•	Key Learning Outcome (ELA): Explain the cause of an eruption. (Kết quả: Giải thích nguyên nhân phun trào.)
+	•	Writing Skill Focus: Explanation. (Kỹ năng Viết: Giải thích.)
+	•	Grammar Focus: Cause/Effect Verbs: "Heat causes magma to rise." (Ngữ pháp: Động từ nguyên nhân/kết quả.)
+	•	Vocabulary Focus: volcano, eruption, magma, lava, ash, explode, heat, pressure.
+	•	Topic (Math): Decimal Operations. (Toán: Phép tính thập phân.)
+	•	Key Learning Outcome (Math): Add numbers with one decimal place. (Kết quả: Cộng số thập phân.)
+	•	Math Vocabulary: add, sum, line up, point, decimal place.
+🟤 UNIT 10: ADVANCED SYSTEMS & HISTORY (HỆ THỐNG NÂNG CAO & LỊCH SỬ) - WEEKS 85-96
+(Tiếp nối nội dung Khoa học & Xã hội chuyên sâu)
+	•	Week 85: Maps (Advanced) / Math: Map Scales (Tuần 85: Bản đồ Nâng cao / Toán: Tỷ lệ Bản đồ)
+	•	Topic (Geography): Getting Lost & Found. (Chủ đề: Lạc & Tìm thấy.) 
+	•	Key Learning Outcome (ELA): Write detailed instructions to find a location using landmarks. (Kết quả: Viết hướng dẫn chi tiết tìm địa điểm.) 
+	•	Writing Skill Focus: Instructional writing (Precision). (Kỹ năng Viết: Viết hướng dẫn chính xác.)
+	•	Grammar Focus: Complex Prepositions: "In the middle of", "To the east of", "Opposite to". (Ngữ pháp: Giới từ phức.) 
+	•	Vocabulary Focus: direction, route, path, locate, landmark, north-east, intersection. 
+	•	Topic (Math): Scaling Up. (Toán: Phóng to/Tỷ lệ.) 
+	•	Key Learning Outcome (Math): Calculate real distance from map distance using a scale (e.g., 1cm = 1km). (Kết quả: Tính khoảng cách thực từ tỷ lệ bản đồ.) 
+	•	Math Vocabulary: scale, ratio, real distance, map distance, convert. 
+	•	Week 86: Weather vs. Climate / Math: Graphs Trends (Tuần 86: Thời tiết vs Khí hậu / Toán: Xu hướng Biểu đồ)
+	•	Topic (Science): Climate Zones. (Chủ đề: Các đới khí hậu.) 
+	•	Key Learning Outcome (ELA): Summarize climate data and distinguish it from weather. (Kết quả: Tóm tắt dữ liệu khí hậu và phân biệt với thời tiết.) 
+	•	Writing Skill Focus: Summarizing data. (Kỹ năng Viết: Tóm tắt dữ liệu.) 
+	•	Grammar Focus: Generalization words: "Generally", "Typically", "As a rule". (Ngữ pháp: Từ ngữ khái quát hóa.) 
+	•	Vocabulary Focus: tropical, polar, temperate, zone, average, pattern, forecast. 
+	•	Topic (Math): Analyzing Trends. (Toán: Phân tích Xu hướng.) 
+	•	Key Learning Outcome (Math): Describe graph trends (increasing, decreasing, steady). (Kết quả: Miêu tả xu hướng biểu đồ: tăng, giảm, ổn định.) 
+	•	Math Vocabulary: trend, steep, shallow, peak, dip, rise, fall. 
+	•	Week 87: Human Body / Math: Elapsed Time (Tuần 87: Cơ thể Người / Toán: Thời gian trôi qua)
+	•	Topic (Science): The Machine Inside. (Chủ đề: Cỗ máy bên trong.) 
+	•	Key Learning Outcome (ELA): Explain a body system's function (e.g., Circulatory). (Kết quả: Giải thích chức năng một hệ cơ quan.) 
+	•	Writing Skill Focus: Functional description. (Kỹ năng Viết: Miêu tả chức năng.) 
+	•	Grammar Focus: Passive Voice (Process): "Oxygen is carried by blood." (Ngữ pháp: Câu bị động chỉ quy trình.) 
+	•	Vocabulary Focus: heart, lungs, blood, bone, muscle, pump, digest, system. 
+	•	Topic (Math): Elapsed Time. (Toán: Tính khoảng thời gian.) 
+	•	Key Learning Outcome (Math): Calculate duration across hours (e.g., 1:45 to 3:15). (Kết quả: Tính thời gian trôi qua giữa các giờ.) 
+	•	Math Vocabulary: start time, end time, duration, hour, minute, interval. 
+	•	Week 88: Ancient Rome / Math: Metric Conversions (Tuần 88: La Mã Cổ đại / Toán: Đổi đơn vị Mét)
+	•	Topic (History): Roman Engineers. (Chủ đề: Kỹ sư La Mã.) 
+	•	Key Learning Outcome (ELA): Compare Rome to Egypt (or modern day). (Kết quả: So sánh La Mã với Ai Cập.) 
+	•	Writing Skill Focus: Comparative writing. (Kỹ năng Viết: Viết so sánh.) 
+	•	Grammar Focus: Past Ability: "Romans could build...", "They were able to...". (Ngữ pháp: Khả năng trong quá khứ.) 
+	•	Vocabulary Focus: aqueduct, road, colosseum, soldier, empire, concrete, arch. 
+	•	Topic (Math): Metric System. (Toán: Hệ mét.) 
+	•	Key Learning Outcome (Math): Convert cm to m, g to kg in context. (Kết quả: Đổi đơn vị cm-m, g-kg trong ngữ cảnh.) 
+	•	Math Vocabulary: convert, unit, kilo-, centi-, milli-, prefix. 
+	•	Week 89: Inventions / Math: Comparing Data Sets (Tuần 89: Phát minh / Toán: So sánh bộ Dữ liệu)
+	•	Topic (History): Changing the World. (Chủ đề: Thay đổi Thế giới.) 
+	•	Key Learning Outcome (ELA): Explain how an invention changed life (Before vs. After). (Kết quả: Giải thích phát minh thay đổi cuộc sống thế nào.) 
+	•	Writing Skill Focus: Cause-Effect (History). (Kỹ năng Viết: Nguyên nhân-Kết quả Lịch sử.) 
+	•	Grammar Focus: Past Perfect (Intro): "Before the phone, people had written letters." (Ngữ pháp: Quá khứ hoàn thành - Giới thiệu.) 
+	•	Vocabulary Focus: invent, discover, machine, technology, communication, electricity, bulb. 
+	•	Topic (Math): Comparing Data Sets. (Toán: So sánh các bộ dữ liệu.) 
+	•	Key Learning Outcome (Math): Extract data from two graphs to answer a comparison question. (Kết quả: Trích xuất dữ liệu từ 2 biểu đồ để so sánh.) 
+	•	Math Vocabulary: compare, source, data set, double bar graph. 
+	•	Week 90: Physics (Forces) / Math: Averages (Mean) (Tuần 90: Vật lý (Lực) / Toán: Trung bình cộng)
+	•	Topic (Science): Push & Pull. (Chủ đề: Đẩy & Kéo.) 
+	•	Key Learning Outcome (ELA): Explain Newton's laws simply using conditionals. (Kết quả: Giải thích định luật Newton đơn giản dùng câu điều kiện.) 
+	•	Writing Skill Focus: Scientific explanation. (Kỹ năng Viết: Giải thích khoa học.) 
+	•	Grammar Focus: Conditional Type 1 (Cause/Effect): "If you push it, it will move." (Ngữ pháp: Câu điều kiện loại 1.) 
+	•	Vocabulary Focus: force, gravity, friction, move, stop, speed, motion, pull. 
+	•	Topic (Math): Mean. (Toán: Số trung bình cộng.) 
+	•	Key Learning Outcome (Math): Calculate the average of a set of numbers. (Kết quả: Tính trung bình cộng của một dãy số.) 
+	•	Math Vocabulary: average, mean, total, divide, sum. 
+	•	Week 91: Scientific Method / Math: Experiment Design (Tuần 91: Phương pháp Khoa học / Toán: Thiết kế Thí nghiệm)
+	•	Topic (Science): How Scientists Think. (Chủ đề: Cách nhà khoa học tư duy.) 
+	•	Key Learning Outcome (ELA): Write a lab report structure (Hypothesis -> Result). (Kết quả: Viết cấu trúc báo cáo thí nghiệm.) 
+	•	Writing Skill Focus: Report writing. (Kỹ năng Viết: Viết báo cáo.) 
+	•	Grammar Focus: Impersonal Language: "It was observed that..." (Avoiding "I"). (Ngữ pháp: Ngôn ngữ khách quan.) 
+	•	Vocabulary Focus: hypothesis, experiment, observe, result, conclusion, method, test. 
+	•	Topic (Math): Experiment Design. (Toán: Thiết kế thí nghiệm.) 
+	•	Key Learning Outcome (Math): Create a data collection table for an experiment. (Kết quả: Tạo bảng thu thập dữ liệu.) 
+	•	Math Vocabulary: table, row, column, record, tally, input. 
+	•	Week 92: Community Helpers / Math: Surveys (Tuần 92: Người giúp đỡ Cộng đồng / Toán: Khảo sát)
+	•	Topic (Social): Jobs in Depth. (Chủ đề: Nghề nghiệp chuyên sâu.) 
+	•	Key Learning Outcome (ELA): Write an interview report about a job. (Kết quả: Viết báo cáo phỏng vấn về một nghề.) 
+	•	Writing Skill Focus: Reporting information. (Kỹ năng Viết: Báo cáo thông tin.) 
+	•	Grammar Focus: Relative Clauses (Who): "A doctor is someone who cures people." (Ngữ pháp: Mệnh đề quan hệ Who.) 
+	•	Vocabulary Focus: career, job, help, service, community, salary, skill. 
+	•	Topic (Math): Conducting Surveys. (Toán: Thực hiện Khảo sát.) 
+	•	Key Learning Outcome (Math): Record tally marks and convert to frequency. (Kết quả: Ghi dấu kiểm và đổi sang tần số.) 
+	•	Math Vocabulary: tally, frequency, count, interview, data. 
+	•	Weeks 93-94: Mini-Research Project 
+(Tuần 93-94: Dự án Nghiên cứu Nhỏ - Làm quen với Essay) 
+	•	Week 93: Topic Selection & Outline. (Chọn chủ đề & Dàn ý).
+	•	Week 94: Drafting & Editing. (Viết nháp & Chỉnh sửa).
+	•	Topic: Choose a topic from Weeks 85-92 (e.g., "Volcanoes" or "Ancient Rome").
+	•	Goal: Combine Essay Structure (Intro-Body-Conclusion) with Factual Content.
+	•	Weeks 95-96: Review & Application (Tuần 95-96: Ôn tập & Ứng dụng)
+	•	Topic: "The Young Professor".
+	•	Activity: Students teach a mini-lesson (3 mins) on their research topic.
+🔴 UNIT 11: CITIZENSHIP & ECONOMICS (CÔNG DÂN & KINH TẾ) - WEEKS 97-104
+(Tương ứng nội dung gốc Unit 10) 
+	•	Week 97: Government / Math: Percentages Intro (Tuần 97: Chính phủ / Toán: Giới thiệu Phần trăm)
+	•	Topic (Social): Who makes the rules? (Chủ đề: Ai đặt ra luật?) 
+	•	Key Learning Outcome (ELA): Define Government and its role. (Kết quả: Định nghĩa Chính phủ và vai trò.) 
+	•	Writing Skill Focus: Definition writing. (Kỹ năng Viết: Viết định nghĩa.) 
+	•	Grammar Focus: Modals of Prohibition: "Must not", "Are not allowed to". (Ngữ pháp: Cấm đoán/Không được phép.) 
+	•	Vocabulary Focus: government, law, rule, leader, citizen, protect, safe. 
+	•	Topic (Math): Percent Intro. (Toán: Giới thiệu Phần trăm.) 
+	•	Key Learning Outcome (Math): Understand % as part of 100. (Kết quả: Hiểu % là một phần của 100.) 
+	•	Math Vocabulary: percent, hundred, part, whole, per. 
+	•	Week 98: Democracy / Math: Calculating Percentages (Tuần 98: Dân chủ / Toán: Tính Phần trăm)
+	•	Topic (Social): Vote for Me! (Chủ đề: Bầu cho tôi!) 
+	•	Key Learning Outcome (ELA): Write a campaign speech expressing values. (Kết quả: Viết bài vận động tranh cử.) 
+	•	Writing Skill Focus: Persuasion (Values). (Kỹ năng Viết: Thuyết phục dựa trên giá trị.) 
+	•	Grammar Focus: Preferences: "I would rather...", "I prefer...". (Ngữ pháp: Sự ưu tiên.) 
+	•	Vocabulary Focus: vote, democracy, elect, choice, speech, candidate, ballot. 
+	•	Topic (Math): Finding %. (Toán: Tìm giá trị %.) 
+	•	Key Learning Outcome (Math): Calculate simple % (10%, 25%, 50% of a number). (Kết quả: Tính % đơn giản.) 
+	•	Math Vocabulary: calculate, of (multiply), half (50%), quarter (25%). 
+	•	Week 99: Good Citizen / Math: Pie Charts (Tuần 99: Công dân Tốt / Toán: Biểu đồ tròn)
+	•	Topic (Social): My Duty. (Chủ đề: Nhiệm vụ của tôi.) 
+	•	Key Learning Outcome (ELA): Explain responsibilities of a good citizen. (Kết quả: Giải thích trách nhiệm công dân.) 
+	•	Writing Skill Focus: Expository writing. (Kỹ năng Viết: Viết giải thích.) 
+	•	Grammar Focus: Gerunds as Subjects: "Helping is important.", "Voting is a duty." (Ngữ pháp: Danh động từ làm chủ ngữ.) 
+	•	Vocabulary Focus: responsibility, duty, help, volunteer, community, respect. 
+	•	Topic (Math): Pie Charts. (Toán: Biểu đồ tròn.) 
+	•	Key Learning Outcome (Math): Read a pie chart and understand proportions. (Kết quả: Đọc biểu đồ tròn và hiểu tỷ lệ.) 
+	•	Math Vocabulary: circle, section, slice, whole, half, represent. 
+	•	Week 100: Rights / Math: Percent Word Problems (Tuần 100: Quyền lợi / Toán: Toán đố Phần trăm)
+	•	Topic (Social): Freedom. (Chủ đề: Tự do.) 
+	•	Key Learning Outcome (ELA): Explain a basic human right. (Kết quả: Giải thích quyền cơ bản.) 
+	•	Writing Skill Focus: Abstract explanation. (Kỹ năng Viết: Giải thích khái niệm trừu tượng.) 
+	•	Grammar Focus: Abstract Nouns: Freedom, Justice, Equality. (Ngữ pháp: Danh từ trừu tượng.) 
+	•	Vocabulary Focus: right, freedom, speech, fair, equal, law, justice. 
+	•	Topic (Math): Percent Review. (Toán: Ôn tập Phần trăm.) 
+	•	Key Learning Outcome (Math): Solve word problems involving percentages. (Kết quả: Giải toán đố liên quan đến %.) 
+	•	Math Vocabulary: discount, sale, off, tax.
+	•	Week 101: Needs vs. Wants / Math: Budgeting (Tuần 101: Nhu cầu vs Mong muốn / Toán: Ngân sách)
+	•	Topic (Social): Smart Choices. (Chủ đề: Lựa chọn thông minh.) 
+	•	Key Learning Outcome (ELA): Compare needs and wants in daily life. (Kết quả: So sánh nhu cầu và mong muốn.) 
+	•	Writing Skill Focus: Comparison. (Kỹ năng Viết: So sánh.) 
+	•	Grammar Focus: Second Conditional: "If I had money, I would buy...". (Ngữ pháp: Câu điều kiện loại 2.) 
+	•	Vocabulary Focus: need, want, buy, save, spend, money, afford. 
+	•	Topic (Math): Budgeting. (Toán: Lập ngân sách.) 
+	•	Key Learning Outcome (Math): Create a simple budget with income and expenses. (Kết quả: Tạo ngân sách đơn giản.) 
+	•	Math Vocabulary: budget, total, cost, income, expense, left over. 
+	•	Week 102: Goods & Services / Math: Total Costs (Tuần 102: Hàng hóa & Dịch vụ / Toán: Tổng chi phí)
+	•	Topic (Social): Buying and Selling. (Chủ đề: Mua và Bán.) 
+	•	Key Learning Outcome (ELA): Classify goods and services. (Kết quả: Phân loại hàng hóa và dịch vụ.) 
+	•	Writing Skill Focus: Classification. (Kỹ năng Viết: Phân loại.) 
+	•	Grammar Focus: Passive with Modals: "Services can be provided by..." (Ngữ pháp: Bị động với Modals.) 
+	•	Vocabulary Focus: goods, services, product, job, pay, provide, tangible. 
+	•	Topic (Math): Total Cost. (Toán: Tổng chi phí.) 
+	•	Key Learning Outcome (Math): Calculate totals with decimals (money). (Kết quả: Tính tổng tiền với số thập phân.) 
+	•	Math Vocabulary: total, price, cost, change, bill, receipt. 
+	•	Week 103: Producers & Consumers / Math: Profit & Loss (Tuần 103: Người Sản xuất & Người Tiêu dùng / Toán: Lợi nhuận & Thua lỗ)
+	•	Topic (Social): The Market. (Chủ đề: Thị trường.) 
+	•	Key Learning Outcome (ELA): Explain the cycle between producers and consumers. (Kết quả: Giải thích chu trình giữa người SX và tiêu dùng.) 
+	•	Writing Skill Focus: Process explanation. (Kỹ năng Viết: Giải thích quy trình.) 
+	•	Grammar Focus: Connectors of Contrast: "However", "On the other hand". (Ngữ pháp: Từ nối tương phản.) 
+	•	Vocabulary Focus: produce, consume, make, buy, sell, market, factory, customer. 
+	•	Topic (Math): Profit & Loss. (Toán: Lợi nhuận & Lỗ.) 
+	•	Key Learning Outcome (Math): Calculate profit (Selling Price - Cost Price). (Kết quả: Tính lợi nhuận.) 
+	•	Math Vocabulary: profit, loss, earn, spend, gain. 
+	•	Week 104: Supply & Demand / Math: Sales Trends (Tuần 104: Cung & Cầu / Toán: Xu hướng Bán hàng)
+	•	Topic (Social): Why Prices Change. (Chủ đề: Tại sao giá thay đổi.) 
+	•	Key Learning Outcome (ELA): Explain the relationship between supply and demand. (Kết quả: Giải thích mối quan hệ Cung-Cầu.) 
+	•	Writing Skill Focus: Cause-Effect (Economics). (Kỹ năng Viết: Nguyên nhân-Kết quả Kinh tế.) 
+	•	Grammar Focus: Correlative Conjunctions: "The more..., the less...", "The higher..., the lower...". (Ngữ pháp: So sánh kép.) 
+	•	Vocabulary Focus: supply, demand, price, high, low, scarce, popular, increase. 
+	•	Topic (Math): Sales Trends. (Toán: Xu hướng Bán hàng.) 
+	•	Key Learning Outcome (Math): Analyze sales graphs to spot demand. (Kết quả: Phân tích biểu đồ bán hàng để nhận biết nhu cầu.) 
+	•	Math Vocabulary: trend, demand, sales, up, down, peak. 
+🟣 UNIT 12: "MY PASSION PROJECT" (DỰ ÁN ĐAM MÊ) - WEEKS 105-120
+(Tương ứng nội dung gốc Cycle 2.3 - Hoàn thành Phase 2) Mục tiêu: Tổng hợp toàn bộ kỹ năng Phase 2 (Nghiên cứu, Viết đoạn văn, Thuyết trình) vào một sản phẩm lớn. Học sinh tự chọn một chủ đề khoa học/lịch sử để nghiên cứu.
+Weeks 105-108: Research & Planning (Nghiên cứu & Lập kế hoạch)
+	•	Week 105: Topic Selection & The "Big Questions" (Tuần 105: Chọn Chủ đề & Câu hỏi Lớn)
+	•	Topic (ELA): Brainstorming a research topic (e.g., Volcanoes, Ancient Rome, Space). (Chủ đề: Động não chọn đề tài.)
+	•	Key Learning Outcome (ELA): Write a proposal stating the topic and 3 "Big Questions" to research. (Kết quả: Viết đề xuất gồm chủ đề và 3 câu hỏi lớn.)
+	•	Writing Skill Focus: Inquiry & Question formulation. (Kỹ năng Viết: Đặt câu hỏi truy vấn.)
+	•	Grammar Focus: Wh- Questions (Complex): "What causes...?", "How does... affect...?", "Why is... important?". (Ngữ pháp: Câu hỏi Wh- phức hợp.)
+	•	Vocabulary Focus: research, topic, inquiry, question, curious, find out, information.
+	•	Topic (Math): Introduction to Variables. (Toán: Giới thiệu Biến số.)
+	•	Key Learning Outcome (Math): Understand that a letter (x, y, n) can represent an unknown number. (Kết quả: Hiểu chữ cái đại diện cho số chưa biết.)
+	•	Math Vocabulary: variable, unknown, symbol, letter, represent, value.
+	•	Week 106: Information Hunting (Sources) (Tuần 106: Săn tìm Thông tin - Nguồn)
+	•	Topic (ELA): Finding reliable answers. (Chủ đề: Tìm câu trả lời đáng tin cậy.)
+	•	Key Learning Outcome (ELA): Locate specific information in a text to answer a question. (Kết quả: Xác định thông tin cụ thể trong văn bản để trả lời câu hỏi.)
+	•	Writing Skill Focus: Skimming & Scanning keywords. (Kỹ năng Viết: Đọc lướt & Đọc quét từ khóa.)
+	•	Grammar Focus: Reported Speech (Source Citation Intro): "The book says that...", "According to...". (Ngữ pháp: Câu tường thuật để trích dẫn.)
+	•	Vocabulary Focus: source, website, book, author, title, page, fact, true.
+	•	Topic (Math): Simple Equations (Addition/Subtraction). (Toán: Phương trình đơn giản - Cộng/Trừ.)
+	•	Key Learning Outcome (Math): Solve for x (e.g., x + 5 = 12). (Kết quả: Tìm x.)
+	•	Math Vocabulary: equation, solve, balance, inverse, plus, minus.
+	•	Week 107: The Note-Taker (Summary) (Tuần 107: Người Ghi chép - Tóm tắt)
+	•	Topic (ELA): Taking notes without copying sentences. (Chủ đề: Ghi chú không chép nguyên văn.)
+	•	Key Learning Outcome (ELA): Convert a paragraph into bullet points (keywords only). (Kết quả: Chuyển đoạn văn thành gạch đầu dòng.)
+	•	Writing Skill Focus: Summarizing & Paraphrasing. (Kỹ năng Viết: Tóm tắt & Diễn giải.)
+	•	Grammar Focus: Fragments (using Noun Phrases for notes). (Ngữ pháp: Câu chưa hoàn chỉnh dùng cho ghi chú.)
+	•	Vocabulary Focus: keyword, bullet point, summarize, main idea, short, note.
+	•	Topic (Math): Simple Equations (Multiplication/Division). (Toán: Phương trình đơn giản - Nhân/Chia.)
+	•	Key Learning Outcome (Math): Solve for x (e.g., 2x = 10). (Kết quả: Tìm x.)
+	•	Math Vocabulary: multiply, divide, times, split.
+	•	Week 108: The Architect (Outlining) (Tuần 108: Kiến trúc sư - Lập dàn ý)
+	•	Topic (ELA): Organizing notes into a structure. (Chủ đề: Sắp xếp ghi chú thành cấu trúc.)
+	•	Key Learning Outcome (ELA): Create a full outline: Intro, Body 1 (Fact 1), Body 2 (Fact 2), Conclusion. (Kết quả: Tạo dàn ý đầy đủ 4 phần.)
+	•	Writing Skill Focus: Logical organization. (Kỹ năng Viết: Tổ chức logic.)
+	•	Grammar Focus: Future Plans: "In paragraph 1, I will write about...", "Then I will explain...". (Ngữ pháp: Kế hoạch tương lai với Will.)
+	•	Vocabulary Focus: outline, structure, order, first, next, then, finally, plan.
+	•	Topic (Math): Function Machines (Input/Output). (Toán: Cỗ máy Hàm số.)
+	•	Key Learning Outcome (Math): Identify the rule affecting the input (e.g., Input 2 -> Output 4; Rule x2). (Kết quả: Xác định quy tắc đầu vào/đầu ra.)
+	•	Math Vocabulary: input, output, rule, function, machine, change.
+Weeks 109-112: Drafting the Report (Viết nháp Báo cáo)
+	•	Week 109: Drafting Body Paragraph 1 (Tuần 109: Viết nháp Thân bài 1)
+	•	Topic (ELA): Writing the first main idea. (Chủ đề: Viết ý chính thứ nhất.)
+	•	Key Learning Outcome (ELA): Write a paragraph with a Topic Sentence and 2-3 supporting details from notes. (Kết quả: Viết đoạn văn có câu chủ đề và 2-3 chi tiết bổ trợ.)
+	•	Writing Skill Focus: Paragraph cohesion. (Kỹ năng Viết: Sự liên kết đoạn văn.)
+	•	Grammar Focus: Linking Words (Addition): "Also", "In addition", "Furthermore". (Ngữ pháp: Từ nối bổ sung.)
+	•	Vocabulary Focus: detail, support, explain, describe, specific.
+	•	Topic (Math): Coordinates Intro. (Toán: Giới thiệu Tọa độ.)
+	•	Key Learning Outcome (Math): Identify X and Y axis. (Kết quả: Xác định trục X và Y.)
+	•	Math Vocabulary: axis, x-axis, y-axis, grid, line.
+	•	Week 110: Drafting Body Paragraph 2 (Tuần 110: Viết nháp Thân bài 2)
+	•	Topic (ELA): Writing the second main idea. (Chủ đề: Viết ý chính thứ hai.)
+	•	Key Learning Outcome (ELA): Write a second paragraph focusing on a different aspect (e.g., Habitat vs. Diet). (Kết quả: Viết đoạn 2 tập trung khía cạnh khác.)
+	•	Writing Skill Focus: Maintaining topic focus. (Kỹ năng Viết: Duy trì trọng tâm.)
+	•	Grammar Focus: Linking Words (Contrast/Sequence): "However", "On the other hand", "Next". (Ngữ pháp: Từ nối tương phản/trình tự.)
+	•	Vocabulary Focus: aspect, part, side, difference, another.
+	•	Topic (Math): Plotting Points. (Toán: Vẽ điểm.)
+	•	Key Learning Outcome (Math): Plot simple coordinates (3, 2) on a grid. (Kết quả: Vẽ tọa độ trên lưới.)
+	•	Math Vocabulary: plot, point, coordinate, pair, location.
+	•	Week 111: Intro & Conclusion (The Frame) (Tuần 111: Mở & Kết - Khung sườn)
+	•	Topic (ELA): Hooking the reader and wrapping up. (Chủ đề: Thu hút và Gói lại.)
+	•	Key Learning Outcome (ELA): Write an Introduction (Hook + Thesis) and Conclusion (Summary). (Kết quả: Viết Mở bài và Kết bài.)
+	•	Writing Skill Focus: Introductions and Conclusions. (Kỹ năng Viết: Mở và Kết.)
+	•	Grammar Focus: Summary Phrases: "To sum up", "In conclusion", "Overall". (Ngữ pháp: Cụm từ tóm tắt.)
+	•	Vocabulary Focus: hook, attention, interesting, summary, finish.
+	•	Topic (Math): Data Visualization (Bar Graphs). (Toán: Trực quan hóa Dữ liệu - Biểu đồ cột.)
+	•	Key Learning Outcome (Math): Create a bar graph representing data relevant to their project topic. (Kết quả: Tạo biểu đồ cột liên quan đến chủ đề dự án.)
+	•	Math Vocabulary: bar, height, data, label, title.
+	•	Week 112: The Editor's Eye (Review) (Tuần 112: Con mắt Biên tập viên - Chỉnh sửa)
+	•	Topic (ELA): Polishing the draft. (Chủ đề: Trau chuốt bản nháp.)
+	•	Key Learning Outcome (ELA): Self-correct spelling and basic grammar errors. (Kết quả: Tự sửa lỗi chính tả và ngữ pháp cơ bản.)
+	•	Writing Skill Focus: Editing & Proofreading. (Kỹ năng Viết: Biên tập & Đọc soát.)
+	•	Grammar Focus: Verb Tense Consistency (checking if the whole text is in Past or Present). (Ngữ pháp: Sự nhất quán thì động từ.)
+	•	Vocabulary Focus: check, error, fix, spelling, perfect, final.
+	•	Topic (Math): Data Analysis (Mean/Mode). (Toán: Phân tích Dữ liệu.)
+	•	Key Learning Outcome (Math): Calculate the mean or find the mode of their project data. (Kết quả: Tính trung bình hoặc mốt của dữ liệu dự án.)
+	•	Math Vocabulary: average, mean, mode, most.
+Weeks 113-120: Visuals, Presentation & Graduation (Trình bày & Tốt nghiệp Phase 2)
+	•	Week 113: Visual Aids (Images & Captions) (Tuần 113: Hỗ trợ Hình ảnh)
+	•	Topic (ELA): Adding visual information. (Chủ đề: Thêm thông tin hình ảnh.)
+	•	Key Learning Outcome (ELA): Select images and write descriptive captions using prepositions. (Kết quả: Chọn ảnh và viết chú thích dùng giới thiệu.)
+	•	Writing Skill Focus: Multimodal writing (Text + Image). (Kỹ năng Viết: Đa phương thức.)
+	•	Grammar Focus: Prepositional Phrases: "In this picture...", "Next to the volcano...". (Ngữ pháp: Cụm giới từ.)
+	•	Vocabulary Focus: caption, image, picture, show, display.
+	•	Topic (Math): Geometry Review (Shapes). (Toán: Ôn tập Hình học.)
+	•	Key Learning Outcome (Math): Review properties of 2D/3D shapes for project models. (Kết quả: Ôn tập hình 2D/3D để làm mô hình.)
+	•	Week 114: Project Assembly (Making the Poster) (Tuần 114: Lắp ráp Dự án)
+	•	Topic (ELA): Layout and Design. (Chủ đề: Bố cục và Thiết kế.)
+	•	Key Learning Outcome (ELA): Glue text and images onto a poster board logically. (Kết quả: Dán văn bản và hình ảnh lên bìa một cách logic.)
+	•	Skill Focus: Presentation design. (Kỹ năng: Thiết kế trình bày.)
+	•	Vocabulary Focus: layout, center, top, bottom, arrange, organize.
+	•	Topic (Math): Measurement (Length/Area). (Toán: Đo lường.)
+	•	Key Learning Outcome (Math): Measure spaces on the poster to fit text boxes. (Kết quả: Đo khoảng trống trên poster để dán chữ.)
+	•	Week 115: Speaking Notes (Cue Cards) (Tuần 115: Ghi chú Nói)
+	•	Topic (ELA): From Reading to Speaking. (Chủ đề: Từ Đọc sang Nói.)
+	•	Key Learning Outcome (ELA): Create cue cards with keywords only (no full sentences). (Kết quả: Tạo thẻ ghi chú chỉ chứa từ khóa.)
+	•	Skill Focus: Summary for speaking. (Kỹ năng: Tóm tắt để nói.)
+	•	Grammar Focus: Imperatives/Keywords for self-prompts. (Ngữ pháp: Từ khóa gợi ý.)
+	•	Vocabulary Focus: cue card, keyword, remind, remember, point.
+	•	Topic (Math): Logic Puzzles. (Toán: Câu đố Logic.)
+	•	Key Learning Outcome (Math): Solve grid puzzles to keep logic sharp. (Kết quả: Giải câu đố lưới.)
+	•	Week 116: Rehearsal (Voice & Body) (Tuần 116: Tập dượt)
+	•	Topic (ELA): Delivery skills. (Chủ đề: Kỹ năng trình bày.)
+	•	Key Learning Outcome (ELA): Practice presentation with correct volume and eye contact. (Kết quả: Tập thuyết trình với âm lượng và mắt nhìn đúng.)
+	•	Skill Focus: Public Speaking (Non-verbal). (Kỹ năng: Giao tiếp phi ngôn ngữ.)
+	•	Vocabulary Focus: loud, clear, eye contact, stand straight, smile.
+	•	Topic (Math): Math Games. (Toán: Trò chơi Toán.)
+	•	Week 117: The Knowledge Fair (Group A) (Tuần 117: Hội chợ Tri thức Nhóm A)
+	•	Topic: Presentation Day 1.
+	•	Activity: Half the class presents their Passion Project posters.
+	•	Outcome: 3-minute speech + Q&A.
+	•	Week 118: The Knowledge Fair (Group B) (Tuần 118: Hội chợ Tri thức Nhóm B)
+	•	Topic: Presentation Day 2.
+	•	Activity: The other half presents.
+	•	Week 119: Reflection & Portfolio (Tuần 119: Phản ánh & Hồ sơ)
+	•	Topic (ELA): Looking back. (Chủ đề: Nhìn lại.)
+	•	Key Learning Outcome: Write a reflection: "What did I learn? What was hard?". (Kết quả: Viết phản ánh: Học được gì? Khó khăn gì?)
+	•	Grammar Focus: Past Tense (Reflection).
+	•	Topic (Math): Phase 2 Math Assessment. (Toán: Bài đánh giá Toán Phase 2.)
+	•	Week 120: PHASE 2 GRADUATION (Tuần 120: TỐT NGHIỆP GIAI ĐOẠN 2)
+	•	Event: Ceremony & Certificate Distribution.
+	•	Milestone: Transition to B1 Level.
+
+🎓 PHASE 3: ADVANCED SYNTHESIS & DEBATE (WEEKS 121-156)
+(GIAI ĐOẠN 3: TỔNG HỢP NÂNG CAO & TRANH LUẬN - 36 TUẦN) Goal: Academic Autonomy. Independent research, Argumentative Essays, Formal Debate.
+🔵 PROJECT CYCLE 1: THE HOMEWORK DEBATE (WEEKS 121-132)
+(Chủ đề: Có nên cấm bài tập về nhà?)
+	•	Week 121: Intro to Argumentative Research (Tuần 121: Giới thiệu Nghiên cứu Lập luận)
+	•	Topic (ELA): Breaking down the question: "Should homework be banned?". (Chủ đề: Phân tích câu hỏi.)
+	•	Key Learning Outcome (ELA): List 3 pros and 3 cons. (Kết quả: Liệt kê 3 lợi/3 hại.)
+	•	Grammar Focus: Modals of Possibility: "It could cause stress", "It might help". (Ngữ pháp: Modals chỉ khả năng.)
+	•	Vocabulary Focus: ban, policy, stress, academic, benefit, burden, advantage, disadvantage.
+	•	Topic (Math): Fractions Review (Equivalent). (Toán: Ôn tập Phân số tương đương.)
+	•	Key Learning Outcome: Identify equivalent fractions. (Kết quả: Tìm phân số tương đương.)
+	•	Math Vocabulary: numerator, denominator, equivalent, simplify.
+	•	Week 122: Critical Listening (Tuần 122: Nghe Phản biện)
+	•	Topic (ELA): Listening to debate samples. (Chủ đề: Nghe mẫu tranh luận.)
+	•	Key Learning Outcome (ELA): Identify the speaker's main claim. (Kết quả: Xác định luận điểm chính của người nói.)
+	•	Grammar Focus: Reporting Verbs: "The speaker claimed that...", "She argued that...". (Ngữ pháp: Động từ tường thuật.)
+	•	Vocabulary Focus: claim, argument, state, mention, point out.
+	•	Topic (Math): Adding/Subtracting Fractions. (Toán: Cộng/Trừ Phân số.)
+	•	Key Learning Outcome: Solve word problems with fractions. (Kết quả: Giải toán đố phân số.)
+	•	Week 123: The Thesis Statement (Tuần 123: Câu Luận đề)
+	•	Topic (ELA): Taking a stance. (Chủ đề: Chọn lập trường.)
+	•	Key Learning Outcome (ELA): Write a thesis statement with 2 reasons. (Kết quả: Viết câu luận đề với 2 lý do.)
+	•	Grammar Focus: Concession: "Although homework is useful, it causes stress." (Ngữ pháp: Mệnh đề nhượng bộ Although.)
+	•	Vocabulary Focus: stance, opinion, believe, support, reason.
+	•	Topic (Math): Multiplying Fractions (Concept). (Toán: Khái niệm Nhân phân số.)
+	•	Key Learning Outcome: Understand "of" means multiply (1/2 of 1/2). (Kết quả: Hiểu "của" nghĩa là nhân.)
+	•	Week 124: Drafting Arguments (Body) (Tuần 124: Viết Lập luận)
+	•	Topic (ELA): Writing the P.E.E paragraph (Point, Evidence, Explanation). (Chủ đề: Viết đoạn P.E.E.)
+	•	Key Learning Outcome (ELA): Write 2 body paragraphs supporting the thesis. (Kết quả: Viết 2 đoạn thân bài.)
+	•	Grammar Focus: Linking Words (Sequence): "Firstly", "Secondly", "Furthermore". (Ngữ pháp: Từ nối trình tự.)
+	•	Vocabulary Focus: evidence, prove, show, example, instance.
+	•	Topic (Math): Decimals to Fractions. (Toán: Đổi Thập phân sang Phân số.)
+	•	Key Learning Outcome: Convert 0.5 to 1/2, 0.25 to 1/4. (Kết quả: Chuyển đổi số.)
+	•	Week 125: Intro & Conclusion (Tuần 125: Mở bài & Kết bài)
+	•	Topic (ELA): Hook and Summary. (Chủ đề: Câu dẫn và Tóm tắt.)
+	•	Key Learning Outcome (ELA): Write an intro with a rhetorical question. (Kết quả: Viết mở bài với câu hỏi tu từ.)
+	•	Grammar Focus: Persuasive Verbs: "Urge", "Recommend", "Should". (Ngữ pháp: Động từ thuyết phục.)
+	•	Vocabulary Focus: conclusion, summarize, restate, final thought.
+	•	Topic (Math): Fraction Word Problems. (Toán: Toán đố Phân số.)
+	•	Math Vocabulary: share, split, part of, total.
+	•	Week 126: From Essay to Speech (Tuần 126: Chuyển từ Bài viết sang Bài nói)
+	•	Topic (Debate): Making it spoken. (Chủ đề: Văn nói.)
+	•	Key Learning Outcome (ELA): Create cue cards and practice signposting. (Kết quả: Làm thẻ ghi chú và luyện từ dẫn đường.)
+	•	Grammar Focus: Signposting: "Moving on to...", "Let's look at...". (Ngữ pháp: Từ dẫn hướng.)
+	•	Topic (Math): Logic Puzzles. (Toán: Câu đố Logic.)
+	•	Week 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)
+	•	Topic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)
+	•	Key Learning Outcome (ELA): Use "They say... but I say..." structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)
+	•	Grammar Focus: Contrast Connectors: "On the contrary", "However". (Ngữ pháp: Từ nối tương phản.)
+	•	Vocabulary Focus: disagree, counter, point, false, true.
+	•	Topic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)
+	•	Week 128: The Live Debate 1 (Tuần 128: Tranh luận Trực tiếp 1)
+	•	Event: "Homework Debate".
+	•	Topic (Math): Math Review Game.
+	•	Weeks 129-132: Review & Math Logic Cycle (Tuần 129-132: Ôn tập & Toán Logic)
+	•	Focus: Consolidate writing skills + Math Fractions/Decimals review.
+🔵 PROJECT CYCLE 2: VIDEO GAMES DEBATE (WEEKS 133-144)
+(CHU TRÌNH DỰ ÁN 2: TRANH LUẬN VỀ TRÒ CHƠI ĐIỆN TỬ) Core Question: "Should primary students play video games daily?" (Học sinh tiểu học có nên chơi điện tử hàng ngày?)
+Phase A: Research & Inquiry (Nghiên cứu & Tìm hiểu)
+	•	Week 133: Deep Research & Data (Tuần 133: Nghiên cứu Sâu & Dữ liệu) 
+	•	Topic (ELA): Finding statistics to support arguments. (Chủ đề: Tìm số liệu thống kê để hỗ trợ lập luận.)
+	•	Key Learning Outcome (ELA): Find and cite one statistic about video games (e.g., "70% of kids play..."). (Kết quả: Tìm và trích dẫn 1 số liệu về video game.)
+	•	Skill Focus: Using data as evidence. (Kỹ năng: Dùng dữ liệu làm bằng chứng.)
+	•	Grammar Focus: Citation Phrases: "According to a study by...", "Statistics show that...". (Ngữ pháp: Cụm từ trích dẫn.)
+	•	Vocabulary Focus: statistic, percent, study, data, majority, minority, survey, population.
+	•	Topic (Math): Geometry: Angles. (Toán: Hình học - Góc.)
+	•	Key Learning Outcome (Math): Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)
+	•	Math Vocabulary: angle, degree, right angle, acute, obtuse, protractor, measure.
+	•	Week 134: Identifying Fallacies (Tuần 134: Nhận diện Lỗi Ngụy biện) 
+	•	Topic (Debate): Spotting bad arguments. (Chủ đề: Phát hiện lập luận tồi.)
+	•	Key Learning Outcome (ELA): Identify a "Generalization" fallacy (e.g., "All gamers are lazy"). (Kết quả: Nhận diện lỗi "Khái quát hóa vội vã".)
+	•	Skill Focus: Critical Thinking/Logic. (Kỹ năng: Tư duy Phản biện/Logic.)
+	•	Grammar Focus: Qualifiers: "Some", "Many", "Often", "Tend to" (to avoid generalizing). (Ngữ pháp: Từ hạn định để tránh vơ đũa cả nắm.)
+	•	Vocabulary Focus: fallacy, generalization, assumption, true, false, valid, invalid, logic.
+	•	Topic (Math): Geometry: Triangles. (Toán: Hình học - Tam giác.)
+	•	Key Learning Outcome (Math): Classify triangles by sides (equilateral, isosceles, scalene). (Kết quả: Phân loại tam giác theo cạnh.)
+	•	Math Vocabulary: triangle, side, equal, length, equilateral, isosceles, scalene.
+Phase B: Essay Writing (Viết Bài luận)
+	•	Week 135: The Counter-Argument Paragraph (Tuần 135: Đoạn Phản biện) 
+	•	Topic (ELA): Acknowledging the other side. (Chủ đề: Thừa nhận phía đối lập.)
+	•	Key Learning Outcome (ELA): Write a paragraph starting with "Some people believe..." and then refuting it. (Kết quả: Viết đoạn văn bắt đầu bằng "Một số người tin rằng..." và sau đó bác bỏ nó.)
+	•	Writing Skill Focus: Balanced argumentation. (Kỹ năng Viết: Lập luận cân bằng.)
+	•	Grammar Focus: Contrast Transitions: "However", "Nevertheless", "Yet", "On the other hand". (Ngữ pháp: Từ nối tương phản nâng cao.)
+	•	Vocabulary Focus: opponent, view, argue, refute, counter, although, despite.
+	•	Topic (Math): Perimeter & Area of Complex Shapes. (Toán: Chu vi & Diện tích hình phức tạp.)
+	•	Key Learning Outcome (Math): Calculate area/perimeter of L-shapes by splitting them. (Kết quả: Tính diện tích/chu vi hình chữ L bằng cách chia nhỏ.)
+	•	Math Vocabulary: composite shape, split, total area, add, missing side.
+	•	Week 136: Drafting the Full Essay (Tuần 136: Viết nháp Toàn bộ Bài luận) 
+	•	Topic (ELA): Putting it all together (Thesis + Body + Counter + Conclusion). (Chủ đề: Ghép nối tất cả.)
+	•	Key Learning Outcome (ELA): Complete a 5-paragraph draft including at least one statistic. (Kết quả: Hoàn thành bản nháp 5 đoạn có chứa ít nhất 1 số liệu thống kê.)
+	•	Writing Skill Focus: Stamina in writing. (Kỹ năng Viết: Sức bền khi viết.)
+	•	Grammar Focus: Cohesion (Reviewing all linking words used). (Ngữ pháp: Sự liên kết văn bản.)
+	•	Vocabulary Focus: structure, flow, paragraph, argument, conclusion, evidence.
+	•	Topic (Math): Symmetry. (Toán: Đối xứng.)
+	•	Key Learning Outcome (Math): Identify lines of symmetry in 2D shapes. (Kết quả: Xác định trục đối xứng trong hình 2D.)
+	•	Math Vocabulary: symmetry, line of symmetry, mirror image, reflect, fold, match.
+	•	Week 137: Editing & Polishing (Word Choice) (Tuần 137: Chỉnh sửa & Trau chuốt - Dùng từ) 
+	•	Topic (ELA): Enhancing Vocabulary. (Chủ đề: Nâng cấp từ vựng.)
+	•	Key Learning Outcome (ELA): Replace weak verbs/adjectives with stronger ones (e.g., "bad" -> "harmful", "good" -> "beneficial"). (Kết quả: Thay từ yếu bằng từ mạnh.)
+	•	Writing Skill Focus: Style and Vocabulary enhancement. (Kỹ năng Viết: Nâng cao văn phong.)
+	•	Grammar Focus: Synonyms & Antonyms usage. (Ngữ pháp: Sử dụng từ đồng nghĩa & trái nghĩa.)
+	•	Vocabulary Focus: beneficial, harmful, essential, detrimental, vital, significant.
+	•	Topic (Math): Geometry Word Problems. (Toán: Toán đố Hình học.)
+	•	Key Learning Outcome (Math): Solve real-world problems involving area/perimeter (e.g., fencing a garden). (Kết quả: Giải toán thực tế về diện tích/chu vi - ví dụ rào vườn.)
+	•	Math Vocabulary: fence, carpet, cover, around, border, square meters.
+Phase C: Debate Execution (Thực hiện Tranh luận)
+	•	Week 138: Advanced Rebuttal (Attacking Evidence) (Tuần 138: Phản biện Nâng cao - Tấn công Bằng chứng) 
+	•	Topic (Debate): Attacking the evidence, not the person. (Chủ đề: Tấn công bằng chứng, không tấn công cá nhân.)
+	•	Key Learning Outcome (ELA): Practice phrases like "That evidence is outdated" or "That is a generalization". (Kết quả: Luyện các câu phản bác tính xác thực của bằng chứng.)
+	•	Skill Focus: Professionalism in debate. (Kỹ năng: Sự chuyên nghiệp trong tranh luận.)
+	•	Grammar Focus: Polite Disagreement: "I see your point, but...", "With all due respect...". (Ngữ pháp: Phản đối lịch sự.)
+	•	Vocabulary Focus: outdated, biased, source, credible, unreliable, weak, strong.
+	•	Topic (Math): Logic: Deduction. (Toán: Logic Suy diễn.)
+	•	Key Learning Outcome (Math): Solve logic grid puzzles (Who lives in which house?). (Kết quả: Giải câu đố lưới logic - Ai ở nhà nào?)
+	•	Math Vocabulary: deduce, assume, logic, grid, clue, eliminate.
+	•	Week 139: Team Strategy (Tuần 139: Chiến lược Nhóm) 
+	•	Topic (Debate): Roles and timing. (Chủ đề: Vai trò và thời gian.)
+	•	Key Learning Outcome (ELA): Practice passing the argument to the next speaker ("My partner will explain..."). (Kết quả: Luyện tập chuyển lời cho đồng đội.)
+	•	Skill Focus: Collaboration & Timing. (Kỹ năng: Hợp tác & Canh giờ.)
+	•	Grammar Focus: Future Continuous: "My partner will be discussing...", "We will be showing...". (Ngữ pháp: Tương lai tiếp diễn để giới thiệu.)
+	•	Vocabulary Focus: partner, team, role, opener, closer, rebuttal, strategy.
+	•	Topic (Math): Transformations (Flip, Slide, Turn). (Toán: Phép biến hình.)
+	•	Key Learning Outcome (Math): Describe movement of shapes on a grid. (Kết quả: Mô tả sự di chuyển của hình trên lưới.)
+	•	Math Vocabulary: translation (slide), rotation (turn), reflection (flip), clockwise.
+	•	Week 140: The Live Debate 2 (Video Games) (Tuần 140: Tranh luận Trực tiếp - Video Games) 
+	•	Topic (Event): Debate Execution. (Chủ đề: Thực hiện Tranh luận.)
+	•	Key Learning Outcome (ELA): Participate in a formal debate with cross-examination (asking questions). (Kết quả: Tham gia tranh luận có phần chất vấn.)
+	•	Skill Focus: Questioning skills & Confidence. (Kỹ năng: Đặt câu hỏi & Tự tin.)
+	•	Activity: Teams debate "Should primary students play video games?".
+	•	Topic (Math): Math Review Game. (Chủ đề Toán: Trò chơi Ôn tập.)
+	•	Activity (Math): Jeopardy-style game covering Geometry and Logic. (Hoạt động: Trò chơi đố vui về Hình học và Logic.)
+Weeks 141-144: Review & Math Focus (Geometry Cycle)
+(4 tuần đệm để củng cố Toán và Kỹ năng Viết trước khi vào dự án cuối)
+	•	Week 141: Geometry Review - Angles & Lines (Tuần 141: Ôn tập Hình học - Góc & Đường)
+	•	Topic (Math): Reviewing Angles. (Chủ đề: Ôn tập Góc.)
+	•	Key Learning Outcome (Math): Measure angles using a protractor. (Kết quả: Đo góc bằng thước đo độ.)
+	•	Topic (ELA): Writing Clarity. (Chủ đề: Sự rõ ràng trong văn viết.)
+	•	Key Learning Outcome (ELA): Rewrite confusing sentences to be clear and concise. (Kết quả: Viết lại câu tối nghĩa cho rõ ràng.)
+	•	Week 142: Geometry Review - Area & Volume (Tuần 142: Ôn tập Hình học - Diện tích & Thể tích)
+	•	Topic (Math): 3D Shapes. (Chủ đề: Hình khối 3D.)
+	•	Key Learning Outcome (Math): Calculate volume of cubes and cuboids. (Kết quả: Tính thể tích hình lập phương/hộp chữ nhật.)
+	•	Topic (ELA): Vocabulary Power - Argument Words. (Chủ đề: Từ vựng Lập luận.)
+	•	Key Learning Outcome (ELA): Use academic verbs: assert, propose, suggest, imply. (Kết quả: Dùng động từ học thuật.)
+	•	Week 143: Critical Thinking - Analyzing Ads (Tuần 143: Tư duy Phản biện - Phân tích Quảng cáo)
+	•	Topic (ELA): Persuasion in Media. (Chủ đề: Thuyết phục trong truyền thông.)
+	•	Key Learning Outcome (ELA): Identify persuasive techniques in commercials (e.g., emotional appeal). (Kết quả: Nhận diện kỹ thuật thuyết phục trong quảng cáo.)
+	•	Topic (Math): Coordinate Geometry. (Chủ đề: Hình học Tọa độ.)
+	•	Key Learning Outcome (Math): Draw shapes on a coordinate plane. (Kết quả: Vẽ hình trên mặt phẳng tọa độ.)
+	•	Week 144: Preparation for Capstone (Tuần 144: Chuẩn bị cho Dự án Tổng kết)
+	•	Topic (ELA): Introduction to the Final Topic. (Chủ đề: Giới thiệu Chủ đề Cuối.)
+	•	Activity: Watching a documentary about technology and kids.
+	•	Topic (Math): Logic Puzzles Championship. (Chủ đề: Giải vô địch Câu đố Logic.)
+
+🔵 PROJECT CYCLE 3: CAPSTONE & GRADUATION (WEEKS 145-156)
+(CHU TRÌNH DỰ ÁN 3: ĐIỆN THOẠI THÔNG MINH & TỐT NGHIỆP) Core Question: "Should children under 12 own smartphones?" (Trẻ dưới 12 tuổi có nên sở hữu smartphone?)
+Phase A: Research & Synthesis (Nghiên cứu & Tổng hợp)
+	•	Week 145: Independent Research (Tuần 145: Nghiên cứu Độc lập) 
+	•	Topic (ELA): Finding sources without teacher help. (Chủ đề: Tự tìm nguồn tin.)
+	•	Key Learning Outcome (ELA): Locate 2 articles and summarize them (1 For, 1 Against). (Kết quả: Tìm 2 bài báo và tóm tắt - 1 Ủng hộ, 1 Phản đối.)
+	•	Skill Focus: Information Literacy. (Kỹ năng: Năng lực thông tin.)
+	•	Grammar Focus: Source Attribution: "According to [Author] in [Article Name]...". (Ngữ pháp: Ghi nguồn.)
+	•	Vocabulary Focus: article, journal, website, trustworthy, fake news, check.
+	•	Topic (Math): Data Analysis (Mean/Median). (Toán: Phân tích Dữ liệu - Trung bình/Trung vị.)
+	•	Key Learning Outcome (Math): Calculate the mean and median of a data set. (Kết quả: Tính trung bình cộng và trung vị.)
+	•	Math Vocabulary: average, mean, median, middle, set, data point.
+	•	Week 146: Synthesizing Information (Tuần 146: Tổng hợp Thông tin) 
+	•	Topic (ELA): Combining sources. (Chủ đề: Kết hợp các nguồn.)
+	•	Key Learning Outcome (ELA): Write a paragraph combining facts from 2 different articles. (Kết quả: Viết đoạn văn kết hợp sự kiện từ 2 bài báo khác nhau.)
+	•	Writing Skill Focus: Synthesis. (Kỹ năng Viết: Tổng hợp.)
+	•	Grammar Focus: Connectors of Comparison: "Similarly", "Likewise", "In the same way". (Ngữ pháp: Từ nối so sánh tương đồng.)
+	•	Vocabulary Focus: combine, merge, both, similar, agree, disagree.
+	•	Topic (Math): Data Analysis (Mode/Range). (Toán: Phân tích Dữ liệu - Mốt/Khoảng biến thiên.)
+	•	Key Learning Outcome (Math): Identify the mode and range in a set of numbers. (Kết quả: Xác định mốt và khoảng biến thiên.)
+	•	Math Vocabulary: mode, range, most frequent, difference, spread.
+Phase B: Advanced Writing (Viết Nâng cao)
+	•	Week 147: Advanced Thesis Writing (Tuần 147: Viết Luận đề Nâng cao) 
+	•	Topic (ELA): Writing a nuanced thesis. (Chủ đề: Viết luận đề sâu sắc.)
+	•	Key Learning Outcome (ELA): Write a thesis that acknowledges complexity ("While X is true, Y is better because..."). (Kết quả: Viết luận đề thừa nhận sự phức tạp.)
+	•	Writing Skill Focus: Nuance. (Kỹ năng Viết: Sự tinh tế/sắc thái.)
+	•	Grammar Focus: Subordinating Conjunctions: "While", "Whereas", "Although". (Ngữ pháp: Liên từ phụ thuộc.)
+	•	Vocabulary Focus: complex, issue, perspective, balance, weigh.
+	•	Topic (Math): Probability (Chance). (Toán: Xác suất.)
+	•	Key Learning Outcome (Math): Express probability as a fraction (e.g., 1/6 chance). (Kết quả: Biểu diễn xác suất dưới dạng phân số.)
+	•	Math Vocabulary: probability, chance, outcome, fraction, certain, impossible.
+	•	Week 148: Drafting Final Essay (Independent) (Tuần 148: Viết nháp Bài luận Cuối - Độc lập) 
+	•	Topic (ELA): Independent Drafting. (Chủ đề: Viết nháp độc lập.)
+	•	Key Learning Outcome (ELA): Complete the full essay draft independently without template scaffolding. (Kết quả: Hoàn thành bản nháp độc lập không cần mẫu có sẵn.)
+	•	Skill Focus: Independence / Time Management. (Kỹ năng: Độc lập / Quản lý thời gian.)
+	•	Grammar Focus: Variety of Sentence Structures (Simple, Compound, Complex). (Ngữ pháp: Đa dạng cấu trúc câu.)
+	•	Topic (Math): Interpreting Data. (Toán: Diễn giải Dữ liệu.)
+	•	Key Learning Outcome (Math): Write a paragraph summarizing findings from a graph using mean/mode vocabulary. (Kết quả: Viết đoạn văn tóm tắt biểu đồ dùng từ vựng toán học.)
+	•	Math Vocabulary: data shows, average, trend, majority, minority.
+	•	Week 149: Final Polish & Peer Review (Tuần 149: Trau chuốt & Bình duyệt) 
+	•	Topic (ELA): Final Polish. (Chủ đề: Trau chuốt cuối.)
+	•	Key Learning Outcome (ELA): Submit a perfect, error-free essay after peer review. (Kết quả: Nộp bài luận hoàn hảo sau khi bạn bè góp ý.)
+	•	Skill Focus: Attention to detail. (Kỹ năng: Chú ý chi tiết.)
+	•	Grammar Focus: Final Punctuation & Capitalization Check. (Ngữ pháp: Kiểm tra dấu câu và viết hoa.)
+	•	Topic (Math): Data Project. (Toán: Dự án Dữ liệu.)
+	•	Key Learning Outcome (Math): Create a survey, graph the results, and calculate the mean for the Capstone topic. (Kết quả: Tạo khảo sát, vẽ biểu đồ và tính trung bình cho chủ đề dự án.)
+	•	Math Vocabulary: survey, results, graph, analysis, conclusion.
+Phase C: Debate & Graduation (Tranh luận & Tốt nghiệp)
+	•	Week 150: Mock Debate & Strategy (Tuần 150: Tranh luận Thử & Chiến lược) 
+	•	Topic (Debate): Practice run. (Chủ đề: Chạy thử.)
+	•	Key Learning Outcome (ELA): Complete a full debate round with teacher feedback. (Kết quả: Hoàn thành vòng tranh luận với phản hồi của giáo viên.)
+	•	Skill Focus: Simulation. (Kỹ năng: Mô phỏng.)
+	•	Vocabulary Focus: feedback, improve, adjust, tone, volume.
+	•	Topic (Math): Review Logic Puzzles. (Toán: Ôn tập Câu đố Logic.)
+	•	Activity: Solving complex logic grids in teams.
+	•	Week 151: The Capstone Debate (Tuần 151: Tranh luận Tổng kết) 
+	•	Topic (Event): Final Debate on Smartphones. (Chủ đề: Tranh luận cuối cùng về Smartphone.)
+	•	Key Learning Outcome (ELA): Demonstrate B1+ speaking skills in a high-pressure environment. (Kết quả: Thể hiện kỹ năng nói B1+ trong môi trường áp lực cao.)
+	•	Outcome: Students receive a grade for their speaking proficiency.
+	•	Topic (Math): Math Cycle 3 Review. (Toán: Ôn tập Toán Chu trình 3.)
+	•	Week 152: Genre Review: Narrative (Tuần 152: Ôn tập Thể loại: Tường thuật) 
+	•	Topic (ELA): Writing a story under time constraints. (Chủ đề: Viết truyện dưới áp lực thời gian.)
+	•	Key Learning Outcome (ELA): Write a complete story in 45 minutes. (Kết quả: Viết truyện hoàn chỉnh trong 45 phút.)
+	•	Skill Focus: Writing Fluency. (Kỹ năng: Viết trôi chảy.)
+	•	Grammar Focus: Narrative Tenses (Past Simple, Continuous, Perfect). (Ngữ pháp: Các thì tường thuật.)
+	•	Topic (Math): Pre-Algebra (Patterns). (Toán: Tiền Đại số - Quy luật.)
+	•	Key Learning Outcome (Math): Find the nth term in a simple sequence (e.g., 2, 4, 6... 2n). (Kết quả: Tìm số hạng thứ n.)
+	•	Math Vocabulary: sequence, term, rule, nth term, formula.
+	•	Week 153: Genre Review: Expository (Tuần 153: Ôn tập Thể loại: Giải thích) 
+	•	Topic (ELA): Explaining a Complex Process. (Chủ đề: Giải thích Quy trình Phức tạp.)
+	•	Key Learning Outcome (ELA): Write a multi-paragraph text explaining how something works. (Kết quả: Viết văn bản nhiều đoạn giải thích cách hoạt động.)
+	•	Skill Focus: Logical sequencing & Objective tone. (Kỹ năng: Trình tự logic & Giọng khách quan.)
+	•	Grammar Focus: Cause & Effect Connectors (Advanced): "Consequently", "Due to the fact that". (Ngữ pháp: Từ nối nguyên nhân-kết quả nâng cao.)
+	•	Topic (Math): Geometry Review (Volume & Surface Area). (Toán: Ôn tập Thể tích & Diện tích Toàn phần.)
+	•	Key Learning Outcome (Math): Solve complex problems involving volume of combined shapes. (Kết quả: Giải toán thể tích hình ghép.)
+	•	Math Vocabulary: dimensions, capacity, formula, cubic units, surface area.
+	•	Week 154: Impromptu Speaking Skills (Tuần 154: Kỹ năng Nói Ứng biến) 
+	•	Topic (ELA): Speaking without preparation (Table Topics). (Chủ đề: Nói không chuẩn bị trước.)
+	•	Key Learning Outcome (ELA): Deliver a 1-2 minute impromptu speech on a random topic. (Kết quả: Nói ứng biến 1-2 phút về chủ đề ngẫu nhiên.)
+	•	Skill Focus: Thinking on your feet. (Kỹ năng: Tư duy phản xạ nhanh.)
+	•	Grammar Focus: Fillers & Connectors: "That's an interesting question...", "To be honest...". (Ngữ pháp: Từ lấp đầy & Từ nối.)
+	•	Topic (Math): Final Math Review (Part 2). (Toán: Ôn tập Toán Cuối cùng - Phần 2.)
+	•	Key Learning Outcome (Math): Review Graphs, Mean/Median, Coordinates. (Kết quả: Ôn tập Biểu đồ, Trung bình, Tọa độ.)
+	•	Week 155: Portfolio Prep (Tuần 155: Chuẩn bị Hồ sơ Năng lực) 
+	•	Topic (ELA): The "My Learning Journey" Portfolio. (Chủ đề: Hồ sơ "Hành trình Học tập".)
+	•	Key Learning Outcome (ELA): Select the 3 best pieces of writing and prepare a speech explaining growth. (Kết quả: Chọn 3 bài viết tốt nhất và chuẩn bị bài nói về sự tiến bộ.)
+	•	Skill Focus: Self-reflection. (Kỹ năng: Tự nhìn lại bản thân.)
+	•	Grammar Focus: Past vs. Present Perfect: "I used to make mistakes, but now I have learned...". (Ngữ pháp: Quá khứ vs Hiện tại hoàn thành.)
+	•	Topic (Math): Math Fun Day. (Toán: Ngày hội Toán vui.)
+	•	Activity: Solving logic puzzles and strategy games.
+	•	Week 156: GRADUATION CEREMONY & FINAL SHOWCASE (Tuần 156: LỄ TỐT NGHIỆP & TRÌNH DIỄN CUỐI CÙNG) 
+	•	Topic (Event): The Graduation Ceremony. (Chủ đề: Lễ Tốt nghiệp.)
+	•	Activity (ELA): Students present their portfolios to parents. (Hoạt động: Trình bày hồ sơ cho phụ huynh.)
+	•	Outcome: Achieve B1+ (High Intermediate) Proficiency. (Kết quả: Đạt trình độ B1+.)
+	•	Topic (Math): Math Awards. (Chủ đề Toán: Trao giải Toán học.)
+	•	Activity: Recognizing achievements in logic and problem-solving. (Hoạt động: Ghi nhận thành tích toán học.)
+
+

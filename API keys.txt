@@ -1,0 +1,10 @@
+Youtube Data API key: 	AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU
+			AIzaSyBNmZYciuicbwpY13IeVKUxfduEq_4dyy4
+			AIzaSyDJxy5puxc11V0fxLdfe8jam-G52VWPOFs
+Google Cloude Text to speech API key: AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU
+
+OpenAI TTS key: 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
+
+GEMINI_API_KEY:	AIzaSyBK3F6TPXfI88sat6-r3EvxNTt2kFpaIRU
+		AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU
+		AIzaSyBq8z3A_vspgE8s2lY53iQ7kUhqMCt4tTw

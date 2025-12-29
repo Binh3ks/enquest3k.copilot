@@ -1,0 +1,53 @@
+WEEK 1 MISSING IMAGES - GENERATION LIST
+
+## READ & EXPLORE COVERS
+1. read_cover_w01.jpg (16:9 ratio)
+   - Prompt: "Children in classroom at desks, bright friendly school environment, educational illustration style, warm colors, students learning and smiling"
+   
+2. read_cover_w01_easy.jpg (16:9 ratio)  
+   - Prompt: "Simple classroom scene with happy children, colorful desks and books, friendly teacher, cartoon illustration style for young learners"
+
+3. explore_cover_w01.jpg (16:9 ratio)
+   - Prompt: "Magnifying glass examining small objects, science tools for kids, microscope and ruler on table, educational STEM illustration, curious children observing"
+   
+4. explore_cover_w01_easy.jpg (16:9 ratio)
+   - Prompt: "Simple science tools magnifying glass and ruler, bright colors, child-friendly illustration for beginners"
+
+## NEW WORDS VOCABULARY IMAGES (1:1 ratio)
+Based on week_01/new_words.js vocab list - need to check which images are missing
+
+5. student.jpg - "Young student with backpack smiling, school uniform, friendly face"
+6. teacher.jpg - "Friendly teacher in classroom, professional but warm, educational setting"
+7. classroom.jpg - "Bright classroom with desks, whiteboard, books, welcoming learning space"
+8. magnifying_glass.jpg - "Magnifying glass tool on white background, clear and simple"
+9. microscope.jpg - "Microscope science tool, educational equipment for kids"
+10. ruler.jpg - "Ruler measuring tool, 30cm length, clear numbers visible"
+
+## WORD POWER IMAGES (1:1 ratio)
+Based on week_01/word_power.js - check which are missing
+
+11. wordpower_observe.jpg - "Child observing nature with magnifying glass, curious expression"
+12. wordpower_measure.jpg - "Child using ruler to measure objects, learning measurement"
+13. wordpower_discover.jpg - "Child discovering something new, excited expression, learning moment"
+
+GENERATION COMMAND:
+```bash
+# Set API key first
+export GEMINI_API_KEY="AIzaSyBK3F6TPXfI88sat6-r3EvxNTt2kFpaIRU"
+
+# Run batch manager for week 1
+node tools/batch_manager.js 1 1 $GEMINI_API_KEY
+```
+
+VERIFICATION:
+After generation, check:
+- public/images/week1/ (Advanced mode)
+- public/images/week1_easy/ (Easy mode)
+
+Expected files:
+- 2 read covers  
+- 2 explore covers
+- ~10 vocab images (new_words)
+- ~3 word power images
+
+Total: ~17 images per mode = ~34 images total

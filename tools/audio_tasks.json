@@ -1,0 +1,1232 @@
+[
+  {
+    "text": "My name is Alex. I am a student at Greenwood Elementary School. Every morning, I wake up early and get ready for school. My backpack is heavy because I carry many books and notebooks. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is very kind and patient. She teaches us English, Math, and Science. I love learning new things every day. After school, I go to the library to read books. I want to become a scientist when I grow up.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/read_explore_main.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Scientists use many tools to learn about the world. A magnifying glass helps us see small things bigger. It is very useful for looking at tiny insects or leaves. A microscope is even more powerful and helps scientists observe things we cannot see with our eyes. Scientists also use notebooks to write down what they discover. They measure things with rulers and scales. All these tools help scientists make new discoveries every day. Maybe you can be a scientist too!",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/explore_main.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "student",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A person who is learning at a school or university.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "good student",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I am a student at Greenwood School.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "teacher",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A person who teaches students in a school.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "English teacher",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My teacher is very kind and helpful.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A place where children go to learn.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "elementary school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I go to school every day from Monday to Friday.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "classroom",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A room where students have lessons.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "big classroom",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "Our classroom has twenty desks and a big whiteboard.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "backpack",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A bag that you carry on your back to hold books and supplies.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "heavy backpack",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I put my books and notebooks in my backpack.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "book",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A set of printed pages that you read.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "read a book",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I love reading books in the library.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "notebook",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A book with empty pages where you write notes.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "new notebook",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I write my homework in my notebook.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "library",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A place where you can borrow and read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "school library",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I go to the library after school to read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "scientist",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A person who studies science and does experiments.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "famous scientist",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A scientist uses tools to study the world.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "name",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "What someone or something is called.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_def_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "first name",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_coll_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My name is Alex.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/vocab_ex_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "do homework",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "To complete school assignments at home.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_def_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "do your homework",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_coll_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I do my homework every evening after dinner.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_ex_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "go to school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "To travel to school to attend classes.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_def_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "go to school early",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_coll_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I go to school by bus every morning.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_ex_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "pay attention",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "To focus and listen carefully to something.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_def_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "pay close attention",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_coll_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I always pay attention when my teacher is talking.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/wordpower_ex_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My name is Alex.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_1.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "I am a student at Greenwood Elementary School.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_2.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My backpack is heavy because I carry many books and notebooks.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_3.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "In my classroom, there are twenty desks and one big whiteboard.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_4.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My teacher, Ms. Johnson, is very kind and patient.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_5.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "She teaches us English, Math, and Science.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_6.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "I love learning new things every day.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_7.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "After school, I go to the library to read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/dictation_8.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My name is Alex.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I am a student at Greenwood Elementary School.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My backpack is heavy because I carry many books and notebooks.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "In my classroom, there are twenty desks and one big whiteboard.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My teacher, Ms. Johnson, is very kind and patient.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "She teaches us English, Math, and Science.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_6.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I love learning new things every day.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_7.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "After school, I go to the library to read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_8.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My name is Alex. I am a student at Greenwood Elementary School. My backpack is heavy because I carry many books and notebooks. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is very kind and patient. She teaches us English, Math, and Science. I love learning new things every day. After school, I go to the library to read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/shadowing_full.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Teacher gives 2 pencils to each student. There are 5 students. How many pencils?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/logic_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Teacher says: star, moon, star, moon, star. What comes next?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/logic_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You borrow 2 books on Monday. You borrow 1 more book on Friday. How many books total?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/logic_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "What tool makes small things look BIG? (Ruler / Magnifying glass)",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/logic_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Your backpack weighs 1 kilogram. You put in 2 books. Each book is 1 kilogram. How much now?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/logic_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You see a photo. Children go to school. Some walk. Some ride bikes. You want to know HOW they go to school. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/ask_ai_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You see a magnifying glass. It makes things BIG. You want to know WHAT it does. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/ask_ai_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You are at the library. You see many books. You want to know WHERE the animal books are. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/ask_ai_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Teacher says: write OR draw. You like BOTH. You want to know if you CAN DO BOTH. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/ask_ai_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Friends are playing. You want to PLAY with them. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/ask_ai_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I am ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_stem_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My school is ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_stem_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My teacher is ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_stem_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "In my classroom, there is ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_stem_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I like to ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_stem_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "When I grow up, I want to be ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_stem_6.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "a student",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_1.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "happy at school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_2.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "learning every day",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_3.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "curious about science",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_4.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "good at reading",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_5.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "excited to learn",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_6.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a big building",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_7.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "close to my house",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_8.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "full of students",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_9.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a place I love",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_10.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "where I meet friends",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_11.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "clean and bright",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_12.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "very kind",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_13.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "helpful and smart",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_14.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "teaching us well",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_15.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "patient with students",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_16.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "explaining things clearly",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_17.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "my favorite person",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_18.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a big whiteboard",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_19.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "many desks and chairs",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_20.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a bookshelf with books",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_21.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a teacher's desk",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_22.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "colorful posters on walls",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_23.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a window with sunlight",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_24.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "read books",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_25.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "do my homework",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_26.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "pay attention in class",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_27.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "go to the library",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_28.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "use my notebook",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_29.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "learn new things",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_30.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a scientist",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_31.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a teacher like mine",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_32.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "someone who helps others",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_33.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "smart and successful",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_34.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a person who discovers things",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_35.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "happy with my job",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1/mindmap_branch_36.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My name is Alex. I am a student. I go to school every day. My backpack has books and notebooks. My teacher is Ms. Johnson. She is kind. I love my classroom. After school, I go to the library. I want to be a scientist.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/read_explore_main.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Scientists use tools to learn. A magnifying glass makes small things big. It helps us see tiny insects. A microscope is more powerful. It helps scientists see very small things. Scientists write in notebooks. They use rulers to measure. These tools help them learn new things!",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/explore_main.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "student",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A person who is learning at a school or university.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "good student",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I am a student at Greenwood School.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_student.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "teacher",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A person who teaches students in a school.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "English teacher",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My teacher is very kind and helpful.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_teacher.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A place where children go to learn.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "elementary school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I go to school every day from Monday to Friday.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "classroom",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A room where students have lessons.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "big classroom",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "Our classroom has twenty desks and a big whiteboard.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_classroom.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "backpack",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A bag that you carry on your back to hold books and supplies.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "heavy backpack",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I put my books and notebooks in my backpack.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_backpack.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "book",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A set of printed pages that you read.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "read a book",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I love reading books in the library.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_book.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "notebook",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A book with empty pages where you write notes.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "new notebook",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I write my homework in my notebook.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_notebook.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "library",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A place where you can borrow and read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "school library",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I go to the library after school to read books.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_library.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "scientist",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A person who studies science and does experiments.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "famous scientist",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "A scientist uses tools to study the world.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_scientist.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "name",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "What someone or something is called.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_def_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "first name",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_coll_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My name is Alex.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/vocab_ex_name.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "do homework",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "To complete school assignments at home.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_def_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "do your homework",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_coll_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I do my homework every evening after dinner.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_ex_do_homework.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "go to school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "To travel to school to attend classes.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_def_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "go to school early",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_coll_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I go to school by bus every morning.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_ex_go_to_school.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "pay attention",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "To focus and listen carefully to something.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_def_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "pay close attention",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_coll_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I always pay attention when my teacher is talking.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/wordpower_ex_pay_attention.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "My name is Alex.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_1.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "I am a student.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_2.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "I go to school every day.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_3.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My backpack has books and notebooks.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_4.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My classroom is big.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_5.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My teacher is Ms. Johnson.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_6.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "I go to the library after school.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_7.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "I want to be a scientist.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/dictation_8.mp3",
+    "voice": "en-US-Neural2-E"
+  },
+  {
+    "text": "My name is Alex.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I am a student.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I go to school every day.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My backpack has books and notebooks.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My classroom is big.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My teacher is Ms. Johnson.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_6.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I go to the library after school.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_7.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I want to be a scientist.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_8.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My name is Alex. I am a student. I go to school every day. My backpack has books and notebooks. My classroom is big. My teacher is Ms. Johnson. I go to the library after school. I want to be a scientist.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/shadowing_full.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Teacher gives 2 pencils to each student. There are 3 students. How many pencils?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/logic_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Teacher says: apple, banana, apple, banana. What is next?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/logic_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You have 2 books. You get 1 more. How many now?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/logic_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "What makes things look BIG?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/logic_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Backpack is 1 kilogram. You add 1 book. Book is 1 kilogram. How much?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/logic_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You see a picture. A child is going to school. You want to know HOW. What do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/ask_ai_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You see a tool. You want to know WHAT it is. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/ask_ai_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "You are at the library. You want animal books. You want to know WHERE. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/ask_ai_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Teacher says: write OR draw. You want BOTH. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/ask_ai_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "Friends play. You want to play. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/ask_ai_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I am ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_stem_1.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My school is ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_stem_2.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "My teacher is ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_stem_3.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "In my class, there is ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_stem_4.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I like ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_stem_5.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "I want to be ___.",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_stem_6.mp3",
+    "voice": "en-US-Neural2-D"
+  },
+  {
+    "text": "a student",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_1.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "happy",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_2.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "learning",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_3.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "good",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_4.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "smart",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_5.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "kind",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_6.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "big",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_7.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "near my house",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_8.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "nice",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_9.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "clean",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_10.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "fun",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_11.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "good",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_12.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "kind",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_13.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "helpful",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_14.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "nice",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_15.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "smart",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_16.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "good",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_17.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "patient",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_18.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a board",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_19.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "many desks",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_20.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a bookshelf",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_21.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a teacher's desk",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_22.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "pictures",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_23.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a window",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_24.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "reading",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_25.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "learning",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_26.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "my school",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_27.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "my teacher",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_28.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "my friends",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_29.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "studying",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_30.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a scientist",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_31.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "a teacher",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_32.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "smart",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_33.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "helpful",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_34.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "happy",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_35.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "successful",
+    "output_path": "/Users/binhnguyen/Downloads/engquest3k_new/Engquest3k/public/audio/week1_easy/mindmap_branch_36.mp3",
+    "voice": "en-US-Neural2-F"
+  }
+]
