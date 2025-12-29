@@ -68,22 +68,7 @@ async function callGroq(prompt) {
 export async function callAI(prompt, type = 'chat') {
   const startTime = Date.now();
   
-  // Try Gemini first
-  if (GEMINI_KEY && errorCount.gemini < 3 && dailyCount.gemini < 1500) {
-    try {
-      console.log('[AI] Trying Gemini...');
-      const result = await callGemini(prompt);
-      dailyCount.gemini++;
-      errorCount.gemini = 0;
-      console.log(`[AI] Gemini OK in ${Date.now() - startTime}ms`);
-      return { text: result, provider: 'Gemini 2.5 Flash', duration: Date.now() - startTime };
-    } catch (err) {
-      console.error('[AI] Gemini failed:', err.message);
-      errorCount.gemini++;
-    }
-  }
-  
-  // Try Groq second
+  // Try Groq FIRST (faster)
   if (GROQ_KEY && errorCount.groq < 3 && dailyCount.groq < 14400) {
     try {
       console.log('[AI] Trying Groq...');
@@ -95,6 +80,21 @@ export async function callAI(prompt, type = 'chat') {
     } catch (err) {
       console.error('[AI] Groq failed:', err.message);
       errorCount.groq++;
+    }
+  }
+  
+  // Fallback to Gemini
+  if (GEMINI_KEY && errorCount.gemini < 3 && dailyCount.gemini < 1500) {
+    try {
+      console.log('[AI] Trying Gemini...');
+      const result = await callGemini(prompt);
+      dailyCount.gemini++;
+      errorCount.gemini = 0;
+      console.log(`[AI] Gemini OK in ${Date.now() - startTime}ms`);
+      return { text: result, provider: 'Gemini 2.5 Flash', duration: Date.now() - startTime };
+    } catch (err) {
+      console.error('[AI] Gemini failed:', err.message);
+      errorCount.gemini++;
     }
   }
   

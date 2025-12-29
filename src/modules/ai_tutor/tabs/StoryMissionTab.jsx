@@ -184,35 +184,42 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
       return ['My', 'name', 'is', context?.learnerName || 'Alex'];
     }
     
-    // INTENT 2: Are you a student? (Yes/No question about identity)
-    if (prompt.includes('are you a student')) {
-      return ['Yes', 'I', 'am', 'a', 'student'];
-    }
-    
-    if (prompt.includes('are you')) {
-      // Generic are you question
+    // INTENT 2: Is/Are questions - extract EXACT object from question
+    if (prompt.includes('is your') || prompt.includes('are you')) {
+      // Extract object: "Is your BOOK in..." or "Are you a STUDENT"
+      const isMatch = prompt.match(/is your ([\w\s]+?)(?:\s+in|\?|$)/);
+      const areMatch = prompt.match(/are you (?:a |an )?(\w+)/);
+      
+      if (isMatch) {
+        const askedObject = isMatch[1].trim();
+        return ['Yes', 'my', askedObject, 'is'];
+      }
+      if (areMatch) {
+        const identity = areMatch[1];
+        return ['Yes', 'I', 'am', 'a', identity];
+      }
       return ['Yes', 'I', 'am'];
     }
     
-    // INTENT 3: Where is your [object]? 
+    // INTENT 3: Where is your [object]? - DYNAMIC extraction
     if (prompt.includes('where is your') || prompt.includes('where is my')) {
       // Extract the object being asked about
-      const whereMatch = prompt.match(/where is (?:your|my) (\w+)/);
-      const askedObject = whereMatch ? whereMatch[1] : null;
+      const whereMatch = prompt.match(/where is (?:your|my) ([\w\s]+?)(?:\?|,|$)/);
+      const askedObject = whereMatch ? whereMatch[1].trim() : null;
       
-      if (askedObject === 'backpack') {
-        return ['My', 'backpack', 'is', 'in', 'my', 'classroom'];
+      // Return dynamic hint with ACTUAL object from question
+      if (askedObject) {
+        const location = vocab.find(v => ['classroom', 'library', 'bag', 'backpack'].includes(v.word))?.word || 'classroom';
+        return ['My', askedObject, 'is', 'in', 'the', location];
       }
-      if (askedObject === 'book') {
-        return ['My', 'book', 'is', 'in', 'my', 'backpack'];
-      }
-      if (askedObject === 'notebook') {
-        return ['My', 'notebook', 'is', 'in', 'my', 'bag'];
-      }
-      
-      // Generic location answer
-      const obj = askedObject || 'thing';
-      return ['My', obj, 'is', 'in'];
+      return ['My', '___', 'is', 'in', 'the', 'classroom'];
+    }
+    
+    // INTENT 3b: Tell me where your [object] is
+    if (prompt.includes('tell me where your')) {
+      const tellMatch = prompt.match(/tell me where your ([\w\s]+?)(?:\s+is|\?|$)/);
+      const obj = tellMatch ? tellMatch[1].trim() : 'thing';
+      return ['My', obj, 'is', 'in', 'the', 'classroom'];
     }
     
     // INTENT 4: Where are you?
