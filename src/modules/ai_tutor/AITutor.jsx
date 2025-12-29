@@ -369,14 +369,14 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
   };
 
   // STORY BUILDER HANDLERS
-  // Initial guiding questions for each topic
+  // Initial questions MUST stay on topic
   const topicStarterQuestions = {
-    school: ['Is the school big?', 'Do you have a teacher?', 'Do you have a book?'],
-    home: ['Is your home nice?', 'Do you have a book at home?', 'Is it big?'],
-    family: ['Is your family big?', 'Do you have a name?', 'Are they nice?'],
-    friend: ['Is your friend nice?', 'Do you go to school together?', 'Is the friend a student?'],
-    pet: ['Is it a dog?', 'Is the pet big?', 'Is it nice?'],
-    toy: ['Is the toy nice?', 'Is it big?', 'Do you have a name for it?'],
+    school: ['Is the school big?', 'Do you see a teacher?', 'Do you have books at school?'],
+    home: ['Is your home big?', 'Do you see books at home?', 'Is your home nice?'],
+    family: ['Is your family big?', 'Do you see your family?', 'Are they nice?'],
+    friend: ['Is your friend nice?', 'Is your friend a student?', 'Do you see your friend?'],
+    pet: ['Is your pet big?', 'Is your pet nice?', 'Do you have a name for your pet?'],
+    toy: ['Is your toy big?', 'Is your toy nice?', 'Do you see your toy?'],
     week: ['Is it nice?', 'Do you see it?', 'Is it big?']
   };
 
