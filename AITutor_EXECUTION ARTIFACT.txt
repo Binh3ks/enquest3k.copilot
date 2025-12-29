@@ -1,0 +1,341 @@
+EXECUTION ARTIFACT + DEFINITION OF DONE
+
+(Copilot-ready · Product-first · AI-teacher, not chatbot)
+
+I. PRODUCT INTENT (KHÓA TƯ DUY)
+
+AI Tutor is NOT a chatbot.
+
+AI Tutor là:
+
+AI giáo viên ESL
+
+Dạy theo tuần / syllabus
+
+Buộc học sinh nói & viết
+
+Không làm hộ
+
+Thành công khi AI nói ít hơn học sinh
+
+Product mantra (must enforce):
+👉 If the student doesn’t speak, the AI has failed.
+
+II. EXECUTION STRATEGY (THỨ TỰ ĐÚNG)
+❌ Không làm theo thứ tự “nền tảng kỹ thuật trước”
+✅ Làm theo thứ tự “WOW sản phẩm sớm – nền tảng đủ dùng – mở rộng sau”
+Thứ tự CHUẨN:
+Phase 0 → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6
+
+PHASE 0 — CONTEXT + MODE LOCK (0.5 sprint)
+🎯 Mục tiêu
+
+Khóa hướng ngay từ đầu để Copilot không thể viết chatbot.
+
+Phải làm
+
+Define TutorModes (chat / story_mission / pronunciation / quiz / debate)
+
+Implement contextBuilder
+
+Always include: weekId, topic, grammarFocus, coreVocab, difficulty
+
+Define strict JSON schemas (at least Chat + Story)
+
+❌ Không làm
+
+Không prompt rải rác
+
+Không gọi AI nếu thiếu context
+
+✅ DEFINITION OF DONE
+
+Mọi AI call bắt buộc có TutorContext
+
+Nếu context thiếu → throw error, không fallback
+
+Schema tồn tại và được import bởi engine
+
+Dev không thể gọi AI “tự do” từ UI
+
+PHASE 1 — ENGINE SKELETON + STORE (1 sprint)
+🎯 Mục tiêu
+
+Có 1 cửa duy nhất gọi AI + state persistent.
+
+Phải làm
+
+tutorStore (Zustand)
+
+persistent (session)
+
+activeTab, messages, context
+
+tutorEngine.js
+
+single entry: runTutor()
+
+providerRouter
+
+wrap existing providers
+
+schemaParser
+
+strict parse + tolerant recovery
+
+❌ Không làm
+
+Không memory dài hạn
+
+Không analytics phức tạp
+
+✅ DEFINITION OF DONE
+
+UI tabs chỉ gọi runTutor()
+
+Không còn file nào gọi provider trực tiếp
+
+Nếu AI trả text sai schema → parser xử lý, UI không crash
+
+AI Tutor state không reset khi đổi tab
+
+PHASE 2 — STORY MISSION MVP (CORE WOW) (1 sprint)
+🎯 Mục tiêu
+
+Demo được AI giáo viên khác biệt trong 2–3 phút.
+
+Phải làm
+
+Tạo Story Mission mode riêng
+
+3 missions cho Week 1:
+
+First Day at School
+
+Lost Backpack
+
+Library Helper
+
+Turn loop bắt buộc:
+
+AI beat → user writes ONE sentence → micro feedback → next task
+
+
+Scaffolding escalation:
+
+Hint words
+
+Sentence starters
+
+Model sentence
+
+Retry
+
+❌ Không làm
+
+Không yes/no Q&A
+
+Không AI kể chuyện dài
+
+Không cho qua nếu học sinh không nói
+
+✅ DEFINITION OF DONE
+
+Mỗi turn học sinh bắt buộc tạo câu
+
+AI không nói quá 1–2 câu
+
+Có required vocab tracking
+
+Có mission complete summary
+
+Demo cho người ngoài thấy AI ép nói thật
+
+PHASE 3 — PEDAGOGY GUARDS (0.5 sprint)
+🎯 Mục tiêu
+
+Ngăn AI “nói thay – dạy hộ – chat chơi”.
+
+Phải làm
+
+Student Production Guard
+
+userMinWords enforced
+
+AI Talk Ratio Guard
+
+AI:Student ≤ 0.8
+
+Required Vocab Enforcement
+
+Anti-copy (similarity với model sentence)
+
+❌ Không làm
+
+Không trừ điểm
+
+Không mắng
+
+Không giảng grammar
+
+✅ DEFINITION OF DONE
+
+Nếu học sinh trả lời ngắn → AI KHÔNG trả lời dài
+
+Nếu học sinh copy → AI yêu cầu diễn đạt lại
+
+Required vocab bị né → AI buộc xuất hiện trong model
+
+AI đôi lúc im lặng và chờ
+
+PHASE 4 — ONBOARDING (0.5 sprint)
+🎯 Mục tiêu
+
+Trẻ thành công trong 60 giây đầu tiên.
+
+Phải làm
+
+5-step onboarding:
+
+Meet tutor (1 câu)
+
+First success (name)
+
+“You must speak” rule
+
+Scaffold demo
+
+Enter Mission 1 ngay
+
+Không tutorial text dài
+
+❌ Không làm
+
+Không onboarding tách rời trải nghiệm thật
+
+Không giải thích lý thuyết
+
+✅ DEFINITION OF DONE
+
+Trẻ nói/viết ≥ 3 lần trong onboarding
+
+Onboarding kết thúc bằng mission thật
+
+Không có bước nào chỉ “đọc – bấm – tiếp”
+
+PHASE 5 — LONG-TERM MEMORY + ADAPTIVE AI (0.5–1 sprint)
+🎯 Mục tiêu
+
+AI nhớ cách học, không nhớ nội dung chat.
+
+Phải làm
+
+Long-term memory:
+
+learner style (shy/normal/confident)
+
+vocab mastery (0–100)
+
+grammar confidence
+
+Adaptive constraints:
+
+sentence length
+
+scaffold level
+
+Anti-cheating detection:
+
+low effort
+
+copy
+
+scaffold abuse
+
+❌ Không làm
+
+Không lưu câu chat
+
+Không lưu dữ liệu nhạy cảm
+
+✅ DEFINITION OF DONE
+
+Hai học sinh khác nhau → AI cư xử khác
+
+Scaffold giảm dần theo tiến bộ
+
+Vocab mastery tăng khi dùng đúng
+
+AI bớt giúp khi không cần
+
+PHASE 6 — KPI & ANALYTICS (song song / cuối)
+🎯 Mục tiêu
+
+Đo học thật, không đo chat.
+
+KPI BẮT BUỘC
+
+Language Production Rate ≥ 60%
+
+Core Vocab Usage ≥ 80%
+
+Sentence Growth Index ≥ +30%
+
+Scaffold Dependency Score ↓
+
+AI:Student Word Ratio ≤ 0.8
+
+❌ Không làm
+
+Không KPI vanity (messages, tokens)
+
+✅ DEFINITION OF DONE
+
+KPI emit mỗi mission
+
+Có weekly summary
+
+KPI dùng để tune AI, không để khoe
+
+III. FINAL COPILOT CONSTITUTION (DÁN NGUYÊN KHỐI)
+You are implementing EngQuest AI Tutor V2.
+
+This is NOT a chatbot.
+
+Execution rules:
+- Always build TutorContext from current week and syllabus.
+- All AI calls go through runTutor().
+- Enforce strict JSON schemas.
+- Force student language production every turn.
+- Use scaffolding instead of answering.
+- AI must speak less than the student.
+- Measure success by learning KPIs, not chat metrics.
+
+Follow execution phases strictly:
+Phase 0: Context + Modes
+Phase 1: Engine + Store
+Phase 2: Story Mission MVP
+Phase 3: Pedagogy Guards
+Phase 4: Onboarding
+Phase 5: Long-term Memory
+Phase 6: Analytics
+
+If the student does not speak, the AI has failed.
+
+IV. KẾT LUẬN CUỐI (RẤT QUAN TRỌNG)
+
+Artifact này:
+
+❌ Không phải patch plan
+
+❌ Không phải feature list
+
+✅ Là định hướng sản phẩm + kỹ thuật ở mức DNA
+
+Nếu Copilot + dev tuân đúng artifact này:
+
+AI Tutor sẽ là USP lớn nhất
+
+Trẻ học nói & viết thật
+
+Sản phẩm khó copy

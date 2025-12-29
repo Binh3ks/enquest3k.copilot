@@ -1,0 +1,608 @@
+🚀 ENGQUEST AI TUTOR V2 — FULL WOW ARTIFACT
+“AI-first ESL Coach” (not a chatbot)
+0) North Star (điểm khác biệt khiến trẻ “nghiện”)
+
+AI Tutor V2 phải tạo cảm giác:
+
+“Mình đang nói giỏi hơn” (micro-win mỗi 30–60 giây)
+
+“Con vật/nhân vật này nhớ mình” (memory & personalization nhẹ)
+
+“Mình đang làm nhiệm vụ” (mission loop)
+
+“AI không nói thay mình” (student produces most words)
+
+Rule vàng: AI nói ít hơn học sinh. 1 turn AI không bao giờ dài hơn user.
+
+1) Repo integration — “4 điểm bạn nói” (Copilot tự dò, không cần bạn trả lời)
+1.1 Framework & tooling (Copilot MUST detect)
+
+Copilot phải xác nhận:
+
+Vite/React: kiểm tra package.json (vite, react, @vitejs/plugin-react)
+
+Entry: src/main.jsx
+
+Router: tìm react-router-dom usage trong src/App.jsx hoặc src/modules/**
+
+✅ Copilot task (dò tự động):
+
+grep -R "react-router-dom" -n src | head
+grep -R "createBrowserRouter\\|BrowserRouter\\|Routes\\|Route" -n src | head
+
+1.2 Router entry (Copilot MUST locate)
+
+Tìm file có route /week/:weekId/...
+
+Xác định component “layout tuần” (MainLayout/WeekPage)
+
+✅ Task:
+
+grep -R "/week/" -n src | head -n 50
+grep -R "weekId" -n src | head -n 50
+
+1.3 Week data flow (Copilot MUST locate & standardize)
+
+AI Tutor V2 cần “WeekContext” để content-aware:
+
+topic/grammar/vocab/new_words/quiz pool/reading prompts…
+
+Copilot phải tìm:
+
+src/data/** (weekly content)
+
+src/services/** (load week)
+
+hoặc src/modules/** (week screens)
+
+✅ Task:
+
+ls src/data
+grep -R "syllabus" -n src/data src/services src/modules | head -n 50
+grep -R "new_words\\|vocab\\|weekData\\|week\\s*=" -n src | head -n 80
+
+1.4 State management (Copilot MUST detect)
+
+Redux/Zustand/Context?
+
+Nếu không có → dùng Zustand cho AI Tutor V2 để “global persistent”.
+
+✅ Task:
+
+grep -R "zustand\\|redux\\|@reduxjs\\|createSlice\\|useSelector\\|useDispatch" -n src | head -n 50
+grep -R "createContext\\|useContext" -n src | head -n 50
+
+2) AI Tutor V2 Architecture (Engine-first, mode-driven)
+2.1 Layers
+UI (modal + tabs)
+  -> tutorStore (global persistent state)
+    -> tutorEngine (single entry)
+      -> contextBuilder (week-aware)
+      -> promptBuilder (mode templates)
+      -> providerRouter (quota + fallback)
+      -> schemaParser (strict JSON)
+      -> guardrails (pedagogy rules)
+      -> memory (anti-repeat + progress)
+      -> analytics (events)
+
+2.2 Folder layout (fit repo của bạn)
+
+Tối ưu cho structure modules/services/data/utils:
+
+src/
+  modules/
+    aiTutor/
+      AITutorModal.jsx
+      AITutorButton.jsx
+      AITutorMount.jsx          # mount global persistent
+      tabs/
+        ChatTab.jsx
+        PronunciationTab.jsx
+        StoryTab.jsx
+        DebateTab.jsx
+        QuizTab.jsx
+      components/
+        TutorHeader.jsx
+        TutorTabs.jsx
+        MessageList.jsx
+        Composer.jsx
+        ScenarioPicker.jsx
+        MissionPicker.jsx
+        WordPicker.jsx
+        AudioRecorder.jsx
+        ScorePanel.jsx
+        ProgressPanel.jsx
+        QuizRunner.jsx
+        QuotaBadge.jsx
+  services/
+    aiTutor/
+      tutorEngine.js
+      tutorModes.js
+      tutorContext.js
+      tutorMemory.js
+      tutorGuards.js
+      tutorSchemas.js
+      tutorPrompts/
+        system.js
+        chat.js
+        story.js
+        debate.js
+        quiz.js
+        pronunciation.js
+      providers/
+        providerRouter.js
+        aiProviders.js           # migrate from existing
+        gemini.js
+        groq.js
+        openai.js                # optional
+      voice/
+        tts.js
+        asr.js
+      smart/
+        smartCheck.js            # grammar + length
+      analytics/
+        tutorEvents.js
+        tutorAnalytics.js
+  utils/
+    jsonSafe.js
+    stableHash.js
+    clamp.js
+
+3) Core contracts (AI “không nói bừa”)
+3.1 TutorModes (tab -> mode)
+export const TutorModes = {
+  CHAT: "chat",
+  PRON: "pronunciation",
+  STORY: "story_mission",
+  DEBATE: "debate",
+  QUIZ: "quiz",
+};
+
+3.2 TutorContext (bắt buộc mỗi call)
+type TutorContext = {
+  weekId: number,
+  unitTitle?: string,
+  topic?: string,
+  grammarFocus?: string,
+  coreVocab: string[],     // must-use priority pool
+  bonusVocab: string[],
+  difficulty: "easy"|"normal"|"challenge",
+  learner: {
+    level: "beginner"|"intermediate"|"advanced",
+    style: "shy"|"normal"|"confident",
+    name?: string
+  },
+  constraints: {
+    aiMaxSentences: number,
+    aiMaxWords: number,
+    userMinWords: number,
+    userTargetWords: number,
+    pronMaxWordLen: number
+  },
+  gates: {
+    debateUnlocked: boolean
+  },
+  memory: {
+    lastMathHashes: string[],
+    lastScienceHashes: string[],
+    lastTopics: string[],
+    vocabMastery: Record<string, number> // 0..100
+  }
+}
+
+Default constraints (WOW pedagogy)
+
+easy: AI 1 câu; user 3–7 từ; ưu tiên present simple
+
+normal: AI 1–2 câu; user 6–12 từ; add and/but
+
+challenge: AI 2 câu; user 10–18 từ; because/when
+
+4) Strict JSON schemas (để UI ổn định + “AI thông minh”)
+4.1 Chat schema (free chat + guided)
+{
+  "reply": "string",
+  "nextPrompt": "string",
+  "microLesson": {
+    "focus": "vocab|grammar|pronunciation|none",
+    "tip": "string"
+  },
+  "correction": {
+    "hasIssue": true,
+    "original": "string",
+    "fixed": "string",
+    "whySimple": "string"
+  },
+  "tracking": {
+    "detectedVocab": ["student"],
+    "grammarHit": true
+  }
+}
+
+4.2 Story Mission schema (WOW loop)
+{
+  "aiBeat": "string",
+  "taskToStudent": "string",
+  "scaffold": {
+    "hintWords": ["w1","w2","w3"],
+    "sentenceStarters": ["I ...", "My ..."],
+    "modelAnswer": "string"
+  },
+  "feedback": {
+    "praise": "string",
+    "correction": {
+      "hasIssue": true,
+      "original": "string",
+      "fixed": "string",
+      "tip": "string"
+    },
+    "upgrade": "string"
+  },
+  "tracking": {
+    "usedVocab": ["w1"],
+    "requiredMissed": ["w2"],
+    "grammarHit": true,
+    "stepComplete": false,
+    "missionComplete": false
+  }
+}
+
+4.3 Pronunciation schema (coaching thật)
+{
+  "targetWord": "library",
+  "transcript": "libary",
+  "confidence": 0.74,
+  "score": 74,
+  "feedback": "string",
+  "drills": ["li-BRA-ry", "bra", "library"],
+  "nextWordSuggestion": "string"
+}
+
+4.4 Debate schema
+{
+  "aiArgument": "string",
+  "counterPoints": ["..."],
+  "questionToStudent": "string",
+  "rubric": { "clarity": 0, "reasons": 0, "language": 0, "rebuttal": 0 },
+  "betterPhrases": ["..."]
+}
+
+4.5 Quiz schema (vocab/math/science)
+{
+  "quizType": "vocab|math|science",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "mcq|fill|true_false",
+      "prompt": "string",
+      "choices": ["a","b","c","d"],
+      "answer": "string",
+      "explanation": "string",
+      "tags": ["week_vocab","grammar_focus"]
+    }
+  ]
+}
+
+5) Engine spec (single entry point)
+5.1 runTutor() contract
+/**
+ * runTutor({ mode, input, messages, audioBlob, context })
+ * - mode: TutorModes
+ * - input: string | object (depends on mode)
+ * - messages: chat history (chat/story/debate)
+ * - audioBlob: for pronunciation
+ * - context: TutorContext (required)
+ */
+export async function runTutor(params) {
+  const ctx = params.context;
+  if (!ctx || !ctx.weekId) throw new Error("TutorContextMissing");
+
+  const prompt = buildPrompt(params);
+  const raw = await callWithFailover({ mode: params.mode, prompt });
+
+  const parsed = parseStrictJSON(params.mode, raw); // tolerant recovery
+  const guarded = applyGuards(params.mode, parsed, ctx);
+
+  updateMemory(params.mode, ctx, guarded);
+  emitAnalytics(params.mode, ctx, params, guarded);
+
+  return guarded;
+}
+
+6) Prompt system (mode-driven, kid-safe, content-aware)
+6.1 system.js (shared)
+
+Persona: Professor Paws
+
+Always: short, encouraging, one question at a time
+
+Never: grammar lecture
+
+Always: JSON output (no markdown)
+
+6.2 Chat prompt (WOW: “coach” not “bot”)
+
+Use topic + core vocab soft
+
+Micro-correction: 1 lỗi quan trọng nhất
+
+NextPrompt: luôn 1 câu hỏi
+
+6.3 Story prompt (WOW Mission)
+
+Turn loop: aiBeat -> user 1 sentence -> feedback -> next task
+
+Scaffolding escalate if missed required vocab
+
+6.4 Quiz prompt (anti-repeat)
+
+Must use context.coreVocab for vocab quiz
+
+For math/science: use week focus keywords + avoid memory.last*Hashes
+
+6.5 Pronunciation prompt (augment ASR)
+
+ASR gives transcript/confidence
+
+LLM generates drills + feedback (kid-friendly)
+
+7) Guardrails (đây là “WOW engine”)
+7.1 Output length guard
+
+If AI > aiMaxSentences -> auto shorten
+
+If AI > aiMaxWords -> trim & rephrase
+
+7.2 Student production guard (critical)
+
+Nếu user trả lời quá ngắn:
+
+AI không trả lời dài
+
+AI dùng scaffold:
+
+hintWords
+
+sentenceStarters
+
+modelAnswer (copyable)
+
+“Try again” prompt
+
+7.3 Vocab targeting
+
+Mỗi mission có requiredVocab
+
+Nếu user né 2 turn → AI bắt buộc đưa mẫu câu chứa required word
+
+7.4 Grammar focus
+
+GrammarHit check heuristic + LLM assist
+
+Nếu lệch: sửa bằng mẫu, không giảng
+
+8) Memory & personalization (đủ “nghiện”, không creepy)
+8.1 What to remember
+
+user name (optional)
+
+“shy/normal/confident” style
+
+vocab mastery per word (0..100)
+
+last played mission per week
+
+last quiz scores
+
+8.2 What NOT to remember
+
+thông tin nhạy cảm
+
+địa chỉ, trường học thật, v.v.
+
+8.3 tutorMemory.js
+
+persist via localStorage/IndexedDB
+
+anti-repeat hashes (math 2, science 3)
+
+vocab mastery update when used correctly
+
+9) WOW Learning Experiences (đủ tất cả tabs)
+9.1 Chat Tab — “Free talk + Guided roleplay”
+Features
+
+Free chat
+
+“Quick Coach Buttons”:
+
+“Help me say it better”
+
+“Give me 3 short sentences”
+
+“Practice today’s words”
+
+Scenario/Mission entry:
+
+“At School”
+
+“With Family”
+
+“Math Helper”
+(nhưng khi vào learning: chuyển mode Story Mission hoặc Guided Chat)
+
+WOW mechanic
+
+“Streak prompt”: “Say one longer sentence to earn ⭐”
+
+“Echo”: AI nói 1 câu mẫu, user lặp
+
+9.2 Story Tab — “Mission-based roleplay” (core value)
+WOW missions (example Week 1)
+
+W1 – The Young Scholar
+
+M1: My First Day at School (name/student/teacher/school)
+
+M2: Lost Backpack (backpack/book/notebook)
+
+M3: Library Helper (library/book/teacher)
+
+Mỗi mission 6–10 turns, end screen tóm tắt.
+
+9.3 Pronunciation Tab — “Coach mode”
+Flow
+
+Pick target word (core vocab ưu tiên)
+
+Record
+
+ASR transcript/confidence
+
+AI gives: 1 tip + 2 drills + “try again”
+
+Gamify nhẹ: “Beat your score”
+
+WOW mechanic
+
+“Sound pets”: nếu score > 80, Professor Paws “purrs” (visual/audio cue)
+
+9.4 Quiz Tab — “Assessment with teaching”
+Flow
+
+Choose type
+
+AI generates strict JSON questions
+
+Runner shows immediate feedback
+
+At end: 1–2 tips only
+
+WOW mechanic
+
+“Rescue question”: nếu sai, AI cho 1 hint rồi cho làm lại
+
+9.5 Debate Tab — “Unlocked later”
+
+Gate by week or progress
+
+Min turns
+
+Rubric + better phrases
+
+10) Analytics (để đo “AI có dạy đúng syllabus không”)
+
+Emit events:
+
+tutor_opened
+
+mode_started
+
+mission_completed
+
+vocab_required_hit_rate
+
+avg_user_words_per_turn
+
+ai_to_user_word_ratio
+
+pron_score_delta
+
+quiz_mastery_gain
+
+WOW KPI:
+
+user words / turn tăng theo tuần
+
+required vocab hit rate > 70%
+
+ai:user word ratio <= 0.8
+
+11) Migration plan (không phá app)
+Sprint 1: “Engine + context + schemas”
+
+Create services/aiTutor/*
+
+Route all AI calls through runTutor()
+
+Add strict JSON parsing with tolerant fallback (if model returns text)
+
+Sprint 2: “Story Mission WOW”
+
+Replace old Story yes/no with mission loop
+
+Add scaffolding UI chips
+
+Sprint 3: “Pron coaching + memory”
+
+ASR + AI drills
+
+Save mastery & last sessions
+
+Sprint 4: “Full polish + analytics”
+
+KPIs, streaks, confetti, progress panel
+
+12) Copilot Master Prompt (dán 1 phát là chạy)
+
+Dán nguyên khối này vào Copilot/Cline. Nó bao gồm luôn “4 điểm dò repo”.
+
+You are upgrading EngQuest AI Tutor to WOW V2.
+
+Repository assumptions:
+- Vite + React, entry src/main.jsx, routes likely in src/App.jsx.
+- Existing folders: src/modules, src/services, src/data, src/utils, src/components.
+
+Step 0: Detect repo wiring
+- Locate router entry and week routes: grep for react-router-dom and "/week/".
+- Locate week data flow: search for new_words/vocab/weekData in src/data, src/services, src/modules.
+- Detect state management: search for zustand/redux/context usage.
+
+Hard requirements:
+1) AI Tutor must be content-aware per week (topic/grammar/vocab) by building TutorContext every request. If context missing, do not call AI.
+2) Implement an engine-first architecture: UI tabs call runTutor() only.
+3) Implement strict JSON schemas per mode (chat, story_mission, pronunciation, quiz, debate). Parse strictly with a tolerant recovery fallback.
+4) Apply guardrails:
+   - AI output length: max sentences/words by difficulty.
+   - Student production: if user too short, escalate scaffolding: hintWords -> sentenceStarters -> modelAnswer -> retry.
+   - Vocab targeting: required words must be used during missions; after 2 misses, show model containing the required word.
+   - No grammar lectures; use modeling.
+5) Implement memory:
+   - anti-repeat (math last 2, science last 3 via stableHash)
+   - vocab mastery 0..100
+   - last mission progress
+6) Implement analytics event hooks (simple console or service stub).
+
+Files to create:
+- src/services/aiTutor/tutorEngine.js
+- src/services/aiTutor/tutorModes.js
+- src/services/aiTutor/tutorContext.js
+- src/services/aiTutor/tutorSchemas.js
+- src/services/aiTutor/tutorGuards.js
+- src/services/aiTutor/tutorMemory.js
+- src/services/aiTutor/tutorPrompts/{system,chat,story,quiz,debate,pronunciation}.js
+- src/services/aiTutor/providers/providerRouter.js (use existing aiProviders.js migrated)
+- src/modules/aiTutor/AITutorModal.jsx + tabs/ components
+
+Story Builder WOW:
+- Replace old 1 sentence + yes/no with Story Mission turn loop:
+  aiBeat -> taskToStudent (user writes ONE sentence) -> micro feedback -> next task.
+- Provide MissionPicker and at least 3 missions for Week 1 (First Day / Lost Backpack / Library Helper).
+- End mission summary: required vocab used + simple encouragement.
+
+Deliverable:
+- App builds.
+- AI Tutor V2 is global persistent (mount from App layout).
+- Behavior is engaging and AI is week-aware.
+
+13) “WOW missions mẫu” (để Copilot có data ngay)
+
+Bạn có thể đặt ngay trong src/services/aiTutor/story/missions/week1.js:
+
+W1_M1_FIRST_DAY: name/student/teacher/school
+
+W1_M2_LOST_BACKPACK: backpack/book/notebook
+
+W1_M3_LIBRARY_HELPER: library/book/teacher
+
+(Mỗi mission 6–10 steps, required words 3–4, bonus words 3–6)

@@ -1,0 +1,257 @@
+🧠 PHẦN E — AI TUTOR LONG-TERM MEMORY
+
+(Multi-week Intelligence, không creepy, không phá privacy)
+
+E1. Triết lý Memory (rất quan trọng)
+
+AI Tutor KHÔNG được nhớ mọi thứ, chỉ nhớ những gì giúp dạy tốt hơn.
+
+❌ Không nhớ
+
+Nội dung chat tự do
+
+Thông tin cá nhân nhạy cảm
+
+Câu trả lời chi tiết của trẻ
+
+✅ Chỉ nhớ
+
+Cách học của trẻ
+
+Tiến bộ học tập
+
+Những thứ trẻ hay sai / hay né
+
+E2. Memory Layers (3 tầng – Copilot phải phân biệt)
+Tutor Memory
+ ├─ Session Memory   (reset mỗi lần mở)
+ ├─ Weekly Memory    (reset mỗi tuần)
+ └─ Long-term Memory (xuyên nhiều tuần)
+
+E3. Long-term Memory Schema (SOURCE OF TRUTH)
+type TutorLongTermMemory = {
+  learnerProfile: {
+    style: "shy" | "normal" | "confident",
+    preferredScaffoldLevel: 1 | 2 | 3,
+    avgSentenceLength: number,
+    dominantErrors: string[]        // e.g. ["missing verb", "article"]
+  },
+
+  vocabMastery: {
+    [word: string]: {
+      mastery: number,              // 0..100
+      lastUsedWeek: number
+    }
+  },
+
+  grammarProgress: {
+    [grammarPoint: string]: {
+      confidence: number,           // 0..100
+      lastPracticedWeek: number
+    }
+  },
+
+  learningHistory: {
+    completedMissions: string[],
+    failedMissions: string[],
+    lastActiveWeek: number
+  }
+}
+
+
+📌 Key rule:
+Memory không ghi câu, chỉ ghi pattern & score.
+
+E4. Memory Update Rules (Copilot MUST enforce)
+Khi nào cập nhật vocab mastery?
+
+Trẻ dùng từ đúng trong ngữ cảnh → +10
+
+Trẻ dùng từ sau scaffold → +5
+
+Trẻ né từ 3 lần → −5
+
+Khi nào cập nhật learner style?
+
+SDS (Scaffold Dependency Score) cao → shy
+
+SDS giảm nhanh → confident
+
+Ổn định → normal
+
+👉 AI dạy khác nhau theo style:
+
+shy: scaffold sớm hơn
+
+confident: ép nói dài hơn
+
+E5. Memory → AI Behavior Mapping (WOW)
+Memory Insight	AI phản ứng
+Avg sentence ngắn	Tăng userMinWords
+Hay né vocab	Chuyển required → hard
+Hay sai grammar	Dùng nhiều model sentence
+Tự tin	Giảm scaffold, tăng challenge
+
+📌 Đây là cá nhân hoá thật, không phải gắn nhãn marketing.
+
+E6. tutorMemory.js – Contract cho Copilot
+export function loadLongTermMemory(): TutorLongTermMemory
+export function saveLongTermMemory(memory)
+
+export function updateAfterTurn({
+  context,
+  userText,
+  tracking
+})
+
+export function getAdaptiveConstraints(memory, baseConstraints)
+
+
+👉 getAdaptiveConstraints là điểm WOW:
+
+cùng một week
+
+hai đứa trẻ → AI cư xử khác nhau
+
+🛡️ PHẦN F — ANTI-CHEATING & ANTI-AI-DEPENDENCE SYSTEM
+
+❗ Nếu không có phần này, AI Tutor sẽ làm trẻ lười
+❗ Đây là thứ 99% app AI giáo dục KHÔNG có
+
+F1. Định nghĩa “cheating” trong ESL AI
+
+Không phải gian lận thi cử, mà là:
+
+Copy model sentence không hiểu
+
+Trả lời 1–2 từ cho qua
+
+Lặp lại y hệt câu mẫu
+
+Để AI nói thay liên tục
+
+F2. Anti-Cheating Signals (Copilot MUST detect)
+1️⃣ Low Effort Response
+userWords < context.constraints.userMinWords
+
+2️⃣ Pattern Copy
+similarity(userText, modelAnswer) > 0.85
+
+3️⃣ Repeated Minimal Answer
+
+3 turn liên tiếp chỉ 1–2 từ
+
+4️⃣ Scaffold Abuse
+
+Level 3/4 scaffold dùng liên tục > threshold
+
+F3. Anti-Cheating Responses (KHÔNG PHẠT, CHỈ ĐIỀU CHỈNH)
+Level 1 — Gentle Push
+
+“Try to say a little more.”
+
+Level 2 — Constraint Increase
+
+Tăng userMinWords
+
+Tắt modelAnswer tạm thời
+
+Level 3 — Reformulate Task
+
+“Say the same idea in a different way.”
+
+Level 4 — Reset Turn
+
+“Let’s try again together. Use these words.”
+
+📌 Không bao giờ trừ điểm, không mắng.
+
+F4. Anti-AI-Dependence Rules (HIẾN PHÁP)
+
+Copilot phải enforce:
+
+AI cannot answer twice in a row
+
+AI cannot give modelAnswer before 1 user attempt
+
+AI must remove scaffold gradually if user improves
+
+AI must sometimes stay silent and wait
+
+Ví dụ:
+
+AI: (waiting…) Take your time. Try one sentence.
+
+
+👉 Cảm giác như gia sư thật.
+
+F5. Cheat-Aware Analytics (để điều chỉnh AI)
+
+Emit events:
+
+low_effort_detected
+
+model_copy_detected
+
+scaffold_overuse
+
+independent_success
+
+AI dùng event trends, không dùng event đơn lẻ.
+
+🧩 PHẦN G — KẾT HỢP MEMORY + ANTI-CHEAT = “WOW LOOP”
+Ví dụ thật:
+
+Tuần 1: trẻ cần scaffold level 3
+
+Tuần 2: AI nhớ → giảm scaffold
+
+Tuần 3: trẻ copy model → AI tắt model
+
+Tuần 4: trẻ nói độc lập → AI khen đúng chỗ
+
+👉 Trẻ không thấy bị kiểm soát, nhưng vẫn tiến bộ.
+
+📜 PHẦN H — FINAL COPILOT CONSTITUTION (DÁN 1 PHÁT)
+You are implementing EngQuest AI Tutor V2.
+
+This is an AI teacher, not a chatbot.
+
+In addition to all previous rules:
+- Implement long-term learner memory that stores learning patterns, not chat content.
+- Use memory to adapt constraints (sentence length, scaffold level).
+- Detect and prevent AI dependence:
+  - low-effort replies
+  - copying model sentences
+  - repeated minimal answers
+- Respond to cheating with pedagogical adjustments, not penalties.
+- Gradually remove scaffolding as the learner improves.
+- AI must sometimes wait silently instead of responding.
+
+Success means:
+- Student produces more language over time.
+- Scaffold dependency decreases.
+- Core vocab mastery increases week by week.
+
+Failure means:
+- AI talks more than the student.
+- Student copies answers.
+- Learning metrics do not improve.
+
+🔚 KẾT LUẬN CUỐI (RẤT THẲNG)
+
+Nếu bạn triển khai đúng artifact này:
+
+AI Tutor ≠ ChatGPT wrapper
+
+AI Tutor ≠ Duolingo clone
+
+AI Tutor = AI-native ESL Coach
+
+👉 Đây là loại feature:
+
+khó copy
+
+khó làm nửa vời
+
+giá trị cao cho phụ huynh

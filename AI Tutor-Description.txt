@@ -1,0 +1,142 @@
+📚 AI TUTOR - Tài Liệu Kỹ Thuật Chi Tiết
+1. TỔNG QUAN HỆ THỐNG
+1.1 Mục đích
+AI Tutor là trợ lý AI đa năng tích hợp vào EngQuest, cung cấp 5 chế độ học tập tương tác phù hợp với từng tuần học (Week 1-156).
+
+1.2 Kiến trúc tổng thể
+2. CẤU TRÚC FILE
+2.1 AITutor.jsx (1271 lines)
+Location: AITutor.jsx
+
+Props:
+
+State Management:
+
+2.2 aiProviders.js (476 lines)
+Location: aiProviders.js
+
+Exported Functions:
+
+3. CHI TIẾT 5 TABS
+3.1 TAB 1: CHAT (Roleplay Conversation)
+Scenarios (8 scenarios):
+
+Flow:
+
+User chọn scenario → TTS tự động đọc câu mở đầu
+User trả lời (text hoặc voice)
+SmartCheck grammar (warning nếu có lỗi)
+AI response (1 câu ngắn cho beginner, 2-3 câu cho intermediate/advanced)
+TTS đọc câu trả lời AI
+Repeat
+AI Prompt Schema (Beginner - Week 1-14):
+
+Example Output:
+
+3.2 TAB 2: PRONUNCIATION
+Purpose: Practice pronunciation of vocabulary words
+
+Flow:
+
+System picks random word from vocabList (max length: 6 chars for beginner, 10 for others)
+TTS says: "Say the word: [word]"
+User speaks → Web Speech Recognition captures
+Compare transcript with target word
+Score = confidence × 100
+≥80: "Excellent!"
+60-79: "Good! Try again."
+<60: "Keep practicing!"
+Code:
+
+3.3 TAB 3: QUIZ (3 Quiz Types)
+3.3.1 Vocabulary Quiz
+Uses current week's vocabList
+Format: "What does [word] mean?"
+User types answer → Compare với word.definition
+3.3.2 Math Quiz
+AI-Generated Word Problems
+
+mathAI() Schema:
+
+Validation:
+
+Anti-Repeat Mechanism:
+
+3.3.3 Science Quiz
+AI-Generated Multiple Choice
+
+scienceAI() Schema:
+
+Anti-Repeat Mechanism:
+
+3.4 TAB 4: STORY BUILDER (Creative Writing)
+Story Topics by Level:
+
+Beginner (Week 1-14):
+
+Intermediate (Week 15-50):
+
+Advanced (Week 51+):
+
+Story Flow:
+
+User picks topic → Static starter sentence displayed
+User adds sentence (text/voice)
+AI continues story with:
+STORY: 1 sentence (3-5 words for beginner)
+QUESTIONS: 2 guiding YES/NO questions
+HINTS: 3 vocabulary words
+Questions + Hints displayed in UI to guide user
+Repeat
+AI Prompt Schema (Beginner):
+
+Example:
+
+3.5 TAB 5: DEBATE (Week 15+)
+Debate Topics by Week:
+
+Debate Rules:
+
+Flow:
+
+User picks topic
+User states position (text/voice)
+AI responds with counter-argument or follow-up
+Continue until minTurns reached
+4. AI PROVIDER SYSTEM
+4.1 Multi-Provider Architecture
+4.2 Error Handling
+4.3 Daily Quota Tracking
+5. CONTEXT-AWARE SYSTEM
+5.1 Week Context
+5.2 Level Detection
+5.3 Cumulative Syllabus
+6. VOICE INTEGRATION
+6.1 Input: Web Speech Recognition
+6.2 Output: Text-to-Speech
+7. SMART FEATURES
+7.1 SmartCheck Grammar
+7.2 Anti-Repeat Mechanisms
+Math Quiz: Track last 2 problems
+Science Quiz: Track last 3 questions
+Passed in AI context to prevent duplicates
+7.3 Auto-Scroll
+8. UI/UX DESIGN
+8.1 Floating Button
+8.2 Modal Layout
+8.3 Color System
+Chat: Blue
+Pronunciation: Green
+Quiz: Amber
+Story: Purple
+Debate: Rose
+9. PERFORMANCE
+9.1 API Response Times
+Gemini: ~1-3 seconds
+Groq: ~0.5-1.5 seconds
+Fallback: Instant
+9.2 Quota Management
+Display quota status in UI
+Automatic provider switching
+Daily reset at midnight
+Tóm tắt: AI Tutor là hệ thống AI đa năng với 5 tabs tương tác, tự động điều chỉnh theo tuần học (1-156), tích hợp voice I/O, multi-provider failover, và context-aware prompts.
