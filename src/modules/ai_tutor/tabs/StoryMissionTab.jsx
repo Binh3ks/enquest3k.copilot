@@ -165,29 +165,28 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     }
   };
   
-  // Get contextual hints for current beat
+  // Get contextual hints for LAST AI question
+  // Hints = suggested words to answer the question AI just asked
   const getCurrentHints = () => {
-    if (!currentMission || !currentMission.beats) return [];
+    if (!currentMission || !messages.length) return [];
     
-    // Handle opener (turn 0 - before first beat)
-    if (missionProgress.turnsCompleted === 0) {
-      // For opener "What is your name?", manually return correct hints
-      if (currentMission.id === 'W1_FIRST_DAY') {
-        return ['My', 'name', 'is'];
-      }
-      if (currentMission.id === 'W1_LOST_BACKPACK') {
-        return ['I', 'cannot', 'find', 'my', 'backpack'];
-      }
-      if (currentMission.id === 'W1_LIBRARY_HELPER') {
-        return ['My', 'book', 'is', 'in'];
-      }
+    // Find last AI message (the question we need to answer)
+    const lastAIMessage = [...messages].reverse().find(m => m.role === 'ai');
+    if (!lastAIMessage) {
+      // No AI message yet - use opener
+      return getHintsForPrompt(currentMission.opener, currentMission);
     }
     
-    // For subsequent turns, use beat-based hints (1-indexed)
-    const currentBeatIndex = Math.max(0, missionProgress.turnsCompleted - 1);
-    const currentBeat = currentMission.beats[currentBeatIndex];
+    // Find which beat this message came from
+    // Count AI messages to determine beat index
+    const aiMessageCount = messages.filter(m => m.role === 'ai').length;
+    const beatIndex = aiMessageCount - 1; // 0-indexed: first AI msg = beat[0]
     
-    if (!currentBeat) return [];
+    const currentBeat = currentMission.beats[beatIndex];
+    if (!currentBeat) {
+      // Beyond defined beats - use generic hints
+      return getHintsForPrompt(lastAIMessage.text, currentMission);
+    }
     
     // Use hint engine for contextual hints
     try {
@@ -197,6 +196,30 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
       console.warn('[StoryMission] Hint engine error, using fallback:', error);
       return currentBeat.hints || [];
     }
+  };
+  
+  // Helper: Get hints for any prompt
+  const getHintsForPrompt = (promptText, mission) => {
+    // Derive intent from prompt
+    const prompt = promptText.toLowerCase();
+    
+    if (prompt.includes('what is your name') || prompt.includes("what's your name")) {
+      return ['My', 'name', 'is', context.learnerName || '___'];
+    }
+    if (prompt.includes('are you a student') || prompt.includes('are you')) {
+      return ['Yes', 'I', 'am', 'a', 'student'];
+    }
+    if (prompt.includes('where is') || prompt.includes('where are')) {
+      const vocab = mission.targetVocabulary.map(v => v.word);
+      const location = vocab.find(w => ['library', 'classroom', 'school'].includes(w)) || 'library';
+      return ['My', '___ ', 'is', 'in', 'my', location];
+    }
+    if (prompt.includes('cannot find') || prompt.includes("can't find")) {
+      return ['I', 'cannot', 'find', 'my', '___'];
+    }
+    
+    // Default: show first vocab words
+    return mission.targetVocabulary.slice(0, 5).map(v => v.word);
   };
   
   // Render mission list
