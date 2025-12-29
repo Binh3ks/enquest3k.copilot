@@ -10,7 +10,6 @@ import { useTutorStore } from '../../../services/aiTutor/tutorStore';
 import { runStoryMission } from '../../../services/aiTutor/tutorEngine';
 import { getMissionsForWeek } from '../../../data/storyMissions';
 import { speakText } from '../../../utils/AudioHelper';
-import { getHints } from '../../../services/aiTutor/hintEngine';
 
 export default function StoryMissionTab({ weekData, recognitionRef }) {
   const {
@@ -173,53 +172,92 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     // Find last AI message (the question we need to answer)
     const lastAIMessage = [...messages].reverse().find(m => m.role === 'ai');
     if (!lastAIMessage) {
-      // No AI message yet - use opener
-      return getHintsForPrompt(currentMission.opener, currentMission);
+      // No AI message yet - show hints for opener
+      return deriveHintsFromPrompt(currentMission.opener, currentMission);
     }
     
-    // Find which beat this message came from
-    // Count AI messages to determine beat index
-    const aiMessageCount = messages.filter(m => m.role === 'ai').length;
-    const beatIndex = aiMessageCount - 1; // 0-indexed: first AI msg = beat[0]
-    
-    const currentBeat = currentMission.beats[beatIndex];
-    if (!currentBeat) {
-      // Beyond defined beats - use generic hints
-      return getHintsForPrompt(lastAIMessage.text, currentMission);
-    }
-    
-    // Use hint engine for contextual hints
-    try {
-      const contextualHints = getHints(currentMission, currentBeat, context);
-      return contextualHints;
-    } catch (error) {
-      console.warn('[StoryMission] Hint engine error, using fallback:', error);
-      return currentBeat.hints || [];
-    }
+    // Derive hints from EXACT text of last AI message
+    return deriveHintsFromPrompt(lastAIMessage.text, currentMission);
   };
   
-  // Helper: Get hints for any prompt
-  const getHintsForPrompt = (promptText, mission) => {
-    // Derive intent from prompt
+  // Helper: Derive contextual hints from AI prompt text
+  const deriveHintsFromPrompt = (promptText, mission) => {
     const prompt = promptText.toLowerCase();
+    const vocab = mission.targetVocabulary || [];
     
+    // INTENT 1: What is your name?
     if (prompt.includes('what is your name') || prompt.includes("what's your name")) {
-      return ['My', 'name', 'is', context.learnerName || '___'];
+      return ['My', 'name', 'is', context.learnerName || 'Alex'];
     }
-    if (prompt.includes('are you a student') || prompt.includes('are you')) {
+    
+    // INTENT 2: Are you a student? (Yes/No question about identity)
+    if (prompt.includes('are you a student')) {
       return ['Yes', 'I', 'am', 'a', 'student'];
     }
-    if (prompt.includes('where is') || prompt.includes('where are')) {
-      const vocab = mission.targetVocabulary.map(v => v.word);
-      const location = vocab.find(w => ['library', 'classroom', 'school'].includes(w)) || 'library';
-      return ['My', '___ ', 'is', 'in', 'my', location];
-    }
-    if (prompt.includes('cannot find') || prompt.includes("can't find")) {
-      return ['I', 'cannot', 'find', 'my', '___'];
+    
+    if (prompt.includes('are you')) {
+      // Generic are you question
+      return ['Yes', 'I', 'am'];
     }
     
-    // Default: show first vocab words
-    return mission.targetVocabulary.slice(0, 5).map(v => v.word);
+    // INTENT 3: Where is your [object]? 
+    if (prompt.includes('where is your') || prompt.includes('where is my')) {
+      // Extract the object being asked about
+      const whereMatch = prompt.match(/where is (?:your|my) (\w+)/);
+      const askedObject = whereMatch ? whereMatch[1] : null;
+      
+      if (askedObject === 'backpack') {
+        return ['My', 'backpack', 'is', 'in', 'my', 'classroom'];
+      }
+      if (askedObject === 'book') {
+        return ['My', 'book', 'is', 'in', 'my', 'backpack'];
+      }
+      if (askedObject === 'notebook') {
+        return ['My', 'notebook', 'is', 'in', 'my', 'bag'];
+      }
+      
+      // Generic location answer
+      const obj = askedObject || 'thing';
+      return ['My', obj, 'is', 'in'];
+    }
+    
+    // INTENT 4: Where are you?
+    if (prompt.includes('where are you')) {
+      return ['I', 'am', 'in', 'the', 'classroom'];
+    }
+    
+    // INTENT 5: What is in your [object]?
+    if (prompt.includes('what is in') || prompt.includes('what do you have')) {
+      const objects = vocab.filter(v => 
+        ['book', 'notebook', 'pen', 'pencil', 'ruler'].includes(v.word)
+      ).map(v => v.word);
+      
+      if (objects.length >= 2) {
+        return ['My', objects[0], 'and', objects[1], 'are', 'in'];
+      }
+      return ['I', 'have', 'my', objects[0] || 'book'];
+    }
+    
+    // INTENT 6: Cannot find / Lost
+    if (prompt.includes('cannot find') || prompt.includes("can't find") || prompt.includes('lost')) {
+      // Extract what was lost
+      const lostMatch = prompt.match(/(?:find|lost) (?:your|my) (\w+)/);
+      const lostItem = lostMatch ? lostMatch[1] : 'backpack';
+      return ['I', 'cannot', 'find', 'my', lostItem];
+    }
+    
+    // INTENT 7: Tell me/Say [instruction]
+    if (prompt.includes('tell') || prompt.includes('say')) {
+      // AI is asking to repeat something - show the required phrase
+      const sayMatch = prompt.match(/say:?\s*['"]([^'"]+)['"]/i);
+      if (sayMatch) {
+        return sayMatch[1].split(' ').slice(0, 7); // Split quoted phrase into chips
+      }
+    }
+    
+    // DEFAULT: Show core vocabulary as fallback
+    const coreWords = vocab.slice(0, 5).map(v => v.word);
+    return coreWords.length > 0 ? coreWords : ['I', 'am', 'a', 'student'];
   };
   
   // Render mission list
