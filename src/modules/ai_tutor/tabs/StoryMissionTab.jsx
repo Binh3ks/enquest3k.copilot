@@ -173,11 +173,63 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     const lastAIMessage = [...messages].reverse().find(m => m.role === 'ai');
     if (!lastAIMessage) {
       // No AI message yet - show hints for opener
-      return deriveHintsFromPrompt(currentMission.opener, currentMission);
+      const baseChips = deriveHintsFromPrompt(currentMission.opener, currentMission);
+      return applyScaffolding(baseChips, scaffoldLevel);
     }
     
     // Derive hints from EXACT text of last AI message
-    return deriveHintsFromPrompt(lastAIMessage.text, currentMission);
+    const baseChips = deriveHintsFromPrompt(lastAIMessage.text, currentMission);
+    return applyScaffolding(baseChips, scaffoldLevel);
+  };
+  
+  // Apply scaffolding rules based on level
+  const applyScaffolding = (chips, level) => {
+    if (!chips || chips.length === 0) return [];
+    
+    // Level 1 (default): Scrambled chips - student must arrange
+    if (level <= 1) {
+      return shuffleArray([...chips]);
+    }
+    
+    // Level 2: Key word replaced with blank "___"
+    if (level === 2) {
+      // Replace key content word (usually noun/verb) with "___"
+      const keyWordIndex = chips.findIndex(w => 
+        w.length > 3 && !['your', 'my', 'the', 'a', 'is', 'are', 'in', 'on'].includes(w.toLowerCase())
+      );
+      if (keyWordIndex >= 0) {
+        const modified = [...chips];
+        modified[keyWordIndex] = '___';
+        return modified;
+      }
+    }
+    
+    // Level 3: Partial blanks (2 words missing)
+    if (level === 3) {
+      const modified = [...chips];
+      let blanked = 0;
+      for (let i = 0; i < modified.length && blanked < 2; i++) {
+        const word = modified[i];
+        if (word.length > 3 && !['your', 'my', 'the', 'a', 'is', 'are', 'in', 'on'].includes(word.toLowerCase())) {
+          modified[i] = '___';
+          blanked++;
+        }
+      }
+      return modified;
+    }
+    
+    // Level 4+: No hints (student writes freely)
+    return [];
+  };
+  
+  // Shuffle array helper
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
   
   // Helper: Derive contextual hints from AI prompt text
@@ -340,8 +392,10 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
       
       {/* Scaffold hints */}
       {scaffoldLevel >= 1 && !showSummary && (
-        <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl">
-          <p className="text-[10px] font-black text-green-600 mb-1">💡 Hints:</p>
+        <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl space-y-2">
+          <p className="text-[10px] font-black text-green-600 mb-1">
+            💡 Hints (Level {scaffoldLevel}):
+          </p>
           <div className="flex flex-wrap gap-1">
             {getCurrentHints().map((hint, i) => (
               <button
@@ -353,6 +407,11 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
               </button>
             ))}
           </div>
+          {scaffoldLevel >= 2 && (
+            <p className="text-[10px] text-green-600 italic">
+              📝 Try: Click the chips to build your sentence!
+            </p>
+          )}
         </div>
       )}
       
