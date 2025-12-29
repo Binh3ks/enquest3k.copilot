@@ -146,7 +146,11 @@ export function buildHintPack(intent, sceneState, context) {
         intent,
         targetPatternId: 'request_help',
         chips: ['Can', 'you', 'help', 'me'],
-        star {
+        starter: 'Can you help me?',
+        model: 'Can you help me?'
+      };
+      
+    default: {
       // General response - use first required vocab
       const word = requiredObjects[0] || 'student';
       return {
@@ -156,11 +160,7 @@ export function buildHintPack(intent, sceneState, context) {
         starter: 'I am ___',
         model: `I am a ${word}.`
       };
-    }targetPatternId: 'general',
-        chips: ['I', 'am', 'a', word],
-        starter: 'I am ___',
-        model: `I am a ${word}.`
-      };
+    }
   }
 }
 
@@ -210,7 +210,7 @@ export function getHints(mission, beat, context) {
   const sceneState = getSceneState(mission, beat.beatId);
   
   // 2. Derive intent from teacher prompt
-  const intent = deriveIntent(beat.aiPrompt, mission.id, beat.beatId);
+  const intent = deriveIntent(beat.aiPrompt);
   
   // 3. Build hint pack
   const hintPack = buildHintPack(intent, sceneState, context);

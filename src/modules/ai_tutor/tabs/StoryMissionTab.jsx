@@ -169,7 +169,22 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
   const getCurrentHints = () => {
     if (!currentMission || !currentMission.beats) return [];
     
-    const currentBeatIndex = Math.min(missionProgress.turnsCompleted, currentMission.beats.length - 1);
+    // Handle opener (turn 0 - before first beat)
+    if (missionProgress.turnsCompleted === 0) {
+      // For opener "What is your name?", manually return correct hints
+      if (currentMission.id === 'W1_FIRST_DAY') {
+        return ['My', 'name', 'is'];
+      }
+      if (currentMission.id === 'W1_LOST_BACKPACK') {
+        return ['I', 'cannot', 'find', 'my', 'backpack'];
+      }
+      if (currentMission.id === 'W1_LIBRARY_HELPER') {
+        return ['My', 'book', 'is', 'in'];
+      }
+    }
+    
+    // For subsequent turns, use beat-based hints (1-indexed)
+    const currentBeatIndex = Math.max(0, missionProgress.turnsCompleted - 1);
     const currentBeat = currentMission.beats[currentBeatIndex];
     
     if (!currentBeat) return [];
