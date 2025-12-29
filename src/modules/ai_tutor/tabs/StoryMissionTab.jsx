@@ -164,65 +164,7 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     }
   };
   
-  // Get contextual hints for LAST AI question
-  // Hints = suggested words to answer the question AI just asked
-  const getCurrentHints = () => {
-    if (!currentMission || !messages.length) return [];
-    
-    // Find last AI message (the question we need to answer)
-    const lastAIMessage = [...messages].reverse().find(m => m.role === 'ai');
-    if (!lastAIMessage) {
-      // No AI message yet - show hints for opener
-      const baseChips = deriveHintsFromPrompt(currentMission.opener, currentMission);
-      return applyScaffolding(baseChips, scaffoldLevel);
-    }
-    
-    // Derive hints from EXACT text of last AI message
-    const baseChips = deriveHintsFromPrompt(lastAIMessage.text, currentMission);
-    return applyScaffolding(baseChips, scaffoldLevel);
-  };
-  
-  // Apply scaffolding rules based on level
-  const applyScaffolding = (chips, level) => {
-    if (!chips || chips.length === 0) return [];
-    
-    // Level 1 (default): Scrambled chips - student must arrange
-    if (level <= 1) {
-      return shuffleArray([...chips]);
-    }
-    
-    // Level 2: Key word replaced with blank "___"
-    if (level === 2) {
-      // Replace key content word (usually noun/verb) with "___"
-      const keyWordIndex = chips.findIndex(w => 
-        w.length > 3 && !['your', 'my', 'the', 'a', 'is', 'are', 'in', 'on'].includes(w.toLowerCase())
-      );
-      if (keyWordIndex >= 0) {
-        const modified = [...chips];
-        modified[keyWordIndex] = '___';
-        return modified;
-      }
-    }
-    
-    // Level 3: Partial blanks (2 words missing)
-    if (level === 3) {
-      const modified = [...chips];
-      let blanked = 0;
-      for (let i = 0; i < modified.length && blanked < 2; i++) {
-        const word = modified[i];
-        if (word.length > 3 && !['your', 'my', 'the', 'a', 'is', 'are', 'in', 'on'].includes(word.toLowerCase())) {
-          modified[i] = '___';
-          blanked++;
-        }
-      }
-      return modified;
-    }
-    
-    // Level 4+: No hints (student writes freely)
-    return [];
-  };
-  
-  // Shuffle array helper
+  // Helper: Shuffle array
   const shuffleArray = (array) => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -310,6 +252,64 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     // DEFAULT: Show core vocabulary as fallback
     const coreWords = vocab.slice(0, 5).map(v => v.word);
     return coreWords.length > 0 ? coreWords : ['I', 'am', 'a', 'student'];
+  };
+  
+  // Apply scaffolding rules based on level
+  const applyScaffolding = (chips, level) => {
+    if (!chips || chips.length === 0) return [];
+    
+    // Level 1 (default): Scrambled chips - student must arrange
+    if (level <= 1) {
+      return shuffleArray([...chips]);
+    }
+    
+    // Level 2: Key word replaced with blank "___"
+    if (level === 2) {
+      // Replace key content word (usually noun/verb) with "___"
+      const keyWordIndex = chips.findIndex(w => 
+        w.length > 3 && !['your', 'my', 'the', 'a', 'is', 'are', 'in', 'on'].includes(w.toLowerCase())
+      );
+      if (keyWordIndex >= 0) {
+        const modified = [...chips];
+        modified[keyWordIndex] = '___';
+        return modified;
+      }
+    }
+    
+    // Level 3: Partial blanks (2 words missing)
+    if (level === 3) {
+      const modified = [...chips];
+      let blanked = 0;
+      for (let i = 0; i < modified.length && blanked < 2; i++) {
+        const word = modified[i];
+        if (word.length > 3 && !['your', 'my', 'the', 'a', 'is', 'are', 'in', 'on'].includes(word.toLowerCase())) {
+          modified[i] = '___';
+          blanked++;
+        }
+      }
+      return modified;
+    }
+    
+    // Level 4+: No hints (student writes freely)
+    return [];
+  };
+  
+  // Get contextual hints for LAST AI question
+  // Hints = suggested words to answer the question AI just asked
+  const getCurrentHints = () => {
+    if (!currentMission || !messages.length) return [];
+    
+    // Find last AI message (the question we need to answer)
+    const lastAIMessage = [...messages].reverse().find(m => m.role === 'ai');
+    if (!lastAIMessage) {
+      // No AI message yet - show hints for opener
+      const baseChips = deriveHintsFromPrompt(currentMission.opener, currentMission);
+      return applyScaffolding(baseChips, scaffoldLevel);
+    }
+    
+    // Derive hints from EXACT text of last AI message
+    const baseChips = deriveHintsFromPrompt(lastAIMessage.text, currentMission);
+    return applyScaffolding(baseChips, scaffoldLevel);
   };
   
   // Render mission list
