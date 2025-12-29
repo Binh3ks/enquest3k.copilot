@@ -131,68 +131,29 @@ Ask 1 simple question about "${context.topic}".
 Tutor:`;
 }
 
-/*const grammarRules = getGrammarRules(context.weekId);
-  
-  const historyText = storyHistory.slice(-6).map(s => s.text).join(' ');
-  
-  return `Story Mission: ${mission.title || 'Creative Writing'}
-Topic: ${context.topic}
-Required vocabulary: ${mission.requiredVocab?.join(', ') || context.coreVocab.slice(0, 5).join(', ')}
-
-GRAMMAR SCOPE - Week ${context.weekId}:
-✅ Allowed: ${grammarRules.allowed.join(' | ')}
-❌ Banned: ${grammarRules.banned.join(' | ')}
-
-Story so far: ${historyText || '(starting)'}
-
-Student wrote: "${userInput}"
-
-Continue story with ONE sentence (3-8 words) using ONLY allowed grammar.
-Then provide task and hints using ONLY present simple.
-
-CRITICAL: Hints must ONLY use allowed grammar patterns!
-
-Format as JSON:
-{
-  "story_beat": "...",
-  "task": "...",
-  "required_vocab": ["...", "..."],
-  "scaffold": {
-    "hints": ["word1", "word2", "word3"],
-    "sentence_starter": "..."
-  }
-}
-
-Example hints (Week 1): ["My", "book", "is", "in"]
-NEVER use: ["I", "saw", "went", "was"]**
+/**
  * Story Mission prompt
  */
 function buildStoryMissionPrompt(context, userInput, options) {
   const mission = options.mission || {};
   const storyHistory = options.storyHistory || [];
+  const grammarRules = getGrammarRules(context.weekId);
   
-  const historyText = storyHistory.map(s => s.text).join(' ');
+  const historyText = storyHistory.slice(-4).map(s => s.text).join(' ');
   
-  return `Story Mission: ${mission.title || 'Creative Writing'}
+  return `Story Mission Week ${context.weekId}: ${mission.title || 'Creative Writing'}
 Topic: ${context.topic}
-Required vocabulary: ${mission.requiredVocab?.join(', ') || context.coreVocab.slice(0, 5).join(', ')}
+Grammar: ${grammarRules.allowed.slice(0, 3).join(', ')} ONLY
 
-Story so far: ${historyText}
+Story: ${historyText || '(start)'}
+Student: "${userInput}"
 
-Student wrote: "${userInput}"
+Continue with ONE sentence (4-8 words). End with task. Use present simple ONLY.
 
-Continue story with ONE sentence (3-5 words) about "${context.topic}".
-Then provide:
-- TASK: What student must do next
-- REQUIRED_VOCAB: Words they MUST use
-- SCAFFOLD: { hints: [words], sentence_starter: "..." }
-
-Format as JSON:
+JSON:
 {
   "story_beat": "...",
-  "task": "...",
-  "required_vocab": ["...", "..."],
-  "scaffold": { "hints": ["..."], "sentence_starter": "..." }
+  "task": "..."
 }`;
 }
 
