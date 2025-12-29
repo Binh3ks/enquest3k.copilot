@@ -10,6 +10,7 @@ import { useTutorStore } from '../../../services/aiTutor/tutorStore';
 import { runStoryMission } from '../../../services/aiTutor/tutorEngine';
 import { getMissionsForWeek } from '../../../data/storyMissions';
 import { speakText } from '../../../utils/AudioHelper';
+import { getHints } from '../../../services/aiTutor/hintEngine';
 
 export default function StoryMissionTab({ weekData, recognitionRef }) {
   const {
@@ -164,6 +165,25 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
     }
   };
   
+  // Get contextual hints for current beat
+  const getCurrentHints = () => {
+    if (!currentMission || !currentMission.beats) return [];
+    
+    const currentBeatIndex = Math.min(missionProgress.turnsCompleted, currentMission.beats.length - 1);
+    const currentBeat = currentMission.beats[currentBeatIndex];
+    
+    if (!currentBeat) return [];
+    
+    // Use hint engine for contextual hints
+    try {
+      const contextualHints = getHints(currentMission, currentBeat, context);
+      return contextualHints;
+    } catch (error) {
+      console.warn('[StoryMission] Hint engine error, using fallback:', error);
+      return currentBeat.hints || [];
+    }
+  };
+  
   // Render mission list
   if (!currentMission) {
     return (
@@ -247,7 +267,7 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
         <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl">
           <p className="text-[10px] font-black text-green-600 mb-1">💡 Hints:</p>
           <div className="flex flex-wrap gap-1">
-            {currentMission.beats[Math.min(missionProgress.turnsCompleted, currentMission.beats.length - 1)]?.hints?.map((hint, i) => (
+            {getCurrentHints().map((hint, i) => (
               <button
                 key={i}
                 onClick={() => setInput(prev => prev + (prev ? ' ' : '') + hint)}

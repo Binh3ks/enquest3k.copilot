@@ -1,0 +1,282 @@
+✅ ARTIFACT — CONTEXTUAL HINTS V2 (Scene-Aware + Guarded)
+0) Definition
+
+Hint = scaffolding cho câu sắp nói, trong bối cảnh hiện tại.
+Không được là “từ trong tuần” nói chung.
+
+Hint phải trả lời được câu hỏi:
+
+“Nếu trẻ click các chips này, trẻ có thể ráp thành 1 câu ĐÚNG bối cảnh không?”
+
+1) Root Cause (to fix)
+
+Hiện tại Copilot đang làm:
+
+hints = sample(vocabAllowed) hoặc
+
+hints = mission.coreVocab không có phân vai “teacher asks → student responds”.
+
+=> dẫn tới các lỗi như:
+
+Teacher hỏi “What is your name?” nhưng hint lại là “Yes I am a student”
+
+Mission “Lost Backpack” nhưng hint lại “my book and notebook are”
+
+Library hỏi “Where is your book?” nhưng hint lại “My notebook is in” (thiếu object/location phù hợp)
+
+2) New Hint Contract (Copilot MUST implement)
+2.1 Hint phải có “INTENT + SLOT”
+type HintPack = {
+  intent: "answer_name" | "ask_location" | "state_cannot_find" | "state_location" | "request_help"
+  targetPatternId: string          // references context.sentencePatterns
+  slots: {
+    subject?: "I" | "my" | "your"
+    verb?: string                  // constrained by grammar/verb allowlist
+    object?: string[]              // allowed objects for this scene
+    location?: string[]            // allowed locations for this scene
+    extra?: string[]               // polite words etc.
+  }
+  chips: string[]                  // actual clickable tokens in order
+  starter?: string                 // level2
+  model?: string                   // level3
+}
+
+2.2 Hint generation input MUST include Scene State
+type SceneState = {
+  missionId: string
+  turnIndex: number
+  scene: "school" | "classroom" | "library" | "hallway"
+  teacherPromptIntent: HintPack["intent"]  // derived from teacher prompt
+  requiredObjects: string[]                // e.g. ["backpack"]
+  optionalObjects: string[]                // e.g. ["book","notebook"]
+  allowedLocations: string[]               // e.g. ["library","classroom","desk"]
+}
+
+
+Rule: HintPack phải dựa trên SceneState, không dựa trên weekVocab chung chung.
+
+3) Hint Builder Algorithm (Scene-first, not vocab-first)
+3.1 Determine intent from teacher prompt
+
+Copilot phải tạo function:
+
+deriveIntent(teacherPrompt: string, missionId: string, turnIndex: number): HintPack["intent"]
+
+
+Heuristic:
+
+contains “What is your name” → answer_name
+
+contains “Where is” + object → state_location (student answers) OR ask_location (student asks) depending on role
+
+contains “cannot find / lost” → state_cannot_find
+
+contains “help” → request_help
+
+3.2 Choose a target pattern that matches intent
+
+Map intent → pattern (Week 1 example):
+
+answer_name → "My name is ___."
+
+ask_location → "Where is my ___?"
+
+state_cannot_find → "I cannot find my ___."
+
+state_location → "My ___ is in/on the ___."
+
+request_help → "Can you help me?"
+
+3.3 Generate chips that can form a valid beginner sentence
+
+Beginner chips rule:
+
+4–7 tokens
+
+ordered left→right so clicking yields a grammatical skeleton
+
+contain required object when mission requires it
+
+do NOT include off-scene nouns
+
+Example chip packs:
+
+Lost Backpack (student → teacher):
+
+intent: state_cannot_find
+
+chips: [I] [cannot] [find] [my] [backpack]
+
+At the Library (teacher asks where is your book; student answers):
+
+intent: state_location
+
+chips: [My] [book] [is] [in] [the] [library]
+
+hoặc [It] [is] [here] (nếu allow)
+
+First Day at School (teacher asks name):
+
+intent: answer_name
+
+chips: [My] [name] [is] [Alex]
+
+“Alex” có thể lấy từ story character hoặc profile
+
+4) Hint Guard (BLOCK if mismatch)
+
+Copilot MUST implement hintContextGuard(sceneState, hintPack).
+
+4.1 Mismatch types (block-level)
+
+OBJECT_MISMATCH: required object không xuất hiện trong chips (khi required)
+
+INTENT_MISMATCH: teacherPromptIntent != hintPack.intent (không cùng mục tiêu)
+
+SCENE_MISMATCH: hint chứa location không nằm trong allowedLocations
+
+GRAMMAR_MISMATCH: verb/tense banned (đã có guard tense)
+
+ROLE_MISMATCH: teacher asks A nhưng hint là “Yes …” kiểu answer khác (như ảnh)
+
+4.2 Guard outputs
+
+If block:
+
+regenerate hint by deterministic fallback template (no AI call):
+
+fallbackHintsByIntent(intent, sceneState)
+
+5) Week 1 — Canonical Hint Mapping (3 missions)
+
+Copilot phải hard-code baseline mapping để “không bao giờ lệch” dù AI fail.
+
+5.1 First Day at School (Easy)
+
+Turn 1 Teacher: “What is your name?”
+
+intent: answer_name
+
+required: none
+
+chips (L1): [My] [name] [is] [Alex]
+
+starter (L2): My name is ___
+
+model (L3): My name is Alex.
+
+Turn 2 Teacher: “Are you a student?”
+
+intent: confirm_identity
+
+chips: [Yes] [,] [I] [am] [a] [student]
+
+starter: Yes, I am a ___
+
+model: Yes, I am a student.
+
+Lưu ý: “Yes I am a student” chỉ đúng ở turn “Are you a student?” — KHÔNG phải turn hỏi tên.
+
+5.2 Lost Backpack (Challenge)
+
+Turn 1 Teacher: “You cannot find your backpack. What do you say?”
+
+intent: state_cannot_find
+
+requiredObjects: ["backpack"]
+
+chips: [I] [cannot] [find] [my] [backpack]
+
+starter: I cannot find my ___
+
+model: I cannot find my backpack.
+
+Turn 2 Teacher: “Where did you last see it?” (Week1 tránh past → đổi prompt)
+
+teacher should ask (present): “Where is your backpack now?”
+
+intent: ask_location OR request_help
+
+chips: [Where] [is] [my] [backpack] OR [Can] [you] [help] [me] [?]
+
+5.3 At the Library (Normal)
+
+Teacher: “We are in the library. Where is your book?”
+
+student intent: state_location
+
+requiredObjects: ["book"]
+
+allowedLocations: ["library","desk","bag","backpack","table"] (tùy UI)
+
+chips: [My] [book] [is] [in] [my] [backpack]
+
+hoặc [My] [book] [is] [on] [the] [desk]
+
+6) Implementation placement (where Copilot must put it)
+
+storyMissions.js chỉ chứa mission data + sceneState config
+
+Hint generation không nằm trong UI component
+
+Create: src/services/aiTutor/hintEngine.js
+
+buildHintPack(context, sceneState, teacherPrompt)
+
+hintContextGuard(sceneState, hintPack)
+
+fallbackHintsByIntent(intent, sceneState)
+
+StoryMissionTab chỉ gọi:
+
+const hintPack = hintEngine.getHints(context, sceneState, teacherPrompt)
+render(hintPack.chips)
+
+7) Tests (Regression must catch your screenshots)
+
+Add snapshot tests:
+
+Test 1 — Name question cannot show “Yes I am a student”
+
+Input: teacherPrompt = “What is your name?”
+Assert:
+
+hintPack.intent === "answer_name"
+
+chips contains “name”
+
+chips NOT equal/contains pattern “Yes I am a student”
+
+Test 2 — Lost Backpack must include “backpack”
+
+Input: mission LostBackpack turn 1
+Assert:
+
+chips contains “backpack”
+
+if requiredObjects includes backpack → OBJECT_MISMATCH is impossible
+
+Test 3 — Library question must include “book” and “library/backpack/desk”
+
+Input: AtLibrary prompt
+Assert:
+
+chips contains “book”
+
+any location token is within allowedLocations
+
+8) Copilot Master Insert (copy/paste)
+Fix Story hints to be scene-aware.
+
+Do NOT generate hints by random week vocab. Implement:
+- SceneState (missionId, turnIndex, scene, teacherPromptIntent, requiredObjects, allowedLocations)
+- HintPack with intent + targetPatternId + slots + chips + starter + model
+- deriveIntent() from teacherPrompt
+- buildHintPack() choosing sentence pattern for intent
+- hintContextGuard() blocking OBJECT/INTENT/SCENE mismatches
+- fallbackHintsByIntent() deterministic templates
+
+Add regression tests:
+- “What is your name?” must produce chips like “My name is ___”, never “Yes I am a student”.
+- Lost Backpack turn 1 must include “backpack” in chips.
+- Library must include “book” and location within allowedLocations.
