@@ -1,0 +1,273 @@
+🧠 ENGQUEST AI TUTOR V2
+REVIEW CHECKLIST & RED FLAGS ARTIFACT
+
+(Quality Gate · Anti-Chatbot · Hard-to-Copy)
+
+PHẦN K — AI TUTOR REVIEW CHECKLIST
+
+Dùng cho:
+
+Review PR
+
+Review output của Copilot
+
+Review demo nội bộ
+
+Quyết định “đã xong phase chưa”
+
+K1. CHECKLIST CỐT LÕI — “AI CÓ DẠY KHÔNG?”
+🔹 1. Content Awareness (BẮT BUỘC)
+
+ Mọi AI call đều có TutorContext
+
+ Context có đủ:
+
+weekId
+
+topic
+
+grammarFocus
+
+coreVocab
+
+ AI output liên quan trực tiếp đến nội dung tuần
+
+ Không có câu trả lời “generic ESL”
+
+❌ Fail nếu: AI trả lời đúng tiếng Anh nhưng sai trọng tâm tuần
+
+🔹 2. Student Language Production (TRẺ CÓ NÓI/VIẾT KHÔNG?)
+
+ Mỗi turn học sinh phải tạo output
+
+ Không có flow nào cho phép:
+
+click qua
+
+đọc rồi next
+
+ AI không trả lời thay khi user im lặng
+
+ Có scaffold (hint → starter → model → retry)
+
+❌ Fail nếu: trẻ có thể hoàn thành mà không viết câu hoàn chỉnh
+
+🔹 3. AI Talk Ratio (AI CÓ NÓI QUÁ NHIỀU KHÔNG?)
+
+ AI tối đa 1–2 câu mỗi turn
+
+ AI không trả lời 2 lần liên tiếp
+
+ AI:Student Word Ratio ≤ 0.8
+
+❌ Fail nếu: AI giải thích dài, kể chuyện thay trẻ
+
+🔹 4. Vocab & Grammar Enforcement (DẠY ĐÚNG CHƯƠNG TRÌNH?)
+
+ Có required vocab theo mission
+
+ AI phát hiện vocab bị né
+
+ AI buộc vocab xuất hiện trong model sentence
+
+ Grammar focus được model hóa, không giảng
+
+❌ Fail nếu: vocab/grammar chỉ “được nhắc cho có”
+
+🔹 5. Scaffolding Quality (GIÚP ĐÚNG CÁCH?)
+
+ Scaffold tăng dần khi trẻ bí
+
+ Scaffold giảm dần khi trẻ tiến bộ
+
+ Không có model sentence quá sớm
+
+ Model sentence copy được, nhưng không lặp vô hạn
+
+❌ Fail nếu: AI cho đáp án ngay từ đầu
+
+🔹 6. Mission Integrity (HỌC CÓ MỤC TIÊU?)
+
+ Mỗi mission có:
+
+goal rõ
+
+required vocab
+
+completion
+
+ Mission không kết thúc nếu tiêu chí chưa đạt
+
+ Có summary sau mission
+
+❌ Fail nếu: Story chỉ là chat dài có bối cảnh
+
+🔹 7. Onboarding Effectiveness (WOW TRONG 60 GIÂY?)
+
+ Trẻ nói/viết ≥ 3 lần
+
+ Có “first success”
+
+ Có “You must speak” rule
+
+ Onboarding kết thẳng vào mission thật
+
+❌ Fail nếu: onboarding giống tutorial đọc chữ
+
+🔹 8. Memory & Adaptation (AI CÓ “NHỚ CÁCH HỌC”?)
+
+ Learner style (shy/normal/confident) ảnh hưởng hành vi AI
+
+ Vocab mastery thay đổi theo usage
+
+ Scaffold giảm theo thời gian
+
+ Không lưu nội dung chat
+
+❌ Fail nếu: mọi trẻ đều bị AI dạy giống nhau
+
+🔹 9. Anti-Cheating & Independence
+
+ Phát hiện:
+
+copy model sentence
+
+trả lời tối thiểu liên tục
+
+ AI phản ứng bằng điều chỉnh pedagogy, không phạt
+
+ Có lúc AI chờ và im lặng
+
+❌ Fail nếu: trẻ copy mà vẫn được qua mission
+
+🔹 10. KPI Integrity (ĐO ĐÚNG CÁI CẦN ĐO?)
+
+ Có LPR, Core Vocab Usage, SGI, SDS
+
+ KPI dùng để tune AI, không chỉ log
+
+ Không KPI vanity (message count, token)
+
+❌ Fail nếu: dashboard đẹp nhưng không nói được trẻ học tốt hơn
+
+PHẦN L — RED FLAGS
+DẤU HIỆU AI TUTOR ĐANG TRƯỢT THÀNH CHATBOT
+
+Chỉ cần 1–2 red flags xuất hiện → cần dừng lại và chỉnh ngay
+
+🚨 RED FLAG 1 — “AI nói hay quá”
+
+AI trả lời dài, mạch lạc
+
+Trẻ chỉ gật đầu / trả lời 1–2 từ
+
+Demo thấy “AI thông minh” hơn “trẻ tiến bộ”
+
+👉 Nguy hiểm nhất
+→ Đây là chatbot trá hình
+
+🚨 RED FLAG 2 — “Học xong mà không biết trẻ giỏi hơn ở đâu”
+
+Không trả lời được:
+
+“Tuần này trẻ tiến bộ điểm gì?”
+
+Không có summary meaningful
+
+Chỉ có “Good job!”
+
+👉 AI không dạy, chỉ động viên
+
+🚨 RED FLAG 3 — “Story càng lúc càng giống chat”
+
+Mission không fail dù trẻ né vocab
+
+Không có completion rõ
+
+Không có áp lực học tập nhẹ
+
+👉 Story bị rỗng pedagogy
+
+🚨 RED FLAG 4 — “Prompt-driven thay vì engine-driven”
+
+Logic nằm trong prompt
+
+Không có guardrails
+
+Thay prompt là đổi hành vi AI
+
+👉 Rất dễ copy – rất khó kiểm soát
+
+🚨 RED FLAG 5 — “AI làm hộ quá nhiều”
+
+Model sentence xuất hiện sớm
+
+Không buộc retry
+
+Copy → vẫn qua
+
+👉 Tạo thói quen xấu cho trẻ
+
+🚨 RED FLAG 6 — “AI không im lặng được”
+
+AI luôn phải nói gì đó
+
+Không có trạng thái chờ
+
+Sợ silence
+
+👉 Không giống gia sư thật
+
+🚨 RED FLAG 7 — “KPI đẹp nhưng vô nghĩa”
+
+Session dài hơn
+
+Tin nhắn nhiều hơn
+
+Nhưng:
+
+câu trẻ không dài hơn
+
+vocab không dùng thêm
+
+👉 Đo engagement, không đo learning
+
+PHẦN M — WHY THIS MAKES THE PRODUCT HARD TO COPY
+Vì đối thủ muốn copy phải:
+
+❌ Không chỉ copy prompt
+
+❌ Không chỉ copy UI
+
+❌ Không chỉ dùng model tốt hơn
+
+Mà phải copy:
+
+Engine + guardrails
+
+Mission pedagogy
+
+Anti-cheating logic
+
+Learning KPI mindset
+
+Product discipline
+
+👉 Đây là moat thật, không phải marketing moat
+
+PHẦN N — INTERNAL TEAM MANTRA (DÁN TRONG REPO)
+If the child does not speak or write,
+the AI has failed.
+
+If the AI sounds smart but the child does not improve,
+the product has failed.
+
+🔚 KẾT LUẬN CUỐI
+
+Với Review Checklist + Red Flags này:
+
+Copilot không thể code lệch hướng
+
+Dev biết lúc nào phải dừng
+
+Product giữ được DNA “AI giáo viên”
