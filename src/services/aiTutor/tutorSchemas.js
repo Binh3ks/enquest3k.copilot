@@ -161,18 +161,6 @@ function parseStoryMission(text) {
   
   return result;
 }
-  const vocabMatch = text.match(/(?:VOCAB|REQUIRED)[:\s]+(.+?)(?=HINTS:|SCAFFOLD:|$)/is);
-  const hintsMatch = text.match(/HINTS[:\s]+(.+?)(?=$)/is);
-  
-  return {
-    story_beat: storyMatch?.[1]?.trim() || text.split('\n')[0],
-    task: taskMatch?.[1]?.trim() || 'Continue the story',
-    required_vocab: vocabMatch?.[1]?.split(/[,|]/).map(w => w.trim()).filter(Boolean) || [],
-    scaffold: {
-      hints: hintsMatch?.[1]?.split(/[,|]/).map(w => w.trim()).filter(Boolean) || []
-    }
-  };
-}
 
 /**
  * Tolerant parser for Chat response
