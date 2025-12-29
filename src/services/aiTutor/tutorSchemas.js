@@ -107,7 +107,7 @@ export function parseResponse(rawText, mode) {
     // Try JSON first
     const parsed = JSON.parse(cleanText);
     return parsed;
-  } catch (e) {
+  } catch {
     // Tolerant parsing for common formats
     console.warn('[SchemaParser] JSON parse failed, using tolerant parser');
     console.warn('[SchemaParser] Raw text:', cleanText.substring(0, 200));

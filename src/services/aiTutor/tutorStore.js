@@ -9,7 +9,7 @@ import { persist } from 'zustand/middleware';
 
 export const useTutorStore = create(
   persist(
-    (set, get) => ({
+    (set) => ({
       // UI state
       isOpen: false,
       activeTab: 'chat', // 'chat' | 'pronunciation' | 'story_mission' | 'quiz' | 'debate'
