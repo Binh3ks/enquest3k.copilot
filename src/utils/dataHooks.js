@@ -140,10 +140,14 @@ export const useFetchWeekData = (weekId) => {
           rawData = weekItem.dataEasy;
           isEasyMode = true;
           console.log(`[DataHooks] Loading Week ${weekId} in EASY mode`);
+          console.log(`[DataHooks] Easy data title:`, weekItem.dataEasy?.weekTitle_en);
+          console.log(`[DataHooks] Easy vocab[0]:`, weekItem.dataEasy?.stations?.new_words?.vocab?.[0]?.word);
         } else {
           rawData = weekItem.data;
           isEasyMode = false;
           console.log(`[DataHooks] Loading Week ${weekId} in ADVANCED mode`);
+          console.log(`[DataHooks] Advanced data title:`, weekItem.data?.weekTitle_en);
+          console.log(`[DataHooks] Advanced vocab[0]:`, weekItem.data?.stations?.new_words?.vocab?.[0]?.word);
         }
       }
 

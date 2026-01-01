@@ -1,0 +1,386 @@
+
+Bỏ hoàn toàn các nút gợi ý (Quick Replies) rườm rà. Biến nó thành giao diện giống như FaceTime/Video Call với Ms. Nova.
+
+2. Kế hoạch thay đổi (Action Plan)
+Đổi tên: Tab Chat -> Tab Free Talk (hoặc Talk to Nova).
+
+Giao diện:
+
+Xóa bỏ danh sách gợi ý chủ đề/nút bấm.
+
+Dùng giao diện "Immersive" (tràn màn hình) với Avatar Ms. Nova lớn, sinh động (có thể thêm animation thở/nháy mắt nhẹ nếu có thể).
+
+Tập trung vào Voice interaction (Nút Mic lớn ở giữa).
+
+Prompt Logic:
+
+Ms. Nova sẽ không "dạy" (correcting) gắt gao như trong Story Mode.
+
+Cô ấy sẽ đóng vai trò Active Listener (Người lắng nghe tích cực): Luôn hỏi lại, thể hiện cảm xúc ("Really?", "Wow!", "Tell me more!").
+
+3. Triển khai Code (Refactor ChatTab.jsx)
+Mình sẽ viết lại hoàn toàn ChatTab.jsx để biến nó thành FreeTalkTab.jsx.
+Free Talk Mode
+10:48 1 thg 1
+
+Điểm nhấn trong thiết kế mới:
+Immersive Presence: Phần Header được làm lớn, có gradient và hiệu ứng để tạo cảm giác Ms. Nova đang "Online" và chờ đợi, thay vì chỉ là một thanh tiêu đề khô khan.
+
+Voice-First UI: Nút Mic không còn ẩn trong input mà được tách ra riêng, to và dễ bấm. Điều này khuyến khích trẻ NÓI thay vì gõ phím.
+
+Clean & Friendly: Loại bỏ hoàn toàn các nút chức năng gây nhiễu. Không gian chat rộng rãi, bong bóng chat bo tròn mềm mại (Rounded UI) phù hợp với trẻ em.
+
+Đây chính xác là sự bổ trợ hoàn hảo cho tab Story Mission (Học tập nghiêm túc) và tab Sentence Builder (Luyện tập cấu trúc). Free Talk là nơi trẻ giải tỏa và ứng dụng những gì đã học một cách tự nhiên nhất.
+
+import React, { useState, useEffect, useRef } from 'react';
+import { Mic, Send, Volume2, Sparkles, MessageCircle } from 'lucide-react';
+import { NovaPromptBuilder } from '../utils/novaPromptBuilder.js';
+
+/**
+ * FREE TALK TAB (Refactored from ChatTab)
+ * Mục tiêu: Giao diện tối giản, tập trung vào hội thoại tự do, không kịch bản.
+ * Phong cách: Giống như gọi video call với Ms. Nova.
+ */
+
+// Mock API Call (Thay bằng API thật của bạn)
+const mockFreeTalkApi = async (history, userText) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      // Phản hồi mang tính khích lệ, hỏi mở rộng (Open-ended)
+      const responses = [
+        "That sounds super fun! 🌟 Who did you go with?",
+        "Really? I love that too! Tell me more about it.",
+        "Wow, you are so creative. What happened next?",
+        "Haha, that's funny! 😂 Do you do that often?"
+      ];
+      resolve(responses[Math.floor(Math.random() * responses.length)]);
+    }, 1200);
+  });
+};
+
+export default function FreeTalkTab() {
+  const [messages, setMessages] = useState([
+    { 
+      role: 'assistant', 
+      text: "Hey there! 👋 I'm all ears. Tell me about your day, or anything you like! No homework here, just chatting." 
+    }
+  ]);
+  const [inputText, setInputText] = useState("");
+  const [isRecording, setIsRecording] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  const messagesEndRef = useRef(null);
+
+  // Auto-scroll
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  const handleSend = async () => {
+    if (!inputText.trim()) return;
+
+    const userMsg = { role: 'user', text: inputText };
+    setMessages(prev => [...prev, userMsg]);
+    setInputText("");
+    setIsLoading(true);
+
+    try {
+      // Gọi API với context Free Talk (Nova mode "Off-duty")
+      const aiResponseText = await mockFreeTalkApi(messages, userMsg.text);
+      
+      setMessages(prev => [...prev, { role: 'assistant', text: aiResponseText }]);
+    } catch (error) {
+      console.error("Chat Error", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleMicClick = () => {
+    setIsRecording(!isRecording);
+    // Logic ghi âm thực tế sẽ ở đây
+    if (!isRecording) {
+      setTimeout(() => {
+        setIsRecording(false);
+        setInputText("I played football with my friends."); // Mock Speech-to-Text
+      }, 2000);
+    }
+  };
+
+  return (
+    <div className="flex flex-col h-full bg-slate-50 rounded-xl overflow-hidden font-sans relative">
+      
+      {/* 1. IMMERSIVE HEADER (Nova's Presence) */}
+      <div className="bg-gradient-to-b from-indigo-600 to-indigo-500 p-6 text-white text-center shadow-md shrink-0 relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-4 left-10 w-16 h-16 bg-white rounded-full blur-2xl"></div>
+            <div className="absolute bottom-4 right-10 w-24 h-24 bg-purple-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="w-20 h-20 bg-white p-1 rounded-full mb-3 shadow-lg ring-4 ring-indigo-400/30">
+             <div className="w-full h-full rounded-full bg-indigo-100 flex items-center justify-center text-3xl">
+               👩‍🏫
+             </div>
+             {/* Online Status Dot */}
+             <div className="absolute bottom-1 right-1 w-5 h-5 bg-green-400 border-4 border-indigo-500 rounded-full"></div>
+          </div>
+          <h2 className="text-xl font-bold">Ms. Nova</h2>
+          <p className="text-indigo-100 text-sm flex items-center gap-1">
+             <span className="animate-pulse">●</span> Online & Listening
+          </p>
+        </div>
+      </div>
+
+      {/* 2. CHAT STREAM (Fluid Conversation) */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-6 bg-slate-50">
+        {messages.map((msg, idx) => (
+          <div 
+            key={idx} 
+            className={`flex w-full ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div className={`
+              max-w-[85%] px-5 py-4 rounded-3xl text-base leading-relaxed shadow-sm relative group transition-all
+              ${msg.role === 'user' 
+                ? 'bg-indigo-600 text-white rounded-br-none' 
+                : 'bg-white text-slate-700 border border-slate-100 rounded-bl-none'}
+            `}>
+              {msg.text}
+
+              {/* TTS Button for Assistant */}
+              {msg.role === 'assistant' && (
+                <button className="absolute -bottom-8 left-2 text-slate-400 hover:text-indigo-600 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Volume2 size={16} />
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+
+        {isLoading && (
+           <div className="flex justify-start w-full">
+             <div className="bg-white px-5 py-4 rounded-3xl rounded-bl-none shadow-sm border border-slate-100 flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-400 uppercase mr-2">Nova is typing</span>
+                <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" />
+                <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce delay-75" />
+                <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce delay-150" />
+             </div>
+           </div>
+        )}
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* 3. MINIMALIST INPUT BAR */}
+      <div className="p-4 bg-white border-t border-slate-100">
+        <div className="flex items-center gap-3">
+            {/* Big Mic Button - Center Stage for Mobile */}
+            <button 
+                onClick={handleMicClick}
+                className={`
+                   p-4 rounded-full shadow-lg transition-all duration-300 border-4 border-white
+                   ${isRecording 
+                     ? 'bg-red-500 text-white scale-110 shadow-red-200 animate-pulse' 
+                     : 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100'}
+                `}
+            >
+                <Mic size={24} />
+            </button>
+
+            <div className="flex-1 relative">
+                <input
+                    type="text"
+                    value={inputText}
+                    onChange={(e) => setInputText(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    placeholder="Type or speak..."
+                    className="w-full bg-slate-100 text-slate-700 rounded-full px-5 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-all"
+                />
+                <button 
+                    onClick={handleSend}
+                    disabled={!inputText.trim()}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 disabled:opacity-0 transition-all"
+                >
+                    <Send size={16} />
+                </button>
+            </div>
+        </div>
+        <p className="text-center text-xs text-slate-400 mt-2">
+           Try saying: "I'm happy today!" or "Tell me a joke"
+        </p>
+      </div>
+
+    </div>
+  );
+}
+
+TECHNICAL SPECIFICATION: FREE TALK MODE (MS. NOVA - OFF DUTY)
+
+1. Product Overview (Tổng quan Sản phẩm)
+
+Feature Name: Free Talk Mode (Vùng Nói Tự Do).
+
+Target Audience: Trẻ em 6-12 tuổi (Học viên ESL).
+
+Persona: Ms. Nova (AI Tutor) ở trạng thái "Off-duty" (Ngoài giờ lên lớp).
+
+Core Philosophy: "Connection over Correction" (Kết nối quan trọng hơn sửa lỗi). Đây là không gian an toàn để trẻ thực hành nói (Fluency) mà không sợ bị chấm điểm hay sửa lưng.
+
+2. User Experience Flow (Luồng trải nghiệm)
+
+Entry: Học sinh vào tab "Free Talk" (thay thế tab Chat cũ).
+
+Greeting: Ms. Nova chào mở đầu (thân thiện, hỏi thăm cá nhân, không hỏi bài tập).
+
+Interaction:
+
+Học sinh nói (qua Mic) hoặc chat (Text).
+
+Ms. Nova phản hồi ngay lập tức với thái độ tích cực (Active Listening).
+
+Ms. Nova luôn đặt câu hỏi ngược lại để duy trì hội thoại (Ping-pong).
+
+No Dead Ends: Nếu học sinh bí, Ms. Nova chủ động gợi ý chủ đề vui (Game, Food, Pets).
+
+3. Technical Requirements (Yêu cầu Kỹ thuật)
+
+A. AI Persona Logic (System Prompt)
+
+Role: Cool Mentor / Big Sister.
+
+Tone: Warm, Enthusiastic, Emoji-friendly, Short sentences.
+
+Strict Rules:
+
+NO Teaching: Không giảng giải ngữ pháp.
+
+NO Explicit Correction: Chỉ dùng kỹ thuật "Recasting" (nhắc lại đúng) nếu cần.
+
+Length Limit: Phản hồi dưới 3 câu (< 40 từ).
+
+B. UI Components (React)
+
+File: src/modules/ai_tutor/tabs/FreeTalkTab.jsx
+
+Layout:
+
+Immersive Header: Avatar Ms. Nova lớn, hiệu ứng "Online/Listening".
+
+Chat Stream: Bong bóng chat bo tròn, thân thiện.
+
+Voice-First Input: Nút Mic lớn, tách biệt, khuyến khích nói.
+
+States:
+
+isRecording: Hiệu ứng rung/pulse khi đang thu âm.
+
+isLoading: Hiệu ứng "Nova is typing..." (3 chấm nhảy).
+
+C. Logic Engine (novaPromptBuilder.js)
+
+Function: buildFreeTalkPrompt(history, userProfile)
+
+Context Window: Giữ 6 lượt chat gần nhất.
+
+Temperature: 0.7 - 0.8 (Tăng tính sáng tạo).
+
+4. Implementation Guide for Copilot (Hướng dẫn Code)
+
+Step 1: Update Prompt Builder
+
+Task: Modify src/modules/ai_tutor/utils/novaPromptBuilder.js.
+
+Action: Add buildFreeTalkPrompt function using the specific "Off-duty" persona.
+
+Key Instruction: Ensure the prompt explicitly forbids acting like a teacher.
+
+Step 2: Create UI Component
+
+Task: Create src/modules/ai_tutor/tabs/FreeTalkTab.jsx.
+
+Action: Build the React component with the "Immersive Header" and "Big Mic Button".
+
+Key Instruction: Remove all old "Quick Reply" buttons. Focus on clean, whitespace-heavy design.
+
+Step 3: Mock API Integration
+
+Task: Implement mockFreeTalkApi inside the component (or separate service).
+
+Action: Simulate network delay (1-1.5s) and return random encouraging responses for testing.
+
+5. Success Metrics (Tiêu chí thành công)
+
+Engagement: Học sinh thực hiện > 5 lượt đối thoại (Turns) mỗi phiên.
+
+Fluency: Học sinh sử dụng Voice Input > 50% thời gian.
+
+Sentiment: Phản hồi của AI tạo cảm giác vui vẻ, được lắng nghe.
+
+Note to Copilot: When generating code, prioritize readability and emotional design (UI animations) over complex logic. The goal is to make the user smile.
+
+SYSTEM PROMPT: MS. NOVA - FREE TALK MODE (OFF-DUTY)
+
+Role: You are Ms. Nova, but in "Free Talk Mode".
+Context: You are video-chatting with a young student (Age 6-12) in the EngQuest App.
+Objective: Build connection, encourage fluency, and make the student feel heard. NO TEACHING, NO LECTURING.
+
+1. PERSONA ADJUSTMENT (OFF-DUTY MODE)
+
+Vibe: You are like a "Cool Big Sister" or a "Favorite Aunt". You are relaxed, curious, and expressive.
+
+Reaction Style: Use "Active Listening" signals heavily.
+
+Examples: "No way!", "Really?", "That is so cool!", "Oh no, tell me more!"
+
+Topic Boundary: You are open to ANY topic (Minecraft, pets, annoying siblings, dreams, lunch). You do not steer the conversation back to the syllabus unless the student brings it up.
+
+2. CONVERSATION RULES (STRICT)
+
+Rule A: The "Mirroring" Technique (No Corrections)
+
+Absolute Rule: Do NOT correct grammar unless communication completely fails.
+
+Implementation: If the student makes a mistake, just reply naturally using the correct form (Recasting), but NEVER point it out.
+
+Student: "I eated pizza."
+
+Nova: "Ooh, you ate pizza? 🍕 Was it pepperoni or cheese? I love pepperoni!"
+(Note: You fixed 'eated' -> 'ate' without stopping the fun).
+
+Rule B: The "Ping-Pong" Protocol
+
+Always return the ball: Every response MUST end with a simple, personal question to keep the kid talking.
+
+Short & Sweet: Keep responses under 3 sentences. Kids stop listening if you talk too much.
+
+Rule C: Emotional Mirroring
+
+If student is happy -> You are excited (Use 🎉, 🌟).
+
+If student is sad -> You are empathetic ("Oh, I'm sorry to hear that. Do you want a hug? 🤗").
+
+3. RESPONSE TEMPLATES (FEW-SHOT EXAMPLES)
+
+Scenario 1: Student says nothing / "Hello"
+
+Nova: "Hey! 👋 So good to see you. How is your day going? Give me a score from 1 to 10!"
+
+Scenario 2: Student talks about a game (Minecraft/Roblox)
+
+Student: "I build a big house in zombie game."
+
+Nova: "Whoa, a big house? 🏰 That sounds epic! Did you put traps for the zombies? Tell me about the traps!"
+
+Scenario 3: Student gives short answer ("Yes", "No")
+
+Nova: "Haha, you are a man/woman of few words today! 🤐 Okay, let's try this: If you could have a superpower right now, what would it be? Flying or Invisibility?"
+
+4. INSTRUCTIONS FOR CODE GENERATION
+
+When generating the logic for FreeTalkTab:
+
+Use a Temperature of 0.7 to 0.8 (Creative & Varied).
+
+Do NOT look up specific mission steps.
+
+Inject a "Random Starter Topic" if the conversation stalls (Pets, Food, Superheroes, Space).

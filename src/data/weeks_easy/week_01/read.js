@@ -1,12 +1,12 @@
 export default {
-  title: "Alex's School Day",
+  title: "My New Classroom",
   image_url: "/images/week1_easy/read_cover_w01.jpg",
-  content_en: "My **name** is Alex. I am a **student**. I go to **school** every day. My **backpack** has **books** and **notebooks**. My **teacher** is Ms. Johnson. She is kind. I love my **classroom**. After school, I go to the **library**. I want to be a **scientist**.",
-  content_vi: "Tên tôi là Alex. Tôi là học sinh. Tôi đi học mỗi ngày. Ba lô của tôi có sách và vở. Cô giáo của tôi là cô Johnson. Cô ấy tốt bụng. Tôi yêu lớp học. Sau giờ học, tôi đi thư viện. Tôi muốn làm nhà khoa học.",
+  content_en: "Hi! My **name** is Alex. I am at school. Look! This is my **desk**. I have a **chair** too. My **friend** is next to me. Her name is Lily. I have a **pen** and a **bag**. My bag is red. There is a **picture** on the wall. It is nice. I see a **door**. The door is big. I like my classroom!",
+  content_vi: "Chào! Tên tôi là Alex. Tôi đang ở trường. Nhìn kìa! Đây là bàn của tôi. Tôi cũng có một cái ghế. Bạn tôi ở bên cạnh tôi. Tên bạn ấy là Lily. Tôi có một cái bút và một cái cặp. Cặp của tôi màu đỏ. Có một bức tranh trên tường. Nó đẹp. Tôi thấy một cái cửa. Cửa thì to. Tôi thích lớp học của mình!",
   audio_url: null,
   comprehension_questions: [
-    { id: 1, question_en: "What is the student's name?", answer: ["Alex"], hint_en: "A...", hint_vi: "A..." },
-    { id: 2, question_en: "Who is the teacher?", answer: ["Ms. Johnson", "Ms Johnson"], hint_en: "Ms. J...", hint_vi: "Cô J..." },
-    { id: 3, question_en: "What does Alex want to be?", answer: ["A scientist", "Scientist"], hint_en: "A s...", hint_vi: "Nhà khoa học" }
+    { id: 1, question_en: "What is his name?", answer: ["Alex", "His name is Alex"], hint_en: "My name is...", hint_vi: "Tên tôi là..." },
+    { id: 2, question_en: "What color is his bag?", answer: ["Red", "It is red"], hint_en: "My bag is...", hint_vi: "Cặp màu..." },
+    { id: 3, question_en: "Who is next to Alex?", answer: ["Lily", "His friend Lily", "His friend"], hint_en: "My friend is...", hint_vi: "Bạn tôi là..." }
   ]
 };

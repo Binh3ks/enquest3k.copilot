@@ -91,50 +91,7 @@ const MainLayout = () => {
     const newMode = learningMode === 'advanced' ? 'easy' : 'advanced';
     localStorage.setItem('engquest_content_mode', newMode);
     setLearningMode(newMode);
-    
-    // Show saving indicators
-    setSaveToastStatus('saving');
-    setAutoSaveStatus('saving');
-    
-    // Save progress
-    const updatedUser = saveStationProgress(currentUser, weekId, tabKey, percent);
-    if (updatedUser) {
-      // Update last accessed week/station for Continue Learning card
-      updatedUser.lastWeek = weekId;
-      updatedUser.lastStation = tabKey;
-      
-      setCurrentUser({ ...updatedUser });
-      
-      // Show success indicators
-      setTimeout(() => {
-        setSaveToastStatus('success');
-        setAutoSaveStatus('saved');
-        
-        // Hide auto-save indicator after 1s
-        setTimeout(() => {
-          setAutoSaveStatus('idle');
-        }, 1000);
-      }, 500);
-      
-      // Check if week is complete (100%)
-      const newWeekProgress = getWeekProgress(updatedUser, weekId);
-      if (newWeekProgress === 100) {
-        // Award 50 bonus stars
-        updatedUser.stats = updatedUser.stats || { stars: 0, streak: 0 };
-        updatedUser.stats.stars += 50;
-        
-        // Mark week as certified
-        if (!updatedUser.certified_weeks) updatedUser.certified_weeks = {};
-        updatedUser.certified_weeks[weekId] = true;
-        
-        // Save and show celebration
-        saveUserToDB(updatedUser.name, updatedUser);
-        setShowCongratulations(true);
-        
-        // Dispatch event
-        window.dispatchEvent(new CustomEvent('week-completed', { detail: { weekId } }));
-      }
-    }
+    window.location.reload();
   };
 
   const handleReportProgress = (percent) => {

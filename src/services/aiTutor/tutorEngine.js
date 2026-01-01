@@ -34,8 +34,12 @@ export async function runTutor({ mode, weekData, userInput = '', options = {} })
   // 4. ROUTE TO AI PROVIDER
   const rawResponse = await routeAI(prompt, mode);
   
+  console.log('[TutorEngine] AI Raw Response:', rawResponse.text);
+  
   // 5. PARSE WITH MODE (not schema object)
   const parsed = parseResponse(rawResponse.text, mode);
+  
+  console.log('[TutorEngine] Parsed Response:', JSON.stringify(parsed, null, 2));
   
   // 6. RETURN STRUCTURED RESPONSE
   return {

@@ -1,0 +1,873 @@
+# MASTER PROMPT V23 - UPDATES (December 30, 2025)
+
+**INSERT THESE SECTIONS INTO "4. ENGQUEST MASTER PROMPT V23-FINAL.txt"**
+
+---
+
+## 📍 UPDATE 1: IMAGE GENERATION PRICING (Replace Section "Image Files")
+
+**Location:** After line 1365 (section "### Image Files")
+
+**REPLACE:**
+```
+4. Calls Gemini Imagen API (**Imagen 3** for cost efficiency: $0.02/image vs Imagen 4 $0.04/image)
+```
+
+**WITH:**
+
+```
+4. Calls Gemini Imagen API with model selection:
+
+**Model Selection (December 2025 Pricing):**
+
+| Model | Cost/Image | Quality | Speed | Use Case |
+|-------|-----------|---------|-------|----------|
+| **Imagen 3 Fast** | **$0.01** | Good | Fast | **💰 RECOMMENDED for mass production** |
+| Imagen 3 | $0.02 | High | Normal | Fallback if quality insufficient |
+| Imagen 4 | $0.04 | Highest | Slow | ❌ NOT recommended (overkill, 2x cost) |
+
+**Model Identifier:**
+- Imagen 3 Fast: `imagen-3.0-fast-generate-001` (RECOMMENDED)
+- Imagen 3: `imagen-3.0-generate-001`
+- Imagen 4: `imagen-4.0-generate-001`
+
+**Configuration in batch_manager.js:**
+```javascript
+// Line 14 - Update this constant:
+const API_MODEL = "imagen-3.0-fast-generate-001"; // Change to Fast for 50% savings
+```
+
+**Cost Comparison for 144 Weeks:**
+```
+Total images needed: 2,880 (20 images/week × 144 weeks)
+
+Imagen 4:      2,880 × $0.04 = $115.20
+Imagen 3:      2,880 × $0.02 = $57.60
+Imagen 3 Fast: 2,880 × $0.01 = $28.80  ← SAVE $28.80 (50% vs Imagen 3)
+```
+
+**Quality Assessment:**
+- Imagen 3 Fast produces "Good" quality suitable for:
+  - ✅ Vocabulary word illustrations (simple objects, clear visuals)
+  - ✅ Word Power concept images (abstract ideas visualized simply)
+  - ✅ Cover images (educational story illustrations, 16:9 landscape)
+- NOT sufficient for:
+  - ❌ Photorealistic images (use Imagen 4 if needed)
+  - ❌ Complex scientific diagrams with fine details (use Imagen 3)
+
+**When to Use Each Model:**
+1. **Default: Imagen 3 Fast** - Use for 95% of EngQuest images
+2. **Upgrade to Imagen 3** - If specific week has complex science diagrams
+3. **Never use Imagen 4** - Quality improvement minimal, cost doubles
+
+**Implementation:**
+```bash
+# Update batch_manager.js model constant
+sed -i '' 's/imagen-3.0-generate-001/imagen-3.0-fast-generate-001/' tools/batch_manager.js
+
+# Regenerate images for testing (Week 1 only)
+node tools/batch_manager.js 1 1
+
+# Compare quality in app - if acceptable, proceed with mass generation
+```
+
+**Note:** "Gemini Banana" does not exist. User may have confused with:
+- Imagen 3 Fast (formerly called "Imagen 3 Flash" in beta)
+- Or Imagen 2 (deprecated model, no longer available)
+```
+
+---
+
+## 📍 UPDATE 2: STORY MISSION DATA STRUCTURE (NEW SECTION 8.8)
+
+**Location:** After Section 8.7 (line ~2100), BEFORE Section 8.9
+
+**ADD NEW SECTION:**
+
+```
+## 8.8. Story Mission Data Structure & Mass Production (NEW)
+
+### 8.8.1. Data Location & Format
+
+**RECOMMENDED Format (Post-Rebuild Architecture):**
+```
+src/data/missions/
+├── missionSchema.js          # Schema definition + factory function
+├── week1_easy.js             # Week 1 Easy mission (6 steps)
+├── week1_normal.js           # Week 1 Normal mission (6 steps)
+├── week1_challenge.js        # Week 1 Challenge mission (8 steps)
+├── week2_easy.js
+├── week2_normal.js
+└── ...
+```
+
+**Benefits:**
+- ✅ One file per mission (clear separation)
+- ✅ Scalable to 144 weeks (432 mission files)
+- ✅ Version control friendly (track changes per mission)
+- ✅ Modular imports in StoryMissionTab.jsx
+
+**Legacy Format (Deprecated but still works):**
+```
+src/data/storyMissions.js  # All missions in one file
+└── export const Week1Missions = [{...}, {...}, {...}];
+```
+- ❌ Not scalable (file would be >50,000 lines for 144 weeks)
+- ❌ Merge conflicts when multiple people edit
+- ⚠️ Use ONLY for prototyping/testing
+
+**Migration Path:**
+- Weeks 1-5: Keep both formats during testing phase
+- Weeks 6+: Use folder structure exclusively
+- After Week 20 complete: Delete storyMissions.js
+
+---
+
+### 8.8.2. AI Beat Length Rules (UPDATED)
+
+**CRITICAL UPDATE - Previous Prompt V23 was TOO RESTRICTIVE:**
+
+**OLD (Incorrect for Story Mission):**
+```
+AI beats (AI speech): MAX 1-2 sentences, MAX 10 words per sentence
+```
+
+**NEW (Correct - Mode-Specific):**
+
+| Mode | Word Limit | Sentence Count | Use Case |
+|------|-----------|----------------|----------|
+| **Story Mission** | 30-50 words | 2-4 sentences | Personality-rich narration with Ms. Nova |
+| Ask AI / Quiz | 10-15 words | 1-2 sentences | Factual Q&A interaction |
+| Grammar Feedback | 15-20 words | 1-2 sentences | Correction + encouragement |
+
+**Story Mission Special Requirements:**
+- **Personality REQUIRED:** Witty tone, dad jokes, emojis (🎒📚🌟)
+- **Context setting:** Natural speech patterns with rhetorical questions
+  - Example: "You know what? First days are like opening a new book..."
+- **Contractions allowed:** gonna, wanna, gotcha (mimics natural speech)
+- **Character consistency:** Ms. Nova = encouraging academic mentor
+- **Emotional tone:** Warm, patient, celebrates effort over perfection
+
+**Word Count Examples:**
+
+✅ **CORRECT Story Mission Beat (42 words):**
+```javascript
+aiPrompt: "{{name}}! What a cool name! You know, I once had a student named {{name}} who became amazing at English. I bet you'll be just as awesome! 🌟 Now, here's a fun question - how many candles were on your last birthday cake?"
+```
+
+❌ **WRONG - Too Short for Story Mission (8 words):**
+```javascript
+aiPrompt: "Hi! What is your name?" // ❌ No personality, too terse
+```
+
+❌ **WRONG - Too Long (78 words):**
+```javascript
+aiPrompt: "Hey there! 👋 Welcome to your first day! I'm Ms. Nova, and I'm going to be your learning buddy for this amazing journey of English learning. You know what? First days are like opening a new book - exciting and a tiny bit scary! But don't worry, we'll make it fun together. I promise you'll learn so much and have a great time. So, before we start, I'd love to know - what should I call you? What's your name?"
+// ❌ Too verbose, loses student attention
+```
+
+**Validation Script:**
+```javascript
+// tools/validate_story_mission_beats.js
+const validateBeats = (mission) => {
+  mission.steps.forEach((step, i) => {
+    const wordCount = step.aiPrompt.split(' ').length;
+    if (wordCount < 30) console.error(`❌ Step ${i}: Too short (${wordCount} words, need 30+)`);
+    if (wordCount > 50) console.error(`❌ Step ${i}: Too long (${wordCount} words, max 50)`);
+    if (!step.aiPrompt.includes('{{')) console.warn(`⚠️  Step ${i}: No placeholders for context`);
+  });
+};
+```
+
+---
+
+### 8.8.3. Audio Generation for Story Missions (NEW)
+
+**Audio Files Required Per Mission:**
+```
+public/audio/week1/
+├── story_mission_W1_EASY_opening.mp3        # Opening turn (step 0)
+├── story_mission_W1_EASY_step1.mp3          # Turn 1 response
+├── story_mission_W1_EASY_step2.mp3          # Turn 2 response
+├── ...
+├── story_mission_W1_NORMAL_opening.mp3
+├── story_mission_W1_NORMAL_step1.mp3
+└── ...
+
+Total per week: 18-24 audio files (3 missions × 6-8 steps each)
+```
+
+**Naming Convention:**
+```
+story_mission_{missionId}_{stepType}.mp3
+
+Where:
+- {missionId} = mission.id (e.g., W1_EASY, W1_NORMAL, W1_CHALLENGE)
+- {stepType} = "opening" or "step1", "step2", etc.
+
+Examples:
+✅ story_mission_W1_EASY_opening.mp3
+✅ story_mission_W2_NORMAL_step3.mp3
+✅ story_mission_W20_CHALLENGE_step7.mp3
+```
+
+**Generation Workflow:**
+
+**Step 1: Create Audio Tasks JSON**
+```bash
+node tools/create_story_mission_audio_tasks.js <WEEK_ID>
+
+# Reads from:
+# - src/data/missions/week{WEEK_ID}_easy.js
+# - src/data/missions/week{WEEK_ID}_normal.js
+# - src/data/missions/week{WEEK_ID}_challenge.js
+
+# Outputs:
+# - tools/story_mission_audio_tasks.json (18-24 tasks)
+```
+
+**Step 2: Generate Audio Files**
+```bash
+export OPENAI_API_KEY="sk-proj-..."  # Or auto-load from API keys.txt
+python3 tools/generate_audio.py --provider openai --voice nova
+
+# Uses nova voice (female, warm tone - matches Ms. Nova personality)
+# Generates 18-24 MP3 files to public/audio/week{WEEK_ID}/
+```
+
+**Step 3: Verify Audio**
+```bash
+# Check file count
+ls -1 public/audio/week1/story_mission_*.mp3 | wc -l
+# Should be 18 (3 missions × 6 steps) or 24 (if challenge has 8 steps)
+
+# Test in app
+npm run dev
+# Navigate to Week 1 → AI Tutor → Story Mission
+# Click audio button on each turn → Verify plays correct audio
+```
+
+**Integration in StoryMissionEngine.js:**
+```javascript
+async start() {
+  const step = this.mission.steps[0];
+  const audioUrl = `/audio/week${this.weekData.weekId}/story_mission_${this.mission.id}_opening.mp3`;
+  
+  // Play audio BEFORE showing text (audio-first learning)
+  await speakText(audioUrl);
+  
+  return {
+    story_beat: step.aiPrompt,
+    task: step.expected.type === "short_answer" ? "What is your name?" : "",
+    scaffold: { hints: step.hints },
+    audio_url: audioUrl  // NEW field for UI audio button
+  };
+}
+
+async generateTurn(userInput) {
+  const stepNum = this.state.turnsCompleted + 1;
+  const audioUrl = `/audio/week${this.weekData.weekId}/story_mission_${this.mission.id}_step${stepNum}.mp3`;
+  
+  // ... process turn logic ...
+  
+  return {
+    story_beat: storyBeat,
+    task: nextQuestion,
+    scaffold: { hints: step.hints },
+    audio_url: audioUrl,  // NEW field
+    isComplete: this.isComplete()
+  };
+}
+```
+
+**Audio Script to Create:**
+```javascript
+// tools/create_story_mission_audio_tasks.js
+import fs from 'fs';
+import path from 'path';
+
+const createStoryMissionAudioTasks = (weekId) => {
+  const missions = [
+    require(`../src/data/missions/week${weekId}_easy.js`),
+    require(`../src/data/missions/week${weekId}_normal.js`),
+    require(`../src/data/missions/week${weekId}_challenge.js`)
+  ];
+  
+  const tasks = [];
+  
+  missions.forEach(mission => {
+    // Opening turn
+    tasks.push({
+      text: mission.steps[0].aiPrompt,
+      filename: `story_mission_${mission.id}_opening.mp3`,
+      voice: "nova",
+      weekId: weekId
+    });
+    
+    // Subsequent turns
+    mission.steps.slice(1).forEach((step, i) => {
+      tasks.push({
+        text: step.aiPrompt,
+        filename: `story_mission_${mission.id}_step${i+1}.mp3`,
+        voice: "nova",
+        weekId: weekId
+      });
+    });
+  });
+  
+  fs.writeFileSync('tools/story_mission_audio_tasks.json', JSON.stringify(tasks, null, 2));
+  console.log(`✅ Created ${tasks.length} audio tasks for Week ${weekId}`);
+};
+```
+
+---
+
+### 8.8.4. Scaffold System - Complete 3 Levels (UPDATED)
+
+**Previous Prompt V23 was INCOMPLETE - only documented 2 levels.**
+
+**Full 3-Level Scaffold System:**
+
+```javascript
+// missionSchema.js - UPDATED
+export const MissionStep = {
+  stepId: 0,
+  aiPrompt: "",
+  expected: { type: "short_answer" },
+  
+  // Level 1: Word Chips (clickable tokens)
+  hints: [],              // ["My", "name", "is"]
+  
+  // Level 2: Sentence Starter (fill-in-blank)
+  repair: "",             // "Try saying: My name is _____"
+  
+  // Level 3: Model Sentence + Modification (NEW)
+  modelSentence: "",      // "My name is Alex."
+  modelModify: ""         // "Now say YOUR name instead of 'Alex'."
+};
+```
+
+**When to Escalate:**
+
+| Condition | Action | UI Display |
+|-----------|--------|------------|
+| Student tries freely | No scaffold | Input box only |
+| Student writes <3 words | Show Level 1 | Green chips: [My] [name] [is] |
+| Student stuck 30+ seconds | Show Level 2 | Text: "Try saying: My name is ___" |
+| Student clicks "Help" button | Show Level 3 | Text: "Say: 'My name is Alex.' Now try with YOUR name." |
+
+**Example Full Implementation:**
+
+```javascript
+// Week 1 Easy - Step 1
+{
+  stepId: 1,
+  aiPrompt: "Hey there! 👋 I'm Ms. Nova. What should I call you?",
+  expected: { type: "short_answer" },
+  
+  // Level 1
+  hints: ["My", "name", "is"],
+  
+  // Level 2
+  repair: "Try saying: My name is _____",
+  
+  // Level 3 (NEW)
+  modelSentence: "My name is Alex.",
+  modelModify: "Now say YOUR name instead of 'Alex'. For example: 'My name is Maria.'"
+}
+```
+
+**UI Integration:**
+```jsx
+// StoryMissionTab.jsx
+const [scaffoldLevel, setScaffoldLevel] = useState(0);
+
+// Level 0: No scaffold
+<input type="text" ... />
+
+// Level 1: Word chips
+{scaffoldLevel >= 1 && (
+  <div className="flex gap-2">
+    {currentHints.map(word => (
+      <button onClick={() => setInput(input + word + ' ')}>{word}</button>
+    ))}
+  </div>
+)}
+
+// Level 2: Sentence starter
+{scaffoldLevel >= 2 && (
+  <p className="text-blue-600">{currentStep.repair}</p>
+)}
+
+// Level 3: Model + modify (NEW)
+{scaffoldLevel >= 3 && (
+  <div className="bg-yellow-50 p-3 rounded">
+    <p className="font-bold">📝 Model: {currentStep.modelSentence}</p>
+    <p className="text-sm mt-1">{currentStep.modelModify}</p>
+  </div>
+)}
+```
+
+**Validation Check:**
+```bash
+# Check if all missions have 3-level scaffolding
+grep -c 'modelSentence:' src/data/missions/week1_easy.js
+# Should return 6 (one per step)
+
+grep -c 'modelModify:' src/data/missions/week1_easy.js
+# Should return 6 (one per step)
+```
+
+---
+
+### 8.8.5. State Persistence (Clarification)
+
+**Two Types of State - Different Purposes:**
+
+**1. Local State (In-Memory, Non-Persistent):**
+- **Managed by:** StoryMissionEngine class
+- **Lifespan:** Current mission session only
+- **Resets when:** Mission restarted, page refreshed, or mission changed
+- **Purpose:** Manage conversation flow, track current context
+- **Contents:**
+  ```javascript
+  this.state = {
+    currentStep: 0,
+    turnsCompleted: 0,
+    vocabularyUsed: new Set(),
+    scaffoldLevel: 1,
+    studentContext: { name, age, teacherName, subject },
+    conversationHistory: []
+  }
+  ```
+
+**2. Global State (Persistent via tutorStore):**
+- **Managed by:** tutorStore (Zustand state)
+- **Lifespan:** Persists across sessions (localStorage)
+- **Purpose:** Track long-term progress, vocabulary mastery
+- **Contents:**
+  ```javascript
+  tutorStore = {
+    missionProgress: {
+      "W1_EASY": { completed: true, stars: 3, turnsUsed: 8 },
+      "W1_NORMAL": { completed: false, lastTurn: 4 }
+    },
+    vocabMastery: {
+      "student": { usageCount: 5, lastUsed: Date.now() },
+      "teacher": { usageCount: 3, lastUsed: Date.now() }
+    },
+    avgTurnsPerMission: 7.5
+  }
+  ```
+
+**Integration Pattern:**
+
+```javascript
+// StoryMissionTab.jsx - When mission completes
+const handleMissionComplete = () => {
+  const summary = engine.getSummary();  // Get local state summary
+  
+  // 1. Update global mission progress
+  completeMission(mission.id, {
+    completed: true,
+    stars: calculateStars(summary.turnsCompleted),
+    turnsUsed: summary.turnsCompleted,
+    vocabularyUsed: Array.from(summary.vocabularyUsed),
+    avgWords: summary.avgWords,
+    timestamp: Date.now()
+  });
+  
+  // 2. Update vocabulary mastery
+  summary.vocabularyUsed.forEach(word => {
+    updateVocabMastery(word, 1); // Increment usage count
+  });
+  
+  // 3. Update average turns
+  updateAvgTurns(summary.turnsCompleted);
+  
+  // 4. Show completion modal
+  setShowSummary(true);
+};
+```
+
+**Key Principle:**
+- ✅ Use **local state** for real-time conversation management
+- ✅ Use **global state** for long-term progress tracking
+- ❌ DON'T persist conversation history (wastes storage)
+- ❌ DON'T use global state for temporary scaffold decisions
+
+---
+
+### 8.8.6. Mass Production Workflow (NEW)
+
+**Complete End-to-End Workflow for 144 Weeks:**
+
+**Prerequisites:**
+- [ ] All 14 station data files exist (read, vocab, grammar, etc.)
+- [ ] Syllabus entry complete for target week
+- [ ] API keys loaded in API keys.txt
+- [ ] Week 19 validated as gold standard
+
+**Step 1: Generate Mission Content**
+```bash
+node tools/generate_story_missions.js <WEEK_ID>
+
+# What it does:
+# 1. Reads syllabus_database.js for week {WEEK_ID}
+# 2. Extracts: theme, grammar focus, vocabulary list, CLIL topic
+# 3. Reads ENGQUEST APP MASTER BLUEPRINT for pedagogy rules
+# 4. Generates 3 mission files:
+#    - week{WEEK_ID}_easy.js (6 steps, 30-40 words/beat, core vocab)
+#    - week{WEEK_ID}_normal.js (6 steps, 35-45 words/beat, full vocab)
+#    - week{WEEK_ID}_challenge.js (8 steps, 40-50 words/beat, bonus vocab)
+
+# Output: src/data/missions/week{WEEK_ID}_*.js
+```
+
+**Content Generation Rules by Level:**
+
+| Level | Steps | Words/Beat | Vocab Scope | Grammar Complexity |
+|-------|-------|-----------|-------------|-------------------|
+| Easy | 6 | 30-40 | Core 50% of week vocab | Simple S-V-O, "and/but" |
+| Normal | 6 | 35-45 | Full week vocab list | Compound sentences |
+| Challenge | 8 | 40-50 | Week vocab + 2-3 bonus | Complex clauses, relative pronouns |
+
+**Step 2: Validate Mission Structure**
+```bash
+node tools/validate_missions.js <WEEK_ID>
+
+# Validation checks (must ALL pass):
+# 1. File existence: 3 mission files present
+# 2. Step count: Easy/Normal=6, Challenge=8
+# 3. Word count: Each beat within limits (30-50 words)
+# 4. Vocabulary: All words from syllabus week only
+# 5. Grammar: NO structures beyond week scope (e.g., no past tense in Week 1)
+# 6. Scaffold: All 3 levels present (hints, repair, modelSentence, modelModify)
+# 7. Success criteria: mustUseWords defined (min 4 words)
+# 8. Placeholders: {{name}}, {{age}}, etc. used correctly
+# 9. Personality: Emojis present, dad jokes included
+# 10. Schema: Matches missionSchema.js structure
+
+# If ANY check fails, script outputs error and stops
+# Fix data files manually, then re-run validation
+```
+
+**Step 3: Generate Audio**
+```bash
+# Create audio task list
+node tools/create_story_mission_audio_tasks.js <WEEK_ID>
+# Output: tools/story_mission_audio_tasks.json (18-24 tasks)
+
+# Generate MP3 files
+export OPENAI_API_KEY="sk-proj-..."  # Or auto-load from API keys.txt
+python3 tools/generate_audio.py --provider openai --voice nova
+# Output: public/audio/week{WEEK_ID}/story_mission_*.mp3 (18-24 files)
+
+# Verify audio count
+ls -1 public/audio/week{WEEK_ID}/story_mission_*.mp3 | wc -l
+# Should be 18 or 24
+```
+
+**Step 4: Integration Test**
+```bash
+# Start dev server
+npm run dev
+
+# Manual testing:
+# 1. Navigate to Week {WEEK_ID} → AI Tutor → Story Mission tab
+# 2. Verify all 3 missions appear in selection screen
+# 3. Start Easy mission:
+#    - Click audio button → Verify Ms. Nova voice plays
+#    - Type response → Verify scaffold hints appear
+#    - Complete 6 turns → Verify completion modal shows
+#    - Check summary stats (vocab used, turns, avg words)
+# 4. Repeat for Normal and Challenge missions
+# 5. Refresh page → Verify progress persists
+# 6. Check localStorage → Verify missionProgress updated
+```
+
+**Step 5: Batch Generation (Weeks 1-144)**
+```bash
+# Generate all 144 weeks
+for week in {1..144}; do
+  echo "🚀 Generating Week $week..."
+  
+  # Generate missions
+  node tools/generate_story_missions.js $week
+  
+  # Validate
+  node tools/validate_missions.js $week
+  if [ $? -ne 0 ]; then
+    echo "❌ Week $week validation failed. Fix and retry."
+    exit 1
+  fi
+  
+  # Generate audio
+  node tools/create_story_mission_audio_tasks.js $week
+  python3 tools/generate_audio.py --provider openai --voice nova
+  
+  echo "✅ Week $week complete"
+  sleep 2  # Rate limit protection
+done
+
+echo "🎉 All 144 weeks generated!"
+```
+
+**Quality Assurance Spot-Check:**
+```bash
+# Test every 10th week (Weeks 10, 20, 30, ..., 140)
+for week in {10..140..10}; do
+  npm run dev
+  # Manual test: Complete 1 mission from week
+  # Verify: Grammar scope correct, vocab tracked, audio plays
+done
+```
+
+**Validation Checklist (Per Week):**
+- [ ] 3 mission files created
+- [ ] All missions use ONLY week syllabus vocab
+- [ ] aiPrompt word count: 30-50 per beat
+- [ ] All hints from grammarAllowed list
+- [ ] Audio files generated (18-24 MP3s)
+- [ ] Missions completable in app
+- [ ] Progress persists on refresh
+- [ ] Vocabulary mastery updates in tutorStore
+
+---
+
+## 8.9. Content Differentiation - Advanced vs Easy Mode (UPDATED)
+
+### 8.9.1. Critical Requirements
+
+**Easy Mode ≠ Shortened Advanced Mode**
+
+Easy mode serves students who need:
+- ✅ **Different content** (not just shorter text)
+- ✅ **More scaffolding** (not less content)
+- ✅ **Simpler vocabulary** (not truncated sentences)
+- ✅ **Different examples** (familiar vs abstract)
+
+**Example - Logic Lab Pattern:**
+```javascript
+// Advanced Mode:
+question_en: "Teacher says: star, moon, star, moon, star. What comes next?"
+// Pattern items: Celestial objects (more abstract)
+
+// Easy Mode:
+question_en: "Teacher says: apple, banana, apple, banana. What is next?"
+// Pattern items: Familiar foods (concrete, daily life)
+// ✅ DIFFERENT items, NOT just shorter sentence
+```
+
+**Example - Ask AI Context:**
+```javascript
+// Advanced Mode (25 words):
+context_en: "You see a photo. Children go to school. Some walk. Some ride bikes. You want to know HOW they go to school. How do you ask?"
+answer: ["How do they go to school?", "How do children go to school?", "How do you go to school?"]
+// ✅ 3 structural variations
+
+// Easy Mode (18 words):
+context_en: "You see a photo. Children go to school. You want to know HOW. How do you ask?"
+answer: ["How do they go to school?", "How?"]
+// ✅ First answer COMPLETE, second simplified
+// ❌ WRONG: answer: ["How?", "How do?"] - incomplete first answer
+```
+
+### 8.9.2. Symbol Prohibition (CRITICAL)
+
+**Logic Lab Rules:**
+- ❌ **NEVER** use emoji/symbols in question text: ⭐🌙🔺⬜❤️🎨
+- ✅ **ALWAYS** write out words: "star, moon, triangle, square"
+- ✅ **ALWAYS** provide audio of teacher reading pattern aloud
+
+**Why:**
+- Symbols bypass listening practice (student just looks and clicks)
+- Violates audio-first learning principle
+- Students must HEAR pattern via audio, SPEAK answer aloud
+
+**Exception - Images Only:**
+- Vocab images CAN use symbols/illustrations (learning aid)
+- Word Power images CAN show visual concepts
+- BUT question/answer TEXT must be words, not symbols
+
+### 8.9.3. Answer Completeness (Easy Mode)
+
+**Rule:** First answer in Easy mode MUST be a complete sentence.
+
+❌ **WRONG:**
+```javascript
+answer: ["How?", "How do they go?"]
+// First answer incomplete - doesn't teach correct structure
+```
+
+✅ **CORRECT:**
+```javascript
+answer: ["How do they go to school?", "How?"]
+// First answer complete (teaching), second simplified (acceptable alternate)
+```
+
+**Rationale:**
+- Easy mode students need explicit models of correct grammar
+- First answer serves as template for their production
+- Shortened versions acceptable as alternatives, not primary
+
+### 8.9.4. Differentiation Strategy Table
+
+| Aspect | Advanced Mode | Easy Mode |
+|--------|--------------|-----------|
+| **Ask AI Context** | 20-25 words | 15-18 words |
+| **Sentence structure** | 10 words/sentence | 5 words/sentence |
+| **Answer variations** | 3-4 variations | 2 variations (first complete) |
+| **Vocabulary** | Full syllabus week | Core 50% of week |
+| **Scaffold detail** | "You want to know HOW they go" | "You want to know HOW" |
+| **Logic Lab numbers** | 1-10 (Week 1-4) | 1-5 preferred |
+| **Logic Lab operations** | 5×2=10 | 3×2=6 |
+| **Logic Lab items** | Abstract (star/moon) | Familiar (apple/banana) |
+| **Pattern complexity** | 2-3 item sequences | 2-item sequences only |
+
+### 8.9.5. Validation Checklist
+
+Before finalizing ANY content:
+- [ ] **Symbol check:** Grep question_en for emoji/symbols
+  ```bash
+  grep -E '⭐|🌙|🔺|⬜|❤️|🎨' src/data/weeks_easy/week1/logic.js
+  # Should return EMPTY (no matches)
+  ```
+
+- [ ] **Pattern check (Easy):** Does Easy use DIFFERENT items than Advanced?
+  ```bash
+  # Advanced: "star, moon"
+  # Easy: "apple, banana" (NOT "star, moon")
+  ```
+
+- [ ] **Answer check (Easy):** Is first answer complete?
+  ```bash
+  # First answer should be full sentence with all key nouns
+  answer: ["How do they go to school?", ...]  ✅
+  answer: ["How?", "How do they go?"]  ❌
+  ```
+
+- [ ] **Answer variety (Advanced):** Are there 3+ variations?
+  ```bash
+  answer: ["How do they go to school?", "How do children go to school?", "How do you go to school?"]  ✅
+  answer: ["How do they go to school?"]  ❌ (need more variations)
+  ```
+
+- [ ] **Audio check:** Does text make sense when read aloud (no symbols)?
+  ```bash
+  # Read question_en aloud
+  # If you say emoji name ("star emoji") instead of word → WRONG
+  ```
+
+---
+
+## 📍 UPDATE 3: COST ESTIMATION TABLE (Replace in Section 0.6)
+
+**Location:** Search for "Cost Estimation (Updated December 2025)"
+
+**REPLACE OLD TABLE WITH:**
+
+```
+**Cost Estimation (Updated December 2025):**
+
+### Option A: Imagen 3 Fast (RECOMMENDED)
+- **Images:** $0.01/image (Imagen 3 Fast)
+  - Advanced mode: 15 images/week × $0.01 = $0.15
+  - Easy mode: ~5 images/week (reuses 10 vocab) × $0.01 = $0.05
+  - **Total per week:** $0.20/week
+  - **Week 1-144:** 144 × $0.20 = **$28.80**
+
+- **Audio:** Google TTS Neural2 - $16/1M characters, FREE tier 1M chars/month
+  - Average week: ~50,000 characters (both modes)
+  - Total Week 1-144: ~7.2M characters = $115.20
+  - **BUT:** Free tier covers first month (1M chars) = **$19.20 savings**
+  - **Cost:** ~$96 (after free tier)
+
+- **Videos:** YouTube Data API v3 - FREE tier 10K queries/day
+  - 5 videos/week × 144 weeks = 720 queries
+  - **Cost:** $0 (within free tier)
+
+**TOTAL (Option A):** $28.80 (images) + $96 (audio) + $0 (videos) = **$124.80**
+
+---
+
+### Option B: Imagen 3 (Current)
+- **Images:** $0.02/image (Imagen 3)
+  - **Week 1-144:** 144 × $0.40 = **$57.60**
+- **Audio:** Same as Option A = $96
+- **Videos:** Same as Option A = $0
+
+**TOTAL (Option B):** $57.60 + $96 + $0 = **$153.60**
+
+---
+
+### Option C: Imagen 4 (NOT Recommended)
+- **Images:** $0.04/image (Imagen 4)
+  - **Week 1-144:** 144 × $0.80 = **$115.20**
+- **Audio:** Same as Option A = $96
+- **Videos:** Same as Option A = $0
+
+**TOTAL (Option C):** $115.20 + $96 + $0 = **$211.20**
+
+---
+
+### Cost Comparison Summary
+
+| Option | Images | Audio | Videos | **TOTAL** | Savings vs Current |
+|--------|--------|-------|--------|----------|-------------------|
+| **A: Imagen 3 Fast (RECOMMENDED)** | $28.80 | $96 | $0 | **$124.80** | **-$28.80 (18%)** |
+| B: Imagen 3 (Current) | $57.60 | $96 | $0 | **$153.60** | baseline |
+| C: Imagen 4 (Overkill) | $115.20 | $96 | $0 | **$211.20** | +$57.60 (37%) |
+
+**Recommendation:** Switch to **Imagen 3 Fast** to save $28.80 (18% reduction) with minimal quality impact.
+```
+
+---
+
+## 📍 UPDATE 4: STORY MISSION AUDIO IN ASSET GENERATION
+
+**Location:** Section 0.6 - "Step 5: Generate ALL Assets"
+
+**ADD AFTER** video generation step:
+
+```
+echo "🎵 Step 4/4: Generating Story Mission audio for Week $WEEK_ID..."
+node tools/create_story_mission_audio_tasks.js $WEEK_ID
+python3 tools/generate_audio.py --provider openai --voice nova
+if [ $? -ne 0 ]; then echo "❌ Story Mission audio generation failed"; exit 1; fi
+```
+
+---
+
+## 📍 END OF UPDATES
+
+**Summary of Changes:**
+1. ✅ Added Imagen 3 Fast pricing ($0.01/image, 50% savings)
+2. ✅ Added Story Mission data structure documentation
+3. ✅ Updated AI beat length rules (30-50 words for Story Mission)
+4. ✅ Added Story Mission audio generation workflow
+5. ✅ Completed 3-level scaffold system documentation
+6. ✅ Clarified state persistence (local vs global)
+7. ✅ Added mass production workflow for Story Missions
+8. ✅ Added content differentiation rules (Advanced vs Easy)
+9. ✅ Updated cost estimation tables
+
+**Total New Lines Added:** ~850 lines
+
+**To Apply Updates:**
+1. Open `4. ENGQUEST MASTER PROMPT V23-FINAL.txt`
+2. Search for sections mentioned in "Location:" fields
+3. Insert/replace content as indicated
+4. Save file
+5. Verify line count: Should be ~4,150 lines after updates
+
+**Validation:**
+```bash
+# Check updated prompt has Story Mission sections
+grep -c "Story Mission" "4. ENGQUEST MASTER PROMPT V23-FINAL.txt"
+# Should be >30 matches
+
+# Check Imagen 3 Fast mentioned
+grep "Imagen 3 Fast" "4. ENGQUEST MASTER PROMPT V23-FINAL.txt"
+# Should find pricing table
+```

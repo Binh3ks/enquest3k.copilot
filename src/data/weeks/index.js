@@ -1,6 +1,12 @@
 // SMART INDEX SYSTEM - AUTO GENERATED
-const advModules = import.meta.glob('./week_*.js', { eager: true });
-const easyModules = import.meta.glob('../weeks_easy/week_*.js', { eager: true });
+const advModules = {
+  ...import.meta.glob('./week_*/index.js', { eager: true }),
+  ...import.meta.glob('./week_*.js', { eager: true })  // Keep flat files as fallback
+};
+const easyModules = {
+  ...import.meta.glob('../weeks_easy/week_*.js', { eager: true }),
+  ...import.meta.glob('../weeks_easy/**/index.js', { eager: true })
+};
 
 const processModules = () => {
   const weeksMap = new Map();
@@ -9,8 +15,11 @@ const processModules = () => {
     const data = mod.default || mod;
     if (data && data.weekId) {
       const id = data.weekId;
-      const easyPath = `../weeks_easy/week_${String(id).padStart(2, '0')}.js`;
-      const easyMod = easyModules[easyPath];
+      // Try both flat file and folder/index.js patterns for easy modules
+      const pad = String(id).padStart(2, '0');
+      const easyPathFile = `../weeks_easy/week_${pad}.js`;
+      const easyPathIndex = `../weeks_easy/week_${pad}/index.js`;
+      const easyMod = easyModules[easyPathFile] || easyModules[easyPathIndex];
       const dataEasy = easyMod ? (easyMod.default || easyMod) : null;
 
       weeksMap.set(id, {

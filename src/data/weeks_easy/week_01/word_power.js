@@ -2,39 +2,39 @@ export default {
   words: [
     {
       id: 1,
-      word: "do homework",
-      pronunciation: "/duː ˈhoʊmwɜːrk/",
+      word: "my friend",
+      pronunciation: "/maɪ frend/",
       cefr_level: "A1",
-      definition_en: "To complete school assignments at home.",
-      definition_vi: "Hoàn thành bài tập ở nhà.",
-      example: "I do my homework every evening after dinner.",
-      model_sentence: "Every student should do homework to practice what they learned in class.",
-      collocation: "do your homework",
-      image_url: "/images/week1/wordpower_do_homework.jpg"
+      definition_en: "The person you like.",
+      definition_vi: "Người bạn của tôi.",
+      example: "This is my friend.",
+      model_sentence: "My friend is nice and kind.",
+      collocation: "my good friend",
+      image_url: "/images/week1_easy/wordpower_my_friend.jpg"
     },
     {
       id: 2,
-      word: "go to school",
-      pronunciation: "/ɡoʊ tə skuːl/",
+      word: "on the desk",
+      pronunciation: "/ɑn ðə desk/",
       cefr_level: "A1",
-      definition_en: "To travel to school to attend classes.",
-      definition_vi: "Đi đến trường để học.",
-      example: "I go to school by bus every morning.",
-      model_sentence: "Children go to school five days a week to learn new things.",
-      collocation: "go to school early",
-      image_url: "/images/week1/wordpower_go_to_school.jpg"
+      definition_en: "At the top of a table.",
+      definition_vi: "Trên bàn.",
+      example: "My pen is on the desk.",
+      model_sentence: "Put your bag on the desk.",
+      collocation: "on my desk",
+      image_url: "/images/week1_easy/wordpower_on_the_desk.jpg"
     },
     {
       id: 3,
-      word: "pay attention",
-      pronunciation: "/peɪ əˈtenʃən/",
-      cefr_level: "A2",
-      definition_en: "To focus and listen carefully to something.",
-      definition_vi: "Tập trung và lắng nghe cẩn thận.",
-      example: "I always pay attention when my teacher is talking.",
-      model_sentence: "Students should pay attention in class to understand the lesson better.",
-      collocation: "pay close attention",
-      image_url: "/images/week1/wordpower_pay_attention.jpg"
+      word: "in the box",
+      pronunciation: "/ɪn ðə bɑks/",
+      cefr_level: "A1",
+      definition_en: "Inside a container.",
+      definition_vi: "Trong hộp.",
+      example: "The toy is in the box.",
+      model_sentence: "Put your pen in the box.",
+      collocation: "in a big box",
+      image_url: "/images/week1_easy/wordpower_in_the_box.jpg"
     }
   ]
 };
