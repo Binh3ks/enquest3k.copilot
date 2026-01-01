@@ -64,6 +64,21 @@ export function buildTutorContext(weekData, mode, options = {}) {
     mode
   };
   
+  // Inject checklist/tips for week 2
+  if (weekId === 2) {
+    context.checklist = [
+      "Use 'This is my...' to introduce each family member.",
+      "Ask and answer about roles, characteristics, and activities of each person in the family.",
+      "Practice listening, speaking, shadowing, word power, logic lab, and daily watch.",
+      "Use all new vocabulary and sentence patterns from Week 2."
+    ];
+    context.tips = [
+      "Try to describe your family as a team. Who is the leader? Who helps?",
+      "Practice saying each sentence out loud, then try with your own family photo.",
+      "Ask your AI Tutor to quiz you on family roles and vocabulary!"
+    ];
+  }
+  
   return context;
 }
 

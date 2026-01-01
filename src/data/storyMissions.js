@@ -3,6 +3,10 @@
  * Week 1 missions following Learning Role-play spec
  */
 
+import week2FamilyIntroduction from './missions/week2_family_introduction';
+import week2FamilyRoles from './missions/week2_family_roles';
+import week2FamilyActivities from './missions/week2_family_activities';
+
 export const Week1Missions = [
   {
     id: 'W1_FIRST_DAY',
@@ -149,12 +153,23 @@ export const Week1Missions = [
 ];
 
 /**
+ * Week 2 missions - Family themed
+ */
+export const Week2Missions = [
+  week2FamilyIntroduction,
+  week2FamilyRoles,
+  week2FamilyActivities
+];
+
+/**
  * Get missions for a specific week
  */
 export function getMissionsForWeek(weekId) {
-  // For now, only Week 1 missions
   if (weekId === 1) {
     return Week1Missions;
+  }
+  if (weekId === 2) {
+    return Week2Missions;
   }
   return [];
 }
@@ -163,5 +178,6 @@ export function getMissionsForWeek(weekId) {
  * Get mission by ID
  */
 export function getMissionById(missionId) {
-  return Week1Missions.find(m => m.id === missionId);
+  const allMissions = [...Week1Missions, ...Week2Missions];
+  return allMissions.find(m => m.id === missionId);
 }

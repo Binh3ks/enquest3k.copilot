@@ -35,7 +35,7 @@ export const ChatResponseSchema = {
  */
 export const StoryMissionSchema = {
   type: 'object',
-  required: ['story_beat', 'task', 'required_vocab'],
+  required: ['story_beat', 'task'],
   properties: {
     story_beat: {
       type: 'string',

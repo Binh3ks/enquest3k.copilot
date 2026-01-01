@@ -1,6 +1,6 @@
 // DIGITAL SYLLABUS - MAPPING
 const syllabusDB = {
-  1: { title: "The Young Scholar", grammar: ["Subject Pronouns", "Verb to be"], math: ["Counting 1-10"], science: ["Scientist tools"], topic: ["School supplies"] },
+  1: { title: "The Young Scholar", grammar: ["Subject Pronouns", "Verb to be"], math: ["Counting 1-10"], science: ["Scientist tools"], topic: ["School day", "Student life"] },
   2: { title: "Family Observation", grammar: ["Family sentences"], math: ["Counting family"], science: ["Life cycle"], topic: ["Family members"] },
   3: { title: "Observing Differences", grammar: ["Adjectives"], math: ["Height"], science: ["Senses"], topic: ["Appearance"] },
   4: { title: "My Interests", grammar: ["Likes/Dislikes"], math: ["Sorting"], science: ["Healthy habits"], topic: ["Hobbies"] },
