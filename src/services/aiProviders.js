@@ -38,6 +38,11 @@ async function callGemini(prompt) {
 async function callGroq(prompt) {
   if (!GROQ_KEY) throw new Error('No Groq API key');
   
+  // Force JSON output by adding instruction
+  const jsonPrompt = prompt.includes('JSON:') 
+    ? prompt + '\n\nIMPORTANT: Return ONLY valid JSON, no markdown, no explanation.'
+    : prompt;
+  
   const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -46,9 +51,10 @@ async function callGroq(prompt) {
     },
     body: JSON.stringify({
       model: 'llama-3.1-8b-instant',
-      messages: [{ role: 'user', content: prompt }],
-      max_tokens: 150, // Reduced from 300
-      temperature: 0.7 // Reduced from 0.8 for faster response
+      messages: [{ role: 'user', content: jsonPrompt }],
+      max_tokens: 150,
+      temperature: 0.7,
+      response_format: { type: "json_object" } // Force JSON mode
     })
   });
   
@@ -114,33 +120,86 @@ export async function callAI(prompt, type = 'chat') {
 export async function chatAI(userMessage, ctx = {}) {
   const weekId = ctx.weekId || 1;
   const topic = ctx.scenario?.title || ctx.weekInfo?.topic?.[0] || 'English';
-  const vocab = (ctx.vocabList || []).slice(0, 5).map(v => v.word).join(', ');
+  const grammar = ctx.weekInfo?.grammar?.join(', ') || 'basic grammar';
+  const vocab = (ctx.vocabList || []).slice(0, 8).map(v => v.word).join(', ');
   const level = weekId <= 14 ? 'beginner' : weekId <= 50 ? 'intermediate' : 'advanced';
   
   const history = (ctx.conversationHistory || [])
-    .map(m => `${m.role === 'user' ? 'Student' : 'Tutor'}: ${m.content}`)
+    .map(m => `${m.role === 'user' ? 'Student' : 'Nova'}: ${m.content}`)
     .join('\n');
 
-  const prompt = level === 'beginner'
-    ? `Warm tutor for 6-year-old (Week ${weekId}: "${topic}").
+  // FREE TALK MODE - Ms. Nova "Off-Duty" (Connection over Correction)
+  if (ctx.mode === 'free_talk') {
+    const prompt = `You are Ms. Nova (off-duty) chatting with a 6-12 year old Vietnamese kid learning English.
+
+🎯 VIBE: Cool big sister. Listen, react, ask simple stuff. NO teaching/correcting.
+
+📚 CONTEXT (Week ${weekId} - ${topic}):
+Vocab: ${vocab}
+Grammar: ${grammar}
 
 ${history}
 Student: ${userMessage}
 
-Reply naturally in 1 short sentence. Stay on topic "${topic}". Ask 1 simple question about "${topic}".
+🔥 RULES:
+1) MAX 10 words. Simple present ONLY (I am, you are, he/she is, do/does).
+2) React FIRST → Ask SECOND. Stay on topic.
+3) A/B questions ONLY ("Mom or Dad?", "Pizza or burger?", "Good or bad?").
+4) Emoji every reply. Active listening ("Wow!", "Cool!", "Oh!").
+
+Examples:
+👉 Student: "I am happy!"
+   Nova: "You are happy! 😊 Why? School or home?"
+
+👉 Student: "School!"
+   Nova: "Cool! 🏫 What do you like? Desk or playground?"
+
+👉 Student: "Playground!"
+   Nova: "Fun! 🤩 Do you play football or hide?"
+
+Stay on topic. If they say school, ask about SCHOOL. If family, ask FAMILY. Don't jump around.
+
+Nova:`;
+    
+    return callAI(prompt, 'chat', ctx.temperature || 0.75);
+  }
+
+  // ORIGINAL TEACHING MODE (when not free_talk)
+  const prompt = level === 'beginner'
+    ? `You are a warm English tutor for 6-year-old Vietnamese ESL students (Week ${weekId}: "${topic}").
+
+📚 Week Focus:
+- Grammar: ${grammar}
+- Key words: ${vocab}
+
+${history}
+Student: ${userMessage}
+
+Instructions:
+- Reply naturally in 1 SHORT sentence (max 10 words)
+- Use simple grammar (present simple only: I am, you are, he/she is)
+- Try to use week vocabulary: ${vocab}
+- Ask 1 simple question about "${topic}"
+- Be encouraging and warm
+
 Tutor:`
     : level === 'intermediate'
-    ? `Friendly tutor (Week ${weekId}). Topic: ${topic}
+    ? `You are a friendly English tutor (Week ${weekId}: "${topic}").
+
+Week vocabulary: ${vocab}
+Grammar: ${grammar}
 
 ${history}
 Student: ${userMessage}
 
-Reply in 2-3 sentences. End with question.
+Reply in 2-3 sentences using week vocabulary. End with a question.
 Tutor:`
-    : `Week ${weekId}. ${history}
+    : `Week ${weekId} tutor. Topic: ${topic}. Vocab: ${vocab}
+
+${history}
 Student: ${userMessage}
 
-Reply naturally. Ask follow-up.
+Reply naturally using week vocabulary. Ask follow-up question.
 Tutor:`;
 
   return callAI(prompt, 'chat');

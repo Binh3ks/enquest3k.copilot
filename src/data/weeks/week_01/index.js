@@ -14,17 +14,19 @@ import mindmap from './mindmap.js';
 
 const weekData = {
   weekId: 1,
+  isEasy: false,
   weekTitle_en: "The Young Scholar",
   weekTitle_vi: "Học Sinh Trẻ",
   grammar_focus: "Subject Pronouns & Verb to be",
   global_vocab: vocab.vocab,
   // ⚠️ MANDATORY: voiceConfig for unique voices per week
+  // Week 1 Advanced: US voices only (scaffolding - simpler accent for beginners)
   voiceConfig: {
-    narration: 'en-GB-Neural2-A',    // UK Male, clear for first week stories
-    vocabulary: 'en-AU-Neural2-B',   // AU Female, friendly for vocab
+    narration: 'en-US-Neural2-D',    // US Male, clear for first week stories
+    vocabulary: 'en-US-Neural2-F',   // US Female, friendly for vocab
     dictation: 'en-US-Neural2-F',    // US Female, neutral for dictation
-    questions: 'en-GB-Neural2-C',    // UK Female for logic/ask_ai
-    mindmap: 'en-AU-Neural2-A'       // AU Male for mindmap branches
+    questions: 'en-US-Neural2-D',    // US Male for logic/ask_ai
+    mindmap: 'en-US-Neural2-D'       // US Male for mindmap branches
   },
   stations: {
     read_explore: read,

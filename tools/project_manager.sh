@@ -252,6 +252,75 @@ run_app() {
   npm run dev
 }
 
+# ---------- 5) MEMORY & CONTEXT ----------
+run_memory_context() {
+  say "5) GHI MEMORY & BUILD CONTEXT (HOÀN CHỈNH)"
+  need_cmd node
+  
+  # Check if scripts exist
+  [[ -f "${PROJECT_ROOT}/scripts/add-memory.mjs" ]] || fail "scripts/add-memory.mjs not found"
+  [[ -f "${PROJECT_ROOT}/scripts/add-chat-insights.mjs" ]] || fail "scripts/add-chat-insights.mjs not found"
+  [[ -f "${PROJECT_ROOT}/scripts/build-context.mjs" ]] || fail "scripts/build-context.mjs not found"
+  
+  # Step 1: Add chat session insights
+  say "🧠 BƯỚC 1: Thêm insights từ chat sessions..."
+  node "${PROJECT_ROOT}/scripts/add-chat-insights.mjs" || warn "Some chat insights may have failed"
+  
+  # Step 2: Add core project memories
+  say "📝 BƯỚC 2: Thêm core project memories..."
+  
+  # Array of all critical memories to save
+  local memories=(
+    "Decision: AI Tutor conversation flow fixed - Turn order now: Name → Age → Teacher → Subject → Friends → Classroom → What you like (natural progression)"
+    "Decision: AI Tutor now uses 3-part teacher personality pattern - (1) Specific acknowledgment (2) Encouragement (3) Contextual next question. No more robotic responses."
+    "Fact: 4 files modified for AI Tutor fix - tutorPrompts.js (turn logic), week1.js (conversation structure), StoryMissionTab.jsx (hints matching), responseGenerator.js (acknowledgment patterns)"
+    "Rule: Week 1 grammar MUST be Present Simple only (I am, you are, is/are, have/has, my/your). NO past tense, NO future tense, NO complex clauses in Phase 1 (Weeks 1-14)."
+    "Constraint: Hints in StoryMissionTab.jsx MUST match the exact question being asked. Use getCurrentHints() function with question text matching logic."
+    "Fact: Week 1-2 data complete with full station structure. Week 2 has Advanced (Family Observation) + Easy (My Family Squad) modes with UK voice config. Week 3-17 are MISSING (15 weeks need generation). Week 18-21 are complete."
+    "Fact: Week 2 structure complete - Advanced: Present Continuous & Questions, Easy: This is my... (Possession). Both modes have 14 station files, UK voice config (en-GB-Neural2-A/C), and AI Tutor specific checklist."
+    "Constraint: Week 1 voiceConfig is identical to Week 19 (CRITICAL BUG). Must regenerate Week 1 audio with unique voiceConfig per MANDATORY rule in Master Prompt V23."
+    "Decision: Progress tracking UI missing - Need to implement toast notifications, progress indicators in sidebar, auto-save animation, and Continue Learning feature. Logic exists in progressHelper.js but no visual feedback."
+    "Fact: Master Prompt V23 is production-ready (3,040 lines) - All Week 1 errors documented and fixed, single-command asset generation enabled, pre-flight validation added, automated fix scripts documented."
+    "Constraint: Google Cloud TTS API not enabled yet (project 153898303209). Need to enable before regenerating Week 1 audio assets."
+    "Decision: Implementation Plan timeline - Day 1: Foundation fixes (Week 1 + API setup), Day 2-3: Mass generation Week 3-17 (15 weeks), Day 4: Testing + polish. Target completion: Jan 2, 2026."
+    "Rule: AI Tutor must read Syllabus (1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt) and Blueprint (2. ENGQUEST APP MASTER BLUEPRINT-FINAL copy.txt) to understand grammar scope and vocabulary for each week."
+    "Fact: AI Tutor Phase 2 MVP complete - 3 Story Missions for Week 1 (First Day, Lost Backpack, Library) with turn-by-turn conversation, scaffolding system, vocab tracking. Known issue: Turn 2 was hardcoded (now fixed with natural flow)."
+    "Decision: User progress saved in localStorage with keys: engquest_current_user, engquest_users_db, engquest_station_<weekId>_<stationKey>, engquest-tutor-storage. Main files: progressHelper.js, userStorage.js, stationStateHelper.js, tutorStore.js."
+    "Rule: Easy mode vs Advanced mode - Easy uses personal/immediate context with Tier 1 vocab and simple grammar. Advanced uses global/abstract context with Tier 2/3 vocab and complex grammar."
+    "Constraint: Week 1 Easy mode changed topic instead of simplifying (CRITICAL ERROR). Easy mode must use same topic as Advanced but with simpler vocabulary and grammar."
+    "Decision: Week 2 Easy mode correctly implements family topic with simpler grammar (This is my...) vs Advanced (Present Continuous). Both share family context but different complexity levels."
+    "Discovery: copilot-context.md outdated - Shows Week 2-17 MISSING but Week 2 actually complete with full structure (Advanced + Easy modes, voice config, AI Tutor checklist)."
+    "Decision: Memory system needs chat session insights capture - Important discussions, design decisions, and implementation considerations from chat sessions must be preserved in memory for future reference."
+    "Fact: Week 2 has unique AI Tutor features - Special checklist in AITutor.jsx (line 1053) with tips and learning objectives specific to family vocabulary and Present Continuous grammar."
+    "Rule: Context rebuild required after major discoveries - When significant gaps found between documentation and reality, immediate context rebuild needed to sync copilot knowledge with actual project state."
+    "Discovery: Week 2 audio tasks generated in tools/audio_tasks.json for mindmap branches (week2_easy) - Shows asset generation pipeline working for completed weeks."
+    "Constraint: Memory entries in project_manager.sh were hardcoded and outdated - Need dynamic system to capture real-time project insights and decisions from active development sessions."
+    "Decision: Manual memory curation essential - Critical insights from chat sessions about project structure, implementation gaps, and strategic decisions must be manually reviewed and added to memory system."
+  )
+  
+  # Add each memory
+  local count=0
+  for memory in "${memories[@]}"; do
+    node "${PROJECT_ROOT}/scripts/add-memory.mjs" "${memory}" >/dev/null 2>&1 && ((count++)) || warn "Failed: ${memory:0:50}..."
+  done
+  
+  ok "✅ Đã ghi ${count}/${#memories[@]} memory entries vào docs/memory.md"
+  
+  # Step 3: Build context
+  say "🔄 BƯỚC 3: Build copilot-context.md từ tất cả sources..."
+  node "${PROJECT_ROOT}/scripts/build-context.mjs" || fail "Failed to build context"
+  ok "Context đã được build: copilot-context.md"
+  
+  # Summary
+  ok "🎯 HOÀN TẤT! Tất cả đã được cập nhật:"
+  echo "   ✅ Chat insights đã lưu vào memory"
+  echo "   ✅ Core memories đã cập nhật" 
+  echo "   ✅ Context đã rebuild hoàn chỉnh"
+  echo ""
+  echo "📋 Sẵn sàng cho phiên chat mới:"
+  echo "   @workspace #file:copilot-context.md"
+}
+
 # ---------- MENU ----------
 show_menu() {
   cat <<'EOF'
@@ -263,6 +332,7 @@ show_menu() {
 2) Restore (Khôi phục an toàn bằng rsync)
 3) FIX (Reinstall + Tailwind v4 + PostCSS config)
 4) Chạy App (npm run dev)
+5) Ghi Chat Insights + Memory + Build Context
 q) Thoát
 ------------------------------------------
 EOF
@@ -279,6 +349,7 @@ main() {
       2) run_restore ;;
       3) run_fix ;;
       4) run_app ;;
+      5) run_memory_context ;;
       q) exit 0 ;;
       *) warn "Lựa chọn không hợp lệ. Vui lòng thử lại." ;;
     esac

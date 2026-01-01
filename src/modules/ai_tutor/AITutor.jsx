@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, X, BrainCircuit, Mic, MicOff, Loader2, MessageCircle, Volume2, Play, Shuffle, BookText, Sword, PenTool, Award, CheckCircle, XCircle, RotateCcw, Calculator, FlaskConical } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { generateTTSWithCache } from '../../services/tts';
 import syllabusDB from '../../data/syllabus_database';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { 
@@ -14,6 +15,7 @@ import {
   getStoryTopics
 } from '../../services/aiProviders';
 import StoryMissionTab from './tabs/StoryMissionTab';
+import { week2TutorChecklist } from '../../services/aiTutor/tutorPrompts';
 
 const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -192,6 +194,8 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
       recognitionRef.current.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setChatInput(transcript);
+        setIsChatListening(false);
+        handleSendChat(transcript);
       };
       recognitionRef.current.start();
       setIsChatListening(true);
@@ -249,30 +253,91 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
     }
   };
 
-  // CHAT HANDLERS
-  const startRolePlay = (scenario) => {
-    setRolePlayScenario(scenario);
-    setActiveScenario(scenario);
-    setTurnCount(0);
-    
-    // Simple openings - 1 short question
-    const openings = {
-      school: "What do you do at school?",
-      family: "How many people are in your family?",
-      math: "Let's count! How many pencils do you have?",
-      restaurant: "What would you like to eat?",
-      navigation: "Where do you want to go?",
-      shopping: "What do you want to buy?",
-      social: "Hi! What's your name?",
-      health: "Do you feel healthy?"
+  // FREE TALK HANDLERS (Ms. Nova Off-Duty Mode)
+  const startFreeTalk = () => {
+    // Free Talk opening - friendly, personal, week-aware but natural
+    const getFreeTalkOpening = () => {
+      const baseGreetings = [
+        "Hello! 👋 I am happy to see you! How are you today?",
+        "Hi! 😊 I feel great today! How do you feel?",
+        "Hey! 🌟 I like talking with you! How are you?"
+      ];
+      
+      // Add week-aware flavor (simple present)
+      if (weekId === 1) {
+        return "Hey! 👋 You start school! How do you feel about it?";
+      } else if (weekId === 2 && vocabList.some(v => ['family', 'mother', 'father'].includes(v.word?.toLowerCase()))) {
+        return "Hi! 🌟 Tell me about your family! Do you have brothers or sisters?";
+      }
+      
+      return baseGreetings[Math.floor(Math.random() * baseGreetings.length)];
     };
-    const startMsg = openings[scenario.context] || scenario.title;
+    
+    const startMsg = getFreeTalkOpening();
+    const startMood = deriveMood(startMsg);
+    const startHints = ["I am happy!", "I am tired.", "I am hungry."];
     messageHistoryRef.current = [];
-    setChatMessages([{ role: 'ai', text: startMsg }]);
+    setChatMessages([{ role: 'ai', text: startMsg, mood: startMood, hints: startHints }]);
     messageHistoryRef.current.push({ role: 'assistant', content: startMsg });
     
-    // TTS immediately on open
+    // TTS immediately
     speakText(startMsg);
+  };
+
+  // Helper: derive mood emoji from response text
+  const deriveMood = (text) => {
+    const lower = text?.toLowerCase() || '';
+    if (lower.includes('wow') || lower.includes('amazing') || lower.includes('great')) return '🤩';
+    if (lower.includes('fun') || lower.includes('cool')) return '😎';
+    if (lower.includes('sorry') || lower.includes('oh no')) return '🥺';
+    if (lower.includes('haha') || lower.includes('funny')) return '😂';
+    if (lower.includes('love') || lower.includes('like')) return '😊';
+    return '🙂';
+  };
+
+  // Helper: create short reply chips (scaffolding)
+  const createHints = (responseText) => {
+    const lower = (responseText || '').toLowerCase();
+    
+    // Generate A/B hints based on AI's question
+    if (lower.includes('how are you') || lower.includes('how do you feel')) {
+      return ['💡 I am happy!', '💡 I am tired.', '💡 I am good.'];
+    }
+    if (lower.includes('school')) {
+      if (lower.includes('good or bad')) return ['💡 Good!', '💡 Bad.'];
+      if (lower.includes('desk or playground')) return ['💡 I like desk.', '💡 I like playground.'];
+      return ['💡 My school is good.', '💡 I like my class.'];
+    }
+    if (lower.includes('mom') || lower.includes('dad')) {
+      return ['💡 My mom.', '💡 My dad.', '💡 My family.'];
+    }
+    if (lower.includes('brother') || lower.includes('sister')) {
+      return ['💡 Yes, I have!', '💡 No, I don\'t.'];
+    }
+    if (lower.includes('pizza') || lower.includes('burger')) {
+      return ['💡 Pizza!', '💡 Burgers!'];
+    }
+    if (lower.includes('play') || lower.includes('game')) {
+      return ['💡 Football!', '💡 Basketball!', '💡 Hide and seek!'];
+    }
+    
+    return ['💡 Yes!', '💡 No!', '💡 Tell me more!'];
+  };
+
+  const playOnlineTTS = async (text) => {
+    try {
+      const audioBlob = await generateTTSWithCache(text, { voice: 'shimmer', speed: 1.0 });
+      if (!audioBlob) return false;
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      await audio.play();
+      audio.onended = () => URL.revokeObjectURL(audioUrl);
+      audio.onerror = () => URL.revokeObjectURL(audioUrl);
+      return true;
+    } catch (e) {
+      console.warn('[Free Talk] Online TTS failed:', e);
+      return false;
+    }
   };
 
   const generateResponse = async (userMsg) => {
@@ -298,41 +363,49 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
     }
   };
 
-  const handleSendChat = async () => {
-    if (!chatInput.trim() || chatLoading) return;
-    const userMsg = chatInput;
+  const limitWords = (text, maxWords = 12) => {
+    const parts = (text || '').split(/\s+/).filter(Boolean);
+    if (parts.length <= maxWords) return parts.join(' ');
+    return parts.slice(0, maxWords).join(' ');
+  };
+
+  const handleSendChat = async (overrideText = null) => {
+    const raw = overrideText ?? chatInput;
+    const userMsg = (raw ?? '').toString().trim();
+    if (!userMsg || chatLoading) return;
     
-    // SmartCheck grammar before sending
-    const checkResult = analyzeAnswer(userMsg, [], 'critical');
-    if (checkResult.status === 'warning') {
-      // Show warning but still send
-      setChatMessages(prev => [...prev, { role: 'user', text: userMsg }, { role: 'system', text: `⚠️ ${checkResult.message}` }]);
-    } else {
-      setChatMessages(prev => [...prev, { role: 'user', text: userMsg }]);
-    }
+    // Free Talk Mode - No grammar checking (Connection over Correction)
+    setChatMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     
     setChatInput("");
     setChatLoading(true);
-    setTurnCount(prev => prev + 1);
 
     messageHistoryRef.current.push({ role: 'user', content: userMsg });
     
     try {
       const result = await chatAI(userMsg, {
         conversationHistory: messageHistoryRef.current,
-        scenario: rolePlayScenario,
+        mode: 'free_talk', // Signal Free Talk prompt
         weekInfo,
         vocabList,
         weekId,
         weekTitle,
-        syllabusContext
+        temperature: 0.75 // More creative for conversation
       });
-      console.log(`[Chat] Provider: ${result.provider}, Time: ${result.duration}ms`);
-      setChatMessages(prev => [...prev, { role: 'ai', text: result.text, provider: result.provider }]);
-      messageHistoryRef.current.push({ role: 'assistant', content: result.text });
-      speakText(result.text);
+      console.log(`[Free Talk] Provider: ${result.provider}, Time: ${result.duration}ms`);
+
+      // Apply scaffolding data: mood emoji + reply chips
+      const aiText = limitWords(result.text || '', 12);
+      const aiMood = result.mood || deriveMood(aiText);
+      const aiHints = result.hints || createHints(aiText);
+
+      setChatMessages(prev => [...prev, { role: 'ai', text: aiText, provider: result.provider, mood: aiMood, hints: aiHints }]);
+      messageHistoryRef.current.push({ role: 'assistant', content: aiText });
+
+      const ttsOk = await playOnlineTTS(aiText);
+      if (!ttsOk) speakText(aiText);
     } catch (error) {
-      console.error('Chat error:', error);
+      console.error('Free Talk error:', error);
       setChatMessages(prev => [...prev, { role: 'ai', text: "I'm having trouble. Can you try again?" }]);
     } finally {
       setChatLoading(false);
@@ -801,6 +874,13 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
   };
 
   useEffect(() => { scrollRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [chatMessages, storyParts, debateMessages, quizMessages]);
+  
+  // Auto-start Free Talk when Chat tab opens
+  useEffect(() => {
+    if (activeTab === 'chat' && chatMessages.length === 0 && isOpen) {
+      startFreeTalk();
+    }
+  }, [activeTab, isOpen]);
 
   if (!isOpen) {
     return (
@@ -825,7 +905,7 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
       {/* TABS */}
       <div className="flex bg-indigo-50 p-2 gap-1 shrink-0 border-b border-indigo-200 overflow-x-auto">
         {[
-          { id: 'chat', icon: MessageCircle, label: 'Chat' },
+          { id: 'chat', icon: MessageCircle, label: 'Talk' },
           { id: 'pronunciation', icon: Volume2, label: 'Pronunciation' },
           { id: 'quiz', icon: Award, label: 'Quiz' },
           { id: 'story', icon: BookText, label: 'Story' },
@@ -845,51 +925,86 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
       {/* CONTENT */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50/50">
 
-        {/* CHAT TAB */}
+        {/* FREE TALK TAB (Ms. Nova Off-Duty) */}
+        {/* FREE TALK TAB - Ms. Nova Off-Duty (Immersive UI) */}
         {activeTab === 'chat' && (
           <>
-            {chatMessages.length === 0 && (
-              <div className="text-center py-6 space-y-3">
-                <p className="text-3xl">🐾</p>
-                <p className="text-sm font-black text-slate-800">Hi! I'm Professor Paws!</p>
-                <p className="text-xs text-slate-600 px-4">Let's practice conversation!</p>
-                
-                <div className="mt-4 space-y-2">
-                  <p className="text-xs font-black text-indigo-600 uppercase">🎭 Roleplay Scenarios</p>
-                  {rolePlayScenarios.slice(0, 4).map(scenario => (
-                    <button
-                      key={scenario.id}
-                      onClick={() => startRolePlay(scenario)}
-                      className="w-full p-2 bg-white border-2 border-indigo-100 rounded-lg text-xs font-bold text-slate-700 hover:bg-indigo-50 transition-all flex items-center justify-between"
-                    >
-                      <span>{scenario.title}</span>
-                      <Play size={12} className="text-indigo-600"/>
-                    </button>
-                  ))}
+            {/* Immersive Header - Nova's Presence */}
+            {chatMessages.length > 0 && (
+              <div className="bg-gradient-to-b from-indigo-600 to-indigo-500 p-4 text-white text-center rounded-t-xl shadow-md relative overflow-hidden -mx-4 -mt-4 mb-4">
+                <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                  <div className="absolute top-2 left-8 w-12 h-12 bg-white rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-2 right-8 w-16 h-16 bg-purple-300 rounded-full blur-3xl"></div>
+                </div>
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="w-16 h-16 bg-white p-1 rounded-full mb-2 shadow-lg ring-4 ring-indigo-400/30">
+                    <div className="w-full h-full rounded-full bg-indigo-100 flex items-center justify-center text-2xl">
+                      🐾
+                    </div>
+                    <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-4 border-indigo-500 rounded-full"></div>
+                  </div>
+                  <h2 className="text-lg font-black">Ms. Nova</h2>
+                  <p className="text-indigo-100 text-xs flex items-center gap-1">
+                    <span className="animate-pulse">●</span> Online & Listening
+                  </p>
                 </div>
               </div>
             )}
+            
+            {/* Chat Stream */}
             {chatMessages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-[20px] text-sm font-bold shadow-sm ${m.role === 'user' ? 'bg-indigo-600 text-white rounded-tr-none' : 'bg-white text-slate-700 rounded-tl-none border border-indigo-100'}`}>
-                  {m.text}
+              <div key={i} className={`flex flex-col w-full mb-4 ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
+                <div className={`max-w-[85%] px-5 py-4 rounded-3xl text-base md:text-lg font-bold shadow-sm relative group transition-all ${
+                  m.role === 'user'
+                    ? 'bg-indigo-600 text-white rounded-br-none'
+                    : 'bg-white text-slate-700 border border-indigo-100 rounded-bl-none'
+                }`}>
+                  {/* Mood emoji for AI */}
+                  {m.role === 'ai' && m.mood && (
+                    <div className="absolute -top-4 -left-2 text-3xl drop-shadow-md">
+                      {m.mood}
+                    </div>
+                  )}
+                  <div className="mt-1">{m.text}</div>
+
+                  {/* TTS Button for Assistant */}
+                  {m.role === 'ai' && (
+                    <button
+                      onClick={() => speakText(m.text)}
+                      className="absolute -bottom-7 left-2 text-slate-400 hover:text-indigo-600 p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <Volume2 size={14} />
+                    </button>
+                  )}
                 </div>
+
+                {/* Reply Chips for latest AI message */}
+                {m.role === 'ai' && i === chatMessages.length - 1 && Array.isArray(m.hints) && m.hints.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2 ml-2">
+                    {m.hints.map((hint, hIdx) => (
+                      <button
+                        key={hIdx}
+                        onClick={() => handleSendChat(hint)}
+                        className="bg-white border-2 border-indigo-100 text-indigo-600 px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-sm hover:bg-indigo-50 hover:border-indigo-300 transition-all active:scale-95"
+                      >
+                        💡 {hint}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
-            {rolePlayScenario && turnCount > 0 && (
-              <div className="text-center py-2">
-                <button onClick={() => { setRolePlayScenario(null); setChatMessages([]); messageHistoryRef.current = []; setTurnCount(0); }} className="text-xs text-slate-500 hover:text-indigo-600 font-bold flex items-center justify-center gap-1 mx-auto">
-                  <Shuffle size={12}/>Change Scenario
-                </button>
+            
+            {/* Loading State */}
+            {chatLoading && (
+              <div className="flex justify-start w-full mb-4">
+                <div className="bg-white px-4 py-3 rounded-3xl rounded-bl-none shadow-sm border border-indigo-100 flex items-center gap-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase mr-1">Nova is typing</span>
+                  <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce"></div>
+                  <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                  <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                </div>
               </div>
-            )}
-            {activeScenario && chatMessages.length === 0 && (
-              <button 
-                onClick={() => { setChatMessages([]); setActiveScenario(null); setRolePlayScenario(null); messageHistoryRef.current = []; setTurnCount(0); }}
-                className="w-full p-2 text-xs font-bold text-slate-500 hover:text-indigo-600 flex items-center justify-center gap-1 transition-all"
-              >
-                <RotateCcw size={12}/>Back to Chat Menu
-              </button>
             )}
             <div ref={scrollRef} />
           </>
@@ -1035,20 +1150,34 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
                 <p className="text-xs text-slate-500 px-6">Debates are available starting Week 15. Keep learning!</p>
               </div>
             ) : !debateTopic ? (
-              <div className="text-center py-6">
-                <Sword size={48} className="mx-auto text-rose-600 opacity-50 mb-3"/>
-                <p className="text-sm font-bold text-slate-700 mb-4">Choose a Debate Topic</p>
-                {debateTopics.slice(0, 4).map(topic => (
-                  <button
-                    key={topic.id}
-                    onClick={() => startDebate(topic)}
-                    className="w-full p-3 mb-2 bg-white border-2 border-rose-100 rounded-xl text-xs font-bold text-slate-700 hover:bg-rose-50 transition-all text-left"
-                  >
-                    <span className="block text-rose-600 text-[10px] uppercase font-black mb-1">Min {topic.minTurns} turns</span>
-                    {topic.topic}
-                  </button>
-                ))}
-              </div>
+              <>
+                <div className="text-center py-6">
+                  <Sword size={48} className="mx-auto text-rose-600 opacity-50 mb-3"/>
+                  <p className="text-sm font-bold text-slate-700 mb-4">Choose a Debate Topic</p>
+                  {debateTopics.slice(0, 4).map(topic => (
+                    <button
+                      key={topic.id}
+                      onClick={() => startDebate(topic)}
+                      className="w-full p-3 mb-2 bg-white border-2 border-rose-100 rounded-xl text-xs font-bold text-slate-700 hover:bg-rose-50 transition-all text-left"
+                    >
+                      <span className="block text-rose-600 text-[10px] uppercase font-black mb-1">Min {topic.minTurns} turns</span>
+                      {topic.topic}
+                    </button>
+                  ))}
+                </div>
+                {weekId === 2 && (
+                  <div className="mt-4 bg-white p-3 rounded-lg border border-indigo-100 text-left text-xs text-slate-700">
+                    <p className="text-[11px] font-black text-indigo-600 uppercase">🎯 Week 2 Checklist</p>
+                    <ul className="list-disc list-inside mt-2 space-y-1">
+                      {week2TutorChecklist.checklist.map((c, i) => <li key={i}>{c}</li>)}
+                    </ul>
+                    <p className="text-[11px] font-black text-indigo-600 uppercase mt-3">💡 Tips</p>
+                    <ul className="list-disc list-inside mt-2 space-y-1">
+                      {week2TutorChecklist.tips.map((t, i) => <li key={i}>{t}</li>)}
+                    </ul>
+                  </div>
+                )}
+              </>
             ) : (
               <>
                 {debateMessages.map((m, i) => (
@@ -1070,36 +1199,44 @@ const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
       </div>
 
       {/* INPUT SECTIONS */}
-      {activeTab === 'chat' && rolePlayScenario && (
-        <div className="p-3 bg-white border-t shrink-0">
-          <div className="flex gap-2 items-center mb-2">
-            <div className="flex-1 bg-indigo-50 rounded-lg p-2 text-[10px] font-bold text-indigo-600 flex items-center gap-1">
-              <Mic size={12}/> <span>Speak English! Practice makes perfect!</span>
+      {activeTab === 'chat' && (
+        <div className="p-4 bg-white border-t shrink-0">
+          <div className="flex items-center gap-3">
+            {/* Big Mic Button - Voice First */}
+            <button
+              onClick={toggleChatVoice}
+              className={`p-4 rounded-full shadow-lg transition-all duration-300 border-4 border-white ${
+                isChatListening 
+                  ? 'bg-red-500 text-white scale-110 shadow-red-200 animate-pulse' 
+                  : 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100'
+              }`}
+            >
+              {isChatListening ? <MicOff size={24}/> : <Mic size={24}/>}
+            </button>
+            
+            {/* Text Input */}
+            <div className="flex-1 relative">
+              <input
+                type="text"
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSendChat()}
+                placeholder={isChatListening ? "Listening..." : "Say something..."}
+                disabled={isChatListening}
+                className="w-full bg-slate-100 text-slate-700 rounded-full px-5 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-all font-bold text-sm disabled:opacity-50"
+              />
+              <button
+                onClick={() => handleSendChat()}
+                disabled={!chatInput.trim() || chatLoading}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              >
+                <Send size={16}/>
+              </button>
             </div>
           </div>
-          <div className="flex gap-2">
-          <button
-            onClick={toggleChatVoice}
-            className={`p-2.5 rounded-full transition-all ${isChatListening ? 'bg-red-500 text-white animate-pulse' : 'bg-slate-100 text-slate-600 hover:bg-indigo-100 hover:text-indigo-600'}`}
-          >
-            {isChatListening ? <MicOff size={16}/> : <Mic size={16}/>}
-          </button>
-          <input
-            value={chatInput}
-            onChange={e => setChatInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && handleSendChat()}
-            placeholder={isChatListening ? "Listening..." : "Type or speak..."}
-            className="flex-1 p-2.5 bg-slate-50 border-2 border-slate-200 rounded-[15px] outline-none text-xs font-bold focus:border-indigo-300"
-            disabled={isChatListening}
-          />
-          <button
-            onClick={handleSendChat}
-            disabled={chatLoading || isChatListening}
-            className="p-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 disabled:opacity-50 transition-all"
-          >
-            {chatLoading ? <Loader2 size={16} className="animate-spin"/> : <Send size={16}/>}
-          </button>
-          </div>
+          <p className="text-center text-xs text-slate-400 mt-2">
+            Try saying: "I'm happy today!" or "Tell me a joke"
+          </p>
         </div>
       )}
 

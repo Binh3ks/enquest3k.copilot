@@ -1,31 +1,39 @@
 {
-  "masterQuery": "subject pronouns verb to be school for kids ESL",
-  "grammar": "subject pronouns I you he she we they verb to be am is are",
+  "weekId": 1,
+  "theme": "The Young Scholar",
+  "grammar": "Subject Pronouns, Verb to be",
+  "topic": "School day, Student life", 
+  "science": "Scientist tools",
   "videos": [
     {
       "id": 1,
-      "query": "subject pronouns song I you he she we they for kids",
-      "purpose": "GRAMMAR"
+      "purpose": "GRAMMAR",
+      "query": "subject pronouns I you he she we they",
+      "backup_query": "pronouns song kids English"
     },
     {
       "id": 2,
-      "query": "verb to be am is are for kids ESL",
-      "purpose": "GRAMMAR"
+      "purpose": "GRAMMAR",
+      "query": "verb to be am is are kids",
+      "backup_query": "am is are English grammar"
     },
     {
       "id": 3,
-      "query": "school day for kids educational",
-      "purpose": "TOPIC"
+      "purpose": "TOPIC",
+      "query": "school day student life",
+      "backup_query": "first day school kids"
     },
     {
       "id": 4,
-      "query": "science tools microscope magnifying glass for kids",
-      "purpose": "SCIENCE"
+      "purpose": "TOPIC", 
+      "query": "school classroom learning",
+      "backup_query": "classroom school kids"
     },
     {
       "id": 5,
-      "query": "what scientists do for kids",
-      "purpose": "SCIENCE"
+      "purpose": "SCIENCE",
+      "query": "science tools microscope magnifying glass",
+      "backup_query": "scientist tools kids"
     }
   ]
 }

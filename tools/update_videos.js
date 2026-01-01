@@ -109,6 +109,10 @@ const GRAMMAR_REQUIREMENTS = {
   'can cannot': ['can', "can't", 'cannot'],
   'present simple': ['present simple', 'do does', 'every day'],
   'present continuous': ['present continuous', 'ing', 'now'],
+  'subject pronouns': ['pronouns', 'I you he she', 'subject'],
+  'possessive pronouns': ['possessive', 'my your his her', 'possessive pronouns'],
+  'verb to be': ['am is are', 'verb to be', 'be verb'],
+  'this is': ['this is', 'demonstrative', 'this that'],
 };
 
 const extractKeywords = (query) => {
@@ -153,7 +157,9 @@ const titleMatchesQuery = (title, query, purpose = 'TOPIC') => {
 const search = async (q, usedVideoIds = new Set(), purpose = 'TOPIC') => {
   if(!API_KEY) return null;
   return new Promise((resolve) => {
-    https.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(q + " for kids")}&type=video&safeSearch=strict&maxResults=20&videoEmbeddable=true&key=${API_KEY}`, (res) => {
+    // Add "for kids ESL" to search query (YouTube search improvement)
+    const searchQuery = encodeURIComponent(q + " for kids ESL");
+    https.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&safeSearch=strict&maxResults=20&videoEmbeddable=true&key=${API_KEY}`, (res) => {
       let d=''; res.on('data', c=>d+=c);
       res.on('end', async () => {
         try {

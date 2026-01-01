@@ -9,10 +9,10 @@ const DATA_DIR_ADV = path.join(process.cwd(), 'src/data/weeks');
 const DATA_DIR_EASY = path.join(process.cwd(), 'src/data/weeks_easy');
 const IMAGES_DIR = path.join(PUBLIC_DIR, 'images');
 
-// Cost optimization: Imagen 3 ($0.02/img) vs Imagen 4 ($0.04/img) = 50% savings
-// Quality: Imagen 3 (2024 model) sufficient for educational illustrations
-const API_MODEL = "imagen-3.0-generate-001"; // Changed from imagen-4.0 to save cost
-const API_BASE_URL = `https://generativelanguage.googleapis.com/v1beta/models/${API_MODEL}:predict?key=`;
+// Cost optimization: Nano Banana (FREE) vs Imagen 3 ($0.02/img) = 100% savings
+// Quality: Gemini gemini-3-pro-image-preview sufficient for educational illustrations
+const API_MODEL = "gemini-3-pro-image-preview"; // Nano Banana free tier
+const API_BASE_URL = `https://generativelanguage.googleapis.com/v1beta/models/${API_MODEL}:generateContent?key=`;
 
 // --- API KEY AUTO-LOADING FROM API keys.txt ---
 const loadApiKeys = () => {
@@ -111,20 +111,44 @@ const loadWeekData = async (weekNum, isEasy) => {
     return null;
 };
 
-const callImagenAPI = async (prompt, aspectRatio) => {
-    const payload = JSON.stringify({ instances: [{ prompt }], parameters: { sampleCount: 1, aspectRatio: aspectRatio || "1:1" } });
+const callNanoBananaAPI = async (prompt, aspectRatio) => {
+    const payload = JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+            temperature: 1,
+            topK: 40,
+            topP: 0.95,
+            maxOutputTokens: 8192,
+        }
+    });
+    
     return new Promise((resolve, reject) => {
-        const req = https.request(API_BASE_URL + API_KEY, { method: 'POST', headers: { 'Content-Type': 'application/json' } }, (res) => {
-            let data = ''; res.on('data', c => data += c);
+        const req = https.request(API_BASE_URL + API_KEY, { 
+            method: 'POST', 
+            headers: { 
+                'Content-Type': 'application/json',
+                'User-Agent': 'EngQuest-Batch-Manager/1.0'
+            } 
+        }, (res) => {
+            let data = ''; 
+            res.on('data', c => data += c);
             res.on('end', () => {
                 try {
                     const json = JSON.parse(data);
-                    if (json.predictions?.[0]?.bytesBase64Encoded) resolve(json.predictions[0].bytesBase64Encoded);
-                    else reject(new Error('No image data'));
-                } catch (e) { reject(e); }
+                    if (json.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data) {
+                        resolve(json.candidates[0].content.parts[0].inlineData.data);
+                    } else {
+                        reject(new Error('No image data in Gemini response'));
+                    }
+                } catch (e) { 
+                    console.error('API Response:', data);
+                    reject(e); 
+                }
             });
         });
-        req.on('error', e => reject(e)); req.write(payload); req.end();
+        req.on('error', e => reject(e)); 
+        req.write(payload); 
+        req.end();
     });
 };
 
@@ -208,10 +232,10 @@ const processWeek = async (weekNum, isEasy) => {
         const filePath = path.join(targetDir, fileName);
         if (!fs.existsSync(filePath)) {
             try {
-                const b64 = await callImagenAPI(item.prompt, item.ratio);
+                const b64 = await callNanoBananaAPI(item.prompt, item.ratio);
                 fs.writeFileSync(filePath, Buffer.from(b64, 'base64'));
                 console.log(`   ✅ Generated: ${fileName}`);
-                await delay(1500);
+                await delay(3000); // 3 seconds for Nano Banana rate limit
             } catch (e) { console.error(`   ❌ Error ${fileName}: ${e.message}`); }
         }
     }

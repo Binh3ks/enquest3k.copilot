@@ -14,7 +14,25 @@
 
 
 ## 0. MASS-PRODUCE WORKFLOW (NEW, STRICT)
-### 0.0. File Structure & Mapping (MANDATORY)
+### 0.0. Topic vs Structure Clarification (CRITICAL)
+
+**Topics are DIFFERENT per week** (by design):
+- Week 1: School day/Student life  
+- Week 2: Family members
+- Week 19: Childhood & Memories
+- Week 20: History of my city
+
+**Week 19 is the STRUCTURE template** (file schema, format, mapping) **NOT content template**.
+
+Each week must:
+1. Use **Week 19 STRUCTURE** (identical file schema, station keys, field names)
+2. Use **own week TOPIC** from `src/data/syllabus_database.js`
+3. Generate content aligned with that week's specific topic/grammar
+
+**Common Mistake:** Using Week 19's "Childhood & Memories" content for other weeks.
+**Correct:** Copy Week 19's file structure, populate with Week X's topic from syllabus database.
+
+### 0.1. File Structure & Mapping (MANDATORY)
 For every new week, you MUST create **exactly 14 JS files** for BOTH advanced and easy modes, in folders:
   - `src/data/weeks/week_XX/` (Advanced)
   - `src/data/weeks_easy/week_XX/` (Easy)
@@ -73,6 +91,75 @@ stations: {
 Each file must follow the schema and field order exactly as in week 19 (see week_19/*.js for reference).
 All required fields must be present (e.g. audio_url=null, image_url, collocation, model_sentence, min_words, etc.).
 No extra or missing fields allowed.
+
+**CRITICAL: Easy/Advanced Morphing Rules (MANDATORY)**
+
+Easy and Advanced modes MUST have DIFFERENT content for every week. Content morphing follows these strict rules:
+
+**Vocabulary Morphing:**
+- **Advanced:** Abstract, academic, multi-syllable words
+  - Example Week 1: student, teacher, school, classroom, backpack, library, scientist
+  - Example Week 19: quiet, field, tree, kindergarten, memory, treasure, different
+- **Easy:** Concrete, everyday, 1-2 syllable words
+  - Example Week 1: name, friend, desk, chair, pen, bag, toy, picture, box, door
+  - Example Week 19: baby, photo, crib, teddy bear, room, happy, small, toy, album, special
+
+**Read Station Morphing:**
+- **Advanced:** 100-120 words, narrative style, past/future tense when appropriate
+  - Example Week 1: "Alex's School Day" - school routine, aspirations, multi-clause sentences
+  - Example Week 19: "Looking Back" - reflective essay, abstract concepts (quiet town, memories as treasures)
+- **Easy:** 60-80 words, present tense, simple S-V-O sentences
+  - Example Week 1: "My New Classroom" - immediate environment, "Look! This is..."
+  - Example Week 19: "My Baby Album" - photo description, "There were toys"
+
+**Grammar Station Morphing:**
+- **Advanced:** Full grammar explanation with 3 rules, 20 exercises
+  - Example: "Subject Pronouns & Verb to be" - covers I/you/we/they/he/she/it + am/is/are
+- **Easy:** Simplified explanation with 2 rules, 20 exercises (but simpler questions)
+  - Example: "I am / You are / It is" - focuses on I + am, You/They + are only
+
+**Dictation/Shadowing Morphing:**
+- **Advanced:** Sentences from Advanced read.js (complex, 10-15 words)
+  - "In my classroom, there are twenty desks and one big whiteboard." (12 words)
+- **Easy:** Sentences from Easy read.js (simple, 4-8 words)
+  - "This is my desk." (4 words)
+  - "My bag is red." (4 words)
+
+**Explore Station Morphing:**
+- **Advanced:** Scientific/abstract topic, 100-120 words, asks "why" and "how"
+  - Example Week 1: "Tools Scientists Use" - magnifying glass, microscope, observation
+- **Easy:** Concrete/familiar topic, 60-80 words, asks "what" and "where"
+  - Example Week 1: "My School Things" - what's in your bag, where is your desk
+
+**Ask AI Station Morphing:**
+- **Advanced:** Complex scenarios requiring inference
+  - "You see a magnifying glass. It makes things BIG. You want to know WHAT it does. How do you ask?"
+- **Easy:** Direct situations with visible objects
+  - "You see a red pen. You want it. How do you ask?"
+
+**⚠️ CRITICAL VALIDATION:**
+Before generating Week N, check that:
+1. Vocabulary lists are COMPLETELY DIFFERENT between modes (0% overlap except function words like "I", "the")
+2. Read.js titles are DIFFERENT
+3. Read.js word count: Advanced 100-120, Easy 60-80
+4. Dictation sentences reflect their respective read.js
+5. Explore topics have different complexity levels
+
+**Example Comparison (Week 1):**
+
+| Aspect | Advanced | Easy |
+|--------|----------|------|
+| Vocab 1 | student | name |
+| Vocab 2 | teacher | friend |
+| Vocab 3 | school | desk |
+| Vocab 4 | classroom | chair |
+| Vocab 5 | backpack | pen |
+| Read title | "Alex's School Day" | "My New Classroom" |
+| Read words | 110 words | 73 words |
+| Read style | Narrative, aspirational | Descriptive, immediate |
+| Dictation 1 | "I am a student at Greenwood Elementary School." (9 words) | "This is my desk." (4 words) |
+| Grammar title | "Subject Pronouns & Verb to be" | "I am / You are / It is" |
+
 Easy/Advanced morphing/scaffolding must follow blueprint rules.
 
 ### 0.2. Asset Generation & Naming
@@ -392,32 +479,152 @@ export default {
 };
 ```
 
-### Video Distribution
-- **GRAMMAR:** 1-2 videos (must directly teach week's grammar focus)
-  - Example: Week 19 (Past Simple) → "Past Tense Song" + "Was/Were Explained"
-- **TOPIC:** 2 videos (related to week's theme)
-  - Example: Week 1 (Identity) → "All About Me" + "Family Members"
-- **SCIENCE/CLIL:** 1-2 videos (content-based learning)
-  - Example: Week 5 (Nature) → "Plant Life Cycle" + "Water Cycle for Kids"
+### Video Distribution (MANDATORY FORMAT)
+**Fixed Distribution (Week 19 Standard):**
+- **GRAMMAR:** 2 videos (must directly teach week's grammar focus)
+  - Example: Week 19 → "Past Tense Song" + "Was/Were Explained"
+- **TOPIC:** 2 videos (related to week's theme)  
+  - Example: Week 1 → "School Day" + "Classroom Learning"
+- **SCIENCE:** 1 video (content-based learning)
+  - Example: Week 1 → "Science Tools for Kids"
 
-### Video Curation Process
-```bash
-# Step 1: Create video_queries.json (MANUAL)
-File: src/data/weeks/week_XX/video_queries.json
-Structure:
+**NEVER use other distributions** (e.g., 3 TOPIC + 0 SCIENCE). All weeks must follow: **2+2+1 format**.
+
+### Video Curation Process (STANDARDIZED)
+
+**Step 1: Create video_queries.json from Syllabus + Blueprint**
+
+File location: `src/data/weeks/week_XX/video_queries.json`
+
+Extract from `syllabus_database.js`:
+- `weekId`: Week number
+- `theme`: Week title
+- `grammar`: Grammar focus from syllabus
+- `topic`: Topic from syllabus  
+- `science`: Science/CLIL focus from syllabus
+
+For each of 5 videos (2 GRAMMAR + 2 TOPIC + 1 SCIENCE):
+1. Create primary **query** - core keywords WITHOUT "for kids" or "ESL"
+2. Create **backup_query** - alternative keywords if primary fails
+3. Add "for kids" + "ESL" ONLY during YouTube search (not in JSON)
+
+Example (Week 1):
+```json
 {
-  "masterQuery": "Week XX {topic} + {grammar} for kids",
-  "grammar": "{grammar focus} explained simply",
+  "weekId": 1,
+  "theme": "The Young Scholar",
+  "grammar": "Subject Pronouns, Verb to be",
+  "topic": "School day, Student life",
+  "science": "Scientist tools",
   "videos": [
-    { "id": 1, "query": "...", "purpose": "GRAMMAR" },
-    { "id": 2, "query": "...", "purpose": "TOPIC" },
-    { "id": 3, "query": "...", "purpose": "TOPIC" },
-    { "id": 4, "query": "...", "purpose": "SCIENCE" },
-    { "id": 5, "query": "...", "purpose": "SCIENCE" }
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "query": "subject pronouns I you he she we they",
+      "backup_query": "pronouns song kids English"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "query": "verb to be am is are grammar",
+      "backup_query": "am is are English lesson"
+    },
+    {
+      "id": 3,
+      "purpose": "TOPIC",
+      "query": "school day student life",
+      "backup_query": "first day school"
+    },
+    {
+      "id": 4,
+      "purpose": "TOPIC",
+      "query": "classroom learning students",
+      "backup_query": "school classroom activities"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "query": "scientist tools microscope magnifying glass",
+      "backup_query": "science tools equipment"
+    }
   ]
 }
+```
 
-# Step 2: Run automated search (AUTO)
+**Step 2: Automated Video Search (via update_videos.js)**
+
+Search Priority:
+1. **WHITELIST SEARCH** (Primary)
+   - Add " for kids ESL" to query
+   - Search only whitelist channels
+   - Filter: 60s ≤ duration ≤ 900s (1-15 minutes)
+   - Match: Title must contain keywords (GRAMMAR: 50% match, TOPIC/SCIENCE: 30% match)
+   - If found → Use video, mark as used
+
+2. **BACKUP QUERY SEARCH** (Secondary)
+   - Use backup_query instead of primary
+   - Same whitelist + filters
+   - If found → Use video, mark as used
+
+3. **EXPANDED SEARCH** (Tertiary)
+   - Remove whitelist restriction
+   - Still add " for kids ESL"
+   - Same duration filters
+   - Filter out: non-English, music videos, covers, karaoke
+   - If found → Use video, mark as used
+
+4. **FALLBACK** (Last Resort)
+   - Use fallback video for purpose (GRAMMAR/TOPIC/SCIENCE)
+   - Default: "English Singsing - Grammar for Kids" or similar
+   - Log warning
+
+**Duration Validation:**
+- MIN: 60 seconds (skip shorts)
+- MAX: 900 seconds = 15 minutes
+- Extract from YouTube API: `contentDetails.duration` (ISO 8601 format)
+
+**Step 3: Summary of Complete Video Search Flow**
+
+**Overview:**
+```
+Query (from JSON) + "for kids ESL" 
+       ↓
+YouTube API search (20 results)
+       ↓
+Priority 1: WHITELIST + Match + Duration Filter
+       ├─ Success? → Use video ✅
+       └─ Fail? → Next priority
+       ↓
+Priority 2: BACKUP QUERY (same as Priority 1)
+       ├─ Success? → Use video ✅  
+       └─ Fail? → Next priority
+       ↓
+Priority 3: EXPANDED (no whitelist) + Duration Filter
+       ├─ Success? → Use video ✅
+       └─ Fail? → Next priority
+       ↓
+Priority 4: FALLBACK (generic video)
+       └─ Use purpose-specific fallback → Warning logged ⚠️
+```
+
+**Keywords Extraction:**
+- STOP_WORDS removed: "for", "kids", "children", "song", "video", "esl", "english", "learn", "learning", "educational", "the", "and", "with", "story"
+- Remaining keywords extracted from query
+- For GRAMMAR: 50% keyword match required (strict)
+- For TOPIC/SCIENCE: 30% keyword match required (lenient)
+
+**Grammar Requirements (Auto-Applied):**
+GRAMMAR queries with specific patterns MUST contain required grammar structure:
+- "was were" → title must contain: "was", "were", OR "verb to be"
+- "can cannot" → title must contain: "can", "can't", OR "cannot"
+- "present simple" → title must contain: "present simple", "do does", OR "every day"
+- "present continuous" → title must contain: "present continuous", "ing", OR "now"
+
+**Important Notes:**
+1. ✅ Queries in JSON are CLEAN (no "for kids"/ESL added) → Script adds during search
+2. ✅ Always provide backup_query for all videos → Safety fallback
+3. ✅ Primary query should be 3-5 keywords max → Better YouTube ranking
+4. ✅ Backup query can use common filler words → Broader search net
 Command: node tools/update_videos.js XX
 Process:
   - Searches YouTube using queries
@@ -529,8 +736,8 @@ For each week, you MUST create these files with content generated from syllabus 
 5. grammar.js - Grammar focus from syllabus + 20 exercises
 6. logic.js - 5 contextual math/logic problems
 7. ask_ai.js - 5 question prompts related to topic
-8. dictation.js - 8-10 sentences from read.js story
-9. shadowing.js - Same 8-10 sentences as dictation
+8. dictation.js - ALL sentences from read.js story (split by periods, 10-16 sentences typically)
+9. shadowing.js - IDENTICAL sentences as dictation.js (exact copy)
 10. mindmap.js - 6 stems + 36 branches for speaking (nested object structure)
 11. daily_watch.js - EXACTLY 5 YouTube videos (MANDATORY, auto-generated by script)
 12. writing.js - 1 writing prompt related to topic
@@ -745,7 +952,1281 @@ OPENAI_API_KEY=your_key_here
 
 
 
+**Context:** Week 2 initially attempted manual asset creation until discovering official automated scripts in `tools/` directory.
+
+**User Feedback:** "sao lại bạn tự tạo images. Đã có lệnh tạo bằng Nano banana rồi mà????" (Why create images manually? There's already Nano Banana command)
+
+**Learning:** Always use official scripts - they ensure consistency, quality, and proper API key management.
+
+#### 0.10.1 Audio Generation (Google Neural2 TTS)
+
+**Official Script:** `tools/generate_audio.js`
+
+**Usage:**
+```bash
+# Generate audio for single week:
+node tools/generate_audio.js 2 2
+
+# Generate audio for multiple weeks:  
+node tools/generate_audio.js 1 5
+
+# Script automatically:
+# - Loads API key from 'API keys.txt'
+# - Reads voiceConfig from week data
+# - Applies prepareTTSText() to all content
+# - Generates ~120-130 MP3 files per mode
+# - Saves to public/audio/weekXX/ and public/audio/weekXX_easy/
+```
+
+**API Key Loading:**
+```javascript
+// Script automatically reads from 'API keys.txt':
+// Google Cloude Text to speech API key=YOUR_KEY_HERE
+
+// Fallback to environment variable:
+export GOOGLE_TTS_API_KEY="your_key_here"
+node tools/generate_audio.js 2 2
+```
+
+**Generated Audio Types:**
+- **Vocabulary:** 40 files (10 words × 4 each: word, definition, example, collocation)
+- **Word Power:** 12 files Phase 1 (3 items × 4 each)
+- **Story Content:** 2 files (read_main.mp3, explore_main.mp3)
+- **Dictation:** 8 files (sentence audio)
+- **Shadowing:** 9 files (8 sentences + 1 full)
+- **Mindmap:** 42 files (6 stems + 36 branches)
+- **Logic Lab:** 5 files (puzzle audio)
+- **Ask AI:** 5 files (context audio)
+
+#### 0.10.2 Image Generation (Two Methods)
+
+**Method A: Nano Banana (FREE - Gemini) - RECOMMENDED**
+```bash
+# Official Script: tools/generate_images_nano_banana.js
+node tools/generate_images_nano_banana.js 2 advanced
+node tools/generate_images_nano_banana.js 2 easy
+
+# Benefits:
+# - FREE (uses Gemini gemini-3-pro-image-preview model)
+# - 15 images per week per mode
+# - Auto-loads API key from 'API keys.txt'
+# - Quality: 1024×1024 JPEG, suitable for ESL vocab
+# - Built-in skip logic: skips existing files automatically
+
+# Generated Images per mode:
+# - 2 cover images (16:9 ratio): read_cover_w2.jpg, explore_cover_w2.jpg  
+# - 10 vocab images (1:1 ratio): family.jpg, mother.jpg, etc.
+# - 3 word_power images (1:1 ratio): wordpower_take_care.jpg, etc.
+
+# Skip Logic:
+# Script checks if (fs.existsSync(filepath)) before generating
+# Console shows: "⏭️ filename already exists, skipping..."
+```
+
+**Method B: Batch Manager (FREE - Nano Banana Updated)**
+```bash
+# Updated Script: tools/batch_manager.js (now uses Nano Banana)  
+node tools/batch_manager.js 2 2
+
+# Benefits:
+# - FREE (now uses Gemini gemini-3-pro-image-preview model)
+# - Batch processing for multiple weeks
+# - Smart image copying: Easy mode copies vocab from Advanced first
+# - Same 15 images per week per mode
+# - Cost optimization: Saves 50% by reusing vocab images in Easy mode
+
+# Recent Update: Fixed broken imagen-3.0-generate-001 model
+# Now uses same Nano Banana API as generate_images_nano_banana.js
+```
+
+**API Key Loading & Skip Logic (Both Methods):**
+```javascript
+// Both scripts read from 'API keys.txt':
+// GEMINI_API_KEY=YOUR_KEY_HERE
+
+// Audio Skip Logic:
+// generate_audio.js checks: if (!fs.existsSync(filePath)) before adding task
+// Only generates missing MP3 files, preserves existing ones
+
+// Image Skip Logic: 
+// generate_images_nano_banana.js: if (fs.existsSync(filepath)) before API call
+// batch_manager.js: if (!fs.existsSync(localPath)) before adding to generation queue
+// Console: "⏭️ [2/15] filename already exists, skipping..."
+
+// Image Copying Optimization (Easy Mode):
+// batch_manager.js copies vocab images from Advanced mode first
+// Saves ~60% generation time and API calls for Easy mode
+
+// Images saved to:
+// public/images/week2/ (Advanced mode)  
+// public/images/week2_easy/ (Easy mode)
+```
+// public/images/week2_easy/ (Easy mode - if using separate generation)
+```
+
+#### 0.10.3 Video Generation (YouTube API)
+
+**Official Script:** `tools/update_videos.js`
+
+**Prerequisites:**
+```bash
+# 1. Create video search queries file:
+# src/data/weeks/week_2/video_queries.json
+
+{
+  "masterQuery": "family members for kids ESL English",
+  "grammar": "family vocabulary this is my for kids",
+  "videos": [
+    { "id": 1, "query": "family members song for kids", "purpose": "GRAMMAR" },
+    { "id": 2, "query": "this is my family for children", "purpose": "TOPIC" },
+    { "id": 3, "query": "family tree for kids educational", "purpose": "TOPIC" },
+    { "id": 4, "query": "animal families for children", "purpose": "SCIENCE" },
+    { "id": 5, "query": "family around the world kids", "purpose": "SCIENCE" }
+  ]
+}
+```
+
+**Usage:**
+```bash
+# Set API key and generate videos:
+YOUTUBE_API_KEY="your_key" node tools/update_videos.js 2 --reset
+
+# Or let script read from 'API keys.txt':
+# Youtube Data API key=YOUR_KEY_HERE
+node tools/update_videos.js 2 --reset
+
+# Script automatically:
+# - Searches YouTube using queries
+# - Filters by WHITELIST channels (British Council, English Singsing, etc.)
+# - Validates video exists and is appropriate
+# - Updates daily_watch.js with 5 real video IDs
+```
+
+**Generated Output:**
+```javascript
+// daily_watch.js updated with real videos:
+export default {
+  videos: [
+    {
+      id: 1,
+      title: "Family Members Song - Mother Father Sister Brother",
+      videoId: "abc123xyz",           // Real YouTube video ID
+      duration: "03:42",
+      sim_duration: 222,
+      thumb: "https://img.youtube.com/vi/abc123xyz/mqdefault.jpg",
+      purpose: "GRAMMAR"
+    }
+    // ... 4 more real videos (EXACTLY 5 total)
+  ]
+};
+```
+
+#### 0.10.4 Complete Asset Generation Workflow
+
+**Automated Week Creation (Recommended):**
+```bash
+#!/bin/bash
+# create_complete_week.sh
+WEEK_ID=$1
+
+if [ -z "$WEEK_ID" ]; then
+  echo "Usage: ./create_complete_week.sh <WEEK_ID>"
+  exit 1
+fi
+
+echo "🗂️  Step 1/6: Validating week data structure..."
+bash tools/validate_week_structure.sh $WEEK_ID
+if [ $? -ne 0 ]; then echo "❌ Data validation failed"; exit 1; fi
+
+echo "🎵 Step 2/6: Generating audio for Week $WEEK_ID..."
+node tools/generate_audio.js $WEEK_ID $WEEK_ID
+if [ $? -ne 0 ]; then echo "❌ Audio generation failed"; exit 1; fi
+
+echo "🖼️  Step 3/6: Generating images for Week $WEEK_ID..."
+node tools/generate_images_nano_banana.js $WEEK_ID advanced
+node tools/generate_images_nano_banana.js $WEEK_ID easy
+if [ $? -ne 0 ]; then echo "❌ Image generation failed"; exit 1; fi
+
+echo "📹 Step 4/6: Generating videos for Week $WEEK_ID..."
+node tools/update_videos.js $WEEK_ID --reset
+if [ $? -ne 0 ]; then echo "❌ Video generation failed"; exit 1; fi
+
+echo "✅ Step 5/6: Verifying asset counts..."
+bash tools/verify_assets.sh $WEEK_ID
+if [ $? -ne 0 ]; then echo "⚠️  Some assets missing but continuing..."; fi
+
+echo "🧪 Step 6/6: Testing week in app..."
+echo "Manual test required: Open app → Week $WEEK_ID → Test stations"
+
+echo "✅ Week $WEEK_ID generation complete!"
+echo "📊 Summary:"
+echo "   Audio: ~120-130 files per mode"
+echo "   Images: 15 files per mode"  
+echo "   Videos: 5 files (shared between modes)"
+echo "   Total cost: ~$0.00 (using free tiers)"
+```
+
+#### 0.10.5 API Key Management
+
+**Centralized Key Storage:**
+```bash
+# File: API keys.txt (project root)
+# Format: SERVICE_NAME=KEY_VALUE (one per line)
+
+GEMINI_API_KEY=AIzaSyBxxxxxxxxxxxxxxxxxxxxxxxx
+Google Cloude Text to speech API key=AIzaSyCxxxxxxxxxxxxxxxxxxxxxxxx
+Youtube Data API key=AIzaSyDxxxxxxxxxxxxxxxxxxxxxxxx
+OpenAI TTS key=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+**Key Rotation Support:**
+```javascript
+// Scripts support multiple keys per service (try in order):
+GEMINI_API_KEY=key1_here
+GEMINI_API_KEY=key2_backup
+GEMINI_API_KEY=key3_emergency
+
+// If key1 fails (quota/error), script automatically tries key2, then key3
+```
+
+**Security Best Practices:**
+```bash
+# Add to .gitignore:
+echo "API keys.txt" >> .gitignore
+
+# Set file permissions (read-only for owner):
+chmod 600 "API keys.txt"
+
+# Use environment variables in production:
+export GEMINI_API_KEY="production_key"
+export GOOGLE_TTS_API_KEY="production_key"
+```
+
+#### 0.10.6 Asset Verification Scripts
+
+**File Count Verification:**
+```bash
+# tools/verify_assets.sh
+#!/bin/bash
+WEEK_ID=$1
+
+# Check audio counts
+AUDIO_ADV=$(ls public/audio/week${WEEK_ID}/*.mp3 2>/dev/null | wc -l)
+AUDIO_EASY=$(ls public/audio/week${WEEK_ID}_easy/*.mp3 2>/dev/null | wc -l)
+
+# Check image counts  
+IMG_ADV=$(ls public/images/week${WEEK_ID}/*.{jpg,png,webp} 2>/dev/null | wc -l)
+IMG_EASY=$(ls public/images/week${WEEK_ID}_easy/*.{jpg,png,webp} 2>/dev/null | wc -l)
+
+# Check video count
+VIDEO_COUNT=$(grep -c '"videoId"' src/data/weeks/week_${WEEK_ID}/daily_watch.js 2>/dev/null)
+
+echo "📊 Asset Summary for Week $WEEK_ID:"
+echo "🎵 Audio: Advanced=$AUDIO_ADV, Easy=$AUDIO_EASY (expect ~120-130 each)"
+echo "🖼️  Images: Advanced=$IMG_ADV, Easy=$IMG_EASY (expect 15 each)" 
+echo "📹 Videos: $VIDEO_COUNT (expect exactly 5)"
+
+# Validation
+if [ "$AUDIO_ADV" -lt 100 ] || [ "$AUDIO_EASY" -lt 100 ]; then
+  echo "⚠️  Warning: Low audio count (check for generation errors)"
+fi
+
+if [ "$IMG_ADV" -ne 15 ] || [ "$IMG_EASY" -ne 15 ]; then
+  echo "⚠️  Warning: Image count not 15 (check image generation)"
+fi
+
+if [ "$VIDEO_COUNT" -ne 5 ]; then
+  echo "❌ Error: Video count not 5 (must have exactly 5 videos)"
+  exit 1
+fi
+
+echo "✅ Asset verification complete"
+```
+
+#### 0.10.7 Troubleshooting Common Issues
+
+**Audio Generation Failures:**
+```bash
+# Issue: "API key invalid"
+# Solution: Check 'API keys.txt' format and key validity
+
+# Issue: "Voice not found: en-GB-Neural2-X" 
+# Solution: Verify voiceConfig uses supported voices only
+
+# Issue: "0 files generated"
+# Solution: Check if audio folder already exists (script skips existing files)
+rm -rf public/audio/weekXX
+node tools/generate_audio.js XX XX
+```
+
+**Image Generation Failures:**
+```bash
+# Issue: "Gemini quota exceeded"
+# Solution: Add backup API keys or use paid Imagen method
+
+# Issue: "Images not found in app"
+# Solution: Check image path format matches data file references
+
+# Issue: "Generation stuck at 50%"
+# Solution: Check network connection and API rate limits
+```
+
+**Video Generation Failures:**
+```bash
+# Issue: "No videos found"
+# Solution: Check video_queries.json exists with 5 search queries
+
+# Issue: "All videos rejected" 
+# Solution: Broaden search queries (topic too specific)
+
+# Issue: "Videos show 404 in app"
+# Solution: Re-run with --reset flag to get fresh video IDs
+```
+
+---
+
+**Context:** Week 2 deployment revealed multiple systematic issues that violated blueprint requirements. This checklist prevents repetition of ALL identified problems in remaining 142 weeks.
+
+**User Directive:** "hãy update master prompt v23, đảm bảo có đầy đủ các yêu cầu tạo đủ nội dung và asset đúng như quy định trong blueprint và tránh lặp lại các lỗi đang có ở tuần 2"
+
+#### 0.11.1 PRE-GENERATION VALIDATION (MANDATORY)
+
+**Before creating ANY content for a new week, run ALL these checks:**
+
+**Check 1: TTS Text Validation**
+```bash
+# Search for underscore sequences (causes "blank" pronunciation):
+grep -r "___" src/data/weeks/week_XX/
+# MUST return EMPTY result
+
+# Search for scattered dots (causes choppy TTS):
+grep -r "\.\s*\.\s*\." src/data/weeks/week_XX/
+# MUST return EMPTY result (use solid "..." instead)
+```
+
+**Check 2: Mindmap Format Validation**
+```bash
+# Count ellipsis usage in mindmap stems:
+grep -o "\.\.\." src/data/weeks/week_XX/mindmap.js | wc -l
+# MUST equal number of centerStems (typically 6)
+
+# Ensure NO underscores in mindmap:
+grep "___" src/data/weeks/week_XX/mindmap.js
+# MUST return EMPTY result
+```
+
+**Check 3: Ask AI Length Validation**
+```bash
+# Manual word count check for each context_en:
+# Phase 1 (Weeks 1-14): MAX 16 words
+# Phase 1.2 (Weeks 15-28): MAX 35 words  
+# Phase 2+ (Weeks 29+): MAX 50 words
+
+# Example validation:
+grep "context_en" src/data/weeks/week_XX/ask_ai.js | head -1
+# Count words manually - must be within phase limits
+```
+
+**Check 4: Schema Consistency Validation**
+```bash
+# Compare Advanced vs Easy mode field names:
+diff <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks/week_XX/dictation.js | sort) \
+     <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks_easy/week_XX/dictation.js | sort)
+# MUST show NO differences
+
+# Same for shadowing:
+diff <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks/week_XX/shadowing.js | sort) \
+     <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks_easy/week_XX/shadowing.js | sort)
+# MUST show NO differences
+```
+
+**Check 5: Audio Path Format Validation**
+```bash
+# Search for incorrect audio formats:
+grep -r "\.aiff\|\.wav\|\.m4a" src/data/weeks/week_XX/
+# MUST return EMPTY result (only .mp3 allowed)
+
+# Search for leading zeros in paths:
+grep -r "/audio/week0[0-9]" src/data/weeks/week_XX/
+# MUST return EMPTY result (use /audio/week2/ not /audio/week02/)
+```
+
+**Check 6: Video Content Validation**
+```bash
+# Verify video_queries.json exists:
+ls src/data/weeks/week_XX/video_queries.json
+# MUST exist before running video generation
+
+# Verify exactly 5 video queries:
+grep -c '"id":' src/data/weeks/week_XX/video_queries.json
+# MUST return exactly 5
+```
+
+#### 0.11.2 POST-GENERATION VALIDATION (MANDATORY)
+
+**After running asset generation scripts, verify:**
+
+**Asset Count Validation:**
+```bash
+# Audio file counts (both modes):
+AUDIO_ADV=$(ls public/audio/weekXX/*.mp3 2>/dev/null | wc -l)
+AUDIO_EASY=$(ls public/audio/weekXX_easy/*.mp3 2>/dev/null | wc -l)
+echo "Audio: Advanced=$AUDIO_ADV, Easy=$AUDIO_EASY (expect 120-130 each)"
+
+# Image file counts (both modes):
+IMG_ADV=$(ls public/images/weekXX/*.{jpg,png,webp} 2>/dev/null | wc -l)
+IMG_EASY=$(ls public/images/weekXX_easy/*.{jpg,png,webp} 2>/dev/null | wc -l)
+echo "Images: Advanced=$IMG_ADV, Easy=$IMG_EASY (expect exactly 15 each)"
+
+# Video count (shared between modes):
+VIDEO_COUNT=$(grep -c '"videoId"' src/data/weeks/week_XX/daily_watch.js 2>/dev/null)
+echo "Videos: $VIDEO_COUNT (expect exactly 5)"
+```
+
+**Quality Validation:**
+```bash
+# Test TTS pronunciation (sample check):
+# Play mindmap stem audio - should NOT hear "blank" or "underscore"
+node -e "console.log('Test: This is my ...')" | say -v "Samantha"
+# Should hear natural pause, not word "blank"
+
+# Test video loading (sample check):
+# Get first video ID and test in browser:
+FIRST_VIDEO=$(grep -m1 '"videoId":' src/data/weeks/week_XX/daily_watch.js | cut -d'"' -f4)
+echo "Test video: https://youtube.com/watch?v=$FIRST_VIDEO"
+# Should load valid educational video
+```
+
+#### 0.11.3 SPECIFIC WEEK 2 ERROR PREVENTION
+
+**Issue Prevention Mapping:**
+
+| Week 2 User Complaint | Root Cause | Prevention Check |
+|----------------------|------------|------------------|
+| "Sao lại đọc cả black vậy?" | TTS reading `___` as "blank" | grep for underscores BEFORE audio generation |
+| "Mindmap làm chưa đúng" | Used `___` instead of `...` | Validate ellipsis format in mindmap stems |
+| "Ask-AI thì context dài quá" | Exceeded phase word limits | Manual word count validation |
+| "Dictation và Shadowing chua wa hiển thị đúng" | Schema inconsistency between modes | diff command validation |
+| "Daily watch vẫn trống không" | No video generation run | Verify video_queries.json + real videoIds |
+| "dictation và shadowing vẫn chưa đúng path" | Wrong audio format (.aiff vs .mp3) | grep for non-.mp3 formats |
+
+**Automated Prevention Script:**
+```bash
+#!/bin/bash
+# tools/prevent_week2_errors.sh
+WEEK_ID=$1
+
+echo "🔍 Preventing Week 2 errors for Week $WEEK_ID..."
+
+# Error 1: TTS Underscore Issue
+UNDERSCORE_COUNT=$(grep -r "___" src/data/weeks/week_${WEEK_ID}/ | wc -l)
+if [ "$UNDERSCORE_COUNT" -gt 0 ]; then
+  echo "❌ Found $UNDERSCORE_COUNT underscore sequences (will cause TTS 'blank' pronunciation)"
+  grep -rn "___" src/data/weeks/week_${WEEK_ID}/
+  exit 1
+fi
+
+# Error 2: Mindmap Format Issue  
+MINDMAP_ELLIPSIS=$(grep -c "\.\.\." src/data/weeks/week_${WEEK_ID}/mindmap.js)
+MINDMAP_STEMS=$(grep -c '"' src/data/weeks/week_${WEEK_ID}/mindmap.js | head -6 | tail -1)
+if [ "$MINDMAP_ELLIPSIS" -lt 6 ]; then
+  echo "❌ Mindmap has $MINDMAP_ELLIPSIS ellipsis but needs 6+ (one per stem)"
+  exit 1
+fi
+
+# Error 3: Ask AI Length Issue (manual check required)
+echo "⚠️  Manual check required: Validate Ask AI context word counts"
+echo "   Phase 1 (Weeks 1-14): MAX 16 words per context"
+echo "   Phase 1.2 (Weeks 15-28): MAX 35 words per context"
+echo "   Phase 2+ (Weeks 29+): MAX 50 words per context"
+
+# Error 4: Schema Consistency Issue
+SCHEMA_DIFF=$(diff -q \
+  <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks/week_${WEEK_ID}/dictation.js | sort) \
+  <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks_easy/week_${WEEK_ID}/dictation.js | sort))
+if [ -n "$SCHEMA_DIFF" ]; then
+  echo "❌ Dictation schema differs between Advanced and Easy modes"
+  exit 1
+fi
+
+# Error 5: Video Content Issue
+if [ ! -f "src/data/weeks/week_${WEEK_ID}/video_queries.json" ]; then
+  echo "❌ Missing video_queries.json (videos will be empty placeholders)"
+  exit 1
+fi
+
+VIDEO_QUERY_COUNT=$(grep -c '"id":' src/data/weeks/week_${WEEK_ID}/video_queries.json)
+if [ "$VIDEO_QUERY_COUNT" -ne 5 ]; then
+  echo "❌ video_queries.json has $VIDEO_QUERY_COUNT queries but needs exactly 5"
+  exit 1
+fi
+
+# Error 6: Audio Format Issue
+WRONG_FORMAT_COUNT=$(grep -r "\.aiff\|\.wav\|\.m4a" src/data/weeks/week_${WEEK_ID}/ | wc -l)
+if [ "$WRONG_FORMAT_COUNT" -gt 0 ]; then
+  echo "❌ Found non-.mp3 audio references (scripts only generate .mp3)"
+  grep -rn "\.aiff\|\.wav\|\.m4a" src/data/weeks/week_${WEEK_ID}/
+  exit 1
+fi
+
+echo "✅ Week $WEEK_ID passed all Week 2 error prevention checks"
+```
+
+#### 0.11.4 INTEGRATION INTO MASS PRODUCTION
+
+**Updated Mass Production Workflow:**
+```bash
+#!/bin/bash
+# Updated: create_week_with_prevention.sh
+WEEK_ID=$1
+
+echo "🚀 Creating Week $WEEK_ID with error prevention..."
+
+# Step 1: Generate data files (human/AI task)
+echo "📝 Step 1: Generate 14 data files for both modes"
+echo "   Manual task: Create content following syllabus + blueprint"
+
+# Step 2: Run prevention checks BEFORE asset generation
+echo "🔍 Step 2: Running Week 2 error prevention checks..."
+bash tools/prevent_week2_errors.sh $WEEK_ID
+if [ $? -ne 0 ]; then
+  echo "❌ Prevention checks failed - fix issues before continuing"
+  exit 1
+fi
+
+# Step 3: Generate assets (only if prevention checks pass)
+echo "🎵 Step 3: Generating assets..."
+node tools/generate_audio.js $WEEK_ID $WEEK_ID
+node tools/generate_images_nano_banana.js $WEEK_ID  
+node tools/update_videos.js $WEEK_ID --reset
+
+# Step 4: Validate asset generation results
+echo "📊 Step 4: Validating asset counts..."
+bash tools/verify_assets.sh $WEEK_ID
+if [ $? -ne 0 ]; then
+  echo "⚠️  Asset validation warnings - review but continuing"
+fi
+
+# Step 5: Final quality check
+echo "🧪 Step 5: Final quality assurance..."
+echo "Manual test required:"
+echo "1. Open app → Week $WEEK_ID"  
+echo "2. Test mindmap audio (should NOT hear 'blank')"
+echo "3. Test dictation/shadowing (should display consistently)"
+echo "4. Test daily watch videos (should be real content)"
+echo "5. Test ask AI contexts (should be appropriate length)"
+
+echo "✅ Week $WEEK_ID creation complete with error prevention"
+echo "📋 Next: Manual QA testing in app"
+```
+
+#### 0.11.5 SUCCESS METRICS & MONITORING
+
+**User Experience Indicators (No Complaints About):**
+- [ ] TTS pronunciation errors ("blank" sounds)
+- [ ] Mindmap completion awkwardness  
+- [ ] Ask AI contexts being too long/complex
+- [ ] UI inconsistencies between Advanced/Easy modes
+- [ ] Missing or placeholder content (videos, audio)
+- [ ] Wrong audio file formats or paths
+
+**Technical Quality Indicators:**
+- [ ] All validation commands return expected results
+- [ ] Asset generation scripts complete without errors
+- [ ] File counts match requirements consistently
+- [ ] No manual asset creation needed (scripts handle everything)
+- [ ] API key management works seamlessly
+
+**Prevention Success Metrics:**
+- [ ] Zero Week 2 issue patterns reported in Week 3+
+- [ ] Mass production generates consistently high-quality weeks
+- [ ] Blueprint compliance maintained across all 144 weeks
+- [ ] Asset generation workflow runs without manual intervention
+- [ ] User feedback focuses on content, not technical issues
+
+#### 0.11.6 EMERGENCY ROLLBACK PROCEDURE
+
+**If Week 2 Issues Recur:**
+```bash
+# 1. Identify specific issue from user feedback
+echo "Issue reported: [specific complaint]"
+
+# 2. Map to prevention check that should have caught it
+grep -A5 -B5 "[complaint keyword]" tools/prevent_week2_errors.sh
+
+# 3. Update prevention script to catch this issue
+# Add new validation check to prevent_week2_errors.sh
+
+# 4. Re-run prevention on all existing weeks
+for week in {1..144}; do
+  bash tools/prevent_week2_errors.sh $week
+  if [ $? -ne 0 ]; then
+    echo "Week $week needs fixes"
+  fi
+done
+
+# 5. Fix identified issues before deploying more weeks
+echo "Fix all identified issues before continuing mass production"
+```
+
+---
+
 ## 0.7. Checklist (MUST, STRICT)
+
+**Context:** Week 2 Easy mode had different data structure than Advanced mode, causing UI rendering inconsistencies and broken functionality.
+
+**User Feedback:** "Dictation và Shadowing chua wa hiển thị đúng" (Dictation and Shadowing not displaying correctly)
+
+**Root Cause:** Easy mode created with simplified structure that didn't match component expectations.
+
+#### 0.9.1 Unified Schema Requirements (MANDATORY)
+
+**Both Advanced and Easy modes MUST use identical data structures:**
+
+**Dictation.js Schema (MANDATORY):**
+```javascript
+export default {
+  sentences: [                          // ✅ REQUIRED array name
+    {
+      id: 1,                           // ✅ REQUIRED sequential ID
+      text: "This is my family.",       // ✅ REQUIRED - exact sentence from read.js
+      meaning: "Đây là gia đình tôi."   // ✅ REQUIRED - Vietnamese translation
+    },
+    {
+      id: 2,
+      text: "My family has five people.",
+      meaning: "Gia đình tôi có năm người."
+    }
+    // ... typically 8 sentences (can be 6-10 based on read.js length)
+  ]
+};
+```
+
+**Shadowing.js Schema (MANDATORY):**
+```javascript
+export default {
+  title: "My Family Story",                     // ✅ REQUIRED - matches read.js title
+  audio_full: "/audio/week2/shadowing_full_w2.mp3", // ✅ REQUIRED - complete audio
+  script: [                                     // ✅ REQUIRED array name  
+    {
+      id: 1,                                   // ✅ REQUIRED sequential ID
+      text: "This is my family.",              // ✅ REQUIRED - SAME as dictation text
+      vi: "Đây là gia đình tôi.",              // ✅ REQUIRED - SAME as dictation meaning
+      audio_url: "/audio/week2/shadowing_1.mp3" // ✅ REQUIRED - individual sentence audio
+    },
+    {
+      id: 2,
+      text: "My family has five people.",
+      vi: "Gia đình tôi có năm người.",
+      audio_url: "/audio/week2/shadowing_2.mp3"
+    }
+    // ... EXACT same count as dictation sentences
+  ]
+};
+```
+
+**Critical Requirements:**
+- **Sentence Count:** Dictation and Shadowing MUST have identical sentence count
+- **Text Content:** Shadowing `script[].text` MUST match Dictation `sentences[].text` exactly
+- **Translations:** Shadowing `script[].vi` MUST match Dictation `sentences[].meaning` exactly
+- **Source:** All sentences MUST come from read.js story (split naturally at sentence boundaries)
+
+#### 0.9.2 Content Source Rules (MANDATORY)
+
+**Sentence Extraction from Read.js:**
+```javascript
+// Step 1: Read story content
+const storyText = "This is my family. My family has five people. There is my mom, dad, sister, brother and me. My mom is a teacher. She is very kind. My dad works at a bank. He is funny. My sister is ten years old. She likes to draw. My brother is eight. He loves soccer.";
+
+// Step 2: Split into sentences (at natural boundaries)
+const sentences = [
+  "This is my family.",                    // Sentence 1
+  "My family has five people.",            // Sentence 2  
+  "There is my mom, dad, sister, brother and me.", // Sentence 3
+  "My mom is a teacher.",                  // Sentence 4
+  "She is very kind.",                     // Sentence 5
+  "My dad works at a bank.",               // Sentence 6
+  "He is funny.",                          // Sentence 7
+  "My sister is ten years old."            // Sentence 8
+  // Stop at 8 sentences (optimal for A0++ attention span)
+];
+
+// Step 3: Create identical content for both stations
+// dictation.js uses: sentences[0].text = "This is my family."  
+// shadowing.js uses: script[0].text = "This is my family." (SAME)
+```
+
+**Sentence Selection Criteria:**
+- **Length:** 4-12 words per sentence (A0++ appropriate)
+- **Grammar:** Match week's grammar focus (Present Simple for Week 2)
+- **Vocabulary:** Use only week syllabus words
+- **Completeness:** Each sentence must be complete thought
+- **Natural Order:** Follow story narrative flow
+
+#### 0.9.3 Audio File Requirements
+
+**Dictation Audio (Generated by Script):**
+```javascript
+// Generated files (script creates these automatically):
+"/audio/week2/dictation_1.mp3"         // Sentence 1 audio
+"/audio/week2/dictation_2.mp3"         // Sentence 2 audio  
+// ... up to dictation_8.mp3
+
+// Data file references (set to null - script injects paths):
+sentences: [
+  { id: 1, text: "...", audio_url: null }  // Script auto-injects correct path
+]
+```
+
+**Shadowing Audio (Generated by Script):**
+```javascript
+// Generated files:
+"/audio/week2/shadowing_1.mp3"         // Individual sentence 1
+"/audio/week2/shadowing_2.mp3"         // Individual sentence 2
+// ... up to shadowing_8.mp3
+"/audio/week2/shadowing_full_w2.mp3"   // Complete passage (all sentences)
+
+// Data file references:
+script: [
+  { id: 1, text: "...", audio_url: "/audio/week2/shadowing_1.mp3" },  // Explicit path
+],
+audio_full: "/audio/week2/shadowing_full_w2.mp3"  // Explicit full audio path
+```
+
+**Audio Naming Convention:**
+```bash
+# Week 1-9: No leading zeros
+/audio/week2/dictation_1.mp3         # ✅ CORRECT
+/audio/week02/dictation_1.mp3        # ❌ WRONG - leading zero
+
+# Easy mode: Add _easy suffix  
+/audio/week2_easy/dictation_1.mp3    # ✅ CORRECT
+/audio/week_2_easy/dictation_1.mp3   # ❌ WRONG - underscore format
+
+# Shadowing full audio: Use week ID
+/audio/week2/shadowing_full_w2.mp3   # ✅ CORRECT (w2 = week 2)
+/audio/week2/shadowing_full.mp3      # ❌ WRONG - missing week identifier
+```
+
+#### 0.9.4 Mode Differentiation (Content, Not Structure)
+
+**Advanced Mode Characteristics:**
+- **Sentence Length:** 8-12 words average
+- **Grammar:** Complex sentences (compound, relative clauses)
+- **Vocabulary:** Full week syllabus (all 10 words)
+- **Example:** "My family has five people including my parents and siblings."
+
+**Easy Mode Characteristics:**  
+- **Sentence Length:** 4-8 words average
+- **Grammar:** Simple sentences (S-V-O only)
+- **Vocabulary:** Core 50% of week syllabus
+- **Example:** "My family has five people."
+
+**Schema Consistency Rule:**
+- **Structure:** IDENTICAL (same field names, same array structure)
+- **Content:** DIFFERENT (different sentence complexity)
+- **Count:** CAN vary (Easy might have 6 sentences vs Advanced 8)
+- **Source:** BOTH from respective read.js story
+
+#### 0.9.5 UI Component Expectations
+
+**Dictation Station Requirements:**
+```jsx
+// Components expect this exact structure:
+const dictationData = {
+  sentences: [                          // Array named 'sentences'
+    {
+      id: Number,                      // Sequential ID for tracking
+      text: String,                    // Sentence for dictation
+      meaning: String                  // Vietnamese translation
+    }
+  ]
+};
+```
+
+**Shadowing Station Requirements:**
+```jsx
+// Components expect this exact structure:
+const shadowingData = {
+  title: String,                       // Display title
+  audio_full: String,                  // Path to complete audio
+  script: [                           // Array named 'script'  
+    {
+      id: Number,                     // Sequential ID for tracking
+      text: String,                   // Sentence for shadowing
+      vi: String,                     // Vietnamese translation  
+      audio_url: String               // Path to individual audio
+    }
+  ]
+};
+```
+
+**Component Behavior:**
+- Dictation: Plays audio, student types what they hear, validates against `text`
+- Shadowing: Student reads along with audio, practices pronunciation
+- Both use Vietnamese translation for comprehension support
+
+#### 0.9.6 Validation Commands
+
+**Pre-Asset Generation Checks:**
+```bash
+# 1. Schema Validation (must pass for both modes):
+grep -c '"sentences":' src/data/weeks/week_XX/dictation.js        # Must be 1
+grep -c '"script":' src/data/weeks/week_XX/shadowing.js           # Must be 1
+grep -c '"audio_full":' src/data/weeks/week_XX/shadowing.js       # Must be 1
+
+# 2. Count Consistency Check:
+DICT_COUNT=$(grep -c '"id":' src/data/weeks/week_XX/dictation.js)
+SHAD_COUNT=$(grep -c '"id":' src/data/weeks/week_XX/shadowing.js)
+if [ "$DICT_COUNT" != "$SHAD_COUNT" ]; then
+  echo "❌ Sentence count mismatch: Dictation=$DICT_COUNT, Shadowing=$SHAD_COUNT"
+fi
+
+# 3. Field Name Validation:
+grep '"meaning":' src/data/weeks/week_XX/dictation.js     # Must have results  
+grep '"vi":' src/data/weeks/week_XX/shadowing.js          # Must have results
+grep '"text":' src/data/weeks/week_XX/dictation.js       # Must have results
+grep '"text":' src/data/weeks/week_XX/shadowing.js       # Must have results
+
+# 4. Audio Path Format Check:
+grep '"/audio/week[0-9]' src/data/weeks/week_XX/shadowing.js  # Check format
+grep -v '"/audio/week0[0-9]' src/data/weeks/week_XX/shadowing.js # No leading zeros
+```
+
+**Post-Asset Generation Verification:**
+```bash
+# Audio file count check:
+DICT_AUDIO=$(ls public/audio/weekXX/dictation_*.mp3 | wc -l)
+SHAD_AUDIO=$(ls public/audio/weekXX/shadowing_[0-9]*.mp3 | wc -l)  
+FULL_AUDIO=$(ls public/audio/weekXX/shadowing_full_*.mp3 | wc -l)
+
+echo "Dictation audio: $DICT_AUDIO files"
+echo "Shadowing individual: $SHAD_AUDIO files"  
+echo "Shadowing full: $FULL_AUDIO files (should be 1)"
+
+# Verify audio count matches data
+if [ "$DICT_AUDIO" != "$SHAD_AUDIO" ]; then
+  echo "❌ Audio count mismatch between dictation and shadowing"
+fi
+```
+
+#### 0.9.7 Error Prevention Checklist
+
+**Before Creating Dictation/Shadowing Files:**
+- [ ] Read story from read.js (source of all sentences)
+- [ ] Split into 6-10 natural sentences (appropriate for A0++ attention span)
+- [ ] Verify sentence length (4-12 words per sentence)
+- [ ] Check grammar complexity matches mode (Simple for Easy, Complex for Advanced)
+- [ ] Use identical schema (copy Week 19 structure exactly)
+- [ ] Ensure same sentence count in both dictation and shadowing
+- [ ] Verify audio path format (no leading zeros, correct _easy suffix)
+
+**Common Mistakes to Avoid:**
+| Mistake | Impact | Prevention |
+|---------|--------|------------|
+| Different schemas between modes | UI breaks | Copy Advanced structure to Easy, change content only |
+| Mismatched sentence counts | Component errors | Always keep dictation.sentences.length == shadowing.script.length |
+| Wrong field names (`meaning` vs `vi`) | Data not displayed | Use Week 19 as template exactly |
+| Leading zeros in paths | Audio files not found | Follow naming convention: /audio/week2/ not /audio/week02/ |
+| Not sourced from read.js | Content inconsistency | All sentences MUST come from week's read.js story |
+
+#### 0.9.8 Advanced Features (Optional Enhancement)
+
+**Progress Tracking Integration:**
+```javascript
+// Optional: Track completion rate
+const dictationProgress = {
+  completed_sentences: [1, 2, 3],      // Successfully completed sentence IDs
+  accuracy_rate: 0.85,                 // 85% accuracy average
+  completion_time: 180                 // Seconds to complete
+};
+```
+
+**Adaptive Difficulty:**
+```javascript
+// Optional: Adjust based on student performance  
+const adaptiveShadowing = {
+  speech_rate: 0.8,                    // Slow down for struggling students
+  repeat_count: 3,                     // Allow more repetitions
+  hint_level: 2                        // Show Vietnamese translation after 2 tries
+};
+```
+
+---
+
+## 0.10. OFFICIAL ASSET GENERATION SCRIPTS (MANDATORY)
+
+**Context:** Week 2 mindmap generated with underscores instead of ellipsis, causing TTS to pronounce "blank" instead of natural pauses.
+
+**User Feedback:** "Mindmap làm chưa đúng" (Mindmap structure not correct)
+
+#### 0.8.1 Stem Format Rules (CRITICAL)
+
+**✅ CORRECT Format - Natural Completion Pattern:**
+```javascript
+// mindmap.js - centerStems array
+centerStems: [
+  "This is my ...",              // ✅ Ellipsis for natural pause
+  "My family has ...",           // ✅ Sounds natural when spoken
+  "I love my ...",               // ✅ Easy to complete orally
+  "At home we ...",              // ✅ Encourages speaking practice
+  "My favorite thing is ...",    // ✅ Open-ended completion
+  "Every day I ..."              // ✅ Daily routine prompts
+]
+```
+
+**❌ WRONG Format - Underscore Sequences:**
+```javascript
+// DON'T DO THIS - Causes TTS pronunciation issues
+centerStems: [
+  "This is my _____.",           // ❌ TTS reads as "blank blank blank"
+  "My family has ___.",          // ❌ TTS reads as "underscore underscore"
+  "I love my ____.",             // ❌ Disrupts natural speech flow
+]
+```
+
+#### 0.8.2 Branch Completion Guidelines
+
+**Natural Speech Patterns:**
+```javascript
+branchLabels: {
+  "This is my ...": [
+    "family",                    // ✅ Single word completion
+    "home",                      // ✅ Natural noun
+    "classroom",                 // ✅ Week-appropriate vocabulary
+    "favorite book",             // ✅ Short phrase (2-3 words max)
+    "best friend",               // ✅ Familiar concept
+    "pet dog"                    // ✅ Concrete, relatable
+  ]
+}
+```
+
+**Completion Quality Standards:**
+- **Length:** 1-3 words maximum per branch
+- **Vocabulary:** From week's syllabus only (no advanced words)
+- **Grammar:** Simple nouns/noun phrases (matches A0++ level)
+- **Relevance:** Connects to week theme (family, school, identity, etc.)
+- **Naturalness:** Student would actually say this in conversation
+
+#### 0.8.3 Audio Considerations
+
+**TTS-Friendly Stems:**
+```javascript
+// ✅ GOOD - Flows naturally in speech:
+"When I'm happy, I ..."         // Sounds conversational
+"My teacher is ..."             // Natural sentence starter
+"After school I ..."            // Temporal connector
+
+// ⚠️ AVOID - Awkward when spoken:
+"The thing that I most want is ..." // Too long, complex structure
+"Regarding my feelings about ..."   // Academic, unnatural for A0++
+```
+
+**Ellipsis Pronunciation:**
+- TTS treats `...` as natural pause (500ms silence)
+- Student hears: "This is my [pause]" → brain fills completion
+- Creates expectation for speaking practice
+
+#### 0.8.4 Cultural Localization
+
+**Vietnamese ESL Context:**
+```javascript
+// ✅ APPROPRIATE - Familiar to Vietnamese students:
+branchLabels: {
+  "My family has ...": [
+    "a motorbike",               // Common in Vietnam
+    "rice for dinner",           // Cultural food reference
+    "many photos",               // Universal family experience
+    "a small house",             // Relatable living situation
+  ]
+}
+
+// ❌ AVOID - Culturally unfamiliar:
+branchLabels: {
+  "My family has ...": [
+    "a swimming pool",           // Uncommon in most Vietnamese homes
+    "thanksgiving dinner",       // Western holiday concept
+    "a basement",                // Not typical in Vietnamese architecture
+  ]
+}
+```
+
+#### 0.8.5 Validation Commands
+
+**Pre-Publication Checks:**
+```bash
+# 1. Underscore Detection (MUST be empty):
+grep -r "___" src/data/weeks/week_XX/mindmap.js
+# Should return NO results
+
+# 2. Ellipsis Count Validation:
+grep -o "\.\.\." src/data/weeks/week_XX/mindmap.js | wc -l
+# Should equal number of centerStems (typically 6)
+
+# 3. Branch Count Validation:
+grep -c "\".*\":" src/data/weeks/week_XX/mindmap.js
+# Should equal number of stems (nested object structure)
+
+# 4. Audio Path Validation:
+grep "audio" src/data/weeks/week_XX/mindmap.js
+# Should be EMPTY (audio generated by script, not in data)
+```
+
+**TTS Quality Test:**
+```bash
+# Generate sample audio to test pronunciation:
+echo "This is my ..." | say -v "Samantha"
+# Should hear: "This is my [natural pause]" 
+# NOT: "This is my blank blank blank"
+```
+
+#### 0.8.6 Integration with Speaking Practice
+
+**Pedagogical Flow:**
+1. **Audio Plays:** "This is my ..." (with natural pause)
+2. **Student Hears:** Complete sentence starter + pause expectation
+3. **Student Thinks:** What can complete this naturally?
+4. **Student Clicks:** Branch option that feels right
+5. **Student Speaks:** Full sentence aloud ("This is my family")
+
+**UI Behavior:**
+- Stem audio includes ellipsis pause (encourages mental completion)
+- Branch audio provides full word/phrase (confirmation/correction)
+- Student practices saying complete sentences, not fragments
+
+#### 0.8.7 Error Prevention Strategy
+
+**Content Creation Rules:**
+1. **Write stems as spoken sentences** with ellipsis endpoints
+2. **Test stem completion orally** - does it sound natural?
+3. **Validate branch vocabulary** against week syllabus
+4. **Check cultural appropriateness** for Vietnamese context
+5. **Count words per branch** - maximum 3 words
+6. **Avoid academic language** - use conversational patterns
+
+**Quality Assurance:**
+- Every mindmap stem MUST sound like natural conversation starter
+- Every branch MUST be something A0++ student would actually say
+- Every completion MUST form grammatically correct sentence
+- TTS pronunciation MUST sound like native speaker having natural conversation
+
+#### 0.8.8 Advanced/Easy Mode Differentiation
+
+**Advanced Mode Characteristics:**
+```javascript
+centerStems: [
+  "When I grow up, I want to ...",    // Future orientation
+  "My favorite subject is ...",       // Academic vocabulary
+  "The most interesting thing is ..." // Complex sentence structure
+]
+```
+
+**Easy Mode Characteristics:**
+```javascript  
+centerStems: [
+  "I like ...",                       // Simple present tense
+  "My name is ...",                   // Basic identity
+  "This is ..."                       // Present tense, demonstrative
+]
+```
+
+**Morphing Rules:**
+- **Same topic/theme** (both about family, school, etc.)
+- **Different complexity** (Advanced = compound sentences, Easy = simple)
+- **Same vocabulary scope** (both use week syllabus words)
+- **Different grammar structures** (Advanced = complex, Easy = S-V-O only)
+
+---
+
+## 0.7. Checklist (MUST, STRICT)
+
+**Critical Context:** Week 2 revealed TTS pronunciation issues that must be prevented in all future weeks.
+
+#### 0.7.1 Text Preparation for Natural Speech
+
+**MANDATORY Function Implementation:**
+```javascript
+// src/services/tts.js - REQUIRED in every project
+function prepareTTSText(text) {
+  return text
+    // Replace all underscore sequences with ellipsis for natural pause
+    .replace(/_{3,}/g, '...')                    // ___ → ...
+    .replace(/_{1,2}/g, ' ')                     // _ or __ → space
+    
+    // Clean ellipsis spacing for proper pronunciation
+    .replace(/\s*\.\.\.\s*/g, ' ... ')           // Ensure spacing around ...
+    .replace(/\s*\.\s*\.\s*\.\s*/g, ' ... ')     // Fix scattered dots
+    
+    // Fix common text-to-speech issues
+    .replace(/\s+/g, ' ')                        // Multiple spaces → single space
+    .replace(/([.!?])\s*([A-Z])/g, '$1 $2')      // Sentence spacing
+    .replace(/([,;:])\s*/g, '$1 ')               // Punctuation spacing
+    
+    .trim();
+}
+```
+
+**USAGE REQUIREMENTS:**
+```javascript
+// ✅ CORRECT - All TTS calls MUST use prepareTTSText:
+const cleanText = prepareTTSText(originalText);
+const audioBlob = await generateTTS(cleanText, options);
+
+// ❌ WRONG - Direct text to TTS (causes "blank" pronunciation):
+const audioBlob = await generateTTS(originalText, options); // DON'T DO THIS
+```
+
+**Application Areas:**
+- Mindmap stems and branches (most critical - user heard "blank" here)
+- Word Power definitions and examples
+- Story content (read.js, explore.js)
+- Grammar explanations
+- Logic Lab problems
+- Ask AI contexts
+
+#### 0.7.2 Voice Configuration Requirements
+
+**MANDATORY Voice Rotation (Week-by-Week):**
+```javascript
+// Each week MUST have unique voiceConfig to prevent monotony
+export default {
+  weekId: XX,
+  voiceConfig: {
+    narration: 'en-GB-Neural2-A',     // Rotate: Week 1→US, Week 2→GB, Week 3→AU
+    vocabulary: 'en-AU-Neural2-B',    // MUST be different from previous week
+    dictation: 'en-US-Neural2-E',     // Choose expressive voices for engagement
+    questions: 'en-US-Neural2-D',     // Male/female balance across stations
+    mindmap: 'en-US-Neural2-F'        // ⚠️ Most important - students hear this most
+  }
+}
+```
+
+**Emotional Expression Requirements (Blueprint Compliance):**
+```javascript
+// Voice selection MUST prioritize expressiveness over neutrality
+const VOICE_CHARACTERISTICS = {
+  // ✅ RECOMMENDED - Expressive voices:
+  'en-US-Neural2-D': 'Male, warm, storytelling tone',     // Perfect for narration
+  'en-US-Neural2-F': 'Female, bright, engaging',          // Great for mindmap
+  'en-GB-Neural2-A': 'Male, authoritative, clear',        // Good for grammar
+  
+  // ⚠️ USE SPARINGLY - Too neutral:
+  'en-US-Neural2-E': 'Female, neutral, robotic',          // Only for dictation
+  'en-US-Neural2-C': 'Male, flat, emotionless'            // Avoid in story content
+};
+```
+
+**Blueprint Requirement:** "Giọng đọc phải diễn cảm (như kể chuyện), có cảm xúc vui/buồn rõ ràng"
+
+#### 0.7.3 Audio Path Standardization
+
+**MANDATORY Naming Convention:**
+```javascript
+// Week 1-9: NO leading zero
+"/audio/week1/vocab_student.mp3"     // ✅ CORRECT
+"/audio/week01/vocab_student.mp3"    // ❌ WRONG - leading zero
+
+// Week 10+: NO leading zero  
+"/audio/week10/vocab_student.mp3"    // ✅ CORRECT
+"/audio/week010/vocab_student.mp3"   // ❌ WRONG - leading zero
+
+// Easy mode: Add _easy suffix
+"/audio/week2_easy/vocab_family.mp3" // ✅ CORRECT
+"/audio/week_02_easy/vocab_family.mp3" // ❌ WRONG - underscore + zero
+```
+
+**File Format Requirements:**
+```javascript
+// ✅ ONLY .mp3 format allowed (script output):
+audio_url: "/audio/week2/dictation_1.mp3"
+
+// ❌ NEVER use other formats:
+audio_url: "/audio/week2/dictation_1.aiff"  // Scripts don't generate .aiff
+audio_url: "/audio/week2/dictation_1.wav"   // Scripts don't generate .wav
+audio_url: "/audio/week2/dictation_1.m4a"   // Scripts don't generate .m4a
+```
+
+#### 0.7.4 Audio Generation Workflow
+
+**Step 1: Text Validation (Pre-Generation)**
+```bash
+# Check for underscore sequences that will break TTS
+grep -r "___" src/data/weeks/week_XX/
+# Must return EMPTY result before audio generation
+
+# Check for other TTS-breaking patterns
+grep -r "\.\s*\.\s*\." src/data/weeks/week_XX/  # Scattered dots
+grep -r "[a-z][A-Z]" src/data/weeks/week_XX/     # Missing sentence spacing
+```
+
+**Step 2: Audio Generation (Official Script)**
+```bash
+# MANDATORY: Use official script with proper API key loading
+node tools/generate_audio.js XX XX
+
+# Script automatically:
+# 1. Reads voiceConfig from week data
+# 2. Applies prepareTTSText() to all content  
+# 3. Generates ~120-130 audio files per mode
+# 4. Saves to correct path format (/audio/weekXX/*.mp3)
+```
+
+**Step 3: Audio Validation (Post-Generation)**
+```bash
+# Verify file count matches expected
+ls public/audio/weekXX/*.mp3 | wc -l      # Should be ~120-130
+ls public/audio/weekXX_easy/*.mp3 | wc -l # Should be ~120-130
+
+# Test critical files for pronunciation quality
+# Play mindmap stem audio - should NOT hear "blank" or "underscore"
+# Play story audio - should sound natural with proper pauses
+```
+
+#### 0.7.5 Quality Assurance Checklist
+
+**Before Every Week Release:**
+- [ ] All content passed through prepareTTSText() validation
+- [ ] VoiceConfig uses different voices than previous week  
+- [ ] Audio paths use correct format (no leading zeros, .mp3 extension)
+- [ ] Critical audio files tested for pronunciation quality
+- [ ] No "blank" or "underscore" audible in any generated audio
+
+**Common Issues Prevention:**
+| Issue | Cause | Prevention |
+|-------|-------|------------|
+| "Blank" pronunciation | Underscore sequences in text | Use prepareTTSText() ALWAYS |
+| Monotone narration | Same voice across all weeks | Rotate voiceConfig weekly |
+| Audio files not found | Wrong path format | Follow naming convention exactly |
+| Robot-like speech | Chose neutral voices | Prioritize expressive voices |
+| No emotional expression | Flat text content | Write engaging, story-like content |
+
+#### 0.7.6 Advanced TTS Features (Optional Enhancement)
+
+**SSML Markup for Emotional Expression:**
+```javascript
+// For advanced emotional content (Phase 2+ weeks):
+const enhancedText = `
+  <prosody rate="110%" pitch="+5%">I'm so excited to learn!</prosody>
+  <break time="500ms"/>
+  <prosody rate="90%" pitch="-5%">But sometimes I feel sad.</prosody>
+`;
+
+// Only use if generate_audio.js supports SSML tags
+```
+
+**Context-Aware Voice Selection:**
+```javascript
+// Future enhancement: Auto-select voice based on content type
+function getOptimalVoice(contentType, emotion) {
+  const voiceMap = {
+    'story_happy': 'en-US-Neural2-F',      // Bright female
+    'story_sad': 'en-US-Neural2-D',        // Warm male  
+    'grammar_explanation': 'en-GB-Neural2-A', // Authoritative
+    'vocabulary_drill': 'en-AU-Neural2-B'   // Clear, patient
+  };
+  return voiceMap[`${contentType}_${emotion}`] || DEFAULT_VOICE;
+}
+```
 - [ ] Each week has unique `voiceConfig` (no default fallback)
 - [ ] All 14 data files exist for BOTH advanced and easy modes (see list above)
 - [ ] Bridge files exist for BOTH advanced and easy modes (src/data/weeks/week_XX.js and src/data/weeks_easy/week_XX.js)
@@ -1289,27 +2770,72 @@ Blueprint states ESL learners need authentic language situations to:
 
 ## III. ASSET SUMMARY
 
-### Audio Files (VARIABLE count per week - depends on CONTENT, auto-generated by script)
-**CRITICAL:** Audio count is NOT fixed - it depends on week content structure per Blueprint morphing rules.
+### Audio Files (VARIABLE count per week - auto-generated by Google TTS)
 
-**How generate_audio.js works:**
+**CRITICAL:** Audio count is NOT fixed - depends on week content per Blueprint morphing rules.
+
+---
+
+#### Recent Critical Fixes (Dec 31, 2025)
+
+**Fix 1: Language Code Bug (Line 83-105)**
+- **Old Bug:** Hardcoded `languageCode: "en-US"` for all voices
+- **Impact:** Voices like `en-AU-Neural2-B` and `en-GB-Neural2-A` failed with 400 error
+- **Fix:** Dynamic extraction from voiceName prefix
+```javascript
+const getLanguageCodeFromVoice = (voiceName) => {
+  if (voiceName.startsWith('en-AU')) return 'en-AU';
+  if (voiceName.startsWith('en-GB')) return 'en-GB';
+  return 'en-US';
+};
+voice: { languageCode: getLanguageCodeFromVoice(voiceName), name: voiceName }
+```
+- **Verified:** Week 1 Easy generated 136 files with no errors
+
+**Fix 2: Mindmap Branches Object Iteration (Line 275-295)**
+- **Old Bug:** Treated `branchLabels` as array, only generated 6 stem audio
+- **Impact:** Missing 36 branch audio files per week
+- **Fix:** Iterate through object keys to extract all branches
+```javascript
+if (mindmapData?.branchLabels && typeof mindmapData.branchLabels === 'object') {
+  let branchCounter = 0;
+  Object.values(mindmapData.branchLabels).forEach(branchArray => {
+    if (Array.isArray(branchArray)) {
+      branchArray.forEach(branch => {
+        branchCounter++;
+        addTask(branch, `mindmap_branch_${branchCounter}`, voices.mindmap);
+      });
+    }
+  });
+}
+```
+- **Verified:** Week 1 Easy now generates 42 mindmap files (6 stems + 36 branches)
+
+---
+
+#### How generate_audio.js Works
+
 1. Loads week data from `src/data/weeks/week_XX/index.js`
 2. Scans ALL stations for text content that needs audio
 3. Generates audio ONLY for fields that exist (skips missing optional fields)
 4. Uses week-specific `voiceConfig` if present, otherwise uses global defaults
 5. Saves MP3 files to `public/audio/weekXX/` (or `weekXX_easy/` for Easy mode)
 
+---
+
+#### Audio Count Formula
+
 **Base formula (Phase 1, weeks 1-54):**
 ```
 read: 1 (read_explore_main.mp3)
 explore: 1 (explore_main.mp3)
 vocab: 40 (10 words × 4 each: word, def, ex, coll)
-word_power: 12 (3 words × 4 each: word, def, ex, model) *Phase 1 only*
+word_power: 12 (3 words × 4 each: word, def, ex, model) *Phase 1: EXACTLY 3*
 dictation: 8 (8 sentences from read.js)
 shadowing: 9 (8 sentences + 1 full audio)
 logic: 5 (5 puzzles) *Phase 1 only*
 ask_ai: 5 (5 prompts)
-mindmap: 42 (6 stems + 36 branches)
+mindmap: 42 (6 stems + 36 branches) *FIXED after Dec 31 fix*
 ---
 BASE TOTAL: ~123 files (Phase 1)
 ```
@@ -1326,34 +2852,59 @@ BASE TOTAL: ~123 files (Phase 1)
 - Grammar examples audio: 0-16 files (week-specific, rare)
 
 **Typical ranges:**
-- Phase 1 (weeks 1-54): 115-135 files per mode
-- Phase 2 (weeks 55-120): 125-145 files per mode (more word_power + logic)
-- Phase 3 (weeks 121+): 130-155 files per mode (max word_power + logic)
+- Phase 1 (weeks 1-54): 120-135 files per mode
+- Phase 2 (weeks 55-120): 130-145 files per mode (more word_power + logic)
+- Phase 3 (weeks 121+): 135-155 files per mode (max word_power + logic)
 
-**Example: Week 19 (Phase 1) = 138 files**
+---
+
+#### Example: Week 1 Easy (After Fixes - Dec 31, 2025)
+
+**Total: 126 audio files**
+
 | Station | Count | Naming Pattern |
 |---------|-------|----------------|
 | read | 1 | `read_explore_main.mp3` |
 | explore | 1 | `explore_main.mp3` |
 | vocab | 40 | `vocab_[word].mp3`, `vocab_def_[word].mp3`, `vocab_ex_[word].mp3`, `vocab_coll_[word].mp3` |
-| word_power | 12 | `wordpower_[word].mp3`, `wordpower_def_[word].mp3`, `wordpower_ex_[word].mp3`, `wordpower_model_[word].mp3` |
+| word_power | 12 | `wordpower_[word].mp3`, `wordpower_def_[word].mp3`, `wordpower_ex_[word].mp3`, `wordpower_model_[word].mp3` *(3 items)* |
 | dictation | 8 | `dictation_[1-8].mp3` |
 | shadowing | 9 | `shadowing_[1-8].mp3` + `shadowing_full.mp3` |
-| mindmap | 42 | `mindmap_stem_[1-6].mp3`, `mindmap_branch_[1-36].mp3` |
+| mindmap | 42 | `mindmap_stem_[1-6].mp3`, `mindmap_branch_[1-36].mp3` *(FIXED)* |
 | logic | 5 | `logic_[1-5].mp3` |
 | ask_ai | 5 | `ask_ai_[1-5].mp3` |
-| grammar | 16 | `grammar_ex_[1-16].mp3` *(Week 19 specific, rare)* |
-| **TOTAL** | **139** | *(Variable per week)* |
+| grammar | 3 | `grammar_ex_[1-3].mp3` |
+| **TOTAL** | **126** | |
 
-**Generation command:**
+---
+
+#### Generation Command
+
 ```bash
 node tools/generate_audio.js <START_WEEK> <END_WEEK>
-# Reads API keys from API keys.txt automatically
+# Auto-loads Google TTS API key from API keys.txt
+# Generates audio for both Advanced and Easy modes
+# Example: node tools/generate_audio.js 1 10
+```
+
+**Cost:** Free (Google TTS free tier: 1M characters/month)
+
+---
 # Generates all audio for both Advanced and Easy modes
 ```
 
-### Image Files (FIXED 15 per mode, auto-generated by Gemini Imagen API)
-**CRITICAL:** Image count is FIXED at 15 per mode regardless of content phase.
+### Image Files (FIXED 15 per mode - 2 Generation Methods)
+
+**CRITICAL:** Image count is FIXED at 15 per mode in Phase 1 (weeks 1-54).
+
+---
+
+#### Method A: Imagen 3 (Paid - Batch Recommended for Advanced Mode)
+
+**Script:** `tools/batch_manager.js <START_WEEK> <END_WEEK>`
+**Model:** `imagen-3.0-generate-001` (configurable line 14)
+**Cost:** $0.02/image × 15 = $0.30/week/mode
+**Use Case:** Advanced mode, multi-week batch generation
 
 **How batch_manager.js works:**
 1. Loads week data from `src/data/weeks/week_XX/index.js`
@@ -1362,13 +2913,70 @@ node tools/generate_audio.js <START_WEEK> <END_WEEK>
    - 10 vocab images from `new_words.vocab[]`
    - 3 word_power images from `word_power.words[]` (Phase 1 only)
 3. Generates educational illustration prompts for each image
-4. Calls Gemini Imagen API (**Imagen 3** for cost efficiency: $0.02/image vs Imagen 4 $0.04/image)
-   - Aspect ratios: Covers `16:9`, Vocab/Word Power `1:1`
-   - **Optimization:** Easy mode reuses vocab images from Advanced folder (30-40% savings)
-   - **Skip-exists:** Checks if image already generated to prevent duplicates during retries
+4. Calls Gemini Imagen API (aspect ratios: Covers `16:9`, Vocab/Word Power `1:1`)
+   - **Skip-exists:** Checks if image already generated to prevent duplicates
 5. Saves JPG files to `public/images/weekXX/` (or `weekXX_easy/`)
 
-**Naming Convention:**
+**Generation command:**
+```bash
+node tools/batch_manager.js <START_WEEK> <END_WEEK>
+# Auto-loads Gemini API key from API keys.txt
+# Generates 15 images for both Advanced and Easy modes
+# Example: node tools/batch_manager.js 1 10
+```
+
+---
+
+#### Method B: Nano Banana (Free - Recommended for Easy Mode)
+
+**Script:** `tools/generate_weekX_easy_images.js` (custom per week)
+**Model:** `gemini-3-pro-image-preview` (Gemini free tier)
+**Cost:** $0.00 (free tier)
+**Quality:** 1024×1024 JPEG, ~500-700KB/image, sufficient for ESL vocab
+**Use Case:** Easy mode only, per-week generation
+**Savings:** $43.20 for 144 Easy mode weeks
+
+**Template:** Copy from `tools/generate_week1_easy_images.js`
+
+**How to create per-week script:**
+1. Copy: `cp tools/generate_week1_easy_images.js tools/generate_weekX_easy_images.js`
+2. Update vocab words array (10 items from Easy mode vocab.js)
+3. Update word_power phrases array (3 items from Easy mode word_power.js)
+4. Update output directory: `public/images/weekX_easy`
+5. Run: `node tools/generate_weekX_easy_images.js`
+
+**Example script structure:**
+```javascript
+const VOCAB_WORDS = [
+  { word: 'name', prompt: 'Simple educational illustration of a name tag...' },
+  { word: 'friend', prompt: 'Simple educational illustration of two children...' },
+  // ... 10 vocab words
+];
+
+const WORDPOWER_PHRASES = [
+  { word: 'wordpower_my_friend', prompt: 'Simple educational illustration...' },
+  // ... 3 word_power phrases
+];
+
+// Uses: gemini-3-pro-image-preview model
+// Auto-loads API key from API keys.txt
+// Rate limit: 3 seconds between requests
+```
+
+**Verified Results (Week 1 Easy - Dec 31, 2025):**
+```
+✅ 15/15 images generated successfully
+✅ friend.jpg: 681 KB, 1024×1024
+✅ desk.jpg: 501 KB, 1024×1024
+✅ Total size: 11MB for 15 images
+✅ Time: ~45 seconds (3 sec/image)
+✅ Cost: $0.00
+```
+
+---
+
+#### Image Naming Convention (Both Methods)
+
 | Station | Count | Naming Pattern | Aspect Ratio |
 |---------|-------|----------------|-------------|
 | read | 1 | `read_cover_wXX.jpg` (e.g., `read_cover_w19.jpg`) | 16:9 |
@@ -1392,12 +3000,27 @@ Simple educational illustration of [word]: [definition].
 Child-friendly, clear, colorful, suitable for ESL vocabulary learning.
 ```
 
-**Generation command:**
+---
+
+#### Mass Production Strategy (144 Weeks)
+
+**Recommended Hybrid Approach:**
 ```bash
-node tools/batch_manager.js <START_WEEK> <END_WEEK>
-# Reads Gemini API key from API keys.txt automatically
-# Generates 15 images for both Advanced and Easy modes
+# Easy Mode: Nano Banana (Free)
+for week in {1..144}; do
+  node tools/generate_week${week}_easy_images.js
+done
+# Cost: $0.00
+
+# Advanced Mode: Imagen 3 (Batch)
+node tools/batch_manager.js 1 144
+# Cost: $43.20 (144 × $0.30)
+
+# Total Cost: $43.20
+# Savings: $43.20 (50% vs all-Imagen approach)
 ```
+
+---
 
 **Phase Impact on Images:**
 - Phase 1 (weeks 1-54): 15 images (3 word_power)
@@ -1429,7 +3052,7 @@ node tools/batch_manager.js <START_WEEK> <END_WEEK>
 - [ ] **grammar.js:** EXACTLY 20 exercises (mix of mc, fill, unscramble)? **NO AUDIO generated for this station**
 - [ ] **logic.js:** EXACTLY 5 puzzles with RICH CONTEXT (30-50 words storytelling, NOT bare math)?
 - [ ] **ask_ai.js:** EXACTLY 5 prompts with RICH SCENARIOS (30-50 words context_en, NOT direct questions)?
-- [ ] **dictation.js:** Exactly 8 sentences (copied from read.js story)?
+- [ ] **dictation.js:** ALL sentences from read.js story (no omissions, split by periods)?
 - [ ] **shadowing.js:** SAME 8 sentences as dictation (EXACT same text field)?
 - [ ] **mindmap.js:** 6 stems + NESTED OBJECT branchLabels with 6 branches per stem (NOT flat array)?
 - [ ] **daily_watch.js:** EXACTLY 5 videos (MANDATORY) with videoId field?
@@ -2547,23 +4170,567 @@ for i in {1..10}; do
 done
 ```
 
-**Cost Estimation (Updated December 2025):**
-- **Images (Gemini Imagen 3):** $0.02/image (50% cheaper than Imagen 4)
-  - Advanced mode: 15 images/week × $0.02 = $0.30
-  - Easy mode: ~5 images/week (reuses 10 vocab from Advanced) = $0.10
-  - Total per week: ~$0.40/week
-  - **Week 1-20:** ~$8 for images
-- **Audio (Google TTS Neural2):** $16/1M characters, FREE tier 1M chars/month
-  - Average week: ~50,000 characters (both modes)
-  - Total Week 1-20: ~1M characters = **$0** (within free tier)
-- **Videos (YouTube Data API v3):** FREE tier 10K queries/day
-  - 5 videos/week × 20 weeks = 100 queries = **$0** (within free tier)
-- **TOTAL Week 1-20:** ~$8 (images only)
-- **TOTAL 144 weeks:** ~$58 (images only, audio/video free)
+**Note:** For cost analysis and image generation strategy options, see separate document: `IMAGE_GENERATION_STRATEGY_UPDATED.md`
 
 ---
 
-## END OF MASTER PROMPT V23-FINAL (UPDATED WITH WEEK 1 LEARNINGS + AUDIO FIX)
+## 8. STORY MISSION - AI TUTOR COMPLETE DOCUMENTATION
+
+**CRITICAL: Vietnamese ESL A0++ Context (6-12 year olds)**
+All Story Mission content MUST follow these constraints:
+- **Target audience:** Vietnamese children (6-12 years old) learning English as absolute beginners
+- **Grammar:** Present Simple ONLY - no past tense, present continuous, or future tense
+  - ✅ CORRECT: "I like playground", "My name Khan", "Teacher is Ms. Nova"
+  - ❌ WRONG: "I liked it", "I am playing", "I will go" (violates A0++ scope)
+- **Sentence length:** Maximum 10 words per sentence
+- **Vocabulary:** Core 2,000 high-frequency words only, no idioms or phrasal verbs
+- **Pronunciation errors:** Common Vietnamese ESL patterns (see fuzzy matching map below)
+- **Cultural context:** Vietnamese names (Khan, Noon, Binh, Linh), subjects (Math, Science, English), school environment
+
+### 8.1. Story Mission Data Structure & Mass Production
+
+**CURRENT Architecture (Implemented Dec 31, 2025):**
+```
+src/data/missions/
+├── missionSchema.js                    # Schema definition + createMission() factory
+├── week1_first_day.js                  # Week 1 Mission 1: First Day
+├── week1_my_classroom.js               # Week 1 Mission 2: My Classroom
+├── week1_school_friends.js             # Week 1 Mission 3: School Friends
+├── week2_family_introduction.js        # Week 2 Mission 1: Meet My Family
+├── week2_family_roles.js               # Week 2 Mission 2: Family Team
+├── week2_family_activities.js          # Week 2 Mission 3: Family Time
+└── ...
+
+src/data/storyMissions.js               # Central registry + getMissionsForWeek()
+```
+
+**Mission File Structure (Standard Format):**
+```javascript
+import { createMission } from './missionSchema';
+
+export const week2FamilyIntroduction = createMission({
+  id: "W2_FAMILY_INTRO",
+  weekId: 2,
+  title: "Meet My Family",
+  description: "Learn to introduce your family members using 'This is my...'",
+  level: "easy",
+  
+  targetVocabulary: [
+    { word: "family", mustUse: true, phonetic: "/ˈfæməli/", definition: "..." },
+    { word: "mother", mustUse: true, phonetic: "/ˈmʌðər/", definition: "..." },
+    // ... 5-7 vocab items total
+  ],
+  
+  successCriteria: {
+    minTurns: 6,
+    mustUseWords: ["family", "mother", "father"],  // 3-4 core words
+    optionalBonus: ["brother", "sister"],          // 2-3 bonus words
+    vocabularyThreshold: 0.5
+  },
+  
+  steps: [
+    {
+      stepId: 1,
+      aiPrompt: "Hi! I'm Ms. Nova! 👋 Do you have a family?",
+      task: "Answer yes or no",
+      expected: { type: "yes_no" },
+      hints: ["Yes", "I", "have", "a", "family"],
+      repair: "Say: Yes, I have a family",
+      modelSentence: "Yes, I have a family.",
+      modelModify: "Now you say it!"
+    },
+    // ... 9 more steps (10 total for Phase 1)
+  ],
+  
+  scaffolding: {
+    phase: 1,           // Phase 1 = Weeks 1-14
+    coreTurns: 7,       // Core mission turns
+    expansionTurns: 3,  // Additional exploration
+    maxTurns: 10
+  },
+  
+  novaPersonality: {
+    traits: ["warm", "family-loving", "uses_emojis"],
+    dadJokes: [
+      "Why do families love photos? Because they're picture-perfect! 📸",
+      // ... 2-3 jokes per mission
+    ],
+    emoji: "👨‍👩‍👧‍👦"
+  }
+});
+
+export default week2FamilyIntroduction;
+```
+
+**Central Registry Pattern:**
+```javascript
+// src/data/storyMissions.js
+import week1FirstDay from './missions/week1_first_day';
+import week2FamilyIntroduction from './missions/week2_family_introduction';
+// ... import all missions
+
+export const Week1Missions = [week1FirstDay, week1MyClassroom, week1SchoolFriends];
+export const Week2Missions = [week2FamilyIntroduction, week2FamilyRoles, week2FamilyActivities];
+
+export function getMissionsForWeek(weekId) {
+  if (weekId === 1) return Week1Missions;
+  if (weekId === 2) return Week2Missions;
+  // ... add more weeks
+  return [];
+}
+
+export function getMissionById(missionId) {
+  const allMissions = [...Week1Missions, ...Week2Missions];
+  return allMissions.find(m => m.id === missionId);
+}
+```
+
+**Dynamic Loading in UI:**
+```javascript
+// src/modules/ai_tutor/tabs/StoryMissionTab.jsx
+import { getMissionsForWeek } from '../../../data/storyMissions';
+
+export default function StoryMissionTab({ weekData, recognitionRef }) {
+  // ✅ Dynamic loading based on weekId (not hardcoded)
+  const missions = getMissionsForWeek(weekData?.weekId || 1);
+  
+  // ... rest of component
+}
+```
+
+**Benefits:**
+- ✅ One file per mission (clear separation of concerns)
+- ✅ Scalable to 144 weeks (432 mission files = 3 per week)
+- ✅ Version control friendly (git tracks changes per mission)
+- ✅ Modular imports (import only what you need)
+- ✅ Dynamic loading via central registry (no hardcoded week IDs in UI)
+- ✅ Schema validation via createMission() factory
+
+**Mass Production Workflow:**
+1. Extract week data from `syllabus_database.js` (grammar, topic, vocab)
+2. Create 3 mission files: `week{N}_mission1.js`, `week{N}_mission2.js`, `week{N}_mission3.js`
+3. Each mission focuses on different aspect of week topic
+4. Update `storyMissions.js` to add `Week{N}Missions` array and update `getMissionsForWeek()`
+5. Test missions in UI (Week selector automatically loads new missions)
+
+**Naming Convention:**
+- Format: `week{N}_{theme}.js` (lowercase with underscores)
+- Examples: 
+  - Week 1: `week1_first_day.js`, `week1_my_classroom.js`, `week1_school_friends.js`
+  - Week 2: `week2_family_introduction.js`, `week2_family_roles.js`, `week2_family_activities.js`
+  - Week 19: `week19_childhood_memories.js`, `week19_baby_photos.js`, `week19_growing_up.js`
+
+**Legacy Format (Deprecated):**
+```
+src/data/storyMissions.js  # All missions in one file
+└── export const Week1Missions = [{...}, {...}, {...}];
+```
+- ❌ Not scalable (file would be >50,000 lines for 144 weeks)
+- ❌ Merge conflicts when multiple people edit
+- ⚠️ Use ONLY for prototyping/testing
+
+### 8.2. AI Beat Length Rules (MODE-SPECIFIC + SCAFFOLDING)
+
+**UPDATED - Word Count Scaffolding by Phase:**
+
+| Phase | Weeks | Word Limit | Rationale |
+|-------|-------|-----------|-----------|
+| **Phase 1** | 1-14 | 7-16 words | A0++ Vietnamese ESL beginners - need simple, direct questions |
+| **Phase 1.2** | 15-28 | 20-35 words | A1 learners - can handle more context |
+| **Phase 2+** | 29+ | 30-50 words | A1+ advanced - personality-rich narration |
+
+**Phase 1 (Weeks 1-14) Characteristics:**
+- **Simple questions:** Direct, no elaborate context
+- **Example:** "{{name}}! I like your name! How old are you?" (9 words) ✅
+- **Why shorter:** Vietnamese A0++ students have 30-45 second attention span
+- **Focus:** Clear question, minimal distraction
+- **TTS speed:** 0.8x (20% slower) for clarity
+
+**Phase 1.2 (Weeks 15-28) Characteristics:**
+- **Add context:** 1-2 sentences before question
+- **Example:** "{{name}}, that's a great name! I remember a student named {{name}} who loved science. What about you? What's your favorite subject?" (25 words) ✅
+- **Why longer:** A1 students can process compound sentences
+- **TTS speed:** 0.9x (10% slower)
+
+**Phase 2+ (Weeks 29+) Characteristics:**
+- **Personality-rich:** Witty tone, dad jokes, emojis
+- **Example:** "{{name}}! What a cool name! You know, I once had a student named {{name}} who became amazing at English. I bet you'll be just as awesome! 🌟 Now, here's a fun question - how many candles were on your last birthday cake?" (42 words) ✅
+- **Why longest:** A1+ students ready for natural conversation flow
+- **TTS speed:** 1.0x (normal)
+
+**Comparison Table:**
+
+| Mode | Word Limit | Sentence Count | Use Case |
+|------|-----------|----------------|----------|
+| **Story Mission Phase 1** | 7-16 words | 1-2 sentences | Vietnamese ESL A0++ (Weeks 1-14) |
+| **Story Mission Phase 1.2** | 20-35 words | 2-3 sentences | A1 learners (Weeks 15-28) |
+| **Story Mission Phase 2+** | 30-50 words | 2-4 sentences | A1+ advanced (Weeks 29+) |
+| Ask AI / Quiz | 10-15 words | 1-2 sentences | Factual Q&A interaction |
+| Grammar Feedback | 15-20 words | 1-2 sentences | Correction + encouragement |
+
+**Story Mission Special Requirements:**
+- **Phase 1:** Direct questions, minimal personality (focus on clarity)
+- **Phase 1.2:** Add mild encouragement, simple context
+- **Phase 2+:** Full personality (witty tone, dad jokes, emojis 🎒📚🌟)
+- **Character consistency:** Ms. Nova = encouraging academic mentor
+- **Contractions:** Use in Phase 2+ only (gonna, wanna) - Phase 1 needs formal clarity
+
+✅ **CORRECT Phase 1 Beat (9 words):**
+```javascript
+aiPrompt: "{{name}}! I like your name! How old are you?"
+// Simple, direct, clear question for A0++ students ✅
+```
+
+✅ **CORRECT Phase 2+ Beat (42 words):**
+```javascript
+aiPrompt: "{{name}}! What a cool name! You know, I once had a student named {{name}} who became amazing at English. I bet you'll be just as awesome! 🌟 Now, here's a fun question - how many candles were on your last birthday cake?"
+// Personality-rich, encouragement, rhetorical questions ✅
+```
+
+❌ **WRONG - Phase 1 with too many words (42 words):**
+```javascript
+aiPrompt: "{{name}}! What a cool name! You know, I once had a student named {{name}} who became amazing at English. I bet you'll be just as awesome! 🌟 Now, here's a fun question - how old are you?"
+// ❌ Too long for A0++ beginners, will lose attention
+```
+
+❌ **WRONG - Phase 2+ too short (8 words):**
+```javascript
+aiPrompt: "Hi! What is your name?" // ❌ No personality, too terse for A1+ students
+```
+
+### 8.3. Audio Generation for Story Missions - RUNTIME TTS
+
+**CRITICAL:** Story Mission audio CANNOT be pre-generated due to dynamic placeholders.
+
+**Why Pre-Generation Doesn't Work:**
+```javascript
+// Mission text contains placeholders:
+aiPrompt: "{{name}}! What a cool name! I once had a student named {{name}}..."
+
+// Each student has different values:
+Student A: "Alex! What a cool name! I once had a student named Alex..."
+Student B: "Maria! What a cool name! I once had a student named Maria..."
+```
+
+**Solution: Runtime Text-to-Speech (TTS)**
+
+**Updated Architecture (Dec 30, 2025):**
+```javascript
+// StoryMissionEngine.js
+async generateTurn(userInput) {
+  const step = this.mission.steps[this.state.currentStep];
+  
+  // 1. Apply fuzzy matching to user input (pronunciation error correction)
+  const correctedInput = this._applyFuzzyMatching(userInput);
+  
+  // 2. Extract student context from response
+  this._extractContext(correctedInput);
+  
+  // 3. Replace placeholders with actual student context (8 fields)
+  let personalizedText = replacePlaceholders(step.aiPrompt, this.state.studentContext);
+  
+  // 4. Generate gentle error correction (recast technique)
+  const correction = this._generateRecast(correctedInput, step);
+  if (correction) {
+    // Prepend correction before main response (natural flow)
+    personalizedText = `${correction} ${personalizedText}`;
+  }
+  
+  // 5. Get scaffolded TTS speed (Phase 1: 0.8x, Phase 1.2: 0.9x, Phase 2+: 1.0x)
+  const speed = this._getTTSSpeed();
+  
+  // 6. Generate TTS audio on-the-fly
+  const audioBlob = await generateTTS(personalizedText, {
+    voice: 'shimmer',  // OpenAI TTS - clear, bright female voice (changed from 'nova')
+    speed: speed       // Scaffolded speed for Vietnamese ESL A0++ beginners
+  });
+  
+  // 7. Play audio
+  await playAudio(audioBlob);
+  
+  return {
+    story_beat: personalizedText,
+    task: step.task,
+    scaffold: { hints: step.hints }
+  };
+}
+```
+
+**TTS Provider: OpenAI TTS**
+- **Voice:** `shimmer` (female, clear, bright tone - better for Vietnamese ESL A0++ students)
+  - **Alternatives:** `nova` (warm), `alloy` (neutral), `echo` (male), `fable` (British), `onyx` (deep male)
+  - **Why shimmer:** Clear consonants, bright pitch, easy to hear for 6-12 year olds
+- **Model:** `tts-1` (standard) or `tts-1-hd` (high quality)
+- **Cost:** ~$15/1M characters (~$0.01 per mission completion)
+- **Latency:** ~1-2 seconds for 200 characters
+- **Speed Scaffolding:**
+  - **Phase 1 (Weeks 1-14):** 0.8x speed (20% slower) - Vietnamese ESL A0++ beginners need time to process
+  - **Phase 1.2 (Weeks 15-28):** 0.9x speed (10% slower) - A1 learners building fluency
+  - **Phase 2+ (Weeks 29+):** 1.0x speed (normal) - A1+ advanced students
+
+**Placeholder System (8 Fields):**
+```javascript
+// studentContext state (tracked across conversation)
+{
+  name: null,           // "Khan"
+  age: null,            // "10"
+  teacherName: null,    // "Mr Chin"
+  subject: null,        // "Math"
+  hasFriends: null,     // true/false
+  favoritePlace: null,  // "the playground" (NEW)
+  friendName: null,     // "Noon" (NEW)
+  activity: null,       // "play" (NEW)
+  object: null          // "desk" (NEW)
+}
+
+// Usage in mission steps:
+aiPrompt: "{{name}}! I like your name! How old are you?"
+aiPrompt: "{{age}} years old! Good! Who is your teacher?"
+aiPrompt: "{{teacherName}} is your teacher! What is your favorite subject?"
+aiPrompt: "{{subject}}! Cool! Do you have friends at school?"
+aiPrompt: "Nice! {{favoritePlace}}! Do you play there with friends?"
+aiPrompt: "{{friendName}}! Nice! What do you and {{friendName}} do at school?"
+aiPrompt: "Fun! Do you like to {{activity}}?"
+aiPrompt: "Good! A {{object}}! Where is your {{object}} in the classroom?"
+```
+
+**Fuzzy Matching for Pronunciation Errors (Vietnamese ESL A0++):**
+```javascript
+// Common Vietnamese ESL pronunciation errors (automatic correction before processing)
+const fuzzyMap = {
+  'play crown': 'playground',       // /kr/ cluster → /gr/
+  'play ground': 'playground',      // Space insertion
+  'class room': 'classroom',        // Space insertion
+  'black board': 'blackboard',      // Space insertion
+  'reading corn': 'reading corner', // /ɔːr/ → /ɔːrn/
+  'my near': 'my name',             // /neɪm/ → /nɪər/
+  'my nay': 'my name',              // /neɪm/ → /naɪ/
+  'tea chair': 'teacher',           // /tʃ/ → /tʃeər/
+  'mis chin': 'mr chin',            // Vietnamese name pronunciation
+  'no on': 'noon',                  // Vietnamese name (double vowel)
+  'can': 'khan'                     // Vietnamese name (tone confusion)
+};
+
+// Applied BEFORE context extraction and error detection
+// Example: User says "play crown" → System hears "playground"
+// Result: No error correction needed, natural flow maintained
+```
+
+**Recast Technique (Gentle Error Correction):**
+```javascript
+// Detects common Vietnamese ESL A0++ errors WITHOUT saying "wrong" or "incorrect"
+// Models correct form naturally in conversation flow
+
+// 1. Missing articles (a/an/the)
+Input:  "i like playground"
+Recast: "I like THE playground too! Do you play there with friends?"
+        └─ correction ─┘  └─── natural continuation ────┘
+
+// 2. Missing "is" in sentences
+Input:  "my name Khan"
+Recast: "Your name IS Khan! How old are you?"
+        └─ correction ─┘ └─ next question ─┘
+
+// 3. Verb agreement errors
+Input:  "my teacher school at Mr Chin"
+Recast: "Your teacher IS Mr Chin! Good!"
+        └─── correction ────┘ └ praise ┘
+
+// 4. Wrong word order
+Input:  "turn on my desk"
+Recast: "You have a DESK in your classroom! Where is it?"
+        └──── correction ────┘ └─ follow-up ─┘
+
+// Pedagogical basis:
+// - Recast technique proven effective in ESL research
+// - Models correct form without negative feedback
+// - Student implicitly learns grammar rules
+// - Maintains confidence and motivation
+```
+
+**Implementation:**
+```javascript
+// services/tts.js
+import OpenAI from 'openai';
+
+const openai = new OpenAI({ apiKey: import.meta.env.VITE_OPENAI_API_KEY });
+
+const DEFAULT_VOICE = 'shimmer'; // Changed from 'nova' (Dec 30, 2025)
+
+export async function generateTTS(text, options = {}) {
+  try {
+    const response = await openai.audio.speech.create({
+      model: options.model || 'tts-1',
+      voice: options.voice || DEFAULT_VOICE,
+      input: text,
+      speed: options.speed || 1.0
+    });
+    
+    const audioBuffer = await response.arrayBuffer();
+    return new Blob([audioBuffer], { type: 'audio/mpeg' });
+  } catch (error) {
+    console.error('TTS generation failed:', error);
+    return null; // Fallback: text-only mode
+  }
+}
+
+// Placeholder replacement function (expanded to 8 fields)
+export function replacePlaceholders(text, context) {
+  return text
+    .replace(/\{\{name\}\}/g, context.name || 'Student')
+    .replace(/\{\{age\}\}/g, context.age || '10')
+    .replace(/\{\{teacherName\}\}/g, context.teacherName || 'your teacher')
+    .replace(/\{\{subject\}\}/g, context.subject || 'English')
+    .replace(/\{\{favoritePlace\}\}/g, context.favoritePlace || 'that place')
+    .replace(/\{\{friendName\}\}/g, context.friendName || 'your friend')
+    .replace(/\{\{activity\}\}/g, context.activity || 'play')
+    .replace(/\{\{object\}\}/g, context.object || 'that');
+}
+```
+
+**Optional: Caching Strategy**
+```javascript
+// Cache common phrases to reduce TTS calls
+const CACHED_PHRASES = {
+  "What's your name?": "/audio/common/whats_your_name.mp3",
+  "How old are you?": "/audio/common/how_old.mp3"
+};
+
+// Only generate TTS for unique personalized parts
+if (CACHED_PHRASES[cleanText]) {
+  return CACHED_PHRASES[cleanText];
+} else {
+  return await generateTTS(text);
+}
+```
+
+### 8.4. Complete 3-Level Scaffold System
+
+**Full Implementation:**
+
+```javascript
+// missionSchema.js
+export const MissionStep = {
+  stepId: 0,
+  aiPrompt: "",
+  expected: { type: "short_answer" },
+  
+  // Level 1: Word Chips (clickable tokens)
+  hints: [],              // ["My", "name", "is"]
+  
+  // Level 2: Sentence Starter (fill-in-blank)
+  repair: "",             // "Try saying: My name is _____"
+  
+  // Level 3: Model Sentence + Modification
+  modelSentence: "",      // "My name is Alex."
+  modelModify: ""         // "Now say YOUR name instead of 'Alex'."
+};
+```
+
+**When to Escalate:**
+
+| Condition | Action | UI Display |
+|-----------|--------|------------|
+| Student tries freely | No scaffold | Input box only |
+| Student writes <3 words | Show Level 1 | Green chips: [My] [name] [is] |
+| Student stuck 30+ seconds | Show Level 2 | "Try saying: My name is ___" |
+| Student clicks "Help" | Show Level 3 | "Say: 'My name is Alex.' Now try with YOUR name." |
+
+### 8.5. State Persistence (Two Types)
+
+**1. Local State (In-Memory, Non-Persistent):**
+- **Managed by:** StoryMissionEngine class
+- **Purpose:** Manage conversation flow, track current context
+- **Resets when:** Mission restarted, page refreshed
+
+**2. Global State (Persistent via tutorStore):**
+- **Managed by:** tutorStore (Zustand state)
+- **Purpose:** Track long-term progress, vocabulary mastery
+- **Persists:** localStorage across sessions
+
+### 8.6. Mass Production Workflow (144 Weeks)
+
+**Complete End-to-End Workflow:**
+
+**Step 1: Generate Mission Content**
+```bash
+node tools/generate_story_missions.js <WEEK_ID>
+# Generates 3 files: week{WEEK_ID}_easy.js, _normal.js, _challenge.js
+```
+
+**Content Generation Rules by Level:**
+
+| Level | Steps | Words/Beat | Vocab Scope | Grammar Complexity |
+|-------|-------|-----------|-------------|-------------------|
+| Easy | 6 | 30-40 | Core 50% of week vocab | Simple S-V-O |
+| Normal | 6 | 35-45 | Full week vocab list | Compound sentences |
+| Challenge | 8 | 40-50 | Week vocab + 2-3 bonus | Complex clauses |
+
+**Step 2: Validate Mission Structure**
+```bash
+node tools/validate_missions.js <WEEK_ID>
+
+# Validation checks (must ALL pass):
+# 1. File existence: 3 mission files present
+# 2. Step count: Easy/Normal=6, Challenge=8
+# 3. Word count: Phase-appropriate (Phase 1: 7-16, Phase 1.2: 20-35, Phase 2+: 30-50)
+# 4. Vocabulary: All words from syllabus week only
+# 5. Grammar: NO structures beyond week scope (Present Simple ONLY for A0++ weeks)
+# 6. Scaffold: All 3 levels present
+# 7. Success criteria: mustUseWords defined (min 4 words)
+# 8. Placeholders: All 8 fields used correctly ({{name}}, {{age}}, {{teacherName}}, {{subject}}, {{favoritePlace}}, {{friendName}}, {{activity}}, {{object}})
+# 9. Personality: Phase-appropriate (Phase 1: minimal, Phase 2+: full)
+# 10. Schema: Matches missionSchema.js structure
+# 11. Error patterns: Recast rules cover common Vietnamese ESL A0++ errors (missing articles, missing "is", verb agreement, word order)
+# 12. Fuzzy matching: Pronunciation error map includes Vietnamese-specific patterns
+# 13. ALL stations: Grammar violations check (no past tense in Week 1-14)
+# 14. ALL stations: Audio generation readiness (audio_url fields present)
+# 15. Explore station: No conditional tenses in Phase 1 questions
+```
+
+**Step 3: Integration Test (Audio generated at runtime)**
+```bash
+npm run dev
+# Manual testing:
+# 1. Navigate to Week {WEEK_ID} → AI Tutor → Story Mission
+# 2. Verify all 3 missions appear
+# 3. Complete one mission end-to-end
+# 4. Check progress persists on refresh
+```
+
+**Step 5: Batch Generation (Weeks 1-144)**
+```bash
+for week in {1..144}; do
+  echo "🚀 Generating Week $week..."
+  
+  node tools/generate_story_missions.js $week
+  node tools/validate_missions.js $week
+  if [ $? -ne 0 ]; then
+    echo "❌ Week $week validation failed. Fix and retry."
+    exit 1
+  fi
+  
+  node tools/create_story_mission_audio_tasks.js $week
+  python3 tools/generate_audio.py --provider openai --voice nova
+  
+  echo "✅ Week $week complete"
+  sleep 2
+done
+```
+
+**Validation Checklist (Per Week):**
+- [ ] 3 mission files created
+- [ ] All missions use ONLY week syllabus vocab
+- [ ] aiPrompt word count: 30-50 per beat
+- [ ] All hints from grammarAllowed list
+- [ ] Audio files generated (18-24 MP3s)
+- [ ] Missions completable in app
+- [ ] Progress persists on refresh
+- [ ] Vocabulary mastery updates in tutorStore
+
+---
+
+## END OF MASTER PROMPT V23-FINAL (UPDATED WITH WEEK 1 LEARNINGS + AUDIO FIX + STORY MISSION COMPLETE)
 
 ### 7.20 SMARTCHECK FEATURE - COMPLETE COVERAGE (CRITICAL)
 
@@ -2787,7 +4954,360 @@ SmartCheck is core pedagogical feature - ALL stations with student-answered ques
 
 ---
 
-## END OF MASTER PROMPT V23-FINAL (UPDATED: WEEK 1 + AUDIO FIX + SMARTCHECK COMPLETE)
+## 7.27 WEEK 2 CRITICAL FIXES & REQUIREMENTS (DECEMBER 30, 2025)
+
+**Background:** Week 2 initial deployment revealed multiple systematic issues that violated blueprint requirements and caused poor user experience. All fixes documented here are MANDATORY for remaining 142 weeks.
+
+### 7.27.1 TTS PRONUNCIATION FIXES (CRITICAL)
+
+**Problem:** TTS was reading underscores `___` as "blank" instead of natural pauses.
+
+**User Feedback:** "Sao lại đọc cả black vậy?" (Why reading "black"?)
+
+**Root Cause:** Audio generation didn't prepare text for natural speech.
+
+**✅ FIX IMPLEMENTED:**
+```javascript
+// src/services/tts.js - Added prepareTTSText function
+function prepareTTSText(text) {
+  return text
+    .replace(/___+/g, '...')           // Replace underscores with ellipsis
+    .replace(/\s*\.\.\.\s*/g, ' ... ')  // Ensure proper spacing around ellipsis
+    .replace(/\s+/g, ' ')              // Clean multiple spaces
+    .trim();
+}
+
+// Usage in all TTS calls:
+const cleanText = prepareTTSText(originalText);
+await generateTTS(cleanText, options);
+```
+
+**MANDATORY RULE:** All text passed to TTS MUST use prepareTTSText() to ensure natural pronunciation.
+
+**Areas Applied:**
+- Mindmap stems/branches
+- Word Power definitions
+- All story content
+- Grammar explanations
+
+### 7.27.2 MINDMAP FORMAT STANDARDIZATION (CRITICAL)
+
+**Problem:** Mindmap stems used inconsistent formats with underscores instead of ellipsis.
+
+**User Feedback:** "Mindmap làm chưa đúng" (Mindmap not correct)
+
+**Root Cause:** Generated stems used `___.` instead of blueprint-required `...` format.
+
+**✅ FIX IMPLEMENTED:**
+```javascript
+// BEFORE (Week 2 had this - WRONG):
+centerStems: [
+  "This is my _____.",           // ❌ Underscores
+  "My family has _____."         // ❌ Underscores
+]
+
+// AFTER (CORRECT - Blueprint compliance):
+centerStems: [
+  "This is my ...",             // ✅ Natural ellipsis
+  "My family has ..."           // ✅ Natural ellipsis
+]
+```
+
+**MANDATORY RULE:** All mindmap stems MUST use `...` (ellipsis) never `___` (underscores).
+
+**Validation Command:**
+```bash
+grep -r "___" src/data/weeks/week_*/mindmap.js
+# Should return NO results for any week
+```
+
+### 7.27.3 ASK AI CONTEXT LENGTH REQUIREMENTS (CRITICAL)
+
+**Problem:** Ask AI contexts were too verbose for A0++ ESL learners.
+
+**User Feedback:** "Ask-AI thì context dài quá" (Ask-AI context too long)
+
+**Root Cause:** Contexts exceeded Phase 1 word limits (7-16 words for Weeks 1-14).
+
+**✅ FIX IMPLEMENTED:**
+```javascript
+// BEFORE (Week 2 had 35+ words - TOO LONG):
+context_en: "You are looking at a photo of a beautiful family sitting together in their living room. The family members are smiling and look very happy. There is a father, mother, and children all wearing nice clothes."
+
+// AFTER (CORRECT - 14 words for Phase 1):
+context_en: "You see a family photo. Everyone is happy. You want to know about families."
+```
+
+**MANDATORY RULE:** Ask AI contexts MUST follow phase-based word limits:
+- **Phase 1 (Weeks 1-14):** 7-16 words maximum
+- **Phase 1.2 (Weeks 15-28):** 20-35 words maximum  
+- **Phase 2+ (Weeks 29+):** 30-50 words maximum
+
+### 7.27.4 DICTATION/SHADOWING FORMAT STANDARDIZATION (CRITICAL)
+
+**Problem:** Week 2 Easy mode had different data structure than Advanced mode, causing UI rendering inconsistencies and broken functionality.
+
+**User Feedback:** "Dictation và Shadowing chua wa hiển thị đúng" (Dictation and Shadowing not displaying correctly)
+
+**Root Cause:** Easy mode created with simplified structure that didn't match component expectations.
+
+**✅ FIX IMPLEMENTED:**
+
+**WRONG Structure (Week 2 had this - broke UI):**
+```javascript
+// ❌ WRONG - Simple content format (components can't parse this)
+export default {
+  title: "Listen and Write: My Family Squad",
+  instruction_en: "Listen carefully...",
+  content: "**This** is my **family**. We are a **team**...",  // ❌ Single text block
+  audio_url: "/audio/week2/dictation_full_w2.mp3"
+};
+```
+
+**✅ CORRECT Structure (Week 19 format - components expect this):**
+```javascript
+// ✅ CORRECT - Sentences array format (components can parse this)
+export default {
+  sentences: [                          // ✅ REQUIRED array name
+    { id: 1, text: "This is my family.", meaning: "Đây là gia đình tôi." },
+    { id: 2, text: "We are a team.", meaning: "Chúng tôi là một đội." },
+    { id: 3, text: "This is my father.", meaning: "Đây là bố tôi." },
+    { id: 4, text: "He is the leader.", meaning: "Bố là người lãnh đạo." },
+    { id: 5, text: "This is my mother.", meaning: "Đây là mẹ tôi." },
+    { id: 6, text: "She is kind.", meaning: "Mẹ rất tốt bụng." },
+    { id: 7, text: "This is my brother.", meaning: "Đây là anh trai tôi." },
+    { id: 8, text: "He is a good helper.", meaning: "Anh ấy là người giúp đỡ tốt." }
+  ]
+};
+```
+
+**Shadowing Structure Fix:**
+```javascript
+// ❌ WRONG - Simple content format
+export default {
+  title: "Shadow Reading: My Family Squad",
+  instruction_en: "Listen and repeat...",
+  content: "**This** is my **family**...",  // ❌ Single text block
+  audio_url: "/audio/week2/shadowing_full_w2.mp3"
+};
+
+// ✅ CORRECT - Script array format
+export default {
+  title: "My Family Squad",
+  audio_full: "/audio/week2/shadowing_full_w2.mp3",  // ✅ Full audio file
+  script: [                                           // ✅ REQUIRED array name  
+    { id: 1, text: "This is my family.", vi: "Đây là gia đình tôi.", audio_url: "/audio/week2/shadowing_1.mp3" },
+    { id: 2, text: "We are a team.", vi: "Chúng tôi là một đội.", audio_url: "/audio/week2/shadowing_2.mp3" },
+    { id: 3, text: "This is my father.", vi: "Đây là bố tôi.", audio_url: "/audio/week2/shadowing_3.mp3" },
+    { id: 4, text: "He is the leader.", vi: "Bố là người lãnh đạo.", audio_url: "/audio/week2/shadowing_4.mp3" },
+    { id: 5, text: "This is my mother.", vi: "Đây là mẹ tôi.", audio_url: "/audio/week2/shadowing_5.mp3" },
+    { id: 6, text: "She is kind.", vi: "Mẹ rất tốt bụng.", audio_url: "/audio/week2/shadowing_6.mp3" },
+    { id: 7, text: "This is my brother.", vi: "Đây là anh trai tôi.", audio_url: "/audio/week2/shadowing_7.mp3" },
+    { id: 8, text: "He is a good helper.", vi: "Anh ấy là người giúp đỡ tốt.", audio_url: "/audio/week2/shadowing_8.mp3" }
+  ]
+};
+```
+
+**Critical Requirements:**
+- **Sentence Count:** Dictation and Shadowing MUST have identical sentence count (8 in this case)
+- **Text Content:** Shadowing `script[].text` MUST match Dictation `sentences[].text` exactly
+- **Translations:** Shadowing `script[].vi` MUST match Dictation `sentences[].meaning` exactly
+- **Source:** All sentences MUST come from read.js story (split naturally at sentence boundaries)
+- **Audio:** Individual sentence audio files generated automatically by script
+
+**UI Impact:**
+- **Before Fix:** Dictation showed "Level 1: Unscramble words", Shadowing showed "Loading Script..."
+- **After Fix:** Dictation shows proper sentence-by-sentence interface, Shadowing shows script with individual playback
+- **Components:** DictationEngine.jsx and ShadowingEngine.jsx now receive expected data structure
+
+### 7.27.5 OFFICIAL ASSET GENERATION SCRIPTS (MANDATORY)
+
+**Problem:** Week 2 initially used manual asset creation instead of official scripts.
+
+**User Feedback:** "sao lại bạn tự tạo images. Đã có lệnh tạo bằng Nano banana rồi mà????" (Why create images manually? There's already Nano Banana command)
+
+**Root Cause:** Didn't discover/use the official asset generation tools in `tools/` directory.
+
+**✅ OFFICIAL SCRIPTS IDENTIFIED:**
+
+**1. Image Generation:**
+```bash
+# FREE Gemini approach (Nano Banana):
+node tools/generate_images_nano_banana.js <WEEK_ID>
+
+# Paid Imagen 3 approach:
+node tools/batch_manager.js <WEEK_ID> <WEEK_ID>
+```
+
+**2. Audio Generation:**
+```bash
+# Google Neural2 TTS (best quality):
+node tools/generate_audio.js <WEEK_ID> <WEEK_ID>
+```
+
+**3. Video Generation:**
+```bash
+# YouTube API automated search:
+node tools/update_videos.js <WEEK_ID> --reset
+```
+
+**MANDATORY RULE:** ALL asset generation MUST use official scripts. Never create assets manually unless scripts fail.
+
+**API Key Loading:** All scripts auto-read from `API keys.txt` file (never hardcode).
+
+### 7.27.6 AUDIO FILE FORMAT STANDARDIZATION (CRITICAL)
+
+**Problem:** Scripts generate `.mp3` files but some data referenced `.aiff` format.
+
+**User Feedback:** "dictation và shadowing vẫn chưa đúng path" (dictation and shadowing still wrong paths)
+
+**Root Cause:** Inconsistent audio format expectations between scripts and data files.
+
+**✅ FIX IMPLEMENTED:**
+```javascript
+// CORRECT audio path format (all modes):
+audio_url: "/audio/week2/shadowing_1.mp3"     // ✅ .mp3 extension
+audio_url: "/audio/week2_easy/dictation_1.mp3" // ✅ .mp3 extension
+
+// NEVER use:
+audio_url: "/audio/week2/shadowing_1.aiff"    // ❌ .aiff not generated by scripts
+```
+
+**MANDATORY RULE:** All audio paths MUST use `.mp3` extension to match script output.
+
+### 7.27.7 DAILY WATCH VIDEO CONTENT (CRITICAL)
+
+**Problem:** Daily Watch showed placeholder data instead of real educational videos.
+
+**User Feedback:** "Daily watch vẫn trống không" (Daily watch still empty)
+
+**Root Cause:** Video generation script wasn't run, left placeholder content.
+
+**✅ FIX IMPLEMENTED:**
+- Created `video_queries.json` with 5 targeted search queries
+- Ran `update_videos.js` to populate with real YouTube videos
+- Updated both Advanced and Easy modes with same video content
+
+**MANDATORY RULE:** Daily Watch MUST have exactly 5 real YouTube videos (never placeholders).
+
+### 7.27.8 ERROR PREVENTION CHECKLIST (MANDATORY)
+
+**Pre-Asset Generation Validation:**
+
+```bash
+# 1. TTS Text Validation
+grep -r "___" src/data/weeks/week_XX/ 
+# Should be EMPTY (no underscores in any content)
+
+# 2. Mindmap Format Validation  
+grep "centerStems" src/data/weeks/week_XX/mindmap.js | grep -c "\.\.\."
+# Should equal number of stems (all use ellipsis)
+
+# 3. Ask AI Length Validation
+# Manually count words in each context_en - must be within phase limits
+
+# 4. Schema Consistency Validation
+diff <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks/week_XX/dictation.js) \
+     <(grep -E "^[[:space:]]*[a-zA-Z_]+:" src/data/weeks_easy/week_XX/dictation.js)
+# Should show NO differences (same field names)
+
+# 5. Audio Format Validation
+grep -r "\.aiff" src/data/weeks/week_XX/
+# Should be EMPTY (only .mp3 allowed)
+
+# 6. Video Content Validation
+grep -c '"videoId"' src/data/weeks/week_XX/daily_watch.js
+# Should return exactly 5
+```
+
+**Post-Asset Generation Validation:**
+```bash
+# 1. Audio File Count
+ls public/audio/week2/*.mp3 | wc -l     # Should be ~120-130
+ls public/audio/week2_easy/*.mp3 | wc -l # Should be ~120-130
+
+# 2. Image File Count  
+ls public/images/week2/*.jpg | wc -l     # Should be exactly 15
+ls public/images/week2_easy/*.jpg | wc -l # Should be exactly 15
+
+# 3. Video Validation
+# Test each videoId loads in YouTube player
+```
+
+### 7.27.9 MASS PRODUCTION IMPLICATIONS
+
+**For Remaining 142 Weeks:**
+
+**Content Generation Rules:**
+1. ALL mindmap stems MUST use `...` format (never `___`)
+2. ALL Ask AI contexts MUST respect phase word limits
+3. ALL audio paths MUST use `.mp3` extension
+4. Advanced/Easy modes MUST use identical schemas
+
+**Asset Generation Rules:**
+1. ALWAYS use official scripts (never manual creation)
+2. ALWAYS validate before generation (use checklist above)
+3. ALWAYS test audio/video in app after generation
+
+**Quality Assurance Rules:**
+1. Each week MUST complete validation checklist before approval
+2. User feedback patterns from Week 2 MUST be prevented
+3. Blueprint compliance MUST be verified at each step
+
+### 7.27.10 UPDATED ASSET GENERATION WORKFLOW
+
+**Complete Week Generation Command Sequence:**
+```bash
+# Step 1: Clean old assets
+rm -rf public/audio/week${WEEK} public/images/week${WEEK}
+rm -rf public/audio/week${WEEK}_easy public/images/week${WEEK}_easy
+
+# Step 2: Validate data structure
+bash tools/validate_week_structure.sh ${WEEK}
+if [ $? -ne 0 ]; then echo "❌ Validation failed"; exit 1; fi
+
+# Step 3: Generate all assets using official scripts
+node tools/generate_audio.js ${WEEK} ${WEEK}
+node tools/generate_images_nano_banana.js ${WEEK}  # or batch_manager.js
+node tools/update_videos.js ${WEEK} --reset
+
+# Step 4: Verify asset counts
+bash tools/verify_asset_counts.sh ${WEEK}
+if [ $? -ne 0 ]; then echo "❌ Asset verification failed"; exit 1; fi
+
+echo "✅ Week ${WEEK} complete - all fixes applied"
+```
+
+**Blueprint Compliance Verification:**
+- TTS pronunciation: Natural speech (no "blank" reading) ✅
+- Mindmap format: Ellipsis stems for natural completion ✅  
+- Ask AI length: Phase-appropriate word limits ✅
+- Schema consistency: Unified Advanced/Easy structure ✅
+- Asset quality: Real educational content (no placeholders) ✅
+
+### 7.27.11 CRITICAL SUCCESS METRICS
+
+**User Experience Indicators:**
+- TTS sounds natural (no pronunciation errors)
+- Mindmap stems feel natural to complete
+- Ask AI contexts are digestible for A0++ learners
+- Dictation/Shadowing UI works consistently across modes
+- Daily Watch has engaging educational videos
+
+**Technical Indicators:** 
+- All validation commands return expected results
+- Asset generation scripts complete without errors
+- File counts match requirements (audio ~120-130, images 15, videos 5)
+- No user complaints about "blank" reading or empty content
+
+**Prevention Success:**
+- Week 3+ users don't report Week 2 issue patterns
+- Mass production generates consistently high-quality weeks
+- Blueprint compliance maintained across all 144 weeks
+
+---
+
+## END OF MASTER PROMPT V23-FINAL (UPDATED: WEEK 1 + WEEK 2 COMPREHENSIVE FIXES)
 
 ### 7.24 CONTENT SIMPLIFICATION FOR BEGINNER ESL (A0+/A1)
 

@@ -86,9 +86,20 @@ const callGoogleTTS = async (text, voiceName) => {
     // Clean text (remove Markdown bold like **word**)
     const cleanText = text.replace(/\*\*/g, '').trim();
 
+    // Extract languageCode from voiceName (e.g., "en-AU-Neural2-B" -> "en-AU")
+    const getLanguageCodeFromVoice = (voice) => {
+        if (!voice) return 'en-US';
+        if (voice.startsWith('en-AU')) return 'en-AU';
+        if (voice.startsWith('en-GB')) return 'en-GB';
+        if (voice.startsWith('en-US')) return 'en-US';
+        return 'en-US'; // default fallback
+    };
+
+    const languageCode = getLanguageCodeFromVoice(voiceName);
+
     const payload = JSON.stringify({
         input: { text: cleanText },
-        voice: { languageCode: "en-US", name: voiceName || "en-US-Neural2-D" },
+        voice: { languageCode, name: voiceName || "en-US-Neural2-D" },
         audioConfig: { audioEncoding: "MP3" }
     });
 
@@ -263,13 +274,22 @@ const processWeek = async (weekNum, isEasy) => {
 
     // 8. Mindmap Branches + Stems
     const mindmapData = weekData.stations?.mindmap_speaking || weekData.stations?.mindmap;
-    if (mindmapData?.branchLabels && Array.isArray(mindmapData.branchLabels)) {
-        console.log(`   Found ${mindmapData.branchLabels.length} Mindmap branches.`);
-        mindmapData.branchLabels.forEach((branch, idx) => {
-            const text = branch.text_en || branch;
-            addTask(text, `mindmap_branch_${idx + 1}`, voices.mindmap);
+    
+    // Handle branchLabels as object (stem -> branches mapping)
+    if (mindmapData?.branchLabels && typeof mindmapData.branchLabels === 'object') {
+        let branchCounter = 0;
+        Object.values(mindmapData.branchLabels).forEach(branchArray => {
+            if (Array.isArray(branchArray)) {
+                branchArray.forEach(branch => {
+                    branchCounter++;
+                    const text = branch.text_en || branch;
+                    addTask(text, `mindmap_branch_${branchCounter}`, voices.mindmap);
+                });
+            }
         });
+        console.log(`   Found ${branchCounter} Mindmap branches across all stems.`);
     }
+    
     // Mindmap center stems
     if (mindmapData?.centerStems && Array.isArray(mindmapData.centerStems)) {
         console.log(`   Found ${mindmapData.centerStems.length} Mindmap stems.`);
