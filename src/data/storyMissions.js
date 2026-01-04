@@ -27,11 +27,17 @@ export const Week1Missions = [
       hints: ["My", "name", "is", "Minh"],
     },
     missionGoals: [
-      "Get the student's name",
-      "Get the student's age",
-      "Get the student's class",
+      "Ask the student's name",
+      "Ask the student's age",
+      "Ask the student's class",
       "Ask if the student likes school",
     ],
+    goalHints: {
+      "Ask the student's name": ["My name is Minh", "My name is Lan"],
+      "Ask the student's age": ["I am 7 years old", "I am 8 years old"],
+      "Ask the student's class": ["I am in class 3A", "I am in class 4B"],
+      "Ask if the student likes school": ["I like school", "I like my school"],
+    },
   },
   {
     id: "W1_LOST_BACKPACK",
@@ -57,11 +63,24 @@ export const Week1Missions = [
       hints: ["I", "cannot", "find", "my", "backpack"],
     },
     missionGoals: [
-      "Find out what is wrong",
-      "Ask what is in the student's backpack",
-      "Ask where the student thinks the backpack is",
-      "Suggest a place to look for the backpack",
+      "Ask what is wrong",
+      "Ask where the backpack is",
+      "Ask if I can help find the backpack",
     ],
+    goalHints: {
+      "Ask what is wrong": [
+        "I cannot find my backpack",
+        "My backpack is missing",
+      ],
+      "Ask where the backpack is": [
+        "It is in my class",
+        "It is in the library",
+      ],
+      "Ask if I can help find the backpack": [
+        "Please help me",
+        "Help me find it",
+      ],
+    },
   },
   {
     id: "W1_LIBRARY_HELPER",
@@ -87,11 +106,26 @@ export const Week1Missions = [
       hints: ["Yes", "I", "like", "books"],
     },
     missionGoals: [
-      "Ask what the student sees in the library",
-      "Ask if the student likes reading books",
-      "Ask if the student has a notebook",
+      "Ask if the student likes books",
+      "Ask if the student sees a book or a notebook",
+      "Ask which one the student likes",
       "Ask if the student likes the library",
     ],
+    goalHints: {
+      "Ask if the student likes books": ["I like books", "I like reading"],
+      "Ask if the student sees a book or a notebook": [
+        "I see a book",
+        "I see a notebook",
+      ],
+      "Ask which one the student likes": [
+        "I like the book",
+        "I like the notebook",
+      ],
+      "Ask if the student likes the library": [
+        "I like the library",
+        "The library is nice",
+      ],
+    },
   },
 ];
 
