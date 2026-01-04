@@ -20,7 +20,9 @@ const InputBar = ({
   const [isListening, setIsListening] = useState(false);
   const [shouldAutoSend, setShouldAutoSend] = useState(false); // 🔥 Flag for auto-send
   const [recognition, setRecognition] = useState(null);
+  const [silenceTimer, setSilenceTimer] = useState(null); // 🔥 Timer for silence detection
   const textareaRef = useRef(null);
+  const lastTranscriptRef = useRef(''); // 🔥 Track last transcript to detect changes
 
   // Auto-send after voice input completes
   useEffect(() => {
@@ -29,6 +31,7 @@ const InputBar = ({
       onSend(message.trim());
       setMessage('');
       setShouldAutoSend(false); // Reset flag
+      lastTranscriptRef.current = ''; // Reset tracker
       
       // Reset textarea height
       if (textareaRef.current) {
@@ -47,27 +50,74 @@ const InputBar = ({
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognitionInstance = new SpeechRecognition();
     
-    recognitionInstance.continuous = false;
+    recognitionInstance.continuous = true; // 🔥 Keep listening for silence detection
     recognitionInstance.interimResults = true;
     recognitionInstance.lang = 'en-US';
 
     recognitionInstance.onresult = (event) => {
       let transcript = '';
+      let isFinal = false;
+      
       for (let i = event.resultIndex; i < event.results.length; i++) {
         transcript += event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          isFinal = true;
+        }
       }
+      
       setMessage(transcript);
+
+      // 🔥 Silence Detection: If transcript changed, reset timer
+      if (transcript !== lastTranscriptRef.current) {
+        lastTranscriptRef.current = transcript;
+        
+        // Clear existing timer
+        if (silenceTimer) {
+          clearTimeout(silenceTimer);
+        }
+
+        // Set new timer for 1.5 seconds of silence
+        const timer = setTimeout(() => {
+          console.log('🔇 Detected 1.5s silence, stopping recognition...');
+          recognitionInstance.stop();
+        }, 1500);
+        
+        setSilenceTimer(timer);
+      }
+
+      // 🔥 If final result detected, also trigger auto-send after brief delay
+      if (isFinal && transcript.trim()) {
+        setTimeout(() => {
+          recognitionInstance.stop();
+        }, 500);
+      }
     };
 
     recognitionInstance.onend = () => {
       console.log('🎤 Voice recognition ended');
       setIsListening(false);
-      setShouldAutoSend(true); // 🔥 Trigger auto-send
+      
+      // Clear silence timer
+      if (silenceTimer) {
+        clearTimeout(silenceTimer);
+        setSilenceTimer(null);
+      }
+      
+      // 🔥 Auto-send if we have content
+      if (message.trim()) {
+        setShouldAutoSend(true);
+      }
     };
 
     recognitionInstance.onerror = (event) => {
       console.error('Speech recognition error:', event.error);
       setIsListening(false);
+      
+      // Clear silence timer on error
+      if (silenceTimer) {
+        clearTimeout(silenceTimer);
+        setSilenceTimer(null);
+      }
     };
 
     setRecognition(recognitionInstance);
@@ -76,8 +126,11 @@ const InputBar = ({
       if (recognitionInstance) {
         recognitionInstance.stop();
       }
+      if (silenceTimer) {
+        clearTimeout(silenceTimer);
+      }
     };
-  }, []);
+  }, [message, silenceTimer]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -116,13 +169,47 @@ const InputBar = ({
     }
 
     if (isListening) {
+      // Stop listening
       recognition.stop();
       setIsListening(false);
+      
+      // Clear any pending silence timer
+      if (silenceTimer) {
+        clearTimeout(silenceTimer);
+        setSilenceTimer(null);
+      }
     } else {
+      // Start listening
       setMessage(''); // Clear previous text
-      recognition.start();
-      setIsListening(true);
+      lastTranscriptRef.current = ''; // Reset tracker
+      
+      try {
+        recognition.start();
+        setIsListening(true);
+        console.log('🎤 Started voice recognition with auto-send on silence...');
+      } catch (error) {
+        console.error('Error starting recognition:', error);
+      }
     }
+  };
+
+  // 🔥 Handle keyboard input - abort mic if user starts typing
+  const handleMessageChange = (e) => {
+    const newMessage = e.target.value;
+    
+    // If user starts typing while mic is listening, abort mic
+    if (isListening && newMessage.length > message.length) {
+      console.log('⌨️ User started typing, aborting voice input...');
+      recognition.stop();
+      setIsListening(false);
+      
+      if (silenceTimer) {
+        clearTimeout(silenceTimer);
+        setSilenceTimer(null);
+      }
+    }
+    
+    setMessage(newMessage);
   };
 
   // Determine mic button size (LARGE when no text, small when typing)
@@ -162,7 +249,7 @@ const InputBar = ({
           <textarea
             ref={textareaRef}
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={handleMessageChange}
             onKeyDown={handleKeyDown}
             placeholder={placeholder}
             disabled={disabled}

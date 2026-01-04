@@ -113,7 +113,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 
   // Try layers in order
   const layers = preferredLayer === 'auto' 
-    ? ['gemini', 'openai', 'puter', 'browser']
+    ? ['openai', 'browser'] // 🔥 Gemini TTS not available, skip Puter for now
     : [preferredLayer, 'browser']; // Always fallback to browser
 
   console.log('🔄 TTS: Trying layers in order:', layers);
@@ -190,16 +190,109 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 // LAYER 1: GEMINI TTS
 // ============================================
 
+/**
+ * Encode PCM16 data to WAV format
+ * Gemini returns raw PCM16 data that browsers cannot play directly
+ */
+function encodeWAV(pcmData, sampleRate = 24000) {
+  const numChannels = 1; // Mono
+  const bitsPerSample = 16;
+  const bytesPerSample = bitsPerSample / 8;
+  const blockAlign = numChannels * bytesPerSample;
+  const byteRate = sampleRate * blockAlign;
+  const dataLength = pcmData.length * bytesPerSample;
+  const buffer = new ArrayBuffer(44 + dataLength);
+  const view = new DataView(buffer);
+
+  // Write WAV header
+  const writeString = (offset, string) => {
+    for (let i = 0; i < string.length; i++) {
+      view.setUint8(offset + i, string.charCodeAt(i));
+    }
+  };
+
+  writeString(0, 'RIFF');
+  view.setUint32(4, 36 + dataLength, true);
+  writeString(8, 'WAVE');
+  writeString(12, 'fmt ');
+  view.setUint32(16, 16, true); // fmt chunk size
+  view.setUint16(20, 1, true); // PCM format
+  view.setUint16(22, numChannels, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, byteRate, true);
+  view.setUint16(32, blockAlign, true);
+  view.setUint16(34, bitsPerSample, true);
+  writeString(36, 'data');
+  view.setUint32(40, dataLength, true);
+
+  // Write PCM samples
+  let offset = 44;
+  for (let i = 0; i < pcmData.length; i++) {
+    view.setInt16(offset, pcmData[i], true);
+    offset += 2;
+  }
+
+  return buffer;
+}
+
 async function callGeminiTTS(text) {
+  // ⚠️ TEMPORARILY DISABLED: Gemini 2.0 Flash does NOT have native TTS API yet
+  // The generateContent endpoint cannot produce audio directly
+  // Will re-enable when Google releases official Gemini TTS API
+  
+  console.warn('⚠️ Gemini TTS not available yet, falling back to next layer...');
+  throw new Error('Gemini TTS API not officially available');
+  
+  /* PLACEHOLDER FOR FUTURE GEMINI TTS API:
   if (!GEMINI_API_KEY) {
     throw new Error('Gemini API key not configured');
   }
 
-  // Note: Gemini TTS is experimental - using text generation for now
-  // TODO: Update when Gemini TTS API is officially released
-  
-  // Fallback: Use browser TTS with Gemini-quality text processing
-  return await callBrowserTTS(text);
+  try {
+    console.log('🔊 Gemini TTS: Requesting audio generation...');
+    
+    // TODO: Update this when Google releases official TTS endpoint
+    const response = await axios.post(
+      `https://texttospeech.googleapis.com/v1/text:synthesize?key=${GEMINI_API_KEY}`,
+      {
+        input: { text },
+        voice: {
+          languageCode: 'en-US',
+          name: 'en-US-Neural2-F'
+        },
+        audioConfig: {
+          audioEncoding: 'LINEAR16',
+          sampleRateHertz: 24000
+        }
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        timeout: 30000
+      }
+    );
+
+    const audioData = response.data?.audioContent;
+    if (!audioData) {
+      throw new Error('No audio data in response');
+    }
+
+    // Decode base64 and create audio blob
+    const binaryString = atob(audioData);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    
+    const blob = new Blob([bytes], { type: 'audio/wav' });
+    return URL.createObjectURL(blob);
+
+  } catch (error) {
+    console.error('❌ Gemini TTS failed:', error.message);
+    throw error;
+  }
+  */
 }
 
 // ============================================

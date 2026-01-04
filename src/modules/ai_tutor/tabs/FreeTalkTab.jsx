@@ -99,16 +99,15 @@ const FreeTalkTab = () => {
     addMessage("freetalk", welcomeMessage);
     console.log('💬 FreeTalkTab: Added new Hero Academy greeting');
     
-    // 🔊 Play opening with TTS
+    // 🔊 ALWAYS play opening with TTS (even if autoPlayEnabled is false for first greeting)
     try {
-      if (autoPlayEnabled) {
-        await textToSpeech(randomGreeting, {
-          voice: 'nova',
-          autoPlay: true
-        });
-      }
+      console.log('🎤 FreeTalkTab: Playing opening TTS...');
+      await textToSpeech(randomGreeting, {
+        voice: 'nova',
+        autoPlay: true // Force autoplay for opening greeting
+      });
     } catch (error) {
-      console.error('TTS error for FreeTalk opening:', error);
+      console.error('❌ TTS error for FreeTalk opening:', error);
     }
   };
 
@@ -166,12 +165,15 @@ const FreeTalkTab = () => {
       };
       addMessage("freetalk", aiMsg);
 
-      // Auto-play TTS if enabled
-      if (autoPlayEnabled) {
+      // 🔊 ALWAYS auto-play TTS for AI responses
+      try {
+        console.log('🎤 FreeTalkTab: Playing AI response TTS...');
         await textToSpeech(responseText, {
-          voice: 'nova', // Default voice
+          voice: 'nova',
           autoPlay: true
         });
+      } catch (error) {
+        console.error('❌ TTS error for AI response:', error);
       }
 
       // Extract hints if present
