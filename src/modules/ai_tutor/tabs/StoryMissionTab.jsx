@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { BookOpen, Target, CheckCircle2, Loader2, Volume2 } from 'lucide-react';
+import { BookOpen, Target, CheckCircle2, Loader2, Volume2, RotateCcw } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
@@ -49,25 +49,41 @@ const StoryMissionTab = () => {
   }, []);
 
   const initializeMission = () => {
-    if (messages.length === 0) {
-      // 🔥 Use real syllabus opening line
-      const openingLine = week1RealData.nova_instructions.opening_line;
+    // 🔥 Use real syllabus opening line
+    const openingLine = week1RealData.nova_instructions.opening_line;
+    
+    // Check if we have OLD opening message and clear if needed
+    if (messages.length > 0) {
+      const firstMsg = messages[0];
+      const isOldMessage = firstMsg.role === 'assistant' && 
+        (firstMsg.content.includes('Ready to start') || 
+         firstMsg.content.includes("Let's begin") ||
+         !firstMsg.content.includes('Hero Academy'));
       
-      const welcomeMessage = {
-        role: 'assistant',
-        content: openingLine,
-        timestamp: Date.now()
-      };
-      addMessage('story', welcomeMessage);
-      setMissionStatus('started');
-      
-      // Set hints from syllabus
-      setHints([
-        'Say: "I am [your name]"',
-        'Example: "I am Alex"',
-        'Use "I am" to introduce yourself'
-      ]);
+      if (isOldMessage) {
+        // Clear old messages and restart with new opening
+        useTutorStore.getState().clearMessages('story');
+      } else {
+        // Already has correct opening, don't re-add
+        return;
+      }
     }
+    
+    // Add new opening message
+    const welcomeMessage = {
+      role: 'assistant',
+      content: openingLine,
+      timestamp: Date.now()
+    };
+    addMessage('story', welcomeMessage);
+    setMissionStatus('started');
+    
+    // Set hints from syllabus
+    setHints([
+      'Say: "I am [your name]"',
+      'Example: "I am Alex"',
+      'Use "I am" to introduce yourself'
+    ]);
   };
 
   // Handle user message
@@ -187,6 +203,20 @@ const StoryMissionTab = () => {
 
           {/* Mission Progress */}
           <div className="flex items-center space-x-4">
+            <button
+              onClick={() => {
+                useTutorStore.getState().clearMessages('story');
+                setInitialized(false);
+                setTurnCount(0);
+                setMissionStatus('not_started');
+              }}
+              className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-sm"
+              title="Clear chat and restart"
+            >
+              <RotateCcw size={14} />
+              <span>Reset</span>
+            </button>
+            
             <div className="flex items-center space-x-2">
               <Target size={16} className="text-purple-600" />
               <span className="text-sm font-medium text-gray-700">
