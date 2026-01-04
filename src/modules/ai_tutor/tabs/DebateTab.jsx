@@ -15,12 +15,13 @@ import { getCurrentWeekData } from '../../../data/weekData';
  */
 const DebateTab = () => {
   const { user, currentWeek } = useUserStore();
-  const { messages, addMessage, autoPlayEnabled, preferences } = useTutorStore(state => ({
-    messages: state.messages['debate'] || [],
-    addMessage: (msg) => state.addMessage('debate', msg),
-    autoPlayEnabled: state.autoPlayEnabled,
-    preferences: state.preferences
-  }));
+  
+  // Separate selectors to prevent infinite re-renders
+  const messages = useTutorStore(state => state.messages['debate'] || []);
+  const addMessage = useTutorStore(state => state.addMessage);
+  const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
+  const preferences = useTutorStore(state => state.preferences);
+  
   const [isLoading, setIsLoading] = useState(false);
   const [debateTopic, setDebateTopic] = useState(null);
   const [userPosition, setUserPosition] = useState(null);
@@ -56,7 +57,7 @@ const DebateTab = () => {
         content: `👋 Hi ${user?.name || 'there'}! Let's have a friendly debate!\n\n🤔 Here's what I think: "${selectedTopic}"\n\nDo you agree or disagree? Why?`,
         timestamp: Date.now()
       };
-      addMessage(welcomeMessage);
+      addMessage("debate", welcomeMessage);
     }
   };
 
@@ -110,7 +111,7 @@ const DebateTab = () => {
       content: userMessage,
       timestamp: Date.now()
     };
-    addMessage(userMsg);
+    addMessage("debate", userMsg);
     setIsLoading(true);
     setTurnCount(prev => prev + 1);
 
@@ -151,7 +152,7 @@ Keep responses short (2-3 sentences). Be encouraging!`;
         content: aiResponse,
         timestamp: Date.now()
       };
-      addMessage(aiMsg);
+      addMessage("debate", aiMsg);
 
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
@@ -168,7 +169,7 @@ Keep responses short (2-3 sentences). Be encouraging!`;
         content: "That's a good point! Tell me more about why you think that.",
         timestamp: Date.now()
       };
-      addMessage(errorMsg);
+      addMessage("debate", errorMsg);
     } finally {
       setIsLoading(false);
     }
