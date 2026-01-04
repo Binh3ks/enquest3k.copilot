@@ -16,12 +16,13 @@ import { getCurrentWeekData } from '../../../data/weekData';
  */
 const FreeTalkTab = () => {
   const { user, currentWeek } = useUserStore();
-  const { messages, addMessage, autoPlayEnabled, preferences } = useTutorStore(state => ({
-    messages: state.messages['freetalk'] || [],
-    addMessage: (msg) => state.addMessage('freetalk', msg),
-    autoPlayEnabled: state.autoPlayEnabled,
-    preferences: state.preferences
-  }));
+  
+  // Separate selectors to prevent infinite re-renders
+  const messages = useTutorStore(state => state.messages['freetalk'] || []);
+  const addMessage = useTutorStore(state => state.addMessage);
+  const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
+  const preferences = useTutorStore(state => state.preferences);
+  
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [conversationTopic, setConversationTopic] = useState('');
@@ -63,7 +64,7 @@ const FreeTalkTab = () => {
         content: randomGreeting,
         timestamp: Date.now()
       };
-      addMessage(welcomeMessage);
+      addMessage("freetalk", welcomeMessage);
     }
   };
 
@@ -75,7 +76,7 @@ const FreeTalkTab = () => {
       content: userMessage,
       timestamp: Date.now()
     };
-    addMessage(userMsg);
+    addMessage("freetalk", userMsg);
     setIsLoading(true);
     setMessageCount(prev => prev + 1);
 
@@ -116,7 +117,7 @@ const FreeTalkTab = () => {
         content: aiResponse,
         timestamp: Date.now()
       };
-      addMessage(aiMsg);
+      addMessage("freetalk", aiMsg);
 
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
@@ -145,7 +146,7 @@ const FreeTalkTab = () => {
         content: "That's interesting! Tell me more about that?",
         timestamp: Date.now()
       };
-      addMessage(errorMsg);
+      addMessage("freetalk", errorMsg);
     } finally {
       setIsLoading(false);
     }

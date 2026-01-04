@@ -16,12 +16,13 @@ import { getCurrentWeekData } from '../../../data/weekData';
  */
 const StoryMissionTab = () => {
   const { user, currentWeek } = useUserStore();
-  const { messages, addMessage, autoPlayEnabled, preferences } = useTutorStore(state => ({
-    messages: state.messages['story'] || [],
-    addMessage: (msg) => state.addMessage('story', msg),
-    autoPlayEnabled: state.autoPlayEnabled,
-    preferences: state.preferences
-  }));
+  
+  // Separate selectors to prevent infinite re-renders
+  const messages = useTutorStore(state => state.messages['story'] || []);
+  const addMessage = useTutorStore(state => state.addMessage);
+  const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
+  const preferences = useTutorStore(state => state.preferences);
+  
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [missionStatus, setMissionStatus] = useState('not_started');
@@ -54,7 +55,7 @@ const StoryMissionTab = () => {
         content: `🌟 Welcome to Story Mission! I'm Ms. Nova, and today we're going on an adventure!\n\nReady to start? Tell me your name!`,
         timestamp: Date.now()
       };
-      addMessage(welcomeMessage);
+      addMessage('story', welcomeMessage);
       setMissionStatus('started');
     }
   };
@@ -67,7 +68,7 @@ const StoryMissionTab = () => {
       content: userMessage,
       timestamp: Date.now()
     };
-    addMessage(userMsg);
+    addMessage('story', userMsg);
     setIsLoading(true);
     setTurnCount(prev => prev + 1);
 
@@ -110,7 +111,7 @@ const StoryMissionTab = () => {
         content: aiResponse,
         timestamp: Date.now()
       };
-      addMessage(aiMsg);
+      addMessage('story', aiMsg);
 
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
@@ -142,7 +143,7 @@ const StoryMissionTab = () => {
         content: "Oops! Let's try that again. What were you saying?",
         timestamp: Date.now()
       };
-      addMessage(errorMsg);
+      addMessage('story', errorMsg);
     } finally {
       setIsLoading(false);
     }
