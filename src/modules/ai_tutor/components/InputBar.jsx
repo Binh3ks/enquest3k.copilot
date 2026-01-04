@@ -18,8 +18,24 @@ const InputBar = ({
 }) => {
   const [message, setMessage] = useState('');
   const [isListening, setIsListening] = useState(false);
+  const [shouldAutoSend, setShouldAutoSend] = useState(false); // 🔥 Flag for auto-send
   const [recognition, setRecognition] = useState(null);
   const textareaRef = useRef(null);
+
+  // Auto-send after voice input completes
+  useEffect(() => {
+    if (shouldAutoSend && message.trim() && !disabled) {
+      console.log('🎤 Auto-sending voice input:', message);
+      onSend(message.trim());
+      setMessage('');
+      setShouldAutoSend(false); // Reset flag
+      
+      // Reset textarea height
+      if (textareaRef.current) {
+        textareaRef.current.style.height = 'auto';
+      }
+    }
+  }, [shouldAutoSend, message, disabled, onSend]);
 
   // Initialize Web Speech API
   useEffect(() => {
@@ -44,7 +60,9 @@ const InputBar = ({
     };
 
     recognitionInstance.onend = () => {
+      console.log('🎤 Voice recognition ended');
       setIsListening(false);
+      setShouldAutoSend(true); // 🔥 Trigger auto-send
     };
 
     recognitionInstance.onerror = (event) => {
