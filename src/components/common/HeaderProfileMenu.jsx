@@ -25,7 +25,7 @@ const HeaderProfileMenu = ({ user, onLogout, onOpenProfile }) => {
       >
         <div className="text-right hidden md:block">
           <p className="text-sm font-bold text-slate-700 group-hover:text-indigo-600 transition-colors">
-            {user.name}
+            {user.username || user.name}
           </p>
           <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
             {user.role === 'super_admin' ? 'Owner' : user.role}
@@ -33,7 +33,7 @@ const HeaderProfileMenu = ({ user, onLogout, onOpenProfile }) => {
         </div>
         <div className="w-10 h-10 rounded-full border-2 border-slate-200 p-[2px] bg-white group-hover:border-indigo-400 transition-all shadow-sm">
           <img 
-            src={user.avatarUrl || "https://api.dicebear.com/7.x/micah/svg?seed=Felix"} 
+            src={user.avatar_url || user.avatarUrl || "https://api.dicebear.com/7.x/micah/svg?seed=Felix"} 
             alt="Avatar" 
             className="w-full h-full rounded-full object-cover"
           />
@@ -43,7 +43,7 @@ const HeaderProfileMenu = ({ user, onLogout, onOpenProfile }) => {
       {isOpen && (
         <div className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in-95 origin-top-right">
           <div className="p-4 bg-slate-50 border-b md:hidden">
-            <p className="font-bold text-slate-800">{user.name}</p>
+            <p className="font-bold text-slate-800">{user.username || user.name}</p>
             <p className="text-xs text-slate-500 uppercase">{user.role}</p>
           </div>
           <div className="p-2 space-y-1">

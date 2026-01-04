@@ -101,9 +101,11 @@ const Sidebar = ({ currentUser, weekId, weekProgress, learningMode, handleToggle
     <div onClick={() => setIsProfileModalOpen(true)} className="mx-5 mb-6 p-6 bg-gradient-to-br from-slate-50 to-white rounded-[40px] border-2 border-slate-100 hover:border-indigo-300 shadow-lg cursor-pointer transition-all group relative overflow-hidden">
       <div className="absolute top-5 right-5 text-slate-300 group-hover:text-indigo-500"><Edit2 size={16}/></div>
       <div className="flex items-center space-x-4 mb-4 relative z-10">
-        <div className="w-16 h-16 rounded-3xl bg-white border-2 border-indigo-100 overflow-hidden shadow-md transform group-hover:rotate-6 transition-transform"><img src={currentUser.avatarUrl} alt="User" className="w-full h-full object-cover" /></div>
+        <div className="w-16 h-16 rounded-3xl bg-white border-2 border-indigo-100 overflow-hidden shadow-md transform group-hover:rotate-6 transition-transform">
+          <img src={currentUser.avatar_url || currentUser.avatarUrl || "https://api.dicebear.com/7.x/micah/svg?seed=Felix"} alt="User" className="w-full h-full object-cover" />
+        </div>
         <div className="min-w-0 flex-1">
-          <h3 className="font-black text-lg text-slate-800 truncate leading-none mb-1">{currentUser.name}</h3>
+          <h3 className="font-black text-lg text-slate-800 truncate leading-none mb-1">{currentUser.username || currentUser.name}</h3>
           <button onClick={handleToggleMode} className={`mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 transition-all ${learningMode === 'easy' ? 'bg-teal-50 text-teal-600 border-teal-200 hover:bg-teal-100' : 'bg-indigo-50 text-indigo-600 border-indigo-200 hover:bg-indigo-100'}`}>
             <RotateCcw size={10} /> {learningMode === 'easy' ? 'EASY MODE' : 'ADVANCED'}
           </button>

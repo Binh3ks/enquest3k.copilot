@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Shield, Users, DollarSign, Settings, Save, CheckCircle, Trash2, UserPlus, Image as ImageIcon, Upload } from 'lucide-react';
+import { getAllUsers, adminCreateUser, adminDeleteUser } from '../../services/api';
 import { getSystemStatus, setSystemStatus } from '../../services/SubscriptionManager';
-import { loadAllUsers, saveUserToDB, getPaymentRequests, approvePayment, getGlobalAvatars, addGlobalAvatar, deleteGlobalAvatar } from '../../utils/userStorage';
+import { getPaymentRequests, approvePayment, getGlobalAvatars, addGlobalAvatar, deleteGlobalAvatar } from '../../utils/userStorage';
 
 const SuperAdminPanel = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState('billing'); // Ưu tiên xem Billing
   const [requests, setRequests] = useState([]);
-  const [allUsers, setAllUsers] = useState({});
+  const [allUsers, setAllUsers] = useState([]);
   const [avatars, setAvatars] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   // System Config
   const [isPaidMode, setIsPaidMode] = useState(true);
@@ -26,51 +28,70 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
     if (isOpen) refreshData();
   }, [isOpen]);
 
-  const refreshData = () => {
-      setRequests(getPaymentRequests());
-      setAllUsers(loadAllUsers());
-      setAvatars(getGlobalAvatars());
-      
+  const refreshData = async () => {
+      setLoading(true);
       try {
+          setRequests(getPaymentRequests());
+          setAvatars(getGlobalAvatars());
+          
+          // Tải người dùng từ Backend
+          const response = await getAllUsers();
+          setAllUsers(response.data);
+          
           const sysConfig = localStorage.getItem('engquest_sys_config');
           if (sysConfig) {
               const parsed = JSON.parse(sysConfig);
               setIsPaidMode(parsed.isPaidMode);
               setShowUpgradeBtn(parsed.showUpgradeBtn);
           }
-      } catch (e) {}
+      } catch (e) {
+          console.error("Failed to refresh admin data:", e);
+      } finally {
+          setLoading(false);
+      }
   };
 
   const handleApprove = (reqId) => {
     if(approvePayment(reqId)) { refreshData(); alert("Payment Approved!"); }
   };
 
-  const handleCreateUser = () => {
+  const handleCreateUser = async () => {
       if(!newUserName || !newUserPass) return alert("Missing Info!");
-      if(loadAllUsers()[newUserName]) return alert("User exists!");
       
-      const newUser = {
-          name: newUserName,
-          password: newUserPass,
-          role: newUserRole, 
-          age: 'Adult',
-          avatarUrl: `https://api.dicebear.com/9.x/notionists/svg?seed=${newUserName}&backgroundColor=e0e7ff`,
-          stats: { streak: 0, stars: 0 },
-          plan: newUserPlan 
-      };
-      saveUserToDB(newUserName, newUser);
-      refreshData();
-      setNewUserName(''); setNewUserPass('');
-      alert(`Created user: ${newUserName} (${newUserRole} - ${newUserPlan})`);
+      setLoading(true);
+      try {
+          await adminCreateUser({
+              username: newUserName,
+              password: newUserPass,
+              role: newUserRole,
+              plan: newUserPlan
+          });
+          
+          alert(`Created user: ${newUserName} (${newUserRole} - ${newUserPlan})`);
+          setNewUserName(''); 
+          setNewUserPass('');
+          refreshData();
+      } catch (error) {
+          console.error("Create user failed:", error);
+          alert(error.response?.data?.message || "Failed to create user.");
+      } finally {
+          setLoading(false);
+      }
   };
 
-  const handleDeleteUser = (username) => {
+  const handleDeleteUser = async (username) => {
       if(username === 'owner') return alert("Cannot delete Owner!");
       if(confirm(`Delete ${username}?`)) {
-          const u = loadAllUsers();
-          delete u[username];
-          localStorage.setItem('engquest_users_db_v2', JSON.stringify(u));
-          refreshData();
+          setLoading(true);
+          try {
+              await adminDeleteUser(username);
+              refreshData();
+          } catch (error) {
+              console.error("Delete user failed:", error);
+              alert("Failed to delete user.");
+          } finally {
+              setLoading(false);
+          }
       }
   };
 
@@ -123,7 +144,8 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
             <button onClick={() => setActiveTab('system')} className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm flex items-center gap-3 ${activeTab==='system'?'bg-indigo-600 text-white':'hover:bg-gray-100'}`}><Settings size={18}/> System Config</button>
           </div>
 
-          <div className="flex-1 p-8 overflow-y-auto bg-white">
+          <div className="flex-1 p-8 overflow-y-auto bg-white relative">
+            {loading && <div className="absolute inset-0 bg-white/50 backdrop-blur-sm z-50 flex items-center justify-center font-bold text-indigo-600">Loading...</div>}
             
             {/* BILLING TAB */}
             {activeTab === 'billing' && (
@@ -182,12 +204,12 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                             <table className="w-full text-sm text-left">
                                 <thead className="bg-slate-100 text-slate-500 uppercase"><tr><th className="p-3">User</th><th className="p-3">Role</th><th className="p-3">Plan</th><th className="p-3 text-right">Action</th></tr></thead>
                                 <tbody>
-                                    {Object.values(allUsers).map((u, i) => (
+                                    {allUsers.map((u, i) => (
                                         <tr key={i} className="border-t hover:bg-slate-50">
-                                            <td className="p-3 font-bold">{u.name}</td>
+                                            <td className="p-3 font-bold">{u.username}</td>
                                             <td className="p-3"><span className="px-2 py-1 bg-slate-200 rounded text-xs font-bold uppercase">{u.role}</span></td>
                                             <td className="p-3"><span className={`px-2 py-1 rounded text-xs font-bold ${u.plan==='premium'?'bg-green-100 text-green-700':'bg-slate-100 text-slate-500'}`}>{u.plan || 'free'}</span></td>
-                                            <td className="p-3 text-right">{u.role !== 'super_admin' && <button onClick={()=>handleDeleteUser(u.name)} className="text-rose-500 p-2"><Trash2 size={16}/></button>}</td>
+                                            <td className="p-3 text-right">{u.username !== 'owner' && <button onClick={()=>handleDeleteUser(u.username)} className="text-rose-500 p-2"><Trash2 size={16}/></button>}</td>
                                         </tr>
                                     ))}
                                 </tbody>

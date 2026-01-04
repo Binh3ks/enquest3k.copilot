@@ -3,20 +3,10 @@ import { X, Save, LogOut, User, Upload } from 'lucide-react';
 import { getGlobalAvatars } from '../../utils/userStorage';
 
 const ProfileModal = ({ isOpen, onClose, currentUser, onUpdateProfile, onLogout }) => {
-  const [name, setName] = useState('');
-  const [avatar, setAvatar] = useState('');
-  const [presetAvatars, setPresetAvatars] = useState([]);
+  const [name, setName] = useState(currentUser?.username || currentUser?.name || '');
+  const [avatar, setAvatar] = useState(currentUser?.avatar_url || currentUser?.avatarUrl || '');
+  const [presetAvatars, setPresetAvatars] = useState(getGlobalAvatars());
   const fileInputRef = useRef(null);
-
-  useEffect(() => {
-    if (currentUser) {
-      setName(currentUser.name);
-      setAvatar(currentUser.avatarUrl);
-    }
-    if (isOpen) {
-        setPresetAvatars(getGlobalAvatars());
-    }
-  }, [currentUser, isOpen]);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];

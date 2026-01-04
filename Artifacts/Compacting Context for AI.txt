@@ -1,0 +1,223 @@
+1) Prompt cho Copilot: rewrite context.md compact nhất (copy–paste nguyên khối)
+You are updating the file docs/ai_application_context.md (currently auto-generated). Rewrite it to be as compact as possible while staying accurate.
+
+Hard constraints:
+- Target <= 180 lines, no prose paragraphs longer than 3 lines.
+- Use bullet points heavily.
+- Keep only what a coding agent needs to work without scanning the repo.
+- Remove mermaid diagram and long SQL blocks; replace them with pointers to source files.
+- Keep: tech stack, architecture (1 screen), key directories, key API endpoints, key data flows (ultra short), and a short dev log.
+- Keep the marker: <!-- AUTO_GENERATED_DEVELOPMENT_LOG --> and ensure new log entries append under it.
+- Preserve the meaning of the current doc (do not invent new features).
+- Add a section "AI Rules" with: no repo scan, no grep unless asked, only read files user specifies.
+
+Rewrite structure EXACTLY:
+
+# EngQuest AI Context (Compact)
+_Last Updated: <ISO timestamp>_
+
+## TL;DR
+- <one-liners>
+
+## Architecture
+- Frontend: <...>
+- Backend: <...>
+- DB: <...>
+- AI: <...>
+
+## Tech Stack
+- Frontend: <...>
+- Backend: <...>
+
+## Key Paths (Source of Truth)
+- <path> — <role>
+(keep to ~12 lines max)
+
+## API Endpoints (Backend)
+- POST /api/chat — <one-liner>
+- POST /api/auth/register — <one-liner>
+- POST /api/auth/login — <one-liner>
+- GET /api/progress/:weekId — <one-liner>
+- POST /api/progress — <one-liner>
+
+## Data Flows (Very Short)
+- Auth: UI → API → DB → token → store
+- Progress: UI → API → DB upsert → UI
+- AI Tutor: UI → backend proxy → Gemini → UI
+
+## Local Dev (Minimal)
+- Backend: cd mcp-server && npm i && npm run dev
+- Frontend: npm i && npm run dev
+- Env notes: VITE_API_URL, GEMINI_API_KEY, JWT_SECRET, PG_*
+
+## AI Rules
+- DO NOT scan repository
+- DO NOT grep unless explicitly asked
+- ONLY read files explicitly provided by the user or listed in docs/task-files.md
+
+## Development Log & Key Decisions
+<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->
+- Keep last 12 entries only (most recent first). If more exist, drop older ones.
+
+
+Prompt này cố tình ép Copilot: bỏ diagram/SQL dài (đốt context), thay bằng pointer tới file nguồn (mcp-server/database/init.sql, routes/*.js, src/services/api.js, …) đúng tinh thần “Claude/Copilot đọc 1 lần hiểu”.
+
+2) Script: auto update context sau mỗi task (cập nhật timestamp + append log)
+
+Bạn đã có script trong package.json như generate:ai-context (đang tạo file này) 
+
+ai_application_context
+
+. Mình đề xuất chỉnh theo hướng 2 lớp:
+
+generate:ai-context = (re)generate phần “context compact” (không đụng log)
+
+context:log = chỉ append 1 dòng log + update Last Updated, và trim còn 12 entries
+
+2.1. Tạo script mới: scripts/context-log.mjs
+
+File này làm đúng 3 việc:
+
+cập nhật dòng _Last Updated: ..._
+
+thêm 1 entry dưới <!-- AUTO_GENERATED_DEVELOPMENT_LOG -->
+
+giữ tối đa 12 entry mới nhất
+
+// scripts/context-log.mjs
+import fs from "fs";
+import path from "path";
+
+const CONTEXT_PATH = path.resolve("docs/ai_application_context.md");
+const marker = "<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->";
+
+const msg = process.argv.slice(2).join(" ").trim();
+if (!msg) {
+  console.error("Usage: node scripts/context-log.mjs <log message>");
+  process.exit(1);
+}
+
+if (!fs.existsSync(CONTEXT_PATH)) {
+  console.error(`Missing: ${CONTEXT_PATH}`);
+  process.exit(1);
+}
+
+let text = fs.readFileSync(CONTEXT_PATH, "utf8");
+
+// 1) Update Last Updated
+const now = new Date().toISOString();
+text = text.replace(
+  /_Last Updated:\s*.*?_/,
+  `_Last Updated: ${now}_`
+);
+
+// 2) Append log entry under marker
+const idx = text.indexOf(marker);
+if (idx === -1) {
+  console.error(`Marker not found: ${marker}`);
+  process.exit(1);
+}
+
+const entry = `- ${now.replace("T", " ").replace("Z", "")}: ${msg}\n`;
+
+// Insert right after marker line
+const parts = text.split(marker);
+let after = parts[1] ?? "";
+after = after.replace(/^\s*\n?/, "\n"); // ensure newline
+after = entry + after;
+
+// 3) Keep only last 12 entries (most recent first)
+const lines = after.split("\n");
+const kept = [];
+let count = 0;
+for (const line of lines) {
+  if (line.trim().startsWith("- ")) {
+    if (count < 12) kept.push(line);
+    count++;
+  } else {
+    kept.push(line);
+  }
+}
+after = kept.join("\n");
+
+text = parts[0] + marker + after;
+
+fs.writeFileSync(CONTEXT_PATH, text, "utf8");
+console.log(`Updated context log: ${CONTEXT_PATH}`);
+
+2.2. Thêm scripts vào package.json
+{
+  "scripts": {
+    "context:log": "node scripts/context-log.mjs",
+    "context:update": "npm run generate:ai-context && npm run context:log --"
+  }
+}
+
+
+context:log dùng khi chỉ muốn ghi log
+
+context:update chạy full: regenerate context + ghi log (phù hợp “sau mỗi task”)
+
+3) Gắn vào “task runner” hiện có để tự ghi sau mỗi task
+
+Trong ảnh terminal của bạn có menu task kiểu:
+
+Backup
+
+Restore
+
+FIX
+
+Chạy App
+
+Cập Nhật AI Context (tự động)
+=> khả năng bạn có 1 script shell/menu. Sau khi mỗi task chạy xong, chỉ cần thêm 1 dòng:
+
+Ví dụ (shell):
+npm run context:update -- "Task <name>: <short result>"
+
+Ví dụ message chuẩn (để compact):
+
+Refactor AITutor: split into components/hooks/services; app OK
+
+Fix login: dotenv in db.js; owner account restored
+
+Tailwind v4: postcss config updated; build OK
+
+Quy tắc: message ≤ 120 ký tự, 1 câu.
+
+4) Nâng cấp “generate:ai-context” để file nhỏ mà đủ dùng (khuyến nghị)
+
+Trong file context hiện tại, phần làm nó phình to nhất là:
+
+mermaid diagram dài
+
+full SQL schema block
+
+phần “How AI Tools Can Use This Context” dài 
+
+ai_application_context
+
+Khi Copilot rewrite theo prompt ở mục (1), hãy đảm bảo:
+
+SQL → thay bằng: DB schema: mcp-server/database/init.sql
+
+Diagram → thay bằng 4 bullet Architecture
+
+Dev Setup → 2–4 dòng lệnh
+
+Giữ “Key Paths” tối đa ~12 dòng
+
+5) Lệnh dùng hằng ngày (siêu gọn)
+
+Sau mỗi task xong:
+
+npm run context:log -- "Refactor AITutor: split modules; app OK"
+
+
+Nếu task làm thay đổi lớn, muốn regenerate + log:
+
+npm run context:update -- "AI Tutor refactor: new file map; behavior unchanged"
+
+
+Nếu bạn paste cho mình script/menu đang chạy các task (file .sh hoặc .js điều khiển menu đó), mình sẽ viết luôn đoạn patch “hook sau mỗi task” chuẩn nhất (khỏi phải tự đoán chỗ chèn).

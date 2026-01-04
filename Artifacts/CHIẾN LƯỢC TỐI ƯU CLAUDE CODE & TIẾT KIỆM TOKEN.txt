@@ -1,0 +1,89 @@
+🚀 CHIẾN LƯỢC TỐI ƯU CLAUDE CODE & TIẾT KIỆM TOKEN (ENGQUEST)
+
+Bản kế hoạch này giúp bạn kiểm soát chi phí khi sử dụng các AI Agent (Claude/Gemini) trong VS Code, tránh việc AI tiêu tốn hàng đô-la cho một thay đổi nhỏ.
+
+1. Chia nhỏ Module (Modularization Strategy)
+
+Hiện tại AITutor.jsx đang là một "Monolith" (file khổng lồ). Khi bạn sửa một cái nút, AI phải đọc lại toàn bộ logic Engine. Hãy yêu cầu AI tách ra theo cấu trúc sau:
+
+Lộ trình tách file:
+
+src/services/aiTutor/tutorEngine.js: Chứa toàn bộ logic gọi API Gemini, định nghĩa Schema và System Prompt.
+
+src/services/aiTutor/mcpRegistry.js: Chứa định nghĩa và trình thực thi các công cụ MCP (Tools).
+
+src/modules/ai_tutor/components/: Chia nhỏ UI thành các thành phần con:
+
+ChatWindow.jsx: Chỉ quản lý danh sách tin nhắn và cuộn trang.
+
+GrammarFocus.jsx: Hiển thị ô giải thích ngữ pháp.
+
+HintChips.jsx: Hiển thị các nút gợi ý.
+
+TabNavigation.jsx: Thanh chuyển đổi giữa Story/Roleplay/Review.
+
+src/modules/ai_tutor/AITutor.jsx: Chỉ đóng vai trò "nhạc trưởng" để điều phối các component trên.
+
+Lợi ích: Khi cần sửa giao diện, bạn chỉ cần mở file Component tương ứng (~50 lines). AI sẽ không phải đọc lại 500 lines logic Engine.
+
+2. Cấu hình .clauderules (Hoặc .clinerules)
+
+Tạo file này tại thư mục gốc của dự án. Đây là "Luật pháp" buộc AI phải tuân theo để tránh lãng phí token.
+
+# RULES FOR AI AGENT
+- TRƯỚC KHI thực hiện bất kỳ task nào, hãy đọc file `docs/context.md` để nắm bắt tổng quan.
+- KHÔNG tự ý chạy `grep`, `find`, hoặc `ls -R` trên toàn bộ repo. Điều này cực kỳ tốn token.
+- Nếu cần tìm kiếm, hãy hỏi User phạm vi thư mục cụ thể (ví dụ: src/modules).
+- KHÔNG đọc các file trong `node_modules`, `dist`, hoặc `.git`.
+- Ưu tiên sửa lỗi cục bộ (Partial edit). Không bao giờ viết lại toàn bộ file nếu chỉ cần sửa vài dòng.
+- Khi một file vượt quá 200 dòng, hãy đề xuất tách module thay vì tiếp tục viết thêm vào đó.
+- Tắt hành vi tự động scan lại repo sau mỗi thay đổi trừ khi được yêu cầu.
+
+
+3. Quản lý Ngữ cảnh với docs/context.md
+
+Thay vì để AI tự scan toàn bộ hàng trăm file, hãy duy trì một file "Bản đồ dự án". AI chỉ cần đọc file này là hiểu mọi thứ.
+
+Cấu trúc file docs/context.md:
+
+Tech Stack: React, Vite, Tailwind, Firebase, Gemini API.
+
+Cấu trúc thư mục: Mô tả ngắn gọn chức năng của từng thư mục chính.
+
+Luồng dữ liệu: Cách AI Tutor nhận Syllabus và trả về JSON.
+
+Trạng thái hiện tại: Task nào đang làm dở, Task nào đã xong.
+
+Cách dùng: Mỗi khi bắt đầu một lượt chat mới, hãy gõ: @docs/context.md Hãy đọc file này để nắm bối cảnh, sau đó sửa file [tên_file] cho tôi.
+
+4. Kiểm soát Lịch sử & Tóm tắt Chat (Chat Management)
+
+Lịch sử chat càng dài, chi phí mỗi tin nhắn càng tăng theo cấp số nhân.
+
+Quy tắc "Một Task - Một Chat": Khi xong một tính năng (ví dụ: xong cái Header), hãy kết thúc lượt chat đó.
+
+Kỹ thuật Tóm tắt (The Handover): Trước khi nhấn "New Task", hãy bảo AI:
+
+"Hãy tóm tắt ngắn gọn trạng thái hiện tại của task này, các thay đổi đã thực hiện và những việc cần làm tiếp theo vào một đoạn văn ngắn. Tôi sẽ dùng nó cho lượt chat mới."
+
+Khởi tạo Task mới: Copy đoạn tóm tắt đó dán vào lượt chat mới. Điều này giúp AI "nhớ" việc nhưng không phải "gánh" hàng chục tin nhắn cũ.
+
+5. Viết Prompt Tiết kiệm Token
+
+Context Pinning: Luôn dùng tính năng @ (hoặc kéo thả file) để chỉ định chính xác file cần sửa. Đừng nói "Sửa app", hãy nói "@AITutor.jsx Sửa lỗi màu nút".
+
+Chỉ định dòng: Nếu bạn biết lỗi ở đâu, hãy nói: "Hãy sửa logic ở khoảng dòng 45-60 trong file @tutorEngine.js". AI sẽ không cần phân tích các phần khác.
+
+Output ngắn gọn: Thêm câu: "Chỉ trả về đoạn mã thay đổi, không cần giải thích dài dòng hoặc viết lại các hàm không liên quan."
+
+6. Ngăn chặn Vòng lặp Vô hạn (Anti-Loop)
+
+Nếu bạn thấy AI bắt đầu tự động ls hoặc read_file liên tục mà không ra kết quả:
+
+Nhấn nút Stop ngay lập tức.
+
+Can thiệp thủ công: Cung cấp cho nó đường dẫn file chính xác.
+
+Điều chỉnh Rules: Nếu nó lặp lại hành vi này, hãy cập nhật vào .clauderules: "Nếu không tìm thấy file sau 2 lần thử, hãy dừng lại và hỏi User đường dẫn chính xác."
+
+Ghi chú: Tiết kiệm token không chỉ là tiết kiệm tiền, mà còn giúp AI phản hồi nhanh hơn và ít bị nhầm lẫn hơn (do ngữ cảnh sạch sẽ).

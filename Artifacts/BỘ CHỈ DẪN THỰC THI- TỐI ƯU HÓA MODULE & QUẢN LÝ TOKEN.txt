@@ -1,0 +1,84 @@
+🛠 BỘ CHỈ DẪN THỰC THI: TỐI ƯU HÓA MODULE & QUẢN LÝ TOKEN
+
+Tài liệu này chứa các Prompt và mẫu tệp tin để bạn yêu cầu AI thực hiện việc tái cấu trúc dự án EngQuest nhằm tiết kiệm chi phí và tăng hiệu suất.
+
+1. Prompt Thực thi: Chia nhỏ Module AITutor.jsx
+
+Mục tiêu: Tách logic "nặng" ra khỏi giao diện để giảm lượng token AI phải đọc mỗi lượt.
+
+Copy và gửi Prompt này cho AI:
+
+"Dựa trên chiến lược module hóa, hãy thực hiện các bước sau cho file @src/modules/ai_tutor/AITutor.jsx:
+
+Tách toàn bộ logic API (Gemini Call), Schema, và System Prompt sang file mới: src/services/ai_tutor/engine.js.
+
+Tách định nghĩa và logic thực thi MCP Tools sang file: src/services/ai_tutor/mcp_registry.js.
+
+Chia nhỏ các thành phần UI (ChatWindow, GrammarFocus, HintChips, TabNavigation) vào thư mục src/modules/ai_tutor/components/.
+
+Cập nhật AITutor.jsx chỉ để quản lý State và kết nối các component trên.
+
+Đảm bảo các đường dẫn import chính xác và ứng dụng không bị lỗi biên dịch."
+
+2. Tệp tin Quy tắc: .clauderules (hoặc .clinerules)
+
+Mục tiêu: Ngăn chặn AI thực hiện các hành vi gây lãng phí token.
+
+Tạo file .clauderules tại thư mục gốc với nội dung:
+
+# ENGQUEST AI AGENT RULES
+- LUÔN ĐỌC file `docs/ai_application_context.md` trước khi bắt đầu bất kỳ task nào để hiểu cấu trúc dự án.
+- NGHIÊM CẤM tự động chạy các lệnh quét diện rộng như `grep -r`, `find .`, hoặc `ls -R` trên toàn bộ repo.
+- TẮT hành vi tự động scan lại repo sau mỗi thay đổi. Chỉ tìm kiếm khi User yêu cầu rõ phạm vi thư mục.
+- KHÔNG đọc các thư mục: `node_modules`, `dist`, `.git`, `build`.
+- Ưu tiên sửa lỗi cục bộ (Partial edits) thay vì viết lại toàn bộ file.
+- Nếu một file vượt quá 250 dòng, hãy đề xuất tách module thay vì viết tiếp.
+- Nếu không tìm thấy file sau 2 lần thử, hãy dừng lại và hỏi User đường dẫn chính xác thay vì lặp lại lệnh tìm kiếm.
+
+
+3. Tệp tin Ngữ cảnh: docs/ai_application_context.md
+
+Mục tiêu: Cung cấp "bản đồ" cho AI để nó không phải tự đi tìm kiếm.
+
+Nội dung mẫu (Hãy cập nhật theo thực tế dự án của bạn):
+
+# 🗺 ENGQUEST APPLICATION CONTEXT
+**Version:** 1.1.0 | **Last Updated:** 2026-01-03
+
+## 🏗 Tech Stack
+- Frontend: React (Vite), Tailwind CSS, Lucide Icons.
+- Backend/AI: Gemini API (2.0 Flash/1.5 Pro).
+- Database: Firebase Firestore (Dùng cho userStorage).
+
+## 📁 Key Directories
+- `src/modules/`: Chứa các tính năng chính (AI Tutor, Shadowing, Vocab).
+- `src/services/`: Chứa logic xử lý API và dữ liệu dùng chung.
+- `src/assets/`: Hình ảnh và âm thanh của syllabus.
+
+## 🔄 Data Flow (AI Tutor)
+1. User gửi tin nhắn -> `AITutor.jsx` gọi `engine.js`.
+2. `engine.js` lấy dữ liệu tuần học từ `syllabus_db` và gọi Gemini API.
+3. Gemini trả về JSON -> UI hiển thị Giao diện + Hints + Grammar.
+
+## 📌 Current Focus
+- Đang thực hiện chia nhỏ module AITutor để tiết kiệm token.
+- Đang chuẩn hóa Master Prompt V23.
+
+
+4. Giao thức Tóm tắt & Bàn giao (Handover Protocol)
+
+Mục tiêu: Cắt đứt lịch sử chat dài để tiết kiệm tiền nhưng AI vẫn giữ được trí nhớ.
+
+Trước khi nhấn "New Task", hãy gõ Prompt này:
+
+"Task này đã xong. Hãy tóm tắt trạng thái hiện tại theo định dạng sau để tôi bàn giao cho lượt chat tiếp theo:
+
+Summary: (Các việc đã làm)
+
+Changes: (Các file đã sửa)
+
+Next Steps: (Việc cần làm ngay sau khi bắt đầu chat mới)
+
+Context Pinning: (Các file quan trọng cần AI đọc lại ngay lập tức)"
+
+Mẹo: Luôn gõ @docs/ai_application_context.md khi bắt đầu một Chat mới để AI có ngay "bản đồ" trong tay.

@@ -1,0 +1,616 @@
+Dưới đây là CHẨN ĐOÁN CHÍNH XÁC + ACTION POINT (không giảng đạo).
+Mỗi action độc lập, bạn chọn làm theo thứ tự.
+
+🔴 VẤN ĐỀ CỐT LÕI (Root Causes)
+1) ❌ Bạn đang có 2 Engine song song cho Story Mission
+
+Rule-based engine: TutorResponseGenerator
+
+AI-driven engine: StoryMissionEngine + NovaPromptBuilder
+
+⛔ Cả hai đều:
+
+quyết định câu hỏi tiếp theo
+
+quyết định hint ngữ cảnh
+
+quyết định khi nào “complete”
+
+➡️ Xung đột logic → AI hỏi lặp, hint sai, flow không tự nhiên
+
+2) ❌ Hint Engine đang dùng sai nguồn câu hỏi
+
+Trong StoryMissionTab.jsx:
+
+const actualQuestion = response.task || fullResponseText;
+
+
+Nhưng:
+
+Với AI-driven flow, task thường = null
+
+→ hint được sinh từ fullResponseText (ack + filler)
+
+→ Intent detection sai → hint sai
+
+3) ❌ Mission Spec không phải “source of truth”
+
+storyMissions.js định nghĩa:
+
+missionGoals
+
+targetVocabulary
+
+successCriteria
+
+Nhưng:
+
+Engine không ép AI theo thứ tự goal
+
+Completion logic bị chia đôi:
+
+minTurns check
+
+vocabUsed check
+
+mission_goals_achieved (AI tự khai)
+
+➡️ AI không biết “đang làm goal nào”
+
+4) ❌ AI bị giao quá nhiều quyền
+
+Trong NovaPromptBuilder:
+
+AI vừa:
+
+nói chuyện
+
+extract data
+
+tự đánh dấu goal complete
+
+tự chọn câu hỏi tiếp theo
+
+➡️ Với trẻ A0++, đây là over-delegation → hội thoại không ổn định.
+
+5) ❌ Không có “Deterministic Turn Controller”
+
+Hiện tại:
+
+Không có biến kiểu: currentGoalIndex
+
+Không có state machine rõ ràng
+
+Turn tiến triển dựa vào:
+
+AI output
+
+text parsing
+
+heuristics
+
+➡️ AI không thể nhất quán qua các lượt sửa
+
+🟢 ACTION PLAN (CHỌN LÀM THEO THỨ TỰ)
+✅ Action 1 — CHỌN 1 ENGINE DUY NHẤT (QUAN TRỌNG NHẤT)
+
+Quyết định bắt buộc:
+
+❌ Loại bỏ TutorResponseGenerator khỏi Story Mission
+
+✅ Giữ AI-driven flow (StoryMissionEngine + NovaPromptBuilder)
+
+📌 TutorResponseGenerator chỉ dùng cho Free Talk
+
+👉 Nếu không làm Action 1 → mọi fix khác vô nghĩa
+
+✅ Action 2 — Khóa “Turn Ownership” về ENGINE (không phải AI)
+
+Sửa kiến trúc như sau:
+
+Engine giữ:
+
+currentGoalIndex
+
+requiredVocabRemaining
+
+turnCount
+
+AI chỉ được:
+
+phản hồi 1–2 câu
+
+hỏi DUY NHẤT câu hỏi do engine chỉ định
+
+📌 Prompt AI KHÔNG được tự nghĩ goal tiếp theo
+
+✅ Action 3 — Fix Hint Engine (bug hiện tại)
+
+Thay logic trong StoryMissionTab.jsx:
+
+HIỆN TẠI (sai):
+
+const actualQuestion = response.task || fullResponseText;
+
+
+ĐÚNG:
+
+Hint phải dựa trên:
+
+engine.state.currentGoal
+
+hoặc mission.missionGoals[currentGoalIndex]
+
+👉 Hint sinh từ goal, không từ text AI.
+
+✅ Action 4 — Chuẩn hoá Completion Logic (1 chỗ duy nhất)
+
+Chọn DUY NHẤT:
+
+Completion =
+all missionGoals achieved AND required vocab used
+
+❌ Không dùng:
+
+AI tự khai mission_goals_achieved
+
+minTurns như điều kiện chính
+
+✅ Action 5 — Ép Prompt “LOW AGENCY MODE”
+
+Trong NovaPromptBuilder, thêm rule cứng:
+
+You are NOT allowed to:
+- choose the next goal
+- decide mission completion
+- ask multiple questions
+
+You MUST:
+- respond to the given goal only
+- ask exactly ONE short question related to that goal
+
+
+➡️ AI sẽ tự nhiên hơn vì không bị quá tải vai trò.
+
+✅ Action 6 — Viết 1 file SPEC để AI & Dev cùng hiểu
+
+Tạo docs/story_mission_spec.md (≤ 120 dòng):
+
+Mission lifecycle
+
+Goal order
+
+Hint source
+
+Completion rules
+
+Forbidden behaviors
+
+📌 File này là Single Source of Truth cho mọi agent.
+
+🧠 TẠI SAO BẠN “SỬA CÁI NÀY HỎNG CÁI KHÁC”?
+
+Vì:
+
+Bạn đang sửa triệu chứng UI
+
+Nhưng bệnh nằm ở ownership & flow control
+
+👉 Khi không có 1 nơi quyết định duy nhất, AI sẽ:
+
+đoán
+
+lặp
+
+bẻ flow
+
+🧩 NEXT STEP (bạn chọn 1)
+
+🔧 Mình đề xuất patch kiến trúc cụ thể (file + diff)
+
+🧠 Viết lại StoryMissionEngine V5 (deterministic + AI)
+
+🧪 Tạo 5 Golden Test Scenarios để không regress nữa
+
+✂️ Rút gọn prompt + engine để AI tự nhiên hơn cho trẻ em
+
+👉 Trả lời chỉ cần số (1–4).
+
+1, 2, 3, 4 tôi cần 1 artifact thật đầy đủ để 1 trong các AI này sửa (hãy gợi ý AI nào phù hợp nhất).
+Đã suy nghĩ trong 6s
+
+Dưới đây là 1 MASTER ARTIFACT đủ “đóng gói” để một AI agent trong VS Code (Claude Code / Cline / Roo / Copilot) vào làm 1 lần ra đúng, gồm: kiến trúc mục tiêu, patch plan theo file, prompt copy-paste, test scenarios, và guardrails chống lặp.
+
+AI nào phù hợp nhất?
+
+Chọn: Claude Code (VS Code) / Claude Sonnet
+Lý do thực dụng: bài này cần refactor có kỷ luật + giữ nhất quán state machine + sửa prompt + test. Claude làm tốt nhất khi bạn “pin file + spec + action-only”.
+(Cline/Roo mạnh ở chạy tool nhưng hay scan/grep và dễ lạc nếu spec chưa khóa.)
+
+MASTER ARTIFACT — Story Mission V5 (Deterministic + AI Low-Agency)
+0) One-liner Goal
+
+Rebuild Story Mission so it is deterministic (engine controls goal/turn/completion) + AI is low-agency (only generates short response + one question for the current goal). Fix hint correctness, stop repeated questions, stop regressions.
+
+1) Rules of Engagement (token-safe, anti-loop)
+
+Agent MUST follow:
+
+Read only these files (pinned list below). No repo scan. No grep.
+
+Output only action points + diffs. No long explanations.
+
+Max 2–3 files changed per iteration. Commit in small steps.
+
+If anything is unclear: ask one question, then stop.
+
+(Story Tab currently imports StoryMissionEngine and hint engine; do not “explore repo” beyond pinned list.) 
+
+StoryMissionTab
+
+2) Pinned Files (must read first)
+
+StoryMissionTab.jsx (UI wiring + hint usage) 
+
+StoryMissionTab
+
+storyMissionEngine.js (engine state + AI call + completion) 
+
+storyMissionEngine
+
+novaPromptBuilder.js (prompt design, current high-agency) 
+
+novaPromptBuilder
+
+storyMissions.js (mission data spec + goals + vocab) 
+
+storyMissions
+
+missionSchema.js (mission contract + validateMission) 
+
+missionSchema
+
+tutorSchemas.js (JSON parser) 
+
+tutorSchemas
+
+Optional (only if referenced by pinned files):
+
+AI_TUTOR_MASTER_ARTIFACT.md (product intent) 
+
+AI_TUTOR_MASTER_ARTIFACT
+
+AITutor.jsx (tab routing) 
+
+AITutor
+
+3) Definition of Done (strict)
+Functional
+
+Story Mission never repeats the same question for the same goal unless user gives empty/invalid input.
+
+Hints always match the current goal’s expected student output, not “whatever AI just said”.
+
+Completion occurs ONLY when:
+
+turnsCompleted >= minTurns AND
+
+all mustUseWords have been used (deterministically detected)
+(No reliance on AI self-report of mission_goals_achieved.)
+
+Behavioral (Ms. Nova)
+
+Each AI turn: ≤ 2 sentences + 1 short question only.
+
+No multi-question responses.
+
+No grammar lectures.
+
+Engineering
+
+Engine owns: currentGoalIndex, currentGoalId, turnsCompleted, requiredVocabRemaining, studentContext.
+
+AI does NOT choose next goal, does NOT decide completion, does NOT generate multiple questions.
+
+Tests
+
+Add 5 golden scenarios (manual test checklist or lightweight unit tests) that must pass.
+
+4) Core Design (V5 Architecture)
+4.1 Deterministic Turn Controller (Engine-owned)
+
+Add to engine state:
+
+currentGoalIndex (starts at 0)
+
+goals = mission.missionGoals (array)
+
+currentGoal = goals[currentGoalIndex]
+
+requiredVocab = mustUseWords from mission successCriteria
+
+requiredVocabRemaining = Set(requiredVocab) minus used words
+
+lastQuestion (string) (for anti-repeat protection)
+
+4.2 AI Low-Agency Contract
+
+AI output JSON schema becomes:
+
+{
+  "response_text": "1-2 short sentences, warm",
+  "next_question": "ONE short question aligned to the CURRENT goal only",
+  "student_context_update": { "name": "...", "age": "...", "class": "..." },
+  "vocabulary_used": ["teacher", "school"]
+}
+
+
+Remove / ignore mission_goals_achieved (do not use it for state progression).
+(Current parser already supports story JSON; update it minimally to accept next_question too.) 
+
+tutorSchemas
+
+4.3 Goal Progression (deterministic)
+
+Engine determines goal completion based on:
+
+student_context_update contains required field for the current goal OR
+
+a simple deterministic check (e.g., “age” present for “Get the student's age”)
+
+Then engine increments currentGoalIndex if goal is satisfied and not at end.
+
+4.4 Hint Source of Truth
+
+Hints should be generated from:
+
+mission.openingBeat.hints for first turn
+
+otherwise: a goal-to-hints mapping derived from mission.missionGoals[currentGoalIndex]
+NOT from AI response text.
+
+(Your current UI tries to extract “actual question” from response text; that’s unreliable because AI-driven engine returns task null and story_beat as response.)
+
+5) Patch Plan by File (exact actions)
+A) storyMissionEngine.js — implement V5 state machine
+
+Current engine increments turns and ends by minTurns, and checks vocab used; AI decides a lot. 
+
+storyMissionEngine
+
+Do:
+
+Add currentGoalIndex, lastQuestion, goals, requiredVocabRemaining.
+
+start() should:
+
+set currentGoalIndex = 0
+
+set lastQuestion = openingBeat.aiPrompt
+
+return { story_beat: sceneContext, task: openingBeat.aiPrompt, ... } (keep existing behavior)
+
+generateTurn(userInput) should:
+
+update turns and conversationHistory
+
+call AI with prompt that includes: currentGoal, requiredVocabRemaining, hard rules
+
+parse JSON: response_text, next_question, student_context_update, vocabulary_used
+
+deterministic update:
+
+update studentContext and memory
+
+mark vocab used (normalize + lowercase)
+
+update requiredVocabRemaining
+
+evaluate current goal completion:
+
+if current goal is about name/age/class: check those fields in studentContext
+
+else: keep it simple (goal complete when at least one new context field OR after N turns on same goal)
+
+anti-repeat:
+
+if next_question equals lastQuestion → replace with fallback question for same goal
+
+set lastQuestion = next_question
+
+return combined response:
+
+story_beat = response_text
+
+task = next_question ← IMPORTANT so UI can do hints correctly if needed.
+
+Completion:
+
+isComplete() uses ONLY:
+
+turnsCompleted >= minTurns AND required vocab all used.
+
+do NOT use AI self-reported goals.
+
+Fallbacks:
+
+If AI JSON parse fails, return deterministic safe response + deterministic question for current goal.
+
+B) novaPromptBuilder.js — rewrite to Low-Agency + goal-pinned
+
+Current prompt asks AI to analyze/extract/converse and decide achieved goals, and “do not be repetitive” but still high agency. 
+
+novaPromptBuilder
+
+Replace prompt contract:
+
+Input includes:
+
+Current Goal: <string>
+
+Required vocab remaining: <list>
+
+Hard rules: 2 sentences max + one question
+
+Output JSON must include next_question (one question only).
+
+Remove “mission_goals_achieved” entirely from instructions.
+
+Add strict formatting:
+
+“JSON only”
+
+“No markdown”
+
+“next_question must end with ?”
+
+“response_text must NOT contain multiple questions”
+
+C) tutorSchemas.js — extend parser to accept next_question
+
+Current parser returns {response_text, student_context_update, vocabulary_used, mission_goals_achieved}. 
+
+tutorSchemas
+
+Do minimal change:
+
+Add next_question: parsed.next_question || ""
+
+Keep backward compat (if missing, set to empty; engine will fallback deterministically)
+
+D) StoryMissionTab.jsx — hints and rendering fix
+
+Current UI:
+
+On start: uses opening.task and passes to getHints with beatWithTask.aiPrompt; ok. 
+
+StoryMissionTab
+
+On submit: tries to derive actualQuestion from response.task || fullResponseText; but engine returns task:null and story_beat contains response → hint uses wrong string.
+
+Do:
+
+Expect engine V5 returns { story_beat, task } where task is the question.
+
+Change hint call to use response.task only:
+
+const actualQuestion = response.task;
+
+if empty, fallback: use deterministic goal-based question (engine should avoid empty).
+
+Optional: add “goal label” display for debugging (dev-only) behind a flag.
+
+E) storyMissions.js / missionSchema.js — normalize mission goals
+
+Your missions already contain missionGoals and openingBeat.hints and required vocab.
+
+Do (optional but recommended):
+
+Add a goalHints map per mission (or globally per week):
+
+key: goal string
+
+value: hint chips array
+This makes hints deterministic and cheap.
+
+6) Golden Scenarios (manual test checklist)
+
+Create docs/tests/story_mission_golden.md (or run manually). Must pass all.
+
+W1_FIRST_DAY start
+
+Start mission → AI greeting shown + hints are ["My","name","is","Minh"] from openingBeat.
+
+Name captured
+
+Student: “My name is Bao”
+
+Next AI response uses name in encouragement; next_question is about age (not name again)
+
+Hint chips align to age question.
+
+No repeats
+
+Provide valid age “I am 8”
+
+Next question moves to next goal (class or teacher, depending on goals order), not “How old are you?” again.
+
+Vocab tracking
+
+Student uses “teacher” and “school” across turns
+
+Completion only occurs after:
+
+turns >= minTurns AND
+
+all mustUseWords were used.
+
+Bad JSON fallback
+
+Simulate parse failure (force AI returns non-json)
+
+Engine returns deterministic safe response + deterministic next_question for current goal, without crashing.
+
+7) Agent Prompt (copy-paste into Claude Code / Cline / Roo)
+
+Use this EXACT prompt in VS Code agent:
+
+MODE: ACTION-ONLY. No explanations.
+
+Goal: Implement Story Mission V5 (deterministic engine + low-agency AI) per MASTER ARTIFACT below.
+Constraints:
+- Do NOT scan repo. Do NOT grep. Only use pinned files.
+- Minimal diffs. 2-3 files per iteration.
+- Keep UI behavior stable.
+
+Pinned files:
+- StoryMissionTab.jsx
+- storyMissionEngine.js
+- novaPromptBuilder.js
+- tutorSchemas.js
+- storyMissions.js
+- missionSchema.js
+
+Deliverables (in order):
+1) Patch storyMissionEngine.js to own currentGoalIndex + return task=next_question.
+2) Patch novaPromptBuilder.js to output JSON with next_question and remove goal self-report.
+3) Patch tutorSchemas.js parser to include next_question.
+4) Patch StoryMissionTab.jsx to use response.task for hints (no fullResponseText fallback).
+5) Add docs/tests/story_mission_golden.md with 5 scenarios.
+
+Output format:
+- List changed files
+- Provide unified diffs only
+- STOP
+
+8) “Stop being verbose” hard clamp
+
+Add this line at the top of each agent message if needed:
+
+If you output more than 12 bullets or any paragraph > 2 lines, you failed.
+
+9) First Iteration Scope (recommended)
+
+Iteration 1: Engine + Prompt + Parser (3 files)
+
+storyMissionEngine.js
+
+novaPromptBuilder.js
+
+tutorSchemas.js
+
+Iteration 2: UI hints fix + Golden tests (2 files)
+
+StoryMissionTab.jsx
+
+docs/tests/story_mission_golden.md
+
+10) Notes about your current code (why this works)
+
+Your current engine returns task: null for AI turns, so UI hint extraction is forced to guess from fullResponseText which includes non-question text. Fixing engine to return task = next_question makes the UI deterministic.
+
+Your mission data already contains missionGoals and vocab requirements; engine just needs to own the progression. 
+
+storyMissions
+
+Parser already strips markdown fences and falls back safely; we only extend it minimally.
