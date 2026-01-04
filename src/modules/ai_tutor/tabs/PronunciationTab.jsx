@@ -14,13 +14,13 @@ const PronunciationTab = () => {
   const [weekData, setWeekData] = useState(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [practiceMode, setPracticeMode] = useState('listen'); // listen | practice | complete
-  const [attempts, setAttempts] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
 
   // Load week data
   useEffect(() => {
     const data = getCurrentWeekData(currentWeek || 'week-1');
     setWeekData(data);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
 
   const currentWord = weekData?.vocabulary?.[currentWordIndex];
@@ -58,7 +58,6 @@ const PronunciationTab = () => {
   // Handle practice attempt
   const handlePractice = () => {
     setPracticeMode('practice');
-    setAttempts(prev => prev + 1);
     
     // Simulate attempt (in real app, would use Speech Recognition API)
     setTimeout(() => {
@@ -73,7 +72,6 @@ const PronunciationTab = () => {
     if (currentWordIndex < totalWords - 1) {
       setCurrentWordIndex(prev => prev + 1);
       setPracticeMode('listen');
-      setAttempts(0);
     }
   };
 
@@ -81,7 +79,6 @@ const PronunciationTab = () => {
   const handleReset = () => {
     setCurrentWordIndex(0);
     setPracticeMode('listen');
-    setAttempts(0);
     setCorrectCount(0);
   };
 

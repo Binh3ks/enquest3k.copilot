@@ -19,17 +19,6 @@ const QuizTab = () => {
   const [score, setScore] = useState(0);
   const [quizComplete, setQuizComplete] = useState(false);
 
-  // Load week data and generate questions
-  useEffect(() => {
-    const data = getCurrentWeekData(currentWeek || 'week-1');
-    setWeekData(data);
-    
-    if (data?.vocabulary) {
-      const generatedQuestions = generateQuestions(data.vocabulary);
-      setQuestions(generatedQuestions);
-    }
-  }, [currentWeek]);
-
   // Generate quiz questions from vocabulary
   const generateQuestions = (vocabulary) => {
     const quizQuestions = [];
@@ -58,6 +47,17 @@ const QuizTab = () => {
 
     return quizQuestions;
   };
+
+  // Load week data and generate questions
+  useEffect(() => {
+    const data = getCurrentWeekData(currentWeek || 'week-1');
+    setWeekData(data);
+    
+    if (data?.vocabulary) {
+      const generatedQuestions = generateQuestions(data.vocabulary);
+      setQuestions(generatedQuestions);
+    }
+  }, [currentWeek]);
 
   const currentQuestion = questions[currentQuestionIndex];
   const totalQuestions = questions.length;

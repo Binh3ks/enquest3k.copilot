@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BookOpen, MessageCircle, Mic, HelpCircle, MessageSquare, Minimize2, Maximize2 } from 'lucide-react';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import StoryMissionTab from '../tabs/StoryMissionTab';

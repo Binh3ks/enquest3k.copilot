@@ -39,6 +39,7 @@ const FreeTalkTab = () => {
   // Initialize conversation
   useEffect(() => {
     initializeConversation();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const initializeConversation = async () => {
