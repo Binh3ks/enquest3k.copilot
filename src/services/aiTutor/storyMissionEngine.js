@@ -32,6 +32,8 @@ export class StoryMissionEngine {
       goalsCompleted: new Set(),
       lastQuestion: "",
       lastQuestionNormalized: "",
+      recentQuestionNormalized: [],
+      postGoalQuestionIndex: 0,
       userSentiment: "neutral",
       requiredVocabRemaining: new Set(requiredWords),
     };
@@ -47,6 +49,7 @@ export class StoryMissionEngine {
       firstBeat.aiPrompt || "Hi! I am Ms. Nova, your teacher. What is your name?";
 
     this.state.lastQuestion = greeting;
+    this.state.lastQuestionNormalized = this._normalizeQuestion(greeting);
     const speed = this._getTTSSpeed();
     const ttsResult = await generateTTS(greeting, { speed });
 
@@ -64,12 +67,13 @@ export class StoryMissionEngine {
     console.log("[Engine] Turn", this.state.turnsCompleted + 1, "- User:", userInput);
     this.state.turnsCompleted++;
     this.state.conversationHistory.push({ role: "user", content: userInput });
+    this._extractStudentContext(userInput);
     this.state.userSentiment = this._detectUserSentiment(userInput);
 
-    const maxTurns = this.mission.successCriteria?.minTurns || 10;
+    const maxTurns = 10;
     if (this.state.turnsCompleted >= maxTurns) {
       const studentName = this.state.studentContext.name || "friend";
-      const farewellMsg = `Wonderful job, ${studentName}! You did great today! I am so proud of you. See you next time!`;
+      const farewellMsg = `Wonderful job, ${studentName}! You are great today. I am proud of you. See you next time!`;
       const speed = this._getTTSSpeed();
       const ttsResult = await generateTTS(farewellMsg, { speed });
       return {
@@ -81,7 +85,9 @@ export class StoryMissionEngine {
       };
     }
 
-    const currentGoal = this.state.goals[this.state.currentGoalIndex] || "continue the conversation";
+    this._advanceGoalIfSatisfied();
+    const activeGoal = this._getActiveGoal();
+    const currentGoal = activeGoal || this._getPracticeGoal();
     const requiredVocabList = Array.from(this.state.requiredVocabRemaining);
 
     const prompt = buildNovaPrompt({
@@ -106,15 +112,6 @@ export class StoryMissionEngine {
 
     const parsed = parseResponse(aiText, "STORY_MISSION_JSON");
 
-    if (parsed.student_context_update) {
-      this.state.studentContext = {
-        ...this.state.studentContext,
-        ...parsed.student_context_update,
-      };
-      saveToMemory(this.state.studentContext);
-      console.log("[Engine] Updated context:", this.state.studentContext);
-    }
-
     if (parsed.vocabulary_used && Array.isArray(parsed.vocabulary_used)) {
       parsed.vocabulary_used.forEach((word) => {
         const normalized = word.toLowerCase().trim();
@@ -127,13 +124,21 @@ export class StoryMissionEngine {
       );
     }
 
-    this._evaluateAndAdvanceGoal();
-
     const weekId = this.weekData?.weekId || this.mission.context?.weekId || 1;
     const grammarCheck = validateGrammarScope(parsed.response_text, weekId);
-    
+    const helpIntent = this._needsHelp(userInput);
+
     let conversationalResponse = parsed.response_text || "That's very interesting!";
-    if (!grammarCheck.valid) {
+    let nextQuestion = parsed.next_question;
+    const goalForQuestion = this._getActiveGoal();
+
+    if (!nextQuestion) {
+      nextQuestion = goalForQuestion
+        ? this._getFallbackQuestion(goalForQuestion)
+        : this._getPostGoalQuestion();
+    }
+
+    if (!helpIntent && !grammarCheck.valid) {
       console.warn("[Engine] Grammar violation detected:", grammarCheck.violations);
       conversationalResponse = this._getGrammarFallback();
     }
@@ -143,16 +148,33 @@ export class StoryMissionEngine {
       conversationalResponse = this._getEmpathyResponse();
     }
 
-    let nextQuestion = parsed.next_question || this._getFallbackQuestion(this.state.goals[this.state.currentGoalIndex]);
-    const normalizedNext = this._normalizeQuestion(nextQuestion);
-    
-    if (normalizedNext === this.state.lastQuestionNormalized || this.state.goalsCompleted.has(this.state.currentGoalIndex)) {
-      console.warn("[Engine] Repeated or completed goal question detected, using fallback");
-      nextQuestion = this._getFallbackQuestion(this.state.goals[this.state.currentGoalIndex]);
+    if (helpIntent) {
+      conversationalResponse = this._getHelpResponse();
+      nextQuestion = this._getHelpQuestion(goalForQuestion);
     }
-    
+
+    if (weekId === 1 && (this._containsForbiddenPastTense(conversationalResponse) || this._containsForbiddenPastTense(nextQuestion))) {
+      const safeTurn = this._getGrammarSafeTurn(goalForQuestion, helpIntent);
+      conversationalResponse = safeTurn.responseText;
+      nextQuestion = safeTurn.nextQuestion;
+    }
+
+    let normalizedNext = this._normalizeQuestion(nextQuestion);
+    const completedGoalQuestions = this._getCompletedGoalQuestionSet();
+
+    if (completedGoalQuestions.has(normalizedNext)) {
+      nextQuestion = this._getNextGoalQuestionAfter(this.state.currentGoalIndex);
+      normalizedNext = this._normalizeQuestion(nextQuestion);
+    }
+
+    if (normalizedNext === this.state.lastQuestionNormalized) {
+      nextQuestion = this._getNextGoalQuestionAfter(this.state.currentGoalIndex);
+      normalizedNext = this._normalizeQuestion(nextQuestion);
+    }
+
     this.state.lastQuestion = nextQuestion;
-    this.state.lastQuestionNormalized = this._normalizeQuestion(nextQuestion);
+    this.state.lastQuestionNormalized = normalizedNext;
+    this._trackRecentQuestion(this.state.lastQuestionNormalized);
 
     const fullResponse = conversationalResponse + " " + nextQuestion;
     this.state.conversationHistory.push({
@@ -195,10 +217,18 @@ export class StoryMissionEngine {
   }
 
   _normalizeQuestion(q) {
-    return q.toLowerCase().trim().replace(/[?!.,;]/g, "");
+    if (!q) return "";
+    return q
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s]/g, "")
+      .replace(/\s+/g, " ");
   }
 
   _detectUserSentiment(userInput) {
+    if (this._needsHelp(userInput)) {
+      return "negative";
+    }
     const lower = userInput.toLowerCase();
     if (lower.match(/\b(can't find|cannot find|lost|missing|worried|help|problem|sad|scared)\b/)) {
       return "negative";
@@ -206,44 +236,274 @@ export class StoryMissionEngine {
     return "neutral";
   }
 
+  _needsHelp(userInput) {
+    const lower = userInput.toLowerCase();
+    return lower.match(/\b(can't find|cannot find|lost|worried|help|wrong)\b/);
+  }
+
+  _extractStudentContext(userInput) {
+    const updates = {};
+    const classMatch = userInput.match(/\b(?:in\s+class|class)\s+([a-z0-9]+)\b/i);
+    if (classMatch?.[1]) {
+      updates.class = classMatch[1].toUpperCase();
+    }
+
+    const ageMatch = userInput.match(/\b(?:i am|i'm)\s+(\d{1,2})\b/i);
+    if (ageMatch?.[1]) {
+      updates.age = parseInt(ageMatch[1], 10);
+    }
+
+    const nameMatch = userInput.match(/\bmy name is\s+([a-zA-Z][a-zA-Z'-]*(?:\s+[a-zA-Z][a-zA-Z'-]*){0,2})\b/i);
+    if (nameMatch?.[1]) {
+      updates.name = nameMatch[1].trim();
+    } else {
+      const iAmMatch = userInput.match(/\b(?:i am|i'm)\s+(?!in\b)([a-zA-Z][a-zA-Z'-]*)\b/i);
+      const candidate = iAmMatch?.[1]?.toLowerCase();
+      if (candidate && !["a", "an", "the", "student"].includes(candidate) && !ageMatch) {
+        updates.name = iAmMatch[1].trim();
+      }
+    }
+
+    const teacherMatch = userInput.match(/\b(?:my teacher is|teacher is)\s+([a-zA-Z][a-zA-Z'-]*(?:\s+[a-zA-Z][a-zA-Z'-]*)?)\b/i);
+    if (teacherMatch?.[1]) {
+      updates.teacherName = teacherMatch[1].trim();
+    }
+
+    const subjectMatch = userInput.match(/\b(?:my favorite subject is|favorite subject is|my subject is|subject is)\s+([a-zA-Z][a-zA-Z'-]*)\b/i);
+    if (subjectMatch?.[1]) {
+      updates.subject = subjectMatch[1].trim();
+    }
+
+    const nextContext = { ...this.state.studentContext };
+    let changed = false;
+    Object.keys(updates).forEach((key) => {
+      if (updates[key] && nextContext[key] !== updates[key]) {
+        nextContext[key] = updates[key];
+        changed = true;
+      }
+    });
+
+    if (changed) {
+      this.state.studentContext = nextContext;
+      saveToMemory(this.state.studentContext);
+    }
+  }
+
+  _containsForbiddenPastTense(text) {
+    if (!text) return false;
+    const banned = [
+      "said",
+      "told",
+      "was",
+      "were",
+      "went",
+      "had",
+      "did",
+      "kept",
+      "found",
+      "lost",
+      "saw",
+      "took",
+      "got",
+      "came",
+    ];
+    const pattern = new RegExp(`\\b(${banned.join("|")})\\b`, "i");
+    return pattern.test(text);
+  }
+
+  _getGrammarSafeTurn(goal, helpIntent) {
+    if (helpIntent) {
+      return {
+        responseText: this._getHelpResponse(),
+        nextQuestion: this._getHelpQuestion(goal),
+      };
+    }
+    return {
+      responseText: "Thank you. We continue now.",
+      nextQuestion: goal ? this._getFallbackQuestion(goal) : this._getPostGoalQuestion(),
+    };
+  }
+
+  _getHelpResponse() {
+    return "I am sorry. I want to help you.";
+  }
+
+  _getHelpQuestion(goal) {
+    if (!goal) return "What is wrong?";
+    const lower = goal.toLowerCase();
+    if (lower.includes("wrong")) return "What is wrong?";
+    if (lower.includes("backpack") || lower.includes("in the")) return "What is in your backpack?";
+    if (lower.includes("where") || lower.includes("thinks")) return "Where do you think it is?";
+    return "What is wrong?";
+  }
+
   _evaluateAndAdvanceGoal() {
     const currentGoal = this.state.goals[this.state.currentGoalIndex];
     if (!currentGoal) return;
     if (this.state.goalsCompleted.has(this.state.currentGoalIndex)) return;
 
-    let goalComplete = false;
-    const goalLower = currentGoal.toLowerCase();
-    const lastUserMsg = this.state.conversationHistory[this.state.conversationHistory.length - 1]?.content || "";
-    
-    if (goalLower.includes("name") && this.state.studentContext.name) {
-      goalComplete = true;
-    } else if (goalLower.includes("age") && this.state.studentContext.age) {
-      goalComplete = true;
-    } else if (goalLower.includes("class") && this.state.studentContext.class) {
-      goalComplete = true;
-    } else if (goalLower.includes("teacher") && this.state.studentContext.teacherName) {
-      goalComplete = true;
-    } else if (goalLower.includes("subject") && this.state.studentContext.subject) {
-      goalComplete = true;
-    } else if (goalLower.includes("wrong") || goalLower.includes("what is wrong")) {
-      if (lastUserMsg.length > 5) goalComplete = true;
-    } else if (goalLower.includes("backpack") || goalLower.includes("in the")) {
-      if (lastUserMsg.length > 5) goalComplete = true;
-    } else if (goalLower.includes("where") || goalLower.includes("thinks")) {
-      if (lastUserMsg.length > 5) goalComplete = true;
-    } else if (goalLower.includes("see") || goalLower.includes("likes") || goalLower.includes("reading") || goalLower.includes("notebook") || goalLower.includes("library")) {
-      if (lastUserMsg.length > 3) goalComplete = true;
-    }
-
-    if (goalComplete) {
+    if (this._isGoalSatisfied(currentGoal)) {
       this.state.goalsCompleted.add(this.state.currentGoalIndex);
       console.log("[Engine] Goal", this.state.currentGoalIndex, "LOCKED as completed:", currentGoal);
       
       if (this.state.currentGoalIndex < this.state.goals.length - 1) {
         this.state.currentGoalIndex++;
         console.log("[Engine] Advanced to goal", this.state.currentGoalIndex, ":", this.state.goals[this.state.currentGoalIndex]);
+      } else {
+        this.state.currentGoalIndex = this.state.goals.length;
       }
     }
+  }
+
+  _isGoalSatisfied(goal) {
+    if (!goal) return false;
+    const goalLower = goal.toLowerCase();
+    const lastUserMsg = this.state.conversationHistory[this.state.conversationHistory.length - 1]?.content || "";
+
+    if (goalLower.includes("name") && this.state.studentContext.name) return true;
+    if (goalLower.includes("age") && this.state.studentContext.age) return true;
+    if (goalLower.includes("class") && this.state.studentContext.class) return true;
+    if (goalLower.includes("teacher") && this.state.studentContext.teacherName) return true;
+    if (goalLower.includes("subject") && this.state.studentContext.subject) return true;
+    if (goalLower.includes("wrong") || goalLower.includes("what is wrong")) {
+      return lastUserMsg.length > 5;
+    }
+    if (goalLower.includes("backpack") || goalLower.includes("in the")) {
+      return lastUserMsg.length > 5;
+    }
+    if (goalLower.includes("where") || goalLower.includes("thinks")) {
+      return lastUserMsg.length > 5;
+    }
+    if (
+      goalLower.includes("see") ||
+      goalLower.includes("likes") ||
+      goalLower.includes("reading") ||
+      goalLower.includes("notebook") ||
+      goalLower.includes("library")
+    ) {
+      return lastUserMsg.length > 3;
+    }
+    return false;
+  }
+
+  _advanceGoalIfSatisfied() {
+    let advanced = false;
+    while (this.state.currentGoalIndex < this.state.goals.length) {
+      const goal = this.state.goals[this.state.currentGoalIndex];
+      if (!goal || !this._isGoalSatisfied(goal)) break;
+      this.state.goalsCompleted.add(this.state.currentGoalIndex);
+      if (this.state.currentGoalIndex < this.state.goals.length - 1) {
+        this.state.currentGoalIndex++;
+        advanced = true;
+      } else {
+        this.state.currentGoalIndex = this.state.goals.length;
+        advanced = true;
+        break;
+      }
+    }
+    if (advanced) {
+      console.log(
+        "[Engine] Skipped to goal",
+        this.state.currentGoalIndex,
+        ":",
+        this.state.goals[this.state.currentGoalIndex]
+      );
+    }
+  }
+
+  _isRepeatedQuestion(normalizedQuestion) {
+    if (!normalizedQuestion) return false;
+    return this.state.recentQuestionNormalized.includes(normalizedQuestion);
+  }
+
+  _trackRecentQuestion(normalizedQuestion) {
+    if (!normalizedQuestion) return;
+    this.state.recentQuestionNormalized.push(normalizedQuestion);
+    if (this.state.recentQuestionNormalized.length > 4) {
+      this.state.recentQuestionNormalized.shift();
+    }
+  }
+
+  _getActiveGoal() {
+    if (this.state.currentGoalIndex >= this.state.goals.length) return null;
+    return this.state.goals[this.state.currentGoalIndex];
+  }
+
+  _getPracticeGoal() {
+    const remaining = Array.from(this.state.requiredVocabRemaining);
+    if (remaining.length > 0) {
+      return `Practice these words: ${remaining.join(", ")}`;
+    }
+    return "Practice the lesson with a new question";
+  }
+
+  _getCompletedGoalQuestionSet() {
+    const completedQuestions = new Set();
+    this.state.goalsCompleted.forEach((index) => {
+      const goal = this.state.goals[index];
+      const fallback = this._getFallbackQuestion(goal);
+      if (fallback) {
+        completedQuestions.add(this._normalizeQuestion(fallback));
+      }
+    });
+    return completedQuestions;
+  }
+
+  _getNextGoalQuestionAfter(currentIndex) {
+    for (let i = currentIndex + 1; i < this.state.goals.length; i++) {
+      if (!this.state.goalsCompleted.has(i)) {
+        this.state.currentGoalIndex = i;
+        return this._getFallbackQuestion(this.state.goals[i]);
+      }
+    }
+    return this._getPostGoalQuestion();
+  }
+
+  _getPostGoalQuestion() {
+    const completedGoalQuestions = this._getCompletedGoalQuestionSet();
+    const vocabQuestions = this._getVocabPracticeQuestions();
+    const extraQuestions = [
+      "What is your favorite subject?",
+      "Do you like your teacher?",
+      "What do you like to do at school?",
+      "Do you have a book?",
+      "Do you have a notebook?",
+    ];
+    const candidates = [...vocabQuestions, ...extraQuestions].filter((q) => {
+      const normalized = this._normalizeQuestion(q);
+      return (
+        normalized &&
+        !this._isRepeatedQuestion(normalized) &&
+        !completedGoalQuestions.has(normalized)
+      );
+    });
+    if (candidates.length === 0) {
+      return "What do you like at school?";
+    }
+    const index = this.state.postGoalQuestionIndex % candidates.length;
+    this.state.postGoalQuestionIndex += 1;
+    return candidates[index];
+  }
+
+  _getVocabPracticeQuestions() {
+    const vocab = (this.mission.targetVocabulary || [])
+      .map((entry) => entry.word?.toLowerCase().trim())
+      .filter(Boolean);
+    return vocab
+      .map((word) => this._getVocabQuestion(word))
+      .filter(Boolean);
+  }
+
+  _getVocabQuestion(word) {
+    if (word === "student") return "Are you a student?";
+    if (word === "teacher") return "Do you like your teacher?";
+    if (word === "school") return "What do you like at school?";
+    if (word === "name") return "What is a name?";
+    if (word === "backpack") return "Do you have a backpack?";
+    if (word === "book") return "Do you have a book?";
+    if (word === "notebook") return "Do you have a notebook?";
+    if (word === "library") return "Do you like the library?";
+    return `Do you like the word ${word}?`;
   }
 
   _getFallbackQuestion(goal) {
@@ -281,7 +541,7 @@ export class StoryMissionEngine {
       "Oh no, I am sorry to hear that.",
       "That is not good. I want to help you.",
       "I understand. Let me help you.",
-      "Do not worry. We can find it together.",
+      "Do not worry. We find it together.",
     ];
     return responses[Math.floor(Math.random() * responses.length)];
   }
@@ -310,6 +570,8 @@ export class StoryMissionEngine {
       goalsCompleted: new Set(),
       lastQuestion: "",
       lastQuestionNormalized: "",
+      recentQuestionNormalized: [],
+      postGoalQuestionIndex: 0,
       userSentiment: "neutral",
       requiredVocabRemaining: new Set(requiredWords),
     };

@@ -31,14 +31,41 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
   const [scaffoldLevel, setScaffoldLevel] = useState(1);
   const [showSummary, setShowSummary] = useState(false);
   const [currentHints, setCurrentHints] = useState([]);
+  const [currentQuestion, setCurrentQuestion] = useState('');
   const [engine, setEngine] = useState(null);
   const scrollRef = useRef(null);
+  const bottomRef = useRef(null);
+  const hintsKey = currentHints.join('|');
   
   const missions = getMissionsForWeek(weekData?.weekId || 1);
   
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, [messages.length, currentQuestion, hintsKey]);
+
+  const getLastQuestion = (messageList) => {
+    for (let i = messageList.length - 1; i >= 0; i -= 1) {
+      const msg = messageList[i];
+      const text = typeof msg?.text === 'string' ? msg.text.trim() : '';
+      if (msg?.role === 'ai' && text.endsWith('?')) {
+        return text;
+      }
+    }
+    return '';
+  };
+
+  const updateHintsForQuestion = (question, mission, studentContext) => {
+    const trimmed = (question || '').trim();
+    if (!trimmed) {
+      setCurrentHints([]);
+      setCurrentQuestion('');
+      return;
+    }
+    const beatWithTask = { task: trimmed, aiPrompt: trimmed };
+    const hints = getHints(mission, beatWithTask, studentContext);
+    setCurrentHints(hints);
+    setCurrentQuestion(trimmed);
+  };
 
   const handleStartMission = async (mission) => {
     startMission(mission);
@@ -53,9 +80,12 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
       addMessage({ role: 'ai', text: opening.task });
     }
     
-    const beatWithTask = { task: opening.task, aiPrompt: opening.task };
-    const hints = getHints(mission, beatWithTask, missionEngine.state.studentContext);
-    setCurrentHints(hints);
+    const openingMessages = [
+      { role: 'ai', text: opening.story_beat },
+      { role: 'ai', text: opening.task }
+    ].filter(msg => msg.text);
+    const openingQuestion = opening.task || getLastQuestion(openingMessages);
+    updateHintsForQuestion(openingQuestion, mission, missionEngine.state.studentContext);
     
     const fullText = `${opening.story_beat || ''} ${opening.task || ''}`;
     if (opening.audioBlob) {
@@ -85,11 +115,16 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
       fullResponseText += (fullResponseText ? ' ' : '') + response.task;
     }
 
+    const newMessages = [];
     if (response.story_beat) {
-      addMessage({ role: 'ai', text: response.story_beat });
+      newMessages.push({ role: 'ai', text: response.story_beat });
     }
     if (response.task) {
-      addMessage({ role: 'ai', text: response.task });
+      newMessages.push({ role: 'ai', text: response.task });
+    }
+
+    if (newMessages.length > 0) {
+      newMessages.forEach(msg => addMessage(msg));
     }
     
     if (fullResponseText) {
@@ -100,13 +135,10 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
       } else {
         await speakText(fullResponseText);
       }
-      
-      if (response.task) {
-        const beatWithTask = { task: response.task, aiPrompt: response.task };
-        const hints = getHints(currentMission, beatWithTask, engine.state.studentContext);
-        setCurrentHints(hints);
-      }
     }
+    
+    const question = response.task || getLastQuestion([...messages, ...newMessages]);
+    updateHintsForQuestion(question, currentMission, engine.state.studentContext);
     
     if (response.isComplete) {
       const summary = engine.getSummary();
@@ -144,19 +176,43 @@ export default function StoryMissionTab({ weekData, recognitionRef }) {
         <button onClick={() => completeMission({})} className="text-purple-600 hover:text-purple-800"><RotateCcw size={16}/></button>
       </div>
       <div className="space-y-2 max-h-[350px] overflow-y-auto" ref={scrollRef}>
-        {messages.map((msg, i) => (
-          <div key={i} className={`p-3 rounded-xl text-sm ${msg.role === 'ai' ? 'bg-purple-50' : 'bg-white'}`}>
-            {msg.text}
-          </div>
-        ))}
+        {(() => {
+          const normalizedQuestion = currentQuestion.trim();
+          const lastQuestionIndex = normalizedQuestion
+            ? messages.reduce(
+                (acc, msg, idx) => {
+                  const text = typeof msg?.text === 'string' ? msg.text.trim() : '';
+                  return msg?.role === 'ai' && text === normalizedQuestion ? idx : acc;
+                },
+                -1
+              )
+            : -1;
+
+          return messages.map((msg, i) => (
+            <React.Fragment key={i}>
+              <div className={`p-3 rounded-xl text-sm ${msg.role === 'ai' ? 'bg-purple-50' : 'bg-white'}`}>
+                {msg.text}
+              </div>
+              {i === lastQuestionIndex && currentHints.length > 0 && (
+                <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl">
+                  <div className="flex flex-wrap gap-1">
+                    {currentHints.map((h, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setInput(prev => prev + h + ' ')}
+                        className="px-2 py-1 bg-white border rounded-lg text-xs"
+                      >
+                        {h}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </React.Fragment>
+          ));
+        })()}
+        <div ref={bottomRef} />
       </div>
-      {currentHints.length > 0 && (
-        <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl">
-          <div className="flex flex-wrap gap-1">
-            {currentHints.map((h, i) => <button key={i} onClick={() => setInput(prev => prev + h + ' ')} className="px-2 py-1 bg-white border rounded-lg text-xs">{h}</button>)}
-          </div>
-        </div>
-      )}
       <div className="flex gap-2">
         <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSubmit(e.target.value)} disabled={loading} className="flex-1 p-2 border-2 rounded-lg" />
         <button onClick={() => handleSubmit(input)} disabled={loading || !input.trim()} className="p-2 bg-green-600 text-white rounded-lg"><Send size={18}/></button>
