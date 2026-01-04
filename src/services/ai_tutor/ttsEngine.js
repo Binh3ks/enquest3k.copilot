@@ -21,8 +21,9 @@ import axios from 'axios';
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || '';
+const GOOGLE_TTS_API_KEY = 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU'; // Google Cloud Text-to-Speech API
 
-const GEMINI_TTS_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent';
+const GOOGLE_TTS_ENDPOINT = 'https://texttospeech.googleapis.com/v1/text:synthesize';
 const OPENAI_TTS_ENDPOINT = 'https://api.openai.com/v1/audio/speech';
 
 // Audio cache for repeated phrases
@@ -36,8 +37,8 @@ let isSpeaking = false; // 🔥 Lock to prevent concurrent TTS calls
 // TTS Engine configuration
 const TTS_CONFIG = {
   gemini: {
-    enabled: !!GEMINI_API_KEY,
-    voice: 'en-US-Neural2-F', // Female voice
+    enabled: true, // 🔥 Using Google Cloud Text-to-Speech
+    voice: 'en-US-Neural2-F', // Female neural voice
     speed: 0.9
   },
   openai: {
@@ -113,7 +114,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 
   // Try layers in order
   const layers = preferredLayer === 'auto' 
-    ? ['openai', 'browser'] // 🔥 Gemini TTS not available, skip Puter for now
+    ? ['gemini', 'openai', 'browser'] // 🔥 Gemini TTS first (Google Cloud)
     : [preferredLayer, 'browser']; // Always fallback to browser
 
   console.log('🔄 TTS: Trying layers in order:', layers);
@@ -187,82 +188,31 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 }
 
 // ============================================
-// LAYER 1: GEMINI TTS
+// LAYER 1: GOOGLE CLOUD TEXT-TO-SPEECH (Gemini)
 // ============================================
 
-/**
- * Encode PCM16 data to WAV format
- * Gemini returns raw PCM16 data that browsers cannot play directly
- */
-function encodeWAV(pcmData, sampleRate = 24000) {
-  const numChannels = 1; // Mono
-  const bitsPerSample = 16;
-  const bytesPerSample = bitsPerSample / 8;
-  const blockAlign = numChannels * bytesPerSample;
-  const byteRate = sampleRate * blockAlign;
-  const dataLength = pcmData.length * bytesPerSample;
-  const buffer = new ArrayBuffer(44 + dataLength);
-  const view = new DataView(buffer);
-
-  // Write WAV header
-  const writeString = (offset, string) => {
-    for (let i = 0; i < string.length; i++) {
-      view.setUint8(offset + i, string.charCodeAt(i));
-    }
-  };
-
-  writeString(0, 'RIFF');
-  view.setUint32(4, 36 + dataLength, true);
-  writeString(8, 'WAVE');
-  writeString(12, 'fmt ');
-  view.setUint32(16, 16, true); // fmt chunk size
-  view.setUint16(20, 1, true); // PCM format
-  view.setUint16(22, numChannels, true);
-  view.setUint32(24, sampleRate, true);
-  view.setUint32(28, byteRate, true);
-  view.setUint16(32, blockAlign, true);
-  view.setUint16(34, bitsPerSample, true);
-  writeString(36, 'data');
-  view.setUint32(40, dataLength, true);
-
-  // Write PCM samples
-  let offset = 44;
-  for (let i = 0; i < pcmData.length; i++) {
-    view.setInt16(offset, pcmData[i], true);
-    offset += 2;
-  }
-
-  return buffer;
-}
-
 async function callGeminiTTS(text) {
-  // ⚠️ TEMPORARILY DISABLED: Gemini 2.0 Flash does NOT have native TTS API yet
-  // The generateContent endpoint cannot produce audio directly
-  // Will re-enable when Google releases official Gemini TTS API
-  
-  console.warn('⚠️ Gemini TTS not available yet, falling back to next layer...');
-  throw new Error('Gemini TTS API not officially available');
-  
-  /* PLACEHOLDER FOR FUTURE GEMINI TTS API:
-  if (!GEMINI_API_KEY) {
-    throw new Error('Gemini API key not configured');
+  if (!GOOGLE_TTS_API_KEY) {
+    throw new Error('Google TTS API key not configured');
   }
 
   try {
-    console.log('🔊 Gemini TTS: Requesting audio generation...');
+    console.log('🔊 Google Cloud TTS: Requesting audio generation...');
     
-    // TODO: Update this when Google releases official TTS endpoint
     const response = await axios.post(
-      `https://texttospeech.googleapis.com/v1/text:synthesize?key=${GEMINI_API_KEY}`,
+      `${GOOGLE_TTS_ENDPOINT}?key=${GOOGLE_TTS_API_KEY}`,
       {
         input: { text },
         voice: {
           languageCode: 'en-US',
-          name: 'en-US-Neural2-F'
+          name: 'en-US-Neural2-F', // Natural female voice
+          ssmlGender: 'FEMALE'
         },
         audioConfig: {
-          audioEncoding: 'LINEAR16',
-          sampleRateHertz: 24000
+          audioEncoding: 'MP3',
+          speakingRate: 0.9,
+          pitch: 0,
+          volumeGainDb: 0
         }
       },
       {
@@ -273,26 +223,30 @@ async function callGeminiTTS(text) {
       }
     );
 
-    const audioData = response.data?.audioContent;
-    if (!audioData) {
-      throw new Error('No audio data in response');
+    const audioContent = response.data?.audioContent;
+    if (!audioContent) {
+      throw new Error('No audio data in Google TTS response');
     }
 
-    // Decode base64 and create audio blob
-    const binaryString = atob(audioData);
+    console.log('✅ Google Cloud TTS: Received audio data, converting to blob...');
+
+    // Decode base64 audio
+    const binaryString = atob(audioContent);
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
       bytes[i] = binaryString.charCodeAt(i);
     }
     
-    const blob = new Blob([bytes], { type: 'audio/wav' });
-    return URL.createObjectURL(blob);
+    const blob = new Blob([bytes], { type: 'audio/mpeg' });
+    const audioUrl = URL.createObjectURL(blob);
+
+    console.log('✅ Google Cloud TTS: Audio ready to play');
+    return audioUrl;
 
   } catch (error) {
-    console.error('❌ Gemini TTS failed:', error.message);
+    console.error('❌ Google Cloud TTS failed:', error.message);
     throw error;
   }
-  */
 }
 
 // ============================================
