@@ -82,34 +82,34 @@ const FreeTalkTab = () => {
     // Add new Hero Academy greeting
     // 🔥 Week 1 themed greetings (Hero Academy context)
     const greetings = [
-        `Hi ${user?.name || 'there'}! 🦸‍♀️ I'm Ms. Nova from Hero Academy! What's your superhero power?`,
-        `Hello ${user?.name || 'friend'}! 💫 Welcome to Hero Academy! Are you a boy or a girl hero?`,
-        `Hey ${user?.name || 'there'}! ✨ I'm your teacher Ms. Nova! How old are you?`,
-        `Hi ${user?.name || 'there'}! 🎓 Ready for Hero Academy? What makes you a special student?`,
-        `Hello ${user?.name || 'friend'}! 🌟 Tell me about yourself! I'm Ms. Nova, your hero teacher!`
-      ];
+      `Hi ${user?.name || 'there'}! 🦸‍♀️ I'm Ms. Nova from Hero Academy! What's your superhero power?`,
+      `Hello ${user?.name || 'friend'}! 💫 Welcome to Hero Academy! Are you a boy or a girl hero?`,
+      `Hey ${user?.name || 'there'}! ✨ I'm your teacher Ms. Nova! How old are you?`,
+      `Hi ${user?.name || 'there'}! 🎓 Ready for Hero Academy? What makes you a special student?`,
+      `Hello ${user?.name || 'friend'}! 🌟 Tell me about yourself! I'm Ms. Nova, your hero teacher!`
+    ];
 
-      const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-      
-      const welcomeMessage = {
-        role: 'assistant',
-        content: randomGreeting,
-        timestamp: Date.now()
-      };
-      addMessage("freetalk", welcomeMessage);
-      console.log('💬 FreeTalkTab: Added new Hero Academy greeting');
-      
-      // 🔊 Play opening with TTS
-      try {
-        if (autoPlayEnabled) {
-          await textToSpeech(randomGreeting, {
-            voice: 'nova',
-            autoPlay: true
-          });
-        }
-      } catch (error) {
-        console.error('TTS error for FreeTalk opening:', error);
+    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+    
+    const welcomeMessage = {
+      role: 'assistant',
+      content: randomGreeting,
+      timestamp: Date.now()
+    };
+    addMessage("freetalk", welcomeMessage);
+    console.log('💬 FreeTalkTab: Added new Hero Academy greeting');
+    
+    // 🔊 Play opening with TTS
+    try {
+      if (autoPlayEnabled) {
+        await textToSpeech(randomGreeting, {
+          voice: 'nova',
+          autoPlay: true
+        });
       }
+    } catch (error) {
+      console.error('TTS error for FreeTalk opening:', error);
+    }
   };
 
   // Handle user message
