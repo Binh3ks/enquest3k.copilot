@@ -1,0 +1,39 @@
+{
+  "weekId": 19,
+  "theme": "Looking Back - Childhood & Memories",
+  "grammar": "Past Simple: was/were",
+  "topic": "Childhood & Memories",
+  "science": "Human Growth & Development",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "query": "was were verb to be past tense kids",
+      "backup_query": "verb to be past simple grammar kids"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "query": "was were grammar lesson kids",
+      "backup_query": "past simple was were English"
+    },
+    {
+      "id": 3,
+      "purpose": "TOPIC",
+      "query": "when I was little young childhood ESL kids",
+      "backup_query": "growing up childhood educational kids"
+    },
+    {
+      "id": 4,
+      "purpose": "SCIENCE",
+      "query": "human life cycle stages kids",
+      "backup_query": "growing up baby child adult kids"
+    },
+    {
+      "id": 5,
+      "purpose": "TOPIC",
+      "query": "family memories album kids",
+      "backup_query": "family photos kids"
+    }
+  ]
+}

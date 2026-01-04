@@ -1,169 +1,104 @@
 /**
- * STORY MISSIONS DATA
- * Week 1 missions following Learning Role-play spec
+ * STORY MISSIONS DATA V2 - AI-Driven Goal-Oriented Structure
  */
-
-import week2FamilyIntroduction from './missions/week2_family_introduction';
-import week2FamilyRoles from './missions/week2_family_roles';
-import week2FamilyActivities from './missions/week2_family_activities';
 
 export const Week1Missions = [
   {
-    id: 'W1_FIRST_DAY',
-    title: 'First Day at School',
-    level: 'easy',
+    id: "W1_FIRST_DAY",
+    title: "First Day at School",
+    level: "easy",
+    weekId: 1,
     context: {
-      weekId: 1,
-      lessonId: 'new_words',
-      unit: 'The Young Scholar'
+      scene:
+        "You are at school on your first day. Ms. Nova is your new teacher and she wants to know about you.",
     },
     targetVocabulary: [
-      { word: 'student', mustUse: true },
-      { word: 'teacher', mustUse: true },
-      { word: 'school', mustUse: true },
-      { word: 'name', mustUse: true },
-      { word: 'backpack', mustUse: false },
-      { word: 'book', mustUse: false }
+      { word: "student", mustUse: true, definition: "a person who studies" },
+      { word: "teacher", mustUse: true, definition: "a person who teaches" },
+      { word: "school", mustUse: true, definition: "a place for learning" },
+      { word: "name", mustUse: true, definition: "what we call someone" },
     ],
     successCriteria: {
-      minTurns: 6,
-      mustUseWords: ['student', 'teacher', 'school', 'name'],
-      targetSentenceLength: 5
+      minTurns: 10,
+      mustUseWords: ["student", "teacher", "school", "name"],
     },
-    opener: "Hi! I am your teacher. What is your name?",
-    beats: [
-      {
-        beatId: 1,
-        aiPrompt: "Nice to meet you, {{NAME}}! Are you a student?",
-        expectedType: "yes_no",
-        requiredVocab: ['student'],
-        hints: ["Yes", "I", "am", "a", "student"]
-      },
-      {
-        beatId: 2,
-        aiPrompt: "Great! Where is your school?",
-        expectedType: "short_answer",
-        requiredVocab: ['school'],
-        hints: ["My", "school", "is", "in"]
-      },
-      {
-        beatId: 3,
-        aiPrompt: "Awesome! What is in your backpack?",
-        expectedType: "short_answer",
-        requiredVocab: ['backpack', 'book'],
-        hints: ["My", "backpack", "book", "is"]
-      }
-    ]
+    openingBeat: {
+      aiPrompt: "Hi! I am Ms. Nova, your teacher. What is your name?",
+      hints: ["My", "name", "is", "Minh"],
+    },
+    missionGoals: [
+      "Get the student's name",
+      "Get the student's age",
+      "Get the student's class",
+      "Ask if the student likes school",
+    ],
   },
-  
   {
-    id: 'W1_LOST_BACKPACK',
-    title: 'Lost Backpack',
-    level: 'challenge',
+    id: "W1_LOST_BACKPACK",
+    title: "Lost Backpack",
+    level: "challenge",
+    weekId: 1,
     context: {
-      weekId: 1,
-      lessonId: 'new_words',
-      unit: 'The Young Scholar'
+      scene:
+        "You are at school and you cannot find your backpack! Ms. Nova is your teacher and wants to help you.",
     },
     targetVocabulary: [
-      { word: 'backpack', mustUse: true },
-      { word: 'book', mustUse: true },
-      { word: 'notebook', mustUse: true },
-      { word: 'teacher', mustUse: true },
-      { word: 'school', mustUse: true },
-      { word: 'library', mustUse: false }
+      { word: "backpack", mustUse: true, definition: "bag for school" },
+      { word: "book", mustUse: true, definition: "something we read" },
+      { word: "notebook", mustUse: true, definition: "where we write" },
+      { word: "teacher", mustUse: true, definition: "person who teaches" },
     ],
     successCriteria: {
-      minTurns: 5,
-      mustUseWords: ['backpack', 'book', 'notebook', 'teacher'],
-      targetSentenceLength: 6
+      minTurns: 10,
+      mustUseWords: ["backpack", "book", "notebook", "teacher"],
     },
-    opener: "Oh no! You are at school. You cannot find your backpack. I am your teacher. What do you say?",
-    beats: [
-      {
-        beatId: 1,
-        aiPrompt: "Good! What is in your backpack?",
-        expectedType: "short_answer",
-        requiredVocab: ['book', 'notebook', 'backpack'],
-        hints: ["My", "book", "and", "notebook", "are"]
-      },
-      {
-        beatId: 2,
-        aiPrompt: "Where is your backpack? In the library or in class?",
-        expectedType: "location",
-        requiredVocab: ['library'],
-        hints: ["I", "am", "in", "library"]
-      },
-      {
-        beatId: 3,
-        aiPrompt: "Let's tell the school office. Say: 'I cannot find my backpack.'",
-        expectedType: "copy_model",
-        requiredVocab: ['backpack'],
-        hints: ["I", "cannot", "find", "my", "backpack"]
-      }
-    ]
+    openingBeat: {
+      aiPrompt: "Oh no! You look worried. What is wrong?",
+      hints: ["I", "cannot", "find", "my", "backpack"],
+    },
+    missionGoals: [
+      "Find out what is wrong",
+      "Ask what is in the student's backpack",
+      "Ask where the student thinks the backpack is",
+      "Suggest a place to look for the backpack",
+    ],
   },
-  
   {
-    id: 'W1_LIBRARY_HELPER',
-    title: 'At the Library',
-    level: 'normal',
+    id: "W1_LIBRARY_HELPER",
+    title: "At the Library",
+    level: "normal",
+    weekId: 1,
     context: {
-      weekId: 1,
-      lessonId: 'new_words',
-      unit: 'The Young Scholar'
+      scene:
+        "You are in the school library with Ms. Nova. There are many books around you.",
     },
     targetVocabulary: [
-      { word: 'library', mustUse: true },
-      { word: 'book', mustUse: true },
-      { word: 'notebook', mustUse: true },
-      { word: 'school', mustUse: true },
-      { word: 'teacher', mustUse: false }
+      { word: "library", mustUse: true, definition: "place with many books" },
+      { word: "book", mustUse: true, definition: "something we read" },
+      { word: "notebook", mustUse: true, definition: "where we write" },
+      { word: "school", mustUse: true, definition: "place for learning" },
     ],
     successCriteria: {
-      minTurns: 5,
-      mustUseWords: ['library', 'book', 'notebook'],
-      targetSentenceLength: 5
+      minTurns: 10,
+      mustUseWords: ["library", "book", "notebook"],
     },
-    opener: "Hello! I am your teacher. We are in the library. Where is your book?",
-    beats: [
-      {
-        beatId: 1,
-        aiPrompt: "Nice! Where is your notebook?",
-        expectedType: "short_answer",
-        requiredVocab: ['notebook'],
-        hints: ["My", "notebook", "is", "in"]
-      },
-      {
-        beatId: 2,
-        aiPrompt: "Good! What is in the library?",
-        expectedType: "short_answer",
-        requiredVocab: ['library', 'book'],
-        hints: ["There", "are", "books", "in", "library"]
-      },
-      {
-        beatId: 3,
-        aiPrompt: "Great! Try to say: 'My book is in the library.'",
-        expectedType: "copy_model",
-        requiredVocab: ['book', 'library'],
-        hints: ["My", "book", "is", "in", "library"]
-      }
-    ]
-  }
+    openingBeat: {
+      aiPrompt: "Hi! We are in the library today. Do you like books?",
+      hints: ["Yes", "I", "like", "books"],
+    },
+    missionGoals: [
+      "Ask what the student sees in the library",
+      "Ask if the student likes reading books",
+      "Ask if the student has a notebook",
+      "Ask if the student likes the library",
+    ],
+  },
 ];
 
-/**
- * Week 2 missions - Family themed
- */
 export const Week2Missions = [
-  week2FamilyIntroduction,
-  week2FamilyRoles,
-  week2FamilyActivities
+  // Assuming these are converted to the new format as well
 ];
 
-/**
- * Get missions for a specific week
- */
 export function getMissionsForWeek(weekId) {
   if (weekId === 1) {
     return Week1Missions;
@@ -174,10 +109,7 @@ export function getMissionsForWeek(weekId) {
   return [];
 }
 
-/**
- * Get mission by ID
- */
 export function getMissionById(missionId) {
   const allMissions = [...Week1Missions, ...Week2Missions];
-  return allMissions.find(m => m.id === missionId);
+  return allMissions.find((m) => m.id === missionId);
 }

@@ -1,229 +1,163 @@
 /**
- * HINT ENGINE - Scene-Aware Contextual Hints
- * Generates hints based on current conversation context, not random vocab
+ * HINT ENGINE V4 - SMART SYNC
+ * Instant hint generation matching actual AI questions
  */
 
 /**
- * Derive intent from teacher prompt
+ * Fisher-Yates shuffle
  */
-export function deriveIntent(teacherPrompt) {
-  const prompt = teacherPrompt.toLowerCase();
-  
-  // Check for specific patterns
-  if (prompt.includes('what is your name') || prompt.includes("what's your name")) {
-    return 'answer_name';
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  
-  if (prompt.includes('are you a student') || prompt.includes('are you')) {
-    return 'confirm_identity';
-  }
-  
-  if (prompt.includes('where is') || prompt.includes('where are')) {
-    // Determine if student asks or answers
-    if (prompt.includes('your')) {
-      return 'state_location';  // Teacher asks, student answers
-    } else {
-      return 'ask_location';  // Student asks
-    }
-  }
-  
-  if (prompt.includes('cannot find') || prompt.includes("can't find") || prompt.includes('lost')) {
-    return 'state_cannot_find';
-  }
-  
-  if (prompt.includes('what is in') || prompt.includes('what do you have')) {
-    return 'state_contents';
-  }
-  
-  if (prompt.includes('help')) {
-    return 'request_help';
-  }
-  
-  // Default: general response
-  return 'general_response';
+  return shuffled;
 }
 
 /**
- * Get scene state for mission beat
+ * Smart hint generation - matches question intelligently
  */
-export function getSceneState(mission, beatId) {
-  const beat = mission.beats?.find(b => b.beatId === beatId) || mission.beats?.[0];
-  
-  // Determine scene from mission
-  let scene = 'school';
-  let allowedLocations = ['school', 'classroom'];
-  
-  if (mission.id.includes('LIBRARY')) {
-    scene = 'library';
-    allowedLocations = ['library', 'desk', 'bag', 'backpack', 'table'];
-  } else if (mission.id.includes('BACKPACK')) {
-    scene = 'classroom';
-    allowedLocations = ['classroom', 'library', 'desk', 'bag'];
+function generateSmartHints(question, ctx) {
+  const lower = question.toLowerCase();
+
+  // Name questions
+  if (lower.includes('name')) {
+    return ['My', 'name', 'is', ctx.name || '_____'];
   }
-  
-  return {
-    missionId: mission.id,
-    turnIndex: beatId,
-    scene,
-    requiredObjects: beat?.requiredVocab || [],
-    optionalObjects: mission.targetVocabulary?.filter(v => !v.mustUse).map(v => v.word) || [],
-    allowedLocations
-  };
+
+  // Age questions
+  if (lower.includes('old') || lower.includes('age')) {
+    return ['I', 'am', ctx.age || '9', 'years', 'old'];
+  }
+
+  // Class questions
+  if (lower.includes('class') || lower.includes('grade')) {
+    return ['I', 'am', 'in', 'class', ctx.class || '3A'];
+  }
+
+  // Teacher questions
+  if (lower.includes('teacher')) {
+    if (lower.includes('name')) {
+      return ['My', 'teacher', 'is', ctx.teacherName || 'Mr. Smith'];
+    }
+    return ['My', 'teacher', 'is', 'nice'];
+  }
+
+  // SPECIFIC questions first (most specific to least specific)
+
+  // "What do you like to do" questions - MUST come before generic "like"
+  if (lower.includes('what') && lower.includes('like') && lower.includes('do')) {
+    if (lower.includes('school')) {
+      return ['I', 'like', 'to', 'read', 'books'];
+    }
+    return ['I', 'like', 'to', 'play', 'games'];
+  }
+
+  // "What is your favorite" questions
+  if (lower.includes('what') && (lower.includes('favorite') || lower.includes('subject'))) {
+    return ['My', 'favorite', 'is', ctx.subject || 'Math'];
+  }
+
+  // "Who" questions
+  if (lower.startsWith('who')) {
+    if (lower.includes('teacher')) {
+      return ['My', 'teacher', 'is', ctx.teacherName || 'Ms. Nova'];
+    }
+    if (lower.includes('friend')) {
+      return ['My', 'friend', 'is', 'nice'];
+    }
+    return ['My', 'friend', 'is', 'nice'];
+  }
+
+  // "Where" questions
+  if (lower.startsWith('where')) {
+    if (lower.includes('live')) {
+      return ['I', 'live', 'in', 'Vietnam'];
+    }
+    if (lower.includes('hiding') || lower.includes('hide')) {
+      return ['In', 'the', 'toilet'];
+    }
+    return ['It', 'is', 'here'];
+  }
+
+  // "When" questions
+  if (lower.startsWith('when')) {
+    return ['In', 'the', 'morning'];
+  }
+
+  // "Why" questions
+  if (lower.startsWith('why')) {
+    return ['Because', 'I', 'like', 'it'];
+  }
+
+  // "How" questions
+  if (lower.startsWith('how')) {
+    if (lower.includes('feel')) {
+      return ['I', 'feel', 'happy'];
+    }
+    return ['I', 'am', 'happy'];
+  }
+
+  // "What" questions (general)
+  if (lower.startsWith('what')) {
+    return ['I', 'think', 'it', 'is', 'good'];
+  }
+
+  // Yes/no "Do you like" questions
+  if (lower.match(/^do you like/)) {
+    if (lower.includes('school')) {
+      return ['Yes', 'I', 'like', 'school'];
+    }
+    if (lower.includes('english')) {
+      return ['Yes', 'I', 'like', 'English'];
+    }
+    if (lower.includes('learning') || lower.includes('learn')) {
+      return ['Yes', 'I', 'like', 'learning'];
+    }
+    if (lower.includes('coming')) {
+      return ['Yes', 'I', 'like', 'coming', 'here'];
+    }
+    return ['Yes', 'I', 'like', 'it'];
+  }
+
+  // Generic yes/no questions
+  if (lower.match(/^(do you|are you|can you|is|are)/)) {
+    return ['Yes', 'I', 'do'];
+  }
+
+  // Think/feel questions
+  if (lower.includes('think') || lower.includes('feel')) {
+    return ['I', 'think', 'it', 'is', 'fun'];
+  }
+
+  // Friend questions (not starting with who)
+  if (lower.includes('friend')) {
+    return ['Yes', 'I', 'have', 'friends'];
+  }
+
+  // Subject/favorite questions (not starting with what)
+  if (lower.includes('subject') || lower.includes('favorite')) {
+    return ['I', 'like', ctx.subject || 'Math'];
+  }
+
+  // Ultimate fallback
+  return ['I', 'am', 'a', 'student'];
 }
 
 /**
- * Build hint pack based on intent and scene
+ * Main export - generate hints for a question
  */
-export function buildHintPack(intent, sceneState, context) {
-  const { requiredObjects, allowedLocations } = sceneState;
-  
-  switch (intent) {
-    case 'answer_name':
-      return {
-        intent,
-        targetPatternId: 'name_statement',
-        chips: ['My', 'name', 'is', context.learnerName || 'Alex'],
-        starter: 'My name is ___',
-        model: `My name is ${context.learnerName || 'Alex'}.`
-      };
-      
-    case 'confirm_identity':
-      return {
-        intent,
-        targetPatternId: 'yes_identity',
-        chips: ['Yes', 'I', 'am', 'a', 'student'],
-        starter: 'Yes, I am a ___',
-        model: 'Yes, I am a student.'
-      };
-      
-    case 'state_cannot_find': {
-      const object = requiredObjects[0] || 'backpack';
-      return {
-        intent,
-        targetPatternId: 'cannot_find',
-        chips: ['I', 'cannot', 'find', 'my', object],
-        starter: 'I cannot find my ___',
-        model: `I cannot find my ${object}.`
-      };
-    }
-      
-    case 'state_location': {
-      const item = requiredObjects[0] || 'book';
-      const location = allowedLocations[0] || 'library';
-      return {
-        intent,
-        targetPatternId: 'item_location',
-        chips: ['My', item, 'is', 'in', 'my', location],
-        starter: 'My ___ is in ___',
-        model: `My ${item} is in my ${location}.`
-      };
-    }
-      
-    case 'ask_location': {
-      const searchItem = requiredObjects[0] || 'backpack';
-      return {
-        intent,
-        targetPatternId: 'where_question',
-        chips: ['Where', 'is', 'my', searchItem],
-        starter: 'Where is my ___?',
-        model: `Where is my ${searchItem}?`
-      };
-    }
-      
-    case 'state_contents': {
-      const items = requiredObjects.slice(0, 2) || ['book', 'notebook'];
-      return {
-        intent,
-        targetPatternId: 'have_items',
-        chips: ['My', ...items, 'are', 'in'],
-        starter: 'My ___ and ___ are in ___',
-        model: `My ${items.join(' and ')} are in my backpack.`
-      };
-    }
-      
-    case 'request_help':
-      return {
-        intent,
-        targetPatternId: 'request_help',
-        chips: ['Can', 'you', 'help', 'me'],
-        starter: 'Can you help me?',
-        model: 'Can you help me?'
-      };
-      
-    default: {
-      // General response - use first required vocab
-      const word = requiredObjects[0] || 'student';
-      return {
-        intent: 'general_response',
-        targetPatternId: 'general',
-        chips: ['I', 'am', 'a', word],
-        starter: 'I am ___',
-        model: `I am a ${word}.`
-      };
-    }
-  }
-}
+export function getHints(_mission, beat, context) {
+  const question = (beat.task || beat.aiPrompt || '').trim();
+  const ctx = context || {};
 
-/**
- * Validate hint pack against scene (guard)
- */
-export function hintContextGuard(hintPack, sceneState) {
-  const violations = [];
-  
-  // Check required objects appear in chips
-  for (const obj of sceneState.requiredObjects) {
-    if (!hintPack.chips.some(chip => chip.toLowerCase() === obj.toLowerCase())) {
-      violations.push({
-        type: 'OBJECT_MISMATCH',
-        message: `Required object "${obj}" not in hints`
-      });
-    }
+  if (!question) {
+    return shuffleArray(['I', 'am', 'a', 'student']);
   }
-  
-  // Check locations are in allowed list
-  const locationWords = ['library', 'classroom', 'desk', 'bag', 'backpack', 'table'];
-  const chipLocations = hintPack.chips.filter(chip => 
-    locationWords.includes(chip.toLowerCase())
-  );
-  
-  for (const loc of chipLocations) {
-    if (!sceneState.allowedLocations.includes(loc.toLowerCase())) {
-      violations.push({
-        type: 'SCENE_MISMATCH',
-        message: `Location "${loc}" not allowed in scene "${sceneState.scene}"`
-      });
-    }
-  }
-  
-  return {
-    ok: violations.length === 0,
-    violations
-  };
-}
 
-/**
- * Get contextual hints for current beat
- * Main entry point
- */
-export function getHints(mission, beat, context) {
-  // 1. Get scene state
-  const sceneState = getSceneState(mission, beat.beatId);
-  
-  // 2. Derive intent from teacher prompt
-  const intent = deriveIntent(beat.aiPrompt);
-  
-  // 3. Build hint pack
-  const hintPack = buildHintPack(intent, sceneState, context);
-  
-  // 4. Validate
-  const validation = hintContextGuard(hintPack, sceneState);
-  
-  if (!validation.ok) {
-    console.warn('[HintEngine] Validation failed:', validation.violations);
-    // Use fallback hints from beat definition
-    return beat.hints || [];
-  }
-  
-  // 5. Return chips
-  return hintPack.chips;
+  const hints = generateSmartHints(question, ctx);
+  console.log('[HintEngine] Hints for:', question, '→', hints);
+
+  return shuffleArray(hints);
 }

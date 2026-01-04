@@ -1,193 +1,89 @@
 /**
- * STRICT JSON SCHEMAS FOR AI RESPONSES
- * AI must return data in these formats - no free-form text
+ * AI Response Parser V4 - Handles JSON from AI-Driven Flow
  */
 
-/**
- * Chat response schema
- */
-export const ChatResponseSchema = {
-  type: 'object',
-  required: ['response', 'follow_up'],
-  properties: {
-    response: {
-      type: 'string',
-      description: 'AI response (1-2 sentences max)'
-    },
-    follow_up: {
-      type: 'string',
-      description: 'One question to continue conversation'
-    },
-    scaffold: {
-      type: 'object',
-      properties: {
-        level: { type: 'number', enum: [1, 2, 3, 4] },
-        hints: { type: 'array', items: { type: 'string' } },
-        starter: { type: 'string' },
-        model: { type: 'string' }
-      }
-    }
-  }
-};
-
-/**
- * Story Mission response schema
- */
-export const StoryMissionSchema = {
-  type: 'object',
-  required: ['story_beat', 'task'],
-  properties: {
-    story_beat: {
-      type: 'string',
-      description: 'ONE short sentence continuing the story (3-5 words)'
-    },
-    task: {
-      type: 'string',
-      description: 'What student must do next (specific action)'
-    },
-    required_vocab: {
-      type: 'array',
-      items: { type: 'string' },
-      description: 'Words student MUST use in their response'
-    },
-    scaffold: {
-      type: 'object',
-      properties: {
-        hints: { type: 'array', items: { type: 'string' } },
-        sentence_starter: { type: 'string' },
-        model_sentence: { type: 'string' }
-      }
-    },
-    feedback: {
-      type: 'object',
-      properties: {
-        praise: { type: 'string' },
-        correction: { type: 'string' },
-        progress: { type: 'string' }
-      }
-    }
-  }
-};
-
-/**
- * Quiz response schema
- */
-export const QuizResponseSchema = {
-  type: 'object',
-  required: ['question', 'correct_answer'],
-  properties: {
-    question: { type: 'string' },
-    correct_answer: { type: 'string' },
-    options: {
-      type: 'array',
-      items: { type: 'string' }
-    },
-    explanation: { type: 'string' },
-    hint: { type: 'string' }
-  }
-};
-
-/**
- * Parse AI response with tolerance
- * @param {string} rawText - Raw AI response
- * @param {string} mode - Tutor mode
- * @returns {Object} Parsed data
- */
 export function parseResponse(rawText, mode) {
-  // Clean text
-  let cleanText = rawText.trim();
-  
-  // Try to extract JSON if wrapped in markdown
-  const jsonMatch = cleanText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/);
-  if (jsonMatch) {
-    cleanText = jsonMatch[1];
+  const cleanText = rawText.trim();
+
+  if (mode === "STORY_MISSION_JSON") {
+    return parseStoryJson(cleanText);
   }
-  
+
+  if (mode === "story" || mode === "STORY_MISSION") {
+    return parseLegacyStoryResponse(cleanText);
+  }
+
+  return parseChatResponse(cleanText);
+}
+
+/**
+ * Parses the new JSON format from the AI for story missions.
+ */
+function parseStoryJson(text) {
   try {
-    // Try JSON first
-    const parsed = JSON.parse(cleanText);
-    return parsed;
-  } catch {
-    // Tolerant parsing for common formats
-    console.warn('[SchemaParser] JSON parse failed, using tolerant parser');
-    console.warn('[SchemaParser] Raw text:', cleanText.substring(0, 200));
-    
-    if (mode === 'story' || mode === 'STORY_MISSION') {
-      return parseStoryMission(cleanText);
-    } else {
-      return parseChatResponse(cleanText);
-    }
+    // Clean text: remove markdown, newlines, etc.
+    const cleaned = text.replace(/```(?:json)?\s*/g, "").replace(/```/g, "").trim();
+    const parsed = JSON.parse(cleaned);
+
+    // Ensure all required fields exist, even if empty
+    return {
+      response_text: parsed.response_text || "I'm not sure what to say!",
+      next_question: parsed.next_question || "",
+      student_context_update: parsed.student_context_update || {},
+      vocabulary_used: parsed.vocabulary_used || [],
+    };
+  } catch (error) {
+    console.error("[TutorSchemas] Failed to parse story JSON:", error);
+    console.error("[TutorSchemas] Raw AI Text:", text);
+    // Return a safe, default structure on failure
+    return {
+      response_text: "I'm a little confused. Can you say that again?",
+      next_question: "",
+      student_context_update: {},
+      vocabulary_used: [],
+    };
   }
 }
 
 /**
- * Tolerant parser for Story Mission format
+ * Legacy parser for plain text story mission responses.
  */
-function parseStoryMission(text) {
-  // Try to extract key parts even if format is wrong
-  const result = {
-    story_beat: '',
-    task: '',
-    required_vocab: [],
-    scaffold: {
-      hints: [],
-      sentence_starter: ''
-    }
-  };
-  
-  // Extract story beat (first sentence or paragraph)
-  const firstSentence = text.match(/^[^.!?]+[.!?]/);
-  if (firstSentence) {
-    result.story_beat = firstSentence[0].trim();
+function parseLegacyStoryResponse(text) {
+  const cleaned = text.trim();
+  const sentences = cleaned.split(/(?<=[.!?])\s+/).filter((s) => s.trim());
+
+  if (sentences.length === 0) {
+    return { story_beat: "", task: text };
+  }
+
+  const lastSentence = sentences[sentences.length - 1].trim();
+  const isQuestion =
+    lastSentence.includes("?") ||
+    /\b(what|how|who|where|when|why|do you|are you|can you|is)\b/i.test(
+      lastSentence
+    );
+
+  if (sentences.length === 1) {
+    return isQuestion
+      ? { story_beat: "", task: lastSentence }
+      : { story_beat: lastSentence, task: "" };
+  }
+
+  if (isQuestion) {
+    const acknowledgment = sentences.slice(0, -1).join(" ").trim();
+    return { story_beat: acknowledgment, task: lastSentence };
   } else {
-    // Take first line as story beat
-    result.story_beat = text.split('\n')[0].trim();
+    return { story_beat: cleaned, task: "" };
   }
-  
-  // Extract task if present
-  const taskMatch = text.match(/(?:TASK|task|Task)[:\s]+([^.\n]+)/i);
-  if (taskMatch) {
-    result.task = taskMatch[1].trim();
-  }
-  
-  // Extract hints (look for word lists in brackets or arrays)
-  const hintsMatch = text.match(/hints?[:\s]*\[([^\]]+)\]/i);
-  if (hintsMatch) {
-    result.scaffold.hints = hintsMatch[1]
-      .split(',')
-      .map(h => h.trim().replace(/['"]/g, ''))
-      .filter(h => h.length > 0);
-  }
-  
-  return result;
 }
 
-/**
- * Tolerant parser for Chat response
- */
 function parseChatResponse(text) {
-  const lines = text.split('\n').filter(l => l.trim());
+  const lines = text.split("\\n").filter((l) => l.trim());
   const response = lines[0] || text;
-  const followUp = lines.find(l => l.includes('?')) || 'Tell me more?';
-  
+  const followUp = lines.find((l) => l.includes("?")) || "Tell me more?";
+
   return {
     response,
-    follow_up: followUp
+    follow_up: followUp,
   };
-}
-
-/**
- * Validate parsed response
- */
-export function validateResponse(parsed, schema) {
-  const required = schema.required || [];
-  
-  for (const field of required) {
-    if (!parsed[field]) {
-      console.warn(`[SchemaValidator] Missing required field: ${field}`);
-      return false;
-    }
-  }
-  
-  return true;
 }

@@ -38,10 +38,29 @@ async function callGemini(prompt) {
 async function callGroq(prompt) {
   if (!GROQ_KEY) throw new Error('No Groq API key');
   
-  // Force JSON output by adding instruction
-  const jsonPrompt = prompt.includes('JSON:') 
-    ? prompt + '\n\nIMPORTANT: Return ONLY valid JSON, no markdown, no explanation.'
-    : prompt;
+  // Check if JSON response is explicitly requested
+  const needsJSON = prompt.toLowerCase().includes('return json') || 
+                    prompt.includes('"story_beat"') || 
+                    prompt.includes('"task"') ||
+                    prompt.includes('JSON format');
+  
+  // If needs JSON, ensure prompt has the word "json" (Groq requirement)
+  let finalPrompt = prompt;
+  if (needsJSON && !prompt.toLowerCase().includes('json')) {
+    finalPrompt = prompt + '\n\nIMPORTANT: Return response in valid JSON format.';
+  }
+  
+  const requestBody = {
+    model: 'llama-3.1-8b-instant',
+    messages: [{ role: 'user', content: finalPrompt }],
+    max_tokens: 150,
+    temperature: 0.7
+  };
+  
+  // Only add JSON mode if prompt explicitly requests it
+  if (needsJSON) {
+    requestBody.response_format = { type: "json_object" };
+  }
   
   const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
@@ -49,13 +68,7 @@ async function callGroq(prompt) {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${GROQ_KEY}`
     },
-    body: JSON.stringify({
-      model: 'llama-3.1-8b-instant',
-      messages: [{ role: 'user', content: jsonPrompt }],
-      max_tokens: 150,
-      temperature: 0.7,
-      response_format: { type: "json_object" } // Force JSON mode
-    })
+    body: JSON.stringify(requestBody)
   });
   
   if (!response.ok) {
@@ -68,49 +81,75 @@ async function callGroq(prompt) {
 }
 
 // ============================================
-// MAIN API - Try providers in order
+// MAIN API - Try providers in order with retry
 // ============================================
 
-export async function callAI(prompt, type = 'chat') {
-  const startTime = Date.now();
-  
-  // Try Groq FIRST (faster)
-  if (GROQ_KEY && errorCount.groq < 3 && dailyCount.groq < 14400) {
-    try {
-      console.log('[AI] Trying Groq...');
-      const result = await callGroq(prompt);
-      dailyCount.groq++;
-      errorCount.groq = 0;
-      console.log(`[AI] Groq OK in ${Date.now() - startTime}ms`);
-      return { text: result, provider: 'Groq Llama 3.1', duration: Date.now() - startTime };
-    } catch (err) {
-      console.error('[AI] Groq failed:', err.message);
-      errorCount.groq++;
+export async function callAI(prompt, type = 'chat', options = {}) {
+  const maxRetries = options.retries || 1; // Default 1 retry per provider
+  const providerOrder = options.fallbackProviders || ['groq', 'gemini']; // Default order
+
+  // Retry helper
+  async function tryProvider(providerName, callFn, timeout) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+      try {
+        const attemptStart = Date.now();
+        console.log(`[AI] Trying ${providerName} (attempt ${attempt + 1}/${maxRetries + 1})...`);
+
+        const result = await Promise.race([
+          callFn(prompt),
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error(`${providerName} timeout after ${timeout / 1000}s`)), timeout)
+          )
+        ]);
+
+        // Success!
+        if (providerName === 'groq') {
+          dailyCount.groq++;
+          errorCount.groq = 0;
+        } else if (providerName === 'gemini') {
+          dailyCount.gemini++;
+          errorCount.gemini = 0;
+        }
+
+        const duration = Date.now() - attemptStart;
+        console.log(`[AI] ${providerName} OK in ${duration}ms (attempt ${attempt + 1})`);
+        return {
+          text: result,
+          provider: providerName === 'groq' ? 'Groq Llama 3.1' : 'Gemini 2.5 Flash',
+          duration,
+          attempt: attempt + 1
+        };
+
+      } catch (err) {
+        console.error(`[AI] ${providerName} attempt ${attempt + 1} failed:`, err.message);
+
+        if (providerName === 'groq') errorCount.groq++;
+        else if (providerName === 'gemini') errorCount.gemini++;
+
+        // If not last attempt, wait a bit before retry
+        if (attempt < maxRetries) {
+          await new Promise(resolve => setTimeout(resolve, 500 * (attempt + 1))); // Exponential backoff
+        }
+      }
+    }
+
+    return null; // All attempts failed
+  }
+
+  // Try each provider in order
+  for (const provider of providerOrder) {
+    if (provider === 'groq' && GROQ_KEY && errorCount.groq < 5 && dailyCount.groq < 14400) {
+      const result = await tryProvider('groq', callGroq, 8000);
+      if (result) return result;
+    } else if (provider === 'gemini' && GEMINI_KEY && errorCount.gemini < 5 && dailyCount.gemini < 1500) {
+      const result = await tryProvider('gemini', callGemini, 15000);
+      if (result) return result;
     }
   }
-  
-  // Fallback to Gemini
-  if (GEMINI_KEY && errorCount.gemini < 3 && dailyCount.gemini < 1500) {
-    try {
-      console.log('[AI] Trying Gemini...');
-      const result = await callGemini(prompt);
-      dailyCount.gemini++;
-      errorCount.gemini = 0;
-      console.log(`[AI] Gemini OK in ${Date.now() - startTime}ms`);
-      return { text: result, provider: 'Gemini 2.5 Flash', duration: Date.now() - startTime };
-    } catch (err) {
-      console.error('[AI] Gemini failed:', err.message);
-      errorCount.gemini++;
-    }
-  }
-  
+
   // Fallback - return error message so user knows AI is offline
-  console.warn('[AI] All providers failed, using fallback');
-  return { 
-    text: "I'm having trouble connecting right now. Please try again in a moment!", 
-    provider: 'Offline', 
-    duration: 0 
-  };
+  console.warn('[AI] All providers exhausted after retries, using fallback');
+  throw new Error("I'm having trouble connecting right now. Please try again in a moment!");
 }
 
 // ============================================

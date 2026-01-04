@@ -9,16 +9,24 @@ set -euo pipefail
 # 2) Restore: unzip to temp then rsync into project (safer than rm -rf blindly)
 # 3) Fix: reinstall deps + ensure Vite runs + ensure Tailwind v4 + PostCSS config OK
 # 4) Run: npm run dev
+# 5) Update AI Context: Refresh auto-generated info in docs/ai_application_context.md
+#
+# Note: AI Context document (docs/ai_application_context.md) is now updated directly
+#       by the AI agent when important decisions or development milestones occur.
+#       The `generate:ai-context` npm script can still be run manually to refresh
+#       auto-generated sections like dependencies and schema. AI chat summaries
+#       are now handled directly by the AI agent itself.
 # =============================================================================
 
 PROJECT_ROOT="$(pwd)"
-BACKUP_DIR="${HOME}/Downloads/_BACKUPS"
+BACKUP_DIR="/Volumes/MY DOCUMENT/Apps/_BACKUPS"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 BACKUP_FILENAME="SNAPSHOT_${TIMESTAMP}.zip"
 
 # Excludes for backup (add/remove as you like)
 EXCLUDES=(
   "node_modules/*"
+  "mcp-server/node_modules/*"
   ".git/*"
   ".debris/*"
   ".DS_Store"
@@ -29,9 +37,9 @@ EXCLUDES=(
   ".idea/*"
   "*.log"
   "package-lock.json"
+  "mcp-server/package-lock.json"
   "yarn.lock"
   "pnpm-lock.yaml"
-  # user request:
   "public/*"
 )
 
@@ -46,6 +54,9 @@ RESTORE_ITEMS=(
   "postcss.config.js"
   "tailwind.config.js"
   "index.html"
+  "docs"
+  "mcp-server"
+  "eslint.config.js"
 )
 
 # ---------- Helpers ----------
@@ -145,6 +156,7 @@ run_restore() {
   rm -rf "$tmp"
   ok "Restore completed."
   warn "Next: run option [3] FIX to reinstall dependencies & ensure Tailwind v4 pipeline."
+  warn "VUI LÒNG KIỂM TRA & CẤU HÌNH LẠI CÁC FILE .env (frontend và mcp-server) SAU KHI RESTORE!"
 }
 
 # ---------- 3) FIX (Node/Vite/Tailwind v3) ----------
@@ -152,11 +164,17 @@ run_fix() {
   say "3) FIX: Repair dependencies + ensure Tailwind v3 + PostCSS setup"
   need_cmd npm
 
-  say "Cleaning node_modules + vite cache + lockfiles"
+  say "Cleaning node_modules + vite cache + lockfiles (frontend)"
   rm -rf node_modules .vite package-lock.json yarn.lock pnpm-lock.yaml
 
-  say "Install dependencies (npm install)"
+  say "Cleaning node_modules + lockfiles (backend - mcp-server)"
+  rm -rf mcp-server/node_modules mcp-server/package-lock.json mcp-server/yarn.lock mcp-server/pnpm-lock.yaml
+
+  say "Install dependencies (frontend: npm install)"
   npm install
+
+  say "Install dependencies (backend: cd mcp-server && npm install)"
+  (cd mcp-server && npm install) || fail "Failed to install backend dependencies."
 
   # Ensure Vite exists (sometimes missing in copied projects)
   if ! npx --no -- vite --version >/dev/null 2>&1; then
@@ -169,8 +187,9 @@ run_fix() {
   npm install -D tailwindcss@3 postcss@8 autoprefixer@10
 
   # PostCSS config (CJS to avoid 'type: module' issues)
-  say "Write postcss.config.cjs (Tailwind v3 standard with plugin)"
-  cat > postcss.config.cjs <<'EOF'
+  if confirm "Ghi đè postcss.config.cjs với cấu hình mặc định (có thể làm mất tùy chỉnh của bạn)?"; then
+    say "Write postcss.config.cjs (Tailwind v3 standard with plugin)"
+    cat > postcss.config.cjs <<'EOF'
 module.exports = {
   plugins: {
     tailwindcss: {},
@@ -178,10 +197,14 @@ module.exports = {
   },
 };
 EOF
+  else
+    warn "Bỏ qua ghi đè postcss.config.cjs."
+  fi
 
   # Tailwind config (from user's backup)
-  say "Ensure tailwind.config.js exists (from user backup)"
-  cat > tailwind.config.js <<'EOF'
+  if confirm "Ghi đè tailwind.config.js với cấu hình mặc định (có thể làm mất tùy chỉnh của bạn)?"; then
+    say "Ensure tailwind.config.js exists (from user backup)"
+    cat > tailwind.config.js <<'EOF'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -207,6 +230,9 @@ export default {
   plugins: [],
 }
 EOF
+  else
+    warn "Bỏ qua ghi đè tailwind.config.js."
+  fi
 
   # FORCE OVERWRITE src/index.css with Tailwind v3 directives
   say "Force writing correct Tailwind v3 directives to src/index.css"
@@ -222,28 +248,54 @@ EOF
     printf '%s\n' "@tailwind base;" "@tailwind components;" "@tailwind utilities;" > "$PROJECT_ROOT/src/index.css"
   fi
 
+  # Ensure eslint.config.js exists and is configured correctly
+  say "Kiểm tra và đảm bảo eslint.config.js tồn tại và được cấu hình đúng..."
+  local ESLINT_CONFIG_FILE="$PROJECT_ROOT/eslint.config.js"
+  local DEFAULT_ESLINT_CONFIG=""
+  DEFAULT_ESLINT_CONFIG="$(cat << EOL
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
-  # Ensure index.html exists
-  if [[ ! -f "$PROJECT_ROOT/index.html" ]]; then
-    warn "index.html missing, creating minimal Vite index.html"
-    cat > index.html <<'EOF'
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EngQuest</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
-EOF
+export default defineConfig([
+  globalIgnores(['dist', 'mcp-server', 'scripts']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+    },
+  },
+])
+EOL
+)"
+
+  if [[ ! -f "$ESLINT_CONFIG_FILE" ]] || ! grep -q "mcp-server" "$ESLINT_CONFIG_FILE"; then
+    warn "eslint.config.js không tồn tại hoặc không cấu hình bỏ qua 'mcp-server'. Ghi lại file mặc định."
+    echo "$DEFAULT_ESLINT_CONFIG" > "$ESLINT_CONFIG_FILE" || fail "Failed to write eslint.config.js"
+    ok "eslint.config.js đã được khôi phục/cập nhật."
+  else
+    ok "eslint.config.js đã tồn tại và cấu hình đúng."
   fi
 
   ok "FIX completed (Tailwind v3 installed & configured)."
   say "Next step: Run 'npm run dev' to start the development server"
+  warn "VUI LÒNG KIỂM TRA & CẤU HÌNH LẠI CÁC FILE .env (frontend và mcp-server) SAU KHI FIX!"
 }
 
 # ---------- 4) RUN ----------
@@ -252,73 +304,25 @@ run_app() {
   npm run dev
 }
 
-# ---------- 5) MEMORY & CONTEXT ----------
-run_memory_context() {
-  say "5) GHI MEMORY & BUILD CONTEXT (HOÀN CHỈNH)"
-  need_cmd node
+# ---------- 5) UPDATE AI CONTEXT (AUTO-GENERATED INFO + OPTIONAL LOG) ----------
+run_update_ai_context() {
+  say "5) CẬP NHẬT AI CONTEXT (docs/ai_application_context.md)"
+  need_cmd npm
   
-  # Check if scripts exist
-  [[ -f "${PROJECT_ROOT}/scripts/add-memory.mjs" ]] || fail "scripts/add-memory.mjs not found"
-  [[ -f "${PROJECT_ROOT}/scripts/add-chat-insights.mjs" ]] || fail "scripts/add-chat-insights.mjs not found"
-  [[ -f "${PROJECT_ROOT}/scripts/build-context.mjs" ]] || fail "scripts/build-context.mjs not found"
-  
-  # Step 1: Add chat session insights
-  say "🧠 BƯỚC 1: Thêm insights từ chat sessions..."
-  node "${PROJECT_ROOT}/scripts/add-chat-insights.mjs" || warn "Some chat insights may have failed"
-  
-  # Step 2: Add core project memories
-  say "📝 BƯỚC 2: Thêm core project memories..."
-  
-  # Array of all critical memories to save
-  local memories=(
-    "Decision: AI Tutor conversation flow fixed - Turn order now: Name → Age → Teacher → Subject → Friends → Classroom → What you like (natural progression)"
-    "Decision: AI Tutor now uses 3-part teacher personality pattern - (1) Specific acknowledgment (2) Encouragement (3) Contextual next question. No more robotic responses."
-    "Fact: 4 files modified for AI Tutor fix - tutorPrompts.js (turn logic), week1.js (conversation structure), StoryMissionTab.jsx (hints matching), responseGenerator.js (acknowledgment patterns)"
-    "Rule: Week 1 grammar MUST be Present Simple only (I am, you are, is/are, have/has, my/your). NO past tense, NO future tense, NO complex clauses in Phase 1 (Weeks 1-14)."
-    "Constraint: Hints in StoryMissionTab.jsx MUST match the exact question being asked. Use getCurrentHints() function with question text matching logic."
-    "Fact: Week 1-2 data complete with full station structure. Week 2 has Advanced (Family Observation) + Easy (My Family Squad) modes with UK voice config. Week 3-17 are MISSING (15 weeks need generation). Week 18-21 are complete."
-    "Fact: Week 2 structure complete - Advanced: Present Continuous & Questions, Easy: This is my... (Possession). Both modes have 14 station files, UK voice config (en-GB-Neural2-A/C), and AI Tutor specific checklist."
-    "Constraint: Week 1 voiceConfig is identical to Week 19 (CRITICAL BUG). Must regenerate Week 1 audio with unique voiceConfig per MANDATORY rule in Master Prompt V23."
-    "Decision: Progress tracking UI missing - Need to implement toast notifications, progress indicators in sidebar, auto-save animation, and Continue Learning feature. Logic exists in progressHelper.js but no visual feedback."
-    "Fact: Master Prompt V23 is production-ready (3,040 lines) - All Week 1 errors documented and fixed, single-command asset generation enabled, pre-flight validation added, automated fix scripts documented."
-    "Constraint: Google Cloud TTS API not enabled yet (project 153898303209). Need to enable before regenerating Week 1 audio assets."
-    "Decision: Implementation Plan timeline - Day 1: Foundation fixes (Week 1 + API setup), Day 2-3: Mass generation Week 3-17 (15 weeks), Day 4: Testing + polish. Target completion: Jan 2, 2026."
-    "Rule: AI Tutor must read Syllabus (1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt) and Blueprint (2. ENGQUEST APP MASTER BLUEPRINT-FINAL copy.txt) to understand grammar scope and vocabulary for each week."
-    "Fact: AI Tutor Phase 2 MVP complete - 3 Story Missions for Week 1 (First Day, Lost Backpack, Library) with turn-by-turn conversation, scaffolding system, vocab tracking. Known issue: Turn 2 was hardcoded (now fixed with natural flow)."
-    "Decision: User progress saved in localStorage with keys: engquest_current_user, engquest_users_db, engquest_station_<weekId>_<stationKey>, engquest-tutor-storage. Main files: progressHelper.js, userStorage.js, stationStateHelper.js, tutorStore.js."
-    "Rule: Easy mode vs Advanced mode - Easy uses personal/immediate context with Tier 1 vocab and simple grammar. Advanced uses global/abstract context with Tier 2/3 vocab and complex grammar."
-    "Constraint: Week 1 Easy mode changed topic instead of simplifying (CRITICAL ERROR). Easy mode must use same topic as Advanced but with simpler vocabulary and grammar."
-    "Decision: Week 2 Easy mode correctly implements family topic with simpler grammar (This is my...) vs Advanced (Present Continuous). Both share family context but different complexity levels."
-    "Discovery: copilot-context.md outdated - Shows Week 2-17 MISSING but Week 2 actually complete with full structure (Advanced + Easy modes, voice config, AI Tutor checklist)."
-    "Decision: Memory system needs chat session insights capture - Important discussions, design decisions, and implementation considerations from chat sessions must be preserved in memory for future reference."
-    "Fact: Week 2 has unique AI Tutor features - Special checklist in AITutor.jsx (line 1053) with tips and learning objectives specific to family vocabulary and Present Continuous grammar."
-    "Rule: Context rebuild required after major discoveries - When significant gaps found between documentation and reality, immediate context rebuild needed to sync copilot knowledge with actual project state."
-    "Discovery: Week 2 audio tasks generated in tools/audio_tasks.json for mindmap branches (week2_easy) - Shows asset generation pipeline working for completed weeks."
-    "Constraint: Memory entries in project_manager.sh were hardcoded and outdated - Need dynamic system to capture real-time project insights and decisions from active development sessions."
-    "Decision: Manual memory curation essential - Critical insights from chat sessions about project structure, implementation gaps, and strategic decisions must be manually reviewed and added to memory system."
-  )
-  
-  # Add each memory
-  local count=0
-  for memory in "${memories[@]}"; do
-    node "${PROJECT_ROOT}/scripts/add-memory.mjs" "${memory}" >/dev/null 2>&1 && ((count++)) || warn "Failed: ${memory:0:50}..."
-  done
-  
-  ok "✅ Đã ghi ${count}/${#memories[@]} memory entries vào docs/memory.md"
-  
-  # Step 3: Build context
-  say "🔄 BƯỚC 3: Build copilot-context.md từ tất cả sources..."
-  node "${PROJECT_ROOT}/scripts/build-context.mjs" || fail "Failed to build context"
-  ok "Context đã được build: copilot-context.md"
-  
-  # Summary
-  ok "🎯 HOÀN TẤT! Tất cả đã được cập nhật:"
-  echo "   ✅ Chat insights đã lưu vào memory"
-  echo "   ✅ Core memories đã cập nhật" 
-  echo "   ✅ Context đã rebuild hoàn chỉnh"
-  echo ""
-  echo "📋 Sẵn sàng cho phiên chat mới:"
-  echo "   @workspace #file:copilot-context.md"
+  # First, update auto-generated metadata (timestamp, deps, schema)
+  npm run generate:ai-context || fail "Failed to update AI context metadata."
+
+  # Ask if user wants to add a log entry
+  if confirm "Thêm log entry cho task này?"; then
+    read -r -p "Nhập log message (≤120 ký tự): " log_msg
+    if [[ -n "${log_msg:-}" ]]; then
+      npm run context:log -- "${log_msg}" || warn "Failed to add log entry."
+    else
+      warn "Log message trống, bỏ qua."
+    fi
+  fi
+
+  ok "AI Context đã được cập nhật: docs/ai_application_context.md"
 }
 
 # ---------- MENU ----------
@@ -332,7 +336,7 @@ show_menu() {
 2) Restore (Khôi phục an toàn bằng rsync)
 3) FIX (Reinstall + Tailwind v4 + PostCSS config)
 4) Chạy App (npm run dev)
-5) Ghi Chat Insights + Memory + Build Context
+5) Cập Nhật AI Context (tự động)
 q) Thoát
 ------------------------------------------
 EOF
@@ -349,7 +353,7 @@ main() {
       2) run_restore ;;
       3) run_fix ;;
       4) run_app ;;
-      5) run_memory_context ;;
+      5) run_update_ai_context ;;
       q) exit 0 ;;
       *) warn "Lựa chọn không hợp lệ. Vui lòng thử lại." ;;
     esac

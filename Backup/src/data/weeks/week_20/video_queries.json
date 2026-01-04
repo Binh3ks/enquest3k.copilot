@@ -1,0 +1,39 @@
+{
+  "weekId": 20,
+  "theme": "The Old Town - History of My City",
+  "grammar": "There was / There were",
+  "topic": "History of my city",
+  "science": "",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "query": "there was there were grammar ESL kids",
+      "backup_query": "there was there were song lesson"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "query": "there was there were past tense lesson",
+      "backup_query": "there was there were practice kids"
+    },
+    {
+      "id": 3,
+      "purpose": "TOPIC",
+      "query": "long ago now changes history kids",
+      "backup_query": "then and now comparison educational children"
+    },
+    {
+      "id": 4,
+      "purpose": "TOPIC",
+      "query": "town city vocabulary ESL kids",
+      "backup_query": "places in my town English kids"
+    },
+    {
+      "id": 5,
+      "purpose": "TOPIC",
+      "query": "old buildings castle history kids",
+      "backup_query": "ancient buildings educational children"
+    }
+  ]
+}

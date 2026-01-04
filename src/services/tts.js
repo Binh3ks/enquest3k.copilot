@@ -63,14 +63,15 @@ export async function generateTTS(text, options = {}) {
  */
 export function replacePlaceholders(text, context) {
   return text
-    .replace(/\{\{name\}\}/g, context.name || 'Student')
-    .replace(/\{\{age\}\}/g, context.age || '10')
-    .replace(/\{\{teacherName\}\}/g, context.teacherName || 'your teacher')
-    .replace(/\{\{subject\}\}/g, context.subject || 'English')
-    .replace(/\{\{favoritePlace\}\}/g, context.favoritePlace || 'that place')
-    .replace(/\{\{friendName\}\}/g, context.friendName || 'your friend')
-    .replace(/\{\{activity\}\}/g, context.activity || 'play')
-    .replace(/\{\{object\}\}/g, context.object || 'that');
+    // Support both lowercase and uppercase placeholders
+    .replace(/\{\{name\}\}/gi, context.name || 'Student')
+    .replace(/\{\{age\}\}/gi, context.age || '10')
+    .replace(/\{\{teacherName\}\}/gi, context.teacherName || 'your teacher')
+    .replace(/\{\{subject\}\}/gi, context.subject || 'English')
+    .replace(/\{\{favoritePlace\}\}/gi, context.favoritePlace || 'that place')
+    .replace(/\{\{friendName\}\}/gi, context.friendName || 'your friend')
+    .replace(/\{\{activity\}\}/gi, context.activity || 'play')
+    .replace(/\{\{object\}\}/gi, context.object || 'that');
 }
 
 /**

@@ -6,56 +6,80 @@
 
 import { buildTutorContext, validateContext } from './tutorContext';
 import { TutorModes } from './tutorModes';
-import { parseResponse, ChatResponseSchema, StoryMissionSchema, QuizResponseSchema } from './tutorSchemas';
+import { parseResponse } from './tutorSchemas';
 import { routeAI } from './providerRouter';
 import { buildPrompt } from './tutorPrompts';
+import { getWeekRules, buildSyllabusContext } from './syllabusLoader';
+import { enforceGrammarScope } from './grammarGuard';
 
 /**
  * Main entry point - runTutor()
  * All UI calls MUST go through this
- * 
- * @param {Object} params
- * @param {string} params.mode - TutorModes value
- * @param {Object} params.weekData - Week content data
- * @param {string} params.userInput - User's input (if any)
- * @param {Object} params.options - Additional options
- * @returns {Promise<Object>} Parsed AI response
  */
 export async function runTutor({ mode, weekData, userInput = '', options = {} }) {
-  // 1. BUILD CONTEXT (mandatory)
-  const context = buildTutorContext(weekData, mode, options);
+  const weekId = weekData?.weekId || options.weekId || 1;
   
-  // 2. VALIDATE CONTEXT (throw if invalid)
+  // 1. DYNAMIC SYLLABUS INTEGRATION
+  const syllabusRules = getWeekRules(weekId);
+  const syllabusContext = buildSyllabusContext(weekId);
+  
+  // 2. BUILD CONTEXT (mandatory)
+  // Merge static weekData with dynamic syllabus rules
+  const enrichedWeekData = {
+    ...weekData,
+    ...syllabusRules,
+    syllabusContext
+  };
+  
+  const context = buildTutorContext(enrichedWeekData, mode, options);
+  
+  // 3. VALIDATE CONTEXT
   validateContext(context);
   
-  // 3. BUILD PROMPT based on mode
+  // 4. BUILD PROMPT based on mode
   const prompt = buildPrompt(mode, context, userInput, options);
   
-  // 4. ROUTE TO AI PROVIDER
+  // 5. ROUTE TO AI PROVIDER
   const rawResponse = await routeAI(prompt, mode);
   
-  console.log('[TutorEngine] AI Raw Response:', rawResponse.text);
+  console.log(`[TutorEngine] AI Response from ${rawResponse.provider} (${rawResponse.duration}ms)`);
   
-  // 5. PARSE WITH MODE (not schema object)
-  const parsed = parseResponse(rawResponse.text, mode);
+  // 6. PARSE RESPONSE
+  let parsed = parseResponse(rawResponse.text, mode);
   
-  console.log('[TutorEngine] Parsed Response:', JSON.stringify(parsed, null, 2));
+  // 7. PEDAGOGICAL GUARDRAILS (Tense, Vocab, Patterns)
+  try {
+    parsed = enforceGrammarScope(parsed, weekId);
+  } catch (guardError) {
+    console.warn('[TutorEngine] Guard blocked response. Attempting deterministic fallback...', guardError.message);
+    
+    // DETERMINISTIC FALLBACK (Safe template based on week syllabus)
+    const patterns = enrichedWeekData.sentencePatterns || [];
+    const fallbackTask = patterns.length > 0 ? patterns[0].replace('___', '...') : 'What is your name?';
+    
+    parsed = {
+      story_beat: "Great job! You are doing so well today!",
+      task: fallbackTask,
+      scaffold: {
+        hints: enrichedWeekData.vocabulary?.mustUse || ['student', 'teacher']
+      },
+      fallback: true
+    };
+  }
   
-  // 6. RETURN STRUCTURED RESPONSE
+  // 8. RETURN STRUCTURED RESPONSE
   return {
     ...parsed,
     meta: {
       provider: rawResponse.provider,
       duration: rawResponse.duration,
       context,
-      mode
+      mode,
+      weekId
     }
   };
 }
 
-/**
- * Convenience function for chat mode
- */
 export async function runChat(weekData, userMessage, options = {}) {
   return runTutor({
     mode: TutorModes.CHAT,

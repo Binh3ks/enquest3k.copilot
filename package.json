@@ -8,12 +8,14 @@
     "build": "vite build",
     "lint": "eslint . --e     js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "context:build": "node scripts/build-context.mjs",
-    "memory:add": "node scripts/add-memory.mjs",
-    "memory:chat": "node scripts/add-chat-insights.mjs"
+    "context:build": "node scripts/build-context.mjs",    "context:log": "node scripts/context-log.mjs",
+    "context:update": "npm run generate:ai-context && npm run context:log",    "memory:add": "node scripts/add-memory.mjs",
+    "memory:chat": "node scripts/add-chat-insights.mjs",
+    "generate:ai-context": "node scripts/generate_ai_context.cjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.2",
     "lucide-react": "^0.562.0",
     "react": "^19.2.0",
     "react-confetti": "^6.4.0",
