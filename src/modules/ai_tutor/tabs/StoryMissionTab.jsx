@@ -22,7 +22,6 @@ const StoryMissionTab = () => {
   const messages = useTutorStore(state => state.messages['story'] || []);
   const addMessage = useTutorStore(state => state.addMessage);
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
-  const preferences = useTutorStore(state => state.preferences);
   
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -102,7 +101,7 @@ const StoryMissionTab = () => {
         weekData,
         userName: user?.name || 'Student',
         userAge: user?.age || 8,
-        scaffoldingLevel: preferences.scaffoldingLevel || 2,
+        scaffoldingLevel: 2, // Default scaffolding level
         realSyllabusData // 🔥 Pass real syllabus to prompt builder
       });
 
@@ -131,7 +130,7 @@ const StoryMissionTab = () => {
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
         await textToSpeech(aiResponse, {
-          voice: preferences.voice || 'nova',
+          voice: 'nova', // Default voice
           autoPlay: true
         });
       }

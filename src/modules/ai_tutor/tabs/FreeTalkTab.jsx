@@ -21,7 +21,6 @@ const FreeTalkTab = () => {
   const messages = useTutorStore(state => state.messages['freetalk'] || []);
   const addMessage = useTutorStore(state => state.addMessage);
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
-  const preferences = useTutorStore(state => state.preferences);
   
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -122,7 +121,7 @@ const FreeTalkTab = () => {
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
         await textToSpeech(aiResponse, {
-          voice: preferences.voice || 'nova',
+          voice: 'nova', // Default voice
           autoPlay: true
         });
       }

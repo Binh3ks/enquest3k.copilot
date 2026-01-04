@@ -10,7 +10,7 @@ import useTutorStore from '../../../services/ai_tutor/tutorStore';
  * Syllabus-aware quizzes with immediate feedback
  */
 const QuizTab = () => {
-  const { user, currentWeek } = useUserStore();
+  const { currentWeek } = useUserStore();
   const [weekData, setWeekData] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -60,12 +60,11 @@ const QuizTab = () => {
       const generatedQuestions = generateQuestions(vocabArray);
       setQuestions(generatedQuestions);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
 
   const currentQuestion = questions[currentQuestionIndex];
   const totalQuestions = questions.length;
-  const { autoPlayEnabled, preferences } = useTutorStore();
+  const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
 
   // Handle answer selection with audio feedback
   const handleAnswerClick = async (answer) => {
@@ -84,7 +83,7 @@ const QuizTab = () => {
       const feedback = isCorrect ? "That's correct! Well done!" : `Not quite. The answer is ${currentQuestion.correctAnswer}.`;
       try {
         await textToSpeech(feedback, {
-          voice: preferences.voice || 'nova',
+          voice: 'nova', // Default voice
           autoPlay: true
         });
       } catch (error) {
