@@ -237,9 +237,9 @@ const StoryMissionTab = () => {
         placeholder={
           missionStatus === 'completed' 
             ? 'Mission complete! Great job!' 
-            : 'Type your answer...'
+            : 'Speak or type your answer...'
         }
-        showVoiceInput={false}
+        showVoiceInput={true}
       />
     </div>
   );

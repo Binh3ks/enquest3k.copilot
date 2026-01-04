@@ -301,8 +301,8 @@ Keep responses short (2-3 sentences). Be encouraging!`;
       <InputBar
         onSend={handleSendMessage}
         disabled={isLoading || !userPosition}
-        placeholder={userPosition ? 'Explain your opinion...' : 'Choose agree or disagree first'}
-        showVoiceInput={false}
+        placeholder={userPosition ? 'Speak or explain your opinion...' : 'Choose agree or disagree first'}
+        showVoiceInput={true}
       />
 
       {/* Encouragement */}
