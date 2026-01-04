@@ -396,19 +396,30 @@ export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel
   const persona = buildPersonaDescription();
   const modePrompt = MODE_PROMPTS.story.systemAddition;
   
-  const vocabList = weekData?.vocabulary?.map(v => v.word).join(', ') || 'common words';
-  const grammar = weekData?.grammar || 'simple present tense only';
+  // Extract vocabulary from week data (support both formats)
+  const vocabArray = weekData?.global_vocab || weekData?.vocabulary || [];
+  const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, library, scientist, name';
+  const grammar = weekData?.grammar_focus || weekData?.grammar || 'Subject Pronouns & Verb to be (Simple Present only)';
+  const weekTitle = weekData?.weekTitle_en || weekData?.weekTitle || 'The Young Scholar';
   
   return `${persona}
 
 **MODE: STORY MISSION**
 ${modePrompt}
 
+**WEEK THEME:** ${weekTitle}
 **THIS WEEK'S VOCABULARY:** ${vocabList}
 **ALLOWED GRAMMAR:** ${grammar}
 
 **STUDENT:** ${userName}, age ${userAge}
 **SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
+
+**CRITICAL CONSTRAINTS:**
+- Use ONLY Week 1 vocabulary (no past tense, no future tense)
+- Keep responses under 20 words
+- Ask ONE simple question per turn
+- Use Recast if student makes grammar errors (never say "wrong" or "incorrect")
+- Celebrate vocabulary usage: "Great! You used the word '___'!"
 
 Keep your responses short (2-3 sentences max). Ask ONE question at a time.`;
 }
@@ -420,19 +431,29 @@ export function buildFreeTalkPrompt({ weekData, userName, userAge, scaffoldingLe
   const persona = buildPersonaDescription();
   const modePrompt = MODE_PROMPTS.freetalk.systemAddition;
   
-  const vocabList = weekData?.vocabulary?.map(v => v.word).join(', ') || 'common words';
-  const grammar = weekData?.grammar || 'simple present tense only';
+  // Extract vocabulary from week data (support both formats)
+  const vocabArray = weekData?.global_vocab || weekData?.vocabulary || [];
+  const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, library, scientist, name';
+  const grammar = weekData?.grammar_focus || weekData?.grammar || 'Subject Pronouns & Verb to be (Simple Present only)';
+  const weekTheme = weekData?.weekTitle_en || 'The Young Scholar (school life)';
   
   return `${persona}
 
 **MODE: FREE TALK**
 ${modePrompt}
 
+**WEEK THEME:** ${weekTheme}
 **THIS WEEK'S VOCABULARY (subtle guidance):** ${vocabList}
 **ALLOWED GRAMMAR:** ${grammar}
 
 **STUDENT:** ${userName}, age ${userAge}
 **SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
+
+**CONVERSATION APPROACH:**
+- Start with casual questions about student's school day
+- Subtly weave in Week 1 vocabulary naturally
+- Keep responses under 15 words
+- Show genuine interest in student's life
 
 Be conversational and natural. Keep responses short (1-2 sentences).`;
 }

@@ -20,26 +20,27 @@ const QuizTab = () => {
   const [quizComplete, setQuizComplete] = useState(false);
 
   // Generate quiz questions from vocabulary
-  const generateQuestions = (vocabulary) => {
+  const generateQuestions = (vocabularyArray) => {
     const quizQuestions = [];
     
-    // Question Type 1: What does this word mean?
-    vocabulary.forEach((vocab, index) => {
+    // Question Type 1: What does this word mean? (Vietnamese definition)
+    vocabularyArray.forEach((vocabItem, index) => {
       if (index < 5) { // Limit to 5 questions
-        const otherWords = vocabulary.filter(v => v.word !== vocab.word);
+        const otherWords = vocabularyArray.filter(v => v.word !== vocabItem.word);
         const wrongAnswers = otherWords
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
-          .map(v => v.meaning);
+          .map(v => v.definition_vi || v.meaning);
         
-        const answers = [vocab.meaning, ...wrongAnswers]
+        const correctDef = vocabItem.definition_vi || vocabItem.meaning;
+        const answers = [correctDef, ...wrongAnswers]
           .sort(() => Math.random() - 0.5);
         
         quizQuestions.push({
           type: 'meaning',
-          question: `What does "${vocab.word}" mean?`,
-          word: vocab.word,
-          correctAnswer: vocab.meaning,
+          question: `What does "${vocabItem.word}" mean?`,
+          word: vocabItem.word,
+          correctAnswer: correctDef,
           answers: answers
         });
       }
@@ -53,8 +54,10 @@ const QuizTab = () => {
     const data = getCurrentWeekData(currentWeek || 'week-1');
     setWeekData(data);
     
-    if (data?.vocabulary) {
-      const generatedQuestions = generateQuestions(data.vocabulary);
+    // Support both global_vocab and vocabulary fields
+    const vocabArray = data?.global_vocab || data?.vocabulary || [];
+    if (vocabArray.length > 0) {
+      const generatedQuestions = generateQuestions(vocabArray);
       setQuestions(generatedQuestions);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps

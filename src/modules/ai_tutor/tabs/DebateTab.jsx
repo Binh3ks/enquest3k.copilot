@@ -121,6 +121,10 @@ const DebateTab = () => {
       const debatePrompt = MODE_PROMPTS.debate.systemAddition;
       const weekDataInfo = getCurrentWeekData(currentWeek || 'week-1');
       
+      // Support both global_vocab and vocabulary fields
+      const vocabArray = weekDataInfo?.global_vocab || weekDataInfo?.vocabulary || [];
+      const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, library, scientist';
+      
       const systemPrompt = `${persona}
 
 **MODE: DEBATE**
@@ -128,7 +132,15 @@ ${debatePrompt}
 
 **DEBATE TOPIC:** ${debateTopic}
 **STUDENT POSITION:** ${userPosition || 'unknown'}
-**WEEK VOCAB:** ${weekDataInfo?.vocabulary?.map(v => v.word).join(', ') || 'common words'}
+**WEEK VOCAB (Week 1 - The Young Scholar):** ${vocabList}
+**ALLOWED GRAMMAR:** Simple present only (be, have, like)
+
+**CRITICAL RULES:**
+- Keep responses under 20 words
+- Ask ONE follow-up question
+- Celebrate student's opinion: "That's a great point!"
+- Gently challenge with counter-perspective
+- Use Recast if grammar errors occur
 
 Keep responses short (2-3 sentences). Be encouraging!`;
 

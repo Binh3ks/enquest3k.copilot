@@ -22,8 +22,10 @@ const PronunciationTab = () => {
     setWeekData(data);
   }, [currentWeek]);
 
-  const currentWord = weekData?.vocabulary?.[currentWordIndex];
-  const totalWords = weekData?.vocabulary?.length || 0;
+  // Get vocabulary from week data (support global_vocab or vocabulary field)
+  const vocabularyList = weekData?.global_vocab || weekData?.vocabulary || [];
+  const currentWord = vocabularyList[currentWordIndex];
+  const totalWords = vocabularyList.length;
   const { preferences } = useTutorStore();
 
   // Text-to-Speech using 4-layer TTS
