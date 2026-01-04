@@ -22,7 +22,7 @@ import HeaderProfileMenu from './components/common/HeaderProfileMenu';
 import WorksheetGenerator from './components/common/WorksheetGenerator';
 import ReviewDashboard from './modules/review/ReviewDashboard';
 import Sidebar from './components/layout/Sidebar';
-import AITutor from './modules/ai_tutor/AITutor';
+// import AITutor from './modules/ai_tutor/AITutor'; // LEGACY - Replaced by AITutorWidget
 import AITutorWidget from './modules/ai_tutor/AITutorWidget';
 import SaveToast from './components/common/SaveToast';
 import AutoSaveIndicator from './components/common/AutoSaveIndicator';
@@ -253,7 +253,7 @@ const MainLayout = () => {
             </div>
           </div>
         </main>
-        <AITutor weekData={weekData} />
+        {/* AITutor page removed - Now using AITutorWidget (floating) */}
       </div>
     </>
   );
