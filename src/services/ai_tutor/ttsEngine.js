@@ -71,12 +71,22 @@ const TTS_CONFIG = {
  */
 export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto' } = {}) {
   if (!text || text.trim().length === 0) {
+    console.warn('⚠️ TTS: Empty text provided');
     return { success: false, error: 'Empty text' };
   }
+
+  console.log('🎤 TTS Request:', { 
+    text: text.substring(0, 100) + '...', 
+    autoPlay, 
+    preferredLayer,
+    geminiEnabled: TTS_CONFIG.gemini.enabled,
+    openaiEnabled: TTS_CONFIG.openai.enabled
+  });
 
   // Check cache first
   const cacheKey = `${text.substring(0, 100)}_${preferredLayer}`;
   if (audioCache.has(cacheKey)) {
+    console.log('✅ TTS: Using cached audio');
     const cachedUrl = audioCache.get(cacheKey);
     if (autoPlay) {
       await playAudio(cachedUrl);
@@ -94,8 +104,11 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     ? ['gemini', 'openai', 'puter', 'browser']
     : [preferredLayer, 'browser']; // Always fallback to browser
 
+  console.log('🔄 TTS: Trying layers in order:', layers);
+
   for (const layer of layers) {
     try {
+      console.log(`🔊 TTS: Attempting layer ${layer}...`);
       let audioUrl = null;
 
       switch (layer) {
@@ -126,6 +139,8 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
         // Cache the result
         audioCache.set(cacheKey, audioUrl);
         
+        console.log(`✅ TTS: ${layer} successful!`);
+        
         // Auto-play if requested
         if (autoPlay) {
           await playAudio(audioUrl);
@@ -138,13 +153,16 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
           text,
           cached: false
         };
+      } else {
+        console.warn(`⚠️ TTS: ${layer} returned null audioUrl`);
       }
     } catch (error) {
-      console.warn(`TTS Layer ${layer} failed:`, error.message);
+      console.warn(`❌ TTS: Layer ${layer} failed:`, error.message);
       // Continue to next layer
     }
   }
 
+  console.error('❌ TTS: All layers failed!');
   return {
     success: false,
     error: 'All TTS layers failed',
@@ -221,56 +239,66 @@ async function callBrowserTTS(text) {
     throw new Error('Browser Speech Synthesis not supported');
   }
 
-  return new Promise((resolve, reject) => {
-    // Wait for voices to load
-    let voices = window.speechSynthesis.getVoices();
-    
-    if (voices.length === 0) {
+  // Cancel any ongoing speech
+  window.speechSynthesis.cancel();
+
+  // Wait for voices to load
+  let voices = window.speechSynthesis.getVoices();
+  
+  if (voices.length === 0) {
+    // Wait for voices to be loaded
+    await new Promise((resolve) => {
       window.speechSynthesis.onvoiceschanged = () => {
         voices = window.speechSynthesis.getVoices();
-        performSynthesis();
+        resolve();
       };
-    } else {
-      performSynthesis();
-    }
+      // Timeout after 1 second
+      setTimeout(resolve, 1000);
+    });
+    voices = window.speechSynthesis.getVoices();
+  }
 
-    function performSynthesis() {
-      const utterance = new SpeechSynthesisUtterance(text);
-      
-      // Select best available voice
-      const preferredVoices = [
-        'Google US English',
-        'Microsoft Zira',
-        'Alex',
-        'Samantha'
-      ];
-      
-      let selectedVoice = voices.find(voice => 
-        preferredVoices.some(pref => voice.name.includes(pref))
-      );
-      
-      if (!selectedVoice) {
-        selectedVoice = voices.find(voice => voice.lang.startsWith('en-US'));
-      }
-      
-      if (selectedVoice) {
-        utterance.voice = selectedVoice;
-      }
-      
-      utterance.rate = TTS_CONFIG.browser.rate;
-      utterance.pitch = TTS_CONFIG.browser.pitch;
-      utterance.lang = 'en-US';
-      
-      utterance.onend = () => {
-        resolve('browser_synthesis'); // Return placeholder identifier
-      };
-      
-      utterance.onerror = (error) => {
-        reject(new Error(`Browser TTS error: ${error.error}`));
-      };
-      
-      window.speechSynthesis.speak(utterance);
-    }
+  // Create utterance
+  const utterance = new SpeechSynthesisUtterance(text);
+  
+  // Select best available voice
+  const preferredVoices = [
+    'Google US English',
+    'Microsoft Zira',
+    'Alex',
+    'Samantha'
+  ];
+  
+  let selectedVoice = voices.find(voice => 
+    preferredVoices.some(pref => voice.name.includes(pref))
+  );
+  
+  if (!selectedVoice) {
+    selectedVoice = voices.find(voice => voice.lang.startsWith('en-US'));
+  }
+  
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+  }
+  
+  utterance.rate = TTS_CONFIG.browser.rate;
+  utterance.pitch = TTS_CONFIG.browser.pitch;
+  utterance.lang = 'en-US';
+  
+  // Play immediately and return when done
+  return new Promise((resolve, reject) => {
+    utterance.onend = () => {
+      console.log('✅ Browser TTS completed');
+      resolve('browser_synthesis_played'); // Identifier to show it played
+    };
+    
+    utterance.onerror = (error) => {
+      console.error('❌ Browser TTS error:', error);
+      reject(new Error(`Browser TTS error: ${error.error}`));
+    };
+    
+    console.log('🔊 Playing Browser TTS:', text.substring(0, 50) + '...');
+    window.speechSynthesis.speak(utterance);
   });
 }
 
@@ -285,17 +313,20 @@ async function playAudio(audioUrlOrIdentifier) {
   // Stop any currently playing audio
   stopAudio();
 
-  if (audioUrlOrIdentifier === 'browser_synthesis') {
-    // Already playing via speechSynthesis
+  if (audioUrlOrIdentifier === 'browser_synthesis_played') {
+    // Already played via speechSynthesis (was played inline)
+    console.log('✅ Browser TTS already played inline');
     isPlaying = true;
     return;
   }
 
   // Create and play audio element
+  console.log('🔊 Playing audio from URL:', audioUrlOrIdentifier);
   currentAudio = new Audio(audioUrlOrIdentifier);
   isPlaying = true;
 
   currentAudio.onended = () => {
+    console.log('✅ Audio playback ended');
     isPlaying = false;
     currentAudio = null;
   };
