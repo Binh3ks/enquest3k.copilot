@@ -1,101 +1,168 @@
-import { useState, useEffect, useRef } from 'react';
-import { Bot, X, BrainCircuit, MessageCircle, Volume2, Award, BookText, Sword } from 'lucide-react';
-
-// Import Tab Components
-import ChatTab from './tabs/ChatTab';
+import { useState, useEffect } from 'react';
+import { Sparkles, BookOpen, MessageCircle, Mic, Brain, Users } from 'lucide-react';
+import { useUserStore } from '../../stores/useUserStore';
+import StoryMissionTab from './tabs/StoryMissionTab';
+import FreeTalkTab from './tabs/FreeTalkTab';
 import PronunciationTab from './tabs/PronunciationTab';
 import QuizTab from './tabs/QuizTab';
-import NovaStoryTab from './tabs/NovaStoryTab';
 import DebateTab from './tabs/DebateTab';
 
 /**
- * AITutor - Main Container
- * Manages tab routing and shared state (Speech Recognition)
- *
- * REFACTORED: Reduced from 1306 lines to ~100 lines (92% reduction!)
- * Logic extracted to:
- * - ChatTab.jsx (Free Talk Mode)
- * - PronunciationTab.jsx
- * - QuizTab.jsx (Vocabulary, Math, Science)
- * - DebateTab.jsx
- * - NovaStoryTab.jsx (Story Mission)
+ * AI Tutor V3 - Ms. Nova
+ * Main orchestrator component for all AI learning modes
  */
-const AITutor = ({ weekData, isVi = false, learningMode = 'advanced' }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('chat');
+const AITutor = () => {
+  // Global state
+  const { user, currentWeek } = useUserStore();
+  
+  // Local state
+  const [activeTab, setActiveTab] = useState('story');
+  const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Shared Speech Recognition (passed to child tabs)
-  const recognitionRef = useRef(null);
-
-  // Web Speech API setup
+  // Initialize with welcome message
   useEffect(() => {
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognitionRef.current = new SpeechRecognition();
-      recognitionRef.current.continuous = false;
-      recognitionRef.current.interimResults = false;
-      recognitionRef.current.lang = 'en-US';
-    }
-  }, []);
+    const welcomeMessage = {
+      role: 'assistant',
+      content: `Hi ${user?.name || 'there'}! I'm Ms. Nova, your AI English coach! 🌟\n\nI'm here to help you learn English in a fun way. What would you like to do today?`,
+      timestamp: Date.now()
+    };
+    setMessages([welcomeMessage]);
+  }, [user?.name]);
 
-  // Render
-  if (!isOpen) {
-    return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-indigo-600 text-white rounded-full shadow-2xl flex items-center justify-center z-[100] border-4 border-white transition-all group hover:scale-110"
-      >
-        <Bot size={32} className="group-hover:rotate-12 transition-transform"/>
-        <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse"></div>
-      </button>
-    );
-  }
+  // Tab definitions
+  const tabs = [
+    {
+      id: 'story',
+      label: 'Story Mission',
+      icon: BookOpen,
+      color: 'purple',
+      description: 'Complete a story adventure'
+    },
+    {
+      id: 'freetalk',
+      label: 'Free Talk',
+      icon: MessageCircle,
+      color: 'blue',
+      description: 'Chat about anything'
+    },
+    {
+      id: 'pronunciation',
+      label: 'Pronunciation',
+      icon: Mic,
+      color: 'green',
+      description: 'Practice speaking'
+    },
+    {
+      id: 'quiz',
+      label: 'Quiz',
+      icon: Brain,
+      color: 'yellow',
+      description: 'Test your knowledge'
+    },
+    {
+      id: 'debate',
+      label: 'Debate',
+      icon: Users,
+      color: 'red',
+      description: 'Share your opinions'
+    }
+  ];
+
+  // Handle tab change
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    // No need to reset messages - each tab manages its own state
+  };
+
+  // Render active tab content
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'story':
+        return <StoryMissionTab />;
+      
+      case 'freetalk':
+        return <FreeTalkTab />;
+      
+      case 'pronunciation':
+        return <PronunciationTab />;
+      
+      case 'quiz':
+        return <QuizTab />;
+      
+      case 'debate':
+        return <DebateTab />;
+      
+      default:
+        return null;
+    }
+  };
 
   return (
-    <div className="fixed bottom-6 right-6 w-[440px] h-[720px] bg-white rounded-[40px] shadow-2xl flex flex-col z-[100] border-4 border-indigo-50 overflow-hidden animate-in slide-in-from-right duration-300">
-      {/* HEADER */}
-      <div className="bg-indigo-600 p-4 text-white flex justify-between items-center shrink-0">
-        <div className="flex items-center gap-2">
-          <BrainCircuit size={24}/>
-          <div className="font-black text-sm uppercase">Ms. Nova</div>
+    <div className="flex flex-col h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
+      {/* Header */}
+      <header className="bg-white shadow-md px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+            <Sparkles className="text-white" size={24} />
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold text-gray-800">Ms. Nova</h1>
+            <p className="text-sm text-gray-500">Your AI English Coach</p>
+          </div>
         </div>
-        <button onClick={() => setIsOpen(false)} className="hover:bg-indigo-700 p-1 rounded-lg transition-all">
-          <X size={20}/>
-        </button>
-      </div>
+        
+        <div className="flex items-center space-x-4">
+          <div className="text-right">
+            <p className="text-sm font-medium text-gray-700">{user?.name || 'Student'}</p>
+            <p className="text-xs text-gray-500">Week {currentWeek}</p>
+          </div>
+        </div>
+      </header>
 
-      {/* TABS */}
-      <div className="flex bg-indigo-50 p-2 gap-1 shrink-0 border-b border-indigo-200 overflow-x-auto">
-        {[
-          { id: 'chat', icon: MessageCircle, label: 'Talk' },
-          { id: 'pronunciation', icon: Volume2, label: 'Pronunciation' },
-          { id: 'quiz', icon: Award, label: 'Quiz' },
-          { id: 'story', icon: BookText, label: 'Story' },
-          { id: 'debate', icon: Sword, label: 'Debate' }
-        ].map(tab => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center justify-center gap-1 py-2 px-2 rounded-lg text-[10px] font-black uppercase transition-all whitespace-nowrap ${
-              activeTab === tab.id
-                ? 'bg-white text-indigo-600 shadow-sm'
-                : 'text-slate-600 hover:text-indigo-600'
-            }`}
-          >
-            <tab.icon size={12}/>
-            {tab.label}
-          </button>
-        ))}
-      </div>
+      {/* Tab Navigation */}
+      <nav className="bg-white border-b border-gray-200 px-6 py-3">
+        <div className="flex space-x-2 overflow-x-auto">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.id;
+            
+            return (
+              <button
+                key={tab.id}
+                onClick={() => handleTabChange(tab.id)}
+                className={`
+                  flex items-center space-x-2 px-4 py-2 rounded-lg font-medium text-sm
+                  transition-all duration-200 whitespace-nowrap
+                  ${isActive 
+                    ? `bg-${tab.color}-100 text-${tab.color}-700 shadow-sm` 
+                    : 'text-gray-600 hover:bg-gray-100'
+                  }
+                `}
+                style={{
+                  backgroundColor: isActive ? `var(--${tab.color}-100, #f3e8ff)` : undefined,
+                  color: isActive ? `var(--${tab.color}-700, #7c3aed)` : undefined
+                }}
+              >
+                <Icon size={18} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </nav>
 
-      {/* CONTENT - Route to Tab Components */}
-      <div className="flex-1 overflow-hidden">
-        {activeTab === 'chat' && <ChatTab weekData={weekData} recognitionRef={recognitionRef} />}
-        {activeTab === 'pronunciation' && <PronunciationTab weekData={weekData} recognitionRef={recognitionRef} />}
-        {activeTab === 'quiz' && <QuizTab weekData={weekData} recognitionRef={recognitionRef} />}
-        {activeTab === 'story' && <NovaStoryTab weekData={weekData} recognitionRef={recognitionRef} />}
-        {activeTab === 'debate' && <DebateTab weekData={weekData} recognitionRef={recognitionRef} />}
-      </div>
+      {/* Main Content Area */}
+      <main className="flex-1 overflow-hidden">
+        {renderTabContent()}
+      </main>
+
+      {/* Footer Info */}
+      <footer className="bg-white border-t border-gray-200 px-6 py-2">
+        <p className="text-xs text-center text-gray-500">
+          Ms. Nova V3 • Pedagogical AI System • Learn English with confidence! 🚀
+        </p>
+      </footer>
     </div>
   );
 };

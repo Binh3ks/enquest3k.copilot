@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { BookOpen, Target, CheckCircle2, Loader2 } from 'lucide-react';
+import { MessageCircle, Heart, Sparkles, Loader2 } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
@@ -7,19 +7,17 @@ import sendToNova from '../../../services/ai_tutor/novaEngine';
 import { useUserStore } from '../../../stores/useUserStore';
 
 /**
- * Story Mission Tab - Guided story-based learning
- * Students complete missions using target vocabulary
+ * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
+ * Students chat naturally while Ms. Nova guides toward target vocabulary
  */
-const StoryMissionTab = () => {
+const FreeTalkTab = () => {
   const { user, currentWeek } = useUserStore();
   const [messages, setMessages] = useState([]);
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [missionStatus, setMissionStatus] = useState('not_started'); // not_started | started | in_progress | completed
-  const [targetVocabUsed, setTargetVocabUsed] = useState([]);
-  const [turnCount, setTurnCount] = useState(0);
+  const [conversationTopic, setConversationTopic] = useState('');
   const [showHints, setShowHints] = useState(false);
-  const [silentTurns, setSilentTurns] = useState(0);
+  const [messageCount, setMessageCount] = useState(0);
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -29,19 +27,28 @@ const StoryMissionTab = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Initialize mission
+  // Initialize conversation
   useEffect(() => {
-    initializeMission();
+    initializeConversation();
   }, []);
 
-  const initializeMission = async () => {
+  const initializeConversation = async () => {
+    const greetings = [
+      `Hi ${user?.name || 'there'}! 🌟 I'm Ms. Nova. What makes you happy?`,
+      `Hello ${user?.name || 'friend'}! 💫 What did you dream about last night?`,
+      `Hey ${user?.name || 'there'}! ✨ If you could be any animal, which one would you be?`,
+      `Hi ${user?.name || 'there'}! 🎨 What's your favorite thing to do after school?`,
+      `Hello ${user?.name || 'friend'}! 🌈 Tell me about something cool you saw today!`
+    ];
+
+    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+    
     const welcomeMessage = {
       role: 'assistant',
-      content: `🌟 Welcome to Story Mission! I'm Ms. Nova, and today we're going on an adventure!\n\nReady to start? Tell me your name!`,
+      content: randomGreeting,
       timestamp: Date.now()
     };
     setMessages([welcomeMessage]);
-    setMissionStatus('started');
   };
 
   // Handle user message
@@ -54,19 +61,17 @@ const StoryMissionTab = () => {
     };
     setMessages(prev => [...prev, userMsg]);
     setIsLoading(true);
-    setTurnCount(prev => prev + 1);
+    setMessageCount(prev => prev + 1);
 
-    // Check if user was silent (very short message after hint shown)
-    if (userMessage.trim().split(/\s+/).length <= 2 && showHints) {
-      setSilentTurns(prev => prev + 1);
-    } else {
-      setSilentTurns(0);
+    // Detect topic from first user message
+    if (messageCount === 0 && userMessage.length > 10) {
+      setConversationTopic(userMessage.split(' ')[0]); // Simple topic extraction
     }
 
     try {
       // Call Nova Engine
       const response = await sendToNova({
-        mode: 'story',
+        mode: 'freetalk',
         weekId: currentWeek || 'week-1',
         chatHistory: messages.map(m => ({ role: m.role, content: m.content })),
         userProfile: {
@@ -87,25 +92,22 @@ const StoryMissionTab = () => {
       };
       setMessages(prev => [...prev, aiMsg]);
 
-      // Update hints
+      // Update hints (show more sparingly in free talk)
       if (response.suggested_hints && response.suggested_hints.length > 0) {
         setHints(response.suggested_hints);
-        // Show hints after 2 silent/struggling turns
-        if (silentTurns >= 1 || turnCount >= 2) {
+        // Only show hints if student seems stuck (very short responses)
+        if (userMessage.trim().split(/\s+/).length <= 3 && messageCount > 2) {
           setShowHints(true);
+        } else {
+          setShowHints(false);
         }
       }
 
-      // Update mission status
-      if (response.mission_status) {
-        setMissionStatus(response.mission_status);
-      }
-
     } catch (error) {
-      console.error('Story Mission Error:', error);
+      console.error('Free Talk Error:', error);
       const errorMsg = {
         role: 'assistant',
-        content: "Oops! Let's try that again. What were you saying?",
+        content: "That's interesting! Tell me more about that?",
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, errorMsg]);
@@ -116,39 +118,36 @@ const StoryMissionTab = () => {
 
   // Handle hint click
   const handleHintClick = (hint) => {
-    // Remove "Use: " prefix if present
     const cleanHint = hint.replace(/^Use:\s*/i, '');
     handleSendMessage(cleanHint);
   };
 
   return (
-    <div className="flex flex-col h-full bg-gradient-to-br from-purple-50 to-pink-50">
-      {/* Mission Header */}
-      <div className="bg-white border-b border-purple-200 px-6 py-3">
+    <div className="flex flex-col h-full bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* Header */}
+      <div className="bg-white border-b border-blue-200 px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-              <BookOpen size={20} className="text-purple-600" />
+            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+              <MessageCircle size={20} className="text-blue-600" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-800">Story Mission</h2>
-              <p className="text-xs text-gray-500">Week {currentWeek} Adventure</p>
+              <h2 className="text-lg font-bold text-gray-800">Free Talk</h2>
+              <p className="text-xs text-gray-500">Let's chat naturally!</p>
             </div>
           </div>
 
-          {/* Mission Progress */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <Target size={16} className="text-purple-600" />
-              <span className="text-sm font-medium text-gray-700">
-                Turn {turnCount}
-              </span>
+          {/* Conversation Stats */}
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-1">
+              <Heart size={16} className="text-pink-500" />
+              <span className="text-sm font-medium text-gray-700">{messageCount}</span>
             </div>
-            
-            {missionStatus === 'completed' && (
-              <div className="flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">
-                <CheckCircle2 size={16} className="text-green-600" />
-                <span className="text-sm font-medium text-green-700">Complete!</span>
+            {conversationTopic && (
+              <div className="bg-blue-100 px-3 py-1 rounded-full">
+                <span className="text-xs font-medium text-blue-700">
+                  Topic: {conversationTopic}
+                </span>
               </div>
             )}
           </div>
@@ -172,11 +171,11 @@ const StoryMissionTab = () => {
         
         {isLoading && (
           <div className="flex items-center space-x-3 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
               <Loader2 className="text-white animate-spin" size={20} />
             </div>
             <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-              <p className="text-sm text-gray-500">Ms. Nova is thinking...</p>
+              <p className="text-sm text-gray-500">Ms. Nova is listening...</p>
             </div>
           </div>
         )}
@@ -184,7 +183,7 @@ const StoryMissionTab = () => {
         <div ref={chatEndRef} />
       </div>
 
-      {/* Hints Area */}
+      {/* Hints Area (minimal, only when needed) */}
       {showHints && hints.length > 0 && (
         <div className="px-6 py-2">
           <HintChips
@@ -198,16 +197,23 @@ const StoryMissionTab = () => {
       {/* Input Area */}
       <InputBar
         onSend={handleSendMessage}
-        disabled={isLoading || missionStatus === 'completed'}
-        placeholder={
-          missionStatus === 'completed' 
-            ? 'Mission complete! Great job!' 
-            : 'Type your answer...'
-        }
+        disabled={isLoading}
+        placeholder="Share your thoughts..."
         showVoiceInput={false}
       />
+
+      {/* Encouragement Footer */}
+      {messageCount > 5 && (
+        <div className="bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 text-center">
+          <p className="text-xs text-gray-600 flex items-center justify-center space-x-1">
+            <Sparkles size={14} className="text-purple-500" />
+            <span>You're doing great! Keep talking!</span>
+            <Sparkles size={14} className="text-blue-500" />
+          </p>
+        </div>
+      )}
     </div>
   );
 };
 
-export default StoryMissionTab;
+export default FreeTalkTab;
