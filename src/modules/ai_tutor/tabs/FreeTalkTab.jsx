@@ -46,14 +46,15 @@ const FreeTalkTab = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const initializeConversation = () => {
+  const initializeConversation = async () => {
     if (messages.length === 0) {
+      // 🔥 Week 1 themed greetings (Hero Academy context)
       const greetings = [
-        `Hi ${user?.name || 'there'}! 🌟 I'm Ms. Nova. What makes you happy?`,
-        `Hello ${user?.name || 'friend'}! 💫 What did you dream about last night?`,
-        `Hey ${user?.name || 'there'}! ✨ If you could be any animal, which one would you be?`,
-        `Hi ${user?.name || 'there'}! 🎨 What's your favorite thing to do after school?`,
-        `Hello ${user?.name || 'friend'}! 🌈 Tell me about something cool you saw today!`
+        `Hi ${user?.name || 'there'}! 🦸‍♀️ I'm Ms. Nova from Hero Academy! What's your superhero power?`,
+        `Hello ${user?.name || 'friend'}! 💫 Welcome to Hero Academy! Are you a boy or a girl hero?`,
+        `Hey ${user?.name || 'there'}! ✨ I'm your teacher Ms. Nova! How old are you?`,
+        `Hi ${user?.name || 'there'}! 🎓 Ready for Hero Academy? What makes you a special student?`,
+        `Hello ${user?.name || 'friend'}! 🌟 Tell me about yourself! I'm Ms. Nova, your hero teacher!`
       ];
 
       const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -64,6 +65,18 @@ const FreeTalkTab = () => {
         timestamp: Date.now()
       };
       addMessage("freetalk", welcomeMessage);
+      
+      // 🔊 Play opening with TTS
+      try {
+        if (autoPlayEnabled) {
+          await textToSpeech(randomGreeting, {
+            voice: 'nova',
+            autoPlay: true
+          });
+        }
+      } catch (error) {
+        console.error('TTS error for FreeTalk opening:', error);
+      }
     }
   };
 
@@ -93,7 +106,7 @@ const FreeTalkTab = () => {
         weekData,
         userName: user?.name || 'Student',
         userAge: user?.age || 8,
-        scaffoldingLevel: preferences.scaffoldingLevel || 2
+        scaffoldingLevel: 2 // Default scaffolding level
       });
 
       // Prepare chat history

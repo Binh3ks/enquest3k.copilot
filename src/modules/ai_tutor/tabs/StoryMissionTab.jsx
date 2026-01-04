@@ -58,6 +58,8 @@ const StoryMissionTab = () => {
     const openingLine = week1RealData.nova_instructions.opening_line;
     console.log('📝 Opening line:', openingLine);
     
+    let shouldAddMessage = true;
+    
     // Check if we have OLD opening message and clear if needed
     if (messages.length > 0) {
       const firstMsg = messages[0];
@@ -72,25 +74,28 @@ const StoryMissionTab = () => {
         // Clear old messages and restart with new opening
         console.log('🧹 Clearing old messages...');
         useTutorStore.getState().clearMessages('story');
+        shouldAddMessage = true;
       } else {
-        // Already has correct opening, don't re-add
-        console.log('✅ Already has correct opening, skipping');
-        return;
+        // Already has correct opening, don't re-add message but PLAY TTS
+        console.log('✅ Already has correct opening, skipping message add but will play TTS');
+        shouldAddMessage = false;
       }
     }
     
-    // Add new opening message
-    const welcomeMessage = {
-      role: 'assistant',
-      content: openingLine,
-      timestamp: Date.now()
-    };
-    console.log('💬 Adding welcome message to chat...');
-    addMessage('story', welcomeMessage);
-    setMissionStatus('started');
-    console.log('✅ Message added, mission status set to started');
+    // Add new opening message only if needed
+    if (shouldAddMessage) {
+      const welcomeMessage = {
+        role: 'assistant',
+        content: openingLine,
+        timestamp: Date.now()
+      };
+      console.log('💬 Adding welcome message to chat...');
+      addMessage('story', welcomeMessage);
+      setMissionStatus('started');
+      console.log('✅ Message added, mission status set to started');
+    }
     
-    // 🔊 Play opening message with TTS
+    // 🔊 ALWAYS play opening message with TTS (even if message already exists)
     try {
       console.log('🎤 About to call textToSpeech with:', { 
         text: openingLine.substring(0, 50) + '...', 
