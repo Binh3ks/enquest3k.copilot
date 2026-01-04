@@ -3,7 +3,6 @@ import { Mic, Volume2, CheckCircle2, XCircle, RotateCcw } from 'lucide-react';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
-import useTutorStore from '../../../services/ai_tutor/tutorStore';
 
 /**
  * Pronunciation Tab - Practice speaking target vocabulary
@@ -26,13 +25,12 @@ const PronunciationTab = () => {
   const vocabularyList = weekData?.global_vocab || weekData?.vocabulary || [];
   const currentWord = vocabularyList[currentWordIndex];
   const totalWords = vocabularyList.length;
-  const { preferences } = useTutorStore();
 
   // Text-to-Speech using 4-layer TTS
   const speakWord = async (word) => {
     try {
       await textToSpeech(word, {
-        voice: preferences.voice || 'nova',
+        voice: 'nova', // Default voice
         autoPlay: true,
         speed: 0.8
       });

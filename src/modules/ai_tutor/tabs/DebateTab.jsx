@@ -20,7 +20,6 @@ const DebateTab = () => {
   const messages = useTutorStore(state => state.messages['debate'] || []);
   const addMessage = useTutorStore(state => state.addMessage);
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
-  const preferences = useTutorStore(state => state.preferences);
   
   const [isLoading, setIsLoading] = useState(false);
   const [debateTopic, setDebateTopic] = useState(null);
@@ -169,7 +168,7 @@ Keep responses short (2-3 sentences). Be encouraging!`;
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
         await textToSpeech(aiResponse, {
-          voice: preferences.voice || 'nova',
+          voice: 'nova', // Default voice
           autoPlay: true
         });
       }
