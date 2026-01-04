@@ -53,9 +53,35 @@ const FreeTalkTab = () => {
   }, []);
 
   const initializeConversation = async () => {
-    if (messages.length === 0) {
-      // 🔥 Week 1 themed greetings (Hero Academy context)
-      const greetings = [
+    // 🔥 Check if we have OLD placeholder messages and clear if needed
+    if (messages.length > 0) {
+      const firstMsg = messages[0];
+      
+      // Extract text from content (handle both string and object)
+      const contentText = typeof firstMsg.content === 'string' 
+        ? firstMsg.content 
+        : firstMsg.content?.ai_response || firstMsg.content?.content || '';
+      
+      // Check if it's old placeholder (not Hero Academy themed)
+      const isOldPlaceholder = firstMsg.role === 'assistant' && 
+        !contentText.includes('Hero Academy') &&
+        (contentText.includes('What makes you happy') || 
+         contentText.includes('dream about') ||
+         contentText.includes('favorite thing'));
+      
+      if (isOldPlaceholder) {
+        console.log('🧹 FreeTalkTab: Clearing old placeholder messages...');
+        useTutorStore.getState().clearMessages('freetalk');
+      } else {
+        // Already has correct Hero Academy greeting
+        console.log('✅ FreeTalkTab: Already has Hero Academy greeting');
+        return;
+      }
+    }
+    
+    // Add new Hero Academy greeting
+    // 🔥 Week 1 themed greetings (Hero Academy context)
+    const greetings = [
         `Hi ${user?.name || 'there'}! 🦸‍♀️ I'm Ms. Nova from Hero Academy! What's your superhero power?`,
         `Hello ${user?.name || 'friend'}! 💫 Welcome to Hero Academy! Are you a boy or a girl hero?`,
         `Hey ${user?.name || 'there'}! ✨ I'm your teacher Ms. Nova! How old are you?`,
@@ -71,6 +97,7 @@ const FreeTalkTab = () => {
         timestamp: Date.now()
       };
       addMessage("freetalk", welcomeMessage);
+      console.log('💬 FreeTalkTab: Added new Hero Academy greeting');
       
       // 🔊 Play opening with TTS
       try {
@@ -83,7 +110,6 @@ const FreeTalkTab = () => {
       } catch (error) {
         console.error('TTS error for FreeTalk opening:', error);
       }
-    }
   };
 
   // Handle user message

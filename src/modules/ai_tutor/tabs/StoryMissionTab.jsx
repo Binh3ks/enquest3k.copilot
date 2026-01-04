@@ -67,12 +67,18 @@ const StoryMissionTab = () => {
     // Check if we have OLD opening message and clear if needed
     if (messages.length > 0) {
       const firstMsg = messages[0];
-      const isOldMessage = firstMsg.role === 'assistant' && 
-        (firstMsg.content.includes('Ready to start') || 
-         firstMsg.content.includes("Let's begin") ||
-         !firstMsg.content.includes('Hero Academy'));
       
-      console.log('🔍 Checking first message:', { isOldMessage, content: firstMsg.content.substring(0, 50) });
+      // 🔥 Extract text from content (handle both string and object)
+      const contentText = typeof firstMsg.content === 'string' 
+        ? firstMsg.content 
+        : firstMsg.content?.ai_response || firstMsg.content?.content || '';
+      
+      const isOldMessage = firstMsg.role === 'assistant' && 
+        (contentText.includes('Ready to start') || 
+         contentText.includes("Let's begin") ||
+         !contentText.includes('Hero Academy'));
+      
+      console.log('🔍 Checking first message:', { isOldMessage, content: contentText.substring(0, 50) });
       
       if (isOldMessage) {
         // Clear old messages and restart with new opening
