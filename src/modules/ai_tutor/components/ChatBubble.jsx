@@ -4,12 +4,17 @@ import { User, Sparkles } from 'lucide-react';
  * ChatBubble - Displays a single message in the chat
  * @param {Object} props
  * @param {string} props.role - 'user' | 'assistant'
- * @param {string} props.content - Message text
+ * @param {string|Object} props.content - Message text or AI response object
  * @param {number} props.timestamp - Message timestamp
  * @param {string} props.pedagogyNote - Optional pedagogy note for debugging
  */
 const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
   const isAssistant = role === 'assistant';
+  
+  // 🔥 Handle both string and object content (for backwards compatibility)
+  const messageText = typeof content === 'string' 
+    ? content 
+    : content?.ai_response || content?.content || JSON.stringify(content);
   
   return (
     <div className={`flex items-start space-x-3 mb-4 ${isAssistant ? '' : 'flex-row-reverse space-x-reverse'}`}>
@@ -39,7 +44,7 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
         `}>
           {/* Message Text */}
           <p className="text-sm leading-relaxed whitespace-pre-wrap">
-            {content}
+            {messageText}
           </p>
           
           {/* Timestamp */}
