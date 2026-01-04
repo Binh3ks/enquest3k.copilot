@@ -9,6 +9,7 @@ import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { buildStoryPrompt } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
+import week1RealData from '../../../data/weeks/week_01_real'; // 🔥 Import real syllabus
 
 /**
  * Story Mission Tab - Guided story-based learning
@@ -39,7 +40,7 @@ const StoryMissionTab = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Initialize mission
+  // Initialize mission with REAL SYLLABUS
   useEffect(() => {
     if (!initialized) {
       initializeMission();
@@ -50,13 +51,23 @@ const StoryMissionTab = () => {
 
   const initializeMission = () => {
     if (messages.length === 0) {
+      // 🔥 Use real syllabus opening line
+      const openingLine = week1RealData.nova_instructions.opening_line;
+      
       const welcomeMessage = {
         role: 'assistant',
-        content: `🌟 Welcome to Story Mission! I'm Ms. Nova, and today we're going on an adventure!\n\nReady to start? Tell me your name!`,
+        content: openingLine,
         timestamp: Date.now()
       };
       addMessage('story', welcomeMessage);
       setMissionStatus('started');
+      
+      // Set hints from syllabus
+      setHints([
+        'Say: "I am [your name]"',
+        'Example: "I am Alex"',
+        'Use "I am" to introduce yourself'
+      ]);
     }
   };
 
@@ -83,12 +94,16 @@ const StoryMissionTab = () => {
       // Get week data for context
       const weekData = getCurrentWeekData(currentWeek || 'week-1');
       
-      // Build prompt using V5 promptLibrary
+      // 🔥 Use REAL SYLLABUS data for Week 1
+      const realSyllabusData = (currentWeek === 'week-1' || !currentWeek) ? week1RealData : null;
+      
+      // Build prompt using V5 promptLibrary with REAL SYLLABUS
       const systemPrompt = buildStoryPrompt({
         weekData,
         userName: user?.name || 'Student',
         userAge: user?.age || 8,
-        scaffoldingLevel: preferences.scaffoldingLevel || 2
+        scaffoldingLevel: preferences.scaffoldingLevel || 2,
+        realSyllabusData // 🔥 Pass real syllabus to prompt builder
       });
 
       // Prepare chat history

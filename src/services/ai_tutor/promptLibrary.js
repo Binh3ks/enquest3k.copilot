@@ -392,11 +392,54 @@ ${NOVA_CORE_PERSONA.forbidden.map(f => `- ${f}`).join('\n')}`;
 /**
  * Build Story Mode Prompt
  */
-export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel = 2 }) {
+export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel = 2, realSyllabusData = null }) {
   const persona = buildPersonaDescription();
   const modePrompt = MODE_PROMPTS.story.systemAddition;
   
-  // Extract vocabulary from week data (support both formats)
+  // 🔥 PRIORITY: Use real syllabus data if available
+  if (realSyllabusData) {
+    const targetVocab = realSyllabusData.target_vocab.map(v => v.word).join(', ');
+    const novaInstructions = realSyllabusData.nova_instructions;
+    const storyMission = realSyllabusData.story_mission;
+    
+    return `${persona}
+
+**MODE: STORY MISSION**
+${modePrompt}
+
+**OFFICIAL SYLLABUS - WEEK ${realSyllabusData.week_id}:**
+- Topic: ${realSyllabusData.topic}
+- Learning Outcome: ${realSyllabusData.learning_outcome}
+- Grammar Pattern: ${realSyllabusData.grammar_pattern}
+- Target Vocabulary: ${targetVocab}
+
+**STORY MISSION:**
+${storyMission.scenario}
+
+**YOUR ROLE (MS. NOVA):**
+${novaInstructions.persona} - ${novaInstructions.tone}
+Opening Line: "${novaInstructions.opening_line}"
+
+**RECAST TECHNIQUE (MANDATORY):**
+${novaInstructions.recast_strategy}
+Example: Student says "${novaInstructions.recast_example.student}"
+→ You respond: "${novaInstructions.recast_example.nova_recast}"
+
+**STUDENT:** ${userName}, age ${userAge}
+**SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
+
+**CRITICAL CONSTRAINTS:**
+- Use ONLY the ${realSyllabusData.target_vocab.length} target vocabulary words
+- Grammar: ${realSyllabusData.grammar_focus} (${realSyllabusData.grammar_pattern})
+- ZERO L1: No Vietnamese, only English with gestures/context
+- NO explicit grammar rules - students learn by doing
+- Required vocab in conversation: ${novaInstructions.must_use_vocab.join(', ')}
+- Success when student uses pattern: "${storyMission.target_pattern}"
+
+Keep your responses short (2-3 sentences max). Ask ONE question at a time.`;
+  }
+  
+  // Fallback to old weekData format
   const vocabArray = weekData?.global_vocab || weekData?.vocabulary || [];
   const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, library, scientist, name';
   const grammar = weekData?.grammar_focus || weekData?.grammar || 'Subject Pronouns & Verb to be (Simple Present only)';
