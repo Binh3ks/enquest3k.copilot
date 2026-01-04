@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear EngQuest Storage</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #667eea;
+      margin-top: 0;
+    }
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px 5px;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    .danger {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f7fafc;
+      border-radius: 10px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .success {
+      color: #48bb78;
+      font-weight: bold;
+    }
+    .warning {
+      color: #ed8936;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧹 EngQuest Storage Cleaner</h1>
+    <p>Công cụ này sẽ xóa các messages cũ và reset lại AI Tutor về trạng thái mới.</p>
+    
+    <button onclick="inspectStorage()">🔍 Kiểm tra Storage</button>
+    <button onclick="clearOldMessages()">🗑️ Xóa Old Messages</button>
+    <button onclick="clearAllTutorData()" class="danger">⚠️ Reset Toàn bộ AI Tutor</button>
+    
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const output = document.getElementById('output');
+
+    function log(msg, type = 'info') {
+      const timestamp = new Date().toLocaleTimeString();
+      const className = type === 'success' ? 'success' : type === 'warning' ? 'warning' : '';
+      output.innerHTML += `<div class="${className}">[${timestamp}] ${msg}</div>`;
+      output.scrollTop = output.scrollHeight;
+    }
+
+    function inspectStorage() {
+      output.innerHTML = '';
+      log('🔍 Đang kiểm tra localStorage...', 'info');
+      
+      const keys = Object.keys(localStorage);
+      log(`\n📊 Tổng số keys: ${keys.length}`, 'info');
+      
+      // Check for tutor store
+      const tutorStore = localStorage.getItem('tutor-store');
+      if (tutorStore) {
+        try {
+          const parsed = JSON.parse(tutorStore);
+          const state = parsed.state || {};
+          log('\n💬 Messages hiện tại:', 'info');
+          
+          if (state.messages) {
+            Object.keys(state.messages).forEach(tabKey => {
+              const msgs = state.messages[tabKey];
+              log(`  - ${tabKey}: ${msgs.length} messages`, 'warning');
+              if (msgs.length > 0) {
+                const firstMsg = msgs[0];
+                const content = typeof firstMsg.content === 'string' 
+                  ? firstMsg.content 
+                  : firstMsg.content?.ai_response || 'unknown';
+                log(`    First message: "${content.substring(0, 60)}..."`, 'warning');
+              }
+            });
+          }
+          
+          log('\n⚙️ Settings:', 'info');
+          log(`  - autoPlayEnabled: ${state.autoPlayEnabled}`, 'info');
+          log(`  - activeTab: ${state.activeTab}`, 'info');
+        } catch (e) {
+          log('❌ Lỗi parse tutor-store: ' + e.message, 'warning');
+        }
+      } else {
+        log('\n✅ Không tìm thấy tutor-store (sạch)', 'success');
+      }
+      
+      // List all keys
+      log('\n📝 Tất cả localStorage keys:', 'info');
+      keys.forEach(key => {
+        const size = localStorage.getItem(key).length;
+        log(`  - ${key} (${size} chars)`, 'info');
+      });
+    }
+
+    function clearOldMessages() {
+      output.innerHTML = '';
+      log('🗑️ Đang xóa old messages...', 'warning');
+      
+      const tutorStore = localStorage.getItem('tutor-store');
+      if (!tutorStore) {
+        log('✅ Không có data để xóa!', 'success');
+        return;
+      }
+      
+      try {
+        const parsed = JSON.parse(tutorStore);
+        const state = parsed.state || {};
+        
+        // Clear messages
+        if (state.messages) {
+          const oldCount = Object.values(state.messages).reduce((sum, msgs) => sum + msgs.length, 0);
+          state.messages = {
+            story: [],
+            freetalk: [],
+            pronunciation: [],
+            quiz: [],
+            debate: []
+          };
+          log(`✅ Đã xóa ${oldCount} messages cũ!`, 'success');
+        }
+        
+        // Save back
+        parsed.state = state;
+        localStorage.setItem('tutor-store', JSON.stringify(parsed));
+        
+        log('✅ Storage đã được cập nhật!', 'success');
+        log('\n🔄 Refresh trang để thấy kết quả.', 'warning');
+      } catch (e) {
+        log('❌ Lỗi: ' + e.message, 'warning');
+      }
+    }
+
+    function clearAllTutorData() {
+      if (!confirm('⚠️ Bạn có chắc muốn XÓA TOÀN BỘ AI Tutor data? Hành động này không thể hoàn tác!')) {
+        return;
+      }
+      
+      output.innerHTML = '';
+      log('⚠️ ĐANG XÓA TOÀN BỘ AI TUTOR DATA...', 'warning');
+      
+      // Remove tutor-store completely
+      localStorage.removeItem('tutor-store');
+      
+      log('✅ Đã xóa tutor-store!', 'success');
+      log('✅ AI Tutor đã được reset hoàn toàn!', 'success');
+      log('\n🔄 Refresh trang để bắt đầu lại từ đầu.', 'warning');
+    }
+
+    // Auto inspect on load
+    window.addEventListener('load', () => {
+      setTimeout(inspectStorage, 500);
+    });
+  </script>
+</body>
+</html>
