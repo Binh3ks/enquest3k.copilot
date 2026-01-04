@@ -234,8 +234,8 @@ const FreeTalkTab = () => {
       <InputBar
         onSend={handleSendMessage}
         disabled={isLoading}
-        placeholder="Share your thoughts..."
-        showVoiceInput={false}
+        placeholder="Speak or share your thoughts..."
+        showVoiceInput={true}
       />
 
       {/* Encouragement Footer */}

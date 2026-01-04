@@ -2,22 +2,64 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, Loader2, Mic, MicOff } from 'lucide-react';
 
 /**
- * InputBar - Message input with send button and voice input
+ * InputBar - Message input with send button and PRIORITY microphone
+ * SPEC: Mic button is LARGE by default, only shrinks when user types
  * @param {Object} props
  * @param {Function} props.onSend - Callback when message is sent
  * @param {boolean} props.disabled - Disable input when loading
  * @param {string} props.placeholder - Placeholder text
- * @param {boolean} props.showVoiceInput - Show microphone button
+ * @param {boolean} props.showVoiceInput - Show microphone button (default true)
  */
 const InputBar = ({ 
   onSend, 
   disabled = false, 
-  placeholder = 'Type your message...', 
-  showVoiceInput = false 
+  placeholder = 'Speak or type...', 
+  showVoiceInput = true 
 }) => {
   const [message, setMessage] = useState('');
   const [isListening, setIsListening] = useState(false);
+  const [recognition, setRecognition] = useState(null);
   const textareaRef = useRef(null);
+
+  // Initialize Web Speech API
+  useEffect(() => {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      console.warn('Web Speech API not supported');
+      return;
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognitionInstance = new SpeechRecognition();
+    
+    recognitionInstance.continuous = false;
+    recognitionInstance.interimResults = true;
+    recognitionInstance.lang = 'en-US';
+
+    recognitionInstance.onresult = (event) => {
+      let transcript = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        transcript += event.results[i][0].transcript;
+      }
+      setMessage(transcript);
+    };
+
+    recognitionInstance.onend = () => {
+      setIsListening(false);
+    };
+
+    recognitionInstance.onerror = (event) => {
+      console.error('Speech recognition error:', event.error);
+      setIsListening(false);
+    };
+
+    setRecognition(recognitionInstance);
+
+    return () => {
+      if (recognitionInstance) {
+        recognitionInstance.stop();
+      }
+    };
+  }, []);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -48,39 +90,57 @@ const InputBar = ({
     }
   };
 
-  // Handle voice input (placeholder - to be implemented)
+  // Handle voice input with Web Speech API
   const handleVoiceInput = () => {
-    setIsListening(!isListening);
-    // TODO: Implement Web Speech API
-    console.log('Voice input:', isListening ? 'stopped' : 'started');
+    if (!recognition) {
+      alert('Speech recognition not supported in this browser');
+      return;
+    }
+
+    if (isListening) {
+      recognition.stop();
+      setIsListening(false);
+    } else {
+      setMessage(''); // Clear previous text
+      recognition.start();
+      setIsListening(true);
+    }
   };
+
+  // Determine mic button size (LARGE when no text, small when typing)
+  const isMicPriority = message.trim().length === 0;
 
   return (
     <div className="bg-white border-t border-gray-200 px-4 py-3">
       <div className="flex items-end space-x-2">
-        {/* Voice Input Button */}
+        {/* PRIORITY Microphone Button - LARGE by default */}
         {showVoiceInput && (
           <button
             type="button"
             onClick={handleVoiceInput}
             disabled={disabled}
             className={`
-              flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center
-              transition-all duration-200
+              flex-shrink-0 rounded-full flex items-center justify-center
+              transition-all duration-300 ease-in-out
+              ${isMicPriority ? 'w-14 h-14' : 'w-10 h-10'}
               ${isListening 
-                ? 'bg-red-500 text-white shadow-lg' 
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-red-500 text-white shadow-lg animate-pulse' 
+                : 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:shadow-xl hover:scale-105'
               }
               ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
             `}
-            aria-label="Voice input"
+            aria-label={isListening ? 'Stop listening' : 'Start voice input'}
           >
-            {isListening ? <MicOff size={20} /> : <Mic size={20} />}
+            {isListening ? (
+              <MicOff size={isMicPriority ? 28 : 20} />
+            ) : (
+              <Mic size={isMicPriority ? 28 : 20} />
+            )}
           </button>
         )}
 
-        {/* Text Input */}
-        <div className="flex-1 relative">
+        {/* Text Input - Appears when user types */}
+        <div className={`flex-1 relative transition-all duration-300 ${isMicPriority ? 'opacity-70' : 'opacity-100'}`}>
           <textarea
             ref={textareaRef}
             value={message}
@@ -98,17 +158,17 @@ const InputBar = ({
           />
         </div>
 
-        {/* Send Button */}
+        {/* Send Button - Only prominent when text exists */}
         <button
           type="button"
           onClick={handleSend}
           disabled={disabled || !message.trim()}
           className={`
             flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center
-            transition-all duration-200
+            transition-all duration-300
             ${disabled || !message.trim()
-              ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-              : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:scale-105'
+              ? 'bg-gray-200 text-gray-400 cursor-not-allowed scale-90'
+              : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:scale-110'
             }
           `}
           aria-label="Send message"
@@ -121,10 +181,26 @@ const InputBar = ({
         </button>
       </div>
 
-      {/* Hint text */}
+      {/* Dynamic hint text */}
       <p className="text-xs text-gray-400 mt-2 text-center">
-        Press Enter to send • Shift+Enter for new line
+        {isListening 
+          ? '🎤 Listening... Speak now!' 
+          : isMicPriority 
+            ? '🎤 Tap mic to speak • or type to chat'
+            : 'Press Enter to send • Shift+Enter for new line'
+        }
       </p>
+
+      {/* Speech recognition status indicator */}
+      {isListening && (
+        <div className="mt-2 flex items-center justify-center space-x-1">
+          <div className="w-1 h-3 bg-red-500 rounded animate-pulse" style={{ animationDelay: '0ms' }}></div>
+          <div className="w-1 h-4 bg-red-500 rounded animate-pulse" style={{ animationDelay: '100ms' }}></div>
+          <div className="w-1 h-5 bg-red-500 rounded animate-pulse" style={{ animationDelay: '200ms' }}></div>
+          <div className="w-1 h-4 bg-red-500 rounded animate-pulse" style={{ animationDelay: '300ms' }}></div>
+          <div className="w-1 h-3 bg-red-500 rounded animate-pulse" style={{ animationDelay: '400ms' }}></div>
+        </div>
+      )}
     </div>
   );
 };

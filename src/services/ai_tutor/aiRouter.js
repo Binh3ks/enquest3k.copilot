@@ -24,17 +24,19 @@ const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models
 const PROVIDERS = {
   groq: {
     name: 'Groq',
-    model: 'llama-3.3-70b-versatile',
+    model: 'llama-3.1-70b-versatile', // SPEC: Updated from 3.3 to 3.1 for faster responses
     maxTokens: 1024,
     temperature: 0.7,
-    enabled: !!GROQ_API_KEY
+    enabled: !!GROQ_API_KEY,
+    description: 'Ultra-fast responses (< 500ms) for Free Talk'
   },
   gemini: {
     name: 'Gemini',
     model: 'gemini-2.0-flash-exp',
     maxTokens: 2048,
     temperature: 0.7,
-    enabled: !!GEMINI_API_KEY
+    enabled: !!GEMINI_API_KEY,
+    description: 'Fallback for Groq errors or complex Syllabus analysis'
   }
 };
 
