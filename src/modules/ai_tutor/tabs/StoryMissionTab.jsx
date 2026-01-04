@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import { BookOpen, Target, CheckCircle2, Loader2 } from 'lucide-react';
+import { BookOpen, Target, CheckCircle2, Loader2, Volume2 } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
-import sendToNova from '../../../services/ai_tutor/novaEngine';
+import { sendToAI } from '../../../services/ai_tutor/aiRouter';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import useTutorStore from '../../../services/ai_tutor/tutorStore';
+import { buildStoryPrompt } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
+import { getCurrentWeekData } from '../../../data/weekData';
 
 /**
  * Story Mission Tab - Guided story-based learning
@@ -12,11 +16,15 @@ import { useUserStore } from '../../../stores/useUserStore';
  */
 const StoryMissionTab = () => {
   const { user, currentWeek } = useUserStore();
-  const [messages, setMessages] = useState([]);
+  const { messages, addMessage, autoPlayEnabled, preferences } = useTutorStore(state => ({
+    messages: state.messages['story'] || [],
+    addMessage: (msg) => state.addMessage('story', msg),
+    autoPlayEnabled: state.autoPlayEnabled,
+    preferences: state.preferences
+  }));
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [missionStatus, setMissionStatus] = useState('not_started'); // not_started | started | in_progress | completed
-  const [targetVocabUsed, setTargetVocabUsed] = useState([]);
+  const [missionStatus, setMissionStatus] = useState('not_started');
   const [turnCount, setTurnCount] = useState(0);
   const [showHints, setShowHints] = useState(false);
   const [silentTurns, setSilentTurns] = useState(0);
@@ -35,13 +43,15 @@ const StoryMissionTab = () => {
   }, []);
 
   const initializeMission = async () => {
-    const welcomeMessage = {
-      role: 'assistant',
-      content: `🌟 Welcome to Story Mission! I'm Ms. Nova, and today we're going on an adventure!\n\nReady to start? Tell me your name!`,
-      timestamp: Date.now()
-    };
-    setMessages([welcomeMessage]);
-    setMissionStatus('started');
+    if (messages.length === 0) {
+      const welcomeMessage = {
+        role: 'assistant',
+        content: `🌟 Welcome to Story Mission! I'm Ms. Nova, and today we're going on an adventure!\n\nReady to start? Tell me your name!`,
+        timestamp: Date.now()
+      };
+      addMessage(welcomeMessage);
+      setMissionStatus('started');
+    }
   };
 
   // Handle user message
@@ -52,7 +62,7 @@ const StoryMissionTab = () => {
       content: userMessage,
       timestamp: Date.now()
     };
-    setMessages(prev => [...prev, userMsg]);
+    addMessage(userMsg);
     setIsLoading(true);
     setTurnCount(prev => prev + 1);
 
@@ -64,40 +74,59 @@ const StoryMissionTab = () => {
     }
 
     try {
-      // Call Nova Engine
-      const response = await sendToNova({
-        mode: 'story',
-        weekId: currentWeek || 'week-1',
-        chatHistory: messages.map(m => ({ role: m.role, content: m.content })),
-        userProfile: {
-          name: user?.name || 'Student',
-          age: user?.age || 8,
-          learnerStyle: user?.learnerStyle || 'normal',
-          vocabMastery: user?.vocabMastery || {}
-        },
-        userMessage
+      // Get week data for context
+      const weekData = getCurrentWeekData(currentWeek || 'week-1');
+      
+      // Build prompt using V5 promptLibrary
+      const systemPrompt = buildStoryPrompt({
+        weekData,
+        userName: user?.name || 'Student',
+        userAge: user?.age || 8,
+        scaffoldingLevel: preferences.scaffoldingLevel || 2
+      });
+
+      // Prepare chat history
+      const chatHistory = messages.map(m => ({
+        role: m.role,
+        content: m.content
+      }));
+
+      // Call AI Router (Groq → Gemini fallback)
+      const aiResponse = await sendToAI({
+        systemPrompt,
+        chatHistory,
+        userMessage,
+        mode: 'story'
       });
 
       // Add AI response to chat
       const aiMsg = {
         role: 'assistant',
-        content: response.ai_response,
-        timestamp: Date.now(),
-        pedagogyNote: response.pedagogy_note
+        content: aiResponse,
+        timestamp: Date.now()
       };
-      setMessages(prev => [...prev, aiMsg]);
+      addMessage(aiMsg);
 
-      // Update hints
-      if (response.suggested_hints && response.suggested_hints.length > 0) {
-        setHints(response.suggested_hints);
-        // Show hints after 2 silent/struggling turns
+      // Auto-play TTS if enabled
+      if (autoPlayEnabled) {
+        await textToSpeech(aiResponse, {
+          voice: preferences.voice || 'nova',
+          autoPlay: true
+        });
+      }
+
+      // Generate hints based on AI response (simple extraction)
+      const hintMatches = aiResponse.match(/Use: "([^"]+)"/g);
+      if (hintMatches) {
+        const extractedHints = hintMatches.map(h => h.replace('Use: "', '').replace('"', ''));
+        setHints(extractedHints);
         if (silentTurns >= 1 || turnCount >= 2) {
           setShowHints(true);
         }
       }
 
-      // Update mission status
-      if (response.mission_status) {
+      // Check for mission completion
+      if (aiResponse.includes('mission complete') || aiResponse.includes('completed the mission')) {
         setMissionStatus(response.mission_status);
       }
 
@@ -108,7 +137,7 @@ const StoryMissionTab = () => {
         content: "Oops! Let's try that again. What were you saying?",
         timestamp: Date.now()
       };
-      setMessages(prev => [...prev, errorMsg]);
+      addMessage(errorMsg);
     } finally {
       setIsLoading(false);
     }

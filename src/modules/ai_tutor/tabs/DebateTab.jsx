@@ -2,7 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { Users, ThumbsUp, ThumbsDown, Lightbulb, Loader2 } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
-import sendToNova from '../../../services/ai_tutor/novaEngine';
+import { sendToAI } from '../../../services/ai_tutor/aiRouter';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import useTutorStore from '../../../services/ai_tutor/tutorStore';
+import { buildPersonaDescription, MODE_PROMPTS } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 
@@ -12,11 +15,16 @@ import { getCurrentWeekData } from '../../../data/weekData';
  */
 const DebateTab = () => {
   const { user, currentWeek } = useUserStore();
+  const { messages, addMessage, autoPlayEnabled, preferences } = useTutorStore(state => ({
+    messages: state.messages['debate'] || [],
+    addMessage: (msg) => state.addMessage('debate', msg),
+    autoPlayEnabled: state.autoPlayEnabled,
+    preferences: state.preferences
+  }));
   const [weekData, setWeekData] = useState(null);
-  const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [debateTopic, setDebateTopic] = useState(null);
-  const [userPosition, setUserPosition] = useState(null); // 'agree' | 'disagree'
+  const [userPosition, setUserPosition] = useState(null);
   const [turnCount, setTurnCount] = useState(0);
   
   const chatEndRef = useRef(null);
@@ -35,17 +43,18 @@ const DebateTab = () => {
   }, [currentWeek]);
 
   const initializeDebate = (data) => {
-    // Generate age-appropriate debate topics based on week theme
-    const topics = generateDebateTopics(data?.topic || 'Animals');
-    const selectedTopic = topics[Math.floor(Math.random() * topics.length)];
-    setDebateTopic(selectedTopic);
+    if (messages.length === 0) {
+      const topics = generateDebateTopics(data?.topic || 'Animals');
+      const selectedTopic = topics[Math.floor(Math.random() * topics.length)];
+      setDebateTopic(selectedTopic);
 
-    const welcomeMessage = {
-      role: 'assistant',
-      content: `👋 Hi ${user?.name || 'there'}! Let's have a friendly debate!\n\n🤔 Here's what I think: "${selectedTopic}"\n\nDo you agree or disagree? Why?`,
-      timestamp: Date.now()
-    };
-    setMessages([welcomeMessage]);
+      const welcomeMessage = {
+        role: 'assistant',
+        content: `👋 Hi ${user?.name || 'there'}! Let's have a friendly debate!\n\n🤔 Here's what I think: "${selectedTopic}"\n\nDo you agree or disagree? Why?`,
+        timestamp: Date.now()
+      };
+      addMessage(welcomeMessage);
+    }
   };
 
   const generateDebateTopics = (weekTopic) => {
@@ -98,33 +107,56 @@ const DebateTab = () => {
       content: userMessage,
       timestamp: Date.now()
     };
-    setMessages(prev => [...prev, userMsg]);
+    addMessage(userMsg);
     setIsLoading(true);
     setTurnCount(prev => prev + 1);
 
     try {
-      // Call Nova Engine
-      const response = await sendToNova({
-        mode: 'debate',
-        weekId: currentWeek || 'week-1',
-        chatHistory: messages.map(m => ({ role: m.role, content: m.content })),
-        userProfile: {
-          name: user?.name || 'Student',
-          age: user?.age || 8,
-          learnerStyle: user?.learnerStyle || 'normal',
-          vocabMastery: user?.vocabMastery || {}
-        },
-        userMessage
+      // Build debate prompt
+      const persona = buildPersonaDescription();
+      const debatePrompt = MODE_PROMPTS.debate.systemAddition;
+      const weekDataInfo = getCurrentWeekData(currentWeek || 'week-1');
+      
+      const systemPrompt = `${persona}
+
+**MODE: DEBATE**
+${debatePrompt}
+
+**DEBATE TOPIC:** ${debateTopic}
+**STUDENT POSITION:** ${userPosition || 'unknown'}
+**WEEK VOCAB:** ${weekDataInfo?.vocabulary?.map(v => v.word).join(', ') || 'common words'}
+
+Keep responses short (2-3 sentences). Be encouraging!`;
+
+      // Prepare chat history
+      const chatHistory = messages.map(m => ({
+        role: m.role,
+        content: m.content
+      }));
+
+      // Call AI Router
+      const aiResponse = await sendToAI({
+        systemPrompt,
+        chatHistory,
+        userMessage,
+        mode: 'debate'
       });
 
       // Add AI response to chat
       const aiMsg = {
         role: 'assistant',
-        content: response.ai_response,
-        timestamp: Date.now(),
-        pedagogyNote: response.pedagogy_note
+        content: aiResponse,
+        timestamp: Date.now()
       };
-      setMessages(prev => [...prev, aiMsg]);
+      addMessage(aiMsg);
+
+      // Auto-play TTS if enabled
+      if (autoPlayEnabled) {
+        await textToSpeech(aiResponse, {
+          voice: preferences.voice || 'nova',
+          autoPlay: true
+        });
+      }
 
     } catch (error) {
       console.error('Debate Error:', error);
@@ -133,7 +165,7 @@ const DebateTab = () => {
         content: "That's a good point! Tell me more about why you think that.",
         timestamp: Date.now()
       };
-      setMessages(prev => [...prev, errorMsg]);
+      addMessage(errorMsg);
     } finally {
       setIsLoading(false);
     }

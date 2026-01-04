@@ -23,6 +23,7 @@ import WorksheetGenerator from './components/common/WorksheetGenerator';
 import ReviewDashboard from './modules/review/ReviewDashboard';
 import Sidebar from './components/layout/Sidebar';
 import AITutor from './modules/ai_tutor/AITutor';
+import AITutorWidget from './modules/ai_tutor/AITutorWidget';
 import SaveToast from './components/common/SaveToast';
 import AutoSaveIndicator from './components/common/AutoSaveIndicator';
 import CongratulationsModal from './components/common/CongratulationsModal';
@@ -35,6 +36,9 @@ const App = () => (
       <Route path="/" element={<Navigate replace to="/week/1/read_explore" />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />
     </Routes>
+    
+    {/* Global AI Tutor Widget - V5 Premium */}
+    <AITutorWidget />
   </Router>
 );
 
