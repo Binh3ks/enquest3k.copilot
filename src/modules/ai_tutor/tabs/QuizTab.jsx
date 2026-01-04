@@ -57,6 +57,7 @@ const QuizTab = () => {
       const generatedQuestions = generateQuestions(data.vocabulary);
       setQuestions(generatedQuestions);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
 
   const currentQuestion = questions[currentQuestionIndex];

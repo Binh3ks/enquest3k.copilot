@@ -20,7 +20,6 @@ const PronunciationTab = () => {
   useEffect(() => {
     const data = getCurrentWeekData(currentWeek || 'week-1');
     setWeekData(data);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
 
   const currentWord = weekData?.vocabulary?.[currentWordIndex];
