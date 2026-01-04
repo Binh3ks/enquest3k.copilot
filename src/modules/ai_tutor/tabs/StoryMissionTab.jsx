@@ -42,15 +42,21 @@ const StoryMissionTab = () => {
   // Initialize mission with REAL SYLLABUS
   useEffect(() => {
     if (!initialized) {
-      initializeMission();
+      console.log('🚀 StoryMissionTab: Initializing mission...');
+      initializeMission().catch(err => {
+        console.error('❌ initializeMission error:', err);
+      });
       setInitialized(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const initializeMission = () => {
+  const initializeMission = async () => {
+    console.log('🎯 initializeMission called, messages.length:', messages.length);
+    
     // 🔥 Use real syllabus opening line
     const openingLine = week1RealData.nova_instructions.opening_line;
+    console.log('📝 Opening line:', openingLine);
     
     // Check if we have OLD opening message and clear if needed
     if (messages.length > 0) {
@@ -60,11 +66,15 @@ const StoryMissionTab = () => {
          firstMsg.content.includes("Let's begin") ||
          !firstMsg.content.includes('Hero Academy'));
       
+      console.log('🔍 Checking first message:', { isOldMessage, content: firstMsg.content.substring(0, 50) });
+      
       if (isOldMessage) {
         // Clear old messages and restart with new opening
+        console.log('🧹 Clearing old messages...');
         useTutorStore.getState().clearMessages('story');
       } else {
         // Already has correct opening, don't re-add
+        console.log('✅ Already has correct opening, skipping');
         return;
       }
     }
@@ -75,8 +85,24 @@ const StoryMissionTab = () => {
       content: openingLine,
       timestamp: Date.now()
     };
+    console.log('💬 Adding welcome message to chat...');
     addMessage('story', welcomeMessage);
     setMissionStatus('started');
+    console.log('✅ Message added, mission status set to started');
+    
+    // 🔊 Play opening message with TTS
+    try {
+      console.log('🎤 About to call textToSpeech with:', { 
+        text: openingLine.substring(0, 50) + '...', 
+        voice: 'nova' 
+      });
+      await textToSpeech(openingLine, {
+        voice: 'nova',
+        autoPlay: true
+      });
+    } catch (error) {
+      console.error('TTS error for opening message:', error);
+    }
     
     // Set hints from syllabus
     setHints([
