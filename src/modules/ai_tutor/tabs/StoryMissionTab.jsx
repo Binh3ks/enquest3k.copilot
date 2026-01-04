@@ -170,24 +170,27 @@ const StoryMissionTab = () => {
         mode: 'story'
       });
 
+      // Extract text from response object
+      const responseText = aiResponse.ai_response || aiResponse;
+
       // Add AI response to chat
       const aiMsg = {
         role: 'assistant',
-        content: aiResponse,
+        content: responseText,
         timestamp: Date.now()
       };
       addMessage('story', aiMsg);
 
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
-        await textToSpeech(aiResponse, {
+        await textToSpeech(responseText, {
           voice: 'nova', // Default voice
           autoPlay: true
         });
       }
 
       // Generate hints based on AI response (simple extraction)
-      const hintMatches = aiResponse.match(/Use: "([^"]+)"/g);
+      const hintMatches = responseText.match(/Use: "([^"]+)"/g);
       if (hintMatches) {
         const extractedHints = hintMatches.map(h => h.replace('Use: "', '').replace('"', ''));
         setHints(extractedHints);
@@ -197,7 +200,7 @@ const StoryMissionTab = () => {
       }
 
       // Check for mission completion
-      if (aiResponse.includes('mission complete') || aiResponse.includes('completed the mission')) {
+      if (responseText.includes('mission complete') || responseText.includes('completed the mission')) {
         setMissionStatus('completed');
       }
 

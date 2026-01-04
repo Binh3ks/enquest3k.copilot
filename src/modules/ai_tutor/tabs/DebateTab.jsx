@@ -157,17 +157,20 @@ Keep responses short (2-3 sentences). Be encouraging!`;
         mode: 'debate'
       });
 
+      // Extract text from response object
+      const responseText = aiResponse.ai_response || aiResponse;
+
       // Add AI response to chat
       const aiMsg = {
         role: 'assistant',
-        content: aiResponse,
+        content: responseText,
         timestamp: Date.now()
       };
       addMessage("debate", aiMsg);
 
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
-        await textToSpeech(aiResponse, {
+        await textToSpeech(responseText, {
           voice: 'nova', // Default voice
           autoPlay: true
         });
