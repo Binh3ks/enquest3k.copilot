@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, Heart, Sparkles, Loader2 } from 'lucide-react';
+import { MessageCircle, Heart, Sparkles, Loader2, Volume2 } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
-import sendToNova from '../../../services/ai_tutor/novaEngine';
+import { sendToAI } from '../../../services/ai_tutor/aiRouter';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import useTutorStore from '../../../services/ai_tutor/tutorStore';
+import { buildFreeTalkPrompt } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
+import { getCurrentWeekData } from '../../../data/weekData';
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -12,7 +16,12 @@ import { useUserStore } from '../../../stores/useUserStore';
  */
 const FreeTalkTab = () => {
   const { user, currentWeek } = useUserStore();
-  const [messages, setMessages] = useState([]);
+  const { messages, addMessage, autoPlayEnabled, preferences } = useTutorStore(state => ({
+    messages: state.messages['freetalk'] || [],
+    addMessage: (msg) => state.addMessage('freetalk', msg),
+    autoPlayEnabled: state.autoPlayEnabled,
+    preferences: state.preferences
+  }));
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [conversationTopic, setConversationTopic] = useState('');
@@ -33,22 +42,24 @@ const FreeTalkTab = () => {
   }, []);
 
   const initializeConversation = async () => {
-    const greetings = [
-      `Hi ${user?.name || 'there'}! 🌟 I'm Ms. Nova. What makes you happy?`,
-      `Hello ${user?.name || 'friend'}! 💫 What did you dream about last night?`,
-      `Hey ${user?.name || 'there'}! ✨ If you could be any animal, which one would you be?`,
-      `Hi ${user?.name || 'there'}! 🎨 What's your favorite thing to do after school?`,
-      `Hello ${user?.name || 'friend'}! 🌈 Tell me about something cool you saw today!`
-    ];
+    if (messages.length === 0) {
+      const greetings = [
+        `Hi ${user?.name || 'there'}! 🌟 I'm Ms. Nova. What makes you happy?`,
+        `Hello ${user?.name || 'friend'}! 💫 What did you dream about last night?`,
+        `Hey ${user?.name || 'there'}! ✨ If you could be any animal, which one would you be?`,
+        `Hi ${user?.name || 'there'}! 🎨 What's your favorite thing to do after school?`,
+        `Hello ${user?.name || 'friend'}! 🌈 Tell me about something cool you saw today!`
+      ];
 
-    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-    
-    const welcomeMessage = {
-      role: 'assistant',
-      content: randomGreeting,
-      timestamp: Date.now()
-    };
-    setMessages([welcomeMessage]);
+      const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+      
+      const welcomeMessage = {
+        role: 'assistant',
+        content: randomGreeting,
+        timestamp: Date.now()
+      };
+      addMessage(welcomeMessage);
+    }
   };
 
   // Handle user message
@@ -59,43 +70,62 @@ const FreeTalkTab = () => {
       content: userMessage,
       timestamp: Date.now()
     };
-    setMessages(prev => [...prev, userMsg]);
+    addMessage(userMsg);
     setIsLoading(true);
     setMessageCount(prev => prev + 1);
 
     // Detect topic from first user message
     if (messageCount === 0 && userMessage.length > 10) {
-      setConversationTopic(userMessage.split(' ')[0]); // Simple topic extraction
+      setConversationTopic(userMessage.split(' ')[0]);
     }
 
     try {
-      // Call Nova Engine
-      const response = await sendToNova({
-        mode: 'freetalk',
-        weekId: currentWeek || 'week-1',
-        chatHistory: messages.map(m => ({ role: m.role, content: m.content })),
-        userProfile: {
-          name: user?.name || 'Student',
-          age: user?.age || 8,
-          learnerStyle: user?.learnerStyle || 'normal',
-          vocabMastery: user?.vocabMastery || {}
-        },
-        userMessage
+      // Get week data for subtle vocabulary guidance
+      const weekData = getCurrentWeekData(currentWeek || 'week-1');
+      
+      // Build prompt using V5 promptLibrary
+      const systemPrompt = buildFreeTalkPrompt({
+        weekData,
+        userName: user?.name || 'Student',
+        userAge: user?.age || 8,
+        scaffoldingLevel: preferences.scaffoldingLevel || 2
+      });
+
+      // Prepare chat history
+      const chatHistory = messages.map(m => ({
+        role: m.role,
+        content: m.content
+      }));
+
+      // Call AI Router (Groq → Gemini fallback)
+      const aiResponse = await sendToAI({
+        systemPrompt,
+        chatHistory,
+        userMessage,
+        mode: 'freetalk'
       });
 
       // Add AI response to chat
       const aiMsg = {
         role: 'assistant',
-        content: response.ai_response,
-        timestamp: Date.now(),
-        pedagogyNote: response.pedagogy_note
+        content: aiResponse,
+        timestamp: Date.now()
       };
-      setMessages(prev => [...prev, aiMsg]);
+      addMessage(aiMsg);
 
-      // Update hints (show more sparingly in free talk)
-      if (response.suggested_hints && response.suggested_hints.length > 0) {
-        setHints(response.suggested_hints);
-        // Only show hints if student seems stuck (very short responses)
+      // Auto-play TTS if enabled
+      if (autoPlayEnabled) {
+        await textToSpeech(aiResponse, {
+          voice: preferences.voice || 'nova',
+          autoPlay: true
+        });
+      }
+
+      // Extract hints if present
+      const hintMatches = aiResponse.match(/Use: "([^"]+)"/g);
+      if (hintMatches) {
+        const extractedHints = hintMatches.map(h => h.replace('Use: "', '').replace('"', ''));
+        setHints(extractedHints);
         if (userMessage.trim().split(/\s+/).length <= 3 && messageCount > 2) {
           setShowHints(true);
         } else {
@@ -110,7 +140,7 @@ const FreeTalkTab = () => {
         content: "That's interesting! Tell me more about that?",
         timestamp: Date.now()
       };
-      setMessages(prev => [...prev, errorMsg]);
+      addMessage(errorMsg);
     } finally {
       setIsLoading(false);
     }

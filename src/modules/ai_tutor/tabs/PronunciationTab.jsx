@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Mic, Volume2, CheckCircle2, XCircle, RotateCcw } from 'lucide-react';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import useTutorStore from '../../../services/ai_tutor/tutorStore';
 
 /**
  * Pronunciation Tab - Practice speaking target vocabulary
@@ -23,18 +25,26 @@ const PronunciationTab = () => {
 
   const currentWord = weekData?.vocabulary?.[currentWordIndex];
   const totalWords = weekData?.vocabulary?.length || 0;
+  const { preferences } = useTutorStore();
 
-  // Text-to-Speech
-  const speakWord = (word) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(word);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.8; // Slower for learning
-      utterance.pitch = 1;
-      window.speechSynthesis.cancel(); // Cancel any ongoing speech
-      window.speechSynthesis.speak(utterance);
-    } else {
-      alert('Sorry, your browser does not support text-to-speech.');
+  // Text-to-Speech using 4-layer TTS
+  const speakWord = async (word) => {
+    try {
+      await textToSpeech(word, {
+        voice: preferences.voice || 'nova',
+        autoPlay: true,
+        speed: 0.8
+      });
+    } catch (error) {
+      console.error('TTS Error:', error);
+      // Fallback to browser TTS
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.8;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+      }
     }
   };
 

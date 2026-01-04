@@ -389,6 +389,54 @@ FORBIDDEN BEHAVIORS:
 ${NOVA_CORE_PERSONA.forbidden.map(f => `- ${f}`).join('\n')}`;
 }
 
+/**
+ * Build Story Mode Prompt
+ */
+export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel = 2 }) {
+  const persona = buildPersonaDescription();
+  const modePrompt = MODE_PROMPTS.story.systemAddition;
+  
+  const vocabList = weekData?.vocabulary?.map(v => v.word).join(', ') || 'common words';
+  const grammar = weekData?.grammar || 'simple present tense only';
+  
+  return `${persona}
+
+**MODE: STORY MISSION**
+${modePrompt}
+
+**THIS WEEK'S VOCABULARY:** ${vocabList}
+**ALLOWED GRAMMAR:** ${grammar}
+
+**STUDENT:** ${userName}, age ${userAge}
+**SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
+
+Keep your responses short (2-3 sentences max). Ask ONE question at a time.`;
+}
+
+/**
+ * Build Free Talk Mode Prompt
+ */
+export function buildFreeTalkPrompt({ weekData, userName, userAge, scaffoldingLevel = 2 }) {
+  const persona = buildPersonaDescription();
+  const modePrompt = MODE_PROMPTS.freetalk.systemAddition;
+  
+  const vocabList = weekData?.vocabulary?.map(v => v.word).join(', ') || 'common words';
+  const grammar = weekData?.grammar || 'simple present tense only';
+  
+  return `${persona}
+
+**MODE: FREE TALK**
+${modePrompt}
+
+**THIS WEEK'S VOCABULARY (subtle guidance):** ${vocabList}
+**ALLOWED GRAMMAR:** ${grammar}
+
+**STUDENT:** ${userName}, age ${userAge}
+**SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
+
+Be conversational and natural. Keep responses short (1-2 sentences).`;
+}
+
 export default {
   NOVA_CORE_PERSONA,
   NOVA_RESPONSE_TEMPLATE,
@@ -401,5 +449,7 @@ export default {
   getModePrompt,
   getScaffoldingHint,
   getFallbackPhrase,
-  buildPersonaDescription
+  buildPersonaDescription,
+  buildStoryPrompt,
+  buildFreeTalkPrompt
 };

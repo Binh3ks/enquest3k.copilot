@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Brain, CheckCircle2, XCircle, Trophy, RotateCcw } from 'lucide-react';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import useTutorStore from '../../../services/ai_tutor/tutorStore';
 
 /**
  * Quiz Tab - Test vocabulary and grammar knowledge
@@ -59,17 +61,31 @@ const QuizTab = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
   const totalQuestions = questions.length;
+  const { autoPlayEnabled, preferences } = useTutorStore();
 
-  // Handle answer selection
-  const handleAnswerClick = (answer) => {
-    if (isAnswered) return; // Prevent multiple selections
+  // Handle answer selection with audio feedback
+  const handleAnswerClick = async (answer) => {
+    if (isAnswered) return;
     
     setSelectedAnswer(answer);
     setIsAnswered(true);
 
-    // Check if correct
-    if (answer === currentQuestion.correctAnswer) {
+    const isCorrect = answer === currentQuestion.correctAnswer;
+    if (isCorrect) {
       setScore(prev => prev + 1);
+    }
+
+    // Audio feedback
+    if (autoPlayEnabled) {
+      const feedback = isCorrect ? "That's correct! Well done!" : `Not quite. The answer is ${currentQuestion.correctAnswer}.`;
+      try {
+        await textToSpeech(feedback, {
+          voice: preferences.voice || 'nova',
+          autoPlay: true
+        });
+      } catch (error) {
+        console.error('TTS Error:', error);
+      }
     }
   };
 
