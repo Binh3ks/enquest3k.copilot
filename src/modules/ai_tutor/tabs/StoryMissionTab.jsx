@@ -62,48 +62,36 @@ const StoryMissionTab = () => {
     const openingLine = week1RealData.nova_instructions.opening_line;
     console.log('📝 Opening line:', openingLine);
     
-    let shouldAddMessage = true;
-    
-    // Check if we have OLD opening message and clear if needed
+    // Check if already initialized
     if (messages.length > 0) {
-      const firstMsg = messages[0];
+      console.log('✅ Story mission already initialized, skipping message add but will play TTS');
       
-      // 🔥 Extract text from content (handle both string and object)
-      const contentText = typeof firstMsg.content === 'string' 
-        ? firstMsg.content 
-        : firstMsg.content?.ai_response || firstMsg.content?.content || '';
-      
-      const isOldMessage = firstMsg.role === 'assistant' && 
-        (contentText.includes('Ready to start') || 
-         contentText.includes("Let's begin") ||
-         !contentText.includes('Hero Academy'));
-      
-      console.log('🔍 Checking first message:', { isOldMessage, content: contentText.substring(0, 50) });
-      
-      if (isOldMessage) {
-        // Clear old messages and restart with new opening
-        console.log('🧹 Clearing old messages...');
-        useTutorStore.getState().clearMessages('story');
-        shouldAddMessage = true;
-      } else {
-        // Already has correct opening, don't re-add message but PLAY TTS
-        console.log('✅ Already has correct opening, skipping message add but will play TTS');
-        shouldAddMessage = false;
+      // 🔊 ALWAYS play opening message with TTS
+      try {
+        console.log('🎤 About to call textToSpeech with:', { 
+          text: openingLine.substring(0, 50) + '...', 
+          voice: 'nova' 
+        });
+        await textToSpeech(openingLine, {
+          voice: 'nova',
+          autoPlay: true
+        });
+      } catch (error) {
+        console.error('TTS error for opening message:', error);
       }
+      return;
     }
     
-    // Add new opening message only if needed
-    if (shouldAddMessage) {
-      const welcomeMessage = {
-        role: 'assistant',
-        content: openingLine,
-        timestamp: Date.now()
-      };
-      console.log('💬 Adding welcome message to chat...');
-      addMessage('story', welcomeMessage);
-      setMissionStatus('started');
-      console.log('✅ Message added, mission status set to started');
-    }
+    // Add opening message
+    const welcomeMessage = {
+      role: 'assistant',
+      content: openingLine,
+      timestamp: Date.now()
+    };
+    console.log('💬 Adding welcome message to chat...');
+    addMessage('story', welcomeMessage);
+    setMissionStatus('started');
+    console.log('✅ Message added, mission status set to started');
     
     // 🔊 ALWAYS play opening message with TTS (even if message already exists)
     try {
