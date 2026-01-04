@@ -1,215 +1,268 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Sword, Shuffle, Send, Mic, MicOff } from 'lucide-react';
-import { speakText } from '../../../utils/AudioHelper';
-import { analyzeAnswer } from '../../../utils/smartCheck';
-import { debateAI } from '../../../services/aiProviders';
-import { week2TutorChecklist } from '../../../services/aiTutor/tutorPrompts';
+import { useState, useEffect, useRef } from 'react';
+import { Users, ThumbsUp, ThumbsDown, Lightbulb, Loader2 } from 'lucide-react';
+import ChatBubble from '../components/ChatBubble';
+import InputBar from '../components/InputBar';
+import sendToNova from '../../../services/ai_tutor/novaEngine';
+import { useUserStore } from '../../../stores/useUserStore';
+import { getCurrentWeekData } from '../../../data/weekData';
 
 /**
- * DebateTab - Structured debate practice
+ * Debate Tab - Practice expressing opinions and reasoning
+ * Age-appropriate debates on week's topic
  */
-const DebateTab = ({ weekData, recognitionRef }) => {
-  const [debateTopic, setDebateTopic] = useState(null);
+const DebateTab = () => {
+  const { user, currentWeek } = useUserStore();
+  const [weekData, setWeekData] = useState(null);
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState("");
-  const [isListening, setIsListening] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [debateTopic, setDebateTopic] = useState(null);
+  const [userPosition, setUserPosition] = useState(null); // 'agree' | 'disagree'
+  const [turnCount, setTurnCount] = useState(0);
+  
+  const chatEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
-  const scrollRef = useRef(null);
-
-  const weekId = weekData?.weekId || 1;
-  const weekInfo = { weekId };
-
-  // Auto-scroll
+  // Auto-scroll to bottom
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Generate debate topics
-  const generateDebateTopics = () => {
-    if (weekId < 15) return [];
+  // Load week data and initialize debate
+  useEffect(() => {
+    const data = getCurrentWeekData(currentWeek || 'week-1');
+    setWeekData(data);
+    initializeDebate(data);
+  }, [currentWeek]);
 
-    const topics = [];
+  const initializeDebate = (data) => {
+    // Generate age-appropriate debate topics based on week theme
+    const topics = generateDebateTopics(data?.topic || 'Animals');
+    const selectedTopic = topics[Math.floor(Math.random() * topics.length)];
+    setDebateTopic(selectedTopic);
 
-    if (weekId === 9 || weekId === 10) {
-      topics.push({ id: 1, topic: "City life is better than countryside", minTurns: 5 });
-    }
-    if (weekId >= 11 && weekId <= 14) {
-      topics.push({ id: 2, topic: "Which community helper is most important?", minTurns: 5 });
-    }
-
-    if (weekId >= 15 && weekId <= 30) {
-      topics.push(
-        { id: 3, topic: "Is homework helpful or not?", minTurns: 5 },
-        { id: 4, topic: "What's the best school subject?", minTurns: 5 }
-      );
-    }
-    if (weekId >= 31 && weekId <= 80) {
-      topics.push(
-        { id: 5, topic: "Online learning vs classroom learning", minTurns: 8 },
-        { id: 6, topic: "Should students have pets in classroom?", minTurns: 8 }
-      );
-    }
-    if (weekId >= 81) {
-      topics.push(
-        { id: 7, topic: "Technology makes people less social", minTurns: 10 },
-        { id: 8, topic: "Social media: helpful or harmful?", minTurns: 10 }
-      );
-    }
-
-    return topics;
+    const welcomeMessage = {
+      role: 'assistant',
+      content: `👋 Hi ${user?.name || 'there'}! Let's have a friendly debate!\n\n🤔 Here's what I think: "${selectedTopic}"\n\nDo you agree or disagree? Why?`,
+      timestamp: Date.now()
+    };
+    setMessages([welcomeMessage]);
   };
 
-  const debateTopics = generateDebateTopics();
+  const generateDebateTopics = (weekTopic) => {
+    const topicMap = {
+      'Animals': [
+        'Dogs are better pets than cats',
+        'Wild animals should live in zoos',
+        'All animals should be vegetarian',
+        'Birds are the most interesting animals'
+      ],
+      'Family': [
+        'Older siblings should help with chores more',
+        'Everyone should have a pet at home',
+        'Family dinners are important every day'
+      ],
+      'Food': [
+        'Pizza is the best food ever',
+        'Vegetables are more important than fruits',
+        'Breakfast is the most important meal'
+      ],
+      'School': [
+        'School should start later in the morning',
+        'Homework is helpful for learning',
+        'Art class is as important as math'
+      ],
+      'default': [
+        'Books are better than movies',
+        'Summer is better than winter',
+        'Playing outside is more fun than video games'
+      ]
+    };
 
-  const startDebate = (topic) => {
-    setDebateTopic(topic);
-    const msg = `Let's debate: "${topic.topic}". Do you agree or disagree?`;
-    setMessages([{ role: 'ai', text: msg }]);
-    speakText("What's your opinion?");
+    return topicMap[weekTopic] || topicMap['default'];
   };
 
-  const sendDebateMessage = async () => {
-    if (!input.trim()) return;
-    const userMsg = input;
+  // Handle position selection
+  const handlePositionSelect = (position) => {
+    setUserPosition(position);
+    const positionMessage = position === 'agree' 
+      ? 'I agree!' 
+      : 'I disagree!';
+    handleSendMessage(positionMessage);
+  };
 
-    // SmartCheck grammar
-    const checkResult = analyzeAnswer(userMsg, [], 'critical');
-    if (checkResult.status === 'warning') {
-      setMessages(prev => [...prev,
-        { role: 'user', text: userMsg },
-        { role: 'system', text: `⚠️ ${checkResult.message}` }
-      ]);
-    } else {
-      setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
-    }
-    setInput("");
-
-    const turnNum = messages.filter(m => m.role === 'user').length + 1;
+  // Handle user message
+  const handleSendMessage = async (userMessage) => {
+    // Add user message to chat
+    const userMsg = {
+      role: 'user',
+      content: userMessage,
+      timestamp: Date.now()
+    };
+    setMessages(prev => [...prev, userMsg]);
+    setIsLoading(true);
+    setTurnCount(prev => prev + 1);
 
     try {
-      const result = await debateAI(userMsg, {
-        topic: debateTopic.topic,
-        debateHistory: messages,
-        weekInfo,
-        weekId,
-        turnNumber: turnNum
+      // Call Nova Engine
+      const response = await sendToNova({
+        mode: 'debate',
+        weekId: currentWeek || 'week-1',
+        chatHistory: messages.map(m => ({ role: m.role, content: m.content })),
+        userProfile: {
+          name: user?.name || 'Student',
+          age: user?.age || 8,
+          learnerStyle: user?.learnerStyle || 'normal',
+          vocabMastery: user?.vocabMastery || {}
+        },
+        userMessage
       });
-      console.log(`[Debate] Provider: ${result.provider}`);
 
-      speakText(result.text);
-
-      setTimeout(() => {
-        setMessages(prev => [...prev, { role: 'ai', text: result.text }]);
-      }, 800);
-    } catch (error) {
-      console.error('Debate error:', error);
-      setTimeout(() => {
-        const fallback = turnNum <= 3
-          ? "That's an interesting point. Can you explain more?"
-          : "Great argument! You're thinking critically!";
-        setMessages(prev => [...prev, { role: 'ai', text: fallback }]);
-      }, 800);
-    }
-  };
-
-  const toggleVoice = () => {
-    if (!recognitionRef?.current) {
-      alert('Speech recognition not supported. Try Chrome or Edge.');
-      return;
-    }
-    if (isListening) {
-      recognitionRef.current.stop();
-    } else {
-      recognitionRef.current.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setInput(transcript);
+      // Add AI response to chat
+      const aiMsg = {
+        role: 'assistant',
+        content: response.ai_response,
+        timestamp: Date.now(),
+        pedagogyNote: response.pedagogy_note
       };
-      recognitionRef.current.onend = () => setIsListening(false);
-      recognitionRef.current.onerror = () => setIsListening(false);
-      recognitionRef.current.start();
-      setIsListening(true);
+      setMessages(prev => [...prev, aiMsg]);
+
+    } catch (error) {
+      console.error('Debate Error:', error);
+      const errorMsg = {
+        role: 'assistant',
+        content: "That's a good point! Tell me more about why you think that.",
+        timestamp: Date.now()
+      };
+      setMessages(prev => [...prev, errorMsg]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto p-4 space-y-3">
-        {weekId < 15 ? (
-          <div className="text-center py-12">
-            <Sword size={48} className="mx-auto text-slate-300 mb-3"/>
-            <p className="text-sm font-bold text-slate-600 mb-2">🔒 Debate Locked</p>
-            <p className="text-xs text-slate-500 px-6">Debates are available starting Week 15. Keep learning!</p>
-          </div>
-        ) : !debateTopic ? (
-          <>
-            <div className="text-center py-6">
-              <Sword size={48} className="mx-auto text-rose-600 opacity-50 mb-3"/>
-              <p className="text-sm font-bold text-slate-700 mb-4">Choose a Debate Topic</p>
-              {debateTopics.slice(0, 4).map(topic => (
-                <button
-                  key={topic.id}
-                  onClick={() => startDebate(topic)}
-                  className="w-full p-3 mb-2 bg-white border-2 border-rose-100 rounded-xl text-xs font-bold text-slate-700 hover:bg-rose-50 transition-all text-left"
-                >
-                  <span className="block text-rose-600 text-[10px] uppercase font-black mb-1">Min {topic.minTurns} turns</span>
-                  {topic.topic}
-                </button>
-              ))}
+    <div className="flex flex-col h-full bg-gradient-to-br from-red-50 to-orange-50">
+      {/* Header */}
+      <div className="bg-white border-b border-red-200 px-6 py-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+              <Users size={20} className="text-red-600" />
             </div>
-            {weekId === 2 && (
-              <div className="mt-4 bg-white p-3 rounded-lg border border-indigo-100 text-left text-xs text-slate-700">
-                <p className="text-[11px] font-black text-indigo-600 uppercase">🎯 Week 2 Checklist</p>
-                <ul className="list-disc list-inside mt-2 space-y-1">
-                  {week2TutorChecklist.checklist.map((c, i) => <li key={i}>{c}</li>)}
-                </ul>
-                <p className="text-[11px] font-black text-indigo-600 uppercase mt-3">💡 Tips</p>
-                <ul className="list-disc list-inside mt-2 space-y-1">
-                  {week2TutorChecklist.tips.map((t, i) => <li key={i}>{t}</li>)}
-                </ul>
-              </div>
-            )}
-          </>
-        ) : (
-          <>
-            {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-[20px] text-sm font-bold shadow-sm ${m.role === 'user' ? 'bg-rose-600 text-white rounded-tr-none' : 'bg-white text-slate-700 rounded-tl-none border border-rose-200'}`}>
-                  {m.text}
-                </div>
-              </div>
-            ))}
-            <button onClick={() => { setDebateTopic(null); setMessages([]); }} className="w-full p-2 text-xs font-bold text-slate-500 hover:text-rose-600 flex items-center justify-center gap-1">
-              <Shuffle size={12}/>Change Topic
-            </button>
-            <div ref={scrollRef} />
-          </>
-        )}
+            <div>
+              <h2 className="text-lg font-bold text-gray-800">Friendly Debate</h2>
+              <p className="text-xs text-gray-500">Share your opinion!</p>
+            </div>
+          </div>
+
+          {/* Turn Counter */}
+          <div className="flex items-center space-x-2">
+            <span className="text-sm font-medium text-gray-700">
+              {turnCount} {turnCount === 1 ? 'turn' : 'turns'}
+            </span>
+          </div>
+        </div>
       </div>
 
-      {/* Input */}
-      {debateTopic && (
-        <div className="p-3 bg-white border-t flex gap-2 shrink-0">
-          <button
-            onClick={toggleVoice}
-            className={`p-2.5 rounded-full transition-all ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-slate-100 text-slate-600 hover:bg-rose-100 hover:text-rose-600'}`}
-          >
-            {isListening ? <MicOff size={16}/> : <Mic size={16}/>}
-          </button>
-          <input
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && sendDebateMessage()}
-            placeholder={isListening ? "Listening..." : "Type or speak..."}
-            className="flex-1 p-2.5 bg-slate-50 border-2 border-slate-200 rounded-[15px] outline-none text-xs font-bold focus:border-rose-300"
-            disabled={isListening}
+      {/* Debate Topic Card (shown initially) */}
+      {!userPosition && debateTopic && (
+        <div className="p-6 bg-white border-b border-gray-200">
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-gradient-to-r from-red-100 to-orange-100 rounded-xl p-6">
+              <div className="flex items-center space-x-2 mb-3">
+                <Lightbulb size={20} className="text-orange-600" />
+                <h3 className="font-bold text-gray-800">Debate Topic:</h3>
+              </div>
+              <p className="text-xl font-medium text-gray-800 mb-4">
+                "{debateTopic}"
+              </p>
+              
+              <div className="flex space-x-3">
+                <button
+                  onClick={() => handlePositionSelect('agree')}
+                  className="flex-1 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-2 font-medium"
+                >
+                  <ThumbsUp size={20} />
+                  <span>I Agree</span>
+                </button>
+                <button
+                  onClick={() => handlePositionSelect('disagree')}
+                  className="flex-1 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2 font-medium"
+                >
+                  <ThumbsDown size={20} />
+                  <span>I Disagree</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Chat Area */}
+      <div 
+        ref={chatContainerRef}
+        className="flex-1 overflow-y-auto px-6 py-4 space-y-2"
+      >
+        {messages.map((msg, index) => (
+          <ChatBubble
+            key={index}
+            role={msg.role}
+            content={msg.content}
+            timestamp={msg.timestamp}
+            pedagogyNote={msg.pedagogyNote}
           />
-          <button
-            onClick={sendDebateMessage}
-            disabled={isListening}
-            className="p-2.5 bg-rose-600 text-white rounded-full hover:bg-rose-700 disabled:opacity-50 transition-all"
-          >
-            <Send size={16}/>
-          </button>
+        ))}
+        
+        {isLoading && (
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center">
+              <Loader2 className="text-white animate-spin" size={20} />
+            </div>
+            <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
+              <p className="text-sm text-gray-500">Ms. Nova is thinking...</p>
+            </div>
+          </div>
+        )}
+        
+        <div ref={chatEndRef} />
+      </div>
+
+      {/* Helpful Phrases */}
+      {userPosition && turnCount < 3 && (
+        <div className="px-6 py-3 bg-yellow-50 border-t border-yellow-200">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-xs font-medium text-yellow-800 mb-2">💡 Helpful phrases:</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                I think...
+              </span>
+              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                Because...
+              </span>
+              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                In my opinion...
+              </span>
+              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                For example...
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Input Area */}
+      <InputBar
+        onSend={handleSendMessage}
+        disabled={isLoading || !userPosition}
+        placeholder={userPosition ? 'Explain your opinion...' : 'Choose agree or disagree first'}
+        showVoiceInput={false}
+      />
+
+      {/* Encouragement */}
+      {turnCount >= 5 && (
+        <div className="bg-gradient-to-r from-red-100 to-orange-100 px-4 py-2 text-center">
+          <p className="text-xs text-gray-700">
+            🌟 Great debate! You're learning to express your ideas clearly!
+          </p>
         </div>
       )}
     </div>

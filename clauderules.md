@@ -12,7 +12,7 @@
   - directory
   - filename
 - NEVER read:
-  `node_modules`, `dist`, `.git`, `build`.
+  `node_modules`, `dist`, `.git`, `build`, `src/legacy_archive`.
 
 ## 3. File Editing Rules
 - Prefer partial edits (diff-style).

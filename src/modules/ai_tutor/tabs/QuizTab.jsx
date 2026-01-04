@@ -1,325 +1,282 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Award, Send, Mic, MicOff, RotateCcw, Calculator, FlaskConical } from 'lucide-react';
-import { speakText } from '../../../utils/AudioHelper';
-import syllabusDB from '../../../data/syllabus_database';
-import { analyzeAnswer } from '../../../utils/smartCheck';
-import { mathAI, getActiveProvider, validateMathAnswer } from '../../../services/aiProviders';
+import { useState, useEffect } from 'react';
+import { Brain, CheckCircle2, XCircle, Trophy, RotateCcw } from 'lucide-react';
+import { useUserStore } from '../../../stores/useUserStore';
+import { getCurrentWeekData } from '../../../data/weekData';
 
 /**
- * QuizTab - Multi-Subject Quiz (Vocabulary, Math, Science)
+ * Quiz Tab - Test vocabulary and grammar knowledge
+ * Syllabus-aware quizzes with immediate feedback
  */
-const QuizTab = ({ weekData, recognitionRef }) => {
-  const [quizIndex, setQuizIndex] = useState(0);
-  const [quizScore, setQuizScore] = useState(0);
-  const [quizMessages, setQuizMessages] = useState([]);
-  const [quizInput, setQuizInput] = useState("");
-  const [isListening, setIsListening] = useState(false);
-  const [quizSubject, setQuizSubject] = useState('vocabulary');
-  const [quizMode, setQuizMode] = useState('current'); // current or review
-  const [currentQuizData, setCurrentQuizData] = useState(null);
-  const [previousProblems, setPreviousProblems] = useState([]);
-  const [previousQuestions, setPreviousQuestions] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+const QuizTab = () => {
+  const { user, currentWeek } = useUserStore();
+  const [weekData, setWeekData] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isAnswered, setIsAnswered] = useState(false);
+  const [score, setScore] = useState(0);
+  const [quizComplete, setQuizComplete] = useState(false);
 
-  const scrollRef = useRef(null);
-
-  const vocabList = weekData?.stations?.new_words?.vocab || [];
-  const weekId = weekData?.weekId || 1;
-  const weekInfo = syllabusDB[weekId] || {};
-  const weekLevel = weekId <= 14 ? 'beginner' : weekId <= 50 ? 'intermediate' : 'advanced';
-
-  // Get cumulative vocab (simplified - can be enhanced)
-  const cumulativeVocab = React.useMemo(() => {
-    return vocabList; // TODO: Implement cumulative loading if needed
-  }, [vocabList]);
-
-  // Auto-scroll
+  // Load week data and generate questions
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [quizMessages]);
-
-  const toggleVoice = () => {
-    if (!recognitionRef?.current) {
-      alert('Speech recognition not supported. Try Chrome or Edge.');
-      return;
+    const data = getCurrentWeekData(currentWeek || 'week-1');
+    setWeekData(data);
+    
+    if (data?.vocabulary) {
+      const generatedQuestions = generateQuestions(data.vocabulary);
+      setQuestions(generatedQuestions);
     }
-    if (isListening) {
-      recognitionRef.current.stop();
+  }, [currentWeek]);
+
+  // Generate quiz questions from vocabulary
+  const generateQuestions = (vocabulary) => {
+    const quizQuestions = [];
+    
+    // Question Type 1: What does this word mean?
+    vocabulary.forEach((vocab, index) => {
+      if (index < 5) { // Limit to 5 questions
+        const otherWords = vocabulary.filter(v => v.word !== vocab.word);
+        const wrongAnswers = otherWords
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3)
+          .map(v => v.meaning);
+        
+        const answers = [vocab.meaning, ...wrongAnswers]
+          .sort(() => Math.random() - 0.5);
+        
+        quizQuestions.push({
+          type: 'meaning',
+          question: `What does "${vocab.word}" mean?`,
+          word: vocab.word,
+          correctAnswer: vocab.meaning,
+          answers: answers
+        });
+      }
+    });
+
+    return quizQuestions;
+  };
+
+  const currentQuestion = questions[currentQuestionIndex];
+  const totalQuestions = questions.length;
+
+  // Handle answer selection
+  const handleAnswerClick = (answer) => {
+    if (isAnswered) return; // Prevent multiple selections
+    
+    setSelectedAnswer(answer);
+    setIsAnswered(true);
+
+    // Check if correct
+    if (answer === currentQuestion.correctAnswer) {
+      setScore(prev => prev + 1);
+    }
+  };
+
+  // Move to next question
+  const handleNext = () => {
+    if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex(prev => prev + 1);
+      setSelectedAnswer(null);
+      setIsAnswered(false);
     } else {
-      recognitionRef.current.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setQuizInput(transcript);
-      };
-      recognitionRef.current.onend = () => setIsListening(false);
-      recognitionRef.current.onerror = () => setIsListening(false);
-      recognitionRef.current.start();
-      setIsListening(true);
+      setQuizComplete(true);
     }
   };
 
-  const startConversationalQuiz = async (subject = 'vocabulary') => {
-    console.log(`[Quiz] Starting ${subject} quiz (${quizMode} mode) for Week ${weekId}`);
-    setIsLoading(true);
-    setQuizSubject(subject);
-    setQuizIndex(0);
-    setQuizScore(0);
-    setPreviousProblems([]);
-    setPreviousQuestions([]);
-
-    try {
-      if (subject === 'vocabulary') {
-        const activeVocab = quizMode === 'review' ? cumulativeVocab : vocabList;
-        if (activeVocab.length === 0) {
-          setQuizMessages([{ role: 'ai', text: "No vocabulary available." }]);
-          return;
-        }
-        const firstWord = activeVocab[0];
-        const def = weekLevel === 'beginner' ? firstWord.definition_en?.split('.')[0] : firstWord.definition_en;
-        const msg = `Let's play! I'll describe words. Ready? ${def}. What's the word?`;
-        setCurrentQuizData({ answer: firstWord.word, type: 'vocab' });
-        setQuizMessages([{ role: 'ai', text: msg }]);
-        speakText(msg);
-      } else if (subject === 'math') {
-        try {
-          console.log('[Quiz] Calling AI for math problem...');
-          const problem = await mathAI({
-            weekInfo,
-            vocabList,
-            weekId,
-            difficulty: weekLevel,
-            previousProblems: []
-          });
-          console.log(`[Quiz] Provider: ${getActiveProvider()}, Generated:`, problem.question);
-          setCurrentQuizData(problem);
-          setPreviousProblems([problem.question]);
-          const msg = `Math time! ${problem.question}`;
-          setQuizMessages([
-            { role: 'ai', text: msg },
-            { role: 'hint', text: problem.hint || "💡 Answer with number AND unit!" }
-          ]);
-          speakText(msg);
-        } catch (error) {
-          console.error('[Quiz] Gemini API error:', error);
-          setQuizMessages([{ role: 'ai', text: "Let's start with an easy problem!" }]);
-        }
-      } else if (subject === 'science') {
-        // Simplified fallback for science
-        const fallbackMsg = "Science quiz! Is a dog living or non-living?";
-        setCurrentQuizData({ q: "Is a dog living or non-living?", a: "living", options: ["living", "non-living"] });
-        setQuizMessages([{ role: 'ai', text: fallbackMsg }]);
-        speakText(fallbackMsg);
-      }
-    } finally {
-      setIsLoading(false);
-    }
+  // Reset quiz
+  const handleReset = () => {
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+    setScore(0);
+    setQuizComplete(false);
   };
 
-  const answerQuiz = async () => {
-    if (!quizInput.trim()) return;
-    const answer = quizInput.trim();
-
-    const activeVocab = quizMode === 'review' ? cumulativeVocab : vocabList;
-
-    // SmartCheck for non-math answers
-    if (quizSubject !== 'math') {
-      const checkResult = analyzeAnswer(answer, [], 'critical');
-      if (checkResult.status === 'warning') {
-        setQuizMessages(prev => [...prev, { role: 'system', text: `⚠️ ${checkResult.message}` }]);
-      }
-    }
-
-    let isCorrect = false;
-    let correctAnswer = "";
-    let feedback = "";
-
-    if (quizSubject === 'vocabulary') {
-      const currentWord = activeVocab[quizIndex];
-      correctAnswer = currentWord.word;
-      isCorrect = answer.toLowerCase() === currentWord.word.toLowerCase();
-      feedback = isCorrect ? "Correct! 🎉" : `It was "${correctAnswer}". Keep going!`;
-    } else if (quizSubject === 'math') {
-      correctAnswer = currentQuizData?.answer || '';
-      isCorrect = validateMathAnswer(answer, correctAnswer);
-
-      if (isCorrect) {
-        feedback = `Correct! 🎉 ${currentQuizData?.explanation || ''}`;
-      } else {
-        const hasNumber = answer.match(/\d+/);
-        if (hasNumber && !answer.match(/[a-z]/i)) {
-          feedback = `Remember to include the UNIT! The answer is "${correctAnswer}"`;
-        } else {
-          feedback = `Not quite. The answer is "${correctAnswer}". ${currentQuizData?.explanation || ''}`;
-        }
-      }
-    } else if (quizSubject === 'science') {
-      correctAnswer = currentQuizData?.a || '';
-      isCorrect = answer.toLowerCase().includes(correctAnswer.toLowerCase());
-      feedback = isCorrect ? "Correct! 🎉" : `The answer is "${correctAnswer}". Keep learning!`;
-    }
-
-    setQuizMessages(prev => [...prev,
-      { role: 'user', text: quizInput },
-      { role: 'ai', text: feedback }
-    ]);
-    setQuizInput("");
-
-    speakText(isCorrect ? "Correct!" : "Not quite.");
-
-    if (isCorrect) setQuizScore(prev => prev + 1);
-
-    const maxQuestions = quizSubject === 'vocabulary' ? Math.min(activeVocab.length, 5) : 5;
-
-    if (quizIndex < maxQuestions - 1) {
-      setTimeout(async () => {
-        try {
-          if (quizSubject === 'vocabulary') {
-            const nextWord = activeVocab[quizIndex + 1];
-            const def = weekLevel === 'beginner' ? nextWord.definition_en?.split('.')[0] : nextWord.definition_en;
-            const nextQ = `Next: ${def}. What word?`;
-            setCurrentQuizData({ answer: nextWord.word, type: 'vocab' });
-            setQuizMessages(prev => [...prev, { role: 'ai', text: nextQ }]);
-            speakText(nextQ);
-          } else if (quizSubject === 'math') {
-            console.log('[Quiz] Generating next math problem...');
-            const problem = await mathAI({
-              weekInfo,
-              vocabList,
-              weekId,
-              difficulty: weekLevel,
-              previousProblems
-            });
-            console.log('[Quiz] Generated:', problem.question);
-            setCurrentQuizData(problem);
-            setPreviousProblems(prev => [...prev, problem.question]);
-            setQuizMessages(prev => [...prev,
-              { role: 'ai', text: problem.question },
-              { role: 'hint', text: problem.hint || "💡 Answer with number AND unit!" }
-            ]);
-            speakText(problem.question);
-          }
-        } catch (error) {
-          console.error('Quiz generation error:', error);
-        }
-      }, 1500);
-      setQuizIndex(prev => prev + 1);
-    } else {
-      setTimeout(() => {
-        const finalMsg = `Done! Score: ${quizScore + (isCorrect ? 1 : 0)}/${maxQuestions}`;
-        setQuizMessages(prev => [...prev, { role: 'ai', text: finalMsg }]);
-        speakText(finalMsg);
-      }, 1500);
-    }
-  };
-
-  const resetQuiz = () => {
-    setQuizMessages([]);
-    setQuizSubject('');
-    setCurrentQuizData(null);
-    setQuizInput('');
-    setQuizIndex(0);
-    setQuizScore(0);
-  };
+  if (!weekData || questions.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <p className="text-gray-500">Loading quiz...</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto p-4 space-y-3">
-        {quizMessages.length === 0 ? (
-          <div className="text-center py-6">
-            <Award size={48} className="mx-auto text-amber-500 opacity-50 mb-3"/>
-            <p className="text-sm font-bold text-slate-700 mb-2">Multi-Subject Quiz!</p>
-            <p className="text-xs text-slate-600 mb-4 px-4">Choose a subject to test your knowledge</p>
-
-            <div className="space-y-2">
-              {/* Quiz Mode Toggle */}
-              <div className="flex gap-2 mb-3">
-                <button
-                  onClick={() => setQuizMode('current')}
-                  className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all ${quizMode === 'current' ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-600'}`}
-                >
-                  This Week
-                </button>
-                <button
-                  onClick={() => setQuizMode('review')}
-                  className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all ${quizMode === 'review' ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-600'}`}
-                >
-                  Review All (W1-{weekId})
-                </button>
-              </div>
-
-              {/* Subject Buttons */}
-              <button
-                onClick={() => startConversationalQuiz('vocabulary')}
-                disabled={isLoading}
-                className="w-full p-3 bg-amber-500 text-white rounded-xl font-black text-sm uppercase hover:bg-amber-600 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                {isLoading ? <><span className="animate-spin">⏳</span>Loading...</> : <><Award size={16}/>Vocabulary Quiz</>}
-              </button>
-              <button
-                onClick={() => startConversationalQuiz('math')}
-                disabled={isLoading}
-                className="w-full p-3 bg-blue-500 text-white rounded-xl font-black text-sm uppercase hover:bg-blue-600 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                {isLoading ? <><span className="animate-spin">⏳</span>Loading...</> : <><Calculator size={16}/>Math Quiz</>}
-              </button>
-              <button
-                onClick={() => startConversationalQuiz('science')}
-                disabled={isLoading}
-                className="w-full p-3 bg-green-500 text-white rounded-xl font-black text-sm uppercase hover:bg-green-600 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                {isLoading ? <><span className="animate-spin">⏳</span>Loading...</> : <><FlaskConical size={16}/>Science Quiz</>}
-              </button>
+    <div className="flex flex-col h-full bg-gradient-to-br from-yellow-50 to-orange-50">
+      {/* Header */}
+      <div className="bg-white border-b border-yellow-200 px-6 py-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+              <Brain size={20} className="text-yellow-600" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-gray-800">Quick Quiz</h2>
+              <p className="text-xs text-gray-500">Test your knowledge!</p>
             </div>
           </div>
-        ) : (
-          <>
-            {quizMessages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : m.role === 'hint' ? 'justify-center' : 'justify-start'}`}>
-                {m.role === 'hint' ? (
-                  <div className="px-3 py-1 bg-amber-50 border border-amber-200 rounded-full text-[10px] font-bold text-amber-600">
-                    {m.text}
-                  </div>
-                ) : (
-                  <div className={`max-w-[85%] p-3 rounded-[20px] text-sm font-bold shadow-sm ${m.role === 'user' ? 'bg-amber-500 text-white rounded-tr-none' : 'bg-white text-slate-700 rounded-tl-none border border-amber-200'}`}>
-                    {m.text}
-                  </div>
-                )}
+
+          {/* Score */}
+          {!quizComplete && (
+            <div className="flex items-center space-x-4">
+              <div className="text-right">
+                <p className="text-sm font-medium text-gray-700">
+                  Question {currentQuestionIndex + 1} / {totalQuestions}
+                </p>
+                <p className="text-xs text-yellow-600">
+                  Score: {score}
+                </p>
               </div>
-            ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex items-center justify-center p-6 overflow-y-auto">
+        {quizComplete ? (
+          // Completion Screen
+          <div className="text-center max-w-md">
+            <div className="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Trophy size={48} className="text-yellow-600" />
+            </div>
+            <h3 className="text-3xl font-bold text-gray-800 mb-2">
+              Quiz Complete! 🎉
+            </h3>
+            <p className="text-xl text-gray-600 mb-4">
+              You scored <span className="font-bold text-yellow-600">{score}</span> out of <span className="font-bold">{totalQuestions}</span>
+            </p>
+            
+            {/* Performance feedback */}
+            <div className="bg-white rounded-xl p-6 mb-6">
+              <div className="text-6xl mb-3">
+                {score === totalQuestions ? '🌟' : score >= totalQuestions * 0.7 ? '😊' : '💪'}
+              </div>
+              <p className="text-lg font-medium text-gray-700">
+                {score === totalQuestions 
+                  ? 'Perfect! You\'re amazing!' 
+                  : score >= totalQuestions * 0.7 
+                  ? 'Great job! Keep practicing!' 
+                  : 'Good effort! Try again to improve!'}
+              </p>
+            </div>
+
             <button
-              onClick={resetQuiz}
-              className="w-full p-2 text-xs font-bold text-slate-500 hover:text-amber-600 flex items-center justify-center gap-1"
+              onClick={handleReset}
+              className="px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors flex items-center space-x-2 mx-auto"
             >
-              <RotateCcw size={12}/>Back to Quiz Menu
+              <RotateCcw size={20} />
+              <span>Try Again</span>
             </button>
-            <div ref={scrollRef} />
-          </>
+          </div>
+        ) : (
+          // Quiz Card
+          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full">
+            {/* Question */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-medium text-yellow-600">
+                  Question {currentQuestionIndex + 1}
+                </span>
+                <span className="text-sm text-gray-500">
+                  Week {currentWeek} Vocabulary
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800">
+                {currentQuestion.question}
+              </h3>
+            </div>
+
+            {/* Answer Options */}
+            <div className="space-y-3">
+              {currentQuestion.answers.map((answer, index) => {
+                const isCorrect = answer === currentQuestion.correctAnswer;
+                const isSelected = answer === selectedAnswer;
+                
+                let buttonClass = 'w-full p-4 text-left rounded-xl border-2 transition-all duration-200 ';
+                
+                if (!isAnswered) {
+                  buttonClass += 'border-gray-300 hover:border-yellow-500 hover:bg-yellow-50 cursor-pointer';
+                } else {
+                  if (isSelected) {
+                    buttonClass += isCorrect 
+                      ? 'border-green-500 bg-green-50' 
+                      : 'border-red-500 bg-red-50';
+                  } else if (isCorrect) {
+                    buttonClass += 'border-green-500 bg-green-50';
+                  } else {
+                    buttonClass += 'border-gray-200 bg-gray-50 opacity-50';
+                  }
+                }
+
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswerClick(answer)}
+                    disabled={isAnswered}
+                    className={buttonClass}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-lg text-gray-800">{answer}</span>
+                      {isAnswered && isSelected && (
+                        isCorrect ? (
+                          <CheckCircle2 size={24} className="text-green-600" />
+                        ) : (
+                          <XCircle size={24} className="text-red-600" />
+                        )
+                      )}
+                      {isAnswered && !isSelected && isCorrect && (
+                        <CheckCircle2 size={24} className="text-green-600" />
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Feedback & Next Button */}
+            {isAnswered && (
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="flex items-center justify-between">
+                  <p className={`text-lg font-medium ${
+                    selectedAnswer === currentQuestion.correctAnswer 
+                      ? 'text-green-700' 
+                      : 'text-red-700'
+                  }`}>
+                    {selectedAnswer === currentQuestion.correctAnswer 
+                      ? '✨ Correct! Well done!' 
+                      : `💡 The correct answer is: ${currentQuestion.correctAnswer}`}
+                  </p>
+                  <button
+                    onClick={handleNext}
+                    className="px-6 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors font-medium"
+                  >
+                    {currentQuestionIndex < totalQuestions - 1 ? 'Next →' : 'Finish'}
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         )}
       </div>
 
-      {/* Input */}
-      {quizMessages.length > 0 && quizIndex < Math.min(vocabList.length, 5) && (
-        <div className="p-3 bg-white border-t flex gap-2 shrink-0">
-          <button
-            onClick={toggleVoice}
-            className={`p-2.5 rounded-full transition-all ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-slate-100 text-slate-600 hover:bg-amber-100 hover:text-amber-600'}`}
-          >
-            {isListening ? <MicOff size={16}/> : <Mic size={16}/>}
-          </button>
-          <input
-            value={quizInput}
-            onChange={e => setQuizInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && answerQuiz()}
-            placeholder={isListening ? "Listening..." : "Type or speak..."}
-            className="flex-1 p-2.5 bg-slate-50 border-2 border-slate-200 rounded-[15px] outline-none text-xs font-bold focus:border-amber-300"
-            disabled={isListening}
-          />
-          <button
-            onClick={answerQuiz}
-            disabled={isListening}
-            className="p-2.5 bg-amber-500 text-white rounded-full hover:bg-amber-600 disabled:opacity-50 transition-all"
-          >
-            <Send size={16}/>
-          </button>
+      {/* Progress Bar */}
+      {!quizComplete && (
+        <div className="bg-white border-t border-gray-200 p-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-gray-600">Progress</span>
+              <span className="text-sm font-medium text-gray-800">
+                {currentQuestionIndex + 1} / {totalQuestions}
+              </span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div
+                className="bg-yellow-500 h-2 rounded-full transition-all duration-300"
+                style={{ width: `${((currentQuestionIndex + 1) / totalQuestions) * 100}%` }}
+              />
+            </div>
+          </div>
         </div>
       )}
     </div>
