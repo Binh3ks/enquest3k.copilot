@@ -53,30 +53,10 @@ const FreeTalkTab = () => {
   }, []);
 
   const initializeConversation = async () => {
-    // 🔥 Check if we have OLD placeholder messages and clear if needed
+    // Check if already initialized
     if (messages.length > 0) {
-      const firstMsg = messages[0];
-      
-      // Extract text from content (handle both string and object)
-      const contentText = typeof firstMsg.content === 'string' 
-        ? firstMsg.content 
-        : firstMsg.content?.ai_response || firstMsg.content?.content || '';
-      
-      // Check if it's old placeholder (not Hero Academy themed)
-      const isOldPlaceholder = firstMsg.role === 'assistant' && 
-        !contentText.includes('Hero Academy') &&
-        (contentText.includes('What makes you happy') || 
-         contentText.includes('dream about') ||
-         contentText.includes('favorite thing'));
-      
-      if (isOldPlaceholder) {
-        console.log('🧹 FreeTalkTab: Clearing old placeholder messages...');
-        useTutorStore.getState().clearMessages('freetalk');
-      } else {
-        // Already has correct Hero Academy greeting
-        console.log('✅ FreeTalkTab: Already has Hero Academy greeting');
-        return;
-      }
+      console.log('✅ FreeTalkTab: Already initialized');
+      return;
     }
     
     // Add new Hero Academy greeting
