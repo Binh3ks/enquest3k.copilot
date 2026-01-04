@@ -10,6 +10,10 @@ export function buildNovaPrompt({ mission, state, userInput, currentGoal, requir
   const context = state.studentContext || {};
   const weekId = mission.context?.weekId || 1;
   const conversationHistory = (state.conversationHistory || []).slice(-6);
+  const tenseRule =
+    weekId === 1
+      ? "Use ONLY present simple. No past tense, no future tense, no modals."
+      : "Use only grammar allowed for this week.";
 
   const studentInfo = Object.entries(context)
     .filter(([, value]) => value !== null)
@@ -63,7 +67,8 @@ ${vocabList}
 - JSON ONLY. No markdown. No extra text.
 - response_text: max 2 sentences, warm.
 - next_question: ONE question ending with "?".
-- Grammar: Present Simple only. ${getGrammarSummary(weekId)}
+- Low-agency: You lead the lesson. Do not ask the student to choose what to do next.
+- Grammar: ${tenseRule} ${getGrammarSummary(weekId)}
 - You are NOT allowed to:
   * choose the next goal
   * decide mission completion

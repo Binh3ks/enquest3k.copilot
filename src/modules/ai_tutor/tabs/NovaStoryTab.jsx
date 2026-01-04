@@ -24,13 +24,40 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
   const [error, setError] = useState(null);
   const [showAnalytics, setShowAnalytics] = useState(false);
   const [currentHints, setCurrentHints] = useState([]);
-  const scrollRef = useRef(null);
+  const [currentQuestion, setCurrentQuestion] = useState("");
+  const listRef = useRef(null);
+  const bottomRef = useRef(null);
+  const hintsKey = currentHints.join("|");
 
   const missions = getMissionsForWeek(weekData?.weekId || 1);
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+    bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+  }, [messages.length, currentQuestion, hintsKey]);
+
+  const getLastQuestion = (messageList) => {
+    for (let i = messageList.length - 1; i >= 0; i -= 1) {
+      const msg = messageList[i];
+      const text = typeof msg?.text === "string" ? msg.text.trim() : "";
+      if (msg?.role === "ai" && text.endsWith("?")) {
+        return text;
+      }
+    }
+    return "";
+  };
+
+  const updateHintsForQuestion = (question, mission, studentContext) => {
+    const trimmed = (question || "").trim();
+    if (!trimmed) {
+      setCurrentHints([]);
+      setCurrentQuestion("");
+      return;
+    }
+    const beatWithTask = { task: trimmed, aiPrompt: trimmed };
+    const hints = getHints(mission, beatWithTask, studentContext);
+    setCurrentHints(hints);
+    setCurrentQuestion(trimmed);
+  };
 
   const toggleVoice = () => {
     if (!recognitionRef?.current) {
@@ -52,11 +79,15 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
   };
 
   const processResponse = async (response) => {
+    const newMessages = [];
     if (response.story_beat) {
-      setMessages((prev) => [...prev, { role: "ai", text: response.story_beat }]);
+      newMessages.push({ role: "ai", text: response.story_beat });
     }
     if (response.task) {
-      setMessages((prev) => [...prev, { role: "ai", text: response.task }]);
+      newMessages.push({ role: "ai", text: response.task });
+    }
+    if (newMessages.length > 0) {
+      setMessages((prev) => [...prev, ...newMessages]);
     }
     
     const fullText = `${response.story_beat || ''} ${response.task || ''}`;
@@ -70,11 +101,8 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
       }
     }
     
-    if (response.task) {
-      const beatWithTask = { task: response.task, aiPrompt: response.task };
-      const hints = getHints(currentMission, beatWithTask, engine.state.studentContext);
-      setCurrentHints(hints);
-    }
+    const question = response.task || getLastQuestion([...messages, ...newMessages]);
+    updateHintsForQuestion(question, currentMission, engine.state.studentContext);
     
     setState(MissionState.AWAITING_INPUT);
   };
@@ -104,11 +132,8 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
       await speakText(fullText);
     }
     
-    if (opening.task) {
-      const beatWithTask = { task: opening.task, aiPrompt: opening.task };
-      const hints = getHints(mission, beatWithTask, missionEngine.state.studentContext);
-      setCurrentHints(hints);
-    }
+    const openingQuestion = opening.task || getLastQuestion(initialMessages);
+    updateHintsForQuestion(openingQuestion, mission, missionEngine.state.studentContext);
     
     setState(MissionState.AWAITING_INPUT);
   };
@@ -152,6 +177,7 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
     setEngine(null);
     setMessages([]);
     setCurrentHints([]);
+    setCurrentQuestion("");
     clearMessages();
   };
 
@@ -255,17 +281,47 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
         )}
       </div>
 
-      <div className="flex-1 space-y-2 overflow-y-auto" ref={scrollRef}>
-        {messages.map((msg, i) => (
-          <div
-            key={i}
-            className={`p-3 rounded-xl text-sm ${
-              msg.role === "ai" ? "bg-purple-50" : "bg-white border"
-            }`}
-          >
-            {msg.text}
-          </div>
-        ))}
+      <div className="flex-1 space-y-2 overflow-y-auto" ref={listRef}>
+        {(() => {
+          const normalizedQuestion = currentQuestion.trim();
+          const lastQuestionIndex = normalizedQuestion
+            ? messages.reduce(
+                (acc, msg, idx) => {
+                  const text = typeof msg?.text === "string" ? msg.text.trim() : "";
+                  return msg?.role === "ai" && text === normalizedQuestion ? idx : acc;
+                },
+                -1
+              )
+            : -1;
+
+          return messages.map((msg, i) => (
+            <React.Fragment key={i}>
+              <div
+                className={`p-3 rounded-xl text-sm ${
+                  msg.role === "ai" ? "bg-purple-50" : "bg-white border"
+                }`}
+              >
+                {msg.text}
+              </div>
+              {i === lastQuestionIndex && currentHints.length > 0 && (
+                <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl">
+                  <div className="flex flex-wrap gap-1">
+                    {currentHints.map((h, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setInput((prev) => prev + h + " ")}
+                        className="px-2 py-1 bg-white border rounded-lg text-xs"
+                      >
+                        {h}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </React.Fragment>
+          ));
+        })()}
+        <div ref={bottomRef} />
       </div>
 
       {error && (
@@ -274,24 +330,6 @@ export default function NovaStoryTab({ weekData, recognitionRef }) {
             Oops! Something went wrong
           </p>
           <p className="text-xs text-red-600 mt-1">{error}</p>
-        </div>
-      )}
-      
-      <div ref={scrollRef} />
-      
-      {currentHints.length > 0 && (
-        <div className="p-2 bg-green-50 border-2 border-green-200 rounded-xl">
-          <div className="flex flex-wrap gap-1">
-            {currentHints.map((h, i) => (
-              <button
-                key={i}
-                onClick={() => setInput((prev) => prev + h + " ")}
-                className="px-2 py-1 bg-white border rounded-lg text-xs"
-              >
-                {h}
-              </button>
-            ))}
-          </div>
         </div>
       )}
       
