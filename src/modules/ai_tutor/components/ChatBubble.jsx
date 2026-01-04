@@ -54,7 +54,7 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
           </p>
 
           {/* Pedagogy Note (Debug Mode) */}
-          {pedagogyNote && process.env.NODE_ENV === 'development' && (
+          {pedagogyNote && import.meta.env.DEV && (
             <div className="mt-2 pt-2 border-t border-gray-200">
               <p className="text-xs text-purple-600 font-mono">
                 📚 {pedagogyNote}

@@ -21,7 +21,6 @@ const DebateTab = () => {
     autoPlayEnabled: state.autoPlayEnabled,
     preferences: state.preferences
   }));
-  const [weekData, setWeekData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [debateTopic, setDebateTopic] = useState(null);
   const [userPosition, setUserPosition] = useState(null);
@@ -38,8 +37,8 @@ const DebateTab = () => {
   // Load week data and initialize debate
   useEffect(() => {
     const data = getCurrentWeekData(currentWeek || 'week-1');
-    setWeekData(data);
     initializeDebate(data);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
 
   const initializeDebate = (data) => {

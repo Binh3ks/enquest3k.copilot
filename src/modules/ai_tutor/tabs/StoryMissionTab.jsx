@@ -40,6 +40,7 @@ const StoryMissionTab = () => {
   // Initialize mission
   useEffect(() => {
     initializeMission();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const initializeMission = async () => {
@@ -127,7 +128,7 @@ const StoryMissionTab = () => {
 
       // Check for mission completion
       if (aiResponse.includes('mission complete') || aiResponse.includes('completed the mission')) {
-        setMissionStatus(response.mission_status);
+        setMissionStatus('completed');
       }
 
     } catch (error) {
