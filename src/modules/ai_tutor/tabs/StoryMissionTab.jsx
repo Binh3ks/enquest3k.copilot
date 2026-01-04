@@ -28,6 +28,7 @@ const StoryMissionTab = () => {
   const [turnCount, setTurnCount] = useState(0);
   const [showHints, setShowHints] = useState(false);
   const [silentTurns, setSilentTurns] = useState(0);
+  const [initialized, setInitialized] = useState(false);
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -39,11 +40,14 @@ const StoryMissionTab = () => {
 
   // Initialize mission
   useEffect(() => {
-    initializeMission();
+    if (!initialized) {
+      initializeMission();
+      setInitialized(true);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const initializeMission = async () => {
+  const initializeMission = () => {
     if (messages.length === 0) {
       const welcomeMessage = {
         role: 'assistant',

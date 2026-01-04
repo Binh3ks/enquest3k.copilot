@@ -25,6 +25,7 @@ const DebateTab = () => {
   const [debateTopic, setDebateTopic] = useState(null);
   const [userPosition, setUserPosition] = useState(null);
   const [turnCount, setTurnCount] = useState(0);
+  const [initialized, setInitialized] = useState(false);
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -36,8 +37,11 @@ const DebateTab = () => {
 
   // Load week data and initialize debate
   useEffect(() => {
-    const data = getCurrentWeekData(currentWeek || 'week-1');
-    initializeDebate(data);
+    if (!initialized) {
+      const data = getCurrentWeekData(currentWeek || 'week-1');
+      initializeDebate(data);
+      setInitialized(true);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
 
