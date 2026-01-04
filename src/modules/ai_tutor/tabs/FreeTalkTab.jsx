@@ -27,6 +27,7 @@ const FreeTalkTab = () => {
   const [conversationTopic, setConversationTopic] = useState('');
   const [showHints, setShowHints] = useState(false);
   const [messageCount, setMessageCount] = useState(0);
+  const [initialized, setInitialized] = useState(false);
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -38,11 +39,14 @@ const FreeTalkTab = () => {
 
   // Initialize conversation
   useEffect(() => {
-    initializeConversation();
+    if (!initialized) {
+      initializeConversation();
+      setInitialized(true);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const initializeConversation = async () => {
+  const initializeConversation = () => {
     if (messages.length === 0) {
       const greetings = [
         `Hi ${user?.name || 'there'}! 🌟 I'm Ms. Nova. What makes you happy?`,
