@@ -31,6 +31,7 @@ const audioCache = new Map();
 // Current playback state
 let currentAudio = null;
 let isPlaying = false;
+let isSpeaking = false; // 🔥 Lock to prevent concurrent TTS calls
 
 // TTS Engine configuration
 const TTS_CONFIG = {
@@ -75,6 +76,16 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     return { success: false, error: 'Empty text' };
   }
 
+  // 🔥 Check if already speaking - prevent concurrent calls
+  if (isSpeaking) {
+    console.warn('⚠️ TTS: Already speaking, canceling previous...');
+    window.speechSynthesis.cancel(); // Force cancel
+    stopAudio(); // Stop any audio elements
+    isSpeaking = false; // Reset lock
+  }
+
+  isSpeaking = true; // 🔥 Set lock
+
   console.log('🎤 TTS Request:', { 
     text: text.substring(0, 100) + '...', 
     autoPlay, 
@@ -91,6 +102,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     if (autoPlay) {
       await playAudio(cachedUrl);
     }
+    isSpeaking = false; // 🔥 Release lock for cached audio
     return {
       success: true,
       audioUrl: cachedUrl,
@@ -146,6 +158,8 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
           await playAudio(audioUrl);
         }
 
+        isSpeaking = false; // 🔥 Release lock on success
+
         return {
           success: true,
           audioUrl,
@@ -163,6 +177,8 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   }
 
   console.error('❌ TTS: All layers failed!');
+  isSpeaking = false; // 🔥 Release lock on failure
+  
   return {
     success: false,
     error: 'All TTS layers failed',

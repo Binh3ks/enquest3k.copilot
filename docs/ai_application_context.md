@@ -1,6 +1,6 @@
 # EngQuest AI Context (Compact)
 
-_Last Updated: 2026-01-04T08:58:03.626Z_
+_Last Updated: 2026-01-04T10:27:12.582Z_
 
 ## TL;DR
 - ESL learning app: weekly lessons → stations (reading, vocab, grammar, etc.) → AI tutor

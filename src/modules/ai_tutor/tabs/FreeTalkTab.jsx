@@ -31,6 +31,7 @@ const FreeTalkTab = () => {
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
+  const initializingRef = useRef(false); // 🔥 Prevent double initialization
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -39,9 +40,14 @@ const FreeTalkTab = () => {
 
   // Initialize conversation
   useEffect(() => {
-    if (!initialized) {
-      initializeConversation();
-      setInitialized(true);
+    if (!initialized && !initializingRef.current) {
+      initializingRef.current = true; // 🔥 Mark as initializing
+      initializeConversation().catch(err => {
+        console.error('❌ initializeConversation error:', err);
+        initializingRef.current = false; // Reset on error
+      }).finally(() => {
+        setInitialized(true);
+      });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

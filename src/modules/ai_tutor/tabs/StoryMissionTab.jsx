@@ -33,6 +33,7 @@ const StoryMissionTab = () => {
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
+  const initializingRef = useRef(false); // 🔥 Prevent double initialization
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -41,12 +42,15 @@ const StoryMissionTab = () => {
 
   // Initialize mission with REAL SYLLABUS
   useEffect(() => {
-    if (!initialized) {
+    if (!initialized && !initializingRef.current) {
       console.log('🚀 StoryMissionTab: Initializing mission...');
+      initializingRef.current = true; // 🔥 Mark as initializing
       initializeMission().catch(err => {
         console.error('❌ initializeMission error:', err);
+        initializingRef.current = false; // Reset on error
+      }).finally(() => {
+        setInitialized(true);
       });
-      setInitialized(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
