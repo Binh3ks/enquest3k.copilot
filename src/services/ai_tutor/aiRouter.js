@@ -22,13 +22,13 @@ const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || '';
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent';
+const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
 
 // Provider configuration
 const PROVIDERS = {
   groq: {
     name: 'Groq',
-    model: 'llama-3.3-70b-versatile', // 🔥 FIX: Updated model (3.1 deprecated)
+    model: 'llama-3.1-70b-versatile', // 🔥 FIX: Updated model (3.1 deprecated)
     maxTokens: 1024,
     temperature: 0.7,
     enabled: !!GROQ_API_KEY,
@@ -36,7 +36,7 @@ const PROVIDERS = {
   },
   gemini: {
     name: 'Gemini',
-    model: 'gemini-2.0-flash-exp',
+    model: 'gemini-2.0-flash',
     maxTokens: 2048,
     temperature: 0.7,
     enabled: !!GEMINI_API_KEY,
@@ -80,7 +80,7 @@ export async function sendToAI({
   // 🔥 LAYER 1: Try Groq first for speed
   if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
     try {
-      console.log('🚀 Layer 1: Trying Groq (llama-3.3-70b-versatile)...');
+      console.log('🚀 Layer 1: Trying Groq (llama-3.1-70b-versatile)...');
       const response = await callGroq(messages);
       console.log(`✅ Groq succeeded in ${Date.now() - startTime}ms`);
       return {
@@ -218,7 +218,7 @@ async function callGemini(messages) {
   // 🔥 STRICT JSON ENFORCEMENT: No markdown, no backticks
   const jsonSchemaInstruction = `
 🔥 CRITICAL OUTPUT FORMAT:
-Return ONLY a valid JSON object. No markdown formatting, no triple backticks, no code blocks. Just pure JSON.
+Return ONLY a valid JSON object. No markdown, no triple backticks.
 
 Required JSON structure:
 {
