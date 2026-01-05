@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Shuffle } from 'lucide-react';
 
-const ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => {
+const ScrambledHints = ({ currentQuestion, targetVocab = [], show = true }) => {
   const [shuffledHints, setShuffledHints] = useState([]);
 
   const generateScrambledHints = () => {
