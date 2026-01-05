@@ -115,79 +115,120 @@ export const week1RealData = {
     { number: 10, word: "ten" }
   ],
   
-  // === 3 STORY MISSIONS (MS. NOVA MUST USE THIS) ===
+  // === 3 STORY MISSIONS (SCHOOL-BASED, WEEK 1 VOCAB) ===
   story_missions: [
     {
       mission_id: 1,
-      title: "First Day at Hero Academy",
-      title_vi: "Ngày Đầu Tiên Tại Học Viện Anh Hùng",
+      title: "First Day at School",
+      title_vi: "Ngày Đầu Tiên Đi Học",
+      theme: "Self-introduction",
       
-      scenario: `Meet Ms. Nova at Hero Academy! Tell her your name and age.`,
+      // Short description for UI
+      scenario: `Your first day at school! Tell your teacher your name and age.`,
       
-      scenario_full: `Welcome to Hero Academy! This is your first day as a young hero in training.
-
-Ms. Nova, your teacher, is standing at the entrance with a warm smile. She wants to know who you are!
-
-Your mission: Introduce yourself to Ms. Nova. Tell her your NAME and your AGE.
-
-The conversation will flow naturally - just like meeting a new friend. Ms. Nova will ask questions one at a time, and you can answer at your own pace.`,
+      // Context for AI (not shown to student)
+      mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging.`,
       
+      // Vocabulary focus for this mission
       target_vocab: ["name", "age", "student"],
+      
+      // Grammar pattern to practice
+      target_pattern: "I am [name/age/student]",
+      
+      // Topic boundaries (guide AI conversation)
+      conversation_topics: [
+        "Student's name",
+        "Student's age",
+        "Being a student",
+        "Feelings about first day"
+      ],
+      
+      // Example questions AI can ask (not hardcoded, just examples)
+      example_questions: [
+        "What is your name?",
+        "How old are you?",
+        "Are you a student?",
+        "How are you today?"
+      ],
+      
       minimum_turns: 10,
       
       success_criteria: [
-        "Introduces name using 'I am [name]' or 'My name is [name]'",
-        "States age using 'I am [age] years old'",
-        "Responds naturally to at least 10 conversation turns"
+        "Uses 'I am' correctly for name",
+        "States age with 'years old'",
+        "Uses 'student' naturally"
       ]
     },
     {
       mission_id: 2,
-      title: "Choosing Your Hero Power",
-      title_vi: "Chọn Sức Mạnh Anh Hùng",
+      title: "What's in Your Backpack?",
+      title_vi: "Có Gì Trong Ba Lô?",
+      theme: "School belongings",
       
-      scenario: `Talk with Ms. Nova about what kind of hero you want to be!`,
+      scenario: `Show Ms. Nova what you have in your backpack!`,
       
-      scenario_full: `Now that Ms. Nova knows your name and age, it's time for the exciting part!
-
-Every student at Hero Academy gets to choose their special HERO POWER. Will you be super fast? Super strong? Super smart?
-
-Your mission: Talk with Ms. Nova about what kind of hero you want to be. Describe your hero power!
-
-Ms. Nova will guide you through discovering your hero identity. This conversation will help you practice saying "I am a [type] hero" naturally.`,
+      mission_context: `The student talks about their school supplies. This mission practices "I have..." pattern with vocabulary: backpack, book, notebook. Ms. Nova asks about items in the backpack and encourages the student to describe them using present simple.`,
       
-      target_vocab: ["hero", "power", "boy", "girl"],
+      target_vocab: ["backpack", "book", "notebook"],
+      
+      target_pattern: "I have a [item]",
+      
+      conversation_topics: [
+        "What's in the backpack",
+        "Books and notebooks",
+        "School supplies",
+        "Colors and sizes"
+      ],
+      
+      example_questions: [
+        "What do you have in your backpack?",
+        "Do you have a book?",
+        "What color is your notebook?",
+        "How many books do you have?"
+      ],
+      
       minimum_turns: 12,
       
       success_criteria: [
-        "Uses 'hero' in conversation",
-        "Describes a hero power or hero type",
-        "Maintains natural conversation for at least 12 turns"
+        "Uses 'I have' correctly",
+        "Names at least 2 school items",
+        "Describes items with adjectives"
       ]
     },
     {
       mission_id: 3,
-      title: "Your Hero Identity Card",
-      title_vi: "Thẻ Danh Tính Anh Hùng",
+      title: "Meeting Your Teacher",
+      title_vi: "Gặp Gỡ Giáo Viên",
+      theme: "School environment",
       
-      scenario: `Help Ms. Nova create your Hero Identity Card with all your info!`,
+      scenario: `Learn about your teacher and classroom!`,
       
-      scenario_full: `Excellent work! Ms. Nova is now ready to create your official Hero Identity Card.
-
-But she wants to make sure she has everything correct. She'll review your name, age, and hero power with you.
-
-Your mission: Have a complete conversation where you confidently introduce yourself as a hero. Use everything you've learned!
-
-This is your chance to show Ms. Nova that you can introduce yourself like a real hero. The conversation will feel natural and fun - just like talking with a friend about your superhero dreams.`,
+      mission_context: `The student has a conversation about their teacher and classroom. This mission practices "This is..." and "My teacher is..." patterns with vocabulary: teacher, school, classroom. Focus on describing the learning environment.`,
       
-      target_vocab: ["name", "age", "student", "hero", "power"],
+      target_vocab: ["teacher", "school", "classroom"],
+      
+      target_pattern: "This is my [teacher/school/classroom]",
+      
+      conversation_topics: [
+        "The teacher",
+        "The classroom",
+        "The school",
+        "Learning activities"
+      ],
+      
+      example_questions: [
+        "Who is your teacher?",
+        "What is your classroom like?",
+        "Do you like your school?",
+        "What do you do in class?"
+      ],
+      
       minimum_turns: 15,
       
       success_criteria: [
-        "Introduces self completely (name + age + hero identity)",
-        "Uses all target vocabulary naturally",
-        "Maintains engaging conversation for at least 15 turns",
-        "Shows confidence in self-introduction"
+        "Uses 'This is' correctly",
+        "Describes teacher/classroom",
+        "Uses all target vocabulary"
       ]
     }
   ],
@@ -203,13 +244,14 @@ This is your chance to show Ms. Nova that you can introduce yourself like a real
   
   // === MS. NOVA AI TUTOR INSTRUCTIONS ===
   nova_instructions: {
-    persona: "Friendly teacher at Hero Academy, warm and human-like",
+    persona: "Friendly English teacher, warm and human-like",
     tone: "Warm, encouraging, natural - like a patient friend",
     
+    // Opening lines for each mission (PRESENT SIMPLE ONLY - Week 1 grammar)
     opening_lines_by_mission: {
-      mission_1: "Hello! I'm Ms. Nova, your teacher at Hero Academy. I'm so happy to meet you! What's your name?",
-      mission_2: "Great to see you again! Now, let's talk about your hero power. What kind of hero do you want to be?",
-      mission_3: "Welcome back! Let's create your Hero Identity Card together. Can you tell me your name again?"
+      mission_1: "Hello! I am Ms. Nova, your English teacher. What is your name?",
+      mission_2: "Hi again! I want to know about your backpack. What do you have in your backpack?",
+      mission_3: "Welcome back! Tell me about your teacher and your classroom!"
     },
     
     conversation_style: [
@@ -218,7 +260,8 @@ This is your chance to show Ms. Nova that you can introduce yourself like a real
       "Build on previous answers - show active listening",
       "NO emojis - text-to-speech will read them aloud",
       "Keep responses under 30 words",
-      "Maintain conversation for minimum 10-15 turns per mission"
+      "Maintain conversation for minimum 10-15 turns per mission",
+      "ONLY use present simple tense - Week 1 grammar scope"
     ],
     
     recast_strategy: "ALWAYS recast student errors by modeling correct form naturally",

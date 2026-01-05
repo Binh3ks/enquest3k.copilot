@@ -60,12 +60,13 @@ const FreeTalkTab = () => {
     }
     
     // Add natural greeting (NO EMOJI - TTS compatibility)
+    // PRESENT SIMPLE ONLY - Week 1 grammar guardrail
     const greetings = [
-      `Hi ${user?.name || 'there'}! I'm Ms. Nova. What did you do today?`,
-      `Hello ${user?.name || 'friend'}! How are you feeling today?`,
-      `Hey ${user?.name || 'there'}! I'm Ms. Nova. Tell me about yourself!`,
-      `Hi ${user?.name || 'there'}! What's something fun you did recently?`,
-      `Hello ${user?.name || 'friend'}! I'm Ms. Nova. What do you want to talk about?`
+      `Hi ${user?.name || 'there'}! I am Ms. Nova. How are you today?`,
+      `Hello ${user?.name || 'friend'}! What is your name?`,
+      `Hey ${user?.name || 'there'}! I am Ms. Nova. Tell me about yourself!`,
+      `Hi ${user?.name || 'there'}! How old are you?`,
+      `Hello ${user?.name || 'friend'}! I am Ms. Nova. Do you like school?`
     ];
 
     const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -76,7 +77,7 @@ const FreeTalkTab = () => {
       timestamp: Date.now()
     };
     addMessage("freetalk", welcomeMessage);
-    console.log('💬 FreeTalkTab: Added greeting (no emoji)');
+    console.log('💬 FreeTalkTab: Added greeting (present simple only)');
     
     // 🔊 Play TTS for opening message
     try {
