@@ -27,8 +27,8 @@ const TutorWindow = () => {
   };
 
   const windowClasses = (widgetSize === 'large')
-    ? 'w-[50vw] h-[100vh] right-0 top-0'
-    : 'w-[400px] h-[600px] right-6 bottom-24';
+    ? 'w-[50vw] h-[100vh] right-0 top-0 text-lg'
+    : 'w-[400px] h-[600px] right-6 bottom-24 text-base';
 
   return (
     <div className={`
