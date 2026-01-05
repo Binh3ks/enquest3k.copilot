@@ -10,19 +10,21 @@ import { Send, Loader2, Mic, MicOff } from 'lucide-react';
  * @param {string} props.placeholder - Placeholder text
  * @param {boolean} props.showVoiceInput - Show microphone button (default true)
  */
-const InputBar = ({ 
-  onSend, 
-  disabled = false, 
-  placeholder = 'Speak or type...', 
-  showVoiceInput = true 
+const InputBar = ({
+  onSend,
+  disabled = false,
+  placeholder = 'Speak or type...',
+  showVoiceInput = true
 }) => {
   const [message, setMessage] = useState('');
   const [isListening, setIsListening] = useState(false);
-  const [shouldAutoSend, setShouldAutoSend] = useState(false); // 🔥 Flag for auto-send
+  const [shouldAutoSend, setShouldAutoSend] = useState(false);
   const [recognition, setRecognition] = useState(null);
-  const [silenceTimer, setSilenceTimer] = useState(null); // 🔥 Timer for silence detection
+
+  // 🔥 Use refs for timer management (better pattern)
   const textareaRef = useRef(null);
-  const lastTranscriptRef = useRef(''); // 🔥 Track last transcript to detect changes
+  const lastTranscriptRef = useRef('');
+  const silenceTimerRef = useRef(null); // Store timer in ref instead of state
 
   // Auto-send after voice input completes
   useEffect(() => {
@@ -70,19 +72,17 @@ const InputBar = ({
       // 🔥 Silence Detection: If transcript changed, reset timer
       if (transcript !== lastTranscriptRef.current) {
         lastTranscriptRef.current = transcript;
-        
+
         // Clear existing timer
-        if (silenceTimer) {
-          clearTimeout(silenceTimer);
+        if (silenceTimerRef.current) {
+          clearTimeout(silenceTimerRef.current);
         }
 
-        // Set new timer for 0.8 seconds of silence (faster auto-send)
-        const timer = setTimeout(() => {
-          console.log('🔇 Detected 0.8s silence, stopping recognition...');
+        // Set new timer for 1.5 seconds of silence
+        silenceTimerRef.current = setTimeout(() => {
+          console.log('🔇 Detected 1.5s silence, stopping recognition...');
           recognitionInstance.stop();
-        }, 800);
-        
-        setSilenceTimer(timer);
+        }, 1500);
       }
 
       // 🔥 If final result detected, also trigger auto-send after brief delay
@@ -96,13 +96,13 @@ const InputBar = ({
     recognitionInstance.onend = () => {
       console.log('🎤 Voice recognition ended');
       setIsListening(false);
-      
+
       // Clear silence timer
-      if (silenceTimer) {
-        clearTimeout(silenceTimer);
-        setSilenceTimer(null);
+      if (silenceTimerRef.current) {
+        clearTimeout(silenceTimerRef.current);
+        silenceTimerRef.current = null;
       }
-      
+
       // 🔥 Auto-send if we have content
       if (message.trim()) {
         setShouldAutoSend(true);
@@ -112,11 +112,11 @@ const InputBar = ({
     recognitionInstance.onerror = (event) => {
       console.error('Speech recognition error:', event.error);
       setIsListening(false);
-      
+
       // Clear silence timer on error
-      if (silenceTimer) {
-        clearTimeout(silenceTimer);
-        setSilenceTimer(null);
+      if (silenceTimerRef.current) {
+        clearTimeout(silenceTimerRef.current);
+        silenceTimerRef.current = null;
       }
     };
 
@@ -126,11 +126,11 @@ const InputBar = ({
       if (recognitionInstance) {
         recognitionInstance.stop();
       }
-      if (silenceTimer) {
-        clearTimeout(silenceTimer);
+      if (silenceTimerRef.current) {
+        clearTimeout(silenceTimerRef.current);
       }
     };
-  }, [message, silenceTimer]);
+  }, [message]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -172,11 +172,11 @@ const InputBar = ({
       // Stop listening
       recognition.stop();
       setIsListening(false);
-      
+
       // Clear any pending silence timer
-      if (silenceTimer) {
-        clearTimeout(silenceTimer);
-        setSilenceTimer(null);
+      if (silenceTimerRef.current) {
+        clearTimeout(silenceTimerRef.current);
+        silenceTimerRef.current = null;
       }
     } else {
       // Start listening
@@ -202,13 +202,13 @@ const InputBar = ({
       console.log('⌨️ User started typing, aborting voice input...');
       recognition.stop();
       setIsListening(false);
-      
-      if (silenceTimer) {
-        clearTimeout(silenceTimer);
-        setSilenceTimer(null);
+
+      if (silenceTimerRef.current) {
+        clearTimeout(silenceTimerRef.current);
+        silenceTimerRef.current = null;
       }
     }
-    
+
     setMessage(newMessage);
   };
 
@@ -225,22 +225,33 @@ const InputBar = ({
             onClick={handleVoiceInput}
             disabled={disabled}
             className={`
-              flex-shrink-0 rounded-full flex items-center justify-center
+              relative flex-shrink-0 rounded-full flex items-center justify-center
               transition-all duration-300 ease-in-out
               ${isMicPriority ? 'w-14 h-14' : 'w-10 h-10'}
-              ${isListening 
-                ? 'bg-red-500 text-white shadow-lg animate-pulse' 
+              ${isListening
+                ? 'bg-red-500 text-white shadow-lg'
                 : 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:shadow-xl hover:scale-105'
               }
               ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
             `}
             aria-label={isListening ? 'Stop listening' : 'Start voice input'}
           >
-            {isListening ? (
-              <MicOff size={isMicPriority ? 28 : 20} />
-            ) : (
-              <Mic size={isMicPriority ? 28 : 20} />
+            {/* Waveform effect when listening */}
+            {isListening && (
+              <>
+                <div className="absolute inset-0 rounded-full bg-red-400 animate-ping opacity-75"></div>
+                <div className="absolute inset-0 rounded-full bg-red-300 animate-pulse"></div>
+              </>
             )}
+
+            {/* Icon */}
+            <div className="relative z-10">
+              {isListening ? (
+                <MicOff size={isMicPriority ? 28 : 20} />
+              ) : (
+                <Mic size={isMicPriority ? 28 : 20} />
+              )}
+            </div>
           </button>
         )}
 
@@ -289,7 +300,7 @@ const InputBar = ({
       {/* Dynamic hint text */}
       <p className="text-xs text-gray-400 mt-2 text-center">
         {isListening
-          ? '🎤 Listening... Auto-sends after 0.8s silence!'
+          ? '🎤 Listening... Auto-sends after 1.5s silence!'
           : isMicPriority
             ? '🎤 Tap mic to speak • or type to chat'
             : 'Press Enter to send • Shift+Enter for new line'

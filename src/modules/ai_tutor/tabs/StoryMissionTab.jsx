@@ -156,11 +156,12 @@ const StoryMissionTab = () => {
         content: m.content
       }));
 
-      // Call AI Router (Groq → Gemini fallback)
+      // Call AI Router (Groq → Gemini fallback) with Grammar Guard
       const aiResponse = await sendToAI({
         systemPrompt,
         chatHistory,
         userMessage,
+        weekId: 1, // Week 1 grammar scope (present simple only)
         mode: 'story'
       });
 

@@ -5,6 +5,11 @@
  * Layer 1: Groq (llama-3.3-70b-versatile) - Ultra-fast (< 500ms)
  * Layer 2: Gemini 2.0 Flash - Auto-fallback on errors (400/429/500)
  *
+ * V5 ENHANCEMENTS:
+ * - Grammar Guard: Validates AI responses against week grammar scope
+ * - Auto-regeneration: If grammar violations detected, retry with stricter instruction
+ * - Deterministic fallback: Safe responses on persistent errors
+ *
  * CRITICAL FIXES:
  * - Groq: Try first for speed
  * - Gemini: Auto-fallback on Groq errors (rate limit, server errors)
@@ -13,6 +18,7 @@
  */
 
 import axios from 'axios';
+import { validateAIResponse, getRegenerationInstruction, getGrammarSummary } from './grammarGuard.js';
 
 // ============================================
 // CONFIGURATION
@@ -49,97 +55,212 @@ const PROVIDERS = {
 // ============================================
 
 /**
- * Send message to AI with automatic provider fallback
+ * Send message to AI with automatic provider fallback + Grammar Guard
  * @param {Object} params - Request parameters
  * @param {string} params.systemPrompt - System instructions
  * @param {Array} params.chatHistory - [{role, content}]
  * @param {string} params.userMessage - Latest user input
  * @param {string} params.preferredProvider - 'groq' | 'gemini' | 'auto'
+ * @param {number} params.weekId - Current week (for grammar validation)
+ * @param {boolean} params.skipGrammarGuard - Skip grammar validation (default: false)
  * @returns {Promise<AIResponse>}
  */
 export async function sendToAI({ 
   systemPrompt, 
   chatHistory = [], 
   userMessage,
-  preferredProvider = 'auto'
+  preferredProvider = 'auto',
+  weekId = 1,
+  skipGrammarGuard = false
 }) {
   const startTime = Date.now();
+  const maxRetries = 2; // Max regeneration attempts
+  let attempt = 0;
+  
+  // Enhance system prompt with grammar scope reminder
+  const enhancedSystemPrompt = !skipGrammarGuard 
+    ? `${systemPrompt}\n\n🎯 GRAMMAR SCOPE FOR THIS WEEK:\n${getGrammarSummary(weekId)}\n\nYOU MUST ONLY use the allowed grammar patterns above.`
+    : systemPrompt;
   
   // Build messages array
   const messages = [
-    { role: 'system', content: systemPrompt },
+    { role: 'system', content: enhancedSystemPrompt },
     ...chatHistory,
     { role: 'user', content: userMessage }
   ];
 
-  // Auto-select provider based on availability
-  if (preferredProvider === 'auto') {
-    preferredProvider = PROVIDERS.groq.enabled ? 'groq' : 'gemini';
-  }
+  // Grammar Guard retry loop
+  while (attempt < maxRetries) {
+    attempt++;
 
-  // 🔥 LAYER 1: Try Groq first for speed
-  if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
-    try {
-      console.log('🚀 Layer 1: Trying Groq (llama-3.3-70b-versatile)...');
-      const response = await callGroq(messages);
-      console.log(`✅ Groq succeeded in ${Date.now() - startTime}ms`);
-      return {
-        ...response,
-        provider: 'groq',
-        latency: Date.now() - startTime
-      };
-    } catch (groqError) {
-      const statusCode = groqError.response?.status;
-      const errorMessage = groqError.message;
+    // Auto-select provider based on availability
+    if (preferredProvider === 'auto') {
+      preferredProvider = PROVIDERS.groq.enabled ? 'groq' : 'gemini';
+    }
 
-      // Check if error is 400, 429, or 500 (should fallback)
-      if (statusCode === 400 || statusCode === 429 || statusCode === 500) {
-        console.warn(`⚠️ Groq failed (${statusCode}): ${errorMessage}`);
-        console.log('🔄 Auto-switching to Layer 2: Gemini 2.0 Flash...');
+    // 🔥 LAYER 1: Try Groq first for speed
+    if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
+      try {
+        console.log(`🚀 Layer 1: Trying Groq (attempt ${attempt}/${maxRetries})...`);
+        const response = await callGroq(messages);
+        
+        // 🛡️ GRAMMAR GUARD VALIDATION
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(response, weekId);
+          if (!validation.valid) {
+            console.warn(`⚠️ Grammar violations detected (attempt ${attempt}):`, validation.violations);
+            
+            if (attempt < maxRetries) {
+              // Regenerate with stricter instruction
+              const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+              messages.push({
+                role: 'user',
+                content: regenInstruction
+              });
+              console.log('🔄 Regenerating with stricter grammar instruction...');
+              continue; // Retry loop
+            } else {
+              // Max retries exceeded - use deterministic fallback
+              console.error('❌ Max retries exceeded. Using deterministic fallback.');
+              return {
+                ai_response: "I need to practice my grammar! Let's try that again. Can you tell me more?",
+                pedagogy_note: 'Grammar guard blocked response after max retries',
+                suggested_hints: ['Try using simple sentences', 'Use words we learned this week'],
+                provider: 'fallback',
+                grammarBlocked: true,
+                violations: validation.violations,
+                latency: Date.now() - startTime
+              };
+            }
+          }
+        }
+        
+        console.log(`✅ Groq succeeded with valid grammar in ${Date.now() - startTime}ms`);
+        return {
+          ...response,
+          provider: 'groq',
+          latency: Date.now() - startTime,
+          grammarValidated: !skipGrammarGuard
+        };
+      } catch (groqError) {
+        const statusCode = groqError.response?.status;
+        const errorMessage = groqError.message;
 
-        // 🔥 LAYER 2: Fallback to Gemini
-        if (PROVIDERS.gemini.enabled) {
-          try {
-            const response = await callGemini(messages);
-            console.log(`✅ Gemini succeeded (fallback) in ${Date.now() - startTime}ms`);
-            return {
-              ...response,
-              provider: 'gemini',
-              fallback: true,
-              fallbackReason: `Groq ${statusCode}`,
-              latency: Date.now() - startTime
-            };
-          } catch (geminiError) {
-            console.error('❌ Gemini fallback also failed:', geminiError.message);
-            throw new Error(`All providers failed. Groq: ${errorMessage}, Gemini: ${geminiError.message}`);
+        // Check if error is 400, 429, or 500 (should fallback)
+        if (statusCode === 400 || statusCode === 429 || statusCode === 500) {
+          console.warn(`⚠️ Groq failed (${statusCode}): ${errorMessage}`);
+          console.log('🔄 Auto-switching to Layer 2: Gemini 2.0 Flash...');
+
+          // 🔥 LAYER 2: Fallback to Gemini
+          if (PROVIDERS.gemini.enabled) {
+            try {
+              const response = await callGemini(messages);
+              
+              // 🛡️ GRAMMAR GUARD VALIDATION (Gemini)
+              if (!skipGrammarGuard) {
+                const validation = validateAIResponse(response, weekId);
+                if (!validation.valid) {
+                  console.warn(`⚠️ Gemini also produced grammar violations (attempt ${attempt}):`, validation.violations);
+                  
+                  if (attempt < maxRetries) {
+                    const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+                    messages.push({
+                      role: 'user',
+                      content: regenInstruction
+                    });
+                    preferredProvider = 'gemini'; // Continue with Gemini
+                    console.log('🔄 Regenerating with Gemini...');
+                    continue;
+                  } else {
+                    console.error('❌ Gemini max retries exceeded. Using fallback.');
+                    return {
+                      ai_response: "Let's keep it simple! Can you tell me more using the words we learned?",
+                      pedagogy_note: 'Grammar guard blocked both providers',
+                      suggested_hints: ['Use simple words', 'Try "I am..." or "I have..."'],
+                      provider: 'fallback',
+                      grammarBlocked: true,
+                      violations: validation.violations,
+                      latency: Date.now() - startTime
+                    };
+                  }
+                }
+              }
+              
+              console.log(`✅ Gemini succeeded (fallback) with valid grammar in ${Date.now() - startTime}ms`);
+              return {
+                ...response,
+                provider: 'gemini',
+                fallback: true,
+                fallbackReason: `Groq ${statusCode}`,
+                latency: Date.now() - startTime,
+                grammarValidated: !skipGrammarGuard
+              };
+            } catch (geminiError) {
+              console.error('❌ Gemini fallback also failed:', geminiError.message);
+              throw new Error(`All providers failed. Groq: ${errorMessage}, Gemini: ${geminiError.message}`);
+            }
+          } else {
+            throw new Error(`Groq failed (${statusCode}) and Gemini not available`);
           }
         } else {
-          throw new Error(`Groq failed (${statusCode}) and Gemini not available`);
+          // Non-fallback errors (e.g., network issues)
+          throw groqError;
         }
-      } else {
-        // Non-fallback errors (e.g., network issues)
-        throw groqError;
       }
     }
-  }
 
-  // 🔥 If Groq not preferred or not enabled, use Gemini directly
-  if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
-    try {
-      console.log('🚀 Using Gemini 2.0 Flash (direct)...');
-      const response = await callGemini(messages);
-      console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
-      return {
-        ...response,
-        provider: 'gemini',
-        latency: Date.now() - startTime
-      };
-    } catch (geminiError) {
-      throw new Error(`Gemini failed: ${geminiError.message}`);
+    // 🔥 If Groq not preferred or not enabled, use Gemini directly
+    if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Using Gemini 2.0 Flash (attempt ${attempt}/${maxRetries})...`);
+        const response = await callGemini(messages);
+        
+        // 🛡️ GRAMMAR GUARD VALIDATION
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(response, weekId);
+          if (!validation.valid) {
+            console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
+            
+            if (attempt < maxRetries) {
+              const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+              messages.push({
+                role: 'user',
+                content: regenInstruction
+              });
+              console.log('🔄 Regenerating...');
+              continue;
+            } else {
+              console.error('❌ Max retries. Using fallback.');
+              return {
+                ai_response: "Let's practice with simple sentences! What would you like to talk about?",
+                pedagogy_note: 'Grammar guard blocked after retries',
+                suggested_hints: ['Use simple grammar', 'Try "I am..." sentences'],
+                provider: 'fallback',
+                grammarBlocked: true,
+                violations: validation.violations,
+                latency: Date.now() - startTime
+              };
+            }
+          }
+        }
+        
+        console.log(`✅ Gemini succeeded with valid grammar in ${Date.now() - startTime}ms`);
+        return {
+          ...response,
+          provider: 'gemini',
+          latency: Date.now() - startTime,
+          grammarValidated: !skipGrammarGuard
+        };
+      } catch (geminiError) {
+        throw new Error(`Gemini failed: ${geminiError.message}`);
+      }
     }
+
+    throw new Error('No AI provider available');
   }
 
-  throw new Error('No AI provider available');
+  // Should never reach here, but just in case
+  throw new Error('Grammar guard retry loop exhausted without return');
 }
 
 // ============================================

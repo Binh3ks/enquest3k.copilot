@@ -164,11 +164,12 @@ Keep responses short (2-3 sentences). Be encouraging!`;
         content: m.content
       }));
 
-      // Call AI Router
+      // Call AI Router with Grammar Guard
       const aiResponse = await sendToAI({
         systemPrompt,
         chatHistory,
         userMessage,
+        weekId: 1, // Week 1 grammar scope (present simple only)
         mode: 'debate'
       });
 
