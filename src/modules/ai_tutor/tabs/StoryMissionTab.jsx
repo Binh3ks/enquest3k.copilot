@@ -10,6 +10,7 @@ import { buildStoryPrompt } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import week1RealData from '../../../data/weeks/week_01_real'; // 🔥 Import real syllabus
+import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 
 /**
  * Story Mission Tab - Guided story-based learning
@@ -22,6 +23,9 @@ const StoryMissionTab = () => {
   const messages = useTutorStore(state => state.messages['story'] || []);
   const addMessage = useTutorStore(state => state.addMessage);
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
+  const recordTurn = useTutorStore(state => state.recordTurn); // 🔥 NEW: Behavior tracking
+  const getLearnerStyle = useTutorStore(state => state.getLearnerStyle); // 🔥 NEW
+  const getStrugglingTurns = useTutorStore(state => state.getStrugglingTurns); // 🔥 NEW
   
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -117,6 +121,10 @@ const StoryMissionTab = () => {
 
   // Handle user message
   const handleSendMessage = async (userMessage) => {
+    // 🔥 STEP 3: Record turn for learner profiling
+    const usedScaffold = showHints; // Student saw hints before answering
+    recordTurn(userMessage, usedScaffold);
+    
     // Add user message to chat
     const userMsg = {
       role: 'user',
@@ -141,14 +149,22 @@ const StoryMissionTab = () => {
       // 🔥 Use REAL SYLLABUS data for Week 1
       const realSyllabusData = (currentWeek === 'week-1' || !currentWeek) ? week1RealData : null;
       
-      // Build prompt using V5 promptLibrary with REAL SYLLABUS
+      // 🔥 STEP 3: Get adaptive scaffolding based on learner style
+      const learnerStyle = getLearnerStyle();
+      const strugglingTurns = getStrugglingTurns();
+      const adaptiveScaffolding = getRecommendedScaffoldingLevel(learnerStyle, strugglingTurns);
+      const adaptivePromptAdjustment = getAdaptivePromptAdjustment(learnerStyle);
+      
+      console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
+      
+      // Build prompt using V5 promptLibrary with REAL SYLLABUS + Adaptive Prompting
       const systemPrompt = buildStoryPrompt({
         weekData,
         userName: user?.name || 'Student',
         userAge: user?.age || 8,
-        scaffoldingLevel: 2, // Default scaffolding level
+        scaffoldingLevel: adaptiveScaffolding, // 🔥 Use adaptive level instead of hardcoded 2
         realSyllabusData // 🔥 Pass real syllabus to prompt builder
-      });
+      }) + '\n\n' + adaptivePromptAdjustment; // 🔥 Append adaptive adjustment
 
       // Prepare chat history
       const chatHistory = messages.map(m => ({

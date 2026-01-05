@@ -7,12 +7,14 @@
  * - Chat messages per tab
  * - Audio playback state
  * - User preferences
+ * - Learner profile & behavior tracking (NEW)
  * 
  * Persistent across page navigation
  */
 
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { createTurnBehavior, updateLearnerProfile } from './learnerProfiler.js';
 
 const useTutorStore = create(
   persist(
@@ -264,6 +266,93 @@ const useTutorStore = create(
       }),
       
       // ============================================
+      // LEARNER PROFILE (Step 3: Learner Style Detection)
+      // ============================================
+      
+      learnerProfile: {
+        style: 'normal', // 'shy' | 'normal' | 'confident'
+        confidence: 0,
+        behaviorHistory: [],
+        analysis: {},
+        lastUpdated: null
+      },
+      
+      scaffoldClickCount: 0, // Track hint button clicks
+      strugglingTurns: 0, // Consecutive short answers
+      
+      /**
+       * Record a user turn for behavior tracking
+       * @param {string} userInput - Student's input text
+       * @param {boolean} usedScaffold - Whether student clicked hints
+       */
+      recordTurn: (userInput, usedScaffold = false) => set((state) => {
+        const turnNumber = state.totalInteractions + 1;
+        const newTurn = createTurnBehavior(turnNumber, userInput, usedScaffold);
+        
+        // Update learner profile with new turn
+        const updatedProfile = updateLearnerProfile(state.learnerProfile, newTurn);
+        
+        // Track struggling (consecutive short answers)
+        const wordCount = newTurn.wordCount;
+        const isStruggling = wordCount <= 3 && !usedScaffold;
+        const strugglingTurns = isStruggling ? state.strugglingTurns + 1 : 0;
+        
+        // Track scaffold clicks
+        const scaffoldClickCount = usedScaffold 
+          ? state.scaffoldClickCount + 1 
+          : state.scaffoldClickCount;
+        
+        return {
+          learnerProfile: updatedProfile,
+          strugglingTurns,
+          scaffoldClickCount,
+          totalInteractions: turnNumber
+        };
+      }),
+      
+      /**
+       * Manually set learner style (for testing/override)
+       */
+      setLearnerStyle: (style) => set((state) => ({
+        learnerProfile: {
+          ...state.learnerProfile,
+          style,
+          lastUpdated: Date.now()
+        }
+      })),
+      
+      /**
+       * Reset learner profile
+       */
+      resetLearnerProfile: () => set({
+        learnerProfile: {
+          style: 'normal',
+          confidence: 0,
+          behaviorHistory: [],
+          analysis: {},
+          lastUpdated: null
+        },
+        scaffoldClickCount: 0,
+        strugglingTurns: 0
+      }),
+      
+      /**
+       * Get current learner style
+       */
+      getLearnerStyle: () => {
+        const { learnerProfile } = get();
+        return learnerProfile.style || 'normal';
+      },
+      
+      /**
+       * Get struggling turn count
+       */
+      getStrugglingTurns: () => {
+        const { strugglingTurns } = get();
+        return strugglingTurns;
+      },
+      
+      // ============================================
       // UTILITY FUNCTIONS
       // ============================================
       
@@ -325,7 +414,10 @@ const useTutorStore = create(
         widgetSize: state.widgetSize,
         theme: state.theme,
         showHints: state.showHints,
-        widgetPosition: state.widgetPosition
+        widgetPosition: state.widgetPosition,
+        learnerProfile: state.learnerProfile, // NEW: Persist learner profile
+        scaffoldClickCount: state.scaffoldClickCount,
+        strugglingTurns: state.strugglingTurns
       })
     }
   )
