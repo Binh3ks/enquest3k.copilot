@@ -1,1 +1,91 @@
-import { useState, useEffect } from 'react';\nimport { Shuffle } from 'lucide-react';\n\n/**\n * ScrambledHints - Green hints with scrambled words for students to arrange\n */\nconst ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => {\n  const [shuffledHints, setShuffledHints] = useState([]);\n\n  // Generate scrambled hints based on current question and target vocab\n  const generateScrambledHints = () => {\n    if (!currentQuestion || !targetVocab.length) return [];\n\n    const hints = [];\n    \n    // Common answer patterns based on missions\n    const answerPatterns = {\n      \"what is your name\": [\"my\", \"name\", \"is\", \"Alex\"],\n      \"how old are you\": [\"I\", \"am\", \"seven\", \"years\", \"old\"],\n      \"are you a student\": [\"yes\", \"I\", \"am\", \"a\", \"student\"],\n      \"what do you have\": [\"I\", \"have\", \"a\", \"backpack\"],\n      \"what color\": [\"it\", \"is\", \"blue\", \"and\", \"red\"],\n      \"do you have a book\": [\"yes\", \"I\", \"have\", \"a\", \"book\"],\n      \"what is your teacher like\": [\"my\", \"teacher\", \"is\", \"kind\"],\n      \"do you like your school\": [\"yes\", \"I\", \"like\", \"my\", \"school\"],\n      \"what does your classroom look like\": [\"my\", \"classroom\", \"is\", \"big\"]\n    };\n\n    // Find matching pattern\n    const question = currentQuestion.toLowerCase();\n    let bestMatch = null;\n    \n    for (const [pattern, words] of Object.entries(answerPatterns)) {\n      if (question.includes(pattern.split(' ')[0]) && question.includes(pattern.split(' ')[pattern.split(' ').length - 1])) {\n        bestMatch = words;\n        break;\n      }\n    }\n\n    // If no exact match, create generic hints with target vocab\n    if (!bestMatch && targetVocab.length > 0) {\n      bestMatch = [\"I\", \"am\", \"a\", targetVocab[0]] // Use first target vocab word\n    }\n\n    if (bestMatch) {\n      // Scramble the words\n      const scrambled = [...bestMatch].sort(() => Math.random() - 0.5);\n      hints.push({\n        id: 1,\n        scrambled,\n        correct: bestMatch\n      });\n    }\n\n    return hints;\n  };\n\n  // Update hints when question changes\n  useState(() => {\n    const hints = generateScrambledHints();\n    setShuffledHints(hints);\n  }, [currentQuestion, targetVocab]);\n\n  const handleWordClick = (hintId, wordIndex) => {\n    // TODO: Implement word arrangement logic\n    console.log('Word clicked:', hintId, wordIndex);\n  };\n\n  if (!show || shuffledHints.length === 0) return null;\n\n  return (\n    <div className=\"px-6 py-3 bg-green-50 border-t border-green-200\">\n      <div className=\"flex items-center space-x-2 mb-3\">\n        <Shuffle size={16} className=\"text-green-600\" />\n        <span className=\"text-sm font-medium text-green-700\">Arrange these words to answer:</span>\n      </div>\n      \n      {shuffledHints.map(hint => (\n        <div key={hint.id} className=\"space-y-2\">\n          <div className=\"flex flex-wrap gap-2\">\n            {hint.scrambled.map((word, index) => (\n              <button\n                key={`${word}-${index}`}\n                onClick={() => handleWordClick(hint.id, index)}\n                className=\"px-3 py-2 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg text-sm font-medium transition-colors border border-green-300 hover:border-green-400\"\n              >\n                {word}\n              </button>\n            ))}\n          </div>\n          \n          <div className=\"text-xs text-green-600 mt-2\">\n            💡 Hint: Arrange to make \"{hint.correct.join(' ')}\"\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n};\n\nexport default ScrambledHints;
+import { useState, useEffect } from 'react';
+import { Shuffle } from 'lucide-react';
+
+const ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => {
+  const [shuffledHints, setShuffledHints] = useState([]);
+
+  const generateScrambledHints = () => {
+    if (!currentQuestion || !targetVocab.length) return [];
+
+    const hints = [];
+    
+    const answerPatterns = {
+      "what is your name": ["my", "name", "is", "Alex"],
+      "how old are you": ["I", "am", "seven", "years", "old"],
+      "are you a student": ["yes", "I", "am", "a", "student"],
+      "what do you have": ["I", "have", "a", "backpack"],
+      "what color": ["it", "is", "blue", "and", "red"],
+      "do you have a book": ["yes", "I", "have", "a", "book"],
+      "what is your teacher like": ["my", "teacher", "is", "kind"],
+      "do you like your school": ["yes", "I", "like", "my", "school"],
+      "what does your classroom look like": ["my", "classroom", "is", "big"]
+    };
+
+    const question = currentQuestion.toLowerCase();
+    let bestMatch = null;
+    
+    for (const [pattern, words] of Object.entries(answerPatterns)) {
+      if (question.includes(pattern.split(' ')[0]) && question.includes(pattern.split(' ')[pattern.split(' ').length - 1])) {
+        bestMatch = words;
+        break;
+      }
+    }
+
+    if (!bestMatch && targetVocab.length > 0) {
+      bestMatch = ["I", "am", "a", targetVocab[0]];
+    }
+
+    if (bestMatch) {
+      const scrambled = [...bestMatch].sort(() => Math.random() - 0.5);
+      hints.push({
+        id: 1,
+        scrambled,
+        correct: bestMatch
+      });
+    }
+
+    return hints;
+  };
+
+  useEffect(() => {
+    const hints = generateScrambledHints();
+    setShuffledHints(hints);
+  }, [currentQuestion, targetVocab]);
+
+  const handleWordClick = (hintId, wordIndex) => {
+    console.log('Word clicked:', hintId, wordIndex);
+  };
+
+  if (!show || shuffledHints.length === 0) return null;
+
+  return (
+    <div className="px-6 py-3 bg-green-50 border-t border-green-200">
+      <div className="flex items-center space-x-2 mb-3">
+        <Shuffle size={16} className="text-green-600" />
+        <span className="text-sm font-medium text-green-700">Arrange these words to answer:</span>
+      </div>
+      
+      {shuffledHints.map(hint => (
+        <div key={hint.id} className="space-y-2">
+          <div className="flex flex-wrap gap-2">
+            {hint.scrambled.map((word, index) => (
+              <button
+                key={`${word}-${index}`}
+                onClick={() => handleWordClick(hint.id, index)}
+                className="px-3 py-2 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg text-sm font-medium transition-colors border border-green-300 hover:border-green-400"
+              >
+                {word}
+              </button>
+            ))}
+          </div>
+          
+          <div className="text-xs text-green-600 mt-2">
+            Hint: Arrange to make "{hint.correct.join(' ')}"
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ScrambledHints;

@@ -4,7 +4,6 @@ import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
 import ScrambledHints from '../components/ScrambledHints';
-import ScrambledHints from '../components/ScrambledHints';
 import { sendToAI } from '../../../services/ai_tutor/aiRouter';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
@@ -42,7 +41,6 @@ const StoryMissionTab = () => {
   const [showHints, setShowHints] = useState(false);
   const [silentTurns, setSilentTurns] = useState(0);
   const [initialized, setInitialized] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState('');
   
   const currentMission = week1RealData.story_missions?.[currentMissionIndex];
