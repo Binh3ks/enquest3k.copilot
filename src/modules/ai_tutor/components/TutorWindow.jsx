@@ -23,10 +23,10 @@ const TutorWindow = () => {
   ];
 
   const toggleSize = () => {
-    setWidgetSize(widgetSize === 'normal' ? 'large' : 'normal');
+    setWidgetSize(widgetSize === 'normal' || widgetSize === 'medium' ? 'large' : 'normal');
   };
 
-  const windowClasses = widgetSize === 'large' 
+  const windowClasses = (widgetSize === 'large')
     ? 'w-[95vw] h-[85vh] right-[2.5vw] bottom-[2.5vh]'
     : 'w-[400px] h-[600px] right-6 bottom-24';
 
@@ -55,7 +55,7 @@ const TutorWindow = () => {
             className="p-2 hover:bg-white/20 rounded-lg transition-colors"
             aria-label="Toggle window size"
           >
-            {widgetSize === 'normal' ? (
+            {(widgetSize === 'normal' || widgetSize === 'medium') ? (
               <Maximize2 size={20} />
             ) : (
               <Minimize2 size={20} />
