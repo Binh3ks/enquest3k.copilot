@@ -103,7 +103,7 @@ Turns 10+: Continue until student uses 80% of target vocabulary
 Final Turn: Gentle closing - "Great work today! We can continue this story next time."
 
 **MINIMUM TURN ENFORCEMENT:**
-- YOU MUST CONTINUE CONVERSATION FOR AT LEAST ${currentMission.minimum_turns} TURNS
+- YOU MUST CONTINUE CONVERSATION FOR AT LEAST ${currentMission ? currentMission.minimum_turns : 10} TURNS
 - DO NOT end conversation early
 - Keep asking follow-up questions naturally
 - Only close when minimum turns reached AND vocabulary practiced
@@ -502,9 +502,15 @@ export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel
       return `${persona}\n\n${modePrompt}\n\nERROR: Mission not found. Please select a valid mission.`;
     }
     
+    // Additional safety checks for mission properties
+    if (!currentMission.target_vocab || !currentMission.title || !currentMission.minimum_turns) {
+      console.error(`❌ Mission ${currentMissionIndex} has invalid structure:`, currentMission);
+      return `${persona}\n\n${modePrompt}\n\nERROR: Mission data is incomplete. Please try again.`;
+    }
+    
     const novaInstructions = realSyllabusData.nova_instructions;
     const missionKey = currentMissionIndex === 0 ? 'mission_1' : currentMissionIndex === 1 ? 'mission_2' : 'mission_3';
-    const targetVocab = currentMission.target_vocab.join(', ');
+    const targetVocab = (currentMission.target_vocab || []).join(', ');
     
     return `${persona}
 
@@ -516,18 +522,18 @@ ${modePrompt}
 - Learning Outcome: ${realSyllabusData.learning_outcome}
 - Grammar Pattern: ${realSyllabusData.grammar_pattern}
 
-**STORY MISSION ${currentMission.mission_id}: ${currentMission.title}**
-Theme: ${currentMission.theme}
+**STORY MISSION ${currentMission.mission_id || 'Unknown'}: ${currentMission.title || 'Untitled'}**
+Theme: ${currentMission.theme || 'General'}
 
 **MISSION CONTEXT FOR AI:**
-${currentMission.mission_context}
+${currentMission.mission_context || 'Practice conversation with the student.'}
 
 **TARGET VOCABULARY:** ${targetVocab}
-**TARGET PATTERN:** ${currentMission.target_pattern}
-**MINIMUM TURNS:** ${currentMission.minimum_turns}
+**TARGET PATTERN:** ${currentMission.target_pattern || 'Practice speaking'}
+**MINIMUM TURNS:** ${currentMission.minimum_turns || 10}
 
 **CONVERSATION TOPICS:**
-${currentMission.conversation_topics.map(topic => `- ${topic}`).join('\n')}
+${(currentMission.conversation_topics || []).map(topic => `- ${topic}`).join('\n')}
 
 **YOUR ROLE (MS. NOVA):**
 ${novaInstructions.persona} - ${novaInstructions.tone}
@@ -545,15 +551,15 @@ Example: Student says "${novaInstructions.recast_example.student}"
 **SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
 
 **SUCCESS CRITERIA:**
-${currentMission.success_criteria.map(criteria => `- ${criteria}`).join('\n')}
+${(currentMission.success_criteria || ['Student participates actively', 'Uses target vocabulary']).map(criteria => `- ${criteria}`).join('\n')}
 
 **CRITICAL CONSTRAINTS:**
 - Use ONLY target vocabulary: ${targetVocab}
-- Grammar: ${realSyllabusData.grammar_focus} (${realSyllabusData.grammar_pattern})
+- Grammar: ${realSyllabusData.grammar_focus || 'Basic patterns'} (${realSyllabusData.grammar_pattern || 'Simple sentences'})
 - ZERO L1: No Vietnamese, only English
 - NO explicit grammar rules - students learn by doing
-- Required pattern: "${currentMission.target_pattern}"
-- MUST continue for AT LEAST ${currentMission.minimum_turns} turns
+- Required pattern: "${currentMission.target_pattern || 'Practice speaking'}"
+- MUST continue for AT LEAST ${currentMission.minimum_turns || 10} turns
 - NO emojis - text-to-speech will read them aloud
 
 **FORBIDDEN:**
