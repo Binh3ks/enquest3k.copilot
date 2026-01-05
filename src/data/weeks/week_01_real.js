@@ -123,8 +123,8 @@ export const week1RealData = {
       title_vi: "Ngày Đầu Tiên Đi Học",
       theme: "Self-introduction",
       
-      // Short description for UI
-      scenario: `Your first day at school! Tell your teacher your name and age.`,
+      // Ms. Nova's direct greeting (no description)
+      nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
       
       // Context for AI (not shown to student)
       mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging.`,
@@ -165,7 +165,8 @@ export const week1RealData = {
       title_vi: "Có Gì Trong Ba Lô?",
       theme: "School supplies and belongings",
       
-      scenario: `Show Ms. Nova what school supplies you have! Talk about your backpack, books, and notebook.`,
+      // Ms. Nova's direct greeting (no description)
+      nova_greeting: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
       
       mission_context: `The student shows and describes their school supplies. Ms. Nova is curious about what students bring to school. This mission focuses on 'I have...' pattern with school items. Encourage describing colors, sizes, and what they do with these items. Keep it natural and fun - like show-and-tell time!`,
       
@@ -206,7 +207,8 @@ export const week1RealData = {
       title_vi: "Gặp Gỡ Giáo Viên",
       theme: "School environment and relationships",
       
-      scenario: `Talk with Ms. Nova about your teacher, school, and classroom! Share what you like about your learning environment and the people who help you learn.`,
+      // Ms. Nova's direct greeting (no description)
+      nova_greeting: "Hello again! I want to learn about your school. Tell me about your teacher. What is your teacher like?",
       
       mission_context: `This is a warm conversation about the student's school relationships and environment. Ms. Nova wants to understand how the student feels about their teacher, what their classroom is like, and their overall school experience. Focus on building emotional connection to school through describing people, places, and feelings. Encourage the student to share what makes their school special and how they interact with their teacher. This mission should feel like sharing with a friend about school life. Use 'My teacher is...' and 'My school/classroom has...' patterns naturally. Ask about specific details like teacher's personality, classroom decorations, favorite spots in school, and daily school routines.`,
       
@@ -277,9 +279,9 @@ export const week1RealData = {
     
     // Opening lines for each mission (PRESENT SIMPLE ONLY - Week 1 grammar)
     opening_lines_by_mission: {
-      mission_1: "Hello! I am Ms. Nova, your English teacher. I want to know about you. What is your name?",
+      mission_1: "Hello! I am Ms. Nova, your English teacher. What is your name?",
       mission_2: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
-      mission_3: "Hello again! I want to learn about your school life. Tell me about your teacher. What is your teacher like?"
+      mission_3: "Hello again! I want to learn about your school. Tell me about your teacher. What is your teacher like?"
     },
     
     conversation_style: [

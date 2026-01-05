@@ -3,6 +3,8 @@ import { BookOpen, Target, CheckCircle2, Loader2, Volume2, RotateCcw } from 'luc
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
+import ScrambledHints from '../components/ScrambledHints';
+import ScrambledHints from '../components/ScrambledHints';
 import { sendToAI } from '../../../services/ai_tutor/aiRouter';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
@@ -40,6 +42,8 @@ const StoryMissionTab = () => {
   const [showHints, setShowHints] = useState(false);
   const [silentTurns, setSilentTurns] = useState(0);
   const [initialized, setInitialized] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState('');
+  const [currentQuestion, setCurrentQuestion] = useState('');
   
   const currentMission = week1RealData.story_missions?.[currentMissionIndex];
   
@@ -230,6 +234,15 @@ const StoryMissionTab = () => {
       };
       addMessage('story', aiMsg);
 
+      // Track current question for scrambled hints
+      if (responseText.includes('?')) {
+        const questions = responseText.split('?');
+        const lastQuestion = questions[questions.length - 2]?.trim();
+        if (lastQuestion) {
+          setCurrentQuestion(lastQuestion + '?');
+        }
+      }
+
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
         await textToSpeech(responseText, {
@@ -329,7 +342,7 @@ const StoryMissionTab = () => {
                         {mission.title}
                       </h3>
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                        {mission.scenario}
+                        {mission.nova_greeting}
                       </p>
                       <div className="flex flex-wrap items-center gap-2 text-xs">
                         <div className="flex items-center space-x-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
@@ -421,7 +434,7 @@ const StoryMissionTab = () => {
           {currentMission && (
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 border-b border-purple-200">
               <p className="text-sm text-gray-700 leading-relaxed">
-                {currentMission.scenario}
+                {currentMission.nova_greeting}
               </p>
               <div className="mt-2 flex items-center space-x-2 text-xs text-purple-700">
                 <Target size={12} />
@@ -471,6 +484,13 @@ const StoryMissionTab = () => {
               />
             </div>
           )}
+
+          {/* Scrambled Hints - Green */}
+          <ScrambledHints 
+            currentQuestion={currentQuestion}
+            targetVocab={currentMission?.target_vocab || []}
+            show={messages.length > 0 && turnCount > 0}
+          />
 
           {/* Input Area */}
           <InputBar
