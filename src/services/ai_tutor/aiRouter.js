@@ -5,9 +5,10 @@
  * Layer 1: Groq (llama-3.3-70b-versatile) - Ultra-fast (< 500ms)
  * Layer 2: Gemini 2.0 Flash - Auto-fallback on errors (400/429/500)
  *
- * V5 ENHANCEMENTS:
+ * V5 PEDAGOGICAL GUARDRAILS:
  * - Grammar Guard: Validates AI responses against week grammar scope
- * - Auto-regeneration: If grammar violations detected, retry with stricter instruction
+ * - Talk Ratio Guard: Enforces AI:Student word ratio ≤ 0.8
+ * - Auto-regeneration: If violations detected, retry with stricter instruction
  * - Deterministic fallback: Safe responses on persistent errors
  *
  * CRITICAL FIXES:
@@ -19,6 +20,7 @@
 
 import axios from 'axios';
 import { validateAIResponse, getRegenerationInstruction, getGrammarSummary } from './grammarGuard.js';
+import { enforceTalkRatio, getConciseInstruction, getTalkRatioSummary } from './talkRatioGuard.js';
 
 // ============================================
 // CONFIGURATION
@@ -135,7 +137,33 @@ export async function sendToAI({
           }
         }
         
-        console.log(`✅ Groq succeeded with valid grammar in ${Date.now() - startTime}ms`);
+        // 🎯 TALK RATIO GUARD VALIDATION
+        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage);
+        console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
+        
+        if (talkRatioResult.action === 'truncated') {
+          // Response was automatically truncated
+          console.warn(`✂️ Response truncated: ${talkRatioResult.details.originalWords} → ${talkRatioResult.details.truncatedWords} words`);
+          response.ai_response = talkRatioResult.response;
+          response.talkRatioEnforced = true;
+          response.talkRatioAction = 'truncated';
+        } else if (talkRatioResult.action === 'regenerate' && attempt < maxRetries) {
+          // Ratio violated, need to regenerate
+          console.warn(`⚠️ Talk ratio violation: ${talkRatioResult.details.ratio} (max: 0.8)`);
+          const conciseInstruction = getConciseInstruction(
+            talkRatioResult.details.ratio,
+            talkRatioResult.details.aiWords,
+            talkRatioResult.details.studentWords
+          );
+          messages.push({
+            role: 'user',
+            content: conciseInstruction
+          });
+          console.log('🔄 Regenerating with concise instruction...');
+          continue; // Retry loop
+        }
+        
+        console.log(`✅ Groq succeeded with valid grammar + talk ratio in ${Date.now() - startTime}ms`);
         return {
           ...response,
           provider: 'groq',
@@ -186,7 +214,32 @@ export async function sendToAI({
                 }
               }
               
-              console.log(`✅ Gemini succeeded (fallback) with valid grammar in ${Date.now() - startTime}ms`);
+              // 🎯 TALK RATIO GUARD VALIDATION (Gemini)
+              const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage);
+              console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
+              
+              if (talkRatioResult.action === 'truncated') {
+                console.warn(`✂️ Gemini response truncated: ${talkRatioResult.details.originalWords} → ${talkRatioResult.details.truncatedWords} words`);
+                response.ai_response = talkRatioResult.response;
+                response.talkRatioEnforced = true;
+                response.talkRatioAction = 'truncated';
+              } else if (talkRatioResult.action === 'regenerate' && attempt < maxRetries) {
+                console.warn(`⚠️ Gemini talk ratio violation: ${talkRatioResult.details.ratio} (max: 0.8)`);
+                const conciseInstruction = getConciseInstruction(
+                  talkRatioResult.details.ratio,
+                  talkRatioResult.details.aiWords,
+                  talkRatioResult.details.studentWords
+                );
+                messages.push({
+                  role: 'user',
+                  content: conciseInstruction
+                });
+                preferredProvider = 'gemini';
+                console.log('🔄 Regenerating Gemini with concise instruction...');
+                continue;
+              }
+              
+              console.log(`✅ Gemini succeeded (fallback) with valid grammar + talk ratio in ${Date.now() - startTime}ms`);
               return {
                 ...response,
                 provider: 'gemini',
@@ -244,12 +297,37 @@ export async function sendToAI({
           }
         }
         
-        console.log(`✅ Gemini succeeded with valid grammar in ${Date.now() - startTime}ms`);
+        // 🎯 TALK RATIO GUARD VALIDATION (Gemini Direct)
+        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage);
+        console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
+        
+        if (talkRatioResult.action === 'truncated') {
+          console.warn(`✂️ Response truncated: ${talkRatioResult.details.originalWords} → ${talkRatioResult.details.truncatedWords} words`);
+          response.ai_response = talkRatioResult.response;
+          response.talkRatioEnforced = true;
+          response.talkRatioAction = 'truncated';
+        } else if (talkRatioResult.action === 'regenerate' && attempt < maxRetries) {
+          console.warn(`⚠️ Talk ratio violation: ${talkRatioResult.details.ratio} (max: 0.8)`);
+          const conciseInstruction = getConciseInstruction(
+            talkRatioResult.details.ratio,
+            talkRatioResult.details.aiWords,
+            talkRatioResult.details.studentWords
+          );
+          messages.push({
+            role: 'user',
+            content: conciseInstruction
+          });
+          console.log('🔄 Regenerating with concise instruction...');
+          continue;
+        }
+        
+        console.log(`✅ Gemini succeeded with valid grammar + talk ratio in ${Date.now() - startTime}ms`);
         return {
           ...response,
           provider: 'gemini',
           latency: Date.now() - startTime,
-          grammarValidated: !skipGrammarGuard
+          grammarValidated: !skipGrammarGuard,
+          talkRatioValidated: true
         };
       } catch (geminiError) {
         throw new Error(`Gemini failed: ${geminiError.message}`);
