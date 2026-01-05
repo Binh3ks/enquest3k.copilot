@@ -212,6 +212,66 @@ Cô Nova đang lắng nghe... Bạn là ai? 🎤`,
     can_describe_hero_identity: false
   },
   
+  // === ALIAS FOR TAB COMPATIBILITY ===
+  global_vocab: [
+    {
+      word: "name",
+      pronunciation: "/neɪm/",
+      definition_vi: "Tên",
+      definition_en: "What someone is called.",
+      example: "My name is Alex.",
+      syllabus_context: "Identity - Introducing self"
+    },
+    {
+      word: "age",
+      pronunciation: "/eɪdʒ/",
+      definition_vi: "Tuổi",
+      definition_en: "How old someone is.",
+      example: "I am 7 years old.",
+      syllabus_context: "Identity - Introducing age"
+    },
+    {
+      word: "student",
+      pronunciation: "/ˈstuːdənt/",
+      definition_vi: "Học sinh",
+      definition_en: "A person who is learning at a school.",
+      example: "I am a student.",
+      syllabus_context: "Identity - Role"
+    },
+    {
+      word: "hero",
+      pronunciation: "/ˈhɪroʊ/",
+      definition_vi: "Anh hùng",
+      definition_en: "A brave person who helps others.",
+      example: "I want to be a hero!",
+      syllabus_context: "Creative Lens - Superhero theme"
+    },
+    {
+      word: "power",
+      pronunciation: "/ˈpaʊər/",
+      definition_vi: "Sức mạnh, quyền năng",
+      definition_en: "A special ability that makes you strong.",
+      example: "My power is reading fast!",
+      syllabus_context: "Creative Lens - Superhero abilities"
+    },
+    {
+      word: "boy",
+      pronunciation: "/bɔɪ/",
+      definition_vi: "Con trai",
+      definition_en: "A male child.",
+      example: "He is a boy.",
+      syllabus_context: "Identity - Gender"
+    },
+    {
+      word: "girl",
+      pronunciation: "/ɡɜrl/",
+      definition_vi: "Con gái",
+      definition_en: "A female child.",
+      example: "She is a girl.",
+      syllabus_context: "Identity - Gender"
+    }
+  ],
+
   // === CONNECTION TO EXISTING WEEK 1 DATA ===
   extended_vocab_reference: [
     "teacher",

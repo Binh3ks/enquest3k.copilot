@@ -1,11 +1,15 @@
 /**
- * AI Router - Multi-Provider AI Content Engine
- * 
- * Priority routing system:
- * 1. Groq (Llama-3) - Ultra-fast responses
- * 2. Gemini 2.0 Flash - Fallback for large context or errors
- * 
- * Enforces JSON schema output for Ms. Nova V5
+ * AI Router - Multi-Layer LLM Switching Engine
+ *
+ * SMART PRIORITY SYSTEM:
+ * Layer 1: Groq (llama-3.3-70b-versatile) - Ultra-fast (< 500ms)
+ * Layer 2: Gemini 2.0 Flash - Auto-fallback on errors (400/429/500)
+ *
+ * CRITICAL FIXES:
+ * - Groq: Try first for speed
+ * - Gemini: Auto-fallback on Groq errors (rate limit, server errors)
+ * - JSON: Enforce strict format (no markdown, no backticks)
+ * - Roles: Only 'user'/'model' for Gemini (prevents 400 errors)
  */
 
 import axios from 'axios';
@@ -24,7 +28,7 @@ const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models
 const PROVIDERS = {
   groq: {
     name: 'Groq',
-    model: 'llama-3.1-70b-versatile', // SPEC: Updated from 3.3 to 3.1 for faster responses
+    model: 'llama-3.3-70b-versatile', // 🔥 FIX: Updated model (3.1 deprecated)
     maxTokens: 1024,
     temperature: 0.7,
     enabled: !!GROQ_API_KEY,
@@ -73,50 +77,65 @@ export async function sendToAI({
     preferredProvider = PROVIDERS.groq.enabled ? 'groq' : 'gemini';
   }
 
-  // Try primary provider
-  try {
-    if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
+  // 🔥 LAYER 1: Try Groq first for speed
+  if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
+    try {
+      console.log('🚀 Layer 1: Trying Groq (llama-3.3-70b-versatile)...');
       const response = await callGroq(messages);
+      console.log(`✅ Groq succeeded in ${Date.now() - startTime}ms`);
       return {
         ...response,
         provider: 'groq',
         latency: Date.now() - startTime
       };
-    } else if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
+    } catch (groqError) {
+      const statusCode = groqError.response?.status;
+      const errorMessage = groqError.message;
+
+      // Check if error is 400, 429, or 500 (should fallback)
+      if (statusCode === 400 || statusCode === 429 || statusCode === 500) {
+        console.warn(`⚠️ Groq failed (${statusCode}): ${errorMessage}`);
+        console.log('🔄 Auto-switching to Layer 2: Gemini 2.0 Flash...');
+
+        // 🔥 LAYER 2: Fallback to Gemini
+        if (PROVIDERS.gemini.enabled) {
+          try {
+            const response = await callGemini(messages);
+            console.log(`✅ Gemini succeeded (fallback) in ${Date.now() - startTime}ms`);
+            return {
+              ...response,
+              provider: 'gemini',
+              fallback: true,
+              fallbackReason: `Groq ${statusCode}`,
+              latency: Date.now() - startTime
+            };
+          } catch (geminiError) {
+            console.error('❌ Gemini fallback also failed:', geminiError.message);
+            throw new Error(`All providers failed. Groq: ${errorMessage}, Gemini: ${geminiError.message}`);
+          }
+        } else {
+          throw new Error(`Groq failed (${statusCode}) and Gemini not available`);
+        }
+      } else {
+        // Non-fallback errors (e.g., network issues)
+        throw groqError;
+      }
+    }
+  }
+
+  // 🔥 If Groq not preferred or not enabled, use Gemini directly
+  if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
+    try {
+      console.log('🚀 Using Gemini 2.0 Flash (direct)...');
       const response = await callGemini(messages);
+      console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
       return {
         ...response,
         provider: 'gemini',
         latency: Date.now() - startTime
       };
-    }
-  } catch (primaryError) {
-    console.warn(`Primary provider (${preferredProvider}) failed:`, primaryError.message);
-    
-    // Try fallback provider
-    const fallbackProvider = preferredProvider === 'groq' ? 'gemini' : 'groq';
-    
-    try {
-      if (fallbackProvider === 'gemini' && PROVIDERS.gemini.enabled) {
-        const response = await callGemini(messages);
-        return {
-          ...response,
-          provider: 'gemini',
-          fallback: true,
-          latency: Date.now() - startTime
-        };
-      } else if (fallbackProvider === 'groq' && PROVIDERS.groq.enabled) {
-        const response = await callGroq(messages);
-        return {
-          ...response,
-          provider: 'groq',
-          fallback: true,
-          latency: Date.now() - startTime
-        };
-      }
-    } catch (fallbackError) {
-      console.error('Fallback provider also failed:', fallbackError.message);
-      throw new Error(`All AI providers failed. Primary: ${primaryError.message}, Fallback: ${fallbackError.message}`);
+    } catch (geminiError) {
+      throw new Error(`Gemini failed: ${geminiError.message}`);
     }
   }
 
@@ -132,11 +151,22 @@ async function callGroq(messages) {
     throw new Error('Groq API key not configured');
   }
 
+  // 🔥 ENFORCE STRICT JSON: Add explicit instruction to system message
+  const enhancedMessages = messages.map((msg, idx) => {
+    if (msg.role === 'system' && idx === 0) {
+      return {
+        ...msg,
+        content: msg.content + '\n\n🔥 CRITICAL: Return ONLY a valid JSON object. No markdown formatting, no triple backticks, no code blocks. Just pure JSON.'
+      };
+    }
+    return msg;
+  });
+
   const response = await axios.post(
     GROQ_ENDPOINT,
     {
       model: PROVIDERS.groq.model,
-      messages: messages,
+      messages: enhancedMessages,
       temperature: PROVIDERS.groq.temperature,
       max_tokens: PROVIDERS.groq.maxTokens,
       response_format: { type: 'json_object' } // Enforce JSON output
@@ -151,17 +181,18 @@ async function callGroq(messages) {
   );
 
   const content = response.data.choices[0]?.message?.content || '';
-  
+
   // Parse JSON response
   try {
     const parsed = JSON.parse(content);
     return {
-      ai_response: parsed.ai_response || content,
+      ai_response: parsed.ai_response || parsed.response || content,
       pedagogy_note: parsed.pedagogy_note || '',
       suggested_hints: parsed.suggested_hints || [],
       raw: content
     };
   } catch (parseError) {
+    console.warn('⚠️ Groq JSON parse failed, attempting fallback...');
     // Fallback to plain text if JSON parsing fails
     return {
       ai_response: content,
@@ -182,18 +213,48 @@ async function callGemini(messages) {
   }
 
   // Convert OpenAI-style messages to Gemini format
-  const geminiMessages = convertToGeminiFormat(messages);
+  const { geminiMessages, systemInstruction } = convertToGeminiFormat(messages);
+
+  // 🔥 STRICT JSON ENFORCEMENT: No markdown, no backticks
+  const jsonSchemaInstruction = `
+🔥 CRITICAL OUTPUT FORMAT:
+Return ONLY a valid JSON object. No markdown formatting, no triple backticks, no code blocks. Just pure JSON.
+
+Required JSON structure:
+{
+  "ai_response": "Your pedagogical response here",
+  "pedagogy_note": "Internal note about teaching strategy",
+  "suggested_hints": ["hint1", "hint2"]
+}
+
+PEDAGOGICAL RULES:
+1. Use RECAST technique - never say "wrong", model correct form naturally
+2. Example: Student says "I is happy" → You respond "Oh, you ARE happy! That's wonderful!"
+3. Always ask follow-up questions to keep conversation flowing
+4. Use vocabulary from the week's syllabus
+
+REMEMBER: Output must be pure JSON only, no extra formatting!
+`;
+
+  const payload = {
+    contents: geminiMessages,
+    generationConfig: {
+      temperature: PROVIDERS.gemini.temperature,
+      maxOutputTokens: PROVIDERS.gemini.maxTokens,
+      responseMimeType: 'application/json'
+    }
+  };
+
+  // Add systemInstruction if available
+  if (systemInstruction) {
+    payload.systemInstruction = {
+      parts: [{ text: systemInstruction + '\n\n' + jsonSchemaInstruction }]
+    };
+  }
 
   const response = await axios.post(
     `${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`,
-    {
-      contents: geminiMessages,
-      generationConfig: {
-        temperature: PROVIDERS.gemini.temperature,
-        maxOutputTokens: PROVIDERS.gemini.maxTokens,
-        responseMimeType: 'application/json' // Enforce JSON output
-      }
-    },
+    payload,
     {
       headers: {
         'Content-Type': 'application/json'
@@ -203,7 +264,7 @@ async function callGemini(messages) {
   );
 
   const content = response.data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-  
+
   // Parse JSON response
   try {
     const parsed = JSON.parse(content);
@@ -214,6 +275,8 @@ async function callGemini(messages) {
       raw: content
     };
   } catch (parseError) {
+    console.error('⚠️ Gemini JSON parse error:', parseError.message);
+    console.error('Raw response:', content);
     return {
       ai_response: content,
       pedagogy_note: '',
@@ -229,29 +292,38 @@ async function callGemini(messages) {
 
 /**
  * Convert OpenAI-style messages to Gemini format
+ * 🔥 FIX: Ensure only "user" and "model" roles (Gemini 2.0 requirement)
  */
 function convertToGeminiFormat(messages) {
   const geminiMessages = [];
-  let systemPrompt = '';
+  let systemInstruction = '';
 
   messages.forEach((msg) => {
+    // Extract system prompt separately (will be used in systemInstruction field)
     if (msg.role === 'system') {
-      systemPrompt = msg.content;
-    } else if (msg.role === 'user') {
+      systemInstruction = msg.content;
+    }
+    // Convert "user" role → Gemini "user"
+    else if (msg.role === 'user') {
       geminiMessages.push({
         role: 'user',
-        parts: [{ text: systemPrompt ? `${systemPrompt}\n\n${msg.content}` : msg.content }]
+        parts: [{ text: msg.content }]
       });
-      systemPrompt = ''; // Only include system prompt once
-    } else if (msg.role === 'assistant') {
+    }
+    // Convert "assistant" OR "ai" role → Gemini "model"
+    else if (msg.role === 'assistant' || msg.role === 'model' || msg.role === 'ai') {
       geminiMessages.push({
         role: 'model',
         parts: [{ text: msg.content }]
       });
     }
+    // 🔥 Skip invalid roles (e.g., "system" in history)
+    else {
+      console.warn(`⚠️ Skipping invalid role in history: ${msg.role}`);
+    }
   });
 
-  return geminiMessages;
+  return { geminiMessages, systemInstruction };
 }
 
 /**
