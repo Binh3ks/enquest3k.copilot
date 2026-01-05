@@ -26,6 +26,10 @@ const StoryMissionTab = () => {
   const recordTurn = useTutorStore(state => state.recordTurn); // 🔥 NEW: Behavior tracking
   const getLearnerStyle = useTutorStore(state => state.getLearnerStyle); // 🔥 NEW
   const getStrugglingTurns = useTutorStore(state => state.getStrugglingTurns); // 🔥 NEW
+  const initVocabMastery = useTutorStore(state => state.initVocabMastery); // 🔥 STEP 4
+  const trackVocabUsage = useTutorStore(state => state.trackVocabUsage); // 🔥 STEP 4
+  const getVocabFocusPrompt = useTutorStore(state => state.getVocabFocusPrompt); // 🔥 STEP 4
+  const vocabMastery = useTutorStore(state => state.vocabMastery); // 🔥 STEP 4
   
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,6 +53,12 @@ const StoryMissionTab = () => {
     if (!initialized && !initializingRef.current) {
       console.log('🚀 StoryMissionTab: Initializing mission...');
       initializingRef.current = true; // 🔥 Mark as initializing
+      
+      // 🔥 STEP 4: Initialize vocab mastery with Week 1 target vocabulary
+      const week1Vocab = week1RealData.global_vocab || [];
+      initVocabMastery(week1Vocab);
+      console.log('📚 Vocab Mastery Initialized:', week1Vocab.length, 'words');
+      
       initializeMission().catch(err => {
         console.error('❌ initializeMission error:', err);
         initializingRef.current = false; // Reset on error
@@ -125,6 +135,9 @@ const StoryMissionTab = () => {
     const usedScaffold = showHints; // Student saw hints before answering
     recordTurn(userMessage, usedScaffold);
     
+    // 🔥 STEP 4: Track vocab usage from user input
+    trackVocabUsage(userMessage);
+    
     // Add user message to chat
     const userMsg = {
       role: 'user',
@@ -155,16 +168,20 @@ const StoryMissionTab = () => {
       const adaptiveScaffolding = getRecommendedScaffoldingLevel(learnerStyle, strugglingTurns);
       const adaptivePromptAdjustment = getAdaptivePromptAdjustment(learnerStyle);
       
-      console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
+      // 🔥 STEP 4: Get vocab focus prompt for weak words
+      const vocabFocusPrompt = getVocabFocusPrompt();
       
-      // Build prompt using V5 promptLibrary with REAL SYLLABUS + Adaptive Prompting
+      console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
+      console.log(`📚 Vocab Mastery:`, Object.keys(vocabMastery).length, 'words tracked');
+      
+      // Build prompt using V5 promptLibrary with REAL SYLLABUS + Adaptive Prompting + Vocab Focus
       const systemPrompt = buildStoryPrompt({
         weekData,
         userName: user?.name || 'Student',
         userAge: user?.age || 8,
         scaffoldingLevel: adaptiveScaffolding, // 🔥 Use adaptive level instead of hardcoded 2
         realSyllabusData // 🔥 Pass real syllabus to prompt builder
-      }) + '\n\n' + adaptivePromptAdjustment; // 🔥 Append adaptive adjustment
+      }) + '\n\n' + adaptivePromptAdjustment + vocabFocusPrompt; // 🔥 Append adaptive adjustment + vocab focus
 
       // Prepare chat history
       const chatHistory = messages.map(m => ({
@@ -183,6 +200,9 @@ const StoryMissionTab = () => {
 
       // Extract text from response object (support multiple formats)
       const responseText = aiResponse.ai_response || aiResponse.response || aiResponse;
+      
+      // 🔥 STEP 4: Track AI suggestions (after receiving response)
+      trackVocabUsage(userMessage, { text: responseText, hints: [] });
 
       // Add AI response to chat
       const aiMsg = {

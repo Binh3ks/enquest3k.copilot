@@ -15,6 +15,14 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { createTurnBehavior, updateLearnerProfile } from './learnerProfiler.js';
+import { 
+  initializeVocabMastery, 
+  detectVocabUsage, 
+  detectAISuggestions,
+  updateVocabMastery,
+  calculateOverallProgress,
+  generateVocabFocusPrompt
+} from './vocabMasteryTracker.js';
 
 const useTutorStore = create(
   persist(
@@ -280,6 +288,78 @@ const useTutorStore = create(
       scaffoldClickCount: 0, // Track hint button clicks
       strugglingTurns: 0, // Consecutive short answers
       
+      // ============================================
+      // VOCAB MASTERY TRACKING (Step 4)
+      // ============================================
+      
+      vocabMastery: {}, // { word: { score, uses, lastUsed, suggested, avoidances } }
+      currentWeekVocab: [], // Target vocab for current week
+      lastAISuggestions: [], // Track what AI suggested in last turn
+      
+      /**
+       * Initialize vocab mastery for a week
+       * @param {Array<string>} targetVocab - Week's target vocabulary
+       */
+      initVocabMastery: (targetVocab) => set({
+        vocabMastery: initializeVocabMastery(targetVocab),
+        currentWeekVocab: targetVocab
+      }),
+      
+      /**
+       * Track vocab usage after user input
+       * @param {string} userInput - Student's message
+       * @param {Object} aiResponse - AI's previous response (for suggestion tracking)
+       */
+      trackVocabUsage: (userInput, aiResponse = null) => set((state) => {
+        // Detect which vocab words student used
+        const usedWords = detectVocabUsage(userInput, state.currentWeekVocab);
+        
+        // Check if student avoided previously suggested words
+        const suggestedWords = state.lastAISuggestions;
+        
+        // Update mastery scores
+        const updatedMastery = updateVocabMastery(
+          state.vocabMastery,
+          usedWords,
+          suggestedWords
+        );
+        
+        // Detect new suggestions from AI response
+        const newSuggestions = aiResponse 
+          ? detectAISuggestions(aiResponse, state.currentWeekVocab)
+          : [];
+        
+        return {
+          vocabMastery: updatedMastery,
+          lastAISuggestions: newSuggestions
+        };
+      }),
+      
+      /**
+       * Get overall vocab mastery progress (0-100)
+       */
+      getVocabProgress: () => {
+        const state = get();
+        return calculateOverallProgress(state.vocabMastery);
+      },
+      
+      /**
+       * Get adaptive vocab focus prompt for AI
+       */
+      getVocabFocusPrompt: () => {
+        const state = get();
+        return generateVocabFocusPrompt(state.vocabMastery);
+      },
+      
+      /**
+       * Reset vocab mastery for new week
+       */
+      resetVocabMastery: () => set({
+        vocabMastery: {},
+        currentWeekVocab: [],
+        lastAISuggestions: []
+      }),
+      
       /**
        * Record a user turn for behavior tracking
        * @param {string} userInput - Student's input text
@@ -417,7 +497,10 @@ const useTutorStore = create(
         widgetPosition: state.widgetPosition,
         learnerProfile: state.learnerProfile, // NEW: Persist learner profile
         scaffoldClickCount: state.scaffoldClickCount,
-        strugglingTurns: state.strugglingTurns
+        strugglingTurns: state.strugglingTurns,
+        vocabMastery: state.vocabMastery, // NEW: Persist vocab mastery
+        currentWeekVocab: state.currentWeekVocab,
+        lastAISuggestions: state.lastAISuggestions
       })
     }
   )
