@@ -204,44 +204,59 @@ export const week1RealData = {
       mission_id: 3,
       title: "Meeting Your Teacher",
       title_vi: "Gặp Gỡ Giáo Viên",
-      theme: "School environment and people",
+      theme: "School environment and relationships",
       
-      scenario: `Talk with Ms. Nova about your teacher, school, and classroom! Share what you like about your learning environment.`,
+      scenario: `Talk with Ms. Nova about your teacher, school, and classroom! Share what you like about your learning environment and the people who help you learn.`,
       
-      mission_context: `The student describes their school environment and teacher. Ms. Nova wants to know about the student's school experience. This mission focuses on 'My teacher is...' and 'This is my...' patterns. Encourage talking about what makes their school special, what they do in the classroom, and how they feel about their teacher. Create a warm conversation about school life.`,
+      mission_context: `This is a warm conversation about the student's school relationships and environment. Ms. Nova wants to understand how the student feels about their teacher, what their classroom is like, and their overall school experience. Focus on building emotional connection to school through describing people, places, and feelings. Encourage the student to share what makes their school special and how they interact with their teacher. This mission should feel like sharing with a friend about school life. Use 'My teacher is...' and 'My school/classroom has...' patterns naturally. Ask about specific details like teacher's personality, classroom decorations, favorite spots in school, and daily school routines.`,
       
       target_vocab: ["teacher", "school", "classroom"],
       
-      target_pattern: "My teacher is [adjective] / This is my [school/classroom]",
+      target_pattern: "My teacher is [adjective] / My school has... / In my classroom, there is...",
       
       conversation_topics: [
-        "The student's teacher (name, personality)",
-        "What the classroom looks like",
-        "School activities and learning",
-        "Favorite things about school",
-        "Friends and classmates",
-        "School rules and routines",
-        "What happens in the classroom"
+        "Teacher's personality and characteristics (kind, funny, smart, helpful)",
+        "What the teacher does to help students learn",
+        "Classroom setup and decorations (desks, board, posters, books)",
+        "Favorite places in the school (library, playground, cafeteria)",
+        "School building description (big, small, colorful, modern)",
+        "Daily routines with teacher (morning greeting, lessons, activities)",
+        "How the teacher makes learning fun",
+        "Other people at school (principal, other teachers, friends)",
+        "School rules and how students follow them",
+        "Special events or activities at school",
+        "What makes this school different or special",
+        "Feelings about going to school each day"
       ],
       
       example_questions: [
         "Tell me about your teacher. What is your teacher like?",
+        "Is your teacher kind? Is your teacher funny?",
+        "What does your teacher do to help you learn?",
         "What does your classroom look like?",
-        "What do you do in your classroom?",
-        "Do you like your school? Why?",
-        "What is your favorite thing about school?",
-        "What do you and your teacher do together?",
-        "Is your school big or small?"
+        "What do you see when you walk into your classroom?",
+        "Are there pictures on the walls in your classroom?",
+        "Do you like your school? What do you like about it?",
+        "Is your school big or small?",
+        "What is your favorite place at school?",
+        "What do you do with your teacher every day?",
+        "Does your teacher read stories to you?",
+        "What makes your teacher special?",
+        "How do you feel when you see your teacher?",
+        "What color are the walls in your classroom?",
+        "Do you have friends in your classroom?"
       ],
       
       minimum_turns: 15,
       
       success_criteria: [
-        "Uses 'My teacher is...' pattern correctly",
-        "Describes classroom or school features",
-        "Uses all target vocabulary naturally",
-        "Expresses feelings about school positively",
-        "Shows understanding of school environment"
+        "Uses 'My teacher is...' pattern correctly with adjectives",
+        "Describes at least 2 physical features of classroom or school",
+        "Uses all target vocabulary (teacher, school, classroom) naturally",
+        "Expresses positive feelings about school experience",
+        "Shows understanding of teacher's role in learning",
+        "Demonstrates emotional connection to school environment",
+        "Uses descriptive words (big, small, nice, fun, etc.)"
       ]
     }
   ],
@@ -264,7 +279,7 @@ export const week1RealData = {
     opening_lines_by_mission: {
       mission_1: "Hello! I am Ms. Nova, your English teacher. I want to know about you. What is your name?",
       mission_2: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
-      mission_3: "Welcome back! I want to learn about your school life. Tell me about your teacher. What is your teacher like?"
+      mission_3: "Hello again! I want to learn about your school life. Tell me about your teacher. What is your teacher like?"
     },
     
     conversation_style: [
