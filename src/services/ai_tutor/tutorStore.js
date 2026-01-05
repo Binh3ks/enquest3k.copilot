@@ -25,7 +25,7 @@ import {
 } from './vocabMasteryTracker.js';
 
 // 🔥 STORAGE VERSION - Increment to auto-clear old data
-const STORAGE_VERSION = '2.0.0'; // Updated for vocab mastery tracking
+const STORAGE_VERSION = '2.1.0'; // Force clear old messages for Week 1 real content
 
 // 🔥 Auto-migration: Clear old storage if version mismatch
 const clearOldStorage = () => {
