@@ -121,6 +121,7 @@ const StoryMissionTab = () => {
     console.log('💬 Adding welcome message to chat...');
     addMessage('story', welcomeMessage);
     setMissionStatus('started');
+    setCurrentQuestion(openingLine); // Set question immediately for hints
     console.log('✅ Message added, mission status set to started');
     
     // 🔊 ALWAYS play opening message with TTS (even if message already exists)
@@ -487,7 +488,7 @@ const StoryMissionTab = () => {
           <ScrambledHints 
             currentQuestion={currentQuestion}
             targetVocab={currentMission?.target_vocab || []}
-            show={messages.length > 0 && turnCount > 0}
+            show={true}
           />
 
           {/* Input Area */}

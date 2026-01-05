@@ -5,7 +5,7 @@ const ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => 
   const [shuffledHints, setShuffledHints] = useState([]);
 
   const generateScrambledHints = () => {
-    if (!currentQuestion || !targetVocab.length) return [];
+    if (!currentQuestion) return [];
 
     const hints = [];
     
@@ -31,8 +31,12 @@ const ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => 
       }
     }
 
-    if (!bestMatch && targetVocab.length > 0) {
-      bestMatch = ["I", "am", "a", targetVocab[0]];
+    if (!bestMatch) {
+      if (targetVocab.length > 0) {
+        bestMatch = ["I", "am", "a", targetVocab[0]];
+      } else {
+        bestMatch = ["Hello", "I", "am", "Alex"];
+      }
     }
 
     if (bestMatch) {
@@ -62,7 +66,7 @@ const ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => 
     <div className="px-6 py-3 bg-green-50 border-t border-green-200">
       <div className="flex items-center space-x-2 mb-3">
         <Shuffle size={16} className="text-green-600" />
-        <span className="text-sm font-medium text-green-700">Arrange these words to answer:</span>
+        <span className="text-base font-medium text-green-700">Arrange these words to answer:</span>
       </div>
       
       {shuffledHints.map(hint => (
@@ -72,14 +76,14 @@ const ScrambledHints = ({ currentQuestion, targetVocab = [], show = false }) => 
               <button
                 key={`${word}-${index}`}
                 onClick={() => handleWordClick(hint.id, index)}
-                className="px-3 py-2 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg text-sm font-medium transition-colors border border-green-300 hover:border-green-400"
+                className="px-4 py-3 bg-green-100 hover:bg-green-200 text-green-800 rounded-lg text-base font-medium transition-colors border border-green-300 hover:border-green-400"
               >
                 {word}
               </button>
             ))}
           </div>
           
-          <div className="text-xs text-green-600 mt-2">
+          <div className="text-sm text-green-600 mt-2">
             Hint: Arrange to make "{hint.correct.join(' ')}"
           </div>
         </div>
