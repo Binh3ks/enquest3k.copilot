@@ -14,7 +14,7 @@ import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../
 
 /**
  * Story Mission Tab - Guided story-based learning
- * Students complete missions using target vocabulary
+ * REDESIGNED: Large UI, Navigation, Mission Menu
  */
 const StoryMissionTab = () => {
   const { user, currentWeek } = useUserStore();
@@ -23,15 +23,16 @@ const StoryMissionTab = () => {
   const messages = useTutorStore(state => state.messages['story'] || []);
   const addMessage = useTutorStore(state => state.addMessage);
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
-  const recordTurn = useTutorStore(state => state.recordTurn); // 🔥 NEW: Behavior tracking
-  const getLearnerStyle = useTutorStore(state => state.getLearnerStyle); // 🔥 NEW
-  const getStrugglingTurns = useTutorStore(state => state.getStrugglingTurns); // 🔥 NEW
-  const initVocabMastery = useTutorStore(state => state.initVocabMastery); // 🔥 STEP 4
-  const trackVocabUsage = useTutorStore(state => state.trackVocabUsage); // 🔥 STEP 4
-  const getVocabFocusPrompt = useTutorStore(state => state.getVocabFocusPrompt); // 🔥 STEP 4
-  const vocabMastery = useTutorStore(state => state.vocabMastery); // 🔥 STEP 4
+  const recordTurn = useTutorStore(state => state.recordTurn);
+  const getLearnerStyle = useTutorStore(state => state.getLearnerStyle);
+  const getStrugglingTurns = useTutorStore(state => state.getStrugglingTurns);
+  const initVocabMastery = useTutorStore(state => state.initVocabMastery);
+  const trackVocabUsage = useTutorStore(state => state.trackVocabUsage);
+  const getVocabFocusPrompt = useTutorStore(state => state.getVocabFocusPrompt);
+  const vocabMastery = useTutorStore(state => state.vocabMastery);
   
   const [currentMissionIndex, setCurrentMissionIndex] = useState(0);
+  const [viewMode, setViewMode] = useState('menu'); // 'menu' or 'mission'
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [missionStatus, setMissionStatus] = useState('not_started');
@@ -44,7 +45,7 @@ const StoryMissionTab = () => {
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
-  const initializingRef = useRef(false); // 🔥 Prevent double initialization
+  const initializingRef = useRef(false);
 
   // Auto-scroll to bottom
   useEffect(() => {

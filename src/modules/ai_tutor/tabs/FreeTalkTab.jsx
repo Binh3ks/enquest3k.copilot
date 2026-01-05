@@ -9,6 +9,7 @@ import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { buildFreeTalkPrompt } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
+import week1RealData from '../../../data/weeks/week_01_real';
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
