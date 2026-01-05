@@ -115,50 +115,76 @@ export const week1RealData = {
     { number: 10, word: "ten" }
   ],
   
-  // === STORY MISSION (MS. NOVA MUST USE THIS) ===
-  story_mission: {
-    title: "Your Hero Identity",
-    title_vi: "Danh Tính Anh Hùng Của Bạn",
-    
-    scenario: `Welcome, young hero! 🦸‍♂️
-    
-Today is your first day at Hero Academy. Ms. Nova, your teacher, wants to meet you!
+  // === 3 STORY MISSIONS (MS. NOVA MUST USE THIS) ===
+  story_missions: [
+    {
+      mission_id: 1,
+      title: "First Day at Hero Academy",
+      title_vi: "Ngày Đầu Tiên Tại Học Viện Anh Hùng",
+      
+      scenario: `Welcome to Hero Academy! This is your first day as a young hero in training.
 
-But there's a problem: The Hero Identity Cards are all mixed up! 😱
+Ms. Nova, your teacher, is standing at the entrance with a warm smile. She wants to know who you are!
 
-Your mission: Help Ms. Nova by introducing yourself clearly. Say your NAME, your AGE, and what kind of HERO you want to be!
+Your mission: Introduce yourself to Ms. Nova. Tell her your NAME and your AGE.
 
-Example:
-👦 "I am Alex. I am 7 years old. I am a brave hero!"
-👧 "I am Emma. I am 8 years old. I am a smart hero!"
+The conversation will flow naturally - just like meeting a new friend. Ms. Nova will ask questions one at a time, and you can answer at your own pace.`,
+      
+      target_vocab: ["name", "age", "student"],
+      minimum_turns: 10,
+      
+      success_criteria: [
+        "Introduces name using 'I am [name]' or 'My name is [name]'",
+        "States age using 'I am [age] years old'",
+        "Responds naturally to at least 10 conversation turns"
+      ]
+    },
+    {
+      mission_id: 2,
+      title: "Choosing Your Hero Power",
+      title_vi: "Chọn Sức Mạnh Anh Hùng",
+      
+      scenario: `Now that Ms. Nova knows your name and age, it's time for the exciting part!
 
-Ms. Nova is listening... Who are you? 🎤`,
-    
-    scenario_vi: `Chào mừng, anh hùng trẻ tuổi! 🦸‍♂️
+Every student at Hero Academy gets to choose their special HERO POWER. Will you be super fast? Super strong? Super smart?
 
-Hôm nay là ngày đầu tiên của bạn tại Học Viện Anh Hùng. Cô Nova, giáo viên của bạn, muốn gặp bạn!
+Your mission: Talk with Ms. Nova about what kind of hero you want to be. Describe your hero power!
 
-Nhưng có một vấn đề: Các Thẻ Danh Tính Anh Hùng bị lẫn lộn! 😱
+Ms. Nova will guide you through discovering your hero identity. This conversation will help you practice saying "I am a [type] hero" naturally.`,
+      
+      target_vocab: ["hero", "power", "boy", "girl"],
+      minimum_turns: 12,
+      
+      success_criteria: [
+        "Uses 'hero' in conversation",
+        "Describes a hero power or hero type",
+        "Maintains natural conversation for at least 12 turns"
+      ]
+    },
+    {
+      mission_id: 3,
+      title: "Your Hero Identity Card",
+      title_vi: "Thẻ Danh Tính Anh Hùng",
+      
+      scenario: `Excellent work! Ms. Nova is now ready to create your official Hero Identity Card.
 
-Nhiệm vụ của bạn: Giúp cô Nova bằng cách tự giới thiệu rõ ràng. Nói TÊN, TUỔI của bạn, và loại ANH HÙNG bạn muốn trở thành!
+But she wants to make sure she has everything correct. She'll review your name, age, and hero power with you.
 
-Ví dụ:
-👦 "I am Alex. I am 7 years old. I am a brave hero!"
-👧 "I am Emma. I am 8 years old. I am a smart hero!"
+Your mission: Have a complete conversation where you confidently introduce yourself as a hero. Use everything you've learned!
 
-Cô Nova đang lắng nghe... Bạn là ai? 🎤`,
-    
-    target_pattern: "I am [name]. I am [age] years old. I am a [adjective] [hero/student].",
-    
-    required_vocab: ["name", "age", "student", "hero"],
-    
-    success_criteria: [
-      "Uses 'I am' correctly",
-      "States name clearly",
-      "States age with 'years old'",
-      "Uses at least 1 vocabulary word (hero/student/power)"
-    ]
-  },
+This is your chance to show Ms. Nova that you can introduce yourself like a real hero. The conversation will feel natural and fun - just like talking with a friend about your superhero dreams.`,
+      
+      target_vocab: ["name", "age", "student", "hero", "power"],
+      minimum_turns: 15,
+      
+      success_criteria: [
+        "Introduces self completely (name + age + hero identity)",
+        "Uses all target vocabulary naturally",
+        "Maintains engaging conversation for at least 15 turns",
+        "Shows confidence in self-introduction"
+      ]
+    }
+  ],
   
   // === TEACHING METHODOLOGY (FROM SYLLABUS PRINCIPLES) ===
   teaching_principles: {
@@ -171,36 +197,51 @@ Cô Nova đang lắng nghe... Bạn là ai? 🎤`,
   
   // === MS. NOVA AI TUTOR INSTRUCTIONS ===
   nova_instructions: {
-    persona: "Friendly teacher at Hero Academy, enthusiastic about superheroes",
-    tone: "Warm, encouraging, playful",
+    persona: "Friendly teacher at Hero Academy, warm and human-like",
+    tone: "Warm, encouraging, natural - like a patient friend",
     
-    opening_line: "Hello, young hero! I'm Ms. Nova, your teacher at Hero Academy! 🦸‍♀️ What's your name?",
+    opening_lines_by_mission: {
+      mission_1: "Hello! I'm Ms. Nova, your teacher at Hero Academy. I'm so happy to meet you! What's your name?",
+      mission_2: "Great to see you again! Now, let's talk about your hero power. What kind of hero do you want to be?",
+      mission_3: "Welcome back! Let's create your Hero Identity Card together. Can you tell me your name again?"
+    },
     
-    recast_strategy: "ALWAYS recast student errors by modeling correct form",
+    conversation_style: [
+      "Natural and flowing - like talking with a friend",
+      "One clear question per turn",
+      "Build on previous answers - show active listening",
+      "NO emojis - text-to-speech will read them aloud",
+      "Keep responses under 30 words",
+      "Maintain conversation for minimum 10-15 turns per mission"
+    ],
+    
+    recast_strategy: "ALWAYS recast student errors by modeling correct form naturally",
     recast_example: {
       student: "I Alex.",
-      nova_recast: "Oh, you ARE Alex! That's a great name! I am Ms. Nova. How old are you, Alex?"
+      nova_recast: "Oh, you ARE Alex! That's a wonderful name! I am Ms. Nova. How old are you, Alex?"
     },
     
     vocabulary_scaffolding: [
-      "Introduce 'name' first (point to self)",
-      "Then 'age' with gestures (hold up fingers)",
-      "Then 'hero' (superhero pose)",
-      "Use 'power' only after student understands 'hero'"
+      "Mission 1: Focus on 'name' and 'age'",
+      "Mission 2: Introduce 'hero' and 'power'",
+      "Mission 3: Use all vocabulary together naturally"
     ],
     
     questioning_skill: [
       "What is your name?",
       "How old are you?",
       "Are you a student?",
-      "What kind of hero do you want to be?"
+      "What kind of hero do you want to be?",
+      "What is your hero power?"
     ],
     
-    must_use_vocab: ["name", "age", "student", "hero"],
+    must_use_vocab: ["name", "age", "student", "hero", "power"],
     must_avoid: [
+      "Emojis or special characters",
       "Vietnamese translation",
       "Explicit grammar rules",
-      "Corrections without recast"
+      "Corrections without recast",
+      "Multiple questions in one turn"
     ]
   },
   

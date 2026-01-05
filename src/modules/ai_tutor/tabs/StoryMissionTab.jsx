@@ -31,6 +31,7 @@ const StoryMissionTab = () => {
   const getVocabFocusPrompt = useTutorStore(state => state.getVocabFocusPrompt); // 🔥 STEP 4
   const vocabMastery = useTutorStore(state => state.vocabMastery); // 🔥 STEP 4
   
+  const [currentMissionIndex, setCurrentMissionIndex] = useState(0);
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [missionStatus, setMissionStatus] = useState('not_started');
@@ -38,6 +39,8 @@ const StoryMissionTab = () => {
   const [showHints, setShowHints] = useState(false);
   const [silentTurns, setSilentTurns] = useState(0);
   const [initialized, setInitialized] = useState(false);
+  
+  const currentMission = week1RealData.story_missions?.[currentMissionIndex];
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -74,9 +77,10 @@ const StoryMissionTab = () => {
   const initializeMission = async () => {
     console.log('🎯 initializeMission called, messages.length:', messages.length);
     
-    // 🔥 Use real syllabus opening line
-    const openingLine = week1RealData.nova_instructions.opening_line;
-    console.log('📝 Opening line:', openingLine);
+    // 🔥 Use mission-specific opening line (no emoji)
+    const missionKey = currentMissionIndex === 0 ? 'mission_1' : currentMissionIndex === 1 ? 'mission_2' : 'mission_3';
+    const openingLine = week1RealData.nova_instructions.opening_lines_by_mission[missionKey];
+    console.log('📝 Opening line (Mission', currentMissionIndex + 1, '):', openingLine);
     
     // Check if already initialized
     if (messages.length > 0) {
@@ -268,7 +272,7 @@ const StoryMissionTab = () => {
             </div>
             <div>
               <h2 className="text-lg font-bold text-gray-800">Story Mission</h2>
-              <p className="text-xs text-gray-500">Week {currentWeek} Adventure</p>
+              <p className="text-xs text-gray-500">Week {currentWeek} - {currentMission?.title || 'Loading...'}</p>
             </div>
           </div>
 
@@ -303,7 +307,46 @@ const StoryMissionTab = () => {
             )}
           </div>
         </div>
+        
+        {/* Mission Selector */}
+        <div className="mt-3 flex items-center justify-center space-x-2">
+          {week1RealData.story_missions?.map((mission, index) => (
+            <button
+              key={mission.mission_id}
+              onClick={() => {
+                setCurrentMissionIndex(index);
+                useTutorStore.getState().clearMessages('story');
+                setInitialized(false);
+                initializingRef.current = false;
+                setTurnCount(0);
+                setMissionStatus('not_started');
+              }}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                currentMissionIndex === index
+                  ? 'bg-purple-600 text-white shadow-md'
+                  : 'bg-purple-100 text-purple-600 hover:bg-purple-200'
+              }`}
+            >
+              Mission {mission.mission_id}
+            </button>
+          ))}
+        </div>
       </div>
+
+      {/* Mission Description */}
+      {currentMission && (
+        <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 border-b border-purple-200">
+          <p className="text-sm text-gray-700 leading-relaxed">
+            {currentMission.scenario}
+          </p>
+          <div className="mt-2 flex items-center space-x-2 text-xs text-purple-700">
+            <Target size={12} />
+            <span>Minimum {currentMission.minimum_turns} turns</span>
+            <span className="ml-2">•</span>
+            <span>{currentMission.target_vocab.join(', ')}</span>
+          </div>
+        </div>
+      )}
 
       {/* Chat Area */}
       <div 
