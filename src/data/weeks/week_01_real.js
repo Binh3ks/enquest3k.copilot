@@ -163,72 +163,85 @@ export const week1RealData = {
       mission_id: 2,
       title: "What's in Your Backpack?",
       title_vi: "Có Gì Trong Ba Lô?",
-      theme: "School belongings",
+      theme: "School supplies and belongings",
       
-      scenario: `Show Ms. Nova what you have in your backpack!`,
+      scenario: `Show Ms. Nova what school supplies you have! Talk about your backpack, books, and notebook.`,
       
-      mission_context: `The student talks about their school supplies. This mission practices "I have..." pattern with vocabulary: backpack, book, notebook. Ms. Nova asks about items in the backpack and encourages the student to describe them using present simple.`,
+      mission_context: `The student shows and describes their school supplies. Ms. Nova is curious about what students bring to school. This mission focuses on 'I have...' pattern with school items. Encourage describing colors, sizes, and what they do with these items. Keep it natural and fun - like show-and-tell time!`,
       
       target_vocab: ["backpack", "book", "notebook"],
       
-      target_pattern: "I have a [item]",
+      target_pattern: "I have a [color/size] [item]",
       
       conversation_topics: [
-        "What's in the backpack",
-        "Books and notebooks",
-        "School supplies",
-        "Colors and sizes"
+        "Items in the backpack",
+        "Colors of school supplies",
+        "What books are about",
+        "Writing in notebooks",
+        "Organizing school things",
+        "Favorite school supplies"
       ],
       
       example_questions: [
         "What do you have in your backpack?",
-        "Do you have a book?",
+        "Do you have a book with you?",
         "What color is your notebook?",
-        "How many books do you have?"
+        "What do you write in your notebook?",
+        "How many books do you have?",
+        "Do you like your backpack?"
       ],
       
       minimum_turns: 12,
       
       success_criteria: [
-        "Uses 'I have' correctly",
-        "Names at least 2 school items",
-        "Describes items with adjectives"
+        "Uses 'I have' pattern correctly",
+        "Names at least 2 school supplies",
+        "Describes items with colors or adjectives",
+        "Shows engagement with school supplies"
       ]
     },
     {
       mission_id: 3,
       title: "Meeting Your Teacher",
       title_vi: "Gặp Gỡ Giáo Viên",
-      theme: "School environment",
+      theme: "School environment and people",
       
-      scenario: `Learn about your teacher and classroom!`,
+      scenario: `Talk with Ms. Nova about your teacher, school, and classroom! Share what you like about your learning environment.`,
       
-      mission_context: `The student has a conversation about their teacher and classroom. This mission practices "This is..." and "My teacher is..." patterns with vocabulary: teacher, school, classroom. Focus on describing the learning environment.`,
+      mission_context: `The student describes their school environment and teacher. Ms. Nova wants to know about the student's school experience. This mission focuses on 'My teacher is...' and 'This is my...' patterns. Encourage talking about what makes their school special, what they do in the classroom, and how they feel about their teacher. Create a warm conversation about school life.`,
       
       target_vocab: ["teacher", "school", "classroom"],
       
-      target_pattern: "This is my [teacher/school/classroom]",
+      target_pattern: "My teacher is [adjective] / This is my [school/classroom]",
       
       conversation_topics: [
-        "The teacher",
-        "The classroom",
-        "The school",
-        "Learning activities"
+        "The student's teacher (name, personality)",
+        "What the classroom looks like",
+        "School activities and learning",
+        "Favorite things about school",
+        "Friends and classmates",
+        "School rules and routines",
+        "What happens in the classroom"
       ],
       
       example_questions: [
-        "Who is your teacher?",
-        "What is your classroom like?",
-        "Do you like your school?",
-        "What do you do in class?"
+        "Tell me about your teacher. What is your teacher like?",
+        "What does your classroom look like?",
+        "What do you do in your classroom?",
+        "Do you like your school? Why?",
+        "What is your favorite thing about school?",
+        "What do you and your teacher do together?",
+        "Is your school big or small?"
       ],
       
       minimum_turns: 15,
       
       success_criteria: [
-        "Uses 'This is' correctly",
-        "Describes teacher/classroom",
-        "Uses all target vocabulary"
+        "Uses 'My teacher is...' pattern correctly",
+        "Describes classroom or school features",
+        "Uses all target vocabulary naturally",
+        "Expresses feelings about school positively",
+        "Shows understanding of school environment"
       ]
     }
   ],
@@ -249,9 +262,9 @@ export const week1RealData = {
     
     // Opening lines for each mission (PRESENT SIMPLE ONLY - Week 1 grammar)
     opening_lines_by_mission: {
-      mission_1: "Hello! I am Ms. Nova, your English teacher. What is your name?",
-      mission_2: "Hi again! I want to know about your backpack. What do you have in your backpack?",
-      mission_3: "Welcome back! Tell me about your teacher and your classroom!"
+      mission_1: "Hello! I am Ms. Nova, your English teacher. I want to know about you. What is your name?",
+      mission_2: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
+      mission_3: "Welcome back! I want to learn about your school life. Tell me about your teacher. What is your teacher like?"
     },
     
     conversation_style: [
@@ -312,15 +325,15 @@ export const week1RealData = {
       definition_vi: "Tên",
       definition_en: "What someone is called.",
       example: "My name is Alex.",
-      syllabus_context: "Identity - Introducing self"
+      syllabus_context: "Mission 1 - Identity"
     },
     {
       word: "age",
       pronunciation: "/eɪdʒ/",
-      definition_vi: "Tuổi",
+      definition_vi: "Tuổi", 
       definition_en: "How old someone is.",
       example: "I am 7 years old.",
-      syllabus_context: "Identity - Introducing age"
+      syllabus_context: "Mission 1 - Identity"
     },
     {
       word: "student",
@@ -328,39 +341,55 @@ export const week1RealData = {
       definition_vi: "Học sinh",
       definition_en: "A person who is learning at a school.",
       example: "I am a student.",
-      syllabus_context: "Identity - Role"
+      syllabus_context: "Mission 1 - Identity"
     },
     {
-      word: "hero",
-      pronunciation: "/ˈhɪroʊ/",
-      definition_vi: "Anh hùng",
-      definition_en: "A brave person who helps others.",
-      example: "I want to be a hero!",
-      syllabus_context: "Creative Lens - Superhero theme"
+      word: "backpack",
+      pronunciation: "/ˈbækpæk/",
+      definition_vi: "Ba lô",
+      definition_en: "A bag you carry on your back for school things.",
+      example: "I have a blue backpack.",
+      syllabus_context: "Mission 2 - School supplies"
     },
     {
-      word: "power",
-      pronunciation: "/ˈpaʊər/",
-      definition_vi: "Sức mạnh, quyền năng",
-      definition_en: "A special ability that makes you strong.",
-      example: "My power is reading fast!",
-      syllabus_context: "Creative Lens - Superhero abilities"
+      word: "book",
+      pronunciation: "/bʊk/",
+      definition_vi: "Sách",
+      definition_en: "Something you read to learn.",
+      example: "I have a math book.",
+      syllabus_context: "Mission 2 - School supplies"
     },
     {
-      word: "boy",
-      pronunciation: "/bɔɪ/",
-      definition_vi: "Con trai",
-      definition_en: "A male child.",
-      example: "He is a boy.",
-      syllabus_context: "Identity - Gender"
+      word: "notebook",
+      pronunciation: "/ˈnoʊtbʊk/",
+      definition_vi: "Vở ghi chép",
+      definition_en: "A book with empty pages for writing.",
+      example: "I write in my notebook.",
+      syllabus_context: "Mission 2 - School supplies"
     },
     {
-      word: "girl",
-      pronunciation: "/ɡɜrl/",
-      definition_vi: "Con gái",
-      definition_en: "A female child.",
-      example: "She is a girl.",
-      syllabus_context: "Identity - Gender"
+      word: "teacher",
+      pronunciation: "/ˈtiːtʃər/",
+      definition_vi: "Giáo viên",
+      definition_en: "A person who helps students learn.",
+      example: "My teacher is kind.",
+      syllabus_context: "Mission 3 - School environment"
+    },
+    {
+      word: "school",
+      pronunciation: "/skuːl/",
+      definition_vi: "Trường học",
+      definition_en: "A place where children go to learn.",
+      example: "I go to school every day.",
+      syllabus_context: "Mission 3 - School environment"
+    },
+    {
+      word: "classroom",
+      pronunciation: "/ˈklæsruːm/",
+      definition_vi: "Lớp học",
+      definition_en: "A room where students learn with their teacher.",
+      example: "Our classroom is big.",
+      syllabus_context: "Mission 3 - School environment"
     }
   ],
 
