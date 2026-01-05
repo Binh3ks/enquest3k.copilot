@@ -187,7 +187,7 @@ const useTutorStore = create(
       // UI PREFERENCES
       // ============================================
       
-      widgetSize: 'medium', // 'small' | 'medium' | 'large'
+      widgetSize: 'large', // 'normal' | 'large' - Default to large for better UX
       theme: 'light', // 'light' | 'dark'
       showHints: true,
       showPedagogyNotes: false, // Dev mode

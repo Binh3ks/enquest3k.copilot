@@ -275,156 +275,216 @@ const StoryMissionTab = () => {
 
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-purple-50 to-pink-50">
-      {/* Mission Header */}
-      <div className="bg-white border-b border-purple-200 px-6 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-              <BookOpen size={20} className="text-purple-600" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-gray-800">Story Mission</h2>
-              <p className="text-xs text-gray-500">Week {currentWeek} - {currentMission?.title || 'Loading...'}</p>
+      {viewMode === 'menu' ? (
+        // MISSION MENU VIEW - Large Cards
+        <>
+          <div className="bg-white border-b border-purple-200 px-6 py-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                <BookOpen size={24} className="text-purple-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-800">Story Mission</h2>
+                <p className="text-sm text-gray-500">Week {currentWeek} - Choose Your Mission</p>
+              </div>
             </div>
           </div>
 
-          {/* Mission Progress */}
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={() => {
-                useTutorStore.getState().clearMessages('story');
-                setInitialized(false);
-                setTurnCount(0);
-                setMissionStatus('not_started');
-              }}
-              className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-sm"
-              title="Clear chat and restart"
-            >
-              <RotateCcw size={14} />
-              <span>Reset</span>
-            </button>
-            
-            <div className="flex items-center space-x-2">
-              <Target size={16} className="text-purple-600" />
-              <span className="text-sm font-medium text-gray-700">
-                Turn {turnCount}
-              </span>
+          <div className="flex-1 overflow-y-auto px-6 py-6">
+            <div className="space-y-4">
+              {week1RealData.story_missions?.map((mission, index) => (
+                <div
+                  key={mission.mission_id}
+                  onClick={() => {
+                    console.log('🎯 Starting mission', index + 1);
+                    setCurrentMissionIndex(index);
+                    setViewMode('mission');
+                    useTutorStore.getState().clearMessages('story');
+                    setInitialized(false);
+                    initializingRef.current = false;
+                    setTurnCount(0);
+                    setMissionStatus('not_started');
+                    setShowHints(false);
+                    // Initialize mission after state update
+                    setTimeout(() => {
+                      if (!initializingRef.current) {
+                        initializingRef.current = true;
+                        initializeMission().catch(err => {
+                          console.error('❌ Mission start error:', err);
+                          initializingRef.current = false;
+                        }).finally(() => {
+                          setInitialized(true);
+                        });
+                      }
+                    }, 100);
+                  }}
+                  className="bg-white rounded-xl p-6 shadow-lg border border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-200 cursor-pointer group"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                      {mission.mission_id}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors">
+                        {mission.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                        {mission.scenario}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-2 text-xs">
+                        <div className="flex items-center space-x-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
+                          <Target size={12} />
+                          <span>{mission.minimum_turns} turns</span>
+                        </div>
+                        <div className="flex items-center space-x-1 bg-pink-100 text-pink-700 px-3 py-1 rounded-full">
+                          <BookOpen size={12} />
+                          <span>{mission.target_vocab.length} words</span>
+                        </div>
+                        <div className="flex-1"></div>
+                        <div className="text-purple-500 font-medium">
+                          Start Mission →
+                        </div>
+                      </div>
+                      <div className="mt-3 flex flex-wrap gap-1">
+                        {mission.target_vocab.slice(0, 4).map((word, i) => (
+                          <span key={i} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                            {word}
+                          </span>
+                        ))}
+                        {mission.target_vocab.length > 4 && (
+                          <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                            +{mission.target_vocab.length - 4} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
+        </>
+      ) : (
+        // MISSION CONVERSATION VIEW - Existing UI
+        <>
+          {/* Mission Header */}
+          <div className="bg-white border-b border-purple-200 px-6 py-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <button
+                  onClick={() => setViewMode('menu')}
+                  className="w-10 h-10 bg-purple-100 hover:bg-purple-200 rounded-full flex items-center justify-center transition-colors"
+                  title="Back to menu"
+                >
+                  <span className="text-purple-600 text-lg">←</span>
+                </button>
+                <div>
+                  <h2 className="text-lg font-bold text-gray-800">Story Mission {currentMissionIndex + 1}</h2>
+                  <p className="text-xs text-gray-500">{currentMission?.title || 'Loading...'}</p>
+                </div>
+              </div>
+
+              {/* Mission Progress */}
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => {
+                    useTutorStore.getState().clearMessages('story');
+                    setInitialized(false);
+                    setTurnCount(0);
+                    setMissionStatus('not_started');
+                  }}
+                  className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-sm"
+                  title="Clear chat and restart"
+                >
+                  <RotateCcw size={14} />
+                  <span>Reset</span>
+                </button>
+                
+                <div className="flex items-center space-x-2">
+                  <Target size={16} className="text-purple-600" />
+                  <span className="text-sm font-medium text-gray-700">
+                    Turn {turnCount}
+                  </span>
+                </div>
+                
+                {missionStatus === 'completed' && (
+                  <div className="flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">
+                    <CheckCircle2 size={16} className="text-green-600" />
+                    <span className="text-sm font-medium text-green-700">Complete!</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Mission Description */}
+          {currentMission && (
+            <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 border-b border-purple-200">
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {currentMission.scenario}
+              </p>
+              <div className="mt-2 flex items-center space-x-2 text-xs text-purple-700">
+                <Target size={12} />
+                <span>Minimum {currentMission.minimum_turns} turns</span>
+                <span className="ml-2">•</span>
+                <span>{currentMission.target_vocab.join(', ')}</span>
+              </div>
+            </div>
+          )}
+
+          {/* Chat Area */}
+          <div 
+            ref={chatContainerRef}
+            className="flex-1 overflow-y-auto px-6 py-4 space-y-2"
+          >
+            {messages.map((msg, index) => (
+              <ChatBubble
+                key={index}
+                role={msg.role}
+                content={msg.content}
+                timestamp={msg.timestamp}
+                pedagogyNote={msg.pedagogyNote}
+              />
+            ))}
             
-            {missionStatus === 'completed' && (
-              <div className="flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">
-                <CheckCircle2 size={16} className="text-green-600" />
-                <span className="text-sm font-medium text-green-700">Complete!</span>
+            {isLoading && (
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                  <Loader2 className="text-white animate-spin" size={20} />
+                </div>
+                <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
+                  <p className="text-sm text-gray-500">Ms. Nova is thinking...</p>
+                </div>
               </div>
             )}
+            
+            <div ref={chatEndRef} />
           </div>
-        </div>
-        
-        {/* Mission Selector */}
-        <div className="mt-3 flex items-center justify-center space-x-2">
-          {week1RealData.story_missions?.map((mission, index) => (
-            <button
-              key={mission.mission_id}
-              onClick={() => {
-                console.log('🎯 Switching to mission', index + 1);
-                setCurrentMissionIndex(index);
-                useTutorStore.getState().clearMessages('story');
-                setInitialized(false);
-                initializingRef.current = false;
-                setTurnCount(0);
-                setMissionStatus('not_started');
-                setShowHints(false);
-                // Re-initialize with new mission after state update
-                setTimeout(() => {
-                  if (!initializingRef.current) {
-                    initializingRef.current = true;
-                    initializeMission().catch(err => {
-                      console.error('❌ Mission switch error:', err);
-                      initializingRef.current = false;
-                    }).finally(() => {
-                      setInitialized(true);
-                    });
-                  }
-                }, 100);
-              }}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-                currentMissionIndex === index
-                  ? 'bg-purple-600 text-white shadow-md'
-                  : 'bg-purple-100 text-purple-600 hover:bg-purple-200'
-              }`}
-            >
-              Mission {mission.mission_id}
-            </button>
-          ))}
-        </div>
-      </div>
 
-      {/* Mission Description */}
-      {currentMission && (
-        <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 border-b border-purple-200">
-          <p className="text-sm text-gray-700 leading-relaxed">
-            {currentMission.scenario}
-          </p>
-          <div className="mt-2 flex items-center space-x-2 text-xs text-purple-700">
-            <Target size={12} />
-            <span>Minimum {currentMission.minimum_turns} turns</span>
-            <span className="ml-2">•</span>
-            <span>{currentMission.target_vocab.join(', ')}</span>
-          </div>
-        </div>
-      )}
-
-      {/* Chat Area */}
-      <div 
-        ref={chatContainerRef}
-        className="flex-1 overflow-y-auto px-6 py-4 space-y-2"
-      >
-        {messages.map((msg, index) => (
-          <ChatBubble
-            key={index}
-            role={msg.role}
-            content={msg.content}
-            timestamp={msg.timestamp}
-            pedagogyNote={msg.pedagogyNote}
-          />
-        ))}
-        
-        {isLoading && (
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-              <Loader2 className="text-white animate-spin" size={20} />
+          {/* Hints Area */}
+          {showHints && hints.length > 0 && (
+            <div className="px-6 py-2">
+              <HintChips
+                hints={hints}
+                onHintClick={handleHintClick}
+                show={showHints}
+              />
             </div>
-            <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-              <p className="text-sm text-gray-500">Ms. Nova is thinking...</p>
-            </div>
-          </div>
-        )}
-        
-        <div ref={chatEndRef} />
-      </div>
+          )}
 
-      {/* Hints Area */}
-      {showHints && hints.length > 0 && (
-        <div className="px-6 py-2">
-          <HintChips
-            hints={hints}
-            onHintClick={handleHintClick}
-            show={showHints}
+          {/* Input Area */}
+          <InputBar
+            onSend={handleSendMessage}
+            disabled={isLoading || missionStatus === 'completed'}
+            placeholder={
+              missionStatus === 'completed' 
+                ? 'Mission complete! Great job!' 
+                : 'Speak or type your answer...'
+            }
+            showVoiceInput={true}
           />
-        </div>
+        </>
       )}
-
-      {/* Input Area */}
-      <InputBar
-        onSend={handleSendMessage}
-        disabled={isLoading || missionStatus === 'completed'}
-        placeholder={
-          missionStatus === 'completed' 
-            ? 'Mission complete! Great job!' 
-            : 'Speak or type your answer...'
-        }
-        showVoiceInput={true}
-      />
     </div>
   );
 };

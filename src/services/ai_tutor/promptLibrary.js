@@ -103,7 +103,7 @@ Turns 10+: Continue until student uses 80% of target vocabulary
 Final Turn: Gentle closing - "Great work today! We can continue this story next time."
 
 **MINIMUM TURN ENFORCEMENT:**
-- YOU MUST CONTINUE CONVERSATION FOR AT LEAST ${currentMission ? currentMission.minimum_turns : 10} TURNS
+- YOU MUST CONTINUE CONVERSATION FOR AT LEAST 10+ TURNS
 - DO NOT end conversation early
 - Keep asking follow-up questions naturally
 - Only close when minimum turns reached AND vocabulary practiced
@@ -516,6 +516,12 @@ export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel
 
 **MODE: STORY MISSION**
 ${modePrompt}
+
+**🔥 CRITICAL: MINIMUM ${currentMission.minimum_turns || 10} TURNS REQUIRED**
+- YOU MUST CONTINUE CONVERSATION FOR AT LEAST ${currentMission.minimum_turns || 10} TURNS
+- DO NOT end conversation early even if student seems done
+- Keep asking follow-up questions to reach minimum turns
+- Use phrases like: "Tell me more about...", "What else can you tell me about...", "How about..."
 
 **OFFICIAL SYLLABUS - WEEK ${realSyllabusData.week_id}:**
 - Topic: ${realSyllabusData.topic}

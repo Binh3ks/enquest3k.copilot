@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test currentMission Fix</title>
+</head>
+<body>
+    <h1>Test Page - Force Clear Cache</h1>
+    <p>Time: <span id="time"></span></p>
+    
+    <script>
+        // Force cache clear
+        document.getElementById('time').textContent = new Date().toISOString();
+        
+        // Clear all localStorage to force fresh state
+        if (confirm('Clear localStorage to force fresh AI Tutor state?')) {
+            localStorage.clear();
+            sessionStorage.clear();
+            alert('Cache cleared! Now go to main app: http://localhost:5173/week/1/read_explore');
+        }
+    </script>
+</body>
+</html>
