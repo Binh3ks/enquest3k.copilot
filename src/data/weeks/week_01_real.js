@@ -122,7 +122,9 @@ export const week1RealData = {
       title: "First Day at Hero Academy",
       title_vi: "Ngày Đầu Tiên Tại Học Viện Anh Hùng",
       
-      scenario: `Welcome to Hero Academy! This is your first day as a young hero in training.
+      scenario: `Meet Ms. Nova at Hero Academy! Tell her your name and age.`,
+      
+      scenario_full: `Welcome to Hero Academy! This is your first day as a young hero in training.
 
 Ms. Nova, your teacher, is standing at the entrance with a warm smile. She wants to know who you are!
 
@@ -144,7 +146,9 @@ The conversation will flow naturally - just like meeting a new friend. Ms. Nova 
       title: "Choosing Your Hero Power",
       title_vi: "Chọn Sức Mạnh Anh Hùng",
       
-      scenario: `Now that Ms. Nova knows your name and age, it's time for the exciting part!
+      scenario: `Talk with Ms. Nova about what kind of hero you want to be!`,
+      
+      scenario_full: `Now that Ms. Nova knows your name and age, it's time for the exciting part!
 
 Every student at Hero Academy gets to choose their special HERO POWER. Will you be super fast? Super strong? Super smart?
 
@@ -166,7 +170,9 @@ Ms. Nova will guide you through discovering your hero identity. This conversatio
       title: "Your Hero Identity Card",
       title_vi: "Thẻ Danh Tính Anh Hùng",
       
-      scenario: `Excellent work! Ms. Nova is now ready to create your official Hero Identity Card.
+      scenario: `Help Ms. Nova create your Hero Identity Card with all your info!`,
+      
+      scenario_full: `Excellent work! Ms. Nova is now ready to create your official Hero Identity Card.
 
 But she wants to make sure she has everything correct. She'll review your name, age, and hero power with you.
 

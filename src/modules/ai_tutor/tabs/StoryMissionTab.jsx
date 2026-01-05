@@ -79,7 +79,13 @@ const StoryMissionTab = () => {
     
     // 🔥 Use mission-specific opening line (no emoji)
     const missionKey = currentMissionIndex === 0 ? 'mission_1' : currentMissionIndex === 1 ? 'mission_2' : 'mission_3';
-    const openingLine = week1RealData.nova_instructions.opening_lines_by_mission[missionKey];
+    const openingLine = week1RealData.nova_instructions.opening_lines_by_mission?.[missionKey];
+    
+    if (!openingLine) {
+      console.error('❌ Opening line not found for', missionKey);
+      return;
+    }
+    
     console.log('📝 Opening line (Mission', currentMissionIndex + 1, '):', openingLine);
     
     // Check if already initialized
@@ -96,8 +102,9 @@ const StoryMissionTab = () => {
           voice: 'nova',
           autoPlay: true
         });
+        console.log('🔊 TTS played successfully');
       } catch (error) {
-        console.error('TTS error for opening message:', error);
+        console.error('❌ TTS error for opening message:', error);
       }
       return;
     }
@@ -123,8 +130,9 @@ const StoryMissionTab = () => {
         voice: 'nova',
         autoPlay: true
       });
+      console.log('🔊 TTS played successfully');
     } catch (error) {
-      console.error('TTS error for opening message:', error);
+      console.error('❌ TTS error for opening message:', error);
     }
     
     // Set hints from syllabus

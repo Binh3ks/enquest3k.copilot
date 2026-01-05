@@ -59,14 +59,13 @@ const FreeTalkTab = () => {
       return;
     }
     
-    // Add new Hero Academy greeting
-    // 🔥 Week 1 themed greetings (Hero Academy context)
+    // Add natural greeting (NO EMOJI - TTS compatibility)
     const greetings = [
-      `Hi ${user?.name || 'there'}! 🦸‍♀️ I'm Ms. Nova from Hero Academy! What's your superhero power?`,
-      `Hello ${user?.name || 'friend'}! 💫 Welcome to Hero Academy! Are you a boy or a girl hero?`,
-      `Hey ${user?.name || 'there'}! ✨ I'm your teacher Ms. Nova! How old are you?`,
-      `Hi ${user?.name || 'there'}! 🎓 Ready for Hero Academy? What makes you a special student?`,
-      `Hello ${user?.name || 'friend'}! 🌟 Tell me about yourself! I'm Ms. Nova, your hero teacher!`
+      `Hi ${user?.name || 'there'}! I'm Ms. Nova. What did you do today?`,
+      `Hello ${user?.name || 'friend'}! How are you feeling today?`,
+      `Hey ${user?.name || 'there'}! I'm Ms. Nova. Tell me about yourself!`,
+      `Hi ${user?.name || 'there'}! What's something fun you did recently?`,
+      `Hello ${user?.name || 'friend'}! I'm Ms. Nova. What do you want to talk about?`
     ];
 
     const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -77,7 +76,18 @@ const FreeTalkTab = () => {
       timestamp: Date.now()
     };
     addMessage("freetalk", welcomeMessage);
-    console.log('💬 FreeTalkTab: Added new Hero Academy greeting');
+    console.log('💬 FreeTalkTab: Added greeting (no emoji)');
+    
+    // 🔊 Play TTS for opening message
+    try {
+      await textToSpeech(randomGreeting, {
+        voice: 'nova',
+        autoPlay: true
+      });
+      console.log('🔊 TTS played successfully');
+    } catch (error) {
+      console.error('❌ TTS error:', error);
+    }
     
     // 🔊 ALWAYS play opening with TTS (even if autoPlayEnabled is false for first greeting)
     try {
