@@ -24,9 +24,43 @@ import {
   generateVocabFocusPrompt
 } from './vocabMasteryTracker.js';
 
+// 🔥 STORAGE VERSION - Increment to auto-clear old data
+const STORAGE_VERSION = '2.0.0'; // Updated for vocab mastery tracking
+
+// 🔥 Auto-migration: Clear old storage if version mismatch
+const clearOldStorage = () => {
+  try {
+    const stored = localStorage.getItem('engquest-tutor-storage');
+    if (stored) {
+      const data = JSON.parse(stored);
+      const storedVersion = data.state?.storageVersion;
+      
+      if (!storedVersion || storedVersion !== STORAGE_VERSION) {
+        console.log('🗑️ Clearing old storage (version mismatch):', storedVersion, '→', STORAGE_VERSION);
+        localStorage.removeItem('engquest-tutor-storage');
+        return true;
+      }
+    }
+  } catch (error) {
+    console.error('❌ Storage migration error:', error);
+    localStorage.removeItem('engquest-tutor-storage');
+    return true;
+  }
+  return false;
+};
+
+// Run migration before creating store
+clearOldStorage();
+
 const useTutorStore = create(
   persist(
     (set, get) => ({
+      // ============================================
+      // VERSION TRACKING
+      // ============================================
+      
+      storageVersion: STORAGE_VERSION, // Track storage version for auto-migration
+      
       // ============================================
       // WIDGET STATE
       // ============================================
@@ -488,6 +522,7 @@ const useTutorStore = create(
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         // Only persist these fields
+        storageVersion: state.storageVersion, // 🔥 NEW: Version tracking
         activeTab: state.activeTab,
         messages: state.messages,
         autoPlayEnabled: state.autoPlayEnabled,
