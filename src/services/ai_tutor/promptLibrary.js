@@ -473,17 +473,23 @@ ${NOVA_CORE_PERSONA.forbidden.map(f => `- ${f}`).join('\n')}`;
 }
 
 /**
- * Build Story Mode Prompt
+ * Build Story Mode Prompt - UPDATED FOR NEW DATA STRUCTURE
  */
-export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel = 2, realSyllabusData = null }) {
+export function buildStoryPrompt({ weekData, userName, userAge, scaffoldingLevel = 2, realSyllabusData = null, currentMissionIndex = 0 }) {
   const persona = buildPersonaDescription();
   const modePrompt = MODE_PROMPTS.story.systemAddition;
   
   // 🔥 PRIORITY: Use real syllabus data if available
-  if (realSyllabusData) {
-    const targetVocab = realSyllabusData.target_vocab.map(v => v.word).join(', ');
+  if (realSyllabusData && realSyllabusData.story_missions) {
+    const currentMission = realSyllabusData.story_missions[currentMissionIndex];
+    if (!currentMission) {
+      console.error(`❌ Mission ${currentMissionIndex} not found`);
+      return `${persona}\n\n${modePrompt}\n\nERROR: Mission not found. Please select a valid mission.`;
+    }
+    
     const novaInstructions = realSyllabusData.nova_instructions;
-    const storyMission = realSyllabusData.story_mission;
+    const missionKey = currentMissionIndex === 0 ? 'mission_1' : currentMissionIndex === 1 ? 'mission_2' : 'mission_3';
+    const targetVocab = currentMission.target_vocab.join(', ');
     
     return `${persona}
 
@@ -494,14 +500,26 @@ ${modePrompt}
 - Topic: ${realSyllabusData.topic}
 - Learning Outcome: ${realSyllabusData.learning_outcome}
 - Grammar Pattern: ${realSyllabusData.grammar_pattern}
-- Target Vocabulary: ${targetVocab}
 
-**STORY MISSION:**
-${storyMission.scenario}
+**STORY MISSION ${currentMission.mission_id}: ${currentMission.title}**
+Theme: ${currentMission.theme}
+
+**MISSION CONTEXT FOR AI:**
+${currentMission.mission_context}
+
+**TARGET VOCABULARY:** ${targetVocab}
+**TARGET PATTERN:** ${currentMission.target_pattern}
+**MINIMUM TURNS:** ${currentMission.minimum_turns}
+
+**CONVERSATION TOPICS:**
+${currentMission.conversation_topics.map(topic => `- ${topic}`).join('\n')}
 
 **YOUR ROLE (MS. NOVA):**
 ${novaInstructions.persona} - ${novaInstructions.tone}
-Opening Line: "${novaInstructions.opening_line}"
+Opening Line: "${novaInstructions.opening_lines_by_mission[missionKey]}"
+
+**CONVERSATION STYLE:**
+${novaInstructions.conversation_style.map(style => `- ${style}`).join('\n')}
 
 **RECAST TECHNIQUE (MANDATORY):**
 ${novaInstructions.recast_strategy}
@@ -511,15 +529,22 @@ Example: Student says "${novaInstructions.recast_example.student}"
 **STUDENT:** ${userName}, age ${userAge}
 **SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
 
-**CRITICAL CONSTRAINTS:**
-- Use ONLY the ${realSyllabusData.target_vocab.length} target vocabulary words
-- Grammar: ${realSyllabusData.grammar_focus} (${realSyllabusData.grammar_pattern})
-- ZERO L1: No Vietnamese, only English with gestures/context
-- NO explicit grammar rules - students learn by doing
-- Required vocab in conversation: ${novaInstructions.must_use_vocab.join(', ')}
-- Success when student uses pattern: "${storyMission.target_pattern}"
+**SUCCESS CRITERIA:**
+${currentMission.success_criteria.map(criteria => `- ${criteria}`).join('\n')}
 
-Keep your responses short (2-3 sentences max). Ask ONE question at a time.`;
+**CRITICAL CONSTRAINTS:**
+- Use ONLY target vocabulary: ${targetVocab}
+- Grammar: ${realSyllabusData.grammar_focus} (${realSyllabusData.grammar_pattern})
+- ZERO L1: No Vietnamese, only English
+- NO explicit grammar rules - students learn by doing
+- Required pattern: "${currentMission.target_pattern}"
+- MUST continue for AT LEAST ${currentMission.minimum_turns} turns
+- NO emojis - text-to-speech will read them aloud
+
+**FORBIDDEN:**
+${novaInstructions.must_avoid.map(avoid => `- ${avoid}`).join('\n')}
+
+Keep responses short (under 30 words). Ask ONE question at a time.`;
   }
   
   // Fallback to old weekData format

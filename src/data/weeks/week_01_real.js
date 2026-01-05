@@ -272,25 +272,27 @@ export const week1RealData = {
     
     vocabulary_scaffolding: [
       "Mission 1: Focus on 'name' and 'age'",
-      "Mission 2: Introduce 'hero' and 'power'",
-      "Mission 3: Use all vocabulary together naturally"
+      "Mission 2: Introduce 'backpack', 'book', 'notebook'",
+      "Mission 3: Use 'teacher', 'school', 'classroom' naturally"
     ],
     
     questioning_skill: [
       "What is your name?",
       "How old are you?",
       "Are you a student?",
-      "What kind of hero do you want to be?",
-      "What is your hero power?"
+      "What do you have in your backpack?",
+      "Who is your teacher?",
+      "What is your classroom like?"
     ],
     
-    must_use_vocab: ["name", "age", "student", "hero", "power"],
+    must_use_vocab: ["name", "age", "student", "backpack", "book", "notebook", "teacher", "school", "classroom"],
     must_avoid: [
       "Emojis or special characters",
       "Vietnamese translation",
       "Explicit grammar rules",
       "Corrections without recast",
-      "Multiple questions in one turn"
+      "Multiple questions in one turn",
+      "Past or future tense (Week 1 scope)"
     ]
   },
   

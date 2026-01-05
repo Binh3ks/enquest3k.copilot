@@ -188,14 +188,17 @@ const StoryMissionTab = () => {
       console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
       console.log(`📚 Vocab Mastery:`, Object.keys(vocabMastery).length, 'words tracked');
       
-      // Build prompt using V5 promptLibrary with REAL SYLLABUS + Adaptive Prompting + Vocab Focus
+      // Build prompt using V5 promptLibrary with REAL SYLLABUS + current mission
       const systemPrompt = buildStoryPrompt({
-        weekData,
+        weekData: null, // Legacy parameter
         userName: user?.name || 'Student',
         userAge: user?.age || 8,
-        scaffoldingLevel: adaptiveScaffolding, // 🔥 Use adaptive level instead of hardcoded 2
-        realSyllabusData // 🔥 Pass real syllabus to prompt builder
-      }) + '\n\n' + adaptivePromptAdjustment + vocabFocusPrompt; // 🔥 Append adaptive adjustment + vocab focus
+        scaffoldingLevel: adaptiveScaffolding,
+        realSyllabusData: week1RealData,
+        currentMissionIndex // 🔥 Pass current mission index
+      }) + '\n\n' + adaptivePromptAdjustment + vocabFocusPrompt;
+      
+      console.log('📝 System prompt generated for mission', currentMissionIndex + 1);
 
       // Prepare chat history
       const chatHistory = messages.map(m => ({
@@ -250,7 +253,7 @@ const StoryMissionTab = () => {
       }
 
     } catch (error) {
-      console.error('Story Mission Error:', error);
+      console.error('❌ Story Mission Error:', error);
       const errorMsg = {
         role: 'assistant',
         content: "Oops! Let's try that again. What were you saying?",
@@ -322,12 +325,26 @@ const StoryMissionTab = () => {
             <button
               key={mission.mission_id}
               onClick={() => {
+                console.log('🎯 Switching to mission', index + 1);
                 setCurrentMissionIndex(index);
                 useTutorStore.getState().clearMessages('story');
                 setInitialized(false);
                 initializingRef.current = false;
                 setTurnCount(0);
                 setMissionStatus('not_started');
+                setShowHints(false);
+                // Re-initialize with new mission after state update
+                setTimeout(() => {
+                  if (!initializingRef.current) {
+                    initializingRef.current = true;
+                    initializeMission().catch(err => {
+                      console.error('❌ Mission switch error:', err);
+                      initializingRef.current = false;
+                    }).finally(() => {
+                      setInitialized(true);
+                    });
+                  }
+                }, 100);
               }}
               className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
                 currentMissionIndex === index
