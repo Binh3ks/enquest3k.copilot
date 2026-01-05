@@ -56,8 +56,10 @@ const StoryMissionTab = () => {
       
       // 🔥 STEP 4: Initialize vocab mastery with Week 1 target vocabulary
       const week1Vocab = week1RealData.global_vocab || [];
-      initVocabMastery(week1Vocab);
-      console.log('📚 Vocab Mastery Initialized:', week1Vocab.length, 'words');
+      // Extract just the word strings from vocab objects
+      const vocabWords = week1Vocab.map(v => typeof v === 'string' ? v : v.word);
+      initVocabMastery(vocabWords);
+      console.log('📚 Vocab Mastery Initialized:', vocabWords.length, 'words');
       
       initializeMission().catch(err => {
         console.error('❌ initializeMission error:', err);
