@@ -1,19 +1,83 @@
 /**
  * TTS Engine - Multi-layered Text-to-Speech System
- * 
+ *
  * 4-layer fallback architecture for maximum reliability:
- * Layer 1: Gemini TTS (Most natural voice)
- * Layer 2: OpenAI TTS (High quality, Whisper-based)
- * Layer 3: Puter.js TTS (Cloud fallback)
- * Layer 4: Browser Speech Synthesis (Offline fallback)
- * 
+ * Layer 1: Google Cloud Text-to-Speech (PRIMARY - Neural voice with PCM16→WAV conversion)
+ * Layer 2: OpenAI TTS (BACKUP - High quality, Whisper-based)
+ * Layer 3: Puter.js TTS (Cloud fallback - not yet implemented)
+ * Layer 4: Browser Speech Synthesis (LAST RESORT - Offline fallback)
+ *
  * Features:
  * - Auto-play on AI response
  * - Audio caching for repeated phrases
  * - Playback queue management
+ * - PCM to WAV conversion for Google Cloud TTS LINEAR16 audio
  */
 
 import axios from 'axios';
+
+// ============================================
+// WAV ENCODING UTILITY (for PCM data from Google Cloud TTS)
+// ============================================
+
+/**
+ * Inject WAV header into raw PCM16 buffer from Google Cloud TTS
+ * Google Cloud TTS returns LINEAR16 (raw PCM) which browsers cannot play directly
+ * This function wraps the PCM data with a proper WAV header for playback
+ *
+ * @param {Uint8Array|ArrayBuffer} pcmBuffer - Raw PCM16 audio data from Google TTS
+ * @param {number} sampleRate - Sample rate (default: 24000 Hz for Google TTS)
+ * @returns {Blob} WAV audio blob ready for browser playback
+ */
+export function injectWavHeader(pcmBuffer, sampleRate = 24000) {
+  const numChannels = 1; // Mono
+  const bitsPerSample = 16;
+  const bytesPerSample = bitsPerSample / 8;
+
+  // Ensure pcmBuffer is Uint8Array
+  const pcmData = pcmBuffer instanceof ArrayBuffer
+    ? new Uint8Array(pcmBuffer)
+    : pcmBuffer;
+
+  const dataLength = pcmData.length;
+  const buffer = new ArrayBuffer(44 + dataLength);
+  const view = new DataView(buffer);
+
+  // WAV header construction
+  const writeString = (offset, string) => {
+    for (let i = 0; i < string.length; i++) {
+      view.setUint8(offset + i, string.charCodeAt(i));
+    }
+  };
+
+  // RIFF chunk descriptor
+  writeString(0, 'RIFF'); // ChunkID
+  view.setUint32(4, 36 + dataLength, true); // ChunkSize
+  writeString(8, 'WAVE'); // Format
+
+  // fmt sub-chunk
+  writeString(12, 'fmt '); // Subchunk1ID
+  view.setUint32(16, 16, true); // Subchunk1Size (16 for PCM)
+  view.setUint16(20, 1, true); // AudioFormat (1 = PCM)
+  view.setUint16(22, numChannels, true); // NumChannels
+  view.setUint32(24, sampleRate, true); // SampleRate
+  view.setUint32(28, sampleRate * numChannels * bytesPerSample, true); // ByteRate
+  view.setUint16(32, numChannels * bytesPerSample, true); // BlockAlign
+  view.setUint16(34, bitsPerSample, true); // BitsPerSample
+
+  // data sub-chunk
+  writeString(36, 'data'); // Subchunk2ID
+  view.setUint32(40, dataLength, true); // Subchunk2Size
+
+  // Copy PCM data after header
+  const wavData = new Uint8Array(buffer);
+  wavData.set(pcmData, 44);
+
+  return new Blob([buffer], { type: 'audio/wav' });
+}
+
+// Alias for backward compatibility
+export const encodeWAV = injectWavHeader;
 
 // ============================================
 // CONFIGURATION
@@ -112,9 +176,9 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     };
   }
 
-  // Try layers in order
-  const layers = preferredLayer === 'auto' 
-    ? ['gemini', 'openai', 'browser'] // 🔥 Gemini TTS first (Google Cloud)
+  // Try layers in order (Google Cloud TTS → OpenAI → Puter → Browser)
+  const layers = preferredLayer === 'auto'
+    ? ['gemini', 'openai', 'puter', 'browser'] // 🔥 Full fallback chain
     : [preferredLayer, 'browser']; // Always fallback to browser
 
   console.log('🔄 TTS: Trying layers in order:', layers);
@@ -188,7 +252,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 }
 
 // ============================================
-// LAYER 1: GOOGLE CLOUD TEXT-TO-SPEECH (Gemini)
+// LAYER 1: GOOGLE CLOUD TEXT-TO-SPEECH
 // ============================================
 
 async function callGeminiTTS(text) {
@@ -197,19 +261,20 @@ async function callGeminiTTS(text) {
   }
 
   try {
-    console.log('🔊 Google Cloud TTS: Requesting audio generation...');
-    
+    console.log('🔊 Google Cloud TTS: Requesting LINEAR16 (PCM) audio generation...');
+
     const response = await axios.post(
       `${GOOGLE_TTS_ENDPOINT}?key=${GOOGLE_TTS_API_KEY}`,
       {
         input: { text },
         voice: {
           languageCode: 'en-US',
-          name: 'en-US-Neural2-F', // Natural female voice
+          name: 'en-US-Neural2-F', // Natural female neural voice
           ssmlGender: 'FEMALE'
         },
         audioConfig: {
-          audioEncoding: 'MP3',
+          audioEncoding: 'LINEAR16', // 🔥 PCM16 format (requires WAV header)
+          sampleRateHertz: 24000, // 24kHz sample rate
           speakingRate: 0.9,
           pitch: 0,
           volumeGainDb: 0
@@ -228,19 +293,20 @@ async function callGeminiTTS(text) {
       throw new Error('No audio data in Google TTS response');
     }
 
-    console.log('✅ Google Cloud TTS: Received audio data, converting to blob...');
+    console.log('✅ Google Cloud TTS: Received PCM16 data, injecting WAV header...');
 
-    // Decode base64 audio
+    // Decode base64 to raw PCM buffer
     const binaryString = atob(audioContent);
-    const bytes = new Uint8Array(binaryString.length);
+    const pcmBuffer = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
-      bytes[i] = binaryString.charCodeAt(i);
+      pcmBuffer[i] = binaryString.charCodeAt(i);
     }
-    
-    const blob = new Blob([bytes], { type: 'audio/mpeg' });
-    const audioUrl = URL.createObjectURL(blob);
 
-    console.log('✅ Google Cloud TTS: Audio ready to play');
+    // 🔥 Inject WAV header for browser playback
+    const wavBlob = injectWavHeader(pcmBuffer, 24000);
+    const audioUrl = URL.createObjectURL(wavBlob);
+
+    console.log('✅ Google Cloud TTS: WAV audio ready for immediate playback');
     return audioUrl;
 
   } catch (error) {
@@ -457,5 +523,7 @@ export default {
   stopAudio,
   isAudioPlaying,
   clearAudioCache,
-  getTTSStatus
+  getTTSStatus,
+  injectWavHeader, // PCM to WAV conversion for Google Cloud TTS
+  encodeWAV // Alias for backward compatibility
 };

@@ -164,8 +164,8 @@ const StoryMissionTab = () => {
         mode: 'story'
       });
 
-      // Extract text from response object
-      const responseText = aiResponse.ai_response || aiResponse;
+      // Extract text from response object (support multiple formats)
+      const responseText = aiResponse.ai_response || aiResponse.response || aiResponse;
 
       // Add AI response to chat
       const aiMsg = {

@@ -1,0 +1,52 @@
+👑 SUPREME SPEC: MS. NOVA PREMIUM ACTIVATION (V7)
+
+Tài liệu này tập trung vào việc Fix lỗi 400/429, xử lý Audio Buffer (PCM to WAV), và kích hoạt Auto-send Mic.
+
+🧠 1. FIX AI ROUTER & LOGIC ĐA TẦNG (src/services/ai_tutor/aiRouter.js)
+
+Fix Lỗi 400: Đảm bảo payload gửi lên Gemini/Groq không chứa các trường lạ. Gemini 2.0 yêu cầu contents chỉ có role user và model.
+
+LLM Switching: 1.  Thử Groq (llama-3.1-70b-versatile) trước để lấy tốc độ.
+2.  Nếu gặp lỗi 400/429/500, lập tức switch sang Gemini 2.0 Flash.
+
+JSON Enforcement: Bắt buộc System Prompt phải có câu: "Return ONLY a valid JSON object. No markdown, no triple backticks."
+
+🔊 2. FIX AI TTS - CHUYỂN ĐỔI PCM SANG WAV (src/services/ai_tutor/ttsEngine.js)
+
+Vấn đề: Gemini TTS trả về dữ liệu PCM16 (24kHz) thô. Browser không phát được.
+
+Giải pháp: Phải thêm hàm injectWavHeader(pcmBuffer, sampleRate) để tạo file WAV hợp lệ.
+
+Logic Fallback:
+
+Gemini TTS: (Mặc định - Cao cấp).
+
+OpenAI TTS: (Nếu Gemini lỗi).
+
+Puter.js/Browser: (Giải pháp cuối cùng).
+
+Auto-play: Sau khi nhận URL âm thanh, gọi AudioHelper.play(url) ngay lập tức.
+
+🎤 3. MIC AUTO-SEND & SPEAKING-FIRST (src/modules/ai_tutor/components/InputBar.jsx)
+
+Auto-send: Thêm một timer (useRef). Mỗi khi transcript thay đổi, reset timer 1.5 giây. Nếu sau 1.5s người dùng không nói thêm, tự động gọi onSendMessage.
+
+UI Sync: Khi đang isListening, nút Mic phải có hiệu ứng sóng âm (Waveform).
+
+📝 4. NẠP NỘI DUNG THẬT (REAL CONTENT)
+
+Dữ liệu: Đọc file 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt.
+
+Hành động: Tạo src/data/weeks/week_01_real.js với các Mission:
+
+"Introduce yourself to Ms. Nova."
+
+"Find the 'Blue Backpack' in the classroom."
+
+"Ask the teacher about the 'Magic Pencil'."
+
+💬 5. TAB CHAT (CLEANUP)
+
+Xóa toàn bộ nội dung "Hello Cadet" placeholder.
+
+Kết nối Tab Chat với cùng Engine của Story nhưng với Persona "Friendly Assistant" thay vì "NPC Teacher".

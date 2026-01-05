@@ -62,6 +62,21 @@ const DebateTab = () => {
 
   const generateDebateTopics = (weekTopic) => {
     const topicMap = {
+      // Week 1: Identity & Heroes
+      'Introduction & Superheroes': [
+        'Every kid should have a superhero name',
+        'Heroes should always help people',
+        'Being a student is like being a hero'
+      ],
+
+      // Week 15: Present Continuous (Park activities)
+      'The Busy Park': [
+        'Running is more fun than walking',
+        'Parks should have more trees than playgrounds',
+        'Playing outside is better than staying inside'
+      ],
+
+      // Generic topics
       'Animals': [
         'Dogs are better pets than cats',
         'Wild animals should live in zoos',

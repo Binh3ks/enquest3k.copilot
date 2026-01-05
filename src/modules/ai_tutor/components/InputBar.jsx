@@ -76,11 +76,11 @@ const InputBar = ({
           clearTimeout(silenceTimer);
         }
 
-        // Set new timer for 1.5 seconds of silence
+        // Set new timer for 0.8 seconds of silence (faster auto-send)
         const timer = setTimeout(() => {
-          console.log('🔇 Detected 1.5s silence, stopping recognition...');
+          console.log('🔇 Detected 0.8s silence, stopping recognition...');
           recognitionInstance.stop();
-        }, 1500);
+        }, 800);
         
         setSilenceTimer(timer);
       }
@@ -288,9 +288,9 @@ const InputBar = ({
 
       {/* Dynamic hint text */}
       <p className="text-xs text-gray-400 mt-2 text-center">
-        {isListening 
-          ? '🎤 Listening... Speak now!' 
-          : isMicPriority 
+        {isListening
+          ? '🎤 Listening... Auto-sends after 0.8s silence!'
+          : isMicPriority
             ? '🎤 Tap mic to speak • or type to chat'
             : 'Press Enter to send • Shift+Enter for new line'
         }
