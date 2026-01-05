@@ -187,9 +187,6 @@ const useTutorStore = create(
       // UI PREFERENCES
       // ============================================
       
-      // Force clear old settings to ensure UI updates apply
-      localStorage.removeItem('tutor-store');
-      
       widgetSize: 'large', // 'normal' | 'large' - Default to large for better UX
       theme: 'light', // 'light' | 'dark'
       showHints: true,
