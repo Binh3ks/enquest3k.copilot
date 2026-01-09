@@ -14,6 +14,46 @@ import week1RealData from '../../../data/weeks/week_01_real'; // 🔥 Import rea
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 
 /**
+ * 🔥 NEW: Detect if student message is asking a question
+ * Returns input type for objective-driven state machine
+ */
+function detectStudentInputType(message) {
+  if (!message) return 'ANSWER';
+  
+  const msg = message.trim().toLowerCase();
+  
+  // Check for question mark
+  if (msg.includes('?')) return 'QUESTION';
+  
+  // Check for question word starters
+  const questionStarters = [
+    /^what\b/,
+    /^where\b/,
+    /^when\b/,
+    /^who\b/,
+    /^why\b/,
+    /^how\b/,
+    /^do you\b/,
+    /^are you\b/,
+    /^can you\b/,
+    /^did you\b/,
+    /^will you\b/,
+    /^have you\b/,
+    /^is your\b/,
+    /^does.*\b/
+  ];
+  
+  for (const pattern of questionStarters) {
+    if (pattern.test(msg)) {
+      return 'QUESTION';
+    }
+  }
+  
+  // Default: student is answering
+  return 'ANSWER';
+}
+
+/**
  * Story Mission Tab - Guided story-based learning
  * REDESIGNED: Large UI, Navigation, Mission Menu
  */
@@ -285,6 +325,10 @@ const StoryMissionTab = () => {
         userMessage: userMessage.slice(0, 30) + '...'
       });
       
+      // 🔥 NEW: Detect if student is asking a question (for objective-driven state machine)
+      const studentInputType = detectStudentInputType(userMessage);
+      console.log('🎯 Student input type detected:', studentInputType);
+      
       // Get week data for context
       const weekData = getCurrentWeekData(currentWeek || 'week-1');
       
@@ -298,6 +342,19 @@ const StoryMissionTab = () => {
       
       // 🔥 STEP 4: Get vocab focus prompt for weak words
       const vocabFocusPrompt = getVocabFocusPrompt();
+      
+      // 🔥 NEW: Get TurnManager for this mission and process turn with state machine
+      const turnManager = getTurnManager(currentMission.mission_id);
+      const turnDecision = turnManager?.processTurn ? turnManager.processTurn(studentInputType) : null;
+      
+      if (turnDecision) {
+        console.log('📊 Turn decision from state machine:', {
+          type: turnDecision.type,
+          instruction: turnDecision.instruction,
+          currentObjective: turnDecision.objective,
+          reason: turnDecision.reason
+        });
+      }
       
       console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
       console.log(`📚 Vocab Mastery:`, Object.keys(vocabMastery).length, 'words tracked');
@@ -328,7 +385,10 @@ const StoryMissionTab = () => {
           realSyllabusData,
           studentName: studentName || null,  // 🔥 NEW: Pass student name to AI
           mission: currentMission,           // 🔥 Pass mission object
-          turnManager: getTurnManager(currentMission.mission_id) // 🔥 CRITICAL: Pass TurnManager inside context
+          turnManager: getTurnManager(currentMission.mission_id), // 🔥 CRITICAL: Pass TurnManager inside context
+          studentInputType,                  // 🔥 NEW: Pass detected input type
+          turnDecision,                      // 🔥 NEW: Pass state machine decision (instruction)
+          currentObjective: turnDecision?.objective  // 🔥 NEW: Pass current learning objective
         }
       });
 
@@ -345,7 +405,10 @@ const StoryMissionTab = () => {
         mission: currentMission,  // 🔥 Pass mission object
         isOpeningTurn: false,
         turnCount: currentTurnCount,
-        chatHistory: [...messages, userMsg]
+        chatHistory: [...messages, userMsg],
+        studentInputType,        // 🔥 NEW: Pass input type
+        turnDecision,            // 🔥 NEW: Pass state machine decision
+        instruction: turnDecision?.instruction  // 🔥 NEW: Pass instruction for AI behavior
       };
       
       const guardedResponse = guardResponseObject(aiResponse, guardContext, 15);
