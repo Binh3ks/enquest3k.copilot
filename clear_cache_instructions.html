@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cache - EngQuest</title>
+    <style>
+        body {
+            font-family: system-ui;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .box {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { margin-top: 0; }
+        button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .success {
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🧹 Clear Cache & Fix Mission Switching</h1>
+        <p>Click the button below to clear all cached data and fix the blank mission screen issue:</p>
+        
+        <button onclick="clearAll()">🗑️ CLEAR ALL CACHE NOW</button>
+        
+        <div id="success" class="success">
+            ✅ Cache cleared successfully!<br>
+            Now refresh the page (Cmd+R) to test Mission 1, 2, 3
+        </div>
+    </div>
+
+    <script>
+        function clearAll() {
+            // Clear localStorage
+            localStorage.clear();
+            
+            // Clear sessionStorage
+            sessionStorage.clear();
+            
+            // Clear IndexedDB (if used)
+            if (window.indexedDB) {
+                indexedDB.databases().then(dbs => {
+                    dbs.forEach(db => indexedDB.deleteDatabase(db.name));
+                });
+            }
+            
+            // Show success message
+            document.getElementById('success').style.display = 'block';
+            
+            console.log('✅ All cache cleared!');
+        }
+    </script>
+</body>
+</html>
