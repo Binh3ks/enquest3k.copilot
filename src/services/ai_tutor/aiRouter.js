@@ -62,6 +62,10 @@ const PROVIDERS = {
  * 1. Check if student is asking US a question → Answer it!
  * 2. Never repeat questions already asked
  */
+// 🔥 Track recently used fallbacks to avoid repetition
+const recentFallbacks = [];
+const MAX_RECENT = 5;
+
 function generateContextualFallback(chatHistory = [], userMessage = '', turnCount = 0) {
   const userMsgLower = userMessage.toLowerCase().trim();
   
@@ -148,7 +152,7 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
     askedQuestions.push('learning');
   }
   
-  // Safe fallback questions (DIVERSE pool)
+  // Safe fallback questions (DIVERSE pool with 20+ options)
   const safeFallbacks = [
     {
       id: 'encouragement-1',
@@ -166,6 +170,16 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
       hints: ['I', 'also', 'like', 'have', 'about', 'my']
     },
     {
+      id: 'encouragement-4',
+      response: "Interesting! Can you explain more?",
+      hints: ['I', 'mean', 'it', 'is', 'like', 'because']
+    },
+    {
+      id: 'encouragement-5',
+      response: "Nice! What do you think about that?",
+      hints: ['I', 'think', 'it', 'is', 'good', 'nice']
+    },
+    {
       id: 'repeat-request',
       response: "Sorry, I did not hear you well. Can you say that again?",
       hints: ['I', 'am', 'have', 'like', 'my', 'Yes']
@@ -174,39 +188,144 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
       id: 'sentence-help',
       response: "Can you use a full sentence?",
       hints: ['I', 'am', 'have', 'like', 'my', 'about']
+    },
+    {
+      id: 'example-request',
+      response: "Can you give me an example?",
+      hints: ['For', 'example', 'like', 'I', 'have', 'is']
+    },
+    {
+      id: 'reason-request',
+      response: "Why do you think that?",
+      hints: ['Because', 'I', 'think', 'it', 'is', 'like']
+    },
+    {
+      id: 'detail-request',
+      response: "What else can you remember?",
+      hints: ['I', 'remember', 'also', 'there', 'was', 'is']
     }
   ];
   
-  // Conditional fallbacks (only use if NOT already asked)
+  // Conditional fallbacks (only use if NOT already asked) - EXPANDED TO 20+ OPTIONS
   const conditionalFallbacks = [
     {
-      id: 'excited',
-      condition: !askedQuestions.includes('school'),
-      response: "Are you excited about school?",
-      hints: ['Yes', 'I', 'am', 'excited', 'happy', 'No']
+      id: 'school-excited',
+      condition: !askedQuestions.includes('school') && !allHistory.includes('excited'),
+      response: "Do you enjoy coming to school?",
+      hints: ['Yes', 'I', 'enjoy', 'like', 'school', 'No']
     },
     {
-      id: 'happy',
-      condition: turnCount >= 5,
-      response: "Are you happy today?",
-      hints: ['Yes', 'I', 'am', 'happy', 'good', 'No']
+      id: 'feeling',
+      condition: turnCount >= 5 && !allHistory.includes('feeling'),
+      response: "How are you feeling today?",
+      hints: ['I', 'am', 'feeling', 'good', 'happy', 'fine']
+    },
+    {
+      id: 'favorite-activity',
+      condition: !askedQuestions.includes('learning') && !allHistory.includes('favorite'),
+      response: "What activity do you enjoy most?",
+      hints: ['I', 'enjoy', 'like', 'playing', 'reading', 'drawing']
+    },
+    {
+      id: 'weekend',
+      condition: !allHistory.includes('weekend'),
+      response: "What do you do on weekends?",
+      hints: ['I', 'go', 'play', 'stay', 'home', 'park']
+    },
+    {
+      id: 'hobbies',
+      condition: !allHistory.includes('hobby'),
+      response: "Do you have any hobbies?",
+      hints: ['Yes', 'I', 'like', 'drawing', 'playing', 'reading']
+    },
+    {
+      id: 'favorite-color',
+      condition: !allHistory.includes('color'),
+      response: "What is your favorite color?",
+      hints: ['My', 'favorite', 'color', 'is', 'blue', 'red']
+    },
+    {
+      id: 'morning-routine',
+      condition: !allHistory.includes('morning'),
+      response: "What do you do in the morning?",
+      hints: ['I', 'wake', 'up', 'eat', 'breakfast', 'go']
+    },
+    {
+      id: 'after-school',
+      condition: !allHistory.includes('after school'),
+      response: "What do you do after school?",
+      hints: ['I', 'go', 'home', 'play', 'do', 'homework']
+    },
+    {
+      id: 'lunch',
+      condition: !allHistory.includes('lunch') && !allHistory.includes('eat'),
+      response: "What did you have for lunch?",
+      hints: ['I', 'had', 'ate', 'rice', 'sandwich', 'noodles']
+    },
+    {
+      id: 'books',
+      condition: !allHistory.includes('book') && !askedQuestions.includes('learning'),
+      response: "Do you like reading books?",
+      hints: ['Yes', 'I', 'like', 'reading', 'books', 'stories']
+    },
+    {
+      id: 'sports',
+      condition: !allHistory.includes('sport') && !askedQuestions.includes('friends'),
+      response: "Do you play any sports?",
+      hints: ['Yes', 'I', 'play', 'soccer', 'basketball', 'No']
+    },
+    {
+      id: 'music',
+      condition: !allHistory.includes('music'),
+      response: "Do you like music?",
+      hints: ['Yes', 'I', 'like', 'music', 'singing', 'No']
+    },
+    {
+      id: 'pets',
+      condition: !allHistory.includes('pet') && !allHistory.includes('dog') && !allHistory.includes('cat'),
+      response: "Do you have any pets?",
+      hints: ['Yes', 'I', 'have', 'dog', 'cat', 'No']
+    },
+    {
+      id: 'siblings',
+      condition: !allHistory.includes('brother') && !allHistory.includes('sister'),
+      response: "Do you have brothers or sisters?",
+      hints: ['Yes', 'I', 'have', 'brother', 'sister', 'No']
+    },
+    {
+      id: 'helping',
+      condition: !allHistory.includes('help'),
+      response: "Do you help at home?",
+      hints: ['Yes', 'I', 'help', 'my', 'parents', 'clean']
+    },
+    {
+      id: 'season',
+      condition: !allHistory.includes('season') && !allHistory.includes('weather'),
+      response: "What is your favorite season?",
+      hints: ['My', 'favorite', 'season', 'is', 'summer', 'winter']
+    },
+    {
+      id: 'birthday',
+      condition: !allHistory.includes('birthday') && askedQuestions.includes('age'),
+      response: "When is your birthday?",
+      hints: ['My', 'birthday', 'is', 'in', 'January', 'May']
     },
     {
       id: 'nice-meet',
-      condition: askedQuestions.includes('name') && turnCount >= 6,
+      condition: askedQuestions.includes('name') && turnCount >= 6 && !allHistory.includes('nice to meet'),
       response: "It is nice to meet you! Are you ready to learn?",
       hints: ['Yes', 'I', 'am', 'ready', 'excited', 'No']
     }
   ];
   
-  // Try conditional fallbacks first
+  // Try conditional fallbacks first (filter by condition AND avoid recent usage)
   const availableConditional = conditionalFallbacks.filter(fb => fb.condition);
   if (availableConditional.length > 0) {
     const selected = availableConditional[Math.floor(Math.random() * availableConditional.length)];
     return {
       ai_response: selected.response,
       suggested_hints: selected.hints,
-      pedagogy_note: 'Smart fallback - avoiding repeated questions',
+      pedagogy_note: `Smart fallback - ${selected.id} (${availableConditional.length} options)`,
       provider: 'fallback-smart',
       grammarBlocked: true
     };

@@ -129,8 +129,25 @@ function truncateToWords(text, maxWords) {
   const words = text.trim().split(/\s+/);
   if (words.length <= maxWords) return text;
   
+  // 🔥 NEW: Only truncate if significantly over limit (>15 words)
+  if (words.length <= 15) return text;
+  
+  // 🔥 Keep minimum 10 words to preserve sentence integrity
+  const targetWords = Math.max(10, maxWords);
+  
+  // 🔥 Check if there's a question mark - don't break it
+  const questionMarkIndex = text.indexOf('?');
+  if (questionMarkIndex !== -1) {
+    // Find where question ends
+    const wordsBeforeQuestion = text.substring(0, questionMarkIndex + 1).trim().split(/\s+/).length;
+    if (wordsBeforeQuestion <= 12) {
+      // Question is short enough, keep it intact
+      return text.substring(0, questionMarkIndex + 1).trim();
+    }
+  }
+  
   // Truncate and add proper ending
-  let truncated = words.slice(0, maxWords).join(' ');
+  let truncated = words.slice(0, targetWords).join(' ');
   
   // If last word doesn't end with punctuation, add question mark or period
   if (!/[.!?]$/.test(truncated)) {
@@ -411,56 +428,51 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       // ⏳ CONTINUE: Not enough turns yet
       console.log(`⏳ Continue: ${turnCount}/${minimumTurns} turns`);
       
-      // Generate follow-up question with matching hints
-      const followUpQuestions = [
-        { 
-          q: "What is your favorite subject?", 
-          h: ["My", "favorite", "subject", "is", "I", "like"] 
-        },
-        { 
-          q: "Do you like your teacher?", 
-          h: ["Yes", "I", "like", "my", "teacher", "No"] 
-        },
-        { 
-          q: "What do you do at recess?", 
-          h: ["I", "play", "run", "eat", "talk", "friends"] 
-        },
-        { 
-          q: "Who is your best friend?", 
-          h: ["My", "best", "friend", "is", "name", "have"] 
-        },
-        { 
-          q: "What games do you play at school?", 
-          h: ["I", "play", "soccer", "tag", "games", "basketball"] 
-        },
-        { 
-          q: "Do you have homework today?", 
-          h: ["Yes", "I", "have", "homework", "No", "math"] 
-        },
-        { 
-          q: "What do you eat for lunch?", 
-          h: ["I", "eat", "rice", "sandwich", "food", "chicken"] 
-        },
-        { 
-          q: "Do you walk or ride to school?", 
-          h: ["I", "walk", "ride", "bus", "car", "bike"] 
-        },
-        { 
-          q: "What time does school start?", 
-          h: ["School", "starts", "at", "eight", "nine", "morning"] 
-        },
-        { 
-          q: "Do you like reading books?", 
-          h: ["Yes", "I", "like", "reading", "books", "No"] 
-        }
-      ];
+      // 🔥 Mission-specific follow-up questions
+      const missionId = context.missionId || context.mission?.mission_id || 1;
+      
+      const missionFollowUps = {
+        1: [ // First Day at School
+          { q: "What is your favorite subject?", h: ["My", "favorite", "subject", "is", "I", "like"] },
+          { q: "Do you sit in the front or back?", h: ["I", "sit", "in", "the", "front", "back"] },
+          { q: "What did you bring to school today?", h: ["I", "brought", "my", "pencil", "book", "bag"] },
+          { q: "What color is your classroom?", h: ["The", "classroom", "is", "blue", "green", "white"] }
+        ],
+        2: [ // My Classroom
+          { q: "How many desks are in your classroom?", h: ["There", "are", "many", "desks", "ten", "twenty"] },
+          { q: "Where is the whiteboard?", h: ["The", "whiteboard", "is", "front", "wall", "big"] },
+          { q: "Do you have a computer in class?", h: ["Yes", "we", "have", "computer", "No", "tablets"] },
+          { q: "What is on the walls?", h: ["There", "are", "posters", "pictures", "maps", "charts"] }
+        ],
+        3: [ // School Friends
+          { q: "How did you meet your friend?", h: ["We", "met", "in", "class", "playground", "first"] },
+          { q: "What do you play together?", h: ["We", "play", "soccer", "tag", "games", "together"] },
+          { q: "Does your friend live near you?", h: ["Yes", "my", "friend", "lives", "near", "No"] },
+          { q: "What makes a good friend?", h: ["A", "good", "friend", "is", "kind", "nice"] }
+        ],
+        4: [ // Family Introduction
+          { q: "How many people are in your family?", h: ["There", "are", "four", "five", "people", "family"] },
+          { q: "Who cooks in your family?", h: ["My", "mom", "dad", "cooks", "food", "delicious"] },
+          { q: "What does your family do together?", h: ["We", "eat", "play", "watch", "together", "TV"] },
+          { q: "Do you have pets?", h: ["Yes", "I", "have", "dog", "cat", "No"] }
+        ],
+        5: [ // Family Activities
+          { q: "What do you do on weekends?", h: ["We", "go", "to", "park", "visit", "grandparents"] },
+          { q: "Does your family eat together?", h: ["Yes", "we", "eat", "together", "dinner", "breakfast"] },
+          { q: "Who helps you with homework?", h: ["My", "mom", "dad", "helps", "me", "homework"] },
+          { q: "What is your favorite family activity?", h: ["My", "favorite", "is", "playing", "eating", "together"] }
+        ]
+      };
+      
+      // Get mission-specific questions or use default
+      const followUpQuestions = missionFollowUps[missionId] || missionFollowUps[1];
       
       const questionIndex = turnCount % followUpQuestions.length;
       const followUp = followUpQuestions[questionIndex];
       question = followUp.q;
       context.canonicalHints = followUp.h;
       
-      console.log(`💬 Follow-up Q${turnCount} (${questionIndex}/${followUpQuestions.length}): "${question}"`);
+      console.log(`💬 Follow-up Q${turnCount} (Mission ${missionId}, ${questionIndex}/${followUpQuestions.length}): "${question}"`);
     }
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION

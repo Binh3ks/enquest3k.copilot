@@ -1,6 +1,6 @@
 # EngQuest AI Context (Compact)
 
-_Last Updated: 2026-01-09T01:17:18.474Z_
+_Last Updated: 2026-01-09T02:52:33.183Z_
 
 ## TL;DR
 - ESL learning app: weekly lessons → stations (reading, vocab, grammar, etc.) → AI tutor
@@ -101,7 +101,9 @@ npm run dev  # runs on :5173
 - **FORBIDDEN** to read: `node_modules`, `dist`, `.git`, `build`, `src/legacy_archive`
 
 ## Development Log & Key Decisions
-<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-09 01:17:18: ONE_BRAIN_FIX_COMPLETE
+<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-09 02:52:33: ONE_BRAIN_FIX_COMPLETE
+
+- 2026-01-09 01:17:18: ONE_BRAIN_FIX_COMPLETE
 
 - 2026-01-08 15:57:13: ONE_BRAIN_FIX_COMPLETE
 
@@ -123,7 +125,6 @@ npm run dev  # runs on :5173
 
 - 2026-01-06 13:15:00: **AI TUTOR V5 - FREETALK & HINT SYSTEM MAJOR IMPROVEMENTS** - Fixed critical conversation flow issues: (1) Turn 14 proper closure with TTS playback, (2) Repeated question detection (prevents asking same question twice), (3) Enhanced hint generation rules to include specific answer options (game names for games questions, food names for food questions, etc.), (4) Contextual hints matching AI questions, (5) Simplified opening greetings (4 basic questions, present simple only), (6) Turn count enforcement with hard client-side limits, (7) Closing messages now play TTS before ending conversation. All 5 tabs tested and functional.
 
-- 2026-01-06 12:00:00: **AI TUTOR V5 - STORY MISSION FIXES** - Fixed mission system: (1) Removed sticky purple mission description banner, (2) Turn counting accurate with minimum requirements (10-15 turns per mission), (3) Mission separation working correctly (complete state clearing on mission switch), (4) Closing turn detection improved (!hasQuestion logic), (5) Contextual hints based on mission vocabulary, (6) UI resized to 50vw × 100vh with larger fonts (text-xl).
 
 
 
