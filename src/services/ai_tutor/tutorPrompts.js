@@ -473,13 +473,10 @@ RETURN ONLY JSON:
   
   // Fallback (should never reach here)
   console.warn('⚠️ Unknown instruction type:', instruction);
-  return buildLegacyStepPrompt(turnNumber, userInput, turnDecision, state, mission);
+  return `Error: Unknown instruction type: ${instruction}`;
 }
 
-/**
- * 🔥 LEGACY: Step-based prompt builder (backward compatibility)
- */
-function buildLegacyStepPrompt(turnNumber, userInput, turnDecision, state, mission) {
+function buildStoryMissionPrompt(context, userInput, options) {
   const history = options.history || [];
   const mission = options.mission || {};
   const turnNumber = Math.floor(history.length / 2) + 1;
