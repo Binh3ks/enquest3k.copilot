@@ -393,8 +393,7 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     }
   } else if (isClosingTurn) {
     // Check minimum turns before closing
-    const chatHistory = context.chatHistory || [];
-    const turnCount = Math.floor(chatHistory.length / 2);
+    const turnCount = context.turnCount || Math.floor((context.chatHistory?.length || 0) / 2);
     const minimumTurns = context.mission?.minimum_turns || 10;
     const canClose = turnCount >= minimumTurns;
     
@@ -412,23 +411,56 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       // ⏳ CONTINUE: Not enough turns yet
       console.log(`⏳ Continue: ${turnCount}/${minimumTurns} turns`);
       
-      // Generate follow-up question
+      // Generate follow-up question with matching hints
       const followUpQuestions = [
-        "What is your favorite subject?",
-        "Do you like your teacher?",
-        "What do you do at recess?",
-        "Who is your best friend?",
-        "What games do you play?",
-        "Do you have homework today?",
-        "What do you eat for lunch?",
-        "Do you walk to school?"
+        { 
+          q: "What is your favorite subject?", 
+          h: ["My", "favorite", "subject", "is", "I", "like"] 
+        },
+        { 
+          q: "Do you like your teacher?", 
+          h: ["Yes", "I", "like", "my", "teacher", "No"] 
+        },
+        { 
+          q: "What do you do at recess?", 
+          h: ["I", "play", "run", "eat", "talk", "friends"] 
+        },
+        { 
+          q: "Who is your best friend?", 
+          h: ["My", "best", "friend", "is", "name", "have"] 
+        },
+        { 
+          q: "What games do you play at school?", 
+          h: ["I", "play", "soccer", "tag", "games", "basketball"] 
+        },
+        { 
+          q: "Do you have homework today?", 
+          h: ["Yes", "I", "have", "homework", "No", "math"] 
+        },
+        { 
+          q: "What do you eat for lunch?", 
+          h: ["I", "eat", "rice", "sandwich", "food", "chicken"] 
+        },
+        { 
+          q: "Do you walk or ride to school?", 
+          h: ["I", "walk", "ride", "bus", "car", "bike"] 
+        },
+        { 
+          q: "What time does school start?", 
+          h: ["School", "starts", "at", "eight", "nine", "morning"] 
+        },
+        { 
+          q: "Do you like reading books?", 
+          h: ["Yes", "I", "like", "reading", "books", "No"] 
+        }
       ];
       
-      // Assign question (question is already declared as 'let' at line 375)
-      question = followUpQuestions[turnCount % followUpQuestions.length];
+      const questionIndex = turnCount % followUpQuestions.length;
+      const followUp = followUpQuestions[questionIndex];
+      question = followUp.q;
+      context.canonicalHints = followUp.h;
       
-      // Provide hints for follow-up
-      context.canonicalHints = ["I", "like", "my", "is", "the", "do"];
+      console.log(`💬 Follow-up Q${turnCount} (${questionIndex}/${followUpQuestions.length}): "${question}"`);
     }
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION

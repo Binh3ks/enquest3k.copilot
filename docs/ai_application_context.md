@@ -1,6 +1,6 @@
 # EngQuest AI Context (Compact)
 
-_Last Updated: 2026-01-08T15:57:13.772Z_
+_Last Updated: 2026-01-09T01:17:18.474Z_
 
 ## TL;DR
 - ESL learning app: weekly lessons → stations (reading, vocab, grammar, etc.) → AI tutor
@@ -101,7 +101,9 @@ npm run dev  # runs on :5173
 - **FORBIDDEN** to read: `node_modules`, `dist`, `.git`, `build`, `src/legacy_archive`
 
 ## Development Log & Key Decisions
-<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-08 15:57:13: ONE_BRAIN_FIX_COMPLETE
+<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-09 01:17:18: ONE_BRAIN_FIX_COMPLETE
+
+- 2026-01-08 15:57:13: ONE_BRAIN_FIX_COMPLETE
 
 - 2026-01-07 13:26:21: Implemented API keys auto-failover system with 3 Gemini keys, OpenAI Whisper integration, smart routing logic, and cost tracking. Phase 2 ready with /api/pronunciation endpoints.
 
@@ -123,7 +125,6 @@ npm run dev  # runs on :5173
 
 - 2026-01-06 12:00:00: **AI TUTOR V5 - STORY MISSION FIXES** - Fixed mission system: (1) Removed sticky purple mission description banner, (2) Turn counting accurate with minimum requirements (10-15 turns per mission), (3) Mission separation working correctly (complete state clearing on mission switch), (4) Closing turn detection improved (!hasQuestion logic), (5) Contextual hints based on mission vocabulary, (6) UI resized to 50vw × 100vh with larger fonts (text-xl).
 
-- 2026-01-04 11:00:00: **AI TUTOR V3 REBUILD COMPLETE (ALL PHASES)** - Full modular architecture implemented and tested. All 5 tabs functional: StoryMission (V3 engine + scaffolding), FreeTalk (natural conversation), Pronunciation (TTS), Quiz (auto-generated), Debate (opinion practice). Build successful. System ready for production testing.
 
 
 

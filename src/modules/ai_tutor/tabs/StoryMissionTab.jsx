@@ -337,11 +337,15 @@ const StoryMissionTab = () => {
       console.log('🤖 Response keys:', Object.keys(aiResponse));
 
       // 🔥 NEW: Apply response guard BEFORE using the response
+      const currentTurnCount = Math.floor(messages.length / 2) + 1;
+
       const guardContext = {
         studentName: studentName || null,
         turnManager: getTurnManager(currentMission.mission_id),  // 🔥 Get registered TurnManager
         mission: currentMission,  // 🔥 Pass mission object
-        isOpeningTurn: false
+        isOpeningTurn: false,
+        turnCount: currentTurnCount,
+        chatHistory: [...messages, userMsg]
       };
       
       const guardedResponse = guardResponseObject(aiResponse, guardContext, 15);
@@ -353,7 +357,6 @@ const StoryMissionTab = () => {
       });
 
       // 🔥 CRITICAL: Check turn count before allowing mission close
-      const currentTurnCount = Math.floor(messages.length / 2) + 1;
       const missionMinTurns = currentMission?.minimum_turns || 10;
       const allStepsAsked = getTurnManager(currentMission.mission_id)?.askedStepKeys.length >= 
                             getTurnManager(currentMission.mission_id)?.missionSteps.length - 1;
@@ -437,10 +440,10 @@ const StoryMissionTab = () => {
       const minimumTurns = currentMission?.minimum_turns || 10;
       const maximumTurns = currentMission?.maximum_turns || 15;
       const isClosingTurn = !hasQuestion;
-      const isAtMinimumTurns = turnCount >= minimumTurns; // Reached minimum
-      const isPastMaximum = turnCount >= maximumTurns; // Exceeded maximum
+      const isAtMinimumTurns = currentTurnCount >= minimumTurns; // Reached minimum
+      const isPastMaximum = currentTurnCount >= maximumTurns; // Exceeded maximum
       
-      console.log(`🎯 Turn ${turnCount}/${minimumTurns} (max ${maximumTurns}) Analysis:`, {
+      console.log(`🎯 Turn ${currentTurnCount}/${minimumTurns} (max ${maximumTurns}) Analysis:`, {
         hasQuestion: responseText.includes('?'),
         isClosingTurn,
         isAtMinimumTurns,
