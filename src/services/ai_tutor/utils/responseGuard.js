@@ -392,15 +392,44 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       console.warn('⚠️ mission.nova_greeting not found, using canonical question');
     }
   } else if (isClosingTurn) {
-    // 🎉 CLOSING TURN: ACK + RECAST + GOODBYE (no question)
-    if (!ack || ack.trim() === '') {
-      ack = 'Wonderful!';
+    // Check minimum turns before closing
+    const chatHistory = context.chatHistory || [];
+    const turnCount = Math.floor(chatHistory.length / 2);
+    const minimumTurns = context.mission?.minimum_turns || 10;
+    const canClose = turnCount >= minimumTurns;
+    
+    if (canClose) {
+      // 🎉 CLOSING TURN: ACK + RECAST + GOODBYE (no question)
+      console.log(`🎉 Mission complete! (${turnCount}/${minimumTurns} turns)`);
+      if (!ack || ack.trim() === '') {
+        ack = 'Wonderful!';
+      }
+      if (!recast || recast.trim() === '') {
+        recast = 'You completed all steps!';
+      }
+      question = 'Great job completing this mission!';
+    } else {
+      // ⏳ CONTINUE: Not enough turns yet
+      console.log(`⏳ Continue: ${turnCount}/${minimumTurns} turns`);
+      
+      // Generate follow-up question
+      const followUpQuestions = [
+        "What is your favorite subject?",
+        "Do you like your teacher?",
+        "What do you do at recess?",
+        "Who is your best friend?",
+        "What games do you play?",
+        "Do you have homework today?",
+        "What do you eat for lunch?",
+        "Do you walk to school?"
+      ];
+      
+      // Assign question (question is already declared as 'let' at line 375)
+      question = followUpQuestions[turnCount % followUpQuestions.length];
+      
+      // Provide hints for follow-up
+      context.canonicalHints = ["I", "like", "my", "is", "the", "do"];
     }
-    if (!recast || recast.trim() === '') {
-      recast = 'You completed all the steps!';
-    }
-    question = 'Great job!';
-    console.log('🎉 Closing turn: Mission complete!');
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION
     

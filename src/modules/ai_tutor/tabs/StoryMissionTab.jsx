@@ -379,7 +379,8 @@ const StoryMissionTab = () => {
       if (guardedResponse.suggested_hints && guardedResponse.suggested_hints.length > 0) {
         const scrambledHints = [...guardedResponse.suggested_hints].sort(() => Math.random() - 0.5);
         setHints(scrambledHints);
-        console.log('💡 Hints set from LLM response:', scrambledHints);
+        setShowHints(true);
+        console.log('💡 Canonical hints:', scrambledHints);
       }
       
       // 🔥 DEBUG: Check for truncation
@@ -425,25 +426,7 @@ const StoryMissionTab = () => {
       const hasQuestion = responseText.includes('?');
       
       if (hasQuestion) {
-        // Regular question turn - generate and show hints
-        // 🔥 Use AI-generated hints (contextual to the question) + SCRAMBLE them
-        if (aiResponse.suggested_hints && aiResponse.suggested_hints.length > 0) {
-          // 🔥 Scramble the hints order for better learning
-          const scrambledHints = [...aiResponse.suggested_hints].sort(() => Math.random() - 0.5);
-          setHints(scrambledHints);
-          setShowHints(true);
-          console.log('💡 AI generated contextual hints (scrambled):', scrambledHints);
-          console.log('📝 Hints for question:', responseText.slice(-100));
-        } else {
-          // 🔥 BETTER fallback: Use extractHintsFromQuestion() utility
-          const missionVocab = currentMission?.target_vocab || [];
-          const contextualHints = extractHintsFromQuestion(responseText, missionVocab);
-          
-          setHints(contextualHints);
-          setShowHints(silentTurns >= 1 || turnCount >= 2);
-          console.log('💡 Extracted contextual hints from question:', contextualHints);
-          console.log('📝 Question analyzed:', responseText.slice(-80));
-        }
+        setShowHints(true);
       } else {
         // Closing turn - no hints needed
         setShowHints(false);
