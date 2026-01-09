@@ -53,6 +53,177 @@ const PROVIDERS = {
 };
 
 // ============================================
+// SMART FALLBACK GENERATOR
+// ============================================
+
+/**
+ * Generate contextual fallback based on conversation history
+ * CRITICAL: 
+ * 1. Check if student is asking US a question → Answer it!
+ * 2. Never repeat questions already asked
+ */
+function generateContextualFallback(chatHistory = [], userMessage = '', turnCount = 0) {
+  const userMsgLower = userMessage.toLowerCase().trim();
+  
+  // 🎯 CRITICAL: Is student ASKING US a question?
+  const isStudentAsking = 
+    userMsgLower.endsWith('?') ||
+    userMsgLower.startsWith('how old are you') ||
+    userMsgLower.startsWith('what is your') ||
+    userMsgLower.startsWith('do you') ||
+    userMsgLower.startsWith('are you') ||
+    userMsgLower.startsWith('can you') ||
+    userMsgLower.includes('your name') ||
+    userMsgLower.includes('your age') ||
+    userMsgLower.includes('your favorite');
+  
+  // If student is asking US → Answer naturally
+  if (isStudentAsking) {
+    // Detect what they're asking about
+    if (userMsgLower.includes('how old') || userMsgLower.includes('your age')) {
+      return {
+        ai_response: "I am always learning, just like you! How old are YOU?",
+        suggested_hints: ['I', 'am', 'years', 'old', 'eight', 'nine', 'ten'],
+        pedagogy_note: 'Answering student question about age',
+        provider: 'fallback-answer',
+        grammarBlocked: true
+      };
+    }
+    
+    if (userMsgLower.includes('your name')) {
+      return {
+        ai_response: "I am Ms. Nova! What is your name?",
+        suggested_hints: ['My', 'name', 'is', 'I', 'am'],
+        pedagogy_note: 'Answering student question about name',
+        provider: 'fallback-answer',
+        grammarBlocked: true
+      };
+    }
+    
+    if (userMsgLower.includes('do you like') || userMsgLower.includes('your favorite')) {
+      return {
+        ai_response: "I love teaching students like you! What do YOU like?",
+        suggested_hints: ['I', 'like', 'love', 'my', 'favorite', 'is'],
+        pedagogy_note: 'Answering student question about preferences',
+        provider: 'fallback-answer',
+        grammarBlocked: true
+      };
+    }
+    
+    // Generic answer for other questions
+    return {
+      ai_response: "That is interesting! Tell me more.",
+      suggested_hints: ['I', 'think', 'like', 'am', 'have', 'my'],
+      pedagogy_note: 'Generic answer to student question',
+      provider: 'fallback-answer',
+      grammarBlocked: true
+    };
+  }
+  
+  // Student is NOT asking → Continue with normal fallback logic
+  // Extract all AI questions from history (to avoid repeating)
+  const allHistory = chatHistory.map(m => m.content.toLowerCase()).join(' ');
+  const askedQuestions = [];
+  
+  // Detect common questions already asked
+  if (allHistory.includes('what is your name') || allHistory.includes('what\'s your name')) {
+    askedQuestions.push('name');
+  }
+  if (allHistory.includes('how old are you') || allHistory.includes('what is your age')) {
+    askedQuestions.push('age');
+  }
+  if (allHistory.includes('are you a student')) {
+    askedQuestions.push('student');
+  }
+  if (allHistory.includes('do you have friends')) {
+    askedQuestions.push('friends');
+  }
+  if (allHistory.includes('do you like your school') || allHistory.includes('like school')) {
+    askedQuestions.push('school');
+  }
+  if (allHistory.includes('what grade are you in')) {
+    askedQuestions.push('grade');
+  }
+  if (allHistory.includes('do you like learning') || allHistory.includes('what do you like about school')) {
+    askedQuestions.push('learning');
+  }
+  
+  // Safe fallback questions (DIVERSE pool)
+  const safeFallbacks = [
+    {
+      id: 'encouragement-1',
+      response: "Good! Can you say more about that?",
+      hints: ['I', 'think', 'like', 'have', 'my', 'Yes']
+    },
+    {
+      id: 'encouragement-2',
+      response: "That is great! Tell me more.",
+      hints: ['I', 'am', 'have', 'like', 'about', 'my']
+    },
+    {
+      id: 'encouragement-3',
+      response: "I see! What else can you tell me?",
+      hints: ['I', 'also', 'like', 'have', 'about', 'my']
+    },
+    {
+      id: 'repeat-request',
+      response: "Sorry, I did not hear you well. Can you say that again?",
+      hints: ['I', 'am', 'have', 'like', 'my', 'Yes']
+    },
+    {
+      id: 'sentence-help',
+      response: "Can you use a full sentence?",
+      hints: ['I', 'am', 'have', 'like', 'my', 'about']
+    }
+  ];
+  
+  // Conditional fallbacks (only use if NOT already asked)
+  const conditionalFallbacks = [
+    {
+      id: 'excited',
+      condition: !askedQuestions.includes('school'),
+      response: "Are you excited about school?",
+      hints: ['Yes', 'I', 'am', 'excited', 'happy', 'No']
+    },
+    {
+      id: 'happy',
+      condition: turnCount >= 5,
+      response: "Are you happy today?",
+      hints: ['Yes', 'I', 'am', 'happy', 'good', 'No']
+    },
+    {
+      id: 'nice-meet',
+      condition: askedQuestions.includes('name') && turnCount >= 6,
+      response: "It is nice to meet you! Are you ready to learn?",
+      hints: ['Yes', 'I', 'am', 'ready', 'excited', 'No']
+    }
+  ];
+  
+  // Try conditional fallbacks first
+  const availableConditional = conditionalFallbacks.filter(fb => fb.condition);
+  if (availableConditional.length > 0) {
+    const selected = availableConditional[Math.floor(Math.random() * availableConditional.length)];
+    return {
+      ai_response: selected.response,
+      suggested_hints: selected.hints,
+      pedagogy_note: 'Smart fallback - avoiding repeated questions',
+      provider: 'fallback-smart',
+      grammarBlocked: true
+    };
+  }
+  
+  // Use safe fallback (random to avoid repetition)
+  const selected = safeFallbacks[Math.floor(Math.random() * safeFallbacks.length)];
+  return {
+    ai_response: selected.response,
+    suggested_hints: selected.hints,
+    pedagogy_note: 'Safe fallback - encouraging continuation',
+    provider: 'fallback-safe',
+    grammarBlocked: true
+  };
+}
+
+// ============================================
 // MAIN ROUTER FUNCTION
 // ============================================
 
@@ -73,7 +244,8 @@ export async function sendToAI({
   userMessage,
   preferredProvider = 'auto',
   weekId = 1,
-  skipGrammarGuard = false
+  skipGrammarGuard = false,
+  turnCount = 0
 }) {
   const startTime = Date.now();
   const maxRetries = 2; // Max regeneration attempts
@@ -123,13 +295,10 @@ export async function sendToAI({
               continue; // Retry loop
             } else {
               // Max retries exceeded - use deterministic fallback
-              console.error('❌ Max retries exceeded. Using deterministic fallback.');
+              console.error('❌ Max retries exceeded. Using contextual fallback.');
+              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount);
               return {
-                ai_response: "I need to practice my grammar! Let's try that again. Can you tell me more?",
-                pedagogy_note: 'Grammar guard blocked response after max retries',
-                suggested_hints: ['Try using simple sentences', 'Use words we learned this week'],
-                provider: 'fallback',
-                grammarBlocked: true,
+                ...fallbackResponse,
                 violations: validation.violations,
                 latency: Date.now() - startTime
               };
@@ -138,7 +307,7 @@ export async function sendToAI({
         }
         
         // 🎯 TALK RATIO GUARD VALIDATION
-        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage);
+        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage, turnCount);
         console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
         
         if (talkRatioResult.action === 'truncated') {
@@ -200,13 +369,10 @@ export async function sendToAI({
                     console.log('🔄 Regenerating with Gemini...');
                     continue;
                   } else {
-                    console.error('❌ Gemini max retries exceeded. Using fallback.');
+                    console.error('❌ Gemini max retries exceeded. Using contextual fallback.');
+                    const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount);
                     return {
-                      ai_response: "Let's keep it simple! Can you tell me more using the words we learned?",
-                      pedagogy_note: 'Grammar guard blocked both providers',
-                      suggested_hints: ['Use simple words', 'Try "I am..." or "I have..."'],
-                      provider: 'fallback',
-                      grammarBlocked: true,
+                      ...fallbackResponse,
                       violations: validation.violations,
                       latency: Date.now() - startTime
                     };
@@ -215,7 +381,7 @@ export async function sendToAI({
               }
               
               // 🎯 TALK RATIO GUARD VALIDATION (Gemini)
-              const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage);
+              const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage, turnCount);
               console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
               
               if (talkRatioResult.action === 'truncated') {
@@ -283,13 +449,10 @@ export async function sendToAI({
               console.log('🔄 Regenerating...');
               continue;
             } else {
-              console.error('❌ Max retries. Using fallback.');
+              console.error('❌ Max retries. Using contextual fallback.');
+              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount);
               return {
-                ai_response: "Let's practice with simple sentences! What would you like to talk about?",
-                pedagogy_note: 'Grammar guard blocked after retries',
-                suggested_hints: ['Use simple grammar', 'Try "I am..." sentences'],
-                provider: 'fallback',
-                grammarBlocked: true,
+                ...fallbackResponse,
                 violations: validation.violations,
                 latency: Date.now() - startTime
               };
@@ -298,7 +461,7 @@ export async function sendToAI({
         }
         
         // 🎯 TALK RATIO GUARD VALIDATION (Gemini Direct)
-        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage);
+        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage, turnCount);
         console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
         
         if (talkRatioResult.action === 'truncated') {
@@ -355,7 +518,13 @@ async function callGroq(messages) {
     if (msg.role === 'system' && idx === 0) {
       return {
         ...msg,
-        content: msg.content + '\n\n🔥 CRITICAL: Return ONLY a valid JSON object. No markdown formatting, no triple backticks, no code blocks. Just pure JSON.'
+        content: msg.content + '\n\n🔥 CRITICAL JSON FORMAT REQUIREMENTS:\n' +
+                 '1. Return ONLY valid JSON (no markdown, no backticks)\n' +
+                 '2. ALWAYS complete your response fully\n' +
+                 '3. EVERY response MUST end with exactly ONE question\n' +
+                 '4. MUST include "suggested_hints" with 4-6 words that help answer YOUR question\n' +
+                 '5. Format: {"ai_response": "[complete response + question]", "pedagogy_note": "strategy", "suggested_hints": ["word1", "word2", "word3", "word4"]}\n' +
+                 '6. Hints must be individual words that help build the answer to your question'
       };
     }
     return msg;
@@ -381,21 +550,46 @@ async function callGroq(messages) {
 
   const content = response.data.choices[0]?.message?.content || '';
 
-  // Parse JSON response
+  // Parse JSON response with enhanced validation
   try {
     const parsed = JSON.parse(content);
+    const aiResponse = parsed.ai_response || parsed.response || content;
+    
+    // 🔥 Validate response completeness
+    if (!aiResponse || aiResponse.length < 10) {
+      throw new Error('Response too short or empty');
+    }
+    
+    // 🔥 Ensure response ends with a question
+    if (!aiResponse.includes('?')) {
+      console.warn('⚠️ Response missing question, adding default');
+      const enhancedResponse = aiResponse + ' What do you think?';
+      return {
+        ai_response: enhancedResponse,
+        pedagogy_note: parsed.pedagogy_note || 'Added question for engagement',
+        suggested_hints: parsed.suggested_hints || [],
+        raw: content
+      };
+    }
+    
     return {
-      ai_response: parsed.ai_response || parsed.response || content,
+      ai_response: aiResponse,
       pedagogy_note: parsed.pedagogy_note || '',
       suggested_hints: parsed.suggested_hints || [],
       raw: content
     };
   } catch (parseError) {
-    console.warn('⚠️ Groq JSON parse failed, attempting fallback...');
-    // Fallback to plain text if JSON parsing fails
+    console.warn('⚠️ Groq JSON parse failed, creating structured response...');
+    
+    // 🔥 Smart fallback: extract text and add question if missing
+    let cleanContent = content.replace(/```json|```/g, '').trim();
+    if (!cleanContent.includes('?')) {
+      cleanContent += ' What about you?';
+    }
+    
     return {
-      ai_response: content,
-      pedagogy_note: '',
+      ai_response: cleanContent,
+      pedagogy_note: 'Fallback response structure',
       suggested_hints: [],
       raw: content
     };
@@ -464,21 +658,46 @@ REMEMBER: Output must be pure JSON only, no extra formatting!
 
   const content = response.data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
-  // Parse JSON response
+  // Parse JSON response with validation (like Groq)
   try {
     const parsed = JSON.parse(content);
+    const aiResponse = parsed.ai_response || parsed.response || content;
+    
+    // 🔥 Validate response completeness
+    if (!aiResponse || aiResponse.length < 10) {
+      throw new Error('Response too short or empty');
+    }
+    
+    // 🔥 Ensure response ends with a question
+    if (!aiResponse.includes('?')) {
+      console.warn('⚠️ Gemini response missing question, adding default');
+      const enhancedResponse = aiResponse + ' What do you think?';
+      return {
+        ai_response: enhancedResponse,
+        pedagogy_note: parsed.pedagogy_note || 'Added question for engagement',
+        suggested_hints: parsed.suggested_hints || [],
+        raw: content
+      };
+    }
+    
     return {
-      ai_response: parsed.ai_response || content,
+      ai_response: aiResponse,
       pedagogy_note: parsed.pedagogy_note || '',
       suggested_hints: parsed.suggested_hints || [],
       raw: content
     };
   } catch (parseError) {
-    console.error('⚠️ Gemini JSON parse error:', parseError.message);
-    console.error('Raw response:', content);
+    console.warn('⚠️ Gemini JSON parse failed, creating structured response...');
+    
+    // 🔥 Smart fallback: extract text and add question if missing
+    let cleanContent = content.replace(/```json|```/g, '').trim();
+    if (!cleanContent.includes('?')) {
+      cleanContent += ' What about you?';
+    }
+    
     return {
-      ai_response: content,
-      pedagogy_note: '',
+      ai_response: cleanContent,
+      pedagogy_note: 'Fallback response structure',
       suggested_hints: [],
       raw: content
     };

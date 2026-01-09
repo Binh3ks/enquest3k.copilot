@@ -21,116 +21,83 @@ const InputBar = ({
   const [shouldAutoSend, setShouldAutoSend] = useState(false);
   const [recognition, setRecognition] = useState(null);
 
-  // 🔥 Use refs for timer management (better pattern)
   const textareaRef = useRef(null);
-  const lastTranscriptRef = useRef('');
-  const silenceTimerRef = useRef(null); // Store timer in ref instead of state
 
   // Auto-send after voice input completes
   useEffect(() => {
     if (shouldAutoSend && message.trim() && !disabled) {
-      console.log('🎤 Auto-sending voice input:', message);
+      console.log('📤 Auto-sending:', message);
       onSend(message.trim());
       setMessage('');
-      setShouldAutoSend(false); // Reset flag
-      lastTranscriptRef.current = ''; // Reset tracker
+      setShouldAutoSend(false);
       
-      // Reset textarea height
       if (textareaRef.current) {
         textareaRef.current.style.height = 'auto';
       }
     }
   }, [shouldAutoSend, message, disabled, onSend]);
 
-  // Initialize Web Speech API
+  // Initialize Web Speech API - SIMPLE & STABLE (from V6-FINAL backup)
   useEffect(() => {
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-      console.warn('Web Speech API not supported');
+      console.warn('⚠️ Web Speech API not supported');
       return;
     }
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognitionInstance = new SpeechRecognition();
+    const rec = new SpeechRecognition();
     
-    recognitionInstance.continuous = true; // 🔥 Keep listening for silence detection
-    recognitionInstance.interimResults = true;
-    recognitionInstance.lang = 'en-US';
+    // 🔥 SIMPLE CONFIG - No continuous, no interim results
+    rec.continuous = false; // Records until natural pause (~1-2 seconds silence)
+    rec.interimResults = false; // Only get final result
+    rec.lang = 'en-US';
 
-    recognitionInstance.onresult = (event) => {
-      let transcript = '';
-      let isFinal = false;
-      
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        transcript += event.results[i][0].transcript;
-        if (event.results[i].isFinal) {
-          isFinal = true;
-        }
-      }
-      
+    rec.onstart = () => {
+      console.log('🎤 Recording started');
+    };
+
+    rec.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      console.log('📝 Transcript:', transcript);
       setMessage(transcript);
-
-      // 🔥 Silence Detection: If transcript changed, reset timer
-      if (transcript !== lastTranscriptRef.current) {
-        lastTranscriptRef.current = transcript;
-
-        // Clear existing timer
-        if (silenceTimerRef.current) {
-          clearTimeout(silenceTimerRef.current);
-        }
-
-        // Set new timer for 1.5 seconds of silence
-        silenceTimerRef.current = setTimeout(() => {
-          console.log('🔇 Detected 1.5s silence, stopping recognition...');
-          recognitionInstance.stop();
-        }, 1500);
-      }
-
-      // 🔥 If final result detected, also trigger auto-send after brief delay
-      if (isFinal && transcript.trim()) {
-        setTimeout(() => {
-          recognitionInstance.stop();
-        }, 500);
-      }
-    };
-
-    recognitionInstance.onend = () => {
-      console.log('🎤 Voice recognition ended');
-      setIsListening(false);
-
-      // Clear silence timer
-      if (silenceTimerRef.current) {
-        clearTimeout(silenceTimerRef.current);
-        silenceTimerRef.current = null;
-      }
-
-      // 🔥 Auto-send if we have content
-      if (message.trim()) {
+      
+      // Auto-send after successful recognition
+      setTimeout(() => {
         setShouldAutoSend(true);
-      }
+      }, 300);
     };
 
-    recognitionInstance.onerror = (event) => {
-      console.error('Speech recognition error:', event.error);
+    rec.onend = () => {
+      console.log('⏹️ Recording ended');
       setIsListening(false);
+    };
 
-      // Clear silence timer on error
-      if (silenceTimerRef.current) {
-        clearTimeout(silenceTimerRef.current);
-        silenceTimerRef.current = null;
+    rec.onerror = (event) => {
+      console.error('❌ Speech recognition error:', event.error);
+      setIsListening(false);
+      
+      // User-friendly error messages
+      if (event.error === 'no-speech') {
+        alert('No speech detected. Please try again.');
+      } else if (event.error === 'aborted') {
+        // Silent - user stopped manually
+      } else {
+        alert(`Speech recognition error: ${event.error}`);
       }
     };
 
-    setRecognition(recognitionInstance);
+    setRecognition(rec);
 
     return () => {
-      if (recognitionInstance) {
-        recognitionInstance.stop();
-      }
-      if (silenceTimerRef.current) {
-        clearTimeout(silenceTimerRef.current);
+      if (rec) {
+        try {
+          rec.stop();
+        } catch (e) {
+          // Already stopped
+        }
       }
     };
-  }, [message]);
+  }, []);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -161,51 +128,67 @@ const InputBar = ({
     }
   };
 
-  // Handle voice input with Web Speech API
+  // Handle voice input button click - SIMPLIFIED
   const handleVoiceInput = () => {
     if (!recognition) {
-      alert('Speech recognition not supported in this browser');
+      alert('Speech recognition not supported. Please use Chrome or Edge.');
       return;
     }
 
     if (isListening) {
-      // Stop listening
-      recognition.stop();
+      // User clicked stop - abort current recording
+      console.log('🛑 User manually stopped recording');
       setIsListening(false);
-
-      // Clear any pending silence timer
-      if (silenceTimerRef.current) {
-        clearTimeout(silenceTimerRef.current);
-        silenceTimerRef.current = null;
+      
+      try {
+        recognition.abort(); // Use abort() to cancel without triggering onresult
+      } catch (e) {
+        console.error('Stop error:', e);
       }
     } else {
-      // Start listening
-      setMessage(''); // Clear previous text
-      lastTranscriptRef.current = ''; // Reset tracker
+      // User clicked start - begin new recording
+      console.log('🎤 User started recording');
+      setMessage(''); // Clear previous message
+      setShouldAutoSend(false);
       
       try {
         recognition.start();
         setIsListening(true);
-        console.log('🎤 Started voice recognition with auto-send on silence...');
       } catch (error) {
-        console.error('Error starting recognition:', error);
+        console.error('Start error:', error);
+        
+        // If already running, stop first then retry
+        if (error.message && error.message.includes('already started')) {
+          try {
+            recognition.stop();
+            setTimeout(() => {
+              recognition.start();
+              setIsListening(true);
+            }, 200);
+          } catch (e) {
+            console.error('Retry error:', e);
+            alert('Speech recognition is busy. Please try again.');
+          }
+        } else {
+          alert('Could not start speech recognition. Please try again.');
+        }
       }
     }
   };
 
-  // 🔥 Handle keyboard input - abort mic if user starts typing
+  // Handle keyboard input - stop mic if user starts typing
   const handleMessageChange = (e) => {
     const newMessage = e.target.value;
     
-    // If user starts typing while mic is listening, abort mic
+    // If user types while mic is on, stop recording
     if (isListening && newMessage.length > message.length) {
-      console.log('⌨️ User started typing, aborting voice input...');
-      recognition.stop();
+      console.log('⌨️ User typing - stopping mic');
       setIsListening(false);
-
-      if (silenceTimerRef.current) {
-        clearTimeout(silenceTimerRef.current);
-        silenceTimerRef.current = null;
+      
+      try {
+        recognition.abort(); // Cancel without saving
+      } catch (e) {
+        console.error('Abort error:', e);
       }
     }
 
@@ -216,8 +199,8 @@ const InputBar = ({
   const isMicPriority = message.trim().length === 0;
 
   return (
-    <div className="bg-white border-t border-gray-200 px-4 py-3">
-      <div className="flex items-end space-x-2">
+    <div className="bg-white border-t border-gray-200 p-6"> {/* Bigger padding */}
+      <div className="flex items-end space-x-4"> {/* More space between elements */}
         {/* PRIORITY Microphone Button - LARGE by default */}
         {showVoiceInput && (
           <button
@@ -227,7 +210,7 @@ const InputBar = ({
             className={`
               relative flex-shrink-0 rounded-full flex items-center justify-center
               transition-all duration-300 ease-in-out
-              ${isMicPriority ? 'w-14 h-14' : 'w-10 h-10'}
+              ${isMicPriority ? 'w-16 h-16' : 'w-12 h-12'}
               ${isListening
                 ? 'bg-red-500 text-white shadow-lg'
                 : 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:shadow-xl hover:scale-105'
@@ -244,12 +227,12 @@ const InputBar = ({
               </>
             )}
 
-            {/* Icon */}
+            {/* Icon with bigger sizes */}
             <div className="relative z-10">
               {isListening ? (
-                <MicOff size={isMicPriority ? 28 : 20} />
+                <MicOff size={isMicPriority ? 32 : 24} />
               ) : (
-                <Mic size={isMicPriority ? 28 : 20} />
+                <Mic size={isMicPriority ? 32 : 24} />
               )}
             </div>
           </button>
@@ -266,7 +249,8 @@ const InputBar = ({
             disabled={disabled}
             rows={1}
             className={`
-              w-full px-4 py-2 pr-12 rounded-2xl border border-gray-300
+              w-full px-6 py-4 pr-12 rounded-2xl border-2 border-gray-300 {/* Bigger padding and border */}
+              text-base leading-relaxed {/* Larger text */}
               focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent
               resize-none max-h-32 overflow-y-auto
               ${disabled ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}
@@ -280,7 +264,7 @@ const InputBar = ({
           onClick={handleSend}
           disabled={disabled || !message.trim()}
           className={`
-            flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center
+            flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center {/* Bigger button */}
             transition-all duration-300
             ${disabled || !message.trim()
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed scale-90'
@@ -290,9 +274,9 @@ const InputBar = ({
           aria-label="Send message"
         >
           {disabled ? (
-            <Loader2 size={20} className="animate-spin" />
+            <Loader2 size={24} className="animate-spin" />
           ) : (
-            <Send size={20} />
+            <Send size={24} />
           )}
         </button>
       </div>
@@ -300,7 +284,7 @@ const InputBar = ({
       {/* Dynamic hint text */}
       <p className="text-xs text-gray-400 mt-2 text-center">
         {isListening
-          ? '🎤 Listening... Auto-sends after 1.5s silence!'
+          ? '🎤 Listening... Speak naturally, it will auto-stop!'
           : isMicPriority
             ? '🎤 Tap mic to speak • or type to chat'
             : 'Press Enter to send • Shift+Enter for new line'

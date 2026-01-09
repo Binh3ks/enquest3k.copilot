@@ -1,6 +1,6 @@
 # EngQuest AI Context (Compact)
 
-_Last Updated: 2026-01-05T11:13:45.229Z_
+_Last Updated: 2026-01-08T15:57:13.772Z_
 
 ## TL;DR
 - ESL learning app: weekly lessons → stations (reading, vocab, grammar, etc.) → AI tutor
@@ -101,18 +101,31 @@ npm run dev  # runs on :5173
 - **FORBIDDEN** to read: `node_modules`, `dist`, `.git`, `build`, `src/legacy_archive`
 
 ## Development Log & Key Decisions
-<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->
+<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-08 15:57:13: ONE_BRAIN_FIX_COMPLETE
+
+- 2026-01-07 13:26:21: Implemented API keys auto-failover system with 3 Gemini keys, OpenAI Whisper integration, smart routing logic, and cost tracking. Phase 2 ready with /api/pronunciation endpoints.
+
+- 2026-01-07 11:55:25: EMERGENCY_FIX_REPORT_JAN6_430PM
+
+- 2026-01-07 11:45:53: Fixed learning mode toggle - added stopPropagation and pass learningMode prop to useFetchWeekData hook
+
+- 2026-01-07 11:36:13: Simplified project_manager.sh option 5 - auto-detects changes and updates context without prompts
+
+- 2026-01-07 11:35:54: EMERGENCY_FIX_REPORT_JAN6_430PM
+
+- 2026-01-07 11:30:44: Fixed microphone issue in AI Tutor - restored simple continuous=false config from V6-FINAL backup
+
+- 2026-01-07 11:30:25: Test log entry from debugging
+
+- 2026-01-06 14:00:00: **AI TUTOR UPGRADE PLAN CREATED (3 WEEKS)** - Comprehensive code review completed. Implementation plan created for 3-phase upgrade: Phase 1 (Week 1) - Create NovaEngine core + optimize prompts (-60% tokens) + improve error handling, Phase 2 (Week 2) - Refactor state management + add validation + performance optimization, Phase 3 (Week 3) - Response caching + analytics + A/B testing. Target: Reduce API costs 60%, errors 40%, improve maintainability 50%. See: AI_TUTOR_CODE_REVIEW_AND_UPGRADES.md, IMPLEMENTATION_PLAN_AI_TUTOR_UPGRADES.md
+
+- 2026-01-06 13:15:00: **AI TUTOR V5 - FREETALK & HINT SYSTEM MAJOR IMPROVEMENTS** - Fixed critical conversation flow issues: (1) Turn 14 proper closure with TTS playback, (2) Repeated question detection (prevents asking same question twice), (3) Enhanced hint generation rules to include specific answer options (game names for games questions, food names for food questions, etc.), (4) Contextual hints matching AI questions, (5) Simplified opening greetings (4 basic questions, present simple only), (6) Turn count enforcement with hard client-side limits, (7) Closing messages now play TTS before ending conversation. All 5 tabs tested and functional.
+
+- 2026-01-06 12:00:00: **AI TUTOR V5 - STORY MISSION FIXES** - Fixed mission system: (1) Removed sticky purple mission description banner, (2) Turn counting accurate with minimum requirements (10-15 turns per mission), (3) Mission separation working correctly (complete state clearing on mission switch), (4) Closing turn detection improved (!hasQuestion logic), (5) Contextual hints based on mission vocabulary, (6) UI resized to 50vw × 100vh with larger fonts (text-xl).
+
 - 2026-01-04 11:00:00: **AI TUTOR V3 REBUILD COMPLETE (ALL PHASES)** - Full modular architecture implemented and tested. All 5 tabs functional: StoryMission (V3 engine + scaffolding), FreeTalk (natural conversation), Pronunciation (TTS), Quiz (auto-generated), Debate (opinion practice). Build successful. System ready for production testing.
 
-- 2026-01-04 10:45:00: **AI TUTOR V3 REBUILD COMPLETE (Phase 1-2)** - Modular architecture implemented. Created novaEngine.js (pedagogical brain with guardrails) and promptLibrary.js (persona & scaffolding). Moved old code to legacy_archive. Next: Build UI shell (AITutor.jsx + tabs).
 
-- 2026-01-04 02:19:17: Test context:update command
 
-- 2026-01-04 02:18:02: Compacted AI context: reduced from 226 to ~80 lines; added context-log.mjs script
 
-- 2026-01-02 04:18:58: Khắc phục lỗi đăng nhập tài khoản owner. Đã khởi động lại cả frontend và backend server để đảm bảo các thay đổi trong file .env được áp dụng.
-- 2026-01-02 03:32:52: Khắc phục lỗi đăng nhập tài khoản owner (Invalid credentials). Nguyên nhân là do backend không kết nối đúng database. Đã sửa bằng cách thêm require('dotenv').config(); vào mcp-server/config/db.js, khởi động lại backend, và sau đó chạy lại lệnh chèn tài khoản owner.
-- 2026-01-02 03:02:21: Xử lý lỗi đăng nhập tài khoản owner (Invalid credentials). Nguyên nhân do mật khẩu hash không khớp. Giải pháp: Tạo tài khoản owner thông qua API /api/auth/register của backend để đảm bảo mật khẩu được hash đúng cách.
-- 2026-01-02 02:41:55: Đã tự động cài đặt PostgreSQL, tạo database engquest_db và user engquest_user, chạy script schema init.sql, và chèn tài khoản owner (username: owner, password: owner123, role: admin) vào database.
-- 2026-01-01 16:32:22: Hướng dẫn khôi phục tài khoản owner bằng cách chèn trực tiếp vào cơ sở dữ liệu PostgreSQL với username owner và password admin123 (hashed).
-- 2026-01-01 15:57:10: Tái cấu trúc ứng dụng EngQuest từ localStorage sang kiến trúc Client-Server với Node.js/Express, PostgreSQL, JWT Auth, và AI proxy.
+

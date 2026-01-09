@@ -97,6 +97,9 @@ const audioCache = new Map();
 let currentAudio = null;
 let isPlaying = false;
 let isSpeaking = false; // 🔥 Lock to prevent concurrent TTS calls
+let lastTTSCall = 0; // 🔥 Debounce timestamp
+
+const TTS_DEBOUNCE_DELAY = 500; // 500ms minimum between TTS calls
 
 // TTS Engine configuration
 const TTS_CONFIG = {
@@ -141,12 +144,20 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     return { success: false, error: 'Empty text' };
   }
 
+  // 🔥 Debounce: Prevent rapid-fire TTS calls
+  const now = Date.now();
+  if (now - lastTTSCall < TTS_DEBOUNCE_DELAY) {
+    console.warn('⚠️ TTS: Call too soon, debouncing...');
+    return { success: false, error: 'Debounced' };
+  }
+  lastTTSCall = now;
+
   // 🔥 Check if already speaking - prevent concurrent calls
   if (isSpeaking) {
     console.warn('⚠️ TTS: Already speaking, canceling previous...');
-    window.speechSynthesis.cancel(); // Force cancel
-    stopAudio(); // Stop any audio elements
-    isSpeaking = false; // Reset lock
+    stopAudio(); // This will reset both isSpeaking and clean up audio
+    // Wait a bit for cleanup to complete
+    await new Promise(resolve => setTimeout(resolve, 100));
   }
 
   isSpeaking = true; // 🔥 Set lock
@@ -461,27 +472,63 @@ async function playAudio(audioUrlOrIdentifier) {
   };
 
   currentAudio.onerror = () => {
+    console.warn('⚠️ Audio error (cleaned up)');
     isPlaying = false;
     currentAudio = null;
   };
 
-  await currentAudio.play();
+  // 🔥 Proper error handling for play() to prevent AbortError
+  try {
+    const playPromise = currentAudio.play();
+    if (playPromise !== undefined) {
+      await playPromise.catch(error => {
+        // Handle common play() interruption errors gracefully
+        if (error.name === 'AbortError') {
+          console.warn('🔊 Audio play() was interrupted (normal behavior)');
+        } else if (error.name === 'NotAllowedError') {
+          console.warn('🔊 Audio play() not allowed by browser policy');
+        } else {
+          console.error('🔊 Audio play() error:', error);
+        }
+        isPlaying = false;
+        currentAudio = null;
+      });
+    }
+  } catch (error) {
+    console.error('🔊 Audio play() setup error:', error);
+    isPlaying = false;
+    currentAudio = null;
+  }
 }
 
 /**
  * Stop currently playing audio
  */
 export function stopAudio() {
+  // 🔥 Properly handle audio cancellation to prevent AbortError
   if (currentAudio) {
-    currentAudio.pause();
-    currentAudio = null;
+    try {
+      currentAudio.pause();
+      currentAudio.currentTime = 0; // Reset position
+      currentAudio.src = ''; // Clear source to prevent pending loads
+      currentAudio = null;
+    } catch (error) {
+      console.warn('⚠️ Audio cleanup error (ignored):', error);
+      currentAudio = null;
+    }
   }
   
+  // Cancel browser TTS with proper error handling
   if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
+    try {
+      window.speechSynthesis.cancel();
+    } catch (error) {
+      console.warn('⚠️ SpeechSynthesis cancel error (ignored):', error);
+    }
   }
   
   isPlaying = false;
+  isSpeaking = false; // 🔥 Also reset the speaking lock
 }
 
 /**

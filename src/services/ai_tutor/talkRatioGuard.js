@@ -13,7 +13,7 @@
 // ============================================
 
 const MAX_TALK_RATIO = 0.8; // AI can speak at most 80% of student's word count
-const MIN_STUDENT_WORDS = 3; // Minimum words from student to calculate ratio
+const MIN_STUDENT_WORDS = 10; // Minimum words from student to calculate ratio (increased for early conversation)
 const TRUNCATE_THRESHOLD = 2.0; // If ratio > 2.0, truncate instead of regenerate (extreme cases only)
 
 // ============================================
@@ -45,18 +45,24 @@ function countWords(text) {
  * @param {string} studentInput - Student's input text
  * @returns {{ ratio: number, aiWords: number, studentWords: number, valid: boolean }}
  */
-export function calculateTalkRatio(aiResponse, studentInput) {
+export function calculateTalkRatio(aiResponse, studentInput, conversationTurn = 0) {
   const aiWords = countWords(aiResponse);
   const studentWords = countWords(studentInput);
   
+  // During first 5 turns of conversation, be more lenient with AI responses
+  const isEarlyConversation = conversationTurn <= 5;
+  const minWords = isEarlyConversation ? MIN_STUDENT_WORDS * 2 : MIN_STUDENT_WORDS;
+  
   // If student said very little, don't enforce ratio (early in conversation)
-  if (studentWords < MIN_STUDENT_WORDS) {
+  if (studentWords < minWords) {
     return {
       ratio: 0,
       aiWords,
       studentWords,
       valid: true,
-      reason: `Student input too short (${studentWords} words < ${MIN_STUDENT_WORDS})`
+      reason: isEarlyConversation 
+        ? `Early conversation turn ${conversationTurn} - ratio not enforced`
+        : `Student input too short (${studentWords} words < ${minWords})`
     };
   }
   
@@ -80,8 +86,8 @@ export function calculateTalkRatio(aiResponse, studentInput) {
  * @param {string} studentInput - Student's last input
  * @returns {{ valid: boolean, ratio: number, shouldTruncate: boolean, reason: string }}
  */
-export function validateTalkRatio(aiResponse, studentInput) {
-  const result = calculateTalkRatio(aiResponse, studentInput);
+export function validateTalkRatio(aiResponse, studentInput, conversationTurn = 0) {
+  const result = calculateTalkRatio(aiResponse, studentInput, conversationTurn);
   
   // Determine if we should truncate or regenerate
   const shouldTruncate = result.ratio > TRUNCATE_THRESHOLD;
@@ -182,8 +188,8 @@ export function getTalkRatioSummary(result) {
  * @param {string} studentInput - Student's input
  * @returns {{ response: string, enforced: boolean, action: string, details: Object }}
  */
-export function enforceTalkRatio(aiResponse, studentInput) {
-  const validation = validateTalkRatio(aiResponse, studentInput);
+export function enforceTalkRatio(aiResponse, studentInput, conversationTurn = 0) {
+  const validation = validateTalkRatio(aiResponse, studentInput, conversationTurn);
   
   // If valid, return as-is
   if (validation.valid) {

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear Cache - EngQuest</title>
+  <style>
+    body {
+      font-family: system-ui;
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 { font-size: 2.5em; margin-bottom: 20px; }
+    button {
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 15px 40px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    button:hover { transform: scale(1.05); }
+    .status { 
+      margin-top: 30px; 
+      font-size: 18px;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      min-height: 50px;
+    }
+    .success { color: #4ade80; }
+    .info { color: #60a5fa; }
+  </style>
+</head>
+<body>
+  <h1>🧹 Clear Browser Cache</h1>
+  <p>Clear all cached data for EngQuest application</p>
+  
+  <button onclick="clearAll()">Clear All Cache</button>
+  <button onclick="clearStorage()">Clear LocalStorage Only</button>
+  <button onclick="location.href='http://localhost:5173'">Go to App</button>
+  
+  <div class="status" id="status"></div>
+
+  <script>
+    async function clearAll() {
+      const status = document.getElementById('status');
+      status.innerHTML = '<span class="info">Clearing cache...</span>';
+      
+      try {
+        // Clear Service Workers
+        if ('serviceWorker' in navigator) {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          for (let registration of registrations) {
+            await registration.unregister();
+          }
+        }
+        
+        // Clear Cache Storage
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          await Promise.all(cacheNames.map(name => caches.delete(name)));
+        }
+        
+        // Clear localStorage
+        localStorage.clear();
+        
+        // Clear sessionStorage
+        sessionStorage.clear();
+        
+        // Clear IndexedDB
+        const dbs = await indexedDB.databases();
+        dbs.forEach(db => indexedDB.deleteDatabase(db.name));
+        
+        status.innerHTML = `
+          <span class="success">✅ Cache cleared successfully!</span><br>
+          <span class="info">ServiceWorkers: Unregistered</span><br>
+          <span class="info">Cache Storage: Cleared</span><br>
+          <span class="info">LocalStorage: Cleared</span><br>
+          <span class="info">SessionStorage: Cleared</span><br>
+          <span class="info">IndexedDB: Cleared</span><br><br>
+          <span class="info">Refreshing in 2 seconds...</span>
+        `;
+        
+        setTimeout(() => {
+          window.location.href = 'http://localhost:5173';
+        }, 2000);
+        
+      } catch (error) {
+        status.innerHTML = '<span style="color: #f87171;">❌ Error: ' + error.message + '</span>';
+      }
+    }
+    
+    function clearStorage() {
+      localStorage.clear();
+      sessionStorage.clear();
+      document.getElementById('status').innerHTML = '<span class="success">✅ Storage cleared!</span>';
+    }
+  </script>
+</body>
+</html>

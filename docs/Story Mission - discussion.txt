@@ -1,0 +1,250 @@
+1) Vấn đề ban đầu bạn gặp (triệu chứng trên UI)
+
+Bạn mở Story Mission thì:
+
+Câu mở đầu bị lạ hoắc (ví dụ: “That’s interesting! Can you tell me more about that?”), mất “định hướng mission”.
+
+Lặp câu hỏi: ví dụ “Do you like school?” bị hỏi 2 lần.
+
+Mission bị lẫn bước: Mission 2 lại hỏi “What is your name?”, Mission 1 lại hỏi tuổi trước tên…
+
+Không có ACK + RECAST (tutor không nhắc lại ý chính của câu trả lời học sinh).
+
+Hints không khớp câu hỏi (hints hiện ra không liên quan câu hỏi đang hỏi).
+
+Có lúc tutor hỏi thẳng luôn không “đáp”/không nhắc lại câu của học sinh đúng như “master artifact” bạn muốn.
+
+2) Hướng sửa ban đầu: “Repeat bug fix” theo stepKey
+
+Chúng ta thống nhất repeat detection bằng text là sai, vì LLM paraphrase:
+
+Text tracking kiểu canonicalizeQuestion(questionText) không chặn được khi cùng 1 bước nhưng câu hỏi bị paraphrase.
+
+Giải pháp đúng: track theo stepKey (ví dụ: name, age, like_school…), không track theo text.
+
+“Báo cáo fix” (Copilot tự tuyên bố đã làm)
+
+Copilot đưa ra một báo cáo kiểu:
+
+đổi askedQuestions Set(text) → askedStepKeys Set(keys)
+
+markStepAsked(stepKey)
+
+wasStepAsked(stepKey)
+
+getNextStep() skip stepKey đã hỏi
+
+processTurn() tăng currentStepIndex++ khi student reply
+
+cập nhật prompt + guard để dùng askedStepKeys
+
+bỏ text-based repeat detection trong responseGuard
+
+Nhưng thực tế chạy lên vẫn lỗi: lặp, hỏi sai bước, mission lẫn nhau, hints sai.
+
+3) Bạn phản ứng đúng: “tôi không biết code, đừng hỏi tôi quyết định”
+
+Bạn nói rất rõ:
+
+Bạn không muốn bị hỏi “strict hay soft?” hoặc “file path ở đâu?”.
+
+Bạn muốn assistant/Copilot tự quyết và làm thay, không hỏi vặt.
+
+Bạn yêu cầu: nói ngắn gọn lỗi gì, rồi đưa 1 prompt duy nhất, toàn diện, không vá từng chút rồi lòi lỗi mới.
+
+Đây là yêu cầu “phong cách làm việc” cốt lõi cho phần sau.
+
+4) Bằng chứng runtime cho thấy “sửa chưa đúng”
+
+Bạn gửi ảnh/log DevTools cho thấy vẫn có:
+
+Guard detect banned phrase và override step question (tức vẫn phải ép LLM quay lại rails).
+
+Nhưng UI vẫn bị lặp “What is your name?” (mission 1) và bị lệch.
+
+Mission 2 có lúc hỏi “What is your name?” thay vì “backpack”.
+
+Hints set bị “scramble” hoặc không đúng step.
+
+=> Cho thấy: logic rails không nhất quán giữa TurnManager – prompt – guard – tab.
+
+5) Một loạt log quan trọng lộ “gốc bệnh”
+
+Bạn đưa log console rất dài, trong đó có những điểm mấu chốt:
+
+(A) TurnManager bị tạo lại nhiều lần
+
+Bạn thấy nhiều dòng kiểu:
+
+🆕 TurnManager: Creating new manager for mission 1
+
+rồi lại 🆕 TurnManager: Creating new manager for mission NaN
+
+rồi mỗi nơi (responseGuard / init) lại “Creating new manager …”
+
+=> ONE BRAIN bị vỡ: mỗi lần tạo mới là mất state askedStepKeys/stepIndex → lặp step / lệch step / mission lẫn.
+
+(B) missionId bị NaN / undefined
+
+Log có dòng:
+
+Creating new manager for mission NaN
+
+=> Khi missionId sai, registry/map manager theo key sai → lấy nhầm/ tạo nhầm → step sequence sai, prompt sai, hints sai.
+
+(C) askedStepKeys bị đổi cấu trúc không đồng bộ
+
+Bạn có lúc gặp runtime error:
+
+TypeError: this.askedStepKeys.has is not a function
+
+=> Nghĩa là bạn/coplan đã đổi askedStepKeys sang Array nhưng code vẫn gọi .has() như Set.
+
+(D) Opening turn bị nhảy step
+
+Trong log cuối cùng bạn gửi:
+
+TurnManager steps: name, age, student, like_school...
+
+nhưng prompt log: Opening turn for Mission NaN | First step: age | Question: How old are you?
+
+rồi guard ép canonical question: How old are you?
+
+UI hiện “How old are you?” ngay turn mở đầu
+
+=> Opening flow đang:
+
+mark/advance sai,
+
+hoặc manager state bị reset,
+
+hoặc “step[0]” bị đánh dấu “asked” trước khi hiển thị.
+
+6) “LAW / Copilot Master Rule — Story Mission”
+
+Trong quá trình đó, Copilot/ta đã “định nghĩa luật” (governing framework) cho Story Mission, gồm những nguyên tắc bạn muốn hệ thống tuân theo:
+
+8 luật chính (tóm lại):
+
+ONE BRAIN: TurnManager là nguồn sự thật duy nhất, không được recreate ở nơi khác.
+
+MISSION RAILS: Step sequence cố định, deterministic.
+
+RESPONSE STRUCTURE: ACK + RECAST + 1 câu hỏi canonical.
+
+BAN LIST: Cấm probing generic (“That’s interesting / tell me more / can you explain / why do you say that …”).
+
+REPEAT PREVENTION: Track theo stepKey, không theo text.
+
+HINTS COUPLED: Hints phải đi cùng canonical question (theo step).
+
+OPENING/CLOSING RULES: Opening không lạc; Closing không hỏi thêm.
+
+OVERRIDE AUTHORITY: Luật này “đè” lên mọi prompt/logic khác.
+
+Nhưng: bạn đặt câu hỏi đúng: “Law này đủ chưa để tạo Story Mission?”
+=> Kết luận: Luật là chuẩn hành vi, nhưng vẫn thiếu phần kỹ thuật “wiring” end-to-end (cách truyền TurnManager/missionId giữa các module để luật được thực thi thật).
+
+7) Bạn yêu cầu “1 prompt duy nhất cho Copilot”
+
+Bạn nói rõ: cần 1 prompt duy nhất, không muốn phân mảnh.
+
+=> Mình đã đưa bạn một prompt “all-in-one” bắt Copilot:
+
+Fix missionId numeric (không NaN, không string/undefined)
+
+Fix ONE BRAIN (TurnManager tạo ở 1 nơi, chỗ khác chỉ nhận reference)
+
+Fix askedStepKeys nhất quán (chọn Array hoặc Set và refactor toàn bộ)
+
+Fix Opening flow (không mark step trước khi hiển thị câu hỏi đầu tiên; opening luôn step[0])
+
+Fix step advance chỉ khi học sinh trả lời
+
+Fix hints luôn lấy từ step definition
+
+Fix guard phải ép canonical question + hints
+
+Cấm fallback kiểu “That’s interesting…”
+
+Và đưa acceptance tests A/B/C/D để Copilot phải đạt.
+
+8) “Clear cache” và chạy lại app (bạn hỏi)
+
+Bạn hỏi:
+
+“Giờ chạy lại app thế nào?”
+
+“Clear cache là lệnh gì? Copilot làm được không?”
+
+Trong trao đổi, ta coi “clear cache” gồm 2 phần:
+
+Vite cache / build cache (xóa .vite, restart dev server)
+
+Browser cache + local storage/session storage (hard refresh hoặc route /clear_cache.html nếu có)
+
+Copilot có thể:
+
+thêm 1 trang /clear_cache.html,
+
+thêm nút “Clear AI Tutor cache”
+
+hoặc viết script dọn cache (dev-only),
+nhưng việc chạy lệnh terminal và refresh trình duyệt là bạn thao tác.
+
+9) Vì sao Copilot “tưởng xong nhưng thực tế sai”
+
+Đây là điểm chốt bạn bực nhất, và đúng:
+
+Copilot liên tục “DONE / implemented / final” nhưng log cho thấy:
+
+vẫn tạo TurnManager mới,
+
+missionId NaN,
+
+askedStepKeys mismatch,
+
+opening sai,
+
+fallback generic probing xuất hiện.
+
+=> Lý do: Copilot vá từng lớp (prompt/guard/manager) nhưng không sửa “wiring” hệ thống (truyền state đúng một nơi).
+Chỉ cần 1 module còn “new TurnManager()” hoặc “getManager(undefined)” là toàn bộ Law sụp.
+
+10) Chẩn đoán gốc (root causes cuối cùng đã thống nhất)
+
+Từ log và hành vi, 4 gốc bệnh quan trọng nhất:
+
+missionId không chắc chắn → NaN/undefined
+→ manager map sai → lẫn mission/step.
+
+TurnManager bị tạo lại ở nhiều nơi
+→ state reset → repeat/leak/mismatch.
+
+askedStepKeys data structure không đồng bộ (Set vs Array)
+→ runtime error hoặc logic skip không chạy.
+
+Opening flow mark/advance sai
+→ step[0] bị coi là “đã hỏi” trước khi hiển thị → nhảy sang step[1] (age).
+
+Chỉ cần fix đúng 4 gốc này một lượt, các triệu chứng (repeat, wrong opening, hints mismatch, mission leak) mới hết thật.
+
+11) Bạn yêu cầu cuối: “ghi nhớ cách làm — không dài dòng”
+
+Bạn chốt rule làm việc cho các bước sau:
+
+Không giải thích dài
+
+Nêu đúng lỗi
+
+Đưa 1 prompt duy nhất, triệt để
+
+Không “mỗi lần thêm 1 chút” rồi lòi lỗi mới
+
+=> Mình đã chuyển sang style đó và đưa 1 prompt “end-to-end”.
+
+Kết luận: “Law” là đủ để định nghĩa hệ đúng, nhưng chưa đủ để cài đúng nếu thiếu wiring
+
+Law = chuẩn hành vi & nguyên tắc.
+
+Để chạy đúng, cần thêm 1 khối bắt buộc: kiến trúc truyền TurnManager + missionId xuyên suốt (ONE BRAIN thật sự), và đồng bộ askedStepKeys.

@@ -1,30 +1,125 @@
-import { useState, useEffect } from 'react';
-import { Mic, Volume2, CheckCircle2, XCircle, RotateCcw } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Mic, Volume2, CheckCircle2, XCircle, RotateCcw, AlertCircle } from 'lucide-react';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import { getAiTutorResponse } from '../../../services/api';
 
 /**
- * Pronunciation Tab - Practice speaking target vocabulary
- * Uses Web Speech API for text-to-speech
+ * Pronunciation Tab - Practice speaking target vocabulary with AI assessment
+ * Features:
+ * - Web Speech Recognition for recording
+ * - AI-powered pronunciation evaluation
+ * - Detailed feedback on accuracy
  */
 const PronunciationTab = () => {
-  const { currentWeek } = useUserStore();
+  const { currentWeek, user } = useUserStore();
   const [weekData, setWeekData] = useState(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [practiceMode, setPracticeMode] = useState('listen'); // listen | practice | complete
+  const [practiceMode, setPracticeMode] = useState('listen'); // listen | recording | evaluating | complete
   const [correctCount, setCorrectCount] = useState(0);
+  const [attempts, setAttempts] = useState([]);
+  const [currentFeedback, setCurrentFeedback] = useState(null);
+  const [isListening, setIsListening] = useState(false);
+  const [attemptCount, setAttemptCount] = useState(0); // Đếm số lần thử cho từ hiện tại
+  
+  const recognitionRef = useRef(null);
+  const currentWordRef = useRef(null);
 
   // Load week data
   useEffect(() => {
     const data = getCurrentWeekData(currentWeek || 'week-1');
     setWeekData(data);
+    
+    // Debug: Log vocabulary count
+    if (data) {
+      const newWords = data?.global_vocab || data?.target_vocab || data?.vocabulary || [];
+      const wordPower = data?.word_power?.words || [];
+      console.log('📚 Pronunciation Tab - Vocabulary loaded:');
+      console.log('  - New Words:', newWords.length, 'words');
+      console.log('  - Word Power:', wordPower.length, 'words');
+      console.log('  - TOTAL:', newWords.slice(0, 10).length + wordPower.slice(0, 3).length, 'words (10 + 3)');
+    }
   }, [currentWeek]);
 
-  // Get vocabulary from week data (support global_vocab or vocabulary field)
-  const vocabularyList = weekData?.global_vocab || weekData?.vocabulary || [];
+  // Initialize Web Speech Recognition
+  useEffect(() => {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+      console.warn('⚠️ Web Speech API not supported');
+      return;
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+    recognition.maxAlternatives = 3; // Get top 3 alternatives for better matching
+
+    recognition.onstart = () => {
+      console.log('🎤 Recording started');
+      setIsListening(true);
+    };
+
+    recognition.onresult = async (event) => {
+      const transcript = event.results[0][0].transcript.toLowerCase().trim();
+      const confidence = event.results[0][0].confidence;
+      
+      console.log('📝 Recognized:', transcript, 'Confidence:', confidence);
+      
+      setIsListening(false);
+      setPracticeMode('evaluating');
+      
+      // Get AI feedback
+      await evaluatePronunciation(transcript, confidence);
+    };
+
+    recognition.onend = () => {
+      console.log('⏹️ Recording ended');
+      setIsListening(false);
+    };
+
+    recognition.onerror = (event) => {
+      console.error('❌ Speech recognition error:', event.error);
+      setIsListening(false);
+      
+      if (event.error === 'no-speech') {
+        setCurrentFeedback({
+          success: false,
+          score: 0,
+          message: "Cô không nghe thấy gì cả. Hãy thử lại và nói to, rõ ràng nhé!"
+        });
+        setPracticeMode('listen');
+      }
+    };
+
+    recognitionRef.current = recognition;
+
+    return () => {
+      if (recognition) {
+        try {
+          recognition.stop();
+        } catch (e) {
+          // Already stopped
+        }
+      }
+    };
+  }, []);
+
+  // Get vocabulary from week data: 10 New Words + 3 Word Power = 13 từ
+  const newWords = weekData?.global_vocab || weekData?.target_vocab || weekData?.vocabulary || [];
+  const wordPower = weekData?.word_power?.words || [];
+  
+  // Kết hợp: 10 New Words + 3 Word Power
+  const vocabularyList = [...newWords.slice(0, 10), ...wordPower.slice(0, 3)];
   const currentWord = vocabularyList[currentWordIndex];
   const totalWords = vocabularyList.length;
+
+  // Keep ref updated for speech recognition callbacks
+  useEffect(() => {
+    currentWordRef.current = currentWord;
+  }, [currentWord]);
 
   // Text-to-Speech using 4-layer TTS
   const speakWord = async (word) => {
@@ -50,20 +145,218 @@ const PronunciationTab = () => {
   // Handle listen mode
   const handleListen = () => {
     if (currentWord) {
-      speakWord(currentWord.word);
+      const wordText = currentWord.word || currentWord.text || '';
+      if (wordText) {
+        speakWord(wordText);
+      }
     }
   };
 
-  // Handle practice attempt
+  // Handle practice attempt with real recording
   const handlePractice = () => {
-    setPracticeMode('practice');
+    if (!recognitionRef.current) {
+      alert('Speech recognition not supported. Please use Chrome or Edge.');
+      return;
+    }
+
+    setPracticeMode('recording');
+    setCurrentFeedback(null);
     
-    // Simulate attempt (in real app, would use Speech Recognition API)
-    setTimeout(() => {
-      // For now, assume success after 1 attempt
-      setCorrectCount(prev => prev + 1);
-      setPracticeMode('complete');
-    }, 2000);
+    try {
+      recognitionRef.current.start();
+    } catch (error) {
+      console.error('Start error:', error);
+      if (error.message && error.message.includes('already started')) {
+        recognitionRef.current.stop();
+        setTimeout(() => {
+          recognitionRef.current.start();
+        }, 200);
+      }
+    }
+  };
+
+  // AI-powered pronunciation evaluation
+  const evaluatePronunciation = async (spokenText, confidence) => {
+    const word = currentWordRef.current;
+    if (!word) {
+      console.error('❌ No current word available');
+      return;
+    }
+
+    // Support different field names for word text
+    const targetWord = (word.word || word.text || '').toLowerCase().trim();
+    const wordMeaning = word.meaning || word.definition_vi || word.definition_en || '';
+    
+    if (!targetWord) {
+      console.error('❌ Target word is empty');
+      return;
+    }
+    
+    try {
+      // Prepare context for AI evaluation - HOÀN TOÀN TIẾNG VIỆT
+      const prompt = `Bạn là Ms. Nova, giáo viên phát âm tiếng Anh chuyên nghiệp. Học sinh đang luyện phát âm từ "${targetWord}".
+
+**Từ mục tiêu:** ${targetWord}
+**Nghĩa:** ${wordMeaning}
+**Học sinh đã nói:** "${spokenText}"
+**Độ chính xác nhận diện giọng nói:** ${(confidence * 100).toFixed(1)}%
+
+**Nhiệm vụ của bạn:**
+1. Kiểm tra xem học sinh có nói đúng từ không (cho phép biến thể nhỏ như số nhiều, thì khác nhau)
+2. Đánh giá độ chính xác phát âm (0-100 điểm)
+3. Đưa ra nhận xét cụ thể, khích lệ bằng TIẾNG VIỆT
+
+**Định dạng trả lời (JSON):**
+{
+  "correct": true/false,
+  "score": 0-100,
+  "feedback": "Nhận xét ngắn gọn, khích lệ bằng tiếng Việt (tối đa 30 từ)",
+  "tip": "Mẹo phát âm (nếu điểm < 80, viết bằng tiếng Việt)"
+}
+
+**Ví dụ:**
+- Học sinh nói "name" cho "name" → {"correct": true, "score": 95, "feedback": "Tuyệt vời! Phát âm rất rõ ràng! 🌟"}
+- Học sinh nói "nem" cho "name" → {"correct": true, "score": 75, "feedback": "Khá tốt! Hãy nhấn mạnh âm 'ei' hơn một chút.", "tip": "Đọc là 'NEI-M' (nei-m), không phải 'NEM'"}
+- Học sinh nói "age" cho "name" → {"correct": false, "score": 0, "feedback": "Ồ! Đó không phải là từ đúng. Hãy nghe lại và thử nói 'name'."}
+
+**LƯU Ý QUAN TRỌNG:**
+- Tất cả nhận xét phải bằng TIẾNG VIỆT
+- Giọng điệu thân thiện, động viên
+- Nếu sai hoàn toàn (nói sai từ), score = 0
+- Nếu phát âm gần đúng nhưng chưa chuẩn, score = 60-85
+- Chỉ cho điểm 90+ khi phát âm thực sự tốt
+
+Chỉ trả lời JSON, không thêm text nào khác.`;
+
+      const response = await getAiTutorResponse({
+        history: [],
+        message: prompt
+      });
+
+      let evaluation;
+      try {
+        // Try to extract JSON from response
+        const jsonMatch = response.data.response.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+          evaluation = JSON.parse(jsonMatch[0]);
+        } else {
+          throw new Error('No JSON found in response');
+        }
+      } catch (parseError) {
+        console.error('Failed to parse AI response:', parseError);
+        // Fallback: simple string matching
+        const isCorrect = spokenText.includes(targetWord) || targetWord.includes(spokenText);
+        const similarity = calculateSimilarity(spokenText, targetWord);
+        
+        evaluation = {
+          correct: isCorrect && similarity > 0.6,
+          score: isCorrect ? Math.round(similarity * 100) : 0,
+          feedback: isCorrect 
+            ? `Khá tốt! Em đã nói "${spokenText}".`
+            : `Hmm, cô nghe em nói "${spokenText}". Hãy thử nói "${targetWord}" lại nhé.`
+        };
+      }
+
+      // Record attempt
+      const word = currentWordRef.current;
+      const attemptRecord = {
+        word: word?.word || word?.text || '',
+        spoken: spokenText,
+        score: evaluation.score,
+        correct: evaluation.correct,
+        timestamp: Date.now()
+      };
+      setAttempts(prev => [...prev, attemptRecord]);
+
+      // Tăng số lần thử
+      const newAttemptCount = attemptCount + 1;
+      setAttemptCount(newAttemptCount);
+
+      // LOGIC MỚI: Sau 5 lần thử, tự động cho qua
+      const autoPass = newAttemptCount >= 5;
+      const isSuccess = (evaluation.correct && evaluation.score >= 70) || autoPass;
+
+      // Update feedback
+      setCurrentFeedback({
+        success: isSuccess,
+        score: evaluation.score,
+        message: autoPass && !evaluation.correct 
+          ? `Bạn đã cố gắng rất nhiều! (${newAttemptCount} lần). Chúng ta sẽ chuyển từ tiếp theo nhé! 💪`
+          : autoPass && evaluation.score < 70
+          ? `Tốt lắm! Bạn đã cố gắng ${newAttemptCount} lần. Cô thấy bạn đã tiến bộ! Hãy chuyển từ tiếp hoặc luyện thêm. 🌟`
+          : evaluation.feedback,
+        tip: evaluation.tip,
+        spokenText,
+        attemptCount: newAttemptCount,
+        autoPass: autoPass
+      });
+
+      // If successful hoặc sau 5 lần, mark as complete
+      if (isSuccess) {
+        setCorrectCount(prev => prev + 1);
+        setPracticeMode('complete');
+      } else {
+        // Allow retry
+        setPracticeMode('listen');
+      }
+
+    } catch (error) {
+      console.error('AI evaluation error:', error);
+      
+      // Fallback: Basic matching
+      const word = currentWordRef.current;
+      const targetWord = (word?.word || word?.text || '').toLowerCase().trim();
+      const isMatch = targetWord && (spokenText.includes(targetWord) || targetWord.includes(spokenText));
+      
+      setCurrentFeedback({
+        success: isMatch,
+        score: isMatch ? 80 : 30,
+        message: isMatch 
+          ? `Tốt lắm! Em đã nói "${spokenText}". Tiếp tục luyện tập nhé!`
+          : `Cô nghe em nói "${spokenText}". Hãy thử nói "${targetWord}" rõ hơn nhé.`,
+        spokenText
+      });
+
+      if (isMatch) {
+        setCorrectCount(prev => prev + 1);
+        setPracticeMode('complete');
+      } else {
+        setPracticeMode('listen');
+      }
+    }
+  };
+
+  // Simple similarity calculator (Levenshtein distance)
+  const calculateSimilarity = (str1, str2) => {
+    const longer = str1.length > str2.length ? str1 : str2;
+    const shorter = str1.length > str2.length ? str2 : str1;
+    
+    if (longer.length === 0) return 1.0;
+    
+    const editDistance = (s1, s2) => {
+      s1 = s1.toLowerCase();
+      s2 = s2.toLowerCase();
+      const costs = [];
+      for (let i = 0; i <= s1.length; i++) {
+        let lastValue = i;
+        for (let j = 0; j <= s2.length; j++) {
+          if (i === 0) {
+            costs[j] = j;
+          } else if (j > 0) {
+            let newValue = costs[j - 1];
+            if (s1.charAt(i - 1) !== s2.charAt(j - 1)) {
+              newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
+            }
+            costs[j - 1] = lastValue;
+            lastValue = newValue;
+          }
+        }
+        if (i > 0) costs[s2.length] = lastValue;
+      }
+      return costs[s2.length];
+    };
+    
+    return (longer.length - editDistance(longer, shorter)) / longer.length;
   };
 
   // Move to next word
@@ -71,6 +364,8 @@ const PronunciationTab = () => {
     if (currentWordIndex < totalWords - 1) {
       setCurrentWordIndex(prev => prev + 1);
       setPracticeMode('listen');
+      setAttemptCount(0); // Reset số lần thử
+      setCurrentFeedback(null);
     }
   };
 
@@ -79,6 +374,8 @@ const PronunciationTab = () => {
     setCurrentWordIndex(0);
     setPracticeMode('listen');
     setCorrectCount(0);
+    setAttemptCount(0);
+    setCurrentFeedback(null);
   };
 
   if (!weekData || !currentWord) {
@@ -149,14 +446,14 @@ const PronunciationTab = () => {
             {/* Word Display */}
             <div className="text-center mb-8">
               <h3 className="text-5xl font-bold text-gray-800 mb-4">
-                {currentWord.word}
+                {currentWord.word || currentWord.text || ''}
               </h3>
               <p className="text-xl text-gray-600 mb-2">
-                {currentWord.meaning}
+                {currentWord.meaning || currentWord.definition_vi || currentWord.definition_en || ''}
               </p>
-              {currentWord.pronunciation && (
+              {(currentWord.pronunciation || currentWord.pronunciation_ipa) && (
                 <p className="text-sm text-gray-500 font-mono">
-                  /{currentWord.pronunciation}/
+                  /{currentWord.pronunciation || currentWord.pronunciation_ipa}/
                 </p>
               )}
             </div>
@@ -180,32 +477,112 @@ const PronunciationTab = () => {
                     <Mic size={24} />
                     <span>I'm Ready to Say It!</span>
                   </button>
+
+                  {/* Show previous feedback if exists */}
+                  {currentFeedback && !currentFeedback.success && (
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                      <div className="flex items-start space-x-3">
+                        <AlertCircle size={20} className="text-yellow-600 flex-shrink-0 mt-0.5" />
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-yellow-800 mb-1">
+                            {currentFeedback.message}
+                          </p>
+                          {currentFeedback.tip && (
+                            <p className="text-xs text-yellow-700">
+                              💡 {currentFeedback.tip}
+                            </p>
+                          )}
+                          {currentFeedback.spokenText && (
+                            <p className="text-xs text-yellow-600 mt-2">
+                              You said: "{currentFeedback.spokenText}"
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </>
               )}
 
-              {practiceMode === 'practice' && (
+              {(practiceMode === 'recording' || isListening) && (
                 <div className="text-center py-8">
                   <div className="animate-pulse">
-                    <Mic size={48} className="mx-auto text-green-500 mb-4" />
-                    <p className="text-lg text-gray-600">Listening...</p>
+                    <div className="relative inline-block">
+                      <Mic size={48} className="text-red-500 mb-4" />
+                      <div className="absolute inset-0 rounded-full bg-red-400 animate-ping opacity-75"></div>
+                    </div>
+                    <p className="text-lg text-gray-600 font-medium">Recording...</p>
+                    <p className="text-sm text-gray-500 mt-2">Say the word clearly!</p>
                   </div>
                 </div>
               )}
 
-              {practiceMode === 'complete' && (
+              {practiceMode === 'evaluating' && (
+                <div className="text-center py-8">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500 mx-auto mb-4"></div>
+                  <p className="text-lg text-gray-600">Ms. Nova is checking...</p>
+                </div>
+              )}
+
+              {practiceMode === 'complete' && currentFeedback && (
                 <div className="text-center">
-                  <CheckCircle2 size={48} className="mx-auto text-green-500 mb-4" />
-                  <p className="text-lg font-medium text-green-700 mb-6">
-                    Excellent pronunciation! 🌟
-                  </p>
+                  {currentFeedback.success ? (
+                    <>
+                      <CheckCircle2 size={48} className="mx-auto text-green-500 mb-4" />
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+                        <p className="text-lg font-medium text-green-700 mb-2">
+                          {currentFeedback.message}
+                        </p>
+                        <div className="flex items-center justify-center space-x-2">
+                          <span className="text-2xl font-bold text-green-600">
+                            {currentFeedback.score}
+                          </span>
+                          <span className="text-sm text-green-600">/100</span>
+                        </div>
+                        {currentFeedback.attemptCount && (
+                          <p className="text-xs text-green-600 mt-2">
+                            Số lần thử: {currentFeedback.attemptCount}
+                          </p>
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <XCircle size={48} className="mx-auto text-orange-500 mb-4" />
+                      <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
+                        <p className="text-lg font-medium text-orange-700 mb-2">
+                          {currentFeedback.message}
+                        </p>
+                        {currentFeedback.tip && (
+                          <p className="text-sm text-orange-600 mt-2">
+                            💡 {currentFeedback.tip}
+                          </p>
+                        )}
+                      </div>
+                    </>
+                  )}
                   
-                  {!isLastWord && (
-                    <button
-                      onClick={handleNext}
-                      className="w-full py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors font-medium"
-                    >
-                      Next Word →
-                    </button>
+                  {/* 2 NÚT: Next + Try Again (sau 5 lần hoặc success) */}
+                  {!isLastWord && currentFeedback.success && (
+                    <div className="space-y-2">
+                      <button
+                        onClick={handleNext}
+                        className="w-full py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors font-medium"
+                      >
+                        Next Word →
+                      </button>
+                      {currentFeedback.autoPass && (
+                        <button
+                          onClick={() => {
+                            setPracticeMode('listen');
+                            setCurrentFeedback(null);
+                          }}
+                          className="w-full py-3 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors font-medium"
+                        >
+                          🔄 Try Again (Luyện thêm)
+                        </button>
+                      )}
+                    </div>
                   )}
                 </div>
               )}

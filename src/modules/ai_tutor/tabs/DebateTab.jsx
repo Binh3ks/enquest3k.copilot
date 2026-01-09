@@ -5,7 +5,6 @@ import InputBar from '../components/InputBar';
 import { sendToAI } from '../../../services/ai_tutor/aiRouter';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
-import { buildPersonaDescription, MODE_PROMPTS } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 
@@ -130,33 +129,52 @@ const DebateTab = () => {
     setTurnCount(prev => prev + 1);
 
     try {
-      // Build debate prompt
-      const persona = buildPersonaDescription();
-      const debatePrompt = MODE_PROMPTS.debate.systemAddition;
+      // Build debate prompt (simplified)
       const weekDataInfo = getCurrentWeekData(currentWeek || 'week-1');
       
       // Support both global_vocab and vocabulary fields
       const vocabArray = weekDataInfo?.global_vocab || weekDataInfo?.vocabulary || [];
       const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, library, scientist';
       
-      const systemPrompt = `${persona}
+      const systemPrompt = `You are Ms. Nova, an ESL teacher for young learners (ages 6-12).
 
-**MODE: DEBATE**
-${debatePrompt}
+**MODE: SIMPLE DEBATE (Age-Appropriate Opinion Sharing)**
 
-**DEBATE TOPIC:** ${debateTopic}
-**STUDENT POSITION:** ${userPosition || 'unknown'}
-**WEEK VOCAB (Week 1 - The Young Scholar):** ${vocabList}
-**ALLOWED GRAMMAR:** Simple present only (be, have, like)
+**YOUR ROLE:**
+Guide simple opinion discussions where students practice expressing and explaining their views.
 
-**CRITICAL RULES:**
+**DEBATE STRUCTURE:**
+1. Present a simple opinion
+2. Ask if student agrees/disagrees
+3. Encourage them to explain why
+4. Respectfully present counter-argument
+5. Celebrate their reasoning
+
+**SAMPLE TOPICS:**
+- "I think cats are better than dogs."
+- "Chocolate ice cream is the best flavor."
+- "We should have longer recess at school."
+
+**CURRENT DEBATE TOPIC:** ${debateTopic}
+**STUDENT POSITION:** ${userPosition || 'not stated yet'}
+**WEEK VOCAB:** ${vocabList}
+**ALLOWED GRAMMAR:** Simple present only (be, have, like, think)
+
+**RESPONSE RULES:**
 - Keep responses under 20 words
 - Ask ONE follow-up question
-- Celebrate student's opinion: "That's a great point!"
+- Celebrate opinions: "That's a great point!"
 - Gently challenge with counter-perspective
-- Use Recast if grammar errors occur
+- Use Recast for grammar errors (model correct form naturally)
+- Be encouraging and warm
 
-Keep responses short (2-3 sentences). Be encouraging!`;
+**FORBIDDEN:**
+- NO emojis (text-to-speech reads them)
+- Never say "wrong" or "incorrect"
+- Don't use complex grammar
+- Don't be argumentative - be friendly
+
+Keep it simple, short, and encouraging!`;
 
       // Prepare chat history
       const chatHistory = messages.map(m => ({

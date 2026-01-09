@@ -122,13 +122,12 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
   return weekData;
 };
 
-export const useFetchWeekData = (weekId) => {
+export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    const mode = localStorage.getItem('engquest_content_mode') || 'advanced';
     
     const timer = setTimeout(() => {
       const weekItem = weekIndex.find(w => w.id === +weekId);
@@ -136,7 +135,7 @@ export const useFetchWeekData = (weekId) => {
       let isEasyMode = false;
         
       if (weekItem) {
-        if (mode === 'easy' && weekItem.dataEasy) {
+        if (learningMode === 'easy' && weekItem.dataEasy) {
           rawData = weekItem.dataEasy;
           isEasyMode = true;
           console.log(`[DataHooks] Loading Week ${weekId} in EASY mode`);
@@ -162,7 +161,7 @@ export const useFetchWeekData = (weekId) => {
     }, 50);
 
     return () => clearTimeout(timer);
-  }, [weekId]);
+  }, [weekId, learningMode]);
 
   return { data, loading };
 };

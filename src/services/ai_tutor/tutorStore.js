@@ -71,9 +71,31 @@ const useTutorStore = create(
       /**
        * Toggle widget open/closed
        */
-      toggleWidget: () => set((state) => ({ 
-        isWidgetOpen: !state.isWidgetOpen 
-      })),
+      toggleWidget: () => set((state) => {
+        // 🔥 Clear cache when opening widget for fresh session
+        if (!state.isWidgetOpen) {
+          get().clearCacheOnOpen();
+        }
+        return { isWidgetOpen: !state.isWidgetOpen };
+      }),
+      
+      /**
+       * Clear cache on widget open - ensures fresh sessions
+       */
+      clearCacheOnOpen: () => {
+        console.log('🗑️ Clearing AI Tutor cache for fresh session');
+        set({
+          messages: {
+            story: [],
+            freetalk: [], // 🔥 Always clear FreeTalk for fresh conversations
+            pronunciation: [],
+            quiz: [],
+            debate: []
+          },
+          sessionStartTime: Date.now(),
+          totalInteractions: 0
+        });
+      },
       
       /**
        * Set widget open state
@@ -94,7 +116,20 @@ const useTutorStore = create(
       /**
        * Set active tab
        */
-      setActiveTab: (tabId) => set({ activeTab: tabId }),
+      setActiveTab: (tabId) => set((state) => {
+        // 🔥 Clear FreeTalk messages when switching to it for fresh conversation
+        if (tabId === 'freetalk' && state.activeTab !== 'freetalk') {
+          console.log('🔄 Clearing FreeTalk messages for fresh conversation');
+          return {
+            activeTab: tabId,
+            messages: {
+              ...state.messages,
+              freetalk: [] // Clear only FreeTalk messages
+            }
+          };
+        }
+        return { activeTab: tabId };
+      }),
       
       // ============================================
       // MESSAGES STATE (Per Tab)
@@ -144,6 +179,27 @@ const useTutorStore = create(
           debate: []
         }
       }),
+
+      /**
+       * Clear cache and reset all volatile state
+       */
+      clearCache: () => set((state) => ({
+        messages: {
+          story: [],
+          freetalk: [],
+          pronunciation: [],
+          quiz: [],
+          debate: []
+        },
+        currentAudioUrl: null,
+        isAudioPlaying: false,
+        // Keep persistent preferences
+        isOpen: state.isOpen,
+        activeTab: state.activeTab,
+        autoPlayEnabled: state.autoPlayEnabled,
+        position: state.position,
+        isLargeMode: state.isLargeMode
+      })),
       
       /**
        * Get messages for current active tab
@@ -187,7 +243,7 @@ const useTutorStore = create(
       // UI PREFERENCES
       // ============================================
       
-      widgetSize: 'large', // 'normal' | 'large' - Default to large for better UX
+      widgetSize: 'large', // 🔥 Default to large for better UX
       theme: 'light', // 'light' | 'dark'
       showHints: true,
       showPedagogyNotes: false, // Dev mode
@@ -406,9 +462,13 @@ const useTutorStore = create(
         // Update learner profile with new turn
         const updatedProfile = updateLearnerProfile(state.learnerProfile, newTurn);
         
-        // Track struggling (consecutive short answers)
+        // 🔥 FIX: Track struggling ONLY if SILENT (≤2 words) and NOT used scaffold
+        // Short answers (3-5 words) are NORMAL for A0-A1 beginners!
         const wordCount = newTurn.wordCount;
-        const isStruggling = wordCount <= 3 && !usedScaffold;
+        const isSilent = wordCount <= 2; // Only 1-2 words = truly struggling
+        const isStruggling = isSilent && !usedScaffold; // Silent without hints = struggling
+        
+        // Reset struggling counter if user gave ANY meaningful response (>2 words) OR used scaffold
         const strugglingTurns = isStruggling ? state.strugglingTurns + 1 : 0;
         
         // Track scaffold clicks
@@ -521,19 +581,19 @@ const useTutorStore = create(
       name: 'engquest-tutor-storage', // LocalStorage key
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
-        // Only persist these fields
-        storageVersion: state.storageVersion, // 🔥 NEW: Version tracking
+        // Only persist these fields - NO MESSAGES for fresh sessions
+        storageVersion: state.storageVersion,
         activeTab: state.activeTab,
-        messages: state.messages,
+        // 🔥 REMOVED: messages - no persistence for fresh sessions
         autoPlayEnabled: state.autoPlayEnabled,
         widgetSize: state.widgetSize,
         theme: state.theme,
         showHints: state.showHints,
         widgetPosition: state.widgetPosition,
-        learnerProfile: state.learnerProfile, // NEW: Persist learner profile
+        learnerProfile: state.learnerProfile,
         scaffoldClickCount: state.scaffoldClickCount,
         strugglingTurns: state.strugglingTurns,
-        vocabMastery: state.vocabMastery, // NEW: Persist vocab mastery
+        vocabMastery: state.vocabMastery,
         currentWeekVocab: state.currentWeekVocab,
         lastAISuggestions: state.lastAISuggestions
       })

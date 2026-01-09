@@ -304,25 +304,82 @@ run_app() {
   npm run dev
 }
 
-# ---------- 5) UPDATE AI CONTEXT (AUTO-GENERATED INFO + OPTIONAL LOG) ----------
+# ---------- 5) UPDATE AI CONTEXT (AUTOMATIC - NO PROMPTS) ----------
 run_update_ai_context() {
   say "5) CẬP NHẬT AI CONTEXT (docs/ai_application_context.md)"
   need_cmd npm
   
-  # First, update auto-generated metadata (timestamp, deps, schema)
-  npm run generate:ai-context || fail "Failed to update AI context metadata."
+  # Step 1: Update metadata (timestamp, dependencies, schema)
+  say "📝 [1/2] Updating metadata..."
+  npm run generate:ai-context 2>&1 | grep -E "Successfully|Error|Failed|✅|❌" || fail "Failed to update metadata."
+  ok "✅ Metadata updated"
 
-  # Ask if user wants to add a log entry
-  if confirm "Thêm log entry cho task này?"; then
-    read -r -p "Nhập log message (≤120 ký tự): " log_msg
-    if [[ -n "${log_msg:-}" ]]; then
-      npm run context:log -- "${log_msg}" || warn "Failed to add log entry."
-    else
-      warn "Log message trống, bỏ qua."
+  # Step 2: Auto-generate log message from recent changes
+  say "🔍 [2/2] Detecting recent changes..."
+  
+  local LOG_PARTS=()
+  
+  # Check for recent report/fix files (modified in last 24h)
+  local RECENT_REPORTS=()
+  while IFS= read -r file; do
+    if [[ -f "$file" ]]; then
+      local basename="$(basename "$file")"
+      [[ "$basename" == "project_manager.sh" ]] && continue
+      [[ "$basename" == *.bak ]] && continue
+      RECENT_REPORTS+=("$basename")
+    fi
+  done < <(find "$PROJECT_ROOT" -maxdepth 1 -type f \( -name "*REPORT*.md" -o -name "*FIX*.md" -o -name "*COMPLETE*.md" -o -name "*UPDATE*.md" \) -mtime -1 2>/dev/null)
+  
+  if [[ ${#RECENT_REPORTS[@]} -gt 0 ]]; then
+    echo "  📄 Reports: ${RECENT_REPORTS[@]:0:3}" | sed 's/\.md//g'
+    # Add first report to log
+    LOG_PARTS+=("${RECENT_REPORTS[0]%.md}")
+  fi
+  
+  # Check for modified source files in key areas
+  local MODIFIED_COUNT=0
+  MODIFIED_COUNT=$(find "$PROJECT_ROOT/src" -type f \( -name "*.jsx" -o -name "*.js" \) -mtime -1 2>/dev/null | wc -l | tr -d ' ')
+  
+  if [[ $MODIFIED_COUNT -gt 0 ]]; then
+    echo "  🔧 Modified: $MODIFIED_COUNT source files"
+    LOG_PARTS+=("Updated $MODIFIED_COUNT files")
+  fi
+  
+  # Check git commits (if in repo)
+  if [[ -d "$PROJECT_ROOT/.git" ]]; then
+    local COMMIT_COUNT
+    COMMIT_COUNT=$(git log --oneline --since="24 hours ago" 2>/dev/null | wc -l | tr -d ' ')
+    if [[ $COMMIT_COUNT -gt 0 ]]; then
+      echo "  📝 Git: $COMMIT_COUNT commits"
+      local LATEST_COMMIT
+      LATEST_COMMIT=$(git log --oneline --since="24 hours ago" 2>/dev/null | head -n 1 | cut -d' ' -f2-)
+      if [[ -n "$LATEST_COMMIT" ]]; then
+        LOG_PARTS+=("$LATEST_COMMIT")
+      fi
     fi
   fi
-
-  ok "AI Context đã được cập nhật: docs/ai_application_context.md"
+  
+  # Build final log message
+  local LOG_MESSAGE=""
+  if [[ ${#LOG_PARTS[@]} -gt 0 ]]; then
+    # Use first meaningful part as main message
+    LOG_MESSAGE="${LOG_PARTS[0]}"
+    
+    # Truncate if too long
+    if [[ ${#LOG_MESSAGE} -gt 150 ]]; then
+      LOG_MESSAGE="${LOG_MESSAGE:0:147}..."
+    fi
+  else
+    # Default message if nothing detected
+    LOG_MESSAGE="Project maintenance and updates"
+  fi
+  
+  # Add log entry automatically
+  say "📝 Adding log: ${LOG_MESSAGE:0:80}..."
+  npm run context:log "${LOG_MESSAGE}" 2>&1 | grep -E "Updated|Entry|✅|❌" || warn "Note: Log entry may have failed (non-critical)"
+  
+  ok "✅ AI Context updated successfully!"
+  say "📖 View: tail -n 20 docs/ai_application_context.md"
 }
 
 # ---------- MENU ----------

@@ -127,20 +127,32 @@ export const week1RealData = {
       nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
       
       // Context for AI (not shown to student)
-      mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging.`,
+      mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging. ONLY ask about name, age, and being a student. DO NOT ask about backpack, books, or other school supplies - those are for Mission 2.
+
+⚡ FLEXIBLE CONVERSATION:
+- If student asks YOU questions → Answer naturally like a human friend, then bridge back to mission
+- Allow 12-15 turns if conversation is interactive (student asking questions is GOOD!)
+- If student goes off-topic → Acknowledge warmly, then naturally redirect: "That's interesting! At SCHOOL, what do you like to do?"
+- Be human-like: answer questions fully, don't rush through topics`,
       
-      // Vocabulary focus for this mission
+      // Vocabulary focus for this mission (ONLY basic identity)
       target_vocab: ["name", "age", "student"],
       
       // Grammar pattern to practice
       target_pattern: "I am [name/age/student]",
       
-      // Topic boundaries (guide AI conversation)
+      // Topic boundaries (guide AI conversation) - STRICT LIMITS
       conversation_topics: [
-        "Student's name",
-        "Student's age",
-        "Being a student",
-        "Feelings about first day"
+        "Student's name (What is your name?)",
+        "Student's age (How old are you?)",
+        "Being a student (Are you a student?)",
+        "First day feelings (How do you feel today?)",
+        "School excitement (Are you excited about school?)",
+        "Grade/Class (What grade are you in?)",
+        "Friends at school (Do you have friends?)",
+        "Favorite thing about school (What do you like about school?)",
+        "[Optional: Student can ask Ms. Nova 1-2 questions]",
+        "Simple closing (Great! Nice to meet you!)"
       ],
       
       // Example questions AI can ask (not hardcoded, just examples)
@@ -148,15 +160,20 @@ export const week1RealData = {
         "What is your name?",
         "How old are you?",
         "Are you a student?",
-        "How are you today?"
+        "How are you today?",
+        "Are you excited about school?",
+        "What grade are you in?",
+        "Do you have friends at school?"
       ],
       
-      minimum_turns: 10,
+      minimum_turns: 15, // Flexible: Allow natural conversation flow
+      maximum_turns: 20, // Soft maximum for natural closure
       
       success_criteria: [
         "Uses 'I am' correctly for name",
         "States age with 'years old'",
-        "Uses 'student' naturally"
+        "Uses 'student' naturally",
+        "Engages naturally in conversation (can ask questions back)"
       ]
     },
     {
@@ -168,37 +185,57 @@ export const week1RealData = {
       // Ms. Nova's direct greeting (no description)
       nova_greeting: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
       
-      mission_context: `The student shows and describes their school supplies. Ms. Nova is curious about what students bring to school. This mission focuses on 'I have...' pattern with school items. Encourage describing colors, sizes, and what they do with these items. Keep it natural and fun - like show-and-tell time!`,
+      mission_context: `The student shows their school supplies. Ms. Nova is curious about what students bring to school. This mission focuses on 'I have...' pattern with simple school items. Use VERY SIMPLE language suitable for A0-A1 ESL beginners. Keep questions short and clear.
+
+⚡ FLEXIBLE CONVERSATION:
+- If student asks YOU questions → Answer naturally ("I don't need a backpack, I'm a digital teacher!"), then continue
+- Allow natural back-and-forth (12-15 turns if interactive)
+- If off-topic → Redirect gently: "That's cool! What do you have IN YOUR BACKPACK?"
+- Be conversational, not robotic
+
+🎯 CRITICAL - MISSION TOPIC: 
+- This mission is ONLY about BACKPACK and SCHOOL SUPPLIES
+- DO NOT ask about "school" in general (that's Mission 1 & 3)
+- DO NOT ask "Are you excited about school?" (wrong mission!)
+- ONLY ask about: backpack, books, notebook, what's inside, colors, heavy/light, new/old
+- Stay focused: "Your BACKPACK", "What's IN your backpack?", "Do you like your BACKPACK?"`,
       
       target_vocab: ["backpack", "book", "notebook"],
       
-      target_pattern: "I have a [color/size] [item]",
+      target_pattern: "I have a [item]",
       
       conversation_topics: [
-        "Items in the backpack",
-        "Colors of school supplies",
-        "What books are about",
-        "Writing in notebooks",
-        "Organizing school things",
-        "Favorite school supplies"
+        "Do you have a backpack?",
+        "What color is your backpack?",
+        "Do you have books in your backpack?",
+        "Do you have a notebook?",
+        "What do you put in your backpack?",
+        "Do you like your backpack?",
+        "Is your backpack heavy or light?",
+        "Is your backpack new or old?",
+        "[Optional: Student can ask Ms. Nova 1-2 questions about school supplies]",
+        "Simple closing (Your backpack is great! Goodbye!)"
       ],
       
       example_questions: [
-        "What do you have in your backpack?",
-        "Do you have a book with you?",
-        "What color is your notebook?",
-        "What do you write in your notebook?",
-        "How many books do you have?",
-        "Do you like your backpack?"
+        "Do you have a backpack?",
+        "What color is your backpack?",
+        "Do you have books in your backpack?",
+        "Do you have a notebook?",
+        "Do you like your backpack?",
+        "Is your backpack heavy?",
+        "Is your backpack new?"
       ],
       
-      minimum_turns: 12,
+      minimum_turns: 15, // Flexible: Allow natural conversation flow
+      maximum_turns: 20, // Soft maximum for natural closure
       
       success_criteria: [
         "Uses 'I have' pattern correctly",
         "Names at least 2 school supplies",
         "Describes items with colors or adjectives",
-        "Shows engagement with school supplies"
+        "Shows engagement with school supplies",
+        "Can ask and answer questions naturally"
       ]
     },
     {
@@ -210,46 +247,44 @@ export const week1RealData = {
       // Ms. Nova's direct greeting (no description)
       nova_greeting: "Hello again! I want to learn about your school. Tell me about your teacher. What is your teacher like?",
       
-      mission_context: `This is a warm conversation about the student's school relationships and environment. Ms. Nova wants to understand how the student feels about their teacher, what their classroom is like, and their overall school experience. Focus on building emotional connection to school through describing people, places, and feelings. Encourage the student to share what makes their school special and how they interact with their teacher. This mission should feel like sharing with a friend about school life. Use 'My teacher is...' and 'My school/classroom has...' patterns naturally. Ask about specific details like teacher's personality, classroom decorations, favorite spots in school, and daily school routines.`,
+      mission_context: `This is a simple conversation about the student's teacher and school. Ms. Nova wants to know basic information about their learning environment. Use VERY SIMPLE language suitable for A0-A1 ESL beginners. Focus on basic descriptions with 'My teacher is...' pattern. Keep all questions short and clear.
+
+⚡ FLEXIBLE CONVERSATION:
+- If student asks about YOUR teacher/school → Answer naturally ("I teach online, so my classroom is digital!"), then ask them back
+- Allow 12-15 turns if student is curious and asks questions
+- If off-topic (e.g., talks about home) → Bridge naturally: "That sounds nice! At YOUR SCHOOL, what is your favorite place?"
+- Make it feel like a real conversation between humans`,
       
       target_vocab: ["teacher", "school", "classroom"],
       
-      target_pattern: "My teacher is [adjective] / My school has... / In my classroom, there is...",
+      target_pattern: "My teacher is [adjective] / My school is [adjective]",
       
       conversation_topics: [
-        "Teacher's personality and characteristics (kind, funny, smart, helpful)",
-        "What the teacher does to help students learn",
-        "Classroom setup and decorations (desks, board, posters, books)",
-        "Favorite places in the school (library, playground, cafeteria)",
-        "School building description (big, small, colorful, modern)",
-        "Daily routines with teacher (morning greeting, lessons, activities)",
-        "How the teacher makes learning fun",
-        "Other people at school (principal, other teachers, friends)",
-        "School rules and how students follow them",
-        "Special events or activities at school",
-        "What makes this school different or special",
-        "Feelings about going to school each day"
+        "Is your teacher nice?",
+        "Is your teacher funny?",
+        "Do you like your teacher?",
+        "What is your teacher's name?",
+        "Is your school big?",
+        "Do you like your school?",
+        "Is your classroom nice?",
+        "Do you have many classmates?",
+        "[Optional: Student can ask Ms. Nova 1-2 questions about teachers/school]",
+        "Simple closing (Your teacher sounds wonderful!)"
       ],
       
       example_questions: [
-        "Tell me about your teacher. What is your teacher like?",
-        "Is your teacher kind? Is your teacher funny?",
-        "What does your teacher do to help you learn?",
-        "What does your classroom look like?",
-        "What do you see when you walk into your classroom?",
-        "Are there pictures on the walls in your classroom?",
-        "Do you like your school? What do you like about it?",
+        "Is your teacher nice?",
+        "Is your teacher funny?",
+        "Do you like your teacher?",
+        "Is your teacher a man or woman?",
         "Is your school big or small?",
-        "What is your favorite place at school?",
-        "What do you do with your teacher every day?",
-        "Does your teacher read stories to you?",
-        "What makes your teacher special?",
-        "How do you feel when you see your teacher?",
-        "What color are the walls in your classroom?",
-        "Do you have friends in your classroom?"
+        "Do you like your school?",
+        "Is your classroom big?",
+        "Do you have friends at school?"
       ],
       
-      minimum_turns: 15,
+      minimum_turns: 15, // Flexible: Allow natural conversation flow
+      maximum_turns: 20, // Soft maximum for natural closure
       
       success_criteria: [
         "Uses 'My teacher is...' pattern correctly with adjectives",
@@ -258,7 +293,8 @@ export const week1RealData = {
         "Expresses positive feelings about school experience",
         "Shows understanding of teacher's role in learning",
         "Demonstrates emotional connection to school environment",
-        "Uses descriptive words (big, small, nice, fun, etc.)"
+        "Uses descriptive words (big, small, nice, fun, etc.)",
+        "Can ask and answer questions naturally"
       ]
     }
   ],
@@ -361,6 +397,14 @@ export const week1RealData = {
       syllabus_context: "Mission 1 - Identity"
     },
     {
+      word: "hero",
+      pronunciation: "/ˈhɪroʊ/",
+      definition_vi: "Anh hùng",
+      definition_en: "A brave person who helps others.",
+      example: "I want to be a hero!",
+      syllabus_context: "Mission 1 - Creative theme"
+    },
+    {
       word: "backpack",
       pronunciation: "/ˈbækpæk/",
       definition_vi: "Ba lô",
@@ -409,6 +453,39 @@ export const week1RealData = {
       syllabus_context: "Mission 3 - School environment"
     }
   ],
+
+  // === WORD POWER (3 PHRASAL VERBS/COLLOCATIONS) ===
+  word_power: {
+    words: [
+      {
+        id: 1,
+        word: "do homework",
+        pronunciation: "/duː ˈhoʊmwɜːrk/",
+        cefr_level: "A1",
+        definition_en: "To complete school assignments at home.",
+        definition_vi: "Hoàn thành bài tập ở nhà.",
+        collocation: "do your homework"
+      },
+      {
+        id: 2,
+        word: "go to school",
+        pronunciation: "/ɡoʊ tə skuːl/",
+        cefr_level: "A1",
+        definition_en: "To travel to school to attend classes.",
+        definition_vi: "Đi đến trường để học.",
+        collocation: "go to school early"
+      },
+      {
+        id: 3,
+        word: "pay attention",
+        pronunciation: "/peɪ əˈtenʃən/",
+        cefr_level: "A2",
+        definition_en: "To focus and listen carefully to something.",
+        definition_vi: "Tập trung và lắng nghe cẩn thận.",
+        collocation: "pay close attention"
+      }
+    ]
+  },
 
   // === CONNECTION TO EXISTING WEEK 1 DATA ===
   extended_vocab_reference: [

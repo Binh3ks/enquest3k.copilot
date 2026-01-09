@@ -117,8 +117,7 @@ const MainLayout = () => {
     initializeAppData();
   }, [weekId, currentUser?.id]); // Use id to avoid loop if object ref changes but content same
 
-  const handleToggleMode = (e) => {
-    e.stopPropagation();
+  const handleToggleMode = () => {
     toggleLearningMode();
   };
 

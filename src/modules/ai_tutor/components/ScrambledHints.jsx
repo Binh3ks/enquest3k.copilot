@@ -82,10 +82,6 @@ const ScrambledHints = ({ currentQuestion, targetVocab = [], show = true }) => {
               </button>
             ))}
           </div>
-          
-          <div className="text-sm text-green-600 mt-2">
-            Hint: Arrange to make "{hint.correct.join(' ')}"
-          </div>
         </div>
       ))}
     </div>

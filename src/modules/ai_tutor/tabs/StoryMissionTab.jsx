@@ -1,13 +1,13 @@
+import { extractHintsFromQuestion } from '../../../services/ai_tutor/utils/responseParser';
+import { guardResponseObject, extractStudentName } from '../../../services/ai_tutor/utils/responseGuard';
+import { resetTurnManager, getTurnManager, registerTurnManager, TurnManager } from '../../../services/ai_tutor/turnManager';
 import { useState, useEffect, useRef } from 'react';
 import { BookOpen, Target, CheckCircle2, Loader2, Volume2, RotateCcw } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
-import HintChips from '../components/HintChips';
-import ScrambledHints from '../components/ScrambledHints';
-import { sendToAI } from '../../../services/ai_tutor/aiRouter';
+import { NovaEngine } from '../../../services/ai_tutor/novaEngine';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
-import { buildStoryPrompt } from '../../../services/ai_tutor/promptLibrary';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import week1RealData from '../../../data/weeks/week_01_real'; // 🔥 Import real syllabus
@@ -42,23 +42,39 @@ const StoryMissionTab = () => {
   const [silentTurns, setSilentTurns] = useState(0);
   const [initialized, setInitialized] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState('');
+  const [studentName, setStudentName] = useState(null); // 🔥 NEW: Student memory
   
   const currentMission = week1RealData.story_missions?.[currentMissionIndex];
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
   const initializingRef = useRef(false);
+  
+  // 🔥 NEW: Initialize NovaEngine instance
+  const novaEngineRef = useRef(null);
+  
+  // Initialize NovaEngine when component mounts or week changes
+  useEffect(() => {
+    const weekData = getCurrentWeekData(currentWeek || 'week-1');
+    const userProfile = {
+      name: user?.name || 'Student',
+      age: user?.age || 8
+    };
+    
+    novaEngineRef.current = new NovaEngine(weekData, userProfile);
+    console.log('🧠 NovaEngine initialized for StoryMissionTab');
+  }, [currentWeek, user]);
 
   // Auto-scroll to bottom
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Initialize mission with REAL SYLLABUS
+  // Initialize vocab mastery only (NO auto-mission start)
   useEffect(() => {
     if (!initialized && !initializingRef.current) {
-      console.log('🚀 StoryMissionTab: Initializing mission...');
-      initializingRef.current = true; // 🔥 Mark as initializing
+      console.log('🚀 StoryMissionTab: Initializing vocab only...');
+      initializingRef.current = true;
       
       // 🔥 STEP 4: Initialize vocab mastery with Week 1 target vocabulary
       const week1Vocab = week1RealData.global_vocab || [];
@@ -67,40 +83,109 @@ const StoryMissionTab = () => {
       initVocabMastery(vocabWords);
       console.log('📚 Vocab Mastery Initialized:', vocabWords.length, 'words');
       
-      initializeMission().catch(err => {
-        console.error('❌ initializeMission error:', err);
-        initializingRef.current = false; // Reset on error
-      }).finally(() => {
-        setInitialized(true);
-      });
+      setInitialized(true);
+      initializingRef.current = false;
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const initializeMission = async () => {
-    console.log('🎯 initializeMission called, messages.length:', messages.length);
+  const initializeMission = async (missionIndex = currentMissionIndex) => {
+    console.log('🎯 initializeMission called for Mission', missionIndex + 1);
     
-    // 🔥 Use mission-specific opening line (no emoji)
-    const missionKey = currentMissionIndex === 0 ? 'mission_1' : currentMissionIndex === 1 ? 'mission_2' : 'mission_3';
-    const openingLine = week1RealData.nova_instructions.opening_lines_by_mission?.[missionKey];
+    // 🔥 CRITICAL: Read fresh messages from store, NOT from closure
+    const tutorStore = useTutorStore.getState();
+    const currentMessages = tutorStore.messages['story'] || [];
     
-    if (!openingLine) {
-      console.error('❌ Opening line not found for', missionKey);
+    console.log('📊 Current state:', { 
+      messagesLength: currentMessages.length, 
+      missionIndex,
+      initialized,
+      missionStatus 
+    });
+    
+    // 🔥 CRITICAL: ONLY initialize if NO messages exist
+    if (currentMessages.length > 0) {
+      console.log('✅ Mission already has', currentMessages.length, 'messages, skipping initialization');
       return;
     }
     
-    console.log('📝 Opening line (Mission', currentMissionIndex + 1, '):', openingLine);
+    // 🔥 CRITICAL: Ensure we have the correct mission data
+    const currentMission = week1RealData.story_missions?.[missionIndex];
+    if (!currentMission) {
+      console.error('❌ Mission not found for index:', missionIndex);
+      return;
+    }
     
-    // Check if already initialized
-    if (messages.length > 0) {
-      console.log('✅ Story mission already initialized, skipping message add but will play TTS');
+    console.log('📋 Initializing Mission:', {
+      index: missionIndex,
+      id: currentMission.mission_id,
+      title: currentMission.title,
+      target_vocab: currentMission.target_vocab,
+      minimum_turns: currentMission.minimum_turns
+    });
+    
+    console.log('📊 Chat history length before init:', messages.length);
+    console.log('🎯 Mission details:', {
+      missionId: currentMission.mission_id,
+      title: currentMission.title,
+      target_vocab: currentMission.target_vocab
+    });
+    
+    // 🔥 ONE BRAIN: Create TurnManager ONCE (the ONLY creation point)
+    console.log('🏗️ Creating TurnManager for Mission', currentMission.mission_id);
+    const turnManager = new TurnManager(currentMission.mission_id, currentMission.title);
+    registerTurnManager(turnManager); // Register in singleton registry
+    
+    try {
+      // 🔥 Pass TurnManager to novaEngine via context
+      const opening = await novaEngineRef.current.sendToNova({
+        mode: 'story',
+        userMessage: '', // Empty for opening turn
+        chatHistory: [],
+        context: {
+          missionId: currentMission.mission_id,
+          missionIndex: missionIndex,
+          turnCount: 1,
+          minimumTurns: currentMission?.minimum_turns || 10,
+          realSyllabusData: week1RealData,
+          studentName: null,
+          isOpeningTurn: true,
+          turnManager: turnManager, // 🔥 Pass TurnManager reference
+          mission: currentMission    // 🔥 Pass mission object for greeting
+        }
+      });
       
-      // 🔊 ALWAYS play opening message with TTS
+      console.log('🤖 Opening response from AI:', opening);
+      
+      // 🔥 Apply response guard with TurnManager reference
+      const guardContext = {
+        studentName: null,
+        turnManager: turnManager,
+        mission: currentMission,  // 🔥 Pass mission for greeting
+        isOpeningTurn: true
+      };
+      const guardedOpening = guardResponseObject(opening, guardContext, 15);
+      
+      // 🔥 Mark first step as asked AFTER opening message accepted
+      const firstStep = turnManager.missionSteps[0];
+      turnManager.markStepAsked(firstStep.key);
+      console.log('✅ Opening step marked as asked:', firstStep.key);
+      
+      const openingLine = guardedOpening.ai_response || 'Hello! I am Ms. Nova. What is your name?';
+      
+      // Add opening message
+      const welcomeMessage = {
+        role: 'assistant',
+        content: openingLine,
+        timestamp: Date.now()
+      };
+      console.log('💬 Adding welcome message to chat...');
+      addMessage('story', welcomeMessage);
+      setMissionStatus('started');
+      console.log('✅ Message added, mission status set to started');
+      
+      // 🔊 Play opening message with TTS
       try {
-        console.log('🎤 About to call textToSpeech with:', { 
-          text: openingLine.substring(0, 50) + '...', 
-          voice: 'nova' 
-        });
         await textToSpeech(openingLine, {
           voice: 'nova',
           autoPlay: true
@@ -109,46 +194,58 @@ const StoryMissionTab = () => {
       } catch (error) {
         console.error('❌ TTS error for opening message:', error);
       }
-      return;
-    }
-    
-    // Add opening message
-    const welcomeMessage = {
-      role: 'assistant',
-      content: openingLine,
-      timestamp: Date.now()
-    };
-    console.log('💬 Adding welcome message to chat...');
-    addMessage('story', welcomeMessage);
-    setMissionStatus('started');
-    setCurrentQuestion(openingLine); // Set question immediately for hints
-    console.log('✅ Message added, mission status set to started');
-    
-    // 🔊 ALWAYS play opening message with TTS (even if message already exists)
-    try {
-      console.log('🎤 About to call textToSpeech with:', { 
-        text: openingLine.substring(0, 50) + '...', 
-        voice: 'nova' 
-      });
-      await textToSpeech(openingLine, {
-        voice: 'nova',
-        autoPlay: true
-      });
-      console.log('🔊 TTS played successfully');
+      
+      // 🔥 CRITICAL: Set hints from guarded opening response
+      if (guardedOpening.suggested_hints && guardedOpening.suggested_hints.length > 0) {
+        const scrambledHints = [...guardedOpening.suggested_hints].sort(() => Math.random() - 0.5);
+        setHints(scrambledHints);
+        setShowHints(true);
+        console.log('💡 Opening hints set:', scrambledHints);
+      } else {
+        console.warn('⚠️ No hints from opening response');
+        setShowHints(false);
+      }
     } catch (error) {
-      console.error('❌ TTS error for opening message:', error);
+      console.error('❌ Error getting opening response:', error);
+      // Fallback
+      const fallbackLine = 'Hello! I am Ms. Nova, your English teacher. What is your name?';
+      addMessage('story', {
+        role: 'assistant',
+        content: fallbackLine,
+        timestamp: Date.now()
+      });
+      setMissionStatus('started');
+      setHints(['My', 'name', 'is', 'I', 'am']);
+      setShowHints(true);
     }
-    
-    // Set hints from syllabus
-    setHints([
-      'Say: "I am [your name]"',
-      'Example: "I am Alex"',
-      'Use "I am" to introduce yourself'
-    ]);
   };
 
   // Handle user message
   const handleSendMessage = async (userMessage) => {
+    // 🔥 NEW: Extract student name from message
+    const detectedName = extractStudentName(userMessage);
+    if (detectedName && !studentName) {
+      console.log('✅ Student name detected:', detectedName);
+      setStudentName(detectedName);
+    }
+    
+    // 🔥 FLEXIBLE TURN LIMIT: Allow 12-15 turns if conversation is interactive
+    const currentTurns = Math.floor(messages.length / 2);
+    const minimumTurns = currentMission?.minimum_turns || 10;
+    const maximumTurns = currentMission?.maximum_turns || 15; // Soft maximum
+    
+    // Only block if we've REALLY exceeded maximum (15+ turns)
+    if (currentTurns >= maximumTurns) {
+      console.log('⛔ Mission completed - maximum turn limit reached:', currentTurns, '/', maximumTurns);
+      return; // Don't process any more messages
+    }
+    
+    // Between minimumTurns (10) and maximumTurns (15): Allow continuation
+    if (currentTurns >= minimumTurns && currentTurns < maximumTurns) {
+      console.log(`✅ Mission extended - interactive conversation: ${currentTurns}/${minimumTurns} (max ${maximumTurns})`);
+      // Continue processing - this is good! Student is engaged
+    }
+    
     // 🔥 STEP 3: Record turn for learner profiling
     const usedScaffold = showHints; // Student saw hints before answering
     recordTurn(userMessage, usedScaffold);
@@ -174,6 +271,20 @@ const StoryMissionTab = () => {
     }
 
     try {
+      // 🔥 CRITICAL: Ensure current mission is available
+      const currentMission = week1RealData.story_missions?.[currentMissionIndex];
+      if (!currentMission) {
+        console.error('❌ Current mission not found:', currentMissionIndex);
+        return;
+      }
+      
+      console.log('📊 Sending message with mission context:', {
+        missionIndex: currentMissionIndex,
+        missionId: currentMission.mission_id,
+        title: currentMission.title,
+        userMessage: userMessage.slice(0, 30) + '...'
+      });
+      
       // Get week data for context
       const weekData = getCurrentWeekData(currentWeek || 'week-1');
       
@@ -184,7 +295,6 @@ const StoryMissionTab = () => {
       const learnerStyle = getLearnerStyle();
       const strugglingTurns = getStrugglingTurns();
       const adaptiveScaffolding = getRecommendedScaffoldingLevel(learnerStyle, strugglingTurns);
-      const adaptivePromptAdjustment = getAdaptivePromptAdjustment(learnerStyle);
       
       // 🔥 STEP 4: Get vocab focus prompt for weak words
       const vocabFocusPrompt = getVocabFocusPrompt();
@@ -192,35 +302,96 @@ const StoryMissionTab = () => {
       console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
       console.log(`📚 Vocab Mastery:`, Object.keys(vocabMastery).length, 'words tracked');
       
-      // Build prompt using V5 promptLibrary with REAL SYLLABUS + current mission
-      const systemPrompt = buildStoryPrompt({
-        weekData: null, // Legacy parameter
-        userName: user?.name || 'Student',
-        userAge: user?.age || 8,
-        scaffoldingLevel: adaptiveScaffolding,
-        realSyllabusData: week1RealData,
-        currentMissionIndex // 🔥 Pass current mission index
-      }) + '\n\n' + adaptivePromptAdjustment + vocabFocusPrompt;
-      
-      console.log('📝 System prompt generated for mission', currentMissionIndex + 1);
-
-      // Prepare chat history
-      const chatHistory = messages.map(m => ({
+      // 🔥 CRITICAL FIX: Prepare chat history AFTER adding user message (include it)
+      // React state may not update immediately, so manually add userMsg to history
+      const chatHistory = [...messages, userMsg].map(m => ({
         role: m.role,
         content: m.content
       }));
+      
+      console.log('📬 Chat history being sent to AI:', chatHistory.length, 'messages');
+      console.log('📝 Last message in history:', chatHistory[chatHistory.length - 1]);
 
-      // Call AI Router (Groq → Gemini fallback) with Grammar Guard
-      const aiResponse = await sendToAI({
-        systemPrompt,
-        chatHistory,
+      // 🔥 NEW: Use NovaEngine instead of direct AI call
+      const aiResponse = await novaEngineRef.current.sendToNova({
+        mode: 'story',
         userMessage,
-        weekId: 1, // Week 1 grammar scope (present simple only)
-        mode: 'story'
+        chatHistory,
+        context: {
+          missionId: currentMission.mission_id,
+          missionIndex: currentMissionIndex,  // 🔥 CRITICAL: Pass index to select correct mission
+          turnCount: turnCount + 1,
+          minimumTurns: currentMission?.minimum_turns || 10,
+          scaffoldingLevel: adaptiveScaffolding,
+          learnerStyle,
+          vocabFocusPrompt,
+          realSyllabusData,
+          studentName: studentName || null,  // 🔥 NEW: Pass student name to AI
+          mission: currentMission,           // 🔥 Pass mission object
+          turnManager: getTurnManager(currentMission.mission_id) // 🔥 CRITICAL: Pass TurnManager inside context
+        }
       });
 
-      // Extract text from response object (support multiple formats)
-      const responseText = aiResponse.ai_response || aiResponse.response || aiResponse;
+      // 🔥 DEBUG: Log full AI response
+      console.log('🤖 Full AI Response Object:', aiResponse);
+      console.log('🤖 Response keys:', Object.keys(aiResponse));
+
+      // 🔥 NEW: Apply response guard BEFORE using the response
+      const guardContext = {
+        studentName: studentName || null,
+        turnManager: getTurnManager(currentMission.mission_id),  // 🔥 Get registered TurnManager
+        mission: currentMission,  // 🔥 Pass mission object
+        isOpeningTurn: false
+      };
+      
+      const guardedResponse = guardResponseObject(aiResponse, guardContext, 15);
+      console.log('🛡️ Response guard applied:', {
+        original: aiResponse.ai_response,
+        guarded: guardedResponse.ai_response,
+        changed: aiResponse.ai_response !== guardedResponse.ai_response,
+        hints: guardedResponse.suggested_hints
+      });
+
+      // 🔥 CRITICAL: Check turn count before allowing mission close
+      const currentTurnCount = Math.floor(messages.length / 2) + 1;
+      const missionMinTurns = currentMission?.minimum_turns || 10;
+      const allStepsAsked = getTurnManager(currentMission.mission_id)?.askedStepKeys.length >= 
+                            getTurnManager(currentMission.mission_id)?.missionSteps.length - 1;
+      
+      console.log('🎯 Turn Count Analysis:', {
+        currentTurn: currentTurnCount,
+        minimumTurns: missionMinTurns,
+        allStepsAsked: allStepsAsked,
+        canClose: currentTurnCount >= missionMinTurns && allStepsAsked
+      });
+      
+      // If trying to close but haven't met minimum turns, override to continue
+      if (guardedResponse.mission_status === 'complete' && currentTurnCount < missionMinTurns) {
+        console.warn(`⚠️ Cannot close mission: only ${currentTurnCount}/${missionMinTurns} turns completed`);
+        guardedResponse.mission_status = 'continue';
+        // Keep the conversation going
+      }
+
+      // Extract text from guarded response object (support multiple formats)
+      const responseText = guardedResponse.ai_response || guardedResponse.response || guardedResponse;
+      
+      // 🔥 CRITICAL: Set hints from guarded response (ONE BRAIN - hints come from same LLM call)
+      if (guardedResponse.suggested_hints && guardedResponse.suggested_hints.length > 0) {
+        const scrambledHints = [...guardedResponse.suggested_hints].sort(() => Math.random() - 0.5);
+        setHints(scrambledHints);
+        console.log('💡 Hints set from LLM response:', scrambledHints);
+      }
+      
+      // 🔥 DEBUG: Check for truncation
+      console.log('📝 Extracted Response Text:', responseText);
+      console.log('📏 Response length:', responseText?.length || 0);
+      console.log('🔚 Response ends with question?', responseText?.includes('?'));
+      
+      // 🔥 Validate response is complete
+      if (!responseText || responseText.length < 10) {
+        console.error('❌ Response too short or empty:', responseText);
+        throw new Error('AI response too short: ' + responseText);
+      }
       
       // 🔥 STEP 4: Track AI suggestions (after receiving response)
       trackVocabUsage(userMessage, { text: responseText, hints: [] });
@@ -250,19 +421,58 @@ const StoryMissionTab = () => {
         });
       }
 
-      // Generate hints based on AI response (simple extraction)
-      const hintMatches = responseText.match(/Use: "([^"]+)"/g);
-      if (hintMatches) {
-        const extractedHints = hintMatches.map(h => h.replace('Use: "', '').replace('"', ''));
-        setHints(extractedHints);
-        if (silentTurns >= 1 || turnCount >= 2) {
+      // 🔥 Check if this is a closing turn (no question mark)
+      const hasQuestion = responseText.includes('?');
+      
+      if (hasQuestion) {
+        // Regular question turn - generate and show hints
+        // 🔥 Use AI-generated hints (contextual to the question) + SCRAMBLE them
+        if (aiResponse.suggested_hints && aiResponse.suggested_hints.length > 0) {
+          // 🔥 Scramble the hints order for better learning
+          const scrambledHints = [...aiResponse.suggested_hints].sort(() => Math.random() - 0.5);
+          setHints(scrambledHints);
           setShowHints(true);
+          console.log('💡 AI generated contextual hints (scrambled):', scrambledHints);
+          console.log('📝 Hints for question:', responseText.slice(-100));
+        } else {
+          // 🔥 BETTER fallback: Use extractHintsFromQuestion() utility
+          const missionVocab = currentMission?.target_vocab || [];
+          const contextualHints = extractHintsFromQuestion(responseText, missionVocab);
+          
+          setHints(contextualHints);
+          setShowHints(silentTurns >= 1 || turnCount >= 2);
+          console.log('💡 Extracted contextual hints from question:', contextualHints);
+          console.log('📝 Question analyzed:', responseText.slice(-80));
         }
+      } else {
+        // Closing turn - no hints needed
+        setShowHints(false);
+        console.log('🎯 Closing turn detected - hiding hints');
       }
 
-      // Check for mission completion
-      if (responseText.includes('mission complete') || responseText.includes('completed the mission')) {
+      // 🔥 Check for mission completion: No question mark = closing statement
+      const minimumTurns = currentMission?.minimum_turns || 10;
+      const maximumTurns = currentMission?.maximum_turns || 15;
+      const isClosingTurn = !hasQuestion;
+      const isAtMinimumTurns = turnCount >= minimumTurns; // Reached minimum
+      const isPastMaximum = turnCount >= maximumTurns; // Exceeded maximum
+      
+      console.log(`🎯 Turn ${turnCount}/${minimumTurns} (max ${maximumTurns}) Analysis:`, {
+        hasQuestion: responseText.includes('?'),
+        isClosingTurn,
+        isAtMinimumTurns,
+        isPastMaximum,
+        responsePreview: responseText.slice(0, 80)
+      });
+      
+      // Complete mission if:
+      // 1. AI gives closing statement (no question) AND reached minimum turns, OR
+      // 2. Exceeded maximum turns (force close)
+      if ((isClosingTurn && isAtMinimumTurns) || isPastMaximum) {
+        // Closing statement detected - mission complete
         setMissionStatus('completed');
+        setShowHints(false);
+        console.log(`✅ Mission completed at turn ${turnCount} (closing: ${isClosingTurn}, max: ${isPastMaximum})`);
       }
 
     } catch (error) {
@@ -307,28 +517,63 @@ const StoryMissionTab = () => {
               {week1RealData.story_missions?.map((mission, index) => (
                 <div
                   key={mission.mission_id}
-                  onClick={() => {
-                    console.log('🎯 Starting mission', index + 1);
-                    setCurrentMissionIndex(index);
-                    setViewMode('mission');
-                    useTutorStore.getState().clearMessages('story');
-                    setInitialized(false);
-                    initializingRef.current = false;
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('🎯 Starting Mission', mission.mission_id, 'at index', index);
+                    console.log('📋 Mission Details:', {
+                      title: mission.title,
+                      target_vocab: mission.target_vocab,
+                      minimum_turns: mission.minimum_turns,
+                      greeting: mission.nova_greeting
+                    });
+                    
+                    // 🔥 CRITICAL: Prevent double initialization
+                    if (initializingRef.current) {
+                      console.log('⚠️ Mission already initializing, ignoring click');
+                      return;
+                    }
+                    
+                    // 🔥 CRITICAL: Complete state reset
+                    const tutorStore = useTutorStore.getState();
+                    tutorStore.clearMessages('story');
+                    console.log('🗑️ Cleared messages, current count:', tutorStore.messages.story.length);
+                    tutorStore.clearCache();
+                    
+                    // 🔥 NEW: Reset Turn Manager for this mission
+                    const missionId = week1RealData.story_missions?.[index]?.mission_id || index + 1;
+                    resetTurnManager(missionId);
+                    console.log('🔄 Turn Manager reset for mission', missionId);
+                    
+                    // Reset all local state
                     setTurnCount(0);
                     setMissionStatus('not_started');
                     setShowHints(false);
-                    // Initialize mission after state update
+                    setHints([]);
+                    setCurrentQuestion('');
+                    setSilentTurns(0);
+                    setInitialized(false);
+                    setStudentName(null); // 🔥 NEW: Reset student name
+                    initializingRef.current = false;
+                    
+                    // Set mission and view immediately
+                    setCurrentMissionIndex(index);
+                    setViewMode('mission');
+                    
+                    // 🔥 CRITICAL FIX: Pass index directly + verify messages cleared
+                    initializingRef.current = true;
                     setTimeout(() => {
-                      if (!initializingRef.current) {
-                        initializingRef.current = true;
-                        initializeMission().catch(err => {
-                          console.error('❌ Mission start error:', err);
-                          initializingRef.current = false;
-                        }).finally(() => {
-                          setInitialized(true);
-                        });
-                      }
-                    }, 100);
+                      const freshStore = useTutorStore.getState();
+                      console.log('✅ Before init - Story messages:', freshStore.messages.story.length);
+                      
+                      initializeMission(index).catch(err => {
+                        console.error('❌ Mission start error:', err);
+                      }).finally(() => {
+                        setInitialized(true);
+                        initializingRef.current = false;
+                      });
+                    }, 200); // Longer delay for state sync
                   }}
                   className="bg-white rounded-xl p-6 shadow-lg border border-purple-100 hover:border-purple-300 hover:shadow-xl transition-all duration-200 cursor-pointer group"
                 >
@@ -392,7 +637,9 @@ const StoryMissionTab = () => {
                 </button>
                 <div>
                   <h2 className="text-lg font-bold text-gray-800">Story Mission {currentMissionIndex + 1}</h2>
-                  <p className="text-xs text-gray-500">{currentMission?.title || 'Loading...'}</p>
+                  <p className="text-xs text-gray-500">
+                    {currentMission ? `${currentMission.title} - ${currentMission.theme}` : 'Loading...'}
+                  </p>
                 </div>
               </div>
 
@@ -401,9 +648,16 @@ const StoryMissionTab = () => {
                 <button
                   onClick={() => {
                     useTutorStore.getState().clearMessages('story');
+                    
+                    // 🔥 NEW: Reset Turn Manager
+                    const missionId = currentMission?.mission_id || currentMissionIndex + 1;
+                    resetTurnManager(missionId);
+                    console.log('🔄 Turn Manager reset for mission', missionId);
+                    
                     setInitialized(false);
                     setTurnCount(0);
                     setMissionStatus('not_started');
+                    setStudentName(null); // 🔥 NEW: Reset student name
                   }}
                   className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-sm"
                   title="Clear chat and restart"
@@ -415,7 +669,7 @@ const StoryMissionTab = () => {
                 <div className="flex items-center space-x-2">
                   <Target size={16} className="text-purple-600" />
                   <span className="text-sm font-medium text-gray-700">
-                    Turn {turnCount}
+                    Turn {turnCount}/{currentMission?.minimum_turns || 10}
                   </span>
                 </div>
                 
@@ -429,20 +683,7 @@ const StoryMissionTab = () => {
             </div>
           </div>
 
-          {/* Mission Description */}
-          {currentMission && (
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 border-b border-purple-200">
-              <p className="text-sm text-gray-700 leading-relaxed">
-                {currentMission.nova_greeting}
-              </p>
-              <div className="mt-2 flex items-center space-x-2 text-xs text-purple-700">
-                <Target size={12} />
-                <span>Minimum {currentMission.minimum_turns} turns</span>
-                <span className="ml-2">•</span>
-                <span>{currentMission.target_vocab.join(', ')}</span>
-              </div>
-            </div>
-          )}
+
 
           {/* Chat Area */}
           <div 
@@ -473,23 +714,25 @@ const StoryMissionTab = () => {
             <div ref={chatEndRef} />
           </div>
 
-          {/* Hints Area */}
+          {/* AI-Generated Hints Only */}
           {showHints && hints.length > 0 && (
-            <div className="px-6 py-2">
-              <HintChips
-                hints={hints}
-                onHintClick={handleHintClick}
-                show={showHints}
-              />
+            <div className="px-6 py-4 bg-yellow-50 border-t border-yellow-200">
+              <div className="flex items-center space-x-2 mb-3">
+                <Target size={16} className="text-yellow-600" />
+                <span className="text-base font-medium text-yellow-700">💡 Need help? Try these words:</span>
+              </div>
+              <div className="flex flex-wrap gap-3"> {/* More gap between buttons */}
+                {hints.map((hint, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleHintClick(hint)}
+                    className="px-5 py-4 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded-lg text-lg font-semibold transition-colors border border-yellow-300 hover:border-yellow-400"> {/* Bigger buttons and text */}
+                    {hint}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
-
-          {/* Scrambled Hints - Green */}
-          <ScrambledHints 
-            currentQuestion={currentQuestion}
-            targetVocab={currentMission?.target_vocab || []}
-            show={true}
-          />
 
           {/* Input Area */}
           <InputBar
