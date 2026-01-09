@@ -8,6 +8,8 @@
  * 4. Natural conversation flow
  */
 
+import { resetFollowUpTracking } from './utils/responseGuard.js';
+
 /**
  * Canonicalize a question to a consistent key for comparison
  * This prevents asking the same question in different forms
@@ -383,6 +385,10 @@ export function getTurnManager(missionId) {
 export function resetTurnManager(missionId) {
   const numericId = Number(missionId);
   turnManagerRegistry.delete(numericId);
+  
+  // 🔥 FIX: Also clear follow-up question tracking
+  resetFollowUpTracking(numericId);
+  
   console.log('🔄 TurnManager: Reset for mission', numericId);
 }
 

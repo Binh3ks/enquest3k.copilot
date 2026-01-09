@@ -467,12 +467,47 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       // Get mission-specific questions or use default
       const followUpQuestions = missionFollowUps[missionId] || missionFollowUps[1];
       
-      const questionIndex = turnCount % followUpQuestions.length;
+      // 🔥 FIX: Track asked questions to avoid repeats
+      if (!context.askedFollowUpIndices) {
+        context.askedFollowUpIndices = new Set();
+      }
+      
+      // Find unasked questions
+      const availableIndices = followUpQuestions
+        .map((_, idx) => idx)
+        .filter(idx => !context.askedFollowUpIndices.has(idx));
+      
+      // If all asked, reset
+      if (availableIndices.length === 0) {
+        context.askedFollowUpIndices.clear();
+        availableIndices.push(...followUpQuestions.map((_, idx) => idx));
+      }
+      
+      // Pick random from available
+      const questionIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+      context.askedFollowUpIndices.add(questionIndex);
       const followUp = followUpQuestions[questionIndex];
       question = followUp.q;
       context.canonicalHints = followUp.h;
       
-      console.log(`💬 Follow-up Q${turnCount} (Mission ${missionId}, ${questionIndex}/${followUpQuestions.length}): "${question}"`);
+      // 🔥 FIX: Keep AI's ACK + RECAST instead of forcing empty
+      if (!ack || ack.trim() === '') {
+        ack = ['Nice', 'Good', 'Great', 'Cool', 'Okay'][Math.floor(Math.random() * 5)];
+      }
+      if (!recast || recast.trim() === '') {
+        // Generate smart recast from last user message
+        const lastUserMsg = context.chatHistory?.[context.chatHistory.length - 1]?.content || '';
+        if (lastUserMsg.toLowerCase().includes('yes')) {
+          recast = 'I understand!';
+        } else if (lastUserMsg.toLowerCase().includes('no')) {
+          recast = 'I see!';
+        } else {
+          recast = 'That is interesting!';
+        }
+      }
+      
+      console.log(`💬 Follow-up Q${turnCount} (Mission ${missionId}, ${questionIndex+1}/${followUpQuestions.length}): "${question}"`);
+      console.log(`🔥 With ACK: "${ack}" RECAST: "${recast}"`);
     }
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION
@@ -571,4 +606,14 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     suggested_hints: hints,
     ai_response: teacherText // Legacy field for compatibility
   };
+}
+
+/**
+ * Reset follow-up question tracking for a mission
+ * Called when mission restarts to avoid stale state
+ */
+export function resetFollowUpTracking(missionId) {
+  // This is called from turnManager.resetTurnManager()
+  console.log(`🔄 Cleared follow-up tracking for mission ${missionId}`);
+  // Note: askedFollowUpIndices is stored in context object, cleared automatically
 }

@@ -23,6 +23,56 @@ import { validateAIResponse, getRegenerationInstruction, getGrammarSummary } fro
 import { enforceTalkRatio, getConciseInstruction, getTalkRatioSummary } from './talkRatioGuard.js';
 
 // ============================================
+// RATE LIMITER - FIX GROQ 429 ERRORS
+// ============================================
+
+class RateLimiter {
+  constructor(maxRequests = 20, windowMs = 60000) {
+    this.maxRequests = maxRequests; // 20 requests
+    this.windowMs = windowMs; // per 60 seconds
+    this.requests = [];
+    this.backoffMs = 0;
+  }
+  
+  async waitForSlot() {
+    // Apply exponential backoff if set
+    if (this.backoffMs > 0) {
+      console.log(`⏳ Rate limit backoff: waiting ${this.backoffMs}ms`);
+      await new Promise(resolve => setTimeout(resolve, this.backoffMs));
+      this.backoffMs = Math.min(this.backoffMs * 2, 10000); // Max 10s
+    }
+    
+    // Clean old requests outside window
+    const now = Date.now();
+    this.requests = this.requests.filter(t => now - t < this.windowMs);
+    
+    // If at limit, wait until oldest request expires
+    if (this.requests.length >= this.maxRequests) {
+      const oldestRequest = this.requests[0];
+      const waitTime = this.windowMs - (now - oldestRequest) + 100; // +100ms buffer
+      console.log(`⏳ Rate limit: waiting ${waitTime}ms (${this.requests.length}/${this.maxRequests})`);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
+      this.requests = this.requests.filter(t => Date.now() - t < this.windowMs);
+    }
+    
+    // Record this request
+    this.requests.push(Date.now());
+  }
+  
+  setBackoff(ms) {
+    this.backoffMs = ms;
+  }
+  
+  resetBackoff() {
+    this.backoffMs = 0;
+  }
+}
+
+// Create rate limiters
+const groqLimiter = new RateLimiter(20, 60000); // 20 req/min
+const geminiLimiter = new RateLimiter(15, 60000); // 15 req/min (safer)
+
+// ============================================
 // CONFIGURATION
 // ============================================
 
@@ -61,13 +111,24 @@ const PROVIDERS = {
  * CRITICAL: 
  * 1. Check if student is asking US a question → Answer it!
  * 2. Never repeat questions already asked
+ * 3. Filter by mission context (school, family, etc.)
  */
 // 🔥 Track recently used fallbacks to avoid repetition
 const recentFallbacks = [];
 const MAX_RECENT = 5;
 
-function generateContextualFallback(chatHistory = [], userMessage = '', turnCount = 0) {
+function generateContextualFallback(chatHistory = [], userMessage = '', turnCount = 0, missionContext = {}) {
   const userMsgLower = userMessage.toLowerCase().trim();
+  const missionId = missionContext?.missionId || missionContext?.mission?.mission_id || 0;
+  
+  // 🔥 Mission-specific context keywords
+  const missionKeywords = {
+    1: ['school', 'first day', 'classroom', 'teacher', 'desk', 'subject'],
+    2: ['classroom', 'desk', 'whiteboard', 'computer', 'walls', 'posters'],
+    3: ['friend', 'play', 'together', 'meet', 'playground'],
+    4: ['family', 'mom', 'dad', 'brother', 'sister', 'parents', 'home'],
+    5: ['weekend', 'activity', 'together', 'eat', 'dinner', 'homework']
+  };
   
   // 🎯 CRITICAL: Is student ASKING US a question?
   const isStudentAsking = 
@@ -319,7 +380,23 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
   ];
   
   // Try conditional fallbacks first (filter by condition AND avoid recent usage)
-  const availableConditional = conditionalFallbacks.filter(fb => fb.condition);
+  let availableConditional = conditionalFallbacks.filter(fb => fb.condition);
+  
+  // 🔥 FIX: Filter by mission context if available
+  if (missionId && missionKeywords[missionId]) {
+    const keywords = missionKeywords[missionId];
+    const contextualFallbacks = availableConditional.filter(fb => {
+      const responseWords = fb.response.toLowerCase().split(' ');
+      return keywords.some(kw => responseWords.includes(kw) || fb.response.toLowerCase().includes(kw));
+    });
+    
+    // Use contextual fallbacks if found, otherwise use all available
+    if (contextualFallbacks.length > 0) {
+      availableConditional = contextualFallbacks;
+      console.log(`🎯 Using mission-${missionId} contextual fallbacks (${contextualFallbacks.length} options)`);
+    }
+  }
+  
   if (availableConditional.length > 0) {
     const selected = availableConditional[Math.floor(Math.random() * availableConditional.length)];
     return {
@@ -355,6 +432,7 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
  * @param {string} params.preferredProvider - 'groq' | 'gemini' | 'auto'
  * @param {number} params.weekId - Current week (for grammar validation)
  * @param {boolean} params.skipGrammarGuard - Skip grammar validation (default: false)
+ * @param {Object} params.missionContext - Mission context for Story Mission (missionId, mission)
  * @returns {Promise<AIResponse>}
  */
 export async function sendToAI({ 
@@ -364,7 +442,8 @@ export async function sendToAI({
   preferredProvider = 'auto',
   weekId = 1,
   skipGrammarGuard = false,
-  turnCount = 0
+  turnCount = 0,
+  missionContext = {}
 }) {
   const startTime = Date.now();
   const maxRetries = 2; // Max regeneration attempts
@@ -415,7 +494,7 @@ export async function sendToAI({
             } else {
               // Max retries exceeded - use deterministic fallback
               console.error('❌ Max retries exceeded. Using contextual fallback.');
-              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount);
+              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
               return {
                 ...fallbackResponse,
                 violations: validation.violations,
@@ -462,6 +541,12 @@ export async function sendToAI({
         const statusCode = groqError.response?.status;
         const errorMessage = groqError.message;
 
+        // 🔥 FIX: Set backoff on 429 rate limit errors
+        if (statusCode === 429) {
+          groqLimiter.setBackoff(2000); // Start with 2s backoff
+          console.warn(`⚠️ Groq rate limit (429): Setting 2s backoff`);
+        }
+
         // Check if error is 400, 429, or 500 (should fallback)
         if (statusCode === 400 || statusCode === 429 || statusCode === 500) {
           console.warn(`⚠️ Groq failed (${statusCode}): ${errorMessage}`);
@@ -489,7 +574,7 @@ export async function sendToAI({
                     continue;
                   } else {
                     console.error('❌ Gemini max retries exceeded. Using contextual fallback.');
-                    const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount);
+                    const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
                     return {
                       ...fallbackResponse,
                       violations: validation.violations,
@@ -569,7 +654,7 @@ export async function sendToAI({
               continue;
             } else {
               console.error('❌ Max retries. Using contextual fallback.');
-              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount);
+              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
               return {
                 ...fallbackResponse,
                 violations: validation.violations,
@@ -648,6 +733,9 @@ async function callGroq(messages) {
     }
     return msg;
   });
+
+  // 🔥 FIX: Wait for rate limit slot before making request
+  await groqLimiter.waitForSlot();
 
   const response = await axios.post(
     GROQ_ENDPOINT,
@@ -739,11 +827,35 @@ Required JSON structure:
   "suggested_hints": ["hint1", "hint2"]
 }
 
+🚨 CRITICAL GRAMMAR RESTRICTIONS (ABSOLUTE RULES):
+You are teaching English to young learners (Grade 3-4, ages 8-10). Use ONLY simple present tense and basic vocabulary.
+
+⛔ ABSOLUTELY FORBIDDEN WORDS & PATTERNS:
+- NEVER use: must, should, would, will, can (modal verbs)
+- NEVER use: completed, finished, done (past participles as adjectives)
+- NEVER use: -ing forms except "I am playing", "What are you doing?"
+- NEVER use: could, might, may, shall, ought to
+- NEVER use: complex tenses (present perfect, past perfect, future perfect)
+
+✅ CORRECT EXAMPLES (Grade 3-4 level):
+- "I like pizza" (NOT "I would like pizza")
+- "Do you play soccer?" (NOT "Would you like to play?")
+- "That is fun!" (NOT "That sounds fun!")
+- "I am happy!" (NOT "I am feeling happy")
+- "What do you do?" (NOT "What are you doing?" unless teaching present continuous)
+
+❌ WRONG (TOO ADVANCED):
+- "You completed the task well" → ✅ "Good job! You did it!"
+- "You must try harder" → ✅ "Please try again!"
+- "What would you like?" → ✅ "What do you want?"
+- "That is interesting" → ✅ "That is cool!" or "Wow!"
+
 PEDAGOGICAL RULES:
 1. Use RECAST technique - never say "wrong", model correct form naturally
 2. Example: Student says "I is happy" → You respond "Oh, you ARE happy! That's wonderful!"
 3. Always ask follow-up questions to keep conversation flowing
 4. Use vocabulary from the week's syllabus
+5. Keep responses SHORT (under 15 words)
 
 REMEMBER: Output must be pure JSON only, no extra formatting!
 `;
