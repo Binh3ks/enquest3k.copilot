@@ -206,6 +206,7 @@ const StoryMissionTab = () => {
         studentName: null,
         turnManager: turnManager,
         mission: currentMission,  // 🔥 Pass mission for greeting
+        expectedStep: turnManager.missionSteps[0], // 🔥 FIX: Pass expected step to prevent double skip
         isOpeningTurn: true
       };
       const guardedOpening = guardResponseObject(opening, guardContext, 15);
@@ -407,6 +408,7 @@ const StoryMissionTab = () => {
         studentName: studentName || null,
         turnManager: getTurnManager(currentMission.mission_id),  // 🔥 Get registered TurnManager
         mission: currentMission,  // 🔥 Pass mission object
+        expectedStep: turnDecision?.objective,  // 🔥 FIX: Pass expected step from state machine decision
         isOpeningTurn: false,
         turnCount: currentTurnCount,
         chatHistory: [...messages, userMsg],

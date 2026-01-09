@@ -251,6 +251,25 @@ export class TurnManager {
   }
   
   /**
+   * 🔥 FIX: Get current objective WITHOUT advancing logic
+   * This is used to retrieve the step we're currently asking about
+   * (set by processTurn), without calling getNextStep() which would skip it
+   */
+  getCurrentObjective() {
+    if (this.useObjectives && this.objectives && this.objectives.length > 0) {
+      // Return current objective by index
+      return this.objectives[this.currentObjectiveIndex] || this.objectives[0];
+    }
+    
+    if (this.missionSteps && this.missionSteps.length > 0) {
+      // For legacy steps, return current step by index
+      return this.missionSteps[this.currentStepIndex] || this.missionSteps[0];
+    }
+    
+    return null;
+  }
+
+  /**
    * Get next mission step (skip already asked)
    */
   getNextStep() {

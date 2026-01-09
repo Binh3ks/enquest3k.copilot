@@ -379,6 +379,12 @@ function buildTeacherText(ack, recast, question) {
  * 🎯 MASTER ARTIFACT: Guard full AI response object
  * Handles new format: { teacher_ack, teacher_recast, question_text, suggested_hints }
  * Forces canonical question from Turn Manager
+ * 
+ * 🔥 CRITICAL FIX: Use expectedStep parameter instead of calling turnManager.getNextStep()
+ * This prevents the "Double Skip" bug where:
+ *   1. processTurn() marks step as asked
+ *   2. guardResponseObject() calls getNextStep() which skips the already-marked step
+ *   3. AI gets asked to show next step (n+1) instead of current (n)
  */
 export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   if (!responseObj) return responseObj;
@@ -399,20 +405,23 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     }
   }
   
-  // 🔥 ONE BRAIN: Get TurnManager from context (REQUIRED for Story Mission)
+  // 🔥 ONE BRAIN: Get TurnManager and expectedStep from context
   const turnManager = context.turnManager;
+  let expectedStep = context.expectedStep; // 🔥 NEW: Use passed-in step
   
-  if (turnManager) {
-    // Get current step for canonical question and hints
-    const nextStep = context.isOpeningTurn 
-      ? turnManager.missionSteps[0] 
-      : turnManager.getNextStep();
-    
+  if (turnManager && !expectedStep) {
+    // Fallback: Use getCurrentObjective() instead of getNextStep()
+    // getCurrentObjective() returns the CURRENT step without skipping
+    expectedStep = turnManager.getCurrentObjective();
+    console.warn('⚠️ ResponseGuard: Missing expectedStep, using getCurrentObjective (fallback)');
+  }
+  
+  if (expectedStep) {
     // Override with canonical question and hints from step definition
-    context.currentStepKey = nextStep?.key;
-    context.canonicalQuestion = nextStep?.question;
-    context.canonicalHints = nextStep?.hints || [];
-    context.studentName = turnManager.studentName;
+    context.currentStepKey = expectedStep?.key || expectedStep?.id;
+    context.canonicalQuestion = expectedStep?.question || expectedStep?.goal;
+    context.canonicalHints = expectedStep?.hints || [];
+    context.studentName = turnManager?.studentName;
     
     console.log('🔒 ResponseGuard: stepKey=' + context.currentStepKey + ' | canonical="' + context.canonicalQuestion + '"');
   }
