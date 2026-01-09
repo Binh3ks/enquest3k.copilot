@@ -574,8 +574,12 @@ RETURN ONLY JSON:
   // 🎯 ANSWER AND STEER (Student asked question)
   if (turnDecision.type === 'answer_and_steer') {
     const nextStep = turnDecision.nextStep;
-    const canonicalQuestion = turnManager.getCanonicalQuestion(nextStep.key);
-    const stepHints = nextStep.hints || ['I', 'am', 'my', 'is'];
+    if (!nextStep) {
+      console.warn('⚠️ WARNING: nextStep is undefined in answer_and_steer mode');
+      return `You are Ms. Nova. The student asked you a question. Answer warmly (2-3 sentences), then ask them to continue with the lesson.`;
+    }
+    const canonicalQuestion = turnManager.getCanonicalQuestion(nextStep?.key || 'unknown_step');
+    const stepHints = nextStep?.hints || ['I', 'am', 'my', 'is'];
     
     return `You are Ms. Nova, a warm English teacher.
 
@@ -619,10 +623,14 @@ RETURN ONLY JSON:
   
   // 🎯 DEFAULT: ASK NEXT (Student answered current question)
   const nextStep = turnDecision.nextStep;
-  const canonicalQuestion = turnManager.getCanonicalQuestion(nextStep.key);
+  if (!nextStep) {
+    console.warn('⚠️ WARNING: nextStep is undefined in DEFAULT mode. Using fallback.');
+    return `You are Ms. Nova. The student gave an answer. Acknowledge it warmly, expand it, and ask them to continue learning.`;
+  }
+  const canonicalQuestion = turnManager.getCanonicalQuestion(nextStep?.key || 'unknown_step');
   
   // 🔥 CRITICAL: Use hints from mission step definition (not LLM generated)
-  const stepHints = nextStep.hints || ['I', 'am', 'my', 'is'];
+  const stepHints = nextStep?.hints || ['I', 'am', 'my', 'is'];
   
   return `You are Ms. Nova, a warm English teacher for young Vietnamese children (A0-A1 level).
 

@@ -185,9 +185,12 @@ export class NovaEngine {
     if (mode === 'story') {
       // Extract mission from weekData
       // 🔥 CRITICAL FIX: Use missionIndex (array position), NOT missionId (1-based ID)
-      const missionIndex = contextParams.missionIndex ?? contextParams.missionId - 1 ?? 0;
+      // Ensure missionId is treated as a Number to prevent NaN
+      const safeIshMissionId = contextParams.missionId ? Number(contextParams.missionId) : undefined;
+      const missionIndex = contextParams.missionIndex ?? (safeIshMissionId ? safeIshMissionId - 1 : 0);
       const missions = this.weekData.story_missions || this.weekData.storyMissions || [];
       const currentMission = missions[missionIndex];
+      console.log('🔍 NovaEngine story mode - missionId:', safeIshMissionId, '| missionIndex:', missionIndex, '| missions found:', missions.length);
       
       if (!currentMission) {
         console.error('❌ NovaEngine: Mission not found for index:', missionIndex);

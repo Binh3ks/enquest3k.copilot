@@ -156,9 +156,13 @@ const StoryMissionTab = () => {
       return;
     }
     
+    // 🔥 CRITICAL FIX: Force missionId to be a Number (not NaN)
+    const mId = Number(currentMission.mission_id) || (missionIndex + 1);
+    console.log('📊 Mission ID after conversion:', mId, '| Type:', typeof mId, '| Original:', currentMission.mission_id);
+    
     console.log('📋 Initializing Mission:', {
       index: missionIndex,
-      id: currentMission.mission_id,
+      id: mId,
       title: currentMission.title,
       target_vocab: currentMission.target_vocab,
       minimum_turns: currentMission.minimum_turns
@@ -166,14 +170,14 @@ const StoryMissionTab = () => {
     
     console.log('📊 Chat history length before init:', messages.length);
     console.log('🎯 Mission details:', {
-      missionId: currentMission.mission_id,
+      missionId: mId,
       title: currentMission.title,
       target_vocab: currentMission.target_vocab
     });
     
     // 🔥 ONE BRAIN: Create TurnManager ONCE (the ONLY creation point)
-    console.log('🏗️ Creating TurnManager for Mission', currentMission.mission_id);
-    const turnManager = new TurnManager(currentMission.mission_id, currentMission.title);
+    console.log('🏗️ Creating TurnManager for Mission', mId);
+    const turnManager = new TurnManager(mId, currentMission.title);
     registerTurnManager(turnManager); // Register in singleton registry
     
     try {
@@ -183,7 +187,7 @@ const StoryMissionTab = () => {
         userMessage: '', // Empty for opening turn
         chatHistory: [],
         context: {
-          missionId: currentMission.mission_id,
+          missionId: mId,
           missionIndex: missionIndex,
           turnCount: 1,
           minimumTurns: currentMission?.minimum_turns || 10,
