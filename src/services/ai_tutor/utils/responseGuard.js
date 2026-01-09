@@ -8,6 +8,17 @@
 
 import { canonicalizeQuestion } from '../turnManager';
 
+// ============================================
+// 🔥 FIX #2: FOLLOW-UP QUESTION TRACKING
+// ============================================
+
+const askedFollowUpsByMission = new Map();
+
+export function clearFollowUpTracking(missionId) {
+  askedFollowUpsByMission.delete(missionId);
+  console.log('🔄 Cleared follow-up tracking for mission', missionId);
+}
+
 /**
  * Banned phrases that must NEVER appear in AI responses
  */
@@ -326,22 +337,42 @@ function generateFallbackHints(stepKey, nextStepQuestion) {
  * 🎯 MASTER ARTIFACT: Build teacher text from ACK + RECAST + QUESTION
  */
 function buildTeacherText(ack, recast, question) {
-  const parts = [];
-  
-  // Add punctuation to ACK and RECAST for natural flow
-  if (ack && ack.trim()) {
-    const ackText = ack.trim();
-    parts.push(ackText.endsWith('!') ? ackText : ackText + '!');
+  // Build combined response - SEPARATE QUESTIONS
+  let combined = '';
+
+  // Add ACK if exists
+  if (ack && ack !== '(none)') {
+    combined += ack + ' ';
   }
-  if (recast && recast.trim()) {
-    const recastText = recast.trim();
-    parts.push(recastText.endsWith('!') || recastText.endsWith('.') ? recastText : recastText + '!');
+
+  // Add RECAST if exists  
+  if (recast && recast !== '(none)') {
+    combined += recast;
+    // Only add space if there's also a question coming
+    if (question) {
+      combined += ' ';
+    }
   }
-  if (question && question.trim()) {
-    parts.push(question.trim());
+
+  // Add QUESTION - ensure it ends with ONLY ONE question mark
+  if (question) {
+    // Remove any duplicate question marks
+    const cleanQuestion = question.replace(/\?+/g, '?').trim();
+    combined += cleanQuestion;
   }
-  
-  return parts.join(' ');
+
+  combined = combined.trim();
+
+  // SAFETY CHECK: Prevent double questions
+  const questionMarkCount = (combined.match(/\?/g) || []).length;
+  if (questionMarkCount > 1) {
+    console.warn('⚠️ WARNING: Multiple question marks detected, fixing...');
+    // Keep only the first question
+    const parts = combined.split('?');
+    combined = parts[0] + '?';
+  }
+
+  return combined;
 }
 
 /**
@@ -431,83 +462,131 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       // 🔥 Mission-specific follow-up questions
       const missionId = context.missionId || context.mission?.mission_id || 1;
       
+      if (!askedFollowUpsByMission.has(missionId)) {
+        askedFollowUpsByMission.set(missionId, new Set());
+      }
+      const askedSet = askedFollowUpsByMission.get(missionId);
+      
+      // ============= CONTEXT-AWARE FOLLOW-UP QUESTIONS =============
+
+      // Mission 1: First Day at School - About school life
+      const MISSION_1_FOLLOWUPS = [
+        {
+          question: 'What do you see in your classroom?',
+          hints: ['I', 'see', 'desk', 'chair', 'board', 'window'],
+          context_keywords: ['school', 'classroom', 'desk']
+        },
+        {
+          question: 'Do you like your desk?',
+          hints: ['Yes', 'I', 'like', 'my', 'desk', 'No'],
+          context_keywords: ['desk', 'chair', 'sit']
+        },
+        {
+          question: 'Is your classroom big?',
+          hints: ['Yes', 'my', 'classroom', 'is', 'big', 'small'],
+          context_keywords: ['classroom', 'room', 'space']
+        },
+        {
+          question: 'Do you play at school?',
+          hints: ['Yes', 'I', 'play', 'games', 'friends', 'recess'],
+          context_keywords: ['play', 'game', 'fun', 'friends']
+        },
+        {
+          question: 'What do you do at recess?',
+          hints: ['I', 'play', 'run', 'talk', 'eat', 'friends'],
+          context_keywords: ['recess', 'break', 'playtime']
+        },
+        {
+          question: 'Do you have books?',
+          hints: ['Yes', 'I', 'have', 'books', 'pencils', 'No'],
+          context_keywords: ['book', 'pencil', 'supplies']
+        },
+        {
+          question: 'Is your school big?',
+          hints: ['Yes', 'my', 'school', 'is', 'big', 'small'],
+          context_keywords: ['school', 'building']
+        },
+        {
+          question: 'Do you eat at school?',
+          hints: ['Yes', 'I', 'eat', 'lunch', 'snack', 'No'],
+          context_keywords: ['eat', 'lunch', 'food', 'cafeteria']
+        }
+      ];
+
+      // Mission 3: Meeting Your Teacher - About teacher and learning
+      const MISSION_3_FOLLOWUPS = [
+        {
+          question: 'Do you listen to your teacher?',
+          hints: ['Yes', 'I', 'listen', 'teacher', 'class', 'always'],
+          context_keywords: ['teacher', 'listen', 'class']
+        },
+        {
+          question: 'Does your teacher smile?',
+          hints: ['Yes', 'my', 'teacher', 'smiles', 'happy', 'No'],
+          context_keywords: ['teacher', 'happy', 'nice', 'smile']
+        },
+        {
+          question: 'Do you raise your hand?',
+          hints: ['Yes', 'I', 'raise', 'my', 'hand', 'question'],
+          context_keywords: ['hand', 'ask', 'question']
+        },
+        {
+          question: 'Is your teacher tall?',
+          hints: ['Yes', 'my', 'teacher', 'is', 'tall', 'short'],
+          context_keywords: ['teacher', 'tall', 'short', 'height']
+        },
+        {
+          question: 'Do you like to learn?',
+          hints: ['Yes', 'I', 'like', 'learn', 'new', 'things'],
+          context_keywords: ['learn', 'study', 'class', 'lesson']
+        },
+        {
+          question: 'Do you write in class?',
+          hints: ['Yes', 'I', 'write', 'notebook', 'pencil', 'paper'],
+          context_keywords: ['write', 'paper', 'notebook', 'pencil']
+        }
+      ];
+
       const missionFollowUps = {
-        1: [ // First Day at School
-          { q: "What is your favorite subject?", h: ["My", "favorite", "subject", "is", "I", "like"] },
-          { q: "Do you sit in the front or back?", h: ["I", "sit", "in", "the", "front", "back"] },
-          { q: "What did you bring to school today?", h: ["I", "brought", "my", "pencil", "book", "bag"] },
-          { q: "What color is your classroom?", h: ["The", "classroom", "is", "blue", "green", "white"] }
-        ],
-        2: [ // My Classroom
+        1: MISSION_1_FOLLOWUPS.map(fq => ({ q: fq.question, h: fq.hints })),
+        2: [
           { q: "How many desks are in your classroom?", h: ["There", "are", "many", "desks", "ten", "twenty"] },
           { q: "Where is the whiteboard?", h: ["The", "whiteboard", "is", "front", "wall", "big"] },
           { q: "Do you have a computer in class?", h: ["Yes", "we", "have", "computer", "No", "tablets"] },
-          { q: "What is on the walls?", h: ["There", "are", "posters", "pictures", "maps", "charts"] }
+          { q: "What is on the walls?", h: ["There", "are", "posters", "pictures", "maps", "charts"] },
+          { q: "Where do you sit?", h: ["I", "sit", "near", "window", "front", "back"] },
+          { q: "Is there a bookshelf?", h: ["Yes", "there", "is", "bookshelf", "many", "books"] }
         ],
-        3: [ // School Friends
-          { q: "How did you meet your friend?", h: ["We", "met", "in", "class", "playground", "first"] },
-          { q: "What do you play together?", h: ["We", "play", "soccer", "tag", "games", "together"] },
-          { q: "Does your friend live near you?", h: ["Yes", "my", "friend", "lives", "near", "No"] },
-          { q: "What makes a good friend?", h: ["A", "good", "friend", "is", "kind", "nice"] }
-        ],
-        4: [ // Family Introduction
-          { q: "How many people are in your family?", h: ["There", "are", "four", "five", "people", "family"] },
-          { q: "Who cooks in your family?", h: ["My", "mom", "dad", "cooks", "food", "delicious"] },
-          { q: "What does your family do together?", h: ["We", "eat", "play", "watch", "together", "TV"] },
-          { q: "Do you have pets?", h: ["Yes", "I", "have", "dog", "cat", "No"] }
-        ],
-        5: [ // Family Activities
-          { q: "What do you do on weekends?", h: ["We", "go", "to", "park", "visit", "grandparents"] },
-          { q: "Does your family eat together?", h: ["Yes", "we", "eat", "together", "dinner", "breakfast"] },
-          { q: "Who helps you with homework?", h: ["My", "mom", "dad", "helps", "me", "homework"] },
-          { q: "What is your favorite family activity?", h: ["My", "favorite", "is", "playing", "eating", "together"] }
-        ]
+        3: MISSION_3_FOLLOWUPS.map(fq => ({ q: fq.question, h: fq.hints }))
       };
       
-      // Get mission-specific questions or use default
       const followUpQuestions = missionFollowUps[missionId] || missionFollowUps[1];
       
-      // 🔥 FIX: Track asked questions to avoid repeats
-      if (!context.askedFollowUpIndices) {
-        context.askedFollowUpIndices = new Set();
+      const availableQuestions = followUpQuestions.filter(fq => !askedSet.has(fq.q));
+      
+      if (availableQuestions.length === 0) {
+        console.log(`🔄 All ${followUpQuestions.length} follow-ups asked for mission ${missionId}, resetting pool`);
+        askedSet.clear();
+        availableQuestions.push(...followUpQuestions);
       }
       
-      // Find unasked questions
-      const availableIndices = followUpQuestions
-        .map((_, idx) => idx)
-        .filter(idx => !context.askedFollowUpIndices.has(idx));
+      const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+      const followUp = availableQuestions[randomIndex];
       
-      // If all asked, reset
-      if (availableIndices.length === 0) {
-        context.askedFollowUpIndices.clear();
-        availableIndices.push(...followUpQuestions.map((_, idx) => idx));
+      askedSet.add(followUp.q);
+      
+      if (!ack || ack.trim() === '') {
+        ack = parsed.teacher_ack || 'Great!';
+      }
+      if (!recast || recast.trim() === '') {
+        recast = parsed.teacher_recast || 'I heard you!';
       }
       
-      // Pick random from available
-      const questionIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
-      context.askedFollowUpIndices.add(questionIndex);
-      const followUp = followUpQuestions[questionIndex];
       question = followUp.q;
       context.canonicalHints = followUp.h;
       
-      // 🔥 FIX: Keep AI's ACK + RECAST instead of forcing empty
-      if (!ack || ack.trim() === '') {
-        ack = ['Nice', 'Good', 'Great', 'Cool', 'Okay'][Math.floor(Math.random() * 5)];
-      }
-      if (!recast || recast.trim() === '') {
-        // Generate smart recast from last user message
-        const lastUserMsg = context.chatHistory?.[context.chatHistory.length - 1]?.content || '';
-        if (lastUserMsg.toLowerCase().includes('yes')) {
-          recast = 'I understand!';
-        } else if (lastUserMsg.toLowerCase().includes('no')) {
-          recast = 'I see!';
-        } else {
-          recast = 'That is interesting!';
-        }
-      }
-      
-      console.log(`💬 Follow-up Q${turnCount} (Mission ${missionId}, ${questionIndex+1}/${followUpQuestions.length}): "${question}"`);
-      console.log(`🔥 With ACK: "${ack}" RECAST: "${recast}"`);
+      console.log(`💬 Follow-up Q${turnCount} (Mission ${missionId}, ${askedSet.size}/${followUpQuestions.length} asked): "${question}"`);
+      console.log(`   With ACK: "${ack}" | RECAST: "${recast}"`);
     }
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION

@@ -1,5 +1,5 @@
 import { extractHintsFromQuestion } from '../../../services/ai_tutor/utils/responseParser';
-import { guardResponseObject, extractStudentName } from '../../../services/ai_tutor/utils/responseGuard';
+import { guardResponseObject, extractStudentName, clearFollowUpTracking } from '../../../services/ai_tutor/utils/responseGuard';
 import { resetTurnManager, getTurnManager, registerTurnManager, TurnManager } from '../../../services/ai_tutor/turnManager';
 import { useState, useEffect, useRef } from 'react';
 import { BookOpen, Target, CheckCircle2, Loader2, Volume2, RotateCcw } from 'lucide-react';
@@ -530,6 +530,7 @@ const StoryMissionTab = () => {
                     // 🔥 NEW: Reset Turn Manager for this mission
                     const missionId = week1RealData.story_missions?.[index]?.mission_id || index + 1;
                     resetTurnManager(missionId);
+                    clearFollowUpTracking(missionId);
                     console.log('🔄 Turn Manager reset for mission', missionId);
                     
                     // Reset all local state
@@ -638,6 +639,7 @@ const StoryMissionTab = () => {
                     // 🔥 NEW: Reset Turn Manager
                     const missionId = currentMission?.mission_id || currentMissionIndex + 1;
                     resetTurnManager(missionId);
+                    clearFollowUpTracking(missionId);
                     console.log('🔄 Turn Manager reset for mission', missionId);
                     
                     setInitialized(false);

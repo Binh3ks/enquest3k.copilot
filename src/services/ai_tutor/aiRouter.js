@@ -68,9 +68,79 @@ class RateLimiter {
   }
 }
 
-// Create rate limiters
-const groqLimiter = new RateLimiter(20, 60000); // 20 req/min
-const geminiLimiter = new RateLimiter(15, 60000); // 15 req/min (safer)
+// ============================================
+// 🔥 GROQ RATE LIMITER - Prevent 429 errors
+// ============================================
+
+class GroqRateLimiter {
+  constructor() {
+    this.requestsInWindow = 0;
+    this.windowStartTime = Date.now();
+    this.windowDuration = 60000; // 1 minute
+    this.maxRequests = 25; // Conservative limit
+  }
+
+  async waitForSlot() {
+    const now = Date.now();
+    const elapsed = now - this.windowStartTime;
+
+    // Reset window if expired
+    if (elapsed >= this.windowDuration) {
+      this.requestsInWindow = 0;
+      this.windowStartTime = now;
+    }
+
+    // If quota available, use it
+    if (this.requestsInWindow < this.maxRequests) {
+      this.requestsInWindow++;
+      const remaining = this.maxRequests - this.requestsInWindow;
+      console.log(`✅ Groq quota OK (${this.requestsInWindow}/${this.maxRequests}, ${remaining} remaining)`);
+      return;
+    }
+
+    // Quota full - wait for window reset
+    const waitTime = this.windowDuration - elapsed;
+    console.warn(`⏳ Groq quota FULL (${this.requestsInWindow}/${this.maxRequests}), waiting ${Math.ceil(waitTime/1000)}s...`);
+    
+    await new Promise(resolve => setTimeout(resolve, waitTime));
+    
+    // Reset after waiting
+    this.requestsInWindow = 1;
+    this.windowStartTime = Date.now();
+    console.log('✅ Groq quota RESET, slot available');
+  }
+
+  reset() {
+    this.requestsInWindow = 0;
+    this.windowStartTime = Date.now();
+    console.log('🔄 Groq rate limiter manually reset');
+  }
+
+  getStatus() {
+    const now = Date.now();
+    const elapsed = now - this.windowStartTime;
+    const windowRemaining = Math.max(0, this.windowDuration - elapsed);
+    
+    return {
+      used: this.requestsInWindow,
+      limit: this.maxRequests,
+      available: this.maxRequests - this.requestsInWindow,
+      windowRemainingMs: windowRemaining
+    };
+  }
+}
+
+// Create global instance
+const groqLimiter = new GroqRateLimiter();
+
+// Export control functions
+export function resetGroqLimiter() {
+  groqLimiter.reset();
+}
+
+export function getGroqLimiterStatus() {
+  return groqLimiter.getStatus();
+}
 
 // ============================================
 // CONFIGURATION
@@ -712,94 +782,49 @@ export async function sendToAI({
 // GROQ PROVIDER
 // ============================================
 
-async function callGroq(messages) {
-  if (!GROQ_API_KEY) {
+async function callGroq(messages, systemPrompt, options = {}) {
+  if (!PROVIDERS.groq.enabled) {
     throw new Error('Groq API key not configured');
   }
-
-  // 🔥 ENFORCE STRICT JSON: Add explicit instruction to system message
-  const enhancedMessages = messages.map((msg, idx) => {
-    if (msg.role === 'system' && idx === 0) {
-      return {
-        ...msg,
-        content: msg.content + '\n\n🔥 CRITICAL JSON FORMAT REQUIREMENTS:\n' +
-                 '1. Return ONLY valid JSON (no markdown, no backticks)\n' +
-                 '2. ALWAYS complete your response fully\n' +
-                 '3. EVERY response MUST end with exactly ONE question\n' +
-                 '4. MUST include "suggested_hints" with 4-6 words that help answer YOUR question\n' +
-                 '5. Format: {"ai_response": "[complete response + question]", "pedagogy_note": "strategy", "suggested_hints": ["word1", "word2", "word3", "word4"]}\n' +
-                 '6. Hints must be individual words that help build the answer to your question'
-      };
-    }
-    return msg;
-  });
-
-  // 🔥 FIX: Wait for rate limit slot before making request
+  
   await groqLimiter.waitForSlot();
-
-  const response = await axios.post(
-    GROQ_ENDPOINT,
-    {
+  
+  const startTime = Date.now();
+  
+  try {
+    const response = await axios.post(GROQ_ENDPOINT, {
       model: PROVIDERS.groq.model,
-      messages: enhancedMessages,
-      temperature: PROVIDERS.groq.temperature,
-      max_tokens: PROVIDERS.groq.maxTokens,
-      response_format: { type: 'json_object' } // Enforce JSON output
-    },
-    {
+      messages: [
+        { role: 'system', content: systemPrompt },
+        ...messages
+      ],
+      max_tokens: options.maxTokens || PROVIDERS.groq.maxTokens,
+      temperature: options.temperature || PROVIDERS.groq.temperature,
+      response_format: { type: 'json_object' }
+    }, {
       headers: {
         'Authorization': `Bearer ${GROQ_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      timeout: 15000 // 15s timeout
-    }
-  );
-
-  const content = response.data.choices[0]?.message?.content || '';
-
-  // Parse JSON response with enhanced validation
-  try {
-    const parsed = JSON.parse(content);
-    const aiResponse = parsed.ai_response || parsed.response || content;
+      timeout: 10000
+    });
     
-    // 🔥 Validate response completeness
-    if (!aiResponse || aiResponse.length < 10) {
-      throw new Error('Response too short or empty');
-    }
+    const elapsed = Date.now() - startTime;
+    console.log(`✅ Groq success in ${elapsed}ms`, groqLimiter.getStatus());
     
-    // 🔥 Ensure response ends with a question
-    if (!aiResponse.includes('?')) {
-      console.warn('⚠️ Response missing question, adding default');
-      const enhancedResponse = aiResponse + ' What do you think?';
-      return {
-        ai_response: enhancedResponse,
-        pedagogy_note: parsed.pedagogy_note || 'Added question for engagement',
-        suggested_hints: parsed.suggested_hints || [],
-        raw: content
-      };
+    return response.data;
+    
+  } catch (error) {
+    const elapsed = Date.now() - startTime;
+    
+    if (error.response?.status === 429) {
+      console.error(`⚠️ Groq 429 despite rate limiting (${elapsed}ms) - resetting limiter`);
+      groqLimiter.reset();
     }
     
-    return {
-      ai_response: aiResponse,
-      pedagogy_note: parsed.pedagogy_note || '',
-      suggested_hints: parsed.suggested_hints || [],
-      raw: content
-    };
-  } catch (parseError) {
-    console.warn('⚠️ Groq JSON parse failed, creating structured response...');
+    console.error(`❌ Groq error in ${elapsed}ms:`, error.response?.status, error.message);
     
-    // 🔥 Smart fallback: extract text and add question if missing
-    let cleanContent = content.replace(/```json|```/g, '').trim();
-    if (!cleanContent.includes('?')) {
-      cleanContent += ' What about you?';
-    }
-    
-    return {
-      ai_response: cleanContent,
-      pedagogy_note: 'Fallback response structure',
-      suggested_hints: [],
-      raw: content
-    };
+    throw error;
   }
 }
 

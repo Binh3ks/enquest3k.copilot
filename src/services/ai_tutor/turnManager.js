@@ -130,7 +130,7 @@ function getMissionSteps(missionId, missionTitle) {
       { key: 'teacher_nice', question: 'Is your teacher nice?', hints: ['Yes', 'my', 'teacher', 'is', 'nice'] },
       { key: 'teacher_funny', question: 'Is your teacher funny?', hints: ['Yes', 'my', 'teacher', 'is', 'funny'] },
       { key: 'favorite_subject', question: 'What is your favorite subject?', hints: ['My', 'favorite', 'is', 'math', 'English', 'art'] },
-      { key: 'class_rules', question: 'What are the class rules?', hints: ['We', 'must', 'listen', 'be', 'quiet', 'raise', 'hand'] },
+      { key: 'class_rules', question: 'What are the class rules?', hints: ['We', 'listen', 'be', 'quiet', 'raise', 'hand'] },
       { key: 'say_thanks', question: 'Do you say thank you to your teacher?', hints: ['Yes', 'I', 'say', 'thank', 'you'] },
       { key: 'goodbye', question: null, hints: [] }
     ]
