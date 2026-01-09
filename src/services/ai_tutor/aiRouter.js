@@ -782,6 +782,35 @@ export async function sendToAI({
 // GROQ PROVIDER
 // ============================================
 
+/**
+ * Sanitize messages array before sending to Groq
+ * Removes empty content, null messages, invalid roles
+ * Ensures system message is always first
+ */
+function sanitizeMessages(messages) {
+  // Filter out invalid messages
+  const cleanMessages = messages.filter(m => {
+    if (!m) return false;
+    if (typeof m.content !== 'string') return false;
+    if (m.content.trim() === '') return false;
+    if (!['user', 'assistant', 'system'].includes(m.role)) return false;
+    return true;
+  });
+  
+  console.log(`🧹 Sanitized messages: ${messages.length} → ${cleanMessages.length}`, {
+    originalCount: messages.length,
+    cleanCount: cleanMessages.length,
+    removedCount: messages.length - cleanMessages.length,
+    sampleMessages: cleanMessages.slice(0, 2).map(m => ({
+      role: m.role,
+      contentLength: m.content?.length || 0,
+      contentPreview: m.content?.substring(0, 50) + '...'
+    }))
+  });
+  
+  return cleanMessages;
+}
+
 async function callGroq(messages, systemPrompt, options = {}) {
   if (!PROVIDERS.groq.enabled) {
     throw new Error('Groq API key not configured');
@@ -792,12 +821,31 @@ async function callGroq(messages, systemPrompt, options = {}) {
   const startTime = Date.now();
   
   try {
+    // 🔥 CRITICAL: Sanitize messages before sending
+    const cleanMessages = sanitizeMessages(messages);
+    
+    // Ensure system message is first and valid
+    const systemMsg = systemPrompt && systemPrompt.trim() 
+      ? { role: 'system', content: systemPrompt.trim() }
+      : null;
+    
+    // Build final messages array with system first
+    const finalMessages = [];
+    if (systemMsg) {
+      finalMessages.push(systemMsg);
+    }
+    finalMessages.push(...cleanMessages);
+    
+    console.log(`✅ Groq request prepared:`, {
+      totalMessages: finalMessages.length,
+      systemMessagePresent: !!systemMsg,
+      firstMessageRole: finalMessages[0]?.role,
+      messageRoles: finalMessages.map(m => m.role).join(', ')
+    });
+    
     const response = await axios.post(GROQ_ENDPOINT, {
       model: PROVIDERS.groq.model,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        ...messages
-      ],
+      messages: finalMessages,
       max_tokens: options.maxTokens || PROVIDERS.groq.maxTokens,
       temperature: options.temperature || PROVIDERS.groq.temperature,
       response_format: { type: 'json_object' }
