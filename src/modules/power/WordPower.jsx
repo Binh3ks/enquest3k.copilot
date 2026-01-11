@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, Zap, Globe, CheckCircle, Edit3, BookOpen, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -192,8 +194,26 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
 };
 
 const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const [completedIds, setCompletedIds] = useState([]);
+  const { weekId } = useParams();
+  const [completedIds, setCompletedIds] = useState(() => {
+    const saved = loadStationState(weekId, 'wordpower');
+    return saved?.completed || [];
+  });
 
+  // Save to localStorage
+  useEffect(() => {
+    if (weekId && completedIds.length > 0) {
+      saveStationState(weekId, 'wordpower', { completed: completedIds });
+    }
+  }, [completedIds, weekId]);
+
+  // Report progress to backend
+  useEffect(() => {
+    if (onReportProgress && data?.vocab && data.vocab.length > 0) {
+      const percent = Math.round((completedIds.length / data.vocab.length) * 100);
+      onReportProgress(percent);
+    }
+  }, [completedIds.length, data?.vocab?.length, onReportProgress]);
   if (!data || !data.words) return <div>Loading Power...</div>;
 
   const handleCardComplete = (id) => {

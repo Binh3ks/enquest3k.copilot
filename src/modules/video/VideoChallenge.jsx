@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Video, Mic, Type, Download, Play, Pause, RotateCcw, CheckCircle, AlertCircle, Globe, Loader2, ArrowRight, Eye, EyeOff, Edit3 } from 'lucide-react';
 import Confetti from 'react-confetti';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+  const { weekId } = useParams();
   const content = (data?.writing || data?.video) ? (data.writing || data.video) : data;
 
   // --- STATE ---
@@ -17,6 +20,10 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   const [isCameraReady, setIsCameraReady] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasRecorded, setHasRecorded] = useState(() => {
+    const saved = loadStationState(weekId, 'video_challenge');
+    return saved?.recorded || false;
+  });
   
   // Refs
   const videoRef = useRef(null);
@@ -25,6 +32,20 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   const streamRef = useRef(null); 
   const mimeTypeRef = useRef(MediaRecorder.isTypeSupported("video/mp4") ? "video/mp4" : "video/webm"); 
   const timerRef = useRef(null);
+
+  // Save to localStorage
+  useEffect(() => {
+    if (weekId && hasRecorded) {
+      saveStationState(weekId, 'video_challenge', { recorded: true });
+    }
+  }, [hasRecorded, weekId]);
+
+  // Report progress to backend
+  useEffect(() => {
+    if (onReportProgress && hasRecorded) {
+      onReportProgress(100);
+    }
+  }, [hasRecorded, onReportProgress]);
 
   // Cleanup & Reset
   useEffect(() => {
@@ -176,6 +197,7 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
 
         if (blob.size > 0) {
             setVideoBlob(blob);
+            setHasRecorded(true);
             if (onReportProgress) onReportProgress(100);
             setShowConfetti(true);
         } else {

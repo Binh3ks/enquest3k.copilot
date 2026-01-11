@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams } from 'react-router-dom';
 import { Menu, Printer } from 'lucide-react';
 
@@ -11,7 +11,7 @@ import { MODULE_COMPONENTS, STATIONS } from './config/stationConfig';
 
 // UTILS & COMPONENTS
 import { useFetchWeekData, useStationData } from './utils/dataHooks';
-import { generateSmartReview } from './utils/srsGenerator';
+import { generateSmartReviewAsync } from './utils/srsGenerator';
 import { loadVoices } from './utils/AudioHelper'; // Import loadVoices
 import LoginScreen from './components/auth/LoginScreen';
 import FloatingDictionary from './components/common/FloatingDictionary';
@@ -64,6 +64,7 @@ const MainLayout = () => {
   const [saveToastStatus, setSaveToastStatus] = useState(null);
   const [autoSaveStatus, setAutoSaveStatus] = useState('idle');
   const [showCongratulations, setShowCongratulations] = useState(false);
+  const [reviewItems, setReviewItems] = useState([]);
   
   const params = useParams();
   const weekId = parseInt(params.weekId || 1);
@@ -71,12 +72,16 @@ const MainLayout = () => {
   
   const { data: weekData } = useFetchWeekData(weekId, learningMode);
   const stationData = useStationData(tabKey, weekData);
-  const matchData = tabKey === 'word_match' ? weekData : stationData;
+  // GameHub and word_match need full weekData, others use station-specific data
+  const matchData = (tabKey === 'word_match' || tabKey === 'game_hub') ? weekData : stationData;
   
-  // Hooks must be called before early returns
-  const reviewItems = useMemo(() => {
-    if (tabKey === 'review') return generateSmartReview(weekId);
-    return [];
+  // ⚡ Lazy load review items asynchronously
+  useEffect(() => {
+    if (tabKey === 'review') {
+      generateSmartReviewAsync(weekId).then(items => setReviewItems(items));
+    } else {
+      setReviewItems([]);
+    }
   }, [weekId, tabKey]);
 
   const overallWeekProgress = useMemo(() => {
@@ -132,30 +137,34 @@ const MainLayout = () => {
     }
   };
 
-  const handleReportProgress = async (percent) => {
+  const handleReportProgress = useCallback(async (percent) => {
     if (!currentUser || currentUser.role === 'guest') return;
     
     setAutoSaveStatus('saving');
     try {
       await updateProgress({ weekId, stationKey: tabKey, progressPercent: percent });
       
-      const updatedProgress = { ...weekProgress, [tabKey]: percent };
-      setWeekProgress(updatedProgress);
+      setWeekProgress(prev => {
+        const updatedProgress = { ...prev, [tabKey]: percent };
+        
+        // Check completion
+        const totalStations = STATIONS.filter(s => s.key !== 'review').length;
+        const completedStations = Object.values(updatedProgress).filter(p => p === 100).length;
+        if (totalStations > 0 && completedStations === totalStations) {
+          setShowCongratulations(true);
+        }
+        
+        return updatedProgress;
+      });
       
       setAutoSaveStatus('saved');
       setTimeout(() => setAutoSaveStatus('idle'), 1500);
-
-      const totalStations = STATIONS.filter(s => s.key !== 'review').length;
-      const completedStations = Object.values(updatedProgress).filter(p => p === 100).length;
-      if (totalStations > 0 && completedStations === totalStations) {
-        setShowCongratulations(true);
-      }
 
     } catch (error) {
       console.error("Failed to report progress:", error);
       setAutoSaveStatus('idle');
     }
-  };
+  }, [currentUser, weekId, tabKey]);
 
   // Early return for logged-out users
   if (!currentUser) return (

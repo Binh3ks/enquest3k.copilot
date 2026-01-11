@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { loadWeekData } from '../data/weekLoader'; 
+import weekIndex, { loadWeekData } from '../data/weeks/index'; 
 
 // FIX: Thêm tham số forceEasyMode để ép buộc đúng mode từ Hook
 const injectAudioUrls = (weekData, forceEasyMode = false) => {
@@ -125,62 +125,36 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
 export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
-    setError(null);
     
-    const loadWeek = async () => {
-      try {
-        // Load week data dynamically using weekLoader
-        const weekData = await loadWeekData(weekId);
+    const loadData = async () => {
+      const isEasy = learningMode === 'easy';
+      
+      console.log(`[DataHooks] Lazy loading Week ${weekId} in ${isEasy ? 'EASY' : 'ADVANCED'} mode`);
+      
+      // ⚡ Dynamic import - only load requested week
+      const rawData = await loadWeekData(weekId, isEasy);
+
+      if (rawData) {
+        console.log(`[DataHooks] Loaded data title:`, rawData?.weekTitle_en);
+        console.log(`[DataHooks] Loaded vocab[0]:`, rawData?.stations?.new_words?.vocab?.[0]?.word);
         
-        if (!weekData) {
-          console.warn(`[DataHooks] Week ${weekId} not found`);
-          setData(null);
-          setError(new Error(`Week ${weekId} not found`));
-          setLoading(false);
-          return;
-        }
-
-        console.log(`[DataHooks] Loading Week ${weekId} in ${learningMode.toUpperCase()} mode`);
-        
-        // Determine which data to use based on learning mode
-        let rawData = null;
-        let isEasyMode = false;
-
-        if (learningMode === 'easy' && weekData.dataEasy) {
-          rawData = weekData.dataEasy;
-          isEasyMode = true;
-          console.log(`[DataHooks] Easy data title:`, weekData.dataEasy?.weekTitle_en);
-        } else {
-          rawData = weekData.data || weekData;
-          isEasyMode = false;
-          console.log(`[DataHooks] Advanced data title:`, weekData.weekTitle_en);
-        }
-
-        if (rawData) {
-          // Inject audio URLs with proper mode handling
-          const processedData = injectAudioUrls(JSON.parse(JSON.stringify(rawData)), isEasyMode);
-          setData(processedData);
-        } else {
-          setData(null);
-          setError(new Error(`No data available for week ${weekId}`));
-        }
-      } catch (err) {
-        console.error(`[DataHooks] Error loading week ${weekId}:`, err);
-        setError(err);
+        // Inject audio URLs
+        const processedData = injectAudioUrls(JSON.parse(JSON.stringify(rawData)), isEasy);
+        setData(processedData);
+      } else {
+        console.warn(`[DataHooks] Week ${weekId} data not found`);
         setData(null);
-      } finally {
-        setLoading(false);
       }
+      setLoading(false);
     };
 
-    loadWeek();
+    loadData();
   }, [weekId, learningMode]);
 
-  return { data, loading, error };
+  return { data, loading };
 };
 
 export const useStationData = (stationKey, weekData) => weekData?.stations?.[stationKey];

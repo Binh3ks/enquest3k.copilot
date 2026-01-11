@@ -1,39 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { Gamepad2, X, Globe, Zap, Trophy, ExternalLink, Volume2, Loader2 } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
-import weekIndex from '../../data/weeks/index';
+import { loadWeekData } from '../../data/weeks/index';
 import { useMemo } from 'react';
 
 const GameHub = ({ data }) => {
   const [activeGame, setActiveGame] = useState(null);
   const [gameState, setGameState] = useState('menu');
+  const [vocabList, setVocabList] = useState([]);
+  const [isLoadingVocab, setIsLoadingVocab] = useState(false);
   
   // Get vocab from current week (prefer stations.new_words which has injected audio), fallback to global_vocab
   const currentWeekVocab = data?.stations?.new_words?.vocab || data?.global_vocab || [];
 
-  // Multi-week SRS aggregation logic (uses `data.srs_weeks` if provided)
-  // This collects vocab from specified previous weeks (when available in weekIndex)
-  const vocabList = useMemo(() => {
-    const agg = [...currentWeekVocab];
-    const srsWeeks = data?.srs_weeks || [];
-    if (Array.isArray(srsWeeks) && srsWeeks.length > 0) {
-      srsWeeks.forEach(wid => {
-        const key = typeof wid === 'number' ? String(wid) : wid;
-        const wk = weekIndex[`week_${String(key).padStart(2, '0')}`] || weekIndex[key] || null;
-        if (wk) {
-          const wkData = wk.stations?.new_words?.vocab || wk.global_vocab || [];
-          agg.push(...wkData);
-        }
+  // ⚡ Multi-week SRS aggregation with lazy loading
+  useEffect(() => {
+    const loadVocab = async () => {
+      setIsLoadingVocab(true);
+      console.log('[GameHub] Current week vocab:', currentWeekVocab.length, 'items');
+      
+      const agg = [...currentWeekVocab];
+      const srsWeeks = data?.srs_weeks || [];
+      
+      if (Array.isArray(srsWeeks) && srsWeeks.length > 0) {
+        console.log('[GameHub] Lazy loading SRS weeks:', srsWeeks);
+        // ⚡ Load all SRS weeks in parallel
+        const promises = srsWeeks.map(wid => loadWeekData(wid, false));
+        const loadedWeeks = await Promise.all(promises);
+        
+        loadedWeeks.forEach(wk => {
+          if (wk) {
+            const wkData = wk.stations?.new_words?.vocab || wk.global_vocab || [];
+            agg.push(...wkData);
+          }
+        });
+      }
+      
+      // dedupe by word (case-insensitive)
+      const seen = new Set();
+      const dedup = [];
+      agg.forEach(item => {
+        const k = (item.word || '').toLowerCase();
+        if (!seen.has(k)) { seen.add(k); dedup.push(item); }
       });
-    }
-    // dedupe by word (case-insensitive)
-    const seen = new Set();
-    const dedup = [];
-    agg.forEach(item => {
-      const k = (item.word || '').toLowerCase();
-      if (!seen.has(k)) { seen.add(k); dedup.push(item); }
-    });
-    return dedup;
+      
+      console.log('[GameHub] Final vocabList:', dedup.length, 'words');
+      setVocabList(dedup);
+      setIsLoadingVocab(false);
+    };
+
+    loadVocab();
   }, [currentWeekVocab, data]);
   
   const [isPlaying, setIsPlaying] = useState(false);

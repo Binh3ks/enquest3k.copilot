@@ -1,6 +1,6 @@
 # EngQuest AI Context (Compact)
 
-_Last Updated: 2026-01-09T02:52:33.183Z_
+_Last Updated: 2026-01-11T05:59:34.835Z_
 
 ## TL;DR
 - ESL learning app: weekly lessons → stations (reading, vocab, grammar, etc.) → AI tutor
@@ -101,7 +101,13 @@ npm run dev  # runs on :5173
 - **FORBIDDEN** to read: `node_modules`, `dist`, `.git`, `build`, `src/legacy_archive`
 
 ## Development Log & Key Decisions
-<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-09 02:52:33: ONE_BRAIN_FIX_COMPLETE
+<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-11 05:59:34: INFINITE_LOOP_FIX_JAN10
+
+- 2026-01-11 05:53:32: INFINITE_LOOP_FIX_JAN10
+
+- 2026-01-11 05:42:27: INFINITE_LOOP_FIX_JAN10
+
+- 2026-01-09 02:52:33: ONE_BRAIN_FIX_COMPLETE
 
 - 2026-01-09 01:17:18: ONE_BRAIN_FIX_COMPLETE
 
@@ -119,11 +125,8 @@ npm run dev  # runs on :5173
 
 - 2026-01-07 11:30:44: Fixed microphone issue in AI Tutor - restored simple continuous=false config from V6-FINAL backup
 
-- 2026-01-07 11:30:25: Test log entry from debugging
 
-- 2026-01-06 14:00:00: **AI TUTOR UPGRADE PLAN CREATED (3 WEEKS)** - Comprehensive code review completed. Implementation plan created for 3-phase upgrade: Phase 1 (Week 1) - Create NovaEngine core + optimize prompts (-60% tokens) + improve error handling, Phase 2 (Week 2) - Refactor state management + add validation + performance optimization, Phase 3 (Week 3) - Response caching + analytics + A/B testing. Target: Reduce API costs 60%, errors 40%, improve maintainability 50%. See: AI_TUTOR_CODE_REVIEW_AND_UPGRADES.md, IMPLEMENTATION_PLAN_AI_TUTOR_UPGRADES.md
 
-- 2026-01-06 13:15:00: **AI TUTOR V5 - FREETALK & HINT SYSTEM MAJOR IMPROVEMENTS** - Fixed critical conversation flow issues: (1) Turn 14 proper closure with TTS playback, (2) Repeated question detection (prevents asking same question twice), (3) Enhanced hint generation rules to include specific answer options (game names for games questions, food names for food questions, etc.), (4) Contextual hints matching AI questions, (5) Simplified opening greetings (4 basic questions, present simple only), (6) Turn count enforcement with hard client-side limits, (7) Closing messages now play TTS before ending conversation. All 5 tabs tested and functional.
 
 
 

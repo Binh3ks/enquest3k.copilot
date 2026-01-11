@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Target, Image as ImageIcon, Type, RefreshCw, Trophy, Check, Star, Music, Play, ImageOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import InstructionBar from '../../components/common/InstructionBar';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 const shuffleArray = (array) => {
   const newArray = [...array];
@@ -13,15 +15,33 @@ const shuffleArray = (array) => {
 };
 
 const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+  const { weekId } = useParams();
   const [gameMode, setGameMode] = useState('meaning'); 
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [matchedCards, setMatchedCards] = useState([]);
+  const [matchedCards, setMatchedCards] = useState(() => {
+    const saved = loadStationState(weekId, 'wordmatch');
+    return saved?.matched || [];
+  });
   const [isLock, setIsLock] = useState(false);
   const [moves, setMoves] = useState(0);
   const [score, setScore] = useState(0);
 
   const vocabList = data?.stations?.new_words?.vocab || [];
+
+  // Save to localStorage
+  useEffect(() => {
+    if (weekId && matchedCards.length > 0) {
+      saveStationState(weekId, 'wordmatch', { matched: matchedCards });
+    }
+  }, [matchedCards, weekId]);
+
+  // Report progress to backend
+  useEffect(() => {
+    if (onReportProgress && cards.length > 0 && matchedCards.length === cards.length) {
+      onReportProgress(100);
+    }
+  }, [matchedCards.length, cards.length, onReportProgress]);
 
   useEffect(() => {
     if (vocabList.length > 0) {
@@ -34,7 +54,7 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       if (cards.length > 0 && matchedCards.length === cards.length) {
           if (onReportProgress) onReportProgress(100);
       }
-  }, [matchedCards, cards, onReportProgress]);
+  }, [matchedCards, cards]);
 
   const startNewGame = (mode) => {
     const selectedVocab = vocabList.slice(0, 10); 

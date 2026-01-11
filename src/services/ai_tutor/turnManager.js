@@ -142,14 +142,9 @@ function getMissionSteps(missionId, missionTitle) {
 /**
  * Turn Manager Class
  * Maintains state for a Story Mission conversation
- * 
- * OBJECTIVE-DRIVEN STATE MACHINE:
- * - Processes objectives from mission data (not hardcoded steps)
- * - Handles reverse questions (student asks AI) without skipping objectives
- * - Enforces hard limits on conversation length
  */
 export class TurnManager {
-  constructor(missionId, missionTitle, storyMissionObj = null) {
+  constructor(missionId, missionTitle, objectives = null) {
     // 🔥 CRITICAL: Enforce numeric missionId (hard error on NaN/undefined)
     const numericId = Number(missionId);
     if (isNaN(numericId) || numericId === 0) {
@@ -161,22 +156,25 @@ export class TurnManager {
     this.missionId = numericId;
     this.missionTitle = missionTitle;
     this.studentName = null;
-    this.askedStepKeys = []; // 🔥 Array for ordered tracking
-    this.lastAskedStepKey = null;
-    this.currentStepIndex = 0;
-    this.totalTurns = 0; // 🔥 NEW: Track total turns for hard limit
+    this.turnCount = 0; // 🔥 NEW: Track total turns for hard cap
+    this.completedObjectives = []; // 🔥 NEW: Track completed objectives
     
-    // 🔥 NEW: Support both legacy steps AND new objective-driven schema
-    if (storyMissionObj && storyMissionObj.objectives && Array.isArray(storyMissionObj.objectives)) {
-      console.log('🎯 TurnManager: Using OBJECTIVE-DRIVEN schema for mission', numericId);
-      this.objectives = storyMissionObj.objectives;
-      this.useObjectives = true;
+    // Support both old step-based and new objective-based data
+    if (objectives && objectives.length > 0) {
+      // 🔥 NEW: Objective-driven mode
+      this.objectives = objectives;
       this.currentObjectiveIndex = 0;
-      console.log('📋 Mission objectives:', this.objectives.map(o => o.goal).join(' → '));
+      this.mode = 'objective';
+      console.log('🎯 TurnManager: Objective-driven mode - Mission', numericId);
+      console.log('📋 Objectives:', objectives.map(o => o.id).join(' → '));
     } else {
-      console.log('🎯 TurnManager: Using LEGACY STEP schema for mission', numericId);
+      // Legacy: Step-based mode
+      this.askedStepKeys = [];
+      this.lastAskedStepKey = null;
+      this.currentStepIndex = 0;
       this.missionSteps = getMissionSteps(numericId, missionTitle);
-      this.useObjectives = false;
+      this.mode = 'step';
+      console.log('🎯 TurnManager: Step-based mode - Mission', numericId, '| Title:', missionTitle);
       console.log('📋 Mission steps:', this.missionSteps.map(s => s.key).join(' → '));
     }
     
@@ -233,12 +231,6 @@ export class TurnManager {
    * This ensures question text is deterministic and never varies
    */
   getCanonicalQuestion(stepKey) {
-    if (this.useObjectives) {
-      // For objectives, return goal statement
-      const obj = this.objectives.find(o => o.id === stepKey);
-      return obj ? obj.goal : null;
-    }
-    // For legacy steps
     const step = this.missionSteps.find(s => s.key === stepKey);
     return step ? step.question : null;
   }
@@ -251,30 +243,13 @@ export class TurnManager {
   }
   
   /**
-   * 🔥 FIX: Get current objective WITHOUT advancing logic
-   * This is used to retrieve the step we're currently asking about
-   * (set by processTurn), without calling getNextStep() which would skip it
-   */
-  getCurrentObjective() {
-    if (this.useObjectives && this.objectives && this.objectives.length > 0) {
-      // Return current objective by index
-      return this.objectives[this.currentObjectiveIndex] || this.objectives[0];
-    }
-    
-    if (this.missionSteps && this.missionSteps.length > 0) {
-      // For legacy steps, return current step by index
-      return this.missionSteps[this.currentStepIndex] || this.missionSteps[0];
-    }
-    
-    return null;
-  }
-
-  /**
    * Get next mission step (skip already asked)
+   * 🔥 LEGACY MODE ONLY - Use getCurrentObjective() for objective mode
    */
   getNextStep() {
-    if (this.useObjectives) {
-      return this.getNextObjective();
+    // 🔥 Objective mode doesn't use steps
+    if (this.mode === 'objective') {
+      return null;
     }
     
     console.log('🔍 TurnManager: Finding next step | currentIndex:', this.currentStepIndex, '| askedStepKeys:', this.askedStepKeys);
@@ -307,128 +282,84 @@ export class TurnManager {
   }
   
   /**
-   * 🔥 NEW: Get next objective (for objective-driven missions)
+   * 🔥 NEW: Determine if student answered or asked a question
    */
-  getNextObjective() {
-    console.log('🔍 TurnManager: Finding next objective | currentIndex:', this.currentObjectiveIndex, '| askedStepKeys:', this.askedStepKeys);
-    
-    // Skip already-asked objectives
-    for (let i = this.currentObjectiveIndex; i < this.objectives.length; i++) {
-      const obj = this.objectives[i];
-      
-      // Return goodbye/termination objective
-      if (obj.type === 'termination' || obj.id === 'obj_goodbye') {
-        console.log('🏁 TurnManager: Reached goodbye objective');
-        return obj;
-      }
-      
-      // Skip if already asked
-      if (this.askedStepKeys.includes(obj.id)) {
-        console.log('⏭️ TurnManager: Skipping already-asked objective:', obj.id, '(index', i, ')');
-        continue;
-      }
-      
-      // Found unasked objective
-      console.log('✅ TurnManager: Next objective found:', obj.id, '| Goal:', obj.goal, '(index', i, ')');
-      this.currentObjectiveIndex = i;
-      return obj;
+  getUserStatus(userMessage) {
+    if (!userMessage || userMessage.trim().length === 0) {
+      return 'unknown';
     }
     
-    // All objectives asked - return closing
-    console.log('🏁 TurnManager: All objectives asked, returning closing');
-    return this.objectives[this.objectives.length - 1];
+    if (isStudentQuestion(userMessage)) { // 🔥 Use standalone function, not this.
+      return 'questioned'; // Student asked → Parking mode
+    }
+    
+    return 'answered'; // Student replied → Move forward
   }
-  
+
   /**
-   * 🔥 NEW: OBJECTIVE-DRIVEN STATE MACHINE
-   * Handles student input types: ANSWER, QUESTION, OFF_TOPIC
-   * Returns instruction for AI on how to respond
+   * 🔥 NEW: Get current objective (for objective-driven mode)
    */
-  processTurn(studentInputType = 'ANSWER') {
-    this.totalTurns++;
-    console.log(`🎯 TurnManager processTurn: Turn #${this.totalTurns} | Input type: ${studentInputType}`);
-    
-    // 1. 🔴 HARD LIMIT CHECK: Max 15 turns
-    if (this.totalTurns >= 15) {
-      console.log('⏰ TurnManager: HARD LIMIT reached (15 turns), returning goodbye');
-      const goodbyeObj = this.useObjectives 
-        ? this.objectives[this.objectives.length - 1]
-        : this.missionSteps[this.missionSteps.length - 1];
-      return {
-        type: 'GOODBYE',
-        objective: goodbyeObj,
-        instruction: 'END_MISSION_WARMLY',
-        reason: 'HARD_LIMIT_REACHED'
-      };
-    }
-    
-    // 2. 🔄 REVERSE QUESTION HANDLING
-    // If student asked a question, HOLD current objective and tell AI to answer + bridge back
-    if (studentInputType === 'QUESTION') {
-      console.log('❓ TurnManager: Student asked question - HOLDING current objective');
-      const currentObj = this.useObjectives
-        ? this.objectives[this.currentObjectiveIndex]
-        : this.missionSteps[this.currentStepIndex];
-      
-      return {
-        type: 'ANSWER_STUDENT_THEN_BRIDGE',
-        objective: currentObj,
-        instruction: 'ANSWER_STUDENT_THEN_BRIDGE_BACK',
-        reason: 'Student asked question - park on current objective'
-      };
-    }
-    
-    // 3. ✅ NORMAL PROGRESSION
-    const nextObj = this.getNextStep();
-    
-    // Check if we've reached the end
-    if (!this.useObjectives && nextObj.key === 'goodbye') {
-      return {
-        type: 'GOODBYE',
-        objective: nextObj,
-        instruction: 'END_MISSION_WARMLY'
-      };
-    }
-    
-    if (this.useObjectives && (nextObj.type === 'termination' || nextObj.id === 'obj_goodbye')) {
-      return {
-        type: 'GOODBYE',
-        objective: nextObj,
-        instruction: 'END_MISSION_WARMLY'
-      };
-    }
-    
-    // Mark objective as asked and progress
-    const objId = this.useObjectives ? nextObj.id : nextObj.key;
-    this.markStepAsked(objId);
-    
-    return {
-      type: 'ASK_TARGET',
-      objective: nextObj,
-      instruction: 'ACK_RECAST_THEN_ASK_TARGET',
-      reason: 'Normal progression to next objective'
-    };
+  getCurrentObjective() {
+    if (this.mode !== 'objective') return null;
+    return this.objectives[this.currentObjectiveIndex] || null;
   }
-  
+
   /**
-   * Process a turn and decide next action (LEGACY - for backward compatibility)
+   * Process a turn and decide next action
    */
-  processTurnLegacy(userMessage, isQuestion = false) {
-    console.log('🎯 TurnManager: Processing turn | Student question?', isQuestion, '| Current index:', this.currentStepIndex);
+  processTurn(userMessage, isQuestion = false) {
+    this.turnCount++; // 🔥 Increment turn counter
+    
+    console.log('🎯 TurnManager: Processing turn', this.turnCount, '| Student question?', isQuestion);
     
     // Capture student name if present
     if (userMessage) {
       this.captureStudentName(userMessage);
     }
     
+    // 🔥 LAW 4: 15-TURN HARD CAP
+    if (this.turnCount >= 15) {
+      console.log('🚨 Hard cap reached (15 turns) - forcing goodbye');
+      if (this.mode === 'objective') {
+        this.currentObjectiveIndex = this.objectives.findIndex(o => o.id === 'goodbye' || o.type === 'termination');
+        if (this.currentObjectiveIndex === -1) {
+          this.currentObjectiveIndex = this.objectives.length - 1;
+        }
+        return {
+          type: 'goodbye',
+          objective: this.objectives[this.currentObjectiveIndex],
+          studentName: this.studentName,
+          userStatus: 'hardcap'
+        };
+      } else {
+        // Legacy mode
+        const goodbyeIndex = this.missionSteps.findIndex(s => s.key === 'goodbye');
+        this.currentStepIndex = goodbyeIndex >= 0 ? goodbyeIndex : this.missionSteps.length - 1;
+        return {
+          type: 'goodbye',
+          studentName: this.studentName
+        };
+      }
+    }
+    
+    // 🔥 OBJECTIVE-DRIVEN MODE
+    if (this.mode === 'objective') {
+      return this.processObjectiveTurn(userMessage, isQuestion);
+    }
+    
+    // Legacy step-based mode
+    console.log('🎯 TurnManager: Processing turn (legacy) | Student question?', isQuestion, '| Current index:', this.currentStepIndex);
     // 🔥 FIXED: Do NOT advance index here - let getNextStep() find the next unanswered step
+    // The index will update when getNextStep() finds an unasked step
     if (userMessage && userMessage.trim().length > 0 && this.lastAskedStepKey) {
       console.log('👉 TurnManager: Student replied to:', this.lastAskedStepKey);
+      // getNextStep() will find the next unasked step automatically
     }
     
     const nextStep = this.getNextStep();
     
     if (isQuestion) {
+      // Student asked a question - answer then steer to next step
       console.log('❓ TurnManager: Student question detected, will answer and steer to:', nextStep.key);
       return {
         type: 'answer_and_steer',
@@ -445,8 +376,9 @@ export class TurnManager {
       };
     }
     
+    // Normal turn - ask next step
     console.log('💬 TurnManager: Normal turn, asking step:', nextStep.key);
-    this.markStepAsked(nextStep.key);
+    this.markStepAsked(nextStep.key); // 🔥 Mark BEFORE returning
     
     return {
       type: 'ask_next',
@@ -454,12 +386,108 @@ export class TurnManager {
       studentName: this.studentName
     };
   }
+
+  /**
+   * 🔥 NEW: Process objective-driven turn
+   */
+  processObjectiveTurn(userMessage, isQuestion) {
+    const userStatus = this.getUserStatus(userMessage);
+    const currentObjective = this.getCurrentObjective();
+    
+    if (!currentObjective) {
+      console.log('🚨 No current objective - ending conversation');
+      return {
+        type: 'goodbye',
+        objective: null,
+        studentName: this.studentName,
+        userStatus: 'no_objective'
+      };
+    }
+    
+    console.log('🎯 Objective Turn:', currentObjective.id, '| User Status:', userStatus);
+    
+    // LAW 2: DETERMINISTIC FINISH - Goodbye is goodbye
+    if (currentObjective.type === 'termination' || currentObjective.id === 'goodbye') {
+      console.log('🎯 Termination objective reached → DONE');
+      return {
+        type: 'goodbye',
+        objective: currentObjective,
+        studentName: this.studentName,
+        userStatus
+      };
+    }
+    
+    // PARKING MODE: Student asked a question
+    if (userStatus === 'questioned') {
+      console.log('🎯 Student asked question → Parking mode (stay at objective)', currentObjective.id);
+      return {
+        type: 'answer_and_steer',
+        objective: currentObjective,
+        studentName: this.studentName,
+        studentQuestion: userMessage,
+        userStatus,
+        isParkingMode: true
+      };
+    }
+    
+    // ADVANCE: Student answered
+    if (userStatus === 'answered') {
+      console.log('🎯 Student answered → Mark objective complete:', currentObjective.id);
+      this.completedObjectives.push(currentObjective.id);
+      this.currentObjectiveIndex++;
+      
+      const nextObjective = this.getCurrentObjective();
+      
+      if (!nextObjective) {
+        console.log('🚨 No next objective - ending conversation');
+        return {
+          type: 'goodbye',
+          objective: null,
+          studentName: this.studentName,
+          userStatus: 'no_next_objective'
+        };
+      }
+      
+      console.log('🎯 Advanced to next objective:', nextObjective.id);
+      return {
+        type: 'next_objective',
+        objective: nextObjective,
+        previousObjective: currentObjective,
+        studentName: this.studentName,
+        userStatus
+      };
+    }
+    
+    // Fallback
+    console.log('⚠️ Unknown user status:', userStatus);
+    return {
+      type: 'continue',
+      objective: currentObjective,
+      studentName: this.studentName,
+      userStatus
+    };
+  }
   
   /**
    * Get state for debugging
    */
   getState() {
+    if (this.mode === 'objective') {
+      return {
+        mode: 'objective',
+        missionId: this.missionId,
+        missionTitle: this.missionTitle,
+        studentName: this.studentName,
+        currentObjectiveIndex: this.currentObjectiveIndex,
+        completedObjectives: [...this.completedObjectives],
+        totalObjectives: this.objectives.length,
+        turnCount: this.turnCount
+      };
+    }
+    
+    // Legacy mode
     return {
+      mode: 'step',
       missionId: this.missionId,
       missionTitle: this.missionTitle,
       studentName: this.studentName,
@@ -474,8 +502,28 @@ export class TurnManager {
    * Get full state for LLM prompt injection
    */
   getFullState() {
+    if (this.mode === 'objective') {
+      const currentObjective = this.getCurrentObjective();
+      return {
+        mode: 'objective',
+        missionId: this.missionId,
+        missionTitle: this.missionTitle,
+        studentName: this.studentName,
+        currentObjective: currentObjective,
+        currentObjectiveIndex: this.currentObjectiveIndex,
+        completedObjectives: [...this.completedObjectives],
+        totalObjectives: this.objectives.length,
+        turnCount: this.turnCount,
+        turnsRemaining: 15 - this.turnCount,
+        isGoodbye: currentObjective?.type === 'termination' || currentObjective?.id === 'goodbye',
+        allObjectives: this.objectives.map(o => ({ id: o.id, goal: o.goal }))
+      };
+    }
+    
+    // Legacy mode
     const nextStep = this.getNextStep();
     return {
+      mode: 'step',
       missionId: this.missionId,
       missionTitle: this.missionTitle,
       studentName: this.studentName,

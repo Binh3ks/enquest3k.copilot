@@ -185,19 +185,19 @@ export class NovaEngine {
     if (mode === 'story') {
       // Extract mission from weekData
       // 🔥 CRITICAL FIX: Use missionIndex (array position), NOT missionId (1-based ID)
-      // Ensure missionId is treated as a Number to prevent NaN
-      const safeIshMissionId = contextParams.missionId ? Number(contextParams.missionId) : undefined;
-      const missionIndex = contextParams.missionIndex ?? (safeIshMissionId ? safeIshMissionId - 1 : 0);
+      const missionIndex = contextParams.missionIndex ?? contextParams.missionId - 1 ?? 0;
       const missions = this.weekData.story_missions || this.weekData.storyMissions || [];
       const currentMission = missions[missionIndex];
-      console.log('🔍 NovaEngine story mode - missionId:', safeIshMissionId, '| missionIndex:', missionIndex, '| missions found:', missions.length);
       
       if (!currentMission) {
         console.error('❌ NovaEngine: Mission not found for index:', missionIndex);
       }
       
       // 🔥 CRITICAL: Pass FULL mission data (title, context, target_vocab, conversation_topics)
+      const missionId = currentMission?.mission_id || (missionIndex !== undefined ? missionIndex + 1 : 1);
+      
       options.mission = {
+        mission_id: missionId,  // 🔥 FIX: Add mission_id
         title: currentMission?.title || 'Story Practice',
         description: currentMission?.mission_context || currentMission?.description || 'Practice vocabulary through story',
         targetVocabulary: (currentMission?.target_vocab || this.extractVocabulary()).map(word => 
@@ -206,6 +206,10 @@ export class NovaEngine {
         conversation_topics: currentMission?.conversation_topics || [],
         minimum_turns: currentMission?.minimum_turns || 10
       };
+      
+      // 🔥 FIX: Pass missionId to options (for tutorPrompts)
+      options.missionId = missionId;
+      options.missionIndex = missionIndex;
       
       // 🔥 CRITICAL: Pass chat history to tutorPrompts so AI remembers context
       options.history = contextParams.chatHistory || [];

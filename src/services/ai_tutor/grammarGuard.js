@@ -38,11 +38,15 @@ const GRAMMAR_RULES = {
       'going to', 'gonna', 'wanna'
     ],
     bannedPatterns: [
-      /\b\w+ed\b/gi,  // -ed verbs (past tense)
+      // 🔥 FIX: Only block -ed VERBS, not adjectives like "red", "bed", "wed", "fed"
+      // Exclude common false positives (colors, objects, etc.)
+      /\b(?!red|bed|wed|fed|shed|led|sled|bred|sped|fled|thread|spread|read|dead|head|bread|ahead|lead|instead|tread)\w{3,}ed\b/gi,
       /\b(was|were|did|had|went|saw|found)\b/gi, // Irregular past tense
       /\b(did|didn't|don't)\s+\w+\b/gi,  // Auxiliary 'did'
       /\b(will|won't)\b/gi,
-      /\b(have|has)\s+\w+(ed|en)\b/gi,  // Present perfect
+      // 🔥 FIX: Only block PAST PARTICIPLES after have/has (eaten, broken, etc)
+      // Don't block numbers or common nouns: "have ten", "have seven", "have eleven"
+      /\b(have|has)\s+(eaten|broken|written|taken|given|spoken|chosen|driven|fallen|forgotten|hidden|risen|shaken|stolen|thrown|worn)\b/gi,
       /\b(have|has)\s+(gone|seen|done|been|had|found)\b/gi // Irregular perfect
     ]
   },

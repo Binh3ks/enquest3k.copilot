@@ -71,11 +71,19 @@ export function parseAIResponse(rawResponse, fallback = null) {
 
 /**
  * Normalize parsed response to standard structure
+ * Handles both old format (teacher_*) and new Artifact v5.0 format (ack, recast, bridge, question, hints)
  * @private
  */
 function normalizeResponse(parsed, rawResponse) {
   // 🔥 Parse hints - split phrases into individual words
-  let hintsArray = Array.isArray(parsed.suggested_hints) ? parsed.suggested_hints : [];
+  let hintsArray = [];
+  
+  // Support both old (suggested_hints) and new (hints) field names
+  if (Array.isArray(parsed.hints)) {
+    hintsArray = parsed.hints;
+  } else if (Array.isArray(parsed.suggested_hints)) {
+    hintsArray = parsed.suggested_hints;
+  }
   
   // 🔥 FIX: If hints contain phrases like "I have..." or "in my backpack", split them
   const individualWords = [];
@@ -96,14 +104,35 @@ function normalizeResponse(parsed, rawResponse) {
   
   console.log('🔄 Hints normalization:', hintsArray, '→', uniqueHints);
   
-  return {
-    ai_response: parsed.ai_response || parsed.response || parsed.content || '',
-    pedagogy_note: parsed.pedagogy_note || parsed.note || '',
-    suggested_hints: uniqueHints,
-    mission_status: parsed.mission_status || null,
-    grammar_focus: parsed.grammar_focus || null,
-    raw: rawResponse
-  };
+  // 🔥 NEW: Support Artifact v5.0 format (ack, recast, bridge, question, hints)
+  const isArtifactFormat = parsed.ack !== undefined || parsed.question !== undefined;
+  
+  if (isArtifactFormat) {
+    // New format: {ack, recast, bridge, question, hints}
+    return {
+      ack: parsed.ack || '',
+      recast: parsed.recast || '',
+      bridge: parsed.bridge || '',
+      question: parsed.question || '',
+      hints: uniqueHints,
+      mission_status: parsed.mission_status || null,
+      grammar_focus: parsed.grammar_focus || null,
+      raw: rawResponse,
+      format: 'artifact-v5'
+    };
+  } else {
+    // Old format: {teacher_ack, teacher_recast, teacher_question, suggested_hints}
+    // Also handle legacy ai_response format
+    return {
+      ai_response: parsed.ai_response || parsed.response || parsed.content || '',
+      pedagogy_note: parsed.pedagogy_note || parsed.note || '',
+      suggested_hints: uniqueHints,
+      mission_status: parsed.mission_status || null,
+      grammar_focus: parsed.grammar_focus || null,
+      raw: rawResponse,
+      format: 'legacy'
+    };
+  }
 }
 
 /**

@@ -334,9 +334,9 @@ function generateFallbackHints(stepKey, nextStepQuestion) {
 }
 
 /**
- * 🎯 MASTER ARTIFACT: Build teacher text from ACK + RECAST + QUESTION
+ * 🎯 MASTER ARTIFACT: Build teacher text from ACK + RECAST + BRIDGE + QUESTION
  */
-function buildTeacherText(ack, recast, question) {
+function buildTeacherText(ack, recast, question, bridge = '') {
   // Build combined response - SEPARATE QUESTIONS
   let combined = '';
 
@@ -348,10 +348,15 @@ function buildTeacherText(ack, recast, question) {
   // Add RECAST if exists  
   if (recast && recast !== '(none)') {
     combined += recast;
-    // Only add space if there's also a question coming
-    if (question) {
+    // Only add space if there's also a bridge or question coming
+    if (bridge || question) {
       combined += ' ';
     }
+  }
+  
+  // Add BRIDGE if exists (new in Artifact v5.0)
+  if (bridge && bridge !== '(none)') {
+    combined += bridge + ' ';
   }
 
   // Add QUESTION - ensure it ends with ONLY ONE question mark
@@ -379,12 +384,6 @@ function buildTeacherText(ack, recast, question) {
  * 🎯 MASTER ARTIFACT: Guard full AI response object
  * Handles new format: { teacher_ack, teacher_recast, question_text, suggested_hints }
  * Forces canonical question from Turn Manager
- * 
- * 🔥 CRITICAL FIX: Use expectedStep parameter instead of calling turnManager.getNextStep()
- * This prevents the "Double Skip" bug where:
- *   1. processTurn() marks step as asked
- *   2. guardResponseObject() calls getNextStep() which skips the already-marked step
- *   3. AI gets asked to show next step (n+1) instead of current (n)
  */
 export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   if (!responseObj) return responseObj;
@@ -405,35 +404,61 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     }
   }
   
-  // 🔥 ONE BRAIN: Get TurnManager and expectedStep from context
+  // 🔥 ONE BRAIN: Get TurnManager from context (REQUIRED for Story Mission)
   const turnManager = context.turnManager;
-  let expectedStep = context.expectedStep; // 🔥 NEW: Use passed-in step
   
-  if (turnManager && !expectedStep) {
-    // Fallback: Use getCurrentObjective() instead of getNextStep()
-    // getCurrentObjective() returns the CURRENT step without skipping
-    expectedStep = turnManager.getCurrentObjective();
-    console.warn('⚠️ ResponseGuard: Missing expectedStep, using getCurrentObjective (fallback)');
+  if (turnManager) {
+    // 🔥 Handle both objective and legacy modes
+    if (turnManager.mode === 'objective') {
+      // Objective-driven mode
+      const currentObjective = turnManager.getCurrentObjective();
+      
+      context.currentStepKey = currentObjective?.id;
+      context.canonicalQuestion = null; // No canonical question in objective mode
+      context.canonicalHints = currentObjective?.defaultHints || [];
+      context.studentName = turnManager.studentName;
+      
+      console.log('🔒 ResponseGuard (Objective): objective=' + context.currentStepKey + ' | goal="' + currentObjective?.goal + '"');
+    } else {
+      // Legacy step-based mode
+      const nextStep = context.isOpeningTurn 
+        ? turnManager.missionSteps[0] 
+        : turnManager.getNextStep();
+      
+      // Override with canonical question and hints from step definition
+      context.currentStepKey = nextStep?.key;
+      context.canonicalQuestion = nextStep?.question;
+      context.canonicalHints = nextStep?.hints || [];
+      context.studentName = turnManager.studentName;
+      
+      console.log('🔒 ResponseGuard (Legacy): stepKey=' + context.currentStepKey + ' | canonical="' + context.canonicalQuestion + '"');
+    }
   }
   
-  if (expectedStep) {
-    // Override with canonical question and hints from step definition
-    context.currentStepKey = expectedStep?.key || expectedStep?.id;
-    context.canonicalQuestion = expectedStep?.question || expectedStep?.goal;
-    context.canonicalHints = expectedStep?.hints || [];
-    context.studentName = turnManager?.studentName;
-    
-    console.log('🔒 ResponseGuard: stepKey=' + context.currentStepKey + ' | canonical="' + context.canonicalQuestion + '"');
-  }
+  // 🎯 ENFORCE MS. NOVA STRUCTURE - Support both old and new formats
+  let ack = parsed.ack || parsed.teacher_ack || '';
+  let recast = parsed.recast || parsed.teacher_recast || '';
+  let bridge = parsed.bridge || ''; // NEW: Artifact v5.0
+  let question = parsed.question || parsed.teacher_question || parsed.question_text || '';
   
-  // 🎯 ENFORCE MS. NOVA STRUCTURE
-  let ack = parsed.teacher_ack || '';
-  let recast = parsed.teacher_recast || '';
-  let question = parsed.teacher_question || parsed.question_text || '';
+  // Detect format type
+  const isArtifactV5 = parsed.ack !== undefined || (parsed.question !== undefined && parsed.teacher_question === undefined);
+  
+  console.log('🔍 Response format:', isArtifactV5 ? 'Artifact v5.0' : 'Legacy');
   
   // 🔥 DETECT CLOSING TURN (goodbye step)
-  const isClosingTurn = context.currentStepKey === 'goodbye' || 
-                        (turnManager && turnManager.askedStepKeys.length >= turnManager.missionSteps.length - 1);
+  let isClosingTurn = false;
+  if (turnManager) {
+    if (turnManager.mode === 'objective') {
+      const currentObjective = turnManager.getCurrentObjective();
+      isClosingTurn = context.currentStepKey === 'goodbye' || 
+                      currentObjective?.type === 'termination' ||
+                      currentObjective?.id === 'goodbye';
+    } else {
+      isClosingTurn = context.currentStepKey === 'goodbye' || 
+                      (turnManager.askedStepKeys.length >= turnManager.missionSteps.length - 1);
+    }
+  }
   
   // 🔥 OPENING TURN: No ACK/RECAST (student hasn't spoken yet)
   if (context.isOpeningTurn) {
@@ -444,159 +469,32 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     if (context.mission?.nova_greeting) {
       question = context.mission.nova_greeting;
       console.log('🎯 Opening: Using mission greeting:', context.mission.nova_greeting);
-    } else if (context.canonicalQuestion) {
+    } else if (context.canonicalQuestion && turnManager?.mode !== 'objective') {
+      // Only use canonical in legacy mode
       question = context.canonicalQuestion;
       console.warn('⚠️ mission.nova_greeting not found, using canonical question');
     }
   } else if (isClosingTurn) {
-    // Check minimum turns before closing
+    // 🎯 FIX: When "goodbye" objective reached, END IMMEDIATELY
+    // Don't check minimum_turns - objectives completed = mission done
     const turnCount = context.turnCount || Math.floor((context.chatHistory?.length || 0) / 2);
-    const minimumTurns = context.mission?.minimum_turns || 10;
-    const canClose = turnCount >= minimumTurns;
     
-    if (canClose) {
-      // 🎉 CLOSING TURN: ACK + RECAST + GOODBYE (no question)
-      console.log(`🎉 Mission complete! (${turnCount}/${minimumTurns} turns)`);
-      if (!ack || ack.trim() === '') {
-        ack = 'Wonderful!';
-      }
-      if (!recast || recast.trim() === '') {
-        recast = 'You completed all steps!';
-      }
-      question = 'Great job completing this mission!';
-    } else {
-      // ⏳ CONTINUE: Not enough turns yet
-      console.log(`⏳ Continue: ${turnCount}/${minimumTurns} turns`);
-      
-      // 🔥 Mission-specific follow-up questions
-      const missionId = context.missionId || context.mission?.mission_id || 1;
-      
-      if (!askedFollowUpsByMission.has(missionId)) {
-        askedFollowUpsByMission.set(missionId, new Set());
-      }
-      const askedSet = askedFollowUpsByMission.get(missionId);
-      
-      // ============= CONTEXT-AWARE FOLLOW-UP QUESTIONS =============
-
-      // Mission 1: First Day at School - About school life
-      const MISSION_1_FOLLOWUPS = [
-        {
-          question: 'What do you see in your classroom?',
-          hints: ['I', 'see', 'desk', 'chair', 'board', 'window'],
-          context_keywords: ['school', 'classroom', 'desk']
-        },
-        {
-          question: 'Do you like your desk?',
-          hints: ['Yes', 'I', 'like', 'my', 'desk', 'No'],
-          context_keywords: ['desk', 'chair', 'sit']
-        },
-        {
-          question: 'Is your classroom big?',
-          hints: ['Yes', 'my', 'classroom', 'is', 'big', 'small'],
-          context_keywords: ['classroom', 'room', 'space']
-        },
-        {
-          question: 'Do you play at school?',
-          hints: ['Yes', 'I', 'play', 'games', 'friends', 'recess'],
-          context_keywords: ['play', 'game', 'fun', 'friends']
-        },
-        {
-          question: 'What do you do at recess?',
-          hints: ['I', 'play', 'run', 'talk', 'eat', 'friends'],
-          context_keywords: ['recess', 'break', 'playtime']
-        },
-        {
-          question: 'Do you have books?',
-          hints: ['Yes', 'I', 'have', 'books', 'pencils', 'No'],
-          context_keywords: ['book', 'pencil', 'supplies']
-        },
-        {
-          question: 'Is your school big?',
-          hints: ['Yes', 'my', 'school', 'is', 'big', 'small'],
-          context_keywords: ['school', 'building']
-        },
-        {
-          question: 'Do you eat at school?',
-          hints: ['Yes', 'I', 'eat', 'lunch', 'snack', 'No'],
-          context_keywords: ['eat', 'lunch', 'food', 'cafeteria']
-        }
-      ];
-
-      // Mission 3: Meeting Your Teacher - About teacher and learning
-      const MISSION_3_FOLLOWUPS = [
-        {
-          question: 'Do you listen to your teacher?',
-          hints: ['Yes', 'I', 'listen', 'teacher', 'class', 'always'],
-          context_keywords: ['teacher', 'listen', 'class']
-        },
-        {
-          question: 'Does your teacher smile?',
-          hints: ['Yes', 'my', 'teacher', 'smiles', 'happy', 'No'],
-          context_keywords: ['teacher', 'happy', 'nice', 'smile']
-        },
-        {
-          question: 'Do you raise your hand?',
-          hints: ['Yes', 'I', 'raise', 'my', 'hand', 'question'],
-          context_keywords: ['hand', 'ask', 'question']
-        },
-        {
-          question: 'Is your teacher tall?',
-          hints: ['Yes', 'my', 'teacher', 'is', 'tall', 'short'],
-          context_keywords: ['teacher', 'tall', 'short', 'height']
-        },
-        {
-          question: 'Do you like to learn?',
-          hints: ['Yes', 'I', 'like', 'learn', 'new', 'things'],
-          context_keywords: ['learn', 'study', 'class', 'lesson']
-        },
-        {
-          question: 'Do you write in class?',
-          hints: ['Yes', 'I', 'write', 'notebook', 'pencil', 'paper'],
-          context_keywords: ['write', 'paper', 'notebook', 'pencil']
-        }
-      ];
-
-      const missionFollowUps = {
-        1: MISSION_1_FOLLOWUPS.map(fq => ({ q: fq.question, h: fq.hints })),
-        2: [
-          { q: "How many desks are in your classroom?", h: ["There", "are", "many", "desks", "ten", "twenty"] },
-          { q: "Where is the whiteboard?", h: ["The", "whiteboard", "is", "front", "wall", "big"] },
-          { q: "Do you have a computer in class?", h: ["Yes", "we", "have", "computer", "No", "tablets"] },
-          { q: "What is on the walls?", h: ["There", "are", "posters", "pictures", "maps", "charts"] },
-          { q: "Where do you sit?", h: ["I", "sit", "near", "window", "front", "back"] },
-          { q: "Is there a bookshelf?", h: ["Yes", "there", "is", "bookshelf", "many", "books"] }
-        ],
-        3: MISSION_3_FOLLOWUPS.map(fq => ({ q: fq.question, h: fq.hints }))
-      };
-      
-      const followUpQuestions = missionFollowUps[missionId] || missionFollowUps[1];
-      
-      const availableQuestions = followUpQuestions.filter(fq => !askedSet.has(fq.q));
-      
-      if (availableQuestions.length === 0) {
-        console.log(`🔄 All ${followUpQuestions.length} follow-ups asked for mission ${missionId}, resetting pool`);
-        askedSet.clear();
-        availableQuestions.push(...followUpQuestions);
-      }
-      
-      const randomIndex = Math.floor(Math.random() * availableQuestions.length);
-      const followUp = availableQuestions[randomIndex];
-      
-      askedSet.add(followUp.q);
-      
-      if (!ack || ack.trim() === '') {
-        ack = parsed.teacher_ack || 'Great!';
-      }
-      if (!recast || recast.trim() === '') {
-        recast = parsed.teacher_recast || 'I heard you!';
-      }
-      
-      question = followUp.q;
-      context.canonicalHints = followUp.h;
-      
-      console.log(`💬 Follow-up Q${turnCount} (Mission ${missionId}, ${askedSet.size}/${followUpQuestions.length} asked): "${question}"`);
-      console.log(`   With ACK: "${ack}" | RECAST: "${recast}"`);
+    console.log(`🎉 Mission complete! Goodbye objective reached at turn ${turnCount}`);
+    
+    // CLOSING TURN: ACK + RECAST + GOODBYE (no follow-up question)
+    if (!ack || ack.trim() === '') {
+      ack = 'Wonderful!';
     }
+    if (!recast || recast.trim() === '') {
+      recast = 'You completed all the steps!';
+    }
+    
+    // 🔥 FINAL GOODBYE MESSAGE (not a question)
+    const studentName = context.studentName || turnManager?.studentName || '';
+    question = `Great job${studentName ? ', ' + studentName : ''}! See you next time!`;
+    
+    // 🚫 FORCE END - No more follow-up questions after goodbye
+    context.shouldEndMission = true;
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION
     
@@ -621,10 +519,13 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       console.warn('⚠️ AI missing RECAST, using context-aware fallback:', recast);
     }
     
-    // Force canonical question
-    if (context.canonicalQuestion) {
+    // Force canonical question (LEGACY MODE ONLY)
+    if (context.canonicalQuestion && turnManager?.mode !== 'objective') {
       question = context.canonicalQuestion;
-      console.log('🔒 Forced canonical: stepKey=' + context.currentStepKey + ' | question="' + question + '"');
+      console.log('🔒 Forced canonical (Legacy): stepKey=' + context.currentStepKey + ' | question="' + question + '"');
+    } else if (turnManager?.mode === 'objective') {
+      // Objective mode: Let AI's question pass through
+      console.log('🎯 Objective mode: AI question preserved (natural)');
     }
   }
   
@@ -646,17 +547,33 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   }
   
   // Build final teacher text (question only if ACK/RECAST are empty)
-  const teacherText = buildTeacherText(ack, recast, question);
+  const teacherText = buildTeacherText(ack, recast, question, bridge);
   
-  // 🔥 CRITICAL: Use hints from step definition (ignore AI hints)
-  let hints = context.canonicalHints || [];
+  // 🔥 ARTIFACT v5.0: In objective mode, use AI-generated hints (not canonical)
+  let hints = [];
   
-  if (!hints || hints.length === 0) {
-    // Fallback only if step definition has no hints
-    console.warn('⚠️ Response guard: No canonical hints, using fallback');
-    hints = parsed.suggested_hints || responseObj.suggested_hints || [];
+  if (turnManager && turnManager.mode === 'objective') {
+    // NEW: Objective mode - AI generates hints matching its question
+    hints = parsed.hints || parsed.suggested_hints || [];
+    
+    if (!hints || hints.length === 0) {
+      console.warn('⚠️ Response guard (Objective): AI did not generate hints, using fallback');
+      const currentObjective = turnManager.getCurrentObjective();
+      hints = currentObjective?.defaultHints || ['I', 'am', 'my', 'is'];
+    } else {
+      console.log('✅ Using AI-generated hints (Objective mode):', hints);
+    }
   } else {
-    console.log('✅ Using canonical hints from step definition:', hints);
+    // OLD: Legacy mode - use canonical hints from step definition
+    hints = context.canonicalHints || [];
+    
+    if (!hints || hints.length === 0) {
+      // Fallback only if step definition has no hints
+      console.warn('⚠️ Response guard (Legacy): No canonical hints, using AI hints');
+      hints = parsed.hints || parsed.suggested_hints || [];
+    } else {
+      console.log('✅ Using canonical hints from step definition (Legacy mode):', hints);
+    }
   }
   
   if (Array.isArray(hints) && hints.length > 0) {
@@ -679,6 +596,7 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   console.log('🎯️ Enforced Ms. Nova structure:', {
     ack: ack || '(none)',
     recast: recast || '(none)',
+    bridge: bridge || '(none)',
     question: question,
     combined: teacherText,
     hints: hints
@@ -686,13 +604,25 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   
   console.log('🛡️ Response guard: Validated response');
   
+  // 🔥 Return both old and new formats for backward compatibility
   return {
+    // New Artifact v5.0 format
+    ack: ack,
+    recast: recast,
+    bridge: bridge,
+    question: question,
+    hints: hints,
+    
+    // Old format (for backward compatibility)
     teacher_ack: ack,
     teacher_recast: recast,
     teacher_question: question,
     question_text: question, // Legacy compatibility
     suggested_hints: hints,
-    ai_response: teacherText // Legacy field for compatibility
+    ai_response: teacherText, // Legacy field for compatibility
+    
+    // Format indicator
+    format: isArtifactV5 ? 'artifact-v5' : 'legacy'
   };
 }
 

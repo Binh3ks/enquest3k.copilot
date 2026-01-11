@@ -12,46 +12,9 @@ import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import week1RealData from '../../../data/weeks/week_01_real'; // 🔥 Import real syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
-
-/**
- * 🔥 NEW: Detect if student message is asking a question
- * Returns input type for objective-driven state machine
- */
-function detectStudentInputType(message) {
-  if (!message) return 'ANSWER';
-  
-  const msg = message.trim().toLowerCase();
-  
-  // Check for question mark
-  if (msg.includes('?')) return 'QUESTION';
-  
-  // Check for question word starters
-  const questionStarters = [
-    /^what\b/,
-    /^where\b/,
-    /^when\b/,
-    /^who\b/,
-    /^why\b/,
-    /^how\b/,
-    /^do you\b/,
-    /^are you\b/,
-    /^can you\b/,
-    /^did you\b/,
-    /^will you\b/,
-    /^have you\b/,
-    /^is your\b/,
-    /^does.*\b/
-  ];
-  
-  for (const pattern of questionStarters) {
-    if (pattern.test(msg)) {
-      return 'QUESTION';
-    }
-  }
-  
-  // Default: student is answering
-  return 'ANSWER';
-}
+import { week1Objectives } from '../../../data/syllabus/week1_objectives'; // Mission 1
+import { mission2Objectives } from '../../../data/syllabus/week1_mission2_objectives'; // Mission 2
+import { mission3Objectives } from '../../../data/syllabus/week1_mission3_objectives'; // Mission 3
 
 /**
  * Story Mission Tab - Guided story-based learning
@@ -156,13 +119,9 @@ const StoryMissionTab = () => {
       return;
     }
     
-    // 🔥 CRITICAL FIX: Force missionId to be a Number (not NaN)
-    const mId = Number(currentMission.mission_id) || (missionIndex + 1);
-    console.log('📊 Mission ID after conversion:', mId, '| Type:', typeof mId, '| Original:', currentMission.mission_id);
-    
     console.log('📋 Initializing Mission:', {
       index: missionIndex,
-      id: mId,
+      id: currentMission.mission_id,
       title: currentMission.title,
       target_vocab: currentMission.target_vocab,
       minimum_turns: currentMission.minimum_turns
@@ -170,14 +129,40 @@ const StoryMissionTab = () => {
     
     console.log('📊 Chat history length before init:', messages.length);
     console.log('🎯 Mission details:', {
-      missionId: mId,
+      missionId: currentMission.mission_id,
       title: currentMission.title,
       target_vocab: currentMission.target_vocab
     });
     
     // 🔥 ONE BRAIN: Create TurnManager ONCE (the ONLY creation point)
-    console.log('🏗️ Creating TurnManager for Mission', mId);
-    const turnManager = new TurnManager(mId, currentMission.title);
+    console.log('🏗️ Creating TurnManager for Mission', currentMission.mission_id);
+    
+    // 🔥 NEW: Get objectives for Mission 1 (objective-driven mode)
+    // 🎯 Load objectives based on mission_id
+    let objectives = null;
+    let missionVocabulary = null;
+    
+    if (currentMission.mission_id === 1) {
+      objectives = week1Objectives.objectives;
+      missionVocabulary = week1Objectives.constraints.vocabulary;
+    } else if (currentMission.mission_id === 2) {
+      objectives = mission2Objectives.objectives;
+      missionVocabulary = mission2Objectives.constraints.vocabulary;
+    } else if (currentMission.mission_id === 3) {
+      objectives = mission3Objectives.objectives;
+      missionVocabulary = mission3Objectives.constraints.vocabulary;
+    }
+    
+    console.log('🎯 Objectives for Mission', currentMission.mission_id, ':', objectives ? 'LOADED (Objective-driven)' : 'LEGACY (Step-based)');
+    
+    // Inject vocabulary into mission data for prompt builder
+    if (missionVocabulary) {
+      currentMission.vocabulary = missionVocabulary;
+    }
+    console.log('🎯 Objectives for Mission', currentMission.mission_id, ':', objectives ? 'LOADED (Objective-driven)' : 'LEGACY (Step-based)');
+    
+    // 🔥 Create TurnManager with objectives (if available)
+    const turnManager = new TurnManager(currentMission.mission_id, currentMission.title, objectives);
     registerTurnManager(turnManager); // Register in singleton registry
     
     try {
@@ -187,7 +172,7 @@ const StoryMissionTab = () => {
         userMessage: '', // Empty for opening turn
         chatHistory: [],
         context: {
-          missionId: mId,
+          missionId: currentMission.mission_id,
           missionIndex: missionIndex,
           turnCount: 1,
           minimumTurns: currentMission?.minimum_turns || 10,
@@ -206,15 +191,19 @@ const StoryMissionTab = () => {
         studentName: null,
         turnManager: turnManager,
         mission: currentMission,  // 🔥 Pass mission for greeting
-        expectedStep: turnManager.missionSteps[0], // 🔥 FIX: Pass expected step to prevent double skip
         isOpeningTurn: true
       };
       const guardedOpening = guardResponseObject(opening, guardContext, 15);
       
       // 🔥 Mark first step as asked AFTER opening message accepted
-      const firstStep = turnManager.missionSteps[0];
-      turnManager.markStepAsked(firstStep.key);
-      console.log('✅ Opening step marked as asked:', firstStep.key);
+      // Only for legacy mode - objective mode doesn't use steps
+      if (turnManager.mode === 'step') {
+        const firstStep = turnManager.missionSteps[0];
+        turnManager.markStepAsked(firstStep.key);
+        console.log('✅ Opening step marked as asked:', firstStep.key);
+      } else {
+        console.log('✅ Objective mode: No step marking needed');
+      }
       
       const openingLine = guardedOpening.ai_response || 'Hello! I am Ms. Nova. What is your name?';
       
@@ -330,10 +319,6 @@ const StoryMissionTab = () => {
         userMessage: userMessage.slice(0, 30) + '...'
       });
       
-      // 🔥 NEW: Detect if student is asking a question (for objective-driven state machine)
-      const studentInputType = detectStudentInputType(userMessage);
-      console.log('🎯 Student input type detected:', studentInputType);
-      
       // Get week data for context
       const weekData = getCurrentWeekData(currentWeek || 'week-1');
       
@@ -347,19 +332,6 @@ const StoryMissionTab = () => {
       
       // 🔥 STEP 4: Get vocab focus prompt for weak words
       const vocabFocusPrompt = getVocabFocusPrompt();
-      
-      // 🔥 NEW: Get TurnManager for this mission and process turn with state machine
-      const turnManager = getTurnManager(currentMission.mission_id);
-      const turnDecision = turnManager?.processTurn ? turnManager.processTurn(studentInputType) : null;
-      
-      if (turnDecision) {
-        console.log('📊 Turn decision from state machine:', {
-          type: turnDecision.type,
-          instruction: turnDecision.instruction,
-          currentObjective: turnDecision.objective,
-          reason: turnDecision.reason
-        });
-      }
       
       console.log(`📊 Learner Profile: ${learnerStyle} | Scaffolding: ${adaptiveScaffolding} | Struggling: ${strugglingTurns}`);
       console.log(`📚 Vocab Mastery:`, Object.keys(vocabMastery).length, 'words tracked');
@@ -390,10 +362,7 @@ const StoryMissionTab = () => {
           realSyllabusData,
           studentName: studentName || null,  // 🔥 NEW: Pass student name to AI
           mission: currentMission,           // 🔥 Pass mission object
-          turnManager: getTurnManager(currentMission.mission_id), // 🔥 CRITICAL: Pass TurnManager inside context
-          studentInputType,                  // 🔥 NEW: Pass detected input type
-          turnDecision,                      // 🔥 NEW: Pass state machine decision (instruction)
-          currentObjective: turnDecision?.objective  // 🔥 NEW: Pass current learning objective
+          turnManager: getTurnManager(currentMission.mission_id) // 🔥 CRITICAL: Pass TurnManager inside context
         }
       });
 
@@ -408,13 +377,9 @@ const StoryMissionTab = () => {
         studentName: studentName || null,
         turnManager: getTurnManager(currentMission.mission_id),  // 🔥 Get registered TurnManager
         mission: currentMission,  // 🔥 Pass mission object
-        expectedStep: turnDecision?.objective,  // 🔥 FIX: Pass expected step from state machine decision
         isOpeningTurn: false,
         turnCount: currentTurnCount,
-        chatHistory: [...messages, userMsg],
-        studentInputType,        // 🔥 NEW: Pass input type
-        turnDecision,            // 🔥 NEW: Pass state machine decision
-        instruction: turnDecision?.instruction  // 🔥 NEW: Pass instruction for AI behavior
+        chatHistory: [...messages, userMsg]
       };
       
       const guardedResponse = guardResponseObject(aiResponse, guardContext, 15);
@@ -427,8 +392,19 @@ const StoryMissionTab = () => {
 
       // 🔥 CRITICAL: Check turn count before allowing mission close
       const missionMinTurns = currentMission?.minimum_turns || 10;
-      const allStepsAsked = getTurnManager(currentMission.mission_id)?.askedStepKeys.length >= 
-                            getTurnManager(currentMission.mission_id)?.missionSteps.length - 1;
+      const tm = getTurnManager(currentMission.mission_id);
+      
+      let allStepsAsked = false;
+      if (tm) {
+        if (tm.mode === 'objective') {
+          // Objective mode: Check if at goodbye objective
+          const currentObj = tm.getCurrentObjective();
+          allStepsAsked = currentObj?.type === 'termination' || currentObj?.id === 'goodbye';
+        } else {
+          // Legacy mode: Check steps
+          allStepsAsked = tm.askedStepKeys.length >= tm.missionSteps.length - 1;
+        }
+      }
       
       console.log('🎯 Turn Count Analysis:', {
         currentTurn: currentTurnCount,
@@ -445,11 +421,35 @@ const StoryMissionTab = () => {
       }
 
       // Extract text from guarded response object (support multiple formats)
-      const responseText = guardedResponse.ai_response || guardedResponse.response || guardedResponse;
+      // 🔥 Support Artifact v5.0 format: {ack, recast, bridge, question, hints}
+      let responseText = '';
+      
+      if (guardedResponse.format === 'artifact-v5') {
+        // NEW: Artifact v5.0 format
+        // Combine: ack + recast + bridge + question
+        const parts = [];
+        if (guardedResponse.ack) parts.push(guardedResponse.ack);
+        if (guardedResponse.recast) parts.push(guardedResponse.recast);
+        if (guardedResponse.bridge) parts.push(guardedResponse.bridge);
+        if (guardedResponse.question) parts.push(guardedResponse.question);
+        responseText = parts.join(' ');
+        
+        console.log('🎯 Artifact v5.0 Response:', {
+          ack: guardedResponse.ack,
+          recast: guardedResponse.recast,
+          bridge: guardedResponse.bridge,
+          question: guardedResponse.question,
+          combined: responseText
+        });
+      } else {
+        // OLD: Legacy format
+        responseText = guardedResponse.ai_response || guardedResponse.response || guardedResponse;
+      }
       
       // 🔥 CRITICAL: Set hints from guarded response (ONE BRAIN - hints come from same LLM call)
-      if (guardedResponse.suggested_hints && guardedResponse.suggested_hints.length > 0) {
-        const scrambledHints = [...guardedResponse.suggested_hints].sort(() => Math.random() - 0.5);
+      const hintsToUse = guardedResponse.hints || guardedResponse.suggested_hints || [];
+      if (hintsToUse.length > 0) {
+        const scrambledHints = [...hintsToUse].sort(() => Math.random() - 0.5);
         setHints(scrambledHints);
         setShowHints(true);
         console.log('💡 Canonical hints:', scrambledHints);
@@ -494,34 +494,46 @@ const StoryMissionTab = () => {
         });
       }
 
-      // 🔥 Check if this is a closing turn (no question mark)
+      // 🔥 Check if this is a closing turn (only if objective type is "termination")
+      // ❌ DON'T hide hints just because no question - could be AI error/fallback
       const hasQuestion = responseText.includes('?');
+      
+      // Get current objective from TurnManager
+      const turnManager = getTurnManager(currentMission.mission_id);
+      const currentObjective = turnManager?.getCurrentObjective();
+      const isTerminationObjective = currentObjective?.type === 'termination';
       
       if (hasQuestion) {
         setShowHints(true);
-      } else {
-        // Closing turn - no hints needed
+      } else if (isTerminationObjective) {
+        // Only hide hints if this is the final goodbye objective
         setShowHints(false);
-        console.log('🎯 Closing turn detected - hiding hints');
+        console.log('🎯 Termination objective - hiding hints');
+      } else {
+        // ⚠️ No question but not termination - keep showing hints (AI may recover)
+        setShowHints(true);
+        console.log('⚠️ No question in response but not closing turn - keeping hints visible');
       }
 
-      // 🔥 Check for mission completion: No question mark = closing statement
+      // 🔥 Check for mission completion
       const minimumTurns = currentMission?.minimum_turns || 10;
       const maximumTurns = currentMission?.maximum_turns || 15;
-      const isClosingTurn = !hasQuestion;
-      const isAtMinimumTurns = currentTurnCount >= minimumTurns; // Reached minimum
-      const isPastMaximum = currentTurnCount >= maximumTurns; // Exceeded maximum
+      const isClosingTurn = !hasQuestion && isTerminationObjective; // Only close if termination objective
+      const isAtMinimumTurns = currentTurnCount >= minimumTurns;
+      const isPastMaximum = currentTurnCount >= maximumTurns;
       
       console.log(`🎯 Turn ${currentTurnCount}/${minimumTurns} (max ${maximumTurns}) Analysis:`, {
         hasQuestion: responseText.includes('?'),
         isClosingTurn,
+        isTerminationObjective,
+        currentObjectiveId: currentObjective?.id,
         isAtMinimumTurns,
         isPastMaximum,
         responsePreview: responseText.slice(0, 80)
       });
       
       // Complete mission if:
-      // 1. AI gives closing statement (no question) AND reached minimum turns, OR
+      // 1. AI gives closing statement (no question) AND reached termination objective, OR
       // 2. Exceeded maximum turns (force close)
       if ((isClosingTurn && isAtMinimumTurns) || isPastMaximum) {
         // Closing statement detected - mission complete
@@ -728,7 +740,37 @@ const StoryMissionTab = () => {
                   <span className="text-sm font-medium text-gray-700">
                     Turn {turnCount}/{currentMission?.minimum_turns || 10}
                   </span>
+                  
+                  {/* 🔥 NEW: 15-turn warning for objective mode */}
+                  {(() => {
+                    const tm = getTurnManager(currentMission?.mission_id);
+                    if (tm?.mode === 'objective' && tm.turnCount >= 12 && tm.turnCount < 15) {
+                      return (
+                        <span className="ml-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded-full animate-pulse">
+                          ⏰ Wrapping up soon
+                        </span>
+                      );
+                    }
+                    return null;
+                  })()}
                 </div>
+                
+                {/* 🔥 NEW: Objective progress indicator */}
+                {(() => {
+                  const tm = getTurnManager(currentMission?.mission_id);
+                  if (tm?.mode === 'objective') {
+                    const progress = `${tm.completedObjectives.length}/${tm.objectives.length}`;
+                    return (
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle2 size={16} className="text-blue-600" />
+                        <span className="text-sm font-medium text-blue-700">
+                          {progress} objectives
+                        </span>
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
                 
                 {missionStatus === 'completed' && (
                   <div className="flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">

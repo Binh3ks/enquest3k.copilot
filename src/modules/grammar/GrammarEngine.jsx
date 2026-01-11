@@ -3,41 +3,16 @@ import { Hash, Check, AlertCircle, ArrowRight, HelpCircle, Edit3, BookOpen, Chev
 import { analyzeAnswer } from '../../utils/smartCheck';
 import InstructionBar from '../../components/common/InstructionBar';
 import { speakText } from '../../utils/AudioHelper';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
-import { useParams } from 'react-router-dom';
 
 const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const { weekId } = useParams();
-  
-  // Load saved state from localStorage
-  const savedState = loadStationState(weekId, 'grammar');
-  const [completedQuestions, setCompletedQuestions] = useState(savedState?.completed || []);
-  const [currentIndex, setCurrentIndex] = useState(savedState?.currentIndex || 0);
+  const [completedQuestions, setCompletedQuestions] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [feedback, setFeedback] = useState({});
   const [showHint, setShowHint] = useState(false);
   const [inputVal, setInputVal] = useState(""); 
   const [showLesson, setShowLesson] = useState(true);
   const inputRef = useRef(null);
 
-  // Save state whenever it changes
-  useEffect(() => {
-    if (completedQuestions.length > 0 || currentIndex > 0) {
-      saveStationState(weekId, 'grammar', {
-        completed: completedQuestions,
-        currentIndex: currentIndex
-      });
-    }
-  }, [completedQuestions, currentIndex, weekId]);
-
-  // Report progress based on completed questions
-  useEffect(() => {
-    if (data?.exercises && completedQuestions.length > 0 && onReportProgress) {
-      const progress = Math.round((completedQuestions.length / data.exercises.length) * 100);
-      onReportProgress(progress);
-    }
-  }, [completedQuestions, data?.exercises, onReportProgress]);
-
-  // Move useEffect BEFORE the early return
   useEffect(() => { if (inputRef.current) inputRef.current.focus(); }, [currentIndex]);
 
   if (!data || !data.exercises) return <div className="p-8 text-center">Loading grammar...</div>;

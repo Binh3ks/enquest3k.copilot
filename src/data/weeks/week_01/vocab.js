@@ -8,7 +8,8 @@ export default {
       definition_en: "A person who is learning at a school or university.",
       example: "I am a student at Greenwood School.",
       collocation: "good student",
-      image_url: "/images/week1/student.jpg"
+      image_url: "/images/week1/student.jpg",
+      audio_word: "/audio/week1/vocab_student.mp3"
     },
     {
       id: 2,
@@ -18,7 +19,8 @@ export default {
       definition_en: "A person who teaches students in a school.",
       example: "My teacher is very kind and helpful.",
       collocation: "English teacher",
-      image_url: "/images/week1/teacher.jpg"
+      image_url: "/images/week1/teacher.jpg",
+      audio_word: "/audio/week1/vocab_teacher.mp3"
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ export default {
       definition_en: "A place where children go to learn.",
       example: "I go to school every day from Monday to Friday.",
       collocation: "elementary school",
-      image_url: "/images/week1/school.jpg"
+      image_url: "/images/week1/school.jpg",
+      audio_word: "/audio/week1/vocab_school.mp3"
     },
     {
       id: 4,
@@ -38,7 +41,8 @@ export default {
       definition_en: "A room where students have lessons.",
       example: "Our classroom has twenty desks and a big whiteboard.",
       collocation: "big classroom",
-      image_url: "/images/week1/classroom.jpg"
+      image_url: "/images/week1/classroom.jpg",
+      audio_word: "/audio/week1/vocab_classroom.mp3"
     },
     {
       id: 5,
@@ -48,7 +52,8 @@ export default {
       definition_en: "A bag that you carry on your back to hold books and supplies.",
       example: "I put my books and notebooks in my backpack.",
       collocation: "heavy backpack",
-      image_url: "/images/week1/backpack.jpg"
+      image_url: "/images/week1/backpack.jpg",
+      audio_word: "/audio/week1/vocab_backpack.mp3"
     },
     {
       id: 6,
@@ -58,7 +63,8 @@ export default {
       definition_en: "A set of printed pages that you read.",
       example: "I love reading books in the library.",
       collocation: "read a book",
-      image_url: "/images/week1/book.jpg"
+      image_url: "/images/week1/book.jpg",
+      audio_word: "/audio/week1/vocab_book.mp3"
     },
     {
       id: 7,
@@ -68,7 +74,8 @@ export default {
       definition_en: "A book with empty pages where you write notes.",
       example: "I write my homework in my notebook.",
       collocation: "new notebook",
-      image_url: "/images/week1/notebook.jpg"
+      image_url: "/images/week1/notebook.jpg",
+      audio_word: "/audio/week1/vocab_notebook.mp3"
     },
     {
       id: 8,
@@ -78,7 +85,8 @@ export default {
       definition_en: "A place where you can borrow and read books.",
       example: "I go to the library after school to read books.",
       collocation: "school library",
-      image_url: "/images/week1/library.jpg"
+      image_url: "/images/week1/library.jpg",
+      audio_word: "/audio/week1/vocab_library.mp3"
     },
     {
       id: 9,
@@ -88,7 +96,8 @@ export default {
       definition_en: "A person who studies science and does experiments.",
       example: "A scientist uses tools to study the world.",
       collocation: "famous scientist",
-      image_url: "/images/week1/scientist.jpg"
+      image_url: "/images/week1/scientist.jpg",
+      audio_word: "/audio/week1/vocab_scientist.mp3"
     },
     {
       id: 10,
@@ -98,7 +107,8 @@ export default {
       definition_en: "What someone or something is called.",
       example: "My name is Alex.",
       collocation: "first name",
-      image_url: "/images/week1/name.jpg"
+      image_url: "/images/week1/name.jpg",
+      audio_word: "/audio/week1/vocab_name.mp3"
     }
   ]
 };

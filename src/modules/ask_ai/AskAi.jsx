@@ -10,7 +10,7 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const [feedback, setFeedback] = useState(null);
   const [history, setHistory] = useState([]);
   const [showHint, setShowHint] = useState(false);
-  
+  const [completedPrompts, setCompletedPrompts] = useState(new Set());
   const [wrongCount, setWrongCount] = useState(0);
 
   if (!data || !data.prompts) return <div>Loading AI...</div>;
@@ -65,8 +65,14 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
         const newHistory = [...history, { q: currentPrompt.context_en, a: inputVal }];
         setHistory(newHistory);
         
+        // Track completion persistently
+        const newCompleted = new Set(completedPrompts);
+        newCompleted.add(currentPromptIdx);
+        setCompletedPrompts(newCompleted);
+        
         if (onReportProgress) {
-            onReportProgress(Math.round((newHistory.length / data.prompts.length) * 100));
+            const percent = Math.round((newCompleted.size / data.prompts.length) * 100);
+            onReportProgress(percent);
         }
     } else {
         setWrongCount(prev => prev + 1);

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Volume2, CheckCircle, XCircle, Globe, Keyboard, LayoutList, Type, Info, AlertTriangle, ArrowRight } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 
 const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Dictation...</div>;
-
   const [level, setLevel] = useState(1);
   const [inputs, setInputs] = useState({});
   const [feedback, setFeedback] = useState({});
-  const [completedIds, setCompletedIds] = useState([]); // Track completed sentences
+  const [completedIds, setCompletedIds] = useState([]);
+
+  if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Dictation...</div>;
 
   const levels = [ 
      {l: 1, icon: LayoutList, label: 'Level 1', desc_en: "Unscramble words", desc_vi: "Sắp xếp lại câu (Dễ)"}, 
@@ -52,8 +52,8 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
     const msg = getMessage(result);
     setFeedback({ ...feedback, [id]: { ...result, message: msg } });
 
-    // REPORT PROGRESS
-    if (result.isCorrect) {
+    // REPORT PROGRESS - Check for both isCorrect and status === 'perfect'
+    if (result.isCorrect || result.status === 'perfect') {
         if (!completedIds.includes(id)) {
             const newCompleted = [...completedIds, id];
             setCompletedIds(newCompleted);
@@ -99,9 +99,17 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
           <div key={s.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
            <div className="flex justify-between items-center mb-3">
                <span className={`px-2 py-1 rounded bg-${themeColor}-100 text-${themeColor}-700 text-xs font-black`}>#{idx+1}</span>
-               <button onClick={() => speakText(s.text, s.audio_url)} className={`p-3 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-transform shadow-lg`}>
-                 <Volume2 className="w-5 h-5" />
-               </button>
+               <div className="flex items-center gap-2">
+                 {completedIds.includes(s.id) && (
+                   <div className="flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">
+                     <CheckCircle className="w-3 h-3" />
+                     <span>Done</span>
+                   </div>
+                 )}
+                 <button onClick={() => speakText(s.text, s.audio_url)} className={`p-3 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-transform shadow-lg`}>
+                   <Volume2 className="w-5 h-5" />
+                 </button>
+               </div>
            </div>
 
            <div className="space-y-3">

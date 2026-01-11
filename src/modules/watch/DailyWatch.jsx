@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
+import { useParams } from 'react-router-dom';
 import { Play, CheckCircle, Clock, X, AlertCircle } from 'lucide-react';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 // --- COMPONENT CON: VideoItem (BẤT TỬ TRƯỚC RE-RENDER) ---
 const VideoItem = memo(({ video, percent, onClick }) => {
@@ -29,21 +31,36 @@ const VideoItem = memo(({ video, percent, onClick }) => {
 });
 
 const DailyWatch = ({ data, onReportProgress }) => {
+  const { weekId } = useParams();
   const [activeVideo, setActiveVideo] = useState(null); 
   const [playerState, setPlayerState] = useState(-1);
   const [watchData, setWatchData] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('daily_watch_seconds')) || {}; } catch(e) { return {}; }
+    const saved = loadStationState(weekId, 'daily_watch');
+    return saved?.watchData || {};
   });
   const [realDuration, setRealDuration] = useState(0);
 
   const playerRef = useRef(null);
   const timerRef = useRef(null);
 
-  // Sync Progress & LocalStorage
+  // Report progress when watchData changes
   useEffect(() => {
-    if (data?.videos) {
-      const saved = JSON.stringify(watchData);
-      localStorage.setItem('daily_watch_seconds', saved);
+    if (onReportProgress && data?.videos && data.videos.length > 0) {
+      let completedCount = 0;
+      data.videos.forEach(v => {
+        const sec = watchData[v.id] || 0;
+        const percent = v.duration_sec ? Math.min(Math.round((sec / v.duration_sec) * 100), 100) : 0;
+        if (percent >= 90) completedCount++;
+      });
+      const progress = Math.round((completedCount / data.videos.length) * 100);
+      onReportProgress(progress);
+    }
+  }, [watchData, data?.videos, onReportProgress]);
+
+  // Save to localStorage and report progress
+  useEffect(() => {
+    if (weekId && data?.videos && Object.keys(watchData).length > 0) {
+      saveStationState(weekId, 'daily_watch', { watchData });
       
       let completedCount = 0;
       data.videos.forEach(v => {
@@ -51,9 +68,10 @@ const DailyWatch = ({ data, onReportProgress }) => {
         const total = v.sim_duration || 300;
         if ((sec / total) >= 0.9) completedCount++;
       });
-      onReportProgress?.(Math.round((completedCount / data.videos.length) * 100));
+      const percent = Math.round((completedCount / data.videos.length) * 100);
+      onReportProgress?.(percent);
     }
-  }, [watchData, data]);
+  }, [watchData, data, weekId, onReportProgress]);
 
   const startTimer = (id) => {
     if (timerRef.current) clearInterval(timerRef.current);

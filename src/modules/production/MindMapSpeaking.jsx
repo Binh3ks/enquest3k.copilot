@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Mic, Volume2, CheckCircle, Brain, ArrowLeft, Sparkles, Volume1, Edit2, AlertCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
+  const { weekId } = useParams();
   
   // ================= DEBUGGING LOG =================
   console.log("--- MindMapSpeaking Component Received Data ---");
@@ -30,6 +33,30 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const [feedback, setFeedback] = useState({});
   const [isListening, setIsListening] = useState(null);
   const [editMode, setEditMode] = useState({});
+  const [completedBranches, setCompletedBranches] = useState(() => {
+    const saved = loadStationState(weekId, 'mindmap');
+    return saved?.completed ? new Set(saved.completed) : new Set();
+  });
+
+  // Save to localStorage
+  useEffect(() => {
+    if (weekId && completedBranches.size > 0) {
+      saveStationState(weekId, 'mindmap', { completed: [...completedBranches] });
+    }
+  }, [completedBranches, weekId]);
+
+  // Report progress to backend
+  useEffect(() => {
+    if (onReportProgress && data?.centerStems && data?.branchLabels) {
+      const totalBranches = data.centerStems.reduce((sum, stem) => {
+        return sum + (data.branchLabels[stem] || []).length;
+      }, 0);
+      if (totalBranches > 0) {
+        const percent = Math.round((completedBranches.size / totalBranches) * 100);
+        onReportProgress(percent);
+      }
+    }
+  }, [completedBranches.size, data?.centerStems, data?.branchLabels, onReportProgress]);
 
   // Get audio URLs from injected data (if available)
   const centerStemAudio = data.centerStemAudio || [];
@@ -86,8 +113,21 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     
     if (result.isCorrect) {
       speakText(isVi ? "Đúng rồi!" : "Correct!");
-      const doneCount = Object.values(feedback).filter(f => f.isCorrect).length + 1;
-      onReportProgress?.(Math.round((doneCount / branches.length) * 100));
+      
+      // Create unique key combining structure and branch
+      const uniqueKey = `${selectedStruct.id}_${branchId}`;
+      const newCompleted = new Set(completedBranches);
+      newCompleted.add(uniqueKey);
+      setCompletedBranches(newCompleted);
+      
+      // Calculate total progress across ALL structures
+      const totalBranches = structures.reduce((sum, s) => {
+        const branchCount = (data.branchLabels[s.text] || []).length;
+        return sum + branchCount;
+      }, 0);
+      const percent = Math.round((newCompleted.size / totalBranches) * 100);
+      onReportProgress?.(percent);
+      
       setEditMode(prev => ({ ...prev, [branchId]: false }));
     } else {
       speakText(isVi ? "Hãy thử lại" : "Try again");
@@ -113,7 +153,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
               setSelectedStruct(s); 
               setView('mindmap'); 
               setBranchInputs({});
-              setFeedback({});
+              // Don't reset feedback - preserve completion state
               setEditMode({});
               speakText(s.text, s.audioUrl); 
             }}
@@ -163,7 +203,8 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
       </div>
 
       {branches.map(b => {
-        const isDone = feedback[b.id]?.isCorrect;
+        const uniqueKey = `${selectedStruct.id}_${b.id}`;
+        const isDone = completedBranches.has(uniqueKey) || feedback[b.id]?.isCorrect;
         const hasError = feedback[b.id] && !feedback[b.id]?.isCorrect;
         const isEditing = editMode[b.id];
         const hasInput = branchInputs[b.id];

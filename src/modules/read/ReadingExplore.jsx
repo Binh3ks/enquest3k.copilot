@@ -13,8 +13,8 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   const [qInputs, setQInputs] = useState({});
   const [qFeedback, setQFeedback] = useState({});
   const [showHint, setShowHint] = useState({});
-  const [qAttempts, setQAttempts] = useState({}); // Track attempts per question
-  const [showAnswer, setShowAnswer] = useState({}); // Show correct answer after 3 attempts
+  const [qAttempts, setQAttempts] = useState({});
+  const [showAnswer, setShowAnswer] = useState({});
   const textareaRef = useRef(null);
 
   const isComplete = sentences.length > 0 && currentIdx >= sentences.length;
@@ -35,10 +35,6 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       if(textareaRef.current) textareaRef.current.focus();
     }
   }, [data]);
-
-  useEffect(() => {
-      if (isComplete && onReportProgress) { onReportProgress(100); }
-  }, [isComplete, onReportProgress]);
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Module...</div>;
   if (sentences.length === 0) return <div className="p-10 text-center">Initializing...</div>;

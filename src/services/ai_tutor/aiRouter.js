@@ -782,35 +782,6 @@ export async function sendToAI({
 // GROQ PROVIDER
 // ============================================
 
-/**
- * Sanitize messages array before sending to Groq
- * Removes empty content, null messages, invalid roles
- * Ensures system message is always first
- */
-function sanitizeMessages(messages) {
-  // Filter out invalid messages
-  const cleanMessages = messages.filter(m => {
-    if (!m) return false;
-    if (typeof m.content !== 'string') return false;
-    if (m.content.trim() === '') return false;
-    if (!['user', 'assistant', 'system'].includes(m.role)) return false;
-    return true;
-  });
-  
-  console.log(`🧹 Sanitized messages: ${messages.length} → ${cleanMessages.length}`, {
-    originalCount: messages.length,
-    cleanCount: cleanMessages.length,
-    removedCount: messages.length - cleanMessages.length,
-    sampleMessages: cleanMessages.slice(0, 2).map(m => ({
-      role: m.role,
-      contentLength: m.content?.length || 0,
-      contentPreview: m.content?.substring(0, 50) + '...'
-    }))
-  });
-  
-  return cleanMessages;
-}
-
 async function callGroq(messages, systemPrompt, options = {}) {
   if (!PROVIDERS.groq.enabled) {
     throw new Error('Groq API key not configured');
@@ -821,35 +792,20 @@ async function callGroq(messages, systemPrompt, options = {}) {
   const startTime = Date.now();
   
   try {
-    // 🔥 CRITICAL: Sanitize messages before sending
-    const cleanMessages = sanitizeMessages(messages);
-    
-    // Ensure system message is first and valid
-    const systemMsg = systemPrompt && systemPrompt.trim() 
-      ? { role: 'system', content: systemPrompt.trim() }
-      : null;
-    
-    // Build final messages array with system first
-    const finalMessages = [];
-    if (systemMsg) {
-      finalMessages.push(systemMsg);
-    }
-    finalMessages.push(...cleanMessages);
-    
-    console.log(`✅ Groq request prepared:`, {
-      totalMessages: finalMessages.length,
-      systemMessagePresent: !!systemMsg,
-      firstMessageRole: finalMessages[0]?.role,
-      messageRoles: finalMessages.map(m => m.role).join(', ')
-    });
-    
-    const response = await axios.post(GROQ_ENDPOINT, {
+    // 🔥 CRITICAL FIX: llama-3.3-70b-versatile does NOT support response_format
+    // Let the model return JSON naturally (prompts already instruct JSON format)
+    const requestBody = {
       model: PROVIDERS.groq.model,
-      messages: finalMessages,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        ...messages
+      ],
       max_tokens: options.maxTokens || PROVIDERS.groq.maxTokens,
-      temperature: options.temperature || PROVIDERS.groq.temperature,
-      response_format: { type: 'json_object' }
-    }, {
+      temperature: options.temperature || PROVIDERS.groq.temperature
+      // ❌ REMOVED: response_format - Not supported by llama-3.3-70b-versatile
+    };
+    
+    const response = await axios.post(GROQ_ENDPOINT, requestBody, {
       headers: {
         'Authorization': `Bearer ${GROQ_API_KEY}`,
         'Content-Type': 'application/json'
@@ -871,6 +827,29 @@ async function callGroq(messages, systemPrompt, options = {}) {
     }
     
     console.error(`❌ Groq error in ${elapsed}ms:`, error.response?.status, error.message);
+    
+    // 🔥 DEBUG: Log request details for 400 errors
+    if (error.response?.status === 400) {
+      // Recreate requestBody for debugging (without response_format)
+      const requestBody = {
+        model: PROVIDERS.groq.model,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          ...messages
+        ],
+        max_tokens: options.maxTokens || PROVIDERS.groq.maxTokens,
+        temperature: options.temperature || PROVIDERS.groq.temperature
+        // response_format removed - not supported by this model
+      };
+      
+      console.error('🔍 Groq 400 Debug:', {
+        model: requestBody.model,
+        messagesCount: requestBody.messages?.length,
+        systemPromptLength: requestBody.messages?.[0]?.content?.length,
+        hasResponseFormat: false, // Fixed: Removed unsupported parameter
+        errorData: error.response?.data
+      });
+    }
     
     throw error;
   }

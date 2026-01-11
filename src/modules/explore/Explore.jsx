@@ -1,16 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, Globe, HelpCircle, CheckCircle, XCircle, AlertTriangle, Lightbulb, ArrowRight, Edit3, Sparkles } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+  const { weekId } = useParams();
   const [inputs, setInputs] = useState({});
   const [feedback, setFeedback] = useState({});
   const [showHint, setShowHint] = useState({}); 
   const [showModel, setShowModel] = useState(false);
   const [attempts, setAttempts] = useState({}); // Track attempts per question
   const [showAnswer, setShowAnswer] = useState({}); // Show correct answer after 3 attempts
-  const [completedIds, setCompletedIds] = useState([]);
+  const [completedIds, setCompletedIds] = useState(() => {
+    const saved = loadStationState(weekId, 'explore');
+    return saved?.completed || [];
+  });
+
+  // Save to localStorage
+  useEffect(() => {
+    if (weekId && completedIds.length > 0) {
+      saveStationState(weekId, 'explore', { completed: completedIds });
+    }
+  }, [completedIds, weekId]);
+
+  // Report progress to backend
+  useEffect(() => {
+    if (onReportProgress && data?.check_questions) {
+      const total = data.check_questions.length;
+      const completed = completedIds.length;
+      if (total > 0) {
+        const percent = Math.round((completed / total) * 100);
+        onReportProgress(percent);
+      }
+    }
+  }, [completedIds.length, data?.check_questions?.length, onReportProgress]);
 
   // Early return AFTER hooks
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Explore...</div>;

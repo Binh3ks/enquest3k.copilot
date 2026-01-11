@@ -4,12 +4,12 @@ import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 
 const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Logic Lab...</div>;
-
   const [inputs, setInputs] = useState({});
   const [feedback, setFeedback] = useState({});
   const [showHint, setShowHint] = useState({});
-  const [completedIds, setCompletedIds] = useState([]); 
+  const [completedIds, setCompletedIds] = useState([]);
+
+  if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Logic Lab...</div>;
 
   const getMessage = (res) => {
     return res.message || "";

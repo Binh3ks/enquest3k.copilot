@@ -1,17 +1,46 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { Mic, Play, Eye, EyeOff, Volume2, Globe, StopCircle, RefreshCw } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
 
 const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  if (!data || !data.script) return <div>Loading Script...</div>;
-
+  const { weekId } = useParams();
+  
   const [hideText, setHideText] = useState(false);
   const [activeSentence, setActiveSentence] = useState(null);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [audioUrl, setAudioUrl] = useState(null);
+  const [hasRecorded, setHasRecorded] = useState(() => {
+    const saved = loadStationState(weekId, 'shadowing');
+    return saved?.recorded || false;
+  });
   const mediaRecorderRef = useRef(null);
   const chunksRef = useRef([]);
+
+  // Save to localStorage
+  useEffect(() => {
+    if (weekId && hasRecorded) {
+      saveStationState(weekId, 'shadowing', { recorded: hasRecorded });
+    }
+  }, [hasRecorded, weekId]);
+
+  // Report progress to backend
+  useEffect(() => {
+    if (onReportProgress && hasRecorded) {
+      onReportProgress(100);
+    }
+  }, [hasRecorded, onReportProgress]);
+
+  // Report initial progress on mount
+  useEffect(() => {
+    if (onReportProgress && hasRecorded) {
+      onReportProgress(100);
+    }
+  }, []);
+
+  if (!data || !data.script) return <div>Loading Script...</div>;
 
   const handlePlayOne = (text, url, id) => {
     setIsPlayingAll(false);
@@ -57,6 +86,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
           const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
           const url = URL.createObjectURL(blob);
           setAudioUrl(url);
+          setHasRecorded(true);
           
           // REPORT PROGRESS 100% WHEN RECORDING IS DONE
           if (onReportProgress) onReportProgress(100);
