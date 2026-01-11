@@ -8,7 +8,8 @@ export default {
       definition_en: "What you are called.",
       example: "My name is Alex.",
       collocation: "my name",
-      image_url: "/images/week1_easy/name.jpg"
+      image_url: "/images/week1_easy/name.jpg",
+      audio_word: "/audio/week1_easy/vocab_name.mp3"
     },
     {
       id: 2,
@@ -18,7 +19,8 @@ export default {
       definition_en: "A person you like.",
       example: "My friend is nice.",
       collocation: "good friend",
-      image_url: "/images/week1_easy/friend.jpg"
+      image_url: "/images/week1_easy/friend.jpg",
+      audio_word: "/audio/week1_easy/vocab_friend.mp3"
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ export default {
       definition_en: "A table for studying.",
       example: "I have a desk.",
       collocation: "my desk",
-      image_url: "/images/week1_easy/desk.jpg"
+      image_url: "/images/week1_easy/desk.jpg",
+      audio_word: "/audio/week1_easy/vocab_desk.mp3"
     },
     {
       id: 4,
@@ -38,7 +41,8 @@ export default {
       definition_en: "You sit on it.",
       example: "This is my chair.",
       collocation: "red chair",
-      image_url: "/images/week1_easy/chair.jpg"
+      image_url: "/images/week1_easy/chair.jpg",
+      audio_word: "/audio/week1_easy/vocab_chair.mp3"
     },
     {
       id: 5,
@@ -48,7 +52,8 @@ export default {
       definition_en: "You write with it.",
       example: "I have a pen.",
       collocation: "blue pen",
-      image_url: "/images/week1_easy/pen.jpg"
+      image_url: "/images/week1_easy/pen.jpg",
+      audio_word: "/audio/week1_easy/vocab_pen.mp3"
     },
     {
       id: 6,
@@ -58,7 +63,8 @@ export default {
       definition_en: "You carry things in it.",
       example: "My bag is red.",
       collocation: "school bag",
-      image_url: "/images/week1_easy/bag.jpg"
+      image_url: "/images/week1_easy/bag.jpg",
+      audio_word: "/audio/week1_easy/vocab_bag.mp3"
     },
     {
       id: 7,
@@ -68,7 +74,8 @@ export default {
       definition_en: "Thing to play with.",
       example: "I like toys.",
       collocation: "fun toy",
-      image_url: "/images/week1_easy/toy.jpg"
+      image_url: "/images/week1_easy/toy.jpg",
+      audio_word: "/audio/week1_easy/vocab_toy.mp3"
     },
     {
       id: 8,
@@ -78,7 +85,8 @@ export default {
       definition_en: "An image or photo.",
       example: "Look at this picture.",
       collocation: "nice picture",
-      image_url: "/images/week1_easy/picture.jpg"
+      image_url: "/images/week1_easy/picture.jpg",
+      audio_word: "/audio/week1_easy/vocab_picture.mp3"
     },
     {
       id: 9,
@@ -88,7 +96,8 @@ export default {
       definition_en: "A container.",
       example: "There is a box.",
       collocation: "big box",
-      image_url: "/images/week1_easy/box.jpg"
+      image_url: "/images/week1_easy/box.jpg",
+      audio_word: "/audio/week1_easy/vocab_box.mp3"
     },
     {
       id: 10,
@@ -98,7 +107,8 @@ export default {
       definition_en: "You open it to go in.",
       example: "The door is big.",
       collocation: "open door",
-      image_url: "/images/week1_easy/door.jpg"
+      image_url: "/images/week1_easy/door.jpg",
+      audio_word: "/audio/week1_easy/vocab_door.mp3"
     }
   ]
 };

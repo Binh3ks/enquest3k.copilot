@@ -19,7 +19,7 @@ export const saveStationState = (weekId, stationKey, state) => {
     const key = `${STORAGE_PREFIX}${weekId}_${stationKey}`;
     localStorage.setItem(key, JSON.stringify(state));
   } catch (e) {
-    console.error('Save station state error:', e);
+    console.error('[HELPER] Save station state error:', e);
   }
 };
 

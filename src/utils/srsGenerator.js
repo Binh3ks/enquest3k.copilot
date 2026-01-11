@@ -1,4 +1,4 @@
-import weekIndex from '../data/weeks/index';
+import weekIndex, { loadWeekData } from '../data/weeks/index';
 
 // Hàm helper để lấy ngẫu nhiên N phần tử
 const getRandomItems = (arr, n) => {
@@ -7,16 +7,20 @@ const getRandomItems = (arr, n) => {
     return shuffled.slice(0, n);
 };
 
-export const generateSmartReview = (currentWeekId = 1) => {
+// ⚡ ASYNC VERSION - Lazy load past weeks for review
+export const generateSmartReviewAsync = async (currentWeekId = 1) => {
     // CHÍNH SÁCH MỚI: Tuần 1 không có Review.
     if (currentWeekId <= 1) return [];
 
     let pastWeeksData = [];
     
-    // Lấy data các tuần QUÁ KHỨ (nhỏ hơn currentWeekId)
-    pastWeeksData = weekIndex
-        .filter(w => w.id < currentWeekId && w.data)
-        .map(w => w.data);
+    // Get metadata of past weeks
+    const pastWeeksMeta = weekIndex.filter(w => w.id < currentWeekId && w.hasAdvanced);
+    
+    // ⚡ Lazy load only past weeks (parallel)
+    const loadPromises = pastWeeksMeta.map(w => loadWeekData(w.id, false));
+    const loadedData = await Promise.all(loadPromises);
+    pastWeeksData = loadedData.filter(d => d !== null);
 
     if (pastWeeksData.length === 0) return [];
 
@@ -93,4 +97,10 @@ export const generateSmartReview = (currentWeekId = 1) => {
     const selectedGrammar = getRandomItems(grammarItems, 3); 
 
     return [...selectedVocab, ...selectedGrammar].sort(() => 0.5 - Math.random());
+};
+
+// Legacy sync version (deprecated - use generateSmartReviewAsync)
+export const generateSmartReview = (currentWeekId = 1) => {
+    console.warn('[SRS] Using legacy sync generateSmartReview - consider migrating to async version');
+    return []; // Return empty for now, force components to use async
 };

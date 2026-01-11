@@ -1,55 +1,99 @@
-// SMART INDEX SYSTEM - AUTO GENERATED
-const advModules = {
-  ...import.meta.glob('./week_*/index.js', { eager: true }),
-  ...import.meta.glob('./week_*.js', { eager: true })  // Keep flat files as fallback
-};
-const easyModules = {
-  ...import.meta.glob('../weeks_easy/week_*.js', { eager: true }),
-  ...import.meta.glob('../weeks_easy/**/index.js', { eager: true })
-};
+// SMART INDEX SYSTEM - LAZY LOADING FOR SCALABILITY
+// ⚡ Dynamic import: Only load weeks when needed (NOT eager)
+import { weekTitles, getWeekTitle } from './metadata.js';
 
-const processModules = () => {
-  const weeksMap = new Map();
-  for (const path in advModules) {
-    const mod = advModules[path];
-    const data = mod.default || mod;
-    if (data && data.weekId) {
-      const id = data.weekId;
-      // Try both flat file and folder/index.js patterns for easy modules
-      const pad = String(id).padStart(2, '0');
-      const easyPathFile = `../weeks_easy/week_${pad}.js`;
-      const easyPathIndex = `../weeks_easy/week_${pad}/index.js`;
-      const easyMod = easyModules[easyPathFile] || easyModules[easyPathIndex];
-      const dataEasy = easyMod ? (easyMod.default || easyMod) : null;
+const advModules = import.meta.glob('./week_*/index.js');
+const advModulesFlat = import.meta.glob('./week_*.js');
+const easyModules = import.meta.glob('../weeks_easy/week_*.js');
+const easyModulesFolder = import.meta.glob('../weeks_easy/**/index.js');
 
-      weeksMap.set(id, {
-        id: id,
-        title_en: data.weekTitle_en || `Week ${id}`,
-        title_vi: data.weekTitle_vi || `Tuần ${id}`,
-        data: data,
-        dataEasy: dataEasy
-      });
-    }
+// Cache for loaded week data
+const weekCache = new Map();
+
+// Function to dynamically load a specific week
+export const loadWeekData = async (weekId, isEasy = false) => {
+  const cacheKey = `${weekId}_${isEasy ? 'easy' : 'adv'}`;
+  
+  // Check cache first
+  if (weekCache.has(cacheKey)) {
+    return weekCache.get(cacheKey);
   }
-  return Array.from(weeksMap.values()).sort((a, b) => a.id - b.id);
+
+  const pad = String(weekId).padStart(2, '0');
+  
+  try {
+    let data = null;
+    
+    if (isEasy) {
+      // Try easy mode (file then folder)
+      const easyPathFile = `../weeks_easy/week_${pad}.js`;
+      const easyPathFolder = `../weeks_easy/week_${pad}/index.js`;
+      
+      if (easyModules[easyPathFile]) {
+        const mod = await easyModules[easyPathFile]();
+        data = mod.default || mod;
+      } else if (easyModulesFolder[easyPathFolder]) {
+        const mod = await easyModulesFolder[easyPathFolder]();
+        data = mod.default || mod;
+      }
+    } else {
+      // Try advanced mode (folder then flat file)
+      const advPathFolder = `./week_${pad}/index.js`;
+      const advPathFlat = `./week_${pad}.js`;
+      
+      if (advModules[advPathFolder]) {
+        const mod = await advModules[advPathFolder]();
+        data = mod.default || mod;
+      } else if (advModulesFlat[advPathFlat]) {
+        const mod = await advModulesFlat[advPathFlat]();
+        data = mod.default || mod;
+      }
+    }
+    
+    // Cache the result
+    if (data) {
+      weekCache.set(cacheKey, data);
+    }
+    
+    return data;
+  } catch (error) {
+    console.error(`[LazyLoad] Failed to load Week ${weekId} (${isEasy ? 'Easy' : 'Adv'}):`, error);
+    return null;
+  }
 };
 
-const loadedWeeks = processModules();
-const maxWeek = 144;
-const existingIds = new Set(loadedWeeks.map(w => w.id));
-const placeholders = [];
+// Generate metadata list without loading full week data
+const generateWeekMetadata = () => {
+  const weeks = [];
+  const maxWeek = 144;
+  
+  // Extract week IDs from file paths (without loading files)
+  const advPaths = [...Object.keys(advModules), ...Object.keys(advModulesFlat)];
+  const easyPaths = [...Object.keys(easyModules), ...Object.keys(easyModulesFolder)];
+  
+  const existingWeeks = new Set();
+  advPaths.forEach(path => {
+    const match = path.match(/week_(\d+)/);
+    if (match) existingWeeks.add(parseInt(match[1]));
+  });
 
-for (let i = 1; i <= maxWeek; i++) {
-  if (!existingIds.has(i)) {
-    placeholders.push({
+  for (let i = 1; i <= maxWeek; i++) {
+    const hasData = existingWeeks.has(i);
+    const meta = weekTitles[i];
+    
+    weeks.push({
       id: i,
-      title_en: `Week ${i}: Coming Soon`,
-      title_vi: `Tuần ${i}: Sắp ra mắt`,
-      data: null,
-      dataEasy: null
+      title_en: meta?.title_en || (hasData ? `Week ${i}` : `Week ${i}: Coming Soon`),
+      title_vi: meta?.title_vi || (hasData ? `Tuần ${i}` : `Tuần ${i}: Sắp ra mắt`),
+      hasAdvanced: existingWeeks.has(i),
+      hasEasy: easyPaths.some(p => p.includes(`week_${String(i).padStart(2, '0')}`)),
+      // Remove data/dataEasy - load on demand only
+      loadData: (isEasy) => loadWeekData(i, isEasy)
     });
   }
-}
+  
+  return weeks;
+};
 
-const weekIndex = [...loadedWeeks, ...placeholders].sort((a, b) => a.id - b.id);
+const weekIndex = generateWeekMetadata();
 export default weekIndex;

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Check localStorage</title></head>
+<body>
+<h3>Check localStorage Data</h3>
+<pre id="output"></pre>
+<script>
+// Check all engquest keys
+const keys = Object.keys(localStorage).filter(k => k.startsWith('engquest_'));
+let output = 'All EngQuest localStorage keys:\n\n';
+keys.forEach(key => {
+  output += `${key}:\n${localStorage.getItem(key)}\n\n`;
+});
+document.getElementById('output').textContent = output || 'No data found';
+</script>
+</body>
+</html>
