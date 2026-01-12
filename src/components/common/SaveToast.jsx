@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { CheckCircle, CloudUpload } from 'lucide-react';
 
 /**
@@ -13,6 +13,12 @@ import { CheckCircle, CloudUpload } from 'lucide-react';
  */
 export default function SaveToast({ status, onDismiss }) {
   const [isVisible, setIsVisible] = useState(!!status);
+  const onDismissRef = useRef(onDismiss);
+
+  // Keep the ref updated with the latest onDismiss function
+  useEffect(() => {
+    onDismissRef.current = onDismiss;
+  }, [onDismiss]);
 
   useEffect(() => {
     // Sync visibility with status prop
@@ -24,7 +30,7 @@ export default function SaveToast({ status, onDismiss }) {
       if (status === 'success') {
         const dismissTimer = setTimeout(() => {
           setIsVisible(false);
-          setTimeout(() => onDismiss?.(), 300); // Wait for fade animation
+          setTimeout(() => onDismissRef.current?.(), 300); // Wait for fade animation
         }, 2000);
         return () => {
           clearTimeout(showTimer);
@@ -35,7 +41,7 @@ export default function SaveToast({ status, onDismiss }) {
     } else {
       setIsVisible(false);
     }
-  }, [status, onDismiss]);
+  }, [status]);
 
   if (!status) return null;
 
