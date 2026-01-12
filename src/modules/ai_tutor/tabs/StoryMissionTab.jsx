@@ -15,6 +15,7 @@ import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../
 import { week1Objectives } from '../../../data/syllabus/week1_objectives'; // Mission 1
 import { mission2Objectives } from '../../../data/syllabus/week1_mission2_objectives'; // Mission 2
 import { mission3Objectives } from '../../../data/syllabus/week1_mission3_objectives'; // Mission 3
+import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 
 /**
  * Story Mission Tab - Guided story-based learning
@@ -22,6 +23,10 @@ import { mission3Objectives } from '../../../data/syllabus/week1_mission3_object
  */
 const StoryMissionTab = () => {
   const { user, currentWeek } = useUserStore();
+  
+  // 🔥 Universal Progress System Integration
+  const weekNumber = parseInt(currentWeek?.replace('week-', '') || '1');
+  const { savedData, saveProgress, markComplete } = useStationProgress(weekNumber, 'ai_story');
   
   // Separate selectors to prevent infinite re-renders
   const messages = useTutorStore(state => state.messages['story'] || []);
@@ -35,17 +40,18 @@ const StoryMissionTab = () => {
   const getVocabFocusPrompt = useTutorStore(state => state.getVocabFocusPrompt);
   const vocabMastery = useTutorStore(state => state.vocabMastery);
   
-  const [currentMissionIndex, setCurrentMissionIndex] = useState(0);
+  // Restore state from Universal Progress System
+  const [currentMissionIndex, setCurrentMissionIndex] = useState(savedData.currentMissionIndex || 0);
   const [viewMode, setViewMode] = useState('menu'); // 'menu' or 'mission'
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [missionStatus, setMissionStatus] = useState('not_started');
-  const [turnCount, setTurnCount] = useState(0);
+  const [turnCount, setTurnCount] = useState(savedData.turnCount || 0);
   const [showHints, setShowHints] = useState(false);
   const [silentTurns, setSilentTurns] = useState(0);
   const [initialized, setInitialized] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState('');
-  const [studentName, setStudentName] = useState(null); // 🔥 NEW: Student memory
+  const [studentName, setStudentName] = useState(savedData.studentName || null); // 🔥 Restore student name
   
   const currentMission = week1RealData.story_missions?.[currentMissionIndex];
   
@@ -295,7 +301,20 @@ const StoryMissionTab = () => {
     };
     addMessage('story', userMsg);
     setIsLoading(true);
-    setTurnCount(prev => prev + 1);
+    setTurnCount(prev => {
+      const newCount = prev + 1;
+      
+      // 🔥 Save progress to Universal Progress System (debounced)
+      saveProgress({
+        turnCount: newCount,
+        currentMissionIndex,
+        lastMissionId: currentMission?.mission_id,
+        studentName: studentName,
+        lastInteractionAt: new Date().toISOString()
+      });
+      
+      return newCount;
+    });
 
     // Check if user was silent (very short message after hint shown)
     if (userMessage.trim().split(/\s+/).length <= 2 && showHints) {
@@ -540,6 +559,28 @@ const StoryMissionTab = () => {
         setMissionStatus('completed');
         setShowHints(false);
         console.log(`✅ Mission completed at turn ${turnCount} (closing: ${isClosingTurn}, max: ${isPastMaximum})`);
+        
+        // 🔥 Save mission completion to Universal Progress System
+        const completedMissions = savedData.completedMissions || [];
+        if (!completedMissions.includes(currentMission.mission_id)) {
+          completedMissions.push(currentMission.mission_id);
+        }
+        
+        // Calculate score based on turn efficiency (fewer turns = higher score)
+        const efficiencyScore = Math.min(100, Math.round((minimumTurns / turnCount) * 100));
+        
+        saveProgress({
+          turnCount,
+          currentMissionIndex,
+          completedMissions,
+          lastCompletedAt: new Date().toISOString(),
+          studentName: studentName
+        }, completedMissions.length === week1RealData.story_missions?.length, efficiencyScore);
+        
+        // Mark as complete if all missions done
+        if (completedMissions.length === week1RealData.story_missions?.length) {
+          markComplete(100);
+        }
       }
 
     } catch (error) {

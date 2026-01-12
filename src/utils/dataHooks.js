@@ -18,8 +18,11 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
   // Helper cho Vocab - Replace spaces with underscores for audio filenames
   const mapVocab = (w, prefix) => {
     const wordForAudio = w.word.replace(/\s+/g, '_').toLowerCase();
+    // 🔥 FIX: Add mode-aware ID to prevent conflicts between easy/advanced modes
+    const modePrefix = isEasy ? 'ez_' : 'adv_';
     return {
       ...w,
+      id: `${modePrefix}${w.id}`, // Change id from "1" to "ez_1" or "adv_1"
       audio_word: mkUrl(`${prefix}_${wordForAudio}.mp3`),
       audio_def: mkUrl(`${prefix}_def_${wordForAudio}.mp3`),
       audio_sent: mkUrl(`${prefix}_ex_${wordForAudio}.mp3`),
@@ -76,8 +79,10 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
 
   // 7. Logic Lab
   if (weekData.stations?.logic_lab?.puzzles) {
+      const modePrefix = isEasy ? 'ez_' : 'adv_';
       weekData.stations.logic_lab.puzzles = weekData.stations.logic_lab.puzzles.map(p => ({
-          ...p, 
+          ...p,
+          id: `${modePrefix}${p.id}`, // Add mode prefix to puzzle IDs
           audio_url: mkUrl(`logic_${p.id}.mp3`)
       }));
   }
@@ -125,36 +130,62 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
 export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Create a cache key that includes the learning mode
+  const cacheKey = `week_${weekId}_${learningMode}`;
 
   useEffect(() => {
-    setLoading(true);
+    let isMounted = true;
     
     const loadData = async () => {
-      const isEasy = learningMode === 'easy';
+      setLoading(true);
+      setError(null);
       
-      console.log(`[DataHooks] Lazy loading Week ${weekId} in ${isEasy ? 'EASY' : 'ADVANCED'} mode`);
-      
-      // ⚡ Dynamic import - only load requested week
-      const rawData = await loadWeekData(weekId, isEasy);
+      try {
+        const isEasy = learningMode === 'easy';
+        console.log(`[DataHooks] Fetching Week ${weekId} in ${isEasy ? 'EASY' : 'ADVANCED'} mode`);
 
-      if (rawData) {
-        console.log(`[DataHooks] Loaded data title:`, rawData?.weekTitle_en);
-        console.log(`[DataHooks] Loaded vocab[0]:`, rawData?.stations?.new_words?.vocab?.[0]?.word);
-        
-        // Inject audio URLs
-        const processedData = injectAudioUrls(JSON.parse(JSON.stringify(rawData)), isEasy);
-        setData(processedData);
-      } else {
-        console.warn(`[DataHooks] Week ${weekId} data not found`);
-        setData(null);
+        // ⚡ Dynamic import - only load requested week
+        const rawData = await loadWeekData(weekId, isEasy);
+
+        if (isMounted) {
+          if (rawData) {
+            console.log(`[DataHooks] Loaded data title:`, rawData?.weekTitle_en);
+            
+            // Deep copy before processing to avoid mutation issues
+            const deepClonedData = JSON.parse(JSON.stringify(rawData));
+            
+            // Inject audio URLs
+            const processedData = injectAudioUrls(deepClonedData, isEasy);
+            setData(processedData);
+          } else {
+            console.warn(`[DataHooks] Week ${weekId} data not found for ${learningMode} mode.`);
+            setData(null);
+            setError(`Data for week ${weekId} (${learningMode}) not found.`);
+          }
+        }
+      } catch (err) {
+        console.error(`[DataHooks] Error loading week ${weekId} (${learningMode}):`, err);
+        if (isMounted) {
+          setError(err.message);
+          setData(null);
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
       }
-      setLoading(false);
     };
 
     loadData();
-  }, [weekId, learningMode]);
 
-  return { data, loading };
+    return () => {
+      isMounted = false;
+    };
+  }, [weekId, learningMode]); // Rerun effect when weekId or learningMode changes
+
+  return { data, loading, error };
 };
 
 export const useStationData = (stationKey, weekData) => weekData?.stations?.[stationKey];

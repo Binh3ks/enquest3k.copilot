@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, Loader2, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
-const VocabCard = ({ word, themeColor, isVi, onComplete }) => {
+const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [drill, setDrill] = useState({ copy1: '', copy2: '', copy3: '', collocation: '', sentence: '' });
-  const [feedback, setFeedback] = useState({ collocation: null, sentence: null });
-  const [copyStatus, setCopyStatus] = useState({ copy1: null, copy2: null, copy3: null });
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [drill, setDrill] = useState(savedCardData?.drill || { copy1: '', copy2: '', copy3: '', collocation: '', sentence: '' });
+  const [feedback, setFeedback] = useState(savedCardData?.feedback || { collocation: null, sentence: null });
+  const [copyStatus, setCopyStatus] = useState(savedCardData?.copyStatus || { copy1: null, copy2: null, copy3: null });
+  const [isCompleted, setIsCompleted] = useState(savedCardData?.completed || false);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const targetCollocation = word.collocation || word.example;
@@ -19,9 +21,26 @@ const VocabCard = ({ word, themeColor, isVi, onComplete }) => {
   useEffect(() => {
       if (allCopyCorrect && isColloCorrect && isSentCorrect && !isCompleted) {
           setIsCompleted(true);
-          onComplete(word.id);
+          onComplete(word.id, {
+            drill,
+            feedback,
+            copyStatus,
+            completed: true
+          });
       }
-  }, [allCopyCorrect, isColloCorrect, isSentCorrect, isCompleted, onComplete, word.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allCopyCorrect, isColloCorrect, isSentCorrect]);
+
+  // Propagate state up on any change
+  useEffect(() => {
+    onUpdate(word.id, {
+      drill,
+      feedback,
+      copyStatus,
+      completed: isCompleted
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [drill, feedback, copyStatus, isCompleted]);
 
   const play = async (e, text, url) => {
     e.stopPropagation(); 
@@ -190,16 +209,47 @@ const VocabCard = ({ word, themeColor, isVi, onComplete }) => {
 };
 
 const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const [completedIds, setCompletedIds] = useState([]);
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System with mode support
+  const { savedData, saveProgress, markComplete, mode } = useStationProgress(parseInt(weekId), 'vocab_mastery');
+  
+  const vocabList = data?.vocab || [];
+  
+  // 🔥 FIX: Initialize from savedData only, component will remount on mode change (via key prop in App.jsx)
+  const [cardsData, setCardsData] = useState(savedData.cards || {});
 
-  if (!data || !data.vocab) return <div>Loading Vocab...</div>;
+  // Auto-save when cardsData changes
+  useEffect(() => {
+    if (Object.keys(cardsData).length > 0 && vocabList.length > 0) {
+      const completedWords = Object.keys(cardsData).filter(id => cardsData[id].completed);
+      const percent = Math.round((completedWords.length / vocabList.length) * 100);
+      const isComplete = completedWords.length === vocabList.length;
+      
+      saveProgress({ cards: cardsData, completedWords }, isComplete, percent);
+      
+      if (isComplete) {
+        markComplete(100);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cardsData, vocabList.length]);
 
-  const handleCardComplete = (id) => {
-    setCompletedIds(prev => {
-      if (prev.includes(id)) return prev;
-      return [...prev, id];
-    });
+
+  const handleCardUpdate = (id, data) => {
+    setCardsData(prev => ({
+      ...prev,
+      [id]: data
+    }));
   };
+
+  const handleCardComplete = (id, data) => {
+    handleCardUpdate(id, data);
+  };
+
+  if (!vocabList.length) return <div>Loading Vocab...</div>;
+
+  const completedCount = Object.values(cardsData).filter(c => c.completed).length;
 
   return (
     <div className="pb-24">
@@ -216,14 +266,25 @@ const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress }
         <div className="bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center">
            <span className="text-xs font-bold text-slate-400 block text-center uppercase tracking-wider">Progress</span>
            <span className={`text-2xl font-black text-${themeColor}-600 block text-center`}>
-             {completedIds.length}/{data.vocab.length}
+             {completedCount}/{vocabList.length}
            </span>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2">
-        {data.vocab.map(w => (
-          <VocabCard key={w.id} word={w} themeColor={themeColor} isVi={isVi} onComplete={handleCardComplete} />
-        ))}
+        {vocabList.map(w => {
+          const savedCardData = cardsData[w.id];
+          return (
+            <VocabCard 
+              key={w.id} 
+              word={w} 
+              themeColor={themeColor} 
+              isVi={isVi} 
+              onComplete={handleCardComplete}
+              onUpdate={handleCardUpdate}
+              savedCardData={savedCardData}
+            />
+          );
+        })}
       </div>
     </div>
   );

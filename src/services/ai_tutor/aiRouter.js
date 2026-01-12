@@ -790,19 +790,29 @@ async function callGroq(messages, systemPrompt, options = {}) {
   await groqLimiter.waitForSlot();
   
   const startTime = Date.now();
+  let requestBody; // Declare here
   
   try {
-    // 🔥 CRITICAL FIX: llama-3.3-70b-versatile does NOT support response_format
-    // Let the model return JSON naturally (prompts already instruct JSON format)
-    const requestBody = {
+    // 🔥 FIX: Normalize messages to OpenAI format (role: user/assistant)
+    const normalizedMessages = messages.map(msg => ({
+      role: msg.role === 'model' ? 'assistant' : msg.role,
+      content: msg.content || msg.text || ''
+    })).filter(msg => msg.content && msg.content.trim().length > 0);
+
+    // Separate system prompt
+    const systemMessage = normalizedMessages.find(m => m.role === 'system');
+    const otherMessages = normalizedMessages.filter(m => m.role !== 'system');
+    
+    const finalSystemPrompt = systemMessage ? systemMessage.content : (systemPrompt || '');
+
+    requestBody = {
       model: PROVIDERS.groq.model,
       messages: [
-        { role: 'system', content: systemPrompt },
-        ...messages
+        { role: 'system', content: finalSystemPrompt },
+        ...otherMessages
       ],
       max_tokens: options.maxTokens || PROVIDERS.groq.maxTokens,
       temperature: options.temperature || PROVIDERS.groq.temperature
-      // ❌ REMOVED: response_format - Not supported by llama-3.3-70b-versatile
     };
     
     const response = await axios.post(GROQ_ENDPOINT, requestBody, {
@@ -814,9 +824,28 @@ async function callGroq(messages, systemPrompt, options = {}) {
     });
     
     const elapsed = Date.now() - startTime;
-    console.log(`✅ Groq success in ${elapsed}ms`, groqLimiter.getStatus());
     
-    return response.data;
+    // Attempt to parse the response content as JSON
+    let responseData = response.data;
+    if (response.data?.choices?.[0]?.message?.content) {
+      try {
+        const content = response.data.choices[0].message.content;
+        // Clean potential markdown code block fences
+        const cleanedContent = content.replace(/```json\n/g, '').replace(/\n```/g, '');
+        responseData = JSON.parse(cleanedContent);
+      } catch (e) {
+        console.warn('⚠️ Groq response was not valid JSON, returning raw content.', e);
+        // Fallback to returning the raw content if parsing fails
+        responseData = { 
+          ai_response: response.data.choices[0].message.content,
+          pedagogy_note: 'Raw response from Groq (JSON parse failed)',
+          suggested_hints: []
+        };
+      }
+    }
+
+    console.log(`✅ Groq success in ${elapsed}ms`, groqLimiter.getStatus());
+    return responseData;
     
   } catch (error) {
     const elapsed = Date.now() - startTime;
@@ -830,23 +859,11 @@ async function callGroq(messages, systemPrompt, options = {}) {
     
     // 🔥 DEBUG: Log request details for 400 errors
     if (error.response?.status === 400) {
-      // Recreate requestBody for debugging (without response_format)
-      const requestBody = {
-        model: PROVIDERS.groq.model,
-        messages: [
-          { role: 'system', content: systemPrompt },
-          ...messages
-        ],
-        max_tokens: options.maxTokens || PROVIDERS.groq.maxTokens,
-        temperature: options.temperature || PROVIDERS.groq.temperature
-        // response_format removed - not supported by this model
-      };
-      
       console.error('🔍 Groq 400 Debug:', {
-        model: requestBody.model,
-        messagesCount: requestBody.messages?.length,
-        systemPromptLength: requestBody.messages?.[0]?.content?.length,
-        hasResponseFormat: false, // Fixed: Removed unsupported parameter
+        model: PROVIDERS.groq.model,
+        messagesCount: requestBody?.messages?.length,
+        messageRoles: requestBody?.messages?.map(m => m.role),
+        systemPromptLength: requestBody?.messages?.find(m => m.role === 'system')?.content?.length,
         errorData: error.response?.data
       });
     }

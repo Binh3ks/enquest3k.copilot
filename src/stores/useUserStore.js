@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { setAuthToken, login as apiLogin, register as apiRegister, updateProfile as apiUpdateProfile } from '../services/api';
+import { login as apiLogin, register as apiRegister, updateProfile as apiUpdateProfile, progressAPI } from '../services/api';
 
 // This store manages user authentication, profile, and app-wide settings.
 const useUserStore = create(
@@ -10,6 +10,10 @@ const useUserStore = create(
       currentUser: null,
       token: null,
       learningMode: 'advanced',
+      
+      // UNIVERSAL PROGRESS SYSTEM STATE
+      progressCache: {}, // Structure: { weekId: { stationId: { data, isCompleted, score } } }
+      weekCompletion: {}, // Structure: { weekId: percentage }
 
       // ACTIONS
       
@@ -38,8 +42,8 @@ const useUserStore = create(
         try {
           const response = await apiLogin(username, password);
           const { user, token } = response.data;
+          // The interceptor in api.js will handle the token automatically
           set({ currentUser: user, token: token });
-          setAuthToken(token); // Set token for all future API requests
           return { success: true };
         } catch (error) {
           console.error('Login failed:', error.response?.data?.message || error.message);
@@ -68,8 +72,8 @@ const useUserStore = create(
        * Logs the current user out.
        */
       logout: () => {
-        set({ currentUser: null, token: null });
-        setAuthToken(null); // Clear the token from API headers
+        // Clear all user-related state. The interceptor will automatically stop sending tokens.
+        set({ currentUser: null, token: null, progressCache: {}, weekCompletion: {} });
       },
       
       // This is now a placeholder, as the backend does not support guest login.
@@ -96,41 +100,113 @@ const useUserStore = create(
        */
       setCurrentUser: (user) => {
         set({ currentUser: user });
+      },
+      
+      // ========== UNIVERSAL PROGRESS SYSTEM ACTIONS ==========
+      
+      /**
+       * Recalculates and updates the overall completion percentage for a given week.
+       * @param {number} weekId - The week ID to calculate.
+       */
+      recalculateWeekCompletion: (weekId) => {
+        const weekProgress = get().progressCache[weekId];
+        if (!weekProgress) {
+          set(state => ({ weekCompletion: { ...state.weekCompletion, [weekId]: 0 } }));
+          return;
+        }
+        
+        const stations = Object.values(weekProgress);
+        const totalStations = stations.length;
+        if (totalStations === 0) {
+          set(state => ({ weekCompletion: { ...state.weekCompletion, [weekId]: 0 } }));
+          return;
+        }
+
+        const totalScore = stations.reduce((acc, station) => acc + (station.score || 0), 0);
+        const averageCompletion = Math.round(totalScore / totalStations);
+        
+        set(state => ({
+          weekCompletion: {
+            ...state.weekCompletion,
+            [weekId]: averageCompletion
+          }
+        }));
+      },
+
+      /**
+       * Load progress for a specific week from server
+       * Uses cache to avoid redundant API calls
+       * @param {number} weekId - The week ID to load
+       */
+      loadWeekProgress: async (weekId) => {
+        // If already cached, skip API call
+        if (get().progressCache[weekId]) {
+          get().recalculateWeekCompletion(weekId); // Recalculate on load
+          return;
+        }
+
+        try {
+          const data = await progressAPI.fetchWeekProgress(weekId);
+          set((state) => ({
+            progressCache: {
+              ...state.progressCache,
+              [weekId]: data
+            }
+          }));
+          get().recalculateWeekCompletion(weekId); // Recalculate after fetch
+        } catch (error) {
+          console.error('Failed to load week progress:', error);
+        }
+      },
+
+      /**
+       * Update progress locally (Optimistic UI)
+       * Updates cache immediately without waiting for server
+       * @param {number} weekId
+       * @param {string} stationId
+       * @param {Object} payload - { data, isCompleted, score }
+       */
+      updateLocalProgress: (weekId, stationId, payload) => {
+        set((state) => ({
+          progressCache: {
+            ...state.progressCache,
+            [weekId]: {
+              ...(state.progressCache[weekId] || {}),
+              [stationId]: {
+                ...payload,
+                updatedAt: new Date().toISOString()
+              }
+            }
+          }
+        }));
+        get().recalculateWeekCompletion(weekId); // Recalculate after local update
+      },
+
+      /**
+       * Sync progress to server in background
+       * @param {Object} params - { weekId, stationId, data, isCompleted, score }
+       */
+      syncProgressToServer: async ({ weekId, stationId, data, isCompleted, score }) => {
+        try {
+          await progressAPI.saveProgress({ weekId, stationId, data, isCompleted, score });
+        } catch (error) {
+          console.error('Failed to sync progress to server:', error);
+          // TODO: Implement retry logic or error recovery
+        }
+      },
+
+      /**
+       * Clear progress cache (useful for logout or refresh)
+       */
+      clearProgressCache: () => {
+        set({ progressCache: {}, weekCompletion: {} });
       }
     }),
     {
       name: 'engquest-user-storage', // localStorage key
-      storage: createJSONStorage(() => localStorage), // Use localStorage
-      // Ensure token is set in API client on rehydration
-      onRehydrateStorage: () => (state) => {
-        if (state?.token) {
-          setAuthToken(state.token);
-        }
-      },
-      // Persist only non-sensitive, UI-related state.
-      // The user object might be okay, but the token is handled on app start.
-      partialize: (state) => ({
-        currentUser: state.currentUser,
-        token: state.token,
-        learningMode: state.learningMode,
-      }),
+      storage: createJSONStorage(() => localStorage),
     }
   )
-);
-
-// Initial set if token already exists (for fast access before hydration completes)
-const initialToken = useUserStore.getState().token;
-if (initialToken) {
-  setAuthToken(initialToken);
-}
-
-// Listen for changes in the token state and update the API header accordingly.
-// This ensures that when the user logs in or out, the API client is always up-to-date.
-useUserStore.subscribe(
-  (state) => state.token,
-  (token) => {
-    setAuthToken(token);
-  }
 );
 
 export { useUserStore };

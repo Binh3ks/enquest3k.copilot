@@ -3,39 +3,52 @@ import { useParams } from 'react-router-dom';
 import { Volume2, Globe, HelpCircle, CheckCircle, XCircle, AlertTriangle, Lightbulb, ArrowRight, Edit3, Sparkles } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
-  const [inputs, setInputs] = useState({});
-  const [feedback, setFeedback] = useState({});
+  
+  // 🔥 Universal Progress System Integration
+  const { savedData, saveProgress, markComplete } = useStationProgress(
+    parseInt(weekId), 
+    'explore'
+  );
+  
+  const [inputs, setInputs] = useState(savedData.inputs || {});
+  const [feedback, setFeedback] = useState(savedData.feedback || {});
   const [showHint, setShowHint] = useState({}); 
-  const [showModel, setShowModel] = useState(false);
-  const [attempts, setAttempts] = useState({}); // Track attempts per question
-  const [showAnswer, setShowAnswer] = useState({}); // Show correct answer after 3 attempts
-  const [completedIds, setCompletedIds] = useState(() => {
-    const saved = loadStationState(weekId, 'explore');
-    return saved?.completed || [];
-  });
+  const [showModel, setShowModel] = useState(savedData.showModel || false);
+  const [attempts, setAttempts] = useState(savedData.attempts || {}); // Track attempts per question
+  const [showAnswer, setShowAnswer] = useState(savedData.showAnswer || {}); // Show correct answer after 3 attempts
+  const [completedIds, setCompletedIds] = useState(() => new Set(savedData.completedIds || []));
 
-  // Save to localStorage
+  // 🔥 Debounced Save to Universal Progress System
   useEffect(() => {
-    if (weekId && completedIds.length > 0) {
-      saveStationState(weekId, 'explore', { completed: completedIds });
-    }
-  }, [completedIds, weekId]);
-
-  // Report progress to backend
-  useEffect(() => {
-    if (onReportProgress && data?.check_questions) {
-      const total = data.check_questions.length;
-      const completed = completedIds.length;
+    const handler = setTimeout(() => {
+      const total = data?.check_questions?.length + (data?.question ? 1 : 0) || 0;
       if (total > 0) {
-        const percent = Math.round((completed / total) * 100);
-        onReportProgress(percent);
+        const percent = Math.round((completedIds.size / total) * 100);
+        const isComplete = completedIds.size === total;
+        
+        saveProgress({
+          completedIds: [...completedIds],
+          inputs,
+          feedback,
+          attempts,
+          showAnswer,
+          showModel,
+        }, isComplete, percent);
+        
+        if (isComplete) {
+          markComplete(100);
+        }
       }
-    }
-  }, [completedIds.length, data?.check_questions?.length, onReportProgress]);
+    }, 1500);
+
+    return () => clearTimeout(handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [completedIds, inputs, feedback, attempts, showAnswer, showModel]);
+
 
   // Early return AFTER hooks
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Explore...</div>;
@@ -49,10 +62,10 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
           // LUÔN HIỆN CÂU MẪU SAU KHI CHECK
           setShowModel(true);
 
-          if (res.isCorrect && !completedIds.includes(99)) {
-              const newCompleted = [...completedIds, 99];
+          if (res.isCorrect && !completedIds.has(99)) {
+              const newCompleted = new Set(completedIds);
+              newCompleted.add(99);
               setCompletedIds(newCompleted);
-              report(newCompleted);
           }
           return;
       }
@@ -64,10 +77,10 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
       setFeedback({ ...feedback, [id]: res });
 
       if (res.isCorrect) {
-          if (!completedIds.includes(id)) {
-              const newCompleted = [...completedIds, id];
+          if (!completedIds.has(id)) {
+              const newCompleted = new Set(completedIds);
+              newCompleted.add(id);
               setCompletedIds(newCompleted);
-              report(newCompleted);
           }
       } else {
           // Track attempts for wrong answers
@@ -84,7 +97,7 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
   const report = (completed) => {
       if (onReportProgress && data.check_questions) {
           const total = data.check_questions.length + 1; 
-          onReportProgress(Math.round((completed.length / total) * 100));
+          onReportProgress(Math.round((completed.size / total) * 100));
       }
   };
 

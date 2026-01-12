@@ -1,23 +1,53 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Hash, Check, AlertCircle, ArrowRight, HelpCircle, Edit3, BookOpen, ChevronDown, ChevronUp, Keyboard, CheckCircle } from 'lucide-react';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import InstructionBar from '../../components/common/InstructionBar';
 import { speakText } from '../../utils/AudioHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const [completedQuestions, setCompletedQuestions] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System with mode support
+  const { savedData, saveProgress, markComplete, mode } = useStationProgress(parseInt(weekId), 'grammar_lab');
+  
+  // ALL HOOKS MUST BE DECLARED FIRST (before any conditional returns)
+  const [completedQuestions, setCompletedQuestions] = useState(savedData.completedDrills || []);
+  const [currentIndex, setCurrentIndex] = useState(savedData.currentIndex || 0);
   const [feedback, setFeedback] = useState({});
   const [showHint, setShowHint] = useState(false);
   const [inputVal, setInputVal] = useState(""); 
   const [showLesson, setShowLesson] = useState(true);
   const inputRef = useRef(null);
 
+  // Get questions safely
+  const questions = data?.exercises || [];
+
+  // 🔥 FIX: Reset state when mode changes
+  useEffect(() => {
+    setCompletedQuestions(savedData.completedDrills || []);
+    setCurrentIndex(savedData.currentIndex || 0);
+    setFeedback({});
+    setInputVal("");
+  }, [mode, savedData.completedDrills, savedData.currentIndex]); // Depend on savedData
+
+  // 🔥 Auto-save progress when completed questions change
+  useEffect(() => {
+    if (completedQuestions.length > 0 && questions.length > 0) {
+      const percent = Math.round((completedQuestions.length / questions.length) * 100);
+      saveProgress({
+        completedDrills: completedQuestions,
+        currentIndex
+      }, false, percent);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [completedQuestions.length]);
+
   useEffect(() => { if (inputRef.current) inputRef.current.focus(); }, [currentIndex]);
 
+  // NOW safe to return early AFTER all hooks
   if (!data || !data.exercises) return <div className="p-8 text-center">Loading grammar...</div>;
-
-  const questions = data.exercises;
   const currentQ = questions[currentIndex];
   const isLastQuestion = currentIndex === questions.length - 1;
 
@@ -30,10 +60,19 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
 
   const handleNext = () => {
     if (!isLastQuestion) {
-      setCurrentIndex(prev => prev + 1);
-      setFeedback({}); setShowHint(false); setInputVal(""); 
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      setFeedback({}); setShowHint(false); setInputVal("");
+      
+      // 🔥 Save progress
+      saveProgress({
+        completedDrills: completedQuestions,
+        currentIndex: newIndex,
+        score: Math.round((completedQuestions.length / questions.length) * 100)
+      }, false, Math.round((completedQuestions.length / questions.length) * 100));
     } else {
-        if (onReportProgress) onReportProgress(100);
+        // 🔥 Mark complete
+        markComplete(100);
     }
   };
 

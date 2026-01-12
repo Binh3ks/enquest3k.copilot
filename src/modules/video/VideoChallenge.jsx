@@ -2,28 +2,31 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Video, Mic, Type, Download, Play, Pause, RotateCcw, CheckCircle, AlertCircle, Globe, Loader2, ArrowRight, Eye, EyeOff, Edit3 } from 'lucide-react';
 import Confetti from 'react-confetti';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const content = (data?.writing || data?.video) ? (data.writing || data.video) : data;
 
+  // 🔥 Universal Progress System Integration
+  const { savedData, saveProgress, markComplete } = useStationProgress(
+    parseInt(weekId), 
+    'video_challenge'
+  );
+
   // --- STATE ---
-  const [activeTab, setActiveTab] = useState('write'); 
-  const [script, setScript] = useState("");
+  const [activeTab, setActiveTab] = useState(savedData.lastTab || 'write'); 
+  const [script, setScript] = useState(savedData.script || "");
   const [isRecording, setIsRecording] = useState(false);
   const [videoBlob, setVideoBlob] = useState(null);
-  const [videoUrl, setVideoUrl] = useState(null); 
+  const [videoUrl, setVideoUrl] = useState(savedData.videoUrl || null); 
   const [countdown, setCountdown] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isScriptVisible, setIsScriptVisible] = useState(true);
   const [isCameraReady, setIsCameraReady] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasRecorded, setHasRecorded] = useState(() => {
-    const saved = loadStationState(weekId, 'video_challenge');
-    return saved?.recorded || false;
-  });
+  const [hasRecorded, setHasRecorded] = useState(savedData.recorded || false);
   
   // Refs
   const videoRef = useRef(null);
@@ -33,32 +36,46 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   const mimeTypeRef = useRef(MediaRecorder.isTypeSupported("video/mp4") ? "video/mp4" : "video/webm"); 
   const timerRef = useRef(null);
 
-  // Save to localStorage
+  // 🔥 Debounced Save to Universal Progress System
   useEffect(() => {
-    if (weekId && hasRecorded) {
-      saveStationState(weekId, 'video_challenge', { recorded: true });
-    }
-  }, [hasRecorded, weekId]);
+    const handler = setTimeout(() => {
+      const isComplete = hasRecorded;
+      const percent = isComplete ? 100 : (script.length > 10 ? 30 : 0);
+      
+      saveProgress({
+        recorded: hasRecorded,
+        script: script,
+        videoUrl: videoUrl, // Save the blob URL (will be temporary, but good for session restore)
+        lastTab: activeTab,
+        recordedAt: hasRecorded ? new Date().toISOString() : null
+      }, isComplete, percent);
 
-  // Report progress to backend
-  useEffect(() => {
-    if (onReportProgress && hasRecorded) {
-      onReportProgress(100);
-    }
-  }, [hasRecorded, onReportProgress]);
+      if (isComplete) {
+        markComplete(100);
+      }
+    }, 1500);
+
+    return () => clearTimeout(handler);
+  }, [hasRecorded, script, videoUrl, activeTab, saveProgress, markComplete]);
+
 
   // Cleanup & Reset
   useEffect(() => {
-    setScript(""); 
-    setVideoBlob(null);
-    setVideoUrl(null);
-    setIsRecording(false);
-    setCountdown(0);
-    setShowConfetti(false);
-    setActiveTab('write');
-    setIsPlaying(false);
+    // Don't reset on initial load if there's saved data
+    if (!savedData.script && !savedData.videoUrl) {
+      setScript(""); 
+      setVideoBlob(null);
+      setVideoUrl(null);
+      setIsRecording(false);
+      setCountdown(0);
+      setShowConfetti(false);
+      setActiveTab('write');
+      setIsPlaying(false);
+      setHasRecorded(false);
+    }
     stopCamera(); 
     clearInterval(timerRef.current);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content?.title]);
 
   useEffect(() => {
@@ -75,10 +92,14 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
         const url = URL.createObjectURL(videoBlob);
         setVideoUrl(url);
         setIsPlaying(false); 
-        return () => URL.revokeObjectURL(url);
+        // Don't revoke here, let the main cleanup handle it
+    } else if (savedData.videoUrl) {
+        // If loaded from saved data, just use the URL
+        setVideoUrl(savedData.videoUrl);
     } else {
         setVideoUrl(null);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoBlob]);
 
   // --- CAMERA LOGIC ---

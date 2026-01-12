@@ -10,6 +10,7 @@ import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import week1RealData from '../../../data/weeks/week_01_real';
+import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -18,6 +19,10 @@ import week1RealData from '../../../data/weeks/week_01_real';
 const FreeTalkTab = () => {
   const { user, currentWeek } = useUserStore();
   
+  // 🔥 Universal Progress System Integration
+  const weekNumber = parseInt(currentWeek?.replace('week-', '') || '1');
+  const { savedData, saveProgress } = useStationProgress(weekNumber, 'ai_freetalk');
+  
   // Separate selectors to prevent infinite re-renders
   const messages = useTutorStore(state => state.messages['freetalk'] || []);
   const addMessage = useTutorStore(state => state.addMessage);
@@ -25,9 +30,9 @@ const FreeTalkTab = () => {
   
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [conversationTopic, setConversationTopic] = useState('');
+  const [conversationTopic, setConversationTopic] = useState(savedData.conversationTopic || '');
   const [showHints, setShowHints] = useState(false);
-  const [messageCount, setMessageCount] = useState(0);
+  const [messageCount, setMessageCount] = useState(savedData.totalTurns || 0);
   const [initialized, setInitialized] = useState(false);
   
   const chatEndRef = useRef(null);
@@ -161,7 +166,19 @@ const FreeTalkTab = () => {
     };
     addMessage("freetalk", userMsg);
     setIsLoading(true);
-    setMessageCount(prev => prev + 1);
+    setMessageCount(prev => {
+      const newCount = prev + 1;
+      
+      // 🔥 Save progress to Universal Progress System (debounced)
+      saveProgress({
+        totalTurns: newCount,
+        conversationTopic: conversationTopic || userMessage.split(' ')[0],
+        lastMessageAt: new Date().toISOString(),
+        vocabUsed: savedData.vocabUsed || []
+      }, false, Math.min(100, newCount * 5)); // Score based on engagement
+      
+      return newCount;
+    });
 
     // Detect topic from first user message
     if (messageCount === 0 && userMessage.length > 10) {

@@ -2,16 +2,52 @@ import React, { useState, useEffect } from 'react';
 import { Mic, Send, Bot, User, RotateCcw, CheckCircle, HelpCircle, Lightbulb, AlertTriangle, Volume2 } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useStationProgress } from '../../hooks/useStationProgress';
+import { useParams } from 'react-router-dom';
 
 const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const [currentPromptIdx, setCurrentPromptIdx] = useState(0);
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System Integration
+  const { savedData, saveProgress, markComplete } = useStationProgress(
+    parseInt(weekId), 
+    'ask_ai'
+  );
+  
+  const [currentPromptIdx, setCurrentPromptIdx] = useState(savedData.currentPromptIdx || 0);
   const [inputVal, setInputVal] = useState('');
   const [isListening, setIsListening] = useState(false);
-  const [feedback, setFeedback] = useState(null);
-  const [history, setHistory] = useState([]);
+  const [feedback, setFeedback] = useState(savedData.feedback || null);
+  const [history, setHistory] = useState(savedData.history || []);
   const [showHint, setShowHint] = useState(false);
-  const [completedPrompts, setCompletedPrompts] = useState(new Set());
-  const [wrongCount, setWrongCount] = useState(0);
+  const [completedPrompts, setCompletedPrompts] = useState(() => new Set(savedData.completedPrompts || []));
+  const [wrongCount, setWrongCount] = useState(savedData.wrongCount || 0);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      const totalPrompts = data?.prompts?.length || 0;
+      if (totalPrompts > 0) {
+        const percent = Math.round((completedPrompts.size / totalPrompts) * 100);
+        const isAllComplete = completedPrompts.size === totalPrompts;
+        
+        saveProgress({
+          currentPromptIdx,
+          history,
+          completedPrompts: [...completedPrompts],
+          feedback,
+          wrongCount,
+        }, isAllComplete, percent);
+        
+        if (isAllComplete) {
+          markComplete(100);
+        }
+      }
+    }, 1500);
+
+    return () => clearTimeout(handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPromptIdx, history, completedPrompts, feedback, wrongCount]);
+
 
   if (!data || !data.prompts) return <div>Loading AI...</div>;
 
@@ -70,10 +106,7 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
         newCompleted.add(currentPromptIdx);
         setCompletedPrompts(newCompleted);
         
-        if (onReportProgress) {
-            const percent = Math.round((newCompleted.size / data.prompts.length) * 100);
-            onReportProgress(percent);
-        }
+        // No need for manual saveProgress call here, useEffect handles it.
     } else {
         setWrongCount(prev => prev + 1);
     }
@@ -84,7 +117,10 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
     setInputVal('');
     setShowHint(false);
     setWrongCount(0); 
-    if (!isLast) setCurrentPromptIdx(prev => prev + 1);
+    if (!isLast) {
+      const newIndex = currentPromptIdx + 1;
+      setCurrentPromptIdx(newIndex);
+    }
   };
 
   // FIX: Chọn đáp án đầu tiên để hiển thị và KHÔNG thêm dấu ? thủ công

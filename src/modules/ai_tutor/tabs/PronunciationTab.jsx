@@ -4,6 +4,7 @@ import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import { getAiTutorResponse } from '../../../services/api';
+import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 
 /**
  * Pronunciation Tab - Practice speaking target vocabulary with AI assessment
@@ -14,11 +15,16 @@ import { getAiTutorResponse } from '../../../services/api';
  */
 const PronunciationTab = () => {
   const { currentWeek, user } = useUserStore();
+  
+  // 🔥 Universal Progress System Integration
+  const weekNumber = parseInt(currentWeek?.replace('week-', '') || '1');
+  const { savedData, saveProgress } = useStationProgress(weekNumber, 'ai_pronunciation');
+  
   const [weekData, setWeekData] = useState(null);
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentWordIndex, setCurrentWordIndex] = useState(savedData.currentWordIndex || 0);
   const [practiceMode, setPracticeMode] = useState('listen'); // listen | recording | evaluating | complete
-  const [correctCount, setCorrectCount] = useState(0);
-  const [attempts, setAttempts] = useState([]);
+  const [correctCount, setCorrectCount] = useState(savedData.correctCount || 0);
+  const [attempts, setAttempts] = useState(savedData.attempts || []);
   const [currentFeedback, setCurrentFeedback] = useState(null);
   const [isListening, setIsListening] = useState(false);
   const [attemptCount, setAttemptCount] = useState(0); // Đếm số lần thử cho từ hiện tại
@@ -266,11 +272,24 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
         correct: evaluation.correct,
         timestamp: Date.now()
       };
-      setAttempts(prev => [...prev, attemptRecord]);
+      const newAttempts = [...attempts, attemptRecord];
+      setAttempts(newAttempts);
 
       // Tăng số lần thử
       const newAttemptCount = attemptCount + 1;
       setAttemptCount(newAttemptCount);
+      
+      // 🔥 Save progress to Universal Progress System
+      const wordsPracticed = savedData.wordsPracticed || {};
+      wordsPracticed[word?.word || word?.text] = evaluation.score;
+      
+      saveProgress({
+        wordsPracticed,
+        attempts: newAttempts,
+        currentWordIndex,
+        correctCount: evaluation.correct ? correctCount + 1 : correctCount,
+        lastPracticeAt: new Date().toISOString()
+      }, false, Math.min(100, Object.keys(wordsPracticed).length * 10));
 
       // LOGIC MỚI: Sau 5 lần thử, tự động cho qua
       const autoPass = newAttemptCount >= 5;

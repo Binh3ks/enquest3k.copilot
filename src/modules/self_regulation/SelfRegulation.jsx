@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Target, CheckSquare, Battery, BookOpen, Globe } from 'lucide-react';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const SelfRegulation = ({ themeColor, isVi, onToggleLang }) => {
-  const [goals, setGoals] = useState(['', '', '']);
-  const [mood, setMood] = useState(null);
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System
+  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'self_regulation');
+  
+  const [goals, setGoals] = useState(savedData.goals || ['', '', '']);
+  const [mood, setMood] = useState(savedData.mood || null);
+  const [reflection, setReflection] = useState(savedData.reflection || '');
+
+  // 🔥 Auto-save progress when data changes
+  useEffect(() => {
+    const goalsCompleted = goals.filter(g => g.trim().length > 0).length;
+    const hasData = goalsCompleted > 0 || mood || reflection.trim().length > 0;
+    
+    if (hasData) {
+      const percent = Math.round(((goalsCompleted * 20) + (mood ? 20 : 0) + (reflection ? 20 : 0)) * 100 / 100);
+      const isComplete = goalsCompleted === 3 && mood && reflection.trim().length > 20;
+      
+      saveProgress({ goals, mood, reflection }, isComplete, percent);
+      if (isComplete) markComplete(100);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [goals, mood, reflection]);
 
   return (
     <div className="pb-24 space-y-8">
@@ -50,7 +73,13 @@ const SelfRegulation = ({ themeColor, isVi, onToggleLang }) => {
                 </button>
              ))}
           </div>
-          <textarea className="w-full p-4 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:bg-white focus:border-sky-400 outline-none" rows="4" placeholder="Write about what you learned..."></textarea>
+          <textarea 
+            className="w-full p-4 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:bg-white focus:border-sky-400 outline-none" 
+            rows="4" 
+            placeholder="Write about what you learned..."
+            value={reflection}
+            onChange={(e) => setReflection(e.target.value)}
+          ></textarea>
        </div>
     </div>
   );

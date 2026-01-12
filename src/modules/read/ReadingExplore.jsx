@@ -1,24 +1,73 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, BookOpen, Globe, PenTool, Check, ArrowRight, AlertTriangle, RefreshCcw, Star, HelpCircle, XCircle, CheckCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System
+  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_reading');
+  
   const [sentences, setSentences] = useState([]);
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [inputValue, setInputValue] = useState("");
-  const [committedLength, setCommittedLength] = useState(0);
+  const [isReady, setIsReady] = useState(false);
+
+  // State initialized from savedData or defaults
+  const [currentIdx, setCurrentIdx] = useState(() => savedData.lastPage || 0);
+  const [inputValue, setInputValue] = useState(() => savedData.text || "");
+  const [committedLength, setCommittedLength] = useState(() => savedData.committedLength || 0);
   const [feedback, setFeedback] = useState(null); 
   const [showFullRef, setShowFullRef] = useState(false);
-  const [qInputs, setQInputs] = useState({});
-  const [qFeedback, setQFeedback] = useState({});
+  const [qInputs, setQInputs] = useState(() => savedData.questions?.qInputs || {});
+  const [qFeedback, setQFeedback] = useState(() => savedData.questions?.qFeedback || {});
   const [showHint, setShowHint] = useState({});
-  const [qAttempts, setQAttempts] = useState({});
-  const [showAnswer, setShowAnswer] = useState({});
+  const [qAttempts, setQAttempts] = useState(() => savedData.questions?.qAttempts || {});
+  const [showAnswer, setShowAnswer] = useState(() => savedData.questions?.showAnswer || {});
   const textareaRef = useRef(null);
 
   const isComplete = sentences.length > 0 && currentIdx >= sentences.length;
   const currentSentence = !isComplete && sentences.length > 0 ? sentences[currentIdx] : null;
+
+  // Debounced save effect
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (!isReady || !data) return; // Ensure data is loaded and component is ready
+
+      const questionCount = data.comprehension_questions?.length || 0;
+      const correctQuestions = Object.values(qFeedback).filter(f => f.isCorrect).length;
+      
+      const translationProgress = sentences.length > 0 ? (currentIdx / sentences.length) * 100 : 0;
+      const questionProgress = questionCount > 0 ? (correctQuestions / questionCount) * 100 : 0;
+      
+      const percent = Math.round(translationProgress * 0.7 + questionProgress * 0.3);
+      const isStationComplete = translationProgress >= 100 && questionProgress >= 100;
+
+      const progressData = {
+        lastPage: currentIdx,
+        text: inputValue,
+        committedLength: committedLength,
+        questions: {
+          qInputs,
+          qFeedback,
+          qAttempts,
+          showAnswer
+        }
+      };
+      saveProgress(progressData, isStationComplete, percent);
+      if (onReportProgress) onReportProgress(percent);
+      if (isStationComplete) {
+        markComplete(100);
+      }
+    }, 1500); // Debounce for 1.5 seconds
+
+    return () => {
+      clearTimeout(handler);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIdx, inputValue, committedLength, qInputs, qFeedback, qAttempts, showAnswer, isReady]);
+
 
   useEffect(() => {
     if (data && data.content_en) {
@@ -30,14 +79,31 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
         vi: viRaw[i] ? viRaw[i].trim() : ""
       }));
       setSentences(combined);
-      setCurrentIdx(0); setInputValue(""); setCommittedLength(0); setFeedback(null); setShowFullRef(false);
-      setQInputs({}); setQFeedback({}); setShowHint({});
+      
+      // State is already initialized. Just mark as ready.
+      setIsReady(true);
+
       if(textareaRef.current) textareaRef.current.focus();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
+  const resetProgress = () => {
+    setIsReady(false); // Prevent saving during reset
+    setCurrentIdx(0); 
+    setInputValue(""); 
+    setCommittedLength(0); 
+    setFeedback(null); 
+    setShowFullRef(false); 
+    setQInputs({}); 
+    setQFeedback({}); 
+    setQAttempts({}); 
+    setShowAnswer({});
+    setTimeout(() => setIsReady(true), 50); // Re-enable saving
+  };
+
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Module...</div>;
-  if (sentences.length === 0) return <div className="p-10 text-center">Initializing...</div>;
+  if (!isReady) return <div className="p-10 text-center">Initializing...</div>;
 
   const handleInputChange = (e) => {
     const newVal = e.target.value;
@@ -57,8 +123,13 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
             setTimeout(() => {
                 const nextText = newVal + (currentIdx < sentences.length - 1 ? " " : "");
                 setInputValue(nextText);
-                setCommittedLength(nextText.length);
-                setCurrentIdx(prev => prev + 1);    
+                const newCommittedLength = nextText.length;
+                setCommittedLength(newCommittedLength);
+                const newIndex = currentIdx + 1;
+                setCurrentIdx(newIndex);    
+                
+                // 🔥 Save progress is now handled by the debounced useEffect
+                
                 if (textareaRef.current) {
                     textareaRef.current.scrollTop = textareaRef.current.scrollHeight;
                 }
@@ -95,6 +166,10 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       if (newAttempts >= 3) {
         setShowAnswer({ ...showAnswer, [id]: true });
       }
+    } else {
+      // Ensure correct answers are counted for progress
+      const newFeedback = { ...qFeedback, [id]: res };
+      setQFeedback(newFeedback);
     }
   };
 
@@ -150,9 +225,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       <div className={`bg-${themeColor}-50/50 p-6 rounded-3xl border-2 border-${themeColor}-100`}>
         <div className="flex justify-between items-center mb-6">
             <h3 className={`text-sm font-black text-${themeColor}-800 uppercase flex items-center tracking-wider`}><PenTool className="w-4 h-4 mr-2"/> {isVi ? "Thử thách Dịch thuật" : "Translation Challenge"}</h3>
-            <button onClick={() => {
-                setCurrentIdx(0); setInputValue(""); setCommittedLength(0); setFeedback(null); setShowFullRef(false); 
-            }} className="text-xs text-slate-400 hover:text-rose-500 flex items-center font-bold transition-colors"><RefreshCcw className="w-3 h-3 mr-1"/> {isVi ? "Làm lại" : "Reset"}</button>
+            <button onClick={resetProgress} className="text-xs text-slate-400 hover:text-rose-500 flex items-center font-bold transition-colors"><RefreshCcw className="w-3 h-3 mr-1"/> {isVi ? "Làm lại" : "Reset"}</button>
         </div>
         {!isComplete && currentSentence ? (
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-indigo-100 mb-6 animate-in fade-in slide-in-from-bottom-2">
@@ -184,15 +257,16 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
                   <p className="font-bold text-slate-800 text-base">{q.question_en}</p>
                </div>
                <div className="relative">
-                  <input type="text" className={`w-full p-4 pr-32 bg-slate-50 border-2 rounded-xl outline-none text-sm transition-all font-medium ${qFeedback[q.id]?.status === 'perfect' ? 'border-green-400 bg-green-50 text-green-800' : qFeedback[q.id]?.status === 'warning' ? 'border-amber-400 bg-amber-50 text-amber-800' : qFeedback[q.id]?.status === 'wrong' ? 'border-rose-300 bg-rose-50 text-rose-800' : 'border-slate-100 focus:border-indigo-300 focus:bg-white'}`} placeholder={isVi ? "Nhập câu trả lời..." : "Type answer..."} value={qInputs[q.id] || ''} onChange={(e) => {setQInputs({ ...qInputs, [q.id]: e.target.value }); if(qFeedback[q.id]) setQFeedback({...qFeedback, [q.id]: null})}} onKeyDown={(e) => e.key === 'Enter' && handleQCheck(q.id, q.answer)} />
+                  <input type="text" className={`w-full p-4 pr-32 bg-slate-50 border-2 rounded-xl outline-none text-sm transition-all font-medium ${qFeedback[q.id]?.isCorrect ? 'border-green-400 bg-green-50 text-green-800' : qFeedback[q.id] ? 'border-rose-300 bg-rose-50 text-rose-800' : 'border-slate-100 focus:border-indigo-300 focus:bg-white'}`} placeholder={isVi ? "Nhập câu trả lời..." : "Type answer..."} value={qInputs[q.id] || ''} onChange={(e) => {setQInputs({ ...qInputs, [q.id]: e.target.value }); if(qFeedback[q.id]) setQFeedback({...qFeedback, [q.id]: null})}} onKeyDown={(e) => e.key === 'Enter' && handleQCheck(q.id, q.answer)} disabled={qFeedback[q.id]?.isCorrect} />
                   <div className="absolute right-2 top-2 bottom-2 flex gap-1">
-                      <button onClick={() => toggleHint(q.id)} className="p-2 text-slate-400 hover:text-amber-500 hover:bg-amber-50 rounded-lg transition-colors" title="Hint"><HelpCircle className="w-5 h-5" /></button>
-                      <button onClick={() => handleQCheck(q.id, q.answer)} className={`px-5 rounded-lg font-bold text-[10px] uppercase tracking-wider text-white transition-all bg-${themeColor}-600 hover:bg-${themeColor}-700 active:scale-95 shadow-sm`}>Check</button>
+                      <button onClick={() => toggleHint(q.id)} className="p-2 text-slate-400 hover:text-amber-500 hover:bg-amber-50 rounded-lg transition-colors" title="Hint" disabled={qFeedback[q.id]?.isCorrect}><HelpCircle className="w-5 h-5" /></button>
+                      <button onClick={() => handleQCheck(q.id, q.answer)} className={`px-5 rounded-lg font-bold text-[10px] uppercase tracking-wider text-white transition-all bg-${themeColor}-600 hover:bg-${themeColor}-700 active:scale-95 shadow-sm`} disabled={qFeedback[q.id]?.isCorrect}>Check</button>
                   </div>
                </div>
-               {qFeedback[q.id] && (<p className={`mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 ${qFeedback[q.id].status === 'perfect' ? 'text-green-600' : qFeedback[q.id].status === 'warning' ? 'text-amber-600' : 'text-rose-500'}`}>{qFeedback[q.id].status === 'perfect' ? <CheckCircle className="w-4 h-4 mr-1.5"/> : qFeedback[q.id].status === 'warning' ? <AlertTriangle className="w-4 h-4 mr-1.5"/> : <XCircle className="w-4 h-4 mr-1.5"/>} {qFeedback[q.id].message} {qAttempts[q.id] > 0 && !showAnswer[q.id] && `(Lần ${qAttempts[q.id]}/3)`}</p>)}
-               {showHint[q.id] && (<div className="mt-2 p-3 bg-amber-50 border-l-4 border-amber-300 rounded-r-lg text-xs text-slate-600 italic flex items-center animate-fade-in"><HelpCircle className="w-3 h-3 mr-2 text-amber-500"/> {isVi ? q.hint_vi : q.hint_en}</div>)}
-               {showAnswer[q.id] && (<div className="mt-2 p-3 bg-green-50 border-l-4 border-green-400 rounded-r-lg animate-fade-in"><p className="text-[10px] font-black text-green-600 uppercase mb-1">Đáp án đúng:</p><p className="text-sm font-bold text-green-800">{Array.isArray(q.answer) ? q.answer[0] : q.answer}</p></div>)}
+               {qFeedback[q.id] && !qFeedback[q.id].isCorrect && (<p className={`mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 text-rose-500`}><XCircle className="w-4 h-4 mr-1.5"/> {qFeedback[q.id].message} {qAttempts[q.id] > 0 && !showAnswer[q.id] && `(Attempt ${qAttempts[q.id]}/3)`}</p>)}
+               {qFeedback[q.id]?.isCorrect && (<p className={`mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 text-green-600`}><CheckCircle className="w-4 h-4 mr-1.5"/> {qFeedback[q.id].message}</p>)}
+               {showHint[q.id] && !qFeedback[q.id]?.isCorrect && (<div className="mt-2 p-3 bg-amber-50 border-l-4 border-amber-300 rounded-r-lg text-xs text-slate-600 italic flex items-center animate-fade-in"><HelpCircle className="w-3 h-3 mr-2 text-amber-500"/> {isVi ? q.hint_vi : q.hint_en}</div>)}
+               {showAnswer[q.id] && (<div className="mt-2 p-3 bg-green-50 border-l-4 border-green-400 rounded-r-lg animate-fade-in"><p className="text-[10px] font-black text-green-600 uppercase mb-1">Correct Answer:</p><p className="text-sm font-bold text-green-800">{Array.isArray(q.answer) ? q.answer[0] : q.answer}</p></div>)}
             </div>
         ))}
       </div>

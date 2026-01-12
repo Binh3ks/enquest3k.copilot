@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Gamepad2, X, Globe, Zap, Trophy, ExternalLink, Volume2, Loader2 } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { loadWeekData } from '../../data/weeks/index';
 import { useMemo } from 'react';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const GameHub = ({ data }) => {
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System
+  const { savedData, saveProgress } = useStationProgress(parseInt(weekId), 'game_hub');
+  
   const [activeGame, setActiveGame] = useState(null);
   const [gameState, setGameState] = useState('menu');
   const [vocabList, setVocabList] = useState([]);

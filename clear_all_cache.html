@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear All Cache</title>
+    <style>
+        body {
+            font-family: system-ui;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #c0392b;
+        }
+        .success {
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>🧹 Clear All EngQuest Cache</h2>
+        <p>This will clear:</p>
+        <ul>
+            <li>LocalStorage (progress cache)</li>
+            <li>SessionStorage</li>
+            <li>IndexedDB</li>
+            <li>All cookies</li>
+        </ul>
+        <button onclick="clearEverything()">🗑️ Clear All Data & Reload</button>
+        <div class="success" id="success">✅ All cache cleared! Reloading...</div>
+    </div>
+
+    <script>
+        function clearEverything() {
+            // Clear localStorage
+            localStorage.clear();
+            
+            // Clear sessionStorage
+            sessionStorage.clear();
+            
+            // Clear cookies
+            document.cookie.split(";").forEach(c => {
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+            
+            // Clear IndexedDB
+            if (window.indexedDB) {
+                indexedDB.databases().then(dbs => {
+                    dbs.forEach(db => indexedDB.deleteDatabase(db.name));
+                });
+            }
+            
+            // Show success and reload
+            document.getElementById('success').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = 'http://localhost:5173/week/1/new_words';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

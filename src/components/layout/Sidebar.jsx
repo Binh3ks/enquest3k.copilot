@@ -1,39 +1,44 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { X, Flame, Edit2, RotateCcw, ShieldCheck, CheckCircle, ArrowRight } from 'lucide-react';
 import weekIndex from '../../data/weeks/index';
+import { useUserStore } from '../../stores/useUserStore'; // Import the store
 
-const Sidebar = ({ currentUser, weekId, weekProgress, learningMode, handleToggleMode, tabKey, setIsProfileModalOpen, setIsSidebarOpen }) => {
+const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggleMode, tabKey, setIsProfileModalOpen, setIsSidebarOpen }) => {
   const navigate = useNavigate();
+  const { weekId: paramWeekId } = useParams();
+  const weekId = parseInt(paramWeekId || currentWeekId);
+
+  // Get progress directly from the store - using a selector to minimize re-renders
+  const weekCompletion = useUserStore(state => state.weekCompletion);
+  const progressCache = useUserStore(state => state.progressCache);
+
+  const weekProgress = useMemo(() => weekCompletion[weekId] || 0, [weekCompletion, weekId]);
 
   // Get last accessed week/station from user progress
   const lastWeek = currentUser?.lastWeek || weekId;
   const lastStation = currentUser?.lastStation || 'read_explore';
   const hasProgress = currentUser?.progress && Object.keys(currentUser.progress).length > 0;
 
-  // Get station progress for each week
-  const getWeekStationProgress = (weekNumber) => {
-    if (!currentUser?.progress || !currentUser.progress[weekNumber]) return 0;
-    
-    const weekData = currentUser.progress[weekNumber];
-    const stations = Object.keys(weekData);
-    if (stations.length === 0) return 0;
-    
-    const total = stations.reduce((sum, station) => sum + (weekData[station] || 0), 0);
-    return Math.round(total / stations.length);
-  };
+  // Get station progress for each week from the new centralized state
+  const getWeekStationProgress = useMemo(() => {
+    return (weekNumber) => weekCompletion[weekNumber] || 0;
+  }, [weekCompletion]);
 
   const handleWeekClick = (targetWeek) => {
     // Students: weeks >=6 require previous week's SRS completed
     try {
       let latestUser = null;
-      const json = localStorage.getItem('engquest_current_user') || sessionStorage.getItem('engquest_current_user');
-      if (json) latestUser = JSON.parse(json);
+      const json = localStorage.getItem('engquest-user-storage');
+      if (json) {
+        const parsed = JSON.parse(json);
+        latestUser = parsed?.state?.currentUser;
+      }
 
       const checkUser = latestUser || currentUser;
       if (checkUser && checkUser.role === 'student' && targetWeek >= 6) {
         const prev = targetWeek - 1;
-        const srsDone = checkUser.srs_completed && checkUser.srs_completed[prev];
+        const srsDone = progressCache[prev]?.srs_review?.isCompleted;
         if (!srsDone) {
           alert('Please complete the SRS review for the previous week before accessing this week.');
           navigate(`/week/${prev}/review`);
@@ -42,18 +47,7 @@ const Sidebar = ({ currentUser, weekId, weekProgress, learningMode, handleToggle
         }
       }
     } catch (e) {
-      // If parsing fails, fall back to prop check
-      const checkUser = currentUser;
-      if (checkUser && checkUser.role === 'student' && targetWeek >= 6) {
-        const prev = targetWeek - 1;
-        const srsDone = checkUser.srs_completed && checkUser.srs_completed[prev];
-        if (!srsDone) {
-          alert('Please complete the SRS review for the previous week before accessing this week.');
-          navigate(`/week/${prev}/review`);
-          if (typeof setIsSidebarOpen === 'function') setIsSidebarOpen(false);
-          return;
-        }
-      }
+      console.error("Failed to check SRS completion status:", e);
     }
     navigate(`/week/${targetWeek}/read_explore`);
     if (typeof setIsSidebarOpen === 'function') setIsSidebarOpen(false);

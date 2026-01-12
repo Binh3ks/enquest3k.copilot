@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Play, CheckCircle, Clock, X, AlertCircle } from 'lucide-react';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 // --- COMPONENT CON: VideoItem (BẤT TỬ TRƯỚC RE-RENDER) ---
 const VideoItem = memo(({ video, percent, onClick }) => {
@@ -32,55 +32,100 @@ const VideoItem = memo(({ video, percent, onClick }) => {
 
 const DailyWatch = ({ data, onReportProgress }) => {
   const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System Integration
+  const { savedData, saveProgress, markComplete } = useStationProgress(
+    parseInt(weekId), 
+    'daily_watch'
+  );
+  
   const [activeVideo, setActiveVideo] = useState(null); 
   const [playerState, setPlayerState] = useState(-1);
-  const [watchData, setWatchData] = useState(() => {
-    const saved = loadStationState(weekId, 'daily_watch');
-    return saved?.watchData || {};
-  });
-  const [realDuration, setRealDuration] = useState(0);
+  
+  // State initialized from savedData
+  const [watchData, setWatchData] = useState(() => savedData.watchData || {});
+  const [videoDurations, setVideoDurations] = useState(() => savedData.videoDurations || {});
+  const [isReady, setIsReady] = useState(false);
 
   const playerRef = useRef(null);
   const timerRef = useRef(null);
 
-  // Report progress when watchData changes
+  // Debounced Sync to Universal Progress System
   useEffect(() => {
-    if (onReportProgress && data?.videos && data.videos.length > 0) {
+    const handler = setTimeout(() => {
+      if (!isReady || !data?.videos) return;
+
       let completedCount = 0;
+      let totalPercent = 0;
+      
       data.videos.forEach(v => {
         const sec = watchData[v.id] || 0;
-        const percent = v.duration_sec ? Math.min(Math.round((sec / v.duration_sec) * 100), 100) : 0;
+        const total = videoDurations[v.id] || v.duration_sec || v.sim_duration || 300;
+        const percent = Math.min(Math.round((sec / total) * 100), 100);
+        totalPercent += percent;
         if (percent >= 90) completedCount++;
       });
-      const progress = Math.round((completedCount / data.videos.length) * 100);
-      onReportProgress(progress);
-    }
-  }, [watchData, data?.videos, onReportProgress]);
-
-  // Save to localStorage and report progress
-  useEffect(() => {
-    if (weekId && data?.videos && Object.keys(watchData).length > 0) {
-      saveStationState(weekId, 'daily_watch', { watchData });
       
-      let completedCount = 0;
-      data.videos.forEach(v => {
-        const sec = watchData[v.id] || 0;
-        const total = v.sim_duration || 300;
-        if ((sec / total) >= 0.9) completedCount++;
-      });
-      const percent = Math.round((completedCount / data.videos.length) * 100);
-      onReportProgress?.(percent);
+      const overallProgress = Math.round(totalPercent / data.videos.length);
+      const isFullyCompleted = completedCount === data.videos.length;
+      
+      const progressData = { 
+        watchData,
+        videoDurations,
+        completedCount,
+        totalVideos: data.videos.length,
+        lastWatchedId: activeVideo?.id,
+      };
+
+      saveProgress(progressData, isFullyCompleted, overallProgress);
+      
+      if (onReportProgress) {
+        onReportProgress(overallProgress);
+      }
+      
+      if (isFullyCompleted) {
+        markComplete(100);
+      }
+      
+    }, 1500); // 1.5 second debounce
+
+    return () => clearTimeout(handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [watchData, videoDurations, isReady]); // Dependency on watchData and isReady
+
+  // Component Ready Effect
+  useEffect(() => {
+    // Mark as ready once data is available
+    if (data?.videos) {
+      setIsReady(true);
     }
-  }, [watchData, data, weekId, onReportProgress]);
+  }, [data?.videos]);
+
 
   const startTimer = (id) => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
-      setWatchData(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }));
+      if (playerRef.current && typeof playerRef.current.getCurrentTime === 'function') {
+        const currentTime = Math.floor(playerRef.current.getCurrentTime());
+        setWatchData(prev => {
+          if (prev[id] === currentTime) return prev; // No change
+          return { ...prev, [id]: currentTime };
+        });
+      }
     }, 1000);
   };
 
-  const stopTimer = () => { if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; } };
+  const stopTimer = () => { 
+    if (timerRef.current) { 
+      clearInterval(timerRef.current); 
+      timerRef.current = null; 
+    } 
+    // Force save on stop
+    if (playerRef.current && activeVideo && typeof playerRef.current.getCurrentTime === 'function') {
+      const currentTime = Math.floor(playerRef.current.getCurrentTime());
+       setWatchData(prev => ({ ...prev, [activeVideo.id]: currentTime }));
+    }
+  };
 
   // YT API Load
   useEffect(() => {
@@ -91,34 +136,76 @@ const DailyWatch = ({ data, onReportProgress }) => {
     }
   }, []);
 
+const handleClosePlayer = () => {
+    if (playerRef.current && typeof playerRef.current.getCurrentTime === 'function') {
+      const currentTime = Math.floor(playerRef.current.getCurrentTime());
+      setWatchData(prev => ({ ...prev, [activeVideo.id]: currentTime }));
+    }
+    setActiveVideo(null);
+  };
+
   useEffect(() => {
-    if (!activeVideo) return;
-    setRealDuration(0);
+    if (!activeVideo) {
+      if (playerRef.current?.destroy) {
+        playerRef.current.destroy();
+        playerRef.current = null;
+      }
+      return;
+    };
+    
     let player;
     const init = () => {
       if (window.YT && window.YT.Player) {
+        const startTime = watchData[activeVideo.id] || 0;
+        
         player = new window.YT.Player('yt-player-frame', {
           videoId: activeVideo.videoId,
-          playerVars: { 'autoplay': 1, 'controls': 1, 'rel': 0, 'modestbranding': 1 },
+          playerVars: { 
+            'autoplay': 1, 
+            'controls': 1, 
+            'rel': 0, 
+            'modestbranding': 1,
+            'start': startTime
+          },
           events: {
-            'onReady': (e) => { e.target.playVideo(); setRealDuration(e.target.getDuration()); },
+            'onReady': (e) => { 
+              const duration = e.target.getDuration();
+              if (duration > 0 && videoDurations[activeVideo.id] !== duration) {
+                setVideoDurations(prev => ({...prev, [activeVideo.id]: duration}));
+              }
+              e.target.playVideo(); 
+            },
             'onStateChange': (e) => {
               setPlayerState(e.data);
-              if (e.data === 1) startTimer(activeVideo.id);
-              else stopTimer();
+              if (e.data === 1) { // Playing
+                startTimer(activeVideo.id);
+              } else { // Paused, Ended, etc.
+                stopTimer();
+              }
             }
           }
         });
         playerRef.current = player;
-      } else { setTimeout(init, 500); }
+      } else { 
+        setTimeout(init, 500); 
+      }
     };
+    
     init();
-    return () => { stopTimer(); if (playerRef.current?.destroy) playerRef.current.destroy(); };
+    
+    return () => { 
+      stopTimer(); 
+      if (playerRef.current?.destroy) {
+        playerRef.current.destroy();
+        playerRef.current = null; // Explicitly nullify
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeVideo]);
 
   const getPercent = (id, fallback) => {
     const sec = watchData[id] || 0;
-    const total = (activeVideo?.id === id && realDuration > 0) ? realDuration : (fallback || 300);
+    const total = videoDurations[id] || fallback || 300;
     return Math.min(100, Math.floor((sec / total) * 100));
   };
 
@@ -132,27 +219,27 @@ const DailyWatch = ({ data, onReportProgress }) => {
           <p className="text-xs text-rose-600 font-bold mt-1">Listen to English naturally every day.</p>
         </div>
         <div className="bg-white px-6 py-2 rounded-2xl border-2 border-rose-200 shadow-inner">
-            <span className="text-2xl font-black text-rose-500">{data.videos.filter(v => getPercent(v.id, v.sim_duration) >= 90).length}</span>
+            <span className="text-2xl font-black text-rose-500">{data.videos.filter(v => getPercent(v.id, v.duration_sec || v.sim_duration) >= 90).length}</span>
             <span className="text-sm font-bold text-slate-400">/{data.videos.length}</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.videos.map(v => (
-          <VideoItem key={v.id} video={v} percent={getPercent(v.id, v.sim_duration)} onClick={setActiveVideo} />
+          <VideoItem key={v.id} video={v} percent={getPercent(v.id, v.duration_sec || v.sim_duration)} onClick={setActiveVideo} />
         ))}
       </div>
 
       {activeVideo && (
         <div className="fixed inset-0 z-[9999] bg-slate-950/95 backdrop-blur-md flex flex-col items-center justify-center p-4">
-          <button onClick={() => setActiveVideo(null)} className="absolute top-6 right-6 text-white bg-white/10 hover:bg-rose-500 p-3 rounded-full transition-all"><X size={24}/></button>
+          <button onClick={handleClosePlayer} className="absolute top-6 right-6 text-white bg-white/10 hover:bg-rose-500 p-3 rounded-full transition-all"><X size={24}/></button>
           <div className="w-full max-w-5xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800 relative">
             <div id="yt-player-frame" className="w-full h-full"></div>
           </div>
           <div className="mt-8 text-center max-w-2xl">
             <h3 className="text-white font-black text-2xl mb-2">{activeVideo.title}</h3>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/20 rounded-full border border-indigo-500/30 text-indigo-300 font-mono text-sm">
-              {playerState === 1 ? 'Tracking Progress...' : 'Paused'} • {getPercent(activeVideo.id, realDuration || activeVideo.sim_duration)}%
+              {playerState === 1 ? 'Tracking Progress...' : 'Paused'} • {getPercent(activeVideo.id, videoDurations[activeVideo.id] || activeVideo.duration_sec || activeVideo.sim_duration)}%
             </div>
           </div>
         </div>

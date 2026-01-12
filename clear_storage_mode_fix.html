@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear EngQuest Storage</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        p { color: #666; }
+        .button { background-color: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        .button:hover { background-color: #c82333; }
+        #status { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EngQuest Storage Cleaner</h1>
+        <p>This script will clear the necessary user progress data from your browser's local storage.</p>
+        <p>This is required to apply the recent fix for separating 'Easy' and 'Advanced' mode progress.</p>
+        <button class="button" onclick="clearStorage()">Clear Progress Data</button>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        function clearStorage() {
+            const statusDiv = document.getElementById('status');
+            try {
+                // The key is defined in useUserStore.js persist middleware
+                const storageKey = 'user-storage';
+                
+                if (localStorage.getItem(storageKey)) {
+                    localStorage.removeItem(storageKey);
+                    statusDiv.textContent = '✅ Success! User progress data has been cleared.';
+                    statusDiv.style.color = 'green';
+                    console.log(`Removed '${storageKey}' from localStorage.`);
+                } else {
+                    statusDiv.textContent = 'ℹ️ No user progress data found to clear.';
+                    statusDiv.style.color = 'blue';
+                }
+
+                alert('Storage cleared successfully! Please reload the EngQuest application page.');
+
+            } catch (error) {
+                statusDiv.textContent = '❌ Error: Could not clear storage. Check the console for details.';
+                statusDiv.style.color = 'red';
+                console.error('Error clearing localStorage:', error);
+            }
+        }
+    </script>
+</body>
+</html>

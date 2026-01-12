@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, XCircle, Zap, Globe, AlertTriangle, HelpCircle, Calculator, Puzzle, BrainCircuit, ListChecks } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const [inputs, setInputs] = useState({});
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System
+  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'game_logic');
+  
+  const [inputs, setInputs] = useState(savedData.inputs || {});
   const [feedback, setFeedback] = useState({});
   const [showHint, setShowHint] = useState({});
-  const [completedIds, setCompletedIds] = useState([]);
+  const [completedIds, setCompletedIds] = useState(savedData.puzzlesSolved || []);
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Logic Lab...</div>;
 
@@ -33,9 +40,18 @@ const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =>
         if (!completedIds.includes(id)) {
             const newCompleted = [...completedIds, id];
             setCompletedIds(newCompleted);
-            if (onReportProgress && data.puzzles) {
-                onReportProgress(Math.round((newCompleted.length / data.puzzles.length) * 100));
-            }
+            
+            const percent = Math.round((newCompleted.length / data.puzzles.length) * 100);
+            const isComplete = newCompleted.length === data.puzzles.length;
+            
+            // 🔥 Save to Universal Progress System
+            saveProgress({
+              puzzlesSolved: newCompleted,
+              inputs: inputs,
+              currentLevel: newCompleted.length
+            }, isComplete, percent);
+            
+            if (isComplete) markComplete(100);
         }
     }
   };

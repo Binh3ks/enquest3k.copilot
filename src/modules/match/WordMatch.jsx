@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { Target, Image as ImageIcon, Type, RefreshCw, Trophy, Check, Star, Music, Play, ImageOff } from 'lucide-react';
+import { Target, Image as ImageIcon, Type, RefreshCw, Trophy, Check, Music, ImageOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import InstructionBar from '../../components/common/InstructionBar';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const shuffleArray = (array) => {
   const newArray = [...array];
@@ -16,97 +16,115 @@ const shuffleArray = (array) => {
 
 const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
-  const [gameMode, setGameMode] = useState('meaning'); 
+  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'game_word_match');
+
+  // State for the current game instance
+  const [gameMode, setGameMode] = useState('meaning');
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
-  const [matchedCards, setMatchedCards] = useState(() => {
-    const saved = loadStationState(weekId, 'wordmatch');
-    return saved?.matched || [];
-  });
-  const [isLock, setIsLock] = useState(false);
+  const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const [score, setScore] = useState(0);
+  const [isLock, setIsLock] = useState(false);
+  const [isGameReady, setIsGameReady] = useState(false);
 
   const vocabList = data?.stations?.new_words?.vocab || [];
 
-  // Save to localStorage
-  useEffect(() => {
-    if (weekId && matchedCards.length > 0) {
-      saveStationState(weekId, 'wordmatch', { matched: matchedCards });
-    }
-  }, [matchedCards, weekId]);
-
-  // Report progress to backend
-  useEffect(() => {
-    if (onReportProgress && cards.length > 0 && matchedCards.length === cards.length) {
-      onReportProgress(100);
-    }
-  }, [matchedCards.length, cards.length, onReportProgress]);
-
-  useEffect(() => {
-    if (vocabList.length > 0) {
-      startNewGame(gameMode);
-    }
-  }, [data, gameMode]);
-
-  // REPORT PROGRESS WHEN COMPLETED
-  useEffect(() => {
-      if (cards.length > 0 && matchedCards.length === cards.length) {
-          if (onReportProgress) onReportProgress(100);
-      }
-  }, [matchedCards, cards]);
-
-  const startNewGame = (mode) => {
-    const selectedVocab = vocabList.slice(0, 10); 
-    
+  const generateCards = useCallback((mode) => {
+    const selectedVocab = vocabList.slice(0, 10);
     let gameCards = [];
     selectedVocab.forEach(item => {
       const audioUrl = item.audio_word || item.audio_url;
-
-      // 1. Word Card
-      gameCards.push({ 
-        id: item.id, type: 'word', 
-        content: item.word, 
-        speakContent: item.word,
-        audioUrl: audioUrl,
-        uniqueId: `word-${item.id}` 
-      });
+      gameCards.push({ id: item.id, type: 'word', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: `word-${item.id}` });
       
-      // 2. Pair Card
       if (mode === 'meaning') {
-        gameCards.push({ 
-          id: item.id, type: 'meaning', 
-          content: item.definition_vi, 
-          speakContent: item.word,
-          audioUrl: audioUrl,
-          uniqueId: `pair-${item.id}` 
-        });
+        gameCards.push({ id: item.id, type: 'meaning', content: item.definition_vi, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
       } else if (mode === 'image') {
-        gameCards.push({ 
-          id: item.id, type: 'image', 
-          content: item.image_url, 
-          speakContent: item.word,
-          audioUrl: audioUrl,
-          uniqueId: `pair-${item.id}` 
-        });
+        gameCards.push({ id: item.id, type: 'image', content: item.image_url, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
       } else if (mode === 'audio') {
-        gameCards.push({ 
-          id: item.id, type: 'audio', 
-          content: item.word, 
-          speakContent: item.word,
-          audioUrl: audioUrl,
-          uniqueId: `pair-${item.id}` 
-        });
+        gameCards.push({ id: item.id, type: 'audio', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
       }
     });
+    return shuffleArray(gameCards);
+  }, [vocabList]);
 
-    setCards(shuffleArray(gameCards));
+  const switchGameMode = useCallback((newMode, forceReset = false) => {
+    setIsGameReady(false);
+    setGameMode(newMode);
     setFlippedCards([]);
-    setMatchedCards([]);
-    setMoves(0);
-    setScore(0);
     setIsLock(false);
-  };
+
+    const modeProgress = savedData && savedData[newMode] ? savedData[newMode] : null;
+
+    if (modeProgress && !forceReset) {
+      setMatchedCards(modeProgress.matched || []);
+      setMoves(modeProgress.moves || 0);
+      setScore(modeProgress.score || 0);
+    } else {
+      setMatchedCards([]);
+      setMoves(0);
+      setScore(0);
+    }
+    
+    setCards(generateCards(newMode));
+    
+    setTimeout(() => setIsGameReady(true), 50);
+  }, [savedData, generateCards]);
+
+  // Debounced save progress
+  useEffect(() => {
+    if (!isGameReady || !vocabList.length) return;
+
+    const handler = setTimeout(() => {
+      const newSavedData = { ...(savedData || {}) };
+      
+      newSavedData[gameMode] = {
+        matched: matchedCards,
+        moves: moves,
+        score: score,
+      };
+      newSavedData.lastMode = gameMode;
+
+      const modes = ['meaning', 'image', 'audio'];
+      let totalScore = 0;
+      let completedModes = 0;
+      const cardsPerMode = generateCards(gameMode).length;
+
+      modes.forEach(mode => {
+        if (newSavedData[mode]) {
+          totalScore += newSavedData[mode].score || 0;
+          if (newSavedData[mode].matched?.length === cardsPerMode) {
+            completedModes++;
+          }
+        }
+      });
+      
+      const isStationComplete = completedModes === modes.length;
+      const progressPercent = Math.round((completedModes / modes.length) * 100);
+
+      saveProgress(newSavedData, isStationComplete, progressPercent);
+      
+      if (isStationComplete) {
+        markComplete(totalScore);
+      }
+      if (onReportProgress) {
+        onReportProgress(progressPercent);
+      }
+
+    }, 1500);
+
+    return () => clearTimeout(handler);
+  }, [matchedCards, moves, score, gameMode, isGameReady, savedData, saveProgress, markComplete, onReportProgress, vocabList.length, generateCards]);
+
+  // Game Initialization
+  useEffect(() => {
+    if (vocabList.length > 0) {
+      const initialMode = savedData?.lastMode || 'meaning';
+      switchGameMode(initialMode);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [vocabList.length, data]);
+
 
   const handleCardClick = (card) => {
     if (isLock || flippedCards.includes(card) || matchedCards.includes(card.uniqueId)) return;
@@ -145,7 +163,7 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     e.target.nextSibling.style.display = 'flex';
   };
 
-  const isCompleted = cards.length > 0 && matchedCards.length === cards.length;
+  const isModeCompleted = cards.length > 0 && matchedCards.length === cards.length;
 
   if (!vocabList.length) return <div className="p-10 text-center text-slate-400">No vocabulary data found.</div>;
 
@@ -165,14 +183,14 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
         ].map(mode => (
           <button 
             key={mode.id}
-            onClick={() => setGameMode(mode.id)}
+            onClick={() => switchGameMode(mode.id)}
             className={`btn-3d px-5 py-3 rounded-xl font-bold flex items-center space-x-2 transition-all ${gameMode === mode.id ? `bg-${mode.color}-500 text-white ring-2 ring-${mode.color}-200` : 'bg-slate-50 text-slate-500 hover:bg-slate-100'}`}
           >
             <mode.icon className="w-5 h-5" />
             <span>{isVi ? mode.labelVi : mode.labelEn}</span>
           </button>
         ))}
-        <button onClick={() => startNewGame(gameMode)} className="btn-3d px-4 py-3 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 font-bold ml-auto">
+        <button onClick={() => switchGameMode(gameMode, true)} className="btn-3d px-4 py-3 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 font-bold ml-auto">
           <RefreshCw className="w-5 h-5" />
         </button>
       </div>
@@ -230,13 +248,13 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
         })}
       </div>
       
-      {isCompleted && (
+      {isModeCompleted && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl animate-bounce-in">
             <Trophy className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-2">{isVi ? 'Thắng rồi!' : 'Victory!'}</h3>
             <p className="mb-4 text-slate-500">{isVi ? `Hoàn thành trong ${moves} bước.` : `Finished in ${moves} moves.`}</p>
-            <button onClick={() => startNewGame(gameMode)} className={`btn-3d w-full py-3 bg-${themeColor}-600 text-white rounded-xl font-bold`}>{isVi ? 'Chơi lại' : 'Play Again'}</button>
+            <button onClick={() => switchGameMode(gameMode, true)} className={`btn-3d w-full py-3 bg-${themeColor}-600 text-white rounded-xl font-bold`}>{isVi ? 'Chơi lại' : 'Play Again'}</button>
           </div>
         </div>
       )}

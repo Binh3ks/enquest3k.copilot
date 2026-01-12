@@ -1,13 +1,53 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, XCircle, Globe, Keyboard, LayoutList, Type, Info, AlertTriangle, ArrowRight } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const [level, setLevel] = useState(1);
-  const [inputs, setInputs] = useState({});
-  const [feedback, setFeedback] = useState({});
-  const [completedIds, setCompletedIds] = useState([]);
+  const { weekId } = useParams();
+  
+  // 🔥 Universal Progress System with mode support
+  const { savedData, saveProgress, markComplete, mode } = useStationProgress(parseInt(weekId), 'skill_dictation');
+  
+  const [level, setLevel] = useState(savedData.level || 1);
+  const [inputs, setInputs] = useState(savedData.inputs || {});
+  const [feedback, setFeedback] = useState(savedData.feedback || {});
+  const [completedIds, setCompletedIds] = useState(() => new Set(savedData.correctSentences || []));
+
+  // 🔥 FIX: Reset state when mode changes
+  useEffect(() => {
+    setLevel(savedData.level || 1);
+    setInputs(savedData.inputs || {});
+    setFeedback(savedData.feedback || {});
+    setCompletedIds(new Set(savedData.correctSentences || []));
+  }, [mode]); // Only depend on mode
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      const totalSentences = data?.sentences?.length || 0;
+      if (totalSentences > 0) {
+        const percent = Math.round((completedIds.size / totalSentences) * 100);
+        const isComplete = completedIds.size === totalSentences;
+        
+        saveProgress({
+          level,
+          inputs,
+          feedback,
+          correctSentences: [...completedIds]
+        }, isComplete, percent);
+        
+        if (isComplete) {
+          markComplete(100);
+        }
+      }
+    }, 1500); // Debounce saving
+
+    return () => clearTimeout(handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [level, inputs, feedback, completedIds]);
+
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Dictation...</div>;
 
@@ -54,12 +94,10 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
 
     // REPORT PROGRESS - Check for both isCorrect and status === 'perfect'
     if (result.isCorrect || result.status === 'perfect') {
-        if (!completedIds.includes(id)) {
-            const newCompleted = [...completedIds, id];
+        if (!completedIds.has(id)) {
+            const newCompleted = new Set(completedIds);
+            newCompleted.add(id);
             setCompletedIds(newCompleted);
-            if (onReportProgress && data.sentences) {
-                onReportProgress(Math.round((newCompleted.length / data.sentences.length) * 100));
-            }
         }
     }
   };
@@ -100,7 +138,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
            <div className="flex justify-between items-center mb-3">
                <span className={`px-2 py-1 rounded bg-${themeColor}-100 text-${themeColor}-700 text-xs font-black`}>#{idx+1}</span>
                <div className="flex items-center gap-2">
-                 {completedIds.includes(s.id) && (
+                 {completedIds.has(s.id) && (
                    <div className="flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">
                      <CheckCircle className="w-3 h-3" />
                      <span>Done</span>
@@ -140,20 +178,29 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                        }`}
                        placeholder={isVi ? "Gõ lại cả câu..." : "Type full sentence..."}
                        value={inputs[s.id] || ''}
-                       onChange={(e) => setInputs({...inputs, [s.id]: e.target.value})}
+                       onChange={(e) => {
+                         setInputs({...inputs, [s.id]: e.target.value});
+                         if (feedback[s.id]) {
+                           const newFeedback = {...feedback};
+                           delete newFeedback[s.id];
+                           setFeedback(newFeedback);
+                         }
+                       }}
                        onKeyDown={(e) => e.key === 'Enter' && handleCheck(s.id, s.text)}
+                       disabled={completedIds.has(s.id)}
                      />
                      <button 
                        onClick={() => handleCheck(s.id, s.text)} 
-                       className={`absolute right-2 top-2 bottom-2 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
-                           feedback[s.id]?.status === 'perfect' ? 'bg-green-500 text-white' : 'bg-white border border-slate-200 hover:bg-slate-50 text-slate-600'
+                       className={`absolute right-2 top-2 bottom-2 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
+                           completedIds.has(s.id) ? 'bg-green-500 text-white cursor-not-allowed' : `bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 active:bg-slate-100`
                        }`}
+                       disabled={completedIds.has(s.id)}
                      >
-                       {feedback[s.id]?.status === 'perfect' ? <CheckCircle className="w-4 h-4"/> : "Check"}
+                       {completedIds.has(s.id) ? <CheckCircle className="w-4 h-4"/> : "Check"}
                      </button>
                </div>
 
-               {feedback[s.id] && (
+               {feedback[s.id] && !completedIds.has(s.id) && (
                    <p className={`text-xs font-bold flex items-center animate-in slide-in-from-top-1 ${
                        feedback[s.id].status === 'perfect' ? 'text-green-600' : 
                        feedback[s.id].status === 'warning' ? 'text-amber-600' : 'text-rose-500'

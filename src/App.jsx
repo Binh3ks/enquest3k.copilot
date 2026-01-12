@@ -70,7 +70,7 @@ const MainLayout = () => {
   const weekId = parseInt(params.weekId || 1);
   const tabKey = params.tabKey || 'read_explore';
   
-  const { data: weekData } = useFetchWeekData(weekId, learningMode);
+  const { data: weekData, loading: isWeekDataLoading, error: weekDataError } = useFetchWeekData(weekId, learningMode);
   const stationData = useStationData(tabKey, weekData);
   // GameHub and word_match need full weekData, others use station-specific data
   const matchData = (tabKey === 'word_match' || tabKey === 'game_hub') ? weekData : stationData;
@@ -254,9 +254,9 @@ const MainLayout = () => {
             
             <div className="max-w-7xl mx-auto relative">
               {tabKey === 'review' ? (
-                 <ReviewDashboard userId={currentUser?.id || currentUser?.name} isAuthenticated={!!currentUser} themeColor={currentStation.color} reviewItems={reviewItems} onWeekComplete={() => {}} />
+                 <ReviewDashboard key={`review-${learningMode}`} userId={currentUser?.id || currentUser?.name} isAuthenticated={!!currentUser} themeColor={currentStation.color} reviewItems={reviewItems} onWeekComplete={() => {}} />
               ) : (
-                <CurrentModule data={matchData} themeColor={currentStation.color} isVi={isVi} onToggleLang={() => setIsVi(!isVi)} onReportProgress={handleReportProgress} currentProgress={weekProgress[tabKey] || 0} />
+                <CurrentModule key={`${tabKey}-${learningMode}`} data={matchData} themeColor={currentStation.color} isVi={isVi} onToggleLang={() => setIsVi(!isVi)} onReportProgress={handleReportProgress} currentProgress={weekProgress[tabKey] || 0} />
               )}
             </div>
           </div>

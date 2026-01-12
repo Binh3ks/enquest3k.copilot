@@ -1,51 +1,93 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { Mic, Play, Eye, EyeOff, Volume2, Globe, StopCircle, RefreshCw } from 'lucide-react';
+import { Mic, Play, Eye, EyeOff, Volume2, Globe, StopCircle, RefreshCw, Pause } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   
+  // 🔥 Universal Progress System
+  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_shadowing');
+  
+  // Get script BEFORE any useState (to avoid hooks order issues)
+  const script = data?.script || [];
+  
   const [hideText, setHideText] = useState(false);
   const [activeSentence, setActiveSentence] = useState(null);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
-  const [isRecording, setIsRecording] = useState(false);
-  const [audioUrl, setAudioUrl] = useState(null);
-  const [hasRecorded, setHasRecorded] = useState(() => {
-    const saved = loadStationState(weekId, 'shadowing');
-    return saved?.recorded || false;
-  });
+  
+  // Recording states
+  const [isRecording, setIsRecording] = useState(false); // For single sentence recording
+  const [isRecordingAll, setIsRecordingAll] = useState(false); // For full script recording
+  const [recordedSegments, setRecordedSegments] = useState(() => savedData.segments || {});
+  const [currentRecordingId, setCurrentRecordingId] = useState(null);
+  
+  // 🎯 NEW: Playback states
+  const [playingRecording, setPlayingRecording] = useState(null); // Track which recording is playing
+  const [playingFullRecording, setPlayingFullRecording] = useState(false); // Track if full recording is playing
+  
   const mediaRecorderRef = useRef(null);
   const chunksRef = useRef([]);
+  const audioRef = useRef(null); // For playing audio
+  const playbackRefs = useRef({}); // Store audio elements for each recording
 
-  // Save to localStorage
+  // Debounced save progress
   useEffect(() => {
-    if (weekId && hasRecorded) {
-      saveStationState(weekId, 'shadowing', { recorded: hasRecorded });
-    }
-  }, [hasRecorded, weekId]);
+    const handler = setTimeout(() => {
+      const recordedCount = Object.keys(recordedSegments).length;
+      if (script.length > 0) {
+        const percent = Math.round((recordedCount / script.length) * 100);
+        const isComplete = recordedCount === script.length;
+        saveProgress({ segments: recordedSegments }, isComplete, percent);
+        if (isComplete) {
+          markComplete(100);
+        }
+      }
+    }, 1000);
 
-  // Report progress to backend
-  useEffect(() => {
-    if (onReportProgress && hasRecorded) {
-      onReportProgress(100);
-    }
-  }, [hasRecorded, onReportProgress]);
+    return () => clearTimeout(handler);
+  }, [recordedSegments, script.length, saveProgress, markComplete]);
 
-  // Report initial progress on mount
-  useEffect(() => {
-    if (onReportProgress && hasRecorded) {
-      onReportProgress(100);
-    }
+  // Cleanup on unmount
+  useEffect(() => { 
+    return () => { 
+      speakText(""); 
+      setIsPlayingAll(false); 
+      
+      // Stop full recording playback
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+      
+      // Stop all individual recording playbacks
+      Object.values(playbackRefs.current).forEach(audio => {
+        if (audio) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+      playbackRefs.current = {};
+      
+      // Stop any recording when component unmounts
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
+        mediaRecorderRef.current.stream.getTracks().forEach(track => track.stop());
+      }
+    }; 
   }, []);
 
-  if (!data || !data.script) return <div>Loading Script...</div>;
+  // Early return AFTER all hooks
+  if (!data || !script.length) return <div>Loading Script...</div>;
 
   const handlePlayOne = (text, url, id) => {
+    // If there's a recording for this segment, play it. Otherwise, play the original.
+    const audioUrl = recordedSegments[id] || url;
+    const audioText = recordedSegments[id] ? (isVi ? "Bản ghi âm của bạn" : "Your Recording") : text.replace(/\*\*/g, '');
+    
     setIsPlayingAll(false);
     setActiveSentence(id);
-    speakText(text.replace(/\*\*/g, ''), url, 0.8, () => setActiveSentence(null));
+    speakText(audioText, audioUrl, 0.8, () => setActiveSentence(null));
   };
 
   const playSequence = (index) => {
@@ -66,38 +108,158 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       setIsPlayingAll(false);
       speakText(""); 
       setActiveSentence(null);
+      if (audioRef.current) audioRef.current.pause();
     } else {
       setIsPlayingAll(true);
       setTimeout(() => playSequence(0), 0);
     }
   };
 
-  const toggleRecording = async () => {
-    if (isRecording) {
-      mediaRecorderRef.current.stop();
-      setIsRecording(false);
-    } else {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        mediaRecorderRef.current = new MediaRecorder(stream);
-        chunksRef.current = [];
-        mediaRecorderRef.current.ondataavailable = (e) => { if (e.data.size > 0) chunksRef.current.push(e.data); };
-        mediaRecorderRef.current.onstop = () => {
-          const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
-          const url = URL.createObjectURL(blob);
-          setAudioUrl(url);
-          setHasRecorded(true);
-          
-          // REPORT PROGRESS 100% WHEN RECORDING IS DONE
-          if (onReportProgress) onReportProgress(100);
-        };
-        mediaRecorderRef.current.start();
-        setIsRecording(true);
-      } catch (err) { alert("Microphone access denied!"); }
+  const startSingleRecording = async (sentenceId) => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorderRef.current = new MediaRecorder(stream);
+      chunksRef.current = [];
+      mediaRecorderRef.current.ondataavailable = (e) => { if (e.data.size > 0) chunksRef.current.push(e.data); };
+      mediaRecorderRef.current.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
+        const url = URL.createObjectURL(blob);
+        setRecordedSegments(prev => ({ ...prev, [sentenceId]: url }));
+        // Clean up stream
+        stream.getTracks().forEach(track => track.stop());
+      };
+      mediaRecorderRef.current.start();
+      setIsRecording(true);
+      setCurrentRecordingId(sentenceId);
+    } catch (err) {
+      alert("Microphone access denied!");
     }
   };
 
-  useEffect(() => { return () => { speakText(""); setIsPlayingAll(false); }; }, []);
+  const stopSingleRecording = () => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
+      mediaRecorderRef.current.stop();
+    }
+    setIsRecording(false);
+    setCurrentRecordingId(null);
+  };
+
+  const toggleRecording = (sentenceId) => {
+    if (isRecording) {
+      stopSingleRecording();
+    } else {
+      startSingleRecording(sentenceId);
+    }
+  };
+
+  // 🎯 NEW: Play recorded audio
+  const playRecording = (sentenceId) => {
+    const recordingUrl = recordedSegments[sentenceId];
+    if (!recordingUrl) return;
+
+    // Stop any currently playing recording
+    if (playingRecording && playbackRefs.current[playingRecording]) {
+      playbackRefs.current[playingRecording].pause();
+      playbackRefs.current[playingRecording].currentTime = 0;
+    }
+
+    // Create or reuse audio element
+    if (!playbackRefs.current[sentenceId]) {
+      const audio = new Audio(recordingUrl);
+      audio.onended = () => setPlayingRecording(null);
+      playbackRefs.current[sentenceId] = audio;
+    }
+
+    setPlayingRecording(sentenceId);
+    playbackRefs.current[sentenceId].play();
+  };
+
+  const stopPlayback = (sentenceId) => {
+    if (playbackRefs.current[sentenceId]) {
+      playbackRefs.current[sentenceId].pause();
+      playbackRefs.current[sentenceId].currentTime = 0;
+    }
+    setPlayingRecording(null);
+  };
+
+  // 🎯 Handle separate record button
+  const handleRecordButtonClick = (sentenceId) => {
+    const isThisRecording = isRecording && currentRecordingId === sentenceId;
+    
+    if (isThisRecording) {
+      // Currently recording → Stop
+      stopSingleRecording();
+    } else {
+      // Not recording → Start (will delete old recording if exists)
+      startSingleRecording(sentenceId);
+    }
+  };
+
+  // 🎯 Handle separate play button
+  const handlePlayButtonClick = (sentenceId) => {
+    const isThisPlaying = playingRecording === sentenceId;
+    
+    if (isThisPlaying) {
+      // Currently playing → Stop
+      stopPlayback(sentenceId);
+    } else {
+      // Not playing → Play
+      playRecording(sentenceId);
+    }
+  };
+
+  const handleRecordAll = async () => {
+    if (isRecordingAll) {
+      // Stop recording all
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
+        mediaRecorderRef.current.stop();
+      }
+      setIsRecordingAll(false);
+      return;
+    }
+
+    // Start recording all
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorderRef.current = new MediaRecorder(stream);
+      chunksRef.current = [];
+      mediaRecorderRef.current.ondataavailable = (e) => { if (e.data.size > 0) chunksRef.current.push(e.data); };
+      mediaRecorderRef.current.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
+        const url = URL.createObjectURL(blob);
+        setRecordedSegments(prev => ({ ...prev, full_script: url }));
+        stream.getTracks().forEach(track => track.stop());
+      };
+      mediaRecorderRef.current.start();
+      setIsRecordingAll(true);
+    } catch (err) {
+      alert("Microphone access denied!");
+      setIsRecordingAll(false);
+    }
+  };
+
+  const playFullRecording = () => {
+    const recordingUrl = recordedSegments.full_script;
+    if (!recordingUrl) return;
+
+    if (!audioRef.current) {
+      audioRef.current = new Audio(recordingUrl);
+      audioRef.current.onended = () => setPlayingFullRecording(false);
+    } else {
+      audioRef.current.src = recordingUrl;
+    }
+
+    setPlayingFullRecording(true);
+    audioRef.current.play();
+  };
+
+  const stopFullPlayback = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    setPlayingFullRecording(false);
+  };
 
   const renderStyledText = (text) => {
     if (!text) return null;
@@ -127,6 +289,65 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
            <button onClick={handlePlayAll} className={`px-4 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${isPlayingAll ? 'bg-rose-500 hover:bg-rose-600' : `bg-${themeColor}-500 hover:bg-${themeColor}-600`}`}>
              {isPlayingAll ? <StopCircle className="w-4 h-4 mr-1" /> : <Play className="w-4 h-4 mr-1" />} {isPlayingAll ? (isVi ? "Dừng" : "Stop") : (isVi ? "Nghe Hết" : "Play All")}
            </button>
+           
+           {/* Record All button */}
+           <button 
+             onClick={handleRecordAll}
+             className={`px-4 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all relative group ${
+               isRecordingAll ? 'bg-rose-500 animate-pulse' : 
+               recordedSegments.full_script ? 'bg-orange-500 hover:bg-orange-600' :
+               'bg-indigo-600 hover:bg-indigo-700'
+             }`}
+             disabled={isRecording}
+           >
+             {isRecordingAll ? (
+               <>
+                 <StopCircle className="w-4 h-4 mr-1" />
+                 {isVi ? "Dừng Ghi" : "Stop"}
+               </>
+             ) : recordedSegments.full_script ? (
+               <>
+                 <RefreshCw className="w-4 h-4 mr-1" />
+                 {isVi ? "Ghi Lại" : "Re-record"}
+               </>
+             ) : (
+               <>
+                 <Mic className="w-4 h-4 mr-1" />
+                 {isVi ? "Ghi Âm Hết" : "Record All"}
+               </>
+             )}
+             <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+               {isRecordingAll ? (isVi ? "Dừng ghi âm" : "Stop recording") :
+                recordedSegments.full_script ? (isVi ? "Ghi lại toàn bộ" : "Re-record all") :
+                (isVi ? "Ghi âm toàn bộ script" : "Record full script")}
+             </span>
+           </button>
+
+           {/* Play Back button (only show if has full recording) */}
+           {recordedSegments.full_script && (
+             <button 
+               onClick={playingFullRecording ? stopFullPlayback : playFullRecording}
+               className={`px-4 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all relative group ${
+                 playingFullRecording ? 'bg-purple-500 hover:bg-purple-600' : 'bg-green-600 hover:bg-green-700'
+               }`}
+               disabled={isRecording || isRecordingAll}
+             >
+               {playingFullRecording ? (
+                 <>
+                   <Pause className="w-4 h-4 mr-1" />
+                   {isVi ? "Dừng Nghe" : "Stop"}
+                 </>
+               ) : (
+                 <>
+                   <Play className="w-4 h-4 mr-1" />
+                   {isVi ? "Nghe Lại" : "Play Back"}
+                 </>
+               )}
+               <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                 {playingFullRecording ? (isVi ? "Dừng nghe bản ghi" : "Stop playback") : (isVi ? "Nghe lại bản ghi" : "Play your recording")}
+               </span>
+             </button>
+           )}
         </div>
       </div>
 
@@ -139,28 +360,94 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
 
       <div className="space-y-3">
         <h3 className="text-xs font-bold uppercase text-slate-400 mb-2 ml-1 tracking-wider">Practice Sentences</h3>
-        {data.script.map((s) => (
-          <div key={s.id} className={`p-4 rounded-xl border-2 transition-all cursor-pointer flex items-center gap-4 ${activeSentence === s.id ? `border-${themeColor}-400 bg-${themeColor}-50 shadow-md transform scale-[1.01]` : 'border-slate-100 bg-white hover:border-slate-200'}`} onClick={() => handlePlayOne(s.text, s.audio_url, s.id)}>
-            <div className={`p-2 rounded-full ${activeSentence === s.id ? `bg-${themeColor}-500 text-white` : 'bg-slate-100 text-slate-400'}`}><Volume2 className="w-4 h-4" /></div>
-            <div className="flex-1">
-               <p className={`text-lg font-bold text-slate-800 ${hideText ? 'opacity-20 blur-[2px]' : ''}`}>{renderStyledText(s.text)}</p>
-               {isVi && <p className="text-sm text-slate-500 italic mt-1">{s.vi}</p>}
+        {script.map((s) => {
+          const hasRecording = !!recordedSegments[s.id];
+          const isThisRecording = isRecording && currentRecordingId === s.id;
+          const isThisPlaying = playingRecording === s.id;
+
+          return (
+            <div 
+              key={s.id} 
+              className={`p-4 rounded-xl border-2 transition-all flex items-center gap-3 ${
+                activeSentence === s.id ? `border-${themeColor}-400 bg-${themeColor}-50 shadow-md` : 
+                hasRecording ? `border-green-200 bg-green-50` : 
+                'border-slate-100 bg-white hover:border-slate-200'
+              }`}
+            >
+              {/* Original audio play button */}
+              <button 
+                onClick={() => handlePlayOne(s.text, s.audio_url, s.id)}
+                className={`p-2 rounded-full transition-colors shrink-0 ${
+                  activeSentence === s.id ? `bg-${themeColor}-500 text-white` : 
+                  'bg-slate-100 text-slate-400 hover:bg-slate-200'
+                }`}
+                title={isVi ? "Nghe bản gốc" : "Play original"}
+              >
+                <Volume2 className="w-4 h-4" />
+              </button>
+
+              {/* Text content */}
+              <div className="flex-1 cursor-pointer" onClick={() => handlePlayOne(s.text, s.audio_url, s.id)}>
+                 <p className={`text-lg font-bold text-slate-800 ${hideText ? 'opacity-20 blur-[2px]' : ''}`}>{renderStyledText(s.text)}</p>
+                 {isVi && <p className="text-sm text-slate-500 italic mt-1">{s.vi}</p>}
+              </div>
+
+              {/* Recording controls */}
+              <div className="flex gap-2 shrink-0">
+                {/* Record button */}
+                <button 
+                  onClick={() => handleRecordButtonClick(s.id)}
+                  className={`p-3 rounded-full shadow-md transition-all active:scale-95 relative group ${
+                    isThisRecording 
+                      ? 'bg-rose-500 text-white animate-pulse ring-4 ring-rose-200' 
+                      : hasRecording 
+                      ? 'bg-orange-500 text-white hover:bg-orange-600' 
+                      : `bg-${themeColor}-600 text-white hover:bg-${themeColor}-700`
+                  }`}
+                  disabled={isRecordingAll || (isRecording && !isThisRecording)}
+                  title={isThisRecording ? (isVi ? "Dừng ghi" : "Stop") : hasRecording ? (isVi ? "Ghi lại" : "Re-record") : (isVi ? "Ghi âm" : "Record")}
+                >
+                  {isThisRecording ? (
+                    <StopCircle className="w-5 h-5" />
+                  ) : hasRecording ? (
+                    <RefreshCw className="w-5 h-5" />
+                  ) : (
+                    <Mic className="w-5 h-5" />
+                  )}
+                  <span className="absolute bottom-full mb-2 right-0 bg-slate-800 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                    {isThisRecording ? (isVi ? "Dừng ghi" : "Stop") : hasRecording ? (isVi ? "Ghi lại" : "Re-record") : (isVi ? "Ghi âm" : "Record")}
+                  </span>
+                </button>
+
+                {/* Play recording button (only show if has recording) */}
+                {hasRecording && (
+                  <button 
+                    onClick={() => handlePlayButtonClick(s.id)}
+                    className={`p-3 rounded-full shadow-md transition-all active:scale-95 relative group ${
+                      isThisPlaying 
+                        ? 'bg-purple-500 text-white ring-4 ring-purple-200' 
+                        : 'bg-green-600 text-white hover:bg-green-700'
+                    }`}
+                    disabled={isRecordingAll || isRecording || (playingRecording && !isThisPlaying)}
+                    title={isThisPlaying ? (isVi ? "Dừng nghe" : "Stop") : (isVi ? "Nghe lại" : "Play")}
+                  >
+                    {isThisPlaying ? (
+                      <Pause className="w-5 h-5" />
+                    ) : (
+                      <Play className="w-5 h-5" />
+                    )}
+                    <span className="absolute bottom-full mb-2 right-0 bg-slate-800 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                      {isThisPlaying ? (isVi ? "Dừng nghe" : "Stop playing") : (isVi ? "Nghe lại" : "Play recording")}
+                    </span>
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
-      <div className="fixed bottom-6 left-0 right-0 px-4 flex justify-center lg:pl-72 pointer-events-none z-30">
-        <div className="bg-white p-2 pl-4 rounded-full shadow-2xl border border-slate-200 flex items-center gap-4 pointer-events-auto max-w-sm w-full justify-between">
-           <div className="text-xs font-bold text-slate-500">
-             {isRecording ? <span className="text-rose-500 animate-pulse">● Recording...</span> : (audioUrl ? "Recorded!" : (isVi ? "Ghi âm giọng bạn" : "Record your voice"))}
-           </div>
-           <div className="flex gap-2">
-               {audioUrl && !isRecording && (<button onClick={() => { const a = new Audio(audioUrl); a.play(); }} className="p-3 bg-slate-100 text-slate-700 rounded-full hover:bg-slate-200"><Play className="w-5 h-5" /></button>)}
-               <button onClick={toggleRecording} className={`p-4 rounded-full shadow-lg transition-transform active:scale-95 ${isRecording ? 'bg-rose-500 animate-pulse ring-4 ring-rose-200' : `bg-${themeColor}-600 hover:bg-${themeColor}-700`}`}>{isRecording ? <StopCircle className="w-6 h-6 text-white" /> : <Mic className="w-6 h-6 text-white" />}</button>
-           </div>
-        </div>
-      </div>
+      {/* Global record button removed */}
     </div>
   );
 };

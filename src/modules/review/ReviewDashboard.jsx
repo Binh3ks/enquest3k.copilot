@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { User, Calendar, ListOrdered, Star, Hash, List, Activity, Trophy, ArrowRight, XCircle, CheckCircle, Lock as LockIcon } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ReviewDrill from './ReviewDrill';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 // Thêm prop onWeekComplete
 const ReviewDashboard = ({ userId, isAuthenticated, themeColor, reviewItems, setReviewItems, onWeekComplete }) => {
@@ -10,6 +11,9 @@ const ReviewDashboard = ({ userId, isAuthenticated, themeColor, reviewItems, set
     const navigate = useNavigate();
     const params = useParams();
     const currentWeekId = parseInt(params.weekId || 1);
+    
+    // 🔥 Universal Progress System
+    const { savedData, saveProgress, markComplete } = useStationProgress(currentWeekId, 'review_session');
 
     const handleCompleteDrill = (completedId) => {
         console.log('[ReviewDashboard] Item completed:', completedId);
@@ -17,6 +21,12 @@ const ReviewDashboard = ({ userId, isAuthenticated, themeColor, reviewItems, set
         setReviewItems(newItems);
         setActiveDrillItem(null);
         console.log('[ReviewDashboard] Remaining items:', newItems.length);
+        
+        // 🔥 Save progress
+        const percent = Math.round(((8 - newItems.length) / 8) * 100);
+        const isComplete = newItems.length === 0;
+        saveProgress({ completedItems: 8 - newItems.length }, isComplete, percent);
+        if (isComplete) markComplete(100);
     }
 
     const itemsLeft = reviewItems.length;

@@ -23,20 +23,56 @@ export const MODULE_COMPONENTS = {
   daily_watch: DailyWatch, game_hub: GameHub, self_regulation: SelfRegulation 
 };
 
+// 🔥 UNIVERSAL PROGRESS SYSTEM - Station ID Mapping
+// Maps tab keys (URL) to station IDs (database)
+export const TAB_TO_STATION_ID = {
+  // Watch & Video
+  'daily_watch': 'daily_watch',
+  'writing': 'video_challenge',
+  'video_challenge': 'video_challenge',
+  
+  // AI & Interactive
+  'ask_ai': 'ask_ai',
+  'explore': 'explore',
+  
+  // Games
+  'word_match': 'game_word_match',
+  'word_power': 'game_word_power',
+  'logic_lab': 'game_logic',
+  'game_hub': 'game_hub',
+  
+  // Skills
+  'new_words': 'vocab_mastery',
+  'grammar': 'grammar_lab',
+  'dictation': 'skill_dictation',
+  'read_explore': 'skill_reading',
+  'mindmap_speaking': 'production_mindmap',
+  'shadowing': 'skill_shadowing',
+  
+  // Meta
+  'review': 'review_session',
+  'self_regulation': 'self_regulation'
+};
+
 export const STATIONS = [
-  { key: 'read_explore', icon: BookOpen, title_en: 'Read & Exp.', color: 'indigo' },
-  { key: 'new_words', icon: Star, title_en: 'New Words', color: 'orange' }, 
-  { key: 'word_match', icon: Target, title_en: 'Word Match', color: 'purple' },
-  { key: 'grammar', icon: Hash, title_en: 'Grammar', color: 'rose' },
-  { key: 'mindmap_speaking', icon: Cpu, title_en: 'Mindmap', color: 'indigo' },
-  { key: 'ask_ai', icon: Cpu, title_en: 'Ask AI', color: 'emerald' },
-  { key: 'dictation', icon: Mic, title_en: 'Dictation', color: 'cyan' },
-  { key: 'shadowing', icon: Feather, title_en: 'Shadow', color: 'blue' },
-  { key: 'writing', icon: Eye, title_en: 'Write/Video', color: 'pink' },
-  { key: 'explore', icon: Compass, title_en: 'Explore', color: 'lime' },
-  { key: 'logic_lab', icon: Zap, title_en: 'Logic Lab', color: 'violet' },
-  { key: 'word_power', icon: Zap, title_en: 'Word Power', color: 'teal' },
-  { key: 'daily_watch', icon: Youtube, title_en: 'Daily Watch', color: 'red' },
-  { key: 'game_hub', icon: Gamepad2, title_en: 'Game Hub', color: 'amber' },
-  { key: 'self_regulation', icon: Target, title_en: 'My Goals', color: 'sky' } 
+  { key: 'read_explore', stationId: 'skill_reading', icon: BookOpen, title_en: 'Read & Exp.', color: 'indigo' },
+  { key: 'new_words', stationId: 'vocab_mastery', icon: Star, title_en: 'New Words', color: 'orange' }, 
+  { key: 'word_match', stationId: 'game_word_match', icon: Target, title_en: 'Word Match', color: 'purple' },
+  { key: 'grammar', stationId: 'grammar_lab', icon: Hash, title_en: 'Grammar', color: 'rose' },
+  { key: 'mindmap_speaking', stationId: 'production_mindmap', icon: Cpu, title_en: 'Mindmap', color: 'indigo' },
+  { key: 'ask_ai', stationId: 'ask_ai', icon: Cpu, title_en: 'Ask AI', color: 'emerald' },
+  { key: 'dictation', stationId: 'skill_dictation', icon: Mic, title_en: 'Dictation', color: 'cyan' },
+  { key: 'shadowing', stationId: 'skill_shadowing', icon: Feather, title_en: 'Shadow', color: 'blue' },
+  { key: 'writing', stationId: 'video_challenge', icon: Eye, title_en: 'Write/Video', color: 'pink' },
+  { key: 'explore', stationId: 'explore', icon: Compass, title_en: 'Explore', color: 'lime' },
+  { key: 'logic_lab', stationId: 'game_logic', icon: Zap, title_en: 'Logic Lab', color: 'violet' },
+  { key: 'word_power', stationId: 'game_word_power', icon: Zap, title_en: 'Word Power', color: 'teal' },
+  { key: 'daily_watch', stationId: 'daily_watch', icon: Youtube, title_en: 'Daily Watch', color: 'red' },
+  { key: 'game_hub', stationId: 'game_hub', icon: Gamepad2, title_en: 'Game Hub', color: 'amber' },
+  { key: 'self_regulation', stationId: 'self_regulation', icon: Target, title_en: 'My Goals', color: 'sky' } 
 ];
+
+// Helper function to get station ID from tab key
+export const getStationId = (tabKey) => {
+  return TAB_TO_STATION_ID[tabKey] || tabKey;
+};

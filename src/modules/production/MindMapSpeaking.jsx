@@ -3,14 +3,17 @@ import { useParams } from 'react-router-dom';
 import { Mic, Volume2, CheckCircle, Brain, ArrowLeft, Sparkles, Volume1, Edit2, AlertCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
-import { saveStationState, loadStationState } from '../../utils/stationStateHelper';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const { weekId } = useParams();
   
+  // 🔥 Universal Progress System
+  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'production_mindmap');
+  
   // ================= DEBUGGING LOG =================
-  console.log("--- MindMapSpeaking Component Received Data ---");
-  console.log(data);
+  // console.log("--- MindMapSpeaking Component Received Data ---");
+  // console.log(data);
   // ===============================================
 
   if (!data || !data.centerStems || !data.branchLabels) {
@@ -29,34 +32,38 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
 
   const [view, setView] = useState('structures');
   const [selectedStruct, setSelectedStruct] = useState(null);
-  const [branchInputs, setBranchInputs] = useState({});
-  const [feedback, setFeedback] = useState({});
+  const [branchInputs, setBranchInputs] = useState(savedData.recordings || {});
+  const [feedback, setFeedback] = useState(savedData.feedback || {});
   const [isListening, setIsListening] = useState(null);
   const [editMode, setEditMode] = useState({});
   const [completedBranches, setCompletedBranches] = useState(() => {
-    const saved = loadStationState(weekId, 'mindmap');
-    return saved?.completed ? new Set(saved.completed) : new Set();
+    return savedData.completedBranches ? new Set(savedData.completedBranches) : new Set();
   });
 
-  // Save to localStorage
+  // 🔥 Save to Universal Progress System
   useEffect(() => {
-    if (weekId && completedBranches.size > 0) {
-      saveStationState(weekId, 'mindmap', { completed: [...completedBranches] });
-    }
-  }, [completedBranches, weekId]);
-
-  // Report progress to backend
-  useEffect(() => {
-    if (onReportProgress && data?.centerStems && data?.branchLabels) {
-      const totalBranches = data.centerStems.reduce((sum, stem) => {
-        return sum + (data.branchLabels[stem] || []).length;
-      }, 0);
-      if (totalBranches > 0) {
-        const percent = Math.round((completedBranches.size / totalBranches) * 100);
-        onReportProgress(percent);
+    const handler = setTimeout(() => {
+      if (data?.centerStems && data?.branchLabels) {
+        const totalBranches = data.centerStems.flatMap(s => 
+          data.branchLabels[s.id] || []
+        ).length;
+        
+        const percent = totalBranches > 0 ? Math.round((completedBranches.size / totalBranches) * 100) : 0;
+        const isComplete = totalBranches > 0 && completedBranches.size === totalBranches;
+        
+        saveProgress({
+          completedBranches: [...completedBranches],
+          recordings: branchInputs,
+          feedback: feedback
+        }, isComplete, percent);
+        
+        if (isComplete) markComplete(100);
       }
-    }
-  }, [completedBranches.size, data?.centerStems, data?.branchLabels, onReportProgress]);
+    }, 1500); // Debounce saving
+
+    return () => clearTimeout(handler);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [completedBranches, branchInputs, feedback]);
 
   // Get audio URLs from injected data (if available)
   const centerStemAudio = data.centerStemAudio || [];
@@ -125,8 +132,6 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
         const branchCount = (data.branchLabels[s.text] || []).length;
         return sum + branchCount;
       }, 0);
-      const percent = Math.round((newCompleted.size / totalBranches) * 100);
-      onReportProgress?.(percent);
       
       setEditMode(prev => ({ ...prev, [branchId]: false }));
     } else {
@@ -152,8 +157,22 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
             <button key={s.id} onClick={() => { 
               setSelectedStruct(s); 
               setView('mindmap'); 
-              setBranchInputs({});
-              // Don't reset feedback - preserve completion state
+              // Restore state for this structure when viewing
+              const structureSpecificRecordings = {};
+              const structureSpecificFeedback = {};
+              const branchesForStruct = data.branchLabels[s.text] || [];
+              branchesForStruct.forEach((b, i) => {
+                const branchId = `b${i}`;
+                const uniqueKey = `${s.id}_${branchId}`;
+                if (savedData.recordings && savedData.recordings[uniqueKey]) {
+                  structureSpecificRecordings[branchId] = savedData.recordings[uniqueKey];
+                }
+                if (savedData.feedback && savedData.feedback[uniqueKey]) {
+                  structureSpecificFeedback[branchId] = savedData.feedback[uniqueKey];
+                }
+              });
+              setBranchInputs(structureSpecificRecordings);
+              setFeedback(structureSpecificFeedback);
               setEditMode({});
               speakText(s.text, s.audioUrl); 
             }}
@@ -247,62 +266,15 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
                 </div>
               )}
 
-              <div className="flex flex-col w-full gap-2">
-                {!isDone ? (
-                  <>
-                    {!hasInput ? (
-                      <button 
-                        onClick={() => startSTT(b.id)} 
-                        className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-2xl font-black text-white text-[12px] uppercase tracking-widest shadow-lg active:scale-95 transition-all border-b-4 border-black/10 ${isListening === b.id ? 'bg-rose-500 animate-pulse' : 'bg-indigo-600 hover:bg-indigo-700'}`}
-                      >
-                        <Mic size={16}/>
-                        {isListening === b.id ? 'Listening...' : 'Speak Now'}
-                      </button>
-                    ) : (
-                      <>
-                        <button 
-                          onClick={() => handleManualCheck(b)}
-                          style={{ backgroundColor: b.color }}
-                          className="w-full text-white text-[11px] font-black py-2 rounded-xl shadow-lg active:scale-95 transition-all uppercase tracking-widest border-b-4 border-black/10"
-                        >
-                          Check Answer
-                        </button>
-                        
-                        <button 
-                          onClick={() => {
-                            setBranchInputs(prev => ({ ...prev, [b.id]: '' }));
-                            setFeedback(prev => ({ ...prev, [b.id]: null }));
-                            setEditMode(prev => ({ ...prev, [b.id]: false }));
-                          }}
-                          className="w-full text-slate-700 text-[10px] font-black py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 shadow transition-all uppercase tracking-widest"
-                        >
-                          Speak Again
-                        </button>
-                      </>
-                    )}
-
-                    {hasError && !isEditing && (
-                      <button 
-                        onClick={() => setEditMode(prev => ({ ...prev, [b.id]: true }))}
-                        className="w-full text-slate-600 text-[10px] font-black py-1.5 rounded-lg bg-amber-50 border border-amber-200 hover:bg-amber-100 shadow transition-all uppercase tracking-widest flex items-center justify-center gap-1"
-                      >
-                        <Edit2 size={12}/>
-                        Edit Answer
-                      </button>
-                    )}
-                  </>
-                ) : (
-                  <button 
-                    disabled
-                    style={{ backgroundColor: '#22C55E' }}
-                    className="w-full text-white text-[11px] font-black py-2 rounded-xl shadow-lg uppercase tracking-widest border-b-4 border-black/10 cursor-not-allowed"
-                  >
-                    ✓ COMPLETED!
-                  </button>
-                )}
+              <div className="flex items-center gap-2 mt-2">
+                <button onClick={() => startSTT(b.id)} disabled={isListening || isDone} className={`p-2 rounded-full transition-all ${isListening === b.id ? 'bg-red-500 text-white animate-pulse' : isDone ? 'bg-slate-200 text-slate-400' : 'bg-indigo-500 text-white hover:bg-indigo-600'}`}>
+                  <Mic size={16}/>
+                </button>
+                <button onClick={() => setEditMode({...editMode, [b.id]: !isEditing})} disabled={isDone} className={`p-2 rounded-full transition-all ${isEditing ? 'bg-slate-300' : 'bg-slate-100'} text-slate-600 hover:bg-slate-200 disabled:bg-slate-100 disabled:text-slate-300`}>
+                  <Edit2 size={16}/>
+                </button>
+                {isDone && <CheckCircle size={20} className="text-green-500"/>}
               </div>
-
-              {isDone && <CheckCircle className="absolute -top-4 -right-4 text-green-500 fill-white drop-shadow-xl" size={36}/>}
             </div>
           </div>
         );
