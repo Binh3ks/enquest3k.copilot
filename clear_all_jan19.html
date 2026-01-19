@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear All Storage - Jan 19</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    button {
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 10px 0;
+      width: 100%;
+    }
+    button:hover {
+      background: #cc0000;
+    }
+    .success {
+      background: #4CAF50;
+      color: white;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: none;
+    }
+    .info {
+      background: #2196F3;
+      color: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧹 Clear All Storage - Jan 19</h1>
+  <div class="info">
+    <strong>This will clear:</strong>
+    <ul>
+      <li>All localStorage data</li>
+      <li>All sessionStorage data</li>
+      <li>All IndexedDB databases</li>
+      <li>All cookies</li>
+      <li>Browser cache</li>
+    </ul>
+  </div>
+  
+  <button onclick="clearAll()">🗑️ CLEAR ALL STORAGE</button>
+  <div id="result" class="success"></div>
+
+  <script>
+    async function clearAll() {
+      try {
+        // 1. Clear localStorage
+        localStorage.clear();
+        console.log('✅ localStorage cleared');
+        
+        // 2. Clear sessionStorage
+        sessionStorage.clear();
+        console.log('✅ sessionStorage cleared');
+        
+        // 3. Clear all IndexedDB databases
+        const databases = await indexedDB.databases();
+        for (const db of databases) {
+          indexedDB.deleteDatabase(db.name);
+          console.log('✅ Deleted IndexedDB:', db.name);
+        }
+        
+        // 4. Clear all cookies
+        const cookies = document.cookie.split(";");
+        for (const cookie of cookies) {
+          const eqPos = cookie.indexOf("=");
+          const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
+        console.log('✅ Cookies cleared');
+        
+        // 5. Unregister service workers
+        if ('serviceWorker' in navigator) {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          for (const registration of registrations) {
+            await registration.unregister();
+            console.log('✅ Service worker unregistered');
+          }
+        }
+        
+        // 6. Clear cache storage
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          for (const cacheName of cacheNames) {
+            await caches.delete(cacheName);
+            console.log('✅ Cache deleted:', cacheName);
+          }
+        }
+        
+        const result = document.getElementById('result');
+        result.style.display = 'block';
+        result.innerHTML = `
+          <strong>✅ ALL STORAGE CLEARED!</strong><br>
+          <br>
+          <strong>Next Steps:</strong><br>
+          1. Close this tab<br>
+          2. Close ALL browser tabs with localhost:5173<br>
+          3. Restart the dev server: npm run dev<br>
+          4. Open a NEW browser window<br>
+          5. Go to localhost:5173<br>
+        `;
+        
+      } catch (error) {
+        console.error('❌ Error:', error);
+        alert('Error clearing storage: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>
