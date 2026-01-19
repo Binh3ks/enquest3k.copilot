@@ -56,7 +56,7 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
           }
         `}>
           {/* Message Text */}
-          <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
+          <p className="text-base leading-relaxed whitespace-pre-wrap font-semibold">
             {messageText}
           </p>
           
