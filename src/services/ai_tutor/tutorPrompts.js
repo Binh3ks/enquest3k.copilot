@@ -177,8 +177,8 @@ function buildChatPrompt(context, userInput, options) {
   const lastAIMessage = history.length > 0 ? history[history.length - 1]?.content?.toLowerCase() || '' : '';
   
   // 🎮 FREE TALK 3.0: DETECT SYSTEM COMMANDS (START_GAME, START_ROLEPLAY)
-  if (userMessage.startsWith('start_game:')) {
-    const gameName = userMessage.replace('start_game:', '').trim();
+  if (userMessage.toLowerCase().startsWith('start_game:')) {
+    const gameName = userMessage.toLowerCase().replace('start_game:', '').trim();
     
     if (gameName === 'word chain') {
       return `You are Ms. Nova. STUDENT CHOSE WORD CHAIN GAME.
@@ -266,8 +266,8 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // 🎭 FREE TALK 3.0: DETECT ROLEPLAY COMMANDS
-  if (userMessage.startsWith('start_roleplay:')) {
-    const roleplayName = userMessage.replace('start_roleplay:', '').trim();
+  if (userMessage.toLowerCase().startsWith('start_roleplay:')) {
+    const roleplayName = userMessage.toLowerCase().replace('start_roleplay:', '').trim();
     
     if (roleplayName === 'pizza chef') {
       return `You are Ms. Nova. STUDENT CHOSE PIZZA CHEF ROLEPLAY.
@@ -484,6 +484,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
   if (userMessage.includes('translate') || userMessage.includes('how do you say') || 
       (userMessage.includes('what is') && userMessage.includes('in english')) || 
       userMessage.includes('tiếng anh là gì') ||
+      userMessage.includes('là gì') ||
       lastAIMessage.includes('what do you want to translate') ||
       lastAIMessage.includes('say the vietnamese word')) {
     return `You are Ms. Nova in HELPER MODE (Dictionary/Translator).
@@ -493,32 +494,30 @@ Return JSON with "ai_response" and "suggested_hints"`;
 ${historyText}
 
 YOUR ACTION:
-**IF you just asked "What do you want to translate?" AND student answered with a word (like "deer", "con mèo")** → TRANSLATE IT IMMEDIATELY (spell it out, give example)
+**IF student asks "whale là gì", "dog là gì"** (English word + "là gì") → EXPLAIN IN SIMPLE ENGLISH what the word means!
+
+**IF student asks "con mèo tiếng anh là gì"** (Vietnamese word) → TRANSLATE to English!
+
+**IF you just asked "What do you want to translate?" AND student answered with a word** → TRANSLATE IT IMMEDIATELY!
 
 **IF they said "Translate this for me..."** → ASK WHAT WORD/PHRASE
 
-Example:
+Example for "whale là gì":
 {
-  "ai_response": "Sure! What do you want to translate? Say the Vietnamese word! 📖",
-  "suggested_hints": ["con", "mèo", "chó", "cá", "cô", "giáo"]
+  "ai_response": "A whale is a BIG animal that lives in the ocean! 🐋 W-H-A-L-E. Whales are as big as 3 buses! What other ocean animals do you know?",
+  "suggested_hints": ["shark", "fish", "dolphin", "octopus", "crab"]
 }
 
-**STEPS:**
-1. Translate the word
-2. Spell it out (C-A-T)
-3. Give example sentence
-4. Ask if they want to learn more
-
-Example for "How do you say 'con mèo'?":
+Example for "con mèo tiếng anh là gì":
 {
-  "ai_response": "Con mèo is CAT! 🐱 C-A-T. The cat is cute. What other animals do you want to know?",
-  "suggested_hints": ["dog", "bird", "fish", "rabbit", "chicken", "pig"]
+  "ai_response": "Con mèo is CAT! 🐱 C-A-T. The cat is cute. Meow meow! What other animals do you want to know?",
+  "suggested_hints": ["dog", "bird", "fish", "rabbit", "chicken"]
 }
 
 Example for "What is 'astronaut'?":
 {
-  "ai_response": "An astronaut is a person who goes to space! 🚀 Astronauts wear spacesuits. Do you want to be an astronaut?",
-  "suggested_hints": ["Yes", "No", "I", "want", "like", "space"]
+  "ai_response": "An astronaut is a person who goes to space! 🚀 A-S-T-R-O-N-A-U-T. Astronauts wear spacesuits and fly in rockets! Cool, right?",
+  "suggested_hints": ["Yes", "space", "rocket", "moon", "star"]
 }
 
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
