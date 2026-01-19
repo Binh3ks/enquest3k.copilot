@@ -12,9 +12,9 @@ const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 const smartFallbacks = {
   chat: (userMsg, weekId) => {
     if (userMsg.toLowerCase().includes('family')) return "Tell me more about your family members!";
-    if (userMsg.toLowerCase().includes('like')) return "That's interesting! What else do you like?";
-    if (userMsg.toLowerCase().match(/\d+/)) return `${userMsg.match(/\d+/)[0]}! That's a good number. What about it?`;
-    return weekId <= 8 ? "Great! Can you tell me more?" : "Interesting point! Continue your story.";
+    if (userMsg.toLowerCase().includes('like')) return "Nice! What is your favorite?";
+    if (userMsg.toLowerCase().match(/\d+/)) return `${userMsg.match(/\d+/)[0]}! Tell me about it.`;
+    return weekId <= 8 ? "Cool! What else?" : "Go on! Tell me more.";
   },
   math: (weekId) => ({
     question: weekId <= 10 

@@ -364,7 +364,7 @@ const FreeTalkTab = () => {
       console.error('Free Talk Error:', error);
       const errorMsg = {
         role: 'assistant',
-        content: "That's interesting! Tell me more about that?",
+        content: "Oops! Let me try again. What did you say?",
         timestamp: Date.now()
       };
       addMessage("freetalk", errorMsg);

@@ -278,8 +278,8 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
     
     // Generic answer for other questions
     return {
-      ai_response: "That is interesting! Tell me more.",
-      suggested_hints: ['I', 'think', 'like', 'am', 'have', 'my'],
+      ai_response: "Good question! Let me think... What do you want to know?",
+      suggested_hints: ['I', 'want', 'to', 'know', 'about', 'tell', 'me'],
       pedagogy_note: 'Generic answer to student question',
       provider: 'fallback-answer',
       grammarBlocked: true
@@ -550,8 +550,12 @@ export async function sendToAI({
   const maxRetries = 2; // Max regeneration attempts
   let attempt = 0;
   
+  // 🔥 DEBUG: Log the system prompt being sent
+  console.log('📝 sendToAI - System Prompt Preview:', systemPrompt?.slice(0, 200));
+  console.log('📝 sendToAI - User Message:', userMessage);
+
   // Enhance system prompt with grammar scope reminder
-  const enhancedSystemPrompt = !skipGrammarGuard 
+  const enhancedSystemPrompt = !skipGrammarGuard
     ? `${systemPrompt}\n\n🎯 GRAMMAR SCOPE FOR THIS WEEK:\n${getGrammarSummary(weekId)}\n\nYOU MUST ONLY use the allowed grammar patterns above.`
     : systemPrompt;
   

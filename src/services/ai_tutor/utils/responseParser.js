@@ -281,7 +281,7 @@ function normalizeResponse(parsed, rawResponse) {
  */
 function getDefaultFallback() {
   return {
-    ai_response: "That's interesting! Tell me more?",
+    ai_response: "I see! What would you like to do?",
     pedagogy_note: 'Fallback: Empty response',
     suggested_hints: ['yes', 'no', 'I', 'like', 'my', 'is'],
     mission_status: null,
@@ -327,7 +327,7 @@ export function validateResponse(response, options = {}) {
     console.warn(`⚠️ responseParser: Response too short (${validated.ai_response?.length || 0} chars)`);
     
     if (autoFix) {
-      validated.ai_response = 'Great! How are you?';
+      validated.ai_response = 'Tell me more! What do you want to talk about?';
       if (!validated.pedagogy_note) validated.pedagogy_note = '';
       validated.pedagogy_note += ' [Auto-fixed: Safe fallback]';
     } else {

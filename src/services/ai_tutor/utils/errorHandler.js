@@ -44,12 +44,12 @@ export const ERROR_MESSAGES = {
  */
 export const FALLBACK_RESPONSES = {
   story: {
-    ai_response: "That's interesting! Can you tell me more about that?",
+    ai_response: "I see! Tell me more about your story.",
     pedagogy_note: 'Fallback: System error recovery',
     suggested_hints: ['I', 'like', 'my', 'is', 'am', 'have']
   },
   freetalk: {
-    ai_response: "I'd love to hear more! What else do you want to share?",
+    ai_response: "Cool! What do you want to talk about?",
     pedagogy_note: 'Fallback: System error recovery',
     suggested_hints: ['I', 'like', 'my', 'favorite', 'is', 'am']
   },
