@@ -23,12 +23,14 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
   const lowerAI = lastAIMessage.toLowerCase();
   const isInGame = lowerAI.includes("your turn") || lowerAI.includes("guess") || 
                    lowerAI.includes("i spy") || lowerAI.includes("word chain") || 
-                   lowerAI.includes("emoji mixer");
+                   lowerAI.includes("emoji mixer") || lowerAI.includes("round") ||
+                   lowerAI.includes("starts with") || lowerAI.includes("last letter");
   const isInRoleplay = lowerAI.includes("pizza chef") || lowerAI.includes("pet doctor") || 
                        lowerAI.includes("toy shop") || lowerAI.includes("customer") ||
-                       lowerAI.includes("what pizza") || lowerAI.includes("my cat");
+                       lowerAI.includes("what pizza") || lowerAI.includes("my cat") ||
+                       lowerAI.includes("turn") && (lowerAI.includes("chef") || lowerAI.includes("doctor") || lowerAI.includes("shop"));
 
-  console.log('🎯 generateTutorPrompt called:', { mode, userMessage: userMessage?.slice(0, 30) });
+  console.log('🎯 generateTutorPrompt called:', { mode, userMessage: userMessage?.slice(0, 30), isInGame, isInRoleplay });
 
   // =================================================================
   // 1. STORY MISSION MODE (GIỮ NGUYÊN)
@@ -98,10 +100,12 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     // Detect if we're continuing an ongoing game
     if (isInGame) {
       // User wants to continue the game or needs help
+      const lowerUser = userMessage ? userMessage.toLowerCase().trim() : "";
       const needsHint = lowerUser.includes("gợi ý") || lowerUser.includes("hint") || 
-                        lowerUser.includes("i don't know") || lowerUser.includes("khó quá");
+                        lowerUser.includes("i don't know") || lowerUser.includes("khó quá") ||
+                        lowerUser.includes("không biết");
       const wantsContinue = lowerUser.includes("tiếp tục") || lowerUser.includes("next") || 
-                            lowerUser.includes("continue");
+                            lowerUser.includes("continue") || lowerUser.includes("tiep tuc");
       
       return `
       SYSTEM_MODE: GAME_MASTER_ONGOING
@@ -109,14 +113,17 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       LAST AI: "${lastAIMessage}"
       USER RESPONSE: "${userMessage}"
       
-      LOGIC:
-      1. IF user asks for hint/"gợi ý"/"I don't know" -> Give a helpful hint (color, shape, first letter)
-      2. IF user says "tiếp tục" -> Start next round of same game
-      3. IF user answers -> Check if correct:
-         - Correct: "Yes! 🎉" + Start next round
-         - Wrong: "Not quite! Try again 😊"
-      4. Play at least 15 turns total. Count: "Round [X]/15"
-      5. Keep game fun and encouraging!
+      CRITICAL RULES:
+      1. IF user asks for hint/"gợi ý"/"I don't know"/"không biết" -> Give helpful hint (color, shape, first letter, example)
+      2. IF user says "tiếp tục"/"tiếp tục đi"/"next" -> Start NEXT round of same game immediately
+      3. IF user says SINGLE WORD (not Vietnamese phrase):
+         - For Word Chain: Check if word starts with correct letter
+         - If correct: "Great! [Word] starts with [Letter]! 🎉 Round [X+1]/15: I say [NewWord]! Your turn..."
+         - If wrong: "Oops! That starts with [WrongLetter], not [CorrectLetter]! Try again 😊"
+      4. ⛔ NEVER leave game mode unless user says "stop" or "goodbye"
+      5. ⛔ NEVER offer translation during game
+      6. Play at least 15 rounds total. Always show: "Round [X]/15"
+      7. Keep game fun, fast-paced and encouraging!
       
       RESPOND IN THIS JSON FORMAT:
       {
@@ -165,14 +172,17 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       LAST AI: "${lastAIMessage}"
       USER RESPONSE: "${userMessage}"
       
-      LOGIC:
-      1. Stay in character 100%
-      2. React naturally to user's response in roleplay
-      3. IF user says "tiếp tục" -> Continue the scene naturally
+      CRITICAL RULES:
+      1. Stay in character 100% - NEVER break roleplay
+      2. React naturally to user's response in character
+      3. IF user says "tiếp tục"/"tiếp tục đi"/"next" -> Continue scene with new situation in character
       4. IF user asks question -> Answer in character
-      5. Play at least 15 exchanges. Show "Turn [X]/15"
-      6. Keep simple English (A0-A1)
-      7. ⛔ NEVER break character or ask about real life
+      5. IF user gives you something/answers -> React in character and continue story
+      6. Play at least 15 exchanges. Show "Turn [X]/15"
+      7. Keep simple English (A0-A1)
+      8. ⛔ NEVER leave roleplay mode unless user says "stop" or "goodbye"
+      9. ⛔ NEVER offer translation during roleplay
+      10. ⛔ NEVER ask about real life
       
       RESPOND IN THIS JSON FORMAT:
       {
