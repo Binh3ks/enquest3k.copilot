@@ -235,9 +235,35 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       lowerUser.includes("how to say") ||
       lowerUser.includes("tiếng anh") ||
       lowerAI.includes("what word") ||
-      lowerAI.includes("what do you want to learn");
+      lowerAI.includes("what do you want to learn") ||
+      (lowerAI.includes("do you want to know the meaning") && (lowerUser === "yes" || lowerUser === "có" || lowerUser === "ok"));
 
     if (isTranslationRequest) {
+      // 🔥 If user said "yes" after being asked if they want translation
+      if (lowerAI.includes("do you want to know the meaning") && (lowerUser === "yes" || lowerUser === "có" || lowerUser === "ok")) {
+        // Extract the word from last AI message (e.g., "Do you want to know the meaning of 'deer'?")
+        const wordMatch = lastAIMessage.match(/'([^']+)'/);
+        const word = wordMatch ? wordMatch[1] : userMessage;
+        
+        return `
+        SYSTEM_MODE: BILINGUAL_DICTIONARY_IMMEDIATE
+        ROLE: Ms. Nova translating the word user asked about.
+        WORD TO TRANSLATE: "${word}"
+        
+        CRITICAL:
+        1. Translate "${word}" to Vietnamese immediately!
+           Example: "Deer = hươu hoặc nai! 🦌 D-E-E-R. What other animals do you know?"
+        2. ⛔ NEVER say "Deer is animal" - MUST give Vietnamese translation
+        3. ⛔ Format: [English] = [Vietnamese]! [emoji] [Spell]. [Follow-up question]
+        
+        RESPOND IN THIS JSON FORMAT:
+        {
+          "ai_response": "${word.charAt(0).toUpperCase() + word.slice(1)} = [Vietnamese]! [emoji] Spell it. What other [category] do you know?",
+          "suggested_hints": ["similar", "words"]
+        }
+        `;
+      }
+      
       // 🔥 CRITICAL: If user said "Translate this", ask what word
       if (lowerUser.includes("translate") && lowerUser.length < 25 && !lowerUser.includes("deer") && !lowerUser.includes("cat")) {
         return `
@@ -291,10 +317,14 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
        "Hello! I am Ms. Nova 🌟. Click a button below to Play, Roleplay or Chat! 👇"
     2. IF user says a single English word (e.g. "tiger", "bear", "fox"), offer to translate:
        "Wow! A tiger! 🐯 Do you want to know the meaning of 'tiger' in Vietnamese?"
-    3. Otherwise, respond naturally to what user said
-    4. ⛔ NEVER ask "What makes you happy?" or "How are you feeling?"
-    5. Keep responses SHORT (under 30 words).
-    6. Use emojis to be friendly.
+    3. IF user asks factual question (e.g., "how big", "how many", "what is"):
+       - Give REAL knowledge with numbers/facts (e.g., "A whale is 20-30 meters long! Very big! 🐳")
+       - ⛔ NEVER say vague answers like "Very big" or "Many"
+       - Use simple facts kids can understand
+    4. Otherwise, respond naturally to what user said
+    5. ⛔ NEVER ask "What makes you happy?" or "How are you feeling?"
+    6. Keep responses SHORT (under 35 words).
+    7. Use emojis to be friendly.
 
     RESPOND IN THIS JSON FORMAT:
     {
