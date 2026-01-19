@@ -97,10 +97,13 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     }
 
     // --- B. GAME MODE (STRUCTURED PLAY) ---
-    // Detect if we're continuing an ongoing game
-    if (isInGame) {
+    // Check if user is starting a NEW game (reset counter)
+    const lowerUser = userMessage ? userMessage.toLowerCase().trim() : "";
+    const startingNewGame = lowerUser.startsWith("start_game:") || lowerUser.startsWith("start_roleplay:");
+    
+    // Detect if we're continuing an ongoing game (but not starting new one)
+    if (isInGame && !startingNewGame) {
       // User wants to continue the game or needs help
-      const lowerUser = userMessage ? userMessage.toLowerCase().trim() : "";
       const needsHint = lowerUser.includes("gợi ý") || lowerUser.includes("hint") || 
                         lowerUser.includes("i don't know") || lowerUser.includes("khó quá") ||
                         lowerUser.includes("không biết");
@@ -118,16 +121,17 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       2. IF user says "tiếp tục"/"tiếp tục đi"/"next" -> Start NEXT round of same game immediately
       3. IF user says SINGLE WORD (not Vietnamese phrase):
          - For Word Chain: Check if word starts with correct letter
-         - If correct: "Great! [Word] starts with [Letter]! 🎉 Round [X+1]/15: I say [NewWord]! Your turn..."
+         - If correct: "Great! [Word] starts with [Letter]! 🎉 Round [X+1]/10: I say [NewWord]! Your turn..."
          - If wrong: "Oops! That starts with [WrongLetter], not [CorrectLetter]! Try again 😊"
       4. ⛔ NEVER leave game mode unless user says "stop" or "goodbye"
       5. ⛔ NEVER offer translation during game
-      6. Play at least 15 rounds total. Always show: "Round [X]/15"
-      7. Keep game fun, fast-paced and encouraging!
+      6. Play exactly 10 rounds per game. Always show: "Round [X]/10"
+      7. After Round 10/10, say: "Game Over! Great job! 🎉 Want to play again?"
+      8. Keep game fun, fast-paced and encouraging!
       
       RESPOND IN THIS JSON FORMAT:
       {
-        "ai_response": "Game response with round number (e.g., Round 3/15)",
+        "ai_response": "Game response with round number (e.g., Round 3/10)",
         "suggested_hints": ["possible", "answer", "words"]
       }
       `;
@@ -150,10 +154,11 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       1. IF user says "I don't know" / "khó quá" / "gợi ý": GIVE A HINT (Color, Shape, Sound, First letter).
       2. IF user guesses wrong: Encourage "Close! Try again."
       3. IF user guesses right: CELEBRATE "Yes! 🎉" -> Start next round.
-      4. Play at least 15 turns. Show "Round [X]/15" in each response.
-      5. ⛔ NEVER ask personal questions while playing.
+      4. Play exactly 10 rounds per game. Show "Round [X]/10" in each response.
+      5. After Round 10/10, celebrate: "Game Over! You played great! 🎉 Want to play again?"
+      6. ⛔ NEVER ask personal questions while playing.
 
-      ACTION: Start the game NOW! Give first challenge (Round 1/15).
+      ACTION: Start the game NOW! Give first challenge (Round 1/10).
 
       RESPOND IN THIS JSON FORMAT:
       {
@@ -164,8 +169,8 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     }
 
     // --- C. ROLEPLAY MODE (IMMERSION) ---
-    // Detect if we're continuing an ongoing roleplay
-    if (isInRoleplay) {
+    // Detect if we're continuing an ongoing roleplay (but not starting new one)
+    if (isInRoleplay && !startingNewGame) {
       return `
       SYSTEM_MODE: ROLEPLAY_ACTOR_ONGOING
       ROLE: Ms. Nova continuing roleplay.
@@ -178,11 +183,12 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       3. IF user says "tiếp tục"/"tiếp tục đi"/"next" -> Continue scene with new situation in character
       4. IF user asks question -> Answer in character
       5. IF user gives you something/answers -> React in character and continue story
-      6. Play at least 15 exchanges. Show "Turn [X]/15"
-      7. Keep simple English (A0-A1)
-      8. ⛔ NEVER leave roleplay mode unless user says "stop" or "goodbye"
-      9. ⛔ NEVER offer translation during roleplay
-      10. ⛔ NEVER ask about real life
+      6. Play exactly 10 exchanges per roleplay. Show "Turn [X]/10"
+      7. After Turn 10/10, say goodbye in character: "Thank you! Goodbye! See you next time! 👋"
+      8. Keep simple English (A0-A1)
+      9. ⛔ NEVER leave roleplay mode unless user says "stop" or "goodbye"
+      10. ⛔ NEVER offer translation during roleplay
+      11. ⛔ NEVER ask about real life
       
       RESPOND IN THIS JSON FORMAT:
       {
@@ -207,10 +213,11 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
 
       CRITICAL:
       - Stay in character 100%.
-      - Play at least 15 exchanges. Show "Turn [X]/15" in responses.
+      - Play exactly 10 exchanges per roleplay. Show "Turn [X]/10" in responses.
+      - After Turn 10/10, say goodbye in character.
       - ⛔ NEVER ask about real life.
       - Use simple English (A0-A1).
-      - Start the roleplay NOW! (Turn 1/15)
+      - Start the roleplay NOW! (Turn 1/10)
 
       RESPOND IN THIS JSON FORMAT:
       {
