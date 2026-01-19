@@ -1107,17 +1107,17 @@ const StoryMissionTab = () => {
 
           {/* AI-Generated Hints Only */}
           {showHints && hints.length > 0 && (
-            <div className="px-6 py-4 bg-yellow-50 border-t border-yellow-200">
-              <div className="flex items-center space-x-2 mb-3">
-                <Target size={16} className="text-yellow-600" />
-                <span className="text-base font-medium text-yellow-700">💡 Need help? Try these words:</span>
+            <div className="px-4 py-2 bg-yellow-50 border-t border-yellow-200">
+              <div className="flex items-center space-x-1 mb-2">
+                <Target size={14} className="text-yellow-600" />
+                <span className="text-xs font-medium text-yellow-700">💡 Need help? Try these words:</span>
               </div>
-              <div className="flex flex-wrap gap-3"> {/* More gap between buttons */}
+              <div className="flex flex-wrap gap-2">
                 {hints.map((hint, index) => (
                   <button
                     key={index}
                     onClick={() => handleHintClick(hint)}
-                    className="px-5 py-4 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded-lg text-lg font-semibold transition-colors border border-yellow-300 hover:border-yellow-400"> {/* Bigger buttons and text */}
+                    className="px-3 py-1.5 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded-lg text-xs font-semibold transition-colors border border-yellow-300 hover:border-yellow-400">
                     {hint}
                   </button>
                 ))}

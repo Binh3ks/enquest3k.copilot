@@ -566,20 +566,20 @@ const FreeTalkTab = () => {
 
       {/* ✨ FREE TALK 2.0: STARTER PROMPTS - REPLACED BY FIXED ACTION BAR */}
       {/* 🎮 FREE TALK 3.0: FIXED ACTION BAR */}
-      <div className="px-6 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
-        <div className="flex items-center gap-2 mb-2">
-          <Sparkles size={16} className="text-purple-500" />
-          <span className="text-sm font-semibold text-purple-700">
+      <div className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
+        <div className="flex items-center gap-1 mb-1.5">
+          <Sparkles size={14} className="text-purple-500" />
+          <span className="text-xs font-semibold text-purple-700">
             🎯 Choose an action:
           </span>
         </div>
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-4 gap-2">
           {FREE_TALK_ACTIONS.map((action) => (
             <button
               key={action.id}
               onClick={() => handleActionClick(action.id)}
               disabled={isLoading}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
+              className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
                 action.type === 'system'
                   ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
                   : action.type === 'menu' && action.id === 'play_game'
@@ -589,47 +589,14 @@ const FreeTalkTab = () => {
                   : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
               }`}
             >
-              <div className="text-lg mb-1">{action.icon}</div>
-              <div className="text-xs leading-tight">{action.label}</div>
+              <div className="text-base">{action.icon}</div>
+              <div className="text-[10px] leading-tight">{action.label}</div>
             </button>
           ))}
         </div>
       </div>
 
-      {/* 🔥 Interactive hints area - CONDITIONAL RENDERING */}
-      {!shouldHideHints && (
-        <div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 border-t border-blue-200">
-          <div className="flex items-center gap-2 mb-2">
-            <MessageCircle size={16} className="text-blue-500" />
-            <span className="text-sm font-semibold text-blue-700">
-              💡 Need help? Try these words:
-            </span>
-          </div>
-          {hints.length > 0 ? (
-            <div className="flex gap-2 flex-wrap">
-              {hints.map((hint, index) => (
-                <div
-                  key={index}
-                  className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-medium border border-gray-300 cursor-not-allowed opacity-70"
-                >
-                  {hint}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="flex gap-2 flex-wrap">
-              {['My', 'name', 'is', 'I', 'am', 'years', 'old', 'like', 'school', 'teacher', 'friend'].map((word, index) => (
-                <div
-                  key={index}
-                  className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm cursor-not-allowed opacity-70"
-                >
-                  {word}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+      {/* 🔥 Hint chips removed - not needed for games/roleplay */}
 
       {/* Input Area */}
       <InputBar
