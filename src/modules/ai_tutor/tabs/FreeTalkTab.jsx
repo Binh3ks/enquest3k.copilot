@@ -125,7 +125,7 @@ const FreeTalkTab = () => {
         }
       });
       
-      const greetingText = aiResponse.ai_response || "Hello! I am Ms. Nova. What is your name?";
+      const greetingText = aiResponse.ai_response || "Hello! I am Ms. Nova 🌟. Click a button below to Play, Roleplay or Chat! 👇";
       
       const welcomeMessage = {
         role: 'assistant',
@@ -160,7 +160,7 @@ const FreeTalkTab = () => {
       console.error('❌ Error generating AI greeting:', error);
       
       // Fallback to simple greeting if AI fails
-      const fallbackGreeting = "Hello! I am Ms. Nova. What is your name?";
+      const fallbackGreeting = "Hello! I am Ms. Nova 🌟. Click a button below to Play, Roleplay or Chat! 👇";
       const welcomeMessage = {
         role: 'assistant',
         content: fallbackGreeting,
