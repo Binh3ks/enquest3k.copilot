@@ -231,11 +231,17 @@ export function isQuestionRepeated(question, askedQuestions = []) {
 export function guardResponse(aiResponse, context = {}, maxWords = 15) {
   if (!aiResponse || typeof aiResponse !== 'string') {
     console.warn('⚠️ Response guard: Invalid response', aiResponse);
-    // 🔥 Return step question if available, not generic
+    // 🔥 Use TurnManager question if available
+    if (context.turnManager) {
+      const tmQuestion = context.turnManager.getCurrentQuestion();
+      if (tmQuestion) {
+        return tmQuestion;
+      }
+    }
     if (context.nextStepQuestion) {
       return context.nextStepQuestion;
     }
-    return 'What is your name?';
+    return 'Tell me more!';
   }
   
   let cleaned = aiResponse;
@@ -284,11 +290,19 @@ export function guardResponse(aiResponse, context = {}, maxWords = 15) {
   // Step 6: Final validation - must have actual content
   if (cleaned.length < 5) {
     console.error('❌ Response guard: Response too short after cleaning:', cleaned);
-    // 🔥 Use step question if available
-    if (context.nextStepQuestion) {
+    // 🔥 Use TurnManager question if available (from objectives)
+    if (context.turnManager) {
+      const tmQuestion = context.turnManager.getCurrentQuestion();
+      if (tmQuestion) {
+        cleaned = tmQuestion;
+        console.log('✅ Using TurnManager question as fallback:', cleaned);
+      } else {
+        cleaned = 'Tell me more!';
+      }
+    } else if (context.nextStepQuestion) {
       cleaned = context.nextStepQuestion;
     } else {
-      cleaned = 'What is your name?';
+      cleaned = 'Tell me more!';
     }
   }
   
