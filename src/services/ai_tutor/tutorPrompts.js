@@ -144,32 +144,50 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     }
 
     // --- D. TRANSLATION / HELPER MODE (NO CHIT-CHAT) ---
-    // Trigger: "translate", "là gì", "how to say"
+    // Trigger: "translate", "là gì", "how to say", OR continuation after "What word?"
     const isTranslationRequest =
       lowerUser.includes("translate") ||
       lowerUser.includes("nghĩa là gì") ||
       lowerUser.includes("là gì") ||
       lowerUser.includes("how to say") ||
       lowerUser.includes("tiếng anh") ||
-      lowerAI.includes("which word");
+      lowerAI.includes("what word") ||  // 🔥 FIX: Changed from "which word" to "what word"
+      lowerAI.includes("what do you want to translate");
 
     if (isTranslationRequest) {
+      // 🔥 CRITICAL: If user said "Translate this", ask what word
+      if (lowerUser.includes("translate") && lowerUser.length < 25 && !lowerUser.includes("deer") && !lowerUser.includes("cat")) {
+        return `
+        SYSTEM_MODE: TRANSLATOR_WAITING_INPUT
+        ROLE: Ms. Nova ready to translate.
+        
+        RESPOND IN THIS JSON FORMAT:
+        {
+          "ai_response": "What word?",
+          "suggested_hints": ["cat", "dog", "fish", "bird", "tree"]
+        }
+        `;
+      }
+      
+      // 🔥 FIX: If user provided a word, TRANSLATE IT IMMEDIATELY
       return `
       SYSTEM_MODE: BILINGUAL_DICTIONARY
       ROLE: Ms. Nova as translator for kids (A0-A1).
       USER INPUT: "${userMessage}"
 
       RULES:
-      1. IF input is English (e.g. "Deer") -> Explain in VIETNAMESE ("Deer nghĩa là Con Hươu 🦌").
-      2. IF input is Vietnamese (e.g. "Cá") -> Explain in ENGLISH ("Cá is Fish 🐟").
-      3. ⛔ NO "What is your favorite?". JUST TRANSLATE.
-      4. After translating, ask: "Can you say [Word]?"
-      5. Keep response under 25 words.
+      1. IF user said a single English word (e.g. "deer", "cat") -> Define it in English!
+         Example: "A deer is a forest animal! 🦌 D-E-E-R."
+      2. IF user said Vietnamese (e.g. "con mèo") -> Translate to English!
+         Example: "Con mèo is CAT! 🐱 C-A-T."
+      3. ⛔ NEVER say "You like deer!" or "What is your favorite?"
+      4. ⛔ JUST DEFINE/TRANSLATE. Then ask "What other [category] do you know?"
+      5. Keep response under 30 words.
 
       RESPOND IN THIS JSON FORMAT:
       {
-        "ai_response": "Translation with emoji and spell-out. Can you say [word]?",
-        "suggested_hints": ["the", "translated", "word", "parts"]
+        "ai_response": "Definition/Translation with emoji and spelling. What other [category] do you know?",
+        "suggested_hints": ["similar", "category", "words"]
       }
       `;
     }
