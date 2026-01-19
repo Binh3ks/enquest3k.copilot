@@ -1,0 +1,107 @@
+/**
+ * WEEK 2 MISSION 3 - OBJECTIVE-DRIVEN DATA MODEL
+ * Topic: "Love at Home" - Expressing feelings about family
+ * Philosophy: Goals, not scripts. AI decides HOW to achieve objectives.
+ */
+
+export const week2Mission3Objectives = {
+  id: "week2_mission3",
+  week: 2,
+  mission_id: 3,
+  topic: "Love at Home",
+  
+  // Constraints for AI
+  constraints: {
+    vocabulary: [
+      "love", "home", "family", "team", "happy",
+      "special", "like", "feel", "nice", "warm",
+      "mother", "father", "brother", "sister", "together"
+    ],
+    grammar: [
+      "I love my...",
+      "My home is...",
+      "I feel...",
+      "My family is special",
+      "We are happy"
+    ],
+    tone: "warm, nurturing, emotional, encouraging self-expression"
+  },
+
+  // Educational objectives (Focus on emotions and love)
+  objectives: [
+    {
+      id: "greet_love",
+      goal: "Greeting & Love Introduction",
+      context: "Greet warmly. Introduce love topic: Let's talk about love! What do you love about your family?",
+      type: "opening"
+    },
+    {
+      id: "love_family",
+      goal: "Ask If They Love Family",
+      context: "Do you love your family? Start with yes/no, then encourage them to express feelings.",
+      type: "feelings"
+    },
+    {
+      id: "why_love",
+      goal: "Ask Why They Love Family",
+      context: "Why do you love your family? What makes them special? Help them express reasons.",
+      type: "reasoning"
+    },
+    {
+      id: "home_special",
+      goal: "Ask What Makes Home Special",
+      context: "Why is your home special? What do you like about your home? Physical and emotional aspects.",
+      type: "description"
+    },
+    {
+      id: "love_mother",
+      goal: "Express Love for Mother",
+      context: "Do you love your mother? What do you love about her? Practice 'I love my mother because...'",
+      type: "specific_love"
+    },
+    {
+      id: "love_father",
+      goal: "Express Love for Father",
+      context: "Do you love your father? What do you love about him? Practice expressing specific feelings.",
+      type: "specific_love"
+    },
+    {
+      id: "happy_home",
+      goal: "Ask If Home Is Happy",
+      context: "Is your home happy? Do you feel happy at home? What makes you happy there?",
+      type: "emotions"
+    },
+    {
+      id: "together_time",
+      goal: "Ask About Time Together",
+      context: "When is your family together? What do you do together that you love?",
+      type: "activities"
+    },
+    {
+      id: "family_team_love",
+      goal: "Connect Team and Love",
+      context: "Help them see: Your family is a team because you love each other! Practice saying this.",
+      type: "synthesis"
+    },
+    {
+      id: "goodbye",
+      goal: "Warm Closing",
+      context: "Affirm their feelings! 'Your family sounds full of love! You are very special! Goodbye!'",
+      type: "termination"
+    }
+  ],
+
+  // Success criteria
+  success_criteria: [
+    "Student expresses love for family using target vocabulary",
+    "Uses 'I love...' and 'My family is...' correctly",
+    "Describes what makes home special",
+    "Shows emotional connection and understanding"
+  ],
+
+  // Minimum conversation flow
+  minimum_turns: 10,
+  maximum_turns: 15
+};
+
+export default week2Mission3Objectives;

@@ -2,7 +2,7 @@
 const syllabusDB = {
   1: { title: "The Young Scholar", grammar: ["Subject Pronouns", "Verb to be"], math: ["Counting 1-10"], science: ["Scientist tools"], topic: ["School day", "Student life"] },
   2: { title: "Family Observation", grammar: ["Family sentences"], math: ["Counting family"], science: ["Life cycle"], topic: ["Family members"] },
-  3: { title: "Observing Differences", grammar: ["Adjectives"], math: ["Height"], science: ["Senses"], topic: ["Appearance"] },
+  3: { title: "The Mirror Game", grammar: ["Adjectives (is vs has)"], math: ["Comparisons"], science: ["Senses - Sight"], topic: ["Appearance & Physical Traits"] },
   4: { title: "My Interests", grammar: ["Likes/Dislikes"], math: ["Sorting"], science: ["Healthy habits"], topic: ["Hobbies"] },
   5: { title: "My Study Space", grammar: ["Prepositions"], math: ["Shapes"], science: ["Materials"], topic: ["Furniture"] },
   6: { title: "Describing My Room", grammar: ["There is/are"], math: ["Spatial awareness"], science: ["Day/Night"], topic: ["Bedroom"] },
@@ -37,7 +37,52 @@ const syllabusDB = {
     grammar: ["Past Simple Irregular", "Narrative"], 
     math: ["Timeline Math", "Word Problems"], 
     science: ["Archaeology"], 
-    topic: ["Discovery", "Memories"] 
+    topic: ["Discovery", "Memories",
+  {
+    id: 3,
+    title: "Week 3",
+    level: "A0",
+    description: "Generated Content",
+    folder: "week_03",
+    stations: [
+      { id: 'daily_watch', type: 'video', status: 'ready' },
+      { id: 'vocab_mastery', type: 'vocab', status: 'ready' },
+      { id: 'ai_story', type: 'story', status: 'ready' },
+      { id: 'skill_reading', type: 'reading', status: 'ready' },
+      { id: 'grammar_lab', type: 'grammar', status: 'ready' }
+    ]
+  },
+
+  {
+    id: 2,
+    title: "Week 2",
+    level: "A0",
+    description: "Generated Content",
+    folder: "week_02",
+    stations: [
+      { id: 'daily_watch', type: 'video', status: 'ready' },
+      { id: 'vocab_mastery', type: 'vocab', status: 'ready' },
+      { id: 'ai_story', type: 'story', status: 'ready' },
+      { id: 'skill_reading', type: 'reading', status: 'ready' },
+      { id: 'grammar_lab', type: 'grammar', status: 'ready' }
+    ]
+  },
+
+  {
+    id: 4,
+    title: "Week 4",
+    level: "A0",
+    description: "Generated Content",
+    folder: "week_04",
+    stations: [
+      { id: 'daily_watch', type: 'video', status: 'ready' },
+      { id: 'vocab_mastery', type: 'vocab', status: 'ready' },
+      { id: 'ai_story', type: 'story', status: 'ready' },
+      { id: 'skill_reading', type: 'reading', status: 'ready' },
+      { id: 'grammar_lab', type: 'grammar', status: 'ready' }
+    ]
+  },
+] 
   }
 };
 export default syllabusDB;

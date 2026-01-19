@@ -3,7 +3,7 @@
 export const weekTitles = {
   1: { title_en: "The Young Scholar", title_vi: "Học Sinh Trẻ" },
   2: { title_en: "My Family Squad", title_vi: "Biệt Đội Gia Đình" },
-  3: { title_en: "Week 3", title_vi: "Tuần 3" },
+  3: { title_en: "The Mirror Game", title_vi: "Trò chơi Soi gương" },
   4: { title_en: "Week 4", title_vi: "Tuần 4" },
   5: { title_en: "Week 5", title_vi: "Tuần 5" },
   6: { title_en: "Week 6", title_vi: "Tuần 6" },

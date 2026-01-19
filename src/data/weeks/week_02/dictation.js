@@ -1,17 +1,22 @@
 export default {
   sentences: [
-    { id: 1, text: "This is my family.", meaning: "Đây là gia đình tôi." },
-    { id: 2, text: "We are a team.", meaning: "Chúng tôi là một đội." },
-    { id: 3, text: "This is my father.", meaning: "Đây là bố tôi." },
-    { id: 4, text: "He is the leader.", meaning: "Bố là người lãnh đạo." },
-    { id: 5, text: "This is my mother.", meaning: "Đây là mẹ tôi." },
-    { id: 6, text: "She is kind.", meaning: "Mẹ rất tốt bụng." },
-    { id: 7, text: "This is my brother.", meaning: "Đây là anh trai tôi." },
-    { id: 8, text: "He is a good helper.", meaning: "Anh ấy là người giúp đỡ tốt." },
-    { id: 9, text: "This is my sister.", meaning: "Đây là em gái tôi." },
-    { id: 10, text: "She is funny.", meaning: "Em ấy vui tính." },
-    { id: 11, text: "We love each other.", meaning: "Chúng tôi yêu thương nhau." },
-    { id: 12, text: "We play together.", meaning: "Chúng tôi chơi cùng nhau." },
-    { id: 13, text: "We are a happy family.", meaning: "Chúng tôi là một gia đình hạnh phúc." }
+    { id: 1, text: "My name is Emma.", audio_url: "/audio/week2/dictation_1.mp3", meaning: "..." },
+    { id: 2, text: "This is my family.", audio_url: "/audio/week2/dictation_2.mp3", meaning: "..." },
+    { id: 3, text: "We are like a team!", audio_url: "/audio/week2/dictation_3.mp3", meaning: "..." },
+    { id: 4, text: "This is my mother.", audio_url: "/audio/week2/dictation_4.mp3", meaning: "..." },
+    { id: 5, text: "She is the leader of our family squad.", audio_url: "/audio/week2/dictation_5.mp3", meaning: "..." },
+    { id: 6, text: "She helps us every day.", audio_url: "/audio/week2/dictation_6.mp3", meaning: "..." },
+    { id: 7, text: "This is my father.", audio_url: "/audio/week2/dictation_7.mp3", meaning: "..." },
+    { id: 8, text: "He is strong and kind.", audio_url: "/audio/week2/dictation_8.mp3", meaning: "..." },
+    { id: 9, text: "He works hard for our family.", audio_url: "/audio/week2/dictation_9.mp3", meaning: "..." },
+    { id: 10, text: "This is my big brother, Tom.", audio_url: "/audio/week2/dictation_10.mp3", meaning: "..." },
+    { id: 11, text: "He is a good helper.", audio_url: "/audio/week2/dictation_11.mp3", meaning: "..." },
+    { id: 12, text: "He helps me with homework.", audio_url: "/audio/week2/dictation_12.mp3", meaning: "..." },
+    { id: 13, text: "This is my little sister, Lily.", audio_url: "/audio/week2/dictation_13.mp3", meaning: "..." },
+    { id: 14, text: "She is funny and sweet.", audio_url: "/audio/week2/dictation_14.mp3", meaning: "..." },
+    { id: 15, text: "We all love each other very much.", audio_url: "/audio/week2/dictation_15.mp3", meaning: "..." },
+    { id: 16, text: "Our home is full of love and laughter.", audio_url: "/audio/week2/dictation_16.mp3", meaning: "..." },
+    { id: 17, text: "We work together as a team.", audio_url: "/audio/week2/dictation_17.mp3", meaning: "..." },
+    { id: 18, text: "I am happy with my family squad.", audio_url: "/audio/week2/dictation_18.mp3", meaning: "..." }
   ]
 };

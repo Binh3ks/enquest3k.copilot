@@ -1,0 +1,74 @@
+{
+  "weekId": 1,
+  "theme": "Hello World - Identity & School",
+  "grammar_focus": "Subject Pronouns + Verb Be",
+  
+  "priorityChannels": {
+    "tier1_mandatory": [
+      "English Singsing",
+      "Little Fox",
+      "Vooks"
+    ],
+    "tier2_recommended": [
+      "Super Simple Songs",
+      "British Council Kids",
+      "SciShow Kids",
+      "Numberblocks"
+    ]
+  },
+  
+  "searchStrategy": {
+    "grammar": "English Singsing [grammar topic]",
+    "story": "Little Fox [topic] OR Vooks [topic]",
+    "vocabulary": "[topic] ESL kids song",
+    "science": "SciShow Kids [science topic]"
+  },
+  
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "targetChannel": "English Singsing",
+      "searchQuery": "English Singsing verb to be am is are",
+      "backupQuery": "am is are kids song ESL",
+      "requiredChannel": true
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "targetChannel": "English Singsing",
+      "searchQuery": "English Singsing subject pronouns",
+      "backupQuery": "pronouns I you he she ESL kids",
+      "requiredChannel": true
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "targetChannel": "Little Fox",
+      "searchQuery": "Little Fox first day school level 1",
+      "backupQuery": "Vooks school story",
+      "requiredChannel": true
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "targetChannel": "any",
+      "searchQuery": "school supplies ESL kids song",
+      "backupQuery": "classroom vocabulary kids"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "targetChannel": "SciShow Kids",
+      "searchQuery": "SciShow Kids magnifying glass",
+      "backupQuery": "magnifying glass science kids"
+    }
+  ],
+  
+  "validationRules": {
+    "minEnglishSingsing": 1,
+    "minLittleFoxOrVooks": 1,
+    "maxDuration": 600,
+    "preferredDuration": 300
+  }
+}

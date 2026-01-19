@@ -1,44 +1,53 @@
 export default {
   prompts: [
+    // ✅ Prompt 1 - What is this? (A0 - Super Simple)
     {
       id: 1,
-      context_en: "You see a picture. A child is going to school. You want to know HOW. What do you ask?",
-      context_vi: "Bạn thấy một bức tranh. Một em bé đang đi học. Bạn muốn biết NHƯ THẾ NÀO. Bạn hỏi gì?",
-      audio_url: null,
-      answer: ["How do you go?", "How do you go to school?", "How?"],
-      hint: "How..."
-    },
-    {
-      id: 2,
-      context_en: "You see a tool. You want to know WHAT it is. How do you ask?",
-      context_vi: "Bạn thấy một dụng cụ. Bạn muốn biết NÓ LÀ GÌ. Bạn hỏi sao?",
+      context_en: "You see a pen. Ask what.",
+      context_vi: "Bạn thấy cái bút. Hỏi cái gì.",
       audio_url: null,
       answer: ["What is this?", "What is it?"],
       hint: "What is..."
     },
+    
+    // ✅ Prompt 2 - Where is...? (A0 - Super Simple)
+    {
+      id: 2,
+      context_en: "You want your bag. Ask where.",
+      context_vi: "Bạn muốn cặp. Hỏi ở đâu.",
+      audio_url: null,
+      answer: ["Where is my bag?", "Where is it?"],
+      hint: "Where is..."
+    },
+    
+    // ✅ Prompt 3 - Is this...? (A0 - Super Simple)
     {
       id: 3,
-      context_en: "You are at the library. You want animal books. You want to know WHERE. How do you ask?",
-      context_vi: "Bạn ở thư viện. Bạn muốn sách động vật. Bạn muốn biết Ở ĐÂU. Bạn hỏi sao?",
+      context_en: "You see a desk. Ask if big.",
+      context_vi: "Bạn thấy bàn. Hỏi có to không.",
       audio_url: null,
-      answer: ["Where are the animal books?", "Where are animal books?"],
-      hint: "Where are..."
+      answer: ["Is this big?", "Is it big?"],
+      hint: "Is this..."
     },
+    
+    // ✅ Prompt 4 - Can I...? (A0 - Super Simple)
     {
       id: 4,
-      context_en: "Teacher says: write OR draw. You want BOTH. How do you ask?",
-      context_vi: "Cô nói: viết HOẶC vẽ. Bạn muốn CẢ HAI. Bạn hỏi sao?",
+      context_en: "You want to sit. Ask.",
+      context_vi: "Bạn muốn ngồi. Hỏi.",
       audio_url: null,
-      answer: ["Can I do both?"],
+      answer: ["Can I sit?"],
       hint: "Can I..."
     },
+    
+    // ✅ Prompt 5 - Do you...? (A0 - Super Simple)
     {
       id: 5,
-      context_en: "Friends play. You want to play. How do you ask?",
-      context_vi: "Bạn bè chơi. Bạn muốn chơi. Bạn hỏi sao?",
+      context_en: "Ask friend: like school?",
+      context_vi: "Hỏi bạn: thích trường?",
       audio_url: null,
-      answer: ["Can I play?"],
-      hint: "Can I..."
+      answer: ["Do you like school?"],
+      hint: "Do you..."
     }
   ]
 };

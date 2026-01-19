@@ -1,44 +1,53 @@
 export default {
   prompts: [
+    // ✅ Prompt 1 - What is this? (A0)
     {
       id: 1,
-      context_en: "You see a photo. Children go to school. Some walk. Some ride bikes. You want to know HOW they go to school. How do you ask?",
-      context_vi: "Bạn thấy một bức ảnh. Trẻ em đi học. Một số đi bộ. Một số đi xe đạp. Bạn muốn biết HỌ ĐI NHƯ THẾ NÀO. Bạn hỏi thế nào?",
+      context_en: "You see a bag. Ask what it is.",
+      context_vi: "Bạn thấy một cái cặp. Hỏi nó là gì.",
       audio_url: null,
-      answer: ["How do they go to school?", "How do children go to school?", "How do you go to school?"],
-      hint: "How do they... / How do you..."
+      answer: ["What is this?", "What is it?"],
+      hint: "What is..."
     },
+    
+    // ✅ Prompt 2 - Where is...? (A0)
     {
       id: 2,
-      context_en: "You see a magnifying glass. It makes things BIG. You want to know WHAT it does. How do you ask?",
-      context_vi: "Bạn thấy một kính lúp. Nó làm vật to lên. Bạn muốn biết NÓ LÀM GÌ. Bạn hỏi thế nào?",
+      context_en: "You want the pen. Ask where.",
+      context_vi: "Bạn muốn cái bút. Hỏi ở đâu.",
       audio_url: null,
-      answer: ["What does it do?", "What is it for?", "What does this do?"],
-      hint: "What does it... / What is it..."
+      answer: ["Where is the pen?", "Where is it?"],
+      hint: "Where is..."
     },
+    
+    // ✅ Prompt 3 - Is this...? (A0)
     {
       id: 3,
-      context_en: "You are at the library. You see many books. You want to know WHERE the animal books are. How do you ask?",
-      context_vi: "Bạn đang ở thư viện. Bạn thấy nhiều sách. Bạn muốn biết SÁCH ĐỘNG VẬT Ở ĐÂU. Bạn hỏi thế nào?",
+      context_en: "You see a book. Ask if it is yours.",
+      context_vi: "Bạn thấy một quyển sách. Hỏi có phải của bạn.",
       audio_url: null,
-      answer: ["Where are the animal books?", "Where can I find animal books?", "Where are animal books?"],
-      hint: "Where are... / Where can I..."
+      answer: ["Is this my book?", "Is this mine?"],
+      hint: "Is this..."
     },
+    
+    // ✅ Prompt 4 - Can I...? (A0)
     {
       id: 4,
-      context_en: "Teacher says: write OR draw. You like BOTH. You want to know if you CAN DO BOTH. How do you ask?",
-      context_vi: "Cô giáo nói: viết HOẶC vẽ. Bạn thích CẢ HAI. Bạn muốn biết CÓ ĐƯỢC LÀM CẢ HAI KHÔNG. Bạn hỏi thế nào?",
+      context_en: "Friends play. You want to play.",
+      context_vi: "Bạn bè chơi. Bạn muốn chơi.",
       audio_url: null,
-      answer: ["Can I do both?", "Can I write and draw?", "May I do both?"],
-      hint: "Can I... / May I..."
+      answer: ["Can I play?"],
+      hint: "Can I..."
     },
+    
+    // ✅ Prompt 5 - Do you...? (A0)
     {
       id: 5,
-      context_en: "Friends are playing. You want to PLAY with them. How do you ask?",
-      context_vi: "Bạn bè đang chơi. Bạn muốn CHƠI với họ. Bạn hỏi thế nào?",
+      context_en: "You like school. Ask your friend.",
+      context_vi: "Bạn thích trường. Hỏi bạn mình.",
       audio_url: null,
-      answer: ["Can I play?", "Can I play with you?", "May I play?"],
-      hint: "Can I... / May I..."
+      answer: ["Do you like school?"],
+      hint: "Do you..."
     }
   ]
 };

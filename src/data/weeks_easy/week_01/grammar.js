@@ -9,25 +9,30 @@ export default {
     ]
   },
   exercises: [
-    { id: 1, type: "mc", question: "I _____ a student.", options: ["am", "is", "are"], answer: "am", hint: "I + am" },
-    { id: 2, type: "mc", question: "She _____ my teacher.", options: ["am", "is", "are"], answer: "is", hint: "She + is" },
-    { id: 3, type: "mc", question: "They _____ in the classroom.", options: ["am", "is", "are"], answer: "are", hint: "They + are" },
-    { id: 4, type: "fill", question: "We _____ (be) students.", answer: "are", hint: "We + are" },
-    { id: 5, type: "fill", question: "He _____ (be) a scientist.", answer: "is", hint: "He + is" },
-    { id: 6, type: "fill", question: "I _____ (be) happy.", answer: "am", hint: "I + am" },
-    { id: 7, type: "unscramble", question: "Order:", words: ["is", "My teacher", "kind"], answer: "My teacher is kind.", hint: "S + V + adj" },
-    { id: 8, type: "unscramble", question: "Order:", words: ["are", "We", "at school"], answer: "We are at school.", hint: "S + V + place" },
-    { id: 9, type: "mc", question: "You _____ a good student.", options: ["am", "is", "are"], answer: "are", hint: "You + are" },
-    { id: 10, type: "mc", question: "It _____ a big backpack.", options: ["am", "is", "are"], answer: "is", hint: "It + is" },
-    { id: 11, type: "fill", question: "The book _____ (be) on the desk.", answer: "is", hint: "Singular + is" },
-    { id: 12, type: "mc", question: "My friends _____ kind.", options: ["am", "is", "are"], answer: "are", hint: "Plural + are" },
-    { id: 13, type: "unscramble", question: "Order:", words: ["am", "I", "Alex"], answer: "I am Alex.", hint: "S + V + name" },
-    { id: 14, type: "fill", question: "You and I _____ (be) classmates.", answer: "are", hint: "Plural + are" },
-    { id: 15, type: "mc", question: "The teacher _____ in the classroom.", options: ["am", "is", "are"], answer: "is", hint: "Singular + is" },
-    { id: 16, type: "fill", question: "They _____ (be) scientists.", answer: "are", hint: "They + are" },
-    { id: 17, type: "unscramble", question: "Order:", words: ["is", "My school", "big"], answer: "My school is big.", hint: "S + V + adj" },
-    { id: 18, type: "mc", question: "I _____ in the library.", options: ["am", "is", "are"], answer: "am", hint: "I + am" },
-    { id: 19, type: "fill", question: "She and he _____ (be) students.", answer: "are", hint: "Plural + are" },
-    { id: 20, type: "mc", question: "The books _____ new.", options: ["am", "is", "are"], answer: "are", hint: "Plural + are" }
+    // 30% AFFIRMATIVE (6 exercises) - EASIER
+    { id: 1, type: "fill", question: "I _____ Lily.", answer: "am", hint: "I + am" },
+    { id: 2, type: "mc", question: "She _____ happy.", options: ["am", "is", "are"], answer: "is", hint: "She + is" },
+    { id: 3, type: "fill", question: "You _____ my friend.", answer: "are", hint: "You + are" },
+    { id: 4, type: "mc", question: "It _____ red.", options: ["am", "is", "are"], answer: "is", hint: "It + is" },
+    { id: 5, type: "fill", question: "We _____ at school.", answer: "are", hint: "We + are" },
+    { id: 6, type: "mc", question: "He _____ Tom.", options: ["am", "is", "are"], answer: "is", hint: "He + is" },
+
+    // 30% NEGATIVE (6 exercises) - EASIER
+    { id: 7, type: "fill", question: "I _____ not sad.", answer: "am", hint: "I + am + not" },
+    { id: 8, type: "mc", question: "It _____ not big.", options: ["am", "is", "are"], answer: "is", hint: "It + is + not" },
+    { id: 9, type: "fill", question: "You _____ not here.", answer: "are", hint: "You + are + not" },
+    { id: 10, type: "mc", question: "She _____ not a teacher.", options: ["am", "is", "are"], answer: "is", hint: "She + is + not" },
+    { id: 11, type: "unscramble", question: "Order:", words: ["not", "We", "are", "home"], answer: "We are not home.", hint: "We + are + not" },
+    { id: 12, type: "fill", question: "They _____ not bad.", answer: "are", hint: "They + are + not" },
+
+    // 40% QUESTIONS (8 exercises) - EASIER
+    { id: 13, type: "fill", question: "_____ you OK?", answer: "Are", hint: "Are + you" },
+    { id: 14, type: "mc", question: "_____ it a pen?", options: ["Am", "Is", "Are"], answer: "Is", hint: "Is + it" },
+    { id: 15, type: "unscramble", question: "Order:", words: ["your", "What", "is", "name"], answer: "What is your name?", hint: "What + is" },
+    { id: 16, type: "fill", question: "_____ I late?", answer: "Am", hint: "Am + I" },
+    { id: 17, type: "mc", question: "_____ she nice?", options: ["Am", "Is", "Are"], answer: "Is", hint: "Is + she" },
+    { id: 18, type: "unscramble", question: "Order:", words: ["a", "this", "Is", "bag"], answer: "Is this a bag?", hint: "Is + this" },
+    { id: 19, type: "fill", question: "_____ they here?", answer: "Are", hint: "Are + they" },
+    { id: 20, type: "mc", question: "_____ you happy?", options: ["Am", "Is", "Are"], answer: "Are", hint: "Are + you" }
   ]
 };

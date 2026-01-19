@@ -18,7 +18,11 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
     "lucide-react": "^0.562.0",
+    "openai": "^6.16.0",
+    "pg": "^8.16.3",
     "react": "^19.2.0",
     "react-confetti": "^6.4.0",
     "react-dom": "^19.2.0",

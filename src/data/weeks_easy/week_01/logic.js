@@ -7,6 +7,7 @@ export default {
       title_vi: "Bút chì",
       question_en: "Teacher gives 2 pencils to each student. There are 3 students. How many pencils?",
       question_vi: "Cô phát 2 bút cho mỗi học sinh. Có 3 học sinh. Cần bao nhiêu bút?",
+      audio_url: "/audio/week1_easy/logic_1.mp3",
       answer: ["6 pencils", "six pencils"],
       hint_en: "Write: ___ pencils",
       hint_vi: "Viết: ___ bút"
@@ -18,6 +19,7 @@ export default {
       title_vi: "Quy luật",
       question_en: "Teacher says: apple, banana, apple, banana. What is next?",
       question_vi: "Cô nói: táo, chuối, táo, chuối. Tiếp theo?",
+      audio_url: "/audio/week1_easy/logic_2.mp3",
       answer: ["apple", "an apple"],
       hint_en: "apple, banana, apple...",
       hint_vi: "táo, chuối, táo..."
@@ -29,6 +31,7 @@ export default {
       title_vi: "Sách",
       question_en: "You have 2 books. You get 1 more. How many now?",
       question_vi: "Bạn có 2 quyển. Bạn được thêm 1 quyển. Giờ có bao nhiêu?",
+      audio_url: "/audio/week1_easy/logic_3.mp3",
       answer: ["3 books", "three books"],
       hint_en: "Write: ___ books",
       hint_vi: "Viết: ___ quyển"
@@ -40,6 +43,7 @@ export default {
       title_vi: "Công cụ",
       question_en: "What makes things look BIG?",
       question_vi: "Cái gì làm vật to?",
+      audio_url: "/audio/week1_easy/logic_4.mp3",
       answer: ["Magnifying glass", "magnifying glass", "glass"],
       hint_en: "It is glass",
       hint_vi: "Nó là kính"
@@ -51,6 +55,7 @@ export default {
       title_vi: "Ba lô",
       question_en: "Backpack is 1 kilogram. You add 1 book. Book is 1 kilogram. How much?",
       question_vi: "Ba lô 1 ki-lô. Bạn bỏ 1 sách. Sách 1 ki-lô. Giờ bao nhiêu?",
+      audio_url: "/audio/week1_easy/logic_5.mp3",
       answer: ["2 kg", "two kg", "2 kilograms", "two kilograms"],
       hint_en: "Write: ___ kg",
       hint_vi: "Viết: ___ kg"

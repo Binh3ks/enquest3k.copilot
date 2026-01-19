@@ -1,0 +1,107 @@
+/**
+ * WEEK 2 MISSION 1 - OBJECTIVE-DRIVEN DATA MODEL
+ * Topic: "Meet the Family Squad" - Introducing family members
+ * Philosophy: Goals, not scripts. AI decides HOW to achieve objectives.
+ */
+
+export const week2Mission1Objectives = {
+  id: "week2_mission1",
+  week: 2,
+  mission_id: 1,
+  topic: "Meet the Family Squad",
+  
+  // Constraints for AI
+  constraints: {
+    vocabulary: [
+      "mother", "father", "brother", "sister", "family",
+      "this", "is", "my", "lives", "home", "house",
+      "have", "love", "name", "big", "small"
+    ],
+    grammar: [
+      "This is my...",
+      "I have...",
+      "My mother is...",
+      "She/He lives...",
+      "I love my..."
+    ],
+    tone: "warm, encouraging, interested in student's family"
+  },
+
+  // Educational objectives (Focus on family introductions)
+  objectives: [
+    {
+      id: "greet_family",
+      goal: "Greeting & Family Introduction",
+      context: "Introduce yourself warmly. Ask about their family: Who lives in your home?",
+      type: "opening"
+    },
+    {
+      id: "mother",
+      goal: "Learn About Mother",
+      context: "Ask about their mother. Do they live with their mother? What is she like?",
+      type: "family_member"
+    },
+    {
+      id: "father",
+      goal: "Learn About Father",
+      context: "Ask about their father. Do they live with their father? What is he like?",
+      type: "family_member"
+    },
+    {
+      id: "siblings",
+      goal: "Ask About Brothers/Sisters",
+      context: "Do they have brothers or sisters? How many? What are their names?",
+      type: "family_member"
+    },
+    {
+      id: "family_size",
+      goal: "Learn Family Size",
+      context: "How many people in their family? Is it a big family or small family?",
+      type: "description"
+    },
+    {
+      id: "family_home",
+      goal: "Ask About Home",
+      context: "Where do they live? Do they live in a house or apartment? Who lives together?",
+      type: "description"
+    },
+    {
+      id: "introduce_practice",
+      goal: "Practice 'This is my...'",
+      context: "Help them practice introducing family members: 'This is my mother/father/brother/sister'",
+      type: "practice"
+    },
+    {
+      id: "family_names",
+      goal: "Learn Family Names",
+      context: "What are their family members' names? Practice saying them in English.",
+      type: "details"
+    },
+    {
+      id: "family_feelings",
+      goal: "Express Feelings About Family",
+      context: "Do they love their family? What do they like about their family?",
+      type: "emotional"
+    },
+    {
+      id: "goodbye",
+      goal: "Warm Closing",
+      context: "Congratulate them! Say goodbye warmly: 'Your family sounds wonderful! Great job!'",
+      type: "termination"
+    }
+  ],
+
+  // Success criteria
+  success_criteria: [
+    "Student introduces at least 3 family members",
+    "Uses 'This is my...' correctly",
+    "States family size (big/small)",
+    "Shows understanding of family vocabulary"
+  ],
+
+  // Minimum conversation flow
+  minimum_turns: 10,
+  maximum_turns: 15
+};
+
+export default week2Mission1Objectives;

@@ -1,51 +1,38 @@
 export default {
   grammar_explanation: {
     title_en: "This is my... (Possession)",
-    title_vi: "Đây là... của tôi (Sở hữu)",
+    title_vi: "This is my... (Sở hữu)",
     rules: [
-      {
-        id: 1,
-        rule: "**This is** + **my** + (noun)",
-        example_simple: "This is my father.",
-        example_vi: "Đây là bố tôi.",
-        note: "Use 'This is my...' to show someone or something belongs to you."
-      },
-      {
-        id: 2,
-        rule: "**My** + (noun) + **is** + (adjective)",
-        example_simple: "My mother is kind.",
-        example_vi: "Mẹ tôi tốt bụng.",
-        note: "Use 'My... is...' to describe someone."
-      },
-      {
-        id: 3,
-        rule: "**We are** + (noun)",
-        example_simple: "We are a team.",
-        example_vi: "Chúng tôi là một đội.",
-        note: "Use 'We are...' to talk about the group."
-      }
+      { type: "rule", icon: "1️⃣", rule_en: "This is my + [family member]", rule_vi: "This is my + [thành viên gia đình]" },
+      { type: "rule", icon: "2️⃣", rule_en: "This is + [name]", rule_vi: "This is + [tên]" },
+      { type: "rule", icon: "3️⃣", rule_en: "We are a team", rule_vi: "We are a team (Chúng tôi là một đội)" }
     ]
   },
   exercises: [
-    { id: 1, type: "fill", question: "_____ is my family.", answer: "This", hint: "This is..." },
-    { id: 2, type: "mc", question: "This is _____ mother.", options: ["my", "your", "his"], answer: "my", hint: "This is my..." },
-    { id: 3, type: "unscramble", question: "Sort:", words: ["This", "is", "my", "father"], answer: "This is my father.", hint: "This is my..." },
-    { id: 4, type: "fill", question: "My sister _____ (be) funny.", answer: "is", hint: "My sister is..." },
-    { id: 5, type: "mc", question: "_____ is my brother.", options: ["This", "These", "That"], answer: "This", hint: "This is..." },
-    { id: 6, type: "unscramble", question: "Sort:", words: ["are", "We", "a", "team"], answer: "We are a team.", hint: "We are..." },
-    { id: 7, type: "fill", question: "This is _____ (I) family.", answer: "my", hint: "my family" },
-    { id: 8, type: "mc", question: "My father _____ the leader.", options: ["is", "are"], answer: "is", hint: "He is..." },
-    { id: 9, type: "fill", question: "Make sentence: 'This / my / mother'", answer: ["This is my mother.", "this is my mother."], customCheck: true, hint: "This is my..." },
-    { id: 10, type: "fill", question: "We _____ (be) together.", answer: "are", hint: "We are..." },
-    { id: 11, type: "fill", question: "My mother _____ (be) kind.", answer: "is", hint: "She is..." },
-    { id: 12, type: "unscramble", question: "Sort:", words: ["love", "I", "my", "family"], answer: "I love my family.", hint: "I love..." },
-    { id: 13, type: "fill", question: "_____ is my brother.", answer: "This", hint: "This is..." },
-    { id: 14, type: "mc", question: "My brother is a good _____.", options: ["helper", "leader"], answer: "helper", hint: "He helps..." },
-    { id: 15, type: "fill", question: "This is _____ (I) sister.", answer: "my", hint: "my sister" },
-    { id: 16, type: "unscramble", question: "Sort:", words: ["is", "He", "the", "leader"], answer: "He is the leader.", hint: "He is..." },
-    { id: 17, type: "fill", question: "Make sentence: 'My / family / happy'", answer: ["My family is happy.", "my family is happy."], customCheck: true, hint: "My family is..." },
-    { id: 18, type: "mc", question: "_____ play together.", options: ["We", "They", "I"], answer: "We", hint: "We play..." },
-    { id: 19, type: "fill", question: "This is my _____ (dad).", answer: "father", hint: "father" },
-    { id: 20, type: "fill", question: "We are a _____ (team/group).", answer: "team", hint: "team" }
+    // 30% AFFIRMATIVE (6 exercises)
+    { id: 1, type: "fill", question: "This is _____ mother.", answer: "my", hint: "This is + my" },
+    { id: 2, type: "mc", question: "This is _____ father.", options: ["I", "my", "me"], answer: "my", hint: "This is + my" },
+    { id: 3, type: "fill", question: "This is _____ brother.", answer: "my", hint: "This is + my" },
+    { id: 4, type: "mc", question: "This is _____ sister.", options: ["I", "my", "me"], answer: "my", hint: "This is + my" },
+    { id: 5, type: "fill", question: "We _____ a team.", answer: "are", hint: "We + are" },
+    { id: 6, type: "mc", question: "This is _____ family.", options: ["I", "my", "me"], answer: "my", hint: "This is + my" },
+
+    // 30% NEGATIVE (6 exercises)
+    { id: 7, type: "fill", question: "This is _____ my brother.", answer: "not", hint: "This is + not" },
+    { id: 8, type: "mc", question: "He is _____ my father.", options: ["not", "no", "don't"], answer: "not", hint: "He is + not" },
+    { id: 9, type: "fill", question: "She is _____ my sister.", answer: "not", hint: "She is + not" },
+    { id: 10, type: "mc", question: "We are _____ a big team.", options: ["not", "no", "don't"], answer: "not", hint: "We are + not" },
+    { id: 11, type: "unscramble", question: "Order:", words: ["is", "This", "not", "my", "mother"], answer: "This is not my mother.", hint: "This is not" },
+    { id: 12, type: "fill", question: "This is _____ my home.", answer: "not", hint: "This is + not" },
+
+    // 40% QUESTIONS (8 exercises)
+    { id: 13, type: "fill", question: "_____ this your mother?", answer: "Is", hint: "Is + this" },
+    { id: 14, type: "mc", question: "_____ this your father?", options: ["Am", "Is", "Are"], answer: "Is", hint: "Is + this" },
+    { id: 15, type: "unscramble", question: "Order:", words: ["is", "Who", "this"], answer: "Who is this?", hint: "Who + is" },
+    { id: 16, type: "fill", question: "_____ this your brother?", answer: "Is", hint: "Is + this" },
+    { id: 17, type: "mc", question: "_____ you a team?", options: ["Am", "Is", "Are"], answer: "Are", hint: "Are + you" },
+    { id: 18, type: "unscramble", question: "Order:", words: ["is", "this", "your", "family"], answer: "Is this your family?", hint: "Is + this" },
+    { id: 19, type: "fill", question: "_____ she your sister?", answer: "Is", hint: "Is + she" },
+    { id: 20, type: "unscramble", question: "Order:", words: ["are", "you", "happy", "at", "home"], answer: "Are you happy at home?", hint: "Are + you" }
   ]
 };

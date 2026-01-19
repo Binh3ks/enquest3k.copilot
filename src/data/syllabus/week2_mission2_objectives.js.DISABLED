@@ -1,0 +1,107 @@
+/**
+ * WEEK 2 MISSION 2 - OBJECTIVE-DRIVEN DATA MODEL
+ * Topic: "Team Work at Home" - How families work together
+ * Philosophy: Goals, not scripts. AI decides HOW to achieve objectives.
+ */
+
+export const week2Mission2Objectives = {
+  id: "week2_mission2",
+  week: 2,
+  mission_id: 2,
+  topic: "Team Work at Home",
+  
+  // Constraints for AI
+  constraints: {
+    vocabulary: [
+      "team", "leader", "helper", "home", "work",
+      "together", "help", "clean", "cook", "play",
+      "family", "mother", "father", "brother", "sister"
+    ],
+    grammar: [
+      "My family works together",
+      "We help each other",
+      "Mother/Father helps...",
+      "I help my...",
+      "We are a team"
+    ],
+    tone: "encouraging, positive about teamwork, interested in family activities"
+  },
+
+  // Educational objectives (Focus on teamwork)
+  objectives: [
+    {
+      id: "greet_teamwork",
+      goal: "Greeting & Teamwork Introduction",
+      context: "Greet warmly. Introduce teamwork concept: Families work together like a team! What does your family do together?",
+      type: "opening"
+    },
+    {
+      id: "family_activities",
+      goal: "Ask What Family Does Together",
+      context: "What does your family do together? Do you play? Clean? Cook? Learn what activities they share.",
+      type: "activities"
+    },
+    {
+      id: "who_helps",
+      goal: "Ask Who Helps at Home",
+      context: "Who helps at home? Does mother help? Father? Brothers? Sisters? You?",
+      type: "helpers"
+    },
+    {
+      id: "how_mother_helps",
+      goal: "Learn How Mother Helps",
+      context: "What does mother do at home? How does she help the family team?",
+      type: "role"
+    },
+    {
+      id: "how_father_helps",
+      goal: "Learn How Father Helps",
+      context: "What does father do at home? How does he help the family team?",
+      type: "role"
+    },
+    {
+      id: "how_student_helps",
+      goal: "Ask How Student Helps",
+      context: "What do YOU do to help? How are you part of the family team? Be encouraging!",
+      type: "personal_role"
+    },
+    {
+      id: "team_leader",
+      goal: "Ask About Family Leader",
+      context: "Who is the leader in your family team? Mother? Father? Grandparents?",
+      type: "structure"
+    },
+    {
+      id: "working_together",
+      goal: "Practice 'Work Together' Concept",
+      context: "Help them say 'We work together' or 'My family is a team'. Practice the teamwork vocabulary.",
+      type: "practice"
+    },
+    {
+      id: "team_feelings",
+      goal: "Express Feelings About Teamwork",
+      context: "Do you like working with your family? Is it fun to help? What do you feel?",
+      type: "emotional"
+    },
+    {
+      id: "goodbye",
+      goal: "Warm Closing",
+      context: "Congratulate them! 'Your family is a great team! You are a good helper! Goodbye!'",
+      type: "termination"
+    }
+  ],
+
+  // Success criteria
+  success_criteria: [
+    "Student describes at least 2 ways family members help",
+    "Uses 'team', 'helper', 'work together' vocabulary",
+    "Explains their own role in helping",
+    "Shows understanding of teamwork concept"
+  ],
+
+  // Minimum conversation flow
+  minimum_turns: 10,
+  maximum_turns: 15
+};
+
+export default week2Mission2Objectives;
