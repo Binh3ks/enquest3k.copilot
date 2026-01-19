@@ -30,39 +30,39 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
   messageText = messageText.replace(/^[\{\[].*[\}\]]$/s, 'Processing...');
   
   return (
-    <div className={`flex items-start space-x-4 mb-8 ${isAssistant ? '' : 'flex-row-reverse space-x-reverse'}`}> {/* More spacing between messages */}
+    <div className={`flex items-start space-x-2 mb-4 ${isAssistant ? '' : 'flex-row-reverse space-x-reverse'}`}>
       {/* Avatar */}
       <div className={`
-        flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center {/* Bigger avatar */}
+        flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center
         ${isAssistant 
           ? 'bg-gradient-to-br from-purple-500 to-pink-500' 
           : 'bg-blue-500'
         }
       `}>
         {isAssistant ? (
-          <Sparkles className="text-white" size={24} />
+          <Sparkles className="text-white" size={16} />
         ) : (
-          <User className="text-white" size={24} />
+          <User className="text-white" size={16} />
         )}
       </div>
 
       {/* Message Content */}
       <div className={`flex-1 max-w-[70%] ${isAssistant ? '' : 'flex justify-end'}`}>
         <div className={`
-          rounded-3xl px-6 py-5 shadow-lg max-w-[85%] {/* Bigger padding, better shadow, wider max-width */}
+          rounded-2xl px-3 py-2 shadow-sm max-w-[85%]
           ${isAssistant 
-            ? 'bg-gradient-to-br from-white to-gray-50 text-gray-800 rounded-tl-md border-l-4 border-purple-400' 
+            ? 'bg-gradient-to-br from-white to-gray-50 text-gray-800 rounded-tl-md border-l-2 border-purple-400' 
             : 'bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-tr-md shadow-blue-200'
           }
         `}>
-          {/* Message Text with larger font */}
-          <p className="text-xl leading-relaxed whitespace-pre-wrap font-medium"> {/* Even bigger text */}
+          {/* Message Text */}
+          <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
             {messageText}
           </p>
           
           {/* Timestamp */}
           <p className={`
-            text-base mt-3 font-medium {/* Bigger timestamp with more margin */}
+            text-xs mt-1 font-medium
             ${isAssistant ? 'text-gray-500' : 'text-blue-200'}
           `}>
             {new Date(timestamp).toLocaleTimeString('en-US', { 
@@ -73,8 +73,8 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
 
           {/* Pedagogy Note (Debug Mode) */}
           {pedagogyNote && import.meta.env.DEV && (
-            <div className="mt-3 pt-3 border-t border-gray-200"> {/* Bigger spacing */}
-              <p className="text-sm text-purple-600 font-mono"> {/* Bigger debug text */}
+            <div className="mt-1 pt-1 border-t border-gray-200">
+              <p className="text-xs text-purple-600 font-mono">
                 📚 {pedagogyNote}
               </p>
             </div>
