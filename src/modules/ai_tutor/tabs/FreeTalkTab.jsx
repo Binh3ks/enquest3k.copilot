@@ -202,19 +202,17 @@ const FreeTalkTab = () => {
       }
     }
     
-    setMessageCount(prev => {
-      const newCount = prev + 1;
-      
-      // 🔥 Save progress to Universal Progress System (debounced)
-      saveProgress({
-        totalTurns: newCount,
-        conversationTopic: conversationTopic || userMessage.split(' ')[0],
-        lastMessageAt: new Date().toISOString(),
-        vocabUsed: savedData.vocabUsed || []
-      }, false, Math.min(100, newCount * 5)); // Score based on engagement
-      
-      return newCount;
-    });
+    // Update message count
+    const newCount = messageCount + 1;
+    setMessageCount(newCount);
+    
+    // 🔥 Save progress to Universal Progress System (debounced) - OUTSIDE setState
+    saveProgress({
+      totalTurns: newCount,
+      conversationTopic: conversationTopic || userMessage.split(' ')[0],
+      lastMessageAt: new Date().toISOString(),
+      vocabUsed: savedData.vocabUsed || []
+    }, false, Math.min(100, newCount * 5)); // Score based on engagement
 
     // Detect topic from first user message
     if (messageCount === 0 && userMessage.length > 10) {

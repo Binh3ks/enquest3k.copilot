@@ -181,7 +181,7 @@ const PROVIDERS = {
     name: 'Together AI',
     model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
     maxTokens: 1024,
-    temperature: 0.7,
+    temperature: 0.9, // ⚡ Higher = faster responses (less "thinking")
     enabled: !!import.meta.env.VITE_TOGETHER_API_KEY,
     description: 'PRIMARY: Fast responses with 60 req/min (4x faster than Groq)'
   },
