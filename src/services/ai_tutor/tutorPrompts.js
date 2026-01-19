@@ -36,8 +36,21 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
   // 1. STORY MISSION MODE (GIỮ NGUYÊN)
   // =================================================================
   if (mode === TutorModes.STORY_MISSION || mode === 'story_mission' || mode === 'story') {
-    if (context.missionData && isV27Format(context.missionData)) {
-      return buildV27StoryPrompt(context, userMessage);
+    // 🔥 Check if missionData is a single mission object with turns (V27 format)
+    const isSingleMissionV27 = context.missionData?.turns && Array.isArray(context.missionData.turns);
+    // 🔥 Or check if it's week data with story_missions array
+    const isWeekDataV27 = context.missionData && isV27Format(context.missionData);
+    
+    if (isSingleMissionV27 || isWeekDataV27) {
+      // 🔥 Pass proper params to buildV27StoryPrompt
+      return buildV27StoryPrompt({
+        weekData: context.realSyllabusData, // Full week data
+        mission: context.missionData,       // Single mission object
+        turnNumber: context.turnCount || 1,
+        userInput: userMessage,
+        missionIndex: context.missionIndex || 0,
+        studentName: context.studentName || ''
+      });
     }
     const { topic, missionTitle, roleCard, progress, vocab } = context;
     const currentTurn = progress?.currentTurn || 1;
