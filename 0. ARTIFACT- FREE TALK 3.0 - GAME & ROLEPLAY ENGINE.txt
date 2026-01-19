@@ -1,0 +1,270 @@
+📋 ARTIFACT: FREE TALK 3.0 - GAME & ROLEPLAY ENGINE
+VERSION: 3.0 (Persistent State & Fixed Actions) GOAL: Transform Free Talk into a structured, persistent game and roleplay environment. UX CHANGE:
+
+Fixed Action Menu: Always visible buttons for mode selection.
+
+Persistent Game Loop: AI stays in game mode for 15+ turns.
+
+Active Input Only: During gameplay, hint chips are disabled (visual only) or removed to force Speaking/Typing.
+
+1. DATA SCHEMA: STATIC CONFIGURATION
+(Do not put this in week_XX.js anymore. Create a central config file because these games are universal).
+
+File: src/config/freeTalkConfig.js
+
+JavaScript
+
+export const FREE_TALK_ACTIONS = [
+  { id: 'translate', label: 'Dịch giúp con 🆘', icon: '🆘', type: 'system' },
+  { id: 'play_game', label: 'Chơi Game 🎮', icon: '🎮', type: 'menu' },
+  { id: 'role_play', label: 'Đóng vai 🎭', icon: '🎭', type: 'menu' },
+  { id: 'ask_any', label: 'Hỏi bất kỳ ❓', icon: '❓', type: 'mode' }
+];
+
+export const GAME_OPTIONS = [
+  {
+    id: 'word_chain',
+    label_en: "Word Chain",
+    label_vi: "Nối từ",
+    icon: "🔗",
+    intro: "I say a word, you say a word starting with the LAST letter! I start: Do__g__. Your turn! (G...)"
+  },
+  {
+    id: 'i_spy',
+    label_en: "I Spy",
+    label_vi: "Đoán vật",
+    icon: "🕵️‍♀️",
+    intro: "I will describe something. You guess! I spy with my little eye..."
+  },
+  {
+    id: 'emoji_mixer',
+    label_en: "Emoji Mixer",
+    label_vi: "Đuổi hình bắt chữ",
+    icon: "🧩",
+    intro: "Look at the emojis and guess the word! 🔴 + 🍎 = ?"
+  }
+];
+
+export const ROLEPLAY_SCENARIOS = [
+  {
+    id: 'pizza_chef',
+    label_en: "Pizza Chef",
+    label_vi: "Đầu bếp nhí",
+    icon: "🍕",
+    ai_role: "Hungry Customer",
+    user_role: "Chef",
+    intro: "I am hungry! 😋 Are you a Chef?"
+  },
+  {
+    id: 'pet_doctor',
+    label_en: "Pet Doctor",
+    label_vi: "Bác sĩ thú y",
+    icon: "🚑",
+    ai_role: "Pet Owner (Cat is sad)",
+    user_role: "Doctor",
+    intro: "Oh no! My Cat is sad. 😿 Doctor, help me!"
+  },
+  {
+    id: 'toy_shop',
+    label_en: "Toy Shop",
+    label_vi: "Cửa hàng đồ chơi",
+    icon: "🛍️",
+    ai_role: "Customer",
+    user_role: "Shopkeeper",
+    intro: "Hello! I want to buy a Robot. 🤖 Do you have one?"
+  }
+];
+2. STATE MANAGEMENT LOGIC (UI STATE)
+You need to update FreeTalkTab.jsx to handle these states.
+
+State Variables:
+
+mode: 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any'
+
+activeActivityId: (e.g., 'word_chain', 'pizza_chef')
+
+turnCount: number (Reset to 0 when game starts. Increment on every user message).
+
+Logic Flow:
+
+User clicks "Chơi Game 🎮":
+
+Set mode = 'selecting_game'.
+
+AI says: "What games do you like to play? Pick one!"
+
+Show 3 clickable buttons (Word Chain, I Spy, Emoji).
+
+User clicks "Word Chain" (or speaks it):
+
+Set mode = 'playing_game'.
+
+Set activeActivityId = 'word_chain'.
+
+Inject System Prompt: "User wants to play Word Chain. Start now."
+
+During Gameplay (The Loop):
+
+Hide Hint Chips: Do not show clickable text suggestions.
+
+Increment Turn Count: turnCount++.
+
+Exit Condition: If User says "Stop", "Exit", "Chán rồi" OR turnCount > 15, allow AI to say "Good game! Want to play another?" (and show menu).
+
+3. ADVANCED PROMPT ENGINEERING (The AI Brain)
+Update src/services/ai_tutor/promptLibrary.js. We need a dynamic prompt generator that changes based on the active mode.
+
+JavaScript
+
+export const getFreeTalkPromptV3 = (weekTopic, mode, activityId, targetVocabList) => {
+  
+  // BASE PERSONA
+  let systemPrompt = `
+  ROLE: You are Ms. Nova, a fun English teacher for kids (A0 Level).
+  CURRENT TOPIC: "${weekTopic}".
+  TONE: Enthusiastic, uses emojis 🌟, short sentences.
+  `;
+
+  // 1. GAME MODE: WORD CHAIN
+  if (mode === 'playing_game' && activityId === 'word_chain') {
+    systemPrompt += `
+    GAME: WORD CHAIN.
+    RULE: User must find a word starting with the LAST letter of your word.
+    LOGIC:
+    - If User is stuck/wrong: Give a HINT immediately (e.g., "Starts with B... maybe something blue?").
+    - If User is right: PRAISE heavily ("Amazing!", "Wow!"). Then give a new word.
+    - KEEP PLAYING until User says "Stop".
+    `;
+  }
+
+  // 2. GAME MODE: I SPY
+  else if (mode === 'playing_game' && activityId === 'i_spy') {
+    const vocabString = targetVocabList.map(v => v.word).join(', ');
+    systemPrompt += `
+    GAME: I SPY.
+    RULE: Describe an object using Color, Size, or Sound. User guesses.
+    PRIORITY VOCAB: Try to use these words if possible: ${vocabString}.
+    LOGIC:
+    - Say: "I spy with my little eye... something [Color/Size]. It [Action/Sound]."
+    - Wait for guess.
+    - If wrong: Give another hint.
+    - If right: Celebrate! Then start a new one.
+    `;
+  }
+
+  // 3. GAME MODE: EMOJI MIXER
+  else if (mode === 'playing_game' && activityId === 'emoji_mixer') {
+    systemPrompt += `
+    GAME: EMOJI MIXER.
+    RULE: Send 2-3 emojis. User guesses the word or phrase.
+    EXAMPLES:
+    - 🌧️ + 🧥 = Raincoat
+    - 🔴 + 🍎 = Red Apple
+    - 🏫 + 🚌 = School Bus
+    LOGIC: Send Emojis only. Wait for answer. Explain if they don't get it.
+    `;
+  }
+
+  // 4. ROLEPLAY MODES
+  else if (mode === 'playing_roleplay') {
+    systemPrompt += `
+    ACTIVITY: ROLEPLAY. STAY IN CHARACTER.
+    `;
+    if (activityId === 'pizza_chef') {
+      systemPrompt += `
+      SCENARIO: User is CHEF. You are HUNGRY CUSTOMER.
+      GOAL: Order pizza, ask for toppings (cheese, tomato). Complain you are hungry!
+      `;
+    } else if (activityId === 'pet_doctor') {
+      systemPrompt += `
+      SCENARIO: User is DOCTOR. You are PET OWNER.
+      GOAL: Your cat is sad/sick. Ask for help. Do what the doctor says.
+      `;
+    } else if (activityId === 'toy_shop') {
+      systemPrompt += `
+      SCENARIO: User is SHOPKEEPER. You are CUSTOMER.
+      GOAL: Ask to buy toys (Robot, Doll). Ask "How much?". Pay money.
+      `;
+    }
+  }
+
+  // 5. HELPER MODE (Specific Action)
+  else if (mode === 'translation_help') {
+     systemPrompt += `
+     TASK: Translate specifically what the user asks. Explain simply.
+     Then ask them to repeat the word.
+     `;
+  }
+
+  // 6. ASK ME ANYTHING
+  else if (mode === 'asking_any') {
+    systemPrompt += `
+    TASK: Answer general knowledge questions for a 6-year-old.
+    - If simple (Why is sky blue?): Answer simply.
+    - If complex/adult: Say "That is a big question! Ask your parents or search Google!"
+    `;
+  }
+
+  return systemPrompt;
+};
+4. UI IMPLEMENTATION PLAN (For Copilot)
+Task for Copilot: Modify FreeTalkTab.jsx.
+
+Fixed Bottom Bar: Create a persistent bar above the input field (or at the very bottom) with the 4 icons: [🆘 Help] [🎮 Game] [🎭 Roleplay] [❓ Ask]
+
+Dynamic Selection Area:
+
+When mode === 'selecting_game', render the 3 Game Cards (clickable) in the chat area (like a received message).
+
+When mode === 'selecting_roleplay', render the 3 Scenario Cards.
+
+Input Restriction:
+
+When mode === 'playing_...':
+
+DISABLE the "Suggestion Chips" row (the hint buttons).
+
+ENABLE the Microphone and Text Input.
+
+Reason: As you requested, force them to produce language.
+
+Handling "Stop":
+
+Add a small "❌ Stop Game" button in the top corner if a game is active, so the child can exit the loop early if they get frustrated.
+
+🚀 LỆNH ĐỂ GỬI CHO COPILOT
+Hãy copy đoạn prompt dưới đây để ra lệnh cho Copilot thực hiện toàn bộ thay đổi này:
+
+Markdown
+
+# TASK: UPGRADE FREE TALK TO V3.0 (GAME ENGINE)
+
+**CONTEXT**: We are transforming the Free Talk tab from a chat bot into a structured Game & Roleplay center.
+**USER REQUIREMENT**: Persistent game modes, fixed action menu, and forced active input (no clickable hints during game).
+
+**STEP 1: Create Config**
+Create `src/config/freeTalkConfig.js` containing `FREE_TALK_ACTIONS`, `GAME_OPTIONS`, and `ROLEPLAY_SCENARIOS` as defined in the Schema Artifact.
+
+**STEP 2: Update Logic Hook**
+Modify `src/modules/ai_tutor/tabs/FreeTalkTab.jsx`:
+1.  Add state: `mode` (idle, selecting_game, playing_game, etc.), `activeActivity`, `turnCount`.
+2.  Add a **Fixed Action Bar** at the bottom with 4 buttons: Translate, Game, Roleplay, Ask Any.
+3.  **Selection Logic**: When "Game" is clicked, show the 3 specific game choices (Word Chain, I Spy, Emoji) as clickable cards in the chat stream. Same for Roleplay.
+4.  **Gameplay Logic**:
+    - When a game is selected, set `mode = playing_game`.
+    - **HIDE** standard suggestion chips during gameplay (Force user input).
+    - Send a hidden system instruction to AI: "START GAME [Game Name] IMMEDIATELY".
+    - Increment `turnCount` on each reply.
+    - If `turnCount > 15`, allow AI to suggest changing topics.
+
+**STEP 3: Update AI Brain**
+Modify `src/services/ai_tutor/promptLibrary.js`:
+- Implement `getFreeTalkPromptV3` that accepts `mode` and `activityId`.
+- Add specific logic blocks for:
+  - **Word Chain**: Hint logic, praise logic.
+  - **I Spy**: Description logic using week's vocab.
+  - **Emoji Mixer**: Emoji-only puzzles.
+  - **Roleplays**: Pizza Chef, Pet Doctor, Toy Shop (Specific contexts).
+
+**STEP 4: Execution**
+Refactor the code now. Ensure backward compatibility with existing weeks (default to idle mode).

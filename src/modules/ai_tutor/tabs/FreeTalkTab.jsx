@@ -1,6 +1,6 @@
 import { extractHintsFromQuestion } from '../../../services/ai_tutor/utils/responseParser';
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, Heart, Sparkles, Loader2, Volume2 } from 'lucide-react';
+import { MessageCircle, Heart, Sparkles, Loader2, Volume2, X } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
@@ -15,6 +15,7 @@ import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
 import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
+import { FREE_TALK_ACTIONS, GAME_OPTIONS, ROLEPLAY_SCENARIOS } from '../../../config/freeTalkConfig'; // 🎮 FREE TALK 3.0
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -43,6 +44,11 @@ const FreeTalkTab = () => {
   const [showHints, setShowHints] = useState(false);
   const [messageCount, setMessageCount] = useState(savedData.totalTurns || 0);
   const [initialized, setInitialized] = useState(false);
+  
+  // 🎮 FREE TALK 3.0 STATE MANAGEMENT
+  const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
+  const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
+  const [turnCount, setTurnCount] = useState(0); // Game turn counter
   
   // 🔥 Dynamic week data selection
   const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
@@ -183,6 +189,19 @@ const FreeTalkTab = () => {
     };
     addMessage("freetalk", userMsg);
     setIsLoading(true);
+    
+    // 🎮 Increment turn count if in game/roleplay mode
+    if (mode === 'playing_game' || mode === 'playing_roleplay') {
+      setTurnCount(prev => prev + 1);
+      
+      // Auto-exit after 15 turns
+      if (turnCount >= 15) {
+        setMode('idle');
+        setActiveActivityId(null);
+        setTurnCount(0);
+      }
+    }
+    
     setMessageCount(prev => {
       const newCount = prev + 1;
       
@@ -360,6 +379,56 @@ const FreeTalkTab = () => {
     handleSendMessage(cleanHint);
   };
 
+  // 🎮 FREE TALK 3.0 HANDLERS
+  const handleActionClick = (actionId) => {
+    if (actionId === 'translate') {
+      setMode('translation_help');
+      handleSendMessage('Translate this for me...');
+    } else if (actionId === 'play_game') {
+      setMode('selecting_game');
+    } else if (actionId === 'role_play') {
+      setMode('selecting_roleplay');
+    } else if (actionId === 'ask_any') {
+      setMode('asking_any');
+      handleSendMessage('I have a question!');
+    }
+  };
+
+  const handleGameSelect = (gameId) => {
+    setMode('playing_game');
+    setActiveActivityId(gameId);
+    setTurnCount(0);
+    
+    const game = GAME_OPTIONS.find(g => g.id === gameId);
+    if (game) {
+      // Send system instruction to AI
+      handleSendMessage(`START_GAME: ${game.label_en}`);
+    }
+  };
+
+  const handleRoleplaySelect = (roleplayId) => {
+    setMode('playing_roleplay');
+    setActiveActivityId(roleplayId);
+    setTurnCount(0);
+    
+    const roleplay = ROLEPLAY_SCENARIOS.find(r => r.id === roleplayId);
+    if (roleplay) {
+      // Send system instruction to AI
+      handleSendMessage(`START_ROLEPLAY: ${roleplay.label_en}`);
+    }
+  };
+
+  const handleStopActivity = () => {
+    setMode('idle');
+    setActiveActivityId(null);
+    setTurnCount(0);
+    handleSendMessage('Stop');
+  };
+
+  // Check if hints should be hidden (during gameplay)
+  const shouldHideHints = mode === 'playing_game' || mode === 'playing_roleplay';
+
+
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-blue-50 to-purple-50">
       {/* Header */}
@@ -377,6 +446,17 @@ const FreeTalkTab = () => {
 
           {/* Conversation Stats */}
           <div className="flex items-center space-x-3">
+            {/* 🎮 STOP BUTTON (only show during gameplay) */}
+            {(mode === 'playing_game' || mode === 'playing_roleplay') && (
+              <button
+                onClick={handleStopActivity}
+                className="flex items-center gap-1 px-3 py-1 bg-red-100 hover:bg-red-200 rounded-full transition-colors border border-red-300"
+              >
+                <X size={14} className="text-red-600" />
+                <span className="text-xs font-medium text-red-700">Stop Game</span>
+              </button>
+            )}
+            
             <div className="flex items-center space-x-1">
               <Heart size={16} className="text-pink-500" />
               <span className="text-sm font-medium text-gray-700">{messageCount}</span>
@@ -385,6 +465,14 @@ const FreeTalkTab = () => {
               <div className="bg-blue-100 px-3 py-1 rounded-full">
                 <span className="text-xs font-medium text-blue-700">
                   Topic: {conversationTopic}
+                </span>
+              </div>
+            )}
+            {/* Show active activity badge */}
+            {activeActivityId && (
+              <div className="bg-purple-100 px-3 py-1 rounded-full">
+                <span className="text-xs font-medium text-purple-700">
+                  {mode === 'playing_game' ? '🎮 Game' : '🎭 Roleplay'}: Turn {turnCount}
                 </span>
               </div>
             )}
@@ -407,6 +495,54 @@ const FreeTalkTab = () => {
           />
         ))}
         
+        {/* 🎮 GAME SELECTION CARDS */}
+        {mode === 'selecting_game' && (
+          <div className="space-y-2 mb-4">
+            <div className="flex items-center justify-center mb-3">
+              <div className="bg-white rounded-2xl px-4 py-3 shadow-md">
+                <p className="text-sm font-semibold text-blue-700">🎮 Choose a game to play!</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {GAME_OPTIONS.map((game) => (
+                <button
+                  key={game.id}
+                  onClick={() => handleGameSelect(game.id)}
+                  className="bg-gradient-to-br from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-green-300"
+                >
+                  <div className="text-3xl mb-2">{game.icon}</div>
+                  <div className="text-sm font-bold text-green-800">{game.label_vi}</div>
+                  <div className="text-xs text-green-600 mt-1">{game.label_en}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* 🎭 ROLEPLAY SELECTION CARDS */}
+        {mode === 'selecting_roleplay' && (
+          <div className="space-y-2 mb-4">
+            <div className="flex items-center justify-center mb-3">
+              <div className="bg-white rounded-2xl px-4 py-3 shadow-md">
+                <p className="text-sm font-semibold text-pink-700">🎭 Choose a character to play!</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {ROLEPLAY_SCENARIOS.map((roleplay) => (
+                <button
+                  key={roleplay.id}
+                  onClick={() => handleRoleplaySelect(roleplay.id)}
+                  className="bg-gradient-to-br from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-pink-300"
+                >
+                  <div className="text-3xl mb-2">{roleplay.icon}</div>
+                  <div className="text-sm font-bold text-pink-800">{roleplay.label_vi}</div>
+                  <div className="text-xs text-pink-600 mt-1">{roleplay.label_en}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        
         {isLoading && (
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -421,70 +557,72 @@ const FreeTalkTab = () => {
         <div ref={chatEndRef} />
       </div>
 
-      {/* ✨ FREE TALK 2.0: STARTER PROMPTS (Suggestion Chips) */}
-      {weekRealData?.freetalk_knowledge?.starter_prompts && weekRealData.freetalk_knowledge.starter_prompts.length > 0 && (
-        <div className="px-6 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
-          <div className="flex items-center gap-2 mb-3">
-            <Sparkles size={18} className="text-purple-500" />
-            <span className="text-base font-semibold text-purple-700">
-              💬 Quick Start (Bắt đầu nhanh):
-            </span>
-          </div>
-          <div className="flex gap-2 flex-wrap">
-            {weekRealData.freetalk_knowledge.starter_prompts.map((prompt, index) => (
-              <button
-                key={index}
-                onClick={() => handleSendMessage(prompt.text_en)}
-                className={`px-4 py-3 rounded-xl text-base font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
-                  prompt.type === 'game' 
-                    ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
-                    : prompt.type === 'help'
-                    ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
-                    : prompt.type === 'roleplay'
-                    ? 'bg-gradient-to-r from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 border-2 border-pink-300'
-                    : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
-                }`}
-                disabled={isLoading}
-              >
-                {prompt.text_vi}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* 🔥 Interactive hints area - DISABLED (display only, not clickable) */}
-      <div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 border-t border-blue-200">
+      {/* ✨ FREE TALK 2.0: STARTER PROMPTS - REPLACED BY FIXED ACTION BAR */}
+      {/* 🎮 FREE TALK 3.0: FIXED ACTION BAR */}
+      <div className="px-6 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
         <div className="flex items-center gap-2 mb-3">
-          <MessageCircle size={18} className="text-blue-500" />
-          <span className="text-base font-semibold text-blue-700">
-            💡 Gợi ý từ (chỉ tham khảo - hãy gõ câu của bạn):
+          <Sparkles size={18} className="text-purple-500" />
+          <span className="text-base font-semibold text-purple-700">
+            🎯 Choose an action (Chọn hoạt động):
           </span>
         </div>
-        {hints.length > 0 ? (
-          <div className="flex gap-2 flex-wrap">
-            {hints.map((hint, index) => (
-              <div
-                key={index}
-                className="px-4 py-3 bg-gray-100 text-gray-600 rounded-lg text-base font-medium border border-gray-300 cursor-not-allowed opacity-70"
-              >
-                {hint}
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="flex gap-2 flex-wrap">
-            {['My', 'name', 'is', 'I', 'am', 'years', 'old', 'like', 'school', 'teacher', 'friend'].map((word, index) => (
-              <div
-                key={index}
-                className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm cursor-not-allowed opacity-70"
-              >
-                {word}
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-4 gap-3">
+          {FREE_TALK_ACTIONS.map((action) => (
+            <button
+              key={action.id}
+              onClick={() => handleActionClick(action.id)}
+              disabled={isLoading}
+              className={`px-4 py-3 rounded-xl text-base font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
+                action.type === 'system'
+                  ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
+                  : action.type === 'menu' && action.id === 'play_game'
+                  ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
+                  : action.type === 'menu' && action.id === 'role_play'
+                  ? 'bg-gradient-to-r from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 border-2 border-pink-300'
+                  : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
+              }`}
+            >
+              <div className="text-2xl mb-1">{action.icon}</div>
+              <div className="text-xs">{action.label}</div>
+            </button>
+          ))}
+        </div>
       </div>
+
+      {/* 🔥 Interactive hints area - CONDITIONAL RENDERING */}
+      {!shouldHideHints && (
+        <div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 border-t border-blue-200">
+          <div className="flex items-center gap-2 mb-3">
+            <MessageCircle size={18} className="text-blue-500" />
+            <span className="text-base font-semibold text-blue-700">
+              💡 Gợi ý từ (chỉ tham khảo - hãy gõ câu của bạn):
+            </span>
+          </div>
+          {hints.length > 0 ? (
+            <div className="flex gap-2 flex-wrap">
+              {hints.map((hint, index) => (
+                <div
+                  key={index}
+                  className="px-4 py-3 bg-gray-100 text-gray-600 rounded-lg text-base font-medium border border-gray-300 cursor-not-allowed opacity-70"
+                >
+                  {hint}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex gap-2 flex-wrap">
+              {['My', 'name', 'is', 'I', 'am', 'years', 'old', 'like', 'school', 'teacher', 'friend'].map((word, index) => (
+                <div
+                  key={index}
+                  className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm cursor-not-allowed opacity-70"
+                >
+                  {word}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Input Area */}
       <InputBar
