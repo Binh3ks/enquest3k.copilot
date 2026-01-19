@@ -398,7 +398,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
 
   // =================================================================
-  // MODE D: TRANSLATOR / DICTIONARY
+  // MODE D: TRANSLATOR / DICTIONARY (STRICT - NO DEFLECTION)
   // =================================================================
   const isTranslationRequest = 
     lowerUser.includes("translate") || 
@@ -410,6 +410,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
     (lowerUser.includes("what is") && lowerUser.includes("in english")) ||
     lastAIMessage.includes("what do you want to translate") ||
     lastAIMessage.includes("what word") ||
+    lastAIMessage.includes("what other animals") || // Detect continuation context
     lastAIMessage.includes("say the vietnamese word");
 
   if (isTranslationRequest) {
@@ -432,13 +433,18 @@ YOUR ACTION:
 **IF they said "Translate this..."**:
 → ASK WHAT WORD/PHRASE
 
-🚨 CRITICAL RULES:
-- JUST TRANSLATE. Do NOT say:
+🚨 CRITICAL RULES (STRICT - NO EXCEPTIONS):
+- JUST TRANSLATE/EXPLAIN. Do NOT say:
   ❌ "You like deer!"
   ❌ "Deer is your favorite!"
   ❌ "What is your favorite animal?"
+  ❌ "What makes you happy?"
+  ❌ "Do you like [word]?"
   
 ✅ CORRECT: "Deer is a forest animal! 🦌 D-E-E-R."
+✅ OK to ask: "Can you say [Word]?" or "What other [category] do you know?"
+
+⚠️ If user says a SINGLE WORD (e.g., "shark", "ball"): Define it IMMEDIATELY. Do NOT ask about their feelings.
 
 EXAMPLES:
 
@@ -578,7 +584,7 @@ Example:
   }
 
   // =================================================================
-  // MODE G: DEFAULT CHAT (FALLBACK)
+  // MODE G: DEFAULT CHAT (FALLBACK) - FIXED FOR SINGLE-WORD INPUTS
   // =================================================================
   return `You are Ms. Nova in a Free Talk conversation (Turn ${turnCount}/14).
 
@@ -593,6 +599,12 @@ CONVERSATION:
 ${historyText}
 Student: ${userInput}
 
+🚨 SPECIAL CASES:
+- If student says "I have a question": Ask "What is your question? I am listening! 👂"
+- If student says a SINGLE NOUN (e.g., "Shark", "Ball", "Cat"): Pretend they are showing it to you.
+  ❌ BAD: "What makes shark happy?" (NONSENSE!)
+  ✅ GOOD: "Wow! A Shark! Sharks are strong! 🦈 Do you like sharks?"
+
 YOUR TURN:
 1. ACKNOWLEDGE what student said (use their words!) 
 2. RECAST if needed (model correct grammar naturally)
@@ -601,8 +613,10 @@ YOUR TURN:
 ⚠️ CRITICAL RULES:
 - Use WH-QUESTIONS ONLY: "Who...", "What...", "How many...", "Tell me about..."
 - ❌ NEVER ask Yes/No questions like "Do you have...?" or "Is your...?"
+- ❌ NEVER ask "What makes [noun] happy?" (NONSENSE!)
+- ❌ NEVER ask "What makes you happy?" (BANNED PHRASE!)
 - ✅ GOOD: "Who is in your family?" "What does your mother do?" "How many brothers do you have?"
-- ❌ BAD: "Do you have brothers?" "Is your family big?"
+- ❌ BAD: "Do you have brothers?" "Is your family big?" "What makes shark happy?"
 - 🎯 HINTS MUST EXACTLY MATCH YOUR QUESTION:
   * If you ask "How old are you?" → hints: ["I", "am", "years", "old", "seven", "eight"]
   * If you ask "What is your school name?" → hints: ["My", "school", "is", "name"]
