@@ -62,11 +62,26 @@ freetalk_knowledge: {  // or free_talk_knowledge for Week 1-3
   starter_prompts: [
     { text_en: "Let's play a game! 🎮", text_vi: "Chơi trò chơi đi cô!", type: "game" },
     { text_en: "How do you say 'con cá'? 🐟", text_vi: "Con cá tiếng Anh là gì?", type: "help" },
-    { text_en: "What is in your bag? 🎒", text_vi: "Trong túi cô có gì?", type: "chat" },
-    { text_en: "I love Minecraft! 🧱", text_vi: "Con thích Minecraft!", type: "chat" }
+    { text_en: "I love reading! 📚", text_vi: "Con thích đọc sách!", type: "chat" },
+    { text_en: "I play with my friends! 🧱", text_vi: "Con chơi với bạn!", type: "chat" }
   ]
 }
 ```
+
+**Rules**:
+- **Count**: Exactly 4 prompts per week
+- **Distribution**: 1 game + 1 help + 2 chat
+- **text_en**: STUDENT'S statement/question (NOT AI asking!)
+- **text_vi**: Friendly Vietnamese, use emojis
+- **type**: Must be "game", "help", or "chat"
+- **Context**: Adapt to week theme
+
+**CRITICAL - text_en Must Be Student Voice**:
+- ✅ "I love drawing!" (student shares)
+- ✅ "Let's play a game!" (student initiates)
+- ✅ "How do you say 'con mèo'?" (student asks)
+- ❌ "What makes you happy?" (AI asks - WRONG!)
+- ❌ "Do you like games?" (AI asks - WRONG!)
 
 **Rules**:
 - **Count**: Exactly 4 prompts per week
@@ -82,7 +97,7 @@ freetalk_knowledge: {  // or free_talk_knowledge for Week 1-3
 starter_prompts: [
   { text_en: "Let's play Word Chain! 🎮", text_vi: "Chơi nối từ đi cô!", type: "game" },
   { text_en: "How do you say 'đánh răng'? 🦷", text_vi: "Đánh răng tiếng Anh là gì?", type: "help" },
-  { text_en: "What time do you wake up? ⏰", text_vi: "Con dậy lúc mấy giờ?", type: "chat" },
+  { text_en: "I wake up at 7 AM! ⏰", text_vi: "Con dậy lúc 7 giờ!", type: "chat" },
   { text_en: "I brush my teeth every day! 😁", text_vi: "Con đánh răng mỗi ngày!", type: "chat" }
 ]
 
@@ -90,8 +105,8 @@ starter_prompts: [
 starter_prompts: [
   { text_en: "Let's play 20 Questions! 🎯", text_vi: "Chơi đoán vật đi cô!", type: "game" },
   { text_en: "How do you say 'con gấu'? 🐻", text_vi: "Con gấu tiếng Anh là gì?", type: "help" },
-  { text_en: "What is your favorite animal? 🐶", text_vi: "Con thích con vật nào nhất?", type: "chat" },
-  { text_en: "I have a pet dog! 🐕", text_vi: "Con có nuôi chó!", type: "chat" }
+  { text_en: "I love dogs! 🐶", text_vi: "Con thích chó lắm!", type: "chat" },
+  { text_en: "I have a pet cat! 🐱", text_vi: "Con có nuôi mèo!", type: "chat" }
 ]
 ```
 
