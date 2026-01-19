@@ -230,11 +230,10 @@ Example:
   const knowledgeBase = freetalkKnowledge?.knowledge_base?.slice(0, 5).join(', ') || '';
   
   // 🔥 FREE TALK 2.0: DETECT MODE FROM USER INPUT
-  const userMessage = userInput.toLowerCase();
+  const userMessage = userInput.toLowerCase().trim();
   
-  // GAME MODE 🎮
   // GAME MODE 🎮 (Stay in game for 15 turns minimum)
-  if (userMessage.includes('i want to play games') || userMessage.includes("let's play")) {
+  if (userMessage.includes('i want to play games') || userMessage.includes('play games')) {
     return `You are Ms. Nova in GAME MODE.
 
 🎮 STUDENT WANTS TO PLAY: "${userInput}"
@@ -308,7 +307,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // ROLEPLAY MODE 🎭 (Stay in character for 15 turns)
-  if (userMessage.includes("let's do roleplay") || userMessage.includes('roleplay')) {
+  if (userMessage.includes('do roleplay') || userMessage.includes('roleplay')) {
     return `You are Ms. Nova in ROLEPLAY MODE.
 
 🎭 STUDENT WANTS TO ROLEPLAY: "${userInput}"
@@ -374,7 +373,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // ASK ANYTHING MODE ❓ (Free inquiry - but age-appropriate)
-  if (userMessage.includes('i have a question') || userMessage.includes('ask me anything')) {
+  if (userMessage.includes('have a question') || userMessage.includes('question')) {
     return `You are Ms. Nova in ASK ANYTHING MODE.
 
 ❓ STUDENT HAS A QUESTION: "${userInput}"
@@ -412,7 +411,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // HELPER MODE 📚 (Translation/Dictionary)
-  if (userMessage.includes('translate this for me') || userMessage.includes('how do you say') || userMessage.includes('what is') && userMessage.includes('in english') || userMessage.includes('tiếng anh là gì')) {
+  if (userMessage.includes('translate') || userMessage.includes('how do you say') || (userMessage.includes('what is') && userMessage.includes('in english')) || userMessage.includes('tiếng anh là gì')) {
     return `You are Ms. Nova in HELPER MODE (Dictionary/Translator).
 
 📚 STUDENT ASKS: "${userInput}"
