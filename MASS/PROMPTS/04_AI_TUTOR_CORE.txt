@@ -97,12 +97,13 @@ const weekXRealData = {
     knowledge_base: ["Fact 1", "Fact 2", ...],
     example_opening_questions: ["Question 1", "Question 2", ...],
     
-    // ✅ FREE TALK 2.0: Starter prompts (Required for ALL weeks)
+    // ✅ FREE TALK 3.0: Starter prompts (REQUIRED - 4 buttons)
+    // Copy these EXACTLY from Week 4 for all weeks!
     starter_prompts: [
-      { text_en: "Let's play a game! 🎮", text_vi: "Chơi trò chơi đi cô!", type: "game" },
-      { text_en: "How do you say 'word'? 📖", text_vi: "[Từ] tiếng Anh là gì?", type: "help" },
-      { text_en: "Topic question? 💬", text_vi: "Câu hỏi theo chủ đề?", type: "chat" },
-      { text_en: "I like [activity]! ⭐", text_vi: "Con thích [hoạt động]!", type: "chat" }
+      { text_en: "I want to play games! 🎮", text_vi: "Tôi muốn chơi game!", type: "game" },
+      { text_en: "Translate this for me... 📖", text_vi: "Dịch giúp con câu/chữ này...", type: "help" },
+      { text_en: "Let's do roleplay! 🎭", text_vi: "Chơi nhập vai đi cô!", type: "roleplay" },
+      { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
     ]
   }
 };

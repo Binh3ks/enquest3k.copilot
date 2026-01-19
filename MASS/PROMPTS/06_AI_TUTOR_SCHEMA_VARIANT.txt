@@ -139,7 +139,15 @@ const weekXRealData = {
     week_number: X,
     theme: "[Theme]",
     knowledge_base: ["Fact 1", "Fact 2", ...],
-    example_opening_questions: ["Question 1?", "Question 2?", ...]
+    example_opening_questions: ["Question 1?", "Question 2?", ...],
+    
+    // ✅ REQUIRED: Starter prompts for Free Talk 3.0 (4 buttons)
+    starter_prompts: [
+      { text_en: "I want to play games! 🎮", text_vi: "Tôi muốn chơi game!", type: "game" },
+      { text_en: "Translate this for me... 📖", text_vi: "Dịch giúp con câu/chữ này...", type: "help" },
+      { text_en: "Let's do roleplay! 🎭", text_vi: "Chơi nhập vai đi cô!", type: "roleplay" },
+      { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
+    ]
   }
 };
 

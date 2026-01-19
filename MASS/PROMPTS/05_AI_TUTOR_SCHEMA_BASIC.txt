@@ -114,6 +114,15 @@ export const weekXRealData = {
       "Question 1?",
       "Question 2?",
       // 8-10 questions
+    ],
+    
+    // ✅ FREE TALK 3.0: Starter prompts (REQUIRED - 4 buttons)
+    // Copy these EXACTLY for all weeks (Week 1-3 too)!
+    starter_prompts: [
+      { text_en: "I want to play games! 🎮", text_vi: "Tôi muốn chơi game!", type: "game" },
+      { text_en: "Translate this for me... 📖", text_vi: "Dịch giúp con câu/chữ này...", type: "help" },
+      { text_en: "Let's do roleplay! 🎭", text_vi: "Chơi nhập vai đi cô!", type: "roleplay" },
+      { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
     ]
   }
 };
