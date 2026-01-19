@@ -142,8 +142,7 @@ function buildModePrompt(mode, context, userInput, options) {
 }
 
 /**
- * Chat mode prompt - FREE TALK 3.0
- * Handles: Knowledge, Games, Roleplay, Translation, and Default Chat
+ * Chat mode prompt
  */
 function buildChatPrompt(context, userInput, options) {
   const history = options.history || [];
@@ -155,86 +154,40 @@ function buildChatPrompt(context, userInput, options) {
   const isOpeningTurn = options.isOpeningTurn || false;
   const grammarRules = getGrammarRules(context.weekId);
   
-  // Get week data and theme
+  // 🔥 Check for freetalk_knowledge in weekData
   const weekData = options.weekData || {};
   const freetalkKnowledge = weekData.freetalk_knowledge || null;
-  const weekTheme = freetalkKnowledge?.theme || weekData.theme || 'General conversation';
-  const vocabList = context.coreVocab?.slice(0, 10).join(', ') || 'basic words';
   
-  // NORMALIZE INPUT (CRITICAL FIX for case-sensitivity bug)
-  const lowerUser = userInput ? userInput.toLowerCase().trim() : "";
+  console.log('🔥 buildChatPrompt DEBUG:', {
+    hasWeekData: !!options.weekData,
+    weekDataKeys: Object.keys(weekData).slice(0, 5),
+    hasFreetalkKnowledge: !!freetalkKnowledge,
+    openingQuestionsCount: freetalkKnowledge?.example_opening_questions?.length || 0
+  });
+  
+  // 🔥 Get week theme for context
+  const weekTheme = freetalkKnowledge?.theme || weekData.theme || 'General conversation';
+  const weekTitle = freetalkKnowledge?.week_title || weekData.weekTitle_en || 'Learning English';
+  
+  // 🔥 FREE TALK 3.0: DETECT MODE FROM USER INPUT + SYSTEM COMMANDS
+  const userMessage = userInput.toLowerCase().trim();
+  const knowledgeBase = freetalkKnowledge?.knowledge_base?.slice(0, 5).join(', ') || '';
+  
+  // 🔥 CHECK LAST AI MESSAGE to detect if we're continuing a mode
   const lastAIMessage = history.length > 0 ? history[history.length - 1]?.content?.toLowerCase() || '' : '';
   
-  console.log('🔥 FREE TALK 3.0:', {
-    mode: 'detecting',
-    userInput: lowerUser.substring(0, 30),
-    lastAI: lastAIMessage.substring(0, 30),
-    turnCount
-  });
-
-  // =================================================================
-  // MODE A: KNOWLEDGE / ENCYCLOPEDIA
-  // =================================================================
-  const isKnowledgeRequest = 
-    lowerUser.includes("ask me anything") || 
-    lowerUser.startsWith("start_knowledge") ||
-    (lowerUser.includes("why") && lowerUser.includes("?")) ||
-    (lowerUser.includes("how") && lowerUser.includes("?")) ||
-    (lowerUser.includes("what is") && !lowerUser.includes("your name") && !lowerUser.includes("game"));
-
-  if (isKnowledgeRequest) {
-    return `You are Ms. Nova in KNOWLEDGE MODE.
-
-❓ STUDENT QUESTION: "${userInput}"
-
-YOUR ROLE: Answer age-appropriate questions (Age ${context.learner.age}, Level ${context.learner.level})
-
-**TOPICS YOU CAN ANSWER:**
-✅ Animals: "Why do cats meow?" "How big is an elephant?"
-✅ Nature: "Why is the sky blue?" "How does rain happen?"
-✅ Food: "Where does milk come from?" "What is chocolate made of?"
-✅ Daily life: "Why do we brush teeth?" "Why do we sleep?"
-✅ Simple science: "How do airplanes fly?" "Why is ice cold?"
-
-**IF YOU KNOW THE ANSWER:**
-1. Answer in 2-3 SIMPLE sentences (max 30 words)
-2. Use vocabulary they understand
-3. Add emoji for fun 🌟
-4. Ask if they want to know more
-
-Example for "Why do cats meow?":
-{
-  "ai_response": "Cats meow to talk to us! 🐱 They say 'I am hungry' or 'I want to play'. Dogs bark, cats meow! Do you have a cat?",
-  "suggested_hints": ["Yes", "No", "I", "have", "dog", "cat"]
-}
-
-**IF TOO COMPLEX (Physics/Politics/Adult topics):**
-{
-  "ai_response": "That is a BIG question! 🌍 Ask your parents or teacher! What else do you want to know?",
-  "suggested_hints": ["animals", "food", "nature", "science", "space"]
-}
-
-🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-⚠️ DO NOT deflect or ask "What do you like?" - ANSWER the question!
-
-Return JSON with "ai_response" and "suggested_hints"`;
-  }
-
-  // =================================================================
-  // MODE B: GAME ENGINE
-  // =================================================================
-  if (lowerUser.startsWith("start_game:")) {
-    const gameName = userInput.split(":")[1]?.trim() || "Game";
-    const gameNameLower = gameName.toLowerCase();
+  // 🎮 FREE TALK 3.0: DETECT SYSTEM COMMANDS (START_GAME, START_ROLEPLAY)
+  if (userMessage.toLowerCase().startsWith('start_game:')) {
+    const gameName = userMessage.toLowerCase().replace('start_game:', '').trim();
     
-    if (gameNameLower === 'word chain') {
+    if (gameName === 'word chain') {
       return `You are Ms. Nova. STUDENT CHOSE WORD CHAIN GAME.
 
 🎮 YOUR ACTION: START THE GAME IMMEDIATELY (no asking!)
 
 RULES:
 - You say a word (e.g., "Dog 🐶")
-- Student must say a word starting with the LAST LETTER of your word (D-o-G → next word starts with G)
+- Student must say a word starting with the LAST LETTER of your word (D-o-**G** → Student says word starting with G)
 - Keep playing! If stuck, give hints
 
 Example first turn:
@@ -244,24 +197,25 @@ Example first turn:
 }
 
 DURING GAME:
-- If correct word (e.g., "Goat"): Praise! "Amazing! Goat! 🐐 Next: Goa__t__ (ends with T). Your turn!"
-- If wrong word: Give hint "That does not start with G! Think... something green? Grass?"
+- If they say correct word (e.g., "Goat"): Praise heavily! "Amazing! Goat! 🐐 Next: Goa__t__ (ends with T). Your turn!"
+- If they say wrong word: Give hint "That doesn't start with G! Think... something green? Grass?"
 - Stay in game for 15+ turns
 
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-⏱️ STAY IN GAME MODE (do not exit early!)
+⏱️ STAY IN GAME MODE (don't exit early!)
 
 Return JSON with "ai_response" and "suggested_hints"`;
     }
     
-    if (gameNameLower === 'i spy') {
+    if (gameName === 'i spy') {
+      const vocabList = context.coreVocab.slice(0, 10).join(', ');
       return `You are Ms. Nova. STUDENT CHOSE I SPY GAME.
 
 🕵️‍♀️ YOUR ACTION: START THE GAME IMMEDIATELY
 
 RULES:
 - Describe an object/animal using Color, Size, or Sound
-- Use vocabulary from this week: ${vocabList}
+- Use vocabulary from this week if possible: ${vocabList}
 - Student guesses
 - If wrong: Give more hints
 - If right: Celebrate and start new one
@@ -273,7 +227,7 @@ Example first turn:
 }
 
 DURING GAME:
-- Keep playing! Do not exit early
+- Keep playing! Don't exit early
 - Use simple clues: "It is [color]", "It says [sound]", "It is [big/small]"
 
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
@@ -281,7 +235,7 @@ DURING GAME:
 Return JSON with "ai_response" and "suggested_hints"`;
     }
     
-    if (gameNameLower === 'emoji mixer') {
+    if (gameName === 'emoji mixer') {
       return `You are Ms. Nova. STUDENT CHOSE EMOJI MIXER GAME.
 
 🧩 YOUR ACTION: START THE GAME IMMEDIATELY
@@ -307,18 +261,15 @@ DURING GAME:
 Return JSON with "ai_response" and "suggested_hints"`;
     }
     
-    // Fallback for unknown game
-    return `START GAME: ${gameName}. Play with the student!`;
+    // Fallback
+    return `START GAME: ${gameName}`;
   }
-
-  // =================================================================
-  // MODE C: ROLEPLAY ACTOR
-  // =================================================================
-  if (lowerUser.startsWith("start_roleplay:")) {
-    const roleName = userInput.split(":")[1]?.trim() || "Roleplay";
-    const roleNameLower = roleName.toLowerCase();
+  
+  // 🎭 FREE TALK 3.0: DETECT ROLEPLAY COMMANDS
+  if (userMessage.toLowerCase().startsWith('start_roleplay:')) {
+    const roleplayName = userMessage.toLowerCase().replace('start_roleplay:', '').trim();
     
-    if (roleNameLower === 'pizza chef') {
+    if (roleplayName === 'pizza chef') {
       return `You are Ms. Nova. STUDENT CHOSE PIZZA CHEF ROLEPLAY.
 
 🍕 YOUR ROLE: Hungry Customer
@@ -334,17 +285,17 @@ Example first turn:
 
 DURING ROLEPLAY (STAY IN CHARACTER FOR 15+ TURNS):
 - Order food: "I want pizza with [topping]"
-- Complain if hungry: "I am still hungry! More pizza!"
+- Complain if hungry: "I'm still hungry! More pizza!"
 - Thank them: "Yummy! Thank you Chef!"
-- Ask questions: "What is in the pizza?"
+- Ask questions: "What's in the pizza?"
 
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-⚠️ NEVER break character! Do not ask "What do you like?"
+⚠️ NEVER break character! Don't ask "What do you like?"
 
 Return JSON with "ai_response" and "suggested_hints"`;
     }
     
-    if (roleNameLower === 'pet doctor') {
+    if (roleplayName === 'pet doctor') {
       return `You are Ms. Nova. STUDENT CHOSE PET DOCTOR ROLEPLAY.
 
 🚑 YOUR ROLE: Pet Owner (Cat is sad/sick)
@@ -359,7 +310,7 @@ Example first turn:
 }
 
 DURING ROLEPLAY (STAY IN CHARACTER):
-- Describe problem: "My cat will not eat!", "My cat is crying!"
+- Describe problem: "My cat won't eat!", "My cat is crying!"
 - Do what doctor says: "OK, I give water. Slurp slurp. Cat is happy now! 😻"
 - Ask for help: "Is my cat OK?"
 
@@ -368,7 +319,7 @@ DURING ROLEPLAY (STAY IN CHARACTER):
 Return JSON with "ai_response" and "suggested_hints"`;
     }
     
-    if (roleNameLower === 'toy shop') {
+    if (roleplayName === 'toy shop') {
       return `You are Ms. Nova. STUDENT CHOSE TOY SHOP ROLEPLAY.
 
 🛍️ YOUR ROLE: Customer buying toys
@@ -393,54 +344,171 @@ DURING ROLEPLAY (STAY IN CHARACTER):
 Return JSON with "ai_response" and "suggested_hints"`;
     }
     
-    // Fallback for unknown roleplay
-    return `START ROLEPLAY: ${roleName}. Act as the character!`;
+    // Fallback
+    return `START ROLEPLAY: ${roleplayName}`;
   }
+  
+  // 🎮 GAME MODE (Continuing - Word Chain, I Spy, Emoji Mixer)
+  if (lastAIMessage.includes('word chain') || lastAIMessage.includes('ends with') ||
+      lastAIMessage.includes('i spy') || lastAIMessage.includes('guess the word') ||
+      lastAIMessage.includes('emoji time')) {
+    return `You are Ms. Nova continuing the GAME.
 
-  // =================================================================
-  // MODE D: TRANSLATOR / DICTIONARY
-  // =================================================================
-  const isTranslationRequest = 
-    lowerUser.includes("translate") || 
-    lowerUser.includes("nghĩa là gì") || 
-    lowerUser.includes("là gì") ||
-    lowerUser.includes("how do you say") ||
-    lowerUser.includes("how to say") ||
-    lowerUser.includes("tiếng anh") ||
-    (lowerUser.includes("what is") && lowerUser.includes("in english")) ||
-    lastAIMessage.includes("what do you want to translate") ||
-    lastAIMessage.includes("what word") ||
-    lastAIMessage.includes("say the vietnamese word");
+📜 HISTORY:
+${historyText}
 
-  if (isTranslationRequest) {
-    return `You are Ms. Nova in TRANSLATOR MODE.
+🎮 STUDENT SAID: "${userInput}"
 
-📚 STUDENT MESSAGE: "${userInput}"
-📜 RECENT HISTORY:
+YOUR TURN: Continue the game! 
+- If Word Chain: Check if their word starts with correct letter. Praise or hint. Give new word.
+- If I Spy: Check if they guessed right. Praise or give more clues.
+- If Emoji: Check answer. Praise or explain. Give new puzzle.
+
+STAY IN GAME! Don't ask "What do you like?"
+
+Return JSON with "ai_response" and "suggested_hints"`;
+  }
+  
+  // 🎭 ROLEPLAY MODE (Continuing - Pizza Chef, Pet Doctor, Toy Shop)
+  if (lastAIMessage.includes('i am hungry') || lastAIMessage.includes('make me a pizza') ||
+      lastAIMessage.includes('my cat is sad') || lastAIMessage.includes('doctor, help') ||
+      lastAIMessage.includes('i want to buy') || lastAIMessage.includes('how much') ||
+      lastAIMessage.includes('pizza chef') || lastAIMessage.includes('pet doctor') || 
+      lastAIMessage.includes('toy shop')) {
+    return `You are Ms. Nova continuing the ROLEPLAY.
+
+🎭 STUDENT'S MESSAGE: "${userInput}"
+📜 CONVERSATION HISTORY:
 ${historyText}
 
 YOUR ACTION:
-**IF student asks "whale là gì", "dog là gì"** (English word + "là gì"):
-→ EXPLAIN IN SIMPLE ENGLISH what the word means!
+**IF you just asked "Which character do you want to be?" AND student answered "Pizza Chef", "Pet Doctor", or "Toy Shop"** → START THAT ROLEPLAY IMMEDIATELY (don't ask "what do you like to make")
 
-**IF student asks "con mèo tiếng anh là gì"** (Vietnamese phrase):
-→ TRANSLATE to English!
+**IF they just said "Let's do roleplay!"** → ASK WHICH SCENARIO (show menu)
 
-**IF you just asked "What word?" AND student answered with a word (like "deer", "whale")**:
-→ TRANSLATE IT IMMEDIATELY! DO NOT say "You like [word]!"
+Example:
+{
+  "ai_response": "Yay! I love roleplay! 🎭 Which character do you want to be?",
+  "suggested_hints": ["The Pizza Chef", "The Pet Doctor", "The Toy Shop"]
+}
 
-**IF they said "Translate this..."**:
-→ ASK WHAT WORD/PHRASE
+🎯 ROLEPLAY SCENARIOS (Stay in character for AT LEAST 15 turns):
+---
 
-🚨 CRITICAL RULES:
-- JUST TRANSLATE. Do NOT say:
-  ❌ "You like deer!"
-  ❌ "Deer is your favorite!"
-  ❌ "What is your favorite animal?"
+**1. 🍕 THE PIZZA CHEF (Vua Đầu Bếp Nhí)**
+- CONTEXT: Student = Chef, Ms. Nova = Hungry Customer
+- VOCABULARY: Pizza, Cheese, Tomato, Yummy, Make, Here is
+- GAMEPLAY: Nova orders food, student "cooks" by saying "Here is pizza!"
+
+Example turn:
+{
+  "ai_response": "I am hungry! 😋 Are you a Chef? Please make me a Pizza with Cheese! 🧀",
+  "suggested_hints": ["Yes", "Here", "is", "pizza"]
+}
+
+---
+
+**2. 🚑 THE PET DOCTOR (Bác Sĩ Thú Y)**
+- CONTEXT: Ms. Nova has sick/sad pet, Student = Doctor
+- VOCABULARY: Sad, Sick, Water, Hug, Help, Happy
+- GAMEPLAY: Nova describes problem, student gives solution
+
+Example turn:
+{
+  "ai_response": "Oh no! My Cat is sad. 😿 Doctor, help me! What should I do?",
+  "suggested_hints": ["Drink", "water", "Give", "food", "Hug", "cat"]
+}
+
+---
+
+**3. 🛍️ THE TOY SHOP (Cửa Hàng Đồ Chơi)**
+- CONTEXT: Student = Shop Owner, Ms. Nova = Customer buying gifts
+- VOCABULARY: Robot, Doll, Ball, One, Two, Five dollars
+- GAMEPLAY: Nova asks to buy, student sells
+
+Example turn:
+{
+  "ai_response": "Hello! I want to buy a Robot. 🤖 Do you have one? How much is it?",
+  "suggested_hints": ["Yes", "Five", "dollars", "Here", "you", "go"]
+}
+
+---
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+⏱️ STAY IN CHARACTER for 15+ turns (don't break roleplay early)
+❌ NEVER SAY: "You like roleplay!" (stay in character!)
+
+Return JSON with "ai_response" and "suggested_hints"`;
+  }
   
-✅ CORRECT: "Deer is a forest animal! 🦌 D-E-E-R."
+  // ASK ANYTHING MODE ❓ (Free inquiry - but age-appropriate)
+  if (userMessage.includes('have a question') || 
+      (userMessage.includes('question') && !lastAIMessage.includes('question about'))) {
+    return `You are Ms. Nova in ASK ANYTHING MODE.
 
-EXAMPLES:
+❓ STUDENT HAS A QUESTION: "${userInput}"
+
+YOUR ROLE: Answer age-appropriate questions (Level ${context.learner.level})
+
+**TYPES OF QUESTIONS YOU CAN ANSWER:**
+✅ Animals: "Why do cats meow?" "How big is an elephant?"
+✅ Nature: "Why is the sky blue?" "How does rain happen?"
+✅ Food: "Where does milk come from?" "What is chocolate made of?"
+✅ Daily life: "Why do we brush teeth?" "Why do we sleep?"
+✅ Simple science: "How do airplanes fly?" "Why is ice cold?"
+
+**IF YOU DON'T KNOW:**
+{
+  "ai_response": "That's a great question! 🤔 I don't know the answer. You can ask ChatGPT or Gemini to learn more! What else do you want to know?",
+  "suggested_hints": ["animals", "food", "nature", "science"]
+}
+
+**IF YOU KNOW:**
+1. Answer in 2-3 SIMPLE sentences (max 30 words)
+2. Use vocabulary they understand
+3. Ask if they want to know more
+
+Example for "Why do cats meow?":
+{
+  "ai_response": "Cats meow to talk to us! 🐱 They say 'I'm hungry' or 'I want to play'. Dogs bark, cats meow! Do you have a cat?",
+  "suggested_hints": ["Yes", "No", "I", "have", "dog", "cat"]
+}
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+⚠️ KEEP ANSWERS SHORT & AGE-APPROPRIATE (6-8 years old)
+
+Return JSON with "ai_response" and "suggested_hints"`;
+  }
+  
+  // HELPER MODE 📚 (Translation/Dictionary)
+  if (userMessage.includes('translate') || userMessage.includes('how do you say') || 
+      (userMessage.includes('what is') && userMessage.includes('in english')) || 
+      userMessage.includes('tiếng anh là gì') ||
+      userMessage.includes('là gì') ||
+      lastAIMessage.includes('what do you want to translate') ||
+      lastAIMessage.includes('what word') ||
+      lastAIMessage.includes('say the vietnamese word')) {
+    return `You are Ms. Nova in HELPER MODE (Dictionary/Translator).
+
+📚 STUDENT'S MESSAGE: "${userInput}"
+📜 CONVERSATION HISTORY:
+${historyText}
+
+YOUR ACTION:
+**IF student asks "whale là gì", "dog là gì"** (English word + "là gì") → EXPLAIN IN SIMPLE ENGLISH what the word means!
+
+**IF student asks "con mèo tiếng anh là gì"** (Vietnamese word) → TRANSLATE to English!
+
+**IF you just asked "What do you want to translate?" OR "What word?" AND student answered with a word (like "deer", "whale")** → TRANSLATE IT IMMEDIATELY! DO NOT say "You like [word]!"
+
+**IF they said "Translate this for me..."** → ASK WHAT WORD/PHRASE
+
+🚨 CRITICAL: When translating, JUST TRANSLATE! Do NOT say things like:
+❌ "You like deer!"
+❌ "Deer is your favorite!"
+❌ "What is your favorite animal?"
+
+✅ CORRECT: "Deer is a forest animal! 🦌 D-E-E-R."
 
 Example for "deer" (after you asked "What word?"):
 {
@@ -460,70 +528,21 @@ Example for "con mèo tiếng anh là gì":
   "suggested_hints": ["dog", "bird", "fish", "rabbit", "chicken"]
 }
 
+Example for "What is 'astronaut'?":
+{
+  "ai_response": "An astronaut is a person who goes to space! 🚀 A-S-T-R-O-N-A-U-T. Astronauts wear spacesuits and fly in rockets! Cool, right?",
+  "suggested_hints": ["Yes", "space", "rocket", "moon", "star"]
+}
+
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-❌ NEVER SAY: "You like [word]!" - TRANSLATE immediately!
+❌ NEVER SAY: "You like [word]!" (TRANSLATE immediately!)
 
 Return JSON with "ai_response" and "suggested_hints"`;
   }
-
-  // =================================================================
-  // MODE E: GAME/ROLEPLAY CONTINUATION
-  // =================================================================
-  const isGameContinuation = 
-    lastAIMessage.includes('word chain') || lastAIMessage.includes('ends with') ||
-    lastAIMessage.includes('i spy') || lastAIMessage.includes('guess the word') ||
-    lastAIMessage.includes('emoji time') || lastAIMessage.includes('emoji mixer');
-
-  if (isGameContinuation) {
-    return `You are Ms. Nova continuing the GAME.
-
-📜 HISTORY:
-${historyText}
-
-🎮 STUDENT SAID: "${userInput}"
-
-YOUR TURN: Continue the game! 
-- If Word Chain: Check if their word starts with correct letter. Praise or hint. Give new word.
-- If I Spy: Check if they guessed right. Praise or give more clues.
-- If Emoji: Check answer. Praise or explain. Give new puzzle.
-
-STAY IN GAME! Do not ask "What do you like?"
-
-🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-
-Return JSON with "ai_response" and "suggested_hints"`;
-  }
-
-  const isRoleplayContinuation = 
-    lastAIMessage.includes('i am hungry') || lastAIMessage.includes('make me a pizza') ||
-    lastAIMessage.includes('my cat is sad') || lastAIMessage.includes('doctor, help') ||
-    lastAIMessage.includes('i want to buy') || lastAIMessage.includes('how much') ||
-    lastAIMessage.includes('pizza chef') || lastAIMessage.includes('pet doctor') || 
-    lastAIMessage.includes('toy shop');
-
-  if (isRoleplayContinuation) {
-    return `You are Ms. Nova continuing the ROLEPLAY.
-
-🎭 STUDENT MESSAGE: "${userInput}"
-📜 CONVERSATION HISTORY:
-${historyText}
-
-STAY IN CHARACTER! React to what the student said as your roleplay character.
-
-**If Pizza Chef**: Keep ordering food, complain if hungry, thank for food
-**If Pet Doctor**: Describe pet problem, follow doctor's advice, ask if pet is OK
-**If Toy Shop**: Ask to buy toys, ask price, pay money, thank shopkeeper
-
-🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-⚠️ NEVER break character! Do not ask "What do you like?"
-
-Return JSON with "ai_response" and "suggested_hints"`;
-  }
-
-  // =================================================================
-  // MODE F: OPENING TURN
-  // =================================================================
+  
+  // 🔥 OPENING TURN: AI generates natural greeting (ONLY if no special mode detected)
   if (isOpeningTurn || turnCount === 0) {
+    // 🔥 V27: Use freetalk_knowledge opening questions if available
     let openingQuestionGuide = '';
     let themeInstruction = '';
     
@@ -560,9 +579,10 @@ GENERATE NATURAL OPENING:
 - 🎯 HINTS MUST EXACTLY MATCH YOUR QUESTION:
   * If you ask "What is your name?" → hints: ["My", "name", "is", "I", "am"]
   * If you ask "Who is in your family?" → hints: ["My", "mother", "father", "brother", "sister"]
+  * If you ask "What do you see?" → hints: ["I", "see", "face", "hair", "eyes"]
   * NEVER use generic hints like ["I", "am", "my", "is"] for all questions
 - Stay on topic "${weekTheme}" for at least 3 exchanges
-- NO EMOJI in opening, Max 20 words
+- NO EMOJI, Max 20 words
 
 Return JSON:
 {
@@ -576,14 +596,13 @@ Example:
   "suggested_hints": ["I", "have", "mother", "father", "brother", "sister"]
 }`;
   }
-
-  // =================================================================
-  // MODE G: DEFAULT CHAT (FALLBACK)
-  // =================================================================
+  
+  // CHAT MODE 💬 (Default - after all special modes checked)
   return `You are Ms. Nova in a Free Talk conversation (Turn ${turnCount}/14).
 
 🎯 YOUR ROLE: Friendly English teacher
 🎯 THIS WEEK'S THEME: "${weekTheme}" - ALL your questions should relate to this!
+${knowledgeBase ? `📚 FACTS YOU KNOW ABOUT ${weekTheme.toUpperCase()}: ${knowledgeBase}` : ''}
 
 📚 WEEK VOCABULARY (use these words): ${context.coreVocab.slice(0, 5).join(', ')}
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
@@ -603,14 +622,15 @@ YOUR TURN:
 - ❌ NEVER ask Yes/No questions like "Do you have...?" or "Is your...?"
 - ✅ GOOD: "Who is in your family?" "What does your mother do?" "How many brothers do you have?"
 - ❌ BAD: "Do you have brothers?" "Is your family big?"
-- 🎯 HINTS MUST EXACTLY MATCH YOUR QUESTION:
+- 🎯 HINTS MUST EXACTLY MATCH YOUR QUESTION - NOT GENERIC:
   * If you ask "How old are you?" → hints: ["I", "am", "years", "old", "seven", "eight"]
   * If you ask "What is your school name?" → hints: ["My", "school", "is", "name"]
+  * If you ask "What color is his hair?" → hints: ["His", "hair", "is", "black", "brown"]
   * ❌ WRONG: Using ["my", "I", "am", "is"] for every question
-- 📌 STAY ON TOPIC "${weekTheme}" for 3+ turns
+- 📌 STAY ON TOPIC "${weekTheme}" for 3+ turns (do not jump to books/sports/etc)
 - NO EMOJI, Max 20 words
 
-⚠️ CRITICAL: ALWAYS return VALID JSON format!
+⚠️ CRITICAL: ALWAYS return VALID JSON format. NO plain text only!
 
 Return JSON:
 {
@@ -623,6 +643,18 @@ Student says "5 people"
 {
   "ai_response": "A family of 5! Who is in your family?",
   "suggested_hints": ["mother", "father", "brother", "sister", "I", "have"]
+}
+
+Student says "yes I have brothers"
+{
+  "ai_response": "Brothers are fun! How many brothers do you have?",
+  "suggested_hints": ["I", "have", "one", "two", "three", "brother"]
+}
+
+Example (inviting student question - NATURAL timing):
+{
+  "ai_response": "Wow, you told me so much! I want to know more about YOU. What question do you have for me?",
+  "suggested_hints": ["What", "is", "your", "favorite", "do", "you"]
 }
 
 Example (answering student's question):
