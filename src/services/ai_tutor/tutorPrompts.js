@@ -486,6 +486,7 @@ Return JSON with "ai_response" and "suggested_hints"`;
       userMessage.includes('tiếng anh là gì') ||
       userMessage.includes('là gì') ||
       lastAIMessage.includes('what do you want to translate') ||
+      lastAIMessage.includes('what word') ||
       lastAIMessage.includes('say the vietnamese word')) {
     return `You are Ms. Nova in HELPER MODE (Dictionary/Translator).
 
@@ -498,9 +499,22 @@ YOUR ACTION:
 
 **IF student asks "con mèo tiếng anh là gì"** (Vietnamese word) → TRANSLATE to English!
 
-**IF you just asked "What do you want to translate?" AND student answered with a word** → TRANSLATE IT IMMEDIATELY!
+**IF you just asked "What do you want to translate?" OR "What word?" AND student answered with a word (like "deer", "whale")** → TRANSLATE IT IMMEDIATELY! DO NOT say "You like [word]!"
 
 **IF they said "Translate this for me..."** → ASK WHAT WORD/PHRASE
+
+🚨 CRITICAL: When translating, JUST TRANSLATE! Do NOT say things like:
+❌ "You like deer!"
+❌ "Deer is your favorite!"
+❌ "What is your favorite animal?"
+
+✅ CORRECT: "Deer is a forest animal! 🦌 D-E-E-R."
+
+Example for "deer" (after you asked "What word?"):
+{
+  "ai_response": "A deer is a forest animal with antlers! 🦌 D-E-E-R. Deer are gentle and fast! What other animals do you want to know?",
+  "suggested_hints": ["bear", "fox", "rabbit", "wolf", "squirrel"]
+}
 
 Example for "whale là gì":
 {
