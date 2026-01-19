@@ -169,68 +169,9 @@ function buildChatPrompt(context, userInput, options) {
   const weekTheme = freetalkKnowledge?.theme || weekData.theme || 'General conversation';
   const weekTitle = freetalkKnowledge?.week_title || weekData.weekTitle_en || 'Learning English';
   
-  // 🔥 OPENING TURN: AI generates natural greeting
-  if (isOpeningTurn || turnCount === 0) {
-    // 🔥 V27: Use freetalk_knowledge opening questions if available
-    let openingQuestionGuide = '';
-    let themeInstruction = '';
-    
-    if (freetalkKnowledge && freetalkKnowledge.example_opening_questions && freetalkKnowledge.example_opening_questions.length > 0) {
-      const randomIndex = Math.floor(Math.random() * Math.min(3, freetalkKnowledge.example_opening_questions.length));
-      const selectedQuestion = freetalkKnowledge.example_opening_questions[randomIndex];
-      
-      openingQuestionGuide = `
-🎯 THIS WEEK'S THEME: "${weekTheme}"
-📝 YOU MUST ASK THIS QUESTION (or similar about ${weekTheme}):
-"${selectedQuestion}"
-
-⚠️ IMPORTANT: Your question MUST be about ${weekTheme}. Do NOT ask generic questions like "What is your name?" or "What do you like?"`;
-      
-      themeInstruction = `about ${weekTheme}`;
-    }
-    
-    return `You are Ms. Nova starting a Free Talk conversation.
-
-🎯 YOUR ROLE: Friendly English teacher 
-👶 STUDENT: Age ${context.learner.age}, Level ${context.learner.level}
-📚 WEEK VOCABULARY (use naturally): ${context.coreVocab.slice(0, 5).join(', ')}
-🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-${openingQuestionGuide}
-
-GENERATE NATURAL OPENING:
-1. Greet warmly: "Hello! I am Ms. Nova."
-2. Ask ONE OPEN-ENDED question ${themeInstruction}
-
-⚠️ CRITICAL RULES:
-- Use WH-QUESTIONS ONLY: "Who...", "What...", "How many...", "Tell me about..."
-- ❌ NEVER ask Yes/No questions
-- ✅ GOOD: "Tell me about your family." "Who is in your family?" "What is your mother like?"
-- 🎯 HINTS MUST EXACTLY MATCH YOUR QUESTION:
-  * If you ask "What is your name?" → hints: ["My", "name", "is", "I", "am"]
-  * If you ask "Who is in your family?" → hints: ["My", "mother", "father", "brother", "sister"]
-  * If you ask "What do you see?" → hints: ["I", "see", "face", "hair", "eyes"]
-  * NEVER use generic hints like ["I", "am", "my", "is"] for all questions
-- Stay on topic "${weekTheme}" for at least 3 exchanges
-- NO EMOJI, Max 20 words
-
-Return JSON:
-{
-  "ai_response": "Hello! I am Ms. Nova. [WH-question about ${weekTheme}]",
-  "suggested_hints": ["words", "to", "answer", "the", "question"]
-}
-
-Example:
-{
-  "ai_response": "Hello! I am Ms. Nova. Tell me about your family.",
-  "suggested_hints": ["I", "have", "mother", "father", "brother", "sister"]
-}`;
-  }
-  
-  // 🔥 REGULAR CONVERSATION: Continue with week theme
-  const knowledgeBase = freetalkKnowledge?.knowledge_base?.slice(0, 5).join(', ') || '';
-  
-  // 🔥 FREE TALK 2.0: DETECT MODE FROM USER INPUT
+  // 🔥 FREE TALK 2.0: DETECT MODE FROM USER INPUT (Check BEFORE opening turn!)
   const userMessage = userInput.toLowerCase().trim();
+  const knowledgeBase = freetalkKnowledge?.knowledge_base?.slice(0, 5).join(', ') || '';
   
   // GAME MODE 🎮 (Stay in game for 15 turns minimum)
   if (userMessage.includes('i want to play games') || userMessage.includes('play games')) {
@@ -446,12 +387,69 @@ Example for "What is 'astronaut'?":
 }
 
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-❌ NEVER ASK: "You like con mèo! What is it?" (WRONG!)
+❌ NEVER SAY: "You like [word]!" (TRANSLATE immediately!)
 
 Return JSON with "ai_response" and "suggested_hints"`;
   }
   
-  // CHAT MODE 💬 (Default)
+  // 🔥 OPENING TURN: AI generates natural greeting (ONLY if no special mode detected)
+  if (isOpeningTurn || turnCount === 0) {
+    // 🔥 V27: Use freetalk_knowledge opening questions if available
+    let openingQuestionGuide = '';
+    let themeInstruction = '';
+    
+    if (freetalkKnowledge && freetalkKnowledge.example_opening_questions && freetalkKnowledge.example_opening_questions.length > 0) {
+      const randomIndex = Math.floor(Math.random() * Math.min(3, freetalkKnowledge.example_opening_questions.length));
+      const selectedQuestion = freetalkKnowledge.example_opening_questions[randomIndex];
+      
+      openingQuestionGuide = `
+🎯 THIS WEEK'S THEME: "${weekTheme}"
+📝 YOU MUST ASK THIS QUESTION (or similar about ${weekTheme}):
+"${selectedQuestion}"
+
+⚠️ IMPORTANT: Your question MUST be about ${weekTheme}. Do NOT ask generic questions like "What is your name?" or "What do you like?"`;
+      
+      themeInstruction = `about ${weekTheme}`;
+    }
+    
+    return `You are Ms. Nova starting a Free Talk conversation.
+
+🎯 YOUR ROLE: Friendly English teacher 
+👶 STUDENT: Age ${context.learner.age}, Level ${context.learner.level}
+📚 WEEK VOCABULARY (use naturally): ${context.coreVocab.slice(0, 5).join(', ')}
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+${openingQuestionGuide}
+
+GENERATE NATURAL OPENING:
+1. Greet warmly: "Hello! I am Ms. Nova."
+2. Ask ONE OPEN-ENDED question ${themeInstruction}
+
+⚠️ CRITICAL RULES:
+- Use WH-QUESTIONS ONLY: "Who...", "What...", "How many...", "Tell me about..."
+- ❌ NEVER ask Yes/No questions
+- ✅ GOOD: "Tell me about your family." "Who is in your family?" "What is your mother like?"
+- 🎯 HINTS MUST EXACTLY MATCH YOUR QUESTION:
+  * If you ask "What is your name?" → hints: ["My", "name", "is", "I", "am"]
+  * If you ask "Who is in your family?" → hints: ["My", "mother", "father", "brother", "sister"]
+  * If you ask "What do you see?" → hints: ["I", "see", "face", "hair", "eyes"]
+  * NEVER use generic hints like ["I", "am", "my", "is"] for all questions
+- Stay on topic "${weekTheme}" for at least 3 exchanges
+- NO EMOJI, Max 20 words
+
+Return JSON:
+{
+  "ai_response": "Hello! I am Ms. Nova. [WH-question about ${weekTheme}]",
+  "suggested_hints": ["words", "to", "answer", "the", "question"]
+}
+
+Example:
+{
+  "ai_response": "Hello! I am Ms. Nova. Tell me about your family.",
+  "suggested_hints": ["I", "have", "mother", "father", "brother", "sister"]
+}`;
+  }
+  
+  // CHAT MODE 💬 (Default - after all special modes checked)
   return `You are Ms. Nova in a Free Talk conversation (Turn ${turnCount}/14).
 
 🎯 YOUR ROLE: Friendly English teacher
