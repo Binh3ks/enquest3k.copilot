@@ -4,10 +4,10 @@
  */
 
 export const FREE_TALK_ACTIONS = [
-  { id: 'translate', label: 'Dịch giúp con 🆘', icon: '🆘', type: 'system' },
-  { id: 'play_game', label: 'Chơi Game 🎮', icon: '🎮', type: 'menu' },
-  { id: 'role_play', label: 'Đóng vai 🎭', icon: '🎭', type: 'menu' },
-  { id: 'ask_any', label: 'Hỏi bất kỳ ❓', icon: '❓', type: 'mode' }
+  { id: 'translate', label: 'Help Me Translate 📚', icon: '📚', type: 'system' },
+  { id: 'play_game', label: 'Play Game 🎮', icon: '🎮', type: 'menu' },
+  { id: 'role_play', label: 'Roleplay 🎭', icon: '🎭', type: 'menu' },
+  { id: 'ask_any', label: 'Ask Anything ❓', icon: '❓', type: 'mode' }
 ];
 
 export const GAME_OPTIONS = [
