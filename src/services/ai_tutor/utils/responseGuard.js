@@ -232,10 +232,10 @@ export function guardResponse(aiResponse, context = {}, maxWords = 15) {
   if (!aiResponse || typeof aiResponse !== 'string') {
     console.warn('⚠️ Response guard: Invalid response', aiResponse);
     // 🔥 Use TurnManager question if available
-    if (context.turnManager) {
-      const tmQuestion = context.turnManager.getCurrentQuestion();
-      if (tmQuestion) {
-        return tmQuestion;
+    if (context.turnManager && typeof context.turnManager.getQuestionVariant === 'function') {
+      const variant = context.turnManager.getQuestionVariant();
+      if (variant && variant.question) {
+        return variant.question;
       }
     }
     if (context.nextStepQuestion) {
@@ -291,11 +291,11 @@ export function guardResponse(aiResponse, context = {}, maxWords = 15) {
   if (cleaned.length < 5) {
     console.error('❌ Response guard: Response too short after cleaning:', cleaned);
     // 🔥 Use TurnManager question if available (from objectives)
-    if (context.turnManager) {
-      const tmQuestion = context.turnManager.getCurrentQuestion();
-      if (tmQuestion) {
-        cleaned = tmQuestion;
-        console.log('✅ Using TurnManager question as fallback:', cleaned);
+    if (context.turnManager && typeof context.turnManager.getQuestionVariant === 'function') {
+      const variant = context.turnManager.getQuestionVariant();
+      if (variant && variant.question) {
+        cleaned = variant.question;
+        console.log('✅ Using TurnManager question variant as fallback:', cleaned);
       } else {
         cleaned = 'Tell me more!';
       }
