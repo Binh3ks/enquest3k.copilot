@@ -105,8 +105,8 @@ const TTS_DEBOUNCE_DELAY = 500; // 500ms minimum between TTS calls
 const TTS_CONFIG = {
   gemini: {
     enabled: true, // 🔥 Using Google Cloud Text-to-Speech
-    voice: 'en-US-Neural2-F', // Female neural voice
-    speed: 0.9
+    voice: 'en-US-Studio-O', // 🎙️ Studio quality, energetic female voice (clearer than Neural2-F)
+    speed: 0.95 // Slightly faster for more energy
   },
   openai: {
     enabled: !!OPENAI_API_KEY,
@@ -127,6 +127,33 @@ const TTS_CONFIG = {
 };
 
 // ============================================
+// TEXT CLEANING UTILITY
+// ============================================
+
+/**
+ * Clean text for speech synthesis
+ * - Remove emojis and icons (prevents TTS from reading "tiger face", "glowing star")
+ * - Remove markdown formatting
+ * - Normalize whitespace
+ * @param {string} text - Raw text with emojis/icons
+ * @returns {string} Cleaned text for TTS
+ */
+function cleanTextForSpeech(text) {
+  if (!text) return '';
+  
+  return text
+    // Remove all emojis and special characters (comprehensive regex)
+    .replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{1F900}-\u{1F9FF}]|[\u{1FA00}-\u{1FA6F}]|[\u{1FA70}-\u{1FAFF}]|[\u{FE00}-\u{FE0F}]|[\u{E0020}-\u{E007F}]|[\u{20E3}]|[\u{FE0F}]|[\u{2B50}]|[\u{2728}]|[\u{1F389}]|[\u{1F31F}]/gu, '')
+    // Remove markdown bold/italic
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/_([^_]+)_/g, '$1')
+    // Remove extra whitespace
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// ============================================
 // MAIN TTS FUNCTION
 // ============================================
 
@@ -143,6 +170,16 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     console.warn('⚠️ TTS: Empty text provided');
     return { success: false, error: 'Empty text' };
   }
+
+  // 🧹 Clean text: Remove emojis, icons, markdown
+  const cleanedText = cleanTextForSpeech(text);
+  
+  if (!cleanedText || cleanedText.trim().length === 0) {
+    console.warn('⚠️ TTS: Text only contained emojis/formatting');
+    return { success: false, error: 'No speakable text after cleaning' };
+  }
+  
+  console.log('🧹 TTS: Cleaned text:', { original: text.substring(0, 50), cleaned: cleanedText.substring(0, 50) });
 
   // 🔥 Debounce: Prevent rapid-fire TTS calls
   const now = Date.now();
@@ -163,15 +200,15 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   isSpeaking = true; // 🔥 Set lock
 
   console.log('🎤 TTS Request:', { 
-    text: text.substring(0, 100) + '...', 
+    text: cleanedText.substring(0, 100) + '...', 
     autoPlay, 
     preferredLayer,
     geminiEnabled: TTS_CONFIG.gemini.enabled,
     openaiEnabled: TTS_CONFIG.openai.enabled
   });
 
-  // Check cache first
-  const cacheKey = `${text.substring(0, 100)}_${preferredLayer}`;
+  // Check cache first (use cleaned text for cache key)
+  const cacheKey = `${cleanedText.substring(0, 100)}_${preferredLayer}`;
   if (audioCache.has(cacheKey)) {
     console.log('✅ TTS: Using cached audio');
     const cachedUrl = audioCache.get(cacheKey);
@@ -202,24 +239,24 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
       switch (layer) {
         case 'gemini':
           if (TTS_CONFIG.gemini.enabled) {
-            audioUrl = await callGeminiTTS(text);
+            audioUrl = await callGeminiTTS(cleanedText); // 🧹 Use cleaned text
           }
           break;
         
         case 'openai':
           if (TTS_CONFIG.openai.enabled) {
-            audioUrl = await callOpenAITTS(text);
+            audioUrl = await callOpenAITTS(cleanedText); // 🧹 Use cleaned text
           }
           break;
         
         case 'puter':
           if (TTS_CONFIG.puter.enabled) {
-            audioUrl = await callPuterTTS(text);
+            audioUrl = await callPuterTTS(cleanedText); // 🧹 Use cleaned text
           }
           break;
         
         case 'browser':
-          audioUrl = await callBrowserTTS(text);
+          audioUrl = await callBrowserTTS(cleanedText); // 🧹 Use cleaned text
           break;
       }
 
@@ -280,14 +317,14 @@ async function callGeminiTTS(text) {
         input: { text },
         voice: {
           languageCode: 'en-US',
-          name: 'en-US-Neural2-F', // Natural female neural voice
+          name: 'en-US-Studio-O', // 🎙️ Studio quality - energetic, clear female voice
           ssmlGender: 'FEMALE'
         },
         audioConfig: {
           audioEncoding: 'LINEAR16', // 🔥 PCM16 format (requires WAV header)
           sampleRateHertz: 24000, // 24kHz sample rate
-          speakingRate: 0.9,
-          pitch: 0,
+          speakingRate: 0.95, // Slightly faster for more energy
+          pitch: 1.5, // Slightly higher pitch for brightness
           volumeGainDb: 0
         }
       },
