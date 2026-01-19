@@ -113,6 +113,7 @@ console.log('   [ ] Read all prompt files above');
 console.log('   [ ] Load spec data (locked - do not modify)');
 console.log('   [ ] Reference Week 4 structure (Golden Standard)');
   console.log('   [ ] Generate 14 station files matching Week 4 schemas');
+console.log('   [ ] Include video_queries.json (5 queries for YouTube search)');
 console.log('   [ ] Dual mode: Generate both Advanced + Easy versions');
 console.log('   [ ] Save to src/data/weeks/week_XX/\n');
 
@@ -159,6 +160,7 @@ try {
   console.log(`      node MASS/tools/generate_ai_tutor.cjs ${weekNum}`);
   console.log(`   `);
   console.log(`   2. Generate Assets:`);
+  console.log(`      node tools/update_videos.js ${weekNum}  # ⬅️ Fetch YouTube videos`);
   console.log(`      node tools/generate_images_nano.js ${weekNum}`);
   console.log(`      node tools/generate_audio.js ${weekNum} ${weekNum}`);
   console.log(`   `);
@@ -168,9 +170,7 @@ try {
   console.log(`   4. Commit:`);
   console.log(`      git add src/data/weeks/week_${String(weekId).padStart(2, '0')}/`);
   console.log(`      git add src/data/weeks_easy/week_${String(weekId).padStart(2, '0')}/`);
-  console.log(`   📦 Next steps:\n');
-  console.log(`   git add src/data/weeks/week_${String(weekId).padStart(2, '0')}/`);
-  console.log(`   git commit -m "Week ${weekNum}: ${spec.title_en}"`);
+  console.log(`      git commit -m "Week ${weekNum}: ${spec.title_en}"`);
   console.log('\n');
   
 } catch (error) {

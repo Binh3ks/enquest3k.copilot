@@ -38,12 +38,13 @@ MASS/
     ├── 08_STATIONS_CORE.txt
     ├── 09_STATIONS_ADVANCED.txt
     ├── 10_STATIONS_EASY.txt
-    ├── 11_STATIONS_EXAMPLES.txt
-    ├── 12_ASSET_GENERATION.txt
-    ├── 13_WORKFLOW_CORE.txt
-    ├── 14_WORKFLOW_VALIDATION.txt
-    ├── 15_WORKFLOW_TESTING.txt
-    └── 16_GAME_HUB.txt
+    ├── 11_AI_TUTOR_REAL.txt
+    ├── 12_STATIONS_EXAMPLES.txt
+    ├── 13_ASSET_GENERATION.txt
+    ├── 14_WORKFLOW_CORE.txt
+    ├── 15_WORKFLOW_VALIDATION.txt
+    ├── 16_WORKFLOW_TESTING.txt
+    └── 17_GAME_HUB.txt
 ```
 
 **Output location**: `src/data/weeks/week_XX_real.js`
@@ -119,6 +120,7 @@ node MASS/tools/validate_week_v2.cjs 5
    - Week 1-3 → **05_AI_TUTOR_SCHEMA_BASIC.txt** (300 dòng)
    - Week 4+ → **06_AI_TUTOR_SCHEMA_VARIANT.txt** (400 dòng)
    - **07_AI_TUTOR_EXAMPLES.txt** (600 dòng) ← If confused
+   - **11_AI_TUTOR_REAL.txt** (200 dòng) ← Complete generation guide
 
 2. Structure guide: Metadata → Vocab → Missions → FreeTalk
 3. Critical fields checklist (10+ required fields)
@@ -150,7 +152,7 @@ node MASS/tools/validate_week_v2.cjs 5
    - **08_STATIONS_CORE.txt** (300 dòng) ← Always read
    - **09_STATIONS_ADVANCED.txt** (600 dòng) ← For Advanced mode
    - **10_STATIONS_EASY.txt** (500 dòng) ← For Easy mode
-   - **11_STATIONS_EXAMPLES.txt** (400 dòng) ← If confused
+   - **12_STATIONS_EXAMPLES.txt** (400 dòng) ← If confused
 
 2. File list: 14 station files × 2 modes = 28 files
 3. Audio requirements per station
@@ -178,7 +180,7 @@ node MASS/tools/validate_week_v2.cjs 5
 ### PHASE 4: VALIDATION & TESTING
 **Command**: `node MASS/tools/validate_week_v2.cjs <week_number>`
 
-**Read**: 14_WORKFLOW_VALIDATION.txt + 15_WORKFLOW_TESTING.txt
+**Read**: 15_WORKFLOW_VALIDATION.txt + 16_WORKFLOW_TESTING.txt
 
 **Script validates**:
 1. File structure (29 files total)
@@ -407,10 +409,11 @@ node MASS/tools/generate_spec.cjs 5
 
 # STEP 2: Generate AI Tutor
 node MASS/tools/generate_ai_tutor.cjs 5
-→ Script shows prompts to read: 01, 04, 06, 07
+→ Script shows prompts to read: 01, 04, 06, 07, 11
 → Read MASTER_ORCHESTRATOR (500 dòng)
 → Read AI_TUTOR_CORE (400 dòng)
 → Read AI_TUTOR_SCHEMA_VARIANT (400 dòng)
+→ Read AI_TUTOR_REAL (200 dòng) ⭐ Complete generation guide
 → Load spec: week_05_spec.json
 → Generate week_05_real.js (1,099 lines)
 → Save to src/data/weeks/week_05_real.js
