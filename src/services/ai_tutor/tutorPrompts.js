@@ -98,7 +98,6 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
 
     // --- B. GAME MODE (STRUCTURED PLAY) ---
     // Check if user is starting a NEW game (reset counter)
-    const lowerUser = userMessage ? userMessage.toLowerCase().trim() : "";
     const startingNewGame = lowerUser.startsWith("start_game:") || lowerUser.startsWith("start_roleplay:");
     
     // Detect if we're continuing an ongoing game (but not starting new one)
