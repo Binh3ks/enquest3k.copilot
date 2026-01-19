@@ -572,25 +572,32 @@ const FreeTalkTab = () => {
           </span>
         </div>
         <div className="grid grid-cols-4 gap-2">
-          {FREE_TALK_ACTIONS.map((action) => (
-            <button
-              key={action.id}
-              onClick={() => handleActionClick(action.id)}
-              disabled={isLoading}
-              className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
-                action.type === 'system'
-                  ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
-                  : action.type === 'menu' && action.id === 'play_game'
-                  ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
-                  : action.type === 'menu' && action.id === 'role_play'
-                  ? 'bg-gradient-to-r from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 border-2 border-pink-300'
-                  : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
-              }`}
-            >
-              <div className="text-base">{action.icon}</div>
-              <div className="text-[10px] leading-tight">{action.label}</div>
-            </button>
-          ))}
+          {FREE_TALK_ACTIONS.map((action) => {
+            const currentTurnCount = Math.floor(messages.length / 2);
+            const isConversationEnding = currentTurnCount >= 14;
+            
+            return (
+              <button
+                key={action.id}
+                onClick={() => handleActionClick(action.id)}
+                disabled={isLoading || isConversationEnding}
+                className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
+                  isConversationEnding
+                    ? 'opacity-50 cursor-not-allowed bg-gray-200 text-gray-500'
+                    : action.type === 'system'
+                    ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
+                    : action.type === 'menu' && action.id === 'play_game'
+                    ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
+                    : action.type === 'menu' && action.id === 'role_play'
+                    ? 'bg-gradient-to-r from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 border-2 border-pink-300'
+                    : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
+                }`}
+              >
+                <div className="text-base">{action.icon}</div>
+                <div className="text-[10px] leading-tight">{action.label}</div>
+              </button>
+            );
+          })}
         </div>
       </div>
 
