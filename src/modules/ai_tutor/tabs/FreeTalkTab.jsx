@@ -48,7 +48,14 @@ const FreeTalkTab = () => {
   // 🎮 FREE TALK 3.0 STATE MANAGEMENT
   const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
   const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
-  const [turnCount, setTurnCount] = useState(0); // Game turn counter
+  const [turnCount, setTurnCount] = useState(0); // Turn counter for CURRENT MODE
+  const [modeTurnLimits] = useState({
+    translation_help: 15,
+    playing_game: 10,
+    playing_roleplay: 10,
+    idle: 15, // Chat mode
+    asking_any: Infinity // No limit
+  });
   
   // 🔥 Dynamic week data selection
   const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
@@ -174,11 +181,12 @@ const FreeTalkTab = () => {
 
   // Handle user message
   const handleSendMessage = async (userMessage) => {
-    // 🔥 HARD STOP: Block sending if already at/past turn 15
-    const currentTurnCount = Math.floor(messages.length / 2);
-    if (currentTurnCount >= 15) {
-      console.log('⛔ FreeTalk: Turn 15 reached - conversation ended');
-      return; // Don't process any more messages
+    // 🔥 PER-MODE TURN LIMIT: Check limit for current mode
+    const currentModeLimit = modeTurnLimits[mode] || 15;
+    
+    if (turnCount >= currentModeLimit && currentModeLimit !== Infinity) {
+      console.log(`⛔ FreeTalk: ${mode} mode limit reached (${currentModeLimit} turns) - cannot send more messages in this mode`);
+      return; // Don't process any more messages in this mode
     }
     
     // Add user message to chat
@@ -190,15 +198,14 @@ const FreeTalkTab = () => {
     addMessage("freetalk", userMsg);
     setIsLoading(true);
     
-    // 🎮 Increment turn count if in game/roleplay mode
-    if (mode === 'playing_game' || mode === 'playing_roleplay') {
+    // 🎮 Increment turn count for ALL modes (except selecting menus)
+    if (mode !== 'selecting_game' && mode !== 'selecting_roleplay') {
       setTurnCount(prev => prev + 1);
       
-      // Auto-exit after 15 turns
-      if (turnCount >= 15) {
-        setMode('idle');
-        setActiveActivityId(null);
-        setTurnCount(0);
+      // Auto-exit after reaching limit
+      if (turnCount + 1 >= currentModeLimit && currentModeLimit !== Infinity) {
+        console.log(`✅ ${mode} mode complete at ${turnCount + 1}/${currentModeLimit} turns`);
+        // Don't reset immediately - let closing message play first
       }
     }
     
@@ -283,47 +290,6 @@ const FreeTalkTab = () => {
         timestamp: Date.now()
       };
       addMessage("freetalk", aiMsg);
-      
-      // 🔥 CHECK: If this is turn 14+ and AI didn't close properly, force closure
-      const finalTurnCount = Math.floor((messages.length + 2) / 2); // +2 for user + AI messages just added
-      console.log('📊 Final turn count after AI response:', finalTurnCount);
-      
-      let closingMessage = null;
-      
-      if (finalTurnCount >= 14) {
-        if (responseText.includes('?')) {
-          // AI still asking questions at turn 14+ - force close
-          console.log('⚠️ AI asked question at turn', finalTurnCount, '- forcing closure');
-          
-          closingMessage = `I loved talking with you today! You did a great job practicing English. Keep learning and see you next time!`;
-          
-          const closureMsg = {
-            role: 'assistant',
-            content: closingMessage,
-            timestamp: Date.now() + 1000
-          };
-          
-          setTimeout(async () => {
-            addMessage("freetalk", closureMsg);
-            setShowHints(false); // Hide hints on closure
-            
-            // 🔊 Play closing message TTS
-            try {
-              console.log('🔊 Playing CLOSING message TTS');
-              await textToSpeech(closingMessage, {
-                voice: 'nova',
-                autoPlay: true
-              });
-            } catch (error) {
-              console.error('❌ TTS error for closing message:', error);
-            }
-          }, 1000);
-        } else {
-          // AI properly closed - hide hints
-          setShowHints(false);
-          console.log('✅ Conversation properly closed at turn', finalTurnCount);
-        }
-      }
 
       // 🔊 ALWAYS auto-play TTS for AI responses
       try {
@@ -379,6 +345,9 @@ const FreeTalkTab = () => {
 
   // 🎮 FREE TALK 3.0 HANDLERS
   const handleActionClick = (actionId) => {
+    // Reset turn count when switching modes
+    setTurnCount(0);
+    
     if (actionId === 'translate') {
       setMode('translation_help');
       handleSendMessage('Translate this for me...');
@@ -573,18 +542,22 @@ const FreeTalkTab = () => {
         </div>
         <div className="grid grid-cols-4 gap-2">
           {FREE_TALK_ACTIONS.map((action) => {
-            const currentTurnCount = Math.floor(messages.length / 2);
-            const isConversationEnding = currentTurnCount >= 14;
+            // Check if CURRENT mode has reached its limit
+            const currentModeLimit = modeTurnLimits[mode] || 15;
+            const isCurrentModeLimitReached = turnCount >= currentModeLimit && currentModeLimit !== Infinity;
+            
+            // Buttons should be disabled if:
+            // 1. Loading, OR
+            // 2. Current mode has reached its limit (but can still switch to other modes)
+            const shouldDisable = isLoading;
             
             return (
               <button
                 key={action.id}
                 onClick={() => handleActionClick(action.id)}
-                disabled={isLoading || isConversationEnding}
+                disabled={shouldDisable}
                 className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
-                  isConversationEnding
-                    ? 'opacity-50 cursor-not-allowed bg-gray-200 text-gray-500'
-                    : action.type === 'system'
+                  action.type === 'system'
                     ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
                     : action.type === 'menu' && action.id === 'play_game'
                     ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
@@ -606,13 +579,13 @@ const FreeTalkTab = () => {
       {/* Input Area */}
       <InputBar
         onSend={handleSendMessage}
-        disabled={isLoading || Math.floor(messages.length / 2) >= 14}
+        disabled={isLoading || (turnCount >= (modeTurnLimits[mode] || 15) && (modeTurnLimits[mode] || 15) !== Infinity)}
         placeholder={
-          Math.floor(messages.length / 2) >= 14
-            ? "Conversation complete! Great job practicing English!"
+          turnCount >= (modeTurnLimits[mode] || 15) && (modeTurnLimits[mode] || 15) !== Infinity
+            ? `${mode === 'translation_help' ? 'Translation' : mode === 'playing_game' ? 'Game' : mode === 'playing_roleplay' ? 'Roleplay' : 'Chat'} complete! Switch to another mode above!`
             : "Speak or share your thoughts..."
         }
-        showVoiceInput={Math.floor(messages.length / 2) < 14}
+        showVoiceInput={turnCount < (modeTurnLimits[mode] || 15) || (modeTurnLimits[mode] || 15) === Infinity}
       />
 
       {/* Encouragement Footer */}
@@ -627,11 +600,16 @@ const FreeTalkTab = () => {
       )}
       
       {/* Completion Message */}
-      {Math.floor(messages.length / 2) >= 14 && (
+      {turnCount >= (modeTurnLimits[mode] || 15) && (modeTurnLimits[mode] || 15) !== Infinity && (
         <div className="bg-gradient-to-r from-green-100 to-blue-100 px-4 py-3 text-center border-t-2 border-green-300">
           <p className="text-sm font-semibold text-green-700 flex items-center justify-center space-x-2">
             <Heart size={16} className="text-red-500 fill-red-500" />
-            <span>Conversation Complete! You practiced English wonderfully!</span>
+            <span>
+              {mode === 'translation_help' ? 'Translation session' : 
+               mode === 'playing_game' ? 'Game' : 
+               mode === 'playing_roleplay' ? 'Roleplay' : 'Chat'} complete! 
+              Switch to another activity above! 🎉
+            </span>
             <Heart size={16} className="text-red-500 fill-red-500" />
           </p>
         </div>
