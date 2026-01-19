@@ -1114,12 +1114,11 @@ const StoryMissionTab = () => {
               </div>
               <div className="flex flex-wrap gap-2">
                 {hints.map((hint, index) => (
-                  <button
+                  <div
                     key={index}
-                    onClick={() => handleHintClick(hint)}
-                    className="px-3 py-1.5 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded-lg text-xs font-semibold transition-colors border border-yellow-300 hover:border-yellow-400">
+                    className="px-3 py-1.5 bg-yellow-100 text-yellow-800 rounded-lg text-xs font-semibold border border-yellow-300 cursor-default">
                     {hint}
-                  </button>
+                  </div>
                 ))}
               </div>
             </div>
