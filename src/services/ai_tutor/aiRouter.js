@@ -551,8 +551,10 @@ export async function sendToAI({
   let attempt = 0;
   
   // 🔥 DEBUG: Log the system prompt being sent
-  console.log('📝 sendToAI - System Prompt Preview:', systemPrompt?.slice(0, 200));
+  console.log('📝 sendToAI - System Prompt LENGTH:', systemPrompt?.length, 'chars');
+  console.log('📝 sendToAI - System Prompt Preview:', systemPrompt?.slice(0, 300));
   console.log('📝 sendToAI - User Message:', userMessage);
+  console.log('📝 sendToAI - Chat History:', chatHistory.length, 'messages');
 
   // Enhance system prompt with grammar scope reminder
   const enhancedSystemPrompt = !skipGrammarGuard
@@ -750,7 +752,7 @@ async function callTogether(messages, systemPrompt, options = {}) {
         'Authorization': `Bearer ${TOGETHER_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      timeout: 10000
+      timeout: 15000  // 🔥 Increased from 10s to 15s for slow responses
     });
     
     const elapsed = Date.now() - startTime;
