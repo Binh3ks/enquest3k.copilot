@@ -169,17 +169,27 @@ function buildChatPrompt(context, userInput, options) {
   const weekTheme = freetalkKnowledge?.theme || weekData.theme || 'General conversation';
   const weekTitle = freetalkKnowledge?.week_title || weekData.weekTitle_en || 'Learning English';
   
-  // 🔥 FREE TALK 2.0: DETECT MODE FROM USER INPUT (Check BEFORE opening turn!)
+  // 🔥 FREE TALK 2.0: DETECT MODE FROM USER INPUT + CONVERSATION CONTEXT
   const userMessage = userInput.toLowerCase().trim();
   const knowledgeBase = freetalkKnowledge?.knowledge_base?.slice(0, 5).join(', ') || '';
   
+  // 🔥 CHECK LAST AI MESSAGE to detect if we're continuing a mode
+  const lastAIMessage = history.length > 0 ? history[history.length - 1]?.content?.toLowerCase() || '' : '';
+  
   // GAME MODE 🎮 (Stay in game for 15 turns minimum)
-  if (userMessage.includes('i want to play games') || userMessage.includes('play games')) {
+  if (userMessage.includes('i want to play games') || userMessage.includes('play games') ||
+      lastAIMessage.includes('what games do you like to play') ||
+      lastAIMessage.includes('word chain') || lastAIMessage.includes('i spy') || 
+      lastAIMessage.includes('emoji mixer') || lastAIMessage.includes('ends with')) {
     return `You are Ms. Nova in GAME MODE.
 
-🎮 STUDENT WANTS TO PLAY: "${userInput}"
+🎮 STUDENT'S MESSAGE: "${userInput}"
+📜 CONVERSATION HISTORY:
+${historyText}
 
 YOUR ACTION: 
+**IF you just asked "What games do you like to play?" AND student answered "Word Chain", "I Spy", or "Emoji Mixer"** → START THAT GAME IMMEDIATELY (don't ask again!)
+
 **IF they just said "I want to play games!"** → ASK WHICH GAME (show menu)
 
 Example:
@@ -187,8 +197,6 @@ Example:
   "ai_response": "Yay! I love games! 🎮 What games do you like to play?",
   "suggested_hints": ["Word Chain", "I Spy", "Emoji Mixer"]
 }
-
-**IF they chose a specific game** → START IMMEDIATELY (see below)
 
 🎯 GAME RULES (Stay in game mode for AT LEAST 15 turns):
 ---
@@ -248,12 +256,20 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // ROLEPLAY MODE 🎭 (Stay in character for 15 turns)
-  if (userMessage.includes('do roleplay') || userMessage.includes('roleplay')) {
+  if (userMessage.includes('do roleplay') || userMessage.includes('roleplay') ||
+      lastAIMessage.includes('which character do you want to be') ||
+      lastAIMessage.includes('pizza chef') || lastAIMessage.includes('pet doctor') || 
+      lastAIMessage.includes('toy shop') || lastAIMessage.includes('i am hungry') ||
+      lastAIMessage.includes('my cat is sad') || lastAIMessage.includes('i want to buy')) {
     return `You are Ms. Nova in ROLEPLAY MODE.
 
-🎭 STUDENT WANTS TO ROLEPLAY: "${userInput}"
+🎭 STUDENT'S MESSAGE: "${userInput}"
+📜 CONVERSATION HISTORY:
+${historyText}
 
 YOUR ACTION:
+**IF you just asked "Which character do you want to be?" AND student answered "Pizza Chef", "Pet Doctor", or "Toy Shop"** → START THAT ROLEPLAY IMMEDIATELY (don't ask "what do you like to make")
+
 **IF they just said "Let's do roleplay!"** → ASK WHICH SCENARIO (show menu)
 
 Example:
@@ -261,8 +277,6 @@ Example:
   "ai_response": "Yay! I love roleplay! 🎭 Which character do you want to be?",
   "suggested_hints": ["The Pizza Chef", "The Pet Doctor", "The Toy Shop"]
 }
-
-**IF they chose a scenario** → START IMMEDIATELY (see below)
 
 🎯 ROLEPLAY SCENARIOS (Stay in character for AT LEAST 15 turns):
 ---
@@ -314,7 +328,8 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // ASK ANYTHING MODE ❓ (Free inquiry - but age-appropriate)
-  if (userMessage.includes('have a question') || userMessage.includes('question')) {
+  if (userMessage.includes('have a question') || 
+      (userMessage.includes('question') && !lastAIMessage.includes('question about'))) {
     return `You are Ms. Nova in ASK ANYTHING MODE.
 
 ❓ STUDENT HAS A QUESTION: "${userInput}"
@@ -352,12 +367,20 @@ Return JSON with "ai_response" and "suggested_hints"`;
   }
   
   // HELPER MODE 📚 (Translation/Dictionary)
-  if (userMessage.includes('translate') || userMessage.includes('how do you say') || (userMessage.includes('what is') && userMessage.includes('in english')) || userMessage.includes('tiếng anh là gì')) {
+  if (userMessage.includes('translate') || userMessage.includes('how do you say') || 
+      (userMessage.includes('what is') && userMessage.includes('in english')) || 
+      userMessage.includes('tiếng anh là gì') ||
+      lastAIMessage.includes('what do you want to translate') ||
+      lastAIMessage.includes('say the vietnamese word')) {
     return `You are Ms. Nova in HELPER MODE (Dictionary/Translator).
 
-📚 STUDENT ASKS: "${userInput}"
+📚 STUDENT'S MESSAGE: "${userInput}"
+📜 CONVERSATION HISTORY:
+${historyText}
 
 YOUR ACTION:
+**IF you just asked "What do you want to translate?" AND student answered with a word (like "deer", "con mèo")** → TRANSLATE IT IMMEDIATELY (spell it out, give example)
+
 **IF they said "Translate this for me..."** → ASK WHAT WORD/PHRASE
 
 Example:
@@ -365,8 +388,6 @@ Example:
   "ai_response": "Sure! What do you want to translate? Say the Vietnamese word! 📖",
   "suggested_hints": ["con", "mèo", "chó", "cá", "cô", "giáo"]
 }
-
-**IF they said a specific word** → TRANSLATE + TEACH (see below)
 
 **STEPS:**
 1. Translate the word
