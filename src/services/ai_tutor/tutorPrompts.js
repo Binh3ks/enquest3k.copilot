@@ -18,6 +18,15 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
   const lastAIMessage = history.length > 0
     ? (history[history.length - 1]?.content || "")
     : "";
+  
+  // Detect if we're in an ongoing game/roleplay session
+  const lowerAI = lastAIMessage.toLowerCase();
+  const isInGame = lowerAI.includes("your turn") || lowerAI.includes("guess") || 
+                   lowerAI.includes("i spy") || lowerAI.includes("word chain") || 
+                   lowerAI.includes("emoji mixer");
+  const isInRoleplay = lowerAI.includes("pizza chef") || lowerAI.includes("pet doctor") || 
+                       lowerAI.includes("toy shop") || lowerAI.includes("customer") ||
+                       lowerAI.includes("what pizza") || lowerAI.includes("my cat");
 
   console.log('🎯 generateTutorPrompt called:', { mode, userMessage: userMessage?.slice(0, 30) });
 
@@ -86,6 +95,37 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     }
 
     // --- B. GAME MODE (STRUCTURED PLAY) ---
+    // Detect if we're continuing an ongoing game
+    if (isInGame) {
+      // User wants to continue the game or needs help
+      const needsHint = lowerUser.includes("gợi ý") || lowerUser.includes("hint") || 
+                        lowerUser.includes("i don't know") || lowerUser.includes("khó quá");
+      const wantsContinue = lowerUser.includes("tiếp tục") || lowerUser.includes("next") || 
+                            lowerUser.includes("continue");
+      
+      return `
+      SYSTEM_MODE: GAME_MASTER_ONGOING
+      ROLE: Ms. Nova as Game Host continuing the game.
+      LAST AI: "${lastAIMessage}"
+      USER RESPONSE: "${userMessage}"
+      
+      LOGIC:
+      1. IF user asks for hint/"gợi ý"/"I don't know" -> Give a helpful hint (color, shape, first letter)
+      2. IF user says "tiếp tục" -> Start next round of same game
+      3. IF user answers -> Check if correct:
+         - Correct: "Yes! 🎉" + Start next round
+         - Wrong: "Not quite! Try again 😊"
+      4. Play at least 15 turns total. Count: "Round [X]/15"
+      5. Keep game fun and encouraging!
+      
+      RESPOND IN THIS JSON FORMAT:
+      {
+        "ai_response": "Game response with round number (e.g., Round 3/15)",
+        "suggested_hints": ["possible", "answer", "words"]
+      }
+      `;
+    }
+
     // Trigger: "START_GAME: [Name]" (From UI Buttons)
     if (lowerUser.startsWith("start_game:")) {
       const gameName = userMessage.split(":")[1]?.trim() || "Game";
@@ -100,12 +140,13 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
       - "Emoji Mixer": Show 2 emojis. Kid guesses the combined word.
 
       LOGIC:
-      1. IF user says "I don't know" / "khó quá": GIVE A HINT (Color, Shape, Sound).
+      1. IF user says "I don't know" / "khó quá" / "gợi ý": GIVE A HINT (Color, Shape, Sound, First letter).
       2. IF user guesses wrong: Encourage "Close! Try again."
       3. IF user guesses right: CELEBRATE "Yes! 🎉" -> Start next round.
-      4. ⛔ NEVER ask personal questions while playing.
+      4. Play at least 15 turns. Show "Round [X]/15" in each response.
+      5. ⛔ NEVER ask personal questions while playing.
 
-      ACTION: Start the game NOW! Give first challenge.
+      ACTION: Start the game NOW! Give first challenge (Round 1/15).
 
       RESPOND IN THIS JSON FORMAT:
       {
@@ -116,6 +157,31 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     }
 
     // --- C. ROLEPLAY MODE (IMMERSION) ---
+    // Detect if we're continuing an ongoing roleplay
+    if (isInRoleplay) {
+      return `
+      SYSTEM_MODE: ROLEPLAY_ACTOR_ONGOING
+      ROLE: Ms. Nova continuing roleplay.
+      LAST AI: "${lastAIMessage}"
+      USER RESPONSE: "${userMessage}"
+      
+      LOGIC:
+      1. Stay in character 100%
+      2. React naturally to user's response in roleplay
+      3. IF user says "tiếp tục" -> Continue the scene naturally
+      4. IF user asks question -> Answer in character
+      5. Play at least 15 exchanges. Show "Turn [X]/15"
+      6. Keep simple English (A0-A1)
+      7. ⛔ NEVER break character or ask about real life
+      
+      RESPOND IN THIS JSON FORMAT:
+      {
+        "ai_response": "Your character response with turn count (e.g., Turn 3/15)",
+        "suggested_hints": ["helpful", "response", "words"]
+      }
+      `;
+    }
+
     // Trigger: "START_ROLEPLAY: [Role]"
     if (lowerUser.startsWith("start_roleplay:")) {
       const roleName = userMessage.split(":")[1]?.trim() || "Roleplay";
@@ -131,9 +197,10 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
 
       CRITICAL:
       - Stay in character 100%.
+      - Play at least 15 exchanges. Show "Turn [X]/15" in responses.
       - ⛔ NEVER ask about real life.
       - Use simple English (A0-A1).
-      - Start the roleplay NOW!
+      - Start the roleplay NOW! (Turn 1/15)
 
       RESPOND IN THIS JSON FORMAT:
       {
