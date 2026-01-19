@@ -1,0 +1,129 @@
+Tôi đã rà soát kỹ lưỡng toàn bộ danh sách file bạn gửi trong thư mục MASS/PROMPTS và tools.
+
+Kết quả kiểm tra:
+
+File MASS/PROMPTS/11_AI_TUTOR_REAL.txt CHƯA TỒN TẠI.
+
+File tools/project_manager.sh hiện tại chỉ đang gọi các bước tạo Station (Advanced/Easy) và Assets, chưa có bước gọi Prompt 11 để tạo file AI Tutor.
+
+Để quy trình "Mass Production" hoàn hảo 100% như bạn yêu cầu (bao gồm cả AI Tutor đúng chuẩn V28), tôi xin cung cấp nội dung chính xác cần tạo. Bạn hãy thực hiện 2 bước sau:
+
+BƯỚC 1: TẠO FILE PROMPT MỚI
+Hãy tạo file MASS/PROMPTS/11_AI_TUTOR_REAL.txt với nội dung "khóa cứng" cấu trúc dưới đây. Prompt này ép AI phải dùng export const weekXXRealData và target_vocab dạng object.
+
+Plaintext
+
+# ROLE: AI TUTOR DATA ARCHITECT (V28 STANDARD)
+# CONTEXT: Generating configuration data for Ms. Nova (AI Tutor)
+# INPUT: Week Number: {{WEEK_ID}}, Topic: "{{TOPIC}}"
+
+# TASK:
+Generate the content for "src/data/weeks/week_{{PAD_WEEK}}_real.js".
+
+# STRICT RULES (NON-NEGOTIABLE):
+1.  **Variable Name**: MUST be `week{{PAD_WEEK}}RealData` (e.g., week04RealData).
+2.  **Export Format**: Use `export const ...` (NOT export default).
+3.  **Target Vocab**: MUST be an Array of OBJECTS (Not strings). Each object must have `word`, `definition_vi`, `example`.
+4.  **Story Missions**: Must include exactly 3 missions (Intro, Practice, Challenge) with `minimum_turns` and `maximum_turns`.
+5.  **Free Talk**: Must include `starter_prompts`.
+
+# LOCKED SCHEMA (FILL IN THE DATA):
+
+```javascript
+export const week{{PAD_WEEK}}RealData = {
+  week_id: {{WEEK_ID}},
+  topic: "{{TOPIC}}",
+  
+  // 1. VOCABULARY DATA (Must match syllabus)
+  target_vocab: [
+    { 
+      word: "example_word", 
+      pronunciation: "/.../", 
+      definition_vi: "...", 
+      definition_en: "...", 
+      example: "Simple sentence with the word.", 
+      image_url: "/images/week_{{PAD_WEEK}}/vocab_example.jpg" 
+    }
+    // ... Generate 7 core words relevant to "{{TOPIC}}"
+  ],
+
+  // 2. STORY MISSIONS (Roleplay Scenarios)
+  story_missions: [
+    {
+      mission_id: "W{{PAD_WEEK}}_M1",
+      title: "Mission 1: Introduction",
+      objective: "Learn basic words about {{TOPIC}}",
+      role_card: {
+        role: "Ms. Nova",
+        goal: "Teach student the new words"
+      },
+      minimum_turns: 6,
+      maximum_turns: 10
+    },
+    {
+      mission_id: "W{{PAD_WEEK}}_M2",
+      title: "Mission 2: Practice",
+      objective: "Use words in simple sentences",
+      role_card: {
+        role: "Friend",
+        goal: "Ask student questions about {{TOPIC}}"
+      },
+      minimum_turns: 8,
+      maximum_turns: 12
+    },
+    {
+      mission_id: "W{{PAD_WEEK}}_M3",
+      title: "Mission 3: Challenge",
+      objective: "Free conversation about {{TOPIC}}",
+      role_card: {
+        role: "Teacher",
+        goal: "Check understanding"
+      },
+      minimum_turns: 10,
+      maximum_turns: 15
+    }
+  ],
+
+  // 3. FREETALK CONFIG
+  freetalk_knowledge: {
+    theme: "{{TOPIC}}",
+    starter_prompts: [
+      { text_en: "Let's play a game! 🎮", text_vi: "Chơi trò chơi đi cô!", type: "game" },
+      { text_en: "What is this? ❓", text_vi: "Đây là cái gì?", type: "help" },
+      { text_en: "I like {{TOPIC}}! ❤️", text_vi: "Con thích chủ đề này!", type: "chat" }
+    ]
+  }
+};
+OUTPUT REQUIREMENT:
+Return ONLY the JavaScript code. No Markdown blocks. No explanations.
+
+
+---
+
+### BƯỚC 2: CẬP NHẬT SCRIPT CHẠY (PROJECT MANAGER)
+
+Bạn cần mở file `tools/project_manager.sh` và thêm đoạn lệnh gọi prompt 11 vào giữa bước tạo Content và bước tạo Assets.
+
+Tìm đoạn code tạo Advanced/Easy, và thêm đoạn này vào ngay sau đó:
+
+```bash
+# ... (Sau khi chạy 10_STATIONS_EASY.txt)
+
+echo "🤖 GENERATING AI TUTOR DATA (Prompt 11)..."
+# Giả sử tool generate_week.js hỗ trợ tham số: WeekID, Topic, PromptFile, OutputFile
+# Nếu chưa hỗ trợ output file cụ thể, bạn cần đảm bảo generate_week.js biết cách xử lý file _real.js
+# Dưới đây là ví dụ lệnh chuẩn nếu tool đã hỗ trợ:
+
+node tools/generate_week.js "$WEEK_ID" "$TOPIC" "MASS/PROMPTS/11_AI_TUTOR_REAL.txt" "src/data/weeks/week_${PAD_WEEK}_real.js"
+
+if [ ! -f "src/data/weeks/week_${PAD_WEEK}_real.js" ]; then
+  echo "❌ ERROR: Failed to generate AI Tutor Real Data!"
+  exit 1
+fi
+
+echo "✅ AI Tutor Data Generated."
+
+# ... (Tiếp tục đến phần Assets Generation)
+Lưu ý quan trọng: Bạn cần kiểm tra lại file tools/generate_week.js. Nếu nó chỉ mặc định tạo vào folder week_XX, bạn cần sửa nhẹ để nó hỗ trợ tạo file nằm ở thư mục cha (src/data/weeks/) khi phát hiện tên file là _real.js.
+
+Sau khi thêm 2 phần trên, quy trình của bạn mới thực sự HOÀN HẢO và khớp với Tuần 4.
