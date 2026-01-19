@@ -92,10 +92,18 @@ const weekXRealData = {
   ],
   
   // === FREE TALK KNOWLEDGE === (Lines 1000-1100)
-  free_talk_knowledge: {
+  free_talk_knowledge: {  // or freetalk_knowledge for Week 4+
     theme: "[Theme]",
     knowledge_base: ["Fact 1", "Fact 2", ...],
-    example_opening_questions: ["Question 1", "Question 2", ...]
+    example_opening_questions: ["Question 1", "Question 2", ...],
+    
+    // ✅ FREE TALK 2.0: Starter prompts (Required for ALL weeks)
+    starter_prompts: [
+      { text_en: "Let's play a game! 🎮", text_vi: "Chơi trò chơi đi cô!", type: "game" },
+      { text_en: "How do you say 'word'? 📖", text_vi: "[Từ] tiếng Anh là gì?", type: "help" },
+      { text_en: "Topic question? 💬", text_vi: "Câu hỏi theo chủ đề?", type: "chat" },
+      { text_en: "I like [activity]! ⭐", text_vi: "Con thích [hoạt động]!", type: "chat" }
+    ]
   }
 };
 

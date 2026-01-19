@@ -1092,6 +1092,14 @@ const week4RealData = {
       "What makes you happy?",
       "Do you have a favorite hobby?",
       "What do you do for fun?"
+    ],
+    
+    // ✅ FREE TALK 2.0: Starter prompts (Helper/Gamer/Chat modes)
+    starter_prompts: [
+      { text_en: "Let's play a guessing game! 🎮", text_vi: "Chơi đoán chữ đi cô!", type: "game" },
+      { text_en: "How do you say 'con mèo'? 🐱", text_vi: "Con mèo tiếng Anh là gì?", type: "help" },
+      { text_en: "What makes you happy? 😊", text_vi: "Điều gì làm con vui?", type: "chat" },
+      { text_en: "I love drawing! 🎨", text_vi: "Con thích vẽ lắm!", type: "chat" }
     ]
   }
 };
