@@ -395,26 +395,33 @@ const FreeTalkTab = () => {
   };
 
   const handleGameSelect = (gameId) => {
-    setMode('playing_game');
-    setActiveActivityId(gameId);
-    setTurnCount(0);
-    
     const game = GAME_OPTIONS.find(g => g.id === gameId);
     if (game) {
-      // Send system instruction to AI
+      // DON'T change mode yet - let AI response determine mode
+      // Just send the game start command
       handleSendMessage(`START_GAME: ${game.label_en}`);
+      
+      // Set mode AFTER message sent (will trigger on AI response)
+      setTimeout(() => {
+        setMode('playing_game');
+        setActiveActivityId(gameId);
+        setTurnCount(0);
+      }, 100);
     }
   };
 
   const handleRoleplaySelect = (roleplayId) => {
-    setMode('playing_roleplay');
-    setActiveActivityId(roleplayId);
-    setTurnCount(0);
-    
     const roleplay = ROLEPLAY_SCENARIOS.find(r => r.id === roleplayId);
     if (roleplay) {
-      // Send system instruction to AI
+      // DON'T change mode yet - let AI response determine mode
       handleSendMessage(`START_ROLEPLAY: ${roleplay.label_en}`);
+      
+      // Set mode AFTER message sent
+      setTimeout(() => {
+        setMode('playing_roleplay');
+        setActiveActivityId(roleplayId);
+        setTurnCount(0);
+      }, 100);
     }
   };
 

@@ -169,99 +169,213 @@ function buildChatPrompt(context, userInput, options) {
   const weekTheme = freetalkKnowledge?.theme || weekData.theme || 'General conversation';
   const weekTitle = freetalkKnowledge?.week_title || weekData.weekTitle_en || 'Learning English';
   
-  // 🔥 FREE TALK 2.0: DETECT MODE FROM USER INPUT + CONVERSATION CONTEXT
+  // 🔥 FREE TALK 3.0: DETECT MODE FROM USER INPUT + SYSTEM COMMANDS
   const userMessage = userInput.toLowerCase().trim();
   const knowledgeBase = freetalkKnowledge?.knowledge_base?.slice(0, 5).join(', ') || '';
   
   // 🔥 CHECK LAST AI MESSAGE to detect if we're continuing a mode
   const lastAIMessage = history.length > 0 ? history[history.length - 1]?.content?.toLowerCase() || '' : '';
   
-  // GAME MODE 🎮 (Stay in game for 15 turns minimum)
-  if (userMessage.includes('i want to play games') || userMessage.includes('play games') ||
-      lastAIMessage.includes('what games do you like to play') ||
-      lastAIMessage.includes('word chain') || lastAIMessage.includes('i spy') || 
-      lastAIMessage.includes('emoji mixer') || lastAIMessage.includes('ends with')) {
-    return `You are Ms. Nova in GAME MODE.
+  // 🎮 FREE TALK 3.0: DETECT SYSTEM COMMANDS (START_GAME, START_ROLEPLAY)
+  if (userMessage.startsWith('start_game:')) {
+    const gameName = userMessage.replace('start_game:', '').trim();
+    
+    if (gameName === 'word chain') {
+      return `You are Ms. Nova. STUDENT CHOSE WORD CHAIN GAME.
 
-🎮 STUDENT'S MESSAGE: "${userInput}"
-📜 CONVERSATION HISTORY:
-${historyText}
+🎮 YOUR ACTION: START THE GAME IMMEDIATELY (no asking!)
 
-YOUR ACTION: 
-**IF you just asked "What games do you like to play?" AND student answered "Word Chain", "I Spy", or "Emoji Mixer"** → START THAT GAME IMMEDIATELY (don't ask again!)
-
-**IF they just said "I want to play games!"** → ASK WHICH GAME (show menu)
-
-Example:
-{
-  "ai_response": "Yay! I love games! 🎮 What games do you like to play?",
-  "suggested_hints": ["Word Chain", "I Spy", "Emoji Mixer"]
-}
-
-🎯 GAME RULES (Stay in game mode for AT LEAST 15 turns):
----
-
-**1. WORD CHAIN (Nối Từ - Phiên bản dễ)**
 RULES:
-- AI starts with word: "Do__g__ 🐶" (ends with G)
-- Student must say word starting with G (Goat, Girl, Green, etc.)
-- AI continues: "Yay! Goat! 🐐 Next: Goa__t__ (ends with T). Your turn!"
-- If student stuck → GIVE HINT: "Ends with T... something you ride? (Taxi)"
-- PRAISE enthusiastically: "Amazing!", "You're so smart!"
+- You say a word (e.g., "Dog 🐶")
+- Student must say a word starting with the LAST LETTER of your word (D-o-**G** → Student says word starting with G)
+- Keep playing! If stuck, give hints
 
-Example turn:
+Example first turn:
 {
-  "ai_response": "Let's play Word Chain! I start: Do__g__ 🐶. Your turn! (Starts with G)",
-  "suggested_hints": ["Goat", "Girl", "Green", "Game"]
+  "ai_response": "Let's play Word Chain! I start: Do__g__ 🐶. Your turn! Find a word starting with G!",
+  "suggested_hints": ["Goat", "Girl", "Green", "Game", "Good"]
 }
 
----
-
-**2. I SPY (Đoán Vật/Con Vật)**
-RULES:
-- AI describes 2-3 simple features (Color, Size, Sound)
-- Use: "It is [color]", "It says [sound]", "It is [big/small]"
-- Student guesses
-- If wrong → GIVE MORE HINTS: "It jumps! It lives in water!"
-- Use vocabulary from this week's syllabus
-
-Example turn:
-{
-  "ai_response": "I spy with my little eye... something Green 🟢. It jumps! It says Ribbit. What is it?",
-  "suggested_hints": ["Frog", "Cat", "Dog", "Bird"]
-}
-
----
-
-**3. EMOJI MIXER (Đuổi Hình Bắt Chữ)**
-RULES:
-- AI shows 2-3 emojis
-- Student guesses the English word
-- Level 1 (Word): 🌧️ + 🧥 = ? (Raincoat)
-- Level 2 (Phrase): 🔴 + 🍎 = ? (Red Apple)
-
-Example turn:
-{
-  "ai_response": "Emoji Time! Guess the word: 🌞 + 👓 = ?",
-  "suggested_hints": ["Sunglasses", "Glasses", "Sun", "Hat"]
-}
-
----
+DURING GAME:
+- If they say correct word (e.g., "Goat"): Praise heavily! "Amazing! Goat! 🐐 Next: Goa__t__ (ends with T). Your turn!"
+- If they say wrong word: Give hint "That doesn't start with G! Think... something green? Grass?"
+- Stay in game for 15+ turns
 
 🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
-⏱️ STAY IN GAME MODE for 15+ turns (don't exit early unless student changes topic)
-❌ NEVER SAY: "You like games!" or "What makes games fun?" (stay in gameplay!)
+⏱️ STAY IN GAME MODE (don't exit early!)
+
+Return JSON with "ai_response" and "suggested_hints"`;
+    }
+    
+    if (gameName === 'i spy') {
+      const vocabList = context.coreVocab.slice(0, 10).join(', ');
+      return `You are Ms. Nova. STUDENT CHOSE I SPY GAME.
+
+🕵️‍♀️ YOUR ACTION: START THE GAME IMMEDIATELY
+
+RULES:
+- Describe an object/animal using Color, Size, or Sound
+- Use vocabulary from this week if possible: ${vocabList}
+- Student guesses
+- If wrong: Give more hints
+- If right: Celebrate and start new one
+
+Example first turn:
+{
+  "ai_response": "I spy with my little eye... something Green 🟢. It jumps! It says Ribbit! What is it?",
+  "suggested_hints": ["Frog", "Cat", "Dog", "Bird", "Fish"]
+}
+
+DURING GAME:
+- Keep playing! Don't exit early
+- Use simple clues: "It is [color]", "It says [sound]", "It is [big/small]"
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+
+Return JSON with "ai_response" and "suggested_hints"`;
+    }
+    
+    if (gameName === 'emoji mixer') {
+      return `You are Ms. Nova. STUDENT CHOSE EMOJI MIXER GAME.
+
+🧩 YOUR ACTION: START THE GAME IMMEDIATELY
+
+RULES:
+- Show 2-3 emojis
+- Student guesses the word or phrase
+- Examples: 🌧️ + 🧥 = Raincoat, 🔴 + 🍎 = Red Apple, 🏫 + 🚌 = School Bus
+
+Example first turn:
+{
+  "ai_response": "Emoji Time! Guess the word: 🌞 + 👓 = ?",
+  "suggested_hints": ["Sunglasses", "Glasses", "Hat", "Goggles"]
+}
+
+DURING GAME:
+- If wrong: Give hints "It protects your eyes from the sun!"
+- If right: Celebrate! Give new puzzle
+- Keep playing for 15+ turns
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+
+Return JSON with "ai_response" and "suggested_hints"`;
+    }
+    
+    // Fallback
+    return `START GAME: ${gameName}`;
+  }
+  
+  // 🎭 FREE TALK 3.0: DETECT ROLEPLAY COMMANDS
+  if (userMessage.startsWith('start_roleplay:')) {
+    const roleplayName = userMessage.replace('start_roleplay:', '').trim();
+    
+    if (roleplayName === 'pizza chef') {
+      return `You are Ms. Nova. STUDENT CHOSE PIZZA CHEF ROLEPLAY.
+
+🍕 YOUR ROLE: Hungry Customer
+🧑‍🍳 STUDENT'S ROLE: Chef
+
+YOUR ACTION: START ROLEPLAY IMMEDIATELY (stay in character!)
+
+Example first turn:
+{
+  "ai_response": "I am SO hungry! 😋 Are you a Chef? Can you make me a Pizza with Cheese and Tomato? 🧀🍅",
+  "suggested_hints": ["Yes", "Here", "is", "pizza", "Sure"]
+}
+
+DURING ROLEPLAY (STAY IN CHARACTER FOR 15+ TURNS):
+- Order food: "I want pizza with [topping]"
+- Complain if hungry: "I'm still hungry! More pizza!"
+- Thank them: "Yummy! Thank you Chef!"
+- Ask questions: "What's in the pizza?"
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+⚠️ NEVER break character! Don't ask "What do you like?"
+
+Return JSON with "ai_response" and "suggested_hints"`;
+    }
+    
+    if (roleplayName === 'pet doctor') {
+      return `You are Ms. Nova. STUDENT CHOSE PET DOCTOR ROLEPLAY.
+
+🚑 YOUR ROLE: Pet Owner (Cat is sad/sick)
+👨‍⚕️ STUDENT'S ROLE: Doctor
+
+YOUR ACTION: START ROLEPLAY IMMEDIATELY
+
+Example first turn:
+{
+  "ai_response": "Oh no! My Cat is sad. 😿 Doctor, help me! What should I do?",
+  "suggested_hints": ["Give", "water", "food", "Hug", "cat", "Play"]
+}
+
+DURING ROLEPLAY (STAY IN CHARACTER):
+- Describe problem: "My cat won't eat!", "My cat is crying!"
+- Do what doctor says: "OK, I give water. Slurp slurp. Cat is happy now! 😻"
+- Ask for help: "Is my cat OK?"
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+
+Return JSON with "ai_response" and "suggested_hints"`;
+    }
+    
+    if (roleplayName === 'toy shop') {
+      return `You are Ms. Nova. STUDENT CHOSE TOY SHOP ROLEPLAY.
+
+🛍️ YOUR ROLE: Customer buying toys
+🧑‍💼 STUDENT'S ROLE: Shopkeeper
+
+YOUR ACTION: START ROLEPLAY IMMEDIATELY
+
+Example first turn:
+{
+  "ai_response": "Hello! I want to buy a Robot. 🤖 Do you have one? How much is it?",
+  "suggested_hints": ["Yes", "Five", "dollars", "Ten", "Here"]
+}
+
+DURING ROLEPLAY (STAY IN CHARACTER):
+- Ask to buy: "I want [toy]", "Do you have [toy]?"
+- Ask price: "How much?", "Is it expensive?"
+- Pay: "Here is money! 💵"
+- Thank: "Thank you!"
+
+🔒 GRAMMAR: ${grammarRules.allowed.join(' | ')}
+
+Return JSON with "ai_response" and "suggested_hints"`;
+    }
+    
+    // Fallback
+    return `START ROLEPLAY: ${roleplayName}`;
+  }
+  
+  // 🎮 GAME MODE (Continuing - Word Chain, I Spy, Emoji Mixer)
+  if (lastAIMessage.includes('word chain') || lastAIMessage.includes('ends with') ||
+      lastAIMessage.includes('i spy') || lastAIMessage.includes('guess the word') ||
+      lastAIMessage.includes('emoji time')) {
+    return `You are Ms. Nova continuing the GAME.
+
+📜 HISTORY:
+${historyText}
+
+🎮 STUDENT SAID: "${userInput}"
+
+YOUR TURN: Continue the game! 
+- If Word Chain: Check if their word starts with correct letter. Praise or hint. Give new word.
+- If I Spy: Check if they guessed right. Praise or give more clues.
+- If Emoji: Check answer. Praise or explain. Give new puzzle.
+
+STAY IN GAME! Don't ask "What do you like?"
 
 Return JSON with "ai_response" and "suggested_hints"`;
   }
   
-  // ROLEPLAY MODE 🎭 (Stay in character for 15 turns)
-  if (userMessage.includes('do roleplay') || userMessage.includes('roleplay') ||
-      lastAIMessage.includes('which character do you want to be') ||
+  // 🎭 ROLEPLAY MODE (Continuing - Pizza Chef, Pet Doctor, Toy Shop)
+  if (lastAIMessage.includes('i am hungry') || lastAIMessage.includes('make me a pizza') ||
+      lastAIMessage.includes('my cat is sad') || lastAIMessage.includes('doctor, help') ||
+      lastAIMessage.includes('i want to buy') || lastAIMessage.includes('how much') ||
       lastAIMessage.includes('pizza chef') || lastAIMessage.includes('pet doctor') || 
-      lastAIMessage.includes('toy shop') || lastAIMessage.includes('i am hungry') ||
-      lastAIMessage.includes('my cat is sad') || lastAIMessage.includes('i want to buy')) {
-    return `You are Ms. Nova in ROLEPLAY MODE.
+      lastAIMessage.includes('toy shop')) {
+    return `You are Ms. Nova continuing the ROLEPLAY.
 
 🎭 STUDENT'S MESSAGE: "${userInput}"
 📜 CONVERSATION HISTORY:
