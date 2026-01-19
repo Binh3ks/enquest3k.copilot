@@ -17,7 +17,7 @@
  */
 
 import { sendToAI } from './aiRouter.js';
-import { buildPrompt, TutorModes } from './tutorPrompts.js?v=5';
+import { buildPrompt, TutorModes } from './tutorPrompts.js?v=7';
 import errorHandler from './utils/errorHandler.js';
 import responseParser from './utils/responseParser.js';
 import { validateAIResponse } from './grammarGuard.js';

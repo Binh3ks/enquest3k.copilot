@@ -323,15 +323,18 @@ export function validateResponse(response, options = {}) {
   const hasQuestion = responseText.includes('?');
 
   // Check 1: Response too short (skip for new format - it's validated by responseGuard)
-  if (!validated.question && (!validated.ai_response || validated.ai_response.length < minLength)) {
-    console.warn(`⚠️ responseParser: Response too short (${validated.ai_response?.length || 0} chars)`);
+  // 🔥 FIX: Allow shorter responses for greetings/simple replies (min 5 chars instead of 10)
+  const effectiveMinLength = validated.ai_response && validated.ai_response.includes('Hi') ? 5 : minLength;
+  
+  if (!validated.question && (!validated.ai_response || validated.ai_response.length < effectiveMinLength)) {
+    console.warn(`⚠️ responseParser: Response too short (${validated.ai_response?.length || 0} chars, min: ${effectiveMinLength})`);
     
     if (autoFix) {
       validated.ai_response = 'Tell me more! What do you want to talk about?';
       if (!validated.pedagogy_note) validated.pedagogy_note = '';
       validated.pedagogy_note += ' [Auto-fixed: Safe fallback]';
     } else {
-      throw new Error(`Response too short: ${validated.ai_response?.length || 0} chars (minimum: ${minLength})`);
+      throw new Error(`Response too short: ${validated.ai_response?.length || 0} chars (minimum: ${effectiveMinLength})`);
     }
   }
 
