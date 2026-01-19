@@ -127,17 +127,27 @@ function getBannedTopics(missionTitle) {
  * Mode-specific prompt builder
  */
 function buildModePrompt(mode, context, userInput, options) {
+  // 🔥 FIX: Handle multiple mode name variations
+  const normalizedMode = mode?.toLowerCase();
+  
+  if (normalizedMode === 'chat' || normalizedMode === 'freetalk' || mode === TutorModes.CHAT) {
+    return buildChatPrompt(context, userInput, options);
+  }
+  
   switch (mode) {
-    case TutorModes.CHAT:
-      return buildChatPrompt(context, userInput, options);
     case TutorModes.STORY_MISSION:
+    case 'story':
+    case 'story_mission':
       return buildStoryMissionPrompt(context, userInput, options);
     case TutorModes.QUIZ:
+    case 'quiz':
       return buildQuizPrompt(context, options);
     case TutorModes.DEBATE:
+    case 'debate':
       return buildDebatePrompt(context, userInput, options);
     default:
-      throw new Error(`Unknown mode: ${mode}`);
+      console.error(`⚠️ Unknown mode: ${mode}, defaulting to CHAT`);
+      return buildChatPrompt(context, userInput, options);
   }
 }
 
@@ -1234,7 +1244,7 @@ Remember: You are genuinely curious! Keep it SHORT and SIMPLE for A0+ learners!`
 ❓ QUESTION STYLE:
 ✓ PREFER: Open-ended → "What do you like?" "Tell me about..."
 ✗ AVOID: Yes/No → "Do you like...?" (makes them say just "yes")
-✓ GOOD: "What makes you happy?"
+✓ GOOD: "Who is in your family?" "What games do you play?"
 ✗ BAD: "Are you happy?" (one-word answer)
 
 WHAT JUST HAPPENED:
