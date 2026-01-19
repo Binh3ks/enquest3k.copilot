@@ -421,6 +421,36 @@ const FreeTalkTab = () => {
         <div ref={chatEndRef} />
       </div>
 
+      {/* ✨ FREE TALK 2.0: STARTER PROMPTS (Suggestion Chips) */}
+      {weekRealData?.freetalk_knowledge?.starter_prompts && weekRealData.freetalk_knowledge.starter_prompts.length > 0 && (
+        <div className="px-6 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
+          <div className="flex items-center gap-2 mb-3">
+            <Sparkles size={18} className="text-purple-500" />
+            <span className="text-base font-semibold text-purple-700">
+              💬 Quick Start (Bắt đầu nhanh):
+            </span>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {weekRealData.freetalk_knowledge.starter_prompts.map((prompt, index) => (
+              <button
+                key={index}
+                onClick={() => handleSendMessage(prompt.text_en)}
+                className={`px-4 py-3 rounded-xl text-base font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
+                  prompt.type === 'game' 
+                    ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
+                    : prompt.type === 'help'
+                    ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
+                    : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
+                }`}
+                disabled={isLoading}
+              >
+                {prompt.text_vi}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* 🔥 Interactive hints area with word suggestions */}
       <div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 border-t border-blue-200">
         <div className="flex items-center gap-2 mb-3">
