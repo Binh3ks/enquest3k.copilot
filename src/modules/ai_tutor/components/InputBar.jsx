@@ -258,13 +258,13 @@ const InputBar = ({
           />
         </div>
 
-        {/* Send Button - Only prominent when text exists */}
+        {/* Send Button */}
         <button
           type="button"
           onClick={handleSend}
           disabled={disabled || !message.trim()}
           className={`
-            flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center {/* Bigger button */}
+            flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center
             transition-all duration-300
             ${disabled || !message.trim()
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed scale-90'
@@ -274,9 +274,9 @@ const InputBar = ({
           aria-label="Send message"
         >
           {disabled ? (
-            <Loader2 size={24} className="animate-spin" />
+            <Loader2 size={18} className="animate-spin" />
           ) : (
-            <Send size={24} />
+            <Send size={18} />
           )}
         </button>
       </div>

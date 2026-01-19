@@ -261,30 +261,30 @@ Keep it simple, short, and encouraging!`;
 
       {/* Debate Topic Card (shown initially) */}
       {!userPosition && debateTopic && (
-        <div className="p-6 bg-white border-b border-gray-200">
+        <div className="p-4 bg-white border-b border-gray-200">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gradient-to-r from-red-100 to-orange-100 rounded-xl p-6">
-              <div className="flex items-center space-x-2 mb-3">
-                <Lightbulb size={20} className="text-orange-600" />
-                <h3 className="font-bold text-gray-800">Debate Topic:</h3>
+            <div className="bg-gradient-to-r from-red-100 to-orange-100 rounded-lg p-4">
+              <div className="flex items-center space-x-1.5 mb-2">
+                <Lightbulb size={16} className="text-orange-600" />
+                <h3 className="font-bold text-sm text-gray-800">Debate Topic:</h3>
               </div>
-              <p className="text-xl font-medium text-gray-800 mb-4">
+              <p className="text-base font-medium text-gray-800 mb-3">
                 "{debateTopic}"
               </p>
               
-              <div className="flex space-x-3">
+              <div className="flex space-x-2">
                 <button
                   onClick={() => handlePositionSelect('agree')}
-                  className="flex-1 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-2 font-medium"
+                  className="flex-1 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center space-x-1.5 font-medium text-sm"
                 >
-                  <ThumbsUp size={20} />
+                  <ThumbsUp size={16} />
                   <span>I Agree</span>
                 </button>
                 <button
                   onClick={() => handlePositionSelect('disagree')}
-                  className="flex-1 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2 font-medium"
+                  className="flex-1 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center space-x-1.5 font-medium text-sm"
                 >
-                  <ThumbsDown size={20} />
+                  <ThumbsDown size={16} />
                   <span>I Disagree</span>
                 </button>
               </div>

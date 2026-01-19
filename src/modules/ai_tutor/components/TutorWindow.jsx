@@ -1,4 +1,4 @@
-import { BookOpen, MessageCircle, Mic, HelpCircle, MessageSquare } from 'lucide-react';
+import { BookOpen, MessageCircle, Mic, HelpCircle, MessageSquare, X } from 'lucide-react';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import StoryMissionTab from '../tabs/StoryMissionTab';
 import FreeTalkTab from '../tabs/FreeTalkTab';
@@ -40,23 +40,30 @@ const TutorWindow = () => {
       ${windowClasses}
     `}>
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-6 text-white"> {/* Larger padding */}
+      <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-3 text-white relative">
+        {/* Close Button - Top Right */}
+        <button
+          onClick={() => useTutorStore.getState().setWidgetOpen(false)}
+          className="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all"
+          aria-label="Close AI Tutor"
+        >
+          <X size={14} className="text-white" />
+        </button>
+        
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3"> {/* More gap */}
-            <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-2xl"> {/* Bigger avatar */}
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-lg">
               ✨
             </div>
             <div>
-              <h3 className="font-bold text-2xl">Ms. Nova</h3> {/* Bigger title */}
-              <p className="text-sm text-white/80">Your AI English Coach</p>
+              <h3 className="font-bold text-base">Ms. Nova</h3>
+              <p className="text-xs text-white/80">Your AI English Coach</p>
             </div>
           </div>
-          
-
         </div>
 
-        {/* Tab Navigation with more gap and margin */}
-        <div className="flex gap-3 mt-6 overflow-x-auto scrollbar-hide">
+        {/* Tab Navigation */}
+        <div className="flex gap-2 mt-3 overflow-x-auto scrollbar-hide">
           {tabs.map(tab => {
             const Icon = tab.icon;
             return (
@@ -64,16 +71,16 @@ const TutorWindow = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  flex items-center gap-3 px-6 py-3 rounded-xl font-semibold
+                  flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold text-xs
                   whitespace-nowrap transition-all duration-200
                   ${activeTab === tab.id 
-                    ? 'bg-white text-purple-600 shadow-lg transform scale-105' 
-                    : 'bg-white/20 text-white hover:bg-white/30 hover:scale-102'
+                    ? 'bg-white text-purple-600 shadow-md transform scale-105' 
+                    : 'bg-white/20 text-white hover:bg-white/30'
                   }
                 `}
               >
-                <Icon size={20} />
-                <span className="text-base font-medium">{tab.label}</span>
+                <Icon size={14} />
+                <span>{tab.label}</span>
               </button>
             );
           })}
@@ -81,7 +88,7 @@ const TutorWindow = () => {
       </div>
 
       {/* Content Area */}
-      <div className="h-[calc(100%-180px)] overflow-hidden"> {/* Adjusted for bigger header */}
+      <div className="h-[calc(100%-110px)] overflow-hidden">
         {activeTab === 'story' && <StoryMissionTab />}
         {activeTab === 'freetalk' && <FreeTalkTab />}
         {activeTab === 'pronunciation' && <PronunciationTab />}

@@ -968,18 +968,18 @@ const StoryMissionTab = () => {
         // MISSION CONVERSATION VIEW - Existing UI
         <>
           {/* Mission Header */}
-          <div className="bg-white border-b border-purple-200 px-6 py-3">
+          <div className="bg-white border-b border-purple-200 px-4 py-2">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setViewMode('menu')}
-                  className="w-10 h-10 bg-purple-100 hover:bg-purple-200 rounded-full flex items-center justify-center transition-colors"
+                  className="w-8 h-8 bg-purple-100 hover:bg-purple-200 rounded-full flex items-center justify-center transition-colors"
                   title="Back to menu"
                 >
-                  <span className="text-purple-600 text-lg">←</span>
+                  <span className="text-purple-600 text-sm">←</span>
                 </button>
                 <div>
-                  <h2 className="text-lg font-bold text-gray-800">Story Mission {currentMissionIndex + 1}</h2>
+                  <h2 className="text-sm font-bold text-gray-800">Story Mission {currentMissionIndex + 1}</h2>
                   <p className="text-xs text-gray-500">
                     {currentMission ? `${currentMission.title} - ${currentMission.theme}` : 'Loading...'}
                   </p>
@@ -987,7 +987,7 @@ const StoryMissionTab = () => {
               </div>
 
               {/* Mission Progress */}
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3">
                 <button
                   onClick={() => {
                     useTutorStore.getState().clearMessages('story');
@@ -1020,16 +1020,16 @@ const StoryMissionTab = () => {
                       console.error('❌ Re-init error:', err);
                     });
                   }}
-                  className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-sm"
+                  className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-xs"
                   title="Clear chat and restart"
                 >
-                  <RotateCcw size={14} />
+                  <RotateCcw size={12} />
                   <span>Reset</span>
                 </button>
                 
-                <div className="flex items-center space-x-2">
-                  <Target size={16} className="text-purple-600" />
-                  <span className="text-sm font-medium text-gray-700">
+                <div className="flex items-center space-x-1.5">
+                  <Target size={14} className="text-purple-600" />
+                  <span className="text-xs font-medium text-gray-700">
                     Turn {turnCount}/{currentMission?.minimum_turns || 10}
                   </span>
                   

@@ -148,23 +148,23 @@ const QuizTab = () => {
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-yellow-50 to-orange-50">
       {/* Header */}
-      <div className="bg-white border-b border-yellow-200 px-6 py-3">
+      <div className="bg-white border-b border-yellow-200 px-4 py-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
-              <Brain size={20} className="text-yellow-600" />
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+              <Brain size={16} className="text-yellow-600" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-800">Quick Quiz</h2>
+              <h2 className="text-sm font-bold text-gray-800">Quick Quiz</h2>
               <p className="text-xs text-gray-500">Test your knowledge!</p>
             </div>
           </div>
 
           {/* Score */}
           {!quizComplete && (
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               <div className="text-right">
-                <p className="text-sm font-medium text-gray-700">
+                <p className="text-xs font-medium text-gray-700">
                   Question {currentQuestionIndex + 1} / {totalQuestions}
                 </p>
                 <p className="text-xs text-yellow-600">
@@ -217,27 +217,27 @@ const QuizTab = () => {
           // Quiz Card
           <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full">
             {/* Question */}
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm font-medium text-yellow-600">
+            <div className="mb-6">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-medium text-yellow-600">
                   Question {currentQuestionIndex + 1}
                 </span>
-                <span className="text-sm text-gray-500">
+                <span className="text-xs text-gray-500">
                   Week {currentWeek} Vocabulary
                 </span>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800">
+              <h3 className="text-lg font-bold text-gray-800">
                 {currentQuestion.question}
               </h3>
             </div>
 
             {/* Answer Options */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               {currentQuestion.answers.map((answer, index) => {
                 const isCorrect = answer === currentQuestion.correctAnswer;
                 const isSelected = answer === selectedAnswer;
                 
-                let buttonClass = 'w-full p-4 text-left rounded-xl border-2 transition-all duration-200 ';
+                let buttonClass = 'w-full p-3 text-left rounded-lg border-2 transition-all duration-200 ';
                 
                 if (!isAnswered) {
                   buttonClass += 'border-gray-300 hover:border-yellow-500 hover:bg-yellow-50 cursor-pointer';
@@ -261,16 +261,16 @@ const QuizTab = () => {
                     className={buttonClass}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-lg text-gray-800">{answer}</span>
+                      <span className="text-sm text-gray-800">{answer}</span>
                       {isAnswered && isSelected && (
                         isCorrect ? (
-                          <CheckCircle2 size={24} className="text-green-600" />
+                          <CheckCircle2 size={18} className="text-green-600" />
                         ) : (
-                          <XCircle size={24} className="text-red-600" />
+                          <XCircle size={18} className="text-red-600" />
                         )
                       )}
                       {isAnswered && !isSelected && isCorrect && (
-                        <CheckCircle2 size={24} className="text-green-600" />
+                        <CheckCircle2 size={18} className="text-green-600" />
                       )}
                     </div>
                   </button>
