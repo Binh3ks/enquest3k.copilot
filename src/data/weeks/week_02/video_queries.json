@@ -1,39 +1,39 @@
 {
   "weekId": 2,
-  "theme": "My Family Squad",
-  "grammar": "Possessive pronouns, Demonstratives",
-  "topic": "Family members",
-  "science": "Human life cycle",
+  "theme": "Family Squad",
+  "grammar_focus": "Possessive Adjectives (My, Your)",
   "videos": [
     {
       "id": 1,
-      "purpose": "TOPIC",
-      "query": "family members father mother brother sister",
-      "backup_query": "family song kids"
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing possessive adjectives my your his her ESL for kids",
+      "backup_search": "possessive adjectives my your his her song ESL kids cartoons"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "query": "this is my family introduction",
-      "backup_query": "this is demonstratives grammar"
+      "priority_search": "English Singsing My  Your ESL for kids",
+      "backup_search": "My  Your kids song ESL cartoons"
     },
     {
       "id": 3,
-      "purpose": "GRAMMAR",
-      "query": "possessive pronouns my your his her",
-      "backup_query": "my your his her grammar"
+      "purpose": "STORY",
+      "priority_search": "Little Fox family family roots story level 1 ESL for kids",
+      "backup_search": "Vooks family family roots story read aloud cartoons for kids"
     },
     {
       "id": 4,
-      "purpose": "TOPIC",
-      "query": "meet my family conversation",
-      "backup_query": "family members ESL kids"
+      "purpose": "VOCABULARY",
+      "priority_search": "Little Fox Family Finger song ESL for kids",
+      "backup_search": "Family Finger ESL kids cartoons song"
     },
     {
       "id": 5,
       "purpose": "SCIENCE",
-      "query": "human family life cycle growth",
-      "backup_query": "growing up human development"
+      "priority_search": "SciShow Kids Family roles, family members for kids",
+      "backup_search": "Family roles, family members kids science cartoons"
     }
-  ]
+  ],
+  "topic": "Family Roots - family tree",
+  "science": "Family roles, family members"
 }

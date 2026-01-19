@@ -1,0 +1,411 @@
+# ENGQUEST 3K - GAME HUB INTEGRATION V29
+**Version**: 29 (Module System)
+**Purpose**: Logic Lab station enhancement - Story-based math puzzles
+
+**READ THIS FILE**: When generating logic.js files
+
+---
+
+## 🎯 GAME HUB PHILOSOPHY
+
+**Goal**: Make Logic Lab feel like **interactive puzzles**, NOT a dry math test
+
+**Key**: **Story-based context** for every puzzle
+
+**Why**: Children ages 6-10 engage better with stories than abstract equations
+
+---
+
+## 📋 LOGIC.JS SCHEMA
+
+```javascript
+export default {
+  puzzles: [  // ⬅️ CRITICAL: Use "puzzles" NOT "problems"
+    {
+      id: NUMBER,
+      type: "math" | "logic" | "pattern" | "spatial",
+      title_en: "string",          // Engaging title (e.g., "The Cookie Jar")
+      title_vi: "string",
+      
+      // CRITICAL: Full story context required
+      question_en: "string",       // Must be story-based, NOT bare equation
+      question_vi: "string",
+      
+      // CRITICAL: Audio URL for question narration (MANDATORY)
+      audio_url: "string",         // e.g., "/audio/week4/logic_1.mp3"
+      
+      // CRITICAL: Answer must include units
+      answer: ["string"],          // e.g., "5 cookies", NOT just "5"
+      
+      hint_en: "string",
+      hint_vi: "string"
+    }
+  ]  // EXACTLY 5 puzzles per week
+};
+```
+
+---
+
+## 🚨 MANDATORY REQUIREMENTS
+
+### 1. Exactly 5 Puzzles
+- No more, no less
+- Each week has 5 puzzles
+- Mix different types
+
+### 2. Use "puzzles" Key (NOT "problems")
+```javascript
+// ✅ CORRECT:
+export default {
+  puzzles: [...]
+};
+
+// ❌ WRONG (Component can't find data):
+export default {
+  problems: [...]
+};
+```
+
+**Why**: Component reads `data.puzzles`, not `data.problems`
+
+---
+
+### 3. Full Story Context
+Every puzzle MUST have:
+- Characters (You, Tom, Lisa, Mom, Dad)
+- Objects (apples, pencils, cookies, toys)
+- Action (give, eat, buy, find)
+- Question (How many...?, Who has more...?)
+
+**Min length**: 15 words
+
+---
+
+### 4. Units in Answers
+```javascript
+// ✅ CORRECT:
+answer: ["5 cookies", "five cookies", "5 cái bánh"]
+
+// ❌ WRONG:
+answer: ["5"]  // No unit!
+```
+
+**Why**: Teaches students to include units in real-world problem-solving
+
+---
+
+### 5. Audio URL (Mandatory)
+```javascript
+// ✅ CORRECT:
+audio_url: "/audio/week4/logic_1.mp3"
+
+// ❌ WRONG (missing audio):
+// No audio_url field
+```
+
+**Path format**: `/audio/week<ID>/logic_<puzzle_id>.mp3`
+
+---
+
+## ✅ GOLDEN STANDARD EXAMPLES
+
+### Example 1: Math Puzzle (Addition)
+```javascript
+{
+  id: 1,
+  type: "math",
+  title_en: "Pencils for Friends",
+  title_vi: "Bút chì cho bạn",
+  question_en: "You have 5 pencils. You give 2 pencils to your friend Tom. How many pencils do you have left?",
+  question_vi: "Bạn có 5 cây bút chì. Bạn cho Tom 2 cây. Bạn còn lại bao nhiêu cây bút chì?",
+  audio_url: "/audio/week4/logic_1.mp3",
+  answer: ["3 pencils", "three pencils", "3 cây bút chì"],
+  hint_en: "Start with 5, then take away 2.",
+  hint_vi: "Bắt đầu với 5, rồi bớt đi 2."
+}
+```
+
+**Why this works**:
+- ✅ Story context (You, Tom, pencils)
+- ✅ Units in answer ("3 pencils")
+- ✅ Audio URL present
+- ✅ 22 words (> 15 word min)
+
+---
+
+### Example 2: Logic Puzzle (Comparison)
+```javascript
+{
+  id: 2,
+  type: "logic",
+  title_en: "Who is Taller?",
+  title_vi: "Ai cao hơn?",
+  question_en: "Tom is taller than Lisa. Lisa is taller than Sam. Who is the tallest?",
+  question_vi: "Tom cao hơn Lisa. Lisa cao hơn Sam. Ai cao nhất?",
+  audio_url: "/audio/week4/logic_2.mp3",
+  answer: ["Tom", "Tom is the tallest"],
+  hint_en: "If Tom is taller than Lisa, and Lisa is taller than Sam, who is at the top?",
+  hint_vi: "Nếu Tom cao hơn Lisa, và Lisa cao hơn Sam, ai ở trên cùng?"
+}
+```
+
+**Why this works**:
+- ✅ Story context (Tom, Lisa, Sam, height comparison)
+- ✅ Logical deduction required
+- ✅ Audio URL present
+- ✅ 17 words (> 15 word min)
+
+---
+
+### Example 3: Pattern Puzzle (Sequence)
+```javascript
+{
+  id: 3,
+  type: "pattern",
+  title_en: "Shape Pattern",
+  title_vi: "Mẫu hình dạng",
+  question_en: "Look at this pattern: star, moon, star, moon, star. What comes next?",
+  question_vi: "Nhìn vào mẫu này: ngôi sao, mặt trăng, ngôi sao, mặt trăng, ngôi sao. Hình tiếp theo là gì?",
+  audio_url: "/audio/week4/logic_3.mp3",
+  answer: ["moon", "mặt trăng", "the moon"],
+  hint_en: "The pattern repeats. What came after star before?",
+  hint_vi: "Mẫu lặp lại. Hình gì đã xuất hiện sau ngôi sao trước đó?"
+}
+```
+
+**Why this works**:
+- ✅ Pattern recognition
+- ✅ Visual/abstract thinking
+- ✅ Clear hint guides student
+- ✅ 16 words (> 15 word min)
+
+---
+
+### Example 4: Math Puzzle (Subtraction)
+```javascript
+{
+  id: 4,
+  type: "math",
+  title_en: "The Cookie Jar",
+  title_vi: "Hũ bánh quy",
+  question_en: "Mom baked 12 cookies. You and your brother ate 5 cookies. How many cookies are left in the jar?",
+  question_vi: "Mẹ nướng 12 cái bánh. Bạn và anh trai ăn 5 cái. Còn lại bao nhiêu cái bánh trong hũ?",
+  audio_url: "/audio/week4/logic_4.mp3",
+  answer: ["7 cookies", "seven cookies", "7 cái bánh"],
+  hint_en: "Start with 12, then subtract 5.",
+  hint_vi: "Bắt đầu với 12, rồi trừ đi 5."
+}
+```
+
+**Why this works**:
+- ✅ Real-world context (baking, family)
+- ✅ Units in answer ("7 cookies")
+- ✅ Multiple answer formats accepted
+- ✅ 21 words (> 15 word min)
+
+---
+
+### Example 5: Spatial Puzzle (Position)
+```javascript
+{
+  id: 5,
+  type: "spatial",
+  title_en: "Stack the Blocks",
+  title_vi: "Xếp các khối",
+  question_en: "The red block is on top of the blue block. The blue block is on top of the green block. Which block is at the bottom?",
+  question_vi: "Khối đỏ ở trên khối xanh dương. Khối xanh dương ở trên khối xanh lá. Khối nào ở dưới cùng?",
+  audio_url: "/audio/week4/logic_5.mp3",
+  answer: ["green", "the green block", "khối xanh lá"],
+  hint_en: "The bottom block has two blocks on top of it.",
+  hint_vi: "Khối dưới cùng có hai khối ở trên nó."
+}
+```
+
+**Why this works**:
+- ✅ Spatial reasoning
+- ✅ Clear visual description
+- ✅ Logical deduction
+- ✅ 27 words (> 15 word min)
+
+---
+
+## ❌ BAD EXAMPLES (DO NOT USE)
+
+### Bad Example 1: No Story Context
+```javascript
+{
+  id: 1,
+  type: "math",
+  title_en: "Subtraction",
+  question_en: "What is 5 - 2?",  // ❌ No story, bare equation
+  answer: ["3"],                   // ❌ No unit
+  // ❌ Missing audio_url
+  hint_en: "Subtract the numbers."
+}
+```
+
+**Why this fails**:
+- ❌ No characters, objects, or context
+- ❌ Just an abstract equation
+- ❌ No unit in answer
+- ❌ Missing audio URL
+- ❌ Only 4 words (< 15 word min)
+
+---
+
+### Bad Example 2: Missing Audio
+```javascript
+{
+  id: 2,
+  type: "math",
+  title_en: "Apples",
+  question_en: "You have 3 apples. Mom gives you 2 more. How many apples do you have?",
+  // ❌ Missing audio_url
+  answer: ["5 apples"],
+  hint_en: "Add 3 and 2 together."
+}
+```
+
+**Why this fails**:
+- ✅ Has story context (good)
+- ✅ Has unit in answer (good)
+- ❌ Missing audio_url (CRITICAL)
+
+---
+
+### Bad Example 3: Answer Without Unit
+```javascript
+{
+  id: 3,
+  type: "math",
+  title_en: "Toy Cars",
+  question_en: "Tom has 4 toy cars. Lisa has 2 toy cars. How many more cars does Tom have?",
+  audio_url: "/audio/week4/logic_3.mp3",
+  answer: ["2"],  // ❌ No unit ("2 cars" would be correct)
+  hint_en: "Subtract Lisa's cars from Tom's cars."
+}
+```
+
+**Why this fails**:
+- ✅ Has story context (good)
+- ✅ Has audio URL (good)
+- ❌ Answer missing unit (should be "2 cars")
+
+---
+
+## 🎮 PUZZLE TYPE GUIDELINES
+
+| Type | Description | CEFR Level | Example Scenario |
+|------|-------------|------------|------------------|
+| **math** | Basic arithmetic with objects | A0-A2 | "You have 3 apples. Mom gives you 2 more..." |
+| **logic** | Deductive reasoning | A1-B1 | "Tom is taller than Lisa. Lisa is taller than Sam..." |
+| **pattern** | Sequence completion | A0-A2 | "Star, moon, star, moon... What's next?" |
+| **spatial** | Visual/spatial reasoning | A1-B1 | "The red block is above the blue block..." |
+
+### Distribution Recommendation:
+- **Weeks 1-18** (A0/A0++): 3 math, 1 pattern, 1 logic
+- **Weeks 19-40** (A1): 2 math, 2 logic, 1 pattern
+- **Weeks 41-70** (A1+/A2): 2 math, 2 logic, 1 spatial
+- **Weeks 71+** (A2+/B1): 1 math, 2 logic, 1 pattern, 1 spatial
+
+---
+
+## 🔍 VALIDATION CHECKLIST
+
+### After generating logic.js:
+
+```bash
+# 1. Verify key name
+grep "puzzles:" src/data/weeks/week_04/logic.js
+# Should output: "puzzles: ["
+
+# 2. Verify 5 puzzles
+node -e "const l = require('./src/data/weeks/week_04/logic.js').default; console.log('Puzzle count:', l.puzzles.length)"
+# Should output: "Puzzle count: 5"
+
+# 3. Verify all have audio_url
+grep -c 'audio_url:' src/data/weeks/week_04/logic.js
+# Should output: 5
+
+# 4. Import test
+node -e "require('./src/data/weeks/week_04/logic.js')" && echo "✓ Imports successfully" || echo "✗ Import failed"
+```
+
+### Manual checks:
+- [ ] Each question_en contains a story (> 15 words)
+- [ ] Each answer includes a unit (not just a number)
+- [ ] Each puzzle has audio_url with correct path
+- [ ] Mix of puzzle types (not all "math")
+- [ ] Characters have names (Tom, Lisa, Sam, etc.)
+- [ ] Objects are concrete (apples, pencils, cookies)
+
+---
+
+## 📝 TEMPLATE FOR NEW PUZZLES
+
+```javascript
+{
+  id: <1-5>,
+  type: "<math|logic|pattern|spatial>",
+  title_en: "<Engaging title>",
+  title_vi: "<Vietnamese title>",
+  question_en: "<Story with characters, objects, action, question (15+ words)>",
+  question_vi: "<Vietnamese translation>",
+  audio_url: "/audio/week<ID>/logic_<id>.mp3",
+  answer: ["<answer with unit>", "<alternative format>", "<Vietnamese>"],
+  hint_en: "<Helpful hint without giving answer>",
+  hint_vi: "<Vietnamese hint>"
+}
+```
+
+---
+
+## 🎯 WHY STORY-BASED MATTERS
+
+### Pedagogical Benefits:
+1. **Contextual Learning**: Children learn math in real-world situations
+2. **Language Integration**: Combines English vocabulary with math concepts
+3. **Engagement**: Stories are more interesting than abstract equations
+4. **Comprehension**: Context helps students understand what the problem asks
+5. **Retention**: Story-based problems are more memorable
+
+### Example Comparison:
+
+**Abstract (Bad)**:
+```
+Question: "5 + 3 = ?"
+→ Student thinking: "I need to add numbers."
+```
+
+**Story-based (Good)**:
+```
+Question: "You have 5 toy cars. Your friend gives you 3 more. How many toy cars do you have now?"
+→ Student thinking: "I start with 5 cars. My friend gives me 3. Now I have 5 + 3 = 8 cars!"
+```
+
+**Result**: Student understands WHY they're adding, not just HOW to add.
+
+---
+
+## 🚀 INTEGRATION WITH GAME HUB UI
+
+**Component**: `src/modules/stations/LogicLab.jsx`
+
+**How it works**:
+1. Component reads `data.puzzles` array
+2. Displays 5 puzzles as cards
+3. Each card shows title, plays audio, shows question
+4. Student types answer
+5. Component checks answer against all formats in `answer` array
+6. Shows hint if student clicks "Hint" button
+
+**Audio playback**:
+- Automatically plays when card is displayed
+- Can replay by clicking audio icon
+- Uses `audio_url` path from puzzle data
+
+---
+
+**END OF GAME HUB INTEGRATION**
+
+Next: Return to main workflow or validation prompts.

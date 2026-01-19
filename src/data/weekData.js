@@ -6,53 +6,40 @@
  * 1. REAL syllabus files (_real.js) - Official curriculum from 3-year framework
  * 2. Regular week files - Fallback when real syllabus not available
  * 3. Default data - Emergency fallback
+ * 
+ * ⚡ DYNAMIC LOADING: Automatically loads week_XX_real.js for any week
  */
-
-// 🔥 Import REAL syllabus data (PRIORITY 1)
-import week1Real from './weeks/week_01_real.js';
-
-// Import regular week data (PRIORITY 2 - Fallback)
-import week1 from './weeks/week_01.js';
 
 /**
- * Get current week data by weekId
+ * Get current week data by weekId (async)
  * @param {string} weekId - Format: 'week-1', 'week-2', etc.
- * @returns {Object} Week data with vocabulary, grammar, topic, etc.
+ * @returns {Promise<Object>} Week data with vocabulary, grammar, topic, etc.
  */
-export function getCurrentWeekData(weekId) {
-  // Convert 'week-1' to 'week1' or handle both formats
-  const normalizedId = weekId.replace(/[_-]/g, '').toLowerCase();
+export async function getCurrentWeekData(weekId) {
+  // Convert 'week-1' to '01' (padded number)
+  const weekNumber = weekId.replace(/[^0-9]/g, '');
+  const paddedNumber = weekNumber.padStart(2, '0');
 
-  // 🔥 PRIORITY MAPPING: Real syllabus first, then fallback
-  const realSyllabusMap = {
-    'week1': week1Real,
-    'week01': week1Real,
-  };
-
-  const fallbackMap = {
-    'week1': week1,
-    'week01': week1,
-  };
-
-  // Try real syllabus first
-  let weekData = realSyllabusMap[normalizedId];
-
-  if (weekData) {
-    console.log(`✅ Using REAL syllabus data for ${weekId}`);
-    return weekData;
+  try {
+    // 🔥 PRIORITY 1: Try loading week_XX_real.js (AI Tutor syllabus)
+    console.log(`🔍 Attempting to load: week_${paddedNumber}_real.js`);
+    const realModule = await import(`./weeks/week_${paddedNumber}_real.js`);
+    console.log(`✅ Loaded REAL syllabus data for Week ${weekNumber}`);
+    return realModule.default;
+  } catch (realError) {
+    console.warn(`⚠️ week_${paddedNumber}_real.js not found, trying fallback...`);
+    
+    try {
+      // PRIORITY 2: Try loading regular week_XX.js
+      const fallbackModule = await import(`./weeks/week_${paddedNumber}.js`);
+      console.log(`✅ Loaded fallback week data for Week ${weekNumber}`);
+      return fallbackModule.default;
+    } catch (fallbackError) {
+      console.error(`❌ No data files found for Week ${weekNumber}`);
+      console.warn(`Using default data for Week ${weekNumber}`);
+      return getDefaultWeekData();
+    }
   }
-
-  // Fallback to regular week data
-  weekData = fallbackMap[normalizedId];
-
-  if (weekData) {
-    console.warn(`⚠️ Using fallback week data for ${weekId} (real syllabus not found)`);
-    return weekData;
-  }
-
-  // Final fallback to default
-  console.warn(`❌ Week data not found for ${weekId}, using default`);
-  return getDefaultWeekData();
 }
 
 /**

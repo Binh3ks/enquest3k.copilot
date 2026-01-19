@@ -1,0 +1,88 @@
+{
+  "week_id": 5,
+  "phase": 1,
+  "block": "A",
+  "unit": 1,
+  "week_number": 5,
+  "title_en": "The Mystery House",
+  "title_vi": "Ngôi nhà Bí ẩn",
+  "topic": "Nouns (Exploring rooms and furniture)",
+  "topic_vi": "Danh từ (Khám phá phòng và đồ đạc)",
+  "cefr_level": "A0++",
+  "grammar_focus": "Articles 'A/An'",
+  "grammar_pattern": "A/An [noun]",
+  "grammar_rules": {
+    "tier": 1,
+    "sentence_length": "6-10 words",
+    "grammar_allowed": [
+      "Present Simple",
+      "Present Continuous (-ing)",
+      "There is/are",
+      "Prepositions",
+      "Plural -s"
+    ],
+    "grammar_forbidden": [
+      "Past tense",
+      "Future will",
+      "Conditionals"
+    ]
+  },
+  "vocab_count": 10,
+  "target_vocab_words": [
+    "bedroom",
+    "kitchen",
+    "bathroom",
+    "living room",
+    "bed",
+    "chair",
+    "table",
+    "house",
+    "mystery",
+    "explore"
+  ],
+  "vocab_tier": 1,
+  "stations": {
+    "format": "station_files",
+    "count": 14,
+    "required_files": [
+      "vocab.js",
+      "read.js",
+      "grammar.js",
+      "dictation.js",
+      "shadowing.js",
+      "writing.js",
+      "ask_ai.js",
+      "logic.js",
+      "explore.js",
+      "word_power.js",
+      "mindmap.js",
+      "daily_watch.js",
+      "index.js",
+      "video_queries.json"
+    ],
+    "dual_mode": true,
+    "advanced_folder": "week_05",
+    "easy_folder": "week_05_easy",
+    "reference_golden_standard": "src/data/weeks/week_04/"
+  },
+  "constraints": {
+    "sentence_length": "6-10 words",
+    "grammar_allowed": [
+      "Present Simple",
+      "Present Continuous (-ing)",
+      "There is/are",
+      "Prepositions",
+      "Plural -s"
+    ],
+    "grammar_forbidden": [
+      "Past tense",
+      "Future will",
+      "Conditionals"
+    ],
+    "vocab_source": "Must use target_vocab_words from this spec",
+    "cross_references": "All target_keywords must exist in target_vocab"
+  },
+  "_spec_version": "1.0",
+  "_generated_at": "2026-01-18T14:44:19.062Z",
+  "_source": "1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt"
+}

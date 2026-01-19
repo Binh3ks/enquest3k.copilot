@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear Cache for Week 4</title>
+</head>
+<body>
+  <h1>Clear EngQuest Cache</h1>
+  <button onclick="clearAll()">Clear All Cache & Reload</button>
+  <pre id="output"></pre>
+
+  <script>
+    function clearAll() {
+      const output = document.getElementById('output');
+      output.innerHTML = 'Clearing cache...\n';
+      
+      // Clear localStorage
+      localStorage.clear();
+      output.innerHTML += '✅ localStorage cleared\n';
+      
+      // Clear sessionStorage
+      sessionStorage.clear();
+      output.innerHTML += '✅ sessionStorage cleared\n';
+      
+      // Clear IndexedDB
+      if (window.indexedDB) {
+        indexedDB.databases().then(dbs => {
+          dbs.forEach(db => {
+            indexedDB.deleteDatabase(db.name);
+            output.innerHTML += `✅ Deleted DB: ${db.name}\n`;
+          });
+        });
+      }
+      
+      output.innerHTML += '\n✅ All cache cleared!\n';
+      output.innerHTML += 'Reloading in 2 seconds...\n';
+      
+      setTimeout(() => {
+        window.location.href = 'http://localhost:5173/week/4/read_explore';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

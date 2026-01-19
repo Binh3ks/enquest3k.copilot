@@ -1,0 +1,243 @@
+# ENGQUEST 3K - AI TUTOR SCHEMA BASIC V29
+**Version**: 29 (Module System)
+**Purpose**: Schema for Week 1-3 (canonical_question format)
+
+**READ THIS FILE**: After AI_TUTOR_CORE.txt, for Week 1-3
+
+---
+
+## 🎯 WHEN TO USE THIS FILE
+
+**Use for**: Week 1-3 (CEFR A0, basic conversations)
+**Format**: canonical_question (1 question per objective)
+**Characteristics**:
+- Simpler structure
+- Single question per objective
+- Individual word hints (3-5 words)
+- No student question invitations
+- No question variants
+
+---
+
+## COMPLETE SCHEMA: week_XX_real.js (Week 1-3)
+
+```javascript
+export const weekXRealData = {
+  // === METADATA ===
+  week_id: X,
+  phase: 1,
+  block: "A",
+  unit: X,
+  
+  week_title_en: "[Title]",
+  week_title_vi: "[Vietnamese Title]",
+  
+  topic: "[Topic]",
+  topic_vi: "[Vietnamese Topic]",
+  
+  learning_outcome: "[Outcome]",
+  learning_outcome_vi: "[Vietnamese Outcome]",
+  
+  grammar_focus: "[Grammar]",
+  grammar_pattern: "[Pattern]",
+  grammar_examples: [
+    "Example 1",
+    "Example 2"
+  ],
+  
+  // CRITICAL: Objects, NOT strings!
+  target_vocab: [
+    {
+      word: "name",
+      pronunciation: "/neɪm/",
+      definition_vi: "Tên",
+      definition_en: "What someone is called.",
+      example: "My name is Alex.",
+      syllabus_context: "Identity"
+    },
+    // 7-10 word objects
+  ],
+  
+  // === STORY MISSIONS ===
+  story_missions: [
+    {
+      mission_id: 1,
+      title: "Mission 1: [Title with Keywords]",
+      title_vi: "[Vietnamese Title]",
+      theme: "[Theme]",
+      
+      nova_greeting: "[Direct greeting from Nova]",
+      default_hints: ["word1", "word2", "word3"],
+      
+      mission_context: `[Instructions for AI behavior - not shown to student]
+      
+⚡ FLEXIBLE CONVERSATION:
+- If student asks YOU questions → Answer naturally
+- Allow 12-15 turns if interactive
+- If off-topic → Redirect gently
+- Be conversational, not robotic`,
+      
+      target_vocab: ["word1", "word2", "word3"],
+      target_pattern: "[Grammar pattern]",
+      
+      conversation_topics: [
+        "Topic 1",
+        "Topic 2",
+        "Topic 3"
+      ],
+      
+      example_questions: [
+        "Question 1?",
+        "Question 2?"
+      ],
+      
+      minimum_turns: 15,
+      maximum_turns: 20,
+      
+      success_criteria: [
+        "Criterion 1",
+        "Criterion 2"
+      ]
+    },
+    // Missions 2 and 3 (same structure)
+  ],
+  
+  // === FREE TALK KNOWLEDGE ===
+  free_talk_knowledge: {
+    theme: "[Theme]",
+    knowledge_base: [
+      "Fact 1",
+      "Fact 2",
+      // 10-15 facts
+    ],
+    example_opening_questions: [
+      "Question 1?",
+      "Question 2?",
+      // 8-10 questions
+    ]
+  }
+};
+
+export default weekXRealData;
+```
+
+---
+
+## KEY DIFFERENCES: Week 1-3 vs Week 4+
+
+| Feature | Week 1-3 (Basic) | Week 4+ (Variant) |
+|---------|------------------|-------------------|
+| **Structure** | Free conversation | Objective-based |
+| **Question format** | No canonical_question field | question_variants (3 per objective) |
+| **Hints** | default_hints at mission level | hints per question variant |
+| **Student invitations** | Optional in conversation | 2 per mission (type: "invitation") |
+| **Objectives array** | ❌ Not used | ✅ 9-12 objectives |
+
+---
+
+## WEEK 1-3 STRUCTURE DETAILS
+
+### Mission Structure:
+- 3 missions per week
+- Free-form conversation (AI determines questions based on mission_context)
+- conversation_topics guides AI on what to discuss
+- example_questions are suggestions, not requirements
+
+### No Objectives Array:
+Week 1-3 don't use objectives array. Instead, AI uses:
+- mission_context (instructions)
+- conversation_topics (topics to cover)
+- example_questions (suggested questions)
+- minimum/maximum_turns (flexibility)
+
+### Hints:
+- default_hints at mission level (3-5 words)
+- Not per-question (since questions are dynamic)
+
+---
+
+## VALIDATION FOR WEEK 1-3
+
+### Check Metadata:
+- [ ] week_id, phase, block, unit filled
+- [ ] title fields in English and Vietnamese
+- [ ] topic fields in both languages
+- [ ] learning_outcome describes grammar
+- [ ] grammar_focus, grammar_pattern, grammar_examples present
+- [ ] target_vocab: 7-10 OBJECTS (not strings!)
+
+### Check Each Mission:
+- [ ] mission_id: 1, 2, 3
+- [ ] title with distinctive keywords (for TurnManager)
+- [ ] nova_greeting is direct dialogue
+- [ ] default_hints: 3-5 words
+- [ ] mission_context includes flexible conversation note
+- [ ] target_vocab: 3-5 words for mission focus
+- [ ] target_pattern: grammar to practice
+- [ ] conversation_topics: 8-10 topics
+- [ ] example_questions: 5-7 questions
+- [ ] minimum_turns: 15, maximum_turns: 20
+- [ ] success_criteria: 3-5 criteria
+
+### Check FreeTalk:
+- [ ] theme matches week
+- [ ] knowledge_base: 10-15 facts
+- [ ] example_opening_questions: 8-10 questions
+
+---
+
+## EXAMPLE: Mission Template (Week 1-3)
+
+```javascript
+{
+  mission_id: 1,
+  title: "First Day at School",  // Distinctive title for TurnManager
+  title_vi: "Ngày Đầu Tiên Đi Học",
+  theme: "Self-introduction",
+  
+  nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
+  default_hints: ["My", "name", "is", "I", "am"],
+  
+  mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging.
+
+⚡ FLEXIBLE CONVERSATION:
+- If student asks YOU questions → Answer naturally like a human friend
+- Allow 12-15 turns if conversation is interactive
+- If student goes off-topic → Acknowledge warmly, then redirect
+- Be human-like: answer questions fully, don't rush`,
+  
+  target_vocab: ["name", "age", "student"],
+  target_pattern: "I am [name/age/student]",
+  
+  conversation_topics: [
+    "Student's name (What is your name?)",
+    "Student's age (How old are you?)",
+    "Being a student (Are you a student?)",
+    "First day feelings (How do you feel today?)",
+    "Simple closing (Great! Nice to meet you!)"
+  ],
+  
+  example_questions: [
+    "What is your name?",
+    "How old are you?",
+    "Are you a student?",
+    "How are you today?"
+  ],
+  
+  minimum_turns: 15,
+  maximum_turns: 20,
+  
+  success_criteria: [
+    "Uses 'I am' correctly for name",
+    "States age with 'years old'",
+    "Uses 'student' naturally",
+    "Engages naturally in conversation"
+  ]
+}
+```
+
+---
+
+**END OF AI TUTOR SCHEMA BASIC**
+
+This schema is for Week 1-3 only. For Week 4+, use SCHEMA_VARIANT instead.

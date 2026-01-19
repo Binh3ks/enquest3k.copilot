@@ -15,18 +15,18 @@ import mindmap from './mindmap.js';
 const weekData = {
   weekId: 2,
   isEasy: true,
-  weekTitle_en: "My Family Squad",
-  weekTitle_vi: "Biệt Đội Gia Đình",
-  grammar_focus: "This is my... (Possession)",
+  weekTitle_en: "My Family",
+  weekTitle_vi: "Gia Đình Tôi",
+  grammar_focus: "This is my...",
   global_vocab: vocab.vocab,
   // ⚠️ MANDATORY: voiceConfig for unique voices per week
-  // Week 2 Easy: Same as Advanced but simpler content
+  // Week 2 Easy: US voices (simple, clear pronunciation for beginners)
   voiceConfig: {
-    narration: 'en-GB-Neural2-A',    // UK Male
-    vocabulary: 'en-GB-Neural2-C',   // UK Female
-    dictation: 'en-US-Neural2-F',    // US Female
-    questions: 'en-GB-Neural2-A',    // UK Male
-    mindmap: 'en-GB-Neural2-C'       // UK Female
+    narration: 'en-US-Neural2-D',    // US Male, clear for stories
+    vocabulary: 'en-US-Neural2-F',   // US Female, friendly for vocab
+    dictation: 'en-US-Neural2-F',    // US Female, neutral for dictation
+    questions: 'en-US-Neural2-D',    // US Male for logic/ask_ai
+    mindmap: 'en-US-Neural2-D'       // US Male for mindmap branches
   },
   stations: {
     read_explore: read,

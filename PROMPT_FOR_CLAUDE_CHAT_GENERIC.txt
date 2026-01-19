@@ -1,0 +1,910 @@
+# PROMPT FOR CLAUDE CHAT - GENERATE WEEK {WEEK_NUMBER} (30 FILES)
+**Copy toàn bộ nội dung này vào Claude Chat (claude.ai) hoặc ChatGPT**
+
+---
+
+You are an expert ESL content creator. Generate Week {WEEK_NUMBER} content for EngQuest3k using the specifications below.
+
+## CONTEXT
+
+**Week Number**: {WEEK_NUMBER}  
+**Theme**: {WEEK_THEME}  
+**CEFR Level**: {CEFR_LEVEL} (usually A0++ for Phase 1)  
+**Grammar Focus**: {GRAMMAR_FOCUS}  
+**Target Vocabulary**: {10_VOCABULARY_WORDS}
+
+**CRITICAL**: App has 2 learning modes + 1 video queries file:
+- **Advanced Mode**: 14 files (8-14 words per sentence, complex structures)
+- **Easy Mode**: 14 files (5-8 words per sentence, simpler structures)
+- **AI Tutor**: 1 file (shared by both modes)
+- **Video Queries**: 1 file (input for YouTube search tool)
+
+**Total files to generate**: 30 files (14 Advanced + 14 Easy + 1 AI Tutor + 1 Video Queries)
+
+---
+
+## CRITICAL REQUIREMENTS
+
+### Master Prompt Reference
+Follow ENGQUEST MASTER PROMPT V28 specifications:
+- CEFR A0++: Present Simple only, Tier 1 vocabulary
+- Sentences: 8-14 words (Advanced mode)
+- Vocab: 10 words exactly
+- Grammar: 20 exercises (mix affirmative, negative, questions)
+- Ask AI: 5 prompts, A0 level only (What is, Where is, Is this, Can I, Do you)
+- Logic: 5 puzzles with story context
+- Word Power: 3 collocations
+- AI Tutor: 3 missions, 15 turns each
+
+### JSON Response Format (V28)
+```json
+{
+  "ack": "Nice!" | "Great!" | "Wonderful!",
+  "recast": "Subject-aware expansion",
+  "question": "Next canonical question",
+  "suggested_hints": ["word1", "word2", "word3", "word4", "word5"],
+  "mission_status": "continue" | "complete"
+}
+```
+
+### Subject Agreement (CRITICAL)
+- Student questions → "You are...", "You have..."
+- Mother questions → "She is...", "Your mother..."
+- Father questions → "He is...", "Your father..."
+
+---
+
+## OUTPUT FORMAT (CRITICAL - MUST FOLLOW)
+
+Generate 30 files in this EXACT format:
+
+```
+=== FILE: ADVANCED/vocab.js ===
+export default {
+  vocab: [
+    { id: 1, word: "{word1}", ... },
+    ...
+  ]
+};
+=== END FILE ===
+
+=== FILE: EASY/vocab.js ===
+export default {
+  vocab: [
+    { id: 1, word: "{word1}", definition_en: "You {action} it.", ... },
+    ...
+  ]
+};
+=== END FILE ===
+
+=== FILE: SHARED/video_queries.json ===
+{
+  "masterQuery": "{theme} {grammar} for kids ESL",
+  "grammar": "{grammar_keywords}",
+  "videos": [...]
+}
+=== END FILE ===
+
+[Continue for all 30 files: 14 ADVANCED + 14 EASY + 1 SHARED AI Tutor + 1 SHARED Video Queries]
+```
+
+**RULES**:
+1. ✅ Use separator: `=== FILE: ADVANCED/filename.js ===` or `=== FILE: EASY/filename.js ===`
+2. ✅ AI Tutor file: `=== FILE: SHARED/week_{XX}_real.js ===`
+3. ✅ Video Queries file: `=== FILE: SHARED/video_queries.json ===`
+4. ✅ End each file with: `=== END FILE ===`
+5. ✅ NO markdown code blocks (```javascript)
+6. ✅ Pure JavaScript/JSON code only
+7. ✅ Include complete code (no "..." placeholders)
+8. ✅ All 30 files in ONE response (or split into 2 responses if too long)
+MODE DIFFERENCES (CRITICAL)
+
+### Advanced Mode (14 files)
+- **Sentences**: 8-14 words, can use "because", compound sentences
+- **Definitions**: Dictionary-style ("A {noun} where you {verb}...")
+- **Grammar**: Mix of affirmative, negative, questions
+- **Examples**: Complex with conjunctions ("My {noun} is {adj} but {adj} because...")
+
+### Easy Mode (14 files)
+- **Sentences**: 5-8 words, simple structures only ("I have a {noun}.")
+- **Definitions**: Action-based ("You {verb} it.")
+- **Grammar**: More affirmative, less complex
+- **Examples**: Simple statements ("My {noun} is {adj}.")
+
+#### 2. ADVANCED/read.js
+```
+- Title: "Emma's Home" (or similar)
+- 10-12 sentences about rooms in a house
+- Bold EXACTLY 10 vocab words: **bedroom**, **kitchen**, etc.
+- Sentences: 8-14 words each (can use "because", "and", "but")
+- Grammar: Present Simple only
+- 3 comprehension questions (A0 level: "What is...?", "Where is...?")
+- Image: "/images/week3/read_cover_w03.jpg"
+```
+
+#### 3. ADVANCED MODE - 14 FILES (Generate in this order)
+
+#### 1. ADVANCED/vocab.js
+```javascript
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "{word1}",
+      pronunciation: "/{IPA}/",
+      definition_vi: "{Vietnamese_translation}",
+      definition_en: "A/An {noun} where/that {description}.",
+      example: "My {word1} is {adj} and {adj}.",
+      collocation: "{verb} {word1}",
+      image_url: "/images/week{XX}/{word1}.jpg",
+      audio_word: "/audio/week{XX}/vocab_{word1}.mp3"
+    },
+    // ... 9 more words (10 total)
+  ]
+};
+```
+**Requirements:**
+- EXACTLY 10 words from syllabus
+- Example sentences: 8-14 words, {CEFR_LEVEL} level, Present Simple only
+- Audio: `/audio/week{XX}/vocab_{word}.mp3`
+- Image: `/images/week{XX}/{word}.jpg`
+
+#### 2. ADVANCED/read.js
+```javascript
+export default {
+  title: "{Story_Title_Related_To_Theme}",
+  image_url: "/images/week{XX}/read_cover_w{XX}.jpg",
+  content_en: "My name is {Character}. I {verb} {object}. {Character_description} has/is/does {description}. **{word1}**... **{word2}**...",
+  content_vi: "{Vietnamese_translation}...",
+  audio_url: null,
+  comprehension_questions: [
+    {
+      id: 1,
+      question_en: "What/Where/How {question}?",
+      question_vi: "{Vietnamese_question}?",
+      options: ["{option1}", "{option2}", "{option3}"],
+      correct_answer: "{correct_option}"
+    }
+    // ... 2 more questions (3 total)
+  ]
+};
+```
+**Requirements:**
+- 10-12 sentences, 8-14 words each
+- Bold EXACTLY 10 vocab words from vocab.js
+- 3 comprehension questions ({CEFR_LEVEL}: "What is...?", "Where is...?", "How many...?")
+- Use grammar focus of the week naturally
+- Present Simple or target tense only
+
+#### 3. ADVANCED/grammar.js
+```javascript
+export default {
+  title: "{Grammar_Focus_Title}",
+  rules: [
+    {
+      id: 1,
+      rule_en: "Use {grammar_rule} when {condition}.",
+      rule_vi: "{Vietnamese_rule}.",
+      example: "{Example_sentence_using_rule}.",
+      icon: "🔤"
+    }
+    // ... 3 more rules (4 total)
+  ],
+  exercises: [
+    {
+      id: 1,
+      type: "multiple_choice",
+      question: "{Subject} {verb} ___ {object}.",
+      options: ["{option1}", "{option2}", "{option3}"],
+      correct_answer: "{correct_option}"
+    }
+    // ... 19 more exercises (20 total)
+  ]
+};
+```
+**Requirements:**
+- 20 exercises: 8 multiple choice, 8 fill blank, 4 unscramble
+- Mix affirmative, negative, questions
+- All sentences use week's grammar focus and vocab
+
+#### 4. ADVANCED/ask_ai.js
+```javascript
+export default {
+  prompts: [
+    {
+      id: 1,
+      context_en: "You see {object}. Ask what it is.",
+      context_vi: "Bạn thấy {object_vi}. Hỏi nó là gì.",
+      audio_url: "/audio/week{XX}/ask_ai_1.mp3",
+      answer: ["What is this?", "What is it?", "What is that?"],
+      hint: "What is..."
+    }
+    // ... 4 more prompts (5 total)
+  ]
+};
+```
+**Requirements:**
+- EXACTLY 5 prompts
+- {CEFR_LEVEL} patterns ONLY: What is, Where is, Is this, Can I, Do you, How many
+- Context: ≤10 words
+- Multiple acceptable answers
+
+#### 5. ADVANCED/logic.js
+```javascript
+export default {
+  puzzles: [
+    {
+      id: 1,
+      question_en: "{Character} has {number} {objects}. {He/She} {action} {number} more {objects}. How many {objects} are there in total?",
+      question_vi: "{Character_vi} có {number} {objects_vi}. {He/She_vi} {action_vi} thêm {number} {objects_vi}. Tổng cộng có bao nhiêu {objects_vi}?",
+      answer: ["{total} {objects}", "{total}", "{total_written} {objects}"],
+      audio_url: "/audio/week{XX}/logic_1.mp3",
+      difficulty: "easy"
+    }
+    // ... 4 more puzzles (5 total)
+  ]
+};
+```
+**Requirements:**
+- EXACTLY 5 puzzles
+- Story context (NOT bare math: "3+2=?")  
+- Use week's theme/vocab
+- Answers with units: ["{number} {objects}"]
+
+#### 6. ADVANCED/dictation.js
+```javascript
+export default {
+  sentences: [
+    { id: 1, text: "{First_sentence_from_read.js}.", meaning: "{Vietnamese_translation}." },
+    { id: 2, text: "{Second_sentence_from_read.js}.", meaning: "{Vietnamese_translation}." }
+    // ... extract ALL sentences from read.js (typically 10-12 sentences)
+  ]
+};
+```
+**Requirements:**
+- Extract ALL sentences from read.js content_en
+- Split by periods (".")  
+- Each sentence becomes 1 dictation item
+- Match Vietnamese translations
+
+#### 7. ADVANCED/shadowing.js
+```javascript
+export default {
+  audio_full: "/audio/week{XX}/read_full.mp3",
+  sentences: [
+    {
+      id: 1,
+      text: "{First_sentence_from_read.js}.",
+      vi: "{Vietnamese_translation}.",
+      audio_url: "/audio/week{XX}/shadowing_1.mp3"
+    },
+    { id: 2, text: "{Second_sentence}.", vi: "{Vietnamese}.", audio_url: "/audio/week{XX}/shadowing_2.mp3" }
+    // ... same sentences as dictation.js (10-12 sentences)
+  ]
+};
+```
+**Requirements:**
+- Same sentences as dictation.js
+- Add audio_url for each sentence
+- Add audio_full (full read.js audio)
+
+#### 8. ADVANCED/writing.js
+```javascript
+export default {
+  title: "{Writing_Task_Title}",
+  prompt_en: "{Writing_prompt_related_to_theme}. What {question}? {Follow_up_question}?",
+  prompt_vi: "{Vietnamese_prompt}. {Question_vi}? {Follow_up_vi}?",
+  keywords: ["{word1}", "{word2}", "{word3}", "{word4}", "{word5}"],
+  min_words: 60,
+  model_sentence: "{Example_paragraph_50_70_words_using_grammar_focus_and_vocab}."
+};
+```
+**Requirements:**
+- Prompt related to week theme
+- Keywords: 5 vocab words  
+- Min words: 60 (Advanced mode)
+- Model sentence: 50-70 words, uses grammar focus naturally
+
+#### 9. ADVANCED/explore.js
+```javascript
+export default {
+  title: "{CLIL_Topic_Related_To_Theme}",
+  clil_subject: "Science" | "Social Studies" | "Math",
+  image_url: "/images/week{XX}/explore_cover_w{XX}.jpg",
+  content_en: "{CLIL_content_with_bolded_words}. {Sentence_1}. **{new_word1}** {description}. **{new_word2}**...",
+  content_vi: "{Vietnamese_translation}...",
+  audio_url: null,
+  comprehension_questions: [
+    { id: 1, question_en: "What/Why/How {question}?", options: [...], correct_answer: "..." }
+    // ... 2 more (3 total)
+  ],
+  critical_thinking: {
+    question_en: "Why do you think {thought_provoking_question}?",
+    question_vi: "{Vietnamese_question}?",
+    min_words: 30
+  }
+};
+```
+**Requirements:**
+- CLIL Science/Social Studies topic related to theme
+- 10 sentences, bold 10 DIFFERENT words (NOT from vocab.js)
+- 3 comprehension + 1 critical thinking question
+
+#### 10. ADVANCED/word_power.js
+```javascript
+export default {
+  collocations: [
+    {
+      id: 1,
+      word: "{collocation_phrase}",
+      pronunciation: "/{IPA}/",
+      cefr_level: "A1",
+      definition_en: "{Definition_of_collocation}.",
+      definition_vi: "{Vietnamese_definition}.",
+      example: "{Short_example_sentence}.",
+      model_sentence: "{Longer_example_40_60_words}.",
+      collocation: "{extended_collocation_phrase}",
+      image_url: "/images/week{XX}/collocation_{word}.jpg"
+    }
+    // ... 2 more collocations (3 total)
+  ]
+};
+```
+**Requirements:**
+- EXACTLY 3 collocations
+- Related to week theme
+- CEFR A1 level
+- Each has: word, pronunciation, definition, example, model_sentence, image
+
+#### 11. ADVANCED/daily_watch.js
+```javascript
+export default {
+  videos: [
+    {
+      id: 1,
+      title: "{Grammar_Focus_Song_Title} - English Singsing",
+      videoId: "",  // Empty for now (will be filled by update_videos.js tool)
+      duration: "03:30",
+      sim_duration: 210,
+      thumb: "",
+      channel: "English Singsing",
+      purpose: "GRAMMAR"
+    },
+    { id: 2, title: "{Theme_Related_Title}", videoId: "", duration: "04:00", sim_duration: 240, thumb: "", channel: "Super Simple Songs", purpose: "TOPIC" },
+    { id: 3, title: "{Theme_Story_Title}", videoId: "", duration: "05:00", sim_duration: 300, thumb: "", channel: "Little Fox", purpose: "TOPIC" },
+    { id: 4, title: "{Math_Topic_Title}", videoId: "", duration: "03:45", sim_duration: 225, thumb: "", channel: "Numberblocks", purpose: "SCIENCE" },
+    { id: 5, title: "{Science_Topic_Title}", videoId: "", duration: "04:30", sim_duration: 270, thumb: "", channel: "SciShow Kids", purpose: "SCIENCE" }
+  ]
+};
+```
+**Requirements:**
+- EXACTLY 5 videos (MANDATORY)
+- Priority channels: English Singsing (grammar), Super Simple Songs/Little Fox (topic), Numberblocks/SciShow Kids (science)
+- Distribution: 1 GRAMMAR + 2 TOPIC + 2 SCIENCE
+- Leave videoId and thumb empty (will be filled by automation tool using video_queries.json)
+- Duration: 60-900 seconds
+
+#### 12. ADVANCED/word_match.js
+```javascript
+export default {
+  pairs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+};
+```
+**Requirements:**
+- Array of IDs matching vocab.js (10 items)
+- Component auto-generates word-image pairs from vocab.js
+
+#### 13. ADVANCED/mindmap.js
+```javascript
+export default {
+  topic: "{Grammar_Focus_Topic}",
+  stems: [
+    {
+      id: 1,
+      stem: "{Subject} {verb} ___.",
+      branches: [
+        { id: 1, label: "{grammar_pattern_1}", audio_url: "/audio/week{XX}/mindmap_1_1.mp3" },
+        { id: 2, label: "{grammar_pattern_2}", audio_url: "/audio/week{XX}/mindmap_1_2.mp3" },
+        { id: 3, label: "{grammar_pattern_3}", audio_url: "/audio/week{XX}/mindmap_1_3.mp3" }
+      ]
+    },
+    {
+      id: 2,
+      stem: "{Another_subject} {verb} ___.",
+      branches: [
+        { id: 1, label: "{pattern_1}", audio_url: "/audio/week{XX}/mindmap_2_1.mp3" },
+        { id: 2, label: "{pattern_2}", audio_url: "/audio/week{XX}/mindmap_2_2.mp3" }
+      ]
+    }
+    // ... 2-4 more stems (4-6 stems total)
+  ]
+};
+```
+**Requirements:**
+- 4-6 stems using week's grammar focus
+- Each stem has 2-4 branches
+- All branches {CEFR_LEVEL}, 3-6 words
+- Audio for each branch
+
+#### 14. ADVANCED/index.js
+```javascript
+import vocab from './vocab.js';
+import read from './read.js';
+import grammar from './grammar.js';
+import askAi from './ask_ai.js';
+import logic from './logic.js';
+import dictation from './dictation.js';
+import shadowing from './shadowing.js';
+import writing from './writing.js';
+import explore from './explore.js';
+import wordPower from './word_power.js';
+import dailyWatch from './daily_watch.js';
+import wordMatch from './word_match.js';
+import mindmap from './mindmap.js';
+
+const weekData = {
+  weekId: {WEEK_NUMBER},
+  isEasy: false,
+  weekTitle_en: "{WEEK_THEME_EN}",
+  weekTitle_vi: "{WEEK_THEME_VI}",
+  grammar_focus: "{GRAMMAR_FOCUS}",
+  global_vocab: vocab.vocab,
+  voiceConfig: {
+    voiceURI: 'Google UK English Female',
+    rate: 0.85,
+    pitch: 1.1,
+    volume: 1.0
+  },
+  stations: {
+    vocab: vocab.vocab,
+    read,
+    grammar,
+    ask_ai: askAi,
+    logic,
+    dictation,
+    shadowing,
+    writing,
+    explore,
+    word_power: wordPower,
+    daily_watch: dailyWatch,
+    word_match: wordMatch,
+    mindmap
+  }
+};
+
+export default weekData;
+```
+**Requirements:**
+- Import all 13 station files
+- weekId: {WEEK_NUMBER}, isEasy: false
+- Include voiceConfig (Google UK English Female)
+- Export weekData with all stations
+---
+
+### PART 2: EASY MODE (14 files - Simplified versions)
+
+**CRITICAL SIMPLIFICATIONS:**
+- Sentences: 5-8 words (vs 8-14 in Advanced)
+- Definitions: Action-based ("You {verb} it") vs Dictionary-style ("A {noun} where you {verb}")
+- Grammar: More affirmative, fewer compound sentences
+- Audio paths: `/audio/week{XX}_easy/...` (NOT `/audio/week{XX}/`)
+- Image paths: `/images/week{XX}_easy/...` (NOT `/images/week{XX}/`)
+
+#### 15. EASY/vocab.js
+```javascript
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "{word1}",
+      pronunciation: "/{IPA}/",
+      definition_vi: "{Vietnamese_translation}",
+      definition_en: "You {verb} it.",  // ← SIMPLER (action-based)
+      example: "I {verb} {preposition} my {word1}.",  // ← 5-8 words
+      collocation: "{verb} {word1}",
+      image_url: "/images/week{XX}_easy/{word1}.jpg",  // ← Easy folder
+      audio_word: "/audio/week{XX}_easy/vocab_{word1}.mp3"  // ← Easy folder
+    }
+    // ... 9 more words (10 total)
+  ]
+};
+```
+
+#### 16. EASY/read.js
+```javascript
+export default {
+  title: "{Same_Story_Title_As_Advanced}",
+  image_url: "/images/week{XX}_easy/read_cover_w{XX}.jpg",
+  content_en: "My name is {Character}. I {verb} {object}. My {object} is {adj}. It has {number} {items}. I have a **{word1}**...",
+  // ← 8-10 sentences, 5-8 words each, NO compound sentences
+  content_vi: "...",
+  audio_url: null,
+  comprehension_questions: [...]  // Same 3 questions
+};
+```
+**Simplification Example:**
+- Advanced: "My {noun} is {adj} but {adj} because I have {quantity} {objects}." (11 words, compound)
+- Easy: "My {noun} is {adj}. I have {quantity} {objects}. It is {adj}." (14 words total, 3 simple sentences)
+
+#### 17-27. EASY/[remaining 12 files]
+```
+- grammar.js: Same 20 exercises, simpler sentence structures
+- ask_ai.js: Same 5 prompts, simpler contexts (5-8 words)
+- logic.js: Same 5 puzzles, simpler numbers (1-5 instead of 1-10)
+- dictation.js: Extract from EASY read.js (8-10 sentences)
+- shadowing.js: Same as Easy dictation, audio paths /audio/week{XX}_easy/...
+- writing.js: Min 40 words (vs 60 in Advanced)
+- explore.js: 8 sentences (vs 10 in Advanced), simpler vocabulary
+- word_power.js: Same 3 collocations, simpler model sentences (30-40 words)
+- daily_watch.js: SAME 5 videos as Advanced (shared videos, no _easy suffix)
+- word_match.js: Same [1-10] array
+- mindmap.js: Same structure, simpler branches (3-5 words)
+- index.js: isEasy: true (see below)
+```
+
+#### 28. EASY/index.js
+```javascript
+import vocab from './vocab.js';
+// ... import all 13 files
+
+const weekData = {
+  weekId: {WEEK_NUMBER},
+  isEasy: true,  // ← ONLY difference from Advanced index.js
+  weekTitle_en: "{WEEK_THEME_EN}",
+  weekTitle_vi: "{WEEK_THEME_VI}",
+  grammar_focus: "{GRAMMAR_FOCUS}",
+  global_vocab: vocab.vocab,
+  voiceConfig: {
+    voiceURI: 'Google UK English Female',
+    rate: 0.85,
+    pitch: 1.1,
+    volume: 1.0
+  },
+  stations: {
+    vocab: vocab.vocab,
+    read,
+    grammar,
+    // ... all 13 stations
+  }
+};
+
+export default weekData;
+```
+
+---
+
+### PART 3: AI TUTOR (1 file - SHARED by both modes)
+
+#### 29. SHARED/week_{XX}_real.js
+```javascript
+export const week{XX}RealData = {
+  week_id: {WEEK_NUMBER},
+  phase: {PHASE_NUMBER},
+  block: "{BLOCK_LETTER}",
+  title: "{WEEK_THEME_EN}",
+  theme: "{theme_keywords}",
+  target_vocab: ["{core_word1}", "{core_word2}", "{core_word3}", "{core_word4}", "{core_word5}", "{core_word6}"],
+  grammar_focus: "{GRAMMAR_FOCUS}",
+  
+  missions: [
+    {
+      mission_id: 1,
+      title: "{Mission_1_Title_Related_To_Theme}",
+      goal: "{Mission_goal_description}",
+      turns: 15,  // ← EXACTLY 15 turns
+      opening: {
+        en: "{Opening_question_or_greeting}?",
+        vi: "{Vietnamese_translation}?"
+      },
+      topics: [
+        "{topic_1}",
+        "{topic_2}", 
+        "{topic_3}",
+        "{topic_4}",
+        "{topic_5}"
+      ],
+      canonical_questions: [
+        {
+          turn: 1,
+          question: "{Question_using_grammar_focus}?",
+          hints: ["{word1}", "{word2}", "{word3}", "{word4}", "{word5}", "{word6}"],
+          target_patterns: ["{Expected_answer_pattern_1}", "{Expected_answer_pattern_2}"]
+        }
+        // ... 14 more questions (15 total)
+      ],
+      response_templates: [
+        {
+          context: "student {action_description}",
+          triggers: ["{keyword1}", "{keyword2}", "{keyword3}"],
+          ack: "Nice!",  // ← V28 format (NOT teacher_ack)
+          recast: "{Subject-aware_expansion_modeling_correct_grammar}!",  // ← Subject-aware
+          question: "{Next_canonical_question}?"
+        }
+        // ... 14 more templates (15 total)
+      ]
+    },
+    
+    {
+      mission_id: 2,
+      title: "{Mission_2_Title}",
+      goal: "{Mission_2_goal}",
+      turns: 15,
+      opening: { en: "...", vi: "..." },
+      topics: [...],
+      canonical_questions: [...]  // 15 questions
+    },
+    
+    {
+      mission_id: 3,
+      title: "{Mission_3_Title}",
+      goal: "{Mission_3_goal}",
+      turns: 15,
+      opening: { en: "...", vi: "..." },
+      topics: [...],
+      canonical_questions: [...]  // 15 questions
+    }
+  ]
+};
+
+export default week{XX}RealData;
+```
+
+**Requirements:**
+- 3 missions EXACTLY
+- Each mission: 15 turns EXACTLY
+- 6 core vocab words (not all 10)
+- NEW V28 format: `ack`/`recast`/`question` (NOT `teacher_ack`/`teacher_recast`/`teacher_question`)
+- Subject agreement: "You {verb}..." for student, "It is..." for objects, "He/She {verb}..." for third person
+- ACK options: Nice!/Great!/Wonderful! ONLY (not Perfect/Good/Excellent)
+- RECAST: Model correct grammar naturally, never say "wrong"
+- Each canonical_question has: turn, question, hints (6 words), target_patterns
+
+---
+
+### PART 4: VIDEO QUERIES (1 file - INPUT for video search tool)
+
+#### 30. SHARED/video_queries.json
+```json
+{
+  "masterQuery": "{theme} {grammar} for kids ESL",
+  "grammar": "{grammar_focus_keywords}",
+  "videos": [
+    {
+      "id": 1,
+      "query": "English Singsing {grammar_keywords} song for kids",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 2,
+      "query": "{theme_keywords} for kids educational",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 3,
+      "query": "{theme_story_keywords} ESL cartoons for kids",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 4,
+      "query": "Numberblocks {math_concept} for kids",
+      "purpose": "SCIENCE"
+    },
+    {
+      "id": 5,
+      "query": "SciShow Kids {science_topic} for children",
+      "purpose": "SCIENCE"
+    }
+  ]
+}
+```
+
+**Requirements:**
+- EXACTLY 5 video queries
+- Distribution: 1 GRAMMAR + 2 TOPIC + 2 SCIENCE
+- Query 1 (GRAMMAR): MUST include "English Singsing" + grammar keywords
+- Query 2-3 (TOPIC): Theme-related, use "for kids educational" or "ESL cartoons"
+- Query 4 (SCIENCE): MUST include "Numberblocks" or math concept
+- Query 5 (SCIENCE): MUST include "SciShow Kids" or science topic
+- Keep queries 3-7 keywords (no long sentences)
+- This file will be used by update_videos.js tool to auto-fill daily_watch.js
+
+**Example (Week 3 - Home Sweet Home, Prepositions):**
+```json
+{
+  "masterQuery": "rooms furniture prepositions in on under for kids ESL",
+  "grammar": "prepositions of place in on under",
+  "videos": [
+    {
+      "id": 1,
+      "query": "English Singsing prepositions in on under song",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 2,
+      "query": "rooms house furniture for kids educational",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 3,
+      "query": "home family rooms Little Fox ESL cartoons",
+      "purpose": "TOPIC"
+    },
+    {
+      "id": 4,
+      "query": "Numberblocks counting furniture objects",
+      "purpose": "SCIENCE"
+    },
+    {
+      "id": 5,
+      "query": "SciShow Kids houses buildings protection",
+      "purpose": "SCIENCE"
+    }
+  ]
+}
+```
+
+---
+
+## EXAMPLE OUTPUT FORMAT
+
+```
+=== FILE: ADVANCED/vocab.js ===
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "{word1}",
+      pronunciation: "/{IPA}/",
+      definition_vi: "{Vietnamese}",
+      definition_en: "{Dictionary_definition}.",
+      example: "{Example_8_14_words}.",
+      collocation: "{verb} {word}",
+      image_url: "/images/week{XX}/{word1}.jpg",
+      audio_word: "/audio/week{XX}/vocab_{word1}.mp3"
+    },
+    // ... 9 more words (10 total)
+  ]
+};
+=== END FILE ===
+
+=== FILE: ADVANCED/read.js ===
+export default {
+  title: "{Story_Title}",
+  image_url: "/images/week{XX}/read_cover_w{XX}.jpg",
+  content_en: "{Character} {verbs}. **{word1}**... **{word2}**...",
+  content_vi: "{Vietnamese_translation}...",
+  audio_url: null,
+  comprehension_questions: [...]
+};
+=== END FILE ===
+
+[... continue for all 14 ADVANCED files ...]
+
+=== FILE: EASY/vocab.js ===
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "{word1}",
+      pronunciation: "/{IPA}/",
+      definition_vi: "{Vietnamese}",
+      definition_en: "You {verb} it.",  // ← SIMPLER
+      example: "I {verb} my {word1}.",  // ← 5-8 words
+      collocation: "{verb} {word}",
+      image_url: "/images/week{XX}_easy/{word1}.jpg",  // ← Easy folder
+      audio_word: "/audio/week{XX}_easy/vocab_{word1}.mp3"
+    },
+    // ... 9 more words
+  ]
+};
+=== END FILE ===
+
+[... continue for all 14 EASY files ...]
+
+=== FILE: SHARED/week_{XX}_real.js ===
+export const week{XX}RealData = {
+  week_id: {WEEK_NUMBER},
+  phase: {PHASE},
+  block: "{BLOCK}",
+  title: "{THEME}",
+  missions: [
+    {
+      mission_id: 1,
+      title: "{Mission_1_Title}",
+      turns: 15,
+      opening: { en: "...", vi: "..." },
+      canonical_questions: [...],  // 15 questions
+      response_templates: [...]  // 15 templates
+    },
+    // ... 2 more missions
+  ]
+};
+export default week{XX}RealData;
+=== END FILE ===
+
+=== FILE: SHARED/video_queries.json ===
+{
+  "masterQuery": "{theme} {grammar} for kids ESL",
+  "grammar": "{grammar_keywords}",
+  "videos": [
+    { "id": 1, "query": "English Singsing {grammar} song", "purpose": "GRAMMAR" },
+    { "id": 2, "query": "{theme} for kids", "purpose": "TOPIC" },
+    { "id": 3, "query": "{theme} ESL cartoons", "purpose": "TOPIC" },
+    { "id": 4, "query": "Numberblocks {math_concept}", "purpose": "SCIENCE" },
+    { "id": 5, "query": "SciShow Kids {science_topic}", "purpose": "SCIENCE" }
+  ]
+}
+=== END FILE ===
+```
+
+**IMPORTANT NOTES:**
+1. If response is too long, split into **2 responses**:
+   - Response 1: All 14 ADVANCED files + video_queries.json (15 files)
+   - Response 2: All 14 EASY files + 1 SHARED AI Tutor (15 files)
+2. Always use separator format: `=== FILE: MODE/filename.js ===`
+3. NO markdown code blocks (no ```javascript)
+4. Include complete code, NO placeholders (...existing code...)
+
+---
+
+## VALIDATION CHECKLIST
+
+Before submitting, verify:
+
+**File Count:**
+- ✅ 30 files total (14 ADVANCED + 14 EASY + 1 AI Tutor + 1 Video Queries)
+- ✅ Each file has `=== FILE: MODE/filename.js ===` and `=== END FILE ===`
+
+**Advanced Mode (14 files):**
+- ✅ ADVANCED/vocab.js has EXACTLY 10 words
+- ✅ ADVANCED/read.js has EXACTLY 10 bolded words from vocab, 10-12 sentences, 8-14 words each
+- ✅ ADVANCED/grammar.js has EXACTLY 20 exercises
+- ✅ ADVANCED/ask_ai.js has EXACTLY 5 prompts ({CEFR_LEVEL})
+- ✅ ADVANCED/logic.js has EXACTLY 5 puzzles
+- ✅ ADVANCED/word_power.js has EXACTLY 3 collocations
+- ✅ ADVANCED/daily_watch.js has EXACTLY 5 videos
+- ✅ All audio paths: `/audio/week{XX}/...`
+- ✅ All image paths: `/images/week{XX}/...`
+
+**Easy Mode (14 files):**
+- ✅ EASY/vocab.js has EXACTLY 10 words, definitions action-based, examples 5-8 words
+- ✅ EASY/read.js has EXACTLY 10 bolded words, 8-10 sentences, 5-8 words each, NO compound sentences
+- ✅ EASY/grammar.js has EXACTLY 20 exercises
+- ✅ EASY/ask_ai.js has EXACTLY 5 prompts
+- ✅ EASY/logic.js has EXACTLY 5 puzzles (simpler numbers)
+- ✅ EASY/word_power.js has EXACTLY 3 collocations
+- ✅ EASY/daily_watch.js has SAME 5 videos as Advanced
+- ✅ All audio paths: `/audio/week{XX}_easy/...`
+- ✅ All image paths: `/images/week{XX}_easy/...`
+
+**AI Tutor (1 file):**
+- ✅ SHARED/week_{XX}_real.js has 3 missions
+- ✅ Each mission has EXACTLY 15 turns
+- ✅ Uses NEW V28 format: `ack`/`recast`/`question` (NOT `teacher_ack`)
+- ✅ ACK options: Nice!/Great!/Wonderful! ONLY
+- ✅ Subject agreement enforced in RECAST examples
+
+**Video Queries (1 file):**
+- ✅ SHARED/video_queries.json has EXACTLY 5 queries
+- ✅ Distribution: 1 GRAMMAR + 2 TOPIC + 2 SCIENCE
+- ✅ Query 1 includes "English Singsing" or grammar keywords
+- ✅ Queries 4-5 include "Numberblocks"/"SciShow Kids" or science topics
+
+**Code Quality:**
+- ✅ NO markdown code blocks (no ```javascript)
+- ✅ All code is complete (no "..." placeholders except in example comments)
+- ✅ Proper JavaScript/JSON syntax (quotes, commas, semicolons)
+- ✅ Grammar tense matches week's focus
+
+---
+
+## START GENERATION
+
+Generate all 30 files now using separator format. Include complete code for all stations. No placeholders. If response is too long, split into 2 responses.
+
+**BEFORE YOU START:**
+1. Read the week number, theme, grammar focus, and vocabulary from the context above
+2. Replace ALL {placeholders} with actual content
+3. Generate COMPLETE code (not summaries or "...")
+
+**BEGIN GENERATION:**

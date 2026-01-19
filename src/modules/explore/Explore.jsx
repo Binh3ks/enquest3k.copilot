@@ -21,6 +21,17 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
   const [attempts, setAttempts] = useState(savedData.attempts || {}); // Track attempts per question
   const [showAnswer, setShowAnswer] = useState(savedData.showAnswer || {}); // Show correct answer after 3 attempts
   const [completedIds, setCompletedIds] = useState(() => new Set(savedData.completedIds || []));
+  const [imageSrc, setImageSrc] = useState("https://placehold.co/800x400/e2e8f0/64748b?text=Image+Loading...");
+
+  // Preload image to avoid flicker and handle errors
+  useEffect(() => {
+    if (data?.image_url) {
+      const img = new Image();
+      img.src = data.image_url;
+      img.onload = () => setImageSrc(data.image_url);
+      img.onerror = () => setImageSrc("https://placehold.co/800x400/e2e8f0/64748b?text=Image+Failed+to+Load");
+    }
+  }, [data?.image_url]);
 
   // 🔥 Debounced Save to Universal Progress System
   useEffect(() => {
@@ -119,7 +130,7 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
       {/* HEADER & CONTENT */}
       <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative group">
         <div className="w-full bg-slate-900 relative overflow-hidden">
-            {data.image_url && <img src={data.image_url} className="w-full h-auto transition-transform duration-700 group-hover:scale-105" alt="cover" onError={(e) => { e.target.src="https://placehold.co/800x400/e2e8f0/64748b?text=Image+Loading..."; }} />}
+            <img src={imageSrc} className="w-full h-auto transition-transform duration-700 group-hover:scale-105" alt="cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
                <h2 className="text-xl font-black text-white leading-tight drop-shadow-md">{data.title_en}</h2>
             </div>

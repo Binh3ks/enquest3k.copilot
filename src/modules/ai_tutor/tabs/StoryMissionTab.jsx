@@ -10,11 +10,35 @@ import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
-import week1RealData from '../../../data/weeks/week_01_real'; // 🔥 Import real syllabus
+import week1RealData from '../../../data/weeks/week_01_real'; // Week 1 syllabus
+import week2RealData from '../../../data/weeks/week_02_real?v=3'; // Week 2 syllabus - CACHE BUST (mission_context added)
+import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
+import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
-import { week1Objectives } from '../../../data/syllabus/week1_objectives'; // Mission 1
-import { mission2Objectives } from '../../../data/syllabus/week1_mission2_objectives'; // Mission 2
-import { mission3Objectives } from '../../../data/syllabus/week1_mission3_objectives'; // Mission 3
+import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
+
+// 🔥 DEBUG: Verify imports loaded correctly
+console.log('📦 IMPORTS CHECK:', {
+  week1Title: week1RealData?.title || week1RealData?.week_title_en,
+  week1Missions: week1RealData?.story_missions?.length,
+  week2Title: week2RealData?.title,
+  week2Missions: week2RealData?.story_missions?.length,
+  week3Title: week3RealData?.title,
+  week3Missions: week3RealData?.story_missions?.length,
+  week4Title: week4RealData?.title,
+  week4Missions: week4RealData?.story_missions?.length
+});
+
+// Week 1 Objectives
+import { week1Objectives } from '../../../data/syllabus/week1_objectives'; // Week 1 Mission 1
+import { mission2Objectives } from '../../../data/syllabus/week1_mission2_objectives'; // Week 1 Mission 2
+import { mission3Objectives } from '../../../data/syllabus/week1_mission3_objectives'; // Week 1 Mission 3
+
+// Week 2 Objectives - DISABLED: Using mission_context mode like Week 1 Mission 1
+// import { week2Mission1Objectives } from '../../../data/syllabus/week2_mission1_objectives'; // Week 2 Mission 1
+// import { week2Mission2Objectives } from '../../../data/syllabus/week2_mission2_objectives'; // Week 2 Mission 2
+// import { week2Mission3Objectives } from '../../../data/syllabus/week2_mission3_objectives'; // Week 2 Mission 3
+
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 
 /**
@@ -22,10 +46,20 @@ import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 
  * REDESIGNED: Large UI, Navigation, Mission Menu
  */
 const StoryMissionTab = () => {
-  const { user, currentWeek } = useUserStore();
+  const { user } = useUserStore();
+  const location = useLocation(); // 🔥 Get location from react-router
+  // 🔥 Parse weekId from pathname: /week/2/read_explore -> 2
+  const weekNumber = parseInt(location.pathname.match(/\/week\/(\d+)/)?.[1] || '1');
+  const currentWeek = `week-${weekNumber}`; // 🔥 Construct currentWeek
+  
+  // 🔥 DEBUG: Check what week we're actually on
+  console.log('🔍 StoryMissionTab Mounted - Week from URL:', {
+    currentWeek,
+    pathname: window.location.pathname,
+    userName: user?.name
+  });
   
   // 🔥 Universal Progress System Integration
-  const weekNumber = parseInt(currentWeek?.replace('week-', '') || '1');
   const { savedData, saveProgress, markComplete } = useStationProgress(weekNumber, 'ai_story');
   
   // Separate selectors to prevent infinite re-renders
@@ -41,7 +75,8 @@ const StoryMissionTab = () => {
   const vocabMastery = useTutorStore(state => state.vocabMastery);
   
   // Restore state from Universal Progress System
-  const [currentMissionIndex, setCurrentMissionIndex] = useState(savedData.currentMissionIndex || 0);
+  // 🔥 FIX: Always start from mission 0 to avoid showing cached missions from other weeks
+  const [currentMissionIndex, setCurrentMissionIndex] = useState(0);
   const [viewMode, setViewMode] = useState('menu'); // 'menu' or 'mission'
   const [hints, setHints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -53,7 +88,19 @@ const StoryMissionTab = () => {
   const [currentQuestion, setCurrentQuestion] = useState('');
   const [studentName, setStudentName] = useState(savedData.studentName || null); // 🔥 Restore student name
   
-  const currentMission = week1RealData.story_missions?.[currentMissionIndex];
+  // 🔥 Dynamic week data selection based on current week
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+  const currentMission = weekRealData.story_missions?.[currentMissionIndex];
+  
+  // 🔥 DEBUG: Log week data on mount
+  console.log('🎯 StoryMissionTab - Week Data Check:', {
+    weekNumber,
+    currentWeek,
+    hasWeekData: !!weekRealData,
+    weekTitle: weekRealData?.title,
+    missionCount: weekRealData?.story_missions?.length,
+    missions: weekRealData?.story_missions?.map(m => m.title)
+  });
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -64,14 +111,18 @@ const StoryMissionTab = () => {
   
   // Initialize NovaEngine when component mounts or week changes
   useEffect(() => {
-    const weekData = getCurrentWeekData(currentWeek || 'week-1');
-    const userProfile = {
-      name: user?.name || 'Student',
-      age: user?.age || 8
+    const initNovaEngine = async () => {
+      const weekData = await getCurrentWeekData(currentWeek || 'week-1');
+      const userProfile = {
+        name: user?.name || 'Student',
+        age: user?.age || 8
+      };
+      
+      novaEngineRef.current = new NovaEngine(weekData, userProfile);
+      console.log('🧠 NovaEngine initialized for StoryMissionTab');
     };
     
-    novaEngineRef.current = new NovaEngine(weekData, userProfile);
-    console.log('🧠 NovaEngine initialized for StoryMissionTab');
+    initNovaEngine();
   }, [currentWeek, user]);
 
   // Auto-scroll to bottom
@@ -85,10 +136,10 @@ const StoryMissionTab = () => {
       console.log('🚀 StoryMissionTab: Initializing vocab only...');
       initializingRef.current = true;
       
-      // 🔥 STEP 4: Initialize vocab mastery with Week 1 target vocabulary
-      const week1Vocab = week1RealData.global_vocab || [];
+      // 🔥 STEP 4: Initialize vocab mastery with current week's target vocabulary
+      const weekVocab = weekRealData.global_vocab || [];
       // Extract just the word strings from vocab objects
-      const vocabWords = week1Vocab.map(v => typeof v === 'string' ? v : v.word);
+      const vocabWords = weekVocab.map(v => typeof v === 'string' ? v : v.word);
       initVocabMastery(vocabWords);
       console.log('📚 Vocab Mastery Initialized:', vocabWords.length, 'words');
       
@@ -119,7 +170,7 @@ const StoryMissionTab = () => {
     }
     
     // 🔥 CRITICAL: Ensure we have the correct mission data
-    const currentMission = week1RealData.story_missions?.[missionIndex];
+    const currentMission = weekRealData.story_missions?.[missionIndex];
     if (!currentMission) {
       console.error('❌ Mission not found for index:', missionIndex);
       return;
@@ -129,46 +180,72 @@ const StoryMissionTab = () => {
       index: missionIndex,
       id: currentMission.mission_id,
       title: currentMission.title,
-      target_vocab: currentMission.target_vocab,
-      minimum_turns: currentMission.minimum_turns
+      target_vocab: currentMission.target_vocab || currentMission.vocabulary_focus,
+      minimum_turns: currentMission.minimum_turns || 15
     });
     
     console.log('📊 Chat history length before init:', messages.length);
     console.log('🎯 Mission details:', {
       missionId: currentMission.mission_id,
       title: currentMission.title,
-      target_vocab: currentMission.target_vocab
+      target_vocab: currentMission.target_vocab || currentMission.vocabulary_focus
     });
     
     // 🔥 ONE BRAIN: Create TurnManager ONCE (the ONLY creation point)
     console.log('🏗️ Creating TurnManager for Mission', currentMission.mission_id);
     
-    // 🔥 NEW: Get objectives for Mission 1 (objective-driven mode)
-    // 🎯 Load objectives based on mission_id
+    // 🔥 NEW: Get objectives for Mission (objective-driven mode)
+    // 🎯 Load objectives based on BOTH week AND mission_id
     let objectives = null;
     let missionVocabulary = null;
     
-    if (currentMission.mission_id === 1) {
-      objectives = week1Objectives.objectives;
-      missionVocabulary = week1Objectives.constraints.vocabulary;
-    } else if (currentMission.mission_id === 2) {
-      objectives = mission2Objectives.objectives;
-      missionVocabulary = mission2Objectives.constraints.vocabulary;
-    } else if (currentMission.mission_id === 3) {
-      objectives = mission3Objectives.objectives;
-      missionVocabulary = mission3Objectives.constraints.vocabulary;
+    // Determine week from currentWeek ('week-1', 'week-2', etc.)
+    const weekNum = parseInt(currentWeek.split('-')[1]);
+    
+    if (weekNum === 1) {
+      // Week 1 - Using mission_context mode (same as Week 2)
+      // DISABLED objectives: Together AI doesn't follow objective-driven prompts reliably
+      // Instead, use mission_context field in week_01_real.js which works perfectly
+      objectives = null; // No objectives → Uses mission_context from week_01_real.js
+      missionVocabulary = null; // Will use vocabulary from mission data directly
+      
+      // 🔥 OLD CODE (DISABLED - AI doesn't follow objectives):
+      // if (currentMission.mission_id === 1) {
+      //   objectives = week1Objectives.objectives;
+      //   missionVocabulary = week1Objectives.constraints.vocabulary;
+      // } else if (currentMission.mission_id === 2) {
+      //   objectives = mission2Objectives.objectives;
+      //   missionVocabulary = mission2Objectives.constraints.vocabulary;
+      // } else if (currentMission.mission_id === 3) {
+      //   objectives = mission3Objectives.objectives;
+      //   missionVocabulary = mission3Objectives.constraints.vocabulary;
+      // }
+    } else if (weekNum === 2) {
+      // Week 2 - Using mission_context mode (no objectives)
+      // Week 2 missions use mission_context field in week_02_real.js (same as Week 1 Mission 1)
+      objectives = null; // No objectives → Uses mission_context from week_02_real.js
+      missionVocabulary = null; // Will use vocabulary from mission data directly
+    } else if (weekNum >= 3) {
+      // Week 3+ - Use objectives from week_XX_real.js
+      // These weeks have full objectives array in their story_missions
+      objectives = currentMission.objectives || null;
+      missionVocabulary = null; // Will use vocabulary from mission data directly
     }
     
-    console.log('🎯 Objectives for Mission', currentMission.mission_id, ':', objectives ? 'LOADED (Objective-driven)' : 'LEGACY (Step-based)');
+    console.log('🎯 Objectives for Week', weekNum, 'Mission', currentMission.mission_id, ':', objectives ? 'LOADED (Objective-driven)' : 'LEGACY (Step-based)');
     
     // Inject vocabulary into mission data for prompt builder
     if (missionVocabulary) {
       currentMission.vocabulary = missionVocabulary;
     }
-    console.log('🎯 Objectives for Mission', currentMission.mission_id, ':', objectives ? 'LOADED (Objective-driven)' : 'LEGACY (Step-based)');
     
-    // 🔥 Create TurnManager with objectives (if available)
-    const turnManager = new TurnManager(currentMission.mission_id, currentMission.title, objectives);
+    // 🔥 Create TurnManager with objectives (if available) AND missionData for minimum_turns
+    const turnManager = new TurnManager(
+      currentMission.mission_id, 
+      currentMission.title, 
+      objectives, 
+      currentMission // Pass full mission data for minimum_turns, maximum_turns
+    );
     registerTurnManager(turnManager); // Register in singleton registry
     
     try {
@@ -182,7 +259,7 @@ const StoryMissionTab = () => {
           missionIndex: missionIndex,
           turnCount: 1,
           minimumTurns: currentMission?.minimum_turns || 10,
-          realSyllabusData: week1RealData,
+          realSyllabusData: weekRealData,
           studentName: null,
           isOpeningTurn: true,
           turnManager: turnManager, // 🔥 Pass TurnManager reference
@@ -211,7 +288,34 @@ const StoryMissionTab = () => {
         console.log('✅ Objective mode: No step marking needed');
       }
       
-      const openingLine = guardedOpening.ai_response || 'Hello! I am Ms. Nova. What is your name?';
+      // 🔥 HARDCODE OPENING: Week 4 has objectives, Weeks 1-3 have complete greetings
+      let openingLine;
+      let firstObjectiveHints;
+      
+      if (objectives && objectives.length > 0) {
+        // Week 4 style: Use question_variants if available
+        const missionGreeting = currentMission.nova_greeting || 'Hi! I\'m Ms. Nova!';
+        
+        // 🔥 NEW: Get variant from TurnManager
+        const variant = turnManager.getQuestionVariant();
+        if (variant) {
+          openingLine = `${missionGreeting} ${variant.question}`;
+          firstObjectiveHints = variant.hints || ['My', 'name', 'is', 'I', 'am'];
+          console.log('🎲 Week 4 opening with variant:', variant.question);
+        } else {
+          // Fallback to canonical
+          const firstObjective = objectives[0];
+          const firstQuestion = firstObjective.canonical_question || 'How are you?';
+          openingLine = `${missionGreeting} ${firstQuestion}`;
+          firstObjectiveHints = firstObjective.hints || guardedOpening.suggested_hints || ['My', 'name', 'is', 'I', 'am'];
+          console.log('🎯 Week 4 style opening (greeting + canonical question):', openingLine);
+        }
+      } else {
+        // Weeks 1-3 style: Use complete nova_greeting as-is
+        openingLine = currentMission.nova_greeting || 'Hello! I am Ms. Nova, your English teacher. What is your name?';
+        firstObjectiveHints = currentMission.default_hints || guardedOpening.suggested_hints || ['My', 'name', 'is', 'I', 'am'];
+        console.log('🎯 Weeks 1-3 style opening (complete greeting):', openingLine);
+      }
       
       // Add opening message
       const welcomeMessage = {
@@ -235,16 +339,11 @@ const StoryMissionTab = () => {
         console.error('❌ TTS error for opening message:', error);
       }
       
-      // 🔥 CRITICAL: Set hints from guarded opening response
-      if (guardedOpening.suggested_hints && guardedOpening.suggested_hints.length > 0) {
-        const scrambledHints = [...guardedOpening.suggested_hints].sort(() => Math.random() - 0.5);
-        setHints(scrambledHints);
-        setShowHints(true);
-        console.log('💡 Opening hints set:', scrambledHints);
-      } else {
-        console.warn('⚠️ No hints from opening response');
-        setShowHints(false);
-      }
+      // 🔥 CRITICAL: Set hints from FIRST OBJECTIVE (not AI response)
+      const scrambledHints = [...firstObjectiveHints].sort(() => Math.random() - 0.5);
+      setHints(scrambledHints);
+      setShowHints(true);
+      console.log('💡 Opening hints set:', scrambledHints);
     } catch (error) {
       console.error('❌ Error getting opening response:', error);
       // Fallback
@@ -325,7 +424,7 @@ const StoryMissionTab = () => {
 
     try {
       // 🔥 CRITICAL: Ensure current mission is available
-      const currentMission = week1RealData.story_missions?.[currentMissionIndex];
+      const currentMission = weekRealData.story_missions?.[currentMissionIndex];
       if (!currentMission) {
         console.error('❌ Current mission not found:', currentMissionIndex);
         return;
@@ -339,10 +438,10 @@ const StoryMissionTab = () => {
       });
       
       // Get week data for context
-      const weekData = getCurrentWeekData(currentWeek || 'week-1');
+      const weekData = await getCurrentWeekData(currentWeek || 'week-1');
       
-      // 🔥 Use REAL SYLLABUS data for Week 1
-      const realSyllabusData = (currentWeek === 'week-1' || !currentWeek) ? week1RealData : null;
+      // 🔥 Use REAL SYLLABUS data for current week
+      const realSyllabusData = weekRealData;
       
       // 🔥 STEP 3: Get adaptive scaffolding based on learner style
       const learnerStyle = getLearnerStyle();
@@ -364,6 +463,17 @@ const StoryMissionTab = () => {
       
       console.log('📬 Chat history being sent to AI:', chatHistory.length, 'messages');
       console.log('📝 Last message in history:', chatHistory[chatHistory.length - 1]);
+      
+      // 🔥 NEW: Log full conversation for debugging
+      console.log('\n📜 === FULL CONVERSATION HISTORY ===');
+      chatHistory.forEach((msg, idx) => {
+        const speaker = msg.role === 'assistant' ? '🤖 Ms. Nova' : '👤 Student';
+        console.log(`${idx + 1}. ${speaker}: "${msg.content}"`);
+      });
+      console.log('📜 === END CONVERSATION HISTORY ===\n');
+
+      // 🔥 Get TurnManager for context (but don't process turn yet - let AI handle it)
+      const tm = getTurnManager(currentMission.mission_id);
 
       // 🔥 NEW: Use NovaEngine instead of direct AI call
       const aiResponse = await novaEngineRef.current.sendToNova({
@@ -381,7 +491,7 @@ const StoryMissionTab = () => {
           realSyllabusData,
           studentName: studentName || null,  // 🔥 NEW: Pass student name to AI
           mission: currentMission,           // 🔥 Pass mission object
-          turnManager: getTurnManager(currentMission.mission_id) // 🔥 CRITICAL: Pass TurnManager inside context
+          turnManager: tm // 🔥 CRITICAL: Pass TurnManager inside context (use updated tm)
         }
       });
 
@@ -411,7 +521,7 @@ const StoryMissionTab = () => {
 
       // 🔥 CRITICAL: Check turn count before allowing mission close
       const missionMinTurns = currentMission?.minimum_turns || 10;
-      const tm = getTurnManager(currentMission.mission_id);
+      // Reuse 'tm' variable from line 477 (already declared above)
       
       let allStepsAsked = false;
       if (tm) {
@@ -443,36 +553,154 @@ const StoryMissionTab = () => {
       // 🔥 Support Artifact v5.0 format: {ack, recast, bridge, question, hints}
       let responseText = '';
       
+      console.log('🎤 === NOVA SPEECH ANALYSIS ===');
+      console.log('📦 Raw AI Response Object:', guardedResponse);
+      console.log('📊 Response format:', guardedResponse.format || 'legacy');
+      
       if (guardedResponse.format === 'artifact-v5') {
         // NEW: Artifact v5.0 format
         // Combine: ack + recast + bridge + question
         const parts = [];
         if (guardedResponse.ack) parts.push(guardedResponse.ack);
-        if (guardedResponse.recast) parts.push(guardedResponse.recast);
+        if (guardedResponse.recast) {
+          // 🔥 ENFORCE PUNCTUATION: recast must end with ! or .
+          let recast = guardedResponse.recast.trim();
+          if (!recast.match(/[.!?]$/)) {
+            recast += '!';
+            console.log('✅ Added punctuation to recast:', recast);
+          }
+          parts.push(recast);
+        }
         if (guardedResponse.bridge) parts.push(guardedResponse.bridge);
         if (guardedResponse.question) parts.push(guardedResponse.question);
         responseText = parts.join(' ');
         
-        console.log('🎯 Artifact v5.0 Response:', {
-          ack: guardedResponse.ack,
-          recast: guardedResponse.recast,
-          bridge: guardedResponse.bridge,
-          question: guardedResponse.question,
-          combined: responseText
-        });
+        console.log('🎯 Artifact v5.0 Response Components:');
+        console.log('  ACK:', guardedResponse.ack || '(none)');
+        console.log('  RECAST:', guardedResponse.recast || '(none)');
+        console.log('  BRIDGE:', guardedResponse.bridge || '(none)');
+        console.log('  QUESTION:', guardedResponse.question || '(none)');
+        console.log('  COMBINED:', responseText);
       } else {
         // OLD: Legacy format
         responseText = guardedResponse.ai_response || guardedResponse.response || guardedResponse;
+        console.log('📜 Legacy format - Full text:', responseText);
+      }
+      console.log('🎤 === END SPEECH ANALYSIS ===\n');
+      
+      // 🔥 CRITICAL: Set hints based on mission structure
+      // Reuse 'tm' variable from above (already declared at line ~501)
+      const currentObjective = tm?.getCurrentObjective();
+      
+      let objectiveHints;
+      if (currentObjective && (currentObjective.hints || currentObjective.defaultHints || currentObjective.question_variants)) {
+        // Week 4 style: Has objectives
+        // 🔥 NEW: Try to get variant hints first (for question_variants structure)
+        const variant = tm.getQuestionVariant();
+        if (variant && variant.hints) {
+          objectiveHints = variant.hints;
+          console.log('💡 Using variant hints:', objectiveHints);
+        } else {
+          // Fallback to objective hints
+          objectiveHints = currentObjective.hints || currentObjective.defaultHints;
+          console.log('💡 Using objective hints:', objectiveHints);
+        }
+      } else {
+        // Week 1, 3 style: No objectives, use AI-generated hints from response
+        objectiveHints = guardedResponse.suggested_hints || guardedResponse.hints || ['I', 'am', 'my', 'is'];
+        console.log('💡 Using AI-generated hints:', objectiveHints);
       }
       
-      // 🔥 CRITICAL: Set hints from guarded response (ONE BRAIN - hints come from same LLM call)
-      const hintsToUse = guardedResponse.hints || guardedResponse.suggested_hints || [];
-      if (hintsToUse.length > 0) {
-        const scrambledHints = [...hintsToUse].sort(() => Math.random() - 0.5);
-        setHints(scrambledHints);
-        setShowHints(true);
-        console.log('💡 Canonical hints:', scrambledHints);
+      // 🔥 VALIDATION: Ensure AI uses EXACT question (variant or canonical)
+      // Priority: goodbye_message > question_variants > canonical_question > AI-generated
+      let targetQuestion = null;
+      
+      // 🔥 SPECIAL: Check for goodbye/termination objective first
+      if (currentObjective && (currentObjective.type === 'termination' || currentObjective.stepKey === 'goodbye' || currentObjective.id === 'goodbye')) {
+        const goodbyeMessage = currentObjective.goodbye_en || currentObjective.goodbye || 
+                              "Great job! You did amazing! Keep practicing English. Goodbye!";
+        responseText = goodbyeMessage;
+        console.log('👋 Using goodbye message:', goodbyeMessage);
+      } else {
+        // Check for question_variants first (Week 4 Mission 3 style)
+        const variant = tm?.getQuestionVariant();
+        if (variant && variant.question) {
+          targetQuestion = variant.question;
+          console.log('🎲 Using variant question:', targetQuestion);
+        } else if (currentObjective?.canonical_question) {
+          targetQuestion = currentObjective.canonical_question;
+          console.log('🎯 Using canonical question:', targetQuestion);
+        }
+        
+        if (targetQuestion && responseText) {
+          // 🔥 CRITICAL: Check multiple questions FIRST (before checking if target is included)
+          const questionCount = (responseText.match(/\?/g) || []).length;
+          
+          if (questionCount > 1) {
+            console.warn('⚠️ Multiple questions detected! Keeping only target:', targetQuestion);
+            // Find which question mark corresponds to our target question
+            const questions = responseText.split('?').map(q => q.trim() + '?');
+            const targetIndex = questions.findIndex(q => q.includes(targetQuestion.replace('?', '')));
+            
+            // Extract ack + recast (everything before all questions)
+            const allQuestionsStart = responseText.indexOf('?');
+            const beforeAllQuestions = responseText.substring(0, allQuestionsStart).split('?')[0];
+            const sentences = beforeAllQuestions.split(/[.!]\s+/).filter(p => p.trim());
+            
+            let ackRecast = '';
+            if (guardedResponse.ack && guardedResponse.recast) {
+              let recast = guardedResponse.recast.trim();
+              if (!recast.match(/[.!]$/)) recast += '.';
+              ackRecast = `${guardedResponse.ack} ${recast}`;
+            } else if (sentences.length >= 2) {
+              ackRecast = sentences[0] + '! ' + sentences[1] + '.';
+            } else if (sentences.length === 1) {
+              ackRecast = sentences[0] + '.';
+            }
+            
+            responseText = ackRecast ? `${ackRecast} ${targetQuestion}` : targetQuestion;
+            console.log('✅ Cleaned to single question:', responseText);
+          } else if (!responseText.includes(targetQuestion)) {
+            console.warn('⚠️ AI improvised question! Overriding with target:', targetQuestion);
+            // Extract ack + recast from AI response (everything before the first question mark)
+            const beforeQuestion = responseText.split('?')[0];
+            const sentences = beforeQuestion.split(/[.!]\s+/).filter(p => p.trim());
+            
+            // Use artifact v5 format: ACK + RECAST
+            let ackRecast = '';
+            if (guardedResponse.ack && guardedResponse.recast) {
+              // Ensure recast ends with punctuation
+              let recast = guardedResponse.recast.trim();
+              if (!recast.match(/[.!]$/)) recast += '.';
+              ackRecast = `${guardedResponse.ack} ${recast}`;
+            } else if (sentences.length >= 2) {
+              // Fallback: first 2 sentences with proper punctuation
+              ackRecast = sentences[0] + '! ' + sentences[1] + '.';
+            } else if (sentences.length === 1) {
+              ackRecast = sentences[0] + '.';
+            }
+            
+            responseText = ackRecast ? `${ackRecast} ${targetQuestion}` : targetQuestion;
+            console.log('✅ Fixed response:', responseText);
+          } else {
+            // Single question and correct, check punctuation in recast
+            const parts = responseText.split('?')[0].split(/([.!])\s+/);
+            if (parts.length >= 3) {
+              // Has ACK + RECAST, ensure punctuation
+              const fixed = responseText.replace(/([a-zA-Z])\s+([A-Z])/g, '$1. $2');
+              if (fixed !== responseText) {
+                responseText = fixed;
+                console.log('✅ Added missing punctuation:', responseText);
+              }
+            }
+          }
+        }
       }
+      
+      const scrambledHints = [...objectiveHints].sort(() => Math.random() - 0.5);
+      setHints(scrambledHints);
+      setShowHints(true);
+      console.log('💡 Hints from OBJECTIVE:', currentObjective?.stepKey, '|', scrambledHints);
       
       // 🔥 DEBUG: Check for truncation
       console.log('📝 Extracted Response Text:', responseText);
@@ -505,6 +733,11 @@ const StoryMissionTab = () => {
         }
       }
 
+      // 🗣️ LOG AI SPEECH
+      console.log('\n💬 === AI SPEECH ===');
+      console.log('🤖 Nova says:', responseText);
+      console.log('💬 === END SPEECH ===\n');
+      
       // Auto-play TTS if enabled
       if (autoPlayEnabled) {
         await textToSpeech(responseText, {
@@ -517,9 +750,7 @@ const StoryMissionTab = () => {
       // ❌ DON'T hide hints just because no question - could be AI error/fallback
       const hasQuestion = responseText.includes('?');
       
-      // Get current objective from TurnManager
-      const turnManager = getTurnManager(currentMission.mission_id);
-      const currentObjective = turnManager?.getCurrentObjective();
+      // Reuse currentObjective from above (already declared)
       const isTerminationObjective = currentObjective?.type === 'termination';
       
       if (hasQuestion) {
@@ -575,10 +806,10 @@ const StoryMissionTab = () => {
           completedMissions,
           lastCompletedAt: new Date().toISOString(),
           studentName: studentName
-        }, completedMissions.length === week1RealData.story_missions?.length, efficiencyScore);
+        }, completedMissions.length === weekRealData.story_missions?.length, efficiencyScore);
         
         // Mark as complete if all missions done
-        if (completedMissions.length === week1RealData.story_missions?.length) {
+        if (completedMissions.length === weekRealData.story_missions?.length) {
           markComplete(100);
         }
       }
@@ -622,7 +853,7 @@ const StoryMissionTab = () => {
 
           <div className="flex-1 overflow-y-auto px-6 py-6">
             <div className="space-y-4">
-              {week1RealData.story_missions?.map((mission, index) => (
+              {weekRealData.story_missions?.map((mission, index) => (
                 <div
                   key={mission.mission_id}
                   onClick={(e) => {
@@ -632,8 +863,8 @@ const StoryMissionTab = () => {
                     console.log('🎯 Starting Mission', mission.mission_id, 'at index', index);
                     console.log('📋 Mission Details:', {
                       title: mission.title,
-                      target_vocab: mission.target_vocab,
-                      minimum_turns: mission.minimum_turns,
+                      target_vocab: mission.target_vocab || mission.vocabulary_focus,
+                      minimum_turns: mission.minimum_turns || 15,
                       greeting: mission.nova_greeting
                     });
                     
@@ -650,9 +881,10 @@ const StoryMissionTab = () => {
                     tutorStore.clearCache();
                     
                     // 🔥 NEW: Reset Turn Manager for this mission
-                    const missionId = week1RealData.story_missions?.[index]?.mission_id || index + 1;
+                    const missionId = weekRealData.story_missions?.[index]?.mission_id || index + 1;
                     resetTurnManager(missionId);
                     clearFollowUpTracking(missionId);
+                    
                     console.log('🔄 Turn Manager reset for mission', missionId);
                     
                     // Reset all local state
@@ -700,11 +932,11 @@ const StoryMissionTab = () => {
                       <div className="flex flex-wrap items-center gap-2 text-xs">
                         <div className="flex items-center space-x-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full">
                           <Target size={12} />
-                          <span>{mission.minimum_turns} turns</span>
+                          <span>{mission.minimum_turns || 15} turns</span>
                         </div>
                         <div className="flex items-center space-x-1 bg-pink-100 text-pink-700 px-3 py-1 rounded-full">
                           <BookOpen size={12} />
-                          <span>{mission.target_vocab.length} words</span>
+                          <span>{(mission.target_vocab || mission.vocabulary_focus || []).length} words</span>
                         </div>
                         <div className="flex-1"></div>
                         <div className="text-purple-500 font-medium">
@@ -712,14 +944,14 @@ const StoryMissionTab = () => {
                         </div>
                       </div>
                       <div className="mt-3 flex flex-wrap gap-1">
-                        {mission.target_vocab.slice(0, 4).map((word, i) => (
+                        {(mission.target_vocab || mission.vocabulary_focus || []).slice(0, 4).map((word, i) => (
                           <span key={i} className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
                             {word}
                           </span>
-                        ))}
-                        {mission.target_vocab.length > 4 && (
+                        ))}  
+                        {(mission.target_vocab || mission.vocabulary_focus || []).length > 4 && (
                           <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                            +{mission.target_vocab.length - 4} more
+                            +{(mission.target_vocab || mission.vocabulary_focus || []).length - 4} more
                           </span>
                         )}
                       </div>
@@ -762,12 +994,29 @@ const StoryMissionTab = () => {
                     const missionId = currentMission?.mission_id || currentMissionIndex + 1;
                     resetTurnManager(missionId);
                     clearFollowUpTracking(missionId);
+                    
+                    // 🔥 NEW: Increment attempt for variant selection
+                    try {
+                      const key = `mission_${missionId}_attempt`;
+                      const current = parseInt(localStorage.getItem(key) || '0');
+                      localStorage.setItem(key, String(current + 1));
+                      console.log(`🔄 Mission ${missionId} attempt incremented to ${current + 1}`);
+                    } catch (error) {
+                      console.warn('Could not increment attempt:', error);
+                    }
+                    
                     console.log('🔄 Turn Manager reset for mission', missionId);
                     
                     setInitialized(false);
                     setTurnCount(0);
                     setMissionStatus('not_started');
                     setStudentName(null); // 🔥 NEW: Reset student name
+                    
+                    // 🔥 Re-initialize mission with new variant
+                    console.log('🔄 Re-initializing mission with new variant...');
+                    initializeMission(currentMissionIndex).catch(err => {
+                      console.error('❌ Re-init error:', err);
+                    });
                   }}
                   className="flex items-center space-x-1 text-gray-500 hover:text-purple-600 transition-colors text-sm"
                   title="Clear chat and restart"

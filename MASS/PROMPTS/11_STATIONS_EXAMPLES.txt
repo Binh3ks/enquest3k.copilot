@@ -1,0 +1,356 @@
+# ENGQUEST 3K - STATIONS EXAMPLES V29
+**Version**: 29 (Module System)
+**Purpose**: Complete working examples from Week 4
+
+**READ THIS FILE**: Only when confused about station structure
+
+---
+
+## 🎯 WHEN TO READ THIS FILE
+
+**DO READ** if:
+- First time generating stations
+- Confused about format
+- Need to verify cross-references
+- Checking bolded vocab in read.js
+
+**DON'T READ** if:
+- Already generated stations before
+- Schema files (ADVANCED/EASY) are clear
+- Want to save tokens
+
+---
+
+## EXAMPLE 1: VOCAB.JS (Week 4 - Complete)
+
+```javascript
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "happy",
+      pronunciation: "/ˈhæpi/",
+      definition_vi: "vui vẻ",
+      definition_en: "feeling very good and joyful",
+      example: "I am happy today.",
+      collocation: "happy face",
+      image_url: "/images/week4/happy.jpg",
+      audio_word: "/audio/week4/vocab_happy.mp3"
+    },
+    {
+      id: 2,
+      word: "sad",
+      pronunciation: "/sæd/",
+      definition_vi: "buồn",
+      definition_en: "feeling unhappy or not good",
+      example: "She feels sad today.",
+      collocation: "sad day",
+      image_url: "/images/week4/sad.jpg",
+      audio_word: "/audio/week4/vocab_sad.mp3"
+    },
+    {
+      id: 3,
+      word: "funny",
+      pronunciation: "/ˈfʌni/",
+      definition_vi: "hài hước, vui nhộn",
+      definition_en: "making people laugh and smile",
+      example: "He is very funny.",
+      collocation: "funny joke",
+      image_url: "/images/week4/funny.jpg",
+      audio_word: "/audio/week4/vocab_funny.mp3"
+    },
+    {
+      id: 4,
+      word: "friendly",
+      pronunciation: "/ˈfrendli/",
+      definition_vi: "thân thiện",
+      definition_en: "kind and nice to others",
+      example: "My teacher is friendly.",
+      collocation: "friendly person",
+      image_url: "/images/week4/friendly.jpg",
+      audio_word: "/audio/week4/vocab_friendly.mp3"
+    },
+    {
+      id: 5,
+      word: "excited",
+      pronunciation: "/ɪkˈsaɪtɪd/",
+      definition_vi: "phấn khích",
+      definition_en: "very happy about something coming",
+      example: "I am excited about my birthday.",
+      collocation: "excited child",
+      image_url: "/images/week4/excited.jpg",
+      audio_word: "/audio/week4/vocab_excited.mp3"
+    },
+    {
+      id: 6,
+      word: "playing",
+      pronunciation: "/ˈpleɪɪŋ/",
+      definition_vi: "chơi",
+      definition_en: "doing fun games or sports",
+      example: "I like playing games.",
+      collocation: "playing soccer",
+      image_url: "/images/week4/playing.jpg",
+      audio_word: "/audio/week4/vocab_playing.mp3"
+    },
+    {
+      id: 7,
+      word: "reading",
+      pronunciation: "/ˈriːdɪŋ/",
+      definition_vi: "đọc",
+      definition_en: "looking at words in books",
+      example: "I like reading books.",
+      collocation: "reading stories",
+      image_url: "/images/week4/reading.jpg",
+      audio_word: "/audio/week4/vocab_reading.mp3"
+    },
+    {
+      id: 8,
+      word: "drawing",
+      pronunciation: "/ˈdrɔːɪŋ/",
+      definition_vi: "vẽ",
+      definition_en: "making pictures with pencils or pens",
+      example: "She is drawing a cat.",
+      collocation: "drawing pictures",
+      image_url: "/images/week4/drawing.jpg",
+      audio_word: "/audio/week4/vocab_drawing.mp3"
+    },
+    {
+      id: 9,
+      word: "singing",
+      pronunciation: "/ˈsɪŋɪŋ/",
+      definition_vi: "hát",
+      definition_en: "making music with your voice",
+      example: "I love singing songs.",
+      collocation: "singing beautifully",
+      image_url: "/images/week4/singing.jpg",
+      audio_word: "/audio/week4/vocab_singing.mp3"
+    },
+    {
+      id: 10,
+      word: "dancing",
+      pronunciation: "/ˈdænsɪŋ/",
+      definition_vi: "nhảy múa",
+      definition_en: "moving your body to music",
+      example: "They are dancing together.",
+      collocation: "dancing happily",
+      image_url: "/images/week4/dancing.jpg",
+      audio_word: "/audio/week4/vocab_dancing.mp3"
+    }
+  ]
+};
+```
+
+**Key observations**:
+- Exactly 10 words
+- Each has ALL 8 required fields
+- IPA pronunciation with slashes
+- Example sentences are 3-6 words
+- Collocations are natural word pairs
+- Paths follow pattern: `/images/weekX/` and `/audio/weekX/`
+
+---
+
+## EXAMPLE 2: READ.JS (Week 4 - Complete)
+
+**Notice**: All vocab words are **bolded**!
+
+```javascript
+export default {
+  title: "My Happy Jar",
+  image_url: "/images/week4/read_cover_w04.jpg",
+  content_en: "My name is Sam. I have a **happy** jar at home. Every day, I put **happy** things in my jar. When I am **playing** with my dog, I feel **excited**. I put a yellow star in my jar. When I am **reading** a good book, I feel calm and **happy**. I put a blue heart in my jar. When I am **drawing** pictures, I feel creative. I put a green circle in my jar. My mom is very **friendly** and **funny**. She makes me laugh every day. I love my happy jar. It helps me remember all the good moments in my life. My jar is now full of **happy** things!",
+  content_vi: "Tên tôi là Sam. Tôi có một chiếc hũ hạnh phúc ở nhà. Mỗi ngày, tôi bỏ những thứ hạnh phúc vào hũ của mình. Khi tôi chơi với con chó của mình, tôi cảm thấy phấn khích. Tôi bỏ một ngôi sao màu vàng vào hũ của mình. Khi tôi đọc một cuốn sách hay, tôi cảm thấy bình tĩnh và hạnh phúc. Tôi bỏ một trái tim màu xanh vào hũ của mình. Khi tôi vẽ tranh, tôi cảm thấy sáng tạo. Tôi bỏ một hình tròn màu xanh lá vào hũ của mình. Mẹ tôi rất thân thiện và hài hước. Bà làm tôi cười mỗi ngày. Tôi yêu chiếc hũ hạnh phúc của mình. Nó giúp tôi nhớ lại tất cả những khoảnh khắc tốt đẹp trong cuộc sống của mình. Bây giờ hũ của tôi đầy những thứ hạnh phúc!",
+  check_questions: [
+    {
+      id: 1,
+      question_en: "What does Sam have at home?",
+      answer: ["a happy jar", "happy jar"],
+      hint_en: "It starts with 'h'...",
+      hint_vi: "Nó bắt đầu bằng chữ 'h'..."
+    },
+    {
+      id: 2,
+      question_en: "What color is the star?",
+      answer: ["yellow", "yellow star"],
+      hint_en: "The color of the sun...",
+      hint_vi: "Màu của mặt trời..."
+    },
+    {
+      id: 3,
+      question_en: "Who is friendly and funny?",
+      answer: ["mom", "his mom", "Sam's mom", "mother"],
+      hint_en: "She makes Sam laugh...",
+      hint_vi: "Bà làm Sam cười..."
+    }
+  ],
+  question: {
+    text_en: "What makes you feel happy? What do you like to do?",
+    text_vi: "Điều gì làm bạn cảm thấy hạnh phúc? Bạn thích làm gì?",
+    min_words: 30,
+    hint_en: "Think about things you enjoy doing...",
+    hint_vi: "Hãy nghĩ về những điều bạn thích làm..."
+  }
+};
+```
+
+**Key observations**:
+- 131 words (within 150-200 range for Advanced)
+- 14 sentences
+- **7 vocab words bolded**: happy (4x), playing, reading, drawing, excited, friendly, funny
+- Answer arrays have multiple acceptable answers
+- Hints are helpful without giving away answer
+
+---
+
+## EXAMPLE 3: DICTATION.JS (Week 4 - Cross-reference check)
+
+**CRITICAL**: Notice how sentences match read.js exactly!
+
+```javascript
+export default {
+  sentences: [
+    { id: 1, text: "My name is Sam.", meaning: "Tên tôi là Sam." },
+    { id: 2, text: "I have a happy jar at home.", meaning: "Tôi có một chiếc hũ hạnh phúc ở nhà." },
+    { id: 3, text: "Every day, I put happy things in my jar.", meaning: "Mỗi ngày, tôi bỏ những thứ hạnh phúc vào hũ của mình." },
+    { id: 4, text: "When I am playing with my dog, I feel excited.", meaning: "Khi tôi chơi với con chó của mình, tôi cảm thấy phấn khích." },
+    { id: 5, text: "I put a yellow star in my jar.", meaning: "Tôi bỏ một ngôi sao màu vàng vào hũ của mình." },
+    { id: 6, text: "When I am reading a good book, I feel calm and happy.", meaning: "Khi tôi đọc một cuốn sách hay, tôi cảm thấy bình tĩnh và hạnh phúc." },
+    { id: 7, text: "I put a blue heart in my jar.", meaning: "Tôi bỏ một trái tim màu xanh vào hũ của mình." },
+    { id: 8, text: "When I am drawing pictures, I feel creative.", meaning: "Khi tôi vẽ tranh, tôi cảm thấy sáng tạo." },
+    { id: 9, text: "I put a green circle in my jar.", meaning: "Tôi bỏ một hình tròn màu xanh lá vào hũ của mình." },
+    { id: 10, text: "My mom is very friendly and funny.", meaning: "Mẹ tôi rất thân thiện và hài hước." },
+    { id: 11, text: "She makes me laugh every day.", meaning: "Bà làm tôi cười mỗi ngày." },
+    { id: 12, text: "I love my happy jar.", meaning: "Tôi yêu chiếc hũ hạnh phúc của mình." },
+    { id: 13, text: "It helps me remember all the good moments in my life.", meaning: "Nó giúp tôi nhớ lại tất cả những khoảnh khắc tốt đẹp trong cuộc sống của mình." },
+    { id: 14, text: "My jar is now full of happy things!", meaning: "Bây giờ hũ của tôi đầy những thứ hạnh phúc!" }
+  ]
+};
+```
+
+**How to extract**:
+1. Take read.js content_en
+2. Split by `. ` (period + space)
+3. Remove `**` bold markers
+4. Each sentence becomes 1 dictation object
+5. Result: 14 sentences from read.js = 14 dictation exercises
+
+---
+
+## EXAMPLE 4: WRITING.JS (Week 4 - Keywords check)
+
+**Notice**: Keywords come from vocab.js!
+
+```javascript
+export default {
+  title: "My Favorite Things",
+  min_words: 40,
+  model_sentence: "I like many things. I like playing with my toys. I like reading story books. I like drawing animals. When I play, I feel happy. When I read, I feel calm. When I draw, I feel creative. I also like singing songs. My favorite thing is dancing. I dance every day. These things make me feel good!",
+  instruction_en: "Write about things you like to do. Tell us about your favorite activities.",
+  instruction_vi: "Viết về những điều bạn thích làm. Kể cho chúng tôi nghe về các hoạt động yêu thích của bạn.",
+  prompt_en: "What do you like to do? Do you like playing, reading, or drawing? How do these things make you feel?",
+  prompt_vi: "Bạn thích làm gì? Bạn có thích chơi, đọc hay vẽ không? Những điều này khiến bạn cảm thấy thế nào?",
+  keywords: ["like", "playing", "reading", "drawing", "happy", "feel", "favorite"]
+};
+```
+
+**Key observations**:
+- keywords: 7 words from vocab.js (playing, reading, drawing, happy)
+- model_sentence: 67 words (within 60-80 range)
+- Model uses all keywords naturally
+- Prompt gives clear direction
+
+---
+
+## EXAMPLE 5: GRAMMAR.JS (Week 4 - Exercise distribution)
+
+**Notice**: 30-30-40 distribution!
+
+```javascript
+export default {
+  grammar_explanation: {
+    title_en: "I like + V-ing (Expressing Preferences)",
+    title_vi: "I like + V-ing (Diễn đạt Sở thích)",
+    rules: [
+      { type: "rule", icon: "1️⃣", rule_en: "Add -ing to verbs after 'like': I like playing", rule_vi: "Thêm -ing vào động từ sau 'like': I like playing" },
+      { type: "rule", icon: "2️⃣", rule_en: "Negative: I don't like + V-ing", rule_vi: "Phủ định: I don't like + V-ing" },
+      { type: "rule", icon: "3️⃣", rule_en: "Question: Do you like + V-ing?", rule_vi: "Câu hỏi: Do you like + V-ing?" }
+    ]
+  },
+  exercises: [
+    // AFFIRMATIVE - 6 exercises (30%)
+    { id: 1, type: "fill", question: "I like _____ (play) games.", answer: "playing", hint: "play + ing" },
+    { id: 2, type: "mc", question: "She likes _____ books.", options: ["read", "reading", "reads"], answer: "reading", hint: "like + V-ing" },
+    { id: 3, type: "fill", question: "We like _____ (draw) pictures.", answer: "drawing", hint: "draw + ing" },
+    { id: 4, type: "mc", question: "He likes _____ songs.", options: ["sing", "singing", "sings"], answer: "singing", hint: "like + V-ing" },
+    { id: 5, type: "fill", question: "They like _____ (dance).", answer: "dancing", hint: "dance + e + ing" },
+    { id: 6, type: "mc", question: "I like _____ with my friends.", options: ["play", "playing", "plays"], answer: "playing", hint: "like + V-ing" },
+
+    // NEGATIVE - 6 exercises (30%)
+    { id: 7, type: "fill", question: "I don't like _____ (run).", answer: "running", hint: "don't like + V-ing" },
+    { id: 8, type: "mc", question: "She _____ like reading.", options: ["don't", "doesn't", "isn't"], answer: "doesn't", hint: "She + doesn't" },
+    { id: 9, type: "fill", question: "We _____ like singing.", answer: "don't", hint: "We + don't" },
+    { id: 10, type: "mc", question: "He doesn't like _____.", options: ["draw", "drawing", "draws"], answer: "drawing", hint: "doesn't like + V-ing" },
+    { id: 11, type: "unscramble", question: "Order:", words: ["don't", "I", "like", "dancing"], answer: "I don't like dancing.", hint: "I don't like" },
+    { id: 12, type: "fill", question: "They don't like _____ (swim).", answer: "swimming", hint: "swim + m + ing" },
+
+    // QUESTIONS - 8 exercises (40%)
+    { id: 13, type: "fill", question: "_____ you like playing?", answer: "Do", hint: "Do + you" },
+    { id: 14, type: "mc", question: "Does she like _____?", options: ["read", "reading", "reads"], answer: "reading", hint: "Does + V-ing" },
+    { id: 15, type: "unscramble", question: "Order:", words: ["like", "Do", "you", "drawing"], answer: "Do you like drawing?", hint: "Do you like" },
+    { id: 16, type: "fill", question: "_____ he like singing?", answer: "Does", hint: "Does + he" },
+    { id: 17, type: "mc", question: "What do you like _____?", options: ["do", "doing", "does"], answer: "doing", hint: "like + V-ing" },
+    { id: 18, type: "unscramble", question: "Order:", words: ["Does", "she", "like", "dancing"], answer: "Does she like dancing?", hint: "Does she like" },
+    { id: 19, type: "fill", question: "Do they like _____ (play) games?", answer: "playing", hint: "play + ing" },
+    { id: 20, type: "mc", question: "_____ you like reading books?", options: ["Do", "Does", "Are"], answer: "Do", hint: "Do + you" }
+  ]
+};
+```
+
+**Key observations**:
+- 20 exercises total
+- IDs 1-6: Affirmative (6 = 30%)
+- IDs 7-12: Negative (6 = 30%)
+- IDs 13-20: Questions (8 = 40%)
+- 3 exercise types: fill, mc, unscramble
+- All exercises use vocab words (playing, reading, drawing, singing, dancing)
+
+---
+
+## CROSS-REFERENCE VALIDATION
+
+### Check 1: vocab → read
+**vocab.js words**: happy, sad, funny, friendly, excited, playing, reading, drawing, singing, dancing
+
+**read.js bolded words**: **happy** (4x), **playing**, **reading**, **drawing**, **excited**, **friendly**, **funny**
+
+✅ **7 out of 10** vocab words appear bolded in read.js (good coverage!)
+
+### Check 2: read → dictation
+**read.js sentence count**: 14 sentences
+**dictation.js sentence count**: 14 sentences
+
+✅ **Perfect match!**
+
+### Check 3: writing keywords → vocab
+**writing.js keywords**: like, playing, reading, drawing, happy, feel, favorite
+**vocab.js match**: playing, reading, drawing, happy (4/7 are vocab words)
+
+✅ **Good coverage** (at least 50% should be vocab words)
+
+---
+
+## SUMMARY: WHAT MAKES THESE EXAMPLES GOOD
+
+1. **vocab.js**: All 10 words complete, natural collocations, appropriate examples
+2. **read.js**: Engaging story, all key vocab bolded, appropriate length (131 words)
+3. **dictation.js**: Perfect match with read.js (14 sentences)
+4. **writing.js**: Keywords from vocab, good model sentence
+5. **grammar.js**: Perfect 30-30-40 distribution, uses vocab words
+
+**Use these as reference** when generating your own station files!
+
+---
+
+**END OF STATIONS EXAMPLES**
+
+Return to CORE or SCHEMA files to continue generation.

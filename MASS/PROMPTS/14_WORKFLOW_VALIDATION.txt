@@ -1,0 +1,430 @@
+# ENGQUEST 3K - WORKFLOW VALIDATION V29
+**Version**: 29 (Module System)
+**Purpose**: Comprehensive validation rules and checklists
+
+**READ THIS FILE**: After generation, before marking week complete
+
+---
+
+## 🎯 VALIDATION PHILOSOPHY
+
+**Goal**: Ensure generated content is:
+- Syntactically correct (no JS errors)
+- Semantically correct (follows schemas)
+- Cross-referenced correctly (stations match AI Tutor)
+- Functionally correct (loads and runs in app)
+
+**Validation Levels**:
+1. **Syntax**: File structure and JS validity
+2. **Schema**: Follows prompt specifications
+3. **Cross-Reference**: Inter-file dependencies
+4. **Functional**: Works in running app
+
+---
+
+## LEVEL 1: SYNTAX VALIDATION
+
+### 1.1 File Existence Check
+```bash
+# Check AI Tutor exists
+test -f src/data/weeks/week_XX_real.js && echo "✓ AI Tutor exists" || echo "✗ Missing AI Tutor"
+
+# Check all 14 station files exist
+for file in vocab read grammar dictation shadowing writing ask_ai logic explore mindmap word_power daily_watch word_match video_queries.json; do
+  test -f src/data/weeks/week_XX/$file.js && echo "✓ $file" || echo "✗ Missing $file"
+done
+```
+
+Expected: 29 ✓ (1 AI Tutor + 14 Advanced + 14 Easy stations in same folder)
+
+### 1.2 Import Test
+```bash
+# Test AI Tutor imports
+node -e "const w = require('./src/data/weeks/week_XX_real.js'); console.log('Week ID:', w.default.week_id)"
+
+# Test each station imports
+for file in src/data/weeks/week_XX/*.js; do
+  node -e "const f = require('$file'); console.log('✓ $file')" 2>&1 | grep -v "Debugger"
+done
+```
+
+Expected: No SyntaxError, no ReferenceError
+
+### 1.3 Export Format Check
+```bash
+# AI Tutor must export default
+grep "export default" src/data/weeks/week_XX_real.js
+
+# Stations must export default
+grep "export default" src/data/weeks/week_XX/vocab.js
+```
+
+Expected: "export default" found in all files
+
+---
+
+## LEVEL 2: SCHEMA VALIDATION
+
+### 2.1 AI Tutor Metadata
+
+**Required fields**:
+```javascript
+week_id: number
+phase: number
+block: string
+unit: number
+week_number: number (Week 4+ only)
+title: string
+week_title_en: string
+week_title_vi: string
+topic: string
+topic_vi: string
+learning_outcome: string
+learning_outcome_vi: string
+grammar_focus: string
+grammar_pattern: string
+grammar_examples: array
+target_vocab: array of objects (NOT strings!)
+```
+
+**Validation command**:
+```bash
+node -e "
+const w = require('./src/data/weeks/week_XX_real.js').default;
+console.log('week_id:', typeof w.week_id === 'number' ? '✓' : '✗');
+console.log('target_vocab:', Array.isArray(w.target_vocab) && typeof w.target_vocab[0] === 'object' ? '✓' : '✗ MUST BE OBJECTS!');
+console.log('missions:', Array.isArray(w.story_missions) && w.story_missions.length === 3 ? '✓' : '✗');
+"
+```
+
+### 2.2 AI Tutor: target_vocab Structure
+
+**CRITICAL**: Must be array of objects, NOT strings!
+
+**Check**:
+```bash
+node -e "
+const w = require('./src/data/weeks/week_XX_real.js').default;
+const vocab = w.target_vocab[0];
+const required = ['word', 'pronunciation', 'definition_vi', 'definition_en', 'example', 'syllabus_context'];
+required.forEach(field => {
+  console.log(field + ':', vocab[field] ? '✓' : '✗ MISSING');
+});
+"
+```
+
+Expected: All 6 fields present
+
+### 2.3 AI Tutor: Mission Structure
+
+**Week 1-3** (canonical_question):
+- [ ] No objectives array
+- [ ] Has default_hints at mission level
+- [ ] Has conversation_topics array
+- [ ] Has example_questions array
+
+**Week 4+** (question_variants):
+- [ ] Has objectives array
+- [ ] 9-12 objectives per mission
+- [ ] Each objective has question_variants (3 variants)
+- [ ] Each variant has question + hints (6-9 words)
+- [ ] 2 student_question objectives (type: "invitation")
+- [ ] 1 goodbye objective (type: "termination" or category: "Closing")
+
+**Validation**:
+```bash
+# Week 4+ check
+node -e "
+const w = require('./src/data/weeks/week_XX_real.js').default;
+const m = w.story_missions[0];
+console.log('Has objectives:', Array.isArray(m.objectives) ? '✓' : '✗');
+console.log('Objective count:', m.objectives.length, '(should be 9-12)');
+console.log('First objective has question_variants:', Array.isArray(m.objectives[0].question_variants) ? '✓' : '✗');
+console.log('Variant count:', m.objectives[0].question_variants.length, '(should be 3)');
+"
+```
+
+### 2.4 Station: vocab.js Structure
+```bash
+node -e "
+const v = require('./src/data/weeks/week_XX/vocab.js').default;
+console.log('Vocab count:', v.vocab.length, '(should be 10)');
+const word = v.vocab[0];
+const fields = ['word', 'pronunciation', 'definition_vi', 'definition_en', 'example', 'collocation', 'image_url', 'audio_word'];
+fields.forEach(f => console.log(f + ':', word[f] ? '✓' : '✗'));
+"
+```
+
+Expected: 10 words, all 8 fields present
+
+### 2.5 Station: read.js Structure
+```bash
+node -e "
+const r = require('./src/data/weeks/week_XX/read.js').default;
+console.log('Has title:', r.title ? '✓' : '✗');
+console.log('Has content_en:', r.content_en ? '✓' : '✗');
+console.log('Content length:', r.content_en.split(' ').length, 'words (Advanced: 150-200, Easy: 50-80)');
+console.log('Check questions:', r.check_questions.length, '(should be 3)');
+console.log('Has reflection question:', r.question ? '✓' : '✗');
+"
+```
+
+### 2.6 Station: grammar.js Structure
+```bash
+node -e "
+const g = require('./src/data/weeks/week_XX/grammar.js').default;
+console.log('Exercise count:', g.exercises.length, '(should be 20)');
+const types = g.exercises.reduce((acc, ex) => { acc[ex.type] = (acc[ex.type] || 0) + 1; return acc; }, {});
+console.log('Exercise types:', types);
+console.log('Distribution check:', 'fill:', types.fill, 'mc:', types.mc, 'unscramble:', types.unscramble);
+"
+```
+
+Expected: 20 exercises, mix of types
+
+---
+
+## LEVEL 3: CROSS-REFERENCE VALIDATION
+
+### 3.1 vocab.js → read.js (Bolded Words)
+```bash
+# Extract bolded words from read.js
+grep -o '\*\*[^*]*\*\*' src/data/weeks/week_XX/read.js | sed 's/\*\*//g' | sort -u > /tmp/bolded.txt
+
+# Extract words from vocab.js
+node -e "const v = require('./src/data/weeks/week_XX/vocab.js').default; v.vocab.forEach(w => console.log(w.word))" > /tmp/vocab.txt
+
+# Compare
+echo "Bolded words in read.js:"
+cat /tmp/bolded.txt
+echo "Vocab words:"
+cat /tmp/vocab.txt
+echo "Coverage: Should have at least 50% of vocab words bolded"
+```
+
+**Rule**: At least 5 out of 10 vocab words should be bolded in read.js
+
+### 3.2 read.js → dictation.js (Sentence Match)
+```bash
+# Count sentences in read.js
+SENTENCES=$(echo "$READ_CONTENT" | tr '.' '\n' | grep -v '^$' | wc -l)
+
+# Count dictation exercises
+DICTATION_COUNT=$(node -e "const d = require('./src/data/weeks/week_XX/dictation.js').default; console.log(d.sentences.length)")
+
+echo "Read sentences: $SENTENCES"
+echo "Dictation sentences: $DICTATION_COUNT"
+echo "Match: $([ $SENTENCES -eq $DICTATION_COUNT ] && echo '✓' || echo '✗ COUNT MISMATCH')"
+```
+
+**Rule**: dictation.js sentence count MUST equal read.js sentence count
+
+### 3.3 dictation.js → shadowing.js (Sentence Match)
+```bash
+node -e "
+const d = require('./src/data/weeks/week_XX/dictation.js').default;
+const s = require('./src/data/weeks/week_XX/shadowing.js').default;
+console.log('Dictation count:', d.sentences.length);
+console.log('Shadowing count:', s.sentences.length);
+console.log('Match:', d.sentences.length === s.sentences.length ? '✓' : '✗');
+console.log('First sentence match:', d.sentences[0].text === s.sentences[0].text ? '✓' : '✗');
+"
+```
+
+**Rule**: shadowing.js MUST have same sentences as dictation.js (+ audio_url)
+
+### 3.4 vocab.js → writing.js (Keywords)
+```bash
+node -e "
+const v = require('./src/data/weeks/week_XX/vocab.js').default;
+const w = require('./src/data/weeks/week_XX/writing.js').default;
+const vocabWords = v.vocab.map(x => x.word);
+const keywords = w.keywords;
+const overlap = keywords.filter(k => vocabWords.includes(k));
+console.log('Writing keywords:', keywords.length);
+console.log('From vocab:', overlap.length, '(' + Math.round(overlap.length/keywords.length*100) + '%)');
+console.log('Rule: At least 50% keywords should be from vocab');
+"
+```
+
+**Rule**: At least 50% of writing.js keywords should be from vocab.js
+
+### 3.5 vocab.js → word_match.js (Complete Match)
+```bash
+node -e "
+const v = require('./src/data/weeks/week_XX/vocab.js').default;
+const wm = require('./src/data/weeks/week_XX/word_match.js').default;
+console.log('Vocab words:', v.vocab.length);
+console.log('Word match pairs:', wm.pairs.length);
+console.log('Match:', v.vocab.length === wm.pairs.length ? '✓' : '✗ MUST BE 10');
+"
+```
+
+**Rule**: word_match.js MUST have exactly 10 pairs (all vocab words)
+
+### 3.6 daily_watch.js → video_queries.json (Video Match)
+```bash
+node -e "
+const dw = require('./src/data/weeks/week_XX/daily_watch.js').default;
+const vq = require('./src/data/weeks/week_XX/video_queries.json').default;
+console.log('Videos:', dw.videos.length);
+console.log('Queries:', vq.queries.length);
+console.log('Match:', dw.videos.length === vq.queries.length ? '✓' : '✗ MUST BE 5');
+"
+```
+
+**Rule**: video_queries.json MUST have 5 queries (1 per video)
+
+---
+
+## LEVEL 4: FUNCTIONAL VALIDATION
+
+### 4.1 Dev Server Start
+```bash
+cd /Users/binhnguyen/Downloads/Engquest3k
+npm run dev
+```
+
+Expected: Server starts on http://localhost:5173 without errors
+
+### 4.2 Week Loads in Browser
+1. Open http://localhost:5173
+2. Navigate to Week Management
+3. Click on Week XX
+4. Expected: Week XX card appears with title and image
+
+### 4.3 AI Tutor Functional Test
+1. Click "Start Learning" on Week XX
+2. Click "Story Mode"
+3. Click Mission 1
+4. Expected:
+   - Nova greeting appears
+   - Can type response
+   - Hints appear when clicked
+   - ACK response after good answer
+   - Recast template works
+   - Progress advances to next objective
+
+**Manual checklist**:
+- [ ] Greeting displays correctly
+- [ ] Input field accepts text
+- [ ] Hints button shows hints
+- [ ] Hints are clickable words
+- [ ] Week 4+: Hints are scrambled (not sentence order)
+- [ ] Response is acknowledged
+- [ ] Recast uses student's answer
+- [ ] Progress bar advances
+- [ ] Next objective loads
+
+### 4.4 Station Functional Test (vocab.js)
+1. Navigate to Week XX
+2. Click "Practice Mode" tab
+3. Click "Vocabulary" station
+4. Expected:
+   - 10 words display
+   - Each word has image
+   - Click word → shows definition, example
+   - Audio button plays pronunciation
+   - All fields visible
+
+**Manual checklist**:
+- [ ] Station loads without error
+- [ ] 10 words visible
+- [ ] Images display
+- [ ] Definitions show (EN + VI)
+- [ ] Examples show
+- [ ] Audio plays (or path is correct)
+- [ ] Collocations visible
+
+### 4.5 Station Functional Test (read.js)
+1. Click "Reading" station
+2. Expected:
+   - Passage displays
+   - Vocab words are bolded
+   - 3 comprehension questions appear
+   - Can type answers
+   - Hints available
+   - 1 reflection question at end
+
+**Manual checklist**:
+- [ ] Passage displays correctly
+- [ ] Vocab words are **bolded**
+- [ ] 3 check questions appear
+- [ ] Answer input works
+- [ ] Hints help without giving answer
+- [ ] Reflection question appears
+- [ ] Min word count enforced
+
+---
+
+## VALIDATION SCRIPT TEMPLATE
+
+```bash
+#!/bin/bash
+# validate_week.sh <week_number>
+
+WEEK=$1
+WEEK_DIR="src/data/weeks/week_$WEEK"
+AI_TUTOR="$WEEK_DIR\_real.js"
+
+echo "=== VALIDATING WEEK $WEEK ==="
+
+# Level 1: Syntax
+echo "\n[Level 1: Syntax Validation]"
+test -f "$AI_TUTOR" && echo "✓ AI Tutor exists" || echo "✗ Missing AI Tutor"
+
+for file in vocab read grammar dictation shadowing writing ask_ai logic explore mindmap word_power daily_watch word_match video_queries.json; do
+  test -f "$WEEK_DIR/$file.js" && echo "✓ $file" || echo "✗ Missing $file"
+done
+
+# Level 2: Schema
+echo "\n[Level 2: Schema Validation]"
+node -e "
+const w = require('./$AI_TUTOR').default;
+console.log('✓ Week ID:', w.week_id);
+console.log('✓ Missions:', w.story_missions.length);
+console.log(typeof w.target_vocab[0] === 'object' ? '✓ target_vocab are objects' : '✗ target_vocab MUST BE OBJECTS!');
+"
+
+# Level 3: Cross-Reference
+echo "\n[Level 3: Cross-Reference Validation]"
+# Add cross-reference checks here
+
+# Level 4: Import Test
+echo "\n[Level 4: Import Test]"
+for file in $WEEK_DIR/*.js; do
+  node -e "require('$file')" 2>&1 | grep -q "Error" && echo "✗ $file" || echo "✓ $file"
+done
+
+echo "\n=== VALIDATION COMPLETE ==="
+```
+
+---
+
+## COMMON VALIDATION ERRORS
+
+### Error 1: target_vocab is array of strings
+**Symptom**: Quiz/Speak tabs show "undefined"
+**Fix**: Convert to array of objects with all 6 fields
+
+### Error 2: dictation.js doesn't match read.js
+**Symptom**: Wrong number of dictation exercises
+**Fix**: Re-extract sentences from read.js content_en
+
+### Error 3: Missing **bold** in read.js
+**Symptom**: Vocab words not highlighted
+**Fix**: Wrap vocab words with `**word**`
+
+### Error 4: Week 4+ missing question_variants
+**Symptom**: AI Tutor shows undefined question
+**Fix**: Replace canonical_question with question_variants array
+
+### Error 5: Grammar exercises wrong distribution
+**Symptom**: Not 30-30-40 split
+**Fix**: Recount and adjust affirmative/negative/questions
+
+---
+
+**END OF WORKFLOW VALIDATION**
+
+Proceed to WORKFLOW_TESTING.txt for manual testing procedures.

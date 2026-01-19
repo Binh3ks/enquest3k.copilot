@@ -21,6 +21,7 @@
 import axios from 'axios';
 import { validateAIResponse, getRegenerationInstruction, getGrammarSummary } from './grammarGuard.js';
 import { enforceTalkRatio, getConciseInstruction, getTalkRatioSummary } from './talkRatioGuard.js';
+import { parseAIResponse } from './utils/responseParser.js';
 
 // ============================================
 // RATE LIMITER - FIX GROQ 429 ERRORS
@@ -77,10 +78,18 @@ class GroqRateLimiter {
     this.requestsInWindow = 0;
     this.windowStartTime = Date.now();
     this.windowDuration = 60000; // 1 minute
-    this.maxRequests = 25; // Conservative limit
+    this.maxRequests = 10; // Very conservative limit (Groq free tier is 15/min, use 10 for safety)
+    this.backoffMs = 0; // Exponential backoff for 429 errors
   }
 
   async waitForSlot() {
+    // Apply exponential backoff if set (for 429 errors)
+    if (this.backoffMs > 0) {
+      console.log(`⏳ Groq backoff: waiting ${this.backoffMs}ms before retry`);
+      await new Promise(resolve => setTimeout(resolve, this.backoffMs));
+      this.backoffMs = Math.min(this.backoffMs * 2, 15000); // Max 15s, exponential growth
+    }
+
     const now = Date.now();
     const elapsed = now - this.windowStartTime;
 
@@ -88,6 +97,7 @@ class GroqRateLimiter {
     if (elapsed >= this.windowDuration) {
       this.requestsInWindow = 0;
       this.windowStartTime = now;
+      this.backoffMs = 0; // Reset backoff on new window
     }
 
     // If quota available, use it
@@ -110,9 +120,20 @@ class GroqRateLimiter {
     console.log('✅ Groq quota RESET, slot available');
   }
 
+  setBackoff(ms) {
+    this.backoffMs = ms;
+    console.log(`🔄 Groq backoff set to ${ms}ms`);
+  }
+
+  resetBackoff() {
+    this.backoffMs = 0;
+    console.log('✅ Groq backoff reset');
+  }
+
   reset() {
     this.requestsInWindow = 0;
     this.windowStartTime = Date.now();
+    this.backoffMs = 0;
     console.log('🔄 Groq rate limiter manually reset');
   }
 
@@ -148,19 +169,29 @@ export function getGroqLimiterStatus() {
 
 const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || '';
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
+const TOGETHER_API_KEY = import.meta.env.VITE_TOGETHER_API_KEY || '';
 
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent';
+const TOGETHER_ENDPOINT = 'https://api.together.xyz/v1/chat/completions';
 
 // Provider configuration
 const PROVIDERS = {
+  together: {
+    name: 'Together AI',
+    model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
+    maxTokens: 1024,
+    temperature: 0.7,
+    enabled: !!import.meta.env.VITE_TOGETHER_API_KEY,
+    description: 'PRIMARY: Fast responses with 60 req/min (4x faster than Groq)'
+  },
   groq: {
     name: 'Groq',
     model: 'llama-3.3-70b-versatile', // 🔥 FIX: Updated model (3.1 deprecated)
     maxTokens: 1024,
     temperature: 0.7,
     enabled: !!GROQ_API_KEY,
-    description: 'Ultra-fast responses (< 500ms) for Free Talk'
+    description: 'BACKUP: Ultra-fast responses (< 500ms) for Free Talk'
   },
   gemini: {
     name: 'Gemini',
@@ -168,7 +199,7 @@ const PROVIDERS = {
     maxTokens: 2048,
     temperature: 0.7,
     enabled: !!GEMINI_API_KEY,
-    description: 'Fallback for Groq errors or complex Syllabus analysis'
+    description: 'FALLBACK: Last resort for errors or complex Syllabus analysis'
   }
 };
 
@@ -537,249 +568,231 @@ export async function sendToAI({
 
     // Auto-select provider based on availability
     if (preferredProvider === 'auto') {
-      preferredProvider = PROVIDERS.groq.enabled ? 'groq' : 'gemini';
+      // Priority: Together AI → Groq → Gemini
+      if (PROVIDERS.together.enabled) {
+        preferredProvider = 'together';
+      } else if (PROVIDERS.groq.enabled) {
+        preferredProvider = 'groq';
+      } else {
+        preferredProvider = 'gemini';
+      }
     }
 
-    // 🔥 LAYER 1: Try Groq first for speed
-    if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
+    // 🔥 LAYER 1: Try Together AI first (60 req/min - best free option)
+    if (preferredProvider === 'together' && PROVIDERS.together.enabled) {
       try {
-        console.log(`🚀 Layer 1: Trying Groq (attempt ${attempt}/${maxRetries})...`);
-        const response = await callGroq(messages);
+        console.log(`🚀 Layer 1: Trying Together AI (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callTogether(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
         
-        // 🛡️ GRAMMAR GUARD VALIDATION
+        // Grammar Guard & Talk Ratio validations
         if (!skipGrammarGuard) {
           const validation = validateAIResponse(response, weekId);
-          if (!validation.valid) {
-            console.warn(`⚠️ Grammar violations detected (attempt ${attempt}):`, validation.violations);
-            
-            if (attempt < maxRetries) {
-              // Regenerate with stricter instruction
-              const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
-              messages.push({
-                role: 'user',
-                content: regenInstruction
-              });
-              console.log('🔄 Regenerating with stricter grammar instruction...');
-              continue; // Retry loop
-            } else {
-              // Max retries exceeded - use deterministic fallback
-              console.error('❌ Max retries exceeded. Using contextual fallback.');
-              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
-              return {
-                ...fallbackResponse,
-                violations: validation.violations,
-                latency: Date.now() - startTime
-              };
-            }
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
           }
         }
         
-        // 🎯 TALK RATIO GUARD VALIDATION
-        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage, turnCount);
-        console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
-        
+        const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
         if (talkRatioResult.action === 'truncated') {
-          // Response was automatically truncated
-          console.warn(`✂️ Response truncated: ${talkRatioResult.details.originalWords} → ${talkRatioResult.details.truncatedWords} words`);
           response.ai_response = talkRatioResult.response;
-          response.talkRatioEnforced = true;
-          response.talkRatioAction = 'truncated';
-        } else if (talkRatioResult.action === 'regenerate' && attempt < maxRetries) {
-          // Ratio violated, need to regenerate
-          console.warn(`⚠️ Talk ratio violation: ${talkRatioResult.details.ratio} (max: 0.8)`);
-          const conciseInstruction = getConciseInstruction(
-            talkRatioResult.details.ratio,
-            talkRatioResult.details.aiWords,
-            talkRatioResult.details.studentWords
-          );
-          messages.push({
-            role: 'user',
-            content: conciseInstruction
-          });
-          console.log('🔄 Regenerating with concise instruction...');
-          continue; // Retry loop
         }
         
-        console.log(`✅ Groq succeeded with valid grammar + talk ratio in ${Date.now() - startTime}ms`);
-        return {
-          ...response,
-          provider: 'groq',
-          latency: Date.now() - startTime,
-          grammarValidated: !skipGrammarGuard
-        };
-      } catch (groqError) {
-        const statusCode = groqError.response?.status;
-        const errorMessage = groqError.message;
-
-        // 🔥 FIX: Set backoff on 429 rate limit errors
-        if (statusCode === 429) {
-          groqLimiter.setBackoff(2000); // Start with 2s backoff
-          console.warn(`⚠️ Groq rate limit (429): Setting 2s backoff`);
-        }
-
-        // Check if error is 400, 429, or 500 (should fallback)
-        if (statusCode === 400 || statusCode === 429 || statusCode === 500) {
-          console.warn(`⚠️ Groq failed (${statusCode}): ${errorMessage}`);
-          console.log('🔄 Auto-switching to Layer 2: Gemini 2.0 Flash...');
-
-          // 🔥 LAYER 2: Fallback to Gemini
-          if (PROVIDERS.gemini.enabled) {
-            try {
-              const response = await callGemini(messages);
-              
-              // 🛡️ GRAMMAR GUARD VALIDATION (Gemini)
-              if (!skipGrammarGuard) {
-                const validation = validateAIResponse(response, weekId);
-                if (!validation.valid) {
-                  console.warn(`⚠️ Gemini also produced grammar violations (attempt ${attempt}):`, validation.violations);
-                  
-                  if (attempt < maxRetries) {
-                    const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
-                    messages.push({
-                      role: 'user',
-                      content: regenInstruction
-                    });
-                    preferredProvider = 'gemini'; // Continue with Gemini
-                    console.log('🔄 Regenerating with Gemini...');
-                    continue;
-                  } else {
-                    console.error('❌ Gemini max retries exceeded. Using contextual fallback.');
-                    const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
-                    return {
-                      ...fallbackResponse,
-                      violations: validation.violations,
-                      latency: Date.now() - startTime
-                    };
-                  }
-                }
-              }
-              
-              // 🎯 TALK RATIO GUARD VALIDATION (Gemini)
-              const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage, turnCount);
-              console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
-              
-              if (talkRatioResult.action === 'truncated') {
-                console.warn(`✂️ Gemini response truncated: ${talkRatioResult.details.originalWords} → ${talkRatioResult.details.truncatedWords} words`);
-                response.ai_response = talkRatioResult.response;
-                response.talkRatioEnforced = true;
-                response.talkRatioAction = 'truncated';
-              } else if (talkRatioResult.action === 'regenerate' && attempt < maxRetries) {
-                console.warn(`⚠️ Gemini talk ratio violation: ${talkRatioResult.details.ratio} (max: 0.8)`);
-                const conciseInstruction = getConciseInstruction(
-                  talkRatioResult.details.ratio,
-                  talkRatioResult.details.aiWords,
-                  talkRatioResult.details.studentWords
-                );
-                messages.push({
-                  role: 'user',
-                  content: conciseInstruction
-                });
-                preferredProvider = 'gemini';
-                console.log('🔄 Regenerating Gemini with concise instruction...');
+        console.log(`✅ Together AI succeeded in ${Date.now() - startTime}ms`);
+        return { ...response, provider: 'together', latency: Date.now() - startTime };
+      } catch (togetherError) {
+        console.warn(`⚠️ Together AI failed: ${togetherError.message}`);
+        console.log('🔄 Fallback to Layer 2: Groq...');
+        
+        // LAYER 2: Fallback to Groq
+        if (PROVIDERS.groq.enabled) {
+          try {
+            const rawResponse = await callGroq(messages);
+            const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+            
+            if (!skipGrammarGuard) {
+              const validation = validateAIResponse(response, weekId);
+              if (!validation.valid && attempt < maxRetries) {
+                console.warn(`⚠️ Groq grammar violations:`, validation.violations);
+                const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+                messages.push({ role: 'user', content: regenInstruction });
+                preferredProvider = 'groq';
                 continue;
               }
-              
-              console.log(`✅ Gemini succeeded (fallback) with valid grammar + talk ratio in ${Date.now() - startTime}ms`);
-              return {
-                ...response,
-                provider: 'gemini',
-                fallback: true,
-                fallbackReason: `Groq ${statusCode}`,
-                latency: Date.now() - startTime,
-                grammarValidated: !skipGrammarGuard
-              };
-            } catch (geminiError) {
-              console.error('❌ Gemini fallback also failed:', geminiError.message);
-              throw new Error(`All providers failed. Groq: ${errorMessage}, Gemini: ${geminiError.message}`);
             }
-          } else {
-            throw new Error(`Groq failed (${statusCode}) and Gemini not available`);
+            
+            const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
+            if (talkRatioResult.action === 'truncated') {
+              response.ai_response = talkRatioResult.response;
+            }
+            
+            console.log(`✅ Groq succeeded (fallback) in ${Date.now() - startTime}ms`);
+            return { ...response, provider: 'groq', fallback: true, latency: Date.now() - startTime };
+          } catch (groqError) {
+            console.warn(`⚠️ Groq also failed: ${groqError.message}`);
+            console.log('🔄 Fallback to Layer 3: Gemini...');
+            
+            // LAYER 3: Final fallback to Gemini
+            if (PROVIDERS.gemini.enabled) {
+              try {
+                const response = await callGemini(messages);
+                
+                if (!skipGrammarGuard) {
+                  const validation = validateAIResponse(response, weekId);
+                  if (!validation.valid && attempt < maxRetries) {
+                    const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+                    messages.push({ role: 'user', content: regenInstruction });
+                    preferredProvider = 'gemini';
+                    continue;
+                  }
+                }
+                
+                const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
+                if (talkRatioResult.action === 'truncated') {
+                  response.ai_response = talkRatioResult.response;
+                }
+                
+                console.log(`✅ Gemini succeeded (final fallback) in ${Date.now() - startTime}ms`);
+                return { ...response, provider: 'gemini', fallback: true, latency: Date.now() - startTime };
+              } catch (geminiError) {
+                console.error('❌ All 3 providers failed!');
+                const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
+                return { ...fallbackResponse, provider: 'fallback', latency: Date.now() - startTime };
+              }
+            }
           }
-        } else {
-          // Non-fallback errors (e.g., network issues)
-          throw groqError;
         }
       }
     }
 
-    // 🔥 If Groq not preferred or not enabled, use Gemini directly
+    // Direct Gemini usage (when preferred or only available)
     if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
       try {
-        console.log(`🚀 Using Gemini 2.0 Flash (attempt ${attempt}/${maxRetries})...`);
+        console.log(`🚀 Using Gemini (attempt ${attempt}/${maxRetries})...`);
         const response = await callGemini(messages);
         
-        // 🛡️ GRAMMAR GUARD VALIDATION
         if (!skipGrammarGuard) {
           const validation = validateAIResponse(response, weekId);
-          if (!validation.valid) {
-            console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
-            
-            if (attempt < maxRetries) {
-              const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
-              messages.push({
-                role: 'user',
-                content: regenInstruction
-              });
-              console.log('🔄 Regenerating...');
-              continue;
-            } else {
-              console.error('❌ Max retries. Using contextual fallback.');
-              const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
-              return {
-                ...fallbackResponse,
-                violations: validation.violations,
-                latency: Date.now() - startTime
-              };
-            }
+          if (!validation.valid && attempt < maxRetries) {
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
           }
         }
         
-        // 🎯 TALK RATIO GUARD VALIDATION (Gemini Direct)
-        const talkRatioResult = enforceTalkRatio(response.ai_response || response.response || '', userMessage, turnCount);
-        console.log(`📊 ${getTalkRatioSummary(talkRatioResult.details)}`);
-        
+        const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
         if (talkRatioResult.action === 'truncated') {
-          console.warn(`✂️ Response truncated: ${talkRatioResult.details.originalWords} → ${talkRatioResult.details.truncatedWords} words`);
           response.ai_response = talkRatioResult.response;
-          response.talkRatioEnforced = true;
-          response.talkRatioAction = 'truncated';
-        } else if (talkRatioResult.action === 'regenerate' && attempt < maxRetries) {
-          console.warn(`⚠️ Talk ratio violation: ${talkRatioResult.details.ratio} (max: 0.8)`);
-          const conciseInstruction = getConciseInstruction(
-            talkRatioResult.details.ratio,
-            talkRatioResult.details.aiWords,
-            talkRatioResult.details.studentWords
-          );
-          messages.push({
-            role: 'user',
-            content: conciseInstruction
-          });
-          console.log('🔄 Regenerating with concise instruction...');
-          continue;
         }
         
-        console.log(`✅ Gemini succeeded with valid grammar + talk ratio in ${Date.now() - startTime}ms`);
-        return {
-          ...response,
-          provider: 'gemini',
-          latency: Date.now() - startTime,
-          grammarValidated: !skipGrammarGuard,
-          talkRatioValidated: true
-        };
+        console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
+        return { ...response, provider: 'gemini', latency: Date.now() - startTime };
       } catch (geminiError) {
-        throw new Error(`Gemini failed: ${geminiError.message}`);
+        console.error('❌ Gemini failed:', geminiError.message);
+        const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
+        return { ...fallbackResponse, provider: 'fallback', latency: Date.now() - startTime };
       }
     }
 
-    throw new Error('No AI provider available');
+    // No provider available
+    throw new Error('No AI provider available or all failed');
   }
 
-  // Should never reach here, but just in case
-  throw new Error('Grammar guard retry loop exhausted without return');
+  // Should never reach here
+  throw new Error('Grammar guard retry loop exhausted');
 }
 
 // ============================================
-// GROQ PROVIDER
+// TOGETHER AI PROVIDER (PRIMARY - 60 req/min)
+// ============================================
+
+async function callTogether(messages, systemPrompt, options = {}) {
+  if (!PROVIDERS.together.enabled) {
+    throw new Error('Together AI API key not configured');
+  }
+  
+  const startTime = Date.now();
+  let requestBody;
+  
+  try {
+    // Normalize messages to OpenAI format
+    const normalizedMessages = messages.map(msg => ({
+      role: msg.role === 'model' ? 'assistant' : msg.role,
+      content: msg.content || msg.text || ''
+    })).filter(msg => msg.content && msg.content.trim().length > 0);
+
+    // Separate system prompt
+    const systemMessage = normalizedMessages.find(m => m.role === 'system');
+    const otherMessages = normalizedMessages.filter(m => m.role !== 'system');
+    
+    const finalSystemPrompt = systemMessage ? systemMessage.content : (systemPrompt || '');
+
+    requestBody = {
+      model: PROVIDERS.together.model,
+      messages: [
+        { role: 'system', content: finalSystemPrompt },
+        ...otherMessages
+      ],
+      max_tokens: options.maxTokens || PROVIDERS.together.maxTokens,
+      temperature: options.temperature || 0.8,  // Increased from 0.7 to break caching
+      response_format: { type: "json_object" }  // Force JSON output
+    };
+    
+    const response = await axios.post(TOGETHER_ENDPOINT, requestBody, {
+      headers: {
+        'Authorization': `Bearer ${TOGETHER_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 10000
+    });
+    
+    const elapsed = Date.now() - startTime;
+    
+    // Parse response
+    let responseData = response.data;
+    if (response.data?.choices?.[0]?.message?.content) {
+      const rawContent = response.data.choices[0].message.content;
+      
+      // Try to parse as JSON first
+      try {
+        // Remove markdown code blocks and clean up
+        let cleanedContent = rawContent.trim();
+        cleanedContent = cleanedContent.replace(/```json\n?/g, '').replace(/\n?```/g, '');
+        cleanedContent = cleanedContent.trim();
+        
+        responseData = JSON.parse(cleanedContent);
+        console.log('✅ Together AI JSON parsed successfully');
+      } catch (e) {
+        // Model returned plain text instead of JSON - let responseParser handle it
+        console.warn('⚠️ Together AI returned plain text, not JSON. Passing to responseParser.');
+        responseData = rawContent;
+      }
+    }
+
+    console.log(`✅ Together AI success in ${elapsed}ms`);
+    return responseData;
+    
+  } catch (error) {
+    const elapsed = Date.now() - startTime;
+    console.error(`❌ Together AI error in ${elapsed}ms:`, error.response?.status, error.message);
+    
+    if (error.response?.status === 400) {
+      console.error('🔍 Together AI 400 Debug:', {
+        model: PROVIDERS.together.model,
+        messageCount: messages.length,
+        errorData: error.response?.data
+      });
+    }
+    
+    throw error;
+  }
+}
+
+// ============================================
+// GROQ PROVIDER (BACKUP - 15 req/min)
 // ============================================
 
 async function callGroq(messages, systemPrompt, options = {}) {
@@ -828,19 +841,18 @@ async function callGroq(messages, systemPrompt, options = {}) {
     // Attempt to parse the response content as JSON
     let responseData = response.data;
     if (response.data?.choices?.[0]?.message?.content) {
+      const rawContent = response.data.choices[0].message.content;
+      
+      // 🔧 Let responseParser handle all JSON extraction (including mixed text+JSON)
+      // Don't try to parse here - responseParser is smarter at extracting JSON from various formats
       try {
-        const content = response.data.choices[0].message.content;
-        // Clean potential markdown code block fences
-        const cleanedContent = content.replace(/```json\n/g, '').replace(/\n```/g, '');
+        // Try clean JSON parse first for performance
+        const cleanedContent = rawContent.replace(/```json\n/g, '').replace(/\n```/g, '');
         responseData = JSON.parse(cleanedContent);
       } catch (e) {
-        console.warn('⚠️ Groq response was not valid JSON, returning raw content.', e);
-        // Fallback to returning the raw content if parsing fails
-        responseData = { 
-          ai_response: response.data.choices[0].message.content,
-          pedagogy_note: 'Raw response from Groq (JSON parse failed)',
-          suggested_hints: []
-        };
+        // Not clean JSON - return raw for responseParser to handle
+        console.log('🔧 Groq response needs extraction, returning raw for responseParser');
+        responseData = rawContent; // Return as string, not object
       }
     }
 

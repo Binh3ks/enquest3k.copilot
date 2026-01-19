@@ -48,11 +48,93 @@ if (!API_KEY && apiKeys && apiKeys.youtube.length > 0) {
     console.log(`✅ Loaded YouTube API key from API keys.txt`);
 } 
 
-const WHITELIST = [
-  "English Singsing", "Super Simple Songs", "British Council", "WOW English", 
-  "Dream English", "Numberblocks", "SciShow Kids", "Nat Geo Kids", 
-  "Smile and Learn", "Homeschool Pop", "Storyline Online", "Peppa Pig", 
-  "Cocomelon", "Little Baby Bum", "Dr Binocs", "Happy Learning", "Jack Hartmann"
+// Whitelist channels organized by topic (60 channels total)
+// Special priorities: English Singsing (Grammar), Little Fox/Vooks (Story)
+const WHITELIST = {
+  GRAMMAR: [
+    "English Singsing",           // ⭐ PRIORITY for Grammar
+    "British Council",
+    "LearnEnglish Kids",
+    "Oxford Online Skills",
+    "Cambridge English TV",
+    "Maple Leaf Learning",
+    "Dream English Kids",
+    "WOW English TV",
+    "Busy Beavers",
+    "Learning Time Fun",
+    "English Tree TV",
+    "Fun Kids English",
+    "Pinkfong English"
+  ],
+  STORY: [
+    "Little Fox",                 // ⭐ PRIORITY for Story
+    "Vooks",                      // ⭐ PRIORITY for Story
+    "Storyline Online",
+    "Brightly Storytime",
+    "Oxford Owl",
+    "Read Along",
+    "Book Box Inc",
+    "Kids Stories TV",
+    "Fairy Tales and Stories",
+    "English Fairy Tales",
+    "Storyberries",
+    "Speakaboos"
+  ],
+  MATH: [
+    "Numberblocks",
+    "Math Antics",
+    "Jack Hartmann",
+    "Kids Learning Tube",
+    "Homeschool Pop",
+    "Khan Academy Kids",
+    "Mr DeMaio",
+    "Smile and Learn",
+    "Educational Videos for Kids"
+  ],
+  SCIENCE: [
+    "SciShow Kids",
+    "National Geographic Kids",
+    "Nat Geo Kids",
+    "Peekaboo Kidz",
+    "Smile and Learn",
+    "Homeschool Pop",
+    "Free School",
+    "Kids Learning Tube",
+    "Dr Binocs",
+    "PBS Kids",
+    "Easy Science for Kids",
+    "Science Max"
+  ],
+  SOCIAL: [
+    "Homeschool Pop",
+    "Kids Learning Tube",
+    "National Geographic Kids",
+    "Free School",
+    "Peekaboo Kidz",
+    "Smile and Learn",
+    "PBS Kids",
+    "SciShow Kids",
+    "Learn Bright",
+    "Twinkl Kids TV",
+    "Cool School"
+  ],
+  DEFAULT: [
+    "Super Simple Songs",
+    "Peppa Pig",
+    "Cocomelon",
+    "Little Baby Bum",
+    "Happy Learning"
+  ]
+};
+
+// Flatten whitelist for backward compatibility
+const ALL_WHITELIST_CHANNELS = [
+  ...WHITELIST.GRAMMAR,
+  ...WHITELIST.STORY,
+  ...WHITELIST.MATH,
+  ...WHITELIST.SCIENCE,
+  ...WHITELIST.SOCIAL,
+  ...WHITELIST.DEFAULT
 ];
 
 // Fallback videos by purpose - all ESL kids appropriate
@@ -157,8 +239,8 @@ const titleMatchesQuery = (title, query, purpose = 'TOPIC') => {
 const search = async (q, usedVideoIds = new Set(), purpose = 'TOPIC') => {
   if(!API_KEY) return null;
   return new Promise((resolve) => {
-    // Add "for kids ESL" to search query (YouTube search improvement)
-    const searchQuery = encodeURIComponent(q + " for kids ESL");
+    // Add "ESL for kids" to search query (REQUIRED: from syllabus/blueprint keywords)
+    const searchQuery = encodeURIComponent(q + " ESL for kids");
     https.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&safeSearch=strict&maxResults=20&videoEmbeddable=true&key=${API_KEY}`, (res) => {
       let d=''; res.on('data', c=>d+=c);
       res.on('end', async () => {
@@ -169,8 +251,29 @@ const search = async (q, usedVideoIds = new Set(), purpose = 'TOPIC') => {
             return resolve(null);
           }
           
-          // Priority 1: Whitelist channels + title matches query + not used
-          const whitelistVideos = j.items.filter(i => WHITELIST.some(w => i.snippet.channelTitle.toLowerCase().includes(w.toLowerCase())));
+          // Get purpose-specific whitelist (use priority channels first)
+          const purposeWhitelist = WHITELIST[purpose.toUpperCase()] || WHITELIST.DEFAULT;
+          const allWhitelist = [...purposeWhitelist, ...ALL_WHITELIST_CHANNELS];
+          
+          // Priority 1: Purpose-specific whitelist channels (e.g., English Singsing for Grammar, Little Fox for Story)
+          const priorityVideos = j.items.filter(i => 
+            purposeWhitelist.some(w => i.snippet.channelTitle.toLowerCase().includes(w.toLowerCase()))
+          );
+          for (const vid of priorityVideos) {
+            if (usedVideoIds.has(vid.id.videoId)) continue;
+            const matches = titleMatchesQuery(vid.snippet.title, q, purpose);
+            if (!matches) continue;
+            const det = await getDetails(vid.id.videoId);
+            if (det && det.sim_duration >= MIN_DURATION && det.sim_duration <= MAX_DURATION) {
+              console.log(`      ⭐ Priority channel (${purpose}): ${vid.snippet.channelTitle}`);
+              return resolve({ id: vid.id.videoId, title: vid.snippet.title });
+            }
+          }
+          
+          // Priority 2: All other whitelist channels + title matches query + not used
+          const whitelistVideos = j.items.filter(i => 
+            allWhitelist.some(w => i.snippet.channelTitle.toLowerCase().includes(w.toLowerCase()))
+          );
           for (const vid of whitelistVideos) {
             if (usedVideoIds.has(vid.id.videoId)) continue;
             const matches = titleMatchesQuery(vid.snippet.title, q, purpose);
@@ -181,7 +284,7 @@ const search = async (q, usedVideoIds = new Set(), purpose = 'TOPIC') => {
             }
           }
           
-          // Priority 2: Safe videos + title matches query + not used
+          // Priority 3: Safe videos + title matches query + not used
           // Filter out: non-English, music videos, covers, lyrics, karaoke
           const safeVideos = j.items.filter(i => {
             const title = i.snippet.title.toLowerCase();
@@ -278,6 +381,15 @@ const update = async (weekId, tasks, isReset = false) => {
       if (!vid && t.backup_query) {
         console.log(`   ⚠️  No video for #${t.id}, trying backup...`);
         vid = await search(t.backup_query, usedVideoIds, purpose);
+      }
+    }
+    
+    // Support priority_search format (new format)
+    if (!vid && t.priority_search) {
+      vid = await search(t.priority_search, usedVideoIds, purpose);
+      if (!vid && t.backup_search) {
+        console.log(`   ⚠️  No video for #${t.id}, trying backup...`);
+        vid = await search(t.backup_search, usedVideoIds, purpose);
       }
     }
     

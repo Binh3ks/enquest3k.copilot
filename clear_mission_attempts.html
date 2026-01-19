@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clear Mission Cache</title></head>
+<body>
+<h1>Clear Mission Attempt Cache</h1>
+<button onclick="clearCache()">Clear All Mission Attempts</button>
+<pre id="log"></pre>
+<script>
+function clearCache() {
+  const log = document.getElementById('log');
+  log.textContent = '';
+  
+  // Clear all mission attempts
+  for (let i = 1; i <= 10; i++) {
+    const key = 'mission_' + i + '_attempt';
+    localStorage.removeItem(key);
+    log.textContent += 'Cleared: ' + key + '\n';
+  }
+  
+  log.textContent += '\n✅ All mission attempts cleared!\n';
+  log.textContent += '\nRemaining keys:\n';
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    log.textContent += '  ' + key + '\n';
+  }
+}
+</script>
+</body>
+</html>

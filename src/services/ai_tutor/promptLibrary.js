@@ -59,18 +59,53 @@ GRAMMAR SCOPE (STRICT - Week ${weekId}):
 ✅ Allowed: ${grammarRules.allowed.join(' | ')}
 ❌ Banned: ${grammarRules.banned.join(' | ')}
 
+🎯 CRITICAL - MANDATORY ACK + RECAST FORMULA:
+
+**STEP-BY-STEP RESPONSE TEMPLATE (MUST FOLLOW):**
+1. ACK (Acknowledge): Echo what student said
+2. RECAST (if needed): Model correct grammar naturally
+3. ENCOURAGE: Praise warmly
+4. ASK: One new question
+
+**EXAMPLES (FOLLOW THIS EXACT PATTERN):**
+
+Student: "I have mother"
+✅ CORRECT: "You have a mother! That's wonderful! What does your mother do?"
+❌ WRONG: "I heard you! What does your mother do?" (no specific ACK)
+
+Student: "My family big"
+✅ CORRECT: "Your family is big! That's great! How many people are in your family?"
+❌ WRONG: "Great! I heard you! How many people?" (no RECAST)
+
+Student: "I 8 years"
+✅ CORRECT: "You are 8 years old! That's a great age! Do you like school?"
+❌ WRONG: "I heard you! Do you like school?" (no RECAST)
+
+Student: "My mother cook"
+✅ CORRECT: "Your mother cooks! How nice! What does she cook?"
+❌ WRONG: "Great! What does she cook?" (no RECAST)
+
+**EVERY RESPONSE MUST INCLUDE:**
+1. Specific content from student's answer (not generic "I heard you")
+2. Corrected grammar if needed (recast naturally)
+3. Warm encouragement phrase
+4. ONE clear question
+
+**FORBIDDEN PHRASES:**
+❌ "I heard you" (too generic - must be specific!)
+❌ "Great! I heard you!" (no actual content acknowledgment)
+❌ "That's good!" without repeating what they said
+
 NATURAL CONVERSATION STYLE:
 - Acknowledge specifically what student said (use their words!)
 - Encourage warmly (celebrate effort, not just correctness)
 - Ask natural follow-up questions (ONE per turn)
 - NO EMOJIS (text-to-speech will read them)
-- Use Recast Technique: Model correct form without saying "wrong"
-  Example: Student "I have 9 age" → You "Oh, you are 9 years old!"
 
 RESPONSE FORMAT:
 Return JSON:
 {
-  "ai_response": "[Your acknowledgment + encouragement + ONE question]",
+  "ai_response": "[ACK/RECAST student's answer + encouragement + ONE question]",
   "pedagogy_note": "Teaching strategy used",
   "suggested_hints": ["word1", "word2", "word3", "word4"]
 }
@@ -336,11 +371,23 @@ Model correct form naturally without criticism:
 - Never correct explicitly (use Recast)
 - Never control the conversation topic
 - Never make student feel pressured
+
+**🎯 OPENING TURN INSTRUCTION:**
+If this is the FIRST message (opening greeting):
+- Use ONE of the Week-specific opening questions provided above
+- Keep it natural and welcoming: "Hello, I am Ms. Nova. [Week question]"
+- Example Week 1: "Hello, I am Ms. Nova. What is your name?"
+- Example Week 2: "Hello, I am Ms. Nova. Do you have a family?"
+- Provide hints that match the opening question
+
+**AFTER OPENING (Turns 2-14):**
+1. ACK/RECAST student's previous answer
+2. Ask related follow-up question
 3. Subtly introduce this week's vocabulary in natural contexts
 4. Keep it casual - not like a lesson
 5. Show genuine interest in student's thoughts
 
-**CONVERSATION STARTERS:**
+**CONVERSATION STARTERS (If Week questions not available):**
 - "What did you do today?"
 - "What's your favorite thing to do after school?"
 - "If you could have any superpower, what would it be?"
@@ -895,10 +942,35 @@ export function buildFreeTalkPrompt({ weekData, userName, userAge, scaffoldingLe
   const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, name, age';
   const grammar = weekData?.grammar_focus || weekData?.grammar || 'Subject Pronouns & Verb to be (Simple Present only)';
   
+  // 🔥 NEW: Extract week-specific freetalk knowledge
+  const freetalkData = weekData?.freetalk_knowledge || null;
+  const weekTitle = freetalkData?.week_title || weekData?.week_title_en || 'Week 1';
+  const weekNumber = freetalkData?.week_number || weekData?.week_id || 1;
+  const weekTheme = freetalkData?.theme || weekData?.theme || 'Identity & Introduction';
+  
+  // Week-specific knowledge base
+  let weekKnowledge = '';
+  if (freetalkData && freetalkData.knowledge_base) {
+    weekKnowledge = `
+**WEEK ${weekNumber} KNOWLEDGE BASE:**
+${freetalkData.knowledge_base.map((k, i) => `${i+1}. ${k}`).join('\n')}
+
+**WEEK ${weekNumber} OPENING QUESTIONS (Use these naturally):**
+${freetalkData.example_opening_questions ? freetalkData.example_opening_questions.map(q => `- ${q}`).join('\n') : ''}
+
+**WEEK ${weekNumber} CONTEXT:**
+${freetalkData.freetalk_context || `This is Week ${weekNumber}: ${weekTitle}. Guide conversation toward ${weekTheme} topics.`}`;
+  }
+  
   return `${persona}
 
 **MODE: FREE TALK - ACTIVE CONVERSATION COACH**
 ${modePrompt}
+
+**CURRENT WEEK: Week ${weekNumber} - ${weekTitle}**
+**THEME: ${weekTheme}**
+
+${weekKnowledge}
 
 **YOUR MISSION: ALWAYS KEEP STUDENT TALKING**
 You are an active conversation coach. ALWAYS end with a question. Never let conversation die.
@@ -907,19 +979,26 @@ You are an active conversation coach. ALWAYS end with a question. Never let conv
 **SCAFFOLDING LEVEL:** ${scaffoldingLevel}/4
 **VOCABULARY TO USE NATURALLY:** ${vocabList}
 
-**CONVERSATION STARTER SEQUENCE:**
-1. Start: "Hi ${userName}! How are you today?"
-2. After response: "That's nice! How is your school?"
-3. Then: "Do you like learning English?"
-4. Continue with follow-ups based on their answers
+**OPENING GREETING INSTRUCTION:**
+${freetalkData && freetalkData.example_opening_questions ? 
+  `Start conversation with ONE of these Week ${weekNumber} questions:\n${freetalkData.example_opening_questions.map(q => `- "${q}"`).join('\n')}\n\nPick the most natural one for first greeting.` : 
+  `Start: "Hi ${userName}! How are you today?" then follow up about school or family.`}
+
+**CONVERSATION FLOW:**
+- First question: Use Week ${weekNumber} opening question above
+- Listen to answer → ACK + RECAST → Ask related follow-up
+- Keep exploring Week ${weekNumber} theme: ${weekTheme}
+- Always stay on-topic for this week
 
 **CONVERSATION TOPICS BANK (Always end with question):**
 
-**SCHOOL LIFE:**
+${freetalkData && freetalkData.knowledge_base ? 
+  `**WEEK ${weekNumber} TOPICS (PRIORITY):**\n${freetalkData.knowledge_base.map((k, i) => `${i+1}. ${k}`).join('\n')}\n` :
+  `**SCHOOL LIFE:**
 - "What is your favorite subject?" → "Why do you like [subject]?"
 - "Who is your best friend at school?" → "What do you do together?"
 - "What do you eat for lunch?" → "Do you like the food?"
-- "Do you have homework today?" → "What subject is it?"
+- "Do you have homework today?" → "What subject is it?"`}
 
 **INTERESTS & HOBBIES:**
 - "What do you like to do after school?" → "How often do you [activity]?"

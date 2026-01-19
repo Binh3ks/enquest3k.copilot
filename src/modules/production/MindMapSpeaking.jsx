@@ -8,28 +8,10 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const { weekId } = useParams();
   
-  // 🔥 Universal Progress System
+  // 🔥 Universal Progress System - MUST BE CALLED BEFORE ANY CONDITIONAL RETURNS
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'production_mindmap');
   
-  // ================= DEBUGGING LOG =================
-  // console.log("--- MindMapSpeaking Component Received Data ---");
-  // console.log(data);
-  // ===============================================
-
-  if (!data || !data.centerStems || !data.branchLabels) {
-    return (
-      <div className="flex flex-col items-center justify-center p-10 h-full bg-slate-50 rounded-lg">
-        <Brain className="text-slate-300 mb-4" size={64} />
-        <h3 className="text-xl font-bold text-slate-400">Mindmap Data Missing</h3>
-        <p className="text-slate-400">Could not load content for this week's mindmap station. Prop 'data' is either null or has the wrong structure.</p>
-        <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-lg text-xs font-mono">
-          <p className="font-bold mb-2">Debug Info:</p>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>
-      </div>
-    );
-  }
-
+  // 🔥 ALL HOOKS MUST BE DECLARED BEFORE ANY CONDITIONAL RETURNS (Rules of Hooks)
   const [view, setView] = useState('structures');
   const [selectedStruct, setSelectedStruct] = useState(null);
   const [branchInputs, setBranchInputs] = useState(savedData.recordings || {});
@@ -39,8 +21,9 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const [completedBranches, setCompletedBranches] = useState(() => {
     return savedData.completedBranches ? new Set(savedData.completedBranches) : new Set();
   });
-
-  // 🔥 Save to Universal Progress System
+  
+  // 🔥 ALL useEffect HOOKS MUST BE BEFORE ANY CONDITIONAL RETURNS
+  // Save to Universal Progress System
   useEffect(() => {
     const handler = setTimeout(() => {
       if (data?.centerStems && data?.branchLabels) {
@@ -65,29 +48,60 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [completedBranches, branchInputs, feedback]);
 
-  // Get audio URLs from injected data (if available)
-  const centerStemAudio = data.centerStemAudio || [];
-  const branchLabelsAudio = data.branchLabelsAudio || {};
+  // Auto-reset to structures view if no structure selected
+  useEffect(() => {
+    if (!selectedStruct && view !== 'structures') {
+      setView('structures');
+    }
+  }, [selectedStruct, view]);
+  
+  // ================= DEBUGGING LOG =================
+  // console.log("--- MindMapSpeaking Component Received Data ---");
+  // console.log(data);
+  // ===============================================
 
-  const structures = data.centerStems.map((stem, i) => ({
-    id: `s${i}`,
-    text: stem,
-    audioUrl: centerStemAudio[i] || null,
-    color: ['#6366F1', '#F43F5E', '#F59E0B', '#10B981', '#8B5CF6', '#EC4899'][i % 6]
-  }));
+  // 🔥 EARLY RETURN AFTER ALL HOOKS (Rules of Hooks compliance)
+  if (!data || !data.centerStems || !data.branchLabels) {
+    return (
+      <div className="flex flex-col items-center justify-center p-10 h-full bg-slate-50 rounded-lg">
+        <Brain className="text-slate-300 mb-4" size={64} />
+        <h3 className="text-xl font-bold text-slate-400">Mindmap Data Missing</h3>
+        <p className="text-slate-400">Could not load content for this week's mindmap station. Prop 'data' is either null or has the wrong structure.</p>
+        <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-lg text-xs font-mono">
+          <p className="font-bold mb-2">Debug Info:</p>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+      </div>
+    );
+  }
+
+  // Handle both old format (string) and new format ({text, audio})
+  const structures = data.centerStems.map((stem, i) => {
+    const stemText = typeof stem === 'string' ? stem : stem.text;
+    const stemAudio = typeof stem === 'string' ? null : stem.audio;
+    return {
+      id: `s${i}`,
+      text: stemText,
+      audioUrl: stemAudio,
+      color: ['#6366F1', '#F43F5E', '#F59E0B', '#10B981', '#8B5CF6', '#EC4899'][i % 6]
+    };
+  });
 
   const sentenceTargets = selectedStruct ? (data.branchLabels[selectedStruct.text] || []) : [];
-  const sentenceAudioArray = selectedStruct ? (branchLabelsAudio[selectedStruct.text] || []) : [];
 
-  const branches = sentenceTargets.map((sentence, i) => {
+  const branches = sentenceTargets.map((branch, i) => {
+    // Handle both old format (string) and new format ({text, audio})
+    const branchText = typeof branch === 'string' ? branch : branch.text;
+    const branchAudio = typeof branch === 'string' ? null : branch.audio;
+    
     const angle = (i * 60 - 30) * (Math.PI / 180);
     const radius = 35;
-    const fullSentence = selectedStruct.text.replace('___', sentence);
+    const fullSentence = selectedStruct.text.replace('___', branchText);
     return {
       id: `b${i}`,
-      display: sentence,
+      display: branchText,
       target: fullSentence,
-      audioUrl: sentenceAudioArray[i] || null,
+      audioUrl: branchAudio,
       x: 50 + Math.cos(angle) * radius,
       y: 50 + Math.sin(angle) * radius,
       color: ['#FF6B6B', '#4D96FF', '#6BCB77', '#FFD93D', '#9376E1', '#FF92E0'][i % 6]
@@ -115,7 +129,8 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     const branch = branches.find(b => b.id === branchId);
     if (!branch) return;
     
-    const result = analyzeAnswer(userInput, branch.target, 'strict');
+    // Use 'academic' mode instead of 'strict' - only checks spelling/pronunciation, not punctuation
+    const result = analyzeAnswer(userInput, branch.target, 'academic');
     setFeedback(prev => ({ ...prev, [branchId]: result }));
     
     if (result.isCorrect) {
@@ -186,8 +201,8 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     );
   }
 
-  if (!selectedStruct) {
-    setView('structures');
+  // Early return for mindmap view without selected structure
+  if (view === 'mindmap' && !selectedStruct) {
     return null;
   }
 
@@ -273,7 +288,17 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
                 <button onClick={() => setEditMode({...editMode, [b.id]: !isEditing})} disabled={isDone} className={`p-2 rounded-full transition-all ${isEditing ? 'bg-slate-300' : 'bg-slate-100'} text-slate-600 hover:bg-slate-200 disabled:bg-slate-100 disabled:text-slate-300`}>
                   <Edit2 size={16}/>
                 </button>
-                {isDone && <CheckCircle size={20} className="text-green-500"/>}
+                {/* Manual Check Button - Always visible when there's input and not completed */}
+                {hasInput && !isDone && (
+                  <button 
+                    onClick={() => handleManualCheck(b)} 
+                    className="p-2 rounded-full transition-all bg-green-500 text-white hover:bg-green-600 shadow-lg hover:shadow-xl active:scale-95"
+                    title={isVi ? "Kiểm tra" : "Check Answer"}
+                  >
+                    <CheckCircle size={16}/>
+                  </button>
+                )}
+                {isDone && <CheckCircle size={20} className="text-green-500 animate-bounce"/>}
               </div>
             </div>
           </div>

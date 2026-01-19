@@ -1,0 +1,445 @@
+# ENGQUEST 3K - AI TUTOR EXAMPLES V29
+**Version**: 29 (Module System)
+**Purpose**: Complete working examples from Week 1, 2, 4
+
+**READ THIS FILE**: Only when confused about AI Tutor structure
+
+---
+
+## 🎯 WHEN TO READ THIS FILE
+
+**DO READ** if:
+- First time generating AI Tutor
+- Confused about canonical_question vs question_variants
+- Need to verify mission structure
+- Checking student question invitations
+
+**DON'T READ** if:
+- Already generated AI Tutor before
+- Schema files are clear
+- Want to save tokens
+
+---
+
+## EXAMPLE 1: Week 1 Mission 1 (canonical_question format)
+
+**Key features**: Free conversation, no objectives array, default_hints at mission level
+
+```javascript
+{
+  mission_id: 1,
+  title: "First Day at School",
+  title_vi: "Ngày Đầu Tiên Đi Học",
+  theme: "Self-introduction",
+  
+  nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
+  default_hints: ["My", "name", "is", "I", "am"],
+  
+  mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging. ONLY ask about name, age, and being a student.
+
+⚡ FLEXIBLE CONVERSATION:
+- If student asks YOU questions → Answer naturally like a human friend
+- Allow 12-15 turns if conversation is interactive
+- If student goes off-topic → Acknowledge warmly, then redirect
+- Be human-like: answer questions fully, don't rush`,
+  
+  target_vocab: ["name", "age", "student"],
+  target_pattern: "I am [name/age/student]",
+  
+  conversation_topics: [
+    "Student's name (What is your name?)",
+    "Student's age (How old are you?)",
+    "Being a student (Are you a student?)",
+    "First day feelings (How do you feel today?)",
+    "School excitement (Are you excited about school?)",
+    "Grade/Class (What grade are you in?)",
+    "Friends at school (Do you have friends?)",
+    "Favorite thing about school (What do you like about school?)",
+    "[Optional: Student can ask Ms. Nova 1-2 questions]",
+    "Simple closing (Great! Nice to meet you!)"
+  ],
+  
+  example_questions: [
+    "What is your name?",
+    "How old are you?",
+    "Are you a student?",
+    "How are you today?",
+    "Are you excited about school?",
+    "What grade are you in?",
+    "Do you have friends at school?"
+  ],
+  
+  minimum_turns: 15,
+  maximum_turns: 20,
+  
+  success_criteria: [
+    "Uses 'I am' correctly for name",
+    "States age with 'years old'",
+    "Uses 'student' naturally",
+    "Engages naturally in conversation"
+  ]
+}
+```
+
+**Observations**:
+- No objectives array
+- default_hints at top level
+- AI generates questions dynamically based on conversation_topics
+- example_questions are suggestions only
+- Flexible turn count
+
+---
+
+## EXAMPLE 2: Week 4 Mission 1 (question_variants format)
+
+**Key features**: objectives array, question_variants with 3 variants, scrambled hints, student invitations
+
+```javascript
+{
+  mission_id: 1,
+  title: "My Happy Jar",  // Keywords: "Happy" for TurnManager
+  title_vi: "Lọ Hạnh Phúc của Tôi",
+  theme: "Emotions",
+  
+  nova_greeting: "Hello! Let's make a Happy Jar! First, tell me your name!",
+  
+  mission_context: `Week 4 Mission 1 - Happy Jar. STUDENT: 6-12 years, A0+ level. LANGUAGE: SIMPLE, max 8 words/sentence. GRAMMAR: "I am", "I like + V-ing". Ask OPEN-ENDED. ENCOURAGE student questions every 3-4 turns.`,
+  
+  target_vocab_focus: ["happy", "sad", "excited", "playing", "reading"],
+  grammar_pattern: "I am [emotion], I like + V-ing",
+  
+  objectives: [
+    // OBJECTIVE 1: Name
+    {
+      stepKey: "student_name",
+      category: "Identity",
+      question_variants: [
+        {
+          question: "What is your name?",
+          hints: ["name", "is", "My", "I", "am"]  // 5 words, scrambled
+        },
+        {
+          question: "Can you tell me your name?",
+          hints: ["is", "My", "name", "tell", "you", "I"]  // 6 words
+        },
+        {
+          question: "What do I call you?",
+          hints: ["call", "me", "You", "can", "My", "name"]  // 6 words
+        }
+      ],
+      target_keywords: ["my", "name", "is", "I", "am"],
+      ack_options: ["Nice!", "Great!", "Wonderful!"],
+      recast_templates: [
+        "Your name is {name}!",
+        "You are {name}!"
+      ],
+      success_criteria: "Student says their name"
+    },
+    
+    // OBJECTIVE 2: Feeling
+    {
+      stepKey: "feeling_today",
+      category: "Emotion Expression",
+      question_variants: [
+        {
+          question: "How are you feeling today?",
+          hints: ["am", "I", "feeling", "happy", "today", "good"]
+        },
+        {
+          question: "How do you feel right now?",
+          hints: ["feel", "I", "happy", "good", "right", "now"]
+        },
+        {
+          question: "Are you happy or sad today?",
+          hints: ["I", "happy", "am", "today", "feeling", "good"]
+        }
+      ],
+      target_keywords: ["happy", "sad", "good", "fine", "okay", "excited"],
+      ack_options: ["Nice!", "Great!", "Wonderful!"],
+      recast_templates: [
+        "You are feeling {emotion}!",
+        "You feel {emotion} today!"
+      ],
+      success_criteria: "Student expresses an emotion"
+    },
+    
+    // OBJECTIVE 3: Personality
+    {
+      stepKey: "personality_trait",
+      category: "Personality",
+      question_variants: [
+        {
+          question: "Are you funny or friendly?",
+          hints: ["I", "funny", "am", "friendly", "and"]
+        },
+        {
+          question: "What are you like?",
+          hints: ["am", "I", "funny", "friendly", "kind"]
+        },
+        {
+          question: "Tell me about yourself.",
+          hints: ["I", "am", "kind", "friendly", "funny"]
+        }
+      ],
+      target_keywords: ["funny", "friendly", "kind", "nice", "good", "happy"],
+      ack_options: ["Nice!", "Great!", "Wonderful!"],
+      recast_templates: [
+        "You are {trait}!",
+        "Being {trait} is great!"
+      ],
+      success_criteria: "Student describes personality"
+    },
+    
+    // STUDENT QUESTION 1 (after 3 objectives)
+    {
+      stepKey: "student_question_1",
+      category: "Student Inquiry",
+      type: "invitation",  // CRITICAL
+      question_variants: [
+        {
+          question: "Do you have any questions for me?",
+          hints: []  // Empty
+        },
+        {
+          question: "Is there anything you want to ask?",
+          hints: []
+        },
+        {
+          question: "What would you like to know?",
+          hints: []
+        }
+      ],
+      target_keywords: [],
+      ack_options: ["Good question!", "That's interesting!", "I'm glad you asked!"],
+      recast_templates: [],
+      allow_skip: true,  // Can skip
+      success_criteria: "Student asks a question or skips"
+    },
+    
+    // OBJECTIVE 4: Activity
+    {
+      stepKey: "like_activity",
+      category: "Preferences",
+      question_variants: [
+        {
+          question: "What do you like doing?",
+          hints: ["like", "I", "playing", "and", "reading", "drawing"]
+        },
+        {
+          question: "Do you like playing or reading?",
+          hints: ["like", "I", "playing", "and", "reading", "both"]
+        },
+        {
+          question: "What is fun for you?",
+          hints: ["is", "fun", "Playing", "for", "me", "reading"]
+        }
+      ],
+      target_keywords: ["like", "love", "playing", "reading", "drawing", "singing"],
+      ack_options: ["Nice!", "Great!", "Wonderful!"],
+      recast_templates: [
+        "You like {activity}!",
+        "{activity} is fun for you!"
+      ],
+      success_criteria: "Student says what they like"
+    },
+    
+    // ... more objectives (5-8)
+    
+    // STUDENT QUESTION 2 (after 6-7 objectives)
+    {
+      stepKey: "student_question_2",
+      category: "Student Inquiry",
+      type: "invitation",
+      question_variants: [
+        { question: "Do you have another question?", hints: [] },
+        { question: "What else do you want to know?", hints: [] },
+        { question: "Is there more you want to ask?", hints: [] }
+      ],
+      target_keywords: [],
+      ack_options: ["Great question!", "Good thinking!"],
+      recast_templates: [],
+      allow_skip: true,
+      success_criteria: "Student asks question or skips"
+    },
+    
+    // OBJECTIVE 9: Favorite thing
+    {
+      stepKey: "favorite_thing",
+      category: "Preferences",
+      question_variants: [
+        {
+          question: "What is your favorite happy thing?",
+          hints: ["favorite", "My", "thing", "is", "playing", "with", "friends"]
+        },
+        {
+          question: "What makes you the most happy?",
+          hints: ["most", "the", "makes", "me", "happy", "Playing", "does"]
+        },
+        {
+          question: "What do you love most?",
+          hints: ["love", "I", "most", "playing", "games", "with", "friends"]
+        }
+      ],
+      target_keywords: ["favorite", "love", "most", "playing", "reading", "friends"],
+      ack_options: ["Nice!", "Great!", "Wonderful!"],
+      recast_templates: [
+        "Your favorite is {thing}!",
+        "You love {thing} the most!"
+      ],
+      success_criteria: "Student names favorite thing"
+    },
+    
+    // GOODBYE (last objective)
+    {
+      stepKey: "goodbye",
+      category: "Closing",
+      type: "termination",
+      canonical_question: "",
+      target_keywords: [],
+      ack_options: ["Wonderful!"],
+      hints: [],
+      recast_templates: [],
+      goodbye_en: "Great job! You told me about your feelings and things you like! Keep being happy! Bye!",
+      goodbye_vi: "Tuyệt lắm! Bạn đã nói về cảm xúc và điều bạn thích! Hãy luôn vui vẻ nhé! Tạm biệt!",
+      success_criteria: "Mission complete"
+    }
+  ],
+  
+  minimum_turns: 15,
+  maximum_turns: 20,
+  expected_duration: "15+ minutes"
+}
+```
+
+**Observations**:
+- objectives array with 9 regular + 2 invitations + 1 goodbye = 12 total
+- Each objective has question_variants (3 variants)
+- hints are 5-7 words, scrambled order
+- student_question has type: "invitation" and allow_skip: true
+- goodbye has type: "termination" and goodbye messages
+
+---
+
+## COMPARISON: Week 1 vs Week 4
+
+| Feature | Week 1 (Basic) | Week 4 (Variant) |
+|---------|----------------|------------------|
+| **Structure** | Free conversation | Objective-based |
+| **objectives array** | ❌ No | ✅ Yes (9-12 items) |
+| **Question format** | Dynamic (AI generates) | question_variants (3 per objective) |
+| **Hints** | default_hints (3-5 words) | hints per variant (6-9 words) |
+| **Hint style** | Individual words | Full scrambled sentence |
+| **Student invitations** | Optional in conversation | 2 explicit invitations |
+| **Goodbye** | Simple closing phrase | goodbye objective with messages |
+| **Turn count** | 15-20 turns | 15-20 turns (but more structured) |
+
+---
+
+## CRITICAL DIFFERENCES EXPLAINED
+
+### Hints: Individual vs Sentence
+
+**Week 1**:
+```javascript
+default_hints: ["My", "name", "is", "I", "am"]  // 5 individual words
+```
+Used for ANY question in the mission.
+
+**Week 4**:
+```javascript
+hints: ["name", "is", "My", "I", "am"]  // Same words but per question
+hints: ["am", "I", "feeling", "happy", "today", "good"]  // 6 words for different question
+```
+Each question variant has its own hints (6-9 words from expected answer).
+
+### Student Questions: Implicit vs Explicit
+
+**Week 1**:
+```javascript
+conversation_topics: [
+  "...",
+  "[Optional: Student can ask Ms. Nova 1-2 questions]",
+  "..."
+]
+```
+Mentioned in topics, but not enforced.
+
+**Week 4**:
+```javascript
+{
+  stepKey: "student_question_1",
+  type: "invitation",  // Explicit invitation
+  allow_skip: true,
+  // ...
+}
+```
+Dedicated objective for student questions.
+
+---
+
+## FREE TALK KNOWLEDGE (Same for All Weeks)
+
+```javascript
+freetalk_knowledge: {
+  week_title: "My Happy Jar",
+  week_number: 4,
+  theme: "Emotions and Likes",
+  
+  knowledge_base: [
+    "Emotions: happy, sad, excited, friendly, funny",
+    "Activities: playing, reading, drawing, singing, dancing",
+    "Grammar: I like + V-ing (I like playing, I like reading)",
+    "Smiling makes you feel happy",
+    "People have different hobbies and favorite activities",
+    "Doing things you love makes you feel good",
+    "You can express your feelings with words",
+    "Happy things can be collected in a jar or notebook",
+    "Being friendly and funny helps make friends",
+    "Sharing hobbies with others is fun"
+  ],
+  
+  example_opening_questions: [
+    "How are you feeling today?",
+    "What do you like to do?",
+    "Do you like playing games?",
+    "Do you like reading books?",
+    "What makes you happy?",
+    "Do you have a favorite hobby?",
+    "What do you do for fun?"
+  ]
+}
+```
+
+**Structure**:
+- knowledge_base: 10-15 facts about theme (bullet points)
+- example_opening_questions: 7-10 questions Nova can ask in FreeTalk mode
+
+---
+
+## VALIDATION CHECKS
+
+### Week 1-3 Checklist:
+- [ ] 3 missions with unique titles
+- [ ] Each mission has nova_greeting, default_hints
+- [ ] mission_context includes flexible conversation note
+- [ ] conversation_topics: 8-10 topics
+- [ ] example_questions: 5-7 questions
+- [ ] minimum_turns: 15, maximum_turns: 20
+- [ ] NO objectives array
+
+### Week 4+ Checklist:
+- [ ] 3 missions with unique titles (keywords for TurnManager)
+- [ ] Each mission has nova_greeting, mission_context
+- [ ] objectives array exists
+- [ ] 9-12 objectives per mission
+- [ ] Each objective has question_variants (3 variants)
+- [ ] Each variant has question + hints (6-9 words)
+- [ ] 2 student_question objectives (type: "invitation")
+- [ ] 1 goodbye objective (type: "termination")
+- [ ] Hints are scrambled, not in sentence order
+
+---
+
+**END OF AI TUTOR EXAMPLES**
+
+Return to CORE or SCHEMA files to continue generation.

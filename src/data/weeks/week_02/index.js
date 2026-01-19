@@ -16,17 +16,17 @@ const weekData = {
   weekId: 2,
   isEasy: false,
   weekTitle_en: "My Family Squad",
-  weekTitle_vi: "Biệt Đội Gia Đình",
-  grammar_focus: "This is my... (Possession)",
+  weekTitle_vi: "Đội Gia Đình Tôi",
+  grammar_focus: "This is my... (Possession) & Present Simple",
   global_vocab: vocab.vocab,
   // ⚠️ MANDATORY: voiceConfig for unique voices per week
-  // Week 2: Introducing UK Female voice (scaffolding progression)
+  // Week 2 Advanced: US voices (continuing scaffolding for basic family vocabulary)
   voiceConfig: {
-    narration: 'en-GB-Neural2-A',    // UK Male, different from Week 1
-    vocabulary: 'en-GB-Neural2-C',   // UK Female, clear pronunciation
-    dictation: 'en-US-Neural2-F',    // US Female (familiar from Week 1)
-    questions: 'en-GB-Neural2-A',    // UK Male for questions
-    mindmap: 'en-GB-Neural2-C'       // UK Female for mindmap
+    narration: 'en-US-Neural2-D',    // US Male, clear for family stories
+    vocabulary: 'en-US-Neural2-F',   // US Female, friendly for vocab
+    dictation: 'en-US-Neural2-F',    // US Female, neutral for dictation
+    questions: 'en-US-Neural2-D',    // US Male for logic/ask_ai
+    mindmap: 'en-US-Neural2-D'       // US Male for mindmap branches
   },
   stations: {
     read_explore: read,

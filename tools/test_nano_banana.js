@@ -14,16 +14,37 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Load API key from file
-const loadApiKey = () => {
+// Load all API keys from file
+const loadApiKeys = () => {
   const apiKeyFile = path.join(__dirname, '..', 'API keys.txt');
   const content = fs.readFileSync(apiKeyFile, 'utf-8');
-  const match = content.match(/GEMINI_API_KEY[:\s=]+([^\s\n]+)/);
-  return match ? match[1] : null;
+  
+  // Extract all GEMINI keys
+  const keys = [];
+  const lines = content.split('\n');
+  let inGeminiSection = false;
+  
+  for (const line of lines) {
+    if (line.includes('GEMINI_API_KEY')) {
+      inGeminiSection = true;
+      const match = line.match(/AIzaSy[a-zA-Z0-9_-]+/);
+      if (match) keys.push(match[0]);
+    } else if (inGeminiSection && line.trim().startsWith('AIzaSy')) {
+      const match = line.match(/AIzaSy[a-zA-Z0-9_-]+/);
+      if (match) keys.push(match[0]);
+    } else if (line.trim() && !line.trim().startsWith('AIzaSy') && inGeminiSection) {
+      inGeminiSection = false;
+    }
+  }
+  
+  return keys;
 };
 
-const GEMINI_API_KEY = loadApiKey();
+const GEMINI_API_KEYS = loadApiKeys();
+let currentKeyIndex = 0;
 const API_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent';
+
+console.log(`🔑 Found ${GEMINI_API_KEYS.length} GEMINI API keys to try`);
 
 // Test vocabulary words from Week 1
 const TEST_WORDS = [
@@ -40,12 +61,14 @@ const TEST_WORDS = [
 ];
 
 /**
- * Generate image using Gemini API (Nano Banana)
+ * Generate image using Gemini API (Nano Banana) with key rotation
  * @param {string} prompt - Image generation prompt
+ * @param {number} keyIndex - Which key to try (default: current)
  * @returns {Promise<Buffer|null>} Image buffer or null on failure
  */
-async function generateImage(prompt) {
+async function generateImage(prompt, keyIndex = currentKeyIndex) {
   return new Promise((resolve) => {
+    const GEMINI_API_KEY = GEMINI_API_KEYS[keyIndex];
     const postData = JSON.stringify({
       contents: [{
         parts: [{
@@ -82,8 +105,18 @@ async function generateImage(prompt) {
           const jsonData = JSON.parse(data);
           
           if (res.statusCode !== 200) {
-            console.error('API Error:', JSON.stringify(jsonData, null, 2));
-            resolve(null);
+            // Check if it's a key error
+            const isKeyError = jsonData.error?.message?.includes('API key') || 
+                              jsonData.error?.message?.includes('expired') ||
+                              jsonData.error?.reason === 'API_KEY_INVALID';
+            
+            if (isKeyError) {
+              console.error(`❌ Key #${keyIndex + 1} invalid/expired: ${jsonData.error?.message}`);
+              resolve({ error: 'KEY_INVALID', keyIndex });
+            } else {
+              console.error('API Error:', JSON.stringify(jsonData, null, 2));
+              resolve(null);
+            }
             return;
           }
           
@@ -120,8 +153,8 @@ async function testNanoBanana() {
   console.log('🍌 Testing Nano Banana (Gemini Free Tier Image Generation)\n');
   console.log('=' .repeat(60));
   
-  if (!GEMINI_API_KEY) {
-    console.error('❌ GEMINI_API_KEY not found in API keys.txt');
+  if (GEMINI_API_KEYS.length === 0) {
+    console.error('❌ No GEMINI_API_KEY found in API keys.txt');
     return;
   }
   
@@ -142,9 +175,31 @@ async function testNanoBanana() {
     console.log(`\n[${i + 1}/${TEST_WORDS.length}] Generating: ${word}`);
     console.log(`Prompt: ${prompt}`);
     
-    const imageBuffer = await generateImage(prompt);
+    let imageBuffer = await generateImage(prompt, currentKeyIndex);
     
-    if (imageBuffer) {
+    // If key is invalid, try next key
+    if (imageBuffer && imageBuffer.error === 'KEY_INVALID') {
+      console.log(`🔄 Trying next API key...`);
+      currentKeyIndex++;
+      
+      // Try all remaining keys
+      while (currentKeyIndex < GEMINI_API_KEYS.length) {
+        console.log(`🔑 Trying key #${currentKeyIndex + 1}/${GEMINI_API_KEYS.length}...`);
+        imageBuffer = await generateImage(prompt, currentKeyIndex);
+        
+        if (!imageBuffer || imageBuffer.error !== 'KEY_INVALID') {
+          break; // Found a working key or different error
+        }
+        currentKeyIndex++;
+      }
+      
+      if (currentKeyIndex >= GEMINI_API_KEYS.length) {
+        console.log(`❌ All ${GEMINI_API_KEYS.length} API keys exhausted!`);
+        break;
+      }
+    }
+    
+    if (imageBuffer && !imageBuffer.error) {
       const filename = `${word}.jpg`;
       const filepath = path.join(outputDir, filename);
       fs.writeFileSync(filepath, imageBuffer);
@@ -175,6 +230,7 @@ async function testNanoBanana() {
   
   if (successCount > 0) {
     console.log('\n🎉 Nano Banana works! Free tier image generation successful.');
+    console.log(`🔑 Working key: #${currentKeyIndex + 1}/${GEMINI_API_KEYS.length}`);
     console.log('💡 Next steps:');
     console.log('   1. Check image quality in public/images/test_nano_banana/');
     console.log('   2. Compare with current Imagen 3 images (Week 19)');

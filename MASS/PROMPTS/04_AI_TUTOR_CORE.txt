@@ -1,0 +1,463 @@
+# ENGQUEST 3K - AI TUTOR CORE V29
+**Version**: 29 (Module System)
+**Purpose**: Core execution guide for generating week_XX_real.js (AI Tutor content)
+
+**READ THIS FILE**: After V29_MASTER_ORCHESTRATOR.txt, when generating AI Tutor
+
+---
+
+## 🎯 OVERVIEW
+
+You will generate **1 AI Tutor file** per week:
+- **File name**: `week_XX_real.js` (e.g., week_04_real.js)
+- **Location**: `/src/data/weeks/week_XX_real.js` (parent level, NOT in week_XX/ folder)
+- **Purpose**: Data for guided AI conversation in Story Mode
+- **Size**: 575-1,099 lines depending on week
+
+**Content**: Metadata + 3 Missions + FreeTalk knowledge
+
+---
+
+## 📖 EXECUTION ORDER - READ THIS CAREFULLY
+
+### STEP 1: Read Syllabus Data
+```bash
+# Get theme and vocabulary for week X
+grep "week: X" syllabus_database.js
+```
+
+Extract:
+- week_title_en / week_title_vi
+- topic / topic_vi
+- target_vocab (7-10 words)
+- grammar_pattern
+
+### STEP 2: Determine CEFR Level
+```
+Week 1-18:   CEFR A0
+Week 19-36:  CEFR A0+
+Week 37-54:  CEFR A1
+Week 55-72:  CEFR A1+
+Week 73-90:  CEFR A2
+Week 91-108: CEFR A2+
+Week 109-156: CEFR B1
+```
+
+### STEP 3: Choose Format (CRITICAL DECISION!)
+
+**Week 1-3**: Use **canonical_question** format
+→ Read V29_AI_TUTOR_SCHEMA_BASIC.txt next
+
+**Week 4+**: Use **question_variants** format
+→ Read V29_AI_TUTOR_SCHEMA_VARIANT.txt next
+
+**Why different formats?**
+- Week 1-3: Simple, one question per objective
+- Week 4+: Replay value with 3 question variants per objective
+
+### STEP 4: Generate File Structure
+
+**Template**:
+```javascript
+const weekXRealData = {
+  // === METADATA === (Lines 1-100)
+  week_id: X,
+  phase: 1,
+  block: "A",
+  unit: X,
+  week_number: X,
+  title: "Week X: [Title]",
+  week_title_en: "[Title]",
+  week_title_vi: "[Vietnamese Title]",
+  topic: "[Topic]",
+  topic_vi: "[Vietnamese Topic]",
+  learning_outcome: "[Outcome]",
+  learning_outcome_vi: "[Vietnamese Outcome]",
+  grammar_focus: "[Grammar]",
+  grammar_pattern: "[Pattern]",
+  grammar_examples: ["Example 1", "Example 2"],
+  target_vocab: [
+    { word: "word1", pronunciation: "/IPA/", definition_vi: "nghĩa", definition_en: "meaning", example: "sentence", syllabus_context: "context" },
+    // 7-10 words as OBJECTS (not strings!)
+  ],
+  
+  // === STORY MISSIONS === (Lines 100-1000)
+  story_missions: [
+    {
+      mission_id: 1,
+      title: "Mission 1: [Mission Title with Keywords]",  // CRITICAL for TurnManager
+      // ... mission data
+    },
+    // 3 missions total
+  ],
+  
+  // === FREE TALK KNOWLEDGE === (Lines 1000-1100)
+  free_talk_knowledge: {
+    theme: "[Theme]",
+    knowledge_base: ["Fact 1", "Fact 2", ...],
+    example_opening_questions: ["Question 1", "Question 2", ...]
+  }
+};
+
+export default weekXRealData;
+```
+
+### STEP 5: Generate Each Mission
+
+**For each of 3 missions**, generate:
+1. Mission metadata (id, title, description)
+2. Nova greeting
+3. Mission context (AI instructions)
+4. 9-12 objectives:
+   - 9 regular objectives (question variants/canonical)
+   - 2 student question invitations (Week 4+ only)
+   - 1 goodbye objective
+5. Minimum/maximum turns
+
+### STEP 6: Generate FreeTalk Knowledge
+
+Create knowledge base:
+- theme: Week's topic
+- knowledge_base: 10-15 facts about theme
+- example_opening_questions: 8-10 questions Nova can ask
+
+### STEP 7: Validate Before Finishing
+
+Check:
+- [ ] target_vocab has 7-10 OBJECTS (not strings!)
+- [ ] All 3 missions have mission titles with keywords (for TurnManager)
+- [ ] Week 4+: All objectives have question_variants (3 variants each)
+- [ ] Week 4+: 2 student invitations per mission
+- [ ] File exports correctly: `export default weekXRealData;`
+
+---
+
+## 🔑 CRITICAL CONCEPTS
+
+### 1. TARGET_VOCAB: Objects, NOT Strings!
+
+**❌ WRONG**:
+```javascript
+target_vocab: ["happy", "sad", "funny"]  // Strings - will break Quiz/Speak tabs!
+```
+
+**✅ CORRECT**:
+```javascript
+target_vocab: [
+  {
+    word: "happy",
+    pronunciation: "/ˈhæpi/",
+    definition_vi: "vui vẻ",
+    definition_en: "feeling very good and joyful",
+    example: "I am happy today.",
+    syllabus_context: "Emotions"
+  },
+  // 7-10 word objects
+]
+```
+
+**Why?** Quiz and Speak tabs expect objects with `word`, `pronunciation`, `definition_vi`, etc.
+
+### 2. Mission Title Keywords (for TurnManager Detection)
+
+TurnManager.js uses mission title keywords to detect which week is active:
+
+**Week detection logic**:
+```javascript
+// In TurnManager.js
+if (title.includes("Family") || title.includes("Mother") || title.includes("Father")) {
+  // Week 2 logic
+} else if (title.includes("Mirror") || title.includes("Appearance")) {
+  // Week 3 logic
+} else if (title.includes("Happy") || title.includes("Emotions")) {
+  // Week 4 logic
+} else {
+  // Week 1 default logic
+}
+```
+
+**CRITICAL**: Mission titles MUST include distinctive keywords!
+
+**Examples**:
+- Week 1: "Mission 1: Meeting at School" (default)
+- Week 2: "Mission 1: My Family Album" (keyword: Family)
+- Week 3: "Mission 1: Mirror, Mirror on the Wall" (keyword: Mirror)
+- Week 4: "Mission 1: My Happy Jar" (keyword: Happy)
+
+### 3. Objective Structure Differences
+
+**Week 1-3 (canonical_question)**:
+```javascript
+{
+  stepKey: "student_name",
+  category: "Identity",
+  canonical_question: "What is your name?",  // Single question
+  hints: ["name", "is", "My"],  // Individual words
+  target_keywords: ["my", "name", "is"],
+  ack_options: ["Nice!", "Great!"],
+  recast_templates: ["Your name is {name}!"],
+  success_criteria: "Student says their name"
+}
+```
+
+**Week 4+ (question_variants)**:
+```javascript
+{
+  stepKey: "student_name",
+  category: "Identity",
+  question_variants: [  // 3 variants for replay
+    {
+      question: "What is your name?",
+      hints: ["name", "is", "My", "I", "am"]  // Full scrambled sentence
+    },
+    {
+      question: "Can you tell me your name?",
+      hints: ["is", "My", "name", "tell", "you", "I"]
+    },
+    {
+      question: "What do I call you?",
+      hints: ["call", "me", "You", "can", "My", "name"]
+    }
+  ],
+  target_keywords: ["my", "name", "is", "I", "am"],
+  ack_options: ["Nice!", "Great!"],
+  recast_templates: ["Your name is {name}!"],
+  success_criteria: "Student says their name"
+}
+```
+
+**Key differences**:
+- canonical_question: 1 question, 3-5 word hints
+- question_variants: 3 questions, 6-9 word hints (full sentence)
+
+### 4. Student Question Invitations (Week 4+ Only)
+
+Every mission should have **2 student question invitations**:
+
+```javascript
+{
+  stepKey: "student_question_1",
+  category: "Student Inquiry",
+  type: "invitation",  // CRITICAL field
+  question_variants: [
+    {
+      question: "Do you have any questions for me?",
+      hints: []  // Empty hints - open-ended
+    },
+    {
+      question: "Is there anything you want to ask?",
+      hints: []
+    },
+    {
+      question: "What would you like to know?",
+      hints: []
+    }
+  ],
+  target_keywords: [],
+  ack_options: ["Good question!", "That's interesting!"],
+  recast_templates: [],
+  allow_skip: true,  // Student can skip
+  success_criteria: "Student asks a question or skips"
+}
+```
+
+**Placement**: Insert after every 3-4 regular objectives
+
+**Purpose**: Encourages student-initiated questions, making conversation more natural
+
+### 5. Goodbye Objective (All Weeks)
+
+Every mission ends with goodbye:
+
+```javascript
+{
+  stepKey: "goodbye",
+  category: "Closing",
+  question_variants: [  // or canonical_question for Week 1-3
+    {
+      question: "How do you say goodbye?",
+      hints: ["Goodbye", "See", "you", "Bye"]
+    },
+    {
+      question: "Time to go! What do you say?",
+      hints: ["Bye", "Goodbye", "See", "later"]
+    },
+    {
+      question: "Let's end our chat. Say goodbye!",
+      hints: ["Goodbye", "Bye", "you", "See"]
+    }
+  ],
+  target_keywords: ["goodbye", "bye", "see you"],
+  ack_options: ["Bye!", "See you next time!", "Goodbye!"],
+  recast_templates: [],
+  success_criteria: "Student says goodbye"
+}
+```
+
+---
+
+## ✅ VALIDATION CHECKLIST
+
+### Before Generation:
+- [ ] Read syllabus_database.js for week X data
+- [ ] Determined CEFR level
+- [ ] Chosen format (canonical vs variants)
+- [ ] Read appropriate SCHEMA file
+
+### After Metadata Generation:
+- [ ] week_id matches week number
+- [ ] title, week_title_en, week_title_vi filled
+- [ ] topic / topic_vi filled
+- [ ] learning_outcome describes grammar pattern
+- [ ] grammar_focus, grammar_pattern, grammar_examples present
+- [ ] target_vocab has 7-10 OBJECTS (not strings!)
+- [ ] Each vocab object has all 6 fields
+
+### After Mission Generation:
+- [ ] 3 missions total
+- [ ] Each mission has title with keywords for TurnManager
+- [ ] Each mission has nova_greeting, mission_context
+- [ ] Each mission has 9-12 objectives:
+  - 9 regular objectives
+  - 2 student invitations (Week 4+ only)
+  - 1 goodbye objective
+- [ ] minimum_turns and maximum_turns set
+- [ ] Week 1-3: canonical_question present
+- [ ] Week 4+: question_variants present (3 variants each)
+- [ ] Week 4+: hints are 6-9 words (full sentence)
+- [ ] Week 4+: student_question type has `type: "invitation"`
+
+### After FreeTalk Generation:
+- [ ] theme matches week topic
+- [ ] knowledge_base has 10-15 facts
+- [ ] example_opening_questions has 8-10 questions
+
+### Final Checks:
+- [ ] File exports correctly: `export default weekXRealData;`
+- [ ] No syntax errors
+- [ ] File imports successfully:
+  ```bash
+  node -e "const w = require('./src/data/weeks/week_XX_real.js'); console.log(w.week_id)"
+  ```
+
+---
+
+## 🎓 TOKEN EFFICIENCY STRATEGY
+
+### Best Practice:
+```
+1. Read MASTER_ORCHESTRATOR (500 dòng)
+2. Read AI_TUTOR_CORE (this file - 400 dòng)
+3. Read SCHEMA_BASIC or VARIANT (300-400 dòng) ← ONCE ONLY
+4. Generate entire week_XX_real.js file
+5. Validate before finishing
+```
+
+**Total**: 500 + 400 + 400 = **1,300 dòng** for 1 week!
+
+### Avoid:
+```
+❌ Reading EXAMPLES unless confused
+❌ Re-reading schema for each mission
+❌ Re-reading CORE for different sections
+```
+
+---
+
+## 🔧 TROUBLESHOOTING
+
+### Problem 1: target_vocab is array of strings
+**Symptom**: Quiz tab shows undefined, Speak tab doesn't work
+**Solution**: Convert to array of objects with all 6 fields
+
+### Problem 2: TurnManager doesn't detect week
+**Symptom**: Conversation uses Week 1 logic for all weeks
+**Solution**: Add distinctive keywords to mission titles
+
+### Problem 3: Week 4+ missing question_variants
+**Symptom**: Objectives show undefined question
+**Solution**: Replace canonical_question with question_variants array
+
+### Problem 4: Hints not scrambled
+**Symptom**: Hints appear in sentence order
+**Solution**: For question_variants, hints should be 6-9 words in random order
+
+### Problem 5: Missing student invitations
+**Symptom**: Conversation feels one-sided
+**Solution**: Add 2 student_question objectives per mission with `type: "invitation"`
+
+---
+
+## 📚 WHEN TO READ WHICH FILE
+
+### Always Read:
+- ✅ V29_MASTER_ORCHESTRATOR.txt (first)
+- ✅ V29_AI_TUTOR_CORE.txt (this file - second)
+
+### Choose One Based on Week:
+- **Week 1-3** → V29_AI_TUTOR_SCHEMA_BASIC.txt (canonical_question)
+- **Week 4+** → V29_AI_TUTOR_SCHEMA_VARIANT.txt (question_variants)
+
+### Read If Confused:
+- V29_AI_TUTOR_EXAMPLES.txt (Week 1, 2, 4 complete examples)
+
+### Never Read:
+- ❌ STATIONS files (different purpose)
+- ❌ WORKFLOW files (different phase)
+
+---
+
+## 🚨 CRITICAL RULES
+
+### Rule 1: target_vocab MUST Be Objects
+**NEVER** use strings. Always use objects with 6 fields.
+
+### Rule 2: Mission Titles MUST Have Keywords
+TurnManager relies on keywords to detect week. Choose distinctive words.
+
+### Rule 3: Week 4+ MUST Use question_variants
+Replay value requires 3 question variants per objective.
+
+### Rule 4: Week 4+ Hints Are Full Sentences
+Hints: 6-9 words scrambled, not 3-5 individual words.
+
+### Rule 5: 2 Student Invitations Per Mission (Week 4+)
+Place after every 3-4 objectives, with `type: "invitation"`.
+
+---
+
+## 📞 NEXT STEPS
+
+**After reading this file:**
+
+1. **Week 1-3** → Read V29_AI_TUTOR_SCHEMA_BASIC.txt
+2. **Week 4+** → Read V29_AI_TUTOR_SCHEMA_VARIANT.txt
+3. **If confused** → Read V29_AI_TUTOR_EXAMPLES.txt
+4. **Generate week_XX_real.js** following chosen schema
+5. **Validate** using checklist above
+
+---
+
+## 📊 EXPECTED OUTPUT
+
+By end of this phase, you should have:
+
+```
+/src/data/weeks/week_XX_real.js (575-1,099 lines)
+
+Week 1-3: ~575-640 lines (canonical_question)
+Week 4+: ~1,099 lines (question_variants + invitations)
+```
+
+**Structure**:
+- Lines 1-100: Metadata + target_vocab
+- Lines 100-400: Mission 1 (9-12 objectives)
+- Lines 400-700: Mission 2 (9-12 objectives)
+- Lines 700-1000: Mission 3 (9-12 objectives)
+- Lines 1000-1100: FreeTalk knowledge + export
+
+---
+
+**END OF AI TUTOR CORE**
+
+Proceed to SCHEMA_BASIC or SCHEMA_VARIANT based on week number.

@@ -1,6 +1,6 @@
 # EngQuest AI Context (Compact)
 
-_Last Updated: 2026-01-12T05:52:13.839Z_
+_Last Updated: 2026-01-15T03:28:59.458Z_
 
 ## TL;DR
 - ESL learning app: weekly lessons → stations (reading, vocab, grammar, etc.) → AI tutor
@@ -101,7 +101,17 @@ npm run dev  # runs on :5173
 - **FORBIDDEN** to read: `node_modules`, `dist`, `.git`, `build`, `src/legacy_archive`
 
 ## Development Log & Key Decisions
-<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-12 05:52:13: CLEANUP_COMPLETE_REPORT
+<!-- AUTO_GENERATED_DEVELOPMENT_LOG -->- 2026-01-15 03:28:59: AI_TUTOR_WEEK2_FIX_JAN14
+
+- 2026-01-14 10:38:26: WEEK_2_COMPREHENSIVE_AUDIT_REPORT
+
+- 2026-01-14 09:48:26: WEEK_2_COMPREHENSIVE_AUDIT_REPORT
+
+- 2026-01-13 06:09:47: Updated 27 files
+
+- 2026-01-13 02:44:25: Updated 14 files
+
+- 2026-01-12 05:52:13: CLEANUP_COMPLETE_REPORT
 
 - 2026-01-12 03:14:02: CLEANUP_COMPLETE_REPORT
 
@@ -115,15 +125,10 @@ npm run dev  # runs on :5173
 
 - 2026-01-09 01:17:18: ONE_BRAIN_FIX_COMPLETE
 
-- 2026-01-08 15:57:13: ONE_BRAIN_FIX_COMPLETE
 
-- 2026-01-07 13:26:21: Implemented API keys auto-failover system with 3 Gemini keys, OpenAI Whisper integration, smart routing logic, and cost tracking. Phase 2 ready with /api/pronunciation endpoints.
 
-- 2026-01-07 11:55:25: EMERGENCY_FIX_REPORT_JAN6_430PM
 
-- 2026-01-07 11:45:53: Fixed learning mode toggle - added stopPropagation and pass learningMode prop to useFetchWeekData hook
 
-- 2026-01-07 11:36:13: Simplified project_manager.sh option 5 - auto-detects changes and updates context without prompts
 
 
 

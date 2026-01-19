@@ -1,0 +1,545 @@
+# ENGQUEST 3K - CEFR GUIDELINES V29
+**Version**: 29 (Module System)
+**Purpose**: Vocabulary, grammar, and sentence structure rules per CEFR level
+
+**READ THIS FILE**: When determining vocabulary difficulty, grammar patterns, or sentence length
+
+---
+
+## 🎯 WEEK-BASED CEFR LEVEL TABLE
+
+**Use this table to select correct CEFR level based on week number**:
+
+| Week Range | CEFR Level | Grammar Focus | Vocabulary Tier | Max Sentence Words |
+|------------|------------|---------------|-----------------|-------------------|
+| **1-18** | **A0/A0++** | Present Simple Be, Can/Can't | Tier 1 only | Easy: 5-8, Adv: 8-14 |
+| **19-40** | **A1** | Past Simple (Was/Were, -ed, irregular) | Tier 1 + basic Tier 2 | Easy: 6-10, Adv: 10-15 |
+| **41-54** | **A1+** | Future (going to), Present Perfect chunks | Tier 1-2 mix | Easy: 8-12, Adv: 12-18 |
+| **55-70** | **A2** | Because/So, First Conditional, Modals | Tier 2 primary | Easy: 10-14, Adv: 14-20 |
+| **71-98** | **A2+** | Passive Voice, Zero Conditional, Used to | Tier 2 + academic | Easy: 12-16, Adv: 16-25 |
+| **99-112** | **B1** | Past Perfect, Relative Clauses, 2nd Conditional | Tier 2-3 mix | Easy: 14-18, Adv: 18-30 |
+| **113-156** | **B1+** | Debate structures, Synthesis, Nuanced thesis | Academic Tier 3 | Easy: 16-22, Adv: 20-40 |
+
+---
+
+## LEVEL 1: A0/A0++ (Weeks 1-18)
+
+### Target Audience:
+- Vietnamese children ages 6-10
+- Absolute beginners or false beginners
+- First exposure to systematic English
+
+### Vocabulary Rules:
+
+**Tier 1 ONLY**:
+- Concrete nouns: book, pen, desk, chair, bag, school, home, bed
+- Basic verbs: go, come, see, have, play, run, eat, drink, sleep
+- Simple adjectives: big, small, happy, sad, red, blue, old, new
+- **Max 2 syllables** preferred (3 syllables only if very common: ba-na-na, to-mor-row)
+
+**Forbidden**:
+- Abstract nouns (happiness, sadness, excitement)
+- Multi-syllable verbs (understand → use "know")
+- Rare adjectives (gorgeous → use "beautiful" or "pretty")
+
+**Vocabulary Examples**:
+
+| ✅ CORRECT (Tier 1) | ❌ WRONG (Too advanced) |
+|---------------------|-------------------------|
+| happy | joyful, delighted |
+| book | textbook, literature |
+| go | depart, proceed |
+| big | enormous, gigantic |
+| pretty | gorgeous, stunning |
+
+---
+
+### Grammar Rules:
+
+**ALLOWED**:
+1. **Subject + Be**: 
+   - I am a student.
+   - She is happy.
+   - They are my friends.
+
+2. **Subject + Have**:
+   - I have a book.
+   - She has a pen.
+
+3. **Subject + Like/Love/Want**:
+   - I like apples.
+   - She loves her mother.
+   - They want to play.
+
+4. **Can/Can't**:
+   - I can swim.
+   - She can't fly.
+
+5. **Simple Questions**:
+   - What is this?
+   - Where is the book?
+   - Is this a pen?
+   - Can I play?
+   - Do you like it?
+   - How are you?
+
+**FORBIDDEN**:
+- ❌ Past tense: "I went", "She played"
+- ❌ Future tense: "I will go", "She will come"
+- ❌ Conditionals: "If I were", "If she had"
+- ❌ Passive voice: "The book is read by me"
+- ❌ Present perfect: "I have been"
+- ❌ Complex questions: "How do they...?", "What does it do?"
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (5-8 words)**:
+- Simple sentences: "I go to school."
+- Compound with "and": "I read and I write."
+- Compound with "but": "I like apples but I don't like oranges."
+
+**Advanced Mode (8-14 words)**:
+- Compound: "I go to school and I play with my friends."
+- Complex with "because": "I am happy because I have a new book."
+- Example: "My backpack is heavy because I carry my book and notebook every day." (14 words ✅)
+
+**Forbidden Connectors**:
+- ❌ although, however, whereas (save for Phase 2)
+- ❌ while, unless, despite (A2+ level)
+
+---
+
+### Question Patterns (A0 ONLY):
+
+**✅ ALLOWED**:
+```
+What + be:
+- What is this?
+- What is your name?
+
+Where + be:
+- Where is the book?
+- Where is your school?
+
+Is/Are + subject:
+- Is this a pen?
+- Are you a student?
+
+Can + subject:
+- Can I play?
+- Can you help me?
+
+Do you + verb:
+- Do you like it?
+- Do you want to play?
+
+How + be:
+- How are you?
+- How is your mother?
+```
+
+**❌ FORBIDDEN (Too complex for A0)**:
+```
+How do they...?          (Requires 3rd person plural + do)
+What does it do?         ("does" + verb base is A1)
+Where can I find...?     ("can + find" is A1)
+Why is/are...?           ("Why" questions are A1+)
+How many/much...?        (Quantifiers are A1)
+```
+
+---
+
+## LEVEL 2: A1 (Weeks 19-40)
+
+### Vocabulary Rules:
+
+**Tier 1 core + basic Tier 2**:
+- Time expressions: yesterday, today, tomorrow, last week, next week
+- Common adjectives: surprised, excited, tired, hungry, thirsty
+- Place prepositions: in, on, under, behind, next to
+
+**Examples**:
+- yesterday, morning, afternoon, evening
+- surprised, excited, worried, tired
+- kitchen, bedroom, bathroom, garden
+
+---
+
+### Grammar Rules:
+
+**Weeks 19-25: Past Simple with Was/Were**
+```
+I was at home yesterday.
+She was happy.
+They were at school.
+```
+
+**Weeks 26-32: Past Simple Regular verbs (-ed)**
+```
+I played football.
+She watched TV.
+They walked to school.
+```
+
+**Weeks 33-40: Past Simple Irregular verbs**
+```
+I went to the park.
+She ate lunch.
+They had fun.
+```
+
+**Questions**:
+- Where did you go?
+- What did you do?
+- Did you like it?
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (6-10 words)**:
+- "Yesterday I went to the park."
+- "Last week I visited my grandma."
+
+**Advanced Mode (10-15 words)**:
+- "Last week I visited my grandma and we ate delicious food together."
+- "Yesterday I played football but my team lost the game."
+
+---
+
+## LEVEL 3: A1+ (Weeks 41-54)
+
+### Vocabulary Rules:
+
+**Tier 1-2 balanced mix**:
+- Future time: tomorrow, next week, in the future, soon
+- Action verbs: prepare, finish, start, improve, continue
+
+---
+
+### Grammar Rules:
+
+**Future with going to**:
+```
+I'm going to visit my friend tomorrow.
+She's going to study English next week.
+```
+
+**Want to + verb**:
+```
+I want to learn English.
+They want to play games.
+```
+
+**Present Perfect chunks** (formulaic only):
+```
+I have been to the zoo.
+Have you ever eaten sushi?
+```
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (8-12 words)**:
+- "Tomorrow I'm going to help my mom cook dinner."
+
+**Advanced Mode (12-18 words)**:
+- "Tomorrow I'm going to help my mom because I want to be a good son."
+
+---
+
+## LEVEL 4: A2 (Weeks 55-70)
+
+### Vocabulary Rules:
+
+**Tier 2 becomes primary**:
+- Abstract concepts: opinion, reason, result, choice, decision
+- Connectors: because, so, if, when, before, after
+- Opinion words: think, believe, agree, disagree
+
+---
+
+### Grammar Rules:
+
+**Because/So**:
+```
+I study hard because I want good grades.
+It rained, so I stayed home.
+```
+
+**First Conditional**:
+```
+If I study, I will pass.
+If it rains, we will stay inside.
+```
+
+**Modals**:
+```
+You should do your homework.
+I could help you.
+It might rain tomorrow.
+You must listen to the teacher.
+```
+
+**OREO Persuasion Structure** (Week 67+):
+1. **Opinion**: "I think homework is important."
+2. **Reason**: "It helps us practice."
+3. **Example**: "For example, math homework helps me remember formulas."
+4. **Opinion**: "That's why I believe we should do homework."
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (10-14 words)**:
+- "If I study hard every day, I will get good grades."
+
+**Advanced Mode (14-20 words)**:
+- "If students do homework regularly, they will understand the lesson better and get higher scores."
+
+---
+
+## LEVEL 5: A2+ (Weeks 71-98)
+
+### Vocabulary Rules:
+
+**Tier 2 + academic subject vocabulary**:
+- Science: absorb, reflect, energy, ecosystem, photosynthesis
+- History: ancient, civilization, empire, trade, culture
+- Math: multiply, divide, equation, fraction
+
+---
+
+### Grammar Rules:
+
+**Passive Voice** (introduced Week 72):
+```
+Sunlight is absorbed by plants.
+The pyramids were built thousands of years ago.
+```
+
+**Zero Conditional**:
+```
+If you heat water, it boils.
+If plants don't get sunlight, they die.
+```
+
+**Used to**:
+```
+People used to travel by horse.
+Children used to play outside more.
+```
+
+**Comparative/Superlative**:
+```
+This book is more interesting than that one.
+She is the tallest student in the class.
+```
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (12-16 words)**:
+- "When sunlight reaches plant leaves, the energy is used to make food."
+
+**Advanced Mode (16-25 words)**:
+- "When sunlight is absorbed by plant leaves, the energy is used to make food through photosynthesis."
+
+---
+
+## LEVEL 6: B1 (Weeks 99-112)
+
+### Vocabulary Rules:
+
+**Tier 2-3 mix, academic vocabulary dominant**:
+- Economics: supply, demand, consumer, profit, market
+- Critical thinking: analyze, evaluate, compare, contrast, conclude
+- Research: evidence, source, data, statistics, conclusion
+
+---
+
+### Grammar Rules:
+
+**Past Perfect**:
+```
+I had finished my homework before dinner.
+She had already left when I arrived.
+```
+
+**Relative Clauses**:
+```
+Students who study hard get better grades.
+The book that I read was interesting.
+```
+
+**Second Conditional**:
+```
+If I were rich, I would travel the world.
+If she had more time, she would learn piano.
+```
+
+**Gerunds/Infinitives**:
+```
+I enjoy reading books.
+I need to study English.
+```
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (14-18 words)**:
+- "Before the invention of money, people used to trade goods with each other."
+
+**Advanced Mode (18-30 words)**:
+- "Before the invention of currency, people who wanted to trade goods had to use the barter system, which was inefficient."
+
+---
+
+## LEVEL 7: B1+ (Weeks 113-156) - DEBATE & SYNTHESIS
+
+### Vocabulary Rules:
+
+**Academic Tier 3 dominant**:
+- Debate: counter-argument, rebuttal, concession, nuance, fallacy
+- Critical analysis: synthesize, evaluate, credibility, bias, correlation
+- Research: generalization, causation, evidence-based, peer-reviewed
+
+---
+
+### Grammar Rules:
+
+**Nuanced Thesis**:
+```
+While homework can be stressful, it ultimately benefits students because...
+```
+
+**Concession + Counter**:
+```
+Although some argue that homework is harmful, the evidence shows that moderate homework improves learning.
+```
+
+**Citation Integration**:
+```
+According to Smith (2020), students who complete homework regularly score 25% higher on tests.
+```
+
+**Qualifiers** (avoid overgeneralization):
+```
+Some students..., Many researchers..., Often..., In most cases...
+```
+
+---
+
+### Debate Essay Structure (5 paragraphs):
+
+1. **Introduction**: 
+   - Hook (question or statistic)
+   - Background (context)
+   - Thesis with nuance
+
+2. **Body 1**: 
+   - Main argument
+   - Evidence from research
+   - Examples
+
+3. **Body 2**: 
+   - Second argument
+   - More evidence
+   - Statistics
+
+4. **Counter-argument**: 
+   - Acknowledge opposing view
+   - Refute with evidence
+
+5. **Conclusion**: 
+   - Restate thesis
+   - Synthesis
+   - Call to action
+
+---
+
+### Critical Phrases:
+
+**Citation**:
+- According to...
+- Research shows...
+- Statistics indicate...
+- Studies have found...
+
+**Concession**:
+- While it's true that...
+- Although some believe...
+- I understand that...
+
+**Rebuttal**:
+- However, the evidence suggests...
+- On the contrary...
+- In fact, research shows...
+
+**Qualification**:
+- In many cases...
+- Generally speaking...
+- To some extent...
+- It is possible that...
+
+**Polite Disagreement**:
+- With all due respect...
+- I see your point, but...
+- That's an interesting perspective, however...
+
+---
+
+### Sentence Structure:
+
+**Easy Mode (16-22 words)**:
+- "While some people think homework is stressful, research shows that it helps students learn better."
+
+**Advanced Mode (20-40 words)**:
+- "While some educators argue that homework creates unnecessary stress for young students, research from the National Education Association shows that moderate homework assignments, when properly designed, can significantly improve retention and independent study skills."
+
+---
+
+### Special Requirements (Weeks 113-156):
+
+**Debate Cycle 1 (Weeks 113-120)**: Homework Debate
+- Pro: Improves retention, builds discipline, prepares for tests
+- Con: Creates stress, reduces family time, discourages creativity
+
+**Debate Cycle 2 (Weeks 121-128)**: Video Games Debate
+- Pro: Improves problem-solving, hand-eye coordination, teamwork
+- Con: Causes addiction, reduces physical activity, affects sleep
+
+**Debate Cycle 3 (Weeks 145-156)**: Smartphones Debate
+- Pro: Access to information, communication, safety
+- Con: Distraction, cyberbullying, reduces face-to-face interaction
+
+**Skills to teach**:
+- Fallacy detection (ad hominem, strawman, false dilemma)
+- Synthesis from multiple sources
+- Independent research methodology
+- Portfolio presentation skills
+
+---
+
+## 🎯 QUICK REFERENCE: CEFR Decision Tree
+
+```
+Is week 1-18?  → Use A0/A0++ (Tier 1 vocab, present simple only)
+Is week 19-40? → Use A1 (add past simple, basic Tier 2 vocab)
+Is week 41-54? → Use A1+ (add future, more Tier 2)
+Is week 55-70? → Use A2 (Tier 2 primary, conditionals)
+Is week 71-98? → Use A2+ (academic vocab, passive voice)
+Is week 99-112? → Use B1 (Tier 2-3 mix, relative clauses)
+Is week 113-156? → Use B1+ (debate, synthesis, Tier 3)
+```
+
+---
+
+**END OF CEFR GUIDELINES**
+
+Next: Read station or AI Tutor prompts based on your generation task.

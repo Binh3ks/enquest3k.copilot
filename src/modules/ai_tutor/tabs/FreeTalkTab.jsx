@@ -10,17 +10,26 @@ import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import week1RealData from '../../../data/weeks/week_01_real';
+import week2RealData from '../../../data/weeks/week_02_real';
+import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
+import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
+import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
  * Students chat naturally while Ms. Nova guides toward target vocabulary
  */
 const FreeTalkTab = () => {
-  const { user, currentWeek } = useUserStore();
+  const { user } = useUserStore();
+  const location = useLocation(); // 🔥 Get location from react-router
+  // 🔥 Parse weekId from pathname: /week/2/read_explore -> 2
+  const pathMatch = location.pathname.match(/\/week\/(\d+)/);
+  const weekNumber = pathMatch ? parseInt(pathMatch[1]) : 1;
+  console.log('🔥 FreeTalkTab pathname:', location.pathname, 'weekNumber:', weekNumber);
+  const currentWeek = `week-${weekNumber}`; // 🔥 Construct currentWeek
   
   // 🔥 Universal Progress System Integration
-  const weekNumber = parseInt(currentWeek?.replace('week-', '') || '1');
   const { savedData, saveProgress } = useStationProgress(weekNumber, 'ai_freetalk');
   
   // Separate selectors to prevent infinite re-renders
@@ -35,6 +44,9 @@ const FreeTalkTab = () => {
   const [messageCount, setMessageCount] = useState(savedData.totalTurns || 0);
   const [initialized, setInitialized] = useState(false);
   
+  // 🔥 Dynamic week data selection
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+  
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
   const initializingRef = useRef(false); // 🔥 Prevent double initialization
@@ -42,16 +54,41 @@ const FreeTalkTab = () => {
   // 🔥 NEW: Initialize NovaEngine instance
   const novaEngineRef = useRef(null);
   
+  // 🔥 Store weekNumber in ref to avoid closure issues
+  const weekNumberRef = useRef(weekNumber);
+  useEffect(() => {
+    weekNumberRef.current = weekNumber;
+  }, [weekNumber]);
+  
   // Initialize NovaEngine when component mounts or week changes
   useEffect(() => {
-    const weekData = getCurrentWeekData(currentWeek || 'week-1');
-    const userProfile = {
-      name: user?.name || 'Student',
-      age: user?.age || 8
+    const initNovaEngine = async () => {
+      const weekData = await getCurrentWeekData(currentWeek || 'week-1');
+      const userProfile = {
+        name: user?.name || 'Student',
+        age: user?.age || 8
+      };
+      
+      novaEngineRef.current = new NovaEngine(weekData, userProfile);
+      console.log('🧠 NovaEngine initialized for FreeTalkTab, weekNumber:', weekNumberRef.current);
+      
+      // 🔥 AFTER NovaEngine is ready, initialize conversation
+      if (!initialized && !initializingRef.current) {
+        initializingRef.current = true;
+        setInitialized(false);
+        setMessageCount(0);
+        setConversationTopic('');
+        
+        initializeConversation().catch(err => {
+          console.error('❌ initializeConversation error:', err);
+          initializingRef.current = false;
+        }).finally(() => {
+          setInitialized(true);
+        });
+      }
     };
     
-    novaEngineRef.current = new NovaEngine(weekData, userProfile);
-    console.log('🧠 NovaEngine initialized for FreeTalkTab');
+    initNovaEngine();
   }, [currentWeek, user]);
 
   // Auto-scroll to bottom
@@ -59,39 +96,19 @@ const FreeTalkTab = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Initialize conversation
-  useEffect(() => {
-    if (!initialized && !initializingRef.current) {
-      initializingRef.current = true; // 🔥 Mark as initializing
-      
-      // 🔥 FORCE fresh initialization - ignore any cached messages
-      setInitialized(false);
-      setMessageCount(0);
-      setConversationTopic('');
-      
-      // Note: Hints will be set by initializeConversation() based on opening question
-      
-      initializeConversation().catch(err => {
-        console.error('❌ initializeConversation error:', err);
-        initializingRef.current = false; // Reset on error
-      }).finally(() => {
-        setInitialized(true);
-      });
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const initializeConversation = async () => {
     // 🔥 ALWAYS initialize fresh conversation - no caching
     console.log('🔄 FreeTalkTab: Starting fresh conversation with AI-generated greeting');
+    console.log('🔥 DEBUG: weekNumberRef.current at initializeConversation:', weekNumberRef.current);
     
     try {
       // Get week data for AI context
-      const weekData = getCurrentWeekData(currentWeek || 'week-1');
+      const weekData = await getCurrentWeekData(currentWeek || 'week-1');
       
       // 🔥 NEW: Let AI generate natural opening (NO hardcoded greetings)
       const aiResponse = await novaEngineRef.current.sendToNova({
         mode: 'freetalk',
+        weekId: weekNumberRef.current,  // 🔥 V27: Pass weekId for freetalk_knowledge
         userMessage: '[SYSTEM: Start conversation with natural greeting]',
         chatHistory: [],
         context: {
@@ -199,6 +216,7 @@ const FreeTalkTab = () => {
       // 🔥 NEW: Use NovaEngine - AI tự quyết định khi nào nên đề nghị HS đặt câu hỏi
       const aiResponse = await novaEngineRef.current.sendToNova({
         mode: 'freetalk',
+        weekId: weekNumberRef.current,  // 🔥 V27: Pass weekId for freetalk_knowledge
         userMessage,
         chatHistory,
         context: {
@@ -311,7 +329,7 @@ const FreeTalkTab = () => {
         console.log('💡 FreeTalk AI hints (scrambled):', scrambledHints);
       } else if (responseText.includes('?')) {
         // 🔥 BETTER fallback: Extract hints from question using utility
-        const vocab = week1RealData.target_vocab?.map(v => v.word) || [];
+        const vocab = weekRealData.target_vocab?.map(v => v.word) || [];
         const contextualHints = extractHintsFromQuestion(responseText, vocab);
         setHints(contextualHints);
         setShowHints(true);

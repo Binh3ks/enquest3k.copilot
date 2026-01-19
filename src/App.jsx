@@ -4,7 +4,7 @@ import { Menu, Printer } from 'lucide-react';
 
 // STORES & API
 import { useUserStore } from './stores/useUserStore';
-import { getProgress, updateProgress } from './services/api';
+import { progressAPI } from './services/api';
 
 // CONFIG & CONSTANTS
 import { MODULE_COMPONENTS, STATIONS } from './config/stationConfig';
@@ -106,8 +106,8 @@ const MainLayout = () => {
             useUserStore.getState().setCurrentUser(meResponse.data);
           }
 
-          const response = await getProgress(weekId);
-          setWeekProgress(response.data || {});
+          const progressData = await progressAPI.fetchWeekProgress(weekId);
+          setWeekProgress(progressData || {});
         } catch (error) {
           console.error("Failed to initialize app data:", error);
           if (error.response?.status === 401) {
@@ -142,7 +142,13 @@ const MainLayout = () => {
     
     setAutoSaveStatus('saving');
     try {
-      await updateProgress({ weekId, stationKey: tabKey, progressPercent: percent });
+      await progressAPI.saveProgress({ 
+        weekId, 
+        stationId: tabKey, 
+        data: {}, 
+        isCompleted: percent >= 100, 
+        score: percent 
+      });
       
       setWeekProgress(prev => {
         const updatedProgress = { ...prev, [tabKey]: percent };

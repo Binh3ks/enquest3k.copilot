@@ -1,0 +1,39 @@
+{
+  "weekId": 3,
+  "theme": "Appearance - Describing People",
+  "grammar": "is vs has",
+  "topic": "Physical appearance, body parts, adjectives",
+  "science": "Human body, senses",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "query": "English Singsing is has grammar ESL for kids",
+      "backup_query": "is vs has ESL kids song"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "query": "English Singsing adjectives describing people ESL kids",
+      "backup_query": "adjectives ESL kids cartoon appearance"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "query": "Little Fox appearance describing people story level 1 ESL",
+      "backup_query": "Vooks describing people story read aloud"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "query": "Super Simple Songs body parts face head ESL kids",
+      "backup_query": "body parts song ESL cartoons for kids"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "query": "SciShow Kids human body senses five senses for kids",
+      "backup_query": "five senses kids science cartoon"
+    }
+  ]
+}

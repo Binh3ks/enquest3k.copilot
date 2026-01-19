@@ -1,0 +1,4577 @@
+# ENGQUEST MASTER PROMPT V28 - PRODUCTION READY
+## Complete Code Generation Protocol for Mass Production (All 156 Weeks)
+
+**Version**: 28.3 (Voice Diversity + Week 4 Production Fixes)
+**Status**: PRODUCTION READY
+**Golden Standard**: Week 1 & Week 2 with AI Tutor Complete
+**Based On**: V27.1-FINAL
+**Last Updated**: 17/01/2026 (Voice diversity requirements added)
+
+**Critical Changes from V27.1**:
+- ✅ **NEW JSON FORMAT**: `ack`/`recast`/`question` (simpler, clearer than `teacher_ack`/`teacher_recast`/`teacher_question`)
+- ✅ **ACK REDUCTION**: 6 options → 3 options (Nice!/Great!/Wonderful! only)
+- ✅ **SUBJECT AGREEMENT FIX**: RECAST must match subject (She/He/You based on question context)
+- ✅ **RECAST TECHNIQUE**: Never say "wrong", model correct grammar naturally
+- ✅ **Response Guard Enhancement**: Subject detection in fallback RECAST generation
+- ⚠️ **CRITICAL**: These fixes prevent "You work!" bug when talking about mother (should be "She works!")
+
+**Week 4 Production Bug Fixes (16-17/01/2026)**:
+- 🔧 **Logic Lab Format**: MUST use `puzzles:` NOT `problems:` in logic.js (Component reads `data.puzzles`)
+- 🔧 **Video Queries JSON**: MUST use `"videos": [` NOT `"video_queries": [` in video_queries.json (Script expects `videos` key)
+- 🔧 **Daily Watch Registration**: MUST import and register `daily_watch` in index.js stations object (Missing = blank UI)
+- 🔧 **Cover Image URLs**: MUST add `image_url` field in read.js/explore.js with correct filename (e.g., `read_cover_w04.jpg`)
+- 🔧 **Easy Mode Video Sync**: Run `update_videos.js` automatically syncs videos from Advanced to Easy mode
+- 🔧 **Voice Diversity**: MUST remix voices each week (3+ different from previous week) using male/female mix for engagement
+
+---
+
+## 🔥 CRITICAL V28 CHANGES - READ FIRST
+
+### 1. NEW JSON RESPONSE FORMAT
+
+**OLD Format (V27)** ❌ - DO NOT USE:
+```json
+{
+  "teacher_ack": "Great!",
+  "teacher_recast": "Your name is Binh!",
+  "teacher_encouragement": "That's wonderful!",
+  "teacher_question": "How old are you?",
+  "suggested_hints": ["I", "am", "years", "old"],
+  "mission_status": "continue"
+}
+```
+
+**NEW Format (V28)** ✅ - USE THIS:
+```json
+{
+  "ack": "Nice!",
+  "recast": "Your name is Binh!",
+  "question": "How old are you?",
+  "suggested_hints": ["I", "am", "years", "old"],
+  "mission_status": "continue"
+}
+```
+
+**Key Changes**:
+- `teacher_ack` → `ack` (shorter, clearer)
+- `teacher_recast` → `recast` (remove "teacher_" prefix)
+- `teacher_question` → `question` (remove "teacher_" prefix)
+- `teacher_encouragement` removed (merged into recast)
+- Backward compatible: System supports both formats during transition
+
+**Why This Change**:
+- Simpler field names (no "teacher_" prefix clutter)
+- Clearer purpose (ACK = acknowledge, RECAST = model correct form)
+- Easier for AI to generate (fewer characters, clearer instructions)
+- Aligns with Artifact v5.0 format from AI_TUTOR_COMPLETE_ARTIFACT
+
+---
+
+### 2. ACK REDUCTION (6 → 3 Options)
+
+**OLD (V27)** ❌:
+- Great! / Perfect! / Nice! / Wonderful! / Excellent! / Good!
+
+**NEW (V28)** ✅ - ONLY 3 OPTIONS:
+- **Nice!**
+- **Great!**
+- **Wonderful!**
+
+**FORBIDDEN ACKs** ❌:
+- "Perfect!" (too formal for A0 kids)
+- "Good!" (sounds like grading, not encouraging)
+- "Excellent!" (too formal)
+- "That's interesting!" (generic chat filler)
+- "I heard you!" (generic, no specific content)
+
+**Rationale**:
+- Simpler for ESL beginners (fewer options to process)
+- More natural rotation (3 options vs 6 reduces repetition perception)
+- Easier for AI to vary (less decision fatigue)
+- Maintains warmth without sounding like a test
+
+---
+
+### 3. SUBJECT AGREEMENT IN RECAST (CRITICAL FIX)
+
+#### Problem Example ❌:
+```
+Question: "Is your mother busy?"
+Student: "Yes"
+AI: "Great! You are busy! Where does your mother work?"
+      ↑ WRONG SUBJECT! (Should be "She is busy!")
+```
+
+#### Correct Examples ✅:
+
+**Talking about STUDENT (you)**:
+```
+Q: "What is your name?"
+Student: "Binh"
+AI: "Nice! Your name is Binh! How old are you?"
+
+Q: "Are you a student?"
+Student: "Yes"
+AI: "Great! You are a student! What is your school name?"
+
+Q: "Do you like school?"
+Student: "yes"
+AI: "Wonderful! You like school! What do you like at school?"
+```
+
+**Talking about MOTHER (she)**:
+```
+Q: "What does your mother do in the morning?"
+Student: "cook"
+AI: "Nice! She cooks! What does she cook for breakfast?"
+
+Q: "Is your mother busy?"
+Student: "Yes"
+AI: "Great! She is busy! Where does your mother work?"
+
+Q: "Does your mother work?"
+Student: "works"
+AI: "Wonderful! Your mother works! Where does she work?"
+```
+
+**Talking about FATHER (he)**:
+```
+Q: "What does your father do?"
+Student: "work"
+AI: "Nice! He works! Where does your father work?"
+
+Q: "Is your father tired?"
+Student: "Yes"
+AI: "Great! He is tired! Does he rest in the evening?"
+```
+
+**Talking about SIBLINGS (they)**:
+```
+Q: "Do you have brothers or sisters?"
+Student: "Yes, two brothers"
+AI: "Wonderful! You have two brothers! What are their names?"
+
+Q: "What do they do?"
+Student: "play"
+AI: "Nice! They play! What do they play?"
+```
+
+---
+
+### 4. RECAST TECHNIQUE RULES
+
+#### Core Philosophy:
+**"Never say wrong - model correct form naturally"**
+
+Children learn better through **positive modeling** than correction.
+
+#### Examples:
+
+**Grammar Fixes**:
+```
+Student: "I have book" (missing article)
+AI: "Nice! You have a book! What color is your backpack?"
+
+Student: "My name Alex" (missing verb)
+AI: "Great! Your name is Alex! How old are you?"
+
+Student: "mother cook" (missing subject/verb agreement)
+AI: "Wonderful! Your mother cooks! What does she cook?"
+```
+
+**Short Answers Expansion**:
+```
+Student: "Binh"
+AI: "Nice! Your name is Binh! How old are you?"
+
+Student: "8"
+AI: "Great! You are 8 years old! Are you a student?"
+
+Student: "works"
+Context: Question about mother
+AI: "Wonderful! Your mother works! Where does she work?"
+```
+
+**Yes/No Answers**:
+```
+Student: "yes" (to "Are you a student?")
+AI: "Nice! You are a student! What is your school name?"
+
+Student: "Yes" (to "Is your mother busy?")
+AI: "Great! She is busy! Where does your mother work?"
+```
+
+#### CRITICAL RULES:
+
+1. **ALWAYS match subject**:
+   - Student questions → use "you"
+   - Mother questions → use "she" or "your mother"
+   - Father questions → use "he" or "your father"
+   - Sibling questions → use "they"
+
+2. **Use student's words** but FIX grammar:
+   - Add missing articles: "book" → "a book"
+   - Add missing verbs: "name Alex" → "name is Alex"
+   - Fix verb forms: "mother cook" → "mother cooks"
+
+3. **Keep RECAST ≤ 8 words**:
+   - ✅ "Your name is Binh!"
+   - ✅ "She cooks in the morning!"
+   - ❌ "That's wonderful! Your mother is a very hardworking person who cooks delicious meals!" (too long)
+
+4. **NEVER say**:
+   - ❌ "wrong"
+   - ❌ "incorrect"
+   - ❌ "try again"
+   - ❌ "that's not right"
+
+5. **NEVER use generic RECAST**:
+   - ❌ "I heard you!"
+   - ❌ "I understand!"
+   - ❌ "You said yes!"
+   - ✅ Model correct form: "She is busy!"
+
+---
+
+### 5. COMPLETE RESPONSE FORMAT
+
+#### Structure:
+```
+ACK (1 word) + RECAST (≤8 words) + QUESTION (canonical)
+```
+
+#### Opening Turn (No ACK/RECAST):
+```json
+{
+  "ack": "",
+  "recast": "",
+  "question": "Hello! I am Ms. Nova, your English teacher. What is your name?",
+  "suggested_hints": ["My", "name", "is", "I", "am"],
+  "mission_status": "continue"
+}
+```
+
+#### Regular Turn:
+```json
+{
+  "ack": "Nice!",
+  "recast": "Your name is Binh!",
+  "question": "How old are you?",
+  "suggested_hints": ["I", "am", "years", "old", "eight", "seven"],
+  "mission_status": "continue"
+}
+```
+
+#### Closing Turn:
+```json
+{
+  "ack": "Wonderful!",
+  "recast": "You completed all the steps!",
+  "question": "Great job, Binh!",
+  "suggested_hints": [],
+  "mission_status": "completed"
+}
+```
+
+---
+
+### 6. FORBIDDEN PHRASES & WORDS
+
+**Banned ACKs** ❌:
+- "Perfect!" → Use "Nice!/Great!/Wonderful!" only
+- "Good!" → Sounds like grading
+- "That's interesting!" → Generic chat
+
+**Banned RECASTs** ❌:
+- "I heard you" → Model correct form instead
+- "I understand" → Expand student's answer
+- "You said..." → Recast with correct grammar
+
+**Banned QUESTIONs** ❌:
+- "Tell me more" → Too vague for A0 learners
+- "Can you tell me more about that?" → Too complex
+- "What do you think?" → Too open-ended
+- "How do you feel about that?" → Too abstract
+- "That's interesting, but..." → Filler words
+- "Let me ask you something" → Just ask directly
+
+---
+
+### 7. COMMON PRODUCTION ERRORS (Week 4 Fixes - 16/01/2026)
+
+#### ❌ ERROR 1: Logic Lab Format - Using `problems:` instead of `puzzles:`
+
+**Symptom**: Logic Lab station shows blank/no content despite file existing
+
+**Root Cause**: 
+- Component: `LogicLab.jsx` reads `data.puzzles`
+- File: `logic.js` exports `{ problems: [...] }`
+- Result: Component receives `undefined` for `data.puzzles`
+
+**Wrong Code** ❌:
+```javascript
+// logic.js
+export default {
+  problems: [    // ⬅️ WRONG KEY
+    { id: 1, question: "..." }
+  ]
+};
+```
+
+**Correct Code** ✅:
+```javascript
+// logic.js
+export default {
+  puzzles: [     // ⬅️ CORRECT KEY (matches component)
+    { id: 1, question: "..." }
+  ]
+};
+```
+
+**Prevention**: Always use `puzzles:` in logic.js for both Advanced and Easy modes.
+
+---
+
+#### ❌ ERROR 2: Video Queries JSON - Using `video_queries:` instead of `videos:`
+
+**Symptom**: `update_videos.js` script fails with "Cannot read property 'map' of undefined"
+
+**Root Cause**:
+- Script: `tools/update_videos.js` reads `data.videos`
+- File: `video_queries.json` has `{ "video_queries": [...] }`
+- Result: Script receives `undefined` for `data.videos`
+
+**Wrong Code** ❌:
+```json
+{
+  "weekId": 4,
+  "video_queries": [    // ⬅️ WRONG KEY
+    { "id": 1, "query": "..." }
+  ]
+}
+```
+
+**Correct Code** ✅:
+```json
+{
+  "weekId": 4,
+  "videos": [           // ⬅️ CORRECT KEY (matches script)
+    { "id": 1, "query": "..." }
+  ]
+}
+```
+
+**Prevention**: Always use `"videos": [` in video_queries.json.
+
+---
+
+#### ❌ ERROR 3: Missing Daily Watch Registration in index.js
+
+**Symptom**: Daily Watch station shows blank/white screen despite daily_watch.js file existing with valid data
+
+**Root Cause**:
+- Component: `DailyWatch.jsx` receives `data` prop from stationConfig
+- File: `week_XX/index.js` doesn't import/register daily_watch
+- Result: Component receives `null` for `data` prop → returns `null` (blank screen)
+- Guard: `if (!data?.videos) return null;` triggers
+
+**Wrong Code** ❌:
+```javascript
+// week_04/index.js
+import read from './read.js';
+import vocab from './vocab.js';
+// ... other imports ...
+// ⛔ MISSING: import daily_watch from './daily_watch.js';
+
+const weekData = {
+  stations: {
+    read_explore: read,
+    new_words: vocab,
+    // ... other stations ...
+    // ⛔ MISSING: daily_watch: daily_watch
+  }
+};
+```
+
+**Correct Code** ✅:
+```javascript
+// week_04/index.js
+import read from './read.js';
+import vocab from './vocab.js';
+// ... other imports ...
+import daily_watch from './daily_watch.js';    // ✅ MUST IMPORT
+
+const weekData = {
+  stations: {
+    read_explore: read,
+    new_words: vocab,
+    // ... other stations ...
+    daily_watch: daily_watch    // ✅ MUST REGISTER
+  }
+};
+```
+
+**Prevention**: 
+1. **Always import** `daily_watch` at top of index.js
+2. **Always register** `daily_watch: daily_watch` in stations object
+3. Verify against Week 1/2 working examples
+
+**Debug Checklist**:
+- [ ] Check `import daily_watch from './daily_watch.js';` exists
+- [ ] Check `daily_watch: daily_watch` in stations object
+- [ ] Verify daily_watch.js file exists with `export default { videos: [...] }`
+- [ ] Check browser console for "data is null" errors
+
+---
+
+#### ❌ ERROR 4: Missing Cover Image URLs in read.js and explore.js
+
+**Symptom**: Cover images don't display in Read & Explore and CLIL Explore stations despite image files existing
+
+**Root Cause**:
+- File: `read.js` or `explore.js` missing `image_url` field
+- OR: `image_url` path doesn't match actual filename (e.g., `explore_cover.jpg` vs `explore_cover_w04.jpg`)
+- Component: ReadExplore/Explore components expect `data.image_url` prop
+
+**Wrong Code** ❌:
+```javascript
+// read.js
+export default {
+  title: "My Happy Jar",
+  // ⛔ MISSING: image_url field
+  content_en: "...",
+};
+
+// explore.js
+export default {
+  title_en: "The Science of Smiling",
+  image_url: "/images/week4/explore_cover.jpg",    // ⬅️ WRONG: File is explore_cover_w04.jpg
+  content_en: "...",
+};
+```
+
+**Correct Code** ✅:
+```javascript
+// read.js (Advanced mode)
+export default {
+  title: "My Happy Jar",
+  image_url: "/images/week4/read_cover_w04.jpg",    // ✅ MUST ADD with correct filename
+  content_en: "...",
+};
+
+// explore.js (Advanced mode)
+export default {
+  title_en: "The Science of Smiling",
+  image_url: "/images/week4/explore_cover_w04.jpg",    // ✅ CORRECT filename with _w04 suffix
+  content_en: "...",
+};
+
+// read.js (Easy mode)
+export default {
+  title: "My Happy Things",
+  image_url: "/images/week4_easy/read_cover_w04.jpg",    // ✅ Use week4_easy path
+  content_en: "...",
+};
+
+// explore.js (Easy mode) - NOT APPLICABLE (Easy mode has no explore.js)
+```
+
+**Prevention**: 
+1. **Always add** `image_url` field in read.js and explore.js
+2. **Match filename**: Check actual file in `public/images/weekX/` folder
+3. **Naming convention**: Cover images use `_w04` suffix (e.g., `read_cover_w04.jpg`, NOT `read_cover.jpg`)
+4. **Easy mode path**: Use `week4_easy` folder, NOT `week4`
+
+**Debug Commands**:
+```bash
+# Check actual filenames in public folder
+ls -la public/images/week4/ | grep cover
+ls -la public/images/week4_easy/ | grep cover
+
+# Verify image_url in data files
+grep "image_url" src/data/weeks/week_04/read.js
+grep "image_url" src/data/weeks/week_04/explore.js
+grep "image_url" src/data/weeks_easy/week_04/read.js
+```
+
+---
+
+#### ❌ ERROR 5: Daily Watch Videos Not Synced to Easy Mode
+
+**Symptom**: Advanced mode Daily Watch has videos, but Easy mode Daily Watch is blank or outdated
+
+**Root Cause**:
+- Script: `tools/update_videos.js` automatically syncs videos to Easy mode
+- Issue: Missing `daily_watch` import/registration in **Easy mode** `index.js` (Error #3 in Easy mode)
+- OR: Script was not run after generating video_queries.json
+
+**Process Flow** ✅:
+1. Generate `video_queries.json` for **Advanced mode only**
+2. Run `node tools/update_videos.js 4`
+3. Script automatically:
+   - Fetches 5 videos from YouTube
+   - Saves to `src/data/weeks/week_04/daily_watch.js` (Advanced)
+   - **Auto-copies same content** to `src/data/weeks_easy/week_04/daily_watch.js` (Easy)
+   - Prints: `✅ Synced Easy mode`
+
+**Wrong Workflow** ❌:
+```bash
+# Generate video queries
+node tools/generate_video_queries.js 4
+
+# ⛔ FORGOT: Run update_videos.js
+# Result: daily_watch.js not created in either mode
+
+# OR: Manually create Easy mode daily_watch.js with different videos
+# Result: Easy mode videos don't match Advanced mode
+```
+
+**Correct Workflow** ✅:
+```bash
+# Step 1: Generate video queries (Advanced mode only)
+node tools/generate_video_queries.js 4
+# Creates: src/data/weeks/week_04/video_queries.json
+
+# Step 2: Run video update script
+node tools/update_videos.js 4
+# Output:
+#   💾 Saved 5 videos
+#   ✅ Synced Easy mode    ⬅️ AUTO-SYNC HAPPENS HERE
+
+# Step 3: Verify both modes have identical videos
+diff src/data/weeks/week_04/daily_watch.js src/data/weeks_easy/week_04/daily_watch.js
+# Should show: NO DIFFERENCES
+```
+
+**Prevention**: 
+1. **Never manually create** Easy mode `daily_watch.js` - always use script
+2. **Always run** `update_videos.js` after generating queries
+3. **Verify sync**: Check Easy mode gets same 5 videos as Advanced
+4. **Register in Easy index.js**: Add `import daily_watch` and `daily_watch: daily_watch`
+
+**Debug Checklist**:
+- [ ] `video_queries.json` exists in Advanced mode (NOT in Easy mode)
+- [ ] Run `node tools/update_videos.js 4` shows "✅ Synced Easy mode"
+- [ ] Both `daily_watch.js` files exist (Advanced and Easy)
+- [ ] Files are identical: `diff` command shows no differences
+- [ ] Easy mode `index.js` imports and registers `daily_watch`
+
+**Note**: Easy mode does NOT have `video_queries.json` - only Advanced mode has this file. Videos are synced directly from Advanced to Easy by the script.
+
+---
+
+#### ❌ ERROR 6: Repetitive Voice Configuration Across Weeks
+
+**Symptom**: Weeks 3, 4, 5+ sound monotonous with identical voices across multiple consecutive weeks
+
+**Root Cause**:
+- Template: `index.js` voiceConfig copied from previous week without changes
+- Issue: Same 5 voices (D, F, F, D, D) used for Week 3, 4, 5... causing listener fatigue
+- Impact: Learners lose engagement when hearing identical voices week after week
+
+**Wrong Code** ❌:
+```javascript
+// Week 3 index.js
+voiceConfig: {
+  narration: 'en-US-Neural2-D',    // Male
+  vocabulary: 'en-US-Neural2-F',   // Female
+  dictation: 'en-US-Neural2-F',    // Female
+  questions: 'en-US-Neural2-D',    // Male
+  mindmap: 'en-US-Neural2-D'       // Male
+}
+
+// Week 4 index.js - ❌ IDENTICAL (copy-paste)
+voiceConfig: {
+  narration: 'en-US-Neural2-D',    // ⬅️ SAME
+  vocabulary: 'en-US-Neural2-F',   // ⬅️ SAME
+  dictation: 'en-US-Neural2-F',    // ⬅️ SAME
+  questions: 'en-US-Neural2-D',    // ⬅️ SAME
+  mindmap: 'en-US-Neural2-D'       // ⬅️ SAME
+}
+
+// Week 5 index.js - ❌ STILL IDENTICAL (3 weeks in a row)
+voiceConfig: {
+  narration: 'en-US-Neural2-D',    // ⬅️ MONOTONOUS
+  vocabulary: 'en-US-Neural2-F',   // ⬅️ PREDICTABLE
+  dictation: 'en-US-Neural2-F',    // ⬅️ BORING
+  questions: 'en-US-Neural2-D',    // ⬅️ REPETITIVE
+  mindmap: 'en-US-Neural2-D'       // ⬅️ STALE
+}
+```
+
+**Correct Code** ✅:
+```javascript
+// Week 3 index.js (Baseline)
+voiceConfig: {
+  narration: 'en-US-Neural2-D',    // Male - neutral
+  vocabulary: 'en-US-Neural2-F',   // Female - soft
+  dictation: 'en-US-Neural2-F',    // Female - soft
+  questions: 'en-US-Neural2-D',    // Male - neutral
+  mindmap: 'en-US-Neural2-D'       // Male - neutral
+}
+
+// Week 4 index.js - ✅ REMIX (3 out of 5 changed)
+voiceConfig: {
+  narration: 'en-US-Neural2-C',    // ✅ Female - warm (CHANGED from D)
+  vocabulary: 'en-US-Neural2-A',   // ✅ Male - energetic (CHANGED from F)
+  dictation: 'en-US-Neural2-I',    // ✅ Male - friendly (CHANGED from F)
+  questions: 'en-US-Neural2-E',    // ✅ Female - professional (CHANGED from D)
+  mindmap: 'en-US-Neural2-C'       // Female - warm (matches narration)
+}
+// ↑ Now female reads stories, males do vocab/dictation, female asks questions
+
+// Week 5 index.js - ✅ DIFFERENT AGAIN (4 out of 5 changed from Week 4)
+voiceConfig: {
+  narration: 'en-US-Neural2-A',    // ✅ Male - energetic (CHANGED from C)
+  vocabulary: 'en-US-Neural2-H',   // ✅ Female - cheerful (CHANGED from A)
+  dictation: 'en-US-Neural2-E',    // Female - professional (kept from Week 4)
+  questions: 'en-US-Neural2-J',    // ✅ Male - trustworthy (CHANGED from E)
+  mindmap: 'en-US-Neural2-A'       // Male - energetic (matches narration)
+}
+```
+
+**Prevention**: 
+1. **Check previous 2 weeks** before generating new week audio
+2. **Change at least 3 voices** when starting new week production
+3. **Mix genders**: Rotate which stations get male vs female voices
+4. **Prioritize unused voices**: Use C, E, G, H (female) and A, I, J (male) that weren't in previous weeks
+5. **Document choices**: Add comment in index.js explaining voice remix strategy
+
+**Voice Pool (Google Neural2 US English)**:
+
+**Female (Clear, Energetic, Kid-Friendly)**:
+- `en-US-Neural2-C`: Young adult female, warm and clear
+- `en-US-Neural2-E`: Adult female, professional and friendly  
+- `en-US-Neural2-F`: Young female, soft and gentle
+- `en-US-Neural2-G`: Adult female, authoritative but warm
+- `en-US-Neural2-H`: Young female, bright and cheerful
+
+**Male (Clear, Engaging, Accurate Pronunciation)**:
+- `en-US-Neural2-A`: Young adult male, energetic and clear
+- `en-US-Neural2-D`: Adult male, neutral and clear
+- `en-US-Neural2-I`: Young male, friendly and expressive
+- `en-US-Neural2-J`: Adult male, warm and trustworthy
+
+**Selection Strategy Examples**:
+- Week has "adventure" theme → Use energetic voices (A, H)
+- Week has "calm feelings" theme → Use warm voices (C, J)
+- Week has "science facts" theme → Use professional voices (E, D)
+
+**Debug Checklist**:
+- [ ] Compare voiceConfig with previous 2 weeks
+- [ ] Count how many voices are DIFFERENT (need 3+)
+- [ ] Check male/female balance (need both genders)
+- [ ] Verify rotation: different voice for narration than last week
+- [ ] Test audio samples to ensure voice quality matches theme
+
+**Regeneration If Needed**:
+```bash
+# If Week 5 audio already generated with wrong voices:
+# 1. Update index.js voiceConfig with new voice selections
+# 2. Delete old audio folder
+rm -rf public/audio/week5/
+rm -rf public/audio/week5_easy/
+
+# 3. Regenerate audio with new voices
+python tools/generate_audio_final.py
+# Select: Advanced mode, Week 5
+
+python tools/generate_audio_final.py  
+# Select: Easy mode, Week 5
+```
+
+---
+
+### 8. IMPLEMENTATION IN CODE
+
+#### responseParser.js
+```javascript
+// Detect NEW format (ack/recast/question)
+const isNewFormat = parsed.ack !== undefined || parsed.question !== undefined;
+
+if (isNewFormat) {
+  return {
+    ack: parsed.ack || '',
+    recast: parsed.recast || '',
+    question: parsed.question || '',
+    hints: parsed.suggested_hints || [],
+    mission_status: parsed.mission_status || null,
+    format: 'v28-new'
+  };
+}
+```
+
+#### responseGuard.js - Subject Detection
+```javascript
+// Detect subject from question
+const questionLower = (question || '').toLowerCase();
+const isAboutMother = questionLower.includes('mother') || questionLower.includes('mom');
+const isAboutFather = questionLower.includes('father') || questionLower.includes('dad');
+const isAboutStudent = questionLower.includes('you') || questionLower.includes('your name');
+
+// Generate RECAST with correct subject
+if (msg === 'yes') {
+  if (isAboutMother) {
+    recast = 'She does!';
+  } else if (isAboutFather) {
+    recast = 'He does!';
+  } else if (isAboutStudent) {
+    recast = 'You do!';
+  }
+}
+```
+
+#### tutorPrompts.js - Teaching AI
+```javascript
+2️⃣ RECAST (Critical Teaching Technique):
+   🔥 CRITICAL: MATCH THE SUBJECT!
+   
+   Examples - Talking about MOTHER (she):
+   Question: "What does your mother do?"
+   Student: "cook" → Recast: "She cooks!" (NOT "You cook!")
+   Student: "works" → Recast: "Your mother works!" (NOT "You work!")
+   
+   Question: "Is your mother busy?"
+   Student: "yes" → Recast: "She is busy!" (NOT "You are busy!")
+```
+
+---
+
+### 8. TESTING CHECKLIST
+
+Before mass production, verify:
+
+✅ **Format Check**:
+- [ ] AI returns `ack` (not `teacher_ack`)
+- [ ] AI returns `recast` (not `teacher_recast`)
+- [ ] AI returns `question` (not `teacher_question`)
+
+✅ **ACK Check**:
+- [ ] Only uses Nice!/Great!/Wonderful!
+- [ ] Never uses Perfect!/Good!/Excellent!
+
+✅ **RECAST Check**:
+- [ ] Subject matches (you/she/he/they)
+- [ ] Expands student's answer with correct grammar
+- [ ] ≤ 8 words
+- [ ] Never says "I heard you" or "I understand"
+
+✅ **Subject Agreement Check**:
+- [ ] Mother questions → "She" or "Your mother"
+- [ ] Father questions → "He" or "Your father"
+- [ ] Student questions → "You"
+- [ ] Never mixes subjects
+
+✅ **Forbidden Phrases**:
+- [ ] No "tell me more"
+- [ ] No "that's interesting"
+- [ ] No "wrong/incorrect/try again"
+
+---
+
+### 9. WEEK 1 & WEEK 2 MISSION EXAMPLES
+
+#### Week 1, Mission 1: First Day at School
+
+**Turn 1 (Opening)**:
+```
+AI: "Hello! I am Ms. Nova, your English teacher. What is your name?"
+Hints: [My, name, is, I, am]
+```
+
+**Turn 2**:
+```
+Student: "Binh"
+AI: "Nice! Your name is Binh! How old are you?"
+Hints: [I, am, years, old, eight, seven]
+```
+
+**Turn 3**:
+```
+Student: "8"
+AI: "Great! You are 8 years old! Are you a student?"
+Hints: [Yes, I, am, a, student, No]
+```
+
+**Turn 4**:
+```
+Student: "Yes"
+AI: "Wonderful! You are a student! What is your school name?"
+Hints: [My, school, is, name]
+```
+
+#### Week 2, Mission 2: My Mother's Day
+
+**Turn 1 (Opening)**:
+```
+AI: "Hi! Tell me about your mother. What does she do in the morning?"
+Hints: [She, wakes, cooks, works, cleans]
+```
+
+**Turn 2**:
+```
+Student: "cook"
+AI: "Nice! She cooks! What does she cook for breakfast?"
+     ↑ NOT "You cook!" - Subject is MOTHER
+Hints: [rice, noodles, eggs, bread]
+```
+
+**Turn 3**:
+```
+Student: "rice"
+AI: "Great! She cooks rice! Is your mother busy?"
+Hints: [Yes, she, is, busy, works]
+```
+
+**Turn 4**:
+```
+Student: "Yes"
+AI: "Wonderful! She is busy! Where does your mother work?"
+     ↑ NOT "You are busy!" - Subject is MOTHER
+Hints: [She, works, at, home, office]
+```
+
+---
+
+### 10. MASS PRODUCTION UPDATES
+
+#### File Updates Required:
+
+1. **tutorPrompts.js** (Lines 340-492):
+   - Update JSON format examples
+   - Add subject agreement examples
+   - Update ACK to 3 options only
+   - Add forbidden phrases list
+
+2. **responseParser.js** (Lines 225-270):
+   - Update format detection (ack/recast/question)
+   - Remove V27 format detection
+   - Update validation rules
+
+3. **responseGuard.js** (Lines 540-580):
+   - Add subject detection logic
+   - Update fallback RECAST generation
+   - Add mother/father/student detection
+
+4. **novaEngine.js** (Lines 270-320):
+   - Support both formats during transition
+   - Update sanitization for new format
+   - Update validation rules
+
+#### Database Schema (NO CHANGES):
+Week data files (`week_XX_real.js`) remain unchanged:
+- Still use `mission_context`, `target_vocab`, `minimum_turns`
+- Step definitions remain the same
+- Only AI responses change format
+
+---
+
+### 11. ROLLOUT PLAN
+
+**Phase 1: Week 1-2 (COMPLETE)** ✅
+- Update prompts with new format
+- Add subject agreement examples
+- Test thoroughly
+
+**Phase 2: Week 3-10 (NEXT)**
+- Apply same prompts to existing weeks
+- Verify subject agreement in family missions
+- Check ACK variety (should only see 3 options)
+
+**Phase 3: Week 11-156 (FUTURE)**
+- Use updated prompts for all new weeks
+- Mass production script already supports new format
+- No changes to validation scripts needed
+
+---
+
+### 12. BACKWARD COMPATIBILITY
+
+**Response Parser** handles both formats:
+```javascript
+// V27 Format (OLD)
+if (parsed.teacher_ack !== undefined) {
+  return {
+    ack: parsed.teacher_ack,
+    recast: parsed.teacher_recast,
+    question: parsed.teacher_question,
+    format: 'v27-old'
+  };
+}
+
+// V28 Format (NEW)
+if (parsed.ack !== undefined) {
+  return {
+    ack: parsed.ack,
+    recast: parsed.recast,
+    question: parsed.question,
+    format: 'v28-new'
+  };
+}
+```
+
+**NovaEngine** sanitizes both formats:
+```javascript
+const isNewFormat = response.ack !== undefined;
+
+if (isNewFormat) {
+  // Sanitize ack, recast, question separately
+} else {
+  // Sanitize ai_response (old format)
+}
+```
+
+---
+
+## 🎯 SUMMARY OF V28 CHANGES
+
+| Aspect | V27 (OLD) | V28 (NEW) |
+|--------|-----------|-----------|
+| JSON fields | teacher_ack, teacher_recast, teacher_question | ack, recast, question |
+| ACK options | 6 options (Great/Perfect/Nice/Wonderful/Excellent/Good) | 3 options (Nice/Great/Wonderful) |
+| Subject agreement | Not enforced - AI often wrong | ENFORCED - Examples in prompts + fallback logic |
+| RECAST quality | Generic ("I heard you") | Specific (models correct grammar with right subject) |
+| Format detection | V27 format check | V28 format check (backward compatible) |
+
+---
+
+## 📝 DEVELOPER NOTES
+
+**Files Changed**:
+- `src/services/ai_tutor/tutorPrompts.js` (Line 340-492)
+- `src/services/ai_tutor/utils/responseParser.js` (Line 225-370)
+- `src/services/ai_tutor/utils/responseGuard.js` (Line 540-580)
+- `src/services/ai_tutor/novaEngine.js` (Line 270-320)
+
+**Files NOT Changed**:
+- `data/weeks/week_XX_real.js` (No schema changes)
+- `src/services/ai_tutor/turnManager.js` (No changes needed)
+- `validate_week.js` (No changes needed)
+
+**Testing**:
+- Week 1 Mission 1: Verified subject agreement for student
+- Week 2 Mission 2: Verified subject agreement for mother
+- ACK variety: Only see Nice/Great/Wonderful
+- RECAST quality: Models correct grammar with right subject
+
+**Status**: ✅ PRODUCTION READY for mass production Week 3+
+
+---
+
+## 🚀 UNIFIED MASS PRODUCTION WORKFLOW (V28 Update)
+
+### Complete 9-Step Production Pipeline
+
+**Script**: `tools/mass_production_final.sh`
+
+**Purpose**: Semi-automated week production with manual content generation by Claude, automated validation, sync, and asset generation.
+
+**Usage**:
+```bash
+bash tools/mass_production_final.sh <week_number> [--skip-backup]
+```
+
+**Complete Workflow** (9 Steps):
+
+**[0] Backup** 💾
+- Auto-backup Advanced mode folder
+- Auto-backup Easy mode folder  
+- Auto-backup AI Tutor file (`week_XX_real.js`)
+
+**[1] Manual Content Generation** ✍️
+- **HUMAN (Claude) creates 29 files manually**
+- Reference: Week 1 & Week 2 (golden standard)
+- 14 Advanced + 14 Easy + 1 AI Tutor
+
+**[2] Validate Quality** 🔍
+- Uses `validate_week.js` (8 professional checks)
+- Retry logic if validation fails
+- Checks: Schema, CEFR A0, word counts, sentence counts, grammar ratio
+
+**[3] Sync Data** 🔄
+- Script: `sync_week_data.py`
+- Sync dictation/shadowing from read.js (auto-extract sentences)
+- Auto-fill `audio_url` and `image_url` for ALL items
+- Verify no null/empty URLs before asset generation
+
+**[4] Register Database** 💾
+- Script: `update_db_smart.js`
+- Update `syllabus_database.js`
+- Prevent duplicates
+
+**[5] Generate Audio** 🔊
+- Script: `generate_audio_final.py <week_number>`
+- TTS for all text fields (vocab, dictation, shadowing, mindmap, etc.)
+- **Critical Rules**:
+  - ✅ Remove `**bold markers**` before TTS (prevents reading asterisks)
+  - ✅ Remove `___` blanks before TTS (prevents reading "underscore" 3x)
+  - ✅ read.js → `read_explore_main.mp3` (not `read_main.mp3`)
+  - ✅ explore.js → `explore_main.mp3` (not `explore_explore_main.mp3`)
+  - ✅ mindmap stems → `mindmap_stem_1.mp3`, `mindmap_stem_2.mp3`, etc.
+  - ✅ mindmap branches → `mindmap_branch_1.mp3`, `mindmap_branch_2.mp3`, etc.
+- **Baseline**: ~130 files Advanced, ~126 files Easy
+
+**⚠️ CRITICAL: Mindmap Text Extraction (Week 3 Fix)**:
+- **Problem**: Old regex `["\'](.* ?)["\']]` captured ALL strings in object, including `audio` URLs
+- **Symptom**: TTS reads "slash audio slash week3 slash mindmap underscore stem underscore 1 dot mp3"
+- **Root Cause**: Mindmap data structure is `{text: "I am ___.", audio: "/audio/week3/mindmap_stem_1.mp3"}`
+  - Old regex matched BOTH "I am ___." AND "/audio/week3/mindmap_stem_1.mp3"
+- **Fix Applied** (generate_audio_final.py Line 283-311):
+  ```python
+  # ❌ OLD (captures all strings):
+  stems = re.findall(r'["\'](.*?)["\']', center_stems_match.group(1))
+  
+  # ✅ NEW (only captures "text" field):
+  stem_objects = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', center_stems_match.group(1))
+  ```
+- **Verification**: Check file sizes - stems should be 5-9KB, NOT 50KB+
+- **Script**: Use `tools/generate_mindmap_audio_only.py` for mindmap-only regeneration
+- **Voice Config**: 
+  - Advanced: `en-US-Neural2-D` (neutral, clear)
+  - Easy: `en-US-Neural2-F` (softer, female voice for younger learners)
+
+**[5.5] Auto-Fill Audio URLs** 🔗
+- Script: `update_mindmap_audio_urls.js <week_number>` (Mindmap only)
+- Auto-fill `audio` URL fields in data files after audio generation
+- **Converts format**:
+  - From: `centerStems: ["This is my ___.", ...]` (strings only)
+  - To: `centerStems: [{text: "This is my ___.", audio: "/audio/week2/mindmap_stem_1.mp3"}, ...]` (objects with audio)
+  - Same for `branchLabels`
+- **Prevents fallback to browser TTS** by ensuring all station data has correct audio URLs
+- **Run order**: Generate audio FIRST (Step 5), then auto-fill URLs (Step 5.5)
+
+**⚠️ CRITICAL: Easy Mode Audio URLs (Week 3 Fix)**:
+- **Problem**: Easy mode data files using Advanced audio paths
+  - Example: `weeks_easy/week_03/mindmap.js` had `/audio/week3/` instead of `/audio/week3_easy/`
+- **Symptom**: Easy mode plays Advanced content ("beautiful" instead of "nice", "very beautiful" instead of "pretty")
+- **Root Cause**: Copy-paste from Advanced without updating audio directory
+- **Fix Required**: 
+  1. Update ALL audio URLs in `weeks_easy/week_XX/` files to use `/audio/weekX_easy/`
+  2. Generate separate Easy mode audio with `generate_audio_final.py` (mode parameter)
+  3. Verify Easy content is SIMPLER than Advanced:
+     - Advanced: "beautiful", "very beautiful", "long and straight", "like my mother"
+     - Easy: "nice", "pretty", "long", "curly", "like my mom"
+- **Verification**:
+  ```bash
+  # Check audio URLs
+  grep -r "audio/week3/" src/data/weeks_easy/week_03/  # Should return NOTHING
+  grep -r "audio/week3_easy/" src/data/weeks_easy/week_03/  # Should show all files
+  ```
+- **Scripts for Separate Generation**:
+  - `tools/generate_mindmap_audio_only.py` - Advanced mode (outputs to /audio/weekX/)
+  - `tools/generate_mindmap_easy_audio.py` - Easy mode (outputs to /audio/weekX_easy/)
+
+**[6] Generate Images** 🖼️
+- Script: `generate_images_nano_banana.js`
+- AI image generation for vocab + word_power + explore covers
+- **Usage**: `node tools/generate_images_nano_banana.js <week_number>`
+- **API**: Nano Banana AI (free tier, child-friendly cartoon style)
+- **Output**: 
+  - Advanced: `/public/images/weekX/` (15 files typical)
+  - Easy: `/public/images/weekX_easy/` (15 files typical)
+- **Image Types**:
+  - 10 vocab images (tall.jpg, short.jpg, hair.jpg, eyes.jpg, etc.)
+  - 3 word_power images (phrase_1.jpg, phrase_2.jpg, phrase_3.jpg)
+  - 2 cover images (read.png, explore.png)
+- **Baseline**: 15 files Advanced, 15 files Easy
+- **Cost**: $0.00 (free tier sufficient for weekly content)
+
+**[7] Fetch Videos** 📹
+- Script: `update_videos.js`
+- YouTube API integration with priority channels
+- **Usage**: `node tools/update_videos.js <week_number> <topic_keyword>`
+- **Priority Channels**:
+  - Super Simple Songs
+  - Dream English Kids
+  - English Singsing
+  - Maple Leaf Learning
+- **Output**: Writes to `src/data/weeks/week_XX/video_queries.json`
+- **Baseline**: 5 videos per week (durations: 2-6 minutes typical)
+- **Verification**: Check video IDs are valid YouTube URLs
+
+**[8] Final Validation** ✅
+- Count content files (14+14)
+- Verify AI Tutor exists
+- Compare asset counts vs Week 1 baseline
+- Warnings for suspicious low counts
+
+**[9] Report & Cleanup** 📊
+- Complete report with asset counts
+- Ask to delete backup (y/N)
+
+**Critical Features**:
+- ✅ **Manual Content**: Claude generates content (not AI API), ensures quality
+- ✅ **Auto-Sync**: Dictation/shadowing extracted from read.js automatically
+- ✅ **Auto-Fill URLs**: No null/empty audio_url or image_url
+- ✅ **8 Quality Checks**: CEFR level, schema, word counts, etc.
+- ✅ **Error Handling**: Stop on error, retry validation
+- ✅ **Week 1 Baseline**: Compare assets to golden standard
+
+**Supporting Scripts**:
+- `validate_week.js` - 8 professional validation checks (479 lines)
+- `sync_week_data.py` - Smart data synchronization (200 lines)
+- `update_db_smart.js` - Database registration (74 lines)
+- `generate_audio_final.py` - TTS generation with text cleaning (loại bỏ **, ***, loại bỏ ___)
+- `update_mindmap_audio_urls.js` - Auto-fill audio URLs for mindmap (converts strings to objects with audio property)
+- `generate_images_nano_banana.js` - AI image generation
+- `update_videos.js` - YouTube API integration
+
+**Old Scripts (Deprecated - Backed up to tools/backup_scripts/)**:
+- ❌ `generate_week.js` (AI-based, no sync, no backup)
+- ❌ `mass_produce_week3.mjs` (incomplete validation)
+- ❌ `generate_week_template.js` (empty templates only)
+- ❌ `generate_week_mass_production.js` (skeleton only, never completed)
+
+**Important**: ONLY use `mass_production_final.sh` to ensure:
+1. Complete Week 1-level quality and asset coverage
+2. Proper validation before asset generation
+3. No missing audio_url or image_url fields
+4. App will work without errors with new content
+
+---
+
+## 🔍 POST-PRODUCTION VALIDATION CHECKLIST (V28.1)
+
+**Purpose**: Complete verification protocol to ensure mass-produced weeks are 100% production-ready with content, audio, images, and UI integration.
+
+**When to Execute**: AFTER completing all 9 mass production steps, BEFORE considering week "complete".
+
+### STEP 1: File Structure Verification ✅
+
+**Check 1.1: Data Files Count**
+```bash
+# Advanced mode (15 files required)
+ls -la src/data/weeks/week_XX/
+# Expected: vocab.js, word_power.js, read.js, dictation.js, shadowing.js, writing.js, 
+#           ask_ai.js, mindmap.js, explore.js, logic.js, video_queries.json, index.js
+
+# Easy mode (11 files required)
+ls -la src/data/weeks_easy/week_XX/
+# Expected: Same as Advanced except exclude: video_queries.json, logic.js, explore.js, writing.js
+
+# AI Tutor file (1 file required)
+ls -la src/data/weeks/week_XX_real.js
+```
+
+**Check 1.2: Critical Format Validation (Week 4 Fixes)**
+
+**🔧 Logic Lab Format Check**:
+```bash
+# Verify logic.js uses "puzzles:" NOT "problems:"
+grep "export default" src/data/weeks/week_XX/logic.js
+# ✅ GOOD: export default { puzzles: [
+# ❌ BAD:  export default { problems: [
+```
+
+**Why**: LogicLab component reads `data.puzzles`. Using `problems:` causes blank Logic Lab station.
+
+**🔧 Video Queries JSON Format Check**:
+```bash
+# Verify video_queries.json uses "videos:" NOT "video_queries:"
+head -5 src/data/weeks/week_XX/video_queries.json
+# ✅ GOOD: { "weekId": X, "videos": [
+# ❌ BAD:  { "weekId": X, "video_queries": [
+```
+
+**Why**: update_videos.js script reads `data.videos`. Using `video_queries:` causes script failure.
+
+**🔧 Daily Watch Registration Check**:
+```bash
+# Verify daily_watch is imported and registered in index.js
+grep "import daily_watch" src/data/weeks/week_XX/index.js
+grep "daily_watch: daily_watch" src/data/weeks/week_XX/index.js
+# ✅ GOOD: Both lines exist
+# ❌ BAD:  Either line missing
+```
+
+**Why**: Missing import/registration causes Daily Watch station to show blank screen despite file existing.
+
+**Check 1.3: File Import Structure**
+```bash
+# Verify week_XX_real.js does NOT have ES6 imports at top
+head -20 src/data/weeks/week_XX_real.js
+# ❌ BAD: import vocab from './vocab.js';
+# ✅ GOOD: export const week_XX_real = {
+```
+
+**Why**: week_XX_real.js is an inline data definition file, NOT a module aggregator. Week 1/2/3 golden standard has no imports. Imports cause Vite resolver errors.
+
+**Fix if Failed**:
+```bash
+# Remove all import statements from week_XX_real.js
+# File should start directly with: export const week_XX_real = {
+```
+
+---
+
+### STEP 2: Audio Files Verification 🔊
+
+**Check 2.1: Voice Diversity Validation (Week 5+ Requirement - 17/01/2026)**
+```bash
+# Compare voice config between consecutive weeks
+cat src/data/weeks/week_0X/index.js | grep -A 5 "voiceConfig"
+cat src/data/weeks/week_0Y/index.js | grep -A 5 "voiceConfig"
+
+# ✅ GOOD: At least 3 out of 5 voices are DIFFERENT between weeks
+# ❌ BAD: Same 5 voices used across 3+ consecutive weeks (Week 3-4 problem)
+```
+
+**Voice Diversity Requirements**:
+- ✅ Each new week should have at least 3 different voices from previous week
+- ✅ Mix male and female voices within each week (not all male or all female)
+- ✅ Rotate voice roles (e.g., female for narration in one week, male in next week)
+- ❌ Avoid using identical voice config for 3+ consecutive weeks
+
+**Example - CORRECT Diversity**:
+```javascript
+// Week 3: D(m), F(f), F(f), D(m), D(m) ← 2 male, 3 female
+// Week 4: C(f), A(m), I(m), E(f), C(f) ← 3 CHANGED, good diversity
+// Week 5: A(m), H(f), E(f), J(m), A(m) ← 4 CHANGED, excellent variety
+```
+
+**Example - WRONG (Current Week 3-4)**:
+```javascript
+// Week 3: D(m), F(f), F(f), D(m), D(m)
+// Week 4: D(m), F(f), F(f), D(m), D(m) ← ❌ IDENTICAL to Week 3
+// Week 5: D(m), F(f), F(f), D(m), D(m) ← ❌ IDENTICAL 3 weeks in a row
+```
+
+**Fix if Failed**:
+- Regenerate audio with new voiceConfig in index.js
+- Use voice pool: C, E, F, G, H (female) / A, D, I, J (male)
+- Prioritize unused voices from previous 2 weeks
+
+**Check 2.2: Audio File Counts**
+```bash
+# Advanced mode audio (~130-150 files)
+ls -1 public/audio/weekX/ | wc -l
+
+# Easy mode audio (~116-126 files)
+ls -1 public/audio/weekX_easy/ | wc -l
+```
+
+**Check 2.3: Critical Audio Files Exist**
+```bash
+# Advanced mode
+ls public/audio/weekX/read_explore_main.mp3      # NOT read_main.mp3
+ls public/audio/weekX/explore_main.mp3           # NOT explore_explore_main.mp3
+ls public/audio/weekX/mindmap_stem_1.mp3         # Stems
+ls public/audio/weekX/mindmap_branch_1.mp3       # Branches
+
+# Easy mode
+ls public/audio/weekX_easy/read_explore_main.mp3
+ls public/audio/weekX_easy/mindmap_stem_1.mp3
+```
+
+**Check 2.4: Mindmap Audio Quality (File Size Check)**
+```bash
+# Stems should be 5-15KB (normal sentence)
+ls -lh public/audio/weekX/mindmap_stem_*.mp3
+# ❌ BAD: 50KB+ means TTS read URL string "/audio/week3/mindmap_stem_1.mp3"
+# ✅ GOOD: 5-15KB means TTS read actual text "I am ___."
+
+# Branches should be 3-8KB (short phrases)
+ls -lh public/audio/weekX/mindmap_branch_*.mp3
+# ❌ BAD: 30KB+ means TTS read URL
+# ✅ GOOD: 3-8KB normal
+```
+
+**Why**: Week 3 bug - old regex captured audio URLs as text → TTS read "slash audio slash week3..."
+
+**Fix if Failed**:
+```bash
+# Regenerate mindmap audio only
+python tools/generate_mindmap_audio_only.py X         # Advanced
+python tools/generate_mindmap_easy_audio.py X        # Easy
+```
+
+---
+
+### STEP 3: Audio URL Path Verification 🔗
+
+**Check 3.1: Easy Mode Audio Paths**
+```bash
+# Check Easy mode files reference correct audio directory
+grep -r "audio/weekX/" src/data/weeks_easy/week_XX/
+# ❌ BAD: Should return NOTHING (means using Advanced paths)
+# ✅ GOOD: No matches
+
+grep -r "audio/weekX_easy/" src/data/weeks_easy/week_XX/
+# ✅ GOOD: Should show all files (correct Easy paths)
+```
+
+**Check 3.2: Audio Object Format in Mindmap**
+```bash
+# Verify mindmap centerStems and branchLabels use object format
+cat src/data/weeks/week_XX/mindmap.js | grep -A 2 "centerStems"
+# ✅ GOOD: {text: "I am ___.", audio: "/audio/weekX/mindmap_stem_1.mp3"}
+# ❌ BAD: "I am ___." (string only, no audio field)
+```
+
+**Why**: Week 3 bug - Easy mode played Advanced audio because paths pointed to /audio/week3/ instead of /audio/week3_easy/
+
+**Fix if Failed**:
+```bash
+# Run audio URL auto-fill script
+node tools/update_mindmap_audio_urls.js X
+# Then manually update Easy mode paths if needed
+```
+
+---
+
+### STEP 4: Image Files Verification 🖼️
+
+**Check 4.1: Image File Counts**
+```bash
+# Advanced mode (15-26 files typical)
+ls -1 public/images/weekX/ | wc -l
+# Expected: 10 vocab + 3 word_power + 2 covers = 15 minimum
+#           OR: 10 vocab + 6 word_power + 2 covers = 18
+#           OR: 20 vocab + 6 word_power = 26 (if covers not generated)
+
+# Easy mode (15-26 files typical)
+ls -1 public/images/weekX_easy/ | wc -l
+```
+
+**Check 4.2: Critical Cover Images**
+```bash
+ls public/images/weekX/read_cover_w0X.jpg      # Read station cover
+ls public/images/weekX/explore_cover_w0X.jpg   # Explore station cover
+```
+
+**Note**: Vocab/word_power images are OPTIONAL (stations work without them). Covers are HIGH PRIORITY for visual appeal.
+
+---
+
+### STEP 5: UI Integration Verification 🖥️
+
+**Check 5.1: StoryMissionTab Registration**
+```bash
+# Verify week import exists
+grep "import week${X}RealData" src/modules/ai_tutor/tabs/StoryMissionTab.jsx
+# ✅ GOOD: import week4RealData from '../../../data/weeks/week_04_real';
+
+# Verify week data selector includes new week
+grep "weekRealData = weekNumber ===" src/modules/ai_tutor/tabs/StoryMissionTab.jsx
+# ✅ GOOD: weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+```
+
+**Check 5.2: FreeTalkTab Registration**
+```bash
+# Verify week import exists
+grep "import week${X}RealData" src/modules/ai_tutor/tabs/FreeTalkTab.jsx
+
+# Verify week data selector includes new week
+grep "weekRealData = weekNumber ===" src/modules/ai_tutor/tabs/FreeTalkTab.jsx
+```
+
+**Why**: Week 4 initially showed "Loading Module..." because files existed but React components didn't import week4RealData.
+
+**Fix if Failed**:
+```javascript
+// StoryMissionTab.jsx - Add import
+import week4RealData from '../../../data/weeks/week_04_real';
+
+// StoryMissionTab.jsx - Update selector (around line 89)
+const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+
+// FreeTalkTab.jsx - Add import
+import week4RealData from '../../../data/weeks/week_04_real';
+
+// FreeTalkTab.jsx - Update selector (around line 47)
+const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+```
+
+---
+
+### STEP 6: Database Registration Verification 💾
+
+**Check 6.1: Week in Syllabus Database**
+```bash
+grep -A 5 "week_id: X" src/data/syllabus_database.js
+# ✅ GOOD: Should show week metadata (title, folder, etc.)
+```
+
+**Check 6.2: Week Visible in Sidebar**
+- Open browser: `http://localhost:5173`
+- Check left sidebar shows "Week X"
+- ❌ BAD: Week missing = database registration failed
+- ✅ GOOD: Week visible = registration successful
+
+---
+
+### STEP 7: Content Quality Spot Check ✍️
+
+**Check 7.1: Word Power Model Sentence Length**
+```bash
+# Check model_sentence word count (MAX 20 words for Advanced, MAX 15 for Easy)
+cat src/data/weeks/week_XX/word_power.js | grep "model_sentence"
+# Count words manually or use:
+cat src/data/weeks/week_XX/word_power.js | grep "model_sentence" | sed 's/[^"]*"\([^"]*\)".*/\1/' | wc -w
+```
+
+**Why**: Week 2/3 audit found model_sentences with 11-14 words, breaking consistency. Should be 7-10 words typical.
+
+**Check 7.2: Vocab Definition Length**
+```bash
+# Definitions should be ≤10 words
+cat src/data/weeks/week_XX/vocab.js | grep "definition"
+```
+
+**Check 7.3: Target Vocab Differentiation (Easy vs Advanced)**
+```bash
+# Easy mode should have 70%+ different vocabulary
+diff <(cat src/data/weeks/week_XX/vocab.js | grep "word:" | sort) \
+     <(cat src/data/weeks_easy/week_XX/vocab.js | grep "word:" | sort)
+# Expect: ~7/10 words different
+```
+
+---
+
+### STEP 8: Browser Runtime Test 🧪
+
+**Test 8.1: Station Loading**
+- Navigate to Week X in browser
+- Click each station:
+  - ✅ Read & Explore → Story loads, audio plays
+  - ✅ New Words → 10 vocab words appear
+  - ✅ Word Power → 3 collocations appear
+  - ✅ Dictation → Audio plays, blanks functional
+  - ✅ Shadowing → Audio plays, text highlights
+  - ✅ AI Tutor → Mission 1 greeting appears
+  - ✅ Free Talk → Ms. Nova greeting appears
+  - ✅ Mind Map → 6 stems + 36 branches load
+  - ✅ Ask AI → 5 prompts appear
+  - ✅ Logic Challenge → 5 problems appear
+  - ✅ Video Gallery → 5 videos appear
+  - ✅ Writing Station → Model sentence + instruction
+
+**Test 8.2: Audio Playback**
+- Click audio icons → Should play immediately
+- ❌ BAD: "Cannot play" error = audio file missing or path wrong
+- ✅ GOOD: Plays audio correctly
+
+**Test 8.3: Easy Mode Toggle**
+- Switch to Easy Mode (sidebar toggle)
+- Verify vocab is SIMPLER than Advanced
+- Verify audio plays from /audio/weekX_easy/
+
+---
+
+### STEP 9: Vite Build Test 🏗️
+
+**Check 9.1: No Import Errors**
+```bash
+npm run dev
+# Watch console for errors like:
+# ❌ "Failed to resolve import ./vocab.js from src/data/weeks/week_04_real.js"
+# ✅ No import errors = structure correct
+```
+
+**Check 9.2: Production Build Test**
+```bash
+npm run build
+# Should complete without errors
+# Build output should reference Week X files
+```
+
+---
+
+### STEP 10: Completion Report 📊
+
+**Generate Report**:
+```bash
+echo "=== WEEK X PRODUCTION VALIDATION REPORT ==="
+echo ""
+echo "✅ DATA FILES:"
+echo "  - Advanced: $(ls -1 src/data/weeks/week_0X/ | wc -l) files"
+echo "  - Easy: $(ls -1 src/data/weeks_easy/week_0X/ | wc -l) files"
+echo "  - AI Tutor: $(ls -1 src/data/weeks/week_0X_real.js | wc -l) file"
+echo ""
+echo "✅ AUDIO FILES:"
+echo "  - Advanced: $(ls -1 public/audio/weekX/ | wc -l) files"
+echo "  - Easy: $(ls -1 public/audio/weekX_easy/ | wc -l) files"
+echo ""
+echo "✅ IMAGE FILES:"
+echo "  - Advanced: $(ls -1 public/images/weekX/ | wc -l) files"
+echo "  - Easy: $(ls -1 public/images/weekX_easy/ | wc -l) files"
+echo ""
+echo "✅ UI INTEGRATION:"
+echo "  - StoryMissionTab: $(grep -c "week${X}RealData" src/modules/ai_tutor/tabs/StoryMissionTab.jsx) references"
+echo "  - FreeTalkTab: $(grep -c "week${X}RealData" src/modules/ai_tutor/tabs/FreeTalkTab.jsx) references"
+echo ""
+echo "✅ DATABASE: $(grep -c "week_id: X" src/data/syllabus_database.js) entry"
+echo ""
+echo "=== ALL CHECKS PASSED - WEEK X PRODUCTION COMPLETE ==="
+```
+
+**Sign-Off**: Only mark week as "PRODUCTION COMPLETE" after ALL 10 validation steps pass.
+
+---
+
+## I. OBJECTIVE
+
+Generate complete, error-free ESL content for EngQuest3k for Vietnamese children ages 6-10.
+
+**CRITICAL PRINCIPLE**: Content difficulty = Student level (CEFR-based per week), NOT native speaker level.
+
+**Week-Based Content Difficulty**:
+- Weeks 1-18: A0/A0++ (Present Simple only)
+- Weeks 19-40: A1 (introduce Past Simple)
+- Weeks 41-54: A1+ (add Future, Present Perfect chunks)
+- Weeks 55-70: A2 (Conditionals, Because/So, OREO)
+- Weeks 71-98: A2+ (Passive Voice, academic subjects)
+- Weeks 99-112: B1 (Past Perfect, Relative Clauses, research essays)
+- Weeks 113-156: B1+ (Debate structures, synthesis, academic writing)
+
+**Before generating content, CHECK the week number and apply the correct CEFR level from Section III.**
+
+---
+
+## II. APP ARCHITECTURE OVERVIEW
+
+### A. Weekly Stations (15 total)
+| # | Station | Data File | Purpose |
+|---|---------|-----------|---------|
+| 1 | Read & Explore | read.js | Main reading passage |
+| 2 | New Words | vocab.js | 10 core vocabulary |
+| 3 | Word Match | word_match.js | Matching game |
+| 4 | Grammar | grammar.js | Grammar exercises |
+| 5 | Mindmap Speaking | mindmap.js | Speaking practice |
+| 6 | Ask AI | ask_ai.js | Question formation |
+| 7 | Dictation | dictation.js | Listening & typing |
+| 8 | Shadowing | shadowing.js | Pronunciation |
+| 9 | Writing | writing.js | Writing challenge |
+| 10 | Explore | explore.js | CLIL non-fiction |
+| 11 | Logic Lab | logic.js | Math word problems |
+| 12 | Word Power | word_power.js | Collocations |
+| 13 | Daily Watch | daily_watch.js | YouTube videos |
+| 14 | Game Hub | N/A | Built-in games |
+| 15 | Self Regulation | N/A | Goal setting |
+
+### B. AI Tutor (5 Tabs)
+| Tab | Data Source | Purpose |
+|-----|-------------|---------|
+| Story Mission | week_XX_real.js | Guided conversation |
+| Free Talk | week data | Open conversation |
+| Pronunciation | vocab.js | Word practice |
+| Quiz | week data | Dynamic quizzes |
+| Debate | N/A | Argumentation |
+
+---
+
+## III. WEEK-BASED CEFR LEVEL GUIDELINES
+
+**CRITICAL**: Use this table to select correct CEFR level and grammar based on week number:
+
+| Week Range | CEFR Level | Grammar Focus | Vocabulary Tier |
+|------------|------------|---------------|-----------------|
+| 1-18 | A0/A0++ | Present Simple Be, Can/Can't | Tier 1 only |
+| 19-40 | A1 | Past Simple (Was/Were, -ed, irregular) | Tier 1 + basic Tier 2 |
+| 41-54 | A1+ | Future (going to), Present Perfect chunks | Tier 1-2 mix |
+| 55-70 | A2 | Because/So, First Conditional, Modals | Tier 2 primary |
+| 71-98 | A2+ | Passive Voice, Zero Conditional, Used to | Tier 2 + academic |
+| 99-112 | B1 | Past Perfect, Relative Clauses, 2nd Conditional | Tier 2-3 mix |
+| 113-156 | B1+ | Debate structures, Synthesis, Nuanced thesis | Academic Tier 3 |
+
+---
+
+### LEVEL DETAILS
+
+### A0/A0++ (Weeks 1-18)
+
+**VOCABULARY**:
+- Tier 1 only: concrete nouns, basic verbs
+- Max 2 syllables preferred
+- Examples: book, pen, school, happy, go, see, have
+
+**GRAMMAR**:
+- Present simple ONLY
+- Subject + Be: "I am", "She is", "They are"
+- Subject + Verb: "I have", "I like", "I go"
+- Questions: "What is...?", "Where is...?", "Can I...?"
+- NO: past tense, future tense, conditionals, passive voice
+
+**SENTENCES**:
+- **Easy Mode**: 5-8 words per sentence
+  - Structure: Simple sentences, compound with "and", "but", "so"
+  - Example: "I go to school and I play."
+  
+- **Advanced Mode**: 8-14 words per sentence (longer OK if A0 vocab)
+  - Structure: Compound AND complex sentences allowed
+  - Can use: "because", "and", "but", "so"
+  - Example: "My backpack is heavy because I carry my book and notebook every day." (14 words ✅)
+  - NO: "although", "however", relative clauses (save for Phase 2)
+
+**QUESTION PATTERNS (A0 ONLY)**:
+```
+✅ ALLOWED:
+- What is this?
+- Where is the book?
+- Is this a pen?
+- Can I play?
+- Do you like school?
+- How are you?
+
+❌ NOT ALLOWED:
+- How do they go to school? (too complex)
+- What does it do? (too complex)
+- Where can I find...? (too complex)
+- May I do both? (too formal)
+```
+
+---
+
+### A1 (Weeks 19-40)
+
+**VOCABULARY**:
+- Tier 1 core + basic Tier 2 (common adjectives, time expressions)
+- Examples: yesterday, last week, morning, afternoon, surprised, excited
+
+**GRAMMAR**:
+- **Weeks 19-25**: Past Simple with Was/Were
+  - "I was at home." "They were happy."
+- **Weeks 26-32**: Past Simple Regular verbs (-ed)
+  - "I played football." "She watched TV."
+- **Weeks 33-40**: Past Simple Irregular verbs
+  - "I went to school." "She ate lunch." "They had fun."
+- Still use Present Simple for routines
+- Questions: "Where did you go?" "What did you do?"
+
+**SENTENCES**:
+- **Easy Mode**: 6-10 words
+  - Example: "Yesterday I went to the park."
+- **Advanced Mode**: 10-15 words
+  - Example: "Last week I visited my grandma and we ate delicious food together."
+
+---
+
+### A1+ (Weeks 41-54)
+
+**VOCABULARY**:
+- Tier 1-2 balanced mix
+- Time expressions: tomorrow, next week, in the future
+- Examples: prepare, finish, start, improve
+
+**GRAMMAR**:
+- **Future with going to**: "I'm going to visit my friend."
+- **Want to + verb**: "I want to learn English."
+- **Present Perfect chunks** (formulaic only):
+  - "I have been to the zoo." "Have you ever...?"
+- Mix all three tenses (present, past, future)
+
+**SENTENCES**:
+- **Easy Mode**: 8-12 words
+- **Advanced Mode**: 12-18 words
+  - Example: "Tomorrow I'm going to help my mom because I want to be a good son."
+
+---
+
+### A2 (Weeks 55-70)
+
+**VOCABULARY**:
+- Tier 2 becomes primary
+- Abstract concepts: opinion, reason, result, choice
+- Examples: consequence, decision, argument, persuade
+
+**GRAMMAR**:
+- **Because/So**: "I study hard because I want good grades." "It rained, so I stayed home."
+- **First Conditional**: "If I study, I will pass."
+- **Modals**: should, could, might, must
+- **OREO persuasion structure** (Week 67+):
+  - Opinion: "I think homework is important."
+  - Reason: "It helps us practice."
+  - Example: "For example, math homework..."
+  - Opinion: "That's why I believe..."
+
+**SENTENCES**:
+- **Easy Mode**: 10-14 words
+- **Advanced Mode**: 14-20 words
+  - Example: "If students do homework regularly, they will understand the lesson better and get higher scores."
+
+---
+
+### A2+ (Weeks 71-98)
+
+**VOCABULARY**:
+- Tier 2 + academic subject vocabulary
+- Science: absorb, reflect, energy, ecosystem
+- History: ancient, civilization, empire, trade
+- Examples: photosynthesis, democracy, economy
+
+**GRAMMAR**:
+- **Passive Voice** (introduced Week 72):
+  - "Sunlight is absorbed by plants."
+  - "The pyramids were built thousands of years ago."
+- **Zero Conditional**: "If you heat water, it boils."
+- **Used to**: "People used to travel by horse."
+- **Comparative/Superlative**: more/most, -er/-est
+
+**SENTENCES**:
+- **Easy Mode**: 12-16 words
+- **Advanced Mode**: 16-25 words
+  - Example: "When sunlight is absorbed by plant leaves, the energy is used to make food through photosynthesis."
+
+---
+
+### B1 (Weeks 99-112)
+
+**VOCABULARY**:
+- Tier 2-3 mix, academic vocabulary dominant
+- Economics: supply, demand, consumer, profit
+- Critical thinking: analyze, evaluate, compare, contrast
+- Examples: sustainable, renewable, inequality, regulation
+
+**GRAMMAR**:
+- **Past Perfect**: "I had finished my homework before dinner."
+- **Relative Clauses**: "Students who study hard get better grades."
+- **Second Conditional**: "If I were rich, I would travel the world."
+- **Gerunds/Infinitives**: "I enjoy reading." "I need to study."
+- Research essay structures
+
+**SENTENCES**:
+- **Easy Mode**: 14-18 words
+- **Advanced Mode**: 18-30 words
+  - Example: "Before the invention of currency, people who wanted to trade goods had to use the barter system, which was inefficient."
+
+---
+
+### B1+ (Weeks 113-156) - DEBATE & SYNTHESIS PHASE
+
+**VOCABULARY**:
+- Academic Tier 3 dominant
+- Debate: counter-argument, rebuttal, concession, nuance
+- Critical analysis: synthesize, evaluate, fallacy, bias
+- Examples: generalization, correlation, causation, credibility
+
+**GRAMMAR**:
+- All previous grammar + advanced structures:
+  - **Nuanced thesis**: "While homework can be stressful, it ultimately benefits students because..."
+  - **Concession + Counter**: "Although some argue X, the evidence shows Y."
+  - **Citation integration**: "According to Smith (2020), students who..."
+  - **Qualifiers**: Some, Many, Often (to avoid overgeneralization)
+
+**DEBATE ESSAY STRUCTURE** (5 paragraphs):
+1. **Introduction**: Hook + Background + Thesis with nuance
+2. **Body 1**: Main argument with evidence + examples
+3. **Body 2**: Second argument with research support
+4. **Counter-argument**: Acknowledge opposing view + refute with evidence
+5. **Conclusion**: Restate thesis + synthesis + call to action
+
+**CRITICAL PHRASES**:
+- Citation: "According to...", "Research shows...", "Statistics indicate..."
+- Concession: "While it's true that...", "Although some believe..."
+- Rebuttal: "However, the evidence suggests...", "On the contrary..."
+- Qualification: "In many cases...", "Generally speaking...", "To some extent..."
+- Polite disagreement: "With all due respect...", "I see your point, but..."
+
+**SENTENCES**:
+- **Easy Mode**: 16-22 words
+- **Advanced Mode**: 20-40 words (complex, multi-clause)
+  - Example: "While some educators argue that homework creates unnecessary stress for young students, research from the National Education Association shows that moderate homework assignments, when properly designed, can significantly improve retention and independent study skills."
+
+**SPECIAL REQUIREMENTS FOR WEEKS 113-156**:
+- Debate Cycle 1 (Weeks 113-120): Homework debate
+- Debate Cycle 2 (Weeks 121-128): Video Games debate
+- Debate Cycle 3 (Weeks 145-156): Smartphones debate
+- Include fallacy detection examples (ad hominem, strawman, false dilemma)
+- Synthesis from multiple sources (combine 2-3 perspectives)
+- Independent research methodology
+- Portfolio presentation skills
+
+---
+
+## IV. FILE SCHEMAS (GOLDEN STANDARD)
+
+### 1. `index.js` - Week Aggregator
+
+⚠️ **CRITICAL REGISTRATION FIX (Week 4 Bug - 16/01/2026)**:
+- ✅ **MUST IMPORT**: `import daily_watch from './daily_watch.js';` at top of file
+- ✅ **MUST REGISTER**: `daily_watch: daily_watch` in stations object
+- ❌ **MISSING IMPORT/REGISTRATION**: Will cause Daily Watch station to show blank/white screen
+- 📍 **Root Cause**: DailyWatch component receives `null` data prop if not registered in index.js
+
+```javascript
+import read from './read.js';
+import vocab from './vocab.js';
+import grammar from './grammar.js';
+import ask_ai from './ask_ai.js';
+import logic from './logic.js';
+import dictation from './dictation.js';
+import shadowing from './shadowing.js';
+import writing from './writing.js';
+import explore from './explore.js';
+import word_power from './word_power.js';
+import daily_watch from './daily_watch.js';    // ⬅️ CRITICAL: MUST IMPORT
+import word_match from './word_match.js';
+import mindmap from './mindmap.js';
+
+const weekData = {
+  weekId: NUMBER,
+  isEasy: BOOLEAN,
+  weekTitle_en: "string",
+  weekTitle_vi: "string",
+  grammar_focus: "string",
+  global_vocab: vocab.vocab,
+  voiceConfig: {
+    narration: 'en-US-Neural2-D',     // Read & Explore, Shadowing, Explore
+    vocabulary: 'en-US-Neural2-F',    // Vocabulary station
+    dictation: 'en-US-Neural2-F',     // Dictation station
+    questions: 'en-US-Neural2-D',     // Check questions
+    mindmap: 'en-US-Neural2-D'        // Mindmap stems & branches
+  },
+  
+  // ⚠️ VOICE DIVERSITY REQUIREMENTS (Week 5+ Enhancement - 17/01/2026):
+  //
+  // 🎯 GOAL: Each week should have UNIQUE voice mix (not same as previous weeks)
+  // 🎯 VARIETY: Mix male AND female voices across stations within each week
+  // 🎯 QUALITY: Clear, accurate pronunciation, energetic, engaging for kids
+  //
+  // 📋 AVAILABLE VOICES (Google Cloud Neural2 - US English):
+  //
+  // FEMALE VOICES (Clear, Energetic):
+  // - en-US-Neural2-C: Young adult female, warm and clear
+  // - en-US-Neural2-E: Adult female, professional and friendly
+  // - en-US-Neural2-F: Young female, soft and gentle (current vocab/dictation)
+  // - en-US-Neural2-G: Adult female, authoritative but warm
+  // - en-US-Neural2-H: Young female, bright and cheerful
+  //
+  // MALE VOICES (Clear, Engaging):
+  // - en-US-Neural2-A: Young adult male, energetic and clear
+  // - en-US-Neural2-D: Adult male, neutral and clear (current narration/questions)
+  // - en-US-Neural2-I: Young male, friendly and expressive
+  // - en-US-Neural2-J: Adult male, warm and trustworthy
+  //
+  // 🔄 ROTATION STRATEGY (EXAMPLES):
+  //
+  // Week 1-2: (Current baseline - already produced)
+  //   narration: D (male), vocabulary: F (female), dictation: F, questions: D, mindmap: D
+  //
+  // Week 3: (Already produced - same as baseline)
+  //   narration: D (male), vocabulary: F (female), dictation: F, questions: D, mindmap: D
+  //
+  // Week 4: (Already produced - same as baseline)
+  //   narration: D (male), vocabulary: F (female), dictation: F, questions: D, mindmap: D
+  //
+  // Week 5: (NEW - MUST CHANGE) ⬅️ REMIX VOICES HERE
+  //   narration: C (female), vocabulary: A (male), dictation: I (male), questions: E (female), mindmap: C
+  //   ↑ Now female reads stories, male does vocab/dictation, female asks questions
+  //
+  // Week 6: (DIFFERENT from Week 5)
+  //   narration: A (male), vocabulary: H (female), dictation: E (female), questions: J (male), mindmap: A
+  //
+  // Week 7: (DIFFERENT from Week 6)
+  //   narration: E (female), vocabulary: D (male), dictation: C (female), questions: I (male), mindmap: E
+  //
+  // 🚫 FORBIDDEN PATTERNS:
+  // - ❌ Using same 5 voices for 3+ consecutive weeks (Week 3-4 problem)
+  // - ❌ Always male for read/shadowing, always female for dictation (too predictable)
+  // - ❌ All male or all female voices (need gender diversity)
+  //
+  // ✅ REQUIRED PATTERNS:
+  // - ✅ Change at least 3 out of 5 voices when starting new week
+  // - ✅ Mix male and female across stations (not segregated by station type)
+  // - ✅ Rotate who reads stories vs who does dictation (variety for learners)
+  // - ✅ Keep voices consistent WITHIN a week (don't change mid-week)
+  //
+  // 📝 SELECTION CRITERIA FOR EACH WEEK:
+  // 1. Check previous 2 weeks' voice config
+  // 2. Select NEW primary narration voice (different gender from last week preferred)
+  // 3. Select contrasting voice for vocabulary (if narration is male, try female vocab)
+  // 4. Select dictation voice (can match vocabulary OR narration for variety)
+  // 5. Select questions voice (complement the mix)
+  // 6. Mindmap voice typically matches narration (for consistency in that station)
+  //
+  // 🎬 IMPLEMENTATION FOR NEW WEEK:
+  // When generating Week 5, 6, 7... choose from voice pool above ensuring:
+  // - At least 3 different voices from previous week
+  // - Balance male/female (e.g., 3 male + 2 female OR 2 male + 3 female)
+  // - Prioritize C, E, H (female) and A, I, J (male) for fresh sound
+  
+  stations: {
+    read_explore: read,
+    new_words: vocab,
+    word_match: word_match,
+    grammar: grammar,
+    ask_ai: ask_ai,
+    logic_lab: logic,
+    dictation: dictation,
+    shadowing: shadowing,
+    video: writing,
+    writing: writing,
+    explore: explore,
+    word_power: word_power,
+    daily_watch: daily_watch,    // ⬅️ CRITICAL: MUST REGISTER HERE
+    mindmap_speaking: mindmap
+  }
+};
+    mindmap_speaking: mindmap
+  }
+};
+
+export default weekData;
+```
+
+---
+
+### 2. `read.js` - Read & Explore
+
+⚠️ **CRITICAL IMAGE FIX (Week 4 Bug - 17/01/2026)**:
+- ✅ **MUST INCLUDE**: `image_url` field pointing to cover image
+- ❌ **MISSING IMAGE_URL**: Will cause blank/broken image in UI
+- 📍 **Naming Convention**: Use `read_cover_w04.jpg` format (NOT `read_cover.jpg`)
+- 📍 **Path Format**: 
+  - Advanced: `/images/week4/read_cover_w04.jpg`
+  - Easy: `/images/week4_easy/read_cover_w04.jpg`
+
+```javascript
+export default {
+  title: "string",                   // 3-5 words
+  image_url: "string",               // ⬅️ REQUIRED: "/images/weekX/read_cover_wXX.jpg"
+  content_en: "string",              // **EXACTLY 10 bolded words FROM vocab.js**
+                                     // Do NOT bold extra words not in vocab.js
+                                     // Bold format: **word** (double asterisks)
+                                     // Advanced: 10-12 sentences (8-14 words each)
+                                     // Easy: 8-10 sentences (5-8 words each)
+  content_vi: "string",
+  audio_url: null,
+  comprehension_questions: [
+    {
+      id: NUMBER,
+      question_en: "string",         // Simple Wh-question (max 5 words)
+      answer: ["string"],            // Short answers (max 4 words)
+      hint_en: "string",
+      hint_vi: "string"
+    }
+  ]  // EXACTLY 3 questions
+};
+```
+
+**COMPREHENSION QUESTION EXAMPLES (A0)**:
+```javascript
+// ✅ GOOD (A0 level):
+{ question_en: "What is his name?", answer: ["Alex", "His name is Alex"] }
+{ question_en: "Where is the book?", answer: ["On the desk"] }
+{ question_en: "Is she happy?", answer: ["Yes", "Yes, she is"] }
+
+// ❌ BAD (too complex):
+{ question_en: "Why does Alex go to the library?" }
+{ question_en: "How does the magnifying glass work?" }
+```
+
+---
+
+### 3. `vocab.js` - New Words
+
+**🚨 CRITICAL RULE: ADVANCED vs EASY MODE VOCABULARY DIFFERENTIATION**
+
+**MANDATORY REQUIREMENTS (Week 3+ Bug Fix - Jan 16, 2026)**:
+- ✅ **DIFFERENT WORDS**: Advanced and Easy modes MUST have ≥60% different vocabulary
+- ✅ **NO COPY-PASTE**: Do NOT copy vocab from Advanced to Easy or vice versa
+- ❌ **SAME WORDS FORBIDDEN**: Using identical 10 words in both modes = CRITICAL ERROR
+- ✅ **THEMATIC CONSISTENCY**: Both modes cover same theme (e.g., "Appearance") but with different word choices
+
+**EXAMPLE - CORRECT IMPLEMENTATION (Week 3 - Appearance Theme)**:
+
+**Advanced Mode (10 words)**:
+- beautiful, handsome, pretty, young, old, slim, strong, cute, round, look like
+
+**Easy Mode (10 words)**:
+- tall, short, hair, eyes, long, curly, straight, glasses, face, smile
+
+→ **0% overlap** ✅ (10/10 different words)
+
+**EXAMPLE - WRONG IMPLEMENTATION** ❌:
+- Advanced: tall, short, hair, eyes, long...
+- Easy: tall, short, hair, eyes, long... (SAME WORDS - FORBIDDEN!)
+
+---
+
+**SCHEMA**:
+
+```javascript
+export default {
+  vocab: [
+    {
+      id: NUMBER,
+      word: "string",                // Max 2 syllables for Easy, 2-3 for Advanced
+      pronunciation: "string",       // IPA format
+      definition_vi: "string",       // Vietnamese translation
+      definition_en: "string",       // MAX 10 WORDS - simple A0/A0++ definition
+      example: "string",             // MAX 8 WORDS - simple sentence
+      collocation: "string",         // 2-3 common word combinations
+      image_url: "string",           // /images/weekX/word.jpg (Advanced) or /images/weekX_easy/word.jpg (Easy)
+      audio_word: "string"           // /audio/weekX/vocab_word.mp3 (Advanced) or /audio/weekX_easy/vocab_word.mp3 (Easy)
+    }
+  ]  // EXACTLY 10 words
+};
+```
+
+**DEFINITION STYLE REQUIREMENTS**:
+
+**🚨 CRITICAL**: Definitions MUST be simple (max 10 words), suitable for A0/A0++ learners.
+
+**✅ CORRECT EXAMPLES**:
+```javascript
+// Easy Mode (A0) - Ultra-simple, action-based:
+definition_en: "You sit on it."              // 4 words ✅
+definition_en: "You write with it."          // 4 words ✅
+definition_en: "On your head."               // 3 words ✅
+
+// Advanced Mode (A0++) - Simple dictionary:
+definition_en: "Very nice to look at."       // 5 words ✅
+definition_en: "Having a lot of power."      // 6 words ✅
+definition_en: "Not old; lived short time."  // 6 words ✅
+```
+
+**❌ WRONG EXAMPLES** (TOO COMPLEX):
+```javascript
+// ❌ TOO LONG (40+ words) - NOT SUITABLE FOR A0++:
+definition_en: "hair that extends down past the shoulders, often reaching the middle or lower back"  // 15 words ❌
+definition_en: "eyes that are larger than average in size, giving an expressive and noticeable appearance"  // 15 words ❌
+definition_en: "In many Asian cultures, people with big eyes are often considered attractive..."  // 40+ words ❌❌❌
+```
+
+**COLLOCATION REQUIREMENTS**:
+- Advanced: 2-3 collocations separated by commas (e.g., "tall building, tall tree, tall person")
+- Easy: 1-2 simple collocations (e.g., "tall boy, tall girl")
+
+**VALIDATION CHECKLIST**:
+```bash
+# Check vocabulary overlap between modes:
+grep "word:" src/data/weeks/week_XX/vocab.js | cut -d'"' -f4 > advanced_words.txt
+grep "word:" src/data/weeks_easy/week_XX/vocab.js | cut -d'"' -f4 > easy_words.txt
+comm -12 <(sort advanced_words.txt) <(sort easy_words.txt) | wc -l
+# Should output: ≤4 (max 40% overlap allowed)
+
+# Check definition length (should be ≤10 words):
+grep "definition_en:" src/data/weeks/week_XX/vocab.js | while read line; do
+  echo "$line" | grep -oP '".*?"' | wc -w
+done
+# All outputs should be ≤10
+```
+
+---
+
+### 4. `ask_ai.js` - Ask AI Station
+
+## ⚠️ CRITICAL: A0/A0++ LEVEL REQUIREMENTS
+
+This station teaches question formation. ALL content must match A0 beginner level.
+
+```javascript
+export default {
+  prompts: [
+    {
+      id: NUMBER,
+      context_en: "string",          // MAX 10 words, simple present
+      context_vi: "string",
+      audio_url: "string",           // "/audio/weekX/ask_ai_N.mp3" (generated by audio script)
+      answer: ["string"],            // A0-level questions ONLY
+      hint: "string"                 // 2 words max: "What is..."
+    }
+  ]  // EXACTLY 5 prompts
+};
+```
+
+### A0 QUESTION PATTERNS (ALLOWED ONLY):
+
+| Pattern | Example | Notes |
+|---------|---------|-------|
+| What + be | What is this? | Basic identification |
+| Where + be | Where is the pen? | Location |
+| Is + subject | Is this a book? | Yes/No |
+| Can I | Can I play? | Permission |
+| Do you + verb | Do you like it? | Simple preference |
+
+### FORBIDDEN PATTERNS (NOT A0):
+
+| Pattern | Why Forbidden |
+|---------|---------------|
+| How do they... | Requires 3rd person plural + do |
+| What does it do? | "does" + verb base is A1 |
+| Where can I find...? | "can + find" is A1 |
+| Why is/are... | "Why" questions are A1+ |
+| How many/much... | Quantifiers are A1 |
+
+### GOLDEN STANDARD EXAMPLES:
+
+```javascript
+// ✅ CORRECT A0 PROMPTS:
+
+// Prompt 1 - What is this?
+{
+  id: 1,
+  context_en: "You see a bag. Ask what it is.",
+  context_vi: "Bạn thấy một cái cặp. Hỏi nó là gì.",
+  answer: ["What is this?", "What is it?"],
+  hint: "What is..."
+}
+
+// Prompt 2 - Where is...?
+{
+  id: 2,
+  context_en: "You want the pen. Ask where.",
+  context_vi: "Bạn muốn cái bút. Hỏi ở đâu.",
+  answer: ["Where is the pen?", "Where is it?"],
+  hint: "Where is..."
+}
+
+// Prompt 3 - Is this...?
+{
+  id: 3,
+  context_en: "You see a book. Ask if it is yours.",
+  context_vi: "Bạn thấy một quyển sách. Hỏi có phải của bạn.",
+  answer: ["Is this my book?", "Is this mine?"],
+  hint: "Is this..."
+}
+
+// Prompt 4 - Can I...?
+{
+  id: 4,
+  context_en: "Friends play. You want to join.",
+  context_vi: "Bạn bè đang chơi. Bạn muốn tham gia.",
+  answer: ["Can I play?"],
+  hint: "Can I..."
+}
+
+// Prompt 5 - Do you...?
+{
+  id: 5,
+  context_en: "You like the book. Ask your friend.",
+  context_vi: "Bạn thích sách. Hỏi bạn mình.",
+  answer: ["Do you like it?", "Do you like this book?"],
+  hint: "Do you..."
+}
+```
+
+### ASK-AI AUTHORING RULES (NEW - Enforced)
+
+These rules MUST be followed when authoring `ask_ai.js` prompts. The mass production pipeline will validate these rules and fail if they are violated.
+
+- Context wording: Context must describe a NEED or instruction to ASK, not contain the question itself. Use patterns like:
+  - "Ask what it is." or "You want to know what it is."
+  - "Ask where it is." or "Ask if it is yours."
+  Do NOT write the student question directly in the context (no "What is it?", "Where is it?", "Is this mine?", etc.).
+
+- Length and simplicity:
+  - Advanced: context_en must be <= 10 words and use simple present vocabulary.
+  - Easy: context_en should be short (recommend 6-8 words) and in simple present.
+
+- Required keywords: context_en must contain an indicator that the learner should ask (case-insensitive): "ask", "Ask", "want", or the phrase "want to know".
+
+- Forbidden in context: Any direct question pattern (regex): `/\b(What is|Where is|Is this|Can I|Do you)\b/` — these belong in `answer`, not `context_en`.
+
+- Answer field (audio text): The `answer` array MUST contain the A0 question(s) the student should produce. The audio files are generated from the first element of `answer` and therefore must exactly match the target question form.
+
+- Audio URLs: `audio_url` must point to `/audio/week<id>/ask_ai_<n>.mp3` (or weekX_easy for easy mode) and be present.
+
+Examples (correct):
+```
+{ id:1, context_en: "You see a bag. Ask what it is.", answer:["What is this?"], hint:"What is..." }
+{ id:2, context_en: "You cannot find your pen. Ask where it is.", answer:["Where is it?"], hint:"Where is..." }
+```
+
+If any of the above rules are violated the validation script `tools/validate_ask_ai.js` will return a non-zero exit code and the mass production run will stop. Always run the validator locally when authoring prompts.
+
+### ❌ INCORRECT EXAMPLES (DO NOT USE):
+
+```javascript
+// ❌ WRONG - "How do they" is A1+
+{
+  context_en: "Children go to school. Some walk. Ask HOW they go.",
+  answer: ["How do they go to school?"]  // TOO COMPLEX
+}
+
+// ❌ WRONG - "What does it do" is A1
+{
+  context_en: "You see a magnifying glass. Ask what it does.",
+  answer: ["What does it do?"]  // TOO COMPLEX
+}
+
+// ❌ WRONG - Context too long
+{
+  context_en: "You are at the library. You see many books. You want to know WHERE the animal books are."
+  // 22 WORDS - TOO LONG!
+}
+```
+
+### CONTEXT LENGTH RULES:
+
+| Phase | Max Words | Max Sentences |
+|-------|-----------|---------------|
+| Phase 1 (A0) | 10 words | 2 sentences |
+| Phase 2 (A1) | 20 words | 3 sentences |
+| Phase 3 (A2-B1) | 30 words | 4 sentences |
+
+---
+
+### 5. `daily_watch.js` - Daily Watch
+
+## ⚠️ CRITICAL: PRIORITY YOUTUBE CHANNELS
+
+```javascript
+export default {
+  videos: [
+    {
+      id: NUMBER,
+      title: "string",
+      videoId: "string",             // 11-char YouTube ID
+      duration: "string",            // "MM:SS"
+      sim_duration: NUMBER,          // Seconds
+      thumb: "string",               // YouTube thumbnail
+      channel: "string",             // Channel name for tracking
+      purpose: "string"              // "GRAMMAR" | "STORY" | "VOCABULARY" | "SCIENCE"
+    }
+  ]  // 3-5 videos
+};
+```
+
+### PRIORITY CHANNEL SYSTEM:
+
+#### 🥇 TIER 1 - MUST USE (Priority Order):
+
+| Channel | Purpose | Search Pattern | Notes |
+|---------|---------|----------------|-------|
+| **English Singsing** | GRAMMAR | `English Singsing [grammar topic]` | Grammar songs, dialogues |
+| **Little Fox** | STORY | `Little Fox [topic] story` | Animated stories |
+| **Vooks** | STORY | `Vooks [topic]` | Read-aloud stories |
+
+#### 🥈 TIER 2 - RECOMMENDED:
+
+| Channel | Purpose | Notes |
+|---------|---------|-------|
+| Super Simple Songs | Vocabulary, Songs | Very beginner-friendly |
+| British Council Kids | Grammar, Vocabulary | Official ESL content |
+| Numberblocks | Math/CLIL | Numbers, patterns |
+| SciShow Kids | Science/CLIL | Science topics |
+
+#### 🥉 TIER 3 - ACCEPTABLE:
+
+| Channel | Purpose | Notes |
+|---------|---------|-------|
+| Peppa Pig | Contextual vocabulary | Familiar characters |
+| Cocomelon | Very basic vocabulary | For youngest learners |
+| National Geographic Kids | Science/CLIL | Nature, animals |
+
+### VIDEO SELECTION RULES:
+
+1. **Every week MUST have**:
+   - 1-2 videos from **English Singsing** (grammar focus)
+   - 1-2 videos from **Little Fox** or **Vooks** (story focus)
+   - 1 video matching week's CLIL/Science topic
+
+2. **Search Pattern**:
+```
+[Channel Name] + [topic] + ESL kids
+```
+
+3. **Duration Guidelines**:
+   - Phase 1: 2-5 minutes preferred
+   - Phase 2: 5-10 minutes acceptable
+   - Phase 3: Up to 15 minutes
+
+### GOLDEN STANDARD VIDEO SELECTION (Week 1):
+
+```javascript
+export default {
+  videos: [
+    // 🥇 GRAMMAR - English Singsing (PRIORITY)
+    {
+      id: 1,
+      title: "I am, You are, He is - English Singsing",
+      videoId: "...", // Find actual video
+      duration: "04:30",
+      sim_duration: 270,
+      channel: "English Singsing",
+      purpose: "GRAMMAR"
+    },
+    // 🥇 GRAMMAR - English Singsing (PRIORITY)
+    {
+      id: 2,
+      title: "Subject Pronouns Song - English Singsing",
+      videoId: "...",
+      duration: "03:45",
+      sim_duration: 225,
+      channel: "English Singsing",
+      purpose: "GRAMMAR"
+    },
+    // 🥇 STORY - Little Fox (PRIORITY)
+    {
+      id: 3,
+      title: "First Day of School - Little Fox",
+      videoId: "...",
+      duration: "05:00",
+      sim_duration: 300,
+      channel: "Little Fox",
+      purpose: "STORY"
+    },
+    // 🥈 VOCABULARY - Tier 2
+    {
+      id: 4,
+      title: "School Supplies Song - Super Simple",
+      videoId: "...",
+      duration: "03:30",
+      sim_duration: 210,
+      channel: "Super Simple Songs",
+      purpose: "VOCABULARY"
+    },
+    // 🥈 SCIENCE - Tier 2
+    {
+      id: 5,
+      title: "Magnifying Glass - SciShow Kids",
+      videoId: "...",
+      duration: "04:00",
+      sim_duration: 240,
+      channel: "SciShow Kids",
+      purpose: "SCIENCE"
+    }
+  ]
+};
+```
+
+### `video_queries.json` - YouTube Video Search Queries (MANDATORY FOR ADVANCED MODE)
+
+⚠️ **CRITICAL**: This file is **REQUIRED** for Advanced mode (file #13 of 15). Without it, `update_videos.js` cannot fetch videos and Daily Watch will fail.
+
+⚠️ **CRITICAL FORMAT FIX (Week 4 Bug - 16/01/2026)**:
+- ✅ **CORRECT**: Use `"videos": [` array key (Script expects `videos` key)
+- ❌ **WRONG**: Using `"video_queries": [` will cause update_videos.js to fail with "undefined videos"
+- 📍 **Root Cause**: tools/update_videos.js reads `data.videos`, NOT `data.video_queries`
+
+**Location**: `/src/data/weeks/week_XX/video_queries.json` (ONLY for Advanced mode, NOT for Easy mode)
+
+**Purpose**: Defines YouTube search queries for the `update_videos.js` script to automatically fetch 5 thematically appropriate videos.
+
+**How to Create Queries (Blueprint-Driven Workflow)**:
+
+1. **Read Blueprint & Syllabus** for the target week:
+   - Week Theme (e.g., "Family Squad")
+   - Grammar Focus (e.g., "Possessive Adjectives - My, Your")
+   - Math/Sci/Soc Keywords (e.g., "Family roles, family members")
+   - Suggested Video Hint (e.g., "Family Finger")
+   - Read topic from read.js (e.g., "Family Roots - family tree")
+
+2. **Combine Keywords**:
+   - **Formula**: `[Priority Channel] + [Grammar/Theme] + "ESL for kids" + "cartoons"`
+   - **Example**: `"English Singsing possessive pronouns my your ESL for kids"`
+   - **Example**: `"Little Fox family story ESL cartoons for kids"`
+
+3. **Channel Priority Rules**:
+   - **GRAMMAR** (2 videos): **MUST use "English Singsing"** first
+   - **STORY** (1-2 videos): **MUST use "Little Fox" or "Vooks"** first
+   - **SCIENCE/MATH** (1 video): Use "SciShow Kids" or "Numberblocks"
+   - **Backup**: If priority channel fails, use "ESL kids song" or "ESL cartoons for kids"
+
+4. **Whitelist Channels** (in priority order):
+   - English Singsing (Grammar, Phonics)
+   - Little Fox (Stories, Level 1)
+   - Vooks (Read-aloud Stories)
+   - Super Simple Songs (Vocabulary, Songs)
+   - Numberblocks (Math, Counting)
+   - SciShow Kids (Science, CLIL)
+   - British Council, Peppa Pig, National Geographic Kids
+
+**Schema & Example**:
+
+```json
+{
+  "weekId": 2,
+  "theme": "Family Squad",
+  "grammar": "Possessive Adjectives (My, Your)",
+  "topic": "Family members, family roles",
+  "science": "Family animals, ecosystems",
+  "videos": [    // ⬅️ CRITICAL: MUST BE "videos:" NOT "video_queries:"
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "query": "English Singsing possessive adjectives my your his her ESL for kids",
+      "backup_query": "possessive pronouns song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "query": "English Singsing demonstrative pronouns this that these those",
+      "backup_query": "this that these those kids song ESL"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "query": "Little Fox family story level 1 ESL for kids",
+      "backup_query": "Vooks family story read aloud cartoons for kids"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "query": "Little Fox family members song ESL cartoons",
+      "backup_query": "family finger song ESL kids cartoons"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "query": "SciShow Kids family animals ecosystems for kids",
+      "backup_query": "animal families kids science cartoons"
+    }
+  ]
+}
+```
+
+**Key Fields**:
+- `query`: **Primary query** - Combines priority channel + topic + "ESL for kids"
+- `backup_query`: **Fallback query** - Broader search with "ESL kids cartoons" if priority fails
+- `purpose`: Video category (GRAMMAR, STORY, VOCABULARY, SCIENCE)
+
+**Auto-Generation Script**:
+```bash
+# Use generate_video_queries.js to auto-create from Blueprint data
+node tools/generate_video_queries.js 2
+```
+
+This script:
+- Reads Blueprint (theme, grammar, keywords, video_hint)
+- Extracts grammar patterns (e.g., "Possessive Adjectives" → "my your his her")
+- Combines with "ESL for kids cartoons"
+- Generates priority_search + backup_search for each video
+- Applies channel whitelist priority (English Singsing > Little Fox > others)
+
+---
+
+### 6. `word_power.js` - Collocations
+
+**🚨 CRITICAL RULE: ADVANCED vs EASY MODE WORD POWER DIFFERENTIATION**
+
+**MANDATORY REQUIREMENTS (Week 3+ Bug Fix - Jan 16, 2026)**:
+- ✅ **DIFFERENT COLLOCATIONS**: Advanced and Easy modes MUST have 100% different word power entries
+- ✅ **NO COPY-PASTE**: Do NOT reuse collocations between modes
+- ❌ **SAME COLLOCATIONS FORBIDDEN**: Using identical 3 collocations = CRITICAL ERROR
+- ✅ **THEMATIC CONSISTENCY**: Both modes cover same theme but with different collocations
+
+**EXAMPLE - CORRECT IMPLEMENTATION (Week 3 - Appearance Theme)**:
+
+**Advanced Mode (3 collocations)**:
+- look beautiful
+- very young
+- round face
+
+**Easy Mode (3 collocations)**:
+- long hair
+- big eyes
+- wear glasses
+
+→ **0% overlap** ✅ (3/3 different collocations)
+
+**EXAMPLE - WRONG IMPLEMENTATION** ❌:
+- Advanced: long hair, big eyes, wear glasses
+- Easy: long hair, big eyes, wear glasses (SAME - FORBIDDEN!)
+
+---
+
+**SCHEMA**:
+
+```javascript
+export default {
+  words: [
+    {
+      id: NUMBER,
+      word: "string",                // A0: verb + noun or adj + noun
+      pronunciation: "string",
+      cefr_level: "A1",              // Phase 1 = A1 (can be 1 level higher than main content)
+      definition_en: "string",       // MAX 10 WORDS - simple explanation
+      definition_vi: "string",
+      example: "string",             // MAX 8 WORDS - simple sentence
+      model_sentence: "string",      // MAX 15 WORDS (Easy) or 20 WORDS (Advanced)
+      collocation: "string",         // Related word combinations
+      image_url: "string"            // /images/weekX/wordpower_name.jpg or /images/weekX_easy/wordpower_name.jpg
+    }
+  ]  // EXACTLY 3 words (Phase 1)
+};
+
+/**
+ * CEFR LEVEL NOTE:
+ * word_power CEFR level may be 1 level higher than week's main content.
+ * Example: Week 1-18 (A0/A0++) can use A1 collocations for vocabulary enrichment.
+ * This is pedagogically sound - exposing students to slightly advanced chunks.
+ */
+```
+
+**MODEL SENTENCE LENGTH REQUIREMENTS**:
+
+**✅ CORRECT EXAMPLES**:
+```javascript
+// Easy Mode (MAX 15 words):
+model_sentence: "Many girls like to have long hair."  // 8 words ✅
+model_sentence: "People with big eyes look cute."     // 6 words ✅
+
+// Advanced Mode (MAX 20 words):
+model_sentence: "My mother looks beautiful when she wears her red dress."  // 11 words ✅
+model_sentence: "Very young children need to sleep a lot every day."      // 11 words ✅
+```
+
+**❌ WRONG EXAMPLES** (TOO LONG):
+```javascript
+// ❌ TOO LONG (40+ words) - FORBIDDEN:
+model_sentence: "Many cultures around the world consider long hair to be a symbol of beauty and femininity, which is why some people choose to grow their hair very long and maintain it carefully."  // 34 words ❌❌❌
+
+model_sentence: "In many Asian cultures, people with big eyes are often considered attractive because large eyes can convey emotions more clearly and make a person's face look more youthful and friendly."  // 32 words ❌❌❌
+```
+
+**VALIDATION CHECKLIST**:
+```bash
+# Check word_power overlap between modes:
+grep "word:" src/data/weeks/week_XX/word_power.js | cut -d'"' -f4 > advanced_wp.txt
+grep "word:" src/data/weeks_easy/week_XX/word_power.js | cut -d'"' -f4 > easy_wp.txt
+comm -12 <(sort advanced_wp.txt) <(sort easy_wp.txt) | wc -l
+# Should output: 0 (NO overlap allowed)
+
+# Check model_sentence length:
+# Easy mode - should be ≤15 words:
+grep "model_sentence:" src/data/weeks_easy/week_XX/word_power.js | while read line; do
+  echo "$line" | grep -oP '".*?"' | wc -w
+done
+
+# Advanced mode - should be ≤20 words:
+grep "model_sentence:" src/data/weeks/week_XX/word_power.js | while read line; do
+  echo "$line" | grep -oP '".*?"' | wc -w
+done
+```
+
+**QUANTITY BY PHASE**:
+| Phase | Count | Type |
+|-------|-------|------|
+| 1 (1-54) | 3 | Simple: go to school, do homework |
+| 2 (55-120) | 5 | Phrasal verbs: look at, pick up |
+| 3 (121-156) | 7 | Idioms: piece of cake |
+
+---
+
+### 7. `grammar.js` - Grammar Station
+
+```javascript
+export default {
+  grammar_explanation: {
+    title_en: "string",
+    title_vi: "string",
+    rules: [
+      {
+        type: "rule",
+        icon: "1️⃣",
+        rule_en: "string",           // Max 10 words
+        rule_vi: "string"
+      }
+    ]  // 2-4 rules
+  },
+  exercises: [
+    {
+      id: NUMBER,
+      type: "mc" | "fill" | "unscramble",
+      question: "string",            // Max 8 words
+      options: ["string"],
+      answer: "string",
+      hint: "string"
+    }
+  ]  // EXACTLY 20 exercises
+};
+```
+
+**EXERCISE MIX (FLEXIBLE)**:
+- Multiple choice: 5-12 exercises
+- Fill blank: 4-12 exercises
+- Unscramble: 2-4 exercises
+- **Total: EXACTLY 20 exercises**
+
+**MUST INCLUDE**:
+- Affirmative: "I am happy." (30% of exercises)
+- Negative: "I am not sad." (30% of exercises)
+- Question: "Are you happy?" (40% of exercises)
+
+---
+
+### 8. `logic.js` - Logic Lab
+
+⚠️ **CRITICAL FORMAT FIX (Week 4 Bug - 16/01/2026)**:
+- ✅ **CORRECT**: Use `puzzles:` array key (Component reads `data.puzzles`)
+- ❌ **WRONG**: Using `problems:` will cause Logic Lab to show blank/no content
+- 📍 **Root Cause**: LogicLab component expects `data.puzzles`, NOT `data.problems`
+
+```javascript
+export default {
+  puzzles: [    // ⬅️ MUST BE "puzzles:" NOT "problems:"
+    {
+      id: NUMBER,
+      type: "math" | "logic" | "pattern",
+      title_en: "string",
+      title_vi: "string",
+      question_en: "string",         // Full context, simple words
+      question_vi: "string",
+      answer: ["string"],            // Include unit: "5 pencils"
+      hint_en: "string",
+      hint_vi: "string"
+    }
+  ]
+};
+```
+
+**QUANTITY BY PHASE**:
+| Phase | Count |
+|-------|-------|
+| 1 | 5 |
+| 2 | 7 |
+| 3 | 10 |
+
+---
+
+### 9. `explore.js` - CLIL Explore
+
+⚠️ **CRITICAL IMAGE FIX (Week 4 Bug - 17/01/2026)**:
+- ✅ **MUST INCLUDE**: `image_url` field pointing to cover image
+- ❌ **MISSING IMAGE_URL**: Will cause blank/broken image in UI
+- 📍 **Naming Convention**: Use `explore_cover_w04.jpg` format (NOT `explore_cover.jpg`)
+- 📍 **Path Format**: 
+  - Advanced: `/images/week4/explore_cover_w04.jpg`
+  - Easy: N/A (Easy mode has no explore.js)
+
+```javascript
+export default {
+  title_en: "string",
+  title_vi: "string",
+  image_url: "string",               // ⬅️ REQUIRED: "/images/weekX/explore_cover_wXX.jpg"
+  content_en: "string",              // **10 different bolded words**
+  content_vi: "string",
+  check_questions: [
+    {
+      id: NUMBER,
+      question_en: "string",         // A0 simple question
+      answer: ["string"],
+      hint_en: "string",
+      hint_vi: "string"
+    }
+  ],  // 3 questions
+  question: {
+    text_en: "string",               // Critical thinking
+    text_vi: "string",
+    min_words: NUMBER,               // 20 (Easy) or 30 (Advanced)
+    hint_en: "string",
+    hint_vi: "string"
+  }
+};
+```
+
+---
+
+### 10. `mindmap.js` - Mindmap Speaking
+
+```javascript
+const mindMapContent = {
+  centerStems: [
+    "I am ___.",                     // 4-6 stems using week grammar
+  ],
+  branchLabels: {
+    "I am ___.": [
+      "happy",                       // 4-6 simple completions
+      "a student",
+      "at school"
+    ]
+  }
+};
+
+export default mindMapContent;
+```
+
+---
+
+### 11. `dictation.js` - Dictation Station
+
+```javascript
+export default {
+  sentences: [
+    {
+      id: NUMBER,
+      text: "string",              // Sentence from read.js content_en
+      meaning: "string"            // Vietnamese translation
+    }
+  ]  // MUST match exact sentence count from read.js (typically 18 for Advanced, 15 for Easy)
+};
+```
+
+**🚨 CRITICAL RULES**:
+
+1. **Extract ALL sentences** from `read.js` content_en, split by periods
+
+2. **ABBREVIATION HANDLING** (MANDATORY):
+   - **NEVER split sentences** at common title abbreviations: `Ms.`, `Mr.`, `Dr.`, `Prof.`, `St.`, `Rev.`, etc.
+   - These are **NOT sentence-ending periods**
+   - ✅ CORRECT: `{ id: 1, text: "My teacher is Ms. Nova.", meaning: "..." }`
+   - ❌ WRONG: `{ id: 1, text: "My teacher is Ms.", meaning: "..." }` + `{ id: 2, text: "Nova.", meaning: "..." }`
+   
+3. **Common abbreviations to watch**:
+   - Titles: Ms., Mr., Mrs., Dr., Prof., Rev., Sr., Jr.
+   - Locations: St. (Street), Ave. (Avenue), Rd. (Road)
+   - Time: a.m., p.m.
+   - Others: vs., etc., e.g., i.e.
+
+4. **Validation command**:
+```bash
+# Check for potential abbreviation splits (should return 0 matches)
+grep -n '"Ms\.$\|"Mr\.$\|"Dr\.$\|"Prof\.$\|"St\.$' src/data/weeks/week_XX/dictation.js
+```
+
+5. **Sentence count**: Total sentences = count of periods in read.js MINUS abbreviation periods
+
+**Example from Week 3**:
+```javascript
+export default {
+  sentences: [
+    { id: 1, text: "My teacher is Ms. Nova.", meaning: "Giáo viên của tôi là cô Nova." },  // ✅ Correct - kept Ms. Nova together
+    { id: 2, text: "She is very tall and beautiful with a lovely personality.", meaning: "..." },
+    { id: 3, text: "She has long black hair that is always neat and tidy.", meaning: "..." }
+  ]
+};
+```
+
+---
+
+### 12. `shadowing.js` - Shadowing Station
+
+```javascript
+export default {
+  title: "string",                 // Same as read.js title
+  audio_full: "string",           // Full passage audio path
+  script: [
+    {
+      id: NUMBER,
+      text: "string",              // Sentence from read.js
+      vi: "string",                // Vietnamese translation
+      audio_url: "string"          // Individual sentence audio
+    }
+  ]  // Same number as read.js
+};
+```
+
+**CRITICAL**: 
+- MUST use `script` (NOT `sentences`)
+- MUST use `vi` field (NOT `meaning`)
+- Include `audio_full` field
+
+---
+
+### 13. `writing.js` - Writing Station
+
+**🚨 CRITICAL REQUIREMENT: model_sentence is MANDATORY**
+
+```javascript
+export default {
+  title: "string",                    // Short title (3-5 words)
+  min_words: NUMBER,                  // 30-40 for Easy, 40-60 for Advanced
+  model_sentence: "string",           // 🚨 MANDATORY - Example paragraph for students
+  instruction_en: "string",           // Clear instructions
+  instruction_vi: "string",
+  prompt_en: "string",                // Writing prompt with guiding questions
+  prompt_vi: "string",
+  keywords: ["string"]                // 5-7 keywords from vocab.js
+};
+```
+
+**MODEL SENTENCE REQUIREMENTS**:
+
+**✅ MANDATORY**: Every writing.js MUST include a `model_sentence` field
+
+**Purpose**: 
+- Provides concrete example for students to follow
+- Shows sentence structure and vocabulary usage
+- Reduces anxiety for beginner writers
+- Demonstrates expected length and style
+
+**Length Requirements**:
+- **Easy Mode**: 30-50 words (8-12 sentences)
+- **Advanced Mode**: 40-70 words (10-15 sentences)
+
+**✅ CORRECT EXAMPLES**:
+
+**Week 2 - Easy Mode (Family theme)**:
+```javascript
+model_sentence: "This is my family. This is my mother. She is kind. This is my father. He is strong. This is my brother. He helps me. This is my sister. She is funny. We are a team. We love each other. I am happy at home."
+// 47 words, 12 sentences ✅
+```
+
+**Week 3 - Advanced Mode (Appearance theme)**:
+```javascript
+model_sentence: "This is my best friend. His name is Tom. He is tall. He has short hair. His hair is black. He has brown eyes. He wears glasses. He has a big smile. He is kind. He is funny. I like my friend."
+// 45 words, 11 sentences ✅
+```
+
+**Week 3 - Easy Mode (Appearance theme)**:
+```javascript
+model_sentence: "This is my friend. Her name is Lily. She is tall. She has long hair. Her hair is black. She has big eyes. She has a nice smile. I like my friend."
+// 33 words, 8 sentences ✅
+```
+
+**Structure Pattern**:
+1. Introduction (1-2 sentences): "This is my..."
+2. Name (1 sentence): "His/Her name is..."
+3. Physical features (3-5 sentences): Height, hair, eyes, etc.
+4. Personality/traits (1-3 sentences): "He/She is kind/funny..."
+5. Conclusion (1 sentence): "I like/love..."
+
+**VALIDATION CHECKLIST**:
+```bash
+# Check if model_sentence exists:
+grep "model_sentence:" src/data/weeks/week_XX/writing.js
+# Should return 1 line
+
+# Count words in model_sentence:
+grep "model_sentence:" src/data/weeks/week_XX/writing.js | sed 's/.*model_sentence: "//' | sed 's/".*//' | wc -w
+# Easy: 30-50 words, Advanced: 40-70 words
+```
+
+**Note**: Writing station does NOT need `image_url`. Students write in a text area, no image display.
+
+---
+
+### 14. `word_match.js` - Word Match Game
+
+```javascript
+export default {
+  pairs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  // IDs from vocab.js
+};
+```
+
+---
+
+## V. AI TUTOR DATA FILES
+
+### `week_XX_real.js` - Story Missions
+
+```javascript
+export const weekXRealData = {
+  week_id: NUMBER,
+  phase: NUMBER,
+  
+  // 3 Story Missions per week
+  story_missions: [
+    {
+      mission_id: NUMBER,
+      title: "string",
+      nova_greeting: "string",       // Natural, short greeting
+      mission_context: "string",     // AI instructions
+      target_vocab: ["string"],      // 3-5 words per mission
+      target_pattern: "string",      // Grammar pattern
+      conversation_topics: ["string"],
+      minimum_turns: 10,
+      maximum_turns: 15
+    }
+  ],
+  
+  nova_instructions: {
+    conversation_style: [
+      "Keep responses under 20 words",
+      "One question per turn",
+      "Use A0 vocabulary only",
+      "NO emojis in responses"
+    ]
+  },
+  
+  global_vocab: [ ... ],
+  word_power: { words: [ ... ] }
+};
+```
+
+---
+
+## VI. QUALITY CHECKLIST
+
+### Before Generation
+- [ ] Identify Phase (1/2/3) and CEFR level (A0/A1/A2)
+- [ ] Read Syllabus for week theme and grammar
+- [ ] Note priority channels for videos
+
+### Content Validation
+- [ ] All vocab words bolded in read.js (exact match)
+- [ ] Ask AI: context ≤10 words, A0 questions only
+- [ ] Daily Watch: 2+ videos from priority channels
+- [ ] Grammar: includes negative and question forms
+- [ ] Logic: full context, answers include units
+- [ ] **video_queries.json created** (Advanced mode only, file #13)
+
+### Video Selection (via video_queries.json)
+- [ ] At least 2 grammar videos (English Singsing preferred)
+- [ ] At least 1 story video (Little Fox or Vooks)
+- [ ] At least 1 science video (SciShow Kids)
+- [ ] All queries match week theme and grammar focus
+- [ ] File location: `/src/data/weeks/week_XX/video_queries.json`
+
+---
+
+## VII. PHASE-LEVEL SUMMARY
+
+| Aspect | Phase 1 (A0) | Phase 2 (A1) | Phase 3 (A2-B1) |
+|--------|--------------|--------------|-----------------|
+| Vocab syllables | 1-2 | 2-3 | 3+ |
+| Sentence length | 6-8 words | 10-12 words | 15+ words |
+| Question types | What is, Where is, Can I | How do, What does, Why | Complex Wh-, conditionals |
+| Video length | 2-5 min | 5-10 min | 10-15 min |
+| Writing min | 40 words | 100 words | 150 words |
+| Logic puzzles | 5 | 7 | 10 |
+| Word power | 3 | 5 | 7 |
+
+---
+
+## VIII. EXECUTION ORDER
+
+### Core Station Files (Per Mode)
+1. `vocab.js` - Foundation (MUST BE FIRST)
+2. `read.js` - Story with bolded vocab
+3. `dictation.js` - Extract from read.js
+4. `shadowing.js` - Extract from read.js with audio paths
+5. `explore.js` - CLIL content (different vocab)
+6. `grammar.js` - 20 exercises
+7. `ask_ai.js` - 5 A0 questions
+8. `logic.js` - 5 puzzles with story context
+9. `word_power.js` - 3 collocations
+10. `writing.js` - Writing prompt
+11. `mindmap.js` - Speaking stems
+12. `daily_watch.js` - Video metadata
+13. ⚠️ **`video_queries.json`** - YouTube search queries (MANDATORY for Advanced, skip for Easy)
+14. `word_match.js` - Vocab pair IDs
+15. `index.js` - Week aggregator
+
+### Additional AI Tutor File (Separate Location)
+16. `week_XX_real.js` - Placed at `/src/data/weeks/week_XX_real.js` (NOT inside week_XX folder)
+
+**Total Files**:
+- **Advanced mode (in week_XX folder)**: 14 .js + 1 .json = 15 files
+- **Easy mode (in week_XX folder)**: 14 .js + 0 .json = 14 files (⛔ NO video_queries.json)
+- **Shared (parent folder)**: 1 `week_XX_real.js`
+- **Grand Total**: 15 + 14 + 1 = **29 files per week**
+
+⚠️ **CRITICAL REMINDER**: 
+- `video_queries.json` is **REQUIRED** for Advanced mode
+- Without it, Step 7 (`update_videos.js`) will skip video fetching
+- Daily Watch will show outdated/incorrect videos
+- Easy mode does NOT need this file (uses same videos as Advanced)
+
+---
+
+## IX. AUDIO NAMING CONVENTION & TEXT CLEANING (UPDATE JAN 15, 2026)
+
+### Critical Audio Generation Rules
+
+#### 1. **Remove Markdown Before TTS**
+- **Remove `**bold**` markers**: "My **name** is" → "My name is"
+  - Why: TTS reads asterisks out loud otherwise
+  - When: Before TTS generation, not in source data
+- **Remove `___` blanks**: "This is my ___." → "This is my." before TTS
+  - Why: TTS reads "underscore underscore underscore" (3x) otherwise
+  - When: For mindmap stems ONLY before TTS generation
+
+#### 2. **File Naming Convention**
+| Station | File Name Format | Example | Notes |
+|---------|------------------|---------|-------|
+| Read | `read_explore_main.mp3` | `/audio/week2/read_explore_main.mp3` | NOT `read_main.mp3` |
+| Explore | `explore_main.mp3` | `/audio/week2/explore_main.mp3` | NOT `explore_explore_main.mp3` |
+| Mindmap (stems) | `mindmap_stem_#.mp3` | `/audio/week2/mindmap_stem_1.mp3` | 1-6 stems per week |
+| Mindmap (branches) | `mindmap_branch_#.mp3` | `/audio/week2/mindmap_branch_1.mp3` | ~36 branches per week |
+| Vocab | `vocab_word.mp3` | `/audio/week2/vocab_mother.mp3` | + `vocab_def_mother.mp3`, `vocab_ex_mother.mp3`, `vocab_coll_mother.mp3` |
+| Word Power | `wordpower_word.mp3` | `/audio/week2/wordpower_take_care_of.mp3` | + def, ex, model, coll |
+| Dictation | `dictation_#.mp3` | `/audio/week2/dictation_1.mp3` | 18-20 sentences |
+| Shadowing | `shadowing_#.mp3` | `/audio/week2/shadowing_1.mp3` | + `shadowing_full.mp3` |
+| Ask AI | `ask_ai_#.mp3` | `/audio/week2/ask_ai_1.mp3` | 5 prompts |
+| Logic Lab | `logic_#.mp3` | `/audio/week2/logic_1.mp3` | 5 problems |
+
+#### 3. **Mindmap Data Structure (after auto-fill)**
+```javascript
+// BEFORE (strings only):
+centerStems: ["This is my ___.", "My mother is ___."]
+branchLabels: {
+  "This is my ___.": ["mother and father", "big brother", ...]
+}
+
+// AFTER (objects with audio URLs):
+centerStems: [
+  { text: "This is my ___.", audio: "/audio/week2/mindmap_stem_1.mp3" },
+  { text: "My mother is ___.", audio: "/audio/week2/mindmap_stem_2.mp3" }
+]
+branchLabels: {
+  "This is my ___.": [
+    { text: "mother and father", audio: "/audio/week2/mindmap_branch_1.mp3" },
+    { text: "big brother", audio: "/audio/week2/mindmap_branch_2.mp3" }
+  ]
+}
+```
+
+#### 4. **Folder Structure**
+```
+/public/audio/
+├── week1/          (Advanced mode audio)
+├── week1_easy/     (Easy mode audio)
+├── week2/
+├── week2_easy/
+└── ... (week3, week3_easy, etc.)
+```
+
+---
+
+## IX. COMMON MISTAKES TO AVOID
+
+### Ask AI
+❌ "How do they go to school?" → Too complex
+✅ "Do you go to school?" → A0 level
+
+❌ Context: 25 words → Too long
+✅ Context: 8 words → Appropriate
+
+### Daily Watch
+❌ Random ESL videos → Inconsistent quality
+✅ English Singsing + Little Fox → Consistent, vetted
+
+### Vocabulary
+❌ "magnificent" → Too advanced
+✅ "big" → A0 appropriate
+
+### Grammar
+❌ Only affirmative sentences
+✅ Mix of affirmative, negative, questions
+
+## X. ASSET GENERATION & SAFETY PROTOCOL (UPDATE JAN 15, 2026)
+After generating the 14 .js files and 1 .json file, you MUST run the following tools to complete the week:
+
+### 1. Safety Check
+Use `tools/update_db_smart.js` to safely insert the new week into `src/data/syllabus_database.js`.
+**NEVER use simple text append.**
+
+### 2. Asset Generation (Post-Processing)
+
+#### Audio Generation
+Run `python3 tools/generate_audio_final.py <week_number>` to generate TTS audio.
+- **Automatically removes `**bold**` markers** before TTS
+- **Automatically removes `___` blanks** for mindmap stems before TTS
+- **Respects file naming convention** (read_explore_main.mp3, explore_main.mp3, etc.)
+
+```bash
+# Example for Week 2
+python3 tools/generate_audio_final.py 2
+```
+
+#### Auto-Fill Audio URLs (Mindmap Only)
+Run `node tools/update_mindmap_audio_urls.js <week_number>` after audio generation.
+- **Converts mindmap data format** from strings to objects with `.audio` property
+- **Prevents browser TTS fallback** by ensuring all mindmap stems and branches have audio URLs
+- **Must run AFTER audio generation** (Step 5), BEFORE final validation
+
+```bash
+# Example for Week 2
+node tools/update_mindmap_audio_urls.js 2
+```
+
+**Important**: If mindmap audio URLs are missing and not auto-filled, the app will fall back to browser TTS (lower quality, inconsistent voices).
+
+#### Image Generation
+**CRITICAL**: Use **ONLY** `tools/generate_images_nano_banana.js`.
+This script contains the fix for cover image naming (e.g., `w02` instead of `w2`).
+
+```bash
+# Example for Week 3 Advanced
+node tools/generate_images_nano_banana.js 3 advanced
+
+# Example for Week 3 Easy
+node tools/generate_images_nano_banana.js 3 easy
+```
+**DO NOT USE** older scripts like `generate_images_nano.js` or `generate_images.js`. They are deprecated and will cause bugs.
+
+### 3. Video Fetching
+- Generate `src/data/video_tasks.json` from `video_queries.json`.
+- Run `node tools/update_videos.js [WEEK_ID]` to fetch IDs from YouTube and populate `daily_watch.js`.
+
+### 4. UI Patching
+Run `node tools/fix_video_flash.js` to ensure the Video UI handles the new data correctly.
+
+### 5. Image Path Validation
+For `read.js` and `explore.js`, ensure `image_url` follows this exact format:
+- **Advanced**: `/images/week<ID>/<type>_cover_w<0ID>.jpg` (e.g., `/images/week2/read_cover_w02.jpg`)
+- **Easy**: `/images/week<ID>_easy/<type>_cover_w<0ID>.jpg` (e.g., `/images/week2_easy/read_cover_w02.jpg`)
+
+### 6. Audio Path Validation
+All audio files must follow this exact format:
+- **Advanced**: `/audio/week<ID>/<filename>.mp3` (e.g., `/audio/week2/vocab_mother.mp3`)
+- **Easy**: `/audio/week<ID>_easy/<filename>.mp3` (e.g., `/audio/week2_easy/vocab_mother.mp3`)
+
+**CRITICAL**: Use `week<ID>` format (week1, week2, week3...), NOT `week_01`, `week_02`. This matches Week 1 standard.
+
+---
+
+## XI. AI TUTOR INTEGRATION (week_XX_real.js) - MANDATORY
+
+### Purpose
+The `week_XX_real.js` file provides OFFICIAL SYLLABUS DATA for Ms. Nova (AI Tutor) during Story Missions. This file bridges the syllabus with the AI Tutor's conversational system.
+
+**IMPORTANT**: This file is MANDATORY for production. Week 1 HAS this file.
+
+### File Location (CRITICAL - Different from other files)
+- **Location**: `/src/data/weeks/week_XX_real.js` (at PARENT level, NOT inside week_XX folder)
+- **Reason**: This file is SHARED by both Advanced and Easy modes
+- **Example**: Week 1 is at `/src/data/weeks/week_01_real.js`
+- **Dynamic Loading**: App uses `import(\`./weeks/week_${paddedNumber}_real.js\`)` to auto-load based on current week
+- **No Manual Updates Needed**: When `generate_week_mass_production.js` creates week_02_real.js, week_03_real.js... app automatically loads them
+- **No Hardcoding**: System will automatically find and load week_02_real.js, week_03_real.js, etc. without code changes
+
+### Complete Schema
+
+```javascript
+export const weekXXRealData = {
+  // === METADATA ===
+  week_id: XX,
+  phase: 1,
+  block: "A",
+  unit: X,
+  
+  // === OFFICIAL SYLLABUS DATA ===
+  week_title_en: "Week Title from Syllabus",
+  week_title_vi: "Tiêu đề từ syllabus",
+  
+  topic: "Topic from syllabus",
+  topic_vi: "Chủ đề",
+  
+  // === KEY LEARNING OUTCOME ===
+  learning_outcome: "Can [grammar pattern] to [communicative goal]",
+  learning_outcome_vi: "Có thể [mẫu câu] để [mục tiêu giao tiếp]",
+  
+  // === GRAMMAR FOCUS (IMPLICIT) ===
+  grammar_focus: "Pattern description",
+  grammar_pattern: "[Subject] + [Verb] + [Object]",
+  grammar_examples: [
+    "Example sentence 1",
+    "Example sentence 2",
+    "Example sentence 3"
+  ],
+  
+  // === TARGET VOCABULARY (7 words from syllabus) ===
+  target_vocab: [
+    {
+      word: "word1",
+      pronunciation: "/phonetic/",
+      definition_vi: "Nghĩa tiếng Việt",
+      definition_en: "English definition",
+      example_sentence: "Example using word in context",
+      example_vi: "Ví dụ tiếng Việt"
+    }
+    // ... 7 words total (MUST match syllabus_database.js for this week)
+  ],
+  
+  // === STORY MISSIONS (3-5 missions) ===
+  story_missions: [
+    {
+      mission_id: "WXX_INTRO",
+      title: "Mission Title",
+      description: "Learn to use [pattern] naturally",
+      level: "easy",
+      target_words: ["word1", "word2", "word3"]
+    },
+    {
+      mission_id: "WXX_PRACTICE",
+      title: "Practice Mission",
+      level: "normal",
+      target_words: ["word3", "word4", "word5"]
+    },
+    {
+      mission_id: "WXX_CHALLENGE",
+      title: "Challenge Mission",
+      level: "challenge",
+      target_words: ["word6", "word7"]
+    }
+  ],
+  
+  // === PRONUNCIATION FOCUS ===
+  pronunciation_focus: [
+    { sound: "/sound/", words: ["word1", "word2"], tip: "How to pronounce" }
+  ],
+  
+  // === FREE TALK SCENARIOS ===
+  free_talk_scenarios: [
+    {
+      scenario: "Situation description",
+      prompt: "Question to ask student",
+      expected_grammar: "Pattern student should use"
+    }
+  ],
+  
+  // === FREETALK KNOWLEDGE (MANDATORY for FreeTalk mode) ===
+  freetalk_knowledge: {
+    week_title: "The Week Title",
+    theme: "Clear theme description (e.g., 'Physical Appearance and Descriptions')",
+    knowledge_base: [
+      "Fact 1 about this week's topic",
+      "Fact 2 about this week's topic",
+      "Fact 3 about this week's topic",
+      // ... minimum 10 facts total
+    ],
+    example_opening_questions: [
+      "What do you [topic-related question]?",
+      "How do you [topic-related question]?",
+      "Can you tell me about [topic]?",
+      // ... minimum 8 questions total
+    ]
+  }
+};
+```
+
+### Critical Requirements
+
+1. **7 Target Vocabulary**: These MUST come from the syllabus, NOT from vocab.js (which has 10 words)
+2. **Story Missions**: Minimum 3, maximum 5 missions per week
+   - **CRITICAL**: Each mission MUST have `title` field for TurnManager detection
+   - Example: `title: "The Mirror Game"` allows TurnManager to detect Week 3
+   - Without `title`, TurnManager cannot route to week-specific conversation steps
+   - **Week 3 Bug Example (Fixed Jan 16, 2026)**:
+     - **Symptom**: AI asked "Do you like school?" in Week 3 (appearance theme) - wrong context
+     - **Root Cause**: Mission missing `title` field → TurnManager defaulted to Week 1 steps
+     - **Fix**: Added `title: "Looking in the Mirror"` → TurnManager detected Week 3 keywords
+   
+3. **TurnManager Title-Based Week Detection** (CRITICAL for multi-week support):
+   - **Purpose**: TurnManager uses mission `title` keywords to detect which week's conversation steps to load
+   - **How It Works** (src/services/ai_tutor/turnManager.js lines 250-280):
+     ```javascript
+     function getMissionSteps(missionId, missionTitle) {
+       // Week 3: Mirror/Appearance theme
+       const isWeek3Mirror = missionTitle && (
+         missionTitle.includes('Mirror') || 
+         missionTitle.includes('Tom') || 
+         missionTitle.includes('Portraits') || 
+         missionTitle.includes('Appearance')
+       );
+       
+       // Week 2: Family theme
+       const isWeek2Family = missionTitle && (
+         missionTitle.includes('Family') || 
+         missionTitle.includes('Mother') || 
+         missionTitle.includes('Father')
+       );
+       
+       // Route to correct step sequence
+       if (isWeek3Mirror) return steps['mirror_1/2/3'];
+       if (isWeek2Family) return steps['family_1/2/3'];
+       return steps[1/2/3]; // Default: Week 1 school
+     }
+     ```
+   
+   - **Required Keywords by Week**:
+     - **Week 1** (School): No keywords needed (default fallback)
+     - **Week 2** (Family): "Family", "Mother", "Father", "Team", "Love"
+     - **Week 3** (Appearance): "Mirror", "Tom", "Portraits", "Appearance", "Looking"
+     - **Future Weeks**: Add new keyword detection when creating new themes
+   
+   - **Mission Title Examples**:
+     - Week 3 Mission 1: `title: "Looking in the Mirror"` → triggers `mirror_1` steps
+     - Week 3 Mission 2: `title: "My Friend Tom"` → triggers `mirror_2` steps
+     - Week 3 Mission 3: `title: "My Family Portraits"` → triggers `mirror_3` steps
+   
+   - **Validation Command**:
+     ```bash
+     # Check mission titles exist
+     grep '"title":' src/data/weeks/week_XX_real.js
+     # Should output 3-5 lines (one per mission)
+     
+     # Verify Week 3 titles contain detection keywords
+     grep '"title":' src/data/weeks/week_03_real.js | grep -iE 'Mirror|Tom|Portraits'
+     # Should return all 3 mission titles
+     ```
+   
+   - **Without Title Field**:
+     - TurnManager defaults to Week 1 steps ("school", "backpack", "teacher")
+     - AI asks wrong context questions (e.g., "Do you like school?" in Week 3)
+     - Student confused: "Why is AI asking about school in Mirror Game?"
+     - **ALWAYS add `title` field to every mission!**
+
+4. **Alignment**: All data must align with `syllabus_database.js` for the target week
+5. **File Count**: This is the 15th .js file (separate from the 14 station files)
+5. **FreeTalk Knowledge** (NEW): MANDATORY section for FreeTalk mode
+   - **Purpose**: Provides AI context for asking relevant, theme-based questions
+   - **Without this**: AI defaults to generic questions ("What is your school?")
+   - **With this**: AI asks contextual questions ("What do you see in the mirror?")
+   - **Structure**:
+     - `theme`: Clear description of week's topic focus
+     - `knowledge_base`: Minimum 10 facts about the topic
+     - `example_opening_questions`: Minimum 8 sample questions AI can ask
+   - **Example** (Week 3 - Appearance):
+     ```javascript
+     freetalk_knowledge: {
+       week_title: "The Mirror Game",
+       theme: "Physical Appearance and Descriptions",
+       knowledge_base: [
+         "People can be tall or short",
+         "Hair can be long, short, curly, or straight",
+         "Eyes can be different colors like brown, blue, green",
+         // ... 10 total
+       ],
+       example_opening_questions: [
+         "What do you see in the mirror?",
+         "What do you look like?",
+         "What color are your eyes?",
+         // ... 8 total
+       ]
+     }
+     ```
+
+### Validation
+
+```bash
+# Verify file exists
+ls src/data/weeks/week_XX/week_XX_real.js
+
+# Verify 7 target vocab
+grep -c '"word":' src/data/weeks/week_XX/week_XX_real.js  # Should output: 7
+
+# Verify export format
+grep "export const week" src/data/weeks/week_XX/week_XX_real.js
+```
+
+---
+
+## XII. GAME HUB INTEGRATION (logic.js Enhancement)
+
+### Purpose
+The Game Hub is driven by `logic.js`. This station MUST feel like interactive puzzles, NOT a dry math test. The key is **story-based context** for every puzzle.
+
+### Enhanced Schema for logic.js
+
+```javascript
+export default {
+  puzzles: [
+    {
+      id: NUMBER,
+      type: "math" | "logic" | "pattern" | "spatial",
+      title_en: "string",           // Engaging title (e.g., "The Cookie Jar")
+      title_vi: "string",
+      
+      // CRITICAL: Full story context required
+      question_en: "string",        // Must be story-based, NOT bare equation
+      question_vi: "string",
+      
+      // CRITICAL: Audio URL for question narration (MANDATORY)
+      audio_url: "string",          // e.g., "/audio/week2/logic_1.mp3"
+      
+      // CRITICAL: Answer must include units
+      answer: ["string"],           // e.g., "5 cookies", NOT just "5"
+      
+      hint_en: "string",
+      hint_vi: "string"
+    }
+  ]  // EXACTLY 5 puzzles
+};
+```
+
+### Mandatory Requirements
+
+1. **Exactly 5 Puzzles**: No more, no less
+2. **Full Story Context**: Every puzzle MUST have a complete scenario, not just a math problem
+3. **Units in Answers**: All answers must include descriptive units
+4. **Variety**: Mix of math, logic, and pattern puzzles
+
+### Golden Standard Examples
+
+**✅ GOOD (Story Context)**:
+```javascript
+{
+  id: 1,
+  type: "math",
+  title_en: "Pencils for Friends",
+  title_vi: "Bút chì cho bạn",
+  question_en: "You have 5 pencils. You give 2 pencils to your friend Tom. How many pencils do you have left?",
+  question_vi: "Bạn có 5 cây bút chì. Bạn cho Tom 2 cây. Bạn còn lại bao nhiêu cây bút chì?",
+  audio_url: "/audio/week2/logic_1.mp3",
+  answer: ["3 pencils", "three pencils", "3 cây bút chì"],
+  hint_en: "Start with 5, then take away 2.",
+  hint_vi: "Bắt đầu với 5, rồi bớt đi 2."
+}
+```
+
+**❌ BAD (No Context)**:
+```javascript
+{
+  id: 1,
+  type: "math",
+  title_en: "Subtraction",
+  question_en: "What is 5 - 2?",  // ❌ No story context
+  answer: ["3"],                   // ❌ No unit
+  // ❌ Missing audio_url
+  hint_en: "Subtract the numbers."
+}
+```
+
+### Puzzle Type Guidelines
+
+| Type | Description | Example |
+|------|-------------|---------|
+| math | Basic arithmetic with objects | "You have 3 apples. Mom gives you 2 more..." |
+| logic | Deductive reasoning | "Tom is taller than Lisa. Lisa is taller than..." |
+| pattern | Sequence completion | "Star, moon, star, moon, star... What's next?" |
+| spatial | Visual/spatial reasoning | "The red block is above the blue block..." |
+
+### Why This Matters
+
+- **Pedagogical Goal**: Teach problem-solving in real-world contexts
+- **Engagement**: Story-based questions are more engaging for children
+- **Comprehension**: Context helps students understand what the problem is asking
+- **Core Experience**: This is what makes Game Hub feel like a game, not a test
+
+### Validation Checklist
+
+```bash
+# Verify 5 puzzles
+grVerify all puzzles have audio_url
+grep -c 'audio_url:' src/data/weeks/week_XX/logic.js  # Should output: 5
+
+# Manual checks:
+# - Each question_en contains a story (> 15 words)
+# - Each answer includes a unit (not just a number)
+# - Each puzzle has audio_url with correct path
+# - Each question_en contains a story (> 15 words)
+# - Each answer includes a unit (not just a number)
+# - Mix of puzzle types (not all "math")
+```
+
+---
+
+## XIII. AI TUTOR SYSTEM ARCHITECTURE & REQUIREMENTS
+
+### A. Rate Limiting & Fallback Chain
+
+**Critical Configuration** (as of Jan 14, 2026):
+
+#### 1. Groq API Rate Limiter
+
+```javascript
+class GroqRateLimiter {
+  constructor() {
+    this.requestsInWindow = 0;
+    this.windowStartTime = Date.now();
+    this.windowDuration = 60000;      // 1 minute rolling window
+    this.maxRequests = 14;             // Conservative (Groq free tier: 15/min)
+    this.backoffMs = 0;                // Exponential backoff tracking
+  }
+  
+  async waitForSlot() {
+    // Apply exponential backoff if set (after 429 errors)
+    if (this.backoffMs > 0) {
+      await sleep(this.backoffMs);
+      this.backoffMs = Math.min(this.backoffMs * 2, 10000); // Max 10s
+    }
+    // ... quota checking logic
+  }
+  
+  setBackoff(ms) {
+    this.backoffMs = ms;
+  }
+  
+  resetBackoff() {
+    this.backoffMs = 0;
+  }
+}
+```
+
+**Key Parameters**:
+- **maxRequests**: 14 per minute (safety buffer for 15/min limit)
+- **Initial Backoff**: 2000ms (2 seconds) after first 429 error
+- **Exponential Growth**: Doubles each 429 (2s → 4s → 8s → 10s max)
+- **Window Reset**: Every 60 seconds
+
+#### 2. Three-Layer Fallback Chain
+
+```
+Layer 1: Groq (llama-3.3-70b-versatile)
+├─ Speed: Ultra-fast (<500ms)
+├─ Quota: 14 requests/minute
+└─ On Error (400/429/500) → Layer 2
+
+Layer 2: Gemini 2.0 Flash
+├─ Speed: Fast (~1-2s)
+├─ Quota: Higher (Google Cloud)
+└─ On Error → Layer 3
+
+Layer 3: Deterministic Fallback
+└─ Safe generic responses when both APIs fail
+```
+
+**Error Handling**:
+- **429 (Rate Limit)**: Set 2s backoff, switch to Gemini
+- **400 (Bad Request)**: Immediate switch to Gemini
+- **500 (Server Error)**: Immediate switch to Gemini
+- **Network Timeout**: After 10s, switch to fallback
+
+#### 3. Week Detection Architecture
+
+**Problem**: Components outside React Router tree can't use `useParams()`
+
+**Solution**: Use `useLocation()` + pathname parsing
+
+```javascript
+import { useLocation } from 'react-router-dom';
+
+const StoryMissionTab = () => {
+  const location = useLocation();
+  
+  // Extract week number from pathname: /week/2/ai-tutor → 2
+  const weekNumber = parseInt(
+    location.pathname.match(/\/week\/(\d+)/)?.[1] || '1'
+  );
+  
+  const currentWeek = `week-${weekNumber}`;
+  // ...
+}
+```
+
+**Why This Works**:
+- `useLocation()` works anywhere in React tree
+- Pathname always contains `/week/NUMBER/`
+- Fallback to Week 1 if parsing fails
+- Consistent across all AI Tutor tabs
+
+---
+
+### B. Story Mission Requirements
+
+#### 1. Turn Count Standards
+
+**Minimum Requirements**:
+- **Phase 1 (Weeks 1-54)**: 15 turns per mission
+- **Phase 2 (Weeks 55+)**: May increase to 18-20 turns
+
+**Why 15 Turns**:
+- Syllabus requirement: 10+ minutes per mission
+- Average 40 seconds per turn = 10 minutes total
+- Allows comprehensive topic exploration
+- Maintains engagement without fatigue
+
+#### 2. Question Design Standards
+
+**Open-Ended Questions ONLY**:
+
+```javascript
+// ✅ CORRECT (Open-ended, encourages speaking)
+{ key: 'family_members', question: 'Who lives in your home?', ... }
+{ key: 'mother_do', question: 'What does your mother do?', ... }
+{ key: 'family_fun', question: 'What does your family like?', ... }
+
+// ❌ WRONG (Yes/No, minimal speaking)
+{ key: 'have_mother', question: 'Do you have a mother?', ... }
+{ key: 'family_happy', question: 'Is your family happy?', ... }
+```
+
+**Question Complexity** (A0++ Level):
+- **Length**: 7-16 words per question
+- **Grammar**: Present simple only
+- **Vocabulary**: Tier 1 words from week theme
+- **Structure**: Wh-questions preferred over Yes/No
+
+**Example Mission Structure (Week 2: Family)**:
+
+```javascript
+'family_1': [
+  { key: 'family_members', question: 'Who lives in your home?', hints: [...] },
+  { key: 'tell_mother', question: 'Tell me about your mother', hints: [...] },
+  { key: 'mother_do', question: 'What does your mother do?', hints: [...] },
+  { key: 'tell_father', question: 'Tell me about your father', hints: [...] },
+  { key: 'father_do', question: 'What does your father do?', hints: [...] },
+  { key: 'siblings', question: 'Do you have brothers or sisters?', hints: [...] },
+  { key: 'sibling_play', question: 'What do you play together?', hints: [...] },
+  { key: 'family_fun', question: 'What does your family like?', hints: [...] },
+  { key: 'family_size', question: 'How many people in your family?', hints: [...] },
+  { key: 'all_home', question: 'Who is at home today?', hints: [...] },
+  { key: 'family_talk', question: 'What do you talk about?', hints: [...] },
+  { key: 'happy_family', question: 'Is your family happy?', hints: [...] },
+  { key: 'love_who', question: 'Who do you love most?', hints: [...] },
+  { key: 'family_best', question: 'What is best about your family?', hints: [...] },
+  { key: 'goodbye', question: 'Thank you for sharing!', hints: [...] }
+]  // EXACTLY 15 steps
+```
+
+#### 3. Hints Structure
+
+**Requirements**:
+- **Count**: 5-6 words per hint array
+- **Difficulty**: Progressive (easiest → hardest)
+- **Vocabulary**: Only words from current week's vocab
+- **Grammar**: Match expected answer structure
+
+```javascript
+// ✅ GOOD HINTS
+hints: ['My', 'mother', 'is', 'nice', 'kind']       // Adjectives for description
+hints: ['She', 'cooks', 'works', 'helps', 'cleans'] // Action verbs
+hints: ['We', 'play', 'games', 'run', 'talk']       // Activities
+
+// ❌ BAD HINTS
+hints: ['um', 'well', 'I think']                    // Filler words, not helpful
+hints: ['sophisticated', 'intelligent']              // Too advanced for A0
+```
+
+---
+
+### C. ACK + RECAST Mandatory Template
+
+**Critical Requirement**: ALL AI Tutor responses MUST follow this 4-step formula.
+
+#### The Formula
+
+```
+1. ACK (Acknowledge): Echo specific content from student's answer
+2. RECAST (if needed): Model correct grammar naturally
+3. ENCOURAGE: Brief, warm praise
+4. ASK: One new open-ended question
+```
+
+#### Correct Examples
+
+**Example 1**:
+```
+Student: "I have mother"
+
+✅ CORRECT Response:
+"You have a mother! That's wonderful! What does your mother do?"
+
+Breakdown:
+- ACK: "You have a mother" (echoes content + fixes grammar)
+- RECAST: "a mother" (models article)
+- ENCOURAGE: "That's wonderful!"
+- ASK: "What does your mother do?"
+```
+
+**Example 2**:
+```
+Student: "My family big"
+
+✅ CORRECT Response:
+"Your family is big! That's great! How many people are in your family?"
+
+Breakdown:
+- ACK: "Your family is big" (echoes + adds "is")
+- RECAST: Implicit (models correct "be" verb)
+- ENCOURAGE: "That's great!"
+- ASK: "How many people are in your family?"
+```
+
+**Example 3**:
+```
+Student: "I play with sister"
+
+✅ CORRECT Response:
+"You play with your sister! That sounds fun! What games do you play together?"
+
+Breakdown:
+- ACK: "You play with your sister" (echoes + adds "your")
+- RECAST: Implicit (models possessive)
+- ENCOURAGE: "That sounds fun!"
+- ASK: "What games do you play together?"
+```
+
+#### Forbidden Patterns
+
+```
+❌ WRONG: "I heard you! What does your mother do?"
+   Problem: Generic "I heard you" - no specific acknowledgment
+
+❌ WRONG: "Great! I heard you! How many people?"
+   Problem: No content echo, incomplete question
+
+❌ WRONG: "That's good!"
+   Problem: No acknowledgment of what student said
+
+❌ WRONG: "Very nice! Now tell me about..."
+   Problem: No specific content reference
+```
+
+#### Forbidden Phrases List
+
+These phrases are **NEVER ALLOWED** in AI Tutor responses:
+
+- "I heard you" (too generic)
+- "I understand" (no content acknowledgment)
+- "Great job!" (without echoing what was said)
+- "Very good!" (without specific reference)
+- "Excellent!" (standalone)
+- "That's nice!" (vague)
+
+#### Enforcement Mechanism
+
+Location: `/src/services/ai_tutor/responseGuard.js`
+
+```javascript
+export function validateAckRecast(response) {
+  const forbidden = [
+    /\bI heard you\b/i,
+    /\bGreat! I heard\b/i,
+    /\bThat's good!\b(?!\s+\w)/  // Standalone only
+  ];
+  
+  for (const pattern of forbidden) {
+    if (pattern.test(response)) {
+      return { valid: false, reason: 'Generic acknowledgment detected' };
+    }
+  }
+  
+  // Check for specific content echo
+  // (implementation varies based on context)
+  
+  return { valid: true };
+}
+```
+
+---
+
+### D. FreeTalk System
+
+#### 1. Week-Specific Knowledge
+
+Each week's data file MUST include `freetalk_knowledge`:
+
+```javascript
+// Example: week_02_real.js
+export const week_02_real = {
+  week_id: 'week-2',
+  week_number: 2,
+  // ... missions ...
+  
+  freetalk_knowledge: {
+    week_title: "My Family Squad",
+    week_number: 2,
+    theme: "Family and Home",
+    
+    knowledge_base: [
+      "Family members: mother, father, brother, sister, family",
+      "Families live together in homes",
+      "Families help each other like a team",
+      "People in families love each other",
+      "Brothers and sisters play together",
+      "Mothers and fathers take care of children",
+      "Families eat together and talk",
+      "Every family is different and special"
+    ],
+    
+    example_opening_questions: [
+      "Do you have a family?",
+      "Who lives in your home?",
+      "Do you have a mother?",
+      "Do you have a father?",
+      "Do you have brothers or sisters?",
+      "Is your family big?",
+      "Is your family happy?"
+    ]
+  }
+};
+```
+
+#### 2. Opening Question Selection
+
+**Algorithm**:
+1. AI loads `freetalk_knowledge.example_opening_questions`
+2. Randomly selects ONE question to start conversation
+3. Must match week theme (not previous week's topic)
+4. Must be A0 level (simple present, max 8 words)
+
+**Why This Matters**:
+- Ensures conversation starts on-theme
+- Prevents Week 2 from asking Week 1 questions
+- Gives AI clear direction for topic
+- Maintains difficulty level consistency
+
+#### 3. Conversation Flow
+
+```
+Turn 1: AI asks opening question from example_opening_questions
+Turn 2: Student answers
+Turn 3: AI applies ACK + RECAST, asks follow-up related to theme
+Turn 4: Student answers
+Turn 5: AI continues on theme using knowledge_base
+... continues until student clicks END
+```
+
+**Knowledge Base Usage**:
+- AI can reference ANY item from `knowledge_base` array
+- Must stay within theme boundaries
+- Can expand on topics naturally
+- Should cycle through different aspects of theme
+
+---
+
+### E. Response Format Standards
+
+#### 1. JSON Structure
+
+ALL AI Tutor responses MUST return this exact structure:
+
+```javascript
+{
+  teacher_ack: "string",              // ACK part only
+  teacher_recast: "string",           // RECAST part (or same as ACK if perfect)
+  teacher_encouragement: "string",    // ENCOURAGE part
+  teacher_question: "string",         // ASK part
+  
+  // Hints for next expected answer
+  hints: ["word1", "word2", "word3", "word4", "word5"],
+  
+  // Mission tracking (Story Mission only)
+  mission_status: "in_progress" | "completed",
+  current_turn: NUMBER,
+  total_turns: NUMBER
+}
+```
+
+#### 2. Hint Normalization Rules
+
+**Before Sending to Frontend**:
+```javascript
+function normalizeHints(hints) {
+  return hints
+    .map(h => h.toLowerCase().trim())
+    .filter(h => h.length > 0)
+    .filter(h => !['um', 'uh', 'well', 'like'].includes(h))
+    .slice(0, 6);  // Max 6 hints
+}
+```
+
+**Forbidden Hints**:
+- Filler words: "um", "uh", "well", "like"
+- Punctuation-only: ".", ",", "!"
+- Non-English: Vietnamese words (unless explicitly teaching them)
+- Too advanced: Words above CEFR A0 level
+
+#### 3. Mission Status Values
+
+| Value | Meaning | When to Use |
+|-------|---------|-------------|
+| `in_progress` | Mission ongoing | current_turn < total_turns |
+| `completed` | Mission finished | current_turn === total_turns |
+| `error` | System error | API failure, invalid response |
+
+---
+
+### F. AI Tutor Tab Week Detection (CRITICAL - Jan 16, 2026)
+
+**Problem**: AI Tutor tabs were hardcoded to Week 1, breaking when students navigate to Week 2+.
+
+**Root Cause**: Using `useUserStore().currentWeek` which doesn't update with URL changes.
+
+**Solution**: Parse week number from URL pathname using `useLocation()` hook.
+
+**Implementation Pattern** (ALL 5 tabs):
+```javascript
+import { useLocation } from 'react-router-dom';
+
+const MyTab = () => {
+  const location = useLocation();
+  
+  // Parse week from pathname: /week/2/ai-tutor → 2
+  const weekNumber = parseInt(location.pathname.match(/\/week\/(\d+)/)?.[1] || '1');
+  const currentWeek = `week-${weekNumber}`;
+  
+  console.log('📍 MyTab - Week detected:', weekNumber, 'from pathname:', location.pathname);
+  
+  // Load week data
+  const data = await getCurrentWeekData(currentWeek);
+  
+  // Access vocabulary with priority:
+  const vocab = data?.target_vocab || data?.global_vocab || data?.vocabulary || [];
+};
+```
+
+**Vocabulary Field Priority** (IMPORTANT):
+1. **`target_vocab`** - From `week_XX_real.js` (AI Tutor syllabus files)
+   - Contains 7 core words from official curriculum
+   - Used by: StoryMissionTab, FreeTalkTab, PronunciationTab, QuizTab
+   
+2. **`global_vocab`** - From station data files (e.g., `week_01/vocab.js`)
+   - Contains 10 words for Read & Explore station
+   - Fallback when `target_vocab` not available
+   
+3. **`vocabulary`** - Legacy format
+   - Emergency fallback for old data structures
+
+**Files Updated** (Jan 16, 2026):
+- ✅ `src/modules/ai_tutor/tabs/StoryMissionTab.jsx` (line 16, 45-47)
+- ✅ `src/modules/ai_tutor/tabs/FreeTalkTab.jsx` (line 15, 23-25)
+- ✅ `src/modules/ai_tutor/tabs/PronunciationTab.jsx` (line 8, 17-20)
+- ✅ `src/modules/ai_tutor/tabs/QuizTab.jsx` (line 7, 14-17)
+- ✅ `src/modules/ai_tutor/tabs/DebateTab.jsx` (line 10, 17-20)
+
+**Validation**:
+```bash
+# Check console logs when navigating to Week 2:
+# Should see:
+# 📍 StoryMissionTab - Week detected: 2
+# 📍 FreeTalkTab - Week detected: 2
+# 📍 PronunciationTab - Week detected: 2
+# 🧠 QuizTab - Week detected: 2
+# 💬 DebateTab - Week detected: 2
+```
+
+**Impact**: 
+- ✅ Week 2+ AI Tutor tabs now show correct content
+- ✅ No need to manually update week in store
+- ✅ Automatic week detection from URL routing
+- ✅ Works for all future weeks (3-156)
+
+---
+
+### G. Testing & Validation Checklist
+
+**Before Deploying New Week**:
+
+#### Week Detection Test
+```bash
+# Navigate to /week/2/ai-tutor
+# Open Console → Check for:
+# ✅ "Week detected: 2" logs from all 5 tabs
+# ✅ No "week-1" references in AI responses
+# ✅ Vocabulary matches Week 2 theme (not Week 1)
+```
+
+#### Rate Limiting Test
+```bash
+# Test Groq quota handling
+# Send 15 requests rapidly, verify:
+# - First 14 succeed
+# - 15th triggers backoff
+# - Falls back to Gemini successfully
+```
+
+#### Week Detection Test
+```bash
+# Navigate to /week/2/ai-tutor
+# Console should show: "Current week detected: 2"
+# AI should reference Week 2 theme (not Week 1)
+```
+
+#### ACK + RECAST Test
+```bash
+# Test with intentional grammar errors:
+# Input: "I have mother"
+# Expected: "You have a mother! [...]"
+# NOT: "I heard you! [...]"
+```
+
+#### Turn Count Test
+```bash
+# Check turnManager.js:
+grep -A 50 "'family_1':" src/services/ai_tutor/turnManager.js | grep -c "key:"
+# Should output: 15
+```
+
+#### Hints Validation Test
+```bash
+# Check all hints arrays have 5-6 words:
+grep "hints:" src/services/ai_tutor/turnManager.js | while read line; do
+  echo "$line" | grep -o "'" | wc -l
+done
+# Each line should output: 10-12 (5-6 words × 2 quotes)
+```
+
+---
+
+### G. Common Pitfalls & Solutions
+
+#### Pitfall 1: Week Detection Fails
+**Symptom**: AI uses wrong week's theme in FreeTalk
+**Cause**: Using `useParams()` outside Route tree
+**Solution**: Use `useLocation()` + pathname parsing (see Section XIII.A.3)
+
+**CRITICAL FIX (Jan 16, 2026)**: Week detection issue discovered during mass testing. AI Tutor was using Week 1 content for all weeks due to incorrect pathname parsing.
+
+**Root Cause**:
+```javascript
+// ❌ WRONG (Before Fix):
+const weekNumber = useParams().weekId;  // Returns undefined outside Route
+
+// ✅ CORRECT (After Fix):
+const location = useLocation();
+const weekNumber = parseInt(
+  location.pathname.match(/\/week\/(\d+)/)?.[1] || '1'
+);
+```
+
+**Files Updated**:
+- `src/components/AITutor/StoryMissionTab.jsx`
+- `src/components/AITutor/FreeTalkTab.jsx`
+- `src/components/AITutor/PronunciationTab.jsx`
+- `src/components/AITutor/QuizTab.jsx`
+
+**Validation**:
+1. Navigate to `/week/2/ai-tutor`
+2. Open Console → Should log: `📍 Week detected: 2`
+3. Check FreeTalk opening: Should ask about Week 2 theme (family), NOT Week 1 (school)
+4. Check Story Mission: Should load `week_02_real.js` missions
+
+**Impact**: This bug caused 100% of AI Tutor interactions to reference wrong week content, breaking contextual learning.
+
+---
+
+#### Pitfall 2: Generic Acknowledgments
+**Symptom**: "I heard you!" appears in responses
+**Cause**: AI not following ACK + RECAST template
+**Solution**: Enforce via responseGuard.js, update promptLibrary.js
+
+#### Pitfall 3: Too Few Mission Turns
+**Symptom**: Mission ends after 8-10 questions
+**Cause**: Not following 15-turn minimum
+**Solution**: Expand turnManager.js sequences to exactly 15 steps
+
+**DESIGN CLARIFICATION (Week 2 Missions - Jan 16, 2026)**: Week 2 has 3 missions with SEPARATE parent focus:
+
+```javascript
+'family_1': [ // Mission 1: Meet the Family Squad (covers ALL family members)
+  { key: 'family_members', question: 'Who lives in your home?', hints: ['My', 'mother', 'father', 'brother', 'sister'] },
+  { key: 'tell_mother', question: 'Tell me about your mother', hints: [...] },
+  { key: 'tell_father', question: 'Tell me about your father', hints: [...] },
+  // ... covers mother, father, siblings (balanced)
+]
+
+'family_2': [ // Mission 2: My Mother's Day (MOTHER FOCUS ONLY - intentional)
+  { key: 'mother_morning', question: 'What does your mother do in the morning?', hints: ['She', 'wakes', 'cooks', ...] },
+  { key: 'mother_work', question: 'Where does your mother work?', hints: ['She', 'works', ...] },
+  // ... deep dive into mother's role (15 turns)
+]
+
+'family_3': [ // Mission 3: My Father's Strength (FATHER FOCUS ONLY - intentional)
+  { key: 'father_morning', question: 'What does your father do in the morning?', hints: ['He', 'wakes', 'works', ...] },
+  { key: 'father_work', question: 'Where does your father work?', hints: ['He', 'works', ...] },
+  // ... deep dive into father's role (15 turns)
+]
+```
+
+**Why Separate Missions (Not Combined)?**:
+- **Pedagogical**: Students learn to describe EACH parent in detail (not just generic "parent")
+- **Depth over breadth**: 15 turns per parent allows thorough vocabulary practice
+- **Natural conversation**: Easier to maintain pronoun consistency (She/He)
+- **Syllabus alignment**: Week 2 grammar = possessive adjectives (my mother/my father)
+
+**Gender Inclusivity**: Mission 1 asks about "Who lives in your home?" first → students can mention any family structure. Missions 2 & 3 adapt if student doesn't have mother/father.
+
+**REQUIREMENT FOR NEW WEEKS**: 
+- Family-themed weeks (50, 98, etc.) should follow same pattern: 
+  - Mission 1: Overview (all members)
+  - Mission 2: Deep dive on one parent/member
+  - Mission 3: Deep dive on another parent/member
+
+---
+
+#### Pitfall 4: Groq 429 Errors
+**Symptom**: Frequent rate limiting despite limiter
+**Cause**: maxRequests set too high
+**Solution**: Reduce to 14 req/min (see Section XIII.A.1)
+
+**UPDATE (Jan 16, 2026)**: Together AI integrated as Layer 1 provider due to persistent Groq rate limiting with 100 students.
+
+**New Three-Layer Fallback**:
+```
+Layer 1: Together AI (meta-llama/Llama-3.3-70B-Instruct-Turbo)
+├─ Speed: Fast (~1-1.5s)
+├─ Quota: 60 requests/minute (4x Groq)
+├─ JSON Enforcement: response_format: { type: "json_object" }
+└─ On Error (429/500) → Layer 2
+
+Layer 2: Groq (llama-3.3-70b-versatile)
+├─ Speed: Ultra-fast (<500ms)
+├─ Quota: 14 requests/minute
+└─ On Error → Layer 3
+
+Layer 3: Gemini 2.0 Flash
+└─ Fallback when both APIs fail
+```
+
+**Why Together AI**:
+- 60 req/min vs Groq 15 req/min (4x capacity)
+- Supports 100+ concurrent students
+- OpenAI-compatible API (easy integration)
+- Enforces JSON output format natively
+
+**Files Updated**:
+- `src/services/ai_tutor/aiRouter.js` - Added `callTogether()` function
+- Line 742: `response_format: { type: "json_object" }` forces JSON output
+- Lines 570-698: Three-layer routing logic
+
+**Response Format Enforcement**:
+```javascript
+// CRITICAL: Together AI requires explicit JSON format
+const response = await fetch('https://api.together.xyz/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${TOGETHER_API_KEY}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
+    messages: [...],
+    temperature: 0.7,
+    max_tokens: 1024,
+    response_format: { type: "json_object" }  // ← CRITICAL
+  })
+});
+```
+
+**Without `response_format`**: AI returns plain text → responseParser fails → Response Guard activates → Shows fallback "Great!" instead of proper ACK.
+
+**Testing**:
+```bash
+# Test Together AI integration:
+node tools/test_ai_providers.js
+
+# Should show:
+# ✅ Together AI: 200 OK, ~1.2s
+# ✅ JSON format: {teacher_ack, teacher_recast, teacher_question, hints}
+```
+
+---
+
+#### Pitfall 5: Yes/No Questions
+**Symptom**: Students give one-word answers
+**Cause**: Closed questions in turnManager.js
+**Solution**: Rewrite all questions as open-ended Wh-questions
+
+---
+
+### H. AI Response Format Failures - Troubleshooting Guide (NEW - Jan 16, 2026)
+
+#### Common Response Quality Issues
+
+During Week 2 testing with Together AI (100 students), these response format failures were detected:
+
+#### Issue 1: Missing ACK (Empty `teacher_ack`)
+
+**Console Warning**:
+```
+⚠️ responseParser: Response too short (0 chars)
+⚠️ AI missing ACK, using fallback: Great!
+```
+
+**Symptom**: Response Guard injects generic "Great!" instead of echoing student's answer.
+
+**Root Cause**:
+- AI returned: `{ teacher_ack: "", teacher_recast: "...", ... }`
+- Empty ACK triggers fallback mechanism
+
+**Why This Happens**:
+1. System prompt doesn't emphasize ACK requirement strongly enough
+2. AI model defaults to skipping acknowledgment
+3. No explicit instruction to "ECHO student's exact words"
+
+**Fix for V27.1**:
+```
+SYSTEM PROMPT ADDITION (promptLibrary.js):
+
+"CRITICAL: teacher_ack MUST echo specific content from student's answer.
+NEVER use generic phrases like 'Great!' or 'I heard you!'
+ALWAYS include at least 3-4 words from student's exact answer.
+
+Example:
+Student: 'My mother is kind'
+teacher_ack: 'Your mother is kind' (echoes 'mother is kind')
+NOT: 'Great!' (too generic)"
+```
+
+**Validation**:
+- Console should NOT show: `⚠️ AI missing ACK`
+- Response Guard fallback rate should be <5%
+
+---
+
+#### Issue 2: Missing RECAST (Empty `teacher_recast`)
+
+**Console Warning**:
+```
+⚠️ AI missing RECAST, using empty recast (ACK only)
+```
+
+**Symptom**: AI returns empty `teacher_recast` field even when grammar correction needed.
+
+**Root Cause**:
+- Student says: "I have mother" (missing article "a")
+- AI returns: `{ teacher_ack: "You have mother", teacher_recast: "", ... }`
+- Should return: `{ teacher_recast: "You have a mother" }`
+
+**Why This Happens**:
+1. AI doesn't recognize grammar errors consistently
+2. RECAST field not marked as MANDATORY in prompt
+3. No examples showing when/how to recast
+
+**Fix for V27.1**:
+```
+SYSTEM PROMPT ADDITION:
+
+"teacher_recast RULES:
+1. If student's grammar is CORRECT → teacher_recast = teacher_ack (same text)
+2. If student's grammar is WRONG → teacher_recast = corrected version
+3. NEVER leave teacher_recast empty
+
+Common A0 Errors to Recast:
+- Missing articles: 'I have mother' → 'I have a mother'
+- Missing 'be' verb: 'My family big' → 'My family is big'
+- Wrong pronoun: 'She is father' → 'He is father'
+- Missing possessive: 'I play with sister' → 'I play with my sister'
+
+Example:
+Student: 'I have mother'
+teacher_ack: 'You have mother'
+teacher_recast: 'You have a mother' (adds missing 'a')
+teacher_encouragement: 'That's wonderful!'
+teacher_question: 'What does your mother do?'"
+```
+
+**Validation**:
+- Console should NOT show: `⚠️ AI missing RECAST`
+- RECAST should either match ACK (perfect grammar) or show correction
+
+---
+
+#### Issue 3: Missing/Irrelevant Hints
+
+**Console Warning**:
+```
+⚠️ responseParser: Question asked but no hints provided
+✅ Using canonical hints from step definition (Legacy mode)
+```
+
+**Symptom**: AI returns empty hints array or generic words like `["I", "am", "is"]`.
+
+**Root Cause**:
+- AI doesn't understand hint purpose (vocabulary scaffolding)
+- Returns grammar words instead of content words
+- Returns hints unrelated to question
+
+**Example (WRONG)**:
+```javascript
+teacher_question: "What does your mother do?"
+hints: ["I", "am", "is", "the", "a"]  // ❌ Grammar words, not helpful
+```
+
+**Example (CORRECT)**:
+```javascript
+teacher_question: "What does your mother do?"
+hints: ["She", "cooks", "works", "helps", "teaches", "cleans"]  // ✅ Action verbs
+```
+
+**Why This Matters**:
+- Hints help students form complete answers
+- Should contain VOCABULARY words from week theme
+- Should match expected answer type (nouns, verbs, adjectives)
+
+**Fix for V27.1**:
+```
+SYSTEM PROMPT ADDITION:
+
+"hints REQUIREMENTS:
+1. MUST contain 5-6 VOCABULARY words (nouns, verbs, adjectives)
+2. MUST relate to the question topic
+3. NO grammar words ('I', 'am', 'is', 'the', 'a')
+4. NO filler words ('um', 'well', 'like')
+5. Use words from current week's vocabulary ONLY
+
+Example:
+Question: 'What does your mother do?'
+hints: ['She', 'cooks', 'works', 'helps', 'teaches', 'cleans']  // ✅ Action verbs
+
+Question: 'Who lives in your home?'
+hints: ['My', 'mother', 'father', 'brother', 'sister', 'family']  // ✅ Family nouns
+
+Question: 'What is your mother like?'
+hints: ['She', 'is', 'kind', 'nice', 'happy', 'beautiful']  // ✅ Adjectives"
+```
+
+**Fallback Mechanism**:
+- If AI hints are bad, Response Guard uses canonical hints from turnManager.js
+- Console shows: `✅ Using canonical hints from step definition (Legacy mode)`
+- This is a SAFETY NET, not the desired behavior
+
+**Target**:
+- AI should generate good hints 95%+ of the time
+- Legacy mode fallback should be <5%
+
+---
+
+#### Issue 4: Response Too Short (Missing Fields)
+
+**Console Warning**:
+```
+⚠️ responseParser: Response too short (0 chars)
+🔒 Forced canonical (Legacy): stepKey=mother_work
+```
+
+**Symptom**: AI returns incomplete JSON, missing required fields.
+
+**Root Cause**:
+- Together AI without `response_format: { type: "json_object" }` returns plain text
+- JSON parsing fails
+- Response Guard forces canonical question from turnManager.js
+
+**Example (WRONG)**:
+```javascript
+// AI returns plain text:
+"Your mother is kind! That's wonderful! What does she do?"
+
+// Not valid JSON ❌
+```
+
+**Example (CORRECT)**:
+```javascript
+{
+  "teacher_ack": "Your mother is kind",
+  "teacher_recast": "Your mother is kind",
+  "teacher_encouragement": "That's wonderful!",
+  "teacher_question": "What does your mother do?",
+  "hints": ["She", "cooks", "works", "helps", "teaches"],
+  "mission_status": "in_progress",
+  "current_turn": 3,
+  "total_turns": 15
+}
+```
+
+**Fix**:
+- Already implemented: `response_format: { type: "json_object" }` in aiRouter.js line 742
+- Validates in responseParser.js
+- Falls back to Legacy mode if parsing fails
+
+**Validation**:
+```bash
+# Check console logs during Story Mission:
+# Should NOT see: ⚠️ Response too short
+# Should see: ✅ V27 FORMAT DETECTED
+```
+
+---
+
+### I. V27.1 Prompt Engineering Requirements (NEW - Jan 16, 2026)
+
+#### System Prompt Enhancements
+
+**Location**: `src/services/ai_tutor/utils/promptLibrary.js`
+
+Add these sections to Week 2+ prompts:
+
+```javascript
+export const getMissionPrompt = (mission, studentLevel) => `
+...existing prompt...
+
+CRITICAL V27 JSON FORMAT (MANDATORY):
+{
+  "teacher_ack": "Echo student's specific words (3-4 words minimum)",
+  "teacher_recast": "Corrected grammar OR same as teacher_ack if perfect",
+  "teacher_encouragement": "Brief warm praise (5-8 words)",
+  "teacher_question": "One open-ended question (7-16 words)",
+  "hints": ["word1", "word2", "word3", "word4", "word5", "word6"],
+  "mission_status": "in_progress",
+  "current_turn": ${currentTurn},
+  "total_turns": 15
+}
+
+ACK RULES (NEVER VIOLATE):
+1. MUST echo specific content from student's answer
+2. MUST contain 3-4+ words from student's exact response
+3. NEVER use generic: "Great!", "I heard you!", "Good job!" (standalone)
+4. ALWAYS reference what student said
+
+ACK Examples:
+Student: "My mother is kind"
+✅ teacher_ack: "Your mother is kind" (echoes 'mother is kind')
+❌ teacher_ack: "Great!" (too generic)
+
+Student: "I have two brothers"
+✅ teacher_ack: "You have two brothers" (echoes 'two brothers')
+❌ teacher_ack: "I heard you!" (no specific content)
+
+RECAST RULES:
+1. If grammar is CORRECT → teacher_recast = teacher_ack (identical)
+2. If grammar is WRONG → teacher_recast = corrected version
+3. NEVER leave empty
+
+Common A0 Errors:
+- "I have mother" → "I have a mother" (missing article)
+- "My family big" → "My family is big" (missing 'be')
+- "She is father" → "He is father" (wrong pronoun)
+
+HINTS RULES:
+1. MUST be 5-6 VOCABULARY words (nouns, verbs, adjectives)
+2. MUST relate to question topic
+3. NO grammar words: "I", "am", "is", "the", "a"
+4. NO fillers: "um", "well", "like"
+5. Use ONLY words from Week ${weekNumber} vocabulary
+
+Hints Examples:
+Question: "What does your mother do?"
+✅ hints: ["She", "cooks", "works", "helps", "teaches", "cleans"]
+❌ hints: ["I", "am", "is", "the", "a"]
+
+Question: "Who lives in your home?"
+✅ hints: ["My", "mother", "father", "brother", "sister", "family"]
+❌ hints: ["um", "well", "I", "think"]
+`;
+```
+
+---
+
+### J. Mass Production Checklist Updates (V27.1)
+
+Add these validation steps to Week 3+ generation:
+
+#### Pre-Generation Checks
+- [ ] Read Section XIII.H (Response Format Failures)
+- [ ] Read Section XIII.F (AI Tutor Week Detection)
+- [ ] Verify System Prompt includes V27.1 enhancements
+- [ ] Confirm Together AI is Layer 1 provider
+- [ ] Ensure `response_format: { type: "json_object" }` in aiRouter.js
+- [ ] Verify all AI Tutor tabs use `useLocation()` for week detection
+
+#### Post-Generation Validation
+- [ ] Test Story Mission Turn 1-3 in Console
+- [ ] Check for `⚠️ AI missing ACK` warnings (target: 0%)
+- [ ] Check for `⚠️ AI missing RECAST` warnings (target: 0%)
+- [ ] Check for Legacy hints fallback (target: <5%)
+- [ ] Verify ACK echoes student's specific words
+- [ ] Verify hints are vocabulary words (not grammar)
+
+#### Week 2 Mission 2 Requirement
+- [ ] If family-themed: ALL questions include "mother or father" (not just one parent)
+- [ ] All hints include "She" AND "He" pronouns
+- [ ] Greeting includes "OR FATHER" explicitly
+
+#### Console Log Interpretation
+```
+✅ GOOD:
+"✅ V27 FORMAT DETECTED"
+"📍 Week detected: 2"
+(No warnings)
+
+⚠️ ACCEPTABLE (< 5%):
+"✅ Using canonical hints from step definition (Legacy mode)"
+
+❌ BAD (> 5% = BROKEN):
+"⚠️ AI missing ACK, using fallback: Great!"
+"⚠️ AI missing RECAST, using empty recast"
+"⚠️ responseParser: Question asked but no hints provided"
+"🔒 Forced canonical (Legacy): stepKey=..."
+```
+
+#### Quality Thresholds
+- **Response Guard Fallback Rate**: <5% (AI generates good responses 95%+ time)
+- **Legacy Hints Fallback**: <5% (AI generates relevant hints 95%+ time)
+- **JSON Parse Failures**: 0% (all responses valid JSON)
+- **Week Detection**: 100% (correct week content in FreeTalk/Missions)
+
+---
+
+### K. Version History
+
+**V27.2 (Jan 16, 2026)** - AI Tutor Week Detection & Vocabulary Field Fixes
+- ✅ **CRITICAL FIX**: All 5 AI Tutor tabs now detect week from URL pathname
+  - StoryMissionTab: ✅ Fixed (using `useLocation()`)
+  - FreeTalkTab: ✅ Fixed (using `useLocation()`)
+  - PronunciationTab: ✅ Fixed (using `useLocation()`)
+  - QuizTab: ✅ Fixed (using `useLocation()`)
+  - DebateTab: ✅ Fixed (using `useLocation()`)
+- ✅ **Vocabulary Field Priority**: All tabs now support:
+  - Priority 1: `target_vocab` (from `week_XX_real.js` syllabus files - 7 words)
+  - Priority 2: `global_vocab` (from station data files - 10 words)
+  - Priority 3: `vocabulary` (legacy format)
+- ✅ Week detection pattern: `/week/(\d+)/` → extracts week number from pathname
+- ✅ Console logging added for debugging week detection
+- ✅ Impact: Fixes Week 2+ AI Tutor tabs showing Week 1 content
+
+**V27.1 (Jan 16, 2026)** - Content Quality & Response Format Fixes
+- ✅ Together AI integration (60 req/min vs Groq 15 req/min)
+- ✅ Week 2 Mission 2 fix: "mother or father" inclusion (not just mother)
+- ✅ Response format enforcement: `response_format: { type: "json_object" }`
+- ✅ Added Section XIII.H: AI Response Format Failures troubleshooting guide
+- ✅ Added Section XIII.I: V27.1 Prompt Engineering requirements
+- ✅ Added Section XIII.J: Mass Production validation checklist
+- ✅ Documented 4 common response quality issues:
+  - Empty ACK (Response Guard "Great!" fallback)
+  - Empty RECAST (missing grammar corrections)
+  - Irrelevant hints (grammar words instead of vocabulary)
+  - Response too short (JSON parsing failures)
+- ✅ System prompt enhancements with ACK/RECAST/HINTS rules
+- ✅ Console log interpretation guide
+- ✅ Quality thresholds defined (<5% fallback rate = good)
+
+**V27.2 (Jan 16, 2026)** - AI Tutor Week Detection & Vocabulary Field Fixes
+- ✅ **CRITICAL FIX**: All 5 AI Tutor tabs now detect week from URL pathname
+  - StoryMissionTab: ✅ Fixed (using `useLocation()`)
+  - FreeTalkTab: ✅ Fixed (using `useLocation()`)
+  - PronunciationTab: ✅ Fixed (using `useLocation()`)
+  - QuizTab: ✅ Fixed (using `useLocation()`)
+  - DebateTab: ✅ Fixed (using `useLocation()`)
+- ✅ **Vocabulary Field Priority**: All tabs now support:
+  - Priority 1: `target_vocab` (from `week_XX_real.js` syllabus files - 7 words)
+  - Priority 2: `global_vocab` (from station data files - 10 words)
+  - Priority 3: `vocabulary` (legacy format)
+- ✅ Week detection pattern: `/week/(\d+)/` → extracts week number from pathname
+- ✅ Console logging added for debugging week detection
+- ✅ Impact: Fixes Week 2+ AI Tutor tabs showing Week 1 content
+
+**V27.1 (Jan 16, 2026)** - Content Quality & Response Format Fixes
+- ✅ Together AI integration (60 req/min vs Groq 15 req/min)
+- ✅ Week 2 Mission 2 fix: "mother or father" inclusion (not just mother)
+- ✅ Response format enforcement: `response_format: { type: "json_object" }`
+- ✅ Added Section XIII.H: AI Response Format Failures troubleshooting guide
+- ✅ Added Section XIII.I: V27.1 Prompt Engineering requirements
+- ✅ Added Section XIII.J: Mass Production validation checklist
+- ✅ Documented 4 common response quality issues:
+  - Empty ACK (Response Guard "Great!" fallback)
+  - Empty RECAST (missing grammar corrections)
+  - Irrelevant hints (grammar words instead of vocabulary)
+  - Response too short (JSON parsing failures)
+- ✅ System prompt enhancements with ACK/RECAST/HINTS rules
+- ✅ Console log interpretation guide
+- ✅ Quality thresholds defined (<5% fallback rate = good)
+
+**V27.0 (Jan 15, 2026)** - Week Detection Fix
+- Fixed week detection using `useLocation()` instead of `useParams()`
+- Updated all AI Tutor tabs (Story Mission, FreeTalk, Pronunciation, Quiz)
+- Console logging for debugging (`📍 Week detected: X`)
+
+**V26.3 (Jan 14, 2026)** - AI Tutor System Documentation
+- Added comprehensive rate limiting architecture
+- Documented three-layer fallback chain (Groq → Gemini → Fallback)
+- Specified ACK + RECAST mandatory template
+- Defined Story Mission turn count standards (15 turns)
+- Documented FreeTalk knowledge system
+
+**V26.2 (Jan 13, 2026)** - Production Ready
+- Finalized Week 1 content
+- Established CEFR A0/A0++ standards
+- Added Game Hub integration
+- Completed all 15 station schemas
+
+---
+
+### L. V28 SUMMARY - USE THIS VERSION FOR ALL FUTURE WEEKS
+
+**What's New in V28**:
+1. **Simpler JSON Format**: `ack`/`recast`/`question` (no "teacher_" prefix)
+2. **3 ACK Options Only**: Nice!/Great!/Wonderful! (removed Perfect/Good/Excellent)
+3. **Subject Agreement**: RECAST matches subject (She/He/You) automatically
+4. **Recast Technique**: Never say "wrong", model correct form naturally
+5. **Implementation**: Code updated in tutorPrompts.js, responseGuard.js, novaEngine.js, responseParser.js
+
+**Files Updated for V28**:
+- `src/services/ai_tutor/tutorPrompts.js` - New format examples + subject agreement
+- `src/services/ai_tutor/utils/responseGuard.js` - Subject detection logic
+- `src/services/ai_tutor/novaEngine.js` - Dual format support (V27 + V28)
+- `src/services/ai_tutor/utils/responseParser.js` - Format validation
+
+**Backward Compatibility**:
+- System supports BOTH V27 format (`teacher_ack`) AND V28 format (`ack`)
+- Existing Week 1-2 work with both formats
+- Week 3+ should use V28 format exclusively
+
+**Why V28 is Better**:
+- Simpler for AI to understand (fewer fields, clearer names)
+- Fewer ACK options = more natural variety (3 vs 6)
+- Subject agreement prevents pedagogical errors ("You work!" bug)
+- Recast technique = positive learning (model vs correct)
+
+**Testing Checklist for V28**:
+- [ ] AI returns `ack` (not `teacher_ack`)
+- [ ] ACK is Nice/Great/Wonderful only (no Perfect/Good/Excellent)
+- [ ] RECAST matches subject (She/He/You based on question)
+- [ ] No "You work!" when talking about mother (should be "She works!")
+- [ ] No "I heard you!" or "I understand!" (generic acknowledgments)
+
+---
+
+*End of ENGQUEST MASTER PROMPT V28*
+*Production Ready for Mass Production Week 3-156*
+*Last Updated: January 16, 2026*

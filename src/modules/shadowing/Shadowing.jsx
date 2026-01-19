@@ -265,8 +265,8 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     if (!text) return null;
     return text.split(/(\*\*.*?\*\*)/).map((part, i) => 
       part.startsWith('**') ? 
-      <span key={i} className={`font-black text-${themeColor}-600 text-lg`}>{part.replace(/\*\*/g, '')}</span> : 
-      <span key={i} className="text-lg">{part}</span>
+      <span key={i} className={`font-black text-${themeColor}-600 text-xl`}>{part.replace(/\*\*/g, '')}</span> : 
+      <span key={i} className="text-xl">{part}</span>
     );
   };
 
@@ -353,7 +353,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
 
       <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-6 transition-all ${hideText ? 'blur-md select-none' : ''}`}>
         <h3 className="text-xs font-bold uppercase text-slate-400 mb-2 tracking-wider">Full Text</h3>
-        <p className="text-xl text-slate-700 leading-loose text-justify font-medium">
+        <p className="text-2xl text-slate-700 leading-loose text-justify font-medium">
             {data.script.map((s, i) => <span key={i}>{renderStyledText(s.text)} </span>)}
         </p>
       </div>
@@ -388,7 +388,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
 
               {/* Text content */}
               <div className="flex-1 cursor-pointer" onClick={() => handlePlayOne(s.text, s.audio_url, s.id)}>
-                 <p className={`text-lg font-bold text-slate-800 ${hideText ? 'opacity-20 blur-[2px]' : ''}`}>{renderStyledText(s.text)}</p>
+                 <p className={`text-xl font-bold text-slate-800 ${hideText ? 'opacity-20 blur-[2px]' : ''}`}>{renderStyledText(s.text)}</p>
                  {isVi && <p className="text-sm text-slate-500 italic mt-1">{s.vi}</p>}
               </div>
 

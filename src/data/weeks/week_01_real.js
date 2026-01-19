@@ -125,6 +125,7 @@ export const week1RealData = {
       
       // Ms. Nova's direct greeting (no description)
       nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
+      default_hints: ["My", "name", "is", "I", "am"],
       
       // Context for AI (not shown to student)
       mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging. ONLY ask about name, age, and being a student. DO NOT ask about backpack, books, or other school supplies - those are for Mission 2.
@@ -184,6 +185,7 @@ export const week1RealData = {
       
       // Ms. Nova's direct greeting (no description)
       nova_greeting: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
+      default_hints: ["I", "have", "backpack", "book", "notebook"],
       
       mission_context: `The student shows their school supplies. Ms. Nova is curious about what students bring to school. This mission focuses on 'I have...' pattern with simple school items. Use VERY SIMPLE language suitable for A0-A1 ESL beginners. Keep questions short and clear.
 
@@ -246,6 +248,7 @@ export const week1RealData = {
       
       // Ms. Nova's direct greeting (no description)
       nova_greeting: "Hello again! I want to learn about your school. Tell me about your teacher. What is your teacher like?",
+      default_hints: ["My", "teacher", "is", "kind", "nice"],
       
       mission_context: `This is a simple conversation about the student's teacher and school. Ms. Nova wants to know basic information about their learning environment. Use VERY SIMPLE language suitable for A0-A1 ESL beginners. Focus on basic descriptions with 'My teacher is...' pattern. Keep all questions short and clear.
 
@@ -498,6 +501,54 @@ export const week1RealData = {
     "library",
     "scientist"
   ],
+
+  // === FREETALK KNOWLEDGE (Week 1 - Identity & School Theme) ===
+  freetalk_knowledge: {
+    week_title: "Hello, World! (Identity)",
+    week_number: 1,
+    theme: "Introduction & School",
+    
+    // Week 1 establishes baseline FreeTalk knowledge
+    knowledge_base: [
+      "We introduce ourselves: 'I am [name]', 'I am [age] years old'",
+      "We are students who go to school",
+      "We have backpacks with books and notebooks",
+      "We have teachers at school who help us learn",
+      "We study in classrooms",
+      "School is where we learn and make friends",
+      "We use 'I am' to talk about ourselves",
+      "We can ask 'What is your name?' and 'How old are you?'"
+    ],
+    
+    example_opening_questions: [
+      "What is your name?",
+      "How old are you?",
+      "Are you a student?",
+      "Do you go to school?",
+      "Do you have a backpack?",
+      "What is in your backpack?",
+      "Who is your teacher?",
+      "Do you like school?"
+    ],
+    
+    freetalk_context: `Week 1 is about IDENTITY and SCHOOL. The student has learned:
+- Self-introduction: name, age, being a student
+- School items: backpack, book, notebook
+- School people and places: teacher, school, classroom
+
+Ms. Nova can ask about these topics in Free Talk:
+- What is your name?
+- How old are you?
+- Are you a student?
+- Do you like school?
+- What do you have in your backpack?
+- Who is your teacher?
+- What is your classroom like?
+
+Keep questions SIMPLE and about IDENTITY & SCHOOL. This is Week 1, so focus on basic self-introduction and school vocabulary.
+
+IMPORTANT: Student can ask ANY question (free talk), but Ms. Nova should guide conversation toward identity and school topics when appropriate.`
+  },
   
   notes: `
 📚 SYLLABUS ALIGNMENT NOTES:

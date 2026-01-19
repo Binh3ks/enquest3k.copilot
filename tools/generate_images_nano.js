@@ -1,256 +1,139 @@
-/**
- * UNIFIED IMAGE GENERATOR - Nano Banana (FREE)
- * Generates images for both Advanced and Easy modes using Gemini free tier
- * Cost: $0 for 144 weeks × 2 modes = 4,320 images
- */
-
-import https from 'https';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
-// Load API key from API keys.txt
-const loadApiKey = () => {
-  const apiKeyFile = path.join(__dirname, '..', 'API keys.txt');
-  const content = fs.readFileSync(apiKeyFile, 'utf-8');
-  const match = content.match(/GEMINI_API_KEY[:\s=]+([^\s\n]+)/);
-  return match ? match[1] : null;
-};
+const WEEK_ID = String(process.argv[2]).padStart(2, '0');
+const BASE_DIR = path.join('public/images', `week_${WEEK_ID}`);
+const API_KEY = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
 
-const GEMINI_API_KEY = loadApiKey();
-if (!GEMINI_API_KEY) {
-  console.error('❌ GEMINI_API_KEY not found in API keys.txt');
-  process.exit(1);
-}
+// MODEL CHUẨN: gemini-3-pro-image-preview
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent?key=${API_KEY}`;
 
-// Parse command line arguments
-const args = process.argv.slice(2);
-const WEEK_ID = parseInt(args[0]);
-const MODE = args[1] || 'both'; // 'advanced', 'easy', or 'both'
+if (!API_KEY) { console.error("❌ ERROR: Missing GEMINI_API_KEY"); process.exit(1); }
 
-if (!WEEK_ID || WEEK_ID < 1 || WEEK_ID > 144) {
-  console.error('❌ Usage: node tools/generate_images_nano.js <WEEK_ID> [advanced|easy|both]');
-  console.error('   Example: node tools/generate_images_nano.js 1 both');
-  process.exit(1);
-}
+console.log(`🍌 NANO BANANA GENERATOR FOR WEEK ${WEEK_ID}`);
 
-console.log(`\n🎨 NANO BANANA IMAGE GENERATOR (FREE)`);
-console.log(`📦 Week ${WEEK_ID}, Mode: ${MODE.toUpperCase()}`);
-console.log(`🔑 API Key loaded from API keys.txt\n`);
+// Cleanup & Init
+if (!fs.existsSync(BASE_DIR)) fs.mkdirSync(BASE_DIR, { recursive: true });
 
-// Nano Banana API configuration
-const NANO_BANANA_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent?key=${GEMINI_API_KEY}`;
+async function generateImage(prompt, filename) {
+    const outFile = path.join(BASE_DIR, filename);
+    // Skip nếu file đã có và dung lượng > 0
+    if (fs.existsSync(outFile) && fs.statSync(outFile).size > 0) return;
 
-// Load week data
-const loadWeekData = async (weekId, isEasy) => {
-  const paddedWeek = weekId.toString().padStart(2, '0');
-  const baseDir = isEasy ? 
-    path.join(__dirname, '..', 'src', 'data', 'weeks_easy') :
-    path.join(__dirname, '..', 'src', 'data', 'weeks');
-  
-  try {
-    const weekPath = path.join(baseDir, `week_${paddedWeek}`, 'index.js');
-    const { default: weekData } = await import(`file://${weekPath}`);
-    return weekData;
-  } catch (e) {
-    console.error(`⚠️  Failed to load week ${weekId} ${isEasy ? 'Easy' : 'Advanced'} data:`, e.message);
-    return null;
-  }
-};
+    process.stdout.write(`  🎨 ${filename}: `);
 
-// Generate image using Nano Banana
-const generateImage = async (prompt) => {
-  const payload = JSON.stringify({
-    contents: [{
-      parts: [{ text: prompt }]
-    }],
-    generationConfig: {
-      temperature: 0.4,
-      topK: 32,
-      topP: 1
-    }
-  });
-
-  return new Promise((resolve, reject) => {
-    const req = https.request(NANO_BANANA_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(payload)
-      }
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const json = JSON.parse(data);
-          const imageData = json.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-          if (imageData) {
-            resolve(Buffer.from(imageData, 'base64'));
-          } else {
-            reject(new Error('No image data in response'));
-          }
-        } catch (e) {
-          reject(new Error(`Parse error: ${e.message}`));
+    // PAYLOAD CHUẨN (Không dùng responseMimeType)
+    const payload = {
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+            temperature: 0.4,
+            maxOutputTokens: 1024 
         }
-      });
-    });
-    
-    req.on('error', reject);
-    req.write(payload);
-    req.end();
-  });
-};
+    };
 
-// Save image to file
-const saveImage = (buffer, outputPath) => {
-  const dir = path.dirname(outputPath);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  fs.writeFileSync(outputPath, buffer);
-};
-
-// Generate prompt based on mode
-const generatePrompt = (type, word, definition, isEasy, weekTitle) => {
-  const baseStyle = isEasy ? 
-    'Child-friendly, colorful, simple illustration for ESL kids age 6-12' :
-    'Educational illustration with clean, modern style for ESL learners age 10-16';
-  
-  if (type === 'vocab') {
-    return `Simple educational illustration of ${word}: ${definition}. ${baseStyle}. Square aspect ratio, clear focus on subject, bright natural lighting.`;
-  }
-  
-  if (type === 'wordpower') {
-    return `Educational illustration showing the concept "${word}" - ${definition}. ${baseStyle}. Square aspect ratio, clear visualization of the phrase meaning.`;
-  }
-  
-  if (type === 'cover') {
-    const coverStyle = isEasy ?
-      'Colorful, playful illustration style with cartoon elements' :
-      'Modern, semi-realistic illustration with natural tones';
-    return `Wide landscape educational banner for "${weekTitle}". ${definition}. ${coverStyle}. 16:9 aspect ratio, full scene visible, no cropping, bright welcoming atmosphere.`;
-  }
-  
-  return `Simple educational illustration: ${word}. ${baseStyle}.`;
-};
-
-// Process one mode
-const processMode = async (weekId, isEasy) => {
-  const modeLabel = isEasy ? 'EASY' : 'ADVANCED';
-  const folderSuffix = isEasy ? '_easy' : '';
-  
-  console.log(`\n📂 Processing Week ${weekId} ${modeLabel} mode...`);
-  
-  const weekData = await loadWeekData(weekId, isEasy);
-  if (!weekData) {
-    console.log(`   ⚠️  No data found, skipping`);
-    return;
-  }
-  
-  const outputDir = path.join(__dirname, '..', 'public', 'images', `week${weekId}${folderSuffix}`);
-  const tasks = [];
-  let successCount = 0;
-  let skipCount = 0;
-  let failCount = 0;
-  
-  // 1. Cover images (2)
-  const readTitle = weekData.weekTitle_en || 'Reading';
-  const readContent = weekData.stations?.read_explore?.content_en?.substring(0, 100) || 'Educational content';
-  tasks.push({
-    filename: `read_cover_w${weekId}.jpg`,
-    prompt: generatePrompt('cover', readTitle, readContent, isEasy, readTitle),
-    path: path.join(outputDir, `read_cover_w${weekId}.jpg`)
-  });
-  
-  const exploreTitle = weekData.stations?.explore?.title_en || 'Explore';
-  const exploreContent = weekData.stations?.explore?.content_en?.substring(0, 100) || 'Science topic';
-  tasks.push({
-    filename: `explore_cover_w${weekId}.jpg`,
-    prompt: generatePrompt('cover', exploreTitle, exploreContent, isEasy, exploreTitle),
-    path: path.join(outputDir, `explore_cover_w${weekId}.jpg`)
-  });
-  
-  // 2. Vocab images (10)
-  const vocab = weekData.global_vocab || weekData.stations?.new_words?.vocab || [];
-  vocab.slice(0, 10).forEach(item => {
-    const word = item.word.toLowerCase().replace(/\s+/g, '_');
-    const definition = item.definition_en || item.word;
-    tasks.push({
-      filename: `${word}.jpg`,
-      prompt: generatePrompt('vocab', item.word, definition, isEasy),
-      path: path.join(outputDir, `${word}.jpg`)
-    });
-  });
-  
-  // 3. Word Power images (3 for Phase 1)
-  const wordPower = weekData.stations?.word_power?.words || [];
-  wordPower.slice(0, 3).forEach(item => {
-    const word = item.word.toLowerCase().replace(/\s+/g, '_');
-    const definition = item.definition_en || item.word;
-    tasks.push({
-      filename: `wordpower_${word}.jpg`,
-      prompt: generatePrompt('wordpower', item.word, definition, isEasy),
-      path: path.join(outputDir, `wordpower_${word}.jpg`)
-    });
-  });
-  
-  console.log(`   Found ${tasks.length} images to generate (2 covers + ${vocab.length} vocab + ${wordPower.length} word_power)`);
-  
-  // Generate images with rate limiting
-  for (let i = 0; i < tasks.length; i++) {
-    const task = tasks[i];
-    
-    // Skip if exists
-    if (fs.existsSync(task.path)) {
-      console.log(`   ⏭️  [${i+1}/${tasks.length}] ${task.filename} already exists, skipping...`);
-      skipCount++;
-      continue;
-    }
-    
     try {
-      console.log(`   🎨 [${i+1}/${tasks.length}] Generating ${task.filename}...`);
-      const imageBuffer = await generateImage(task.prompt);
-      saveImage(imageBuffer, task.path);
-      const sizeMB = (imageBuffer.length / 1024 / 1024).toFixed(2);
-      console.log(`   ✅ Saved: ${task.filename} (${sizeMB} MB)`);
-      successCount++;
-      
-      // Rate limit: 3 seconds between requests
-      if (i < tasks.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 3000));
-      }
-    } catch (error) {
-      console.log(`   ❌ Failed: ${task.filename} - ${error.message}`);
-      failCount++;
-    }
-  }
-  
-  console.log(`\n   📊 Week ${weekId} ${modeLabel} Summary:`);
-  console.log(`   ✅ Success: ${successCount}/${tasks.length}`);
-  console.log(`   ⏭️  Skipped: ${skipCount}/${tasks.length}`);
-  console.log(`   ❌ Failed: ${failCount}/${tasks.length}`);
-};
+        const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
 
-// Main execution
-const main = async () => {
-  try {
-    if (MODE === 'advanced' || MODE === 'both') {
-      await processMode(WEEK_ID, false);
-    }
-    
-    if (MODE === 'easy' || MODE === 'both') {
-      await processMode(WEEK_ID, true);
-    }
-    
-    console.log(`\n🎉 Image generation complete for Week ${WEEK_ID}!`);
-    console.log(`💰 Cost: $0.00 (Nano Banana free tier)\n`);
-  } catch (error) {
-    console.error(`\n❌ Fatal error:`, error);
-    process.exit(1);
-  }
-};
+        const data = await res.json();
 
-main();
+        if (data.error) {
+            console.log(`❌ API Error: ${data.error.message}`);
+            return;
+        }
+
+        const base64Data = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+        if (base64Data) {
+            fs.writeFileSync(outFile, Buffer.from(base64Data, 'base64'));
+            console.log("✅ OK");
+        } else {
+            console.log("❌ No Data (Prompt Safety?)");
+        }
+    } catch (e) {
+        console.log(`❌ Network Error: ${e.message}`);
+    }
+}
+
+async function scanAndGen(weekId) {
+    const tasks = [];
+    const uniqueFiles = new Set();
+    
+    // A. VOCAB (10 words) & WORD POWER (3 words)
+    // Quét cả Advanced và Easy
+    const dirs = [path.join('src/data/weeks', `week_${weekId}`), path.join('src/data/weeks_easy', `week_${weekId}`)];
+    
+    for (const dir of dirs) {
+        if (!fs.existsSync(dir)) continue;
+        
+        // Đọc tất cả file .js trong thư mục
+        const files = fs.readdirSync(dir).filter(f => f.endsWith('.js'));
+        for (const file of files) {
+            const content = fs.readFileSync(path.join(dir, file), 'utf-8');
+            
+            // REGEX ĐA NĂNG: Bắt word: '...', "word": "...", word: `...`
+            const regex = /(?:word|text)\s*:\s*(["'`])((?:(?!\1).)+)\1/gi;
+            const matches = [...content.matchAll(regex)];
+            
+            matches.forEach(m => {
+                const word = m[2].trim();
+                // Lọc bỏ câu dài (chỉ lấy từ vựng < 25 ký tự)
+                if (word.length < 25 && !word.includes(' ')) {
+                    const filename = `${word.toLowerCase().replace(/[^a-z0-9]/g, '_')}.jpg`;
+                    
+                    if (!uniqueFiles.has(filename)) {
+                        uniqueFiles.add(filename);
+                        tasks.push({ 
+                            prompt: `cartoon vector illustration of ${word}, simple, educational, white background`, 
+                            file: filename 
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+
+    // B. COVERS (Bắt buộc, phân biệt easy/advanced, đúng format)
+    let readTopic = "School";
+    let readTopicEasy = "School";
+    const readPath = path.join('src/data/weeks', `week_${weekId}`, 'read.js');
+    const readPathEasy = path.join('src/data/weeks_easy', `week_${weekId}`, 'read.js');
+    if (fs.existsSync(readPath)) {
+        const content = fs.readFileSync(readPath, 'utf-8');
+        const match = content.match(/title\s*:\s*(["'`])((?:(?!\1).)+)\1/i);
+        if (match) readTopic = match[2];
+    }
+    if (fs.existsSync(readPathEasy)) {
+        const content = fs.readFileSync(readPathEasy, 'utf-8');
+        const match = content.match(/title\s*:\s*(["'`])((?:(?!\1).)+)\1/i);
+        if (match) readTopicEasy = match[2];
+    }
+
+    // Advanced mode
+    tasks.push({ prompt: `${readTopic} storybook cover illustration, kids education`, file: `read_cover_w${String(weekId).padStart(2, '0')}.jpg` });
+    tasks.push({ prompt: `science poster about ${readTopic}`, file: `explore_cover_w${String(weekId).padStart(2, '0')}.jpg` });
+    // Easy mode
+    tasks.push({ prompt: `${readTopicEasy} storybook cover illustration, kids education, simple`, file: `read_cover_w${String(weekId).padStart(2, '0')}_easy.jpg` });
+    tasks.push({ prompt: `science poster about ${readTopicEasy}, simple`, file: `explore_cover_w${String(weekId).padStart(2, '0')}_easy.jpg` });
+
+    // Các ảnh khác giữ nguyên
+    tasks.push({ prompt: "puzzle pieces matching game", file: "wp_match.jpg" });
+    tasks.push({ prompt: "star trophy reward", file: "wp_reward.jpg" });
+
+    console.log(`  🚀 Queue: ${tasks.length} images...`);
+    
+    // Chạy tuần tự (Sequential) để tránh lỗi API 429
+    for (const task of tasks) {
+        await generateImage(task.prompt, task.file);
+        // Delay 2s giữa các request
+        await new Promise(r => setTimeout(r, 2000));
+    }
+}
+
+(async () => { await scanAndGen(WEEK_ID); })();

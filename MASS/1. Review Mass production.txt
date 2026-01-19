@@ -1,0 +1,60 @@
+1. Đánh giá hiện trạng trong thư mục MASS/
+Cấu trúc hiện tại ĐÃ ĐỦ KHOẢNG 90% để sản xuất nội dung bài học (Station Content) tương tự Tuần 4, nhưng vẫn thiếu một mảnh ghép quan trọng để hoàn thiện "Full Stack" (đặc biệt là phần AI Tutor).
+
+✅ Điểm đã hoàn thiện (Ready for Mass Production):
+Phân tách Mode rõ ràng: Bạn đã có 2 file prompt riêng biệt:
+
+09_STATIONS_ADVANCED.txt: Dùng cho 15 files Advanced.
+
+10_STATIONS_EASY.txt: Dùng cho 14 files Easy (bỏ video_queries).
+
+Điều này đảm bảo AI không bị loạn giữa hai chế độ.
+
+Logic "Nhúng" (Embedding) đã có trong Tools:
+
+Các file tools/generate_week.js và tools/generate_week_template.js đã được thiết kế để đọc các file prompt này và bơm context (Topic, Week ID) vào.
+
+Điều này có nghĩa là "Template" thực ra đang nằm trong code JS (generate_week_template.js) kết hợp với Prompt text. Đây là cách làm automation tốt.
+
+Quy trình Asset (Hình/Tiếng) đã được định nghĩa:
+
+Trong Prompt (dựa trên các version trước), bạn thường yêu cầu output các trường image_url và audio_word.
+
+Các script tools/generate_images_nano_banana.js và python3 tools/generate_audio_final.py đã sẵn sàng để quét các trường này.
+
+⚠️ Điểm Cần Bổ Sung / Lưu Ý (Critical Gaps)
+Để đạt được chất lượng chuẩn mực như Tuần 4 (vốn là tuần Golden Standard mới nhất), bạn cần kiểm tra 3 điểm sau trong thư mục MASS:
+
+1. Thiếu Prompt riêng cho AI Tutor (week_XX_real.js)
+Vấn đề: Tôi thấy 09 và 10 tập trung vào các Station (Read, Vocab, Grammar...). Tuy nhiên, file src/data/weeks/week_XX_real.js (file cấu hình cho AI Tutor Ms. Nova) có cấu trúc JSON cực kỳ phức tạp (Target Vocab objects, Story Missions, Freetalk prompts).
+
+Rủi ro: Nếu gộp chung việc tạo file này vào 09_STATIONS_ADVANCED.txt, AI rất dễ bị "tràn bộ nhớ" hoặc hallucinate sai cấu trúc JSON, làm hỏng AI Tutor.
+
+Khắc phục: Nên tạo thêm MASS/PROMPTS/11_AI_TUTOR_REAL.txt chuyên biệt chỉ để sinh ra file week_XX_real.js.
+
+2. Đồng bộ Spec trong Prompt với Code Template
+Vấn đề: File tools/generate_week_template.js chứa khung sườn (skeleton) của các file. Nếu Prompt trong MASS/ yêu cầu một cấu trúc (ví dụ: logic.js dùng key puzzles) nhưng Template lại export default một cấu trúc khác, code sẽ bị lỗi.
+
+Hành động: Cần mở 09_STATIONS_ADVANCED.txt và đảm bảo nó ra lệnh cho AI trả về JSON khớp 100% với mong đợi của tools/generate_week.js.
+
+3. Validation Logic
+Quy trình Mass hiện tại dựa nhiều vào việc "AI trả về đúng". Để an toàn như V28 yêu cầu, script chạy mass (project_manager.sh hoặc script node tương ứng) cần có bước Validate JSON trước khi cho chạy lệnh tạo ảnh/tiếng.
+
+🚀 KẾT LUẬN & HÀNH ĐỘNG TIẾP THEO
+Confirm: Bạn CÓ THỂ bắt đầu quy trình Mass Production ngay bây giờ cho các Station (Vocab, Read, Grammar...) dựa trên 09 và 10.
+
+Tuy nhiên, để "bao sân" cả tuần hoàn chỉnh (bao gồm AI Tutor), tôi đề nghị bạn thực hiện bước cuối này:
+
+Tạo file MASS/PROMPTS/11_AI_TUTOR_REAL.txt:
+
+Nội dung: Copy schema chuẩn của week_04_real.js vào đây. Yêu cầu AI sinh ra data cho week_XX dựa trên Topic tuần đó.
+
+Cập nhật Script chạy Mass (tools/project_manager.sh hoặc tương đương):
+
+Thêm bước gọi Prompt 11 sau khi chạy Prompt 09 và 10.
+
+Chạy thử nghiệm (Dry Run) cho Tuần 5:
+
+Chạy full quy trình cho Week 5.
+
+Kiểm tra xem week_05_real.js có được tạo ra đúng chuẩn không.

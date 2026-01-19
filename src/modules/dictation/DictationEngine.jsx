@@ -153,8 +153,8 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
            <div className="space-y-3">
                {level === 1 && (
                    <div className="flex flex-wrap gap-2 mb-2">
-                       {s.text.replace(/[.,?!]/g, '').split(' ').sort(() => Math.random() - 0.5).map((w, i) => (
-                           <span key={i} className="px-2 py-1 bg-slate-100 border border-slate-200 rounded text-xs font-medium select-none text-slate-600">
+                       {s.text.replace(/[.,?!]$/g, '').replace(/[,?!]/g, '').split(' ').sort(() => Math.random() - 0.5).map((w, i) => (
+                           <span key={i} className="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded text-base font-medium select-none text-slate-600">
                                {w}
                            </span>
                        ))}
@@ -162,7 +162,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                )}
                
                {level === 2 && (
-                   <p className="text-lg text-slate-500 font-mono bg-slate-50 p-3 rounded-lg border-2 border-dashed border-slate-200 tracking-wide select-none">
+                   <p className="text-xl text-slate-500 font-mono bg-slate-50 p-3 rounded-lg border-2 border-dashed border-slate-200 tracking-wide select-none">
                        {getCloze(s.text)}
                    </p>
                )}
@@ -170,7 +170,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                <div className="relative">
                      <input 
                        type="text" 
-                       className={`w-full p-4 pr-24 bg-slate-50 border-2 rounded-xl outline-none font-medium transition-all ${
+                       className={`w-full p-4 pr-24 bg-slate-50 border-2 rounded-xl outline-none text-xl font-medium transition-all ${
                            feedback[s.id]?.status === 'perfect' ? 'border-green-400 bg-green-50 text-green-800' : 
                            feedback[s.id]?.status === 'warning' ? 'border-amber-400 bg-amber-50 text-amber-800' :
                            feedback[s.id]?.status === 'wrong' ? 'border-rose-300 bg-rose-50 text-rose-800' :

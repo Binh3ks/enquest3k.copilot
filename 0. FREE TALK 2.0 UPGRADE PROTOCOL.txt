@@ -1,0 +1,227 @@
+🛑 PHẦN 1: PHẢN BIỆN (CRITICAL ANALYSIS)
+Bạn muốn Free Talk là nơi "hỏi bất kỳ thứ gì". Tuy nhiên, với đối tượng là trẻ em 6-10 tuổi trình độ A0 (Beginner), ý tưởng này gặp 3 rào cản lớn:
+
+Rào cản Ngôn ngữ (The "Blank Page" Problem):
+
+Học sinh A0 vốn từ vựng rất ít. Nếu bạn thả lỏng hoàn toàn: "Con hãy hỏi gì đi", trẻ sẽ... im lặng. Trẻ không biết cách đặt câu hỏi phức tạp như "Tại sao bầu trời lại xanh?" bằng tiếng Anh.
+
+Hệ quả: Free Talk sẽ trở thành nơi trẻ gõ tiếng Việt hoặc spam lung tung.
+
+Rào cản Ý tưởng (Cognitive Load):
+
+Trẻ em độ tuổi này thường thụ động trong môi trường giáo dục. Chúng quen được hỏi và trả lời hơn là chủ động khơi mào hội thoại.
+
+Nếu không có "mồi" (prompts), hội thoại sẽ chết sau 2 câu.
+
+Rủi ro "Hallucination" & An toàn:
+
+Nếu cho phép nói về "bất cứ thứ gì", AI có thể bị lôi vào các chủ đề nhạy cảm hoặc bịa đặt kiến thức sai lệch nếu không có knowledge_base ràng buộc.
+
+👉 KẾT LUẬN PHẢN BIỆN: Ý tưởng chuyển đổi là ĐÚNG, nhưng cách thực hiện không thể là "thả rông" hoàn toàn. Nó cần là "Tự do trong khuôn khổ được hỗ trợ" (Guided Freedom).
+
+💡 PHẦN 2: GỢI Ý CHIẾN LƯỢC (STRATEGIC SOLUTIONS)
+Thay vì chỉ là "Free Talk" (Trò chuyện tự do), hãy định vị lại tab này thành "AI Companion & Helper" (Người bạn đồng hành & Trợ lý).
+
+Dưới đây là 3 hướng đi cụ thể để bạn không cần "nhiều ý tưởng" mà vẫn làm tab này cực hay:
+
+Hướng 1: Biến Ms. Nova thành "Từ điển sống" (The Helper)
+Học sinh A0 thường gặp khó khăn khi muốn diễn đạt ý mình. Hãy biến Free Talk thành nơi các em "cầu cứu".
+
+Chức năng:
+
+Dịch thuật 2 chiều: "Cô ơi, 'con sứa' tiếng Anh là gì?" -> AI: "It is a jellyfish. Can you say jellyfish?"
+
+Sửa lỗi câu: Học sinh viết: "I go school yesterday." -> AI: "Ah, you mean: 'I went to school yesterday'. Good try!"
+
+Tra nghĩa: "What is 'astronaut'?" -> AI giải thích bằng tiếng Anh đơn giản + Tiếng Việt.
+
+Prompt gợi ý cho AI: "You are a helpful translator and dictionary assistant. If the student asks in Vietnamese, translate to English and teach them that word."
+
+Hướng 2: Chơi trò chơi ngôn ngữ (The Gamer)
+Thay vì "chat", hãy "chơi". Trò chơi là ngôn ngữ chung của trẻ em.
+
+Trò chơi 1: 20 Questions (Đoán vật): AI nghĩ ra một đồ vật (ví dụ: quả táo), học sinh hỏi Yes/No question để đoán.
+
+Trò chơi 2: Word Chain (Nối từ): AI: "Apple" -> HS: "Elephant" -> AI: "Tiger".
+
+Trò chơi 3: Emoji Story: AI đưa ra 3 emoji (🐶 🏠 🍖), học sinh phải đặt 1 câu đơn giản: "The dog eats meat in the house."
+
+Lợi ích: Vui, không áp lực ngữ pháp, nhưng vẫn học từ vựng.
+
+Hướng 3: "Roleplay mở rộng" (The Actor)
+Mission Tab là roleplay theo kịch bản cứng (đi học, gặp bạn). Free Talk là roleplay theo giả tưởng (Fantasy).
+
+Kịch bản:
+
+"Hôm nay cô Nova là một Phi hành gia (Astronaut). Con muốn hỏi gì về Vũ trụ không?"
+
+"Hôm nay cô Nova là một Chú mèo biết nói. Meow!"
+
+"Hôm nay chúng ta đi siêu thị mua kem nhé?"
+
+Cách làm: Mỗi lần vào Free Talk, random một "nhân vật" cho Ms. Nova.
+
+🛠️ PHẦN 3: CÁCH TRIỂN KHAI KỸ THUẬT (IMPLEMENTATION)
+Để thực hiện điều này mà không phá vỡ hệ thống V28, bạn chỉ cần điều chỉnh Prompt của Free Talk và Giao diện gợi ý (UI Hints).
+
+1. Điều chỉnh Prompt (System Instruction)
+Thay vì bắt buộc bám theo week_topic, hãy cho phép AI linh hoạt hơn.
+
+JavaScript
+
+// Prompt mới cho Free Talk (Relaxed Mode)
+const freeTalkPrompt = `
+ROLE: You are Ms. Nova, a friendly and funny English companion for kids (Level A0).
+GOAL: Keep the conversation going, make it fun, and help them love English.
+
+MODES:
+1. HELPER: If they ask "What is X in English?", teach them.
+2. CHAT: If they say "Hello", ask "How are you?" or "What did you play today?".
+3. GAME: If they say "Let's play", play Word Chain or Guessing Game.
+
+CRITICAL RULES:
+- Language: Simple English (A0). Use Vietnamese ONLY for difficult explanations.
+- Tone: Encouraging, enthusiastic (use emojis 🌟).
+- Correction: Gently fix grammar but keep chatting.
+- Topic: You can talk about ANYTHING the child wants (Games, Cartoons, Pets, Food).
+- Safety: If topic is inappropriate, gently steer back to school/friends/hobbies.
+`;
+2. Giao diện "Mồi" (UI Scaffolding - QUAN TRỌNG NHẤT)
+Vì trẻ không biết hỏi gì, bạn hãy thêm các Nút gợi ý (Suggestion Chips) ở ngay trên ô chat (giống Google Gemini/ChatGPT).
+
+Ví dụ các nút bấm:
+
+🔘 "Chơi nối từ đi cô!" (Let's play Word Chain)
+
+🔘 "Hôm nay cô ăn gì?" (What did you eat?)
+
+🔘 "Kể chuyện cười đi!" (Tell me a joke)
+
+🔘 "Con mèo tiếng Anh là gì?" (How to say 'con mèo'?)
+
+🔘 "Dịch giúp con câu này..." (Translate for me...)
+
+Khi bấm nút, app sẽ tự điền câu tiếng Anh tương ứng vào ô chat.
+
+
+📋 ARTIFACT: FREE TALK 2.0 UPGRADE PROTOCOL
+CONTEXT: We are upgrading the "Free Talk" tab from a rigid topic-based discussion to a flexible "AI Companion" mode. GOAL: Increase student engagement by allowing games, translation help, and roleplay. TARGET: Kids 6-10 years old (Level A0-A1).
+
+You (Copilot) are tasked to implement the following 3 components:
+
+1. NEW SYSTEM PROMPT (src/services/ai_tutor/utils/promptLibrary.js)
+Replace the old getFreeTalkPrompt with this Context-Aware Persona:
+
+JavaScript
+
+export const getFreeTalkPrompt = (weekData, studentLevel) => `
+ROLE: You are Ms. Nova, a fun, kind, and magical English companion for Vietnamese kids.
+CURRENT WEEK THEME: "${weekData.topic}" (Use this if the student has no ideas).
+
+Your goal is to KEEP THE CONVERSATION GOING. You have 3 dynamic modes:
+
+🌟 MODE 1: THE HELPER (Dictionary/Translator)
+- Trigger: If student asks "What is X in English?", "Dịch câu này...", "How to say...".
+- Action: Explain simply in English + Vietnamese.
+- Example:
+  Student: "Con mèo là gì?"
+  AI: "It is a **cat** 🐱! Can you say 'Cat'?"
+
+🎮 MODE 2: THE GAMER (Interactive Play)
+- Trigger: If student selects "Let's play", "Game", or you suggest a game.
+- Supported Games:
+  1. **Word Chain**: You say "Apple", they say "Elephant"...
+  2. **Guessing Game**: You describe something simple ("I am green. I jump."), they guess ("Frog!").
+  3. **Emoji Story**: Send 3 emojis, ask them to make a sentence.
+- Rule: Keep it very simple (A0). Cheering heavily for every correct answer.
+
+🗣️ MODE 3: THE CHAT BUDDY (Default)
+- Trigger: General chat ("Hello", "I am sad", "What do you eat?").
+- Action: Chat naturally. YOU CAN TALK ABOUT ANYTHING (Games, Pets, Food, Cartoons).
+- Rule: Do not force the weekly topic if the student wants to talk about Minecraft/Roblox.
+- Grammar Correction: Gentle "Recast" (e.g., if they say "I go school", you say "Oh, you **went** to school? Was it fun?").
+
+⛔ SAFETY & STYLE:
+- Use emojis 🌟🐶🎈 in every message.
+- Keep responses SHORT (under 20 words).
+- If the topic gets weird/unsafe, steer back to: "Let's talk about friends! Do you have a best friend?"
+`;
+2. DATA SCHEMA UPDATE (src/data/weeks/week_XX_real.js)
+We need to add starter_prompts to the freetalk_knowledge object. These will be rendered as Action Buttons (Chips) above the chat bar.
+
+Update Requirement for ALL week_XX_real.js files:
+
+JavaScript
+
+// Example for Week 03 (Classroom Theme)
+export const week03RealData = {
+  // ... existing data ...
+  freetalk_knowledge: {
+    theme: "School Supplies",
+    // ... existing knowledge_base ...
+
+    // ✅ NEW FIELD: STARTER PROMPTS (Contextual & Fun)
+    starter_prompts: [
+      { text_en: "Let's play a game! 🎮", text_vi: "Chơi trò chơi đi cô!", type: "game" },
+      { text_en: "How do you say 'con cá'? 🐟", text_vi: "Con cá tiếng Anh là gì?", type: "help" },
+      { text_en: "What is in your bag? 🎒", text_vi: "Trong túi cô có gì?", type: "chat" },
+      { text_en: "I love Minecraft! 🧱", text_vi: "Con thích Minecraft!", type: "chat" }
+    ]
+  }
+};
+Note: The starter_prompts should mix: 1 Game request, 1 Translation request, and 2 Topic-related questions.
+
+3. UI IMPLEMENTATION SPECS (FreeTalkTab.jsx)
+Visual Design:
+
+Add a scrollable row of Suggestion Chips (Buttons) immediately above the Input Bar.
+
+Each chip shows the Vietnamese text (text_vi) to the student.
+
+On Click:
+
+The English text (text_en) is sent to the chat as the student's message.
+
+The button list refreshes or shuffles (optional).
+
+Pseudo-Code Logic:
+
+JavaScript
+
+// Inside FreeTalkTab.jsx
+
+const starterPrompts = weekData?.freetalk_knowledge?.starter_prompts || [
+  // Fallback defaults if week data is missing
+  { text_en: "Let's play a game!", text_vi: "Chơi trò chơi nhé! 🎮" },
+  { text_en: "Tell me a joke!", text_vi: "Kể chuyện cười đi! 😂" },
+  { text_en: "I am happy!", text_vi: "Hôm nay con vui! 😄" }
+];
+
+return (
+  <div className="chat-container">
+    {/* ... Chat History ... */}
+
+    {/* ✨ NEW: SUGGESTION CHIPS AREA */}
+    <div className="suggestion-chips flex gap-2 overflow-x-auto p-2">
+      {starterPrompts.map((prompt, index) => (
+        <button
+          key={index}
+          onClick={() => handleSendMessage(prompt.text_en)} // Send English
+          className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition"
+        >
+          {prompt.text_vi} {/* Show Vietnamese */}
+        </button>
+      ))}
+    </div>
+
+    {/* ... Input Bar ... */}
+  </div>
+);
+🚀 EXECUTION PLAN (FOR COPILOT)
+Refactor Prompt: Update src/services/ai_tutor/utils/promptLibrary.js with the new "FreeTalk v2" system prompt.
+
+Update Data: Modify src/data/weeks/week_03_real.js to include the starter_prompts array (Specific to Week 3 theme).
+
+Update UI: Modify src/modules/ai_tutor/tabs/FreeTalkTab.jsx to render the Suggestion Chips based on the loaded week data.
+
+ACKNOWLEDGEMENT: If you understand the "Free Talk 2.0" architecture, reply: "BLUEPRINT RECEIVED. Ready to implement Helper/Gamer/Companion modes."

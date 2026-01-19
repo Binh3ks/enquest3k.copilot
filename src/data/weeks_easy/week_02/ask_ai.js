@@ -1,44 +1,53 @@
 export default {
   prompts: [
+    // ✅ Prompt 1 - What is this? (A0)
     {
       id: 1,
-      context_en: "You see mom. You want to know her name. What do you ask?",
-      context_vi: "Bạn thấy mẹ. Bạn muốn biết tên. Bạn hỏi gì?",
-      audio_url: null,
-      answer: ["What is your name?", "What's your name?", "Your name?"],
+      context_en: "You see a pen. Ask what it is.",
+      context_vi: "Bạn thấy cái bút. Hỏi nó là gì.",
+      audio_url: "/audio/week2_easy/ask_ai_1.mp3",
+      answer: ["What is this?", "What is it?"],
       hint: "What is..."
     },
+    
+    // ✅ Prompt 2 - Where is...? (A0)
     {
       id: 2,
-      context_en: "Dad is working. You want to know what. How do you ask?",
-      context_vi: "Bố đang làm việc. Bạn muốn biết gì. Bạn hỏi sao?",
-      audio_url: null,
-      answer: ["What do you do?", "What are you doing?", "What?"],
-      hint: "What do..."
+      context_en: "You cannot find your book. Ask where it is.",
+      context_vi: "Bạn không tìm thấy sách. Hỏi nó ở đâu.",
+      audio_url: "/audio/week2_easy/ask_ai_2.mp3",
+      answer: ["Where is it?", "Where is my book?"],
+      hint: "Where is..."
     },
+    
+    // ✅ Prompt 3 - Is this...? (A0)
     {
       id: 3,
-      context_en: "Sister is playing. She has something. You want to know what. Ask her.",
-      context_vi: "Em gái đang chơi. Em có cái gì đó. Bạn muốn biết. Hỏi em.",
-      audio_url: null,
-      answer: ["What is this?", "What is that?", "What?"],
-      hint: "What is..."
+      context_en: "You find a toy. Ask if it is yours.",
+      context_vi: "Bạn tìm thấy đồ chơi. Hỏi có phải của bạn.",
+      audio_url: "/audio/week2_easy/ask_ai_3.mp3",
+      answer: ["Is this mine?"],
+      hint: "Is this..."
     },
+    
+    // ✅ Prompt 4 - Can I...? (A0)
     {
       id: 4,
-      context_en: "Family is going out. You want to know where. Ask them.",
-      context_vi: "Gia đình sẽ đi ra ngoài. Bạn muốn biết đâu. Hỏi họ.",
-      audio_url: null,
-      answer: ["Where are we going?", "Where?", "Go where?"],
-      hint: "Where..."
+      context_en: "Your friends are playing. Ask if you can play.",
+      context_vi: "Bạn bè đang chơi. Hỏi bạn có thể chơi không.",
+      audio_url: "/audio/week2_easy/ask_ai_4.mp3",
+      answer: ["Can I play?"],
+      hint: "Can I..."
     },
+    
+    // ✅ Prompt 5 - Do you...? (A0)
     {
       id: 5,
-      context_en: "Brother wants to play. You want to know when. Ask him.",
-      context_vi: "Anh trai muốn chơi. Bạn muốn biết khi nào. Hỏi anh.",
-      audio_url: null,
-      answer: ["When?", "When do we play?", "What time?"],
-      hint: "When..."
+      context_en: "Your friend is here. Ask if they like toys.",
+      context_vi: "Bạn ở đây. Hỏi bạn ấy có thích đồ chơi.",
+      audio_url: "/audio/week2_easy/ask_ai_5.mp3",
+      answer: ["Do you like toys?"],
+      hint: "Do you..."
     }
   ]
 };

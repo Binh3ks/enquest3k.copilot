@@ -7,13 +7,21 @@ import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
+import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
 /**
  * Debate Tab - Practice expressing opinions and reasoning
  * Age-appropriate debates on week's topic
  */
 const DebateTab = () => {
-  const { user, currentWeek } = useUserStore();
+  const { user } = useUserStore();
+  const location = useLocation(); // 🔥 Get location from react-router
+  
+  // 🔥 Parse weekId from pathname: /week/2/ai-tutor -> 2
+  const weekNumber = parseInt(location.pathname.match(/\/week\/(\d+)/)?.[1] || '1');
+  const currentWeek = `week-${weekNumber}`;
+  
+  console.log('📍 DebateTab - Week detected:', weekNumber, 'from pathname:', location.pathname);
   
   // Separate selectors to prevent infinite re-renders
   const messages = useTutorStore(state => state.messages['debate'] || []);
@@ -37,9 +45,13 @@ const DebateTab = () => {
   // Load week data and initialize debate
   useEffect(() => {
     if (!initialized) {
-      const data = getCurrentWeekData(currentWeek || 'week-1');
-      initializeDebate(data);
-      setInitialized(true);
+      const loadData = async () => {
+        console.log('💬 DebateTab loading data for:', currentWeek);
+        const data = await getCurrentWeekData(currentWeek);
+        initializeDebate(data);
+        setInitialized(true);
+      };
+      loadData();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWeek]);
@@ -130,7 +142,7 @@ const DebateTab = () => {
 
     try {
       // Build debate prompt (simplified)
-      const weekDataInfo = getCurrentWeekData(currentWeek || 'week-1');
+      const weekDataInfo = await getCurrentWeekData(currentWeek || 'week-1');
       
       // Support both global_vocab and vocabulary fields
       const vocabArray = weekDataInfo?.global_vocab || weekDataInfo?.vocabulary || [];

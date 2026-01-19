@@ -1,0 +1,7 @@
+# This file lists the Python packages required by the audio generation scripts.
+# To install all dependencies, run:
+# pip3 install -r requirements.txt
+
+python-dotenv
+google-cloud-texttospeech
+openai

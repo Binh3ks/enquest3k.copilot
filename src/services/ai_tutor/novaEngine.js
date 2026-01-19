@@ -17,7 +17,7 @@
  */
 
 import { sendToAI } from './aiRouter.js';
-import { buildPrompt, TutorModes } from './tutorPrompts.js';
+import { buildPrompt, TutorModes } from './tutorPrompts.js?v=4';
 import errorHandler from './utils/errorHandler.js';
 import responseParser from './utils/responseParser.js';
 import { validateAIResponse } from './grammarGuard.js';
@@ -74,9 +74,13 @@ export class NovaEngine {
     userMessage, 
     chatHistory = [], 
     context = {},
+    weekId,  // 🔥 V27: Accept weekId from caller
     skipGrammarGuard = false
   }) {
     const startTime = Date.now();
+    
+    // 🔥 Use weekId from params if provided, otherwise from weekData
+    const effectiveWeekId = weekId || this.weekData?.weekId || 1;
     
     // Validate mode
     const validModes = ['story', 'freetalk', 'pronunciation', 'quiz', 'debate'];
@@ -88,7 +92,7 @@ export class NovaEngine {
       mode,
       userMessage: userMessage.slice(0, 50) + '...',
       turnCount: context.turnCount || Math.floor(chatHistory.length / 2),
-      weekId: this.weekData.weekId
+      weekId: effectiveWeekId
     });
 
     try {
@@ -96,7 +100,8 @@ export class NovaEngine {
       const systemPrompt = this.buildTutorContext(mode, {
         ...context,
         chatHistory,  // 🔥 CRITICAL: Pass history so AI remembers context
-        userMessage
+        userMessage,
+        weekId: effectiveWeekId  // 🔥 Pass weekId to context builder
       });
       
       // Step 2: Call AI Router with error handling and retry logic
@@ -105,7 +110,7 @@ export class NovaEngine {
           systemPrompt,
           chatHistory,
           userMessage,
-          weekId: this.weekData.weekId,
+          weekId: effectiveWeekId,  // 🔥 Use effective weekId
           mode,
           skipGrammarGuard,
           turnCount: context.turnCount || Math.floor(chatHistory.length / 2)
@@ -161,7 +166,7 @@ export class NovaEngine {
     
     // Build context object expected by tutorPrompts.js
     const context = {
-      weekId: this.weekData.weekId || 1,
+      weekId: contextParams.weekId || this.weekData.weekId || 1,  // 🔥 V27: Use weekId from params if provided
       unitTitle: this.weekData.weekTitle_en || this.weekData.weekTitle || 'Learning English',
       topic: this.weekData.theme || 'General conversation',
       coreVocab: this.extractVocabulary(),
@@ -180,7 +185,9 @@ export class NovaEngine {
     };
     
     // Additional options for specific modes
-    const options = {};
+    const options = {
+      weekData: this.weekData  // 🔥 V27: Pass full weekData for V27 format detection
+    };
     
     if (mode === 'story') {
       // Extract mission from weekData
@@ -262,34 +269,76 @@ export class NovaEngine {
     // Grammar validation already done in aiRouter.js
     // This is for additional processing if needed
     
-    // Ensure response has required structure
+    // 🔥 NEW: Support both old format (ai_response) and new format (ack/recast/question)
+    const isNewFormat = response.ack !== undefined || response.question !== undefined;
+    
     const processedResponse = {
+      // Support both formats
       ai_response: response.ai_response || response.response || response,
+      ack: response.ack || '',
+      recast: response.recast || '',
+      question: response.question || '',
+      hints: response.hints || response.suggested_hints || [],
       pedagogy_note: response.pedagogy_note || '',
-      suggested_hints: response.suggested_hints || [],
+      suggested_hints: response.suggested_hints || response.hints || [],
       mission_status: response.mission_status || null,
       grammar_focus: response.grammar_focus || null,
-      raw: response
+      raw: response,
+      format: isNewFormat ? 'new' : 'legacy'
     };
 
-    // Sanitize response content for security
-    processedResponse.ai_response = responseParser.sanitizeResponse(processedResponse.ai_response);
+    // Sanitize response content for security (handle both formats)
+    if (isNewFormat) {
+      // New format: sanitize each field
+      if (processedResponse.ack) {
+        processedResponse.ack = responseParser.sanitizeResponse(processedResponse.ack);
+      }
+      if (processedResponse.recast) {
+        processedResponse.recast = responseParser.sanitizeResponse(processedResponse.recast);
+      }
+      if (processedResponse.question) {
+        processedResponse.question = responseParser.sanitizeResponse(processedResponse.question);
+      }
+    } else {
+      // Old format: sanitize ai_response
+      if (typeof processedResponse.ai_response === 'string') {
+        processedResponse.ai_response = responseParser.sanitizeResponse(processedResponse.ai_response);
+      }
+    }
 
-    // Validate required fields
-    if (!processedResponse.ai_response || processedResponse.ai_response.length < 10) {
+    // Validate required fields (handle both formats)
+    const responseText = isNewFormat 
+      ? (processedResponse.question || '')
+      : (processedResponse.ai_response || '');
+      
+    if (!responseText || responseText.length < 10) {
       console.warn('⚠️ NovaEngine: Response too short, using safe fallback');
-      processedResponse.ai_response = 'Tell me more!';
+      if (isNewFormat) {
+        processedResponse.question = 'Tell me more!';
+      } else {
+        processedResponse.ai_response = 'Tell me more!';
+      }
     }
 
     // Ensure hints are provided for question-based modes
     if (mode === 'story' || mode === 'freetalk') {
-      if (processedResponse.ai_response.includes('?') && 
-          (!processedResponse.suggested_hints || processedResponse.suggested_hints.length === 0)) {
+      const hasQuestion = isNewFormat 
+        ? (processedResponse.question && processedResponse.question.includes('?'))
+        : (processedResponse.ai_response && processedResponse.ai_response.includes('?'));
+        
+      const hasHints = processedResponse.suggested_hints && processedResponse.suggested_hints.length > 0;
+      
+      if (hasQuestion && !hasHints) {
         console.warn('⚠️ NovaEngine: Question asked but no hints provided, extracting from question');
+        const questionText = isNewFormat ? processedResponse.question : processedResponse.ai_response;
         processedResponse.suggested_hints = responseParser.extractHintsFromQuestion(
-          processedResponse.ai_response,
+          questionText,
           this.getFallbackHints(mode)
         );
+        // Also update hints field for new format
+        if (isNewFormat) {
+          processedResponse.hints = processedResponse.suggested_hints;
+        }
       }
     }
 

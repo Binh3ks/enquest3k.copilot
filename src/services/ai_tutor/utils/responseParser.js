@@ -10,6 +10,100 @@
  */
 
 /**
+ * Generate contextual hints from AI question when JSON hints missing
+ * @param {string} question - AI's question text
+ * @returns {Array<string>} Array of contextual hints
+ */
+function generateHintsFromQuestion(question) {
+  const lower = question.toLowerCase();
+  
+  // Family questions
+  if (lower.includes('family') || lower.includes('father') || lower.includes('mother') || 
+      lower.includes('brother') || lower.includes('sister')) {
+    if (lower.includes('what does') && lower.includes('do')) {
+      return ['He', 'She', 'is', 'a', 'teacher', 'doctor', 'works'];
+    }
+    if (lower.includes('how many')) {
+      return ['I', 'have', 'one', 'two', 'three', 'four', 'five'];
+    }
+    if (lower.includes('who is') || lower.includes('who are')) {
+      return ['mother', 'father', 'brother', 'sister', 'I', 'have'];
+    }
+    // "Who lives" or "Who helps" - family members
+    if (lower.includes('who lives') || lower.includes('who helps') || lower.includes('who')) {
+      return ['mother', 'father', 'brother', 'sister', 'My', 'with', 'me'];
+    }
+  }
+  
+  // Age questions
+  if (lower.includes('how old') || lower.includes('age')) {
+    return ['I', 'am', 'years', 'old', 'seven', 'eight', 'nine', 'ten'];
+  }
+  
+  // Name questions
+  if (lower.includes('what is your name') || lower.includes('name')) {
+    return ['My', 'name', 'is', 'I', 'am'];
+  }
+  
+  // Like/preference questions
+  if (lower.includes('do you like') || lower.includes('favorite')) {
+    return ['Yes', 'I', 'like', 'love', 'my', 'favorite', 'is'];
+  }
+  
+  // Generic fallback
+  return ['I', 'am', 'have', 'like', 'my', 'is'];
+}
+
+/**
+ * Parse plain text response to extract ACK, RECAST, QUESTION components
+ * Handles formats like: "Great! Your mother cooks! What does your father do?"
+ * @param {string} plainText - Plain text AI response
+ * @returns {Object} Parsed components {ack, recast, question}
+ */
+function parsePlainTextResponse(plainText) {
+  // Split by sentences (ending with ! or ?)
+  const sentences = plainText.split(/([.!?]\s*)/).filter(s => s.trim().length > 0);
+  
+  let ack = '';
+  let recast = '';
+  let question = '';
+  
+  // Identify components
+  let currentText = '';
+  for (let i = 0; i < sentences.length; i++) {
+    const sentence = sentences[i].trim();
+    if (!sentence) continue;
+    
+    currentText += sentence + ' ';
+    
+    // If ends with punctuation, process
+    if (sentence.endsWith('!') || sentence.endsWith('?') || sentence.endsWith('.')) {
+      const text = currentText.trim();
+      
+      // First short exclamation (≤5 words) = ACK
+      if (!ack && text.match(/^[A-Z][\w\s]{0,20}!$/)) {
+        ack = text.replace(/!$/, '').trim();
+      }
+      // Question at end = QUESTION
+      else if (text.endsWith('?')) {
+        question = text;
+      }
+      // Middle exclamation = RECAST
+      else if (text.endsWith('!') && !ack) {
+        ack = text.replace(/!$/, '').trim();
+      }
+      else if (text.endsWith('!') && ack) {
+        recast = text.replace(/!$/, '').trim();
+      }
+      
+      currentText = '';
+    }
+  }
+  
+  return { ack, recast, question };
+}
+
+/**
  * Parse AI response from various formats to standardized structure
  * 
  * Supports:
@@ -51,6 +145,23 @@ export function parseAIResponse(rawResponse, fallback = null) {
       }
     }
     
+    // 🔥 FIX: Extract JSON block if response has text + JSON (e.g., "Hello!\n{...}")
+    // This happens when AI returns both plain text and JSON block
+    if (cleanedResponse.includes('{') && cleanedResponse.includes('"ai_response"')) {
+      const jsonStartIndex = cleanedResponse.indexOf('{');
+      const jsonEndIndex = cleanedResponse.lastIndexOf('}');
+      if (jsonStartIndex !== -1 && jsonEndIndex !== -1 && jsonEndIndex > jsonStartIndex) {
+        const potentialJson = cleanedResponse.substring(jsonStartIndex, jsonEndIndex + 1);
+        try {
+          const parsed = JSON.parse(potentialJson);
+          console.log('🔧 responseParser: Extracted JSON from mixed text+JSON response');
+          return normalizeResponse(parsed, rawResponse);
+        } catch (e) {
+          // Continue with full string parsing
+        }
+      }
+    }
+    
     // Try parsing
     const parsed = JSON.parse(cleanedResponse);
     return normalizeResponse(parsed, rawResponse);
@@ -58,10 +169,21 @@ export function parseAIResponse(rawResponse, fallback = null) {
   } catch (error) {
     // JSON parsing failed - treat as plain text
     console.warn('⚠️ responseParser: JSON parse failed, using plain text fallback');
+    const plainText = rawResponse.replace(/```json|```/g, '').trim();
+    
+    // 🔥 Parse plain text to extract ACK+RECAST+QUESTION
+    const parsed = parsePlainTextResponse(plainText);
+    
+    // 🔥 Generate contextual hints from the question
+    const contextualHints = generateHintsFromQuestion(parsed.question || plainText);
+    
     return {
-      ai_response: rawResponse.replace(/```json|```/g, '').trim(),
-      pedagogy_note: 'Plain text response (non-JSON)',
-      suggested_hints: [],
+      ai_response: plainText, // Full text for fallback
+      teacher_ack: parsed.ack || '',
+      teacher_recast: parsed.recast || '',
+      teacher_question: parsed.question || plainText,
+      pedagogy_note: 'Plain text response (non-JSON) [Auto-fixed: Parsed ACK+RECAST+QUESTION]',
+      suggested_hints: contextualHints,
       mission_status: null,
       grammar_focus: null,
       raw: rawResponse
@@ -103,6 +225,24 @@ function normalizeResponse(parsed, rawResponse) {
   const uniqueHints = [...new Set(individualWords)];
   
   console.log('🔄 Hints normalization:', hintsArray, '→', uniqueHints);
+  
+  // 🔥 V27 FORMAT: {teacher_ack, teacher_recast, teacher_encouragement, teacher_question}
+  const isV27Format = parsed.teacher_ack !== undefined || parsed.teacher_question !== undefined;
+  if (isV27Format) {
+    console.log('✨ V27 FORMAT DETECTED');
+    return {
+      ack: parsed.teacher_ack || '',
+      recast: parsed.teacher_recast || '',
+      encouragement: parsed.teacher_encouragement || '',
+      question: parsed.teacher_question || '',
+      hints: uniqueHints,
+      mission_status: parsed.mission_status || null,
+      current_turn: parsed.current_turn || null,
+      total_turns: parsed.total_turns || null,
+      raw: rawResponse,
+      format: 'v27'
+    };
+  }
   
   // 🔥 NEW: Support Artifact v5.0 format (ack, recast, bridge, question, hints)
   const isArtifactFormat = parsed.ack !== undefined || parsed.question !== undefined;
@@ -178,12 +318,17 @@ export function validateResponse(response, options = {}) {
   // Clone to avoid mutation
   const validated = { ...response };
 
-  // Check 1: Response too short
-  if (!validated.ai_response || validated.ai_response.length < minLength) {
+  // 🔥 NEW: Support both formats - check ai_response OR question field
+  const responseText = validated.ai_response || validated.question || '';
+  const hasQuestion = responseText.includes('?');
+
+  // Check 1: Response too short (skip for new format - it's validated by responseGuard)
+  if (!validated.question && (!validated.ai_response || validated.ai_response.length < minLength)) {
     console.warn(`⚠️ responseParser: Response too short (${validated.ai_response?.length || 0} chars)`);
     
     if (autoFix) {
       validated.ai_response = 'Great! How are you?';
+      if (!validated.pedagogy_note) validated.pedagogy_note = '';
       validated.pedagogy_note += ' [Auto-fixed: Safe fallback]';
     } else {
       throw new Error(`Response too short: ${validated.ai_response?.length || 0} chars (minimum: ${minLength})`);
@@ -191,24 +336,32 @@ export function validateResponse(response, options = {}) {
   }
 
   // Check 2: Missing question (if required)
-  if (requireQuestion && !validated.ai_response.includes('?')) {
+  if (requireQuestion && !hasQuestion) {
     console.warn('⚠️ responseParser: Missing question mark');
     
-    if (autoFix) {
+    if (autoFix && validated.ai_response) {
       validated.ai_response += ' How about you?';
+      if (!validated.pedagogy_note) validated.pedagogy_note = '';
       validated.pedagogy_note += ' [Auto-fixed: Added question]';
     } else {
       throw new Error('Response missing required question');
     }
   }
 
-  // Check 3: Missing hints for questions
-  if (validated.ai_response.includes('?') && 
-      (!validated.suggested_hints || validated.suggested_hints.length === 0)) {
+  // Check 3: Missing hints for questions (use hints from either format)
+  const hintsArray = validated.suggested_hints || validated.hints || [];
+  if (hasQuestion && hintsArray.length === 0) {
     console.warn('⚠️ responseParser: Question asked but no hints provided');
     
     if (autoFix) {
-      validated.suggested_hints = ['I', 'like', 'my', 'is', 'am', 'have'];
+      const defaultHints = ['I', 'like', 'my', 'is', 'am', 'have'];
+      if (validated.suggested_hints !== undefined) {
+        validated.suggested_hints = defaultHints;
+      }
+      if (validated.hints !== undefined) {
+        validated.hints = defaultHints;
+      }
+      if (!validated.pedagogy_note) validated.pedagogy_note = '';
       validated.pedagogy_note += ' [Auto-fixed: Added basic hints]';
     }
   }

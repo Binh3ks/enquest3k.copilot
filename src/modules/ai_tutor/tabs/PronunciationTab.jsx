@@ -5,6 +5,7 @@ import { getCurrentWeekData } from '../../../data/weekData';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import { getAiTutorResponse } from '../../../services/api';
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
+import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
 /**
  * Pronunciation Tab - Practice speaking target vocabulary with AI assessment
@@ -14,10 +15,14 @@ import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 
  * - Detailed feedback on accuracy
  */
 const PronunciationTab = () => {
-  const { currentWeek, user } = useUserStore();
+  const { user } = useUserStore();
+  const location = useLocation(); // 🔥 Get location from react-router
   
-  // 🔥 Universal Progress System Integration
-  const weekNumber = parseInt(currentWeek?.replace('week-', '') || '1');
+  // 🔥 Parse weekId from pathname: /week/2/ai-tutor -> 2
+  const weekNumber = parseInt(location.pathname.match(/\/week\/(\d+)/)?.[1] || '1');
+  const currentWeek = `week-${weekNumber}`;
+  
+  console.log('📍 PronunciationTab - Week detected:', weekNumber, 'from pathname:', location.pathname);
   const { savedData, saveProgress } = useStationProgress(weekNumber, 'ai_pronunciation');
   
   const [weekData, setWeekData] = useState(null);
@@ -34,18 +39,28 @@ const PronunciationTab = () => {
 
   // Load week data
   useEffect(() => {
-    const data = getCurrentWeekData(currentWeek || 'week-1');
-    setWeekData(data);
-    
-    // Debug: Log vocabulary count
-    if (data) {
-      const newWords = data?.global_vocab || data?.target_vocab || data?.vocabulary || [];
-      const wordPower = data?.word_power?.words || [];
-      console.log('📚 Pronunciation Tab - Vocabulary loaded:');
-      console.log('  - New Words:', newWords.length, 'words');
-      console.log('  - Word Power:', wordPower.length, 'words');
-      console.log('  - TOTAL:', newWords.slice(0, 10).length + wordPower.slice(0, 3).length, 'words (10 + 3)');
-    }
+    const loadData = async () => {
+      console.log('📚 PronunciationTab loading data for:', currentWeek);
+      const data = await getCurrentWeekData(currentWeek);
+      setWeekData(data);
+      
+      // Debug: Log vocabulary count with priority order
+      if (data) {
+        // Priority: target_vocab (syllabus) > global_vocab (station data) > vocabulary (legacy)
+        const newWords = data?.target_vocab || data?.global_vocab || data?.vocabulary || [];
+        const wordPower = data?.word_power?.words || [];
+        
+        console.log('📚 PronunciationTab - Vocabulary sources:', {
+          target_vocab: data?.target_vocab?.length || 0,
+          global_vocab: data?.global_vocab?.length || 0,
+          vocabulary: data?.vocabulary?.length || 0,
+          word_power: wordPower.length || 0,
+          final_new_words: newWords.length,
+          total: newWords.slice(0, 10).length + wordPower.slice(0, 3).length
+        });
+      }
+    };
+    loadData();
   }, [currentWeek]);
 
   // Initialize Web Speech Recognition
@@ -114,10 +129,11 @@ const PronunciationTab = () => {
   }, []);
 
   // Get vocabulary from week data: 10 New Words + 3 Word Power = 13 từ
-  const newWords = weekData?.global_vocab || weekData?.target_vocab || weekData?.vocabulary || [];
+  // Priority: target_vocab (week_XX_real.js syllabus) > global_vocab (station data) > vocabulary (legacy)
+  const newWords = weekData?.target_vocab || weekData?.global_vocab || weekData?.vocabulary || [];
   const wordPower = weekData?.word_power?.words || [];
   
-  // Kết hợp: 10 New Words + 3 Word Power
+  // Kết hợp: 10 New Words (or 7 from syllabus) + 3 Word Power
   const vocabularyList = [...newWords.slice(0, 10), ...wordPower.slice(0, 3)];
   const currentWord = vocabularyList[currentWordIndex];
   const totalWords = vocabularyList.length;
@@ -127,24 +143,42 @@ const PronunciationTab = () => {
     currentWordRef.current = currentWord;
   }, [currentWord]);
 
-  // Text-to-Speech using 4-layer TTS
+  // Text-to-Speech using 4-layer TTS with immediate fallback
   const speakWord = async (word) => {
+    console.log('🔊 Speaking word:', word);
+    
+    // 🔥 IMMEDIATE BROWSER TTS (most reliable)
+    if ('speechSynthesis' in window) {
+      try {
+        window.speechSynthesis.cancel(); // Clear any pending speech
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.85;
+        utterance.pitch = 1.0;
+        utterance.volume = 1.0;
+        
+        utterance.onend = () => console.log('✅ Speech finished');
+        utterance.onerror = (e) => console.error('❌ Speech error:', e);
+        
+        window.speechSynthesis.speak(utterance);
+        console.log('✅ Browser TTS started');
+        return; // Success - exit early
+      } catch (browserError) {
+        console.error('❌ Browser TTS failed:', browserError);
+        // Continue to try textToSpeech below
+      }
+    }
+    
+    // Try advanced TTS (may fail if API unavailable)
     try {
       await textToSpeech(word, {
-        voice: 'nova', // Default voice
+        voice: 'nova',
         autoPlay: true,
         speed: 0.8
       });
+      console.log('✅ Advanced TTS succeeded');
     } catch (error) {
-      console.error('TTS Error:', error);
-      // Fallback to browser TTS
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(word);
-        utterance.lang = 'en-US';
-        utterance.rate = 0.8;
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(utterance);
-      }
+      console.error('⚠️ Advanced TTS failed, already used browser fallback:', error);
     }
   };
 

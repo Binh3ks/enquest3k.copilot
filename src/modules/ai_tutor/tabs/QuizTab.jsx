@@ -4,13 +4,20 @@ import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
+import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
 /**
  * Quiz Tab - Test vocabulary and grammar knowledge
  * Syllabus-aware quizzes with immediate feedback
  */
 const QuizTab = () => {
-  const { currentWeek } = useUserStore();
+  const location = useLocation(); // 🔥 Get location from react-router
+  
+  // 🔥 Parse weekId from pathname: /week/2/ai-tutor -> 2
+  const weekNumber = parseInt(location.pathname.match(/\/week\/(\d+)/)?.[1] || '1');
+  const currentWeek = `week-${weekNumber}`;
+  
+  console.log('📍 QuizTab - Week detected:', weekNumber, 'from pathname:', location.pathname);
   const [weekData, setWeekData] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -51,15 +58,33 @@ const QuizTab = () => {
 
   // Load week data and generate questions
   useEffect(() => {
-    const data = getCurrentWeekData(currentWeek || 'week-1');
-    setWeekData(data);
-    
-    // Support both global_vocab and vocabulary fields
-    const vocabArray = data?.global_vocab || data?.vocabulary || [];
-    if (vocabArray.length > 0) {
-      const generatedQuestions = generateQuestions(vocabArray);
-      setQuestions(generatedQuestions);
-    }
+    const loadData = async () => {
+      console.log('🧠 QuizTab loading data for:', currentWeek);
+      const data = await getCurrentWeekData(currentWeek);
+      setWeekData(data);
+      
+      // Support multiple vocabulary field names:
+      // - target_vocab (from week_XX_real.js syllabus files)
+      // - global_vocab (from station data files)
+      // - vocabulary (legacy format)
+      const vocabArray = data?.target_vocab || data?.global_vocab || data?.vocabulary || [];
+      
+      console.log('📚 QuizTab vocabulary sources:', {
+        target_vocab: data?.target_vocab?.length || 0,
+        global_vocab: data?.global_vocab?.length || 0,
+        vocabulary: data?.vocabulary?.length || 0,
+        final: vocabArray.length
+      });
+      
+      if (vocabArray.length > 0) {
+        const generatedQuestions = generateQuestions(vocabArray);
+        console.log('✅ Generated', generatedQuestions.length, 'quiz questions');
+        setQuestions(generatedQuestions);
+      } else {
+        console.warn('⚠️ No vocabulary found for quiz generation');
+      }
+    };
+    loadData();
   }, [currentWeek]);
 
   const currentQuestion = questions[currentQuestionIndex];

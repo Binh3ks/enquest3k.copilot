@@ -1,51 +1,38 @@
 export default {
   grammar_explanation: {
-    title_en: "This is my... (Possession)",
-    title_vi: "Đây là... của tôi (Sở hữu)",
+    title_en: "This is my...",
+    title_vi: "Đây là... của tôi",
     rules: [
-      {
-        id: 1,
-        rule: "**This is my** + (thing)",
-        example_simple: "This is my cat.",
-        example_vi: "Đây là mèo của tôi.",
-        note: "Use 'This is my...' to show it is yours."
-      },
-      {
-        id: 2,
-        rule: "**My** + (thing) + **is** + (how it is)",
-        example_simple: "My mom is nice.",
-        example_vi: "Mẹ tôi tốt.",
-        note: "Use 'My... is...' to tell about it."
-      },
-      {
-        id: 3,
-        rule: "**I love my** + (thing)",
-        example_simple: "I love my home.",
-        example_vi: "Tôi yêu nhà tôi.",
-        note: "Use 'I love my...' to show you like it."
-      }
+      { type: "rule", icon: "1️⃣", rule_en: "This is my + [person]", rule_vi: "This is my + [người]" },
+      { type: "rule", icon: "2️⃣", rule_en: "We are a team", rule_vi: "We are a team (Chúng tôi là đội)" },
+      { type: "rule", icon: "3️⃣", rule_en: "I love my family", rule_vi: "I love my family (Tôi yêu gia đình)" }
     ]
   },
   exercises: [
-    { id: 1, type: "fill", question: "_____ is my home.", answer: "This", hint: "This is..." },
-    { id: 2, type: "mc", question: "This is _____ mom.", options: ["my", "your"], answer: "my", hint: "my mom" },
-    { id: 3, type: "unscramble", question: "Sort:", words: ["This", "is", "my", "dad"], answer: "This is my dad.", hint: "This is..." },
-    { id: 4, type: "fill", question: "My cat _____ (be) soft.", answer: "is", hint: "My cat is..." },
-    { id: 5, type: "mc", question: "_____ is my dog.", options: ["This", "These"], answer: "This", hint: "This is..." },
-    { id: 6, type: "unscramble", question: "Sort:", words: ["I", "love", "my", "home"], answer: "I love my home.", hint: "I love..." },
-    { id: 7, type: "fill", question: "This is _____ (I) room.", answer: "my", hint: "my room" },
-    { id: 8, type: "mc", question: "My baby _____ small.", options: ["is", "are"], answer: "is", hint: "She is..." },
-    { id: 9, type: "fill", question: "Make: 'This / my / book'", answer: ["This is my book.", "this is my book."], customCheck: true, hint: "This is my..." },
-    { id: 10, type: "fill", question: "My dog _____ (be) fun.", answer: "is", hint: "My dog is..." },
-    { id: 11, type: "fill", question: "My mom _____ (be) nice.", answer: "is", hint: "She is..." },
-    { id: 12, type: "unscramble", question: "Sort:", words: ["my", "This", "is", "toy"], answer: "This is my toy.", hint: "This is..." },
-    { id: 13, type: "fill", question: "_____ is my bed.", answer: "This", hint: "This is..." },
-    { id: 14, type: "mc", question: "I _____ my home.", options: ["love", "like"], answer: "love", hint: "I love..." },
-    { id: 15, type: "fill", question: "This is _____ (I) cat.", answer: "my", hint: "my cat" },
-    { id: 16, type: "unscramble", question: "Sort:", words: ["is", "My", "dad", "big"], answer: "My dad is big.", hint: "My dad..." },
-    { id: 17, type: "fill", question: "Make: 'My / baby / small'", answer: ["My baby is small.", "my baby is small."], customCheck: true, hint: "My baby is..." },
-    { id: 18, type: "mc", question: "This _____ my book.", options: ["is", "are"], answer: "is", hint: "This is..." },
-    { id: 19, type: "fill", question: "My cat is _____ (soft/hard).", answer: "soft", hint: "soft" },
-    { id: 20, type: "fill", question: "I love my _____.", answer: "home", hint: "home" }
+    // 30% AFFIRMATIVE (6 exercises)
+    { id: 1, type: "fill", question: "This is _____ mother.", answer: "my", hint: "This is + my" },
+    { id: 2, type: "mc", question: "This is _____ father.", options: ["I", "my", "me"], answer: "my", hint: "This is + my" },
+    { id: 3, type: "fill", question: "This is _____ family.", answer: "my", hint: "This is + my" },
+    { id: 4, type: "mc", question: "We _____ a team.", options: ["am", "is", "are"], answer: "are", hint: "We + are" },
+    { id: 5, type: "fill", question: "I _____ my family.", answer: "love", hint: "I + love" },
+    { id: 6, type: "mc", question: "This is _____ home.", options: ["I", "my", "me"], answer: "my", hint: "This is + my" },
+
+    // 30% NEGATIVE (6 exercises)
+    { id: 7, type: "fill", question: "This is _____ my brother.", answer: "not", hint: "This is + not" },
+    { id: 8, type: "mc", question: "He is _____ my father.", options: ["not", "no"], answer: "not", hint: "He is + not" },
+    { id: 9, type: "fill", question: "We are _____ sad.", answer: "not", hint: "We are + not" },
+    { id: 10, type: "mc", question: "She is _____ my mother.", options: ["not", "no"], answer: "not", hint: "She is + not" },
+    { id: 11, type: "unscramble", question: "Order:", words: ["is", "This", "not", "my", "sister"], answer: "This is not my sister.", hint: "This is not" },
+    { id: 12, type: "fill", question: "I am _____ at home.", answer: "not", hint: "I am + not" },
+
+    // 40% QUESTIONS (8 exercises)
+    { id: 13, type: "fill", question: "_____ this your mother?", answer: "Is", hint: "Is + this" },
+    { id: 14, type: "mc", question: "_____ you a team?", options: ["Am", "Is", "Are"], answer: "Are", hint: "Are + you" },
+    { id: 15, type: "unscramble", question: "Order:", words: ["is", "Who", "this"], answer: "Who is this?", hint: "Who + is" },
+    { id: 16, type: "fill", question: "_____ he your father?", answer: "Is", hint: "Is + he" },
+    { id: 17, type: "mc", question: "_____ she your sister?", options: ["Am", "Is", "Are"], answer: "Is", hint: "Is + she" },
+    { id: 18, type: "unscramble", question: "Order:", words: ["you", "Do", "love", "your", "family"], answer: "Do you love your family?", hint: "Do you" },
+    { id: 19, type: "fill", question: "_____ you happy?", answer: "Are", hint: "Are + you" },
+    { id: 20, type: "unscramble", question: "Order:", words: ["is", "this", "your", "home"], answer: "Is this your home?", hint: "Is + this" }
   ]
 };

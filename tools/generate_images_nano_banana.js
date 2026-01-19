@@ -152,7 +152,7 @@ async function generateAllImages() {
   // Read cover
   const readTitle = weekData.stations?.read_explore?.title_en || weekData.weekTitle_en;
   const readContent = weekData.stations?.read_explore?.content_en?.substring(0, 100) || '';
-  const readFilename = `read_cover_w${weekId}.jpg`;
+  const readFilename = `read_cover_w${weekId.toString().padStart(2, '0')}.jpg`;
   const readFilepath = path.join(OUTPUT_DIR, readFilename);
 
   const readStyle = mode === 'easy'
@@ -166,7 +166,7 @@ async function generateAllImages() {
   // Explore cover
   const exploreTitle = weekData.stations?.explore?.title_en || 'Exploration';
   const exploreContent = weekData.stations?.explore?.content_en?.substring(0, 100) || '';
-  const exploreFilename = `explore_cover_w${weekId}.jpg`;
+  const exploreFilename = `explore_cover_w${weekId.toString().padStart(2, '0')}.jpg`;
   const exploreFilepath = path.join(OUTPUT_DIR, exploreFilename);
 
   const exploreStyle = mode === 'easy'

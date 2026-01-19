@@ -1,30 +1,12 @@
 export default {
   title: "My Family Squad",
-  image_url: "/images/week2/read_cover_w2.jpg",
-  content_en: "**This** is my **family**. We are a **team**. **This** is my **father**. He is the **leader**. **This** is my **mother**. She is kind. **This** is my **brother**. He is a good **helper**. **This** is my **sister**. She is funny. We **love** each other. We play **together**. We are a happy **family**!",
-  content_vi: "Đây là gia đình tôi. Chúng tôi là một đội. Đây là bố tôi. Ông ấy là người lãnh đạo. Đây là mẹ tôi. Bà ấy tốt bụng. Đây là anh trai tôi. Anh ấy là người giúp đỡ tốt. Đây là em gái tôi. Em ấy vui tính. Chúng tôi yêu thương nhau. Chúng tôi chơi cùng nhau. Chúng tôi là một gia đình hạnh phúc!",
-  audio_url: null,
+  image_url: "/images/week2/read_cover_w02.jpg",
+  content_en: "My **name** is Emma. This is my **family**. We are like a **team**! This is my **mother**. She is the **leader** of our family squad. She helps us every day. This is my **father**. He is strong and kind. He works hard for our family. This is my big **brother**, Tom. He is a good **helper**. He helps me with homework. This is my little **sister**, Lily. She is funny and sweet. We all **love** each other very much. Our **home** is full of love and laughter. We work together as a team. I am happy with my family squad!",
+  content_vi: "Tên tôi là Emma. Đây là gia đình của tôi. Chúng tôi như một đội! Đây là mẹ của tôi. Bà là người lãnh đạo đội gia đình chúng tôi. Bà giúp đỡ chúng tôi mỗi ngày. Đây là bố của tôi. Ông mạnh mẽ và tốt bụng. Ông làm việc chăm chỉ cho gia đình. Đây là anh trai tôi, Tom. Anh ấy là người giúp đỡ tốt. Anh ấy giúp tôi làm bài tập. Đây là em gái tôi, Lily. Em ấy vui tính và dễ thương. Chúng tôi yêu thương nhau rất nhiều. Nhà của chúng tôi đầy yêu thương và tiếng cười. Chúng tôi làm việc cùng nhau như một đội. Tôi hạnh phúc với đội gia đình của mình!",
+  audio_url: "/audio/week2/placeholder.mp3",
   comprehension_questions: [
-    {
-      id: 1,
-      question_en: "Who is the leader?",
-      answer: ["The father", "My father", "Father"],
-      hint_en: "Look for 'He is the leader'",
-      hint_vi: "Tìm 'Ông ấy là người lãnh đạo'"
-    },
-    {
-      id: 2,
-      question_en: "Is the brother a good helper?",
-      answer: ["Yes", "Yes, he is", "Yes, he is a good helper"],
-      hint_en: "Is he a good helper?",
-      hint_vi: "Anh ấy có phải người giúp đỡ tốt không?"
-    },
-    {
-      id: 3,
-      question_en: "Are they a team?",
-      answer: ["Yes", "Yes, they are", "Yes, they are a team"],
-      hint_en: "We are a...",
-      hint_vi: "Chúng tôi là một..."
-    }
+    { id: 1, question_en: "What is the girl's name?", answer: ["Emma", "Her name is Emma"], hint_en: "The first word...", hint_vi: "Tên bắt đầu bằng..." },
+    { id: 2, question_en: "Who is the leader of the family team?", answer: ["Mother", "Her mother", "The mother", "Mom"], hint_en: "The mother is...", hint_vi: "Mẹ là..." },
+    { id: 3, question_en: "What is Emma's brother's name?", answer: ["Tom", "His name is Tom"], hint_en: "T...", hint_vi: "T..." }
   ]
 };

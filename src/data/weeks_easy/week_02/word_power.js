@@ -2,36 +2,39 @@ export default {
   words: [
     {
       id: 1,
-      word: "my home",
-      pronunciation: "/maɪ hoʊm/",
-      definition_vi: "Nhà tôi",
-      definition_en: "The place where I live.",
-      example: "This is my home.",
-      collocation: "love my home",
-      image_url: "/images/week2_easy/wordpower_my_home.jpg",
-      audio_url: "/audio/week2_easy/wordpower_my_home.mp3"
+      word: "take care of",
+      pronunciation: "/teɪk ker əv/",
+      cefr_level: "A1",
+      definition_en: "To look after someone.",
+      definition_vi: "Chăm sóc ai đó.",
+      example: "My mother takes care of me.",
+      model_sentence: "Parents take care of kids.",
+      collocation: "take care of",
+      image_url: "/images/week2_easy/wordpower_take_care_of.jpg"
     },
     {
       id: 2,
-      word: "my mom",
-      pronunciation: "/maɪ mɑːm/",
-      definition_vi: "Mẹ tôi",
-      definition_en: "My mother.",
-      example: "This is my mom.",
-      collocation: "love my mom",
-      image_url: "/images/week2_easy/wordpower_my_mom.jpg",
-      audio_url: "/audio/week2_easy/wordpower_my_mom.mp3"
+      word: "help each other",
+      pronunciation: "/help iːtʃ ˈʌðər/",
+      cefr_level: "A1",
+      definition_en: "To help one another.",
+      definition_vi: "Giúp đỡ nhau.",
+      example: "We help each other.",
+      model_sentence: "Families help each other.",
+      collocation: "help each other",
+      image_url: "/images/week2_easy/wordpower_help_each_other.jpg"
     },
     {
       id: 3,
-      word: "my bed",
-      pronunciation: "/maɪ bed/",
-      definition_vi: "Giường tôi",
-      definition_en: "Where I sleep.",
-      example: "This is my bed.",
-      collocation: "sleep in my bed",
-      image_url: "/images/week2_easy/wordpower_my_bed.jpg",
-      audio_url: "/audio/week2_easy/wordpower_my_bed.mp3"
+      word: "work together",
+      pronunciation: "/wɜːrk təˈɡeðər/",
+      cefr_level: "A1",
+      definition_en: "To do things as a team.",
+      definition_vi: "Làm việc cùng nhau.",
+      example: "We work together.",
+      model_sentence: "Families work together.",
+      collocation: "work together",
+      image_url: "/images/week2_easy/wordpower_work_together.jpg"
     }
   ]
 };

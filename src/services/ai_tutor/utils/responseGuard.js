@@ -441,6 +441,32 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   let bridge = parsed.bridge || ''; // NEW: Artifact v5.0
   let question = parsed.question || parsed.teacher_question || parsed.question_text || '';
   
+  // 🔥 FIX: Parse legacy ai_response format into ACK + QUESTION
+  if (!ack && !question && parsed.ai_response) {
+    const aiResponse = parsed.ai_response.trim();
+    
+    // Split by sentence boundaries (. ! ?)
+    const sentences = aiResponse.split(/([.!?])\s+/).filter(s => s.trim());
+    
+    if (sentences.length >= 2) {
+      // First sentence = ACK (if short)
+      const firstSentence = (sentences[0] + (sentences[1] || '')).trim();
+      if (firstSentence.split(' ').length <= 3) {
+        ack = firstSentence;
+        // Rest = QUESTION
+        question = sentences.slice(2).join(' ').trim();
+      } else {
+        // Entire response is question
+        question = aiResponse;
+      }
+    } else {
+      // Single sentence - treat as question
+      question = aiResponse;
+    }
+    
+    console.log('🔄 Legacy ai_response parsed:', {original: aiResponse, ack, question});
+  }
+  
   // Detect format type
   const isArtifactV5 = parsed.ack !== undefined || (parsed.question !== undefined && parsed.teacher_question === undefined);
   
@@ -498,25 +524,60 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
   } else {
     // 🔥 NORMAL TURN: Force ACK + RECAST + QUESTION
     
-    // Force ACK (if missing or too long)
+    // Force ACK (if missing or too long) - Keep it simple: only 3 words
     if (!ack || ack.trim() === '' || ack.split(' ').length > 3) {
-      ack = 'Great!';
+      const ackOptions = ['Nice!', 'Great!', 'Wonderful!'];
+      ack = ackOptions[Math.floor(Math.random() * ackOptions.length)];
       console.warn('⚠️ AI missing ACK, using fallback:', ack);
     }
     
-    // Force RECAST (if missing) - Use context-aware fallback
+    // 🎯 RECAST: Model student's answer with correct grammar (CRITICAL FOR LEARNING)
+    // This is the key teaching technique - never say "wrong", just model correct form
     if (!recast || recast.trim() === '' || recast.length < 3) {
-      // Try to create a context-aware recast based on current step
-      if (context.currentStepKey === 'name') {
-        recast = 'I heard your name!';
-      } else if (context.currentStepKey === 'age') {
-        recast = 'I know your age now!';
-      } else if (context.currentStepKey === 'student' || context.currentStepKey === 'like_school') {
-        recast = 'Thank you for telling me!';
+      const lastUserMsg = context.chatHistory?.[context.chatHistory.length - 1]?.content || '';
+      if (lastUserMsg && lastUserMsg.trim().length > 0) {
+        // Try to intelligently recast based on current step
+        const stepKey = context.currentStepKey;
+        const msg = lastUserMsg.trim();
+        
+        // 🔥 SUBJECT DETECTION: Check if question is about student or someone else
+        const questionLower = (context.canonicalQuestion || '').toLowerCase();
+        const isAboutMother = questionLower.includes('mother') || questionLower.includes('mom');
+        const isAboutFather = questionLower.includes('father') || questionLower.includes('dad');
+        const isAboutStudent = questionLower.includes('you') || questionLower.includes('your name') || questionLower.includes('your age');
+        
+        // Generate recast based on step context WITH CORRECT SUBJECT
+        if (stepKey === 'name' && !msg.toLowerCase().includes('my name')) {
+          recast = `Your name is ${msg}!`;
+        } else if (stepKey === 'age' && /^\d+$/.test(msg)) {
+          recast = `You are ${msg} years old!`;
+        } else if (msg.toLowerCase().startsWith('yes') || msg.toLowerCase().startsWith('no')) {
+          // For yes/no answers, determine subject from question
+          if (isAboutMother) {
+            recast = msg.toLowerCase().startsWith('yes') ? 'She does!' : 'She doesn\'t!';
+          } else if (isAboutFather) {
+            recast = msg.toLowerCase().startsWith('yes') ? 'He does!' : 'He doesn\'t!';
+          } else if (isAboutStudent) {
+            recast = msg.toLowerCase().startsWith('yes') ? 'You do!' : 'You don\'t!';
+          } else {
+            recast = 'I see!';
+          }
+        } else if (isAboutMother && msg.length > 0 && msg.length < 20) {
+          // Talking about mother - use "She" or "Your mother"
+          recast = `Your mother ${msg}s!`;
+        } else if (isAboutFather && msg.length > 0 && msg.length < 20) {
+          // Talking about father - use "He" or "Your father"
+          recast = `Your father ${msg}s!`;
+        } else if (msg.length < 30) {
+          // For short answers, try to expand into full sentence
+          recast = `I understand!`;
+        } else {
+          recast = ''; // Let ACK be enough for longer responses
+        }
       } else {
-        recast = 'I heard you!';
+        recast = ''; // Empty if no user message
       }
-      console.warn('⚠️ AI missing RECAST, using context-aware fallback:', recast);
+      console.warn('⚠️ AI missing RECAST, generated:', recast || '(ACK only)');
     }
     
     // Force canonical question (LEGACY MODE ONLY)

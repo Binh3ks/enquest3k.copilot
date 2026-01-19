@@ -1,20 +1,13 @@
 export default {
   sentences: [
-    { id: 1, text: "This is my home.", meaning: "Đây là nhà tôi." },
-    { id: 2, text: "This is my mom.", meaning: "Đây là mẹ tôi." },
-    { id: 3, text: "She is nice.", meaning: "Mẹ rất tốt." },
-    { id: 4, text: "This is my dad.", meaning: "Đây là bố tôi." },
-    { id: 5, text: "He is big.", meaning: "Bố to lớn." },
-    { id: 6, text: "This is my baby.", meaning: "Đây là em bé." },
-    { id: 7, text: "She is small.", meaning: "Em bé nhỏ." },
-    { id: 8, text: "This is my cat.", meaning: "Đây là mèo tôi." },
-    { id: 9, text: "It is soft.", meaning: "Nó mềm." },
-    { id: 10, text: "This is my dog.", meaning: "Đây là chó tôi." },
-    { id: 11, text: "It is fun.", meaning: "Nó vui." },
-    { id: 12, text: "This is my room.", meaning: "Đây là phòng tôi." },
-    { id: 13, text: "This is my bed.", meaning: "Đây là giường tôi." },
-    { id: 14, text: "This is my toy.", meaning: "Đây là đồ chơi tôi." },
-    { id: 15, text: "This is my book.", meaning: "Đây là sách tôi." },
-    { id: 16, text: "I love my home.", meaning: "Tôi yêu nhà tôi." }
+    { id: 1, text: "This is my family.", audio_url: "/audio/week2_easy/dictation_1.mp3", meaning: "..." },
+    { id: 2, text: "My mother is kind and makes food for us.", audio_url: "/audio/week2_easy/dictation_2.mp3", meaning: "..." },
+    { id: 3, text: "My father is strong and plays with me.", audio_url: "/audio/week2_easy/dictation_3.mp3", meaning: "..." },
+    { id: 4, text: "My brother helps me with many things.", audio_url: "/audio/week2_easy/dictation_4.mp3", meaning: "..." },
+    { id: 5, text: "My sister is funny and draws pictures.", audio_url: "/audio/week2_easy/dictation_5.mp3", meaning: "..." },
+    { id: 6, text: "We are a great team.", audio_url: "/audio/week2_easy/dictation_6.mp3", meaning: "..." },
+    { id: 7, text: "We love each other and work together.", audio_url: "/audio/week2_easy/dictation_7.mp3", meaning: "..." },
+    { id: 8, text: "Our home is full of happiness.", audio_url: "/audio/week2_easy/dictation_8.mp3", meaning: "..." },
+    { id: 9, text: "I am very lucky to have my family!", audio_url: "/audio/week2_easy/dictation_9.mp3", meaning: "..." }
   ]
 };

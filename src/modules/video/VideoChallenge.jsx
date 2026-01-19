@@ -329,7 +329,7 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
             <textarea 
               value={script}
               onChange={(e) => setScript(e.target.value)}
-              className="w-full h-full p-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:bg-white focus:border-indigo-400 outline-none resize-none text-2xl leading-relaxed text-slate-700 placeholder:text-slate-300"
+              className="w-full h-full p-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:bg-white focus:border-indigo-400 outline-none resize-none text-3xl leading-relaxed text-slate-700 placeholder:text-slate-300"
               placeholder={isVi ? "Viết kịch bản của bạn..." : "Write your script here..."}
             />
             <div className="absolute bottom-4 right-4 text-xs font-bold text-slate-400 bg-white/80 px-2 py-1 rounded-lg border border-slate-100">
@@ -386,7 +386,7 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
           {/* B. PROMPTER LAYER */}
           {!videoBlob && isScriptVisible && (
             <div className="absolute top-0 left-0 right-0 z-20 h-1/4 bg-gradient-to-b from-black/90 to-transparent p-4 overflow-y-auto custom-scrollbar transition-all duration-300">
-                <p className="text-yellow-400 text-3xl font-bold text-center drop-shadow-md leading-relaxed">
+                <p className="text-yellow-400 text-4xl font-bold text-center drop-shadow-md leading-relaxed">
                     {script || "..."}
                 </p>
             </div>

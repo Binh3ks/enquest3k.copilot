@@ -1,0 +1,472 @@
+# ENGQUEST 3K - CRITICAL CHANGES & GOLDEN STANDARD V29
+**Version**: 29 (Module System)
+**Purpose**: Always reference before generating new weeks - Critical bugs and patterns
+
+**READ THIS FILE**: ALWAYS before generating Week 5+ or fixing bugs
+
+---
+
+## 🚨 MANDATORY PROTOCOL: REFERENCE PREVIOUS WEEKS FIRST
+
+**When generating Week N content or fixing bugs, you MUST**:
+
+### 1. READ GOLDEN STANDARD WEEKS (Week 1-4)
+```bash
+# Before coding Week 5+, READ these files:
+src/data/weeks/week_01_real.js  # Simple canonical_question format
+src/data/weeks/week_02_real.js  # Simple canonical_question + object vocab
+src/data/weeks/week_03_real.js  # Simple canonical_question
+src/data/weeks/week_04_real.js  # 🔥 NEW: question_variants + student invitations
+```
+
+**What to check**:
+- ✅ `target_vocab` format: Objects (with definition_vi) or strings?
+- ✅ `objectives` schema: `canonical_question` (Week 1-3) or `question_variants` (Week 4+)?
+- ✅ `question_variants`: 3 variants per objective with scrambled hints?
+- ✅ `student_question_invitation`: Type "invitation" every 3-4 turns?
+- ✅ `minimum_turns` / `maximum_turns`: Week 1-3 (10/8) vs Week 4+ (15/12)?
+- ✅ Export format: `export default`
+- ✅ Fields naming: `stepKey`, `canonical_question`, `ack_options`
+
+---
+
+## 🔥 WEEK 1-3 vs WEEK 4+ SCHEMA PATTERNS
+
+### Pattern 1: Simple Questions (Week 1-3)
+
+**When to use**: Week 1-3, introductory weeks, first-time focus
+
+**Schema**:
+```javascript
+objectives: [
+  {
+    stepKey: "greeting",
+    category: "Introduction",
+    canonical_question: "Hello! What is your name?",  // ONE question
+    hints: ["My", "name", "is", "I", "am"],  // 5-6 individual words
+    target_keywords: ["name", "my", "is"],
+    ack_options: ["Nice!", "Great!", "Wonderful!"],  // 3 only
+    recast_templates: ["Your name is {name}!", "You are {name}!"],
+    success_criteria: "Student provides name"
+  }
+]
+```
+
+**Key features**:
+- `canonical_question`: Single question string
+- `hints`: 5-6 individual words (not full sentence)
+- `minimum_turns`: 10 (Mission 1-2), 8 (Mission 3)
+- NO `question_variants`
+- NO `student_question_invitation`
+
+---
+
+### Pattern 2: Question Variants (Week 4+)
+
+**When to use**: Week 4+, replay value, student engagement
+
+**Schema**:
+```javascript
+objectives: [
+  {
+    stepKey: "what_like_doing",
+    category: "Interests",
+    question_variants: [  // 🔥 3 variants instead of single question
+      {
+        question: "What do you like doing?",
+        hints: ["like", "I", "playing", "reading", "and", "drawing"]  // 6-9 words, scrambled
+      },
+      {
+        question: "What is your favorite activity?",
+        hints: ["favorite", "my", "is", "playing", "reading", "games"]  // Different scramble
+      },
+      {
+        question: "What do you enjoy the most?",
+        hints: ["enjoy", "I", "the", "most", "playing", "reading", "drawing"]  // Different again
+      }
+    ],
+    target_keywords: ["like", "love", "playing", "reading"],
+    ack_options: ["Nice!", "Great!", "Wonderful!"],
+    recast_templates: ["You like {activity}!", "You enjoy {activity}!"],
+    success_criteria: "Student shares activity"
+  },
+  
+  // 🔥 Student question invitation (every 3-4 objectives)
+  {
+    stepKey: "student_question_1",
+    category: "Student Inquiry",
+    type: "invitation",  // Special type for TurnManager
+    question_variants: [
+      { question: "Ask me anything!", hints: [] },
+      { question: "You can ask me a question now!", hints: [] },
+      { question: "Do you have a question for me?", hints: [] }
+    ],
+    target_keywords: ["question", "ask", "what", "how", "why", "yes", "no"],
+    ack_options: ["Great question!", "Good question!"],
+    recast_templates: ["You asked about {topic}!"],
+    success_criteria: "Student asks a question OR declines",
+    allow_skip: true  // Student can say "no"
+  }
+]
+```
+
+**Key features**:
+- `question_variants`: 3 variants per objective
+- `hints`: 6-9 words forming full scrambled sentence
+- `minimum_turns`: 15 (Mission 1-2), 12 (Mission 3)
+- `student_question_invitation`: 1-2 per mission
+- `type: "invitation"`: Special type for invitations
+
+---
+
+## 🔥 CRITICAL: target_vocab MUST BE OBJECTS
+
+### ❌ WRONG (Breaks Quiz & Speak tabs):
+```javascript
+target_vocab: ["happy", "sad", "excited", "funny", "friendly"]  // Just strings
+```
+
+**Why this fails**:
+- Quiz tab needs `definition_vi` for questions → Shows "undefined"
+- Speak tab needs `pronunciation` for IPA display → Shows "undefined"
+- Vocab station needs `example` for sentences → Shows "undefined"
+
+### ✅ CORRECT (Week 2, 3, 4 format):
+```javascript
+target_vocab: [
+  {
+    word: "happy",
+    pronunciation: "/ˈhæpi/",
+    definition_vi: "vui vẻ",
+    definition_en: "feeling very good and joyful",
+    example: "I am happy today.",
+    syllabus_context: "Emotions"
+  },
+  {
+    word: "sad",
+    pronunciation: "/sæd/",
+    definition_vi: "buồn",
+    definition_en: "feeling unhappy",
+    example: "I am sad when it rains.",
+    syllabus_context: "Emotions"
+  }
+  // ... 8-10 total words
+]
+```
+
+**Required fields**:
+- `word`: The vocabulary word
+- `pronunciation`: IPA format
+- `definition_vi`: Vietnamese translation
+- `definition_en`: English definition (max 10 words, A0 level)
+- `example`: Simple sentence using the word
+- `syllabus_context`: Theme/topic
+
+---
+
+## 🔥 RECENT BUG FIXES (Week 4 - Jan 16-17, 2026)
+
+### Bug 1: Logic Lab Format Error
+**Symptom**: Logic Lab station shows "undefined" or blank
+
+**Root Cause**: Component reads `data.puzzles`, but file exported `problems:`
+
+**Fix**:
+```javascript
+// ❌ WRONG:
+export default {
+  problems: [...]  // Component can't find this
+};
+
+// ✅ CORRECT:
+export default {
+  puzzles: [...]  // Component reads data.puzzles
+};
+```
+
+**Prevention**: Always use `puzzles:` in logic.js
+
+---
+
+### Bug 2: Video Queries JSON Key Error
+**Symptom**: `update_videos.js` script fails with "Cannot read property 'map' of undefined"
+
+**Root Cause**: Script expects `data.videos`, but JSON has `"video_queries": [...]`
+
+**Fix**:
+```json
+// ❌ WRONG:
+{
+  "weekId": 4,
+  "video_queries": [...]
+}
+
+// ✅ CORRECT:
+{
+  "weekId": 4,
+  "videos": [...]
+}
+```
+
+**Prevention**: Always use `"videos": [...]` in video_queries.json
+
+---
+
+### Bug 3: Missing Daily Watch Registration
+**Symptom**: Daily Watch station shows blank/white screen despite file existing
+
+**Root Cause**: `DailyWatch.jsx` receives `null` data prop because not registered in index.js
+
+**Fix**:
+```javascript
+// ❌ WRONG (missing import):
+import read from './read.js';
+import vocab from './vocab.js';
+// ... other imports ...
+// ⛔ MISSING: import daily_watch from './daily_watch.js';
+
+const weekData = {
+  stations: {
+    read_explore: read,
+    new_words: vocab,
+    // ⛔ MISSING: daily_watch: daily_watch
+  }
+};
+
+// ✅ CORRECT:
+import read from './read.js';
+import vocab from './vocab.js';
+import daily_watch from './daily_watch.js';  // ✅ MUST IMPORT
+
+const weekData = {
+  stations: {
+    read_explore: read,
+    new_words: vocab,
+    daily_watch: daily_watch  // ✅ MUST REGISTER
+  }
+};
+```
+
+**Prevention**: Always import and register `daily_watch` in index.js
+
+---
+
+### Bug 4: Missing Cover Image URLs
+**Symptom**: Cover images don't display in Read & Explore or CLIL Explore stations
+
+**Root Cause**: Missing `image_url` field or wrong filename
+
+**Fix**:
+```javascript
+// ❌ WRONG (missing image_url):
+export default {
+  title: "My Happy Jar",
+  // ⛔ MISSING: image_url field
+  content_en: "...",
+};
+
+// ❌ WRONG (incorrect filename):
+export default {
+  title: "My Happy Jar",
+  image_url: "/images/week4/read_cover.jpg",  // ⬅️ WRONG: File is read_cover_w04.jpg
+  content_en: "...",
+};
+
+// ✅ CORRECT:
+export default {
+  title: "My Happy Jar",
+  image_url: "/images/week4/read_cover_w04.jpg",  // ✅ Correct filename with _w04 suffix
+  content_en: "...",
+};
+```
+
+**Naming convention**: Use `_w04` suffix (e.g., `read_cover_w04.jpg`, NOT `read_cover.jpg`)
+
+**Prevention**: 
+1. Always add `image_url` field
+2. Check actual filename in `public/images/weekX/` folder
+3. Use `week4_easy` folder for Easy mode
+
+---
+
+### Bug 5: Easy Mode Video Sync
+**Symptom**: Advanced mode has videos, but Easy mode is blank
+
+**Root Cause**: Forgot to run `update_videos.js` script after generating queries
+
+**Fix**:
+```bash
+# Step 1: Generate video queries (Advanced mode only)
+node tools/generate_video_queries.js 4
+
+# Step 2: Run video update script ⬅️ MUST DO THIS
+node tools/update_videos.js 4
+# Output: "✅ Synced Easy mode"
+
+# Step 3: Verify sync
+diff src/data/weeks/week_04/daily_watch.js src/data/weeks_easy/week_04/daily_watch.js
+# Should show: NO DIFFERENCES
+```
+
+**Prevention**: Always run `update_videos.js` after generating queries
+
+---
+
+### Bug 6: Repetitive Voice Configuration
+**Symptom**: Weeks 3, 4, 5 sound monotonous with identical voices
+
+**Root Cause**: Copy-pasted voiceConfig from previous week without changes
+
+**Fix**:
+```javascript
+// ❌ WRONG (Week 3, 4, 5 all identical):
+voiceConfig: {
+  narration: 'en-US-Neural2-D',  // Same for 3 weeks
+  vocabulary: 'en-US-Neural2-F',  // Same for 3 weeks
+  dictation: 'en-US-Neural2-F',
+  questions: 'en-US-Neural2-D',
+  mindmap: 'en-US-Neural2-D'
+}
+
+// ✅ CORRECT (Week 5 - remixed):
+voiceConfig: {
+  narration: 'en-US-Neural2-C',  // ✅ Female (changed from D)
+  vocabulary: 'en-US-Neural2-A',  // ✅ Male (changed from F)
+  dictation: 'en-US-Neural2-I',  // ✅ Male (changed from F)
+  questions: 'en-US-Neural2-E',  // ✅ Female (changed from D)
+  mindmap: 'en-US-Neural2-C'  // Female (matches narration)
+}
+```
+
+**Prevention**: Change at least 3 out of 5 voices when starting new week
+
+---
+
+## 🔥 V28 FORMAT CHANGES (ACK/RECAST/QUESTION)
+
+### OLD Format (V27) - DO NOT USE:
+```json
+{
+  "teacher_ack": "Great!",
+  "teacher_recast": "Your name is Binh!",
+  "teacher_question": "How old are you?",
+  "suggested_hints": ["I", "am", "years", "old"],
+  "mission_status": "continue"
+}
+```
+
+### NEW Format (V28) - USE THIS:
+```json
+{
+  "ack": "Nice!",
+  "recast": "Your name is Binh!",
+  "question": "How old are you?",
+  "suggested_hints": ["I", "am", "years", "old"],
+  "mission_status": "continue"
+}
+```
+
+**Changes**:
+- `teacher_ack` → `ack` (simpler)
+- `teacher_recast` → `recast` (remove "teacher_" prefix)
+- `teacher_question` → `question` (clearer)
+
+---
+
+## 🔥 ACK REDUCTION (6 → 3 Options)
+
+### OLD (V27) - TOO MANY:
+- Great! Perfect! Nice! Wonderful! Excellent! Good!
+
+### NEW (V28) - 3 ONLY:
+- **Nice!** (warm, friendly)
+- **Great!** (encouraging)
+- **Wonderful!** (enthusiastic)
+
+**Why**: More variety = less authentic teacher response. Real teachers use 2-3 favorites consistently.
+
+---
+
+## 🔥 SUBJECT AGREEMENT (RECAST Technique)
+
+### Problem: AI uses wrong subject in RECAST
+
+**Example - Talking about MOTHER**:
+```
+Question: "What does your mother do?"
+Student: "cook"
+❌ WRONG RECAST: "You cook!" ← Wrong subject!
+✅ CORRECT RECAST: "She cooks!" ← Correct subject
+```
+
+### Solution: RECAST must match question subject
+
+| Question Subject | Correct RECAST Subject |
+|------------------|------------------------|
+| "your mother" / "mom" | **She** or **Your mother** |
+| "your father" / "dad" | **He** or **Your father** |
+| "you" / "your name" | **You** |
+| "they" / "children" | **They** |
+
+**Examples**:
+```
+Q: "Is your mother busy?"
+Student: "yes"
+✅ RECAST: "She is busy!" (NOT "You are busy!")
+
+Q: "What does your father do?"
+Student: "works"
+✅ RECAST: "He works!" (NOT "You work!")
+
+Q: "Are you a student?"
+Student: "yes"
+✅ RECAST: "You are a student!" (Correct)
+```
+
+---
+
+## 🔥 DEBUGGING CHECKLIST
+
+Before generating Week N, verify:
+
+### Week File (week_XX_real.js):
+- [ ] `target_vocab` is array of **objects** (not strings)
+- [ ] Each vocab object has 6 required fields
+- [ ] Week 1-3: Use `canonical_question`
+- [ ] Week 4+: Use `question_variants` (3 per objective)
+- [ ] Week 4+: Include 1-2 `student_question_invitation` per mission
+- [ ] `minimum_turns`: 10 (Week 1-3 M1-2), 15 (Week 4+ M1-2), 8/12 (M3)
+- [ ] Export format: `export default weekXRealData;`
+
+### Station Files:
+- [ ] logic.js uses `puzzles:` (not `problems:`)
+- [ ] video_queries.json uses `"videos": [...]` (not `"video_queries": [...]`)
+- [ ] read.js has `image_url` field with correct filename
+- [ ] explore.js has `image_url` field with correct filename
+- [ ] index.js imports AND registers `daily_watch`
+- [ ] voiceConfig remixed (3+ different from previous week)
+
+### Cross-References:
+- [ ] vocab.js has 10 words
+- [ ] read.js bolds vocab words (at least 5 out of 10)
+- [ ] dictation.js sentence count matches read.js
+- [ ] shadowing.js matches dictation.js + audio_url
+- [ ] word_match.js has all 10 vocab words
+
+---
+
+## 🔥 QUICK REFERENCE: Week Format Decision
+
+| Week | Format | Rationale |
+|------|--------|-----------|
+| 1-3 | `canonical_question` | Introductory, first-time focus |
+| 4+ | `question_variants` | Replay value, student engagement |
+| 5+ | `question_variants` (default) | Better engagement, more variety |
+
+**Default Rule**: Use `question_variants` (Week 4+ format) for all new weeks unless syllabus specifically requires simpler format.
+
+---
+
+**END OF CRITICAL CHANGES**
+
+Next: Read 03_CEFR_GUIDELINES.txt for vocabulary and grammar rules.

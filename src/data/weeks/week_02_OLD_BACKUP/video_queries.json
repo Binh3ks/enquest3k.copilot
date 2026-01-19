@@ -1,0 +1,39 @@
+{
+  "weekId": 2,
+  "theme": "My Family Squad",
+  "grammar": "Possessive pronouns, Demonstratives",
+  "topic": "Family members",
+  "science": "Human life cycle",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "TOPIC",
+      "query": "family members father mother brother sister",
+      "backup_query": "family song kids"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "query": "this is my family introduction",
+      "backup_query": "this is demonstratives grammar"
+    },
+    {
+      "id": 3,
+      "purpose": "GRAMMAR",
+      "query": "possessive pronouns my your his her",
+      "backup_query": "my your his her grammar"
+    },
+    {
+      "id": 4,
+      "purpose": "TOPIC",
+      "query": "meet my family conversation",
+      "backup_query": "family members ESL kids"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "query": "human family life cycle growth",
+      "backup_query": "growing up human development"
+    }
+  ]
+}
