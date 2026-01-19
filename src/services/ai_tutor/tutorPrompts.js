@@ -7,6 +7,7 @@
 
 import { TutorModes } from './tutorModes.js';
 import { isV27Format, buildV27StoryPrompt } from './prompts/storyInstructionsV27.js';
+import { buildFreeTalkPrompt } from './freeTalkModes.js';
 
 // Re-export TutorModes for convenience
 export { TutorModes };
@@ -15,6 +16,11 @@ export { TutorModes };
  * Build prompt based on mode and context
  */
 export function buildPrompt(mode, context, userInput, options = {}) {
+  // 🔥 Route Free Talk / Chat modes to dedicated module
+  if (mode === TutorModes.FREE_TALK || mode === TutorModes.CHAT || mode === 'chat' || mode === 'freetalk') {
+    return buildFreeTalkPrompt(mode, context, userInput, options);
+  }
+  
   const systemPrompt = buildSystemPrompt(context);
   const modePrompt = buildModePrompt(mode, context, userInput, options);
   
