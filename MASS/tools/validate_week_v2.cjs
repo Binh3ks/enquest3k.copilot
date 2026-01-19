@@ -292,22 +292,23 @@ class WeekValidatorV2 {
         if (!prompt.text_vi || typeof prompt.text_vi !== 'string') {
           this.errors.push(`starter_prompts[${i}] missing or invalid text_vi`);
         }
-        if (!prompt.type || !['game', 'help', 'chat'].includes(prompt.type)) {
+        if (!prompt.type || !['game', 'help', 'roleplay', 'ask_anything'].includes(prompt.type)) {
           this.errors.push(
-            `starter_prompts[${i}] invalid type "${prompt.type}" (must be game/help/chat)`
+            `starter_prompts[${i}] invalid type "${prompt.type}" (must be game/help/roleplay/ask_anything)`
           );
         }
       });
       
-      // Check distribution (should have 1 game, 1 help, 2 chat)
+      // Check distribution (should have 1 game, 1 help, 1 roleplay, 1 ask_anything)
       const types = ft.starter_prompts.map(p => p.type);
       const gameCount = types.filter(t => t === 'game').length;
       const helpCount = types.filter(t => t === 'help').length;
-      const chatCount = types.filter(t => t === 'chat').length;
+      const roleplayCount = types.filter(t => t === 'roleplay').length;
+      const askCount = types.filter(t => t === 'ask_anything').length;
       
-      if (gameCount !== 1 || helpCount !== 1 || chatCount !== 2) {
+      if (gameCount !== 1 || helpCount !== 1 || roleplayCount !== 1 || askCount !== 1) {
         this.warnings.push(
-          `starter_prompts distribution: ${gameCount} game, ${helpCount} help, ${chatCount} chat (recommended: 1 game, 1 help, 2 chat)`
+          `starter_prompts distribution: ${gameCount} game, ${helpCount} help, ${roleplayCount} roleplay, ${askCount} ask_anything (recommended: 1 of each)`
         );
       }
     }

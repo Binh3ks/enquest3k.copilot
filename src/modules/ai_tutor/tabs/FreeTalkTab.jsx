@@ -440,6 +440,8 @@ const FreeTalkTab = () => {
                     ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
                     : prompt.type === 'help'
                     ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
+                    : prompt.type === 'roleplay'
+                    ? 'bg-gradient-to-r from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 border-2 border-pink-300'
                     : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
                 }`}
                 disabled={isLoading}
@@ -451,36 +453,34 @@ const FreeTalkTab = () => {
         </div>
       )}
 
-      {/* 🔥 Interactive hints area with word suggestions */}
+      {/* 🔥 Interactive hints area - DISABLED (display only, not clickable) */}
       <div className="px-6 py-4 bg-gradient-to-r from-blue-50 to-purple-50 border-t border-blue-200">
         <div className="flex items-center gap-2 mb-3">
           <MessageCircle size={18} className="text-blue-500" />
           <span className="text-base font-semibold text-blue-700">
-            💡 Try building sentences with these words:
+            💡 Gợi ý từ (chỉ tham khảo - hãy gõ câu của bạn):
           </span>
         </div>
         {hints.length > 0 ? (
           <div className="flex gap-2 flex-wrap">
             {hints.map((hint, index) => (
-              <button
+              <div
                 key={index}
-                onClick={() => handleHintClick(hint)}
-                className="px-4 py-3 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-lg text-base font-medium transition-colors border border-blue-300 hover:border-blue-400"
+                className="px-4 py-3 bg-gray-100 text-gray-600 rounded-lg text-base font-medium border border-gray-300 cursor-not-allowed opacity-70"
               >
                 {hint}
-              </button>
+              </div>
             ))}
           </div>
         ) : (
           <div className="flex gap-2 flex-wrap">
             {['My', 'name', 'is', 'I', 'am', 'years', 'old', 'like', 'school', 'teacher', 'friend'].map((word, index) => (
-              <button
+              <div
                 key={index}
-                onClick={() => handleSendMessage(word)}
-                className="px-3 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-sm transition-colors"
+                className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg text-sm cursor-not-allowed opacity-70"
               >
                 {word}
-              </button>
+              </div>
             ))}
           </div>
         )}

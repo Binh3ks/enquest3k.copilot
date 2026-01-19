@@ -1094,12 +1094,12 @@ const week4RealData = {
       "What do you do for fun?"
     ],
     
-    // ✅ FREE TALK 2.0: Starter prompts (Helper/Gamer/Chat modes)
+    // ✅ FREE TALK 2.0: Starter prompts (Fixed buttons for all weeks)
     starter_prompts: [
-      { text_en: "Let's play a guessing game! 🎮", text_vi: "Chơi đoán chữ đi cô!", type: "game" },
-      { text_en: "How do you say 'con mèo'? 🐱", text_vi: "Con mèo tiếng Anh là gì?", type: "help" },
-      { text_en: "I feel happy today! 😊", text_vi: "Hôm nay con vui lắm!", type: "chat" },
-      { text_en: "I love drawing! 🎨", text_vi: "Con thích vẽ lắm!", type: "chat" }
+      { text_en: "I want to play games! 🎮", text_vi: "Tôi muốn chơi game!", type: "game" },
+      { text_en: "Translate this for me... 📖", text_vi: "Dịch giúp con câu/chữ này...", type: "help" },
+      { text_en: "Let's do roleplay! 🎭", text_vi: "Chơi nhập vai đi cô!", type: "roleplay" },
+      { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
     ]
   }
 };
