@@ -144,15 +144,15 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     }
 
     // --- D. TRANSLATION / HELPER MODE (NO CHIT-CHAT) ---
-    // Trigger: "translate", "là gì", "how to say", OR continuation after "What word?"
+    // Trigger: "translate", "là gì", "how to say", OR continuation after friendly prompt
     const isTranslationRequest =
       lowerUser.includes("translate") ||
       lowerUser.includes("nghĩa là gì") ||
       lowerUser.includes("là gì") ||
       lowerUser.includes("how to say") ||
       lowerUser.includes("tiếng anh") ||
-      lowerAI.includes("what word") ||  // 🔥 FIX: Changed from "which word" to "what word"
-      lowerAI.includes("what do you want to translate");
+      lowerAI.includes("what word") ||
+      lowerAI.includes("what do you want to learn");
 
     if (isTranslationRequest) {
       // 🔥 CRITICAL: If user said "Translate this", ask what word
@@ -163,7 +163,7 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
         
         RESPOND IN THIS JSON FORMAT:
         {
-          "ai_response": "What word?",
+          "ai_response": "What word do you want to learn? 😊",
           "suggested_hints": ["cat", "dog", "fish", "bird", "tree"]
         }
         `;
@@ -206,10 +206,11 @@ export const generateTutorPrompt = (mode, context, userMessage, options = {}) =>
     INSTRUCTIONS:
     1. IF this is the first message (user says "[SYSTEM: Start conversation]"), respond:
        "Hello! I am Ms. Nova 🌟. Click a button below to Play, Roleplay or Chat! 👇"
-    2. IF user says a noun (e.g. "Shark"), Say: "Wow! A Shark! 🦈 Big and strong."
+    2. IF user says a single English word (e.g. "tiger", "bear", "fox"), offer to translate:
+       "Wow! A tiger! 🐯 Do you want to know the meaning of 'tiger' in Vietnamese?"
     3. Otherwise, respond naturally to what user said
     4. ⛔ NEVER ask "What makes you happy?" or "How are you feeling?"
-    5. Keep responses SHORT (under 25 words).
+    5. Keep responses SHORT (under 30 words).
     6. Use emojis to be friendly.
 
     RESPOND IN THIS JSON FORMAT:
