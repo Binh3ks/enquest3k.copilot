@@ -255,6 +255,7 @@ const StoryMissionTab = () => {
         userMessage: '', // Empty for opening turn
         chatHistory: [],
         context: {
+          missionData: currentMission, // 🔥 V27 format detection
           missionId: currentMission.mission_id,
           missionIndex: missionIndex,
           turnCount: 1,
@@ -481,6 +482,7 @@ const StoryMissionTab = () => {
         userMessage,
         chatHistory,
         context: {
+          missionData: currentMission, // 🔥 V27 format detection
           missionId: currentMission.mission_id,
           missionIndex: currentMissionIndex,  // 🔥 CRITICAL: Pass index to select correct mission
           turnCount: turnCount + 1,
