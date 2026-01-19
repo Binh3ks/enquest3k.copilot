@@ -1,0 +1,671 @@
+# ENGQUEST 3K - STATIONS ADVANCED SCHEMA V29
+**Version**: 29 (Module System)
+**Purpose**: Complete schemas for 14 Advanced difficulty stations
+
+**READ THIS FILE**: After V29_STATIONS_CORE.txt, for Advanced difficulty
+
+---
+
+## 🎯 OVERVIEW
+
+This file contains **complete schemas** for all 14 Advanced station files.
+
+**Difficulty level**: Advanced
+- Longer passages (150-200 words)
+- Complex grammar structures
+- Full vocabulary tier (100% target words)
+- More open-ended questions
+
+**REMEMBER**: After reading this once, REUSE context for all 14 files!
+
+---
+
+## 1. VOCAB.JS (~115 lines)
+
+**Purpose**: Wordbank with 10 vocabulary words
+
+**Schema**:
+```javascript
+export default {
+  vocab: [
+    {
+      id: 1,  // Number 1-10
+      word: "happy",  // Target word
+      pronunciation: "/ˈhæpi/",  // IPA notation
+      definition_vi: "vui vẻ",  // Vietnamese meaning
+      definition_en: "feeling very good and joyful",  // English definition
+      example: "I am happy today.",  // Example sentence (5-8 words)
+      collocation: "happy face",  // Common collocation (2-3 words)
+      image_url: "/images/weekX/happy.jpg",  // Image path
+      audio_word: "/audio/weekX/vocab_happy.mp3",  // ⬅️ Word audio
+      audio_definition: "/audio/weekX/vocab_def_happy.mp3",  // ⬅️ Definition audio
+      audio_example: "/audio/weekX/vocab_ex_happy.mp3",  // ⬅️ Example audio
+      audio_collocation: "/audio/weekX/vocab_coll_happy.mp3"  // ⬅️ Collocation audio
+    },
+    // Repeat for 10 words
+  ]
+};
+```
+
+**Rules**:
+- Exactly **10 words** (id: 1-10)
+- pronunciation: Use IPA format from dictionary
+- definition_en: Simple explanation (5-10 words)
+- example: Full sentence using the word (5-8 words)
+- collocation: 2-3 words common phrase
+- Paths: `/images/weekX/` and `/audio/weekX/`
+
+**CRITICAL - Audio Fields**:
+- **Schema has**: ALL 4 audio fields per word (UPDATED from V28)
+- **Total audio files**: 4 audio files per word × 10 words = 40 files
+  - `vocab_happy.mp3` (word only) ✅
+  - `vocab_def_happy.mp3` (definition) ✅
+  - `vocab_ex_happy.mp3` (example) ✅
+  - `vocab_coll_happy.mp3` (collocation) ✅
+- **MUST include** all 4 audio fields in schema (referenced by UI)
+
+**Word selection from syllabus_database.js**:
+- Use vocab.target_vocab array
+- Pick 10 words matching week's theme
+- Choose words at appropriate CEFR level
+
+---
+
+## 2. READ.JS (~50 lines)
+
+**Purpose**: Reading comprehension passage with questions
+
+**Schema**:
+```javascript
+export default {
+  title: "My Happy Jar",  // Catchy title (2-4 words)
+  image_url: "/images/weekX/read_cover_wXX.jpg",  // Cover image
+  
+  content_en: "My name is Sam. I have a **happy** jar at home. Every day, I put **happy** things in my jar...",
+  // 150-200 words
+  // MUST bold vocab words using **word** syntax
+  // 10-14 sentences
+  
+  content_vi: "Tên tôi là Sam. Tôi có một chiếc hũ hạnh phúc ở nhà...",
+  // Vietnamese translation
+  
+  check_questions: [
+    {
+      id: 1,
+      question_en: "What does Sam have at home?",
+      answer: ["a happy jar", "happy jar"],  // Array of acceptable answers
+      hint_en: "It starts with 'h'...",
+      hint_vi: "Nó bắt đầu bằng chữ 'h'..."
+    },
+    // 3 comprehension questions
+  ],
+  
+  question: {
+    text_en: "What makes you feel happy? What do you like to do?",
+    text_vi: "Điều gì làm bạn cảm thấy hạnh phúc? Bạn thích làm gì?",
+    min_words: 30,  // Minimum word count for answer
+    hint_en: "Think about things you enjoy doing...",
+    hint_vi: "Hãy nghĩ về những điều bạn thích làm..."
+  }
+};
+```
+
+**Rules**:
+- content_en: 150-200 words (Advanced)
+- 10-14 sentences
+- **MUST bold** vocab words from vocab.js using **word**
+- check_questions: 3 questions
+- answer: Array of multiple acceptable answers
+- question: Open-ended reflection question
+
+**Writing tips**:
+- Use storyline format (character + problem + resolution)
+- Incorporate ALL 10 vocab words naturally
+- Appropriate grammar for CEFR level
+- Engaging theme matching syllabus
+
+---
+
+## 3. GRAMMAR.JS (~100 lines)
+
+**Purpose**: Grammar exercises focused on week's target grammar
+
+**Schema**:
+```javascript
+export default {
+  grammar_explanation: {
+    title_en: "I like + V-ing (Expressing Preferences)",
+    title_vi: "I like + V-ing (Diễn đạt Sở thích)",
+    rules: [
+      {
+        type: "rule",
+        icon: "1️⃣",
+        rule_en: "Add -ing to verbs after 'like': I like playing",
+        rule_vi: "Thêm -ing vào động từ sau 'like': I like playing"
+      },
+      // 3-5 grammar rules
+    ]
+  },
+  
+  exercises: [
+    // 30% AFFIRMATIVE (6 exercises)
+    {
+      id: 1,
+      type: "fill",  // Types: "fill", "mc", "unscramble"
+      question: "I like _____ (play) games.",
+      answer: "playing",
+      hint: "play + ing"
+    },
+    {
+      id: 2,
+      type: "mc",
+      question: "She likes _____ books.",
+      options: ["read", "reading", "reads"],
+      answer: "reading",
+      hint: "like + V-ing"
+    },
+    
+    // 30% NEGATIVE (6 exercises)
+    {
+      id: 7,
+      type: "fill",
+      question: "I don't like _____ (run).",
+      answer: "running",
+      hint: "don't like + V-ing"
+    },
+    
+    // 40% QUESTIONS (8 exercises)
+    {
+      id: 13,
+      type: "fill",
+      question: "_____ you like playing?",
+      answer: "Do",
+      hint: "Do + you"
+    },
+    {
+      id: 15,
+      type: "unscramble",
+      question: "Order:",
+      words: ["like", "Do", "you", "drawing"],
+      answer: "Do you like drawing?",
+      hint: "Do you like"
+    }
+  ]
+};
+```
+
+**Rules**:
+- **20 exercises total**
+- **30% affirmative** (6 exercises)
+- **30% negative** (6 exercises)
+- **40% questions** (8 exercises)
+- Exercise types:
+  - `fill`: Fill in the blank
+  - `mc`: Multiple choice (3 options)
+  - `unscramble`: Word order
+- Grammar topic from syllabus_database.js
+
+**Exercise design**:
+- Progressive difficulty (easier first)
+- Use vocab words from vocab.js
+- Clear, simple instructions
+- Helpful hints
+
+---
+
+## 4. DICTATION.JS (~40 lines)
+
+**Purpose**: Dictation exercises extracted from reading passage
+
+**Schema**:
+```javascript
+export default {
+  sentences: [
+    {
+      id: 1,
+      text: "My name is Sam.",  // Exact sentence from read.js
+      meaning: "Tên tôi là Sam."  // Vietnamese translation
+    },
+    {
+      id: 2,
+      text: "I have a happy jar at home.",
+      meaning: "Tôi có một chiếc hũ hạnh phúc ở nhà."
+    },
+    // Extract ALL sentences from read.js content_en
+  ]
+};
+```
+
+**CRITICAL RULES**:
+- **MUST** use sentences from read.js content_en
+- Split read.js content by `. ` (period + space)
+- Create 1 dictation exercise per sentence
+- Count should match: 10-14 sentences from read.js = 10-14 dictation exercises
+- text: English sentence
+- meaning: Vietnamese translation
+
+**Extraction process**:
+1. Read read.js content_en
+2. Split by `. ` to get sentences
+3. Remove **bold** syntax: `**happy**` → `happy`
+4. Create dictation object for each sentence
+audio_full: "/audio/weekX/shadowing_full.mp3",  // ⬅️ CRITICAL: Full narration audio at root level!
+  sentences: [
+    {
+      id: 1,
+      text: "My name is Sam.",  // Same as dictation.js
+      vi: "Tên tôi là Sam.",  // ⬅️ Key is 'vi', not 'meaning'!
+      audio_url: "/audio/weekX/shadowing_1.mp3"  // Individual sentence audio
+    },
+    // Same sentences as dictation.js + audio URLs
+  ]
+};
+```
+
+**Rules**:
+- **IDENTICAL** to dictation.js sentences
+- **audio_full**: Root-level field for complete narration (all sentences read together)
+- **Key difference**: Use `vi` (not `meaning`) for Vietnamese translation
+- Add audio_url field for each sentence
+- audio_url: `/audio/weekX/shadowing_X.mp3`
+- Total audio: 1 full + 14 sentences = 15 audio filesmp3"  // Audio file
+    },
+    // Same sentences as dictation.js + audio URLs
+  ]
+};
+```
+
+**Rules**:
+- **IDENTICAL** to dictation.js sentences
+- Add audio_url field for each sentence
+- audio_url: `/audio/weekX/shadowing_X.mp3`
+
+---
+
+## 6. WRITING.JS (~30 lines)
+
+**Purpose**: Writing practice with model sentence and keywords
+
+**Schema**:
+```javascript
+export default {
+  title: "My Favorite Things",  // Writing topic title
+  min_words: 40,  // Minimum word count
+  
+  model_sentence: "I like many things. I like playing with my toys. I like reading story books...",
+  // Model paragraph (60-80 words)
+  // Shows structure and vocabulary usage
+  
+  instruction_en: "Write about things you like to do. Tell us about your favorite activities.",
+  instruction_vi: "Viết về những điều bạn thích làm. Kể cho chúng tôi nghe về các hoạt động yêu thích của bạn.",
+  
+  prompt_en: "What do you like to do? Do you like playing, reading, or drawing? How do these things make you feel?",
+  prompt_vi: "Bạn thích làm gì? Bạn có thích chơi, đọc hay vẽ không? Những điều này khiến bạn cảm thấy thế nào?",
+  
+  keywords: ["like", "playing", "reading", "drawing", "happy", "feel", "favorite"]
+  // 5-7 keywords from vocab.js
+};
+```
+
+**Rules**:
+- min_words: 40 for Advanced
+- model_sentence: 60-80 words showing structure
+- keywords: 5-7 words from vocab.js
+- Prompt: 2-3 guiding questions
+- Theme matches read.js
+
+---
+
+## 7. ASK_AI.JS (~25 lines)
+
+**Purpose**: Speaking prompts for AI conversation practice
+
+**Schema**:
+```javascript
+export default {
+  prompts: [
+    {
+      id: 1,
+      context_en: "You want to know if your friend likes playing games. Ask them.",
+      context_vi: "Bạn muốn biết bạn của mình có thích chơi game không. Hỏi họ.",
+      audio_url: "/audio/weekX/ask_ai_1.mp3",
+      answer: ["Do you like playing?", "Do you like games?", "Do you like playing games?"],
+      // Multiple acceptable answers
+      hint: "Do you like..."
+    },
+    // 5 prompts total
+  ]
+};
+```
+
+**Rules**:
+- **5 prompts** total
+- context_en: Situation description (≤20 words)
+- answer: Array of 2-4 acceptable responses
+- hint: Starting words to help student
+- Use vocab words from vocab.js
+- Prompts should be ≤10 words (student's expected answer)
+
+---
+
+## 8. LOGIC.JS (~60 lines)
+
+**Purpose**: Logical reasoning puzzles using week's theme
+
+**Schema**:
+```javascript
+export default {
+  puzzles: [
+    {
+      id: 1,
+      question_en: "Sam likes reading. Mia likes drawing. Tom likes playing. Who likes reading?",
+      question_vi: "Sam thích đọc. Mia thích vẽ. Tom thích chơi. Ai thích đọc?",
+      answer: ["Sam"],  // Array of acceptable answers
+      hint_en: "Look at the first sentence...",
+      hint_vi: "Nhìn vào câu đầu tiên...",
+      audio_url: "/audio/weekX/logic_1.mp3"
+    },
+    // 5 puzzles total
+  ]
+};
+```
+
+**Rules**:
+- **5 puzzles** total
+- Puzzle types:
+  - Matching (Who likes what?)
+  - Cause-effect (If... then...)
+  - Comparison (more than / less than)
+  - Deduction (Always... so...)
+- Use characters and theme from read.js
+- answer: Array (some puzzles have multiple answers)
+
+---
+
+## 9. EXPLORE.JS (~80 lines)
+
+**Purpose**: CLIL content (Content and Language Integrated Learning)
+
+**Schema**:
+```javascript
+export default {
+  title_en: "The Science of Smiling",
+  title_vi: "Khoa học về Nụ cười",
+  image_url: "/images/weekX/explore_cover_wXX.jpg",
+  
+  content_en: "Do you know that **smiling** makes you feel **happy**? When you smile, your **brain** sends special signals...",
+  // 120-150 words
+  // Cross-curricular content (Science, Social Studies, etc.)
+  // Bold key academic words
+  
+  content_vi: "Bạn có biết rằng cười làm cho bạn cảm thấy hạnh phúc không?...",
+  
+  check_questions: [
+    {
+      id: 1,
+      question_en: "What makes you feel happy?",
+      answer: ["smiling", "smile", "when you smile"],
+      hint_en: "It starts with 's'...",
+      hint_vi: "Nó bắt đầu bằng chữ 's'..."
+    },
+    // 3 questions
+  ],
+  
+  question: {
+    text_en: "Why is smiling important? What happens when you smile?",
+    text_vi: "Tại sao việc cười lại quan trọng? Điều gì xảy ra khi bạn cười?",
+    min_words: 30,
+    hint_en: "Think about how smiling makes you feel...",
+    hint_vi: "Hãy nghĩ về việc cười làm cho bạn cảm thấy thế nào..."
+  }
+};
+```
+
+**Rules**:
+- content_en: 120-150 words
+- **Cross-curricular topic**:
+  - Science (emotions → brain signals)
+  - Social Studies (cultural practices)
+  - Math (counting, patterns)
+  - Geography (places, weather)
+- Bold academic vocabulary
+- 3 comprehension questions
+- 1 reflection question
+
+---
+
+## 10. MINDMAP.JS (~50 lines)
+
+**Purpose**: Sentence building with stems and branches
+
+**Schema**:
+```javascript
+const mindMapContent = {
+  centerStems: [
+    {
+      text: "I like ___.",  // Sentence stem with blank
+      audio: "/audio/weekX/mindmap_stem_1.mp3"
+    },
+    {
+      text: "I feel ___ when I ___.",
+      audio: "/audio/weekX/mindmap_stem_2.mp3"
+    },
+    // 6 sentence stems
+  ],
+  
+  branchLabels: {
+    "I like ___.": [
+      { text: "playing games", audio: "/audio/weekX/mindmap_branch_1.mp3" },
+      { text: "reading books", audio: "/audio/weekX/mindmap_branch_2.mp3" },
+      // 6 branches per stem
+    ],
+    "I feel ___ when I ___.": [
+      { text: "happy when I play", audio: "/audio/weekX/mindmap_branch_7.mp3" },
+      // 6 branches
+    ],
+    // Branches for each stem
+  }
+};
+
+export default mindMapContent;
+```
+
+**Rules**:
+- **6 sentence stems** (centerStems)
+- **6 branches** per stem (36 total branches)
+- Stems use `___` for blanks
+- Branches complete the stems
+- Use grammar pattern from grammar.js
+- Use vocab words from vocab.js
+
+---
+
+## 11. WORD_POWER.JS (~40 lines)
+
+**Purpose**: Collocations and word combinations
+
+**Schema**:
+```javascript
+export default {
+  words: [  // ⬅️ Key is 'words', not 'collocations'!
+    {
+      id: 1,
+      word: "feel happy",  // ⬅️ Full phrase, not single keyword
+      pronunciation: "/fiːl ˈhæpi/",
+      cefr_level: "A1",
+      definition_en: "to have joy inside you",
+      definition_vi: "cảm thấy vui vẻ",
+      example: "I feel happy when I play.",
+      model_sentence: "I feel happy when I sing my favorite song.",
+      collocation: "feel happy about something",
+      image_url: "/images/weekX/wordpower_feel_happy.jpg",
+      audio_word: "/audio/weekX/wordpower_feel_happy.mp3",  // ⬅️ Phrase audio
+      audio_definition: "/audio/weekX/wordpower_def_feel_happy.mp3",  // ⬅️ Definition audio
+      audio_example: "/audio/weekX/wordpower_ex_feel_happy.mp3",  // ⬅️ Example audio
+      audio_collocation: "/audio/weekX/wordpower_coll_feel_happy.mp3",  // ⬅️ Collocation audio
+      audio_model: "/audio/weekX/wordpower_model_feel_happy.mp3"  // ⬅️ Model sentence audio
+    },
+    // 3 phrases total
+  ]
+};
+```
+
+**Rules**:
+- **3 phrases** (not single keywords) - typically 2-word combinations
+- Structure: word, pronunciation, CEFR level, definitions, example, model_sentence, collocation
+- **ALL 5 AUDIO FIELDS** in schema (UPDATED from V28)
+- 1 image per phrase
+- Phrases should relate to week's theme
+- Example format: "feel happy", "make friends", "have fun"
+
+**CRITICAL - Audio Behavior**:
+- **Schema has**: ALL 5 audio fields per phrase
+- **Total audio files**: 5 audio files per phrase × 3 phrases = 15 files
+  - `wordpower_feel_happy.mp3` (phrase) ✅
+  - `wordpower_def_feel_happy.mp3` (definition) ✅
+  - `wordpower_ex_feel_happy.mp3` (example) ✅
+  - `wordpower_coll_feel_happy.mp3` (collocation) ✅
+  - `wordpower_model_feel_happy.mp3` (model sentence) ✅
+- **MUST include** all 5 audio fields in schema (referenced by UI)
+
+---
+
+## 12. DAILY_WATCH.JS (~35 lines)
+
+**Purpose**: Curated video links for week's theme
+
+**Schema**:
+```javascript
+export default {
+  videos: [
+    {
+      id: 1,
+      title: "Feelings Song for Kids",
+      description: "Learn about happy, sad, angry, and other feelings through music.",
+      url: "https://www.youtube.com/watch?v=XXXXXX",
+      thumbnail: "/images/weekX/video_thumb_1.jpg",
+      duration: "3:25",
+      difficulty: "Easy"
+    },
+    // 5 videos total
+  ]
+};
+```
+
+**Rules**:
+- **5 videos** matching theme
+- YouTube URLs (educational content)
+- duration: "MM:SS" format
+- difficulty: "Easy", "Medium", "Hard"
+- Age-appropriate (elementary level)
+
+**Video sources**:
+- Super Simple Songs
+- Dream English Kids
+- Maple Leaf Learning
+- English Singsing
+
+---
+
+## 13. WORD_MATCH.JS (~30 lines)
+
+**Purpose**: Matching game with vocab words
+
+**Schema**:
+```javascript
+export default {
+  pairs: [
+    {
+      id: 1,
+      word: "happy",  // From vocab.js
+      match: "vui vẻ",  // Vietnamese meaning OR English definition
+      image: "/images/weekX/happy.jpg",
+      audio: "/audio/weekX/vocab_happy.mp3"
+    },
+    // 10 pairs (all vocab words)
+  ]
+};
+```
+
+**Rules**:
+- **10 pairs** (all words from vocab.js)
+- word: English word
+- match: Vietnamese translation OR picture description
+- Reuse image/audio from vocab.js
+
+---
+
+## 14. VIDEO_QUERIES.JSON (~30 lines)
+
+**Purpose**: Questions about daily_watch videos
+
+**Schema**:
+```javascript
+export default {
+  queries: [
+    {
+      id: 1,
+      video_id: 1,  // Matches daily_watch.js video id
+      question_en: "What feelings are in the song?",
+      question_vi: "Những cảm xúc nào xuất hiện trong bài hát?",
+      answer: ["happy", "sad", "angry", "excited"],  // Array of acceptable answers
+      hint_en: "Listen for emotion words...",
+      hint_vi: "Nghe để tìm các từ cảm xúc..."
+    },
+    // 5 queries (1 per video)
+  ]
+};
+```
+
+**Rules**:
+- **5 queries** (1 per daily_watch video)
+- video_id matches daily_watch.js
+- answer: Array of keywords to find in video
+- Questions test comprehension and vocabulary
+
+---
+
+## ✅ VALIDATION CHECKLIST
+
+After generating all 14 files, verify:
+
+### Cross-References:
+- [ ] dictation.js sentences = read.js sentences
+- [ ] shadowing.js sentences = dictation.js sentences
+- [ ] read.js bolds vocab words from vocab.js
+- [ ] writing.js keywords from vocab.js
+- [ ] ask_ai.js uses vocab words
+- [ ] word_match.js has all 10 vocab words
+- [ ] video_queries.json has 5 queries (1 per video)
+
+### File Exports:
+- [ ] All files use `export default {}`
+- [ ] No syntax errors
+- [ ] All required fields present
+
+### Theme Consistency:
+- [ ] All 14 files use same theme
+- [ ] Characters consistent (if applicable)
+- [ ] Grammar pattern consistent
+
+### CEFR Compliance:
+- [ ] Vocabulary matches CEFR level
+- [ ] Grammar structures appropriate
+- [ ] Sentence length correct
+- [ ] Complexity suitable
+
+---
+
+## 🚨 COMMON MISTAKES TO AVOID
+
+1. **dictation.js doesn't match read.js**: Always extract exact sentences
+2. **Missing bolded words in read.js**: Check every vocab word is **bolded**
+3. **Wrong word count**: Follow minimums (read: 150-200, explore: 120-150)
+4. **Wrong exercise distribution**: Grammar must be 30-30-40 split
+5. **Inconsistent theme**: All stations must relate to same topic
+
+---
+
+**END OF STATIONS ADVANCED SCHEMA**
+
+You now have complete schemas for all 14 Advanced stations. Generate them in order (vocab → read → grammar → etc.) while reusing this context.
