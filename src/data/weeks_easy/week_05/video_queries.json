@@ -1,0 +1,44 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "priority_search": "English Singsing articles A An grammar ESL kids",
+      "backup_search": "A An articles grammar song ESL kids cartoons",
+      "target_grammar": "Articles A/An",
+      "target_channel": "English Singsing",
+      "purpose": "GRAMMAR"
+    },
+    {
+      "id": 2,
+      "priority_search": "English Singsing house rooms ESL kids vocabulary",
+      "backup_search": "rooms house vocabulary song ESL kids cartoons",
+      "target_grammar": "House rooms vocabulary",
+      "target_channel": "English Singsing",
+      "purpose": "VOCABULARY"
+    },
+    {
+      "id": 3,
+      "priority_search": "Little Fox house story ESL kids",
+      "backup_search": "Vooks house rooms story ESL children",
+      "target_grammar": "House in context",
+      "target_channel": "Little Fox",
+      "purpose": "STORY"
+    },
+    {
+      "id": 4,
+      "priority_search": "furniture vocabulary ESL kids cartoons",
+      "backup_search": "house furniture ESL kids songs",
+      "target_grammar": "Furniture vocabulary",
+      "target_channel": "Super Simple Songs",
+      "purpose": "VOCABULARY"
+    },
+    {
+      "id": 5,
+      "priority_search": "my house rooms furniture ESL kids",
+      "backup_search": "house tour ESL kids vocabulary",
+      "target_grammar": "House description",
+      "target_channel": "Fun Kids English",
+      "purpose": "COMPREHENSION"
+    }
+  ]
+}

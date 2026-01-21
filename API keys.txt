@@ -1,0 +1,13 @@
+# API KEYS FOR TOOLS
+
+# Youtube Data API key
+Youtube Data API: AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU
+
+# GEMINI_API_KEY
+GEMINI_API_KEY: AIzaSyBe8oZZS0FkyCB-8KcKLUWxm-t7ALtZoKg
+
+# Google Cloude Text to speech
+Google Cloude Text to speech: AIzaSyBKYuYuGW6c8gbkmeJVdCRKb15MXcdPmH8
+
+# OpenAI TTS
+OpenAI TTS: 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

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clear 20Q Cache</title></head>
+<body>
+<h1>Clear 20 Questions Cache</h1>
+<button onclick="clearCache()">Clear Cache Now</button>
+<pre id="output"></pre>
+<script>
+function clearCache() {
+  const output = document.getElementById('output');
+  
+  // Clear localStorage
+  const keys = Object.keys(localStorage);
+  const removed = [];
+  keys.forEach(key => {
+    if (key.includes('chat_') || key.includes('week5') || key.includes('twenty')) {
+      removed.push(key);
+      localStorage.removeItem(key);
+    }
+  });
+  
+  output.textContent = `✅ Cleared ${removed.length} items:\n${removed.join('\n')}`;
+  
+  setTimeout(() => {
+    window.location.href = 'http://localhost:5173/week/5/new_words';
+  }, 1000);
+}
+</script>
+</body>
+</html>
