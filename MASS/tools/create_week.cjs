@@ -30,15 +30,15 @@ if (!weekNum) {
 }
 
 const weekId = parseInt(weekNum);
-const specFile = path.join(__d70));
+const specFile = path.join(__dirname, '../SPECS', `week_${String(weekId).padStart(2, '0')}_spec.json`);
+const weekDir = path.join(__dirname, '../../src/data/weeks', `week_${String(weekId).padStart(2, '0')}`);
+
+console.log('='.repeat(70));
 console.log(`🚀 MASS PRODUCTION - STATION FILES ONLY - WEEK ${weekNum}`);
 console.log('='.repeat(70) + '\n');
 
 console.log('⚠️  NOTE: This script generates STATIONS only (28 files)');
-console.log('   For AI Tutor: Run generate_ai_tutor.cjs separately
-console.log('\n' + '='.repeat(60));
-console.log(`🚀 MASS PRODUCTION - CREATING WEEK ${weekNum}`);
-console.log('='.repeat(60) + '\n');
+console.log('   For AI Tutor: Run generate_ai_tutor.cjs separately\n');
 
 // ===== STEP 1: GENERATE SPEC =====
 console.log('📋 STEP 1: Generate Spec\n');
@@ -66,14 +66,15 @@ console.log(`   Title: ${spec.title_en} (${spec.title_vi})`);
 console.log(`   CEFR: ${spec.cefr_level}`);
 console.log(`   Vocab: ${spec.vocab_count} words`);
 console.log(`   Topic: ${spec.topic}`);
-console.log(`   Grammar: ${spe70));
+console.log(`   Grammar: ${spec.grammar_focus}\n`);
+
+console.log('='.repeat(70));
 console.log('🤖 STEP 2: Station Files Generation Instructions');
 console.log('='.repeat(70) + '\n');
 
 console.log('📝 Output: 28 Station Files (14 Advanced + 14 Easy)');
 console.log('📏 Total: ~400-500 lines per mode');
-console.log('⏱️  Time: ~40-50 minutes (both modes)\n
-console.log('='.repeat(60) + '\n');
+console.log('⏱️  Time: ~40-50 minutes (both modes)\n');
 
 console.log('📝 Format: Station Files (14 files per week)');
 
@@ -142,40 +143,22 @@ if (existingFiles.length === requiredFiles.length) {
   process.exit(0);
 }
 
-// ===== STEP 4: VALIDATE =====
+// ===== STEP 4: VALIDATE CODE STRUCTURE =====
 console.log('='.repeat(60));
-console.log('✅ STEP 4: Validating Generated Content');
+console.log('✅ STEP 4: Validating Station Code Structure');
 console.log('='.repeat(60) + '\n');
 
 try {
   execSync(`node "${path.join(__dirname, 'validate_week_v2.cjs')}" ${weekNum}`, { 
     stdio: 'inherit',
     cwd: path.join(__dirname, '../..')
-  });70));
-  console.log(`🎉 SUCCESS! Week ${weekNum} Station Files Ready!`);
-  console.log('='.repeat(70) + '\n');
+  });
   
-  console.log('📦 Next steps:\n');
-  console.log(`   1. Generate AI Tutor:`);
-  console.log(`      node MASS/tools/generate_ai_tutor.cjs ${weekNum}`);
-  console.log(`   `);
-  console.log(`   2. Generate Assets:`);
-  console.log(`      node tools/update_videos.js ${weekNum}  # ⬅️ Fetch YouTube videos`);
-  console.log(`      node tools/generate_images_nano.js ${weekNum}`);
-  console.log(`      node tools/generate_audio.js ${weekNum} ${weekNum}`);
-  console.log(`   `);
-  console.log(`   3. Test in UI:`);
-  console.log(`      npm run dev`);
-  console.log(`   `);
-  console.log(`   4. Commit:`);
-  console.log(`      git add src/data/weeks/week_${String(weekId).padStart(2, '0')}/`);
-  console.log(`      git add src/data/weeks_easy/week_${String(weekId).padStart(2, '0')}/`);
-  console.log(`      git commit -m "Week ${weekNum}: ${spec.title_en}"`);
-  console.log('\n');
+  console.log('\n✅ Station code structure validated\n');
   
 } catch (error) {
   console.log('\n' + '='.repeat(60));
-  console.log(`❌ VALIDATION FAILED for Week ${weekNum}`);
+  console.log(`❌ CODE VALIDATION FAILED for Week ${weekNum}`);
   console.log('='.repeat(60) + '\n');
   
   console.log('🔧 Fix the errors above, then re-run:\n');
@@ -183,3 +166,69 @@ try {
   
   process.exit(1);
 }
+
+// ===== STEP 5: VALIDATE ASSETS =====
+console.log('='.repeat(60));
+console.log('📦 STEP 5: Validating Asset Requirements');
+console.log('='.repeat(60) + '\n');
+
+console.log('🔍 Checking Advanced mode assets...\n');
+try {
+  execSync(`node "${path.join(__dirname, 'validate_assets.cjs')}" ${weekNum} advanced`, { 
+    stdio: 'inherit',
+    cwd: path.join(__dirname, '../..')
+  });
+  console.log('✅ Advanced assets validated\n');
+} catch (error) {
+  console.log('⚠️  Advanced assets missing - will need generation\n');
+}
+
+console.log('🔍 Checking Easy mode assets...\n');
+try {
+  execSync(`node "${path.join(__dirname, 'validate_assets.cjs')}" ${weekNum} easy`, { 
+    stdio: 'inherit',
+    cwd: path.join(__dirname, '../..')
+  });
+  console.log('✅ Easy assets validated\n');
+} catch (error) {
+  console.log('⚠️  Easy assets missing - will need generation\n');
+}
+
+// ===== SUCCESS MESSAGE =====
+console.log('\n' + '='.repeat(70));
+console.log(`🎉 SUCCESS! Week ${weekNum} Station Files Ready!`);
+console.log('='.repeat(70) + '\n');
+
+console.log('📦 Next steps:\n');
+console.log(`   1. Generate AI Tutor (if not done):`);
+console.log(`      node MASS/tools/generate_ai_tutor.cjs ${weekNum}`);
+console.log(`   `);
+console.log(`   2. Generate Assets:`);
+console.log(`      # Advanced mode`);
+console.log(`      node tools/generate_complete_audio.js ${weekNum}  # 141 audio files`);
+console.log(`      node tools/generate_images_nano.js ${weekNum}     # 20 images`);
+console.log(`      node MASS/tools/validate_assets.cjs ${weekNum} advanced  # ✅ Validate`);
+console.log(`      `);
+console.log(`      # Easy mode`);
+console.log(`      node tools/generate_complete_audio.js ${weekNum} easy  # 137 audio files`);
+console.log(`      node tools/generate_images_nano.js ${weekNum} easy     # 20 images`);
+console.log(`      node MASS/tools/validate_assets.cjs ${weekNum} easy    # ✅ Validate`);
+console.log(`   `);
+console.log(`   3. Or use automatic cleanup & regeneration:`);
+console.log(`      bash MASS/tools/cleanup_and_regenerate.sh ${weekNum} advanced`);
+console.log(`      bash MASS/tools/cleanup_and_regenerate.sh ${weekNum} easy`);
+console.log(`   `);
+console.log(`   4. Update YouTube videos:`);
+console.log(`      node tools/update_videos.js ${weekNum}`);
+console.log(`   `);
+console.log(`   5. Test in UI:`);
+console.log(`      npm run dev`);
+console.log(`      http://localhost:5173/week/${weekNum}`);
+console.log(`   `);
+console.log(`   6. Commit when all validated:`);
+console.log(`      git add src/data/weeks/week_${String(weekId).padStart(2, '0')}/`);
+console.log(`      git add src/data/weeks_easy/week_${String(weekId).padStart(2, '0')}/`);
+console.log(`      git add public/images/week${weekId}/ public/images/week${weekId}_easy/`);
+console.log(`      git add public/audio/week${weekId}/ public/audio/week${weekId}_easy/`);
+console.log(`      git commit -m "Week ${weekNum}: ${spec.title_en} - Complete with assets"`);
+console.log('\n');

@@ -190,7 +190,7 @@ const MainLayout = () => {
       <WorksheetGenerator weekData={weekData} />
       <div className="flex h-screen bg-slate-50 text-slate-900 font-sans overflow-hidden screen-only">
         <FloatingDictionary />
-        <AIProviderStatus />
+        {/* <AIProviderStatus /> */}
         <ProfileModal isOpen={isProfileModalOpen} onClose={() => setIsProfileModalOpen(false)} currentUser={currentUser} onUpdateProfile={handleUpdateProfile} onLogout={logout} />
         <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} onLogout={logout} currentUser={currentUser} currentWeekId={weekId} />
 

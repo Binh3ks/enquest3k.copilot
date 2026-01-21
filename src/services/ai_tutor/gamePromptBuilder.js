@@ -1,0 +1,246 @@
+/**
+ * Game Prompt Builder - Inject Weekly Content into Games
+ * 
+ * Builds context-aware game prompts using vocabulary from weeks 1-current
+ */
+
+import { getGameContentForWeek, GAME_OPTIONS } from '../../config/gameAdaptation.js';
+import { week1RealData } from '../../data/weeks/week_01_real.js';
+import { week2RealData } from '../../data/weeks/week_02_real.js';
+import { week3RealData } from '../../data/weeks/week_03_real.js';
+import week4RealData from '../../data/weeks/week_04_real.js';
+import week5RealData from '../../data/weeks/week_05_real.js';
+
+/**
+ * Get cumulative vocabulary from weeks 1 to current week
+ * This makes games more diverse and easier to play
+ */
+function getCumulativeVocabulary(currentWeekId) {
+  const weeks = [week1RealData, week2RealData, week3RealData, week4RealData, week5RealData];
+  const allVocab = [];
+  
+  // Gather vocabulary from all weeks up to current
+  for (let i = 0; i < Math.min(currentWeekId, 5); i++) {
+    const weekData = weeks[i];
+    if (weekData && weekData.target_vocab) {
+      weekData.target_vocab.forEach(item => {
+        if (item.word && !allVocab.includes(item.word)) {
+          allVocab.push(item.word);
+        }
+      });
+    }
+  }
+  
+  return allVocab;
+}
+
+/**
+ * Build game prompt with cumulative vocabulary injection
+ * 
+ * @param {string} gameId - Game identifier (word_chain, twenty_questions, sentence_builder)
+ * @param {object} weekData - Current week data (theme, target_vocab, etc.)
+ * @returns {object} Game prompt with instructions and context
+ */
+export function buildGamePrompt(gameId, weekData) {
+  const weekId = weekData?.weekId || 5;
+  const gameContent = getGameContentForWeek(weekId, weekData);
+  const gameConfig = gameContent.games[gameId];
+  
+  if (!gameConfig) {
+    console.error(`❌ Game "${gameId}" not found for week ${weekId}`);
+    return null;
+  }
+  
+  // Get cumulative vocabulary from weeks 1-current for more variety
+  const cumulativeVocab = getCumulativeVocabulary(weekId);
+  
+  // 🎯 FOR 20 QUESTIONS: Pre-select object from code to prevent AI hallucination
+  let preSelectedObject = null;
+  if (gameId === 'twenty_questions' && gameConfig.objects?.length > 0) {
+    const randomIndex = Math.floor(Math.random() * gameConfig.objects.length);
+    preSelectedObject = gameConfig.objects[randomIndex];
+    console.log(`🎲 20 Questions: Pre-selected object: ${preSelectedObject}`);
+  }
+  
+  // Build comprehensive game context for AI
+  return {
+    gameId,
+    gameName: gameConfig.name_en,
+    gameName_vi: gameConfig.name_vi,
+    emoji: gameConfig.emoji,
+    theme: gameContent.theme,
+    vocabulary: cumulativeVocab, // Use cumulative vocab instead of just current week
+    instructions: gameConfig.instructions,
+    instructions_vi: gameConfig.instructions_vi,
+    
+    // Game-specific data
+    starterWords: gameConfig.starter_words,
+    objects: gameConfig.objects,
+    patterns: gameConfig.patterns,
+    hints: gameConfig.hints,
+    examples: gameConfig.examples,
+    example: gameConfig.example,
+    preSelectedObject, // 🎯 NEW: Code-selected object for 20Q
+    
+    // AI prompt for this game
+    aiPrompt: generateGameAIPrompt(gameId, gameConfig, { ...gameContent, vocab: cumulativeVocab }, preSelectedObject)
+  };
+}
+
+/**
+ * Generate AI prompt for specific game type
+ * @private
+ * @param {string} preSelectedObject - Pre-selected object for 20 Questions (optional)
+ */
+function generateGameAIPrompt(gameId, gameConfig, gameContent, preSelectedObject = null) {
+  const vocab = gameContent.vocab.join(', ');
+  
+  const prompts = {
+    word_chain: `You are Ms. Nova 🔗 playing Word Chain.
+
+VOCABULARY: ${vocab}
+
+🎯 RULE: You and student both use vocabulary words. Your word's last letter = student's word's first letter.
+
+📝 RESPONSE FORMAT:
+"Great! [STUDENT_WORD] starts with [LETTER]! Round [X]/20: I say [MY_WORD]! Your turn - starts with [LAST_LETTER]! Try: [HINT1], [HINT2]"
+
+EXAMPLES:
+- Student says TABLE → "Great! TABLE starts with T! Round 2/20: I say EXCITED! Your turn - starts with D! Try: DOOR, DRAWING"
+- Student says BEDROOM → "Great! BEDROOM starts with B! Round 3/20: I say MOTHER! Your turn - starts with R! Try: READING, ROOM"
+- Student says HAIR → "Great! HAIR starts with H! Round 4/20: I say READING! Your turn - starts with G! Hmm, no G words. I'll say STUDENT! Try: TABLE, TALL"
+
+✅ GOOD VOCAB WORDS TO USE:
+NAME, TABLE, STUDENT, HAIR, BEDROOM, KITCHEN, MOTHER, FATHER, HAPPY, EXCITED, EYES, TALL, SHORT, PLAYING, READING, LAMP, SOFA, CHAIR, DOOR, WINDOW, BATHROOM, LIVING ROOM, SINGING, DANCING
+
+⚠️ BEFORE SAYING YOUR WORD:
+1. Student's word ends with: [letter]
+2. I need vocab word starting with [letter]
+3. If no word starts with [letter], pick easy word: TABLE, NAME, STUDENT, BEDROOM
+
+VOCABULARY: ${vocab}
+
+⛔⛔⛔ ALWAYS say "Round X/20" - NEVER "Round X/10" ⛔⛔⛔
+
+20 rounds total! 🎉`,
+
+    twenty_questions: `You are Ms. Nova 🎯 playing 20 Questions WITH SUBTLE HINTS.
+
+YOUR SECRET OBJECT: ${preSelectedObject?.toUpperCase()} 
+(Don't reveal directly - give GENTLE hints to help student guess!)
+
+=== ESL-FRIENDLY GUESSING WITH LIGHT CLUES ===
+
+📝 FIRST MESSAGE - GIVE 2 GENTLE CLUES:
+"Let's play 20 Questions! 🎉 I'm thinking of something in the [room]. 
+🔍 Clue 1: [One feature]. 
+🔍 Clue 2: You can [action].
+Round 1/20: Can you guess what it is? Ask YES/NO questions!"
+
+GENTLE CLUE EXAMPLES (not too obvious!):
+- table: "in the kitchen. It has legs. You can eat on it."
+- chair: "in the living room. It has legs. You can sit on it."
+- bed: "in the bedroom. It's soft. You sleep on it."
+- lamp: "in the bedroom. It gives light. It helps you see."
+- sofa: "in the living room. It's soft. You can relax on it."
+- door: "It opens and closes. You walk through it."
+- window: "on the wall. It's made of glass. You can look outside."
+- mirror: "in the bathroom. It's shiny. You see your face."
+- rug: "on the floor. It's soft. You walk on it."
+- shelf: "on the wall. It holds things. You put books on it."
+
+🎯 RESPONSE RULES:
+
+1) Student asks YES/NO question → Answer honestly + helpful info
+   Example: "Yes! It has 4 legs. Round 2/20: What else?"
+
+2) Student guesses CORRECT → "Yes! It's a [object]! 🎉 Round X/20: NEW ROUND! I'm thinking of something in the [new room]. 🔍 Hint 1: [feature]. 🔍 Hint 2: You can [action]. What is it?"
+   
+3) Student guesses WRONG → "No, not a [wrong]. Round X/20: Keep asking!"
+
+⚠️ AFTER CORRECT GUESS - ALWAYS GIVE 2 NEW HINTS:
+DON'T just say "I'm thinking of something new" - MUST include 2 clues!
+Example: "Yes! It's a table! 🎉 Round 3/20: NEW ROUND! I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?"
+
+⛔ FORBIDDEN - NEVER USE THESE:
+cat, dog, stool, bench, spoon, fork, knife, plate, cup, glass, fridge, toaster, oven, microwave, desk
+
+✅ ALLOWED OBJECTS ONLY (10 items):
+bed, sofa, lamp, table, chair, mirror, rug, door, window, shelf
+
+Week ${gameContent.weekId || 5} Theme: ${gameContent.theme}
+
+🎮 GAME STRUCTURE:
+- Always say "Round X/20" (not 40!)
+- Give 2 hints at start of each object
+- Student guesses in 2-3 rounds
+- Total 20 rounds!`,
+
+    sentence_builder: `You are Ms. Nova 🧩 playing Sentence Builder.
+
+VOCABULARY ONLY: ${vocab}
+
+⛔⛔⛔ VALIDATION BEFORE EACH RESPONSE ⛔⛔⛔
+Check EVERY word you suggest:
+- Is it in vocabulary list above? If NO → DON'T USE IT
+
+Week ${gameContent.weekId || 5} Theme: ${gameContent.theme}
+
+📝 FIRST MESSAGE:
+"Let's play Sentence Builder! 🧩 You make complete sentences using vocabulary!
+Example: 'There is a lamp in my bedroom.'
+Round 1/20: Make a sentence: 'There is a ___ in my ___'
+Use: lamp/sofa/table + bedroom/kitchen/bathroom. Your turn!"
+
+📝 RESPONSE FORMAT:
+"Great! Round [X]/20: Say: '[PATTERN with ___]' Use: [vocab words only]. Your turn!"
+
+EXAMPLE CORRECT RESPONSES:
+- "Great! Round 2/20: Say: 'My ___ is ___' Use: name/age + tall/short. Your turn!"
+- "Great! Round 3/20: Say: 'I like ___' Use: playing/reading/drawing. Your turn!"
+- "Great! Round 4/20: Say: 'There is a ___ in my ___' Use: chair/lamp + bedroom/kitchen. Your turn!"
+- "Great! Round 5/20: Say: 'My ___ is ___' Use: mother/father + happy/tall. Your turn!"
+
+⛔⛔⛔ FORBIDDEN WORDS (NOT IN VOCAB) ⛔⛔⛔
+DO NOT USE:
+- can, will, should, must
+- eat, see, walk, play, read, write, cook, make
+- dog, cat, bike, tree, book, pen
+
+✅ USE ONLY THESE (FROM VOCAB):
+- House: bedroom, kitchen, bathroom, living room, lamp, sofa, table, chair, door, window
+- Family: mother, father, sister, brother, family, name, age
+- Appearance: tall, short, hair, eyes, long, curly, straight
+- Emotions: happy, sad, excited
+- Actions: playing, reading, drawing, singing, dancing
+- Identity: student, hero, power, school, teacher
+
+🎓 PATTERN PROGRESSION:
+Round 1-7: House patterns
+  "Round [X]/20: Say: 'There is a ___ in my ___' Use: lamp/chair + bedroom/kitchen. Your turn!"
+  "Round [X]/20: Say: 'The ___ is in the ___' Use: sofa/table + living room/kitchen. Your turn!"
+
+Round 8-14: Identity/Family patterns
+  "Round [X]/20: Say: 'My ___ is ___' Use: name/family + proper name. Your turn!"
+  "Round [X]/20: Say: 'My mother is ___' Use: tall/short/happy. Your turn!"
+
+Round 15-20: Action/Emotion patterns
+  "Round [X]/20: Say: 'I like ___' Use: playing/reading/drawing. Your turn!"
+  "Round [X]/20: Say: 'I am ___' Use: happy/excited/tall/short. Your turn!"
+
+EXAMPLES: ${gameConfig.examples?.join(' / ')}
+
+⛔⛔⛔ EVERY RESPONSE MUST SAY "Round X/20" - NEVER "Round X/10" ⛔⛔⛔
+
+20 rounds! 🎉`
+  };
+  
+  return prompts[gameId] || `Play ${gameConfig.name_en} using vocabulary: ${vocab}`;
+}
+
+/**
+ * Get all available games for current week
+ */
+export function getAvailableGames() {
+  return GAME_OPTIONS;
+}

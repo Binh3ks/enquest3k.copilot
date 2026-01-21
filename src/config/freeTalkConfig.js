@@ -19,18 +19,18 @@ export const GAME_OPTIONS = [
     intro: "I say a word, you say a word starting with the LAST letter! I start: Do__g__. Your turn! (G...)"
   },
   {
-    id: 'i_spy',
-    label_en: "I Spy",
+    id: 'twenty_questions',
+    label_en: "20 Questions",
     label_vi: "Đoán vật",
-    icon: "🕵️‍♀️",
-    intro: "I will describe something. You guess! I spy with my little eye..."
+    icon: "❓",
+    intro: "I'm thinking of something. Ask YES/NO questions to guess what it is!"
   },
   {
-    id: 'emoji_mixer',
-    label_en: "Emoji Mixer",
-    label_vi: "Đuổi hình bắt chữ",
+    id: 'sentence_builder',
+    label_en: "Sentence Builder",
+    label_vi: "Xây câu",
     icon: "🧩",
-    intro: "Look at the emojis and guess the word! 🔴 + 🍎 = ?"
+    intro: "Let's build sentences together! I start with one word, you add the next!"
   }
 ];
 

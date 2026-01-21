@@ -13,9 +13,11 @@ import week1RealData from '../../../data/weeks/week_01_real';
 import week2RealData from '../../../data/weeks/week_02_real';
 import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
 import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
+import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
-import { FREE_TALK_ACTIONS, GAME_OPTIONS, ROLEPLAY_SCENARIOS } from '../../../config/freeTalkConfig'; // 🎮 FREE TALK 3.0
+import { FREE_TALK_ACTIONS, GAME_OPTIONS } from '../../../config/freeTalkConfig'; // 🎮 FREE TALK 3.0
+import { getRoleplaysForWeek } from '../../../config/dynamicRoleplays'; // 🎭 Dynamic Roleplays
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -45,6 +47,15 @@ const FreeTalkTab = () => {
   const [messageCount, setMessageCount] = useState(savedData.totalTurns || 0);
   const [initialized, setInitialized] = useState(false);
   
+  // 🎭 Get dynamic roleplays for current week
+  // Use the weekData that's already loaded by the component (week_05_real)
+  const weekDataForRoleplays = {
+    weekId: weekNumber,
+    theme: 'House & Rooms', // Will be dynamic from loaded week data
+    target_vocab: [] // Will be populated from context
+  };
+  const dynamicRoleplays = getRoleplaysForWeek(weekNumber, weekDataForRoleplays);
+  
   // 🎮 FREE TALK 3.0 STATE MANAGEMENT
   const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
   const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
@@ -58,7 +69,7 @@ const FreeTalkTab = () => {
   });
   
   // 🔥 Dynamic week data selection
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : week5RealData;
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -246,7 +257,8 @@ const FreeTalkTab = () => {
         context: {
           turnCount,
           scaffoldingLevel: 2,
-          conversationTopic
+          conversationTopic,
+          weekData: weekRealData  // 🎮 Pass weekData for game/roleplay content injection
         }
       });
 
@@ -255,7 +267,43 @@ const FreeTalkTab = () => {
       console.log('🤖 FreeTalk Response keys:', Object.keys(aiResponse));
 
       // Extract text from response object (support multiple formats)
+      // 🎭 Auto-end roleplay after 19 turns
+      if (mode === 'playing_roleplay' && turnCount >= 19) {
+        console.log('🎯 Roleplay ending after 19 turns');
+        const endingMessage = {
+          role: 'assistant',
+          content: "Wonderful job! You practiced so many English words today! 🎉 I'm so proud of you! Want to play again with a different room?",
+          timestamp: Date.now()
+        };
+        addMessage('freetalk', endingMessage);
+        setMode('idle');
+        setActiveActivityId(null);
+        setTurnCount(0);
+        return;
+      }
+      
+      // 🎮 Auto-end game after 19 turns
+      if (mode === 'playing_game' && turnCount >= 19) {
+        console.log('🎯 Game ending after 19 turns');
+        const endingMessage = {
+          role: 'assistant',
+          content: "Amazing game! You did so well! 🎉 You used so many English words! Want to play another game?",
+          timestamp: Date.now()
+        };
+        addMessage('freetalk', endingMessage);
+        setMode('idle');
+        setActiveActivityId(null);
+        setTurnCount(0);
+        return;
+      }
+      
       let responseText = aiResponse.ai_response || aiResponse.response || aiResponse;
+      
+      // Ensure responseText is a string
+      if (typeof responseText !== 'string') {
+        console.error('❌ responseText is not a string:', responseText);
+        responseText = String(responseText || 'Sorry, I had trouble understanding. Can you say that again?');
+      }
       
       // 🔥 CRITICAL: Check if AI is repeating a question from chat history
       const chatHistoryText = messages.map(m => m.content.toLowerCase()).join(' ');
@@ -378,7 +426,7 @@ const FreeTalkTab = () => {
   };
 
   const handleRoleplaySelect = (roleplayId) => {
-    const roleplay = ROLEPLAY_SCENARIOS.find(r => r.id === roleplayId);
+    const roleplay = dynamicRoleplays.find(r => r.id === roleplayId);
     if (roleplay) {
       // DON'T change mode yet - let AI response determine mode
       handleSendMessage(`START_ROLEPLAY: ${roleplay.label_en}`);
@@ -502,13 +550,13 @@ const FreeTalkTab = () => {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-3">
-              {ROLEPLAY_SCENARIOS.map((roleplay) => (
+              {dynamicRoleplays.map((roleplay) => (
                 <button
                   key={roleplay.id}
                   onClick={() => handleRoleplaySelect(roleplay.id)}
                   className="bg-gradient-to-br from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-pink-300"
                 >
-                  <div className="text-3xl mb-2">{roleplay.icon}</div>
+                  <div className="text-3xl mb-2">{roleplay.emoji}</div>
                   <div className="text-sm font-bold text-pink-800">{roleplay.label_vi}</div>
                   <div className="text-xs text-pink-600 mt-1">{roleplay.label_en}</div>
                 </button>

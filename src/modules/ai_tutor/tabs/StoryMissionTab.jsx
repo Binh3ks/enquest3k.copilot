@@ -14,6 +14,7 @@ import week1RealData from '../../../data/weeks/week_01_real'; // Week 1 syllabus
 import week2RealData from '../../../data/weeks/week_02_real?v=3'; // Week 2 syllabus - CACHE BUST (mission_context added)
 import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
 import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
+import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
@@ -26,7 +27,9 @@ console.log('📦 IMPORTS CHECK:', {
   week3Title: week3RealData?.title,
   week3Missions: week3RealData?.story_missions?.length,
   week4Title: week4RealData?.title,
-  week4Missions: week4RealData?.story_missions?.length
+  week4Missions: week4RealData?.story_missions?.length,
+  week5Title: week5RealData?.title,
+  week5Missions: week5RealData?.story_missions?.length
 });
 
 // Week 1 Objectives
@@ -89,7 +92,7 @@ const StoryMissionTab = () => {
   const [studentName, setStudentName] = useState(savedData.studentName || null); // 🔥 Restore student name
   
   // 🔥 Dynamic week data selection based on current week
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : week4RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : week5RealData;
   const currentMission = weekRealData.story_missions?.[currentMissionIndex];
   
   // 🔥 DEBUG: Log week data on mount

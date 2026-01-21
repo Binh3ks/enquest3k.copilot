@@ -21,7 +21,7 @@
 import axios from 'axios';
 import { validateAIResponse, getRegenerationInstruction, getGrammarSummary } from './grammarGuard.js';
 import { enforceTalkRatio, getConciseInstruction, getTalkRatioSummary } from './talkRatioGuard.js';
-import { parseAIResponse } from './utils/responseParser.js';
+import { parseAIResponse, fix20QCorrectGuess, forceRoleplayQuestion } from './utils/responseParser.js';
 
 // ============================================
 // RATE LIMITER - FIX GROQ 429 ERRORS
@@ -584,16 +584,33 @@ export async function sendToAI({
       }
     }
 
-    // 🔥 LAYER 1: Try Together AI first (60 req/min - best free option)
+    // 🔥 LAYER 1: Try Together AI first (60 req/min - best option)
     if (preferredProvider === 'together' && PROVIDERS.together.enabled) {
       try {
         console.log(`🚀 Layer 1: Trying Together AI (attempt ${attempt}/${maxRetries})...`);
         const rawResponse = await callTogether(messages);
         const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
         
+        // 🎯 FIX: Auto-correct 20Q correct guess responses
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        // 🎯 FIX: Force roleplay responses to always have question + options
+        // Detect mode and roleplayId from system prompt
+        const systemContent = messages[0]?.content || '';
+        console.log('🔍 SYSTEM CONTENT CHECK:', systemContent.substring(0, 200));
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || systemContent.includes('playing_roleplay');
+        console.log('🔍 isRoleplay:', isRoleplay);
+        const roleplayIdMatch = systemContent.match(/interior_designer|house_tour_guide|furniture_shop/);
+        const roleplayId = roleplayIdMatch ? roleplayIdMatch[0] : 'interior_designer';
+        const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+        console.log('🔍 MODE DETECTED:', mode, 'roleplayId:', roleplayId);
+        
+        fixedResponse = forceRoleplayQuestion(fixedResponse, mode, roleplayId, userMessage);
+        console.log('🔍 AFTER forceRoleplayQuestion:', fixedResponse.ai_response);
+        
         // Grammar Guard & Talk Ratio validations
         if (!skipGrammarGuard) {
-          const validation = validateAIResponse(response, weekId);
+          const validation = validateAIResponse(fixedResponse, weekId);
           if (!validation.valid && attempt < maxRetries) {
             console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
             const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
@@ -602,13 +619,13 @@ export async function sendToAI({
           }
         }
         
-        const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
         if (talkRatioResult.action === 'truncated') {
-          response.ai_response = talkRatioResult.response;
+          fixedResponse.ai_response = talkRatioResult.response;
         }
         
         console.log(`✅ Together AI succeeded in ${Date.now() - startTime}ms`);
-        return { ...response, provider: 'together', latency: Date.now() - startTime };
+        return { ...fixedResponse, provider: 'together', latency: Date.now() - startTime };
       } catch (togetherError) {
         console.warn(`⚠️ Together AI failed: ${togetherError.message}`);
         console.log('🔄 Fallback to Layer 2: Groq...');
@@ -619,8 +636,24 @@ export async function sendToAI({
             const rawResponse = await callGroq(messages);
             const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
             
+            // 🎯 FIX: Auto-correct 20Q correct guess responses
+            let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+            
+            // 🎯 FIX: Force roleplay responses to always have question + options
+            const systemContent = messages[0]?.content || '';
+            console.log('🔍 GROQ SYSTEM CONTENT CHECK:', systemContent.substring(0, 200));
+            const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || systemContent.includes('playing_roleplay');
+            console.log('🔍 GROQ isRoleplay:', isRoleplay);
+            const roleplayIdMatch = systemContent.match(/interior_designer|house_tour_guide|furniture_shop/);
+            const roleplayId = roleplayIdMatch ? roleplayIdMatch[0] : 'interior_designer';
+            const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+            console.log('🔍 GROQ MODE DETECTED:', mode, 'roleplayId:', roleplayId);
+            
+            fixedResponse = forceRoleplayQuestion(fixedResponse, mode, roleplayId, userMessage);
+            console.log('🔍 GROQ AFTER forceRoleplayQuestion:', fixedResponse.ai_response);
+            
             if (!skipGrammarGuard) {
-              const validation = validateAIResponse(response, weekId);
+              const validation = validateAIResponse(fixedResponse, weekId);
               if (!validation.valid && attempt < maxRetries) {
                 console.warn(`⚠️ Groq grammar violations:`, validation.violations);
                 const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
@@ -630,13 +663,13 @@ export async function sendToAI({
               }
             }
             
-            const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
+            const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
             if (talkRatioResult.action === 'truncated') {
-              response.ai_response = talkRatioResult.response;
+              fixedResponse.ai_response = talkRatioResult.response;
             }
             
             console.log(`✅ Groq succeeded (fallback) in ${Date.now() - startTime}ms`);
-            return { ...response, provider: 'groq', fallback: true, latency: Date.now() - startTime };
+            return { ...fixedResponse, provider: 'groq', fallback: true, latency: Date.now() - startTime };
           } catch (groqError) {
             console.warn(`⚠️ Groq also failed: ${groqError.message}`);
             console.log('🔄 Fallback to Layer 3: Gemini...');
@@ -752,7 +785,7 @@ async function callTogether(messages, systemPrompt, options = {}) {
         'Authorization': `Bearer ${TOGETHER_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      timeout: 15000  // 🔥 Increased from 10s to 15s for slow responses
+      timeout: 10000  // 10s timeout - fallback to Groq quickly if slow
     });
     
     const elapsed = Date.now() - startTime;

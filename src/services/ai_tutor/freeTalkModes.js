@@ -4,6 +4,8 @@
  */
 
 import { TutorModes } from './tutorModes.js';
+import { buildGamePrompt } from './gamePromptBuilder.js';
+import { buildRoleplayPrompt } from './roleplayPromptBuilder.js';
 
 export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
   const history = options.history || [];
@@ -89,12 +91,15 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       2. IF user says "tiếp tục"/"tiếp tục đi"/"next" -> Start NEXT round of same game immediately
       3. IF user says SINGLE WORD (not Vietnamese phrase):
          - For Word Chain: Check if word starts with correct letter
-         - If correct: "Great! [Word] starts with [Letter]! 🎉 Round [X+1]/10: I say [NewWord]! Your turn..."
+         - If correct: "Great! [Word] starts with [Letter]! 🎉 Round [X+1]/20: I say [NewWord]! Your turn..."
          - If wrong: "Oops! That starts with [WrongLetter], not [CorrectLetter]! Try again 😊"
       4. ⛔ NEVER leave game mode unless user says "stop" or "goodbye"
       5. ⛔ NEVER offer translation during game
-      6. Play exactly 10 rounds per game. Always show: "Round [X]/10"
-      7. After Round 10/10, say: "Game Over! Great job! 🎉 Want to play again?"
+      6. Play rounds based on game type:
+         - Word Chain: 20 rounds total, show "Round [X]/20"
+         - 20 Questions: 20 rounds total, show "Round [X]/20"
+         - Sentence Builder: 20 rounds total, show "Round [X]/20"
+      7. After final round, say: "Game Over! Great job! 🎉 Want to play again?"
       8. Keep game fun, fast-paced and encouraging!
       
       RESPOND IN THIS JSON FORMAT:
@@ -107,31 +112,77 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
 
     // Trigger: "START_GAME: [Name]" (From UI Buttons)
     if (lowerUser.startsWith("start_game:")) {
-      const gameName = userMessage.split(":")[1]?.trim() || "Game";
+      const gameNameRaw = userMessage.split(":")[1]?.trim() || "Game";
+      
+      // 🎮 NEW: Use gamePromptBuilder to inject weekly content
+      const weekData = context.weekData || { weekId: 5, theme: 'House & Rooms', target_vocab: [] };
+      
+      // Map game names to IDs
+      const gameIdMap = {
+        'word chain': 'word_chain',
+        'nối từ': 'word_chain',
+        '20 questions': 'twenty_questions',
+        'đoán vật': 'twenty_questions',
+        'sentence builder': 'sentence_builder',
+        'xây câu': 'sentence_builder'
+      };
+      
+      const gameId = gameIdMap[gameNameRaw.toLowerCase()] || 'word_chain';
+      const gamePrompt = buildGamePrompt(gameId, weekData);
+      
+      if (!gamePrompt) {
+        console.error('❌ Failed to build game prompt for:', gameId);
+        return buildFallbackGamePrompt(gameNameRaw);
+      }
+      
       return `
       SYSTEM_MODE: GAME_MASTER
-      GAME: ${gameName}
-      ROLE: Ms. Nova as Game Host for kids (A0-A1).
-
-      GAME RULES:
-      - "I Spy": Describe something (color, shape). Kid guesses what it is.
-      - "Word Chain": Say a word. Kid says word starting with last letter.
-      - "Emoji Mixer": Show 2 emojis. Kid guesses the combined word.
-
-      LOGIC:
-      1. IF user says "I don't know" / "khó quá" / "gợi ý": GIVE A HINT (Color, Shape, Sound, First letter).
-      2. IF user guesses wrong: Encourage "Close! Try again."
-      3. IF user guesses right: CELEBRATE "Yes! 🎉" -> Start next round.
-      4. Play exactly 10 rounds per game. Show "Round [X]/10" in each response.
-      5. After Round 10/10, celebrate: "Game Over! You played great! 🎉 Want to play again?"
-      6. ⛔ NEVER ask personal questions while playing.
-
-      ACTION: Start the game NOW! Give first challenge (Round 1/10).
-
+      GAME: ${gamePrompt.gameName} ${gamePrompt.emoji}
+      WEEK ${weekData.weekId} THEME: ${gamePrompt.theme}
+      VOCABULARY: ${gamePrompt.vocabulary.join(', ')}
+      
+      ${gamePrompt.aiPrompt}
+      
+      🎯 CRITICAL FIRST MESSAGE (KEEP SHORT!):
+      1. Greet: "Let's play ${gamePrompt.gameName}! ${gamePrompt.emoji}"
+      2. Rule (1 sentence): "I say a word, you say a word starting with my word's last letter!"
+      3. Example: "Example: CAT → TABLE"
+      4. Start: "Round 1/20: I say [WORD]! Your turn!"
+      
+      GAME MECHANICS:
+      - Play exactly 20 rounds per game
+      - Show "Round [X]/20" in EVERY response
+      - After Round 20/20: "Game Over! Great job! 🎉 Want to play again?"
+      - Keep responses SHORT (1-2 sentences max)
+      - IF user says "I don't know"/"khó quá"/"gợi ý": Give 1-2 word choices
+      - IF correct: "Great! Round [X]/20: [next challenge]"
+      - IF wrong: "Oops! [Why wrong]. Try again!"
+      
+      ⛔⛔⛔ CRITICAL: VOCABULARY RESTRICTION ⛔⛔⛔
+      YOU ARE **ABSOLUTELY FORBIDDEN** FROM USING ANY WORDS NOT IN THIS LIST:
+      ${gamePrompt.vocabulary.join(', ')}
+      
+      ❌ EXAMPLES OF FORBIDDEN WORDS: rainbow, wish, elephant, car, sun, moon, star
+      ✅ ONLY USE: ${gamePrompt.vocabulary.join(', ')}
+      
+      BEFORE YOU SAY ANY WORD IN THE GAME:
+      1. Check: Is this word in the vocabulary list?
+      2. If NO → DO NOT USE IT! Pick a different word from the list
+      3. If YES → Good! You can use it
+      
+      FOR WORD CHAIN: If you need letter X and no vocab word starts with X:
+      - Use BEDROOM, KITCHEN, BATHROOM, LIVING ROOM, LAMP, SOFA, TABLE (these cover many letters)
+      - Or accept student's correct word and change to vocabulary word next turn
+      
+      ACTION: Start Round 1/10 NOW with:
+      1. Rule explanation
+      2. Example
+      3. First challenge with hints
+      
       RESPOND IN THIS JSON FORMAT:
       {
-        "ai_response": "Game challenge or response here with emoji",
-        "suggested_hints": ["possible", "answer", "words"]
+        "ai_response": "Full first message with rules + example + Round 1/10 challenge",
+        "suggested_hints": ["word1", "word2", "word3"]
       }
       `;
     }
@@ -145,22 +196,42 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       LAST AI: "${lastAIMessage}"
       USER RESPONSE: "${userMessage}"
       
-      CRITICAL RULES:
-      1. Stay in character 100% - NEVER break roleplay
-      2. React naturally to user's response in character
-      3. IF user says "tiếp tục"/"tiếp tục đi"/"next" -> Continue scene with new situation in character
-      4. IF user asks question -> Answer in character
-      5. IF user gives you something/answers -> React in character and continue story
-      6. Play exactly 10 exchanges per roleplay. Show "Turn [X]/10"
-      7. After Turn 10/10, say goodbye in character: "Thank you! Goodbye! See you next time! 👋"
-      8. Keep simple English (A0-A1)
-      9. ⛔ NEVER leave roleplay mode unless user says "stop" or "goodbye"
-      10. ⛔ NEVER offer translation during roleplay
-      11. ⛔ NEVER ask about real life
+      ⛔⛔⛔ CRITICAL ESL RULES - NEVER VIOLATE ⛔⛔⛔
+      
+      ⭐⭐⭐ CRITICAL ESL TEACHING RULES:
+      
+      1. EVERY RESPONSE MUST END WITH A QUESTION (encourage student to speak)
+      2. Questions must have 2-3 CLEAR OPTIONS in the question itself
+      3. Use COMPLETE sentences with correct grammar (you are teaching!)
+      4. React warmly to what student said, then ask next question
+      5. Stay in character throughout
+      
+      MANDATORY RESPONSE STRUCTURE:
+      [Warm acknowledgment] + [Optional detail] + [Complete question with 2-3 options]
+      
+      CORRECT Examples:
+      Student: "blue"
+      ✅ YOU: "Blue! Beautiful color! What do you want in blue? Do you want a blue bed, a blue chair, or a blue lamp?"
+      
+      Student: "it's old"
+      ✅ YOU: "It's old! I understand. You can paint it! What color do you want to paint it? Red, blue, or green?"
+      
+      Student: "no"
+      ✅ YOU: "No problem! What do you want to do? Do you want to buy new furniture or paint the old furniture?"
+      
+      ❌ FORBIDDEN (conversation dies):
+      - "Blue is nice! 🌊" ← NO QUESTION
+      - "What color do you like? 🎨" ← NO OPTIONS in the question
+      - "You like blue! 🌊" ← NO QUESTION AT ALL
+      
+      Keep simple English (A0-A1 level)
+      Model correct grammar for ESL students
+      ⛔ NEVER leave character
+      ⛔ NEVER offer translation during roleplay
       
       RESPOND IN THIS JSON FORMAT:
       {
-        "ai_response": "Your character response with turn count (e.g., Turn 3/15)",
+        "ai_response": "Your character response (MUST end with complete question + 2-3 clear options)",
         "suggested_hints": ["helpful", "response", "words"]
       }
       `;
@@ -168,29 +239,46 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
 
     // Trigger: "START_ROLEPLAY: [Role]"
     if (lowerUser.startsWith("start_roleplay:")) {
-      const roleName = userMessage.split(":")[1]?.trim() || "Roleplay";
+      const roleNameRaw = userMessage.split(":")[1]?.trim() || "Roleplay";
+      
+      // 🎭 NEW: Use roleplayPromptBuilder to inject weekly content
+      const weekData = context.weekData || { weekId: 5, theme: 'House & Rooms', target_vocab: [] };
+      
+      // Map roleplay names to IDs (dynamic based on week)
+      const roleIdMap = {
+        // Week 5 - House theme
+        'room designer': 'interior_designer',
+        'thiết kế phòng': 'interior_designer',
+        'house tour': 'house_tour_guide',
+        'dẫn khách': 'house_tour_guide',
+        'furniture shop': 'furniture_shop',
+        'cửa hàng đồ': 'furniture_shop',
+        'cửa hàng đồ chơi': 'furniture_shop'
+      };
+      
+      const roleId = roleIdMap[roleNameRaw.toLowerCase()] || 'interior_designer';
+      const roleplayPrompt = buildRoleplayPrompt(roleId, weekData);
+      
+      if (!roleplayPrompt) {
+        console.error('❌ Failed to build roleplay prompt for:', roleId);
+        return buildFallbackRoleplayPrompt(roleNameRaw);
+      }
+      
       return `
       SYSTEM_MODE: ROLEPLAY_ACTOR
-      SCENARIO: ${roleName}
-      ROLE: Ms. Nova plays a character. Kid is the other role.
-
-      SCENARIOS:
-      - "Pizza Chef": You are hungry customer 🍕. Kid is chef. "I want pizza with cheese!"
-      - "Pet Doctor": You have sick cat 😿. Kid is doctor. "My cat is sad. Help!"
-      - "Toy Shop": You want robot 🤖. Kid is seller. "How much is this robot?"
-
-      CRITICAL:
-      - Stay in character 100%.
-      - Play exactly 10 exchanges per roleplay. Show "Turn [X]/10" in responses.
-      - After Turn 10/10, say goodbye in character.
-      - ⛔ NEVER ask about real life.
-      - Use simple English (A0-A1).
-      - Start the roleplay NOW! (Turn 1/10)
-
+      CHARACTER: ${roleplayPrompt.character} ${roleplayPrompt.emoji}
+      SETTING: ${roleplayPrompt.setting}
+      WEEK ${weekData.weekId} THEME: ${weekData.theme || roleplayPrompt.setting}
+      VOCABULARY TO USE: ${roleplayPrompt.vocabulary.join(', ')}
+      
+      ${roleplayPrompt.aiPrompt}
+      
+      ⚠️ CRITICAL: Follow ALL rules above. EVERY response MUST end with question + 3+ vocabulary choices!
+      
       RESPOND IN THIS JSON FORMAT:
       {
-        "ai_response": "Your character line here with emoji",
-        "suggested_hints": ["helpful", "response", "words"]
+        "ai_response": "Your character response (MUST end with question + options)",
+        "suggested_hints": ["helpful", "response", "words", "from", "vocab"]
       }
       `;
     }
@@ -311,5 +399,38 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
   ROLE: English Teacher.
   TASK: Respond simply to "${userMessage}".
   ⛔ DO NOT ask about feelings or happiness.
+  `;
+}
+
+// Fallback functions for when builders fail
+function buildFallbackGamePrompt(gameName) {
+  return `
+  SYSTEM_MODE: GAME_MASTER
+  GAME: ${gameName}
+  
+  You are Ms. Nova playing ${gameName} with a student. Make it fun and encouraging!
+  Play rounds based on game type (Word Chain/Sentence Builder: 20, 20 Questions: 40).
+  
+  RESPOND IN THIS JSON FORMAT:
+  {
+    "ai_response": "Game challenge with emoji",
+    "suggested_hints": ["helpful", "words"]
+  }
+  `;
+}
+
+function buildFallbackRoleplayPrompt(roleName) {
+  return `
+  SYSTEM_MODE: ROLEPLAY_ACTOR
+  ROLE: ${roleName}
+  
+  You are Ms. Nova playing the role of ${roleName}. Stay in character!
+  Play 10 turns, show "Turn [X]/10" in responses.
+  
+  RESPOND IN THIS JSON FORMAT:
+  {
+    "ai_response": "Your character line with emoji",
+    "suggested_hints": ["helpful", "words"]
+  }
   `;
 }

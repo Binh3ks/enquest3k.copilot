@@ -81,13 +81,10 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
   if (!data || !script.length) return <div>Loading Script...</div>;
 
   const handlePlayOne = (text, url, id) => {
-    // If there's a recording for this segment, play it. Otherwise, play the original.
-    const audioUrl = recordedSegments[id] || url;
-    const audioText = recordedSegments[id] ? (isVi ? "Bản ghi âm của bạn" : "Your Recording") : text.replace(/\*\*/g, '');
-    
+    // Always play the ORIGINAL TTS, not the recording
     setIsPlayingAll(false);
     setActiveSentence(id);
-    speakText(audioText, audioUrl, 0.8, () => setActiveSentence(null));
+    speakText(text.replace(/\*\*/g, ''), url, 0.8, () => setActiveSentence(null));
   };
 
   const playSequence = (index) => {
@@ -163,15 +160,21 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       playbackRefs.current[playingRecording].currentTime = 0;
     }
 
-    // Create or reuse audio element
-    if (!playbackRefs.current[sentenceId]) {
-      const audio = new Audio(recordingUrl);
-      audio.onended = () => setPlayingRecording(null);
-      playbackRefs.current[sentenceId] = audio;
+    // Always create new audio element to ensure fresh playback
+    if (playbackRefs.current[sentenceId]) {
+      playbackRefs.current[sentenceId].pause();
+      playbackRefs.current[sentenceId] = null;
     }
+    
+    const audio = new Audio(recordingUrl);
+    audio.onended = () => setPlayingRecording(null);
+    playbackRefs.current[sentenceId] = audio;
 
     setPlayingRecording(sentenceId);
-    playbackRefs.current[sentenceId].play();
+    audio.play().catch(err => {
+      console.error("Failed to play recording:", err);
+      setPlayingRecording(null);
+    });
   };
 
   const stopPlayback = (sentenceId) => {

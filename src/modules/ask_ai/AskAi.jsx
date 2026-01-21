@@ -22,6 +22,7 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const [showHint, setShowHint] = useState(false);
   const [completedPrompts, setCompletedPrompts] = useState(() => new Set(savedData.completedPrompts || []));
   const [wrongCount, setWrongCount] = useState(savedData.wrongCount || 0);
+  const [hasMicUsed, setHasMicUsed] = useState(false); // Track if mic has been used for current prompt
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -71,8 +72,14 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
 
   const toggleListen = () => {
     if (!recognition) { alert("Browser not supported"); return; }
-    if (isListening) recognition.stop();
-    else { setIsListening(true); recognition.start(); }
+    if (isListening) {
+      recognition.stop();
+      setIsListening(false); // Stop the recording animation
+    } else { 
+      setIsListening(true); 
+      setHasMicUsed(true); // Mark that mic has been used
+      recognition.start(); 
+    }
   };
 
   const handleCheck = () => {
@@ -117,17 +124,25 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
     setInputVal('');
     setShowHint(false);
     setWrongCount(0); 
+    setHasMicUsed(false); // Reset mic usage for next prompt
     if (!isLast) {
       const newIndex = currentPromptIdx + 1;
       setCurrentPromptIdx(newIndex);
     }
   };
 
-  // FIX: Chọn đáp án đầu tiên để hiển thị và KHÔNG thêm dấu ? thủ công
-  const correctAnswerText = Array.isArray(currentPrompt.answer) ? currentPrompt.answer[0] : currentPrompt.answer;
-
   return (
     <div className="pb-24 max-w-3xl mx-auto">
+      {/* Instruction Bar */}
+      <div className={`mb-4 p-4 bg-gradient-to-r from-${themeColor}-50 to-indigo-50 rounded-2xl border-2 border-${themeColor}-200 text-center`}>
+        <p className="text-base font-black text-slate-700">
+          {isVi ? '🎤 Hãy đọc tình huống và bấm Mic để đặt câu hỏi' : '🎤 Read the situation and press Mic to ask a question'}
+        </p>
+        <p className="text-xs font-bold text-slate-500 mt-1">
+          {isVi ? 'Bạn PHẢI nói trước, sau đó có thể chỉnh sửa' : 'You MUST speak first, then you can edit'}
+        </p>
+      </div>
+
       <div className={`bg-${themeColor}-50 p-6 rounded-3xl border-2 border-${themeColor}-100 mb-6 shadow-sm`}>
         <div className="flex justify-between items-center mb-4">
             <div className="flex items-center space-x-3">
@@ -149,11 +164,14 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
                 {isVi ? currentPrompt.context_vi : currentPrompt.context_en}
             </h3>
             
-            {/* Speaker button to read the context aloud */}
+            {/* Speaker button to play correct answers TTS */}
             <button 
-                onClick={() => speakText(currentPrompt.context_en, currentPrompt.audio_url)}
+                onClick={() => {
+                    const answers = Array.isArray(currentPrompt.answer) ? currentPrompt.answer.join(", or, ") : currentPrompt.answer;
+                    speakText(answers, currentPrompt.answer_audio_url);
+                }}
                 className={`absolute top-4 left-4 w-10 h-10 rounded-full bg-${themeColor}-100 hover:bg-${themeColor}-200 flex items-center justify-center transition-colors`}
-                title="Listen to context"
+                title={isVi ? "Nghe đáp án đúng" : "Listen to correct answers"}
             >
                 <Volume2 className={`w-5 h-5 text-${themeColor}-600`} />
             </button>
@@ -175,31 +193,55 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
         
         {wrongCount >= 3 && !feedback?.isPass && (
             <div className="mb-4 p-4 bg-rose-50 border border-rose-100 rounded-xl text-center animate-in slide-in-from-top-2">
-                <p className="text-xs font-bold text-rose-500 uppercase mb-1">
-                    {isVi ? "Đáp án đúng (Hãy chép lại):" : "Correct Answer (Please type below):"}
+                <p className="text-xs font-bold text-rose-500 uppercase mb-2">
+                    {isVi ? "✅ Các đáp án đúng (Hãy chép lại một câu):" : "✅ Correct Answers (Please type one below):"}
                 </p>
-                <p className="text-lg font-black text-rose-700 select-all">
-                    {correctAnswerText}
-                </p>
+                <div className="space-y-1">
+                    {(Array.isArray(currentPrompt.answer) ? currentPrompt.answer : [currentPrompt.answer]).map((ans, idx) => (
+                        <p key={idx} className="text-base font-black text-rose-700 select-all">
+                            {ans}
+                        </p>
+                    ))}
+                </div>
             </div>
         )}
 
         <div className="relative">
+            {/* Prominent Mic Button - Now larger and more visible */}
+            <button 
+                onClick={toggleListen}
+                className={`absolute left-3 top-2 bottom-2 w-16 rounded-xl flex flex-col items-center justify-center transition-all ${
+                  isListening 
+                    ? 'bg-rose-500 text-white animate-pulse shadow-lg' 
+                    : hasMicUsed 
+                      ? 'bg-green-500 text-white' 
+                      : `bg-gradient-to-br from-${themeColor}-500 to-indigo-500 text-white hover:shadow-lg hover:scale-105`
+                }`}
+                title={isVi ? "Bấm để nói (BẮT BUỘC)" : "Click to speak (REQUIRED)"}
+            >
+                <Mic className="w-7 h-7" />
+                <span className="text-xs font-bold mt-0.5">{isListening ? 'REC' : hasMicUsed ? '✓' : 'MIC'}</span>
+            </button>
+
             <input 
                 type="text" 
                 value={inputVal}
                 onChange={(e) => { setInputVal(e.target.value); setFeedback(null); }}
-                placeholder={isVi ? "Nhập câu hỏi (Nhớ dấu chấm hỏi?)..." : "Type your question (Remember ?)..."}
-                className={`w-full p-4 pl-14 pr-32 text-lg font-medium rounded-2xl border-2 outline-none transition-all ${feedback ? (feedback.isPass ? 'border-green-500 bg-green-50' : 'border-rose-400 bg-rose-50') : `border-slate-200 focus:border-${themeColor}-400`}`}
-                disabled={feedback?.isPass}
-                onKeyDown={(e) => e.key === 'Enter' && !feedback?.isPass && handleCheck()}
+                placeholder={
+                  hasMicUsed 
+                    ? (isVi ? "Chỉnh sửa câu hỏi (Nhớ dấu ?)..." : "Edit your question (Remember ?)...") 
+                    : (isVi ? "🔒 BẤM MIC ĐỂ NÓI TRƯỚC!" : "🔒 PRESS MIC TO SPEAK FIRST!")
+                }
+                className={`w-full p-4 pl-24 pr-32 text-lg font-medium rounded-2xl border-2 outline-none transition-all ${
+                  !hasMicUsed 
+                    ? 'bg-slate-100 border-slate-300 cursor-not-allowed text-slate-400' 
+                    : feedback 
+                      ? (feedback.isPass ? 'border-green-500 bg-green-50' : 'border-rose-400 bg-rose-50') 
+                      : `border-slate-200 focus:border-${themeColor}-400`
+                }`}
+                disabled={!hasMicUsed || feedback?.isPass}
+                onKeyDown={(e) => e.key === 'Enter' && hasMicUsed && !feedback?.isPass && handleCheck()}
             />
-            <button 
-                onClick={toggleListen}
-                className={`absolute left-3 top-3 bottom-3 w-10 rounded-xl flex items-center justify-center transition-colors ${isListening ? 'bg-rose-500 text-white animate-pulse' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
-            >
-                <Mic className="w-5 h-5" />
-            </button>
 
             <div className="absolute right-3 top-3 bottom-3 flex space-x-2">
                 {feedback?.isPass ? (

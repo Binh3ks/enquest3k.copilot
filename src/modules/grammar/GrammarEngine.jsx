@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { Hash, Check, AlertCircle, ArrowRight, HelpCircle, Edit3, BookOpen, ChevronDown, ChevronUp, Keyboard, CheckCircle } from 'lucide-react';
 import { analyzeAnswer } from '../../utils/smartCheck';
@@ -20,9 +20,51 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
   const [inputVal, setInputVal] = useState(""); 
   const [showLesson, setShowLesson] = useState(true);
   const inputRef = useRef(null);
+  const previousInputRef = useRef("");
 
   // Get questions safely
   const questions = data?.exercises || [];
+
+  // Define callbacks BEFORE any conditional returns
+  const checkAnswer = useCallback(() => {
+    // Clear old feedback first
+    setFeedback({});
+    
+    const cleanInput = inputVal.replace(/\s+/g, ' ').trim();
+    
+    if (!questions[currentIndex]) return; // Guard
+    const currentQ = questions[currentIndex];
+    
+    // INTELLIGENT MODE SWITCHING
+    const checkMode = (currentQ.type === 'unscramble' || currentQ.customCheck) ? 'strict' : 'grammar';
+    const result = analyzeAnswer(cleanInput, currentQ.answer, checkMode);
+    
+    let msgVi = "Sai rồi."; let msgEn = "Incorrect.";
+    
+    if (result.status === 'perfect') {
+        msgVi = "Chính xác tuyệt đối!"; msgEn = "Perfect!";
+    } else if (result.status === 'warning') {
+        msgVi = result.message;
+        msgEn = result.message;
+    } else if (result.status === 'empty') {
+        msgVi = "Bạn chưa nhập gì cả."; msgEn = "Please type something.";
+    }
+
+    // Use setTimeout to ensure feedback appears after clear
+    setTimeout(() => {
+      setFeedback({ ...result, message_vi: msgVi, message_en: msgEn });
+    }, 0);
+
+    if (result.isCorrect && !completedQuestions.includes(currentQ.id)) {
+      setCompletedQuestions(prev => [...prev, currentQ.id]);
+    }
+  }, [inputVal, currentIndex, questions, completedQuestions]);
+
+  const handleInputChange = useCallback((e) => {
+    const newVal = e.target.value;
+    setInputVal(newVal);
+    // Don't clear feedback here - let user see previous result while typing
+  }, []);
 
   // 🔥 FIX: Reset state when mode changes
   useEffect(() => {
@@ -73,37 +115,6 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
     } else {
         // 🔥 Mark complete
         markComplete(100);
-    }
-  };
-
-  const checkAnswer = () => {
-    const cleanInput = inputVal.replace(/\s+/g, ' ').trim();
-    
-    // INTELLIGENT MODE SWITCHING
-    // Nếu là bài sắp xếp câu (unscramble) hoặc tự đặt câu (customCheck) -> Dùng mode 'strict' để bắt dấu câu/viết hoa.
-    // Nếu là điền từ (fill/mc) -> Dùng mode 'grammar' (dễ tính hơn).
-    const checkMode = (currentQ.type === 'unscramble' || currentQ.customCheck) ? 'strict' : 'grammar';
-
-    const result = analyzeAnswer(cleanInput, currentQ.answer, checkMode);
-    
-    let msgVi = "Sai rồi."; let msgEn = "Incorrect.";
-    
-    if (result.status === 'perfect') {
-        msgVi = "Chính xác tuyệt đối!"; msgEn = "Perfect!";
-    } else if (result.status === 'warning') {
-        msgVi = result.message; // Sử dụng thông báo chi tiết từ SmartCheck v15
-        msgEn = result.message;
-    } else if (result.status === 'empty') {
-        msgVi = "Bạn chưa nhập gì cả."; msgEn = "Please type something.";
-    }
-
-    setFeedback({ ...result, message_vi: msgVi, message_en: msgEn });
-
-    if (result.isCorrect) {
-        // Mark question as completed
-        if (!completedQuestions.includes(currentQ.id)) {
-          setCompletedQuestions(prev => [...prev, currentQ.id]);
-        }
     }
   };
 
@@ -179,7 +190,23 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
                 </div>
             ) : (
                 <>
-                    <input ref={inputRef} type="text" value={inputVal} onChange={(e) => { setInputVal(e.target.value); if (feedback.status) setFeedback({}); }} onKeyDown={handleKeyDown} placeholder={isVi ? "Gõ câu trả lời..." : "Type your answer..."} className={`w-full p-4 text-lg border-2 rounded-xl outline-none transition-all font-medium ${feedback.status === 'perfect' ? 'border-green-500 bg-green-50 text-green-900' : feedback.status === 'warning' ? 'border-amber-400 bg-amber-50 text-amber-900' : feedback.status === 'wrong' ? 'border-rose-300 bg-rose-50 text-rose-900' : `border-slate-300 focus:border-${themeColor}-500 focus:bg-white`}`} autoComplete="off" autoCorrect="off" spellCheck="false" />
+                    <input 
+                      ref={inputRef} 
+                      type="text" 
+                      value={inputVal} 
+                      onChange={handleInputChange} 
+                      onKeyDown={handleKeyDown} 
+                      placeholder={isVi ? "Gõ câu trả lời..." : "Type your answer..."} 
+                      className={`w-full p-4 text-lg border-2 rounded-xl outline-none transition-all font-medium ${
+                        feedback.status === 'perfect' ? 'border-green-500 bg-green-50 text-green-900' : 
+                        feedback.status === 'warning' ? 'border-amber-400 bg-amber-50 text-amber-900' : 
+                        feedback.status === 'wrong' ? 'border-rose-300 bg-rose-50 text-rose-900' : 
+                        `border-slate-300 focus:border-${themeColor}-500 focus:bg-white`
+                      }`} 
+                      autoComplete="off" 
+                      autoCorrect="off" 
+                      spellCheck="false" 
+                    />
                     <div className="flex justify-between items-center h-12">
                         <div className="flex-1 mr-4">
                             {feedback.status ? (
@@ -191,7 +218,16 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
                         </div>
                         <div className="flex gap-2 shrink-0">
                             {!feedback.isCorrect && !showHint && <button onClick={() => setShowHint(true)} className="p-3 text-slate-400 hover:bg-slate-100 rounded-xl transition-colors" title="Hint"><HelpCircle className="w-6 h-6" /></button>}
-                            {feedback.isCorrect ? <button onClick={handleNext} className={`btn-3d px-8 py-3 bg-${themeColor}-600 text-white rounded-xl font-bold flex items-center`}>{isVi ? "Tiếp theo" : "Next"} <ArrowRight className="w-5 h-5 ml-2" /></button> : <button onClick={checkAnswer} className={`btn-3d px-8 py-3 bg-slate-800 text-white rounded-xl font-bold flex items-center`}>{isVi ? "Kiểm tra" : "Check"} <Edit3 className="w-4 h-4 ml-2" /></button>}
+                            {feedback.isCorrect ? 
+                              <button onClick={handleNext} className={`btn-3d px-8 py-3 bg-${themeColor}-600 text-white rounded-xl font-bold flex items-center`}>{isVi ? "Tiếp theo" : "Next"} <ArrowRight className="w-5 h-5 ml-2" /></button> : 
+                              <button 
+                                onClick={checkAnswer} 
+                                onMouseDown={(e) => e.preventDefault()} 
+                                className={`btn-3d px-8 py-3 bg-slate-800 text-white rounded-xl font-bold flex items-center`}
+                              >
+                                {isVi ? "Kiểm tra" : "Check"} <Edit3 className="w-4 h-4 ml-2" />
+                              </button>
+                            }
                         </div>
                     </div>
                 </>

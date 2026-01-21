@@ -514,5 +514,185 @@ export default {
   isClosingStatement,
   sanitizeResponse,
   formatForTTS,
-  batchParseResponses
+  batchParseResponses,
+  fix20QCorrectGuess
 };
+
+/**
+ * 🎯 FIX 20 QUESTIONS CORRECT GUESS RESPONSE
+ * Detects when student guesses correctly but AI doesn't start new object
+ * Overrides AI response to force NEW OBJECT flow
+ * 
+ * @param {Object} response - Parsed AI response
+ * @param {string} userMessage - Student's message
+ * @param {Array} chatHistory - Conversation history
+ * @returns {Object} Fixed response with NEW OBJECT messaging
+ */
+export function fix20QCorrectGuess(response, userMessage, chatHistory = []) {
+  if (!response || !response.ai_response) {
+    return response;
+  }
+
+  const aiText = response.ai_response.toLowerCase();
+  const userText = userMessage.toLowerCase();
+  
+  // Detect if this is 20 Questions game
+  const is20QGame = /round \d+\/20/i.test(response.ai_response);
+  if (!is20QGame) {
+    return response; // Not 20Q game, no fix needed
+  }
+
+  // Detect correct guess patterns in AI response
+  const correctGuessPatterns = [
+    /yes,?\s+it\s+is\s+a?\s+(\w+)/i,
+    /yes!?\s+it'?s\s+a?\s+(\w+)/i,
+    /correct!?\s+it'?s\s+a?\s+(\w+)/i,
+    /you got it!?\s+it'?s\s+a?\s+(\w+)/i
+  ];
+
+  let guessedObject = null;
+  for (const pattern of correctGuessPatterns) {
+    const match = response.ai_response.match(pattern);
+    if (match) {
+      guessedObject = match[1];
+      break;
+    }
+  }
+
+  // If AI confirmed correct guess but didn't give NEW clues
+  if (guessedObject && (!aiText.includes('new round') || !aiText.includes('🔍'))) {
+    console.log(`🎯 DETECTED: Correct guess of "${guessedObject}" but missing NEW clues`);
+    
+    // Extract round number
+    const roundMatch = response.ai_response.match(/round (\d+)\/20/i);
+    const currentRound = roundMatch ? parseInt(roundMatch[1]) : 1;
+    
+    // Clue database (gentle hints)
+    const objectClues = {
+      table: { room: 'kitchen', hint1: 'It has legs', hint2: 'You can eat on it' },
+      chair: { room: 'living room', hint1: 'It has legs', hint2: 'You can sit on it' },
+      bed: { room: 'bedroom', hint1: "It's soft", hint2: 'You sleep on it' },
+      lamp: { room: 'bedroom', hint1: 'It gives light', hint2: 'It helps you see' },
+      sofa: { room: 'living room', hint1: "It's soft", hint2: 'You can relax on it' },
+      door: { room: 'house', hint1: 'It opens and closes', hint2: 'You walk through it' },
+      window: { room: 'house', hint1: "It's made of glass", hint2: 'You can look outside' },
+      mirror: { room: 'bathroom', hint1: "It's shiny", hint2: 'You see your face' },
+      rug: { room: 'living room', hint1: "It's on the floor", hint2: 'You walk on it' },
+      shelf: { room: 'house', hint1: 'It holds things', hint2: 'You put books on it' }
+    };
+    
+    // Pick random next object
+    const allowedObjects = ['bed', 'sofa', 'lamp', 'table', 'chair', 'mirror', 'rug', 'door', 'window', 'shelf'];
+    const nextObjects = allowedObjects.filter(obj => obj !== guessedObject.toLowerCase());
+    const randomNext = nextObjects[Math.floor(Math.random() * nextObjects.length)];
+    const clues = objectClues[randomNext] || { room: 'house', hint1: 'It has a feature', hint2: 'You use it' };
+    
+    // OVERRIDE AI response with NEW clues
+    response.ai_response = `Yes! It's a ${guessedObject}! 🎉 Round ${currentRound}/20: NEW ROUND! I'm thinking of something in the ${clues.room}. 🔍 ${clues.hint1}. 🔍 ${clues.hint2}. What is it?`;
+    
+    console.log(`✅ FIXED: Added NEW clues for next object "${randomNext}"`);
+  }
+
+  return response;
+}
+
+/**
+ * Force fix roleplay responses to ALWAYS end with question + options
+ * Used when AI ignores prompts and returns statements only
+ * 
+ * @param {Object} response - Parsed AI response
+ * @param {string} mode - Current mode (playing_roleplay, etc.)
+ * @param {string} roleplayId - Current roleplay ID (interior_designer, etc.)
+ * @param {string} lastUserMessage - Last message from user
+ * @returns {Object} Fixed response with guaranteed question
+ */
+export function forceRoleplayQuestion(response, mode, roleplayId, lastUserMessage = '') {
+  console.log('🔍 forceRoleplayQuestion CALLED:', { mode, roleplayId, lastUserMessage });
+  console.log('🔍 Response before fix:', response.ai_response);
+  
+  // Only fix roleplay mode
+  if (mode !== 'playing_roleplay') {
+    console.log('❌ Not roleplay mode, skipping');
+    return response;
+  }
+  
+  const aiText = response.ai_response || '';
+  const lowerText = aiText.toLowerCase();
+  
+  // Check if response ends with question
+  const hasQuestion = aiText.trim().endsWith('?');
+  
+  console.log('🔍 hasQuestion:', hasQuestion, 'aiText ends with:', aiText.slice(-20));
+  
+  // If already has question, check if it has options
+  if (hasQuestion) {
+    // Check if question has at least 2 clear options (A or B pattern)
+    const hasOptions = aiText.includes(' or ') || 
+                      (aiText.match(/\?.*\?/g) && aiText.match(/\?.*\?/g).length >= 2) ||
+                      aiText.includes(', ') && aiText.split(',').length >= 2;
+    
+    console.log('🔍 hasOptions:', hasOptions);
+    
+    if (hasOptions) {
+      console.log('✅ Roleplay response OK: has question with options');
+      return response; // Already good
+    }
+  }
+  
+  console.warn('⚠️ ROLEPLAY FIX NEEDED: Response lacks question or options');
+  console.warn('   Original:', aiText);
+  
+  // Build appropriate follow-up question based on roleplay type
+  let followUpQuestion = '';
+  const lower = lastUserMessage.toLowerCase();
+  
+  // Detect what user just said to ask relevant follow-up
+  const colorWords = ['blue', 'red', 'green', 'white', 'yellow', 'brown', 'black', 'orange', 'purple', 'pink'];
+  const furnitureWords = ['bed', 'sofa', 'table', 'chair', 'lamp', 'mirror', 'rug', 'door', 'window', 'shelf', 'closet'];
+  const roomWords = ['bedroom', 'living room', 'kitchen', 'bathroom', 'house'];
+  const sizeWords = ['big', 'small', 'large', 'tiny'];
+  
+  const mentionsColor = colorWords.some(c => lower.includes(c));
+  const mentionsFurniture = furnitureWords.some(f => lower.includes(f));
+  const mentionsRoom = roomWords.some(r => lower.includes(r));
+  const mentionsSize = sizeWords.some(s => lower.includes(s));
+  
+  // Role-specific follow-ups
+  if (roleplayId === 'interior_designer') {
+    if (mentionsRoom && !mentionsFurniture) {
+      followUpQuestion = ' What furniture do you want? Do you want a bed, a table, or a chair?';
+    } else if (mentionsFurniture && !mentionsColor) {
+      followUpQuestion = ' What color do you like? Do you like blue, white, or brown?';
+    } else if (mentionsColor && !mentionsSize) {
+      followUpQuestion = ' Do you want a big one or a small one?';
+    } else {
+      followUpQuestion = ' What else do you need? A lamp, a mirror, or a rug?';
+    }
+  } else if (roleplayId === 'house_tour_guide') {
+    if (mentionsRoom) {
+      followUpQuestion = ' What can you see in this room? A bed, a lamp, or a chair?';
+    } else if (mentionsFurniture) {
+      followUpQuestion = ' What else can you see? A table, a mirror, or a window?';
+    } else {
+      followUpQuestion = ' Do you want to see another room? The kitchen, the bathroom, or the living room?';
+    }
+  } else if (roleplayId === 'furniture_shop') {
+    if (mentionsFurniture && !mentionsColor) {
+      followUpQuestion = ' What color do you want? Blue, white, or brown?';
+    } else if (mentionsColor) {
+      followUpQuestion = ' How many do you need? One, two, or three?';
+    } else {
+      followUpQuestion = ' What else do you want to buy? A table, a chair, or a lamp?';
+    }
+  } else {
+    // Generic fallback
+    followUpQuestion = ' What do you want? Tell me more!';
+  }
+  
+  // Append question to response
+  response.ai_response = aiText.trim() + followUpQuestion;
+  
+  console.log('✅ FORCED QUESTION ADDED:', followUpQuestion);
+  
+  return response;
+}

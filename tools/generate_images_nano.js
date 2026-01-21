@@ -4,8 +4,9 @@ import dotenv from 'dotenv';
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
-const WEEK_ID = String(process.argv[2]).padStart(2, '0');
-const BASE_DIR = path.join('public/images', `week_${WEEK_ID}`);
+const WEEK_ID = String(process.argv[2]);
+const BASE_DIR = path.join('public/images', `week${WEEK_ID}`);
+const BASE_DIR_EASY = path.join('public/images', `week${WEEK_ID}_easy`);
 const API_KEY = process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
 
 // MODEL CHUẨN: gemini-3-pro-image-preview
@@ -17,9 +18,11 @@ console.log(`🍌 NANO BANANA GENERATOR FOR WEEK ${WEEK_ID}`);
 
 // Cleanup & Init
 if (!fs.existsSync(BASE_DIR)) fs.mkdirSync(BASE_DIR, { recursive: true });
+if (!fs.existsSync(BASE_DIR_EASY)) fs.mkdirSync(BASE_DIR_EASY, { recursive: true });
 
-async function generateImage(prompt, filename) {
-    const outFile = path.join(BASE_DIR, filename);
+async function generateImage(prompt, filename, isEasy = false) {
+    const targetDir = isEasy ? BASE_DIR_EASY : BASE_DIR;
+    const outFile = path.join(targetDir, filename);
     // Skip nếu file đã có và dung lượng > 0
     if (fs.existsSync(outFile) && fs.statSync(outFile).size > 0) return;
 
@@ -66,7 +69,8 @@ async function scanAndGen(weekId) {
     
     // A. VOCAB (10 words) & WORD POWER (3 words)
     // Quét cả Advanced và Easy
-    const dirs = [path.join('src/data/weeks', `week_${weekId}`), path.join('src/data/weeks_easy', `week_${weekId}`)];
+    const weekIdPadded = String(weekId).padStart(2, '0');
+    const dirs = [path.join('src/data/weeks', `week_${weekIdPadded}`), path.join('src/data/weeks_easy', `week_${weekIdPadded}`)];
     
     for (const dir of dirs) {
         if (!fs.existsSync(dir)) continue;
@@ -102,8 +106,8 @@ async function scanAndGen(weekId) {
     // B. COVERS (Bắt buộc, phân biệt easy/advanced, đúng format)
     let readTopic = "School";
     let readTopicEasy = "School";
-    const readPath = path.join('src/data/weeks', `week_${weekId}`, 'read.js');
-    const readPathEasy = path.join('src/data/weeks_easy', `week_${weekId}`, 'read.js');
+    const readPath = path.join('src/data/weeks', `week_${weekIdPadded}`, 'read.js');
+    const readPathEasy = path.join('src/data/weeks_easy', `week_${weekIdPadded}`, 'read.js');
     if (fs.existsSync(readPath)) {
         const content = fs.readFileSync(readPath, 'utf-8');
         const match = content.match(/title\s*:\s*(["'`])((?:(?!\1).)+)\1/i);
@@ -116,11 +120,11 @@ async function scanAndGen(weekId) {
     }
 
     // Advanced mode
-    tasks.push({ prompt: `${readTopic} storybook cover illustration, kids education`, file: `read_cover_w${String(weekId).padStart(2, '0')}.jpg` });
-    tasks.push({ prompt: `science poster about ${readTopic}`, file: `explore_cover_w${String(weekId).padStart(2, '0')}.jpg` });
+    tasks.push({ prompt: `${readTopic} storybook cover illustration, kids education`, file: `read_cover_w${String(weekId).padStart(2, '0')}.jpg`, isEasy: false });
+    tasks.push({ prompt: `science poster about ${readTopic}`, file: `explore_cover_w${String(weekId).padStart(2, '0')}.jpg`, isEasy: false });
     // Easy mode
-    tasks.push({ prompt: `${readTopicEasy} storybook cover illustration, kids education, simple`, file: `read_cover_w${String(weekId).padStart(2, '0')}_easy.jpg` });
-    tasks.push({ prompt: `science poster about ${readTopicEasy}, simple`, file: `explore_cover_w${String(weekId).padStart(2, '0')}_easy.jpg` });
+    tasks.push({ prompt: `${readTopicEasy} storybook cover illustration, kids education, simple`, file: `read_cover_w${String(weekId).padStart(2, '0')}.jpg`, isEasy: true });
+    tasks.push({ prompt: `science poster about ${readTopicEasy}, simple`, file: `explore_cover_w${String(weekId).padStart(2, '0')}.jpg`, isEasy: true });
 
     // Các ảnh khác giữ nguyên
     tasks.push({ prompt: "puzzle pieces matching game", file: "wp_match.jpg" });
@@ -130,7 +134,7 @@ async function scanAndGen(weekId) {
     
     // Chạy tuần tự (Sequential) để tránh lỗi API 429
     for (const task of tasks) {
-        await generateImage(task.prompt, task.file);
+        await generateImage(task.prompt, task.file, task.isEasy || false);
         // Delay 2s giữa các request
         await new Promise(r => setTimeout(r, 2000));
     }

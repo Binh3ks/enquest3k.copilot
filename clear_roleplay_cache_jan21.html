@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Roleplay Cache - Jan 21</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-clear {
+            background: #ff6b6b;
+            color: white;
+        }
+        .btn-clear:hover {
+            background: #ee5a6f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+        }
+        .btn-verify {
+            background: #51cf66;
+            color: white;
+        }
+        .btn-verify:hover {
+            background: #40c057;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(81, 207, 102, 0.4);
+        }
+        .btn-reload {
+            background: #4dabf7;
+            color: white;
+        }
+        .btn-reload:hover {
+            background: #339af0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(77, 171, 247, 0.4);
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .emoji {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 13px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Clear Roleplay Cache</h1>
+        <div class="subtitle">January 21, 2026 - Force Reload Fix</div>
+        
+        <button class="btn-clear" onclick="clearAll()">
+            <span class="emoji">🗑️</span> Clear All Cache & Storage
+        </button>
+        
+        <button class="btn-verify" onclick="verifyCleared()">
+            <span class="emoji">✅</span> Verify Cache Cleared
+        </button>
+        
+        <button class="btn-reload" onclick="reloadApp()">
+            <span class="emoji">🔄</span> Reload App (http://localhost:5173)
+        </button>
+        
+        <div class="status" id="status">
+            <strong>Status:</strong> Ready to clear cache
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Why Clear Cache?</strong><br>
+            Roleplay prompts were updated to fix conversation flow issues. Browser cache may still use old prompts. Clearing forces reload of new rules.
+        </div>
+    </div>
+
+    <script>
+        function clearAll() {
+            const status = document.getElementById('status');
+            status.innerHTML = '<strong>Clearing...</strong>';
+            
+            let cleared = [];
+            
+            // Clear localStorage
+            try {
+                localStorage.clear();
+                cleared.push('✅ localStorage');
+            } catch (e) {
+                cleared.push('❌ localStorage: ' + e.message);
+            }
+            
+            // Clear sessionStorage
+            try {
+                sessionStorage.clear();
+                cleared.push('✅ sessionStorage');
+            } catch (e) {
+                cleared.push('❌ sessionStorage: ' + e.message);
+            }
+            
+            // Clear IndexedDB
+            try {
+                indexedDB.databases().then(dbs => {
+                    dbs.forEach(db => {
+                        indexedDB.deleteDatabase(db.name);
+                        cleared.push('✅ IndexedDB: ' + db.name);
+                    });
+                    updateStatus(cleared);
+                });
+            } catch (e) {
+                cleared.push('❌ IndexedDB: ' + e.message);
+            }
+            
+            // Clear Service Workers
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(registrations => {
+                    registrations.forEach(registration => {
+                        registration.unregister();
+                        cleared.push('✅ Service Worker unregistered');
+                    });
+                    updateStatus(cleared);
+                });
+            }
+            
+            // Clear Cache API
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => {
+                        caches.delete(name);
+                        cleared.push('✅ Cache: ' + name);
+                    });
+                    updateStatus(cleared);
+                });
+            }
+            
+            setTimeout(() => {
+                updateStatus(cleared);
+            }, 500);
+        }
+        
+        function updateStatus(items) {
+            const status = document.getElementById('status');
+            status.innerHTML = '<strong>Cleared:</strong><br>' + items.join('<br>');
+        }
+        
+        function verifyCleared() {
+            const status = document.getElementById('status');
+            const checks = [];
+            
+            checks.push(`localStorage items: ${localStorage.length}`);
+            checks.push(`sessionStorage items: ${sessionStorage.length}`);
+            
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(regs => {
+                    checks.push(`Service Workers: ${regs.length}`);
+                    status.innerHTML = '<strong>Verification:</strong><br>' + checks.join('<br>');
+                });
+            } else {
+                status.innerHTML = '<strong>Verification:</strong><br>' + checks.join('<br>');
+            }
+        }
+        
+        function reloadApp() {
+            window.open('http://localhost:5173', '_blank');
+        }
+        
+        // Auto-check on load
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('auto') === '1') {
+                clearAll();
+                setTimeout(() => {
+                    reloadApp();
+                }, 1000);
+            }
+        };
+    </script>
+</body>
+</html>

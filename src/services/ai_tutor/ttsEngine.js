@@ -106,13 +106,13 @@ const TTS_CONFIG = {
   gemini: {
     enabled: true, // 🔥 Using Google Cloud Text-to-Speech
     voice: 'en-US-Studio-O', // 🎙️ Studio quality, energetic female voice (clearer than Neural2-F)
-    speed: 1.0 // ⚡ Normal speed for faster processing
+    speed: 0.85 // 🎓 Slower for ESL learners (user requested)
   },
   openai: {
     enabled: !!OPENAI_API_KEY,
     model: 'tts-1',
     voice: 'nova', // Natural, warm voice
-    speed: 0.9
+    speed: 0.85 // Match Gemini speed for consistency
   },
   puter: {
     enabled: false, // TODO: Integrate Puter.js when available
@@ -323,7 +323,7 @@ async function callGeminiTTS(text) {
         audioConfig: {
           audioEncoding: 'LINEAR16', // 🔥 PCM16 format (requires WAV header)
           sampleRateHertz: 24000, // 24kHz sample rate
-          speakingRate: 0.9, // 🎓 Slower speed for young ESL learners (6-12 years)
+          speakingRate: 0.85, // 🎓 Optimal speed for young ESL learners (user requested)
           pitch: 0.5, // ⚡ Reduced pitch (high pitch slows down encoding)
           volumeGainDb: 0
         }

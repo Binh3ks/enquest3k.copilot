@@ -8,6 +8,65 @@
  */
 
 // ============================================
+// 20 QUESTIONS GAME OBJECT VALIDATION
+// ============================================
+
+const ALLOWED_20Q_OBJECTS = [
+  'bed', 'sofa', 'lamp', 'table', 'chair', 
+  'mirror', 'rug', 'door', 'window', 'shelf'
+];
+
+const FORBIDDEN_20Q_OBJECTS = [
+  'cat', 'dog', 'stool', 'bench', 'spoon', 'fork', 'knife', 'plate', 'cup', 'glass',
+  'fridge', 'refrigerator', 'toaster', 'oven', 'microwave', 'stove', 'sink',
+  'computer', 'phone', 'tv', 'television', 'desk', 'cabinet', 'drawer',
+  'couch', 'armchair', 'bookshelf', 'bookcase', 'wardrobe', 'closet',
+  'bathtub', 'toilet', 'shower', 'curtain', 'clock', 'picture', 'painting',
+  'vase', 'plant', 'pot', 'pan', 'book', 'pen', 'pencil', 'paper', 'box', 'basket', 'bag'
+];
+
+/**
+ * Validate 20 Questions game objects
+ * Detects when AI mentions forbidden objects (cat, dog, spoon, stool, etc.)
+ * 
+ * @param {string} text - AI response text
+ * @returns {{ valid: boolean, violations: string[] }}
+ */
+function validate20QObjects(text) {
+  if (!text || typeof text !== 'string') {
+    return { valid: true, violations: [] };
+  }
+
+  const lowerText = text.toLowerCase();
+  const violations = [];
+
+  // Check if this is a 20Q game response (contains "Round X/20" or "I'm thinking")
+  const is20QGame = /round \d+\/20/i.test(text) || /i'm thinking/i.test(text);
+  
+  if (!is20QGame) {
+    return { valid: true, violations: [] }; // Not a 20Q game, skip validation
+  }
+
+  // Check for forbidden objects being revealed
+  for (const forbiddenObj of FORBIDDEN_20Q_OBJECTS) {
+    // Match patterns like "It is a spoon", "It's a cat", "I'm thinking of a stool"
+    const revealPattern = new RegExp(
+      `\\b(it is a?|it's a?|thinking of a?)\\s+${forbiddenObj}\\b`, 
+      'i'
+    );
+    
+    if (revealPattern.test(lowerText)) {
+      violations.push(`🎯 20Q ERROR: AI revealed forbidden object "${forbiddenObj}" (Allowed: ${ALLOWED_20Q_OBJECTS.join(', ')})`);
+    }
+  }
+
+  return {
+    valid: violations.length === 0,
+    violations
+  };
+}
+
+// ============================================
 // GRAMMAR RULES BY WEEK
 // ============================================
 
@@ -200,6 +259,12 @@ export function validateAIResponse(aiResponse, weekId) {
     const result = validateGrammarScope(aiResponse.ai_response, weekId);
     if (!result.valid) {
       checks.push({ field: 'ai_response', violations: result.violations });
+    }
+    
+    // 🎯 NEW: Validate 20 Questions game objects
+    const objectValidation = validate20QObjects(aiResponse.ai_response);
+    if (!objectValidation.valid) {
+      checks.push({ field: 'ai_response', violations: objectValidation.violations });
     }
   }
 
