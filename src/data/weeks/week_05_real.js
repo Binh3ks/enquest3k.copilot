@@ -491,7 +491,22 @@ const week5RealData = {
       
       nova_greeting: "Oh no! The house is so dark! I have a flashlight. Let's look!",
       
-      mission_context: `This is Week 5 Mission 2 - The Dark Room (Flashlight Game). STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, EXCITING words, max 8 words/sentence. GRAMMAR FOCUS: "There is a/an..." - DELIBERATELY test a/an with vowel objects (apple, egg, umbrella, octopus) mixed with consonants. VOCABULARY: apple, egg, umbrella, octopus, spider, cat, book, chair, lamp. THEME: Darkness, surprise, discovery with flashlight. MECHANIC: Ms. Nova shines flashlight 🔦 on objects, student shouts what they see. CORRECT a/an ERRORS IMMEDIATELY: "Oops! AN apple. Say again!" ENCOURAGE: Excitement and surprise reactions. AVOID: Boring lists. FOCUS: Fun discovery game that teaches a/an naturally.`,
+      mission_context: `This is Week 5 Mission 2 - The Dark Room (Flashlight Game). 
+
+STRICT GAME RULES:
+1. Ms. Nova ONLY shines flashlight on objects and asks "What is this?" or "What do you see?"
+2. Student MUST answer: "There is a/an [object]"
+3. Ms. Nova corrects a/an errors: "Oops! AN apple. Say again!"
+4. Then shine on NEXT object immediately
+
+FORBIDDEN:
+- Do NOT ask personal questions (age, name, feelings)
+- Do NOT change topic
+- STAY IN CHARACTER as flashlight explorer
+
+GRAMMAR ENFORCEMENT: Every student answer must use "There is a/an..."
+VOCABULARY: apple, egg, umbrella, octopus, spider, cat, book, lamp (test vowels!)
+EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       
       target_vocab: ["apple", "egg", "umbrella", "octopus", "spider", "cat", "book", "lamp", "flashlight", "dark"],
       
@@ -520,50 +535,66 @@ const week5RealData = {
           phase: "intro",
           turns: "1-4",
           phase_name: "Darkness and Flashlight",
-          focus: "Establish the dark room scenario and start shining",
+          focus: "Establish grammar pattern with simple objects",
           phase_questions: [
-            "It's so dark! Can you see anything?",
-            "I have a flashlight! Let's look around!",
-            "(Shine light on table) Wow! What is on the table?",
-            "Let me shine the light on the floor! What do you see?"
+            "(Shine on book) 📖 Look! What do you see? Say: There is...",
+            "(Shine on chair) 🪑 What is this? Use: There is a...",
+            "(Shine on lamp) 💡 On the table! What is it? Say: There is...",
+            "(Shine on cat) 🐱 Meow! What is hiding? There is..."
+          ],
+          example_answers: [
+            "There is a book",
+            "There is a chair", 
+            "There is a lamp",
+            "There is a cat"
           ]
         },
         {
           phase: "vowel_trap",
           turns: "5-12",
-          phase_name: "A/AN Grammar Challenge",
-          focus: "Deliberately shine on vowel objects to test a/an",
+          phase_name: "A/AN Vowel Challenge",
+          focus: "Test a/an with vowel-starting objects",
           phase_questions: [
-            "(Shine on apple) 🍎 Look! What is this?",
-            "(Shine on egg) 🥚 What is on the chair?",
-            "(Shine on umbrella) ☂️ Under the bed! What is it?",
-            "(Shine on octopus toy) 🐙 Wow! Eight legs! What is this?",
-            "(Shine on spider) 🕷️ Eww! On the wall! What is it?",
-            "(Shine on cat) 🐱 Listen... Meow! What is hiding?",
-            "(Shine on book) 📖 What is this on the desk?",
-            "(Shine on lamp) 💡 What is in the corner?"
+            "(Shine on apple) 🍎 What is this red thing? There is AN...",
+            "(Shine on egg) 🥚 White and oval! What is it? There is AN...",
+            "(Shine on umbrella) ☂️ For rain! What is this? There is AN...",
+            "(Shine on octopus) 🐙 Eight legs! What is this? There is AN...",
+            "(Shine on book) 📖 You can read this! There is A...",
+            "(Shine on spider) 🕷️ Eww! On the wall! There is A...",
+            "(Shine on lamp) 💡 It gives light! There is A...",
+            "(Shine on chair) 🪑 You sit here! There is A..."
+          ],
+          example_answers: [
+            "There is an apple",
+            "There is an egg",
+            "There is an umbrella", 
+            "There is an octopus",
+            "There is a book",
+            "There is a spider",
+            "There is a lamp",
+            "There is a chair"
           ]
         },
         {
-          phase: "surprise",
+          phase: "speed_round",
           turns: "13-16",
-          phase_name: "Surprise Objects",
-          focus: "More exciting discoveries with reactions",
+          phase_name: "Quick Discovery",
+          focus: "Fast-paced practice",
           phase_questions: [
-            "Let's look in the closet! (Shine) Oh! What is there?",
-            "Behind the door! (Shine) Surprise! What is it?",
-            "Under the table! (Shine) What do you see?",
-            "What's your favorite thing we found?"
+            "(Shine quickly) What is this? Quick! There is...",
+            "(Shine on floor) What do you see? There is...",
+            "(Shine in corner) Surprise! What is it? There is...",
+            "Great job! What was the hardest word?"
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          phase_name: "Lights On!",
-          focus: "Wrap up the adventure",
+          phase_name: "Lights On",
+          focus: "Celebrate learning a/an",
           phase_questions: [
-            "The lights are back on! ✨ What was the coolest thing?",
-            "We found so many things! Which one was most surprising?"
+            "The lights are back! ✨ Tell me one thing we found. There is...",
+            "Perfect! You learned A and AN! Bye bye! 👋"
           ]
         }
       ],
