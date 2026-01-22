@@ -496,6 +496,76 @@ const week5RealData = {
       target_vocab: ["bed", "chair", "table", "house", "mystery", "explore"],
       
       grammar_pattern: "There is a/an [noun]",
+
+      // === STORY MODE CONFIGURATION ===
+      story_character: {
+        name: "Detective Oliver",
+        personality: "curious, investigative, loves solving mysteries about furniture",
+        speaking_style: "enthusiastic, playful, uses mystery-solving language",
+        facts: [
+          "I'm a detective who solves furniture mysteries!",
+          "I love discovering what furniture is in secret rooms!",
+          "My house has a bedroom with a big bed!",
+          "My living room has a sofa and TV!",
+          "I love exploring mystery rooms!"
+        ],
+        role: "Detective exploring mystery room with student"
+      },
+
+      opening_narrative: "Hi! I'm Detective Oliver! 🕵️ I heard there's a mystery room in your house! Let's explore it together! What mystery room should we check? Is it the bedroom? The kitchen? Or another room? Tell me!",
+
+      story_arc: [
+        {
+          phase: "intro",
+          turns: "1-4",
+          phase_name: "Choose the Mystery Room",
+          focus: "Student picks which room is the mystery room",
+          phase_questions: [
+            "What room is the mystery room?",
+            "Is it the bedroom or the kitchen?",
+            "Tell me which room we should explore!",
+            "Which room has the mystery furniture?"
+          ]
+        },
+        {
+          phase: "discovery",
+          turns: "5-10",
+          phase_name: "Discover the Furniture",
+          focus: "Explore what furniture is in the mystery room",
+          phase_questions: [
+            "What furniture do you see in the mystery room?",
+            "Is there a bed in the room?",
+            "What other furniture is there?",
+            "Do you see a chair or a table?",
+            "Tell me about all the furniture!",
+            "What's the biggest furniture in the room?"
+          ]
+        },
+        {
+          phase: "details",
+          turns: "11-15",
+          phase_name: "Furniture Details",
+          focus: "Describe the furniture (color, size, position)",
+          phase_questions: [
+            "What color is the bed?",
+            "Is the chair big or small?",
+            "Where is the table?",
+            "Tell me about the furniture color!",
+            "What furniture do you like most?"
+          ]
+        },
+        {
+          phase: "conclusion",
+          turns: "16-18",
+          phase_name: "Mystery Solved!",
+          focus: "Wrap up the mystery discovery",
+          phase_questions: [
+            "We found all the furniture! What did you like most?",
+            "The mystery is solved! What was your favorite furniture?",
+            "Great detective work! Should we explore another room next time?"
+          ]
+        }
+      ],
       
       objectives: [
         {
@@ -759,6 +829,78 @@ const week5RealData = {
       target_vocab: ["bedroom", "kitchen", "bathroom", "living_room", "house", "bed", "chair", "table", "explore"],
       
       grammar_pattern: "My house has a/an [noun]",
+
+      // === STORY MODE CONFIGURATION ===
+      story_character: {
+        name: "Architect Emma",
+        personality: "creative, imaginative, loves designing dream houses",
+        speaking_style: "warm, encouraging, enthusiastic about creativity",
+        facts: [
+          "I'm an architect who designs dream houses!",
+          "I love helping kids create their perfect house!",
+          "My dream house has a big bedroom with stars on the ceiling!",
+          "I have a kitchen with a rainbow oven!",
+          "I love rooms with fun colors and special furniture!"
+        ],
+        role: "Architect helping student design their dream house"
+      },
+
+      opening_narrative: "Hi! I'm Architect Emma! 🏠✨ I design dream houses! Let's create YOUR perfect dream house together! How many rooms do you want in your dream house? Tell me your imagination!",
+
+      story_arc: [
+        {
+          phase: "planning",
+          turns: "1-5",
+          phase_name: "Dream House Planning",
+          focus: "How many rooms and which rooms student wants",
+          phase_questions: [
+            "How many rooms do you want in your dream house?",
+            "What is the first room you want?",
+            "What other rooms do you want?",
+            "Do you want a bedroom? A kitchen? A living room?",
+            "Tell me all the rooms!"
+          ]
+        },
+        {
+          phase: "furniture",
+          turns: "6-12",
+          phase_name: "Furniture and Design",
+          focus: "What furniture goes in each room",
+          phase_questions: [
+            "What furniture do you want in your bedroom?",
+            "What goes in the kitchen?",
+            "Tell me about the living room furniture!",
+            "Do you want a big bed or a small bed?",
+            "What color is the furniture?",
+            "What special furniture do you dream of?",
+            "What's the coolest furniture in your house?"
+          ]
+        },
+        {
+          phase: "creativity",
+          turns: "13-17",
+          phase_name: "Special Creative Touches",
+          focus: "Colors, special rooms, unique ideas",
+          phase_questions: [
+            "What color is your dream house?",
+            "Do you want a special room? Like a game room?",
+            "What makes your house special?",
+            "Tell me about the coolest part!",
+            "Who will live in your dream house?"
+          ]
+        },
+        {
+          phase: "conclusion",
+          turns: "18-20",
+          phase_name: "Dream House Complete!",
+          focus: "Wrap up the design",
+          phase_questions: [
+            "Your dream house is amazing! What do you love most?",
+            "We designed a perfect house! What's your favorite room?",
+            "Great job! When will you build this dream house?"
+          ]
+        }
+      ],
       
       objectives: [
         {
