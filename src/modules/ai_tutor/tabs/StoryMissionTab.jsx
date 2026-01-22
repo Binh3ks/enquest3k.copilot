@@ -539,6 +539,25 @@ const StoryMissionTab = () => {
         // Use AI-generated hints
         const hints = guardedResponse.hints || guardedResponse.suggested_hints || [];
         
+        // 🔥 CHECK MAXIMUM TURNS (enforce 20-turn limit)
+        const maxTurns = currentMission.maximum_turns || 20;
+        const nextTurn = turnCount + 1;
+        
+        if (nextTurn >= maxTurns) {
+          // Reached maximum - check if response is goodbye
+          const isGoodbye = responseText.toLowerCase().includes('goodbye') || 
+                           responseText.toLowerCase().includes('bye') ||
+                           !responseText.includes('?');
+          
+          if (!isGoodbye) {
+            console.log(`⚠️ Turn ${nextTurn}/${maxTurns} reached but no goodbye - forcing mission end`);
+            responseText = "Great! I learned so much about your house! Thank you for showing me around! Goodbye!";
+          }
+          
+          console.log(`🏁 Mission ending at turn ${nextTurn}/${maxTurns}`);
+          setMissionStatus('completed');
+        }
+        
         // Add AI message to chat
         const aiMsg = {
           role: 'assistant',
@@ -561,14 +580,14 @@ const StoryMissionTab = () => {
           }
         }
         
-        // Show hints if question detected
-        if (responseText.includes('?') && hints.length > 0) {
+        // Show hints only if question detected AND not at max turns
+        if (responseText.includes('?') && hints.length > 0 && nextTurn < maxTurns) {
           setHints(hints);
           setShowHints(true);
         }
         
         // Increment turn count
-        setTurnCount(prev => prev + 1);
+        setTurnCount(nextTurn);
         
         return; // 🔥 EXIT EARLY - skip all objective logic below!
       }

@@ -77,10 +77,23 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
     - Breaking character as ${char.name}
     - Asking yes/no questions
-    - **REPEATING QUESTIONS YOU ALREADY ASKED** (see conversation history!)
+    - **REPEATING QUESTIONS - Check list below carefully!**
     
-    📜 QUESTIONS YOU ALREADY ASKED (DON'T REPEAT):
-    ${questionsAsked.length > 0 ? questionsAsked.map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
+    📜 QUESTIONS YOU ALREADY ASKED (READ THIS LIST - DON'T ASK AGAIN!):
+    ${questionsAsked.length > 0 ? questionsAsked.map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet - you can ask anything!'}
+    
+    ⚠️ BEFORE ASKING NEW QUESTION:
+    1. Read the list above carefully
+    2. Check if similar question was asked (e.g., "What color is X?" with different X)
+    3. If topic already covered → Ask about DIFFERENT topic
+    4. Ask about NEW furniture, NEW rooms, NEW activities
+    
+    ${turnCount >= (mission.maximum_turns || 20) ? `
+    🏁 MISSION ENDING (Turn ${turnCount}/${mission.maximum_turns || 20}):
+    - This is the LAST turn!
+    - Say goodbye: "Great! I learned so much about your house! Thank you for showing me around! Goodbye!"
+    - NO new questions!
+    ` : ''}
     
     🚨 MANDATORY - ALWAYS DO THIS:
     - Stay in character as ${char.name}
@@ -90,9 +103,9 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       * Pet: ${char.facts.has_pet ? `${char.facts.pet_type} named ${char.facts.pet_name}` : 'no pet'}
       * Favorite furniture: ${char.facts.favorite_furniture}
     - Ask open-ended questions with 2-3 options
-    - **ASK NEW QUESTIONS** - check conversation history above!
+    - **ASK ABOUT NEW TOPICS** - don't repeat topics from list above!
     - ACK + RECAST short answers as full sentences
-    - End EVERY response with "?"
+    - End with "?" (unless turn ${turnCount} >= ${mission.maximum_turns || 20}, then say goodbye)
     
     📖 CURRENT STORY PHASE: ${currentPhase?.phase || 'introduction'}
     PHASE GOAL: ${currentPhase?.goal || 'Get started'}
@@ -127,17 +140,24 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     4. QUESTION: Ask follow-up with 2-3 options (CHECK: not asked before!)
     
     🎓 HINTS INSTRUCTION:
-    In suggested_hints array, provide SCRAMBLED WORDS to answer YOUR question:
+    In suggested_hints array, provide ANSWER OPTIONS for YOUR question:
     
-    STEP 1: Read the question YOU just asked
-    STEP 2: Think: "What would student say to answer THIS question?"
-    STEP 3: Break answer into words
-    STEP 4: Put in suggested_hints (will be scrambled automatically)
+    CRITICAL: Give ANSWER WORDS (vocabulary options), NOT question words!
     
-    Example:
-    - Your question: "Is your house big or small?"
-    - Student's answer: "My house is big" OR "My house is small"
-    - Hints: ["My", "house", "is", "big", "small"]
+    Examples:
+    - Your question: "What color is your house?"
+      ❌ WRONG hints: ["what", "color", "is", "your", "house"] (question words)
+      ✅ RIGHT hints: ["blue", "red", "white", "yellow", "green"] (answer options)
+    
+    - Your question: "What is in your bedroom?"
+      ❌ WRONG: ["what", "is", "in", "bedroom"]
+      ✅ RIGHT: ["bed", "chair", "table", "lamp", "closet", "window"]
+    
+    - Your question: "Do you like your bedroom or living room?"
+      ❌ WRONG: ["do", "you", "like", "bedroom", "or"]
+      ✅ RIGHT: ["bedroom", "living", "room", "I", "like", "my"]
+    
+    FORMAT: Give 5-8 vocabulary words that student can use to answer. NO question words!
     
     TARGET VOCABULARY: ${mission.target_vocab?.join(', ') || 'rooms and furniture'}
     GRAMMAR: ${mission.grammar_pattern || 'A/An + noun'}
