@@ -242,14 +242,21 @@ const StoryMissionTab = () => {
       currentMission.vocabulary = missionVocabulary;
     }
     
-    // 🔥 Create TurnManager with objectives (if available) AND missionData for minimum_turns
-    const turnManager = new TurnManager(
-      currentMission.mission_id, 
-      currentMission.title, 
-      objectives, 
-      currentMission // Pass full mission data for minimum_turns, maximum_turns
-    );
-    registerTurnManager(turnManager); // Register in singleton registry
+    // 🔥 NEW: Skip TurnManager for story_character missions (they use story_arc instead)
+    let turnManager = null;
+    if (!currentMission.story_character) {
+      // 🔥 Create TurnManager with objectives (if available) AND missionData for minimum_turns
+      turnManager = new TurnManager(
+        currentMission.mission_id, 
+        currentMission.title, 
+        objectives, 
+        currentMission // Pass full mission data for minimum_turns, maximum_turns
+      );
+      registerTurnManager(turnManager); // Register in singleton registry
+      console.log('✅ TurnManager created for objective/step-based mission');
+    } else {
+      console.log('⏩ Skipping TurnManager - Mission has story_character (uses story_arc)');
+    }
     
     try {
       // 🔥 Pass TurnManager to novaEngine via context
@@ -284,7 +291,7 @@ const StoryMissionTab = () => {
       
       // 🔥 Mark first step as asked AFTER opening message accepted
       // Only for legacy mode - objective mode doesn't use steps
-      if (turnManager.mode === 'step' && turnManager.missionSteps.length > 0) {
+      if (turnManager && turnManager.mode === 'step' && turnManager.missionSteps.length > 0) {
         const firstStep = turnManager.missionSteps[0];
         turnManager.markStepAsked(firstStep.key);
         console.log('✅ Opening step marked as asked:', firstStep.key);
@@ -300,8 +307,8 @@ const StoryMissionTab = () => {
         // Week 4 style: Use question_variants if available
         const missionGreeting = currentMission.nova_greeting || 'Hi! I\'m Ms. Nova!';
         
-        // 🔥 NEW: Get variant from TurnManager
-        const variant = turnManager.getQuestionVariant();
+        // 🔥 NEW: Get variant from TurnManager (if available)
+        const variant = turnManager?.getQuestionVariant();
         if (variant) {
           openingLine = `${missionGreeting} ${variant.question}`;
           firstObjectiveHints = variant.hints || ['My', 'name', 'is', 'I', 'am'];
