@@ -20,6 +20,7 @@ import { sendToAI } from './aiRouter.js';
 import { buildPrompt, TutorModes } from './tutorPrompts.js?v=7';
 import errorHandler from './utils/errorHandler.js';
 import responseParser from './utils/responseParser.js';
+import { forceRoleplayQuestion } from './utils/responseParser.js';
 import { validateAIResponse } from './grammarGuard.js';
 import { enforceTalkRatio } from './talkRatioGuard.js';
 
@@ -272,7 +273,7 @@ export class NovaEngine {
     // 🔥 NEW: Support both old format (ai_response) and new format (ack/recast/question)
     const isNewFormat = response.ack !== undefined || response.question !== undefined;
     
-    const processedResponse = {
+    let processedResponse = {
       // Support both formats
       ai_response: response.ai_response || response.response || response,
       ack: response.ack || '',
@@ -286,6 +287,27 @@ export class NovaEngine {
       raw: response,
       format: isNewFormat ? 'new' : 'legacy'
     };
+    
+    // 🛡️ FIX 3: Apply roleplay question enforcement (for freetalk/roleplay modes)
+    if (mode === 'freetalk' || mode === 'roleplay') {
+      console.log('🛡️ Applying roleplay guardrail in novaEngine...');
+      
+      // Try to get scenario from context, or fallback to first scenario in weekData
+      let activeScenario = context.currentScenario;
+      
+      if (!activeScenario && this.weekData?.roleplay_scenarios) {
+        console.warn('⚠️ currentScenario missing, using first scenario from weekData as fallback');
+        activeScenario = this.weekData.roleplay_scenarios[0];
+      }
+      
+      // Call forceRoleplayQuestion with 'playing_roleplay' mode
+      processedResponse = forceRoleplayQuestion(
+        processedResponse, 
+        'playing_roleplay', 
+        activeScenario, 
+        context.lastUserMessage || ''
+      );
+    }
 
     // Sanitize response content for security (handle both formats)
     if (isNewFormat) {

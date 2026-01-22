@@ -609,7 +609,7 @@ export function fix20QCorrectGuess(response, userMessage, chatHistory = []) {
  * @returns {Object} Fixed response with guaranteed question
  */
 export function forceRoleplayQuestion(response, mode, scenarioData = null, lastUserMessage = '') {
-  console.log('🔍 forceRoleplayQuestion v2.0 CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
+  console.log('🔍 forceRoleplayQuestion v3.0 (EMOJI-PROOF) CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
   console.log('🔍 Response before fix:', response.ai_response);
   
   // Only fix roleplay mode
@@ -620,44 +620,48 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
   
   const aiText = response.ai_response || '';
   
-  // Check if response ends with question (allow trailing emojis/spaces)
+  // 🔥 FIX 1: EMOJI-PROOF REGEX - Check if response ends with question using Unicode flag
+  // This regex matches ? followed by any spaces or emojis until end of string
   const trimmed = aiText.trim();
-  const lastChar = trimmed.slice(-1);
-  const hasQuestion = lastChar === '?' || (trimmed.match(/\?[\s🎨🏠🛋️💙⚪🟢🔴💡🪑🛏️🚪🪟🪞🧺]*$/));
+  const hasQuestionMark = /[?？][\s\p{Emoji}]*$/u.test(trimmed);
   
-  console.log('🔍 hasQuestion:', hasQuestion, 'lastChar:', lastChar);
+  console.log('🔍 hasQuestion (emoji-proof):', hasQuestionMark, 'last 20 chars:', trimmed.slice(-20));
   
-  if (hasQuestion) {
-    // Already has question - check if it has options
-    const hasOptions = aiText.includes(' or ') || 
-                      (aiText.match(/\?/g) && aiText.match(/\?/g).length >= 1) ||
-                      (aiText.includes(',') && aiText.split(',').length >= 2);
-    
-    if (hasOptions) {
-      console.log('✅ Roleplay response OK: has question with options');
-      return response;
-    }
+  if (hasQuestionMark) {
+    console.log('✅ Roleplay response OK: has question');
+    return response;
   }
   
-  console.warn('⚠️ ROLEPLAY FIX NEEDED: Response lacks question');
+  console.warn('👮‍♂️ GUARDRAIL TRIGGERED: AI forgot to ask!');
   console.warn('   Original:', aiText);
+  
+  // 🔥 FIX 2: HARDCODED FALLBACK inside function (never returns plain text)
+  const hardcodedFallbacks = [
+    "What do you think? 🤔",
+    "Do you like this? ✨",
+    "Tell me more! 💬",
+    "What is next? 🎯",
+    "What color do you like? 🎨",
+    "Do you want a big one or a small one? 📏"
+  ];
   
   // STEP 1: Try to use backup_questions from scenario data
   let followUpQuestion = '';
   
   if (scenarioData?.backup_questions && scenarioData.backup_questions.length > 0) {
-    // Pick a random backup question
+    // Pick a random backup question from scenario
     const randomIndex = Math.floor(Math.random() * scenarioData.backup_questions.length);
     followUpQuestion = ' ' + scenarioData.backup_questions[randomIndex];
     console.log('✅ USING BACKUP QUESTION from scenario data:', followUpQuestion);
   } else {
-    // STEP 2: Fallback - build contextual question (legacy logic)
-    console.warn('⚠️ No backup_questions in scenario data, using legacy fallback');
-    followUpQuestion = buildContextualQuestion(lastUserMessage, scenarioData?.id || 'unknown');
+    // STEP 2: Use hardcoded fallback (ALWAYS available)
+    const randomIndex = Math.floor(Math.random() * hardcodedFallbacks.length);
+    followUpQuestion = ' ' + hardcodedFallbacks[randomIndex];
+    console.warn('⚠️ No backup_questions in scenario data, using hardcoded fallback:', followUpQuestion);
   }
   
   // Append question to response
-  response.ai_response = aiText.trim() + followUpQuestion;
+  response.ai_response = trimmed + followUpQuestion;
   
   console.log('✅ FORCED QUESTION ADDED:', followUpQuestion);
   console.log('✅ Final response:', response.ai_response);
