@@ -969,7 +969,88 @@ const week5RealData = {
       { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
     ],
     
-    // ✨ WEEK 5 BONUS ROLEPLAY (Approach B)
+    // ✨ DYNAMIC ROLEPLAY SCENARIOS (Data-Driven Architecture)
+    roleplay_scenarios: [
+      {
+        id: "rp_designer",
+        title: "Room Designer 🎨",
+        emoji: "🎨",
+        description: "Design a beautiful room for Ms. Nova!",
+        
+        // AI Persona
+        ai_role: "Client (Ms. Nova)",
+        user_role: "Interior Designer",
+        context: "Ms. Nova wants to redesign her empty room. She needs furniture suggestions and color choices.",
+        
+        // Pedagogical Focus
+        vocab_focus: ["bed", "sofa", "lamp", "table", "chair", "mirror", "rug", "blue", "white", "red", "green", "big", "small"],
+        
+        // Opening (MUST be a question)
+        opening_line: "Hello Designer! My room is empty. What furniture should I put in it first? A bed, a sofa, or a table?",
+        
+        // Guide rules for AI behavior
+        guide_rules: "Accept any furniture suggestion. React positively. Then ask about color ('What color do you like?') or size ('Do you want a big one or a small one?'). Use complete sentences. Always end with a question.",
+        
+        // CRITICAL: Backup questions for code enforcement
+        backup_questions: [
+          "What color do you like? Blue, white, or red?",
+          "Do you want a big one or a small one?",
+          "What else do you need? A lamp, a mirror, or a rug?",
+          "Where should I put it? Near the door or near the window?",
+          "Do you like it? Should I add more things?"
+        ]
+      },
+      {
+        id: "rp_tour",
+        title: "House Tour 🏠",
+        emoji: "🏠",
+        description: "Show Ms. Nova your house!",
+        
+        ai_role: "Visitor (Ms. Nova)",
+        user_role: "House Owner / Host",
+        context: "Ms. Nova is visiting the student's house for the first time. She is curious about every room.",
+        
+        vocab_focus: ["bedroom", "kitchen", "bathroom", "living room", "door", "window", "bed", "table", "chair", "sofa"],
+        
+        opening_line: "Ding-dong! Hello! Your house looks nice! Which room can we see first? The bedroom, the kitchen, or the living room?",
+        
+        guide_rules: "Be curious and polite. Ask 'What is this?' or 'Where is the...?' questions. React with interest ('Wow!' 'Beautiful!'). Always end with a question to keep conversation going.",
+        
+        backup_questions: [
+          "What can you see in this room? A bed, a chair, or a table?",
+          "What color is it? Is it blue, white, or brown?",
+          "Where is the kitchen? Can we see it next?",
+          "Do you have a big bedroom or a small bedroom?",
+          "What do you like most? The bed, the lamp, or the window?"
+        ]
+      },
+      {
+        id: "rp_shop",
+        title: "Furniture Shop 🛋️",
+        emoji: "🛋️",
+        description: "Buy furniture with Ms. Nova at the shop!",
+        
+        ai_role: "Shopkeeper",
+        user_role: "Customer",
+        context: "The student wants to buy furniture for their house. Ms. Nova is the friendly shopkeeper helping them choose.",
+        
+        vocab_focus: ["sofa", "bed", "table", "chair", "lamp", "mirror", "blue", "white", "red", "expensive", "cheap", "big", "small"],
+        
+        opening_line: "Welcome to my Furniture Shop! We have sofas, beds, tables, and lamps. What do you want to buy today?",
+        
+        guide_rules: "Be helpful and friendly. Suggest items. Ask about color, size, and quantity ('How many do you need?'). Mention prices if student asks. Always end with a question.",
+        
+        backup_questions: [
+          "What color do you want? We have blue, white, and red.",
+          "Do you want a big sofa or a small sofa?",
+          "How many chairs do you need? One, two, or three?",
+          "Do you like this lamp? It is cheap!",
+          "What else do you want to buy? A table, a mirror, or a rug?"
+        ]
+      }
+    ],
+    
+    // Legacy bonus roleplay (kept for backward compatibility)
     bonus_roleplay: {
       id: 'week5_house_tour',
       label_en: "House Tour Guide 🏠",

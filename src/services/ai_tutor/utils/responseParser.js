@@ -600,14 +600,16 @@ export function fix20QCorrectGuess(response, userMessage, chatHistory = []) {
  * Force fix roleplay responses to ALWAYS end with question + options
  * Used when AI ignores prompts and returns statements only
  * 
+ * VERSION 2.0: Data-driven enforcement using backup_questions from scenario
+ * 
  * @param {Object} response - Parsed AI response
  * @param {string} mode - Current mode (playing_roleplay, etc.)
- * @param {string} roleplayId - Current roleplay ID (interior_designer, etc.)
+ * @param {Object} scenarioData - Roleplay scenario data with backup_questions array
  * @param {string} lastUserMessage - Last message from user
  * @returns {Object} Fixed response with guaranteed question
  */
-export function forceRoleplayQuestion(response, mode, roleplayId, lastUserMessage = '') {
-  console.log('🔍 forceRoleplayQuestion CALLED:', { mode, roleplayId, lastUserMessage });
+export function forceRoleplayQuestion(response, mode, scenarioData = null, lastUserMessage = '') {
+  console.log('🔍 forceRoleplayQuestion v2.0 CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
   console.log('🔍 Response before fix:', response.ai_response);
   
   // Only fix roleplay mode
@@ -617,36 +619,60 @@ export function forceRoleplayQuestion(response, mode, roleplayId, lastUserMessag
   }
   
   const aiText = response.ai_response || '';
-  const lowerText = aiText.toLowerCase();
   
-  // Check if response ends with question
-  const hasQuestion = aiText.trim().endsWith('?');
+  // Check if response ends with question (allow trailing emojis/spaces)
+  const trimmed = aiText.trim();
+  const lastChar = trimmed.slice(-1);
+  const hasQuestion = lastChar === '?' || (trimmed.match(/\?[\s🎨🏠🛋️💙⚪🟢🔴💡🪑🛏️🚪🪟🪞🧺]*$/));
   
-  console.log('🔍 hasQuestion:', hasQuestion, 'aiText ends with:', aiText.slice(-20));
+  console.log('🔍 hasQuestion:', hasQuestion, 'lastChar:', lastChar);
   
-  // If already has question, check if it has options
   if (hasQuestion) {
-    // Check if question has at least 2 clear options (A or B pattern)
+    // Already has question - check if it has options
     const hasOptions = aiText.includes(' or ') || 
-                      (aiText.match(/\?.*\?/g) && aiText.match(/\?.*\?/g).length >= 2) ||
-                      aiText.includes(', ') && aiText.split(',').length >= 2;
-    
-    console.log('🔍 hasOptions:', hasOptions);
+                      (aiText.match(/\?/g) && aiText.match(/\?/g).length >= 1) ||
+                      (aiText.includes(',') && aiText.split(',').length >= 2);
     
     if (hasOptions) {
       console.log('✅ Roleplay response OK: has question with options');
-      return response; // Already good
+      return response;
     }
   }
   
-  console.warn('⚠️ ROLEPLAY FIX NEEDED: Response lacks question or options');
+  console.warn('⚠️ ROLEPLAY FIX NEEDED: Response lacks question');
   console.warn('   Original:', aiText);
   
-  // Build appropriate follow-up question based on roleplay type
+  // STEP 1: Try to use backup_questions from scenario data
   let followUpQuestion = '';
+  
+  if (scenarioData?.backup_questions && scenarioData.backup_questions.length > 0) {
+    // Pick a random backup question
+    const randomIndex = Math.floor(Math.random() * scenarioData.backup_questions.length);
+    followUpQuestion = ' ' + scenarioData.backup_questions[randomIndex];
+    console.log('✅ USING BACKUP QUESTION from scenario data:', followUpQuestion);
+  } else {
+    // STEP 2: Fallback - build contextual question (legacy logic)
+    console.warn('⚠️ No backup_questions in scenario data, using legacy fallback');
+    followUpQuestion = buildContextualQuestion(lastUserMessage, scenarioData?.id || 'unknown');
+  }
+  
+  // Append question to response
+  response.ai_response = aiText.trim() + followUpQuestion;
+  
+  console.log('✅ FORCED QUESTION ADDED:', followUpQuestion);
+  console.log('✅ Final response:', response.ai_response);
+  
+  return response;
+}
+
+/**
+ * Build contextual follow-up question (legacy fallback)
+ * @private
+ */
+function buildContextualQuestion(lastUserMessage, roleplayId) {
   const lower = lastUserMessage.toLowerCase();
   
-  // Detect what user just said to ask relevant follow-up
+  // Detect what user just said
   const colorWords = ['blue', 'red', 'green', 'white', 'yellow', 'brown', 'black', 'orange', 'purple', 'pink'];
   const furnitureWords = ['bed', 'sofa', 'table', 'chair', 'lamp', 'mirror', 'rug', 'door', 'window', 'shelf', 'closet'];
   const roomWords = ['bedroom', 'living room', 'kitchen', 'bathroom', 'house'];
@@ -658,41 +684,34 @@ export function forceRoleplayQuestion(response, mode, roleplayId, lastUserMessag
   const mentionsSize = sizeWords.some(s => lower.includes(s));
   
   // Role-specific follow-ups
-  if (roleplayId === 'interior_designer') {
+  if (roleplayId.includes('designer') || roleplayId === 'rp_designer') {
     if (mentionsRoom && !mentionsFurniture) {
-      followUpQuestion = ' What furniture do you want? Do you want a bed, a table, or a chair?';
+      return ' What furniture do you want? Do you want a bed, a table, or a chair?';
     } else if (mentionsFurniture && !mentionsColor) {
-      followUpQuestion = ' What color do you like? Do you like blue, white, or brown?';
+      return ' What color do you like? Do you like blue, white, or brown?';
     } else if (mentionsColor && !mentionsSize) {
-      followUpQuestion = ' Do you want a big one or a small one?';
+      return ' Do you want a big one or a small one?';
     } else {
-      followUpQuestion = ' What else do you need? A lamp, a mirror, or a rug?';
+      return ' What else do you need? A lamp, a mirror, or a rug?';
     }
-  } else if (roleplayId === 'house_tour_guide') {
+  } else if (roleplayId.includes('tour') || roleplayId === 'rp_tour') {
     if (mentionsRoom) {
-      followUpQuestion = ' What can you see in this room? A bed, a lamp, or a chair?';
+      return ' What can you see in this room? A bed, a lamp, or a chair?';
     } else if (mentionsFurniture) {
-      followUpQuestion = ' What else can you see? A table, a mirror, or a window?';
+      return ' What else can you see? A table, a mirror, or a window?';
     } else {
-      followUpQuestion = ' Do you want to see another room? The kitchen, the bathroom, or the living room?';
+      return ' Do you want to see another room? The kitchen, the bathroom, or the living room?';
     }
-  } else if (roleplayId === 'furniture_shop') {
+  } else if (roleplayId.includes('shop') || roleplayId === 'rp_shop') {
     if (mentionsFurniture && !mentionsColor) {
-      followUpQuestion = ' What color do you want? Blue, white, or brown?';
+      return ' What color do you want? Blue, white, or brown?';
     } else if (mentionsColor) {
-      followUpQuestion = ' How many do you need? One, two, or three?';
+      return ' How many do you need? One, two, or three?';
     } else {
-      followUpQuestion = ' What else do you want to buy? A table, a chair, or a lamp?';
+      return ' What else do you want to buy? A table, a chair, or a lamp?';
     }
-  } else {
-    // Generic fallback
-    followUpQuestion = ' What do you want? Tell me more!';
   }
   
-  // Append question to response
-  response.ai_response = aiText.trim() + followUpQuestion;
-  
-  console.log('✅ FORCED QUESTION ADDED:', followUpQuestion);
-  
-  return response;
+  // Generic fallback
+  return ' What do you think? Do you like it?';
 }

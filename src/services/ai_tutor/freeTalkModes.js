@@ -244,19 +244,23 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       // 🎭 NEW: Use roleplayPromptBuilder to inject weekly content
       const weekData = context.weekData || { weekId: 5, theme: 'House & Rooms', target_vocab: [] };
       
-      // Map roleplay names to IDs (dynamic based on week)
+      // Map roleplay names to IDs - now using data-driven v2.0 IDs
       const roleIdMap = {
-        // Week 5 - House theme
-        'room designer': 'interior_designer',
-        'thiết kế phòng': 'interior_designer',
-        'house tour': 'house_tour_guide',
-        'dẫn khách': 'house_tour_guide',
-        'furniture shop': 'furniture_shop',
-        'cửa hàng đồ': 'furniture_shop',
-        'cửa hàng đồ chơi': 'furniture_shop'
+        // New v2.0 IDs (from roleplay_scenarios)
+        'room designer': 'rp_designer',
+        'thiết kế phòng': 'rp_designer',
+        'house tour': 'rp_tour',
+        'dẫn khách': 'rp_tour',
+        'furniture shop': 'rp_shop',
+        'cửa hàng đồ': 'rp_shop',
+        'cửa hàng đồ chơi': 'rp_shop',
+        // Legacy IDs (for backward compatibility)
+        'interior_designer': 'rp_designer',
+        'house_tour_guide': 'rp_tour',
+        'furniture_shop': 'rp_shop'
       };
       
-      const roleId = roleIdMap[roleNameRaw.toLowerCase()] || 'interior_designer';
+      const roleId = roleIdMap[roleNameRaw.toLowerCase()] || 'rp_designer';
       const roleplayPrompt = buildRoleplayPrompt(roleId, weekData);
       
       if (!roleplayPrompt) {
@@ -273,7 +277,10 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       
       ${roleplayPrompt.aiPrompt}
       
-      ⚠️ CRITICAL: Follow ALL rules above. EVERY response MUST end with question + 3+ vocabulary choices!
+      ⚠️ CRITICAL: Follow ALL rules above. EVERY response MUST end with question + options!
+      
+      🛡️ BACKUP ENFORCEMENT (if AI ignores rules):
+      backup_questions: ${JSON.stringify(roleplayPrompt.backup_questions || [])}
       
       RESPOND IN THIS JSON FORMAT:
       {

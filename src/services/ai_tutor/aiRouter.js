@@ -595,18 +595,53 @@ export async function sendToAI({
         let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
         
         // 🎯 FIX: Force roleplay responses to always have question + options
-        // Detect mode and roleplayId from system prompt
+        // VERSION 2.0: Extract scenario data from system prompt
         const systemContent = messages[0]?.content || '';
-        console.log('🔍 SYSTEM CONTENT CHECK:', systemContent.substring(0, 200));
-        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || systemContent.includes('playing_roleplay');
-        console.log('🔍 isRoleplay:', isRoleplay);
-        const roleplayIdMatch = systemContent.match(/interior_designer|house_tour_guide|furniture_shop/);
-        const roleplayId = roleplayIdMatch ? roleplayIdMatch[0] : 'interior_designer';
-        const mode = isRoleplay ? 'playing_roleplay' : 'idle';
-        console.log('🔍 MODE DETECTED:', mode, 'roleplayId:', roleplayId);
+        console.log('🔍 SYSTEM CONTENT (first 300 chars):', systemContent.substring(0, 300));
         
-        fixedResponse = forceRoleplayQuestion(fixedResponse, mode, roleplayId, userMessage);
-        console.log('🔍 AFTER forceRoleplayQuestion:', fixedResponse.ai_response);
+        // Detect if this is roleplay mode
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:') ||
+                          systemContent.includes('backup_questions:');
+        console.log('🔍 isRoleplay:', isRoleplay);
+        
+        // Extract scenario data if roleplay
+        let scenarioData = null;
+        if (isRoleplay) {
+          try {
+            // Try to extract backup_questions array from system prompt
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+              console.log('✅ Extracted backup_questions:', scenarioData.backup_questions.length, 'questions');
+            } else {
+              console.warn('⚠️ No backup_questions found in system prompt');
+              // Fallback: use generic backup questions
+              scenarioData = {
+                id: 'fallback',
+                backup_questions: [
+                  "What do you think?",
+                  "Do you like it?",
+                  "What color do you want?",
+                  "What else do you need?",
+                  "Where should I put it?"
+                ]
+              };
+            }
+          } catch (err) {
+            console.error('❌ Error extracting scenario data:', err);
+            scenarioData = { id: 'error', backup_questions: ["What do you think?"] };
+          }
+        }
+        
+        const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+        console.log('🔍 MODE DETECTED:', mode);
+        
+        fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        console.log('🔍 AFTER forceRoleplayQuestion:', fixedResponse.ai_response?.substring(0, 100));
         
         // Grammar Guard & Talk Ratio validations
         if (!skipGrammarGuard) {
@@ -639,18 +674,50 @@ export async function sendToAI({
             // 🎯 FIX: Auto-correct 20Q correct guess responses
             let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
             
-            // 🎯 FIX: Force roleplay responses to always have question + options
+            // 🎯 FIX: Force roleplay responses to always have question + options (GROQ)
+            // VERSION 2.0: Extract scenario data from system prompt
             const systemContent = messages[0]?.content || '';
-            console.log('🔍 GROQ SYSTEM CONTENT CHECK:', systemContent.substring(0, 200));
-            const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || systemContent.includes('playing_roleplay');
-            console.log('🔍 GROQ isRoleplay:', isRoleplay);
-            const roleplayIdMatch = systemContent.match(/interior_designer|house_tour_guide|furniture_shop/);
-            const roleplayId = roleplayIdMatch ? roleplayIdMatch[0] : 'interior_designer';
-            const mode = isRoleplay ? 'playing_roleplay' : 'idle';
-            console.log('🔍 GROQ MODE DETECTED:', mode, 'roleplayId:', roleplayId);
+            console.log('🔍 GROQ SYSTEM CONTENT (first 300 chars):', systemContent.substring(0, 300));
             
-            fixedResponse = forceRoleplayQuestion(fixedResponse, mode, roleplayId, userMessage);
-            console.log('🔍 GROQ AFTER forceRoleplayQuestion:', fixedResponse.ai_response);
+            const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                              systemContent.includes('SCENARIO:') ||
+                              systemContent.includes('backup_questions:');
+            console.log('🔍 GROQ isRoleplay:', isRoleplay);
+            
+            let scenarioData = null;
+            if (isRoleplay) {
+              try {
+                const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+                if (backupMatch) {
+                  scenarioData = {
+                    id: 'extracted_from_prompt',
+                    backup_questions: JSON.parse(backupMatch[1])
+                  };
+                  console.log('✅ GROQ Extracted backup_questions:', scenarioData.backup_questions.length, 'questions');
+                } else {
+                  console.warn('⚠️ GROQ No backup_questions found, using fallback');
+                  scenarioData = {
+                    id: 'fallback',
+                    backup_questions: [
+                      "What do you think?",
+                      "Do you like it?",
+                      "What color do you want?",
+                      "What else do you need?",
+                      "Where should I put it?"
+                    ]
+                  };
+                }
+              } catch (err) {
+                console.error('❌ GROQ Error extracting scenario data:', err);
+                scenarioData = { id: 'error', backup_questions: ["What do you think?"] };
+              }
+            }
+            
+            const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+            console.log('🔍 GROQ MODE DETECTED:', mode);
+            
+            fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+            console.log('🔍 GROQ AFTER forceRoleplayQuestion:', fixedResponse.ai_response?.substring(0, 100));
             
             if (!skipGrammarGuard) {
               const validation = validateAIResponse(fixedResponse, weekId);
