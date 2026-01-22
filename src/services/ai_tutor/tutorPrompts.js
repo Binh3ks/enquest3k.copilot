@@ -42,6 +42,67 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       .filter(msg => msg.role === 'assistant' && msg.content?.includes('?'))
       .map(msg => msg.content.toLowerCase());
     
+    // 🔥 NEW: Extract TOPICS covered from conversation (more reliable than just questions)
+    const allText = conversationHistory.map(msg => msg.content.toLowerCase()).join(' ');
+    const topicsCovered = [];
+    
+    // Detect name question
+    if (allText.includes('what do i call you') || allText.includes('what is your name')) {
+      topicsCovered.push('❌ NAME (already asked)');
+    }
+    
+    // Detect house size
+    if (allText.includes('big or small') && allText.includes('house')) {
+      topicsCovered.push('❌ HOUSE SIZE (already asked)');
+    }
+    
+    // Detect house color
+    if (allText.includes('what color') && allText.includes('house')) {
+      topicsCovered.push('❌ HOUSE COLOR (already asked)');
+    }
+    
+    // Detect rooms discussed
+    if (allText.includes('bedroom')) {
+      topicsCovered.push('❌ BEDROOM (already discussed)');
+    }
+    if (allText.includes('living room')) {
+      topicsCovered.push('❌ LIVING ROOM (already discussed)');
+    }
+    if (allText.includes('kitchen')) {
+      topicsCovered.push('✅ KITCHEN (can ask more)');
+    } else {
+      topicsCovered.push('✅ KITCHEN (NOT asked yet)');
+    }
+    if (allText.includes('bathroom')) {
+      topicsCovered.push('✅ BATHROOM (can ask)');
+    } else {
+      topicsCovered.push('✅ BATHROOM (NOT asked yet)');
+    }
+    
+    // Detect furniture discussed
+    if (allText.includes('bed')) {
+      topicsCovered.push('❌ BED (already asked)');
+    }
+    if (allText.includes('chair')) {
+      topicsCovered.push('❌ CHAIR (already asked)');
+    }
+    if (allText.includes('table')) {
+      topicsCovered.push('❌ TABLE (already asked)');
+    }
+    
+    // Detect family/activities
+    if (allText.includes('who lives') || allText.includes('family')) {
+      topicsCovered.push('❌ FAMILY (already asked)');
+    } else {
+      topicsCovered.push('✅ FAMILY (NOT asked yet - ASK THIS!)');
+    }
+    
+    if (allText.includes('what do you do') || allText.includes('activities')) {
+      topicsCovered.push('❌ ACTIVITIES (already asked)');
+    } else {
+      topicsCovered.push('✅ ACTIVITIES (NOT asked yet - ASK THIS!)');
+    }
+    
     // Determine current story phase based on turn count
     let currentPhase = mission.story_arc?.[0]; // default to first phase
     if (mission.story_arc) {
@@ -77,23 +138,37 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
     - Breaking character as ${char.name}
     - Asking yes/no questions
-    - **REPEATING QUESTIONS OR SIMILAR QUESTIONS**
+    - **REPEATING QUESTIONS OR TOPICS - CHECK BOTH LISTS BELOW!**
     
-    📜 QUESTIONS YOU ALREADY ASKED (DON'T ASK AGAIN OR SIMILAR!):
-    ${questionsAsked.length > 0 ? questionsAsked.map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet - you can ask anything!'}
+    📜 QUESTIONS YOU ALREADY ASKED:
+    ${questionsAsked.length > 0 ? questionsAsked.slice(-10).map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
     
-    🎯 TOPIC DIVERSITY RULES (MANDATORY):
+    🚫 TOPICS ALREADY COVERED (DON'T ASK ABOUT THESE AGAIN!):
+    ${topicsCovered.join('\n')}
     
-    ❌ DON'T:
-    - Ask same question pattern twice ("What color is X?" → "What color is Y?")
-    - Focus on ONE room only (bedroom bedroom bedroom...)
-    - Repeat topics (if asked about bed, DON'T ask about bed again)
+    ⚠️ CRITICAL RULE - READ TOPICS LIST CAREFULLY:
+    - If topic has ❌ → NEVER ask about it again
+    - If topic has ✅ "NOT asked yet" → ASK ABOUT IT NOW!
+    - If topic has ✅ "can ask more" → Can ask DIFFERENT question about it
     
-    ✅ DO:
-    - Check list above: What topics covered? (house size, color, bedroom, furniture)
-    - Ask about DIFFERENT ROOMS: living room, kitchen, bathroom, garden
-    - Ask about DIFFERENT TOPICS: activities, family, pets, decorations
-    - Vary question types: "What room?", "Where do you...?", "Who lives...?"
+    EXAMPLES OF FORBIDDEN QUESTIONS (based on ❌ topics above):
+    - "What do I call you?" → ❌ Already asked name
+    - "Is your house big or small?" → ❌ Already asked house size
+    - "What color is your house?" → ❌ Already asked house color
+    - "What is in your bedroom?" → ❌ Bedroom already discussed
+    - "Do you have a bed?" → ❌ Bed already asked
+    
+    SUGGESTED NEW QUESTIONS (based on ✅ topics above):
+    ${topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).length > 0 
+      ? topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).map(t => {
+          if (t.includes('KITCHEN')) return '- "What is in your kitchen? A fridge, a stove, or a table?"';
+          if (t.includes('BATHROOM')) return '- "Do you have a bathroom? Is it big or small?"';
+          if (t.includes('FAMILY')) return '- "Who lives in your house? Mom, Dad, or siblings?"';
+          if (t.includes('ACTIVITIES')) return '- "What do you do in your house? Play, read, or watch TV?"';
+          return '';
+        }).filter(q => q).join('\n')
+      : '- Ask about NEW rooms (kitchen, bathroom, garden)\n- Ask about family (who lives there)\n- Ask about activities (what they do in house)'
+    }
     
     TOPIC PROGRESSION (Follow this order):
     Turns 1-5: House basics (size, color)
