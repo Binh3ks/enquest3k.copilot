@@ -60,7 +60,7 @@ const FreeTalkTab = () => {
   const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
   const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
   const [turnCount, setTurnCount] = useState(0); // Turn counter for CURRENT MODE
-  const [currentScenario, setCurrentScenario] = useState(null); // 🔥 FIX: Track active roleplay scenario
+  const [activeScenario, setActiveScenario] = useState(null); // 🔥 STEP 1: Persist active roleplay scenario across turns
   const [modeTurnLimits] = useState({
     translation_help: 15,
     playing_game: 10,
@@ -239,7 +239,7 @@ const FreeTalkTab = () => {
     }
 
     try {
-      // 🔥 FIX: Detect START_ROLEPLAY and set active scenario
+      // 🔥 STEP 1: Detect START_ROLEPLAY and persist scenario state
       if (userMessage.startsWith('START_ROLEPLAY:')) {
         const roleNameRaw = userMessage.split(':')[1]?.trim();
         // Find scenario in weekData
@@ -251,10 +251,11 @@ const FreeTalkTab = () => {
         const roleId = roleIdMap[roleNameRaw?.toLowerCase()] || 'rp_designer';
         const scenario = weekRealData.roleplay_scenarios?.find(s => s.id === roleId);
         if (scenario) {
-          console.log('🎭 Setting currentScenario:', scenario.id);
-          setCurrentScenario(scenario);
+          console.log('🎭 Setting activeScenario (persists across turns):', scenario.id);
+          setActiveScenario(scenario);
         }
       }
+      // IMPORTANT: activeScenario persists even for normal chat like "blue" or "bedroom"
       
       // Calculate turn count
       const turnCount = Math.floor((messages.length + 1) / 2); // +1 for user message just added
@@ -277,8 +278,8 @@ const FreeTalkTab = () => {
           scaffoldingLevel: 2,
           conversationTopic,
           weekData: weekRealData,  // 🎮 Pass weekData for game/roleplay content injection
-          currentScenario: currentScenario,  // 🔥 FIX: Pass active scenario to maintain context
-          lastUserMessage: userMessage  // 🔥 FIX: Pass for guardrail
+          currentScenario: activeScenario,  // 🔥 STEP 1: Pass persisted scenario to maintain context
+          lastUserMessage: userMessage  // 🔥 STEP 1: Pass for guardrail detection
         }
       });
 

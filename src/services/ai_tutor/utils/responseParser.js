@@ -609,7 +609,7 @@ export function fix20QCorrectGuess(response, userMessage, chatHistory = []) {
  * @returns {Object} Fixed response with guaranteed question
  */
 export function forceRoleplayQuestion(response, mode, scenarioData = null, lastUserMessage = '') {
-  console.log('🔍 forceRoleplayQuestion v3.0 (EMOJI-PROOF) CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
+  console.log('🔍 forceRoleplayQuestion v4.0 (EMOJI-PROOF + PROPER FALLBACK) CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
   console.log('🔍 Response before fix:', response.ai_response);
   
   // Only fix roleplay mode
@@ -618,18 +618,17 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
     return response;
   }
   
-  // 🔥 FIX: Skip guardrail on opening turn (START_ROLEPLAY message)
+  // 🔥 Skip guardrail on opening turn (START_ROLEPLAY message)
   if (lastUserMessage && lastUserMessage.toUpperCase().startsWith('START_ROLEPLAY')) {
     console.log('✅ Opening turn detected - skipping guardrail (let AI use opening_line)');
     return response;
   }
   
   const aiText = response.ai_response || '';
-  
-  // 🔥 FIX 1 & 3: EMOJI-PROOF REGEX + REJECT EXCLAMATION MARKS
-  // This regex matches ? (NOT !) followed by any spaces or emojis until end of string
-  // Exclamation marks like "Tell me more!" are NOT questions
   const trimmed = aiText.trim();
+  
+  // 🔥 STEP 3: EMOJI-PROOF REGEX - matches ? or ？ followed by whitespace/emojis until end
+  // Use Unicode property escape \p{Emoji} with 'u' flag to match emojis
   const hasQuestionMark = /[?？][\s\p{Emoji}]*$/u.test(trimmed);
   const endsWithExclamation = /[!！][\s\p{Emoji}]*$/u.test(trimmed);
   
@@ -647,35 +646,26 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
   console.warn('👮‍♂️ GUARDRAIL TRIGGERED: AI forgot to ask!');
   console.warn('   Original:', aiText);
   
-  // 🔥 FIX 2: HARDCODED FALLBACK inside function (never returns plain text)
-  const hardcodedFallbacks = [
-    "What do you think? 🤔",
-    "Do you like this? ✨",
-    "Tell me more! 💬",
-    "What is next? 🎯",
-    "What color do you like? 🎨",
-    "Do you want a big one or a small one? 📏"
+  // 🔥 STEP 3: PROPER FALLBACK - use backup_questions OR hardcoded defaults
+  const defaultQuestions = [
+    "What do you think?",
+    "Do you like it?",
+    "What next?",
+    "What color do you like?",
+    "Do you want a big one or a small one?"
   ];
   
-  // STEP 1: Try to use backup_questions from scenario data
-  let followUpQuestion = '';
+  // Try scenario data first, fallback to defaults
+  const questions = (scenarioData?.backup_questions && scenarioData.backup_questions.length > 0)
+    ? scenarioData.backup_questions
+    : defaultQuestions;
   
-  if (scenarioData?.backup_questions && scenarioData.backup_questions.length > 0) {
-    // Pick a random backup question from scenario
-    const randomIndex = Math.floor(Math.random() * scenarioData.backup_questions.length);
-    followUpQuestion = ' ' + scenarioData.backup_questions[randomIndex];
-    console.log('✅ USING BACKUP QUESTION from scenario data:', followUpQuestion);
-  } else {
-    // STEP 2: Use hardcoded fallback (ALWAYS available)
-    const randomIndex = Math.floor(Math.random() * hardcodedFallbacks.length);
-    followUpQuestion = ' ' + hardcodedFallbacks[randomIndex];
-    console.warn('⚠️ No backup_questions in scenario data, using hardcoded fallback:', followUpQuestion);
-  }
+  const randomQ = questions[Math.floor(Math.random() * questions.length)];
   
-  // Append question to response
-  response.ai_response = trimmed + followUpQuestion;
+  // Append question with bold formatting
+  response.ai_response = `${trimmed} **${randomQ}**`;
   
-  console.log('✅ FORCED QUESTION ADDED:', followUpQuestion);
+  console.log('✅ FORCED QUESTION ADDED:', randomQ);
   console.log('✅ Final response:', response.ai_response);
   
   return response;
