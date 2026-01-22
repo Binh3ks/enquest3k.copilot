@@ -825,7 +825,7 @@ const week5RealData = {
       
       nova_greeting: "Hi! Let's design your dream house together!",
       
-      mission_context: `This is Week 5 Mission 3 - Dream House Design. STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, WARM words, max 8 words/sentence. OPEN-ENDED: "What rooms DO YOU WANT?" "What furniture DO YOU WANT?" NOT Yes/No. THEME: Imagination and creativity - FUTURE TENSE ONLY! Ask "What do you WANT?" NOT "What do you HAVE?". ENCOURAGE: Student questions every 3-4 turns. AVOID: Complex grammar, technical terms, present tense questions. FOCUS: Dream house they WANT to build, furniture they WANT to have. USE: "want", "will have", "dream of" - NEVER use "have", "is", "are" when asking about their house.`,,
+      mission_context: `This is Week 5 Mission 3 - Dream House Design. STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, WARM words, max 8 words/sentence. OPEN-ENDED: "What rooms DO YOU WANT?" "What furniture DO YOU WANT?" NOT Yes/No. THEME: Imagination and creativity - FUTURE TENSE ONLY! Ask "What do you WANT?" NOT "What do you HAVE?". ENCOURAGE: Student questions every 3-4 turns. AVOID: Complex grammar, technical terms, present tense questions. FOCUS: Dream house they WANT to build, furniture they WANT to have. USE: "want", "will have", "dream of" - NEVER use "have", "is", "are" when asking about their house.`,
       
       target_vocab: ["bedroom", "kitchen", "bathroom", "living_room", "house", "bed", "chair", "table", "explore"],
       
