@@ -19,6 +19,10 @@ export function buildPrompt(mode, context, userInput, options = {}) {
   // 🔥 PRIORITY 1: Handle ROLEPLAY mode with STRICT persona enforcement
   if (mode === 'playing_roleplay' || (context?.currentScenario && mode !== 'story')) {
     const s = context.currentScenario;
+    
+    // 🔥 CRITICAL: Detect if this is the opening turn (START_ROLEPLAY message)
+    const isOpeningTurn = userInput && userInput.toUpperCase().startsWith('START_ROLEPLAY');
+    
     return `
     *** SYSTEM INSTRUCTION: STRICT ROLEPLAY MODE ***
     
@@ -28,6 +32,14 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     3. SCENARIO: ${s.title}
     4. USER IS: ${s.user_role}
     5. CONTEXT: ${s.context}
+    
+    ${isOpeningTurn ? `
+    🚨 THIS IS THE OPENING TURN! 🚨
+    YOU MUST USE THIS EXACT OPENING LINE:
+    "${s.opening_line}"
+    
+    DO NOT CHANGE THE WORDING. USE IT EXACTLY AS WRITTEN ABOVE.
+    ` : ''}
     
     CONSTRAINTS:
     - Keep responses SHORT (under 12 words per sentence).
