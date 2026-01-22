@@ -513,14 +513,17 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     ack = '';
     recast = '';
     
-    // 🔥 Use mission.nova_greeting (from week_01_real.js)
-    if (context.mission?.nova_greeting) {
+    // 🔥 PRIORITY: opening_narrative > nova_greeting > canonical
+    if (context.mission?.opening_narrative) {
+      question = context.mission.opening_narrative;
+      console.log('🎯 Opening: Using opening_narrative (NEW):', context.mission.opening_narrative);
+    } else if (context.mission?.nova_greeting) {
       question = context.mission.nova_greeting;
-      console.log('🎯 Opening: Using mission greeting:', context.mission.nova_greeting);
+      console.log('🎯 Opening: Using nova_greeting (LEGACY):', context.mission.nova_greeting);
     } else if (context.canonicalQuestion && turnManager?.mode !== 'objective') {
       // Only use canonical in legacy mode
       question = context.canonicalQuestion;
-      console.warn('⚠️ mission.nova_greeting not found, using canonical question');
+      console.warn('⚠️ No opening_narrative or nova_greeting, using canonical question');
     }
   } else if (isClosingTurn) {
     // 🎯 FIX: When "goodbye" objective reached, END IMMEDIATELY

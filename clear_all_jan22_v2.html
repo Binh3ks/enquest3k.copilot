@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLEAR ALL - Jan 22 v2 - COMPLETE RESET</title>
+</head>
+<body>
+    <h1>🧹 COMPLETE CACHE CLEAR - Jan 22 v2</h1>
+    <button onclick="clearEverything()" style="padding: 20px; font-size: 18px; background: red; color: white;">
+        CLEAR EVERYTHING NOW
+    </button>
+    <pre id="log"></pre>
+
+    <script>
+        function log(msg) {
+            document.getElementById('log').textContent += msg + '\n';
+            console.log(msg);
+        }
+
+        async function clearEverything() {
+            log('🗑️ Starting COMPLETE clear...');
+            
+            // 1. Clear ALL localStorage
+            const allKeys = Object.keys(localStorage);
+            log(`📦 Found ${allKeys.length} localStorage keys:`);
+            allKeys.forEach(key => log(`  - ${key}`));
+            
+            localStorage.clear();
+            log('✅ localStorage CLEARED');
+            
+            // 2. Clear ALL sessionStorage
+            sessionStorage.clear();
+            log('✅ sessionStorage CLEARED');
+            
+            // 3. Clear ALL cookies
+            document.cookie.split(";").forEach(function(c) { 
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+            });
+            log('✅ Cookies CLEARED');
+            
+            // 4. Clear ALL IndexedDB
+            const databases = await indexedDB.databases();
+            for (const db of databases) {
+                indexedDB.deleteDatabase(db.name);
+                log(`✅ Deleted IndexedDB: ${db.name}`);
+            }
+            
+            // 5. Clear ALL Cache Storage
+            if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                for (const name of cacheNames) {
+                    await caches.delete(name);
+                    log(`✅ Deleted cache: ${name}`);
+                }
+            }
+            
+            log('');
+            log('🎉 ALL DATA CLEARED!');
+            log('⚠️  Close this tab');
+            log('⚠️  Hard refresh app: Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)');
+            log('⚠️  Then test Mission 2 again');
+        }
+    </script>
+</body>
+</html>
