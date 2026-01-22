@@ -108,32 +108,48 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     
     USER SAID: "${userInput}"
     
-    🚨 CRITICAL INSTRUCTION FOR CREATING RESPONSE:
+    🚨 CRITICAL: HOW TO CREATE HINTS (NOT THE QUESTION!)
     
-    STEP 1: Write your response with question in "ai_response" field
-    STEP 2: READ the question you just wrote in "ai_response" 
-    STEP 3: Find the LAST SENTENCE ending with "?"
-    STEP 4: Think: "What are ALL possible full-sentence answers to THIS question?"
-    STEP 5: Extract ALL the words needed to build those answers
-    STEP 6: Put those words in "suggested_hints" array
+    Hints are for the STUDENT to ANSWER your question, NOT to ask the question again!
     
-    EXAMPLE PROCESS:
-    - ai_response: "A blue sofa! I see. Do you want a blue sofa or a white sofa?"
-    - LAST QUESTION: "Do you want a blue sofa or a white sofa?"
-    - POSSIBLE ANSWERS: "I want a blue sofa" OR "I want a white sofa"
-    - WORDS NEEDED: I, want, a, blue, white, sofa
-    - suggested_hints: ["I", "want", "a", "blue", "white", "sofa"]
+    STEP 1: Write your question in "ai_response"
+    STEP 2: Read your question - What is the LAST sentence with "?"?
+    STEP 3: Think: "If I were the student, what FULL SENTENCE would I say to answer this?"
+    STEP 4: Break that ANSWER sentence into words
+    STEP 5: Put those words in "suggested_hints"
     
-    ⚠️ COMMON MISTAKE - DON'T DO THIS:
-    ❌ Using words from PREVIOUS question's answer
-    ❌ ai_response: "Do you want big or small?"
-    ❌ suggested_hints: ["I", "like", "blue", "table"] ← WRONG! These don't answer the question!
-    ✅ suggested_hints: ["I", "want", "a", "big", "small", "sofa"] ← RIGHT! Match the question!
+    ❌ WRONG EXAMPLE:
+    - Your question: "What color table do you like?"
+    - WRONG hints: ["What", "color", "table", "do", "you", "like"] ← This IS the question!
+    - Student can't answer with these words!
+    
+    ✅ RIGHT EXAMPLE:
+    - Your question: "What color table do you like?"
+    - Think: Student should answer: "I like a blue table" or "I like a red table"
+    - RIGHT hints: ["I", "like", "a", "blue", "red", "green", "table"] ← These make ANSWERS!
+    - Student can say: "I like a blue table" ✓
+    
+    MORE EXAMPLES:
+    
+    Example 1:
+    - Your question: "Do you want a big table or a small table?"
+    - Student's answer: "I want a big table" OR "I want a small table"
+    - Hints: ["I", "want", "a", "big", "small", "table"]
+    
+    Example 2:
+    - Your question: "Which room? The bedroom, kitchen, or living room?"
+    - Student's answer: "The bedroom" OR "I want to see the kitchen"
+    - Hints: ["The", "I", "want", "to", "see", "bedroom", "kitchen", "living", "room"]
+    
+    Example 3:
+    - Your question: "What color do you like for the sofa?"
+    - Student's answer: "I like blue for my sofa" OR "I like red"
+    - Hints: ["I", "like", "blue", "red", "green", "white", "for", "my", "sofa"]
     
     RESPOND IN THIS JSON FORMAT:
     {
       "ai_response": "Your response as ${s.ai_role} (MUST end with ?)",
-      "suggested_hints": ["words", "that", "answer", "YOUR", "question", "above"]
+      "suggested_hints": ["words", "to", "build", "the", "ANSWER", "not", "the", "question"]
     }
     `;
   }
