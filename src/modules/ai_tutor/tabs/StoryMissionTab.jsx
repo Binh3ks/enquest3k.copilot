@@ -514,7 +514,8 @@ const StoryMissionTab = () => {
       const guardContext = {
         studentName: studentName || null,
         turnManager: getTurnManager(currentMission.mission_id),  // 🔥 Get registered TurnManager
-        mission: currentMission,  // 🔥 Pass mission object
+        mission: currentMission,  // 🔥 Pass mission object (legacy)
+        missionData: currentMission,  // 🔥 CRITICAL: responseGuard checks missionData.story_character!
         isOpeningTurn: false,
         turnCount: currentTurnCount,
         chatHistory: [...messages, userMsg]
@@ -528,7 +529,48 @@ const StoryMissionTab = () => {
         hints: guardedResponse.suggested_hints
       });
 
-      // 🔥 CRITICAL: Check turn count before allowing mission close
+      // 🔥 STORY CHARACTER MODE: Skip all objective logic, use AI response as-is!
+      if (currentMission.story_character) {
+        console.log('🎭 Story character mode: Using AI response directly (no override)');
+        
+        // Extract response text
+        let responseText = guardedResponse.ai_response || guardedResponse.combined || aiResponse.ai_response;
+        
+        // Use AI-generated hints
+        const hints = guardedResponse.hints || guardedResponse.suggested_hints || [];
+        
+        // Add AI message to chat
+        const aiMsg = {
+          role: 'assistant',
+          content: responseText,
+          timestamp: new Date().toISOString(),
+          hints: hints
+        };
+        setMessages(prev => [...prev, aiMsg]);
+        
+        // TTS
+        if (responseText) {
+          try {
+            await ttsEngine.speak(responseText, { autoPlay: true });
+            console.log('🔊 TTS played successfully');
+          } catch (ttsError) {
+            console.warn('⚠️ TTS failed:', ttsError.message);
+          }
+        }
+        
+        // Show hints if question detected
+        if (responseText.includes('?') && hints.length > 0) {
+          setHints(hints);
+          setShowHints(true);
+        }
+        
+        // Increment turn count
+        setTurnCount(prev => prev + 1);
+        
+        return; // 🔥 EXIT EARLY - skip all objective logic below!
+      }
+
+      // 🔥 OBJECTIVE MODE (old missions): Continue with normal logic...
       const missionMinTurns = currentMission?.minimum_turns || 10;
       // Reuse 'tm' variable from line 477 (already declared above)
       
