@@ -224,7 +224,14 @@ function normalizeResponse(parsed, rawResponse) {
   // Deduplicate and keep only unique words
   const uniqueHints = [...new Set(individualWords)];
   
-  console.log('🔄 Hints normalization:', hintsArray, '→', uniqueHints);
+  // 🔥 SCRAMBLE hints for pedagogy (Fisher-Yates shuffle)
+  const scrambledHints = [...uniqueHints];
+  for (let i = scrambledHints.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [scrambledHints[i], scrambledHints[j]] = [scrambledHints[j], scrambledHints[i]];
+  }
+  
+  console.log('🔄 Hints normalization:', hintsArray, '→', uniqueHints, '→ scrambled:', scrambledHints);
   
   // 🔥 V27 FORMAT: {teacher_ack, teacher_recast, teacher_encouragement, teacher_question}
   const isV27Format = parsed.teacher_ack !== undefined || parsed.teacher_question !== undefined;
@@ -235,7 +242,7 @@ function normalizeResponse(parsed, rawResponse) {
       recast: parsed.teacher_recast || '',
       encouragement: parsed.teacher_encouragement || '',
       question: parsed.teacher_question || '',
-      hints: uniqueHints,
+      hints: scrambledHints,
       mission_status: parsed.mission_status || null,
       current_turn: parsed.current_turn || null,
       total_turns: parsed.total_turns || null,
@@ -254,7 +261,7 @@ function normalizeResponse(parsed, rawResponse) {
       recast: parsed.recast || '',
       bridge: parsed.bridge || '',
       question: parsed.question || '',
-      hints: uniqueHints,
+      hints: scrambledHints,
       mission_status: parsed.mission_status || null,
       grammar_focus: parsed.grammar_focus || null,
       raw: rawResponse,
@@ -266,7 +273,7 @@ function normalizeResponse(parsed, rawResponse) {
     return {
       ai_response: parsed.ai_response || parsed.response || parsed.content || '',
       pedagogy_note: parsed.pedagogy_note || parsed.note || '',
-      suggested_hints: uniqueHints,
+      suggested_hints: scrambledHints,
       mission_status: parsed.mission_status || null,
       grammar_focus: parsed.grammar_focus || null,
       raw: rawResponse,
