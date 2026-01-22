@@ -416,12 +416,14 @@ const FreeTalkTab = () => {
 
       // 🔥 Use AI-generated contextual hints that match the question (SCRAMBLED)
       // Only show hints if this is NOT a closing turn
-      if (responseText.includes('?') && aiResponse.suggested_hints && aiResponse.suggested_hints.length > 0) {
-        // 🔥 Scramble hints for better learning experience
-        const scrambledHints = [...aiResponse.suggested_hints].sort(() => Math.random() - 0.5);
-        setHints(scrambledHints);
+      // Support both 'hints' and 'suggested_hints' field names
+      const aiHints = aiResponse.hints || aiResponse.suggested_hints || [];
+      
+      if (responseText.includes('?') && aiHints.length > 0) {
+        // Hints already scrambled by responseParser.js
+        setHints(aiHints);
         setShowHints(true);
-        console.log('💡 FreeTalk AI hints (scrambled):', scrambledHints);
+        console.log('💡 FreeTalk AI hints (scrambled):', aiHints);
       } else if (responseText.includes('?')) {
         // 🔥 BETTER fallback: Extract hints from question using utility
         const vocab = weekRealData.target_vocab?.map(v => v.word) || [];
