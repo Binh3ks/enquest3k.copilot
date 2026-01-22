@@ -513,7 +513,7 @@ const week5RealData = {
         role: "Explorer with flashlight discovering objects in darkness"
       },
 
-      opening_narrative: "Oh no! The house is so dark! 🌑 I can't see anything! But wait... I have a flashlight! 🔦 Let's explore together! I will shine the light, you tell me what you see! Ready?",
+      opening_narrative: "Oh no! The house is so dark! 🌑 I can't see anything! But wait... I have a flashlight! 🔦 I will shine the light, you tell me what you see! (Shine light on table) Wow! What is on the table?",
 
       story_arc: [
         {
@@ -602,7 +602,7 @@ const week5RealData = {
         role: "Mystery box host giving riddles for student to guess"
       },
 
-      opening_narrative: "Look! 📦 I found a big old mystery box! It's closed... but I can reach my hand inside! I can't see anything... but I can FEEL things! And HEAR things! Let's play a guessing game! I describe, you guess! Ready?",
+      opening_narrative: "Look! 📦 I found a big old mystery box! I can reach my hand inside without looking! I feel something soft and furry... (Sound: Meow 🐱) What is inside the box?",
 
       story_arc: [
         {
