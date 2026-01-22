@@ -131,8 +131,8 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       }
     }
     
-    // Check if this is the opening turn (turn 1)
-    const isOpeningTurn = turnCount === 0 || turnCount === 1;
+    // Check if this is the opening turn (turn 1 ONLY)
+    const isOpeningTurn = turnCount === 1;
     
     return `
     *** STRICT STORY CHARACTER MODE ***
@@ -146,7 +146,14 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     🎬 THIS IS THE OPENING! USE THIS EXACT LINE:
     "${mission.opening_narrative}"
     
-    Don't change it. Say it exactly as written above.
+    Don't change it. Say it exactly as written above. Then STOP - wait for student's answer.
+    ` : ''}
+    
+    ${!isOpeningTurn && turnCount <= 3 ? `
+    🎬 STUDENT ANSWERED! Now engage with their answer naturally as ${char.name}!
+    - Don't repeat the opening narrative
+    - React to what they said
+    - Continue the conversation
     ` : ''}
     
     🚨 FORBIDDEN - NEVER DO THIS:
