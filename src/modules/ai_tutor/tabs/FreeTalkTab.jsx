@@ -522,44 +522,44 @@ const FreeTalkTab = () => {
       {/* Header */}
       <div className="bg-white border-b border-blue-200 px-6 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-              <MessageCircle size={20} className="text-blue-600" />
+          <div className="flex items-center space-x-2">
+            <div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
+              <MessageCircle size={14} className="text-blue-600" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-800">Free Talk</h2>
-              <p className="text-xs text-gray-500">Let's chat naturally!</p>
+              <h2 className="text-sm font-bold text-gray-800">Free Talk</h2>
+              <p className="text-[10px] text-gray-500">Let's chat naturally!</p>
             </div>
           </div>
 
           {/* Conversation Stats */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
             {/* 🎮 STOP BUTTON (only show during gameplay) */}
             {(mode === 'playing_game' || mode === 'playing_roleplay') && (
               <button
                 onClick={handleStopActivity}
-                className="flex items-center gap-1 px-3 py-1 bg-red-100 hover:bg-red-200 rounded-full transition-colors border border-red-300"
+                className="flex items-center gap-1 px-2 py-0.5 bg-red-100 hover:bg-red-200 rounded-full transition-colors border border-red-300"
               >
-                <X size={14} className="text-red-600" />
-                <span className="text-xs font-medium text-red-700">Stop Game</span>
+                <X size={12} className="text-red-600" />
+                <span className="text-[10px] font-medium text-red-700">Stop</span>
               </button>
             )}
             
             <div className="flex items-center space-x-1">
-              <Heart size={16} className="text-pink-500" />
-              <span className="text-sm font-medium text-gray-700">{messageCount}</span>
+              <Heart size={14} className="text-pink-500" />
+              <span className="text-xs font-medium text-gray-700">{messageCount}</span>
             </div>
             {conversationTopic && (
-              <div className="bg-blue-100 px-3 py-1 rounded-full">
-                <span className="text-xs font-medium text-blue-700">
+              <div className="bg-blue-100 px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium text-blue-700">
                   Topic: {conversationTopic}
                 </span>
               </div>
             )}
             {/* Show active activity badge */}
             {activeActivityId && (
-              <div className="bg-purple-100 px-3 py-1 rounded-full">
-                <span className="text-xs font-medium text-purple-700">
+              <div className="bg-purple-100 px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-medium text-purple-700">
                   {mode === 'playing_game' ? '🎮 Game' : '🎭 Roleplay'}: Turn {turnCount}
                 </span>
               </div>
@@ -571,7 +571,7 @@ const FreeTalkTab = () => {
       {/* Chat Area */}
       <div 
         ref={chatContainerRef}
-        className="flex-1 overflow-y-auto px-6 py-4 space-y-2"
+        className="flex-1 overflow-y-auto px-3 py-2 space-y-1"
       >
         {messages.map((msg, index) => (
           <ChatBubble
@@ -580,6 +580,7 @@ const FreeTalkTab = () => {
             content={msg.content}
             timestamp={msg.timestamp}
             pedagogyNote={msg.pedagogyNote}
+            hints={msg.role === 'assistant' && index === messages.length - 1 && showHints ? hints : []}
           />
         ))}
         
@@ -647,11 +648,11 @@ const FreeTalkTab = () => {
 
       {/* ✨ FREE TALK 2.0: STARTER PROMPTS - REPLACED BY FIXED ACTION BAR */}
       {/* 🎮 FREE TALK 3.0: FIXED ACTION BAR */}
-      <div className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
-        <div className="flex items-center gap-1 mb-1.5">
-          <Sparkles size={14} className="text-purple-500" />
-          <span className="text-xs font-semibold text-purple-700">
-            🎯 Choose an action:
+      <div className="px-3 py-1.5 bg-gradient-to-r from-purple-50 to-pink-50 border-t border-purple-200">
+        <div className="flex items-center gap-1 mb-1">
+          <Sparkles size={12} className="text-purple-500" />
+          <span className="text-[10px] font-semibold text-purple-700">
+            🎯 Choose:
           </span>
         </div>
         <div className="grid grid-cols-4 gap-2">
@@ -670,7 +671,7 @@ const FreeTalkTab = () => {
                 key={action.id}
                 onClick={() => handleActionClick(action.id)}
                 disabled={shouldDisable}
-                className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
+                className={`px-1.5 py-1 rounded-lg text-[10px] font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
                   action.type === 'system'
                     ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
                     : action.type === 'menu' && action.id === 'play_game'
@@ -688,12 +689,6 @@ const FreeTalkTab = () => {
         </div>
       </div>
 
-      {/* � Hint Chips - Show scrambled hints for questions */}
-      {showHints && hints.length > 0 && (
-        <div className="px-4 py-2 bg-yellow-50 border-t border-yellow-200">
-          <HintChips hints={hints} />
-        </div>
-      )}
 
       {/* Input Area */}
       <InputBar
