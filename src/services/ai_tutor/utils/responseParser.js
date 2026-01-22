@@ -609,7 +609,7 @@ export function fix20QCorrectGuess(response, userMessage, chatHistory = []) {
  * @returns {Object} Fixed response with guaranteed question
  */
 export function forceRoleplayQuestion(response, mode, scenarioData = null, lastUserMessage = '') {
-  console.log('🔍 forceRoleplayQuestion v4.0 (EMOJI-PROOF + PROPER FALLBACK) CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
+  console.log('🔍 forceRoleplayQuestion v5.0 (TIGHTENED GUARDRAIL) CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
   console.log('🔍 Response before fix:', response.ai_response);
   
   // Only fix roleplay mode
@@ -626,6 +626,14 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
   
   const aiText = response.ai_response || '';
   const trimmed = aiText.trim();
+  
+  // 🔥 FIX 3: Handle empty or generic error responses
+  if (!trimmed || trimmed.length < 5) {
+    console.warn('⚠️ Empty or too short response, using fallback');
+    const fallback = scenarioData?.backup_questions?.[0] || "What do you want to design next? 🎨";
+    response.ai_response = fallback;
+    return response;
+  }
   
   // 🔥 STEP 3: EMOJI-PROOF REGEX - matches ? or ？ followed by whitespace/emojis until end
   // Use Unicode property escape \p{Emoji} with 'u' flag to match emojis
@@ -646,16 +654,15 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
   console.warn('👮‍♂️ GUARDRAIL TRIGGERED: AI forgot to ask!');
   console.warn('   Original:', aiText);
   
-  // 🔥 STEP 3: PROPER FALLBACK - use backup_questions OR hardcoded defaults
+  // 🔥 STEP 3: PROPER FALLBACK - use backup_questions specific to scenario
   const defaultQuestions = [
     "What do you think?",
     "Do you like it?",
-    "What next?",
-    "What color do you like?",
-    "Do you want a big one or a small one?"
+    "What is your favorite color?",
+    "What next?"
   ];
   
-  // Try scenario data first, fallback to defaults
+  // Prioritize scenario-specific questions
   const questions = (scenarioData?.backup_questions && scenarioData.backup_questions.length > 0)
     ? scenarioData.backup_questions
     : defaultQuestions;

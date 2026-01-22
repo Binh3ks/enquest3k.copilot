@@ -239,7 +239,10 @@ const FreeTalkTab = () => {
     }
 
     try {
-      // 🔥 STEP 1: Detect START_ROLEPLAY and persist scenario state
+      // 🔥 FIX 1: Use LOCAL VARIABLE to avoid async state bug
+      let effectiveScenario = activeScenario; // Start with current state
+      
+      // 🔥 STEP 1: Detect START_ROLEPLAY and update LOCAL variable immediately
       if (userMessage.startsWith('START_ROLEPLAY:')) {
         const roleNameRaw = userMessage.split(':')[1]?.trim();
         // Find scenario in weekData
@@ -251,11 +254,12 @@ const FreeTalkTab = () => {
         const roleId = roleIdMap[roleNameRaw?.toLowerCase()] || 'rp_designer';
         const scenario = weekRealData.roleplay_scenarios?.find(s => s.id === roleId);
         if (scenario) {
-          console.log('🎭 Setting activeScenario (persists across turns):', scenario.id);
-          setActiveScenario(scenario);
+          console.log('🎭 Setting effectiveScenario (LOCAL VAR):', scenario.id);
+          effectiveScenario = scenario; // Update local variable IMMEDIATELY
+          setActiveScenario(scenario);   // Also update state for next turn
         }
       }
-      // IMPORTANT: activeScenario persists even for normal chat like "blue" or "bedroom"
+      // IMPORTANT: effectiveScenario is now correctly set regardless of setState async behavior
       
       // Calculate turn count
       const turnCount = Math.floor((messages.length + 1) / 2); // +1 for user message just added
@@ -267,9 +271,9 @@ const FreeTalkTab = () => {
         content: m.content
       }));
 
-      // 🔥 STEP 2: Determine effective mode based on active scenario
-      const effectiveMode = activeScenario ? 'playing_roleplay' : 'freetalk';
-      console.log('🎯 FreeTalk effective mode:', effectiveMode, 'activeScenario:', activeScenario?.id);
+      // 🔥 STEP 2: Determine effective mode based on LOCAL variable (not state!)
+      const effectiveMode = effectiveScenario ? 'playing_roleplay' : 'freetalk';
+      console.log('🎯 FreeTalk effective mode:', effectiveMode, 'effectiveScenario:', effectiveScenario?.id);
       
       // 🔥 NEW: Use NovaEngine - AI tự quyết định khi nào nên đề nghị HS đặt câu hỏi
       const aiResponse = await novaEngineRef.current.sendToNova({
@@ -282,7 +286,7 @@ const FreeTalkTab = () => {
           scaffoldingLevel: 2,
           conversationTopic,
           weekData: weekRealData,  // 🎮 Pass weekData for game/roleplay content injection
-          currentScenario: activeScenario,  // 🔥 STEP 1: Pass persisted scenario to maintain context
+          currentScenario: effectiveScenario,  // 🔥 CRITICAL: Use LOCAL variable, not state!
           lastUserMessage: userMessage  // 🔥 STEP 1: Pass for guardrail detection
         }
       });
