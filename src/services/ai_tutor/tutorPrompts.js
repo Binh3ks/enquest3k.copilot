@@ -42,52 +42,62 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       .filter(msg => msg.role === 'assistant' && msg.content?.includes('?'))
       .map(msg => msg.content.toLowerCase());
     
-    // 🔥 NEW: Extract TOPICS covered from conversation (more reliable than just questions)
+    // 🔥 NEW: Extract TOPICS covered from conversation + COUNT questions per topic
     const allText = conversationHistory.map(msg => msg.content.toLowerCase()).join(' ');
     const topicsCovered = [];
     
+    // Count questions per topic (MAX 4 per topic before moving on)
+    const bedroomQs = questionsAsked.filter(q => q.includes('bedroom')).length;
+    const livingRoomQs = questionsAsked.filter(q => q.includes('living room')).length;
+    const kitchenQs = questionsAsked.filter(q => q.includes('kitchen')).length;
+    const bathroomQs = questionsAsked.filter(q => q.includes('bathroom')).length;
+    
     // Detect name question
     if (allText.includes('what do i call you') || allText.includes('what is your name')) {
-      topicsCovered.push('❌ NAME (already asked)');
+      topicsCovered.push('❌ NAME (already asked - NEVER repeat)');
     }
     
     // Detect house size
-    if (allText.includes('big or small') && allText.includes('house')) {
-      topicsCovered.push('❌ HOUSE SIZE (already asked)');
+    const houseSizeAsked = questionsAsked.filter(q => q.includes('big or small') && q.includes('house')).length;
+    if (houseSizeAsked >= 1) {
+      topicsCovered.push('❌ HOUSE SIZE (asked ' + houseSizeAsked + ' times - STOP!)');
     }
     
     // Detect house color
-    if (allText.includes('what color') && allText.includes('house')) {
-      topicsCovered.push('❌ HOUSE COLOR (already asked)');
+    const houseColorAsked = questionsAsked.filter(q => q.includes('what color') && q.includes('house')).length;
+    if (houseColorAsked >= 1) {
+      topicsCovered.push('❌ HOUSE COLOR (asked ' + houseColorAsked + ' times - STOP!)');
     }
     
-    // Detect rooms discussed
-    if (allText.includes('bedroom')) {
-      topicsCovered.push('❌ BEDROOM (already discussed)');
-    }
-    if (allText.includes('living room')) {
-      topicsCovered.push('❌ LIVING ROOM (already discussed)');
-    }
-    if (allText.includes('kitchen')) {
-      topicsCovered.push('✅ KITCHEN (can ask more)');
-    } else {
-      topicsCovered.push('✅ KITCHEN (NOT asked yet)');
-    }
-    if (allText.includes('bathroom')) {
-      topicsCovered.push('✅ BATHROOM (can ask)');
-    } else {
-      topicsCovered.push('✅ BATHROOM (NOT asked yet)');
+    // Detect rooms discussed with limits
+    if (bedroomQs >= 4) {
+      topicsCovered.push('❌ BEDROOM (' + bedroomQs + ' questions - MAX 4 reached! MOVE TO NEW ROOM!)');
+    } else if (allText.includes('bedroom')) {
+      topicsCovered.push('⚠️ BEDROOM (' + bedroomQs + '/4 questions - can ask ' + (4 - bedroomQs) + ' more then MOVE ON)');
     }
     
-    // Detect furniture discussed
-    if (allText.includes('bed')) {
-      topicsCovered.push('❌ BED (already asked)');
+    if (livingRoomQs >= 4) {
+      topicsCovered.push('❌ LIVING ROOM (' + livingRoomQs + ' questions - MAX reached!)');
+    } else if (allText.includes('living room')) {
+      topicsCovered.push('⚠️ LIVING ROOM (' + livingRoomQs + '/4 questions - can ask more)');
+    } else {
+      topicsCovered.push('✅ LIVING ROOM (NOT asked yet - ASK THIS!)');
     }
-    if (allText.includes('chair')) {
-      topicsCovered.push('❌ CHAIR (already asked)');
+    
+    if (kitchenQs >= 4) {
+      topicsCovered.push('❌ KITCHEN (' + kitchenQs + ' questions - MAX reached!)');
+    } else if (allText.includes('kitchen')) {
+      topicsCovered.push('⚠️ KITCHEN (' + kitchenQs + '/4 questions)');
+    } else {
+      topicsCovered.push('✅ KITCHEN (NOT asked yet - ASK THIS!)');
     }
-    if (allText.includes('table')) {
-      topicsCovered.push('❌ TABLE (already asked)');
+    
+    if (bathroomQs >= 4) {
+      topicsCovered.push('❌ BATHROOM (' + bathroomQs + ' questions - MAX reached!)');
+    } else if (allText.includes('bathroom')) {
+      topicsCovered.push('⚠️ BATHROOM (' + bathroomQs + '/4 questions)');
+    } else {
+      topicsCovered.push('✅ BATHROOM (NOT asked yet - ASK THIS!)');
     }
     
     // Detect family/activities
@@ -190,10 +200,22 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       * Favorite room: ${char.facts.favorite_room}
       * Pet: ${char.facts.has_pet ? `${char.facts.pet_type} named ${char.facts.pet_name}` : 'no pet'}
       * Favorite furniture: ${char.facts.favorite_furniture}
+    - **MAX 4 QUESTIONS PER ROOM** - check counters in topics list!
+    - If room reached 4 questions → MOVE to new room (living room, kitchen, bathroom)
     - Ask open-ended questions with 2-3 options
-    - **ASK ABOUT NEW TOPICS** - don't repeat topics from list above!
+    - **ENCOURAGE student to ask YOU questions** every 5-6 turns: "Do you want to ask me something?"
     - ACK + RECAST short answers as full sentences
     - End with "?" (unless turn ${turnCount} >= ${mission.maximum_turns || 20}, then say goodbye)
+    
+    🎓 HANDLING STUDENT QUESTIONS:
+    If student asks YOU a question (e.g., "What color is your bed?"):
+    1. ANSWER their question first: "My bed is blue!"
+    2. PRAISE them: "Great question!"
+    3. Continue with NEW TOPIC: "Now let's talk about the kitchen! What is in your kitchen?"
+    
+    Example:
+    Student: "what color is your bed?"
+    You: "My bed is blue! Great question! You asked me a question! Now, let's see your kitchen! What is in your kitchen? A fridge, a stove, or a table?"
     
     📖 CURRENT STORY PHASE: ${currentPhase?.phase || 'introduction'}
     PHASE GOAL: ${currentPhase?.goal || 'Get started'}
