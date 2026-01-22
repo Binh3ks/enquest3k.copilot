@@ -597,83 +597,51 @@ export function fix20QCorrectGuess(response, userMessage, chatHistory = []) {
 }
 
 /**
- * Force fix roleplay responses to ALWAYS end with question + options
- * Used when AI ignores prompts and returns statements only
+ * BƯỚC 3: "Ép" câu hỏi (Guardrail) - Force roleplay to ALWAYS ask questions
+ * Prevents AI from just saying "Oh okay" without continuing conversation
+ * Simplified version that focuses on core logic
  * 
- * VERSION 2.0: Data-driven enforcement using backup_questions from scenario
- * 
- * @param {Object} response - Parsed AI response
+ * @param {Object} response - Parsed AI response with ai_response field
  * @param {string} mode - Current mode (playing_roleplay, etc.)
  * @param {Object} scenarioData - Roleplay scenario data with backup_questions array
  * @param {string} lastUserMessage - Last message from user
  * @returns {Object} Fixed response with guaranteed question
  */
 export function forceRoleplayQuestion(response, mode, scenarioData = null, lastUserMessage = '') {
-  console.log('🔍 forceRoleplayQuestion v5.0 (TIGHTENED GUARDRAIL) CALLED:', { mode, scenarioId: scenarioData?.id, lastUserMessage });
-  console.log('🔍 Response before fix:', response.ai_response);
-  
-  // Only fix roleplay mode
+  // Only apply guardrail in roleplay mode
   if (mode !== 'playing_roleplay') {
-    console.log('❌ Not roleplay mode, skipping');
     return response;
   }
   
-  // 🔥 Skip guardrail on opening turn (START_ROLEPLAY message)
+  // Skip on opening turn (START_ROLEPLAY message)
   if (lastUserMessage && lastUserMessage.toUpperCase().startsWith('START_ROLEPLAY')) {
-    console.log('✅ Opening turn detected - skipping guardrail (let AI use opening_line)');
     return response;
   }
   
-  const aiText = response.ai_response || '';
-  const trimmed = aiText.trim();
+  let final = response.ai_response ? response.ai_response.trim() : "";
   
-  // 🔥 FIX 3: Handle empty or generic error responses
-  if (!trimmed || trimmed.length < 5) {
-    console.warn('⚠️ Empty or too short response, using fallback');
-    const fallback = scenarioData?.backup_questions?.[0] || "What do you want to design next? 🎨";
-    response.ai_response = fallback;
+  // Handle empty responses with safe fallback
+  if (!final) {
+    response.ai_response = "What color do you like?";
     return response;
   }
   
-  // 🔥 STEP 3: EMOJI-PROOF REGEX - matches ? or ？ followed by whitespace/emojis until end
-  // Use Unicode property escape \p{Emoji} with 'u' flag to match emojis
-  const hasQuestionMark = /[?？][\s\p{Emoji}]*$/u.test(trimmed);
-  const endsWithExclamation = /[!！][\s\p{Emoji}]*$/u.test(trimmed);
-  
-  console.log('🔍 hasQuestion (emoji-proof):', hasQuestionMark, 'endsWithExclamation:', endsWithExclamation, 'last 20 chars:', trimmed.slice(-20));
-  
-  if (hasQuestionMark && !endsWithExclamation) {
-    console.log('✅ Roleplay response OK: has question');
-    return response;
+  // Check if response already has a question mark (including Vietnamese ？)
+  if (!final.includes('?') && !final.includes('？')) {
+    // Get backup questions from scenario data or use defaults
+    const backups = scenarioData?.backup_questions || [
+      "Do you like blue?",
+      "What about red?",
+      "Is this big enough?",
+      "Do you want a table?"
+    ];
+    
+    // Pick random backup question
+    const randomQ = backups[Math.floor(Math.random() * backups.length)];
+    
+    // Append question to response
+    response.ai_response = `${final} ${randomQ}`;
   }
-  
-  if (endsWithExclamation) {
-    console.warn('⚠️ Response ends with exclamation (!) not question (?)');
-  }
-  
-  console.warn('👮‍♂️ GUARDRAIL TRIGGERED: AI forgot to ask!');
-  console.warn('   Original:', aiText);
-  
-  // 🔥 STEP 3: PROPER FALLBACK - use backup_questions specific to scenario
-  const defaultQuestions = [
-    "What do you think?",
-    "Do you like it?",
-    "What is your favorite color?",
-    "What next?"
-  ];
-  
-  // Prioritize scenario-specific questions
-  const questions = (scenarioData?.backup_questions && scenarioData.backup_questions.length > 0)
-    ? scenarioData.backup_questions
-    : defaultQuestions;
-  
-  const randomQ = questions[Math.floor(Math.random() * questions.length)];
-  
-  // Append question with bold formatting
-  response.ai_response = `${trimmed} **${randomQ}**`;
-  
-  console.log('✅ FORCED QUESTION ADDED:', randomQ);
-  console.log('✅ Final response:', response.ai_response);
   
   return response;
 }
