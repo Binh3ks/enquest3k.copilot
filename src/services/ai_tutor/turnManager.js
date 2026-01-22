@@ -327,6 +327,8 @@ function getMissionSteps(missionId, missionTitle) {
   }
   
   // Default: Week 1 school missions
+  // 🔥 Return empty array if steps[missionId] is null (story mode only)
+  if (steps[missionId] === null) return [];
   return steps[missionId] || steps[1];
 }
 
