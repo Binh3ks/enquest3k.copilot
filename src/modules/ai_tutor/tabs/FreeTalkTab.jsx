@@ -245,6 +245,9 @@ const FreeTalkTab = () => {
       // 🔥 STEP 1: Detect START_ROLEPLAY and update LOCAL variable immediately
       if (userMessage.startsWith('START_ROLEPLAY:')) {
         const roleNameRaw = userMessage.split(':')[1]?.trim();
+        console.log('🔍 DEBUG: START_ROLEPLAY detected, roleNameRaw:', roleNameRaw);
+        console.log('🔍 DEBUG: weekRealData.roleplay_scenarios:', weekRealData.roleplay_scenarios);
+        
         // Find scenario in weekData
         const roleIdMap = {
           'room designer': 'rp_designer',
@@ -252,11 +255,17 @@ const FreeTalkTab = () => {
           'furniture shop': 'rp_shop'
         };
         const roleId = roleIdMap[roleNameRaw?.toLowerCase()] || 'rp_designer';
+        console.log('🔍 DEBUG: Mapped roleId:', roleId);
+        
         const scenario = weekRealData.roleplay_scenarios?.find(s => s.id === roleId);
+        console.log('🔍 DEBUG: Found scenario:', scenario);
+        
         if (scenario) {
           console.log('🎭 Setting effectiveScenario (LOCAL VAR):', scenario.id);
           effectiveScenario = scenario; // Update local variable IMMEDIATELY
           setActiveScenario(scenario);   // Also update state for next turn
+        } else {
+          console.error('❌ Scenario NOT FOUND for roleId:', roleId);
         }
       }
       // IMPORTANT: effectiveScenario is now correctly set regardless of setState async behavior
