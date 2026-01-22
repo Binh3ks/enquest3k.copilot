@@ -8,8 +8,9 @@ import { User, Sparkles } from 'lucide-react';
  * @param {number} props.timestamp - Message timestamp
  * @param {string} props.pedagogyNote - Optional pedagogy note for debugging
  * @param {Array<string>} props.hints - Optional hints to display after AI message
+ * @param {string} props.mode - Current mode (only show hints in roleplay)
  */
-const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [] }) => {
+const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [], mode = '' }) => {
   const isAssistant = role === 'assistant';
   
   // 🔥 Clean content extraction - prevent JSON garbage
@@ -83,13 +84,13 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [] }) => {
         </div>
       </div>
 
-      {/* 💡 Hints - Show immediately after AI question */}
-      {isAssistant && hints.length > 0 && (
-        <div className="mt-1 bg-yellow-50 border border-yellow-300 rounded-lg px-2 py-1.5 shadow-sm">
+      {/* 💡 Hints - Show only in roleplay mode with 2-line layout */}
+      {isAssistant && hints.length > 0 && mode === 'playing_roleplay' && (
+        <div className="mt-1 bg-yellow-50 border border-yellow-300 rounded-lg px-2 py-1.5 shadow-sm max-w-full">
           <div className="flex items-center gap-1 mb-1">
             <span className="text-[10px] font-semibold text-yellow-700">💡 Hints:</span>
           </div>
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1" style={{maxHeight: '60px', overflow: 'auto'}}>
             {hints.map((hint, index) => (
               <span
                 key={index}
