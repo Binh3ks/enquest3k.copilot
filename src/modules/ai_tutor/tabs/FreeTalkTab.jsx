@@ -688,7 +688,12 @@ const FreeTalkTab = () => {
         </div>
       </div>
 
-      {/* 🔥 Hint chips removed - not needed for games/roleplay */}
+      {/* � Hint Chips - Show scrambled hints for questions */}
+      {showHints && hints.length > 0 && (
+        <div className="px-4 py-2 bg-yellow-50 border-t border-yellow-200">
+          <HintChips hints={hints} />
+        </div>
+      )}
 
       {/* Input Area */}
       <InputBar
