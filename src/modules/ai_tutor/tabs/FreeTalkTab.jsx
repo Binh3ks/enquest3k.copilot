@@ -462,8 +462,9 @@ const FreeTalkTab = () => {
     // Reset turn count when switching modes
     setTurnCount(0);
     
-    // 🚨 CRITICAL: Clear roleplay scenario when switching to other modes
+    // 🚨 CRITICAL: Clear roleplay scenario AND active activity when switching modes
     setActiveScenario(null);
+    setActiveActivityId(null);
     
     if (actionId === 'translate') {
       setMode('translation_help');
@@ -584,6 +585,7 @@ const FreeTalkTab = () => {
             timestamp={msg.timestamp}
             pedagogyNote={msg.pedagogyNote}
             hints={msg.role === 'assistant' && index === messages.length - 1 && showHints ? hints : []}
+            mode={mode}
           />
         ))}
         
