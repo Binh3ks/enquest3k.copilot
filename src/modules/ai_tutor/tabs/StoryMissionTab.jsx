@@ -546,7 +546,7 @@ const StoryMissionTab = () => {
           timestamp: new Date().toISOString(),
           hints: hints
         };
-        setMessages(prev => [...prev, aiMsg]);
+        addMessage('story', aiMsg);  // 🔥 FIX: Use addMessage helper, not setMessages!
         
         // TTS
         if (responseText) {
