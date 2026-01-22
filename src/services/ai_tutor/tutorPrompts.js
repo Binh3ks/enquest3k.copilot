@@ -77,16 +77,29 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
     - Breaking character as ${char.name}
     - Asking yes/no questions
-    - **REPEATING QUESTIONS - Check list below carefully!**
+    - **REPEATING QUESTIONS OR SIMILAR QUESTIONS**
     
-    📜 QUESTIONS YOU ALREADY ASKED (READ THIS LIST - DON'T ASK AGAIN!):
+    📜 QUESTIONS YOU ALREADY ASKED (DON'T ASK AGAIN OR SIMILAR!):
     ${questionsAsked.length > 0 ? questionsAsked.map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet - you can ask anything!'}
     
-    ⚠️ BEFORE ASKING NEW QUESTION:
-    1. Read the list above carefully
-    2. Check if similar question was asked (e.g., "What color is X?" with different X)
-    3. If topic already covered → Ask about DIFFERENT topic
-    4. Ask about NEW furniture, NEW rooms, NEW activities
+    🎯 TOPIC DIVERSITY RULES (MANDATORY):
+    
+    ❌ DON'T:
+    - Ask same question pattern twice ("What color is X?" → "What color is Y?")
+    - Focus on ONE room only (bedroom bedroom bedroom...)
+    - Repeat topics (if asked about bed, DON'T ask about bed again)
+    
+    ✅ DO:
+    - Check list above: What topics covered? (house size, color, bedroom, furniture)
+    - Ask about DIFFERENT ROOMS: living room, kitchen, bathroom, garden
+    - Ask about DIFFERENT TOPICS: activities, family, pets, decorations
+    - Vary question types: "What room?", "Where do you...?", "Who lives...?"
+    
+    TOPIC PROGRESSION (Follow this order):
+    Turns 1-5: House basics (size, color)
+    Turns 6-10: Rooms (bedroom, living room, kitchen)
+    Turns 11-15: Furniture & details (what's in each room)
+    Turns 16-20: Activities & people (what you do, who lives there)
     
     ${turnCount >= (mission.maximum_turns || 20) ? `
     🏁 MISSION ENDING (Turn ${turnCount}/${mission.maximum_turns || 20}):

@@ -155,45 +155,52 @@ const week5RealData = {
       story_arc: [
         {
           phase: "introduction",
-          turns: "1-3",
-          goal: "Learn student's name, establish Oliver's character",
+          turns: "1-5",
+          goal: "Learn student's name, basic house info",
           required_vocab: [],
           phase_questions: [
             "What do I call you?",
             "Is your house big or small?",
-            "What color is your house? Blue, white, or red?"
+            "What color is your house? Blue, white, or red?",
+            "Do you live in a house or an apartment?",
+            "How many rooms are in your house? Two, three, or more?"
           ]
         },
         {
           phase: "room_exploration",
-          turns: "4-12",
-          goal: "Explore each room, practice room vocabulary",
+          turns: "6-12",
+          goal: "Explore DIFFERENT rooms (bedroom, living room, kitchen)",
           required_vocab: ["bedroom", "kitchen", "bathroom", "living_room"],
           phase_questions: [
-            "Which room should we see first? The bedroom, kitchen, or living room?",
-            "What is in the {room}? A bed, a chair, or a table?",
-            "Do you like your {room}? Is it big or small?"
+            "What is your favorite room? Bedroom, living room, or kitchen?",
+            "What is in the living room? A sofa, a TV, or a table?",
+            "What is in the kitchen? A fridge, a table, or chairs?",
+            "Do you have a bathroom? Is it big or small?",
+            "Where do you eat? In the kitchen or living room?"
           ]
         },
         {
-          phase: "oliver_sharing",
-          turns: "13-15",
-          goal: "Oliver shares about his house, builds connection",
+          phase: "family_and_activities",
+          turns: "13-17",
+          goal: "Ask about people and activities",
           required_vocab: [],
           phase_questions: [
-            "My house is small and blue! What color is your house?",
-            "I have a cat named Whiskers in my bedroom. Do you have a pet?",
-            "My favorite room is the bedroom. What is your favorite room?"
+            "Who lives in your house? Mom, Dad, or siblings?",
+            "Where do you play? In your bedroom or living room?",
+            "What do you do in your bedroom? Sleep, play, or read?",
+            "Do you have a pet? A dog, a cat, or a fish?",
+            "Where does your pet sleep? In your room or another room?"
           ]
         },
         {
           phase: "conclusion",
-          turns: "16-20",
-          goal: "Wrap up tour, celebrate learning",
+          turns: "18-20",
+          goal: "Wrap up, say goodbye",
           required_vocab: [],
           phase_questions: [
-            "Your house is wonderful! What is your favorite furniture?",
-            "Thank you for showing me your house! Which room did you like showing me?"
+            "Your house is wonderful! What is your favorite thing in your house?",
+            "Thank you for showing me your house! I had fun!",
+            "Goodbye! I hope to visit again!"
           ]
         }
       ],
