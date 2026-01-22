@@ -551,7 +551,10 @@ const StoryMissionTab = () => {
         // TTS
         if (responseText) {
           try {
-            await ttsEngine.speak(responseText, { autoPlay: true });
+            await textToSpeech(responseText, {
+              voice: 'nova',
+              autoPlay: true
+            });
             console.log('🔊 TTS played successfully');
           } catch (ttsError) {
             console.warn('⚠️ TTS failed:', ttsError.message);
