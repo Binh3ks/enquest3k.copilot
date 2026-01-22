@@ -280,13 +280,13 @@ const FreeTalkTab = () => {
         content: m.content
       }));
 
-      // 🔥 STEP 2: Determine effective mode based on LOCAL variable (not state!)
-      const effectiveMode = effectiveScenario ? 'playing_roleplay' : 'freetalk';
-      console.log('🎯 FreeTalk effective mode:', effectiveMode, 'effectiveScenario:', effectiveScenario?.id);
+      // 🔥 STEP 2: Always use 'freetalk' mode, rely on currentScenario to trigger roleplay
+      // NovaEngine only accepts: story, freetalk, pronunciation, quiz, debate
+      console.log('🎯 FreeTalk mode: freetalk, effectiveScenario:', effectiveScenario?.id || 'none');
       
       // 🔥 NEW: Use NovaEngine - AI tự quyết định khi nào nên đề nghị HS đặt câu hỏi
       const aiResponse = await novaEngineRef.current.sendToNova({
-        mode: effectiveMode,  // 🔥 CRITICAL: Pass explicit mode
+        mode: 'freetalk',  // 🔥 ALWAYS freetalk, scenario detection via context.currentScenario
         weekId: weekNumberRef.current,  // 🔥 V27: Pass weekId for freetalk_knowledge
         userMessage,
         chatHistory,
