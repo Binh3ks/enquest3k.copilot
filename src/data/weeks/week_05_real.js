@@ -969,8 +969,21 @@ const week5RealData = {
       { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
     ],
     
-    // ✨ DYNAMIC ROLEPLAY SCENARIOS (Data-Driven Architecture)
-    roleplay_scenarios: [
+    // Legacy bonus roleplay (kept for backward compatibility)
+    bonus_roleplay: {
+      id: 'week5_house_tour',
+      label_en: "House Tour Guide 🏠",
+      label_vi: "Hướng dẫn viên Tham quan Nhà 🏠",
+      icon: "🏠",
+      ai_role: "Friendly house tour guide showing a mystery house",
+      user_role: "Visitor exploring the house",
+      intro: "Welcome! I'm your guide today. This is a very special mystery house. Let me show you around!",
+      context: "Week 5 theme - Rooms & Furniture. AI acts as enthusiastic tour guide pointing out rooms (bedroom, kitchen, bathroom, living room) and furniture (bed, chair, table). Guide asks visitor what they see, what they like, and teaches names using 'This is a...', 'There is a...' patterns. Guide should be friendly, encouraging, and use simple words suitable for A0+ level."
+    }
+  },
+
+  // ✨ DYNAMIC ROLEPLAY SCENARIOS (Data-Driven Architecture) - TOP LEVEL!
+  roleplay_scenarios: [
       {
         id: "rp_designer",
         title: "Room Designer 🎨",
@@ -1048,20 +1061,7 @@ const week5RealData = {
           "What else do you want to buy? A table, a mirror, or a rug?"
         ]
       }
-    ],
-    
-    // Legacy bonus roleplay (kept for backward compatibility)
-    bonus_roleplay: {
-      id: 'week5_house_tour',
-      label_en: "House Tour Guide 🏠",
-      label_vi: "Hướng dẫn viên Tham quan Nhà 🏠",
-      icon: "🏠",
-      ai_role: "Friendly house tour guide showing a mystery house",
-      user_role: "Visitor exploring the house",
-      intro: "Welcome! I'm your guide today. This is a very special mystery house. Let me show you around!",
-      context: "Week 5 theme - Rooms & Furniture. AI acts as enthusiastic tour guide pointing out rooms (bedroom, kitchen, bathroom, living room) and furniture (bed, chair, table). Guide asks visitor what they see, what they like, and teaches names using 'This is a...', 'There is a...' patterns. Guide should be friendly, encouraging, and use simple words suitable for A0+ level."
-    }
-  }
+    ]
 };
 
 export default week5RealData;
