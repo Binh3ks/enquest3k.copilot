@@ -438,8 +438,11 @@ const StoryMissionTab = () => {
         missionIndex: currentMissionIndex,
         missionId: currentMission.mission_id,
         title: currentMission.title,
+        hasStoryCharacter: !!currentMission.story_character,
+        storyCharacterName: currentMission.story_character?.name || 'MISSING',
         userMessage: userMessage.slice(0, 30) + '...'
       });
+      console.log('🎭 Story Character Data:', currentMission.story_character);
       
       // Get week data for context
       const weekData = await getCurrentWeekData(currentWeek || 'week-1');

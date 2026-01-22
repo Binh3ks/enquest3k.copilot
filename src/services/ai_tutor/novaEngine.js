@@ -151,16 +151,9 @@ export class NovaEngine {
    * @private
    */
   buildTutorContext(mode, contextParams) {
-    // Map mode names: novaEngine uses 'story', tutorPrompts expects 'story_mission'
-    const modeMap = {
-      'story': TutorModes.STORY_MISSION,
-      'freetalk': TutorModes.CHAT,
-      'pronunciation': TutorModes.PRONUNCIATION,
-      'quiz': TutorModes.QUIZ,
-      'debate': TutorModes.DEBATE
-    };
-    
-    const tutorMode = modeMap[mode] || TutorModes.CHAT;
+    // 🔥 CRITICAL: Keep mode as-is for PRIORITY checks in tutorPrompts.js!
+    // tutorPrompts PRIORITY 0 checks for mode === 'story'
+    // Do NOT transform to 'story_mission' or check will fail!
     
     // 🔥 DEBUG: Log context params to verify chatHistory is passed
     console.log('🔍 buildTutorContext - contextParams:', {
@@ -247,8 +240,9 @@ export class NovaEngine {
     }
     
     // Build prompt using tutorPrompts.js
-    // Note: userInput will be added when actually sending to AI
-    return buildPrompt(tutorMode, context, contextParams.userMessage || '', options);
+    // 🔥 CRITICAL: Pass original mode ('story', 'freetalk') NOT transformed (e.g., 'story_mission')
+    // tutorPrompts PRIORITY checks require exact mode names!
+    return buildPrompt(mode, context, contextParams.userMessage || '', options);
   }
   
   /**

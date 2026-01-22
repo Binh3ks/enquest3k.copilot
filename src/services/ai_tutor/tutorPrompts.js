@@ -17,16 +17,21 @@ export { TutorModes };
  */
 export function buildPrompt(mode, context, userInput, options = {}) {
   // 🔥 DEBUG: Check what we receive
-  console.log('🔍 tutorPrompts.js - buildPrompt called:', {
-    mode,
-    hasContext: !!context,
-    hasCurrentMission: !!context?.currentMission,
-    hasStoryCharacter: !!context?.currentMission?.story_character,
-    currentMissionKeys: context?.currentMission ? Object.keys(context.currentMission) : 'N/A'
-  });
+  console.log('🔍 tutorPrompts.js - buildPrompt called');
+  console.log('  mode:', mode);
+  console.log('  hasContext:', !!context);
+  console.log('  hasCurrentMission:', !!context?.currentMission);
+  console.log('  hasStoryCharacter:', !!context?.currentMission?.story_character);
+  if (context?.currentMission) {
+    console.log('  currentMission keys:', Object.keys(context.currentMission));
+    console.log('  currentMission.mission_id:', context.currentMission.mission_id);
+    console.log('  currentMission.story_character:', context.currentMission.story_character);
+  }
   
   // 🔥 PRIORITY 0: Handle STORY mode with STRICT character enforcement
   if (mode === 'story' && context?.currentMission?.story_character) {
+    console.log('✅ PRIORITY 0 TRIGGERED - Oliver character mode!');
+
     const char = context.currentMission.story_character;
     const mission = context.currentMission;
     const turnCount = context.turnCount || 0;
