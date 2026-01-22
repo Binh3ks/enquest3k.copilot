@@ -17,7 +17,10 @@ export { TutorModes };
  */
 export function buildPrompt(mode, context, userInput, options = {}) {
   // 🔥 PRIORITY 1: Handle ROLEPLAY mode with STRICT persona enforcement
-  if (mode === 'playing_roleplay' || (context?.currentScenario && mode !== 'story')) {
+  // BUT: Don't apply roleplay if user explicitly switched to translation_help or asking_any
+  const isExplicitNonRoleplayMode = mode === 'translation_help' || mode === 'asking_any' || mode === 'selecting_game' || mode === 'selecting_roleplay';
+  
+  if ((mode === 'playing_roleplay' || (context?.currentScenario && mode !== 'story')) && !isExplicitNonRoleplayMode) {
     const s = context.currentScenario;
     
     // 🔥 CRITICAL: Detect if this is the opening turn (START_ROLEPLAY message)
