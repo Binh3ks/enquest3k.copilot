@@ -188,7 +188,45 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
     }
 
     // --- C. ROLEPLAY MODE (IMMERSION) ---
-    // Detect if we're continuing an ongoing roleplay (but not starting new one)
+    // --- C. ROLEPLAY MODE (IMMERSION) ---
+    // 🔥 FIX: Prioritize context.currentScenario to maintain roleplay across turns
+    const activeScenario = context.currentScenario || null;
+    
+    // If we have an active scenario (from state), use it regardless of userMessage
+    if (activeScenario && !startingNewGame) {
+      console.log('🎭 CONTINUING ROLEPLAY:', activeScenario.id, 'userMessage:', userMessage.slice(0, 30));
+      
+      return `
+      SYSTEM_MODE: ROLEPLAY_ACTOR
+      SCENARIO: "${activeScenario.title}"
+      YOUR ROLE: ${activeScenario.ai_role}
+      USER ROLE: ${activeScenario.user_role}
+      CONTEXT: ${activeScenario.context}
+      
+      🔥 CURRENT STATUS: The conversation is ONGOING.
+      USER SAID: "${userMessage}"
+      
+      INSTRUCTIONS:
+      1. Stay in character 100%. Do NOT act like a teacher.
+      2. ${activeScenario.guide_rules}
+      3. 🚨 MANDATORY: END EVERY RESPONSE WITH A CLEAR QUESTION.
+         ❌ Bad: "That is nice."
+         ✅ Good: "That is nice! Do you want to add a rug?"
+      4. Keep sentences simple (A0 Level). Max 15 words per sentence.
+      5. Use vocabulary: ${activeScenario.vocab_focus?.join(', ') || 'simple words'}
+      
+      🛡️ BACKUP ENFORCEMENT:
+      backup_questions: ${JSON.stringify(activeScenario.backup_questions || [])}
+      
+      RESPOND IN THIS JSON FORMAT:
+      {
+        "ai_response": "Your character response (MUST end with question + options)",
+        "suggested_hints": ["helpful", "response", "words"]
+      }
+      `;
+    }
+    
+    // Fallback: Detect if we're continuing an ongoing roleplay (but not starting new one)
     if (isInRoleplay && !startingNewGame) {
       return `
       SYSTEM_MODE: ROLEPLAY_ACTOR_ONGOING

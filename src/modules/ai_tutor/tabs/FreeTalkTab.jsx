@@ -60,6 +60,7 @@ const FreeTalkTab = () => {
   const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
   const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
   const [turnCount, setTurnCount] = useState(0); // Turn counter for CURRENT MODE
+  const [currentScenario, setCurrentScenario] = useState(null); // 🔥 FIX: Track active roleplay scenario
   const [modeTurnLimits] = useState({
     translation_help: 15,
     playing_game: 10,
@@ -238,6 +239,23 @@ const FreeTalkTab = () => {
     }
 
     try {
+      // 🔥 FIX: Detect START_ROLEPLAY and set active scenario
+      if (userMessage.startsWith('START_ROLEPLAY:')) {
+        const roleNameRaw = userMessage.split(':')[1]?.trim();
+        // Find scenario in weekData
+        const roleIdMap = {
+          'room designer': 'rp_designer',
+          'house tour': 'rp_tour',
+          'furniture shop': 'rp_shop'
+        };
+        const roleId = roleIdMap[roleNameRaw?.toLowerCase()] || 'rp_designer';
+        const scenario = weekRealData.roleplay_scenarios?.find(s => s.id === roleId);
+        if (scenario) {
+          console.log('🎭 Setting currentScenario:', scenario.id);
+          setCurrentScenario(scenario);
+        }
+      }
+      
       // Calculate turn count
       const turnCount = Math.floor((messages.length + 1) / 2); // +1 for user message just added
       console.log('📊 FreeTalk Turn Count:', turnCount);
@@ -258,7 +276,9 @@ const FreeTalkTab = () => {
           turnCount,
           scaffoldingLevel: 2,
           conversationTopic,
-          weekData: weekRealData  // 🎮 Pass weekData for game/roleplay content injection
+          weekData: weekRealData,  // 🎮 Pass weekData for game/roleplay content injection
+          currentScenario: currentScenario,  // 🔥 FIX: Pass active scenario to maintain context
+          lastUserMessage: userMessage  // 🔥 FIX: Pass for guardrail
         }
       });
 

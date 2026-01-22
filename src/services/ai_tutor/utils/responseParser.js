@@ -620,16 +620,22 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
   
   const aiText = response.ai_response || '';
   
-  // 🔥 FIX 1: EMOJI-PROOF REGEX - Check if response ends with question using Unicode flag
-  // This regex matches ? followed by any spaces or emojis until end of string
+  // 🔥 FIX 1 & 3: EMOJI-PROOF REGEX + REJECT EXCLAMATION MARKS
+  // This regex matches ? (NOT !) followed by any spaces or emojis until end of string
+  // Exclamation marks like "Tell me more!" are NOT questions
   const trimmed = aiText.trim();
   const hasQuestionMark = /[?？][\s\p{Emoji}]*$/u.test(trimmed);
+  const endsWithExclamation = /[!！][\s\p{Emoji}]*$/u.test(trimmed);
   
-  console.log('🔍 hasQuestion (emoji-proof):', hasQuestionMark, 'last 20 chars:', trimmed.slice(-20));
+  console.log('🔍 hasQuestion (emoji-proof):', hasQuestionMark, 'endsWithExclamation:', endsWithExclamation, 'last 20 chars:', trimmed.slice(-20));
   
-  if (hasQuestionMark) {
+  if (hasQuestionMark && !endsWithExclamation) {
     console.log('✅ Roleplay response OK: has question');
     return response;
+  }
+  
+  if (endsWithExclamation) {
+    console.warn('⚠️ Response ends with exclamation (!) not question (?)');
   }
   
   console.warn('👮‍♂️ GUARDRAIL TRIGGERED: AI forgot to ask!');
