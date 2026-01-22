@@ -290,19 +290,27 @@ export function guardResponse(aiResponse, context = {}, maxWords = 15) {
   // Step 6: Final validation - must have actual content
   if (cleaned.length < 5) {
     console.error('❌ Response guard: Response too short after cleaning:', cleaned);
-    // 🔥 Use TurnManager question if available (from objectives)
-    if (context.turnManager && typeof context.turnManager.getQuestionVariant === 'function') {
-      const variant = context.turnManager.getQuestionVariant();
-      if (variant && variant.question) {
-        cleaned = variant.question;
-        console.log('✅ Using TurnManager question variant as fallback:', cleaned);
+    
+    // 🔥 CRITICAL: Don't use fallback in story_character mode - AI response is sacred!
+    if (context.missionData?.story_character) {
+      console.warn('⚠️ Story character mode: AI response too short but NOT overriding (trust AI)');
+      // Use original AI response, don't replace
+      cleaned = aiResponse || 'Tell me more!';
+    } else {
+      // 🔥 Use TurnManager question if available (only for objective mode)
+      if (context.turnManager && typeof context.turnManager.getQuestionVariant === 'function') {
+        const variant = context.turnManager.getQuestionVariant();
+        if (variant && variant.question) {
+          cleaned = variant.question;
+          console.log('✅ Using TurnManager question variant as fallback:', cleaned);
+        } else {
+          cleaned = 'Tell me more!';
+        }
+      } else if (context.nextStepQuestion) {
+        cleaned = context.nextStepQuestion;
       } else {
         cleaned = 'Tell me more!';
       }
-    } else if (context.nextStepQuestion) {
-      cleaned = context.nextStepQuestion;
-    } else {
-      cleaned = 'Tell me more!';
     }
   }
   
