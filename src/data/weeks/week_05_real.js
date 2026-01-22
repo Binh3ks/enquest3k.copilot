@@ -508,7 +508,7 @@ GRAMMAR ENFORCEMENT: Every student answer must use "There is a/an..."
 VOCABULARY: apple, egg, umbrella, octopus, spider, cat, book, lamp (test vowels!)
 EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       
-      target_vocab: ["apple", "egg", "umbrella", "octopus", "spider", "cat", "book", "lamp", "flashlight", "dark"],
+      target_vocab: ["book", "notebook", "chair", "table", "bed", "bedroom", "kitchen", "bathroom", "living_room", "house"],
       
       grammar_pattern: "There is a/an [noun]",
 
@@ -528,7 +528,7 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
         role: "Explorer with flashlight discovering objects in darkness"
       },
 
-      opening_narrative: "Oh no! The house is so dark! 🌑 I can't see anything! But wait... I have a flashlight! 🔦 I will shine the light, you tell me what you see! (Shine light on table) Wow! What is on the table?",
+      opening_narrative: "Oh no! The house is so dark! 🌑 I can't see anything! But wait... I have a flashlight! 🔦 I will shine the light on the table. (Shine 🔦) Wow! I see something! There is a... Can you say it? There is a...",
 
       story_arc: [
         {
@@ -537,42 +537,42 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           phase_name: "Darkness and Flashlight",
           focus: "Establish grammar pattern with simple objects",
           phase_questions: [
-            "(Shine on book) 📖 Look! What do you see? Say: There is...",
-            "(Shine on chair) 🪑 What is this? Use: There is a...",
-            "(Shine on lamp) 💡 On the table! What is it? Say: There is...",
-            "(Shine on cat) 🐱 Meow! What is hiding? There is..."
+            "(Shine on book 📖) Look! A book! Say the sentence: There is a book!",
+            "(Shine on chair 🪑) What is this? Say: There is a chair!",
+            "(Shine on table 🪑) Wow! Say: There is a table!",
+            "(Shine on bed 🛏️) For sleeping! Say: There is a bed!"
           ],
           example_answers: [
             "There is a book",
             "There is a chair", 
-            "There is a lamp",
-            "There is a cat"
+            "There is a table",
+            "There is a bed"
           ]
         },
         {
           phase: "vowel_trap",
           turns: "5-12",
-          phase_name: "A/AN Vowel Challenge",
-          focus: "Test a/an with vowel-starting objects",
+          phase_name: "More Objects Challenge",
+          focus: "Practice with more furniture and objects",
           phase_questions: [
-            "(Shine on apple) 🍎 What is this red thing? There is AN...",
-            "(Shine on egg) 🥚 White and oval! What is it? There is AN...",
-            "(Shine on umbrella) ☂️ For rain! What is this? There is AN...",
-            "(Shine on octopus) 🐙 Eight legs! What is this? There is AN...",
-            "(Shine on book) 📖 You can read this! There is A...",
-            "(Shine on spider) 🕷️ Eww! On the wall! There is A...",
-            "(Shine on lamp) 💡 It gives light! There is A...",
-            "(Shine on chair) 🪑 You sit here! There is A..."
+            "(Shine on notebook 📓) For writing! There is a...",
+            "(Shine on bed 🛏️) You sleep here! There is a...",
+            "(Shine on chair 🪑) You sit here! There is a...",
+            "(Shine on table 🪑) You eat here! There is a...",
+            "(Shine on book 📖) You read this! There is a...",
+            "(Shine on bedroom door 🚪) The bedroom! There is a...",
+            "(Shine on kitchen 🍳) For cooking! There is a...",
+            "(Shine on bathroom 🚿) For washing! There is a..."
           ],
           example_answers: [
-            "There is an apple",
-            "There is an egg",
-            "There is an umbrella", 
-            "There is an octopus",
+            "There is a notebook",
+            "There is a bed",
+            "There is a chair", 
+            "There is a table",
             "There is a book",
-            "There is a spider",
-            "There is a lamp",
-            "There is a chair"
+            "There is a bedroom",
+            "There is a kitchen",
+            "There is a bathroom"
           ]
         },
         {
@@ -611,9 +611,9 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       
       nova_greeting: "Look! I found an old mystery box! Let's see what's inside!",
       
-      mission_context: `This is Week 5 Mission 3 - The Mystery Box (Riddle Game). STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, PLAYFUL words, max 8 words/sentence. GRAMMAR FOCUS: "There is a/an..." - Student guesses objects in mystery box. VOCABULARY: cat, dog, orange, apple, egg, umbrella, octopus, book, ball. THEME: Mystery box riddle game. MECHANIC: Ms. Nova describes what she feels/hears in the box WITHOUT looking, student guesses using "There is...". CLUES: Use sounds (Meow, Woof), shapes (round, long), colors (orange, red), features (8 legs, soft). CORRECT a/an ERRORS: "Oops! AN orange. Try again!" ENCOURAGE: Excitement when they guess correctly. AVOID: Making it too hard. FOCUS: Turn grammar practice into exciting guessing game.`,
+      mission_context: `This is Week 5 Mission 3 - The Mystery Box (Riddle Game). STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, PLAYFUL words, max 8 words/sentence. GRAMMAR FOCUS: "There is a/an..." - Student guesses objects in mystery box. VOCABULARY: book, notebook, chair, table, bed, bedroom, kitchen, bathroom, house, living_room. THEME: Mystery box riddle game. MECHANIC: Ms. Nova describes what she feels WITHOUT looking, student guesses using "There is...". CLUES: Use touch (flat, soft, hard), shapes (square, round), function (for sleeping, for sitting). CORRECT a/an ERRORS: "Oops! A bedroom. Try again!" ENCOURAGE: Excitement when they guess correctly. AVOID: Making it too hard. FOCUS: Turn grammar practice into exciting guessing game.`,
       
-      target_vocab: ["cat", "dog", "orange", "apple", "egg", "umbrella", "octopus", "book", "ball", "box"],
+      target_vocab: ["book", "notebook", "chair", "table", "bed", "bedroom", "kitchen", "bathroom", "house", "living_room"],
       
       grammar_pattern: "There is a/an [noun]",
 
@@ -633,45 +633,65 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
         role: "Mystery box host giving riddles for student to guess"
       },
 
-      opening_narrative: "Look! 📦 I found a big old mystery box! I can reach my hand inside without looking! I feel something soft and furry... (Sound: Meow 🐱) What is inside the box?",
+      opening_narrative: "Look! 📦 I found a big mystery box! I can reach my hand inside! I feel something... (Touch touch) It's flat with pages! There is a... Can you say it? There is a...",
 
       story_arc: [
         {
           phase: "intro",
           turns: "1-3",
-          phase_name: "The Mystery Box Opens",
-          focus: "Introduce the mystery box game",
+          phase_name: "Mystery Box Opens",
+          focus: "Introduce guessing game with school objects",
           phase_questions: [
-            "I found a mystery box! Want to play?",
-            "I reach my hand inside... I feel something soft and furry!",
-            "Listen... (Sound: Meow 🐱) What is inside?"
+            "(Feel: Flat with pages 📖) I feel pages! What is it? Say: There is a book!",
+            "(Feel: For writing 📓) Small with pages for writing! Say: There is a notebook!",
+            "(Feel: You sit on it 🪑) Hard and has legs! Say: There is a chair!"
+          ],
+          example_answers: [
+            "There is a book",
+            "There is a notebook",
+            "There is a chair"
           ]
         },
         {
           phase: "sound_clues",
           turns: "4-8",
-          phase_name: "Sound Riddles",
-          focus: "Use animal sounds and noises as clues",
+          phase_name: "More Objects",
+          focus: "Guess more objects from the house",
           phase_questions: [
-            "(Sound: Woof woof! 🐕) What is in the box?",
-            "(Sound: Splash splash) It lives in water... 8 legs... What is it?",
-            "(Sound: Bounce bounce) It's round... you can play with it... What is it?",
-            "Listen carefully... (Sound: Crunch crunch 🍎) You can eat it... red or green... What is it?",
-            "(Sound: Page turning 📖) It has many pages... you can read it... What is it?"
+            "(Feel: Flat and big 🪑) You eat on this! There is a...",
+            "(Feel: Soft and big 🛏️) You sleep here! There is a...",
+            "(Feel: Has a door 🚪) A room for sleeping! There is a...",
+            "(Feel: For cooking 🍳) A room with food! There is a...",
+            "(Feel: For washing 🚿) A room with water! There is a..."
+          ],
+          example_answers: [
+            "There is a table",
+            "There is a bed",
+            "There is a bedroom",
+            "There is a kitchen",
+            "There is a bathroom"
           ]
         },
         {
           phase: "feeling_clues",
           turns: "9-14",
-          phase_name: "Touch and Shape Riddles",
-          focus: "Describe texture, shape, and features",
+          phase_name: "Final Objects",
+          focus: "Complete the mystery box game",
           phase_questions: [
-            "I feel something... It's round and orange! 🍊 You can eat it! What is it?",
-            "This one is soft... It has a handle... You use it when it rains! ☂️ What is it?",
-            "Eww! It's slimy... It's oval... White and yellow inside... 🥚 What is it?",
-            "I feel 8 long legs! 🐙 It lives in the ocean! What is this?",
-            "This is round and smooth... It bounces! What is it?",
-            "What was the hardest one to guess?"
+            "(Feel: Big building 🏠) Where you live! There is a...",
+            "(Feel: For reading 📖) You read this! There is a...",
+            "(Feel: Four legs 🪑) You sit here! There is a...",
+            "(Feel: In the bedroom 🛏️) You sleep here! There is a...",
+            "(Feel: Flat surface 🪑) You eat here! There is a...",
+            "(Feel: Small for writing 📓) For homework! There is a..."
+          ],
+          example_answers: [
+            "There is a house",
+            "There is a book",
+            "There is a chair",
+            "There is a bed",
+            "There is a table",
+            "There is a notebook"
           ]
         },
         {
@@ -681,9 +701,8 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           focus: "Celebrate all the discoveries",
           phase_questions: [
             "We found everything in the mystery box! 🎉 What was your favorite?",
-            "Which riddle was the easiest?",
-            "Which one surprised you most?",
-            "Great job! You are a riddle master! 🌟"
+            "Great job! You learned so many words! Ready to say goodbye?",
+            "Perfect! See you next time! 👋"
           ]
         }
       ],
