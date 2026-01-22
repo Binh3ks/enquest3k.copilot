@@ -618,6 +618,12 @@ export function forceRoleplayQuestion(response, mode, scenarioData = null, lastU
     return response;
   }
   
+  // 🔥 FIX: Skip guardrail on opening turn (START_ROLEPLAY message)
+  if (lastUserMessage && lastUserMessage.toUpperCase().startsWith('START_ROLEPLAY')) {
+    console.log('✅ Opening turn detected - skipping guardrail (let AI use opening_line)');
+    return response;
+  }
+  
   const aiText = response.ai_response || '';
   
   // 🔥 FIX 1 & 3: EMOJI-PROOF REGEX + REJECT EXCLAMATION MARKS

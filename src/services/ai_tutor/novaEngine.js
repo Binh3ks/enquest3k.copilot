@@ -289,16 +289,12 @@ export class NovaEngine {
     };
     
     // 🛡️ FIX 3: Apply roleplay question enforcement (for freetalk/roleplay modes)
-    if (mode === 'freetalk' || mode === 'roleplay') {
+    // BUT only if currentScenario exists (not for idle chat)
+    if ((mode === 'freetalk' || mode === 'roleplay') && context.currentScenario) {
       console.log('🛡️ Applying roleplay guardrail in novaEngine...');
       
-      // Try to get scenario from context, or fallback to first scenario in weekData
-      let activeScenario = context.currentScenario;
-      
-      if (!activeScenario && this.weekData?.roleplay_scenarios) {
-        console.warn('⚠️ currentScenario missing, using first scenario from weekData as fallback');
-        activeScenario = this.weekData.roleplay_scenarios[0];
-      }
+      // Use the currentScenario from context (already validated)
+      const activeScenario = context.currentScenario;
       
       // Call forceRoleplayQuestion with 'playing_roleplay' mode
       processedResponse = forceRoleplayQuestion(
