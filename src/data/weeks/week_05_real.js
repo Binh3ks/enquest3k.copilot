@@ -1318,7 +1318,6 @@ const week5RealData = {
         ]
       }
     ]
-  }
 };
 
 export default week5RealData;
