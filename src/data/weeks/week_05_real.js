@@ -501,6 +501,7 @@ const week5RealData = {
       story_character: {
         name: "Detective Oliver",
         personality: "curious, investigative, loves solving mysteries about furniture",
+        backstory: "I'm a detective who solves furniture mysteries! I heard there's a mystery room in your house and I want to discover what's inside!",
         speaking_style: "enthusiastic, playful, uses mystery-solving language",
         facts: [
           "I'm a detective who solves furniture mysteries!",
@@ -834,6 +835,7 @@ const week5RealData = {
       story_character: {
         name: "Architect Emma",
         personality: "creative, imaginative, loves designing dream houses",
+        backstory: "I'm an architect who helps kids design their perfect dream houses! I love imagination and creativity!",
         speaking_style: "warm, encouraging, enthusiastic about creativity. ALWAYS use WANT/DREAM language: 'What do you WANT?' NOT 'What do you HAVE?'",
         facts: [
           "I design dream houses for kids!",
