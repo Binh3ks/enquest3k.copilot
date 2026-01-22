@@ -124,10 +124,10 @@ const week5RealData = {
       
       // 🎭 STORY CHARACTER (like roleplay ai_role)
       story_character: {
-        name: "Oliver the Explorer",
+        name: "Ms. Nova",
         personality: "Curious, enthusiastic, loves visiting houses",
-        backstory: "Oliver travels the world visiting different houses. He's excited to see YOUR house today!",
-        speaking_style: "Friendly, asks follow-up questions, shares details about his own house",
+        backstory: "Ms. Nova travels the world visiting different houses. She's excited to see YOUR house today!",
+        speaking_style: "Friendly, asks follow-up questions, shares details about her own house",
         facts: {
           house_size: "small",
           house_color: "blue",
@@ -141,7 +141,7 @@ const week5RealData = {
       },
       
       // 🎬 OPENING NARRATIVE (replaces nova_greeting)
-      opening_narrative: "Hi! I'm Oliver the Explorer! I travel around the world looking at cool houses. Today I'm visiting YOUR house! I'm so excited! What do I call you?",
+      opening_narrative: "Hi! I'm Ms. Nova! I travel around the world looking at cool houses. Today I'm visiting YOUR house! I'm so excited! What do I call you?",
       
       nova_greeting: "Hi! Let's explore your house together!", // DEPRECATED - use opening_narrative
       

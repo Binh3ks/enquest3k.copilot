@@ -1084,7 +1084,7 @@ const StoryMissionTab = () => {
                 <div className="flex items-center space-x-1.5">
                   <Target size={14} className="text-purple-600" />
                   <span className="text-xs font-medium text-gray-700">
-                    Turn {turnCount}/{currentMission?.minimum_turns || 10}
+                    Turn {turnCount}/{currentMission?.maximum_turns || 20}
                   </span>
                   
                   {/* 🔥 NEW: 15-turn warning for objective mode */}
@@ -1101,8 +1101,13 @@ const StoryMissionTab = () => {
                   })()}
                 </div>
                 
-                {/* 🔥 NEW: Objective progress indicator */}
+                {/* 🔥 NEW: Objective progress indicator (HIDDEN for story_character mode) */}
                 {(() => {
+                  // Don't show objectives counter if story_character exists
+                  if (currentMission?.story_character) {
+                    return null;
+                  }
+                  
                   const tm = getTurnManager(currentMission?.mission_id);
                   if (tm?.mode === 'objective') {
                     const progress = `${tm.completedObjectives.length}/${tm.objectives.length}`;

@@ -30,11 +30,17 @@ export function buildPrompt(mode, context, userInput, options = {}) {
   
   // 🔥 PRIORITY 0: Handle STORY mode with STRICT character enforcement
   if (mode === 'story' && context?.currentMission?.story_character) {
-    console.log('✅ PRIORITY 0 TRIGGERED - Oliver character mode!');
+    console.log('✅ PRIORITY 0 TRIGGERED - Ms. Nova character mode!');
 
     const char = context.currentMission.story_character;
     const mission = context.currentMission;
     const turnCount = context.turnCount || 0;
+    const conversationHistory = context.messageHistory || [];
+    
+    // Extract questions already asked from conversation
+    const questionsAsked = conversationHistory
+      .filter(msg => msg.role === 'assistant' && msg.content?.includes('?'))
+      .map(msg => msg.content.toLowerCase());
     
     // Determine current story phase based on turn count
     let currentPhase = mission.story_arc?.[0]; // default to first phase
@@ -71,6 +77,10 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
     - Breaking character as ${char.name}
     - Asking yes/no questions
+    - **REPEATING QUESTIONS YOU ALREADY ASKED** (see conversation history!)
+    
+    📜 QUESTIONS YOU ALREADY ASKED (DON'T REPEAT):
+    ${questionsAsked.length > 0 ? questionsAsked.map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
     
     🚨 MANDATORY - ALWAYS DO THIS:
     - Stay in character as ${char.name}
@@ -80,6 +90,7 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       * Pet: ${char.facts.has_pet ? `${char.facts.pet_type} named ${char.facts.pet_name}` : 'no pet'}
       * Favorite furniture: ${char.facts.favorite_furniture}
     - Ask open-ended questions with 2-3 options
+    - **ASK NEW QUESTIONS** - check conversation history above!
     - ACK + RECAST short answers as full sentences
     - End EVERY response with "?"
     
@@ -113,7 +124,7 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     1. ACK: Repeat their answer with enthusiasm ("The bedroom!")
     2. RECAST: Use it in full sentence ("My favorite room is the bedroom")
     3. SHARE: Tell about ${char.name}'s details (share facts above)
-    4. QUESTION: Ask follow-up with 2-3 options
+    4. QUESTION: Ask follow-up with 2-3 options (CHECK: not asked before!)
     
     🎓 HINTS INSTRUCTION:
     In suggested_hints array, provide SCRAMBLED WORDS to answer YOUR question:
