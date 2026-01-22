@@ -97,12 +97,13 @@ export class NovaEngine {
     });
 
     try {
-      // Step 1: Build context-aware prompt (🔥 Pass chatHistory!)
+      // Step 1: Build context-aware prompt (🔥 Pass chatHistory + currentScenario!)
       const systemPrompt = this.buildTutorContext(mode, {
         ...context,
         chatHistory,  // 🔥 CRITICAL: Pass history so AI remembers context
         userMessage,
-        weekId: effectiveWeekId  // 🔥 Pass weekId to context builder
+        weekId: effectiveWeekId,  // 🔥 Pass weekId to context builder
+        currentScenario: context.currentScenario  // 🔥 CRITICAL: Pass roleplay scenario!
       });
       
       // Step 2: Call AI Router with error handling and retry logic
@@ -185,7 +186,8 @@ export class NovaEngine {
         userMinWords: 5,
         userTargetWords: 15
       },
-      turnManager: contextParams.turnManager || null  // 🔥 CRITICAL: Pass TurnManager reference
+      turnManager: contextParams.turnManager || null,  // 🔥 CRITICAL: Pass TurnManager reference
+      currentScenario: contextParams.currentScenario || null  // 🔥 CRITICAL: Pass roleplay scenario!
     };
     
     // Additional options for specific modes
