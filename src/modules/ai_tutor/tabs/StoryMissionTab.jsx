@@ -495,7 +495,8 @@ const StoryMissionTab = () => {
           vocabFocusPrompt,
           realSyllabusData,
           studentName: studentName || null,  // 🔥 NEW: Pass student name to AI
-          mission: currentMission,           // 🔥 Pass mission object
+          mission: currentMission,           // 🔥 Pass mission object (legacy)
+          currentMission: currentMission,    // 🔥 CRITICAL: Pass with this field name for PRIORITY 0 check!
           turnManager: tm // 🔥 CRITICAL: Pass TurnManager inside context (use updated tm)
         }
       });

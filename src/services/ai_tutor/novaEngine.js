@@ -97,13 +97,14 @@ export class NovaEngine {
     });
 
     try {
-      // Step 1: Build context-aware prompt (🔥 Pass chatHistory + currentScenario!)
+      // Step 1: Build context-aware prompt (🔥 Pass chatHistory + currentScenario + currentMission!)
       const systemPrompt = this.buildTutorContext(mode, {
         ...context,
         chatHistory,  // 🔥 CRITICAL: Pass history so AI remembers context
         userMessage,
         weekId: effectiveWeekId,  // 🔥 Pass weekId to context builder
-        currentScenario: context.currentScenario  // 🔥 CRITICAL: Pass roleplay scenario!
+        currentScenario: context.currentScenario,  // 🔥 CRITICAL: Pass roleplay scenario!
+        currentMission: context.currentMission  // 🔥 CRITICAL: Pass story mission with character data!
       });
       
       // Step 2: Call AI Router with error handling and retry logic
