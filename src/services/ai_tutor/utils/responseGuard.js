@@ -584,14 +584,19 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
           recast = `Your father ${msg}s!`;
         } else if (msg.length < 30) {
           // For short answers, try to expand into full sentence
-          recast = `I understand!`;
+          // 🔥 EXCEPT in story character mode - let Oliver speak naturally!
+          if (!context.missionData?.story_character) {
+            recast = `I understand!`;
+          }
         } else {
           recast = ''; // Let ACK be enough for longer responses
         }
       } else {
         recast = ''; // Empty if no user message
       }
-      console.warn('⚠️ AI missing RECAST, generated:', recast || '(ACK only)');
+      if (recast) {
+        console.warn('⚠️ AI missing RECAST, generated:', recast);
+      }
     }
     
     // Force canonical question (LEGACY MODE ONLY)

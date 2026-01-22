@@ -669,7 +669,9 @@ const StoryMissionTab = () => {
             
             responseText = ackRecast ? `${ackRecast} ${targetQuestion}` : targetQuestion;
             console.log('✅ Cleaned to single question:', responseText);
-          } else if (!responseText.includes(targetQuestion)) {
+          } else if (!responseText.includes(targetQuestion) && !currentMission.story_character) {
+            // 🔥 ONLY override if NOT using story_character (old objective system)
+            // Story character mode: Trust AI completely, no override!
             console.warn('⚠️ AI improvised question! Overriding with target:', targetQuestion);
             // Extract ack + recast from AI response (everything before the first question mark)
             const beforeQuestion = responseText.split('?')[0];
