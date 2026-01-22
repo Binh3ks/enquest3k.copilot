@@ -7,8 +7,9 @@ import { User, Sparkles } from 'lucide-react';
  * @param {string|Object} props.content - Message text or AI response object
  * @param {number} props.timestamp - Message timestamp
  * @param {string} props.pedagogyNote - Optional pedagogy note for debugging
+ * @param {Array<string>} props.hints - Optional hints to display after AI message
  */
-const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
+const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [] }) => {
   const isAssistant = role === 'assistant';
   
   // 🔥 Clean content extraction - prevent JSON garbage
@@ -81,6 +82,25 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote }) => {
           )}
         </div>
       </div>
+
+      {/* 💡 Hints - Show immediately after AI question */}
+      {isAssistant && hints.length > 0 && (
+        <div className="mt-1 bg-yellow-50 border border-yellow-300 rounded-lg px-2 py-1.5 shadow-sm">
+          <div className="flex items-center gap-1 mb-1">
+            <span className="text-[10px] font-semibold text-yellow-700">💡 Hints:</span>
+          </div>
+          <div className="flex flex-wrap gap-1">
+            {hints.map((hint, index) => (
+              <span
+                key={index}
+                className="px-2 py-0.5 bg-white border border-yellow-300 rounded-full text-sm font-semibold text-gray-800 shadow-sm"
+              >
+                {hint}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
