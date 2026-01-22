@@ -318,13 +318,39 @@ const FreeTalkTab = () => {
         return;
       }
       
-      let responseText = aiResponse.ai_response || aiResponse.response || aiResponse;
+      // 🔥 FIXED: Extract text from multiple response formats
+      let responseText = '';
+      
+      // V27 format: {ack, recast, encouragement, question}
+      if (aiResponse.format === 'v27' || aiResponse.teacher_question) {
+        const ack = aiResponse.ack || aiResponse.teacher_ack || '';
+        const recast = aiResponse.recast || aiResponse.teacher_recast || '';
+        const encouragement = aiResponse.encouragement || aiResponse.teacher_encouragement || '';
+        const question = aiResponse.question || aiResponse.teacher_question || '';
+        responseText = [ack, recast, encouragement, question].filter(Boolean).join(' ');
+      }
+      // Artifact v5 format: {ack, recast, bridge, question}
+      else if (aiResponse.ack || aiResponse.question) {
+        const parts = [
+          aiResponse.ack || '',
+          aiResponse.recast || '',
+          aiResponse.bridge || '',
+          aiResponse.question || ''
+        ].filter(Boolean);
+        responseText = parts.join(' ');
+      }
+      // Standard format: ai_response string
+      else {
+        responseText = aiResponse.ai_response || aiResponse.response || aiResponse;
+      }
       
       // Ensure responseText is a string
       if (typeof responseText !== 'string') {
         console.error('❌ responseText is not a string:', responseText);
         responseText = String(responseText || 'Sorry, I had trouble understanding. Can you say that again?');
       }
+      
+      responseText = responseText.trim();
       
       // 🔥 CRITICAL: Check if AI is repeating a question from chat history
       const chatHistoryText = messages.map(m => m.content.toLowerCase()).join(' ');
