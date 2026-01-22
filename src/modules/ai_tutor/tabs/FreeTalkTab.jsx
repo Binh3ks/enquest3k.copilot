@@ -62,11 +62,11 @@ const FreeTalkTab = () => {
   const [turnCount, setTurnCount] = useState(0); // Turn counter for CURRENT MODE
   const [activeScenario, setActiveScenario] = useState(null); // 🔥 STEP 1: Persist active roleplay scenario across turns
   const [modeTurnLimits] = useState({
-    translation_help: 15,
-    playing_game: 10,
-    playing_roleplay: 20,  // 🔥 Extended to 20 turns for deeper practice
-    idle: 15, // Chat mode
-    asking_any: Infinity // No limit
+    translation_help: Infinity, // 🚀 No limit for translation
+    playing_game: 20,           // 🎮 20 turns per game (3 games total)
+    playing_roleplay: 20,       // 🎭 20 turns per roleplay (3 roleplays total)
+    idle: 15,                   // 💬 Chat mode
+    asking_any: Infinity        // 🙋 No limit for questions
   });
   
   // 🔥 Dynamic week data selection
