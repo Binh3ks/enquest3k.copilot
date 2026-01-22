@@ -188,7 +188,8 @@ export class NovaEngine {
         userTargetWords: 15
       },
       turnManager: contextParams.turnManager || null,  // 🔥 CRITICAL: Pass TurnManager reference
-      currentScenario: contextParams.currentScenario || null  // 🔥 CRITICAL: Pass roleplay scenario!
+      currentScenario: contextParams.currentScenario || null,  // 🔥 CRITICAL: Pass roleplay scenario!
+      currentMission: contextParams.currentMission || null  // 🔥 CRITICAL: Pass story mission with character!
     };
     
     // Additional options for specific modes

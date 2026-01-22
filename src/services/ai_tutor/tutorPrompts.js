@@ -16,6 +16,15 @@ export { TutorModes };
  * Build prompt based on mode and context
  */
 export function buildPrompt(mode, context, userInput, options = {}) {
+  // 🔥 DEBUG: Check what we receive
+  console.log('🔍 tutorPrompts.js - buildPrompt called:', {
+    mode,
+    hasContext: !!context,
+    hasCurrentMission: !!context?.currentMission,
+    hasStoryCharacter: !!context?.currentMission?.story_character,
+    currentMissionKeys: context?.currentMission ? Object.keys(context.currentMission) : 'N/A'
+  });
+  
   // 🔥 PRIORITY 0: Handle STORY mode with STRICT character enforcement
   if (mode === 'story' && context?.currentMission?.story_character) {
     const char = context.currentMission.story_character;
