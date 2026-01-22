@@ -52,9 +52,15 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     const kitchenQs = questionsAsked.filter(q => q.includes('kitchen')).length;
     const bathroomQs = questionsAsked.filter(q => q.includes('bathroom')).length;
     
-    // Detect name question
-    if (allText.includes('what do i call you') || allText.includes('what is your name')) {
-      topicsCovered.push('❌ NAME (already asked - NEVER repeat)');
+    // 🔥 CRITICAL: Detect name question (most common repetition)
+    const nameAsked = questionsAsked.filter(q => 
+      q.includes('what do i call you') || 
+      q.includes('what is your name') ||
+      q.includes('call you')
+    ).length;
+    
+    if (nameAsked >= 1) {
+      topicsCovered.push('🚫🚫🚫 NAME ALREADY ASKED ' + nameAsked + ' TIME(S) - NEVER EVER ASK AGAIN! 🚫🚫🚫');
     }
     
     // Detect house size
@@ -149,6 +155,7 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - Breaking character as ${char.name}
     - Asking yes/no questions
     - **REPEATING QUESTIONS OR TOPICS - CHECK BOTH LISTS BELOW!**
+    ${nameAsked >= 1 ? '\n    🚫🚫🚫 CRITICAL: YOU ALREADY ASKED THE NAME! NEVER ASK "What do I call you?" AGAIN! 🚫🚫🚫\n' : ''}
     
     📜 QUESTIONS YOU ALREADY ASKED:
     ${questionsAsked.length > 0 ? questionsAsked.slice(-10).map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
@@ -157,16 +164,15 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     ${topicsCovered.join('\n')}
     
     ⚠️ CRITICAL RULE - READ TOPICS LIST CAREFULLY:
-    - If topic has ❌ → NEVER ask about it again
+    - If topic has ❌ or 🚫 → NEVER ask about it again
     - If topic has ✅ "NOT asked yet" → ASK ABOUT IT NOW!
     - If topic has ✅ "can ask more" → Can ask DIFFERENT question about it
     
-    EXAMPLES OF FORBIDDEN QUESTIONS (based on ❌ topics above):
-    - "What do I call you?" → ❌ Already asked name
-    - "Is your house big or small?" → ❌ Already asked house size
-    - "What color is your house?" → ❌ Already asked house color
-    - "What is in your bedroom?" → ❌ Bedroom already discussed
-    - "Do you have a bed?" → ❌ Bed already asked
+    EXAMPLES OF ABSOLUTELY FORBIDDEN QUESTIONS (YOU WILL BE PENALIZED FOR ASKING THESE):
+    ${nameAsked >= 1 ? '- 🚫 "What do I call you?" → NEVER! You already know the name!\n' : ''}
+    ${houseSizeAsked >= 1 ? '- 🚫 "Is your house big or small?" → NEVER! Already asked!\n' : ''}
+    ${houseColorAsked >= 1 ? '- 🚫 "What color is your house?" → NEVER! Already asked!\n' : ''}
+    - Any question you see in the list above
     
     SUGGESTED NEW QUESTIONS (based on ✅ topics above):
     ${topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).length > 0 
