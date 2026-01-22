@@ -901,41 +901,6 @@ const week5RealData = {
           ]
         }
       ],
-          phase_questions: [
-            "What furniture do you WANT in your bedroom?",
-            "What do you WANT in the kitchen?",
-            "What furniture do you WANT in the living room?",
-            "Do you WANT a big bed or a small bed?",
-            "What color do you WANT the furniture?",
-            "What special furniture do you WANT?",
-            "What's the coolest furniture you WANT in your dream house?"
-          ]
-        },
-        {
-          phase: "creativity",
-          turns: "13-17",
-          phase_name: "Special Creative Touches",
-          focus: "Colors, special rooms, unique ideas",
-          phase_questions: [
-            "What color is your dream house?",
-            "Do you want a special room? Like a game room?",
-            "What makes your house special?",
-            "Tell me about the coolest part!",
-            "Who will live in your dream house?"
-          ]
-        },
-        {
-          phase: "conclusion",
-          turns: "18-20",
-          phase_name: "Dream House Complete!",
-          focus: "Wrap up the design",
-          phase_questions: [
-            "Your dream house is amazing! What do you love most?",
-            "We designed a perfect house! What's your favorite room?",
-            "Great job! When will you build this dream house?"
-          ]
-        }
-      ],
       
       objectives: [
         {
