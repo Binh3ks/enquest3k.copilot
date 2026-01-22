@@ -555,12 +555,16 @@ function getBannedTopics(missionTitle) {
 function buildModePrompt(mode, context, userInput, options) {
   switch (mode) {
     case TutorModes.CHAT:
+    case 'chat':  // Legacy support
       return buildChatPrompt(context, userInput, options);
     case TutorModes.STORY_MISSION:
+    case 'story':  // 🔥 FIX: novaEngine passes 'story', not 'story_mission'
       return buildStoryMissionPrompt(context, userInput, options);
     case TutorModes.QUIZ:
+    case 'quiz':  // Legacy support
       return buildQuizPrompt(context, options);
     case TutorModes.DEBATE:
+    case 'debate':  // Legacy support
       return buildDebatePrompt(context, userInput, options);
     default:
       throw new Error(`Unknown mode: ${mode}`);

@@ -284,12 +284,12 @@ const StoryMissionTab = () => {
       
       // 🔥 Mark first step as asked AFTER opening message accepted
       // Only for legacy mode - objective mode doesn't use steps
-      if (turnManager.mode === 'step') {
+      if (turnManager.mode === 'step' && turnManager.missionSteps.length > 0) {
         const firstStep = turnManager.missionSteps[0];
         turnManager.markStepAsked(firstStep.key);
         console.log('✅ Opening step marked as asked:', firstStep.key);
       } else {
-        console.log('✅ Objective mode: No step marking needed');
+        console.log('✅ Objective/Story mode: No step marking needed');
       }
       
       // 🔥 HARDCODE OPENING: Week 4 has objectives, Weeks 1-3 have complete greetings
