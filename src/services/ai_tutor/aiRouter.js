@@ -574,18 +574,87 @@ export async function sendToAI({
 
     // Auto-select provider based on availability
     if (preferredProvider === 'auto') {
-      // Priority: Together AI → Groq → Gemini
-      if (PROVIDERS.together.enabled) {
-        preferredProvider = 'together';
-      } else if (PROVIDERS.groq.enabled) {
-        preferredProvider = 'groq';
-      } else {
+      // 🔥 NEW PRIORITY: Gemini → Together AI → Groq (Gemini fastest & most reliable)
+      if (PROVIDERS.gemini.enabled) {
         preferredProvider = 'gemini';
+      } else if (PROVIDERS.together.enabled) {
+        preferredProvider = 'together';
+      } else {
+        preferredProvider = 'groq';
       }
     }
 
-    // 🔥 LAYER 1: Try Together AI first (60 req/min - best option)
-    if (preferredProvider === 'together' && PROVIDERS.together.enabled) {
+    // 🔥 LAYER 1: Try Gemini first (FASTEST & MOST RELIABLE)
+    if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Layer 1: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callGemini(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        // 🎯 FIX: Auto-correct 20Q correct guess responses
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        // 🎯 FIX: Force roleplay responses to always have question + options
+        const systemContent = messages[0]?.content || '';
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:') ||
+                          systemContent.includes('backup_questions:');
+        
+        let scenarioData = null;
+        if (isRoleplay) {
+          try {
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+            } else {
+              scenarioData = {
+                id: 'fallback',
+                backup_questions: [
+                  "What do you think?",
+                  "Do you like it?",
+                  "What color do you want?",
+                  "What else do you need?",
+                  "Where should I put it?"
+                ]
+              };
+            }
+          } catch (err) {
+            scenarioData = { id: 'error', backup_questions: ["What do you think?"] };
+          }
+        }
+        
+        const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+        fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        
+        // Grammar Guard validations
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'gemini', latency: Date.now() - startTime };
+      } catch (geminiError) {
+        console.warn(`⚠️ Gemini failed: ${geminiError.message}`);
+        console.log('🔄 Fallback to Layer 2: Together AI...');
+      }
+    }
+
+    // 🔥 LAYER 2: Fallback to Together AI
+    if (PROVIDERS.together.enabled) {
       try {
         console.log(`🚀 Layer 1: Trying Together AI (attempt ${attempt}/${maxRetries})...`);
         const rawResponse = await callTogether(messages);
@@ -852,7 +921,7 @@ async function callTogether(messages, systemPrompt, options = {}) {
         'Authorization': `Bearer ${TOGETHER_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      timeout: 10000  // 10s timeout - fallback to Groq quickly if slow
+      timeout: 3000  // 3s timeout - fast fallback to Groq if Together AI slow
     });
     
     const elapsed = Date.now() - startTime;
@@ -939,7 +1008,7 @@ async function callGroq(messages, systemPrompt, options = {}) {
         'Authorization': `Bearer ${GROQ_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      timeout: 10000
+      timeout: 5000  // 5s timeout for Groq
     });
     
     const elapsed = Date.now() - startTime;

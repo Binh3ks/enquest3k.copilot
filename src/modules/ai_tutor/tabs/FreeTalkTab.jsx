@@ -267,9 +267,13 @@ const FreeTalkTab = () => {
         content: m.content
       }));
 
+      // 🔥 STEP 2: Determine effective mode based on active scenario
+      const effectiveMode = activeScenario ? 'playing_roleplay' : 'freetalk';
+      console.log('🎯 FreeTalk effective mode:', effectiveMode, 'activeScenario:', activeScenario?.id);
+      
       // 🔥 NEW: Use NovaEngine - AI tự quyết định khi nào nên đề nghị HS đặt câu hỏi
       const aiResponse = await novaEngineRef.current.sendToNova({
-        mode: 'freetalk',
+        mode: effectiveMode,  // 🔥 CRITICAL: Pass explicit mode
         weekId: weekNumberRef.current,  // 🔥 V27: Pass weekId for freetalk_knowledge
         userMessage,
         chatHistory,

@@ -125,7 +125,10 @@ export class NovaEngine {
       const validatedResponse = responseParser.validateResponse(parsedResponse, mode);
       
       // Step 4: Apply post-processing guardrails
+      // 🔥 CRITICAL: Pass mode explicitly to ensure guardrail triggers
       const processedResponse = this.applyGuardrails(validatedResponse, mode, context);
+      
+      console.log('🛡️ NovaEngine guardrails applied for mode:', mode);
       
       const elapsed = Date.now() - startTime;
       console.log(`✅ NovaEngine response ready in ${elapsed}ms`);
@@ -288,10 +291,10 @@ export class NovaEngine {
       format: isNewFormat ? 'new' : 'legacy'
     };
     
-    // 🛡️ FIX 3: Apply roleplay question enforcement (for freetalk/roleplay modes)
-    // BUT only if currentScenario exists (not for idle chat)
-    if ((mode === 'freetalk' || mode === 'roleplay') && context.currentScenario) {
-      console.log('🛡️ Applying roleplay guardrail in novaEngine...');
+    // 🛡️ STEP 3: Apply roleplay question enforcement
+    // Trigger when: mode is 'playing_roleplay' OR currentScenario exists in context
+    if ((mode === 'playing_roleplay' || mode === 'freetalk' || mode === 'roleplay') && context.currentScenario) {
+      console.log('🛡️ Applying roleplay guardrail in novaEngine for mode:', mode);
       
       // Use the currentScenario from context (already validated)
       const activeScenario = context.currentScenario;
@@ -299,7 +302,7 @@ export class NovaEngine {
       // Call forceRoleplayQuestion with 'playing_roleplay' mode
       processedResponse = forceRoleplayQuestion(
         processedResponse, 
-        'playing_roleplay', 
+        'playing_roleplay',  // Always use 'playing_roleplay' to trigger guardrail
         activeScenario, 
         context.lastUserMessage || ''
       );

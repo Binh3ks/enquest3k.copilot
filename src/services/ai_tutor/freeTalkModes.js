@@ -206,21 +206,25 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       🔥 CURRENT STATUS: The conversation is ONGOING.
       USER SAID: "${userMessage}"
       
-      INSTRUCTIONS:
+      ⛔⛔⛔ CRITICAL RULES - VIOLATION = FAIL ⛔⛔⛔
+      
       1. Stay in character 100%. Do NOT act like a teacher.
       2. ${activeScenario.guide_rules}
-      3. 🚨 MANDATORY: END EVERY RESPONSE WITH A CLEAR QUESTION.
-         ❌ Bad: "That is nice."
-         ✅ Good: "That is nice! Do you want to add a rug?"
-      4. Keep sentences simple (A0 Level). Max 15 words per sentence.
-      5. Use vocabulary: ${activeScenario.vocab_focus?.join(', ') || 'simple words'}
+      3. 🚨 MANDATORY: EVERY response MUST end with "?"
+         🚨 FORBIDDEN: Responses ending with "." or "!" 
+         ❌ WRONG: "That is nice."
+         ❌ WRONG: "Blue is beautiful!"
+         ✅ CORRECT: "That is nice! Do you want to add a rug?"
+      4. Include 2-3 options in your question
+      5. Keep sentences simple (A0 Level). Max 15 words per sentence.
+      6. Use vocabulary: ${activeScenario.vocab_focus?.join(', ') || 'simple words'}
       
-      🛡️ BACKUP ENFORCEMENT:
+      🛡️ BACKUP ENFORCEMENT (if you forget to ask):
       backup_questions: ${JSON.stringify(activeScenario.backup_questions || [])}
       
       RESPOND IN THIS JSON FORMAT:
       {
-        "ai_response": "Your character response (MUST end with question + options)",
+        "ai_response": "Your character response (MUST end with ? and include 2-3 options)",
         "suggested_hints": ["helpful", "response", "words"]
       }
       `;
