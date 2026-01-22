@@ -146,21 +146,7 @@ function getMissionSteps(missionId, missionTitle) {
       { key: 'first_day', question: 'Is this your first day?', hints: ['Yes', 'this', 'is', 'my', 'first', 'day'] },
       { key: 'goodbye', question: null, hints: [] }
     ],
-    2: [ // Mission 2: Backpack Adventure - 12-15 turns
-      { key: 'have_backpack', question: 'Do you have a backpack?', hints: ['Yes', 'I', 'have', 'a', 'backpack', 'No'] },
-      { key: 'color', question: 'What color is your backpack?', hints: ['My', 'backpack', 'is', 'blue', 'red', 'green'] },
-      { key: 'like_backpack', question: 'Do you like your backpack?', hints: ['Yes', 'I', 'like', 'my', 'backpack'] },
-      { key: 'inside_items', question: 'What is inside your backpack?', hints: ['I', 'have', 'books', 'pencils', 'notebook'] },
-      { key: 'books', question: 'Do you have books?', hints: ['Yes', 'I', 'have', 'books', 'two', 'three'] },
-      { key: 'books_count', question: 'How many books do you have?', hints: ['I', 'have', 'two', 'three', 'four', 'books'] },
-      { key: 'pencils', question: 'Do you have pencils?', hints: ['Yes', 'I', 'have', 'pencils', 'many'] },
-      { key: 'pencil_case', question: 'Do you have a pencil case?', hints: ['Yes', 'I', 'have', 'a', 'pencil', 'case'] },
-      { key: 'notebook', question: 'Do you have a notebook?', hints: ['Yes', 'I', 'have', 'a', 'notebook'] },
-      { key: 'favorite_item', question: 'What is your favorite thing in your backpack?', hints: ['My', 'favorite', 'is', 'book', 'toy', 'pencil'] },
-      { key: 'heavy', question: 'Is your backpack heavy?', hints: ['Yes', 'my', 'backpack', 'is', 'heavy', 'No'] },
-      { key: 'ready', question: 'Are you ready for class?', hints: ['Yes', 'I', 'am', 'ready', 'for', 'class'] },
-      { key: 'goodbye', question: null, hints: [] }
-    ],
+    2: null, // Mission 2: REMOVED hardcoded backpack objectives - now loads from week_05_real.js
     3: [ // Mission 3: Teacher & School - 12-15 turns
       { key: 'teacher_name', question: "What is your teacher's name?", hints: ['My', 'teacher', 'name', 'is', 'Ms', 'Mr'] },
       { key: 'teacher_nice', question: 'Is your teacher nice?', hints: ['Yes', 'my', 'teacher', 'is', 'nice'] },
