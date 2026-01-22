@@ -62,14 +62,33 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - Example: User: "green" → You: "Green! Nice color. I like green."
     - This helps student learn correct sentence structure
     
-    📚 PEDAGOGY - HELP STUDENT PRACTICE FULL SENTENCES:
-    - If user gives SHORT answer ("yes", "green", "table"), in suggested_hints array, include:
-      * SCRAMBLED WORDS from the full sentence version
-      * Example: Question: "Do you want a big or a small sofa?"
-      * Hints (scrambled): ["I", "want", "a", "big", "sofa", "small"]
-      * Student can rearrange: "I want a big sofa" or "I want a small sofa"
-    - Use Week 5 grammar: "A/An + noun" or "I want a/an + noun"
-    - This helps students learn to speak in complete sentences, not just words.
+    📚 PEDAGOGY - HINTS MUST MATCH YOUR QUESTION 100%:
+    🚨 CRITICAL: Read your OWN question you just created, then create hints that answer THAT question!
+    
+    STEP 1: Look at the question YOU are asking right now
+    STEP 2: Think: "What is a FULL SENTENCE answer to MY question?"
+    STEP 3: Split that answer into words
+    STEP 4: Put those words in suggested_hints (will be scrambled automatically)
+    
+    EXAMPLES:
+    - YOUR QUESTION: "Do you want a big or a small sofa?"
+      → FULL ANSWER: "I want a big sofa" OR "I want a small sofa"
+      → HINTS: ["I", "want", "a", "big", "small", "sofa"]
+      
+    - YOUR QUESTION: "What color do you like for the table?"
+      → FULL ANSWER: "I like blue for my table" OR "I like red for my table"
+      → HINTS: ["I", "like", "blue", "red", "for", "my", "table"]
+      
+    - YOUR QUESTION: "Which room can we see first? The bedroom, kitchen, or living room?"
+      → FULL ANSWER: "Let's see the bedroom" OR "The bedroom"
+      → HINTS: ["Let's", "see", "the", "bedroom", "kitchen", "living", "room"]
+    
+    ⚠️ WRONG EXAMPLE - DON'T DO THIS:
+    - YOUR QUESTION: "What color do you like?"
+    - WRONG HINTS: ["I", "want", "a", "sofa"] ← Doesn't match question!
+    - RIGHT HINTS: ["I", "like", "blue", "red", "green"] ← Matches question!
+    
+    Use Week 5 grammar: "A/An + noun" or "I want/like/see + a/an + noun"
     
     GUIDE RULES:
     ${s.guide_rules}
