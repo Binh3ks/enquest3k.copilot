@@ -64,7 +64,7 @@ const FreeTalkTab = () => {
   const [modeTurnLimits] = useState({
     translation_help: 15,
     playing_game: 10,
-    playing_roleplay: 10,
+    playing_roleplay: 20,  // 🔥 Extended to 20 turns for deeper practice
     idle: 15, // Chat mode
     asking_any: Infinity // No limit
   });

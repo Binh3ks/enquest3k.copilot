@@ -48,6 +48,14 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - If the user says "no" or disagrees, suggest an alternative immediately.
     - DO NOT be polite like a teacher. Act like your character: ${s.ai_role}.
     
+    📚 PEDAGOGY - HELP STUDENT PRACTICE FULL SENTENCES:
+    - If user gives SHORT answer ("yes", "green", "table"), in suggested_hints array, include:
+      * A FULL SENTENCE version using Week 5 grammar: "A/An + noun"
+      * Example: User says "table" → Hint: "I want a table." or "A table is good."
+      * Example: User says "yes" → Hint: "Yes, I want a big table."
+      * Example: User says "green" → Hint: "I like green." or "A green sofa is nice."
+    - This helps students learn to speak in complete sentences, not just words.
+    
     GUIDE RULES:
     ${s.guide_rules}
     
