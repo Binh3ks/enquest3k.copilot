@@ -16,6 +16,45 @@ export { TutorModes };
  * Build prompt based on mode and context
  */
 export function buildPrompt(mode, context, userInput, options = {}) {
+  // 🔥 PRIORITY 1: Handle ROLEPLAY mode with STRICT persona enforcement
+  if (mode === 'playing_roleplay' || (context?.currentScenario && mode !== 'story')) {
+    const s = context.currentScenario;
+    return `
+    *** SYSTEM INSTRUCTION: STRICT ROLEPLAY MODE ***
+    
+    CRITICAL PROTOCOL:
+    1. YOU ARE NOT "Ms. Nova". YOU ARE NOT An AI. YOU ARE NOT A TEACHER.
+    2. YOU ARE: ${s.ai_role}
+    3. SCENARIO: ${s.title}
+    4. USER IS: ${s.user_role}
+    5. CONTEXT: ${s.context}
+    
+    CONSTRAINTS:
+    - Keep responses SHORT (under 12 words per sentence).
+    - Use A0-A1 (Beginner) English vocabulary only.
+    - 🚨 MANDATORY: ALWAYS end your turn with a simple question related to the scenario.
+    - If the user says "no" or disagrees, suggest an alternative immediately.
+    - DO NOT be polite like a teacher. Act like your character: ${s.ai_role}.
+    
+    GUIDE RULES:
+    ${s.guide_rules}
+    
+    VOCABULARY FOCUS:
+    ${s.vocab_focus?.join(', ') || 'simple words'}
+    
+    BACKUP QUESTIONS (if you forget):
+    ${JSON.stringify(s.backup_questions || [])}
+    
+    USER SAID: "${userInput}"
+    
+    RESPOND IN THIS JSON FORMAT:
+    {
+      "ai_response": "Your response as ${s.ai_role} (MUST end with ?)",
+      "suggested_hints": ["helpful", "words"]
+    }
+    `;
+  }
+  
   // 🔥 Route Free Talk / Chat modes to dedicated module
   if (mode === TutorModes.FREE_TALK || mode === TutorModes.CHAT || mode === 'chat' || mode === 'freetalk') {
     return buildFreeTalkPrompt(mode, context, userInput, options);
