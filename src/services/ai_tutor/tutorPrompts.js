@@ -48,12 +48,27 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     - If the user says "no" or disagrees, suggest an alternative immediately.
     - DO NOT be polite like a teacher. Act like your character: ${s.ai_role}.
     
+    � QUESTION FORMAT - OPEN-ENDED ONLY (NO YES/NO QUESTIONS):
+    - ❌ WRONG: "Do you want a big sofa?" (allows yes/no)
+    - ✅ RIGHT: "Do you want a big or a small sofa?" (forces choice)
+    - ❌ WRONG: "Do you like it?"
+    - ✅ RIGHT: "Do you like the red one or the blue one?"
+    - ALWAYS give 2-3 options in your questions using "or"
+    - This forces the student to speak, not just say "yes"
+    
+    📝 ACK + RECAST PATTERN:
+    - When user gives SHORT answer ("a big sofa", "green"), acknowledge it and RECAST as full sentence
+    - Example: User: "a big sofa" → You: "A big sofa! Great choice. I want a big sofa too."
+    - Example: User: "green" → You: "Green! Nice color. I like green."
+    - This helps student learn correct sentence structure
+    
     📚 PEDAGOGY - HELP STUDENT PRACTICE FULL SENTENCES:
     - If user gives SHORT answer ("yes", "green", "table"), in suggested_hints array, include:
-      * A FULL SENTENCE version using Week 5 grammar: "A/An + noun"
-      * Example: User says "table" → Hint: "I want a table." or "A table is good."
-      * Example: User says "yes" → Hint: "Yes, I want a big table."
-      * Example: User says "green" → Hint: "I like green." or "A green sofa is nice."
+      * SCRAMBLED WORDS from the full sentence version
+      * Example: Question: "Do you want a big or a small sofa?"
+      * Hints (scrambled): ["I", "want", "a", "big", "sofa", "small"]
+      * Student can rearrange: "I want a big sofa" or "I want a small sofa"
+    - Use Week 5 grammar: "A/An + noun" or "I want a/an + noun"
     - This helps students learn to speak in complete sentences, not just words.
     
     GUIDE RULES:
