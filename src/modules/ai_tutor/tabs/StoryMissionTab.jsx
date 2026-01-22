@@ -315,10 +315,18 @@ const StoryMissionTab = () => {
           console.log('🎯 Week 4 style opening (greeting + canonical question):', openingLine);
         }
       } else {
-        // Weeks 1-3 style: Use complete nova_greeting as-is
-        openingLine = currentMission.nova_greeting || 'Hello! I am Ms. Nova, your English teacher. What is your name?';
+        // Weeks 1-3/5 style: PRIORITY: opening_narrative > nova_greeting
+        if (currentMission.opening_narrative) {
+          openingLine = currentMission.opening_narrative;
+          console.log('🎯 Using opening_narrative (NEW STORY MODE):', openingLine);
+        } else if (currentMission.nova_greeting) {
+          openingLine = currentMission.nova_greeting;
+          console.log('🎯 Using nova_greeting (LEGACY):', openingLine);
+        } else {
+          openingLine = 'Hello! I am Ms. Nova, your English teacher. What is your name?';
+          console.log('⚠️ Using fallback greeting');
+        }
         firstObjectiveHints = currentMission.default_hints || guardedOpening.suggested_hints || ['My', 'name', 'is', 'I', 'am'];
-        console.log('🎯 Weeks 1-3 style opening (complete greeting):', openingLine);
       }
       
       // Add opening message
