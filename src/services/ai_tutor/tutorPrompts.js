@@ -243,6 +243,7 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     // ========================================
     // 🏠 MISSION 1 - HOUSE TOUR (Original logic)
     // ========================================
+    return `
     *** STRICT STORY CHARACTER MODE ***
     
     YOU ARE: ${char.name}
