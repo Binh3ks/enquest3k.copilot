@@ -1676,9 +1676,16 @@ function buildQuizGamePrompt(context, options) {
   const vocabWords = vocabList.map(v => typeof v === 'object' ? v.word : v).filter(Boolean);
   const vocabSample = vocabWords.slice(0, 12).join(', ');
   
-  // Randomly select game type (or use forced type from options)
+  // Use forced game type from options (required!)
   const gameTypes = ['emoji_detective', 'broken_robot', 'sentence_builder', 'true_false'];
-  const selectedGame = options.gameType || gameTypes[Math.floor(Math.random() * gameTypes.length)];
+  const selectedGame = options.context?.gameType || options.gameType || gameTypes[Math.floor(Math.random() * gameTypes.length)];
+  
+  console.log('🎮 buildQuizGamePrompt - Selected game:', selectedGame, '(forced:', options.context?.gameType || options.gameType, ')');
+  
+  if (!gameTypes.includes(selectedGame)) {
+    console.warn('⚠️ Invalid game type:', selectedGame, '- using random');
+    selectedGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
+  }
   
   return `
 🎮 NOVA ARCADE - GAME MASTER MODE 🎮

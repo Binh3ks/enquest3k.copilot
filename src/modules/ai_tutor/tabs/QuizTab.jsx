@@ -106,7 +106,18 @@ const QuizTab = () => {
     setIsAnswered(false);
     setScore(0);
     setGameComplete(false);
-    setShowMenu(true); // Back to menu
+    setShowMenu(true);
+    setGameData(null); // Clear game data
+  };
+
+  const handleBackToMenu = () => {
+    setShowMenu(true);
+    setGameData(null);
+    setCurrentRound(0);
+    setScore(0);
+    setGameComplete(false);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
   };
 
   const gameTypes = [
@@ -193,20 +204,23 @@ const QuizTab = () => {
 
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
-      <div className="bg-white border-b border-purple-200 px-4 py-3">
+      <div className="bg-white border-b border-purple-200 px-3 py-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-              <Sparkles size={20} className="text-white" />
+            <button onClick={handleBackToMenu} className="text-purple-600 hover:text-purple-800 transition-colors">
+              <RotateCcw size={18} />
+            </button>
+            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+              <Sparkles size={16} className="text-white" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-gray-800">🎮 Nova Arcade</h2>
-              <p className="text-xs text-gray-500">Học qua game!</p>
+              <h2 className="text-xs font-bold text-gray-800">🎮 Nova Arcade</h2>
+              <p className="text-xs text-gray-500">Learn through games!</p>
             </div>
           </div>
           {!gameComplete && (
             <div className="text-right">
-              <p className="text-xs font-medium text-gray-700">Score: {score} / {gameData.rounds.length}</p>
+              <p className="text-xs font-medium text-gray-700">Score: {score}/{gameData.rounds.length}</p>
               <p className="text-xs text-purple-600">Week {weekNumber}</p>
             </div>
           )}
@@ -237,16 +251,16 @@ const QuizTab = () => {
             </button>
           </div>
         ) : (
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full">
-            <div className="mb-6 text-center">
-              <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-3">
-                <h3 className="text-lg font-bold text-purple-700">{gameData.game_type}</h3>
+          <div className="bg-white rounded-2xl shadow-xl p-4 max-w-2xl w-full">
+            <div className="mb-3 text-center">
+              <div className="inline-block px-3 py-1 bg-purple-100 rounded-full mb-2">
+                <h3 className="text-sm font-bold text-purple-700">{gameData.game_type}</h3>
               </div>
-              <p className="text-sm text-gray-600">Round {currentRound + 1} / {gameData.rounds.length}</p>
+              <p className="text-xs text-gray-600">Round {currentRound + 1} / {gameData.rounds.length}</p>
             </div>
 
-            <div className="mb-8 text-center">
-              <div className="text-4xl mb-4">{round.question}</div>
+            <div className="mb-4 text-center">
+              <div className="text-3xl mb-3">{round.question}</div>
             </div>
 
             {gameData.game_type === 'true_false' ? (
@@ -282,12 +296,12 @@ const QuizTab = () => {
             )}
 
             {isAnswered && (
-              <div className="pt-6 border-t">
-                <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                  <p className="text-sm"><span className="font-bold">Giải thích:</span> {round.explanation}</p>
+              <div className="pt-3 border-t">
+                <div className="bg-blue-50 rounded-lg p-3 mb-3">
+                  <p className="text-xs"><span className="font-bold">Explanation:</span> {round.explanation}</p>
                 </div>
-                <button onClick={handleNext} className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-bold">
-                  {currentRound < gameData.rounds.length - 1 ? 'Tiếp Theo →' : 'Hoàn Thành! 🎉'}
+                <button onClick={handleNext} className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-bold text-sm">
+                  {currentRound < gameData.rounds.length - 1 ? 'Next →' : 'Finish! 🎉'}
                 </button>
               </div>
             )}
@@ -296,11 +310,11 @@ const QuizTab = () => {
       </div>
 
       {!gameComplete && (
-        <div className="bg-white border-t p-4">
+        <div className="bg-white border-t p-2">
           <div className="max-w-2xl mx-auto">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-gray-600">Tiến độ</span>
-              <span className="text-sm font-medium">{currentRound + 1} / {gameData.rounds.length}</span>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs text-gray-600">Progress</span>
+              <span className="text-xs font-medium">{currentRound + 1} / {gameData.rounds.length}</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all" 
