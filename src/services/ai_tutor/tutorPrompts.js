@@ -1772,27 +1772,38 @@ GAME RULES BY TYPE:
    
    **Rounds 8-10 Format (Sentence Expansion - IMPORTANT FORMAT):**
    ❌ WRONG: question = "The cat is in the kitchen. What is the cat doing?"
-   ✅ CORRECT: question = "Where is the chair?" (ONLY question, NO context!)
+   ✅ CORRECT: question = "Where is the bed?" (ONLY question, NO context!)
    
    Full correct example:
-     question: "Where is the chair?"
-     correct_answer: "living_room"
-     options: ["living_room", "kitchen", "bathroom", "bedroom"]
-     explanation: "The chair is in the living_room!"
+     question: "Where is the bed?"
+     correct_answer: "The bed is in the bedroom."
+     options: [
+       "The bed is in the bedroom.",
+       "The bed is in the kitchen.",
+       "The bed is in the bathroom.",
+       "The bed is in the living_room."
+     ]
+     explanation: "We sleep in the bedroom!"
      expansion: true
    
    Another example:
-     question: "What is on the table?"
-     correct_answer: "book"
-     options: ["book", "cat", "lamp", "phone"]
-     explanation: "The book is on the table!"
+     question: "What is the cat doing?"
+     correct_answer: "The cat is sleeping."
+     options: [
+       "The cat is sleeping.",
+       "The cat is cooking.",
+       "The cat is studying.",
+       "The cat is dancing."
+     ]
+     explanation: "Cats love to sleep!"
      expansion: true
    
-   CRITICAL RULES:
-   - Question: ONLY the Wh-question (no context sentence!)
-   - Answer: Single word or short phrase
-   - Options: 4 simple words
-   - Explanation: Full sentence providing context
+   CRITICAL RULES FOR EXPANSION:
+   - Question: ONLY the Wh-question (Where/What/Who)
+   - Answer: FULL SENTENCE (not just single word!)
+   - Options: 4 COMPLETE SENTENCES with same structure
+   - All options follow pattern: Subject + Verb + Object/Location
+   - Explanation: Fun fact or context
    - Options include 1 correct + 3 wrong arrangements
    - Use 4-6 words per sentence
 
