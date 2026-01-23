@@ -123,12 +123,41 @@ export class NovaEngine {
       );
       
       // Step 3: Parse and validate response
-      const parsedResponse = responseParser.parseAIResponse(rawResponse);
-      const validatedResponse = responseParser.validateResponse(parsedResponse, mode);
+      // 🎮 SPECIAL HANDLING for quiz_game mode (different JSON structure)
+      let validatedResponse;
+      if (mode === 'quiz_game') {
+        // Parse JSON directly without using responseParser (different schema)
+        try {
+          let gameJson;
+          if (typeof rawResponse === 'string') {
+            // Remove markdown code blocks if present
+            let cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
+            gameJson = JSON.parse(cleanedResponse);
+          } else if (typeof rawResponse === 'object') {
+            gameJson = rawResponse;
+          }
+          
+          // Basic validation for quiz_game schema
+          if (!gameJson.game_type || !Array.isArray(gameJson.rounds)) {
+            throw new Error('Invalid quiz_game response: missing game_type or rounds');
+          }
+          
+          validatedResponse = gameJson;
+          console.log('🎮 Quiz game parsed:', gameJson.game_type, '- Rounds:', gameJson.rounds.length);
+        } catch (err) {
+          console.error('❌ Failed to parse quiz_game JSON:', err);
+          throw err;
+        }
+      } else {
+        // Normal flow for other modes
+        const parsedResponse = responseParser.parseAIResponse(rawResponse);
+        validatedResponse = responseParser.validateResponse(parsedResponse, mode);
+      }
       
-      // Step 4: Apply post-processing guardrails
-      // 🔥 CRITICAL: Pass mode explicitly to ensure guardrail triggers
-      const processedResponse = this.applyGuardrails(validatedResponse, mode, context);
+      // Step 4: Apply post-processing guardrails (skip for quiz_game)
+      const processedResponse = mode === 'quiz_game' 
+        ? validatedResponse 
+        : this.applyGuardrails(validatedResponse, mode, context);
       
       console.log('🛡️ NovaEngine guardrails applied for mode:', mode);
       
