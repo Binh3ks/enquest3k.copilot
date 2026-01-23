@@ -27,45 +27,47 @@ const QuizTab = () => {
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
 
   const loadGame = async (gameType) => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        console.log('Nova Arcade loading:', currentWeek);
-        const data = await getCurrentWeekData(currentWeek);
-        setWeekData(data);
-        
-        const novaEngine = new NovaEngine(data, { name: userName, age: 8 });
-        
-        console.log('Generating quiz game...');
-        const response = await novaEngine.sendToNova({
-          mode: 'quiz_game',
-          userMessage: 'Generate a quiz game',
-          chatHistory: [],
-          context: { weekId: weekNumber, weekData: data }
-        });
-        
-        let gameJson;
-        if (typeof response === 'string') gameJson = JSON.parse(response);
-        else if (response.text) gameJson = JSON.parse(response.text);
-        else if (response.content) gameJson = JSON.parse(response.content);
-        else gameJson = response;
-        
-        setGameData(gameJson);
-        
-        if (autoPlayEnabled && gameJson.intro_text) {
-          await textToSpeech(gameJson.intro_text, { mode: 'conversation', autoPlay: true });
-        }
-      } catch (err) {
-        console.error('Failed to load quiz:', err);
-        setError(err.message || 'Failed to load quiz');
-      } finally {
-        setLoading(false);
+    try {
+      setLoading(true);
+      setError(null);
+      setShowMenu(false); // Hide menu
+      
+      console.log('Nova Arcade loading:', currentWeek, '- Game type:', gameType);
+      const data = await getCurrentWeekData(currentWeek);
+      setWeekData(data);
+      
+      const novaEngine = new NovaEngine(data, { name: userName, age: 8 });
+      
+      console.log('Generating quiz game...');
+      const response = await novaEngine.sendToNova({
+        mode: 'quiz_game',
+        userMessage: 'Generate a quiz game',
+        chatHistory: [],
+        context: { weekId: weekNumber, weekData: data, gameType } // Pass game type
+      });
+      
+      let gameJson;
+      if (typeof response === 'string') gameJson = JSON.parse(response);
+      else if (response.text) gameJson = JSON.parse(response.text);
+      else if (response.content) gameJson = JSON.parse(response.content);
+      else gameJson = response;
+      
+      setGameData(gameJson);
+      
+      if (autoPlayEnabled && gameJson.intro_text) {
+        await textToSpeech(gameJson.intro_text, { mode: 'conversation', autoPlay: true });
       }
-    };
+    } catch (err) {
+      console.error('Failed to load quiz:', err);
+      setError(err.message || 'Failed to load quiz');
+    } finally {
+      setLoading(false);
+    }
+  };
     
-    loadGame();
-  }, [currentWeek, userName, autoPlayEnabled, weekNumber]);
+  const handleGameSelect = (gameType) => {
+    loadGame(gameType);
+  };
 
   const handleAnswerClick = async (answer) => {
     if (isAnswered) return;
@@ -180,7 +182,7 @@ const QuizTab = () => {
   }
 
   if (!gameData || !gameData.rounds || gameData.rounds.length === 0) {
-    return (Play Another Game
+    return (
       <div className="flex items-center justify-center h-full">
         <p className="text-gray-500">Loading game data...</p>
       </div>
