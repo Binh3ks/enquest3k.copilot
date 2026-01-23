@@ -174,7 +174,8 @@ const PronunciationTab = () => {
       await textToSpeech(word, {
         voice: 'nova',
         autoPlay: true,
-        speed: 0.8
+        speed: 0.8,
+        mode: 'pronunciation' // 🎯 Normal speed (1.0x) for clear pronunciation practice
       });
       console.log('✅ Advanced TTS succeeded');
     } catch (error) {

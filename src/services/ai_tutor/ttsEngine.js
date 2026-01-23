@@ -163,9 +163,10 @@ function cleanTextForSpeech(text) {
  * @param {Object} options - TTS options
  * @param {boolean} options.autoPlay - Auto-play audio immediately
  * @param {string} options.preferredLayer - 'gemini' | 'openai' | 'puter' | 'browser' | 'auto'
+ * @param {string} options.mode - 'conversation' (0.8x) | 'pronunciation' (1.0x)
  * @returns {Promise<AudioResponse>}
  */
-export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto' } = {}) {
+export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto', mode = 'conversation' } = {}) {
   if (!text || text.trim().length === 0) {
     console.warn('⚠️ TTS: Empty text provided');
     return { success: false, error: 'Empty text' };
@@ -239,7 +240,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
       switch (layer) {
         case 'gemini':
           if (TTS_CONFIG.gemini.enabled) {
-            audioUrl = await callGeminiTTS(cleanedText); // 🧹 Use cleaned text
+            audioUrl = await callGeminiTTS(cleanedText, mode); // 🎯 Pass mode for speed control
           }
           break;
         
@@ -303,13 +304,17 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 // LAYER 1: GOOGLE CLOUD TEXT-TO-SPEECH
 // ============================================
 
-async function callGeminiTTS(text) {
+async function callGeminiTTS(text, mode = 'conversation') {
   if (!GOOGLE_TTS_API_KEY) {
     throw new Error('Google TTS API key not configured');
   }
 
+  // 🎯 Determine speaking rate based on mode
+  const speakingRate = mode === 'pronunciation' ? 1.0 : 0.8; // Normal speed for pronunciation, slower for conversation
+
   try {
     console.log('🔊 Google Cloud TTS: Requesting LINEAR16 (PCM) audio generation...');
+    console.log('🎯 Mode:', mode, '| Speaking rate:', speakingRate);
 
     const response = await axios.post(
       `${GOOGLE_TTS_ENDPOINT}?key=${GOOGLE_TTS_API_KEY}`,
@@ -323,7 +328,7 @@ async function callGeminiTTS(text) {
         audioConfig: {
           audioEncoding: 'LINEAR16', // 🔥 PCM16 format (requires WAV header)
           sampleRateHertz: 24000, // 24kHz sample rate
-          speakingRate: 0.8, // 🎓 Slower speed for clearer pronunciation (user requested 0.8x)
+          speakingRate: speakingRate, // 🎓 Dynamic: 1.0 for pronunciation, 0.8 for conversation
           pitch: 0.5, // ⚡ Reduced pitch (high pitch slows down encoding)
           volumeGainDb: 0
         }
