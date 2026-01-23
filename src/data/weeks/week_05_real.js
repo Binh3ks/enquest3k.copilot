@@ -528,7 +528,7 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
         role: "Explorer with flashlight discovering objects in darkness"
       },
 
-      opening_narrative: "Oh no! The house is so dark! 🌑 I can't see anything! But wait... I have a flashlight! 🔦 I will shine the light on the table. (Shine 🔦) Wow! I see something! There is a... Can you say it? There is a...",
+      opening_narrative: "Oh no! So dark! 🌑 I have a flashlight! 🔦 (Shine on table) Wow! What is this? There is a...",
 
       story_arc: [
         {
@@ -537,10 +537,10 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           phase_name: "Darkness and Flashlight",
           focus: "Establish grammar pattern with simple objects",
           phase_questions: [
-            "(Shine on book 📖) Look! A book! Say the sentence: There is a book!",
-            "(Shine on chair 🪑) What is this? Say: There is a chair!",
-            "(Shine on table 🪑) Wow! Say: There is a table!",
-            "(Shine on bed 🛏️) For sleeping! Say: There is a bed!"
+            "(Shine 🔦 on book 📖) What is this? There is a...",
+            "(Shine 🔦 on chair 🪑) What do you see? There is a...",
+            "(Shine 🔦 on bed 🛏️) For sleeping! There is a...",
+            "(Shine 🔦 on kitchen 🍳) A room! There is a..."
           ],
           example_answers: [
             "There is a book",
@@ -555,14 +555,14 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           phase_name: "More Objects Challenge",
           focus: "Practice with more furniture and objects",
           phase_questions: [
-            "(Shine on notebook 📓) For writing! There is a...",
-            "(Shine on bed 🛏️) You sleep here! There is a...",
-            "(Shine on chair 🪑) You sit here! There is a...",
-            "(Shine on table 🪑) You eat here! There is a...",
-            "(Shine on book 📖) You read this! There is a...",
-            "(Shine on bedroom door 🚪) The bedroom! There is a...",
-            "(Shine on kitchen 🍳) For cooking! There is a...",
-            "(Shine on bathroom 🚿) For washing! There is a..."
+            "(Shine 🔦 on notebook 📓) For writing! There is a...",
+            "(Shine 🔦 on bedroom 🚪) A room for sleeping! There is a...",
+            "(Shine 🔦 on bathroom 🚿) A room for washing! There is a...",
+            "(Shine 🔦 on living room 🛋️) A room for family! There is a...",
+            "(Shine 🔦 on chair 🪑) You sit here! There is a...",
+            "(Shine 🔦 on table 🪑) You eat here! There is a...",
+            "(Shine 🔦 on book 📖) You read this! There is a...",
+            "(Shine 🔦 on house 🏠) Where you live! There is a..."
           ],
           example_answers: [
             "There is a notebook",
@@ -633,7 +633,7 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
         role: "Mystery box host giving riddles for student to guess"
       },
 
-      opening_narrative: "Look! 📦 I found a big mystery box! I can reach my hand inside! I feel something... (Touch touch) It's flat with pages! There is a... Can you say it? There is a...",
+      opening_narrative: "Look! 📦 A mystery box! (Touch touch) I feel something flat with pages... There is a...",
 
       story_arc: [
         {
@@ -642,9 +642,9 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           phase_name: "Mystery Box Opens",
           focus: "Introduce guessing game with school objects",
           phase_questions: [
-            "(Feel: Flat with pages 📖) I feel pages! What is it? Say: There is a book!",
-            "(Feel: For writing 📓) Small with pages for writing! Say: There is a notebook!",
-            "(Feel: You sit on it 🪑) Hard and has legs! Say: There is a chair!"
+            "(Feel 👋 flat with pages 📖) What is it? There is a...",
+            "(Feel 👋 small for writing 📓) What is this? There is a...",
+            "(Feel 👋 has four legs 🪑) You sit here! There is a..."
           ],
           example_answers: [
             "There is a book",
@@ -658,11 +658,11 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           phase_name: "More Objects",
           focus: "Guess more objects from the house",
           phase_questions: [
-            "(Feel: Flat and big 🪑) You eat on this! There is a...",
-            "(Feel: Soft and big 🛏️) You sleep here! There is a...",
-            "(Feel: Has a door 🚪) A room for sleeping! There is a...",
-            "(Feel: For cooking 🍳) A room with food! There is a...",
-            "(Feel: For washing 🚿) A room with water! There is a..."
+            "(Feel 👋 flat and big 🪑) You eat here! There is a...",
+            "(Feel 👋 soft and big 🛏️) You sleep here! There is a...",
+            "(Feel 👋 a room with door 🚪) For sleeping! There is a...",
+            "(Feel 👋 a room 🍳) For cooking! There is a...",
+            "(Feel 👋 a room 🚿) For washing! There is a..."
           ],
           example_answers: [
             "There is a table",
@@ -678,12 +678,12 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
           phase_name: "Final Objects",
           focus: "Complete the mystery box game",
           phase_questions: [
-            "(Feel: Big building 🏠) Where you live! There is a...",
-            "(Feel: For reading 📖) You read this! There is a...",
-            "(Feel: Four legs 🪑) You sit here! There is a...",
-            "(Feel: In the bedroom 🛏️) You sleep here! There is a...",
-            "(Feel: Flat surface 🪑) You eat here! There is a...",
-            "(Feel: Small for writing 📓) For homework! There is a..."
+            "(Feel 👋 big building 🏠) Where you live! There is a...",
+            "(Feel 👋 a room 🛋️) For family time! There is a...",
+            "(Feel 👋 in bedroom 🛏️) You sleep here! There is a...",
+            "(Feel 👋 flat surface 🪑) You eat here! There is a...",
+            "(Feel 👋 has four legs 🪑) You sit here! There is a...",
+            "(Feel 👋 has pages 📖) You read this! There is a..."
           ],
           example_answers: [
             "There is a house",
