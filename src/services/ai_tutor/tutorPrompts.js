@@ -189,11 +189,13 @@ TARGET VOCABULARY: ${targetVocab.join(', ')}
 - Accepting short answers without full grammar pattern
 - Breaking character
 - Deviating from the story_arc phases
+- Adding "What do you think?" at the end (this stops the game flow!)
 
 📝 RESPONSE FORMAT (ACK + RECAST + GAME QUESTION):
 1. **ACK:** "Yes!" or "Wow!" or "Great!"
 2. **RECAST:** Repeat student's answer as full sentence with "${grammarPattern}"
 3. **CONTINUE GAME:** Next question from phase_questions above
+4. **NO EXTRA QUESTIONS:** Don't add "What do you think?" or "How do you feel?" at the end
 
 EXAMPLE (Mission 2 - Dark Room):
 Student: "a book"

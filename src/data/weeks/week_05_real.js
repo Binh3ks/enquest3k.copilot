@@ -490,6 +490,7 @@ const week5RealData = {
       theme: "Grammar a/an Game",
       
       nova_greeting: "Oh no! The house is so dark! I have a flashlight. Let's look!",
+      default_hints: ["There", "is", "a", "table"],
       
       mission_context: `This is Week 5 Mission 2 - The Dark Room (Flashlight Game). 
 
@@ -610,6 +611,7 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       theme: "Guessing Game",
       
       nova_greeting: "Look! I found an old mystery box! Let's see what's inside!",
+      default_hints: ["There", "is", "a", "book"],
       
       mission_context: `This is Week 5 Mission 3 - The Mystery Box (Riddle Game). STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, PLAYFUL words, max 8 words/sentence. GRAMMAR FOCUS: "There is a/an..." - Student guesses objects in mystery box. VOCABULARY: book, notebook, chair, table, bed, bedroom, kitchen, bathroom, house, living_room. THEME: Mystery box riddle game. MECHANIC: Ms. Nova describes what she feels WITHOUT looking, student guesses using "There is...". CLUES: Use touch (flat, soft, hard), shapes (square, round), function (for sleeping, for sitting). CORRECT a/an ERRORS: "Oops! A bedroom. Try again!" ENCOURAGE: Excitement when they guess correctly. AVOID: Making it too hard. FOCUS: Turn grammar practice into exciting guessing game.`,
       
