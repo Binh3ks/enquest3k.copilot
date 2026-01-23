@@ -84,7 +84,7 @@ export class NovaEngine {
     const effectiveWeekId = weekId || this.weekData?.weekId || 1;
     
     // Validate mode
-    const validModes = ['story', 'freetalk', 'pronunciation', 'quiz', 'debate'];
+    const validModes = ['story', 'freetalk', 'pronunciation', 'quiz', 'quiz_game', 'debate'];
     if (!validModes.includes(mode)) {
       throw new Error(`NovaEngine: Invalid mode "${mode}". Must be one of: ${validModes.join(', ')}`);
     }

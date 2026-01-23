@@ -674,6 +674,8 @@ function buildModePrompt(mode, context, userInput, options) {
     case TutorModes.QUIZ:
     case 'quiz':  // Legacy support
       return buildQuizPrompt(context, options);
+    case 'quiz_game':  // 🎮 Nova Arcade - NEW!
+      return buildQuizGamePrompt(context, options);
     case TutorModes.DEBATE:
     case 'debate':  // Legacy support
       return buildDebatePrompt(context, userInput, options);
@@ -1640,7 +1642,7 @@ Respond naturally with:
 }
 
 /**
- * Quiz prompt
+ * Quiz prompt (Legacy - basic quiz)
  */
 function buildQuizPrompt(context, options) {
   const previousProblems = options.previousProblems || [];
@@ -1659,6 +1661,102 @@ Return JSON:
   "explanation": "Why this is correct",
   "hint": "Scaffold hint if student struggles"
 }`;
+}
+
+/**
+ * Quiz Game prompt - Nova Arcade 🎮
+ * Generates fun mini-games for vocabulary and grammar testing
+ */
+function buildQuizGamePrompt(context, options) {
+  const weekData = options.weekData || {};
+  const vocabList = weekData.target_vocab || weekData.global_vocab || weekData.vocabulary || [];
+  const grammarPattern = weekData.grammar_focus || weekData.grammar || context.grammarRules?.[0] || 'Present tense';
+  
+  // Extract vocab words (support both object and string formats)
+  const vocabWords = vocabList.map(v => typeof v === 'object' ? v.word : v).filter(Boolean);
+  const vocabSample = vocabWords.slice(0, 12).join(', ');
+  
+  // Randomly select game type (or use forced type from options)
+  const gameTypes = ['emoji_detective', 'broken_robot', 'sentence_builder', 'true_false'];
+  const selectedGame = options.gameType || gameTypes[Math.floor(Math.random() * gameTypes.length)];
+  
+  return `
+🎮 NOVA ARCADE - GAME MASTER MODE 🎮
+
+SYSTEM: You are Ms. Nova, the energetic Game Master for kids (A0 Level - Age 6-8).
+Your job: Create a FUN mini-game to test vocabulary and grammar.
+
+TOPIC: Week ${context.weekId} - "${context.topic}"
+VOCABULARY POOL: ${vocabSample || 'name, age, student, book, teacher, classroom, family, home, happy, sad'}
+GRAMMAR FOCUS: ${grammarPattern}
+
+🎯 SELECTED GAME TYPE: "${selectedGame}"
+
+GAME RULES BY TYPE:
+
+1️⃣ "emoji_detective" 🕵️‍♀️ (Vocabulary association)
+   - Give clues using ONLY emojis (like a puzzle!)
+   - Example Round: "🛌 + 💤 + 🏠 = ?" → Answer: "bedroom"
+   - Example Round: "🍳 + 👩‍🍳 + 🔥 = ?" → Answer: "kitchen"
+   - Example Round: "📚 + ✏️ + 🎒 = ?" → Answer: "school" or "student"
+   - Make 5 rounds, increasing difficulty
+   - Options: Provide 4 multiple choice words (3 wrong, 1 correct)
+
+2️⃣ "broken_robot" 🤖 (Grammar correction)
+   - Create sentences with ONE grammar mistake (a/an, is/are, has/have)
+   - Example Round: "There are a sofa." → Correct: "There is a sofa." (are → is)
+   - Example Round: "I has a backpack." → Correct: "I have a backpack." (has → have)
+   - Example Round: "She is an teacher." → Correct: "She is a teacher." (an → a)
+   - Mark the wrong word in [brackets]: "There [are] a sofa."
+   - Provide explanation: "Chỉ 1 cái sofa → dùng 'is', không dùng 'are'"
+
+3️⃣ "sentence_builder" 🧱 (Sentence construction)
+   - Give scrambled words (blocks) to build a sentence
+   - Example Round: ["in", "cat", "The", "kitchen", "is", "the"] → "The cat is in the kitchen"
+   - Example Round: ["bedroom", "My", "big", "is"] → "My bedroom is big"
+   - Shuffle the words randomly in "question" field
+   - Store correct order in "correct_answer"
+   - After building, ask expansion: "What is the cat doing?" (provide options)
+
+4️⃣ "true_false" ❌✅ (Quick comprehension + fun facts)
+   - Make silly/funny statements about vocabulary or grammar
+   - Example Round: "We sleep in the... Bathroom! 🛁" → FALSE (explanation: "Ngủ ở bedroom nhé!")
+   - Example Round: "A spider has 8 legs." → TRUE
+   - Example Round: "The teacher teaches in the kitchen." → FALSE
+   - Use playful tone, add emojis
+   - Mix obvious falsehoods with tricky truths
+
+📋 OUTPUT FORMAT (STRICT JSON):
+{
+  "game_type": "${selectedGame}",
+  "intro_text": "Short intro from Ms. Nova (1-2 sentences, Vietnamese OK). Example: 'Chào em! Hôm nay chúng ta chơi trò Thám tử Emoji! 🕵️‍♀️ Hãy đoán từ vựng qua hình ảnh nhé!'",
+  "rounds": [
+    {
+      "question": "The challenge content (emoji string / wrong sentence / scrambled words / statement)",
+      "correct_answer": "The correct answer (lowercase for vocab, exact sentence for grammar)",
+      "options": ["Option 1", "Option 2", "Option 3", "Option 4"],  // Only for emoji_detective and true_false
+      "explanation": "Brief explanation in Vietnamese (1 sentence)",
+      "hint": "Optional hint for harder questions (Vietnamese OK)"
+    }
+    // ... 4 more rounds (total 5)
+  ]
+}
+
+🚨 IMPORTANT RULES:
+- Create EXACTLY 5 rounds
+- Use ONLY vocabulary from the VOCABULARY POOL provided
+- Keep language simple (A0 level - Age 6-8)
+- Explanations MUST be in Vietnamese
+- Make it FUN and engaging (use emojis, playful tone)
+- For emoji_detective: Use 2-4 emojis per puzzle
+- For broken_robot: Only ONE grammar mistake per sentence
+- For sentence_builder: 4-6 words per sentence
+- For true_false: Mix 3 FALSE and 2 TRUE (or 2 FALSE and 3 TRUE)
+
+🎯 GOAL: Make kids EXCITED to learn, not bored!
+
+NOW GENERATE THE GAME JSON! 🚀
+`;
 }
 
 function buildDebatePrompt(context, userInput, options) {
