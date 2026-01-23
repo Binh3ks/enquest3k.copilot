@@ -43,10 +43,10 @@ export const freeTalkResponseSchema = {
 /**
  * Quiz Game Response Schema - Nova Arcade
  * Supports 4 game types:
- * 1. emoji_detective - Emoji-based vocab puzzles (10 rounds)
- * 2. broken_robot - Grammar correction challenges (10 rounds)
- * 3. sentence_builder - Sentence construction + expansion (15 rounds: 10 build + 5 expand)
- * 4. true_false - Quick comprehension challenges (10 rounds)
+ * 1. emoji_detective - Emoji-based vocab puzzles (7 rounds)
+ * 2. broken_robot - Grammar correction challenges (7 rounds)
+ * 3. sentence_builder - Sentence construction + expansion (10 rounds: 7 build + 3 expand)
+ * 4. true_false - Quick comprehension challenges (7 rounds)
  */
 export const quizGameSchema = {
   type: "object",
@@ -62,8 +62,8 @@ export const quizGameSchema = {
     },
     rounds: {
       type: "array",
-      minItems: 10,
-      maxItems: 15,
+      minItems: 7,
+      maxItems: 10,
       items: {
         type: "object",
         properties: {
