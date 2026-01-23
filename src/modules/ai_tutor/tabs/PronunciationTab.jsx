@@ -147,39 +147,37 @@ const PronunciationTab = () => {
   const speakWord = async (word) => {
     console.log('🔊 Speaking word:', word);
     
-    // 🔥 IMMEDIATE BROWSER TTS (most reliable)
+    // 🔥 PRIORITY 1: Try Google Cloud TTS first (high quality)
+    try {
+      await textToSpeech(word, {
+        autoPlay: true,
+        preferredLayer: 'gemini', // Force Google Cloud TTS
+        mode: 'pronunciation' // 🎯 Normal speed (1.0x) for clear pronunciation practice
+      });
+      console.log('✅ Google Cloud TTS succeeded');
+      return; // Success - exit early
+    } catch (error) {
+      console.error('⚠️ Google Cloud TTS failed, falling back to browser TTS:', error);
+    }
+    
+    // 🔥 FALLBACK: Browser TTS (if Google Cloud fails)
     if ('speechSynthesis' in window) {
       try {
         window.speechSynthesis.cancel(); // Clear any pending speech
         const utterance = new SpeechSynthesisUtterance(word);
         utterance.lang = 'en-US';
-        utterance.rate = 0.85;
+        utterance.rate = 1.0; // Normal speed for pronunciation
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
         
-        utterance.onend = () => console.log('✅ Speech finished');
-        utterance.onerror = (e) => console.error('❌ Speech error:', e);
+        utterance.onend = () => console.log('✅ Browser TTS finished');
+        utterance.onerror = (e) => console.error('❌ Browser TTS error:', e);
         
         window.speechSynthesis.speak(utterance);
-        console.log('✅ Browser TTS started');
-        return; // Success - exit early
+        console.log('✅ Browser TTS started (fallback)');
       } catch (browserError) {
-        console.error('❌ Browser TTS failed:', browserError);
-        // Continue to try textToSpeech below
+        console.error('❌ Browser TTS also failed:', browserError);
       }
-    }
-    
-    // Try advanced TTS (may fail if API unavailable)
-    try {
-      await textToSpeech(word, {
-        voice: 'nova',
-        autoPlay: true,
-        speed: 0.8,
-        mode: 'pronunciation' // 🎯 Normal speed (1.0x) for clear pronunciation practice
-      });
-      console.log('✅ Advanced TTS succeeded');
-    } catch (error) {
-      console.error('⚠️ Advanced TTS failed, already used browser fallback:', error);
     }
   };
 
