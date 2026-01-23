@@ -1795,7 +1795,10 @@ GAME RULES BY TYPE:
 
 🎯 GOAL: Make kids EXCITED to learn, not bored!
 
-NOW GENERATE THE GAME JSON! 🚀
+⚠️ CRITICAL: OUTPUT ONLY THE JSON OBJECT - NO EXTRA TEXT!
+DO NOT write explanations, greetings, or comments.
+START your response with { and END with }
+Example: {"game_type":"emoji_detective","intro_text":"...","rounds":[...]}
 `;
 }
 

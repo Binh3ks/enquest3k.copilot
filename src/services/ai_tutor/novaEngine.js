@@ -136,24 +136,37 @@ export class NovaEngine {
           // AI response wraps JSON in ai_response field
           if (typeof rawResponse === 'object' && rawResponse.ai_response) {
             console.log('🔧 Extracting JSON from ai_response field');
-            const aiResponseText = rawResponse.ai_response;
+            let aiResponseText = rawResponse.ai_response;
             
             // Parse the JSON string inside ai_response
             if (typeof aiResponseText === 'string') {
-              let cleanedResponse = aiResponseText.replace(/```json|```/g, '').trim();
-              gameJson = JSON.parse(cleanedResponse);
+              // Remove markdown code blocks
+              aiResponseText = aiResponseText.replace(/```json\s*|```/g, '').trim();
+              
+              // Extract JSON object (everything from first { to last })
+              const firstBrace = aiResponseText.indexOf('{');
+              const lastBrace = aiResponseText.lastIndexOf('}');
+              
+              if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+                aiResponseText = aiResponseText.substring(firstBrace, lastBrace + 1);
+                console.log('🔧 Extracted JSON from position', firstBrace, 'to', lastBrace);
+              }
+              
+              gameJson = JSON.parse(aiResponseText);
             } else {
               gameJson = aiResponseText; // Already object
             }
           } else if (typeof rawResponse === 'string') {
             // Remove markdown code blocks if present
-            let cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
+            let cleanedResponse = rawResponse.replace(/```json\s*|```/g, '').trim();
             
-            // Extract JSON if response has text before/after JSON block
-            const jsonMatch = cleanedResponse.match(/\{[\s\S]*"game_type"[\s\S]*"rounds"[\s\S]*\}/);
-            if (jsonMatch) {
-              cleanedResponse = jsonMatch[0];
-              console.log('🔧 Extracted JSON block from mixed text response');
+            // Extract JSON object (everything from first { to last })
+            const firstBrace = cleanedResponse.indexOf('{');
+            const lastBrace = cleanedResponse.lastIndexOf('}');
+            
+            if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+              cleanedResponse = cleanedResponse.substring(firstBrace, lastBrace + 1);
+              console.log('🔧 Extracted JSON from position', firstBrace, 'to', lastBrace);
             }
             
             gameJson = JSON.parse(cleanedResponse);
