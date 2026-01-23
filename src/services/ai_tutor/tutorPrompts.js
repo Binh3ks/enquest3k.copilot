@@ -1740,9 +1740,11 @@ GAME RULES BY TYPE:
    - Options must include the EXACT correct sentence
    - Use simple grammar: a/an, is/are, has/have, singular/plural
 
-3️⃣ "sentence_builder" 🧱 (Sentence construction - MULTIPLE CHOICE FORMAT)
-   - Show scrambled words, provide 4 sentence options
-   - Example Round:
+3️⃣ "sentence_builder" 🧱 (Sentence construction with EXPANSION - 15 rounds)
+   - First 10 rounds: Scrambled words with 4 sentence options
+   - Last 5 rounds: Sentence expansion (answer follow-up question about the sentence)
+   
+   **Rounds 1-10 Format (Sentence Building):**
      question: "Words: kitchen | The | in | is | cat | the"
      correct_answer: "The cat is in the kitchen."
      options: [
@@ -1752,7 +1754,19 @@ GAME RULES BY TYPE:
        "Cat the is in kitchen the."
      ]
      explanation: "Subject (The cat) + Verb (is) + Location (in the kitchen)"
-   - question field shows words separated by " | "
+     expansion: null
+   
+   **Rounds 11-15 Format (Sentence Expansion):**
+     question: "The cat is in the kitchen. What is the cat doing?"
+     correct_answer: "eating" (or "sleeping", "playing")
+     options: ["eating", "running", "flying", "swimming"]
+     explanation: "Cats eat in the kitchen!"
+     expansion: true
+   
+   - Rounds 1-10: Build sentences from scrambled words
+   - Rounds 11-15: Answer contextual questions about the sentence
+   - question field shows words separated by " | " for building rounds
+   - expansion rounds ask: "What/Where/Who" questions
    - Options include 1 correct + 3 wrong arrangements
    - Use 4-6 words per sentence
 
@@ -1784,20 +1798,28 @@ GAME RULES BY TYPE:
       "explanation": "Brief explanation in ENGLISH (1 sentence)",
       "hint": "Optional hint for harder questions in ENGLISH"
     }
-    // ... 4 more rounds (total 5)
+    // ... more rounds:
+    // - emoji_detective: 10 rounds total
+    // - broken_robot: 10 rounds total  
+    // - sentence_builder: 15 rounds total (10 building + 5 expansion)
+    // - true_false: 10 rounds total
   ]
 }
 
 🚨 IMPORTANT RULES:
-- Create EXACTLY 5 rounds
+- ROUND COUNTS (STRICT):
+  * emoji_detective: EXACTLY 10 rounds
+  * broken_robot: EXACTLY 10 rounds
+  * sentence_builder: EXACTLY 15 rounds (10 sentence building + 5 expansion questions)
+  * true_false: EXACTLY 10 rounds
 - Use ONLY vocabulary from the VOCABULARY POOL provided
 - Keep language simple (A0 level - Age 6-8)
 - ALL TEXT MUST BE IN ENGLISH - intro_text, explanation, hint
 - Make it FUN and engaging (use emojis, playful tone)
 - For emoji_detective: Use 2-4 emojis per puzzle
 - For broken_robot: Only ONE grammar mistake per sentence
-- For sentence_builder: 4-6 words per sentence
-- For true_false: Mix 3 FALSE and 2 TRUE (or 2 FALSE and 3 TRUE)
+- For sentence_builder: Rounds 1-10 = scrambled sentences, Rounds 11-15 = expansion questions
+- For true_false: Mix TRUE and FALSE evenly (5 TRUE, 5 FALSE)
 
 🎯 GOAL: Make kids EXCITED to learn, not bored!
 

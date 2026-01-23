@@ -43,10 +43,10 @@ export const freeTalkResponseSchema = {
 /**
  * Quiz Game Response Schema - Nova Arcade
  * Supports 4 game types:
- * 1. emoji_detective - Emoji-based vocab puzzles
- * 2. broken_robot - Grammar correction challenges
- * 3. sentence_builder - Drag-and-drop sentence construction
- * 4. true_false - Quick comprehension challenges
+ * 1. emoji_detective - Emoji-based vocab puzzles (10 rounds)
+ * 2. broken_robot - Grammar correction challenges (10 rounds)
+ * 3. sentence_builder - Sentence construction + expansion (15 rounds: 10 build + 5 expand)
+ * 4. true_false - Quick comprehension challenges (10 rounds)
  */
 export const quizGameSchema = {
   type: "object",
@@ -58,12 +58,12 @@ export const quizGameSchema = {
     },
     intro_text: { 
       type: "string", 
-      description: "Short intro from Ms. Nova (max 2 sentences, Vietnamese OK)"
+      description: "Short intro from Ms. Nova (max 2 sentences, English)"
     },
     rounds: {
       type: "array",
-      minItems: 5,
-      maxItems: 5,
+      minItems: 10,
+      maxItems: 15,
       items: {
         type: "object",
         properties: {
@@ -78,15 +78,19 @@ export const quizGameSchema = {
           options: { 
             type: "array", 
             items: { type: "string" },
-            description: "Multiple choice options (for vocab/true-false games)"
+            description: "Multiple choice options (4 options for most games, 2 for true/false)"
           },
           explanation: { 
             type: "string", 
-            description: "Brief explanation in Vietnamese (1 sentence)" 
+            description: "Brief explanation in English (1 sentence)" 
           },
           hint: {
             type: "string",
-            description: "Optional hint for harder questions (Vietnamese OK)"
+            description: "Optional hint for harder questions (English)"
+          },
+          expansion: {
+            type: "boolean",
+            description: "True if this is a sentence expansion round (sentence_builder only)"
           }
         },
         required: ["question", "correct_answer", "explanation"]

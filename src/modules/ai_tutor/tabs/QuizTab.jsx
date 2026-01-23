@@ -272,8 +272,11 @@ const QuizTab = () => {
               {gameData.game_type === 'broken_robot' && (
                 <p className="text-sm text-orange-600 italic font-medium">Find the correct sentence!</p>
               )}
-              {gameData.game_type === 'sentence_builder' && (
+              {gameData.game_type === 'sentence_builder' && !round.expansion && (
                 <p className="text-sm text-blue-600 italic font-medium">Choose the correct sentence order!</p>
+              )}
+              {gameData.game_type === 'sentence_builder' && round.expansion && (
+                <p className="text-sm text-indigo-600 italic font-medium">💭 Answer the question about the sentence!</p>
               )}
               {gameData.game_type === 'true_false' && (
                 <p className="text-sm text-green-600 italic font-medium">Is this statement true or false?</p>
