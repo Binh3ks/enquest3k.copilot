@@ -1693,13 +1693,27 @@ function buildQuizGamePrompt(context, options) {
   console.log('🎯 FINAL SELECTED GAME:', selectedGame);
   
   return `
-🎮 NOVA ARCADE - GAME MASTER MODE 🎮
+🚫🚫🚫 CRITICAL - READ THIS FIRST 🚫🚫🚫
 
-⚠️ CRITICAL INSTRUCTION - READ FIRST:
-YOU MUST OUTPUT ONLY A JSON OBJECT - NO EXPLANATIONS, NO GREETINGS, NO EXTRA TEXT!
-START your response with { and END with }
-DO NOT write "Sure!", "Cool!", "Here's the game:", or any other text.
-ONLY OUTPUT THE JSON BELOW ⬇️
+YOU ARE A JSON GENERATOR, NOT A CHATBOT!
+
+RULE #1: OUTPUT MUST BE PURE JSON - START WITH { END WITH }
+RULE #2: NO TEXT BEFORE JSON (no "Hello!", "Sure!", "Here's...")
+RULE #3: NO TEXT AFTER JSON (no "Hope you enjoy!", "Good luck!")
+RULE #4: NO MARKDOWN CODE BLOCKS (no \`\`\`json or \`\`\`)
+
+IF YOU WRITE ANY TEXT OTHER THAN JSON, THE SYSTEM WILL CRASH!
+
+EXAMPLE OF CORRECT OUTPUT:
+{"game_type":"emoji_detective","intro_text":"...","rounds":[...]}
+
+EXAMPLE OF WRONG OUTPUT (WILL CAUSE ERROR):
+Hello! Here's your game:
+{"game_type":...
+
+NOW GENERATE ONLY THE JSON BELOW:
+
+🎮 NOVA ARCADE - GAME MASTER MODE 🎮
 
 SYSTEM: You are Ms. Nova, the energetic Game Master for kids (A0 Level - Age 6-8).
 Your job: Create a FUN mini-game to test vocabulary and grammar.
@@ -1756,17 +1770,29 @@ GAME RULES BY TYPE:
      explanation: "Subject (The cat) + Verb (is) + Location (in the kitchen)"
      expansion: null
    
-   **Rounds 11-15 Format (Sentence Expansion):**
-     question: "The cat is in the kitchen. What is the cat doing?"
-     correct_answer: "eating" (or "sleeping", "playing")
-     options: ["eating", "running", "flying", "swimming"]
-     explanation: "Cats eat in the kitchen!"
+   **Rounds 11-15 Format (Sentence Expansion - IMPORTANT FORMAT):**
+   ❌ WRONG: question = "The cat is in the kitchen. What is the cat doing?"
+   ✅ CORRECT: question = "Where is the chair?" (ONLY question, NO context!)
+   
+   Full correct example:
+     question: "Where is the chair?"
+     correct_answer: "living_room"
+     options: ["living_room", "kitchen", "bathroom", "bedroom"]
+     explanation: "The chair is in the living_room!"
      expansion: true
    
-   - Rounds 1-10: Build sentences from scrambled words
-   - Rounds 11-15: Answer contextual questions about the sentence
-   - question field shows words separated by " | " for building rounds
-   - expansion rounds ask: "What/Where/Who" questions
+   Another example:
+     question: "What is on the table?"
+     correct_answer: "book"
+     options: ["book", "cat", "lamp", "phone"]
+     explanation: "The book is on the table!"
+     expansion: true
+   
+   CRITICAL RULES:
+   - Question: ONLY the Wh-question (no context sentence!)
+   - Answer: Single word or short phrase
+   - Options: 4 simple words
+   - Explanation: Full sentence providing context
    - Options include 1 correct + 3 wrong arrangements
    - Use 4-6 words per sentence
 
