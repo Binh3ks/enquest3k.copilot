@@ -237,7 +237,8 @@ export class NovaEngine {
       },
       turnManager: contextParams.turnManager || null,  // 🔥 CRITICAL: Pass TurnManager reference
       currentScenario: contextParams.currentScenario || null,  // 🔥 CRITICAL: Pass roleplay scenario!
-      currentMission: contextParams.currentMission || null  // 🔥 CRITICAL: Pass story mission with character!
+      currentMission: contextParams.currentMission || null,  // 🔥 CRITICAL: Pass story mission with character!
+      gameType: contextParams.gameType || null  // 🔥 CRITICAL: Pass game type for quiz_game mode!
     };
     
     // Additional options for specific modes

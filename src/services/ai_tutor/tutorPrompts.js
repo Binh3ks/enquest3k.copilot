@@ -1678,9 +1678,12 @@ function buildQuizGamePrompt(context, options) {
   
   // Use forced game type from options (required!)
   const gameTypes = ['emoji_detective', 'broken_robot', 'sentence_builder', 'true_false'];
-  let selectedGame = options.context?.gameType || options.gameType;
+  let selectedGame = context.gameType || options.gameType || options.context?.gameType;
   
-  console.log('🎮 buildQuizGamePrompt - Requested game:', selectedGame, 'from options');
+  console.log('🎮 buildQuizGamePrompt - Requested game:', selectedGame);
+  console.log('   context.gameType:', context.gameType);
+  console.log('   options.gameType:', options.gameType);
+  console.log('   options.context?.gameType:', options.context?.gameType);
   
   if (!selectedGame || !gameTypes.includes(selectedGame)) {
     selectedGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
@@ -1705,35 +1708,63 @@ GAME RULES BY TYPE:
 
 1️⃣ "emoji_detective" 🕵️‍♀️ (Vocabulary association)
    - Give clues using ONLY emojis (like a puzzle!)
-   - Example Round: "🛌 + 💤 + 🏠 = ?" → Answer: "bedroom"
-   - Example Round: "🍳 + 👩‍🍳 + 🔥 = ?" → Answer: "kitchen"
-   - Example Round: "📚 + ✏️ + 🎒 = ?" → Answer: "school" or "student"
-   - Make 5 rounds, increasing difficulty
+   - Example Round: "🛌 + 💤 = ?" → Answer: "bed"
+   - Example Round: "🍳 + 🔥 = ?" → Answer: "kitchen"
+   - Example Round: "📚 + ✏️ = ?" → Answer: "school"
+   - Make 5 rounds, use 2-3 emojis per puzzle
    - Options: Provide 4 multiple choice words (3 wrong, 1 correct)
+   - question field: "🛌 + 💤 = ?"
+   - correct_answer: "bed"
+   - options: ["bed", "chair", "table", "sofa"]
 
-2️⃣ "broken_robot" 🤖 (Grammar correction)
-   - Create sentences with ONE grammar mistake (a/an, is/are, has/have)
-   - Example Round: "There are a sofa." → Correct: "There is a sofa." (are → is)
-   - Example Round: "I has a backpack." → Correct: "I have a backpack." (has → have)
-   - Example Round: "She is an teacher." → Correct: "She is a teacher." (an → a)
-   - Mark the wrong word in [brackets]: "There [are] a sofa."
-   - Provide explanation: "Chỉ 1 cái sofa → dùng 'is', không dùng 'are'"
+2️⃣ "broken_robot" 🤖 (Grammar correction - MULTIPLE CHOICE FORMAT)
+   - Show a sentence with ONE grammar mistake
+   - Provide 4 options: 3 variations + 1 correct sentence
+   - Example Round:
+     question: "This [is] an table."
+     correct_answer: "This is a table."
+     options: [
+       "This is a table.",
+       "This is an table.", 
+       "This are a table.",
+       "This is table."
+     ]
+     explanation: "We use 'a' before 't' sound, not 'an'."
+   - Mark the wrong word in [brackets] in the question
+   - Options must include the EXACT correct sentence
+   - Use simple grammar: a/an, is/are, has/have, singular/plural
 
-3️⃣ "sentence_builder" 🧱 (Sentence construction)
-   - Give scrambled words (blocks) to build a sentence
-   - Example Round: ["in", "cat", "The", "kitchen", "is", "the"] → "The cat is in the kitchen"
-   - Example Round: ["bedroom", "My", "big", "is"] → "My bedroom is big"
-   - Shuffle the words randomly in "question" field
-   - Store correct order in "correct_answer"
-   - After building, ask expansion: "What is the cat doing?" (provide options)
+3️⃣ "sentence_builder" 🧱 (Sentence construction - MULTIPLE CHOICE FORMAT)
+   - Show scrambled words, provide 4 sentence options
+   - Example Round:
+     question: "Words: kitchen | The | in | is | cat | the"
+     correct_answer: "The cat is in the kitchen."
+     options: [
+       "The cat is in the kitchen.",
+       "The kitchen is in the cat.",
+       "In the cat is the kitchen.",
+       "Cat the is in kitchen the."
+     ]
+     explanation: "Subject (The cat) + Verb (is) + Location (in the kitchen)"
+   - question field shows words separated by " | "
+   - Options include 1 correct + 3 wrong arrangements
+   - Use 4-6 words per sentence
 
 4️⃣ "true_false" ❌✅ (Quick comprehension + fun facts)
-   - Make silly/funny statements about vocabulary or grammar
-   - Example Round: "We sleep in the... Bathroom! 🛁" → FALSE (explanation: "Ngủ ở bedroom nhé!")
-   - Example Round: "A spider has 8 legs." → TRUE
-   - Example Round: "The teacher teaches in the kitchen." → FALSE
-   - Use playful tone, add emojis
-   - Mix obvious falsehoods with tricky truths
+   - Make statements, students choose TRUE or FALSE
+   - Example Round:
+     question: "We sleep in the bathroom."
+     correct_answer: "false"
+     options: ["true", "false"]
+     explanation: "We sleep in the bedroom, not the bathroom!"
+   - Example Round:
+     question: "A spider has 8 legs."
+     correct_answer: "true"
+     options: ["true", "false"]
+     explanation: "Yes! Spiders have 8 legs."
+   - Use playful tone, add emojis to question
+   - Mix 2-3 TRUE with 2-3 FALSE across 5 rounds
+   - Options always: ["true", "false"] (lowercase)
 
 📋 OUTPUT FORMAT (STRICT JSON):
 {

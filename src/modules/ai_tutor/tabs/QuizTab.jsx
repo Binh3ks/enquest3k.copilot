@@ -254,18 +254,29 @@ const QuizTab = () => {
           <div className="bg-white rounded-2xl shadow-xl p-4 max-w-2xl w-full">
             <div className="mb-3 text-center">
               <div className="inline-block px-3 py-1 bg-purple-100 rounded-full mb-2">
-                <h3 className="text-sm font-bold text-purple-700">{gameData.game_type}</h3>
+                <h3 className="text-sm font-bold text-purple-700">
+                  {gameData.game_type === 'emoji_detective' && '🕵️‍♀️ Emoji Detective'}
+                  {gameData.game_type === 'broken_robot' && '🤖 Broken Robot'}
+                  {gameData.game_type === 'sentence_builder' && '🧱 Sentence Builder'}
+                  {gameData.game_type === 'true_false' && '❓ True or False'}
+                </h3>
               </div>
               <p className="text-xs text-gray-600">Round {currentRound + 1} / {gameData.rounds.length}</p>
             </div>
 
             <div className="mb-4 text-center">
               <div className="text-3xl mb-3">{round.question}</div>
+              {gameData.game_type === 'emoji_detective' && (
+                <p className="text-sm text-purple-600 italic font-medium">Guess the word from the emojis!</p>
+              )}
               {gameData.game_type === 'broken_robot' && (
-                <p className="text-sm text-orange-600 italic">Find and fix the grammar mistake!</p>
+                <p className="text-sm text-orange-600 italic font-medium">Find the correct sentence!</p>
               )}
               {gameData.game_type === 'sentence_builder' && (
-                <p className="text-sm text-blue-600 italic">Put the words in the correct order!</p>
+                <p className="text-sm text-blue-600 italic font-medium">Choose the correct sentence order!</p>
+              )}
+              {gameData.game_type === 'true_false' && (
+                <p className="text-sm text-green-600 italic font-medium">Is this statement true or false?</p>
               )}
             </div>
 
