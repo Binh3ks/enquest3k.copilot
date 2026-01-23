@@ -1678,14 +1678,16 @@ function buildQuizGamePrompt(context, options) {
   
   // Use forced game type from options (required!)
   const gameTypes = ['emoji_detective', 'broken_robot', 'sentence_builder', 'true_false'];
-  const selectedGame = options.context?.gameType || options.gameType || gameTypes[Math.floor(Math.random() * gameTypes.length)];
+  let selectedGame = options.context?.gameType || options.gameType;
   
-  console.log('🎮 buildQuizGamePrompt - Selected game:', selectedGame, '(forced:', options.context?.gameType || options.gameType, ')');
+  console.log('🎮 buildQuizGamePrompt - Requested game:', selectedGame, 'from options');
   
-  if (!gameTypes.includes(selectedGame)) {
-    console.warn('⚠️ Invalid game type:', selectedGame, '- using random');
+  if (!selectedGame || !gameTypes.includes(selectedGame)) {
     selectedGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
+    console.warn('⚠️ Invalid/missing game type, using random:', selectedGame);
   }
+  
+  console.log('🎯 FINAL SELECTED GAME:', selectedGame);
   
   return `
 🎮 NOVA ARCADE - GAME MASTER MODE 🎮

@@ -81,7 +81,7 @@ const QuizTab = () => {
     if (isCorrect) setScore(prev => prev + 1);
 
     if (autoPlayEnabled) {
-      const feedback = isCorrect ? "Chính xác!" : `Chưa đúng. ${round.explanation}`;
+      const feedback = isCorrect ? "Correct! Well done!" : `Not quite. ${round.explanation}`;
       try {
         await textToSpeech(feedback, { mode: 'conversation', autoPlay: true });
       } catch (err) {
@@ -233,21 +233,21 @@ const QuizTab = () => {
             <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <Trophy size={48} className="text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-gray-800 mb-2">Hoàn Thành! 🎉</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-2">Complete! 🎉</h3>
             <p className="text-xl text-gray-600 mb-4">
-              Điểm: <span className="font-bold text-purple-600">{score}</span> / {gameData.rounds.length}
+              Score: <span className="font-bold text-purple-600">{score}</span> / {gameData.rounds.length}
             </p>
             <div className="bg-white rounded-xl p-6 mb-6">
               <div className="text-6xl mb-3">
                 {score === gameData.rounds.length ? '🌟' : score >= gameData.rounds.length * 0.6 ? '😊' : '💪'}
               </div>
               <p className="text-lg font-medium text-gray-700">
-                {score === gameData.rounds.length ? 'Hoàn hảo!' : score >= gameData.rounds.length * 0.6 ? 'Tốt lắm!' : 'Cố lên!'}
+                {score === gameData.rounds.length ? 'Perfect!' : score >= gameData.rounds.length * 0.6 ? 'Great job!' : 'Keep trying!'}
               </p>
             </div>
             <button onClick={handleReset} className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-colors flex items-center space-x-2 mx-auto font-bold">
               <RotateCcw size={20} />
-              <span>Chơi Lại</span>
+              <span>Play Again</span>
             </button>
           </div>
         ) : (
@@ -261,6 +261,12 @@ const QuizTab = () => {
 
             <div className="mb-4 text-center">
               <div className="text-3xl mb-3">{round.question}</div>
+              {gameData.game_type === 'broken_robot' && (
+                <p className="text-sm text-orange-600 italic">Find and fix the grammar mistake!</p>
+              )}
+              {gameData.game_type === 'sentence_builder' && (
+                <p className="text-sm text-blue-600 italic">Put the words in the correct order!</p>
+              )}
             </div>
 
             {gameData.game_type === 'true_false' ? (
@@ -268,12 +274,12 @@ const QuizTab = () => {
                 <button onClick={() => handleAnswerClick('true')} disabled={isAnswered} 
                   className={`p-6 rounded-xl border-2 transition-all ${isAnswered ? selectedAnswer === 'true' ? round.correct_answer === 'true' ? 'bg-green-100 border-green-500' : 'bg-red-100 border-red-500' : 'opacity-50' : 'hover:bg-green-50'}`}>
                   <div className="text-5xl mb-2">✅</div>
-                  <div className="text-lg font-bold">ĐÚNG</div>
+                  <div className="text-lg font-bold">TRUE</div>
                 </button>
                 <button onClick={() => handleAnswerClick('false')} disabled={isAnswered}
                   className={`p-6 rounded-xl border-2 transition-all ${isAnswered ? selectedAnswer === 'false' ? round.correct_answer === 'false' ? 'bg-green-100 border-green-500' : 'bg-red-100 border-red-500' : 'opacity-50' : 'hover:bg-red-50'}`}>
                   <div className="text-5xl mb-2">❌</div>
-                  <div className="text-lg font-bold">SAI</div>
+                  <div className="text-lg font-bold">FALSE</div>
                 </button>
               </div>
             ) : (
