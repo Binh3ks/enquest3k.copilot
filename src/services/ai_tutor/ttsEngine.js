@@ -323,7 +323,7 @@ async function callGeminiTTS(text) {
         audioConfig: {
           audioEncoding: 'LINEAR16', // 🔥 PCM16 format (requires WAV header)
           sampleRateHertz: 24000, // 24kHz sample rate
-          speakingRate: 0.85, // 🎓 Optimal speed for young ESL learners (user requested)
+          speakingRate: 0.8, // 🎓 Slower speed for clearer pronunciation (user requested 0.8x)
           pitch: 0.5, // ⚡ Reduced pitch (high pitch slows down encoding)
           volumeGainDb: 0
         }
