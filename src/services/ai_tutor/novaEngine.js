@@ -128,10 +128,34 @@ export class NovaEngine {
       if (mode === 'quiz_game') {
         // Parse JSON directly without using responseParser (different schema)
         try {
+          console.log('🎮 Raw AI response type:', typeof rawResponse);
+          console.log('🎮 Raw AI response keys:', typeof rawResponse === 'object' ? Object.keys(rawResponse) : 'N/A');
+          
           let gameJson;
-          if (typeof rawResponse === 'string') {
+          
+          // AI response wraps JSON in ai_response field
+          if (typeof rawResponse === 'object' && rawResponse.ai_response) {
+            console.log('🔧 Extracting JSON from ai_response field');
+            const aiResponseText = rawResponse.ai_response;
+            
+            // Parse the JSON string inside ai_response
+            if (typeof aiResponseText === 'string') {
+              let cleanedResponse = aiResponseText.replace(/```json|```/g, '').trim();
+              gameJson = JSON.parse(cleanedResponse);
+            } else {
+              gameJson = aiResponseText; // Already object
+            }
+          } else if (typeof rawResponse === 'string') {
             // Remove markdown code blocks if present
             let cleanedResponse = rawResponse.replace(/```json|```/g, '').trim();
+            
+            // Extract JSON if response has text before/after JSON block
+            const jsonMatch = cleanedResponse.match(/\{[\s\S]*"game_type"[\s\S]*"rounds"[\s\S]*\}/);
+            if (jsonMatch) {
+              cleanedResponse = jsonMatch[0];
+              console.log('🔧 Extracted JSON block from mixed text response');
+            }
+            
             gameJson = JSON.parse(cleanedResponse);
           } else if (typeof rawResponse === 'object') {
             gameJson = rawResponse;
@@ -139,6 +163,7 @@ export class NovaEngine {
           
           // Basic validation for quiz_game schema
           if (!gameJson.game_type || !Array.isArray(gameJson.rounds)) {
+            console.error('❌ Invalid game structure:', { has_game_type: !!gameJson.game_type, has_rounds: !!gameJson.rounds, rounds_is_array: Array.isArray(gameJson.rounds) });
             throw new Error('Invalid quiz_game response: missing game_type or rounds');
           }
           
@@ -146,6 +171,7 @@ export class NovaEngine {
           console.log('🎮 Quiz game parsed:', gameJson.game_type, '- Rounds:', gameJson.rounds.length);
         } catch (err) {
           console.error('❌ Failed to parse quiz_game JSON:', err);
+          console.error('❌ Raw response type:', typeof rawResponse);
           throw err;
         }
       } else {

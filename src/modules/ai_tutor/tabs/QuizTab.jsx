@@ -15,18 +15,18 @@ const QuizTab = () => {
   
   const [weekData, setWeekData] = useState(null);
   const [gameData, setGameData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [currentRound, setCurrentRound] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [gameComplete, setGameComplete] = useState(false);
   const [error, setError] = useState(null);
+  const [showMenu, setShowMenu] = useState(true); // Show game selection menu
 
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
 
-  useEffect(() => {
-    const loadGame = async () => {
+  const loadGame = async (gameType) => {
       try {
         setLoading(true);
         setError(null);
@@ -104,7 +104,58 @@ const QuizTab = () => {
     setIsAnswered(false);
     setScore(0);
     setGameComplete(false);
+    setShowMenu(true); // Back to menu
   };
+
+  const gameTypes = [
+    { id: 'emoji_detective', name: 'Emoji Detective', icon: '🕵️‍♀️', desc: 'Guess words from emoji puzzles', color: 'from-yellow-400 to-orange-500' },
+    { id: 'broken_robot', name: 'Broken Robot', icon: '🤖', desc: 'Fix grammar mistakes', color: 'from-blue-400 to-cyan-500' },
+    { id: 'sentence_builder', name: 'Sentence Builder', icon: '🧱', desc: 'Build sentences from blocks', color: 'from-green-400 to-emerald-500' },
+    { id: 'true_false', name: 'True or False', icon: '❓', desc: 'Answer fun fact questions', color: 'from-pink-400 to-rose-500' }
+  ];
+
+  if (showMenu) {
+    return (
+      <div className="flex flex-col h-full bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
+        <div className="bg-white border-b border-purple-200 px-4 py-3">
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+              <Sparkles size={20} className="text-white" />
+            </div>
+            <div>
+              <h2 className="text-sm font-bold text-gray-800">🎮 Nova Arcade</h2>
+              <p className="text-xs text-gray-500">Choose your game!</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex-1 p-6 overflow-y-auto">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Select a Game</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {gameTypes.map((game) => (
+                <button
+                  key={game.id}
+                  onClick={() => handleGameSelect(game.id)}
+                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-6 text-left border-2 border-transparent hover:border-purple-300"
+                >
+                  <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${game.color} rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity`} />
+                  <div className="relative">
+                    <div className="text-5xl mb-3">{game.icon}</div>
+                    <h4 className="text-xl font-bold text-gray-800 mb-2">{game.name}</h4>
+                    <p className="text-sm text-gray-600">{game.desc}</p>
+                    <div className="mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform inline-block">
+                      Play Now →
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -129,7 +180,7 @@ const QuizTab = () => {
   }
 
   if (!gameData || !gameData.rounds || gameData.rounds.length === 0) {
-    return (
+    return (Play Another Game
       <div className="flex items-center justify-center h-full">
         <p className="text-gray-500">Loading game data...</p>
       </div>

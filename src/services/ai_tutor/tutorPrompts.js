@@ -1729,14 +1729,14 @@ GAME RULES BY TYPE:
 📋 OUTPUT FORMAT (STRICT JSON):
 {
   "game_type": "${selectedGame}",
-  "intro_text": "Short intro from Ms. Nova (1-2 sentences, Vietnamese OK). Example: 'Chào em! Hôm nay chúng ta chơi trò Thám tử Emoji! 🕵️‍♀️ Hãy đoán từ vựng qua hình ảnh nhé!'",
+  "intro_text": "Short intro from Ms. Nova in ENGLISH (1-2 sentences). Example: 'Hello! Let's play Emoji Detective! 🕵️‍♀️ Guess the word from the pictures!'",
   "rounds": [
     {
       "question": "The challenge content (emoji string / wrong sentence / scrambled words / statement)",
       "correct_answer": "The correct answer (lowercase for vocab, exact sentence for grammar)",
       "options": ["Option 1", "Option 2", "Option 3", "Option 4"],  // Only for emoji_detective and true_false
-      "explanation": "Brief explanation in Vietnamese (1 sentence)",
-      "hint": "Optional hint for harder questions (Vietnamese OK)"
+      "explanation": "Brief explanation in ENGLISH (1 sentence)",
+      "hint": "Optional hint for harder questions in ENGLISH"
     }
     // ... 4 more rounds (total 5)
   ]
@@ -1746,7 +1746,7 @@ GAME RULES BY TYPE:
 - Create EXACTLY 5 rounds
 - Use ONLY vocabulary from the VOCABULARY POOL provided
 - Keep language simple (A0 level - Age 6-8)
-- Explanations MUST be in Vietnamese
+- ALL TEXT MUST BE IN ENGLISH - intro_text, explanation, hint
 - Make it FUN and engaging (use emojis, playful tone)
 - For emoji_detective: Use 2-4 emojis per puzzle
 - For broken_robot: Only ONE grammar mistake per sentence
