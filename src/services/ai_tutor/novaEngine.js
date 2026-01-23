@@ -138,6 +138,9 @@ export class NovaEngine {
             console.log('🔧 Extracting JSON from ai_response field');
             let aiResponseText = rawResponse.ai_response;
             
+            console.log('🔍 ai_response type:', typeof aiResponseText);
+            console.log('🔍 ai_response preview:', typeof aiResponseText === 'string' ? aiResponseText.substring(0, 100) : aiResponseText);
+            
             // Parse the JSON string inside ai_response
             if (typeof aiResponseText === 'string') {
               // Remove markdown code blocks
@@ -147,12 +150,16 @@ export class NovaEngine {
               const firstBrace = aiResponseText.indexOf('{');
               const lastBrace = aiResponseText.lastIndexOf('}');
               
-              if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
-                aiResponseText = aiResponseText.substring(firstBrace, lastBrace + 1);
-                console.log('🔧 Extracted JSON from position', firstBrace, 'to', lastBrace);
-              }
+              console.log('🔍 JSON positions: first { at', firstBrace, ', last } at', lastBrace);
               
-              gameJson = JSON.parse(aiResponseText);
+              if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+                const extractedJson = aiResponseText.substring(firstBrace, lastBrace + 1);
+                console.log('🔧 Extracted JSON preview:', extractedJson.substring(0, 100));
+                gameJson = JSON.parse(extractedJson);
+              } else {
+                console.warn('⚠️ Could not find JSON braces, trying direct parse');
+                gameJson = JSON.parse(aiResponseText);
+              }
             } else {
               gameJson = aiResponseText; // Already object
             }

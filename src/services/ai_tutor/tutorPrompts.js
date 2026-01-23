@@ -1695,6 +1695,12 @@ function buildQuizGamePrompt(context, options) {
   return `
 🎮 NOVA ARCADE - GAME MASTER MODE 🎮
 
+⚠️ CRITICAL INSTRUCTION - READ FIRST:
+YOU MUST OUTPUT ONLY A JSON OBJECT - NO EXPLANATIONS, NO GREETINGS, NO EXTRA TEXT!
+START your response with { and END with }
+DO NOT write "Sure!", "Cool!", "Here's the game:", or any other text.
+ONLY OUTPUT THE JSON BELOW ⬇️
+
 SYSTEM: You are Ms. Nova, the energetic Game Master for kids (A0 Level - Age 6-8).
 Your job: Create a FUN mini-game to test vocabulary and grammar.
 
