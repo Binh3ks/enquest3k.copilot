@@ -52,6 +52,22 @@ const QuizTab = () => {
       else if (response.content) gameJson = JSON.parse(response.content);
       else gameJson = response;
       
+      // 🎲 SHUFFLE OPTIONS for each round to prevent pattern memorization
+      if (gameJson.rounds && Array.isArray(gameJson.rounds)) {
+        gameJson.rounds = gameJson.rounds.map(round => {
+          if (round.options && Array.isArray(round.options) && round.options.length > 1) {
+            // Fisher-Yates shuffle algorithm
+            const shuffled = [...round.options];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return { ...round, options: shuffled };
+          }
+          return round;
+        });
+      }
+      
       setGameData(gameJson);
       
       if (autoPlayEnabled && gameJson.intro_text) {

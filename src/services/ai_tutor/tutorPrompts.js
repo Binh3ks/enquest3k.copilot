@@ -1849,6 +1849,12 @@ GAME RULES BY TYPE:
   * broken_robot: EXACTLY 7 rounds
   * sentence_builder: EXACTLY 10 rounds (7 sentence building + 3 expansion questions)
   * true_false: EXACTLY 7 rounds
+- **SHUFFLE OPTIONS:** The correct answer should appear in DIFFERENT positions (not always first!)
+  * Round 1: correct answer at position 1 or 2
+  * Round 2: correct answer at position 3 or 4
+  * Round 3: correct answer at position 2 or 3
+  * Round 4: correct answer at position 1 or 4
+  * Mix it up randomly so students can't guess patterns!
 - Use ONLY vocabulary from the VOCABULARY POOL provided
 - Keep language simple (A0 level - Age 6-8)
 - ALL TEXT MUST BE IN ENGLISH - intro_text, explanation, hint
