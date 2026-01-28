@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎭 Clear Roleplay Fix - Jan 27</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 0;
+      width: 100%;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #ee5a5a;
+      transform: scale(1.02);
+    }
+    .success {
+      background: #51cf66;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: none;
+    }
+    .info {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+    ul {
+      text-align: left;
+      margin: 10px 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎭 Roleplay System Fix - Jan 27</h1>
+    
+    <div class="info">
+      <h3>🔧 ĐÃ SỬA:</h3>
+      <ul>
+        <li>✅ FreeTalkTab.jsx dùng weekRealData.roleplay_scenarios (không dùng dynamicRoleplays.js nữa)</li>
+        <li>✅ Bỏ hardcoded roleIdMap - tìm scenario động qua title_en</li>
+        <li>✅ UI hiện 4 roleplays (không còn giới hạn 3)</li>
+        <li>✅ Dùng title_vi/title_en thay vì label_vi/label_en</li>
+      </ul>
+      
+      <h3>🎯 KẾT QUẢ SAU KHI CLEAR:</h3>
+      <ul>
+        <li><strong>Week 4:</strong> 4 roleplays mới (Happiness Interviewer, Emotion Teacher, Activity Suggester, Happiness Collector)</li>
+        <li><strong>Week 6:</strong> 4 roleplays với strict guide_rules & role reversal</li>
+        <li><strong>Week 7:</strong> 4 roleplays enforce "There is a..." pattern</li>
+      </ul>
+    </div>
+
+    <button onclick="clearAll()">🗑️ CLEAR ALL STORAGE - ROLEPLAY FIX</button>
+    
+    <div class="success" id="successMsg">
+      <h2>✅ Done!</h2>
+      <p><strong>Reload page để test:</strong></p>
+      <ol style="text-align: left;">
+        <li>Week 4 → Free Talk → Role Play</li>
+        <li>Kiểm tra: Phải có 4 buttons (không phải 3)</li>
+        <li>Click "Happiness Interviewer 🎤"</li>
+        <li>AI phải hỏi: "Welcome to Happy TV! 🎤 What do you like doing?"</li>
+        <li>AI chỉ hỏi về "I like + V-ing" (KHÔNG hỏi về house/rooms)</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    function clearAll() {
+      // Clear localStorage
+      localStorage.clear();
+      
+      // Clear sessionStorage
+      sessionStorage.clear();
+      
+      // Clear IndexedDB
+      if (window.indexedDB) {
+        indexedDB.databases().then(databases => {
+          databases.forEach(db => {
+            indexedDB.deleteDatabase(db.name);
+          });
+        });
+      }
+      
+      // Clear cookies
+      document.cookie.split(";").forEach(function(c) { 
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+      });
+      
+      // Clear cache
+      if ('caches' in window) {
+        caches.keys().then(names => {
+          names.forEach(name => caches.delete(name));
+        });
+      }
+      
+      console.log('🗑️ All storage cleared for roleplay fix!');
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

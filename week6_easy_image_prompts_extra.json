@@ -1,0 +1,37 @@
+[
+  {
+    "file_name": "wordpower_under_the_bed.jpg",
+    "positive_prompt": "Low angle view from the floor, a colorful ball resting on the floor, wooden bed frame above, shadows, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "wordpower_in_the_bag.jpg",
+    "positive_prompt": "Isometric view, an open school bag, a toy sitting deep inside the bag, visible zipper and pockets, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "wordpower_on_the_desk.jpg",
+    "positive_prompt": "Side view, a book resting on top of a wooden desk, book clearly touching the desk surface, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "toy.jpg",
+    "positive_prompt": "A cute toy robot with friendly face, simple shapes, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "ball.jpg",
+    "positive_prompt": "A colorful ball resting on a clean floor, simple flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "read_cover_w06.jpg",
+    "positive_prompt": "A group of children searching for a toy, one child holding a map, another with a magnifying glass, bright pastel colors, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "explore_cover_w06.jpg",
+    "positive_prompt": "Children using binoculars and magnifying glass, searching for clues, simple props, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  }
+]

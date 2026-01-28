@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Week 7 Cache - Jan 26</title>
+</head>
+<body>
+    <h1>Clearing Week 7 Cache...</h1>
+    <div id="status"></div>
+    <script>
+        const status = document.getElementById('status');
+        
+        // Clear all localStorage
+        localStorage.clear();
+        status.innerHTML += '<p>âœ… localStorage cleared</p>';
+        
+        // Clear all sessionStorage
+        sessionStorage.clear();
+        status.innerHTML += '<p>âœ… sessionStorage cleared</p>';
+        
+        // Clear IndexedDB
+        if (window.indexedDB) {
+            indexedDB.databases().then((databases) => {
+                databases.forEach((db) => {
+                    indexedDB.deleteDatabase(db.name);
+                    status.innerHTML += `<p>âœ… IndexedDB "${db.name}" deleted</p>`;
+                });
+            });
+        }
+        
+        // Clear caches
+        if ('caches' in window) {
+            caches.keys().then((names) => {
+                names.forEach(name => {
+                    caches.delete(name);
+                                              … Cache "$ name}"                                  
+                        }
+                 status.innerHTML += '<p style="color: green; font-weight: b    ">ðŸŽ                 status.innerHT                    status.inlose                 status.innerHTML += '<p style="color: green;dy>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear Cache - Week 7 AI Tutor Test</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .status {
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .success {
+      background: #d4edda;
+      color: #155724;
+    }
+    .info {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .warning {
+      background: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+    ul {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧹 Clear Cache - Week 7 AI Tutor Test</h1>
+    
+    <div class="warning">
+      <strong>⚠️ FINAL FIXES (JAN 26 - 2:20 PM):</strong>
+      <ul>
+        <li>✅ <strong>REMOVED all name questions</strong> from ALL 3 missions</li>
+        <li>✅ <strong>ADDED 4 roleplay scenarios</strong> with proper vocab focus</li>
+        <li>✅ Backpack Checker: Checklist game with "There is a..."</li>
+        <li>✅ Classroom Pointer: Pointing game with clear pattern</li>
+        <li>✅ Supply Shopping: Shopping with proper questions (NOT "what do you think?")</li>
+        <li>✅ Classroom Helper: Finding items game</li>
+        <li>✅ All roleplays have backup_questions to prevent random talk</li>
+      </ul>
+    </div>
+    
+    <div class="info status">
+      📦 This will clear ALL cached data for Week 6 & 7 AI Tutor
+    </div>
+    
+    <button onclick="clearAll()">Clear All Cache</button>
+    <button onclick="window.location.href='http://localhost:5174/week/7'">Go to Week 7</button>
+    
+    <div id="result"></div>
+    
+    <div class="warning" style="margin-top: 20px;">
+      <strong>🧪 TEST CHECKLIST:</strong>
+      <ul>
+        <li>[ ] <strong>Story Mission 1-3: NO "What's your name?" at start</strong></li>
+        <li>[ ] Free Talk Roleplays: 4 scenarios available (Backpack Checker, Classroom Pointer, Supply Shopping, Classroom Helper)</li>
+        <li>[ ] Each roleplay starts with CLEAR question with OPTIONS (A, B, or C?)</li>
+        <li>[ ] Hints match the opening question</li>
+        <li>[ ] AI uses backup_questions when student goes off-topic</li>
+        <li>[ ] Student practices "There is a..." pattern in every game</li>
+        <li>[ ] NO random questions like "What do you think?" or "Do you like animals?"</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    function clearAll() {
+      const result = document.getElementById('result');
+      let cleared = [];
+      
+      // Clear localStorage
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && (
+          key.includes('week-6') || 
+          key.includes('week-7') ||
+          key.includes('Week 6') ||
+          key.includes('Week 7') ||
+          key.includes('ai-tutor') ||
+          key.includes('story-mission') ||
+          key.includes('turnManager') ||
+          key.includes('objectives')
+        )) {
+          keysToRemove.push(key);
+        }
+      }
+      
+      keysToRemove.forEach(key => {
+        localStorage.removeItem(key);
+        cleared.push(key);
+      });
+      
+      // Clear sessionStorage
+      const sessionKeys = [];
+      for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        if (key && (
+          key.includes('week-6') || 
+          key.includes('week-7') ||
+          key.includes('Week 6') ||
+          key.includes('Week 7') ||
+          key.includes('ai-tutor') ||
+          key.includes('story-mission') ||
+          key.includes('turnManager')
+        )) {
+          sessionKeys.push(key);
+        }
+      }
+      
+      sessionKeys.forEach(key => {
+        sessionStorage.removeItem(key);
+        cleared.push(key);
+      });
+      
+      // Show result
+      result.innerHTML = `
+        <div class="success status">
+          ✅ Cleared ${cleared.length} items!
+          <br><br>
+          <strong>Now refresh the page (F5) and go to Week 7 AI Tutor!</strong>
+        </div>
+        <details style="margin-top: 15px;">
+          <summary>Show cleared items</summary>
+          <pre style="background: #f8f9fa; padding: 10px; border-radius: 5px; max-height: 300px; overflow-y: auto;">
+${cleared.map((k, i) => `${i+1}. ${k}`).join('\n')}
+          </pre>
+        </details>
+      `;
+    }
+  </script>
+</body>
+</html>

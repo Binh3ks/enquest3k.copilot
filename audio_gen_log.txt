@@ -1,0 +1,9 @@
+[dotenv@17.2.3] injecting env (6) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+🔊 AUDIO GENERATOR FOR WEEK 06
+  🗣️  Vocab: Found 20 words
+
+  📖 Generating Story Audio...
+
+  ✍️  Dictation: Found 14 sentences
+
+✅ Done. Check public/audio/week_06
