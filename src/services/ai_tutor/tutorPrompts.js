@@ -28,9 +28,13 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     console.log('  currentMission.story_character:', context.currentMission.story_character);
   }
   
-  // 🔥 PRIORITY 0: Handle STORY mode with STRICT character enforcement
+  // 🔥 PRIORITY 0: Handle STORY mode with story_character (both FREE TALK and STRUCTURED missions)
+  // This handles:
+  // - Week 5/6/7 FREE TALK: story_character without story_arc (free conversation about house/location/supplies)
+  // - Week 2/3 STRUCTURED: story_character WITH story_arc (game missions with phase_questions)
   if (mode === 'story' && context?.currentMission?.story_character) {
-    console.log('✅ PRIORITY 0 TRIGGERED - Ms. Nova character mode!');
+    const hasStoryArc = !!context?.currentMission?.story_arc;
+    console.log(`✅ PRIORITY 0 TRIGGERED - Ms. Nova character mode! (${hasStoryArc ? 'STRUCTURED with story_arc' : 'FREE TALK'})`);
 
     const char = context.currentMission.story_character;
     const mission = context.currentMission;
@@ -143,6 +147,36 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     // 🎮 GAME MISSIONS (Mission 2 & 3) - STRICT GRAMMAR ENFORCEMENT
     // ========================================
     if (isGameMission) {
+      // 🔥 ANTI-REPETITION: Extract questions already asked
+      const gameQuestionsAsked = conversationHistory
+        .filter(msg => msg.role === 'assistant' && msg.content?.includes('?'))
+        .map(msg => msg.content.toLowerCase());
+      
+      // 🔥 CRITICAL: Detect name question (most common repetition in game missions)
+      const nameAskedInGame = gameQuestionsAsked.filter(q => 
+        q.includes('your name') || q.includes("what's your name")
+      ).length;
+      
+      // Extract student name from conversation if provided
+      let studentName = null;
+      if (nameAskedInGame >= 1) {
+        const studentMessages = conversationHistory.filter(msg => msg.role === 'user');
+        if (studentMessages.length > 0) {
+          // Extract first user response after name question
+          const firstResponse = studentMessages[0]?.content || '';
+          if (firstResponse && firstResponse.length < 20) {
+            // Likely the student's name
+            studentName = firstResponse.trim();
+          }
+        }
+      }
+      
+      // Detect yes/no questions to avoid
+      const yesNoQuestionsAsked = gameQuestionsAsked.filter(q =>
+        (q.includes('do you like') || q.includes('do you have') || q.includes('are you')) &&
+        !q.includes(' or ')
+      ).length;
+      
       return `
 *** STRICT STORY CHARACTER MODE - GAME MISSION ***
 
@@ -151,6 +185,17 @@ PERSONALITY: ${char.personality}
 BACKSTORY: ${char.backstory}
 SPEAKING STYLE: ${char.speaking_style}
 
+🚨🚨🚨 ABSOLUTELY FORBIDDEN QUESTIONS - NEVER EVER ASK THESE: 🚨🚨🚨
+❌ "What do you think?" - FORBIDDEN!
+❌ "How do you feel?" - FORBIDDEN!
+❌ "Do you like...?" (without options) - FORBIDDEN!
+❌ "What can I do for you?" - FORBIDDEN!
+❌ "What can I help you with?" - FORBIDDEN!
+❌ Personal opinion/feeling questions - FORBIDDEN!
+❌ Breaking game character - FORBIDDEN!
+
+✅ ONLY ASK QUESTIONS FROM THE GAME SCRIPT BELOW!
+
 ${isOpeningTurn ? `
 🎬 THIS IS THE OPENING! USE THIS EXACT LINE:
 "${mission.opening_narrative}"
@@ -158,14 +203,124 @@ ${isOpeningTurn ? `
 Don't change it. Say it exactly as written above. Then STOP - wait for student's answer.
 ` : ''}
 
+${nameAskedInGame >= 1 && studentName ? `
+🎯 STUDENT NAME: ${studentName}
+🚫🚫🚫 CRITICAL: YOU ALREADY KNOW THE NAME IS "${studentName}"!
+NEVER ASK "What's your name?" AGAIN! NEVER REPEAT THE NAME TWICE!
+
+When addressing student:
+✅ CORRECT: "Welcome, ${studentName}! Let's explore the classroom!"
+❌ WRONG: "${studentName}${studentName}! What a great name!"
+❌ WRONG: "What's your name?" (already asked!)
+
+` : ''}
+
 🎯 YOUR MISSION: ${mission.title}
 GAME MECHANIC: ${mission.mission_context}
+
+📖 STORY ARC - ALL PHASES:
+${mission.story_arc ? mission.story_arc.map((phase, idx) => `
+Phase ${idx + 1}: ${phase.phase_name} (Turns ${phase.turns})
+Focus: ${phase.focus}
+Questions in this phase: ${phase.phase_questions?.length || 0}
+${phase.phase_questions ? phase.phase_questions.map((q, i) => `  ${i + 1}. ${q}`).join('\n') : ''}
+`).join('\n') : 'No story arc'}
 
 📖 CURRENT PHASE: ${currentPhase?.phase_name || 'Introduction'} (Turns ${currentPhase?.turns || '1-4'})
 PHASE FOCUS: ${currentPhase?.focus || 'Start the game'}
 
-🎮 PHASE QUESTIONS (Use these exact formats!):
+🔢 CONVERSATION STATE TRACKING:
+Current Turn Number: ${context.chatHistory ? Math.floor(context.chatHistory.length / 2) + 1 : 1}
+Student's Last Answer: "${context.userMessage || '(none)'}"
+Total Student Turns So Far: ${context.chatHistory ? Math.floor(context.chatHistory.length / 2) : 0}
+
+📝 WHAT STUDENT HAS ALREADY ANSWERED (from chat history):
+${context.chatHistory ? context.chatHistory
+  .filter(msg => msg.role === 'user')
+  .map((msg, i) => `Turn ${i + 1}: Student said "${msg.content}"`)
+  .join('\n') : 'No previous answers'}
+
+🎯 PHASE PROGRESSION LOGIC:
+- Current phase: ${currentPhase?.phase_name}
+- Questions in current phase: ${currentPhase?.phase_questions?.length || 0}
+- Student has answered: ${Math.floor((context.chatHistory?.length || 0) / 2)} times
+- ${Math.floor((context.chatHistory?.length || 0) / 2) >= (currentPhase?.phase_questions?.length || 0) ? 
+    '⚠️ PHASE COMPLETE! Move to NEXT phase in story_arc!' : 
+    `Ask question ${Math.floor((context.chatHistory?.length || 0) / 2) + 1} from current phase`}
+
+🎯 NEXT QUESTION TO ASK:
+${(() => {
+  const studentTurns = Math.floor((context.chatHistory?.length || 0) / 2);
+  const questionsInPhase = currentPhase?.phase_questions?.length || 0;
+  
+  if (studentTurns < questionsInPhase) {
+    // Still in current phase
+    return currentPhase?.phase_questions?.[studentTurns] || 'No question available';
+  } else {
+    // Move to next phase
+    const currentPhaseIdx = mission.story_arc?.findIndex(p => p.phase === currentPhase?.phase) || 0;
+    const nextPhase = mission.story_arc?.[currentPhaseIdx + 1];
+    if (nextPhase) {
+      return `[MOVING TO NEXT PHASE: ${nextPhase.phase_name}]\n${nextPhase.phase_questions?.[0] || 'Continue naturally'}`;
+    } else {
+      return '[ALL PHASES COMPLETE! Wrap up the mission naturally]';
+    }
+  }
+})()}"
+
+${mission.objectives && mission.objectives.length > 0 ? `
+🎯 OBJECTIVES WITH HINTS (Use these hints in your response):
+${(() => {
+  const studentTurns = Math.floor((context.chatHistory?.length || 0) / 2);
+  const currentObjective = mission.objectives[Math.min(studentTurns, mission.objectives.length - 1)];
+  if (currentObjective?.question_variants && currentObjective.question_variants[0]) {
+    const variant = currentObjective.question_variants[0];
+    return `Current Step: ${currentObjective.stepKey}
+Question Variants Available:
+${currentObjective.question_variants.map((v, i) => `  Option ${i + 1}: ${v.question}\n  Hints: [${v.hints?.join(', ') || 'none'}]`).join('\n')}
+Target Keywords: [${currentObjective.target_keywords?.join(', ') || 'none'}]
+Success Criteria: ${currentObjective.success_criteria || 'Student answers appropriately'}`;
+  }
+  return 'No objectives with hints available';
+})()}
+` : ''}
+
+🔄 PLACEHOLDER REPLACEMENT INSTRUCTIONS:
+If the question above contains {student_answer}, replace it with the student's ACTUAL last answer.
+Example: 
+- Question template: "Good! She has {student_answer} hair!"
+- Student said: "curly"
+- Final output: "Good! She has curly hair!"
+
+CONTEXT FROM PREVIOUS TURNS:
+- If question says "(After student says curly/straight)", read what they ACTUALLY said
+- If question says "(After student says color)", use their color answer
+- ALWAYS acknowledge their EXACT words, don't make up different answers!
+
+🚨 CRITICAL INSTRUCTIONS:
+1. READ the student's last answer above: "${context.userMessage || '(none)'}"
+2. ACKNOWLEDGE what they ACTUALLY said (don't make up different answer!)
+3. Then ask the EXACT question listed in "EXACT QUESTION YOU MUST ASK NOW"
+4. NEVER repeat same question twice - check "WHAT STUDENT HAS ALREADY ANSWERED"
+5. If you already asked about eyes (Turn 3), DON'T ask about eyes again!
+
+PROGRESSION RULES:
+- Turn 1 (0 student answers) → Ask question index 0
+- Turn 2 (1 student answer) → Acknowledge their answer + Ask question index 1
+- Turn 3 (2 student answers) → Acknowledge + Ask question index 2
+- Turn 4 (3 student answers) → Acknowledge + Ask question index 3
+- NEVER GO BACKWARDS! Always move to NEXT question!
+
+🎮 ALL PHASE QUESTIONS (for reference):
 ${currentPhase?.phase_questions?.map((q, i) => `${i + 1}. ${q}`).join('\n') || 'No questions available'}
+
+🚨 RESPONSE FORMAT MUST BE:
+"[Acknowledge student's ACTUAL answer]! [Next question from list above]"
+
+EXAMPLE CORRECT FLOW:
+Student: "blue" → You: "Nice! Her eyes are blue! 👀 Does she wear glasses? Yes or no?"
+Student: "yes" → You: "I see! 👓 Is she your friend or your sister?"
+Student: "sister" → You: "Perfect! ❤️ [Move to next phase or new friend]"
 
 🎯 GRAMMAR PATTERN TO ENFORCE: "${grammarPattern}"
 TARGET VOCABULARY: ${targetVocab.join(', ')}
@@ -185,25 +340,71 @@ TARGET VOCABULARY: ${targetVocab.join(', ')}
    - If student says "There is a apple" → "Almost! It's 'There is AN apple' because apple starts with A!"
 
 🚫 FORBIDDEN - DON'T DO THIS:
-- Asking random questions outside the game (like "What is in your kitchen?")
+- "What do you think?" ← ABSOLUTELY FORBIDDEN!
+- "How do you feel?" ← ABSOLUTELY FORBIDDEN!
+- "What can I do for you?" ← ABSOLUTELY FORBIDDEN!
+- Asking random questions outside the game
 - Accepting short answers without full grammar pattern
 - Breaking character
 - Deviating from the story_arc phases
-- Adding "What do you think?" at the end (this stops the game flow!)
+- Adding vague questions that stop game flow
+- **REPEATING THE STUDENT'S NAME TWICE** (e.g., "HungHung" is WRONG!)
+${nameAskedInGame >= 1 ? `- **ASKING "What's your name?" AGAIN** (You already know it's ${studentName}!)\n` : ''}- **ASKING YES/NO QUESTIONS** without options (e.g., "Do you like classrooms?" is WRONG!)
 
-📝 RESPONSE FORMAT (ACK + RECAST + GAME QUESTION):
-1. **ACK:** "Yes!" or "Wow!" or "Great!"
-2. **RECAST:** Repeat student's answer as full sentence with "${grammarPattern}"
-3. **CONTINUE GAME:** Next question from phase_questions above
-4. **NO EXTRA QUESTIONS:** Don't add "What do you think?" or "How do you feel?" at the end
+🎯 QUESTION RULES:
+✅ CORRECT: "Do you like the classroom or the playground?" (forced choice)
+✅ CORRECT: "What do you see in the classroom?" (open-ended)
+❌ WRONG: "Do you like classrooms?" (yes/no)
+❌ WRONG: "Are you ready?" (yes/no)
+${yesNoQuestionsAsked >= 2 ? `\n⚠️ WARNING: You've asked ${yesNoQuestionsAsked} yes/no questions already! STOP asking yes/no questions!\n` : ''}
+
+📝 RESPONSE FORMAT (ACK + RECAST + NEXT ITEM):
+1. **ACK:** "Yes!" or "Great!" (1 word only!)
+2. **RECAST:** "There is a [item]!" (recast their answer as full pattern)
+3. **NEXT ITEM:** Introduce next object from phase: "There is a [new item] here!"
+4. **SIMPLE QUESTION:** "What is this?" or "Do you see it?"
+
+STRUCTURE: [ACK]! [RECAST]! [NEXT ITEM]! [SIMPLE QUESTION]?
+
+CORRECT EXAMPLES:
+Student: "classroom"
+You: "Classroom! Great! There is a chair here. What is this?"
+
+Student: "a tour"
+You: "A tour! Yes! There is a computer here. Do you see it?"
+
+Student: "desk"
+You: "Desk! There is a desk here! There is a book on it. What do you see?"
+
+CORRECT EXAMPLE (Mission 2 - Classroom Tour):
+Student: "hung"
+You: "Hung! Welcome! There is a whiteboard here. Do you see it?"
+
+WRONG EXAMPLE:
+Student: "hung"  
+You: "HungHung! Yes ! What a great name ! Welcome to my classroom ! Do you like classrooms?" ← TOO MANY WORDS! NAME REPEATED! YES/NO QUESTION!
 
 EXAMPLE (Mission 2 - Dark Room):
 Student: "a book"
-You: "A book! Yes, there is a book on the table! 📖 It's a good book! (Shine light on apple) 🍎 What is this red thing? There is AN..."
+You: "A book! Yes, there is a book on the table! 📖 (Shine light on apple) 🍎 What is this red thing?"
 
 EXAMPLE (Mission 3 - Mystery Box):
 Student: "cat"
-You: "A cat! Yes! There is a cat in the box! 🐱 Meow! I love cats! (Shake box - hear: Woof 🐕) What is this sound? There is..."
+You: "A cat! Yes! There is a cat in the box! 🐱 (Shake box - hear: Woof 🐕) What is this sound?"
+
+EXAMPLE (Student says their name):
+Student: "Hung"
+You: "Hung! Welcome! There is a whiteboard here. What do you see?"
+
+WRONG EXAMPLES (NEVER DO THIS!):
+❌ "HungHung! What a great name!" ← Name repeated twice!
+❌ "Yes ! What a great name ! Welcome to my classroom ! Do you like classrooms?" ← Too many sentences! Yes/no question!
+❌ "Are you ready for the tour or for a story?" ← NOT in phase_questions! Made up question!
+❌ "Are you ready for the tour?" ← Repeating same question! Stick to phase_questions!
+❌ "Classroom! Great! There is a chair here. Are you ready for the tour or for a story?" ← Wrong question format!
+
+✅ CORRECT FORMAT (SHORT AND DIRECT):
+[ACK]! [RECAST with "There is a..."]! [NEXT ITEM with "There is a..."]! [SIMPLE QUESTION]?
 
 🎯 HINTS GENERATION (CRITICAL!):
 Generate hints that help student form the COMPLETE sentence: "${grammarPattern}"
@@ -376,6 +577,13 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     🎓 HINTS INSTRUCTION:
     In suggested_hints array, provide ANSWER OPTIONS for YOUR question:
     
+    ${mission.objectives && mission.objectives.length > 0 ? `
+    🎯 USE THE HINTS FROM OBJECTIVES ABOVE!
+    - If the current objective has hints in question_variants, USE THOSE EXACT HINTS!
+    - Example: If hints are ["My", "mother", "is", "kind", "father"], return those exact words
+    - DON'T create new hints - use the ones provided in objectives section above!
+    ` : ''}
+    
     CRITICAL: Give ANSWER WORDS (vocabulary options), NOT question words!
     
     Examples:
@@ -398,9 +606,68 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     
     USER SAID: "${userInput}"
     
+    🚨🚨🚨 CRITICAL MANDATORY REQUIREMENT - DO NOT SKIP THIS: 🚨🚨🚨
+    
+    YOUR RESPONSE **MUST ALWAYS END WITH "?"** - THIS IS NON-NEGOTIABLE!
+    
+    ❌ WRONG: "Yes! I see! Welcome to the classroom !" (ends with ! - FORBIDDEN!)
+    ❌ WRONG: "Great! I see! Let's start !" (ends with ! - FORBIDDEN!)  
+    ❌ WRONG: "A book! There is a book." (ends with . - FORBIDDEN!)
+    
+    ✅ CORRECT: "Yes! I see! Welcome to the classroom! What is this?"
+    ✅ CORRECT: "Great! I see! Let's start! Do you see the whiteboard?"
+    ✅ CORRECT: "A book! There is a book on the desk. What else do you see?"
+    
+    STRUCTURE: [ACK]! [RECAST/OBSERVATION]! [NEW QUESTION]?
+    
+    If you respond without "?" at the end, the system will reject your response!
+    
+    🎮 GAME-SPECIFIC QUESTIONS FOR MISSION ${mission.mission_id}:
+    ${mission.mission_id === 2 ? `
+    - "What is this?" (pointing at item)
+    - "Do you see the [item]?"
+    - "What do you see here?"
+    - "Is this a [item] or a [item]?"
+    ` : mission.mission_id === 1 ? `
+    - "Is there a [item] in your backpack?"
+    - "Do you have a [item]?"
+    - "What is in your backpack?"
+    ` : `
+    - "What is in the box?"
+    - "Is there a [item]?"
+    - "Do you see a [item]?"
+    `}
+    
+    ${mission.objectives && mission.objectives.length > 0 ? `
+    🎯 JSON RESPONSE FORMAT (MANDATORY):
+    You MUST return valid JSON with these exact fields:
+    {
+      "ai_response": "Your question or response text (MUST end with ?)",
+      "suggested_hints": ["hint1", "hint2", "hint3", "hint4", "hint5"]
+    }
+    
+    CRITICAL INSTRUCTIONS FOR JSON RESPONSE:
+    1. "ai_response" field: Put your Ms. Nova response here
+       - Use the phase_question text above as guidance
+       - Acknowledge student's answer first
+       - Then ask the next question
+       - MUST end with "?"
+    
+    2. "suggested_hints" field: Use the hints from objectives section above
+       - Copy the exact hints from current objective's question_variants
+       - If no objective hints available, extract answer words from your question
+       - Example: ["My", "mother", "is", "kind", "father"]
+    
+    EXAMPLE CORRECT JSON:
+    {
+      "ai_response": "Yes! Your mother is kind! ❤️ What is your mother like? Say: My mother is kind OR My mother is nice",
+      "suggested_hints": ["My", "mother", "is", "kind", "nice"]
+    }
+    ` : ''}
+    
     RESPOND AS ${char.name} (NOT as Ms. Nova or teacher):
     {
-      "ai_response": "Your response as ${char.name} (must end with ?)",
+      "ai_response": "Your response as ${char.name} (MUST end with ? - THIS IS MANDATORY!)",
       "suggested_hints": ["words", "to", "answer", "your", "question"]
     }
     `;
@@ -445,6 +712,8 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     - Keep responses SHORT (under 12 words per sentence).
     - Use A0-A1 (Beginner) English vocabulary only.
     - 🚨 MANDATORY: ALWAYS end your turn with a simple question related to the scenario.
+    - 🚨 ROLEPLAY MUST LAST 10-15 TURNS MINIMUM - Keep asking follow-up questions!
+    - Use backup_questions below if you run out of ideas.
     - If the user says "no" or disagrees, suggest an alternative immediately.
     - DO NOT be polite like a teacher. Act like your character: ${s.ai_role}.
     
@@ -852,16 +1121,26 @@ function buildStoryMissionPrompt(context, userInput, options) {
   // 🔥 FIX: Use missionId from options (passed from novaEngine contextParams)
   const missionId = options.missionId || (options.missionIndex !== undefined ? options.missionIndex + 1 : 1);
   
+  // 🔥 NEW: Check if mission has story_character (Priority 0 - Artifact v5.0)
+  const hasStoryCharacter = mission.story_character && mission.story_arc;
+  
   // 🔥 ONE BRAIN: Get TurnManager from context (NEVER create new instance)
   const turnManager = context.turnManager;
   
-  if (!turnManager) {
-    const error = '❌ FATAL: buildStoryMissionPrompt requires turnManager in context';
+  if (!turnManager && !hasStoryCharacter) {
+    const error = '❌ FATAL: buildStoryMissionPrompt requires turnManager in context (unless story_character mode)';
     console.error(error);
     throw new Error(error);
   }
   
-  // Update turn manager with user input
+  // 🔥 PRIORITY 0: If mission has story_character, this should NOT be called
+  // because Priority 0 in buildPrompt handles it. But if somehow we got here, throw error
+  if (hasStoryCharacter) {
+    console.error('❌ buildStoryMissionPrompt called for story_character mission - should use Priority 0!');
+    throw new Error('buildStoryMissionPrompt should not be called for story_character missions - use Priority 0 in buildPrompt');
+  }
+  
+  // Update turn manager with user input (only for non-story-character missions)
   if (userInput && turnNumber > 1) {
     turnManager.captureStudentName(userInput);
   }
@@ -1738,9 +2017,37 @@ GAME RULES BY TYPE:
    - options: ["bed", "chair", "table", "sofa"]
 
 2️⃣ "broken_robot" 🤖 (Grammar correction - MULTIPLE CHOICE FORMAT)
-   - Show a sentence with ONE grammar mistake
+   - Show a sentence with ONE grammar mistake related to WEEK ${context.weekId} GRAMMAR
    - Provide 4 options: 3 variations + 1 correct sentence
-   - Example Round:
+   
+   🎯 **CRITICAL: USE WEEK-SPECIFIC GRAMMAR PATTERN!**
+   Grammar pattern for Week ${context.weekId}: "${grammarPattern}"
+   
+   Example Rounds Based on Grammar:
+   
+   **IF GRAMMAR IS "There is a..." (Week 7):**
+     question: "There [is] an eraser."
+     correct_answer: "There is an eraser."
+     options: [
+       "There is an eraser.",
+       "There is a eraser.", 
+       "There are an eraser.",
+       "There eraser."
+     ]
+     explanation: "We use 'an' before vowel sounds like 'eraser'."
+   
+   **IF GRAMMAR IS "Prepositions (in/on/under/next to)" (Week 6):**
+     question: "The treasure is [at] the desk."
+     correct_answer: "The treasure is on the desk."
+     options: [
+       "The treasure is on the desk.",
+       "The treasure is at the desk.",
+       "The treasure is in the desk.",
+       "The treasure is under the desk."
+     ]
+     explanation: "We use 'on' when something is on top of a surface."
+   
+   **IF GRAMMAR IS "A/An" (Week 5):**
      question: "This [is] an table."
      correct_answer: "This is a table."
      options: [
@@ -1750,9 +2057,11 @@ GAME RULES BY TYPE:
        "This is table."
      ]
      explanation: "We use 'a' before 't' sound, not 'an'."
+   
    - Mark the wrong word in [brackets] in the question
    - Options must include the EXACT correct sentence
-   - Use simple grammar: a/an, is/are, has/have, singular/plural
+   - **MUST USE WEEK ${context.weekId} GRAMMAR PATTERN: "${grammarPattern}"**
+   - Use ONLY vocabulary from Week ${context.weekId}: ${vocabSample}
 
 3️⃣ "sentence_builder" 🧱 (Sentence construction with EXPANSION - 10 rounds)
    - First 7 rounds: Scrambled words with 4 sentence options

@@ -11,7 +11,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_shadowing');
   
   // Get script BEFORE any useState (to avoid hooks order issues)
-  const script = data?.script || [];
+  const script = data?.script || data?.sentences || [];
   
   const [hideText, setHideText] = useState(false);
   const [activeSentence, setActiveSentence] = useState(null);
@@ -80,22 +80,24 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
   // Early return AFTER all hooks
   if (!data || !script.length) return <div>Loading Script...</div>;
 
-  const handlePlayOne = (text, url, id) => {
+  const handlePlayOne = (textObj, url, id) => {
     // Always play the ORIGINAL TTS, not the recording
     setIsPlayingAll(false);
     setActiveSentence(id);
+    const text = typeof textObj === 'string' ? textObj : (textObj?.text_en || textObj?.text || '');
     speakText(text.replace(/\*\*/g, ''), url, 0.8, () => setActiveSentence(null));
   };
 
   const playSequence = (index) => {
-    if (index >= data.script.length) {
+    if (index >= script.length) {
       setIsPlayingAll(false);
       setActiveSentence(null);
       return;
     }
-    const s = data.script[index];
+    const s = script[index];
     setActiveSentence(s.id);
-    speakText(s.text.replace(/\*\*/g, ''), s.audio_url, 0.8, () => {
+    const text = s.text_en || s.text || '';
+    speakText(text.replace(/\*\*/g, ''), s.audio_url, 0.8, () => {
       playSequence(index + 1); 
     });
   };
@@ -357,7 +359,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-6 transition-all ${hideText ? 'blur-md select-none' : ''}`}>
         <h3 className="text-xs font-bold uppercase text-slate-400 mb-2 tracking-wider">Full Text</h3>
         <p className="text-2xl text-slate-700 leading-loose text-justify font-medium">
-            {data.script.map((s, i) => <span key={i}>{renderStyledText(s.text)} </span>)}
+            {script.map((s, i) => <span key={i}>{renderStyledText(s.text_en || s.text)} </span>)}
         </p>
       </div>
 
@@ -379,7 +381,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
             >
               {/* Original audio play button */}
               <button 
-                onClick={() => handlePlayOne(s.text, s.audio_url, s.id)}
+                onClick={() => handlePlayOne(s, s.audio_url, s.id)}
                 className={`p-2 rounded-full transition-colors shrink-0 ${
                   activeSentence === s.id ? `bg-${themeColor}-500 text-white` : 
                   'bg-slate-100 text-slate-400 hover:bg-slate-200'
@@ -390,9 +392,9 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
               </button>
 
               {/* Text content */}
-              <div className="flex-1 cursor-pointer" onClick={() => handlePlayOne(s.text, s.audio_url, s.id)}>
-                 <p className={`text-xl font-bold text-slate-800 ${hideText ? 'opacity-20 blur-[2px]' : ''}`}>{renderStyledText(s.text)}</p>
-                 {isVi && <p className="text-sm text-slate-500 italic mt-1">{s.vi}</p>}
+              <div className="flex-1 cursor-pointer" onClick={() => handlePlayOne(s, s.audio_url, s.id)}>
+                 <p className={`text-xl font-bold text-slate-800 ${hideText ? 'opacity-20 blur-[2px]' : ''}`}>{renderStyledText(s.text_en || s.text)}</p>
+                 {isVi && <p className="text-sm text-slate-500 italic mt-1">{s.text_vi || s.vi}</p>}
               </div>
 
               {/* Recording controls */}

@@ -1,59 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { Volume2, Zap, Globe, CheckCircle, Edit3, BookOpen, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
-import { useStationProgress } from '../../hooks/useStationProgress';
 
-const PowerCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [drill, setDrill] = useState(savedCardData?.drill || { copy1: '', copy2: '', copy3: '', definition: '', sentence: '' });
-  const [feedback, setFeedback] = useState(savedCardData?.feedback || { definition: null, sentence: null });
-  const [copyStatus, setCopyStatus] = useState(savedCardData?.copyStatus || { copy1: null, copy2: null, copy3: null });
-  const [isCompleted, setIsCompleted] = useState(savedCardData?.completed || false);
+const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [drill, setDrill] = useState({ copy1: '', copy2: '', copy3: '', definition: '', sentence: '' });
+  const [feedback, setFeedback] = useState({ definition: null, sentence: null });
+  const [copyStatus, setCopyStatus] = useState({ copy1: null, copy2: null, copy3: null });
+  const [isCompleted, setIsCompleted] = useState(false);
 
-  // FIX: Ưu tiên hiển thị Collocation (Phrase) ở phần Context để khớp với Audio Phrase
-  // Giai đoạn 1: Học Phrase -> Audio đọc Phrase -> Text hiển thị Phrase.
-  const targetDefinition = word.definition_en;
-  const targetContext = word.collocation || word.model_sentence || word.example; 
+  // FIX: Ưu tiên hiển thị Collocation (Phrase) ở phần Context để khớp với Audio Phrase
+  // Giai đoạn 1: Học Phrase -> Audio đọc Phrase -> Text hiển thị Phrase.
+  const targetDefinition = word.definition_en;
+  const targetContext = word.collocation_en || word.collocation || word.model_sentence_en || word.model_sentence || word.example_en || word.example;
   
   const isDefCorrect = feedback.definition?.isCorrect;
   const isSentCorrect = feedback.sentence?.isCorrect;
   const allCopyCorrect = copyStatus.copy1 && copyStatus.copy2 && copyStatus.copy3;
 
+  // Auto-complete when all drills done
   useEffect(() => {
-      if (allCopyCorrect && isDefCorrect && isSentCorrect && !isCompleted) {
-          setIsCompleted(true);
-          // Pass full card state up on completion
-          onComplete(word.id, {
-            drill,
-            feedback,
-            copyStatus,
-            completed: true
-          });
-      }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allCopyCorrect, isDefCorrect, isSentCorrect]);
+    if (allCopyCorrect && isDefCorrect && isSentCorrect && !isCompleted) {
+      setIsCompleted(true);
+      onComplete(word.id);
+    }
+  }, [allCopyCorrect, isDefCorrect, isSentCorrect, isCompleted, onComplete, word.id]);
 
-  // Propagate state up on any change
-  useEffect(() => {
-    onUpdate(word.id, {
-      drill,
-      feedback,
-      copyStatus,
-      completed: isCompleted
-    });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drill, feedback, copyStatus, isCompleted]);
-
-  const play = (e, text, url) => {
+  // Audio play function
+  const play = (e, text, audioUrl) => {
     e.stopPropagation();
-    speakText(text, url);
+    speakText(text, audioUrl);
   };
 
   const handleCopyCheck = (key, value) => {
-      const isCorrect = value.trim().toLowerCase() === word.word.toLowerCase();
-      setCopyStatus(prev => ({ ...prev, [key]: isCorrect }));
+    const isCorrect = value.trim().toLowerCase() === word.word.toLowerCase();
+    setCopyStatus(prev => ({ ...prev, [key]: isCorrect }));
   };
 
   const handleDefinitionCheck = () => {
@@ -67,45 +49,32 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
     if (!input) return;
     
     if (!input.toLowerCase().includes(word.word.toLowerCase())) {
-        setFeedback(prev => ({ ...prev, sentence: { isCorrect: false, status: 'wrong', message: isVi ? `Thiếu từ "${word.word}"` : `Missing "${word.word}"` } }));
-        return;
-    }
+        setFeedback(prev => ({ ...prev, sentence: { isCorrect: true, status: 'perfect', message: isVi ? 'Tuyệt vời!' : 'Excellent!' } }));
+    }
+  };
 
-    let warnings = [];
-    if (input.charAt(0) !== input.charAt(0).toUpperCase()) warnings.push(isVi ? "Viết hoa đầu câu" : "Capitalization");
-    if (!/[.?!]$/.test(input)) warnings.push(isVi ? "Dấu kết câu" : "Punctuation");
+  const getMessage = (res) => {
+    if (!res) return "";
+    if (res.status === 'empty') return isVi ? "Nhập nội dung..." : "Enter text.";
+    if (res.status === 'perfect') return isVi ? "Chính xác!" : "Correct!";
+    if (res.status === 'wrong') return isVi ? "Sai rồi." : "Incorrect.";
+    if (res.status === 'warning') return res.message || (isVi ? "Gần đúng." : "Close.");
+    return res.message || "";
+  };
 
-    if (warnings.length > 0) {
-        setFeedback(prev => ({ ...prev, sentence: { isCorrect: false, status: 'warning', message: isVi ? `Lỗi: ${warnings.join(', ')}` : `Check: ${warnings.join(', ')}` } }));
-    } else if (input.split(' ').length < 3) {
-        setFeedback(prev => ({ ...prev, sentence: { isCorrect: false, status: 'warning', message: isVi ? 'Câu quá ngắn' : 'Too short' } }));
-    } else {
-        setFeedback(prev => ({ ...prev, sentence: { isCorrect: true, status: 'perfect', message: isVi ? 'Tuyệt vời!' : 'Excellent!' } }));
-    }
-  };
-
-  const getMessage = (res) => {
-    if (!res) return "";
-    if (res.status === 'empty') return isVi ? "Nhập nội dung..." : "Enter text.";
-    if (res.status === 'perfect') return isVi ? "Chính xác!" : "Correct!";
-    if (res.status === 'wrong') return isVi ? "Sai rồi." : "Incorrect.";
-    if (res.status === 'warning') return res.message || (isVi ? "Gần đúng." : "Close.");
-    return res.message || "";
-  };
-
-  return (
-    <div className={`flex flex-col gap-4 transition-all duration-500 ${isCompleted ? 'opacity-50 grayscale hover:grayscale-0 hover:opacity-100' : ''}`}>
-      <div 
-       className={`relative w-full h-96 cursor-pointer group ${isFlipped ? 'z-50' : 'z-10'}`}
-       style={{ perspective: '1000px' }}
-       onClick={() => setIsFlipped(!isFlipped)}
-     >
-       <div 
-           className="relative w-full h-full transition-all duration-700"
-           style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
-       >
-         {/* FRONT */}
-         <div className="absolute inset-0 bg-teal-600 rounded-3xl shadow-xl border border-teal-500 flex flex-col overflow-hidden text-white" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
+  return (
+    <div className={`flex flex-col gap-4 transition-all duration-500 ${isCompleted ? 'opacity-50 grayscale hover:grayscale-0 hover:opacity-100' : ''}`}>
+      <div 
+        className={`relative w-full h-96 cursor-pointer group ${isFlipped ? 'z-50' : 'z-10'}`}
+        style={{ perspective: '1000px' }}
+        onClick={() => setIsFlipped(!isFlipped)}
+      >
+        <div 
+            className="relative w-full h-full transition-all duration-700"
+            style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
+        >
+          {/* FRONT */}
+          <div className="absolute inset-0 bg-teal-600 rounded-3xl shadow-xl border border-teal-500 flex flex-col overflow-hidden text-white" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
            <div className="h-3/5 w-full relative p-6 flex items-center justify-center bg-teal-700/50">
                   {word.image_url ? (
                     <img src={word.image_url} alt={word.word} className="w-full h-full object-contain p-2 bg-white opacity-90 rounded-xl shadow-inner" />
@@ -212,50 +181,24 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
 };
 
 const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
-  const { weekId } = useParams();
-  
-  // 🔥 Universal Progress System
-  const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'game_word_power');
-  
-  // State for all cards is now managed here
-  const [cardsData, setCardsData] = useState(savedData.cards || {});
+  const [completedIds, setCompletedIds] = useState([]);
 
-  const wordList = data?.words || [];
+  if (!data || !data.words) return <div>Loading Power...</div>;
 
-  // Auto-save when cardsData changes
-  useEffect(() => {
-    if (Object.keys(cardsData).length > 0) {
-      const completedWords = Object.keys(cardsData).filter(id => cardsData[id].completed);
-      const percent = Math.round((completedWords.length / wordList.length) * 100);
-      const isComplete = completedWords.length === wordList.length;
-      
-      saveProgress({ cards: cardsData, completedWords }, isComplete, percent);
-      
-      if (isComplete) {
-        markComplete(100);
-      }
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardsData]);
+  const handleCardComplete = (id) => {
+      setCompletedIds(prev => {
+          if (prev.includes(id)) return prev;
+          const newCompleted = [...prev, id];
+          // Report Progress
+          const percent = Math.round((newCompleted.length / data.words.length) * 100);
+          if (onReportProgress) onReportProgress(percent);
+          return newCompleted;
+      });
+  };
 
-  const handleCardUpdate = (id, data) => {
-    setCardsData(prev => ({
-      ...prev,
-      [id]: data
-    }));
-  };
-
-  const handleCardComplete = (id, data) => {
-    handleCardUpdate(id, data);
-  };
-
-  if (!wordList.length) return <div>Loading Power...</div>;
-
-  const completedCount = Object.values(cardsData).filter(c => c.completed).length;
-
-  return (
-    <div className="pb-24">
-      <div className="bg-teal-50 p-6 rounded-2xl border-2 border-teal-100 mb-8 flex justify-between items-center shadow-sm">
+  return (
+    <div className="pb-24">
+      <div className="bg-teal-50 p-6 rounded-2xl border-2 border-teal-100 mb-8 flex justify-between items-center shadow-sm">
        <div>
             <h2 className="text-2xl font-black text-teal-800 uppercase flex items-center">
                 Word Power
@@ -268,26 +211,18 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
        <div className="text-right flex flex-col items-center">
             <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">Progress</span>
             <div className="text-3xl font-black text-teal-500">
-                {completedCount}/{wordList.length}
+                {completedIds.length}/{data.words.length}
             </div>
        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2">
-        {wordList.map(w => (
-          <PowerCard 
-            key={w.id} 
-            word={w} 
-            themeColor={themeColor} 
-            isVi={isVi} 
-            onComplete={handleCardComplete}
-            onUpdate={handleCardUpdate}
-            savedCardData={cardsData[w.id]}
-          />
-        ))}
-      </div>
-      {/* DEBUG: Hiển thị trạng thái Audio để kiểm tra lỗi file câm Tuần 2 */}
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2">
+       {data.words.map(w => (
+            <PowerCard key={w.id} word={w} themeColor={themeColor} isVi={isVi} onComplete={handleCardComplete} />
+       ))}
+      </div>
+      {/* DEBUG: Hiển thị trạng thái Audio để kiểm tra lỗi file câm Tuần 2 */}
+    </div>
   );
 };
 export default WordPower;

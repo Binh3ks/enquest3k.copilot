@@ -144,7 +144,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                      <span>Done</span>
                    </div>
                  )}
-                 <button onClick={() => speakText(s.text, s.audio_url)} className={`p-3 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-transform shadow-lg`}>
+                 <button onClick={() => speakText(s.text_en || s.text, s.audio_url)} className={`p-3 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-transform shadow-lg`}>
                    <Volume2 className="w-5 h-5" />
                  </button>
                </div>
@@ -153,7 +153,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
            <div className="space-y-3">
                {level === 1 && (
                    <div className="flex flex-wrap gap-2 mb-2">
-                       {s.text.replace(/[.,?!]$/g, '').replace(/[,?!]/g, '').split(' ').sort(() => Math.random() - 0.5).map((w, i) => (
+                       {(s.text_en || s.text || '').replace(/[.,?!]$/g, '').replace(/[,?!]/g, '').split(' ').sort(() => Math.random() - 0.5).map((w, i) => (
                            <span key={i} className="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded text-base font-medium select-none text-slate-600">
                                {w}
                            </span>
@@ -162,8 +162,8 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                )}
                
                {level === 2 && (
-                   <p className="text-xl text-slate-500 font-mono bg-slate-50 p-3 rounded-lg border-2 border-dashed border-slate-200 tracking-wide select-none">
-                       {getCloze(s.text)}
+                   <p className="text-xl text-slate-500 font-mono bg-slate-50 p-3 rounded-lg border-2 border-dashed border-slate-200 tracking-wide select-none text-slate-600">
+                       {getCloze(s.text_en || s.text)}
                    </p>
                )}
 
@@ -186,11 +186,11 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                            setFeedback(newFeedback);
                          }
                        }}
-                       onKeyDown={(e) => e.key === 'Enter' && handleCheck(s.id, s.text)}
+                       onKeyDown={(e) => e.key === 'Enter' && handleCheck(s.id, s.text_en || s.text)}
                        disabled={completedIds.has(s.id)}
                      />
                      <button 
-                       onClick={() => handleCheck(s.id, s.text)} 
+                       onClick={() => handleCheck(s.id, s.text_en || s.text)} 
                        className={`absolute right-2 top-2 bottom-2 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
                            completedIds.has(s.id) ? 'bg-green-500 text-white cursor-not-allowed' : `bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 active:bg-slate-100`
                        }`}

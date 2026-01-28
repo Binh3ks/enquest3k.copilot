@@ -14,10 +14,11 @@ import week2RealData from '../../../data/weeks/week_02_real';
 import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
 import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
 import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
+import week6RealData from '../../../data/weeks/week_06_real'; // Week 6 syllabus
+import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import { FREE_TALK_ACTIONS, GAME_OPTIONS } from '../../../config/freeTalkConfig'; // 🎮 FREE TALK 3.0
-import { getRoleplaysForWeek } from '../../../config/dynamicRoleplays'; // 🎭 Dynamic Roleplays
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -47,15 +48,6 @@ const FreeTalkTab = () => {
   const [messageCount, setMessageCount] = useState(savedData.totalTurns || 0);
   const [initialized, setInitialized] = useState(false);
   
-  // 🎭 Get dynamic roleplays for current week
-  // Use the weekData that's already loaded by the component (week_05_real)
-  const weekDataForRoleplays = {
-    weekId: weekNumber,
-    theme: 'House & Rooms', // Will be dynamic from loaded week data
-    target_vocab: [] // Will be populated from context
-  };
-  const dynamicRoleplays = getRoleplaysForWeek(weekNumber, weekDataForRoleplays);
-  
   // 🎮 FREE TALK 3.0 STATE MANAGEMENT
   const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
   const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
@@ -70,7 +62,10 @@ const FreeTalkTab = () => {
   });
   
   // 🔥 Dynamic week data selection
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : week5RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : week5RealData;
+  
+  // 🎭 Get roleplays from weekRealData (NEW SYSTEM - NOT from dynamicRoleplays.js!)
+  const dynamicRoleplays = weekRealData?.roleplay_scenarios || [];
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -248,16 +243,10 @@ const FreeTalkTab = () => {
         console.log('🔍 DEBUG: START_ROLEPLAY detected, roleNameRaw:', roleNameRaw);
         console.log('🔍 DEBUG: weekRealData.roleplay_scenarios:', weekRealData.roleplay_scenarios);
         
-        // Find scenario in weekData
-        const roleIdMap = {
-          'room designer': 'rp_designer',
-          'house tour': 'rp_tour',
-          'furniture shop': 'rp_shop'
-        };
-        const roleId = roleIdMap[roleNameRaw?.toLowerCase()] || 'rp_designer';
-        console.log('🔍 DEBUG: Mapped roleId:', roleId);
-        
-        const scenario = weekRealData.roleplay_scenarios?.find(s => s.id === roleId);
+        // 🔥 NEW: Find scenario by title_en (NOT hardcoded roleIdMap!)
+        const scenario = weekRealData.roleplay_scenarios?.find(s => 
+          s.title_en?.toLowerCase() === roleNameRaw?.toLowerCase()
+        );
         console.log('🔍 DEBUG: Found scenario:', scenario);
         
         if (scenario) {
@@ -265,7 +254,7 @@ const FreeTalkTab = () => {
           effectiveScenario = scenario; // Update local variable IMMEDIATELY
           setActiveScenario(scenario);   // Also update state for next turn
         } else {
-          console.error('❌ Scenario NOT FOUND for roleId:', roleId);
+          console.error('❌ Scenario NOT FOUND for roleNameRaw:', roleNameRaw);
         }
       }
       // IMPORTANT: effectiveScenario is now correctly set regardless of setState async behavior
@@ -459,6 +448,9 @@ const FreeTalkTab = () => {
 
   // 🎮 FREE TALK 3.0 HANDLERS
   const handleActionClick = (actionId) => {
+    // 🔥 CRITICAL FIX: Clear game/roleplay state FIRST before any other actions
+    const wasInGameOrRoleplay = mode === 'playing_game' || mode === 'playing_roleplay';
+    
     // Reset turn count when switching modes
     setTurnCount(0);
     
@@ -468,14 +460,20 @@ const FreeTalkTab = () => {
     
     if (actionId === 'translate') {
       setMode('translation_help');
-      handleSendMessage('Translate this for me...');
+      // 🔥 FIX: Always trigger message even if coming from game/roleplay
+      setTimeout(() => handleSendMessage('Translate this for me...'), 50);
     } else if (actionId === 'play_game') {
       setMode('selecting_game');
     } else if (actionId === 'role_play') {
       setMode('selecting_roleplay');
     } else if (actionId === 'ask_any') {
       setMode('asking_any');
-      handleSendMessage('I have a question!');
+      setTimeout(() => handleSendMessage('I have a question!'), 50);
+    }
+    
+    // 🔥 If switching from game/roleplay, force refresh
+    if (wasInGameOrRoleplay) {
+      console.log(`🔄 Switching from ${mode} to ${actionId} - forcing state refresh`);
     }
   };
 
@@ -499,7 +497,7 @@ const FreeTalkTab = () => {
     const roleplay = dynamicRoleplays.find(r => r.id === roleplayId);
     if (roleplay) {
       // DON'T change mode yet - let AI response determine mode
-      handleSendMessage(`START_ROLEPLAY: ${roleplay.label_en}`);
+      handleSendMessage(`START_ROLEPLAY: ${roleplay.title_en}`);
       
       // Set mode AFTER message sent
       setTimeout(() => {
@@ -629,8 +627,8 @@ const FreeTalkTab = () => {
                   className="bg-gradient-to-br from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-pink-300"
                 >
                   <div className="text-3xl mb-2">{roleplay.emoji}</div>
-                  <div className="text-sm font-bold text-pink-800">{roleplay.label_vi}</div>
-                  <div className="text-xs text-pink-600 mt-1">{roleplay.label_en}</div>
+                  <div className="text-sm font-bold text-pink-800">{roleplay.title_vi}</div>
+                  <div className="text-xs text-pink-600 mt-1">{roleplay.title_en}</div>
                 </button>
               ))}
             </div>

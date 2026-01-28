@@ -115,16 +115,27 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       const gameNameRaw = userMessage.split(":")[1]?.trim() || "Game";
       
       // 🎮 NEW: Use gamePromptBuilder to inject weekly content
-      const weekData = context.weekData || { weekId: 5, theme: 'House & Rooms', target_vocab: [] };
+      const weekData = options.weekData || context.weekData || { week_id: 5, theme: 'House & Rooms', target_vocab: [] };
+      
+      console.log('🎮 START_GAME detected:', {
+        game: gameNameRaw,
+        weekId: weekData.week_id || weekData.weekId || 5,
+        hasWeekData: !!weekData,
+        vocabCount: weekData.target_vocab?.length || 0
+      });
       
       // Map game names to IDs
       const gameIdMap = {
         'word chain': 'word_chain',
         'nối từ': 'word_chain',
+        'wordchain': 'word_chain',
         '20 questions': 'twenty_questions',
         'đoán vật': 'twenty_questions',
+        'twentyquestions': 'twenty_questions',
+        '20questions': 'twenty_questions',
         'sentence builder': 'sentence_builder',
-        'xây câu': 'sentence_builder'
+        'xây câu': 'sentence_builder',
+        'sentencebuilder': 'sentence_builder'
       };
       
       const gameId = gameIdMap[gameNameRaw.toLowerCase()] || 'word_chain';
@@ -139,45 +150,44 @@ export function buildFreeTalkPrompt(mode, context, userMessage, options = {}) {
       SYSTEM_MODE: GAME_MASTER
       GAME: ${gamePrompt.gameName} ${gamePrompt.emoji}
       WEEK ${weekData.weekId} THEME: ${gamePrompt.theme}
-      VOCABULARY: ${gamePrompt.vocabulary.join(', ')}
+      
+      ⛔⛔⛔ ABSOLUTE VOCABULARY RESTRICTION ⛔⛔⛔
+      YOU MUST **ONLY** USE THESE EXACT WORDS: ${gamePrompt.vocabulary.join(', ')}
+      
+      FORBIDDEN WORDS - DO **NOT** USE:
+      ${weekData.weekId === 4 ? 'bedroom, kitchen, table, chair, sofa, lamp, door, window, dream, chair, cat, table' : 
+        weekData.weekId === 5 ? 'happy, sad, excited, playing, reading, jar, cat, dog, dream' :
+        'cat, dog, dream, rainbow, chair, table'}
+      
+      ✅ ALLOWED WORDS ONLY: ${gamePrompt.vocabulary.join(', ')}
       
       ${gamePrompt.aiPrompt}
       
-      🎯 CRITICAL FIRST MESSAGE (KEEP SHORT!):
-      1. Greet: "Let's play ${gamePrompt.gameName}! ${gamePrompt.emoji}"
-      2. Rule (1 sentence): "I say a word, you say a word starting with my word's last letter!"
-      3. Example: "Example: CAT → TABLE"
-      4. Start: "Round 1/20: I say [WORD]! Your turn!"
-      
       GAME MECHANICS:
-      - Play exactly 20 rounds per game
-      - Show "Round [X]/20" in EVERY response
-      - After Round 20/20: "Game Over! Great job! 🎉 Want to play again?"
       - Keep responses SHORT (1-2 sentences max)
-      - IF user says "I don't know"/"khó quá"/"gợi ý": Give 1-2 word choices
-      - IF correct: "Great! Round [X]/20: [next challenge]"
+      - IF user says "I don't know"/"khó quá"/"gợi ý": Give 1-2 word choices FROM VOCAB LIST
+      - IF correct: "Great! [next challenge]"
       - IF wrong: "Oops! [Why wrong]. Try again!"
       
-      ⛔⛔⛔ CRITICAL: VOCABULARY RESTRICTION ⛔⛔⛔
-      YOU ARE **ABSOLUTELY FORBIDDEN** FROM USING ANY WORDS NOT IN THIS LIST:
+      ⛔⛔⛔ ABSOLUTE ENFORCEMENT: VOCABULARY RESTRICTION ⛔⛔⛔
+      THESE ARE THE **ONLY** WORDS YOU CAN USE:
       ${gamePrompt.vocabulary.join(', ')}
       
-      ❌ EXAMPLES OF FORBIDDEN WORDS: rainbow, wish, elephant, car, sun, moon, star
+      DO NOT USE: cat, table (unless in vocab), chair (unless in vocab), dream, rainbow, bedroom (unless in vocab)
       ✅ ONLY USE: ${gamePrompt.vocabulary.join(', ')}
       
-      BEFORE YOU SAY ANY WORD IN THE GAME:
-      1. Check: Is this word in the vocabulary list?
-      2. If NO → DO NOT USE IT! Pick a different word from the list
+      BEFORE YOU SAY **ANY** WORD:
+      1. Ask yourself: Is this word in the list above?
+      2. If NO → **STOP! DO NOT USE IT!** Pick a word from the list
       3. If YES → Good! You can use it
       
-      FOR WORD CHAIN: If you need letter X and no vocab word starts with X:
-      - Use BEDROOM, KITCHEN, BATHROOM, LIVING ROOM, LAMP, SOFA, TABLE (these cover many letters)
-      - Or accept student's correct word and change to vocabulary word next turn
+      FOR WORD CHAIN: If no vocab word starts with needed letter, just pick ANY vocab word.
+      Example: Student says HAPPY (ends Y) → No vocab starts with Y → Just say EXCITED or READING
       
-      ACTION: Start Round 1/10 NOW with:
+      ACTION: Start Round 1/20 NOW with:
       1. Rule explanation
-      2. Example
-      3. First challenge with hints
+      2. Example using vocab words
+      3. First challenge with hints from vocab
       
       RESPOND IN THIS JSON FORMAT:
       {

@@ -1,17 +1,55 @@
 /**
  * Runtime Text-to-Speech for Story Mission
- * Generates personalized audio on-the-fly using OpenAI TTS API
+ * Generates personalized audio on-the-fly using OpenAI TTS API or Web Speech API (free fallback)
  * 
  * WHY: Story Mission text contains placeholders ({{name}}, {{age}}, etc.)
  * that change per student, so pre-generated audio doesn't work.
+ * 
+ * LAYERS:
+ * 1. OpenAI TTS API (premium quality, but costs money)
+ * 2. Web Speech API (free, browser built-in, good for Vietnamese ESL learners)
  */
 
 const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 const TTS_MODEL = 'tts-1'; // or 'tts-1-hd' for higher quality
 const DEFAULT_VOICE = 'shimmer'; // Clear, bright female voice for Vietnamese ESL learners
 
+// Check if Web Speech API is available
+const isWebSpeechAvailable = 'speechSynthesis' in window;
+
 /**
- * Generate TTS audio from text using OpenAI API
+ * Generate TTS audio using FREE Web Speech API (browser built-in)
+ * @param {string} text - Text to speak
+ * @param {object} options - Speech options
+ * @returns {Promise<void>} Resolves when speech finishes
+ */
+export async function generateWebSpeech(text, options = {}) {
+  if (!isWebSpeechAvailable) {
+    console.warn('⚠️ Web Speech API not available in this browser');
+    return null;
+  }
+
+  return new Promise((resolve, reject) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    
+    // Use English voice (best for ESL)
+    const voices = speechSynthesis.getVoices();
+    const englishVoice = voices.find(v => v.lang.startsWith('en-')) || voices[0];
+    
+    utterance.voice = englishVoice;
+    utterance.rate = options.speed || 0.9; // Slightly slower for learners
+    utterance.pitch = options.pitch || 1.0;
+    utterance.volume = options.volume || 1.0;
+    
+    utterance.onend = () => resolve();
+    utterance.onerror = (error) => reject(error);
+    
+    speechSynthesis.speak(utterance);
+  });
+}
+
+/**
+ * Generate TTS audio from text using OpenAI API (PREMIUM)
  * @param {string} text - Text to convert to speech (with placeholders already replaced)
  * @param {object} options - TTS options
  * @param {string} options.voice - Voice to use (nova, alloy, echo, fable, onyx, shimmer)
@@ -23,9 +61,17 @@ export async function generateTTS(text, options = {}) {
   const {
     voice = DEFAULT_VOICE,
     model = TTS_MODEL,
-    speed = 1.0
+    speed = 1.0,
+    useFree = false // Set to true to use Web Speech instead
   } = options;
 
+  // 🆓 FREE OPTION: Use Web Speech API if requested or OpenAI key missing
+  if (useFree || !OPENAI_API_KEY) {
+    console.log('🔊 Using FREE Web Speech API (browser built-in)');
+    return generateWebSpeech(text, { speed });
+  }
+
+  // 💰 PREMIUM: OpenAI TTS
   try {
     const response = await fetch('https://api.openai.com/v1/audio/speech', {
       method: 'POST',
@@ -44,14 +90,20 @@ export async function generateTTS(text, options = {}) {
     if (!response.ok) {
       const error = await response.json();
       console.error('OpenAI TTS API error:', error);
-      return null;
+      
+      // Fallback to free Web Speech
+      console.log('🔄 Falling back to FREE Web Speech API');
+      return generateWebSpeech(text, { speed });
     }
 
     const audioBuffer = await response.arrayBuffer();
     return new Blob([audioBuffer], { type: 'audio/mpeg' });
   } catch (error) {
     console.error('TTS generation failed:', error);
-    return null;
+    
+    // Fallback to free Web Speech
+    console.log('🔄 Falling back to FREE Web Speech API');
+    return generateWebSpeech(text, { speed });
   }
 }
 

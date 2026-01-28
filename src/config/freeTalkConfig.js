@@ -16,7 +16,7 @@ export const GAME_OPTIONS = [
     label_en: "Word Chain",
     label_vi: "Nối từ",
     icon: "🔗",
-    intro: "I say a word, you say a word starting with the LAST letter! I start: Do__g__. Your turn! (G...)"
+    intro: "I say a word, you say a word starting with the LAST letter! I start: Dog (ends with G). Your turn!"
   },
   {
     id: 'twenty_questions',
@@ -30,7 +30,7 @@ export const GAME_OPTIONS = [
     label_en: "Sentence Builder",
     label_vi: "Xây câu",
     icon: "🧩",
-    intro: "Let's build sentences together! I start with one word, you add the next!"
+    intro: "Let's build sentences together! Complete sentences using vocabulary words!"
   }
 ];
 

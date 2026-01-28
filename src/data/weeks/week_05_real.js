@@ -770,6 +770,8 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       {
         id: "rp_designer",
         title: "Room Designer 🎨",
+        title_en: "Room Designer",
+        title_vi: "Thiết kế phòng",
         emoji: "🎨",
         description: "Design a beautiful room for Ms. Nova!",
         
@@ -799,6 +801,8 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       {
         id: "rp_tour",
         title: "House Tour 🏠",
+        title_en: "House Tour",
+        title_vi: "Tham quan nhà",
         emoji: "🏠",
         description: "Show Ms. Nova your house!",
         
@@ -823,6 +827,8 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       {
         id: "rp_shop",
         title: "Furniture Shop 🛋️",
+        title_en: "Furniture Shop",
+        title_vi: "Cửa hàng nội thất",
         emoji: "🛋️",
         description: "Buy furniture with Ms. Nova at the shop!",
         

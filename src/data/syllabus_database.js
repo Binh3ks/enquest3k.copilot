@@ -5,7 +5,7 @@ const syllabusDB = {
   3: { title: "The Mirror Game", grammar: ["Adjectives (is vs has)"], math: ["Comparisons"], science: ["Senses - Sight"], topic: ["Appearance & Physical Traits"] },
   4: { title: "My Interests", grammar: ["Likes/Dislikes"], math: ["Sorting"], science: ["Healthy habits"], topic: ["Hobbies"] },
   5: { title: "My Study Space", grammar: ["Prepositions"], math: ["Shapes"], science: ["Materials"], topic: ["Furniture"] },
-  6: { title: "Describing My Room", grammar: ["There is/are"], math: ["Spatial awareness"], science: ["Day/Night"], topic: ["Bedroom"] },
+  6: { title: "Treasure Hunt at Home", grammar: ["Prepositions (In, On, Under, Next to)"], math: ["Spatial awareness"], science: ["Location"], topic: ["Hide and Seek"] },
   7: { title: "Tools for Learning", grammar: ["Articles"], math: ["Counting supplies"], science: ["Simple machines"], topic: ["Stationery"] },
   8: { title: "Classroom Inventory", grammar: ["Plurals"], math: ["Grouping"], science: ["Living/Non-living"], topic: ["Classroom items"] },
   9: { title: "Urban Environments", grammar: ["Adjectives"], math: ["Tally charts"], science: ["Sound/Noise"], topic: ["City places"] },

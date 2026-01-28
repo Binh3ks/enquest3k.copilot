@@ -10,28 +10,32 @@ import { week2RealData } from '../../data/weeks/week_02_real.js';
 import { week3RealData } from '../../data/weeks/week_03_real.js';
 import week4RealData from '../../data/weeks/week_04_real.js';
 import week5RealData from '../../data/weeks/week_05_real.js';
+import week6RealData from '../../data/weeks/week_06_real.js';
+import week7RealData from '../../data/weeks/week_07_real.js';
 
 /**
- * Get cumulative vocabulary from weeks 1 to current week
- * This makes games more diverse and easier to play
+ * Get CURRENT WEEK vocabulary ONLY from gameAdaptation.js
+ * DO NOT mix weeks - each week has specific vocabulary focus
  */
-function getCumulativeVocabulary(currentWeekId) {
-  const weeks = [week1RealData, week2RealData, week3RealData, week4RealData, week5RealData];
-  const allVocab = [];
-  
-  // Gather vocabulary from all weeks up to current
-  for (let i = 0; i < Math.min(currentWeekId, 5); i++) {
-    const weekData = weeks[i];
-    if (weekData && weekData.target_vocab) {
-      weekData.target_vocab.forEach(item => {
-        if (item.word && !allVocab.includes(item.word)) {
-          allVocab.push(item.word);
-        }
-      });
-    }
+function getWeekSpecificVocabulary(weekId, gameContent, weekData) {
+  // Use vocab from gameAdaptation.js template (week-specific)
+  if (gameContent && gameContent.vocab && gameContent.vocab.length > 0) {
+    console.log(`✅ Week ${weekId} GAME vocab from gameAdaptation.js:`, gameContent.vocab);
+    return gameContent.vocab;
   }
   
-  return allVocab;
+  // Try weekData.target_vocab as fallback
+  if (weekData && weekData.target_vocab && Array.isArray(weekData.target_vocab)) {
+    const vocabWords = weekData.target_vocab
+      .map(item => typeof item === 'string' ? item : item.word)
+      .filter(Boolean);
+    console.log(`✅ Week ${weekId} vocab from weekData.target_vocab:`, vocabWords);
+    return vocabWords;
+  }
+  
+  // Last resort: Use Week 5 vocab
+  console.error(`❌ NO VOCAB FOUND for week ${weekId}! Using Week 5 fallback. gameContent:`, gameContent, 'weekData:', weekData);
+  return ['bedroom', 'kitchen', 'bathroom', 'living room', 'lamp', 'sofa', 'table', 'chair', 'door', 'window'];
 }
 
 /**
@@ -42,17 +46,42 @@ function getCumulativeVocabulary(currentWeekId) {
  * @returns {object} Game prompt with instructions and context
  */
 export function buildGamePrompt(gameId, weekData) {
-  const weekId = weekData?.weekId || 5;
-  const gameContent = getGameContentForWeek(weekId, weekData);
+  const weekId = weekData?.week_id || weekData?.weekId || 5;
+  // 🔥 Convert to number for GAME_TEMPLATES lookup
+  const weekNumber = typeof weekId === 'number' ? weekId : parseInt(weekId) || 5;
+  
+  console.log('🎮 buildGamePrompt called:', {
+    gameId,
+    weekId,
+    weekNumber,
+    hasWeekData: !!weekData,
+    weekDataKeys: weekData ? Object.keys(weekData) : []
+  });
+  
+  const gameContent = getGameContentForWeek(weekNumber, weekData);
   const gameConfig = gameContent.games[gameId];
+  
+  console.log('📦 Game content loaded:', {
+    weekId,
+    gameId,
+    hasGameConfig: !!gameConfig,
+    hasVocab: !!(gameContent && gameContent.vocab),
+    vocabLength: gameContent?.vocab?.length || 0
+  });
   
   if (!gameConfig) {
     console.error(`❌ Game "${gameId}" not found for week ${weekId}`);
     return null;
   }
   
-  // Get cumulative vocabulary from weeks 1-current for more variety
-  const cumulativeVocab = getCumulativeVocabulary(weekId);
+  // Get WEEK-SPECIFIC vocabulary (NOT cumulative) - pass weekData too
+  const weekVocab = getWeekSpecificVocabulary(weekId, gameContent, weekData);
+  
+  console.log('✅ Final vocab for game:', {
+    weekId,
+    gameId,
+    vocab: weekVocab
+  });
   
   // 🎯 FOR 20 QUESTIONS: Pre-select object from code to prevent AI hallucination
   let preSelectedObject = null;
@@ -69,7 +98,7 @@ export function buildGamePrompt(gameId, weekData) {
     gameName_vi: gameConfig.name_vi,
     emoji: gameConfig.emoji,
     theme: gameContent.theme,
-    vocabulary: cumulativeVocab, // Use cumulative vocab instead of just current week
+    vocabulary: weekVocab, // Use WEEK-SPECIFIC vocab only
     instructions: gameConfig.instructions,
     instructions_vi: gameConfig.instructions_vi,
     
@@ -83,7 +112,7 @@ export function buildGamePrompt(gameId, weekData) {
     preSelectedObject, // 🎯 NEW: Code-selected object for 20Q
     
     // AI prompt for this game
-    aiPrompt: generateGameAIPrompt(gameId, gameConfig, { ...gameContent, vocab: cumulativeVocab }, preSelectedObject)
+    aiPrompt: generateGameAIPrompt(gameId, gameConfig, { ...gameContent, vocab: weekVocab }, preSelectedObject)
   };
 }
 
@@ -98,29 +127,25 @@ function generateGameAIPrompt(gameId, gameConfig, gameContent, preSelectedObject
   const prompts = {
     word_chain: `You are Ms. Nova 🔗 playing Word Chain.
 
-VOCABULARY: ${vocab}
+⛔⛔⛔ CRITICAL VOCABULARY RESTRICTION ⛔⛔⛔
+YOU CAN ONLY USE THESE WORDS: ${vocab}
+
+FORBIDDEN: DO NOT use words outside the vocabulary list above. ONLY use words from: ${vocab}
 
 🎯 RULE: You and student both use vocabulary words. Your word's last letter = student's word's first letter.
 
 📝 RESPONSE FORMAT:
 "Great! [STUDENT_WORD] starts with [LETTER]! Round [X]/20: I say [MY_WORD]! Your turn - starts with [LAST_LETTER]! Try: [HINT1], [HINT2]"
 
-EXAMPLES:
-- Student says TABLE → "Great! TABLE starts with T! Round 2/20: I say EXCITED! Your turn - starts with D! Try: DOOR, DRAWING"
-- Student says BEDROOM → "Great! BEDROOM starts with B! Round 3/20: I say MOTHER! Your turn - starts with R! Try: READING, ROOM"
-- Student says HAIR → "Great! HAIR starts with H! Round 4/20: I say READING! Your turn - starts with G! Hmm, no G words. I'll say STUDENT! Try: TABLE, TALL"
-
-✅ GOOD VOCAB WORDS TO USE:
-NAME, TABLE, STUDENT, HAIR, BEDROOM, KITCHEN, MOTHER, FATHER, HAPPY, EXCITED, EYES, TALL, SHORT, PLAYING, READING, LAMP, SOFA, CHAIR, DOOR, WINDOW, BATHROOM, LIVING ROOM, SINGING, DANCING
-
 ⚠️ BEFORE SAYING YOUR WORD:
 1. Student's word ends with: [letter]
-2. I need vocab word starting with [letter]
-3. If no word starts with [letter], pick easy word: TABLE, NAME, STUDENT, BEDROOM
+2. Check: Which vocab word starts with [letter]? 
+3. If no vocab word starts with [letter], pick ANY vocab word from the list
 
-VOCABULARY: ${vocab}
+VOCABULARY ONLY: ${vocab}
 
 ⛔⛔⛔ ALWAYS say "Round X/20" - NEVER "Round X/10" ⛔⛔⛔
+⛔⛔⛔ DO NOT suggest words not in the vocabulary list ⛔⛔⛔
 
 20 rounds total! 🎉`,
 
@@ -135,7 +160,7 @@ YOUR SECRET OBJECT: ${preSelectedObject?.toUpperCase()}
 "Let's play 20 Questions! 🎉 I'm thinking of something in the [room]. 
 🔍 Clue 1: [One feature]. 
 🔍 Clue 2: You can [action].
-Round 1/20: Can you guess what it is? Ask YES/NO questions!"
+Can you guess what it is? Ask YES/NO questions!"
 
 GENTLE CLUE EXAMPLES (not too obvious!):
 - table: "in the kitchen. It has legs. You can eat on it."
@@ -152,87 +177,102 @@ GENTLE CLUE EXAMPLES (not too obvious!):
 🎯 RESPONSE RULES:
 
 1) Student asks YES/NO question → Answer honestly + helpful info
-   Example: "Yes! It has 4 legs. Round 2/20: What else?"
+   Example: "Yes! It has 4 legs. What else do you want to know?"
 
-2) Student guesses CORRECT → "Yes! It's a [object]! 🎉 Round X/20: NEW ROUND! I'm thinking of something in the [new room]. 🔍 Hint 1: [feature]. 🔍 Hint 2: You can [action]. What is it?"
+2) Student guesses CORRECT → "Yes! It's a [object]! 🎉 NEW ROUND! I'm thinking of something in the [new room]. 🔍 Hint 1: [feature]. 🔍 Hint 2: You can [action]. What is it?"
    
-3) Student guesses WRONG → "No, not a [wrong]. Round X/20: Keep asking!"
+3) Student guesses WRONG → "No, not a [wrong]. Keep asking!"
 
 ⚠️ AFTER CORRECT GUESS - ALWAYS GIVE 2 NEW HINTS:
 DON'T just say "I'm thinking of something new" - MUST include 2 clues!
-Example: "Yes! It's a table! 🎉 Round 3/20: NEW ROUND! I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?"
+Example: "Yes! It's a table! 🎉 NEW ROUND! I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?"
 
-⛔ FORBIDDEN - NEVER USE THESE:
-cat, dog, stool, bench, spoon, fork, knife, plate, cup, glass, fridge, toaster, oven, microwave, desk
+✅ ALLOWED OBJECTS ONLY (USE THESE EXACT OBJECTS):
+${gameConfig.objects?.join(', ') || 'No objects defined'}
 
-✅ ALLOWED OBJECTS ONLY (10 items):
-bed, sofa, lamp, table, chair, mirror, rug, door, window, shelf
+⛔ NEVER USE OBJECTS NOT IN THE LIST ABOVE
 
 Week ${gameContent.weekId || 5} Theme: ${gameContent.theme}
 
 🎮 GAME STRUCTURE:
-- Always say "Round X/20" (not 40!)
+- Track progress internally (don't say "Round X/20" out loud)
 - Give 2 hints at start of each object
 - Student guesses in 2-3 rounds
 - Total 20 rounds!`,
 
     sentence_builder: `You are Ms. Nova 🧩 playing Sentence Builder.
 
-VOCABULARY ONLY: ${vocab}
+⛔⛔⛔ CRITICAL VOCABULARY RESTRICTION ⛔⛔⛔
+YOU CAN ONLY USE THESE EXACT WORDS: ${vocab}
 
-⛔⛔⛔ VALIDATION BEFORE EACH RESPONSE ⛔⛔⛔
-Check EVERY word you suggest:
-- Is it in vocabulary list above? If NO → DON'T USE IT
+🚨🚨🚨 DOUBLE-CHECK BEFORE EVERY RESPONSE 🚨🚨🚨
+BEFORE suggesting words to student:
+1. Look at vocab list above
+2. ONLY suggest words from that list
+3. If a word is NOT in the list (like "bag", "closet", "chair", "bed"), you CANNOT use it
+
+ALLOWED VOCAB: ${vocab}
 
 Week ${gameContent.weekId || 5} Theme: ${gameContent.theme}
 
-📝 FIRST MESSAGE:
+🎯 WEEK-SPECIFIC PATTERNS (THESE ARE THE ONLY 3 PATTERNS YOU CAN USE):
+${gameConfig.patterns ? gameConfig.patterns.map((p, i) => `${i + 1}. "${p}"`).join('\n') : 'No patterns defined'}
+
+⛔ YOU CANNOT INVENT OTHER PATTERNS LIKE:
+- "I see a map near the..." ← FORBIDDEN (not in list above)
+- "The [item] is [preposition] the..." ← FORBIDDEN unless exact match
+- "Where is the...?" ← FORBIDDEN
+- "I [CAN/CANNOT] see..." ← FORBIDDEN
+
+📝 FIRST MESSAGE (MUST BE CLEAR AND ACTIONABLE):
 "Let's play Sentence Builder! 🧩 You make complete sentences using vocabulary!
-Example: 'There is a lamp in my bedroom.'
-Round 1/20: Make a sentence: 'There is a ___ in my ___'
-Use: lamp/sofa/table + bedroom/kitchen/bathroom. Your turn!"
+Week Theme: ${gameContent.theme}
+Complete this sentence: '${gameConfig.patterns?.[0] || 'Complete a sentence with vocab words'}'
+Use vocab words only: [suggest 2-3 words from ALLOWED VOCAB: ${vocab}]. Your turn!"
 
-📝 RESPONSE FORMAT:
-"Great! Round [X]/20: Say: '[PATTERN with ___]' Use: [vocab words only]. Your turn!"
+📝 MANDATORY RESPONSE TEMPLATE - COPY THIS EXACTLY EVERY ROUND:
 
-EXAMPLE CORRECT RESPONSES:
-- "Great! Round 2/20: Say: 'My ___ is ___' Use: name/age + tall/short. Your turn!"
-- "Great! Round 3/20: Say: 'I like ___' Use: playing/reading/drawing. Your turn!"
-- "Great! Round 4/20: Say: 'There is a ___ in my ___' Use: chair/lamp + bedroom/kitchen. Your turn!"
-- "Great! Round 5/20: Say: 'My ___ is ___' Use: mother/father + happy/tall. Your turn!"
+"Great! [Student's answer]! 🎉 Complete this sentence: '[EXACT PATTERN FROM LIST]' Use: [suggest specific vocab words]. Your turn!"
 
-⛔⛔⛔ FORBIDDEN WORDS (NOT IN VOCAB) ⛔⛔⛔
-DO NOT USE:
-- can, will, should, must
-- eat, see, walk, play, read, write, cook, make
-- dog, cat, bike, tree, book, pen
+⚠️ RESPONSE RULES - MUST FOLLOW:
+1. ALWAYS start with "Great! [repeat student answer]! 🎉"
+2. ALWAYS say "Complete this sentence: '[exact pattern with context]'"
+3. ALWAYS give SPECIFIC vocab suggestions that fit the pattern
+4. ALWAYS end with "Your turn!"
+5. NEVER give blank patterns like "I like [V-ing] ____" - ADD CONTEXT!
+6. DO NOT say "Round X/20" (track internally only)
 
-✅ USE ONLY THESE (FROM VOCAB):
-- House: bedroom, kitchen, bathroom, living room, lamp, sofa, table, chair, door, window
-- Family: mother, father, sister, brother, family, name, age
-- Appearance: tall, short, hair, eyes, long, curly, straight
-- Emotions: happy, sad, excited
-- Actions: playing, reading, drawing, singing, dancing
-- Identity: student, hero, power, school, teacher
+CONTEXT-RICH PATTERN EXAMPLES BY WEEK:
+- Week 4 Pattern 1: "Complete this sentence: 'I like [V-ing].' Use: [playing, singing]."
+- Week 4 Pattern 2: "Complete this sentence: 'I like [V-ing] [object].' Try: reading + books, drawing + pictures."
+- Week 6: "Complete this sentence: 'The treasure is [ON/UNDER/IN] the [place].' Use: box, desk, floor."
+- Week 7: "Complete this sentence: 'There is a [item] in my [place].' Use: pen, backpack, book, desk."
 
-🎓 PATTERN PROGRESSION:
-Round 1-7: House patterns
-  "Round [X]/20: Say: 'There is a ___ in my ___' Use: lamp/chair + bedroom/kitchen. Your turn!"
-  "Round [X]/20: Say: 'The ___ is in the ___' Use: sofa/table + living room/kitchen. Your turn!"
+ROUND SCHEDULE (STRICT):
+- Turns 1-10: Use pattern 1 ONLY ("${gameConfig.patterns?.[0] || 'Pattern 1'}")
+- Turns 11-20: Use pattern 2 ONLY ("${gameConfig.patterns?.[1] || gameConfig.patterns?.[0] || 'Pattern 2'}")
 
-Round 8-14: Identity/Family patterns
-  "Round [X]/20: Say: 'My ___ is ___' Use: name/family + proper name. Your turn!"
-  "Round [X]/20: Say: 'My mother is ___' Use: tall/short/happy. Your turn!"
+✅ CORRECT Examples (FOLLOW THESE):
+- Week 4: "Great! I like reading! 🎉 Complete this sentence: 'I like [V-ing].' Use: [playing, singing]. Your turn!"
+- Week 4: "Great! I like playing! 🎉 Complete this sentence: 'I like [V-ing] [object].' Try: reading + books, drawing + pictures. Your turn!"
+- Week 6: "Great! The treasure is on the desk! 🎉 Complete this sentence: 'The treasure is [ON/UNDER/IN] the [place].' Use: [box, floor]. Your turn!"
+- Week 7: "Great! There is a pen in my backpack! 🎉 Complete this sentence: 'There is a [item] in my [place].' Use: [book, desk]. Your turn!"
 
-Round 15-20: Action/Emotion patterns
-  "Round [X]/20: Say: 'I like ___' Use: playing/reading/drawing. Your turn!"
-  "Round [X]/20: Say: 'I am ___' Use: happy/excited/tall/short. Your turn!"
+❌ WRONG Examples (NEVER DO THIS):
+- "Great! I like reading too! 🎉 I like [V-ing] ____." ← TOO VAGUE! Missing context!
+- "Yes! The map is on the desk! 🗺️ Good job!" ← MISSING NEXT QUESTION!
+- "The map is [ON/UNDER/IN] the..." ← WRONG PATTERN (not in list)!
+- "The treasure is IN the ... [bag, closet]" ← bag/closet NOT in vocab!
+
+VOCABULARY ONLY: ${vocab}
 
 EXAMPLES: ${gameConfig.examples?.join(' / ')}
 
-⛔⛔⛔ EVERY RESPONSE MUST SAY "Round X/20" - NEVER "Round X/10" ⛔⛔⛔
+⛔⛔⛔ DO NOT suggest words like bag, closet, chair, bed, sofa unless they're in vocab list ⛔⛔⛔
+⛔⛔⛔ DO NOT create new patterns - ONLY use the patterns listed above ⛔⛔⛔
+⛔⛔⛔ DO NOT say "Round X/20" - track progress internally ⛔⛔⛔
 
-20 rounds! 🎉`
+20 turns! 🎉`
   };
   
   return prompts[gameId] || `Play ${gameConfig.name_en} using vocabulary: ${vocab}`;

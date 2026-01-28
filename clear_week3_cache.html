@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear Week 3 Cache - FINAL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    h1 { margin-top: 0; }
+    button {
+      background: #4CAF50;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    button:hover { background: #45a049; }
+    .danger { background: #f44336; }
+    .danger:hover { background: #da190b; }
+    #status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .success { color: #4CAF50; font-weight: bold; }
+    .error { color: #f44336; font-weight: bold; }
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧹 Clear Week 3 Cache - COMPLETE RESET</h1>
+    
+    <p><strong>Sử dụng khi:</strong> Week 3 games không load sau khi sửa code</p>
+    
+    <button onclick="clearWeek3Cache()">Clear Week 3 Cache</button>
+    <button onclick="clearAllGameCache()" class="danger">Clear ALL Game Cache</button>
+    <button onclick="hardReload()">Hard Reload Browser</button>
+    
+    <div id="status"></div>
+  </div>
+
+  <script>
+    function logStatus(message, isError = false) {
+      const status = document.getElementById('status');
+      const className = isError ? 'error' : 'success';
+      status.innerHTML += `<div class="${className}">${message}</div>`;
+    }
+
+    function clearWeek3Cache() {
+      const status = document.getElementById('status');
+      status.innerHTML = '<h3>🧹 Clearing Week 3 Cache...</h3>';
+      
+      let cleared = 0;
+      
+      // 1. Clear Week 3 data
+      if (localStorage.getItem('week_3_data')) {
+        localStorage.removeItem('week_3_data');
+        cleared++;
+        logStatus('✅ Cleared week_3_data');
+      }
+      
+      // 2. Clear game cache for Week 3
+      const gameKeys = ['week_3_games', 'week3_games', 'games_week_3'];
+      gameKeys.forEach(key => {
+        if (localStorage.getItem(key)) {
+          localStorage.removeItem(key);
+          cleared++;
+          logStatus(`✅ Cleared ${key}`);
+        }
+      });
+      
+      // 3. Clear AI Tutor cache
+      const tutorKeys = Object.keys(localStorage).filter(k => 
+        k.includes('tutor') || k.includes('freetalk') || k.includes('conversation')
+      );
+      tutorKeys.forEach(key => {
+        localStorage.removeItem(key);
+        cleared++;
+      });
+      logStatus(`✅ Cleared ${tutorKeys.length} AI Tutor cache keys`);
+      
+      // 4. Clear IndexedDB for Week 3
+      if (window.indexedDB) {
+        const deleteReq = indexedDB.deleteDatabase('EngQuest_Week3_Games');
+        deleteReq.onsuccess = () => logStatus('✅ Cleared Week 3 IndexedDB');
+        deleteReq.onerror = () => logStatus('⚠️ No Week 3 IndexedDB found');
+      }
+      
+      // 5. Clear service worker cache
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          registrations.forEach(reg => {
+            reg.unregister();
+            logStatus('✅ Unregistered service worker');
+          });
+        });
+      }
+      
+      logStatus(`<br><strong>🎉 CLEARED ${cleared} Week 3 cache items!</strong>`);
+      logStatus('<br>⏭️ Next: Click "Hard Reload Browser" or press Cmd+Shift+R');
+    }
+
+    function clearAllGameCache() {
+      const status = document.getElementById('status');
+      status.innerHTML = '<h3>🔥 Clearing ALL Game Cache...</h3>';
+      
+      // Clear all week games
+      const gameKeys = Object.keys(localStorage).filter(k => 
+        k.includes('game') || k.includes('week_')
+      );
+      gameKeys.forEach(key => {
+        localStorage.removeItem(key);
+      });
+      logStatus(`✅ Cleared ${gameKeys.length} game cache keys`);
+      
+      // Clear all AI Tutor data
+      const tutorKeys = Object.keys(localStorage).filter(k => 
+        k.includes('tutor') || k.includes('freetalk') || k.includes('ai_')
+      );
+      tutorKeys.forEach(key => {
+        localStorage.removeItem(key);
+      });
+      logStatus(`✅ Cleared ${tutorKeys.length} AI Tutor keys`);
+      
+      // Clear IndexedDB
+      if (window.indexedDB) {
+        ['EngQuest_Games', 'EngQuest_Week3_Games', 'EngQuest_AI'].forEach(dbName => {
+          indexedDB.deleteDatabase(dbName);
+        });
+        logStatus('✅ Cleared all IndexedDB databases');
+      }
+      
+      logStatus('<br><strong>🎉 ALL GAME CACHE CLEARED!</strong>');
+      logStatus('<br>⏭️ Next: Click "Hard Reload Browser"');
+    }
+
+    function hardReload() {
+      logStatus('🔄 Performing hard reload...');
+      setTimeout(() => {
+        location.reload(true);
+      }, 500);
+    }
+
+    // Auto-clear on page load if requested
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('auto') === 'true') {
+      clearWeek3Cache();
+      setTimeout(hardReload, 2000);
+    }
+  </script>
+</body>
+</html>

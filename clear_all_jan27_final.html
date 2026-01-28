@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🧹 Clear All - Jan 27 Final Fix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+    button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px 0;
+      width: 100%;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #ee5a5a;
+      transform: scale(1.05);
+    }
+    .success {
+      background: #51cf66;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧹 CLEAR ALL CACHE</h1>
+  <p>Game vocab fix + Roleplay quality upgrade</p>
+  
+  <button onclick="clearAll()">CLEAR ALL & RELOAD</button>
+  
+  <div class="success" id="successMsg">
+    <h2>✅ Cache Cleared!</h2>
+    <p>Refreshing page...</p>
+  </div>
+
+  <script>
+    function clearAll() {
+      localStorage.clear();
+      sessionStorage.clear();
+      
+      if (window.indexedDB) {
+        indexedDB.databases().then(dbs => {
+          dbs.forEach(db => indexedDB.deleteDatabase(db.name));
+        });
+      }
+      
+      document.cookie.split(";").forEach(c => { 
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+      });
+      
+      if ('caches' in window) {
+        caches.keys().then(names => {
+          names.forEach(name => caches.delete(name));
+        });
+      }
+      
+      document.getElementById('successMsg').style.display = 'block';
+      setTimeout(() => location.reload(), 1000);
+    }
+  </script>
+</body>
+</html>

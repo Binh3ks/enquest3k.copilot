@@ -187,12 +187,19 @@ const useUserStore = create(
        * @param {Object} params - { weekId, stationId, data, isCompleted, score }
        */
       syncProgressToServer: async ({ weekId, stationId, data, isCompleted, score }) => {
+        // 🔥 DISABLED: No backend server running yet
+        // TODO: Re-enable when backend server is ready
+        console.log('📦 Progress saved locally (server sync disabled):', { weekId, stationId, isCompleted, score });
+        return;
+        
+        /* ORIGINAL CODE (re-enable when server ready):
         try {
           await progressAPI.saveProgress({ weekId, stationId, data, isCompleted, score });
         } catch (error) {
           console.error('Failed to sync progress to server:', error);
           // TODO: Implement retry logic or error recovery
         }
+        */
       },
 
       /**

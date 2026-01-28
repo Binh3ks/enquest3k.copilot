@@ -335,8 +335,11 @@ export function validateResponse(response, options = {}) {
   
   if (!validated.question && (!validated.ai_response || validated.ai_response.length < effectiveMinLength)) {
     console.warn(`⚠️ responseParser: Response too short (${validated.ai_response?.length || 0} chars, min: ${effectiveMinLength})`);
+    console.warn(`⚠️ responseParser: Original response:`, validated);
     
     if (autoFix) {
+      // 🔥 CRITICAL: Log when replacing response
+      console.error(`🚨 responseParser: REPLACING SHORT RESPONSE "${validated.ai_response}" with fallback!`);
       validated.ai_response = 'Tell me more! What do you want to talk about?';
       if (!validated.pedagogy_note) validated.pedagogy_note = '';
       validated.pedagogy_note += ' [Auto-fixed: Safe fallback]';
@@ -700,6 +703,6 @@ function buildContextualQuestion(lastUserMessage, roleplayId) {
     }
   }
   
-  // Generic fallback
-  return ' What do you think? Do you like it?';
+  // Generic fallback - Week 7 pattern
+  return ' Is there a pen in your backpack? Or a book?';
 }

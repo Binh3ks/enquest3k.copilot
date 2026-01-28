@@ -196,7 +196,12 @@ export class NovaEngine {
         }
       } else {
         // Normal flow for other modes
-        const parsedResponse = responseParser.parseAIResponse(rawResponse);
+        // 🔥 FIX: Handle Groq 'raw' format response
+        const responseToProcess = (typeof rawResponse === 'object' && rawResponse.format === 'raw') 
+          ? rawResponse.raw 
+          : rawResponse;
+        
+        const parsedResponse = responseParser.parseAIResponse(responseToProcess);
         validatedResponse = responseParser.validateResponse(parsedResponse, mode);
       }
       
@@ -307,11 +312,13 @@ export class NovaEngine {
       options.history = contextParams.chatHistory || [];
       options.turnCount = contextParams.turnCount || Math.floor((contextParams.chatHistory?.length || 0) / 2);
       options.isOpeningTurn = contextParams.isOpeningTurn || false;
+      options.weekData = this.weekData;  // 🔥 FIX: Pass weekData for game vocab system
       
       console.log('💬 Freetalk mode - passing context:', {
         historyLength: options.history.length,
         turnCount: options.turnCount,
-        isOpeningTurn: options.isOpeningTurn
+        isOpeningTurn: options.isOpeningTurn,
+        weekId: this.weekData.weekId
       });
     }
     

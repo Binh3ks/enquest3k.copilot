@@ -630,7 +630,7 @@ export const TALK_RATIO_RULES = {
 
 export const FALLBACK_PHRASES = {
   silence: [
-    'Take your time! What do you think?',
+    'Take your time! Is there a pen in your backpack?',
     'No rush! I\'m listening.',
     'Whenever you\'re ready, tell me!'
   ],

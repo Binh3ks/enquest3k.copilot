@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Week 6 & 7 Cache - Jan 26</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            color: #333;
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #status {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            min-height: 100px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .success { color: #10b981; font-weight: bold; }
+        .info { color: #3b82f6; }
+        .warning { color: #f59e0b; }
+        .highlight { background: #fef3c7; padding: 2px 6px; border-radius: 3px; }
+        .section {
+            margin: 15px 0;
+            padding-left: 10px;
+            border-left: 3px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Week 6 & 7 Cache Cleaner</h1>
+        <div class="subtitle">Clear all cached data for Week 6 (Treasure Hunt) & Week 7 (Backpack) - Jan 26, 2026</div>
+        
+        <button onclick="clearAllCache()">🗑️ Clear ALL Week 6 & 7 Data</button>
+        
+        <div id="status">
+            <div class="info">⏳ Ready to clear cache...</div>
+            <div class="section">
+                <strong>Will clear:</strong>
+                <ul>
+                    <li>Week 6 & 7 chat history</li>
+                    <li>Week 6 & 7 progress data</li>
+                    <li>Week 6 & 7 mission states</li>
+                    <li>Week 6 & 7 roleplay data</li>
+                    <li>Week 6 & 7 game data</li>
+                    <li>Service Worker cache</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            const className = type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info';
+            statusDiv.innerHTML += `<div class="${className}">${message}</div>`;
+            statusDiv.scrollTop = statusDiv.scrollHeight;
+        }
+
+        async function clearAllCache() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="info">🚀 Starting cache clear process...</div>';
+            
+            let clearedCount = 0;
+            const keysToRemove = [];
+
+            try {
+                // 1. Clear localStorage
+                log('<div class="section"><strong>📦 Scanning localStorage...</strong></div>');
+                
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && (
+                        key.includes('week_6') || 
+                        key.includes('week_7') ||
+                        key.includes('week6') ||
+                        key.includes('week7') ||
+                        key.includes('treasure') ||
+                        key.includes('backpack') ||
+                        key.includes('chat_') ||
+                        key.includes('progress_') ||
+                        key.includes('mission_') ||
+                        key.includes('roleplay_') ||
+                        key.includes('game_')
+                    )) {
+                        keysToRemove.push(key);
+                    }
+                }
+
+                // Remove identified keys
+                keysToRemove.forEach(key => {
+                    localStorage.removeItem(key);
+                    clearedCount++;
+                    log(`   ✓ Removed: <span class="highlight">${key}</span>`);
+                });
+
+                log(`<div class="success">✅ Cleared ${clearedCount} localStorage items</div>`);
+
+                // 2. Clear sessionStorage
+                log('<div class="section"><strong>💾 Clearing sessionStorage...</strong></div>');
+                const sessionKeys = Object.keys(sessionStorage);
+                let sessionCleared = 0;
+                sessionKeys.forEach(key => {
+                    if (key.includes('week_6') || key.includes('week_7') || 
+                        key.includes('week6') || key.includes('week7')) {
+                        sessionStorage.removeItem(key);
+                        sessionCleared++;
+                        log(`   ✓ Removed: <span class="highlight">${key}</span>`);
+                    }
+                });
+                log(`<div class="success">✅ Cleared ${sessionCleared} sessionStorage items</div>`);
+
+                // 3. Clear Service Worker caches
+                if ('caches' in window) {
+                    log('<div class="section"><strong>🔧 Clearing Service Worker caches...</strong></div>');
+                    const cacheNames = await caches.keys();
+                    let cacheCleared = 0;
+                    
+                    for (const name of cacheNames) {
+                        await caches.delete(name);
+                        cacheCleared++;
+                        log(`   ✓ Deleted cache: <span class="highlight">${name}</span>`);
+                    }
+                    log(`<div class="success">✅ Cleared ${cacheCleared} Service Worker caches</div>`);
+                }
+
+                // 4. Clear IndexedDB (if exists)
+                if ('indexedDB' in window) {
+                    log('<div class="section"><strong>🗄️ Clearing IndexedDB...</strong></div>');
+                    try {
+                        const databases = await indexedDB.databases();
+                        for (const db of databases) {
+                            if (db.name && (db.name.includes('week6') || db.name.includes('week7'))) {
+                                indexedDB.deleteDatabase(db.name);
+                                log(`   ✓ Deleted database: <span class="highlight">${db.name}</span>`);
+                            }
+                        }
+                        log(`<div class="success">✅ IndexedDB cleared</div>`);
+                    } catch (e) {
+                        log(`<div class="warning">⚠️ IndexedDB access limited: ${e.message}</div>`);
+                    }
+                }
+
+                // Final summary
+                log('<div class="section"><strong>📊 Summary:</strong></div>');
+                log(`   • Total items cleared: <span class="highlight">${clearedCount + sessionCleared}</span>`);
+                log(`   • localStorage: ${clearedCount} items`);
+                log(`   • sessionStorage: ${sessionCleared} items`);
+                log(`   • Service Worker caches: Cleared`);
+                log('');
+                log('<div class="success">🎉 ✅ ALL WEEK 6 & 7 DATA CLEARED SUCCESSFULLY!</div>');
+                log('<div class="info">🔄 Please refresh the page (Cmd+R or Ctrl+R) to reload fresh data</div>');
+
+            } catch (error) {
+                log(`<div class="warning">❌ Error during cleanup: ${error.message}</div>`);
+            }
+        }
+
+        // Auto-clear on page load (optional - comment out if you want manual trigger only)
+        // window.addEventListener('load', () => setTimeout(clearAllCache, 1000));
+    </script>
+</body>
+</html>

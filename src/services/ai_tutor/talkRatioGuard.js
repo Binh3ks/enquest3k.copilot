@@ -113,6 +113,9 @@ export function validateTalkRatio(aiResponse, studentInput, conversationTurn = 0
 export function truncateResponse(aiResponse, maxWords) {
   if (!aiResponse) return '';
   
+  console.warn(`🔧 talkRatioGuard: TRUNCATING response from ${countWords(aiResponse)} words to ${maxWords} words`);
+  console.warn(`🔧 talkRatioGuard: Original response:`, aiResponse);
+  
   // Split into sentences (keep punctuation)
   const sentences = aiResponse.match(/[^.!?]+[.!?]+/g) || [aiResponse];
   
@@ -133,12 +136,15 @@ export function truncateResponse(aiResponse, maxWords) {
   
   // If we got at least one sentence, return it
   if (truncated.trim()) {
+    console.warn(`🔧 talkRatioGuard: Truncated result:`, truncated.trim());
     return truncated.trim();
   }
   
   // Fallback: Hard truncate at word boundary
   const words = aiResponse.split(/\s+/);
-  return words.slice(0, maxWords).join(' ') + '...';
+  const result = words.slice(0, maxWords).join(' ') + '...';
+  console.warn(`🔧 talkRatioGuard: Hard truncated result:`, result);
+  return result;
 }
 
 /**

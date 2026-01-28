@@ -78,8 +78,10 @@ class GroqRateLimiter {
     this.requestsInWindow = 0;
     this.windowStartTime = Date.now();
     this.windowDuration = 60000; // 1 minute
-    this.maxRequests = 10; // Very conservative limit (Groq free tier is 15/min, use 10 for safety)
+    this.maxRequests = 25; // Groq free tier = 30 req/min, use 25 for safety
     this.backoffMs = 0; // Exponential backoff for 429 errors
+    this.lastRequestTime = 0; // Track last request time
+    this.minDelay = 2000; // Minimum 2s delay between requests
   }
 
   async waitForSlot() {
@@ -91,6 +93,16 @@ class GroqRateLimiter {
     }
 
     const now = Date.now();
+    
+    // 🔥 CRITICAL: Enforce minimum 2s delay between requests
+    const timeSinceLastRequest = now - this.lastRequestTime;
+    if (this.lastRequestTime > 0 && timeSinceLastRequest < this.minDelay) {
+      const delayNeeded = this.minDelay - timeSinceLastRequest;
+      console.log(`⏳ Groq minimum delay: waiting ${delayNeeded}ms (${Math.ceil(delayNeeded/1000)}s)`);
+      await new Promise(resolve => setTimeout(resolve, delayNeeded));
+    }
+    
+    this.lastRequestTime = Date.now();
     const elapsed = now - this.windowStartTime;
 
     // Reset window if expired
@@ -338,8 +350,8 @@ function generateContextualFallback(chatHistory = [], userMessage = '', turnCoun
     },
     {
       id: 'encouragement-5',
-      response: "Nice! What do you think about that?",
-      hints: ['I', 'think', 'it', 'is', 'good', 'nice']
+      response: "Nice! Is there a book on the desk?",
+      hints: ['There', 'is', 'a', 'book', 'on', 'the', 'desk']
     },
     {
       id: 'repeat-request',
@@ -574,20 +586,40 @@ export async function sendToAI({
 
     // Auto-select provider based on availability
     if (preferredProvider === 'auto') {
-      // 🔥 NEW PRIORITY: Gemini → Together AI → Groq (Gemini fastest & most reliable)
-      if (PROVIDERS.gemini.enabled) {
-        preferredProvider = 'gemini';
-      } else if (PROVIDERS.together.enabled) {
-        preferredProvider = 'together';
-      } else {
+      // 🔥 NEW PRIORITY: Groq → Gemini → Together AI (Groq is fastest & most reliable!)
+      if (PROVIDERS.groq.enabled) {
         preferredProvider = 'groq';
+      } else if (PROVIDERS.gemini.enabled) {
+        preferredProvider = 'gemini';
+      } else {
+        preferredProvider = 'together';
       }
     }
 
-    // 🔥 LAYER 1: Try Gemini first (FASTEST & MOST RELIABLE)
-    if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
+    // 🔥 LAYER 1: Try Groq first (FASTEST & MOST RELIABLE after Gemini issues!)
+    // Groq is now primary because it consistently returns good responses
+    if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
       try {
-        console.log(`🚀 Layer 1: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
+        console.log(`🚀 Layer 1: Trying Groq (attempt ${attempt}/${maxRetries})...`);
+        const response = await callGroq(messages);
+        
+        // Groq returns plain text, need extraction
+        if (typeof response === 'string') {
+          console.log('🔧 Groq response needs extraction, returning raw for responseParser');
+        }
+        
+        console.log(`✅ Groq success in ${Date.now() - startTime}ms`);
+        return { raw: response, provider: 'groq', latency: Date.now() - startTime, format: 'raw' };
+      } catch (groqError) {
+        console.warn(`⚠️ Groq failed: ${groqError.message}`);
+        console.log('🔄 Fallback to Layer 2: Gemini...');
+      }
+    }
+
+    // 🔥 LAYER 2: Fallback to Gemini
+    if (PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Layer 2: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
         const rawResponse = await callGemini(messages);
         const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
         
@@ -613,16 +645,16 @@ export async function sendToAI({
               scenarioData = {
                 id: 'fallback',
                 backup_questions: [
-                  "What do you think?",
-                  "Do you like it?",
-                  "What color do you want?",
-                  "What else do you need?",
-                  "Where should I put it?"
+                  "Is there a pen in your backpack?",
+                  "What is this? A book or a notebook?",
+                  "Where is the ruler? On the desk or in the backpack?",
+                  "What else do you need? A pencil or an eraser?",
+                  "Do you see a computer? Or a whiteboard?"
                 ]
               };
             }
           } catch (err) {
-            scenarioData = { id: 'error', backup_questions: ["What do you think?"] };
+            scenarioData = { id: 'error', backup_questions: ["Is there a pen in your backpack?"] };
           }
         }
         
@@ -649,14 +681,14 @@ export async function sendToAI({
         return { ...fixedResponse, provider: 'gemini', latency: Date.now() - startTime };
       } catch (geminiError) {
         console.warn(`⚠️ Gemini failed: ${geminiError.message}`);
-        console.log('🔄 Fallback to Layer 2: Together AI...');
+        console.log('🔄 Fallback to Layer 3: Together AI...');
       }
     }
 
-    // 🔥 LAYER 2: Fallback to Together AI
+    // 🔥 LAYER 3: Fallback to Together AI (if both Groq and Gemini failed)
     if (PROVIDERS.together.enabled) {
       try {
-        console.log(`🚀 Layer 1: Trying Together AI (attempt ${attempt}/${maxRetries})...`);
+        console.log(`🚀 Layer 3: Trying Together AI (attempt ${attempt}/${maxRetries})...`);
         const rawResponse = await callTogether(messages);
         const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
         
@@ -692,17 +724,17 @@ export async function sendToAI({
               scenarioData = {
                 id: 'fallback',
                 backup_questions: [
-                  "What do you think?",
-                  "Do you like it?",
-                  "What color do you want?",
-                  "What else do you need?",
-                  "Where should I put it?"
+                  "Is there a pen in your backpack?",
+                  "What is this? A book or a notebook?",
+                  "Where is the ruler? On the desk or in the backpack?",
+                  "What else do you need? A pencil or an eraser?",
+                  "Do you see a computer? Or a whiteboard?"
                 ]
               };
             }
           } catch (err) {
             console.error('❌ Error extracting scenario data:', err);
-            scenarioData = { id: 'error', backup_questions: ["What do you think?"] };
+            scenarioData = { id: 'error', backup_questions: ["Is there a pen in your backpack?"] };
           }
         }
         
@@ -768,17 +800,17 @@ export async function sendToAI({
                   scenarioData = {
                     id: 'fallback',
                     backup_questions: [
-                      "What do you think?",
-                      "Do you like it?",
-                      "What color do you want?",
-                      "What else do you need?",
-                      "Where should I put it?"
+                      "Is there a pen in your backpack?",
+                      "What is this? A book or a notebook?",
+                      "Where is the ruler? On the desk or in the backpack?",
+                      "What else do you need? A pencil or an eraser?",
+                      "Do you see a computer? Or a whiteboard?"
                     ]
                   };
                 }
               } catch (err) {
                 console.error('❌ GROQ Error extracting scenario data:', err);
-                scenarioData = { id: 'error', backup_questions: ["What do you think?"] };
+                scenarioData = { id: 'error', backup_questions: ["Is there a pen in your backpack?"] };
               }
             }
             
@@ -1155,17 +1187,7 @@ REMEMBER: Output must be pure JSON only, no extra formatting!
       throw new Error('Response too short or empty');
     }
     
-    // 🔥 Ensure response ends with a question
-    if (!aiResponse.includes('?')) {
-      console.warn('⚠️ Gemini response missing question, adding default');
-      const enhancedResponse = aiResponse + ' What do you think?';
-      return {
-        ai_response: enhancedResponse,
-        pedagogy_note: parsed.pedagogy_note || 'Added question for engagement',
-        suggested_hints: parsed.suggested_hints || [],
-        raw: content
-      };
-    }
+    // Note: forceRoleplayQuestion will handle missing "?" using context-aware backup_questions
     
     return {
       ai_response: aiResponse,

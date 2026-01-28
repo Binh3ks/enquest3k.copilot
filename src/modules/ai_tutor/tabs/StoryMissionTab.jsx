@@ -15,6 +15,8 @@ import week2RealData from '../../../data/weeks/week_02_real?v=3'; // Week 2 syll
 import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
 import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
 import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
+import week6RealData from '../../../data/weeks/week_06_real'; // Week 6 syllabus
+import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
@@ -29,7 +31,9 @@ console.log('📦 IMPORTS CHECK:', {
   week4Title: week4RealData?.title,
   week4Missions: week4RealData?.story_missions?.length,
   week5Title: week5RealData?.title,
-  week5Missions: week5RealData?.story_missions?.length
+  week5Missions: week5RealData?.story_missions?.length,
+  week6Title: week6RealData?.title,
+  week6Missions: week6RealData?.story_missions?.length
 });
 
 // Week 1 Objectives
@@ -92,7 +96,7 @@ const StoryMissionTab = () => {
   const [studentName, setStudentName] = useState(savedData.studentName || null); // 🔥 Restore student name
   
   // 🔥 Dynamic week data selection based on current week
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : week5RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : week5RealData;
   const currentMission = weekRealData.story_missions?.[currentMissionIndex];
   
   // 🔥 DEBUG: Log week data on mount
@@ -265,7 +269,8 @@ const StoryMissionTab = () => {
         userMessage: '', // Empty for opening turn
         chatHistory: [],
         context: {
-          missionData: currentMission, // 🔥 V27 format detection
+          missionData: currentMission, // 🔥 V27 format detection (for tutorPrompts options.mission)
+          currentMission: currentMission, // 🔥 CRITICAL: For Priority 0 story_character check!
           missionId: currentMission.mission_id,
           missionIndex: missionIndex,
           turnCount: 1,
@@ -274,7 +279,7 @@ const StoryMissionTab = () => {
           studentName: null,
           isOpeningTurn: true,
           turnManager: turnManager, // 🔥 Pass TurnManager reference
-          mission: currentMission    // 🔥 Pass mission object for greeting
+          mission: currentMission    // 🔥 Pass mission object for greeting (legacy support)
         }
       });
       
@@ -304,7 +309,7 @@ const StoryMissionTab = () => {
       let firstObjectiveHints;
       
       if (objectives && objectives.length > 0) {
-        // Week 4 style: Use question_variants if available
+        // Week 4+ style: Use question_variants if available
         const missionGreeting = currentMission.nova_greeting || 'Hi! I\'m Ms. Nova!';
         
         // 🔥 NEW: Get variant from TurnManager (if available)
@@ -314,12 +319,22 @@ const StoryMissionTab = () => {
           firstObjectiveHints = variant.hints || ['My', 'name', 'is', 'I', 'am'];
           console.log('🎲 Week 4 opening with variant:', variant.question);
         } else {
-          // Fallback to canonical
+          // Fallback to canonical or question_variants
           const firstObjective = objectives[0];
-          const firstQuestion = firstObjective.canonical_question || 'How are you?';
+          const firstQuestion = firstObjective.canonical_question || 
+                               (firstObjective.question_variants && firstObjective.question_variants[0]?.question) || 
+                               'How are you?';
           openingLine = `${missionGreeting} ${firstQuestion}`;
-          firstObjectiveHints = firstObjective.hints || guardedOpening.suggested_hints || ['My', 'name', 'is', 'I', 'am'];
-          console.log('🎯 Week 4 style opening (greeting + canonical question):', openingLine);
+          
+          // 🔥 FIX: Extract hints from question_variants structure (Week 5+)
+          if (firstObjective.question_variants && firstObjective.question_variants[0]?.hints) {
+            firstObjectiveHints = firstObjective.question_variants[0].hints;
+          } else if (firstObjective.hints) {
+            firstObjectiveHints = firstObjective.hints;
+          } else {
+            firstObjectiveHints = ['My', 'name', 'is', 'I', 'am'];
+          }
+          console.log('🎯 Week 4+ opening (greeting + question):', openingLine, '| Hints:', firstObjectiveHints);
         }
       } else {
         // Weeks 1-3/5 style: PRIORITY: opening_narrative > nova_greeting

@@ -49,6 +49,96 @@ export const ROLEPLAY_TEMPLATES = {
       opening_line_vi: "Chào mừng đến cửa hàng nội thất! Bạn cần gì cho nhà?",
       scenario_description: `You own a furniture shop. Help customers choose furniture, describe items, ask what they need, and suggest good options. Use vocabulary: ${['sofa', 'table', 'chair', 'lamp', 'bed'].join(', ')}.`
     }
+  ],
+  
+  6: [ // WEEK 6: TREASURE HUNT & LOCATION
+    {
+      id: 'treasure_map_reader',
+      label_en: 'Treasure Map Reader',
+      label_vi: 'Đọc bản đồ kho báu',
+      emoji: '🗺️',
+      character: 'Treasure Map Owner',
+      character_vi: 'Chủ bản đồ kho báu',
+      setting: 'Treasure Hunt Adventure',
+      setting_vi: 'Cuộc săn kho báu',
+      vocab_focus: ['box', 'desk', 'floor', 'wall', 'window', 'door', 'treasure', 'hunt', 'in', 'on', 'under', 'next to'],
+      opening_line: "Hello treasure hunter! I have a magic map! The first treasure is IN the box. Can you find it?",
+      opening_line_vi: "Xin chào thợ săn kho báu! Tôi có bản đồ ma thuật! Kho báu đầu tiên ở TRONG hộp. Bạn tìm được không?",
+      scenario_description: `You own a treasure map with location clues. Give clear preposition clues (IN, ON, UNDER, NEXT TO) to help the child find hidden treasures. React excitedly when they find each treasure. Use vocabulary: ${['box', 'desk', 'floor', 'treasure', 'in', 'on', 'under', 'next to'].join(', ')}.`
+    },
+    {
+      id: 'hide_seek_champion',
+      label_en: 'Hide and Seek Champion',
+      label_vi: 'Cao thủ trốn tìm',
+      emoji: '👀',
+      character: 'Hide and Seek Player',
+      character_vi: 'Người chơi trốn tìm',
+      setting: 'Hide and Seek Game',
+      setting_vi: 'Trò chơi trốn tìm',
+      vocab_focus: ['hide', 'seek', 'box', 'desk', 'floor', 'window', 'door', 'in', 'on', 'under', 'next to'],
+      opening_line: "Let's play hide and seek! I hid a toy car! Is it IN the box, ON the desk, or UNDER the chair?",
+      opening_line_vi: "Chơi trốn tìm nào! Tôi đã giấu xe ô tô! Nó ở TRONG hộp, TRÊN bàn, hay DƯỚI ghế?",
+      scenario_description: `You are playing hide and seek with toys. Hide objects in different locations and give hints using prepositions. Ask WHERE questions and celebrate correct guesses. Use vocabulary: ${['hide', 'seek', 'in', 'on', 'under', 'next to'].join(', ')}.`
+    },
+    {
+      id: 'room_organizer',
+      label_en: 'Room Organizer',
+      label_vi: 'Người sắp xếp phòng',
+      emoji: '📦',
+      character: 'Room Owner',
+      character_vi: 'Chủ phòng',
+      setting: 'Messy Room',
+      setting_vi: 'Phòng lộn xộn',
+      vocab_focus: ['box', 'desk', 'floor', 'wall', 'window', 'door', 'in', 'on', 'under', 'next to'],
+      opening_line: "My room is so messy! Can you help me? I have a box. Where should I put it? ON the desk, UNDER the desk, or NEXT TO the door?",
+      opening_line_vi: "Phòng của tôi lộn xộn quá! Bạn giúp tôi được không? Tôi có cái hộp. Tôi nên để nó đâu? TRÊN bàn, DƯỚI bàn, hay BÊN CẠNH cửa?",
+      scenario_description: `Your room is messy and you need help organizing. Ask the child WHERE to put different items using prepositions. Accept their suggestions and thank them. Use vocabulary: ${['box', 'desk', 'floor', 'in', 'on', 'under', 'next to'].join(', ')}.`
+    }
+  ],
+  
+  7: [ // WEEK 7: SCHOOL SUPPLIES (Singular - There is a...)
+    {
+      id: 'supply_shopping',
+      label_en: 'Supply Shopping',
+      label_vi: 'Mua đồ dùng học tập',
+      emoji: '🛒',
+      character: 'School Supply Store Owner',
+      character_vi: 'Chủ cửa hàng dụng cụ học tập',
+      setting: 'Stationary shop helping student buy supplies',
+      setting_vi: 'Cửa hàng bán đồ dùng học tập',
+      vocab_focus: ['backpack', 'pen', 'notebook', 'ruler', 'eraser', 'pencil case', 'book', 'need'],
+      opening_line: "Welcome to my shop! What school supplies do you need today?",
+      opening_line_vi: "Chào mừng đến cửa hàng! Bạn cần dụng cụ học tập gì hôm nay?",
+      scenario_description: `You own a school supply store. Help the child choose school supplies. Ask what they need, describe items using "There is a...", and suggest combinations. Use vocabulary: ${['backpack', 'pen', 'notebook', 'ruler', 'eraser', 'pencil case'].join(', ')}.`
+    },
+    {
+      id: 'classroom_helper',
+      label_en: 'Classroom Helper',
+      label_vi: 'Trợ giúp lớp học',
+      emoji: '📚',
+      character: 'Friendly Student',
+      character_vi: 'Bạn cùng lớp thân thiện',
+      setting: 'First day of school, showing new student around classroom',
+      setting_vi: 'Ngày đầu tiên, hướng dẫn bạn mới',
+      vocab_focus: ['classroom', 'whiteboard', 'computer', 'desk', 'book', 'pen', 'teacher', 'there is'],
+      opening_line: "Hi! I'm your classroom buddy. Let me show you where everything is! There is a whiteboard over there!",
+      opening_line_vi: "Xin chào! Tôi là bạn cùng lớp. Để tôi cho bạn xem ở đâu! Có bảng trắng ở đó!",
+      scenario_description: `You are a friendly student showing a new classmate around the classroom. Point out items using "There is a...", ask questions about their backpack and supplies. Use vocabulary: ${['classroom', 'whiteboard', 'computer', 'desk', 'book'].join(', ')}.`
+    },
+    {
+      id: 'backpack_check',
+      label_en: 'Backpack Check',
+      label_vi: 'Kiểm tra cặp sách',
+      emoji: '🎒',
+      character: 'Helpful Parent',
+      character_vi: 'Cha mẹ giúp đỡ',
+      setting: 'Morning routine - checking if student has everything for school',
+      setting_vi: 'Buổi sáng - kiểm tra đồ đi học',
+      vocab_focus: ['backpack', 'notebook', 'pen', 'book', 'eraser', 'ruler', 'pencil case', 'need'],
+      opening_line: "Good morning! Let's check your backpack. Do you have a notebook? Do you have a pen?",
+      opening_line_vi: "Chào buổi sáng! Kiểm tra cặp sách nào. Bạn có vở không? Bạn có bút không?",
+      scenario_description: `You are a helpful parent checking the child's backpack before school. Ask what items are in the backpack using "There is...", remind them of important supplies, help organize. Use vocabulary: ${['backpack', 'notebook', 'pen', 'book', 'eraser', 'ruler'].join(', ')}.`
+    }
   ]
 };
 

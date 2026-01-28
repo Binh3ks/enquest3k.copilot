@@ -1,0 +1,77 @@
+[
+  {
+    "file_name": "box.jpg",
+    "positive_prompt": "Isometric view, an open cardboard box with visible flaps, a cute toy sitting deep inside the box, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "desk.jpg",
+    "positive_prompt": "A simple wooden desk with clean lines, a stack of books and a pencil cup on top, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "floor.jpg",
+    "positive_prompt": "Top-down view of a clean floor with colorful tiles, a ball and a toy car placed on the floor, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "wall.jpg",
+    "positive_prompt": "A simple room wall painted in pastel color, a framed picture and a window, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "window.jpg",
+    "positive_prompt": "A cute window with pastel curtains, sunlight streaming through, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "door.jpg",
+    "positive_prompt": "A wooden door slightly open, a cute character peeking out from the gap, only half face visible, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "hide.jpg",
+    "positive_prompt": "A large sofa, a child crouching behind the sofa, looking over the top with a playful expression, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "seek.jpg",
+    "positive_prompt": "A cute child holding a large magnifying glass, looking closely at footprints on the ground, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "treasure.jpg",
+    "positive_prompt": "A wooden chest with open lid, overflowing with shiny gold coins and colorful gems, sparkling, vector icon, flat design, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "hunt.jpg",
+    "positive_prompt": "A child with a map and binoculars, searching for treasure, footprints and clues on the ground, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "wordpower_under_the_table.jpg",
+    "positive_prompt": "Low angle view from the floor, close up of a toy sitting on the floor, wooden table legs surrounding the toy, dark shadow cast by the table top above, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "wordpower_in_the_box.jpg",
+    "positive_prompt": "Isometric view, an open cardboard box, a toy sitting deep inside the box, visible cardboard flaps, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "wordpower_next_to_the_door.jpg",
+    "positive_prompt": "A cute chair placed right beside a wooden door, both objects clearly visible, simple flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "ball.jpg",
+    "positive_prompt": "A colorful ball resting on a clean floor, simple flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  },
+  {
+    "file_name": "toy.jpg",
+    "positive_prompt": "A cute toy robot with friendly face, simple shapes, flat vector illustration, 2d, minimalist, isolated on white background.",
+    "negative_prompt": "3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution"
+  }
+]

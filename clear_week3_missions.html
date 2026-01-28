@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clear Week 3 Missions Cache</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #667eea;
+      color: white;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      margin: 20px 0;
+      width: 100%;
+    }
+    button:hover { background: #45a049; }
+    #status {
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+    .success { color: #4CAF50; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>🗑️ Clear Week 3 Missions Cache</h1>
+  
+  <button onclick="clearMissions()">Clear Week 3 Cache & Reload</button>
+  
+  <div id="status"></div>
+
+  <script>
+    function clearMissions() {
+      const status = document.getElementById('status');
+      status.innerHTML = '<h3>🧹 Clearing...</h3>';
+      
+      // Clear all Week 3 related data
+      const keys = Object.keys(localStorage);
+      let cleared = 0;
+      
+      keys.forEach(key => {
+        if (key.includes('week_3') || 
+            key.includes('week3') || 
+            key.includes('mission') ||
+            key.includes('story') ||
+            key.toLowerCase().includes('mirror')) {
+          localStorage.removeItem(key);
+          cleared++;
+          status.innerHTML += `<div class="success">✅ Cleared: ${key}</div>`;
+        }
+      });
+      
+      // Clear sessionStorage too
+      sessionStorage.clear();
+      
+      status.innerHTML += `<br><div class="success">✅ Cleared ${cleared} items from localStorage</div>`;
+      status.innerHTML += `<div class="success">✅ Cleared sessionStorage</div>`;
+      
+      // Force reload
+      status.innerHTML += `<br><h3>🔄 Reloading in 2 seconds...</h3>`;
+      
+      setTimeout(() => {
+        window.location.href = '/week/3/read_explore';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

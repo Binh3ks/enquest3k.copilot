@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Cache - Week 2 FIXED</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #status {
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .success {
+      background: rgba(76, 175, 80, 0.3);
+      border: 2px solid #4CAF50;
+    }
+    .info {
+      background: rgba(33, 150, 243, 0.3);
+      border: 2px solid #2196F3;
+    }
+    .fix-list {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .fix-list h3 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    .fix-list li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✅ Week 2 FIXED!</h1>
+    <div class="subtitle">Added Objectives Structure!</div>
+    
+    <div class="fix-list">
+      <h3>🔧 Problem Found:</h3>
+      <ul>
+        <li><strong>Issue:</strong> Week 2 Mission 2 & 3 only had <code>story_arc</code> (old structure)</li>
+        <li><strong>Result:</strong> Together AI returned empty response <code>""</code></li>
+        <li><strong>Error:</strong> <code>⚠️ responseParser: Response too short (0 chars, min: 10)</code></li>
+        <li><strong>Fallback triggered:</strong> Banned phrase "tell me more" detected → cleaned to just <code>"!"</code></li>
+        <li><strong>Root Cause:</strong> Missing <code>objectives</code> array with <code>question_variants</code></li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>✅ Solution Applied:</h3>
+      <ul>
+        <li>✅ <strong>Mission 2 (Family Photos):</strong> Added 18 objectives with question_variants</li>
+        <li>✅ <strong>Mission 3 (Mixed Up Family):</strong> Added 17 objectives with question_variants</li>
+        <li>✅ <strong>Structure copied from Week 5:</strong> Same format that's proven to work</li>
+        <li>✅ <strong>Content adapted:</strong> Family vocabulary (mother, father, brother, sister)</li>
+        <li>✅ <strong>Grammar focus:</strong> My vs Your possessive adjectives</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>📋 Mission 2 Objectives (18 steps):</h3>
+      <ul>
+        <li>1. guess_kind_person - "Who is kind?"</li>
+        <li>2. describe_mother - "What is your mother like?"</li>
+        <li>3. guess_strong_person - "Who is strong?"</li>
+        <li>4. describe_father - "What is your father like?"</li>
+        <li>5. family_happy - "Is your family happy?"</li>
+        <li>6. do_you_love_family - "Do you love your family?"</li>
+        <li>7. have_sibling - "Do you have brother/sister?"</li>
+        <li>8. describe_sibling - "What is your sibling like?"</li>
+        <li>9. where_is_family - "Where is your family?"</li>
+        <li>10. what_family_do - "What does family do together?"</li>
+        <li>11. who_cooks - "Who cooks in your family?"</li>
+        <li>12. tell_about_mother - "Tell me about your mother!"</li>
+        <li>13. tell_about_father - "Tell me about your father!"</li>
+        <li>14. do_you_help - "Do you help your family?"</li>
+        <li>15. what_do_you_say - "What do you say to family?"</li>
+        <li>16. what_makes_family_happy - "What makes family happy?"</li>
+        <li>17. say_thank_you - "Say thank you!"</li>
+        <li>18. goodbye_family_photos - Closing</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>📋 Mission 3 Objectives (17 steps):</h3>
+      <ul>
+        <li>1-16. Grammar fix exercises (My vs Your)</li>
+        <li>Examples:
+          <ul>
+            <li>"Your mother is kind" → Fix to "My mother is kind"</li>
+            <li>"My father is strong" → Fix to "Your father is strong"</li>
+            <li>"Your brother is funny" → Fix to "My brother is funny"</li>
+          </ul>
+        </li>
+        <li>17. celebrate_all_fixed - Victory celebration!</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>🎯 Expected Behavior Now:</h3>
+      <ul>
+        <li><strong>Mission 2:</strong> AI asks structured questions from objectives</li>
+        <li><strong>Mission 3:</strong> AI gives grammar mistakes to fix</li>
+        <li><strong>NO MORE:</strong> Empty responses or "tell me more" banned phrases</li>
+        <li><strong>Response format:</strong> Proper Artifact v5.0 JSON with hints</li>
+      </ul>
+    </div>
+
+    <button onclick="clearAll()">🧹 CLEAR ALL CACHE & TEST WEEK 2</button>
+    
+    <div id="status" class="info">
+      Click above to clear cache and test Week 2 Mission 2 & 3!<br>
+      <strong>Should see proper questions now!</strong>
+    </div>
+  </div>
+
+  <script>
+    function clearAll() {
+      const status = document.getElementById('status');
+      
+      status.className = 'info';
+      status.innerHTML = '🔄 Clearing all caches...';
+      
+      // Clear localStorage
+      localStorage.clear();
+      
+      // Clear sessionStorage
+      sessionStorage.clear();
+      
+      // Clear IndexedDB
+      if (window.indexedDB) {
+        indexedDB.databases().then((databases) => {
+          databases.forEach((db) => {
+            indexedDB.deleteDatabase(db.name);
+          });
+        });
+      }
+      
+      // Clear cookies
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      });
+      
+      setTimeout(() => {
+        status.className = 'success';
+        status.innerHTML = `
+          ✅ All caches cleared!<br><br>
+          <strong>Changes applied:</strong><br>
+          • Mission 2: Added 18 objectives with question_variants<br>
+          • Mission 3: Added 17 objectives with grammar fix steps<br>
+          • Both missions now match Week 5 structure<br><br>
+          <strong>Test Week 2 Mission 2 & 3 now!</strong><br><br>
+          <strong>Reloading in 3 seconds...</strong>
+        `;
+        
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 3000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

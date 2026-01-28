@@ -168,29 +168,39 @@ def scan_for_tasks(data_path, voice_config):
         base_name = file_path.stem
         voice = voice_config.get("vocabulary", "en-US-Neural2-F")
         
-        # word_power.js uses different naming convention
+        # word_power.js uses different naming convention - extract text content only
         if base_name == "word_power":
-            vocab_objects = re.findall(r'{\s*id:.*?}', content, re.DOTALL)
+            # Match objects by looking for {word: or {phrase: patterns
+            vocab_objects = re.findall(r'{\s*(?:word|phrase)\s*:.*?}', content, re.DOTALL)
             for obj_text in vocab_objects:
-                word_match = re.search(r'word\s*:\s*["\'](.* ?)["\']', obj_text)
-                def_match = re.search(r'definition_en\s*:\s*["\'](.* ?)["\']', obj_text)
-                ex_match = re.search(r'example\s*:\s*["\'](.* ?)["\']', obj_text)
-                model_match = re.search(r'model_sentence\s*:\s*["\'](.* ?)["\']', obj_text)
-                coll_match = re.search(r'collocation\s*:\s*["\'](.* ?)["\']', obj_text)
+                # Support both 'phrase' (old) and 'word' (new Week 7+)
+                phrase_match = re.search(r'(?:phrase|word)\s*:\s*["\']([^"\']*)["\']', obj_text)
+                def_match = re.search(r'definition_en\s*:\s*["\']([^"\']*)["\']', obj_text)
+                # Support both 'example' (old) and 'example_en' (new)
+                ex_match = re.search(r'(?:example_en|example)\s*:\s*["\']([^"\']*)["\']', obj_text)
+                # Support both 'collocation' and 'collocation_en'
+                coll_match = re.search(r'(?:collocation_en|collocation)\s*:\s*["\']([^"\']*)["\']', obj_text)
                 
-                if word_match:
-                    word = word_match.group(1)
-                    word_clean = word.lower().replace(' ', '_').replace('?', '')
+                if phrase_match:
+                    phrase = phrase_match.group(1).strip()
+                    # Clean filename: spaces to underscore, remove quotes and punctuation
+                    phrase_clean = phrase.lower().replace(' ', '_').replace('?', '').replace("'", '')
                     
-                    tasks.append({"text": word, "voice": voice, "filename": f"wordpower_{word_clean}.mp3", "station": base_name})
+                    tasks.append({"text": phrase, "voice": voice, "filename": f"wordpower_{phrase_clean}.mp3", "station": base_name})
                     if def_match:
-                        tasks.append({"text": def_match.group(1), "voice": voice, "filename": f"wordpower_def_{word_clean}.mp3", "station": base_name})
+                        tasks.append({"text": def_match.group(1).strip(), "voice": voice, "filename": f"wordpower_def_{phrase_clean}.mp3", "station": base_name})
                     if ex_match:
-                        tasks.append({"text": ex_match.group(1), "voice": voice, "filename": f"wordpower_ex_{word_clean}.mp3", "station": base_name})
-                    if model_match:
-                        tasks.append({"text": model_match.group(1), "voice": voice, "filename": f"wordpower_model_{word_clean}.mp3", "station": base_name})
+                        tasks.append({"text": ex_match.group(1).strip(), "voice": voice, "filename": f"wordpower_ex_{phrase_clean}.mp3", "station": base_name})
                     if coll_match:
-                        tasks.append({"text": coll_match.group(1), "voice": voice, "filename": f"wordpower_coll_{word_clean}.mp3", "station": base_name})
+                        # Check if coll_match contains a filename (starts with /) or actual text
+                        coll_text = coll_match.group(1).strip()
+                        # If it's a path (contains /), skip it
+                        if not coll_text.startswith('/'):
+                            tasks.append({"text": coll_text, "voice": voice, "filename": f"wordpower_coll_{phrase_clean}.mp3", "station": base_name})
+                    # Add model_usage/model_sentence_en field (5th audio)
+                    model_match = re.search(r'(?:model_sentence_en|model_usage)\s*:\s*["\']([^"\']*)["\']', obj_text)
+                    if model_match:
+                        tasks.append({"text": model_match.group(1).strip(), "voice": voice, "filename": f"wordpower_model_{phrase_clean}.mp3", "station": base_name})
             return
         
         # The vocab file is a JS module exporting an array of objects.
@@ -220,26 +230,35 @@ def scan_for_tasks(data_path, voice_config):
     # **Critical**: Clean text before TTS to remove bold markers and blanks
     def extract_read_explore(content, file_path):
         voice = voice_config.get("narration", "en-US-Neural2-D")
-        match = re.search(r'content_en\s*:\s*[`"\']([\s\S]*?)[`"\']', content)
-        if match:
-            # Remove ** bold markers and <...> HTML tags before TTS
-            text = match.group(1)
-            text = re.sub(r"\*\*(.*?)\*\*", r"\1", text)  # Remove ** markers
-            text = re.sub(r"<.*?>", "", text)  # Remove HTML tags
-            text = text.replace('\n', ' ').strip()
-            # Correct filename based on file type:
-            # read.js -> read_explore_main.mp3 (NOT read_main.mp3)
-            # explore.js -> explore_main.mp3 (NOT explore_explore_main.mp3)
-            if file_path.stem == "read":
-                filename = "read_explore_main.mp3"
-            else:  # explore.js
-                filename = "explore_main.mp3"
-            tasks.append({"text": text, "voice": voice, "filename": filename, "station": "read_explore"})
+        
+        # Try story array format first (Week 7 format)
+        sentences = re.findall(r'sentence\s*:\s*["\']([^"\']+)["\']', content)
+        if sentences:
+            # Join all sentences into one narration
+            text = ' '.join(sentences)
+        else:
+            # Fallback to content_en format (older weeks)
+            match = re.search(r'content_en\s*:\s*[`"\']([\s\S]*?)[`"\']', content)
+            if match:
+                text = match.group(1)
+                text = re.sub(r"\*\*(.*?)\*\*", r"\1", text)  # Remove ** markers
+                text = re.sub(r"<.*?>", "", text)  # Remove HTML tags
+                text = text.replace('\n', ' ').strip()
+            else:
+                return  # No content found
+        
+        # Filename based on file type
+        if file_path.stem == "read":
+            filename = "read_explore_main.mp3"
+        else:  # explore.js
+            filename = "explore_main.mp3"
+        tasks.append({"text": text, "voice": voice, "filename": filename, "station": "read_explore"})
 
     # Dictation Station
     def extract_dictation(content, file_path):
         voice = voice_config.get("dictation", "en-US-Neural2-F")
-        matches = re.findall(r'text\s*:\s*["\'](.*?)["\']', content)
+        # Support 'text_en', 'text', and 'sentence' fields
+        matches = re.findall(r'(?:text_en|sentence|text)\s*:\s*["\']([^"\']+)["\']', content)
         for i, text in enumerate(matches):
             tasks.append({"text": text, "voice": voice, "filename": f"dictation_{i+1}.mp3", "station": "dictation"})
 
@@ -248,29 +267,29 @@ def scan_for_tasks(data_path, voice_config):
         voice = voice_config.get("questions", "en-US-Neural2-D")
         station_name = file_path.stem
         
-        # Ask AI uses different structure: {answer: [...]} array
+        # Ask AI uses different structure
         if station_name == "ask_ai":
-            # Extract all prompts with their answers
-            prompts = re.findall(r'{[\s\S]*?}(?=\s*,|\s*\])', content)
-            for i, prompt_text in enumerate(prompts):
-                # Extract answer array from this prompt
-                answer_match = re.search(r'answer\s*:\s*\[([\s\S]*?)\]', prompt_text)
-                if answer_match:
-                    # Get first answer from array
-                    answers = re.findall(r'["\'](.* ?)["\']', answer_match.group(1))
-                    if answers:
-                        text = answers[0]
-                        tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_{i+1}.mp3", "station": station_name})
+            # Extract context_en fields for questions
+            context_matches = re.findall(r'context_en\s*:\s*["\']([^"\']+)["\']', content)
+            for i, text in enumerate(context_matches):
+                tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_{i+1}.mp3", "station": station_name})
+            
+            # Extract answer fields (first item from answer array)
+            # Pattern: answer: ["First answer", "Second", "Third"]
+            answer_matches = re.findall(r'answer\s*:\s*\[\s*["\']([^"\']+)["\']', content)
+            for i, text in enumerate(answer_matches):
+                tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_answer_{i+1}.mp3", "station": station_name})
         else:
-            # Logic lab uses question_en/question/prompt fields
-            matches = re.findall(r'(?:question_en|question|prompt)\s*:\s*["\'](.*?)["\']', content)
+            # Logic lab uses description_en/question_en/question/prompt fields
+            matches = re.findall(r'(?:description_en|question_en|question|prompt)\s*:\s*["\'](.*?)["\']', content)
             for i, text in enumerate(matches):
                 tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_{i+1}.mp3", "station": station_name})
 
     # Shadowing Station
     def extract_shadowing(content, file_path):
         voice = voice_config.get("narration", "en-US-Neural2-D")
-        matches = re.findall(r'text\s*:\s*["\'](.*?)["\']', content)
+        # Support 'text_en' and 'text' fields
+        matches = re.findall(r'(?:text_en|text)\s*:\s*["\'](.*?)["\']', content)
         full_script = []
         for i, text in enumerate(matches):
             full_script.append(text)
@@ -299,13 +318,56 @@ def scan_for_tasks(data_path, voice_config):
                     clean_text = clean_text + "."  # Add back single period
                 tasks.append({"text": clean_text, "voice": voice, "filename": f"mindmap_stem_{i+1}.mp3", "station": "mindmap"})
         
-        # branchLabels: Extract only "text" field from objects
-        branch_labels_match = re.search(r'branchLabels\s*:\s*{([\s\S]*?)}\s*}', content)
-        if branch_labels_match:
-            # Find all arrays in branchLabels
-            branch_arrays = re.findall(r'\[([\s\S]*?)\]', branch_labels_match.group(1))
+        # branchLabels: Extract using brace counting + line-based parsing
+        branch_labels_start = re.search(r'branchLabels\s*:\s*{', content)
+        if branch_labels_start:
+            # Use brace counting to find the matching closing brace
+            start_pos = branch_labels_start.end()
+            brace_count = 1
+            i = start_pos
+            while brace_count > 0 and i < len(content):
+                if content[i] == '{':
+                    brace_count += 1
+                elif content[i] == '}':
+                    brace_count -= 1
+                i += 1
+            
+            # Extract the full branchLabels content
+            branch_section = content[start_pos:i-1]
+            
+            # Parse arrays line-by-line to avoid regex issues with nested structures
+            lines = branch_section.split('\n')
+            arrays = []
+            current_key = None
+            current_array = []
+            in_array = False
+            bracket_count = 0
+            
+            for line in lines:
+                # Check if this line starts a new array (has key: [ pattern)
+                key_match = re.match(r'\s*["\'](.*?)["\']\s*:\s*\[', line)
+                if key_match:
+                    # Save previous array if exists
+                    if current_key and current_array:
+                        arrays.append((current_key, '\n'.join(current_array)))
+                    current_key = key_match.group(1)
+                    current_array = [line]
+                    in_array = True
+                    bracket_count = line.count('[') - line.count(']')
+                elif in_array:
+                    current_array.append(line)
+                    bracket_count += line.count('[') - line.count(']')
+                    if bracket_count == 0 and ']' in line:
+                        # Array ended
+                        in_array = False
+            
+            # Don't forget the last array
+            if current_key and current_array:
+                arrays.append((current_key, '\n'.join(current_array)))
+            
+            # Now extract text from each array
             branch_index = 1
-            for array_content in branch_arrays:
+            for key, array_content in arrays:
                 # Extract only text field: { text: "tall", audio: "..." } -> "tall"
                 branches = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', array_content)
                 for text in branches:
@@ -423,7 +485,8 @@ def validate_audio_urls(week, mode):
     if shadowing_path.exists():
         content = shadowing_path.read_text(encoding='utf-8')
         import re
-        matches = re.findall(r'audio_url\s*:\s*["\"](.*?)["\"]', content)
+        # Updated regex to match JS object literal format (no quotes on keys)
+        matches = re.findall(r'audio_url\s*:\s*["\']([^"\']+)["\']', content)
         if not matches or len(matches) == 0:
             errors.append(f"[shadowing.js] Không có audio_url cho bất kỳ câu nào.")
         else:

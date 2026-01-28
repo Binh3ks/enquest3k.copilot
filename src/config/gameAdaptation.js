@@ -6,6 +6,157 @@
  */
 
 export const GAME_TEMPLATES = {
+  3: { // WEEK 3: THE MIRROR GAME (APPEARANCE)
+    theme: 'The Mirror Game (Appearance)',
+    theme_vi: 'Trò chơi Soi Gương (Ngoại hình)',
+    vocab: ['tall', 'short', 'hair', 'eyes', 'long', 'curly', 'straight', 'glasses', 'face', 'smile'],
+    
+    games: {
+      // 🔗 WORD CHAIN
+      word_chain: {
+        name_en: 'Word Chain',
+        name_vi: 'Nối từ',
+        emoji: '🔗',
+        starter_words: ['tall', 'hair', 'eyes', 'smile'],
+        instructions: `Let's play Word Chain with appearance words! I'll say a word, then you say a word that starts with the last letter of my word. Use words about how people look!`,
+        instructions_vi: 'Chơi Nối từ với từ về ngoại hình! Tôi nói từ, bạn nói từ bắt đầu bằng chữ cái cuối.',
+        example: 'Nova: "TALL" → Student: "LONG" → Nova: "GLASSES"'
+      },
+      
+      // ❓ 20 QUESTIONS
+      twenty_questions: {
+        name_en: '20 Questions',
+        name_vi: 'Đoán đồ vật',
+        emoji: '❓',
+        objects: ['glasses', 'mirror', 'comb', 'brush', 'hair tie', 'hat', 'scarf', 'photo'],
+        instructions: `I'm thinking of something related to appearance. Ask me yes/no questions to guess what it is! It's one of these: glasses, mirror, comb, brush, hair tie, hat, scarf, or photo.`,
+        instructions_vi: 'Tôi nghĩ đến một vật liên quan đến ngoại hình. Hỏi câu hỏi yes/no để đoán!',
+        hints: ['Do you wear it?', 'Is it for your hair?', 'Can you see yourself in it?', 'Is it on your face?']
+      },
+      
+      // 🧩 SENTENCE BUILDER
+      sentence_builder: {
+        name_en: 'Sentence Builder',
+        name_vi: 'Xây câu',
+        emoji: '🧩',
+        patterns: [
+          'She is [adjective].',
+          'She has [adjective] [noun].'
+        ],
+        instructions: `Complete sentences describing appearance! Use "is" for qualities (tall, short) and "has" for features (hair, eyes).`,
+        instructions_vi: 'Hoàn thành câu miêu tả ngoại hình! Dùng "is" cho tính chất và "has" cho đặc điểm.',
+        examples: [
+          'She is tall.',
+          'She has long hair.',
+          'He is short.',
+          'He has blue eyes.',
+          'I have curly hair.'
+        ]
+      }
+    }
+  },
+
+  2: { // WEEK 2: MY FAMILY SQUAD
+    theme: 'My Family Squad',
+    theme_vi: 'Đội Gia Đình',
+    vocab: ['mother', 'father', 'brother', 'sister', 'family', 'home', 'kind', 'happy', 'love', 'together'],
+    
+    games: {
+      // 🔗 WORD CHAIN
+      word_chain: {
+        name_en: 'Word Chain',
+        name_vi: 'Nối từ',
+        emoji: '🔗',
+        starter_words: ['mother', 'father', 'family', 'home'],
+        instructions: `Let's play Word Chain with family words! I'll say a word, then you say a word that starts with the last letter of my word. Use words about family!`,
+        instructions_vi: 'Chơi Nối từ với từ vựng về gia đình! Tôi nói từ, bạn nói từ bắt đầu bằng chữ cái cuối.',
+        example: 'Nova: "MOTHER" → Student: "RABBIT" → Nova: "TOGETHER"'
+      },
+      
+      // ❓ 20 QUESTIONS
+      twenty_questions: {
+        name_en: '20 Questions',
+        name_vi: 'Đoán người',
+        emoji: '❓',
+        objects: ['mother', 'father', 'brother', 'sister', 'family', 'home'],
+        instructions: `I'm thinking of someone or something in the family. Ask me yes/no questions to guess! It's one of these: mother, father, brother, sister, family, or home.`,
+        instructions_vi: 'Tôi nghĩ đến ai đó hoặc điều gì đó trong gia đình. Hỏi câu hỏi yes/no để đoán!',
+        hints: ['Is it a person?', 'Is it someone kind?', 'Is it a place?', 'Do you love this person?']
+      },
+      
+      // 🧩 SENTENCE BUILDER
+      sentence_builder: {
+        name_en: 'Sentence Builder',
+        name_vi: 'Xây câu',
+        emoji: '🧩',
+        patterns: [
+          'My [family member] is [adjective].',
+          'I love my [family member].',
+          'My family is [adjective].'
+        ],
+        instructions: `Complete sentences about your family! Use "My mother is kind" or "My father is strong" patterns. Use only Week 2 vocabulary!`,
+        instructions_vi: 'Hoàn thành câu về gia đình! Dùng mẫu "My mother is kind" hoặc "My father is strong".',
+        examples: [
+          'My mother is kind.',
+          'My father is strong.',
+          'My brother is funny.',
+          'My sister is smart.',
+          'My family is happy.',
+          'I love my family.'
+        ]
+      }
+    }
+  },
+  
+  4: { // WEEK 4: MY HAPPY JAR (EMOTIONS & LIKES)
+    theme: 'My Happy Jar (Emotions & Likes)',
+    theme_vi: 'Lọ Hạnh Phúc (Cảm xúc & Sở thích)',
+    vocab: ['happy', 'sad', 'excited', 'funny', 'friendly', 'playing', 'reading', 'drawing', 'singing', 'jar'],
+    
+    games: {
+      // 🔗 WORD CHAIN
+      word_chain: {
+        name_en: 'Word Chain',
+        name_vi: 'Nối từ',
+        emoji: '🔗',
+        starter_words: ['happy', 'jar', 'reading', 'drawing'],
+        instructions: `Let's play Word Chain with emotion and activity words! I'll say a word, then you say a word that starts with the last letter of my word. Use words about feelings and things you like!`,
+        instructions_vi: 'Chơi Nối từ với từ về cảm xúc và hoạt động! Tôi nói từ, bạn nói từ bắt đầu bằng chữ cái cuối.',
+        example: 'Nova: "HAPPY" → Student: "YELLOW" → Nova: "WEST"'
+      },
+      
+      // ❓ 20 QUESTIONS
+      twenty_questions: {
+        name_en: '20 Questions',
+        name_vi: 'Đoán đồ vật',
+        emoji: '❓',
+        objects: ['jar', 'book', 'pencil', 'paper', 'picture', 'crayon', 'game', 'toy'],
+        instructions: `I'm thinking of an object in the room. Ask me yes/no questions to guess what it is! It's one of these: jar, book, pencil, paper, picture, crayon, game, or toy.`,
+        instructions_vi: 'Tôi nghĩ đến một đồ vật trong phòng. Hỏi câu hỏi yes/no để đoán!',
+        hints: ['Is it for writing?', 'Do you read it?', 'Can you put things in it?', 'Is it colorful?']
+      },
+      
+      // 🧩 SENTENCE BUILDER
+      sentence_builder: {
+        name_en: 'Sentence Builder',
+        name_vi: 'Xây câu',
+        emoji: '🧩',
+        patterns: [
+          'I like [V-ing].',
+          'I like [V-ing] [object].'
+        ],
+        instructions: `Complete sentences about your happy jar! Use "I like + VERB-ing" with activities. Examples: "I like playing." or "I like reading books."`,
+        instructions_vi: 'Hoàn thành câu về lọ hạnh phúc! Dùng "I like + ĐỘNG TỪ-ing" với hoạt động.',
+        examples: [
+          'I like playing.',
+          'I like reading books.',
+          'I like drawing pictures.',
+          'I like singing songs.'
+        ]
+      }
+    }
+  },
+  
   5: { // WEEK 5: HOUSE & ROOMS (Template for other weeks)
     theme: 'House & Rooms',
     theme_vi: 'Ngôi nhà và các phòng',
@@ -50,6 +201,105 @@ export const GAME_TEMPLATES = {
           'There is a lamp in my bedroom.',
           'I sleep in my bedroom.',
           'The sofa is in the living room.'
+        ]
+      }
+    }
+  },
+  
+  6: { // WEEK 6: TREASURE HUNT AT HOME (LOCATION)
+    theme: 'Treasure Hunt at Home (Location)',
+    theme_vi: 'Săn kho báu tại nhà (Vị trí)',
+    vocab: ['box', 'desk', 'floor', 'wall', 'window', 'door', 'hide', 'seek', 'treasure', 'hunt'],
+    
+    games: {
+      // 🔗 WORD CHAIN
+      word_chain: {
+        name_en: 'Word Chain',
+        name_vi: 'Nối từ',
+        emoji: '🔗',
+        starter_words: ['box', 'treasure', 'desk', 'hunt'],
+        instructions: `Let's play Word Chain with treasure hunt words! I'll say a word, then you say a word that starts with the last letter of my word. Use words about treasure hunting and locations!`,
+        instructions_vi: 'Chơi Nối từ với từ vựng về săn kho báu! Tôi nói từ, bạn nói từ bắt đầu bằng chữ cái cuối.',
+        example: 'Nova: "BOX" → Student: "XYLOPHONE" → Nova: "ELEPHANT"'
+      },
+      
+      // ❓ 20 QUESTIONS
+      twenty_questions: {
+        name_en: '20 Questions',
+        name_vi: 'Đoán vật',
+        emoji: '❓',
+        objects: ['box', 'desk', 'floor', 'wall', 'window', 'door', 'treasure', 'map'],
+        instructions: `I'm thinking of something for treasure hunting. Ask me yes/no questions to guess what it is! It's one of these: box, desk, floor, wall, window, door, treasure, or map.`,
+        instructions_vi: 'Tôi nghĩ đến một vật để săn kho báu. Hỏi câu hỏi yes/no để đoán!',
+        hints: ['Is it ON something?', 'Is it UNDER something?', 'Can you hide treasure in it?', 'Is it IN the room?']
+      },
+      
+      // 🧩 SENTENCE BUILDER
+      sentence_builder: {
+        name_en: 'Sentence Builder',
+        name_vi: 'Xây câu',
+        emoji: '🧩',
+        patterns: [
+          'The treasure is [ON/UNDER/IN] the ...',
+          'I hide it [ON/UNDER/IN] the ...',
+          'Look [ON/UNDER/IN] the ...'
+        ],
+        instructions: `Complete sentences using prepositions: ON, UNDER, IN, NEXT TO. Example: "The treasure is ON the desk."`,
+        instructions_vi: 'Hoàn thành câu dùng giới từ: ON, UNDER, IN, NEXT TO.',
+        examples: [
+          'The treasure is ON the desk.',
+          'I hide it UNDER the box.',
+          'Look IN the treasure box.',
+          'The box is NEXT TO the door.'
+        ]
+      }
+    }
+  },
+  
+  7: { // WEEK 7: SCHOOL SUPPLIES
+    theme: 'School Supplies',
+    theme_vi: 'Đồ dùng học tập',
+    vocab: ['pen', 'ruler', 'eraser', 'book', 'notebook', 'pencil case', 'backpack', 'whiteboard', 'computer', 'desk', 'chair', 'teacher'],
+    
+    games: {
+      // 🔗 WORD CHAIN
+      word_chain: {
+        name_en: 'Word Chain',
+        name_vi: 'Nối từ',
+        emoji: '🔗',
+        starter_words: ['pen', 'notebook', 'ruler', 'eraser'],
+        instructions: `Let's play Word Chain with school words! I'll say a word, then you say a word that starts with the last letter of my word. Use words about school!`,
+        instructions_vi: 'Chơi Nối từ với từ vựng về trường học! Tôi nói từ, bạn nói từ bắt đầu bằng chữ cái cuối.',
+        example: 'Nova: "PEN" → Student: "NOTEBOOK" → Nova: "KITCHEN"'
+      },
+      
+      // ❓ 20 QUESTIONS
+      twenty_questions: {
+        name_en: '20 Questions',
+        name_vi: 'Đoán vật',
+        emoji: '❓',
+        objects: ['pen', 'book', 'ruler', 'eraser', 'notebook', 'desk', 'chair', 'backpack'],
+        instructions: `I'm thinking of something in a classroom. Ask me yes/no questions to guess what it is! It's one of these: pen, book, ruler, eraser, notebook, desk, chair, or backpack.`,
+        instructions_vi: 'Tôi nghĩ đến một vật trong lớp học. Hỏi câu hỏi yes/no để đoán!',
+        hints: ['Is it in the backpack?', 'Is it for writing?', 'Do you sit on it?', 'Is it on the desk?']
+      },
+      
+      // 🧩 SENTENCE BUILDER
+      sentence_builder: {
+        name_en: 'Sentence Builder',
+        name_vi: 'Xây câu',
+        emoji: '🧩',
+        patterns: [
+          'There is a ... in my ...',
+          'The ... is on the ...'
+        ],
+        instructions: `Complete sentences using "There is a..." or "The ... is on the...". Example: "There is a pen in my backpack."`,
+        instructions_vi: 'Hoàn thành câu dùng "There is a..." hoặc "The ... is on the...".',
+        examples: [
+          'There is a pen in my backpack.',
+          'There is a book in my bag.',
+          'The book is on the desk.',
+          'The pen is on the table.'
         ]
       }
     }

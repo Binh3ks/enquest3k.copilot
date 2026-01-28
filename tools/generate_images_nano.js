@@ -1,224 +1,208 @@
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
-import dotenv from 'dotenv';
 
-dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+// === PROMPT EXPORT MODE ===
+// Đọc image_url từ data files và tạo prompt theo đúng format gốc
 
-const WEEK_ID = String(process.argv[2]);
-const BASE_DIR = path.join('public/images', `week${WEEK_ID}`);
-const BASE_DIR_EASY = path.join('public/images', `week${WEEK_ID}_easy`);
-
-// CLOUDFLARE CONFIG
-const ACCOUNT_ID = "60599222f5f817a651fc103a6255d2cc";
-const API_TOKEN = "KCbZVuTGDzcap04JjEFoeV4hKU8W37g-ZIouRZ3i";
-const MODEL_ID = "@cf/bytedance/stable-diffusion-xl-lightning";
-
-// STYLE & NEGATIVE PROMPT (Chiến lược mới)
-const BASE_STYLE = ", 3d disney pixar style, cute, educational illustration, vibrant colors, soft lighting, clean white background, 8k resolution";
-const NEGATIVE_PROMPT = "text, watermark, letters, signature, ugly, deformed, blurry, bad anatomy, extra limbs, cropped, low quality";
-
-if (!ACCOUNT_ID || !API_TOKEN) { 
-    console.error("❌ ERROR: Missing Cloudflare credentials"); 
-    process.exit(1);
+// Utility: Extract filename from image_url path
+function extractFilename(imageUrl) {
+    return path.basename(imageUrl);
 }
 
-// HÀM XÂY DỰNG PROMPT VỚI WEIGHTED KEYWORDS (THEO CLOUDFLARE GUIDE)
-// buildPrompt: Chuẩn hóa theo Art Bible ESL App
-function buildPrompt(task) {
-    // Standard negative prompt
-    const NEGATIVE = '3d, render, realistic, photograph, clay, plastic, blurry, ugly, deformed, text, watermark, signature, messy, dark shadows, scary, complex background, extra limbs, bad anatomy, grainy, low resolution';
-    // Style suffix
-    const STYLE = ', flat vector illustration, 2d, minimalist, bright pastel colors, clean lines, isolated on white background';
-    return `${task.prompt}${STYLE} ### ${NEGATIVE}`;
-}
-
-console.log(`🎨 CLOUDFLARE SDXL IMAGE GENERATOR FOR WEEK ${WEEK_ID}`);
-console.log(`   Model: ${MODEL_ID}`);
-
-// Cleanup & Init
-if (!fs.existsSync(BASE_DIR)) fs.mkdirSync(BASE_DIR, { recursive: true });
-if (!fs.existsSync(BASE_DIR_EASY)) fs.mkdirSync(BASE_DIR_EASY, { recursive: true });
-
-async function generateImage(prompt, filename, isEasy = false) {
-    const targetDir = isEasy ? BASE_DIR_EASY : BASE_DIR;
-    const outFile = path.join(targetDir, filename);
-    
-    // Skip nếu file đã có và dung lượng > 0
-    if (fs.existsSync(outFile) && fs.statSync(outFile).size > 0) {
-        console.log(`  ⏭️  ${filename}: Already exists, skipping...`);
-        return;
-    }
-
-    process.stdout.write(`  🎨 ${filename}: `);
-
-    const url = `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/ai/run/${MODEL_ID}`;
-
-    return new Promise((resolve, reject) => {
-        const req = https.request(url, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${API_TOKEN}`,
-                'Content-Type': 'application/json'
-            }
-        }, (res) => {
-            if (res.statusCode !== 200) {
-                let errorBody = '';
-                res.on('data', (chunk) => errorBody += chunk);
-                res.on('end', () => {
-                    console.log(`❌ API Error (${res.statusCode}): ${errorBody}`);
-                    resolve();
-                });
-                return;
-            }
-
-            const chunks = [];
-            res.on('data', (chunk) => chunks.push(chunk));
-            res.on('end', () => {
-                const buffer = Buffer.concat(chunks);
-                
-                if (buffer.length === 0) {
-                    console.log("❌ Empty response");
-                    resolve();
-                    return;
-                }
-
-                fs.writeFileSync(outFile, buffer);
-                console.log("✅ OK");
-                resolve();
-            });
-        });
-
-        req.on('error', (e) => {
-            console.log(`❌ Network Error: ${e.message}`);
-            resolve();
-        });
-
-        req.write(JSON.stringify({ 
-            prompt: prompt,
-            num_steps: 6,     // Tăng lên 6 cho chi tiết hơn
-            guidance: 8.0     // Tăng guidance để bám sát prompt
-        }));
-        req.end();
-    });
-}
-
-async function scanAndGen(weekId) {
-    // Dùng Map để lưu file và mode, đảm bảo không trùng và không bỏ sót
-    const imageTasks = new Map();
-    
-    const weekIdPadded = String(weekId).padStart(2, '0');
-    
-    // SCAN IMAGE_URL từ data files (vocab.js, word_power.js, word_match.js)
-    const dirs = [
-        { path: path.join('src/data/weeks', `week_${weekIdPadded}`), isEasy: false },
-        { path: path.join('src/data/weeks_easy', `week_${weekIdPadded}`), isEasy: true }
-    ];
-    
-    for (const { path: dir, isEasy } of dirs) {
-        if (!fs.existsSync(dir)) continue;
-        const files = fs.readdirSync(dir).filter(f => f.endsWith('.js'));
-        for (const file of files) {
-            const content = fs.readFileSync(path.join(dir, file), 'utf-8');
-            // Regex bắt image_url: "/images/weekX/filename.jpg"
-            const imageRegex = /image_url\s*:\s*["']\/images\/week\d+(?:_easy)?\/([^"']+\.jpg)["']/gi;
-            const imageMatches = [...content.matchAll(imageRegex)];
-            imageMatches.forEach(match => {
-                const filename = match[1];
-                const key = `${isEasy ? 'easy' : 'adv'}:${filename}`;
-                if (!imageTasks.has(key)) {
-                    // Tìm context (word + definition + example) từ cùng object
-                    const wordMatch = content.match(new RegExp(`word\\s*:\\s*["']([^"']+)["'][^}]*image_url\\s*:\\s*["'][^"']*${filename.replace('.', '\\.')}`, 'i'));
-                    const defMatch = content.match(new RegExp(`definition_en\\s*:\\s*["']([^"']+)["'][^}]*image_url\\s*:\\s*["'][^"']*${filename.replace('.', '\\.')}`, 'i'));
-                    const exampleMatch = content.match(new RegExp(`example\\s*:\\s*["']([^"']+)["'][^}]*image_url\\s*:\\s*["'][^"']*${filename.replace('.', '\\.')}`, 'i'));
-                    const word = wordMatch ? wordMatch[1] : '';
-                    const definition = defMatch ? defMatch[1] : '';
-                    // Prompt logic (giữ nguyên như trước)
-                    let prompt = '';
-                    if (filename.includes('wordpower_under_the_table')) {
-                        prompt = 'Low angle view from the floor, close up of a toy sitting on the floor, wooden table legs surrounding the toy, dark shadow cast by the table top above.';
-                    } else if (filename.includes('wordpower_in_the_box')) {
-                        prompt = 'Isometric view, an open cardboard box, a toy sitting deep inside the box, visible cardboard flaps.';
-                    } else if (filename.includes('wordpower_next_to_the_door')) {
-                        prompt = 'A cute chair placed right beside a wooden door, both objects clearly visible.';
-                    } else if (filename.includes('wordpower_under_the_bed')) {
-                        prompt = 'Low angle view from the floor, a colorful ball resting on the floor, wooden bed frame above, shadows.';
-                    } else if (filename.includes('wordpower_in_the_bag')) {
-                        prompt = 'Isometric view, an open school bag, a toy sitting deep inside the bag, visible zipper and pockets.';
-                    } else if (filename.includes('wordpower_on_the_desk')) {
-                        prompt = 'Side view, a book resting on top of a wooden desk, book clearly touching the desk surface.';
-                    } else if (word === 'box') {
-                        prompt = 'Isometric view, an open cardboard box with visible flaps, a cute toy sitting deep inside the box.';
-                    } else if (word === 'desk') {
-                        prompt = 'A simple wooden desk with clean lines, a stack of books and a pencil cup on top.';
-                    } else if (word === 'floor') {
-                        prompt = 'Top-down view of a clean floor with colorful tiles, a ball and a toy car placed on the floor.';
-                    } else if (word === 'wall') {
-                        prompt = 'A simple room wall painted in pastel color, a framed picture and a window.';
-                    } else if (word === 'window') {
-                        prompt = 'A cute window with pastel curtains, sunlight streaming through.';
-                    } else if (word === 'door') {
-                        prompt = 'A wooden door slightly open, a cute character peeking out from the gap, only half face visible.';
-                    } else if (word === 'hide') {
-                        prompt = 'A large sofa, a child crouching behind the sofa, looking over the top with a playful expression.';
-                    } else if (word === 'seek') {
-                        prompt = 'A cute child holding a large magnifying glass, looking closely at footprints on the ground.';
-                    } else if (word === 'treasure') {
-                        prompt = 'A wooden chest with open lid, overflowing with shiny gold coins and colorful gems, sparkling.';
-                    } else if (word === 'hunt') {
-                        prompt = 'A child with a map and binoculars, searching for treasure, footprints and clues on the ground.';
-                    } else if (word === 'ball') {
-                        prompt = 'A colorful ball resting on a clean floor.';
-                    } else if (word === 'toy') {
-                        prompt = 'A cute toy robot with friendly face, simple shapes.';
-                    } else {
-                        prompt = `${definition}, flat vector illustration.`;
-                    }
-                    imageTasks.set(key, { prompt: buildPrompt({ prompt }), file: filename, isEasy });
-                } else {
-                    console.log(`⚠️ Duplicate image_url detected: ${filename} (${isEasy ? 'easy' : 'adv'})`);
-                }
-            });
+// Utility: Build prompt based on word/phrase
+function buildPrompt(word, definition, type, weekNum = null) {
+    if (type === 'vocab') {
+        switch (word) {
+            // Week 6 vocab
+            case 'box':
+                return `Cute 3D render of a colorful toy storage box, slightly open, Pixar animation style, vibrant colors, soft studio lighting, high resolution, clean simple background.`;
+            case 'desk':
+                return `Cute 3D render of a wooden desk with books and a pencil cup, sunlight from window, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'floor':
+                return `Cute 3D render of a clean tiled floor, a colorful ball and toy car, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'wall':
+                return `Cute 3D render of a pastel-colored wall with a framed picture and a window, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'window':
+                return `Cute 3D render of a window with curtains, sunlight streaming through, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'door':
+                return `Cute 3D render of a wooden door slightly open, child peeking out playfully, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'hide':
+                return `Cute 3D character of a child playfully hiding behind a big plush curtain, Pixar style, vibrant colors, studio lighting, clean background.`;
+            case 'seek':
+                return `Cute 3D render of a child holding a large magnifying glass, searching for clues, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'treasure':
+                return `Cute 3D render of a wooden chest overflowing with gold coins and colorful gems, sparkling, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'hunt':
+                return `Cute 3D render of a child with a map and binoculars, searching for treasure, clues and footprints, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'ball':
+                return `Cute 3D render of a round toy you play with, Pixar animation style, vibrant colors, soft studio lighting, high resolution, clean simple background.`;
+            case 'toy':
+                return `Cute 3D render of something you play with, Pixar animation style, vibrant colors, soft studio lighting, high resolution, clean simple background.`;
+            
+            // Week 7 ADVANCED vocab
+            case 'whiteboard':
+                return `Cute 3D render of a classroom whiteboard with colorful markers and eraser, child writing ABC, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'teacher':
+                return `Cute 3D render of a friendly teacher character holding a book, glasses and warm smile, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'computer':
+                return `Cute 3D render of a modern desktop computer with colorful screen, keyboard and mouse, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'pen':
+                return `Cute 3D render of a blue ballpoint pen, shiny and new, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'ruler':
+                return `Cute 3D render of a transparent plastic ruler with colorful markings, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'eraser':
+                return `Cute 3D render of a pink rubber eraser with pencil shavings nearby, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'book':
+                return `Cute 3D render of a colorful children's book slightly open, magical glow coming from pages, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'notebook':
+                return `Cute 3D render of a spiral-bound notebook with colorful cover, pencil resting on top, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'pencil case':
+                return `Cute 3D render of a colorful pencil case with zipper, pencils and crayons peeking out, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'backpack':
+                return `Cute 3D render of a bright school backpack with straps and pockets, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            
+            // Week 7 EASY vocab
+            case 'pencil':
+                return `Cute 3D render of a yellow wooden pencil with pink eraser top, sharpened point, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'crayon':
+                return `Cute 3D render of colorful crayons in a pile, wax texture visible, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'scissors':
+                return `Cute 3D render of child-safe scissors with rounded tips, colorful handles, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'glue':
+                return `Cute 3D render of a white glue bottle with orange cap, craft supplies nearby, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'paper':
+                return `Cute 3D render of white paper sheets with colorful drawings, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'marker':
+                return `Cute 3D render of colorful permanent markers with caps, vibrant colors showing, Pixar style, soft studio lighting, clean background.`;
+            case 'lunch box':
+                return `Cute 3D render of a colorful lunch box with sandwich and fruit inside, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'water bottle':
+                return `Cute 3D render of a transparent water bottle with colorful cap, water droplets on surface, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'school bag':
+                return `Cute 3D render of a small colorful school bag with front pocket, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'folder':
+                return `Cute 3D render of a colorful folder with papers inside, organized and neat, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            
+            default:
+                return `Cute 3D render of ${definition}, Pixar animation style, vibrant colors, soft studio lighting, high resolution, clean simple background.`;
         }
     }
-    // Đảm bảo luôn có 15 hình cho mỗi mode (nếu thiếu sẽ báo lỗi rõ ràng)
-    const coverFiles = [
-        { file: `read_cover_w${String(weekId).padStart(2, '0')}.jpg`, prompt: isEasy => buildPrompt({ prompt: isEasy ? 'A group of children searching for a toy, one child holding a map, another with a magnifying glass, bright pastel colors.' : 'A group of children searching for treasure, one child holding a map, another with a magnifying glass, bright pastel colors.' }), isEasy: false },
-        { file: `explore_cover_w${String(weekId).padStart(2, '0')}.jpg`, prompt: _ => buildPrompt({ prompt: 'Children using binoculars and magnifying glass, searching for clues, simple props, bright pastel colors.' }), isEasy: false },
-        { file: `read_cover_w${String(weekId).padStart(2, '0')}.jpg`, prompt: isEasy => buildPrompt({ prompt: isEasy ? 'A group of children searching for a toy, one child holding a map, another with a magnifying glass, bright pastel colors.' : 'A group of children searching for treasure, one child holding a map, another with a magnifying glass, bright pastel colors.' }), isEasy: true },
-        { file: `explore_cover_w${String(weekId).padStart(2, '0')}.jpg`, prompt: _ => buildPrompt({ prompt: 'Children using binoculars and magnifying glass, searching for clues, simple props, bright pastel colors.' }), isEasy: true }
-    ];
-    // Thêm cover cho cả easy/adv nếu chưa có
-    for (const cover of coverFiles) {
-        const key = `${cover.isEasy ? 'easy' : 'adv'}:${cover.file}`;
-        if (!imageTasks.has(key)) {
-            imageTasks.set(key, { prompt: cover.prompt(cover.isEasy), file: cover.file, isEasy: cover.isEasy });
+    if (type === 'wordpower') {
+        switch (word) {
+            // Week 6 word power
+            case 'under the table':
+                return `Cute 3D render, low angle view from the floor, toy under a wooden table, table legs surrounding, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'in the box':
+                return `Cute 3D render, isometric view, open cardboard box, toy sitting deep inside, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'next to the door':
+                return `Cute 3D render of a chair placed right beside a wooden door, both objects clearly visible, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'under the bed':
+                return `Cute 3D render of under the bed, Pixar animation style, vibrant colors, soft studio lighting, clean background.`;
+            case 'in the bag':
+                return `Cute 3D render of in the bag, Pixar animation style, vibrant colors, soft studio lighting, clean background.`;
+            case 'on the desk':
+                return `Cute 3D render of on the desk, Pixar animation style, vibrant colors, soft studio lighting, clean background.`;
+            
+            // Week 7 ADVANCED word power
+            case 'pack your bag':
+                return `Cute 3D render of a child packing books and pencils into a colorful backpack, organized supplies on table, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'raise your hand':
+                return `Cute 3D render of a happy child sitting at desk raising hand enthusiastically, classroom setting, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'take notes':
+                return `Cute 3D render of a child writing in a notebook with pencil, concentrated expression, colorful supplies nearby, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            
+            // Week 7 EASY word power
+            case 'color pictures':
+                return `Cute 3D render of a child coloring pictures with crayons, colorful artwork on paper, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'cut paper':
+                return `Cute 3D render of child-safe scissors cutting colorful paper, paper shapes scattered, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            case 'drink water':
+                return `Cute 3D render of a happy child drinking water from a colorful bottle, refreshing moment, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+            
+            default:
+                return `Cute 3D render of ${word}, Pixar animation style, vibrant colors, soft studio lighting, clean background.`;
         }
     }
-    // Đưa vào tasks (theo mode)
-    const easyTasks = Array.from(imageTasks.values()).filter(t => t.isEasy);
-    const advTasks = Array.from(imageTasks.values()).filter(t => !t.isEasy);
-    if (easyTasks.length !== 15) {
-        console.log(`❌ Easy mode: Expected 15 images, found ${easyTasks.length}`);
-        easyTasks.forEach(t => console.log(`  - ${t.file}`));
+    if (type === 'read_cover') {
+        // Week-specific covers - update based on week theme
+        if (weekNum === '7') {
+            return `3D illustration of two happy children looking at school supplies in a colorful backpack, books and pencils glowing, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+        }
+        return `3D illustration of two happy children reading a glowing treasure map book together, magical atmosphere, Pixar style, vibrant colors, soft studio lighting, clean background.`;
     }
-    if (advTasks.length !== 15) {
-        console.log(`❌ Advanced mode: Expected 15 images, found ${advTasks.length}`);
-        advTasks.forEach(t => console.log(`  - ${t.file}`));
+    if (type === 'explore_cover') {
+        if (weekNum === '7') {
+            return `3D illustration of children exploring a classroom with magnifying glass, discovering school supplies, happy curious faces, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+        }
+        return `3D illustration of children exploring with magnifying glass, happy faces, Pixar style, vibrant colors, soft studio lighting, clean background.`;
     }
-    // Gộp lại đúng thứ tự (adv trước, easy sau)
-    let tasks = [...advTasks, ...easyTasks];
-    
-    // (Đã đưa các cover/shared vào imageTasks ở trên, không cần push thêm vào tasks)
-
-    console.log(`  🚀 Queue: ${tasks.length} images...`);
-    
-    // Chạy tuần tự (Sequential) để tránh lỗi API
-    for (const task of tasks) {
-        await generateImage(task.prompt, task.file, task.isEasy || false);
-        // Cloudflare chịu tải tốt, chỉ cần delay 1s
-        await new Promise(r => setTimeout(r, 1000));
-    }
+    return `Cute 3D render of ${definition}, Pixar animation style, vibrant colors, soft studio lighting, high resolution, clean simple background.`;
 }
 
-(async () => { await scanAndGen(WEEK_ID); })();
+async function exportPromptsForWeek(weekNum, isEasy = false) {
+    let lines = [];
+    let idx = 1;
+    const weekPadded = weekNum.toString().padStart(2, '0'); // Ensure 01, 02, etc.
+    const weekDir = path.join('src', isEasy ? 'data/weeks_easy' : 'data/weeks', `week_${weekPadded}`);
+    
+    // Vocab
+    const vocabPath = path.join(weekDir, 'vocab.js');
+    if (fs.existsSync(vocabPath)) {
+        console.log(`📖 Reading vocab from: ${vocabPath}`);
+        const module = await import(path.resolve(vocabPath));
+        const vocabData = module.default.vocab;
+        console.log(`   Found ${vocabData.length} vocab items`);
+        for (const v of vocabData) {
+            const filename = extractFilename(v.image_url);
+            const prompt = buildPrompt(v.word, v.definition_en, 'vocab', weekNum);
+            lines.push(`${idx}. Hãy tạo các hình ảnh 3D sống động sau đây. Filename: ${filename}. ${prompt}`);
+            idx++;
+        }
+    } else {
+        console.log(`⚠️  Vocab file not found: ${vocabPath}`);
+    }
+    
+    // Word Power
+    const wpPath = path.join(weekDir, 'word_power.js');
+    if (fs.existsSync(wpPath)) {
+        console.log(`📖 Reading word power from: ${wpPath}`);
+        const module = await import(path.resolve(wpPath));
+        const wpData = module.default.words;
+        console.log(`   Found ${wpData.length} word power items`);
+        for (const w of wpData) {
+            const filename = extractFilename(w.image_url);
+            const prompt = buildPrompt(w.word, w.definition_en, 'wordpower', weekNum);
+            lines.push(`${idx}. Hãy tạo các hình ảnh 3D sống động sau đây. Filename: ${filename}. ${prompt}`);
+            idx++;
+        }
+    } else {
+        console.log(`⚠️  Word power file not found: ${wpPath}`);
+    }
+    
+    // Covers
+    const readCover = isEasy ? `read_cover_w${weekNum}.jpg` : `read_cover_w${weekNum}.jpg`;
+    const exploreCover = isEasy ? `explore_cover_w${weekNum}.jpg` : `explore_cover_w${weekNum}.jpg`;
+    
+    lines.push(`${idx}. Hãy tạo các hình ảnh 3D sống động sau đây. Filename: ${readCover}. ${buildPrompt('', '', 'read_cover', weekNum)}`);
+    idx++;
+    lines.push(`${idx}. Hãy tạo các hình ảnh 3D sống động sau đây. Filename: ${exploreCover}. ${buildPrompt('', '', 'explore_cover', weekNum)}`);
+    
+    // Write to file
+    const outDir = path.join('MASS_Final', 'Image prompts');
+    if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+    const outPath = path.join(outDir, `week_${weekNum}${isEasy ? '_easy' : ''}_image_prompts.txt`);
+    fs.writeFileSync(outPath, lines.join('\n'), 'utf-8');
+    console.log(`✅ Exported prompts for week ${weekNum}${isEasy ? ' (easy)' : ''} to ${outPath}`);
+}
+
+async function main() {
+    const weekNum = process.argv[2];
+    if (!weekNum) {
+        console.error('Vui lòng truyền số tuần (vd: node tools/generate_images_nano.js 06)');
+        process.exit(1);
+    }
+    await exportPromptsForWeek(weekNum, false); // advanced
+    await exportPromptsForWeek(weekNum, true);  // easy
+}
+
+main();
