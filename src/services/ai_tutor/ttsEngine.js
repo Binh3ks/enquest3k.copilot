@@ -314,7 +314,6 @@ async function callGeminiTTS(text, mode) {
   }
 }
 
-=
 // LAYER 2: OPENAI TTS
 // ============================================
 
@@ -327,9 +326,6 @@ async function callOpenAITTS(text) {
   });
   if (!blob) throw new Error('OpenAI TTS proxy unavailable');
   return URL.createObjectURL(blob);
-}
-  
-  return audioUrl;
 }
 
 // ============================================
