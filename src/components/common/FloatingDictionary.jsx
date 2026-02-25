@@ -15,8 +15,12 @@ const FloatingDictionary = () => {
         return res.json();
       })
       .then(data => {
-          console.log("Dictionary loaded:", Object.keys(data).length, "words");
-          setDictionary(data);
+          // Convert array format [{word, meaning, ...}] to object {word: entry}
+          const dict = Array.isArray(data)
+            ? Object.fromEntries(data.map(entry => [entry.word?.toLowerCase(), entry]))
+            : data;
+          console.log("Dictionary loaded:", Object.keys(dict).length, "words");
+          setDictionary(dict);
       })
       .catch(err => {
         console.warn("Dictionary not available, continuing without it:", err.message);
