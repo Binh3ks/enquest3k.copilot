@@ -4,6 +4,7 @@ import { Target, Image as ImageIcon, Type, RefreshCw, Trophy, Check, Music, Imag
 import { speakText } from '../../utils/AudioHelper';
 import InstructionBar from '../../components/common/InstructionBar';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const shuffleArray = (array) => {
   const newArray = [...array];
@@ -40,7 +41,7 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       if (mode === 'meaning') {
         gameCards.push({ id: item.id, type: 'meaning', content: item.definition_vi, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
       } else if (mode === 'image') {
-        gameCards.push({ id: item.id, type: 'image', content: item.image_url, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
+        gameCards.push({ id: item.id, type: 'image', content: getImageUrl(item.image_url), speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
       } else if (mode === 'audio') {
         gameCards.push({ id: item.id, type: 'audio', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
       }

@@ -5,6 +5,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
@@ -217,7 +218,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative group">
         {data.image_url && (
             <div className="w-full bg-slate-900 relative overflow-hidden">
-                <img src={data.image_url} className="w-full h-auto transition-transform duration-700 group-hover:scale-105" alt="Reading Cover" onError={(e) => { e.target.style.display='none'; }} />
+                <img src={getImageUrl(data.image_url)} className="w-full h-auto transition-transform duration-700 group-hover:scale-105" alt="Reading Cover" onError={(e) => { e.target.style.display='none'; }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5">
                     <div className="flex items-center gap-2 mb-1">
                         <div className={`p-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white shadow-sm`}><BookOpen className="w-4 h-4" /></div>

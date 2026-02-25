@@ -3,6 +3,7 @@ import { Volume2, Zap, Globe, CheckCircle, Edit3, BookOpen, Star } from 'lucide-
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -78,7 +79,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
           <div className="absolute inset-0 bg-teal-600 rounded-3xl shadow-xl border border-teal-500 flex flex-col overflow-hidden text-white" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
            <div className="h-3/5 w-full relative p-6 flex items-center justify-center bg-teal-700/50">
                   {word.image_url ? (
-                    <img src={word.image_url} alt={word.word} className="w-full h-full object-contain p-2 bg-white opacity-90 rounded-xl shadow-inner" />
+                    <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-contain p-2 bg-white opacity-90 rounded-xl shadow-inner" />
                   ) : (
                     <div className="text-6xl font-black opacity-20">{word.word[0]}</div>
                   )}

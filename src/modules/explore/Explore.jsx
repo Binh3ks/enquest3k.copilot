@@ -5,6 +5,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
@@ -32,8 +33,8 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
   useEffect(() => {
     if (data?.image_url) {
       const img = new Image();
-      img.src = data.image_url;
-      img.onload = () => setImageSrc(data.image_url);
+      img.src = getImageUrl(data.image_url);
+      img.onload = () => setImageSrc(getImageUrl(data.image_url));
       img.onerror = () => setImageSrc("https://placehold.co/800x400/e2e8f0/64748b?text=Image+Failed+to+Load");
     }
   }, [data?.image_url]);

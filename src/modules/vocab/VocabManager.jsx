@@ -5,6 +5,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate, weekNumber, mode }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -116,7 +117,7 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
         >
           <div className={`absolute inset-0 bg-white rounded-3xl shadow-lg border border-slate-100 flex flex-col overflow-hidden hover:shadow-orange-200/50 transition-shadow ${isFlipped ? 'pointer-events-none' : ''}`} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
            <div className="h-3/5 w-full bg-slate-50 relative p-6 flex items-center justify-center">
-                <img src={word.image_url} alt={word.word} className="w-full h-full object-contain drop-shadow-md transition-transform group-hover:scale-105" />
+                <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-contain drop-shadow-md transition-transform group-hover:scale-105" />
                 <div className="absolute top-3 right-3 text-white drop-shadow-md">
                     {isCompleted ? <CheckCircle className="w-8 h-8 fill-green-500 text-white" /> : <Star className="w-6 h-6 fill-amber-400 text-amber-400" />}
                 </div>
