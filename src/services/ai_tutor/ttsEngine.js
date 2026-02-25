@@ -104,7 +104,7 @@ const TTS_CONFIG = {
     speed: 0.85 // 🎓 Slower for ESL learners (user requested)
   },
   openai: {
-    enabled: !!OPENAI_API_KEY,
+    enabled: true, // Key is on backend (proxied via /api/ai/tts)
     model: 'tts-1',
     voice: 'nova', // Natural, warm voice
     speed: 0.85 // Match Gemini speed for consistency

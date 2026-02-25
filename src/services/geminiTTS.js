@@ -147,8 +147,8 @@ export async function generateTTS(text, options = {}) {
   
   console.log('[TTS] Generating audio for:', text.substring(0, 50) + '...');
   
-  // 1. Try Gemini TTS (best quality)
-  if (GEMINI_API_KEY) {
+  // 1. Try Gemini TTS (best quality) — key is proxied via backend
+  if (true) {
     console.log('[TTS] Trying Gemini TTS...');
     const audioBlob = await generateGeminiTTS(text, { speakingRate: speed });
     if (audioBlob) {
