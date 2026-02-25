@@ -2,6 +2,7 @@ export default {
   title_en: "Tools Scientists Use",
   title_vi: "Công cụ nhà khoa học dùng",
   image_url: "/images/week1_easy/explore_cover_w01.jpg",
+  audio_url: "/audio/week1_easy/explore_main.mp3",
   content_en: "**Scientists** use **tools** to learn. A **magnifying** glass makes small things big. It helps us see **tiny** insects. A **microscope** is more powerful. It helps scientists see very small things. Scientists write in notebooks. They use rulers to measure. These tools help them learn new things!",
   content_vi: "Nhà khoa học dùng công cụ để học. Kính lúp làm cho vật nhỏ to ra. Nó giúp ta nhìn côn trùng nhỏ. Kính hiển vi mạnh hơn. Nó giúp nhà khoa học nhìn thứ rất nhỏ. Nhà khoa học viết vào vở. Họ dùng thước để đo. Công cụ này giúp họ học điều mới!",
   check_questions: [

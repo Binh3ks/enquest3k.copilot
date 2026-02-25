@@ -9,11 +9,11 @@ const mindMapContent = {
   ],
   branchLabels: {
     "I like ___.": [
-      { text: "to play", audio: "/audio/week4_easy/mindmap_branch_1.mp3" },
-      { text: "to draw", audio: "/audio/week4_easy/mindmap_branch_2.mp3" },
-      { text: "to read", audio: "/audio/week4_easy/mindmap_branch_3.mp3" },
-      { text: "to run", audio: "/audio/week4_easy/mindmap_branch_4.mp3" },
-      { text: "to jump", audio: "/audio/week4_easy/mindmap_branch_5.mp3" },
+      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_1.mp3" },
+      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_2.mp3" },
+      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_3.mp3" },
+      { text: "running", audio: "/audio/week4_easy/mindmap_branch_4.mp3" },
+      { text: "jumping", audio: "/audio/week4_easy/mindmap_branch_5.mp3" },
       { text: "toys", audio: "/audio/week4_easy/mindmap_branch_6.mp3" }
     ],
     "I am ___.": [
@@ -35,9 +35,9 @@ const mindMapContent = {
     "I love ___.": [
       { text: "my toys", audio: "/audio/week4_easy/mindmap_branch_19.mp3" },
       { text: "my books", audio: "/audio/week4_easy/mindmap_branch_20.mp3" },
-      { text: "to play", audio: "/audio/week4_easy/mindmap_branch_21.mp3" },
-      { text: "to draw", audio: "/audio/week4_easy/mindmap_branch_22.mp3" },
-      { text: "to smile", audio: "/audio/week4_easy/mindmap_branch_23.mp3" },
+      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_21.mp3" },
+      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_22.mp3" },
+      { text: "smiling", audio: "/audio/week4_easy/mindmap_branch_23.mp3" },
       { text: "fun things", audio: "/audio/week4_easy/mindmap_branch_24.mp3" }
     ],
     "I feel ___.": [

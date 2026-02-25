@@ -3,60 +3,60 @@
 const mindMapContent = {
   centerStems: [
     "I am ___.",
-    "My school is ___.",
-    "My teacher is ___.",
-    "In my class, there is ___.",
+    "My name is ___.",
+    "I am ___ years old.",
+    "I am a ___.",
     "I like ___.",
     "I want to be ___."
   ],
   branchLabels: {
     "I am ___.": [
-      "a student",
       "happy",
-      "learning",
-      "good",
-      "smart",
-      "kind"
-    ],
-    "My school is ___.": [
-      "big",
-      "near my house",
-      "nice",
-      "clean",
-      "fun",
+      "a student",
+      "tall",
+      "short",
+      "kind",
       "good"
     ],
-    "My teacher is ___.": [
-      "kind",
-      "helpful",
-      "nice",
-      "smart",
-      "good",
-      "patient"
+    "My name is ___.": [
+      "Tom",
+      "Anna",
+      "John",
+      "Mary",
+      "Ben",
+      "Lisa"
     ],
-    "In my class, there is ___.": [
-      "a board",
-      "many desks",
-      "a bookshelf",
-      "a teacher's desk",
-      "pictures",
-      "a window"
+    "I am ___ years old.": [
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "five"
+    ],
+    "I am a ___.":[
+      "student",
+      "boy",
+      "girl",
+      "hero",
+      "friend",
+      "good student"
     ],
     "I like ___.": [
       "reading",
       "learning",
-      "my school",
-      "my teacher",
+      "playing",
+      "drawing",
       "my friends",
-      "studying"
+      "school"
     ],
     "I want to be ___.": [
+      "a hero",
       "a scientist",
       "a teacher",
       "smart",
       "helpful",
-      "happy",
-      "successful"
+      "happy"
     ]
   }
 };

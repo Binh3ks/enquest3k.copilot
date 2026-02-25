@@ -3,60 +3,60 @@
 const mindMapContent = {
   centerStems: [
     "I am ___.",
-    "My school is ___.",
-    "My teacher is ___.",
-    "In my classroom, there is ___.",
-    "I like to ___.",
+    "My full name is ___.",
+    "I am ___ years old.",
+    "I am a ___.",
+    "I like ___.",
     "When I grow up, I want to be ___."
   ],
   branchLabels: {
     "I am ___.": [
       "a student",
-      "happy at school",
-      "learning every day",
-      "curious about science",
-      "good at reading",
-      "excited to learn"
+      "happy every day",
+      "learning new things",
+      "curious about everything",
+      "good at many things",
+      "excited to discover"
     ],
-    "My school is ___.": [
-      "a big building",
-      "close to my house",
-      "full of students",
-      "a place I love",
-      "where I meet friends",
-      "clean and bright"
+    "My full name is ___.": [
+      "Thomas Anderson",
+      "Anna Smith",
+      "John Wilson",
+      "Mary Johnson",
+      "Benjamin Lee",
+      "Lisa Brown"
     ],
-    "My teacher is ___.": [
-      "very kind",
-      "helpful and smart",
-      "teaching us well",
-      "patient with students",
-      "explaining things clearly",
-      "my favorite person"
+    "I am ___ years old.": [
+      "six years old",
+      "seven years old",
+      "eight years old",
+      "nine years old",
+      "ten years old",
+      "five years old"
     ],
-    "In my classroom, there is ___.": [
-      "a big whiteboard",
-      "many desks and chairs",
-      "a bookshelf with books",
-      "a teacher's desk",
-      "colorful posters on walls",
-      "a window with sunlight"
+    "I am a ___.":  [
+      "student with big dreams",
+      "boy who loves learning",
+      "girl who loves reading",
+      "hero in my own story",
+      "friend to everyone",
+      "person with superpowers"
     ],
-    "I like to ___.": [
-      "read books",
-      "do my homework",
-      "pay attention in class",
-      "go to the library",
-      "use my notebook",
-      "learn new things"
+    "I like ___.": [
+      "reading adventure books",
+      "doing exciting projects",
+      "learning about heroes",
+      "discovering new things",
+      "using my imagination",
+      "helping my friends"
     ],
     "When I grow up, I want to be ___.": [
-      "a scientist",
-      "a teacher like mine",
+      "a scientist discovering things",
+      "a teacher helping students",
       "someone who helps others",
       "smart and successful",
-      "a person who discovers things",
-      "happy with my job"
+      "a person who makes a difference",
+      "happy with my superpowers"
     ]
   }
 };

@@ -13,10 +13,10 @@ export default {
   
   branchLabels: {
     "I draw with ___.": [
-      { text: "pencil", audio: "/audio/week7_easy/mindmap_branch_1.mp3" },
-      { text: "crayon", audio: "/audio/week7_easy/mindmap_branch_2.mp3" },
-      { text: "marker", audio: "/audio/week7_easy/mindmap_branch_3.mp3" },
-      { text: "pen", audio: "/audio/week7_easy/mindmap_branch_4.mp3" },
+      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_1.mp3" },
+      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_2.mp3" },
+      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_3.mp3" },
+      { text: "a pen", audio: "/audio/week7_easy/mindmap_branch_4.mp3" },
       { text: "chalk", audio: "/audio/week7_easy/mindmap_branch_5.mp3" },
       { text: "paint", audio: "/audio/week7_easy/mindmap_branch_6.mp3" }
     ],
@@ -29,11 +29,11 @@ export default {
       { text: "blue scissors", audio: "/audio/week7_easy/mindmap_branch_12.mp3" }
     ],
     "There is ___ in my bag.": [
-      { text: "pencil", audio: "/audio/week7_easy/mindmap_branch_13.mp3" },
+      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_13.mp3" },
       { text: "paper", audio: "/audio/week7_easy/mindmap_branch_14.mp3" },
-      { text: "lunch box", audio: "/audio/week7_easy/mindmap_branch_15.mp3" },
-      { text: "water bottle", audio: "/audio/week7_easy/mindmap_branch_16.mp3" },
-      { text: "folder", audio: "/audio/week7_easy/mindmap_branch_17.mp3" },
+      { text: "a lunch box", audio: "/audio/week7_easy/mindmap_branch_15.mp3" },
+      { text: "a water bottle", audio: "/audio/week7_easy/mindmap_branch_16.mp3" },
+      { text: "a folder", audio: "/audio/week7_easy/mindmap_branch_17.mp3" },
       { text: "glue", audio: "/audio/week7_easy/mindmap_branch_18.mp3" }
     ],
     "I eat from my ___.": [
@@ -45,20 +45,20 @@ export default {
       { text: "blue lunch box", audio: "/audio/week7_easy/mindmap_branch_24.mp3" }
     ],
     "I write with ___.": [
-      { text: "pencil", audio: "/audio/week7_easy/mindmap_branch_25.mp3" },
-      { text: "pen", audio: "/audio/week7_easy/mindmap_branch_26.mp3" },
-      { text: "marker", audio: "/audio/week7_easy/mindmap_branch_27.mp3" },
-      { text: "crayon", audio: "/audio/week7_easy/mindmap_branch_28.mp3" },
+      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_25.mp3" },
+      { text: "a pen", audio: "/audio/week7_easy/mindmap_branch_26.mp3" },
+      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_27.mp3" },
+      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_28.mp3" },
       { text: "chalk", audio: "/audio/week7_easy/mindmap_branch_29.mp3" },
-      { text: "colored pencil", audio: "/audio/week7_easy/mindmap_branch_30.mp3" }
+      { text: "a colored pencil", audio: "/audio/week7_easy/mindmap_branch_30.mp3" }
     ],
     "I color with ___.": [
-      { text: "crayon", audio: "/audio/week7_easy/mindmap_branch_31.mp3" },
-      { text: "marker", audio: "/audio/week7_easy/mindmap_branch_32.mp3" },
-      { text: "colored pencil", audio: "/audio/week7_easy/mindmap_branch_33.mp3" },
+      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_31.mp3" },
+      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_32.mp3" },
+      { text: "a colored pencil", audio: "/audio/week7_easy/mindmap_branch_33.mp3" },
       { text: "paint", audio: "/audio/week7_easy/mindmap_branch_34.mp3" },
-      { text: "red crayon", audio: "/audio/week7_easy/mindmap_branch_35.mp3" },
-      { text: "blue marker", audio: "/audio/week7_easy/mindmap_branch_36.mp3" }
+      { text: "a red crayon", audio: "/audio/week7_easy/mindmap_branch_35.mp3" },
+      { text: "a blue marker", audio: "/audio/week7_easy/mindmap_branch_36.mp3" }
     ]
   }
 };
