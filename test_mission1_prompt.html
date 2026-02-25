@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mission 1 Prompt</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success { background: #d4edda; border-color: #28a745; }
+        .error { background: #f8d7da; border-color: #dc3545; }
+        .warning { background: #fff3cd; border-color: #ffc107; }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #logs {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test Mission 1 - Week 2 Prompt Generation</h1>
+    
+    <div class="section">
+        <h2>📋 Test Instructions</h2>
+        <p>This test will simulate loading Week 2 Mission 1 and check if the AI prompt includes the full "Say: ..." scaffolding.</p>
+        <button onclick="runTest()">🚀 Run Test</button>
+        <button onclick="clearLogs()">🗑️ Clear Logs</button>
+    </div>
+
+    <div class="section" id="results" style="display: none;">
+        <h2>✅ Test Results</h2>
+        <div id="resultContent"></div>
+    </div>
+
+    <div class="section">
+        <h2>📝 Console Logs</h2>
+        <div id="logs"></div>
+    </div>
+
+    <script type="module">
+        import week2Data from './src/data/weeks/week_02_real.js';
+
+        window.week2Data = week2Data;
+        window.testLogs = [];
+
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}`;
+            window.testLogs.push({message: logEntry, type});
+            
+            const logsDiv = document.getElementById('logs');
+            const logLine = document.createElement('div');
+            logLine.style.color = type === 'error' ? '#ff6b6b' : type === 'success' ? '#51cf66' : type === 'warning' ? '#ffd43b' : '#0f0';
+            logLine.textContent = logEntry;
+            logsDiv.appendChild(logLine);
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+        }
+
+        window.clearLogs = function() {
+            document.getElementById('logs').innerHTML = '';
+            window.testLogs = [];
+        }
+
+        window.runTest = async function() {
+            log('🧪 Starting test...', 'info');
+            clearLogs();
+            
+            try {
+                // Test 1: Load Week 2 data
+                log('📦 Loading Week 2 data...', 'info');
+                const weekData = window.week2Data;
+                
+                if (!weekData) {
+                    throw new Error('Week 2 data not found!');
+                }
+                log('✅ Week 2 data loaded successfully', 'success');
+                
+                // Test 2: Get Mission 1
+                log('🎯 Getting Mission 1...', 'info');
+                const mission1 = weekData.story_missions[0];
+                
+                if (!mission1) {
+                    throw new Error('Mission 1 not found!');
+                }
+                log(`✅ Mission 1 found: "${mission1.title}"`, 'success');
+                
+                // Test 3: Check story_arc
+                log('📖 Checking story_arc...', 'info');
+                if (!mission1.story_arc || mission1.story_arc.length === 0) {
+                    throw new Error('story_arc not found or empty!');
+                }
+                log(`✅ story_arc has ${mission1.story_arc.length} phases`, 'success');
+                
+                // Test 4: Check first phase
+                log('🔍 Analyzing first phase (intro)...', 'info');
+                const introPhase = mission1.story_arc[0];
+                log(`Phase name: ${introPhase.phase}`, 'info');
+                log(`Phase questions: ${introPhase.phase_questions.length} questions`, 'info');
+                
+                // Test 5: Check question format
+                log('🔎 Checking question format...', 'info');
+                const firstQuestion = introPhase.phase_questions[0];
+                const isStringFormat = typeof firstQuestion === 'string';
+                const isObjectFormat = typeof firstQuestion === 'object' && firstQuestion.template;
+                
+                if (isStringFormat) {
+                    log('✅ Question format: STRING (correct for current system)', 'success');
+                } else if (isObjectFormat) {
+                    log('⚠️ Question format: OBJECT with template property', 'warning');
+                } else {
+                    log('❌ Question format: UNKNOWN', 'error');
+                }
+                
+                // Test 6: Check for "Say:" in questions
+                log('🔍 Checking for "Say:" scaffolding in questions...', 'info');
+                let questionsWithSay = 0;
+                let questionsWithoutSay = 0;
+                
+                introPhase.phase_questions.forEach((q, idx) => {
+                    const questionText = typeof q === 'string' ? q : q.template;
+                    if (questionText.includes('Say:')) {
+                        questionsWithSay++;
+                        log(`✅ Question ${idx + 1}: Has "Say:" - "${questionText.substring(0, 80)}..."`, 'success');
+                    } else {
+                        questionsWithoutSay++;
+                        log(`❌ Question ${idx + 1}: Missing "Say:" - "${questionText}"`, 'error');
+                    }
+                });
+                
+                // Test 7: Display results
+                const resultsDiv = document.getElementById('results');
+                const resultContent = document.getElementById('resultContent');
+                resultsDiv.style.display = 'block';
+                
+                const passed = questionsWithoutSay === 0;
+                resultsDiv.className = passed ? 'section success' : 'section error';
+                
+                resultContent.innerHTML = `
+                    <h3>${passed ? '✅ TEST PASSED' : '❌ TEST FAILED'}</h3>
+                    <pre>
+📊 Summary:
+- Phase: ${introPhase.phase}
+- Total questions: ${introPhase.phase_questions.length}
+- Questions with "Say:": ${questionsWithSay}
+- Questions without "Say:": ${questionsWithoutSay}
+- Format: ${isStringFormat ? 'STRING' : isObjectFormat ? 'OBJECT' : 'UNKNOWN'}
+
+${passed ? '✅ All questions have proper "Say:" scaffolding!' : '❌ Some questions are missing "Say:" scaffolding!'}
+
+🔍 First question preview:
+${typeof firstQuestion === 'string' ? firstQuestion : firstQuestion.template}
+                    </pre>
+                `;
+                
+                log('✅ Test completed successfully!', 'success');
+                
+            } catch (error) {
+                log(`❌ Test failed: ${error.message}`, 'error');
+                console.error(error);
+                
+                const resultsDiv = document.getElementById('results');
+                const resultContent = document.getElementById('resultContent');
+                resultsDiv.style.display = 'block';
+                resultsDiv.className = 'section error';
+                resultContent.innerHTML = `<h3>❌ TEST ERROR</h3><pre>${error.message}\n\n${error.stack}</pre>`;
+            }
+        }
+
+        // Auto-run test on page load
+        window.addEventListener('load', () => {
+            log('🎬 Page loaded, ready to test!', 'info');
+            log('👆 Click "Run Test" button to start', 'info');
+        });
+    </script>
+</body>
+</html>

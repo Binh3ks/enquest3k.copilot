@@ -10,7 +10,7 @@
  * 2. Web Speech API (free, browser built-in, good for Vietnamese ESL learners)
  */
 
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+import { proxyTTS } from './aiProxy.js';
 const TTS_MODEL = 'tts-1'; // or 'tts-1-hd' for higher quality
 const DEFAULT_VOICE = 'shimmer'; // Clear, bright female voice for Vietnamese ESL learners
 
@@ -65,39 +65,25 @@ export async function generateTTS(text, options = {}) {
     useFree = false // Set to true to use Web Speech instead
   } = options;
 
-  // 🆓 FREE OPTION: Use Web Speech API if requested or OpenAI key missing
-  if (useFree || !OPENAI_API_KEY) {
+  // 🆓 FREE OPTION: Use Web Speech API if requested
+  if (useFree) {
     console.log('🔊 Using FREE Web Speech API (browser built-in)');
     return generateWebSpeech(text, { speed });
   }
 
-  // 💰 PREMIUM: OpenAI TTS
+  // 💰 PREMIUM: OpenAI TTS via backend proxy (key secured in mcp-server)
   try {
-    const response = await fetch('https://api.openai.com/v1/audio/speech', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model,
-        voice,
-        input: text,
-        speed
-      })
-    });
+    const blob = await proxyTTS(text, { voice, model, speed });
+    if (blob) return blob;
 
-    if (!response.ok) {
-      const error = await response.json();
-      console.error('OpenAI TTS API error:', error);
-      
-      // Fallback to free Web Speech
-      console.log('🔄 Falling back to FREE Web Speech API');
-      return generateWebSpeech(text, { speed });
-    }
-
-    const audioBuffer = await response.arrayBuffer();
-    return new Blob([audioBuffer], { type: 'audio/mpeg' });
+    // If proxy returns null (key missing / quota), fall back to Web Speech
+    console.log('🔄 TTS proxy unavailable, falling back to Web Speech');
+    return generateWebSpeech(text, { speed });
+  } catch (err) {
+    console.warn('OpenAI TTS proxy error:', err.message);
+    return generateWebSpeech(text, { speed });
+  }
+}
   } catch (error) {
     console.error('TTS generation failed:', error);
     

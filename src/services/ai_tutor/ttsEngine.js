@@ -83,12 +83,7 @@ export const encodeWAV = injectWavHeader;
 // CONFIGURATION
 // ============================================
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY || '';
-const GOOGLE_TTS_API_KEY = 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU'; // Google Cloud Text-to-Speech API
-
-const GOOGLE_TTS_ENDPOINT = 'https://texttospeech.googleapis.com/v1/text:synthesize';
-const OPENAI_TTS_ENDPOINT = 'https://api.openai.com/v1/audio/speech';
+import { proxyTTS, proxyGoogleTTS } from '../aiProxy.js';
 
 // Audio cache for repeated phrases
 const audioCache = new Map();
@@ -304,100 +299,35 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 // LAYER 1: GOOGLE CLOUD TEXT-TO-SPEECH
 // ============================================
 
-async function callGeminiTTS(text, mode = 'conversation') {
-  if (!GOOGLE_TTS_API_KEY) {
-    throw new Error('Google TTS API key not configured');
-  }
-
-  // 🎯 Determine speaking rate based on mode
-  const speakingRate = mode === 'pronunciation' ? 1.0 : 0.8; // Normal speed for pronunciation, slower for conversation
-
+async function callGeminiTTS(text, mode) {
+  // Proxied through mcp-server - Google TTS key not in browser bundle
   try {
-    console.log('🔊 Google Cloud TTS: Requesting LINEAR16 (PCM) audio generation...');
-    console.log('🎯 Mode:', mode, '| Speaking rate:', speakingRate);
-
-    const response = await axios.post(
-      `${GOOGLE_TTS_ENDPOINT}?key=${GOOGLE_TTS_API_KEY}`,
-      {
-        input: { text },
-        voice: {
-          languageCode: 'en-US',
-          name: 'en-US-Studio-O', // 🎙️ Studio quality - energetic, clear female voice
-          ssmlGender: 'FEMALE'
-        },
-        audioConfig: {
-          audioEncoding: 'LINEAR16', // 🔥 PCM16 format (requires WAV header)
-          sampleRateHertz: 24000, // 24kHz sample rate
-          speakingRate: speakingRate, // 🎓 Dynamic: 1.0 for pronunciation, 0.8 for conversation
-          pitch: 0.5, // ⚡ Reduced pitch (high pitch slows down encoding)
-          volumeGainDb: 0
-        }
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        timeout: 30000
-      }
-    );
-
-    const audioContent = response.data?.audioContent;
-    if (!audioContent) {
-      throw new Error('No audio data in Google TTS response');
-    }
-
-    console.log('✅ Google Cloud TTS: Received PCM16 data, injecting WAV header...');
-
-    // Decode base64 to raw PCM buffer
-    const binaryString = atob(audioContent);
-    const pcmBuffer = new Uint8Array(binaryString.length);
-    for (let i = 0; i < binaryString.length; i++) {
-      pcmBuffer[i] = binaryString.charCodeAt(i);
-    }
-
-    // 🔥 Inject WAV header for browser playback
-    const wavBlob = injectWavHeader(pcmBuffer, 24000);
-    const audioUrl = URL.createObjectURL(wavBlob);
-
-    console.log('✅ Google Cloud TTS: WAV audio ready for immediate playback');
-    return audioUrl;
-
+    const blob = await proxyGoogleTTS(text, {
+      voice: mode === "pronunciation" ? "en-US-Standard-E" : "en-US-Studio-O",
+      languageCode: "en-US"
+    });
+    if (!blob) throw new Error("Google TTS proxy returned null");
+    return URL.createObjectURL(blob);
   } catch (error) {
-    console.error('❌ Google Cloud TTS failed:', error.message);
+    console.error("Google TTS proxy failed:", error.message);
     throw error;
   }
 }
 
-// ============================================
+=
 // LAYER 2: OPENAI TTS
 // ============================================
 
 async function callOpenAITTS(text) {
-  if (!OPENAI_API_KEY) {
-    throw new Error('OpenAI API key not configured');
-  }
-
-  const response = await axios.post(
-    OPENAI_TTS_ENDPOINT,
-    {
-      model: TTS_CONFIG.openai.model,
-      input: text,
-      voice: TTS_CONFIG.openai.voice,
-      speed: TTS_CONFIG.openai.speed
-    },
-    {
-      headers: {
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      responseType: 'arraybuffer',
-      timeout: 30000
-    }
-  );
-
-  // Convert arraybuffer to blob URL
-  const blob = new Blob([response.data], { type: 'audio/mpeg' });
-  const audioUrl = URL.createObjectURL(blob);
+  // Proxied through mcp-server — key not in browser bundle
+  const blob = await proxyTTS(text, {
+    model: TTS_CONFIG.openai.model,
+    voice: TTS_CONFIG.openai.voice,
+    speed: TTS_CONFIG.openai.speed
+  });
+  if (!blob) throw new Error('OpenAI TTS proxy unavailable');
+  return URL.createObjectURL(blob);
+}
   
   return audioUrl;
 }

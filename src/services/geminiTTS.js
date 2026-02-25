@@ -4,8 +4,9 @@
  * Fallback chain: Gemini TTS → Puter TTS → Browser TTS
  */
 
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GOOGLE_CLOUD_TTS_ENDPOINT = 'https://texttospeech.googleapis.com/v1/text:synthesize';
+import { proxyGoogleTTS } from './aiProxy.js';
+
+// API key lives on mcp-server backend, not in browser bundle
 
 /**
  * Convert plain text to SSML with natural prosody (pauses, emphasis, intonation)
@@ -52,42 +53,12 @@ async function generateGeminiTTS(text, options = {}) {
   const ssml = convertToSSML(text);
 
   try {
-    const response = await fetch(`${GOOGLE_CLOUD_TTS_ENDPOINT}?key=${GEMINI_API_KEY}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        input: { ssml }, // Use SSML instead of plain text
-        voice: {
-          languageCode,
-          name: voiceName
-        },
-        audioConfig: {
-          audioEncoding: 'MP3',
-          speakingRate,
-          pitch
-        }
-      })
+    // Proxied through mcp-server - key not in browser bundle
+    const blob = await proxyGoogleTTS(ssml, {
+      voice: voiceName || 'en-US-Wavenet-H',
+      languageCode: languageCode || 'en-US'
     });
-
-    if (!response.ok) {
-      const error = await response.json().catch(() => ({}));
-      console.warn('[Gemini TTS] API error:', error.error?.message || response.statusText);
-      return null;
-    }
-
-    const data = await response.json();
-    const audioContent = data.audioContent;
-    
-    // Convert base64 to blob
-    const audioData = atob(audioContent);
-    const audioArray = new Uint8Array(audioData.length);
-    for (let i = 0; i < audioData.length; i++) {
-      audioArray[i] = audioData.charCodeAt(i);
-    }
-    
-    return new Blob([audioArray], { type: 'audio/mpeg' });
+    return blob;
   } catch (error) {
     console.error('[Gemini TTS] Generation failed:', error);
     return null;

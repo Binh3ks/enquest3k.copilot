@@ -1,12 +1,8 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { generateText as proxyGenerateText } from './aiProxy.js';
 import geminiCache from './geminiCache.js';
 
-// Initialize Gemini API
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyDemoKeyForDevelopment';
-const genAI = new GoogleGenerativeAI(API_KEY);
-
-// Use Gemini 2.5 Flash (latest available model - fast and free)
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+// AI calls proxied through mcp-server backend (keys not in browser bundle)
+// See src/services/aiProxy.js
 
 // Enhanced fallback responses based on context
 const smartFallbacks = {
@@ -74,9 +70,7 @@ Professor Paws:`;
     // Check rate limit before API call
     await geminiCache.checkRateLimit();
     
-    const result = await model.generateContent(systemPrompt);
-    const response = result.response;
-    const text = response.text();
+    const text = await proxyGenerateText(systemPrompt);
     
     // Cache the response
     geminiCache.set(cacheKey, text);
@@ -155,8 +149,7 @@ PROBLEM:`;
   try {
     await geminiCache.checkRateLimit();
     
-    const apiResult = await model.generateContent(systemPrompt);
-    const text = apiResult.response.text();
+    const text = await proxyGenerateText(systemPrompt);
     
     // Parse response more robustly
     const fullText = 'PROBLEM: ' + text; // Add prefix since model only generates the problem part
@@ -212,8 +205,7 @@ OPTIONS: [if multiple choice, list A, B, C]`;
   try {
     await geminiCache.checkRateLimit();
     
-    const apiResult = await model.generateContent(systemPrompt);
-    const text = apiResult.response.text();
+    const text = await proxyGenerateText(systemPrompt);
     
     const questionMatch = text.match(/QUESTION:\s*(.+?)(?=ANSWER:|$)/s);
     const answerMatch = text.match(/ANSWER:\s*(.+?)(?=OPTIONS:|$)/s);
@@ -330,8 +322,7 @@ Continue the story NOW (DO NOT explain, just write the story):`;
     await geminiCache.checkRateLimit();
     
     console.log(`[Gemini Story] Week ${weekId}, Type: ${storyType}, Level: ${difficulty}`);
-    const result = await model.generateContent(systemPrompt);
-    const continuation = result.response.text().trim();
+    const continuation = (await proxyGenerateText(systemPrompt)).trim();
     console.log(`[Gemini Story] Generated: "${continuation.substring(0, 80)}..."`);
     
       geminiCache.set(cacheKey, continuation);
@@ -392,8 +383,7 @@ Professor Paws:`;
   try {
     await geminiCache.checkRateLimit();
     
-    const result = await model.generateContent(systemPrompt);
-    const text = result.response.text().trim();
+    const text = (await proxyGenerateText(systemPrompt)).trim();
     
     geminiCache.set(cacheKey, text);
     return text;

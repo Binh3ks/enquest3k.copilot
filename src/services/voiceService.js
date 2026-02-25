@@ -53,7 +53,7 @@ function nextTTSServer() {
 // When TTS_WORKER_URL is set: API key stays in Worker Secret (never in browser bundle)
 // When TTS_WORKER_URL is empty: falls back to direct Google TTS API (dev/testing mode)
 const TTS_WORKER_URL = import.meta.env.VITE_TTS_WORKER_URL || '';
-const GOOGLE_TTS_API_KEY = import.meta.env.VITE_GOOGLE_TTS_API_KEY || '';
+import { proxyGoogleTTS } from './aiProxy.js';
 const GOOGLE_TTS_VOICE = 'en-US-Journey-F'; // fallback: en-US-Neural2-F
 
 // Simple client-side rate limiter: min gap between requests per server (ms)
@@ -333,42 +333,8 @@ export const VoiceService = {
       return blob;
     }
 
-    // ── Route 2: Direct Google TTS API (dev mode / Worker not yet deployed) ──
-    if (!GOOGLE_TTS_API_KEY) throw new Error('No VITE_TTS_WORKER_URL or VITE_GOOGLE_TTS_API_KEY configured');
-
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-    try {
-      const response = await fetch(
-        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_TTS_API_KEY}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            input: { text },
-            voice: { languageCode: 'en-US', name: GOOGLE_TTS_VOICE },
-            audioConfig: { audioEncoding: 'MP3', speakingRate: 0.95, pitch: 0.0 }
-          }),
-          signal: controller.signal
-        }
-      );
-      clearTimeout(timeoutId);
-      if (!response.ok) throw new Error(`Google TTS HTTP ${response.status}`);
-
-      const data = await response.json();
-      if (!data.audioContent) throw new Error('Google TTS: empty audioContent');
-
-      // Decode base64 → Blob
-      const binary = atob(data.audioContent);
-      const bytes = new Uint8Array(binary.length);
-      for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-      console.log(`[TTS] 🎤 Google TTS direct OK (${(bytes.length / 1024).toFixed(1)}KB, voice: ${GOOGLE_TTS_VOICE})`);
-      return new Blob([bytes], { type: 'audio/mpeg' });
-    } catch (err) {
-      clearTimeout(timeoutId);
-      throw err;
-    }
+    // ── Route 2: Backend proxy for Google TTS (API key stays server-side) ──
+    return await proxyGoogleTTS(text, { voice: GOOGLE_TTS_VOICE, languageCode: 'en-US' });
   },
 
   /**

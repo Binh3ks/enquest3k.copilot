@@ -1,19 +1,16 @@
 /**
  * AI Provider System for EngQuest
  * Simple, clean, lets AI do its job
+ *
+ * All LLM calls are proxied through mcp-server (/api/ai/generate).
+ * API keys (Gemini, Groq, Cerebras, Together) live only in server env vars.
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { generateText as proxyGenerateText } from './aiProxy.js';
 
 // ============================================
-// CONFIG
+// CONFIG  (keys are on the backend now)
 // ============================================
-
-const GEMINI_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const GROQ_KEY = import.meta.env.VITE_GROQ_API_KEY;
-
-const geminiAI = GEMINI_KEY ? new GoogleGenerativeAI(GEMINI_KEY) : null;
-const geminiModel = geminiAI?.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
 export const PROVIDERS = {
   gemini: { name: 'Gemini 2.5 Flash', quotaPerDay: 1500 },
@@ -26,58 +23,15 @@ let dailyCount = { gemini: 0, groq: 0 };
 let errorCount = { gemini: 0, groq: 0 };
 
 // ============================================
-// PROVIDER CALLS
+// PROVIDER CALLS  — all proxied server-side
 // ============================================
 
 async function callGemini(prompt) {
-  if (!geminiModel) throw new Error('No Gemini API key');
-  const result = await geminiModel.generateContent(prompt);
-  return result.response.text();
+  return proxyGenerateText(prompt);
 }
 
 async function callGroq(prompt) {
-  if (!GROQ_KEY) throw new Error('No Groq API key');
-  
-  // Check if JSON response is explicitly requested
-  const needsJSON = prompt.toLowerCase().includes('return json') || 
-                    prompt.includes('"story_beat"') || 
-                    prompt.includes('"task"') ||
-                    prompt.includes('JSON format');
-  
-  // If needs JSON, ensure prompt has the word "json" (Groq requirement)
-  let finalPrompt = prompt;
-  if (needsJSON && !prompt.toLowerCase().includes('json')) {
-    finalPrompt = prompt + '\n\nIMPORTANT: Return response in valid JSON format.';
-  }
-  
-  const requestBody = {
-    model: 'llama-3.1-8b-instant',
-    messages: [{ role: 'user', content: finalPrompt }],
-    max_tokens: 150,
-    temperature: 0.7
-  };
-  
-  // Only add JSON mode if prompt explicitly requests it
-  if (needsJSON) {
-    requestBody.response_format = { type: "json_object" };
-  }
-  
-  const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${GROQ_KEY}`
-    },
-    body: JSON.stringify(requestBody)
-  });
-  
-  if (!response.ok) {
-    const err = await response.json().catch(() => ({}));
-    throw new Error(err.error?.message || `Groq ${response.status}`);
-  }
-  
-  const data = await response.json();
-  return data.choices[0].message.content;
+  return proxyGenerateText(prompt);
 }
 
 // ============================================
@@ -136,12 +90,12 @@ export async function callAI(prompt, type = 'chat', options = {}) {
     return null; // All attempts failed
   }
 
-  // Try each provider in order
+  // Try each provider in order (backend handles actual key availability)
   for (const provider of providerOrder) {
-    if (provider === 'groq' && GROQ_KEY && errorCount.groq < 5 && dailyCount.groq < 14400) {
+    if (provider === 'groq' && errorCount.groq < 5 && dailyCount.groq < 14400) {
       const result = await tryProvider('groq', callGroq, 8000);
       if (result) return result;
-    } else if (provider === 'gemini' && GEMINI_KEY && errorCount.gemini < 5 && dailyCount.gemini < 1500) {
+    } else if (provider === 'gemini' && errorCount.gemini < 5 && dailyCount.gemini < 1500) {
       const result = await tryProvider('gemini', callGemini, 15000);
       if (result) return result;
     }
@@ -532,14 +486,14 @@ export function getProviderStatus() {
   return {
     gemini: {
       name: 'Gemini 2.5 Flash',
-      available: !!GEMINI_KEY && errorCount.gemini < 3,
+      available: errorCount.gemini < 3, // key is on backend
       dailyUsed: dailyCount.gemini,
       dailyLimit: 1500,
       errors: errorCount.gemini
     },
     groq: {
       name: 'Groq Llama 3.1',
-      available: !!GROQ_KEY && errorCount.groq < 3,
+      available: errorCount.groq < 3,   // key is on backend
       dailyUsed: dailyCount.groq,
       dailyLimit: 14400,
       errors: errorCount.groq
@@ -555,8 +509,8 @@ export function getProviderStatus() {
 }
 
 export function getActiveProvider() {
-  if (GEMINI_KEY && errorCount.gemini < 3) return 'gemini';
-  if (GROQ_KEY && errorCount.groq < 3) return 'groq';
+  if (errorCount.gemini < 3) return 'gemini';
+  if (errorCount.groq < 3) return 'groq';
   return 'fallback';
 }
 

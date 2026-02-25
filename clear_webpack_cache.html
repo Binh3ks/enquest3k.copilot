@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hard Reload for Week 2</title>
+</head>
+<body>
+  <h1>🔄 Clear Webpack + Browser Cache</h1>
+  <button onclick="clearAndReload()">Clear Cache & Reload</button>
+  <p id="status">Click button to force reload Week 2 changes</p>
+
+  <script>
+    function clearAndReload() {
+      // Clear all caches
+      if ('caches' in window) {
+        caches.keys().then(names => {
+          names.forEach(name => caches.delete(name));
+        });
+      }
+      
+      // Clear localStorage
+      localStorage.clear();
+      sessionStorage.clear();
+      
+      document.getElementById('status').innerText = 'Cache cleared! Reloading...';
+      
+      // Hard reload with timestamp
+      setTimeout(() => {
+        window.location.href = 'http://localhost:5173/week/2/read_explore?_=' + Date.now();
+      }, 500);
+    }
+  </script>
+</body>
+</html>

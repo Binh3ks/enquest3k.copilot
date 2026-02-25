@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cache for Week 3, 4, 6 - FINAL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #6366f1;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #dc2626;
+        }
+        .log {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Clear Cache for Week 3, 4, 6 - FINAL</h1>
+        
+        <div class="warning">
+            ⚠️ <strong>CRITICAL:</strong> Week 3, 4, 6 Mission 1 đã được rebuild/convert.<br>
+            Cache cũ đang khiến browser load data sai (Week 5 content xuất hiện trong Week 3, 4, 6).<br>
+            Cần clear TRIỆT ĐỂ để load data mới!
+        </div>
+
+        <button onclick="clearEverything()">🗑️ CLEAR ALL CACHE + RELOAD</button>
+        <button onclick="clearSpecificWeeks()">🎯 CLEAR Week 3, 4, 6 Only</button>
+        <button onclick="hardReload()">⚡ HARD RELOAD (Ctrl+Shift+R)</button>
+
+        <div class="log" id="log">
+            <div>Ready to clear cache...</div>
+            <div>---</div>
+            <div><strong>Data Changes:</strong></div>
+            <div>✅ Week 3 Mission 1: Rebuilt with "Looking in the Mirror" (tall/short/hair/eyes)</div>
+            <div>✅ Week 4 Mission 1: Already correct "Happy Jar" (happy/sad/angry)</div>
+            <div>✅ Week 6 Mission 1: Already correct "Treasure Map" (on/under/in/next to)</div>
+            <div>---</div>
+            <div>❌ OLD CACHE: All 3 missions showing "living room" questions (Week 5 content)</div>
+            <div>✅ NEW DATA: Each week has correct topic-specific questions</div>
+        </div>
+    </div>
+
+    <script>
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        async function clearEverything() {
+            log('🔴 STARTING COMPLETE CACHE CLEAR...');
+            
+            try {
+                // 1. Clear All LocalStorage
+                log('📦 Clearing localStorage...');
+                const keysToDelete = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    keysToDelete.push(localStorage.key(i));
+                }
+                keysToDelete.forEach(key => {
+                    localStorage.removeItem(key);
+                    log(`  ├─ Removed: ${key}`);
+                });
+                
+                // 2. Clear All SessionStorage
+                log('📦 Clearing sessionStorage...');
+                sessionStorage.clear();
+                
+                // 3. Clear IndexedDB
+                log('🗄️ Clearing IndexedDB...');
+                const dbs = await window.indexedDB.databases();
+                for (const db of dbs) {
+                    window.indexedDB.deleteDatabase(db.name);
+                    log(`  ├─ Deleted DB: ${db.name}`);
+                }
+                
+                // 4. Clear Cache Storage
+                if ('caches' in window) {
+                    log('💾 Clearing Cache Storage...');
+                    const cacheNames = await caches.keys();
+                    for (const name of cacheNames) {
+                        await caches.delete(name);
+                        log(`  ├─ Deleted cache: ${name}`);
+                    }
+                }
+                
+                // 5. Clear Service Workers
+                if ('serviceWorker' in navigator) {
+                    log('⚙️ Unregistering Service Workers...');
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (const registration of registrations) {
+                        await registration.unregister();
+                        log(`  ├─ Unregistered: ${registration.scope}`);
+                    }
+                }
+                
+                log('✅ ALL CACHE CLEARED SUCCESSFULLY!');
+                log('🔄 Reloading page in 2 seconds...');
+                
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 2000);
+                
+            } catch (error) {
+                log(`❌ ERROR: ${error.message}`);
+            }
+        }
+
+        async function clearSpecificWeeks() {
+            log('🎯 CLEARING Week 3, 4, 6 specific data...');
+            
+            try {
+                // Clear week-specific localStorage keys
+                const weekKeys = [
+                    'week_3_data',
+                    'week_4_data',
+                    'week_6_data',
+                    'aiTutorState_week3',
+                    'aiTutorState_week4',
+                    'aiTutorState_week6',
+                    'storyMission_week3_mission1',
+                    'storyMission_week4_mission1',
+                    'storyMission_week6_mission1'
+                ];
+                
+                weekKeys.forEach(key => {
+                    if (localStorage.getItem(key)) {
+                        localStorage.removeItem(key);
+                        log(`  ✅ Cleared: ${key}`);
+                    }
+                });
+                
+                // Clear all AI Tutor conversation history
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && (key.includes('conversation') || key.includes('chatHistory'))) {
+                        localStorage.removeItem(key);
+                        log(`  ✅ Cleared conversation: ${key}`);
+                    }
+                }
+                
+                log('✅ Week 3, 4, 6 cache cleared!');
+                log('🔄 Reloading in 2 seconds...');
+                
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 2000);
+                
+            } catch (error) {
+                log(`❌ ERROR: ${error.message}`);
+            }
+        }
+
+        function hardReload() {
+            log('⚡ Performing HARD RELOAD...');
+            log('Press Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac) now!');
+            
+            setTimeout(() => {
+                window.location.reload(true);
+            }, 1000);
+        }
+
+        // Auto-log on load
+        window.addEventListener('load', () => {
+            log('Page loaded. Choose an option above to clear cache.');
+        });
+    </script>
+</body>
+</html>

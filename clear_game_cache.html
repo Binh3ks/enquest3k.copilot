@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear EngQuest Game Cache</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 5px;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+      transform: scale(1.05);
+    }
+    button.danger {
+      background: #f44336;
+    }
+    button.danger:hover {
+      background: #da190b;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      display: none;
+    }
+    .success {
+      background: rgba(76, 175, 80, 0.3) !important;
+      border: 2px solid #4CAF50;
+    }
+    .info {
+      background: rgba(33, 150, 243, 0.3) !important;
+      border: 2px solid #2196F3;
+    }
+    pre {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧹 Clear EngQuest Game Cache</h1>
+    <p>Clear all game progress and vocab cache. Use this when:</p>
+    <ul>
+      <li>Easy/Advanced modes show same vocab</li>
+      <li>Games not updating after code changes</li>
+      <li>Audio playing twice (TTS double)</li>
+    </ul>
+    
+    <div>
+      <button onclick="clearGameCache()">🗑️ Clear Game Cache</button>
+      <button onclick="showLocalStorage()">👀 Show Current Cache</button>
+      <button class="danger" onclick="clearAll()">⚠️ Clear ALL LocalStorage</button>
+    </div>
+    
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function showResult(message, type = 'success') {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = message;
+      resultDiv.className = type;
+      resultDiv.style.display = 'block';
+    }
+
+    function clearGameCache() {
+      const keys = Object.keys(localStorage);
+      const gameKeys = keys.filter(key => 
+        key.includes('game_') || 
+        key.includes('vocab_') ||
+        key.includes('say_it_') ||
+        key.includes('spell_it_') ||
+        key.includes('game_hub')
+      );
+      
+      if (gameKeys.length === 0) {
+        showResult('✅ No game cache found!', 'info');
+        return;
+      }
+      
+      gameKeys.forEach(key => localStorage.removeItem(key));
+      
+      showResult(`
+        ✅ <strong>Cleared ${gameKeys.length} game cache items!</strong><br><br>
+        Removed keys:<br>
+        <pre>${gameKeys.join('\n')}</pre>
+        <br>
+        <strong>Now refresh your browser (Cmd+Shift+R)</strong>
+      `, 'success');
+    }
+
+    function showLocalStorage() {
+      const keys = Object.keys(localStorage);
+      if (keys.length === 0) {
+        showResult('📭 LocalStorage is empty!', 'info');
+        return;
+      }
+      
+      const data = keys.map(key => {
+        const value = localStorage.getItem(key);
+        return `${key}: ${value.substring(0, 100)}${value.length > 100 ? '...' : ''}`;
+      }).join('\n');
+      
+      showResult(`
+        📦 <strong>LocalStorage contents (${keys.length} items):</strong><br><br>
+        <pre>${data}</pre>
+      `, 'info');
+    }
+
+    function clearAll() {
+      if (!confirm('⚠️ This will delete ALL data in LocalStorage. Continue?')) {
+        return;
+      }
+      
+      const count = localStorage.length;
+      localStorage.clear();
+      
+      showResult(`
+        ✅ <strong>Cleared ALL LocalStorage (${count} items)!</strong><br><br>
+        <strong>Now refresh your browser (Cmd+Shift+R)</strong>
+      `, 'success');
+    }
+  </script>
+</body>
+</html>

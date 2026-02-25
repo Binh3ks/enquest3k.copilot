@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 CLEAR ALL + HARD RELOAD - Feb 2, 2026</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+    .container {
+      background: rgba(255,255,255,0.95);
+      padding: 40px;
+      border-radius: 20px;
+      color: #333;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #667eea;
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 0.9em;
+    }
+    button {
+      width: 100%;
+      padding: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 15px 0;
+      transition: all 0.3s ease;
+    }
+    .clear-btn {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+    .clear-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+    }
+    .reload-btn {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+    }
+    .reload-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
+    }
+    .log {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85em;
+      border-left: 4px solid #667eea;
+    }
+    .log-item {
+      padding: 5px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+    .success { color: #28a745; font-weight: bold; }
+    .error { color: #dc3545; font-weight: bold; }
+    .info { color: #17a2b8; }
+    .warning {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      color: #856404;
+    }
+    .important {
+      background: #d1ecf1;
+      border: 2px solid #0c5460;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+      color: #0c5460;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 FULL CACHE CLEAR + RELOAD</h1>
+    <div class="subtitle">Feb 2, 2026 - Story Mission Fix</div>
+    
+    <div class="important">
+      ⚠️ QUAN TRỌNG: Sau khi clear cache, RELOAD SERVER để load code mới!<br>
+      Code đã được fix để ngăn AI hallucinate câu hỏi.
+    </div>
+
+    <button class="clear-btn" onclick="clearEverything()">
+      🗑️ STEP 1: CLEAR ALL CACHE + STORAGE
+    </button>
+
+    <div class="warning">
+      📌 Sau khi click STEP 1, chờ xong rồi mới làm STEP 2!
+    </div>
+
+    <button class="reload-btn" onclick="hardReload()">
+      🔄 STEP 2: HARD RELOAD (Ctrl+Shift+R / Cmd+Shift+R)
+    </button>
+
+    <div class="log" id="log"></div>
+  </div>
+
+  <script>
+    function log(message, type = 'info') {
+      const logEl = document.getElementById('log');
+      const item = document.createElement('div');
+      item.className = `log-item ${type}`;
+      item.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      logEl.appendChild(item);
+      logEl.scrollTop = logEl.scrollHeight;
+      console.log(message);
+    }
+
+    async function clearEverything() {
+      log('🚀 Starting complete cache clear...', 'info');
+      
+      try {
+        // 1. Clear localStorage
+        const localStorageCount = localStorage.length;
+        localStorage.clear();
+        log(`✅ localStorage cleared (${localStorageCount} items)`, 'success');
+
+        // 2. Clear sessionStorage
+        const sessionStorageCount = sessionStorage.length;
+        sessionStorage.clear();
+        log(`✅ sessionStorage cleared (${sessionStorageCount} items)`, 'success');
+
+        // 3. Clear all cookies
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i];
+          const eqPos = cookie.indexOf("=");
+          const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
+        log(`✅ Cookies cleared (${cookies.length} cookies)`, 'success');
+
+        // 4. Clear IndexedDB
+        if (window.indexedDB) {
+          const dbs = await indexedDB.databases();
+          for (const db of dbs) {
+            indexedDB.deleteDatabase(db.name);
+            log(`✅ IndexedDB "${db.name}" deleted`, 'success');
+          }
+        }
+
+        // 5. Clear Cache Storage
+        if ('caches' in window) {
+          const cacheNames = await caches.keys();
+          for (const name of cacheNames) {
+            await caches.delete(name);
+            log(`✅ Cache "${name}" deleted`, 'success');
+          }
+        }
+
+        // 6. Unregister Service Workers
+        if ('serviceWorker' in navigator) {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          for (const registration of registrations) {
+            await registration.unregister();
+            log(`✅ Service Worker unregistered`, 'success');
+          }
+        }
+
+        log('✨ ALL CACHE CLEARED SUCCESSFULLY!', 'success');
+        log('📌 Bây giờ RELOAD SERVER (kill terminal, npm run dev lại)', 'warning');
+        log('📌 Sau đó nhấn STEP 2 để hard reload browser', 'warning');
+
+      } catch (error) {
+        log(`❌ Error: ${error.message}`, 'error');
+      }
+    }
+
+    function hardReload() {
+      log('🔄 Performing hard reload...', 'info');
+      log('✅ Use Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)', 'success');
+      
+      // Try multiple reload methods
+      if (window.location.reload) {
+        window.location.reload(true); // force reload from server
+      }
+      
+      // Also try cache-busting URL
+      setTimeout(() => {
+        window.location.href = window.location.href.split('?')[0] + '?t=' + Date.now();
+      }, 500);
+    }
+
+    // Auto-log on page load
+    window.addEventListener('load', () => {
+      log('📄 Cache clear tool loaded', 'info');
+      log('📌 Follow 2 steps: STEP 1 → reload server → STEP 2', 'info');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+name = "engquest-tts-worker"
+main = "tts-worker.js"
+compatibility_date = "2024-01-01"
+
+# ─── R2 Bucket Binding ────────────────────────────────────────────────────────
+# Trỏ đến R2 bucket đang chứa static audio (engquest-tts hoặc tên bucket thực của bạn)
+# Kiểm tra tên bucket: Cloudflare Dashboard → R2 → xem tên bucket
+[[r2_buckets]]
+binding = "TTS_BUCKET"
+bucket_name = "engquest-audio"
+
+# ─── Custom Domain Routes ─────────────────────────────────────────────────────
+# Khi đã thêm domain bkbacademy.vn vào Cloudflare, uncomment dòng dưới:
+# routes = [
+#   { pattern = "api-tts.bkbacademy.vn/*", zone_name = "bkbacademy.vn" }
+# ]
+
+# ─── Secret (KHÔNG được đặt ở đây) ───────────────────────────────────────────
+# DEEPGRAM_API_KEY được set qua lệnh:
+#   wrangler secret put DEEPGRAM_API_KEY
+# Sau đó paste key từ https://console.deepgram.com/
+#
+# Không cần Cron nữa — Deepgram là serverless, không có cold start.
