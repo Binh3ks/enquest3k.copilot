@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎙️ Piper TTS Multi-Speaker Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .test-section {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .speaker-card {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+    .speaker-card:hover {
+      background: rgba(255,255,255,0.3);
+      border-color: white;
+      transform: scale(1.05);
+    }
+    .speaker-card.active {
+      background: rgba(255,255,255,0.4);
+      border-color: #4ade80;
+    }
+    .speaker-id {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .speaker-desc {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      min-height: 100px;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    button {
+      padding: 12px 24px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .play-btn {
+      background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+      color: white;
+      flex: 1;
+    }
+    .play-btn:hover {
+      transform: scale(1.05);
+    }
+    .play-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    select, input[type="number"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 14px;
+    }
+    .status {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎙️ Piper TTS Multi-Speaker Test</h1>
+  
+  <div class="test-section">
+    <h2>💬 Test Text</h2>
+    <textarea id="testText" placeholder="Enter text to speak...">Hello! I am Ms. Nova, your friendly English teacher. Let's practice speaking English together!</textarea>
+    
+    <div class="controls">
+      <button class="play-btn" id="playBtn" onclick="testSpeaker()">🔊 Play Selected Speaker</button>
+      <select id="speedSelect">
+        <option value="0.7">0.7x Slow</option>
+        <option value="0.85">0.85x Comfortable</option>
+        <option value="0.9" selected>0.9x Default</option>
+        <option value="1.0">1.0x Normal</option>
+        <option value="1.2">1.2x Fast</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>👥 Recommended Female Voices (Ms. Nova)</h2>
+    <div class="speaker-grid">
+      <div class="speaker-card active" data-speaker="103" onclick="selectSpeaker(103)">
+        <div class="speaker-id">Speaker 103</div>
+        <div class="speaker-desc">🌟 Ms. Nova Default<br>Clear Female Voice</div>
+      </div>
+      <div class="speaker-card" data-speaker="19" onclick="selectSpeaker(19)">
+        <div class="speaker-id">Speaker 19</div>
+        <div class="speaker-desc">✨ Soft Female<br>Gentle & Warm</div>
+      </div>
+      <div class="speaker-card" data-speaker="125" onclick="selectSpeaker(125)">
+        <div class="speaker-id">Speaker 125</div>
+        <div class="speaker-desc">💫 Bright Female<br>Energetic Tone</div>
+      </div>
+      <div class="speaker-card" data-speaker="67" onclick="selectSpeaker(67)">
+        <div class="speaker-id">Speaker 67</div>
+        <div class="speaker-desc">🎵 Melodic Female<br>Musical Tone</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>🧪 Custom Speaker Test (0-900)</h2>
+    <div class="controls">
+      <input type="number" id="customSpeaker" min="0" max="900" value="103" placeholder="Speaker ID (0-900)">
+      <button class="play-btn" onclick="testCustomSpeaker()">🎤 Test Custom Speaker</button>
+    </div>
+  </div>
+
+  <div class="status" id="status">
+    ℹ️ Ready. Select a speaker and click Play to test voices.
+  </div>
+
+  <script>
+    let selectedSpeaker = 103;
+
+    function selectSpeaker(id) {
+      selectedSpeaker = id;
+      document.querySelectorAll('.speaker-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      document.querySelector(`[data-speaker="${id}"]`).classList.add('active');
+      updateStatus(`✅ Selected Speaker ${id}`);
+    }
+
+    async function testSpeaker() {
+      const text = document.getElementById('testText').value;
+      const speed = parseFloat(document.getElementById('speedSelect').value);
+      
+      if (!text.trim()) {
+        updateStatus('❌ Error: Please enter some text');
+        return;
+      }
+
+      updateStatus(`🎙️ Testing Speaker ${selectedSpeaker} at ${speed}x speed...`);
+      
+      try {
+        const response = await fetch(
+          `http://localhost:8000/speak?text=${encodeURIComponent(text)}&speed=${speed}&speaker_id=${selectedSpeaker}`
+        );
+        
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        // Play audio
+        const audio = new Audio(data.audio_url);
+        audio.playbackRate = speed;
+        
+        audio.onplay = () => updateStatus(`🔊 Playing Speaker ${selectedSpeaker}...`);
+        audio.onended = () => updateStatus(`✅ Playback complete! Speaker ${selectedSpeaker} sounds good? Try others!`);
+        audio.onerror = (e) => updateStatus(`❌ Audio playback error: ${e.message}`);
+        
+        await audio.play();
+
+      } catch (error) {
+        updateStatus(`❌ Error: ${error.message}`);
+        console.error('TTS Error:', error);
+      }
+    }
+
+    async function testCustomSpeaker() {
+      const customId = parseInt(document.getElementById('customSpeaker').value);
+      if (customId < 0 || customId > 900) {
+        updateStatus('❌ Error: Speaker ID must be between 0 and 900');
+        return;
+      }
+      selectedSpeaker = customId;
+      await testSpeaker();
+    }
+
+    function updateStatus(message) {
+      document.getElementById('status').innerText = message;
+    }
+
+    // Keyboard shortcut: Space to play
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        testSpeaker();
+      }
+    });
+  </script>
+</body>
+</html>
