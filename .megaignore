@@ -7,3 +7,4 @@
 -:~*
 -p:node_modules/@esbuild/darwin-arm64/bin/esbuild
 -p:node_modules/esbuild/bin/esbuild
+-s:*

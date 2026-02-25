@@ -1,0 +1,17 @@
+# EngQuest TTS Server - Python Dependencies
+# For Hugging Face Spaces deployment
+
+# FastAPI framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+
+# Kokoro TTS
+kokoro-onnx==0.5.0
+onnxruntime==1.24.1
+
+# Edge TTS (Vietnamese support)
+edge-tts==6.1.9
+
+# Audio processing
+soundfile==0.12.1
+numpy>=1.21.6

@@ -1,0 +1,63 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  # ─── Job 1: Build frontend and deploy to Cloudflare Pages ───────────────────
+  deploy-frontend:
+    name: Frontend → Cloudflare Pages
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_CDN_URL: ${{ secrets.VITE_CDN_URL }}
+          VITE_EDGE_TTS_URL: ${{ secrets.VITE_EDGE_TTS_URL }}
+          VITE_TTS_WORKER_URL: ${{ secrets.VITE_TTS_WORKER_URL }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: engquest3k
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  # ─── Job 2: Deploy backend to Railway (auto-deploy via Railway GitHub integration) ─
+  # Railway auto-deploys on push when GitHub repo is connected.
+  # No additional workflow steps needed — Railway watches mcp-server/ changes.
+  # To set up: Railway dashboard → Project → Settings → GitHub → select repo/branch.
+  #
+  # If you want explicit Railway deploy via CLI, uncomment below:
+  #
+  # deploy-backend:
+  #   name: Backend → Railway
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Install Railway CLI
+  #       run: npm install -g @railway/cli
+  #     - name: Deploy
+  #       run: railway up --service engquest-backend
+  #       working-directory: mcp-server
+  #       env:
+  #         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}

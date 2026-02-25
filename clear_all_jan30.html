@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear All Storage - Jan 30</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .clear-btn {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+    .clear-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+    }
+    .refresh-btn {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+    }
+    .refresh-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+    }
+    #status {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      min-height: 100px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+    .success { color: #4ade80; }
+    .info { color: #60a5fa; }
+    .warning { color: #fbbf24; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧹 Clear All Storage - Jan 30</h1>
+    
+    <button class="clear-btn" onclick="clearAllStorage()">
+      🗑️ Clear All Storage (localStorage + sessionStorage + Cookies)
+    </button>
+    
+    <button class="refresh-btn" onclick="refreshPage()">
+      🔄 Reload Page
+    </button>
+    
+    <div id="status"></div>
+  </div>
+
+  <script>
+    function log(message, type = 'info') {
+      const status = document.getElementById('status');
+      const className = type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info';
+      status.innerHTML += `<div class="${className}">${message}</div>`;
+    }
+
+    function clearAllStorage() {
+      const status = document.getElementById('status');
+      status.innerHTML = '<div class="info">🧹 Clearing all storage...</div>';
+      
+      let clearedCount = 0;
+      
+      // 1. Clear localStorage
+      try {
+        const localKeys = Object.keys(localStorage);
+        log(`📦 localStorage: Found ${localKeys.length} keys`, 'info');
+        
+        localKeys.forEach(key => {
+          log(`   - Deleting: ${key}`, 'info');
+          localStorage.removeItem(key);
+          clearedCount++;
+        });
+        
+        log('✅ localStorage cleared!', 'success');
+      } catch (e) {
+        log('❌ localStorage error: ' + e.message, 'warning');
+      }
+      
+      // 2. Clear sessionStorage
+      try {
+        const sessionKeys = Object.keys(sessionStorage);
+        log(`📦 sessionStorage: Found ${sessionKeys.length} keys`, 'info');
+        
+        sessionKeys.forEach(key => {
+          log(`   - Deleting: ${key}`, 'info');
+          sessionStorage.removeItem(key);
+          clearedCount++;
+        });
+        
+        log('✅ sessionStorage cleared!', 'success');
+      } catch (e) {
+        log('❌ sessionStorage error: ' + e.message, 'warning');
+      }
+      
+      // 3. Clear cookies
+      try {
+        const cookies = document.cookie.split(';');
+        log(`🍪 Cookies: Found ${cookies.length} cookies`, 'info');
+        
+        cookies.forEach(cookie => {
+          const name = cookie.split('=')[0].trim();
+          document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+          log(`   - Deleted cookie: ${name}`, 'info');
+          clearedCount++;
+        });
+        
+        log('✅ Cookies cleared!', 'success');
+      } catch (e) {
+        log('❌ Cookies error: ' + e.message, 'warning');
+      }
+      
+      // 4. Clear IndexedDB
+      try {
+        if (window.indexedDB) {
+          indexedDB.databases().then(databases => {
+            databases.forEach(db => {
+              log(`🗄️ Deleting IndexedDB: ${db.name}`, 'info');
+              indexedDB.deleteDatabase(db.name);
+              clearedCount++;
+            });
+            log('✅ IndexedDB cleared!', 'success');
+          });
+        }
+      } catch (e) {
+        log('❌ IndexedDB error: ' + e.message, 'warning');
+      }
+      
+      log(`\n✅ TOTAL CLEARED: ${clearedCount} items`, 'success');
+      log('🔄 Now reload the page to start fresh!', 'info');
+    }
+
+    function refreshPage() {
+      location.reload(true);
+    }
+  </script>
+</body>
+</html>
