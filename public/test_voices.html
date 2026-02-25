@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piper Voice Comparison</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .voice-card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .voice-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5B21B6;
+            margin-bottom: 5px;
+        }
+        .voice-desc {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .stats {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .test-text {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #5B21B6;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎙️ Piper Voice Comparison</h1>
+    
+    <div class="test-text">
+        <strong>Test Text:</strong> "Hello! I am Miss Nova, your English teacher. What is your name?"
+    </div>
+
+    <div class="voice-card">
+        <div class="voice-name">1. Nova (Original)</div>
+        <div class="voice-desc">Low quality (16kHz), slower, robotic</div>
+        <audio controls src="/audio/voice_tests/test_nova.wav"></audio>
+        <div class="stats">Duration: 4.38s | Sample rate: 16kHz</div>
+    </div>
+
+    <div class="voice-card">
+        <div class="voice-name">2. Lessac (Current)</div>
+        <div class="voice-desc">⭐ Natural female voice, medium quality (22kHz)</div>
+        <audio controls src="/audio/voice_tests/test_en_US-lessac-medium.wav"></audio>
+        <div class="stats">Duration: 3.78s | Sample rate: 22kHz</div>
+    </div>
+
+    <div class="voice-card">
+        <div class="voice-name">3. Amy</div>
+        <div class="voice-desc">High quality, clear, most articulate</div>
+        <audio controls src="/audio/voice_tests/test_en_US-amy-medium.wav"></audio>
+        <div class="stats">Duration: 4.74s | Sample rate: 22kHz</div>
+    </div>
+
+    <div class="voice-card">
+        <div class="voice-name">4. LibriTTS-R (Recommended ✨)</div>
+        <div class="voice-desc">Most expressive, varied intonation, fastest</div>
+        <audio controls src="/audio/voice_tests/test_en_US-libritts_r-medium.wav"></audio>
+        <div class="stats">Duration: 2.96s | Sample rate: 22kHz</div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: #EEF2FF; border-radius: 8px;">
+        <h3>🎯 Recommendation:</h3>
+        <p><strong>LibriTTS-R</strong> - Most natural, expressive, and energetic. Best for conversational AI teacher.</p>
+        <p><strong>Amy</strong> - Best for clear pronunciation practice, good for beginners.</p>
+        <p><strong>Lessac</strong> - Current choice, balanced quality.</p>
+    </div>
+</body>
+</html>

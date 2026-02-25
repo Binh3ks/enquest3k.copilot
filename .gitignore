@@ -26,4 +26,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-public/
+# public/ large audio dirs (served from CDN/R2)
+public/audio/
+public/audio_cache/
+public/audio copy/
