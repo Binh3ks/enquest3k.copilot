@@ -1,0 +1,444 @@
+/**
+ * Spell It! Game Component
+ * 
+ * Production-oriented: Students TYPE letter-by-letter spelling
+ * Complexity: 2/10 (Simple exact match validation)
+ * Scaffolding: Week 1-18 (Word Level)
+ * 
+ * Game Flow:
+ * 1. Show picture/emoji for word (e.g., 🐕)
+ * 2. Student types spelling: "D-O-G" or "dog" or "DOG"
+ * 3. CODE validates (exact match after cleaning)
+ * 4. Move to next word (20 words total)
+ */
+
+import { useState, useEffect, useRef } from 'react';
+import { useGameValidation } from '../hooks/useGameValidation';
+import { generateSpellItPrompt } from '../../../services/ai_tutor/games/spellIt';
+import { speakText } from '../../../utils/AudioHelper';
+import { getGameData } from '../../../config/gameAdaptation';
+
+export default function SpellItGame({ weekNumber, learningMode = 'advanced', onGameComplete }) {
+  const {
+    gameState,
+    initializeGame,
+    validateInput,
+    isGameComplete,
+    getProgress,
+    turnCount
+  } = useGameValidation('spell_it', weekNumber, learningMode);
+  
+  const [userInput, setUserInput] = useState('');
+  const [feedback, setFeedback] = useState(null);
+  const [hint, setHint] = useState(null);
+  const [showIntro, setShowIntro] = useState(true);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const audioRef = useRef(null);
+  const recognitionRef = useRef(null);
+  
+  // Initialize game on mount
+  useEffect(() => {
+    const state = initializeGame();
+    console.log('🎮 Spell It! initialized:', state);
+    // Auto-play word audio on mount
+    if (state?.currentWord) {
+      playWordAudio(state.currentWord);
+    }
+  }, [initializeGame]);
+  
+  // Play audio when word changes
+  useEffect(() => {
+    if (gameState?.currentWord && !isPlayingAudio) {
+      playWordAudio(gameState.currentWord);
+    }
+  }, [gameState?.wordIndex]);
+  
+  /**
+   * Play word audio pronunciation
+   */
+  const playWordAudio = async (word) => {
+    if (!word || isPlayingAudio) return;
+    
+    setIsPlayingAudio(true);
+    try {
+      console.log('🔊 Playing audio for:', word);
+      await speakText(word);
+    } catch (error) {
+      console.error('❌ Audio error:', error);
+    } finally {
+      setIsPlayingAudio(false);
+    }
+  };
+  
+  /**
+   * Initialize Speech Recognition API
+   */
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      
+      if (SpeechRecognition) {
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'en-US';
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        
+        recognition.onstart = () => {
+          console.log('🎤 Speech recognition started');
+          setIsListening(true);
+        };
+        
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript.toLowerCase().trim();
+          console.log('🎤 Speech recognized:', transcript);
+          
+          // Convert speech to spelled format (e.g., "d o g" → "D-O-G")
+          const spelledInput = transcript
+            .split(' ')
+            .filter(char => char.length === 1) // Only single letters
+            .join('-')
+            .toUpperCase();
+          
+          console.log('🎤 Converted to spelling:', spelledInput);
+          
+          if (spelledInput) {
+            setUserInput(spelledInput);
+          } else {
+            // If speech is a whole word (not spelled), use as-is
+            setUserInput(transcript);
+          }
+        };
+        
+        recognition.onerror = (event) => {
+          console.error('🎤 Speech recognition error:', event.error);
+          setFeedback({
+            type: 'error',
+            message: `Microphone error: ${event.error}. Please try again.`
+          });
+          setIsListening(false);
+        };
+        
+        recognition.onend = () => {
+          console.log('🎤 Speech recognition ended');
+          setIsListening(false);
+        };
+        
+        recognitionRef.current = recognition;
+      } else {
+        console.warn('⚠️ Speech Recognition API not supported');
+      }
+    }
+  }, []);
+  
+  /**
+   * Start listening to speech
+   */
+  const startListening = () => {
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.start();
+      } catch (error) {
+        console.error('🎤 Error starting recognition:', error);
+        setFeedback({
+          type: 'error',
+          message: 'Microphone already in use. Please try again.'
+        });
+      }
+    } else {
+      setFeedback({
+        type: 'error',
+        message: 'Speech recognition not supported in your browser.'
+      });
+    }
+  };
+  
+  // Check if game complete
+  useEffect(() => {
+    if (isGameComplete()) {
+      const progress = getProgress();
+      onGameComplete?.({
+        gameId: 'spell_it',
+        score: progress.percentage,
+        correctCount: progress.current,
+        totalWords: progress.total
+      });
+    }
+  }, [gameState, isGameComplete, getProgress, onGameComplete]);
+  
+  /**
+   * Handle student input submission
+   */
+  const handleSubmit = (e) => {
+    e?.preventDefault();
+    
+    if (!userInput.trim()) return;
+    
+    setShowIntro(false); // Hide intro after first input
+    
+    const result = validateInput(userInput.trim());
+    
+    console.log('🎯 Validation result:', result);
+    
+    if (result.grammarError) {
+      // Grammar guard violation
+      setFeedback({
+        type: 'error',
+        message: result.feedback,
+        forbiddenWord: result.forbiddenWord
+      });
+      setHint('Use present tense: am, is, are, have, like, see');
+      return;
+    }
+    
+    if (result.correct) {
+      // Correct spelling
+      setFeedback({
+        type: 'success',
+        message: result.feedback
+      });
+      setHint(null);
+      setUserInput(''); // Clear input for next word
+    } else {
+      // Wrong spelling
+      setFeedback({
+        type: 'error',
+        message: result.feedback
+      });
+      setHint(result.hint);
+    }
+  };
+  
+  /**
+   * Handle Enter key press
+   */
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
+    }
+  };
+  
+  if (!gameState) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <div className="text-xl text-gray-500">Loading game...</div>
+      </div>
+    );
+  }
+  
+  const progress = getProgress();
+  const currentWord = gameState.currentWord;
+  
+  // Get emoji/picture for current word (from games.js)
+  const getWordEmoji = (word) => {
+    const gameData = getGameData(weekNumber, learningMode, 'spell_it');
+    const emojiMap = gameData?.emoji_map || {};
+    
+    // Fallback emoji if not found
+    return emojiMap[word?.toLowerCase()] || '❓';
+  };
+  
+  return (
+    <div className="spell-it-game max-w-2xl mx-auto p-6">
+      {/* Header */}
+      <div className="game-header mb-6 text-center">
+      // Animals
+      'dog': '🐕', 'cat': '🐱', 'bird': '🐦', 'fish': '🐠', 'horse': '🐴',
+      'cow': '🐄', 'pig': '🐷', 'chicken': '🐔', 'duck': '🦆', 'rabbit': '🐰',
+      
+      // Objects
+      'book': '📖', 'pen': '✒️', 'pencil': '✏️', 'desk': '📚', 'chair': '🪑',
+      'door': '🚪', 'window': '🪟', 'lamp': '💡', 'table': '🍽️', 'bed': '🛏️',
+      'sofa': '🛋️', 'mirror': '🪞', 'picture': '🖼️', 'clock': '⏰',
+      'notebook': '📓',
+      // Food
+      'apple': '🍎', 'banana': '🍌', 'orange': '🍊', 'bread': '🍞', 'milk': '🥛',
+      'water': '💧', 'juice': '🧃', 'cake': '🍰', 'pizza': '🍕', 'rice': '🍚',
+      
+      // People
+      'mother': '👩', 'father': '👨', 'brother': '👦', 'sister': '👧',
+      'teacher': '👨‍🏫', 'student': '👨‍🎓', 'friend': '🧑‍🤝‍🧑',
+      
+      // School
+      'backpack': '🎒', 'classroom': '🏫', 'playground': '🛝', 'library': '�',
+      'school': '🏫', 'name': '📛', 'age': '🔢', 'hero': '🦸', 'power': '⚡',
+      'boy': '👦', 'girl': '👧', 'scientist': '👨‍🔬', 'identity': '🪪', 
+      'introduce': '👋', 'attention': '👂', 'yes': '✅', 'no': '❌',
+      
+      // Body
+      'hand': '✋', 'eye': '👁️', 'ear': '👂', 'nose': '👃', 'mouth': '👄',
+      'hair': '💇', 'face': '😊',
+      
+      // Colors (removed 'orange' duplicate - already in Food section)
+      'red': '🔴', 'blue': '🔵', 'yellow': '🟡', 'green': '🟢', 'black': '⚫',
+      'white': '⚪', 'pink': '🩷', 'purple': '🟣', 'brown': '🟤',
+      
+      // Actions (abstract)
+      'play': '🎮', 'read': '📖', 'write': '✍️', 'draw': '🎨', 'sing': '🎤',
+      'dance': '💃', 'run': '🏃', 'jump': '🤸', 'swim': '🏊', 'sleep': '😴',
+      
+      // Default
+      default: '❓'
+    };
+    
+    return emojiMap[word.toLowerCase()] || emojiMap.default;
+  };
+  
+  return (
+    <div className="spell-it-game max-w-2xl mx-auto p-6">
+      {/* Header */}
+      <div className="game-header mb-6 text-center">
+        <h2 className="text-3xl font-bold mb-2">
+          🔤 Spell It!
+        </h2>
+        <p className="text-gray-600 mb-4">
+          Type the spelling letter by letter!
+        </p>
+        
+        {/* Progress Bar */}
+        <div className="progress-bar mb-4">
+          <div className="flex justify-between text-sm mb-1">
+            <span>Word {progress.current}/{progress.total}</span>
+            <span>{progress.percentage}%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-3">
+            <div 
+              className="bg-green-500 h-3 rounded-full transition-all duration-300"
+              style={{ width: `${progress.percentage}%` }}
+            />
+          </div>
+        </div>
+      </div>
+      
+      {/* Intro Message (First Turn) */}
+      {showIntro && (
+        <div className="intro-message bg-blue-50 border-2 border-blue-300 rounded-lg p-4 mb-6">
+          <p className="text-lg text-blue-800">
+            👋 I'll show you a picture. You spell the word letter by letter!
+          </p>
+          <p className="text-sm text-blue-600 mt-2">
+            Example: 🐕 → Type "D-O-G" or "dog"
+          </p>
+        </div>
+      )}
+      
+      {/* Current Word Display */}
+      <div className="word-display bg-white rounded-lg shadow-lg p-8 mb-6 text-center">
+        <div className="emoji text-8xl mb-4">
+          {getWordEmoji(currentWord)}
+        </div>
+        
+        {/* Audio Button */}
+        <button
+          onClick={() => playWordAudio(currentWord)}
+          disabled={isPlayingAudio}
+          className="mb-4 px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white rounded-full font-bold transition-all hover:scale-110 disabled:scale-100 shadow-lg flex items-center gap-2 mx-auto"
+          title="Click to hear the word"
+        >
+          <span className="text-xl">{isPlayingAudio ? '🔊' : '🔉'}</span>
+          <span>{isPlayingAudio ? 'Playing...' : 'Hear Word'}</span>
+        </button>
+        
+        <p className="text-gray-500 text-sm mb-2">Spell this word:</p>
+        <div className="word-hint text-2xl font-mono tracking-widest text-gray-400">
+          {currentWord.split('').map((_, index) => '_ ').join('')}
+        </div>
+        <p className="text-xs text-gray-400 mt-2">
+          ({currentWord.length} letters)
+        </p>
+      </div>
+      
+      {/* Feedback Display */}
+      {feedback && (
+        <div 
+          className={`feedback mb-4 p-4 rounded-lg ${
+            feedback.type === 'success' 
+              ? 'bg-green-50 border-2 border-green-300' 
+              : 'bg-red-50 border-2 border-red-300'
+          }`}
+        >
+          <p className={`text-lg font-semibold ${
+            feedback.type === 'success' ? 'text-green-800' : 'text-red-800'
+          }`}>
+            {feedback.message}
+          </p>
+          
+          {feedback.forbiddenWord && (
+            <p className="text-sm text-red-600 mt-2">
+              ⚠️ Word "{feedback.forbiddenWord}" is too advanced for Week {weekNumber}
+            </p>
+          )}
+        </div>
+      )}
+      
+      {/* Hint Display */}
+      {hint && (
+        <div className="hint bg-yellow-50 border-2 border-yellow-300 rounded-lg p-3 mb-4">
+          <p className="text-sm text-yellow-800">
+            💡 <strong>Hint:</strong> {hint}
+          </p>
+        </div>
+      )}
+      
+      {/* Input Area */}
+      <form onSubmit={handleSubmit} className="input-area">
+        <div className="flex gap-3">
+          <input
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            onKeyPress={handleKeyPress}
+            placeholder="Type spelling here... (e.g., D-O-G)"
+            className="flex-1 px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            autoFocus
+          />
+          
+          {/* Microphone Button */}
+          <button
+            type="button"
+            onClick={startListening}
+            disabled={isListening}
+            className={`px-4 py-3 font-semibold rounded-lg transition-all ${
+              isListening 
+                ? 'bg-red-500 text-white animate-pulse' 
+                : 'bg-purple-500 text-white hover:bg-purple-600'
+            }`}
+            title="Click to speak the spelling"
+          >
+            {isListening ? '🎤 Listening...' : '🎤 Speak'}
+          </button>
+          
+          <button
+            type="submit"
+            className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            Check ✅
+          </button>
+        </div>
+        
+        <p className="text-xs text-gray-500 mt-2">
+          ✍️ Type your answer, 🎤 speak it, or press Enter to submit
+        </p>
+      </form>
+      
+      {/* Game Complete Message */}
+      {isGameComplete() && (
+        <div className="game-complete mt-6 bg-gradient-to-r from-green-400 to-blue-500 text-white rounded-lg p-6 text-center">
+          <h3 className="text-2xl font-bold mb-2">🎉 Great Job!</h3>
+          <p className="text-lg">
+            You spelled {progress.current} words correctly!
+          </p>
+          <p className="text-sm mt-2">
+            Score: {progress.percentage}%
+          </p>
+        </div>
+      )}
+      
+      {/* Turn Counter (Debug) */}
+      <div className="turn-counter text-center text-xs text-gray-400 mt-4">
+        Turn {turnCount}
+      </div>
+    </div>
+  );
+}

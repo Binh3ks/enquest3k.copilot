@@ -168,7 +168,7 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
             <button 
                 onClick={() => {
                     const answers = Array.isArray(currentPrompt.answer) ? currentPrompt.answer.join(", or, ") : currentPrompt.answer;
-                    speakText(answers, currentPrompt.answer_audio_url);
+                    speakText(answers, currentPrompt.answer_audio_url, 1.0, null, 'ask_ai');
                 }}
                 className={`absolute top-4 left-4 w-10 h-10 rounded-full bg-${themeColor}-100 hover:bg-${themeColor}-200 flex items-center justify-center transition-colors`}
                 title={isVi ? "Nghe đáp án đúng" : "Listen to correct answers"}

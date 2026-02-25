@@ -1,11 +1,13 @@
 import { extractHintsFromQuestion } from '../../../services/ai_tutor/utils/responseParser';
+import { generateHints, isPerson as isPersonCheck } from '../../../services/ai_tutor/utils/hintGenerator'; // 🎯 DYNAMIC HINTS
+import { validateExchangeResponse } from '../../../services/ai_tutor/conversationCardBuilder'; // 💬 CONVERSATION CARDS
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, Heart, Sparkles, Loader2, Volume2, X } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
 import { NovaEngine } from '../../../services/ai_tutor/novaEngine';
-import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import { VoiceService } from '../../../services/voiceService';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
@@ -18,7 +20,7 @@ import week6RealData from '../../../data/weeks/week_06_real'; // Week 6 syllabus
 import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
-import { FREE_TALK_ACTIONS, GAME_OPTIONS } from '../../../config/freeTalkConfig'; // 🎮 FREE TALK 3.0
+import { FREE_TALK_ACTIONS, ROLEPLAY_SCENARIOS as STATIC_ROLEPLAY } from '../../../config/freeTalkConfig'; // 🎭 ROLEPLAY & CHAT
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -48,16 +50,21 @@ const FreeTalkTab = () => {
   const [messageCount, setMessageCount] = useState(savedData.totalTurns || 0);
   const [initialized, setInitialized] = useState(false);
   
-  // 🎮 FREE TALK 3.0 STATE MANAGEMENT
-  const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_game' | 'selecting_roleplay' | 'playing_game' | 'playing_roleplay' | 'asking_any' | 'translation_help'
-  const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'word_chain', 'pizza_chef'
+  // � ROLEPLAY & CHAT STATE MANAGEMENT
+  const [mode, setMode] = useState('idle'); // 'idle' | 'selecting_roleplay' | 'playing_roleplay' | 'selecting_conversation' | 'in_conversation' | 'asking_any' | 'translation_help'
+  const [activeActivityId, setActiveActivityId] = useState(null); // e.g., 'pizza_chef' (roleplay ID) or 'meet_classmate' (conversation ID)
   const [turnCount, setTurnCount] = useState(0); // Turn counter for CURRENT MODE
-  const [activeScenario, setActiveScenario] = useState(null); // 🔥 STEP 1: Persist active roleplay scenario across turns
+  const [activeScenario, setActiveScenario] = useState(null); // 🎭 Persist active roleplay scenario across turns
+  const [activeGame, setActiveGame] = useState(null); // ⚠️ DEPRECATED - Games moved to GameHub
+  
+  // 💬 CONVERSATION CARDS STATE
+  const [activeConversation, setActiveConversation] = useState(null); // { cardId, currentExchange, totalExchanges, card }
+  
   const [modeTurnLimits] = useState({
     translation_help: Infinity, // 🚀 No limit for translation
-    playing_game: 20,           // 🎮 20 turns per game (3 games total)
-    playing_roleplay: 20,       // 🎭 20 turns per roleplay (3 roleplays total)
-    idle: 15,                   // 💬 Chat mode
+    playing_roleplay: 10,       // 🎭 10 turns per roleplay scenario (reduced for focused practice)
+    in_conversation: Infinity,  // 💬 No limit - structured dialogue completes based on exchanges
+    idle: 15,                   // 💬 Free chat mode
     asking_any: Infinity        // 🙋 No limit for questions
   });
   
@@ -66,6 +73,9 @@ const FreeTalkTab = () => {
   
   // 🎭 Get roleplays from weekRealData (NEW SYSTEM - NOT from dynamicRoleplays.js!)
   const dynamicRoleplays = weekRealData?.roleplay_scenarios || [];
+  
+  // 💬 Get conversation cards from weekRealData
+  const conversationCards = weekRealData?.conversation_cards || [];
   
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -139,7 +149,7 @@ const FreeTalkTab = () => {
         }
       });
       
-      const greetingText = aiResponse.ai_response || "Hello! I am Ms. Nova 🌟. Click a button below to Play, Roleplay or Chat! 👇";
+      const greetingText = aiResponse.ai_response || "Hello! I am Ms. Nova ⭐. Let's chat naturally! 👇";
       
       const welcomeMessage = {
         role: 'assistant',
@@ -161,10 +171,7 @@ const FreeTalkTab = () => {
       // 🔊 Play TTS for opening message
       if (autoPlayEnabled) {
         try {
-          await textToSpeech(greetingText, {
-            voice: 'nova',
-            autoPlay: true
-          });
+          await VoiceService.speak(greetingText, 'ask_ai', null, null, 'advanced', true); // ⚡ Instant mode
           console.log('🔊 TTS played successfully');
         } catch (error) {
           console.error('❌ TTS error:', error);
@@ -174,7 +181,7 @@ const FreeTalkTab = () => {
       console.error('❌ Error generating AI greeting:', error);
       
       // Fallback to simple greeting if AI fails
-      const fallbackGreeting = "Hello! I am Ms. Nova 🌟. Click a button below to Play, Roleplay or Chat! 👇";
+      const fallbackGreeting = "Hello! I am Ms. Nova ⭐. Let's chat naturally! 👇";
       const welcomeMessage = {
         role: 'assistant',
         content: fallbackGreeting,
@@ -232,12 +239,493 @@ const FreeTalkTab = () => {
     if (messageCount === 0 && userMessage.length > 10) {
       setConversationTopic(userMessage.split(' ')[0]);
     }
-
+    
     try {
-      // 🔥 FIX 1: Use LOCAL VARIABLE to avoid async state bug
-      let effectiveScenario = activeScenario; // Start with current state
+      // ⚡ INSTANT MODE SWITCH: Allow immediate mode change on first button click
+      const isModeSwitchCommand = userMessage === 'Translate this for me...' || userMessage === 'I have a question!';
+      if (isModeSwitchCommand && mode === 'in_conversation') {
+        // Exit conversation immediately when switching modes
+        setActiveConversation(null);
+        setMode('idle');
+        setActiveActivityId(null);
+        setTurnCount(0);
+      }
+      let effectiveGame = activeGame; // 🎮 Track active game across turns
+      let effectiveScenario = null; // 🎭 Track roleplay scenario (for removed roleplay feature - kept for compatibility)
       
-      // 🔥 STEP 1: Detect START_ROLEPLAY and update LOCAL variable immediately
+      // 🎮 WORD CHAIN - INITIAL HINTS GENERATION (for START_GAME)
+      let initialGameHints = null;
+      if (userMessage.startsWith('START_GAME: word_chain')) {
+        // Load cumulative vocab pool
+        const currentWeek = weekNumberRef.current || 1;
+        const cumulativeVocab = [];
+        
+        for (let w = 1; w <= currentWeek; w++) {
+          try {
+            const weekModule = await import(`../../../data/weeks/week_${String(w).padStart(2, '0')}_real.js`);
+            const weekData = weekModule.default || weekModule[`week${w}RealData`];
+            if (weekData?.target_vocab) {
+              const vocabWords = weekData.target_vocab.map(v => 
+                typeof v === 'string' ? v : v.word
+              ).filter(Boolean);
+              cumulativeVocab.push(...vocabWords);
+            }
+          } catch (err) {
+            console.warn(`Could not load vocab from week ${w}:`, err);
+          }
+        }
+        
+        const basicA0Words = [
+          'yes', 'no', 'hi', 'bye', 'thanks', 'sorry', 'hello', 'goodbye',
+          'boy', 'girl', 'cat', 'dog', 'mom', 'dad', 'home', 'school',
+          'red', 'blue', 'big', 'small', 'happy', 'sad', 'good', 'bad'
+        ];
+        
+        const fullVocabPool = [...new Set([...cumulativeVocab, ...basicA0Words])];
+        
+        // Pick a random starter word
+        const starterWord = fullVocabPool[Math.floor(Math.random() * fullVocabPool.length)];
+        const starterLetter = starterWord.charAt(starterWord.length - 1).toUpperCase();
+        
+        // Generate 3 hints containing the starter letter
+        let hints = fullVocabPool.filter(w => w.toUpperCase().includes(starterLetter)).slice(0, 3);
+        if (hints.length === 0) hints = ['try', 'again', 'please'];
+        
+        initialGameHints = {
+          starterWord: starterWord.toUpperCase(),
+          starterLetter,
+          validatedHints: hints
+        };
+        
+        console.log('🎮 Initial Game Hints Generated:', initialGameHints);
+      }
+      
+      // 🎯 20 QUESTIONS - INITIAL HINTS GENERATION (for START_GAME)
+      if (userMessage.startsWith('START_GAME: twenty_questions') || userMessage.startsWith('START_GAME: guess it!')) {
+        // This will be set later after secretObject is selected (see below)
+        // We'll generate hints in the START_GAME detection block
+      }
+      
+      // 🎮 DETECT START_GAME: Set activeGame state to persist game context
+      if (userMessage.startsWith('START_GAME:')) {
+        const gameNameRaw = userMessage.split(':')[1]?.trim();
+        const gameIdMap = {
+          'word_chain': 'word_chain',
+          'twenty_questions': 'twenty_questions',
+          'guess it!': 'twenty_questions',
+          'sentence_builder': 'sentence_builder'
+        };
+        const gameId = gameIdMap[gameNameRaw?.toLowerCase()] || gameNameRaw;
+        
+        // 🎲 For 20 Questions, pre-select secret object from CUMULATIVE NOUNS
+        let secretObject = null;
+        if (gameId === 'twenty_questions') {
+          // Import getCumulativeNouns to get ALL nouns from Week 1 → current
+          const { getCumulativeNouns } = await import('../../../config/gameAdaptation.js');
+          const weekNumber = weekNumberRef.current || 5;
+
+          // Get cumulative nouns (Week 1 → current week)
+          const allowedObjects = getCumulativeNouns(weekNumber);
+
+          if (allowedObjects.length > 0) {
+            secretObject = allowedObjects[Math.floor(Math.random() * allowedObjects.length)];
+            console.log('🎲 20 Questions: Selected from CUMULATIVE NOUNS:', secretObject, 'Week:', weekNumber, 'Total nouns:', allowedObjects.length);
+          } else {
+            // Fallback (should never happen)
+            secretObject = 'book';
+            console.log('🎲 20 Questions: Fallback to "book"');
+          }
+          
+          // 🎯 Generate initial hints DYNAMICALLY (NO HARDCODING!)
+          const initialHints = generateHints(secretObject);
+          const isPerson = isPersonCheck(secretObject);
+          
+          initialGameHints = {
+            secretObject,
+            initialHints,
+            isPerson
+          };
+          
+          console.log('🎯 20Q Initial Hints Generated DYNAMICALLY:', initialGameHints);
+        }
+        
+        effectiveGame = { id: gameId, secretObject, turnCount: 0 };
+        setActiveGame(effectiveGame);
+        console.log('🎮 Game started:', effectiveGame);
+      }
+      
+      // 🎮 WORD CHAIN VALIDATION: Check if student's answer is valid
+      let validationResult = null;
+      const lastAIMsg = messages[messages.length - 1]?.content || '';
+      const isInWordChain = lastAIMsg.includes('Find word with') || lastAIMsg.includes('Word Chain');
+      
+      if (isInWordChain && !userMessage.startsWith('START_')) {
+        // Extract required letter from AI message
+        const letterMatch = lastAIMsg.match(/Find word with ([A-Z])!/i);
+        if (letterMatch) {
+          const requiredLetter = letterMatch[1].toUpperCase();
+          const studentWord = userMessage.trim().toUpperCase();
+          const hasLetter = studentWord.includes(requiredLetter);
+          
+          // 🎯 TRACK ROUND NUMBER from AI message
+          const roundMatch = lastAIMsg.match(/Round (\d+)\/20/i);
+          const currentRound = roundMatch ? parseInt(roundMatch[1]) : 1;
+          
+          // 🎯 CUMULATIVE VOCAB POOL (Scaffolding Strategy)
+          // Collect vocab from Week 1 to current week (not just current week)
+          const currentWeek = weekNumberRef.current || 1;
+          const cumulativeVocab = [];
+          
+          // Add vocab from all previous weeks (Week 1 to current)
+          for (let w = 1; w <= currentWeek; w++) {
+            try {
+              const weekModule = await import(`../../../data/weeks/week_${String(w).padStart(2, '0')}_real.js`);
+              const weekData = weekModule.default || weekModule[`week${w}RealData`];
+              if (weekData?.target_vocab) {
+                const vocabWords = weekData.target_vocab.map(v => 
+                  typeof v === 'string' ? v : v.word
+                ).filter(Boolean);
+                cumulativeVocab.push(...vocabWords);
+              }
+            } catch (err) {
+              console.warn(`Could not load vocab from week ${w}:`, err);
+            }
+          }
+          
+          // Add basic A0-level words if cumulative vocab is small
+          const basicA0Words = [
+            'yes', 'no', 'hi', 'bye', 'thanks', 'sorry', 'hello', 'goodbye',
+            'boy', 'girl', 'cat', 'dog', 'mom', 'dad', 'home', 'school',
+            'red', 'blue', 'big', 'small', 'happy', 'sad', 'good', 'bad'
+          ];
+          
+          const fullVocabPool = [...new Set([...cumulativeVocab, ...basicA0Words])];
+          
+          console.log('🎓 Cumulative Vocab Pool:', {
+            currentWeek,
+            totalWords: fullVocabPool.length,
+            sample: fullVocabPool.slice(0, 10)
+          });
+          
+          // 🔍 CORRECT LOGIC: If student is RIGHT, pick AI's next word
+          // If student is WRONG, keep same required letter for retry
+          let aiNextWord, aiNextLetter, validatedHints;
+          
+          if (hasLetter) {
+            // ✅ Student CORRECT: Pick new word from student's last letter
+            const nextLetter = studentWord.charAt(studentWord.length - 1);
+            const candidateWords = fullVocabPool.filter(w => w.toUpperCase().includes(nextLetter));
+            
+            if (candidateWords.length > 0) {
+              // 🎯 DIVERSIFY: Prefer words ending with DIFFERENT letters to avoid loops
+              const wordsWithDifferentEndings = candidateWords.filter(w => 
+                w.charAt(w.length - 1).toUpperCase() !== nextLetter
+              );
+              
+              // Use diversified list if available, fallback to all candidates
+              const pickList = wordsWithDifferentEndings.length >= 3 ? wordsWithDifferentEndings : candidateWords;
+              aiNextWord = pickList[Math.floor(Math.random() * pickList.length)].toUpperCase();
+              aiNextLetter = aiNextWord.charAt(aiNextWord.length - 1);
+              
+              // ✅ FIX: Generate hints that ACTUALLY contain AI's next letter
+              const hintsPool = fullVocabPool.filter(w => {
+                const upperW = w.toUpperCase();
+                return upperW.includes(aiNextLetter) && upperW !== aiNextWord;
+              });
+              validatedHints = hintsPool.slice(0, 3).map(w => w.toLowerCase());
+              
+              // Fallback if not enough hints
+              if (validatedHints.length < 3) {
+                validatedHints = [...validatedHints, 'try', 'again'].slice(0, 3);
+              }
+            }
+          } else {
+            // ❌ Student WRONG: Keep same required letter, regenerate hints
+            aiNextWord = null;
+            aiNextLetter = requiredLetter;
+            
+            // ✅ FIX: Only suggest words that ACTUALLY contain the required letter
+            const hintsPool = fullVocabPool.filter(w => {
+              const upperW = w.toUpperCase();
+              return upperW.includes(requiredLetter);
+            });
+            validatedHints = hintsPool.slice(0, 3).map(w => w.toLowerCase());
+            
+            // Fallback if no valid hints
+            if (validatedHints.length === 0) {
+              validatedHints = ['try', 'again', 'please'];
+            }
+          }
+          
+          console.log('🔍 Word Chain Validation:', {
+            requiredLetter,
+            studentWord,
+            hasLetter,
+            studentWordSpelled: studentWord.split('').join('-'),
+            aiNextWord,
+            aiNextLetter,
+            validatedHints,
+            vocabPoolSize: fullVocabPool.length
+          });
+          
+          validationResult = {
+            isCorrect: hasLetter,
+            requiredLetter,
+            studentWord,
+            studentWordSpelled: studentWord.split('').join('-'),
+            aiNextWord,  // Word AI will say next (if student correct)
+            aiNextLetter,  // Letter for next round
+            validatedHints,  // 🎯 CODE-VALIDATED hints (for NEXT round)
+            roundNumber: currentRound  // Current round number
+          };
+        }
+      }
+      
+      // 🎯 20 QUESTIONS: Code-level validation (AI CANNOT override!)
+      let twentyQuestionsValidation = null;
+      const isIn20Questions = effectiveGame?.id === 'twenty_questions' && effectiveGame?.secretObject;
+      
+      console.log('🔍 20Q Validation Check:', {
+        effectiveGameId: effectiveGame?.id,
+        hasSecret: !!effectiveGame?.secretObject,
+        secretObject: effectiveGame?.secretObject,
+        isIn20Questions,
+        userMessage: userMessage.slice(0, 30)
+      });
+      
+      if (isIn20Questions && !userMessage.startsWith('START_')) {
+        const currentSecret = effectiveGame.secretObject.toLowerCase();
+        const studentMsg = userMessage.toLowerCase().trim();
+        const cleanedGuess = studentMsg.replace(/^(is it |it's |its |a |an |the |my )/gi, '').replace(/[?!.,]/g, '').trim();
+
+        // Import getCumulativeNouns for allowed objects
+        const { getCumulativeNouns } = await import('../../../config/gameAdaptation.js');
+        const weekNumber = weekNumberRef.current || 5;
+        const allowedObjects = getCumulativeNouns(weekNumber);
+
+        // 🎯 Detect YES/NO questions by structure (not just punctuation)
+        // Speech recognition may use "!" instead of "?" for questions
+        // MUST BE DEFINED FIRST - used in isYesNoWithAnswer below
+        const questionStarters = ['is it', 'is he', 'is she', 'is this', 'is that',
+                                  'does it', 'does he', 'does she',
+                                  'can it', 'can i', 'can you',
+                                  'do you', 'are they', 'are you'];
+        const startsWithQuestion = questionStarters.some(q => studentMsg.startsWith(q));
+        const isYesNoQuestion = startsWithQuestion || studentMsg.endsWith("?");
+
+        // 🎯 Check guess type
+        // ✅ FIX: Only treat as guess if it's the MAIN answer (not part of a question)
+        // Questions like "Is it a photo?" or "Can you see the photo?" should be YES/NO, not guesses
+        const isDirectGuess = (cleanedGuess === currentSecret) || 
+                              (studentMsg === currentSecret) ||
+                              (studentMsg === `a ${currentSecret}`) ||
+                              (studentMsg === `an ${currentSecret}`) ||
+                              (studentMsg === `the ${currentSecret}`);
+        
+        // Only treat as correct guess if it's a direct answer, NOT a question
+        const isCorrectGuess = isDirectGuess && !studentMsg.includes("?");
+        
+        // 🎯 NEW: Detect YES/NO question that contains the correct answer
+        // Example: "Is it my brother?" or "Can I see outside through it!" (note: speech may use !)
+        // When question contains the secret, it should end the round
+        const isYesNoWithAnswer = (studentMsg.endsWith("?") || startsWithQuestion) && (
+          studentMsg.includes(currentSecret) ||
+          studentMsg.includes(`my ${currentSecret}`) ||
+          studentMsg.includes(`your ${currentSecret}`) ||
+          studentMsg.includes(`a ${currentSecret}`) ||
+          studentMsg.includes(`an ${currentSecret}`) ||
+          studentMsg.includes(`the ${currentSecret}`)
+        );
+        
+        const isGiveUp = studentMsg.includes("what is it") || studentMsg.includes("i don't know") ||
+                         studentMsg.includes("tell me") || studentMsg.includes("give up") ||
+                         studentMsg.includes("không biết") || studentMsg.includes("cho biết");
+
+        // Pick NEW secret for next round (used for correct guess or give up)
+        const remainingObjects = allowedObjects.filter(obj => obj.toLowerCase() !== currentSecret);
+        const newSecret = remainingObjects.length > 0
+          ? remainingObjects[Math.floor(Math.random() * remainingObjects.length)]
+          : allowedObjects[0];
+
+        // 🎯 Generate hints DYNAMICALLY for the new object (NO HARDCODING!)
+        const newHints = generateHints(newSecret);
+        const isPerson = isPersonCheck(newSecret);
+        const currentSecretIsPerson = isPersonCheck(currentSecret);
+
+        console.log('🎯 20Q CODE Validation:', {
+          currentSecret,
+          cleanedGuess,
+          studentMsg,
+          isCorrectGuess,
+          isYesNoWithAnswer,
+          isGiveUp,
+          isYesNoQuestion,
+          newSecret,
+          newHints
+        });
+
+        if (isCorrectGuess || isYesNoWithAnswer) {
+          // ✅ CORRECT GUESS - Update state and prepare response
+          effectiveGame = { ...effectiveGame, secretObject: newSecret, turnCount: (effectiveGame.turnCount || 0) + 1 };
+          setActiveGame(effectiveGame);
+
+          twentyQuestionsValidation = {
+            type: 'correct',
+            currentSecret,
+            studentGuess: cleanedGuess,
+            newSecret,
+            newHints,
+            isPerson,
+            turnCount: effectiveGame.turnCount
+          };
+          
+          console.log('🎉 20Q CORRECT GUESS - Validation created:', twentyQuestionsValidation);
+        } else if (isGiveUp) {
+          // 🏳️ GIVE UP - Reveal and start new round
+          effectiveGame = { ...effectiveGame, secretObject: newSecret, turnCount: (effectiveGame.turnCount || 0) + 1 };
+          setActiveGame(effectiveGame);
+
+          twentyQuestionsValidation = {
+            type: 'giveup',
+            currentSecret,
+            newSecret,
+            newHints,
+            isPerson,
+            turnCount: effectiveGame.turnCount
+          };
+        } else if (isYesNoQuestion) {
+          // ❓ YES/NO QUESTION - Let AI answer (maintain same turn count)
+          twentyQuestionsValidation = {
+            type: 'yesno',
+            currentSecret,
+            studentQuestion: studentMsg,
+            allowedObjects,
+            isPerson: currentSecretIsPerson,
+            turnCount: (effectiveGame.turnCount || 0) + 1  // Increment for display, but don't update state yet
+          };
+        } else {
+          // ❌ WRONG GUESS - Give hint (maintain same turn count)
+          twentyQuestionsValidation = {
+            type: 'wrong',
+            currentSecret,
+            studentGuess: cleanedGuess,
+            hint: currentSecret.charAt(0).toUpperCase(),
+            isPerson: currentSecretIsPerson,
+            turnCount: (effectiveGame.turnCount || 0) + 1  // Increment for display
+          };
+        }
+      }
+
+      // � CONVERSATION CARDS: Detect START_CONVERSATION and initialize
+      if (userMessage.startsWith('START_CONVERSATION:')) {
+        const cardId = userMessage.split(':')[1]?.trim();
+        const card = conversationCards.find(c => c.id === cardId);
+        
+        if (card) {
+          console.log('💬 Starting conversation card:', cardId);
+          const conversationState = {
+            cardId,
+            currentExchange: 0,
+            totalExchanges: card.exchanges.length,
+            card
+          };
+          setActiveConversation(conversationState);
+          setMode('in_conversation');
+          setActiveActivityId(cardId);
+          setTurnCount(0);
+        }
+      }
+      
+      // 💬 CONVERSATION CARDS: Validate student response during ongoing conversation
+      if (mode === 'in_conversation' && activeConversation && !userMessage.startsWith('START_')) {
+        const currentExchange = activeConversation.card.exchanges[activeConversation.currentExchange];
+        const validation = validateExchangeResponse(currentExchange, userMessage);
+        
+        console.log('💬 Conversation validation:', {
+          exchange: activeConversation.currentExchange + 1,
+          total: activeConversation.totalExchanges,
+          isValid: validation.isValid,
+          feedback: validation.feedback
+        });
+        
+        if (validation.isValid) {
+          // ✅ Valid response - move to next exchange
+          const nextExchange = activeConversation.currentExchange + 1;
+          
+          if (nextExchange >= activeConversation.totalExchanges) {
+            // 🎉 Conversation complete!
+            const completionMsg = {
+              role: 'assistant',
+              content: activeConversation.card.completion_message || "Amazing! You completed the conversation! 🎉",
+              timestamp: Date.now()
+            };
+            addMessage('freetalk', completionMsg);
+            
+            // 🔊 Play TTS for completion message (instant mode)
+            try {
+              await VoiceService.speak(completionMsg.content, 'ai_tutor', null, weekNumberRef.current, 'advanced', true);
+            } catch (err) {
+              console.error('❌ FreeTalk TTS error:', err);
+            }
+            
+            // Reset conversation state
+            setActiveConversation(null);
+            setMode('idle');
+            setActiveActivityId(null);
+            setTurnCount(0);
+            
+            setIsLoading(false);
+            return; // Exit early
+          } else {
+            // Continue to next exchange
+            setActiveConversation({
+              ...activeConversation,
+              currentExchange: nextExchange
+            });
+            
+            // Send next AI message
+            const nextExchangeData = activeConversation.card.exchanges[nextExchange];
+            const responseText = `${validation.feedback}\n\n${nextExchangeData.ai}`;
+            const aiMsg = {
+              role: 'assistant',
+              content: responseText,
+              timestamp: Date.now()
+            };
+            addMessage('freetalk', aiMsg);
+            
+            // 🔊 Play TTS for next exchange (instant mode)
+            try {
+              await VoiceService.speak(responseText, 'ai_tutor', null, weekNumberRef.current, 'advanced', true);
+            } catch (err) {
+              console.error('❌ FreeTalk TTS error:', err);
+            }
+            
+            setIsLoading(false);
+            return; // Exit early
+          }
+        } else {
+          // ❌ Invalid response - give feedback and wait for retry
+          const feedbackText = validation.feedback + " Try again! 💪";
+          const feedbackMsg = {
+            role: 'assistant',
+            content: feedbackText,
+            timestamp: Date.now()
+          };
+          addMessage('freetalk', feedbackMsg);
+          
+          // 🔊 Play TTS for feedback (instant mode)
+          try {
+            await VoiceService.speak(feedbackText, 'ai_tutor', null, weekNumberRef.current, 'advanced', true);
+          } catch (err) {
+            console.error('❌ FreeTalk TTS error:', err);
+          }
+          
+          setIsLoading(false);
+          return; // Exit early - student must retry
+        }
+      }
+      
+      // �🔥 STEP 1: Detect START_ROLEPLAY and update LOCAL variable immediately
       if (userMessage.startsWith('START_ROLEPLAY:')) {
         const roleNameRaw = userMessage.split(':')[1]?.trim();
         console.log('🔍 DEBUG: START_ROLEPLAY detected, roleNameRaw:', roleNameRaw);
@@ -269,13 +757,12 @@ const FreeTalkTab = () => {
         content: m.content
       }));
 
-      // 🔥 STEP 2: Always use 'freetalk' mode, rely on currentScenario to trigger roleplay
-      // NovaEngine only accepts: story, freetalk, pronunciation, quiz, debate
-      console.log('🎯 FreeTalk mode: freetalk, effectiveScenario:', effectiveScenario?.id || 'none');
-      
+      // 🔥 Use NovaEngine for all free talk interactions
+      console.log('🎯 FreeTalk mode:', mode);
+
       // 🔥 NEW: Use NovaEngine - AI tự quyết định khi nào nên đề nghị HS đặt câu hỏi
       const aiResponse = await novaEngineRef.current.sendToNova({
-        mode: 'freetalk',  // 🔥 ALWAYS freetalk, scenario detection via context.currentScenario
+        mode: mode === 'translation_help' ? 'translation_help' : 'freetalk',  // 🔥 Pass ACTUAL mode
         weekId: weekNumberRef.current,  // 🔥 V27: Pass weekId for freetalk_knowledge
         userMessage,
         chatHistory,
@@ -283,9 +770,12 @@ const FreeTalkTab = () => {
           turnCount,
           scaffoldingLevel: 2,
           conversationTopic,
-          weekData: weekRealData,  // 🎮 Pass weekData for game/roleplay content injection
-          currentScenario: effectiveScenario,  // 🔥 CRITICAL: Use LOCAL variable, not state!
-          lastUserMessage: userMessage  // 🔥 STEP 1: Pass for guardrail detection
+          weekData: weekRealData,
+          activeGame: effectiveGame,  // 🎮 Pass active game state (persists across turns)
+          lastUserMessage: userMessage,  // 🔥 STEP 1: Pass for guardrail detection
+          wordChainValidation: validationResult,  // 🎮 Pass validation result to AI (ongoing game)
+          initialGameHints: initialGameHints,  // 🎮 Pass initial hints for game start (CODE-GENERATED)
+          twentyQuestionsValidation: twentyQuestionsValidation  // 🎯 20 QUESTIONS: Code-validated result
         }
       });
 
@@ -309,20 +799,7 @@ const FreeTalkTab = () => {
         return;
       }
       
-      // 🎮 Auto-end game after 19 turns
-      if (mode === 'playing_game' && turnCount >= 19) {
-        console.log('🎯 Game ending after 19 turns');
-        const endingMessage = {
-          role: 'assistant',
-          content: "Amazing game! You did so well! 🎉 You used so many English words! Want to play another game?",
-          timestamp: Date.now()
-        };
-        addMessage('freetalk', endingMessage);
-        setMode('idle');
-        setActiveActivityId(null);
-        setTurnCount(0);
-        return;
-      }
+      // ⚠️ Game turn limit removed - Games moved to GameHub
       
       // 🔥 FIXED: Extract text from multiple response formats
       let responseText = '';
@@ -357,8 +834,7 @@ const FreeTalkTab = () => {
       }
       
       responseText = responseText.trim();
-      
-      // 🔥 CRITICAL: Check if AI is repeating a question from chat history
+
       const chatHistoryText = messages.map(m => m.content.toLowerCase()).join(' ');
       const responseTextLower = responseText.toLowerCase();
       
@@ -395,21 +871,44 @@ const FreeTalkTab = () => {
       // 🔊 ALWAYS auto-play TTS for AI responses
       try {
         console.log('🎤 FreeTalkTab: Playing AI response TTS...');
-        await textToSpeech(responseText, {
-          voice: 'nova',
-          autoPlay: true
-        });
+        await VoiceService.speak(responseText, 'ask_ai', null, null, 'advanced', true); // ⚡ Instant mode
       } catch (error) {
         console.error('❌ TTS error for AI response:', error);
       }
+      
+      // ⚠️ GUARDRAIL: If AI responded in Vietnamese, replace with English reminder
+      // ✅ EXCEPTION: Allow Vietnamese in translation mode or when response IS a translation
+      const hasVietnamese = /[À-ỹẠ-ỹ]/.test(responseText);
+      const isTranslationMode = mode === 'translation_help';
+      const isTranslationResponse =
+        responseText.toLowerCase().includes('in vietnamese') ||
+        responseText.toLowerCase().includes("that's right") ||
+        responseText.toLowerCase().includes('correct') ||
+        /\b(=|means?)\s+[a-zA-ZÀ-ỹẠ-ỹ]/i.test(responseText);
+      if (hasVietnamese && !isTranslationMode && !isTranslationResponse) {
+        const englishReminder = "I'm your English teacher! Let's speak in English. What do you want to talk about?";
+        aiMsg.content = englishReminder;
+        // Update last message in store
+        const currentMessages = useTutorStore.getState().messages['freetalk'] || [];
+        if (currentMessages.length > 0) {
+          currentMessages[currentMessages.length - 1].content = englishReminder;
+        }
+      }
 
       // 🔥 Use AI-generated contextual hints that match the question (SCRAMBLED)
-      // Only show hints if this is NOT a closing turn
       // Support both 'hints' and 'suggested_hints' field names
       const aiHints = aiResponse.hints || aiResponse.suggested_hints || [];
       
-      if (responseText.includes('?') && aiHints.length > 0) {
-        // Hints already scrambled by responseParser.js
+      // 🎮 GAME/ROLEPLAY MODE: Always show hints if available (AI provides game-specific hints)
+      const isInGameOrRoleplay = mode === 'playing_roleplay';
+      
+      if (isInGameOrRoleplay && aiHints.length > 0) {
+        // Game mode: Always show AI-provided hints (game-specific vocabulary)
+        setHints(aiHints);
+        setShowHints(true);
+        console.log('🎮 Game/Roleplay hints (AI-provided):', aiHints);
+      } else if (responseText.includes('?') && aiHints.length > 0) {
+        // Chat mode: Show hints if question detected
         setHints(aiHints);
         setShowHints(true);
         console.log('💡 FreeTalk AI hints (scrambled):', aiHints);
@@ -449,7 +948,7 @@ const FreeTalkTab = () => {
   // 🎮 FREE TALK 3.0 HANDLERS
   const handleActionClick = (actionId) => {
     // 🔥 CRITICAL FIX: Clear game/roleplay state FIRST before any other actions
-    const wasInGameOrRoleplay = mode === 'playing_game' || mode === 'playing_roleplay';
+    const wasInGameOrRoleplay = mode === 'playing_roleplay' || mode === 'in_conversation';
     
     // Reset turn count when switching modes
     setTurnCount(0);
@@ -457,54 +956,33 @@ const FreeTalkTab = () => {
     // 🚨 CRITICAL: Clear roleplay scenario AND active activity when switching modes
     setActiveScenario(null);
     setActiveActivityId(null);
+    setActiveConversation(null); // 💬 Clear conversation state
     
     if (actionId === 'translate') {
       setMode('translation_help');
-      // 🔥 FIX: Always trigger message even if coming from game/roleplay
+      // 🔥 FIX: Always trigger message even if coming from roleplay
       setTimeout(() => handleSendMessage('Translate this for me...'), 50);
-    } else if (actionId === 'play_game') {
-      setMode('selecting_game');
-    } else if (actionId === 'role_play') {
-      setMode('selecting_roleplay');
+    } else if (actionId === 'conversation') {
+      setMode('selecting_conversation');
     } else if (actionId === 'ask_any') {
       setMode('asking_any');
       setTimeout(() => handleSendMessage('I have a question!'), 50);
     }
     
-    // 🔥 If switching from game/roleplay, force refresh
+    // 🔥 If switching from roleplay, force refresh
     if (wasInGameOrRoleplay) {
       console.log(`🔄 Switching from ${mode} to ${actionId} - forcing state refresh`);
     }
   };
 
-  const handleGameSelect = (gameId) => {
-    const game = GAME_OPTIONS.find(g => g.id === gameId);
-    if (game) {
-      // DON'T change mode yet - let AI response determine mode
-      // Just send the game start command
-      handleSendMessage(`START_GAME: ${game.label_en}`);
-      
-      // Set mode AFTER message sent (will trigger on AI response)
-      setTimeout(() => {
-        setMode('playing_game');
-        setActiveActivityId(gameId);
-        setTurnCount(0);
-      }, 100);
-    }
-  };
-
-  const handleRoleplaySelect = (roleplayId) => {
-    const roleplay = dynamicRoleplays.find(r => r.id === roleplayId);
-    if (roleplay) {
-      // DON'T change mode yet - let AI response determine mode
-      handleSendMessage(`START_ROLEPLAY: ${roleplay.title_en}`);
-      
-      // Set mode AFTER message sent
-      setTimeout(() => {
-        setMode('playing_roleplay');
-        setActiveActivityId(roleplayId);
-        setTurnCount(0);
-      }, 100);
+  // ❌ handleGameSelect removed - Games moved to GameHub
+  // ❌ handleRoleplaySelect removed - Roleplay deprecated, replaced by Conversation Cards
+  
+  // 💬 CONVERSATION CARDS: Handle conversation selection
+  const handleConversationSelect = (cardId) => {
+    const card = conversationCards.find(c => c.id === cardId);
+    if (card) {
+      handleSendMessage(`START_CONVERSATION: ${cardId}`);
     }
   };
 
@@ -512,11 +990,14 @@ const FreeTalkTab = () => {
     setMode('idle');
     setActiveActivityId(null);
     setTurnCount(0);
+    setActiveScenario(null); // 🎭 Reset roleplay state
+    setActiveGame(null); // 🎮 Reset game state
+    setActiveConversation(null); // 💬 Reset conversation state
     handleSendMessage('Stop');
   };
 
   // Check if hints should be hidden (during gameplay)
-  const shouldHideHints = mode === 'playing_game' || mode === 'playing_roleplay';
+  const shouldHideHints = mode === 'playing_roleplay';
 
 
   return (
@@ -536,8 +1017,8 @@ const FreeTalkTab = () => {
 
           {/* Conversation Stats */}
           <div className="flex items-center space-x-2">
-            {/* 🎮 STOP BUTTON (only show during gameplay) */}
-            {(mode === 'playing_game' || mode === 'playing_roleplay') && (
+            {/* 🎮 STOP BUTTON (only show during gameplay/conversation) */}
+            {(mode === 'playing_game' || mode === 'playing_roleplay' || mode === 'in_conversation') && (
               <button
                 onClick={handleStopActivity}
                 className="flex items-center gap-1 px-2 py-0.5 bg-red-100 hover:bg-red-200 rounded-full transition-colors border border-red-300"
@@ -562,7 +1043,7 @@ const FreeTalkTab = () => {
             {activeActivityId && (
               <div className="bg-purple-100 px-2 py-0.5 rounded-full">
                 <span className="text-[10px] font-medium text-purple-700">
-                  {mode === 'playing_game' ? '🎮 Game' : '🎭 Roleplay'}: Turn {turnCount}
+                  {mode === 'playing_game' ? '🎮 Game' : mode === 'in_conversation' ? `💬 Conversation: ${activeConversation?.currentExchange || 0}/${activeConversation?.totalExchanges || 0}` : '🎭 Roleplay'}: Turn {turnCount}
                 </span>
               </div>
             )}
@@ -587,67 +1068,47 @@ const FreeTalkTab = () => {
           />
         ))}
         
-        {/* 🎮 GAME SELECTION CARDS */}
-        {mode === 'selecting_game' && (
+        {/* ❌ GAME SELECTION REMOVED - Games moved to GameHub */}
+        {/* ❌ ROLEPLAY REMOVED - Replaced by Conversation Cards (more reliable, no AI hallucination) */}
+        
+        {/* 💬 CONVERSATION CARDS SELECTION */}
+        {mode === 'selecting_conversation' && (
           <div className="space-y-2 mb-4">
             <div className="flex items-center justify-center mb-3">
               <div className="bg-white rounded-2xl px-4 py-3 shadow-md">
-                <p className="text-sm font-semibold text-blue-700">🎮 Choose a game to play!</p>
+                <p className="text-sm font-semibold text-blue-700">💬 Choose a conversation to practice!</p>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-3">
-              {GAME_OPTIONS.map((game) => (
-                <button
-                  key={game.id}
-                  onClick={() => handleGameSelect(game.id)}
-                  className="bg-gradient-to-br from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-green-300"
-                >
-                  <div className="text-3xl mb-2">{game.icon}</div>
-                  <div className="text-sm font-bold text-green-800">{game.label_vi}</div>
-                  <div className="text-xs text-green-600 mt-1">{game.label_en}</div>
-                </button>
-              ))}
-            </div>
+            {conversationCards.length > 0 ? (
+              <div className="grid grid-cols-3 gap-3">
+                {conversationCards.map((card) => (
+                  <button
+                    key={card.id}
+                    onClick={() => handleConversationSelect(card.id)}
+                    className="bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-blue-300"
+                  >
+                    <div className="text-3xl mb-2">{card.emoji}</div>
+                    <div className="text-sm font-bold text-blue-800">{card.title}</div>
+                    <div className="text-xs text-blue-600 mt-1">{card.exchanges.length} exchanges</div>
+                    <div className="text-xs text-blue-500 mt-0.5">{card.difficulty}</div>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-8 text-gray-500">
+                <p className="text-sm">No conversation cards available for this week yet.</p>
+                <p className="text-xs mt-1">Try Week 3 or later!</p>
+              </div>
+            )}
           </div>
         )}
         
-        {/* 🎭 ROLEPLAY SELECTION CARDS */}
-        {mode === 'selecting_roleplay' && (
-          <div className="space-y-2 mb-4">
-            <div className="flex items-center justify-center mb-3">
-              <div className="bg-white rounded-2xl px-4 py-3 shadow-md">
-                <p className="text-sm font-semibold text-pink-700">🎭 Choose a character to play!</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              {dynamicRoleplays.map((roleplay) => (
-                <button
-                  key={roleplay.id}
-                  onClick={() => handleRoleplaySelect(roleplay.id)}
-                  className="bg-gradient-to-br from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-pink-300"
-                >
-                  <div className="text-3xl mb-2">{roleplay.emoji}</div>
-                  <div className="text-sm font-bold text-pink-800">{roleplay.title_vi}</div>
-                  <div className="text-xs text-pink-600 mt-1">{roleplay.title_en}</div>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-        
-        {isLoading && (
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-              <Loader2 className="text-white animate-spin" size={20} />
-            </div>
-            <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-              <p className="text-sm text-gray-500">Ms. Nova is listening...</p>
-            </div>
-          </div>
-        )}
+        {/* ❌ REMOVED: "Ms. Nova is listening..." animation (performance issue) */}
         
         <div ref={chatEndRef} />
       </div>
+
+      {/* ⚠️ Hints removed - Conversation Cards already show hints in chat bubbles */}
 
       {/* ✨ FREE TALK 2.0: STARTER PROMPTS - REPLACED BY FIXED ACTION BAR */}
       {/* 🎮 FREE TALK 3.0: FIXED ACTION BAR */}
@@ -677,8 +1138,6 @@ const FreeTalkTab = () => {
                 className={`px-1.5 py-1 rounded-lg text-[10px] font-medium transition-all transform hover:scale-105 shadow-sm hover:shadow-md ${
                   action.type === 'system'
                     ? 'bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-800 border-2 border-blue-300'
-                    : action.type === 'menu' && action.id === 'play_game'
-                    ? 'bg-gradient-to-r from-green-100 to-green-200 hover:from-green-200 hover:to-green-300 text-green-800 border-2 border-green-300'
                     : action.type === 'menu' && action.id === 'role_play'
                     ? 'bg-gradient-to-r from-pink-100 to-pink-200 hover:from-pink-200 hover:to-pink-300 text-pink-800 border-2 border-pink-300'
                     : 'bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-800 border-2 border-purple-300'
@@ -691,7 +1150,6 @@ const FreeTalkTab = () => {
           })}
         </div>
       </div>
-
 
       {/* Input Area */}
       <InputBar

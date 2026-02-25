@@ -84,13 +84,18 @@ const processWeek = async (weekNum, isEasy) => {
     // Hàm thêm task chuẩn hóa
     const addTask = (text, fileName, voice) => {
         if (!text || typeof text !== 'string') return;
-        const cleanText = text.replace(/\*\*/g, '').trim(); // Bỏ markdown bold
+        const cleanText = text
+            .replace(/\*\*/g, '')                          // Bỏ markdown bold
+            .replace(/___+/g, '')                           // Bỏ blank placeholder (sẽ bị đọc thành "blank blank")
+            .replace(/\/audio\/[^\s]+\.mp3/gi, '')         // Bỏ audio paths lọt vào text field
+            .trim();
         if (cleanText.length > 0) {
             tasks.push({
                 text: cleanText,
-                // LƯU Ý: Output path trỏ thẳng vào public/audio
-                output_path: path.join(targetDir, `${fileName}.mp3`),
-                voice: voice
+                filename: `${fileName}.mp3`,
+                voice: voice,
+                week: weekNum,
+                mode: isEasy ? 'easy' : 'normal'
             });
         }
     };
@@ -170,23 +175,26 @@ const processWeek = async (weekNum, isEasy) => {
         });
     }
 
-    // 7. ASK AI PROMPTS
+    // 7. ASK AI PROMPTS (generate answer audio, not context)
     if (Array.isArray(s.ask_ai?.prompts)) {
         s.ask_ai.prompts.forEach(p => {
-            if (p.context_en) addTask(p.context_en, `ask_ai_${p.id}`, voices.questions);
+            // answer_audio_url field — use first answer text for TTS
+            const answerText = Array.isArray(p.answer) ? p.answer[0] : p.answer;
+            if (answerText) addTask(answerText, `ask_ai_answer_${p.id}`, voices.questions);
         });
     }
 
     // 8. MINDMAP SPEAKING (Branches + Stems)
     const mindmapData = s.mindmap_speaking || s.mindmap;
     if (mindmapData) {
-        // a. Center Stems
+        // a. Center Stems — each stem is {text, audio} object, extract .text
         if (Array.isArray(mindmapData.centerStems)) {
             mindmapData.centerStems.forEach((stem, idx) => {
-                addTask(stem, `mindmap_stem_${idx + 1}`, voices.narration);
+                const stemText = typeof stem === 'object' ? stem.text : stem;
+                addTask(stemText, `mindmap_stem_${idx + 1}`, voices.narration);
             });
         }
-        // b. Branches (All phrases in branchLabels)
+        // b. Branches — each branch is {text, audio} object, extract .text
         if (mindmapData.branchLabels) {
             let branchCount = 0;
             Object.keys(mindmapData.branchLabels).forEach(stem => {
@@ -194,7 +202,8 @@ const processWeek = async (weekNum, isEasy) => {
                 if (Array.isArray(branches)) {
                     branches.forEach(branch => {
                         branchCount++;
-                        addTask(branch, `mindmap_branch_${branchCount}`, voices.mindmap);
+                        const branchText = typeof branch === 'object' ? branch.text : branch;
+                        addTask(branchText, `mindmap_branch_${branchCount}`, voices.mindmap);
                     });
                 }
             });
@@ -213,10 +222,10 @@ const processWeek = async (weekNum, isEasy) => {
         allTasks = allTasks.concat(await processWeek(i, true));
     }
 
-    // Ghi file JSON tại thư mục tools (nơi python script sẽ đọc)
-    const jsonPath = path.join(ROOT_DIR, 'tools', 'audio_tasks.json');
-    fs.writeFileSync(jsonPath, JSON.stringify(allTasks, null, 2));
+    // Ghi file JSON tại thư mục tools — PHẢI khớp với TASKS_FILE trong generate_kokoro.py
+    const jsonPath = path.join(ROOT_DIR, 'tools', 'tts_all_tasks.json');
+    fs.writeFileSync(jsonPath, JSON.stringify({ tasks: allTasks }, null, 2));
     
-    console.log(`✅ FOUND ${allTasks.length} TASKS.`);
+    console.log(`✅ FOUND ${allTasks.length} TASKS → ${jsonPath}`);
     console.log(`📝 List saved to: ${jsonPath}`);
 })();

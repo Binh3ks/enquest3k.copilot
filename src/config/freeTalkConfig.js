@@ -1,38 +1,21 @@
 /**
- * FREE TALK 3.0 - GAME & ROLEPLAY ENGINE
- * Central configuration for all game modes (universal across all weeks)
+ * FREE TALK 3.0 - ROLEPLAY & CHAT ENGINE
+ * Central configuration for roleplay scenarios and free conversation
+ * NOTE: Games moved to GameHub (production-oriented games with validation)
  */
 
 export const FREE_TALK_ACTIONS = [
   { id: 'translate', label: 'Help Me Translate 📚', icon: '📚', type: 'system' },
-  { id: 'play_game', label: 'Play Game 🎮', icon: '🎮', type: 'menu' },
-  { id: 'role_play', label: 'Roleplay 🎭', icon: '🎭', type: 'menu' },
+  { id: 'conversation', label: 'Conversation 💬', icon: '💬', type: 'menu' },
   { id: 'ask_any', label: 'Ask Anything ❓', icon: '❓', type: 'mode' }
 ];
 
-export const GAME_OPTIONS = [
-  {
-    id: 'word_chain',
-    label_en: "Word Chain",
-    label_vi: "Nối từ",
-    icon: "🔗",
-    intro: "I say a word, you say a word starting with the LAST letter! I start: Dog (ends with G). Your turn!"
-  },
-  {
-    id: 'twenty_questions',
-    label_en: "20 Questions",
-    label_vi: "Đoán vật",
-    icon: "❓",
-    intro: "I'm thinking of something. Ask YES/NO questions to guess what it is!"
-  },
-  {
-    id: 'sentence_builder',
-    label_en: "Sentence Builder",
-    label_vi: "Xây câu",
-    icon: "🧩",
-    intro: "Let's build sentences together! Complete sentences using vocabulary words!"
-  }
-];
+// ❌ GAME_OPTIONS removed - Games moved to GameHub
+// GameHub provides production-focused games with proper validation:
+// - Show & Tell Ladder (5-step scaffolding)
+// - Sentence Expander (3-step enrichment)
+// - Ask Me (question formation)
+// This separation provides clear UX: AI Tutor = Coach-led, GameHub = Self-directed
 
 export const ROLEPLAY_SCENARIOS = [
   {

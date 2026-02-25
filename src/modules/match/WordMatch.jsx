@@ -133,7 +133,7 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     setFlippedCards(newFlipped);
     
     if (card.speakContent) {
-      speakText(card.speakContent, card.audioUrl);
+      speakText(card.speakContent, card.audioUrl, 1.0, null, 'new_word');
     }
 
     if (newFlipped.length === 2) {

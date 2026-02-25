@@ -1,4 +1,6 @@
-/* AUDIO HELPER v3.0 - Supports Playback Rate & onEnd Callback */
+/* AUDIO HELPER v4.0 - Piper TTS Integration + Playback Rate & onEnd Callback */
+
+import { VoiceService } from '../services/voiceService';
 
 let voices = [];
 const DEFAULT_TTS_VOICE_URI = "Google US English"; // Giọng mặc định tốt nhất cho TTS
@@ -50,43 +52,48 @@ const speakNativeTTS = (text, rate = 1.0, onEnd = null) => {
     });
 };
 
-// Hàm chính để phát Audio (MP3/URL -> Google TTS -> Native TTS)
-export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null) => {
+// Hàm chính để phát Audio (TTS Server -> MP3 fallback -> Native TTS)
+// station: Station ID for voice selection (read, new_word, dictation, ask_ai, shadowing, explore, word_power)
+// weekNumber: Week number (1-7) for CDN pre-generated files
+// mode: 'advanced' or 'easy' for CDN folder selection
+// instant: If true, play Browser TTS immediately + prefetch Kokoro in background
+// 🎯 PRIORITY: TTS server (Kokoro voices) > Old MP3 files > Native browser TTS
+export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null, station = 'read', weekNumber = null, mode = 'advanced', instant = false) => {
     if (!text) {
         if (onEnd) onEnd();
         return;
     }
 
-    // 1. Ưu tiên Audio URL (MP3 files)
-    if (audioUrl) {
-        return new Promise((resolve) => {
-            const audio = new Audio(audioUrl);
-            audio.playbackRate = rate;
-            
-            // Xử lý khi phát xong
-            audio.onended = () => { if(onEnd) onEnd(); resolve(true); };
-            audio.onplay = () => resolve(true);
-
-            // 2. Nếu Audio URL lỗi, chuyển sang TTS
-            audio.onerror = async () => {
-                console.warn(`[AudioHelper] Failed to load MP3: ${audioUrl}. Falling back to TTS.`);
-                // 3. Fallback 1: Google TTS (Lưu ý: Google TTS có thể bị chặn, nên dùng Native TTS)
-                await speakNativeTTS(text, rate, onEnd);
-                resolve(true);
-            };
-            
-            // Bắt đầu phát (Nếu file tồn tại, nó sẽ chạy onplay/onended. Nếu lỗi, nó sẽ chạy onerror)
-            audio.play().catch(async (e) => {
-                // Play() failed (thường do policy của trình duyệt, hoặc lỗi file)
-                console.warn(`[AudioHelper] Play attempt failed: ${e.message}. Falling back to TTS.`);
-                // 3. Fallback 2: Native TTS (An toàn nhất)
-                await speakNativeTTS(text, rate, onEnd);
-                resolve(true);
-            });
-        });
+    // 🎙️ 1. FIRST PRIORITY: Use Kokoro/Edge TTS Server with 7 different voices
+    try {
+        await VoiceService.speak(text, station, audioUrl, weekNumber, mode, instant);
+        if(onEnd) onEnd();
+        return true;
+    } catch (ttsError) {
+        console.warn(`[AudioHelper] TTS server failed (station: ${station}):`, ttsError.message);
+        
+        // 📀 2. FALLBACK: Try old MP3 file if available (legacy content)
+        if (audioUrl) {
+            try {
+                await new Promise((resolve, reject) => {
+                    const audio = new Audio(audioUrl);
+                    audio.playbackRate = rate;
+                    
+                    audio.onended = () => { if(onEnd) onEnd(); resolve(); };
+                    audio.onerror = (e) => reject(new Error(`MP3 load failed: ${e.message || 'Unknown error'}`));
+                    
+                    audio.play().catch(reject);
+                });
+                console.log(`[AudioHelper] ✅ Used fallback MP3: ${audioUrl}`);
+                return true;
+            } catch (mp3Error) {
+                console.warn(`[AudioHelper] MP3 fallback also failed:`, mp3Error.message);
+            }
+        }
+        
+        // 🔊 3. LAST RESORT: Browser native TTS (no custom voice)
+        console.warn('[AudioHelper] Using native browser TTS as last resort');
+        await speakNativeTTS(text, rate, onEnd);
+        return true;
     }
-
-    // Nếu không có audioUrl, chỉ dùng Native TTS
-    await speakNativeTTS(text, rate, onEnd);
-    return true;
 };

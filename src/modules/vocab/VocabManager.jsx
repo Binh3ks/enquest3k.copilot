@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, Loader2, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 
-const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate }) => {
+const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate, weekNumber, mode }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [drill, setDrill] = useState(savedCardData?.drill || { copy1: '', copy2: '', copy3: '', collocation: '', sentence: '' });
   const [feedback, setFeedback] = useState(savedCardData?.feedback || { collocation: null, sentence: null });
@@ -47,7 +48,7 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
     if (isPlaying) return;
     setIsPlaying(true);
     try {
-        await speakText(text, url);
+        await speakText(text, url, 1.0, null, 'new_word', weekNumber, mode);
     } catch (error) {
         console.error("Play error", error);
     } finally {
@@ -208,16 +209,55 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
   );
 };
 
-const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress, weekNumber, mode: propMode }) => {
   const { weekId } = useParams();
+  const currentWeek = weekNumber || parseInt(weekId);
   
   // 🔥 Universal Progress System with mode support
-  const { savedData, saveProgress, markComplete, mode } = useStationProgress(parseInt(weekId), 'vocab_mastery');
+  const { savedData, saveProgress, markComplete, mode: hookMode } = useStationProgress(parseInt(weekId), 'vocab_mastery');
+  const mode = propMode || hookMode || 'advanced';
+  
+  // 🚀 TTS Prefetch
+  const { prefetchMultiple } = useTTSPrefetch('new_word');
   
   const vocabList = data?.vocab || [];
   
   // 🔥 FIX: Initialize from savedData only, component will remount on mode change (via key prop in App.jsx)
   const [cardsData, setCardsData] = useState(savedData.cards || {});
+  
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
+
+  // 🚀 Prefetch first 8 vocab words (to avoid overload, ONCE per data load)
+  useEffect(() => {
+    // Reset flag when data or mode changes
+    hasPrefetched.current = false;
+  }, [data, mode]);
+  
+  useEffect(() => {
+    if (hasPrefetched.current) return; // Already prefetched
+    
+    console.log('[VocabManager] 🐛 DEBUG - vocabList:', {
+      hasVocabList: !!vocabList,
+      vocabLength: vocabList?.length || 0,
+      mode: mode
+    });
+    
+    if (vocabList && vocabList.length > 0) {
+      hasPrefetched.current = true;
+      const itemsToPrefetch = vocabList.slice(0, 8); // Limit to first 8 items
+      const texts = itemsToPrefetch.flatMap(word => [
+        word.word,
+        word.definition_en
+      ]).filter(Boolean);
+      
+      if (texts.length > 0) {
+        console.log(`[VocabManager] 🚀 Starting prefetch for ${itemsToPrefetch.length} words (${texts.length} texts)...`);
+        prefetchMultiple(texts, 1000).catch(err => {
+          console.warn('[VocabManager] ❌ Prefetch failed:', err);
+        });
+      }
+    }
+  }, [vocabList, prefetchMultiple, mode]);
 
   // Auto-save when cardsData changes
   useEffect(() => {
@@ -282,6 +322,8 @@ const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress }
               onComplete={handleCardComplete}
               onUpdate={handleCardUpdate}
               savedCardData={savedCardData}
+              weekNumber={currentWeek}
+              mode={mode}
             />
           );
         })}

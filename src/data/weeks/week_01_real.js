@@ -125,18 +125,9 @@ export const week1RealData = {
       
       // Ms. Nova's direct greeting (no description)
       nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
-      default_hints: ["My", "name", "is", "I", "am"],
       
-      // Context for AI (not shown to student)
-      mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging. ONLY ask about name, age, and being a student. DO NOT ask about backpack, books, or other school supplies - those are for Mission 2.
-
-⚡ FLEXIBLE CONVERSATION:
-- If student asks YOU questions → Answer naturally like a human friend, then bridge back to mission
-- Allow 12-15 turns if conversation is interactive (student asking questions is GOOD!)
-- If student goes off-topic → Acknowledge warmly, then naturally redirect: "That's interesting! At SCHOOL, what do you like to do?"
-- Be human-like: answer questions fully, don't rush through topics`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 1 Mission 1 - First Day at School. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is a warm new English teacher excited to meet her students. She wants to know each student's name, age, and school. OPENING: Ask student's name warmly, then move through school identity topics: age, school name, grade, friends at school. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. GRAMMAR FOCUS: "My name is ___" and "I am ___ years old" - model the full sentence every turn. Give scaffolding every turn: "Say: My name is ___" or "Say: I am 8 years old." VOCABULARY: name, age, school, teacher, student, grade, friend, happy, excited. STRICT FOCUS: SCHOOL IDENTITY ONLY - name, age, school, grade, friends at school. Ask one topic at a time. RECAST ERRORS: student says "Binh" → model full form: "Your name IS Binh! Great!" SAMPLE TURN: "What is your name? Say: My name is ___!" → Student: "Binh" → "Binh! Nice to meet you! How old are you? Say: I am ___ years old!" GAME FLOW: (1) Ask name → (2) Ask age → (3) Ask school name → (4) Ask grade → (5) Ask about friends. One topic per turn, model full sentence each step. FORBIDDEN: No questions about family, home activities, or preferences. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. covering name, age, school, grade, and friends. Do NOT ask another question on the last turn.`,
       
-      // Vocabulary focus for this mission (ONLY basic identity)
       target_vocab: ["name", "age", "student"],
       
       // Grammar pattern to practice
@@ -166,9 +157,71 @@ export const week1RealData = {
         "What grade are you in?",
         "Do you have friends at school?"
       ],
+
+      story_character: {
+        name: "Ms. Nova",
+        personality: "warm, welcoming, encouraging teacher",
+        backstory: "I'm your new English teacher! I love meeting new students on their first day!",
+        speaking_style: "friendly, asks simple questions, celebrates each answer",
+        facts: {
+          loves_students: true,
+          first_day_specialist: true,
+          makes_students_comfortable: true,
+          asks_about_feelings: true,
+          favorite_topic: "getting to know students"
+        },
+        role: "Welcome teacher for first day"
+      },
+
+      opening_narrative: "👋 Hello! I am Ms. Nova, your English teacher. What is your name? Say: My name is [your name] or I am [your name]",
+
+      story_arc: [
+        {
+          phase: "intro",
+          turns: "1-5",
+          phase_name: "Basic Introduction",
+          focus: "Name, age, and student identity",
+          goal: "Learn student's basic information",
+          phase_questions: [
+            "Nice! Your name is {student_answer}! How old are you? Say: I am 7 years old or I am 8 years old",
+            "Great! You are {student_answer}! Are you a student? Say: Yes, I am a student or Yes, I am",
+            "Wonderful! What is your school name? Say: My school is [name] or I go to [school name]",
+            "Nice school! My school is {student_answer}! How do you feel today? Say: I am happy or I am excited or I am good",
+            "{student_answer}! That's wonderful! Do you like school? Say: Yes, I like school or Yes, I do"
+          ]
+        },
+        {
+          phase: "school_life",
+          turns: "6-10",
+          phase_name: "School Details",
+          focus: "Grade, friends, and school activities",
+          goal: "Explore student's school life",
+          phase_questions: [
+            "Great! What do you like at school? Say: I like learning or I like playing or I like friends",
+            "{student_answer}! Me too! What grade are you in? Say: I am in grade 1 or I am in grade 2",
+            "Perfect! Do you have friends at school? Say: Yes, I have friends or Yes, I do or No, not yet",
+            "I see! What are your friends' names? Say: My friend is [name] or I have a friend named [name] or I don't have friends yet",
+            "Nice! What do you play with your friends? Say: We play games or We play soccer or I play alone"
+          ]
+        },
+        {
+          phase: "first_day",
+          turns: "11-15",
+          phase_name: "First Day Experience",
+          focus: "First day feelings and experiences",
+          goal: "Discuss first day at school",
+          phase_questions: [
+            "{student_answer}! Fun! Is this your first day at school? Say: Yes, it is or No, it is not or Yes",
+            "I see! What is your favorite thing about school? Say: I like my teacher or I like my classroom or I like learning",
+            "{student_answer}! Wonderful! Are you excited about learning English? Say: Yes, I am excited or Yes, very much or Yes!",
+            "That's great! I'm excited to teach you! Do you have any questions for me? Say: No, thank you or What is your name? or How old are you?",
+            "Great! Nice to meet you! Welcome to our class! Say: Thank you or Nice to meet you or Goodbye"
+          ]
+        }
+      ],
       
-      minimum_turns: 15, // Flexible: Allow natural conversation flow
-      maximum_turns: 20, // Soft maximum for natural closure
+      minimum_turns: 10, // Flexible: Allow natural conversation flow
+      maximum_turns: 12, // Soft maximum for natural closure
       
       success_criteria: [
         "Uses 'I am' correctly for name",
@@ -176,129 +229,215 @@ export const week1RealData = {
         "Uses 'student' naturally",
         "Engages naturally in conversation (can ask questions back)"
       ]
-    },
-    {
+    },    {
       mission_id: 2,
-      title: "What's in Your Backpack?",
-      title_vi: "Có Gì Trong Ba Lô?",
-      theme: "School supplies and belongings",
+      title: "I Spy Game",
+      title_en: "I Spy Color & Size Game",
+      title_vi: "Trò Chơi Tìm Đồ Vật",
+      theme: "Interactive guessing game about school supplies",
       
-      // Ms. Nova's direct greeting (no description)
-      nova_greeting: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
-      default_hints: ["I", "have", "backpack", "book", "notebook"],
+      nova_greeting: "🔍 Let's play I Spy! I spy with my little eye... something RED! Can you find it?",
+      default_hints: ["My", "pen", "is", "red"],
       
-      mission_context: `The student shows their school supplies. Ms. Nova is curious about what students bring to school. This mission focuses on 'I have...' pattern with simple school items. Use VERY SIMPLE language suitable for A0-A1 ESL beginners. Keep questions short and clear.
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 1 Mission 2 - I Spy Game (Color & Size Hunt). 🎮 GAME CONCEPT: Interactive "I Spy" game
+Ms. Nova gives CLUES about color/size, student guesses the item! GAME FLOW:
+1. Nova says: "I spy something RED!" 2. Student guesses: "My pen!" or "Pen!"
+3. Nova celebrates and gives NEXT clue
+4. Keep going through different colors/sizes STRICT RULES:
+✅ Use "I spy something [COLOR/SIZE]!"
+✅ Give clear visual clues (color, size, shape)
+✅ Celebrate each correct guess enthusiastically
+✅ Move to NEXT item immediately after correct guess FORBIDDEN:
+❌ "Next photo" (no photos in this game!)
+❌ "I see someone" (items, not people!)
+❌ Asking same item twice CORRECT FORMAT:
+✅ "I spy something RED! What is red?"
+✅ "I spy something BIG! What is big?"
+✅ "I spy something SMALL and BLUE! What is it?" HINT STRATEGY:
+- Give color/size hints in suggested_hints
+- Include item names: ["pen", "red", "My", "is"]
+- Focus on visual descriptors VOCABULARY: backpack, book, notebook, pen, pencil, eraser, red, blue, big, small
+PATTERN: "My [item] is [color/size]" Do NOT ask another question on the last turn.`,
+      
+      target_vocab: ["backpack", "book", "notebook", "pen", "pencil", "eraser", "red", "blue", "big", "small"],
+      grammar_pattern: "My [item] is [color/size].",
 
-⚡ FLEXIBLE CONVERSATION:
-- If student asks YOU questions → Answer naturally ("I don't need a backpack, I'm a digital teacher!"), then continue
-- Allow natural back-and-forth (12-15 turns if interactive)
-- If off-topic → Redirect gently: "That's cool! What do you have IN YOUR BACKPACK?"
-- Be conversational, not robotic
-
-🎯 CRITICAL - MISSION TOPIC: 
-- This mission is ONLY about BACKPACK and SCHOOL SUPPLIES
-- DO NOT ask about "school" in general (that's Mission 1 & 3)
-- DO NOT ask "Are you excited about school?" (wrong mission!)
-- ONLY ask about: backpack, books, notebook, what's inside, colors, heavy/light, new/old
-- Stay focused: "Your BACKPACK", "What's IN your backpack?", "Do you like your BACKPACK?"`,
+      story_character: {
+        name: "Ms. Nova",
+        personality: "playful, loves I Spy game, gives fun clues",
+        backstory: "I love playing I Spy with school supplies! Let's find things by color and size!",
+        speaking_style: "enthusiastic, uses 'I spy...' format, celebrates discoveries",
+        facts: [
+          "I love colorful things!",
+          "I'm great at spotting details!",
+          "Red is my favorite color!",
+          "I spy games are the best!"
+        ],
+        special_rules: [
+          "Always use 'I spy...' format",
+          "Give color or size clues",
+          "Celebrate each discovery",
+          "Move to next item after correct guess"
+        ]
+      },
       
-      target_vocab: ["backpack", "book", "notebook"],
+      opening_narrative: "🔍 Let's play I Spy! I spy with my little eye... something RED! What is red? Say: My pen is red OR My book is red",
       
-      target_pattern: "I have a [item]",
-      
-      conversation_topics: [
-        "Do you have a backpack?",
-        "What color is your backpack?",
-        "Do you have books in your backpack?",
-        "Do you have a notebook?",
-        "What do you put in your backpack?",
-        "Do you like your backpack?",
-        "Is your backpack heavy or light?",
-        "Is your backpack new or old?",
-        "[Optional: Student can ask Ms. Nova 1-2 questions about school supplies]",
-        "Simple closing (Your backpack is great! Goodbye!)"
+      story_arc: [
+        {
+          phase: "intro",
+          turns: "1-3",
+          phase_name: "Game Start",
+          focus: "Explain I Spy game",
+          phase_questions: [
+            "🔍 Hi! Let's play I Spy! Do you know this game? I give clues, you guess! Say: Yes! or Let's play!",
+            "(After yes/let's play) Great! I spy with my little eye... something RED! What is red? Say: My pen is red or My book is red",
+            "(After student says red item) Yes! {student_answer}! 🖊️ You're good at this! Now I spy something BLUE! What is blue? Say: My notebook is blue or My backpack is blue"
+          ]
+        },
+        {
+          phase: "color_hunt",
+          turns: "4-7",
+          phase_name: "Colors Hunt",
+          focus: "Find items by color",
+          phase_questions: [
+            "(After blue item) Perfect! {student_answer}! 📘 Now I spy something BIG! What is big in your backpack? Say: My book is big or My backpack is big",
+            "(After big item) Excellent! {student_answer}! Now I spy something SMALL! What is small? Say: My eraser is small or My pencil is small",
+            "(After small item) Yes! {student_answer}! 🎯 Last one - I spy something GREEN or YELLOW! Do you have green or yellow? Say: My pencil is green or I have a yellow book or I don't have green",
+            "(After color answer) {student_answer}! Wonderful! You found all the items! 🌈"
+          ]
+        },
+        {
+          phase: "closing",
+          turns: "8-10",
+          phase_name: "Celebration",
+          focus: "Celebrate success",
+          phase_questions: [
+            "You're an I Spy champion! 🏆 What's your FAVORITE item in your backpack? Say: I love my [item] or My favorite is [item]",
+            "(After favorite) {student_answer}! Me too! Thanks for playing I Spy with me! Say: Thank you! or Goodbye! or That was fun!",
+            "(After thanks) Goodbye! See you next time! 👋"
+          ]
+        }
       ],
       
-      example_questions: [
-        "Do you have a backpack?",
-        "What color is your backpack?",
-        "Do you have books in your backpack?",
-        "Do you have a notebook?",
-        "Do you like your backpack?",
-        "Is your backpack heavy?",
-        "Is your backpack new?"
-      ],
-      
-      minimum_turns: 15, // Flexible: Allow natural conversation flow
-      maximum_turns: 20, // Soft maximum for natural closure
-      
-      success_criteria: [
-        "Uses 'I have' pattern correctly",
-        "Names at least 2 school supplies",
-        "Describes items with colors or adjectives",
-        "Shows engagement with school supplies",
-        "Can ask and answer questions naturally"
-      ]
-    },
-    {
+      minimum_turns: 10,
+      maximum_turns: 12
+    },    {
       mission_id: 3,
-      title: "Meeting Your Teacher",
-      title_vi: "Gặp Gỡ Giáo Viên",
-      theme: "School environment and relationships",
+      title: "Show and Tell",
+      title_en: "Show and Tell - Present Your Items",
+      title_vi: "Thuyết Trình Đồ Dùng",
+      theme: "Presentation game - student presents their school items",
       
-      // Ms. Nova's direct greeting (no description)
-      nova_greeting: "Hello again! I want to learn about your school. Tell me about your teacher. What is your teacher like?",
-      default_hints: ["My", "teacher", "is", "kind", "nice"],
+      nova_greeting: "🎤 Time for Show and Tell! Pick one thing from your backpack and tell me about it!",
+      default_hints: ["My", "book", "is", "big", "blue"],
       
-      mission_context: `This is a simple conversation about the student's teacher and school. Ms. Nova wants to know basic information about their learning environment. Use VERY SIMPLE language suitable for A0-A1 ESL beginners. Focus on basic descriptions with 'My teacher is...' pattern. Keep all questions short and clear.
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 1 Mission 3 - Show and Tell (Presentation Game). 🎮 GAME CONCEPT: Student PRESENTS their school items like Show and Tell
+Different from Week 2 grammar game - this is about PRESENTING and DESCRIBING! GAME FLOW:
+1. Nova asks: "Pick something from your backpack!"
+2. Student chooses: "My book!"
+3. Nova asks: "Tell me about your book! What color is it?"
+4. Student describes: "My book is blue!"
+5. Nova asks follow-up: "What size? Big or small?"
+6. Continue with DIFFERENT items STRICT RULES:
+✅ Student CHOOSES which item to present
+✅ Ask about COLOR, SIZE, and USE
+✅ Move to DIFFERENT item after 2-3 questions
+✅ Encourage full sentences: "My book is big" FORBIDDEN:
+❌ Grammar correction (that's Week 2!)
+❌ "My vs Your" errors (no error correction!)
+❌ Asking about same item too long CORRECT FORMAT:
+✅ "Pick something from your backpack!"
+✅ "Tell me about your [item]! What color is it?"
+✅ "Wow! What else do you have? Show me another thing!" QUESTION PATTERNS:
+- "What color is your [item]?" - "Is it big or small?"
+- "What do you use it for?"
+- "Do you like your [item]?" VOCABULARY: backpack, book, notebook, pen, pencil, eraser, ruler, big, small, red, blue, green
+PATTERN: "My [item] is [color/size]. I use it for [purpose]." Do NOT ask another question on the last turn.`,
+      
+      target_vocab: ["backpack", "book", "notebook", "pen", "pencil", "eraser", "ruler", "big", "small", "red", "blue"],
+      grammar_pattern: "My [item] is [adjective]. I use it for...",
 
-⚡ FLEXIBLE CONVERSATION:
-- If student asks about YOUR teacher/school → Answer naturally ("I teach online, so my classroom is digital!"), then ask them back
-- Allow 12-15 turns if student is curious and asks questions
-- If off-topic (e.g., talks about home) → Bridge naturally: "That sounds nice! At YOUR SCHOOL, what is your favorite place?"
-- Make it feel like a real conversation between humans`,
+      story_character: {
+        name: "Ms. Nova",
+        personality: "encouraging teacher, loves presentations, asks follow-up questions",
+        backstory: "I love Show and Tell! Everyone's items are interesting! Tell me everything!",
+        speaking_style: "supportive, asks clarifying questions, encourages details",
+        facts: [
+          "I love hearing students present!",
+          "Every item has a story!",
+          "Colors make things interesting!",
+          "Show and Tell is my favorite!"
+        ],
+        special_rules: [
+          "Let student CHOOSE items",
+          "Ask about color, size, use",
+          "Encourage full sentences",
+          "Move to different items after 2-3 questions"
+        ]
+      },
       
-      target_vocab: ["teacher", "school", "classroom"],
+      opening_narrative: "🎤 It's Show and Tell time! Pick something from your backpack and tell me about it! What do you want to show? Say: My book OR My pen",
       
-      target_pattern: "My teacher is [adjective] / My school is [adjective]",
-      
-      conversation_topics: [
-        "Is your teacher nice?",
-        "Is your teacher funny?",
-        "Do you like your teacher?",
-        "What is your teacher's name?",
-        "Is your school big?",
-        "Do you like your school?",
-        "Is your classroom nice?",
-        "Do you have many classmates?",
-        "[Optional: Student can ask Ms. Nova 1-2 questions about teachers/school]",
-        "Simple closing (Your teacher sounds wonderful!)"
+      story_arc: [
+        {
+          phase: "intro",
+          turns: "1-2",
+          phase_name: "Game Start",
+          focus: "Explain Show and Tell",
+          phase_questions: [
+            "🎤 Hi! It's Show and Tell time! Pick something from your backpack! What do you want to show me? Say: My book or My pen or My notebook",
+            "(After student picks item) Great choice! Your {student_answer}! Now tell me - what COLOR is your {student_answer}? Say: My {student_answer} is [color] or It is [color]"
+          ]
+        },
+        {
+          phase: "item_1",
+          turns: "3-6",
+          phase_name: "First Item",
+          focus: "Describe first item fully",
+          phase_questions: [
+            "(After color) {student_answer}! Beautiful! Is your {item} BIG or SMALL? Say: It is big or It is small or My {item} is big",
+            "(After size) Perfect! {student_answer}! What do you USE your {item} for? Say: I use it for writing or I use it for reading or For writing",
+            "(After use) Wonderful! {student_answer}! Your {item} is very useful! 📚 Now show me something DIFFERENT! What else do you have? Say: My [different item]"
+          ]
+        },
+        {
+          phase: "item_2",
+          turns: "7-10",
+          phase_name: "Second Item",
+          focus: "Present second item",
+          phase_questions: [
+            "(After item 2) Nice! Your {student_answer}! What COLOR is it? Say: It is [color] or My {student_answer} is [color]",
+            "(After color) {student_answer}! Good! Is it BIG or SMALL? Say: It is big or It is small",
+            "(After size) Perfect! {student_answer}! Do you LIKE your {item}? Say: Yes, I like it or I love it! or Yes!",
+            "(After like) {student_answer}! Great! ONE more item! Show me one more thing! Say: My [item]"
+          ]
+        },
+        {
+          phase: "item_3",
+          turns: "11-13",
+          phase_name: "Quick Round",
+          focus: "One more item quickly",
+          phase_questions: [
+            "(After item 3) Your {student_answer}! Quickly - what COLOR? Say: It is [color]",
+            "(After color) {student_answer}! Excellent! 🎉 You presented THREE items! Amazing!"
+          ]
+        },
+        {
+          phase: "closing",
+          turns: "14-16",
+          phase_name: "Celebration",
+          focus: "Wrap up presentation",
+          phase_questions: [
+            "You presented so well! 👏 What's your FAVORITE item in your backpack? Say: My favorite is [item] or I love my [item]",
+            "(After favorite) {student_answer}! Great choice! Thank you for your presentation! Say: Thank you! or Goodbye! or That was fun!",
+            "(After thanks) Goodbye! Great job today! 🌟"
+          ]
+        }
       ],
       
-      example_questions: [
-        "Is your teacher nice?",
-        "Is your teacher funny?",
-        "Do you like your teacher?",
-        "Is your teacher a man or woman?",
-        "Is your school big or small?",
-        "Do you like your school?",
-        "Is your classroom big?",
-        "Do you have friends at school?"
-      ],
-      
-      minimum_turns: 15, // Flexible: Allow natural conversation flow
-      maximum_turns: 20, // Soft maximum for natural closure
-      
-      success_criteria: [
-        "Uses 'My teacher is...' pattern correctly with adjectives",
-        "Describes at least 2 physical features of classroom or school",
-        "Uses all target vocabulary (teacher, school, classroom) naturally",
-        "Expresses positive feelings about school experience",
-        "Shows understanding of teacher's role in learning",
-        "Demonstrates emotional connection to school environment",
-        "Uses descriptive words (big, small, nice, fun, etc.)",
-        "Can ask and answer questions naturally"
-      ]
+      minimum_turns: 10,
+      maximum_turns: 12
     }
   ],
   
@@ -490,6 +629,44 @@ export const week1RealData = {
     ]
   },
 
+  // === AI RESPONSE FORMAT CONTRACT (V28 standard) ===
+  v28_format_notes: {
+    response_format: "ack + recast + question (V28 ONLY - NOT V25)",
+    ack_options: ["Nice!", "Great!", "Wonderful!", "Good job!", "Perfect!"],
+    recast_max_words: 8,
+    recast_rules: [
+      "Mirror student's subject (if they say 'I', use 'I' in recast)",
+      "Fix grammar naturally without explanation",
+      "Keep it conversational and encouraging"
+    ],
+    question_patterns_allowed: [
+      "What is...?",
+      "Is...?",
+      "Do you...?",
+      "Are you...?",
+      "Can you...?"
+    ],
+    question_patterns_forbidden: [
+      "Why...?",
+      "What does... mean?",
+      "Do you understand?"
+    ],
+    example_exchanges: [
+      {
+        student: "I Alex.",
+        tutor_response: "Nice! I AM Alex. That is a great name! How old are you?"
+      },
+      {
+        student: "My bag have book.",
+        tutor_response: "Great! My bag HAS a book. What else is in your bag?"
+      },
+      {
+        student: "Teacher is nice.",
+        tutor_response: "Wonderful! My teacher IS nice. What is your teacher's name?"
+      }
+    ]
+  },
+
   // === CONNECTION TO EXISTING WEEK 1 DATA ===
   extended_vocab_reference: [
     "teacher",
@@ -569,7 +746,115 @@ IMPORTANT: Student can ask ANY question (free talk), but Ms. Nova should guide c
 
 ⚠️ CRITICAL: Ms. Nova must NOT teach grammar rules explicitly.
 Students learn by DOING, not by studying rules.
-`
+`,
+
+  conversation_cards: [
+    {
+      id: "hello_nova",
+      title: "Hello, Ms. Nova!",
+      emoji: "👋",
+      theme: "Greetings & Self-Introduction",
+      difficulty: "easy",
+      exchanges: [
+        {
+          ai: "Hi! I am Ms. Nova! What is your name? Say: My name is ___",
+          student_template: "My name is {NAME}",
+          accept: ["My name is", "I am", "I'm", "name"]
+        },
+        {
+          ai: "Nice to meet you! How old are you? Say: I am ___ years old",
+          fill_blank: "I am ___ years old",
+          accept_words: ["years old", "I am"]
+        },
+        {
+          ai: "Wow! Where are you from? Say: I am from ___",
+          fill_blank: "I am from ___",
+          accept_words: ["Vietnam", "Hanoi", "Ho Chi Minh", "Saigon", "my city", "from"]
+        },
+        {
+          ai: "Great! Are you a student? Say: I am a ___!",
+          fill_blank: "I am a ___",
+          accept_words: ["student", "learner", "I am", "am a"]
+        },
+        {
+          ai: "Wonderful! Can you say hello in English? Say: Hello! My name is ___",
+          student_template: "Hello! My name is {NAME}",
+          accept: ["Hello", "Hi", "My name", "I am"]
+        }
+      ],
+      completion_message: "Amazing! You can introduce yourself in English! 🎉 You said your name and age!"
+    },
+    {
+      id: "hero_identity",
+      title: "My Hero Identity",
+      emoji: "🦸",
+      theme: "Superheroes & Adjectives",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "You are a superhero today! What is your hero name? Say: My hero name is ___",
+          student_template: "My hero name is {NAME}",
+          accept: ["My hero name is", "My name is", "I am"]
+        },
+        {
+          ai: "Cool! What is your superpower? Choose: I can fly or I can run fast or I can be invisible",
+          options: ["I can fly", "I can run fast", "I can be invisible"]
+        },
+        {
+          ai: "Awesome! Heroes are strong and brave! What are you? Say: I am ___!",
+          fill_blank: "I am ___",
+          accept_words: ["strong", "fast", "brave", "smart", "tall", "kind", "I am"]
+        },
+        {
+          ai: "What color is your hero suit? Say: My suit is ___",
+          fill_blank: "My suit is ___",
+          accept_words: ["red", "blue", "green", "yellow", "black", "white", "purple", "orange"]
+        },
+        {
+          ai: "Who do you save? Choose: I save animals or I save people or I save the Earth",
+          options: ["I save animals", "I save people", "I save the Earth"]
+        },
+        {
+          ai: "Introduce your hero! Say: I am ___ and I can ___",
+          accept: ["I am", "I can", "and"]
+        }
+      ],
+      completion_message: "Super! You created your hero identity! 🦸‍♂️ You used: I am, I can, and adjectives!"
+    },
+    {
+      id: "find_a_friend",
+      title: "Finding a New Friend",
+      emoji: "🤝",
+      theme: "Meeting Someone New",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "You meet a new friend at school! Say hello and your name: Hello! I am ___",
+          student_template: "Hello! I am {NAME}",
+          accept: ["Hello", "Hi", "I am", "My name"]
+        },
+        {
+          ai: "Your new friend asks: How old are you? Answer with: I am ___ years old!",
+          fill_blank: "I am ___ years old",
+          accept_words: ["years old", "I am"]
+        },
+        {
+          ai: "Your friend says 'I like English!' Do you like English? Choose: Yes, I like English! or English is fun!",
+          options: ["Yes, I like English!", "English is fun!"]
+        },
+        {
+          ai: "Your friend asks: What is your favourite colour? Say: My favourite colour is ___",
+          fill_blank: "My favourite colour is ___",
+          accept_words: ["red", "blue", "green", "yellow", "pink", "purple", "favourite", "color", "colour"]
+        },
+        {
+          ai: "Time to say goodbye! Choose: Goodbye! or See you later! or Bye bye!",
+          options: ["Goodbye!", "See you later!", "Bye bye!"]
+        }
+      ],
+      completion_message: "Fantastic! You made a new friend in English! 👏 You used: Hello, I am, I like, and Goodbye!"
+    }
+  ]
 };
 
 export default week1RealData;

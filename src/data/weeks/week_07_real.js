@@ -113,7 +113,91 @@ const week7RealData = {
   ],
   
   global_vocab: ["whiteboard", "teacher", "computer", "pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
-  
+
+  // === AI TUTOR BEHAVIOR (week-level tuning) ===
+  nova_instructions: {
+    persona: "Friendly English teacher, warm and human-like",
+    tone: "Warm, curious, loves discovering what is inside things",
+    opening_lines_by_mission: {
+      mission_1: "Hi! I am Ms. Nova! I love checking backpacks! Let's check your backpack together. What do I call you? Say: My name is your name.",
+      mission_2: "Hi! Let's play Treasure Hunt in my classroom! I am hiding many things around the room. Can you spot them? What is there on the desk?",
+      mission_3: "Look! I have a magic backpack! I cannot see inside but I can feel something. It feels long and thin. What do you think it is? Say: There is a..."
+    },
+    conversation_style: [
+      "Natural and flowing - like talking with a friend",
+      "One clear question per turn",
+      "Build on previous answers - show active listening",
+      "NO emojis - text-to-speech will read them aloud",
+      "Keep responses under 30 words",
+      "Maintain conversation for minimum 10-15 turns per mission",
+      "ONLY use 'There is a/an [item] in my [place]' - Week 7 grammar scope"
+    ],
+    recast_strategy: "ALWAYS recast student errors by modeling correct form naturally in your response",
+    recast_example: {
+      student: "Pen in backpack.",
+      nova_recast: "Yes! There IS a pen in my backpack! What else is in your backpack?"
+    },
+    vocabulary_scaffolding: [
+      "Mission 1: backpack, book, notebook, pen, ruler, eraser, pencil case",
+      "Mission 2: classroom, whiteboard, teacher, computer, desk - school room items",
+      "Mission 3: combine all vocab in 'There is a/an [item] in my [place]' guessing game"
+    ],
+    questioning_skill: [
+      "What is in your backpack?",
+      "Is there a ruler in your backpack?",
+      "What is there on the desk?",
+      "There is a... what?",
+      "What else is in your pencil case?"
+    ],
+    must_use_vocab: ["backpack", "pencil case", "book", "notebook", "pen", "ruler", "eraser", "classroom"],
+    must_avoid: [
+      "Emojis or special characters",
+      "Vietnamese translation",
+      "Explicit grammar rules",
+      "Corrections without recast",
+      "Multiple questions in one turn",
+      "Past tense or future tense (Week 7 scope is present simple only)"
+    ]
+  },
+
+  // === AI RESPONSE FORMAT CONTRACT (V28 standard) ===
+  v28_format_notes: {
+    response_format: "ack + recast + question (V28 ONLY - NOT V25)",
+    ack_options: ["Nice!", "Great!", "Wonderful!", "Good job!", "Perfect!"],
+    recast_max_words: 8,
+    recast_rules: [
+      "Mirror the student's key word back in the recast",
+      "Fix grammar naturally without explanation",
+      "Keep it conversational and encouraging"
+    ],
+    question_patterns_allowed: [
+      "What is...?",
+      "Where is...?",
+      "Is...?",
+      "Do you...?",
+      "Can you...?"
+    ],
+    question_patterns_forbidden: [
+      "Why...?",
+      "What does... mean?",
+      "Do you understand?"
+    ],
+    example_exchanges: [
+      {
+        student: "Pen in backpack.",
+        tutor_response: "Great! There is a pen IN my backpack. What else is in your backpack?"
+      },
+      {
+        student: "There is book.",
+        tutor_response: "Nice! There is A book. Say: There is a book in my backpack!"
+      },
+      {
+        student: "I have ruler.",
+        tutor_response: "Wonderful! There is a ruler in my backpack. What is next to the ruler?"
+      }
+    ]
+  },
+
   // === 3 STORY MISSIONS ===
   story_missions: [
     {
@@ -139,34 +223,11 @@ const week7RealData = {
       },
       
       // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Ms. Nova! Let's check your backpack! 🎒 Open it! What is in your backpack? Say: There is a...",
+      opening_narrative: "Hi! I'm Ms. Nova! Let's check your backpack! 🎒 What is your name? Say: My name is [your name]",
       
       nova_greeting: "Hi! Let's check your backpack!", // DEPRECATED
       
-      mission_context: `This is Week 7 Mission 1 - Backpack Check. 
-
-STRICT GAME RULES:
-1. ONLY ask about items IN STUDENT'S BACKPACK
-2. Student MUST say: "There is a [item] in my backpack"
-3. If yes/no only → prompt full sentence  
-4. ONE item per question
-
-FORBIDDEN - NEVER ASK:
-- "What do you think?" ❌
-- "How do you feel?" ❌
-- "Do you like...?" ❌
-- Personal questions ❌
-- Yes/No without grammar practice ❌
-
-ALLOWED QUESTIONS ONLY:
-- "What is in your backpack?"
-- "Is there a [item]?"
-- "Where is your [item]?"
-- "What color is your [item]?"
-
-LANGUAGE: VERY SIMPLE. Max 8 words/sentence. 
-GRAMMAR: "There is a [item]" pattern enforcement.
-VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 1 - Backpack Check. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is packing her own backpack and loves checking what students have in theirs. OPENING: Ask student's name, then say "Let's check your backpack together! What is in your backpack? Say: There is a pen in my backpack." STRICT GAME RULES: 1. ONLY ask about items IN STUDENT'S BACKPACK. 2. Student MUST say "There is a [item] in my backpack." 3. If student gives yes/no only, prompt full sentence: "Say: There is a ruler in my backpack!" 4. Ask about ONE item per question. VOCABULARY TARGET: pen, ruler, eraser, book, notebook, pencil case, backpack. ALLOWED QUESTIONS: "What is in your backpack?", "Is there a ruler?", "What color is your book?", "Where is your pencil case?" GRAMMAR ENFORCEMENT: Every answer must practice "There is a [item]" - recast all errors naturally. GAME MECHANIC: Ask about ONE backpack item per turn → student says 'There is a [item] in my backpack' → confirm/recast → ask about next item. FORBIDDEN: Do NOT ask about feelings, preferences, or unrelated topics. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Multiple items per turn, complex sentences. covering at least 5 different items. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
       
@@ -180,10 +241,22 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
           goal: "Open backpack, check first items with scaffolding",
           required_vocab: [],
           phase_questions: [
-            "Open your backpack! Can you see a pen? Say: Yes, there is a pen OR No, there isn't a pen.",
-            "Good! Can you see a ruler? Say: Yes, there is a ruler OR No, there isn't a ruler.",
-            "Great! What about a book? Say: Yes, there is a book OR No, there isn't a book.",
-            "Perfect! Can you see an eraser? Say: Yes, there is an eraser OR No, there isn't an eraser."
+            {
+              template: "(After name) {student_answer}! Great name! Open your backpack! Can you see a pen or a ruler? Say: Yes, there is a pen or Yes, there is a ruler",
+              hints: ["Yes", "there", "is", "a", "pen", "ruler", "No", "isn't"]
+            },
+            {
+              template: "(After first item) {student_answer}! Good! Can you see a book or a notebook? Say: Yes, there is a book or Yes, there is a notebook",
+              hints: ["Yes", "there", "is", "a", "book", "notebook", "No", "isn't"]
+            },
+            {
+              template: "(After second item) {student_answer}! Great! What about an eraser? Do you have an eraser? Say: Yes, there is an eraser or No, there isn't an eraser",
+              hints: ["Yes", "there", "is", "an", "eraser", "No", "isn't"]
+            },
+            {
+              template: "(After eraser) {student_answer}! Perfect! Your backpack has many things! Let's check more! 📚",
+              hints: ["Yes", "Okay", "Great"]
+            }
           ]
         },
         {
@@ -192,14 +265,38 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
           goal: "Check more items with full sentence practice",
           required_vocab: ["pen", "ruler", "eraser", "book", "notebook"],
           phase_questions: [
-            "Can you see a notebook? Say: Yes, there is a notebook OR No, there isn't a notebook.",
-            "Can you see a pencil case? Say: Yes, there is a pencil case OR No, there isn't a pencil case.",
-            "Open the pencil case! What do you see inside? Say: There is a...",
-            "How many pens are in the pencil case? Say: There is one pen OR There are two pens.",
-            "What color is your notebook? Blue, red, or white?",
-            "How many books do you have? Say: There is one book OR There are two books.",
-            "Where is your ruler? Say: There is a ruler in my backpack OR There is a ruler on the desk.",
-            "What else is in your backpack? A pen, an eraser, or a ruler? Say: There is a..."
+            {
+              template: "Can you see a notebook? Say: Yes, there is a notebook or No, there isn't a notebook",
+              hints: ["Yes", "there", "is", "a", "notebook", "No", "isn't"]
+            },
+            {
+              template: "Can you see a pencil case? Say: Yes, there is a pencil case or No, there isn't a pencil case",
+              hints: ["Yes", "there", "is", "a", "pencil", "case", "No", "isn't"]
+            },
+            {
+              template: "Open the pencil case! What do you see inside? Say: There is a pen or There is an eraser",
+              hints: ["There", "is", "a", "pen", "an", "eraser"]
+            },
+            {
+              template: "How many pens are in the pencil case? Say: There is one pen or There are two pens",
+              hints: ["There", "is", "one", "pen", "are", "two", "pens"]
+            },
+            {
+              template: "What color is your notebook? Say: My notebook is blue or My notebook is red",
+              hints: ["My", "notebook", "is", "blue", "red", "white"]
+            },
+            {
+              template: "How many books do you have? Say: There is one book or There are two books",
+              hints: ["There", "is", "one", "book", "are", "two", "books"]
+            },
+            {
+              template: "Where is your ruler? Say: There is a ruler in my backpack or There is a ruler on the desk",
+              hints: ["There", "is", "a", "ruler", "in", "my", "backpack", "on", "the", "desk"]
+            },
+            {
+              template: "What else is in your backpack? Say: There is a pen or There is an eraser",
+              hints: ["There", "is", "a", "pen", "an", "eraser", "ruler"]
+            }
           ]
         },
         {
@@ -208,10 +305,22 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
           goal: "Ask about favorite school supply",
           required_vocab: [],
           phase_questions: [
-            "What is your favorite item? A pen, a book, or a ruler?",
-            "Why do you like it?",
-            "What color is your favorite item?",
-            "Is your backpack full or empty?"
+            {
+              template: "What is your favorite item? Say: My favorite is the pen or My favorite is the book",
+              hints: ["My", "favorite", "is", "the", "pen", "book", "ruler"]
+            },
+            {
+              template: "Why do you like it? Say: I like it because it is useful or I like it because it is pretty",
+              hints: ["I", "like", "it", "because", "is", "useful", "pretty", "good"]
+            },
+            {
+              template: "What color is your favorite item? Say: It is blue or It is red",
+              hints: ["It", "is", "blue", "red", "green", "yellow"]
+            },
+            {
+              template: "Is your backpack full or empty? Say: My backpack is full or My backpack is empty",
+              hints: ["My", "backpack", "is", "full", "empty"]
+            }
           ]
         },
         {
@@ -220,284 +329,21 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
           goal: "Wrap up backpack check",
           required_vocab: [],
           phase_questions: [
-            "Your backpack has many items! Great job!",
-            "Ready for school? Goodbye!"
+            {
+              template: "Your backpack has many items! Great job!",
+              hints: ["Thank", "you", "Yes", "Great"]
+            },
+            {
+              template: "Ready for school? Goodbye! Say: Goodbye!",
+              hints: ["Goodbye", "Yes", "Bye", "See", "you"]
+            }
           ]
         }
       ],
       
-      objectives: [
-        {
-          stepKey: "backpack_has_items",
-          category: "Items",
-          question_variants: [
-            {
-              question: "What is in your backpack?",
-              hints: ["There", "is", "a", "pen", "in", "my", "backpack"]
-            },
-            {
-              question: "Open your backpack! What do you see?",
-              hints: ["see", "I", "a", "book", "and", "notebook"]
-            },
-            {
-              question: "Tell me about your backpack.",
-              hints: ["has", "It", "a", "ruler", "and", "eraser"]
-            }
-          ],
-          target_keywords: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack", "there", "is"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "There is a {item} in your backpack!",
-            "You have a {item}!"
-          ],
-          success_criteria: "Student names at least one item"
-        },
-        {
-          stepKey: "has_pen",
-          category: "Specific Item",
-          question_variants: [
-            {
-              question: "Is there a pen in your backpack?",
-              hints: ["There", "is", "a", "pen", "in", "my", "backpack"]
-            },
-            {
-              question: "Do you have a pen?",
-              hints: ["Yes", "there", "is", "a", "pen"]
-            },
-            {
-              question: "Where is your pen?",
-              hints: ["pen", "My", "is", "in", "the", "backpack"]
-            }
-          ],
-          target_keywords: ["pen", "there", "is", "backpack", "yes", "have"],
-          ack_options: ["Good!", "Great!", "Nice!"],
-          recast_templates: [
-            "There is a pen in your backpack!",
-            "You have a pen!"
-          ],
-          success_criteria: "Student mentions pen"
-        },
-        {
-          stepKey: "has_ruler",
-          category: "Specific Item",
-          question_variants: [
-            {
-              question: "Is there a ruler?",
-              hints: ["There", "is", "a", "ruler", "in", "my", "backpack"]
-            },
-            {
-              question: "Do you have a ruler in your backpack?",
-              hints: ["Yes", "there", "is", "a", "ruler"]
-            },
-            {
-              question: "Where is your ruler?",
-              hints: ["ruler", "My", "is", "in", "the", "pencil", "case"]
-            }
-          ],
-          target_keywords: ["ruler", "there", "is", "yes"],
-          ack_options: ["Good!", "Great!", "Perfect!"],
-          recast_templates: [
-            "There is a ruler!",
-            "You have a ruler!"
-          ],
-          success_criteria: "Student mentions ruler"
-        },
-        {
-          stepKey: "student_question_1",
-          category: "Student Inquiry",
-          type: "invitation",
-          question_variants: [
-            {
-              question: "Do you have a question for me?",
-              hints: []
-            },
-            {
-              question: "What do you want to ask me?",
-              hints: []
-            },
-            {
-              question: "Ask me anything!",
-              hints: []
-            }
-          ],
-          target_keywords: ["question", "ask", "want", "know", "what", "how", "why", "yes", "no"],
-          ack_options: ["Great question!", "Good question!", "Nice question!"],
-          recast_templates: [
-            "You asked about {topic}!",
-            "That's a great question!"
-          ],
-          success_criteria: "Student asks a question or says no",
-          allow_skip: true
-        },
-        {
-          stepKey: "has_book",
-          category: "Specific Item",
-          question_variants: [
-            {
-              question: "Is there a book?",
-              hints: ["There", "is", "a", "book", "in", "my", "backpack"]
-            },
-            {
-              question: "Do you have a book in your backpack?",
-              hints: ["Yes", "there", "is", "a", "book"]
-            },
-            {
-              question: "What book is in your backpack?",
-              hints: ["book", "My", "English", "is", "in", "the", "backpack"]
-            }
-          ],
-          target_keywords: ["book", "there", "is", "yes", "English", "math"],
-          ack_options: ["Good!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "There is a book!",
-            "You have a book!"
-          ],
-          success_criteria: "Student mentions book"
-        },
-        {
-          stepKey: "has_notebook",
-          category: "Specific Item",
-          question_variants: [
-            {
-              question: "Is there a notebook?",
-              hints: ["There", "is", "a", "notebook", "in", "my", "backpack"]
-            },
-            {
-              question: "Do you have a notebook?",
-              hints: ["Yes", "there", "is", "a", "notebook"]
-            },
-            {
-              question: "What color is your notebook?",
-              hints: ["notebook", "My", "is", "blue", "and", "big"]
-            }
-          ],
-          target_keywords: ["notebook", "there", "is", "yes", "blue", "red", "white"],
-          ack_options: ["Nice!", "Great!", "Perfect!"],
-          recast_templates: [
-            "There is a notebook!",
-            "Your notebook is {color}!"
-          ],
-          success_criteria: "Student mentions notebook"
-        },
-        {
-          stepKey: "has_eraser",
-          category: "Specific Item",
-          question_variants: [
-            {
-              question: "Is there an eraser?",
-              hints: ["There", "is", "an", "eraser", "in", "my", "backpack"]
-            },
-            {
-              question: "Do you have an eraser?",
-              hints: ["Yes", "there", "is", "an", "eraser"]
-            },
-            {
-              question: "Where is your eraser?",
-              hints: ["eraser", "My", "is", "in", "the", "pencil", "case"]
-            }
-          ],
-          target_keywords: ["eraser", "there", "is", "yes"],
-          ack_options: ["Good!", "Great!", "Nice!"],
-          recast_templates: [
-            "There is an eraser!",
-            "You have an eraser!"
-          ],
-          success_criteria: "Student mentions eraser"
-        },
-        {
-          stepKey: "student_question_2",
-          category: "Student Inquiry",
-          type: "invitation",
-          question_variants: [
-            {
-              question: "Do you have another question?",
-              hints: []
-            },
-            {
-              question: "What else do you want to ask?",
-              hints: []
-            },
-            {
-              question: "You can ask me something!",
-              hints: []
-            }
-          ],
-          target_keywords: ["question", "ask", "want", "know", "what", "how", "why", "yes", "no"],
-          ack_options: ["Great question!", "Good question!", "Nice question!"],
-          recast_templates: [
-            "You asked about {topic}!",
-            "That's a great question!"
-          ],
-          success_criteria: "Student asks a question or says no",
-          allow_skip: true
-        },
-        {
-          stepKey: "favorite_item",
-          category: "Preference",
-          question_variants: [
-            {
-              question: "What is your favorite item? A pen, a book, or a ruler?",
-              hints: ["favorite", "My", "item", "is", "the", "pen"]
-            },
-            {
-              question: "Which item do you like most?",
-              hints: ["like", "I", "the", "notebook", "most"]
-            },
-            {
-              question: "What do you love in your backpack?",
-              hints: ["love", "I", "my", "book"]
-            }
-          ],
-          target_keywords: ["pen", "book", "ruler", "notebook", "favorite", "like", "love"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "The {item} is your favorite!",
-            "You love your {item}!"
-          ],
-          success_criteria: "Student names favorite item"
-        },
-        {
-          stepKey: "backpack_ready",
-          category: "Closing",
-          question_variants: [
-            {
-              question: "Is your backpack ready for school?",
-              hints: ["Yes", "my", "backpack", "is", "ready"]
-            },
-            {
-              question: "Do you have everything you need?",
-              hints: ["Yes", "I", "have", "everything"]
-            },
-            {
-              question: "Are you ready for school?",
-              hints: ["Yes", "I", "am", "ready"]
-            }
-          ],
-          target_keywords: ["yes", "ready", "have", "everything"],
-          ack_options: ["Perfect!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "Your backpack is ready!",
-            "You are ready for school!"
-          ],
-          success_criteria: "Student confirms readiness"
-        },
-        {
-          stepKey: "goodbye",
-          category: "Closing",
-          type: "termination",
-          canonical_question: "",
-          target_keywords: [],
-          ack_options: ["Wonderful!"],
-          hints: [],
-          recast_templates: [],
-          goodbye_en: "Great job! Your backpack has many items! You are ready for school! Bye!",
-          goodbye_vi: "Tuyệt lắm! Balo của bạn có nhiều đồ! Bạn sẵn sàng đi học! Tạm biệt!",
-          success_criteria: "Mission complete"
-        }
-      ],
       
-      minimum_turns: 15,
-      maximum_turns: 20,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "15+ minutes"
     },
     {
@@ -509,7 +355,7 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
       nova_greeting: "Let's play Treasure Hunt! I hide things in the classroom!", // DEPRECATED
       default_hints: ["There", "is", "a", "whiteboard"],
       
-      mission_context: `This is Week 7 Mission 2 - Classroom Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a whiteboard" or "Say: There is a desk". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item student sees. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?". ONLY allowed questions: "(Point 👉) What is this?", "(Point 👉) What do you see?", "Look here! What is it?". NEVER ask about preferences, feelings, or descriptions - ONLY IDENTIFY ITEMS WITH 'There is a...'.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 2 - Classroom Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a whiteboard" or "Say: There is a desk". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item student sees. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?". ONLY allowed questions: "(Point 👉) What is this?", "(Point 👉) What do you see?", "Look here! What is it?". GAME MECHANIC: Point to ONE classroom item per turn → student says 'There is a [item]' → confirm/recast → point to next item. NEVER ask about preferences, feelings, or descriptions - ONLY IDENTIFY ITEMS WITH 'There is a...'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["whiteboard", "computer", "desk", "chair", "book", "pen", "ruler", "teacher"],
       
@@ -603,8 +449,8 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 18,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "12+ minutes"
     },
     {
@@ -616,7 +462,7 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
       nova_greeting: "I have a magic backpack! Let's see what appears inside!", // DEPRECATED
       default_hints: ["There", "is", "a", "pen"],
       
-      mission_context: `This is Week 7 Mission 3 - The Magic Backpack. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a pen" or "Say: There is a notebook". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item is in the backpack. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?", "Is it big?". ONLY allowed questions: "(Feel 👋) What is it?", "(Shake 🎒) What do you hear?", "What is this item?". NEVER ask about preferences, feelings, or descriptions - ONLY GUESS ITEMS WITH 'There is a...'.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 3 - The Magic Backpack. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a pen" or "Say: There is a notebook". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item is in the backpack. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?", "Is it big?". ONLY allowed questions: "(Feel 👋) What is it?", "(Shake 🎒) What do you hear?", "What is this item?". GAME MECHANIC: Nova reaches in magic backpack → gives ONE clue → student guesses 'There is a/an [item]' → confirm/recast → next item. NEVER ask about preferences, feelings, or descriptions - ONLY GUESS ITEMS WITH 'There is a...'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
       
@@ -710,8 +556,8 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 18,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "12+ minutes"
     }
   ],
@@ -766,92 +612,114 @@ VOCABULARY: pen, ruler, eraser, book, notebook, pencil case, backpack.`,
     }
   },
 
-  // ✨ DYNAMIC ROLEPLAY SCENARIOS (3 HIGH-QUALITY SCENARIOS ONLY)
-  roleplay_scenarios: [
-      {
-        id: "rp_backpack_check",
-        title: "Backpack Checklist 🎒",
-        title_en: "Backpack Checklist",
-        title_vi: "Kiểm tra Balo",
-        emoji: "🎒",
-        description: "Check if you have all school supplies with Ms. Nova!",
-        
-        // AI Persona
-        ai_role: "Teacher (Ms. Nova) - Checks supplies",
-        user_role: "Student - Shows backpack contents",
-        context: "School starts tomorrow! Ms. Nova helps check if student has all 5 supplies in backpack. CRITICAL: Questions must offer 2 item choices with OR.",
-        
-        // Pedagogical Focus
-        vocab_focus: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
-        
-        // Opening (MUST have OR)
-        opening_line: "Good morning! Let's check your backpack for tomorrow! 🎒 First check (1/5): Do you have a pen or a ruler in your backpack? Say: There is a pen OR There is a ruler.",
-        
-        // Guide rules - SUPER STRICT
-        guide_rules: "CRITICAL CHECKLIST RULES: (1) Check 5 supplies (track 1/5 to 5/5). (2) EVERY question MUST use: 'Do you have a [item A] or a [item B]?' (3) Student answers: 'There is a [item]' or 'There is a [item] in my backpack'. (4) React: 'Great! ✓ Check 2/5: Next item...' (5) Progress through checklist: pen → ruler → eraser → book → notebook. (6) When 5/5: 'All done! Your backpack is ready! 🎉' (7) ONE question per turn. FORBIDDEN: 'Can you see?' alone. 'Do you have?' without OR. 'What's in your backpack?' ONLY use: 'Do you have [item A] or [item B]?' format.",
-        
-        // Backup questions (ALL use OR)
-        backup_questions: [
-          "Check 2/5: Do you have a ruler or an eraser? Say: There is a ruler OR There is an eraser.",
-          "Check 3/5: Do you have an eraser or a book? Say: There is an eraser OR There is a book.",
-          "Check 4/5: Do you have a book or a notebook? Say: There is a book OR There is a notebook.",
-          "Check 5/5: Last one! Do you have a notebook or a pencil case? Say: There is a notebook OR There is a pencil case.",
-          "Bonus check: Do you have a pen or a book? Say: There is a pen OR There is a book."
-        ]
-      },
-      {
-        id: "rp_classroom_quiz",
-        title: "Classroom Item Quiz 📝",
-        title_en: "Classroom Item Quiz",
-        title_vi: "Đố vui Đồ vật Lớp học",
-        emoji: "📝",
-        description: "Take Ms. Nova's quiz about classroom items!",
-        
-        ai_role: "Quiz Master (Ms. Nova) - Asks questions",
-        user_role: "Quiz Taker - Student answers",
-        context: "Ms. Nova gives a 5-question quiz: 'What is this?' Student answers using 'There is a...' pattern. CRITICAL: Questions show 2 items with OR.",
-        
-        vocab_focus: ["whiteboard", "computer", "desk", "chair", "book", "pen", "ruler", "teacher"],
-        
-        opening_line: "Classroom Quiz Time! 📝 Question 1/5: (Show picture) Is this a whiteboard or a computer? Say: There is a whiteboard OR There is a computer.",
-        
-        guide_rules: "CRITICAL QUIZ RULES: (1) Show progress: Question 1/5, 2/5, etc. (2) Show item (use emoji or 'picture') and ask: 'Is this a [item A] or a [item B]?' (3) Student answers: 'There is a [item]'. (4) React: 'Correct! ✓ Question 2/5...' (5) Quiz items: whiteboard, computer, desk, chair, book, pen, ruler. (6) ONE question per turn. FORBIDDEN: 'What is this?' without OR. 'Can you tell me?' alone. ONLY use: 'Is this a [item A] or a [item B]?' format.",
-        
-        backup_questions: [
-          "Question 2/5: (📚) Is this a book or a pen? Say: There is a book OR There is a pen.",
-          "Question 3/5: (✏️) Is this a pen or a ruler? Say: There is a pen OR There is a ruler.",
-          "Question 4/5: (📐) Is this a ruler or an eraser? Say: There is a ruler OR There is an eraser.",
-          "Question 5/5: (🪑) Is this a desk or a chair? Say: There is a desk OR There is a chair.",
-          "Bonus! (💻) Is this a computer or a whiteboard? Say: There is a computer OR There is a whiteboard."
-        ]
-      },
-      {
-        id: "rp_supply_hunt",
-        title: "Supply Treasure Hunt 🔍",
-        title_en: "Supply Treasure Hunt",
-        title_vi: "Săn kho báu Đồ dùng",
-        emoji: "🔍",
-        description: "Find hidden school supplies in the classroom!",
-        
-        ai_role: "Game Master (Ms. Nova) - Hides supplies",
-        user_role: "Finder - Student searches",
-        context: "Ms. Nova hid 5 school supplies around classroom. Student finds them and describes what they found using 'There is a...' CRITICAL: Questions offer 2 item choices with OR.",
-        
-        vocab_focus: ["pen", "book", "ruler", "eraser", "notebook", "desk", "chair", "drawer"],
-        
-        opening_line: "Supply Treasure Hunt! 🔍 I hid 5 items! Find #1 (1/5): Look on the desk! Do you see a pen or a book? Say: There is a pen OR There is a book.",
-        
-        guide_rules: "CRITICAL HUNT RULES: (1) Track progress: Item 1/5 to 5/5. (2) Tell location to search: 'Look on the desk!', 'Check in the drawer!' (3) Ask: 'Do you see a [item A] or a [item B]?' (4) Student answers: 'There is a [item]'. (5) React: 'You found it! ⭐ Item 2/5: Look in the drawer!' (6) When 5/5: 'All supplies found! You win! 🏆' (7) Hide spots: on desk, in drawer, under chair, on floor, in bag. (8) ONE question per turn. FORBIDDEN: 'What do you see?' alone. 'Can you find?' without OR. ONLY use: 'Do you see [item A] or [item B]?' format.",
-        
-        backup_questions: [
-          "Item 2/5: Look in the drawer! Do you see a ruler or an eraser? Say: There is a ruler OR There is an eraser.",
-          "Item 3/5: Check under the chair! Do you see a book or a notebook? Say: There is a book OR There is a notebook.",
-          "Item 4/5: Look on the floor! Do you see an eraser or a pen? Say: There is an eraser OR There is a pen.",
-          "Item 5/5: Last one! Check in the bag! Do you see a notebook or a pencil case? Say: There is a notebook OR There is a pencil case.",
-          "Bonus item! Look on the desk! Do you see a ruler or a book? Say: There is a ruler OR There is a book."
-        ]
-      }
-    ]
+
+  conversation_cards: [
+    {
+      id: "whats_in_my_bag",
+      title: "What's In My Bag?",
+      emoji: "🎒",
+      theme: "School Supplies — There Is",
+      difficulty: "easy",
+      exchanges: [
+        {
+          ai: "Let's look in your school bag! Is there a book? Say: Yes, there is a book!",
+          accept: ["Yes", "there is", "a book", "book"]
+        },
+        {
+          ai: "What else is in your bag? Say: There is a ___",
+          fill_blank: "There is a ___",
+          accept_words: ["pen", "book", "pencil", "notebook", "ruler", "eraser", "there is"]
+        },
+        {
+          ai: "Is there a ruler? Say: Yes, there is a ruler! or No, there is no ruler!",
+          options: ["Yes, there is a ruler!", "No, there is no ruler!"]
+        },
+        {
+          ai: "Remember: AN before vowels! Is there an eraser? Say: There is an ___",
+          fill_blank: "There is an ___",
+          accept_words: ["eraser", "an eraser", "umbrella", "apple"]
+        },
+        {
+          ai: "Tell me one thing you have in your bag! Say: There is a ___",
+          fill_blank: "There is a ___",
+          accept_words: ["pen", "book", "pencil", "ruler", "eraser", "notebook", "bag", "there is"]
+        }
+      ],
+      completion_message: "Your bag is ready for school! 🎒 You used: There is a pen/book/ruler/eraser!"
+    },
+    {
+      id: "pencil_case_check",
+      title: "Pencil Case Check!",
+      emoji: "✏️",
+      theme: "Counting School Supplies",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "Open your pencil case! Is there a pencil? Say: Yes, there is a pencil in my pencil case!",
+          accept: ["Yes", "there is", "pencil", "a pencil"]
+        },
+        {
+          ai: "Is there a red pen? Choose: Yes, there is a red pen or No, there is a blue pen or No, there is no pen",
+          options: ["Yes, there is a red pen", "No, there is a blue pen", "No, there is no pen"]
+        },
+        {
+          ai: "AN before vowel sounds! Say: There is an ___ in my pencil case!",
+          fill_blank: "There is an ___",
+          accept_words: ["eraser", "an eraser", "umbrella"]
+        },
+        {
+          ai: "Is there a sharpener? Choose: Yes, there is a sharpener or No, there is no sharpener",
+          options: ["Yes, there is a sharpener", "No, there is no sharpener"]
+        },
+        {
+          ai: "What colour is your pencil case? Say: My pencil case is ___",
+          fill_blank: "My pencil case is ___",
+          accept_words: ["red", "blue", "green", "yellow", "pink", "black", "white", "purple", "pencil case"]
+        },
+        {
+          ai: "Tell me TWO things in your pencil case! Say: There is a ___ and there is a ___",
+          accept: ["there is", "and", "pencil", "pen", "eraser", "ruler", "sharpener"]
+        }
+      ],
+      completion_message: "Pencil case ready! ✏️ You used: There is a pencil/eraser/ruler/sharpener!"
+    },
+    {
+      id: "classroom_quest",
+      title: "Classroom Quest!",
+      emoji: "🏫",
+      theme: "Finding Things in the Classroom",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "Look around your classroom! Is there a board? Say: Yes, there is a board!",
+          accept: ["Yes", "there is", "a board", "board"]
+        },
+        {
+          ai: "Look around! What do you see? Say: There is a ___ in my classroom",
+          fill_blank: "There is a ___ in my classroom",
+          accept_words: ["desk", "chair", "board", "window", "door", "computer", "book", "there is"]
+        },
+        {
+          ai: "Is there a book on your desk right now? Say: Yes, there is a book! or No, there is no book!",
+          options: ["Yes, there is a book!", "No, there is no book!"]
+        },
+        {
+          ai: "Is there a pen on the desk? Choose: Yes, there is a pen or No, there is no pen",
+          options: ["Yes, there is a pen", "No, there is no pen"]
+        },
+        {
+          ai: "What do you see in your classroom? Say: There is a ___",
+          fill_blank: "There is a ___",
+          accept_words: ["board", "desk", "chair", "book", "pen", "pencil", "window", "door", "teacher", "there is"]
+        },
+        {
+          ai: "Which school supply is most important? Choose: A book is most important or A pen is most important or A bag is most important",
+          options: ["A book is most important", "A pen is most important", "A bag is most important"]
+        }
+      ],
+      completion_message: "Quest complete! 🏫🏆 You found everything using: There is a pen/book/desk/board!"
+    }
+  ]
 };
 
 export default week7RealData;

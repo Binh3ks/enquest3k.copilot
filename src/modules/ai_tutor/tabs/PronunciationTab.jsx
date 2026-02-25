@@ -8,8 +8,10 @@ import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
 /**
- * Pronunciation Tab - Practice speaking target vocabulary with AI assessment
+ * Pronunciation Tab - Word & Sentence Fluency Practice
  * Features:
+ * - Word-level pronunciation (individual vocabulary)
+ * - Sentence-level shadowing (grammar patterns from syllabus)
  * - Web Speech Recognition for recording
  * - AI-powered pronunciation evaluation
  * - Detailed feedback on accuracy
@@ -26,7 +28,9 @@ const PronunciationTab = () => {
   const { savedData, saveProgress } = useStationProgress(weekNumber, 'ai_pronunciation');
   
   const [weekData, setWeekData] = useState(null);
+  const [practiceType, setPracticeType] = useState('word'); // 'word' | 'sentence'
   const [currentWordIndex, setCurrentWordIndex] = useState(savedData.currentWordIndex || 0);
+  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(savedData.currentSentenceIndex || 0);
   const [practiceMode, setPracticeMode] = useState('listen'); // listen | recording | evaluating | complete
   const [correctCount, setCorrectCount] = useState(savedData.correctCount || 0);
   const [attempts, setAttempts] = useState(savedData.attempts || []);
@@ -36,6 +40,8 @@ const PronunciationTab = () => {
   
   const recognitionRef = useRef(null);
   const currentWordRef = useRef(null);
+  const currentSentenceRef = useRef(null);
+  const practiceTypeRef = useRef('word');
 
   // Load week data
   useEffect(() => {
@@ -128,28 +134,35 @@ const PronunciationTab = () => {
     };
   }, []);
 
-  // Get vocabulary from week data: 10 New Words + 3 Word Power = 13 từ
-  // Priority: target_vocab (week_XX_real.js syllabus) > global_vocab (station data) > vocabulary (legacy)
+  // Get content based on practice type
   const newWords = weekData?.target_vocab || weekData?.global_vocab || weekData?.vocabulary || [];
   const wordPower = weekData?.word_power?.words || [];
   
-  // Kết hợp: 10 New Words (or 7 from syllabus) + 3 Word Power
+  // Word-level: 10 New Words + 3 Word Power = 13 words
   const vocabularyList = [...newWords.slice(0, 10), ...wordPower.slice(0, 3)];
+  
+  // Sentence-level: Use grammar examples from syllabus
+  const sentenceList = weekData?.grammar_examples || [];
+  
   const currentWord = vocabularyList[currentWordIndex];
+  const currentSentence = sentenceList[currentSentenceIndex];
   const totalWords = vocabularyList.length;
+  const totalSentences = sentenceList.length;
 
-  // Keep ref updated for speech recognition callbacks
+  // Keep refs updated for speech recognition callbacks
   useEffect(() => {
     currentWordRef.current = currentWord;
-  }, [currentWord]);
+    currentSentenceRef.current = currentSentence;
+    practiceTypeRef.current = practiceType;
+  }, [currentWord, currentSentence, practiceType]);
 
-  // Text-to-Speech using 4-layer TTS with immediate fallback
-  const speakWord = async (word) => {
-    console.log('🔊 Speaking word:', word);
+  // Text-to-Speech for word or sentence
+  const speakWord = async (text) => {
+    console.log('🔊 Speaking:', text);
     
     // 🔥 PRIORITY 1: Try Google Cloud TTS first (high quality)
     try {
-      await textToSpeech(word, {
+      await textToSpeech(text, {
         autoPlay: true,
         preferredLayer: 'gemini', // Force Google Cloud TTS
         mode: 'pronunciation' // 🎯 Normal speed (1.0x) for clear pronunciation practice
@@ -164,7 +177,7 @@ const PronunciationTab = () => {
     if ('speechSynthesis' in window) {
       try {
         window.speechSynthesis.cancel(); // Clear any pending speech
-        const utterance = new SpeechSynthesisUtterance(word);
+        const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'en-US';
         utterance.rate = 1.0; // Normal speed for pronunciation
         utterance.pitch = 1.0;
@@ -181,13 +194,15 @@ const PronunciationTab = () => {
     }
   };
 
-  // Handle listen mode
+  // Handle listen mode - works for both words and sentences
   const handleListen = () => {
-    if (currentWord) {
+    if (practiceType === 'word' && currentWord) {
       const wordText = currentWord.word || currentWord.text || '';
       if (wordText) {
         speakWord(wordText);
       }
+    } else if (practiceType === 'sentence' && currentSentence) {
+      speakWord(currentSentence);
     }
   };
 
@@ -216,24 +231,48 @@ const PronunciationTab = () => {
 
   // AI-powered pronunciation evaluation
   const evaluatePronunciation = async (spokenText, confidence) => {
+    // Get current content based on practice type
+    const isWordMode = practiceTypeRef.current === 'word';
     const word = currentWordRef.current;
-    if (!word) {
+    const sentence = currentSentenceRef.current;
+    
+    console.log('🎯 Evaluation Debug:', {
+      mode: isWordMode ? 'WORD' : 'SENTENCE',
+      practiceType,
+      currentSentenceIndex,
+      displayedSentence: currentSentence,
+      refSentence: sentence,
+      spokenText
+    });
+    
+    if (isWordMode && !word) {
       console.error('❌ No current word available');
       return;
     }
-
-    // Support different field names for word text
-    const targetWord = (word.word || word.text || '').toLowerCase().trim();
-    const wordMeaning = word.meaning || word.definition_vi || word.definition_en || '';
     
-    if (!targetWord) {
-      console.error('❌ Target word is empty');
+    if (!isWordMode && !sentence) {
+      console.error('❌ No current sentence available', {
+        sentenceList,
+        currentSentenceIndex,
+        totalSentences
+      });
       return;
     }
-    
+
     try {
-      // Prepare context for AI evaluation - HOÀN TOÀN TIẾNG VIỆT
-      const prompt = `Bạn là Ms. Nova, giáo viên phát âm tiếng Anh chuyên nghiệp. Học sinh đang luyện phát âm từ "${targetWord}".
+      let prompt;
+      
+      if (isWordMode) {
+        // WORD MODE: Evaluate individual word pronunciation
+        const targetWord = (word.word || word.text || '').toLowerCase().trim();
+        const wordMeaning = word.meaning || word.definition_vi || word.definition_en || '';
+        
+        if (!targetWord) {
+          console.error('❌ Target word is empty');
+          return;
+        }
+        
+        prompt = `Bạn là Ms. Nova, giáo viên phát âm tiếng Anh chuyên nghiệp. Học sinh đang luyện phát âm từ "${targetWord}".
 
 **Từ mục tiêu:** ${targetWord}
 **Nghĩa:** ${wordMeaning}
@@ -266,6 +305,49 @@ const PronunciationTab = () => {
 - Chỉ cho điểm 90+ khi phát âm thực sự tốt
 
 Chỉ trả lời JSON, không thêm text nào khác.`;
+      } else {
+        // SENTENCE MODE: Evaluate intonation, fluency, and natural linking
+        const targetSentence = sentence.trim();
+        
+        console.log('📝 Sentence Evaluation Params:', {
+          targetSentence,
+          spokenText,
+          confidence: (confidence * 100).toFixed(1) + '%'
+        });
+        
+        prompt = `Bạn là Ms. Nova, giáo viên tiếng Anh chuyên về ngữ điệu và độ trôi chảy. Học sinh đang luyện SHADOWING (nhại lại) câu tiếng Anh.
+
+**Câu mục tiêu:** "${targetSentence}"
+**Học sinh đã nói:** "${spokenText}"
+**Độ chính xác nhận diện giọng nói:** ${(confidence * 100).toFixed(1)}%
+
+**Nhiệm vụ của bạn - Đánh giá SHADOWING (không phải dictation nghiêm ngặt):**
+1. Kiểm tra xem học sinh có nói đúng nội dung cơ bản không (cho phép sai sót nhỏ về từ, miễn ý nghĩa đúng)
+2. Đánh giá **ngữ điệu (intonation)**, **độ trôi chảy (fluency)**, và **liên kết âm (linking)** (0-100 điểm)
+3. Đưa ra nhận xét về cách nói tự nhiên, khích lệ bằng TIẾNG VIỆT
+
+**Định dạng trả lời (JSON):**
+{
+  "correct": true/false,
+  "score": 0-100,
+  "feedback": "Nhận xét về ngữ điệu và độ trôi chảy bằng tiếng Việt (tối đa 30 từ)",
+  "tip": "Mẹo về intonation hoặc linking (nếu điểm < 80, viết bằng tiếng Việt)"
+}
+
+**Ví dụ:**
+- Học sinh nói "I am Alex" đúng với ngữ điệu tự nhiên → {"correct": true, "score": 95, "feedback": "Xuất sắc! Ngữ điệu và độ trôi chảy rất tự nhiên! 🎵"}
+- Học sinh nói "I am Alex" nhưng ngữ điệu đều đều, thiếu nhấn → {"correct": true, "score": 75, "feedback": "Tốt! Hãy nhấn mạnh 'A-lex' hơn một chút.", "tip": "Nhấn mạnh: 'I am Á-lex' (giọng lên ở Alex)"}
+- Học sinh nói "I is Alex" → {"correct": false, "score": 60, "feedback": "Gần đúng! Nhưng phải là 'I AM Alex', không phải 'I is'. Hãy thử lại!"}
+
+**LƯU Ý QUAN TRỌNG:**
+- Tất cả nhận xét phải bằng TIẾNG VIỆT
+- Đây là bài tập SHADOWING, không phải dictation → Cho điểm dựa trên ngữ điệu và độ tự nhiên
+- Nếu sai hoàn toàn (nói sai nội dung), score = 0-40
+- Nếu đúng nội dung nhưng ngữ điệu chưa tự nhiên, score = 60-85
+- Chỉ cho điểm 90+ khi ngữ điệu, nhịp nói, và liên kết âm thực sự tốt
+
+Chỉ trả lời JSON, không thêm text nào khác.`;
+      }
 
       const response = await getAiTutorResponse({
         history: [],
@@ -355,17 +437,31 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
     } catch (error) {
       console.error('AI evaluation error:', error);
       
-      // Fallback: Basic matching
-      const word = currentWordRef.current;
-      const targetWord = (word?.word || word?.text || '').toLowerCase().trim();
-      const isMatch = targetWord && (spokenText.includes(targetWord) || targetWord.includes(spokenText));
+      // Fallback: Basic matching (mode-aware)
+      const isWordMode = practiceTypeRef.current === 'word';
+      let targetText = '';
+      
+      if (isWordMode) {
+        const word = currentWordRef.current;
+        targetText = (word?.word || word?.text || '').toLowerCase().trim();
+      } else {
+        const sentence = currentSentenceRef.current;
+        targetText = (sentence || '').toLowerCase().trim();
+      }
+      
+      const spokenLower = spokenText.toLowerCase().trim();
+      const isMatch = targetText && (
+        spokenLower.includes(targetText) || 
+        targetText.includes(spokenLower) ||
+        spokenLower === targetText
+      );
       
       setCurrentFeedback({
         success: isMatch,
         score: isMatch ? 80 : 30,
         message: isMatch 
           ? `Tốt lắm! Em đã nói "${spokenText}". Tiếp tục luyện tập nhé!`
-          : `Cô nghe em nói "${spokenText}". Hãy thử nói "${targetWord}" rõ hơn nhé.`,
+          : `Cô nghe em nói "${spokenText}". Hãy thử nói "${targetText}" rõ hơn nhé.`,
         spokenText
       });
 
@@ -411,24 +507,39 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
     return (longer.length - editDistance(longer, shorter)) / longer.length;
   };
 
-  // Move to next word
+  // Move to next item (word or sentence)
   const handleNext = () => {
-    if (currentWordIndex < totalWords - 1) {
+    if (practiceType === 'word' && currentWordIndex < totalWords - 1) {
       setCurrentWordIndex(prev => prev + 1);
-      setPracticeMode('listen');
-      setAttemptCount(0); // Reset số lần thử
-      setCurrentFeedback(null);
+    } else if (practiceType === 'sentence' && currentSentenceIndex < totalSentences - 1) {
+      setCurrentSentenceIndex(prev => prev + 1);
     }
+    setPracticeMode('listen');
+    setAttemptCount(0);
+    setCurrentFeedback(null);
   };
 
   // Reset practice
   const handleReset = () => {
     setCurrentWordIndex(0);
+    setCurrentSentenceIndex(0);
     setPracticeMode('listen');
     setCorrectCount(0);
     setAttemptCount(0);
     setCurrentFeedback(null);
   };
+
+  // Handle mode switch
+  const handleModeSwitch = (newMode) => {
+    setPracticeType(newMode);
+    setPracticeMode('listen');
+    setCurrentFeedback(null);
+    setAttemptCount(0);
+  };
+
+  const isLastItem = practiceType === 'word' 
+    ? currentWordIndex === totalWords - 1 
+    : currentSentenceIndex === totalSentences - 1;
 
   if (!weekData || !currentWord) {
     return (
@@ -451,8 +562,8 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
               <Mic size={20} className="text-green-600" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-800">Pronunciation Practice</h2>
-              <p className="text-xs text-gray-500">Listen carefully and repeat</p>
+              <h2 className="text-lg font-bold text-gray-800">Speaking & Fluency</h2>
+              <p className="text-xs text-gray-500">Word pronunciation + Sentence shadowing</p>
             </div>
           </div>
 
@@ -460,13 +571,40 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
           <div className="flex items-center space-x-4">
             <div className="text-right">
               <p className="text-sm font-medium text-gray-700">
-                Word {currentWordIndex + 1} / {totalWords}
+                {practiceType === 'word' 
+                  ? `Word ${currentWordIndex + 1} / ${totalWords}` 
+                  : `Sentence ${currentSentenceIndex + 1} / ${totalSentences}`
+                }
               </p>
               <p className="text-xs text-green-600">
                 {correctCount} practiced
               </p>
             </div>
           </div>
+        </div>
+        
+        {/* Mode Selector */}
+        <div className="mt-3 flex gap-2">
+          <button
+            onClick={() => handleModeSwitch('word')}
+            className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
+              practiceType === 'word'
+                ? 'bg-indigo-500 text-white shadow-md'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            🔤 Word Practice
+          </button>
+          <button
+            onClick={() => handleModeSwitch('sentence')}
+            className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
+              practiceType === 'sentence'
+                ? 'bg-purple-500 text-white shadow-md'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            📖 Sentence Shadowing
+          </button>
         </div>
       </div>
 
@@ -495,18 +633,36 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
         ) : (
           // Practice Card
           <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
-            {/* Word Display */}
+            {/* Content Display - Word or Sentence */}
             <div className="text-center mb-8">
-              <h3 className="text-5xl font-bold text-gray-800 mb-4">
-                {currentWord.word || currentWord.text || ''}
-              </h3>
-              <p className="text-xl text-gray-600 mb-2">
-                {currentWord.meaning || currentWord.definition_vi || currentWord.definition_en || ''}
-              </p>
-              {(currentWord.pronunciation || currentWord.pronunciation_ipa) && (
-                <p className="text-sm text-gray-500 font-mono">
-                  /{currentWord.pronunciation || currentWord.pronunciation_ipa}/
-                </p>
+              {practiceType === 'word' ? (
+                // Word Practice Mode
+                <>
+                  <h3 className="text-5xl font-bold text-gray-800 mb-4">
+                    {currentWord?.word || currentWord?.text || ''}
+                  </h3>
+                  <p className="text-xl text-gray-600 mb-2">
+                    {currentWord?.meaning || currentWord?.definition_vi || currentWord?.definition_en || ''}
+                  </p>
+                  {(currentWord?.pronunciation || currentWord?.pronunciation_ipa) && (
+                    <p className="text-sm text-gray-500 font-mono">
+                      /{currentWord?.pronunciation || currentWord?.pronunciation_ipa}/
+                    </p>
+                  )}
+                </>
+              ) : (
+                // Sentence Shadowing Mode
+                <>
+                  <div className="mb-4 inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">
+                    📖 Sentence Shadowing
+                  </div>
+                  <p className="text-2xl font-semibold text-gray-800 mb-4 leading-relaxed">
+                    {currentSentence || 'No sentence available'}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Listen to Ms. Nova, then repeat with the same intonation
+                  </p>
+                </>
               )}
             </div>
 

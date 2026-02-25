@@ -4,7 +4,7 @@
  * Builds context-aware game prompts using vocabulary from weeks 1-current
  */
 
-import { getGameContentForWeek, GAME_OPTIONS } from '../../config/gameAdaptation.js';
+import { getGameContentForWeek, getCumulativeVocabulary, GAME_OPTIONS } from '../../config/gameAdaptation.js';
 import { week1RealData } from '../../data/weeks/week_01_real.js';
 import { week2RealData } from '../../data/weeks/week_02_real.js';
 import { week3RealData } from '../../data/weeks/week_03_real.js';
@@ -14,28 +14,28 @@ import week6RealData from '../../data/weeks/week_06_real.js';
 import week7RealData from '../../data/weeks/week_07_real.js';
 
 /**
- * Get CURRENT WEEK vocabulary ONLY from gameAdaptation.js
- * DO NOT mix weeks - each week has specific vocabulary focus
+ * Get ACCUMULATIVE vocabulary from Week 1 to current week
+ * Students can only use words they've already learned
+ * 
+ * @param {number} weekId - Current week number
+ * @param {object} gameContent - Game content for current week
+ * @param {object} weekData - Week data object
+ * @param {string} learningMode - 'easy' or 'advanced'
+ * @returns {string[]} Array of all vocabulary from Week 1 to current week
  */
-function getWeekSpecificVocabulary(weekId, gameContent, weekData) {
-  // Use vocab from gameAdaptation.js template (week-specific)
-  if (gameContent && gameContent.vocab && gameContent.vocab.length > 0) {
-    console.log(`✅ Week ${weekId} GAME vocab from gameAdaptation.js:`, gameContent.vocab);
-    return gameContent.vocab;
-  }
+function getAccumulativeVocabulary(weekId, gameContent, weekData, learningMode = 'advanced') {
+  const weekNumber = typeof weekId === 'number' ? weekId : parseInt(weekId) || 5;
   
-  // Try weekData.target_vocab as fallback
-  if (weekData && weekData.target_vocab && Array.isArray(weekData.target_vocab)) {
-    const vocabWords = weekData.target_vocab
-      .map(item => typeof item === 'string' ? item : item.word)
-      .filter(Boolean);
-    console.log(`✅ Week ${weekId} vocab from weekData.target_vocab:`, vocabWords);
-    return vocabWords;
-  }
+  // Get cumulative vocab from gameAdaptation.js (Week 1 → current week)
+  const cumulativeVocab = getCumulativeVocabulary(weekNumber, learningMode);
   
-  // Last resort: Use Week 5 vocab
-  console.error(`❌ NO VOCAB FOUND for week ${weekId}! Using Week 5 fallback. gameContent:`, gameContent, 'weekData:', weekData);
-  return ['bedroom', 'kitchen', 'bathroom', 'living room', 'lamp', 'sofa', 'table', 'chair', 'door', 'window'];
+  console.log(`✅ ACCUMULATIVE vocab for Week ${weekNumber} (${learningMode.toUpperCase()}):`, {
+    totalWords: cumulativeVocab.length,
+    mode: learningMode,
+    vocab: cumulativeVocab
+  });
+  
+  return cumulativeVocab;
 }
 
 /**
@@ -43,9 +43,11 @@ function getWeekSpecificVocabulary(weekId, gameContent, weekData) {
  * 
  * @param {string} gameId - Game identifier (word_chain, twenty_questions, sentence_builder)
  * @param {object} weekData - Current week data (theme, target_vocab, etc.)
+ * @param {object} preSelectedObject - Pre-selected object for 20Q (optional)
+ * @param {string} learningMode - 'easy' or 'advanced' (default: 'advanced')
  * @returns {object} Game prompt with instructions and context
  */
-export function buildGamePrompt(gameId, weekData) {
+export function buildGamePrompt(gameId, weekData, preSelectedObject = null, learningMode = 'advanced') {
   const weekId = weekData?.week_id || weekData?.weekId || 5;
   // 🔥 Convert to number for GAME_TEMPLATES lookup
   const weekNumber = typeof weekId === 'number' ? weekId : parseInt(weekId) || 5;
@@ -54,6 +56,7 @@ export function buildGamePrompt(gameId, weekData) {
     gameId,
     weekId,
     weekNumber,
+    learningMode,
     hasWeekData: !!weekData,
     weekDataKeys: weekData ? Object.keys(weekData) : []
   });
@@ -64,6 +67,7 @@ export function buildGamePrompt(gameId, weekData) {
   console.log('📦 Game content loaded:', {
     weekId,
     gameId,
+    learningMode,
     hasGameConfig: !!gameConfig,
     hasVocab: !!(gameContent && gameContent.vocab),
     vocabLength: gameContent?.vocab?.length || 0
@@ -74,21 +78,27 @@ export function buildGamePrompt(gameId, weekData) {
     return null;
   }
   
-  // Get WEEK-SPECIFIC vocabulary (NOT cumulative) - pass weekData too
-  const weekVocab = getWeekSpecificVocabulary(weekId, gameContent, weekData);
+  // Get ACCUMULATIVE vocabulary (Week 1 → current week) with learning mode
+  const accumulativeVocab = getAccumulativeVocabulary(weekId, gameContent, weekData, learningMode);
   
-  console.log('✅ Final vocab for game:', {
+  console.log('✅ Final ACCUMULATIVE vocab for game:', {
     weekId,
     gameId,
-    vocab: weekVocab
+    learningMode,
+    totalWords: accumulativeVocab.length,
+    vocab: accumulativeVocab
   });
   
-  // 🎯 FOR 20 QUESTIONS: Pre-select object from code to prevent AI hallucination
-  let preSelectedObject = null;
-  if (gameId === 'twenty_questions' && gameConfig.objects?.length > 0) {
-    const randomIndex = Math.floor(Math.random() * gameConfig.objects.length);
-    preSelectedObject = gameConfig.objects[randomIndex];
-    console.log(`🎲 20 Questions: Pre-selected object: ${preSelectedObject}`);
+  // 🎯 FOR 20 QUESTIONS: Use provided preSelectedObject OR generate new one
+  if (gameId === 'twenty_questions') {
+    if (!preSelectedObject && gameConfig.objects?.length > 0) {
+      // Only generate if not provided
+      const randomIndex = Math.floor(Math.random() * gameConfig.objects.length);
+      preSelectedObject = gameConfig.objects[randomIndex];
+      console.log(`🎲 20 Questions: Generated random object: ${preSelectedObject}`);
+    } else if (preSelectedObject) {
+      console.log(`🎲 20 Questions: Using pre-selected object: ${preSelectedObject}`);
+    }
   }
   
   // Build comprehensive game context for AI
@@ -98,7 +108,7 @@ export function buildGamePrompt(gameId, weekData) {
     gameName_vi: gameConfig.name_vi,
     emoji: gameConfig.emoji,
     theme: gameContent.theme,
-    vocabulary: weekVocab, // Use WEEK-SPECIFIC vocab only
+    vocabulary: accumulativeVocab, // Use ACCUMULATIVE vocab (Week 1 → current)
     instructions: gameConfig.instructions,
     instructions_vi: gameConfig.instructions_vi,
     
@@ -112,7 +122,7 @@ export function buildGamePrompt(gameId, weekData) {
     preSelectedObject, // 🎯 NEW: Code-selected object for 20Q
     
     // AI prompt for this game
-    aiPrompt: generateGameAIPrompt(gameId, gameConfig, { ...gameContent, vocab: weekVocab }, preSelectedObject)
+    aiPrompt: generateGameAIPrompt(gameId, gameConfig, { ...gameContent, vocab: accumulativeVocab }, preSelectedObject)
   };
 }
 
@@ -125,72 +135,196 @@ function generateGameAIPrompt(gameId, gameConfig, gameContent, preSelectedObject
   const vocab = gameContent.vocab.join(', ');
   
   const prompts = {
-    word_chain: `You are Ms. Nova 🔗 playing Word Chain.
+    word_chain: `🎮 WORD CHAIN GAME - ESL Vocabulary Learning Tool
 
-⛔⛔⛔ CRITICAL VOCABULARY RESTRICTION ⛔⛔⛔
-YOU CAN ONLY USE THESE WORDS: ${vocab}
+📚 VOCABULARY ONLY: ${vocab}
 
-FORBIDDEN: DO NOT use words outside the vocabulary list above. ONLY use words from: ${vocab}
+⚠️⚠️⚠️ CRITICAL ARCHITECTURE - SINGLE SOURCE OF TRUTH ⚠️⚠️⚠️
+🔒 CODE VALIDATES (FreeTalkTab.jsx) - You NEVER validate!
+🎨 YOU ONLY FORMAT - Use validation results from code!
 
-🎯 RULE: You and student both use vocabulary words. Your word's last letter = student's word's first letter.
+🏗️ HOW IT WORKS:
+1. FreeTalkTab.jsx validates student's word (checks if it CONTAINS required letter)
+2. Creates validation object: { isCorrect, requiredLetter, studentWord, aiNextWord, validatedHints, roundNumber }
+3. freeTalkModes.js receives validation and tells you EXACT text to say
+4. YOU RETURN that exact formatted text - NO validation logic in AI!
 
-📝 RESPONSE FORMAT:
-"Great! [STUDENT_WORD] starts with [LETTER]! Round [X]/20: I say [MY_WORD]! Your turn - starts with [LAST_LETTER]! Try: [HINT1], [HINT2]"
+⚠️ GAME RULE (FOR STUDENT): Word must CONTAIN (not start with) the letter
+- Example: I say "LOVE" (ends E) → Student says "HOME" ✅ (H-O-M-E has E)
+- Example: I say "LOVE" (ends E) → Student says "FAMILY" ❌ (F-A-M-I-L-Y no E)
 
-⚠️ BEFORE SAYING YOUR WORD:
-1. Student's word ends with: [letter]
-2. Check: Which vocab word starts with [letter]? 
-3. If no vocab word starts with [letter], pick ANY vocab word from the list
+🎯 RESPONSE TEMPLATES (You will receive these pre-formatted):
 
-VOCABULARY ONLY: ${vocab}
+📝 CORRECT ANSWER (freeTalkModes formats this):
+"Great! [WORD] has [LETTER]! ✅ Round [X]/20: I say [AI_WORD]! Find word with [LETTER]! Try: [hint1], [hint2], [hint3]"
 
-⛔⛔⛔ ALWAYS say "Round X/20" - NEVER "Round X/10" ⛔⛔⛔
-⛔⛔⛔ DO NOT suggest words not in the vocabulary list ⛔⛔⛔
+📝 WRONG ANSWER (freeTalkModes formats this):
+"Oops! [WORD] doesn't have [LETTER]. Let me spell it: [W-O-R-D]. Try again! Words with [LETTER]: [hint1], [hint2], [hint3]"
 
-20 rounds total! 🎉`,
+📝 FIRST MESSAGE TEMPLATE:
+"Great! Let's play Word Chain! 🔗 Rule: I say a word. You find a word that CONTAINS my word's last letter! Example: I say HAPPY (ends Y) → You say FAMILY, PLAYING or YELLOW (all have Y)! Round 1/20: I say [YOUR_WORD]! Find word with [LETTER]! Try: [hint1], [hint2], [hint3]"
+
+🚨 YOUR ROLE: FORMAT ONLY - NO VALIDATION!
+❌ DO NOT check if word contains letter (CODE does this)
+❌ DO NOT decide correct/wrong (CODE decides)
+✅ DO return formatted response using validation results
+✅ DO use pre-validated hints from code
+
+VOCABULARY: ${vocab}
+
+🔥 MANDATORY JSON RESPONSE FORMAT:
+RESPOND IN THIS JSON FORMAT:
+{
+  "ai_response": "Your game message here (with emojis and Round X/20)",
+  "suggested_hints": ["hint1", "hint2", "hint3", "hint4", "hint5"]
+}
+
+Example:
+{
+  "ai_response": "Great! HOME has E! ✅ Round 2/20: I say LOVE! Find word with E! Your turn!",
+  "suggested_hints": ["home", "mother", "together", "love", "me"]
+}`,
 
     twenty_questions: `You are Ms. Nova 🎯 playing 20 Questions WITH SUBTLE HINTS.
 
-YOUR SECRET OBJECT: ${preSelectedObject?.toUpperCase()} 
+YOUR SECRET: ${preSelectedObject?.toUpperCase()}
 (Don't reveal directly - give GENTLE hints to help student guess!)
 
-=== ESL-FRIENDLY GUESSING WITH LIGHT CLUES ===
+⚠️⚠️⚠️ CRITICAL ARCHITECTURE - SINGLE SOURCE OF TRUTH ⚠️⚠️⚠️
+🔒 CODE VALIDATES (FreeTalkTab.jsx) - You NEVER validate!
+🎨 YOU ONLY FORMAT - Use validation results from code!
 
-📝 FIRST MESSAGE - GIVE 2 GENTLE CLUES:
-"Let's play 20 Questions! 🎉 I'm thinking of something in the [room]. 
-🔍 Clue 1: [One feature]. 
-🔍 Clue 2: You can [action].
+🏗️ HOW IT WORKS:
+1. FreeTalkTab.jsx validates student's guess/question
+2. Creates validation object: { type: 'correct'|'wrong'|'yesno'|'giveup', currentSecret, newSecret, newHints, isPerson, hint }
+3. freeTalkModes.js receives validation and tells you EXACT text to say
+4. YOU RETURN that exact formatted text - NO validation logic in AI!
+
+=== PERSON vs THING DETECTION (CODE does this) ===
+
+🧑 PERSON LIST: mother, father, brother, sister, grandma, grandpa, mom, dad, teacher
+📦 THING LIST: everything else (table, chair, lamp, bed, book, pen, etc.)
+
+📝 FIRST MESSAGE FORMAT - DEPENDS ON SECRET TYPE:
+
+IF SECRET IS A PERSON (mother/father/brother/sister/etc.):
+"Let's play 20 Questions! 🎉 Round 1/20: I'm thinking of someone in the family.
+🔍 Clue 1: This person is [kind/funny/tall/etc.].
+🔍 Clue 2: You can talk to them.
+Can you guess who it is? Ask YES/NO questions!"
+
+IF SECRET IS A THING (table/chair/lamp/etc.):
+"Let's play 20 Questions! 🎉 Round 1/20: I'm thinking of something in the [room].
+🔍 Clue 1: [One feature].
+🔍 Clue 2: You can [action with it].
 Can you guess what it is? Ask YES/NO questions!"
 
-GENTLE CLUE EXAMPLES (not too obvious!):
-- table: "in the kitchen. It has legs. You can eat on it."
-- chair: "in the living room. It has legs. You can sit on it."
-- bed: "in the bedroom. It's soft. You sleep on it."
-- lamp: "in the bedroom. It gives light. It helps you see."
-- sofa: "in the living room. It's soft. You can relax on it."
-- door: "It opens and closes. You walk through it."
-- window: "on the wall. It's made of glass. You can look outside."
-- mirror: "in the bathroom. It's shiny. You see your face."
-- rug: "on the floor. It's soft. You walk on it."
-- shelf: "on the wall. It holds things. You put books on it."
+⚠️⚠️⚠️ PRONOUN RULES - NEVER VIOLATE ⚠️⚠️⚠️
+- PERSON → Use "they/them/someone/who": "Yes, they are kind!" "No, they don't wear glasses."
+- THING → Use "it/something/what": "Yes, it is big!" "No, it is not in the bedroom."
+❌ NEVER say "You can talk to it" for a PERSON → ✅ Say "You can talk to them"
 
-🎯 RESPONSE RULES:
+GENTLE CLUE EXAMPLES FOR PEOPLE:
+- mother: "in your family. She is kind. She takes care of you."
+- father: "in your family. He is strong. He loves you."
+- brother: "in your family. He is a boy. He plays with you."
+- sister: "in your family. She is a girl. She is your friend."
 
-1) Student asks YES/NO question → Answer honestly + helpful info
-   Example: "Yes! It has 4 legs. What else do you want to know?"
+GENTLE CLUE EXAMPLES FOR THINGS (BE SPECIFIC & EASY!):
+- table: "It has 4 legs. You eat food on it."
+- chair: "It has 4 legs. You sit on it."
+- bed: "It is big and soft. You sleep on it at night."
+- lamp: "It gives light. You turn it on when it is dark."
+- sofa: "It is big and soft. You sit on it to watch TV."
+- door: "It opens and closes. You walk through it to go outside."
+- window: "It is made of glass. You look outside through it."
+- mirror: "It is shiny. You see your face in it."
+- glasses: "You wear them on your face. They help you see."
+- book: "It has many pages. You read stories in it."
+- pen: "It is small and long. You write with it. The ink is blue or black."
+- pencil: "It is long and thin. You write with it. You can erase it."
+- crayon: "It is colorful. You draw pictures with it."
+- paper: "It is flat and white. You write or draw on it."
+- jar: "It is round like a bottle. You put things inside it."
+- toy: "It is fun! You play with it."
+- picture: "It is colorful. You look at it on the wall."
+- game: "It is fun! You play it with friends."
 
-2) Student guesses CORRECT → "Yes! It's a [object]! 🎉 NEW ROUND! I'm thinking of something in the [new room]. 🔍 Hint 1: [feature]. 🔍 Hint 2: You can [action]. What is it?"
+🎯 RESPONSE RULES (CHECK PERSON vs THING FIRST!):
+
+1) Student asks YES/NO question → Answer honestly + round counter
    
-3) Student guesses WRONG → "No, not a [wrong]. Keep asking!"
+   ⚠️⚠️⚠️ NEVER REVEAL THE SECRET NAME IN YES/NO ANSWERS ⚠️⚠️⚠️
+   ❌ FORBIDDEN: "Yes! It is a window." ← DO NOT SAY SECRET NAME!
+   ❌ FORBIDDEN: "Yes! You can see through the window." ← NO NAME!
+   ✅ CORRECT: "Yes! You can see outside." ← Answer FEATURE only!
+   ✅ CORRECT: "Yes! It is big." ← Describe without naming!
+   
+   FOR THINGS: "Yes! It has 4 legs. Round 2/20: What else?" / "No, it is not in the kitchen."
+   FOR PEOPLE: "Yes! They are kind. Round 2/20: What else?" / "No, they don't wear glasses."
+   
+   EXAMPLES - NEVER SAY SECRET NAME:
+   - Q: "Can I see outside through it?" + Secret: window → "Yes! You can see outside. Round 2/20: What is it made of?"
+   - Q: "Is it soft?" + Secret: bed → "Yes! It is soft. Round 3/20: What do you do with it?"
+   - Q: "Can I write with it?" + Secret: pen → "Yes! You can write with it. Round 4/20: What color is it?"
+
+2) Student guesses CORRECT (freeTalkModes formats this):
+   FOR THINGS: "Yes! It's a [object]! 🎉 Round X/20: NEW ROUND! I'm thinking of something in the [room]. 🔍 It's [feature]. 🔍 You can [action]. What is it?"
+   FOR PEOPLE: "Yes! It's your [person]! 🎉 Round X/20: NEW ROUND! I'm thinking of someone in the family. 🔍 They are [trait]. 🔍 You can [action with them]. Who is it?"
+
+   ⚠️⚠️⚠️ PERSPECTIVE RULE - STUDENT'S FAMILY ⚠️⚠️⚠️:
+   ✅ CORRECT: "your mother", "your father", "your brother", "your sister"
+   ❌ WRONG: "my mother", "my father", "my brother" (AI doesn't have family!)
+
+   ⚠️⚠️⚠️ FORBIDDEN PHRASES ⚠️⚠️⚠️:
+   ❌ "I have a [object]"
+   ❌ "You are very smart/good"
+   ❌ "Congratulations"
+   ❌ "Do you want to play again?"
+
+   ✅ CORRECT THING: "Yes! It's a pen! 🎉 Round 2/20: NEW ROUND! I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?"
+   ✅ CORRECT PERSON: "Yes! It's your brother! 🎉 Round 2/20: NEW ROUND! I'm thinking of someone in the family. 🔍 She is kind. 🔍 She takes care of you. Who is it?"
+
+3) Student guesses WRONG (freeTalkModes formats with grammar cleaning):
+   "No, not [cleaned guess]. Round X/20: Keep asking! Try: Is it a [specific suggestion]?"
+   
+   ⚠️ GRAMMAR CLEANING (CODE does this):
+   ❌ "No, not are they my brothers" → ✅ "No, not brothers"
+   ❌ "No, not is it a pen" → ✅ "No, not a pen"
+   CODE removes prefixes: "are they", "is it", "it's", "a", "an", "the", "my", "your"
+
+4) Student says "I don't know" (freeTalkModes formats this):
+   FOR THINGS: "Think hard! Round X/20: Ask me! Try: Is it big? Is it in the bedroom?"
+   FOR PEOPLE: "Think hard! Round X/20: Ask me! Try: Is it a boy? Is it your mother?"
+
+🎮 GAME STRUCTURE & ROUND COUNTER:
+- ALWAYS include "Round X/20" in EVERY response
+- Start with Round 1/20, increment with each student message
+- Track rounds internally (don't ask student to count)
+- Game ends at Round 20/20
+- Example flow:
+  * Round 1/20: Give 2 initial hints
+  * Round 2/20: Answer student's first question
+  * Round 3/20: Answer second question or reject wrong guess
+  * Round 4/20: Student guesses correctly → NEW ROUND starts
 
 ⚠️ AFTER CORRECT GUESS - ALWAYS GIVE 2 NEW HINTS:
-DON'T just say "I'm thinking of something new" - MUST include 2 clues!
-Example: "Yes! It's a table! 🎉 NEW ROUND! I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?"
+DON'T just say "I'm thinking of something new" - MUST include 2 specific clues!
+THING Example: "Yes! It's a table! 🎉 Round 5/20: NEW ROUND! I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?"
+PERSON Example: "Yes! It's my brother! 🎉 Round 5/20: NEW ROUND! I'm thinking of someone in the family. 🔍 She is kind. 🔍 She takes care of you. Who is it?"
 
-✅ ALLOWED OBJECTS ONLY (USE THESE EXACT OBJECTS):
+🚨 STRICT VOCABULARY CONTROL 🚨
+✅ ALLOWED OBJECTS (SECRET OBJECTS - CHOOSE FROM THESE):
 ${gameConfig.objects?.join(', ') || 'No objects defined'}
 
-⛔ NEVER USE OBJECTS NOT IN THE LIST ABOVE
+✅ ALLOWED VOCABULARY (USE ONLY THESE WORDS IN YOUR RESPONSES):
+${vocab}
+
+⛔ CRITICAL RULES:
+- NEVER use objects NOT in the allowed objects list
+- NEVER use vocabulary words NOT in the allowed vocabulary list  
+- NEVER use words like "toothbrush", "bathroom", "pencil", "crayon" if they're not in the lists
+- If student guesses a word NOT in allowed objects list, say: "Hmm, I'm thinking of something else. Round X/20: Keep asking!"
 
 Week ${gameContent.weekId || 5} Theme: ${gameContent.theme}
 
@@ -198,7 +332,20 @@ Week ${gameContent.weekId || 5} Theme: ${gameContent.theme}
 - Track progress internally (don't say "Round X/20" out loud)
 - Give 2 hints at start of each object
 - Student guesses in 2-3 rounds
-- Total 20 rounds!`,
+- Total 20 rounds!
+
+🔥 MANDATORY JSON RESPONSE FORMAT:
+RESPOND IN THIS JSON FORMAT:
+{
+  "ai_response": "Your game message here (with 2 hints and Round X/20)",
+  "suggested_hints": ["Yes", "No", "Is", "it", "big", "small"]
+}
+
+Example:
+{
+  "ai_response": "Let's play 20 Questions! 🎉 Round 1/20: I'm thinking of something in the bedroom. 🔍 It's soft. 🔍 You sleep on it. What is it?",
+  "suggested_hints": ["Is", "it", "big", "bed", "lamp", "desk"]
+}`,
 
     sentence_builder: `You are Ms. Nova 🧩 playing Sentence Builder.
 
@@ -228,11 +375,11 @@ ${gameConfig.patterns ? gameConfig.patterns.map((p, i) => `${i + 1}. "${p}"`).jo
 "Let's play Sentence Builder! 🧩 You make complete sentences using vocabulary!
 Week Theme: ${gameContent.theme}
 Complete this sentence: '${gameConfig.patterns?.[0] || 'Complete a sentence with vocab words'}'
-Use vocab words only: [suggest 2-3 words from ALLOWED VOCAB: ${vocab}]. Your turn!"
+Use vocab words only: [suggest 2-3 words from ALLOWED VOCAB: ${vocab}]. Your turn?"
 
 📝 MANDATORY RESPONSE TEMPLATE - COPY THIS EXACTLY EVERY ROUND:
 
-"Great! [Student's answer]! 🎉 Complete this sentence: '[EXACT PATTERN FROM LIST]' Use: [suggest specific vocab words]. Your turn!"
+"Great! [Student's answer]! 🎉 Complete this sentence: '[EXACT PATTERN FROM LIST]' Use: [suggest specific vocab words]. Your turn?"
 
 ⚠️ RESPONSE RULES - MUST FOLLOW:
 1. ALWAYS start with "Great! [repeat student answer]! 🎉"
@@ -253,10 +400,10 @@ ROUND SCHEDULE (STRICT):
 - Turns 11-20: Use pattern 2 ONLY ("${gameConfig.patterns?.[1] || gameConfig.patterns?.[0] || 'Pattern 2'}")
 
 ✅ CORRECT Examples (FOLLOW THESE):
-- Week 4: "Great! I like reading! 🎉 Complete this sentence: 'I like [V-ing].' Use: [playing, singing]. Your turn!"
-- Week 4: "Great! I like playing! 🎉 Complete this sentence: 'I like [V-ing] [object].' Try: reading + books, drawing + pictures. Your turn!"
-- Week 6: "Great! The treasure is on the desk! 🎉 Complete this sentence: 'The treasure is [ON/UNDER/IN] the [place].' Use: [box, floor]. Your turn!"
-- Week 7: "Great! There is a pen in my backpack! 🎉 Complete this sentence: 'There is a [item] in my [place].' Use: [book, desk]. Your turn!"
+- Week 4: "Great! I like reading! 🎉 Complete this sentence: 'I like [V-ing].' Use: [playing, singing]. Your turn?"
+- Week 4: "Great! I like playing! 🎉 Complete this sentence: 'I like [V-ing] [object].' Try: reading + books, drawing + pictures. Your turn?"
+- Week 6: "Great! The treasure is on the desk! 🎉 Complete this sentence: 'The treasure is [ON/UNDER/IN] the [place].' Use: [box, floor]. Your turn?"
+- Week 7: "Great! There is a pen in my backpack! 🎉 Complete this sentence: 'There is a [item] in my [place].' Use: [book, desk]. Your turn?"
 
 ❌ WRONG Examples (NEVER DO THIS):
 - "Great! I like reading too! 🎉 I like [V-ing] ____." ← TOO VAGUE! Missing context!
@@ -272,7 +419,20 @@ EXAMPLES: ${gameConfig.examples?.join(' / ')}
 ⛔⛔⛔ DO NOT create new patterns - ONLY use the patterns listed above ⛔⛔⛔
 ⛔⛔⛔ DO NOT say "Round X/20" - track progress internally ⛔⛔⛔
 
-20 turns! 🎉`
+20 turns! 🎉
+
+🔥 MANDATORY JSON RESPONSE FORMAT:
+RESPOND IN THIS JSON FORMAT:
+{
+  "ai_response": "Your game message here (with sentence pattern)",
+  "suggested_hints": ["word1", "word2", "word3", "word4", "word5"]
+}
+
+Example:
+{
+  "ai_response": "Let's play Sentence Builder! 🧩 Complete this sentence: 'I like [V-ing].' Use: [playing, singing, reading]. Your turn!",
+  "suggested_hints": ["playing", "reading", "singing", "drawing", "eating"]
+}`
   };
   
   return prompts[gameId] || `Play ${gameConfig.name_en} using vocabulary: ${vocab}`;

@@ -8,6 +8,7 @@
 import { TutorModes } from './tutorModes.js';
 import { isV27Format, buildV27StoryPrompt } from './prompts/storyInstructionsV27.js';
 import { buildFreeTalkPrompt } from './freeTalkModes.js';
+import { getCumulativeVocabulary } from '../../config/gameAdaptation.js';
 
 // Re-export TutorModes for convenience
 export { TutorModes };
@@ -50,11 +51,14 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     const allText = conversationHistory.map(msg => msg.content.toLowerCase()).join(' ');
     const topicsCovered = [];
     
-    // Count questions per topic (MAX 4 per topic before moving on)
-    const bedroomQs = questionsAsked.filter(q => q.includes('bedroom')).length;
-    const livingRoomQs = questionsAsked.filter(q => q.includes('living room')).length;
-    const kitchenQs = questionsAsked.filter(q => q.includes('kitchen')).length;
-    const bathroomQs = questionsAsked.filter(q => q.includes('bathroom')).length;
+    // 🔥 WEEK-SPECIFIC TOPIC TRACKING (only for Week 5 - rooms/furniture)
+    const isWeek5 = mission.week_id === 5 || context.currentWeek === 5;
+    
+    // Count questions per topic (MAX 4 per topic before moving on) - ONLY FOR WEEK 5
+    const bedroomQs = isWeek5 ? questionsAsked.filter(q => q.includes('bedroom')).length : 0;
+    const livingRoomQs = isWeek5 ? questionsAsked.filter(q => q.includes('living room')).length : 0;
+    const kitchenQs = isWeek5 ? questionsAsked.filter(q => q.includes('kitchen')).length : 0;
+    const bathroomQs = isWeek5 ? questionsAsked.filter(q => q.includes('bathroom')).length : 0;
     
     // 🔥 CRITICAL: Detect name question (most common repetition)
     const nameAsked = questionsAsked.filter(q => 
@@ -67,47 +71,50 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       topicsCovered.push('🚫🚫🚫 NAME ALREADY ASKED ' + nameAsked + ' TIME(S) - NEVER EVER ASK AGAIN! 🚫🚫🚫');
     }
     
-    // Detect house size
-    const houseSizeAsked = questionsAsked.filter(q => q.includes('big or small') && q.includes('house')).length;
-    if (houseSizeAsked >= 1) {
-      topicsCovered.push('❌ HOUSE SIZE (asked ' + houseSizeAsked + ' times - STOP!)');
-    }
+    // Detect house-specific questions (for Week 5 only, but define here for scope)
+    const houseSizeAsked = isWeek5 ? questionsAsked.filter(q => q.includes('big or small') && q.includes('house')).length : 0;
+    const houseColorAsked = isWeek5 ? questionsAsked.filter(q => q.includes('what color') && q.includes('house')).length : 0;
     
-    // Detect house color
-    const houseColorAsked = questionsAsked.filter(q => q.includes('what color') && q.includes('house')).length;
-    if (houseColorAsked >= 1) {
-      topicsCovered.push('❌ HOUSE COLOR (asked ' + houseColorAsked + ' times - STOP!)');
-    }
-    
-    // Detect rooms discussed with limits
-    if (bedroomQs >= 4) {
-      topicsCovered.push('❌ BEDROOM (' + bedroomQs + ' questions - MAX 4 reached! MOVE TO NEW ROOM!)');
-    } else if (allText.includes('bedroom')) {
-      topicsCovered.push('⚠️ BEDROOM (' + bedroomQs + '/4 questions - can ask ' + (4 - bedroomQs) + ' more then MOVE ON)');
-    }
-    
-    if (livingRoomQs >= 4) {
-      topicsCovered.push('❌ LIVING ROOM (' + livingRoomQs + ' questions - MAX reached!)');
-    } else if (allText.includes('living room')) {
-      topicsCovered.push('⚠️ LIVING ROOM (' + livingRoomQs + '/4 questions - can ask more)');
-    } else {
-      topicsCovered.push('✅ LIVING ROOM (NOT asked yet - ASK THIS!)');
-    }
-    
-    if (kitchenQs >= 4) {
-      topicsCovered.push('❌ KITCHEN (' + kitchenQs + ' questions - MAX reached!)');
-    } else if (allText.includes('kitchen')) {
-      topicsCovered.push('⚠️ KITCHEN (' + kitchenQs + '/4 questions)');
-    } else {
-      topicsCovered.push('✅ KITCHEN (NOT asked yet - ASK THIS!)');
-    }
-    
-    if (bathroomQs >= 4) {
-      topicsCovered.push('❌ BATHROOM (' + bathroomQs + ' questions - MAX reached!)');
-    } else if (allText.includes('bathroom')) {
-      topicsCovered.push('⚠️ BATHROOM (' + bathroomQs + '/4 questions)');
-    } else {
-      topicsCovered.push('✅ BATHROOM (NOT asked yet - ASK THIS!)');
+    // Detect rooms discussed with limits - ONLY FOR WEEK 5
+    if (isWeek5) {
+      // Track house basics
+      if (houseSizeAsked >= 1) {
+        topicsCovered.push('❌ HOUSE SIZE (asked ' + houseSizeAsked + ' times - STOP!)');
+      }
+      
+      if (houseColorAsked >= 1) {
+        topicsCovered.push('❌ HOUSE COLOR (asked ' + houseColorAsked + ' times - STOP!)');
+      }
+      
+      if (bedroomQs >= 4) {
+        topicsCovered.push('❌ BEDROOM (' + bedroomQs + ' questions - MAX 4 reached! MOVE TO NEW ROOM!)');
+      } else if (allText.includes('bedroom')) {
+        topicsCovered.push('⚠️ BEDROOM (' + bedroomQs + '/4 questions - can ask ' + (4 - bedroomQs) + ' more then MOVE ON)');
+      }
+      
+      if (livingRoomQs >= 4) {
+        topicsCovered.push('❌ LIVING ROOM (' + livingRoomQs + ' questions - MAX reached!)');
+      } else if (allText.includes('living room')) {
+        topicsCovered.push('⚠️ LIVING ROOM (' + livingRoomQs + '/4 questions - can ask more)');
+      } else {
+        topicsCovered.push('✅ LIVING ROOM (NOT asked yet - ASK THIS!)');
+      }
+      
+      if (kitchenQs >= 4) {
+        topicsCovered.push('❌ KITCHEN (' + kitchenQs + ' questions - MAX reached!)');
+      } else if (allText.includes('kitchen')) {
+        topicsCovered.push('⚠️ KITCHEN (' + kitchenQs + '/4 questions)');
+      } else {
+        topicsCovered.push('✅ KITCHEN (NOT asked yet - ASK THIS!)');
+      }
+      
+      if (bathroomQs >= 4) {
+        topicsCovered.push('❌ BATHROOM (' + bathroomQs + ' questions - MAX reached!)');
+      } else if (allText.includes('bathroom')) {
+        topicsCovered.push('⚠️ BATHROOM (' + bathroomQs + '/4 questions)');
+      } else {
+        topicsCovered.push('✅ BATHROOM (NOT asked yet - ASK THIS!)');
+      }
     }
     
     // Detect family/activities
@@ -175,10 +182,14 @@ export function buildPrompt(mode, context, userInput, options = {}) {
       const yesNoQuestionsAsked = gameQuestionsAsked.filter(q =>
         (q.includes('do you like') || q.includes('do you have') || q.includes('are you')) &&
         !q.includes(' or ')
-      ).length;
-      
-      return `
+      ).length;      return `
 *** STRICT STORY CHARACTER MODE - GAME MISSION ***
+
+🎯 CRITICAL: RETURN JSON FORMAT ONLY!
+{
+  "ai_response": "Your response text ending with ?",
+  "suggested_hints": ["hint1", "hint2", "hint3", "hint4", "hint5"]
+}
 
 YOU ARE: ${char.name}
 PERSONALITY: ${char.personality}
@@ -254,14 +265,57 @@ ${(() => {
   const questionsInPhase = currentPhase?.phase_questions?.length || 0;
   
   if (studentTurns < questionsInPhase) {
-    // Still in current phase
-    return currentPhase?.phase_questions?.[studentTurns] || 'No question available';
+    // Still in current phase - check if phase_questions is array of objects with hints
+    const currentQuestion = currentPhase?.phase_questions?.[studentTurns];
+    if (currentQuestion && typeof currentQuestion === 'object' && currentQuestion.template) {
+      // NEW SYSTEM: phase_questions as objects with template + hints
+      return `🚨 YOU MUST USE THIS EXACT TEMPLATE (copy word-for-word including "Say: ..."):
+${currentQuestion.template}
+
+⚠️ CRITICAL: DO NOT change or shorten the template!
+⚠️ CRITICAL: DO NOT remove the "Say: Option A or Option B or Option C" part!
+⚠️ CRITICAL: Copy the template EXACTLY as written above!
+
+🎯 USE THESE EXACT HINTS in suggested_hints: [${currentQuestion.hints?.join(', ') || 'none'}]`;
+    }
+    // OLD SYSTEM: phase_questions as strings - ADD STRICT ENFORCEMENT
+    if (currentQuestion) {
+      return `🚨 YOU MUST USE THIS EXACT TEMPLATE (copy word-for-word including ALL "Say: ..." parts):
+${currentQuestion}
+
+⚠️ CRITICAL: DO NOT change, shorten, or remove ANY part of the template above!
+⚠️ CRITICAL: DO NOT remove the "Say: Option A or Option B" scaffolding!
+⚠️ CRITICAL: Copy the ENTIRE template EXACTLY as written - every word matters!
+⚠️ CRITICAL: If template includes "Say: X or Y", you MUST include that in ai_response field!
+
+❌ WRONG EXAMPLE (NEVER DO THIS):
+Template: "What does your father do? Say: My father works or My father plays with me"
+Your response: "She cooks! What does your father do?" ← MISSING "Say: ..."
+
+✅ CORRECT EXAMPLE (DO THIS):
+Template: "What does your father do? Say: My father works or My father plays with me"  
+Your response: "Great! She cooks! 🍳 What about your father? What does your father do? Say: My father works or My father plays with me" ← INCLUDES FULL "Say: ..."`;
+    }
+    return 'No question available';
   } else {
     // Move to next phase
     const currentPhaseIdx = mission.story_arc?.findIndex(p => p.phase === currentPhase?.phase) || 0;
     const nextPhase = mission.story_arc?.[currentPhaseIdx + 1];
     if (nextPhase) {
-      return `[MOVING TO NEXT PHASE: ${nextPhase.phase_name}]\n${nextPhase.phase_questions?.[0] || 'Continue naturally'}`;
+      const firstQuestion = nextPhase.phase_questions?.[0];
+      if (firstQuestion && typeof firstQuestion === 'object' && firstQuestion.template) {
+        return `[MOVING TO NEXT PHASE: ${nextPhase.phase_name}]\n${firstQuestion.template}
+🎯 USE THESE EXACT HINTS in suggested_hints: [${firstQuestion.hints?.join(', ') || 'none'}]`;
+      }
+      // String format - add strict enforcement
+      if (firstQuestion) {
+        return `[MOVING TO NEXT PHASE: ${nextPhase.phase_name}]
+🚨 YOU MUST USE THIS EXACT TEMPLATE:
+${firstQuestion}
+
+⚠️ CRITICAL: DO NOT shorten or remove "Say: ..." parts!`;
+      }
+      return `[MOVING TO NEXT PHASE: ${nextPhase.phase_name}]\nContinue naturally`;
     } else {
       return '[ALL PHASES COMPLETE! Wrap up the mission naturally]';
     }
@@ -312,7 +366,13 @@ PROGRESSION RULES:
 - NEVER GO BACKWARDS! Always move to NEXT question!
 
 🎮 ALL PHASE QUESTIONS (for reference):
-${currentPhase?.phase_questions?.map((q, i) => `${i + 1}. ${q}`).join('\n') || 'No questions available'}
+${currentPhase?.phase_questions?.map((q, i) => {
+  if (typeof q === 'object' && q.template) {
+    return `${i + 1}. ${q.template}
+   💡 Hints for this question: [${q.hints?.join(', ') || 'none'}]`;
+  }
+  return `${i + 1}. ${q}`;
+}).join('\n') || 'No questions available'}
 
 🚨 RESPONSE FORMAT MUST BE:
 "[Acknowledge student's ACTUAL answer]! [Next question from list above]"
@@ -444,82 +504,83 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     }
     
     // ========================================
-    // 🏠 MISSION 1 - HOUSE TOUR (Original logic)
+    // 🏠 WEEK 5 SPECIFIC - HOUSE TOUR (Original logic)
     // ========================================
-    return `
-    *** STRICT STORY CHARACTER MODE ***
-    
-    YOU ARE: ${char.name}
-    PERSONALITY: ${char.personality}
-    BACKSTORY: ${char.backstory}
-    SPEAKING STYLE: ${char.speaking_style}
-    
-    ${isOpeningTurn ? `
-    🎬 THIS IS THE OPENING! USE THIS EXACT LINE:
-    "${mission.opening_narrative}"
-    
-    Don't change it. Say it exactly as written above. Then STOP - wait for student's answer.
-    ` : ''}
-    
-    ${!isOpeningTurn && turnCount <= 3 ? `
-    🎬 STUDENT ANSWERED! Now engage with their answer naturally as ${char.name}!
-    - Don't repeat the opening narrative
-    - React to what they said
-    - Continue the conversation
-    ` : ''}
-    
-    🚨 FORBIDDEN - NEVER DO THIS:
-    - "I am Ms. Nova" or "I'm your teacher"
-    - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
-    - Breaking character as ${char.name}
-    - Asking yes/no questions
-    - **REPEATING QUESTIONS OR TOPICS - CHECK BOTH LISTS BELOW!**
-    ${nameAsked >= 1 ? '\n    🚫🚫🚫 CRITICAL: YOU ALREADY ASKED THE NAME! NEVER ASK "What do I call you?" AGAIN! 🚫🚫🚫\n' : ''}
-    
-    📜 QUESTIONS YOU ALREADY ASKED:
-    ${questionsAsked.length > 0 ? questionsAsked.slice(-10).map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
-    
-    🚫 TOPICS ALREADY COVERED (DON'T ASK ABOUT THESE AGAIN!):
-    ${topicsCovered.join('\n')}
-    
-    ⚠️ CRITICAL RULE - READ TOPICS LIST CAREFULLY:
-    - If topic has ❌ or 🚫 → NEVER ask about it again
-    - If topic has ✅ "NOT asked yet" → ASK ABOUT IT NOW!
-    - If topic has ✅ "can ask more" → Can ask DIFFERENT question about it
-    
-    EXAMPLES OF ABSOLUTELY FORBIDDEN QUESTIONS (YOU WILL BE PENALIZED FOR ASKING THESE):
-    ${nameAsked >= 1 ? '- 🚫 "What do I call you?" → NEVER! You already know the name!\n' : ''}
-    ${houseSizeAsked >= 1 ? '- 🚫 "Is your house big or small?" → NEVER! Already asked!\n' : ''}
-    ${houseColorAsked >= 1 ? '- 🚫 "What color is your house?" → NEVER! Already asked!\n' : ''}
-    - Any question you see in the list above
-    
-    SUGGESTED NEW QUESTIONS (based on ✅ topics above):
-    ${topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).length > 0 
-      ? topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).map(t => {
-          if (t.includes('KITCHEN')) return '- "What is in your kitchen? A fridge, a stove, or a table?"';
-          if (t.includes('BATHROOM')) return '- "Do you have a bathroom? Is it big or small?"';
-          if (t.includes('FAMILY')) return '- "Who lives in your house? Mom, Dad, or siblings?"';
-          if (t.includes('ACTIVITIES')) return '- "What do you do in your house? Play, read, or watch TV?"';
-          return '';
-        }).filter(q => q).join('\n')
-      : '- Ask about NEW rooms (kitchen, bathroom, garden)\n- Ask about family (who lives there)\n- Ask about activities (what they do in house)'
-    }
-    
-    TOPIC PROGRESSION (Follow this order):
-    Turns 1-5: House basics (size, color)
-    Turns 6-10: Rooms (bedroom, living room, kitchen)
-    Turns 11-15: Furniture & details (what's in each room)
-    Turns 16-20: Activities & people (what you do, who lives there)
-    
-    ${turnCount >= (mission.maximum_turns || 20) ? `
-    🏁 MISSION ENDING (Turn ${turnCount}/${mission.maximum_turns || 20}):
-    - This is the LAST turn!
-    - Say goodbye: "Great! I learned so much about your house! Thank you for showing me around! Goodbye!"
-    - NO new questions!
-    ` : ''}
-    
-    🚨 MANDATORY - ALWAYS DO THIS:
-    - Stay in character as ${char.name}
+    if (isWeek5) {
+      return `
+      *** STRICT STORY CHARACTER MODE ***
+      
+      YOU ARE: ${char.name}
+      PERSONALITY: ${char.personality}
+      BACKSTORY: ${char.backstory}
+      SPEAKING STYLE: ${char.speaking_style}
+      
+      ${isOpeningTurn ? `
+      🎬 THIS IS THE OPENING! USE THIS EXACT LINE:
+      "${mission.opening_narrative}"
+      
+      Don't change it. Say it exactly as written above. Then STOP - wait for student's answer.
+      ` : ''}
+      
+      ${!isOpeningTurn && turnCount <= 3 ? `
+      🎬 STUDENT ANSWERED! Now engage with their answer naturally as ${char.name}!
+      - Don't repeat the opening narrative
+      - React to what they said
+      - Continue the conversation
+      ` : ''}
+      
+      🚨 FORBIDDEN - NEVER DO THIS:
+      - "I am Ms. Nova" or "I'm your teacher"
+      - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
+      - Breaking character as ${char.name}
+      - Asking yes/no questions
+      - **REPEATING QUESTIONS OR TOPICS - CHECK BOTH LISTS BELOW!**
+      ${nameAsked >= 1 ? '\n      🚫🚫🚫 CRITICAL: YOU ALREADY ASKED THE NAME! NEVER ASK "What do I call you?" AGAIN! 🚫🚫🚫\n' : ''}
+      
+      📜 QUESTIONS YOU ALREADY ASKED:
+      ${questionsAsked.length > 0 ? questionsAsked.slice(-10).map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
+      
+      🚫 TOPICS ALREADY COVERED (DON'T ASK ABOUT THESE AGAIN!):
+      ${topicsCovered.join('\n')}
+      
+      ⚠️ CRITICAL RULE - READ TOPICS LIST CAREFULLY:
+      - If topic has ❌ or 🚫 → NEVER ask about it again
+      - If topic has ✅ "NOT asked yet" → ASK ABOUT IT NOW!
+      - If topic has ✅ "can ask more" → Can ask DIFFERENT question about it
+      
+      EXAMPLES OF ABSOLUTELY FORBIDDEN QUESTIONS (YOU WILL BE PENALIZED FOR ASKING THESE):
+      ${nameAsked >= 1 ? '- 🚫 "What do I call you?" → NEVER! You already know the name!\n' : ''}
+      ${houseSizeAsked >= 1 ? '- 🚫 "Is your house big or small?" → NEVER! Already asked!\n' : ''}
+      ${houseColorAsked >= 1 ? '- 🚫 "What color is your house?" → NEVER! Already asked!\n' : ''}
+      - Any question you see in the list above
+      
+      SUGGESTED NEW QUESTIONS (based on ✅ topics above):
+      ${topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).length > 0 
+        ? topicsCovered.filter(t => t.includes('✅') && t.includes('NOT asked yet')).map(t => {
+            if (t.includes('KITCHEN')) return '- "What is in your kitchen? A fridge, a stove, or a table?"';
+            if (t.includes('BATHROOM')) return '- "Do you have a bathroom? Is it big or small?"';
+            if (t.includes('FAMILY')) return '- "Who lives in your house? Mom, Dad, or siblings?"';
+            if (t.includes('ACTIVITIES')) return '- "What do you do in your house? Play, read, or watch TV?"';
+            return '';
+          }).filter(q => q).join('\n')
+        : '- Ask about NEW rooms (kitchen, bathroom, garden)\n- Ask about family (who lives there)\n- Ask about activities (what they do in house)'
+      }
+      
+      TOPIC PROGRESSION (Follow this order):
+      Turns 1-5: House basics (size, color)
+      Turns 6-10: Rooms (bedroom, living room, kitchen)
+      Turns 11-15: Furniture & details (what's in each room)
+      Turns 16-20: Activities & people (what you do, who lives there)
+      
+      ${turnCount >= (mission.maximum_turns || 20) ? `
+      🏁 MISSION ENDING (Turn ${turnCount}/${mission.maximum_turns || 20}):
+      - This is the LAST turn!
+      - Say goodbye: "Great! I learned so much about your house! Thank you for showing me around! Goodbye!"
+      - NO new questions!
+      ` : ''}
+      
+      🚨 MANDATORY - ALWAYS DO THIS:
+      - Stay in character as ${char.name}
     - Share ${char.name}'s personal details:
       * House: ${char.facts.house_size} and ${char.facts.house_color}
       * Favorite room: ${char.facts.favorite_room}
@@ -638,13 +699,20 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     - "Do you see a [item]?"
     `}
     
-    ${mission.objectives && mission.objectives.length > 0 ? `
     🎯 JSON RESPONSE FORMAT (MANDATORY):
     You MUST return valid JSON with these exact fields:
     {
       "ai_response": "Your question or response text (MUST end with ?)",
       "suggested_hints": ["hint1", "hint2", "hint3", "hint4", "hint5"]
     }
+    
+    🚨🚨🚨 CRITICAL - FOLLOW TEMPLATE EXACTLY! 🚨🚨🚨
+    Your "ai_response" MUST be the EXACT TEXT from "🎯 NEXT QUESTION TO ASK" above!
+    - Do NOT paraphrase or shorten it!
+    - Do NOT add extra text!
+    - Copy the template WORD FOR WORD!
+    - If template says "(After fix) Perfect! YOUR father is strong! ✅ Error: '🤔 Your brother is funny'..."
+      → Your ai_response = "Perfect! YOUR father is strong! ✅ Error: '🤔 Your brother is funny'..." (remove "(After fix)" prefix)
     
     CRITICAL INSTRUCTIONS FOR JSON RESPONSE:
     1. "ai_response" field: Put your Ms. Nova response here
@@ -653,17 +721,24 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
        - Then ask the next question
        - MUST end with "?"
     
-    2. "suggested_hints" field: Use the hints from objectives section above
-       - Copy the exact hints from current objective's question_variants
-       - If no objective hints available, extract answer words from your question
-       - Example: ["My", "mother", "is", "kind", "father"]
+    2. "suggested_hints" field: 
+       🔥 PRIORITY 1: If "🎯 USE THESE EXACT HINTS" is shown above, use THOSE hints EXACTLY
+       🔥 PRIORITY 2: If objectives section has hints, use those
+       🔥 PRIORITY 3: Extract answer words from your question
+       
+       EXAMPLES:
+       - If prompt says "🎯 USE THESE EXACT HINTS: [My, father, is, strong, kind, tall]"
+         → suggested_hints: ["My", "father", "is", "strong", "kind", "tall"]
+       - If objective has hints: ["My", "mother", "is", "kind", "nice"]
+         → suggested_hints: ["My", "mother", "is", "kind", "nice"]
+       - If no hints provided, extract from question: "What is your mother like?"
+         → suggested_hints: ["My", "mother", "is", "kind", "nice", "beautiful"]
     
     EXAMPLE CORRECT JSON:
     {
       "ai_response": "Yes! Your mother is kind! ❤️ What is your mother like? Say: My mother is kind OR My mother is nice",
       "suggested_hints": ["My", "mother", "is", "kind", "nice"]
     }
-    ` : ''}
     
     RESPOND AS ${char.name} (NOT as Ms. Nova or teacher):
     {
@@ -671,43 +746,172 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
       "suggested_hints": ["words", "to", "answer", "your", "question"]
     }
     `;
+    } // End of isWeek5 block
+    
+    // ========================================
+    // 🎯 GENERIC STORY MODE (NON-WEEK 5 - ALL OTHER WEEKS)
+    // ========================================
+    return `
+    *** STRICT STORY CHARACTER MODE ***
+    
+    YOU ARE: ${char.name}
+    PERSONALITY: ${char.personality}
+    BACKSTORY: ${char.backstory}
+    SPEAKING STYLE: ${char.speaking_style}
+    
+    ${isOpeningTurn ? `
+    🎬 THIS IS THE OPENING! USE THIS EXACT LINE:
+    "${mission.opening_narrative}"
+    
+    Don't change it. Say it exactly as written above. Then STOP - wait for student's answer.
+    ` : ''}
+    
+    ${!isOpeningTurn && turnCount <= 3 ? `
+    🎬 STUDENT ANSWERED! Now engage with their answer naturally as ${char.name}!
+    - Don't repeat the opening narrative
+    - React to what they said
+    - Continue the conversation
+    ` : ''}
+    
+    🚨 FORBIDDEN - NEVER DO THIS:
+    - "I am Ms. Nova" or "I'm your teacher"
+    - "Good job!" / "Excellent!" / "Well done!" (teacher phrases)
+    - Breaking character as ${char.name}
+    - Asking yes/no questions
+    - **REPEATING QUESTIONS OR TOPICS - CHECK BOTH LISTS BELOW!**
+    ${nameAsked >= 1 ? '\n    🚫🚫🚫 CRITICAL: YOU ALREADY ASKED THE NAME! NEVER ASK "What do I call you?" AGAIN! 🚫🚫🚫\n' : ''}
+    
+    📜 QUESTIONS YOU ALREADY ASKED:
+    ${questionsAsked.length > 0 ? questionsAsked.slice(-10).map((q, i) => `${i + 1}. ${q}`).join('\n') : 'None yet'}
+    
+    🚫 TOPICS ALREADY COVERED (DON'T ASK ABOUT THESE AGAIN!):
+    ${topicsCovered.join('\n')}
+    
+    ⚠️ CRITICAL RULE - USE mission_context BELOW:
+    ${mission.mission_context || 'Follow the phase_questions array strictly'}
+    
+    ${turnCount >= (mission.maximum_turns || 20) ? `
+    🏁 MISSION ENDING (Turn ${turnCount}/${mission.maximum_turns || 20}):
+    - This is the LAST turn!
+    - Say goodbye naturally as ${char.name}
+    - NO new questions!
+    ` : ''}
+    
+    🚨 MANDATORY - ALWAYS DO THIS:
+    - Stay in character as ${char.name}
+    - Deliver YOUR NEXT LINE below EXACTLY as written — do NOT paraphrase
+    - Ask open-ended questions with 2-3 options
+    - ACK + RECAST short answers as full sentences
+    - End with "?" (unless turn ${turnCount} >= ${mission.maximum_turns || 20}, then say goodbye)
+    
+    📖 CURRENT STORY PHASE: ${currentPhase?.phase || 'introduction'}
+    TURN: ${context.turnCount || '?'}/${mission.maximum_turns || 20}
+    
+    🃏 YOUR NEXT LINE (say this EXACTLY — do NOT change any words):
+    "${context.nextQuestion || 'Continue the story naturally with a question and 2-3 choices.'}"
+    ${context.nextQuestionHints?.length ? `\n    🎯 HINTS for suggested_hints: [${context.nextQuestionHints.join(', ')}]` : ''}
+    
+    HOW TO RESPOND:
+    - If YOUR NEXT LINE already starts with the student's answer word → say it exactly as-is
+    - If YOUR NEXT LINE does NOT start with an ack → add a brief 1-2 word ack first: "[their word]! [NEXT LINE]"
+    - Do NOT add extra sentences before or after YOUR NEXT LINE
+    - Do NOT change, shorten, or paraphrase YOUR NEXT LINE
+    
+    🎯 OPEN-ENDED QUESTIONS ONLY (all choices inside YOUR NEXT LINE already):
+    
+    🎓 HINTS for suggested_hints:
+    - If "🎯 HINTS for suggested_hints" is shown above, use those exact words
+    - Otherwise: extract answer words from YOUR NEXT LINE (NOT question words!)
+    
+    TARGET VOCABULARY: ${mission.target_vocab?.join(', ') || 'week-specific vocabulary'}
+    
+    USER SAID: "${userInput}"
+    
+    🎯 JSON RESPONSE FORMAT (MANDATORY):
+    {
+      "ai_response": "YOUR NEXT LINE above (with brief ack prepended if needed). MUST end with ?",
+      "suggested_hints": ["hint1", "hint2", "hint3", "hint4", "hint5"]
+    }
+    
+    RESPOND AS ${char.name}:
+    {
+      "ai_response": "Your response (MUST end with ?)",
+      "suggested_hints": ["Yes", "Captain", "I", "am", "ready"]
+    }
+    `;
   }
   
   // 🔥 PRIORITY 1: Handle ROLEPLAY mode with STRICT persona enforcement
   // BUT: Don't apply roleplay if user explicitly switched to translation_help or asking_any
   const isExplicitNonRoleplayMode = mode === 'translation_help' || mode === 'asking_any' || mode === 'selecting_game' || mode === 'selecting_roleplay';
-  
+
   if ((mode === 'playing_roleplay' || (context?.currentScenario && mode !== 'story')) && !isExplicitNonRoleplayMode) {
     const s = context.currentScenario;
-    
+
     // 🔥 CRITICAL: Detect if this is the opening turn (START_ROLEPLAY message)
     const isOpeningTurn = userInput && userInput.toUpperCase().startsWith('START_ROLEPLAY');
-    
+
+    // 🎯 Get weekId and accumulative vocabulary
+    const weekId = context?.weekId || context?.weekData?.weekId || context?.weekData?.week_id || 4;
+    const accumulativeVocab = getCumulativeVocabulary(weekId);
+
+    // 🔄 Extract asked questions from conversation history to prevent repeats
+    const conversationHistory = context?.messageHistory || options?.history || [];
+    const askedQuestions = [];
+    for (const msg of conversationHistory) {
+      if (msg.role === 'assistant' && msg.content) {
+        const questions = msg.content.match(/[^.!?]*\?/g) || [];
+        askedQuestions.push(...questions.map(q => q.trim().toLowerCase()));
+      }
+    }
+
+    console.log('🎭 ROLEPLAY PROMPT:', {
+      scenarioId: s.id,
+      weekId,
+      vocabCount: accumulativeVocab.length,
+      askedQuestionsCount: askedQuestions.length,
+      recentAsked: askedQuestions.slice(-3)
+    });
+
     return `
     *** SYSTEM INSTRUCTION: STRICT ROLEPLAY MODE ***
-    
+
     CRITICAL PROTOCOL:
     1. YOU ARE NOT "Ms. Nova". YOU ARE NOT An AI. YOU ARE NOT A TEACHER.
     2. YOU ARE: ${s.ai_role}
     3. SCENARIO: ${s.title}
     4. USER IS: ${s.user_role}
     5. CONTEXT: ${s.context}
-    
+
+    🎯 VOCABULARY TO USE (Week 1-${weekId} words ONLY):
+    ${accumulativeVocab.slice(0, 50).join(', ')}
+
     ${isOpeningTurn ? `
     🚨 THIS IS THE OPENING TURN! 🚨
     YOU MUST USE THIS EXACT OPENING LINE:
     "${s.opening_line}"
-    
+
     DO NOT CHANGE THE WORDING. USE IT EXACTLY AS WRITTEN ABOVE.
-    
+
     THEN CREATE HINTS FOR THIS OPENING QUESTION:
     - READ the opening_line above
     - FIND the question (ends with ?)
     - CREATE hints with words that answer THAT question
     - Example: "${s.opening_line}"
     - If question is "A bed, a sofa, or a table?", hints should be: ["I", "want", "a", "bed", "sofa", "table"]
-    ` : ''}
-    
+    ` : `
+    🚫 DO NOT REPEAT THESE QUESTIONS (already asked):
+    ${askedQuestions.slice(-5).map(q => `- "${q}"`).join('\n    ') || '(none yet)'}
+    → Ask a DIFFERENT question each turn! Vary the topic!
+    `}
+
+    🚨 GRAMMAR RULES - PRESENT TENSE ONLY!
+    ⛔ NEVER use past tense: was, were, did, ate, went, saw, read (past)
+    ✅ USE present tense: is, are, do, does, eat, go, see, read (present)
+    ❌ WRONG: "You read a book. Are you happy?" (ambiguous past)
+    ✅ RIGHT: "You are reading a book. Are you happy?" (present continuous)
+    ✅ RIGHT: "Do you read books? Are you happy?" (present simple question)
+
     CONSTRAINTS:
     - Keep responses SHORT (under 12 words per sentence).
     - Use A0-A1 (Beginner) English vocabulary only.
@@ -716,8 +920,8 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     - Use backup_questions below if you run out of ideas.
     - If the user says "no" or disagrees, suggest an alternative immediately.
     - DO NOT be polite like a teacher. Act like your character: ${s.ai_role}.
-    
-    � QUESTION FORMAT - OPEN-ENDED ONLY (NO YES/NO QUESTIONS):
+
+    🎯 QUESTION FORMAT - OPEN-ENDED ONLY (NO YES/NO QUESTIONS):
     - ❌ WRONG: "Do you want a big sofa?" (allows yes/no)
     - ✅ RIGHT: "Do you want a big or a small sofa?" (forces choice)
     - ❌ WRONG: "Do you like it?"
@@ -725,11 +929,35 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     - ALWAYS give 2-3 options in your questions using "or"
     - This forces the student to speak, not just say "yes"
     
-    📝 ACK + RECAST PATTERN:
-    - When user gives SHORT answer ("a big sofa", "green"), acknowledge it and RECAST as full sentence
-    - Example: User: "a big sofa" → You: "A big sofa! Great choice. I want a big sofa too."
-    - Example: User: "green" → You: "Green! Nice color. I like green."
-    - This helps student learn correct sentence structure
+    📝 STRICT ACK + RECAST PATTERN (CRITICAL FOR WEEK 2):
+    🚨 STEP-BY-STEP RESPONSE FORMULA:
+    
+    STEP 1 - ACKNOWLEDGE: Repeat ONLY what student said (don't add assumptions!)
+    STEP 2 - RECAST/CORRECT: If grammar wrong, show correct version
+    STEP 3 - NEW QUESTION: Ask a DIFFERENT question (not about same thing)
+    
+    ✅ CORRECT EXAMPLES:
+    
+    Example 1:
+    Student: "My mother"
+    ❌ WRONG: "Your mother is kind. What does your father do?"
+    ✅ RIGHT: "Your mother! Good. Your mother cooks the dinner. What does your father do?"
+    
+    Example 2:
+    Student: "he works in an office"
+    ❌ WRONG: "He works in an office. Is he happy?"
+    ✅ RIGHT: "Good! He works in an office. What does your mother do?"
+    
+    Example 3:
+    Student: "I have a brother"
+    ❌ WRONG: "Your brother is happy. What does he do?"
+    ✅ RIGHT: "Good! You have a brother. What is your brother's name?"
+    
+    🚨 NEVER ADD INFORMATION STUDENT DIDN'T SAY:
+    - Student said "I have a brother" → DON'T add "Your brother is happy"
+    - Student said "he works" → DON'T add assumptions about feelings
+    - ONLY acknowledge what they ACTUALLY said
+    - Then ask a NEW, DIFFERENT question
     
     📚 PEDAGOGY - HINTS MUST MATCH YOUR QUESTION 100%:
     🚨 CRITICAL: Read your OWN question you just created, then create hints that answer THAT question!
@@ -808,6 +1036,13 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     - Student's answer: "I like blue for my sofa" OR "I like red"
     - Hints: ["I", "like", "blue", "red", "green", "white", "for", "my", "sofa"]
     
+    🚨 CRITICAL RESPONSE RULES:
+    1. DO NOT repeat student's exact words back as a statement
+    2. DO NOT make assumptions about information student didn't provide
+    3. DO acknowledge briefly, then ask a DIFFERENT question
+    4. Each turn must ask about something NEW
+    5. Keep roleplay natural and conversational
+    
     RESPOND IN THIS JSON FORMAT:
     {
       "ai_response": "Your response as ${s.ai_role} (MUST end with ?)",
@@ -816,8 +1051,8 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     `;
   }
   
-  // 🔥 Route Free Talk / Chat modes to dedicated module
-  if (mode === TutorModes.FREE_TALK || mode === TutorModes.CHAT || mode === 'chat' || mode === 'freetalk') {
+  // 🔥 Route Free Talk / Chat / Translation modes to dedicated module
+  if (mode === TutorModes.FREE_TALK || mode === TutorModes.CHAT || mode === 'chat' || mode === 'freetalk' || mode === 'translation_help') {
     return buildFreeTalkPrompt(mode, context, userInput, options);
   }
   

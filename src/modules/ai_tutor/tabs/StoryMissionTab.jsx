@@ -6,7 +6,7 @@ import { BookOpen, Target, CheckCircle2, Loader2, Volume2, RotateCcw } from 'luc
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import { NovaEngine } from '../../../services/ai_tutor/novaEngine';
-import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
+import { VoiceService } from '../../../services/voiceService';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
@@ -348,7 +348,10 @@ const StoryMissionTab = () => {
           openingLine = 'Hello! I am Ms. Nova, your English teacher. What is your name?';
           console.log('⚠️ Using fallback greeting');
         }
+        
+        // 🔥 PRIORITY: Use default_hints if available (matches opening question)
         firstObjectiveHints = currentMission.default_hints || guardedOpening.suggested_hints || ['My', 'name', 'is', 'I', 'am'];
+        console.log('💡 Opening hints:', firstObjectiveHints);
       }
       
       // Add opening message
@@ -362,12 +365,9 @@ const StoryMissionTab = () => {
       setMissionStatus('started');
       console.log('✅ Message added, mission status set to started');
       
-      // 🔊 Play opening message with TTS
+      // 🔊 Play opening message with TTS - INSTANT MODE for better UX
       try {
-        await textToSpeech(openingLine, {
-          voice: 'nova',
-          autoPlay: true
-        });
+        await VoiceService.speak(openingLine, 'ai_story', null, null, 'advanced', true); // ⚡ instant=true
         console.log('🔊 TTS played successfully');
       } catch (error) {
         console.error('❌ TTS error for opening message:', error);
@@ -563,8 +563,9 @@ const StoryMissionTab = () => {
       if (currentMission.story_character) {
         console.log('🎭 Story character mode: Using AI response directly (no override)');
         
-        // Extract response text
-        let responseText = guardedResponse.ai_response || guardedResponse.combined || aiResponse.ai_response;
+        // 🃏 CARD MODE: Use pre-computed response directly — guard may have mangled it with "Nice!"
+        // aiResponse.ai_response is already clean (echo-ack built-in from novaEngine Card Mode)
+        let responseText = aiResponse.ai_response || guardedResponse.ai_response || guardedResponse.combined;
         
         // Use AI-generated hints
         const hints = guardedResponse.hints || guardedResponse.suggested_hints || [];
@@ -597,13 +598,10 @@ const StoryMissionTab = () => {
         };
         addMessage('story', aiMsg);  // 🔥 FIX: Use addMessage helper, not setMessages!
         
-        // TTS
+        // TTS - INSTANT MODE: Browser TTS plays immediately, Kokoro prefetches in background
         if (responseText) {
           try {
-            await textToSpeech(responseText, {
-              voice: 'nova',
-              autoPlay: true
-            });
+            await VoiceService.speak(responseText, 'ai_story', null, null, 'advanced', true); // ⚡ instant=true
             console.log('🔊 TTS played successfully');
           } catch (ttsError) {
             console.warn('⚠️ TTS failed:', ttsError.message);
@@ -709,9 +707,10 @@ const StoryMissionTab = () => {
           console.log('💡 Using objective hints:', objectiveHints);
         }
       } else {
-        // Week 1, 3 style: No objectives, use AI-generated hints from response
+        // Week 1, 2, 3 style: No objectives, use AI-generated hints from response
+        // 🔥 AI will read phase_questions hints from prompt and return them in suggested_hints
         objectiveHints = guardedResponse.suggested_hints || guardedResponse.hints || ['I', 'am', 'my', 'is'];
-        console.log('💡 Using AI-generated hints:', objectiveHints);
+        console.log('💡 Using AI-generated hints (from phase_questions):', objectiveHints);
       }
       
       // 🔥 VALIDATION: Ensure AI uses EXACT question (variant or canonical)
@@ -843,12 +842,9 @@ const StoryMissionTab = () => {
       console.log('🤖 Nova says:', responseText);
       console.log('💬 === END SPEECH ===\n');
       
-      // Auto-play TTS if enabled
+      // Auto-play TTS if enabled - INSTANT MODE
       if (autoPlayEnabled) {
-        await textToSpeech(responseText, {
-          voice: 'nova', // Default voice
-          autoPlay: true
-        });
+        await VoiceService.speak(responseText, 'ai_story', null, null, 'advanced', true); // ⚡ instant=true
       }
 
       // 🔥 Check if this is a closing turn (only if objective type is "termination")
@@ -1199,16 +1195,7 @@ const StoryMissionTab = () => {
               />
             ))}
             
-            {isLoading && (
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                  <Loader2 className="text-white animate-spin" size={20} />
-                </div>
-                <div className="bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-                  <p className="text-sm text-gray-500">Ms. Nova is thinking...</p>
-                </div>
-              </div>
-            )}
+            {/* ❌ REMOVED: "Ms. Nova is thinking..." animation (performance issue) */}
             
             <div ref={chatEndRef} />
           </div>

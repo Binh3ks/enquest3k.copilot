@@ -113,7 +113,93 @@ const week5RealData = {
   ],
   
   global_vocab: ["bedroom", "kitchen", "bathroom", "living_room", "bed", "chair", "table", "house", "mystery", "explore"],
-  
+
+  // === AI TUTOR BEHAVIOR (week-level tuning) ===
+  nova_instructions: {
+    persona: "Friendly English teacher, warm and human-like",
+    tone: "Warm, encouraging, natural - like a patient friend",
+    opening_lines_by_mission: {
+      mission_1: "Hi! I'm Ms. Nova! I travel the world looking at cool houses. Today I'm visiting YOUR house! What do I call you?",
+      mission_2: "Hi again! I have my magic flashlight! Let's explore a dark room together. Ready? Shine the light!",
+      mission_3: "Ooh, I have a Mystery Box! I can feel something inside but I can NOT look! Can you guess what it is?"
+    },
+    conversation_style: [
+      "Natural and flowing - like talking with a friend",
+      "One clear question per turn",
+      "Build on previous answers - show active listening",
+      "NO emojis - text-to-speech will read them aloud",
+      "Keep responses under 30 words",
+      "Maintain conversation for minimum 10-15 turns per mission",
+      "ONLY use present simple and 'There is/are' - Week 5 grammar scope"
+    ],
+    recast_strategy: "ALWAYS recast student errors by modeling correct form naturally in your response",
+    recast_example: {
+      student: "Bedroom is big.",
+      nova_recast: "Yes! The bedroom IS big! Is there a bed in the bedroom?"
+    },
+    vocabulary_scaffolding: [
+      "Mission 1: bedroom, kitchen, bathroom, living_room - focus on room names",
+      "Mission 2: articles a/an with common objects - spot-test vowel sounds",
+      "Mission 3: combine articles + furniture + room vocab in guessing game"
+    ],
+    questioning_skill: [
+      "What rooms are in your house?",
+      "What is in the kitchen?",
+      "Where do you sleep?",
+      "What is this? (flashlight game)",
+      "Is there a bed or a sofa? (mystery box guessing)"
+    ],
+    must_use_vocab: ["bedroom", "kitchen", "bathroom", "living_room", "bed", "chair", "table", "house"],
+    must_avoid: [
+      "Emojis or special characters",
+      "Vietnamese translation",
+      "Explicit grammar rules",
+      "Corrections without recast",
+      "Multiple questions in one turn",
+      "Past tense or future tense (Week 5 scope is present simple only)"
+    ]
+  },
+
+  // === AI RESPONSE FORMAT CONTRACT (V28 standard) ===
+  v28_format_notes: {
+    response_format: "ack + recast + question (V28 ONLY - NOT V25)",
+    ack_options: ["Nice!", "Great!", "Wonderful!", "Good job!", "Perfect!"],
+    recast_max_words: 8,
+    recast_rules: [
+      "Mirror student's subject (if they say 'it', use 'it' in recast)",
+      "Fix grammar naturally without explanation",
+      "Keep it conversational and encouraging"
+    ],
+    question_patterns_allowed: [
+      "What is...?",
+      "Where is...?",
+      "Is...?",
+      "Do you...?",
+      "Can you...?",
+      "What color...?",
+      "How...? (only for 'How big', 'How many rooms')"
+    ],
+    question_patterns_forbidden: [
+      "Why...?",
+      "What does... mean?",
+      "Do you understand?"
+    ],
+    example_exchanges: [
+      {
+        student: "Kitchen is big.",
+        tutor_response: "Great! The kitchen IS big. What is in the kitchen?"
+      },
+      {
+        student: "There is a umbrella.",
+        tutor_response: "Oops! There is AN umbrella. Say again!"
+      },
+      {
+        student: "I have bedroom.",
+        tutor_response: "Nice! I have A bedroom. What color is your bedroom?"
+      }
+    ]
+  },
+
   // === 3 STORY MISSIONS ===
   story_missions: [
     {
@@ -141,11 +227,11 @@ const week5RealData = {
       },
       
       // 🎬 OPENING NARRATIVE (replaces nova_greeting)
-      opening_narrative: "Hi! I'm Ms. Nova! I travel around the world looking at cool houses. Today I'm visiting YOUR house! I'm so excited! What do I call you?",
+      opening_narrative: "Hi! I'm Ms. Nova! I travel around the world looking at cool houses. Today I'm visiting YOUR house! I'm so excited! What do I call you? Say: My name is [your name] or I am [your name]",
       
       nova_greeting: "Hi! Let's explore your house together!", // DEPRECATED - use opening_narrative
       
-      mission_context: `This is Week 5 Mission 1 - Room Exploration. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level (just starting English). LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. Ask OPEN-ENDED questions (What...? Tell me about...?) NOT Yes/No. GRAMMAR: Articles A/An (This is a kitchen). VOCABULARY: bedroom, kitchen, bathroom, living_room, bed, chair, table. ENCOURAGE: Invite student to ask YOU questions every 3-4 turns. AVOID: Complex grammar, past tense. FOCUS: Rooms and basic furniture only.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 5 Mission 1 - Room Exploration. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: You are Ms. Nova, a cheerful traveler who visits houses around the world. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. Ask OPEN-ENDED questions (What...? Tell me about...?) - NOT Yes/No questions. GRAMMAR FOCUS: Articles A/An (This is a kitchen. There is a bed. It is an apple). Recast errors naturally: if student says 'bedroom is big' respond 'Yes! The bedroom IS big! What else is in your bedroom?' VOCABULARY TARGET: bedroom, kitchen, bathroom, living_room, bed, chair, table, house. CONVERSATION FLOW: Start with student name and house size/color, then explore each room and its furniture. ENCOURAGE: Every 3-4 turns, invite student to ask YOU about your own house. SAMPLE TURN: 'What is your favorite room? Say: My favorite room is the bedroom.' GAME FLOW: (1) Get name + house size/color → (2) Bedroom: ask 2-3 furniture items → (3) Kitchen: ask 2-3 items → (4) Living room: ask 2-3 items → (5) Every 3-4 turns invite student to ask about Nova's house. One room/item per turn. FORBIDDEN: Do NOT ask about colors at this stage. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask multiple rooms at once. AVOID: Complex grammar, past tense, multiple questions at once. FOCUS: Rooms and basic furniture only. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["bedroom", "kitchen", "bathroom", "living_room", "bed", "chair"],
       
@@ -159,11 +245,26 @@ const week5RealData = {
           goal: "Learn student's name, basic house info",
           required_vocab: [],
           phase_questions: [
-            "What do I call you?",
-            "Is your house big or small?",
-            "What color is your house? Blue, white, or red?",
-            "Do you live in a house or an apartment?",
-            "How many rooms are in your house? Two, three, or more?"
+            {
+              template: "What do I call you?",
+              hints: ["My", "name", "is", "I", "am"]
+            },
+            {
+              template: "(After name) {student_answer}! Great name! Is your house big or small? Say: My house is big or My house is small",
+              hints: ["My", "house", "is", "big", "small"]
+            },
+            {
+              template: "(After house size) {student_answer}! Good! What color is your house? Say: My house is blue or My house is white",
+              hints: ["My", "house", "is", "blue", "white", "red"]
+            },
+            {
+              template: "(After color) {student_answer}! Nice! Do you live in a house or an apartment? Say: I live in a house or I live in an apartment",
+              hints: ["I", "live", "in", "a", "house", "apartment"]
+            },
+            {
+              template: "(After house/apartment) {student_answer}! Perfect! How many rooms do you have? Say: My house has two rooms or My house has three rooms",
+              hints: ["My", "house", "has", "two", "three", "rooms"]
+            }
           ]
         },
         {
@@ -172,11 +273,26 @@ const week5RealData = {
           goal: "Explore DIFFERENT rooms (bedroom, living room, kitchen)",
           required_vocab: ["bedroom", "kitchen", "bathroom", "living_room"],
           phase_questions: [
-            "What is your favorite room? Bedroom, living room, or kitchen?",
-            "What is in the living room? A sofa, a TV, or a table?",
-            "What is in the kitchen? A fridge, a table, or chairs?",
-            "Do you have a bathroom? Is it big or small?",
-            "Where do you eat? In the kitchen or living room?"
+            {
+              template: "What is your favorite room? Say: My favorite room is the bedroom or My favorite room is the living room",
+              hints: ["My", "favorite", "room", "is", "the", "bedroom", "living", "room", "kitchen"]
+            },
+            {
+              template: "What is in the living room? Say: There is a sofa in the living room or There is a TV in the living room",
+              hints: ["There", "is", "a", "sofa", "TV", "table", "in", "the", "living", "room"]
+            },
+            {
+              template: "What is in the kitchen? Say: There is a fridge in the kitchen or There is a table in the kitchen",
+              hints: ["There", "is", "a", "fridge", "table", "chairs", "in", "the", "kitchen"]
+            },
+            {
+              template: "Do you have a bathroom? Is it big or small? Say: Yes, I have a bathroom. It is big or It is small",
+              hints: ["Yes", "I", "have", "a", "bathroom", "It", "is", "big", "small"]
+            },
+            {
+              template: "Where do you eat? Say: I eat in the kitchen or I eat in the living room",
+              hints: ["I", "eat", "in", "the", "kitchen", "living", "room"]
+            }
           ]
         },
         {
@@ -185,11 +301,26 @@ const week5RealData = {
           goal: "Ask about people and activities",
           required_vocab: [],
           phase_questions: [
-            "Who lives in your house? Mom, Dad, or siblings?",
-            "Where do you play? In your bedroom or living room?",
-            "What do you do in your bedroom? Sleep, play, or read?",
-            "Do you have a pet? A dog, a cat, or a fish?",
-            "Where does your pet sleep? In your room or another room?"
+            {
+              template: "Who lives in your house? Say: My mother lives in my house or My father lives in my house",
+              hints: ["My", "mother", "father", "brother", "sister", "lives", "in", "my", "house"]
+            },
+            {
+              template: "Where do you play? Say: I play in my bedroom or I play in the living room",
+              hints: ["I", "play", "in", "my", "bedroom", "living", "room"]
+            },
+            {
+              template: "What do you do in your bedroom? Say: I sleep in my bedroom or I play in my bedroom",
+              hints: ["I", "sleep", "play", "read", "in", "my", "bedroom"]
+            },
+            {
+              template: "Do you have a pet? Say: Yes, I have a dog or Yes, I have a cat",
+              hints: ["Yes", "I", "have", "a", "dog", "cat", "fish", "No", "don't", "pet"]
+            },
+            {
+              template: "Where does your pet sleep? Say: My pet sleeps in my room or My pet sleeps in another room",
+              hints: ["My", "pet", "sleeps", "in", "my", "room", "another"]
+            }
           ]
         },
         {
@@ -198,289 +329,28 @@ const week5RealData = {
           goal: "Wrap up, say goodbye",
           required_vocab: [],
           phase_questions: [
-            "Your house is wonderful! What is your favorite thing in your house?",
-            "Thank you for showing me your house! I had fun!",
-            "Goodbye! I hope to visit again!"
+            {
+              template: "Your house is wonderful! What is your favorite thing in your house? Say: My favorite thing is the bed or My favorite thing is the sofa",
+              hints: ["My", "favorite", "thing", "is", "the", "bed", "sofa", "table"]
+            },
+            {
+              template: "Thank you for showing me your house! I had fun! Did you have fun? Say: Yes, I had fun or It was great",
+              hints: ["Yes", "I", "had", "fun", "Thank", "you", "great"]
+            },
+            {
+              template: "Goodbye! I hope to visit again! Say: Goodbye!",
+              hints: ["Goodbye", "See", "you", "Bye"]
+            }
           ]
         }
       ],
       
       // 🎯 TURN LIMIT (like roleplay)
-      minimum_turns: 15,
-      maximum_turns: 20,
+      minimum_turns: 10,
+      maximum_turns: 12,
       
-      objectives: [
-        {
-          stepKey: "student_name",
-          category: "Identity",
-          question_variants: [
-            {
-              question: "What is your name?",
-              hints: ["name", "is", "My", "I", "am"]
-            },
-            {
-              question: "Can you tell me your name?",
-              hints: ["is", "My", "name", "tell", "you", "I"]
-            },
-            {
-              question: "What do I call you?",
-              hints: ["call", "me", "You", "can", "My", "name"]
-            }
-          ],
-          target_keywords: ["my", "name", "is", "I", "am"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "Your name is {name}!",
-            "You are {name}!"
-          ],
-          success_criteria: "Student says their name"
-        },
-        {
-          stepKey: "house_has_rooms",
-          category: "Rooms",
-          question_variants: [
-            {
-              question: "What rooms are in your house?",
-              hints: ["My", "house", "has", "a", "bedroom", "and", "kitchen"]
-            },
-            {
-              question: "Tell me about your house.",
-              hints: ["has", "It", "a", "living", "room", "and", "bathroom"]
-            },
-            {
-              question: "What does your house have?",
-              hints: ["has", "My", "house", "rooms", "many"]
-            }
-          ],
-          target_keywords: ["bedroom", "kitchen", "bathroom", "living", "room", "rooms", "house"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "Your house has a {room}!",
-            "You have a {room} in your house!"
-          ],
-          success_criteria: "Student names at least one room"
-        },
-        {
-          stepKey: "favorite_room",
-          category: "Preference",
-          question_variants: [
-            {
-              question: "What is your favorite room?",
-              hints: ["favorite", "My", "room", "is", "the", "bedroom"]
-            },
-            {
-              question: "Which room do you like?",
-              hints: ["like", "I", "the", "living", "room", "most"]
-            },
-            {
-              question: "What room do you love?",
-              hints: ["love", "I", "my", "bedroom", "the", "most"]
-            }
-          ],
-          target_keywords: ["bedroom", "kitchen", "bathroom", "living room", "favorite", "like", "love"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "The {room} is your favorite!",
-            "You love the {room}!"
-          ],
-          success_criteria: "Student names favorite room"
-        },
-        {
-          stepKey: "student_question_1",
-          category: "Student Inquiry",
-          type: "invitation",
-          question_variants: [
-            {
-              question: "Do you have a question for me?",
-              hints: []
-            },
-            {
-              question: "What do you want to ask me?",
-              hints: []
-            },
-            {
-              question: "Ask me anything!",
-              hints: []
-            }
-          ],
-          target_keywords: ["question", "ask", "want", "know", "what", "how", "why", "yes", "no"],
-          ack_options: ["Great question!", "Good question!", "Nice question!"],
-          recast_templates: [
-            "You asked about {topic}!",
-            "That's a great question!"
-          ],
-          success_criteria: "Student asks a question or says no",
-          allow_skip: true
-        },
-        {
-          stepKey: "bedroom_has_what",
-          category: "Furniture",
-          question_variants: [
-            {
-              question: "What is in your bedroom?",
-              hints: ["In", "my", "bedroom", "is", "a", "bed"]
-            },
-            {
-              question: "What does your bedroom have?",
-              hints: ["has", "It", "a", "bed", "and", "chair"]
-            },
-            {
-              question: "Tell me about your bedroom.",
-              hints: ["bedroom", "My", "has", "a", "bed", "big"]
-            }
-          ],
-          target_keywords: ["bed", "chair", "table", "desk", "lamp", "has", "in"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "Your bedroom has a {item}!",
-            "There is a {item} in your bedroom!"
-          ],
-          success_criteria: "Student names furniture in bedroom"
-        },
-        {
-          stepKey: "kitchen_has_what",
-          category: "Kitchen Items",
-          question_variants: [
-            {
-              question: "What is in the kitchen?",
-              hints: ["In", "the", "kitchen", "is", "a", "table"]
-            },
-            {
-              question: "What does your kitchen have?",
-              hints: ["has", "It", "a", "big", "table", "and", "chairs"]
-            },
-            {
-              question: "Tell me about the kitchen.",
-              hints: ["kitchen", "The", "has", "table", "and", "chairs"]
-            }
-          ],
-          target_keywords: ["table", "chair", "chairs", "stove", "sink", "fridge", "has"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "The kitchen has a {item}!",
-            "There is a {item} in the kitchen!"
-          ],
-          success_criteria: "Student names items in kitchen"
-        },
-        {
-          stepKey: "where_do_you_sleep",
-          category: "Activity Location",
-          question_variants: [
-            {
-              question: "Where do you sleep?",
-              hints: ["sleep", "I", "in", "the", "bedroom", "on", "bed"]
-            },
-            {
-              question: "Which room do you sleep in?",
-              hints: ["I", "sleep", "in", "my", "bedroom"]
-            },
-            {
-              question: "Where is your bed?",
-              hints: ["bed", "My", "is", "in", "the", "bedroom"]
-            }
-          ],
-          target_keywords: ["bedroom", "bed", "sleep", "in", "my"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "You sleep in the {room}!",
-            "Your bed is in the {room}!"
-          ],
-          success_criteria: "Student says they sleep in bedroom"
-        },
-        {
-          stepKey: "student_question_2",
-          category: "Student Inquiry",
-          type: "invitation",
-          question_variants: [
-            {
-              question: "Do you have a question for me?",
-              hints: []
-            },
-            {
-              question: "What do you want to ask me?",
-              hints: []
-            },
-            {
-              question: "You can ask me a question now!",
-              hints: []
-            }
-          ],
-          target_keywords: ["question", "ask", "want", "know", "what", "how", "why", "yes", "no"],
-          ack_options: ["Great question!", "Good question!", "Nice question!"],
-          recast_templates: [
-            "You asked about {topic}!",
-            "That's a great question!"
-          ],
-          success_criteria: "Student asks a question or says no",
-          allow_skip: true
-        },
-        {
-          stepKey: "where_do_you_eat",
-          category: "Activity Location",
-          question_variants: [
-            {
-              question: "Where do you eat?",
-              hints: ["eat", "I", "in", "the", "kitchen", "at", "table"]
-            },
-            {
-              question: "Which room do you eat in?",
-              hints: ["I", "eat", "in", "the", "kitchen"]
-            },
-            {
-              question: "Where is your table?",
-              hints: ["table", "My", "is", "in", "the", "kitchen"]
-            }
-          ],
-          target_keywords: ["kitchen", "table", "eat", "dining room", "in"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "You eat in the {room}!",
-            "The table is in the {room}!"
-          ],
-          success_criteria: "Student says where they eat"
-        },
-        {
-          stepKey: "house_is_big_or_small",
-          category: "Description",
-          question_variants: [
-            {
-              question: "Is your house big or small?",
-              hints: ["house", "My", "is", "big", "and", "nice"]
-            },
-            {
-              question: "What is your house like?",
-              hints: ["is", "It", "small", "but", "cozy"]
-            },
-            {
-              question: "Tell me about your house size.",
-              hints: ["house", "My", "is", "medium", "size"]
-            }
-          ],
-          target_keywords: ["big", "small", "large", "tiny", "medium", "nice", "beautiful"],
-          ack_options: ["Nice!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "Your house is {size}!",
-            "You have a {size} house!"
-          ],
-          success_criteria: "Student describes house size"
-        },
-        {
-          stepKey: "goodbye",
-          category: "Closing",
-          type: "termination",
-          canonical_question: "",
-          target_keywords: [],
-          ack_options: ["Wonderful!"],
-          hints: [],
-          recast_templates: [],
-          goodbye_en: "Great job! You showed me all the rooms! Your house is wonderful! Bye!",
-          goodbye_vi: "Tuyệt lắm! Bạn đã chỉ tất cả các phòng! Ngôi nhà của bạn thật tuyệt! Tạm biệt!",
-          success_criteria: "Mission complete"
-        }
-      ],
       
-      minimum_turns: 15,
-      maximum_turns: 20,
+      
       expected_duration: "15+ minutes"
     },
     {
@@ -492,22 +362,7 @@ const week5RealData = {
       nova_greeting: "Oh no! The house is so dark! I have a flashlight. Let's look!",
       default_hints: ["There", "is", "a", "table"],
       
-      mission_context: `This is Week 5 Mission 2 - The Dark Room (Flashlight Game). 
-
-STRICT GAME RULES:
-1. Ms. Nova ONLY shines flashlight on objects and asks "What is this?" or "What do you see?"
-2. Student MUST answer: "There is a/an [object]"
-3. Ms. Nova corrects a/an errors: "Oops! AN apple. Say again!"
-4. Then shine on NEXT object immediately
-
-FORBIDDEN:
-- Do NOT ask personal questions (age, name, feelings)
-- Do NOT change topic
-- STAY IN CHARACTER as flashlight explorer
-
-GRAMMAR ENFORCEMENT: Every student answer must use "There is a/an..."
-VOCABULARY: apple, egg, umbrella, octopus, spider, cat, book, lamp (test vowels!)
-EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 5 Mission 2 - The Dark Room (Flashlight Game). CHARACTER: Ms. Nova shines a flashlight in a dark mystery room, revealing objects one by one. OPENING: Say 'I have my magic flashlight! It is very dark. I shine on something... What is this?' GAME MECHANIC: Nova shines flashlight on ONE object → student says "There is a/an [object]" → confirm/recast a/an error → next object. One item per turn. STRICT GAME RULES: 1. Ms. Nova ONLY shines flashlight on objects and asks 'What is this?' or 'What do you see?' 2. Student MUST answer using 'There is a/an [object]' 3. Ms. Nova corrects a/an errors immediately: 'Oops! AN umbrella - because U is a vowel! Say again!' 4. Confirm correct answers with excitement, then shine on NEXT object. VOCABULARY: apple, egg, umbrella, octopus, spider, cat, book, lamp (chosen to test vowel vs consonant). GRAMMAR ENFORCEMENT: Every student answer must practice 'There is a/an...' - correct every single error with a recast. FORBIDDEN: Do NOT ask personal questions (age, name, feelings). Do NOT change topic. STAY IN CHARACTER as flashlight explorer. EXCITEMENT: Use short sounds (Wow! Eww! Oh!) to keep energy high. AVOID: emojis (TTS reads them). MINIMUM: 8 object rounds. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["book", "notebook", "chair", "table", "bed", "bedroom", "kitchen", "bathroom", "living_room", "house"],
       
@@ -600,8 +455,8 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 18,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "12+ minutes"
     },
     {
@@ -613,7 +468,7 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
       nova_greeting: "Look! I found an old mystery box! Let's see what's inside!",
       default_hints: ["There", "is", "a", "book"],
       
-      mission_context: `This is Week 5 Mission 3 - The Mystery Box (Riddle Game). STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, PLAYFUL words, max 8 words/sentence. GRAMMAR FOCUS: "There is a/an..." - Student guesses objects in mystery box. VOCABULARY: book, notebook, chair, table, bed, bedroom, kitchen, bathroom, house, living_room. THEME: Mystery box riddle game. MECHANIC: Ms. Nova describes what she feels WITHOUT looking, student guesses using "There is...". CLUES: Use touch (flat, soft, hard), shapes (square, round), function (for sleeping, for sitting). CORRECT a/an ERRORS: "Oops! A bedroom. Try again!" ENCOURAGE: Excitement when they guess correctly. AVOID: Making it too hard. FOCUS: Turn grammar practice into exciting guessing game.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 5 Mission 3 - The Mystery Box (Riddle Game). CHARACTER: Ms. Nova has a big mystery box. She reaches in and describes what she feels WITHOUT looking. Student guesses using 'There is a/an...' OPENING: Say 'I have a Mystery Box! I can feel something inside... it is flat and square... what do you think it is? Say: There is a...' STUDENT PROFILE: 6-12 years old, A0+ level. LANGUAGE: SIMPLE, PLAYFUL words, max 8 words per sentence. GRAMMAR FOCUS: 'There is a/an [object]' - practice articles with every single guess. CLUE SYSTEM: Touch clues (flat, soft, hard, round, heavy, light), function clues (for sleeping, for sitting, for reading). VOCABULARY: book, notebook, chair, table, bed, bedroom, kitchen, bathroom, house, living_room. CORRECT a/an ERRORS: 'Oops! A book - B is not a vowel! Say: There is A book. Try again!' CELEBRATE correct guesses: 'YES! There IS a book! You are amazing!' GAME MECHANIC: Nova feels object → gives 1-2 clues (touch + function) → student guesses 'There is a/an ___' → confirm or recast → next object. One object per round. FORBIDDEN: Do NOT give away the answer. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask about colors, sizes, or non-object topics. AVOID: Making clues too hard. Give extra hints if student is stuck after 2 tries. MINIMUM: 6 object riddles. FOCUS: Turn grammar practice into exciting guessing game. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["book", "notebook", "chair", "table", "bed", "bedroom", "kitchen", "bathroom", "house", "living_room"],
       
@@ -709,8 +564,8 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 18,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "12+ minutes"
     }
   ],
@@ -765,92 +620,110 @@ EXCITEMENT: Use sounds (Wow! Eww! Oh!) and emojis 🔦🍎🥚☂️`,
     }
   },
 
-  // ✨ DYNAMIC ROLEPLAY SCENARIOS (Data-Driven Architecture) - TOP LEVEL!
-  roleplay_scenarios: [
-      {
-        id: "rp_designer",
-        title: "Room Designer 🎨",
-        title_en: "Room Designer",
-        title_vi: "Thiết kế phòng",
-        emoji: "🎨",
-        description: "Design a beautiful room for Ms. Nova!",
-        
-        // AI Persona
-        ai_role: "Client (Ms. Nova)",
-        user_role: "Interior Designer",
-        context: "Ms. Nova wants to redesign her empty room. She needs furniture suggestions and color choices.",
-        
-        // Pedagogical Focus
-        vocab_focus: ["bed", "sofa", "lamp", "table", "chair", "mirror", "rug", "blue", "white", "red", "green", "big", "small"],
-        
-        // Opening (MUST be a question)
-        opening_line: "Hello Designer! My room is empty. What furniture should I put in it first? A bed, a sofa, or a table?",
-        
-        // Guide rules for AI behavior
-        guide_rules: "Accept any furniture suggestion. React positively. Then ask about color ('What color do you like?') or size ('Do you want a big one or a small one?'). Use complete sentences. Always end with a question.",
-        
-        // CRITICAL: Backup questions for code enforcement
-        backup_questions: [
-          "What color do you like? Blue, white, or red?",
-          "Do you want a big one or a small one?",
-          "What else do you need? A lamp, a mirror, or a rug?",
-          "Where should I put it? Near the door or near the window?",
-          "Do you like it? Should I add more things?"
-        ]
-      },
-      {
-        id: "rp_tour",
-        title: "House Tour 🏠",
-        title_en: "House Tour",
-        title_vi: "Tham quan nhà",
-        emoji: "🏠",
-        description: "Show Ms. Nova your house!",
-        
-        ai_role: "Visitor (Ms. Nova)",
-        user_role: "House Owner / Host",
-        context: "Ms. Nova is visiting the student's house for the first time. She is curious about every room.",
-        
-        vocab_focus: ["bedroom", "kitchen", "bathroom", "living room", "door", "window", "bed", "table", "chair", "sofa"],
-        
-        opening_line: "Ding-dong! Hello! Your house looks nice! Which room can we see first? The bedroom, the kitchen, or the living room?",
-        
-        guide_rules: "Be curious and polite. Ask 'What is this?' or 'Where is the...?' questions. React with interest ('Wow!' 'Beautiful!'). Always end with a question to keep conversation going.",
-        
-        backup_questions: [
-          "What can you see in this room? A bed, a chair, or a table?",
-          "What color is it? Is it blue, white, or brown?",
-          "Where is the kitchen? Can we see it next?",
-          "Do you have a big bedroom or a small bedroom?",
-          "What do you like most? The bed, the lamp, or the window?"
-        ]
-      },
-      {
-        id: "rp_shop",
-        title: "Furniture Shop 🛋️",
-        title_en: "Furniture Shop",
-        title_vi: "Cửa hàng nội thất",
-        emoji: "🛋️",
-        description: "Buy furniture with Ms. Nova at the shop!",
-        
-        ai_role: "Shopkeeper",
-        user_role: "Customer",
-        context: "The student wants to buy furniture for their house. Ms. Nova is the friendly shopkeeper helping them choose.",
-        
-        vocab_focus: ["sofa", "bed", "table", "chair", "lamp", "mirror", "blue", "white", "red", "expensive", "cheap", "big", "small"],
-        
-        opening_line: "Welcome to my Furniture Shop! We have sofas, beds, tables, and lamps. What do you want to buy today?",
-        
-        guide_rules: "Be helpful and friendly. Suggest items. Ask about color, size, and quantity ('How many do you need?'). Mention prices if student asks. Always end with a question.",
-        
-        backup_questions: [
-          "What color do you want? We have blue, white, and red.",
-          "Do you want a big sofa or a small sofa?",
-          "How many chairs do you need? One, two, or three?",
-          "Do you like this lamp? It is cheap!",
-          "What else do you want to buy? A table, a mirror, or a rug?"
-        ]
-      }
-    ]
+
+  conversation_cards: [
+    {
+      id: "my_home_tour",
+      title: "My Home Tour",
+      emoji: "🏠",
+      theme: "Rooms in the House",
+      difficulty: "easy",
+      exchanges: [
+        {
+          ai: "Welcome to my house! What rooms does your house have? Choose: I have a bedroom or I have a kitchen or I have a living room",
+          options: ["I have a bedroom", "I have a kitchen", "I have a living room"]
+        },
+        {
+          ai: "Where do you sleep? Say: I sleep in the ___",
+          fill_blank: "I sleep in the ___",
+          accept_words: ["bedroom", "bed", "room"]
+        },
+        {
+          ai: "Where does your family eat? Say: We eat in the ___",
+          fill_blank: "We eat in the ___",
+          accept_words: ["kitchen", "dining", "room"]
+        },
+        {
+          ai: "Where do you watch TV? Choose: I watch TV in the living room or I watch TV in my bedroom",
+          options: ["I watch TV in the living room", "I watch TV in my bedroom"]
+        },
+        {
+          ai: "What is your favourite room? Say: My favourite room is the ___",
+          fill_blank: "My favourite room is the ___",
+          accept_words: ["bedroom", "kitchen", "living room", "bathroom", "favourite", "favorite"]
+        }
+      ],
+      completion_message: "Great house tour! 🏠 You used: bedroom, kitchen, living room, and bathroom!"
+    },
+    {
+      id: "whats_in_my_room",
+      title: "What's in My Room?",
+      emoji: "🛏️",
+      theme: "Furniture & Objects",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "Let's look at your bedroom! Is there a bed? Say: Yes, there is a bed!",
+          accept: ["Yes", "there is", "bed", "a bed"]
+        },
+        {
+          ai: "Is there a table in your room? Choose: Yes, there is a table or No, there is no table",
+          options: ["Yes, there is a table", "No, there is no table"]
+        },
+        {
+          ai: "Is there a chair? Say: Yes, there is a chair! or No, there is no chair!",
+          options: ["Yes, there is a chair!", "No, there is no chair!"]
+        },
+        {
+          ai: "Is there a window in your room? Choose: Yes, there is a window or No, there is no window",
+          options: ["Yes, there is a window", "No, there is no window"]
+        },
+        {
+          ai: "Tell me one thing in your room! Say: There is a ___ in my room",
+          fill_blank: "There is a ___ in my room",
+          accept_words: ["bed", "table", "chair", "lamp", "window", "door", "desk", "sofa", "there is"]
+        },
+        {
+          ai: "Is your room big or small? Say: My room is ___",
+          fill_blank: "My room is ___",
+          accept_words: ["big", "small", "large", "tiny", "room"]
+        }
+      ],
+      completion_message: "Excellent! You described your room! 🛏️ You used: there is, bed, table, chair, and window!"
+    },
+    {
+      id: "dream_bedroom",
+      title: "My Dream Bedroom",
+      emoji: "⭐",
+      theme: "Designing a Room",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "Imagine your dream bedroom! What colour are the walls? Say: The walls are ___",
+          fill_blank: "The walls are ___",
+          accept_words: ["red", "blue", "pink", "yellow", "green", "purple", "white", "orange", "walls"]
+        },
+        {
+          ai: "What furniture is in your dream room? Choose: I want a big bed or I want a sofa or I want a big desk",
+          options: ["I want a big bed", "I want a sofa", "I want a big desk"]
+        },
+        {
+          ai: "Do you want a TV in your bedroom? Say: Yes, I want a TV! or No, I don't want a TV.",
+          options: ["Yes, I want a TV!", "No, I don't want a TV."]
+        },
+        {
+          ai: "What else do you want? Choose: I want a bookshelf or I want a big window or I want a game area",
+          options: ["I want a bookshelf", "I want a big window", "I want a game area"]
+        },
+        {
+          ai: "Is your dream room big or small? Say: My dream room is very ___!",
+          fill_blank: "My dream room is very ___!",
+          accept_words: ["big", "large", "small", "beautiful", "nice", "room"]
+        }
+      ],
+      completion_message: "What a dream room! ⭐ You used: I want, the walls are, and furniture words!"
+    }
+  ]
 };
 
 export default week5RealData;

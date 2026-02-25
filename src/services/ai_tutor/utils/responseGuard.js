@@ -31,14 +31,13 @@ const BANNED_PHRASES = [
   /your thoughts\??/gi,
   /let me ask you something/gi,
   /that is a good question! let me ask you/gi,
-  /that's interesting\.?/gi,    // 🔥 NEW: Generic chat
-  /tell me more\.?/gi,          // 🔥 NEW: Generic chat
-  /can you explain\??/gi,       // 🔥 NEW: Generic chat
-  /why do you say that\??/gi,   // 🔥 NEW: Generic chat
-  /what else\??/gi,             // 🔥 NEW: Generic probing
-  /anything else\??/gi,         // 🔥 NEW: Generic probing
-  /how interesting\.?/gi,       // 🔥 NEW: Generic chat
-  /can you tell me more\??/gi   // 🔥 NEW: Duplicate ban
+  /that's interesting\.?/gi,    // 🔥 Generic chat
+  /can you explain\??/gi,       // 🔥 Generic chat
+  /why do you say that\??/gi,   // 🔥 Generic chat
+  /what else\??/gi,             // 🔥 Generic probing (REMOVED: tell me more - needed for fallbacks)
+  /anything else\??/gi,         // 🔥 Generic probing
+  /how interesting\.?/gi,       // 🔥 Generic chat
+  /can you tell me more\??/gi   // 🔥 Only ban as question, not statement
 ];
 
 /**
@@ -52,6 +51,24 @@ const GRAMMAR_FIXES = [
   { pattern: /,\s*\?/g, fix: '?' },
   // Fix: Double spaces
   { pattern: /\s{2,}/g, fix: ' ' },
+
+  // 🎯 FIX PAST TENSE → PRESENT TENSE (for roleplay A0-A1 compliance)
+  // Pattern: "You read a book" (ambiguous past) → "You are reading a book" (clear present)
+  { pattern: /\bYou read a book\b/gi, fix: 'You are reading a book' },
+  { pattern: /\bYou ate\b/gi, fix: 'You are eating' },
+  { pattern: /\bYou went\b/gi, fix: 'You are going' },
+  { pattern: /\bYou saw\b/gi, fix: 'You see' },
+  { pattern: /\bYou got\b/gi, fix: 'You have' },
+  { pattern: /\bYou made\b/gi, fix: 'You are making' },
+  { pattern: /\bYou came\b/gi, fix: 'You are coming' },
+  // "Were you..." → "Are you..."
+  { pattern: /\bWere you\b/gi, fix: 'Are you' },
+  { pattern: /\bWas it\b/gi, fix: 'Is it' },
+  // "Did you..." → "Do you..."
+  { pattern: /\bDid you\b/gi, fix: 'Do you' },
+  { pattern: /\bDid he\b/gi, fix: 'Does he' },
+  { pattern: /\bDid she\b/gi, fix: 'Does she' },
+  { pattern: /\bDid it\b/gi, fix: 'Does it' },
 ];
 
 /**
@@ -195,16 +212,65 @@ function personalizeWithName(text, studentName) {
 }
 
 /**
+ * 🎯 Detect past tense violations in roleplay responses
+ * Returns array of violations found
+ */
+function detectPastTenseViolations(text) {
+  if (!text) return [];
+
+  const violations = [];
+
+  // Common past tense patterns that shouldn't appear in A0-A1 roleplay
+  const pastTensePatterns = [
+    { pattern: /\bwas\s+(?:happy|sad|angry|excited|scared|tired)/gi, desc: 'was + emotion' },
+    { pattern: /\bwere\s+you\b/gi, desc: 'were you' },
+    { pattern: /\bdid\s+you\b/gi, desc: 'did you' },
+    { pattern: /\bate\b/gi, desc: 'ate (past of eat)' },
+    { pattern: /\bwent\b/gi, desc: 'went (past of go)' },
+    { pattern: /\bsaw\b/gi, desc: 'saw (past of see)' },
+    { pattern: /\bgot\b/gi, desc: 'got (past of get)' },
+    { pattern: /\bmade\b/gi, desc: 'made (past of make)' },
+    { pattern: /\bcame\b/gi, desc: 'came (past of come)' },
+    { pattern: /\btook\b/gi, desc: 'took (past of take)' },
+    { pattern: /\bgave\b/gi, desc: 'gave (past of give)' },
+    { pattern: /\bfound\b/gi, desc: 'found (past of find)' },
+    { pattern: /\bbought\b/gi, desc: 'bought (past of buy)' },
+    { pattern: /\byesterday\b/gi, desc: 'yesterday' },
+    { pattern: /\blast\s+(?:week|day|night|time)\b/gi, desc: 'last week/day/night/time' },
+  ];
+
+  for (const { pattern, desc } of pastTensePatterns) {
+    if (pattern.test(text)) {
+      violations.push(desc);
+      // Reset regex lastIndex for global patterns
+      pattern.lastIndex = 0;
+    }
+  }
+
+  if (violations.length > 0) {
+    console.warn(`⚠️ Past tense violations detected:`, violations);
+  }
+
+  return violations;
+}
+
+/**
  * Fix common grammar errors (A0-A1 compliance)
  */
 function fixGrammarErrors(text) {
   if (!text) return text;
-  
+
+  // First detect violations for logging
+  const violations = detectPastTenseViolations(text);
+  if (violations.length > 0) {
+    console.log('🔧 Attempting to fix', violations.length, 'past tense violations');
+  }
+
   let fixed = text;
   for (const { pattern, fix } of GRAMMAR_FIXES) {
     fixed = fixed.replace(pattern, fix);
   }
-  
+
   return fixed;
 }
 
@@ -390,14 +456,17 @@ function buildTeacherText(ack, recast, question, bridge = '') {
 
   combined = combined.trim();
 
-  // SAFETY CHECK: Prevent double questions
+  // SAFETY CHECK: Prevent double questions UNLESS it's a scaffolding template with "Say:"
   const questionMarkCount = (combined.match(/\?/g) || []).length;
-  if (questionMarkCount > 1) {
-    console.warn('⚠️ WARNING: Multiple question marks detected, fixing...');
+  const hasScaffolding = combined.includes('Say:');
+  
+  if (questionMarkCount > 1 && !hasScaffolding) {
+    console.warn('⚠️ WARNING: Multiple question marks detected (no scaffolding), fixing...');
     // Keep only the first question
     const parts = combined.split('?');
     combined = parts[0] + '?';
   }
+  // If has "Say:" scaffolding, keep the full template with all question marks
 
   return combined;
 }
@@ -559,6 +628,10 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
     // 🎯 RECAST: Model student's answer with correct grammar (CRITICAL FOR LEARNING)
     // This is the key teaching technique - never say "wrong", just model correct form
     if (!recast || recast.trim() === '' || recast.length < 3) {
+      // 🃏 STORY CARD MODE: Never add fallback recast — card text already has echo-ack built in
+      if (context.missionData?.story_character) {
+        recast = ''; // Story character mode handles all ack/recast inside the card text
+      } else {
       const lastUserMsg = context.chatHistory?.[context.chatHistory.length - 1]?.content || '';
       if (lastUserMsg && lastUserMsg.trim().length > 0) {
         // Try to intelligently recast based on current step
@@ -605,6 +678,7 @@ export function guardResponseObject(responseObj, context = {}, maxWords = 15) {
       } else {
         recast = ''; // Empty if no user message
       }
+      } // end else (not story character mode)
       if (recast) {
         console.warn('⚠️ AI missing RECAST, generated:', recast);
       }

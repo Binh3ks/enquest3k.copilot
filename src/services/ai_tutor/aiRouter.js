@@ -102,7 +102,6 @@ class GroqRateLimiter {
       await new Promise(resolve => setTimeout(resolve, delayNeeded));
     }
     
-    this.lastRequestTime = Date.now();
     const elapsed = now - this.windowStartTime;
 
     // Reset window if expired
@@ -116,6 +115,7 @@ class GroqRateLimiter {
     if (this.requestsInWindow < this.maxRequests) {
       this.requestsInWindow++;
       const remaining = this.maxRequests - this.requestsInWindow;
+      this.lastRequestTime = Date.now(); // Update AFTER delay
       console.log(`✅ Groq quota OK (${this.requestsInWindow}/${this.maxRequests}, ${remaining} remaining)`);
       return;
     }
@@ -179,39 +179,49 @@ export function getGroqLimiterStatus() {
 // CONFIGURATION
 // ============================================
 
+const CEREBRAS_API_KEY = import.meta.env.VITE_CEREBRAS_API_KEY || '';
 const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY || '';
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 const TOGETHER_API_KEY = import.meta.env.VITE_TOGETHER_API_KEY || '';
 
+const CEREBRAS_ENDPOINT = 'https://api.cerebras.ai/v1/chat/completions';
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent';
+const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 const TOGETHER_ENDPOINT = 'https://api.together.xyz/v1/chat/completions';
 
 // Provider configuration
 const PROVIDERS = {
+  cerebras: {
+    name: 'Cerebras',
+    model: 'llama3.1-8b', // ✅ Available model (llama-3.3-70b deprecated)
+    maxTokens: 1024,
+    temperature: 0.7,
+    enabled: !!CEREBRAS_API_KEY,
+    description: 'PRIMARY: Cerebras direct API - Ultra-fast & reliable'
+  },
+  gemini: {
+    name: 'Gemini',
+    model: 'gemini-2.5-flash', // ✅ Updated to v2.5 (v1.5 deprecated)
+    maxTokens: 2048,
+    temperature: 0.7,
+    enabled: !!GEMINI_API_KEY,
+    description: 'BACKUP 1: Google Gemini - Most reliable'
+  },
+  groq: {
+    name: 'Groq',
+    model: 'llama-3.3-70b-versatile',
+    maxTokens: 1024,
+    temperature: 0.7,
+    enabled: !!GROQ_API_KEY,
+    description: 'BACKUP 2: Ultra-fast responses (< 500ms)'
+  },
   together: {
     name: 'Together AI',
     model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
     maxTokens: 1024,
-    temperature: 0.9, // ⚡ Higher = faster responses (less "thinking")
-    enabled: !!import.meta.env.VITE_TOGETHER_API_KEY,
-    description: 'PRIMARY: Fast responses with 60 req/min (4x faster than Groq)'
-  },
-  groq: {
-    name: 'Groq',
-    model: 'llama-3.3-70b-versatile', // 🔥 FIX: Updated model (3.1 deprecated)
-    maxTokens: 1024,
-    temperature: 0.7,
-    enabled: !!GROQ_API_KEY,
-    description: 'BACKUP: Ultra-fast responses (< 500ms) for Free Talk'
-  },
-  gemini: {
-    name: 'Gemini',
-    model: 'gemini-2.0-flash-exp',
-    maxTokens: 2048,
-    temperature: 0.7,
-    enabled: !!GEMINI_API_KEY,
-    description: 'FALLBACK: Last resort for errors or complex Syllabus analysis'
+    temperature: 0.9,
+    enabled: !!TOGETHER_API_KEY,
+    description: 'BACKUP 3: Fast responses with 60 req/min'
   }
 };
 
@@ -586,21 +596,140 @@ export async function sendToAI({
 
     // Auto-select provider based on availability
     if (preferredProvider === 'auto') {
-      // 🔥 NEW PRIORITY: Groq → Gemini → Together AI (Groq is fastest & most reliable!)
-      if (PROVIDERS.groq.enabled) {
-        preferredProvider = 'groq';
+      // 🔥 NEW PRIORITY: Cerebras → Gemini → Groq → Together
+      if (PROVIDERS.cerebras.enabled) {
+        preferredProvider = 'cerebras';
       } else if (PROVIDERS.gemini.enabled) {
         preferredProvider = 'gemini';
+      } else if (PROVIDERS.groq.enabled) {
+        preferredProvider = 'groq';
       } else {
         preferredProvider = 'together';
       }
     }
 
-    // 🔥 LAYER 1: Try Groq first (FASTEST & MOST RELIABLE after Gemini issues!)
-    // Groq is now primary because it consistently returns good responses
-    if (preferredProvider === 'groq' && PROVIDERS.groq.enabled) {
+    // 🔥 LAYER 1: Try Cerebras first - ULTRA-FAST!
+    if (preferredProvider === 'cerebras' && PROVIDERS.cerebras.enabled) {
       try {
-        console.log(`🚀 Layer 1: Trying Groq (attempt ${attempt}/${maxRetries})...`);
+        console.log(`🚀 Layer 1: Trying Cerebras (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callCerebras(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        // Apply fixes
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        // Check for roleplay mode
+        const systemContent = messages[0]?.content || '';
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:');
+        
+        if (isRoleplay) {
+          let scenarioData = null;
+          try {
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+            }
+          } catch (err) {
+            scenarioData = { 
+              id: 'fallback', 
+              backup_questions: ["Is there a pen in your backpack?"]
+            };
+          }
+          
+          const mode = 'playing_roleplay';
+          fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        }
+        
+        // Grammar Guard
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ OpenRouter grammar violations:`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        // Talk Ratio Guard
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Cerebras succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'cerebras', latency: Date.now() - startTime };
+      } catch (cerebrasError) {
+        console.warn(`⚠️ Cerebras failed: ${cerebrasError.message}`);
+        console.log('🔄 Fallback to Layer 2: Gemini...');
+      }
+    }
+
+    // 🔥 LAYER 2: Fallback to Gemini
+    if (PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Layer 2: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callGemini(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        const systemContent = messages[0]?.content || '';
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:');
+        
+        if (isRoleplay) {
+          let scenarioData = null;
+          try {
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+            }
+          } catch (err) {
+            scenarioData = { 
+              id: 'fallback', 
+              backup_questions: ["Is there a pen in your backpack?"]
+            };
+          }
+          
+          const mode = 'playing_roleplay';
+          fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        }
+        
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ Gemini grammar violations:`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'gemini', latency: Date.now() - startTime };
+      } catch (geminiError) {
+        console.warn(`⚠️ Gemini failed: ${geminiError.message}`);
+        console.log('🔄 Fallback to Layer 3: Groq...');
+      }
+    }
+
+    // 🔥 LAYER 3: Try Groq
+    if (PROVIDERS.groq.enabled) {
+      try {
+        console.log(`🚀 Layer 3: Trying Groq (attempt ${attempt}/${maxRetries})...`);
         const response = await callGroq(messages);
         
         // Groq returns plain text, need extraction
@@ -612,11 +741,11 @@ export async function sendToAI({
         return { raw: response, provider: 'groq', latency: Date.now() - startTime, format: 'raw' };
       } catch (groqError) {
         console.warn(`⚠️ Groq failed: ${groqError.message}`);
-        console.log('🔄 Fallback to Layer 2: Gemini...');
+        console.log('🔄 Fallback to Layer 4: Gemini...');
       }
     }
 
-    // 🔥 LAYER 2: Fallback to Gemini
+    // 🔥 LAYER 4: Final fallback to Gemini
     if (PROVIDERS.gemini.enabled) {
       try {
         console.log(`🚀 Layer 2: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
@@ -913,6 +1042,87 @@ export async function sendToAI({
 }
 
 // ============================================
+// CEREBRAS PROVIDER (PRIMARY - Direct API)
+// ============================================
+
+async function callCerebras(messages, systemPrompt, options = {}) {
+  if (!PROVIDERS.cerebras.enabled) {
+    throw new Error('Cerebras API key not configured');
+  }
+  
+  const startTime = Date.now();
+  let requestBody;
+  
+  try {
+    // Normalize messages to OpenAI format
+    const normalizedMessages = messages.map(msg => ({
+      role: msg.role === 'model' ? 'assistant' : msg.role,
+      content: msg.content || msg.text || ''
+    })).filter(msg => msg.content && msg.content.trim().length > 0);
+
+    // Separate system prompt
+    const systemMessage = normalizedMessages.find(m => m.role === 'system');
+    const otherMessages = normalizedMessages.filter(m => m.role !== 'system');
+    
+    const finalSystemPrompt = systemMessage ? systemMessage.content : (systemPrompt || '');
+
+    requestBody = {
+      model: PROVIDERS.cerebras.model,
+      messages: [
+        { role: 'system', content: finalSystemPrompt },
+        ...otherMessages
+      ],
+      max_tokens: options.maxTokens || PROVIDERS.cerebras.maxTokens,
+      temperature: options.temperature || PROVIDERS.cerebras.temperature,
+      response_format: { type: "json_object" }  // 🔥 Force JSON output
+    };
+    
+    const response = await axios.post(CEREBRAS_ENDPOINT, requestBody, {
+      headers: {
+        'Authorization': `Bearer ${CEREBRAS_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 10000  // 10s timeout
+    });
+    
+    const elapsed = Date.now() - startTime;
+    
+    // Parse response (Cerebras uses OpenAI-compatible format)
+    let responseData = response.data;
+    if (response.data?.choices?.[0]?.message?.content) {
+      const rawContent = response.data.choices[0].message.content;
+      
+      // Try to parse as JSON first
+      try {
+        const cleanedContent = rawContent.replace(/```json\n/g, '').replace(/\n```/g, '');
+        responseData = JSON.parse(cleanedContent);
+      } catch (e) {
+        // Not clean JSON - return raw for responseParser to handle
+        console.log('🔧 Cerebras response needs extraction, returning raw');
+        responseData = rawContent;
+      }
+    }
+
+    console.log(`✅ Cerebras success in ${elapsed}ms`);
+    return responseData;
+    
+  } catch (error) {
+    const elapsed = Date.now() - startTime;
+    console.error(`❌ Cerebras error in ${elapsed}ms:`, error.response?.status, error.message);
+    
+    if (error.response?.status === 400) {
+      console.error('🔍 Cerebras 400 Debug:', {
+        model: PROVIDERS.cerebras.model,
+        messagesCount: requestBody?.messages?.length,
+        errorData: error.response?.data
+      });
+    }
+    
+    throw error;
+  }
+}
+
+// ============================================
 // TOGETHER AI PROVIDER (PRIMARY - 60 req/min)
 // ============================================
 
@@ -944,7 +1154,7 @@ async function callTogether(messages, systemPrompt, options = {}) {
         ...otherMessages
       ],
       max_tokens: options.maxTokens || PROVIDERS.together.maxTokens,
-      temperature: options.temperature || 0.8,  // Increased from 0.7 to break caching
+      temperature: options.temperature || 0.6,  // Balanced: creative but stable (was 0.8 causing empty responses)
       response_format: { type: "json_object" }  // Force JSON output
     };
     
@@ -953,7 +1163,7 @@ async function callTogether(messages, systemPrompt, options = {}) {
         'Authorization': `Bearer ${TOGETHER_API_KEY}`,
         'Content-Type': 'application/json'
       },
-      timeout: 3000  // 3s timeout - fast fallback to Groq if Together AI slow
+      timeout: 20000  // 20s timeout for complex story missions (was 10s, caused timeouts)
     });
     
     const elapsed = Date.now() - startTime;

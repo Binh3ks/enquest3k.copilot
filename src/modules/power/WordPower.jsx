@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, Zap, Globe, CheckCircle, Edit3, BookOpen, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 
 const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -30,7 +31,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
   // Audio play function
   const play = (e, text, audioUrl) => {
     e.stopPropagation();
-    speakText(text, audioUrl);
+    speakText(text, audioUrl, 1.0, null, 'word_power');
   };
 
   const handleCopyCheck = (key, value) => {
@@ -182,8 +183,43 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
 
 const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const [completedIds, setCompletedIds] = useState([]);
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
+  
+  // 🚀 TTS Prefetch - auto-cache word power content
+  const { prefetchMultiple } = useTTSPrefetch('word_power');
 
-  if (!data || !data.words) return <div>Loading Power...</div>;
+  // 🚀 Pre-cache all vocabulary items when data loads (ONCE per data load)
+  useEffect(() => {
+    // Reset flag when data changes
+    hasPrefetched.current = false;
+  }, [data]);
+  
+  useEffect(() => {
+    if (hasPrefetched.current) return; // Already prefetched
+    
+    if (data?.words) {
+      hasPrefetched.current = true;
+      console.log('[WordPower] 🐛 DEBUG - words:', {
+        hasWords: !!data.words,
+        wordsLength: data.words.length
+      });
+      
+      const texts = [];
+      data.words.forEach(word => {
+        if (word.word) texts.push(word.word);
+        if (word.definition_en) texts.push(word.definition_en);
+        const context = word.collocation_en || word.collocation || word.model_sentence_en || word.model_sentence || word.example_en || word.example;
+        if (context) texts.push(context);
+      });
+      
+      console.log(`[WordPower] 🚀 Starting prefetch for ${texts.length} items...`);
+      // Prefetch with 800ms delay between each to avoid overwhelming server
+      prefetchMultiple(texts, 800).catch(err => {
+        console.warn('[WordPower] ❌ Prefetch failed:', err);
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   const handleCardComplete = (id) => {
       setCompletedIds(prev => {

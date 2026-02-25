@@ -1,22 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, XCircle, Globe, Keyboard, LayoutList, Type, Info, AlertTriangle, ArrowRight } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 
-const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress, weekNumber, mode: propMode }) => {
   const { weekId } = useParams();
+  const currentWeek = weekNumber || parseInt(weekId);
   
   // 🔥 Universal Progress System with mode support
-  const { savedData, saveProgress, markComplete, mode } = useStationProgress(parseInt(weekId), 'skill_dictation');
+  const { savedData, saveProgress, markComplete, mode: hookMode } = useStationProgress(parseInt(weekId), 'skill_dictation');
+  const mode = propMode || hookMode || 'advanced';
+  
+  // 🚀 TTS Prefetch - auto-cache dictation sentences
+  const { prefetchFromArray } = useTTSPrefetch('dictation');
   
   const [level, setLevel] = useState(savedData.level || 1);
   const [inputs, setInputs] = useState(savedData.inputs || {});
   const [feedback, setFeedback] = useState(savedData.feedback || {});
   const [completedIds, setCompletedIds] = useState(() => new Set(savedData.correctSentences || []));
+  
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
 
-  // 🔥 FIX: Reset state when mode changes
+  // � DEBUG: Log sentences structure
+  useEffect(() => {
+    const sentences = data?.sentences || [];
+    console.log('[DictationEngine] 🐛 DEBUG - sentences:', {
+      hasSentences: !!data?.sentences,
+      sentencesLength: sentences.length,
+      mode: mode,
+      firstItem: sentences[0]
+    });
+  }, [data, mode]);
+
+  // �🔥 FIX: Reset state when mode changes
   useEffect(() => {
     setLevel(savedData.level || 1);
     setInputs(savedData.inputs || {});
@@ -47,6 +66,25 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
     return () => clearTimeout(handler);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, inputs, feedback, completedIds]);
+
+  // 🚀 Pre-cache dictation sentences for instant playback (ONCE per data load)
+  useEffect(() => {
+    // Reset flag when data or mode changes
+    hasPrefetched.current = false;
+  }, [data, mode]);
+  
+  useEffect(() => {
+    if (hasPrefetched.current) return; // Already prefetched
+    
+    if (data?.sentences) {
+      hasPrefetched.current = true;
+      console.log(`[DictationEngine] 🚀 Starting prefetch for ${data.sentences.length} sentences...`);
+      prefetchFromArray(data.sentences, 'text_en').catch(err => {
+        console.warn('[DictationEngine] ❌ Prefetch failed:', err);
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data?.sentences?.length, prefetchFromArray]);
 
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Dictation...</div>;
@@ -144,7 +182,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                      <span>Done</span>
                    </div>
                  )}
-                 <button onClick={() => speakText(s.text_en || s.text, s.audio_url)} className={`p-3 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-transform shadow-lg`}>
+                 <button onClick={() => speakText(s.text_en || s.text, s.audio_url, 1.0, null, 'dictation', currentWeek, mode)} className={`p-3 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-transform shadow-lg`}>
                    <Volume2 className="w-5 h-5" />
                  </button>
                </div>

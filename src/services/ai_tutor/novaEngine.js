@@ -84,7 +84,7 @@ export class NovaEngine {
     const effectiveWeekId = weekId || this.weekData?.weekId || 1;
     
     // Validate mode
-    const validModes = ['story', 'freetalk', 'pronunciation', 'quiz', 'quiz_game', 'debate'];
+    const validModes = ['story', 'freetalk', 'translation_help', 'pronunciation', 'quiz', 'quiz_game', 'debate'];
     if (!validModes.includes(mode)) {
       throw new Error(`NovaEngine: Invalid mode "${mode}". Must be one of: ${validModes.join(', ')}`);
     }
@@ -93,7 +93,9 @@ export class NovaEngine {
       mode,
       userMessage: userMessage.slice(0, 50) + '...',
       turnCount: context.turnCount || Math.floor(chatHistory.length / 2),
-      weekId: effectiveWeekId
+      weekId: effectiveWeekId,
+      has20QValidation: !!context.twentyQuestionsValidation,
+      twentyQType: context.twentyQuestionsValidation?.type
     });
 
     try {
@@ -104,8 +106,23 @@ export class NovaEngine {
         userMessage,
         weekId: effectiveWeekId,  // 🔥 Pass weekId to context builder
         currentScenario: context.currentScenario,  // 🔥 CRITICAL: Pass roleplay scenario!
-        currentMission: context.currentMission  // 🔥 CRITICAL: Pass story mission with character data!
+        currentMission: context.currentMission,  // 🔥 CRITICAL: Pass story mission with character data!
+        wordChainValidation: context.wordChainValidation,  // 🎮 WORD CHAIN: Pass validation
+        initialGameHints: context.initialGameHints,  // 🎮 WORD CHAIN: Pass initial hints
+        twentyQuestionsValidation: context.twentyQuestionsValidation  // 🎯 20 QUESTIONS: Pass validation
       });
+
+      // 🎯 CODE-VALIDATED GAMES: Check if code wants to bypass AI completely
+      console.log('🎯 novaEngine: Checking skipAI', {
+        systemPromptType: typeof systemPrompt,
+        isObject: typeof systemPrompt === 'object',
+        hasSkipAI: typeof systemPrompt === 'object' ? systemPrompt?.skipAI : false
+      });
+
+      if (typeof systemPrompt === 'object' && systemPrompt.skipAI) {
+        console.log('🎯 Game Validation: Bypassing AI, using code-generated response:', systemPrompt.directResponse?.ai_response?.slice(0, 100));
+        return systemPrompt.directResponse;
+      }
       
       // Step 2: Call AI Router with error handling and retry logic
       const rawResponse = await errorHandler.handleAIError(
@@ -263,12 +280,18 @@ export class NovaEngine {
       turnManager: contextParams.turnManager || null,  // 🔥 CRITICAL: Pass TurnManager reference
       currentScenario: contextParams.currentScenario || null,  // 🔥 CRITICAL: Pass roleplay scenario!
       currentMission: contextParams.currentMission || null,  // 🔥 CRITICAL: Pass story mission with character!
-      gameType: contextParams.gameType || null  // 🔥 CRITICAL: Pass game type for quiz_game mode!
+      gameType: contextParams.gameType || null,  // 🔥 CRITICAL: Pass game type for quiz_game mode!
+      activeGame: contextParams.activeGame || null,  // 🎮 CRITICAL: Pass active game state (id, secretObject, etc.)
+      wordChainValidation: contextParams.wordChainValidation || null,  // 🎮 WORD CHAIN: Pass validation result
+      initialGameHints: contextParams.initialGameHints || null,  // 🎮 WORD CHAIN: Pass initial hints
+      twentyQuestionsValidation: contextParams.twentyQuestionsValidation || null,  // 🎯 20 QUESTIONS: Pass validation
+      weekData: this.weekData  // 🎮 Pass full weekData for game content
     };
     
     // Additional options for specific modes
     const options = {
-      weekData: this.weekData  // 🔥 V27: Pass full weekData for V27 format detection
+      weekData: this.weekData,  // 🔥 V27: Pass full weekData for V27 format detection
+      context: context  // 🎮 Pass context to options for freeTalkModes.js access
     };
     
     if (mode === 'story') {
@@ -302,19 +325,83 @@ export class NovaEngine {
       
       // 🔥 CRITICAL: Pass chat history to tutorPrompts so AI remembers context
       options.history = contextParams.chatHistory || [];
-      
+
+      // 🔥 PRE-COMPUTE next question from story_arc (Conversation Card approach)
+      // This way tutorPrompts.js doesn't need to do any math — just inject the text.
+      if (currentMission?.story_arc) {
+        const chatHistory = contextParams.chatHistory || [];
+        const studentMessages = chatHistory.filter(m => m.role === 'user');
+        const studentMsgCount = studentMessages.length;
+        const lastStudentMsg = studentMessages[studentMessages.length - 1]?.content || '';
+
+        // studentMsgCount=1 → Q index 0 (first question, after greeting)
+        // studentMsgCount=2 → Q index 1, etc.
+        const targetIndex = Math.max(0, studentMsgCount - 1);
+
+        let cumulative = 0;
+        let nextQuestion = null;
+        let nextHints = [];
+        for (const phase of currentMission.story_arc) {
+          const phaseQs = phase.phase_questions || [];
+          if (targetIndex < cumulative + phaseQs.length) {
+            const q = phaseQs[targetIndex - cumulative];
+            const tmpl = typeof q === 'object' ? q.template : (q || '');
+            // Resolve {student_answer} placeholder and strip "(After xxx)" prefix
+            nextQuestion = tmpl
+              .replace(/^\(After [^)]+\)\s*/i, '')
+              .replace(/\{student_answer\}/g, lastStudentMsg);
+            nextHints = (typeof q === 'object' ? q.hints : null) || [];
+            break;
+          }
+          cumulative += phaseQs.length;
+        }
+        context.nextQuestion = nextQuestion;
+        context.nextQuestionHints = nextHints;
+        console.log(`🎯 Pre-computed nextQuestion (student turn ${studentMsgCount}):`, nextQuestion?.slice(0, 90));
+
+        // 🃏 CONVERSATION CARD MODE: Skip AI entirely — return pre-computed answer directly
+        // Only skip when student has actually said something (not the opening init call)
+        if (nextQuestion && studentMsgCount >= 1) {
+          // Pre-include echo-ack so responseGuard doesn't add "Nice! I see!" filler
+          // If nextQuestion already starts with the student's text (from {student_answer}), keep as-is
+          // Otherwise prepend e.g. "Yes, Captain! What do I call you?"
+          const alreadyHasAck = lastStudentMsg && nextQuestion.startsWith(lastStudentMsg);
+          const finalResponse = alreadyHasAck || !lastStudentMsg
+            ? nextQuestion
+            : `${lastStudentMsg}! ${nextQuestion}`;
+
+          console.log(`🃏 Card Mode: Skipping AI, delivering pre-computed line directly`);
+          return {
+            skipAI: true,
+            directResponse: {
+              ai_response: finalResponse,
+              suggested_hints: nextHints,
+              hints: nextHints,
+              mission_status: 'in_progress',
+              ack: lastStudentMsg ? `${lastStudentMsg}!` : '',
+              recast: '',
+              question: ''
+            }
+          };
+        }
+      }
+
+      // 🔥 Pass turnCount into context so tutorPrompts can access it
+      context.turnCount = contextParams.turnCount || Math.floor((contextParams.chatHistory?.length || 0) / 2);
+
       console.log('📜 Story mode - Mission:', options.mission.title);
       console.log('🎯 Mission context:', options.mission.description?.slice(0, 100));
       console.log('💬 Chat history:', options.history.length, 'messages');      console.log('🧠 TurnManager:', contextParams.turnManager ? 'PASSED ✅' : 'MISSING ❌');    }
     
-    if (mode === 'freetalk') {
+    if (mode === 'freetalk' || mode === 'translation_help') {
       // 🔥 CRITICAL: Pass chat history to tutorPrompts
       options.history = contextParams.chatHistory || [];
       options.turnCount = contextParams.turnCount || Math.floor((contextParams.chatHistory?.length || 0) / 2);
       options.isOpeningTurn = contextParams.isOpeningTurn || false;
       options.weekData = this.weekData;  // 🔥 FIX: Pass weekData for game vocab system
       
-      console.log('💬 Freetalk mode - passing context:', {
+      console.log('💬 Freetalk/translation mode - passing context:', {
+        mode,
         historyLength: options.history.length,
         turnCount: options.turnCount,
         isOpeningTurn: options.isOpeningTurn,

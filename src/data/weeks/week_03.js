@@ -1,9 +1,17 @@
+// SMART INDEX SYSTEM - LAZY LOADING FOR SCALABILITY
+// ⚡ Dynamic import: Only load weeks when needed (NOT eager)
+import { week3RealData } from './week_03_real.js';
+
 const weekData = {
   weekId: 3,
   weekTitle_en: "Observing Differences",
   weekTitle_vi: "Quan sát Sự khác biệt",
   grammar_focus: "Comparatives (Er/More)",
   global_vocab: [],
+  
+  // Import missions from week_03_real.js
+  missions: week3RealData.missions,
+  
   stations: {
     read_explore: {
       title: "Animals Big and Small",

@@ -14,22 +14,23 @@ const FloatingButton = () => {
   return (
     <button
       onClick={toggleWidget}
-      className="fixed bottom-6 right-6 z-50 transition-all duration-300 shadow-2xl"
+      className="fixed top-[18px] z-50 transition-all duration-300 shadow-lg hover:shadow-purple-500/60"
+      style={{ left: 'calc(320px + (100vw - 320px) / 2)', transform: 'translateX(-50%)' }}
       aria-label="Open AI Tutor"
     >
-      {/* Main Button */}
-      <div className="relative w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:scale-110 active:scale-95 transition-transform duration-200">
+      {/* Main Button - Large header size */}
+      <div className="relative px-6 py-3 rounded-xl flex items-center gap-2.5 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:scale-105 active:scale-95 transition-transform duration-200">
         {/* Icon */}
-        <Sparkles className="text-white" size={28} />
+        <Sparkles className="text-white animate-pulse" size={24} />
+        
+        {/* Text */}
+        <div className="flex flex-col leading-tight">
+          <span className="text-white font-black text-base">Ms. Nova</span>
+          <span className="text-white/90 font-bold text-sm">Talk with me!</span>
+        </div>
         
         {/* Glow Effect */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 opacity-0 hover:opacity-30 blur-xl transition-opacity duration-300" />
-      </div>
-
-      {/* Label */}
-      <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-900 text-white text-xs font-medium rounded-lg whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-        Ask Ms. Nova 💬
-        <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900" />
+        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 opacity-0 hover:opacity-30 blur-lg transition-opacity duration-300" />
       </div>
     </button>
   );

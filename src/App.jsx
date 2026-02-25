@@ -13,6 +13,7 @@ import { MODULE_COMPONENTS, STATIONS } from './config/stationConfig';
 import { useFetchWeekData, useStationData } from './utils/dataHooks';
 import { generateSmartReviewAsync } from './utils/srsGenerator';
 import { loadVoices } from './utils/AudioHelper'; // Import loadVoices
+import { TTSWeekPrefetch } from './services/ttsWeekPrefetch'; // Week-wide TTS prefetch
 import LoginScreen from './components/auth/LoginScreen';
 import FloatingDictionary from './components/common/FloatingDictionary';
 import AIProviderStatus from './components/common/AIProviderStatus';
@@ -27,6 +28,7 @@ import AITutorWidget from './modules/ai_tutor/AITutorWidget';
 import SaveToast from './components/common/SaveToast';
 import AutoSaveIndicator from './components/common/AutoSaveIndicator';
 import CongratulationsModal from './components/common/CongratulationsModal';
+import GameHub from './pages/GameHub/GameHub';
 
 const StationLoading = () => <div className="p-10 text-center text-slate-400 font-black italic">Station loading...</div>;
 
@@ -35,6 +37,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Navigate replace to="/week/1/read_explore" />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />
+      <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
     </Routes>
     
     {/* Global AI Tutor Widget - V5 Premium */}
@@ -83,6 +86,17 @@ const MainLayout = () => {
       setReviewItems([]);
     }
   }, [weekId, tabKey]);
+
+  // 🚀 Smart prefetch with priority: current station first, others delayed
+  useEffect(() => {
+    if (weekData && !isWeekDataLoading) {
+      const isEasy = learningMode === 'easy';
+      console.log(`[App] 🚀 Triggering smart prefetch for Week ${weekId} (${isEasy ? 'EASY' : 'ADVANCED'}), current: ${tabKey}`);
+      TTSWeekPrefetch.initialize(weekId, isEasy, tabKey).catch(err => {
+        console.warn('[App] Week prefetch failed:', err);
+      });
+    }
+  }, [weekId, weekData, isWeekDataLoading, learningMode, tabKey]);
 
   const overallWeekProgress = useMemo(() => {
       const stations = STATIONS.filter(s => s.key !== 'review');
@@ -262,7 +276,17 @@ const MainLayout = () => {
               {tabKey === 'review' ? (
                  <ReviewDashboard key={`review-${learningMode}`} userId={currentUser?.id || currentUser?.name} isAuthenticated={!!currentUser} themeColor={currentStation.color} reviewItems={reviewItems} onWeekComplete={() => {}} />
               ) : (
-                <CurrentModule key={`${tabKey}-${learningMode}`} data={matchData} themeColor={currentStation.color} isVi={isVi} onToggleLang={() => setIsVi(!isVi)} onReportProgress={handleReportProgress} currentProgress={weekProgress[tabKey] || 0} />
+                <CurrentModule 
+                  key={`${tabKey}-${learningMode}`} 
+                  data={matchData} 
+                  themeColor={currentStation.color} 
+                  isVi={isVi} 
+                  onToggleLang={() => setIsVi(!isVi)} 
+                  onReportProgress={handleReportProgress} 
+                  currentProgress={weekProgress[tabKey] || 0}
+                  weekNumber={weekId}
+                  mode={learningMode}
+                />
               )}
             </div>
           </div>
@@ -270,6 +294,41 @@ const MainLayout = () => {
         {/* AITutor page removed - Now using AITutorWidget (floating) */}
       </div>
     </>
+  );
+};
+
+/**
+ * Game Hub Layout - Separate route for Game Hub station
+ * Simple layout without sidebar (focused game experience)
+ */
+const GameHubLayout = () => {
+  const { weekId } = useParams();
+  const weekNumber = parseInt(weekId) || 5;
+  const { learningMode } = useUserStore(); // Get learningMode from global store
+  
+  return (
+    <div className="game-hub-layout min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* Simple Header */}
+      <header className="bg-white shadow-sm py-4 px-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link to={`/week/${weekNumber}/read_explore`} className="text-blue-600 hover:text-blue-800">
+            ← Back to Main App
+          </Link>
+          <h1 className="text-2xl font-bold">🎮 Game Hub</h1>
+          <div className="flex items-center gap-3">
+            <span className={`text-xs font-bold px-2 py-1 rounded-full ${learningMode === 'easy' ? 'bg-teal-100 text-teal-700' : 'bg-indigo-100 text-indigo-700'}`}>
+              {learningMode === 'easy' ? '⭐ EASY' : '⭐⭐ ADVANCED'}
+            </span>
+            <div className="text-sm text-gray-500">Week {weekNumber}</div>
+          </div>
+        </div>
+      </header>
+      
+      {/* Game Hub Content */}
+      <main className="py-8">
+        <GameHub weekNumber={weekNumber} learningMode={learningMode} />
+      </main>
+    </div>
   );
 };
 

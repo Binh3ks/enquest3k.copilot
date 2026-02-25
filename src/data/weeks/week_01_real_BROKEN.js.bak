@@ -1,0 +1,906 @@
+/**
+ * ✅ WEEK 1 REAL SYLLABUS DATA
+ * 
+ * Source: 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt
+ * Phase 1 - Block A: Week 1
+ * 
+ * This file contains the OFFICIAL syllabus content for Week 1,
+ * extracted from the master curriculum document.
+ * 
+ * Ms. Nova MUST use this data as the source of truth for:
+ * - Story Mission vocabulary
+ * - Grammar patterns to teach
+ * - Learning outcomes
+ */
+
+export const week1RealData = {
+  // === METADATA ===
+  week_id: 1,
+  phase: 1,
+  block: "A",
+  unit: 1,
+  
+  // === OFFICIAL SYLLABUS DATA ===
+  week_title_en: "Hello, World! (Identity)",
+  week_title_vi: "Chào Thế giới! (Danh tính)",
+  
+  topic: "Introduction & Superheroes (Creating a 'Hero Identity')",
+  topic_vi: "Giới thiệu & Siêu anh hùng (Tạo 'Danh tính Anh hùng')",
+  
+  // === KEY LEARNING OUTCOME ===
+  learning_outcome: "Say and write sentences introducing name/age naturally.",
+  learning_outcome_vi: "Nói và viết câu giới thiệu tên/tuổi một cách tự nhiên.",
+  
+  // === GRAMMAR FOCUS (IMPLICIT) ===
+  grammar_focus: "Pattern 'I am...' (Identity)",
+  grammar_pattern: "I am [name/adjective]",
+  grammar_examples: [
+    "I am Alex.",
+    "I am a student.",
+    "I am 7 years old.",
+    "I am a hero!"
+  ],
+  
+  // === TARGET VOCABULARY (OFFICIAL FROM SYLLABUS) ===
+  target_vocab: [
+    {
+      word: "name",
+      pronunciation: "/neɪm/",
+      definition_vi: "Tên",
+      definition_en: "What someone is called.",
+      example: "My name is Alex.",
+      syllabus_context: "Identity - Introducing self"
+    },
+    {
+      word: "age",
+      pronunciation: "/eɪdʒ/",
+      definition_vi: "Tuổi",
+      definition_en: "How old someone is.",
+      example: "I am 7 years old.",
+      syllabus_context: "Identity - Introducing age"
+    },
+    {
+      word: "student",
+      pronunciation: "/ˈstuːdənt/",
+      definition_vi: "Học sinh",
+      definition_en: "A person who is learning at a school.",
+      example: "I am a student.",
+      syllabus_context: "Identity - Role"
+    },
+    {
+      word: "hero",
+      pronunciation: "/ˈhɪroʊ/",
+      definition_vi: "Anh hùng",
+      definition_en: "A brave person who helps others.",
+      example: "I want to be a hero!",
+      syllabus_context: "Creative Lens - Superhero theme"
+    },
+    {
+      word: "power",
+      pronunciation: "/ˈpaʊər/",
+      definition_vi: "Sức mạnh, quyền năng",
+      definition_en: "A special ability that makes you strong.",
+      example: "My power is reading fast!",
+      syllabus_context: "Creative Lens - Superhero abilities"
+    },
+    {
+      word: "boy",
+      pronunciation: "/bɔɪ/",
+      definition_vi: "Con trai",
+      definition_en: "A male child.",
+      example: "He is a boy.",
+      syllabus_context: "Identity - Gender"
+    },
+    {
+      word: "girl",
+      pronunciation: "/ɡɜrl/",
+      definition_vi: "Con gái",
+      definition_en: "A female child.",
+      example: "She is a girl.",
+      syllabus_context: "Identity - Gender"
+    }
+  ],
+  
+  // === NUMBERS 1-10 (ADDITIONAL VOCAB FROM SYLLABUS) ===
+  numbers_vocab: [
+    { number: 1, word: "one" },
+    { number: 2, word: "two" },
+    { number: 3, word: "three" },
+    { number: 4, word: "four" },
+    { number: 5, word: "five" },
+    { number: 6, word: "six" },
+    { number: 7, word: "seven" },
+    { number: 8, word: "eight" },
+    { number: 9, word: "nine" },
+    { number: 10, word: "ten" }
+  ],
+  
+  // === 3 STORY MISSIONS (SCHOOL-BASED, WEEK 1 VOCAB) ===
+  story_missions: [
+    {
+      mission_id: 1,
+      title: "First Day at School",
+      title_vi: "Ngày Đầu Tiên Đi Học",
+      theme: "Self-introduction",
+      
+      // Ms. Nova's direct greeting (no description)
+      nova_greeting: "Hello! I am Ms. Nova, your English teacher. What is your name?",
+      
+      // Context for AI (not shown to student)
+      mission_context: `The student is on their first day at school. Ms. Nova is their new English teacher. This is a warm, friendly introduction where the student practices saying "I am [name]" and "I am [age] years old". Keep conversation natural and encouraging. ONLY ask about name, age, and being a student. DO NOT ask about backpack, books, or other school supplies - those are for Mission 2.
+
+⚡ FLEXIBLE CONVERSATION:
+- If student asks YOU questions → Answer naturally like a human friend, then bridge back to mission
+- Allow 12-15 turns if conversation is interactive (student asking questions is GOOD!)
+- If student goes off-topic → Acknowledge warmly, then naturally redirect: "That's interesting! At SCHOOL, what do you like to do?"
+- Be human-like: answer questions fully, don't rush through topics`,
+      
+      // Vocabulary focus for this mission (ONLY basic identity)
+      target_vocab: ["name", "age", "student"],
+      
+      // Grammar pattern to practice
+      target_pattern: "I am [name/age/student]",
+      
+      // Topic boundaries (guide AI conversation) - STRICT LIMITS
+      conversation_topics: [
+        "Student's name (What is your name?)",
+        "Student's age (How old are you?)",
+        "Being a student (Are you a student?)",
+        "First day feelings (How do you feel today?)",
+        "School excitement (Are you excited about school?)",
+        "Grade/Class (What grade are you in?)",
+        "Friends at school (Do you have friends?)",
+        "Favorite thing about school (What do you like about school?)",
+        "[Optional: Student can ask Ms. Nova 1-2 questions]",
+        "Simple closing (Great! Nice to meet you!)"
+      ],
+      
+      // Example questions AI can ask (not hardcoded, just examples)
+      example_questions: [
+        "What is your name?",
+        "How old are you?",
+        "Are you a student?",
+        "How are you today?",
+        "Are you excited about school?",
+        "What grade are you in?",
+        "Do you have friends at school?"
+      ],
+      
+
+      objectives: [
+        { stepKey: "name", question: "What is your name?", hints: ["My", "name", "is", "I", "am"] },
+        { stepKey: "age", question: "How old are you?", hints: ["I", "am", "years", "old", "seven", "eight"] },
+        { stepKey: "student", question: "Are you a student?", hints: ["Yes", "I", "am", "a", "student", "No"] },
+        { stepKey: "school_name", question: "What is your school name?", hints: ["My", "school", "is", "name"] },
+        { stepKey: "feelings", question: "How do you feel today?", hints: ["I", "am", "happy", "excited", "good"] },
+        { stepKey: "like_school", question: "Do you like school?", hints: ["Yes", "I", "like", "school", "No"] },
+        { stepKey: "favorite_thing", question: "What do you like at school?", hints: ["I", "like", "learning", "playing", "friends"] },
+        { stepKey: "grade", question: "What grade are you in?", hints: ["I", "am", "in", "grade", "one", "two"] },
+        { stepKey: "friends", question: "Do you have friends at school?", hints: ["Yes", "I", "have", "friends", "No"] },
+        { stepKey: "friend_names", question: "What are your friends' names?", hints: ["My", "friend", "is", "name"] },
+        { stepKey: "play_with_friends", question: "What do you play with your friends?", hints: ["We", "play", "games", "soccer", "tag"] },
+        { stepKey: "first_day", question: "Is this your first day?", hints: ["Yes", "No", "it", "is"] },
+        { stepKey: "goodbye", question: "Great! Nice to meet you!", hints: ["Thank", "you", "Goodbye", "Nice"] }
+      ],
+      
+
+      objectives: [
+        { stepKey: "name", question: "What is your name?", hints: ["My", "name", "is", "I", "am"] },
+        { stepKey: "age", question: "How old are you?", hints: ["I", "am", "years", "old", "seven", "eight"] },
+        { stepKey: "student", question: "Are you a student?", hints: ["Yes", "I", "am", "a", "student", "No"] },
+        { stepKey: "school_name", question: "What is your school name?", hints: ["My", "school", "is", "name"] },
+        { stepKey: "feelings", question: "How do you feel today?", hints: ["I", "am", "happy", "excited", "good"] },
+        { stepKey: "like_school", question: "Do you like school?", hints: ["Yes", "I", "like", "school", "No"] },
+        { stepKey: "favorite_thing", question: "What do you like at school?", hints: ["I", "like", "learning", "playing", "friends"] },
+        { stepKey: "grade", question: "What grade are you in?", hints: ["I", "am", "in", "grade", "one", "two"] },
+        { stepKey: "friends", question: "Do you have friends at school?", hints: ["Yes", "I", "have", "friends", "No"] },
+        { stepKey: "friend_names", question: "What are your friends' names?", hints: ["My", "friend", "is", "name"] },
+        { stepKey: "play_with_friends", question: "What do you play with your friends?", hints: ["We", "play", "games", "soccer", "tag"] },
+        { stepKey: "first_day", question: "Is this your first day?", hints: ["Yes", "No", "it", "is"] },
+        { stepKey: "goodbye", question: "Great! Nice to meet you!", hints: ["Thank", "you", "Goodbye", "Nice"] }
+      ],
+      
+      minimum_turns: 15, // Flexible: Allow natural conversation flow
+      maximum_turns: 20, // Soft maximum for natural closure
+      
+      success_criteria: [
+        "Uses 'I am' correctly for name",
+        "States age with 'years old'",
+        "Uses 'student' naturally",
+        "Engages naturally in conversation (can ask questions back)"
+      ]
+    },    {
+      mission_id: 2,
+      title: "I Spy Game",
+      title_en: "I Spy Color & Size Game",
+      title_vi: "Trò Chơi Tìm Đồ Vật",
+      theme: "Interactive guessing game about school supplies",
+      
+      nova_greeting: "🔍 Let's play I Spy! I spy with my little eye... something RED! Can you find it?",
+      default_hints: ["My", "pen", "is", "red"],
+      
+      mission_context: `This is Week 1 Mission 2 - I Spy Game (Color & Size Hunt).
+
+🎮 GAME CONCEPT: Interactive "I Spy" game
+Ms. Nova gives CLUES about color/size, student guesses the item!
+
+GAME FLOW:
+1. Nova says: "I spy something RED!" 
+2. Student guesses: "My pen!" or "Pen!"
+3. Nova celebrates and gives NEXT clue
+4. Keep going through different colors/sizes
+
+STRICT RULES:
+✅ Use "I spy something [COLOR/SIZE]!"
+✅ Give clear visual clues (color, size, shape)
+✅ Celebrate each correct guess enthusiastically
+✅ Move to NEXT item immediately after correct guess
+
+FORBIDDEN:
+❌ "Next photo" (no photos in this game!)
+❌ "I see someone" (items, not people!)
+❌ Asking same item twice
+
+CORRECT FORMAT:
+✅ "I spy something RED! What is red?"
+✅ "I spy something BIG! What is big?"
+✅ "I spy something SMALL and BLUE! What is it?"
+
+HINT STRATEGY:
+- Give color/size hints in suggested_hints
+- Include item names: ["pen", "red", "My", "is"]
+- Focus on visual descriptors
+
+VOCABULARY: backpack, book, notebook, pen, pencil, eraser, red, blue, big, small
+PATTERN: "My [item] is [color/size]"`,
+      
+      target_vocab: ["backpack", "book", "notebook", "pen", "pencil", "eraser", "red", "blue", "big", "small"],
+      grammar_pattern: "My [item] is [color/size].",
+
+      objectives: [
+        {
+          stepKey: "spy_red_item",
+          category: "Color Hunt",
+          question_variants: [
+            {
+              question: "I spy with my little eye... something RED! What is red in your backpack?",
+              hints: ["My", "pen", "is", "red"]
+            },
+            {
+              question: "I spy something RED! Can you find it?",
+              hints: ["pen", "red", "My", "is"]
+            }
+          ],
+          target_keywords: ["pen", "red"],
+          ack_options: ["Yes! Red!", "Correct!", "You found it!"],
+          recast_templates: [
+            "Your pen is red! Great!",
+            "Red pen! Perfect!"
+          ],
+          success_criteria: "Student identifies red item"
+        },
+        {
+          stepKey: "spy_big_item",
+          category: "Size Hunt",
+          question_variants: [
+            {
+              question: "Now I spy something BIG! What is big?",
+              hints: ["My", "book", "is", "big"]
+            },
+            {
+              question: "I spy something BIG and HEAVY! What is it?",
+              hints: ["book", "big", "My"]
+            }
+          ],
+          target_keywords: ["book", "big"],
+          ack_options: ["Yes! Big!", "Correct!", "You found it!"],
+          recast_templates: [
+            "Your book is big! Great!",
+            "Big book! Perfect!"
+          ],
+          success_criteria: "Student identifies big item"
+        },
+        {
+          stepKey: "spy_blue_item",
+          category: "Color Hunt",
+          question_variants: [
+            {
+              question: "Next! I spy something BLUE! What is blue?",
+              hints: ["My", "notebook", "is", "blue"]
+            },
+            {
+              question: "I spy something BLUE and SMALL! What is it?",
+              hints: ["notebook", "blue", "small"]
+            }
+          ],
+          target_keywords: ["notebook", "blue"],
+          ack_options: ["Yes! Blue!", "Correct!", "You found it!"],
+          recast_templates: [
+            "Your notebook is blue! Great!",
+            "Blue notebook! Perfect!"
+          ],
+          success_criteria: "Student identifies blue item"
+        },
+        {
+          stepKey: "spy_small_item",
+          category: "Size Hunt",
+          question_variants: [
+            {
+              question: "Now I spy something SMALL! What is small?",
+              hints: ["My", "eraser", "is", "small"]
+            },
+            {
+              question: "I spy something tiny! Can you guess?",
+              hints: ["eraser", "small", "pencil"]
+            }
+          ],
+          target_keywords: ["eraser", "pencil", "small"],
+          ack_options: ["Yes! Small!", "Correct!", "You found it!"],
+          recast_templates: [
+            "Your eraser is small! Great!",
+            "Small eraser! Perfect!"
+          ],
+          success_criteria: "Student identifies small item"
+        }
+      ],
+
+      story_character: {
+        name: "Ms. Nova",
+        personality: "playful, loves I Spy game, gives fun clues",
+        backstory: "I love playing I Spy with school supplies! Let's find things by color and size!",
+        speaking_style: "enthusiastic, uses 'I spy...' format, celebrates discoveries",
+        facts: [
+          "I love colorful things!",
+          "I'm great at spotting details!",
+          "Red is my favorite color!",
+          "I spy games are the best!"
+        ],
+        special_rules: [
+          "Always use 'I spy...' format",
+          "Give color or size clues",
+          "Celebrate each discovery",
+          "Move to next item after correct guess"
+        ]
+      },
+      
+      opening_narrative: "🔍 Let's play I Spy! I spy with my little eye... something RED! What is red? Say: My pen is red OR My book is red",
+      
+      story_arc: {
+        total_questions: 16,
+        structure: "intro (3) → red items (4) → big items (4) → blue items (3) → closing (2)",
+        phases: [
+          {
+            phase: "intro",
+            turns: "1-3",
+            phase_name: "Game Start",
+            focus: "Explain I Spy game",
+            phase_questions: [
+              "🔍 Hi! Let's play I Spy! Do you know this game? I give clues, you guess! Say: Yes! OR Let's play!",
+              "(After yes/let's play) Great! I spy with my little eye... something RED! What is red? Say: My pen is red OR My book is red",
+              "(After student says red item) Yes! {student_answer}! 🖊️ You're good at this! Now I spy something BLUE! What is blue? Say: My notebook is blue OR My backpack is blue"
+            ]
+          },
+          {
+            phase: "color_hunt",
+            turns: "4-7",
+            phase_name: "Colors Hunt",
+            focus: "Find items by color",
+            phase_questions: [
+              "(After blue item) Perfect! {student_answer}! 📘 Now I spy something BIG! What is big in your backpack? Say: My book is big OR My backpack is big",
+              "(After big item) Excellent! {student_answer}! Now I spy something SMALL! What is small? Say: My eraser is small OR My pencil is small",
+              "(After small item) Yes! {student_answer}! 🎯 Last one - I spy something GREEN or YELLOW! Do you have green or yellow? Say: My pencil is green OR I have a yellow book OR I don't have green",
+              "(After color answer) {student_answer}! Wonderful! You found all the items! 🌈"
+            ]
+          },
+          {
+            phase: "closing",
+            turns: "8-10",
+            phase_name: "Celebration",
+            focus: "Celebrate success",
+            phase_questions: [
+              "You're an I Spy champion! 🏆 What's your FAVORITE item in your backpack? Say: I love my [item] OR My favorite is [item]",
+              "(After favorite) {student_answer}! Me too! Thanks for playing I Spy with me! Say: Thank you! OR Goodbye! OR That was fun!",
+              "(After thanks) Goodbye! See you next time! 👋"
+            ]
+          }
+        ]
+      },
+      
+      minimum_turns: 12,
+      maximum_turns: 18
+    },    {
+      mission_id: 3,
+      title: "Show and Tell",
+      title_en: "Show and Tell - Present Your Items",
+      title_vi: "Thuyết Trình Đồ Dùng",
+      theme: "Presentation game - student presents their school items",
+      
+      nova_greeting: "🎤 Time for Show and Tell! Pick one thing from your backpack and tell me about it!",
+      default_hints: ["My", "book", "is", "big", "blue"],
+      
+      mission_context: `This is Week 1 Mission 3 - Show and Tell (Presentation Game).
+
+🎮 GAME CONCEPT: Student PRESENTS their school items like Show and Tell
+Different from Week 2 grammar game - this is about PRESENTING and DESCRIBING!
+
+GAME FLOW:
+1. Nova asks: "Pick something from your backpack!"
+2. Student chooses: "My book!"
+3. Nova asks: "Tell me about your book! What color is it?"
+4. Student describes: "My book is blue!"
+5. Nova asks follow-up: "What size? Big or small?"
+6. Continue with DIFFERENT items
+
+STRICT RULES:
+✅ Student CHOOSES which item to present
+✅ Ask about COLOR, SIZE, and USE
+✅ Move to DIFFERENT item after 2-3 questions
+✅ Encourage full sentences: "My book is big"
+
+FORBIDDEN:
+❌ Grammar correction (that's Week 2!)
+❌ "My vs Your" errors (no error correction!)
+❌ Asking about same item too long
+
+CORRECT FORMAT:
+✅ "Pick something from your backpack!"
+✅ "Tell me about your [item]! What color is it?"
+✅ "Wow! What else do you have? Show me another thing!"
+
+QUESTION PATTERNS:
+- "What color is your [item]?" 
+- "Is it big or small?"
+- "What do you use it for?"
+- "Do you like your [item]?"
+
+VOCABULARY: backpack, book, notebook, pen, pencil, eraser, ruler, big, small, red, blue, green
+PATTERN: "My [item] is [color/size]. I use it for [purpose]."`,
+      
+      target_vocab: ["backpack", "book", "notebook", "pen", "pencil", "eraser", "ruler", "big", "small", "red", "blue"],
+      grammar_pattern: "My [item] is [adjective]. I use it for...",
+
+      objectives: [
+        {
+          stepKey: "present_first_item",
+          category: "Item Presentation",
+          question_variants: [
+            {
+              question: "Pick something from your backpack! What do you want to show me?",
+              hints: ["My", "book", "pen", "notebook"]
+            },
+            {
+              question: "Show and Tell time! What's in your backpack?",
+              hints: ["I", "have", "a", "book"]
+            }
+          ],
+          target_keywords: ["book", "pen", "notebook", "pencil"],
+          ack_options: ["Great choice!", "Nice!", "I want to hear about it!"],
+          recast_templates: [
+            "Your {item}! Tell me about it!",
+            "A {item}! Interesting!"
+          ],
+          success_criteria: "Student picks first item"
+        },
+        {
+          stepKey: "describe_color",
+          category: "Color Description",
+          question_variants: [
+            {
+              question: "What color is your [item]?",
+              hints: ["My", "book", "is", "blue", "red"]
+            },
+            {
+              question: "Tell me the color! Is it red, blue, or green?",
+              hints: ["It", "is", "blue"]
+            }
+          ],
+          target_keywords: ["red", "blue", "green", "yellow"],
+          ack_options: ["Beautiful!", "I love that color!", "Nice!"],
+          recast_templates: [
+            "Your {item} is {color}!",
+            "{color}! Beautiful!"
+          ],
+          success_criteria: "Student describes color"
+        },
+        {
+          stepKey: "describe_size",
+          category: "Size Description",
+          question_variants: [
+            {
+              question: "Is your [item] big or small?",
+              hints: ["My", "book", "is", "big"]
+            },
+            {
+              question: "What about the size? Big or small?",
+              hints: ["It", "is", "big", "small"]
+            }
+          ],
+          target_keywords: ["big", "small"],
+          ack_options: ["I see!", "Good description!", "Perfect!"],
+          recast_templates: [
+            "Your {item} is {size}!",
+            "{size}! Got it!"
+          ],
+          success_criteria: "Student describes size"
+        },
+        {
+          stepKey: "present_second_item",
+          category: "Item Presentation",
+          question_variants: [
+            {
+              question: "Great! Show me another thing! What else is in your backpack?",
+              hints: ["My", "pen", "pencil", "eraser"]
+            },
+            {
+              question: "Pick something different! What else do you have?",
+              hints: ["I", "have", "a", "pen"]
+            }
+          ],
+          target_keywords: ["pen", "pencil", "eraser", "ruler"],
+          ack_options: ["Another one!", "Show me!", "I'm listening!"],
+          recast_templates: [
+            "Your {item}! Tell me more!",
+            "A {item}! Nice!"
+          ],
+          success_criteria: "Student picks second item"
+        }
+      ],
+
+      story_character: {
+        name: "Ms. Nova",
+        personality: "encouraging teacher, loves presentations, asks follow-up questions",
+        backstory: "I love Show and Tell! Everyone's items are interesting! Tell me everything!",
+        speaking_style: "supportive, asks clarifying questions, encourages details",
+        facts: [
+          "I love hearing students present!",
+          "Every item has a story!",
+          "Colors make things interesting!",
+          "Show and Tell is my favorite!"
+        ],
+        special_rules: [
+          "Let student CHOOSE items",
+          "Ask about color, size, use",
+          "Encourage full sentences",
+          "Move to different items after 2-3 questions"
+        ]
+      },
+      
+      opening_narrative: "🎤 It's Show and Tell time! Pick something from your backpack and tell me about it! What do you want to show? Say: My book OR My pen",
+      
+      story_arc: {
+        total_questions: 16,
+        structure: "intro (2) → item 1 (4) → item 2 (4) → item 3 (4) → closing (2)",
+        phases: [
+          {
+            phase: "intro",
+            turns: "1-2",
+            phase_name: "Game Start",
+            focus: "Explain Show and Tell",
+            phase_questions: [
+              "🎤 Hi! It's Show and Tell time! Pick something from your backpack! What do you want to show me? Say: My book OR My pen OR My notebook",
+              "(After student picks item) Great choice! Your {student_answer}! Now tell me - what COLOR is your {student_answer}? Say: My {student_answer} is [color] OR It is [color]"
+            ]
+          },
+          {
+            phase: "item_1",
+            turns: "3-6",
+            phase_name: "First Item",
+            focus: "Describe first item fully",
+            phase_questions: [
+              "(After color) {student_answer}! Beautiful! Is your {item} BIG or SMALL? Say: It is big OR It is small OR My {item} is big",
+              "(After size) Perfect! {student_answer}! What do you USE your {item} for? Say: I use it for writing OR I use it for reading OR For writing",
+              "(After use) Wonderful! {student_answer}! Your {item} is very useful! 📚 Now show me something DIFFERENT! What else do you have? Say: My [different item]"
+            ]
+          },
+          {
+            phase: "item_2",
+            turns: "7-10",
+            phase_name: "Second Item",
+            focus: "Present second item",
+            phase_questions: [
+              "(After item 2) Nice! Your {student_answer}! What COLOR is it? Say: It is [color] OR My {student_answer} is [color]",
+              "(After color) {student_answer}! Good! Is it BIG or SMALL? Say: It is big OR It is small",
+              "(After size) Perfect! {student_answer}! Do you LIKE your {item}? Say: Yes, I like it OR I love it! OR Yes!",
+              "(After like) {student_answer}! Great! ONE more item! Show me one more thing! Say: My [item]"
+            ]
+          },
+          {
+            phase: "item_3",
+            turns: "11-13",
+            phase_name: "Quick Round",
+            focus: "One more item quickly",
+            phase_questions: [
+              "(After item 3) Your {student_answer}! Quickly - what COLOR? Say: It is [color]",
+              "(After color) {student_answer}! Excellent! 🎉 You presented THREE items! Amazing!"
+            ]
+          },
+          {
+            phase: "closing",
+            turns: "14-16",
+            phase_name: "Celebration",
+            focus: "Wrap up presentation",
+            phase_questions: [
+              "You presented so well! 👏 What's your FAVORITE item in your backpack? Say: My favorite is [item] OR I love my [item]",
+              "(After favorite) {student_answer}! Great choice! Thank you for your presentation! Say: Thank you! OR Goodbye! OR That was fun!",
+              "(After thanks) Goodbye! Great job today! 🌟"
+            ]
+          }
+        ]
+      },
+      
+      minimum_turns: 12,
+      maximum_turns: 18
+    }
+  ],
+  
+  // === TEACHING METHODOLOGY (FROM SYLLABUS PRINCIPLES) ===
+  teaching_principles: {
+    zero_l1: true, // No Vietnamese in teaching
+    visual_anchor: "Use superhero images/videos to introduce concept",
+    tpr_gestures: "Use gestures for 'I am' (point to self), 'hero' (flex muscles), 'student' (pretend to write)",
+    implicit_grammar: true, // Don't explain rules, make students use pattern naturally
+    creative_lens: "Superhero theme to make learning fun"
+  },
+  
+  // === MS. NOVA AI TUTOR INSTRUCTIONS ===
+  nova_instructions: {
+    persona: "Friendly English teacher, warm and human-like",
+    tone: "Warm, encouraging, natural - like a patient friend",
+    
+    // Opening lines for each mission (PRESENT SIMPLE ONLY - Week 1 grammar)
+    opening_lines_by_mission: {
+      mission_1: "Hello! I am Ms. Nova, your English teacher. What is your name?",
+      mission_2: "Hi there! I see you have a backpack with you. What do you have in your backpack today?",
+      mission_3: "Hello again! I want to learn about your school. Tell me about your teacher. What is your teacher like?"
+    },
+    
+    conversation_style: [
+      "Natural and flowing - like talking with a friend",
+      "One clear question per turn",
+      "Build on previous answers - show active listening",
+      "NO emojis - text-to-speech will read them aloud",
+      "Keep responses under 30 words",
+      "Maintain conversation for minimum 10-15 turns per mission",
+      "ONLY use present simple tense - Week 1 grammar scope"
+    ],
+    
+    recast_strategy: "ALWAYS recast student errors by modeling correct form naturally",
+    recast_example: {
+      student: "I Alex.",
+      nova_recast: "Oh, you ARE Alex! That's a wonderful name! I am Ms. Nova. How old are you, Alex?"
+    },
+    
+    vocabulary_scaffolding: [
+      "Mission 1: Focus on 'name' and 'age'",
+      "Mission 2: Introduce 'backpack', 'book', 'notebook'",
+      "Mission 3: Use 'teacher', 'school', 'classroom' naturally"
+    ],
+    
+    questioning_skill: [
+      "What is your name?",
+      "How old are you?",
+      "Are you a student?",
+      "What do you have in your backpack?",
+      "Who is your teacher?",
+      "What is your classroom like?"
+    ],
+    
+    must_use_vocab: ["name", "age", "student", "backpack", "book", "notebook", "teacher", "school", "classroom"],
+    must_avoid: [
+      "Emojis or special characters",
+      "Vietnamese translation",
+      "Explicit grammar rules",
+      "Corrections without recast",
+      "Multiple questions in one turn",
+      "Past or future tense (Week 1 scope)"
+    ]
+  },
+  
+  // === ASSESSMENT CRITERIA ===
+  formative_assessment: {
+    can_introduce_name: false,
+    can_state_age: false,
+    can_use_i_am: false,
+    can_describe_hero_identity: false
+  },
+  
+  // === ALIAS FOR TAB COMPATIBILITY ===
+  global_vocab: [
+    {
+      word: "name",
+      pronunciation: "/neɪm/",
+      definition_vi: "Tên",
+      definition_en: "What someone is called.",
+      example: "My name is Alex.",
+      syllabus_context: "Mission 1 - Identity"
+    },
+    {
+      word: "age",
+      pronunciation: "/eɪdʒ/",
+      definition_vi: "Tuổi", 
+      definition_en: "How old someone is.",
+      example: "I am 7 years old.",
+      syllabus_context: "Mission 1 - Identity"
+    },
+    {
+      word: "student",
+      pronunciation: "/ˈstuːdənt/",
+      definition_vi: "Học sinh",
+      definition_en: "A person who is learning at a school.",
+      example: "I am a student.",
+      syllabus_context: "Mission 1 - Identity"
+    },
+    {
+      word: "hero",
+      pronunciation: "/ˈhɪroʊ/",
+      definition_vi: "Anh hùng",
+      definition_en: "A brave person who helps others.",
+      example: "I want to be a hero!",
+      syllabus_context: "Mission 1 - Creative theme"
+    },
+    {
+      word: "backpack",
+      pronunciation: "/ˈbækpæk/",
+      definition_vi: "Ba lô",
+      definition_en: "A bag you carry on your back for school things.",
+      example: "I have a blue backpack.",
+      syllabus_context: "Mission 2 - School supplies"
+    },
+    {
+      word: "book",
+      pronunciation: "/bʊk/",
+      definition_vi: "Sách",
+      definition_en: "Something you read to learn.",
+      example: "I have a math book.",
+      syllabus_context: "Mission 2 - School supplies"
+    },
+    {
+      word: "notebook",
+      pronunciation: "/ˈnoʊtbʊk/",
+      definition_vi: "Vở ghi chép",
+      definition_en: "A book with empty pages for writing.",
+      example: "I write in my notebook.",
+      syllabus_context: "Mission 2 - School supplies"
+    },
+    {
+      word: "teacher",
+      pronunciation: "/ˈtiːtʃər/",
+      definition_vi: "Giáo viên",
+      definition_en: "A person who helps students learn.",
+      example: "My teacher is kind.",
+      syllabus_context: "Mission 3 - School environment"
+    },
+    {
+      word: "school",
+      pronunciation: "/skuːl/",
+      definition_vi: "Trường học",
+      definition_en: "A place where children go to learn.",
+      example: "I go to school every day.",
+      syllabus_context: "Mission 3 - School environment"
+    },
+    {
+      word: "classroom",
+      pronunciation: "/ˈklæsruːm/",
+      definition_vi: "Lớp học",
+      definition_en: "A room where students learn with their teacher.",
+      example: "Our classroom is big.",
+      syllabus_context: "Mission 3 - School environment"
+    }
+  ],
+
+  // === WORD POWER (3 PHRASAL VERBS/COLLOCATIONS) ===
+  word_power: {
+    words: [
+      {
+        id: 1,
+        word: "do homework",
+        pronunciation: "/duː ˈhoʊmwɜːrk/",
+        cefr_level: "A1",
+        definition_en: "To complete school assignments at home.",
+        definition_vi: "Hoàn thành bài tập ở nhà.",
+        collocation: "do your homework"
+      },
+      {
+        id: 2,
+        word: "go to school",
+        pronunciation: "/ɡoʊ tə skuːl/",
+        cefr_level: "A1",
+        definition_en: "To travel to school to attend classes.",
+        definition_vi: "Đi đến trường để học.",
+        collocation: "go to school early"
+      },
+      {
+        id: 3,
+        word: "pay attention",
+        pronunciation: "/peɪ əˈtenʃən/",
+        cefr_level: "A2",
+        definition_en: "To focus and listen carefully to something.",
+        definition_vi: "Tập trung và lắng nghe cẩn thận.",
+        collocation: "pay close attention"
+      }
+    ]
+  },
+
+  // === CONNECTION TO EXISTING WEEK 1 DATA ===
+  extended_vocab_reference: [
+    "teacher",
+    "school",
+    "classroom",
+    "backpack",
+    "book",
+    "notebook",
+    "library",
+    "scientist"
+  ],
+
+  // === FREETALK KNOWLEDGE (Week 1 - Identity & School Theme) ===
+  freetalk_knowledge: {
+    week_title: "Hello, World! (Identity)",
+    week_number: 1,
+    theme: "Introduction & School",
+    
+    // Week 1 establishes baseline FreeTalk knowledge
+    knowledge_base: [
+      "We introduce ourselves: 'I am [name]', 'I am [age] years old'",
+      "We are students who go to school",
+      "We have backpacks with books and notebooks",
+      "We have teachers at school who help us learn",
+      "We study in classrooms",
+      "School is where we learn and make friends",
+      "We use 'I am' to talk about ourselves",
+      "We can ask 'What is your name?' and 'How old are you?'"
+    ],
+    
+    example_opening_questions: [
+      "What is your name?",
+      "How old are you?",
+      "Are you a student?",
+      "Do you go to school?",
+      "Do you have a backpack?",
+      "What is in your backpack?",
+      "Who is your teacher?",
+      "Do you like school?"
+    ],
+    
+    freetalk_context: `Week 1 is about IDENTITY and SCHOOL. The student has learned:
+- Self-introduction: name, age, being a student
+- School items: backpack, book, notebook
+- School people and places: teacher, school, classroom
+
+Ms. Nova can ask about these topics in Free Talk:
+- What is your name?
+- How old are you?
+- Are you a student?
+- Do you like school?
+- What do you have in your backpack?
+- Who is your teacher?
+- What is your classroom like?
+
+Keep questions SIMPLE and about IDENTITY & SCHOOL. This is Week 1, so focus on basic self-introduction and school vocabulary.
+
+IMPORTANT: Student can ask ANY question (free talk), but Ms. Nova should guide conversation toward identity and school topics when appropriate.`
+  },
+  
+  notes: `
+📚 SYLLABUS ALIGNMENT NOTES:
+- This is the OFFICIAL Week 1 content from the 3-year curriculum
+- Grammar Focus: Implicit teaching of "I am" pattern through superhero context
+- Vocabulary: 7 core words + numbers 1-10
+- Key principle: "Trojan Horse" - Grammar hidden in fun superhero story
+- "Slow-Cook Principle": Focus on ONE tense (present "to be") for full week
+- Zero L1: Ms. Nova uses NO Vietnamese, only English with gestures/visuals
+- Assessment: Formative only, observe if student can introduce themselves naturally
+
+🎯 TEACHING FLOW:
+1. Visual Anchor: Show superhero images/video
+2. TPR Introduction: Ms. Nova models "I am Ms. Nova" with gestures
+3. Student Practice: Student introduces self using "I am [name]"
+4. Expansion: Add age "I am [age] years old"
+5. Creative Application: "I am a [adjective] hero!"
+
+⚠️ CRITICAL: Ms. Nova must NOT teach grammar rules explicitly.
+Students learn by DOING, not by studying rules.
+`
+};
+
+export default week1RealData;

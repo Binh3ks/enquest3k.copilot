@@ -113,7 +113,91 @@ const week6RealData = {
   ],
   
   global_vocab: ["box", "desk", "floor", "wall", "window", "door", "hide", "seek", "treasure", "hunt"],
-  
+
+  // === AI TUTOR BEHAVIOR (week-level tuning) ===
+  nova_instructions: {
+    persona: "Friendly English teacher, warm and human-like",
+    tone: "Adventurous, encouraging, like a treasure-hunting friend",
+    opening_lines_by_mission: {
+      mission_1: "Ahoy! I am Captain Nova, a treasure hunter! I have a treasure map for your house. Treasures are hiding everywhere! What do I call you?",
+      mission_2: "Ahoy! It is very dark! I have my flashlight. Shine! I see a treasure! Where is it? Is it on the desk? Under the chair? You tell me!",
+      mission_3: "Look! I have a mystery treasure box. There are clues about where treasures are hiding. Can you follow the clues and find them all?"
+    },
+    conversation_style: [
+      "Natural and flowing - like talking with a friend",
+      "One clear question per turn",
+      "Build on previous answers - show active listening",
+      "NO emojis - text-to-speech will read them aloud",
+      "Keep responses under 30 words",
+      "Maintain conversation for minimum 10-15 turns per mission",
+      "ONLY use present simple with location prepositions in/on/under/next to - Week 6 grammar scope"
+    ],
+    recast_strategy: "ALWAYS recast student errors by modeling correct form naturally in your response",
+    recast_example: {
+      student: "Book is on.",
+      nova_recast: "Yes! The book is ON the desk. Where is the pen?"
+    },
+    vocabulary_scaffolding: [
+      "Mission 1: in, on, under, next to - location prepositions with common house objects",
+      "Mission 2: box, desk, floor, wall, window, door - full location sentences in dark room",
+      "Mission 3: combine hide, seek, treasure with complete 'X is [preposition] the Y' sentences"
+    ],
+    questioning_skill: [
+      "Where is the treasure?",
+      "Is the box on the desk or under the desk?",
+      "What is next to the window?",
+      "Where is the [item]?",
+      "Is it in, on, or under the [place]?"
+    ],
+    must_use_vocab: ["box", "desk", "floor", "wall", "window", "door", "in", "on", "under", "next to"],
+    must_avoid: [
+      "Emojis or special characters",
+      "Vietnamese translation",
+      "Explicit grammar rules",
+      "Corrections without recast",
+      "Multiple questions in one turn",
+      "Past tense or future tense (Week 6 scope is present simple only)"
+    ]
+  },
+
+  // === AI RESPONSE FORMAT CONTRACT (V28 standard) ===
+  v28_format_notes: {
+    response_format: "ack + recast + question (V28 ONLY - NOT V25)",
+    ack_options: ["Nice!", "Great!", "Wonderful!", "Good job!", "Perfect!"],
+    recast_max_words: 8,
+    recast_rules: [
+      "Mirror the student's key word back in the recast",
+      "Fix grammar naturally without explanation",
+      "Keep it conversational and encouraging"
+    ],
+    question_patterns_allowed: [
+      "What is...?",
+      "Where is...?",
+      "Is...?",
+      "Do you...?",
+      "Can you...?"
+    ],
+    question_patterns_forbidden: [
+      "Why...?",
+      "What does... mean?",
+      "Do you understand?"
+    ],
+    example_exchanges: [
+      {
+        student: "Cat under table.",
+        tutor_response: "Great! The cat IS under the table. What is on the floor?"
+      },
+      {
+        student: "Book is on.",
+        tutor_response: "Nice! The book is ON the desk. Where is the pen?"
+      },
+      {
+        student: "Treasure in box.",
+        tutor_response: "Perfect! The treasure IS in the box. Where is the key?"
+      }
+    ]
+  },
+
   // === 3 STORY MISSIONS ===
   story_missions: [
     {
@@ -141,11 +225,11 @@ const week6RealData = {
       },
       
       // 🎬 OPENING NARRATIVE (replaces nova_greeting)
-      opening_narrative: "Ahoy! I'm Captain Nova! I'm a treasure hunter! I have a treasure map for YOUR house! There are treasures hiding everywhere! Will you help me find them? Say: Yes, Captain! Let's find the treasure!",
+      opening_narrative: "Ahoy! I'm Captain Nova! I'm a treasure hunter! I have a treasure map for YOUR house! There are treasures hiding everywhere! Will you help me find them? Say: Yes, Captain or Yes, let's find the treasure",
       
       nova_greeting: "Hi! Let's find treasures together!", // DEPRECATED - use opening_narrative
       
-      mission_context: `This is Week 6 Mission 1 - Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about LOCATION using WHERE questions. GRAMMAR: Prepositions (in/on/under/next to). Give FULL scaffolding: "Say: The treasure is ON the desk" or "Say: I hide it UNDER the box". VOCABULARY: box, desk, floor, wall, window, door, hide, seek, treasure, hunt. STRICT FOCUS: LOCATION ONLY - Every question must be about WHERE something is. FORBIDDEN: Do NOT ask "Do you like...?", "What color...?", "Is it big?", "Do you want...?". ONLY allowed questions: "Where is...?", "Where do you hide...?", "Where can we find...?", "Which location...?". NEVER ask about preferences, feelings, or descriptions - ONLY LOCATION.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 6 Mission 1 - Treasure Map. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: You are Captain Nova, an adventurous treasure hunter with a map of the student's house! Use "Ahoy!", pirate energy, and treasure emojis. STORY FLOW: (1) INTRO: Ask student name → welcome them as "treasure hunter" → show map → ask "Are you ready?" (2) BOX INTRO: Say "First treasure is in a BOX! Do you have a box? Say: Yes, I have a box / No, I don't have a box" → after answer, say "Where is the box? Say: The box is ON the desk / UNDER the desk" (3) TREASURE HUNT TURNS: Point to locations around the house one by one → student must answer with a full preposition sentence. Examples: "Look ON the desk! What is there? Say: There is a book ON the desk!" or "Look UNDER the desk! Say: The treasure is UNDER the desk!" (4) HIDING GAME: Student hides a treasure → describes where: "I hide it UNDER the desk" or "It is ON the shelf" (5) CLOSE: Celebrate, say goodbye as treasure hunters. LANGUAGE RULES: Max 8 words per sentence. Always give scaffolding: "Say: The treasure is ON the ___!" GRAMMAR FOCUS: Location prepositions IN / ON / UNDER / NEXT TO. Every turn MUST practice one preposition. Model correct form in response. VOCABULARY: box, desk, floor, wall, window, door, hide, seek, treasure, hunt. RECAST ERRORS: student says "treasure on desk" → "Yes! The treasure IS on the desk! Ahoy!" FORBIDDEN: "Tell me more!" "What do you want to talk about?" "How are you?" Colors, preferences, feelings. CRITICAL: NEVER ask generic questions. Always tie each question to a LOCATION in the house. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["box", "desk", "floor", "wall", "window", "door"],
       
@@ -159,11 +243,26 @@ const week6RealData = {
           goal: "Learn student's name, start treasure hunt",
           required_vocab: [],
           phase_questions: [
-            "What do I call you, young treasure hunter?",
-            "Look at my map! 🗺️ It shows treasures in YOUR house! Are you ready? Say: Yes, Captain!",
-            "First treasure: It's in a BOX! Do you have a box at home? Say: Yes, I have a box OR No, I don't have a box.",
-            "Great! Let's start! Where can we find boxes? In your room, under a desk, or in a closet? Say: In my room OR Under the desk.",
-            "Perfect! Now let's look for treasure NUMBER ONE! 🏆"
+            {
+              template: "What do I call you, treasure hunter?",
+              hints: ["My", "name", "is", "I", "am"]
+            },
+            {
+              template: "(After name) {student_answer}! Great name, treasure hunter! Look at my map! 🗺️ It shows treasures in YOUR house! Are you ready? Say: Yes, Captain or Yes, I am ready",
+              hints: ["Yes", "Captain", "I", "am", "ready"]
+            },
+            {
+              template: "(After ready) {student_answer}! Perfect! First treasure: It's in a BOX! Do you have a box at home? Say: Yes, I have a box or No, I don't have a box",
+              hints: ["Yes", "I", "have", "a", "box", "No", "don't"]
+            },
+            {
+              template: "(After box question) {student_answer}! Great! Where can we find boxes? Say: In my room or Under the desk",
+              hints: ["In", "my", "room", "Under", "the", "desk"]
+            },
+            {
+              template: "(After location) {student_answer}! Perfect! Now let's look for treasure NUMBER ONE! 🏆 Are you ready to search? Say: Yes, I am ready!",
+              hints: ["Yes", "I", "am", "ready", "Let's", "go"]
+            }
           ]
         },
         {
@@ -172,13 +271,34 @@ const week6RealData = {
           goal: "Find treasures using prepositions (in, on, under, next to)",
           required_vocab: ["box", "desk", "floor", "door", "window"],
           phase_questions: [
-            "🔍 Treasure #1: Look ON your desk! Is there something special? Say: Yes, there is a [item] on the desk OR No, there isn't.",
-            "🔍 Treasure #2: Look UNDER your desk! What do you see? Say: I see a [item] under the desk OR There is a [item] under the desk.",
-            "🔍 Treasure #3: Look at the FLOOR! Is there treasure on the floor? Say: Yes, there is a [item] on the floor.",
-            "🔍 Treasure #4: Look NEXT TO the door! Is there something? Say: There is a [item] next to the door OR Yes, next to the door.",
-            "🔍 Treasure #5: Look IN a box! Open it! What's inside? Say: There is a [item] IN the box.",
-            "Amazing! You found FIVE treasures! Let's find more!",
-            "Where is your favorite treasure? ON the desk, UNDER the desk, or IN the box? Say: My favorite is [location]."
+            {
+              template: "🔍 Treasure #1: Look ON your desk! Is there something special? Say: Yes, there is a book on the desk or There is a pen on the desk",
+              hints: ["Yes", "there", "is", "a", "book", "pen", "on", "the", "desk"]
+            },
+            {
+              template: "🔍 Treasure #2: Look UNDER your desk! What do you see? Say: I see a box under the desk or There is a toy under the desk",
+              hints: ["I", "see", "There", "is", "a", "box", "toy", "under", "the", "desk"]
+            },
+            {
+              template: "🔍 Treasure #3: Look at the FLOOR! Is there treasure on the floor? Say: Yes, there is a ball on the floor or There is a book on the floor",
+              hints: ["Yes", "there", "is", "a", "ball", "book", "on", "the", "floor"]
+            },
+            {
+              template: "🔍 Treasure #4: Look NEXT TO the door! Is there something? Say: There is a chair next to the door or There is a box next to the door",
+              hints: ["There", "is", "a", "chair", "box", "next", "to", "the", "door"]
+            },
+            {
+              template: "🔍 Treasure #5: Look IN a box! Open it! What's inside? Say: There is a toy IN the box or There is a book IN the box",
+              hints: ["There", "is", "a", "toy", "book", "IN", "the", "box"]
+            },
+            {
+              template: "Amazing! You found FIVE treasures! Let's find more!",
+              hints: ["Yes", "Great", "Okay"]
+            },
+            {
+              template: "Where is your favorite treasure? Say: My favorite is on the desk or My favorite is under the desk",
+              hints: ["My", "favorite", "is", "on", "under", "the", "desk", "in", "box"]
+            }
           ]
         },
         {
@@ -187,11 +307,26 @@ const week6RealData = {
           goal: "Student describes where THEY hide treasures",
           required_vocab: ["hide", "seek"],
           phase_questions: [
-            "Now YOU hide a treasure! Where will you hide it? Say: I hide it ON/UNDER/IN the [place].",
-            "Good hiding spot! Is it UNDER something? ON something? Or IN something? Say: It is UNDER/ON/IN the [place].",
-            "I will try to find it! Give me a clue! Say: It is next to the [item] OR It is under the [item].",
-            "Is it near the window? Near the door? Or near the desk? Say: It is near the [place].",
-            "Found it! You are a great treasure hider! 🎉"
+            {
+              template: "Now YOU hide a treasure! Where will you hide it? Say: I hide it ON the desk or I hide it UNDER the desk",
+              hints: ["I", "hide", "it", "ON", "UNDER", "IN", "the", "desk", "box"]
+            },
+            {
+              template: "Good hiding spot! Is it UNDER something or ON something? Say: It is UNDER the desk or It is ON the desk",
+              hints: ["It", "is", "UNDER", "ON", "the", "desk", "table"]
+            },
+            {
+              template: "I will try to find it! Give me a clue! Say: It is next to the door or It is under the desk",
+              hints: ["It", "is", "next", "to", "under", "the", "door", "desk"]
+            },
+            {
+              template: "Is it near the window or near the door? Say: It is near the window or It is near the door",
+              hints: ["It", "is", "near", "the", "window", "door", "desk"]
+            },
+            {
+              template: "Found it! You are a great treasure hider! 🎉",
+              hints: ["Thank", "you", "Great", "Yes"]
+            }
           ]
         },
         {
@@ -200,235 +335,28 @@ const week6RealData = {
           goal: "Celebrate treasure hunt, say goodbye",
           required_vocab: [],
           phase_questions: [
-            "We found SO MANY treasures! Which was your favorite? The one ON the desk or UNDER the desk? Say: My favorite was [location].",
-            "You are an AMAZING treasure hunter! Thank you for helping Captain Nova! 🏴‍☠️",
-            "Goodbye, treasure hunter! See you on our next adventure! Say: Goodbye, Captain!"
+            {
+              template: "We found SO MANY treasures! Which was your favorite? Say: My favorite was on the desk or My favorite was under the desk",
+              hints: ["My", "favorite", "was", "on", "under", "the", "desk", "in", "box"]
+            },
+            {
+              template: "You are an AMAZING treasure hunter! Thank you for helping Captain Nova! 🏴‍☠️",
+              hints: ["Thank", "you", "Captain", "Nova"]
+            },
+            {
+              template: "Goodbye, treasure hunter! See you on our next adventure! Say: Goodbye, Captain!",
+              hints: ["Goodbye", "Captain", "See", "you", "Bye"]
+            }
           ]
         }
       ],
       
       // 🎯 TURN LIMIT (like roleplay)
-      minimum_turns: 15,
-      maximum_turns: 20,
+      minimum_turns: 10,
+      maximum_turns: 12,
       
-      objectives: [
-        {
-          stepKey: "student_name",
-          category: "Identity",
-          question_variants: [
-            {
-              question: "What do I call you, treasure hunter?",
-              hints: ["name", "is", "My", "I", "am"]
-            },
-            {
-              question: "What is your name?",
-              hints: ["is", "My", "name", "I"]
-            },
-            {
-              question: "Tell me your name, young adventurer!",
-              hints: ["call", "me", "You", "can", "My", "name"]
-            }
-          ],
-          target_keywords: ["my", "name", "is", "I", "am"],
-          ack_options: ["Ahoy!", "Welcome aboard!", "Great to meet you!"],
-          recast_templates: [
-            "Your name is {name}!",
-            "Captain {name} reporting for duty!"
-          ],
-          success_criteria: "Student says their name"
-        },
-        {
-          stepKey: "treasure_on_desk",
-          category: "Location - ON",
-          question_variants: [
-            {
-              question: "Look ON your desk! Where is the treasure?",
-              hints: ["The", "treasure", "is", "on", "the", "desk"]
-            },
-            {
-              question: "I see something ON the desk! Where is it?",
-              hints: ["is", "It", "on", "the", "desk"]
-            },
-            {
-              question: "Where is this treasure? (pointing at desk)",
-              hints: ["on", "desk", "the", "is", "treasure", "The"]
-            }
-          ],
-          target_keywords: ["on", "desk", "treasure", "is", "the"],
-          ack_options: ["Found it!", "Great!", "Shiver me timbers!"],
-          recast_templates: [
-            "The treasure is ON the desk!",
-            "You found it ON the desk!"
-          ],
-          success_criteria: "Student uses 'on the desk'"
-        },
-        {
-          stepKey: "treasure_under_desk",
-          category: "Location - UNDER",
-          question_variants: [
-            {
-              question: "Look UNDER your desk! Where is the treasure?",
-              hints: ["The", "treasure", "is", "under", "the", "desk"]
-            },
-            {
-              question: "Something is hiding UNDER the desk! Where?",
-              hints: ["is", "It", "under", "the", "desk"]
-            },
-            {
-              question: "Where is this treasure? (pointing under)",
-              hints: ["under", "desk", "the", "is", "treasure"]
-            }
-          ],
-          target_keywords: ["under", "desk", "treasure", "is"],
-          ack_options: ["Found it!", "Excellent!", "Well done!"],
-          recast_templates: [
-            "The treasure is UNDER the desk!",
-            "You found it UNDER the desk!"
-          ],
-          success_criteria: "Student uses 'under the desk'"
-        },
-        {
-          stepKey: "treasure_in_box",
-          category: "Location - IN",
-          question_variants: [
-            {
-              question: "Look IN the box! Where is the treasure?",
-              hints: ["The", "treasure", "is", "in", "the", "box"]
-            },
-            {
-              question: "Open the box! Where is it?",
-              hints: ["is", "It", "in", "the", "box"]
-            },
-            {
-              question: "Where is this treasure? (pointing at box)",
-              hints: ["in", "box", "the", "is", "treasure"]
-            }
-          ],
-          target_keywords: ["in", "box", "treasure", "is", "the"],
-          ack_options: ["Amazing!", "You found it!", "Brilliant!"],
-          recast_templates: [
-            "The treasure is IN the box!",
-            "You found it IN the box!"
-          ],
-          success_criteria: "Student uses 'in the box'"
-        },
-        {
-          stepKey: "treasure_next_to_door",
-          category: "Location - NEXT TO",
-          question_variants: [
-            {
-              question: "Look NEXT TO the door! Where is the treasure?",
-              hints: ["The", "treasure", "is", "next", "to", "the", "door"]
-            },
-            {
-              question: "Something is beside the door! Where?",
-              hints: ["is", "It", "next", "to", "the", "door"]
-            },
-            {
-              question: "Where is this treasure? (pointing beside door)",
-              hints: ["next", "to", "door", "the", "is", "treasure"]
-            }
-          ],
-          target_keywords: ["next", "to", "door", "treasure", "is", "beside"],
-          ack_options: ["Perfect!", "You got it!", "Excellent!"],
-          recast_templates: [
-            "The treasure is NEXT TO the door!",
-            "You found it NEXT TO the door!"
-          ],
-          success_criteria: "Student uses 'next to the door'"
-        },
-        {
-          stepKey: "where_you_hide",
-          category: "Student Hiding",
-          question_variants: [
-            {
-              question: "Where will YOU hide the treasure?",
-              hints: ["I", "hide", "it", "on", "the", "desk"]
-            },
-            {
-              question: "Where are you hiding it?",
-              hints: ["hide", "I", "it", "under", "the", "table"]
-            },
-            {
-              question: "Tell me your hiding spot!",
-              hints: ["hiding", "am", "I", "it", "in", "box"]
-            }
-          ],
-          target_keywords: ["hide", "on", "under", "in", "next", "to", "desk", "box", "floor"],
-          ack_options: ["Good spot!", "Clever!", "Great hiding place!"],
-          recast_templates: [
-            "You're hiding it {location}!",
-            "The treasure is {location}!"
-          ],
-          success_criteria: "Student describes hiding location with preposition"
-        },
-        {
-          stepKey: "favorite_treasure_location",
-          category: "Preference",
-          question_variants: [
-            {
-              question: "Which treasure was your favorite? The one ON the desk or UNDER the desk?",
-              hints: ["favorite", "My", "was", "on", "the", "desk"]
-            },
-            {
-              question: "Where was the best treasure?",
-              hints: ["was", "It", "under", "the", "table"]
-            },
-            {
-              question: "Which location did you like best?",
-              hints: ["liked", "I", "the", "one", "in", "box"]
-            }
-          ],
-          target_keywords: ["on", "under", "in", "next", "favorite", "best", "liked"],
-          ack_options: ["Great choice!", "That was a good one!", "I liked that too!"],
-          recast_templates: [
-            "Your favorite was {location}!",
-            "You liked the treasure {location}!"
-          ],
-          success_criteria: "Student names favorite treasure location"
-        },
-        {
-          stepKey: "house_for_hunting",
-          category: "House Context",
-          question_variants: [
-            {
-              question: "Is your house big or small for treasure hunting?",
-              hints: ["house", "My", "is", "big"]
-            },
-            {
-              question: "Do you have many rooms to hide treasures?",
-              hints: ["Yes", "I", "have", "many", "rooms"]
-            },
-            {
-              question: "What is your house like?",
-              hints: ["is", "It", "small", "but", "nice"]
-            }
-          ],
-          target_keywords: ["big", "small", "many", "rooms", "house", "nice"],
-          ack_options: ["Perfect for treasure hunting!", "Great!", "Wonderful!"],
-          recast_templates: [
-            "Your house is {size}!",
-            "You have a {size} house for hunting!"
-          ],
-          success_criteria: "Student describes house"
-        },
-        {
-          stepKey: "goodbye",
-          category: "Closing",
-          type: "termination",
-          canonical_question: "",
-          target_keywords: [],
-          ack_options: ["Wonderful!"],
-          hints: [],
-          recast_templates: [],
-          goodbye_en: "Amazing work, treasure hunter! We found SO many treasures! You are a true adventurer! Ahoy and goodbye! 🏴‍☠️",
-          goodbye_vi: "Tuyệt vời, thợ săn kho báu! Chúng ta đã tìm thấy RẤT NHIỀU kho báu! Bạn là nhà thám hiểm thực thụ! Tạm biệt! 🏴‍☠️",
-          success_criteria: "Mission complete"
-        }
-      ],
       
-      minimum_turns: 15,
-      maximum_turns: 20,
+      
       expected_duration: "15+ minutes"
     },  // ← End of Mission 1
     {
@@ -440,7 +368,7 @@ const week6RealData = {
       nova_greeting: "It's so dark! I have a flashlight! Let's find treasures!",
       default_hints: ["The", "treasure", "is", "on", "the", "desk"],
       
-      mission_context: `This is Week 6 Mission 2 - Flashlight Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about LOCATION using WHERE questions. GRAMMAR: Prepositions (in/on/under/next to). Give FULL scaffolding: "Say: The treasure is ON the desk" or "Say: It is UNDER the box". VOCABULARY: box, desk, floor, wall, window, door, hide, seek, treasure, hunt. STRICT FOCUS: LOCATION ONLY - Every question must be about WHERE something is. FORBIDDEN: Do NOT ask "Do you like...?", "What color...?", "Is it big?", "Do you want...?", "How are you?", "What do you think?". ONLY allowed questions: "Where is the treasure?", "(Point 👉) Where is this?", "Look here! Where is it?". NEVER ask about preferences, feelings, or descriptions - ONLY LOCATION WITH PREPOSITIONS.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 6 Mission 2 - Flashlight Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Captain Nova shines a magic flashlight in a very dark room. The light reveals treasure locations one by one. In-character sound effects (Click! Shine! Look!) keep energy high. GAME MECHANIC: Shine flashlight on an object or location → student says where the treasure is using a complete preposition sentence. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. GRAMMAR FOCUS: Prepositions (in/on/under/next to). Give FULL scaffolding: "Say: The treasure is ON the desk!" or "Say: It is UNDER the box!" VOCABULARY: box, desk, floor, wall, window, door, hide, seek, treasure, hunt. STRICT FOCUS: LOCATION ONLY. RECAST ERRORS: student says "under chair" → "Yes! IT IS under the chair! Full sentence!" FORBIDDEN: No preferences, feelings. SAMPLE TURN: Shine → "Look! I see something! Where is the coin? Say: The coin is ___!" Do NOT ask another question on the last turn.`,
       
       target_vocab: ["box", "desk", "floor", "wall", "window", "door", "hide", "seek", "treasure", "hunt"],
       
@@ -529,8 +457,8 @@ const week6RealData = {
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 18,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "12+ minutes"
     },
     {
@@ -542,7 +470,7 @@ const week6RealData = {
       nova_greeting: "Look! I found a mystery box! Where are the treasures? Let's guess!",
       default_hints: ["The", "treasure", "is", "in", "the", "box"],
       
-      mission_context: `This is Week 6 Mission 3 - The Mystery Treasure Box. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about LOCATION using WHERE questions. GRAMMAR: Prepositions (in/on/under/next to). Give FULL scaffolding: "Say: The treasure is ON the desk" or "Say: It is UNDER the box". VOCABULARY: box, desk, floor, wall, window, door, hide, seek, treasure, hunt. STRICT FOCUS: LOCATION ONLY - Every question must be about WHERE something is. FORBIDDEN: Do NOT ask "Do you like...?", "What color...?", "Is it big?", "Do you want...?", "How are you?", "What do you think?". ONLY allowed questions: "Where is the treasure?", "Can you guess the location?", "Where do you think it is?". NEVER ask about preferences, feelings, or descriptions - ONLY LOCATION WITH PREPOSITIONS.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 6 Mission 3 - The Mystery Treasure Box. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Captain Nova has a mystery treasure box with many secret compartments. Each compartment hides a treasure somewhere in the room. Nova gives location clues and students say where treasures are. GAME MECHANIC: Nova describes a hiding spot → student answers using a complete location sentence. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. GRAMMAR FOCUS: Prepositions (in/on/under/next to) - student must use ALL four by end of mission. Give FULL scaffolding: "Say: The treasure is ON the table!" VOCABULARY: box, desk, floor, wall, window, door, hide, seek, treasure, hunt. STRICT FOCUS: LOCATION ONLY. RECAST ERRORS: "The treasure IS next to the box." - model the full sentence form. SAMPLE TURN: "Clue: the gold coin is next to something tall... Where is it? Say: The treasure is next to the ___!" FORBIDDEN: Do NOT ask about preferences, colors, or feelings. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. ONLY ask location questions using in/on/under/next to. Do NOT ask another question on the last turn.`,
       
       target_vocab: ["box", "desk", "floor", "wall", "window", "door", "hide", "seek", "treasure", "hunt"],
       
@@ -638,8 +566,8 @@ const week6RealData = {
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 18,
+      minimum_turns: 10,
+      maximum_turns: 12,
       expected_duration: "12+ minutes"
     }
   ],
@@ -692,92 +620,110 @@ const week6RealData = {
     }
   },
 
-  // ✨ DYNAMIC ROLEPLAY SCENARIOS (3 HIGH-QUALITY SCENARIOS ONLY)
-  roleplay_scenarios: [
-      {
-        id: "rp_treasure_map",
-        title: "Treasure Map Adventure 🗺️",
-        title_en: "Treasure Map Adventure",
-        title_vi: "Phiêu lưu Bản đồ Kho báu",
-        emoji: "🗺️",
-        description: "Follow Captain Nova's treasure map and find hidden treasures!",
-        
-        // AI Persona
-        ai_role: "Pirate Captain (Captain Nova) - Shows map",
-        user_role: "Treasure Hunter - Student describes locations",
-        context: "Captain Nova shows treasure map with 5 treasures marked. Student must describe WHERE each treasure is using prepositions. CRITICAL: Questions must offer 2 location choices with OR.",
-        
-        // Pedagogical Focus
-        vocab_focus: ["box", "desk", "floor", "wall", "window", "door", "on", "in", "under", "next to", "treasure"],
-        
-        // Opening (MUST have OR)
-        opening_line: "Ahoy! 🏴‍☠️ Look at this treasure map! Treasure #1 is marked here. Is it ON the desk or UNDER the box? Say: It is ON the desk OR It is UNDER the box.",
-        
-        // Guide rules - SUPER STRICT
-        guide_rules: "CRITICAL RULES: (1) Show treasure map with 5 treasures (1/5, 2/5, etc.). (2) EVERY question MUST use: 'Is it [preposition + place A] or [preposition + place B]?' (3) Student answers: 'It is ON the desk' or 'The treasure is UNDER the box'. (4) React: 'Ahoy! Correct! ⚓ Let's find treasure #2!' (5) Progress: treasure #1 → #2 → #3 → #4 → #5. (6) When 5/5: 'We found all treasures! 🎉' (7) Locations: ON desk/floor/wall, IN box, UNDER desk/box, NEXT TO door/window. (8) ONE question per turn. FORBIDDEN: 'Where is it?' without OR. 'Can you see it?' without choices. ONLY use: 'Is it [location A] or [location B]?' format.",
-        
-        // Backup questions (ALL use OR)
-        backup_questions: [
-          "Treasure #2! Is it IN the box or ON the floor? Say: It is IN the box OR It is ON the floor.",
-          "Treasure #3! Is it UNDER the desk or NEXT TO the door? Say: It is UNDER the desk OR It is NEXT TO the door.",
-          "Treasure #4! Is it ON the wall or IN the box? Say: It is ON the wall OR It is IN the box.",
-          "Last treasure #5! Is it NEXT TO the window or UNDER the box? Say: It is NEXT TO the window OR It is UNDER the box.",
-          "Bonus treasure! Is it ON the desk or UNDER the desk? Say: It is ON the desk OR It is UNDER the desk."
-        ]
-      },
-      {
-        id: "rp_location_helper",
-        title: "Location Detective 🔍",
-        title_en: "Location Detective",
-        title_vi: "Thám tử Vị trí",
-        emoji: "🔍",
-        description: "Help Detective Nova find lost items!",
-        
-        ai_role: "Detective (Ms. Nova) - Looks for items",
-        user_role: "Helper - Student tells locations",
-        context: "Detective Nova lost 5 items! Student must help find them by describing WHERE they are. CRITICAL: Questions must offer 2 location choices with OR.",
-        
-        vocab_focus: ["box", "desk", "floor", "wall", "window", "door", "on", "in", "under", "next to"],
-        
-        opening_line: "Detective Nova here! 🔍 I lost my treasure map! Can you help? Is it ON the desk or IN the box? Say: It is ON the desk OR It is IN the box.",
-        
-        guide_rules: "CRITICAL DETECTIVE RULES: (1) Show lost items list (treasure map, key, coin, compass, gem - track 1/5 to 5/5). (2) Ask: 'Is the [item] [location A] or [location B]?' (3) Student answers with full sentence: 'It is ON/IN/UNDER/NEXT TO [place]'. (4) React: 'Found it! ⭐ Thank you! Next item...' (5) Progress through all 5 items. (6) ONE question per turn. FORBIDDEN: 'Where is it?' alone. 'Can you see?' without OR. 'Do you think?' ONLY use: 'Is it [location A] or [location B]?' format.",
-        
-        backup_questions: [
-          "Where's my key? Is it UNDER the box or ON the floor? Say: It is UNDER the box OR It is ON the floor.",
-          "My coin! Is it IN the box or NEXT TO the window? Say: It is IN the box OR It is NEXT TO the window.",
-          "The compass! Is it ON the wall or UNDER the desk? Say: It is ON the wall OR It is UNDER the desk.",
-          "My gem! Is it NEXT TO the door or ON the desk? Say: It is NEXT TO the door OR It is ON the desk.",
-          "Last item - the map! Is it IN the box or ON the floor? Say: It is IN the box OR It is ON the floor."
-        ]
-      },
-      {
-        id: "rp_treasure_quiz",
-        title: "Treasure Location Quiz 🎯",
-        title_en: "Treasure Location Quiz",
-        title_vi: "Đố vui Vị trí Kho báu",
-        emoji: "🎯",
-        description: "Take Captain Nova's quiz about where treasures are!",
-        
-        ai_role: "Quiz Master (Captain Nova) - Tests knowledge",
-        user_role: "Quiz Taker - Student answers",
-        context: "Captain Nova gives a 5-question quiz about treasure locations. Student must describe WHERE treasures should be hidden. CRITICAL: Questions offer 2 hiding spot choices with OR.",
-        
-        vocab_focus: ["box", "desk", "floor", "wall", "window", "door", "on", "in", "under", "next to", "hide", "treasure"],
-        
-        opening_line: "Welcome to Treasure Quiz! 🎯 Question 1/5: Where's the best place to hide a treasure? ON the desk or UNDER the desk? Say: UNDER the desk OR ON the desk.",
-        
-        guide_rules: "CRITICAL QUIZ RULES: (1) Show progress: Question 1/5, 2/5, etc. (2) Ask: 'Where should you hide [item]? [Location A] or [Location B]?' (3) Student answers: 'UNDER the desk', 'IN the box', etc. (4) React: 'Correct! Good hiding spot! ✓ Next question...' (5) ALL 5 questions about WHERE to hide treasures. (6) Locations: ON desk/floor/wall, IN box, UNDER desk/box, NEXT TO door/window. (7) ONE question per turn. FORBIDDEN: 'Where would you hide it?' without OR. 'What do you think?' ONLY use: 'Should you hide it [location A] or [location B]?' format.",
-        
-        backup_questions: [
-          "Question 2/5: Hide a gold coin. IN the box or ON the floor? Say: IN the box OR ON the floor.",
-          "Question 3/5: Hide a map. ON the wall or UNDER the box? Say: ON the wall OR UNDER the box.",
-          "Question 4/5: Hide a key. NEXT TO the door or IN the box? Say: NEXT TO the door OR IN the box.",
-          "Question 5/5: Hide a gem. UNDER the desk or ON the desk? Say: UNDER the desk OR ON the desk.",
-          "Bonus! Where's best for treasure? IN box or NEXT TO window? Say: IN box OR NEXT TO window."
-        ]
-      }
-    ]
+
+  conversation_cards: [
+    {
+      id: "where_is_my_cat",
+      title: "Where Is My Cat?",
+      emoji: "🐱",
+      theme: "Prepositions: on, in, under",
+      difficulty: "easy",
+      exchanges: [
+        {
+          ai: "I can't find my cat! Is the cat ON the table? Choose: Yes, the cat is on the table or No, the cat is not on the table",
+          options: ["Yes, the cat is on the table", "No, the cat is not on the table"]
+        },
+        {
+          ai: "I think the cat is under the bed! Say: The cat is ___ the bed",
+          fill_blank: "The cat is ___ the bed",
+          accept_words: ["under", "on", "next to", "the bed", "cat is"]
+        },
+        {
+          ai: "Check the box! Where is the cat? Say: The cat is ___ the ___",
+          fill_blank: "The cat is ___ the ___",
+          accept_words: ["in", "on", "under", "box", "bag", "table", "the cat"]
+        },
+        {
+          ai: "Found it! The cat is NEXT TO the door! Can you say that? Say: The cat is next to the door!",
+          accept: ["next to", "the door", "cat is", "the cat"]
+        },
+        {
+          ai: "Now you hide a cat! Where is the cat? Choose: The cat is on the chair or The cat is under the table or The cat is in the bag",
+          options: ["The cat is on the chair", "The cat is under the table", "The cat is in the bag"]
+        }
+      ],
+      completion_message: "Found the cat! 🐱 You used: ON, UNDER, IN, and NEXT TO perfectly!"
+    },
+    {
+      id: "treasure_hunt",
+      title: "Treasure Hunt!",
+      emoji: "🗺️",
+      theme: "Hiding & Finding Objects",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "Let's play treasure hunt! I hide a coin. The coin is ON the desk. Where is the coin? Say: The coin is on the desk!",
+          accept: ["on the desk", "coin is on", "the desk", "on"]
+        },
+        {
+          ai: "Now I hide the key. The key is UNDER the chair. Where is the key? Say: The key is under the chair!",
+          accept: ["under the chair", "key is under", "the chair", "under"]
+        },
+        {
+          ai: "I hide the map IN the box. Where is the map? Say: The map is in the box!",
+          accept: ["in the box", "map is in", "the box", "in"]
+        },
+        {
+          ai: "The treasure is NEXT TO the window! Where is the treasure? Say: The treasure is next to the window!",
+          accept: ["next to", "the window", "treasure is", "next to the window"]
+        },
+        {
+          ai: "Your turn! Where do YOU hide the treasure? Say: The treasure is ___ the ___!",
+          fill_blank: "The treasure is ___ the ___",
+          accept_words: ["on", "in", "under", "next to", "table", "bed", "box", "bag", "floor"]
+        },
+        {
+          ai: "I found the treasure! Where was it? Say: The treasure was ___ the ___",
+          fill_blank: "The treasure was ___ the ___",
+          accept_words: ["on", "in", "under", "next to", "table", "bed", "floor", "bag"]
+        }
+      ],
+      completion_message: "You found the treasure! 🗺️🏆 You used: on, in, under, and next to like a pro!"
+    },
+    {
+      id: "my_room_map",
+      title: "My Room Map",
+      emoji: "🗃️",
+      theme: "Describing Locations at Home",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "Tell me about your room! Where is your bed? Say: My bed is next to the ___",
+          fill_blank: "My bed is next to the ___",
+          accept_words: ["window", "wall", "door", "desk", "table"]
+        },
+        {
+          ai: "Where is your bag? Say: My bag is ___ the ___",
+          fill_blank: "My bag is ___ the ___",
+          accept_words: ["on", "in", "under", "next to", "bag", "floor", "chair", "desk", "table"]
+        },
+        {
+          ai: "Where are your books? Say: My books are ___ the ___",
+          fill_blank: "My books are ___ the ___",
+          accept_words: ["on", "in", "under", "desk", "bag", "shelf", "table", "floor"]
+        },
+        {
+          ai: "Where is the door in your room? Say: The door is next to the ___ or The door is on the ___",
+          accept: ["next to", "door is", "the door", "on the", "wall", "window"]
+        },
+        {
+          ai: "Where does your cat or toy go when you sleep? Choose: It is on the bed or It is under the bed or It is next to me",
+          options: ["It is on the bed", "It is under the bed", "It is next to me"]
+        }
+      ],
+      completion_message: "Amazing room map! 🗃️ You described your room using on, in, under, and next to!"
+    }
+  ]
 };
 
 export default week6RealData;

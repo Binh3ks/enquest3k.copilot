@@ -187,8 +187,8 @@ async function exportPromptsForWeek(weekNum, isEasy = false) {
     idx++;
     lines.push(`${idx}. Hãy tạo các hình ảnh 3D sống động sau đây. Filename: ${exploreCover}. ${buildPrompt('', '', 'explore_cover', weekNum)}`);
     
-    // Write to file
-    const outDir = path.join('MASS_Final', 'Image prompts');
+    // Write to file — output to public/images/Prompts/ for Nano Banana workflow
+    const outDir = path.join('public', 'images', 'Prompts');
     if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
     const outPath = path.join(outDir, `week_${weekNum}${isEasy ? '_easy' : ''}_image_prompts.txt`);
     fs.writeFileSync(outPath, lines.join('\n'), 'utf-8');

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Volume2, Globe, HelpCircle, CheckCircle, XCircle, AlertTriangle, Lightbulb, ArrowRight, Edit3, Sparkles } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
@@ -14,6 +15,9 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
     'explore'
   );
   
+  // 🚀 TTS Prefetch - auto-cache explore content
+  const { prefetchText } = useTTSPrefetch('explore');
+  
   const [inputs, setInputs] = useState(savedData.inputs || {});
   const [feedback, setFeedback] = useState(savedData.feedback || {});
   const [showHint, setShowHint] = useState({}); 
@@ -22,6 +26,7 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
   const [showAnswer, setShowAnswer] = useState(savedData.showAnswer || {}); // Show correct answer after 3 attempts
   const [completedIds, setCompletedIds] = useState(() => new Set(savedData.completedIds || []));
   const [imageSrc, setImageSrc] = useState("https://placehold.co/800x400/e2e8f0/64748b?text=Image+Loading...");
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
 
   // Preload image to avoid flicker and handle errors
   useEffect(() => {
@@ -59,6 +64,30 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
     return () => clearTimeout(handler);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [completedIds, inputs, feedback, attempts, showAnswer, showModel]);
+
+  // 🚀 Pre-cache explore content for instant playback (ONCE per data load)
+  useEffect(() => {
+    // Reset flag when data changes
+    hasPrefetched.current = false;
+  }, [data]);
+  
+  useEffect(() => {
+    if (hasPrefetched.current) return; // Already prefetched
+    
+    if (data?.content_en) {
+      hasPrefetched.current = true;
+      console.log('[Explore] � DEBUG - content:', {
+        hasContent: !!data.content_en,
+        contentLength: data.content_en.length
+      });
+      console.log('[Explore] �🚀 Starting prefetch for content...');
+      const cleanText = data.content_en.replace(/\*\*/g, '');
+      prefetchText(cleanText).catch(err => {
+        console.warn('[Explore] ❌ Prefetch failed:', err);
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
 
   // Early return AFTER hooks
@@ -118,7 +147,7 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
     if (!text) return null;
     return text.split(/(\*\*.*?\*\*)/).map((part, i) => 
       part.startsWith('**') ? 
-      <span key={i} className={`font-black text-${themeColor}-600 text-xl px-1 bg-${themeColor}-50 rounded border-b-2 border-${themeColor}-200 cursor-pointer hover:bg-${themeColor}-100 transition-colors`} onClick={(e) => { e.stopPropagation(); speakText(part.replace(/\*\*/g, '')); }}>{part.replace(/\*\*/g, '')}</span> : 
+      <span key={i} className={`font-black text-${themeColor}-600 text-xl px-1 bg-${themeColor}-50 rounded border-b-2 border-${themeColor}-200 cursor-pointer hover:bg-${themeColor}-100 transition-colors`} onClick={(e) => { e.stopPropagation(); speakText(part.replace(/\*\*/g, ''), null, 1.0, null, 'explore'); }}>{part.replace(/\*\*/g, '')}</span> : 
       <span key={i} className="text-lg">{part}</span>
     );
   };
@@ -137,7 +166,7 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
         </div>
         <div className="p-8">
             <div className="flex justify-between items-start mb-4">
-               <button onClick={() => speakText(data.content_en.replace(/\*\*/g, ''), data.audio_url)} className={`p-3 bg-${themeColor}-600 text-white rounded-full shadow-lg hover:bg-${themeColor}-700 transition-transform hover:scale-110 flex-shrink-0`}>
+               <button onClick={() => speakText(data.content_en.replace(/\*\*/g, ''), data.audio_url, 1.0, null, 'explore')} className={`p-3 bg-${themeColor}-600 text-white rounded-full shadow-lg hover:bg-${themeColor}-700 transition-transform hover:scale-110 flex-shrink-0`}>
                   <Volume2 className="w-6 h-6" />
                </button>
                <button onClick={onToggleLang} className="text-xs font-bold text-slate-400 hover:text-slate-600 flex items-center bg-slate-100 px-3 py-1 rounded-lg transition-colors"><Globe className="w-3 h-3 mr-1"/> {isVi?'VI':'EN'}</button>

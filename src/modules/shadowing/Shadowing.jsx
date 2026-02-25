@@ -3,15 +3,31 @@ import { useParams } from 'react-router-dom';
 import { Mic, Play, Eye, EyeOff, Volume2, Globe, StopCircle, RefreshCw, Pause } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 
-const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress, weekNumber, mode = 'advanced' }) => {
   const { weekId } = useParams();
+  const currentWeek = weekNumber || parseInt(weekId);
   
   // 🔥 Universal Progress System
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_shadowing');
   
+  // 🚀 TTS Prefetch
+  const { prefetchFromArray } = useTTSPrefetch('shadowing');
+  
   // Get script BEFORE any useState (to avoid hooks order issues)
   const script = data?.script || data?.sentences || [];
+  
+  // 🐛 DEBUG: Log data structure
+  useEffect(() => {
+    console.log('[Shadowing] 🐛 DEBUG - data:', {
+      hasData: !!data,
+      hasScript: !!data?.script,
+      hasSentences: !!data?.sentences,
+      scriptLength: script.length,
+      dataKeys: data ? Object.keys(data) : []
+    });
+  }, [data, script.length]);
   
   const [hideText, setHideText] = useState(false);
   const [activeSentence, setActiveSentence] = useState(null);
@@ -31,6 +47,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
   const chunksRef = useRef([]);
   const audioRef = useRef(null); // For playing audio
   const playbackRefs = useRef({}); // Store audio elements for each recording
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
 
   // Debounced save progress
   useEffect(() => {
@@ -48,6 +65,24 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
 
     return () => clearTimeout(handler);
   }, [recordedSegments, script.length, saveProgress, markComplete]);
+
+  // 🚀 Prefetch shadowing sentences (ONCE per data load)
+  useEffect(() => {
+    // Reset flag when script length changes (different week/mode)
+    hasPrefetched.current = false;
+  }, [script.length]);
+  
+  useEffect(() => {
+    if (hasPrefetched.current) return; // Already prefetched
+    
+    if (script && script.length > 0) {
+      hasPrefetched.current = true;
+      console.log(`[Shadowing] 🚀 Starting prefetch for ${script.length} sentences...`);
+      prefetchFromArray(script, 'text_en').catch(err => {
+        console.warn('[Shadowing] ❌ Prefetch failed:', err);
+      });
+    }
+  }, [script.length, prefetchFromArray]);
 
   // Cleanup on unmount
   useEffect(() => { 
@@ -85,7 +120,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     setIsPlayingAll(false);
     setActiveSentence(id);
     const text = typeof textObj === 'string' ? textObj : (textObj?.text_en || textObj?.text || '');
-    speakText(text.replace(/\*\*/g, ''), url, 0.8, () => setActiveSentence(null));
+    speakText(text.replace(/\*\*/g, ''), url, 0.8, () => setActiveSentence(null), 'shadowing', currentWeek, mode);
   };
 
   const playSequence = (index) => {
@@ -99,7 +134,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     const text = s.text_en || s.text || '';
     speakText(text.replace(/\*\*/g, ''), s.audio_url, 0.8, () => {
       playSequence(index + 1); 
-    });
+    }, 'shadowing', currentWeek, mode);
   };
 
   const handlePlayAll = () => {

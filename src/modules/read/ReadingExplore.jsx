@@ -4,12 +4,16 @@ import { Volume2, BookOpen, Globe, PenTool, Check, ArrowRight, AlertTriangle, Re
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 
 const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   
   // 🔥 Universal Progress System
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_reading');
+  
+  // 🚀 TTS Prefetch - auto-cache reading content
+  const { prefetchText } = useTTSPrefetch('read');
   
   const [sentences, setSentences] = useState([]);
   const [isReady, setIsReady] = useState(false);
@@ -26,6 +30,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   const [qAttempts, setQAttempts] = useState(() => savedData.questions?.qAttempts || {});
   const [showAnswer, setShowAnswer] = useState(() => savedData.questions?.showAnswer || {});
   const textareaRef = useRef(null);
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
 
   const isComplete = sentences.length > 0 && currentIdx >= sentences.length;
   const currentSentence = !isComplete && sentences.length > 0 ? sentences[currentIdx] : null;
@@ -82,6 +87,21 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       
       // State is already initialized. Just mark as ready.
       setIsReady(true);
+
+      // 🚀 Pre-cache full reading content for instant playback (ONCE per data load)
+      if (data.content_en && !hasPrefetched.current) {
+        hasPrefetched.current = true;
+        console.log('[ReadingExplore] � DEBUG - content:', {
+          hasContent: !!data.content_en,
+          contentLength: data.content_en.length,
+          sentencesCount: combined.length
+        });
+        console.log('[ReadingExplore] �🚀 Starting prefetch for full content...');
+        const cleanText = data.content_en.replace(/\*\*/g, '');
+        prefetchText(cleanText).catch(err => {
+          console.warn('[ReadingExplore] ❌ Prefetch failed:', err);
+        });
+      }
 
       if(textareaRef.current) textareaRef.current.focus();
     }
@@ -179,7 +199,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
     if (!text) return null;
     return text.split(/(\*\*.*?\*\*)/).map((part, i) => 
       part.startsWith('**') ? 
-      <span key={i} className={`font-black text-${themeColor}-600 text-2xl px-1 bg-${themeColor}-50 rounded border-b-2 border-${themeColor}-200 cursor-pointer hover:bg-${themeColor}-100 transition-colors`} onClick={(e) => { e.stopPropagation(); speakText(part.replace(/\*\*/g, '')); }}>{part.replace(/\*\*/g, '')}</span> : 
+      <span key={i} className={`font-black text-${themeColor}-600 text-2xl px-1 bg-${themeColor}-50 rounded border-b-2 border-${themeColor}-200 cursor-pointer hover:bg-${themeColor}-100 transition-colors`} onClick={(e) => { e.stopPropagation(); speakText(part.replace(/\*\*/g, ''), null, 1.0, null, 'read'); }}>{part.replace(/\*\*/g, '')}</span> : 
       <span key={i} className="text-xl">{part}</span>
     );
   };
@@ -210,7 +230,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
         
         <div className="p-8">
             <div className="flex justify-between items-start mb-6">
-               <button onClick={() => speakText(renderCleanText(data.content_en), data.audio_url)} className={`p-3 bg-${themeColor}-600 text-white rounded-full shadow-lg hover:bg-${themeColor}-700 transition-transform hover:scale-110 flex-shrink-0`}>
+               <button onClick={() => speakText(renderCleanText(data.content_en), data.audio_url, 1.0, null, 'read')} className={`p-3 bg-${themeColor}-600 text-white rounded-full shadow-lg hover:bg-${themeColor}-700 transition-transform hover:scale-110 flex-shrink-0`}>
                   <Volume2 className="w-6 h-6" />
                </button>
                <button onClick={onToggleLang} className="text-xs font-bold text-slate-400 hover:text-slate-600 flex items-center bg-slate-100 px-3 py-1 rounded-lg transition-colors"><Globe className="w-3 h-3 mr-1"/> {isVi?'VI':'EN'}</button>
@@ -231,7 +251,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-indigo-100 mb-6 animate-in fade-in slide-in-from-bottom-2">
                <div className="flex justify-between mb-3">
                   <span className="text-[10px] font-black text-indigo-400 uppercase tracking-widest bg-indigo-50 px-2 py-1 rounded">Sentence {currentIdx + 1} / {sentences.length}</span>
-                  <button onClick={() => speakText(renderCleanText(currentSentence.en))} className="text-slate-300 hover:text-indigo-500 transition-colors"><Volume2 className="w-5 h-5"/></button>
+                  <button onClick={() => speakText(renderCleanText(currentSentence.en), null, 1.0, null, 'read')} className="text-slate-300 hover:text-indigo-500 transition-colors"><Volume2 className="w-5 h-5"/></button>
                </div>
                <p className="text-2xl font-bold text-slate-800 leading-snug select-text cursor-text">{renderCleanText(currentSentence.en)}</p>
                {showFullRef && currentSentence.vi && (<div className="mt-4 pt-4 border-t border-slate-50 animate-in fade-in"><p className="text-xs font-bold text-green-600 uppercase mb-1">{isVi ? "Gợi ý / Câu mẫu:" : "Suggestion / Sample:"}</p><p className="text-green-800 font-medium text-sm">{currentSentence.vi}</p></div>)}
