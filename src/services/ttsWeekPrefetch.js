@@ -7,7 +7,7 @@
 import { loadWeekData } from '../data/weeks/index';
 import { TTSCache } from './ttsCache';
 
-const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || 'http://localhost:8000';
+const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
 
 // Voice mapping for stations
 const STATION_VOICES = {

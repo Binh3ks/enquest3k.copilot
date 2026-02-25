@@ -13,7 +13,7 @@
 import { useEffect, useRef } from 'react';
 import { TTSCache } from '../services/ttsCache';
 
-const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || 'http://localhost:8000';
+const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
 
 export function useTTSPrefetch(station = 'read') {
   const prefetchQueueRef = useRef(new Set());

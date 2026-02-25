@@ -12,7 +12,7 @@
 import { TTSCache } from './ttsCache';
 import { markServerWarm } from './voiceService';
 
-const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || 'http://localhost:8000';
+const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
 
 // 20 most common phrases across all stations (based on usage data)
 const COMMON_PHRASES = [
