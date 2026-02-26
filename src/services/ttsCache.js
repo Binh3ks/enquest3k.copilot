@@ -20,7 +20,7 @@
 
 const DB_NAME = 'EngQuestTTSCache';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;
+const DB_VERSION = 2;  // Bumped Feb 2026: clears old Kokoro cache, forces fresh Deepgram audio from R2
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -54,11 +54,15 @@ class TTSCacheService {
       
       request.onupgradeneeded = (event) => {
         const db = event.target.result;
-        if (!db.objectStoreNames.contains(STORE_NAME)) {
-          const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
-          store.createIndex('timestamp', 'timestamp', { unique: false });
-          console.log('[TTSCache] 🆕 Created object store');
+        // Delete old store on version upgrade — clears stale Kokoro-cached audio
+        // so fresh Deepgram files from R2 are fetched on next play
+        if (db.objectStoreNames.contains(STORE_NAME)) {
+          db.deleteObjectStore(STORE_NAME);
+          console.log('[TTSCache] 🗑️ Old cache cleared (version upgrade)');
         }
+        const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
+        store.createIndex('timestamp', 'timestamp', { unique: false });
+        console.log('[TTSCache] 🆕 Created object store');
       };
     });
   }
