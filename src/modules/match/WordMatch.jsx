@@ -15,7 +15,7 @@ const shuffleArray = (array) => {
   return newArray;
 };
 
-const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mode }) => {
   const { weekId } = useParams();
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'game_word_match');
 
@@ -134,7 +134,7 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     setFlippedCards(newFlipped);
     
     if (card.speakContent) {
-      speakText(card.speakContent, card.audioUrl, 1.0, null, 'new_word');
+      speakText(card.speakContent, null, 1.0, null, 'new_word', parseInt(weekId), mode || 'advanced');
     }
 
     if (newFlipped.length === 2) {
