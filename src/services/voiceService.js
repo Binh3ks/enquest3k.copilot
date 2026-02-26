@@ -66,6 +66,26 @@ function shouldThrottle() {
   return false;
 }
 
+// Concurrency limiter: max 2 simultaneous HF Space requests (prevents 30s timeout storms)
+const MAX_CONCURRENT_HF = 2;
+let _activeHFRequests = 0;
+const _hfQueue = [];
+function acquireHFSlot() {
+  if (_activeHFRequests < MAX_CONCURRENT_HF) {
+    _activeHFRequests++;
+    return Promise.resolve();
+  }
+  return new Promise(resolve => _hfQueue.push(resolve));
+}
+function releaseHFSlot() {
+  if (_hfQueue.length > 0) {
+    const next = _hfQueue.shift();
+    next();
+  } else {
+    _activeHFRequests--;
+  }
+}
+
 // HF Space warm-state tracking (still used for non-instant calls)
 let _serverWarm = false;
 let _lastSuccessTime = 0;
@@ -349,6 +369,8 @@ export const VoiceService = {
    * Throws on failure so callers can catch and fall back.
    */
   async _fetchFromPool(text, station, timeoutMs = 30000) {
+    await acquireHFSlot();
+    try {
     if (shouldThrottle()) {
       await new Promise(r => setTimeout(r, RATE_LIMIT_MS));
     }
@@ -366,6 +388,9 @@ export const VoiceService = {
     } catch (err) {
       clearTimeout(timeoutId);
       throw err;
+    }
+    } finally {
+      releaseHFSlot();
     }
   },
 

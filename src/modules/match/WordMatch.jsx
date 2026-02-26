@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Target, Image as ImageIcon, Type, RefreshCw, Trophy, Check, Music, ImageOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -18,6 +18,13 @@ const shuffleArray = (array) => {
 const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mode }) => {
   const { weekId } = useParams();
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'game_word_match');
+  // Refs to break the savedData → saveProgress → effect re-run loop
+  const savedDataRef = useRef(savedData);
+  const saveProgressRef = useRef(saveProgress);
+  const markCompleteRef = useRef(markComplete);
+  useEffect(() => { savedDataRef.current = savedData; }, [savedData]);
+  useEffect(() => { saveProgressRef.current = saveProgress; }, [saveProgress]);
+  useEffect(() => { markCompleteRef.current = markComplete; }, [markComplete]);
 
   // State for the current game instance
   const [gameMode, setGameMode] = useState('meaning');
@@ -55,7 +62,8 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
     setFlippedCards([]);
     setIsLock(false);
 
-    const modeProgress = savedData && savedData[newMode] ? savedData[newMode] : null;
+    const sd = savedDataRef.current;
+    const modeProgress = sd && sd[newMode] ? sd[newMode] : null;
 
     if (modeProgress && !forceReset) {
       setMatchedCards(modeProgress.matched || []);
@@ -70,14 +78,14 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
     setCards(generateCards(newMode));
     
     setTimeout(() => setIsGameReady(true), 50);
-  }, [savedData, generateCards]);
+  }, [generateCards]); // savedData removed — accessed via savedDataRef.current
 
   // Debounced save progress
   useEffect(() => {
     if (!isGameReady || !vocabList.length) return;
 
     const handler = setTimeout(() => {
-      const newSavedData = { ...(savedData || {}) };
+      const newSavedData = { ...(savedDataRef.current || {}) };
       
       newSavedData[gameMode] = {
         matched: matchedCards,
@@ -103,10 +111,10 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
       const isStationComplete = completedModes === modes.length;
       const progressPercent = Math.round((completedModes / modes.length) * 100);
 
-      saveProgress(newSavedData, isStationComplete, progressPercent);
+      saveProgressRef.current(newSavedData, isStationComplete, progressPercent);
       
       if (isStationComplete) {
-        markComplete(totalScore);
+        markCompleteRef.current(totalScore);
       }
       if (onReportProgress) {
         onReportProgress(progressPercent);
@@ -115,12 +123,13 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
     }, 1500);
 
     return () => clearTimeout(handler);
-  }, [matchedCards, moves, score, gameMode, isGameReady, savedData, saveProgress, markComplete, onReportProgress, vocabList.length, generateCards]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [matchedCards, moves, score, gameMode, isGameReady, vocabList.length, generateCards, onReportProgress]);
 
   // Game Initialization
   useEffect(() => {
     if (vocabList.length > 0) {
-      const initialMode = savedData?.lastMode || 'meaning';
+      const initialMode = savedDataRef.current?.lastMode || 'meaning';
       switchGameMode(initialMode);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
