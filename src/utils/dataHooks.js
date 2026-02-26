@@ -87,15 +87,13 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
       }));
   }
 
-  // 7b. Ask AI - audio_url set to null: R2 files (ask_ai_N.mp3) currently contain
-  // context_en text (situation description), NOT the answer. AskAi.jsx will
-  // pass the correct answer text to HF Space for TTS until files are regenerated.
-  // TODO: run `python3 tools/generate_audio_final.py <week>` after this fix to
-  //        regenerate ask_ai_N.mp3 with answer text, then re-upload to R2.
+  // 7b. Ask AI - audio_url now points to correct R2 files (regenerated Feb 2026
+  // with Deepgram using answer text, not context_en).
+  // Use: python3 tools/generate_audio_deepgram.py <week> --station ask_ai --upload
   if (weekData.stations?.ask_ai?.prompts) {
       weekData.stations.ask_ai.prompts = weekData.stations.ask_ai.prompts.map(p => ({
           ...p,
-          audio_url: null  // Will be re-enabled after audio regeneration
+          audio_url: mkUrl(`ask_ai_${p.id}.mp3`)
       }));
   }
 
