@@ -143,7 +143,7 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
     setFlippedCards(newFlipped);
     
     if (card.speakContent) {
-      speakText(card.speakContent, null, 1.0, null, 'new_word', parseInt(weekId), mode || 'advanced');
+      speakText(card.speakContent, card.audioUrl || null, 1.0, null, 'new_word', parseInt(weekId), mode || 'advanced');
     }
 
     if (newFlipped.length === 2) {
