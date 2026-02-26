@@ -76,9 +76,12 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   }
 
   // Handle both old format (string) and new format ({text, audio})
+  // Fall back to dataHooks-injected audio arrays for string-only weeks (e.g. week 1)
   const structures = data.centerStems.map((stem, i) => {
     const stemText = typeof stem === 'string' ? stem : stem.text;
-    const stemAudio = typeof stem === 'string' ? null : stem.audio;
+    const stemAudio = typeof stem === 'string'
+      ? (data.centerStemAudio?.[i] || null)   // dataHooks: /audio/week1/mindmap_stem_1.mp3
+      : stem.audio;
     return {
       id: `s${i}`,
       text: stemText,
@@ -92,7 +95,10 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const branches = sentenceTargets.map((branch, i) => {
     // Handle both old format (string) and new format ({text, audio})
     const branchText = typeof branch === 'string' ? branch : branch.text;
-    const branchAudio = typeof branch === 'string' ? null : branch.audio;
+    // Fall back to dataHooks-injected branch audio map for string-only weeks
+    const branchAudio = typeof branch === 'string'
+      ? (data.branchLabelsAudio?.[selectedStruct.text]?.[i] || null)  // dataHooks: /audio/week1/mindmap_branch_N.mp3
+      : branch.audio;
     
     const angle = (i * 60 - 30) * (Math.PI / 180);
     const radius = 35;
@@ -249,7 +255,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
                  className={`bg-white border-[6px] p-4 rounded-[35px] shadow-2xl w-56 flex flex-col items-center gap-3 transition-all ${isDone ? 'bg-green-50' : 'hover:scale-105'}`}>
               
               <div className="flex items-center gap-2 font-black text-slate-800 uppercase text-xs italic">
-                <div style={{ backgroundColor: b.color }} className="p-1.5 rounded-lg text-white shadow-sm cursor-pointer hover:scale-110 transition-transform" onClick={() => speakText(b.target, b.audioUrl, 1.0, null, 'read', parseInt(weekId), 'advanced', true)}> {/* ⚡ instant mode */}
+                <div style={{ backgroundColor: b.color }} className="p-1.5 rounded-lg text-white shadow-sm cursor-pointer hover:scale-110 transition-transform" onClick={() => speakText(b.display, b.audioUrl, 1.0, null, 'read', parseInt(weekId), 'advanced', true)}> {/* ⚡ instant mode - b.display matches audio file content */}
                   <Volume1 size={14}/>
                 </div>
                 <span className="text-center">{b.display}</span>
