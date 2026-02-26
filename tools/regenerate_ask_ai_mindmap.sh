@@ -48,7 +48,7 @@ for WEEK in $WEEKS; do
         [ -f "$FILE" ] || continue
         KEY=$(echo "$FILE" | sed 's|public/||')
         echo -n "  $KEY ... "
-        if npx wrangler r2 object put engquest-audio/$KEY --file="$FILE" 2>/dev/null; then
+        if npx wrangler r2 object put engquest-audio/$KEY --file="$FILE" --remote 2>/dev/null; then
             echo "✅"
             ((UPLOADED++))
         else
@@ -62,7 +62,7 @@ for WEEK in $WEEKS; do
         [ -f "$FILE" ] || continue
         KEY=$(echo "$FILE" | sed 's|public/||')
         echo -n "  $KEY ... "
-        if npx wrangler r2 object put engquest-audio/$KEY --file="$FILE" 2>/dev/null; then
+        if npx wrangler r2 object put engquest-audio/$KEY --file="$FILE" --remote 2>/dev/null; then
             echo "✅"
             ((UPLOADED++))
         else
@@ -76,7 +76,7 @@ for WEEK in $WEEKS; do
         [ -f "$FILE" ] || continue
         KEY=$(echo "$FILE" | sed 's|public/||')
         echo -n "  $KEY ... "
-        if npx wrangler r2 object put engquest-audio/$KEY --file="$FILE" 2>/dev/null; then
+        if npx wrangler r2 object put engquest-audio/$KEY --file="$FILE" --remote 2>/dev/null; then
             echo "✅"
             ((UPLOADED++))
         else
