@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import { Volume2, Zap, Globe, CheckCircle, Edit3, BookOpen, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 import { getImageUrl } from '../../utils/imageUrl';
+import { useUserStore } from '../../stores/useUserStore';
 
-const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
+const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [drill, setDrill] = useState({ copy1: '', copy2: '', copy3: '', definition: '', sentence: '' });
   const [feedback, setFeedback] = useState({ definition: null, sentence: null });
@@ -30,9 +32,9 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
   }, [allCopyCorrect, isDefCorrect, isSentCorrect, isCompleted, onComplete, word.id]);
 
   // Audio play function
-  const play = (e, text, audioUrl) => {
+  const play = (e, text) => {
     e.stopPropagation();
-    speakText(text, audioUrl, 1.0, null, 'word_power');
+    speakText(text, null, 1.0, null, 'word_power', parseInt(weekId), mode);
   };
 
   const handleCopyCheck = (key, value) => {
@@ -90,7 +92,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
            <div className="flex-1 flex flex-col items-center justify-center p-4">
                   <h3 className="text-4xl font-black mb-2 capitalize tracking-wide">{word.word}</h3>
                   <span className="text-sm font-mono bg-white/20 px-3 py-1 rounded-full mb-4">{word.pronunciation}</span>
-                  <button onClick={(e) => play(e, word.word, word.audio_word)} className="p-3 bg-white text-teal-700 rounded-full hover:scale-110 transition-transform shadow-lg">
+                  <button onClick={(e) => play(e, word.word)} className="p-3 bg-white text-teal-700 rounded-full hover:scale-110 transition-transform shadow-lg">
                     <Volume2 className="w-6 h-6" />
                   </button>
            </div>
@@ -102,7 +104,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
            <div className="mb-6">
                 <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="text-xs font-bold uppercase text-teal-600 tracking-wider">Definition</span>
-                    <button onClick={(e) => play(e, word.definition_en, word.audio_def)} className="p-1 bg-teal-50 rounded-full text-teal-500 hover:text-teal-700"><Volume2 className="w-4 h-4"/></button>
+                    <button onClick={(e) => play(e, word.definition_en)} className="p-1 bg-teal-50 rounded-full text-teal-500 hover:text-teal-700"><Volume2 className="w-4 h-4"/></button>
                 </div>
                 <p className="font-bold text-slate-800 text-xl leading-snug">{word.definition_en}</p>
                 {word.definition_vi && <p className="text-sm text-slate-400 italic mt-2">"{word.definition_vi}"</p>}
@@ -111,7 +113,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
                 <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="text-xs font-bold uppercase text-teal-600 tracking-wider">Context</span>
                     {/* Nút loa phát audio_coll (Phrase Audio) */}
-                    <button onClick={(e) => play(e, targetContext, word.audio_coll)} className="p-1 bg-teal-50 rounded-full text-teal-500 hover:text-teal-700"><Volume2 className="w-4 h-4"/></button>
+                    <button onClick={(e) => play(e, targetContext)} className="p-1 bg-teal-50 rounded-full text-teal-500 hover:text-teal-700"><Volume2 className="w-4 h-4"/></button>
                 </div>
                 {/* Hiển thị Text của Phrase (Collocation) */}
                 <p className="text-lg text-teal-800 font-medium italic">"{targetContext}"</p>
@@ -183,6 +185,8 @@ const PowerCard = ({ word, themeColor, isVi, onComplete }) => {
 };
 
 const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+  const { weekId } = useParams();
+  const { learningMode } = useUserStore();
   const [completedIds, setCompletedIds] = useState([]);
   const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
   
@@ -257,7 +261,7 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2">
        {(data.words || []).map(w => (
-            <PowerCard key={w.id} word={w} themeColor={themeColor} isVi={isVi} onComplete={handleCardComplete} />
+            <PowerCard key={w.id} word={w} themeColor={themeColor} isVi={isVi} onComplete={handleCardComplete} weekId={weekId} mode={learningMode} />
        ))}
       </div>
       {/* DEBUG: Hiển thị trạng thái Audio để kiểm tra lỗi file câm Tuần 2 */}
