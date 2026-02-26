@@ -102,7 +102,11 @@ export default function ShowTellLadderGame({ weekNumber, learningMode = 'advance
     if (!word || isPlayingAudio) return;
     setIsPlayingAudio(true);
     try {
-      await speakText(word);
+      // Compute expected R2 CDN path for vocabulary word (matches new_word station naming)
+      const audioBase = learningMode === 'easy' ? `/audio/week${weekNumber}_easy` : `/audio/week${weekNumber}`;
+      const wordFile = word.replace(/\s+/g, '_').toLowerCase();
+      const audioUrl = `${audioBase}/vocab_${wordFile}.mp3`;
+      await speakText(word, audioUrl, 1.0, null, 'new_word', weekNumber, learningMode);
       // Reveal word text after audio finishes
       setHasPlayedAudio(true);
     } finally {

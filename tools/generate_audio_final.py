@@ -269,16 +269,13 @@ def scan_for_tasks(data_path, voice_config):
         
         # Ask AI uses different structure
         if station_name == "ask_ai":
-            # Extract context_en fields for questions
-            context_matches = re.findall(r'context_en\s*:\s*["\']([^"\']+)["\']', content)
-            for i, text in enumerate(context_matches):
-                tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_{i+1}.mp3", "station": station_name})
-            
-            # Extract answer fields (first item from answer array)
+            # Extract ANSWER fields for ask_ai_N.mp3 (NOT context_en)
+            # The speaker button in AskAi.jsx should speak the CORRECT ANSWER,
+            # not the situation description shown on screen.
             # Pattern: answer: ["First answer", "Second", "Third"]
             answer_matches = re.findall(r'answer\s*:\s*\[\s*["\']([^"\']+)["\']', content)
             for i, text in enumerate(answer_matches):
-                tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_answer_{i+1}.mp3", "station": station_name})
+                tasks.append({"text": text, "voice": voice, "filename": f"{station_name}_{i+1}.mp3", "station": station_name})
         else:
             # Logic lab uses description_en/question_en/question/prompt fields
             matches = re.findall(r'(?:description_en|question_en|question|prompt)\s*:\s*["\'](.*?)["\']', content)

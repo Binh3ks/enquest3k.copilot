@@ -87,11 +87,15 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
       }));
   }
 
-  // 7b. Ask AI - Add audio_url for prompts
+  // 7b. Ask AI - audio_url set to null: R2 files (ask_ai_N.mp3) currently contain
+  // context_en text (situation description), NOT the answer. AskAi.jsx will
+  // pass the correct answer text to HF Space for TTS until files are regenerated.
+  // TODO: run `python3 tools/generate_audio_final.py <week>` after this fix to
+  //        regenerate ask_ai_N.mp3 with answer text, then re-upload to R2.
   if (weekData.stations?.ask_ai?.prompts) {
       weekData.stations.ask_ai.prompts = weekData.stations.ask_ai.prompts.map(p => ({
           ...p,
-          audio_url: mkUrl(`ask_ai_${p.id}.mp3`)
+          audio_url: null  // Will be re-enabled after audio regeneration
       }));
   }
 
