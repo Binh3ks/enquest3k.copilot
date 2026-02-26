@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, XCircle, Zap, Globe, AlertTriangle, HelpCircle, Calculator, Puzzle, BrainCircuit, ListChecks } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
+import { useUserStore } from '../../stores/useUserStore';
 import { useStationProgress } from '../../hooks/useStationProgress';
 
 const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
+  const { learningMode } = useUserStore();
   
   // 🔥 Universal Progress System
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'game_logic');
@@ -97,7 +99,7 @@ const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =>
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-2">
                    <p className="text-xl font-bold text-slate-800 leading-snug">{p.question_en}</p>
-                   <button onClick={() => speakText(p.question_en, p.audio_url, 1.0, null, 'read')} className="ml-2 p-2 bg-slate-50 rounded-full hover:bg-indigo-100 text-indigo-500 transition-colors flex-shrink-0"><Volume2 className="w-5 h-5" /></button>
+                   <button onClick={() => speakText(p.question_en, p.audio_url, 1.0, null, 'read', parseInt(weekId), learningMode || 'advanced')} className="ml-2 p-2 bg-slate-50 rounded-full hover:bg-indigo-100 text-indigo-500 transition-colors flex-shrink-0"><Volume2 className="w-5 h-5" /></button>
                 </div>
                 
                 {isVi && <p className="text-sm text-slate-400 italic mb-4 border-l-2 border-slate-200 pl-2">{p.question_vi}</p>}

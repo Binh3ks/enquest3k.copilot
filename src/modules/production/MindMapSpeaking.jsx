@@ -189,7 +189,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
               setBranchInputs(structureSpecificRecordings);
               setFeedback(structureSpecificFeedback);
               setEditMode({});
-              speakText(s.text, s.audioUrl, 1.0, null, 'read', null, 'advanced', true); // ⚡ instant mode
+              speakText(s.text, s.audioUrl, 1.0, null, 'read', parseInt(weekId), 'advanced', true); // ⚡ instant mode
             }}
               style={{ backgroundColor: s.color }}
               className="group p-8 rounded-[40px] shadow-xl hover:scale-105 active:scale-95 transition-all text-white font-black text-xl uppercase italic border-b-[8px] border-black/10 h-32 flex items-center justify-center text-center">
@@ -226,7 +226,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
           {/* Audio button for center node */}
           {selectedStruct.audioUrl && (
             <button
-              onClick={() => speakText(selectedStruct.text, selectedStruct.audioUrl, 1.0, null, 'read', null, 'advanced', true)} // ⚡ instant mode
+              onClick={() => speakText(selectedStruct.text, selectedStruct.audioUrl, 1.0, null, 'read', parseInt(weekId), 'advanced', true)} // ⚡ instant mode
               className="absolute top-3 right-3 z-20 bg-white text-indigo-600 p-2 rounded-full shadow-lg hover:scale-110 active:scale-95 transition-all"
             >
               <Volume2 size={20} />
@@ -249,7 +249,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
                  className={`bg-white border-[6px] p-4 rounded-[35px] shadow-2xl w-56 flex flex-col items-center gap-3 transition-all ${isDone ? 'bg-green-50' : 'hover:scale-105'}`}>
               
               <div className="flex items-center gap-2 font-black text-slate-800 uppercase text-xs italic">
-                <div style={{ backgroundColor: b.color }} className="p-1.5 rounded-lg text-white shadow-sm cursor-pointer hover:scale-110 transition-transform" onClick={() => speakText(b.target, b.audioUrl, 1.0, null, 'read', null, 'advanced', true)}> {/* ⚡ instant mode */}
+                <div style={{ backgroundColor: b.color }} className="p-1.5 rounded-lg text-white shadow-sm cursor-pointer hover:scale-110 transition-transform" onClick={() => speakText(b.target, b.audioUrl, 1.0, null, 'read', parseInt(weekId), 'advanced', true)}> {/* ⚡ instant mode */}
                   <Volume1 size={14}/>
                 </div>
                 <span className="text-center">{b.display}</span>
