@@ -12,8 +12,7 @@
 
 import { useEffect, useRef } from 'react';
 import { TTSCache } from '../services/ttsCache';
-
-const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
+import { VoiceService } from '../services/voiceService';
 
 export function useTTSPrefetch(station = 'read') {
   const prefetchQueueRef = useRef(new Set());
@@ -39,23 +38,13 @@ export function useTTSPrefetch(station = 'read') {
       return false; // Already prefetching
     }
     
-    // Add to queue and fetch
+    // Add to queue and prefetch via VoiceService (goes through HF semaphore)
     prefetchQueueRef.current.add(text);
     
     try {
-      const url = `${TTS_SERVER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}`;
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 30000); // 30s timeout (match voiceService)
-      
-      const response = await fetch(url, { signal: controller.signal });
-      clearTimeout(timeout);
-      
-      if (response.ok) {
-        const blob = await response.blob();
-        await TTSCache.set(text, station, blob);
-        console.log(`[Prefetch] ✅ Cached for ${station}: ${text.substring(0, 30)}...`);
-        return true;
-      }
+      await VoiceService.prefetch(text, station);
+      console.log(`[Prefetch] ✅ Cached for ${station}: ${text.substring(0, 30)}...`);
+      return true;
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed for ${station}:`, error.message);
     } finally {

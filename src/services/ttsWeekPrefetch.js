@@ -6,8 +6,7 @@
 
 import { loadWeekData } from '../data/weeks/index';
 import { TTSCache } from './ttsCache';
-
-const TTS_SERVER_URL = import.meta.env.VITE_TTS_SERVER_URL || import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
+import { VoiceService } from './voiceService';
 
 // Voice mapping for stations
 const STATION_VOICES = {
@@ -46,22 +45,11 @@ class TTSWeekPrefetchService {
     }
 
     try {
-      const url = `${TTS_SERVER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}`;
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 45000); // 45s timeout for long content
-
-      const response = await fetch(url, { signal: controller.signal });
-      clearTimeout(timeout);
-
-      if (response.ok) {
-        const blob = await response.blob();
-        await TTSCache.set(text, station, blob);
-        this.stats.cached++;
-        console.log(`[Week Prefetch] ✅ Cached: ${text.substring(0, 30)}... (${station})`);
-        return true;
-      }
+      await VoiceService.prefetch(text, station);
+      this.stats.cached++;
+      console.log(`[Week Prefetch] ✅ Cached: ${text.substring(0, 30)}... (${station})`);
+      return true;
     } catch (error) {
-      // Silent fail for non-critical prefetch
       if (error.name !== 'AbortError') {
         console.warn(`[Week Prefetch] ⚠️ Failed for ${station}:`, error.message);
       }

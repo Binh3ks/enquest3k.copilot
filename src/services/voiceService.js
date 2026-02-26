@@ -66,8 +66,8 @@ function shouldThrottle() {
   return false;
 }
 
-// Concurrency limiter: max 2 simultaneous HF Space requests (prevents 30s timeout storms)
-const MAX_CONCURRENT_HF = 2;
+// Concurrency limiter: max 3 simultaneous HF Space requests (user gets priority via prefetch() yielding)
+const MAX_CONCURRENT_HF = 3;
 let _activeHFRequests = 0;
 const _hfQueue = [];
 function acquireHFSlot() {
@@ -179,8 +179,8 @@ export const VoiceService = {
       return;
     }
     
-    // 🌐 TIER 2: Try CDN (for static stations with pre-generated files)
-    if (isStaticStation && weekNumber && CDN_WEEKS.includes(weekNumber)) {
+    // 🌐 TIER 2: Try CDN (only when explicit audioUrl provided - hash-based lookup always 404)
+    if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
       try {
         console.log(`[TTS] Trying CDN for week ${weekNumber} ${mode}...`);
         await this.useCDN(cleanedText, station, audioUrl, weekNumber, mode);
@@ -223,6 +223,41 @@ export const VoiceService = {
     // 🔊 TIER 4: Browser TTS (last resort)
     console.warn('[TTS] ⚠️ Using browser TTS as last resort');
     this.webFallback(cleanedText);
+  },
+
+  /**
+   * Pre-cache TTS audio WITHOUT playing (for background prefetch)
+   * Routes through HF semaphore so prefetch never starves user requests
+   */
+  async prefetch(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced') {
+    const cleanedText = this.cleanTextForTTS(text);
+
+    // Already cached? Nothing to do
+    const cached = await TTSCache.get(cleanedText, station);
+    if (cached) return;
+
+    const isStaticStation = STATIC_STATIONS.includes(station);
+
+    // Try CDN first (only when explicit audioUrl is provided)
+    if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
+      try {
+        const cleanPath = audioUrl.replace('/audio/', '');
+        const cdnUrl = `${CDN_URL}/${cleanPath}`;
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        const response = await fetch(cdnUrl, { signal: controller.signal, cache: 'force-cache', headers: { 'Accept': 'audio/mpeg' } });
+        clearTimeout(timeoutId);
+        if (response.ok) {
+          const blob = await response.blob();
+          await TTSCache.set(cleanedText, station, blob);
+          return;
+        }
+      } catch {}
+    }
+
+    // HF Space via semaphore (15s timeout — lower priority than user requests)
+    const blob = await this._fetchFromPool(cleanedText, station, 15000);
+    if (blob) await TTSCache.set(cleanedText, station, blob);
   },
 
   /**
@@ -405,6 +440,8 @@ export const VoiceService = {
         const audioUrl = URL.createObjectURL(audioBlob);
         return this.playAudio(audioUrl, true);
       } catch (error) {
+        // Don't retry on abort - user navigated away, further attempts are pointless
+        if (error.name === 'AbortError' || error.message?.includes('aborted')) throw error;
         const isLast = attempt === maxAttempts;
         console.warn(`[TTS Pool] Attempt ${attempt}/${maxAttempts} failed: ${error.message}`);
         if (isLast) throw new Error(`TTS pool failed after ${maxAttempts} attempts: ${error.message}`);
