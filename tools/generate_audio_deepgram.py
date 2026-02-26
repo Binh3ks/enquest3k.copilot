@@ -347,15 +347,27 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
             _task(" ".join(lines), "narration", "shadowing_full.mp3", "shadowing")
 
     def extract_mindmap(content, file_path):
-        # Center stems
+        # ── Center stems ────────────────────────────────────────────────────
         cs = re.search(r'centerStems\s*:\s*\[([\s\S]*?)\]', content)
         if cs:
-            for i, t in enumerate(re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', cs.group(1))):
+            cs_text = cs.group(1)
+            # Try object format first: { text: "...", audio: "..." }
+            obj_stems = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', cs_text)
+            if obj_stems:
+                stem_list = obj_stems
+            else:
+                # Fallback: plain string array format: "I am ___.", "..."
+                # Line-anchored to safely grab only pure string values
+                stem_list = [
+                    s for s in re.findall(r'^\s*["\']([^"\']+)["\'],?\s*$', cs_text, re.MULTILINE)
+                    if not s.startswith('/audio/')
+                ]
+            for i, t in enumerate(stem_list):
                 clean = re.sub(r'\.\s*$', '', t.replace("___", "").strip())
                 if clean:
                     _task(clean + ".", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
 
-        # Branch labels
+        # ── Branch labels ────────────────────────────────────────────────────
         bl_start = re.search(r'branchLabels\s*:\s*{', content)
         if not bl_start:
             return
@@ -381,7 +393,18 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
 
         idx = 1
         for _, arr_content in arrays:
-            for t in re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', arr_content):
+            # Try object format: { text: "playing games", audio: "..." }
+            obj_branches = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', arr_content)
+            if obj_branches:
+                branch_list = obj_branches
+            else:
+                # Fallback: plain string entries (each line is just a "value")
+                # Use line-anchored regex to avoid capturing the key definition line
+                branch_list = [
+                    s for s in re.findall(r'^\s*["\']([^"\']+)["\'],?\s*$', arr_content, re.MULTILINE)
+                    if not s.startswith('/audio/')
+                ]
+            for t in branch_list:
                 _task(t.strip(), "mindmap", f"mindmap_branch_{idx}.mp3", "mindmap"); idx += 1
 
     # ── File → scanner map ────────────────────────────────────────────────────

@@ -299,20 +299,25 @@ def scan_for_tasks(data_path, voice_config):
     def extract_mindmap(content, file_path):
         voice = voice_config.get("mindmap", "en-US-Neural2-D")
         
-        # Extract centerStems - only "text" field, not "audio"
+        # Extract centerStems - support both object and plain-string format
         center_stems_match = re.search(r'centerStems\s*:\s*\[([\s\S]*?)\]', content)
         if center_stems_match:
-            # Match objects like: { text: "I am ___.", audio: "/audio/..." }
-            # Only capture the text value, not audio path
-            stem_objects = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', center_stems_match.group(1))
-            for i, text in enumerate(stem_objects):
-                # Remove ___ blanks from text before TTS
-                # e.g., "This is my ___." -> "This is my."
+            cs_text = center_stems_match.group(1)
+            # Try object format: { text: "...", audio: "..." }
+            obj_stems = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', cs_text)
+            if obj_stems:
+                stem_list = obj_stems
+            else:
+                # Fallback: plain string array format
+                stem_list = [
+                    s for s in re.findall(r'^\s*["\']([^"\']+)["\'],?\s*$', cs_text, re.MULTILINE)
+                    if not s.startswith('/audio/')
+                ]
+            for i, text in enumerate(stem_list):
                 clean_text = text.replace("___", "").strip()
-                # Remove any trailing periods after blank removal
                 clean_text = re.sub(r'\.\s*$', '', clean_text).strip()
-                if clean_text:  # Only add if text remains
-                    clean_text = clean_text + "."  # Add back single period
+                if clean_text:
+                    clean_text = clean_text + "."
                 tasks.append({"text": clean_text, "voice": voice, "filename": f"mindmap_stem_{i+1}.mp3", "station": "mindmap"})
         
         # branchLabels: Extract using brace counting + line-based parsing
@@ -365,8 +370,15 @@ def scan_for_tasks(data_path, voice_config):
             # Now extract text from each array
             branch_index = 1
             for key, array_content in arrays:
-                # Extract only text field: { text: "tall", audio: "..." } -> "tall"
+                # Try object format: { text: "tall", audio: "..." } -> "tall"
                 branches = re.findall(r'{\s*text:\s*["\']([^"\']+)["\']', array_content)
+                if not branches:
+                    # Fallback: plain string format
+                    # Line-anchored to avoid capturing the key definition line
+                    branches = [
+                        s for s in re.findall(r'^\s*["\']([^"\']+)["\'],?\s*$', array_content, re.MULTILINE)
+                        if not s.startswith('/audio/')
+                    ]
                 for text in branches:
                     # Clean any remaining markdown or special chars
                     clean_text = text.strip()
