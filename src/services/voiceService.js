@@ -241,7 +241,7 @@ export const VoiceService = {
     // Try CDN first (only when explicit audioUrl is provided)
     if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
       try {
-        const cleanPath = audioUrl.replace('/audio/', '');
+        const cleanPath = audioUrl.startsWith('/') ? audioUrl.slice(1) : audioUrl;
         const cdnUrl = `${CDN_URL}/${cleanPath}`;
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
@@ -319,8 +319,8 @@ export const VoiceService = {
     
     if (audioUrl) {
       // Station data provides specific file (e.g., /audio/week1/shadowing_1.mp3)
-      // Convert to CDN URL
-      const cleanPath = audioUrl.replace('/audio/', '');  // Remove /audio/ prefix
+      // Convert to CDN URL — strip only the leading slash, keep 'audio/' folder prefix
+      const cleanPath = audioUrl.startsWith('/') ? audioUrl.slice(1) : audioUrl;
       cdnUrl = `${CDN_URL}/${cleanPath}`;
     } else {
       // Generate CDN URL based on text hash (for dynamic lookup)
