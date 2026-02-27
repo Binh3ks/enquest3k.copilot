@@ -238,7 +238,11 @@ def scan_for_tasks(data_path, voice_config):
             text = ' '.join(sentences)
         else:
             # Fallback to content_en format (older weeks)
-            match = re.search(r'content_en\s*:\s*[`"\']([\s\S]*?)[`"\']', content)
+            match = re.search(r'content_en\s*:\s*`([\s\S]*?)`', content)
+            if not match:
+                match = re.search(r'content_en\s*:\s*"([^"\\]*(?:\\.[^"\\]*)*)"', content, re.DOTALL)
+            if not match:
+                match = re.search(r"content_en\s*:\s*'([^'\\]*(?:\\.[^'\\]*)*)'", content, re.DOTALL)
             if match:
                 text = match.group(1)
                 text = re.sub(r"\*\*(.*?)\*\*", r"\1", text)  # Remove ** markers

@@ -316,7 +316,12 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
         if sentences:
             text = ' '.join(sentences)
         else:
-            m = re.search(r'content_en\s*:\s*[`"\']([\s\S]*?)[`"\']', content)
+            # Quote-type-aware: backtick first (can contain any quotes), then double, then single
+            m = re.search(r'content_en\s*:\s*`([\s\S]*?)`', content)
+            if not m:
+                m = re.search(r'content_en\s*:\s*"([^"\\]*(?:\\.[^"\\]*)*)"', content, re.DOTALL)
+            if not m:
+                m = re.search(r"content_en\s*:\s*'([^'\\]*(?:\\.[^'\\]*)*)'", content, re.DOTALL)
             if not m:
                 return
             text = m.group(1)
