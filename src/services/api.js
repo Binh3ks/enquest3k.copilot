@@ -100,4 +100,7 @@ export const adminCreateUser = (userData) =>
 export const adminDeleteUser = (username) => 
   apiClient.delete(`/admin/users/${username}`);
 
+export const adminUpdateUser = (username, data) =>
+  apiClient.put(`/admin/users/${username}`, data);
+
 export default apiClient;
