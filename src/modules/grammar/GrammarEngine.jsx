@@ -172,6 +172,12 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
                 ))}
             </div>
           )}
+          {currentQ.type === 'fill' && (currentQ.hint || currentQ.hint_vi) && (
+            <div className={`mt-4 flex items-center gap-2 text-sm font-medium italic text-${themeColor}-500`}>
+              <HelpCircle className="w-4 h-4 shrink-0" />
+              <span>{isVi ? (currentQ.hint_vi || currentQ.hint) : (currentQ.hint_en || currentQ.hint)}</span>
+            </div>
+          )}
           {currentQ.type === 'unscramble' && (
             <div className="mt-4 flex flex-wrap gap-2">
                 {currentQ.words.map((w, i) => (
@@ -214,10 +220,10 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
                                     {feedback.status === 'perfect' ? <Check className="w-5 h-5 mr-2"/> : <AlertCircle className="w-5 h-5 mr-2"/>}
                                     {isVi ? feedback.message_vi : feedback.message_en}
                                 </div>
-                            ) : (showHint && <div className={`text-sm font-medium italic text-${themeColor}-500 animate-fade-in flex items-center`}><HelpCircle className="w-4 h-4 mr-1"/> {isVi ? "Gợi ý: " : "Hint: "} {isVi ? currentQ.hint_vi || currentQ.hint : currentQ.hint_en || currentQ.hint}</div>)}
+                            ) : (showHint && currentQ.type !== 'fill' && <div className={`text-sm font-medium italic text-${themeColor}-500 animate-fade-in flex items-center`}><HelpCircle className="w-4 h-4 mr-1"/> {isVi ? "Gợi ý: " : "Hint: "} {isVi ? currentQ.hint_vi || currentQ.hint : currentQ.hint_en || currentQ.hint}</div>)}
                         </div>
                         <div className="flex gap-2 shrink-0">
-                            {!feedback.isCorrect && !showHint && <button onClick={() => setShowHint(true)} className="p-3 text-slate-400 hover:bg-slate-100 rounded-xl transition-colors" title="Hint"><HelpCircle className="w-6 h-6" /></button>}
+                            {!feedback.isCorrect && !showHint && currentQ.type !== 'fill' && <button onClick={() => setShowHint(true)} className="p-3 text-slate-400 hover:bg-slate-100 rounded-xl transition-colors" title="Hint"><HelpCircle className="w-6 h-6" /></button>}
                             {feedback.isCorrect ? 
                               <button onClick={handleNext} className={`btn-3d px-8 py-3 bg-${themeColor}-600 text-white rounded-xl font-bold flex items-center`}>{isVi ? "Tiếp theo" : "Next"} <ArrowRight className="w-5 h-5 ml-2" /></button> : 
                               <button 
