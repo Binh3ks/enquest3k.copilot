@@ -336,7 +336,7 @@ export const VoiceService = {
     try {
       const response = await fetch(cdnUrl, {
         signal: controller.signal,
-        cache: 'force-cache',  // Use browser cache aggressively
+        cache: 'no-cache',  // Always revalidate — avoids stale audio after R2 re-uploads
         headers: { 'Accept': 'audio/mpeg' }
       });
       

@@ -20,7 +20,7 @@
 
 const DB_NAME = 'EngQuestTTSCache';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 3;  // Bumped Feb 2026 v2: clears wrongly-cached Kokoro (CDN URL bug fix), forces fresh Deepgram audio from R2
+const DB_VERSION = 4;  // Bumped Feb 2026 v3: clears stale IndexedDB blobs, force-cache → no-cache in useCDN to prevent stale HTTP cache
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
