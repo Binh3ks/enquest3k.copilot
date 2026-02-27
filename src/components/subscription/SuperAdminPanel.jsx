@@ -96,15 +96,24 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
   };
 
   const handleAddAvatar = (e) => {
-      const file = e.target.files[0];
-      if (file) {
+      const files = Array.from(e.target.files || []);
+      if (files.length === 0) return;
+
+      let processed = 0;
+      files.forEach((file) => {
           const reader = new FileReader();
           reader.onloadend = () => {
               addGlobalAvatar(reader.result);
-              refreshData();
+              processed++;
+              if (processed === files.length) {
+                  refreshData();
+                  if (files.length > 1) alert(`Uploaded ${files.length} avatars!`);
+              }
           };
           reader.readAsDataURL(file);
-      }
+      });
+      // Reset input so same files can be re-selected
+      e.target.value = '';
   };
 
   const handleDeleteAvatar = (id) => {
@@ -225,7 +234,7 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                     <div className="flex justify-between items-center">
                         <h3 className="text-xl font-bold text-slate-800 flex items-center gap-2"><ImageIcon/> Global Gallery</h3>
                         <button onClick={() => avatarInputRef.current.click()} className="px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg shadow-md flex items-center gap-2"><Upload size={16}/> Upload New</button>
-                        <input type="file" ref={avatarInputRef} onChange={handleAddAvatar} accept="image/*" className="hidden" />
+                        <input type="file" ref={avatarInputRef} onChange={handleAddAvatar} accept="image/*" multiple className="hidden" />
                     </div>
                     <div className="grid grid-cols-6 gap-4">
                         {avatars.map((av, i) => (
