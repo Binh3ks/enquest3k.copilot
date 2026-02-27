@@ -95,13 +95,28 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
       }
   };
 
+  // Compress image to max 100KB for localStorage (5MB limit)
+  const compressImage = (dataUrl, maxWidth = 200, quality = 0.7) => new Promise((resolve) => {
+      const img = new window.Image();
+      img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const scale = Math.min(1, maxWidth / Math.max(img.width, img.height));
+          canvas.width = img.width * scale;
+          canvas.height = img.height * scale;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = () => resolve(dataUrl); // fallback to original
+      img.src = dataUrl;
+  });
+
   const handleAddAvatar = async (e) => {
       const files = Array.from(e.target.files || []);
       if (files.length === 0) return;
       e.target.value = ''; // Reset so same files can be re-selected
 
       setLoading(true);
-      // Read all files first, then add sequentially to avoid localStorage race
       const readFile = (file) => new Promise((resolve) => {
           const reader = new FileReader();
           reader.onloadend = () => resolve(reader.result);
@@ -109,13 +124,15 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
       });
 
       try {
-          const results = await Promise.all(files.map(readFile));
-          results.forEach((dataUrl) => addGlobalAvatar(dataUrl));
+          const rawResults = await Promise.all(files.map(readFile));
+          // Compress all images to save localStorage space
+          const compressed = await Promise.all(rawResults.map(url => compressImage(url)));
+          compressed.forEach((dataUrl) => addGlobalAvatar(dataUrl));
           setAvatars(getGlobalAvatars()); // Immediate UI update
           if (files.length > 1) alert(`Uploaded ${files.length} avatars!`);
       } catch (err) {
           console.error('Avatar upload error:', err);
-          alert('Upload failed!');
+          alert('Upload failed! LocalStorage may be full. Try deleting some avatars first.');
       } finally {
           setLoading(false);
       }

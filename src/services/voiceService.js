@@ -301,6 +301,13 @@ export const VoiceService = {
     cleaned = cleaned.replace(/\byou're\b/gi, 'you are');
     cleaned = cleaned.replace(/\bwe're\b/gi, 'we are');
     
+    // 7. Fix homograph: "live" (verb /lɪv/) vs "live" (adj /laɪv/)
+    //    "I live with" → should be /lɪv/ not /laɪv/
+    //    Context: "live with", "live in", "I live", "you live", "we live", "they live"
+    cleaned = cleaned.replace(/\b(I|you|we|they|who do you)\s+live\b/gi, '$1 liv');
+    cleaned = cleaned.replace(/\blive with\b/gi, 'liv with');
+    cleaned = cleaned.replace(/\blive in\b/gi, 'liv in');
+    
     return cleaned;
   },
 
