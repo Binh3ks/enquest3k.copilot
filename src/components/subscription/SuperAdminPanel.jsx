@@ -95,25 +95,30 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
       }
   };
 
-  const handleAddAvatar = (e) => {
+  const handleAddAvatar = async (e) => {
       const files = Array.from(e.target.files || []);
       if (files.length === 0) return;
+      e.target.value = ''; // Reset so same files can be re-selected
 
-      let processed = 0;
-      files.forEach((file) => {
+      setLoading(true);
+      // Read all files first, then add sequentially to avoid localStorage race
+      const readFile = (file) => new Promise((resolve) => {
           const reader = new FileReader();
-          reader.onloadend = () => {
-              addGlobalAvatar(reader.result);
-              processed++;
-              if (processed === files.length) {
-                  refreshData();
-                  if (files.length > 1) alert(`Uploaded ${files.length} avatars!`);
-              }
-          };
+          reader.onloadend = () => resolve(reader.result);
           reader.readAsDataURL(file);
       });
-      // Reset input so same files can be re-selected
-      e.target.value = '';
+
+      try {
+          const results = await Promise.all(files.map(readFile));
+          results.forEach((dataUrl) => addGlobalAvatar(dataUrl));
+          setAvatars(getGlobalAvatars()); // Immediate UI update
+          if (files.length > 1) alert(`Uploaded ${files.length} avatars!`);
+      } catch (err) {
+          console.error('Avatar upload error:', err);
+          alert('Upload failed!');
+      } finally {
+          setLoading(false);
+      }
   };
 
   const handleDeleteAvatar = (id) => {
