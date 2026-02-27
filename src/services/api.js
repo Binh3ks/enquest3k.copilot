@@ -42,6 +42,17 @@ export const register = (userData) =>
 export const updateProfile = (profileData) =>
   apiClient.put('/auth/profile', profileData);
 
+// AUTH API Object (for changePassword etc.)
+export const authAPI = {
+  changePassword: async (currentPassword, newPassword) => {
+    const response = await apiClient.put('/auth/change-password', {
+      currentPassword,
+      newPassword
+    });
+    return response.data;
+  }
+};
+
 // PROGRESS (Legacy)
 export const getProgress = (weekId) => 
   apiClient.get(`/progress/${weekId}`);
