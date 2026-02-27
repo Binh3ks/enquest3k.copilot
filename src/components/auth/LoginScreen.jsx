@@ -27,22 +27,22 @@ const LoginScreen = ({ onLogin, onRegister, onGuestLogin }) => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setError('');
     if (!formData.name || !formData.password) { setError('Please fill all fields'); return; }
 
     if (mode === 'login') {
-      const res = onLogin(formData.name, formData.password);
-      if (!res.success) setError(res.error);
+      const res = await onLogin(formData.name, formData.password);
+      if (!res?.success) setError(res?.error || 'Login failed');
     } else {
-      const res = onRegister({ 
+      const res = await onRegister({ 
         name: formData.name, 
         password: formData.password, 
         age: formData.age, 
         parentEmail: formData.parentEmail, 
         avatarUrl: selectedAvatar 
       });
-      if (!res.success) setError(res.error);
+      if (!res?.success) setError(res?.error || 'Registration failed');
     }
   };
 

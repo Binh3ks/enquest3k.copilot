@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { X, Check, Crown, ArrowRight, CreditCard, Copy } from 'lucide-react';
 import { createPaymentRequest } from '../../utils/userStorage';
+import { useUserStore } from '../../stores/useUserStore';
 
 const SubscriptionModal = ({ isOpen, onClose }) => {
   const [step, setStep] = useState(1); // 1: Select Plan, 2: Bank Info, 3: Success
   const [selectedPlan, setSelectedPlan] = useState('basic'); // basic | premium
+  const currentUser = useUserStore(state => state.currentUser);
 
   if (!isOpen) return null;
 
@@ -15,24 +17,13 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
 
   const handleConfirm = () => {
     // Lưu request (prefer localStorage, fallback to sessionStorage)
-    let userJson = null;
-    try {
-      userJson = localStorage.getItem('engquest_current_user') || sessionStorage.getItem('engquest_current_user');
-    } catch (e) {
-      userJson = sessionStorage.getItem('engquest_current_user');
+    if (!currentUser?.username) {
+      alert('Please login first!');
+      return;
     }
 
-    if (userJson) {
-      try {
-        const user = JSON.parse(userJson);
-        createPaymentRequest(user.name, selectedPlan, selectedPlan === 'basic' ? 99000 : 990000);
-        setStep(3);
-      } catch (e) {
-        alert('Invalid user data. Please login again.');
-      }
-    } else {
-      alert('Please login first!');
-    }
+    createPaymentRequest(currentUser.username, selectedPlan, selectedPlan === 'basic' ? 99000 : 990000);
+    setStep(3);
   };
 
   return (

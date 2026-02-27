@@ -20,6 +20,7 @@ import AIProviderStatus from './components/common/AIProviderStatus';
 import SettingsModal from './components/common/SettingsModal';
 import ProfileModal from './components/common/ProfileModal';
 import HeaderProfileMenu from './components/common/HeaderProfileMenu';
+import AdminDashboard from './components/common/AdminDashboard';
 import WorksheetGenerator from './components/common/WorksheetGenerator';
 import ReviewDashboard from './modules/review/ReviewDashboard';
 import Sidebar from './components/layout/Sidebar';
@@ -49,6 +50,7 @@ const MainLayout = () => {
   // Global state from Zustand store
   const { 
     currentUser, 
+    token,
     learningMode, 
     login, 
     register, 
@@ -61,6 +63,7 @@ const MainLayout = () => {
   // Local UI and data state
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [isAdminDashboardOpen, setIsAdminDashboardOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isVi, setIsVi] = useState(false);
   const [weekProgress, setWeekProgress] = useState({});
@@ -111,7 +114,7 @@ const MainLayout = () => {
     loadVoices();
 
     const initializeAppData = async () => {
-      if (currentUser && currentUser.role !== 'guest') {
+      if (currentUser && currentUser.role !== 'guest' && token) {
         try {
           // Verify user session and get latest data
           const { getMe } = await import('./services/api');
@@ -121,7 +124,17 @@ const MainLayout = () => {
           }
 
           const progressData = await progressAPI.fetchWeekProgress(weekId);
-          setWeekProgress(progressData || {});
+          const normalizedProgress = Object.entries(progressData || {}).reduce((acc, [stationKey, value]) => {
+            if (typeof value === 'number') {
+              acc[stationKey] = value;
+              return acc;
+            }
+
+            const percent = value?.progressPercent ?? value?.score ?? (value?.isCompleted ? 100 : 0) ?? 0;
+            acc[stationKey] = percent;
+            return acc;
+          }, {});
+          setWeekProgress(normalizedProgress);
         } catch (error) {
           console.error("Failed to initialize app data:", error);
           if (error.response?.status === 401) {
@@ -152,7 +165,7 @@ const MainLayout = () => {
   };
 
   const handleReportProgress = useCallback(async (percent) => {
-    if (!currentUser || currentUser.role === 'guest') return;
+    if (!currentUser || currentUser.role === 'guest' || !token) return;
     
     setAutoSaveStatus('saving');
     try {
@@ -184,7 +197,7 @@ const MainLayout = () => {
       console.error("Failed to report progress:", error);
       setAutoSaveStatus('idle');
     }
-  }, [currentUser, weekId, tabKey]);
+  }, [currentUser, token, weekId, tabKey]);
 
   // Early return for logged-out users
   if (!currentUser) return (
@@ -206,6 +219,7 @@ const MainLayout = () => {
         <FloatingDictionary />
         {/* <AIProviderStatus /> */}
         <ProfileModal isOpen={isProfileModalOpen} onClose={() => setIsProfileModalOpen(false)} currentUser={currentUser} onUpdateProfile={handleUpdateProfile} onLogout={logout} />
+        <AdminDashboard isOpen={isAdminDashboardOpen} onClose={() => setIsAdminDashboardOpen(false)} />
         <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} onLogout={logout} currentUser={currentUser} currentWeekId={weekId} />
 
         <Sidebar 
@@ -252,7 +266,12 @@ const MainLayout = () => {
                <div className="h-8 w-px bg-slate-200 mx-1"></div>
 
                {isTeacher && <button onClick={() => setIsSettingsOpen(true)} className="flex px-5 py-2.5 bg-slate-900 text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-lg">Teacher Panel</button>}
-               <HeaderProfileMenu user={currentUser} onLogout={logout} onOpenProfile={()=>setIsProfileModalOpen(true)} />
+               <HeaderProfileMenu
+                 user={currentUser}
+                 onLogout={logout}
+                 onOpenProfile={() => setIsProfileModalOpen(true)}
+                 onOpenAdmin={() => setIsAdminDashboardOpen(true)}
+               />
             </div>
           </header>
 

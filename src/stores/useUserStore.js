@@ -57,10 +57,21 @@ const useUserStore = create(
        */
       register: async (payload) => {
         try {
+          const normalizedPayload = {
+            username: payload.username || payload.name,
+            email: payload.email || payload.parentEmail,
+            password: payload.password,
+            avatar_url: payload.avatar_url || payload.avatarUrl
+          };
+
+          if (!normalizedPayload.username || !normalizedPayload.email || !normalizedPayload.password) {
+            return { success: false, error: 'Username, email, and password are required' };
+          }
+
           // We only need to send the registration data.
           // The backend should not automatically log in the user upon registration.
           // The user should be prompted to log in after successful registration.
-          const response = await apiRegister(payload);
+          const response = await apiRegister(normalizedPayload);
           return { success: true, message: response.data.message };
         } catch (error) {
           console.error('Registration failed:', error.response?.data?.message || error.message);
@@ -139,6 +150,12 @@ const useUserStore = create(
        * @param {number} weekId - The week ID to load
        */
       loadWeekProgress: async (weekId) => {
+        const token = get().token;
+        const currentUser = get().currentUser;
+        if (!token || !currentUser || currentUser.role === 'guest') {
+          return;
+        }
+
         // If already cached, skip API call
         if (get().progressCache[weekId]) {
           get().recalculateWeekCompletion(weekId); // Recalculate on load
@@ -187,19 +204,18 @@ const useUserStore = create(
        * @param {Object} params - { weekId, stationId, data, isCompleted, score }
        */
       syncProgressToServer: async ({ weekId, stationId, data, isCompleted, score }) => {
-        // 🔥 DISABLED: No backend server running yet
-        // TODO: Re-enable when backend server is ready
-        console.log('📦 Progress saved locally (server sync disabled):', { weekId, stationId, isCompleted, score });
-        return;
-        
-        /* ORIGINAL CODE (re-enable when server ready):
         try {
+          const token = get().token;
+          const currentUser = get().currentUser;
+          if (!token || !currentUser || currentUser.role === 'guest') {
+            return;
+          }
+
           await progressAPI.saveProgress({ weekId, stationId, data, isCompleted, score });
         } catch (error) {
           console.error('Failed to sync progress to server:', error);
           // TODO: Implement retry logic or error recovery
         }
-        */
       },
 
       /**

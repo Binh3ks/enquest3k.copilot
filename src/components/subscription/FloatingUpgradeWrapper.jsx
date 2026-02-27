@@ -2,22 +2,17 @@ import React, { useState, useEffect } from 'react';
 import SubscriptionModal from './SubscriptionModal';
 import { Crown } from 'lucide-react';
 import { getCurrentUserPlan } from '../../services/SubscriptionManager';
+import { useUserStore } from '../../stores/useUserStore';
 
 const FloatingUpgradeWrapper = () => {
   const [showModal, setShowModal] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const currentUser = useUserStore(state => state.currentUser);
 
   useEffect(() => {
     const checkVisibility = () => {
       // 1. Check User Role (Ẩn với student/teacher để tránh phiền)
-      let userRole = 'guest';
-      try {
-        const userJson = localStorage.getItem('engquest_current_user') || sessionStorage.getItem('engquest_current_user');
-        if (userJson) {
-          const user = JSON.parse(userJson);
-          userRole = user.role || 'student';
-        }
-      } catch (e) {}
+      const userRole = currentUser?.role || 'guest';
 
       if (userRole === 'student' || userRole === 'teacher') {
         setIsVisible(false);
@@ -59,7 +54,7 @@ const FloatingUpgradeWrapper = () => {
       window.removeEventListener('storage', checkVisibility);
       clearInterval(interval);
     };
-  }, []);
+  }, [currentUser]);
 
   if (!isVisible) return null;
 

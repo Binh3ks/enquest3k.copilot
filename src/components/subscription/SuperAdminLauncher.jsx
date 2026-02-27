@@ -1,35 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SuperAdminPanel from './SuperAdminPanel';
 import { Shield } from 'lucide-react';
+import { useUserStore } from '../../stores/useUserStore';
 
 const SuperAdminLauncher = () => {
   const [showPanel, setShowPanel] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const checkRole = () => {
-      try {
-        const userJson = localStorage.getItem('engquest_current_user') || sessionStorage.getItem('engquest_current_user');
-        if (userJson) {
-          const user = JSON.parse(userJson);
-          // STRICT CHECK: CHỈ SUPER ADMIN (OWNER)
-          if (user.role === 'super_admin') {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false);
-          }
-        } else {
-          setIsVisible(false);
-        }
-      } catch (e) {
-        setIsVisible(false);
-      }
-    };
-
-    checkRole();
-    const interval = setInterval(checkRole, 1000); // Check thường xuyên hơn
-    return () => clearInterval(interval);
-  }, []);
+  const currentUser = useUserStore(state => state.currentUser);
+  const isVisible = currentUser?.role === 'super_admin' || currentUser?.role === 'admin';
 
   if (!isVisible) return null;
 
