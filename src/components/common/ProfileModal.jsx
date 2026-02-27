@@ -1,12 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Save, LogOut, User, Upload } from 'lucide-react';
+import { X, Save, LogOut, User, Upload, Key, Eye, EyeOff } from 'lucide-react';
 import { getGlobalAvatars } from '../../utils/userStorage';
+import { authAPI } from '../../services/api';
 
 const ProfileModal = ({ isOpen, onClose, currentUser, onUpdateProfile, onLogout }) => {
   const [name, setName] = useState(currentUser?.username || currentUser?.name || '');
   const [avatar, setAvatar] = useState(currentUser?.avatar_url || currentUser?.avatarUrl || '');
   const [presetAvatars, setPresetAvatars] = useState(getGlobalAvatars());
   const fileInputRef = useRef(null);
+  
+  // Change Password state
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showCurrentPw, setShowCurrentPw] = useState(false);
+  const [showNewPw, setShowNewPw] = useState(false);
+  const [changingPassword, setChangingPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState('');
+  const [passwordSuccess, setPasswordSuccess] = useState('');
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -21,6 +33,42 @@ const ProfileModal = ({ isOpen, onClose, currentUser, onUpdateProfile, onLogout 
     if (name.trim()) {
       onUpdateProfile({ name, avatarUrl: avatar });
       onClose();
+    }
+  };
+  
+  const handleChangePassword = async () => {
+    setPasswordError('');
+    setPasswordSuccess('');
+    
+    // Validation
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      setPasswordError('Vui lòng điền đầy đủ thông tin');
+      return;
+    }
+    if (newPassword.length < 6) {
+      setPasswordError('Mật khẩu mới phải có ít nhất 6 ký tự');
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setPasswordError('Mật khẩu xác nhận không khớp');
+      return;
+    }
+    
+    setChangingPassword(true);
+    try {
+      const response = await authAPI.changePassword(currentPassword, newPassword);
+      setPasswordSuccess('Đổi mật khẩu thành công!');
+      setTimeout(() => {
+        setShowPasswordModal(false);
+        setCurrentPassword('');
+        setNewPassword('');
+        setConfirmPassword('');
+        setPasswordSuccess('');
+      }, 1500);
+    } catch (error) {
+      setPasswordError(error.response?.data?.message || 'Đổi mật khẩu thất bại');
+    } finally {
+      setChangingPassword(false);
     }
   };
 
@@ -74,8 +122,124 @@ const ProfileModal = ({ isOpen, onClose, currentUser, onUpdateProfile, onLogout 
             <button onClick={onLogout} className="flex-1 py-3 border-2 border-rose-100 text-rose-500 hover:bg-rose-50 font-bold rounded-xl flex items-center justify-center gap-2"><LogOut size={18} /> Logout</button>
             <button onClick={handleSave} className="flex-[2] py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg flex items-center justify-center gap-2"><Save size={18} /> Save Changes</button>
           </div>
+          
+          {/* Change Password Button */}
+          <button 
+            onClick={() => setShowPasswordModal(true)} 
+            className="w-full py-3 border-2 border-slate-200 text-slate-600 hover:bg-slate-50 font-bold rounded-xl flex items-center justify-center gap-2"
+          >
+            <Key size={18} /> Change Password
+          </button>
         </div>
       </div>
+      
+      {/* Change Password Modal */}
+      {showPasswordModal && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="bg-white w-full max-w-md rounded-2xl overflow-hidden shadow-2xl">
+            <div className="p-5 border-b flex justify-between items-center bg-slate-50">
+              <h3 className="font-bold text-lg text-slate-800 flex items-center gap-2">
+                <Key size={20}/> Đổi Mật Khẩu
+              </h3>
+              <button onClick={() => {
+                setShowPasswordModal(false);
+                setCurrentPassword('');
+                setNewPassword('');
+                setConfirmPassword('');
+                setPasswordError('');
+                setPasswordSuccess('');
+              }}>
+                <X size={20} className="text-slate-400 hover:text-slate-600" />
+              </button>
+            </div>
+            <div className="p-6 space-y-4">
+              {passwordError && (
+                <div className="p-3 bg-rose-50 border border-rose-200 rounded-lg text-rose-600 text-sm font-medium">
+                  {passwordError}
+                </div>
+              )}
+              {passwordSuccess && (
+                <div className="p-3 bg-green-50 border border-green-200 rounded-lg text-green-600 text-sm font-medium">
+                  {passwordSuccess}
+                </div>
+              )}
+              
+              <div>
+                <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Mật khẩu hiện tại</label>
+                <div className="relative">
+                  <input 
+                    type={showCurrentPw ? 'text' : 'password'}
+                    value={currentPassword} 
+                    onChange={(e) => setCurrentPassword(e.target.value)} 
+                    className="w-full p-3 pr-10 bg-slate-50 border-2 border-slate-200 rounded-xl font-medium text-slate-700 outline-none focus:border-indigo-500" 
+                    placeholder="Nhập mật khẩu hiện tại"
+                  />
+                  <button 
+                    type="button"
+                    onClick={() => setShowCurrentPw(!showCurrentPw)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  >
+                    {showCurrentPw ? <EyeOff size={18}/> : <Eye size={18}/>}
+                  </button>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Mật khẩu mới</label>
+                <div className="relative">
+                  <input 
+                    type={showNewPw ? 'text' : 'password'}
+                    value={newPassword} 
+                    onChange={(e) => setNewPassword(e.target.value)} 
+                    className="w-full p-3 pr-10 bg-slate-50 border-2 border-slate-200 rounded-xl font-medium text-slate-700 outline-none focus:border-indigo-500" 
+                    placeholder="Nhập mật khẩu mới (ít nhất 6 ký tự)"
+                  />
+                  <button 
+                    type="button"
+                    onClick={() => setShowNewPw(!showNewPw)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  >
+                    {showNewPw ? <EyeOff size={18}/> : <Eye size={18}/>}
+                  </button>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-xs font-bold text-slate-400 uppercase mb-1">Xác nhận mật khẩu mới</label>
+                <input 
+                  type="password"
+                  value={confirmPassword} 
+                  onChange={(e) => setConfirmPassword(e.target.value)} 
+                  className="w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl font-medium text-slate-700 outline-none focus:border-indigo-500" 
+                  placeholder="Nhập lại mật khẩu mới"
+                />
+              </div>
+              
+              <div className="flex gap-3 pt-2">
+                <button 
+                  onClick={() => {
+                    setShowPasswordModal(false);
+                    setCurrentPassword('');
+                    setNewPassword('');
+                    setConfirmPassword('');
+                    setPasswordError('');
+                  }}
+                  className="flex-1 py-3 border-2 border-slate-200 text-slate-600 hover:bg-slate-50 font-bold rounded-xl"
+                >
+                  Hủy
+                </button>
+                <button 
+                  onClick={handleChangePassword}
+                  disabled={changingPassword}
+                  className="flex-1 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg disabled:opacity-50"
+                >
+                  {changingPassword ? 'Đang xử lý...' : 'Đổi mật khẩu'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
