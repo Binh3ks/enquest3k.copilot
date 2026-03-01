@@ -8,6 +8,15 @@ const ProfileModal = ({ isOpen, onClose, currentUser, onUpdateProfile, onLogout 
   const [avatar, setAvatar] = useState(currentUser?.avatar_url || currentUser?.avatarUrl || '');
   const [presetAvatars, setPresetAvatars] = useState(getGlobalAvatars());
   const fileInputRef = useRef(null);
+
+  // Refresh avatar gallery + user data every time modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setPresetAvatars(getGlobalAvatars());
+      setName(currentUser?.username || currentUser?.name || '');
+      setAvatar(currentUser?.avatar_url || currentUser?.avatarUrl || '');
+    }
+  }, [isOpen, currentUser]);
   
   // Change Password state
   const [showPasswordModal, setShowPasswordModal] = useState(false);
