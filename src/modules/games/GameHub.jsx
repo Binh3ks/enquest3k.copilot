@@ -11,10 +11,10 @@ import { useUserStore } from '../../stores/useUserStore';
  */
 
 const EXTERNAL_GAMES = [
-  { id: 'gtle',        title: 'Arcade World',   icon: '🎮', url: 'https://www.gamestolearnenglish.com/', color: 'bg-gradient-to-br from-indigo-500 to-blue-600' },
-  { id: 'wordwall',    title: 'Wordwall Park',   icon: '🌍', url: 'https://wordwall.net/',                color: 'bg-gradient-to-br from-rose-400 to-pink-600' },
-  { id: 'baamboozle',  title: 'Baamboozle',      icon: '🧩', url: 'https://www.baamboozle.com/',          color: 'bg-gradient-to-br from-emerald-400 to-teal-600' },
-  { id: 'eslgamesplus',title: 'ESL Games Plus',  icon: '🧸', url: 'https://www.eslgamesplus.com/',        color: 'bg-gradient-to-br from-yellow-400 to-orange-500' },
+  { id: 'gtle',        title: 'English Arcade',   icon: '🎮', url: 'https://www.gamestolearnenglish.com/', color: 'bg-gradient-to-br from-indigo-500 to-blue-600' },
+  { id: 'wordwall',    title: 'Word Games Park',   icon: '🌍', url: 'https://wordwall.net/',                color: 'bg-gradient-to-br from-rose-400 to-pink-600' },
+  { id: 'baamboozle',  title: 'Quiz Battle',        icon: '🧩', url: 'https://www.baamboozle.com/',          color: 'bg-gradient-to-br from-emerald-400 to-teal-600' },
+  { id: 'eslgamesplus',title: 'ESL Games Plus',    icon: '🧸', url: 'https://www.eslgamesplus.com/',        color: 'bg-gradient-to-br from-yellow-400 to-orange-500' },
 ];
 
 const GameHub = ({ data }) => {
