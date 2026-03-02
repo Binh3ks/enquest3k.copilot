@@ -8,7 +8,7 @@ export const weekTitles = {
   5: { title_en: "The Mystery House", title_vi: "Ngôi nhà Bí ẩn" },
   6: { title_en: "Treasure Hunt at Home", title_vi: "Săn Kho Báu Tại Nhà" },
   7: { title_en: "Inside My Backpack", title_vi: "Trong Balo của tôi" },
-  8: { title_en: "Week 8", title_vi: "Tuần 8" },
+  8: { title_en: "The Busy Classroom", title_vi: "Lớp học Bận rộn" },
   9: { title_en: "Week 9", title_vi: "Tuần 9" },
   10: { title_en: "Week 10", title_vi: "Tuần 10" },
   11: { title_en: "Week 11", title_vi: "Tuần 11" },
