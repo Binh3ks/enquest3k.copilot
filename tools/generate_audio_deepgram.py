@@ -276,12 +276,13 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
         base = file_path.stem
 
         if base == "word_power":
-            for obj in re.findall(r'{\s*(?:word|phrase)\s*:.*?}', content, re.DOTALL):
+            # Match objects starting with {word:, {phrase:, OR {id: (newer format)
+            for obj in re.findall(r'{\s*(?:id|word|phrase)\s*:.*?}', content, re.DOTALL):
                 phrase_m = re.search(r'(?:phrase|word)\s*:\s*["\']([^"\']*)["\']', obj)
                 def_m    = re.search(r'definition_en\s*:\s*["\']([^"\']*)["\']', obj)
                 ex_m     = re.search(r'(?:example_en|example)\s*:\s*["\']([^"\']*)["\']', obj)
                 coll_m   = re.search(r'(?:collocation_en|collocation)\s*:\s*["\']([^"\']*)["\']', obj)
-                model_m  = re.search(r'(?:model_sentence_en|model_usage)\s*:\s*["\']([^"\']*)["\']', obj)
+                model_m  = re.search(r'(?:model_sentence_en|model_sentence|model_usage)\s*:\s*["\']([^"\']*)["\']', obj)
                 if not phrase_m:
                     continue
                 phrase = phrase_m.group(1).strip()
