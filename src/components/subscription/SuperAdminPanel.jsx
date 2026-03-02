@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Shield, Users, DollarSign, Settings, Save, CheckCircle, Trash2, UserPlus, Image as ImageIcon, Upload } from 'lucide-react';
-import { getAllUsers, adminCreateUser, adminDeleteUser } from '../../services/api';
+import { getAllUsers, adminCreateUser, adminDeleteUser, fetchGlobalAvatars, addGlobalAvatarAPI, deleteGlobalAvatarAPI } from '../../services/api';
 import { getSystemStatus, setSystemStatus } from '../../services/SubscriptionManager';
-import { getPaymentRequests, approvePayment, getGlobalAvatars, addGlobalAvatar, deleteGlobalAvatar } from '../../utils/userStorage';
+import { getPaymentRequests, approvePayment } from '../../utils/userStorage';
 
 const SuperAdminPanel = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState('billing'); // Ưu tiên xem Billing
@@ -32,7 +32,10 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
       setLoading(true);
       try {
           setRequests(getPaymentRequests());
-          setAvatars(getGlobalAvatars());
+
+          // Load avatars from shared DB
+          const avRes = await fetchGlobalAvatars();
+          setAvatars(avRes.data.map(r => ({ id: String(r.id), url: r.url })));
           
           // Tải người dùng từ Backend
           const response = await getAllUsers();
@@ -95,7 +98,7 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
       }
   };
 
-  // Compress image to max 100KB for localStorage (5MB limit)
+  // Compress image before uploading to DB (keep small)
   const compressImage = (dataUrl, maxWidth = 200, quality = 0.7) => new Promise((resolve) => {
       const img = new window.Image();
       img.onload = () => {
@@ -107,14 +110,14 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
           resolve(canvas.toDataURL('image/jpeg', quality));
       };
-      img.onerror = () => resolve(dataUrl); // fallback to original
+      img.onerror = () => resolve(dataUrl);
       img.src = dataUrl;
   });
 
   const handleAddAvatar = async (e) => {
       const files = Array.from(e.target.files || []);
       if (files.length === 0) return;
-      e.target.value = ''; // Reset so same files can be re-selected
+      e.target.value = '';
 
       setLoading(true);
       const readFile = (file) => new Promise((resolve) => {
@@ -125,23 +128,27 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
 
       try {
           const rawResults = await Promise.all(files.map(readFile));
-          // Compress all images to save localStorage space
           const compressed = await Promise.all(rawResults.map(url => compressImage(url)));
-          compressed.forEach((dataUrl) => addGlobalAvatar(dataUrl));
-          setAvatars(getGlobalAvatars()); // Immediate UI update
+          // Upload each to DB via API
+          await Promise.all(compressed.map(dataUrl => addGlobalAvatarAPI(dataUrl)));
+          await refreshData(); // Reload from DB
           if (files.length > 1) alert(`Uploaded ${files.length} avatars!`);
       } catch (err) {
           console.error('Avatar upload error:', err);
-          alert('Upload failed! LocalStorage may be full. Try deleting some avatars first.');
+          alert('Upload failed! ' + (err.response?.data?.message || err.message));
       } finally {
           setLoading(false);
       }
   };
 
-  const handleDeleteAvatar = (id) => {
+  const handleDeleteAvatar = async (id) => {
       if(confirm("Remove this avatar from global list?")) {
-          deleteGlobalAvatar(id);
-          refreshData();
+          try {
+              await deleteGlobalAvatarAPI(id);
+              await refreshData();
+          } catch (err) {
+              alert('Delete failed: ' + (err.response?.data?.message || err.message));
+          }
       }
   };
 

@@ -1,20 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Save, LogOut, User, Upload, Key, Eye, EyeOff } from 'lucide-react';
-import { getGlobalAvatars } from '../../utils/userStorage';
-import { authAPI } from '../../services/api';
+import { DEFAULT_AVATARS } from '../../utils/userStorage';
+import { authAPI, fetchGlobalAvatars } from '../../services/api';
 
 const ProfileModal = ({ isOpen, onClose, currentUser, onUpdateProfile, onLogout }) => {
   const [name, setName] = useState(currentUser?.username || currentUser?.name || '');
   const [avatar, setAvatar] = useState(currentUser?.avatar_url || currentUser?.avatarUrl || '');
-  const [presetAvatars, setPresetAvatars] = useState(getGlobalAvatars());
+  const [presetAvatars, setPresetAvatars] = useState(DEFAULT_AVATARS);
   const fileInputRef = useRef(null);
 
   // Refresh avatar gallery + user data every time modal opens
   useEffect(() => {
     if (isOpen) {
-      setPresetAvatars(getGlobalAvatars());
       setName(currentUser?.username || currentUser?.name || '');
       setAvatar(currentUser?.avatar_url || currentUser?.avatarUrl || '');
+      // Load avatars from shared DB (not localStorage)
+      fetchGlobalAvatars()
+        .then(res => {
+          const rows = res.data;
+          // Merge DB avatars with defaults; DB rows have { id, url }
+          const dbAvatars = rows.map(r => ({ id: String(r.id), url: r.url }));
+          setPresetAvatars(dbAvatars.length > 0 ? dbAvatars : DEFAULT_AVATARS);
+        })
+        .catch(() => setPresetAvatars(DEFAULT_AVATARS));
     }
   }, [isOpen, currentUser]);
   
