@@ -3,18 +3,18 @@ const BILLING_KEY = 'engquest_billing_requests';
 const AVATARS_KEY = 'engquest_global_avatars';
 
 // --- DEFAULT AVATARS (Đẹp & Phong phú hơn) ---
-const DEFAULT_AVATARS = [
+export const DEFAULT_AVATARS = [
   // Chibi Boys
   { id: 'boy_1', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Felix&backgroundColor=b6e3f4' },
   { id: 'boy_2', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Ivan&backgroundColor=c0ebd7' },
   // Chibi Girls
   { id: 'girl_1', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Amara&backgroundColor=ffdfbf' },
   { id: 'girl_2', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Nora&backgroundColor=fdf4e3' },
-  // Thú cưng & Đồ vật (Dùng style fun-emoji hoặc icons)
+  // Thú cưng & vui vẻ
   { id: 'cat', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Kitty&backgroundColor=ffdfbf' },
   { id: 'bear', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Bear&backgroundColor=b6e3f4' },
-  { id: 'car', url: 'https://api.dicebear.com/9.x/icons/svg?seed=Car&backgroundColor=e0e7ff&icon=car' }, // Xe đua (Icon)
-  { id: 'flower', url: 'https://api.dicebear.com/9.x/icons/svg?seed=Flower&backgroundColor=fce7f3&icon=flower' } // Hoa
+  { id: 'panda', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Panda&backgroundColor=e0e7ff' },
+  { id: 'bunny', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Bunny&backgroundColor=fce7f3' },
 ];
 
 // --- AVATAR MANAGEMENT ---

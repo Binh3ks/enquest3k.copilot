@@ -114,4 +114,14 @@ export const adminDeleteUser = (username) =>
 export const adminUpdateUser = (username, data) =>
   apiClient.put(`/admin/users/${username}`, data);
 
+// GLOBAL AVATARS
+export const fetchGlobalAvatars = () =>
+  apiClient.get('/admin/global-avatars');
+
+export const addGlobalAvatarAPI = (url) =>
+  apiClient.post('/admin/global-avatars', { url });
+
+export const deleteGlobalAvatarAPI = (id) =>
+  apiClient.delete(`/admin/global-avatars/${id}`);
+
 export default apiClient;

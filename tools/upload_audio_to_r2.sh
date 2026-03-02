@@ -55,7 +55,7 @@ for week_folder in week{1..7}{,_easy}; do
             filename=$(basename "$file")
             r2_key="$week_folder/$filename"
             
-            # Upload with wrangler (use --remote for actual R2)
+            # Upload with wrangler (--remote flag REQUIRED for real R2, else uploads to local dev only)
             if $WRANGLER r2 object put "$BUCKET/$r2_key" --file "$file" --remote > /dev/null 2>&1; then
                 UPLOADED=$((UPLOADED + 1))
                 if [ $((UPLOADED % 50)) -eq 0 ]; then
