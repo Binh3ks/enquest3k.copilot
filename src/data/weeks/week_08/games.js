@@ -169,3 +169,5 @@ export const week8GamesAdvanced = {
     ]
   }
 };
+
+export default week8GamesAdvanced;

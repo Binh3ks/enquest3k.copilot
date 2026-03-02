@@ -17,6 +17,7 @@ import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
 import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
 import week6RealData from '../../../data/weeks/week_06_real'; // Week 6 syllabus
 import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
+import week8RealData from '../../../data/weeks/week_08_real'; // Week 8 syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 
@@ -96,7 +97,7 @@ const StoryMissionTab = () => {
   const [studentName, setStudentName] = useState(savedData.studentName || null); // 🔥 Restore student name
   
   // 🔥 Dynamic week data selection based on current week
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : week5RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : week5RealData;
   const currentMission = weekRealData.story_missions?.[currentMissionIndex];
   
   // 🔥 DEBUG: Log week data on mount

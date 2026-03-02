@@ -19,6 +19,8 @@ import week6GamesAdvanced from '../data/weeks/week_06/games.js';
 import week6GamesEasy from '../data/weeks_easy/week_06/games.js';
 import week7GamesAdvanced from '../data/weeks/week_07/games.js';
 import week7GamesEasy from '../data/weeks_easy/week_07/games.js';
+import week8GamesAdvanced from '../data/weeks/week_08/games.js';
+import week8GamesEasy from '../data/weeks_easy/week_08/games.js';
 import { week1RealData } from '../data/weeks/week_01_real.js';
 import { week2RealData } from '../data/weeks/week_02_real.js';
 import { week3RealData } from '../data/weeks/week_03_real.js';
@@ -26,6 +28,7 @@ import week4RealData from '../data/weeks/week_04_real.js';
 import week5RealData from '../data/weeks/week_05_real.js';
 import week6RealData from '../data/weeks/week_06_real.js';
 import week7RealData from '../data/weeks/week_07_real.js';
+import week8RealData from '../data/weeks/week_08_real.js';
 
 export const GAME_OPTIONS = [
   { id: 'word_chain', name_en: 'Word Chain' },
@@ -87,7 +90,8 @@ const REAL_WEEK_DATA = {
   4: week4RealData,
   5: week5RealData,
   6: week6RealData,
-  7: week7RealData
+  7: week7RealData,
+  8: week8RealData
 };
 
 function extractVocabFromWeekData(weekData) {
@@ -110,7 +114,8 @@ export function getGameData(weekNumber, learningMode = 'advanced', gameId) {
     4: { advanced: week4GamesAdvanced, easy: week4GamesEasy },
     5: { advanced: week5GamesAdvanced, easy: week5GamesEasy },
     6: { advanced: week6GamesAdvanced, easy: week6GamesEasy },
-    7: { advanced: week7GamesAdvanced, easy: week7GamesEasy }
+    7: { advanced: week7GamesAdvanced, easy: week7GamesEasy },
+    8: { advanced: week8GamesAdvanced, easy: week8GamesEasy }
   };
 
   const weekGames = weekGamesMap[weekNumber]?.[learningMode];
