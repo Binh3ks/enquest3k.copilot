@@ -8,7 +8,7 @@ import shadowing from './shadowing.js';
 import writing from './writing.js';
 import explore from './explore.js';
 import word_power from './word_power.js';
-import daily_watch from './daily_watch.js';
+import daily_watch from '../../weeks/week_03/daily_watch.js';
 import word_match from './word_match.js';
 import mindmap from './mindmap.js';
 
