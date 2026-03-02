@@ -12,10 +12,10 @@ export default {
       collocation: "There are many students",
       image_url: "/images/week8/wordpower_students.jpg",
       audio_word: "/audio/week8/wordpower_there_are_many_students.mp3",
-      audio_definition: "/audio/week8/wordpower_def_students.mp3",
-      audio_example: "/audio/week8/wordpower_ex_students.mp3",
-      audio_collocation: "/audio/week8/wordpower_coll_students.mp3",
-      audio_model: "/audio/week8/wordpower_model_students.mp3"
+      audio_definition: "/audio/week8/wordpower_def_there_are_many_students.mp3",
+      audio_example: "/audio/week8/wordpower_ex_there_are_many_students.mp3",
+      audio_collocation: "/audio/week8/wordpower_coll_there_are_many_students.mp3",
+      audio_model: "/audio/week8/wordpower_model_there_are_many_students.mp3"
     },
     {
       id: 2,
@@ -29,10 +29,10 @@ export default {
       collocation: "sit at desks in rows",
       image_url: "/images/week8/wordpower_desks.jpg",
       audio_word: "/audio/week8/wordpower_desks_in_neat_rows.mp3",
-      audio_definition: "/audio/week8/wordpower_def_desks.mp3",
-      audio_example: "/audio/week8/wordpower_ex_desks.mp3",
-      audio_collocation: "/audio/week8/wordpower_coll_desks.mp3",
-      audio_model: "/audio/week8/wordpower_model_desks.mp3"
+      audio_definition: "/audio/week8/wordpower_def_desks_in_neat_rows.mp3",
+      audio_example: "/audio/week8/wordpower_ex_desks_in_neat_rows.mp3",
+      audio_collocation: "/audio/week8/wordpower_coll_desks_in_neat_rows.mp3",
+      audio_model: "/audio/week8/wordpower_model_desks_in_neat_rows.mp3"
     },
     {
       id: 3,
@@ -46,10 +46,10 @@ export default {
       collocation: "fill the shelves with books",
       image_url: "/images/week8/wordpower_shelves.jpg",
       audio_word: "/audio/week8/wordpower_shelves_full_of_books.mp3",
-      audio_definition: "/audio/week8/wordpower_def_shelves.mp3",
-      audio_example: "/audio/week8/wordpower_ex_shelves.mp3",
-      audio_collocation: "/audio/week8/wordpower_coll_shelves.mp3",
-      audio_model: "/audio/week8/wordpower_model_shelves.mp3"
+      audio_definition: "/audio/week8/wordpower_def_shelves_full_of_books.mp3",
+      audio_example: "/audio/week8/wordpower_ex_shelves_full_of_books.mp3",
+      audio_collocation: "/audio/week8/wordpower_coll_shelves_full_of_books.mp3",
+      audio_model: "/audio/week8/wordpower_model_shelves_full_of_books.mp3"
     }
   ]
 };

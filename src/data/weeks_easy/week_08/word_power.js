@@ -12,10 +12,10 @@ export default {
       collocation: "There are students",
       image_url: "/images/week8_easy/wordpower_students.jpg",
       audio_word: "/audio/week8_easy/wordpower_there_are_students.mp3",
-      audio_definition: "/audio/week8_easy/wordpower_def_students.mp3",
-      audio_example: "/audio/week8_easy/wordpower_ex_students.mp3",
-      audio_collocation: "/audio/week8_easy/wordpower_coll_students.mp3",
-      audio_model: "/audio/week8_easy/wordpower_model_students.mp3"
+      audio_definition: "/audio/week8_easy/wordpower_def_there_are_students.mp3",
+      audio_example: "/audio/week8_easy/wordpower_ex_there_are_students.mp3",
+      audio_collocation: "/audio/week8_easy/wordpower_coll_there_are_students.mp3",
+      audio_model: "/audio/week8_easy/wordpower_model_there_are_students.mp3"
     },
     {
       id: 2,
@@ -29,10 +29,10 @@ export default {
       collocation: "There are pencils in the bag",
       image_url: "/images/week8_easy/wordpower_pencils.jpg",
       audio_word: "/audio/week8_easy/wordpower_there_are_pencils.mp3",
-      audio_definition: "/audio/week8_easy/wordpower_def_pencils.mp3",
-      audio_example: "/audio/week8_easy/wordpower_ex_pencils.mp3",
-      audio_collocation: "/audio/week8_easy/wordpower_coll_pencils.mp3",
-      audio_model: "/audio/week8_easy/wordpower_model_pencils.mp3"
+      audio_definition: "/audio/week8_easy/wordpower_def_there_are_pencils.mp3",
+      audio_example: "/audio/week8_easy/wordpower_ex_there_are_pencils.mp3",
+      audio_collocation: "/audio/week8_easy/wordpower_coll_there_are_pencils.mp3",
+      audio_model: "/audio/week8_easy/wordpower_model_there_are_pencils.mp3"
     },
     {
       id: 3,
@@ -46,10 +46,10 @@ export default {
       collocation: "There are chairs in the room",
       image_url: "/images/week8_easy/wordpower_chairs.jpg",
       audio_word: "/audio/week8_easy/wordpower_there_are_chairs.mp3",
-      audio_definition: "/audio/week8_easy/wordpower_def_chairs.mp3",
-      audio_example: "/audio/week8_easy/wordpower_ex_chairs.mp3",
-      audio_collocation: "/audio/week8_easy/wordpower_coll_chairs.mp3",
-      audio_model: "/audio/week8_easy/wordpower_model_chairs.mp3"
+      audio_definition: "/audio/week8_easy/wordpower_def_there_are_chairs.mp3",
+      audio_example: "/audio/week8_easy/wordpower_ex_there_are_chairs.mp3",
+      audio_collocation: "/audio/week8_easy/wordpower_coll_there_are_chairs.mp3",
+      audio_model: "/audio/week8_easy/wordpower_model_there_are_chairs.mp3"
     }
   ]
 };
