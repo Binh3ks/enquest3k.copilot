@@ -38,7 +38,7 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
       const checkUser = latestUser || currentUser;
       if (checkUser && checkUser.role === 'student' && targetWeek >= 6) {
         const prev = targetWeek - 1;
-        const srsDone = progressCache[prev]?.srs_review?.isCompleted;
+        const srsDone = progressCache[prev]?.review_session?.isCompleted;
         if (!srsDone) {
           alert('Please complete the SRS review for the previous week before accessing this week.');
           navigate(`/week/${prev}/review`);

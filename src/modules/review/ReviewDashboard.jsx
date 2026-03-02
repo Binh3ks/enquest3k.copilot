@@ -97,7 +97,7 @@ const ReviewDashboard = ({ userId, isAuthenticated, themeColor, reviewItems, set
                         <Activity className="w-8 h-8 mr-3 text-orange-500" /> 
                         {isVi ? 'SRS Review' : 'SRS Review Dashboard'}
                     </h1>
-                    <p className="text-slate-500 font-medium text-sm">User ID: <span className="font-mono text-slate-700 bg-slate-200 px-1 rounded">{userId?.slice(0,8)}...</span></p>
+                    <p className="text-slate-500 font-medium text-sm">User ID: <span className="font-mono text-slate-700 bg-slate-200 px-1 rounded">{String(userId ?? '').slice(0,8)}...</span></p>
                 </div>
                 <div className="text-right">
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Remaining</p>
