@@ -2,13 +2,13 @@
  * imageUrl.js - Resolve image paths to CDN or local
  *
  * Images are served from Cloudflare R2 CDN (engquest-images bucket).
- * Public URL: https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev
+ * Public URL: https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev
  *
  * To override (or disable CDN), set VITE_IMAGES_CDN_URL env var.
  * Set to empty string "" to fall back to local /images/... paths.
  */
 
-const IMAGES_CDN = import.meta.env.VITE_IMAGES_CDN_URL ?? 'https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev';
+const IMAGES_CDN = import.meta.env.VITE_IMAGES_CDN_URL ?? 'https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev';
 
 /**
  * Convert a relative image path to the CDN URL.
