@@ -108,7 +108,11 @@ const TTS_DEBOUNCE_DELAY = 500; // 500ms minimum between TTS calls
 const TTS_CONFIG = {
   deepgram: {
     enabled: true, // 🔥 PRIMARY - Deepgram Aura TTS (high quality, cost-effective)
-    voice: 'aura-asteria-en' // Female, warm, friendly - perfect for Ms. Nova
+    voice: 'aura-asteria-en', // Female, warm, friendly - perfect for Ms. Nova
+    speed: {
+      conversation: 1.0,   // Normal speed for conversations
+      pronunciation: 0.85  // Slower for pronunciation practice (clearer for ESL learners)
+    }
   },
   gemini: {
     enabled: true, // 🔥 BACKUP - Google Cloud Text-to-Speech
@@ -250,7 +254,7 @@ function cleanTextForSpeech(text) {
  * @param {string} options.mode - 'conversation' (0.8x) | 'pronunciation' (1.0x)
  * @returns {Promise<AudioResponse>}
  */
-export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto', mode = 'conversation' } = {}) {
+export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto', mode = 'conversation', speed = null } = {}) {
   if (!text || text.trim().length === 0) {
     console.warn('⚠️ TTS: Empty text provided');
     return { success: false, error: 'Empty text' };
@@ -296,11 +300,14 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 
   // 🔥 STEP 1: Check in-memory cache first (instant)
   const memoryCacheKey = `${cleanedText.substring(0, 100)}_${preferredLayer}`;
+  // Determine playback speed: custom > mode-specific > default (1.0)
+  const playbackSpeed = speed || (TTS_CONFIG.deepgram.speed && TTS_CONFIG.deepgram.speed[mode]) || 1.0;
+  
   if (audioCache.has(memoryCacheKey)) {
     console.log('✅ TTS: Using in-memory cached audio');
     const cachedUrl = audioCache.get(memoryCacheKey);
     if (autoPlay) {
-      await playAudio(cachedUrl);
+      await playAudio(cachedUrl, playbackSpeed);
     }
     isSpeaking = false; // 🔥 Release lock for cached audio
     return {
@@ -321,7 +328,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     audioCache.set(memoryCacheKey, r2CachedUrl);
     
     if (autoPlay) {
-      await playAudio(r2CachedUrl);
+      await playAudio(r2CachedUrl, playbackSpeed);
     }
     isSpeaking = false; // 🔥 Release lock for cached audio
     return {
@@ -395,7 +402,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
         
         // Auto-play if requested
         if (autoPlay) {
-          await playAudio(audioUrl);
+          await playAudio(audioUrl, playbackSpeed);
         }
 
         isSpeaking = false; // 🔥 Release lock on success
@@ -565,8 +572,10 @@ async function callBrowserTTS(text) {
 
 /**
  * Play audio from URL or identifier
+ * @param {string} audioUrlOrIdentifier - Audio URL or special identifier
+ * @param {number} playbackSpeed - Playback speed (0.5 = half speed, 1.0 = normal, 2.0 = double speed)
  */
-async function playAudio(audioUrlOrIdentifier) {
+async function playAudio(audioUrlOrIdentifier, playbackSpeed = 1.0) {
   // Stop any currently playing audio
   stopAudio();
 
@@ -578,8 +587,9 @@ async function playAudio(audioUrlOrIdentifier) {
   }
 
   // Create and play audio element
-  console.log('🔊 Playing audio from URL:', audioUrlOrIdentifier);
+  console.log('🔊 Playing audio from URL:', audioUrlOrIdentifier, `(${playbackSpeed}x speed)`);
   currentAudio = new Audio(audioUrlOrIdentifier);
+  currentAudio.playbackRate = playbackSpeed; // 🎛️ Set playback speed
   isPlaying = true;
 
   currentAudio.onended = () => {
