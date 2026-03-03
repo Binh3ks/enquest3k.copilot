@@ -6,6 +6,7 @@ import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import { getAiTutorResponse } from '../../../services/api';
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
+import { recordAudio, isRecordingSupported } from '../../../utils/audioRecorder'; // 🔥 Deepgram STT
 
 /**
  * Pronunciation Tab - Word & Sentence Fluency Practice
@@ -206,10 +207,11 @@ const PronunciationTab = () => {
     }
   };
 
-  // Handle practice attempt with real recording
-  const handlePractice = () => {
-    if (!recognitionRef.current) {
-      alert('Speech recognition not supported. Please use Chrome or Edge.');
+  // 🔥 Handle practice attempt with Deepgram STT (high accuracy)
+  const handlePractice = async () => {
+    // ✅ Check if MediaRecorder is supported
+    if (!isRecordingSupported()) {
+      alert('⚠️ Recording not supported in this browser. Please use Chrome, Edge, or Firefox.');
       return;
     }
 
@@ -217,15 +219,114 @@ const PronunciationTab = () => {
     setCurrentFeedback(null);
     
     try {
-      recognitionRef.current.start();
-    } catch (error) {
-      console.error('Start error:', error);
-      if (error.message && error.message.includes('already started')) {
-        recognitionRef.current.stop();
-        setTimeout(() => {
-          recognitionRef.current.start();
-        }, 200);
+      console.log('🎤 Starting audio recording...');
+      
+      // 🔥 Record 5 seconds of audio
+      const audioBlob = await recordAudio(5000);
+      
+      console.log('✅ Audio recorded:', audioBlob.size, 'bytes, type:', audioBlob.type);
+      
+      setPracticeMode('evaluating');
+      
+      // Get current content based on practice type
+      const isWordMode = practiceTypeRef.current === 'word';
+      const word = currentWordRef.current;
+      const sentence = currentSentenceRef.current;
+      const targetText = isWordMode 
+        ? (word?.word || word?.text || '').toLowerCase().trim()
+        : sentence?.trim() || '';
+      
+      if (!targetText) {
+        console.error('❌ No target text available');
+        setCurrentFeedback({
+          success: false,
+          score: 0,
+          message: 'Không tìm thấy nội dung để luyện. Hãy thử lại!'
+        });
+        setPracticeMode('listen');
+        return;
       }
+      
+      console.log(`🎯 Evaluating ${isWordMode ? 'word' : 'sentence'}:`, targetText);
+      
+      // 🔥 Prepare FormData for backend
+      const formData = new FormData();
+      formData.append('audio', audioBlob, 'recording.webm');
+      formData.append('targetText', targetText);
+      formData.append('mode', isWordMode ? 'word' : 'sentence');
+      
+      // 🔥 Send to Deepgram backend
+      const response = await fetch('/api/pronunciation/evaluate-deepgram', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Backend error: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      
+      if (!result.success) {
+        throw new Error(result.message || 'Evaluation failed');
+      }
+      
+      console.log('✅ Deepgram result:', {
+        transcript: result.transcript,
+        confidence: (result.confidence * 100).toFixed(1) + '%',
+        score: result.evaluation.score,
+        correct: result.evaluation.correct
+      });
+      
+      // 🔥 Display feedback with Deepgram's high confidence scores (90-95% typical)
+      setCurrentFeedback({
+        success: result.evaluation.correct,
+        score: result.evaluation.score,
+        message: result.evaluation.feedback,
+        tip: result.evaluation.tip,
+        spokenText: result.transcript,
+        confidence: (result.confidence * 100).toFixed(0)
+      });
+      
+      // Save progress if correct
+      if (result.evaluation.correct && result.evaluation.score >= 70) {
+        const newCorrectCount = correctCount + 1;
+        const newAttempts = [
+          ...attempts,
+          {
+            word: targetText,
+            score: result.evaluation.score,
+            timestamp: Date.now()
+          }
+        ];
+        
+        setCorrectCount(newCorrectCount);
+        setAttempts(newAttempts);
+        
+        // 🔥 Save to station progress
+        saveProgress({
+          correctCount: newCorrectCount,
+          attempts: newAttempts,
+          currentWordIndex: isWordMode ? currentWordIndex : 0,
+          currentSentenceIndex: !isWordMode ? currentSentenceIndex : 0
+        });
+      }
+      
+      setPracticeMode('feedback'); // Show feedback UI
+      
+    } catch (error) {
+      console.error('❌ Deepgram pronunciation error:', error);
+      
+      // User-friendly error message
+      setCurrentFeedback({
+        success: false,
+        score: 0,
+        message: error.name === 'NotAllowedError' 
+          ? 'Bạn cần cho phép truy cập microphone để luyện phát âm.'
+          : 'Có lỗi xảy ra. Hãy kiểm tra kết nối mạng và thử lại!'
+      });
+      
+      setPracticeMode('listen');
     }
   };
 

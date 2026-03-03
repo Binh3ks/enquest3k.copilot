@@ -151,3 +151,36 @@ export async function proxyGoogleTTS(text, options = {}) {
     return null;
   }
 }
+
+/**
+ * proxyDeepgramTTS — Routes Deepgram Aura TTS through the backend (/api/ai/deepgram-tts)
+ * High quality, cost-effective alternative to Google TTS
+ *
+ * @param {string} text
+ * @param {{voice?: string}} options - voice model (default: aura-asteria-en)
+ * @returns {Promise<Blob|null>}
+ */
+export async function proxyDeepgramTTS(text, options = {}) {
+  try {
+    const response = await fetch(`${API_BASE}/ai/deepgram-tts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...getAuthHeaders(),
+      },
+      body: JSON.stringify({ text, voice: options.voice || 'aura-asteria-en' }),
+    });
+
+    if (response.ok) {
+      const contentType = response.headers.get('content-type') || '';
+      if (contentType.includes('audio')) {
+        return await response.blob();
+      }
+    }
+    return null;
+  } catch (err) {
+    console.warn('[aiProxy.proxyDeepgramTTS] Error:', err.message);
+    return null;
+  }
+}
+
