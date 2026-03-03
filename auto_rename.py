@@ -19,7 +19,7 @@ def process_folder_by_prompt(folder_name, prompt_file):
         print(f"⚠️ Thư mục không tồn tại: {folder_path}")
         return
 
-    print(f"--- Đang xử lý thư mục: {folder_name} ---")
+    print(f"\n--- Đang xử lý thư mục: {folder_name} ---")
 
     # Đọc danh sách filename từ file prompt (theo thứ tự)
     filenames = []
@@ -33,15 +33,47 @@ def process_folder_by_prompt(folder_name, prompt_file):
     image_files = [fn for fn in os.listdir(folder_path) if fn.lower().endswith(('.png', '.jpg', '.jpeg'))]
     
     # Tạo dict mapping: số thứ tự -> tên file
+    # Hỗ trợ 2 patterns:
+    #   1. "1_1_blahblah.png" → số thứ tự 1
+    #   2. "download.png" → số thứ tự 1, "download(1).png" → số thứ tự 2, "download(2).png" → số thứ tự 3
     file_map = {}
     for fname in image_files:
-        # Parse số thứ tự đầu tiên trong tên file (vd: 1_1... -> 1, 13_13... -> 13)
+        idx = None
+        
+        # Pattern 1: Prefix với số (vd: 1_1_..., 13_13_...)
         match = re.match(r'^(\d+)_', fname)
         if match:
             idx = int(match.group(1))
+        else:
+            # Pattern 2: download.png, download(N).png
+            if fname.lower().startswith('download'):
+                # "download.png" → idx = 1
+                if re.match(r'^download\.(png|jpg|jpeg)$', fname.lower()):
+                    idx = 1
+                else:
+                    # "download(N).png" → idx = N + 1
+                    match = re.match(r'^download\((\d+)\)\.(png|jpg|jpeg)$', fname.lower())
+                    if match:
+                        idx = int(match.group(1)) + 1
+        
+        if idx:
             file_map[idx] = fname
     
+    # Hiển thị summary của files detected
+    if file_map:
+        print(f"📁 Tìm thấy {len(file_map)} file ảnh:")
+        # Detect pattern type
+        sample_file = list(file_map.values())[0]
+        if sample_file.lower().startswith('download'):
+            print(f"   Pattern: download.png / download(N).png")
+        else:
+            print(f"   Pattern: N_N_*.png (prefix với số)")
+    else:
+        print("⚠️ Không tìm thấy file ảnh nào trong thư mục")
+        return
+    
     # Đổi tên file theo mapping số thứ tự
+    renamed_count = 0
     for prompt_idx, new_filename in enumerate(filenames, start=1):
         if prompt_idx in file_map:
             old_filename = file_map[prompt_idx]
@@ -56,9 +88,12 @@ def process_folder_by_prompt(folder_name, prompt_file):
                     final_path = os.path.join(folder_path, f"{os.path.splitext(new_filename)[0]}_{counter}.jpg")
                     counter += 1
                 os.rename(old_path, final_path)
-                print(f"✅ Đã đổi: {old_filename} -> {os.path.basename(final_path)}")
+                print(f"✅ [{prompt_idx}] {old_filename} → {os.path.basename(final_path)}")
+                renamed_count += 1
         else:
-            print(f"⚠️ Không tìm thấy file với số thứ tự {prompt_idx} cho prompt: {new_filename}")
+            print(f"⚠️ [{prompt_idx}] Không tìm thấy file cho: {new_filename}")
+    
+    print(f"\n✨ Hoàn thành: {renamed_count}/{len(filenames)} file đã được đổi tên")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
