@@ -24,6 +24,11 @@ export default {
     { id: 12, type: "unscramble", question: "Order:", words: ["bags", "There", "are", "on", "the", "floor"], answer: "There are bags on the floor.", hint: "There are bags..." },
     { id: 13, type: "fill", question: "There are ___ on my desk. (paper)", answer: "papers", hint: "paper + s" },
     { id: 14, type: "mc", question: "There are ___ in the art box.", options: ["crayons", "crayon", "a crayon"], answer: "crayons", hint: "plural form" },
-    { id: 15, type: "unscramble", question: "Order:", words: ["are", "There", "books", "on", "the", "shelf"], answer: "There are books on the shelf.", hint: "There are books..." }
+    { id: 15, type: "unscramble", question: "Order:", words: ["are", "There", "books", "on", "the", "shelf"], answer: "There are books on the shelf.", hint: "There are books..." },
+    { id: 16, type: "fill", question: "There are many ___ in my bag. (pencil)", answer: "pencils", hint: "pencil + s" },
+    { id: 17, type: "mc", question: "There ___ boards in the classroom.", options: ["is", "are", "has"], answer: "are", hint: "boards is plural" },
+    { id: 18, type: "fill", question: "There are ___ for art. (crayon)", answer: "crayons", hint: "crayon + s" },
+    { id: 19, type: "unscramble", question: "Order:", words: ["There", "are", "students", "in", "class"], answer: "There are students in class.", hint: "There are students..." },
+    { id: 20, type: "unscramble", question: "Order:", words: ["desks", "and", "chairs", "There", "are"], answer: "There are desks and chairs.", hint: "There are desks..." }
   ]
 };

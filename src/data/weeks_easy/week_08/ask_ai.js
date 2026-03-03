@@ -2,8 +2,8 @@ export default {
   prompts: [
     {
       id: 1,
-      context_en: "You see many desks in class. Ask: How many desks are there?",
-      context_vi: "Bạn thấy nhiều bàn trong lớp. Hỏi: Có bao nhiêu bàn?",
+      context_en: "You see many desks in class. You want to know how many.",
+      context_vi: "Bạn thấy nhiều bàn trong lớp. Bạn muốn biết có bao nhiêu.",
       audio_url: "/audio/week8_easy/ask_ai_1.mp3",
       answer: ["How many desks are there?", "How many desks?", "Are there many desks?"],
       hint: "How many desks..."
@@ -34,8 +34,8 @@ export default {
     },
     {
       id: 5,
-      context_en: "You look at the shelf. Ask what is on the shelf.",
-      context_vi: "Bạn nhìn vào kệ. Hỏi có gì trên kệ.",
+      context_en: "You look at the shelf. You want to know what is there.",
+      context_vi: "Bạn nhìn vào kệ. Bạn muốn biết có gì ở đó.",
       audio_url: "/audio/week8_easy/ask_ai_5.mp3",
       answer: ["What is on the shelf?", "What are there on the shelf?", "Are there books on the shelf?"],
       hint: "What is on the shelf..."
