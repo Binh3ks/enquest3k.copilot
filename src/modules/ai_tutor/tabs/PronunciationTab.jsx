@@ -165,13 +165,13 @@ const PronunciationTab = () => {
     try {
       await textToSpeech(text, {
         autoPlay: true,
-        preferredLayer: 'gemini', // Force Google Cloud TTS
+        preferredLayer: 'auto', // 🔥 Use full fallback chain (Deepgram → Google → OpenAI → Browser)
         mode: 'pronunciation' // 🎯 Normal speed (1.0x) for clear pronunciation practice
       });
-      console.log('✅ Google Cloud TTS succeeded');
+      console.log('✅ TTS succeeded');
       return; // Success - exit early
     } catch (error) {
-      console.error('⚠️ Google Cloud TTS failed, falling back to browser TTS:', error);
+      console.error('⚠️ TTS failed:', error);
     }
     
     // 🔥 FALLBACK: Browser TTS (if Google Cloud fails)
