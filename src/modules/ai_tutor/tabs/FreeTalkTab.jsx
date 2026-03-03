@@ -7,7 +7,7 @@ import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import HintChips from '../components/HintChips';
 import { NovaEngine } from '../../../services/ai_tutor/novaEngine';
-import { VoiceService } from '../../../services/voiceService';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
@@ -172,7 +172,7 @@ const FreeTalkTab = () => {
       // 🔊 Play TTS for opening message
       if (autoPlayEnabled) {
         try {
-          await VoiceService.speak(greetingText, 'ask_ai', null, null, 'advanced', true); // ⚡ Instant mode
+          await textToSpeech(greetingText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
           console.log('🔊 TTS played successfully');
         } catch (error) {
           console.error('❌ TTS error:', error);
@@ -664,7 +664,7 @@ const FreeTalkTab = () => {
             
             // 🔊 Play TTS for completion message (instant mode)
             try {
-              await VoiceService.speak(completionMsg.content, 'ai_tutor', null, weekNumberRef.current, 'advanced', true);
+              await textToSpeech(completionMsg.content, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
             } catch (err) {
               console.error('❌ FreeTalk TTS error:', err);
             }
@@ -696,7 +696,7 @@ const FreeTalkTab = () => {
             
             // 🔊 Play TTS for next exchange (instant mode)
             try {
-              await VoiceService.speak(responseText, 'ai_tutor', null, weekNumberRef.current, 'advanced', true);
+              await textToSpeech(responseText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
             } catch (err) {
               console.error('❌ FreeTalk TTS error:', err);
             }
@@ -716,7 +716,7 @@ const FreeTalkTab = () => {
           
           // 🔊 Play TTS for feedback (instant mode)
           try {
-            await VoiceService.speak(feedbackText, 'ai_tutor', null, weekNumberRef.current, 'advanced', true);
+            await textToSpeech(feedbackText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
           } catch (err) {
             console.error('❌ FreeTalk TTS error:', err);
           }
@@ -872,7 +872,7 @@ const FreeTalkTab = () => {
       // 🔊 ALWAYS auto-play TTS for AI responses
       try {
         console.log('🎤 FreeTalkTab: Playing AI response TTS...');
-        await VoiceService.speak(responseText, 'ask_ai', null, null, 'advanced', true); // ⚡ Instant mode
+        await textToSpeech(responseText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
       } catch (error) {
         console.error('❌ TTS error for AI response:', error);
       }
