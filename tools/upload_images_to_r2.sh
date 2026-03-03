@@ -8,7 +8,7 @@
 
 set -e
 
-BUCKET_NAME="engquest-tts"
+BUCKET_NAME="engquest-images"
 SOURCE_DIR="./public/images"
 R2_PREFIX="images"
 
