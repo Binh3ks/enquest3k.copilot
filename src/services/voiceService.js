@@ -23,7 +23,7 @@
  * 
  * Features:
  * - Station-based voice selection (8 voices: Kokoro am_adam, am_michael, af_bella, etc.)
- * - Pre-generated Kokoro TTS files on CDN (weeks 1-7, static content only)
+ * - Pre-generated TTS files on CDN (weeks 1-7: Kokoro, week 8: Deepgram)
  * - HF Space Kokoro API for dynamic content (Story Mission, Roleplay, Free Talk)
  * - Client-side caching for all sources (IndexedDB)
  * - Graceful degradation through 5-tier fallback chain
@@ -94,8 +94,8 @@ function isServerWarm() {
   return _serverWarm && (Date.now() - _lastSuccessTime < WARM_WINDOW_MS);
 }
 
-// Weeks that have pre-generated Kokoro files on CDN (weeks 1-7 currently)
-const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7];
+// Weeks that have pre-generated files on CDN (weeks 1-7: Kokoro, week 8: Deepgram)
+const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // Static stations that can use CDN (pre-generated content)
 const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai'];
