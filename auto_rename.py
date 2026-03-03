@@ -45,14 +45,14 @@ def process_folder_by_prompt(folder_name, prompt_file):
         if match:
             idx = int(match.group(1))
         else:
-            # Pattern 2: download.png, download(N).png
+            # Pattern 2: download.png, download(N).png, download (N).png (với hoặc không có space)
             if fname.lower().startswith('download'):
                 # "download.png" → idx = 1
                 if re.match(r'^download\.(png|jpg|jpeg)$', fname.lower()):
                     idx = 1
                 else:
-                    # "download(N).png" → idx = N + 1
-                    match = re.match(r'^download\((\d+)\)\.(png|jpg|jpeg)$', fname.lower())
+                    # "download(N).png" hoặc "download (N).png" → idx = N + 1
+                    match = re.match(r'^download\s*\((\d+)\)\.(png|jpg|jpeg)$', fname.lower())
                     if match:
                         idx = int(match.group(1)) + 1
         
@@ -65,7 +65,7 @@ def process_folder_by_prompt(folder_name, prompt_file):
         # Detect pattern type
         sample_file = list(file_map.values())[0]
         if sample_file.lower().startswith('download'):
-            print(f"   Pattern: download.png / download(N).png")
+            print(f"   Pattern: download.png / download(N).png / download (N).png")
         else:
             print(f"   Pattern: N_N_*.png (prefix với số)")
     else:
