@@ -6,9 +6,11 @@
  *
  * To override (or disable CDN), set VITE_IMAGES_CDN_URL env var.
  * Set to empty string "" to fall back to local /images/... paths.
+ *
+ * TEMPORARILY DISABLED: Using local paths until images are uploaded to R2
  */
 
-const IMAGES_CDN = import.meta.env.VITE_IMAGES_CDN_URL ?? 'https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev';
+const IMAGES_CDN = import.meta.env.VITE_IMAGES_CDN_URL ?? ''; // Disabled CDN (was: 'https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev')
 
 /**
  * Convert a relative image path to the CDN URL.
