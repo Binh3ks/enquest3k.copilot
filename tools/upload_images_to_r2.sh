@@ -53,6 +53,7 @@ find "$SOURCE_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \
         --file="$file" \
         --content-type="$CTYPE" \
         --cache-control="public, max-age=31536000, immutable" \
+        --remote \
         2>&1 | grep -v "^$\|Uploading\|Success" || true
 
     COUNTER=$((COUNTER + 1))
