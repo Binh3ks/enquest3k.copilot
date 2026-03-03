@@ -4,38 +4,35 @@
  * 
  * FALLBACK STRATEGY:
  * 1. Client Cache (IndexedDB) - Instant replay (0ms)
- * 2. CDN (Cloudflare R2) - Pre-generated Kokoro files (<100ms) [Static stations only]
- * 3. Legacy Audio Files - Fallback for static content from data (public/audio/)
- * 4. Kokoro TTS / HF Space API - High-quality dynamic generation (1-15s) [ALL stations]
- * 5. Browser TTS (Web Speech) - Built-in fallback (500ms) [Last resort]
+ * 2. Deepgram Worker API - AI Tutor only, direct to Deepgram Aura (300-500ms)
+ * 3. R2 CDN (Cloudflare R2) - Pre-generated Deepgram files for static stations (<100ms)
+ * 4. Browser TTS (Web Speech) - Built-in fallback (500ms) [Last resort]
  * 
  * STATION CLASSIFICATION:
- * - Static: read, new_word, dictation, shadowing, explore, word_power
- *   → Try CDN first, then Kokoro TTS on miss
- * - Dynamic: ai_tutor, gamehub, freetalk, ask_ai
- *   → Skip CDN, go straight to Kokoro TTS
+ * - Static: read, new_word, dictation, shadowing, explore, word_power, ask_ai
+ *   → Load pre-generated audio from R2 CDN (all generated with Deepgram)
+ * - Dynamic: ai_tutor, gamehub, freetalk
+ *   → Call Deepgram Worker API directly (live generation)
  * 
- * IMPORTANT: Story Mission uses station='read' BUT content is dynamic ({{placeholders}})
- * so it needs Kokoro TTS when CDN misses, not browser fallback!
- * 
- * NOTE: Despite .env naming "VITE_EDGE_TTS_URL", this is Kokoro API on HF Space,
- * not Microsoft Edge TTS. Verified via API testing (same MD5 checksum as kokoro default).
+ * IMPORTANT: All static content is pre-generated using Deepgram Aura-2 TTS
+ * and uploaded to R2. No Kokoro fallback - if R2 misses, browser TTS is used.
  * 
  * Features:
- * - Station-based voice selection (8 voices: Kokoro am_adam, am_michael, af_bella, etc.)
- * - Pre-generated TTS files on CDN (weeks 1-7: Kokoro, week 8: Deepgram)
- * - HF Space Kokoro API for dynamic content (Story Mission, Roleplay, Free Talk)
+ * - Station-based voice selection (Deepgram Aura-2 voices)
+ * - Pre-generated Deepgram TTS files on R2 CDN (weeks 1-8: all modes)
+ * - Deepgram Worker API for dynamic AI Tutor content
  * - Client-side caching for all sources (IndexedDB)
- * - Graceful degradation through 5-tier fallback chain
+ * - Graceful degradation: R2 → Browser TTS (no intermediate fallbacks)
  */
 
 import { TTSCache } from './ttsCache';
 
-// CDN Base URL for pre-generated Kokoro files from Cloudflare R2
+// CDN Base URL for pre-generated Deepgram audio files from Cloudflare R2
 const CDN_URL = import.meta.env.VITE_CDN_URL || 'https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev';
 
-// --- TTS SERVER PROXY POOL (HF Space / Kokoro) ---
-// Used as fallback when Google TTS fails or for caching in background.
+// --- LEGACY: TTS SERVER PROXY POOL (kept for backward compatibility) ---
+// Note: This pool is no longer used for static content (now on R2).
+// Only dynamic AI Tutor content uses Deepgram worker API (via useGoogleTTS).
 const _primaryUrl = import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
 const TTS_POOL = [
   _primaryUrl,
@@ -94,7 +91,8 @@ function isServerWarm() {
   return _serverWarm && (Date.now() - _lastSuccessTime < WARM_WINDOW_MS);
 }
 
-// Weeks that have pre-generated files on CDN (weeks 1-7: Kokoro, week 8: Deepgram)
+// Weeks that have pre-generated Deepgram files on R2 CDN
+// Week 1-7: originally Kokoro (legacy), Week 8+: all Deepgram Aura-2
 const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // Static stations that can use CDN (pre-generated content)
@@ -111,7 +109,7 @@ export const VoiceService = {
    * @param {string} audioUrl - Optional pre-known audio URL (from station data)
    * @param {number} weekNumber - Week number (for CDN lookup)
    * @param {string} mode - Mode ('advanced' or 'easy')
-   * @param {boolean} instant - If true, play browser TTS immediately + prefetch Kokoro in background
+   * @param {boolean} instant - If true, play browser TTS immediately for AI Tutor (Deepgram worker will cache for next replay)
    * @returns {Promise<void>}
    */
   async speak(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced', instant = false) {
@@ -179,45 +177,18 @@ export const VoiceService = {
       return;
     }
     
-    // 🌐 TIER 2: Try CDN (only when explicit audioUrl provided - hash-based lookup always 404)
+    // 🌐 TIER 2: Try R2 CDN (all static stations with audioUrl)
+    // All static content should be pre-generated with Deepgram and uploaded to R2
     if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
       try {
-        console.log(`[TTS] Trying CDN for week ${weekNumber} ${mode}...`);
+        console.log(`[TTS] Trying R2 CDN for week ${weekNumber} ${mode}...`);
         await this.useCDN(cleanedText, station, audioUrl, weekNumber, mode);
-        console.log(`[TTS] ✅ CDN success (~100ms)`);
+        console.log(`[TTS] ✅ R2 CDN success (~100ms)`);
         return;
       } catch (err) {
-        console.warn(`[TTS] CDN miss: ${err.message}`);
+        console.warn(`[TTS] R2 CDN miss: ${err.message}`);
+        console.warn(`[TTS] ⚠️ Audio file should exist on R2 - please regenerate week ${weekNumber}`);
       }
-    }
-    
-    // 🎵 TIER 2.5: Try old audio files (if provided by data)
-    if (audioUrl) {
-      try {
-        console.log(`[TTS] Trying legacy audio file...`);
-        const audio = new Audio(audioUrl);
-        const legacyRate = parseFloat(localStorage.getItem('tts_speed') || '1.0');
-        audio.playbackRate = (legacyRate >= 0.7 && legacyRate <= 1.0) ? legacyRate : 1.0;
-        await audio.play();
-        const response = await fetch(audioUrl);
-        const blob = await response.blob();
-        await TTSCache.set(cleanedText, station, blob);
-        console.log(`[TTS] ✅ Legacy audio success`);
-        return;
-      } catch (err) {
-        console.warn(`[TTS] Legacy audio failed: ${err.message}`);
-      }
-    }
-    
-    // ⚡ TIER 3: Try HF Space / Proxy Pool (Kokoro + Edge TTS hybrid)
-    try {
-      const source = isDynamicStation ? 'Edge/Kokoro (dynamic)' : 'Edge/Kokoro (CDN fallback)';
-      console.log(`[TTS] Trying ${source}...`);
-      await this.useKokoroTTS(cleanedText, station);
-      console.log(`[TTS] ✅ Edge/Kokoro success (1-3s)`);
-      return;
-    } catch (err) {
-      console.warn(`[TTS] Edge/Kokoro failed: ${err.message}`);
     }
     
     // 🔊 TIER 4: Browser TTS (last resort)
@@ -227,7 +198,7 @@ export const VoiceService = {
 
   /**
    * Pre-cache TTS audio WITHOUT playing (for background prefetch)
-   * Routes through HF semaphore so prefetch never starves user requests
+   * Only caches from R2 CDN - does not generate new audio
    */
   async prefetch(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced') {
     const cleanedText = this.cleanTextForTTS(text);
@@ -238,7 +209,7 @@ export const VoiceService = {
 
     const isStaticStation = STATIC_STATIONS.includes(station);
 
-    // Try CDN first (only when explicit audioUrl is provided)
+    // Try R2 CDN (only for static stations with pre-generated audio)
     if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
       try {
         const cleanPath = audioUrl.startsWith('/') ? audioUrl.slice(1) : audioUrl;
@@ -255,9 +226,8 @@ export const VoiceService = {
       } catch {}
     }
 
-    // HF Space via semaphore (15s timeout — lower priority than user requests)
-    const blob = await this._fetchFromPool(cleanedText, station, 15000);
-    if (blob) await TTSCache.set(cleanedText, station, blob);
+    // Don't generate audio in prefetch - only cache what's already on R2
+    // If R2 miss, the speak() function will handle fallback to browser TTS
   },
 
   /**
@@ -312,10 +282,10 @@ export const VoiceService = {
   },
 
   /**
-   * TIER 2: Use CDN for pre-generated Kokoro files
+   * TIER 2: Load pre-generated Deepgram audio from R2 CDN
    * @param {string} text - Text to speak
    * @param {string} station - Station ID
-   * @param {string} audioUrl - Optional pre-known URL from station data
+   * @param {string} audioUrl - Pre-known URL from station data (e.g., /audio/week8_easy/dictation_1.mp3)
    * @param {number} weekNumber - Week number
    * @param {string} mode - Mode ('advanced' or 'easy')
    * @returns {Promise<void>}
@@ -370,12 +340,13 @@ export const VoiceService = {
   },
 
   /**
-   * TIER 3 (dynamic primary): Google Cloud TTS — ~300ms, 1M free chars/month.
+   * TIER 1.5 (AI Tutor only): Deepgram Aura-2 via Worker API — ~300-500ms
    * 
-   * Priority:
-   *   1. Cloudflare Worker (VITE_TTS_WORKER_URL set) → R2 cross-user cache → Google TTS
+   * Used exclusively for dynamic AI Tutor content that needs real-time generation.
+   * Flow:
+   *   1. Cloudflare Worker (VITE_TTS_WORKER_URL set) → R2 cache check → Deepgram Aura-2
    *      API key hidden in Worker Secret, never in browser bundle.
-   *   2. Direct Google TTS API (VITE_TTS_WORKER_URL not set) → dev/fallback mode.
+   *   2. Fallback: Direct proxy if worker unavailable (dev/testing mode).
    * 
    * Returns audio Blob.
    */
@@ -395,7 +366,7 @@ export const VoiceService = {
       return blob;
     }
 
-    // ── Route 2: Backend proxy for Google TTS (API key stays server-side) ──
+    // ── Route 2: Backend proxy fallback (dev/testing mode) ──
     return await proxyGoogleTTS(text, { voice: GOOGLE_TTS_VOICE, languageCode: 'en-US' });
   },
 
