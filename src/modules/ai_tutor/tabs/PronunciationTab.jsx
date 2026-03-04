@@ -7,6 +7,7 @@ import { getAiTutorResponse } from '../../../services/api';
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import { recordAudio, isRecordingSupported } from '../../../utils/audioRecorder'; // 🔥 Deepgram STT
+import TTSSettingsPanel from '../components/TTSSettingsPanel';
 
 /**
  * Pronunciation Tab - Word & Sentence Fluency Practice
@@ -682,6 +683,11 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
               </p>
             </div>
           </div>
+        </div>
+        
+        {/* TTS Settings */}
+        <div className="mt-3 flex justify-end">
+          <TTSSettingsPanel compact={true} />
         </div>
         
         {/* Mode Selector */}

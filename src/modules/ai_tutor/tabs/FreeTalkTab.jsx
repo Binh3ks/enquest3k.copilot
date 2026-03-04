@@ -22,6 +22,7 @@ import week8RealData from '../../../data/weeks/week_08_real'; // Week 8 syllabus
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import { FREE_TALK_ACTIONS, ROLEPLAY_SCENARIOS as STATIC_ROLEPLAY } from '../../../config/freeTalkConfig'; // 🎭 ROLEPLAY & CHAT
+import TTSSettingsPanel from '../components/TTSSettingsPanel';
 
 /**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
@@ -1015,6 +1016,9 @@ const FreeTalkTab = () => {
               <p className="text-[10px] text-gray-500">Let's chat naturally!</p>
             </div>
           </div>
+
+          {/* TTS Settings */}
+          <TTSSettingsPanel compact={true} />
 
           {/* Conversation Stats */}
           <div className="flex items-center space-x-2">

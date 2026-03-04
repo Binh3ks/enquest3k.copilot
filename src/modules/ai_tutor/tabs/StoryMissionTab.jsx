@@ -20,6 +20,7 @@ import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
 import week8RealData from '../../../data/weeks/week_08_real'; // Week 8 syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
+import TTSSettingsPanel from '../components/TTSSettingsPanel';
 
 // 🔥 DEBUG: Verify imports loaded correctly
 console.log('📦 IMPORTS CHECK:', {
@@ -1085,6 +1086,9 @@ const StoryMissionTab = () => {
                   </p>
                 </div>
               </div>
+
+              {/* TTS Settings */}
+              <TTSSettingsPanel compact={true} />
 
               {/* Mission Progress */}
               <div className="flex items-center space-x-3">

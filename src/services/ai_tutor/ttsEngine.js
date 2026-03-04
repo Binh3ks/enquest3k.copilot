@@ -84,6 +84,7 @@ export const encodeWAV = injectWavHeader;
 // ============================================
 
 import { proxyTTS, proxyGoogleTTS, proxyDeepgramTTS } from '../aiProxy.js';
+import useTTSStore from '../../stores/useTTSStore.js';
 
 // Audio cache for repeated phrases (in-memory)
 const audioCache = new Map();
@@ -298,16 +299,19 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     r2CacheEnabled: R2_CACHE_CONFIG.enabled
   });
 
+  // 🔥 Get user preferences from TTS settings store
+  const ttsStore = useTTSStore.getState();
+  const userVoice = ttsStore.getVoiceConfig(); // User-selected voice
+  const userSpeed = speed || ttsStore.getSpeedValue(mode); // Custom speed or store preference
+
   // 🔥 STEP 1: Check in-memory cache first (instant)
-  const memoryCacheKey = `${cleanedText.substring(0, 100)}_${preferredLayer}`;
-  // Determine playback speed: custom > mode-specific > default (1.0)
-  const playbackSpeed = speed || (TTS_CONFIG.deepgram.speed && TTS_CONFIG.deepgram.speed[mode]) || 1.0;
+  const memoryCacheKey = `${cleanedText.substring(0, 100)}_${preferredLayer}_${userVoice}`;
   
   if (audioCache.has(memoryCacheKey)) {
     console.log('✅ TTS: Using in-memory cached audio');
     const cachedUrl = audioCache.get(memoryCacheKey);
     if (autoPlay) {
-      await playAudio(cachedUrl, playbackSpeed);
+      await playAudio(cachedUrl, userSpeed);
     }
     isSpeaking = false; // 🔥 Release lock for cached audio
     return {
@@ -328,7 +332,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     audioCache.set(memoryCacheKey, r2CachedUrl);
     
     if (autoPlay) {
-      await playAudio(r2CachedUrl, playbackSpeed);
+      await playAudio(r2CachedUrl, userSpeed);
     }
     isSpeaking = false; // 🔥 Release lock for cached audio
     return {
@@ -358,7 +362,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
       switch (layer) {
         case 'deepgram':
           if (TTS_CONFIG.deepgram.enabled) {
-            audioUrl = await callDeepgramTTS(cleanedText); // 🎯 Deepgram Aura TTS (primary)
+            audioUrl = await callDeepgramTTS(cleanedText, userVoice); // 🎯 Deepgram Aura TTS with user-selected voice
           }
           break;
         
@@ -402,7 +406,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
         
         // Auto-play if requested
         if (autoPlay) {
-          await playAudio(audioUrl, playbackSpeed);
+          await playAudio(audioUrl, userSpeed);
         }
 
         isSpeaking = false; // 🔥 Release lock on success
@@ -437,11 +441,12 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 // LAYER 1: DEEPGRAM AURA TTS (PRIMARY)
 // ============================================
 
-async function callDeepgramTTS(text) {
+async function callDeepgramTTS(text, voice = 'aura-asteria-en') {
   // Proxied through mcp-server - Deepgram key not in browser bundle
   try {
+    console.log(`🎤 Deepgram TTS using voice: ${voice}`);
     const blob = await proxyDeepgramTTS(text, {
-      voice: TTS_CONFIG.deepgram.voice // 'aura-asteria-en' (warm, friendly female)
+      voice: voice // User-selected voice from TTS settings
     });
     if (!blob) throw new Error("Deepgram TTS proxy returned null");
     return URL.createObjectURL(blob);
