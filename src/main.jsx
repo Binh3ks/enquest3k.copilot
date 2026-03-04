@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import FloatingUpgradeWrapper from './components/subscription/FloatingUpgradeWrapper';
 import SuperAdminLauncher from './components/subscription/SuperAdminLauncher';
+import TeacherLauncher from './components/teacher/TeacherLauncher';
 import { TTSPreload } from './services/ttsPreload';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <>
       <App />
       <SuperAdminLauncher />
+      <TeacherLauncher />
       <FloatingUpgradeWrapper />
     </>
   </React.StrictMode>,
