@@ -26,45 +26,42 @@ BACKUP_FILENAME="SNAPSHOT_${TIMESTAMP}.zip"
 # Excludes for backup (chỉ backup CODE - không backup file rác, temp, media, env)
 EXCLUDES=(
   # Dependencies & lock files
-  "node_modules/*"
-  "mcp-server/node_modules/*"
+  "node_modules*"
   "package-lock.json"
-  "mcp-server/package-lock.json"
   "yarn.lock"
   "pnpm-lock.yaml"
   
-  # Build outputs & cache
-  "dist/*"
-  "build/*"
-  ".vite/*"
-  ".next/*"
-  ".nuxt/*"
-  ".turbo/*"
-  ".cache/*"
-  ".temp/*"
-  "tmp/*"
+  # Build outputs & cache (QUAN TRỌNG: dùng wildcard* thay vì /* để exclude recursively)
+  "dist*"
+  "build*"
+  ".vite*"
+  ".next*"
+  ".nuxt*"
+  ".turbo*"
+  ".cache*"
+  ".temp*"
+  "tmp*"
   ".eslintcache"
   "*.tsbuildinfo"
   
   # Git & version control
-  ".git/*"
-  ".gitignore.bak"
+  ".git*"
   
   # Test & coverage
-  "coverage/*"
-  "test-results/*"
-  ".nyc_output/*"
+  "coverage*"
+  "test-results*"
+  ".nyc_output*"
   
   # IDEs & editors
-  ".vscode/*"
-  ".idea/*"
+  ".vscode*"
+  ".idea*"
   "*.swp"
   "*.swo"
   "*~"
   
   # Logs
   "*.log"
-  "logs/*"
+  "logs*"
   "npm-debug.log*"
   "yarn-debug.log*"
   "yarn-error.log*"
@@ -75,31 +72,38 @@ EXCLUDES=(
   "desktop.ini"
   
   # Media files (hình ảnh + âm thanh - served from CDN/R2)
-  "public/*"
-  "assets/audio/*"
-  "assets/images/*"
+  "public*"
+  "assets/audio*"
+  "assets/images*"
   
   # Environment & secrets (KHÔNG backup - cần cấu hình lại sau restore)
-  ".env"
-  ".env.local"
-  ".env.*.local"
+  ".env*"
   "*.key"
   "*.pem"
   "*.crt"
   
-  # Wrangler local dev (Cloudflare Workers emulator - 278MB temp data)
+  # Wrangler local dev (Cloudflare Workers emulator)
   ".wrangler*"
-  "cloudflare-worker/.wrangler*"
   
   # Old backups & debris
-  "Backup/*"
-  ".debris/*"
+  "Backup*"
+  "_backups*"
+  "HF_DEPLOYMENT_PACKAGE*"
+  "MASS_Final*"
+  "Artifacts*"
+  "Production_FINAL*"
+  ".debris*"
   "*_BACKUP_*"
   "*_OLD_*"
   
   # Database files
   "*.sqlite*"
   "*.db"
+  
+  # Binaries
+  "bin*"
+  "__pycache__*"
+  "esl_server*"
 )
 
 # What we restore back into project from snapshot
