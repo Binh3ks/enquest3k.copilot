@@ -225,8 +225,7 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                             <input value={newUserPass} onChange={e=>setNewUserPass(e.target.value)} placeholder="Password" type="password" className="p-3 border rounded-lg bg-white font-bold col-span-1"/>
                             <select value={newUserRole} onChange={e=>setNewUserRole(e.target.value)} className="p-3 border rounded-lg bg-white font-bold col-span-1">
                                 <option value="student">Student</option>
-                                <option value="admin">Admin (Teacher)</option>
-                                <option value="teacher">Teacher (View Only)</option>
+                                <option value="teacher">Teacher</option>
                             </select>
                             <select value={newUserPlan} onChange={e=>setNewUserPlan(e.target.value)} className="p-3 border rounded-lg bg-white font-bold col-span-1">
                                 <option value="free">Free</option>
