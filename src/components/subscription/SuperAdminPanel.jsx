@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Shield, Users, DollarSign, Settings, Save, CheckCircle, Trash2, UserPlus, Image as ImageIcon, Upload } from 'lucide-react';
-import { getAllUsers, adminCreateUser, adminDeleteUser, fetchGlobalAvatars, addGlobalAvatarAPI, deleteGlobalAvatarAPI } from '../../services/api';
+import { X, Shield, Users, DollarSign, Settings, Save, CheckCircle, Trash2, UserPlus, Image as ImageIcon, Upload, UserCheck, Link } from 'lucide-react';
+import { getAllUsers, adminCreateUser, adminDeleteUser, fetchGlobalAvatars, addGlobalAvatarAPI, deleteGlobalAvatarAPI, teacherAPI } from '../../services/api';
 import { getSystemStatus, setSystemStatus } from '../../services/SubscriptionManager';
 import { getPaymentRequests, approvePayment } from '../../utils/userStorage';
 
@@ -10,6 +10,7 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
   const [allUsers, setAllUsers] = useState([]);
   const [avatars, setAvatars] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [assignments, setAssignments] = useState([]);
   
   // System Config
   const [isPaidMode, setIsPaidMode] = useState(true);
@@ -40,6 +41,14 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
           // Tải người dùng từ Backend
           const response = await getAllUsers();
           setAllUsers(response.data);
+          
+          // Load teacher assignments
+          try {
+            const assignRes = await teacherAPI.getMyStudents();
+            setAssignments(assignRes.data || []);
+          } catch (e) {
+            console.log('Not a teacher or no assignments');
+          }
           
           const sysConfig = localStorage.getItem('engquest_sys_config');
           if (sysConfig) {
@@ -178,6 +187,7 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
           <div className="w-64 bg-gray-50 border-r border-gray-200 p-4 space-y-2 shrink-0">
             <button onClick={() => setActiveTab('billing')} className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm flex items-center gap-3 ${activeTab==='billing'?'bg-indigo-600 text-white':'hover:bg-gray-100'}`}><DollarSign size={18}/> Billing Requests {requests.filter(r=>r.status==='pending').length > 0 && <span className="ml-auto bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full">{requests.filter(r=>r.status==='pending').length}</span>}</button>
             <button onClick={() => setActiveTab('users')} className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm flex items-center gap-3 ${activeTab==='users'?'bg-indigo-600 text-white':'hover:bg-gray-100'}`}><Users size={18}/> Manage Users</button>
+            <button onClick={() => setActiveTab('assignments')} className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm flex items-center gap-3 ${activeTab==='assignments'?'bg-indigo-600 text-white':'hover:bg-gray-100'}`}><UserCheck size={18}/> Teacher Assignments</button>
             <button onClick={() => setActiveTab('avatars')} className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm flex items-center gap-3 ${activeTab==='avatars'?'bg-indigo-600 text-white':'hover:bg-gray-100'}`}><ImageIcon size={18}/> Global Avatars</button>
             <button onClick={() => setActiveTab('system')} className={`w-full text-left px-4 py-3 rounded-xl font-bold text-sm flex items-center gap-3 ${activeTab==='system'?'bg-indigo-600 text-white':'hover:bg-gray-100'}`}><Settings size={18}/> System Config</button>
           </div>
@@ -256,6 +266,45 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                 </div>
             )}
 
+            {/* TEACHER ASSIGNMENTS TAB */}
+            {activeTab === 'assignments' && (
+                <div className="space-y-8">
+                    <div className="p-6 bg-blue-50 border border-blue-100 rounded-xl">
+                        <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2"><UserCheck size={20}/> Assign Student to Teacher</h3>
+                        <AssignmentManager 
+                            allUsers={allUsers} 
+                            assignments={assignments}
+                            onAssign={async (teacherId, studentId) => {
+                                setLoading(true);
+                                try {
+                                    await teacherAPI.assignStudent(teacherId, studentId);
+                                    alert('Student assigned successfully!');
+                                    refreshData();
+                                } catch (error) {
+                                    alert(error.response?.data?.message || 'Failed to assign');
+                                } finally {
+                                    setLoading(false);
+                                }
+                            }}
+                            onUnassign={async (studentId) => {
+                                if (confirm('Remove this assignment?')) {
+                                    setLoading(true);
+                                    try {
+                                        await teacherAPI.unassignStudent(studentId);
+                                        alert('Assignment removed');
+                                        refreshData();
+                                    } catch (error) {
+                                        alert('Failed to unassign');
+                                    } finally {
+                                        setLoading(false);
+                                    }
+                                }
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
+
             {/* AVATARS TAB (NEW) */}
             {activeTab === 'avatars' && (
                 <div className="space-y-6">
@@ -299,4 +348,146 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
     </div>
   );
 };
+
+// ============================================================================
+// AssignmentManager Component
+// ============================================================================
+const AssignmentManager = ({ allUsers, assignments, onAssign, onUnassign }) => {
+  const [selectedTeacher, setSelectedTeacher] = useState('');
+  const [selectedStudent, setSelectedStudent] = useState('');
+
+  const teachers = allUsers.filter(u => u.role === 'teacher');
+  const students = allUsers.filter(u => u.role === 'student');
+  
+  // Get unassigned students
+  const assignedStudentIds = new Set(assignments.map(a => a.student_id));
+  const unassignedStudents = students.filter(s => !assignedStudentIds.has(s.id));
+
+  const handleAssignClick = () => {
+    if (!selectedTeacher || !selectedStudent) {
+      alert('Please select both teacher and student');
+      return;
+    }
+    onAssign(parseInt(selectedTeacher), parseInt(selectedStudent));
+    setSelectedTeacher('');
+    setSelectedStudent('');
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Assignment Form */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <select 
+          value={selectedTeacher} 
+          onChange={e => setSelectedTeacher(e.target.value)}
+          className="p-3 border rounded-lg bg-white font-bold"
+        >
+          <option value="">Select Teacher</option>
+          {teachers.map(t => (
+            <option key={t.id} value={t.id}>{t.username}</option>
+          ))}
+        </select>
+
+        <select 
+          value={selectedStudent} 
+          onChange={e => setSelectedStudent(e.target.value)}
+          className="p-3 border rounded-lg bg-white font-bold"
+        >
+          <option value="">Select Student</option>
+          {unassignedStudents.map(s => (
+            <option key={s.id} value={s.id}>{s.username}</option>
+          ))}
+        </select>
+
+        <button 
+          onClick={handleAssignClick}
+          className="bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 shadow-md flex items-center justify-center gap-2"
+        >
+          <Link size={16}/> Assign
+        </button>
+      </div>
+
+      {/* Current Assignments Table */}
+      <div>
+        <h4 className="text-md font-bold text-slate-700 mb-3">Current Assignments ({assignments.length})</h4>
+        
+        {assignments.length === 0 ? (
+          <p className="text-slate-400 italic bg-slate-50 p-8 rounded-xl text-center">No assignments yet</p>
+        ) : (
+          <div className="border rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-slate-100 text-slate-500 uppercase">
+                <tr>
+                  <th className="p-3">Student</th>
+                  <th className="p-3">Assigned To</th>
+                  <th className="p-3">Week</th>
+                  <th className="p-3">Last Active</th>
+                  <th className="p-3 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {assignments.map(assignment => {
+                  const teacher = allUsers.find(u => u.id === assignment.teacher_id);
+                  const daysInactive = Math.floor(assignment.days_inactive || 0);
+                  const isInactive = daysInactive > 3;
+                  
+                  return (
+                    <tr key={assignment.assignment_id} className={`border-t hover:bg-slate-50 ${isInactive ? 'bg-red-50' : ''}`}>
+                      <td className="p-3">
+                        <div className="flex items-center gap-2">
+                          {assignment.avatar_url && (
+                            <img src={assignment.avatar_url} className="w-8 h-8 rounded-full" alt="" />
+                          )}
+                          <div>
+                            <p className="font-bold">{assignment.student_name}</p>
+                            {isInactive && (
+                              <p className="text-xs text-red-600">⚠️ Inactive {daysInactive}d</p>
+                            )}
+                          </div>
+                        </div>
+                      </td>
+                      <td className="p-3">
+                        <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">
+                          {teacher?.username || 'Unknown'}
+                        </span>
+                      </td>
+                      <td className="p-3">
+                        <span className="font-mono">Week {assignment.current_week || 1}</span>
+                      </td>
+                      <td className="p-3 text-sm text-slate-600">
+                        {assignment.last_active ? new Date(assignment.last_active).toLocaleDateString() : 'Never'}
+                      </td>
+                      <td className="p-3 text-right">
+                        <button 
+                          onClick={() => onUnassign(assignment.student_id)}
+                          className="text-rose-500 hover:text-rose-700 p-2"
+                          title="Remove assignment"
+                        >
+                          <X size={16}/>
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+
+      {/* Unassigned Students Alert */}
+      {unassignedStudents.length > 0 && (
+        <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <p className="text-sm font-bold text-yellow-800">
+            ⚠️ {unassignedStudents.length} unassigned student{unassignedStudents.length > 1 ? 's' : ''}: 
+            <span className="ml-2 font-normal">
+              {unassignedStudents.map(s => s.username).join(', ')}
+            </span>
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default SuperAdminPanel;

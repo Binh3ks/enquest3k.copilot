@@ -124,4 +124,38 @@ export const addGlobalAvatarAPI = (url) =>
 export const deleteGlobalAvatarAPI = (id) =>
   apiClient.delete(`/admin/global-avatars/${id}`);
 
+// TEACHER-STUDENT SYSTEM
+export const teacherAPI = {
+  // Assignments (admin only)
+  assignStudent: (teacherId, studentId, notes) =>
+    apiClient.post('/teacher/assign', { teacherId, studentId, notes }),
+  
+  unassignStudent: (studentId) =>
+    apiClient.delete(`/teacher/assign/${studentId}`),
+  
+  // Teacher views
+  getMyStudents: () =>
+    apiClient.get('/teacher/my-students'),
+  
+  getStudentDetail: (studentId) =>
+    apiClient.get(`/teacher/student/${studentId}/detail`),
+  
+  // Messaging
+  sendMessage: (toUserId, message, subject) =>
+    apiClient.post('/teacher/message', { toUserId, message, subject }),
+  
+  getInbox: () =>
+    apiClient.get('/teacher/messages/inbox'),
+  
+  markMessageRead: (messageId) =>
+    apiClient.put(`/teacher/messages/${messageId}/read`),
+  
+  getUnreadCount: () =>
+    apiClient.get('/teacher/messages/unread-count'),
+  
+  // Activity logging
+  logActivity: (activityType, weekId, stationType, metadata) =>
+    apiClient.post('/teacher/log-activity', { activityType, weekId, stationType, metadata })
+};
+
 export default apiClient;
