@@ -1,5 +1,5 @@
-import { BookOpen, MessageCircle, Mic, MessageSquare, X, Lock, Volume2 } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { BookOpen, MessageCircle, Mic, MessageSquare, X, Lock } from 'lucide-react';
+import { useState } from 'react';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useLocation } from 'react-router-dom';
 import StoryMissionTab from '../tabs/StoryMissionTab';
@@ -21,50 +21,6 @@ const TutorWindow = () => {
   
   // 🔒 Debate unlocks at week 20
   const isDebateUnlocked = weekNumber >= 20;
-
-  // ⏩ Speed selector (1.0 → 0.95 → ... → 0.70 → back to 1.0)
-  const SPEEDS = [1.0, 0.95, 0.90, 0.85, 0.80, 0.75, 0.70];
-  const [playbackSpeed, setPlaybackSpeed] = useState(
-    () => parseFloat(localStorage.getItem('tts_speed') || '1.0')
-  );
-  const handleSpeedClick = () => {
-    const currentIdx = SPEEDS.findIndex(s => Math.abs(s - playbackSpeed) < 0.001);
-    const nextIdx = currentIdx === -1 || currentIdx === SPEEDS.length - 1 ? 0 : currentIdx + 1;
-    const next = SPEEDS[nextIdx];
-    setPlaybackSpeed(next);
-    localStorage.setItem('tts_speed', next.toString());
-  };
-
-  // 🎤 Voice selector
-  const VOICES = [
-    { id: 'aura-luna-en',    label: '🌙 Luna',    desc: 'Nhẹ nhàng, ấm áp' },
-    { id: 'aura-asteria-en', label: '⭐ Asteria', desc: 'Tự nhiên, diễn cảm' },
-    { id: 'aura-stella-en',  label: '✨ Stella',  desc: 'Rõ ràng, sắc nét' },
-    { id: 'aura-athena-en',  label: '🏛️ Athena',  desc: 'Ấm, giọng Anh' },
-  ];
-  const [selectedVoice, setSelectedVoice] = useState(
-    () => localStorage.getItem('tts_voice') || 'aura-luna-en'
-  );
-  const [showVoicePicker, setShowVoicePicker] = useState(false);
-  const voicePickerRef = useRef(null);
-
-  const handleVoiceChange = (voiceId) => {
-    setSelectedVoice(voiceId);
-    localStorage.setItem('tts_voice', voiceId);
-    setShowVoicePicker(false);
-  };
-
-  // Close picker on outside click
-  useEffect(() => {
-    if (!showVoicePicker) return;
-    const handler = (e) => {
-      if (voicePickerRef.current && !voicePickerRef.current.contains(e.target)) {
-        setShowVoicePicker(false);
-      }
-    };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, [showVoicePicker]);
 
   const tabs = [
     { id: 'story', label: 'Story', icon: BookOpen },
@@ -107,51 +63,6 @@ const TutorWindow = () => {
               <p className="text-xs text-white/80">Your AI English Coach</p>
             </div>
           </div>
-
-          {/* Speed + Voice Controls */}
-          <div className="flex items-center gap-2 mr-8">
-
-          {/* Speed Button */}
-          <button
-            onClick={handleSpeedClick}
-            className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white/20 hover:bg-white/30 text-white text-xs font-medium transition-all"
-            title={`Tốc độ phát: click để thay đổi (${SPEEDS.join(' → ')})`}
-          >
-            <span className="font-mono">{playbackSpeed.toFixed(2)}x</span>
-          </button>
-
-          {/* Voice Picker */}
-          <div className="relative" ref={voicePickerRef}>
-            <button
-              onClick={() => setShowVoicePicker(v => !v)}
-              className="flex items-center gap-1 px-2 py-1 rounded-lg bg-white/20 hover:bg-white/30 text-white text-xs font-medium transition-all"
-              title="Chọn giọng đọc"
-            >
-              <Volume2 size={12} />
-              <span>{VOICES.find(v => v.id === selectedVoice)?.label || '🌙 Luna'}</span>
-            </button>
-
-            {showVoicePicker && (
-              <div className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-xl border border-gray-100 z-50 min-w-[180px] overflow-hidden">
-                <div className="px-3 py-2 bg-purple-50 border-b border-gray-100">
-                  <p className="text-xs font-bold text-purple-700">🎤 Chọn giọng Ms. Nova</p>
-                </div>
-                {VOICES.map(voice => (
-                  <button
-                    key={voice.id}
-                    onClick={() => handleVoiceChange(voice.id)}
-                    className={`w-full text-left px-3 py-2 text-sm hover:bg-purple-50 transition-colors flex items-center justify-between gap-2 ${
-                      selectedVoice === voice.id ? 'bg-purple-100 font-semibold text-purple-700' : 'text-gray-700'
-                    }`}
-                  >
-                    <span>{voice.label}</span>
-                    <span className="text-xs text-gray-400">{voice.desc}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-          </div>{/* end controls wrapper */}
         </div>{/* end justify-between */}
 
         {/* Tab Navigation */}

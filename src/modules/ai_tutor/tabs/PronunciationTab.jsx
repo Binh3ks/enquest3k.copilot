@@ -162,12 +162,16 @@ const PronunciationTab = () => {
   const speakWord = async (text) => {
     console.log('🔊 Speaking:', text);
     
-    // 🔥 PRIORITY 1: Try Google Cloud TTS first (high quality)
+    // 🔥 Fix: Add punctuation to single words to prevent audio cut-off
+    const isSingleWord = !text.trim().includes(' ');
+    const textWithPunctuation = isSingleWord ? `${text}.` : text;
+    
+    // 🔥 PRIORITY 1: Try TTS with full fallback chain
     try {
-      await textToSpeech(text, {
+      await textToSpeech(textWithPunctuation, {
         autoPlay: true,
         preferredLayer: 'auto', // 🔥 Use full fallback chain (Deepgram → Google → OpenAI → Browser)
-        mode: 'pronunciation' // 🎯 Normal speed (1.0x) for clear pronunciation practice
+        mode: 'pronunciation' // 🎯 Slower speed for clear pronunciation practice
       });
       console.log('✅ TTS succeeded');
       return; // Success - exit early

@@ -6,7 +6,7 @@ import { BookOpen, Target, CheckCircle2, Loader2, Volume2, RotateCcw } from 'luc
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import { NovaEngine } from '../../../services/ai_tutor/novaEngine';
-import { VoiceService } from '../../../services/voiceService';
+import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
@@ -367,9 +367,13 @@ const StoryMissionTab = () => {
       setMissionStatus('started');
       console.log('✅ Message added, mission status set to started');
       
-      // 🔊 Play opening message with TTS - INSTANT MODE for better UX
+      // 🔊 Play opening message with TTS
       try {
-        await VoiceService.speak(openingLine, 'ai_story', null, null, 'advanced', true); // ⚡ instant=true
+        await textToSpeech(openingLine, {
+          autoPlay: true,
+          mode: 'conversation',
+          preferredLayer: 'auto'
+        });
         console.log('🔊 TTS played successfully');
       } catch (error) {
         console.error('❌ TTS error for opening message:', error);
@@ -600,10 +604,14 @@ const StoryMissionTab = () => {
         };
         addMessage('story', aiMsg);  // 🔥 FIX: Use addMessage helper, not setMessages!
         
-        // TTS - INSTANT MODE: Browser TTS plays immediately, Kokoro prefetches in background
+        // TTS - Play AI response
         if (responseText) {
           try {
-            await VoiceService.speak(responseText, 'ai_story', null, null, 'advanced', true); // ⚡ instant=true
+            await textToSpeech(responseText, {
+              autoPlay: true,
+              mode: 'conversation',
+              preferredLayer: 'auto'
+            });
             console.log('🔊 TTS played successfully');
           } catch (ttsError) {
             console.warn('⚠️ TTS failed:', ttsError.message);
@@ -844,9 +852,13 @@ const StoryMissionTab = () => {
       console.log('🤖 Nova says:', responseText);
       console.log('💬 === END SPEECH ===\n');
       
-      // Auto-play TTS if enabled - INSTANT MODE
+      // Auto-play TTS if enabled
       if (autoPlayEnabled) {
-        await VoiceService.speak(responseText, 'ai_story', null, null, 'advanced', true); // ⚡ instant=true
+        await textToSpeech(responseText, {
+          autoPlay: true,
+          mode: 'conversation',
+          preferredLayer: 'auto'
+        });
       }
 
       // 🔥 Check if this is a closing turn (only if objective type is "termination")
