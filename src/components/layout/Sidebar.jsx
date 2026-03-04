@@ -121,21 +121,29 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
             <RotateCcw size={10} /> {learningMode === 'easy' ? 'EASY MODE' : 'ADVANCED'}
           </button>
         </div>
+      </div>
+      <div className="relative z-10">
+        <div className="flex justify-between text-[10px] uppercase font-black text-slate-400 mb-2 tracking-widest">
           <span>Learning Week {weekId}</span>
           <div className="flex items-center gap-1">
             <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
             <span>{currentWeekStars.totalStars}/{currentWeekStars.maxStars}</span>
           </div>
-        
-      </div>
-      <div className="relative z-10">
-        <div className="flex justify-between text-[10px] uppercase font-black text-slate-400 mb-2 tracking-widest"><span>Learning Week {weekId}</span><span>{weekProgress}%</span></div>
+        </div>
         <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200 shadow-inner"><div className="h-full bg-indigo-500 transition-all duration-1000" style={{ width: `${weekProgress}%` }}></div></div>
       </div>
     </div>
-stars = getWeekStars(w.id);
+
+    <div className="flex-1 overflow-y-auto px-5 space-y-1.5 custom-scrollbar pb-6">
+      <Link to={`/week/${weekId}/review`} className={`flex items-center p-4 rounded-[24px] transition-all shadow-sm group mb-6 ${tabKey === 'review' ? 'bg-orange-500 text-white shadow-orange-200' : 'bg-orange-50 border-2 border-orange-100 text-orange-600 hover:bg-orange-100'}`}>
+          <div className={`p-2.5 rounded-2xl mr-4 ${tabKey === 'review' ? 'bg-white/20' : 'bg-white shadow-sm'}`}><Flame size={20} /></div>
+          <span className="text-sm font-black uppercase italic tracking-tighter">Review Dashboard</span>
+      </Link>
+      <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-3 ml-2">Weekly Journey</p>
+      {weekIndex.map(w => {
+        const progress = getWeekStationProgress(w.id);
+        const stars = getWeekStars(w.id);
         const isComplete = progress === 100;
-        const weekStarScore = calculateStars(progress);
         
         return (
           <button key={w.id} onClick={() => handleWeekClick(w.id)} className={`relative w-full text-left flex items-center p-3.5 rounded-[20px] transition-all ${w.id === weekId ? 'bg-indigo-600 text-white shadow-xl scale-[1.02]' : 'text-slate-600 border-2 border-transparent hover:bg-slate-50'}`}>
@@ -156,15 +164,6 @@ stars = getWeekStars(w.id);
                     <Star className="w-2.5 h-2.5 fill-white" />
                     <span>{stars.totalStars}/{stars.maxStars}</span>
                   </>
-              <div className={`absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-[8px] font-black text-white shadow-md ${
-                isComplete 
-                  ? 'bg-green-500' 
-                  : 'bg-gradient-to-br from-yellow-400 to-orange-500'
-              }`}>
-                {isComplete ? (
-                  <CheckCircle className="w-4 h-4" />
-                ) : (
-                  `${progress}%`
                 )}
               </div>
             )}
