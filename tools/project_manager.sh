@@ -88,7 +88,8 @@ EXCLUDES=(
   "*.crt"
   
   # Wrangler local dev (Cloudflare Workers emulator - 278MB temp data)
-  ".wrangler/*"
+  ".wrangler*"
+  "cloudflare-worker/.wrangler*"
   
   # Old backups & debris
   "Backup/*"
@@ -97,9 +98,7 @@ EXCLUDES=(
   "*_OLD_*"
   
   # Database files
-  "*.sqlite"
-  "*.sqlite-shm"
-  "*.sqlite-wal"
+  "*.sqlite*"
   "*.db"
 )
 
