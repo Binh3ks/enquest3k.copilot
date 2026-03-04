@@ -27,6 +27,17 @@ class TTSCacheService {
   constructor() {
     this.db = null;
     this.initPromise = this.initDB();
+    this.pendingTransactions = 0;
+  }
+
+  /**
+   * Check if error is benign (connection closing during concurrent operations)
+   */
+  isConnectionClosingError(error) {
+    return error && (
+      error.message?.includes('connection is closing') ||
+      error.name === 'InvalidStateError'
+    );
   }
 
   /**
@@ -136,11 +147,17 @@ class TTSCacheService {
         };
         
         request.onerror = () => {
-          console.error('[TTSCache] Get error:', request.error);
+          // Only log non-benign errors
+          if (!this.isConnectionClosingError(request.error)) {
+            console.error('[TTSCache] Get error:', request.error);
+          }
           resolve(null);
         };
       } catch (error) {
-        console.error('[TTSCache] Get exception:', error);
+        // Silent fail for connection closing errors (race condition)
+        if (!this.isConnectionClosingError(error)) {
+          console.error('[TTSCache] Get exception:', error);
+        }
         resolve(null);
       }
     });
@@ -178,11 +195,17 @@ class TTSCacheService {
         };
         
         request.onerror = () => {
-          console.error('[TTSCache] Set error:', request.error);
+          // Only log non-benign errors
+          if (!this.isConnectionClosingError(request.error)) {
+            console.error('[TTSCache] Set error:', request.error);
+          }
           resolve(false);
         };
       } catch (error) {
-        console.error('[TTSCache] Set exception:', error);
+        // Silent fail for connection closing errors (race condition)
+        if (!this.isConnectionClosingError(error)) {
+          console.error('[TTSCache] Set exception:', error);
+        }
         resolve(false);
       }
     });
