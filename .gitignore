@@ -30,3 +30,6 @@ dist-ssr
 public/audio/
 public/audio_cache/
 public/audio copy/
+
+# Wrangler local development (Cloudflare Workers emulator)
+.wrangler/

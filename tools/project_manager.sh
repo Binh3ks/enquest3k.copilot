@@ -23,24 +23,84 @@ BACKUP_DIR="/Volumes/MY DOCUMENT/Apps/_BACKUPS"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 BACKUP_FILENAME="SNAPSHOT_${TIMESTAMP}.zip"
 
-# Excludes for backup (add/remove as you like)
+# Excludes for backup (chỉ backup CODE - không backup file rác, temp, media, env)
 EXCLUDES=(
+  # Dependencies & lock files
   "node_modules/*"
   "mcp-server/node_modules/*"
-  ".git/*"
-  ".debris/*"
-  ".DS_Store"
-  "dist/*"
-  "build/*"
-  "coverage/*"
-  ".vscode/*"
-  ".idea/*"
-  "*.log"
   "package-lock.json"
   "mcp-server/package-lock.json"
   "yarn.lock"
   "pnpm-lock.yaml"
+  
+  # Build outputs & cache
+  "dist/*"
+  "build/*"
+  ".vite/*"
+  ".next/*"
+  ".nuxt/*"
+  ".turbo/*"
+  ".cache/*"
+  ".temp/*"
+  "tmp/*"
+  ".eslintcache"
+  "*.tsbuildinfo"
+  
+  # Git & version control
+  ".git/*"
+  ".gitignore.bak"
+  
+  # Test & coverage
+  "coverage/*"
+  "test-results/*"
+  ".nyc_output/*"
+  
+  # IDEs & editors
+  ".vscode/*"
+  ".idea/*"
+  "*.swp"
+  "*.swo"
+  "*~"
+  
+  # Logs
+  "*.log"
+  "logs/*"
+  "npm-debug.log*"
+  "yarn-debug.log*"
+  "yarn-error.log*"
+  
+  # OS files
+  ".DS_Store"
+  "Thumbs.db"
+  "desktop.ini"
+  
+  # Media files (hình ảnh + âm thanh - served from CDN/R2)
   "public/*"
+  "assets/audio/*"
+  "assets/images/*"
+  
+  # Environment & secrets (KHÔNG backup - cần cấu hình lại sau restore)
+  ".env"
+  ".env.local"
+  ".env.*.local"
+  "*.key"
+  "*.pem"
+  "*.crt"
+  
+  # Wrangler local dev (Cloudflare Workers emulator - 278MB temp data)
+  ".wrangler/*"
+  
+  # Old backups & debris
+  "Backup/*"
+  ".debris/*"
+  "*_BACKUP_*"
+  "*_OLD_*"
+  
+  # Database files
+  "*.sqlite"
+  "*.sqlite-shm"
+  "*.sqlite-wal"
+  "*.db"
 )
 
 # What we restore back into project from snapshot
