@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { X, Flame, Edit2, RotateCcw, ShieldCheck, CheckCircle, ArrowRight } from 'lucide-react';
+import { X, Flame, Edit2, RotateCcw, ShieldCheck, CheckCircle, ArrowRight, Star } from 'lucide-react';
 import weekIndex from '../../data/weeks/index';
 import { useUserStore } from '../../stores/useUserStore'; // Import the store
+import { calculateStars } from '../../utils/scoringSystem';
 
 const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggleMode, tabKey, setIsProfileModalOpen, setIsSidebarOpen }) => {
   const navigate = useNavigate();
@@ -11,9 +12,11 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
 
   // Get progress directly from the store - using a selector to minimize re-renders
   const weekCompletion = useUserStore(state => state.weekCompletion);
+  const weekStars = useUserStore(state => state.weekStars);
   const progressCache = useUserStore(state => state.progressCache);
 
   const weekProgress = useMemo(() => weekCompletion[weekId] || 0, [weekCompletion, weekId]);
+  const currentWeekStars = useMemo(() => weekStars[weekId] || { totalStars: 0, maxStars: 0 }, [weekStars, weekId]);
 
   // Get last accessed week/station from user progress
   const lastWeek = currentUser?.lastWeek || weekId;
@@ -24,6 +27,11 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
   const getWeekStationProgress = useMemo(() => {
     return (weekNumber) => weekCompletion[weekNumber] || 0;
   }, [weekCompletion]);
+
+  // Get stars for each week
+  const getWeekStars = useMemo(() => {
+    return (weekNumber) => weekStars[weekNumber] || { totalStars: 0, maxStars: 0, percentage: 0 };
+  }, [weekStars]);
 
   const handleWeekClick = (targetWeek) => {
     // Students: weeks >=6 require previous week's SRS completed
@@ -76,9 +84,12 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
           <div>
             <div className="text-2xl font-black text-white mb-1">
               Week {lastWeek}
-            </div>
-            <div className="text-sm text-white/90 capitalize">
-              {lastStation.replace(/_/g, ' ')}
+            </div>3">
+            <div className="flex items-center gap-1">
+              <Star className="w-5 h-5 text-yellow-300 fill-yellow-300" />
+              <span className="text-xl font-bold text-white">
+                {getWeekStars(lastWeek).totalStars}/{getWeekStars(lastWeek).maxStars}
+              </span>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -110,30 +121,41 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
             <RotateCcw size={10} /> {learningMode === 'easy' ? 'EASY MODE' : 'ADVANCED'}
           </button>
         </div>
+          <span>Learning Week {weekId}</span>
+          <div className="flex items-center gap-1">
+            <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+            <span>{currentWeekStars.totalStars}/{currentWeekStars.maxStars}</span>
+          </div>
+        
       </div>
       <div className="relative z-10">
         <div className="flex justify-between text-[10px] uppercase font-black text-slate-400 mb-2 tracking-widest"><span>Learning Week {weekId}</span><span>{weekProgress}%</span></div>
         <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200 shadow-inner"><div className="h-full bg-indigo-500 transition-all duration-1000" style={{ width: `${weekProgress}%` }}></div></div>
       </div>
     </div>
-
-    <div className="flex-1 overflow-y-auto px-5 space-y-1.5 custom-scrollbar pb-6">
-      <Link to={`/week/${weekId}/review`} className={`flex items-center p-4 rounded-[24px] transition-all shadow-sm group mb-6 ${tabKey === 'review' ? 'bg-orange-500 text-white shadow-orange-200' : 'bg-orange-50 border-2 border-orange-100 text-orange-600 hover:bg-orange-100'}`}>
-          <div className={`p-2.5 rounded-2xl mr-4 ${tabKey === 'review' ? 'bg-white/20' : 'bg-white shadow-sm'}`}><Flame size={20} /></div>
-          <span className="text-sm font-black uppercase italic tracking-tighter">Review Dashboard</span>
-      </Link>
-      <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest mb-3 ml-2">Weekly Journey</p>
-      {weekIndex.map(w => {
-        const progress = getWeekStationProgress(w.id);
+stars = getWeekStars(w.id);
         const isComplete = progress === 100;
+        const weekStarScore = calculateStars(progress);
         
         return (
           <button key={w.id} onClick={() => handleWeekClick(w.id)} className={`relative w-full text-left flex items-center p-3.5 rounded-[20px] transition-all ${w.id === weekId ? 'bg-indigo-600 text-white shadow-xl scale-[1.02]' : 'text-slate-600 border-2 border-transparent hover:bg-slate-50'}`}>
             <div className={`w-8 h-8 rounded-xl flex items-center justify-center mr-4 font-black text-xs ${w.id === weekId ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'}`}>{w.id}</div>
             <span className="text-sm font-bold truncate">{w.title_en}</span>
             
-            {/* Progress Badge - Master Prompt V23 Section 0.1.1.B */}
+            {/* Progress Badge with Stars - Master Prompt V23 Section 0.1.1.B */}
             {progress > 0 && (
+              <div className={`absolute -top-1 -right-1 flex items-center gap-0.5 px-2 py-1 rounded-full text-[9px] font-black text-white shadow-md ${
+                isComplete 
+                  ? 'bg-green-500' 
+                  : 'bg-gradient-to-br from-yellow-400 to-orange-500'
+              }`}>
+                {isComplete ? (
+                  <CheckCircle className="w-3.5 h-3.5" />
+                ) : (
+                  <>
+                    <Star className="w-2.5 h-2.5 fill-white" />
+                    <span>{stars.totalStars}/{stars.maxStars}</span>
+                  </>
               <div className={`absolute -top-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-[8px] font-black text-white shadow-md ${
                 isComplete 
                   ? 'bg-green-500' 

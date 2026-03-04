@@ -229,7 +229,7 @@ App có **2 chế độ** (có thể chuyển bất kỳ lúc nào):
 - **Quay video đọc lại** nội dung đã viết
 - Có gợi ý câu mẫu bên dưới
 
-**2 tabs (Không phải 3!):**
+**2 tabs:**
 
 **Tab 1 - Write** (Viết):
 - Gõ script về chủ đề tuần
@@ -330,7 +330,7 @@ App có **2 chế độ** (có thể chuyển bất kỳ lúc nào):
 - Ghép thẻ tiếng Anh với hình ảnh hoặc nghĩa tiếng Việt
 - Càng nhanh = càng nhiều điểm!
 
-**3 MODES** (không phải 2!):
+**3 MODES**:
 1. **Meaning Mode**: Ghép Word ↔ Definition (tiếng Việt)
 2. **Image Mode**: Ghép Word ↔ Image (hình ảnh)
 3. **Audio Mode** 🔊: Ghép Word (text) ↔ Word (audio only)
