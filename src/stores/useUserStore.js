@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { login as apiLogin, register as apiRegister, updateProfile as apiUpdateProfile, progressAPI } from '../services/api';
-import { calculateWeekStars, getNewlyEarnedBadges } from '../utils/scoringSystem';
 
 // This store manages user authentication, profile, and app-wide settings.
 const useUserStore = create(
@@ -15,8 +14,6 @@ const useUserStore = create(
       // UNIVERSAL PROGRESS SYSTEM STATE
       progressCache: {}, // Structure: { weekId: { stationId: { data, isCompleted, score } } }
       weekCompletion: {}, // Structure: { weekId: percentage }
-      weekStars: {}, // Structure: { weekId: { totalStars, maxStars, percentage } }
-      earnedBadges: [], // Array of badge IDs
 
       // ACTIONS
       
@@ -87,14 +84,7 @@ const useUserStore = create(
        */
       logout: () => {
         // Clear all user-related state. The interceptor will automatically stop sending tokens.
-        set({ 
-          currentUser: null, 
-          token: null, 
-          progressCache: {}, 
-          weekCompletion: {}, 
-          weekStars: {},
-          earnedBadges: []
-        });
+        set({ currentUser: null, token: null, progressCache: {}, weekCompletion: {} });
       },
       
       // This is now a placeholder, as the backend does not support guest login.
@@ -120,48 +110,31 @@ const useUserStore = create(
        * A generic function to directly set the current user in the store.
        */
       setCurrentUser: (user) => {
-        sAlso calculates stars earned for the week.
+        set({ currentUser: user });
+      },
+      
+      // ========== UNIVERSAL PROGRESS SYSTEM ACTIONS ==========
+      
+      /**
+       * Recalculates and updates the overall completion percentage for a given week.
        * @param {number} weekId - The week ID to calculate.
        */
       recalculateWeekCompletion: (weekId) => {
         const weekProgress = get().progressCache[weekId];
         if (!weekProgress) {
-          set(state => ({ 
-            weekCompletion: { ...state.weekCompletion, [weekId]: 0 },
-            weekStars: { ...state.weekStars, [weekId]: { totalStars: 0, maxStars: 0, percentage: 0 } }
-          }));
+          set(state => ({ weekCompletion: { ...state.weekCompletion, [weekId]: 0 } }));
           return;
         }
         
         const stations = Object.values(weekProgress);
         const totalStations = stations.length;
         if (totalStations === 0) {
-          set(state => ({ 
-            weekCompletion: { ...state.weekCompletion, [weekId]: 0 },
-            weekStars: { ...state.weekStars, [weekId]: { totalStars: 0, maxStars: 0, percentage: 0 } }
-          }));
+          set(state => ({ weekCompletion: { ...state.weekCompletion, [weekId]: 0 } }));
           return;
         }
 
         const totalScore = stations.reduce((acc, station) => acc + (station.score || 0), 0);
         const averageCompletion = Math.round(totalScore / totalStations);
-        
-        // Calculate stars for the week
-        const starData = calculateWeekStars(weekProgress);
-        
-        set(state => ({
-          weekCompletion: {
-            ...state.weekCompletion,
-            [weekId]: averageCompletion
-          },
-          weekStars: {
-            ...state.weekStars,
-            [weekId]: starData
-          }
-        }));
-        
-        // Check for newly earned badges
-        get().checkAndAwardBadges(nst averageCompletion = Math.round(totalScore / totalStations);
         
         set(state => ({
           weekCompletion: {
@@ -232,52 +205,7 @@ const useUserStore = create(
        */
       syncProgressToServer: async ({ weekId, stationId, data, isCompleted, score }) => {
         try {
-          const token = get().token;, weekStars: {}, earnedBadges: [] });
-      },
-
-      /**
-       * Check for newly earned badges and award them
-       * Called automatically after progress updates
-       */
-      checkAndAwardBadges: () => {
-        const state = get();
-        const userData = {
-          progressCache: state.progressCache,
-          badges: state.earnedBadges
-        };
-        
-        const newBadges = getNewlyEarnedBadges(userData);
-        
-        if (newBadges.length > 0) {
-          set(state => ({
-            earnedBadges: [...state.earnedBadges, ...newBadges]
-          }));
-          
-          // Log for debugging (you can add toast notification here later)
-          console.log('🎉 New badges earned:', newBadges);
-        }
-      },
-
-      /**
-       * Manually award a badge (for special events/admin)
-       * @param {string} badgeId - Badge identifier to award
-       */
-      awardBadge: (badgeId) => {
-        const currentBadges = get().earnedBadges;
-        if (!currentBadges.includes(badgeId)) {
-          set(state => ({
-            earnedBadges: [...state.earnedBadges, badgeId]
-          }));
-        }
-      },
-
-      /**
-       * Get stars for a specific week
-       * @param {number} weekId - Week ID
-       * @returns {Object} Star data { totalStars, maxStars, percentage }
-       */
-      getWeekStars: (weekId) => {
-        return get().weekStars[weekId] || { totalStars: 0, maxStars: 0, percentage: 0 }
+          const token = get().token;
           const currentUser = get().currentUser;
           if (!token || !currentUser || currentUser.role === 'guest') {
             return;
