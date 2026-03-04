@@ -19,7 +19,9 @@ const TeacherLauncher = () => {
         const response = await teacherAPI.getUnreadCount();
         setUnreadCount(response.data.count || 0);
       } catch (error) {
-        console.error('Failed to fetch unread count:', error);
+        // Silently fail if backend not ready yet
+        console.log('Teacher API not available yet:', error.message);
+        setUnreadCount(0);
       }
     };
 
