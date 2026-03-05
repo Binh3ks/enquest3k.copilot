@@ -1,39 +1,39 @@
 {
   "weekId": 9,
   "theme": "City Sounds & Sights",
-  "grammar_focus": "Adjectives before nouns",
+  "grammar_focus": "Adjectives before nouns (It is a [adjective] [noun])",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
       "priority_search": "English Singsing adjectives song ESL for kids",
-      "backup_search": "adjectives describing words song ESL kids cartoons"
+      "backup_search": "adjectives describing words song kids"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "priority_search": "City Song What do you see in the city ESL kids",
-      "backup_search": "city places song for kids English learning"
+      "priority_search": "English Singsing city places vocabulary song",
+      "backup_search": "city places song kids English learning"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox treasure hunt interior decorator story level 1 ESL for kids",
-      "backup_search": "Vooks treasure hunt interior decorator story read aloud cartoons for kids"
+      "priority_search": "Little Fox city adventure story level 1",
+      "backup_search": "Vooks city story animated read aloud kids"
     },
     {
       "id": 4,
       "purpose": "VOCABULARY",
-      "priority_search": "Little Fox Where is it? song ESL for kids",
-      "backup_search": "Where is it? ESL kids cartoons song"
+      "priority_search": "Little Fox transportation song kids",
+      "backup_search": "city transportation song ESL kids"
     },
     {
       "id": 5,
       "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids Spatial awareness, location for kids",
-      "backup_search": "Spatial awareness, location kids science cartoons"
+      "priority_search": "SciShow Kids cities towns community helpers",
+      "backup_search": "cities and communities kids educational video"
     }
   ],
-  "topic": "Interior Decorator - positioning objects",
-  "science": "Spatial awareness, location"
+  "topic": "City Explorer - describing city scenes",
+  "science": "City places, transportation, urban life"
 }

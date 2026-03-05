@@ -1,39 +1,39 @@
 {
   "weekId": 10,
   "theme": "The Farm Adventure",
-  "grammar_focus": "Contrast with but",
+  "grammar_focus": "Contrast with but (The city is noisy, but the farm is quiet)",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "Farm Animals for Kids Learn about farm animals ESL",
-      "backup_search": "farm animals song for kids English learning"
+      "priority_search": "English Singsing opposites adjectives song",
+      "backup_search": "opposites song kids noisy quiet big small"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "priority_search": "Old MacDonald Had A Farm Nursery Rhymes Super Simple Songs",
-      "backup_search": "Old MacDonald farm song for kids"
+      "priority_search": "English Singsing farm animals song kids",
+      "backup_search": "farm animals song educational kids"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox treasure hunt interior decorator story level 1 ESL for kids",
-      "backup_search": "Vooks treasure hunt interior decorator story read aloud cartoons for kids"
+      "priority_search": "Little Fox farm story level 1 animals",
+      "backup_search": "Vooks farm animals story read aloud kids"
     },
     {
       "id": 4,
       "purpose": "VOCABULARY",
-      "priority_search": "Little Fox Where is it? song ESL for kids",
-      "backup_search": "Where is it? ESL kids cartoons song"
+      "priority_search": "Little Fox Old MacDonald farm song",
+      "backup_search": "farm animals vocabulary song kids"
     },
     {
       "id": 5,
       "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids Spatial awareness, location for kids",
-      "backup_search": "Spatial awareness, location kids science cartoons"
+      "priority_search": "SciShow Kids farms how farms work",
+      "backup_search": "farm animals science kids educational"
     }
   ],
-  "topic": "Interior Decorator - positioning objects",
-  "science": "Spatial awareness, location"
+  "topic": "Farm Tour - comparing city and farm",
+  "science": "Farm animals, countryside, agriculture"
 }
