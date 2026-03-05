@@ -25,6 +25,86 @@ import { validateAIResponse } from './grammarGuard.js';
 import { enforceTalkRatio } from './talkRatioGuard.js';
 
 /**
+ * 🔧 Helper: Extract relevant part of student answer
+ * Instead of using full "my name is Bing", extract just "Bing"
+ * 
+ * @param {string} studentAnswer - Full student response
+ * @param {string} template - Question template with {student_answer}
+ * @returns {string} Extracted relevant part
+ */
+function extractRelevantAnswer(studentAnswer, template = '') {
+  if (!studentAnswer) return '';
+  
+  const lowerAnswer = studentAnswer.toLowerCase().trim();
+  const lowerTemplate = template.toLowerCase();
+  
+  // Pattern 1: Name extraction ("my name is X" or "I am X")
+  if (lowerTemplate.includes('your name is') || lowerTemplate.includes('name,') || lowerTemplate.includes('meet you')) {
+    const namePatterns = [
+      /(?:my name is|i am|i'm|name is)\s+([a-z]+)/i,
+      /^([a-z]+)$/i // Just the name alone
+    ];
+    for (const pattern of namePatterns) {
+      const match = studentAnswer.match(pattern);
+      if (match && match[1]) {
+        // Capitalize first letter
+        return match[1].charAt(0).toUpperCase() + match[1].slice(1).toLowerCase();
+      }
+    }
+  }
+  
+  // Pattern 2: Age extraction ("I am 8 years old" → "8 years old")
+  if (lowerTemplate.includes('you are') && (lowerAnswer.includes('years old') || /\b\d+\b/.test(lowerAnswer))) {
+    const agePatterns = [
+      /i(?:'m| am)\s+(\d+\s+years?\s+old)/i,
+      /i(?:'m| am)\s+(\d+)/i
+    ];
+    for (const pattern of agePatterns) {
+      const match = studentAnswer.match(pattern);
+      if (match && match[1]) {
+        // If just number, add "years old"
+        const extracted = match[1];
+        return /years/.test(extracted) ? extracted : `${extracted} years old`;
+      }
+    }
+  }
+  
+  // Pattern 3: School name extraction ("I go to X" or "My school is X")
+  if (lowerTemplate.includes('school') && (lowerAnswer.includes('school is') || lowerAnswer.includes('go to'))) {
+    const schoolPatterns = [
+      /(?:my school is|i go to)\s+(.+)/i
+    ];
+    for (const pattern of schoolPatterns) {
+      const match = studentAnswer.match(pattern);
+      if (match && match[1]) {
+        return match[1].trim();
+      }
+    }
+  }
+  
+  // Pattern 4: Feeling/state extraction ("I am happy" → "happy")
+  if (lowerTemplate.includes('feel') || lowerTemplate.includes('how do you')) {
+    const feelingPatterns = [
+      /i(?:'m| am)\s+(happy|excited|good|great|nervous|scared|fine|okay)/i
+    ];
+    for (const pattern of feelingPatterns) {
+      const match = studentAnswer.match(pattern);
+      if (match && match[1]) {
+        return match[1];
+      }
+    }
+  }
+  
+  // Pattern 5: Yes/No questions → keep full answer
+  if (lowerAnswer.startsWith('yes') || lowerAnswer.startsWith('no')) {
+    return studentAnswer;
+  }
+  
+  // Default: Use full answer if can't extract (better than breaking)
+  return studentAnswer;
+}
+
+/**
  * Nova Engine Class - Core AI Brain
  */
 export class NovaEngine {
@@ -347,9 +427,11 @@ export class NovaEngine {
             const q = phaseQs[targetIndex - cumulative];
             const tmpl = typeof q === 'object' ? q.template : (q || '');
             // Resolve {student_answer} placeholder and strip "(After xxx)" prefix
+            // 🔧 FIX: Extract relevant part of answer instead of using full text
+            const extractedAnswer = extractRelevantAnswer(lastStudentMsg, tmpl);
             nextQuestion = tmpl
               .replace(/^\(After [^)]+\)\s*/i, '')
-              .replace(/\{student_answer\}/g, lastStudentMsg);
+              .replace(/\{student_answer\}/g, extractedAnswer);
             nextHints = (typeof q === 'object' ? q.hints : null) || [];
             break;
           }
