@@ -7,7 +7,7 @@ export default {
       answer: ["8", "eight"],
       hint_en: "Add 5 + 3...",
       hint_vi: "Cộng 5 + 3...",
-      audio_url: "/audio/week9/logic_1.mp3"
+      audio_url: "/audio/week09/logic_1.mp3"
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ export default {
       answer: ["6", "six"],
       hint_en: "Subtract 10 - 4...",
       hint_vi: "Trừ 10 - 4...",
-      audio_url: "/audio/week9/logic_2.mp3"
+      audio_url: "/audio/week09/logic_2.mp3"
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ export default {
       answer: ["7", "seven"],
       hint_en: "Add buses and cars...",
       hint_vi: "Cộng xe buýt và xe ô tô...",
-      audio_url: "/audio/week9/logic_3.mp3"
+      audio_url: "/audio/week09/logic_3.mp3"
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ export default {
       answer: ["6", "six"],
       hint_en: "Add all three numbers...",
       hint_vi: "Cộng cả ba số...",
-      audio_url: "/audio/week9/logic_4.mp3"
+      audio_url: "/audio/week09/logic_4.mp3"
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ export default {
       answer: ["13", "thirteen"],
       hint_en: "Add morning and afternoon cars...",
       hint_vi: "Cộng xe buổi sáng và buổi chiều...",
-      audio_url: "/audio/week9/logic_5.mp3"
+      audio_url: "/audio/week09/logic_5.mp3"
     },
     {
       id: 6,
@@ -52,7 +52,7 @@ export default {
       answer: ["8", "eight"],
       hint_en: "How many got off?",
       hint_vi: "Có bao nhiêu người xuống?",
-      audio_url: "/audio/week9/logic_6.mp3"
+      audio_url: "/audio/week09/logic_6.mp3"
     },
     {
       id: 7,
@@ -61,7 +61,7 @@ export default {
       answer: ["12", "twelve"],
       hint_en: "Multiply 3 × 4...",
       hint_vi: "Nhân 3 × 4...",
-      audio_url: "/audio/week9/logic_7.mp3"
+      audio_url: "/audio/week09/logic_7.mp3"
     }
   ]
 };
