@@ -481,9 +481,10 @@ def run_for_week_mode(
     """Process one week × mode combination."""
     root = Path(__file__).parent.parent.resolve()
     data_dir_name  = "weeks" if mode == "advanced" else "weeks_easy"
-    audio_dir_name = f"week{week}" if mode == "advanced" else f"week{week}_easy"
+    week_padded = str(week).zfill(2)  # Use zero-padding for consistency (week09, week10)
+    audio_dir_name = f"week{week_padded}" if mode == "advanced" else f"week{week_padded}_easy"
 
-    data_path  = root / "src" / "data" / data_dir_name / f"week_{str(week).zfill(2)}"
+    data_path  = root / "src" / "data" / data_dir_name / f"week_{week_padded}"
     audio_path = root / "public" / "audio" / audio_dir_name
     audio_path.mkdir(parents=True, exist_ok=True)
 
