@@ -89,6 +89,13 @@ const BLUEPRINT_WEEKS = {
     keywords: "Farm animals, countryside, city vs farm",
     video_hint: "Farm Animals",
     read_topic: "Farm Tour - comparing locations"
+  },
+  11: {
+    theme: "Weekend Fun Spots",
+    grammar: "Preposition At (I play at the park)",
+    keywords: "Places, park, library, supermarket, weekend activities",
+    video_hint: "Places in Town",
+    read_topic: "Weekend Adventure - places to visit"
   }
 };
 

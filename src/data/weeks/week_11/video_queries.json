@@ -1,0 +1,39 @@
+{
+  "weekId": 11,
+  "theme": "Weekend Fun Spots",
+  "grammar_focus": "Preposition At (I play at the park)",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing preposition at ESL for kids",
+      "backup_search": "preposition at song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing I play at the park ESL for kids",
+      "backup_search": "I play at the park kids song ESL cartoons"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox weekend spots weekend adventure story level 1 ESL for kids",
+      "backup_search": "Vooks weekend spots weekend adventure story read aloud cartoons for kids"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "Little Fox Places in Town song ESL for kids",
+      "backup_search": "Places in Town ESL kids cartoons song"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids Places, park, library, supermarket, weekend activities for kids",
+      "backup_search": "Places, park, library, supermarket, weekend activities kids science cartoons"
+    }
+  ],
+  "topic": "Weekend Adventure - places to visit",
+  "science": "Places, park, library, supermarket, weekend activities"
+}
