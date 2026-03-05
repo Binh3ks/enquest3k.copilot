@@ -718,7 +718,4 @@ const week11RealData = {
   ]
 };
 
-// === MODULE EXPORT ===
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = week11RealData;
-}
+export default week11RealData;
