@@ -124,17 +124,34 @@ function buildPrompt(word, definition, type, weekNum = null) {
         }
     }
     if (type === 'read_cover') {
-        // Week-specific covers - update based on week theme
-        if (weekNum === '7') {
-            return `3D illustration of two happy children looking at school supplies in a colorful backpack, books and pencils glowing, Pixar style, vibrant colors, soft studio lighting, clean background.`;
-        }
-        return `3D illustration of two happy children reading a glowing treasure map book together, magical atmosphere, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+        // Week-specific covers - THEME-BASED prompts for better image quality
+        // IMPORTANT: Update this map when creating new weeks (refer to SYLLABUS for themes)
+        const readThemes = {
+            '6': `3D illustration of two happy children reading a glowing book about finding hidden treasures, magical atmosphere with toys and treasure chest in background, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '7': `3D illustration of two happy children looking at school supplies in a colorful backpack, books and pencils glowing, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '09': `3D illustration of two diverse children reading a book with pop-up city skyline, tall buildings and cars emerging from pages, urban adventure theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '10': `3D illustration of two happy children reading a book with 3D farm animals (cow, chicken) jumping out of pages, green countryside scenery, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '11': `3D illustration of two happy children reading a book with pop-up playground and park scenes, slides and swings emerging from pages, weekend fun theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '12': `3D illustration of two diverse children reading a book with musical notes and stars floating out, talent show performance theme, energetic atmosphere, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '13': `3D illustration of two children reading a book showing daily routine icons (toothbrush, clock, breakfast), morning routine theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '15': `3D illustration of two happy children reading a book with animated park scene, kids playing and running, busy activity theme, Pixar style, vibrant colors, soft studio lighting, clean background.`
+        };
+        return readThemes[weekNum] || `3D illustration of two happy children reading a glowing book together, content related to week ${weekNum} theme, magical learning atmosphere, Pixar style, vibrant colors, soft studio lighting, clean background.`;
     }
     if (type === 'explore_cover') {
-        if (weekNum === '7') {
-            return `3D illustration of children exploring a classroom with magnifying glass, discovering school supplies, happy curious faces, Pixar style, vibrant colors, soft studio lighting, clean background.`;
-        }
-        return `3D illustration of children exploring with magnifying glass, happy faces, Pixar style, vibrant colors, soft studio lighting, clean background.`;
+        // Week-specific covers - EXPLORATION theme prompts
+        // IMPORTANT: Update this map when creating new weeks (refer to SYLLABUS for themes)
+        const exploreThemes = {
+            '6': `3D illustration of diverse children exploring a colorful room with magnifying glass, discovering hidden toys under furniture, treasure hunt adventure, happy curious faces, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '7': `3D illustration of children exploring a classroom with magnifying glass, discovering school supplies, happy curious faces, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '09': `3D illustration of diverse children exploring a vibrant city street with tall buildings, looking at busy traffic and modern architecture through magnifying glass, urban discovery adventure, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '10': `3D illustration of diverse children exploring a beautiful farm landscape with magnifying glass, green fields with cows and chickens, peaceful countryside discovery, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '11': `3D illustration of diverse children exploring different weekend fun spots (playground, park, library) with magnifying glass, discovering exciting places to play, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '12': `3D illustration of children exploring a colorful stage with magnifying glass, discovering musical instruments and art supplies, talent discovery theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '13': `3D illustration of children exploring a house with magnifying glass, observing daily routines (brushing teeth, eating breakfast, bedtime), time clock visible, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '15': `3D illustration of diverse children exploring a busy park with magnifying glass, observing kids playing various activities (running, jumping, climbing), action-packed scene, Pixar style, vibrant colors, soft studio lighting, clean background.`
+        };
+        return exploreThemes[weekNum] || `3D illustration of children exploring with magnifying glass, discovering new things related to week ${weekNum} theme, happy adventurous faces, Pixar style, vibrant colors, soft studio lighting, clean background.`;
     }
     return `Cute 3D render of ${definition}, Pixar animation style, vibrant colors, soft studio lighting, high resolution, clean simple background.`;
 }
