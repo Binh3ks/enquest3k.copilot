@@ -33,3 +33,4 @@ public/audio copy/
 
 # Wrangler local development (Cloudflare Workers emulator)
 .wrangler/
+# Force rebuild Thu Mar  5 12:38:21 +07 2026
