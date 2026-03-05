@@ -76,7 +76,20 @@ const BLUEPRINT_WEEKS = {
     video_hint: "Plural Song",
     read_topic: "Class Inventory - plural items"
   },
-  // Add more weeks as needed...
+  9: {
+    theme: "City Sounds & Sights",
+    grammar: "Adjectives before nouns (It is a [adjective] [noun])",
+    keywords: "City places, transportation, urban life",
+    video_hint: "City Song",
+    read_topic: "City Explorer - describing city scenes"
+  },
+  10: {
+    theme: "The Farm Adventure",
+    grammar: "Contrast with but (The city is noisy, but the farm is quiet)",
+    keywords: "Farm animals, countryside, city vs farm",
+    video_hint: "Farm Animals",
+    read_topic: "Farm Tour - comparing locations"
+  }
 };
 
 // PRIORITY YOUTUBE CHANNELS (from Blueprint whitelist)
