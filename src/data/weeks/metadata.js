@@ -11,7 +11,7 @@ export const weekTitles = {
   8: { title_en: "The Busy Classroom", title_vi: "Lớp học Bận rộn" },
   9: { title_en: "City Sounds & Sights", title_vi: "Âm thanh & Hình ảnh Thành phố" },
   10: { title_en: "The Farm Adventure", title_vi: "Cuộc phiêu lưu Nông trại" },
-  11: { title_en: "Week 11", title_vi: "Tuần 11" },
+  11: { title_en: "Weekend Fun Spots (Places)", title_vi: "Các Địa Điểm Vui Chơi Cuối Tuần" },
   12: { title_en: "Week 12", title_vi: "Tuần 12" },
   13: { title_en: "Week 13", title_vi: "Tuần 13" },
   14: { title_en: "Week 14", title_vi: "Tuần 14" },

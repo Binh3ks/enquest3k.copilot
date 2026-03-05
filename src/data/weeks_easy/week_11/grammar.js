@@ -24,6 +24,11 @@ export default {
     { id: 12, type: "unscramble", question: "Order:", words: ["I", "read", "at", "the", "library"], answer: "I read at the library.", hint: "I read" },
     { id: 13, type: "unscramble", question: "Order:", words: ["I", "buy", "at", "the", "store"], answer: "I buy at the store.", hint: "I buy" },
     { id: 14, type: "unscramble", question: "Order:", words: ["I", "eat", "food"], answer: "I eat food.", hint: "I eat" },
-    { id: 15, type: "unscramble", question: "Order:", words: ["I", "go", "to", "the", "zoo"], answer: "I go to the zoo.", hint: "I go" }
+    { id: 15, type: "unscramble", question: "Order:", words: ["I", "go", "to", "the", "zoo"], answer: "I go to the zoo.", hint: "I go" },
+    { id: 16, type: "fill", question: "I see animals ___ the zoo.", answer: "at", hint: "place word" },
+    { id: 17, type: "mc", question: "I slide ___ the playground.", options: ["at", "in", "on"], answer: "at", hint: "place" },
+    { id: 18, type: "fill", question: "I help mom ___ the store.", answer: "at", hint: "location" },
+    { id: 19, type: "unscramble", question: "Order:", words: ["I", "like", "books"], answer: "I like books.", hint: "I like" },
+    { id: 20, type: "mc", question: "I have fun ___ the park.", options: ["at", "in", "under"], answer: "at", hint: "place of fun" }
   ]
 };

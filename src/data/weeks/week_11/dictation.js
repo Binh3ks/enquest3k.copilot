@@ -1,14 +1,27 @@
 export default {
   sentences: [
-    { id: 1, text: "I play at the park.", meaning: "Tôi chơi ở công viên.", audio_url: "/audio/week11/dictation_1.mp3" },
-    { id: 2, text: "I read at the library.", meaning: "Tôi đọc ở thư viện.", audio_url: "/audio/week11/dictation_2.mp3" },
-    { id: 3, text: "I buy food at the supermarket.", meaning: "Tôi mua thức ăn ở siêu thị.", audio_url: "/audio/week11/dictation_3.mp3" },
-    { id: 4, text: "I eat at the restaurant.", meaning: "Tôi ăn ở nhà hàng.", audio_url: "/audio/week11/dictation_4.mp3" },
-    { id: 5, text: "I see animals at the zoo.", meaning: "Tôi thấy động vật ở sở thú.", audio_url: "/audio/week11/dictation_5.mp3" },
-    { id: 6, text: "I play at the playground with friends.", meaning: "Tôi chơi ở sân chơi với bạn bè.", audio_url: "/audio/week11/dictation_6.mp3" },
-    { id: 7, text: "I learn at school every day.", meaning: "Tôi học ở trường mỗi ngày.", audio_url: "/audio/week11/dictation_7.mp3" },
-    { id: 8, text: "I read many books at the library.", meaning: "Tôi đọc nhiều sách ở thư viện.", audio_url: "/audio/week11/dictation_8.mp3" },
-    { id: 9, text: "We buy fruits and vegetables at the supermarket.", meaning: "Chúng tôi mua trái cây và rau ở siêu thị.", audio_url: "/audio/week11/dictation_9.mp3" },
-    { id: 10, text: "I visit the zoo and see lions at the zoo.", meaning: "Tôi đến sở thú và thấy sư tử ở sở thú.", audio_url: "/audio/week11/dictation_10.mp3" }
+    { id: 1, text: "Today is Saturday!", meaning: "Hôm nay là thứ Bảy!", audio_url: "/audio/week11/dictation_1.mp3" },
+    { id: 2, text: "I have a fun weekend plan.", meaning: "Tôi có kế hoạch cuối tuần vui vẻ.", audio_url: "/audio/week11/dictation_2.mp3" },
+    { id: 3, text: "First, I go to the park.", meaning: "Đầu tiên, tôi đi đến công viên.", audio_url: "/audio/week11/dictation_3.mp3" },
+    { id: 4, text: "I play at the park with my friends.", meaning: "Tôi chơi ở công viên với bạn bè.", audio_url: "/audio/week11/dictation_4.mp3" },
+    { id: 5, text: "We run and laugh!", meaning: "Chúng tôi chạy và cười!", audio_url: "/audio/week11/dictation_5.mp3" },
+    { id: 6, text: "Then, I go to the library.", meaning: "Sau đó, tôi đi đến thư viện.", audio_url: "/audio/week11/dictation_6.mp3" },
+    { id: 7, text: "I read a book at the library.", meaning: "Tôi đọc sách ở thư viện.", audio_url: "/audio/week11/dictation_7.mp3" },
+    { id: 8, text: "The book is about animals.", meaning: "Cuốn sách về động vật.", audio_url: "/audio/week11/dictation_8.mp3" },
+    { id: 9, text: "It is very interesting!", meaning: "Nó rất thú vị!", audio_url: "/audio/week11/dictation_9.mp3" },
+    { id: 10, text: "After that, my mom and I go to the supermarket.", meaning: "Sau đó, mẹ tôi và tôi đi siêu thị.", audio_url: "/audio/week11/dictation_10.mp3" },
+    { id: 11, text: "We buy food at the supermarket.", meaning: "Chúng tôi mua thức ăn ở siêu thị.", audio_url: "/audio/week11/dictation_11.mp3" },
+    { id: 12, text: "I help my mom carry the bags.", meaning: "Tôi giúp mẹ mang túi.", audio_url: "/audio/week11/dictation_12.mp3" },
+    { id: 13, text: "Finally, we go to the playground.", meaning: "Cuối cùng, chúng tôi đi sân chơi.", audio_url: "/audio/week11/dictation_13.mp3" },
+    { id: 14, text: "I play at the playground.", meaning: "Tôi chơi ở sân chơi.", audio_url: "/audio/week11/dictation_14.mp3" },
+    { id: 15, text: "I love the slide!", meaning: "Tôi thích cầu trượt!", audio_url: "/audio/week11/dictation_15.mp3" },
+    { id: 16, text: "On Sunday, I go to the zoo.", meaning: "Vào Chủ nhật, tôi đi sở thú.", audio_url: "/audio/week11/dictation_16.mp3" },
+    { id: 17, text: "I see many animals at the zoo.", meaning: "Tôi thấy nhiều động vật ở sở thú.", audio_url: "/audio/week11/dictation_17.mp3" },
+    { id: 18, text: "I see a lion and a monkey!", meaning: "Tôi thấy sư tử và khỉ!", audio_url: "/audio/week11/dictation_18.mp3" },
+    { id: 19, text: "Then we eat lunch at a restaurant.", meaning: "Sau đó chúng tôi ăn trưa ở nhà hàng.", audio_url: "/audio/week11/dictation_19.mp3" },
+    { id: 20, text: "The food is delicious!", meaning: "Đồ ăn rất ngon!", audio_url: "/audio/week11/dictation_20.mp3" },
+    { id: 21, text: "I also go to school on Monday to read and learn.", meaning: "Tôi cũng đi học vào thứ Hai để đọc và học.", audio_url: "/audio/week11/dictation_21.mp3" },
+    { id: 22, text: "I love my weekend!", meaning: "Tôi yêu cuối tuần của mình!", audio_url: "/audio/week11/dictation_22.mp3" },
+    { id: 23, text: "Every place is special and fun!", meaning: "Mỗi nơi đều đặc biệt và vui!", audio_url: "/audio/week11/dictation_23.mp3" }
   ]
 };
