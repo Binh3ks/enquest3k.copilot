@@ -9,6 +9,9 @@ import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL path
 import { recordAudio, isRecordingSupported } from '../../../utils/audioRecorder'; // 🔥 Deepgram STT
 import TTSSettingsPanel from '../components/TTSSettingsPanel';
 
+// 🔥 Get API base URL for backend calls
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+
 /**
  * Pronunciation Tab - Word & Sentence Fluency Practice
  * Features:
@@ -260,10 +263,11 @@ const PronunciationTab = () => {
       formData.append('targetText', targetText);
       formData.append('mode', isWordMode ? 'word' : 'sentence');
       
-      // 🔥 Send to Deepgram backend
-      const response = await fetch('/api/pronunciation/evaluate-deepgram', {
+      // 🔥 Send to Deepgram backend (Railway server)
+      const response = await fetch(`${API_BASE_URL}/pronunciation/evaluate-deepgram`, {
         method: 'POST',
-        body: formData
+        body: formData,
+        credentials: 'include' // Include auth cookies if needed
       });
       
       if (!response.ok) {

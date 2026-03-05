@@ -56,19 +56,19 @@ class TTSPreloadService {
   }
 
   /**
-   * Warm up HF Spaces server (wake from sleep)
-   * Send actual TTS request to load Kokoro model (88MB) into memory
+   * Warm up TTS server (wake from sleep)
+   * Send actual TTS request to ensure Deepgram Worker is ready
    * @returns {Promise<boolean>}
    */
   async warmServer() {
     if (this.serverWarmed) return true;
     
     try {
-      console.log('[TTS Preload] 🔥 Warming up Kokoro model...');
+      console.log('[TTS Preload] 🔥 Warming up TTS server (Deepgram)...');
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 15000); // 15s for model loading
+      const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout
       
-      // Use actual TTS request with station=read to warm Kokoro (af_sky voice)
+      // Use actual TTS request with station=read to warm server
       const response = await fetch(`${TTS_SERVER_URL}/tts?text=hello&station=read`, { 
         signal: controller.signal 
       });
@@ -77,11 +77,11 @@ class TTSPreloadService {
       if (response.ok) {
         this.serverWarmed = true;
         markServerWarm(); // signal voiceService to use shorter race timeout
-        console.log('[TTS Preload] ✅ Kokoro model loaded and ready');
+        console.log('[TTS Preload] ✅ TTS server ready (Deepgram)');
         return true;
       }
     } catch (error) {
-      console.warn('[TTS Preload] ⚠️ Warm-up failed (7-10s cold start):', error.message);
+      console.warn('[TTS Preload] ⚠️ TTS warm-up failed:', error.message);
     }
     return false;
   }

@@ -16,6 +16,9 @@
 
 import axios from 'axios';
 
+// 🔥 Get API base URL for backend calls
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
+
 // ============================================
 // WAV ENCODING UTILITY (for PCM data from Google Cloud TTS)
 // ============================================
@@ -202,10 +205,11 @@ async function uploadToR2Cache(cacheKey, audioBlob) {
     formData.append('audio', audioBlob, cacheKey);
     formData.append('cacheKey', cacheKey);
     
-    // Upload via backend API (proxied to R2)
-    const response = await fetch('/api/cache/audio', {
+    // Upload via backend API (Railway server proxied to R2)
+    const response = await fetch(`${API_BASE_URL}/cache/audio`, {
       method: 'POST',
-      body: formData
+      body: formData,
+      credentials: 'include' // Include auth cookies if needed
     });
     
     if (response.ok) {
