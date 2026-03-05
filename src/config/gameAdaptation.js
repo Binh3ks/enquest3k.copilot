@@ -21,6 +21,10 @@ import week7GamesAdvanced from '../data/weeks/week_07/games.js';
 import week7GamesEasy from '../data/weeks_easy/week_07/games.js';
 import week8GamesAdvanced from '../data/weeks/week_08/games.js';
 import week8GamesEasy from '../data/weeks_easy/week_08/games.js';
+import week9GamesAdvanced from '../data/weeks/week_09/games.js';
+import week9GamesEasy from '../data/weeks_easy/week_09/games.js';
+import week10GamesAdvanced from '../data/weeks/week_10/games.js';
+import week10GamesEasy from '../data/weeks_easy/week_10/games.js';
 import { week1RealData } from '../data/weeks/week_01_real.js';
 import { week2RealData } from '../data/weeks/week_02_real.js';
 import { week3RealData } from '../data/weeks/week_03_real.js';
@@ -29,6 +33,8 @@ import week5RealData from '../data/weeks/week_05_real.js';
 import week6RealData from '../data/weeks/week_06_real.js';
 import week7RealData from '../data/weeks/week_07_real.js';
 import week8RealData from '../data/weeks/week_08_real.js';
+import week9RealData from '../data/weeks/week_09_real.js';
+import week10RealData from '../data/weeks/week_10_real.js';
 
 export const GAME_OPTIONS = [
   { id: 'word_chain', name_en: 'Word Chain' },
@@ -91,7 +97,9 @@ const REAL_WEEK_DATA = {
   5: week5RealData,
   6: week6RealData,
   7: week7RealData,
-  8: week8RealData
+  8: week8RealData,
+  9: week9RealData,
+  10: week10RealData
 };
 
 function extractVocabFromWeekData(weekData) {
@@ -115,7 +123,9 @@ export function getGameData(weekNumber, learningMode = 'advanced', gameId) {
     5: { advanced: week5GamesAdvanced, easy: week5GamesEasy },
     6: { advanced: week6GamesAdvanced, easy: week6GamesEasy },
     7: { advanced: week7GamesAdvanced, easy: week7GamesEasy },
-    8: { advanced: week8GamesAdvanced, easy: week8GamesEasy }
+    8: { advanced: week8GamesAdvanced, easy: week8GamesEasy },
+    9: { advanced: week9GamesAdvanced, easy: week9GamesEasy },
+    10: { advanced: week10GamesAdvanced, easy: week10GamesEasy }
   };
 
   const weekGames = weekGamesMap[weekNumber]?.[learningMode];
