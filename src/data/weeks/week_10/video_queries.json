@@ -1,19 +1,19 @@
 {
-  "weekId": 6,
-  "theme": "Treasure Hunt",
-  "grammar_focus": "Prepositions of Place (In, On, Under)",
+  "weekId": 10,
+  "theme": "The Farm Adventure",
+  "grammar_focus": "Contrast with but",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing prepositions of place in on under ESL for kids",
-      "backup_search": "prepositions of place in on under song ESL kids cartoons"
+      "priority_search": "Farm Animals for Kids Learn about farm animals ESL",
+      "backup_search": "farm animals song for kids English learning"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing In  On  Under ESL for kids",
-      "backup_search": "In  On  Under kids song ESL cartoons"
+      "priority_search": "Old MacDonald Had A Farm Nursery Rhymes Super Simple Songs",
+      "backup_search": "Old MacDonald farm song for kids"
     },
     {
       "id": 3,
