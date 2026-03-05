@@ -1,127 +1,127 @@
-const week7RealData = {
+const week11RealData = {
   // === METADATA ===
-  week_id: 7,
+  week_id: 11,
   phase: 1,
   block: "A",
-  unit: 1,
-  week_number: 7,
+  unit: 2,
+  week_number: 11,
   
   // === OFFICIAL SYLLABUS DATA ===
-  title: "Week 7: Inside My Backpack",
-  week_title_en: "Inside My Backpack (Singular)",
-  week_title_vi: "Trong Balo của tôi (Số ít)",
+  title: "Week 11: Weekend Fun Spots",
+  week_title_en: "Weekend Fun Spots (Places)",
+  week_title_vi: "Các Địa Điểm Vui Chơi Cuối Tuần",
   
-  topic: "School supplies - Stating what exists (singular)",
-  topic_vi: "Đồ dùng học tập - Nêu sự tồn tại (số ít)",
+  topic: "Places - Using preposition 'at' with locations",
+  topic_vi: "Địa điểm - Sử dụng giới từ 'at' với các nơi chốn",
   
   // === KEY LEARNING OUTCOME ===
-  learning_outcome: "State what exists using 'There is a...' for singular items",
-  learning_outcome_vi: "Nêu sự tồn tại bằng 'There is a...' cho vật số ít",
+  learning_outcome: "Use preposition 'at' to connect actions with places",
+  learning_outcome_vi: "Sử dụng giới từ 'at' để kết nối hành động với địa điểm",
   
   // === GRAMMAR FOCUS ===
-  grammar_focus: "There is a... (Singular)",
-  grammar_pattern: "There is a [item] in my [place]",
+  grammar_focus: "Preposition 'at' with places",
+  grammar_pattern: "[Subject] + [Verb] + at + [Place]",
   grammar_examples: [
-    "There is a pen in my backpack.",
-    "There is a book on the desk.",
-    "There is a ruler in the pencil case.",
-    "There is a computer in the classroom."
+    "I play at the park.",
+    "I read at the library.",
+    "I buy at the supermarket.",
+    "I study at school."
   ],
   
-  // === TARGET VOCABULARY (10 SCHOOL SUPPLIES) ===
+  // === TARGET VOCABULARY (10 PLACES & ACTIONS) ===
   target_vocab: [
     {
-      word: "whiteboard",
-      pronunciation: "/ˈwaɪtbɔːrd/",
-      definition_vi: "bảng trắng",
-      definition_en: "a white board for writing with markers",
-      example: "There is a whiteboard in the classroom.",
-      syllabus_context: "Classroom items"
+      word: "park",
+      pronunciation: "/pɑːrk/",
+      definition_vi: "công viên",
+      definition_en: "a place with grass and trees for playing",
+      example: "I play at the park.",
+      syllabus_context: "Weekend places"
     },
     {
-      word: "teacher",
-      pronunciation: "/ˈtiːtʃər/",
-      definition_vi: "giáo viên",
-      definition_en: "a person who teaches students",
-      example: "There is a teacher in the school.",
-      syllabus_context: "People"
+      word: "playground",
+      pronunciation: "/ˈpleɪɡraʊnd/",
+      definition_vi: "sân chơi",
+      definition_en: "a place with swings and slides for fun",
+      example: "I run at the playground.",
+      syllabus_context: "Fun places"
     },
     {
-      word: "computer",
-      pronunciation: "/kəmˈpjuːtər/",
-      definition_vi: "máy tính",
-      definition_en: "an electronic device for work and study",
-      example: "There is a computer on the desk.",
-      syllabus_context: "Technology"
+      word: "school",
+      pronunciation: "/skuːl/",
+      definition_vi: "trường học",
+      definition_en: "a place where you learn and study",
+      example: "I study at school.",
+      syllabus_context: "Learning places"
     },
     {
-      word: "pen",
-      pronunciation: "/pen/",
-      definition_vi: "bút mực",
-      definition_en: "a tool for writing with ink",
-      example: "There is a pen in my pencil case.",
-      syllabus_context: "Writing tools"
+      word: "library",
+      pronunciation: "/ˈlaɪbreri/",
+      definition_vi: "thư viện",
+      definition_en: "a quiet place with many books",
+      example: "I read at the library.",
+      syllabus_context: "Reading places"
     },
     {
-      word: "ruler",
-      pronunciation: "/ˈruːlər/",
-      definition_vi: "thước kẻ",
-      definition_en: "a tool for measuring and drawing straight lines",
-      example: "There is a ruler in my backpack.",
-      syllabus_context: "Measuring tools"
+      word: "supermarket",
+      pronunciation: "/ˈsuːpərmɑːrkɪt/",
+      definition_vi: "siêu thị",
+      definition_en: "a big store where you buy food",
+      example: "I buy food at the supermarket.",
+      syllabus_context: "Shopping places"
     },
     {
-      word: "eraser",
-      pronunciation: "/ɪˈreɪzər/",
-      definition_vi: "cục tẩy",
-      definition_en: "a tool for removing pencil marks",
-      example: "There is an eraser on my desk.",
-      syllabus_context: "Writing tools"
+      word: "restaurant",
+      pronunciation: "/ˈrestrɑːnt/",
+      definition_vi: "nhà hàng",
+      definition_en: "a place where you eat food",
+      example: "I eat at the restaurant.",
+      syllabus_context: "Food places"
     },
     {
-      word: "book",
-      pronunciation: "/bʊk/",
-      definition_vi: "sách",
-      definition_en: "something you read to learn",
-      example: "There is a book in my bag.",
-      syllabus_context: "Reading materials"
+      word: "zoo",
+      pronunciation: "/zuː/",
+      definition_vi: "sở thú",
+      definition_en: "a place where you see many animals",
+      example: "I see animals at the zoo.",
+      syllabus_context: "Fun places"
     },
     {
-      word: "notebook",
-      pronunciation: "/ˈnoʊtbʊk/",
-      definition_vi: "vở ghi chép",
-      definition_en: "a book with empty pages for writing notes",
-      example: "There is a notebook on the table.",
-      syllabus_context: "Writing materials"
+      word: "play",
+      pronunciation: "/pleɪ/",
+      definition_vi: "chơi",
+      definition_en: "to have fun and do activities",
+      example: "I play at the park.",
+      syllabus_context: "Actions"
     },
     {
-      word: "pencil case",
-      pronunciation: "/ˈpensəl keɪs/",
-      definition_vi: "hộp bút",
-      definition_en: "a bag or box for holding pens and pencils",
-      example: "There is a pencil case in my backpack.",
-      syllabus_context: "Storage items"
+      word: "read",
+      pronunciation: "/riːd/",
+      definition_vi: "đọc",
+      definition_en: "to look at words in a book",
+      example: "I read at the library.",
+      syllabus_context: "Actions"
     },
     {
-      word: "backpack",
-      pronunciation: "/ˈbækpæk/",
-      definition_vi: "ba lô",
-      definition_en: "a bag you carry on your back",
-      example: "There is a backpack on the chair.",
-      syllabus_context: "School items"
+      word: "buy",
+      pronunciation: "/baɪ/",
+      definition_vi: "mua",
+      definition_en: "to get something with money",
+      example: "I buy at the supermarket.",
+      syllabus_context: "Actions"
     }
   ],
   
-  global_vocab: ["whiteboard", "teacher", "computer", "pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
+  global_vocab: ["park", "playground", "school", "library", "supermarket", "restaurant", "zoo", "play", "read", "buy"],
 
   // === AI TUTOR BEHAVIOR (week-level tuning) ===
   nova_instructions: {
-    persona: "Friendly English teacher, warm and human-like",
-    tone: "Warm, curious, loves discovering what is inside things",
+    persona: "Friendly English teacher, excited about weekend plans",
+    tone: "Warm, curious, loves exploring fun places",
     opening_lines_by_mission: {
-      mission_1: "Hi! I am Ms. Nova! I love checking backpacks! Let's check your backpack together. What do I call you? Say: My name is your name.",
-      mission_2: "Hi! Let's play Treasure Hunt in my classroom! I am hiding many things around the room. Can you spot them? What is there on the desk?",
-      mission_3: "Look! I have a magic backpack! I cannot see inside but I can feel something. It feels long and thin. What do you think it is? Say: There is a..."
+      mission_1: "Hi! I am Ms. Nova! I love going to fun places on weekends! Let's explore together! What do I call you? Say: My name is your name.",
+      mission_2: "Hi! Let's do actions at different places! I love playing at the park! Where do you like to play? Say: I play at...",
+      mission_3: "Look! I have my weekend plan! I play at the park on Saturday! What about you? Where do you go? Say: I go to..."
     },
     conversation_style: [
       "Natural and flowing - like talking with a friend",
@@ -130,33 +130,33 @@ const week7RealData = {
       "NO emojis - text-to-speech will read them aloud",
       "Keep responses under 30 words",
       "Maintain conversation for minimum 10-15 turns per mission",
-      "ONLY use 'There is a/an [item] in my [place]' - Week 7 grammar scope"
+      "ONLY use 'at + place' - Week 11 grammar scope"
     ],
     recast_strategy: "ALWAYS recast student errors by modeling correct form naturally in your response",
     recast_example: {
-      student: "Pen in backpack.",
-      nova_recast: "Yes! There IS a pen in my backpack! What else is in your backpack?"
+      student: "I play park.",
+      nova_recast: "Yes! I play AT the park! Where else do you play?"
     },
     vocabulary_scaffolding: [
-      "Mission 1: backpack, book, notebook, pen, ruler, eraser, pencil case",
-      "Mission 2: classroom, whiteboard, teacher, computer, desk - school room items",
-      "Mission 3: combine all vocab in 'There is a/an [item] in my [place]' guessing game"
+      "Mission 1: park, playground, library, supermarket, zoo - place identification",
+      "Mission 2: play at park, read at library, buy at supermarket - action + place",
+      "Mission 3: combine all vocab in weekend planning with 'at' pattern"
     ],
     questioning_skill: [
-      "What is in your backpack?",
-      "Is there a ruler in your backpack?",
-      "What is there on the desk?",
-      "There is a... what?",
-      "What else is in your pencil case?"
+      "Where do you play?",
+      "Do you go to the park?",
+      "What do you do at the library?",
+      "I play at the... what?",
+      "Where do you read books?"
     ],
-    must_use_vocab: ["backpack", "pencil case", "book", "notebook", "pen", "ruler", "eraser", "classroom"],
+    must_use_vocab: ["park", "library", "supermarket", "playground", "zoo", "at"],
     must_avoid: [
       "Emojis or special characters",
       "Vietnamese translation",
       "Explicit grammar rules",
       "Corrections without recast",
       "Multiple questions in one turn",
-      "Past tense or future tense (Week 7 scope is present simple only)"
+      "Past tense or future tense (Week 11 scope is present simple only)"
     ]
   },
 
@@ -173,9 +173,9 @@ const week7RealData = {
     question_patterns_allowed: [
       "What is...?",
       "Where is...?",
-      "Is...?",
+      "Where do you...?",
       "Do you...?",
-      "Can you...?"
+      "What do you do at...?"
     ],
     question_patterns_forbidden: [
       "Why...?",
@@ -184,16 +184,16 @@ const week7RealData = {
     ],
     example_exchanges: [
       {
-        student: "Pen in backpack.",
-        tutor_response: "Great! There is a pen IN my backpack. What else is in your backpack?"
+        student: "I play park.",
+        tutor_response: "Great! I play AT the park. Where else do you play?"
       },
       {
-        student: "There is book.",
-        tutor_response: "Nice! There is A book. Say: There is a book in my backpack!"
+        student: "I go library.",
+        tutor_response: "Nice! I go to the library. What do you do AT the library?"
       },
       {
-        student: "I have ruler.",
-        tutor_response: "Wonderful! There is a ruler in my backpack. What is next to the ruler?"
+        student: "I read book at library.",
+        tutor_response: "Wonderful! I read books AT the library. Do you read at home too?"
       }
     ]
   },
@@ -202,140 +202,140 @@ const week7RealData = {
   story_missions: [
     {
       mission_id: 1,
-      title: "What's in My Backpack",
-      title_vi: "Trong Balo của Tôi",
-      theme: "Backpack Items",
+      title: "Weekend Places Explorer",
+      title_vi: "Khám Phá Địa Điểm Cuối Tuần",
+      theme: "Place Identification",
       
       // 🎭 STORY CHARACTER
       story_character: {
         name: "Ms. Nova",
-        personality: "Curious teacher, loves organizing backpacks",
-        backstory: "Ms. Nova helps students check their backpacks before school starts!",
-        speaking_style: "Friendly, asks one item at a time, uses full sentence patterns",
+        personality: "Adventurous teacher, loves exploring new places",
+        backstory: "Ms. Nova visits many fun places on weekends and wants to share them with students!",
+        speaking_style: "Excited, introduces one place at a time, uses 'at' naturally",
         facts: {
-          loves_backpacks: true,
-          has_backpack: true,
-          favorite_item: "notebook",
-          backpack_color: "blue",
-          organized: true,
-          checks_supplies: true
+          loves_weekends: true,
+          favorite_place: "park",
+          goes_to_library: true,
+          visits_zoo: true,
+          likes_exploring: true,
+          active_person: true
         }
       },
       
       // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Ms. Nova! Let's check your backpack! 🎒 What is your name? Say: My name is [your name]",
+      opening_narrative: "Hi! I'm Ms. Nova! I love weekends! I go to many fun places! What is your name? Say: My name is [your name]",
       
-      nova_greeting: "Hi! Let's check your backpack!", // DEPRECATED
+      nova_greeting: "Hi! Let's explore fun places!", // DEPRECATED
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 1 - Backpack Check. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is packing her own backpack and loves checking what students have in theirs. OPENING: Ask student's name, then say "Let's check your backpack together! What is in your backpack? Say: There is a pen in my backpack." STRICT GAME RULES: 1. ONLY ask about items IN STUDENT'S BACKPACK. 2. Student MUST say "There is a [item] in my backpack." 3. If student gives yes/no only, prompt full sentence: "Say: There is a ruler in my backpack!" 4. Ask about ONE item per question. VOCABULARY TARGET: pen, ruler, eraser, book, notebook, pencil case, backpack. ALLOWED QUESTIONS: "What is in your backpack?", "Is there a ruler?", "What color is your book?", "Where is your pencil case?" GRAMMAR ENFORCEMENT: Every answer must practice "There is a [item]" - recast all errors naturally. GAME MECHANIC: Ask about ONE backpack item per turn → student says 'There is a [item] in my backpack' → confirm/recast → ask about next item. FORBIDDEN: Do NOT ask about feelings, preferences, or unrelated topics. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Multiple items per turn, complex sentences. covering at least 5 different items. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 11 Mission 1 - Weekend Places Explorer. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova loves going to fun places on weekends. OPENING: Ask student's name, then say "I love the park! Do you know the park? Say: Yes, I know the park or No, I do not know the park." STRICT GAME RULES: 1. ONLY introduce PLACES one by one. 2. Student MUST identify places: "Yes, I know the park" OR simple "Park!" 3. Build up to "at + place" pattern slowly. 4. Introduce ONE place per 2-3 turns. VOCABULARY TARGET: park, playground, library, supermarket, zoo, restaurant, school. ALLOWED QUESTIONS: "Do you know the park?", "Where is the library?", "Do you go to the zoo?", "What is this place?" GRAMMAR ENFORCEMENT: Early turns - simple place names. Later turns - "I go to the park" OR "I am at the park" patterns. Recast all errors naturally. GAME MECHANIC: Show/describe ONE place → student identifies it → confirm → introduce next place. FORBIDDEN: Do NOT ask "What is your favorite place?" in first 8 turns. Do NOT ask about actions yet (that's Mission 2). NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Introducing too many places at once. Do NOT ask another question on the last turn.`,
       
-      target_vocab: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
+      target_vocab: ["park", "playground", "library", "supermarket", "zoo", "restaurant", "school"],
       
-      grammar_pattern: "There is a [item] in my backpack",
+      grammar_pattern: "I go to [place] / I am at [place]",
       
       // 📖 STORY ARC
       story_arc: [
         {
           phase: "introduction",
           turns: "1-4",
-          goal: "Open backpack, check first items with scaffolding",
+          goal: "Greet and introduce first weekend places",
           required_vocab: [],
           phase_questions: [
             {
-              template: "(After name) {student_answer}! Great name! Open your backpack! Can you see a pen or a ruler? Say: Yes, there is a pen or Yes, there is a ruler",
-              hints: ["Yes", "there", "is", "a", "pen", "ruler", "No", "isn't"]
+              template: "(After name) {student_answer}! Nice name! I love weekends! On Saturday I go to the PARK! Do you know the park? Say: Yes, I know the park or No, I do not know the park",
+              hints: ["Yes", "I", "know", "the", "park", "No", "do", "not"]
             },
             {
-              template: "(After first item) {student_answer}! Good! Can you see a book or a notebook? Say: Yes, there is a book or Yes, there is a notebook",
-              hints: ["Yes", "there", "is", "a", "book", "notebook", "No", "isn't"]
+              template: "(After park) {student_answer}! The park has grass and trees! You can play there! Do you go to the park? Say: Yes, I go to the park or No, I do not go to the park",
+              hints: ["Yes", "I", "go", "to", "the", "park", "No", "do", "not"]
             },
             {
-              template: "(After second item) {student_answer}! Great! What about an eraser? Do you have an eraser? Say: Yes, there is an eraser or No, there isn't an eraser",
-              hints: ["Yes", "there", "is", "an", "eraser", "No", "isn't"]
+              template: "(After answer) {student_answer}! I also love the PLAYGROUND! The playground has swings and slides! Do you know the playground? Say: Yes, I know the playground or Playground",
+              hints: ["Yes", "I", "know", "playground", "Playground"]
             },
             {
-              template: "(After eraser) {student_answer}! Perfect! Your backpack has many things! Let's check more! 📚",
-              hints: ["Yes", "Okay", "Great"]
+              template: "(After playground) {student_answer}! Great! The park and playground are fun places! Let's see more places!",
+              hints: ["Yes", "Okay", "Great", "More"]
             }
           ]
         },
         {
-          phase: "item_check",
+          phase: "explore_places",
           turns: "5-12",
-          goal: "Check more items with full sentence practice",
-          required_vocab: ["pen", "ruler", "eraser", "book", "notebook"],
+          goal: "Introduce more weekend places with pattern practice",
+          required_vocab: ["park", "playground", "library"],
           phase_questions: [
             {
-              template: "Can you see a notebook? Say: Yes, there is a notebook or No, there isn't a notebook",
-              hints: ["Yes", "there", "is", "a", "notebook", "No", "isn't"]
+              template: "Now I go to a quiet place! The LIBRARY! The library has many books! Do you go to the library? Say: Yes, I go to the library or Library",
+              hints: ["Yes", "I", "go", "to", "library", "Library"]
             },
             {
-              template: "Can you see a pencil case? Say: Yes, there is a pencil case or No, there isn't a pencil case",
-              hints: ["Yes", "there", "is", "a", "pencil", "case", "No", "isn't"]
+              template: "The library is quiet! 🤫 Shhh! Where is the library? Near your home or far from your home? Say: Near my home or Far from my home",
+              hints: ["Near", "my", "home", "Far", "from"]
             },
             {
-              template: "Open the pencil case! What do you see inside? Say: There is a pen or There is an eraser",
-              hints: ["There", "is", "a", "pen", "an", "eraser"]
+              template: "I need food! I go to the SUPERMARKET! The supermarket has food, drinks, toys! Do you know the supermarket? Say: Yes, I know the supermarket or Supermarket",
+              hints: ["Yes", "I", "know", "supermarket", "Supermarket"]
             },
             {
-              template: "How many pens are in the pencil case? Say: There is one pen or There are two pens",
-              hints: ["There", "is", "one", "pen", "are", "two", "pens"]
+              template: "At the supermarket I buy apples, I buy milk! What do you buy at the supermarket? Say: I buy apples or I buy milk or I buy toys",
+              hints: ["I", "buy", "apples", "milk", "toys", "bread"]
             },
             {
-              template: "What color is your notebook? Say: My notebook is blue or My notebook is red",
-              hints: ["My", "notebook", "is", "blue", "red", "white"]
+              template: "On Sunday I see animals! I go to the ZOO! The zoo has lions, elephants, monkeys! Do you like the zoo? Say: Yes, I like the zoo or No, I do not like the zoo",
+              hints: ["Yes", "I", "like", "zoo", "No", "do", "not"]
             },
             {
-              template: "How many books do you have? Say: There is one book or There are two books",
-              hints: ["There", "is", "one", "book", "are", "two", "books"]
+              template: "The zoo is fun! What animal do you see at the zoo? Say: I see lions or I see elephants or I see monkeys",
+              hints: ["I", "see", "lions", "elephants", "monkeys", "zebras"]
             },
             {
-              template: "Where is your ruler? Say: There is a ruler in my backpack or There is a ruler on the desk",
-              hints: ["There", "is", "a", "ruler", "in", "my", "backpack", "on", "the", "desk"]
+              template: "When I am hungry I go to the RESTAURANT! The restaurant has pizza, noodles, rice! Do you go to the restaurant? Say: Yes, I go to the restaurant or Restaurant",
+              hints: ["Yes", "I", "go", "restaurant", "Restaurant"]
             },
             {
-              template: "What else is in your backpack? Say: There is a pen or There is an eraser",
-              hints: ["There", "is", "a", "pen", "an", "eraser", "ruler"]
+              template: "You learned many places! Park, playground, library, supermarket, zoo, restaurant! Which place do you like? Say: I like the park or I like the zoo",
+              hints: ["I", "like", "the", "park", "zoo", "library", "supermarket"]
             }
           ]
         },
         {
-          phase: "favorite_item",
+          phase: "place_matching",
           turns: "13-16",
-          goal: "Ask about favorite school supply",
+          goal: "Match places with simple descriptions",
           required_vocab: [],
           phase_questions: [
             {
-              template: "What is your favorite item? Say: My favorite is the pen or My favorite is the book",
-              hints: ["My", "favorite", "is", "the", "pen", "book", "ruler"]
+              template: "Where do you see books? At the library or at the park? Say: At the library",
+              hints: ["At", "the", "library"]
             },
             {
-              template: "Why do you like it? Say: I like it because it is useful or I like it because it is pretty",
-              hints: ["I", "like", "it", "because", "is", "useful", "pretty", "good"]
+              template: "Where do you buy food? At the supermarket or at the zoo? Say: At the supermarket",
+              hints: ["At", "the", "supermarket"]
             },
             {
-              template: "What color is your favorite item? Say: It is blue or It is red",
-              hints: ["It", "is", "blue", "red", "green", "yellow"]
+              template: "Where do you see animals? At the zoo or at the restaurant? Say: At the zoo",
+              hints: ["At", "the", "zoo"]
             },
             {
-              template: "Is your backpack full or empty? Say: My backpack is full or My backpack is empty",
-              hints: ["My", "backpack", "is", "full", "empty"]
+              template: "You know many places now! Great job! Ready for more?",
+              hints: ["Yes", "Ready", "Okay", "Great"]
             }
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          goal: "Wrap up backpack check",
+          goal: "Wrap up place exploration",
           required_vocab: [],
           phase_questions: [
             {
-              template: "Your backpack has many items! Great job!",
+              template: "You learned 7 places! Park, playground, library, supermarket, zoo, restaurant, school! Well done!",
               hints: ["Thank", "you", "Yes", "Great"]
             },
             {
-              template: "Ready for school? Goodbye! Say: Goodbye!",
-              hints: ["Goodbye", "Yes", "Bye", "See", "you"]
+              template: "Next time we practice actions AT these places! See you soon! Goodbye!",
+              hints: ["Goodbye", "Bye", "See", "you"]
             }
           ]
         }
@@ -348,103 +348,103 @@ const week7RealData = {
     },
     {
       mission_id: 2,
-      title: "Classroom Treasure Hunt",
-      title_vi: "Săn Kho Báu trong Lớp",
-      theme: "Classroom Pointing Game",
+      title: "Action at Places",
+      title_vi: "Hành Động Tại Các Địa Điểm",
+      theme: "Actions + Preposition 'at'",
       
-      nova_greeting: "Let's play Treasure Hunt! I hide things in the classroom!", // DEPRECATED
-      default_hints: ["There", "is", "a", "whiteboard"],
+      nova_greeting: "Let's do actions at different places!", // DEPRECATED
+      default_hints: ["I", "play", "at", "the", "park"],
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 2 - Classroom Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a whiteboard" or "Say: There is a desk". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item student sees. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?". ONLY allowed questions: "(Point 👉) What is this?", "(Point 👉) What do you see?", "Look here! What is it?". GAME MECHANIC: Point to ONE classroom item per turn → student says 'There is a [item]' → confirm/recast → point to next item. NEVER ask about preferences, feelings, or descriptions - ONLY IDENTIFY ITEMS WITH 'There is a...'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 11 Mission 2 - Action at Places. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 10 words per sentence. FOCUS on ACTION + AT + PLACE pattern. GRAMMAR: "[I/You] + [action verb] + at + [place]" pattern. Give FULL scaffolding: "Say: I play at the park" or "Say: I read at the library". VOCABULARY: play, read, buy, study, eat, see + park, playground, library, supermarket, restaurant, zoo, school. STRICT FOCUS: CONNECTING ACTIONS WITH PLACES USING 'AT' - Every question must practice this pattern. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Why do you...?". ONLY allowed questions: "What do you do at the park?", "Where do you play?", "Do you read at the library?", "What do you buy at the supermarket?". GAME MECHANIC: Present ONE place → ask what action happens there → student says '[action] at the [place]' → confirm/recast → next place. NEVER ask about preferences or feelings - ONLY MATCH ACTIONS WITH PLACES USING 'AT'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
       
-      target_vocab: ["whiteboard", "computer", "desk", "chair", "book", "pen", "ruler", "teacher"],
+      target_vocab: ["play", "read", "buy", "study", "eat", "park", "library", "supermarket", "school", "restaurant"],
       
-      grammar_pattern: "There is a [item]",
+      grammar_pattern: "I [action] at the [place]",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
         name: "Ms. Nova",
-        personality: "friendly teacher, loves pointing at classroom items",
-        backstory: "I teach in this classroom! Let me show you around! There are many things here!",
-        speaking_style: "excited, points at objects one by one, celebrates correct answers",
+        personality: "Active teacher, demonstrates actions at different places",
+        backstory: "I do many activities at different places! Let me show you! You can do them too!",
+        speaking_style: "Energetic, models actions clearly, emphasizes 'at' preposition",
         facts: {
-          loves_teaching: true,
-          has_classroom: true,
-          favorite_item: "whiteboard",
-          desk_color: "brown",
-          students: 20,
-          teaches_English: true
+          plays_at_park: true,
+          reads_at_library: true,
+          buys_at_supermarket: true,
+          studies_at_school: true,
+          eats_at_restaurant: true,
+          active_lifestyle: true
         },
-        role: "Teacher showing classroom items by pointing"
+        role: "Action demonstrator showing where activities happen"
       },
 
-      opening_narrative: "Hi! I'm Ms. Nova! 🔍 Let's play Treasure Hunt in my classroom! I hide many things! (Point 👉 at whiteboard) Look! I found something at the front! What is this? Say: There is a...",
+      opening_narrative: "Hi! I'm Ms. Nova! Look! I PLAY at the park! What do you do at the park? Say: I play at the park!",
 
       story_arc: [
         {
-          phase: "treasure_hunt_start",
+          phase: "action_at_park",
           turns: "1-4",
-          phase_name: "Start Treasure Hunt!",
-          focus: "Find first hidden items with full scaffolding",
+          phase_name: "Actions at Park & Playground!",
+          focus: "Practice 'play at' pattern",
           phase_questions: [
-            "(Point 👉 at whiteboard) 🔍 Look! I found something at the front! What is this? Say: There is a...",
-            "(Point 👉 at desk) Yay! I found another! What do you see? Say: There is a...",
-            "(Point 👉 at chair) Wow! One more! What is it? Say: There is a...",
-            "(Point 👉 at computer) Great! Look here! What is this? Say: There is a..."
+            "Look! I PLAY at the park! What do you do at the park? Say: I play at the park!",
+            "What do you play at the park? Say: I play soccer at the park or I play basketball at the park or I run at the park",
+            "I also go to the playground! I PLAY at the playground! Do you play at the playground? Say: Yes, I play at the playground or No, I do not play at the playground",
+            "Great! You play at the park! You play at the playground! Where else do you play? Say: I play at..."
           ],
           example_answers: [
-            "There is a whiteboard",
-            "There is a desk",
-            "There is a chair",
-            "There is a computer"
+            "I play at the park",
+            "I play soccer at the park",
+            "Yes, I play at the playground",
+            "I play at school"
           ]
         },
         {
-          phase: "more_treasures",
+          phase: "action_library_supermarket",
           turns: "5-12",
-          phase_name: "Find More Treasures!",
-          focus: "Keep finding items with excitement",
+          phase_name: "More Actions at Places!",
+          focus: "Practice different action + place combinations",
           phase_questions: [
-            "(Point 👉 at book) 📖 I see something! What is it? Say: There is a...",
-            "(Point 👉 at pen) ✏️ Look! For writing! What is this? Say: There is a...",
-            "(Point 👉 at ruler) 📏 Yay! For measuring! What is this? Say: There is a...",
-            "(Point 👉 under desk) 🔍 Under here! What do you see? Say: There is a...",
-            "(Point 👉 on desk) ✨ On top! What is this? Say: There is a...",
-            "(Point 👉 near window) By the window! What is it? Say: There is a...",
-            "(Point 👉 in corner) In the corner! What do you see? Say: There is a...",
-            "(Point 👉 on wall) On the wall! What is this? Say: There is a..."
+            "Now I go to the library! It is quiet! What do you do at the library? Say: I read at the library!",
+            "Good! I READ at the library! Do you read books or read magazines at the library? Say: I read books at the library or I read magazines at the library",
+            "I am hungry! I go to the supermarket! What do you do at the supermarket? Say: I buy at the supermarket!",
+            "What do you buy at the supermarket? Say: I buy food at the supermarket or I buy drinks at the supermarket or I buy toys at the supermarket",
+            "I BUY apples at the supermarket! I BUY milk at the supermarket! What else do you buy? Say: I buy... at the supermarket",
+            "On Monday I go to school! What do you do at school? Say: I study at school!",
+            "Good! I STUDY at school! I STUDY English at school! What do you study at school? Say: I study math at school or I study science at school",
+            "When I am hungry I eat! Where do you eat? Say: I eat at the restaurant or I eat at home!"
           ],
           example_answers: [
-            "There is a book",
-            "There is a pen",
-            "There is a ruler",
-            "There is a desk",
-            "There is a chair",
-            "There is a whiteboard",
-            "There is a computer",
-            "There is a book"
+            "I read at the library",
+            "I read books at the library",
+            "I buy at the supermarket",
+            "I buy food at the supermarket",
+            "I buy bread at the supermarket",
+            "I study at school",
+            "I study math at school",
+            "I eat at the restaurant"
           ]
         },
         {
-          phase: "item_locations",
+          phase: "action_matching",
           turns: "13-16",
-          phase_name: "Where Are Items",
-          focus: "Ask about locations of items",
+          phase_name: "Match Actions & Places",
+          focus: "Review action + place pairs",
           phase_questions: [
-            "Where is the whiteboard? At the front or at the back?",
-            "Where is your desk? Near the door or near the window?",
-            "Where is the pen? On the desk or in the bag?",
-            "What is on the desk? A book, a pen, or a ruler?"
+            "Let's check! Where do you READ? Say: I read at the library",
+            "Where do you PLAY? Say: I play at the park or I play at the playground",
+            "Where do you BUY food? Say: I buy food at the supermarket",
+            "Perfect! You know: play at park, read at library, buy at supermarket, study at school!"
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          phase_name: "Wrap Up Tour",
-          focus: "Celebrate learning classroom items",
+          phase_name: "Celebrate Learning",
+          focus: "Wrap up action + place practice",
           phase_questions: [
-            "We saw many things in the classroom! What is your favorite? Whiteboard, computer, or desk?",
-            "Great job! You know all the classroom items! Bye bye! 👋"
+            "Great work! You can say: I play AT the park! I read AT the library! I buy AT the supermarket! Well done!",
+            "Remember to use AT! See you next mission! Goodbye!"
           ]
         }
       ],
@@ -455,103 +455,103 @@ const week7RealData = {
     },
     {
       mission_id: 3,
-      title: "The Magic Backpack",
-      title_vi: "Chiếc Balo Phép Thuật",
-      theme: "Magic Guessing Game",
+      title: "My Weekend Plans",
+      title_vi: "Kế Hoạch Cuối Tuần Của Tôi",
+      theme: "Planning Activities at Places",
       
-      nova_greeting: "I have a magic backpack! Let's see what appears inside!", // DEPRECATED
-      default_hints: ["There", "is", "a", "pen"],
+      nova_greeting: "Let's make weekend plans together!", // DEPRECATED
+      default_hints: ["I", "go", "to", "the", "park"],
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 3 - The Magic Backpack. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a pen" or "Say: There is a notebook". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item is in the backpack. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?", "Is it big?". ONLY allowed questions: "(Feel 👋) What is it?", "(Shake 🎒) What do you hear?", "What is this item?". GAME MECHANIC: Nova reaches in magic backpack → gives ONE clue → student guesses 'There is a/an [item]' → confirm/recast → next item. NEVER ask about preferences, feelings, or descriptions - ONLY GUESS ITEMS WITH 'There is a...'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 11 Mission 3 - My Weekend Plans. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 10 words per sentence. HELP student talk about THEIR weekend plans. GRAMMAR: "I go to [place]" AND "I [action] at [place]" patterns. Give FULL scaffolding: "Say: On Saturday I go to the park" or "Say: I play at the park on Sunday". VOCABULARY: Saturday, Sunday, morning, afternoon + all places and actions from Week 11. STRICT FOCUS: STUDENT'S WEEKEND PLANS - Every question helps student build their own weekend story using places and 'at'. FORBIDDEN: Do NOT ask "Do you like...?", "What is your favorite...?" in early turns. Do NOT ask complex "why" questions. ONLY allowed questions: "Where do you go on Saturday?", "What do you do at the park?", "Do you go to the library on Sunday?", "When do you go to the supermarket?". GAME MECHANIC: Ask about Saturday plan → student says place + action → Ask about Sunday plan → student says place + action → help combine into full weekend plan. NEVER ask unrelated questions. Build the weekend story step by step. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
       
-      target_vocab: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
+      target_vocab: ["Saturday", "Sunday", "morning", "afternoon", "park", "library", "supermarket", "zoo", "restaurant", "play", "read", "buy"],
       
-      grammar_pattern: "There is a [item] in my backpack",
+      grammar_pattern: "On [day] I go to [place] / I [action] at [place]",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
         name: "Ms. Nova",
-        personality: "mysterious, playful, loves magic tricks and surprises",
-        backstory: "I have a MAGIC backpack! I can't see inside, but I can feel things! Let's guess together!",
-        speaking_style: "mysterious, gives clues about what she feels, celebrates correct guesses",
+        personality: "Organized teacher, loves planning weekend activities",
+        backstory: "I always make fun weekend plans! Let me help you plan your weekend too!",
+        speaking_style: "Supportive, helps student build sentences, celebrates their ideas",
         facts: {
-          has_magic_backpack: true,
-          cant_see_inside: true,
-          loves_mysteries: true,
-          feels_items: true,
-          favorite_item: "notebook",
-          backpack_color: "purple"
+          plans_weekends: true,
+          saturday_plan: "park",
+          sunday_plan: "library",
+          organized: true,
+          loves_helping: true,
+          weekend_active: true
         },
-        role: "Magic backpack host giving mystery clues for student to guess"
+        role: "Weekend planning helper guiding student to express plans"
       },
 
-      opening_narrative: "Look! 📦 I have a MAGIC backpack! I can't see inside! (Feel 👋) Hmm... I feel something... What is it? Say: There is a...",
+      opening_narrative: "Look! My weekend plan! On Saturday I go to the PARK! I PLAY at the park! What about you? Where do you go on Saturday? Say: I go to...",
 
       story_arc: [
         {
-          phase: "intro",
+          phase: "saturday_plan",
           turns: "1-4",
-          phase_name: "Magic Backpack Opens!",
-          focus: "First mystery items with full scaffolding",
+          phase_name: "Saturday Plans!",
+          focus: "Build Saturday plan with place + action",
           phase_questions: [
-            "(Feel 👋 something long and thin ✏️) I can't see! What is it? Say: There is a...",
-            "(Feel 👋 something flat with pages 📖) Hmm... What is this? Say: There is a...",
-            "(Feel 👋 something small and soft 🧽) For cleaning! What is it? Say: There is an...",
-            "(Shake 🎒 pencil case rattles) I hear noise! What is inside? Say: There is a..."
+            "It is the weekend! On Saturday where do you go? Say: On Saturday I go to the park or On Saturday I go to the library or On Saturday I go to the zoo",
+            "(After Saturday place) {student_answer}! Great choice! What do you do there? Say: I play at the park or I read at the library or I see animals at the zoo",
+            "(After action) {student_answer}! Wonderful! In the morning or in the afternoon? Say: In the morning or In the afternoon",
+            "(After time) {student_answer}! Perfect! Your Saturday plan: You go to {place}! You {action} at the {place} in the {time}! Great plan!"
           ],
           example_answers: [
-            "There is a pen",
-            "There is a book",
-            "There is an eraser",
-            "There is a pencil case"
+            "On Saturday I go to the park",
+            "I play at the park",
+            "In the morning",
+            "Yes"
           ]
         },
         {
-          phase: "mystery_clues",
+          phase: "sunday_plan",
           turns: "5-12",
-          phase_name: "More Mystery Items!",
-          focus: "Keep guessing with excitement",
+          phase_name: "Sunday Plans!",
+          focus: "Build Sunday plan with different place + action",
           phase_questions: [
-            "(Feel 👋 something long and straight 📏) Hmm... long and hard! For measuring! What is it? Say: There is a...",
-            "(Feel 👋 many pages 📓) Wow! So many blank pages! For writing notes! What is it? Say: There is a...",
-            "(Hear click click 🖊️) Listen! Click click! Inside pencil case! What is it? Say: There is a...",
-            "(Feel 👋 very thin 📐) So thin! Like paper! For drawing straight lines! What is it? Say: There is a...",
-            "(Shake 🎒 hear rattle) Rattle rattle! Many things! What's inside? Say: There is a...",
-            "(Feel 👋 thick and heavy 📚) So heavy! Hundreds of pages! What is it? Say: There is a...",
-            "(Squeeze 🧽 soft and squishy) Squishy! For cleaning mistakes! What is it? Say: There is an...",
-            "(Pull out mystery item) Ta-da! 🎉 Last item! What is this? Say: There is a..."
+            "Now Sunday! On Sunday where do you go? Say: On Sunday I go to the library or On Sunday I go to the supermarket or On Sunday I go to the restaurant",
+            "(After Sunday place) {student_answer}! Nice! What do you do there? Say: I read at the library or I buy at the supermarket or I eat at the restaurant",
+            "(After action) {student_answer}! Excellent! With who? With mom, with dad, or with friends? Say: With mom or With dad or With friends",
+            "(After person) {student_answer}! Great! Your Sunday plan: You go to {place} with {person}! You {action} at the {place}!",
+            "Your weekend is full! Saturday you go to {Saturday_place}! Sunday you go to {Sunday_place}! Do you like your weekend plan? Say: Yes, I like my plan or No, I want to change",
+            "(If change) Where do you want to go? Say: I want to go to... or (If like) Great! Your plan is ready!",
+            "Let's check! On Saturday what do you do? Say: On Saturday I go to {place} and I {action} at the {place}",
+            "On Sunday what do you do? Say: On Sunday I go to {place} and I {action} at the {place}"
           ],
           example_answers: [
-            "There is a ruler",
-            "There is a notebook",
-            "There is a pen",
-            "There is a ruler",
-            "There is a book",
-            "There is a book",
-            "There is an eraser",
-            "There is a pencil case"
+            "On Sunday I go to the library",
+            "I read at the library",
+            "With mom",
+            "Yes",
+            "Yes, I like my plan",
+            "Great",
+            "On Saturday I go to the park and I play at the park",
+            "On Sunday I go to the library and I read at the library"
           ]
         },
         {
-          phase: "verification",
+          phase: "full_weekend",
           turns: "13-16",
-          phase_name: "Check Everything",
-          focus: "Verify all items are packed",
+          phase_name: "Complete Weekend Story",
+          focus: "Review full weekend plan",
           phase_questions: [
-            "Let's check! Is there a pen? Yes or no?",
-            "Is there a ruler? Yes or no?",
-            "Is there a notebook? Yes or no?",
-            "Perfect! Your backpack is full! Ready for school?"
+            "Tell me your full weekend! On Saturday I go to... Say: On Saturday I go to the park",
+            "And on Sunday? Say: On Sunday I go to the library",
+            "Perfect! Your weekend: Saturday at {place}, Sunday at {place}! Great plan!",
+            "Next weekend will be fun! Are you ready? Say: Yes, I am ready!"
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          phase_name: "Ready for School",
-          focus: "Celebrate being prepared",
+          phase_name: "Celebrate Planning",
+          focus: "Wrap up weekend planning",
           phase_questions: [
-            "Great job! Your backpack has everything! You are ready for school! 🎒",
-            "See you at school tomorrow! Goodbye! 👋"
+            "You made a great weekend plan! You know places! You know actions! You use AT! Wonderful job!",
+            "Enjoy your weekend! Have fun! Goodbye!"
           ]
         }
       ],
@@ -564,31 +564,34 @@ const week7RealData = {
 
   // === FREE TALK KNOWLEDGE BASE ===
   freetalk_knowledge: {
-    week_title: "Inside My Backpack",
-    week_number: 7,
-    theme: "School Supplies",
+    week_title: "Weekend Fun Spots",
+    week_number: 11,
+    theme: "Places and Preposition 'at'",
     
     knowledge_base: [
-      "School supplies: pen, ruler, eraser, book, notebook, pencil case, backpack",
-      "Classroom items: whiteboard, computer, desk, chair, teacher",
-      "Grammar: There is a... (There is a pen in my backpack)",
-      "We use pens and pencils for writing",
-      "We use rulers for measuring and drawing lines",
-      "We use erasers to remove pencil marks",
-      "Books and notebooks help us learn at school",
-      "We carry school supplies in our backpacks",
-      "The classroom has a whiteboard, desks, and chairs",
-      "We need to pack our backpacks before school"
+      "Weekend places: park, playground, library, supermarket, zoo, restaurant, school",
+      "Actions: play, read, buy, study, eat, see",
+      "Grammar: [Subject] + [Verb] + at + [Place]",
+      "Example: I play at the park",
+      "Example: I read at the library",
+      "Example: I buy food at the supermarket",
+      "We use 'at' to show WHERE we do actions",
+      "Parks have grass, trees, and open space for playing",
+      "Libraries are quiet places with many books",
+      "Supermarkets have food, drinks, and other items",
+      "Zoos have many different animals to see",
+      "Restaurants serve food for people to eat",
+      "Playgrounds have swings, slides, and climbing equipment"
     ],
     
     example_opening_questions: [
-      "What is in your backpack?",
-      "Do you have a pen?",
-      "What is your favorite school supply?",
-      "What color is your backpack?",
-      "What do you see in the classroom?",
-      "Is there a whiteboard in your classroom?",
-      "How many books do you have?"
+      "Where do you play?",
+      "Do you go to the park?",
+      "What do you do at the library?",
+      "Where do you buy food?",
+      "Do you like the zoo?",
+      "What do you see at the zoo?",
+      "Where do you eat on weekends?"
     ],
     
     // ✅ FREE TALK 2.0: Starter prompts (Fixed buttons for all weeks)
@@ -601,125 +604,121 @@ const week7RealData = {
     
     // Legacy bonus roleplay (kept for backward compatibility)
     bonus_roleplay: {
-      id: 'week7_backpack_check',
-      label_en: "Backpack Checker 🎒",
-      label_vi: "Kiểm tra Balo 🎒",
-      icon: "🎒",
-      ai_role: "Teacher checking student's backpack",
-      user_role: "Student showing backpack items",
-      intro: "Hi! Let's check your backpack together! Open it! What do you have inside?",
-      context: "Week 7 theme - School Supplies. AI acts as friendly teacher checking backpack items one by one (pen, ruler, eraser, book, notebook). Teacher asks 'Is there a...?' and student responds 'There is a...' patterns. Teacher should be encouraging and use simple words suitable for A0+ level."
+      id: 'week11_weekend_tour',
+      label_en: "Weekend Tour Guide 🗺️",
+      label_vi: "Hướng Dẫn Viên Cuối Tuần 🗺️",
+      icon: "🗺️",
+      ai_role: "Tour guide showing fun weekend places",
+      user_role: "Student learning about places",
+      intro: "Hi! I am your weekend tour guide! Let me show you fun places! First stop: the park!",
+      context: "Week 11 theme - Weekend Fun Spots. AI acts as friendly tour guide showing different places (park, playground, library, supermarket, zoo, restaurant). Guide asks 'What do you do at...?' and student responds with 'I [action] at the [place]' patterns. Guide should be enthusiastic and use simple words suitable for A0+ level."
     }
   },
 
 
   conversation_cards: [
     {
-      id: "whats_in_my_bag",
-      title: "What's In My Bag?",
-      emoji: "🎒",
-      theme: "School Supplies — There Is",
+      id: "places_i_go",
+      title: "Places I Go",
+      emoji: "🗺️",
+      theme: "Weekend Places — At",
       difficulty: "easy",
       exchanges: [
         {
-          ai: "Let's look in your school bag! Is there a book? Say: Yes, there is a book!",
-          accept: ["Yes", "there is", "a book", "book"]
+          ai: "Where do you play? At the park or at home? Say: I play at the park or I play at home",
+          options: ["I play at the park", "I play at home"]
         },
         {
-          ai: "What else is in your bag? Say: There is a ___",
-          fill_blank: "There is a ___",
-          accept_words: ["pen", "book", "pencil", "notebook", "ruler", "eraser", "there is"]
+          ai: "Where do you read books? Say: I read at the ___",
+          fill_blank: "I read at the ___",
+          accept_words: ["library", "school", "home", "at the library"]
         },
         {
-          ai: "Is there a ruler? Say: Yes, there is a ruler! or No, there is no ruler!",
-          options: ["Yes, there is a ruler!", "No, there is no ruler!"]
+          ai: "Do you go to the supermarket? Say: Yes, I go to the supermarket or No, I do not go to the supermarket",
+          options: ["Yes, I go to the supermarket", "No, I do not go to the supermarket"]
         },
         {
-          ai: "Remember: AN before vowels! Is there an eraser? Say: There is an ___",
-          fill_blank: "There is an ___",
-          accept_words: ["eraser", "an eraser", "umbrella", "apple"]
+          ai: "Where do you see animals? At the zoo or at the park? Say: I see animals at the ___",
+          fill_blank: "I see animals at the ___",
+          accept_words: ["zoo", "at the zoo", "park"]
         },
         {
-          ai: "Tell me one thing you have in your bag! Say: There is a ___",
-          fill_blank: "There is a ___",
-          accept_words: ["pen", "book", "pencil", "ruler", "eraser", "notebook", "bag", "there is"]
+          ai: "Tell me one place you like! Say: I like the ___",
+          fill_blank: "I like the ___",
+          accept_words: ["park", "library", "zoo", "playground", "supermarket", "restaurant", "school"]
         }
       ],
-      completion_message: "Your bag is ready for school! 🎒 You used: There is a pen/book/ruler/eraser!"
+      completion_message: "You know many places! 🗺️ You used: at the park/library/zoo/supermarket!"
     },
     {
-      id: "pencil_case_check",
-      title: "Pencil Case Check!",
-      emoji: "✏️",
-      theme: "Counting School Supplies",
+      id: "weekend_actions",
+      title: "Weekend Actions!",
+      emoji: "🎯",
+      theme: "Actions at Places",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Open your pencil case! Is there a pencil? Say: Yes, there is a pencil in my pencil case!",
-          accept: ["Yes", "there is", "pencil", "a pencil"]
+          ai: "What do you do at the park? Say: I play at the park or I run at the park",
+          options: ["I play at the park", "I run at the park"]
         },
         {
-          ai: "Is there a red pen? Choose: Yes, there is a red pen or No, there is a blue pen or No, there is no pen",
-          options: ["Yes, there is a red pen", "No, there is a blue pen", "No, there is no pen"]
+          ai: "What do you do at the library? Say: I ___ at the library",
+          fill_blank: "I ___ at the library",
+          accept_words: ["read", "study", "read books"]
         },
         {
-          ai: "AN before vowel sounds! Say: There is an ___ in my pencil case!",
-          fill_blank: "There is an ___",
-          accept_words: ["eraser", "an eraser", "umbrella"]
+          ai: "What do you buy at the supermarket? Say: I buy ___ at the supermarket",
+          fill_blank: "I buy ___ at the supermarket",
+          accept_words: ["food", "milk", "bread", "apples", "toys", "drinks"]
         },
         {
-          ai: "Is there a sharpener? Choose: Yes, there is a sharpener or No, there is no sharpener",
-          options: ["Yes, there is a sharpener", "No, there is no sharpener"]
+          ai: "Where do you study? At school or at home? Say: I study at ___",
+          fill_blank: "I study at ___",
+          accept_words: ["school", "home", "at school", "at home", "the library"]
         },
         {
-          ai: "What colour is your pencil case? Say: My pencil case is ___",
-          fill_blank: "My pencil case is ___",
-          accept_words: ["red", "blue", "green", "yellow", "pink", "black", "white", "purple", "pencil case"]
-        },
-        {
-          ai: "Tell me TWO things in your pencil case! Say: There is a ___ and there is a ___",
-          accept: ["there is", "and", "pencil", "pen", "eraser", "ruler", "sharpener"]
+          ai: "Tell me TWO things you do! Say: I ___ at the ___ and I ___ at the ___",
+          accept: ["I", "at", "the", "play", "read", "buy", "study", "park", "library", "supermarket", "school", "and"]
         }
       ],
-      completion_message: "Pencil case ready! ✏️ You used: There is a pencil/eraser/ruler/sharpener!"
+      completion_message: "Great actions! 🎯 You used: I play/read/buy at..."
     },
     {
-      id: "classroom_quest",
-      title: "Classroom Quest!",
-      emoji: "🏫",
-      theme: "Finding Things in the Classroom",
+      id: "my_weekend_plan",
+      title: "My Weekend Plan",
+      emoji: "📅",
+      theme: "Planning Weekend Activities",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Look around your classroom! Is there a board? Say: Yes, there is a board!",
-          accept: ["Yes", "there is", "a board", "board"]
+          ai: "On Saturday where do you go? Say: On Saturday I go to the park or On Saturday I go to the library",
+          options: ["On Saturday I go to the park", "On Saturday I go to the library", "On Saturday I go to the zoo"]
         },
         {
-          ai: "Look around! What do you see? Say: There is a ___ in my classroom",
-          fill_blank: "There is a ___ in my classroom",
-          accept_words: ["desk", "chair", "board", "window", "door", "computer", "book", "there is"]
+          ai: "What do you do there? Say: I ___ at the ___",
+          fill_blank: "I ___ at the ___",
+          accept_words: ["play", "read", "buy", "see", "eat", "at", "the", "park", "library", "zoo", "supermarket"]
         },
         {
-          ai: "Is there a book on your desk right now? Say: Yes, there is a book! or No, there is no book!",
-          options: ["Yes, there is a book!", "No, there is no book!"]
+          ai: "On Sunday where do you go? Say: On Sunday I go to the ___",
+          fill_blank: "On Sunday I go to the ___",
+          accept_words: ["library", "supermarket", "restaurant", "zoo", "park", "playground"]
         },
         {
-          ai: "Is there a pen on the desk? Choose: Yes, there is a pen or No, there is no pen",
-          options: ["Yes, there is a pen", "No, there is no pen"]
+          ai: "In the morning or in the afternoon? Say: In the morning or In the afternoon",
+          options: ["In the morning", "In the afternoon"]
         },
         {
-          ai: "What do you see in your classroom? Say: There is a ___",
-          fill_blank: "There is a ___",
-          accept_words: ["board", "desk", "chair", "book", "pen", "pencil", "window", "door", "teacher", "there is"]
-        },
-        {
-          ai: "Which school supply is most important? Choose: A book is most important or A pen is most important or A bag is most important",
-          options: ["A book is most important", "A pen is most important", "A bag is most important"]
+          ai: "Great! Tell me your full Saturday plan! Say: On Saturday I go to the ___ and I ___ at the ___",
+          accept: ["On", "Saturday", "I", "go", "to", "the", "and", "at", "play", "read", "buy", "park", "library", "zoo"]
         }
       ],
-      completion_message: "Quest complete! 🏫🏆 You found everything using: There is a pen/book/desk/board!"
+      completion_message: "Perfect weekend plan! 📅 You used: On Saturday/Sunday I go to... I play/read at..."
     }
   ]
 };
 
-export default week7RealData;
+// === MODULE EXPORT ===
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = week11RealData;
+}
