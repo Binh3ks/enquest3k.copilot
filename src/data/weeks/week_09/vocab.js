@@ -8,11 +8,11 @@ export default {
       definition_en: "a large town with many people",
       example: "I live in a big city.",
       collocation: "big city",
-      image_url: "/images/week9/city.jpg",
-      audio_word: "/audio/week9/vocab_city.mp3",
-      audio_definition: "/audio/week9/vocab_def_city.mp3",
-      audio_example: "/audio/week9/vocab_ex_city.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_city.mp3"
+      image_url: "/images/week09/city.jpg",
+      audio_word: "/audio/week09/vocab_city.mp3",
+      audio_definition: "/audio/week09/vocab_def_city.mp3",
+      audio_example: "/audio/week09/vocab_ex_city.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_city.mp3"
     },
     {
       id: 2,
@@ -22,11 +22,11 @@ export default {
       definition_en: "a road in a city or town",
       example: "The street is very busy.",
       collocation: "busy street",
-      image_url: "/images/week9/street.jpg",
-      audio_word: "/audio/week9/vocab_street.mp3",
-      audio_definition: "/audio/week9/vocab_def_street.mp3",
-      audio_example: "/audio/week9/vocab_ex_street.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_street.mp3"
+      image_url: "/images/week09/street.jpg",
+      audio_word: "/audio/week09/vocab_street.mp3",
+      audio_definition: "/audio/week09/vocab_def_street.mp3",
+      audio_example: "/audio/week09/vocab_ex_street.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_street.mp3"
     },
     {
       id: 3,
@@ -36,11 +36,11 @@ export default {
       definition_en: "making a lot of sound",
       example: "It is a noisy city.",
       collocation: "noisy traffic",
-      image_url: "/images/week9/noisy.jpg",
-      audio_word: "/audio/week9/vocab_noisy.mp3",
-      audio_definition: "/audio/week9/vocab_def_noisy.mp3",
-      audio_example: "/audio/week9/vocab_ex_noisy.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_noisy.mp3"
+      image_url: "/images/week09/noisy.jpg",
+      audio_word: "/audio/week09/vocab_noisy.mp3",
+      audio_definition: "/audio/week09/vocab_def_noisy.mp3",
+      audio_example: "/audio/week09/vocab_ex_noisy.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_noisy.mp3"
     },
     {
       id: 4,
@@ -50,11 +50,11 @@ export default {
       definition_en: "full of people and activity",
       example: "It is a busy street.",
       collocation: "busy city",
-      image_url: "/images/week9/busy.jpg",
-      audio_word: "/audio/week9/vocab_busy.mp3",
-      audio_definition: "/audio/week9/vocab_def_busy.mp3",
-      audio_example: "/audio/week9/vocab_ex_busy.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_busy.mp3"
+      image_url: "/images/week09/busy.jpg",
+      audio_word: "/audio/week09/vocab_busy.mp3",
+      audio_definition: "/audio/week09/vocab_def_busy.mp3",
+      audio_example: "/audio/week09/vocab_ex_busy.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_busy.mp3"
     },
     {
       id: 5,
@@ -64,11 +64,11 @@ export default {
       definition_en: "of great height",
       example: "It is a tall building.",
       collocation: "tall building",
-      image_url: "/images/week9/tall.jpg",
-      audio_word: "/audio/week9/vocab_tall.mp3",
-      audio_definition: "/audio/week9/vocab_def_tall.mp3",
-      audio_example: "/audio/week9/vocab_ex_tall.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_tall.mp3"
+      image_url: "/images/week09/tall.jpg",
+      audio_word: "/audio/week09/vocab_tall.mp3",
+      audio_definition: "/audio/week09/vocab_def_tall.mp3",
+      audio_example: "/audio/week09/vocab_ex_tall.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_tall.mp3"
     },
     {
       id: 6,
@@ -78,11 +78,11 @@ export default {
       definition_en: "new and up-to-date",
       example: "It is a modern city.",
       collocation: "modern building",
-      image_url: "/images/week9/modern.jpg",
-      audio_word: "/audio/week9/vocab_modern.mp3",
-      audio_definition: "/audio/week9/vocab_def_modern.mp3",
-      audio_example: "/audio/week9/vocab_ex_modern.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_modern.mp3"
+      image_url: "/images/week09/modern.jpg",
+      audio_word: "/audio/week09/vocab_modern.mp3",
+      audio_definition: "/audio/week09/vocab_def_modern.mp3",
+      audio_example: "/audio/week09/vocab_ex_modern.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_modern.mp3"
     },
     {
       id: 7,
@@ -92,11 +92,11 @@ export default {
       definition_en: "a vehicle with four wheels",
       example: "I see a red car.",
       collocation: "fast car",
-      image_url: "/images/week9/car.jpg",
-      audio_word: "/audio/week9/vocab_car.mp3",
-      audio_definition: "/audio/week9/vocab_def_car.mp3",
-      audio_example: "/audio/week9/vocab_ex_car.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_car.mp3"
+      image_url: "/images/week09/car.jpg",
+      audio_word: "/audio/week09/vocab_car.mp3",
+      audio_definition: "/audio/week09/vocab_def_car.mp3",
+      audio_example: "/audio/week09/vocab_ex_car.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_car.mp3"
     },
     {
       id: 8,
@@ -106,11 +106,11 @@ export default {
       definition_en: "a large vehicle for many passengers",
       example: "It is a yellow bus.",
       collocation: "school bus",
-      image_url: "/images/week9/bus.jpg",
-      audio_word: "/audio/week9/vocab_bus.mp3",
-      audio_definition: "/audio/week9/vocab_def_bus.mp3",
-      audio_example: "/audio/week9/vocab_ex_bus.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_bus.mp3"
+      image_url: "/images/week09/bus.jpg",
+      audio_word: "/audio/week09/vocab_bus.mp3",
+      audio_definition: "/audio/week09/vocab_def_bus.mp3",
+      audio_example: "/audio/week09/vocab_ex_bus.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_bus.mp3"
     },
     {
       id: 9,
@@ -120,11 +120,11 @@ export default {
       definition_en: "a structure with walls and a roof",
       example: "It is a tall building.",
       collocation: "tall building",
-      image_url: "/images/week9/building.jpg",
-      audio_word: "/audio/week9/vocab_building.mp3",
-      audio_definition: "/audio/week9/vocab_def_building.mp3",
-      audio_example: "/audio/week9/vocab_ex_building.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_building.mp3"
+      image_url: "/images/week09/building.jpg",
+      audio_word: "/audio/week09/vocab_building.mp3",
+      audio_definition: "/audio/week09/vocab_def_building.mp3",
+      audio_example: "/audio/week09/vocab_ex_building.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_building.mp3"
     },
     {
       id: 10,
@@ -134,11 +134,11 @@ export default {
       definition_en: "vehicles moving on roads",
       example: "The traffic is heavy today.",
       collocation: "heavy traffic",
-      image_url: "/images/week9/traffic.jpg",
-      audio_word: "/audio/week9/vocab_traffic.mp3",
-      audio_definition: "/audio/week9/vocab_def_traffic.mp3",
-      audio_example: "/audio/week9/vocab_ex_traffic.mp3",
-      audio_collocation: "/audio/week9/vocab_coll_traffic.mp3"
+      image_url: "/images/week09/traffic.jpg",
+      audio_word: "/audio/week09/vocab_traffic.mp3",
+      audio_definition: "/audio/week09/vocab_def_traffic.mp3",
+      audio_example: "/audio/week09/vocab_ex_traffic.mp3",
+      audio_collocation: "/audio/week09/vocab_coll_traffic.mp3"
     }
   ]
 };
