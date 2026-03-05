@@ -324,9 +324,13 @@ const PronunciationTab = () => {
           currentWordIndex: isWordMode ? currentWordIndex : 0,
           currentSentenceIndex: !isWordMode ? currentSentenceIndex : 0
         });
+        
+        // ✅ SUCCESS: Show completion UI
+        setPracticeMode('complete');
+      } else {
+        // ❌ INCORRECT or LOW SCORE: Return to listen mode to try again
+        setPracticeMode('listen');
       }
-      
-      setPracticeMode('feedback'); // Show feedback UI
       
     } catch (error) {
       console.error('❌ Deepgram pronunciation error:', error);
