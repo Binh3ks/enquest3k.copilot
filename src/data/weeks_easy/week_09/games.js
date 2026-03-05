@@ -479,4 +479,4 @@ export const week9GamesAdvanced = {
   }
 };
 
-export default week6GamesAdvanced;
+export default week9GamesEasy;
