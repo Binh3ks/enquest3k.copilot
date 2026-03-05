@@ -2,43 +2,33 @@
   "videos": [
     {
       "id": 1,
-      "priority_search": "English Singsing prepositions in on under ESL kids",
-      "backup_search": "prepositions song ESL cartoons kids",
-      "target_grammar": "Prepositions (In, On, Under, Next to)",
+      "priority_search": "In The City City Places Song ESL kids",
+      "backup_search": "city vocabulary song kids simple English",
+      "target_grammar": "Adjectives describing city",
       "target_channel": "English Singsing",
       "purpose": "GRAMMAR"
     },
     {
       "id": 2,
-      "priority_search": "Super Simple Songs where is it position words",
-      "backup_search": "position words song kids ESL",
-      "target_grammar": "Prepositions",
+      "priority_search": "City Song What do you see in the city ESL kids",
+      "backup_search": "city buildings cars buses kids song",
+      "target_grammar": "Adjectives before nouns",
       "target_channel": "Super Simple Songs",
       "purpose": "VOCABULARY"
     },
     {
       "id": 3,
-      "priority_search": "Little Fox hide and seek story kids",
-      "backup_search": "hide and seek story ESL children",
-      "target_grammar": "Location words",
+      "priority_search": "Adjectives Song Learn English Grammar for kids",
+      "backup_search": "adjectives describing words song ESL children",
+      "target_grammar": "Adjectives",
       "target_channel": "Little Fox",
       "purpose": "STORY"
     },
     {
       "id": 4,
-      "priority_search": "treasure hunt kids English video",
-      "backup_search": "treasure hunt story ESL children",
-      "target_grammar": "Prepositions",
-      "target_channel": "Kids Stories",
-      "purpose": "THEME"
-    },
-    {
-      "id": 5,
-      "priority_search": "in on under next to song ESL kids",
-      "backup_search": "position words educational video",
-      "target_grammar": "Prepositions",
-      "target_channel": "Educational Channels",
-      "purpose": "GRAMMAR"
-    }
-  ]
+      "priority_search": "City and Countryside Learning Videos for Kids",
+      "backup_search": "city life for kids English video",
+           et_grammar"           etul           et_grammar"           etul           et_grammar"     po           et_grammar"           etul           et_grammar"       "           et_grammar"           etul           et_gackup_search": "cars buses traffic kids song English",
+      "target_gram      "City vehicles",
+                                                                            ]
 }
