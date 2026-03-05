@@ -1,8 +1,8 @@
 /**
- * Week 9 Game Data - Advanced Mode (New GameHub)
+ * Week 9 Game Data - Easy Mode (New GameHub)
  */
 
-export const week9GamesAdvanced = {
+export const week9GamesEasy = {
   vocabulary: [
     'city', 'street', 'noisy', 'busy', 'tall',
     'modern', 'car', 'bus', 'building', 'traffic'
