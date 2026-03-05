@@ -19,6 +19,8 @@ import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
 import week6RealData from '../../../data/weeks/week_06_real'; // Week 6 syllabus
 import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
 import week8RealData from '../../../data/weeks/week_08_real'; // Week 8 syllabus
+import week9RealData from '../../../data/weeks/week_09_real'; // Week 9 syllabus - City Sounds & Sights
+import week10RealData from '../../../data/weeks/week_10_real'; // Week 10 syllabus - The Farm Adventure
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import { FREE_TALK_ACTIONS, ROLEPLAY_SCENARIOS as STATIC_ROLEPLAY } from '../../../config/freeTalkConfig'; // 🎭 ROLEPLAY & CHAT
@@ -71,7 +73,7 @@ const FreeTalkTab = () => {
   });
   
   // 🔥 Dynamic week data selection
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : week5RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : weekNumber === 9 ? week9RealData : weekNumber === 10 ? week10RealData : week5RealData;
   
   // 🎭 Get roleplays from weekRealData (NEW SYSTEM - NOT from dynamicRoleplays.js!)
   const dynamicRoleplays = weekRealData?.roleplay_scenarios || [];
