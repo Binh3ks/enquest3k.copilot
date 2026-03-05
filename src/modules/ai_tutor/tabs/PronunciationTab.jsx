@@ -22,7 +22,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api'
  * - Detailed feedback on accuracy
  */
 const PronunciationTab = () => {
-  const { user } = useUserStore();
+  const { user, token } = useUserStore();
   const location = useLocation(); // 🔥 Get location from react-router
   
   // 🔥 Parse weekId from pathname: /week/2/ai-tutor -> 2
@@ -264,10 +264,15 @@ const PronunciationTab = () => {
       formData.append('mode', isWordMode ? 'word' : 'sentence');
       
       // 🔥 Send to Deepgram backend (Railway server)
+      const headers = {};
+      if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+      }
+      
       const response = await fetch(`${API_BASE_URL}/pronunciation/evaluate-deepgram`, {
         method: 'POST',
-        body: formData,
-        credentials: 'include' // Include auth cookies if needed
+        headers,
+        body: formData
       });
       
       if (!response.ok) {

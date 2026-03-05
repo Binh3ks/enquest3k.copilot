@@ -206,10 +206,16 @@ async function uploadToR2Cache(cacheKey, audioBlob) {
     formData.append('cacheKey', cacheKey);
     
     // Upload via backend API (Railway server proxied to R2)
+    // Note: R2 cache upload might not need auth, but include token if available
+    const headers = {};
+    // Get token from useUserStore if needed (currently not required for R2 cache)
+    // const token = useUserStore.getState()?.token;
+    // if (token) headers['Authorization'] = `Bearer ${token}`;
+    
     const response = await fetch(`${API_BASE_URL}/cache/audio`, {
       method: 'POST',
-      body: formData,
-      credentials: 'include' // Include auth cookies if needed
+      headers,
+      body: formData
     });
     
     if (response.ok) {
