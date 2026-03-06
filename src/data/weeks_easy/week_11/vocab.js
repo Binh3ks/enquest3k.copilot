@@ -8,11 +8,11 @@ export default {
       definition_en: "a place to play outside",
       example: "I play at the park.",
       collocation: "go to the park",
-      image_url: "/images/week11/park.jpg",
-      audio_word: "/audio/week11/vocab_park.mp3",
-      audio_definition: "/audio/week11/vocab_def_park.mp3",
-      audio_example: "/audio/week11/vocab_ex_park.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_park.mp3"
+      image_url: "/images/week11_easy/park.jpg",
+      audio_word: "/audio/week11_easy/vocab_park.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_park.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_park.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_park.mp3"
     },
     {
       id: 2,
@@ -22,11 +22,11 @@ export default {
       definition_en: "a place with swings",
       example: "I play at the playground.",
       collocation: "play at playground",
-      image_url: "/images/week11/playground.jpg",
-      audio_word: "/audio/week11/vocab_playground.mp3",
-      audio_definition: "/audio/week11/vocab_def_playground.mp3",
-      audio_example: "/audio/week11/vocab_ex_playground.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_playground.mp3"
+      image_url: "/images/week11_easy/playground.jpg",
+      audio_word: "/audio/week11_easy/vocab_playground.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_playground.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_playground.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_playground.mp3"
     },
     {
       id: 3,
@@ -36,11 +36,11 @@ export default {
       definition_en: "a place to learn",
       example: "I go to school.",
       collocation: "go to school",
-      image_url: "/images/week11/school.jpg",
-      audio_word: "/audio/week11/vocab_school.mp3",
-      audio_definition: "/audio/week11/vocab_def_school.mp3",
-      audio_example: "/audio/week11/vocab_ex_school.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_school.mp3"
+      image_url: "/images/week11_easy/school.jpg",
+      audio_word: "/audio/week11_easy/vocab_school.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_school.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_school.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_school.mp3"
     },
     {
       id: 4,
@@ -50,11 +50,11 @@ export default {
       definition_en: "a place with books",
       example: "I read at the library.",
       collocation: "read at library",
-      image_url: "/images/week11/library.jpg",
-      audio_word: "/audio/week11/vocab_library.mp3",
-      audio_definition: "/audio/week11/vocab_def_library.mp3",
-      audio_example: "/audio/week11/vocab_ex_library.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_library.mp3"
+      image_url: "/images/week11_easy/library.jpg",
+      audio_word: "/audio/week11_easy/vocab_library.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_library.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_library.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_library.mp3"
     },
     {
       id: 5,
@@ -64,11 +64,11 @@ export default {
       definition_en: "a place to buy things",
       example: "I buy at the store.",
       collocation: "go to store",
-      image_url: "/images/week11/store.jpg",
-      audio_word: "/audio/week11/vocab_store.mp3",
-      audio_definition: "/audio/week11/vocab_def_store.mp3",
-      audio_example: "/audio/week11/vocab_ex_store.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_store.mp3"
+      image_url: "/images/week11_easy/store.jpg",
+      audio_word: "/audio/week11_easy/vocab_store.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_store.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_store.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_store.mp3"
     },
     {
       id: 6,
@@ -78,11 +78,11 @@ export default {
       definition_en: "to have food",
       example: "I eat food.",
       collocation: "eat food",
-      image_url: "/images/week11/eat.jpg",
-      audio_word: "/audio/week11/vocab_eat.mp3",
-      audio_definition: "/audio/week11/vocab_def_eat.mp3",
-      audio_example: "/audio/week11/vocab_ex_eat.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_eat.mp3"
+      image_url: "/images/week11_easy/eat.jpg",
+      audio_word: "/audio/week11_easy/vocab_eat.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_eat.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_eat.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_eat.mp3"
     },
     {
       id: 7,
@@ -92,11 +92,11 @@ export default {
       definition_en: "a place with animals",
       example: "I see animals at the zoo.",
       collocation: "go to zoo",
-      image_url: "/images/week11/zoo.jpg",
-      audio_word: "/audio/week11/vocab_zoo.mp3",
-      audio_definition: "/audio/week11/vocab_def_zoo.mp3",
-      audio_example: "/audio/week11/vocab_ex_zoo.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_zoo.mp3"
+      image_url: "/images/week11_easy/zoo.jpg",
+      audio_word: "/audio/week11_easy/vocab_zoo.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_zoo.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_zoo.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_zoo.mp3"
     },
     {
       id: 8,
@@ -106,11 +106,11 @@ export default {
       definition_en: "to have fun",
       example: "I play at the park.",
       collocation: "play games",
-      image_url: "/images/week11/play.jpg",
-      audio_word: "/audio/week11/vocab_play.mp3",
-      audio_definition: "/audio/week11/vocab_def_play.mp3",
-      audio_example: "/audio/week11/vocab_ex_play.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_play.mp3"
+      image_url: "/images/week11_easy/play.jpg",
+      audio_word: "/audio/week11_easy/vocab_play.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_play.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_play.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_play.mp3"
     },
     {
       id: 9,
@@ -120,11 +120,11 @@ export default {
       definition_en: "to look at books",
       example: "I read at the library.",
       collocation: "read books",
-      image_url: "/images/week11/read.jpg",
-      audio_word: "/audio/week11/vocab_read.mp3",
-      audio_definition: "/audio/week11/vocab_def_read.mp3",
-      audio_example: "/audio/week11/vocab_ex_read.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_read.mp3"
+      image_url: "/images/week11_easy/read.jpg",
+      audio_word: "/audio/week11_easy/vocab_read.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_read.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_read.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_read.mp3"
     },
     {
       id: 10,
@@ -134,11 +134,11 @@ export default {
       definition_en: "to get something with money",
       example: "I buy toys.",
       collocation: "buy things",
-      image_url: "/images/week11/buy.jpg",
-      audio_word: "/audio/week11/vocab_buy.mp3",
-      audio_definition: "/audio/week11/vocab_def_buy.mp3",
-      audio_example: "/audio/week11/vocab_ex_buy.mp3",
-      audio_collocation: "/audio/week11/vocab_coll_buy.mp3"
+      image_url: "/images/week11_easy/buy.jpg",
+      audio_word: "/audio/week11_easy/vocab_buy.mp3",
+      audio_definition: "/audio/week11_easy/vocab_def_buy.mp3",
+      audio_example: "/audio/week11_easy/vocab_ex_buy.mp3",
+      audio_collocation: "/audio/week11_easy/vocab_coll_buy.mp3"
     }
   ]
 };
