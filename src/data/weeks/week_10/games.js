@@ -98,11 +98,11 @@ export const week10GamesAdvanced = {
       { scrambled: ['The', 'city', 'is', 'busy', 'but', 'the', 'countryside', 'is', 'peaceful'], answer: 'The city is busy, but the countryside is peaceful.', base_words: ['the', 'city', 'is', 'busy', 'but', 'the', 'countryside', 'is', 'peaceful'], time_phrases: [], location_phrases: [] },
       { scrambled: ['The', 'farm', 'has', 'animals'], answer: 'The farm has animals.', base_words: ['the', 'farm', 'has', 'animals'], time_phrases: [], location_phrases: [] },
       { scrambled: ['I', 'see', 'a', 'cow', 'on', 'the', 'farm'], answer: 'I see a cow on the farm.', base_words: ['I', 'see', 'a', 'cow', 'on', 'the', 'farm'], time_phrases: [], location_phrases: [] },
-      { scrambled: ['the', 'Put', 'ball', 'under', 'the', 'chair'], answer: 'Put the ball under the chair.', base_words: ['put', 'the', 'ball', 'under', 'the', 'chair'], time_phrases: ['right now', 'after playing', 'before dinner', 'in a minute', 'this evening'], location_phrases: ['in the room', 'in the kitchen', 'in the dining area', 'near the table', 'over there'] },
-      { scrambled: ['the', 'Put', 'toy', 'on', 'the', 'floor'], answer: 'Put the toy on the floor.', base_words: ['put', 'the', 'toy', 'on', 'the', 'floor'], time_phrases: ['right now', 'after playing', 'before cleaning', 'in a moment', 'this time'], location_phrases: ['in the room', 'in the bedroom', 'near the bed', 'by the door', 'in the corner'] },
-      { scrambled: ['box', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the box on the desk.', base_words: ['put', 'the', 'box', 'on', 'the', 'desk'], time_phrases: ['right now', 'after organizing', 'before class', 'in a moment', 'this morning'], location_phrases: ['in the classroom', 'in the office', 'in the bedroom', 'near the books', 'by the lamp'] },
-      { scrambled: ['ball', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the ball on the desk.', base_words: ['put', 'the', 'ball', 'on', 'the', 'desk'], time_phrases: ['right now', 'after playing', 'before leaving', 'in a minute', 'this afternoon'], location_phrases: ['in the classroom', 'in the bedroom', 'in the study', 'near the lamp', 'by the window'] },
-      { scrambled: ['toy', 'Put', 'the', 'under', 'the', 'window'], answer: 'Put the toy under the window.', base_words: ['put', 'the', 'toy', 'under', 'the', 'window'], time_phrases: ['right now', 'after playing', 'before bedtime', 'in a moment', 'this evening'], location_phrases: ['in the bedroom', 'in the living room', 'in the playroom', 'near the curtain', 'by the wall'] }
+      { scrambled: ['I', 'see', 'a', 'chicken', 'in', 'the', 'field'], answer: 'I see a chicken in the field.', base_words: ['I', 'see', 'a', 'chicken', 'in', 'the', 'field'], time_phrases: [], location_phrases: [] },
+      { scrambled: ['The', 'tree', 'is', 'tall', 'and', 'green'], answer: 'The tree is tall and green.', base_words: ['the', 'tree', 'is', 'tall', 'and', 'green'], time_phrases: [], location_phrases: [] },
+      { scrambled: ['The', 'cow', 'eats', 'grass', 'on', 'the', 'farm'], answer: 'The cow eats grass on the farm.', base_words: ['the', 'cow', 'eats', 'grass', 'on', 'the', 'farm'], time_phrases: [], location_phrases: [] },
+      { scrambled: ['The', 'countryside', 'has', 'many', 'animals'], answer: 'The countryside has many animals.', base_words: ['the', 'countryside', 'has', 'many', 'animals'], time_phrases: [], location_phrases: [] },
+      { scrambled: ['The', 'farm', 'is', 'quiet', 'and', 'peaceful'], answer: 'The farm is quiet and peaceful.', base_words: ['the', 'farm', 'is', 'quiet', 'and', 'peaceful'], time_phrases: [], location_phrases: [] }
     ]
   },
   ask_me: {
@@ -110,372 +110,391 @@ export const week10GamesAdvanced = {
     instructions_advanced: 'Ask a question that matches the context.',
     contexts_easy: [
       {
-        id: 'w6_ball_where',
+        id: 'w10_cow_where',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'Put the ball on the floor. Ask me where to put the ball.',
+        topic: 'cow',
+        intro: 'The cow is on the farm. Ask me where the cow is.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where should I put the ball?',
-          'Where is it?'
-        ],
-        answer: 'Put the ball on the floor.',
-        question_hints: ['Where is the ball?', 'Where should I put the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_toy_where',
-        task_type: 'find_question',
-        topic: 'toy',
-        intro: 'Put the toy in the box. Ask me where to put the toy.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where should I put the toy?',
-          'Where is it?'
-        ],
-        answer: 'Put the toy in the box.',
-        question_hints: ['Where is the toy?', 'Where should I put the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_box_where',
-        task_type: 'find_question',
-        topic: 'box',
-        intro: 'Put the box on the desk. Ask me where to put the box.',
-        acceptedQuestions: [
-          'Where is the box?',
-          'Where should I put it?',
-          'Where is the toy?'
-        ],
-        answer: 'Put the box on the desk.',
-        question_hints: ['Where is the box?', 'Where should I put it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
-        hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_desk_where',
-        task_type: 'find_question',
-        topic: 'desk',
-        intro: 'Put the toy on the desk. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_floor_where',
-        task_type: 'find_question',
-        topic: 'floor',
-        intro: 'Put the ball on the floor. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
+          'Where is the cow?',
           'Where is it?',
-          'Where is the toy?'
+          'Where is the chicken?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
+        answer: 'The cow is on the farm.',
+        question_hints: ['Where is the cow?', 'Where is it?', 'Where is the animal?'],
         required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
+        required_keywords: ['cow'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
+          words: ['where', 'is', 'the', 'cow'],
           tricky: ['what', 'who']
         }
       },
       {
-        id: 'w6_door_where',
+id: 'w10_chicken_where',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'Put the toy under the door. Ask me where the toy is.',
+        topic: 'chicken',
+        intro: 'The chicken is in the field. Ask me where the chicken is.',
         acceptedQuestions: [
-          'Where is the toy?',
+          'Where is the chicken?',
           'Where is it?',
-          'Where is the ball?'
+          'Where is the cow?'
         ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
+        answer: 'The chicken is in the field.',
+        question_hints: ['Where is the chicken?', 'Where is it?', 'Where is the animal?'],
         required_question_words: ['where'],
-        required_keywords: ['toy'],
+        required_keywords: ['chicken'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
+          words: ['where', 'is', 'the', 'chicken'],
           tricky: ['what', 'who']
         }
       },
       {
-        id: 'w6_window_where',
+        id: 'w10_farm_what',
         task_type: 'find_question',
-        topic: 'window',
-        intro: 'Put the ball under the window. Ask me where the ball is.',
+        topic: 'farm',
+        intro: 'The farm is quiet and clean. Ask me what the farm is like.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'What is the farm like?',
+          'How is the farm?',
+          'What is it like?'
         ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'The farm is quiet and clean.',
+        question_hints: ['What is the farm like?', 'How is the farm?', 'What is it like?'],
+        required_question_words: ['what', 'how'],
+        required_keywords: ['farm'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['what', 'is', 'the', 'farm', 'like'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_hide_where',
+        id: 'w10_see_what',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
+        topic: 'see',
+        intro: 'I see animals on the farm. Ask me what I see.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'What do you see?',
+          'What do you see on the farm?',
+          'What is there?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'I see animals on the farm.',
+        question_hints: ['What do you see?', 'What do you see on the farm?', 'What is there?'],
+        required_question_words: ['what'],
+        required_keywords: ['see', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
+          words: ['what', 'do', 'you', 'see'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_cow_eat',
+        task_type: 'find_question',
+        topic: 'eat',
+        intro: 'The cow eats grass. Ask me what the cow eats.',
+        acceptedQuestions: [
+          'What does the cow eat?',
+          'What does it eat?',
+          'What do cows eat?'
+        ],
+        answer: 'The cow eats grass.',
+        question_hints: ['What does the cow eat?', 'What does it eat?', 'What do they eat?'],
+        required_question_words: ['what'],
+        required_keywords: ['eat', 'cow'],
+        hints: {
+          words: ['what', 'does', 'the', 'cow', 'eat'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_tree_where',
+        task_type: 'find_question',
+        topic: 'tree',
+        intro: 'The tree is in the field. Ask me where the tree is.',
+        acceptedQuestions: [
+          'Where is the tree?',
+          'Where is it?',
+          'Where are the trees?'
+        ],
+        answer: 'The tree is in the field.',
+        question_hints: ['Where is the tree?', 'Where is it?', 'Where are the trees?'],
+        required_question_words: ['where'],
+        required_keywords: ['tree'],
+        hints: {
+          words: ['where', 'is', 'the', 'tree'],
           tricky: ['what', 'who']
         }
       },
       {
-        id: 'w6_mini_position',
+        id: 'w10_field_color',
+        task_type: 'find_question',
+        topic: 'field',
+        intro: 'The field is green. Ask me what color the field is.',
+        acceptedQuestions: [
+          'What color is the field?',
+          'What color is it?',
+          'How is the field?'
+        ],
+        answer: 'The field is green.',
+        question_hints: ['What color is the field?', 'What color is it?', 'How is the field?'],
+        required_question_words: ['what', 'color', 'how'],
+        required_keywords: ['field'],
+        hints: {
+          words: ['what', 'color', 'is', 'the', 'field'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_animals_where',
+        task_type: 'find_question',
+        topic: 'animals',
+        intro: 'The animals are on the farm. Ask me where the animals are.',
+        acceptedQuestions: [
+          'Where are the animals?',
+          'Where are they?',
+          'Where is the cow?'
+        ],
+        answer: 'The animals are on the farm.',
+        question_hints: ['Where are the animals?', 'Where are they?', 'Where is the cow?'],
+        required_question_words: ['where'],
+        required_keywords: ['animals'],
+        hints: {
+          words: ['where', 'are', 'the', 'animals'],
+          tricky: ['what', 'who']
+        }
+      },
+      {
+        id: 'w10_mini_farm',
         task_type: 'mini_interview',
-        topic: 'position',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
+        topic: 'farm',
+        intro: 'Interview me: ask what I see, then ask where the cow is.',
         steps: [
           {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
+            prompt: 'Ask what I see on the farm.',
+            required_question_words: ['what'],
+            required_keywords: ['see'],
+            question_hints: ['What do you see?', 'What do you see on the farm?', 'What is there?']
           },
           {
-            prompt: 'Ask where the toy is.',
+            prompt: 'Ask where the cow is.',
             acceptedQuestions: [
-              'Where is the toy?',
+              'Where is the cow?',
               'Where is it?',
-              'Where is the ball?'
+              'Where are the animals?'
             ],
             required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            required_keywords: ['cow'],
+            question_hints: ['Where is the cow?', 'Where is it?', 'Where is the animal?']
           }
         ],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'do', 'you', 'see', 'where', 'is', 'cow'],
+          tricky: ['who', 'when']
         }
       }
     ],
     contexts_advanced: [
       {
-        id: 'w6_ball_where_adv',
+        id: 'w10_cow_where_adv',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'Put the ball on the floor. Ask me where to put the ball.',
+        topic: 'cow',
+        intro: 'The cow is on the farm. Ask me where the cow is.',
         acceptedQuestions: [
-          'Where should I put the ball?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'Put the ball on the floor.',
-        question_hints: ['Where should I put the ball?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball', 'put'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_toy_where_adv',
-        task_type: 'find_question',
-        topic: 'toy',
-        intro: 'Put the toy in the box. Ask me where to put the toy.',
-        acceptedQuestions: [
-          'Where should I put the toy?',
-          'Where is the toy?',
-          'Where is it?'
-        ],
-        answer: 'Put the toy in the box.',
-        question_hints: ['Where should I put the toy?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy', 'put'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_box_where_adv',
-        task_type: 'find_question',
-        topic: 'box',
-        intro: 'Put the box on the desk. Ask me where to put the box.',
-        acceptedQuestions: [
-          'Where should I put the box?',
-          'Where is the box?',
-          'Where is it?'
-        ],
-        answer: 'Put the box on the desk.',
-        question_hints: ['Where should I put the box?', 'Where is the box?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
-        hints: {
-          words: ['where', 'is', 'the', 'box', 'put'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_desk_where_adv',
-        task_type: 'find_question',
-        topic: 'desk',
-        intro: 'Put the toy on the desk. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_floor_where_adv',
-        task_type: 'find_question',
-        topic: 'floor',
-        intro: 'Put the ball on the floor. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
+          'Where is the cow?',
           'Where is it?',
-          'Where is the toy?'
+          'Where can I see a cow?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
+        answer: 'The cow is on the farm.',
+        question_hints: ['Where is the cow?', 'Where is it?', 'Where can I see a cow?'],
         required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
+        required_keywords: ['cow'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
+          words: ['where', 'is', 'the', 'cow'],
           tricky: ['what', 'who']
         }
       },
       {
-        id: 'w6_door_where_adv',
+        id: 'w10_chicken_where_adv',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'Put the toy under the door. Ask me where to put the toy.',
+        topic: 'chicken',
+        intro: 'The chicken is in the field. Ask me where the chicken is.',
         acceptedQuestions: [
-          'Where should I put the toy?',
-          'Where is the toy?',
-          'Where is it?'
-        ],
-        answer: 'Put the toy under the door.',
-        question_hints: ['Where should I put the toy?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy', 'put'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_window_where_adv',
-        task_type: 'find_question',
-        topic: 'window',
-        intro: 'Put the ball under the window. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
+          'Where is the chicken?',
           'Where is it?',
-          'Where is the toy?'
+          'Where can I find a chicken?'
         ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
+        answer: 'The chicken is in the field.',
+        question_hints: ['Where is the chicken?', 'Where is it?', 'Where can I find a chicken?'],
         required_question_words: ['where'],
-        required_keywords: ['ball'],
+        required_keywords: ['chicken'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
+          words: ['where', 'is', 'the', 'chicken'],
           tricky: ['what', 'who']
         }
       },
       {
-        id: 'w6_hide_where_adv',
+        id: 'w10_difference_what',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
+        topic: 'difference',
+        intro: 'The city is noisy, but the farm is quiet. Ask me what the difference is.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'What is the difference?',
+          'How is the farm different?',
+          'How is the farm different from the city?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'The city is noisy, but the farm is quiet.',
+        question_hints: ['What is the difference?', 'How is the farm different?', 'How is it different?'],
+        required_question_words: ['what', 'how'],
+        required_keywords: ['difference', 'different'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
+          words: ['what', 'is', 'the', 'difference', 'how', 'different'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_countryside_what',
+        task_type: 'find_question',
+        topic: 'countryside',
+        intro: 'The countryside is peaceful and clean. Ask me what the countryside is like.',
+        acceptedQuestions: [
+          'What is the countryside like?',
+          'How is the countryside?',
+          'What is it like?'
+        ],
+        answer: 'The countryside is peaceful and clean.',
+        question_hints: ['What is the countryside like?', 'How is the countryside?', 'What is it like?'],
+        required_question_words: ['what', 'how'],
+        required_keywords: ['countryside'],
+        hints: {
+          words: ['what', 'is', 'the', 'countryside', 'like'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_animals_see',
+        task_type: 'find_question',
+        topic: 'animals_see',
+        intro: 'I see cows and chickens on the farm. Ask me what animals I see.',
+        acceptedQuestions: [
+          'What animals do you see?',
+          'What do you see on the farm?',
+          'What animals are there?'
+        ],
+        answer: 'I see cows and chickens on the farm.',
+        question_hints: ['What animals do you see?', 'What do you see?', 'What animals are there?'],
+        required_question_words: ['what'],
+        required_keywords: ['animals', 'see'],
+        hints: {
+          words: ['what', 'animals', 'do', 'you', 'see'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_cow_eat_adv',
+        task_type: 'find_question',
+        topic: 'eat_adv',
+        intro: 'The cow eats grass in the field. Ask me what the cow eats.',
+        acceptedQuestions: [
+          'What does the cow eat?',
+          'What does it eat?',
+          'What do cows eat?'
+        ],
+        answer: 'The cow eats grass in the field.',
+        question_hints: ['What does the cow eat?', 'What does it eat?', 'What do they eat?'],
+        required_question_words: ['what'],
+        required_keywords: ['eat', 'cow'],
+        hints: {
+          words: ['what', 'does', 'the', 'cow', 'eat'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_tree_color',
+        task_type: 'find_question',
+        topic: 'tree_color',
+        intro: 'The tree is green and tall. Ask me what color the tree is.',
+        acceptedQuestions: [
+          'What color is the tree?',
+          'What color is it?',
+          'How is the tree?'
+        ],
+        answer: 'The tree is green and tall.',
+        question_hints: ['What color is the tree?', 'What color is it?', 'How is the tree?'],
+        required_question_words: ['what', 'color', 'how'],
+        required_keywords: ['tree', 'color'],
+        hints: {
+          words: ['what', 'color', 'is', 'the', 'tree'],
+          tricky: ['where', 'who']
+        }
+      },
+      {
+        id: 'w10_animals_where_adv',
+        task_type: 'find_question',
+        topic: 'animals_where',
+        intro: 'The animals are on the farm. Ask me where the animals are.',
+        acceptedQuestions: [
+          'Where are the animals?',
+          'Where are they?',
+          'Where can I see animals?'
+        ],
+        answer: 'The animals are on the farm.',
+        question_hints: ['Where are the animals?', 'Where are they?', 'Where can I see animals?'],
+        required_question_words: ['where'],
+        required_keywords: ['animals'],
+        hints: {
+          words: ['where', 'are', 'the', 'animals'],
           tricky: ['what', 'who']
         }
       },
       {
-        id: 'w6_mini_hideseek',
+        id: 'w10_farm_why',
+        task_type: 'find_question',
+        topic: 'farm_why',
+        intro: 'The farm is quiet because it is in the countryside. Ask me why the farm is quiet.',
+        acceptedQuestions: [
+          'Why is the farm quiet?',
+          'Why is it quiet?',
+          'Why is the farm so peaceful?'
+        ],
+        answer: 'The farm is quiet because it is in the countryside.',
+        question_hints: ['Why is the farm quiet?', 'Why is it quiet?', 'Why is it peaceful?'],
+        required_question_words: ['why'],
+        required_keywords: ['farm', 'quiet'],
+        hints: {
+          words: ['why', 'is', 'the', 'farm', 'quiet'],
+          tricky: ['where', 'what']
+        }
+      },
+      {
+        id: 'w10_mini_farm_adv',
         task_type: 'mini_interview',
-        topic: 'hideseek',
-        intro: 'Interview me: ask where to put the ball, then ask where the toy is.',
+        topic: 'farm_adv',
+        intro: 'Interview me: ask what the farm has, then ask what the countryside is like.',
         steps: [
           {
-            prompt: 'Ask where to put the ball.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where should I put the ball?', 'Where is the ball?', 'Where is it?']
+            prompt: 'Ask what the farm has.',
+            required_question_words: ['what'],
+            required_keywords: ['farm', 'has'],
+            question_hints: ['What does the farm have?', 'What is on the farm?', 'What is there?']
           },
           {
-            prompt: 'Ask where the toy is.',
+            prompt: 'Ask what the countryside is like.',
             acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
+              'What is the countryside like?',
+              'How is the countryside?',
+              'What is it like?'
             ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            required_question_words: ['what', 'how'],
+            required_keywords: ['countryside'],
+            question_hints: ['What is the countryside like?', 'How is the countryside?', 'What is it like?']
           }
         ],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy', 'put'],
-          tricky: ['what', 'who']
+          words: ['what', 'does', 'farm', 'have', 'countryside', 'like'],
+          tricky: ['where', 'who']
         }
       }
     ],
-    required_question_words_easy: ['where', 'is'],
-    required_question_words_advanced: ['where', 'is']
+    required_question_words_easy: ['where', 'what', 'how'],
+    required_question_words_advanced: ['where', 'what', 'how', 'why']
   }
 };
 
