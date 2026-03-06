@@ -6,7 +6,7 @@ export default {
       category: "thing",
       location: "library",
       hint: "You read this.",
-      image_url: "/images/week11/object_book.jpg"
+      image_url: "/images/week11_easy/object_book.jpg"
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ export default {
       category: "thing",
       location: "park",
       hint: "You play with this.",
-      image_url: "/images/week11/object_ball.jpg"
+      image_url: "/images/week11_easy/object_ball.jpg"
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ export default {
       category: "thing",
       location: "store",
       hint: "You buy this.",
-      image_url: "/images/week11/object_food.jpg"
+      image_url: "/images/week11_easy/object_food.jpg"
     },
     {
       id: 4,
@@ -30,7 +30,7 @@ export default {
       category: "thing",
       location: "playground",
       hint: "You play with this.",
-      image_url: "/images/week11/object_toy.jpg"
+      image_url: "/images/week11_easy/object_toy.jpg"
     },
     {
       id: 5,
@@ -38,7 +38,7 @@ export default {
       category: "thing",
       location: "zoo",
       hint: "You see this at the zoo.",
-      image_url: "/images/week11/object_animal.jpg"
+      image_url: "/images/week11_easy/object_animal.jpg"
     }
   ]
 };
