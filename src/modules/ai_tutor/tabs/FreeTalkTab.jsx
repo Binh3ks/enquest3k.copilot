@@ -28,6 +28,23 @@ import { FREE_TALK_ACTIONS, ROLEPLAY_SCENARIOS as STATIC_ROLEPLAY } from '../../
 import TTSSettingsPanel from '../components/TTSSettingsPanel';
 
 /**
+ * 🔧 Clean numbered list artifacts from AI responses before TTS
+ * Removes leading numbers like "1. ", "2. ", "3. " that AI sometimes copies from prompts
+ * @param {string} text - AI response text
+ * @returns {string} Cleaned text without leading numbers
+ */
+function cleanNumberedListArtifacts(text) {
+  if (!text || typeof text !== 'string') return text;
+  
+  // Remove leading numbers at start of text: "1. Topic xyz" → "Topic xyz"
+  // Also handles multiple leading numbers in sentence starts
+  return text
+    .replace(/^\d+\.\s+/gm, '') // Remove "1. ", "2. ", etc. at line starts
+    .replace(/\s+\d+\.\s+/g, ' ') // Remove " 1. ", " 2. " in middle of text
+    .trim();
+}
+
+/**
  * Free Talk Tab - Casual conversation with subtle vocabulary scaffolding
  * Students chat naturally while Ms. Nova guides toward target vocabulary
  */
@@ -173,10 +190,11 @@ const FreeTalkTab = () => {
       setShowHints(true);
       console.log('💡 Opening hints (contextual & scrambled):', contextualHints);
       
-      // 🔊 Play TTS for opening message
+      // 🔊 Play TTS for opening message (clean numbered artifacts first)
       if (autoPlayEnabled) {
         try {
-          await textToSpeech(greetingText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+          const cleanedGreeting = cleanNumberedListArtifacts(greetingText);
+          await textToSpeech(cleanedGreeting, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
           console.log('🔊 TTS played successfully');
         } catch (error) {
           console.error('❌ TTS error:', error);
@@ -666,9 +684,10 @@ const FreeTalkTab = () => {
             };
             addMessage('freetalk', completionMsg);
             
-            // 🔊 Play TTS for completion message (instant mode)
+            // 🔊 Play TTS for completion message (instant mode, clean numbered artifacts)
             try {
-              await textToSpeech(completionMsg.content, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+              const cleanedCompletion = cleanNumberedListArtifacts(completionMsg.content);
+              await textToSpeech(cleanedCompletion, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
             } catch (err) {
               console.error('❌ FreeTalk TTS error:', err);
             }
@@ -698,9 +717,10 @@ const FreeTalkTab = () => {
             };
             addMessage('freetalk', aiMsg);
             
-            // 🔊 Play TTS for next exchange (instant mode)
+            // 🔊 Play TTS for next exchange (instant mode, clean numbered artifacts)
             try {
-              await textToSpeech(responseText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+              const cleanedResponse = cleanNumberedListArtifacts(responseText);
+              await textToSpeech(cleanedResponse, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
             } catch (err) {
               console.error('❌ FreeTalk TTS error:', err);
             }
@@ -718,9 +738,10 @@ const FreeTalkTab = () => {
           };
           addMessage('freetalk', feedbackMsg);
           
-          // 🔊 Play TTS for feedback (instant mode)
+          // 🔊 Play TTS for feedback (instant mode, clean numbered artifacts)
           try {
-            await textToSpeech(feedbackText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+            const cleanedFeedback = cleanNumberedListArtifacts(feedbackText);
+            await textToSpeech(cleanedFeedback, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
           } catch (err) {
             console.error('❌ FreeTalk TTS error:', err);
           }
@@ -873,10 +894,11 @@ const FreeTalkTab = () => {
       };
       addMessage("freetalk", aiMsg);
 
-      // 🔊 ALWAYS auto-play TTS for AI responses
+      // 🔊 ALWAYS auto-play TTS for AI responses (clean numbered artifacts first)
       try {
         console.log('🎤 FreeTalkTab: Playing AI response TTS...');
-        await textToSpeech(responseText, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+        const cleanedResponse = cleanNumberedListArtifacts(responseText);
+        await textToSpeech(cleanedResponse, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
       } catch (error) {
         console.error('❌ TTS error for AI response:', error);
       }
