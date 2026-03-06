@@ -11,11 +11,11 @@ export default {
       model_sentence: "I have fun at the park.",
       collocation: "play at park",
       image_url: "/images/week11_easy/wordpower_at_the_park.jpg",
-      audio_word: "/audio/week11_easy/wordpower_at_the_park_easy.mp3",
-      audio_definition: "/audio/week11_easy/wordpower_def_at_the_park_easy.mp3",
-      audio_example: "/audio/week11_easy/wordpower_ex_at_the_park_easy.mp3",
-      audio_collocation: "/audio/week11_easy/wordpower_coll_at_the_park_easy.mp3",
-      audio_model: "/audio/week11_easy/wordpower_model_at_the_park_easy.mp3"
+      audio_word: "/audio/week11_easy/wordpower_at_the_park.mp3",
+      audio_definition: "/audio/week11_easy/wordpower_def_at_the_park.mp3",
+      audio_example: "/audio/week11_easy/wordpower_ex_at_the_park.mp3",
+      audio_collocation: "/audio/week11_easy/wordpower_coll_at_the_park.mp3",
+      audio_model: "/audio/week11_easy/wordpower_model_at_the_park.mp3"
     },
     {
       id: 2,
@@ -28,11 +28,11 @@ export default {
       model_sentence: "I read books at the library.",
       collocation: "read books",
       image_url: "/images/week11_easy/wordpower_read_at_library.jpg",
-      audio_word: "/audio/week11_easy/wordpower_read_at_library_easy.mp3",
-      audio_definition: "/audio/week11_easy/wordpower_def_read_at_library_easy.mp3",
-      audio_example: "/audio/week11_easy/wordpower_ex_read_at_library_easy.mp3",
-      audio_collocation: "/audio/week11_easy/wordpower_coll_read_at_library_easy.mp3",
-      audio_model: "/audio/week11_easy/wordpower_model_read_at_library_easy.mp3"
+      audio_word: "/audio/week11_easy/wordpower_read_at_library.mp3",
+      audio_definition: "/audio/week11_easy/wordpower_def_read_at_library.mp3",
+      audio_example: "/audio/week11_easy/wordpower_ex_read_at_library.mp3",
+      audio_collocation: "/audio/week11_easy/wordpower_coll_read_at_library.mp3",
+      audio_model: "/audio/week11_easy/wordpower_model_read_at_library.mp3"
     },
     {
       id: 3,
@@ -45,11 +45,11 @@ export default {
       model_sentence: "I buy food at the store.",
       collocation: "buy things",
       image_url: "/images/week11_easy/wordpower_buy_at_store.jpg",
-      audio_word: "/audio/week11_easy/wordpower_buy_at_store_easy.mp3",
-      audio_definition: "/audio/week11_easy/wordpower_def_buy_at_store_easy.mp3",
-      audio_example: "/audio/week11_easy/wordpower_ex_buy_at_store_easy.mp3",
-      audio_collocation: "/audio/week11_easy/wordpower_coll_buy_at_store_easy.mp3",
-      audio_model: "/audio/week11_easy/wordpower_model_buy_at_store_easy.mp3"
+      audio_word: "/audio/week11_easy/wordpower_buy_at_store.mp3",
+      audio_definition: "/audio/week11_easy/wordpower_def_buy_at_store.mp3",
+      audio_example: "/audio/week11_easy/wordpower_ex_buy_at_store.mp3",
+      audio_collocation: "/audio/week11_easy/wordpower_coll_buy_at_store.mp3",
+      audio_model: "/audio/week11_easy/wordpower_model_buy_at_store.mp3"
     }
   ]
 };
