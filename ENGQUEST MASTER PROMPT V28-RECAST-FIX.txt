@@ -248,6 +248,95 @@ After fixing a bug, add to this prompt:
 - ✅ Always check Week 1-3 format before writing Week 4+
 - ✅ target_vocab MUST be array of objects (not strings) for Quiz & Speak tabs
 - ✅ TurnManager needs mission detection keywords for each new week theme
+
+---
+
+**Week 9-11 UI & Content Quality Fixes (06/03/2026) - BUG 12-15**:
+
+**BUG 12: Unused stations in stationConfig** (Commit 7262138)
+- **Issue**: After BUG 10 cleanup (deleted sentence_builder, twenty_questions, word_chain), references remained in stationConfig.js
+- **Symptoms**: Empty tabs appearing between Word Power and Daily Watch in UI
+- **Fix**: Removed from src/config/stationConfig.js:
+  - `'twenty_questions': 'twenty_questions'` from STATION_KEYS
+  - `'word_chain': 'word_chain'` from STATION_KEYS
+  - 2 station objects from STATIONS array (Target/Zap icons)
+- **Prevention**: When deleting content files, search all references: `grep -r "deleted_filename" src/`
+
+**BUG 13: Mindmap grammar errors** (Commit 7262138)
+- **Issue**: Week 11 Easy mindmap used "be quiet" as branch → "I be quiet at the library" ❌
+- **Root Cause**: Bare infinitive 'be' doesn't conjugate with subject 'I'
+- **Fix**: Changed "be quiet" → "stay quiet" (action verb, grammatically correct)
+- **Detection**: `grep -E "text: \"be " src/data/weeks*/week_*/mindmap.js`
+- **Prevention Rules**:
+  1. Test sentence formation: Read "stem + branch" aloud
+  2. Avoid bare infinitives (be/have/do) unless stem requires them
+  3. **Use action verbs**: stay/sit/keep/remain > be
+  4. Mindmap branches must be grammatically complete when inserted into stem
+
+**BUG 14: YouTube video deletions - Recurring availability issue** (Commit 1b00f4a)
+- **Issue**: YouTube creators delete videos after we add them → 404 errors, gray placeholders in Daily Watch
+- **Week 11 Example**: Video #5 `V4Ij8hE5TsI` (Science for Kids) - DELETED
+- **Fix Strategy**:
+  1. Detect: `curl -s -o /dev/null -w "%{http_code}" "https://img.youtube.com/vi/VIDEO_ID/mqdefault.jpg"`
+  2. Replace with **verified channels only**:
+     - ✅ Super Simple Songs (high reliability)
+     - ✅ Kids Academy (educational, stable)
+     - ✅ Little Fox (story-based, stable)
+     - ✅ Dream English Kids
+     - ⚠️ Avoid: random creators, reuploaders, "compilation" channels
+  3. Verify new video: Must return HTTP 200 before committing
+  4. Update both Advanced + Easy mode daily_watch.js files
+
+- **Week 11 Replacement**: `V4Ij8hE5TsI` → `l4WwuJ0Oj3s` (If You're Happy - Super Simple Songs, verified 200 OK)
+
+- **Quarterly Audit Script**:
+```bash
+# Check all weeks for deleted videos
+for week in {01..20}; do
+  echo "=== Week $week ==="
+  for id in $(grep -oE 'videoId: "[^"]+\"' src/data/weeks/week_$week/daily_watch.js 2>/dev/null | cut -d'"' -f2); do
+    status=$(curl -s -o /dev/null -w "%{http_code}" "https://img.youtube.com/vi/$id/mqdefault.jpg")
+    [ "$status" != "200" ] && echo "❌ $id: $status"
+  done
+done
+```
+
+**BUG 15: TTS pronunciation errors - Homophones** (Commit 1b00f4a, audio regeneration)
+- **Issue**: Deepgram TTS misinterprets homophones without context
+- **Week 11 Example**: 
+  - Word: "read" with pronunciation `/riːd/` (present tense, correct in vocab.js)
+  - But TTS audio says: "red" /rɛd/ (past tense) ❌
+  - Context: "I read at the library" (present tense, should be /riːd/)
+
+- **Why This Happens**:
+  - TTS uses statistical models trained on text corpora
+  - "read" past tense appears more frequently → engine guesses "red"
+  - IPA pronunciation in JSON is documentation only, TTS ignores it
+
+- **Common Homophones to Watch**:
+  - read (reed/red), live (liv/laiv), close (klōz/klōs), tear (teer/tare)
+  - bow, lead, wind, present, record, produce, project
+
+- **Fix Strategies**:
+  1. **Regenerate with --force**: `python3 tools/generate_audio_deepgram.py 11 --mode all --station vocab --force --upload`
+  2. **Manual recording**: Use Google TTS with SSML phoneme tags or professional voice actor
+  3. **Detection**: `grep -E "word: \"(read|live|close|tear|bow|lead)\"" src/data/weeks*/week_*/vocab.js`
+  4. **QA Checklist**: Listen to all homophone audio files manually after generation
+
+- **Prevention**:
+  - Add pronunciation notes in audio generation logs
+  - Maintain list of problematic words requiring manual verification
+  - Test with multiple TTS engines (Deepgram → Google → Kokoro fallback)
+
+**Files Changed (BUG 12-15)**:
+- src/config/stationConfig.js (removed 4 lines)
+- src/data/weeks_easy/week_11/mindmap.js (grammar fix line 25)
+- src/data/weeks/week_11/daily_watch.js (video replacement)
+- src/data/weeks_easy/week_11/daily_watch.js (video replacement)
+- public/audio/week11/* (75+ audio files regenerated with corrected text)
+- Production_FINAL/QUICK_REF.md (+235 lines documentation)
+
+---
 - ✅ **minimum_turns: 10** (complete objectives if no questions), **maximum_turns: 15** (if student asks) - V28 standard
 - ✅ minimum_turns enforcement requires architectural changes in TurnManager
 - ✅ Browser TTS is more reliable than advanced TTS for simple word pronunciation
