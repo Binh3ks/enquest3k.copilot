@@ -49,8 +49,6 @@ export const TAB_TO_STATION_ID = {
   'mindmap_speaking': 'production_mindmap',
   'shadowing': 'skill_shadowing',
   'sentence_builder': 'sentence_builder',
-  'twenty_questions': 'twenty_questions',
-  'word_chain': 'word_chain',
   
   // Meta
   'review': 'review_session',
@@ -71,8 +69,6 @@ export const STATIONS = [
   { key: 'explore', stationId: 'explore', icon: Compass, title_en: 'Explore', color: 'lime' },
   { key: 'logic_lab', stationId: 'game_logic', icon: Zap, title_en: 'Logic Lab', color: 'violet' },
   { key: 'word_power', stationId: 'game_word_power', icon: Zap, title_en: 'Word Power', color: 'teal' },
-  { key: 'twenty_questions', stationId: 'twenty_questions', icon: Target, title_en: '20 Questions', color: 'fuchsia' },
-  { key: 'word_chain', stationId: 'word_chain', icon: Zap, title_en: 'Word Chain', color: 'orange' },
   { key: 'daily_watch', stationId: 'daily_watch', icon: Youtube, title_en: 'Daily Watch', color: 'red' },
   { key: 'game_hub', stationId: 'game_hub', icon: Gamepad2, title_en: 'Game Hub', color: 'amber' },
   { key: 'self_regulation', stationId: 'self_regulation', icon: Target, title_en: 'My Goals', color: 'sky' } 

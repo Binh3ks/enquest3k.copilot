@@ -22,7 +22,7 @@ const mindMapContent = {
       { text: "learn", audio: "/audio/week11_easy/mindmap_branch_9.mp3" },
       { text: "look at books", audio: "/audio/week11_easy/mindmap_branch_10.mp3" },
       { text: "sit", audio: "/audio/week11_easy/mindmap_branch_11.mp3" },
-      { text: "be quiet", audio: "/audio/week11_easy/mindmap_branch_12.mp3" }
+      { text: "stay quiet", audio: "/audio/week11_easy/mindmap_branch_12.mp3" }
     ],
     "I ___ at the store.": [
       { text: "buy", audio: "/audio/week11_easy/mindmap_branch_13.mp3" },
