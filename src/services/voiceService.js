@@ -93,7 +93,7 @@ function isServerWarm() {
 
 // Weeks that have pre-generated Deepgram files on R2 CDN
 // Week 1-7: originally Kokoro (legacy), Week 8+: all Deepgram Aura-2
-const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 // Static stations that can use CDN (pre-generated content)
 const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai'];
