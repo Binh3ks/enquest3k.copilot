@@ -337,6 +337,66 @@ done
 - Production_FINAL/QUICK_REF.md (+235 lines documentation)
 
 ---
+
+**Week 11 Critical Fixes (06/03/2026) - BUG 16-17**:
+
+**BUG 16: TTS homophone - Deepgram regeneration failure** (Commit 6088062)
+- **Issue**: Word "read" consistently pronounced as "red" /rɛd/ (past) instead of "reed" /riːd/ (present)
+- **Failed Attempts**: Regenerated 3 times with `--force` flag, Deepgram always chose wrong pronunciation
+- **Root Cause**: Statistical TTS models prioritize frequency; "read" past tense more common in training data
+- **Solution**: macOS `say` command with **phonetic spelling workaround**:
+  ```bash
+  # Use "reed" spelling to force /riːd/ pronunciation
+  say -v Samantha "reed" -o /tmp/vocab_read.aiff
+  ffmpeg -y -i /tmp/vocab_read.aiff -acodec libmp3lame public/audio/week11/vocab_read.mp3
+  
+  # Apply to all phrases
+  say -v Samantha "I reed at the library" -o /tmp/vocab_ex_read.aiff
+  say -v Samantha "reed a book" -o /tmp/vocab_coll_read.aiff
+  ```
+- **Files Fixed**: 6 audio files (vocab_read, vocab_ex_read, vocab_coll_read for both modes)
+- **Verification**: `afplay public/audio/week11/vocab_read.mp3` → Should hear "reed" ✅
+- **When to Use**: After 2-3 failed Deepgram attempts on known homophones (read/live/close/tear)
+- **Phonetic Spelling Guide**:
+  - read (verb) → "reed" /riːd/ 
+  - live (verb) → "liv" /lɪv/
+  - close (verb) → "klōz" /kloʊz/
+
+**BUG 17: Video content mismatch - Theme alignment violation** (Commit 6088062)
+- **Issue**: Video #5 "If You're Happy And You Know It" (emotions song) didn't match Week 11 theme "Weekend Fun Spots (Places)"
+- **Root Cause**: During BUG 14 fix (deleted video) → Prioritized availability over content relevance → Chose first working Super Simple Songs video
+- **Analysis**: 
+  - Week 11 vocab: park, library, zoo, supermarket, playground, restaurant, school
+  - Video content: Emotions, feelings, clapping, stomping
+  - Alignment: 0% ❌ (Completely off-topic)
+- **Fix**: Replaced with "Town (Introduction of my town/village)" (`EfD2k9beP-4`)
+  - ✅ Teaches place vocabulary: town, library, park, store, school
+  - ✅ Reinforces week objectives (identifying places)
+  - ✅ Verified stable (200 OK, educational channel)
+
+**Prevention Rules for Video Replacement**:
+1. **NEVER prioritize availability over relevance**
+2. **Video Selection Priority** (in order):
+   1. ✅ Content alignment (teaches week vocabulary)
+   2. ✅ Theme relevance (relates to week topic)
+   3. ✅ Learning value (educational, not just entertainment)
+   4. ✅ Availability (200 OK from verified channel)
+   5. ✅ Length (2-8 minutes appropriate)
+
+3. **Emergency Replacement Protocol**:
+   - Find 3-5 candidates about week theme
+   - Verify availability (200 status)
+   - Watch first 30 seconds to confirm vocabulary alignment
+   - Check video matches week learning objectives
+   - Only then replace in daily_watch.js
+
+**Key Lessons from BUG 16-17**:
+- ✅ TTS homophones need phonetic workarounds when regeneration fails 3+ times
+- ✅ Video selection MUST prioritize content alignment over channel reputation
+- ✅ Emergency fixes still require theme verification
+- ✅ Maintain phonetic spelling dictionary for problematic words
+
+---
 - ✅ **minimum_turns: 10** (complete objectives if no questions), **maximum_turns: 15** (if student asks) - V28 standard
 - ✅ minimum_turns enforcement requires architectural changes in TurnManager
 - ✅ Browser TTS is more reliable than advanced TTS for simple word pronunciation
