@@ -1,0 +1,102 @@
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "sing",
+      pronunciation: "/sɪŋ/",
+      definition_vi: "hát",
+      definition_en: "to make music with your voice",
+      example: "I can sing.",
+      collocation: "sing a song",
+      image_url: "/images/week12/sing.jpg",
+      audio_word: "/audio/week12_easy/vocab_sing.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_sing.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_sing.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_sing.mp3"
+    },
+    {
+      id: 2,
+      word: "dance",
+      pronunciation: "/dæns/",
+      definition_vi: "nhảy",
+      definition_en: "to move to music",
+      example: "I can dance.",
+      collocation: "dance to music",
+      image_url: "/images/week12/dance.jpg",
+      audio_word: "/audio/week12_easy/vocab_dance.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_dance.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_dance.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_dance.mp3"
+    },
+    {
+      id: 3,
+      word: "run",
+      pronunciation: "/rʌn/",
+      definition_vi: "chạy",
+      definition_en: "to move fast",
+      example: "I can run fast.",
+      collocation: "run fast",
+      image_url: "/images/week12/run.jpg",
+      audio_word: "/audio/week12_easy/vocab_run.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_run.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_run.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_run.mp3"
+    },
+    {
+      id: 4,
+      word: "jump",
+      pronunciation: "/dʒʌmp/",
+      definition_vi: "nhảy",
+      definition_en: "to go up in the air",
+      example: "I can jump high.",
+      collocation: "jump high",
+      image_url: "/images/week12/jump.jpg",
+      audio_word: "/audio/week12_easy/vocab_jump.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_jump.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_jump.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_jump.mp3"
+    },
+    {
+      id: 5,
+      word: "draw",
+      pronunciation: "/drɔː/",
+      definition_vi: "vẽ",
+      definition_en: "to make pictures",
+      example: "I can draw.",
+      collocation: "draw pictures",
+      image_url: "/images/week12/draw.jpg",
+      audio_word: "/audio/week12_easy/vocab_draw.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_draw.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_draw.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_draw.mp3"
+    },
+    {
+      id: 6,
+      word: "swim",
+      pronunciation: "/swɪm/",
+      definition_vi: "bơi",
+      definition_en: "to move in water",
+      example: "I can swim.",
+      collocation: "swim in the pool",
+      image_url: "/images/week12/swim.jpg",
+      audio_word: "/audio/week12_easy/vocab_swim.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_swim.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_swim.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_swim.mp3"
+    },
+    {
+      id: 7,
+      word: "play",
+      pronunciation: "/pleɪ/",
+      definition_vi: "chơi",
+      definition_en: "to have fun",
+      example: "I can play.",
+      collocation: "play games",
+      image_url: "/images/week12/play.jpg",
+      audio_word: "/audio/week12_easy/vocab_play.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_play.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_play.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_play.mp3"
+    }
+  ]
+};
