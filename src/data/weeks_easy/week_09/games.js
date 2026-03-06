@@ -25,56 +25,56 @@ export const week9GamesEasy = {
     details_easy: [],
     details_advanced: [],
     detail_map: {
-      box: ['my box', 'a big box', 'the box', 'put the box on the desk'],
-      desk: ['my desk', 'a big desk', 'the desk', 'put it on the desk'],
-      floor: ['my floor', 'the floor', 'clean floor', 'put it on the floor'],
-      wall: ['my wall', 'the wall', 'big wall', 'put it on the wall'],
-      window: ['my window', 'a big window', 'the window', 'put it under the window'],
-      door: ['my door', 'a red door', 'the door', 'put it under the door'],
-      hide: ['hide now', 'hide here', 'hide the toy in the box', 'hide the ball under the desk'],
-      seek: ['seek now', 'seek here', 'seek the toy', 'seek the ball'],
-      ball: ['my ball', 'a red ball', 'the ball', 'put the ball on the floor'],
-      toy: ['my toy', 'a small toy', 'the toy', 'put the toy in the box']
+      city: ['big city', 'the city', 'my city', 'I live in the city'],
+      street: ['busy street', 'the street', 'a street', 'I walk on the street'],
+      noisy: ['very noisy', 'so noisy', 'the city is noisy', 'it is noisy'],
+      busy: ['very busy', 'so busy', 'the street is busy', 'it is busy'],
+      tall: ['very tall', 'so tall', 'the building is tall', 'it is tall'],
+      modern: ['very modern', 'so modern', 'the city is modern', 'it is modern'],
+      car: ['red car', 'the car', 'a car', 'I see a car'],
+      bus: ['big bus', 'the bus', 'a bus', 'I take the bus'],
+      building: ['tall building', 'the building', 'a building', 'I see a building'],
+      traffic: ['heavy traffic', 'the traffic', 'bad traffic', 'I see traffic']
     },
     distractors_easy: [],
     distractors_advanced: [],
     distractor_map: {
-      box: ['my ball', 'the window', 'the door'],
-      desk: ['my toy', 'the floor', 'the door']
+      city: ['quiet', 'peaceful', 'farm'],
+      street: ['field', 'countryside', 'farm']
     },
     frame_map: {
-      box: ['Put the ___ in the ___'],
-      ball: ['Put the ___ on the ___']
+      city: ['The ___ is ___'],
+      car: ['I see ___ on the ___']
     },
     sentence_hints_map: {
-      box: ['Put the box on the desk.', 'Put the box on the floor.', 'Put the box under the window.'],
-      desk: ['Put the toy on the desk.', 'Put the ball on the desk.', 'Put the box on the desk.'],
-      floor: ['Put the ball on the floor.', 'Put the toy on the floor.', 'Put the box on the floor.'],
-      wall: ['Put the picture on the wall.', 'Put it on the wall.', 'Put the window on the wall.'],
-      window: ['Put the toy under the window.', 'Put the ball under the window.', 'Put it under the window.'],
-      door: ['Put the toy under the door.', 'Put the ball under the door.', 'Put it under the door.'],
-      hide: ['I hide the toy in the box.', 'I hide the ball under the desk.', 'I hide it on the floor.'],
-      seek: ['I seek the toy.', 'I seek the ball.', 'I seek under the desk.'],
-      ball: ['Put the ball on the floor.', 'Put the ball in the box.', 'Put the ball on the desk.'],
-      toy: ['Put the toy on the desk.', 'Put the toy in the box.', 'Put the toy on the floor.']
+      city: ['The city is noisy.', 'The city is busy.', 'I live in the city.'],
+      street: ['The street is busy.', 'I walk on the street.', 'I see cars on the street.'],
+      noisy: ['The city is noisy.', 'It is noisy.', 'The street is noisy.'],
+      busy: ['The street is busy.', 'The city is busy.', 'It is busy.'],
+      tall: ['The building is tall.', 'It is tall.', 'The building is very tall.'],
+      modern: ['The city is modern.', 'It is modern.', 'The building is modern.'],
+      car: ['I see a car.', 'The car is on the street.', 'I see cars.'],
+      bus: ['I take the bus.', 'I see a bus.', 'The bus is on the street.'],
+      building: ['The building is tall.', 'I see a building.', 'The building is modern.'],
+      traffic: ['The traffic is heavy.', 'The traffic is busy.', 'I see traffic.']
     },
     emoji_map: {
-      box: '📦',
-      desk: '🪑',
-      floor: '⬛',
-      wall: '🧱',
-      window: '🪟',
-      door: '🚪',
-      hide: '🙈',
-      seek: '🔍',
-      ball: '⚽',
-      toy: '🧸'
+      city: '🏙️',
+      street: '🛣️',
+      noisy: '🔊',
+      busy: '🚦',
+      tall: '📏',
+      modern: '✨',
+      car: '🚗',
+      bus: '🚌',
+      building: '🏢',
+      traffic: '🚥'
     },
     definitions: {
-      hide: 'To put something where no one can see it.',
-      seek: 'To look for something.',
-      floor: 'The ground inside a room.',
-      wall: 'The side of a room.'
+      city: 'A large town with many people.',
+      street: 'A road in a city or town.',
+      noisy: 'With a lot of loud sounds.',
+      traffic: 'Cars, buses moving on roads.'
     }
   },
   make_sentence: {

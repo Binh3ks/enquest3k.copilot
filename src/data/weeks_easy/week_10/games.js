@@ -59,21 +59,22 @@ export const week10GamesEasy = {
       tree: ['The tree is tall.', 'I see a tree.', 'The tree is green.']
     },
     emoji_map: {
-      box: '📦',
-      desk: '🪑',
-      floor: '⬛',
-      wall: '🧱',
-      window: '🪟',
-      door: '🚪',
-      hide: '🙈',
-      seek: '🔍',
-      ball: '⚽',
-      toy: '🧸'
+      countryside: '🌾',
+      farm: '🚜',
+      quiet: '🤫',
+      clean: '✨',
+      peaceful: '☮️',
+      animals: '🐾',
+      cow: '🐄',
+      chicken: '🐔',
+      field: '🌱',
+      tree: '🌳'
     },
     definitions: {
-      hide: 'To put something where no one can see it.',
-      seek: 'To look for something.',
-      floor: 'The ground inside a room.'
+      countryside: 'The land outside cities.',
+      farm: 'A place where people grow food.',
+      quiet: 'With little or no noise.',
+      peaceful: 'Quiet and calm.'
     }
   },
   make_sentence: {
