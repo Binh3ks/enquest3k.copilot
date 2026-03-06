@@ -4,7 +4,7 @@ export default {
     { id: 2, title: "Learn Park and Playground Vocabulary | Talking Flashcards", videoId: "dQsDDD5W8yc", duration: "02:55", sim_duration: 175, thumb: "https://img.youtube.com/vi/dQsDDD5W8yc/mqdefault.jpg" },
     { id: 3, title: "Where Does Kitty Go In The Rain? | Animated Read Aloud Kids Book | Vooks Narrated Storybooks", videoId: "OTOaOdCrrik", duration: "07:53", sim_duration: 473, thumb: "https://img.youtube.com/vi/OTOaOdCrrik/mqdefault.jpg" },
     { id: 4, title: "Long Ago and Now | Culture and History | Time | Little Fox | Bedtime Stories", videoId: "U-r-xHln6nE", duration: "02:23", sim_duration: 143, thumb: "https://img.youtube.com/vi/U-r-xHln6nE/mqdefault.jpg" },
-    { id: 5, title: "Science for Kids - Learning Video", videoId: "V4Ij8hE5TsI", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/V4Ij8hE5TsI/mqdefault.jpg" }
+    { id: 5, title: "If You're Happy And You Know It | Super Simple Songs", videoId: "l4WwuJ0Oj3s", duration: "03:03", sim_duration: 183, thumb: "https://img.youtube.com/vi/l4WwuJ0Oj3s/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };
