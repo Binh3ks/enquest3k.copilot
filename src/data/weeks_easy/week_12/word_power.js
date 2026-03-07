@@ -10,10 +10,10 @@ export default {
       origin: "From Latin 'talentum' meaning a sum of money",
       usage_note: "Everyone has unique talents!",
       related_words: ["talented", "skill", "gift"],
-      image_url: "/images/week12/talent.jpg",
-      audio_word: "/audio/week12/wordpower_talent.mp3",
-      audio_definition: "/audio/week12/wordpower_def_talent.mp3",
-      audio_example: "/audio/week12/wordpower_ex_talent.mp3"
+      image_url: "/images/week12_easy/talent.jpg",
+      audio_word: "/audio/week12_easy/wordpower_talent.mp3",
+      audio_definition: "/audio/week12_easy/wordpower_def_talent.mp3",
+      audio_example: "/audio/week12_easy/wordpower_ex_talent.mp3"
     },
     {
       id: 2,
@@ -25,10 +25,10 @@ export default {
       origin: "From Latin 'habilis' meaning easily handled",
       usage_note: "Abilities can be learned or natural.",
       related_words: ["able", "capable", "skill"],
-      image_url: "/images/week12/ability.jpg",
-      audio_word: "/audio/week12/wordpower_ability.mp3",
-      audio_definition: "/audio/week12/wordpower_def_ability.mp3",
-      audio_example: "/audio/week12/wordpower_ex_ability.mp3"
+      image_url: "/images/week12_easy/ability.jpg",
+      audio_word: "/audio/week12_easy/wordpower_ability.mp3",
+      audio_definition: "/audio/week12_easy/wordpower_def_ability.mp3",
+      audio_example: "/audio/week12_easy/wordpower_ex_ability.mp3"
     },
     {
       id: 3,
@@ -40,10 +40,10 @@ export default {
       origin: "From Old French 'parfournir' meaning to complete",
       usage_note: "Often used for shows and presentations.",
       related_words: ["performance", "performer", "show"],
-      image_url: "/images/week12/perform.jpg",
-      audio_word: "/audio/week12/wordpower_perform.mp3",
-      audio_definition: "/audio/week12/wordpower_def_perform.mp3",
-      audio_example: "/audio/week12/wordpower_ex_perform.mp3"
+      image_url: "/images/week12_easy/perform.jpg",
+      audio_word: "/audio/week12_easy/wordpower_perform.mp3",
+      audio_definition: "/audio/week12_easy/wordpower_def_perform.mp3",
+      audio_example: "/audio/week12_easy/wordpower_ex_perform.mp3"
     }
   ]
 };
