@@ -9,6 +9,7 @@ import writing from './writing.js';
 import explore from './explore.js';
 import word_power from './word_power.js';
 import mindmap from './mindmap.js';
+import daily_watch from './daily_watch.js';
 import word_match from './word_match.js';
 
 const weekData = {
@@ -16,7 +17,7 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "The Talent Show",
   weekTitle_vi: "Cuộc thi Tài năng",
-  grammar_focus: "Can / Can't (Abilities)",
+  grammar_focus: "I can / I can't (Abilities)",
   global_vocab: vocab.vocab,
   
   voiceConfig: {
@@ -39,7 +40,8 @@ const weekData = {
     shadowing: shadowing,
     writing: writing,
     explore: explore,
-    mindmap_speaking: mindmap
+    mindmap_speaking: mindmap,
+    daily_watch: daily_watch
   }
 };
 
