@@ -30,9 +30,15 @@ WEEK_CONFIG = {
     "grammar_focus": "",  # e.g., "I can / I can't"
     "grammar_pattern": "",  # e.g., "I can/can't [verb]"
     
-    # Vocabulary - 10 words DIFFERENTIATED
-    "vocab_advanced": [],  # Academic/complex words
-    "vocab_easy": [],      # Simple daily words
+    # ⚠️ CRITICAL: Vocab words MUST be SAME in both modes!
+    # Rule violation found in Week 12: Advanced had different words than Easy
+    # Correct approach: SAME 10 words, DIFFERENT definitions/examples/complexity
+    # Words MUST match bold words in read.js (both modes must have same bold words)
+    "vocab_words": [],  # 10 words SAME for both modes
+    
+    # DEPRECATED fields (use vocab_words instead):
+    "vocab_advanced": [],  # Legacy - will be ignored if vocab_words is set
+    "vocab_easy": [],      # Legacy - will be ignored if vocab_words is set
     
     # Context differentiation
     "context_advanced": "",  # Global/third-person
@@ -337,13 +343,44 @@ def phase3_practice_stations(week_num, config):
     print(f"📚 PHASE 3: Practice Stations - Week {week_num}")
     print("="*60)
     
-    if not config.get('vocab_advanced') or not config.get('vocab_easy'):
-        print("❌ ERROR: vocab_advanced and vocab_easy not set in config!")
+    #⚠️ VOCAB WORDS MUST BE SAME IN BOTH MODES
+    # Validate vocab configuration
+    if config.get('vocab_words'):
+        # New approach: Use vocab_words (SAME for both modes)
+        vocab_words = config['vocab_words']
+        print(f"✅ Using vocab_words: {len(vocab_words)} words (SAME for both modes)")
+    elif config.get('vocab_advanced') and config.get('vocab_easy'):
+        # Legacy approach: Check if words match
+        adv_words = [w.get('word') for w in config['vocab_advanced']]
+        easy_words = [w.get('word') for w in config['vocab_easy']]
+        
+        if set(adv_words) != set(easy_words):
+            print("\n" + "⚠️ "*30)
+            print("❌ CRITICAL ERROR: Vocab words differ between modes!")
+            print(f"Advanced words: {adv_words}")
+            print(f"Easy words: {easy_words}")
+            print("\n💡 FIX: vocab.js MUST have SAME 10 words in both modes!")
+            print("   Differentiation should be in definitions/examples, NOT words!")
+            print("   See: WEEK_12_COMPLETE_AUDIT_FIX_REPORT.md")
+            print("⚠️ "*30 + "\n")
+            
+            response = input("⚠️  Continue anyway? (y/N): ")
+            if response.lower() != 'y':
+                return False
+        
+        # Use legacy fields
+        write_vocab(week_num, "adv", config['vocab_advanced'])
+        write_vocab(week_num, "easy", config['vocab_easy'])
+    else:
+        print("❌ ERROR: vocab_words (or vocab_advanced/vocab_easy) not set in config!")
         return False
     
-    # Vocab
-    write_vocab(week_num, "adv", config['vocab_advanced'])
-    write_vocab(week_num, "easy", config['vocab_easy'])
+    # If using new approach, generate vocab with same words
+    if config.get('vocab_words'):
+        # TODO: Generate advanced and easy versions from vocab_words
+        # For now, user must manually edit vocab.js
+        print("⚠️  TODO: Implement vocab generation from vocab_words")
+        print("⚠️  For now, clone vocab.js from Week 6 and manually edit")
     
     # Grammar (20 exercises)
     write_grammar(week_num, "adv", config)
@@ -361,6 +398,7 @@ def phase3_practice_stations(week_num, config):
     
     print("\n✅ PHASE 3 COMPLETE")
     print("⚠️  Manual: Review vocab examples and grammar exercises")
+    print("⚠️  CRITICAL: Verify vocab words MATCH between modes!")
     return True
 
 def write_vocab(week_num, mode, vocab_list):
