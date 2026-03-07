@@ -1,15 +1,15 @@
 export default {
   title: "Match the Words",
   pairs: [
-    { id: 1, word: "sing", definition: "to make music with your voice", image_url: "/images/week12/sing.jpg" },
-    { id: 2, word: "dance", definition: "to move your body to music", image_url: "/images/week12/dance.jpg" },
-    { id: 3, word: "run", definition: "to move fast on your feet", image_url: "/images/week12/run.jpg" },
-    { id: 4, word: "jump", definition: "to push yourself off the ground", image_url: "/images/week12/jump.jpg" },
-    { id: 5, word: "climb", definition: "to go up using hands and feet", image_url: "/images/week12/climb.jpg" },
-    { id: 6, word: "draw", definition: "to make a picture with a pencil", image_url: "/images/week12/draw.jpg" },
-    { id: 7, word: "ride", definition: "to sit on and control a bicycle", image_url: "/images/week12/ride.jpg" },
-    { id: 8, word: "swim", definition: "to move through water", image_url: "/images/week12/swim.jpg" },
-    { id: 9, word: "cook", definition: "to make food by heating it", image_url: "/images/week12/cook.jpg" },
-    { id: 10, word: "play", definition: "to make music or do a sport", image_url: "/images/week12/play.jpg" }
+    { id: 1, word: "box", definition: "a container with four sides", image_url: "/images/week6/box.jpg" },
+    { id: 2, word: "desk", definition: "a table for working", image_url: "/images/week6/desk.jpg" },
+    { id: 3, word: "floor", definition: "the surface you walk on", image_url: "/images/week6/floor.jpg" },
+    { id: 4, word: "wall", definition: "the side of a room", image_url: "/images/week6/wall.jpg" },
+    { id: 5, word: "window", definition: "an opening for light", image_url: "/images/week6/window.jpg" },
+    { id: 6, word: "door", definition: "an opening to enter", image_url: "/images/week6/door.jpg" },
+    { id: 7, word: "hide", definition: "to put where nobody can see", image_url: "/images/week6/hide.jpg" },
+    { id: 8, word: "seek", definition: "to look for something", image_url: "/images/week6/seek.jpg" },
+    { id: 9, word: "treasure", definition: "valuable things like gold", image_url: "/images/week6/treasure.jpg" },
+    { id: 10, word: "hunt", definition: "to search carefully", image_url: "/images/week6/hunt.jpg" }
   ]
 };
