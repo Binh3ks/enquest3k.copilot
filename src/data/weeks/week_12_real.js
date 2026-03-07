@@ -8,27 +8,27 @@ const week12RealData = {
   
   // === OFFICIAL SYLLABUS DATA ===
   title: "Week 12: The Talent Show",
-  week_title_en: "The Talent Show (Abilities)",
-  week_title_vi: "Cuộc thi Tài năng",
+  week_title_en: "The Talent Show (Personal Abilities)",
+  week_title_vi: "Cuộc Thi Tài Năng (Khả Năng Cá Nhân)",
   
-  topic: "Showcasing skills - Talking about abilities",
-  topic_vi: "Trình diễn kỹ năng - Nói về khả năng",
+  topic: "Skills and Adjectives - Using 'can' and 'can't' for abilities",
+  topic_vi: "Kỹ năng và tính từ - Sử dụng 'can' và 'can't' cho khả năng",
   
   // === KEY LEARNING OUTCOME ===
-  learning_outcome: "Talk about abilities using 'I can' and 'I can't'",
-  learning_outcome_vi: "Nói về khả năng sử dụng 'I can' và 'I can't'",
+  learning_outcome: "Express abilities using 'can' and 'can't'",
+  learning_outcome_vi: "Diễn đạt khả năng bằng 'can' và 'can't'",
   
   // === GRAMMAR FOCUS ===
-  grammar_focus: "Modal verb 'can' for abilities",
-  grammar_pattern: "I can / I can't + [verb]",
+  grammar_focus: "Can / Can't (Abilities)",
+  grammar_pattern: "[Subject] + can / can't + [Verb]",
   grammar_examples: [
-    "I can sing.",
-    "I can't dance.",
-    "I can run fast.",
-    "I can ride a bike."
+    "I can sing a song.",
+    "She can dance well.",
+    "He can't ride a bike.",
+    "They can swim fast."
   ],
   
-  // === TARGET VOCABULARY (10 ABILITIES) ===
+  // === TARGET VOCABULARY (10 ACTION VERBS) ===
   target_vocab: [
     {
       word: "sing",
@@ -36,607 +36,228 @@ const week12RealData = {
       definition_vi: "hát",
       definition_en: "to make music with your voice",
       example: "I can sing a song.",
-      syllabus_context: "Performance abilities"
+      syllabus_context: "Talent show activities"
     },
     {
       word: "dance",
       pronunciation: "/dæns/",
-      definition_vi: "nhảy, khiêu vũ",
+      definition_vi: "nhảy",
       definition_en: "to move your body to music",
-      example: "I can dance well.",
-      syllabus_context: "Performance abilities"
+      example: "She can dance well.",
+      syllabus_context: "Performance skills"
     },
     {
       word: "run",
       pronunciation: "/rʌn/",
       definition_vi: "chạy",
-      definition_en: "to move fast on your feet",
-      example: "I can run very fast.",
+      definition_en: "to move fast with your legs",
+      example: "He can run fast.",
       syllabus_context: "Physical abilities"
     },
     {
       word: "jump",
       pronunciation: "/dʒʌmp/",
-      definition_vi: "nhảy (lên cao)",
-      definition_en: "to push yourself up into the air",
+      definition_vi: "nhảy",
+      definition_en: "to push your body up into the air",
       example: "I can jump high.",
-      syllabus_context: "Physical abilities"
+      syllabus_context: "Physical skills"
     },
     {
       word: "climb",
       pronunciation: "/klaɪm/",
-      definition_vi: "trèo, leo",
-      definition_en: "to go up using your hands and feet",
-      example: "I can climb a tree.",
-      syllabus_context: "Physical abilities"
-    },
-    {
-      word: "ride a bike",
-      pronunciation: "/raɪd ə baɪk/",
-      definition_vi: "đạp xe",
-      definition_en: "to travel on a bicycle",
-      example: "I can ride a bike.",
-      syllabus_context: "Sport abilities"
+      definition_vi: "leo",
+      definition_en: "to go up something using your hands and feet",
+      example: "She can climb trees.",
+      syllabus_context: "Adventure activities"
     },
     {
       word: "draw",
       pronunciation: "/drɔː/",
       definition_vi: "vẽ",
-      definition_en: "to make a picture with a pencil or pen",
-      example: "I can draw a cat.",
-      syllabus_context: "Creative abilities"
+      definition_en: "to make pictures with a pen or pencil",
+      example: "He can draw pictures.",
+      syllabus_context: "Creative skills"
+    },
+    {
+      word: "ride",
+      pronunciation: "/raɪd/",
+      definition_vi: "đi (xe)",
+      definition_en: "to sit on and control a bike or animal",
+      example: "I can ride a bike.",
+      syllabus_context: "Sports activities"
     },
     {
       word: "swim",
       pronunciation: "/swɪm/",
       definition_vi: "bơi",
       definition_en: "to move through water",
-      example: "I can swim in the pool.",
-      syllabus_context: "Sport abilities"
+      example: "She can swim in the pool.",
+      syllabus_context: "Water sports"
     },
     {
       word: "cook",
       pronunciation: "/kʊk/",
       definition_vi: "nấu ăn",
-      definition_en: "to make food using heat",
-      example: "I can cook noodles.",
-      syllabus_context: "Life abilities"
+      definition_en: "to make food by heating it",
+      example: "He can cook dinner.",
+      syllabus_context: "Life skills"
     },
     {
       word: "play",
       pronunciation: "/pleɪ/",
       definition_vi: "chơi",
-      definition_en: "to have fun with games or sports",
-      example: "I can play soccer.",
-      syllabus_context: "Sport abilities"
+      definition_en: "to do an activity for fun",
+      example: "They can play piano.",
+      syllabus_context: "Musical abilities"
     }
   ],
   
-  global_vocab: ["sing", "dance", "run", "jump", "climb", "ride a bike", "draw", "swim", "cook", "play"],
-
-  // === AI TUTOR BEHAVIOR (week-level tuning) ===
-  nova_instructions: {
-    persona: "Friendly English teacher, excited about talent shows",
-    tone: "Warm, encouraging, celebrates all talents",
-    opening_lines_by_mission: {
-      mission_1: "Hi! I am Ms. Nova! Welcome to the Talent Show! Everyone has a special talent! What do I call you? Say: My name is your name.",
-      mission_2: "Hi! Let's discover what you can do! I can sing! Can you sing? Say: Yes, I can or No, I can't.",
-      mission_3: "Look! It's your turn on stage! Time to show your talent! What can you do? Say: I can..."
+  // === AI TUTOR CONFIGURATION ===
+  aiTutorConfig: {
+    character: {
+      name: "Ms. Nova",
+      role: "Talent Show Host",
+      personality: "encouraging, enthusiastic, supportive",
+      voice_model: "nova-2"
     },
-    conversation_style: [
-      "Natural and flowing - like talking with a friend",
-      "One clear question per turn",
-      "Build on previous answers - show active listening",
-      "NO emojis - text-to-speech will read them aloud",
-      "Keep responses under 30 words",
-      "Maintain conversation for minimum 10-15 turns per mission",
-      "ONLY use 'I can / I can't' - Week 12 grammar scope"
-    ],
-    recast_strategy: "ALWAYS recast student errors by modeling correct form naturally in your response",
-    recast_example: {
-      student: "I sing.",
-      nova_recast: "Yes! I CAN sing! What else can you do?"
-    },
-    vocabulary_scaffolding: [
-      "Mission 1: sing, dance, run, jump - basic performance talents",
-      "Mission 2: climb, ride a bike, draw, swim - physical and creative talents",
-      "Mission 3: combine all talents in 'I can' and 'I can't' patterns"
-    ],
-    questioning_skill: [
-      "What can you do?",
-      "Can you sing?",
-      "Can you dance or jump?",
-      "I can... what?",
-      "What is your special talent?"
-    ],
-    must_use_vocab: ["can", "sing", "dance", "run", "jump", "climb", "draw", "ride a bike"],
-    must_avoid: [
-      "Emojis or special characters",
-      "Vietnamese translation",
-      "Explicit grammar rules",
-      "Corrections without recast",
-      "Multiple questions in one turn",
-      "Past tense (Week 12 scope is 'can' modal only)"
-    ]
-  },
-
-  // === AI RESPONSE FORMAT CONTRACT (V28 standard) ===
-  v28_format_notes: {
-    response_format: "ack + recast + question (V28 ONLY - NOT V25)",
-    ack_options: ["Nice!", "Great!", "Wonderful!", "Good job!", "Perfect!"],
-    recast_max_words: 8,
-    recast_rules: [
-      "Mirror the student's key word back in the recast",
-      "Fix grammar naturally without explanation",
-      "Keep it conversational and encouraging"
-    ],
-    question_patterns_allowed: [
-      "What can you...?",
-      "Can you...?",
-      "What is...?",
-      "Do you like...?",
-      "Who can...?"
-    ],
-    question_patterns_forbidden: [
-      "Why...?",
-      "What does... mean?",
-      "Do you understand?"
-    ],
-    example_exchanges: [
+    
+    // === STORY MISSIONS ===
+    story_missions: [
       {
-        student: "I sing.",
-        tutor_response: "Great! I CAN sing. Can you dance too?"
+        mission_id: 1,
+        mission_title: "Skills Check",
+        mission_title_vi: "Kiểm Tra Kỹ Năng",
+        mission_objective: "Tell Ms. Nova what you CAN do for the talent show",
+        mission_objective_vi: "Nói với cô Nova bạn CÓ THỂ làm gì cho cuộc thi tài năng",
+        
+        opening_narrative: "Welcome to the talent show! I'm Ms. Nova, your host today. We want to know what amazing things YOU can do! Can you tell me one thing you can do? For example, 'I can sing' or 'I can dance'.",
+        
+        phase_questions: [
+          "What can you do? Tell me one skill!",
+          "That's wonderful! Can you tell me HOW you do it? For example, 'I can sing well' or 'I can dance fast'.",
+          "Amazing! Now tell me WHERE you usually do this. For example, 'I can sing at school' or 'I can dance at home'.",
+          "Perfect! Last question: WHO do you do this with? For example, 'I can sing with my friends'."
+        ],
+        
+        success_message: "Wonderful! You're ready for the talent show! I learned that you have an amazing skill. Keep practicing and you'll be a star!",
+        target_grammar: ["can + verb"],
+        required_vocab_count: 2
+      },
+      
+      {
+        mission_id: 2,
+        mission_title: "My Favorite & Least Favorite",
+        mission_title_vi: "Thích Nhất và Không Thích",
+        mission_objective: "Share what you LIKE and DON'T LIKE to do",
+        mission_objective_vi: "Chia sẻ điều bạn THÍCH và KHÔNG THÍCH làm",
+        
+        opening_narrative: "Now let's talk about your favorite activities! Everyone has things they love to do and things they don't enjoy. I want to hear about BOTH! Let's start with something you LIKE to do.",
+        
+        phase_questions: [
+          "What do you LIKE to do? Tell me one activity you enjoy!",
+          "That sounds fun! Now tell me something you DON'T LIKE to do.",
+          "I understand! Can you tell me WHY you don't like it? Use 'because'.",
+          "Last question: What would you rather do INSTEAD?"
+        ],
+        
+        success_message: "Thank you for being honest! It's okay to have favorites and things we don't enjoy. Everyone is different and that's what makes us special!",
+        target_grammar: ["I like + V-ing", "I don't like + V-ing"],
+        required_vocab_count: 2
+      },
+      
+      {
+        mission_id: 3,
+        mission_title: "Learn Something New",
+        mission_title_vi: "Học Điều Mới",
+        mission_objective: "Talk about what you WANT TO LEARN",
+        mission_objective_vi: "Nói về điều bạn MUỐN HỌC",
+        
+        opening_narrative: "The best part about talent shows is LEARNING new things! I want to know: What skill do you WANT TO LEARN? Something you CAN'T do now, but WANT to learn in the future!",
+        
+        phase_questions: [
+          "What skill do you WANT TO LEARN? Tell me one thing you can't do now.",
+          "Great choice! WHY do you want to learn this? Tell me your reason.",
+          "That's a good reason! WHO can teach you this skill?",
+          "Perfect! WHEN will you start learning? Tell me your plan!"
+        ],
+        
+        success_message: "I'm so excited for you! Learning new things is the best way to grow. Remember: everyone starts as a beginner. Keep trying and you WILL learn it!",
+        target_grammar: ["want to + verb", "can't + verb"],
+        required_vocab_count: 2
+      }
+    ],
+    
+    // === FREE TALK GAME TEMPLATES ===
+    freeTalkGames: [
+      {
+        game_id: "word_chain",
+        game_name: "Ability Word Chain",
+        instructions: "Let's play word chain with action verbs! I say a verb (like 'sing'), then you say another verb that starts with the last letter (like 'give'). Use 'can' in your sentence!",
+        example: "Nova: 'I can SING' → You: 'I can GIVE' → Nova: 'I can EXPLORE'",
+        starter_words: ["sing", "dance", "run", "jump", "climb", "draw"]
       },
       {
-        student: "I can dancing.",
-        tutor_response: "Nice! I can DANCE. What else can you do?"
+        game_id: "twenty_questions",
+        game_name: "Guess The Talent",
+        instructions: "I'm thinking of a talent/skill. Ask me YES/NO questions to guess it! Use 'Can you...?' format.",
+        example: "Student: 'Can you do it indoors?' → Nova: 'Yes!' → Student: 'Can you do it with music?'",
+        possible_talents: ["singing", "dancing", "drawing", "cooking", "swimming", "playing piano"]
       },
       {
-        student: "Yes I can.",
-        tutor_response: "Wonderful! Yes, I can! Can you jump high?"
+        game_id: "sentence_builder",
+        game_name: "Build My Day",
+        instructions: "Tell me 3 things you CAN do today, then 3 things you CAN'T do today. Use full sentences!",
+        example: "I can run in the morning. I can draw after school. I can cook with Mom. I can't swim today (no pool). I can't climb (it's raining). I can't ride my bike (it's broken).",
+        required_sentences: 6
       }
     ]
   },
-
-  // === 3 STORY MISSIONS ===
-  story_missions: [
-    {
-      mission_id: 1,
-      title: "My Special Talent",
-      title_vi: "Tài Năng Đặc Biệt của Tôi",
-      theme: "Discovering Talents",
-      
-      // 🎭 STORY CHARACTER
-      story_character: {
-        name: "Ms. Nova",
-        personality: "Encouraging talent show host, celebrates every ability",
-        backstory: "Ms. Nova loves hosting talent shows! She helps students discover what they can do!",
-        speaking_style: "Enthusiastic, asks about one talent at a time, encourages trying new things",
-        facts: {
-          loves_talents: true,
-          can_sing: true,
-          can_dance: true,
-          favorite_talent: "dancing",
-          hosts_shows: true,
-          encouraging: true
-        }
-      },
-      
-      // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Ms. Nova! 🌟 Welcome to the Talent Show! Everyone has a special talent! What is your name? Say: My name is [your name]",
-      
-      nova_greeting: "Hi! Welcome to the Talent Show!", // DEPRECATED
-      
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 1 - Discovering Talents. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is a talent show host who helps students discover their abilities. OPENING: Ask student's name, then say "Everyone can do something special! Can you sing? Say: Yes, I can sing or No, I can't sing." STRICT GAME RULES: 1. ONLY ask about abilities using CAN. 2. Student MUST say "I can [verb]" or "I can't [verb]". 3. If student gives yes/no only, prompt full sentence: "Say: Yes, I can sing!" 4. Ask about ONE talent per question. VOCABULARY TARGET: sing, dance, run, jump, draw, ride a bike, swim. ALLOWED QUESTIONS: "Can you sing?", "What can you do?", "Can you dance or jump?", "What is your favorite talent?" GRAMMAR ENFORCEMENT: Every answer must practice "I can / I can't" - recast all errors naturally. GAME MECHANIC: Ask about ONE ability per turn → student says 'I can [verb]' or 'I can't [verb]' → confirm/recast → ask about next ability. FORBIDDEN: Do NOT ask about feelings, preferences beyond talents, or unrelated topics. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Multiple abilities per turn, complex sentences. Discover at least 5 different talents. Do NOT ask another question on the last turn.`,
-      
-      target_vocab: ["sing", "dance", "run", "jump", "draw", "ride a bike", "swim"],
-      
-      grammar_pattern: "I can / I can't + [verb]",
-      
-      // 📖 STORY ARC
-      story_arc: [
-        {
-          phase: "introduction",
-          turns: "1-4",
-          goal: "Introduce talent show and discover first talents",
-          required_vocab: [],
-          phase_questions: [
-            {
-              template: "(After name) {student_answer}! Welcome to our show! Can you sing? Say: Yes, I can sing or No, I can't sing",
-              hints: ["Yes", "I", "can", "sing", "No", "can't"]
-            },
-            {
-              template: "(After first talent) {student_answer}! Can you dance? Say: Yes, I can dance or No, I can't dance",
-              hints: ["Yes", "I", "can", "dance", "No", "can't"]
-            },
-            {
-              template: "(After second talent) {student_answer}! What about running? Can you run fast? Say: Yes, I can run fast or No, I can't run fast",
-              hints: ["Yes", "I", "can", "run", "fast", "No", "can't"]
-            },
-            {
-              template: "(After running) {student_answer}! Great! You know many things you can do! Let's discover more!",
-              hints: ["Yes", "Okay", "Great"]
-            }
-          ]
-        },
-        {
-          phase: "talent_discovery",
-          turns: "5-12",
-          goal: "Explore more abilities and practice patterns",
-          required_vocab: ["sing", "dance", "run", "jump"],
-          phase_questions: [
-            {
-              template: "Can you jump high? Say: Yes, I can jump high or No, I can't jump high",
-              hints: ["Yes", "I", "can", "jump", "high", "No", "can't"]
-            },
-            {
-              template: "Can you draw pictures? Say: Yes, I can draw or No, I can't draw",
-              hints: ["Yes", "I", "can", "draw", "No", "can't"]
-            },
-            {
-              template: "Can you ride a bike? Say: Yes, I can ride a bike or No, I can't ride a bike",
-              hints: ["Yes", "I", "can", "ride", "a", "bike", "No", "can't"]
-            },
-            {
-              template: "Can you swim? Say: Yes, I can swim or No, I can't swim",
-              hints: ["Yes", "I", "can", "swim", "No", "can't"]
-            },
-            {
-              template: "What is one thing you CAN do? Say: I can ___",
-              hints: ["I", "can", "sing", "dance", "run", "jump", "draw"]
-            },
-            {
-              template: "What is one thing you CAN'T do? Say: I can't ___",
-              hints: ["I", "can't", "sing", "dance", "swim", "ride", "a", "bike"]
-            },
-            {
-              template: "Tell me TWO things you can do! Say: I can ___ and I can ___",
-              hints: ["I", "can", "sing", "dance", "run", "jump", "and"]
-            },
-            {
-              template: "What is your favorite talent? Say: My favorite talent is ___",
-              hints: ["My", "favorite", "talent", "is", "singing", "dancing", "drawing"]
-            }
-          ]
-        },
-        {
-          phase: "conclusion",
-          turns: "13-14",
-          goal: "Celebrate talents and end show",
-          required_vocab: [],
-          phase_questions: [
-            {
-              template: "You have many talents! You can do many things! Great job!",
-              hints: ["Thank", "you", "Yes", "Great"]
-            },
-            {
-              template: "Keep practicing! Goodbye! Say: Goodbye!",
-              hints: ["Goodbye", "Bye", "See", "you"]
-            }
-          ]
-        }
-      ],
-      
-      
-      minimum_turns: 10,
-      maximum_turns: 12,
-      expected_duration: "12+ minutes"
-    },
-    {
-      mission_id: 2,
-      title: "Can You Do This?",
-      title_vi: "Bạn Có Thể Làm Điều Này Không?",
-      theme: "Challenge Game",
-      
-      nova_greeting: "Let's play Can You Do This! I challenge you!", // DEPRECATED
-      default_hints: ["I", "can", "jump"],
-      
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 2 - Challenge Game. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ABILITIES using CAN questions. GRAMMAR: "I can / I can't [verb]" pattern. Give FULL scaffolding: "Say: I can jump" or "Say: I can't climb". VOCABULARY: sing, dance, run, jump, climb, draw, ride a bike, swim, cook, play. STRICT FOCUS: ABILITY CHALLENGES ONLY - Every question must be about CAN/CAN'T. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?". ONLY allowed questions: "Can you jump?", "Can you do this?", "What can you do?". GAME MECHANIC: Challenge ONE ability per turn → student says 'I can [verb]' or 'I can't [verb]' → confirm/recast → challenge next ability. NEVER ask about preferences, feelings, or descriptions - ONLY ABILITIES WITH CAN/CAN'T. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
-      
-      target_vocab: ["jump", "climb", "run", "sing", "dance", "draw", "ride a bike", "swim"],
-      
-      grammar_pattern: "I can / I can't + [verb]",
-
-      // === STORY MODE CONFIGURATION ===
-      story_character: {
-        name: "Ms. Nova",
-        personality: "Playful challenge host, loves testing abilities",
-        backstory: "I love playing challenge games! I show you a move and you tell me if you can do it!",
-        speaking_style: "Energetic, demonstrates moves, encourages trying",
-        facts: {
-          loves_challenges: true,
-          can_jump: true,
-          can_climb: true,
-          favorite_challenge: "jumping",
-          playful: true,
-          encouraging: true
-        },
-        role: "Challenge host demonstrating abilities"
-      },
-
-      opening_narrative: "Hi! I'm Ms. Nova! 🏃 Let's play Can You Do This! I do a move and you say if you can do it! Watch me! (Jump) Can you jump? Say: Yes, I can jump or No, I can't jump",
-
-      story_arc: [
-        {
-          phase: "challenge_start",
-          turns: "1-4",
-          phase_name: "Start Challenges!",
-          focus: "First ability challenges with scaffolding",
-          phase_questions: [
-            "(Jump) 🏃 Look! I can jump! Can you jump? Say: Yes, I can jump or No, I can't jump",
-            "(Run) Watch! I can run fast! Can you run fast? Say: Yes, I can run fast or No, I can't run fast",
-            "(Sing) Listen! I can sing! Can you sing? Say: Yes, I can sing or No, I can't sing",
-            "(Dance) See! I can dance! Can you dance? Say: Yes, I can dance or No, I can't dance"
-          ],
-          example_answers: [
-            "Yes, I can jump",
-            "No, I can't run fast",
-            "Yes, I can sing",
-            "No, I can't dance"
-          ]
-        },
-        {
-          phase: "challenge_continue",
-          turns: "5-12",
-          phase_name: "More Challenges",
-          focus: "Explore more abilities",
-          phase_questions: [
-            "(Climb) I can climb! Can you climb a tree? Say: Yes, I can climb or No, I can't climb",
-            "(Draw) I can draw! Can you draw? Say: Yes, I can draw or No, I can't draw",
-            "(Ride bike) I can ride a bike! Can you ride a bike? Say: Yes, I can ride a bike or No, I can't ride a bike",
-            "(Swim) I can swim! Can you swim? Say: Yes, I can swim or No, I can't swim",
-            "What is the easiest thing you can do? Say: I can ___",
-            "What is the hardest thing? Say: I can't ___",
-            "Tell me THREE things you can do! Say: I can ___, I can ___, and I can ___",
-            "Which challenge do you like most? Say: I like ___ the most"
-          ]
-        },
-        {
-          phase: "challenge_end",
-          turns: "13-14",
-          phase_name: "End Challenge",
-          focus: "Wrap up challenge game",
-          phase_questions: [
-            "You passed many challenges! You can do many things! Wonderful!",
-            "You are a champion! Goodbye! Say: Goodbye!"
-          ]
-        }
-      ],
-      
-      minimum_turns: 10,
-      maximum_turns: 12,
-      expected_duration: "12+ minutes"
-    },
-    {
-      mission_id: 3,
-      title: "The Big Performance",
-      title_vi: "Buổi Biểu Diễn Lớn",
-      theme: "Talent Show Performance",
-      
-      nova_greeting: "It's show time! Time to perform!", // DEPRECATED
-      default_hints: ["I", "can", "sing"],
-      
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 3 - The Big Performance. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about PERFORMANCE ABILITIES. GRAMMAR: "I can [verb]" pattern. Give FULL scaffolding: "Say: I can sing on stage" or "Say: I can dance for everyone". VOCABULARY: sing, dance, perform, show, stage, audience, talent. STRICT FOCUS: PERFORMANCE PLANNING - Every question about what student will perform. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?" unrelated to performance. ONLY allowed questions: "What can you perform?", "What will you show?", "Can you sing on stage?". GAME MECHANIC: Plan performance → choose talent → practice statement → perform with "I can [verb]" → celebrate. Do NOT ask another question on the last turn.`,
-      
-      target_vocab: ["sing", "dance", "perform", "show", "stage", "talent"],
-      
-      grammar_pattern: "I can + [verb] + [on stage / for everyone]",
-
-      // === STORY MODE CONFIGURATION ===
-      story_character: {
-        name: "Ms. Nova",
-        personality: "Supportive talent show director",
-        backstory: "I help students prepare for the big show! Tonight is your performance!",
-        speaking_style: "Excited, helps plan performance, builds confidence",
-        facts: {
-          loves_shows: true,
-          supports_students: true,
-          favorite_performance: "singing",
-          has_stage: true,
-          encouraging: true,
-          patient: true
-        },
-        role: "Talent show director helping student prepare"
-      },
-
-      opening_narrative: "Hi! I'm Ms. Nova! 🎤 The talent show is TONIGHT! It's your turn to perform! What will you show everyone? What can you do? Say: I can...",
-
-      story_arc: [
-        {
-          phase: "performance_prep",
-          turns: "1-4",
-          phase_name: "Prepare Performance",
-          focus: "Choose talent for the show",
-          phase_questions: [
-            "🎤 Tonight is the talent show! What can you do? Say: I can ___",
-            "Great choice! Can you do it on stage? Say: Yes, I can ___ on stage",
-            "Perfect! What else can you show? Say: I can also ___",
-            "Wonderful! You have many talents! Let's practice!"
-          ]
-        },
-        {
-          phase: "practice_time",
-          turns: "5-12",
-          phase_name: "Practice Performance",
-          focus: "Practice performance statements",
-          phase_questions: [
-            "Let's practice! Say: I can ___ for everyone!",
-            "Good! Can you do TWO things? Say: I can ___ and I can ___",
-            "Can you sing OR dance on stage? Say: I can ___ on stage",
-            "What will you show first? Say: First, I can ___",
-            "What will you show next? Say: Next, I can ___",
-            "What is your BEST talent? Say: My best talent is ___",
-            "Are you ready? Say: Yes, I am ready or I can do this",
-            "What will the audience see? Say: The audience will see me ___"
-          ]
-        },
-        {
-          phase: "performance_time",
-          turns: "13-14",
-          phase_name: "Performance Time",
-          focus: "Perform and celebrate",
-          phase_questions: [
-            "🌟 YOU DID IT! You showed everyone your talent! You can do amazing things!",
-            "The audience loves you! Great performance! Goodbye! Say: Thank you! Goodbye!"
-          ]
-        }
-      ],
-      
-      minimum_turns: 10,
-      maximum_turns: 12,
-      expected_duration: "15+ minutes"
-    }
-  ],
-
-  // === FREE TALK KNOWLEDGE BASE ===
-  freetalk_knowledge: {
-    week_title: "The Talent Show",
-    week_number: 12,
-    theme: "Abilities and Modal 'can'",
+  
+  // === READING STORY ARC ===
+  reading_story: {
+    title: "The Amazing Talent Show",
+    title_vi: "Cuộc Thi Tài Năng Tuyệt Vời",
+    summary: "Students prepare for the school talent show by practicing their special skills",
+    summary_vi: "Các bạn học sinh chuẩn bị cho cuộc thi tài năng trường bằng cách luyện tập các kỹ năng đặc biệt",
     
-    knowledge_base: [
-      "Abilities we can talk about: sing, dance, run, jump, climb, ride a bike, draw, swim, cook, play",
-      "Performance talents: singing, dancing, acting, playing music",
-      "Physical talents: running, jumping, climbing, swimming",
-      "Creative talents: drawing, painting, cooking, writing",
-      "Grammar: I can + [verb] (I can sing)",
-      "Grammar: I can't + [verb] (I can't dance)",
-      "Questions: Can you...? (Can you sing?)",
-      "Answers: Yes, I can. / No, I can't.",
-      "Everyone has different talents - some can sing, some can draw, some can run fast",
-      "It's okay to say I can't - we all have things we can and can't do",
-      "Talent shows let people show what they can do",
-      "Practice helps us get better at our talents"
-    ],
-    
-    example_opening_questions: [
-      "What can you do?",
-      "Can you sing?",
-      "Can you dance or jump?",
-      "What is your special talent?",
-      "Can you ride a bike?",
-      "What can't you do?",
-      "Do you like talent shows?"
-    ],
-    
-    // ✅ FREE TALK 2.0: Starter prompts (Fixed buttons for all weeks)
-    starter_prompts: [
-      { text_en: "I want to play games! 🎮", text_vi: "Tôi muốn chơi game!", type: "game" },
-      { text_en: "Translate this for me... 📖", text_vi: "Dịch giúp con câu/chữ này...", type: "help" },
-      { text_en: "Let's do roleplay! 🎭", text_vi: "Chơi nhập vai đi cô!", type: "roleplay" },
-      { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
-    ],
-    
-    // Legacy bonus roleplay (kept for backward compatibility)
-    bonus_roleplay: {
-      id: 'week12_talent_show',
-      label_en: "Talent Show Host 🎤",
-      label_vi: "MC Chương Trình Tài Năng 🎤",
-      icon: "🎤",
-      ai_role: "Talent show host introducing performers",
-      user_role: "Student performing their talent",
-      intro: "Hi! Welcome to the Talent Show! I am the host! What is your name? What can you do?",
-      context: "Week 12 theme - The Talent Show. AI acts as enthusiastic talent show host introducing student performer to audience. Host asks 'What can you do?' and student responds with 'I can [talent]' patterns. Host should be encouraging, celebrate all talents, and use simple words suitable for A0+ level. Focus on abilities: sing, dance, run, jump, climb, draw, ride a bike."
-    }
+    story_sentences: [
+      "Today is the big talent show.",
+      "Emma can sing very well.",
+      "She will sing her favorite song.",
+      "Tom can dance to the music.",
+      "He learned to dance from his sister.",
+      "Maya can draw beautiful pictures.",
+      "She will draw a picture on stage.",
+      "Jake can play the piano.",
+      "He practices every day after school.",
+      "Lily can't sing, but she can cook!",
+      "She will make cookies for everyone.",
+      "Mia can swim very fast.",
+      "She won a gold medal last year.",
+      "Everyone has a special talent to share!"
+    ]
   },
-
-
-  conversation_cards: [
-    {
-      id: "what_i_can_do",
-      title: "What I Can Do",
-      emoji: "⭐",
-      theme: "My Abilities — I can",
-      difficulty: "easy",
-      exchanges: [
-        {
-          ai: "Can you sing? Say: Yes, I can sing or No, I can't sing",
-          options: ["Yes, I can sing", "No, I can't sing"]
-        },
-        {
-          ai: "Can you dance? Say: Yes, I can dance or No, I can't dance",
-          options: ["Yes, I can dance", "No, I can't dance"]
-        },
-        {
-          ai: "What can you do? Say: I can ___",
-          fill_blank: "I can ___",
-          accept_words: ["sing", "dance", "run", "jump", "draw", "swim", "ride a bike", "cook", "play"]
-        },
-        {
-          ai: "Can you jump high? Say: Yes, I can jump high or No, I can't jump high",
-          options: ["Yes, I can jump high", "No, I can't jump high"]
-        },
-        {
-          ai: "Tell me TWO things you can do! Say: I can ___ and I can ___",
-          accept: ["I", "can", "sing", "dance", "run", "jump", "draw", "swim", "and"]
-        }
-      ],
-      completion_message: "You know your talents! ⭐ You used: I can sing/dance/run/jump!"
-    },
-    {
-      id: "talent_challenge",
-      title: "Talent Challenge!",
-      emoji: "🏆",
-      theme: "Testing Abilities",
+  
+  // === GAME ADAPTATION ===
+  game_templates: {
+    word_chain: {
+      starter_words: ["sing", "dance", "run", "jump", "climb", "draw"],
       difficulty: "medium",
-      exchanges: [
-        {
-          ai: "I can run fast! Can you run fast? Say: Yes, I can run fast or No, I can't run fast",
-          options: ["Yes, I can run fast", "No, I can't run fast"]
-        },
-        {
-          ai: "I can climb trees! Can you climb? Say: Yes, I can climb or No, I can't climb",
-          options: ["Yes, I can climb", "No, I can't climb"]
-        },
-        {
-          ai: "What is something you CAN'T do? Say: I can't ___",
-          fill_blank: "I can't ___",
-          accept_words: ["sing", "dance", "swim", "climb", "ride a bike", "cook", "draw"]
-        },
-        {
-          ai: "Can you ride a bike? Say: Yes, I can ride a bike or No, I can't ride a bike",
-          options: ["Yes, I can ride a bike", "No, I can't ride a bike"]
-        },
-        {
-          ai: "Tell me ONE thing you can do well! Say: I can ___ well",
-          accept: ["I", "can", "sing", "dance", "run", "draw", "swim", "jump", "well"]
-        }
-      ],
-      completion_message: "Great challenge! 🏆 You used: I can / I can't!"
+      time_limit: 10
     },
-    {
-      id: "my_performance",
-      title: "My Performance",
-      emoji: "🎭",
-      theme: "Planning Talent Show",
-      difficulty: "medium",
-      exchanges: [
-        {
-          ai: "What can you perform in the talent show? Say: I can perform ___ or I can show ___",
-          fill_blank: "I can ___",
-          accept_words: ["sing", "dance", "draw", "perform", "show", "play"]
-        },
-        {
-          ai: "Can you sing on stage? Say: Yes, I can sing on stage or No, I can't sing on stage",
-          options: ["Yes, I can sing on stage", "No, I can't sing on stage"]
-        },
-        {
-          ai: "What is your best talent? Say: My best talent is ___",
-          fill_blank: "My best talent is ___",
-          accept_words: ["singing", "dancing", "drawing", "running", "jumping", "swimming"]
-        },
-        {
-          ai: "Can you show TWO talents? Say: I can ___ and I can ___",
-          accept: ["I", "can", "sing", "dance", "draw", "jump", "run", "and"]
-        },
-        {
-          ai: "Are you ready to perform? Say: Yes, I am ready or Yes, I can do it",
-          options: ["Yes, I am ready", "Yes, I can do it"]
-        }
-      ],
-      completion_message: "Perfect performance! 🎭 You used: I can perform/show/sing/dance!"
+    twenty_questions: {
+      objects: ["singing", "dancing", "drawing", "cooking", "swimming", "playing piano"],
+      max_questions: 20
+    },
+    sentence_builder: {
+      patterns: [
+        "I can [verb].",
+        "She can [verb] well.",
+        "He can't [verb].",
+        "They can [verb] fast."
+      ]
     }
-  ]
+  }
 };
 
 export default week12RealData;
