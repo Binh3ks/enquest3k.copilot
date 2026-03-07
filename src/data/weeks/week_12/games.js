@@ -1,17 +1,17 @@
 /**
- * Week 6 Game Data - Advanced Mode (New GameHub)
+ * Week 12 Game Data - Advanced Mode (New GameHub)
  */
 
-export const week6GamesAdvanced = {
+export const week12GamesAdvanced = {
   vocabulary: [
-    'box', 'desk', 'floor', 'wall', 'window',
-    'door', 'hide', 'seek', 'ball', 'toy'
+    'perform', 'talent', 'ability', 'showcase', 'demonstrate',
+    'skill', 'practice', 'achieve', 'improve', 'confident'
   ],
   show_tell: {
     steps: 3,
     word_list: [
-      'box', 'desk', 'floor', 'wall', 'window',
-      'door', 'hide', 'seek', 'ball', 'toy'
+      'perform', 'talent', 'ability', 'showcase', 'demonstrate',
+      'skill', 'practice', 'achieve', 'improve', 'confident'
     ],
     instructions_easy: 'Say the word, add a phrase, then make a full sentence.',
     instructions_advanced: 'Say the word, add a phrase, then make a full sentence.',
@@ -20,89 +20,89 @@ export const week6GamesAdvanced = {
       2: 'Step 2: add a short phrase with the word.',
       3: 'Step 3: make a full sentence.'
     },
-    frames_easy: ['Put the ___ in the ___', 'Put the ___ on the ___'],
-    frames_advanced: ['Put the ___ on the ___', 'Put the ___ under the ___'],
+    frames_easy: ['I can ___ well', 'I can ___'],
+    frames_advanced: ['I can ___ very well', 'I can demonstrate my ___'],
     details_easy: [],
     details_advanced: [],
     detail_map: {
-      box: ['my box', 'a big box', 'the box', 'put the box on the desk'],
-      desk: ['my desk', 'a big desk', 'the desk', 'put it on the desk'],
-      floor: ['my floor', 'the floor', 'clean floor', 'put it on the floor'],
-      wall: ['my wall', 'the wall', 'big wall', 'put it on the wall'],
-      window: ['my window', 'a big window', 'the window', 'put it under the window'],
-      door: ['my door', 'a red door', 'the door', 'put it under the door'],
-      hide: ['hide now', 'hide here', 'hide the toy in the box', 'hide the ball under the desk'],
-      seek: ['seek now', 'seek here', 'seek the toy', 'seek the ball'],
-      ball: ['my ball', 'a red ball', 'the ball', 'put the ball on the floor'],
-      toy: ['my toy', 'a small toy', 'the toy', 'put the toy in the box']
+      perform: ['I perform', 'perform well', 'perform on stage', 'can perform'],
+      talent: ['my talent', 'great talent', 'show talent', 'have talent'],
+      ability: ['my ability', 'special ability', 'show ability', 'have ability'],
+      showcase: ['I showcase', 'showcase talent', 'showcase skills', 'can showcase'],
+      demonstrate: ['I demonstrate', 'demonstrate skills', 'demonstrate talent', 'can demonstrate'],
+      skill: ['my skill', 'special skill', 'new skill', 'have skill'],
+      practice: ['I practice', 'practice daily', 'practice hard', 'must practice'],
+      achieve: ['I achieve', 'achieve goals', 'achieve success', 'can achieve'],
+      improve: ['I improve', 'improve skills', 'improve daily', 'can improve'],
+      confident: ['feel confident', 'very confident', 'be confident', 'stay confident']
     },
     distractors_easy: [],
     distractors_advanced: [],
     distractor_map: {
-      box: ['my ball', 'the window', 'the door'],
-      desk: ['my toy', 'the floor', 'the door']
+      perform: ['my talent', 'showcase skills', 'can practice'],
+      talent: ['perform well', 'can achieve', 'improve skills']
     },
     frame_map: {
-      box: ['Put the ___ in the ___'],
-      ball: ['Put the ___ on the ___']
+      perform: ['I can ___ well'],
+      talent: ['My ___ is singing']
     },
     sentence_hints_map: {
-      box: ['Put the box on the desk.', 'Put the box on the floor.', 'Put the box under the window.'],
-      desk: ['Put the toy on the desk.', 'Put the ball on the desk.', 'Put the box on the desk.'],
-      floor: ['Put the ball on the floor.', 'Put the toy on the floor.', 'Put the box on the floor.'],
-      wall: ['Put the picture on the wall.', 'Put it on the wall.', 'Put the window on the wall.'],
-      window: ['Put the toy under the window.', 'Put the ball under the window.', 'Put it under the window.'],
-      door: ['Put the toy under the door.', 'Put the ball under the door.', 'Put it under the door.'],
-      hide: ['I hide the toy in the box.', 'I hide the ball under the desk.', 'I hide it on the floor.'],
-      seek: ['I seek the toy.', 'I seek the ball.', 'I seek under the desk.'],
-      ball: ['Put the ball on the floor.', 'Put the ball in the box.', 'Put the ball on the desk.'],
-      toy: ['Put the toy on the desk.', 'Put the toy in the box.', 'Put the toy on the floor.']
+      perform: ['I can perform.', 'I can perform on stage.', 'I can perform well.'],
+      talent: ['My talent is singing.', 'I have great talent.', 'I show my talent.'],
+      ability: ['My ability is special.', 'I have this ability.', 'I show my ability.'],
+      showcase: ['I can showcase my talent.', 'I can showcase my skills.', 'I showcase on stage.'],
+      demonstrate: ['I can demonstrate my skills.', 'I demonstrate my talent.', 'I demonstrate on stage.'],
+      skill: ['My skill is drawing.', 'I have special skills.', 'I practice my skill.'],
+      practice: ['I practice every day.', 'I practice my skills.', 'I practice singing.'],
+      achieve: ['I can achieve my goals.', 'I achieve success.', 'I achieve great things.'],
+      improve: ['I can improve my skills.', 'I improve every day.', 'I improve my talent.'],
+      confident: ['I feel confident.', 'I am very confident.', 'I stay confident on stage.']
     },
     emoji_map: {
-      box: '📦',
-      desk: '🪑',
-      floor: '⬛',
-      wall: '🧱',
-      window: '🪟',
-      door: '🚪',
-      hide: '🙈',
-      seek: '🔍',
-      ball: '⚽',
-      toy: '🧸'
+      perform: '🎭',
+      talent: '⭐',
+      ability: '💪',
+      showcase: '🌟',
+      demonstrate: '👏',
+      skill: '🎯',
+      practice: '📝',
+      achieve: '🏆',
+      improve: '📈',
+      confident: '😊'
     },
     definitions: {
-      hide: 'To put something where no one can see it.',
-      seek: 'To look for something.',
-      floor: 'The ground inside a room.',
-      wall: 'The side of a room.'
+      perform: 'To do something in front of people, like singing or dancing.',
+      talent: 'A special ability you are born with or develop.',
+      ability: 'Something you can do.',
+      skill: 'Something you learn to do well through practice.'
     }
   },
   make_sentence: {
     instructions_easy: 'Unscramble the words to make a correct sentence.',
     instructions_advanced: 'Unscramble the words to make a correct sentence.',
     sentences_easy: [
-      { scrambled: ['Put', 'the', 'ball', 'on', 'the', 'floor'], answer: 'Put the ball on the floor.' },
-      { scrambled: ['Put', 'the', 'toy', 'in', 'the', 'box'], answer: 'Put the toy in the box.' },
-      { scrambled: ['Put', 'the', 'box', 'on', 'the', 'desk'], answer: 'Put the box on the desk.' },
-      { scrambled: ['Put', 'the', 'ball', 'under', 'the', 'desk'], answer: 'Put the ball under the desk.' },
-      { scrambled: ['Put', 'the', 'toy', 'on', 'the', 'desk'], answer: 'Put the toy on the desk.' },
-      { scrambled: ['Put', 'the', 'ball', 'in', 'the', 'box'], answer: 'Put the ball in the box.' },
-      { scrambled: ['Put', 'the', 'toy', 'under', 'the', 'chair'], answer: 'Put the toy under the chair.' },
-      { scrambled: ['Put', 'the', 'box', 'on', 'the', 'floor'], answer: 'Put the box on the floor.' },
-      { scrambled: ['Put', 'the', 'ball', 'on', 'the', 'desk'], answer: 'Put the ball on the desk.' },
-      { scrambled: ['Put', 'the', 'toy', 'on', 'the', 'floor'], answer: 'Put the toy on the floor.' }
+      { scrambled: ['I', 'can', 'perform'], answer: 'I can perform.' },
+      { scrambled: ['My', 'talent', 'is', 'singing'], answer: 'My talent is singing.' },
+      { scrambled: ['I', 'have', 'the', 'ability'], answer: 'I have the ability.' },
+      { scrambled: ['I', 'can', 'showcase', 'my', 'skills'], answer: 'I can showcase my skills.' },
+      { scrambled: ['I', 'can', 'demonstrate', 'my', 'talent'], answer: 'I can demonstrate my talent.' },
+      { scrambled: ['My', 'skill', 'is', 'dancing'], answer: 'My skill is dancing.' },
+      { scrambled: ['I', 'practice', 'every', 'day'], answer: 'I practice every day.' },
+      { scrambled: ['I', 'can', 'achieve', 'my', 'goals'], answer: 'I can achieve my goals.' },
+      { scrambled: ['I', 'can', 'improve', 'my', 'skills'], answer: 'I can improve my skills.' },
+      { scrambled: ['I', 'feel', 'confident'], answer: 'I feel confident.' }
     ],
     sentences_advanced: [
-      { scrambled: ['Put', 'the', 'ball', 'on', 'the', 'floor'], answer: 'Put the ball on the floor.', base_words: ['put', 'the', 'ball', 'on', 'the', 'floor'], time_phrases: ['right now', 'in a moment', 'after playing', 'before leaving', 'this time'], location_phrases: ['in the room', 'near the door', 'by the wall', 'in the corner', 'over there'] },
-      { scrambled: ['Put', 'the', 'toy', 'in', 'the', 'box'], answer: 'Put the toy in the box.', base_words: ['put', 'the', 'toy', 'in', 'the', 'box'], time_phrases: ['right now', 'after playing', 'before bedtime', 'in a minute', 'this evening'], location_phrases: ['in the bedroom', 'on the shelf', 'in the closet', 'near the bed', 'over here'] },
-      { scrambled: ['Put', 'the', 'box', 'under', 'the', 'desk'], answer: 'Put the box under the desk.', base_words: ['put', 'the', 'box', 'under', 'the', 'desk'], time_phrases: ['right now', 'after class', 'before leaving', 'in a moment', 'this afternoon'], location_phrases: ['in the classroom', 'in the office', 'in the study', 'near the chair', 'by the window'] },
-      { scrambled: ['ball', 'Put', 'the', 'in', 'the', 'box'], answer: 'Put the ball in the box.', base_words: ['put', 'the', 'ball', 'in', 'the', 'box'], time_phrases: ['right now', 'after playing', 'before going home', 'in a minute', 'this time'], location_phrases: ['in the room', 'on the shelf', 'in the storage', 'near the toys', 'over there'] },
-      { scrambled: ['toy', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the toy on the desk.', base_words: ['put', 'the', 'toy', 'on', 'the', 'desk'], time_phrases: ['right now', 'after playing', 'before class', 'in a moment', 'this morning'], location_phrases: ['in the classroom', 'in the bedroom', 'in the study', 'near the window', 'by the chair'] },
-      { scrambled: ['the', 'Put', 'ball', 'under', 'the', 'chair'], answer: 'Put the ball under the chair.', base_words: ['put', 'the', 'ball', 'under', 'the', 'chair'], time_phrases: ['right now', 'after playing', 'before dinner', 'in a minute', 'this evening'], location_phrases: ['in the room', 'in the kitchen', 'in the dining area', 'near the table', 'over there'] },
-      { scrambled: ['the', 'Put', 'toy', 'on', 'the', 'floor'], answer: 'Put the toy on the floor.', base_words: ['put', 'the', 'toy', 'on', 'the', 'floor'], time_phrases: ['right now', 'after playing', 'before cleaning', 'in a moment', 'this time'], location_phrases: ['in the room', 'in the bedroom', 'near the bed', 'by the door', 'in the corner'] },
-      { scrambled: ['box', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the box on the desk.', base_words: ['put', 'the', 'box', 'on', 'the', 'desk'], time_phrases: ['right now', 'after organizing', 'before class', 'in a moment', 'this morning'], location_phrases: ['in the classroom', 'in the office', 'in the bedroom', 'near the books', 'by the lamp'] },
-      { scrambled: ['ball', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the ball on the desk.', base_words: ['put', 'the', 'ball', 'on', 'the', 'desk'], time_phrases: ['right now', 'after playing', 'before leaving', 'in a minute', 'this afternoon'], location_phrases: ['in the classroom', 'in the bedroom', 'in the study', 'near the lamp', 'by the window'] },
-      { scrambled: ['toy', 'Put', 'the', 'under', 'the', 'window'], answer: 'Put the toy under the window.', base_words: ['put', 'the', 'toy', 'under', 'the', 'window'], time_phrases: ['right now', 'after playing', 'before bedtime', 'in a moment', 'this evening'], location_phrases: ['in the bedroom', 'in the living room', 'in the playroom', 'near the curtain', 'by the wall'] }
+      { scrambled: ['I', 'can', 'perform', 'on', 'stage'], answer: 'I can perform on stage.', base_words: ['i', 'can', 'perform', 'on', 'stage'], time_phrases: ['today', 'tomorrow', 'next week', 'this Sunday', 'very soon'], location_phrases: ['at school', 'at the theater', 'in the auditorium', 'for everyone', 'with my friends'] },
+      { scrambled: ['My', 'talent', 'is', 'special'], answer: 'My talent is special.', base_words: ['my', 'talent', 'is', 'special'], time_phrases: ['always', 'right now', 'today', 'every day', 'naturally'], location_phrases: ['on stage', 'in my performance', 'everywhere', 'in the show', 'for everyone'] },
+      { scrambled: ['I', 'have', 'great', 'ability'], answer: 'I have great ability.', base_words: ['i', 'have', 'great', 'ability'], time_phrases: ['always', 'right now', 'today', 'naturally', 'forever'], location_phrases: ['on stage', 'in singing', 'in dancing', 'in sports', 'everywhere'] },
+      { scrambled: ['can', 'I', 'showcase', 'my', 'talent'], answer: 'I can showcase my talent.', base_words: ['i', 'can', 'showcase', 'my', 'talent'], time_phrases: ['today', 'tomorrow', 'next week', 'this weekend', 'very soon'], location_phrases: ['on stage', 'at school', 'in the show', 'for everyone', 'in the competition'] },
+      { scrambled: ['demonstrate', 'I', 'can', 'my', 'skills'], answer: 'I can demonstrate my skills.', base_words: ['i', 'can', 'demonstrate', 'my', 'skills'], time_phrases: ['today', 'right now', 'tomorrow', 'very soon', 'next time'], location_phrases: ['on stage', 'at school', 'in class', 'for you', 'in the performance'] },
+      { scrambled: ['My', 'singing', 'skill', 'is', 'excellent'], answer: 'My singing skill is excellent.', base_words: ['my', 'singing', 'skill', 'is', 'excellent'], time_phrases: ['always', 'now', 'today', 'naturally', 'certainly'], location_phrases: ['on stage', 'in my performance', 'in the show', 'for everyone', 'always'] },
+      { scrambled: ['I', 'practice', 'hard', 'every', 'day'], answer: 'I practice hard every day.', base_words: ['i', 'practice', 'hard', 'every', 'day'], time_phrases: ['every day', 'daily', 'always', 'regularly', 'constantly'], location_phrases: ['at home', 'at school', 'in my room', 'at the studio', 'everywhere'] },
+      { scrambled: ['achieve', 'I', 'can', 'great', 'things'], answer: 'I can achieve great things.', base_words: ['i', 'can', 'achieve', 'great', 'things'], time_phrases: ['soon', 'in the future', 'someday', 'with practice', 'eventually'], location_phrases: ['on stage', 'in my life', 'in competitions', 'with hard work', 'anywhere'] },
+      { scrambled: ['improve', 'skills', 'I', 'my', 'can'], answer: 'I can improve my skills.', base_words: ['i', 'can', 'improve', 'my', 'skills'], time_phrases: ['now', 'today', 'every day', 'with practice', 'over time'], location_phrases: ['at home', 'at school', 'with my teacher', 'in class', 'anywhere'] },
+      { scrambled: ['confident', 'feel', 'I', 'on', 'stage'], answer: 'I feel confident on stage.', base_words: ['i', 'feel', 'confident', 'on', 'stage'], time_phrases: ['always', 'now', 'today', 'every time', 'forever'], location_phrases: ['on stage', 'in performances', 'in shows', 'during talent shows', 'anywhere'] }
     ]
   },
   ask_me: {
@@ -110,373 +110,373 @@ export const week6GamesAdvanced = {
     instructions_advanced: 'Ask a question that matches the context.',
     contexts_easy: [
       {
-        id: 'w6_ball_where',
+        id: 'w12_perform_what',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'Put the ball on the floor. Ask me where to put the ball.',
+        topic: 'perform',
+        intro: 'I can perform on stage. Ask me what I can do.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where should I put the ball?',
-          'Where is it?'
+          'What can you do?',
+          'Can you perform?',
+          'What do you do?'
         ],
-        answer: 'Put the ball on the floor.',
-        question_hints: ['Where is the ball?', 'Where should I put the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'I can perform on stage.',
+        question_hints: ['What can you do?', 'Can you perform?', 'What do you do?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_toy_where',
+        id: 'w12_talent_what',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'Put the toy in the box. Ask me where to put the toy.',
+        topic: 'talent',
+        intro: 'My talent is singing. Ask me what my talent is.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where should I put the toy?',
-          'Where is it?'
+          'What is your talent?',
+          'What can you do?',
+          'What is your skill?'
         ],
-        answer: 'Put the toy in the box.',
-        question_hints: ['Where is the toy?', 'Where should I put the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'My talent is singing.',
+        question_hints: ['What is your talent?', 'What can you do?', 'What is your skill?'],
+        required_question_words: ['what'],
+        required_keywords: ['talent', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'is', 'your', 'talent'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_box_where',
+        id: 'w12_ability_what',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'Put the box on the desk. Ask me where to put the box.',
+        topic: 'ability',
+        intro: 'I have the ability to dance. Ask me what ability I have.',
         acceptedQuestions: [
-          'Where is the box?',
-          'Where should I put it?',
-          'Where is the toy?'
+          'What ability do you have?',
+          'What can you do?',
+          'What is your ability?'
         ],
-        answer: 'Put the box on the desk.',
-        question_hints: ['Where is the box?', 'Where should I put it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
+        answer: 'I have the ability to dance.',
+        question_hints: ['What ability do you have?', 'What can you do?', 'What is your ability?'],
+        required_question_words: ['what'],
+        required_keywords: ['ability', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
+          words: ['what', 'ability', 'do', 'you', 'have'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_desk_where',
+        id: 'w12_showcase_can',
         task_type: 'find_question',
-        topic: 'desk',
-        intro: 'Put the toy on the desk. Ask me where the toy is.',
+        topic: 'showcase',
+        intro: 'I can showcase my skills. Ask me if I can showcase.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
+          'Can you showcase?',
+          'Can you showcase your skills?',
+          'What can you do?'
         ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can showcase my skills.',
+        question_hints: ['Can you showcase?', 'Can you showcase your skills?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'showcase'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'showcase'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_floor_where',
+        id: 'w12_demonstrate_can',
         task_type: 'find_question',
-        topic: 'floor',
-        intro: 'Put the ball on the floor. Ask me where the ball is.',
+        topic: 'demonstrate',
+        intro: 'I can demonstrate my talent. Ask me if I can demonstrate.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'Can you demonstrate?',
+          'Can you demonstrate your talent?',
+          'What can you do?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
+        answer: 'Yes, I can demonstrate my talent.',
+        question_hints: ['Can you demonstrate?', 'Can you demonstrate your talent?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'demonstrate'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'demonstrate'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_door_where',
+        id: 'w12_skill_what',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'Put the toy under the door. Ask me where the toy is.',
+        topic: 'skill',
+        intro: 'My skill is drawing. Ask me what my skill is.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'What is your skill?',
+          'What can you do?',
+          'What skill do you have?'
         ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'My skill is drawing.',
+        question_hints: ['What is your skill?', 'What can you do?', 'What skill do you have?'],
+        required_question_words: ['what'],
+        required_keywords: ['skill', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'is', 'your', 'skill'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_window_where',
+        id: 'w12_practice_how',
         task_type: 'find_question',
-        topic: 'window',
-        intro: 'Put the ball under the window. Ask me where the ball is.',
+        topic: 'practice',
+        intro: 'I practice every day. Ask me how often I practice.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'How often do you practice?',
+          'When do you practice?',
+          'Do you practice?'
         ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'I practice every day.',
+        question_hints: ['How often do you practice?', 'When do you practice?', 'Do you practice?'],
+        required_question_words: ['how', 'when', 'do'],
+        required_keywords: ['you', 'practice'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['how', 'often', 'do', 'you', 'practice'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_hide_where',
+        id: 'w12_achieve_can',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
+        topic: 'achieve',
+        intro: 'I can achieve my goals. Ask me if I can achieve them.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'Can you achieve your goals?',
+          'Can you achieve?',
+          'What can you do?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can achieve my goals.',
+        question_hints: ['Can you achieve your goals?', 'Can you achieve?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'achieve'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'achieve'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_mini_position',
+        id: 'w12_mini_talents',
         task_type: 'mini_interview',
-        topic: 'position',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
+        topic: 'talents',
+        intro: 'Interview me: ask what my talent is, then ask if I can perform.',
         steps: [
           {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
+            prompt: 'Ask what my talent is.',
+            required_question_words: ['what'],
+            required_keywords: ['talent'],
+            question_hints: ['What is your talent?', 'What can you do?', 'What is your skill?']
           },
           {
-            prompt: 'Ask where the toy is.',
+            prompt: 'Ask if I can perform.',
             acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
+              'Can you perform?',
+              'Do you perform?',
+              'Can you perform on stage?'
             ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            required_question_words: ['can'],
+            required_keywords: ['you', 'perform'],
+            question_hints: ['Can you perform?', 'Do you perform?', 'Can you perform on stage?']
           }
         ],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'is', 'your', 'talent', 'can', 'you', 'perform'],
+          tricky: ['where', 'who']
         }
       }
     ],
     contexts_advanced: [
       {
-        id: 'w6_ball_where_adv',
+        id: 'w12_perform_what_adv',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'Put the ball on the floor. Ask me where to put the ball.',
+        topic: 'perform',
+        intro: 'I can perform excellently on stage. Ask me about my abilities.',
         acceptedQuestions: [
-          'Where should I put the ball?',
-          'Where is the ball?',
-          'Where is it?'
+          'What can you do?',
+          'Can you perform?',
+          'What are your abilities?'
         ],
-        answer: 'Put the ball on the floor.',
-        question_hints: ['Where should I put the ball?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'I can perform excellently on stage.',
+        question_hints: ['What can you do?', 'Can you perform?', 'What are your abilities?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'put'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do', 'perform'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_toy_where_adv',
+        id: 'w12_talent_what_adv',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'Put the toy in the box. Ask me where to put the toy.',
+        topic: 'talent',
+        intro: 'My talent is singing beautifully. Ask me what my talent is.',
         acceptedQuestions: [
-          'Where should I put the toy?',
-          'Where is the toy?',
-          'Where is it?'
+          'What is your talent?',
+          'What can you do?',
+          'What special ability do you have?'
         ],
-        answer: 'Put the toy in the box.',
-        question_hints: ['Where should I put the toy?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'My talent is singing beautifully.',
+        question_hints: ['What is your talent?', 'What can you do?', 'What special ability do you have?'],
+        required_question_words: ['what'],
+        required_keywords: ['talent', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy', 'put'],
-          tricky: ['what', 'who']
+          words: ['what', 'is', 'your', 'talent'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_box_where_adv',
+        id: 'w12_ability_what_adv',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'Put the box on the desk. Ask me where to put the box.',
+        topic: 'ability',
+        intro: 'I have a special ability to dance gracefully. Ask me about my ability.',
         acceptedQuestions: [
-          'Where should I put the box?',
-          'Where is the box?',
-          'Where is it?'
+          'What ability do you have?',
+          'What can you do?',
+          'What is your special ability?'
         ],
-        answer: 'Put the box on the desk.',
-        question_hints: ['Where should I put the box?', 'Where is the box?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
+        answer: 'I have a special ability to dance gracefully.',
+        question_hints: ['What ability do you have?', 'What can you do?', 'What is your special ability?'],
+        required_question_words: ['what'],
+        required_keywords: ['ability', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'box', 'put'],
-          tricky: ['what', 'who']
+          words: ['what', 'ability', 'do', 'you', 'have'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_desk_where_adv',
+        id: 'w12_showcase_can_adv',
         task_type: 'find_question',
-        topic: 'desk',
-        intro: 'Put the toy on the desk. Ask me where the toy is.',
+        topic: 'showcase',
+        intro: 'I can showcase my skills in the talent show. Ask me if I can showcase them.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
+          'Can you showcase your skills?',
+          'Can you showcase?',
+          'What can you do?'
         ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can showcase my skills in the talent show.',
+        question_hints: ['Can you showcase your skills?', 'Can you showcase?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'showcase'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'showcase', 'skills'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_floor_where_adv',
+        id: 'w12_demonstrate_can_adv',
         task_type: 'find_question',
-        topic: 'floor',
-        intro: 'Put the ball on the floor. Ask me where the ball is.',
+        topic: 'demonstrate',
+        intro: 'I can demonstrate my talent confidently. Ask me if I can demonstrate it.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'Can you demonstrate your talent?',
+          'Can you demonstrate?',
+          'What can you do?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
+        answer: 'Yes, I can demonstrate my talent confidently.',
+        question_hints: ['Can you demonstrate your talent?', 'Can you demonstrate?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'demonstrate'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'demonstrate', 'talent'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_door_where_adv',
+        id: 'w12_skill_what_adv',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'Put the toy under the door. Ask me where to put the toy.',
+        topic: 'skill',
+        intro: 'My skill is drawing beautiful pictures. Ask me about my skill.',
         acceptedQuestions: [
-          'Where should I put the toy?',
-          'Where is the toy?',
-          'Where is it?'
+          'What is your skill?',
+          'What can you do?',
+          'What skill do you have?'
         ],
-        answer: 'Put the toy under the door.',
-        question_hints: ['Where should I put the toy?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'My skill is drawing beautiful pictures.',
+        question_hints: ['What is your skill?', 'What can you do?', 'What skill do you have?'],
+        required_question_words: ['what'],
+        required_keywords: ['skill', 'you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy', 'put'],
-          tricky: ['what', 'who']
+          words: ['what', 'is', 'your', 'skill'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_window_where_adv',
+        id: 'w12_practice_how_adv',
         task_type: 'find_question',
-        topic: 'window',
-        intro: 'Put the ball under the window. Ask me where the ball is.',
+        topic: 'practice',
+        intro: 'I practice diligently every single day. Ask me about my practice routine.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'How often do you practice?',
+          'When do you practice?',
+          'Do you practice every day?'
         ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'I practice diligently every single day.',
+        question_hints: ['How often do you practice?', 'When do you practice?', 'Do you practice every day?'],
+        required_question_words: ['how', 'when', 'do'],
+        required_keywords: ['you', 'practice'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['how', 'often', 'do', 'you', 'practice'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_hide_where_adv',
+        id: 'w12_achieve_can_adv',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
+        topic: 'achieve',
+        intro: 'I can achieve great success with hard work. Ask me if I can achieve my goals.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'Can you achieve your goals?',
+          'Can you achieve success?',
+          'What can you achieve?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can achieve great success with hard work.',
+        question_hints: ['Can you achieve your goals?', 'Can you achieve success?', 'What can you achieve?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'achieve'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'achieve', 'goals'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_mini_hideseek',
+        id: 'w12_mini_talents_adv',
         task_type: 'mini_interview',
-        topic: 'hideseek',
-        intro: 'Interview me: ask where to put the ball, then ask where the toy is.',
+        topic: 'talents',
+        intro: 'Interview me: ask what special talent I have, then ask if I can showcase it.',
         steps: [
           {
-            prompt: 'Ask where to put the ball.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where should I put the ball?', 'Where is the ball?', 'Where is it?']
+            prompt: 'Ask what special talent I have.',
+            required_question_words: ['what'],
+            required_keywords: ['talent'],
+            question_hints: ['What special talent do you have?', 'What is your talent?', 'What can you do?']
           },
           {
-            prompt: 'Ask where the toy is.',
+            prompt: 'Ask if I can showcase it.',
             acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
+              'Can you showcase it?',
+              'Can you showcase your talent?',
+              'Can you perform?'
             ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            required_question_words: ['can'],
+            required_keywords: ['you', 'showcase'],
+            question_hints: ['Can you showcase it?', 'Can you showcase your talent?', 'Can you perform?']
           }
         ],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy', 'put'],
-          tricky: ['what', 'who']
+          words: ['what', 'talent', 'do', 'you', 'have', 'can', 'showcase'],
+          tricky: ['where', 'who']
         }
       }
     ],
-    required_question_words_easy: ['where', 'is'],
-    required_question_words_advanced: ['where', 'is']
+    required_question_words_easy: ['what', 'can'],
+    required_question_words_advanced: ['what', 'can']
   }
 };
 
-export default week6GamesAdvanced;
+export default week12GamesAdvanced;

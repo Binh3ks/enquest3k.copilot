@@ -1,15 +1,15 @@
 export default {
   title: "Match the Words",
   pairs: [
-    { id: 1, word: "box", definition: "a container with four sides", image_url: "/images/week6/box.jpg" },
-    { id: 2, word: "desk", definition: "a table for working", image_url: "/images/week6/desk.jpg" },
-    { id: 3, word: "floor", definition: "the surface you walk on", image_url: "/images/week6/floor.jpg" },
-    { id: 4, word: "wall", definition: "the side of a room", image_url: "/images/week6/wall.jpg" },
-    { id: 5, word: "window", definition: "an opening for light", image_url: "/images/week6/window.jpg" },
-    { id: 6, word: "door", definition: "an opening to enter", image_url: "/images/week6/door.jpg" },
-    { id: 7, word: "hide", definition: "to put where nobody can see", image_url: "/images/week6/hide.jpg" },
-    { id: 8, word: "seek", definition: "to look for something", image_url: "/images/week6/seek.jpg" },
-    { id: 9, word: "treasure", definition: "valuable things like gold", image_url: "/images/week6/treasure.jpg" },
-    { id: 10, word: "hunt", definition: "to search carefully", image_url: "/images/week6/hunt.jpg" }
+    { id: 1, word: "perform", definition: "to do an activity in front of people", image_url: "/images/week12/perform.jpg" },
+    { id: 2, word: "talent", definition: "a natural ability to do something well", image_url: "/images/week12/talent.jpg" },
+    { id: 3, word: "ability", definition: "the power or skill to do something", image_url: "/images/week12/ability.jpg" },
+    { id: 4, word: "showcase", definition: "to show the best of something", image_url: "/images/week12/showcase.jpg" },
+    { id: 5, word: "demonstrate", definition: "to show how something works", image_url: "/images/week12/demonstrate.jpg" },
+    { id: 6, word: "skill", definition: "the ability to do something well", image_url: "/images/week12/skill.jpg" },
+    { id: 7, word: "practice", definition: "to do something regularly to improve", image_url: "/images/week12/practice.jpg" },
+    { id: 8, word: "achieve", definition: "to successfully complete something", image_url: "/images/week12/achieve.jpg" },
+    { id: 9, word: "improve", definition: "to become or make something better", image_url: "/images/week12/improve.jpg" },
+    { id: 10, word: "confident", definition: "believing in your ability to do something", image_url: "/images/week12/confident.jpg" }
   ]
 };

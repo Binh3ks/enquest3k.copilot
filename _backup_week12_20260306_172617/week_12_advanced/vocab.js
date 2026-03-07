@@ -1,0 +1,102 @@
+export default {
+  vocab: [
+    {
+      id: 1,
+      word: "sing",
+      pronunciation: "/sɪŋ/",
+      definition_vi: "hát",
+      definition_en: "to make music with your voice",
+      example: "I can sing a song.",
+      collocation: "sing a song",
+      image_url: "/images/week12/sing.jpg",
+      audio_word: "/audio/week12/vocab_sing.mp3",
+      audio_definition: "/audio/week12/vocab_def_sing.mp3",
+      audio_example: "/audio/week12/vocab_ex_sing.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_sing.mp3"
+    },
+    {
+      id: 2,
+      word: "dance",
+      pronunciation: "/dæns/",
+      definition_vi: "nhảy, khiêu vũ",
+      definition_en: "to move your body to music",
+      example: "I can dance well.",
+      collocation: "dance to music",
+      image_url: "/images/week12/dance.jpg",
+      audio_word: "/audio/week12/vocab_dance.mp3",
+      audio_definition: "/audio/week12/vocab_def_dance.mp3",
+      audio_example: "/audio/week12/vocab_ex_dance.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_dance.mp3"
+    },
+    {
+      id: 3,
+      word: "run",
+      pronunciation: "/rʌn/",
+      definition_vi: "chạy",
+      definition_en: "to move fast on your feet",
+      example: "I can run very fast.",
+      collocation: "run fast",
+      image_url: "/images/week12/run.jpg",
+      audio_word: "/audio/week12/vocab_run.mp3",
+      audio_definition: "/audio/week12/vocab_def_run.mp3",
+      audio_example: "/audio/week12/vocab_ex_run.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_run.mp3"
+    },
+    {
+      id: 4,
+      word: "jump",
+      pronunciation: "/dʒʌmp/",
+      definition_vi: "nhảy (lên cao)",
+      definition_en: "to push yourself up into the air",
+      example: "I can jump high.",
+      collocation: "jump high",
+      image_url: "/images/week12/jump.jpg",
+      audio_word: "/audio/week12/vocab_jump.mp3",
+      audio_definition: "/audio/week12/vocab_def_jump.mp3",
+      audio_example: "/audio/week12/vocab_ex_jump.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_jump.mp3"
+    },
+    {
+      id: 5,
+      word: "climb",
+      pronunciation: "/klaɪm/",
+      definition_vi: "trèo, leo",
+      definition_en: "to go up using your hands and feet",
+      example: "I can climb a tree.",
+      collocation: "climb a tree",
+      image_url: "/images/week12/climb.jpg",
+      audio_word: "/audio/week12/vocab_climb.mp3",
+      audio_definition: "/audio/week12/vocab_def_climb.mp3",
+      audio_example: "/audio/week12/vocab_ex_climb.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_climb.mp3"
+    },
+    {
+      id: 6,
+      word: "ride a bike",
+      pronunciation: "/raɪd ə baɪk/",
+      definition_vi: "đạp xe",
+      definition_en: "to travel on a bicycle",
+      example: "I can ride a bike.",
+      collocation: "ride a bike",
+      image_url: "/images/week12/ride_bike.jpg",
+      audio_word: "/audio/week12/vocab_ride_bike.mp3",
+      audio_definition: "/audio/week12/vocab_def_ride_bike.mp3",
+      audio_example: "/audio/week12/vocab_ex_ride_bike.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_ride_bike.mp3"
+    },
+    {
+      id: 7,
+      word: "draw",
+      pronunciation: "/drɔː/",
+      definition_vi: "vẽ",
+      definition_en: "to make a picture with a pencil or pen",
+      example: "I can draw a cat.",
+      collocation: "draw a picture",
+      image_url: "/images/week12/draw.jpg",
+      audio_word: "/audio/week12/vocab_draw.mp3",
+      audio_definition: "/audio/week12/vocab_def_draw.mp3",
+      audio_example: "/audio/week12/vocab_ex_draw.mp3",
+      audio_collocation: "/audio/week12/vocab_coll_draw.mp3"
+    }
+  ]
+};

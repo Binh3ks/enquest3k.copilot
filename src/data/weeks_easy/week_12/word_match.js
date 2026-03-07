@@ -1,15 +1,15 @@
 export default {
   title: "Match the Words",
   pairs: [
-    { id: 1, word: "box", definition: "a container with four sides", image_url: "/images/week6_easy/box.jpg" },
-    { id: 2, word: "desk", definition: "a table for working", image_url: "/images/week6_easy/desk.jpg" },
-    { id: 3, word: "floor", definition: "the surface you walk on", image_url: "/images/week6_easy/floor.jpg" },
-    { id: 4, word: "wall", definition: "the side of a room", image_url: "/images/week6_easy/wall.jpg" },
-    { id: 5, word: "window", definition: "an opening for light", image_url: "/images/week6_easy/window.jpg" },
-    { id: 6, word: "door", definition: "an opening to enter", image_url: "/images/week6_easy/door.jpg" },
-    { id: 7, word: "hide", definition: "to put where nobody can see", image_url: "/images/week6_easy/hide.jpg" },
-    { id: 8, word: "seek", definition: "to look for something", image_url: "/images/week6_easy/seek.jpg" },
-    { id: 9, word: "treasure", definition: "valuable things like gold", image_url: "/images/week6_easy/treasure.jpg" },
-    { id: 10, word: "hunt", definition: "to search carefully", image_url: "/images/week6_easy/hunt.jpg" }
+    { id: 1, word: "sing", definition: "to make music with your voice", image_url: "/images/week12_easy/sing.jpg" },
+    { id: 2, word: "dance", definition: "to move your body to music", image_url: "/images/week12_easy/dance.jpg" },
+    { id: 3, word: "run", definition: "to move fast with your legs", image_url: "/images/week12_easy/run.jpg" },
+    { id: 4, word: "jump", definition: "to push yourself up into the air", image_url: "/images/week12_easy/jump.jpg" },
+    { id: 5, word: "swim", definition: "to move through water", image_url: "/images/week12_easy/swim.jpg" },
+    { id: 6, word: "draw", definition: "to make pictures with pencils", image_url: "/images/week12_easy/draw.jpg" },
+    { id: 7, word: "play", definition: "to do something for fun", image_url: "/images/week12_easy/play.jpg" },
+    { id: 8, word: "cook", definition: "to make food ready to eat", image_url: "/images/week12_easy/cook.jpg" },
+    { id: 9, word: "climb", definition: "to go up using hands and feet", image_url: "/images/week12_easy/climb.jpg" },
+    { id: 10, word: "ride", definition: "to sit on and control something", image_url: "/images/week12_easy/ride.jpg" }
   ]
 };

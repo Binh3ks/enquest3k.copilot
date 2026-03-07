@@ -1,17 +1,17 @@
 /**
- * Week 6 Game Data - Easy Mode (New GameHub)
+ * Week 12 Game Data - Easy Mode (New GameHub)
  */
 
-export const week6GamesEasy = {
+export const week12GamesEasy = {
   vocabulary: [
-    'box', 'desk', 'floor', 'wall', 'window',
-    'door', 'hide', 'seek', 'ball', 'toy'
+    'sing', 'dance', 'run', 'jump', 'swim',
+    'draw', 'play', 'cook', 'climb', 'ride'
   ],
   show_tell: {
     steps: 3,
     word_list: [
-      'box', 'desk', 'floor', 'wall', 'window',
-      'door', 'hide', 'seek', 'ball', 'toy'
+      'sing', 'dance', 'run', 'jump', 'swim',
+      'draw', 'play', 'cook', 'climb', 'ride'
     ],
     instructions_easy: 'Say the word, add a phrase, then make a full sentence.',
     instructions_advanced: 'Say the word, add a phrase, then make a full sentence.',
@@ -20,88 +20,88 @@ export const week6GamesEasy = {
       2: 'Step 2: add a short phrase with the word.',
       3: 'Step 3: make a full sentence.'
     },
-    frames_easy: ['The ___ is in the ___', 'The ___ is on the ___'],
-    frames_advanced: ['The ___ is in the ___', 'The ___ is on the ___'],
+    frames_easy: ['I can ___ well', 'I can ___'],
+    frames_advanced: ['I can ___ very well', 'I can ___'],
     details_easy: [],
     details_advanced: [],
     detail_map: {
-      box: ['my box', 'a big box', 'the box', 'your box'],
-      desk: ['my desk', 'a big desk', 'the desk', 'your desk'],
-      floor: ['my floor', 'the floor', 'clean floor', 'your floor'],
-      wall: ['my wall', 'the wall', 'big wall', 'your wall'],
-      window: ['my window', 'a big window', 'the window', 'your window'],
-      door: ['my door', 'a red door', 'the door', 'your door'],
-      hide: ['hide now', 'hide here', 'hide the toy', 'hide the ball'],
-      seek: ['seek now', 'seek here', 'seek the toy', 'seek the ball'],
-      ball: ['my ball', 'a red ball', 'the ball', 'your ball'],
-      toy: ['my toy', 'a small toy', 'the toy', 'your toy']
+      sing: ['I sing', 'sing well', 'sing songs', 'can sing'],
+      dance: ['I dance', 'dance well', 'dance today', 'can dance'],
+     run: ['I run', 'run fast', 'run today', 'can run'],
+      jump: ['I jump', 'jump high', 'jump well', 'can jump'],
+      swim: ['I swim', 'swim well', 'swim today', 'can swim'],
+      draw: ['I draw', 'draw pictures', 'draw well', 'can draw'],
+      play: ['I play', 'play well', 'play games', 'can play'],
+      cook: ['I cook', 'cook well', 'cook food', 'can cook'],
+      climb: ['I climb', 'climb high', 'climb trees', 'can climb'],
+      ride: ['I ride', 'ride a bike', 'ride well', 'can ride']
     },
     distractors_easy: [],
     distractors_advanced: [],
     distractor_map: {
-      box: ['my ball', 'the window', 'the door'],
-      desk: ['my toy', 'the floor', 'the door']
+      sing: ['I dance', 'play games', 'can run'],
+      dance: ['I sing', 'can jump', 'swim well']
     },
     frame_map: {
-      box: ['The ___ is in the ___'],
-      ball: ['The ___ is on the ___']
+      sing: ['I can ___ well'],
+      dance: ['I can ___ every day']
     },
     sentence_hints_map: {
-      box: ['The box is on the desk.', 'The box is in the room.', 'The box is under the desk.'],
-      desk: ['The desk is in the room.', 'The toy is on the desk.', 'The ball is under the desk.'],
-      floor: ['The ball is on the floor.', 'The toy is on the floor.', 'The box is on the floor.'],
-      wall: ['The picture is on the wall.', 'The window is on the wall.', 'The door is on the wall.'],
-      window: ['The window is on the wall.', 'The ball is under the window.', 'The toy is under the window.'],
-      door: ['The door is on the wall.', 'The toy is under the door.', 'The ball is under the door.'],
-      hide: ['I hide the toy.', 'I hide the ball.', 'I hide in the box.'],
-      seek: ['I seek the toy.', 'I seek the ball.', 'I seek under the desk.'],
-      ball: ['The ball is on the floor.', 'The ball is in the box.', 'The ball is under the desk.'],
-      toy: ['The toy is on the desk.', 'The toy is in the box.', 'The toy is under the chair.']
+      sing: ['I can sing.', 'I can sing well.', 'I can sing songs.'],
+      dance: ['I can dance.', 'I can dance well.', 'I can dance every day.'],
+      run: ['I can run.', 'I can run fast.', 'I can run every day.'],
+      jump: ['I can jump.', 'I can jump high.', 'I can jump well.'],
+      swim: ['I can swim.', 'I can swim well.', 'I can swim every day.'],
+      draw: ['I can draw.', 'I can draw pictures.', 'I can draw well.'],
+      play: ['I can play.', 'I can play games.', 'I can play every day.'],
+      cook: ['I can cook.', 'I can cook food.', 'I can cook well.'],
+      climb: ['I can climb.', 'I can climb trees.', 'I can climb high.'],
+      ride: ['I can ride.', 'I can ride a bike.', 'I can ride well.']
     },
     emoji_map: {
-      box: '📦',
-      desk: '🪑',
-      floor: '⬛',
-      wall: '🧱',
-      window: '🪟',
-      door: '🚪',
-      hide: '🙈',
-      seek: '🔍',
-      ball: '⚽',
-      toy: '🧸'
+      sing: '🎤',
+      dance: '💃',
+      run: '🏃',
+      jump: '🦘',
+      swim: '🏊',
+      draw: '🎨',
+      play: '🎮',
+      cook: '👨‍🍳',
+      climb: '🧗',
+      ride: '🚴'
     },
     definitions: {
-      hide: 'To put something where no one can see it.',
-      seek: 'To look for something.',
-      floor: 'The ground inside a room.'
+      sing: 'To make music with your voice.',
+      dance: 'To move your body to music.',
+      swim: 'To move through water.'
     }
   },
   make_sentence: {
     instructions_easy: 'Unscramble the words to make a correct sentence.',
     instructions_advanced: 'Unscramble the words to make a correct sentence.',
     sentences_easy: [
-      { scrambled: ['The', 'ball', 'is', 'on', 'the', 'floor'], answer: 'The ball is on the floor.', base_words: ['the', 'ball', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'toy', 'is', 'in', 'the', 'box'], answer: 'The toy is in the box.', base_words: ['the', 'toy', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the desk'] },
-      { scrambled: ['The', 'box', 'is', 'on', 'the', 'desk'], answer: 'The box is on the desk.', base_words: ['the', 'box', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'ball', 'is', 'under', 'the', 'desk'], answer: 'The ball is under the desk.', base_words: ['the', 'ball', 'is', 'under', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['The', 'toy', 'is', 'on', 'the', 'desk'], answer: 'The toy is on the desk.', base_words: ['the', 'toy', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['The', 'ball', 'is', 'in', 'the', 'box'], answer: 'The ball is in the box.', base_words: ['the', 'ball', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the floor'] },
-      { scrambled: ['The', 'toy', 'is', 'under', 'the', 'chair'], answer: 'The toy is under the chair.', base_words: ['the', 'toy', 'is', 'under', 'the', 'chair'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the kitchen'] },
-      { scrambled: ['The', 'box', 'is', 'on', 'the', 'floor'], answer: 'The box is on the floor.', base_words: ['the', 'box', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'door', 'is', 'on', 'the', 'wall'], answer: 'The door is on the wall.', base_words: ['the', 'door', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] },
-      { scrambled: ['The', 'window', 'is', 'on', 'the', 'wall'], answer: 'The window is on the wall.', base_words: ['the', 'window', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] }
+      { scrambled: ['I', 'can', 'sing'], answer: 'I can sing.', base_words: ['i', 'can', 'sing'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'on stage'] },
+      { scrambled: ['I', 'can', 'dance'], answer: 'I can dance.', base_words: ['i', 'can', 'dance'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'on stage'] },
+      { scrambled: ['I', 'can', 'run'], answer: 'I can run.', base_words: ['i', 'can', 'run'], time_phrases: ['today', 'every day', 'now', 'fast'], location_phrases: ['at home', 'at school', 'here', 'in the park'] },
+      { scrambled: ['I', 'can', 'jump'], answer: 'I can jump.', base_words: ['i', 'can', 'jump'], time_phrases: ['today', 'every day', 'now', 'high'], location_phrases: ['at home', 'at school', 'here', 'in the park'] },
+      { scrambled: ['I', 'can', 'swim'], answer: 'I can swim.', base_words: ['i', 'can', 'swim'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'in the pool'] },
+      { scrambled: ['I', 'can', 'draw'], answer: 'I can draw.', base_words: ['i', 'can', 'draw'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'in class'] },
+      { scrambled: ['I', 'can', 'play'], answer: 'I can play.', base_words: ['i', 'can', 'play'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'outside'] },
+      { scrambled: ['I', 'can', 'cook'], answer: 'I can cook.', base_words: ['i', 'can', 'cook'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'in the kitchen'] },
+      { scrambled: ['I', 'can', 'climb'], answer: 'I can climb.', base_words: ['i', 'can', 'climb'], time_phrases: ['today', 'every day', 'now', 'high'], location_phrases: ['at home', 'at school', 'here', 'outside'] },
+      { scrambled: ['I', 'can', 'ride'], answer: 'I can ride.', base_words: ['i', 'can', 'ride'], time_phrases: ['today', 'every day', 'now', 'well'], location_phrases: ['at home', 'at school', 'here', 'in the park'] }
     ],
     sentences_advanced: [
-      { scrambled: ['The', 'ball', 'is', 'on', 'the', 'floor'], answer: 'The ball is on the floor.', base_words: ['the', 'ball', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'toy', 'is', 'in', 'the', 'box'], answer: 'The toy is in the box.', base_words: ['the', 'toy', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the desk'] },
-      { scrambled: ['The', 'box', 'is', 'under', 'the', 'desk'], answer: 'The box is under the desk.', base_words: ['the', 'box', 'is', 'under', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['ball', 'The', 'is', 'in', 'the', 'box'], answer: 'The ball is in the box.', base_words: ['the', 'ball', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the floor'] },
-      { scrambled: ['toy', 'The', 'is', 'on', 'the', 'desk'], answer: 'The toy is on the desk.', base_words: ['the', 'toy', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['is', 'The', 'ball', 'under', 'the', 'chair'], answer: 'The ball is under the chair.', base_words: ['the', 'ball', 'is', 'under', 'the', 'chair'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the kitchen'] },
-      { scrambled: ['is', 'The', 'toy', 'on', 'the', 'floor'], answer: 'The toy is on the floor.', base_words: ['the', 'toy', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['box', 'The', 'is', 'on', 'the', 'desk'], answer: 'The box is on the desk.', base_words: ['the', 'box', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['window', 'The', 'is', 'on', 'the', 'wall'], answer: 'The window is on the wall.', base_words: ['the', 'window', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] },
-      { scrambled: ['door', 'The', 'is', 'on', 'the', 'wall'], answer: 'The door is on the wall.', base_words: ['the', 'door', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] }
+      { scrambled: ['I', 'can', 'sing', 'well'], answer: 'I can sing well.', base_words: ['i', 'can', 'sing', 'well'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'on stage'] },
+      { scrambled: ['I', 'can', 'dance', 'well'], answer: 'I can dance well.', base_words: ['i', 'can', 'dance', 'well'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'on stage'] },
+      { scrambled: ['I', 'can', 'run', 'fast'], answer: 'I can run fast.', base_words: ['i', 'can', 'run', 'fast'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'in the park'] },
+      { scrambled: ['can', 'I', 'jump', 'high'], answer: 'I can jump high.', base_words: ['i', 'can', 'jump', 'high'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'in the park'] },
+      { scrambled: ['can', 'I', 'swim', 'well'], answer: 'I can swim well.', base_words: ['i', 'can', 'swim', 'well'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'in the pool'] },
+      { scrambled: ['can', 'I', 'draw', 'pictures'], answer: 'I can draw pictures.', base_words: ['i', 'can', 'draw', 'pictures'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'in class'] },
+      { scrambled: ['can', 'I', 'play', 'games'], answer: 'I can play games.', base_words: ['i', 'can', 'play', 'games'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'outside'] },
+      { scrambled: ['I', 'can', 'cook', 'food'], answer: 'I can cook food.', base_words: ['i', 'can', 'cook', 'food'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'in the kitchen'] },
+      { scrambled: ['climb', 'I', 'can', 'trees'], answer: 'I can climb trees.', base_words: ['i', 'can', 'climb', 'trees'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'outside'] },
+      { scrambled: ['ride', 'I', 'can', 'a', 'bike'], answer: 'I can ride a bike.', base_words: ['i', 'can', 'ride', 'a', 'bike'], time_phrases: ['today', 'every day', 'now'], location_phrases: ['at home', 'at school', 'here', 'in the park'] }
     ]
   },
   ask_me: {
@@ -109,373 +109,373 @@ export const week6GamesEasy = {
     instructions_advanced: 'Ask a question that matches the context.',
     contexts_easy: [
       {
-        id: 'w6_ball_where',
+        id: 'w12_can_sing',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'The ball is on the floor. Ask me where the ball is.',
+        topic: 'sing',
+        intro: 'I can sing. Ask me what I can do.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is the toy?',
-          'Where is it?'
+          'What can you do?',
+          'Can you sing?',
+          'What do you do?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'I can sing.',
+        question_hints: ['What can you do?', 'Can you sing?', 'What do you do?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_toy_where',
+        id: 'w12_can_dance',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'The toy is in the box. Ask me where the toy is.',
+        topic: 'dance',
+        intro: 'I can dance. Ask me if I can dance.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
+          'Can you dance?',
+          'What can you do?',
+          'Do you dance?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can dance.',
+        question_hints: ['Can you dance?', 'What can you do?', 'Do you dance?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'dance'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'dance'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_box_where',
+        id: 'w12_can_run',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'The box is on the desk. Ask me where the box is.',
+        topic: 'run',
+        intro: 'I can run fast. Ask me what I can do.',
         acceptedQuestions: [
-          'Where is the box?',
-          'Where is it?',
-          'Where is the toy?'
+          'What can you do?',
+          'Can you run?',
+          'Can you run fast?'
         ],
-        answer: 'The box is on the desk.',
-        question_hints: ['Where is the box?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
+        answer: 'I can run fast.',
+        question_hints: ['What can you do?', 'Can you run?', 'Can you run fast?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_desk_where',
+        id: 'w12_can_jump',
         task_type: 'find_question',
-        topic: 'desk',
-        intro: 'The toy is on the desk. Ask me where the toy is.',
+        topic: 'jump',
+        intro: 'I can jump high. Ask me if I can jump.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
+          'Can you jump?',
+          'Can you jump high?',
+          'What can you do?'
         ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can jump high.',
+        question_hints: ['Can you jump?', 'Can you jump high?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'jump'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'jump'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_floor_where',
+        id: 'w12_can_swim',
         task_type: 'find_question',
-        topic: 'floor',
-        intro: 'The ball is on the floor. Ask me where it is.',
+        topic: 'swim',
+        intro: 'I can swim. Ask me if I can swim.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'Can you swim?',
+          'What can you do?',
+          'Do you swim?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
+        answer: 'Yes, I can swim.',
+        question_hints: ['Can you swim?', 'What can you do?', 'Do you swim?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'swim'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'swim'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_door_where',
+        id: 'w12_can_draw',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'The toy is under the door. Ask me where the toy is.',
+        topic: 'draw',
+        intro: 'I can draw pictures. Ask me what I can do.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'What can you do?',
+          'Can you draw?',
+          'Can you draw pictures?'
         ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'I can draw pictures.',
+        question_hints: ['What can you do?', 'Can you draw?', 'Can you draw pictures?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_window_where',
+        id: 'w12_can_play',
         task_type: 'find_question',
-        topic: 'window',
-        intro: 'The ball is under the window. Ask me where the ball is.',
+        topic: 'play',
+        intro: 'I can play games. Ask me if I can play.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'Can you play?',
+          'Can you play games?',
+          'What can you do?'
         ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'Yes, I can play games.',
+        question_hints: ['Can you play?', 'Can you play games?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'play'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'play'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_hide_where',
+        id: 'w12_can_cook',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
+        topic: 'cook',
+        intro: 'I can cook food. Ask me if I can cook.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'Can you cook?',
+          'Can you cook food?',
+          'What can you do?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can cook food.',
+        question_hints: ['Can you cook?', 'Can you cook food?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'cook'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'cook'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_mini_location',
+        id: 'w12_mini_abilities',
         task_type: 'mini_interview',
-        topic: 'location',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
+        topic: 'abilities',
+        intro: 'Interview me: ask what I can do, then ask if I can sing.',
         steps: [
           {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
+            prompt: 'Ask what I can do.',
+            required_question_words: ['what', 'can'],
+            required_keywords: ['you'],
+            question_hints: ['What can you do?', 'What do you do?', 'What can you do well?']
           },
           {
-            prompt: 'Ask where the toy is.',
+            prompt: 'Ask if I can sing.',
             acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
+              'Can you sing?',
+              'Do you sing?',
+              'Can you sing well?'
             ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            required_question_words: ['can'],
+            required_keywords: ['you', 'sing'],
+            question_hints: ['Can you sing?', 'Do you sing?', 'Can you sing well?']
           }
         ],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do', 'sing'],
+          tricky: ['where', 'who']
         }
       }
     ],
     contexts_advanced: [
       {
-        id: 'w6_ball_where_adv',
+        id: 'w12_can_sing_adv',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'The ball is on the floor. Ask me where the ball is.',
+        topic: 'sing',
+        intro: 'I can sing beautifully. Ask me what I can do.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is the toy?',
-          'Where is it?'
+          'What can you do?',
+          'Can you sing?',
+          'What are your abilities?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'I can sing beautifully.',
+        question_hints: ['What can you do?', 'Can you sing?', 'What are your abilities?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_toy_where_adv',
+        id: 'w12_can_dance_adv',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'The toy is in the box. Ask me where the toy is.',
+        topic: 'dance',
+        intro: 'I can dance very well. Ask me if I can dance.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
+          'Can you dance?',
+          'What can you do?',
+          'Can you dance well?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can dance very well.',
+        question_hints: ['Can you dance?', 'What can you do?', 'Can you dance well?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'dance'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'dance'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_box_where_adv',
+        id: 'w12_can_run_adv',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'The box is on the desk. Ask me where the box is.',
+        topic: 'run',
+        intro: 'I can run very fast. Ask me what abilities I have.',
         acceptedQuestions: [
-          'Where is the box?',
-          'Where is it?',
-          'Where is the toy?'
+          'What can you do?',
+          'Can you run?',
+          'Can you run fast?'
         ],
-        answer: 'The box is on the desk.',
-        question_hints: ['Where is the box?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
+        answer: 'I can run very fast.',
+        question_hints: ['What can you do?', 'Can you run?', 'Can you run fast?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_desk_where_adv',
+        id: 'w12_can_jump_adv',
         task_type: 'find_question',
-        topic: 'desk',
-        intro: 'The toy is on the desk. Ask me where the toy is.',
+        topic: 'jump',
+        intro: 'I can jump very high. Ask me if I can jump high.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
+          'Can you jump?',
+          'Can you jump high?',
+          'What can you do?'
         ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can jump very high.',
+        question_hints: ['Can you jump?', 'Can you jump high?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'jump'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'jump'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_floor_where_adv',
+        id: 'w12_can_swim_adv',
         task_type: 'find_question',
-        topic: 'floor',
-        intro: 'The ball is on the floor. Ask me where it is.',
+        topic: 'swim',
+        intro: 'I can swim well. Ask me if I can swim.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'Can you swim?',
+          'What can you do?',
+          'Can you swim well?'
         ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
+        answer: 'Yes, I can swim well.',
+        question_hints: ['Can you swim?', 'What can you do?', 'Can you swim well?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'swim'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'swim'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_door_where_adv',
+        id: 'w12_can_draw_adv',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'The toy is under the door. Ask me where the toy is.',
+        topic: 'draw',
+        intro: 'I can draw beautiful pictures. Ask me what I can do.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'What can you do?',
+          'Can you draw?',
+          'Can you draw pictures?'
         ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'I can draw beautiful pictures.',
+        question_hints: ['What can you do?', 'Can you draw?', 'Can you draw pictures?'],
+        required_question_words: ['what', 'can'],
+        required_keywords: ['you'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_window_where_adv',
+        id: 'w12_can_play_adv',
         task_type: 'find_question',
-        topic: 'window',
-        intro: 'The ball is under the window. Ask me where the ball is.',
+        topic: 'play',
+        intro: 'I can play many games. Ask me if I can play games.',
         acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
+          'Can you play?',
+          'Can you play games?',
+          'What can you do?'
         ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
+        answer: 'Yes, I can play many games.',
+        question_hints: ['Can you play?', 'Can you play games?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'play'],
         hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'play'],
+          tricky: ['where', 'what']
         }
       },
       {
-        id: 'w6_hide_where_adv',
+        id: 'w12_can_cook_adv',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
+        topic: 'cook',
+        intro: 'I can cook delicious food. Ask me if I can cook.',
         acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
+          'Can you cook?',
+          'Can you cook food?',
+          'What can you do?'
         ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
+        answer: 'Yes, I can cook delicious food.',
+        question_hints: ['Can you cook?', 'Can you cook food?', 'What can you do?'],
+        required_question_words: ['can'],
+        required_keywords: ['you', 'cook'],
         hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
+          words: ['can', 'you', 'cook'],
+          tricky: ['where', 'who']
         }
       },
       {
-        id: 'w6_mini_seek',
+        id: 'w12_mini_abilities_adv',
         task_type: 'mini_interview',
-        topic: 'seek',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
+        topic: 'abilities',
+        intro: 'Interview me: ask what I can do well, then ask if I can perform on stage.',
         steps: [
           {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
+            prompt: 'Ask what I can do well.',
+            required_question_words: ['what', 'can'],
+            required_keywords: ['you'],
+            question_hints: ['What can you do well?', 'What can you do?', 'What are your abilities?']
           },
           {
-            prompt: 'Ask where the toy is.',
+            prompt: 'Ask if I can perform on stage.',
             acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
+              'Can you perform?',
+              'Can you sing on stage?',
+              'Can you perform on stage?'
             ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            required_question_words: ['can'],
+            required_keywords: ['you'],
+            question_hints: ['Can you perform?', 'Can you sing on stage?', 'Can you perform on stage?']
           }
         ],
         hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
+          words: ['what', 'can', 'you', 'do', 'perform'],
+          tricky: ['where', 'who']
         }
       }
     ],
-    required_question_words_easy: ['where', 'is'],
-    required_question_words_advanced: ['where', 'is']
+    required_question_words_easy: ['what', 'can'],
+    required_question_words_advanced: ['what', 'can']
   }
 };
 
-export default week6GamesEasy;
+export default week12GamesEasy;
