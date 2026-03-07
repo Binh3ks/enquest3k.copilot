@@ -9,7 +9,10 @@ export default {
       example: "I like to sing songs.",
       collocation: "sing a song",
       image_url: "/images/week12_easy/sing.jpg",
-      audio_word: "/audio/week12_easy/vocab_sing.mp3"
+      audio_word: "/audio/week12_easy/vocab_sing.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_sing.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_sing.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_sing.mp3"
     },
     {
       id: 2,
@@ -20,7 +23,10 @@ export default {
       example: "We dance at parties.",
       collocation: "dance to music",
       image_url: "/images/week12_easy/dance.jpg",
-      audio_word: "/audio/week12_easy/vocab_dance.mp3"
+      audio_word: "/audio/week12_easy/vocab_dance.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_dance.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_dance.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_dance.mp3"
     },
     {
       id: 3,
@@ -31,7 +37,10 @@ export default {
       example: "I can run fast.",
       collocation: "run fast",
       image_url: "/images/week12_easy/run.jpg",
-      audio_word: "/audio/week12_easy/vocab_run.mp3"
+      audio_word: "/audio/week12_easy/vocab_run.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_run.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_run.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_run.mp3"
     },
     {
       id: 4,
@@ -42,7 +51,10 @@ export default {
       example: "I jump high.",
       collocation: "jump high",
       image_url: "/images/week12_easy/jump.jpg",
-      audio_word: "/audio/week12_easy/vocab_jump.mp3"
+      audio_word: "/audio/week12_easy/vocab_jump.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_jump.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_jump.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_jump.mp3"
     },
     {
       id: 5,
@@ -53,7 +65,10 @@ export default {
       example: "I swim in summer.",
       collocation: "swim in the pool",
       image_url: "/images/week12_easy/swim.jpg",
-      audio_word: "/audio/week12_easy/vocab_swim.mp3"
+      audio_word: "/audio/week12_easy/vocab_swim.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_swim.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_swim.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_swim.mp3"
     },
     {
       id: 6,
@@ -64,7 +79,10 @@ export default {
       example: "I draw animals.",
       collocation: "draw pictures",
       image_url: "/images/week12_easy/draw.jpg",
-      audio_word: "/audio/week12_easy/vocab_draw.mp3"
+      audio_word: "/audio/week12_easy/vocab_draw.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_draw.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_draw.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_draw.mp3"
     },
     {
       id: 7,
@@ -75,7 +93,10 @@ export default {
       example: "I play with friends.",
       collocation: "play games",
       image_url: "/images/week12_easy/play.jpg",
-      audio_word: "/audio/week12_easy/vocab_play.mp3"
+      audio_word: "/audio/week12_easy/vocab_play.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_play.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_play.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_play.mp3"
     },
     {
       id: 8,
@@ -86,7 +107,10 @@ export default {
       example: "I cook with Mom.",
       collocation: "cook dinner",
       image_url: "/images/week12_easy/cook.jpg",
-      audio_word: "/audio/week12_easy/vocab_cook.mp3"
+      audio_word: "/audio/week12_easy/vocab_cook.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_cook.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_cook.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_cook.mp3"
     },
     {
       id: 9,
@@ -97,7 +121,10 @@ export default {
       example: "I climb trees.",
       collocation: "climb up",
       image_url: "/images/week12_easy/climb.jpg",
-      audio_word: "/audio/week12_easy/vocab_climb.mp3"
+      audio_word: "/audio/week12_easy/vocab_climb.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_climb.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_climb.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_climb.mp3"
     },
     {
       id: 10,
@@ -108,7 +135,10 @@ export default {
       example: "I ride my bike.",
       collocation: "ride a bike",
       image_url: "/images/week12_easy/ride.jpg",
-      audio_word: "/audio/week12_easy/vocab_ride.mp3"
+      audio_word: "/audio/week12_easy/vocab_ride.mp3",
+      audio_definition: "/audio/week12_easy/vocab_def_ride.mp3",
+      audio_example: "/audio/week12_easy/vocab_ex_ride.mp3",
+      audio_collocation: "/audio/week12_easy/vocab_coll_ride.mp3"
     }
   ]
 };
