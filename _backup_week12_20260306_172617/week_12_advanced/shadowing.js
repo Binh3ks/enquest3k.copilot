@@ -1,0 +1,32 @@
+export default {
+  title: "The Big Talent Show",
+  audio_full: "/audio/week12/shadowing_full.mp3",
+  script: [
+    { id: 1, text: "Today is the talent show at school!", vi: "Hôm nay là buổi biểu diễn tài năng ở trường!", audio_url: "/audio/week12/shadowing_1.mp3" },
+    { id: 2, text: "I am so excited.", vi: "Tôi rất phấn khích.", audio_url: "/audio/week12/shadowing_2.mp3" },
+    { id: 3, text: "Many students come to perform.", vi: "Nhiều học sinh đến trình diễn.", audio_url: "/audio/week12/shadowing_3.mp3" },
+    { id: 4, text: "First, Sarah comes on stage.", vi: "Đầu tiên, Sarah lên sân khấu.", audio_url: "/audio/week12/shadowing_4.mp3" },
+    { id: 5, text: "She can sing beautifully!", vi: "Cô ấy có thể hát rất hay!", audio_url: "/audio/week12/shadowing_5.mp3" },
+    { id: 6, text: "Everyone claps for her.", vi: "Mọi người vỗ tay cho cô ấy.", audio_url: "/audio/week12/shadowing_6.mp3" },
+    { id: 7, text: "Then Tom shows us he can dance.", vi: "Sau đó Tom cho chúng tôi thấy anh ấy có thể nhảy.", audio_url: "/audio/week12/shadowing_7.mp3" },
+    { id: 8, text: "He moves to the music very well!", vi: "Anh ấy nhúc nhích theo nhạc rất tốt!", audio_url: "/audio/week12/shadowing_8.mp3" },
+    { id: 9, text: "Next, my friend Lisa can run fast.", vi: "Tiếp theo, bạn tôi Lisa có thể chạy nhanh.", audio_url: "/audio/week12/shadowing_9.mp3" },
+    { id: 10, text: "She runs across the stage and everyone cheers!", vi: "Cô ấy chạy ngang sân khấu và mọi người reo hò!", audio_url: "/audio/week12/shadowing_10.mp3" },
+    { id: 11, text: "After that, Mike can jump very high.", vi: "Sau đó, Mike có thể nhảy rất cao.", audio_url: "/audio/week12/shadowing_11.mp3" },
+    { id: 12, text: "He jumps and touches the ceiling!", vi: "Anh ấy nhảy và chạm trần nhà!", audio_url: "/audio/week12/shadowing_12.mp3" },
+    { id: 13, text: "My other friend Emma can climb the rope.", vi: "Bạn khác của tôi Emma có thể leo dây.", audio_url: "/audio/week12/shadowing_13.mp3" },
+    { id: 14, text: "She climbs all the way to the top!", vi: "Cô ấy leo lên đến đỉnh!", audio_url: "/audio/week12/shadowing_14.mp3" },
+    { id: 15, text: "Then Ben shows he can ride a bike on stage.", vi: "Sau đó Ben cho thấy anh ấy có thể đi xe đạp trên sân khấu.", audio_url: "/audio/week12/shadowing_15.mp3" },
+    { id: 16, text: "It is amazing!", vi: "Thật tuyệt vời!", audio_url: "/audio/week12/shadowing_16.mp3" },
+    { id: 17, text: "Finally, I come on stage.", vi: "Cuối cùng, tôi lên sân khấu.", audio_url: "/audio/week12/shadowing_17.mp3" },
+    { id: 18, text: "I can draw pictures.", vi: "Tôi có thể vẽ tranh.", audio_url: "/audio/week12/shadowing_18.mp3" },
+    { id: 19, text: "I draw a beautiful flower for everyone.", vi: "Tôi vẽ một bông hoa đẹp cho mọi người.", audio_url: "/audio/week12/shadowing_19.mp3" },
+    { id: 20, text: "People love my talent!", vi: "Mọi người yêu thích tài năng của tôi!", audio_url: "/audio/week12/shadowing_20.mp3" },
+    { id: 21, text: "After the show, we all swim in the school pool to celebrate.", vi: "Sau buổi biểu diễn, tất cả chúng tôi bơi trong hồ bơi trường để ăn mừng.", audio_url: "/audio/week12/shadowing_21.mp3" },
+    { id: 22, text: "Then we cook together and make snacks.", vi: "Sau đó chúng tôi nấu ăn cùng nhau và làm đồ ăn vặt.", audio_url: "/audio/week12/shadowing_22.mp3" },
+    { id: 23, text: "We all play games and have fun.", vi: "Chúng tôi chơi trò chơi và vui vẻ.", audio_url: "/audio/week12/shadowing_23.mp3" },
+    { id: 24, text: "Everyone has a special talent!", vi: "Mọi người đều có tài năng đặc biệt!", audio_url: "/audio/week12/shadowing_24.mp3" },
+    { id: 25, text: "I am proud of all my friends.", vi: "Tôi tự hào về tất cả bạn bè của mình.", audio_url: "/audio/week12/shadowing_25.mp3" },
+    { id: 26, text: "The talent show is the best day ever!", vi: "Buổi biểu diễn tài năng là ngày tuyệt vời nhất!", audio_url: "/audio/week12/shadowing_26.mp3" }
+  ]
+};

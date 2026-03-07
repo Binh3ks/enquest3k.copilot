@@ -1,6 +1,6 @@
 export default {
   sentences: [
-    { id: 1, text: "Tonight is the school talent show!", meaning: "Tối nay là buổi biểu diễn tài năng của trường!", audio_url: "/audio/week12/dictation_1.mp3" },
+    { id: 1, text: "Today is the school talent show!", meaning: "Hôm nay là buổi biểu diễn tài năng của trường!", audio_url: "/audio/week12/dictation_1.mp3" },
     { id: 2, text: "Many children showcase their amazing abilities.", meaning: "Nhiều em thể hiện khả năng tuyệt vời.", audio_url: "/audio/week12/dictation_2.mp3" },
     { id: 3, text: "Sarah can sing beautifully on stage.", meaning: "Sarah có thể hát hay trên sân khấu.", audio_url: "/audio/week12/dictation_3.mp3" },
     { id: 4, text: "She sings a popular song and the audience loves it.", meaning: "Cô hát một bài hát nổi tiếng và khán giả rất thích.", audio_url: "/audio/week12/dictation_4.mp3" },
