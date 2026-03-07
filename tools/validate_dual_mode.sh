@@ -21,35 +21,33 @@ ERRORS=0
 WARNINGS=0
 
 # =================================================================
-# CHECK 1: Bold Words MUST BE IDENTICAL (same 10 words)
+# CHECK 1: Bold Words Count (10 per mode, CAN be different)
 # =================================================================
-echo "**️⃣ [CHECK 1] Bold Words - Must Match Between Modes"
-echo "   Rule: Easy and Advanced must teach SAME 10 vocab words"
+echo "**️⃣ [CHECK 1] Bold Words - Count Check"
+echo "   Rule: Each mode must have 10 bold words (words CAN differ by level)"
+echo "   Blueprint: Easy=Tier 1, Advanced=Tier 2/3"
 echo ""
 
 # Extract bold words from both modes
 grep -o '\*\*[^*]\+\*\*' "src/data/weeks/week_${WEEK}/read.js" | sed 's/\*\*//g' | tr '[:upper:]' '[:lower:]' | sort > /tmp/week${WEEK}_adv_bold.txt
 grep -o '\*\*[^*]\+\*\*' "src/data/weeks_easy/week_${WEEK}/read.js" | sed 's/\*\*//g' | tr '[:upper:]' '[:lower:]' | sort > /tmp/week${WEEK}_easy_bold.txt
 
-# Compare
-DIFF_BOLD=$(diff /tmp/week${WEEK}_adv_bold.txt /tmp/week${WEEK}_easy_bold.txt 2>&1)
+ADV_BOLD_COUNT=$(wc -l < /tmp/week${WEEK}_adv_bold.txt | tr -d ' ')
+EASY_BOLD_COUNT=$(wc -l < /tmp/week${WEEK}_easy_bold.txt | tr -d ' ')
 
-if [ -z "$DIFF_BOLD" ]; then
-  echo "   ✅ PASS: Bold words match between modes"
-  echo "   Words:"
-  cat /tmp/week${WEEK}_adv_bold.txt | tr '\n' ', ' | sed 's/,$//'
-  echo ""
+echo "   Advanced bold words ($ADV_BOLD_COUNT):"
+cat /tmp/week${WEEK}_adv_bold.txt | tr '\n' ', ' | sed 's/,$//'
+echo ""
+echo ""
+echo "   Easy bold words ($EASY_BOLD_COUNT):"
+cat /tmp/week${WEEK}_easy_bold.txt | tr '\n' ', ' | sed 's/,$//'
+echo ""
+
+if [ "$ADV_BOLD_COUNT" -eq 10 ] && [ "$EASY_BOLD_COUNT" -eq 10 ]; then
+  echo "   ✅ PASS: Both modes have 10 bold words"
 else
-  echo "   ❌ FAIL: Bold words differ between modes"
-  echo ""
-  echo "   Advanced bold words:"
-  cat /tmp/week${WEEK}_adv_bold.txt
-  echo ""
-  echo "   Easy bold words:"
-  cat /tmp/week${WEEK}_easy_bold.txt
-  echo ""
-  echo "   Differences:"
-  diff /tmp/week${WEEK}_adv_bold.txt /tmp/week${WEEK}_easy_bold.txt
+  echo "   ❌ FAIL: Expected 10 bold words per mode"
+  echo "   Advanced: $ADV_BOLD_COUNT, Easy: $EASY_BOLD_COUNT"
   ERRORS=$((ERRORS + 1))
 fi
 
@@ -149,25 +147,41 @@ fi
 echo ""
 
 # =================================================================
-# CHECK 5: Vocab.js Words Match
+# CHECK 5: Vocab.js Tier Differentiation
 # =================================================================
-echo "📚 [CHECK 5] Vocab.js Words - Must Match Between Modes"
-echo "   Rule: Same 10 words in both vocab.js files"
+echo "📚 [CHECK 5] Vocab.js - Tier Level Differentiation"
+echo "   Rule: Words SHOULD differ between modes (Easy=Tier 1, Advanced=Tier 2/3)"
+echo "   Blueprint: Easy uses simple daily words, Advanced uses academic words"
 echo ""
 
-# Extract word field from vocab.js
-grep 'word:' "src/data/weeks/week_${WEEK}/vocab.js" | sed 's/.*word: *"\([^"]*\)".*/\1/' | tr '[:upper:]' '[:lower:]' | sort > /tmp/week${WEEK}_adv_vocab.txt
-grep 'word:' "src/data/weeks_easy/week_${WEEK}/vocab.js" | sed 's/.*word: *"\([^"]*\)".*/\1/' | tr '[:upper:]' '[:lower:]' | sort > /tmp/week${WEEK}_easy_vocab.txt
+# Extract word field from vocab.js (only the word value, not audio paths)
+grep 'word:' "src/data/weeks/week_${WEEK}/vocab.js" | sed 's/.*word: *"\([^"]*\)".*/\1/' | grep -v '^/audio' | tr '[:upper:]' '[:lower:]' | sort > /tmp/week${WEEK}_adv_vocab.txt
+grep 'word:' "src/data/weeks_easy/week_${WEEK}/vocab.js" | sed 's/.*word: *"\([^"]*\)".*/\1/' | grep -v '^/audio' | tr '[:upper:]' '[:lower:]' | sort > /tmp/week${WEEK}_easy_vocab.txt
 
-DIFF_VOCAB=$(diff /tmp/week${WEEK}_adv_vocab.txt /tmp/week${WEEK}_easy_vocab.txt 2>&1)
+ADV_VOCAB_COUNT=$(wc -l < /tmp/week${WEEK}_adv_vocab.txt | tr -d ' ')
+EASY_VOCAB_COUNT=$(wc -l < /tmp/week${WEEK}_easy_vocab.txt | tr -d ' ')
 
-if [ -z "$DIFF_VOCAB" ]; then
-  echo "   ✅ PASS: Vocab words match between modes"
+echo "   Advanced vocab ($ADV_VOCAB_COUNT): $(cat /tmp/week${WEEK}_adv_vocab.txt | tr '\n' ', ' | sed 's/,$//')"
+echo "   Easy vocab ($EASY_VOCAB_COUNT): $(cat /tmp/week${WEEK}_easy_vocab.txt | tr '\n' ', ' | sed 's/,$//')"
+echo ""
+
+if [ "$ADV_VOCAB_COUNT" -eq 10 ] && [ "$EASY_VOCAB_COUNT" -eq 10 ]; then
+  echo "   ✅ PASS: Both modes have 10 vocab words"
+  
+  # Check if words are identical (this is unusual but not necessarily wrong)
+  SAME_WORDS=$(comm -12 /tmp/week${WEEK}_adv_vocab.txt /tmp/week${WEEK}_easy_vocab.txt | wc -l | tr -d ' ')
+  if [ "$SAME_WORDS" -eq 10 ]; then
+    echo "   ⚠️  WARNING: All vocab words are identical - check if differentiation is intended"
+    echo "   Note: Blueprint recommends Easy=Tier 1, Advanced=Tier 2/3"
+    WARNINGS=$((WARNINGS + 1))
+  elif [ "$SAME_WORDS" -gt 5 ]; then
+    echo "   ⚠️  INFO: $SAME_WORDS words overlap - this may be intentional for some weeks"
+  else
+    echo "   ✅ GOOD: Vocab properly differentiated by tier level"
+  fi
 else
-  echo "   ❌ FAIL: Vocab words differ between modes"
-  echo ""
-  echo "   Differences:"
-  diff /tmp/week${WEEK}_adv_vocab.txt /tmp/week${WEEK}_easy_vocab.txt
+  echo "   ❌ FAIL: Expected 10 vocab words per mode"
+  echo "   Advanced: $ADV_VOCAB_COUNT, Easy: $EASY_VOCAB_COUNT"
   ERRORS=$((ERRORS + 1))
 fi
 
@@ -218,10 +232,11 @@ else
   echo "================================================"
   echo ""
   echo "💡 Common fixes:"
-  echo "   1. Bold Words: Ensure SAME 10 words in both modes"
-  echo "   2. Sentence Count: Advanced should have 12-16, Easy should have 8-12 (Phase 1)"
-  echo "   3. Context: Easy uses 'I/my/we', Advanced uses third-person"
-  echo "   4. Grammar: Easy uses simple sentences, Advanced uses complex structures"
-  echo "   5. Image Paths: Check /images/week${WEEK}/ vs /images/week${WEEK}_easy/"
+  echo "   1. Bold Words: Ensure 10 words per mode (can differ by tier)"
+  echo "   2. Vocab: Easy=Tier 1 (simple), Advanced=Tier 2/3 (academic)"
+  echo "   3. Sentence Count: Advanced should have 12-16, Easy should have 8-12 (Phase 1)"
+  echo "   4. Context: Easy uses 'I/my/we', Advanced uses third-person"
+  echo "   5. Grammar: Easy uses simple sentences, Advanced uses complex structures"
+  echo "   6. Image Paths: Check /images/week${WEEK}/ vs /images/week${WEEK}_easy/"
   exit 1
 fi
