@@ -1,48 +1,37 @@
 export default {
-  passages: [
+  title: "The Talent Show",
+  image_url: "/images/week12_easy/read_cover_w012.jpg",
+  audio_url: "/audio/week12_easy/read_explore_main.mp3",
+  content_en: "Today is the talent show! I can **clap** my hands. My friend can **wave** to everyone. Tom can **hop** like a bunny. Emma can **walk** very fast. Sarah can **point** at pictures. Ben can **touch** his toes. I can **smile** and **nod** my head. Everyone can do something! The talent show is fun!",
+  content_vi: "Hôm nay là buổi biểu diễn tài năng! Tôi có thể vỗ tay. Bạn tôi có thể vẫy tay với mọi người. Tom có thể nhảy nhót như thỏ con. Emma có thể đi nhanh. Sarah có thể chỉ vào các bức tranh. Ben có thể chạm ngón chân. Tôi có thể cười và gật đầu. Mọi người đều có thể làm gì đó! Buổi biểu diễn tài năng thật vui!",
+  comprehension_questions: [
     {
       id: 1,
-      title: "The Talent Show",
-      level: "A1",
-      text: "Today is the talent show! Many students come to perform. Some can sing. Some can dance. Some can play music. Everyone has a special talent. The audience claps for everyone. It is a fun day!",
-      translation_vi: "Hôm nay là buổi biểu diễn tài năng! Nhiều học sinh đến để trình diễn. Một số có thể hát. Một số có thể nhảy. Một số có thể chơi nhạc. Mọi người đều có tài năng đặc biệt. Khán giả vỗ tay cho tất cả mọi người. Đó là một ngày vui vẻ!",
-      audio: "/audio/week12/read_1.mp3",
-      questions: [
-        {
-          id: 1,
-          question: "What is today?",
-          answer: "The talent show",
-          options: ["A birthday party", "The talent show", "A class", "A game"]
-        },
-        {
-          id: 2,
-          question: "What can some students do?",
-          answer: "Sing, dance, or play music",
-          options: ["Run and jump", "Sing, dance, or play music", "Cook food", "Draw pictures"]
-        }
-      ]
+      question_en: "What can Mia do?",
+      answer: ["sing", "sing songs", "sing beautiful songs"],
+      hint_en: "She uses her voice...",
+      hint_vi: "Cô ấy sử dụng giọng hát..."
     },
     {
       id: 2,
-      title: "My Special Ability",
-      level: "A1",
-      text: "My name is Tom. I can do many things. I can run fast. I can jump high. But my special ability is drawing. I can draw animals, people, and places. I practice every day. My dream is to be an artist!",
-      translation_vi: "Tên tôi là Tom. Tôi có thể làm nhiều thứ. Tôi có thể chạy nhanh. Tôi có thể nhảy cao. Nhưng khả năng đặc biệt của tôi là vẽ. Tôi có thể vẽ động vật, người và địa điểm. Tôi luyện tập mỗi ngày. Ước mơ của tôi là trở thành họa sĩ!",
-      audio: "/audio/week12/read_2.mp3",
-      questions: [
-        {
-          id: 1,
-          question: "What is Tom's special ability?",
-          answer: "Drawing",
-          options: ["Singing", "Drawing", "Dancing", "Running"]
-        },
-        {
-          id: 2,
-          question: "What is Tom's dream?",
-          answer: "To be an artist",
-          options: ["To be a singer", "To be an artist", "To be a runner", "To be a dancer"]
-        }
-      ]
+      question_en: "What can Jack do with his bike?",
+      answer: ["ride with one hand", "ride his bike with one hand"],
+      hint_en: "Something special with his bike...",
+      hint_vi: "Điều đặc biệt với xe đạp..."
+    },
+    {
+      id: 3,
+      question_en: "What does Ben bring for everyone?",
+      answer: ["cookies", "delicious food", "food"],
+      hint_en: "Something to eat...",
+      hint_vi: "Thứ gì đó để ăn..."
     }
-  ]
+  ],
+  question: {
+    text_en: "What can you do? What is your special talent?",
+    text_vi: "Bạn có thể làm gì? Tài năng đặc biệt của bạn là gì?",
+    min_words: 30,
+    hint_en: "Talk about things you can do well...",
+    hint_vi: "Nói về những điều bạn làm giỏi..."
+  }
 };

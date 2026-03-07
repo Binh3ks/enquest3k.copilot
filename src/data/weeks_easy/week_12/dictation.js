@@ -1,64 +1,14 @@
 export default {
   sentences: [
-    {
-      id: 1,
-      text: "I can sing.",
-      translation_vi: "Tôi có thể hát.",
-      audio: "/audio/week12/dict_1.mp3"
-    },
-    {
-      id: 2,
-      text: "I can dance well.",
-      translation_vi: "Tôi có thể nhảy tốt.",
-      audio: "/audio/week12/dict_2.mp3"
-    },
-    {
-      id: 3,
-      text: "I can run fast.",
-      translation_vi: "Tôi có thể chạy nhanh.",
-      audio: "/audio/week12/dict_3.mp3"
-    },
-    {
-      id: 4,
-      text: "I can jump high.",
-      translation_vi: "Tôi có thể nhảy cao.",
-      audio: "/audio/week12/dict_4.mp3"
-    },
-    {
-      id: 5,
-      text: "I can draw pictures.",
-      translation_vi: "Tôi có thể vẽ tranh.",
-      audio: "/audio/week12/dict_5.mp3"
-    },
-    {
-      id: 6,
-      text: "Can you swim?",
-      translation_vi: "Bạn có thể bơi không?",
-      audio: "/audio/week12/dict_6.mp3"
-    },
-    {
-      id: 7,
-      text: "I can ride a bike.",
-      translation_vi: "Tôi có thể đạp xe.",
-      audio: "/audio/week12/dict_7.mp3"
-    },
-    {
-      id: 8,
-      text: "Yes, I can!",
-      translation_vi: "Có, tôi có thể!",
-      audio: "/audio/week12/dict_8.mp3"
-    },
-    {
-      id: 9,
-      text: "No, I can't.",
-      translation_vi: "Không, tôi không thể.",
-      audio: "/audio/week12/dict_9.mp3"
-    },
-    {
-      id: 10,
-      text: "I can't fly.",
-      translation_vi: "Tôi không thể bay.",
-      audio: "/audio/week12/dict_10.mp3"
-    }
+    { id: 1, text: "Today is the talent show!", meaning: "Hôm nay là buổi biểu diễn tài năng!", audio_url: "/audio/week12_easy/dictation_1.mp3" },
+    { id: 2, text: "I can clap my hands.", meaning: "Tôi có thể vỗ tay.", audio_url: "/audio/week12_easy/dictation_2.mp3" },
+    { id: 3, text: "My friend can wave to everyone.", meaning: "Bạn tôi có thể vẫy tay với mọi người.", audio_url: "/audio/week12_easy/dictation_3.mp3" },
+    { id: 4, text: "Tom can hop like a bunny.", meaning: "Tom có thể nhảy nhót như thỏ con.", audio_url: "/audio/week12_easy/dictation_4.mp3" },
+    { id: 5, text: "Emma can walk very fast.", meaning: "Emma có thể đi nhanh.", audio_url: "/audio/week12_easy/dictation_5.mp3" },
+    { id: 6, text: "Sarah can point at pictures.", meaning: "Sarah có thể chỉ vào các bức tranh.", audio_url: "/audio/week12_easy/dictation_6.mp3" },
+    { id: 7, text: "Ben can touch his toes.", meaning: "Ben có thể chạm ngón chân.", audio_url: "/audio/week12_easy/dictation_7.mp3" },
+    { id: 8, text: "I can smile and nod my head.", meaning: "Tôi có thể cười và gật đầu.", audio_url: "/audio/week12_easy/dictation_8.mp3" },
+    { id: 9, text: "Everyone can do something!", meaning: "Mọi người đều có thể làm gì đó!", audio_url: "/audio/week12_easy/dictation_9.mp3" },
+    { id: 10, text: "The talent show is fun!", meaning: "Buổi biểu diễn tài năng thật vui!", audio_url: "/audio/week12_easy/dictation_10.mp3" }
   ]
 };
