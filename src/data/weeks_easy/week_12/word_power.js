@@ -14,10 +14,10 @@ export default {
       collocation: "be good at singing",
       image_url: "/images/week12_easy/wordpower_i_can_sing.jpg",
       audio_word: "/audio/week12_easy/wordpower_be_good_at.mp3",
-      audio_definition: "/audio/week12_easy/wordpower_def_be_good_at.mp3",
-      audio_example: "/audio/week12_easy/wordpower_ex_be_good_at.mp3",
-      audio_collocation: "/audio/week12_easy/wordpower_coll_be_good_at.mp3",
-      audio_model: "/audio/week12_easy/wordpower_model_be_good_at.mp3"
+      audio_definition: null,
+      audio_example: null,
+      audio_collocation: null,
+      audio_model: null
     },
     {
       id: 2,
@@ -31,10 +31,10 @@ export default {
       collocation: "show off your talent",
       image_url: "/images/week12_easy/wordpower_i_can_dance.jpg",
       audio_word: "/audio/week12_easy/wordpower_show_off.mp3",
-      audio_definition: "/audio/week12_easy/wordpower_def_show_off.mp3",
-      audio_example: "/audio/week12_easy/wordpower_ex_show_off.mp3",
-      audio_collocation: "/audio/week12_easy/wordpower_coll_show_off.mp3",
-      audio_model: "/audio/week12_easy/wordpower_model_show_off.mp3"
+      audio_definition: null,
+      audio_example: null,
+      audio_collocation: null,
+      audio_model: null
     },
     {
       id: 3,
@@ -48,10 +48,10 @@ export default {
       collocation: "try hard to improve",
       image_url: "/images/week12_easy/wordpower_i_can_draw.jpg",
       audio_word: "/audio/week12_easy/wordpower_try_hard.mp3",
-      audio_definition: "/audio/week12_easy/wordpower_def_try_hard.mp3",
-      audio_example: "/audio/week12_easy/wordpower_ex_try_hard.mp3",
-      audio_collocation: "/audio/week12_easy/wordpower_coll_try_hard.mp3",
-      audio_model: "/audio/week12_easy/wordpower_model_try_hard.mp3"
+      audio_definition: null,
+      audio_example: null,
+      audio_collocation: null,
+      audio_model: null
     }
   ]
 };

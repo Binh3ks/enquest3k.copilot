@@ -442,8 +442,10 @@ export class NovaEngine {
         console.log(`🎯 Pre-computed nextQuestion (student turn ${studentMsgCount}):`, nextQuestion?.slice(0, 90));
 
         // 🃏 CONVERSATION CARD MODE: Skip AI entirely — return pre-computed answer directly
-        // Only skip when student has actually said something (not the opening init call)
-        if (nextQuestion && studentMsgCount >= 1) {
+        // Only skip for Conversation Cards (no story_character). Story Missions with story_character
+        // MUST go through AI so mission_context grammar rules (ACK/recast/subject-switch) are applied.
+        const hasStoryCharacter = !!(currentMission?.story_character);
+        if (nextQuestion && studentMsgCount >= 1 && !hasStoryCharacter) {
           // Pre-include echo-ack so responseGuard doesn't add "Nice! I see!" filler
           // If nextQuestion already starts with the student's text (from {student_answer}), keep as-is
           // Otherwise prepend e.g. "Yes, Captain! What do I call you?"
