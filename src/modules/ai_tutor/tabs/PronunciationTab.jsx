@@ -167,9 +167,9 @@ const PronunciationTab = () => {
   const speakWord = async (text) => {
     console.log('🔊 Speaking:', text);
     
-    // 🔥 Fix: Add punctuation to single words to prevent audio cut-off
+    // 🔥 Fix: Add punctuation + trailing pause to single words to prevent audio cut-off
     const isSingleWord = !text.trim().includes(' ');
-    const textWithPunctuation = isSingleWord ? `${text}.` : text;
+    const textWithPunctuation = isSingleWord ? `${text}...` : text;
     
     // 🔥 PRIORITY 1: Try TTS with full fallback chain
     try {
@@ -177,7 +177,7 @@ const PronunciationTab = () => {
         autoPlay: true,
         preferredLayer: 'auto', // 🔥 Use full fallback chain (Deepgram → Google → OpenAI → Browser)
         mode: 'pronunciation', // 🎯 Slower speed for clear pronunciation practice
-        speed: isSingleWord ? 0.7 : 0.85 // 🔥 Single words spoken slower for clear phoneme articulation
+        speed: isSingleWord ? 0.6 : 0.85 // 🔥 Single words at 60% speed — clear final consonants, no cut-off
       });
       console.log('✅ TTS succeeded');
       return; // Success - exit early

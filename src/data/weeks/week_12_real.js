@@ -56,7 +56,7 @@ const week12RealData = {
           phase_name: "Share Your Talent",
           phase_questions: [
             "What is your special talent? Say: My talent is singing! or My talent is dancing!",
-            "How long have you practised this talent? Say: I practised for one year! or I practised for a long time!"
+            "Can you do your talent every day? Say: Yes, I can practise every day! or I can practise at school!"
           ]
         },
         {

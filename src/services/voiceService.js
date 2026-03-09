@@ -186,11 +186,27 @@ export const VoiceService = {
         console.log(`[TTS] ✅ R2 CDN success (~100ms)`);
         return;
       } catch (err) {
-        console.warn(`[TTS] R2 CDN miss: ${err.message}`);
-        console.warn(`[TTS] ⚠️ Audio file should exist on R2 - please regenerate week ${weekNumber}`);
+        console.warn(`[TTS] R2 CDN miss: ${err.message} — falling back to Deepgram worker`);
       }
     }
-    
+
+    // 🎙️ TIER 3: Deepgram Worker (for static stations on R2 miss, or stations without audioUrl)
+    // This ensures audio always matches the current on-screen text, even if R2 files are stale/missing
+    try {
+      const audioBlob = await Promise.race([
+        this.useGoogleTTS(cleanedText, station),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
+      ]);
+      if (audioBlob) {
+        await TTSCache.set(cleanedText, station, audioBlob);
+        const blobUrl = URL.createObjectURL(audioBlob);
+        console.log(`[TTS] ✅ Deepgram worker (static fallback)`);
+        return this.playAudio(blobUrl, true);
+      }
+    } catch (err) {
+      console.warn(`[TTS] Deepgram worker failed: ${err.message}`);
+    }
+
     // 🔊 TIER 4: Browser TTS (last resort)
     console.warn('[TTS] ⚠️ Using browser TTS as last resort');
     this.webFallback(cleanedText);
