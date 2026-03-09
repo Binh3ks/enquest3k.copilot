@@ -131,13 +131,30 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     }
     
     // Determine current story phase based on turn count
+    // Phases may use 'turns' range ("1-4") OR have no turns field (phase_questions-based)
     let currentPhase = mission.story_arc?.[0]; // default to first phase
     if (mission.story_arc) {
-      for (const phase of mission.story_arc) {
-        const [start, end] = phase.turns.split('-').map(Number);
-        if (turnCount >= start && turnCount <= end) {
-          currentPhase = phase;
-          break;
+      if (mission.story_arc[0]?.turns) {
+        // Turns-range format: find phase by turn range
+        for (const phase of mission.story_arc) {
+          const [start, end] = (phase.turns || '0-99').split('-').map(Number);
+          if (turnCount >= start && turnCount <= end) {
+            currentPhase = phase;
+            break;
+          }
+        }
+      } else {
+        // phase_questions format: use nextQuestion index to determine phase
+        // (novaEngine pre-computes nextQuestion — just default to first phase)
+        const studentTurns = Math.max(0, conversationHistory.filter(m => m.role === 'user').length);
+        let cumulative = 0;
+        for (const phase of mission.story_arc) {
+          const phaseLen = phase.phase_questions?.length || 0;
+          if (studentTurns < cumulative + phaseLen) {
+            currentPhase = phase;
+            break;
+          }
+          cumulative += phaseLen;
         }
       }
     }
