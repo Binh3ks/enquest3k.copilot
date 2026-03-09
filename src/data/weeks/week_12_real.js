@@ -17,6 +17,17 @@ const week12RealData = {
     "climb", "cook", "talent", "perform"
   ],
 
+  grammar_examples: [
+    "I can sing a beautiful song.",
+    "I can dance to the music.",
+    "I can't swim yet, but I want to learn.",
+    "Can you draw? Yes, I can draw!",
+    "She can run very fast.",
+    "He can't cook, but he can sing.",
+    "What can you do? I can jump high!",
+    "I can't fly. I am not a bird!"
+  ],
+
   story_missions: [
     {
       mission_id: 1,
@@ -52,18 +63,18 @@ const week12RealData = {
           phase: "talent_check",
           phase_name: "Discover Talents",
           phase_questions: [
-            "Can you dance?",
-            "Can you draw?",
-            "Can you run fast?",
-            "Can you jump high?"
+            "Can you dance? Say: Yes, I can dance! or No, I can't dance!",
+            "Can you draw? Say: Yes, I can draw! or No, I can't draw!",
+            "Can you run fast? Say: Yes, I can run fast! or No, I can't run fast!",
+            "Can you jump high? Say: Yes, I can jump high! or No, I can't jump high!"
           ]
         },
         {
           phase: "more_talents",
           phase_name: "More Abilities",
           phase_questions: [
-            "Can you swim?",
-            "Can you cook?",
+            "Can you swim? Say: Yes, I can swim! or No, I can't swim yet!",
+            "Can you cook? Say: Yes, I can cook! or No, I can't cook yet!",
             "What is your best talent? Say: I can sing very well! or I can dance very well!"
           ]
         },
@@ -116,9 +127,9 @@ const week12RealData = {
           phase: "performances",
           phase_name: "Time to Perform!",
           phase_questions: [
-            "Can you dance on stage?",
-            "Can you draw a picture for everyone?",
-            "Can you run or do something fast?",
+            "Can you dance on stage? Say: Yes, I can dance on stage! or No, I can't yet!",
+            "Can you draw a picture for everyone? Say: Yes, I can draw! or No, I can't draw yet!",
+            "Can you do something fast on stage? Say: I can run fast! or I can jump high!",
             "What else can you do? Say: I can sing! or I can draw!"
           ]
         },
@@ -179,18 +190,18 @@ const week12RealData = {
           phase: "sport_challenge",
           phase_name: "Sports Talents!",
           phase_questions: [
-            "Can you swim?",
-            "Can you climb a tree?",
-            "Can you ride a bike?"
+            "Can you swim? Say: Yes, I can swim! or No, I can't swim yet!",
+            "Can you climb a tree? Say: Yes, I can climb! or No, I can't climb!",
+            "Can you ride a bike? Say: Yes, I can ride a bike! or No, I can't yet!"
           ]
         },
         {
           phase: "art_challenge",
           phase_name: "Creative Talents!",
           phase_questions: [
-            "Can you sing?",
-            "Can you draw?",
-            "Can you dance?"
+            "Can you sing? Say: Yes, I can sing! or No, I can't sing!",
+            "Can you draw? Say: Yes, I can draw! or No, I can't draw!",
+            "Can you dance? Say: Yes, I can dance! or No, I can't dance!"
           ]
         },
         {
