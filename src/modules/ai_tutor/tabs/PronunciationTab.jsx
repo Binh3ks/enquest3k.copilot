@@ -140,7 +140,9 @@ const PronunciationTab = () => {
   }, []);
 
   // Get content based on practice type
-  const newWords = weekData?.target_vocab || weekData?.global_vocab || weekData?.vocabulary || [];
+  // Normalize: target_vocab can be plain strings ["sing","dance"] OR objects [{word,definition_en,...}]
+  const rawWords = weekData?.target_vocab || weekData?.global_vocab || weekData?.vocabulary || [];
+  const newWords = rawWords.map(w => typeof w === 'string' ? { word: w, text: w } : w);
   const wordPower = weekData?.word_power?.words || [];
   
   // Word-level: 10 New Words + 3 Word Power = 13 words
