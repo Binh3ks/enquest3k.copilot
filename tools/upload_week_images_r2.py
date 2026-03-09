@@ -11,7 +11,7 @@ import subprocess
 import glob
 from pathlib import Path
 
-BUCKET_NAME = "engquest-images"
+BUCKET_NAME = "engquest-images"  # Fixed: Images have their own bucket!
 R2_PREFIX = "images"
 BASE_PATH = Path(__file__).parent.parent / "public" / "images"
 

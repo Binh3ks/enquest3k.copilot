@@ -48,7 +48,6 @@ export const TAB_TO_STATION_ID = {
   'read_explore': 'skill_reading',
   'mindmap_speaking': 'production_mindmap',
   'shadowing': 'skill_shadowing',
-  'sentence_builder': 'sentence_builder',
   
   // Meta
   'review': 'review_session',
@@ -64,7 +63,6 @@ export const STATIONS = [
   { key: 'ask_ai', stationId: 'ask_ai', icon: Cpu, title_en: 'Ask AI', color: 'emerald' },
   { key: 'dictation', stationId: 'skill_dictation', icon: Mic, title_en: 'Dictation', color: 'cyan' },
   { key: 'shadowing', stationId: 'skill_shadowing', icon: Feather, title_en: 'Shadow', color: 'blue' },
-  { key: 'sentence_builder', stationId: 'sentence_builder', icon: Feather, title_en: 'Sentence Builder', color: 'amber' },
   { key: 'writing', stationId: 'video_challenge', icon: Eye, title_en: 'Write/Video', color: 'pink' },
   { key: 'explore', stationId: 'explore', icon: Compass, title_en: 'Explore', color: 'lime' },
   { key: 'logic_lab', stationId: 'game_logic', icon: Zap, title_en: 'Logic Lab', color: 'violet' },

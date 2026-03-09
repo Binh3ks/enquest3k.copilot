@@ -246,14 +246,118 @@ export default {
 - [ ] Prepare TTS sentences for audio generation
 
 ### Asset Generation (in order)
-1. [ ] Audio: `node tools/batch_manager.js X`
+1. [ ] Audio: `node tools/batch_manager.js X` OR `python3 tools/generate_audio_deepgram.py X --mode all --force`
 2. [ ] Images: `node tools/generate_images_nano.js X`
 3. [ ] Videos: Update daily_watch.js with found YouTube videos
 4. [ ] Database: `node tools/update_db_smart.js X`
 
 ---
 
+## AUDIO UPLOAD & CONTENT VALIDATION (⚠️ WEEK 12 LESSON)
+
+### Pre-Upload Content Validation
+**CRITICAL: Verify content alignment BEFORE generating audio!**
+
+```bash
+# 1. Check Mode Differentiation: Easy ≠ Advanced
+# Advanced mode first sentence:
+head -5 src/data/weeks/week_X/read.js | grep 'content_en:'
+
+# Easy mode first sentence:
+head -5 src/data/weeks_easy/week_X/read.js | grep 'content_en:'
+# Should be DIFFERENT contexts (school vs personal, formal vs simple)!
+
+# 2. Verify dictation matches read.js (Advanced)
+# First sentence must be EXACT copy from read.js
+grep '"text":' src/data/weeks/week_X/dictation.js | head -1
+# Compare to read.js first sentence
+
+# 3. Verify dictation matches read.js (Easy)
+grep '"text":' src/data/weeks_easy/week_X/dictation.js | head -1
+# Compare to Easy mode read.js first sentence
+
+# 4. Verify shadowing matches read.js (both modes)
+grep '"text":' src/data/weeks/week_X/shadowing.js | head -1
+grep '"text":' src/data/weeks_easy/week_X/shadowing.js | head -1
+
+# 5. Check vocabulary tiers
+echo "=== Advanced Vocab (Tier 2/3) ==="
+grep 'word: "' src/data/weeks/week_X/vocab.js | cut -d'"' -f2
+
+echo "=== Easy Vocab (Tier 1) ==="
+grep 'word: "' src/data/weeks_easy/week_X/vocab.js | cut -d'"' -f2
+# Advanced should have abstract/academic words
+# Easy should have concrete action verbs
+```
+
+### Audio File Count Validation
+```bash
+# After generating, verify counts
+ls -1 public/audio/week{X}/*.mp3 | wc -l      # Should be ~180-200
+ls -1 public/audio/week{X}_easy/*.mp3 | wc -l  # Should be ~130-150
+
+# Check key files exist
+ls public/audio/week{X}/dictation_1.mp3
+ls public/audio/week{X}/shadowing_1.mp3
+ls public/audio/week{X}/read_explore_main.mp3
+ls public/audio/week{X}_easy/dictation_1.mp3
+ls public/audio/week{X}_easy/shadowing_1.mp3
+ls public/audio/week{X}_easy/read_explore_main.mp3
+```
+
+### R2 Upload (⚠️ CRITICAL: Use --remote flag!)
+
+**Week 12 Lesson:** Wrangler defaults to LOCAL dev instance. Files uploaded locally do NOT appear on CDN!
+
+```bash
+cd public/audio
+
+# Upload Advanced mode to REMOTE R2
+find week{X} -name "*.mp3" -type f | while read file; do
+  npx wrangler r2 object put engquest-audio/audio/"$file" \
+    --file="$file" \
+    --content-type="audio/mpeg" \
+    --remote
+done
+
+# Upload Easy mode to REMOTE R2
+find week{X}_easy -name "*.mp3" -type f | while read file; do
+  npx wrangler r2 object put engquest-audio/audio/"$file" \
+    --file="$file" \
+    --content-type="audio/mpeg" \
+    --remote
+done
+```
+
+### CDN Verification (Sample Test)
+```bash
+# Test 5 files per mode on CDN
+curl -I "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week{X}/dictation_1.mp3"
+curl -I "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week{X}/shadowing_1.mp3"
+curl -I "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week{X}/vocab_*.mp3" | head -1
+curl -I "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week{X}_easy/dictation_1.mp3"
+curl -I "https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/week{X}_easy/shadowing_1.mp3"
+
+# All should return: HTTP/1.1 200 OK
+# If 404: Re-upload with --remote flag!
+```
+
+### Post-Upload Actions
+- [ ] Update CDN_WEEKS in `src/services/voiceService.js` (add Week X to array)
+- [ ] Force-commit audio files: `git add -f public/audio/week{X}/ public/audio/week{X}_easy/`
+- [ ] Test in browser: Open Week X dictation, verify Deepgram audio plays (not browser TTS)
+
+---
+
 ## COMMON ERRORS TO AVOID
+
+### ❌ Audio & Content Errors (NEW - Week 12 Lessons)
+- Copying Advanced mode content to Easy mode (first sentence MUST be different!)
+- Using wrong vocabulary tiers (Easy = Tier 1 concrete actions, Advanced = Tier 2/3 abstract concepts)
+- Uploading to local R2 instance (missing `--remote` flag → CDN 404)
+- Not verifying dictation/shadowing sentence 1 matches read.js
+- Factual content errors (e.g., "Tonight" vs "Today" - verify logic consistency)
+- Not uploading ALL audio files (vocab, mindmap, ask_ai, etc.)
 
 ### ❌ Structure Errors
 - Using `problems` instead of `puzzles` in logic.js
