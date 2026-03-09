@@ -1,13 +1,38 @@
 export default {
   title_en: "Hobbies I Love",
-  title_vi: "Sở thích tôi yêu",
+  title_vi: "So Thich Cua Toi",
   image_url: "/images/week12_easy/explore_cover_w12.jpg",
-  content_en: `I have many hobbies! I can **sing** my favorite songs at home. I can **dance** when I listen to music. On weekends, I **ride** my bike in the park. Sometimes I **draw** pictures of my family and pets. I like to **swim** in the summer. I also **cook** simple food with my mom. I cannot do everything perfectly, but I love trying new things!`,
-  content_vi: `Tôi có nhiều sở thích! Tôi có thể hát những bài hát yêu thích ở nhà. Tôi có thể nhảy khi nghe nhạc. Cuối tuần, tôi đạp xe trong công viên. Đôi khi tôi vẽ tranh gia đình và thú cưng. Tôi thích bơi vào mùa hè. Tôi cũng nấu món ăn đơn giản với mẹ. Tôi không thể làm mọi thứ hoàn hảo, nhưng tôi thích thử những điều mới!`,
-  audio_narration: "/audio/week12_easy/explore_narration.mp3",
-  questions: [
-    { q: "What does the writer do on weekends?", a: "Ride a bike in the park" },
-    { q: "When does the writer like to swim?", a: "In the summer" },
-    { q: "Who does the writer cook with?", a: "Mom" }
-  ]
+  audio_url: "/audio/week12_easy/explore_main.mp3",
+  content_en: `I have many **hobbies**! I can **sing** my favorite songs at home. I can **dance** when I listen to music. On weekends, I **ride** my bike in the park. Sometimes I **draw** pictures of my family and **pets**. I like to **swim** in the summer. I also **cook** simple food with my mom. I love to **try** new things and **practice** every day!`,
+  content_vi: `Toi co nhieu so thich! Toi co the hat nhung bai hat yeu thich o nha. Toi co the nhay khi nghe nhac. Cuoi tuan, toi dap xe trong cong vien. Doi khi toi ve tranh gia dinh va thu cung. Toi thich boi vao mua he. Toi cung nau mon an don gian voi me. Toi thich thu nhung dieu moi va luyen tap moi ngay!`,
+  check_questions: [
+    {
+      id: 1,
+      question_en: "What can the writer do when listening to music?",
+      answer: ["dance", "dancing"],
+      hint_en: "Read the sentence about music...",
+      hint_vi: "Doc cau ve nhac..."
+    },
+    {
+      id: 2,
+      question_en: "Where does the writer ride a bike?",
+      answer: ["in the park", "park"],
+      hint_en: "Read the sentence about weekends...",
+      hint_vi: "Doc cau ve cuoi tuan..."
+    },
+    {
+      id: 3,
+      question_en: "Who does the writer cook food with?",
+      answer: ["mom", "my mom", "mother"],
+      hint_en: "Read the sentence about cooking...",
+      hint_vi: "Doc cau ve nau an..."
+    }
+  ],
+  question: {
+    text_en: "What hobbies do YOU have? Write 2 or 3 things you can do.",
+    text_vi: "Ban co so thich gi? Viet 2 hoac 3 dieu ban co the lam.",
+    min_words: 20,
+    hint_en: "I can sing... I can dance... I can...",
+    hint_vi: "Toi co the hat... Toi co the nhay... Toi co the..."
+  }
 };
