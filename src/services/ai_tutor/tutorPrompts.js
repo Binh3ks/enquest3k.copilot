@@ -812,10 +812,14 @@ TURN: ${turnCount}/${mission.maximum_turns || 18}
     ${context.nextQuestionHints?.length ? `\n    🎯 HINTS for suggested_hints: [${context.nextQuestionHints.join(', ')}]` : ''}
     
     HOW TO RESPOND:
-    - If YOUR NEXT LINE already starts with the student's answer word → say it exactly as-is
-    - If YOUR NEXT LINE does NOT start with an ack → add a brief 1-2 word ack first: "[their word]! [NEXT LINE]"
-    - Do NOT add extra sentences before or after YOUR NEXT LINE
-    - Do NOT change, shorten, or paraphrase YOUR NEXT LINE
+    STEP 1 — ACK with SUBJECT SWITCH (MANDATORY):
+      Student says "I can sing" → You say "You can sing! Great! "
+      Student says "My talent is dancing" → You say "You can dance! Wonderful! "
+      ⚠️ CRITICAL: Switch "I" → "You". NEVER echo "I can dance!" — say "You can dance!"
+    STEP 2 — THEN deliver YOUR NEXT LINE exactly as written (do NOT paraphrase or shorten)
+    STEP 3 — End with "?" always
+    - Do NOT add extra sentences beyond ACK + NEXT LINE
+    - Do NOT repeat a question already in conversation history
     
     🎯 OPEN-ENDED QUESTIONS ONLY (all choices inside YOUR NEXT LINE already):
     
