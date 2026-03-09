@@ -1,54 +1,59 @@
+// Easy Mode Logic Lab - Week 12: I Can / I Can't
+// Phase 1 Blueprint rules: Vocab & Patterns (Math Bridge)
+// NO complex riddles. Simple reading comprehension with CAN / CAN'T.
+// Text-input format: student reads short sentences and writes one-word answer.
+
 export default {
   puzzles: [
     {
       id: 1,
-      type: "mc",
-      question_en: "Sarah can sing and Tom can dance. Who performs on stage with music and voice?",
-      question_vi: "Sarah có thể hát và Tom có thể nhảy. Ai biểu diễn trên sân khấu với âm nhạc và giọng hát?",
-      options: ["Sarah", "Tom", "Both", "Neither"],
-      correct: "Sarah",
-      explanation_en: "Sarah sings, which uses voice and music.",
-      explanation_vi: "Sarah hát, điều này dùng giọng hát và âm nhạc."
+      type: "logic",
+      question_en: "Mia can swim. What CAN Mia do? (Write one word)",
+      question_vi: "Mia co the boi. Mia co the lam gi? (Viet mot tu)",
+      answer: ["swim", "swimming"],
+      hint_en: "Read the first sentence again. It tells you what Mia CAN do.",
+      hint_vi: "Doc lai cau dau tien. No noi cho ban biet Mia CO THE lam gi.",
+      audio_url: "/audio/week12_easy/logic_1.mp3"
     },
     {
       id: 2,
-      type: "mc",
-      question_en: "Mike can run fast and Lily can jump high. Who would win a race?",
-      question_vi: "Mike có thể chạy nhanh và Lily có thể nhảy cao. Ai sẽ thắng cuộc đua?",
-      options: ["Mike", "Lily", "Both", "Cannot tell"],
-      correct: "Mike",
-      explanation_en: "Running fast helps win a race.",
-      explanation_vi: "Chạy nhanh giúp thắng cuộc đua."
+      type: "logic",
+      question_en: "Tom can sing. Tom can draw. Tom can NOT swim. What can Tom NOT do? (Write one word)",
+      question_vi: "Tom co the hat. Tom co the ve. Tom KHONG THE boi. Tom khong the lam gi? (Viet mot tu)",
+      answer: ["swim", "swimming"],
+      hint_en: "Find the sentence with 'can NOT'. That word is the answer.",
+      hint_vi: "Tim cau co 'can NOT'. Tu do la dap an.",
+      audio_url: "/audio/week12_easy/logic_2.mp3"
     },
     {
       id: 3,
-      type: "mc",
-      question_en: "Ben can climb and Emma can ride a bike. Who needs wheels for their talent?",
-      question_vi: "Ben có thể leo trèo và Emma có thể đi xe đạp. Ai cần bánh xe cho tài năng của mình?",
-      options: ["Ben", "Emma", "Both", "Neither"],
-      correct: "Emma",
-      explanation_en: "A bike has wheels; climbing doesn't need wheels.",
-      explanation_vi: "Xe đạp có bánh xe; leo trèo không cần bánh xe."
+      type: "logic",
+      question_en: "I can run. I can jump. I can NOT fly. What can I NOT do? (Write one word)",
+      question_vi: "Toi co the chay. Toi co the nhay. Toi KHONG THE bay. Toi khong the lam gi? (Viet mot tu)",
+      answer: ["fly", "flying"],
+      hint_en: "Find the sentence with 'can NOT'. That word is the answer.",
+      hint_vi: "Tim cau co 'can NOT'. Tu do la dap an.",
+      audio_url: "/audio/week12_easy/logic_3.mp3"
     },
     {
       id: 4,
-      type: "mc",
-      question_en: "Jack can draw and Mia can swim. Who needs water for their talent?",
-      question_vi: "Jack có thể vẽ và Mia có thể bơi. Ai cần nước cho tài năng của mình?",
-      options: ["Jack", "Mia", "Both", "Neither"],
-      correct: "Mia",
-      explanation_en: "Swimming requires water; drawing doesn't.",
-      explanation_vi: "Bơi lội cần nước; vẽ tranh thì không."
+      type: "logic",
+      question_en: "Anna can dance very well. She loves dancing! Anna is a great ___. (Write: dancer or singer)",
+      question_vi: "Anna co the nhay rat gioi. Co ay yeu thich nhay! Anna la mot ___ tuyet voi. (Viet: dancer hoac singer)",
+      answer: ["dancer"],
+      hint_en: "Anna loves dancing. dance + r = dancer.  sing + er = singer.",
+      hint_vi: "Anna yeu thich nhay. dance + r = dancer.  sing + er = singer.",
+      audio_url: "/audio/week12_easy/logic_4.mp3"
     },
     {
       id: 5,
-      type: "mc",
-      question_en: "If someone can cook, can they also sing?",
-      question_vi: "Nếu ai đó có thể nấu ăn, họ có thể hát không?",
-      options: ["Yes, always", "No, never", "Maybe, they are different skills", "Impossible"],
-      correct: "Maybe, they are different skills",
-      explanation_en: "Cooking and singing are separate abilities. A person can have both, one, or neither.",
-      explanation_vi: "Nấu ăn và hát là hai kỹ năng khác nhau. Một người có thể có cả hai, một trong hai, hoặc không có kỹ năng nào."
+      type: "logic",
+      question_en: "Ben can cook. Ben can read. Ben can NOT ride a bike. How many things CAN Ben do? (Write a number)",
+      question_vi: "Ben co the nau an. Ben co the doc sach. Ben KHONG THE di xe dap. Ben co the lam bao nhieu viec? (Viet so)",
+      answer: ["2", "two"],
+      hint_en: "Count only sentences with 'can' (skip 'can NOT'). How many?",
+      hint_vi: "Chi dem cac cau co 'can' thoi (khong tinh 'can NOT'). Co bao nhieu?",
+      audio_url: "/audio/week12_easy/logic_5.mp3"
     }
   ]
 };

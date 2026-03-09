@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "What Can You Do? Song for Kids | Simple Questions", videoId: "boeGBLw1p0I", duration: "02:01", sim_duration: 121, thumb: "https://img.youtube.com/vi/boeGBLw1p0I/mqdefault.jpg" },
-    { id: 2, title: "I Can, I Can't Song | Action Verbs for Kids", videoId: "vQ-aCzGb59s", duration: "02:28", sim_duration: 148, thumb: "https://img.youtube.com/vi/vQ-aCzGb59s/mqdefault.jpg" },
-    { id: 3, title: "Can You Swim? | Super Simple Songs", videoId: "SwJr5bieKWE", duration: "02:15", sim_duration: 135, thumb: "https://img.youtube.com/vi/SwJr5bieKWE/mqdefault.jpg" },
-    { id: 4, title: "The Talent Show - Kids Stories Read Aloud", videoId: "5CvABpPv7WY", duration: "04:32", sim_duration: 272, thumb: "https://img.youtube.com/vi/5CvABpPv7WY/mqdefault.jpg" },
-    { id: 5, title: "Amazing Kids Talent Show Performances", videoId: "9VW8xqx2mFE", duration: "06:18", sim_duration: 378, thumb: "https://img.youtube.com/vi/9VW8xqx2mFE/mqdefault.jpg" }
+    { id: 1, title: "Can - Can&#39;t | Grammar | Exercise | Learn English For Kids", videoId: "-4THSMLLCiY", duration: "03:43", sim_duration: 223, thumb: "https://img.youtube.com/vi/-4THSMLLCiY/mqdefault.jpg" },
+    { id: 2, title: "[Can] Can you swim - Exciting song - Sing along", videoId: "x_maAPehJbk", duration: "03:49", sim_duration: 229, thumb: "https://img.youtube.com/vi/x_maAPehJbk/mqdefault.jpg" },
+    { id: 3, title: "This Is My Body | Early Learning | Body | Little Fox | Bedtime Stories", videoId: "RKCxrbuKNx8", duration: "02:19", sim_duration: 139, thumb: "https://img.youtube.com/vi/RKCxrbuKNx8/mqdefault.jpg" },
+    { id: 4, title: "Action Verbs (v1)- Kids vocabulary -Action Words - Learn English for kids - Educational video", videoId: "4c6FyuetSVo", duration: "04:23", sim_duration: 263, thumb: "https://img.youtube.com/vi/4c6FyuetSVo/mqdefault.jpg" },
+    { id: 5, title: "Basic Needs of Animals | Science for Kids", videoId: "2Ns9w8sWk7E", duration: "03:34", sim_duration: 214, thumb: "https://img.youtube.com/vi/2Ns9w8sWk7E/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

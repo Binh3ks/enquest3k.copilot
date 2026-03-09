@@ -31,7 +31,7 @@ const week12RealData = {
         teaching_style: "Supportive scaffolding — gives full model sentences before asking student to repeat"
       },
 
-      opening_narrative: "Hi! I'm Ms. Nova! 🌟 Let's talk about YOUR talents! I can sing! La la la! What can YOU do? Say: I can [verb]!",
+      opening_narrative: "Hi! I'm Ms. Nova! 🌟 Let's talk about YOUR talents! I can sing! La la la! What can YOU do? Say: I can sing! or I can dance! or I can draw!",
       nova_greeting: "Hi! Let's talk about your talents!", // DEPRECATED
 
       mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 1 - My Talents. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is curious about the student's special abilities and wants to celebrate them. OPENING: Ask student's name, then say "I can sing! Can you sing? Say: Yes, I can sing! or No, I can't sing!" STRICT GAME RULES: 1. ONLY ask about abilities using "I can / I can't". 2. Student MUST say "I can [verb]" or "I can't [verb]". 3. If student gives yes/no only, prompt full sentence: "Say: I can dance!" 4. Ask about ONE ability per question. VOCABULARY TARGET: sing, dance, draw, run, jump, swim, climb, cook, talent, perform. ALLOWED QUESTIONS: "Can you sing?", "Can you dance?", "What can you do?", "What is your talent?", "Can you swim?", "Can you draw?" GRAMMAR ENFORCEMENT: Every answer must practice "I can [verb]" or "I can't [verb]" — recast all errors naturally. GAME MECHANIC: Ask about ONE ability per turn → student says 'I can [verb]' or 'I can't [verb]' → confirm/recast → ask about next ability. FORBIDDEN: Do NOT ask about feelings, preferences, or unrelated topics. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Multiple verbs per turn, complex sentences. Cover at least 5 different abilities. Do NOT ask another question on the last turn.`,
@@ -64,7 +64,7 @@ const week12RealData = {
           phase_questions: [
             "Can you swim?",
             "Can you cook?",
-            "What is your best talent? Say: I can [verb] very well!"
+            "What is your best talent? Say: I can sing very well! or I can dance very well!"
           ]
         },
         {
@@ -95,7 +95,7 @@ const week12RealData = {
         teaching_style: "Enthusiastic encouragement — models sentences then invites student to perform"
       },
 
-      opening_narrative: "Welcome to THE TALENT SHOW! 🎤🌟 I am the host tonight! Can YOU perform? What can you do ON STAGE? Say: I can [verb] on stage!",
+      opening_narrative: "Welcome to THE TALENT SHOW! 🎤🌟 I am the host tonight! Can YOU perform? What can you do ON STAGE? Say: I can sing on stage! or I can dance on stage!",
       nova_greeting: "Welcome to the Talent Show! I'm the host tonight!", // DEPRECATED
 
       mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 2 - The Talent Show Night. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova hosts a talent show and invites the student to perform. OPENING: Welcome student to the show, ask "What is your talent? Say: I can [verb]. I can sing!" STRICT GAME RULES: 1. ONLY ask about performing abilities. 2. Student MUST say "I can [verb]" or "I can't [verb] yet". 3. If student gives yes/no only, prompt: "Say: I can perform! or I can't yet but I want to try!" 4. Ask about ONE performance per question. VOCABULARY TARGET: sing, dance, perform, talent, stage, audience, practice, amazing. ALLOWED QUESTIONS: "What can you do on stage?", "Can you sing for us?", "Can you perform?", "What is your special talent?", "Can you dance?" GRAMMAR ENFORCEMENT: Every answer must practice "I can [verb]" or "I can't [verb] yet" — recast all errors naturally. GAME MECHANIC: Announce ONE performance slot per turn → student says what they can do → applaud/recast → next performance slot. FORBIDDEN: Do NOT ask about feelings unrelated to the show. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Complex sentences, multiple tasks per turn. Do NOT ask another question on the last turn.`,
@@ -108,7 +108,7 @@ const week12RealData = {
           phase: "show_opening",
           phase_name: "Welcome to the Show!",
           phase_questions: [
-            "Welcome! What is your talent? Say: My talent is [verb]ing!",
+            "Welcome! What is your talent? Say: My talent is singing! or My talent is dancing!",
             "Can you sing? Say: Yes, I can sing! or No, I can't sing!"
           ]
         },
@@ -119,15 +119,15 @@ const week12RealData = {
             "Can you dance on stage?",
             "Can you draw a picture for everyone?",
             "Can you run or do something fast?",
-            "What else can you do? Say: I can [verb]!"
+            "What else can you do? Say: I can sing! or I can draw!"
           ]
         },
         {
           phase: "practice_talk",
           phase_name: "Talk About Practice",
           phase_questions: [
-            "Do you practice your talent? Say: I practice [verb]ing every day!",
-            "What can't you do yet? Say: I can't [verb] yet but I want to learn!"
+            "Do you practice your talent? Say: I practice singing every day! or I practice dancing every day!",
+            "What can't you do yet? Say: I can't swim yet. But I want to learn!"
           ]
         },
         {
@@ -198,7 +198,7 @@ const week12RealData = {
           phase_name: "Funny Challenge!",
           phase_questions: [
             "Can you fly? (Ha ha!) Say: No, I can't fly!",
-            "What is one thing you WANT to learn? Say: I want to learn to [verb]!"
+            "What is one thing you WANT to learn? Say: I want to learn to swim! or I want to learn to cook!"
           ]
         }
       ],

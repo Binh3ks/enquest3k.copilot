@@ -96,6 +96,13 @@ const BLUEPRINT_WEEKS = {
     keywords: "Places, park, library, supermarket, weekend activities",
     video_hint: "Places in Town",
     read_topic: "Weekend Adventure - places to visit"
+  },
+  12: {
+    theme: "The Talent Show",
+    grammar: "Can/Can't for Ability (I can sing, I can't swim)",
+    keywords: "Abilities, talents, sing dance draw run jump swim",
+    video_hint: "I Can Song",
+    read_topic: "Talent Show - abilities and performances"
   }
 };
 
