@@ -90,7 +90,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
                   </div>
            </div>
            <div className="flex-1 flex flex-col items-center justify-center p-4">
-                  <h3 className="text-4xl font-black mb-2 capitalize tracking-wide">{word.word}</h3>
+                  <h3 className={`font-black mb-2 capitalize text-center leading-tight ${word.word.length > 15 ? 'text-xl' : word.word.length > 10 ? 'text-2xl' : word.word.length > 6 ? 'text-3xl' : 'text-4xl'}`}>{word.word}</h3>
                   <span className="text-sm font-mono bg-white/20 px-3 py-1 rounded-full mb-4">{word.pronunciation}</span>
                   <button onClick={(e) => play(e, word.word, word.audio_word)} className="p-3 bg-white text-teal-700 rounded-full hover:scale-110 transition-transform shadow-lg">
                     <Volume2 className="w-6 h-6" />

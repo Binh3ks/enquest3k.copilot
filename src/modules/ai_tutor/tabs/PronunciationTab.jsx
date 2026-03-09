@@ -176,7 +176,8 @@ const PronunciationTab = () => {
       await textToSpeech(textWithPunctuation, {
         autoPlay: true,
         preferredLayer: 'auto', // 🔥 Use full fallback chain (Deepgram → Google → OpenAI → Browser)
-        mode: 'pronunciation' // 🎯 Slower speed for clear pronunciation practice
+        mode: 'pronunciation', // 🎯 Slower speed for clear pronunciation practice
+        speed: isSingleWord ? 0.7 : 0.85 // 🔥 Single words spoken slower for clear phoneme articulation
       });
       console.log('✅ TTS succeeded');
       return; // Success - exit early

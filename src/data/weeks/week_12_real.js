@@ -45,7 +45,7 @@ const week12RealData = {
       opening_narrative: "Hi! I'm Ms. Nova! 🌟 I love the Talent Show! I have a special talent — I can sing! La la la! 🎵 What is YOUR special talent? Say: My talent is singing! or My talent is dancing! or My talent is drawing!",
       nova_greeting: "Hi! Let's talk about your talents!", // DEPRECATED
 
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 1 - My Talents. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is curious about the student's PERSONAL TALENT — not just any ability, but their special skill they are proud of. OPENING: Ask about THEIR talent: "What is your special talent? Say: My talent is singing! or My talent is dancing!" DO NOT ask for the student's name — go straight to the talent topic. STRICT GAME RULES: 1. Focus on their ONE special talent at first, then explore other abilities. 2. Ask about practice habits, who helps them, and what they CANNOT do yet. 3. Student MUST use "I can [verb]" or "I can't [verb]" or "My talent is ___ing". 4. If student gives yes/no only, prompt full sentence: "Say: My talent is dancing!" VOCABULARY TARGET: talent, practise, improve, perform, skill, stage, learn, try. GRAMMAR ENFORCEMENT: Every answer must practice "I can [verb]" or "I can't [verb]" or "My talent is ___ing" — recast all errors naturally. FORBIDDEN: Do NOT ask rapid-fire "Can you sing/dance/draw/run?" one after another — that is the Conversation Card game, not this mission. Focus on depth about ONE talent. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response you MUST: (1) ACKNOWLEDGE with "Great! You can [verb]!" or "Wonderful! You can [verb]!" — SWITCH SUBJECT from 'I' to 'You' when echoing back the student's sentence, (2) ask the NEXT question from the story arc, (3) give 2-3 hint choices: "Say: ___ or ___!". NEVER end without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. GRAMMAR GUARD — WEEK 12 RULE: This week ONLY uses Present Simple with 'can/can't'. FORBIDDEN TENSES: NEVER use past tense (practised, sang, danced), NEVER use present perfect (have been, have done), NEVER use present continuous (is singing). ONLY ALLOWED: I can [verb], I can't [verb], My talent is ___ing, Can you [verb]? Use PRESENT SIMPLE only. SUBJECT SWITCH: When student says 'I can sing' → you say 'You can sing! Great!' not 'I can sing! Great!'. OPENING: Ask about THEIR talent right away: 'What is your special talent? Say: My talent is singing! or My talent is dancing! or My talent is drawing!' Do NOT ask for the student's name — go straight to the talent topic. STORY: Focus on what they CAN and CANNOT do — their special talent, what they want to learn, who they admire. VOCABULARY TARGET: talent, skill, learn, try, improve. GRAMMAR ENFORCEMENT: Every answer must use 'I can [verb]' or 'I can't [verb]' or 'My talent is ___ing' — recast naturally with subject switch. FORBIDDEN: Do NOT ask rapid-fire Can you sing/dance/draw/run — that is the Conversation Card game. Do NOT use past tense or present perfect at any point. Do NOT ask another question on the last turn.`,
 
       target_vocab: ["sing", "dance", "draw", "run", "jump", "swim"],
       grammar_pattern: "I can [verb] / I can't [verb]",
@@ -63,10 +63,10 @@ const week12RealData = {
           phase: "talent_check",
           phase_name: "Tell Me More!",
           phase_questions: [
-            "CAN you do your talent right now? Say: Yes, I can [verb] right now! or No, I can't right now!",
+            "Can you do your talent right now? Say: Yes, I can [verb] right now! or No, I can't right now!",
             "Can you show me ONE more thing you can do? Say: I can also [verb]!",
-            "Is there something you CANNOT do yet? Say: I can't [verb] yet, but I want to learn!",
-            "Who helps you practise your talent? Say: My mum helps me! or I practise alone!"
+            "Is there something you cannot do yet? Say: I can't [verb] yet, but I want to learn!",
+            "Who is your favourite performer or singer? Say: My favourite is ___! I want to sing like them!"
           ]
         },
         {
