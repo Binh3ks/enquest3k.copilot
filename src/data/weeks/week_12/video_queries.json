@@ -1,39 +1,39 @@
 {
-  "weekId": 6,
-  "theme": "Treasure Hunt",
-  "grammar_focus": "Prepositions of Place (In, On, Under)",
+  "weekId": 12,
+  "theme": "The Talent Show",
+  "grammar_focus": "Can/Can't for Ability (I can sing, I can't swim)",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing prepositions of place in on under ESL for kids",
-      "backup_search": "prepositions of place in on under song ESL kids cartoons"
+      "priority_search": "English Singsing can/can't for ability ESL for kids",
+      "backup_search": "can/can't for ability song ESL kids cartoons"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing In  On  Under ESL for kids",
-      "backup_search": "In  On  Under kids song ESL cartoons"
+      "priority_search": "English Singsing I can sing  I can't swim ESL for kids",
+      "backup_search": "I can sing  I can't swim kids song ESL cartoons"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox treasure hunt interior decorator story level 1 ESL for kids",
-      "backup_search": "Vooks treasure hunt interior decorator story read aloud cartoons for kids"
+      "priority_search": "Little Fox I can do it kids story level 1",
+      "backup_search": "Storyline Online I can do it kids read aloud story"
     },
     {
       "id": 4,
       "purpose": "VOCABULARY",
-      "priority_search": "Little Fox Where is it? song ESL for kids",
-      "backup_search": "Where is it? ESL kids cartoons song"
+      "priority_search": "English Singsing can you dance action verb song kids",
+      "backup_search": "Super Simple Songs actions verbs can you song kids"
     },
     {
       "id": 5,
       "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids Spatial awareness, location for kids",
-      "backup_search": "Spatial awareness, location kids science cartoons"
+      "priority_search": "SciShow Kids what can your body do amazing abilities",
+      "backup_search": "PBS Kids what can animals do abilities kids science"
     }
   ],
-  "topic": "Interior Decorator - positioning objects",
-  "science": "Spatial awareness, location"
+  "topic": "Talent Show - abilities and performances",
+  "science": "Abilities, talents, sing dance draw run jump swim"
 }
