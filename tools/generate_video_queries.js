@@ -103,6 +103,13 @@ const BLUEPRINT_WEEKS = {
     keywords: "Abilities, talents, sing dance draw run jump swim",
     video_hint: "I Can Song",
     read_topic: "Talent Show - abilities and performances"
+  },
+  13: {
+    theme: "Daily Routines",
+    grammar: "Present Simple (I wake up, I go)",
+    keywords: "wake up, brush teeth, eat breakfast, go to school, have lunch, do homework, watch TV, go to bed",
+    video_hint: "Daily Routine Song",
+    read_topic: "A Perfect School Day - daily routines and time"
   }
 };
 
