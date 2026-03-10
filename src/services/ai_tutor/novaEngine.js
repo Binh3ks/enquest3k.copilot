@@ -441,20 +441,30 @@ export class NovaEngine {
         context.nextQuestionHints = nextHints;
         console.log(`🎯 Pre-computed nextQuestion (student turn ${studentMsgCount}):`, nextQuestion?.slice(0, 90));
 
-        // 🃏 CONVERSATION CARD MODE: Skip AI entirely — return pre-computed answer directly
-        // Only skip for Conversation Cards (no story_character). Story Missions with story_character
-        // MUST go through AI so mission_context grammar rules (ACK/recast/subject-switch) are applied.
-        const hasStoryCharacter = !!(currentMission?.story_character);
-        if (nextQuestion && studentMsgCount >= 1 && !hasStoryCharacter) {
-          // Pre-include echo-ack so responseGuard doesn't add "Nice! I see!" filler
-          // If nextQuestion already starts with the student's text (from {student_answer}), keep as-is
-          // Otherwise prepend e.g. "Yes, Captain! What do I call you?"
-          const alreadyHasAck = lastStudentMsg && nextQuestion.startsWith(lastStudentMsg);
-          const finalResponse = alreadyHasAck || !lastStudentMsg
-            ? nextQuestion
-            : `${lastStudentMsg}! ${nextQuestion}`;
+        // 🃏 CARD MODE: Skip AI entirely — deliver pre-computed question + JS-generated ACK
+        // Used for ALL story_arc missions (both Conversation Cards and Story Missions with story_character).
+        // LLMs are unreliable at following "YOUR NEXT LINE" → loop on same question.
+        // ACK + pronoun switch is done here in JS for 100% consistency.
+        const recastStudent = (text) => {
+          if (!text) return '';
+          let t = text.trim().replace(/[!?.]+$/, '').trim();
+          t = t.replace(/^yes,?\s+i can\b/gi, 'You can');  // "Yes, I can X" → "You can X"
+          t = t.replace(/\bI can\b/gi, 'You can');
+          t = t.replace(/\bI am\b/gi, 'You are');
+          t = t.replace(/\bI'm\b/gi, "You're");
+          t = t.replace(/\bmy\b/gi, 'your');
+          t = t.replace(/\bI\b/g, 'You');
+          return t.charAt(0).toUpperCase() + t.slice(1);
+        };
+        const ACK_WORDS = ['Great!', 'Wonderful!', 'Amazing!', 'Super!', 'Fantastic!'];
+        const randomAck = ACK_WORDS[Math.floor(Math.random() * ACK_WORDS.length)];
+        const recast = lastStudentMsg ? recastStudent(lastStudentMsg) : null;
+        const finalResponse = recast
+          ? `${recast}! ${randomAck} ${nextQuestion}`
+          : nextQuestion;
 
-          console.log(`🃏 Card Mode: Skipping AI, delivering pre-computed line directly`);
+        if (nextQuestion && studentMsgCount >= 1) {
+          console.log(`🃏 Card Mode: Skipping AI, recast="${recast}", nextQ="${nextQuestion?.slice(0, 60)}"`);
           return {
             skipAI: true,
             directResponse: {
@@ -462,9 +472,9 @@ export class NovaEngine {
               suggested_hints: nextHints,
               hints: nextHints,
               mission_status: 'in_progress',
-              ack: lastStudentMsg ? `${lastStudentMsg}!` : '',
-              recast: '',
-              question: ''
+              ack: recast ? `${recast}!` : '',
+              recast: recast || '',
+              question: nextQuestion
             }
           };
         }
