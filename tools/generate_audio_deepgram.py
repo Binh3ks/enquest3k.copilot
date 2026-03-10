@@ -313,7 +313,8 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
                 continue
             word = word_m.group(1)
             slug = word.lower().replace(' ', '_').replace('?', '')
-            _task(word, "vocabulary", f"vocab_{slug}.mp3", base)
+            # Add trailing pause to prevent consonant cutoff on single-syllable words
+            _task(word + " ...", "vocabulary", f"vocab_{slug}.mp3", base)
             if def_m:  _task(def_m.group(1),  "vocabulary", f"vocab_def_{slug}.mp3", base)
             if ex_m:   _task(ex_m.group(1),   "vocabulary", f"vocab_ex_{slug}.mp3", base)
             if coll_m: _task(coll_m.group(1), "vocabulary", f"vocab_coll_{slug}.mp3", base)
@@ -378,13 +379,13 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
                     if not s.startswith('/audio/')
                 ]
             for i, t in enumerate(stem_list):
-                # Replace ___ blanks with 'blank' so TTS reads naturally
-                clean = t.replace('___', 'blank')
+                # Replace ___ blanks with pause (space-padded to prevent word merging)
+                clean = t.replace('___', ' ... ')
                 # Remove trailing periods before adding padding
                 clean = re.sub(r'\.\s*$', '', clean.strip())
                 if clean:
                     # Add trailing padding to prevent cutoff
-                    _task(clean + ". ...", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
+                    _task(clean + " ...", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
 
         # ── Branch labels ────────────────────────────────────────────────────
         bl_start = re.search(r'branchLabels\s*:\s*{', content)
