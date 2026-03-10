@@ -2,43 +2,43 @@ export default {
   prompts: [
     {
       id: 1,
-      context_en: "You want to know where your friend hides treasures. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình giấu kho báu ở đâu. Hỏi họ.",
-      audio_url: "/audio/week6_easy/ask_ai_1.mp3",
-      answer: ["Where do you hide treasures?", "Where do you hide things?", "Where is your hiding place?"],
-      hint: "Where do you..."
+      context_en: "Your friend wakes up every morning. You want to know the time. Ask them.",
+      context_vi: "Bạn của bạn thức dậy mỗi sáng. Bạn muốn biết mấy giờ. Hỏi họ.",
+      audio_url: "/audio/week13_easy/ask_ai_1.mp3",
+      answer: ["What time do you wake up?", "When do you wake up?", "You wake up at what time?"],
+      hint: "What time..."
     },
     {
       id: 2,
-      context_en: "You need to find something under the desk. Ask your friend what is under their desk.",
-      context_vi: "Bạn cần tìm thứ gì đó dưới bàn. Hỏi bạn mình có gì dưới bàn của họ.",
-      audio_url: "/audio/week6_easy/ask_ai_2.mp3",
-      answer: ["What is under your desk?", "What is under the desk?", "What do you have under your desk?"],
-      hint: "What is under..."
+      context_en: "Your friend eats something in the morning. You want to know what. Ask them.",
+      context_vi: "Bạn mình ăn gì đó vào buổi sáng. Bạn muốn biết là gì. Hỏi họ.",
+      audio_url: "/audio/week13_easy/ask_ai_2.mp3",
+      answer: ["What do you eat?", "What do you eat for breakfast?", "What is breakfast?"],
+      hint: "What do you..."
     },
     {
       id: 3,
-      context_en: "You want to play hide and seek with your friend. Ask them to play.",
-      context_vi: "Bạn muốn chơi trốn tìm với bạn mình. Mời họ chơi.",
-      audio_url: "/audio/week6_easy/ask_ai_3.mp3",
-      answer: ["Do you want to play hide and seek?", "Can we play hide and seek?", "Let's play hide and seek?"],
-      hint: "Do you want..."
+      context_en: "Your friend goes to school. You want to know when. Ask them.",
+      context_vi: "Bạn mình đi học. Bạn muốn biết khi nào. Hỏi họ.",
+      audio_url: "/audio/week13_easy/ask_ai_3.mp3",
+      answer: ["What time do you go to school?", "When do you go to school?", "You go to school at what time?"],
+      hint: "What time..."
     },
     {
       id: 4,
-      context_en: "You see a box next to the door. Ask your friend what is in the box.",
-      context_vi: "Bạn thấy một cái hộp bên cạnh cửa. Hỏi bạn mình trong hộp có gì.",
-      audio_url: "/audio/week6_easy/ask_ai_4.mp3",
-      answer: ["What is in the box?", "What is in that box?", "What do you have in the box?"],
-      hint: "What is in..."
+      context_en: "School is done. You want to play. Ask your friend if they play after school.",
+      context_vi: "Hết giờ học. Bạn muốn chơi. Hỏi bạn mình có chơi sau giờ học không.",
+      audio_url: "/audio/week13_easy/ask_ai_4.mp3",
+      answer: ["Do you play after school?", "Do you play?", "Can we play?"],
+      hint: "Do you play..."
     },
     {
       id: 5,
-      context_en: "You want to know if the treasure is on the floor. Ask your friend.",
-      context_vi: "Bạn muốn biết kho báu có ở trên sàn không. Hỏi bạn mình.",
-      audio_url: "/audio/week6_easy/ask_ai_5.mp3",
-      answer: ["Is the treasure on the floor?", "Is it on the floor?", "Where is the treasure?"],
-      hint: "Is the treasure..."
+      context_en: "It is nighttime. You want to know when your friend goes to sleep. Ask them.",
+      context_vi: "Đã tối rồi. Bạn muốn biết khi nào bạn mình đi ngủ. Hỏi họ.",
+      audio_url: "/audio/week13_easy/ask_ai_5.mp3",
+      answer: ["What time do you sleep?", "When do you sleep?", "What time do you go to bed?"],
+      hint: "What time..."
     }
   ]
 };

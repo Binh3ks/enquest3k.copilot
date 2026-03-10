@@ -13,7 +13,7 @@ export const weekTitles = {
   10: { title_en: "The Farm Adventure", title_vi: "Cuộc phiêu lưu Nông trại" },
   11: { title_en: "Weekend Fun Spots (Places)", title_vi: "Các Địa Điểm Vui Chơi Cuối Tuần" },
   12: { title_en: "The Talent Show (Abilities)", title_vi: "Buổi Biểu Diễn Tài Năng" },
-  13: { title_en: "Week 13", title_vi: "Tuần 13" },
+  13: { title_en: "The Daily Routine", title_vi: "Thói Quen Hàng Ngày" },
   14: { title_en: "Week 14", title_vi: "Tuần 14" },
   15: { title_en: "Week 15", title_vi: "Tuần 15" },
   16: { title_en: "Week 16", title_vi: "Tuần 16" },

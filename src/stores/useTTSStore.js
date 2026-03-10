@@ -51,9 +51,19 @@ const useTTSStore = create(
         { id: 'fast', label: 'Fast (1.2x)', value: 1.2, description: 'Faster for advanced learners' }
       ],
       
-      // Actions
-      setVoice: (voice) => set({ voice }),
-      setSpeed: (speed) => set({ speed }),
+      // Actions — sync to localStorage for voiceService.playAudio() compatibility
+      setVoice: (voice) => {
+        localStorage.setItem('tts_voice', voice);
+        set({ voice });
+      },
+      setSpeed: (speed) => {
+        // Resolve preset to numeric value for voiceService
+        const presets = useTTSStore.getState().speedPresets;
+        const preset = presets.find(p => p.id === speed);
+        const numericValue = preset?.value || 1.0;
+        localStorage.setItem('tts_speed', String(numericValue));
+        set({ speed });
+      },
       
       // Get current speed value (resolve 'auto' to actual number based on mode)
       getSpeedValue: (mode = 'conversation') => {
@@ -75,7 +85,16 @@ const useTTSStore = create(
     }),
     {
       name: 'tts-settings', // localStorage key
-      version: 1
+      version: 1,
+      onRehydrate: () => {
+        return (state) => {
+          if (!state) return;
+          // Sync to localStorage keys that voiceService reads
+          localStorage.setItem('tts_voice', state.voice || 'aura-asteria-en');
+          const preset = state.speedPresets?.find(p => p.id === state.speed);
+          localStorage.setItem('tts_speed', String(preset?.value || 1.0));
+        };
+      }
     }
   )
 );

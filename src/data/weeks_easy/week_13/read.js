@@ -1,37 +1,37 @@
 export default {
-  title: "My Toy Hunt",
-  image_url: "/images/week6_easy/read_cover_w06.jpg",
-  audio_url: "/audio/week6_easy/read_explore_main.mp3",
-  content_en: "Today I play a game. I look for my **toy** car. I look **on the floor**. It is not there! I look **in the box**. No toy! My friend helps me. He looks **under the desk**. He finds it! The **toy** car is under the desk! I look for my **ball** next. It is **next to the door**. Now we **hide** things. I hide my ball in the box. My friend hides his toy next to the **window**. We **seek** them again. This game is fun!",
-  content_vi: "Hôm nay tôi chơi trò chơi. Tôi tìm xe ô tô đồ chơi của mình. Tôi nhìn trên sàn. Nó không ở đó! Tôi nhìn trong hộp. Không có đồ chơi! Bạn tôi giúp tôi. Cậu ấy nhìn dưới bàn. Cậu ấy tìm thấy nó! Xe ô tô đồ chơi ở dưới bàn! Tiếp theo tôi tìm quả bóng của mình. Nó ở bên cạnh cửa. Bây giờ chúng tôi giấu đồ. Tôi giấu quả bóng trong hộp. Bạn tôi giấu đồ chơi của cậu ấy bên cạnh cửa sổ. Chúng tôi tìm chúng lại. Trò chơi này vui quá!",
+  title: "My Day",
+  image_url: "/images/week13_easy/read_cover_w13.jpg",
+  audio_url: "/audio/week13_easy/read_explore_main.mp3",
+  content_en: "My name is Tom. This is my day. **I wake up**. Mom wakes me up. **I brush my teeth**. I use my toothbrush. **I eat** breakfast. I like bread. **I go** to school. I see my teacher. **I play** at school. I play with Ben. We have fun. I eat lunch. Lunch is good. **I go** home. Mom is home. **I do homework**. I write my name. **I eat dinner**. Dad is home too. Dinner is yummy. **I watch TV**. I watch cartoons. **I go to bed**. I close my eyes. Good night!",
+  content_vi: "Tên tôi là Tom. Đây là một ngày của tôi. Tôi thức dậy. Mẹ đánh thức tôi. Tôi đánh răng. Tôi dùng bàn chải đánh răng. Tôi ăn sáng. Tôi thích bánh mì. Tôi đi học. Tôi gặp cô giáo. Tôi chơi ở trường. Tôi chơi với Ben. Chúng tôi vui. Tôi ăn trưa. Bữa trưa ngon. Tôi về nhà. Mẹ ở nhà. Tôi làm bài tập. Tôi viết tên tôi. Tôi ăn tối. Bố cũng ở nhà. Bữa tối ngon. Tôi xem ti vi. Tôi xem hoạt hình. Tôi đi ngủ. Tôi nhắm mắt. Chúc ngủ ngon!",
   comprehension_questions: [
     {
       id: 1,
-      question_en: "Where is the toy car?",
-      answer: ["under the desk", "desk"],
-      hint_en: "Below the table...",
-      hint_vi: "Dưới bàn..."
+      question_en: "What is the child's name?",
+      answer: ["Tom"],
+      hint_en: "The name...",
+      hint_vi: "Tên..."
     },
     {
       id: 2,
-      question_en: "Where is the ball?",
-      answer: ["next to the door", "door"],
-      hint_en: "Beside the entrance...",
-      hint_vi: "Bên cạnh cửa..."
+      question_en: "What does Tom eat for breakfast?",
+      answer: ["bread"],
+      hint_en: "Food...",
+      hint_vi: "Thức ăn..."
     },
     {
       id: 3,
-      question_en: "What game do they play?",
-      answer: ["hide and seek", "hiding game", "seeking"],
-      hint_en: "A game about hiding...",
-      hint_vi: "Trò chơi về ẩn nấp..."
+      question_en: "What does Tom watch?",
+      answer: ["TV", "cartoons", "television"],
+      hint_en: "On TV...",
+      hint_vi: "Trên ti vi..."
     }
   ],
   question: {
-    text_en: "Where do you hide your toys? What games do you like?",
-    text_vi: "Bạn giấu đồ chơi ở đâu? Bạn thích trò chơi gì?",
-    min_words: 25,
-    hint_en: "Talk about your favorite hiding places...",
-    hint_vi: "Nói về nơi ẩn nấp yêu thích của bạn..."
+    text_en: "What is YOUR day? Tell me!",
+    text_vi: "Ngày của BẠN thế nào? Kể cho mình!",
+    min_words: 10,
+    hint_en: "I wake up, I eat, I play...",
+    hint_vi: "Tôi thức dậy, tôi ăn, tôi chơi..."
   }
 };
