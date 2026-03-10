@@ -78,7 +78,7 @@ VOICE_MAP = {
     "vocabulary": ("aura-asteria-en", "en-US-Neural2-F", "female"),
     "dictation" : ("aura-luna-en",    "en-US-Neural2-F", "female"),
     "questions" : ("aura-zeus-en",    "en-US-Neural2-D", "male"),
-    "mindmap"   : ("aura-helios-en",  "en-US-Neural2-D", "male"),
+    "mindmap"   : ("aura-asteria-en", "en-US-Neural2-F", "female"),
 }
 
 # Kokoro voice map (HF Space uses voice name param)
@@ -196,7 +196,7 @@ _DEFAULT_VOICE_CONFIG = {
     "vocabulary": "en-US-Neural2-F",   # → aura-asteria-en (female)
     "dictation" : "en-US-Neural2-C",   # → aura-luna-en (female)
     "questions" : "en-US-Neural2-J",   # → aura-zeus-en (male)
-    "mindmap"   : "en-GB-Neural2-B",   # → aura-helios-en (male)
+    "mindmap"   : "en-US-Neural2-F",   # → aura-asteria-en (female, clear)
 }
 
 # Google Neural2 voice → (deepgram model, gender)
@@ -348,8 +348,11 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
             for i, m in enumerate(re.findall(r'answer\s*:\s*\[\s*["\']([^"\']+)["\']', content)):
                 _task(m, "questions", f"ask_ai_{i+1}.mp3", name)
         else:
-            for i, m in enumerate(re.findall(r'(?:description_en|question_en|question|prompt)\s*:\s*["\'](.*?)["\']', content)):
-                _task(m, "questions", f"{name}_{i+1}.mp3", name)
+            # Use backreference (\1) so opening quote matches closing quote.
+            # This prevents apostrophes inside text (e.g. o'clock) from
+            # being mistaken for the closing delimiter.
+            for i, (_, text) in enumerate(re.findall(r'(?:description_en|question_en|question|prompt)\s*:\s*(["\'])(.+?)\1', content)):
+                _task(text, "questions", f"{name}_{i+1}.mp3", name)
 
     def extract_shadowing(content, file_path):
         lines = re.findall(r'(?:text_en|text)\s*:\s*["\'](.*?)["\']', content)
@@ -375,7 +378,11 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
                     if not s.startswith('/audio/')
                 ]
             for i, t in enumerate(stem_list):
-                clean = re.sub(r'\.\s*$', '', t.replace("___", "").strip())
+                # Skip stems that contain ___ blanks — they don't form
+                # readable sentences without the branch word filled in.
+                if '___' in t:
+                    continue
+                clean = re.sub(r'\.\s*$', '', t.strip())
                 if clean:
                     _task(clean + ".", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
 

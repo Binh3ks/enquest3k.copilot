@@ -1,5 +1,7 @@
 export default {
-  sentences: [
+  title: "The School Talent Show",
+  audio_full: "/audio/week12/shadowing_full.mp3",
+  script: [
     { id: 1, text: "Today is the school talent show!", vi: "Hôm nay là buổi biểu diễn tài năng của trường!", audio_url: "/audio/week12/shadowing_1.mp3" },
     { id: 2, text: "Many children showcase their amazing abilities.", vi: "Nhiều em thể hiện khả năng tuyệt vời.", audio_url: "/audio/week12/shadowing_2.mp3" },
     { id: 3, text: "Sarah can sing beautifully on stage.", vi: "Sarah có thể hát hay trên sân khấu.", audio_url: "/audio/week12/shadowing_3.mp3" },

@@ -7,7 +7,7 @@ export default {
   comprehension_questions: [
     {
       id: 1,
-      question_en: "What event is happening tonight?",
+      question_en: "What event is happening today?",
       answer: ["talent show", "the school talent show", "school talent show"],
       hint_en: "A performance event...",
       hint_vi: "Một sự kiện biểu diễn..."
