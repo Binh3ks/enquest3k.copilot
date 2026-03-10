@@ -1,10 +1,10 @@
 export default {
-  title: "Treasure Hunt at Home",
+  title: "Write About Your Daily Routine",
   min_words: 40,
-  model_sentence: "I love playing treasure hunt at home. My friend hides a treasure box in my room. First, I look under my bed. Then I look on my desk. I find a clue next to the door. It says 'Look in the closet.' I open the closet and look under my clothes. The treasure is in a box next to my shoes! Inside the box there is a toy car and some candy. I am so happy to find it!",
-  instruction_en: "Write about a treasure hunt game at home. Where do you look? Where do you find the treasure? Use prepositions: in, on, under, next to.",
-  instruction_vi: "Viết về một trò chơi săn kho báu ở nhà. Bạn tìm ở đâu? Bạn tìm thấy kho báu ở đâu? Sử dụng giới từ: trong, trên, dưới, bên cạnh.",
-  prompt_en: "Describe a treasure hunt. Where do you look for the treasure? What prepositions do you use? Where is it hidden?",
-  prompt_vi: "Miêu tả một cuộc săn kho báu. Bạn tìm kho báu ở đâu? Bạn sử dụng giới từ nào? Nó được giấu ở đâu?",
-  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"]
+  model_sentence: "I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I eat breakfast with my family. I eat rice and eggs. I go to school at 8 o'clock. At school, I have lunch at 12 o'clock. After school, I play with my friends. Then I do my homework. I have dinner with my family at 7 o'clock. After dinner, I watch TV. I go to bed at 9 o'clock. I love my day!",
+  instruction_en: "Write about your daily routine from morning to night. Use present simple: I wake up... I brush... I eat... I go... What do you do every day?",
+  instruction_vi: "Viết về thói quen hàng ngày của bạn từ sáng tới tối. Sử dụng thì hiện tại đơn: I wake up... I brush... I eat... I go... Bạn làm gì mỗi ngày?",
+  prompt_en: "Describe your daily routine. What time do you wake up? What do you eat for breakfast? What do you do after school? What time do you go to bed?",
+  prompt_vi: "Miêu tả thói quen hàng ngày của bạn. Bạn thức dậy lúc mấy giờ? Bạn ăn gì vào bữa sáng? Bạn làm gì sau giờ học? Bạn đi ngủ lúc mấy giờ?",
+  keywords: ["wake up", "brush teeth", "eat breakfast", "go to school", "have lunch", "play", "do homework", "have dinner", "watch TV", "go to bed"]
 };

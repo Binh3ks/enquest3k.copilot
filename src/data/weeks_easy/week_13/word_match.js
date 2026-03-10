@@ -1,15 +1,14 @@
 export default {
-  title: "Match the Words",
   pairs: [
-    { id: 1, word: "box", definition: "a container with four sides", image_url: "/images/week6_easy/box.jpg" },
-    { id: 2, word: "desk", definition: "a table for working", image_url: "/images/week6_easy/desk.jpg" },
-    { id: 3, word: "floor", definition: "the surface you walk on", image_url: "/images/week6_easy/floor.jpg" },
-    { id: 4, word: "wall", definition: "the side of a room", image_url: "/images/week6_easy/wall.jpg" },
-    { id: 5, word: "window", definition: "an opening for light", image_url: "/images/week6_easy/window.jpg" },
-    { id: 6, word: "door", definition: "an opening to enter", image_url: "/images/week6_easy/door.jpg" },
-    { id: 7, word: "hide", definition: "to put where nobody can see", image_url: "/images/week6_easy/hide.jpg" },
-    { id: 8, word: "seek", definition: "to look for something", image_url: "/images/week6_easy/seek.jpg" },
-    { id: 9, word: "treasure", definition: "valuable things like gold", image_url: "/images/week6_easy/treasure.jpg" },
-    { id: 10, word: "hunt", definition: "to search carefully", image_url: "/images/week6_easy/hunt.jpg" }
+    { id: 1, word: "wake up", match: "open eyes", image: "/images/week13_easy/wake_up.jpg" },
+    { id: 2, word: "brush teeth", match: "clean teeth", image: "/images/week13_easy/brush_teeth.jpg" },
+    { id: 3, word: "eat", match: "food in mouth", image: "/images/week13_easy/eat.jpg" },
+    { id: 4, word: "go", match: "move", image: "/images/week13_easy/go.jpg" },
+    { id: 5, word: "school", match: "learn", image: "/images/week13_easy/school.jpg" },
+    { id: 6, word: "play", match: "have fun", image: "/images/week13_easy/play.jpg" },
+    { id: 7, word: "homework", match: "school work", image: "/images/week13_easy/homework.jpg" },
+    { id: 8, word: "dinner", match: "night food", image: "/images/week13_easy/dinner.jpg" },
+    { id: 9, word: "TV", match: "watch screen", image: "/images/week13_easy/tv.jpg" },
+    { id: 10, word: "sleep", match: "close eyes", image: "/images/week13_easy/sleep.jpg" }
   ]
 };

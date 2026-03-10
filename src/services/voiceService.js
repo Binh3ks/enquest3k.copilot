@@ -469,7 +469,7 @@ export const VoiceService = {
   playAudio(audioUrl, revokeAfter = true) {
     const audio = new Audio(audioUrl);
     const savedRate = parseFloat(localStorage.getItem('tts_speed') || '1.0');
-    audio.playbackRate = (savedRate >= 0.7 && savedRate <= 1.0) ? savedRate : 1.0;
+    audio.playbackRate = (savedRate >= 0.5 && savedRate <= 2.0) ? savedRate : 1.0;
 
     return new Promise((resolve, reject) => {
       audio.onended = () => {

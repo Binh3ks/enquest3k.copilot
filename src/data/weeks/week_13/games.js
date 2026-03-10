@@ -1,17 +1,17 @@
 /**
- * Week 6 Game Data - Advanced Mode (New GameHub)
+ * Week 13 Game Data - Advanced Mode (New GameHub)
  */
 
-export const week6GamesAdvanced = {
+export const week13GamesAdvanced = {
   vocabulary: [
-    'box', 'desk', 'floor', 'wall', 'window',
-    'door', 'hide', 'seek', 'ball', 'toy'
+    'wake up', 'brush teeth', 'eat breakfast', 'go to school', 'have lunch',
+    'play', 'do homework', 'have dinner', 'watch TV', 'go to bed'
   ],
   show_tell: {
     steps: 3,
     word_list: [
-      'box', 'desk', 'floor', 'wall', 'window',
-      'door', 'hide', 'seek', 'ball', 'toy'
+      'wake up', 'brush teeth', 'eat breakfast', 'go to school', 'have lunch',
+      'play', 'do homework', 'have dinner', 'watch TV', 'go to bed'
     ],
     instructions_easy: 'Say the word, add a phrase, then make a full sentence.',
     instructions_advanced: 'Say the word, add a phrase, then make a full sentence.',
@@ -20,89 +20,63 @@ export const week6GamesAdvanced = {
       2: 'Step 2: add a short phrase with the word.',
       3: 'Step 3: make a full sentence.'
     },
-    frames_easy: ['Put the ___ in the ___', 'Put the ___ on the ___'],
-    frames_advanced: ['Put the ___ on the ___', 'Put the ___ under the ___'],
+    frames_easy: ['I ___ every day', 'I ___ in the morning'],
+    frames_advanced: ['I ___ at ___ o\'clock', 'Every day I ___ and then I ___'],
     details_easy: [],
     details_advanced: [],
     detail_map: {
-      box: ['my box', 'a big box', 'the box', 'put the box on the desk'],
-      desk: ['my desk', 'a big desk', 'the desk', 'put it on the desk'],
-      floor: ['my floor', 'the floor', 'clean floor', 'put it on the floor'],
-      wall: ['my wall', 'the wall', 'big wall', 'put it on the wall'],
-      window: ['my window', 'a big window', 'the window', 'put it under the window'],
-      door: ['my door', 'a red door', 'the door', 'put it under the door'],
-      hide: ['hide now', 'hide here', 'hide the toy in the box', 'hide the ball under the desk'],
-      seek: ['seek now', 'seek here', 'seek the toy', 'seek the ball'],
-      ball: ['my ball', 'a red ball', 'the ball', 'put the ball on the floor'],
-      toy: ['my toy', 'a small toy', 'the toy', 'put the toy in the box']
+      'wake up': ['wake up', 'wake up early', 'I wake up early', 'I wake up at 7 o\'clock every morning'],
+      'brush teeth': ['brush teeth', 'brush my teeth', 'I brush my teeth', 'I brush my teeth with my toothbrush'],
+      'eat breakfast': ['eat breakfast', 'eat a big breakfast', 'I eat breakfast', 'I eat breakfast with my family'],
+      'go to school': ['go to school', 'go to school early', 'I go to school', 'I go to school at 8 o\'clock'],
+      'have lunch': ['have lunch', 'have lunch at school', 'I have lunch', 'I have lunch at 12 o\'clock'],
+      'play': ['play', 'play with friends', 'I play with friends', 'I play with my friends after school'],
+      'do homework': ['do homework', 'do my homework', 'I do my homework', 'I do my homework after dinner'],
+      'have dinner': ['have dinner', 'have dinner together', 'I have dinner', 'I have dinner with my family at 7'],
+      'watch TV': ['watch TV', 'watch TV before bed', 'I watch TV', 'I watch TV after dinner'],
+      'go to bed': ['go to bed', 'go to bed early', 'I go to bed', 'I go to bed at 9 o\'clock']
     },
     distractors_easy: [],
     distractors_advanced: [],
-    distractor_map: {
-      box: ['my ball', 'the window', 'the door'],
-      desk: ['my toy', 'the floor', 'the door']
-    },
-    frame_map: {
-      box: ['Put the ___ in the ___'],
-      ball: ['Put the ___ on the ___']
-    },
-    sentence_hints_map: {
-      box: ['Put the box on the desk.', 'Put the box on the floor.', 'Put the box under the window.'],
-      desk: ['Put the toy on the desk.', 'Put the ball on the desk.', 'Put the box on the desk.'],
-      floor: ['Put the ball on the floor.', 'Put the toy on the floor.', 'Put the box on the floor.'],
-      wall: ['Put the picture on the wall.', 'Put it on the wall.', 'Put the window on the wall.'],
-      window: ['Put the toy under the window.', 'Put the ball under the window.', 'Put it under the window.'],
-      door: ['Put the toy under the door.', 'Put the ball under the door.', 'Put it under the door.'],
-      hide: ['I hide the toy in the box.', 'I hide the ball under the desk.', 'I hide it on the floor.'],
-      seek: ['I seek the toy.', 'I seek the ball.', 'I seek under the desk.'],
-      ball: ['Put the ball on the floor.', 'Put the ball in the box.', 'Put the ball on the desk.'],
-      toy: ['Put the toy on the desk.', 'Put the toy in the box.', 'Put the toy on the floor.']
-    },
     emoji_map: {
-      box: '📦',
-      desk: '🪑',
-      floor: '⬛',
-      wall: '🧱',
-      window: '🪟',
-      door: '🚪',
-      hide: '🙈',
-      seek: '🔍',
-      ball: '⚽',
-      toy: '🧸'
-    },
-    definitions: {
-      hide: 'To put something where no one can see it.',
-      seek: 'To look for something.',
-      floor: 'The ground inside a room.',
-      wall: 'The side of a room.'
+      'wake up': '⏰',
+      'brush teeth': '🦷',
+      'eat breakfast': '🍳',
+      'go to school': '🏫',
+      'have lunch': '🍱',
+      'play': '⚽',
+      'do homework': '📚',
+      'have dinner': '🍽️',
+      'watch TV': '📺',
+      'go to bed': '🛏️'
     }
   },
   make_sentence: {
     instructions_easy: 'Unscramble the words to make a correct sentence.',
     instructions_advanced: 'Unscramble the words to make a correct sentence.',
     sentences_easy: [
-      { scrambled: ['Put', 'the', 'ball', 'on', 'the', 'floor'], answer: 'Put the ball on the floor.' },
-      { scrambled: ['Put', 'the', 'toy', 'in', 'the', 'box'], answer: 'Put the toy in the box.' },
-      { scrambled: ['Put', 'the', 'box', 'on', 'the', 'desk'], answer: 'Put the box on the desk.' },
-      { scrambled: ['Put', 'the', 'ball', 'under', 'the', 'desk'], answer: 'Put the ball under the desk.' },
-      { scrambled: ['Put', 'the', 'toy', 'on', 'the', 'desk'], answer: 'Put the toy on the desk.' },
-      { scrambled: ['Put', 'the', 'ball', 'in', 'the', 'box'], answer: 'Put the ball in the box.' },
-      { scrambled: ['Put', 'the', 'toy', 'under', 'the', 'chair'], answer: 'Put the toy under the chair.' },
-      { scrambled: ['Put', 'the', 'box', 'on', 'the', 'floor'], answer: 'Put the box on the floor.' },
-      { scrambled: ['Put', 'the', 'ball', 'on', 'the', 'desk'], answer: 'Put the ball on the desk.' },
-      { scrambled: ['Put', 'the', 'toy', 'on', 'the', 'floor'], answer: 'Put the toy on the floor.' }
+      { scrambled: ['I', 'wake', 'up', 'at', '7', 'o\'clock'], answer: 'I wake up at 7 o\'clock.' },
+      { scrambled: ['I', 'brush', 'my', 'teeth', 'every', 'morning'], answer: 'I brush my teeth every morning.' },
+      { scrambled: ['I', 'eat', 'breakfast', 'with', 'my', 'family'], answer: 'I eat breakfast with my family.' },
+      { scrambled: ['I', 'go', 'to', 'school', 'at', '8'], answer: 'I go to school at 8.' },
+      { scrambled: ['I', 'have', 'lunch', 'at', '12', 'o\'clock'], answer: 'I have lunch at 12 o\'clock.' },
+      { scrambled: ['I', 'play', 'with', 'my', 'friends', 'after', 'school'], answer: 'I play with my friends after school.' },
+      { scrambled: ['I', 'do', 'my', 'homework', 'in', 'the', 'evening'], answer: 'I do my homework in the evening.' },
+      { scrambled: ['I', 'have', 'dinner', 'with', 'my', 'family'], answer: 'I have dinner with my family.' },
+      { scrambled: ['I', 'watch', 'TV', 'before', 'bed'], answer: 'I watch TV before bed.' },
+      { scrambled: ['I', 'go', 'to', 'bed', 'at', '9', 'o\'clock'], answer: 'I go to bed at 9 o\'clock.' }
     ],
     sentences_advanced: [
-      { scrambled: ['Put', 'the', 'ball', 'on', 'the', 'floor'], answer: 'Put the ball on the floor.', base_words: ['put', 'the', 'ball', 'on', 'the', 'floor'], time_phrases: ['right now', 'in a moment', 'after playing', 'before leaving', 'this time'], location_phrases: ['in the room', 'near the door', 'by the wall', 'in the corner', 'over there'] },
-      { scrambled: ['Put', 'the', 'toy', 'in', 'the', 'box'], answer: 'Put the toy in the box.', base_words: ['put', 'the', 'toy', 'in', 'the', 'box'], time_phrases: ['right now', 'after playing', 'before bedtime', 'in a minute', 'this evening'], location_phrases: ['in the bedroom', 'on the shelf', 'in the closet', 'near the bed', 'over here'] },
-      { scrambled: ['Put', 'the', 'box', 'under', 'the', 'desk'], answer: 'Put the box under the desk.', base_words: ['put', 'the', 'box', 'under', 'the', 'desk'], time_phrases: ['right now', 'after class', 'before leaving', 'in a moment', 'this afternoon'], location_phrases: ['in the classroom', 'in the office', 'in the study', 'near the chair', 'by the window'] },
-      { scrambled: ['ball', 'Put', 'the', 'in', 'the', 'box'], answer: 'Put the ball in the box.', base_words: ['put', 'the', 'ball', 'in', 'the', 'box'], time_phrases: ['right now', 'after playing', 'before going home', 'in a minute', 'this time'], location_phrases: ['in the room', 'on the shelf', 'in the storage', 'near the toys', 'over there'] },
-      { scrambled: ['toy', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the toy on the desk.', base_words: ['put', 'the', 'toy', 'on', 'the', 'desk'], time_phrases: ['right now', 'after playing', 'before class', 'in a moment', 'this morning'], location_phrases: ['in the classroom', 'in the bedroom', 'in the study', 'near the window', 'by the chair'] },
-      { scrambled: ['the', 'Put', 'ball', 'under', 'the', 'chair'], answer: 'Put the ball under the chair.', base_words: ['put', 'the', 'ball', 'under', 'the', 'chair'], time_phrases: ['right now', 'after playing', 'before dinner', 'in a minute', 'this evening'], location_phrases: ['in the room', 'in the kitchen', 'in the dining area', 'near the table', 'over there'] },
-      { scrambled: ['the', 'Put', 'toy', 'on', 'the', 'floor'], answer: 'Put the toy on the floor.', base_words: ['put', 'the', 'toy', 'on', 'the', 'floor'], time_phrases: ['right now', 'after playing', 'before cleaning', 'in a moment', 'this time'], location_phrases: ['in the room', 'in the bedroom', 'near the bed', 'by the door', 'in the corner'] },
-      { scrambled: ['box', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the box on the desk.', base_words: ['put', 'the', 'box', 'on', 'the', 'desk'], time_phrases: ['right now', 'after organizing', 'before class', 'in a moment', 'this morning'], location_phrases: ['in the classroom', 'in the office', 'in the bedroom', 'near the books', 'by the lamp'] },
-      { scrambled: ['ball', 'Put', 'the', 'on', 'the', 'desk'], answer: 'Put the ball on the desk.', base_words: ['put', 'the', 'ball', 'on', 'the', 'desk'], time_phrases: ['right now', 'after playing', 'before leaving', 'in a minute', 'this afternoon'], location_phrases: ['in the classroom', 'in the bedroom', 'in the study', 'near the lamp', 'by the window'] },
-      { scrambled: ['toy', 'Put', 'the', 'under', 'the', 'window'], answer: 'Put the toy under the window.', base_words: ['put', 'the', 'toy', 'under', 'the', 'window'], time_phrases: ['right now', 'after playing', 'before bedtime', 'in a moment', 'this evening'], location_phrases: ['in the bedroom', 'in the living room', 'in the playroom', 'near the curtain', 'by the wall'] }
+      { scrambled: ['I', 'wake', 'up', 'at', '7', 'o\'clock'], answer: 'I wake up at 7 o\'clock.', base_words: ['i', 'wake', 'up', 'at', '7', 'o\'clock'], time_phrases: ['every morning', 'every day', 'on weekdays', 'on Monday', 'this morning'], location_phrases: ['in my room', 'in my bed', 'at home', 'in the morning', 'by myself'] },
+      { scrambled: ['I', 'brush', 'my', 'teeth', 'every', 'morning'], answer: 'I brush my teeth every morning.', base_words: ['i', 'brush', 'my', 'teeth', 'every', 'morning'], time_phrases: ['every morning', 'every night', 'before school', 'after eating', 'at 7'], location_phrases: ['in the bathroom', 'at the sink', 'at home', 'before bed', 'with toothpaste'] },
+      { scrambled: ['I', 'eat', 'breakfast', 'with', 'my', 'family'], answer: 'I eat breakfast with my family.', base_words: ['i', 'eat', 'breakfast', 'with', 'my', 'family'], time_phrases: ['every morning', 'at 7', 'before school', 'at 8 o\'clock', 'on weekdays'], location_phrases: ['in the kitchen', 'at the table', 'at home', 'in the dining room', 'together'] },
+      { scrambled: ['go', 'I', 'to', 'school', 'at', '8'], answer: 'I go to school at 8.', base_words: ['i', 'go', 'to', 'school', 'at', '8'], time_phrases: ['every morning', 'on weekdays', 'at 8 o\'clock', 'after breakfast', 'on Monday'], location_phrases: ['by bus', 'by bike', 'on foot', 'with my friends', 'with my mom'] },
+      { scrambled: ['have', 'I', 'lunch', 'at', '12', 'o\'clock'], answer: 'I have lunch at 12 o\'clock.', base_words: ['i', 'have', 'lunch', 'at', '12', 'o\'clock'], time_phrases: ['every day', 'at noon', 'at 12', 'on weekdays', 'after class'], location_phrases: ['at school', 'in the cafeteria', 'with my friends', 'in the classroom', 'at the canteen'] },
+      { scrambled: ['play', 'I', 'with', 'my', 'friends', 'after', 'school'], answer: 'I play with my friends after school.', base_words: ['i', 'play', 'with', 'my', 'friends', 'after', 'school'], time_phrases: ['every day', 'after school', 'in the afternoon', 'at 4 o\'clock', 'on weekends'], location_phrases: ['at the park', 'at school', 'in the yard', 'outside', 'near my house'] },
+      { scrambled: ['do', 'I', 'my', 'homework', 'in', 'the', 'evening'], answer: 'I do my homework in the evening.', base_words: ['i', 'do', 'my', 'homework', 'in', 'the', 'evening'], time_phrases: ['every evening', 'at 6 o\'clock', 'after dinner', 'before TV', 'on weekdays'], location_phrases: ['at my desk', 'in my room', 'at home', 'in the living room', 'by myself'] },
+      { scrambled: ['have', 'I', 'dinner', 'with', 'my', 'family'], answer: 'I have dinner with my family.', base_words: ['i', 'have', 'dinner', 'with', 'my', 'family'], time_phrases: ['every evening', 'at 7 o\'clock', 'after homework', 'at night', 'on weekdays'], location_phrases: ['in the kitchen', 'at the table', 'at home', 'in the dining room', 'together'] },
+      { scrambled: ['watch', 'I', 'TV', 'before', 'bed'], answer: 'I watch TV before bed.', base_words: ['i', 'watch', 'tv', 'before', 'bed'], time_phrases: ['every night', 'at 8 o\'clock', 'after dinner', 'before sleep', 'on weekdays'], location_phrases: ['in the living room', 'in my room', 'on the sofa', 'at home', 'with my family'] },
+      { scrambled: ['go', 'I', 'to', 'bed', 'at', '9', 'o\'clock'], answer: 'I go to bed at 9 o\'clock.', base_words: ['i', 'go', 'to', 'bed', 'at', '9', 'o\'clock'], time_phrases: ['every night', 'at 9', 'after TV', 'on weekdays', 'on school nights'], location_phrases: ['in my room', 'in my bed', 'at home', 'after brushing teeth', 'after reading'] }
     ]
   },
   ask_me: {
@@ -110,373 +84,211 @@ export const week6GamesAdvanced = {
     instructions_advanced: 'Ask a question that matches the context.',
     contexts_easy: [
       {
-        id: 'w6_ball_where',
+        id: 'w13_wake_time',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'Put the ball on the floor. Ask me where to put the ball.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where should I put the ball?',
-          'Where is it?'
-        ],
-        answer: 'Put the ball on the floor.',
-        question_hints: ['Where is the ball?', 'Where should I put the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
+        topic: 'wake up',
+        intro: 'I wake up at 7 o\'clock. Ask me what time I wake up.',
+        acceptedQuestions: ['What time do you wake up?', 'When do you wake up?', 'What time?'],
+        answer: 'I wake up at 7 o\'clock.',
+        question_hints: ['What time do you wake up?', 'When do you wake up?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['wake'],
+        hints: { words: ['what', 'time', 'do', 'you', 'wake', 'up'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_toy_where',
+        id: 'w13_breakfast_what',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'Put the toy in the box. Ask me where to put the toy.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where should I put the toy?',
-          'Where is it?'
-        ],
-        answer: 'Put the toy in the box.',
-        question_hints: ['Where is the toy?', 'Where should I put the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
+        topic: 'breakfast',
+        intro: 'I eat breakfast every morning. Ask me what I eat.',
+        acceptedQuestions: ['What do you eat for breakfast?', 'What do you eat?', 'What is your breakfast?'],
+        answer: 'I eat rice and eggs for breakfast.',
+        question_hints: ['What do you eat for breakfast?', 'What do you eat?'],
+        required_question_words: ['what'],
+        required_keywords: ['eat'],
+        hints: { words: ['what', 'do', 'you', 'eat', 'breakfast'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_box_where',
+        id: 'w13_school_time',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'Put the box on the desk. Ask me where to put the box.',
-        acceptedQuestions: [
-          'Where is the box?',
-          'Where should I put it?',
-          'Where is the toy?'
-        ],
-        answer: 'Put the box on the desk.',
-        question_hints: ['Where is the box?', 'Where should I put it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
-        hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
-        }
+        topic: 'school',
+        intro: 'I go to school every day. Ask me what time I go.',
+        acceptedQuestions: ['What time do you go to school?', 'When do you go to school?', 'What time?'],
+        answer: 'I go to school at 8 o\'clock.',
+        question_hints: ['What time do you go to school?', 'When do you go to school?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['school'],
+        hints: { words: ['what', 'time', 'do', 'you', 'go', 'school'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_desk_where',
+        id: 'w13_after_school',
         task_type: 'find_question',
-        topic: 'desk',
-        intro: 'Put the toy on the desk. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
+        topic: 'after school',
+        intro: 'After school I do many things. Ask me what I do after school.',
+        acceptedQuestions: ['What do you do after school?', 'What do you do?', 'Do you play after school?'],
+        answer: 'I play with friends after school.',
+        question_hints: ['What do you do after school?', 'Do you play after school?'],
+        required_question_words: ['what', 'do'],
+        required_keywords: ['after', 'school'],
+        hints: { words: ['what', 'do', 'you', 'after', 'school'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_floor_where',
+        id: 'w13_bed_time',
         task_type: 'find_question',
-        topic: 'floor',
-        intro: 'Put the ball on the floor. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
+        topic: 'bedtime',
+        intro: 'I go to bed every night. Ask me what time I go to bed.',
+        acceptedQuestions: ['What time do you go to bed?', 'When do you go to bed?', 'What time do you sleep?'],
+        answer: 'I go to bed at 9 o\'clock.',
+        question_hints: ['What time do you go to bed?', 'When do you go to bed?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['bed', 'sleep'],
+        hints: { words: ['what', 'time', 'do', 'you', 'go', 'bed'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_door_where',
-        task_type: 'find_question',
-        topic: 'door',
-        intro: 'Put the toy under the door. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_window_where',
-        task_type: 'find_question',
-        topic: 'window',
-        intro: 'Put the ball under the window. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_hide_where',
-        task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_mini_position',
+        id: 'w13_mini_routine',
         task_type: 'mini_interview',
-        topic: 'position',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
+        topic: 'routine',
+        intro: 'Interview me: ask what time I wake up, then ask what I eat for breakfast.',
         steps: [
           {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
+            prompt: 'Ask what time I wake up.',
+            required_question_words: ['what', 'when'],
+            required_keywords: ['wake'],
+            question_hints: ['What time do you wake up?', 'When do you wake up?']
           },
           {
-            prompt: 'Ask where the toy is.',
-            acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
-            ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            prompt: 'Ask what I eat for breakfast.',
+            acceptedQuestions: ['What do you eat for breakfast?', 'What do you eat?'],
+            required_question_words: ['what'],
+            required_keywords: ['eat', 'breakfast'],
+            question_hints: ['What do you eat for breakfast?', 'What do you eat?']
           }
         ],
-        hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
-        }
+        hints: { words: ['what', 'time', 'do', 'you', 'wake', 'eat', 'breakfast'], tricky: ['where', 'who'] }
       }
     ],
     contexts_advanced: [
       {
-        id: 'w6_ball_where_adv',
+        id: 'w13_wake_time_adv',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'Put the ball on the floor. Ask me where to put the ball.',
-        acceptedQuestions: [
-          'Where should I put the ball?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'Put the ball on the floor.',
-        question_hints: ['Where should I put the ball?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball', 'put'],
-          tricky: ['what', 'who']
-        }
+        topic: 'wake up',
+        intro: 'I wake up at 7 o\'clock every morning. Ask me what time I wake up.',
+        acceptedQuestions: ['What time do you wake up?', 'When do you wake up?', 'What time do you wake up every morning?'],
+        answer: 'I wake up at 7 o\'clock every morning.',
+        question_hints: ['What time do you wake up?', 'When do you wake up?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['wake'],
+        hints: { words: ['what', 'time', 'do', 'you', 'wake', 'up'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_toy_where_adv',
+        id: 'w13_breakfast_adv',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'Put the toy in the box. Ask me where to put the toy.',
-        acceptedQuestions: [
-          'Where should I put the toy?',
-          'Where is the toy?',
-          'Where is it?'
-        ],
-        answer: 'Put the toy in the box.',
-        question_hints: ['Where should I put the toy?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy', 'put'],
-          tricky: ['what', 'who']
-        }
+        topic: 'breakfast',
+        intro: 'I eat breakfast with my family every morning. Ask me what I eat.',
+        acceptedQuestions: ['What do you eat for breakfast?', 'What do you eat in the morning?', 'What is your breakfast?'],
+        answer: 'I eat rice and eggs for breakfast.',
+        question_hints: ['What do you eat for breakfast?', 'What do you eat in the morning?'],
+        required_question_words: ['what'],
+        required_keywords: ['eat', 'breakfast'],
+        hints: { words: ['what', 'do', 'you', 'eat', 'breakfast', 'morning'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_box_where_adv',
+        id: 'w13_school_adv',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'Put the box on the desk. Ask me where to put the box.',
-        acceptedQuestions: [
-          'Where should I put the box?',
-          'Where is the box?',
-          'Where is it?'
-        ],
-        answer: 'Put the box on the desk.',
-        question_hints: ['Where should I put the box?', 'Where is the box?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
-        hints: {
-          words: ['where', 'is', 'the', 'box', 'put'],
-          tricky: ['what', 'who']
-        }
+        topic: 'school',
+        intro: 'I go to school at 8 o\'clock. Ask me what time I go to school.',
+        acceptedQuestions: ['What time do you go to school?', 'When do you go to school?', 'What time do you leave for school?'],
+        answer: 'I go to school at 8 o\'clock.',
+        question_hints: ['What time do you go to school?', 'When do you go to school?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['school', 'go'],
+        hints: { words: ['what', 'time', 'do', 'you', 'go', 'to', 'school'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_desk_where_adv',
+        id: 'w13_lunch_adv',
         task_type: 'find_question',
-        topic: 'desk',
-        intro: 'Put the toy on the desk. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
+        topic: 'lunch',
+        intro: 'I have lunch at school at 12 o\'clock. Ask me what time I have lunch.',
+        acceptedQuestions: ['What time do you have lunch?', 'When do you have lunch?', 'What time do you eat lunch?'],
+        answer: 'I have lunch at 12 o\'clock.',
+        question_hints: ['What time do you have lunch?', 'When do you have lunch?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['lunch'],
+        hints: { words: ['what', 'time', 'do', 'you', 'have', 'lunch'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_floor_where_adv',
+        id: 'w13_homework_adv',
         task_type: 'find_question',
-        topic: 'floor',
-        intro: 'Put the ball on the floor. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
+        topic: 'homework',
+        intro: 'I do my homework every evening. Ask me when I do homework.',
+        acceptedQuestions: ['When do you do homework?', 'What time do you do homework?', 'Do you do homework every day?'],
+        answer: 'I do my homework in the evening.',
+        question_hints: ['When do you do homework?', 'What time do you do homework?'],
+        required_question_words: ['when', 'what'],
+        required_keywords: ['homework'],
+        hints: { words: ['when', 'do', 'you', 'homework', 'what', 'time'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_door_where_adv',
+        id: 'w13_dinner_adv',
         task_type: 'find_question',
-        topic: 'door',
-        intro: 'Put the toy under the door. Ask me where to put the toy.',
-        acceptedQuestions: [
-          'Where should I put the toy?',
-          'Where is the toy?',
-          'Where is it?'
-        ],
-        answer: 'Put the toy under the door.',
-        question_hints: ['Where should I put the toy?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy', 'put'],
-          tricky: ['what', 'who']
-        }
+        topic: 'dinner',
+        intro: 'I have dinner with my family every evening. Ask me what time I have dinner.',
+        acceptedQuestions: ['What time do you have dinner?', 'When do you have dinner?', 'What do you eat for dinner?'],
+        answer: 'I have dinner at 7 o\'clock.',
+        question_hints: ['What time do you have dinner?', 'When do you have dinner?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['dinner'],
+        hints: { words: ['what', 'time', 'do', 'you', 'have', 'dinner'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_window_where_adv',
+        id: 'w13_bed_adv',
         task_type: 'find_question',
-        topic: 'window',
-        intro: 'Put the ball under the window. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
+        topic: 'bedtime',
+        intro: 'I go to bed at 9 o\'clock every night. Ask me what time I go to bed.',
+        acceptedQuestions: ['What time do you go to bed?', 'When do you go to bed?', 'What time do you go to sleep?'],
+        answer: 'I go to bed at 9 o\'clock.',
+        question_hints: ['What time do you go to bed?', 'When do you go to bed?'],
+        required_question_words: ['what', 'when'],
+        required_keywords: ['bed', 'sleep'],
+        hints: { words: ['what', 'time', 'do', 'you', 'go', 'bed', 'sleep'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_hide_where_adv',
+        id: 'w13_tv_adv',
         task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
+        topic: 'TV',
+        intro: 'I watch TV after dinner. Ask me if I watch TV.',
+        acceptedQuestions: ['Do you watch TV?', 'Do you watch TV after dinner?', 'What do you watch?'],
+        answer: 'Yes, I watch TV after dinner.',
+        question_hints: ['Do you watch TV?', 'Do you watch TV after dinner?'],
+        required_question_words: ['do'],
+        required_keywords: ['watch', 'TV'],
+        hints: { words: ['do', 'you', 'watch', 'TV', 'after', 'dinner'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_mini_hideseek',
+        id: 'w13_mini_daily',
         task_type: 'mini_interview',
-        topic: 'hideseek',
-        intro: 'Interview me: ask where to put the ball, then ask where the toy is.',
+        topic: 'daily routine',
+        intro: 'Interview me about my day: ask what time I wake up, then ask what I do after school.',
         steps: [
           {
-            prompt: 'Ask where to put the ball.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where should I put the ball?', 'Where is the ball?', 'Where is it?']
+            prompt: 'Ask what time I wake up.',
+            required_question_words: ['what', 'when'],
+            required_keywords: ['wake'],
+            question_hints: ['What time do you wake up?', 'When do you wake up?']
           },
           {
-            prompt: 'Ask where the toy is.',
-            acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
-            ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
+            prompt: 'Ask what I do after school.',
+            acceptedQuestions: ['What do you do after school?', 'Do you play after school?'],
+            required_question_words: ['what', 'do'],
+            required_keywords: ['after', 'school'],
+            question_hints: ['What do you do after school?', 'Do you play after school?']
           }
         ],
-        hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy', 'put'],
-          tricky: ['what', 'who']
-        }
+        hints: { words: ['what', 'time', 'do', 'you', 'wake', 'after', 'school'], tricky: ['where', 'who'] }
       }
     ],
-    required_question_words_easy: ['where', 'is'],
-    required_question_words_advanced: ['where', 'is']
+    required_question_words_easy: ['what', 'when', 'do'],
+    required_question_words_advanced: ['what', 'when', 'do']
   }
 };
 
-export default week6GamesAdvanced;
+export default week13GamesAdvanced;

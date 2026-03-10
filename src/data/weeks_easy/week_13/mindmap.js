@@ -1,60 +1,60 @@
 const mindMapContent = {
   centerStems: [
-    { text: "The treasure is ___.", audio: "/audio/week6_easy/mindmap_stem_1.mp3" },
-    { text: "I hide ___ the desk.", audio: "/audio/week6_easy/mindmap_stem_2.mp3" },
-    { text: "Look ___ the box.", audio: "/audio/week6_easy/mindmap_stem_3.mp3" },
-    { text: "The box is next to ___.", audio: "/audio/week6_easy/mindmap_stem_4.mp3" },
-    { text: "We play ___ games.", audio: "/audio/week6_easy/mindmap_stem_5.mp3" },
-    { text: "I can find things ___.", audio: "/audio/week6_easy/mindmap_stem_6.mp3" }
+    { text: "I ___ up.", audio: "/audio/week13_easy/mindmap_stem_1.mp3" },
+    { text: "I brush my ___.", audio: "/audio/week13_easy/mindmap_stem_2.mp3" },
+    { text: "I eat ___.", audio: "/audio/week13_easy/mindmap_stem_3.mp3" },
+    { text: "I ___ with friends.", audio: "/audio/week13_easy/mindmap_stem_4.mp3" },
+    { text: "I go to ___.", audio: "/audio/week13_easy/mindmap_stem_5.mp3" },
+    { text: "I like ___.", audio: "/audio/week13_easy/mindmap_stem_6.mp3" }
   ],
   branchLabels: {
-    "The treasure is ___.": [
-      { text: "in the box", audio: "/audio/week6_easy/mindmap_branch_1.mp3" },
-      { text: "on the desk", audio: "/audio/week6_easy/mindmap_branch_2.mp3" },
-      { text: "under the chair", audio: "/audio/week6_easy/mindmap_branch_3.mp3" },
-      { text: "next to the door", audio: "/audio/week6_easy/mindmap_branch_4.mp3" },
-      { text: "on the floor", audio: "/audio/week6_easy/mindmap_branch_5.mp3" },
-      { text: "next to the window", audio: "/audio/week6_easy/mindmap_branch_6.mp3" }
+    "I ___ up.": [
+      { text: "wake", audio: "/audio/week13_easy/mindmap_branch_1.mp3" },
+      { text: "get", audio: "/audio/week13_easy/mindmap_branch_2.mp3" },
+      { text: "stand", audio: "/audio/week13_easy/mindmap_branch_3.mp3" },
+      { text: "jump", audio: "/audio/week13_easy/mindmap_branch_4.mp3" },
+      { text: "sit", audio: "/audio/week13_easy/mindmap_branch_5.mp3" },
+      { text: "look", audio: "/audio/week13_easy/mindmap_branch_6.mp3" }
     ],
-    "I hide ___ the desk.": [
-      { text: "under", audio: "/audio/week6_easy/mindmap_branch_7.mp3" },
-      { text: "next to", audio: "/audio/week6_easy/mindmap_branch_8.mp3" },
-      { text: "on", audio: "/audio/week6_easy/mindmap_branch_9.mp3" },
-      { text: "behind", audio: "/audio/week6_easy/mindmap_branch_10.mp3" },
-      { text: "near", audio: "/audio/week6_easy/mindmap_branch_11.mp3" },
-      { text: "beside", audio: "/audio/week6_easy/mindmap_branch_12.mp3" }
+    "I brush my ___.": [
+      { text: "teeth", audio: "/audio/week13_easy/mindmap_branch_7.mp3" },
+      { text: "hair", audio: "/audio/week13_easy/mindmap_branch_8.mp3" },
+      { text: "teeth every day", audio: "/audio/week13_easy/mindmap_branch_9.mp3" },
+      { text: "teeth at night", audio: "/audio/week13_easy/mindmap_branch_10.mp3" },
+      { text: "teeth with paste", audio: "/audio/week13_easy/mindmap_branch_11.mp3" },
+      { text: "teeth in the morning", audio: "/audio/week13_easy/mindmap_branch_12.mp3" }
     ],
-    "Look ___ the box.": [
-      { text: "in", audio: "/audio/week6_easy/mindmap_branch_13.mp3" },
-      { text: "under", audio: "/audio/week6_easy/mindmap_branch_14.mp3" },
-      { text: "on", audio: "/audio/week6_easy/mindmap_branch_15.mp3" },
-      { text: "next to", audio: "/audio/week6_easy/mindmap_branch_16.mp3" },
-      { text: "behind", audio: "/audio/week6_easy/mindmap_branch_17.mp3" },
-      { text: "inside", audio: "/audio/week6_easy/mindmap_branch_18.mp3" }
+    "I eat ___.": [
+      { text: "breakfast", audio: "/audio/week13_easy/mindmap_branch_13.mp3" },
+      { text: "lunch", audio: "/audio/week13_easy/mindmap_branch_14.mp3" },
+      { text: "dinner", audio: "/audio/week13_easy/mindmap_branch_15.mp3" },
+      { text: "rice", audio: "/audio/week13_easy/mindmap_branch_16.mp3" },
+      { text: "bread", audio: "/audio/week13_easy/mindmap_branch_17.mp3" },
+      { text: "eggs", audio: "/audio/week13_easy/mindmap_branch_18.mp3" }
     ],
-    "The box is next to ___.": [
-      { text: "the door", audio: "/audio/week6_easy/mindmap_branch_19.mp3" },
-      { text: "the window", audio: "/audio/week6_easy/mindmap_branch_20.mp3" },
-      { text: "the desk", audio: "/audio/week6_easy/mindmap_branch_21.mp3" },
-      { text: "the wall", audio: "/audio/week6_easy/mindmap_branch_22.mp3" },
-      { text: "the chair", audio: "/audio/week6_easy/mindmap_branch_23.mp3" },
-      { text: "the floor", audio: "/audio/week6_easy/mindmap_branch_24.mp3" }
+    "I ___ with friends.": [
+      { text: "play", audio: "/audio/week13_easy/mindmap_branch_19.mp3" },
+      { text: "eat", audio: "/audio/week13_easy/mindmap_branch_20.mp3" },
+      { text: "go", audio: "/audio/week13_easy/mindmap_branch_21.mp3" },
+      { text: "talk", audio: "/audio/week13_easy/mindmap_branch_22.mp3" },
+      { text: "walk", audio: "/audio/week13_easy/mindmap_branch_23.mp3" },
+      { text: "run", audio: "/audio/week13_easy/mindmap_branch_24.mp3" }
     ],
-    "We play ___ games.": [
-      { text: "hide and seek", audio: "/audio/week6_easy/mindmap_branch_25.mp3" },
-      { text: "treasure hunt", audio: "/audio/week6_easy/mindmap_branch_26.mp3" },
-      { text: "finding", audio: "/audio/week6_easy/mindmap_branch_27.mp3" },
-      { text: "hiding", audio: "/audio/week6_easy/mindmap_branch_28.mp3" },
-      { text: "seeking", audio: "/audio/week6_easy/mindmap_branch_29.mp3" },
-      { text: "hunting", audio: "/audio/week6_easy/mindmap_branch_30.mp3" }
+    "I go to ___.": [
+      { text: "school", audio: "/audio/week13_easy/mindmap_branch_25.mp3" },
+      { text: "bed", audio: "/audio/week13_easy/mindmap_branch_26.mp3" },
+      { text: "home", audio: "/audio/week13_easy/mindmap_branch_27.mp3" },
+      { text: "the park", audio: "/audio/week13_easy/mindmap_branch_28.mp3" },
+      { text: "class", audio: "/audio/week13_easy/mindmap_branch_29.mp3" },
+      { text: "sleep", audio: "/audio/week13_easy/mindmap_branch_30.mp3" }
     ],
-    "I can find things ___.": [
-      { text: "under the desk", audio: "/audio/week6_easy/mindmap_branch_31.mp3" },
-      { text: "in the box", audio: "/audio/week6_easy/mindmap_branch_32.mp3" },
-      { text: "on the floor", audio: "/audio/week6_easy/mindmap_branch_33.mp3" },
-      { text: "next to the door", audio: "/audio/week6_easy/mindmap_branch_34.mp3" },
-      { text: "on the wall", audio: "/audio/week6_easy/mindmap_branch_35.mp3" },
-      { text: "next to the window", audio: "/audio/week6_easy/mindmap_branch_36.mp3" }
+    "I like ___.": [
+      { text: "playing", audio: "/audio/week13_easy/mindmap_branch_31.mp3" },
+      { text: "eating", audio: "/audio/week13_easy/mindmap_branch_32.mp3" },
+      { text: "TV", audio: "/audio/week13_easy/mindmap_branch_33.mp3" },
+      { text: "school", audio: "/audio/week13_easy/mindmap_branch_34.mp3" },
+      { text: "sleeping", audio: "/audio/week13_easy/mindmap_branch_35.mp3" },
+      { text: "morning", audio: "/audio/week13_easy/mindmap_branch_36.mp3" }
     ]
   }
 };

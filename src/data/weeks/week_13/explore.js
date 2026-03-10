@@ -1,38 +1,38 @@
 export default {
-  title_en: "Hide and Seek Around the World",
-  title_vi: "Trốn Tìm trên Khắp Thế giới",
-  image_url: "/images/week6/explore_cover_w06.jpg",
-  audio_url: "/audio/week6/explore_main.mp3",
-  content_en: "Children everywhere love to play hide and seek! In this game, one person closes their eyes and counts. The others **hide** in secret places. Some children hide **under the desk**. Others hide **next to the door** or **behind the wall**. When counting is done, the seeker must **seek** and find everyone! Some hide **in a box** or **on the floor** behind furniture. The best hiding spots are **next to the window** with curtains. Every country plays this game a little differently. In some places, you say 'Ready or not, here I come!' In others, you shout different words. But everywhere, children giggle when found. Hide and seek teaches us about **location** words like in, on, under, and next to. It's a fun treasure **hunt** for friends! This game makes us think: where is the best place to hide?",
-  content_vi: "Trẻ em ở khắp mọi nơi đều thích chơi trốn tìm! Trong trò chơi này, một người nhắm mắt và đếm. Những người khác trốn ở những nơi bí mật. Một số trẻ trốn dưới bàn. Những đứa khác trốn bên cạnh cửa hoặc sau tường. Khi đếm xong, người tìm phải tìm kiếm và tìm ra mọi người! Một số trốn trong hộp hoặc trên sàn phía sau đồ đạc. Những nơi ẩn nấp tốt nhất là bên cạnh cửa sổ có rèm. Mỗi quốc gia chơi trò này hơi khác nhau. Ở một số nơi, bạn nói 'Sẵn sàng hay chưa, tôi đến đây!' Ở những nơi khác, bạn hét những từ khác. Nhưng ở khắp mọi nơi, trẻ em cười khúc khích khi được tìm thấy. Trốn tìm dạy chúng ta về các từ vị trí như trong, trên, dưới, và bên cạnh. Đó là một cuộc săn kho báu vui vẻ cho bạn bè! Trò chơi này khiến chúng ta suy nghĩ: đâu là nơi tốt nhất để trốn?",
+  title_en: "Daily Routines Around the World",
+  title_vi: "Thói Quen Hàng Ngày Trên Khắp Thế Giới",
+  image_url: "/images/week13/explore_cover_w13.jpg",
+  audio_url: "/audio/week13/explore_main.mp3",
+  content_en: "Every child in the world has a daily routine! In the morning, children **wake up** and **brush their teeth**. Some children wake up at 6 o'clock, and some wake up at 8 o'clock. Then they **eat breakfast**. In Vietnam, many children eat rice or noodles for breakfast. In Japan, children eat rice and miso soup. In America, children often eat cereal or toast. After breakfast, children **go to school**. At lunchtime, they **have lunch** with their friends. After school, children love to **play** with friends! Some **play** soccer, some ride bikes. In the evening, children **do homework** and **have dinner** with their family. Many children **watch TV** before bedtime. Finally, they **brush their teeth** again and **go to bed**. Every day is different, but routines help us stay healthy and happy! What does YOUR daily routine look like?",
+  content_vi: "Mọi trẻ em trên thế giới đều có thói quen hàng ngày! Vào buổi sáng, trẻ em thức dậy và đánh răng. Một số trẻ thức dậy lúc 6 giờ, và một số thức dậy lúc 8 giờ. Sau đó họ ăn sáng. Ở Việt Nam, nhiều trẻ em ăn cơm hoặc phở vào bữa sáng. Ở Nhật Bản, trẻ em ăn cơm và súp miso. Ở Mỹ, trẻ em thường ăn ngũ cốc hoặc bánh mì nướng. Sau bữa sáng, trẻ em đi học. Vào giờ trưa, bọn trẻ ăn trưa với bạn bè. Sau giờ học, trẻ em thích chơi với bạn bè! Một số chơi bóng đá, một số đi xe đạp. Vào buổi tối, trẻ em làm bài tập và ăn tối với gia đình. Nhiều trẻ em xem TV trước giờ đi ngủ. Cuối cùng, chúng đánh răng lại và đi ngủ. Mỗi ngày đều khác nhau, nhưng thói quen giúp chúng ta khỏe mạnh và hạnh phúc! Thói quen hàng ngày của BẠN trông như thế nào?",
   check_questions: [
     {
       id: 1,
-      question_en: "What do children do in hide and seek?",
-      answer: ["hide", "hide and seek", "hide in secret places", "seek"],
-      hint_en: "They put themselves where others can't see...",
-      hint_vi: "Họ đặt mình ở nơi người khác không thể thấy..."
+      question_en: "What do children do first in the morning?",
+      answer: ["wake up", "brush teeth", "wake up and brush teeth"],
+      hint_en: "Think about what you do when you open your eyes...",
+      hint_vi: "Nghĩ về điều bạn làm khi mở mắt..."
     },
     {
       id: 2,
-      question_en: "Where are some good hiding spots?",
-      answer: ["under the desk", "next to the door", "behind the wall", "in a box", "next to the window"],
-      hint_en: "Think about places in a room...",
-      hint_vi: "Nghĩ về những nơi trong phòng..."
+      question_en: "What do children eat for breakfast in Vietnam?",
+      answer: ["rice", "noodles", "rice or noodles", "pho"],
+      hint_en: "Think about Vietnamese breakfast foods...",
+      hint_vi: "Nghĩ về đồ ăn sáng Việt Nam..."
     },
     {
       id: 3,
-      question_en: "What does hide and seek teach us?",
-      answer: ["location words", "in on under next to", "prepositions", "where things are"],
-      hint_en: "Words about WHERE things are...",
-      hint_vi: "Các từ về vị trí..."
+      question_en: "What do children do after school?",
+      answer: ["play", "play with friends", "play soccer", "ride bikes"],
+      hint_en: "What is the fun activity after school?",
+      hint_vi: "Hoạt động vui sau giờ học là gì?"
     }
   ],
   question: {
-    text_en: "Where do you like to hide? What is your favorite game with friends?",
-    text_vi: "Bạn thích trốn ở đâu? Trò chơi yêu thích của bạn với bạn bè là gì?",
+    text_en: "What is your daily routine? What time do you wake up and what do you eat for breakfast?",
+    text_vi: "Thói quen hàng ngày của bạn là gì? Bạn thức dậy lúc mấy giờ và ăn gì cho bữa sáng?",
     min_words: 30,
-    hint_en: "Think about good hiding places and fun games...",
-    hint_vi: "Nghĩ về những nơi ẩn nấp tốt và trò chơi vui..."
+    hint_en: "Think about your morning, afternoon, and evening...",
+    hint_vi: "Nghĩ về buổi sáng, buổi chiều, và buổi tối của bạn..."
   }
 };

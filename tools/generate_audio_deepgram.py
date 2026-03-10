@@ -74,11 +74,11 @@ R2_BUCKET        = "engquest-audio"
 # Maps station role → (deepgram_model, google_neural2_voice, gender)
 VOICE_MAP = {
     # role            deepgram model          Google Neural2 voice    gender
-    "narration" : ("aura-2-orion-en",   "en-US-Neural2-D", "male"),
-    "vocabulary": ("aura-2-asteria-en", "en-US-Neural2-F", "female"),
-    "dictation" : ("aura-2-luna-en",    "en-US-Neural2-F", "female"),
-    "questions" : ("aura-2-zeus-en",    "en-US-Neural2-D", "male"),
-    "mindmap"   : ("aura-2-helios-en",  "en-US-Neural2-D", "male"),
+    "narration" : ("aura-orion-en",   "en-US-Neural2-D", "male"),
+    "vocabulary": ("aura-asteria-en", "en-US-Neural2-F", "female"),
+    "dictation" : ("aura-luna-en",    "en-US-Neural2-F", "female"),
+    "questions" : ("aura-zeus-en",    "en-US-Neural2-D", "male"),
+    "mindmap"   : ("aura-helios-en",  "en-US-Neural2-D", "male"),
 }
 
 # Kokoro voice map (HF Space uses voice name param)
@@ -92,7 +92,7 @@ KOKORO_VOICE_MAP = {
 #  TTS ENGINES
 # ─────────────────────────────────────────────────────────────────────────────
 
-def tts_deepgram(text: str, model: str, output_path: Path) -> bool:
+def tts_deepgram(text: str, model: str, output_path: Path, speed: float = 1.0) -> bool:
     """Generate audio with Deepgram Aura-2. Returns True on success."""
     import urllib.request
     import urllib.error
@@ -100,8 +100,14 @@ def tts_deepgram(text: str, model: str, output_path: Path) -> bool:
     if not DEEPGRAM_API_KEY:
         return False
 
+    # Append trailing period + pause to prevent Deepgram from clipping the last syllable
+    padded_text = text.rstrip()
+    if not padded_text.endswith(('.', '!', '?', ',')):
+        padded_text += '.'
+    padded_text += ' ...'
+
     url = f"https://api.deepgram.com/v1/speak?model={model}&encoding=mp3"
-    data = json.dumps({"text": text}).encode("utf-8")
+    data = json.dumps({"text": padded_text}).encode("utf-8")
     req = urllib.request.Request(
         url,
         data=data,
@@ -128,7 +134,7 @@ def tts_deepgram(text: str, model: str, output_path: Path) -> bool:
         return False
 
 
-def tts_google(text: str, voice_name: str, output_path: Path) -> bool:
+def tts_google(text: str, voice_name: str, output_path: Path, speed: float = 1.0) -> bool:
     """Generate audio with Google TTS REST API. Returns True on success."""
     import urllib.request
     import urllib.error
@@ -142,7 +148,7 @@ def tts_google(text: str, voice_name: str, output_path: Path) -> bool:
     payload = {
         "input": {"text": text},
         "voice": {"languageCode": lang, "name": voice_name},
-        "audioConfig": {"audioEncoding": "MP3"},
+        "audioConfig": {"audioEncoding": "MP3", "speakingRate": speed},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
@@ -161,7 +167,7 @@ def tts_google(text: str, voice_name: str, output_path: Path) -> bool:
         return False
 
 
-def tts_kokoro_hf(text: str, gender: str, output_path: Path) -> bool:
+def tts_kokoro_hf(text: str, gender: str, output_path: Path, speed: float = 1.0) -> bool:
     """Generate audio with HF Kokoro Space. Returns True on success."""
     import urllib.request
     import urllib.parse
@@ -186,28 +192,28 @@ def tts_kokoro_hf(text: str, gender: str, output_path: Path) -> bool:
 # ─────────────────────────────────────────────────────────────────────────────
 
 _DEFAULT_VOICE_CONFIG = {
-    "narration" : "en-US-Neural2-D",
-    "vocabulary": "en-US-Neural2-F",
-    "dictation" : "en-US-Neural2-F",
-    "questions" : "en-US-Neural2-D",
-    "mindmap"   : "en-US-Neural2-D",
+    "narration" : "en-US-Neural2-D",   # → aura-orion-en (male)
+    "vocabulary": "en-US-Neural2-F",   # → aura-asteria-en (female)
+    "dictation" : "en-US-Neural2-C",   # → aura-luna-en (female)
+    "questions" : "en-US-Neural2-J",   # → aura-zeus-en (male)
+    "mindmap"   : "en-GB-Neural2-B",   # → aura-helios-en (male)
 }
 
 # Google Neural2 voice → (deepgram model, gender)
 _GOOGLE_TO_DEEPGRAM = {
     # US Male
-    "en-US-Neural2-D": ("aura-2-orion-en",   "male"),
-    "en-US-Neural2-J": ("aura-2-zeus-en",    "male"),
+    "en-US-Neural2-D": ("aura-orion-en",   "male"),
+    "en-US-Neural2-J": ("aura-zeus-en",    "male"),
     # US Female
-    "en-US-Neural2-F": ("aura-2-asteria-en", "female"),
-    "en-US-Neural2-C": ("aura-2-luna-en",    "female"),
-    "en-US-Neural2-E": ("aura-2-stella-en",  "female"),
+    "en-US-Neural2-F": ("aura-asteria-en", "female"),
+    "en-US-Neural2-C": ("aura-luna-en",    "female"),
+    "en-US-Neural2-E": ("aura-stella-en",  "female"),
     # UK Male
-    "en-GB-Neural2-D": ("aura-2-orion-en",   "male"),
-    "en-GB-Neural2-B": ("aura-2-helios-en",  "male"),
+    "en-GB-Neural2-D": ("aura-orion-en",   "male"),
+    "en-GB-Neural2-B": ("aura-helios-en",  "male"),
     # UK Female (Google marks these as A/C = female, B/D = male)
-    "en-GB-Neural2-A": ("aura-2-asteria-en", "female"),
-    "en-GB-Neural2-C": ("aura-2-luna-en",    "female"),
+    "en-GB-Neural2-A": ("aura-asteria-en", "female"),
+    "en-GB-Neural2-C": ("aura-luna-en",    "female"),
 }
 
 
@@ -217,8 +223,8 @@ def _google_voice_to_deepgram(google_voice: str):
         return _GOOGLE_TO_DEEPGRAM[google_voice]
     # Heuristic: Neural2-D/J/B = male, otherwise female
     if google_voice.endswith("-D") or google_voice.endswith("-J") or google_voice.endswith("-B"):
-        return ("aura-2-orion-en", "male")
-    return ("aura-2-asteria-en", "female")
+        return ("aura-orion-en", "male")
+    return ("aura-asteria-en", "female")
 
 
 def load_voice_config(index_js_path: Path) -> dict:
@@ -476,7 +482,9 @@ def run_for_week_mode(
     local_only: bool = False,
     auto_upload: bool = False,
     use_kokoro: bool = False,
+    use_google_first: bool = False,
     station_filter: str | None = None,
+    speed: float = 1.0,
 ):
     """Process one week × mode combination."""
     root = Path(__file__).parent.parent.resolve()
@@ -528,19 +536,28 @@ def run_for_week_mode(
 
         if use_kokoro:
             # Manual Kokoro fallback mode
-            success = tts_kokoro_hf(text, gend, local_file)
+            success = tts_kokoro_hf(text, gend, local_file, speed)
             if not success:
                 print(f"    ⚠️  Kokoro failed, trying Deepgram...")
-                success = tts_deepgram(text, model, local_file)
+                success = tts_deepgram(text, model, local_file, speed)
+        elif use_google_first:
+            # Google TTS first (supports speakingRate for speed control)
+            success = tts_google(text, gv, local_file, speed)
+            if not success:
+                print(f"    ⚠️  Google failed, trying Deepgram...")
+                success = tts_deepgram(text, model, local_file, speed)
+            if not success:
+                print(f"    ⚠️  Deepgram failed too, trying HF Kokoro...")
+                success = tts_kokoro_hf(text, gend, local_file, speed)
         else:
             # Normal tier: Deepgram → Google → Kokoro
-            success = tts_deepgram(text, model, local_file)
+            success = tts_deepgram(text, model, local_file, speed)
             if not success and GOOGLE_API_KEY:
                 print(f"    ⚠️  Deepgram failed, trying Google TTS...")
-                success = tts_google(text, gv, local_file)
+                success = tts_google(text, gv, local_file, speed)
             if not success:
                 print(f"    ⚠️  Google failed too, trying HF Kokoro...")
-                success = tts_kokoro_hf(text, gend, local_file)
+                success = tts_kokoro_hf(text, gend, local_file, speed)
 
         if success:
             generated += 1
@@ -607,6 +624,10 @@ def main():
         help="After generation, bulk-upload ALL local files for the week to R2")
     parser.add_argument("--kokoro", action="store_true",
         help="Use HF Kokoro as primary engine (manual fallback mode)")
+    parser.add_argument("--google-first", action="store_true",
+        help="Use Google TTS as primary engine (supports speakingRate for speed control)")
+    parser.add_argument("--speed", type=float, default=1.0,
+        help="Speaking rate (0.5-2.0, default 1.0). Lower = slower. E.g. 0.85. Only effective with Google TTS (--google-first)")
     args = parser.parse_args()
 
     # ── Validate API keys ─────────────────────────────────────────────────────
@@ -646,6 +667,7 @@ def main():
                 auto_upload=args.upload,
                 use_kokoro=args.kokoro,
                 station_filter=args.station,
+                speed=args.speed,
             )
             total_gen  += g
             total_skip += s

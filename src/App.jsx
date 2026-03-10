@@ -1,10 +1,11 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams } from 'react-router-dom';
-import { Menu, Printer } from 'lucide-react';
+import { Menu, Printer, Gauge } from 'lucide-react';
 
 // STORES & API
 import { useUserStore } from './stores/useUserStore';
 import { progressAPI } from './services/api';
+import useTTSStore from './stores/useTTSStore';
 
 // CONFIG & CONSTANTS
 import { MODULE_COMPONENTS, STATIONS } from './config/stationConfig';
@@ -71,6 +72,8 @@ const MainLayout = () => {
   const [autoSaveStatus, setAutoSaveStatus] = useState('idle');
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [reviewItems, setReviewItems] = useState([]);
+  
+  const { speed: ttsSpeed, speedPresets, setSpeed: setTTSSpeed } = useTTSStore();
   
   const params = useParams();
   const weekId = parseInt(params.weekId || 1);
@@ -258,6 +261,22 @@ const MainLayout = () => {
             
             <div className="flex items-center gap-3">
                <AutoSaveIndicator status={autoSaveStatus} />
+
+               {/* TTS Speed Selector — applies to ALL station audio playback */}
+               <div className="flex items-center gap-1.5 bg-blue-50 border border-blue-200 rounded-xl px-2.5 py-1.5 hover:bg-blue-100 transition-colors">
+                 <Gauge size={16} className="text-blue-600 flex-shrink-0" />
+                 <select
+                   value={ttsSpeed}
+                   onChange={(e) => setTTSSpeed(e.target.value)}
+                   className="text-[11px] font-bold border-none bg-transparent text-blue-700 focus:outline-none cursor-pointer appearance-none pr-1"
+                   title="TTS Playback Speed"
+                 >
+                   {speedPresets.map((s) => (
+                     <option key={s.id} value={s.id}>{s.label}</option>
+                   ))}
+                 </select>
+               </div>
+
                <button onClick={() => window.print()} title="Print Worksheet" className="p-2.5 bg-indigo-600 text-white hover:bg-indigo-700 rounded-xl shadow-md transition-all active:scale-95 flex items-center gap-2 px-4 group">
                   <Printer size={18} className="group-hover:rotate-12 transition-transform"/>
                   <span className="text-[10px] font-black uppercase tracking-wider hidden sm:block">Print Worksheet</span>

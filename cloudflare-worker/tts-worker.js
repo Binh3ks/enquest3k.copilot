@@ -140,6 +140,11 @@ async function handleTTS(request, env, ctx, url) {
 // ─────────────────────────────────────────────────────────────
 async function fetchDeepgramTTS(text, env, model) {
   model = model || DEEPGRAM_MODEL;
+  // Pad text with trailing ellipsis to prevent Deepgram from clipping the last syllable
+  let padded = text.trim();
+  if (!/[.!?,]$/.test(padded)) padded += '.';
+  padded += ' ...';
+
   const dgUrl = 'https://api.deepgram.com/v1/speak?model=' + model + '&encoding=mp3';
 
   const controller = new AbortController();
@@ -153,7 +158,7 @@ async function fetchDeepgramTTS(text, env, model) {
         'Authorization': 'Token ' + env.DEEPGRAM_API_KEY,
         'Content-Type':  'application/json'
       },
-      body: JSON.stringify({ text: text })
+      body: JSON.stringify({ text: padded })
     });
     clearTimeout(timeoutId);
 

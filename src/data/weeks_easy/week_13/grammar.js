@@ -1,34 +1,33 @@
 export default {
   grammar_explanation: {
-    title_en: "Prepositions (In, On, Under, Next to)",
-    title_vi: "Giới từ (Trong, Trên, Dưới, Bên cạnh)",
+    title_en: "Present Simple (I do every day)",
+    title_vi: "Thì Hiện Tại Đơn (Tôi làm mỗi ngày)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'in' for inside: in the box, in the room", rule_vi: "Dùng 'in' cho bên trong: in the box, in the room" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'on' for on top: on the desk, on the floor", rule_vi: "Dùng 'on' cho trên: on the desk, on the floor" },
-      { type: "rule", icon: "3️⃣", rule_en: "Use 'under' for below: under the desk, under the chair", rule_vi: "Dùng 'under' cho dưới: under the desk, under the chair" },
-      { type: "rule", icon: "4️⃣", rule_en: "Use 'next to' for beside: next to the door, next to the window", rule_vi: "Dùng 'next to' cho bên cạnh: next to the door, next to the window" }
+      { type: "rule", icon: "1️⃣", rule_en: "I wake up. I eat. I play.", rule_vi: "I wake up. I eat. I play." },
+      { type: "rule", icon: "2️⃣", rule_en: "She wakes up. He eats.", rule_vi: "She wakes up. He eats." },
+      { type: "rule", icon: "3️⃣", rule_en: "I go to school. I go to bed.", rule_vi: "I go to school. I go to bed." }
     ]
   },
   exercises: [
-    { id: 1, type: "mc", question: "The treasure is ___ the box.", options: ["in", "on", "under"], answer: "in", hint: "inside the container" },
-    { id: 2, type: "fill", question: "The book is ___ the desk.", answer: "on", hint: "on top of" },
-    { id: 3, type: "mc", question: "The ball is ___ the chair.", options: ["in", "under", "next to"], answer: "under", hint: "below" },
-    { id: 4, type: "fill", question: "The lamp is ___ ___ the window.", answer: "next to", hint: "beside" },
-    { id: 5, type: "mc", question: "Look ___ the floor for the toy.", options: ["in", "on", "under"], answer: "on", hint: "on top of the surface" },
-    { id: 6, type: "fill", question: "Hide ___ the desk.", answer: "under", hint: "below it" },
-    { id: 7, type: "mc", question: "The picture is ___ the wall.", options: ["in", "on", "under"], answer: "on", hint: "attached to" },
-    { id: 8, type: "fill", question: "The treasure is ___ ___ the door.", answer: "next to", hint: "beside" },
-    { id: 9, type: "unscramble", question: "Order:", words: ["is", "The", "box", "on", "the", "desk"], answer: "The box is on the desk.", hint: "The box is" },
-    { id: 10, type: "unscramble", question: "Order:", words: ["Look", "under", "the", "chair"], answer: "Look under the chair.", hint: "Look under" },
-    { id: 11, type: "unscramble", question: "Order:", words: ["treasure", "The", "is", "in", "the", "box"], answer: "The treasure is in the box.", hint: "The treasure is" },
-    { id: 12, type: "unscramble", question: "Order:", words: ["Hide", "next", "to", "the", "door"], answer: "Hide next to the door.", hint: "Hide next to" },
-    { id: 13, type: "mc", question: "The cat is hiding ___ the bed.", options: ["in", "on", "under"], answer: "under", hint: "below the bed" },
-    { id: 14, type: "fill", question: "The book is ___ the shelf.", answer: "on", hint: "on top of" },
-    { id: 15, type: "mc", question: "Put the toy ___ the box.", options: ["in", "on", "next to"], answer: "in", hint: "inside" },
-    { id: 16, type: "fill", question: "Sit ___ ___ me.", answer: "next to", hint: "beside me" },
-    { id: 17, type: "mc", question: "The keys are ___ the table.", options: ["in", "on", "under"], answer: "on", hint: "on top of" },
-    { id: 18, type: "fill", question: "The dog is sleeping ___ the tree.", answer: "under", hint: "below" },
-    { id: 19, type: "unscramble", question: "Order:", words: ["cat", "The", "is", "next", "to", "the", "window"], answer: "The cat is next to the window.", hint: "The cat is" },
-    { id: 20, type: "unscramble", question: "Order:", words: ["Put", "the", "pen", "in", "the", "bag"], answer: "Put the pen in the bag.", hint: "Put the pen" }
+    { id: 1, type: "multiple_choice", question: "I ___ up.", options: ["wake", "wakes"], answer: "wake", explanation: "I wake" },
+    { id: 2, type: "multiple_choice", question: "I ___ my teeth.", options: ["brush", "brushes"], answer: "brush", explanation: "I brush" },
+    { id: 3, type: "multiple_choice", question: "I ___ breakfast.", options: ["eat", "eats"], answer: "eat", explanation: "I eat" },
+    { id: 4, type: "multiple_choice", question: "I ___ to school.", options: ["go", "goes"], answer: "go", explanation: "I go" },
+    { id: 5, type: "multiple_choice", question: "I ___ lunch.", options: ["have", "has"], answer: "have", explanation: "I have" },
+    { id: 6, type: "fill_in_blank", question: "I ___.", answer: "play", hint: "have fun" },
+    { id: 7, type: "fill_in_blank", question: "I ___ homework.", answer: "do", hint: "work" },
+    { id: 8, type: "fill_in_blank", question: "I ___ dinner.", answer: "have", hint: "eat food" },
+    { id: 9, type: "fill_in_blank", question: "I ___ TV.", answer: "watch", hint: "look at" },
+    { id: 10, type: "fill_in_blank", question: "I ___ to bed.", answer: "go", hint: "sleep" },
+    { id: 11, type: "unscramble", words: ["I", "wake", "up"], answer: "I wake up" },
+    { id: 12, type: "unscramble", words: ["I", "brush", "teeth"], answer: "I brush teeth" },
+    { id: 13, type: "unscramble", words: ["I", "eat"], answer: "I eat" },
+    { id: 14, type: "unscramble", words: ["I", "go", "school"], answer: "I go school" },
+    { id: 15, type: "unscramble", words: ["I", "have", "lunch"], answer: "I have lunch" },
+    { id: 16, type: "unscramble", words: ["I", "play"], answer: "I play" },
+    { id: 17, type: "unscramble", words: ["I", "do", "homework"], answer: "I do homework" },
+    { id: 18, type: "unscramble", words: ["I", "have", "dinner"], answer: "I have dinner" },
+    { id: 19, type: "unscramble", words: ["I", "watch", "TV"], answer: "I watch TV" },
+    { id: 20, type: "unscramble", words: ["I", "go", "bed"], answer: "I go bed" }
   ]
 };

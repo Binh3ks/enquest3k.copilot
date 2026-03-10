@@ -1,37 +1,37 @@
 export default {
-  title: "The Treasure Hunt",
-  image_url: "/images/week6/read_cover_w06.jpg",
-  audio_url: "/audio/week6/read_explore_main.mp3",
-  content_en: "Today is treasure hunt day! My friends and I look for hidden treasure. I look **under the desk**. No treasure there! I look **on the floor**. Nothing! My friend looks **in the box**. He finds a clue! The clue says: 'Look next to the window.' We run to the **window**. There is another clue **on the wall**! It says: 'The treasure is in the room. Look under something big.' We look **under the big desk**. We find it! A **box** full of gold coins! The **treasure** is ours! We are happy. **Hide and seek** is fun. **Hunting** for treasure makes us work together. Next time, I will **hide** the treasure **next to the door**!",
-  content_vi: "Hôm nay là ngày săn kho báu! Bạn bè tôi và tôi tìm kiếm kho báu ẩn giấu. Tôi nhìn dưới bàn. Không có kho báu ở đó! Tôi nhìn trên sàn. Không có gì! Bạn tôi nhìn trong hộp. Cậu ấy tìm thấy một manh mối! Manh mối nói: 'Hãy nhìn bên cạnh cửa sổ.' Chúng tôi chạy đến cửa sổ. Có một manh mối khác trên tường! Nó nói: 'Kho báu ở trong phòng. Hãy nhìn dưới thứ gì đó lớn.' Chúng tôi nhìn dưới cái bàn lớn. Chúng tôi tìm thấy nó! Một hộp đầy tiền vàng! Kho báu là của chúng tôi! Chúng tôi vui lắm. Trốn tìm thật vui. Săn tìm kho báu khiến chúng tôi làm việc cùng nhau. Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!",
+  title: "A Perfect School Day",
+  image_url: "/images/week13/read_cover_w13.jpg",
+  audio_url: "/audio/week13/read_explore_main.mp3",
+  content_en: "Today is a perfect school day! I **wake up** at 7 o'clock. My mom wakes me up. I **brush my teeth** with my blue toothbrush. Then I **eat breakfast**. I eat rice and eggs. Yummy! At 8 o'clock, I **go to school**. I walk with my friends. At 12 o'clock, I **have lunch** at school. After lunch, I **play** with my friends. We play tag. At 4 o'clock, I go home. I **do my homework**. I write and read. At 7 o'clock, I **have dinner** with my family. After dinner, I **watch TV**. I watch cartoons. At 9 o'clock, I **go to bed**. My mom says goodnight. I close my eyes and sleep. Tomorrow will be another perfect day!",
+  content_vi: "Hôm nay là một ngày học hoàn hảo! Tôi thức dậy lúc 7 giờ. Mẹ đánh thức tôi. Tôi đánh răng bằng bàn chải màu xanh. Sau đó tôi ăn sáng. Tôi ăn cơm và trứng. Ngon! Lúc 8 giờ, tôi đi học. Tôi đi bộ với bạn bè. Lúc 12 giờ, tôi ăn trưa ở trường. Sau bữa trưa, tôi chơi với bạn bè. Chúng tôi chơi đuổi bắt. Lúc 4 giờ, tôi về nhà. Tôi làm bài tập. Tôi viết và đọc. Lúc 7 giờ, tôi ăn tối với gia đình. Sau bữa tối, tôi xem ti vi. Tôi xem hoạt hình. Lúc 9 giờ, tôi đi ngủ. Mẹ chúc ngủ ngon. Tôi nhắm mắt và ngủ. Ngày mai sẽ là một ngày hoàn hảo khác!",
   comprehension_questions: [
     {
       id: 1,
-      question_en: "What are the children looking for?",
-      answer: ["treasure", "hidden treasure", "gold coins"],
-      hint_en: "Something valuable...",
-      hint_vi: "Thứ gì đó quý giá..."
+      question_en: "What time does the child wake up?",
+      answer: ["7 o'clock", "7", "seven"],
+      hint_en: "A time in the morning...",
+      hint_vi: "Một thời gian buổi sáng..."
     },
     {
       id: 2,
-      question_en: "Where did they find the first clue?",
-      answer: ["in the box", "box"],
-      hint_en: "A container...",
-      hint_vi: "Một cái hộp..."
+      question_en: "What does the child eat for breakfast?",
+      answer: ["rice and eggs", "rice", "eggs"],
+      hint_en: "A type of food...",
+      hint_vi: "Một loại thức ăn..."
     },
     {
       id: 3,
-      question_en: "Where was the treasure hiding?",
-      answer: ["under the desk", "under the big desk", "desk"],
-      hint_en: "Below something you work on...",
-      hint_vi: "Dưới thứ bạn làm việc trên đó..."
+      question_en: "What time does the child go to bed?",
+      answer: ["9 o'clock", "9", "nine"],
+      hint_en: "A time at night...",
+      hint_vi: "Một thời gian buổi tối..."
     }
   ],
   question: {
-    text_en: "Where do you hide things? What games do you play with friends?",
-    text_vi: "Bạn giấu đồ ở đâu? Bạn chơi trò chơi gì với bạn bè?",
+    text_en: "What is YOUR daily routine? What time do you wake up and go to bed?",
+    text_vi: "Thói quen hàng ngày của BẠN là gì? Bạn thức dậy và đi ngủ lúc mấy giờ?",
     min_words: 30,
-    hint_en: "Talk about your favorite hiding places and games...",
-    hint_vi: "Nói về nơi ẩn nấp yêu thích và trò chơi của bạn..."
+    hint_en: "Talk about your morning, afternoon, and evening activities...",
+    hint_vi: "Nói về các hoạt động buổi sáng, chiều và tối của bạn..."
   }
 };

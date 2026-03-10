@@ -1,10 +1,10 @@
 export default {
-  title: "Finding the Treasure",
+  title: "My Day",
   min_words: 30,
-  model_sentence: "I play treasure hunt. My friend hides a box. I look for the box. I look under the bed. The box is not there. I look on the desk. The box is not there. I look in the closet. I find the box! The box is next to my shoes. I open the box. There is candy in the box. I am happy!",
-  instruction_en: "Write about finding a treasure. Tell us where you look.",
-  instruction_vi: "Viết về việc tìm kho báu. Kể cho chúng tôi biết bạn tìm ở đâu.",
-  prompt_en: "Where do you look for the treasure? Do you look under the bed? Do you look on the desk? Where do you find it?",
-  prompt_vi: "Bạn tìm kho báu ở đâu? Bạn có tìm dưới giường không? Bạn có tìm trên bàn không? Bạn tìm thấy ở đâu?",
-  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"]
+  model_sentence: "I wake up at 7 o'clock. I brush my teeth. I eat breakfast. I go to school. I have lunch. I play with friends. I do homework. I eat dinner. I watch TV. I go to bed at 9 o'clock.",
+  instruction_en: "Write about your day. Use: I wake up. I eat. I go. I play. I sleep.",
+  instruction_vi: "Viết về ngày của bạn. Dùng: I wake up. I eat. I go. I play. I sleep.",
+  prompt_en: "What do you do every day? What time do you wake up? What do you do after school?",
+  prompt_vi: "Bạn làm gì mỗi ngày? Bạn thức dậy lúc mấy giờ? Bạn làm gì sau giờ học?",
+  keywords: ["wake up", "brush teeth", "eat", "go", "school", "play", "homework", "dinner", "TV", "sleep"]
 };
