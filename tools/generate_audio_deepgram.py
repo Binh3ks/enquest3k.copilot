@@ -378,13 +378,11 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
                     if not s.startswith('/audio/')
                 ]
             for i, t in enumerate(stem_list):
-                # Skip stems that contain ___ blanks — they don't form
-                # readable sentences without the branch word filled in.
-                if '___' in t:
-                    continue
-                clean = re.sub(r'\.\s*$', '', t.strip())
+                # Replace ___ blanks with ... so TTS reads surrounding words naturally
+                clean = t.replace('___', '...')
+                clean = re.sub(r'\.\.\s*$', '', clean.strip())
                 if clean:
-                    _task(clean + ".", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
+                    _task(clean + ". ...", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
 
         # ── Branch labels ────────────────────────────────────────────────────
         bl_start = re.search(r'branchLabels\s*:\s*{', content)
