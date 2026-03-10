@@ -25,7 +25,7 @@ const weekData = {
     vocabulary: 'en-US-Neural2-F',
     dictation: 'en-US-Neural2-C',
     questions: 'en-US-Neural2-J',
-    mindmap: 'en-GB-Neural2-B'
+    mindmap: 'en-US-Neural2-F'
   },
   
   stations: {
