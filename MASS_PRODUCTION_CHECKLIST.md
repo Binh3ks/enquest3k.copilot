@@ -251,6 +251,47 @@ export default {
 3. [ ] Videos: Update daily_watch.js with found YouTube videos
 4. [ ] Database: `node tools/update_db_smart.js X`
 
+### ⚠️ TTS Best Practices (Deepgram Aura - Week 13 Lessons)
+
+**CRITICAL TEXT FORMATTING RULES:**
+
+1. **Apostrophes Cause Truncation**
+   - ❌ BAD: `"7 o'clock"` → TTS reads: "seven oh" (truncates at apostrophe)
+   - ✅ GOOD: `"7 o clock"` → TTS reads: "seven o clock" (full pronunciation)
+   - **Rule**: Replace ALL `o'clock` with `o clock` (space, no apostrophe)
+
+2. **Final Consonants Need Periods**
+   - ❌ BAD: `word + " ..."` → "lunch ..." (loses /ch/ sound)
+   - ✅ GOOD: `word + ". . . . ."` → "lunch. . . . ." (preserves /ch/)
+   - **Rule**: Period SAT từ + spaced dots for trailing silence
+
+3. **Pauses in Mindmap Stems**
+   - ❌ BAD: `"I ___ up"` (skip blank) → no pause
+   - ❌ BAD: `"I blank up"` → TTS reads "blank" literally
+   - ❌ BAD: `"I ... up"` → TTS reads "uh uh uh" (glottal)
+   - ✅ GOOD: `"I, up"` → comma creates natural pause
+   - **Rule**: Replace `___` with comma `,` for natural pause
+
+4. **Trailing Silence Prevention**
+   - Always add spaced dots: `" . . . . . . "` (6 dots)
+   - Prevents audio cutoff at end of file
+   - Critical for final consonants: /t/, /k/, /ch/, /th/, /p/
+
+**Check Before Audio Generation:**
+```bash
+# Verify no apostrophes in o'clock
+grep -r "o'clock" src/data/weeks/week_X --include="*.js"
+# Should return 0 results! If found, replace with "o clock"
+```
+
+**Audio Regeneration After Text Fixes:**
+```bash
+# If you fix text content, regenerate affected stations:
+python3 tools/generate_audio_deepgram.py X --station read_explore --force --mode all
+python3 tools/generate_audio_deepgram.py X --station shadowing --force --mode advanced
+python3 tools/generate_audio_deepgram.py X --station logic --force --mode all
+```
+
 ---
 
 ## AUDIO UPLOAD & CONTENT VALIDATION (⚠️ WEEK 12 LESSON)
