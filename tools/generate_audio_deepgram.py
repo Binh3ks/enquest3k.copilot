@@ -379,13 +379,13 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
                     if not s.startswith('/audio/')
                 ]
             for i, t in enumerate(stem_list):
-                # Replace ___ blanks with pause (space-padded to prevent word merging)
-                clean = t.replace('___', ' ... ')
+                # Replace ___ with comma for natural pause, not dots (which TTS reads as "uh uh")
+                clean = t.replace('___', ',')
                 # Remove trailing periods before adding padding
                 clean = re.sub(r'\.\s*$', '', clean.strip())
                 if clean:
-                    # Add trailing padding to prevent cutoff
-                    _task(clean + " ...", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
+                    # Add longer trailing silence to prevent cutoff (especially for o'clock)
+                    _task(clean + " . . . . . . ", "mindmap", f"mindmap_stem_{i+1}.mp3", "mindmap")
 
         # ── Branch labels ────────────────────────────────────────────────────
         bl_start = re.search(r'branchLabels\s*:\s*{', content)
