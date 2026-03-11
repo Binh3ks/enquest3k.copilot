@@ -253,43 +253,75 @@ export default {
 
 ### ⚠️ TTS Best Practices (Deepgram Aura - Week 13 Lessons)
 
-**CRITICAL TEXT FORMATTING RULES:**
+**CRITICAL: Separation of Concerns - Content vs Audio**
 
-1. **Apostrophes Cause Truncation**
-   - ❌ BAD: `"7 o'clock"` → TTS reads: "seven oh" (truncates at apostrophe)
-   - ✅ GOOD: `"7 o clock"` → TTS reads: "seven o clock" (full pronunciation)
-   - **Rule**: Replace ALL `o'clock` with `o clock` (space, no apostrophe)
+**Key principle**: Display text shows proper spelling for users. Audio generation preprocesses text for TTS engines.
 
-2. **Final Consonants Need Periods**
+**ROOT CAUSE DISCOVERED:**
+- Voice model `aura-orion-en` (male, read/shadowing): handles apostrophes correctly
+- Voice model `aura-luna-en` (female, dictation): truncates at apostrophe (reads "oh" instead of "o clock")
+- Issue is **voice-specific**, not universal!
+
+**SOLUTION IMPLEMENTED:**
+
+1. **Content Files**: Use correct spelling `o'clock`
+   - Users see proper English spelling
+   - Maintain content quality and standards
+   - Source files remain grammatically correct
+
+2. **Audio Generation Script**: Preprocess text in `_task()` function
+   ```python
+   def _task(text: str, role: str, filename: str, station: str):
+       # Preprocess text for TTS (affects audio only, not source content)
+       text = text.replace("o'clock", "o clock")  # Fix for aura-luna-en voice
+       ...
+   ```
+   - Centralized preprocessing before TTS API call
+   - Affects audio generation only
+   - No impact on displayed content
+
+**OTHER TTS BEST PRACTICES:**
+
+3. **Final Consonants Need Periods**
    - ❌ BAD: `word + " ..."` → "lunch ..." (loses /ch/ sound)
    - ✅ GOOD: `word + ". . . . ."` → "lunch. . . . ." (preserves /ch/)
    - **Rule**: Period SAT từ + spaced dots for trailing silence
 
-3. **Pauses in Mindmap Stems**
+4. **Pauses in Mindmap Stems**
    - ❌ BAD: `"I ___ up"` (skip blank) → no pause
    - ❌ BAD: `"I blank up"` → TTS reads "blank" literally
    - ❌ BAD: `"I ... up"` → TTS reads "uh uh uh" (glottal)
    - ✅ GOOD: `"I, up"` → comma creates natural pause
    - **Rule**: Replace `___` with comma `,` for natural pause
 
-4. **Trailing Silence Prevention**
+5. **Trailing Silence Prevention**
    - Always add spaced dots: `" . . . . . . "` (6 dots)
    - Prevents audio cutoff at end of file
    - Critical for final consonants: /t/, /k/, /ch/, /th/, /p/
 
-**Check Before Audio Generation:**
+**Content Creation Guidelines:**
 ```bash
-# Verify no apostrophes in o'clock
-grep -r "o'clock" src/data/weeks/week_X --include="*.js"
-# Should return 0 results! If found, replace with "o clock"
+# ✅ CORRECT: Write content with proper spelling
+export default {
+  sentences: [
+    { id: 1, text: "I wake up at 7 o'clock." },  // Proper apostrophe
+    { id: 2, text: "School starts at 8 o'clock." }
+  ]
+};
+
+# ❌ WRONG: Don't modify content for TTS
+# The audio script handles preprocessing automatically
 ```
 
-**Audio Regeneration After Text Fixes:**
+**Verification:**
 ```bash
-# If you fix text content, regenerate affected stations:
-python3 tools/generate_audio_deepgram.py X --station read_explore --force --mode all
-python3 tools/generate_audio_deepgram.py X --station shadowing --force --mode advanced
-python3 tools/generate_audio_deepgram.py X --station logic --force --mode all
+# Content should have proper spelling
+grep "o'clock" src/data/weeks/week_X/*.js
+# Should return matches (this is correct!)
+
+# Audio generation script handles cleanup
+grep "text.replace" tools/generate_audio_deepgram.py
+# Should show: text = text.replace("o'clock", "o clock")
 ```
 
 ---
