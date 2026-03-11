@@ -134,6 +134,7 @@ function buildPrompt(word, definition, type, weekNum = null) {
             '11': `3D illustration of two happy children reading a book with pop-up playground and park scenes, slides and swings emerging from pages, weekend fun theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
             '12': `3D illustration of two diverse children reading a book with musical notes and stars floating out, talent show performance theme, energetic atmosphere, Pixar style, vibrant colors, soft studio lighting, clean background.`,
             '13': `3D illustration of two children reading a book showing daily routine icons (toothbrush, clock, breakfast), morning routine theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '14': `3D illustration of two happy children reading a book with pop-up presentation poster and microphone, project showcase theme, confident and proud expressions, Pixar style, vibrant colors, soft studio lighting, clean background.`,
             '15': `3D illustration of two happy children reading a book with animated park scene, kids playing and running, busy activity theme, Pixar style, vibrant colors, soft studio lighting, clean background.`
         };
         return readThemes[weekNum] || `3D illustration of two happy children reading a glowing book together, content related to week ${weekNum} theme, magical learning atmosphere, Pixar style, vibrant colors, soft studio lighting, clean background.`;
@@ -149,6 +150,7 @@ function buildPrompt(word, definition, type, weekNum = null) {
             '11': `3D illustration of diverse children exploring different weekend fun spots (playground, park, library) with magnifying glass, discovering exciting places to play, Pixar style, vibrant colors, soft studio lighting, clean background.`,
             '12': `3D illustration of children exploring a colorful stage with magnifying glass, discovering musical instruments and art supplies, talent discovery theme, Pixar style, vibrant colors, soft studio lighting, clean background.`,
             '13': `3D illustration of children exploring a house with magnifying glass, observing daily routines (brushing teeth, eating breakfast, bedtime), time clock visible, Pixar style, vibrant colors, soft studio lighting, clean background.`,
+            '14': `3D illustration of diverse children exploring a presentation room with magnifying glass, colorful posters on walls showing family photos and talents, confident kids presenting projects, Pixar style, vibrant colors, soft studio lighting, clean background.`,
             '15': `3D illustration of diverse children exploring a busy park with magnifying glass, observing kids playing various activities (running, jumping, climbing), action-packed scene, Pixar style, vibrant colors, soft studio lighting, clean background.`
         };
         return exploreThemes[weekNum] || `3D illustration of children exploring with magnifying glass, discovering new things related to week ${weekNum} theme, happy adventurous faces, Pixar style, vibrant colors, soft studio lighting, clean background.`;

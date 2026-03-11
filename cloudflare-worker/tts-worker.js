@@ -1,24 +1,37 @@
 // ─────────────────────────────────────────────────────────────
 //  EngQuest TTS Worker — Deepgram Aura + R2 Cache
 //
-//  R2 HIT  → instant Deepgram audio (<100ms)
-//  R2 MISS → call Deepgram Aura (~200-500ms) → return audio
-//            + save to R2 in background (ctx.waitUntil)
-//  Next    → R2 HIT → instant ✅
+//  DYNAMIC CONTENT (AI Tutor):
+//    R2 HIT  → instant Deepgram audio (<100ms)
+//    R2 MISS → call Deepgram Aura (~200-500ms) → return audio
+//              + save to R2 in background (ctx.waitUntil)
+//    Next    → R2 HIT → instant ✅
+//
+//  STATIC CONTENT (Lessons):
+//    Path-based: audio/week14/dictation_7.mp3
+//    R2 MISS → generate on-demand with voiceConfig voice
+//           → save to exact path for next request
+//    No pre-generation needed! Audio auto-generates on first play.
 //
 //  No cold start. No 503. No HF dependency.
 // ─────────────────────────────────────────────────────────────
 
-// Deepgram Aura — female voices for ESL education
-// aura-luna-en    → soft, warm, gentle (best for kids/ESL) ← CURRENT
-// aura-asteria-en → natural, expressive, conversational
+// Deepgram Aura — voices for ESL education
+// Female voices:
+// aura-luna-en    → soft, warm, gentle (best for kids/ESL, dictation)
+// aura-asteria-en → natural, expressive, conversational (vocabulary, mindmap)
 // aura-stella-en  → bright, clear (original — too sharp)
 // aura-athena-en  → warm, British accent
+// aura-hera-en    → gentle, clear
+// Male voices:
+// aura-orion-en   → deep, authoritative (narration, stories)
+// aura-zeus-en    → energetic, engaging (questions, challenges)
 const DEEPGRAM_MODEL   = 'aura-luna-en';
 
 // Allowed voice overrides (whitelist for security)
 const ALLOWED_VOICES = new Set([
-  'aura-luna-en', 'aura-asteria-en', 'aura-stella-en', 'aura-athena-en', 'aura-hera-en'
+  'aura-luna-en', 'aura-asteria-en', 'aura-stella-en', 'aura-athena-en', 'aura-hera-en',
+  'aura-orion-en', 'aura-zeus-en'  // Male voices for narration & questions
 ]);
 const DEEPGRAM_TIMEOUT = 8000;  // 8s hard cap — Deepgram rarely takes >1s
 
@@ -64,6 +77,10 @@ async function handleTTS(request, env, ctx, url) {
   // Allow client to request a specific voice (ignored for cached R2 entries)
   const voiceParam = url.searchParams.get('voice');
   const activeModel = (voiceParam && ALLOWED_VOICES.has(voiceParam)) ? voiceParam : DEEPGRAM_MODEL;
+  
+  // NEW: Support for static content path (e.g., audio/week14/dictation_7.mp3)
+  // If path is provided, use it directly instead of generating hash-based path
+  const staticPath = url.searchParams.get('path');
 
   if (!text) {
     return new Response('Missing text parameter', { status: 400, headers: corsHeaders() });
@@ -71,7 +88,11 @@ async function handleTTS(request, env, ctx, url) {
 
   const cleanText = text.trim().toLowerCase();
   const hash      = await sha256(cleanText + '|' + activeModel);
-  const objectKey = 'dynamic/' + station + '/' + hash + '.mp3';
+  
+  // Determine R2 object key:
+  // - If staticPath provided: use it (e.g., audio/week14/dictation_7.mp3)
+  // - Otherwise: use dynamic path (dynamic/station/hash.mp3)
+  const objectKey = staticPath || ('dynamic/' + station + '/' + hash + '.mp3');
 
   // ── TIER 1: R2 Cache Hit — serve instantly ───────────────────
   if (env.TTS_BUCKET) {

@@ -30,6 +30,48 @@ import { TTSCache } from './ttsCache';
 // CDN Base URL for pre-generated Deepgram audio files from Cloudflare R2
 const CDN_URL = import.meta.env.VITE_CDN_URL || 'https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev';
 
+// Google Cloud TTS → Deepgram Aura voice mapping
+// Used for on-demand generation when R2 CDN misses
+const GOOGLE_TO_DEEPGRAM_VOICE = {
+  // Female voices
+  'en-US-Neural2-C': 'aura-luna-en',      // Soft, warm (dictation, shadowing)
+  'en-US-Neural2-F': 'aura-asteria-en',   // Natural, expressive (vocabulary, mindmap)
+  'en-US-Neural2-H': 'aura-stella-en',    // Bright, clear
+  // Male voices
+  'en-US-Neural2-D': 'aura-orion-en',     // Deep, authoritative (narration)
+  'en-US-Neural2-J': 'aura-zeus-en',      // Energetic, engaging (questions)
+  'en-US-Neural2-A': 'aura-orion-en',     // Fallback male
+  'en-US-Neural2-I': 'aura-zeus-en',      // Fallback energetic
+};
+
+// Station → voiceConfig key mapping (for looking up correct voice)
+const STATION_VOICE_KEY = {
+  'read': 'narration',
+  'new_word': 'vocabulary',
+  'dictation': 'dictation',
+  'shadowing': 'shadowing',  // Should use same voice as dictation
+  'explore': 'narration',
+  'word_power': 'vocabulary',
+  'ask_ai': 'questions',
+  'logic_lab': 'questions',
+  'mindmap_speaking': 'mindmap',
+  'ai_tutor': null,  // Dynamic content, uses saved voice preference
+  'gamehub': 'questions',
+  'freetalk': null,  // Dynamic content
+};
+
+// Helper: Load voiceConfig from week data dynamically
+async function getVoiceConfigForWeek(weekNumber) {
+  if (!weekNumber) return null;
+  try {
+    const weekData = await import(`../data/weeks/week_${String(weekNumber).padStart(2, '0')}/index.js`);
+    return weekData.default?.voiceConfig || null;
+  } catch (err) {
+    console.warn(`[TTS] Could not load voiceConfig for week ${weekNumber}:`, err.message);
+    return null;
+  }
+}
+
 // --- LEGACY: TTS SERVER PROXY POOL (kept for backward compatibility) ---
 // Note: This pool is no longer used for static content (now on R2).
 // Only dynamic AI Tutor content uses Deepgram worker API (via useGoogleTTS).
@@ -93,7 +135,7 @@ function isServerWarm() {
 
 // Weeks that have pre-generated Deepgram files on R2 CDN
 // Week 1-7: originally Kokoro (legacy), Week 8+: all Deepgram Aura-2
-const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 // Static stations that can use CDN (pre-generated content)
 const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai'];
@@ -110,11 +152,17 @@ export const VoiceService = {
    * @param {number} weekNumber - Week number (for CDN lookup)
    * @param {string} mode - Mode ('advanced' or 'easy')
    * @param {boolean} instant - If true, play browser TTS immediately for AI Tutor (Deepgram worker will cache for next replay)
+   * @param {object} voiceConfig - Optional voiceConfig object from week data (for on-demand generation)
    * @returns {Promise<void>}
    */
-  async speak(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced', instant = false) {
+  async speak(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced', instant = false, voiceConfig = null) {
     // Clean text for TTS (remove emojis, normalize abbreviations)
     const cleanedText = this.cleanTextForTTS(text);
+    
+    // Load voiceConfig if not provided and weekNumber is available
+    if (!voiceConfig && weekNumber) {
+      voiceConfig = await getVoiceConfigForWeek(weekNumber);
+    }
     
     // 🔍 TIER 1: Check Client Cache first (instant replay, 0ms)
     const cachedUrl = await TTSCache.get(cleanedText, station);
@@ -179,14 +227,16 @@ export const VoiceService = {
     
     // 🌐 TIER 2: Try R2 CDN (all static stations with audioUrl)
     // All static content should be pre-generated with Deepgram and uploaded to R2
+    // If R2 miss, falls back to on-demand generation via Worker
     if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
       try {
         console.log(`[TTS] Trying R2 CDN for week ${weekNumber} ${mode}...`);
-        await this.useCDN(cleanedText, station, audioUrl, weekNumber, mode);
+        await this.useCDN(cleanedText, station, audioUrl, weekNumber, mode, voiceConfig);
         console.log(`[TTS] ✅ R2 CDN success (~100ms)`);
         return;
       } catch (err) {
-        console.warn(`[TTS] R2 CDN miss: ${err.message} — falling back to Deepgram worker`);
+        console.warn(`[TTS] R2 CDN miss: ${err.message} — generating on-demand via Worker`);
+        // Continue to Worker fallback below
       }
     }
 
@@ -299,14 +349,16 @@ export const VoiceService = {
 
   /**
    * TIER 2: Load pre-generated Deepgram audio from R2 CDN
+   * If R2 miss, generates on-demand via Worker and caches to R2
    * @param {string} text - Text to speak
    * @param {string} station - Station ID
    * @param {string} audioUrl - Pre-known URL from station data (e.g., /audio/week8_easy/dictation_1.mp3)
    * @param {number} weekNumber - Week number
    * @param {string} mode - Mode ('advanced' or 'easy')
+   * @param {object} voiceConfig - Optional voiceConfig from week data
    * @returns {Promise<void>}
    */
-  async useCDN(text, station, audioUrl, weekNumber, mode) {
+  async useCDN(text, station, audioUrl, weekNumber, mode, voiceConfig = null) {
     // If audio URL is provided by station data, use it directly
     let cdnUrl;
     
@@ -336,6 +388,11 @@ export const VoiceService = {
       clearTimeout(timeoutId);
       
       if (!response.ok) {
+        // R2 miss - generate on-demand if voiceConfig available
+        if (response.status === 404 && voiceConfig && TTS_WORKER_URL) {
+          console.log(`[TTS] R2 miss (404) - generating on-demand...`);
+          return await this.generateOnDemand(text, station, audioUrl, voiceConfig);
+        }
         throw new Error(`CDN returned ${response.status}`);
       }
       
@@ -351,8 +408,72 @@ export const VoiceService = {
       
     } catch (error) {
       clearTimeout(timeoutId);
+      // If network error and voiceConfig available, try on-demand generation
+      if (error.name === 'TypeError' && voiceConfig && TTS_WORKER_URL) {
+        console.warn(`[TTS] CDN network error - trying on-demand generation...`);
+        return await this.generateOnDemand(text, station, audioUrl, voiceConfig);
+      }
       throw new Error(`CDN fetch failed: ${error.message}`);
     }
+  },
+
+  /**
+   * Generate audio on-demand via Worker when R2 CDN misses
+   * Worker will generate + save to R2 for next request
+   * @param {string} text - Text to speak
+   * @param {string} station - Station ID  
+   * @param {string} audioPath - R2 path (e.g., /audio/week14/dictation_7.mp3)
+   * @param {object} voiceConfig - voiceConfig from week data
+   * @returns {Promise<void>}
+   */
+  async generateOnDemand(text, station, audioPath, voiceConfig) {
+    // Determine which voice to use based on station
+    const voiceKey = STATION_VOICE_KEY[station];
+    if (!voiceKey) {
+      throw new Error(`No voice mapping for station: ${station}`);
+    }
+    
+    // Get Google voice ID from voiceConfig
+    const googleVoice = voiceConfig[voiceKey];
+    if (!googleVoice) {
+      throw new Error(`No voice in voiceConfig for key: ${voiceKey}`);
+    }
+    
+    // Convert Google voice to Deepgram voice
+    const deepgramVoice = GOOGLE_TO_DEEPGRAM_VOICE[googleVoice];
+    if (!deepgramVoice) {
+      console.warn(`[TTS] No Deepgram mapping for ${googleVoice}, using default`);
+    }
+    
+    // Clean audio path (remove leading slash for R2 path)
+    const cleanPath = audioPath.startsWith('/') ? audioPath.slice(1) : audioPath;
+    
+    // Call Worker with path + voice for on-demand generation
+    let workerUrl = `${TTS_WORKER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}`;
+    workerUrl += `&path=${encodeURIComponent(cleanPath)}`;
+    if (deepgramVoice) {
+      workerUrl += `&voice=${encodeURIComponent(deepgramVoice)}`;
+    }
+    
+    console.log(`[TTS] 🎤 Generating on-demand: ${station} with ${deepgramVoice || 'default voice'}`);
+    
+    const res = await fetch(workerUrl);
+    if (!res.ok) {
+      throw new Error(`Worker returned ${res.status}`);
+    }
+    
+    const audioBlob = await res.blob();
+    const cacheHit = res.headers.get('X-Cache') === 'HIT';
+    const source = res.headers.get('X-TTS-Source') || 'deepgram';
+    
+    console.log(`[TTS] ✅ ${cacheHit ? '☁️ R2' : '🎤 Generated'} (${(audioBlob.size / 1024).toFixed(1)}KB) - now cached to R2: ${cleanPath}`);
+    
+    // Cache locally for instant replay
+    await TTSCache.set(text, station, audioBlob);
+    
+    // Play immediately
+    const blobUrl = URL.createObjectURL(audioBlob);
+    return this.playAudio(blobUrl, true);
   },
 
   /**
