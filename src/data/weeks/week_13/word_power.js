@@ -20,7 +20,7 @@ export default {
       pronunciation: "/ɡoʊ tuː bed/",
       definition_vi: "đi ngủ",
       definition_en: "to go to your bed to sleep",
-      example: "I go to bed at 9 o clock.",
+      example: "I go to bed at 9 o'clock.",
       collocation: "go to bed",
       image_url: "/images/week13/wordpower_go_to_bed.jpg",
       audio_word: "/audio/week13/wordpower_go_to_bed.mp3",

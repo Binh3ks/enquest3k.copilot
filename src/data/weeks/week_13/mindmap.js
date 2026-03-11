@@ -1,6 +1,6 @@
 const mindMapContent = {
   centerStems: [
-    { text: "I ___ at 7 o clock.", audio: "/audio/week13/mindmap_stem_1.mp3" },
+    { text: "I ___ at 7 o'clock.", audio: "/audio/week13/mindmap_stem_1.mp3" },
     { text: "I brush my ___.", audio: "/audio/week13/mindmap_stem_2.mp3" },
     { text: "I eat ___ before school.", audio: "/audio/week13/mindmap_stem_3.mp3" },
     { text: "After school, I ___.", audio: "/audio/week13/mindmap_stem_4.mp3" },
@@ -8,7 +8,7 @@ const mindMapContent = {
     { text: "My favorite part is ___.", audio: "/audio/week13/mindmap_stem_6.mp3" }
   ],
   branchLabels: {
-    "I ___ at 7 o clock.": [
+    "I ___ at 7 o'clock.": [
       { text: "wake up", audio: "/audio/week13/mindmap_branch_1.mp3" },
       { text: "get up", audio: "/audio/week13/mindmap_branch_2.mp3" },
       { text: "open my eyes", audio: "/audio/week13/mindmap_branch_3.mp3" },
