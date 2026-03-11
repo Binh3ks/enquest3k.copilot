@@ -107,16 +107,19 @@ if __name__ == "__main__":
     week_num_clean = str(int(week_num))  # Bỏ số 0: "07" -> "7" (cho file prompt)
     week_num_padded = week_num.zfill(2)  # Thêm số 0: "7" -> "07" (format có số 0)
 
-    # Đường dẫn file prompt - Ưu tiên public/images/Prompts/ (mới), fallback về MASS_Final/ (cũ)
+    # Đường dẫn file prompt - Ưu tiên public/images/Prompts/ (mới), fallback về Production_FINAL, rồi MASS_Final (cũ)
     prompt_adv_new = os.path.join(SCRIPT_DIR, "public", "images", "Prompts", f"week_{week_num_clean}_image_prompts.txt")
     prompt_easy_new = os.path.join(SCRIPT_DIR, "public", "images", "Prompts", f"week_{week_num_clean}_easy_image_prompts.txt")
+    
+    prompt_adv_prod = os.path.join(SCRIPT_DIR, "Production_FINAL", "IMAGE PROMPTS", f"week_{week_num_clean}_image_prompts.txt")
+    prompt_easy_prod = os.path.join(SCRIPT_DIR, "Production_FINAL", "IMAGE PROMPTS", f"week_{week_num_clean}_easy_image_prompts.txt")
     
     prompt_adv_old = os.path.join(SCRIPT_DIR, "MASS_Final", "Image prompts", f"week_{week_num_clean}_image_prompts.txt")
     prompt_easy_old = os.path.join(SCRIPT_DIR, "MASS_Final", "Image prompts", f"week_{week_num_clean}_easy_image_prompts.txt")
     
-    # Chọn path đúng (ưu tiên mới)
-    prompt_adv = prompt_adv_new if os.path.exists(prompt_adv_new) else prompt_adv_old
-    prompt_easy = prompt_easy_new if os.path.exists(prompt_easy_new) else prompt_easy_old
+    # Chọn path đúng (ưu tiên mới -> Production_FINAL -> cũ)
+    prompt_adv = prompt_adv_new if os.path.exists(prompt_adv_new) else (prompt_adv_prod if os.path.exists(prompt_adv_prod) else prompt_adv_old)
+    prompt_easy = prompt_easy_new if os.path.exists(prompt_easy_new) else (prompt_easy_prod if os.path.exists(prompt_easy_prod) else prompt_easy_old)
 
     # Kiểm tra thư mục nào tồn tại (có số 0 hoặc không số 0)
     folder_with_zero = f"week{week_num_padded}"  # week07

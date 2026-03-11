@@ -110,6 +110,13 @@ const BLUEPRINT_WEEKS = {
     keywords: "wake up, brush teeth, eat breakfast, go to school, have lunch, do homework, watch TV, go to bed",
     video_hint: "Daily Routine Song",
     read_topic: "A Perfect School Day - daily routines and time"
+  },
+  14: {
+    theme: "Welcome to My World",
+    grammar: "Presentation & Self-Introduction (I present, I can, My family has)",
+    keywords: "present, poster, family, abilities, talents, confident, proud",
+    video_hint: "Show and Tell Song",
+    read_topic: "Project Presentation - sharing about yourself and family"
   }
 };
 
@@ -125,6 +132,174 @@ const PRIORITY_CHANNELS = [
   "National Geographic Kids"
 ];
 
+// AGE-APPROPRIATE CHANNEL FILTERING (6-12 Primary School)
+const PRIMARY_SCHOOL_CHANNELS = [
+  "English Singsing",        // Grammar lessons, clear explanations
+  "Little Fox",              // Stories with subtitles, level-based
+  "British Council",         // Professional ESL content
+  "National Geographic Kids", // Educational, documentary style
+  "SciShow Kids",            // Science explanations
+  "Numberblocks",            // Math concepts
+  "Peppa Pig"                // OK for lower primary (6-8)
+];
+
+// PRESCHOOL CHANNELS (exclude for 6-12 content)
+const PRESCHOOL_CHANNELS = [
+  "Super Simple Songs",      // Nursery rhymes, puppet shows
+  "Cocomelon",              // Baby songs
+  "Dave and Ava",           // Toddler content
+  "Blippi"                  // Preschool entertainment
+];
+
+/**
+ * Check if a week is a review week (every 14 weeks: 14, 28, 42, 54)
+ */
+const isReviewWeek = (weekId) => {
+  return weekId % 14 === 0;
+};
+
+/**
+ * Aggregate grammar and keywords from previous 12 weeks for review weeks
+ */
+const aggregateReviewContent = (weekId) => {
+  const startWeek = weekId - 13; // Previous 12 weeks (e.g., weeks 1-12 for week 14)
+  const endWeek = weekId - 2;     // Exclude week 13 (also review week)
+  
+  const grammarTopics = [];
+  const allKeywords = [];
+  const themes = [];
+  
+  for (let w = startWeek; w <= endWeek; w++) {
+    const weekData = BLUEPRINT_WEEKS[w];
+    if (weekData) {
+      grammarTopics.push(weekData.grammar);
+      allKeywords.push(weekData.keywords);
+      themes.push(weekData.theme);
+    }
+  }
+  
+  return {
+    grammarSummary: grammarTopics.join(', '),
+    keywordsSummary: allKeywords.join(', '),
+    themesSummary: themes.slice(0, 5).join(', '), // Top 5 themes
+    coreGrammar: [
+      'subject pronouns', 'possessive adjectives', 'verb to be',
+      'like + gerund', 'articles', 'prepositions', 'there is/are',
+      'can/can\'t', 'present simple'
+    ].join(' ')
+  };
+};
+
+/**
+ * Generate queries for REVIEW WEEKS (14, 28, 42, 54)
+ * 
+ * STRATEGY:
+ * - Review weeks occur every 14 weeks (after completing 12 regular weeks + 1 transition week)
+ * - Aggregate key grammar/topics from previous 12 weeks
+ * - Combine with current week's specific presentation theme
+ * - Prioritize AGE-APPROPRIATE content (6-12 primary school, not preschool)
+ * - REUSE best videos from corresponding weeks in current cycle
+ * 
+ * WEEK 14 VIDEO STRUCTURE:
+ * [1] GRAMMAR: Subject Pronouns (review Week 1-2)
+ * [2] GRAMMAR: Can/Can't Abilities (review Week 12)
+ * [3] STORY: Family Song (reuse from Week 2)
+ * [4] VOCABULARY: Classroom Conversation (reuse from Week 1)
+ * [5] SCIENCE: Talents/Abilities educational content
+ * 
+ * AGE-APPROPRIATE FILTERING:
+ * ✅ British Council, English Singsing, Little Fox (grammar lessons, stories)
+ * ✅ National Geographic Kids, SciShow Kids (educational)
+ * ⚠️ Super Simple Songs (OK for songs, but avoid puppet shows)
+ * ❌ Cocomelon, Dave and Ava, Blippi (preschool content)
+ */
+const generateReviewWeekQueries = (weekId, weekData) => {
+  const reviewContent = aggregateReviewContent(weekId);
+  
+  console.log(`   📚 Reviewing: Weeks ${weekId - 13} to ${weekId - 2}`);
+  
+  // For Week 28, 42, 54: suggest reusing videos from Week 14, 28, 42
+  const previousReviewWeek = weekId - 14;
+  if (previousReviewWeek > 0) {
+    console.log(`   💡 TIP: Consider reusing videos from Week ${previousReviewWeek} (previous review week)`);
+  }
+  
+  const queries = {
+    weekId: weekId,
+    theme: weekData.theme,
+    grammar_focus: `REVIEW: ${reviewContent.coreGrammar}`,
+    review_of_weeks: `${weekId - 13}-${weekId - 2}`,
+    reuse_suggestion: previousReviewWeek > 0 ? previousReviewWeek : null,
+    videos: []
+  };
+  
+  // VIDEO 1: GRAMMAR REVIEW - Subject Pronouns & Possessive (Weeks 1-2)
+  // Age-appropriate: Use British Council or English Singsing (avoid nursery rhymes)
+  queries.videos.push({
+    id: 1,
+    purpose: "GRAMMAR",
+    priority_search: `British Council subject pronouns personal pronouns ESL primary school`,
+    backup_search: `English Singsing pronouns I you he she we they grammar lesson for kids`,
+    age_group: "6-12 primary",
+    reuse_from_week: previousReviewWeek > 0 ? previousReviewWeek : null
+  });
+  
+  // VIDEO 2: GRAMMAR REVIEW - Can/Can't Abilities (Week 12) + Week 14 theme
+  // Week 14 specific: "I can present my poster" combines abilities with presentation
+  queries.videos.push({
+    id: 2,
+    purpose: "GRAMMAR",
+    priority_search: `English Singsing can can't abilities I can sing dance draw ESL for kids`,
+    backup_search: `can can't abilities talents kids song ESL cartoons`,
+    age_group: "6-12 primary",
+    reuse_from_week: previousReviewWeek > 0 ? previousReviewWeek : null
+  });
+  
+  // VIDEO 3: STORY/VOCABULARY - Family theme (reuse from Week 2)
+  // For review weeks: suggest reusing "The People In My Family" from Week 2
+  queries.videos.push({
+    id: 3,
+    purpose: "STORY",
+    priority_search: `Little Fox my family story level 1 ESL for kids`,
+    backup_search: `family members children story Peppa Pig cartoons for kids`,
+    age_group: "6-12 primary",
+    reuse_from_week: 2, // Always suggest reusing from Week 2 (Family Squad)
+    reuse_video_title: "The People In My Family | Super Simple Songs",
+    reuse_video_id: "yDua9ms9_eg"
+  });
+  
+  // VIDEO 4: VOCABULARY - Introduce yourself / Self-introduction
+  // Age-appropriate: Classroom conversation or story (not puppet shows)
+  // Week 14 curated: Reuse "My School Day - Classroom Conversation" from Week 1
+  queries.videos.push({
+    id: 4,
+    purpose: "VOCABULARY", 
+    priority_search: `Little Fox introduce yourself self introduction story ESL for kids`,
+    backup_search: `British Council self introduction greetings primary school ESL`,
+    age_group: "6-12 primary",
+    reuse_from_week: 1, // Week 1 has good classroom conversation video
+    reuse_video_title: "My School Day - Classroom Language and Conversation",
+    reuse_video_id: "FZPmnw4Ws5A"
+  });
+  
+  // VIDEO 5: SCIENCE/SOCIAL - Talents, abilities, what I can do
+  // Link to Week 12 (abilities) + Week 14 theme (talents, proud)
+  queries.videos.push({
+    id: 5,
+    purpose: "SCIENCE",
+    priority_search: `talents abilities what can you do kids educational video`,
+    backup_search: `SciShow Kids skills talents what makes you special for kids`,
+    reuse_from_week: previousReviewWeek > 0 ? previousReviewWeek : null
+  });
+  
+  // Add metadata
+  queries.topic = weekData.read_topic || weekData.theme;
+  queries.science = weekData.keywords;
+  
+  return queries;
+};
+
+
 /**
  * Generate 5 video queries for a week based on Blueprint data
  */
@@ -136,6 +311,12 @@ const generateQueriesForWeek = (weekId) => {
   }
   
   console.log(`\n📋 Generating queries for Week ${weekId}: ${weekData.theme}`);
+  
+  // Check if this is a review week
+  if (isReviewWeek(weekId)) {
+    console.log(`   🔄 REVIEW WEEK - Aggregating from previous 12 weeks`);
+    return generateReviewWeekQueries(weekId, weekData);
+  }
   
   const queries = {
     weekId: weekId,
