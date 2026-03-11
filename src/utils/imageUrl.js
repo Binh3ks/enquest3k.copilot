@@ -3,7 +3,7 @@
  *
  * Images are served from Cloudflare Pages static assets (/public/images/).
  * To serve from CDN instead, set VITE_IMAGES_CDN_URL env var.
- * e.g. VITE_IMAGES_CDN_URL=https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev
+ * e.g. VITE_IMAGES_CDN_URL=https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev
  */
 
 const IMAGES_CDN = import.meta.env.VITE_IMAGES_CDN_URL ?? '';
