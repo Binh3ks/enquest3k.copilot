@@ -239,6 +239,7 @@ export default {
 - [ ] Verify all content displays correctly
 
 ### Asset Preparation
+- [ ] **Create image folders FIRST**: `mkdir -p public/images/weekXX public/images/weekXX_easy`
 - [ ] Create week_XX_queries.json with all metadata
 - [ ] List all audio queries (vocab, read, dictation, shadowing)
 - [ ] List all image queries (vocab, covers, illustrations)
