@@ -31,7 +31,7 @@ export default {
       id: 4,
       question_en: "I watch TV for 1 hour. I stop at 9. What time do I start watching TV?",
       question_vi: "Tôi xem TV 1 giờ. Tôi dừng lúc 9 giờ. Mấy giờ tôi bắt đầu xem?",
-      answer: ["8", "8 o clock", "eight"],
+      answer: ["8", "8 o'clock", "eight"],
       hint_en: "9 minus 1 hour.",
       hint_vi: "9 giờ trừ 1 giờ.",
       audio_url: "/audio/week13_easy/logic_4.mp3"

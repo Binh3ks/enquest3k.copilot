@@ -265,6 +265,10 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
 
     # ── Helpers ──────────────────────────────────────────────────────────────
     def _task(text: str, role: str, filename: str, station: str):
+        # Preprocess text for TTS (affects audio generation only, not source content)
+        # Fix apostrophe issues: o'clock → o clock (prevents truncation in aura-luna-en voice)
+        text = text.replace("o'clock", "o clock")
+        
         google_voice = voice_config.get(role, _DEFAULT_VOICE_CONFIG.get(role, "en-US-Neural2-D"))
         deepgram_model, gender = _google_voice_to_deepgram(google_voice)
         tasks.append({
