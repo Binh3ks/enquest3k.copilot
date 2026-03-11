@@ -313,8 +313,8 @@ def scan_for_tasks(data_path: Path, voice_config: dict) -> list:
                 continue
             word = word_m.group(1)
             slug = word.lower().replace(' ', '_').replace('?', '')
-            # Add trailing pause to prevent consonant cutoff on single-syllable words
-            _task(word + " ...", "vocabulary", f"vocab_{slug}.mp3", base)
+            # Period immediately after word preserves final consonants, spaced dots add trailing silence
+            _task(word + ". . . . .", "vocabulary", f"vocab_{slug}.mp3", base)
             if def_m:  _task(def_m.group(1),  "vocabulary", f"vocab_def_{slug}.mp3", base)
             if ex_m:   _task(ex_m.group(1),   "vocabulary", f"vocab_ex_{slug}.mp3", base)
             if coll_m: _task(coll_m.group(1), "vocabulary", f"vocab_coll_{slug}.mp3", base)
