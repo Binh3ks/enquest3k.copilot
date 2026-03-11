@@ -8,14 +8,27 @@
 #     environment only — files will NOT appear on CDN!
 #
 # Usage:
-#   ./tools/upload_all_audio_r2.sh           # upload all weeks
-#   ./tools/upload_all_audio_r2.sh 3         # upload only week 3
-#   ./tools/upload_all_audio_r2.sh 3 easy    # upload only week 3 easy
+#   ./tools/upload_all_audio_r2.sh              # upload all weeks (with confirmation)
+#   ./tools/upload_all_audio_r2.sh --yes        # upload all weeks (skip confirmation)
+#   ./tools/upload_all_audio_r2.sh 3            # upload only week 3 (with confirmation)
+#   ./tools/upload_all_audio_r2.sh 3 --yes      # upload week 3 (skip confirmation)
+#   ./tools/upload_all_audio_r2.sh 3 easy       # upload only week 3 easy
 # ============================================================
 
 BUCKET="engquest-audio"
 LOCAL_DIR="./public/audio"
 WRANGLER="npx wrangler"
+AUTO_CONFIRM=false
+
+# Parse flags
+for arg in "$@"; do
+  case $arg in
+    --yes|-y)
+      AUTO_CONFIRM=true
+      shift
+      ;;
+  esac
+done
 
 echo "📤 UPLOAD ALL AUDIO TO CLOUDFLARE R2 (--remote)"
 echo "=================================================="
@@ -61,11 +74,16 @@ done
 echo "📁 Folders to upload: ${FOLDERS[*]}"
 echo "🎵 Total files: $TOTAL"
 echo ""
-read -p "🚦 Start upload to R2? (y/n): " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "❌ Cancelled"
-    exit 0
+
+if [ "$AUTO_CONFIRM" = false ]; then
+    read -p "🚦 Start upload to R2? (y/n): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "❌ Cancelled"
+        exit 0
+    fi
+else
+    echo "🚦 Auto-confirm enabled (--yes flag)"
 fi
 
 echo ""
