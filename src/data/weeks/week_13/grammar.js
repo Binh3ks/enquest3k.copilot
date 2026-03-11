@@ -6,20 +6,20 @@ export default {
       { type: "rule", icon: "1️⃣", rule_en: "Use the base verb with I / you / we / they: I wake up, I eat breakfast", rule_vi: "Dùng động từ nguyên mẫu với I / you / we / they: I wake up, I eat breakfast" },
       { type: "rule", icon: "2️⃣", rule_en: "Add -s or -es with he / she / it: She wakes up, He brushes his teeth", rule_vi: "Thêm -s hoặc -es với he / she / it: She wakes up, He brushes his teeth" },
       { type: "rule", icon: "3️⃣", rule_en: "Use 'go' + to for places: I go to school, She goes to bed", rule_vi: "Dùng 'go' + to cho nơi chốn: I go to school, She goes to bed" },
-      { type: "rule", icon: "4️⃣", rule_en: "Use time words: at 7 o'clock, in the morning, every day", rule_vi: "Dùng từ chỉ thời gian: at 7 o'clock, in the morning, every day" }
+      { type: "rule", icon: "4️⃣", rule_en: "Use time words: at 7 o clock, in the morning, every day", rule_vi: "Dùng từ chỉ thời gian: at 7 o clock, in the morning, every day" }
     ]
   },
   exercises: [
-    { id: 1, type: "multiple_choice", question: "I ___ up at 7 o'clock.", options: ["wake", "wakes", "waking"], answer: "wake", explanation: "Use 'wake' with I" },
+    { id: 1, type: "multiple_choice", question: "I ___ up at 7 o clock.", options: ["wake", "wakes", "waking"], answer: "wake", explanation: "Use 'wake' with I" },
     { id: 2, type: "multiple_choice", question: "She ___ her teeth every morning.", options: ["brush", "brushes", "brushing"], answer: "brushes", explanation: "Add -es with she/he" },
     { id: 3, type: "multiple_choice", question: "I ___ breakfast at 7:30.", options: ["eat", "eats", "eating"], answer: "eat", explanation: "Use 'eat' with I" },
-    { id: 4, type: "multiple_choice", question: "He ___ to school at 8 o'clock.", options: ["go", "goes", "going"], answer: "goes", explanation: "Add -es with he" },
-    { id: 5, type: "multiple_choice", question: "We ___ lunch at 12 o'clock.", options: ["have", "has", "having"], answer: "have", explanation: "Use 'have' with we" },
+    { id: 4, type: "multiple_choice", question: "He ___ to school at 8 o clock.", options: ["go", "goes", "going"], answer: "goes", explanation: "Add -es with he" },
+    { id: 5, type: "multiple_choice", question: "We ___ lunch at 12 o clock.", options: ["have", "has", "having"], answer: "have", explanation: "Use 'have' with we" },
     { id: 6, type: "fill_in_blank", question: "I ___ with my friends after school.", answer: "play", hint: "verb: to have fun" },
     { id: 7, type: "fill_in_blank", question: "My sister ___ her homework in the evening.", answer: "does", hint: "verb: to complete work" },
-    { id: 8, type: "fill_in_blank", question: "I ___ dinner at 7 o'clock.", answer: "have", hint: "verb: to eat" },
+    { id: 8, type: "fill_in_blank", question: "I ___ dinner at 7 o clock.", answer: "have", hint: "verb: to eat" },
     { id: 9, type: "fill_in_blank", question: "They ___ TV before bed.", answer: "watch", hint: "verb: to look at" },
-    { id: 10, type: "fill_in_blank", question: "I ___ to bed at 9 o'clock.", answer: "go", hint: "verb: to move" },
+    { id: 10, type: "fill_in_blank", question: "I ___ to bed at 9 o clock.", answer: "go", hint: "verb: to move" },
     { id: 11, type: "unscramble", words: ["I", "wake", "up", "early"], answer: "I wake up early" },
     { id: 12, type: "unscramble", words: ["brush", "teeth", "I", "my"], answer: "I brush my teeth" },
     { id: 13, type: "unscramble", words: ["eat", "I", "breakfast"], answer: "I eat breakfast" },
