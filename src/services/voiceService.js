@@ -60,6 +60,29 @@ const STATION_VOICE_KEY = {
   'freetalk': null,  // Dynamic content
 };
 
+// --- LEGACY: TTS SERVER PROXY POOL (kept for backward compatibility) ---
+// Note: This pool is no longer used for static content (now on R2).
+// Only dynamic AI Tutor content uses Deepgram worker API (via useGoogleTTS).
+const _primaryUrl = import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
+const TTS_POOL = [
+  _primaryUrl,
+  // 'https://binh3k-engquest3k-2.hf.space', // mirror #2 (add when available)
+];
+let _poolIndex = 0;
+function nextTTSServer() {
+  const url = TTS_POOL[_poolIndex % TTS_POOL.length];
+  _poolIndex++;
+  return url;
+}
+
+// --- GOOGLE CLOUD TTS (Primary for dynamic content) ---
+// Route: App → Cloudflare Worker (api-tts.bkbacademy.vn) → R2 cache or Google TTS
+// When TTS_WORKER_URL is set: API key stays in Worker Secret (never in browser bundle)
+// When TTS_WORKER_URL is empty: falls back to direct Google TTS API (dev/testing mode)
+const TTS_WORKER_URL = import.meta.env.VITE_TTS_WORKER_URL || '';
+import { proxyGoogleTTS } from './aiProxy.js';
+const GOOGLE_TTS_VOICE = 'en-US-Journey-F'; // fallback: en-US-Neural2-F
+
 // Helper: Load voiceConfig from week data dynamically
 async function getVoiceConfigForWeek(weekNumber) {
   if (!weekNumber) return null;
@@ -71,13 +94,6 @@ async function getVoiceConfigForWeek(weekNumber) {
     return null;
   }
 }
-
-// --- LEGACY: TTS SERVER PROXY POOL (kept for backward compatibility) ---
-// Note: This pool is no longer used for static content (now on R2).
-// Only dynamic AI Tutor content uses Deepgram worker API (via useGoogleTTS).
-const _primaryUrl = import.meta.env.VITE_EDGE_TTS_URL || 'https://binh3k-engquest3k.hf.space';
-const TTS_POOL = [
-  _primaryUrl,
   // 'https://binh3k-engquest3k-2.hf.space', // mirror #2 (add when available)
 ];
 let _poolIndex = 0;
