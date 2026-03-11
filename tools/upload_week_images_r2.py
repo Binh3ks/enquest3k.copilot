@@ -127,7 +127,7 @@ def main():
     print("=" * 70)
     print(f"Bucket   : {BUCKET_NAME}")
     print(f"Weeks    : {', '.join(map(str, week_numbers))}")
-    print(f"CDN URL  : https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev")
+    print(f"CDN URL  : https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev")
     print("=" * 70)
     
     # Confirm
@@ -155,7 +155,7 @@ def main():
     if total_uploaded > 0:
         print("\n🔗 Images now available at:")
         for week in week_numbers:
-            print(f"   https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/images/week{str(week).zfill(2)}/")
+            print(f"   https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week{str(week).zfill(2)}/")
     
     print("\n📋 Verify images load in browser before deploying!")
 

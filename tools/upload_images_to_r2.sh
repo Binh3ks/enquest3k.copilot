@@ -3,7 +3,7 @@
 # Prerequisites: wrangler installed (npm i -g wrangler) and logged in (wrangler login)
 #
 # After upload, set VITE_IMAGES_CDN_URL in Cloudflare Pages env vars:
-#   https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev
+#   https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev
 # → All images will automatically switch from /images/... to CDN URLs
 
 set -e
@@ -68,9 +68,9 @@ echo "======================================================"
 echo "✅ UPLOAD COMPLETE — $COUNTER files"
 echo ""
 echo "📋 Next step: Set env var in Cloudflare Pages:"
-echo "   VITE_IMAGES_CDN_URL = https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev"
+echo "   VITE_IMAGES_CDN_URL = https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev"
 echo "   (Settings → Environment variables → Add variable)"
 echo ""
 echo "🧪 Test a URL:"
-echo "   https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/images/week1_easy/name.jpg"
+echo "   https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week1_easy/name.jpg"
 echo "======================================================"
