@@ -28,7 +28,7 @@ export default {
       pronunciation: "/skuːl/",
       definition_vi: "trường học",
       definition_en: "a place where you go to learn",
-      example: "I go to school at 8 o'clock.",
+      example: "I go to school at 8 o clock.",
       collocation: "go to school",
       image_url: "/images/week13_easy/school.jpg",
       audio_word: "/audio/week13_easy/vocab_school.mp3"
@@ -39,7 +39,7 @@ export default {
       pronunciation: "/lʌntʃ/",
       definition_vi: "bữa trưa",
       definition_en: "the meal you eat in the middle of the day",
-      example: "I have lunch at 12 o'clock.",
+      example: "I have lunch at 12 o clock.",
       collocation: "have lunch",
       image_url: "/images/week13_easy/lunch.jpg",
       audio_word: "/audio/week13_easy/vocab_lunch.mp3"
@@ -50,7 +50,7 @@ export default {
       pronunciation: "/ˈdɪnər/",
       definition_vi: "bữa tối",
       definition_en: "the meal you eat in the evening",
-      example: "I have dinner at 7 o'clock.",
+      example: "I have dinner at 7 o clock.",
       collocation: "have dinner",
       image_url: "/images/week13_easy/dinner.jpg",
       audio_word: "/audio/week13_easy/vocab_dinner.mp3"
@@ -61,7 +61,7 @@ export default {
       pronunciation: "/bed/",
       definition_vi: "giường",
       definition_en: "a thing you sleep on",
-      example: "I go to bed at 9 o'clock.",
+      example: "I go to bed at 9 o clock.",
       collocation: "go to bed",
       image_url: "/images/week13_easy/bed.jpg",
       audio_word: "/audio/week13_easy/vocab_bed.mp3"
