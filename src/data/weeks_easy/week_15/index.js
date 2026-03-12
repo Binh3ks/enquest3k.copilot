@@ -9,8 +9,9 @@ import writing from './writing.js';
 import explore from './explore.js';
 import word_power from './word_power.js';
 import mindmap from './mindmap.js';
-import daily_watch from '../../weeks/week_06/daily_watch.js';
+import daily_watch from '../../weeks/week_15/daily_watch.js';
 import word_match from './word_match.js';
+import games from './games.js';
 
 const weekData = {
   weekId: 15,
@@ -41,7 +42,8 @@ const weekData = {
     writing: writing,
     explore: explore,
     mindmap_speaking: mindmap,
-    daily_watch: daily_watch
+    daily_watch: daily_watch,
+    games: games
   }
 };
 
