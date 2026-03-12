@@ -506,14 +506,22 @@ export const VoiceService = {
    * @param {string} text - Text to speak
    * @param {string} station - Station ID for cache key
    * @param {string|null} voice - Optional Deepgram voice (e.g., 'aura-asteria-en')
+   * @param {string|null} audioPath - Optional R2 path for static content (e.g., '/audio/week14/shadowing_1.mp3')
    */
-  async useGoogleTTS(text, station = 'ai_tutor', voice = null) {
+  async useGoogleTTS(text, station = 'ai_tutor', voice = null, audioPath = null) {
     // ── Route 1: Via Cloudflare Worker (Deepgram + R2 cache) ─────────────────
     if (TTS_WORKER_URL) {
       // Use provided voice, or get from localStorage (AI Tutor preference)
       const voiceToUse = voice || localStorage.getItem('tts_voice') || '';
       let workerUrl = `${TTS_WORKER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}`;
       if (voiceToUse) workerUrl += `&voice=${encodeURIComponent(voiceToUse)}`;
+      
+      // NEW: Pass audioPath for static content (so Worker saves to exact R2 path)
+      if (audioPath) {
+        const cleanPath = audioPath.startsWith('/') ? audioPath.slice(1) : audioPath;
+        workerUrl += `&path=${encodeURIComponent(cleanPath)}`;
+      }
+      
       const res = await fetch(workerUrl);
       if (!res.ok) throw new Error(`TTS Worker HTTP ${res.status}`);
       const blob = await res.blob();
