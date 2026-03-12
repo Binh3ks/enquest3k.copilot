@@ -2,43 +2,43 @@ export default {
   prompts: [
     {
       id: 1,
-      context_en: "You want to know where your friend hides treasures. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình giấu kho báu ở đâu. Hỏi họ.",
+      context_en: "You see your friend at the park. You want to know what they are doing. Ask them.",
+      context_vi: "Bạn thấy bạn mình ở công viên. Bạn muốn biết họ đang làm gì. Hỏi họ.",
       audio_url: "/audio/week15_easy/ask_ai_1.mp3",
-      answer: ["Where do you hide treasures?", "Where do you hide things?", "Where is your hiding place?"],
-      hint: "Where do you..."
+      answer: ["What are you doing?", "What are you playing?", "Are you playing?"],
+      hint: "What are you..."
     },
     {
       id: 2,
-      context_en: "You need to find something under the desk. Ask your friend what is under their desk.",
-      context_vi: "Bạn cần tìm thứ gì đó dưới bàn. Hỏi bạn mình có gì dưới bàn của họ.",
+      context_en: "Your friend is eating something. You want to know what it is. Ask them.",
+      context_vi: "Bạn của bạn đang ăn gì đó. Bạn muốn biết đó là gì. Hỏi họ.",
       audio_url: "/audio/week15_easy/ask_ai_2.mp3",
-      answer: ["What is under your desk?", "What is under the desk?", "What do you have under your desk?"],
-      hint: "What is under..."
+      answer: ["What are you eating?", "What is that?", "What food is that?"],
+      hint: "What are you eating..."
     },
     {
       id: 3,
-      context_en: "You want to play hide and seek with your friend. Ask them to play.",
-      context_vi: "Bạn muốn chơi trốn tìm với bạn mình. Mời họ chơi.",
+      context_en: "You see children playing at the fountain. You want to know if the water is fun. Ask your friend.",
+      context_vi: "Bạn thấy trẻ em chơi ở đài phun nước. Bạn muốn biết nước có vui không. Hỏi bạn của bạn.",
       audio_url: "/audio/week15_easy/ask_ai_3.mp3",
-      answer: ["Do you want to play hide and seek?", "Can we play hide and seek?", "Let's play hide and seek?"],
-      hint: "Do you want..."
+      answer: ["Is it fun?", "Is the water fun?", "Do you like the water?"],
+      hint: "Is it..."
     },
     {
       id: 4,
-      context_en: "You see a box next to the door. Ask your friend what is in the box.",
-      context_vi: "Bạn thấy một cái hộp bên cạnh cửa. Hỏi bạn mình trong hộp có gì.",
+      context_en: "Your mom is making sandwiches for the picnic. You want to know what is inside. Ask her.",
+      context_vi: "Mẹ bạn đang làm bánh sandwich cho buổi dã ngoại. Bạn muốn biết bên trong có gì. Hỏi mẹ.",
       audio_url: "/audio/week15_easy/ask_ai_4.mp3",
-      answer: ["What is in the box?", "What is in that box?", "What do you have in the box?"],
-      hint: "What is in..."
+      answer: ["What is inside?", "What is in the sandwich?", "What are you putting in?"],
+      hint: "What is..."
     },
     {
       id: 5,
-      context_en: "You want to know if the treasure is on the floor. Ask your friend.",
-      context_vi: "Bạn muốn biết kho báu có ở trên sàn không. Hỏi bạn mình.",
+      context_en: "You see a boy flying a kite. You want to know what color it is. Ask him.",
+      context_vi: "Bạn thấy một cậu bé thả diều. Bạn muốn biết nó màu gì. Hỏi cậu ấy.",
       audio_url: "/audio/week15_easy/ask_ai_5.mp3",
-      answer: ["Is the treasure on the floor?", "Is it on the floor?", "Where is the treasure?"],
-      hint: "Is the treasure..."
+      answer: ["What color is your kite?", "What color is it?", "Is it red?"],
+      hint: "What color..."
     }
   ]
 };

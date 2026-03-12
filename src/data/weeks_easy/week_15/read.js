@@ -1,37 +1,37 @@
 export default {
-  title: "My Toy Hunt",
-  image_url: "/images/week15_easy/read_cover_w06.jpg",
+  title: "My Day at the Park",
+  image_url: "/images/week15_easy/read_cover_w15.jpg",
   audio_url: "/audio/week15_easy/read_explore_main.mp3",
-  content_en: "Today I play a game. I look for my **toy** car. I look **on the floor**. It is not there! I look **in the box**. No toy! My friend helps me. He looks **under the desk**. He finds it! The **toy** car is under the desk! I look for my **ball** next. It is **next to the door**. Now we **hide** things. I hide my ball in the box. My friend hides his toy next to the **window**. We **seek** them again. This game is fun!",
-  content_vi: "Hôm nay tôi chơi trò chơi. Tôi tìm xe ô tô đồ chơi của mình. Tôi nhìn trên sàn. Nó không ở đó! Tôi nhìn trong hộp. Không có đồ chơi! Bạn tôi giúp tôi. Cậu ấy nhìn dưới bàn. Cậu ấy tìm thấy nó! Xe ô tô đồ chơi ở dưới bàn! Tiếp theo tôi tìm quả bóng của mình. Nó ở bên cạnh cửa. Bây giờ chúng tôi giấu đồ. Tôi giấu quả bóng trong hộp. Bạn tôi giấu đồ chơi của cậu ấy bên cạnh cửa sổ. Chúng tôi tìm chúng lại. Trò chơi này vui quá!",
+  content_en: "Today I am going to the park with my family. The park is busy and fun! I **am walking** with my mom. She is holding my hand. My dad **is jogging** ahead of us. He is wearing his blue shirt. I see a boy. He **is running** very fast! His dog is running too. An old man **is sitting** on a bench. He is reading a book. Near the **fountain**, some kids **are playing**. They are laughing and happy. I want to play too! My family **is having a picnic** now. We **are eating** yummy sandwiches. I am drinking apple juice. My sister **is flying** her red kite. It is going very high! The kite is beautiful. I **am relaxing** on the grass. The grass is soft and green. I see flowers everywhere. A girl **is walking** her small dog. The dog is cute! I am having so much fun. The park is my favorite place!",
+  content_vi: "Hôm nay tôi đang đi công viên với gia đình. Công viên đông đúc và vui! Tôi đang đi bộ với mẹ. Mẹ đang nắm tay tôi. Bố tôi đang chạy bộ phía trước chúng tôi. Bố đang mặc áo xanh. Tôi thấy một cậu bé. Cậu ấy đang chạy rất nhanh! Chó của cậu ấy cũng đang chạy. Một ông già đang ngồi trên ghế. Ông ấy đang đọc sách. Gần đài phun nước, một số trẻ đang chơi. Chúng đang cười và vui vẻ. Tôi cũng muốn chơi! Gia đình tôi đang dã ngoại bây giờ. Chúng tôi đang ăn bánh sandwich ngon. Tôi đang uống nước táo. Em gái tôi đang thả diều đỏ của em ấy. Nó bay rất cao! Con diều đẹp quá. Tôi đang thư giãn trên cỏ. Cỏ mềm và xanh. Tôi thấy hoa ở khắp nơi. Một cô bé đang dắt chó nhỏ của cô ấy. Chú chó dễ thương! Tôi đang vui lắm. Công viên là nơi yêu thích của tôi!",
   comprehension_questions: [
     {
       id: 1,
-      question_en: "Where is the toy car?",
-      answer: ["under the desk", "desk"],
-      hint_en: "Below the table...",
-      hint_vi: "Dưới bàn..."
+      question_en: "What is the writer doing with mom?",
+      answer: ["walking", "walking with mom", "holding hands"],
+      hint_en: "Moving slowly...",
+      hint_vi: "Di chuyển chậm..."
     },
     {
       id: 2,
-      question_en: "Where is the ball?",
-      answer: ["next to the door", "door"],
-      hint_en: "Beside the entrance...",
-      hint_vi: "Bên cạnh cửa..."
+      question_en: "What color is the sister's kite?",
+      answer: ["red", "red kite"],
+      hint_en: "A color...",
+      hint_vi: "Một màu..."
     },
     {
       id: 3,
-      question_en: "What game do they play?",
-      answer: ["hide and seek", "hiding game", "seeking"],
-      hint_en: "A game about hiding...",
-      hint_vi: "Trò chơi về ẩn nấp..."
+      question_en: "What is the family eating?",
+      answer: ["sandwiches", "yummy sandwiches"],
+      hint_en: "Food for picnic...",
+      hint_vi: "Đồ ăn dã ngoại..."
     }
   ],
   question: {
-    text_en: "Where do you hide your toys? What games do you like?",
-    text_vi: "Bạn giấu đồ chơi ở đâu? Bạn thích trò chơi gì?",
+    text_en: "What do you do at the park? Who do you go with?",
+    text_vi: "Bạn làm gì ở công viên? Bạn đi với ai?",
     min_words: 25,
-    hint_en: "Talk about your favorite hiding places...",
-    hint_vi: "Nói về nơi ẩn nấp yêu thích của bạn..."
+    hint_en: "Talk about your park activities and who you go with...",
+    hint_vi: "Nói về hoạt động ở công viên và ai đi cùng bạn..."
   }
 };

@@ -1,55 +1,51 @@
 export default {
-  words: [
+  title: "Word Power - Present Continuous Collocations",
+  image_url: "/images/week15/word_power_cover_w15.jpg",
+  audio_url: "/audio/week15/word_power_main.mp3",
+  collocations: [
     {
       id: 1,
-      word: "under the table",
-      pronunciation: "/ˈʌn.dər ðə ˈteɪ.bəl/",
-      cefr_level: "A1",
-      definition_en: "in the space below the table",
-      definition_vi: "ở dưới cái bàn",
-      example: "The cat is under the table.",
-      model_sentence: "I find my ball under the table.",
-      collocation: "hide under the table",
-      image_url: "/images/week15/wordpower_under_the_table.jpg",
-      audio_word: "/audio/week15/wordpower_under_the_table.mp3",
-      audio_definition: "/audio/week15/wordpower_def_under_the_table.mp3",
-      audio_example: "/audio/week15/wordpower_ex_under_the_table.mp3",
-      audio_collocation: "/audio/week15/wordpower_coll_under_the_table.mp3",
-      audio_model: "/audio/week15/wordpower_model_under_the_table.mp3"
+      phrase: "running fast",
+      example_en: "The boy is running fast to catch the bus.",
+      example_vi: "Cậu bé đang chạy nhanh để bắt xe buýt.",
+      audio: "/audio/week15/wp_col1.mp3",
+      image_url: "/images/week15/wp_running_fast.jpg"
     },
     {
       id: 2,
-      word: "in the box",
-      pronunciation: "/ɪn ðə bɑːks/",
-      cefr_level: "A1",
-      definition_en: "inside the container",
-      definition_vi: "ở trong hộp",
-      example: "The toys are in the box.",
-      model_sentence: "I put my treasure in the box.",
-      collocation: "put in the box",
-      image_url: "/images/week15/wordpower_in_the_box.jpg",
-      audio_word: "/audio/week15/wordpower_in_the_box.mp3",
-      audio_definition: "/audio/week15/wordpower_def_in_the_box.mp3",
-      audio_example: "/audio/week15/wordpower_ex_in_the_box.mp3",
-      audio_collocation: "/audio/week15/wordpower_coll_in_the_box.mp3",
-      audio_model: "/audio/week15/wordpower_model_in_the_box.mp3"
+      phrase: "eating lunch",
+      example_en: "We are eating lunch in the park today.",
+      example_vi: "Hôm nay chúng tôi đang ăn trưa trong công viên.",
+      audio: "/audio/week15/wp_col2.mp3",
+      image_url: "/images/week15/wp_eating_lunch.jpg"
     },
     {
       id: 3,
-      word: "next to the door",
-      pronunciation: "/nekst tuː ðə dɔːr/",
-      cefr_level: "A1",
-      definition_en: "beside the entrance",
-      definition_vi: "ở bên cạnh cửa",
-      example: "The chair is next to the door.",
-      model_sentence: "I stand next to the door and wait.",
-      collocation: "stand next to the door",
-      image_url: "/images/week15/wordpower_next_to_the_door.jpg",
-      audio_word: "/audio/week15/wordpower_next_to_the_door.mp3",
-      audio_definition: "/audio/week15/wordpower_def_next_to_the_door.mp3",
-      audio_example: "/audio/week15/wordpower_ex_next_to_the_door.mp3",
-      audio_collocation: "/audio/week15/wordpower_coll_next_to_the_door.mp3",
-      audio_model: "/audio/week15/wordpower_model_next_to_the_door.mp3"
+      phrase: "sitting down",
+      example_en: "The old man is sitting down on the comfortable bench.",
+      example_vi: "Ông già đang ngồi xuống trên chiếc ghế thoải mái.",
+      audio: "/audio/week15/wp_col3.mp3",
+      image_url: "/images/week15/wp_sitting_down.jpg"
+    }
+  ],
+  practice_sentences: [
+    {
+      id: 1,
+      text_en: "The children are _____ in the playground.",
+      answer: ["running fast", "playing happily", "having fun"],
+      audio: "/audio/week15/wp_practice1.mp3"
+    },
+    {
+      id: 2,
+      text_en: "My family is _____ together at the table.",
+      answer: ["eating lunch", "eating dinner", "having a meal"],
+      audio: "/audio/week15/wp_practice2.mp3"
+    },
+    {
+      id: 3,
+      text_en: "Everyone is _____ to rest after walking.",
+      answer: ["sitting down", "taking a break", "relaxing now"],
+      audio: "/audio/week15/wp_practice3.mp3"
     }
   ]
 };

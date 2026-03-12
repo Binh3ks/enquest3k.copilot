@@ -1,15 +1,14 @@
 export default {
-  title: "Match the Words",
   pairs: [
-    { id: 1, word: "box", definition: "a container with four sides", image_url: "/images/week15_easy/box.jpg" },
-    { id: 2, word: "desk", definition: "a table for working", image_url: "/images/week15_easy/desk.jpg" },
-    { id: 3, word: "floor", definition: "the surface you walk on", image_url: "/images/week15_easy/floor.jpg" },
-    { id: 4, word: "wall", definition: "the side of a room", image_url: "/images/week15_easy/wall.jpg" },
-    { id: 5, word: "window", definition: "an opening for light", image_url: "/images/week15_easy/window.jpg" },
-    { id: 6, word: "door", definition: "an opening to enter", image_url: "/images/week15_easy/door.jpg" },
-    { id: 7, word: "hide", definition: "to put where nobody can see", image_url: "/images/week15_easy/hide.jpg" },
-    { id: 8, word: "seek", definition: "to look for something", image_url: "/images/week15_easy/seek.jpg" },
-    { id: 9, word: "treasure", definition: "valuable things like gold", image_url: "/images/week15_easy/treasure.jpg" },
-    { id: 10, word: "hunt", definition: "to search carefully", image_url: "/images/week15_easy/hunt.jpg" }
+    { id: 1, word: "running", match: "going fast", image: "/images/week15_easy/running.jpg" },
+    { id: 2, word: "walking", match: "going slow", image: "/images/week15_easy/walking.jpg" },
+    { id: 3, word: "sitting", match: "on a chair", image: "/images/week15_easy/sitting.jpg" },
+    { id: 4, word: "eating", match: "having food", image: "/images/week15_easy/eating.jpg" },
+    { id: 5, word: "flying", match: "in the sky", image: "/images/week15_easy/flying.jpg" },
+    { id: 6, word: "playing", match: "having fun", image: "/images/week15_easy/playing.jpg" },
+    { id: 7, word: "jogging", match: "running for exercise", image: "/images/week15_easy/jogging.jpg" },
+    { id: 8, word: "relaxing", match: "resting", image: "/images/week15_easy/relaxing.jpg" },
+    { id: 9, word: "picnic", match: "eating outside", image: "/images/week15_easy/picnic.jpg" },
+    { id: 10, word: "fountain", match: "water in the park", image: "/images/week15_easy/fountain.jpg" }
   ]
 };
