@@ -24,6 +24,7 @@ import week11RealData from '../../../data/weeks/week_11_real'; // Week 11 syllab
 import week12RealData from '../../../data/weeks/week_12_real'; // Week 12 syllabus - The Talent Show
 import week13RealData from '../../../data/weeks/week_13_real'; // Week 13 syllabus - Daily Routines
 import week14RealData from '../../../data/weeks/week_14_real'; // Week 14 syllabus - Welcome to My World
+import week15RealData from '../../../data/weeks/week_15_real'; // Week 15 syllabus - The Busy Park
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import TTSSettingsPanel from '../components/TTSSettingsPanel';

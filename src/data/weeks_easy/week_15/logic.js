@@ -1,49 +1,60 @@
 export default {
+  title: "Logic Puzzles - Park Fun",
+  image_url: "/images/week15_easy/logic_cover_w15.jpg",
+  audio_url: "/audio/week15_easy/logic_main.mp3",
   puzzles: [
     {
       id: 1,
-      question_en: "The treasure is not on the desk. It is not under the chair. It is in the box. Where is the treasure?",
-      question_vi: "Kho báu không ở trên bàn. Nó không ở dưới ghế. Nó ở trong hộp. Kho báu ở đâu?",
-      answer: ["in the box", "box"],
-      hint_en: "Read the last sentence...",
-      hint_vi: "Đọc câu cuối cùng...",
-      audio_url: "/audio/week15_easy/logic_1.mp3"
+      question_en: "Tom is running fast. Sarah is running slow. Who is faster?",
+      question_vi: "Tom chạy nhanh. Sarah chạy chậm. Ai nhanh hơn?",
+      answer: ["Tom", "tom"],
+      hint_en: "Who is running fast?",
+      hint_vi: "Ai đang chạy nhanh?",
+      audio: "/audio/week15_easy/logic_q1.mp3"
     },
     {
       id: 2,
-      question_en: "Tom hides under the desk. Mary hides next to the door. John hides in the box. Where is Tom?",
-      question_vi: "Tom trốn dưới bàn. Mary trốn bên cạnh cửa. John trốn trong hộp. Tom ở đâu?",
-      answer: ["under the desk", "desk"],
-      hint_en: "Look at the first sentence about Tom...",
-      hint_vi: "Nhìn vào câu đầu tiên về Tom...",
-      audio_url: "/audio/week15_easy/logic_2.mp3"
+      question_en: "Anna has a red kite. Ben has a blue kite. Chen has a yellow kite. What color is Ben's kite?",
+      question_vi: "Anna có diều đỏ. Ben có diều xanh. Chen có diều vàng. Diều của Ben màu gì?",
+      answer: ["blue", "Blue"],
+      hint_en: "Ben has a _____ kite.",
+      hint_vi: "Ben có diều _____.",
+      audio: "/audio/week15_easy/logic_q2.mp3"
     },
     {
       id: 3,
-      question_en: "The box is on the floor. The book is on the desk. The lamp is next to the window. What is on the floor?",
-      question_vi: "Hộp ở trên sàn. Sách ở trên bàn. Đèn ở bên cạnh cửa sổ. Cái gì ở trên sàn?",
-      answer: ["box", "the box"],
-      hint_en: "Read about the floor...",
-      hint_vi: "Đọc về sàn nhà...",
-      audio_url: "/audio/week15_easy/logic_3.mp3"
+      question_en: "Dad is sitting next to Mom. I am sitting next to Mom. Who is in the middle?",
+      question_vi: "Bố ngồi cạnh Mẹ. Tôi ngồi cạnh Mẹ. Ai ở giữa?",
+      answer: ["Mom", "mom", "Mother", "mother"],
+      hint_en: "Who is next to both people?",
+      hint_vi: "Ai cạnh cả hai người?",
+      audio: "/audio/week15_easy/logic_q3.mp3"
     },
     {
       id: 4,
-      question_en: "Clue 1: Look under the desk. Clue 2: Look next to the window. Clue 3: Look in the box. The treasure is at Clue 3. Where is the treasure?",
-      question_vi: "Manh mối 1: Nhìn dưới bàn. Manh mối 2: Nhìn bên cạnh cửa sổ. Manh mối 3: Nhìn trong hộp. Kho báu ở Manh mối 3. Kho báu ở đâu?",
-      answer: ["in the box", "box"],
-      hint_en: "Where is Clue 3?",
-      hint_vi: "Manh mối 3 ở đâu?",
-      audio_url: "/audio/week15_easy/logic_4.mp3"
+      question_en: "Emma starts jogging first. David starts after Emma. Who started first?",
+      question_vi: "Emma bắt đầu chạy bộ trước. David bắt đầu sau Emma. Ai bắt đầu trước?",
+      answer: ["Emma", "emma"],
+      hint_en: "Who starts jogging first?",
+      hint_vi: "Ai bắt đầu chạy bộ trước?",
+      audio: "/audio/week15_easy/logic_q4.mp3"
     },
     {
       id: 5,
-      question_en: "The window is next to the door. The door is next to the desk. The desk is next to the wall. What is next to the door?",
-      question_vi: "Cửa sổ ở bên cạnh cửa. Cửa ở bên cạnh bàn. Bàn ở bên cạnh tường. Cái gì ở bên cạnh cửa?",
-      answer: ["window", "the window", "desk", "the desk", "window and desk"],
-      hint_en: "Read carefully about what's next to the door...",
-      hint_vi: "Đọc kỹ về những gì ở bên cạnh cửa...",
-      audio_url: "/audio/week15_easy/logic_5.mp3"
+      question_en: "I see 3 boys and 2 girls playing at the fountain. How many children are playing?",
+      question_vi: "Tôi thấy 3 bé trai và 2 bé gái chơi ở đài phun nước. Có bao nhiêu trẻ đang chơi?",
+      answer: ["5", "five", "Five"],
+      hint_en: "Add 3 + 2 = ?",
+      hint_vi: "Cộng 3 + 2 = ?",
+      audio: "/audio/week15_easy/logic_q5.mp3"
     }
+  ],
+  instructions_en: "Think about each puzzle. What is the answer? Write it down!",
+  instructions_vi: "Suy nghĩ về mỗi câu đố. Câu trả lời là gì? Viết ra!",
+  tips: [
+    "Read the question slowly",
+    "Think about what you know",
+    "Try drawing a picture to help",
+    "Check your answer"
   ]
 };

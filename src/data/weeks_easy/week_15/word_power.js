@@ -1,55 +1,51 @@
 export default {
-  words: [
+  title: "Word Power - My Actions",
+  image_url: "/images/week15_easy/word_power_cover_w15.jpg",
+  audio_url: "/audio/week15_easy/word_power_main.mp3",
+  collocations: [
     {
       id: 1,
-      word: "under the bed",
-      pronunciation: "/ˈʌn.dər ðə bed/",
-      cefr_level: "A1",
-      definition_en: "in the space below the bed",
-      definition_vi: "ở dưới giường",
-      example: "My toy is under the bed.",
-      model_sentence: "I look under the bed for my ball.",
-      collocation: "hide under the bed",
-      image_url: "/images/week15_easy/wordpower_under_the_bed.jpg",
-      audio_word: "/audio/week15_easy/wordpower_under_the_bed.mp3",
-      audio_definition: "/audio/week15_easy/wordpower_def_under_the_bed.mp3",
-      audio_example: "/audio/week15_easy/wordpower_ex_under_the_bed.mp3",
-      audio_collocation: "/audio/week15_easy/wordpower_coll_under_the_bed.mp3",
-      audio_model: "/audio/week15_easy/wordpower_model_under_the_bed.mp3"
+      phrase: "running fast",
+      example_en: "I am running fast in the park!",
+      example_vi: "Tôi đang chạy nhanh ở công viên!",
+      audio: "/audio/week15_easy/wp_col1.mp3",
+      image_url: "/images/week15_easy/wp_running_fast.jpg"
     },
     {
       id: 2,
-      word: "in the bag",
-      pronunciation: "/ɪn ðə bæɡ/",
-      cefr_level: "A1",
-      definition_en: "inside the bag",
-      definition_vi: "ở trong túi",
-      example: "The book is in the bag.",
-      model_sentence: "I put my toys in the bag.",
-      collocation: "put in the bag",
-      image_url: "/images/week15_easy/wordpower_in_the_bag.jpg",
-      audio_word: "/audio/week15_easy/wordpower_in_the_bag.mp3",
-      audio_definition: "/audio/week15_easy/wordpower_def_in_the_bag.mp3",
-      audio_example: "/audio/week15_easy/wordpower_ex_in_the_bag.mp3",
-      audio_collocation: "/audio/week15_easy/wordpower_coll_in_the_bag.mp3",
-      audio_model: "/audio/week15_easy/wordpower_model_in_the_bag.mp3"
+      phrase: "eating lunch",
+      example_en: "I am eating lunch with my mom.",
+      example_vi: "Tôi đang ăn trưa với mẹ.",
+      audio: "/audio/week15_easy/wp_col2.mp3",
+      image_url: "/images/week15_easy/wp_eating_lunch.jpg"
     },
     {
       id: 3,
-      word: "on the desk",
-      pronunciation: "/ɑːn ðə desk/",
-      cefr_level: "A1",
-      definition_en: "on top of the desk",
-      definition_vi: "ở trên bàn",
-      example: "My book is on the desk.",
-      model_sentence: "I put my pencil on the desk.",
-      collocation: "put on the desk",
-      image_url: "/images/week15_easy/wordpower_on_the_desk.jpg",
-      audio_word: "/audio/week15_easy/wordpower_on_the_desk.mp3",
-      audio_definition: "/audio/week15_easy/wordpower_def_on_the_desk.mp3",
-      audio_example: "/audio/week15_easy/wordpower_ex_on_the_desk.mp3",
-      audio_collocation: "/audio/week15_easy/wordpower_coll_on_the_desk.mp3",
-      audio_model: "/audio/week15_easy/wordpower_model_on_the_desk.mp3"
+      phrase: "sitting down",
+      example_en: "I am sitting down on the grass.",
+      example_vi: "Tôi đang ngồi xuống trên cỏ.",
+      audio: "/audio/week15_easy/wp_col3.mp3",
+      image_url: "/images/week15_easy/wp_sitting_down.jpg"
+    }
+  ],
+  practice_sentences: [
+    {
+      id: 1,
+      text_en: "I am _____ in the park!",
+      answer: ["running fast", "playing now", "having fun"],
+      audio: "/audio/week15_easy/wp_practice1.mp3"
+    },
+    {
+      id: 2,
+      text_en: "My family is _____ together.",
+      answer: ["eating lunch", "eating now", "having food"],
+      audio: "/audio/week15_easy/wp_practice2.mp3"
+    },
+    {
+      id: 3,
+      text_en: "I am _____ to rest.",
+      answer: ["sitting down", "relaxing now", "taking a break"],
+      audio: "/audio/week15_easy/wp_practice3.mp3"
     }
   ]
 };

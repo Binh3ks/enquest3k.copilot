@@ -1,10 +1,10 @@
 export default {
-  title: "Treasure Hunt at Home",
+  title: "Write About Your Park Visit",
   min_words: 40,
-  model_sentence: "I love playing treasure hunt at home. My friend hides a treasure box in my room. First, I look under my bed. Then I look on my desk. I find a clue next to the door. It says 'Look in the closet.' I open the closet and look under my clothes. The treasure is in a box next to my shoes! Inside the box there is a toy car and some candy. I am so happy to find it!",
-  instruction_en: "Write about a treasure hunt game at home. Where do you look? Where do you find the treasure? Use prepositions: in, on, under, next to.",
-  instruction_vi: "Viết về một trò chơi săn kho báu ở nhà. Bạn tìm ở đâu? Bạn tìm thấy kho báu ở đâu? Sử dụng giới từ: trong, trên, dưới, bên cạnh.",
-  prompt_en: "Describe a treasure hunt. Where do you look for the treasure? What prepositions do you use? Where is it hidden?",
-  prompt_vi: "Miêu tả một cuộc săn kho báu. Bạn tìm kho báu ở đâu? Bạn sử dụng giới từ nào? Nó được giấu ở đâu?",
-  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"]
+  model_sentence: "Today I am visiting the park with my class! The park is very busy and exciting. Many people are enjoying their day. A young boy is running after his dog near the trees. Two women are jogging around the path wearing bright clothes. Near the fountain, children are playing with water and laughing happily. My family is having a picnic on the grass. We are eating sandwiches and drinking juice together. Some teenagers are flying colorful kites in the open field. The kites are dancing beautifully in the wind. I am relaxing under a big tree and watching everything. Everyone is having a wonderful time at the park!",
+  instruction_en: "Write about a visit to the park. What are people doing? What activities do you see? Use: is/are + verb-ing (running, walking, sitting, eating, playing, etc.)",
+  instruction_vi: "Viết về chuyến thăm công viên. Mọi người đang làm gì? Bạn thấy hoạt động gì? Sử dụng: is/are + verb-ing (running, walking, sitting, eating, playing, v.v.)",
+  prompt_en: "Describe a busy park. What are people doing? What activities are happening? What are children doing? What is your family doing? How do you feel?",
+  prompt_vi: "Mô tả một công viên đông đúc. Mọi người đang làm gì? Những hoạt động nào đang diễn ra? Trẻ em đang làm gì? Gia đình bạn đang làm gì? Bạn cảm thấy thế nào?",
+  keywords: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"]
 };

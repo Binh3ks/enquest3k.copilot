@@ -1,21 +1,118 @@
 export default {
-  title: "The Treasure Hunt",
+  title: "Sentence Shadowing",
+  image_url: "/images/week15/shadowing_cover_w15.jpg",
+  audio_url: "/audio/week15/shadowing_main.mp3",
   audio_full: "/audio/week15/shadowing_full.mp3",
-  script: [
-    { id: 1, text: "Today is treasure hunt day!", vi: "Hôm nay là ngày săn kho báu!", audio_url: "/audio/week15/shadowing_1.mp3" },
-    { id: 2, text: "My friends and I look for hidden treasure.", vi: "Bạn bè tôi và tôi tìm kiếm kho báu ẩn giấu.", audio_url: "/audio/week15/shadowing_2.mp3" },
-    { id: 3, text: "I look under the desk.", vi: "Tôi nhìn dưới bàn.", audio_url: "/audio/week15/shadowing_3.mp3" },
-    { id: 4, text: "No treasure there!", vi: "Không có kho báu ở đó!", audio_url: "/audio/week15/shadowing_4.mp3" },
-    { id: 5, text: "I look on the floor.", vi: "Tôi nhìn trên sàn.", audio_url: "/audio/week15/shadowing_5.mp3" },
-    { id: 6, text: "My friend looks in the box.", vi: "Bạn tôi nhìn trong hộp.", audio_url: "/audio/week15/shadowing_6.mp3" },
-    { id: 7, text: "He finds a clue!", vi: "Cậu ấy tìm thấy một manh mối!", audio_url: "/audio/week15/shadowing_7.mp3" },
-    { id: 8, text: "The clue says: 'Look next to the window.'", vi: "Manh mối nói: 'Hãy nhìn bên cạnh cửa sổ.'", audio_url: "/audio/week15/shadowing_8.mp3" },
-    { id: 9, text: "We run to the window.", vi: "Chúng tôi chạy đến cửa sổ.", audio_url: "/audio/week15/shadowing_9.mp3" },
-    { id: 10, text: "There is another clue on the wall!", vi: "Có một manh mối khác trên tường!", audio_url: "/audio/week15/shadowing_10.mp3" },
-    { id: 11, text: "We look under the big desk.", vi: "Chúng tôi nhìn dưới cái bàn lớn.", audio_url: "/audio/week15/shadowing_11.mp3" },
-    { id: 12, text: "A box full of gold coins!", vi: "Một hộp đầy tiền vàng!", audio_url: "/audio/week15/shadowing_12.mp3" },
-    { id: 13, text: "The treasure is ours!", vi: "Kho báu là của chúng tôi!", audio_url: "/audio/week15/shadowing_13.mp3" },
-    { id: 14, text: "Hunting for treasure makes us work together.", vi: "Săn tìm kho báu khiến chúng tôi làm việc cùng nhau.", audio_url: "/audio/week15/shadowing_14.mp3" },
-    { id: 15, text: "Next time, I will hide the treasure next to the door!", vi: "Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!", audio_url: "/audio/week15/shadowing_15.mp3" }
+  sentences: [
+    {
+      id: 1,
+      text: "Today, our class is visiting the park.",
+      audio: "/audio/week15/shadowing_s1.mp3"
+    },
+    {
+      id: 2,
+      text: "The park is very busy!",
+      audio: "/audio/week15/shadowing_s2.mp3"
+    },
+    {
+      id: 3,
+      text: "Many people are enjoying their day.",
+      audio: "/audio/week15/shadowing_s3.mp3"
+    },
+    {
+      id: 4,
+      text: "A young boy is running after his dog near the trees.",
+      audio: "/audio/week15/shadowing_s4.mp3"
+    },
+    {
+      id: 5,
+      text: "The dog is barking happily.",
+      audio: "/audio/week15/shadowing_s5.mp3"
+    },
+    {
+      id: 6,
+      text: "An elderly man is sitting on a wooden bench.",
+      audio: "/audio/week15/shadowing_s6.mp3"
+    },
+    {
+      id: 7,
+      text: "He is reading his newspaper peacefully.",
+      audio: "/audio/week15/shadowing_s7.mp3"
+    },
+    {
+      id: 8,
+      text: "Two women are jogging around the path.",
+      audio: "/audio/week15/shadowing_s8.mp3"
+    },
+    {
+      id: 9,
+      text: "They are wearing bright sports clothes and listening to music.",
+      audio: "/audio/week15/shadowing_s9.mp3"
+    },
+    {
+      id: 10,
+      text: "Near the fountain, some children are playing with water.",
+      audio: "/audio/week15/shadowing_s10.mp3"
+    },
+    {
+      id: 11,
+      text: "They are laughing and splashing each other.",
+      audio: "/audio/week15/shadowing_s11.mp3"
+    },
+    {
+      id: 12,
+      text: "A family is having a picnic on the grass.",
+      audio: "/audio/week15/shadowing_s12.mp3"
+    },
+    {
+      id: 13,
+      text: "They are eating sandwiches and drinking juice.",
+      audio: "/audio/week15/shadowing_s13.mp3"
+    },
+    {
+      id: 14,
+      text: "The mother is spreading a blanket.",
+      audio: "/audio/week15/shadowing_s14.mp3"
+    },
+    {
+      id: 15,
+      text: "The father is unpacking the food basket.",
+      audio: "/audio/week15/shadowing_s15.mp3"
+    },
+    {
+      id: 16,
+      text: "A little girl is walking her puppy on a leash.",
+      audio: "/audio/week15/shadowing_s16.mp3"
+    },
+    {
+      id: 17,
+      text: "The puppy is pulling her toward the flowers.",
+      audio: "/audio/week15/shadowing_s17.mp3"
+    },
+    {
+      id: 18,
+      text: "Three teenagers are flying colorful kites in the open field.",
+      audio: "/audio/week15/shadowing_s18.mp3"
+    },
+    {
+      id: 19,
+      text: "The kites are dancing in the wind beautifully.",
+      audio: "/audio/week15/shadowing_s19.mp3"
+    },
+    {
+      id: 20,
+      text: "Some people are relaxing under the shade of big trees.",
+      audio: "/audio/week15/shadowing_s20.mp3"
+    },
+    {
+      id: 21,
+      text: "They are enjoying the cool breeze.",
+      audio: "/audio/week15/shadowing_s21.mp3"
+    },
+    {
+      id: 22,
+      text: "Everyone is having a wonderful time.",
+      audio: "/audio/week15/shadowing_s22.mp3"
+    }
   ]
 };

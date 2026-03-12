@@ -1,10 +1,10 @@
 export default {
-  title: "Finding the Treasure",
-  min_words: 30,
-  model_sentence: "I play treasure hunt. My friend hides a box. I look for the box. I look under the bed. The box is not there. I look on the desk. The box is not there. I look in the closet. I find the box! The box is next to my shoes. I open the box. There is candy in the box. I am happy!",
-  instruction_en: "Write about finding a treasure. Tell us where you look.",
-  instruction_vi: "Viết về việc tìm kho báu. Kể cho chúng tôi biết bạn tìm ở đâu.",
-  prompt_en: "Where do you look for the treasure? Do you look under the bed? Do you look on the desk? Where do you find it?",
-  prompt_vi: "Bạn tìm kho báu ở đâu? Bạn có tìm dưới giường không? Bạn có tìm trên bàn không? Bạn tìm thấy ở đâu?",
-  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"]
+  title: "Write About My Park Day",
+  min_words: 25,
+  model_sentence: "Today I am going to the park! The park is fun! I am walking with my mom. My dad is jogging. I see a boy running with his dog. Near the fountain, kids are playing. They are laughing! My family is having a picnic. We are eating sandwiches. I am drinking juice. My sister is flying a red kite! I am relaxing on the grass. I love the park!",
+  instruction_en: "Write about your day at the park. What are you doing? What do you see? Use: I am..., They are..., We are...",
+  instruction_vi: "Viết về ngày của bạn ở công viên. Bạn đang làm gì? Bạn thấy gì? Sử dụng: I am..., They are..., We are...",
+  prompt_en: "What do you do at the park? What do you see? Who is with you? What are they doing? Do you like the park?",
+  prompt_vi: "Bạn làm gì ở công viên? Bạn thấy gì? Ai cùng đi với bạn? Họ đang làm gì? Bạn có thích công viên không?",
+  keywords: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"]
 };

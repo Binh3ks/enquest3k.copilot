@@ -1,17 +1,18 @@
 /**
- * Week 6 Game Data - Easy Mode (New GameHub)
+ * Week 15 Game Data - Easy Mode (New GameHub)
+ * Theme: My Day at the Park - Present Continuous
  */
 
-export const week6GamesEasy = {
+export const week15GamesEasy = {
   vocabulary: [
-    'box', 'desk', 'floor', 'wall', 'window',
-    'door', 'hide', 'seek', 'ball', 'toy'
+    'running', 'walking', 'sitting', 'eating', 'flying',
+    'playing', 'jogging', 'relaxing', 'picnic', 'fountain'
   ],
   show_tell: {
     steps: 3,
     word_list: [
-      'box', 'desk', 'floor', 'wall', 'window',
-      'door', 'hide', 'seek', 'ball', 'toy'
+      'running', 'walking', 'sitting', 'eating', 'flying',
+      'playing', 'jogging', 'relaxing', 'picnic', 'fountain'
     ],
     instructions_easy: 'Say the word, add a phrase, then make a full sentence.',
     instructions_advanced: 'Say the word, add a phrase, then make a full sentence.',
@@ -20,88 +21,63 @@ export const week6GamesEasy = {
       2: 'Step 2: add a short phrase with the word.',
       3: 'Step 3: make a full sentence.'
     },
-    frames_easy: ['The ___ is in the ___', 'The ___ is on the ___'],
-    frames_advanced: ['The ___ is in the ___', 'The ___ is on the ___'],
+    frames_easy: ['I am ___', 'I see ___'],
+    frames_advanced: ['I am ___ at the park', 'My family is ___'],
     details_easy: [],
     details_advanced: [],
     detail_map: {
-      box: ['my box', 'a big box', 'the box', 'your box'],
-      desk: ['my desk', 'a big desk', 'the desk', 'your desk'],
-      floor: ['my floor', 'the floor', 'clean floor', 'your floor'],
-      wall: ['my wall', 'the wall', 'big wall', 'your wall'],
-      window: ['my window', 'a big window', 'the window', 'your window'],
-      door: ['my door', 'a red door', 'the door', 'your door'],
-      hide: ['hide now', 'hide here', 'hide the toy', 'hide the ball'],
-      seek: ['seek now', 'seek here', 'seek the toy', 'seek the ball'],
-      ball: ['my ball', 'a red ball', 'the ball', 'your ball'],
-      toy: ['my toy', 'a small toy', 'the toy', 'your toy']
+      'running': ['running', 'running fast', 'I am running', 'I am running fast at the park'],
+      'walking': ['walking', 'walking slow', 'I am walking', 'I am walking with my mom'],
+      'sitting': ['sitting', 'sitting down', 'I am sitting', 'I am sitting on the grass'],
+      'eating': ['eating', 'eating food', 'I am eating', 'I am eating yummy sandwiches'],
+      'flying': ['flying', 'flying kites', 'I am flying', 'My sister is flying a red kite'],
+      'playing': ['playing', 'playing games', 'I am playing', 'I am playing at the park'],
+      'jogging': ['jogging', 'jogging fast', 'Dad is jogging', 'My dad is jogging in the park'],
+      'relaxing': ['relaxing', 'relaxing now', 'I am relaxing', 'I am relaxing on the grass'],
+      'picnic': ['picnic', 'a picnic', 'We are having a picnic', 'My family is having a picnic'],
+      'fountain': ['fountain', 'the fountain', 'I see the fountain', 'I see kids playing at the fountain']
     },
     distractors_easy: [],
     distractors_advanced: [],
-    distractor_map: {
-      box: ['my ball', 'the window', 'the door'],
-      desk: ['my toy', 'the floor', 'the door']
-    },
-    frame_map: {
-      box: ['The ___ is in the ___'],
-      ball: ['The ___ is on the ___']
-    },
-    sentence_hints_map: {
-      box: ['The box is on the desk.', 'The box is in the room.', 'The box is under the desk.'],
-      desk: ['The desk is in the room.', 'The toy is on the desk.', 'The ball is under the desk.'],
-      floor: ['The ball is on the floor.', 'The toy is on the floor.', 'The box is on the floor.'],
-      wall: ['The picture is on the wall.', 'The window is on the wall.', 'The door is on the wall.'],
-      window: ['The window is on the wall.', 'The ball is under the window.', 'The toy is under the window.'],
-      door: ['The door is on the wall.', 'The toy is under the door.', 'The ball is under the door.'],
-      hide: ['I hide the toy.', 'I hide the ball.', 'I hide in the box.'],
-      seek: ['I seek the toy.', 'I seek the ball.', 'I seek under the desk.'],
-      ball: ['The ball is on the floor.', 'The ball is in the box.', 'The ball is under the desk.'],
-      toy: ['The toy is on the desk.', 'The toy is in the box.', 'The toy is under the chair.']
-    },
     emoji_map: {
-      box: '📦',
-      desk: '🪑',
-      floor: '⬛',
-      wall: '🧱',
-      window: '🪟',
-      door: '🚪',
-      hide: '🙈',
-      seek: '🔍',
-      ball: '⚽',
-      toy: '🧸'
-    },
-    definitions: {
-      hide: 'To put something where no one can see it.',
-      seek: 'To look for something.',
-      floor: 'The ground inside a room.'
+      'running': '🏃',
+      'walking': '🚶',
+      'sitting': '🪑',
+      'eating': '🍽️',
+      'flying': '🪁',
+      'playing': '⚽',
+      'jogging': '🏃‍♂️',
+      'relaxing': '😌',
+      'picnic': '🧺',
+      'fountain': '⛲'
     }
   },
   make_sentence: {
-    instructions_easy: 'Unscramble the words to make a correct sentence.',
-    instructions_advanced: 'Unscramble the words to make a correct sentence.',
+    instructions_easy: 'Unscramble the words to make a sentence.',
+    instructions_advanced: 'Unscramble the words to make a sentence.',
     sentences_easy: [
-      { scrambled: ['The', 'ball', 'is', 'on', 'the', 'floor'], answer: 'The ball is on the floor.', base_words: ['the', 'ball', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'toy', 'is', 'in', 'the', 'box'], answer: 'The toy is in the box.', base_words: ['the', 'toy', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the desk'] },
-      { scrambled: ['The', 'box', 'is', 'on', 'the', 'desk'], answer: 'The box is on the desk.', base_words: ['the', 'box', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'ball', 'is', 'under', 'the', 'desk'], answer: 'The ball is under the desk.', base_words: ['the', 'ball', 'is', 'under', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['The', 'toy', 'is', 'on', 'the', 'desk'], answer: 'The toy is on the desk.', base_words: ['the', 'toy', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['The', 'ball', 'is', 'in', 'the', 'box'], answer: 'The ball is in the box.', base_words: ['the', 'ball', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the floor'] },
-      { scrambled: ['The', 'toy', 'is', 'under', 'the', 'chair'], answer: 'The toy is under the chair.', base_words: ['the', 'toy', 'is', 'under', 'the', 'chair'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the kitchen'] },
-      { scrambled: ['The', 'box', 'is', 'on', 'the', 'floor'], answer: 'The box is on the floor.', base_words: ['the', 'box', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'door', 'is', 'on', 'the', 'wall'], answer: 'The door is on the wall.', base_words: ['the', 'door', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] },
-      { scrambled: ['The', 'window', 'is', 'on', 'the', 'wall'], answer: 'The window is on the wall.', base_words: ['the', 'window', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] }
+      { scrambled: ['I', 'am', 'running'], answer: 'I am running.' },
+      { scrambled: ['I', 'am', 'walking'], answer: 'I am walking.' },
+      { scrambled: ['I', 'am', 'sitting'], answer: 'I am sitting.' },
+      { scrambled: ['I', 'am', 'eating'], answer: 'I am eating.' },
+      { scrambled: ['I', 'am', 'playing'], answer: 'I am playing.' },
+      { scrambled: ['Mom', 'is', 'sitting'], answer: 'Mom is sitting.' },
+      { scrambled: ['Dad', 'is', 'jogging'], answer: 'Dad is jogging.' },
+      { scrambled: ['I', 'see', 'the', 'fountain'], answer: 'I see the fountain.' },
+      { scrambled: ['We', 'are', 'having', 'fun'], answer: 'We are having fun.' },
+      { scrambled: ['I', 'love', 'the', 'park'], answer: 'I love the park.' }
     ],
     sentences_advanced: [
-      { scrambled: ['The', 'ball', 'is', 'on', 'the', 'floor'], answer: 'The ball is on the floor.', base_words: ['the', 'ball', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['The', 'toy', 'is', 'in', 'the', 'box'], answer: 'The toy is in the box.', base_words: ['the', 'toy', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the desk'] },
-      { scrambled: ['The', 'box', 'is', 'under', 'the', 'desk'], answer: 'The box is under the desk.', base_words: ['the', 'box', 'is', 'under', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['ball', 'The', 'is', 'in', 'the', 'box'], answer: 'The ball is in the box.', base_words: ['the', 'ball', 'is', 'in', 'the', 'box'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'on the floor'] },
-      { scrambled: ['toy', 'The', 'is', 'on', 'the', 'desk'], answer: 'The toy is on the desk.', base_words: ['the', 'toy', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'at school'] },
-      { scrambled: ['is', 'The', 'ball', 'under', 'the', 'chair'], answer: 'The ball is under the chair.', base_words: ['the', 'ball', 'is', 'under', 'the', 'chair'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the kitchen'] },
-      { scrambled: ['is', 'The', 'toy', 'on', 'the', 'floor'], answer: 'The toy is on the floor.', base_words: ['the', 'toy', 'is', 'on', 'the', 'floor'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['box', 'The', 'is', 'on', 'the', 'desk'], answer: 'The box is on the desk.', base_words: ['the', 'box', 'is', 'on', 'the', 'desk'], time_phrases: ['right now', 'today', 'now', 'at this moment'], location_phrases: ['in the room', 'at home', 'here', 'in the bedroom'] },
-      { scrambled: ['window', 'The', 'is', 'on', 'the', 'wall'], answer: 'The window is on the wall.', base_words: ['the', 'window', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] },
-      { scrambled: ['door', 'The', 'is', 'on', 'the', 'wall'], answer: 'The door is on the wall.', base_words: ['the', 'door', 'is', 'on', 'the', 'wall'], time_phrases: ['right now', 'today', 'now', 'always'], location_phrases: ['in the room', 'at home', 'here', 'in the house'] }
+      { scrambled: ['I', 'am', 'running', 'at', 'the', 'park'], answer: 'I am running at the park.', base_words: ['i', 'am', 'running', 'at', 'the', 'park'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['at the park', 'with friends', 'outside'] },
+      { scrambled: ['I', 'am', 'walking', 'with', 'my', 'mom'], answer: 'I am walking with my mom.', base_words: ['i', 'am', 'walking', 'with', 'my', 'mom'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['at the park', 'outside', 'together'] },
+      { scrambled: ['Mom', 'is', 'sitting', 'on', 'a', 'bench'], answer: 'Mom is sitting on a bench.', base_words: ['mom', 'is', 'sitting', 'on', 'a', 'bench'], time_phrases: ['now', 'right now', 'today'], location_phrases: ['on a bench', 'at the park', 'resting'] },
+      { scrambled: ['We', 'are', 'eating', 'sandwiches'], answer: 'We are eating sandwiches.', base_words: ['we', 'are', 'eating', 'sandwiches'], time_phrases: ['now', 'right now', 'today'], location_phrases: ['at the picnic', 'together', 'at the park'] },
+      { scrambled: ['My', 'sister', 'is', 'flying', 'a', 'kite'], answer: 'My sister is flying a kite.', base_words: ['my', 'sister', 'is', 'flying', 'a', 'kite'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['at the park', 'in the sky', 'outside'] },
+      { scrambled: ['Kids', 'are', 'playing', 'at', 'the', 'fountain'], answer: 'Kids are playing at the fountain.', base_words: ['kids', 'are', 'playing', 'at', 'the', 'fountain'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['at the fountain', 'with water', 'together'] },
+      { scrambled: ['Dad', 'is', 'jogging', 'in', 'the', 'park'], answer: 'Dad is jogging in the park.', base_words: ['dad', 'is', 'jogging', 'in', 'the', 'park'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['in the park', 'on the path', 'outside'] },
+      { scrambled: ['I', 'am', 'relaxing', 'on', 'the', 'grass'], answer: 'I am relaxing on the grass.', base_words: ['i', 'am', 'relaxing', 'on', 'the', 'grass'], time_phrases: ['now', 'right now', 'today'], location_phrases: ['on the grass', 'at the park', 'outside'] },
+      { scrambled: ['My', 'family', 'is', 'having', 'a', 'picnic'], answer: 'My family is having a picnic.', base_words: ['my', 'family', 'is', 'having', 'a', 'picnic'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['at the park', 'on the grass', 'together'] },
+      { scrambled: ['I', 'am', 'having', 'fun'], answer: 'I am having fun.', base_words: ['i', 'am', 'having', 'fun'], time_phrases: ['now', 'today', 'right now'], location_phrases: ['at the park', 'outside', 'with my family'] }
     ]
   },
   ask_me: {
@@ -109,373 +85,68 @@ export const week6GamesEasy = {
     instructions_advanced: 'Ask a question that matches the context.',
     contexts_easy: [
       {
-        id: 'w6_ball_where',
+        id: 'w15_doing_what',
         task_type: 'find_question',
-        topic: 'ball',
-        intro: 'The ball is on the floor. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is the toy?',
-          'Where is it?'
-        ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
+        topic: 'activities',
+        intro: 'I am running. Ask me what I am doing.',
+        acceptedQuestions: ['What are you doing?', 'Are you running?', 'What are you playing?'],
+        answer: 'I am running.',
+        question_hints: ['What are you doing?', 'Are you running?'],
+        required_question_words: ['what', 'are'],
+        required_keywords: ['doing', 'you'],
+        hints: { words: ['what', 'are', 'you', 'doing'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_toy_where',
+        id: 'w15_eating_what',
         task_type: 'find_question',
-        topic: 'toy',
-        intro: 'The toy is in the box. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
+        topic: 'food',
+        intro: 'I am eating sandwiches. Ask me what I am eating.',
+        acceptedQuestions: ['What are you eating?', 'What food?', 'Are you eating?'],
+        answer: 'I am eating sandwiches.',
+        question_hints: ['What are you eating?', 'What food?'],
+        required_question_words: ['what', 'are'],
+        required_keywords: ['eating'],
+        hints: { words: ['what', 'are', 'you', 'eating'], tricky: ['where', 'who'] }
       },
       {
-        id: 'w6_box_where',
+        id: 'w15_where_playing',
         task_type: 'find_question',
-        topic: 'box',
-        intro: 'The box is on the desk. Ask me where the box is.',
-        acceptedQuestions: [
-          'Where is the box?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The box is on the desk.',
-        question_hints: ['Where is the box?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
-        hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_desk_where',
-        task_type: 'find_question',
-        topic: 'desk',
-        intro: 'The toy is on the desk. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_floor_where',
-        task_type: 'find_question',
-        topic: 'floor',
-        intro: 'The ball is on the floor. Ask me where it is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_door_where',
-        task_type: 'find_question',
-        topic: 'door',
-        intro: 'The toy is under the door. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_window_where',
-        task_type: 'find_question',
-        topic: 'window',
-        intro: 'The ball is under the window. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_hide_where',
-        task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_mini_location',
-        task_type: 'mini_interview',
         topic: 'location',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
-        steps: [
-          {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
-          },
-          {
-            prompt: 'Ask where the toy is.',
-            acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
-            ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
-          }
-        ],
-        hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
-        }
+        intro: 'I am at the park. Ask me where I am.',
+        acceptedQuestions: ['Where are you?', 'Where are you playing?', 'Are you at the park?'],
+        answer: 'I am at the park.',
+        question_hints: ['Where are you?', 'Are you at the park?'],
+        required_question_words: ['where', 'are'],
+        required_keywords: ['you'],
+        hints: { words: ['where', 'are', 'you'], tricky: ['what', 'who'] }
+      },
+      {
+        id: 'w15_kite_color',
+        task_type: 'find_question',
+        topic: 'colors',
+        intro: 'My kite is red. Ask me what color it is.',
+        acceptedQuestions: ['What color is your kite?', 'What color?', 'Is it red?'],
+        answer: 'My kite is red.',
+        question_hints: ['What color is your kite?', 'What color?'],
+        required_question_words: ['what', 'color'],
+        required_keywords: ['color'],
+        hints: { words: ['what', 'color', 'is'], tricky: ['where', 'who'] }
+      },
+      {
+        id: 'w15_like_park',
+        task_type: 'find_question',
+        topic: 'preferences',
+        intro: 'I love the park. Ask me if I like the park.',
+        acceptedQuestions: ['Do you like the park?', 'Do you love the park?', 'Is it fun?'],
+        answer: 'Yes, I love the park.',
+        question_hints: ['Do you like the park?', 'Do you love the park?'],
+        required_question_words: ['do', 'you'],
+        required_keywords: ['like', 'love', 'park'],
+        hints: { words: ['do', 'you', 'like', 'park'], tricky: ['what', 'where'] }
       }
     ],
-    contexts_advanced: [
-      {
-        id: 'w6_ball_where_adv',
-        task_type: 'find_question',
-        topic: 'ball',
-        intro: 'The ball is on the floor. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is the toy?',
-          'Where is it?'
-        ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is the toy?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_toy_where_adv',
-        task_type: 'find_question',
-        topic: 'toy',
-        intro: 'The toy is in the box. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_box_where_adv',
-        task_type: 'find_question',
-        topic: 'box',
-        intro: 'The box is on the desk. Ask me where the box is.',
-        acceptedQuestions: [
-          'Where is the box?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The box is on the desk.',
-        question_hints: ['Where is the box?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['box'],
-        hints: {
-          words: ['where', 'is', 'the', 'box'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_desk_where_adv',
-        task_type: 'find_question',
-        topic: 'desk',
-        intro: 'The toy is on the desk. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is the ball?',
-          'Where is it?'
-        ],
-        answer: 'The toy is on the desk.',
-        question_hints: ['Where is the toy?', 'Where is the ball?', 'Where is it?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_floor_where_adv',
-        task_type: 'find_question',
-        topic: 'floor',
-        intro: 'The ball is on the floor. Ask me where it is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is on the floor.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball', 'it'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_door_where_adv',
-        task_type: 'find_question',
-        topic: 'door',
-        intro: 'The toy is under the door. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is under the door.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_window_where_adv',
-        task_type: 'find_question',
-        topic: 'window',
-        intro: 'The ball is under the window. Ask me where the ball is.',
-        acceptedQuestions: [
-          'Where is the ball?',
-          'Where is it?',
-          'Where is the toy?'
-        ],
-        answer: 'The ball is under the window.',
-        question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?'],
-        required_question_words: ['where'],
-        required_keywords: ['ball'],
-        hints: {
-          words: ['where', 'is', 'the', 'ball'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_hide_where_adv',
-        task_type: 'find_question',
-        topic: 'hide',
-        intro: 'I hide the toy in the box. Ask me where the toy is.',
-        acceptedQuestions: [
-          'Where is the toy?',
-          'Where is it?',
-          'Where is the ball?'
-        ],
-        answer: 'The toy is in the box.',
-        question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?'],
-        required_question_words: ['where'],
-        required_keywords: ['toy'],
-        hints: {
-          words: ['where', 'is', 'the', 'toy'],
-          tricky: ['what', 'who']
-        }
-      },
-      {
-        id: 'w6_mini_seek',
-        task_type: 'mini_interview',
-        topic: 'seek',
-        intro: 'Interview me: ask where the ball is, then ask where the toy is.',
-        steps: [
-          {
-            prompt: 'Ask where the ball is.',
-            required_question_words: ['where'],
-            required_keywords: ['ball'],
-            question_hints: ['Where is the ball?', 'Where is it?', 'Where is the toy?']
-          },
-          {
-            prompt: 'Ask where the toy is.',
-            acceptedQuestions: [
-              'Where is the toy?',
-              'Where is it?',
-              'Where is the ball?'
-            ],
-            required_question_words: ['where'],
-            required_keywords: ['toy'],
-            question_hints: ['Where is the toy?', 'Where is it?', 'Where is the ball?']
-          }
-        ],
-        hints: {
-          words: ['where', 'is', 'the', 'ball', 'toy'],
-          tricky: ['what', 'who']
-        }
-      }
-    ],
-    required_question_words_easy: ['where', 'is'],
-    required_question_words_advanced: ['where', 'is']
+    contexts_advanced: []
   }
 };
 
-export default week6GamesEasy;
+export default week15GamesEasy;
