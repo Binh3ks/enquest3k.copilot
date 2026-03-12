@@ -94,22 +94,6 @@ async function getVoiceConfigForWeek(weekNumber) {
     return null;
   }
 }
-  // 'https://binh3k-engquest3k-2.hf.space', // mirror #2 (add when available)
-];
-let _poolIndex = 0;
-function nextTTSServer() {
-  const url = TTS_POOL[_poolIndex % TTS_POOL.length];
-  _poolIndex++;
-  return url;
-}
-
-// --- GOOGLE CLOUD TTS (Primary for dynamic content) ---
-// Route: App → Cloudflare Worker (api-tts.bkbacademy.vn) → R2 cache or Google TTS
-// When TTS_WORKER_URL is set: API key stays in Worker Secret (never in browser bundle)
-// When TTS_WORKER_URL is empty: falls back to direct Google TTS API (dev/testing mode)
-const TTS_WORKER_URL = import.meta.env.VITE_TTS_WORKER_URL || '';
-import { proxyGoogleTTS } from './aiProxy.js';
-const GOOGLE_TTS_VOICE = 'en-US-Journey-F'; // fallback: en-US-Neural2-F
 
 // Simple client-side rate limiter: min gap between requests per server (ms)
 const RATE_LIMIT_MS = 300;
