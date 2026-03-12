@@ -687,10 +687,22 @@ const FreeTalkTab = () => {
             };
             addMessage('freetalk', completionMsg);
             
-            // 🔊 Play TTS for completion message (instant mode, clean numbered artifacts)
+            // 🔊 Play TTS for completion message (static cache)
             try {
               const cleanedCompletion = cleanNumberedListArtifacts(completionMsg.content);
-              await textToSpeech(cleanedCompletion, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+              // Static cache: conversation/{cardId}/completion.mp3
+              const completionContext = {
+                type: 'conversation',
+                weekNum: weekNumber,
+                cardId: activeConversation.cardId,
+                subType: 'completion'
+              };
+              await textToSpeech(cleanedCompletion, { 
+                autoPlay: true, 
+                preferredLayer: 'auto', 
+                mode: 'conversation',
+                context: completionContext
+              });
             } catch (err) {
               console.error('❌ FreeTalk TTS error:', err);
             }
@@ -720,10 +732,40 @@ const FreeTalkTab = () => {
             };
             addMessage('freetalk', aiMsg);
             
-            // 🔊 Play TTS for next exchange (instant mode, clean numbered artifacts)
+            // 🔊 Play TTS in 2 parts: feedback (dynamic) + AI question (static)
             try {
-              const cleanedResponse = cleanNumberedListArtifacts(responseText);
-              await textToSpeech(cleanedResponse, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+              const cleanedFeedback = cleanNumberedListArtifacts(validation.feedback);
+              const cleanedAI = cleanNumberedListArtifacts(nextExchangeData.ai);
+              
+              console.log('🎬 Playing 2-part conversation TTS:', {
+                part1_feedback: cleanedFeedback.substring(0, 40) + '...',
+                part2_ai: cleanedAI.substring(0, 40) + '...'
+              });
+              
+              // PART 1: Feedback (dynamic cache - varies by validation result)
+              await textToSpeech(cleanedFeedback, {
+                autoPlay: true,
+                preferredLayer: 'auto',
+                mode: 'conversation',
+                context: {} // Dynamic cache
+              });
+              
+              // PART 2: AI question (static cache - same for all students)
+              const questionContext = {
+                type: 'conversation',
+                weekNum: weekNumber,
+                cardId: activeConversation.cardId,
+                questionNum: nextExchange + 1,
+                subType: 'question'
+              };
+              await textToSpeech(cleanedAI, {
+                autoPlay: true,
+                preferredLayer: 'auto',
+                mode: 'conversation',
+                context: questionContext
+              });
+              
+              console.log('🔊 Conversation TTS played successfully (2 parts)');
             } catch (err) {
               console.error('❌ FreeTalk TTS error:', err);
             }
@@ -901,7 +943,27 @@ const FreeTalkTab = () => {
       try {
         console.log('🎤 FreeTalkTab: Playing AI response TTS...');
         const cleanedResponse = cleanNumberedListArtifacts(responseText);
-        await textToSpeech(cleanedResponse, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+        
+        // 💬 CONVERSATION CARDS: Use static cache for opening message
+        if (userMessage.startsWith('START_CONVERSATION:') && activeConversation) {
+          const openingContext = {
+            type: 'conversation',
+            weekNum: weekNumber,
+            cardId: activeConversation.cardId,
+            questionNum: 1,
+            subType: 'opening'
+          };
+          console.log('💬 Playing conversation opening with static cache:', openingContext);
+          await textToSpeech(cleanedResponse, { 
+            autoPlay: true, 
+            preferredLayer: 'auto', 
+            mode: 'conversation',
+            context: openingContext
+          });
+        } else {
+          // Free conversation or other modes - use dynamic cache
+          await textToSpeech(cleanedResponse, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
+        }
       } catch (error) {
         console.error('❌ TTS error for AI response:', error);
       }

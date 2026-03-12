@@ -173,12 +173,28 @@ const PronunciationTab = () => {
     
     // 🔥 PRIORITY 1: Try TTS with full fallback chain
     try {
-      await textToSpeech(textWithPunctuation, {
+      // 🎯 Use static cache for vocabulary words
+      const ttsOptions = {
         autoPlay: true,
         preferredLayer: 'auto', // 🔥 Use full fallback chain (Deepgram → Google → OpenAI → Browser)
         mode: 'pronunciation', // 🎯 Slower speed for clear pronunciation practice
         speed: isSingleWord ? 0.6 : 0.85 // 🔥 Single words at 60% speed — clear final consonants, no cut-off
-      });
+      };
+      
+      // Static cache for single vocabulary words
+      if (isSingleWord) {
+        ttsOptions.context = {
+          type: 'vocab',
+          word: text.trim(),
+          language: 'en'
+        };
+        console.log('🎯 Using vocab static cache:', ttsOptions.context);
+      } else {
+        // Dynamic cache for sentences (varies by grammar example)
+        ttsOptions.context = {};
+      }
+      
+      await textToSpeech(textWithPunctuation, ttsOptions);
       console.log('✅ TTS succeeded');
       return; // Success - exit early
     } catch (error) {

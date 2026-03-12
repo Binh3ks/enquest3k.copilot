@@ -23,6 +23,7 @@ const QuizTab = () => {
   const [gameComplete, setGameComplete] = useState(false);
   const [error, setError] = useState(null);
   const [showMenu, setShowMenu] = useState(true); // Show game selection menu
+  const [selectedGameType, setSelectedGameType] = useState(null); // Track game type for TTS caching
 
   const autoPlayEnabled = useTutorStore(state => state.autoPlayEnabled);
 
@@ -31,6 +32,7 @@ const QuizTab = () => {
       setLoading(true);
       setError(null);
       setShowMenu(false); // Hide menu
+      setSelectedGameType(gameType); // Store game type for caching
       
       console.log('Nova Arcade loading:', currentWeek, '- Game type:', gameType);
       const data = await getCurrentWeekData(currentWeek);
@@ -71,7 +73,18 @@ const QuizTab = () => {
       setGameData(gameJson);
       
       if (autoPlayEnabled && gameJson.intro_text) {
-        await textToSpeech(gameJson.intro_text, { mode: 'conversation', autoPlay: true });
+        // 🎮 Use static cache for game intro text
+        const introContext = {
+          type: 'quiz',
+          weekNum: weekNumber,
+          gameType: gameType,
+          subType: 'intro'
+        };
+        await textToSpeech(gameJson.intro_text, { 
+          mode: 'conversation', 
+          autoPlay: true,
+          context: introContext
+        });
       }
     } catch (err) {
       console.error('Failed to load quiz:', err);
