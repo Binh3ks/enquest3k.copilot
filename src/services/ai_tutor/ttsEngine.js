@@ -201,13 +201,14 @@ async function generateCacheInfo(text, context = {}) {
   
   // ===== 3. CONVERSATION CARDS (hardcoded in card data) =====
   if (context.type === 'conversation' && context.cardId) {
+    const version = context.version || 1; // 🆕 Support versioning
     const filename = context.questionNum 
       ? `q${context.questionNum}`
       : 'intro';
     
     return {
-      cacheKey: `${context.cardId}_${filename}`,
-      audioPath: `audio/ai_tutor/conversation/${context.cardId}/${filename}.mp3`,
+      cacheKey: `${context.cardId}_v${version}_${filename}`,
+      audioPath: `audio/ai_tutor/conversation/${context.cardId}/v${version}/${filename}.mp3`,
       isStatic: true,
       category: 'conversation'
     };

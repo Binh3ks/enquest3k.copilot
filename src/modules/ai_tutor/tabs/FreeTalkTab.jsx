@@ -645,6 +645,7 @@ const FreeTalkTab = () => {
       // � CONVERSATION CARDS: Detect START_CONVERSATION and initialize
       let isConversationOpening = false; // 🆕 Track if this is opening message
       let conversationCardId = null; // 🆕 Store cardId for TTS caching
+      let conversationVersion = 1; // 🆕 Store version for cache invalidation
       
       if (userMessage.startsWith('START_CONVERSATION:')) {
         const cardId = userMessage.split(':')[1]?.trim();
@@ -654,11 +655,13 @@ const FreeTalkTab = () => {
           console.log('💬 Starting conversation card:', cardId);
           isConversationOpening = true; // 🆕 Mark as opening
           conversationCardId = cardId; // 🆕 Store for TTS
+          conversationVersion = card.version || 1; // 🆕 Get version from card data
           const conversationState = {
             cardId,
             currentExchange: 0,
             totalExchanges: card.exchanges.length,
-            card
+            card,
+            version: conversationVersion // 🆕 Store version in state
           };
           setActiveConversation(conversationState);
           setMode('in_conversation');
@@ -695,11 +698,12 @@ const FreeTalkTab = () => {
             // 🔊 Play TTS for completion message (static cache)
             try {
               const cleanedCompletion = cleanNumberedListArtifacts(completionMsg.content);
-              // Static cache: conversation/{cardId}/completion.mp3
+              // Static cache: conversation/{cardId}/v{version}/completion.mp3
               const completionContext = {
                 type: 'conversation',
                 weekNum: weekNumber,
                 cardId: activeConversation.cardId,
+                version: activeConversation.version || 1, // 🆕 Include version
                 subType: 'completion'
               };
               await textToSpeech(cleanedCompletion, { 
@@ -760,6 +764,7 @@ const FreeTalkTab = () => {
                 type: 'conversation',
                 weekNum: weekNumber,
                 cardId: activeConversation.cardId,
+                version: activeConversation.version || 1, // 🆕 Include version
                 questionNum: nextExchange + 1,
                 subType: 'question'
               };
@@ -956,6 +961,7 @@ const FreeTalkTab = () => {
             type: 'conversation',
             weekNum: weekNumber,
             cardId: conversationCardId,
+            version: conversationVersion, // 🆕 Include version
             questionNum: 1,
             subType: 'opening'
           };

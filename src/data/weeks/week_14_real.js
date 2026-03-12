@@ -256,6 +256,7 @@ const week14RealData = {
       emoji: "📊",
       theme: "Project Showcase: Presenting My Work",
       difficulty: "easy",
+      version: 2, // 🆕 Version for cache invalidation
       exchanges: [
         {
           ai: "Hello! What is your poster about? Choose: My poster is about my family or My poster is about my talents or My poster is about my hobbies",
