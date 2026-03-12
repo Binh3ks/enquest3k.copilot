@@ -945,7 +945,10 @@ const FreeTalkTab = () => {
         const cleanedResponse = cleanNumberedListArtifacts(responseText);
         
         // 💬 CONVERSATION CARDS: Use static cache for opening message
-        if (userMessage.startsWith('START_CONVERSATION:') && activeConversation) {
+        // Check if this is the first exchange of a conversation card
+        const isConversationOpening = mode === 'in_conversation' && activeConversation && activeConversation.currentExchange === 0;
+        
+        if (isConversationOpening) {
           const openingContext = {
             type: 'conversation',
             weekNum: weekNumber,
