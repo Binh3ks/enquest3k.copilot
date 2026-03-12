@@ -607,6 +607,21 @@ const StoryMissionTab = () => {
         const isFromStoryArc = aiResponse.skipAI === true;
         console.log('🔍 Response source:', isFromStoryArc ? 'story_arc (static)' : 'AI (dynamic)');
         
+        // 🎯 CRITICAL FIX: For story_arc, separate recast (text-only) from question (TTS)
+        // Problem: Recast is dynamic ("You are 7 years old" vs "You are 11 years old")
+        //          but cache path is static (mission1_q2_response.mp3)
+        // Solution: Only TTS the question part, show full response in chat
+        const ttsText = isFromStoryArc && aiResponse.question 
+          ? aiResponse.question  // Static: "Where are you from? Say: I am from Vietnam!"
+          : responseText;        // Dynamic: full AI-generated response
+        
+        if (isFromStoryArc && aiResponse.question) {
+          console.log('✂️ Separated TTS:', { 
+            chatText: responseText.substring(0, 60) + '...', 
+            ttsText: ttsText.substring(0, 60) + '...' 
+          });
+        }
+        
         // Use AI-generated hints
         const hints = guardedResponse.hints || guardedResponse.suggested_hints || [];
         
@@ -639,7 +654,8 @@ const StoryMissionTab = () => {
         addMessage('story', aiMsg);  // 🔥 FIX: Use addMessage helper, not setMessages!
         
         // TTS - Play AI response with context-aware caching
-        if (responseText) {
+        // 🔥 Use ttsText (question-only) instead of responseText (recast + question)
+        if (ttsText) {
           try {
             // 🎯 Context for story_arc responses (hardcoded content)
             const ttsContext = isFromStoryArc ? {
@@ -650,7 +666,7 @@ const StoryMissionTab = () => {
               subType: 'response'
             } : {}; // AI-generated = dynamic (no context)
             
-            await textToSpeech(responseText, {
+            await textToSpeech(ttsText, {
               autoPlay: true,
               mode: 'conversation',
               preferredLayer: 'auto',

@@ -427,15 +427,28 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     console.log('✅ TTS: Using in-memory cached audio');
     const cachedUrl = audioCache.get(memoryCacheKey);
     if (autoPlay) {
-      await playAudio(cachedUrl, userSpeed);
+      try {
+        await playAudio(cachedUrl, userSpeed);
+      } catch (playError) {
+        console.error('❌ Cached audio playback failed:', playError.message);
+        console.log('🔄 Clearing bad cache and regenerating...');
+        // Clear bad cache entry
+        audioCache.delete(memoryCacheKey);
+        // Fall through to regenerate audio - don't return here
+      }
     }
-    isSpeaking = false; // 🔥 Release lock for cached audio
-    return {
-      success: true,
-      audioUrl: cachedUrl,
-      layer: 'memory_cache',
-      text
-    };
+    // Only return success if cache still valid (playback didn't error)
+    if (audioCache.has(memoryCacheKey)) {
+      isSpeaking = false; // 🔥 Release lock for cached audio
+      return {
+        success: true,
+        audioUrl: cachedUrl,
+        layer: 'memory_cache',
+        text
+      };
+    }
+    // If cache was cleared due to error, log and continue to regeneration
+    console.log('⏩ Cache cleared, falling through to TTS generation...');
   }
 
   // 🔥 STEP 3: Check R2 CDN cache (< 100ms, saves Deepgram API cost)
@@ -447,16 +460,29 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     audioCache.set(memoryCacheKey, r2CachedUrl);
     
     if (autoPlay) {
-      await playAudio(r2CachedUrl, userSpeed);
+      try {
+        await playAudio(r2CachedUrl, userSpeed);
+      } catch (playError) {
+        console.error('❌ R2 cached audio playback failed:', playError.message);
+        console.log('🔄 Clearing bad R2 cache reference and regenerating...');
+        // Clear bad cache entry
+        audioCache.delete(memoryCacheKey);
+        // Fall through to regenerate audio
+      }
     }
-    isSpeaking = false; // 🔥 Release lock for cached audio
-    return {
-      success: true,
-      audioUrl: r2CachedUrl,
-      layer: 'r2_cache',
-      text,
-      cached: true
-    };
+    // Only return success if cache still valid (playback didn't error)
+    if (autoPlay === false || audioCache.has(memoryCacheKey)) {
+      isSpeaking = false; // 🔥 Release lock for cached audio
+      return {
+        success: true,
+        audioUrl: r2CachedUrl,
+        layer: 'r2_cache',
+        text,
+        cached: true
+      };
+    }
+    // If cache was cleared due to error, log and continue to regeneration
+    console.log('⏩ R2 cache cleared, falling through to TTS generation...');
   }
 
   // 🔥 STEP 3: Cache miss - generate audio via TTS engines
@@ -709,40 +735,49 @@ async function playAudio(audioUrlOrIdentifier, playbackSpeed = 1.0) {
   currentAudio.playbackRate = playbackSpeed; // 🎛️ Set playback speed
   isPlaying = true;
 
-  currentAudio.onended = () => {
-    console.log('✅ Audio playback ended');
-    isPlaying = false;
-    currentAudio = null;
-  };
+  // 🔥 Wrap playback in promise to catch load errors
+  return new Promise((resolve, reject) => {
+    currentAudio.onended = () => {
+      console.log('✅ Audio playback ended');
+      isPlaying = false;
+      currentAudio = null;
+      resolve();
+    };
 
-  currentAudio.onerror = () => {
-    console.warn('⚠️ Audio error (cleaned up)');
-    isPlaying = false;
-    currentAudio = null;
-  };
+    currentAudio.onerror = (error) => {
+      const errorMsg = currentAudio.error 
+        ? `${currentAudio.error.code}: ${currentAudio.error.message}` 
+        : 'Unknown audio load error';
+      console.warn('⚠️ Audio load error:', errorMsg);
+      isPlaying = false;
+      currentAudio = null;
+      // Reject promise so caller can handle (clear cache, retry, etc.)
+      reject(new Error(`Audio load failed: ${errorMsg}`));
+    };
 
-  // 🔥 Proper error handling for play() to prevent AbortError
-  try {
+    // 🔥 Proper error handling for play() to prevent AbortError
     const playPromise = currentAudio.play();
     if (playPromise !== undefined) {
-      await playPromise.catch(error => {
+      playPromise.catch(error => {
         // Handle common play() interruption errors gracefully
         if (error.name === 'AbortError') {
           console.warn('🔊 Audio play() was interrupted (normal behavior)');
+          resolve(); // Don't treat as error
         } else if (error.name === 'NotAllowedError') {
           console.warn('🔊 Audio play() not allowed by browser policy');
+          reject(error);
+        } else if (error.name === 'NotSupportedError') {
+          console.error('🔊 Audio play() error - file corrupted or wrong format');
+          reject(error);
         } else {
           console.error('🔊 Audio play() error:', error);
+          reject(error);
         }
         isPlaying = false;
         currentAudio = null;
       });
     }
-  } catch (error) {
-    console.error('🔊 Audio play() setup error:', error);
-    isPlaying = false;
-    currentAudio = null;
-  }
+  });
 }
 
 /**
