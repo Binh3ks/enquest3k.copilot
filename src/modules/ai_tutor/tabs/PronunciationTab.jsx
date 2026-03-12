@@ -185,7 +185,7 @@ const PronunciationTab = () => {
       if (isSingleWord) {
         ttsOptions.context = {
           type: 'vocab',
-          word: text.trim(),
+          vocabId: text.trim().toLowerCase().replace(/[^a-z0-9]/g, '_'),
           language: 'en'
         };
         console.log('🎯 Using vocab static cache:', ttsOptions.context);

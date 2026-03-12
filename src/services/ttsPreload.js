@@ -153,13 +153,15 @@ class TTSPreloadService {
    * @returns {Promise<void>}
    */
   async initialize() {
-    // 1. Warm server first
-    await this.warmServer();
+    // 🔥 DISABLED: Legacy HF TTS preload no longer needed (using Cloudflare Worker + R2 cache)
+    console.log('[TTS Preload] ℹ️ Using Cloudflare Worker with R2 cache - no warmup needed');
+    return Promise.resolve();
     
-    // 2. Pre-cache common phrases (don't block app startup)
-    this.preloadCommonPhrases().catch(err => {
-      console.warn('[TTS Preload] Background preload failed:', err);
-    });
+    // Legacy code (disabled):
+    // await this.warmServer();
+    // this.preloadCommonPhrases().catch(err => {
+    //   console.warn('[TTS Preload] Background preload failed:', err);
+    // });
   }
 
   /**
