@@ -244,7 +244,8 @@ export const VoiceService = {
             const deepgramVoice = GOOGLE_TO_DEEPGRAM_VOICE[googleVoice];
             console.log(`[TTS] 🎤 Generating on-demand: ${station} with ${deepgramVoice || 'default'}`);
             
-            const audioBlob = await this.useGoogleTTS(cleanedText, station, deepgramVoice);
+            // Pass audioUrl so Worker saves to exact R2 path (not hash-based)
+            const audioBlob = await this.useGoogleTTS(cleanedText, station, deepgramVoice, audioUrl);
             await TTSCache.set(cleanedText, station, audioBlob);
             const blobUrl = URL.createObjectURL(audioBlob);
             return this.playAudio(blobUrl, true);
@@ -520,6 +521,9 @@ export const VoiceService = {
       if (audioPath) {
         const cleanPath = audioPath.startsWith('/') ? audioPath.slice(1) : audioPath;
         workerUrl += `&path=${encodeURIComponent(cleanPath)}`;
+        console.log(`[TTS] 🔧 DEBUG v525dcfd: Passing path param to Worker: ${cleanPath}`);
+      } else {
+        console.warn(`[TTS] ⚠️ DEBUG v525dcfd: NO audioPath provided! Will save to dynamic/`);
       }
       
       const res = await fetch(workerUrl);
