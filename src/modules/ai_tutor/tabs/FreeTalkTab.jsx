@@ -94,7 +94,7 @@ const FreeTalkTab = () => {
   });
   
   // 🔥 Dynamic week data selection (Fallback: Week 7 - Golden Standard)
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : weekNumber === 9 ? week9RealData : weekNumber === 10 ? week10RealData : weekNumber === 11 ? week11RealData : weekNumber === 12 ? week12RealData : weekNumber === 13 ? week13RealData : weekNumber === 14 ? week14RealData : week7RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : weekNumber === 9 ? week9RealData : weekNumber === 10 ? week10RealData : weekNumber === 11 ? week11RealData : weekNumber === 12 ? week12RealData : weekNumber === 13 ? week13RealData : weekNumber === 14 ? week14RealData : weekNumber === 15 ? week15RealData : week7RealData;
   
   // 🎭 Get roleplays from weekRealData (NEW SYSTEM - NOT from dynamicRoleplays.js!)
   const dynamicRoleplays = weekRealData?.roleplay_scenarios || [];
