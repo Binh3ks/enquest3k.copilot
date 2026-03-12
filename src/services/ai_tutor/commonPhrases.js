@@ -155,11 +155,8 @@ export function getCommonPhrasePath(filename) {
 
 /**
  * Get all common phrases for bulk generation
- * @returns {Array<{filename: string, text: string}>}
+ * @returns {Object<string, string>} Object with filename keys and text values
  */
 export function getAllCommonPhrases() {
-  return Object.entries(COMMON_PHRASES).map(([filename, text]) => ({
-    filename,
-    text
-  }));
+  return COMMON_PHRASES;
 }
