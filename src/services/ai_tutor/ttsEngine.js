@@ -88,17 +88,16 @@ export const encodeWAV = injectWavHeader;
 
 import { proxyTTS, proxyGoogleTTS, proxyDeepgramTTS } from '../aiProxy.js';
 import useTTSStore from '../../stores/useTTSStore.js';
+import { getCommonPhraseFilename, getCommonPhrasePath, getCommonPhraseURL } from './commonPhrases.js';
 
 // Audio cache for repeated phrases (in-memory)
 const audioCache = new Map();
 
-// R2 CDN cache configuration
-const R2_CACHE_CONFIG = {
-  enabled: true, // 🔥 Enable R2 cache to save Deepgram API costs
-  cdnUrl: 'https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev',
-  cachePrefix: 'ai_tutor_cache',
-  voiceModel: 'nova-2' // Deepgram voice model for cache key generation
-};
+// TTS Worker URL (same as stations)
+const TTS_WORKER_URL = import.meta.env.VITE_TTS_WORKER_URL || 'https://engquest-tts-worker.binhkhoi08.workers.dev';
+
+// R2 CDN configuration
+const R2_CDN_URL = 'https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev';
 
 // Current playback state
 let currentAudio = null;
@@ -146,87 +145,95 @@ const TTS_CONFIG = {
 // ============================================
 
 /**
- * Generate cache key for R2 CDN audio cache
- * Uses SHA256 hash of cleaned text + voice model
+ * Generate cache key and R2 path for audio
+ * Prioritizes common phrases (static paths), falls back to hash-based (dynamic paths)
  * @param {string} text - Cleaned text
- * @returns {string} Cache key (e.g., "a1b2c3d4ef56.mp3")
+ * @returns {Promise<{cacheKey: string, audioPath: string, isCommon: boolean}>}
  */
-async function generateCacheKey(text) {
-  const normalized = text.toLowerCase().trim();
-  const hashInput = `${normalized}_${R2_CACHE_CONFIG.voiceModel}`;
+async function generateCacheInfo(text) {
+  // Check if this is a common phrase
+  const commonFilename = getCommonPhraseFilename(text);
   
-  // Use SubtleCrypto API for SHA-256 hashing (browser-native)
+  if (commonFilename) {
+    // Static path for common phrases
+    return {
+      cacheKey: commonFilename,
+      audioPath: getCommonPhrasePath(commonFilename),
+      isCommon: true
+    };
+  }
+  
+  // Dynamic hash-based path for unique content
+  const normalized = text.toLowerCase().trim();
   const encoder = new TextEncoder();
-  const data = encoder.encode(hashInput);
+  const data = encoder.encode(normalized);
   const hashBuffer = await crypto.subtle.digest('SHA-256', data);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  const hash = hashHex.substring(0, 16);
   
-  // Return first 16 chars + .mp3 extension
-  return `${hashHex.substring(0, 16)}.mp3`;
+  return {
+    cacheKey: hash,
+    audioPath: `audio/ai_tutor/dynamic/${hash}.mp3`,
+    isCommon: false
+  };
 }
 
 /**
  * Check if audio exists in R2 CDN cache
- * @param {string} cacheKey - Cache key (e.g., "a1b2c3d4ef56.mp3")
+ * @param {string} audioPath - R2 object key (e.g., "audio/ai_tutor/common/praise_great.mp3")
  * @returns {Promise<string|null>} R2 CDN URL if exists, null otherwise
  */
-async function checkR2Cache(cacheKey) {
-  if (!R2_CACHE_CONFIG.enabled) return null;
-  
-  const r2Url = `${R2_CACHE_CONFIG.cdnUrl}/${R2_CACHE_CONFIG.cachePrefix}/${cacheKey}`;
+async function checkR2Cache(audioPath) {
+  const r2Url = `${R2_CDN_URL}/${audioPath}`;
   
   try {
-    // HEAD request to check if file exists (faster than GET)
+    // HEAD request to check if file exists
     const response = await fetch(r2Url, { method: 'HEAD' });
+    
     if (response.ok) {
-      console.log('✅ R2 Cache HIT:', cacheKey);
+      console.log('✅ R2 cache HIT:', audioPath);
       return r2Url;
     }
   } catch (error) {
-    // File doesn't exist or network error
+    console.log('⏩ R2 cache MISS:', audioPath);
   }
   
-  console.log('❌ R2 Cache MISS:', cacheKey);
   return null;
 }
 
 /**
- * Upload audio to R2 cache (via backend API)
- * @param {string} cacheKey - Cache key
- * @param {Blob} audioBlob - Audio data
- * @returns {Promise<boolean>} True if upload successful
+ * Upload audio to R2 via Cloudflare Worker (same as stations)
+ * Worker saves audio to R2 in background via ctx.waitUntil()
+ * @param {string} text - Cleaned text
+ * @param {string} audioPath - R2 object key 
+ * @param {string} voice - Deepgram voice
+ * @returns {Promise<Blob>} - Audio blob
  */
-async function uploadToR2Cache(cacheKey, audioBlob) {
-  if (!R2_CACHE_CONFIG.enabled) return false;
+async function generateAndCacheToR2(text, audioPath, voice) {
+  // Call Worker with audioPath parameter (Worker will save to R2)
+  const workerUrl = `${TTS_WORKER_URL}/tts?text=${encodeURIComponent(text)}&station=ai_tutor&voice=${voice}&path=${encodeURIComponent(audioPath)}`;
   
-  try {
-    const formData = new FormData();
-    formData.append('audio', audioBlob, cacheKey);
-    formData.append('cacheKey', cacheKey);
-    
-    // Upload via backend API (Railway server proxied to R2)
-    // Note: R2 cache upload might not need auth, but include token if available
-    const headers = {};
-    // Get token from useUserStore if needed (currently not required for R2 cache)
-    // const token = useUserStore.getState()?.token;
-    // if (token) headers['Authorization'] = `Bearer ${token}`;
-    
-    const response = await fetch(`${API_BASE_URL}/cache/audio`, {
-      method: 'POST',
-      headers,
-      body: formData
-    });
-    
-    if (response.ok) {
-      console.log('✅ Uploaded to R2 cache:', cacheKey);
-      return true;
-    }
-  } catch (error) {
-    console.warn('⚠️ Failed to upload to R2 cache:', error.message);
+  console.log(`🎤 Generating via Worker with static path: ${audioPath}`);
+  
+  const response = await fetch(workerUrl);
+  
+  if (!response.ok) {
+    throw new Error(`Worker returned ${response.status}`);
   }
   
-  return false;
+  const audioBlob = await response.blob();
+  const cacheHit = response.headers.get('X-Cache') === 'HIT';
+  
+  if (cacheHit) {
+    console.log(`☁️ Worker served from R2 cache: ${audioPath}`);
+  } else {
+    console.log(`✅ Worker generated and cached to R2: ${audioPath} (${(audioBlob.size / 1024).toFixed(1)}KB)`);
+  }
+  
+  return audioBlob;
+  
+  return audioBlob;
 }
 
 /**
@@ -306,7 +313,7 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     deepgramEnabled: TTS_CONFIG.deepgram.enabled,
     geminiEnabled: TTS_CONFIG.gemini.enabled,
     openaiEnabled: TTS_CONFIG.openai.enabled,
-    r2CacheEnabled: R2_CACHE_CONFIG.enabled
+    r2CacheEnabled: true // Always enabled via Worker
   });
 
   // 🔥 Get user preferences from TTS settings store
@@ -314,8 +321,18 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   const userVoice = ttsStore.getVoiceConfig(); // User-selected voice
   const userSpeed = speed || ttsStore.getSpeedValue(mode); // Custom speed or store preference
 
-  // 🔥 STEP 1: Check in-memory cache first (instant)
-  const memoryCacheKey = `${cleanedText.substring(0, 100)}_${preferredLayer}_${userVoice}`;
+  // 🔥 STEP 1: Generate cache info (check if common phrase or dynamic content)
+  const { cacheKey, audioPath, isCommon } = await generateCacheInfo(cleanedText);
+  
+  // Log cache type for visibility
+  if (isCommon) {
+    console.log(`🎯 Common phrase detected: ${cacheKey}`);
+  } else {
+    console.log(`💬 Dynamic content: ${cacheKey.substring(0, 8)}...`);
+  }
+
+  // 🔥 STEP 2: Check in-memory cache first (instant)
+  const memoryCacheKey = `${audioPath}_${preferredLayer}_${userVoice}`;
   
   if (audioCache.has(memoryCacheKey)) {
     console.log('✅ TTS: Using in-memory cached audio');
@@ -332,9 +349,8 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     };
   }
 
-  // 🔥 STEP 2: Check R2 CDN cache (< 100ms, saves Deepgram API cost)
-  const r2CacheKey = await generateCacheKey(cleanedText);
-  const r2CachedUrl = await checkR2Cache(r2CacheKey);
+  // 🔥 STEP 3: Check R2 CDN cache (< 100ms, saves Deepgram API cost)
+  const r2CachedUrl = await checkR2Cache(audioPath);
   
   if (r2CachedUrl) {
     console.log('✅ TTS: Using R2 CDN cached audio');
@@ -372,19 +388,19 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
       switch (layer) {
         case 'deepgram':
           if (TTS_CONFIG.deepgram.enabled) {
-            audioUrl = await callDeepgramTTS(cleanedText, userVoice); // 🎯 Deepgram Aura TTS with user-selected voice
+            audioUrl = await callDeepgramTTS(cleanedText, userVoice, audioPath); // 🎯 Pass audioPath for Worker caching
           }
           break;
         
         case 'gemini':
           if (TTS_CONFIG.gemini.enabled) {
-            audioUrl = await callGeminiTTS(cleanedText, mode); // 🎯 Pass mode for speed control
+            audioUrl = await callGeminiTTS(cleanedText, mode, audioPath); // 🎯 Pass audioPath for Worker caching
           }
           break;
         
         case 'openai':
           if (TTS_CONFIG.openai.enabled) {
-            audioUrl = await callOpenAITTS(cleanedText); // 🧹 Use cleaned text
+            audioUrl = await callOpenAITTS(cleanedText, audioPath); // 🎯 Pass audioPath for Worker caching
           }
           break;
         
@@ -403,16 +419,11 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
         // Cache the result in memory
         audioCache.set(memoryCacheKey, audioUrl);
         
-        console.log(`✅ TTS: ${layer} successful!`);
+        console.log(`✅ TTS: ${layer} successful! (Worker cached to R2: ${audioPath})`);
         
-        // 🔥 Upload to R2 cache for future use (async, non-blocking)
-        if (layer === 'deepgram' || layer === 'gemini' || layer === 'openai') {
-          // Only cache high-quality TTS (not browser fallback)
-          fetch(audioUrl)
-            .then(res => res.blob())
-            .then(blob => uploadToR2Cache(r2CacheKey, blob))
-            .catch(err => console.warn('⚠️ R2 cache upload failed:', err));
-        }
+        // Worker already cached to R2 in background (no need for separate upload)
+        // Common phrases: audio/ai_tutor/common/{name}.mp3
+        // Dynamic content: audio/ai_tutor/dynamic/{hash}.mp3
         
         // Auto-play if requested
         if (autoPlay) {
@@ -451,17 +462,15 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
 // LAYER 1: DEEPGRAM AURA TTS (PRIMARY)
 // ============================================
 
-async function callDeepgramTTS(text, voice = 'aura-asteria-en') {
-  // Proxied through mcp-server - Deepgram key not in browser bundle
+async function callDeepgramTTS(text, voice = 'aura-asteria-en', audioPath) {
+  // Use Worker for generation and R2 caching
   try {
-    console.log(`🎤 Deepgram TTS using voice: ${voice}`);
-    const blob = await proxyDeepgramTTS(text, {
-      voice: voice // User-selected voice from TTS settings
-    });
-    if (!blob) throw new Error("Deepgram TTS proxy returned null");
-    return URL.createObjectURL(blob);
+    console.log(`🎤 Deepgram TTS using voice: ${voice}, path: ${audioPath}`);
+    const audioBlob = await generateAndCacheToR2(text, audioPath, voice);
+    if (!audioBlob) throw new Error("Worker TTS returned null");
+    return URL.createObjectURL(audioBlob);
   } catch (error) {
-    console.error("Deepgram TTS proxy failed:", error.message);
+    console.error("Deepgram TTS Worker failed:", error.message);
     throw error;
   }
 }
@@ -470,9 +479,11 @@ async function callDeepgramTTS(text, voice = 'aura-asteria-en') {
 // LAYER 2: GOOGLE CLOUD TEXT-TO-SPEECH (BACKUP)
 // ============================================
 
-async function callGeminiTTS(text, mode) {
+async function callGeminiTTS(text, mode, audioPath) {
   // Proxied through mcp-server - Google TTS key not in browser bundle
+  // TODO: Migrate to Worker with audioPath once Worker supports Google TTS
   try {
+    console.log(`🎤 Google TTS (backup), path: ${audioPath}`);
     const blob = await proxyGoogleTTS(text, {
       voice: mode === "pronunciation" ? "en-US-Standard-E" : "en-US-Studio-O",
       languageCode: "en-US"
@@ -488,8 +499,10 @@ async function callGeminiTTS(text, mode) {
 // LAYER 3: OPENAI TTS
 // ============================================
 
-async function callOpenAITTS(text) {
+async function callOpenAITTS(text, audioPath) {
   // Proxied through mcp-server — key not in browser bundle
+  // TODO: Migrate to Worker with audioPath once Worker supports OpenAI TTS
+  console.log(`🎤 OpenAI TTS (backup), path: ${audioPath}`);
   const blob = await proxyTTS(text, {
     model: TTS_CONFIG.openai.model,
     voice: TTS_CONFIG.openai.voice,
