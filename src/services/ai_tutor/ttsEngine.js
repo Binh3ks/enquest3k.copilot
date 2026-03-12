@@ -145,38 +145,119 @@ const TTS_CONFIG = {
 // ============================================
 
 /**
- * Generate cache key and R2 path for audio
- * Prioritizes common phrases (static paths), falls back to hash-based (dynamic paths)
- * @param {string} text - Cleaned text
- * @returns {Promise<{cacheKey: string, audioPath: string, isCommon: boolean}>}
+ * Generate cache key and R2 path for audio with context awareness
+ * 
+ * CACHE STRATEGY:
+ * 1. Generic phrases → audio/ai_tutor/common/{name}.mp3 (66 phrases)
+ * 2. Story content → audio/ai_tutor/story/week{N}/{id}.mp3 (organized by week)
+ * 3. Conversation cards → audio/ai_tutor/conversation/{cardId}/{qNum}.mp3
+ * 4. Vocabulary → audio/ai_tutor/vocab/{vocabId}_{lang}.mp3
+ * 5. Translations → audio/ai_tutor/translation/{hash}.mp3 (may reuse)
+ * 6. Dynamic content → audio/ai_tutor/dynamic/{hash}.mp3 (student-specific)
+ * 
+ * @param {string} text - Cleaned text to generate audio for
+ * @param {Object} context - Context for organizing cache
+ * @param {string} context.type - Content type: 'story'|'conversation'|'vocab'|'translation'|'dynamic'
+ * @param {number} context.weekNum - Week number (for story)
+ * @param {string} context.stationId - Station ID (for story)
+ * @param {string} context.questionId - Question ID (for story)
+ * @param {string} context.subType - Sub-type: 'prompt'|'choice_a'|'choice_b'|'feedback'|'hint'
+ * @param {string} context.cardId - Card ID (for conversation)
+ * @param {number} context.questionNum - Question number (for conversation)
+ * @param {string} context.vocabId - Vocabulary ID (for vocab)
+ * @param {string} context.language - Language code: 'en'|'vi' (for vocab/translation)
+ * @returns {Promise<{cacheKey: string, audioPath: string, isStatic: boolean, category: string}>}
  */
-async function generateCacheInfo(text) {
-  // Check if this is a common phrase
+async function generateCacheInfo(text, context = {}) {
+  // ===== 1. GENERIC COMMON PHRASES =====
   const commonFilename = getCommonPhraseFilename(text);
-  
   if (commonFilename) {
-    // Static path for common phrases
     return {
       cacheKey: commonFilename,
       audioPath: getCommonPhrasePath(commonFilename),
-      isCommon: true
+      isStatic: true,
+      category: 'common'
     };
   }
   
-  // Dynamic hash-based path for unique content
+  // ===== 2. STORY MISSION CONTENT (hardcoded in week data) =====
+  if (context.type === 'story' && context.weekNum && context.stationId) {
+    // Build descriptive filename
+    const parts = [
+      context.stationId,
+      context.questionId,
+      context.subType
+    ].filter(Boolean);
+    
+    const filename = parts.join('_');
+    
+    return {
+      cacheKey: filename,
+      audioPath: `audio/ai_tutor/story/week${context.weekNum}/${filename}.mp3`,
+      isStatic: true,
+      category: 'story'
+    };
+  }
+  
+  // ===== 3. CONVERSATION CARDS (hardcoded in card data) =====
+  if (context.type === 'conversation' && context.cardId) {
+    const filename = context.questionNum 
+      ? `q${context.questionNum}`
+      : 'intro';
+    
+    return {
+      cacheKey: `${context.cardId}_${filename}`,
+      audioPath: `audio/ai_tutor/conversation/${context.cardId}/${filename}.mp3`,
+      isStatic: true,
+      category: 'conversation'
+    };
+  }
+  
+  // ===== 4. VOCABULARY (hardcoded words + translations) =====
+  if (context.type === 'vocab' && context.vocabId) {
+    const lang = context.language || 'en';
+    return {
+      cacheKey: `${context.vocabId}_${lang}`,
+      audioPath: `audio/ai_tutor/vocab/${context.vocabId}_${lang}.mp3`,
+      isStatic: true,
+      category: 'vocab'
+    };
+  }
+  
+  // ===== 5. TRANSLATIONS (hash-based but organized) =====
+  if (context.type === 'translation') {
+    const hash = await generateHash(text + (context.language || 'en'));
+    return {
+      cacheKey: hash,
+      audioPath: `audio/ai_tutor/translation/${hash}.mp3`,
+      isStatic: false, // May reuse if same text
+      category: 'translation'
+    };
+  }
+  
+  // ===== 6. TRULY DYNAMIC (student response, AI recast, ask anything) =====
+  const hash = await generateHash(text);
+  return {
+    cacheKey: hash,
+    audioPath: `audio/ai_tutor/dynamic/${hash}.mp3`,
+    isStatic: false,
+    category: 'dynamic'
+  };
+}
+
+/**
+ * Generate SHA-256 hash for text (helper function)
+ * @param {string} text - Text to hash
+ * @returns {Promise<string>} 16-character hash
+ */
+async function generateHash(text) {
   const normalized = text.toLowerCase().trim();
   const encoder = new TextEncoder();
   const data = encoder.encode(normalized);
   const hashBuffer = await crypto.subtle.digest('SHA-256', data);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-  const hash = hashHex.substring(0, 16);
-  
-  return {
-    cacheKey: hash,
-    audioPath: `audio/ai_tutor/dynamic/${hash}.mp3`,
-    isCommon: false
-  };
+  return hashHex.substring(0, 16);
 }
 
 /**
@@ -270,9 +351,10 @@ function cleanTextForSpeech(text) {
  * @param {boolean} options.autoPlay - Auto-play audio immediately
  * @param {string} options.preferredLayer - 'gemini' | 'openai' | 'puter' | 'browser' | 'auto'
  * @param {string} options.mode - 'conversation' (0.8x) | 'pronunciation' (1.0x)
+ * @param {Object} options.context - Cache context (type, weekNum, stationId, etc.)
  * @returns {Promise<AudioResponse>}
  */
-export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto', mode = 'conversation', speed = null } = {}) {
+export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'auto', mode = 'conversation', speed = null, context = {} } = {}) {
   if (!text || text.trim().length === 0) {
     console.warn('⚠️ TTS: Empty text provided');
     return { success: false, error: 'Empty text' };
@@ -322,14 +404,21 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   const userSpeed = speed || ttsStore.getSpeedValue(mode); // Custom speed or store preference
 
   // 🔥 STEP 1: Generate cache info (check if common phrase or dynamic content)
-  const { cacheKey, audioPath, isCommon } = await generateCacheInfo(cleanedText);
+  const { cacheKey, audioPath, isStatic, category } = await generateCacheInfo(cleanedText, context);
   
   // Log cache type for visibility
-  if (isCommon) {
-    console.log(`🎯 Common phrase detected: ${cacheKey}`);
-  } else {
-    console.log(`💬 Dynamic content: ${cacheKey.substring(0, 8)}...`);
-  }
+  const categoryEmoji = {
+    'common': '🎯',
+    'story': '📖',
+    'conversation': '💬',
+    'vocab': '📚',
+    'translation': '🌐',
+    'dynamic': '✨'
+  };
+  
+  const emoji = categoryEmoji[category] || '💬';
+  const displayKey = isStatic ? cacheKey : cacheKey.substring(0, 8) + '...';
+  console.log(`${emoji} ${category.toUpperCase()}: ${displayKey}`);
 
   // 🔥 STEP 2: Check in-memory cache first (instant)
   const memoryCacheKey = `${audioPath}_${preferredLayer}_${userVoice}`;

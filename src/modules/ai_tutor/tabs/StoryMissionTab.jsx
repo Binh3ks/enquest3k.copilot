@@ -373,12 +373,18 @@ const StoryMissionTab = () => {
       setMissionStatus('started');
       console.log('✅ Message added, mission status set to started');
       
-      // 🔊 Play opening message with TTS
+      // 🔊 Play opening message with TTS (with context for organized caching)
       try {
         await textToSpeech(openingLine, {
           autoPlay: true,
           mode: 'conversation',
-          preferredLayer: 'auto'
+          preferredLayer: 'auto',
+          context: {
+            type: 'story',
+            weekNum: weekNumber,
+            stationId: `mission${currentMission.mission_id || missionIndex + 1}`,
+            subType: 'opening'
+          }
         });
         console.log('🔊 TTS played successfully');
       } catch (error) {
