@@ -262,19 +262,16 @@ const week14RealData = {
           options: ["My poster is about my family", "My poster is about my talents", "My poster is about my hobbies"]
         },
         {
-          ai: "Great topic! How do you introduce yourself? Say: My name is ___ and I am ___.",
-          fill_blank: "My name is ___ and I am ___.",
-          accept_words: ["student", "talented", "confident", "proud", "happy", "excited", "8 years old", "a student"]
+          ai: "Great topic! How do you introduce yourself? Say: My name is Binh and I am a student or My name is Binh and I am talented or My name is Binh and I am confident",
+          options: ["My name is Binh and I am a student", "My name is Binh and I am talented", "My name is Binh and I am confident", "My name is Binh and I am 8 years old"]
         },
         {
-          ai: "Nice introduction! What can you do? Say: I can ___.",
-          fill_blank: "I can ___.",
-          accept_words: ["sing", "dance", "draw", "play guitar", "speak English", "tell stories", "read", "write"]
+          ai: "Nice introduction! What can you do? Say: I can sing or I can dance or I can draw",
+          options: ["I can sing", "I can dance", "I can draw", "I can play guitar", "I can speak English"]
         },
         {
-          ai: "That's a great talent! How do you feel when you present? Say: I feel ___.",
-          fill_blank: "I feel ___.",
-          accept_words: ["confident", "proud", "happy", "excited", "nervous but happy", "ready", "good"]
+          ai: "That's a great talent! How do you feel when you present? Say: I feel confident or I feel proud or I feel happy",
+          options: ["I feel confident", "I feel proud", "I feel happy", "I feel excited"]
         },
         {
           ai: "What does the audience do? Choose: The audience listens carefully or The audience smiles at me or The audience claps their hands",
@@ -295,28 +292,24 @@ const week14RealData = {
           options: ["My family has 3 people", "My family has 4 people", "My family has 5 people"]
         },
         {
-          ai: "Who is in your family? Say: I have ___.",
-          fill_blank: "I have ___.",
-          accept_words: ["mom and dad", "a sister", "a brother", "parents", "siblings", "mom dad and sister", "mom dad and brother"]
+          ai: "Who is in your family? Say: I have mom and dad or I have a sister or I have a brother",
+          options: ["I have mom and dad", "I have a sister", "I have a brother", "I have mom dad and sister"]
         },
         {
-          ai: "Tell me about someone in your family. Say: My ___ is ___.",
-          fill_blank: "My ___ is ___.",
-          accept_words: ["mom is kind", "dad is funny", "sister is talented", "brother is smart", "family is loving", "mom is beautiful", "dad is strong"]
+          ai: "Tell me about someone in your family. Say: My mom is kind or My dad is funny or My sister is talented",
+          options: ["My mom is kind", "My dad is funny", "My sister is talented", "My brother is smart"]
         },
         {
-          ai: "What does your family do together? Say: We ___.",
-          fill_blank: "We ___.",
-          accept_words: ["play together", "eat dinner", "watch TV", "go to the park", "have fun", "talk", "laugh"]
+          ai: "What does your family do together? Say: We play together or We eat dinner or We watch TV",
+          options: ["We play together", "We eat dinner", "We watch TV", "We go to the park"]
         },
         {
           ai: "How do you feel about your family? Choose: I am proud of my family or I love my family or My family is special",
           options: ["I am proud of my family", "I love my family", "My family is special"]
         },
         {
-          ai: "Great job describing your family! Are you proud? Say: Yes, I am proud of ___.",
-          fill_blank: "Yes, I am proud of ___.",
-          accept_words: ["my family", "my poster", "myself", "my work", "my presentation"]
+          ai: "Great job describing your family! Are you proud? Say: Yes, I am proud of my family or Yes, I am proud of my poster or Yes, I am proud of myself",
+          options: ["Yes, I am proud of my family", "Yes, I am proud of my poster", "Yes, I am proud of myself"]
         }
       ],
       completion_message: "Beautiful family presentation! 👨‍👩‍👧‍👦 You described your family with: introduce, family, talented, proud, and describe!"
@@ -329,28 +322,24 @@ const week14RealData = {
       difficulty: "medium",
       exchanges: [
         {
-          ai: "It's talent time! 🌟 What talent do you want to show? Say: I can ___.",
-          fill_blank: "I can ___.",
-          accept_words: ["sing", "dance", "draw pictures", "play guitar", "speak English well", "tell stories", "read", "write stories"]
+          ai: "It's talent time! 🌟 What talent do you want to show? Say: I can sing or I can dance or I can draw pictures",
+          options: ["I can sing", "I can dance", "I can draw pictures", "I can play guitar", "I can speak English well"]
         },
         {
-          ai: "That's amazing! How often do you practice? Say: I practice every day or I practice sometimes.",
-          fill_blank: "I practice ___.",
-          accept_words: ["every day", "sometimes", "a lot", "often", "always", "every week", "on weekends"]
+          ai: "That's amazing! How often do you practice? Say: I practice every day or I practice sometimes or I practice a lot",
+          options: ["I practice every day", "I practice sometimes", "I practice a lot"]
         },
         {
           ai: "Do you practice a lot? Choose: Yes, I practice every day or I practice sometimes or Yes, I love practicing",
           options: ["Yes, I practice every day", "I practice sometimes", "Yes, I love practicing"]
         },
         {
-          ai: "What do people say when they see your talent? Say: They say ___.",
-          fill_blank: "They say ___.",
-          accept_words: ["good job", "wow", "amazing", "you are talented", "great", "wonderful", "I am talented"]
+          ai: "What do people say when they see your talent? Say: They say good job or They say wow or They say you are talented",
+          options: ["They say good job", "They say wow", "They say you are talented", "They say amazing"]
         },
         {
-          ai: "How do you feel about your talent? Say: I feel ___ when I ___.",
-          fill_blank: "I feel ___ when I ___.",
-          accept_words: ["confident", "proud", "happy", "excited", "good", "amazing", "great"]
+          ai: "How do you feel about your talent? Say: I feel confident when I perform or I feel proud when I perform or I feel happy when I perform",
+          options: ["I feel confident when I perform", "I feel proud when I perform", "I feel happy when I perform", "I feel excited when I perform"]
         }
       ],
       completion_message: "Star performance! ⭐ You shared your talents using: can, talented, confident, proud, and present wonderfully!"
