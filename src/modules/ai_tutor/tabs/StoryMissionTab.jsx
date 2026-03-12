@@ -27,6 +27,7 @@ import week14RealData from '../../../data/weeks/week_14_real'; // Week 14 syllab
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import TTSSettingsPanel from '../components/TTSSettingsPanel';
+import { checkGrammarGuard } from '../../../pages/GameHub/hooks/useGameValidation'; // 🔥 Grammar guard
 
 // 🔥 DEBUG: Verify imports loaded correctly
 console.log('📦 IMPORTS CHECK:', {
@@ -475,6 +476,23 @@ const StoryMissionTab = () => {
     }
 
     try {
+      // 🔥 GRAMMAR GUARD: Check tense restrictions before processing
+      const grammarCheck = checkGrammarGuard(userMessage, weekNumber);
+      if (!grammarCheck.valid) {
+        console.warn('⚠️ Grammar guard blocked:', grammarCheck.error);
+        
+        // Add error message to chat
+        const errorMsg = {
+          role: 'assistant',
+          content: `⚠️ ${grammarCheck.error} Try using present tense!`,
+          timestamp: Date.now(),
+          isError: true
+        };
+        addMessage('story', errorMsg);
+        setIsLoading(false);
+        return; // Stop processing
+      }
+      
       // 🔥 CRITICAL: Ensure current mission is available
       const currentMission = weekRealData.story_missions?.[currentMissionIndex];
       if (!currentMission) {
@@ -585,6 +603,10 @@ const StoryMissionTab = () => {
         // aiResponse.ai_response is already clean (echo-ack built-in from novaEngine Card Mode)
         let responseText = aiResponse.ai_response || guardedResponse.ai_response || guardedResponse.combined;
         
+        // 🎯 DETECT: Is this from story_arc (code-generated) or AI-generated?
+        const isFromStoryArc = aiResponse.skipAI === true;
+        console.log('🔍 Response source:', isFromStoryArc ? 'story_arc (static)' : 'AI (dynamic)');
+        
         // Use AI-generated hints
         const hints = guardedResponse.hints || guardedResponse.suggested_hints || [];
         
@@ -616,13 +638,23 @@ const StoryMissionTab = () => {
         };
         addMessage('story', aiMsg);  // 🔥 FIX: Use addMessage helper, not setMessages!
         
-        // TTS - Play AI response
+        // TTS - Play AI response with context-aware caching
         if (responseText) {
           try {
+            // 🎯 Context for story_arc responses (hardcoded content)
+            const ttsContext = isFromStoryArc ? {
+              type: 'story',
+              weekNum: weekNumber,
+              stationId: `mission${currentMission.mission_id || currentMissionIndex + 1}`,
+              questionId: `q${nextTurn}`,
+              subType: 'response'
+            } : {}; // AI-generated = dynamic (no context)
+            
             await textToSpeech(responseText, {
               autoPlay: true,
               mode: 'conversation',
-              preferredLayer: 'auto'
+              preferredLayer: 'auto',
+              context: ttsContext
             });
             console.log('🔊 TTS played successfully');
           } catch (ttsError) {
@@ -864,12 +896,17 @@ const StoryMissionTab = () => {
       console.log('🤖 Nova says:', responseText);
       console.log('💬 === END SPEECH ===\n');
       
-      // Auto-play TTS if enabled
+      // Auto-play TTS if enabled (objective mode - legacy)
       if (autoPlayEnabled) {
+        // 🎯 Objective mode responses are usually AI-generated (dynamic)
+        // Only use static cache if we can confirm it's from hardcoded content
+        const ttsContext = {}; // Default: dynamic cache
+        
         await textToSpeech(responseText, {
           autoPlay: true,
           mode: 'conversation',
-          preferredLayer: 'auto'
+          preferredLayer: 'auto',
+          context: ttsContext
         });
       }
 

@@ -407,3 +407,6 @@ export function useGameValidation(gameId, weekNumber, learningMode = 'advanced')
     vocabulary: getVocabulary()
   };
 }
+
+// Export grammar guard for use in other components (e.g., StoryMissionTab)
+export { checkGrammarGuard };
