@@ -476,9 +476,9 @@ export class NovaEngine {
               suggested_hints: nextHints,
               hints: nextHints,
               mission_status: 'in_progress',
-              ack: recast ? `${recast}!` : '',
-              recast: recast || '',
-              question: nextQuestion
+              ack: randomAck, // 🔥 Random acknowledgment: "Amazing!", "Great!", etc.
+              recast: recast || '',  // Student's answer reflected back: "You are 7 years old"
+              question: nextQuestion // Next question: "Where are you from? Say..."
             }
           };
         }

@@ -607,21 +607,6 @@ const StoryMissionTab = () => {
         const isFromStoryArc = aiResponse.skipAI === true;
         console.log('🔍 Response source:', isFromStoryArc ? 'story_arc (static)' : 'AI (dynamic)');
         
-        // 🎯 CRITICAL FIX: For story_arc, separate recast (text-only) from question (TTS)
-        // Problem: Recast is dynamic ("You are 7 years old" vs "You are 11 years old")
-        //          but cache path is static (mission1_q2_response.mp3)
-        // Solution: Only TTS the question part, show full response in chat
-        const ttsText = isFromStoryArc && aiResponse.question 
-          ? aiResponse.question  // Static: "Where are you from? Say: I am from Vietnam!"
-          : responseText;        // Dynamic: full AI-generated response
-        
-        if (isFromStoryArc && aiResponse.question) {
-          console.log('✂️ Separated TTS:', { 
-            chatText: responseText.substring(0, 60) + '...', 
-            ttsText: ttsText.substring(0, 60) + '...' 
-          });
-        }
-        
         // Use AI-generated hints
         const hints = guardedResponse.hints || guardedResponse.suggested_hints || [];
         
@@ -654,25 +639,67 @@ const StoryMissionTab = () => {
         addMessage('story', aiMsg);  // 🔥 FIX: Use addMessage helper, not setMessages!
         
         // TTS - Play AI response with context-aware caching
-        // 🔥 Use ttsText (question-only) instead of responseText (recast + question)
-        if (ttsText) {
+        // 🔥 NEW STRATEGY: Play recast + question as SEPARATE cached files
+        // - Recast+ACK (dynamic): "You are 7 years old! Amazing!" → dynamic/{hash}.mp3 (reused if same answer)
+        // - Question (static): "Where are you from?" → story/week14/mission1_q2_question.mp3 (reused for all)
+        if (responseText) {
           try {
-            // 🎯 Context for story_arc responses (hardcoded content)
-            const ttsContext = isFromStoryArc ? {
-              type: 'story',
-              weekNum: weekNumber,
-              stationId: `mission${currentMission.mission_id || currentMissionIndex + 1}`,
-              questionId: `q${nextTurn}`,
-              subType: 'response'
-            } : {}; // AI-generated = dynamic (no context)
-            
-            await textToSpeech(ttsText, {
-              autoPlay: true,
-              mode: 'conversation',
-              preferredLayer: 'auto',
-              context: ttsContext
-            });
-            console.log('🔊 TTS played successfully');
+            if (isFromStoryArc && aiResponse.recast && aiResponse.question) {
+              // 🎯 Story arc mode: Play TWO separate TTS calls
+              
+              // Build recast part: "You are 7 years old!" + "Amazing!"
+              const recastPart = `${aiResponse.recast}! ${aiResponse.ack}`;
+              
+              console.log('🎬 Playing 2-part TTS:', {
+                part1_recast: recastPart.substring(0, 50),
+                part2_question: aiResponse.question.substring(0, 50)
+              });
+              
+              // PART 1: Play recast + ack (dynamic cache - varies by student answer)
+              // Example: "You are 7 years old! Amazing!" → dynamic/a3f8e2b1.mp3
+              await textToSpeech(recastPart, {
+                autoPlay: true,
+                mode: 'conversation',
+                preferredLayer: 'auto',
+                context: {} // Dynamic cache (hash-based)
+              });
+              
+              // PART 2: Play question (static cache - same for all students)
+              // Example: "Where are you from? Say..." → story/week14/mission1_q2_question.mp3
+              const questionContext = {
+                type: 'story',
+                weekNum: weekNumber,
+                stationId: `mission${currentMission.mission_id || currentMissionIndex + 1}`,
+                questionId: `q${nextTurn}`,
+                subType: 'question' // 🔥 Changed from 'response' to 'question'
+              };
+              
+              await textToSpeech(aiResponse.question, {
+                autoPlay: true,
+                mode: 'conversation',
+                preferredLayer: 'auto',
+                context: questionContext
+              });
+              
+              console.log('🔊 TTS played successfully (2 parts)');
+            } else {
+              // 🎯 AI-generated or opening: Play full response as single TTS
+              const ttsContext = isFromStoryArc ? {
+                type: 'story',
+                weekNum: weekNumber,
+                stationId: `mission${currentMission.mission_id || currentMissionIndex + 1}`,
+                questionId: `q${nextTurn}`,
+                subType: 'response'
+              } : {}; // AI-generated = dynamic (no context)
+              
+              await textToSpeech(responseText, {
+                autoPlay: true,
+                mode: 'conversation',
+                preferredLayer: 'auto',
+                context: ttsContext
+              });
+              console.log('🔊 TTS played successfully');
+            }
           } catch (ttsError) {
             console.warn('⚠️ TTS failed:', ttsError.message);
           }
