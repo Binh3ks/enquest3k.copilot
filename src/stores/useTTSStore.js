@@ -23,12 +23,6 @@ const useTTSStore = create(
           description: 'Warm & friendly female voice'
         },
         { 
-          id: 'aura-luna-en', 
-          name: 'Ms. Luna (Calm)', 
-          type: 'female',
-          description: 'Calm & clear female voice'
-        },
-        { 
           id: 'aura-stella-en', 
           name: 'Ms. Stella (Energetic)', 
           type: 'female',
