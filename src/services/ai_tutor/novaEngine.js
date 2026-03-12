@@ -201,7 +201,11 @@ export class NovaEngine {
 
       if (typeof systemPrompt === 'object' && systemPrompt.skipAI) {
         console.log('🎯 Game Validation: Bypassing AI, using code-generated response:', systemPrompt.directResponse?.ai_response?.slice(0, 100));
-        return systemPrompt.directResponse;
+        // 🔥 CRITICAL: Return full object including skipAI flag for context-aware TTS caching
+        return {
+          ...systemPrompt.directResponse,
+          skipAI: true  // Preserve flag for downstream detection
+        };
       }
       
       // Step 2: Call AI Router with error handling and retry logic
