@@ -64,8 +64,8 @@ const week14RealData = {
           phase_name: "My Poster",
           phase_questions: [
             "Tell me about your poster! What is on your poster? Say: There is my family! or There are pictures!",
-            "What colors did you use? Say: I used red and blue! or I used many colors!",
-            "Are you proud of your poster? Say: Yes, I am proud! or I worked very hard!"
+            "What colors are on your poster? Say: There is red and blue! or There are many colors!",
+            "Are you proud of your poster? Say: Yes, I am proud! or I am very happy!"
           ]
         },
         {
@@ -334,9 +334,9 @@ const week14RealData = {
           accept_words: ["sing", "dance", "draw pictures", "play guitar", "speak English well", "tell stories", "read", "write stories"]
         },
         {
-          ai: "That's amazing! When did you learn this? Say: I learned to ___ when I was ___.",
-          fill_blank: "I learned to ___ when I was ___.",
-          accept_words: ["5", "6", "7", "young", "little", "five", "six", "seven", "small"]
+          ai: "That's amazing! How often do you practice? Say: I practice every day or I practice sometimes.",
+          fill_blank: "I practice ___.",
+          accept_words: ["every day", "sometimes", "a lot", "often", "always", "every week", "on weekends"]
         },
         {
           ai: "Do you practice a lot? Choose: Yes, I practice every day or I practice sometimes or Yes, I love practicing",
