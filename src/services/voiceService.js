@@ -419,8 +419,8 @@ export const VoiceService = {
       await TTSCache.set(text, station, audioBlob);
       
       // Play immediately
-      const audioUrl = URL.createObjectURL(audioBlob);
-      return this.playAudio(audioUrl, true);
+      const blobUrl = URL.createObjectURL(audioBlob);
+      return this.playAudio(blobUrl, true);
       
     } catch (error) {
       clearTimeout(timeoutId);
