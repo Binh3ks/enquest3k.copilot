@@ -103,34 +103,37 @@ export const COMMON_PHRASES = {
 // Reverse map: phrase text → filename
 export const PHRASE_TO_FILENAME = {};
 for (const [filename, text] of Object.entries(COMMON_PHRASES)) {
-  // Normalize text for matching (lowercase, trim, remove punctuation)
-  const normalized = text.toLowerCase().trim().replace(/[.,!?]/g, '');
+  // Normalize text for matching (lowercase, trim, remove punctuation, normalize whitespace)
+  const normalized = text.toLowerCase().trim()
+    .replace(/[.,!?;:'"]/g, '')  // Remove punctuation
+    .replace(/\s+/g, ' ');        // Normalize whitespace
   PHRASE_TO_FILENAME[normalized] = filename;
 }
 
 /**
  * Check if text is a common phrase
+ * IMPORTANT: Only exact matches! No substring matching.
+ * Reason: AI responses like "Your name is Binh! Wonderful! How old are you?"
+ * should NOT match "How old are you?" - they're different content.
+ * 
  * @param {string} text - Text to check
  * @returns {string|null} - Filename if common phrase, null otherwise
  */
 export function getCommonPhraseFilename(text) {
   if (!text) return null;
   
-  // Normalize input text
-  const normalized = text.toLowerCase().trim().replace(/[.,!?]/g, '');
+  // Normalize input text (lowercase, trim, remove punctuation)
+  const normalized = text.toLowerCase().trim()
+    .replace(/[.,!?;:'"]/g, '')  // Remove punctuation
+    .replace(/\s+/g, ' ');        // Normalize whitespace
   
-  // Exact match
+  // ONLY exact match - no substring!
   if (PHRASE_TO_FILENAME[normalized]) {
     return PHRASE_TO_FILENAME[normalized];
   }
   
-  // Check if input contains a common phrase (for sentences with extra words)
-  for (const [phraseText, filename] of Object.entries(PHRASE_TO_FILENAME)) {
-    if (normalized.includes(phraseText) || phraseText.includes(normalized)) {
-      return filename;
-    }
-  }
-  
+  // No longer doing substring matching
+  // Full AI responses should use dynamic cache instead
   return null;
 }
 
