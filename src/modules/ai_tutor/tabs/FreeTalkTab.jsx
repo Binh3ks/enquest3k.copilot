@@ -643,12 +643,17 @@ const FreeTalkTab = () => {
       }
 
       // � CONVERSATION CARDS: Detect START_CONVERSATION and initialize
+      let isConversationOpening = false; // 🆕 Track if this is opening message
+      let conversationCardId = null; // 🆕 Store cardId for TTS caching
+      
       if (userMessage.startsWith('START_CONVERSATION:')) {
         const cardId = userMessage.split(':')[1]?.trim();
         const card = conversationCards.find(c => c.id === cardId);
         
         if (card) {
           console.log('💬 Starting conversation card:', cardId);
+          isConversationOpening = true; // 🆕 Mark as opening
+          conversationCardId = cardId; // 🆕 Store for TTS
           const conversationState = {
             cardId,
             currentExchange: 0,
@@ -945,14 +950,12 @@ const FreeTalkTab = () => {
         const cleanedResponse = cleanNumberedListArtifacts(responseText);
         
         // 💬 CONVERSATION CARDS: Use static cache for opening message
-        // Check if this is the first exchange of a conversation card
-        const isConversationOpening = mode === 'in_conversation' && activeConversation && activeConversation.currentExchange === 0;
-        
-        if (isConversationOpening) {
+        // Use local flags instead of state (React state updates are async)
+        if (isConversationOpening && conversationCardId) {
           const openingContext = {
             type: 'conversation',
             weekNum: weekNumber,
-            cardId: activeConversation.cardId,
+            cardId: conversationCardId,
             questionNum: 1,
             subType: 'opening'
           };
