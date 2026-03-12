@@ -236,7 +236,29 @@ async function generateCacheInfo(text, context = {}) {
     };
   }
   
-  // ===== 6. TRULY DYNAMIC (student response, AI recast, ask anything) =====
+  // ===== 6. FREETALK GREETING (hardcoded to avoid AI number bug) =====
+  if (context.type === 'freetalk_greeting') {
+    const weekNum = context.weekNum || 1;
+    return {
+      cacheKey: `freetalk_greeting_week${weekNum}`,
+      audioPath: `audio/ai_tutor/freetalk/greeting_week${weekNum}.mp3`,
+      isStatic: true,
+      category: 'freetalk'
+    };
+  }
+  
+  // ===== 7. GRAMMAR SENTENCES (hardcoded examples from week data) =====
+  if (context.type === 'grammar' && context.sentenceId) {
+    const weekNum = context.weekNum || 1;
+    return {
+      cacheKey: `grammar_${weekNum}_${context.sentenceId}`,
+      audioPath: `audio/ai_tutor/grammar/week${weekNum}/${context.sentenceId}.mp3`,
+      isStatic: true,
+      category: 'grammar'
+    };
+  }
+  
+  // ===== 8. TRULY DYNAMIC (student response, AI recast, ask anything) =====
   const hash = await generateHash(text);
   return {
     cacheKey: hash,

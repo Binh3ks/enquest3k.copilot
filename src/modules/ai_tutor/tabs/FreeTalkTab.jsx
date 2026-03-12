@@ -174,7 +174,8 @@ const FreeTalkTab = () => {
         }
       });
       
-      const greetingText = aiResponse.ai_response || "Hello! I am Ms. Nova ⭐. Let's chat naturally! 👇";
+      // 🔥 HARDCODED GREETING: Avoid AI inserting random text/numbers
+      const greetingText = "Hello! I am Ms. Nova ⭐. Let's chat naturally! 👇";
       
       const welcomeMessage = {
         role: 'assistant',
@@ -182,7 +183,7 @@ const FreeTalkTab = () => {
         timestamp: Date.now()
       };
       addMessage("freetalk", welcomeMessage);
-      console.log('💬 FreeTalkTab: AI generated natural greeting');
+      console.log('💬 FreeTalkTab: Using hardcoded greeting (avoid AI number bug)');
       
       // 🔥 Set contextual hints from AI or extract from greeting
       const contextualHints = (aiResponse.suggested_hints && aiResponse.suggested_hints.length > 0)
@@ -193,12 +194,22 @@ const FreeTalkTab = () => {
       setShowHints(true);
       console.log('💡 Opening hints (contextual & scrambled):', contextualHints);
       
-      // 🔊 Play TTS for opening message (clean numbered artifacts first)
+      // 🔊 Play TTS for opening message (static cache)
       if (autoPlayEnabled) {
         try {
-          const cleanedGreeting = cleanNumberedListArtifacts(greetingText);
-          await textToSpeech(cleanedGreeting, { autoPlay: true, preferredLayer: 'auto', mode: 'conversation' });
-          console.log('🔊 TTS played successfully');
+          // 🎯 Static cache for hardcoded greeting
+          const greetingContext = {
+            type: 'freetalk_greeting',
+            weekNum: weekNumberRef.current,
+            subType: 'opening'
+          };
+          await textToSpeech(greetingText, { 
+            autoPlay: true, 
+            preferredLayer: 'auto', 
+            mode: 'conversation',
+            context: greetingContext
+          });
+          console.log('🔊 TTS played successfully (static cache)');
         } catch (error) {
           console.error('❌ TTS error:', error);
         }

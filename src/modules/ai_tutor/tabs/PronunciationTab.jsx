@@ -190,8 +190,15 @@ const PronunciationTab = () => {
         };
         console.log('🎯 Using vocab static cache:', ttsOptions.context);
       } else {
-        // Dynamic cache for sentences (varies by grammar example)
-        ttsOptions.context = {};
+        // 🎯 Static cache for sentences (grammar examples are hardcoded)
+        // Hash sentence for unique cache path
+        const sentenceHash = text.trim().toLowerCase().replace(/[^a-z0-9]/g, '_').substring(0, 40);
+        ttsOptions.context = {
+          type: 'grammar',
+          weekNum: weekNumber,
+          sentenceId: sentenceHash
+        };
+        console.log('🎯 Using grammar sentence static cache:', ttsOptions.context);
       }
       
       await textToSpeech(textWithPunctuation, ttsOptions);
