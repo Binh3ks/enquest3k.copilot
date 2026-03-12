@@ -235,8 +235,24 @@ export const VoiceService = {
         console.log(`[TTS] ✅ R2 CDN success (~100ms)`);
         return;
       } catch (err) {
-        console.warn(`[TTS] R2 CDN miss: ${err.message} — generating on-demand via Worker`);
-        // Continue to Worker fallback below
+        console.warn(`[TTS] R2 CDN miss: ${err.message}`);
+        // On R2 miss: generate on-demand with correct voice for this station
+        if (voiceConfig && TTS_WORKER_URL) {
+          try {
+            const voiceKey = STATION_VOICE_KEY[station];
+            const googleVoice = voiceConfig[voiceKey];
+            const deepgramVoice = GOOGLE_TO_DEEPGRAM_VOICE[googleVoice];
+            console.log(`[TTS] 🎤 Generating on-demand: ${station} with ${deepgramVoice || 'default'}`);
+            
+            const audioBlob = await this.useGoogleTTS(cleanedText, station, deepgramVoice);
+            await TTSCache.set(cleanedText, station, audioBlob);
+            const blobUrl = URL.createObjectURL(audioBlob);
+            return this.playAudio(blobUrl, true);
+          } catch (genErr) {
+            console.warn(`[TTS] On-demand generation failed: ${genErr.message}`);
+          }
+        }
+        // Continue to fallback below
       }
     }
 
@@ -486,13 +502,18 @@ export const VoiceService = {
    *   2. Fallback: Direct proxy if worker unavailable (dev/testing mode).
    * 
    * Returns audio Blob.
+   * 
+   * @param {string} text - Text to speak
+   * @param {string} station - Station ID for cache key
+   * @param {string|null} voice - Optional Deepgram voice (e.g., 'aura-asteria-en')
    */
-  async useGoogleTTS(text, station = 'ai_tutor') {
+  async useGoogleTTS(text, station = 'ai_tutor', voice = null) {
     // ── Route 1: Via Cloudflare Worker (Deepgram + R2 cache) ─────────────────
     if (TTS_WORKER_URL) {
-      const savedVoice = localStorage.getItem('tts_voice') || '';
+      // Use provided voice, or get from localStorage (AI Tutor preference)
+      const voiceToUse = voice || localStorage.getItem('tts_voice') || '';
       let workerUrl = `${TTS_WORKER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}`;
-      if (savedVoice) workerUrl += `&voice=${encodeURIComponent(savedVoice)}`;
+      if (voiceToUse) workerUrl += `&voice=${encodeURIComponent(voiceToUse)}`;
       const res = await fetch(workerUrl);
       if (!res.ok) throw new Error(`TTS Worker HTTP ${res.status}`);
       const blob = await res.blob();
