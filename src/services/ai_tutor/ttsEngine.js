@@ -166,9 +166,10 @@ const TTS_CONFIG = {
  * @param {number} context.questionNum - Question number (for conversation)
  * @param {string} context.vocabId - Vocabulary ID (for vocab)
  * @param {string} context.language - Language code: 'en'|'vi' (for vocab/translation)
+ * @param {string} voiceId - Voice ID (e.g., 'aura-asteria-en') for multi-voice support
  * @returns {Promise<{cacheKey: string, audioPath: string, isStatic: boolean, category: string}>}
  */
-async function generateCacheInfo(text, context = {}) {
+async function generateCacheInfo(text, context = {}, voiceId = 'aura-asteria-en') {
   // ===== 1. GENERIC COMMON PHRASES =====
   const commonFilename = getCommonPhraseFilename(text);
   if (commonFilename) {
@@ -192,8 +193,8 @@ async function generateCacheInfo(text, context = {}) {
     const filename = parts.join('_');
     
     return {
-      cacheKey: filename,
-      audioPath: `audio/ai_tutor/story/week${context.weekNum}/${filename}.mp3`,
+      cacheKey: `${voiceId}_${filename}`,
+      audioPath: `audio/ai_tutor/story/${voiceId}/week${context.weekNum}/${filename}.mp3`,
       isStatic: true,
       category: 'story'
     };
@@ -207,8 +208,8 @@ async function generateCacheInfo(text, context = {}) {
       : 'intro';
     
     return {
-      cacheKey: `${context.cardId}_v${version}_${filename}`,
-      audioPath: `audio/ai_tutor/conversation/${context.cardId}/v${version}/${filename}.mp3`,
+      cacheKey: `${voiceId}_${context.cardId}_v${version}_${filename}`,
+      audioPath: `audio/ai_tutor/conversation/${voiceId}/${context.cardId}/v${version}/${filename}.mp3`,
       isStatic: true,
       category: 'conversation'
     };
@@ -218,8 +219,8 @@ async function generateCacheInfo(text, context = {}) {
   if (context.type === 'vocab' && context.vocabId) {
     const lang = context.language || 'en';
     return {
-      cacheKey: `${context.vocabId}_${lang}`,
-      audioPath: `audio/ai_tutor/vocab/${context.vocabId}_${lang}.mp3`,
+      cacheKey: `${voiceId}_${context.vocabId}_${lang}`,
+      audioPath: `audio/ai_tutor/vocab/${voiceId}/${context.vocabId}_${lang}.mp3`,
       isStatic: true,
       category: 'vocab'
     };
@@ -240,8 +241,8 @@ async function generateCacheInfo(text, context = {}) {
   if (context.type === 'freetalk_greeting') {
     const weekNum = context.weekNum || 1;
     return {
-      cacheKey: `freetalk_greeting_week${weekNum}`,
-      audioPath: `audio/ai_tutor/freetalk/greeting_week${weekNum}.mp3`,
+      cacheKey: `${voiceId}_freetalk_greeting_week${weekNum}`,
+      audioPath: `audio/ai_tutor/freetalk/${voiceId}/greeting_week${weekNum}.mp3`,
       isStatic: true,
       category: 'freetalk'
     };
@@ -251,8 +252,8 @@ async function generateCacheInfo(text, context = {}) {
   if (context.type === 'grammar' && context.sentenceId) {
     const weekNum = context.weekNum || 1;
     return {
-      cacheKey: `grammar_${weekNum}_${context.sentenceId}`,
-      audioPath: `audio/ai_tutor/grammar/week${weekNum}/${context.sentenceId}.mp3`,
+      cacheKey: `${voiceId}_grammar_${weekNum}_${context.sentenceId}`,
+      audioPath: `audio/ai_tutor/grammar/${voiceId}/week${weekNum}/${context.sentenceId}.mp3`,
       isStatic: true,
       category: 'grammar'
     };
@@ -426,8 +427,8 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   const userVoice = ttsStore.getVoiceConfig(); // User-selected voice
   const userSpeed = speed || ttsStore.getSpeedValue(mode); // Custom speed or store preference
 
-  // 🔥 STEP 1: Generate cache info (check if common phrase or dynamic content)
-  const { cacheKey, audioPath, isStatic, category } = await generateCacheInfo(cleanedText, context);
+  // 🔥 STEP 1: Generate cache info with voice ID (check if common phrase or dynamic content)
+  const { cacheKey, audioPath, isStatic, category } = await generateCacheInfo(cleanedText, context, userVoice);
   
   // Log cache type for visibility
   const categoryEmoji = {
