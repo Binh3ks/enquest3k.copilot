@@ -14,7 +14,7 @@ export const weekTitles = {
   11: { title_en: "Weekend Fun Spots (Places)", title_vi: "Các Địa Điểm Vui Chơi Cuối Tuần" },
   12: { title_en: "The Talent Show (Abilities)", title_vi: "Buổi Biểu Diễn Tài Năng" },
   13: { title_en: "The Daily Routine", title_vi: "Thói Quen Hàng Ngày" },
-  14: { title_en: "Week 14", title_vi: "Tuần 14" },
+  14: { title_en: "Welcome to My World (Project Showcase)", title_vi: "Chào mừng đến Thế giới của Tôi" },
   15: { title_en: "Week 15", title_vi: "Tuần 15" },
   16: { title_en: "Week 16", title_vi: "Tuần 16" },
   17: { title_en: "Week 17", title_vi: "Tuần 17" },
