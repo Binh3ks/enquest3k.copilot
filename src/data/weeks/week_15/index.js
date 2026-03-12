@@ -13,11 +13,11 @@ import daily_watch from './daily_watch.js';
 import word_match from './word_match.js';
 
 const weekData = {
-  weekId: 6,
+  weekId: 15,
   isEasy: false,
-  weekTitle_en: "Treasure Hunt at Home",
-  weekTitle_vi: "Truy tìm Kho báu",
-  grammar_focus: "Prepositions (In, On, Under, Next to)",
+  weekTitle_en: "The Busy Park",
+  weekTitle_vi: "Công viên Bận rộn",
+  grammar_focus: "Present Continuous (S + am/is/are + V-ing)",
   global_vocab: vocab.vocab,
   
   voiceConfig: {
