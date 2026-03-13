@@ -1,10 +1,30 @@
-# MASS PRODUCTION CONTEXT - UPDATED JAN 20, 2026
-**Version**: 2.1 (Post Week-5 Audit)  
-**Status**: Production Ready with Complete Asset Generation
+# MASS PRODUCTION CONTEXT - UPDATED MARCH 13, 2026
+**Version**: 2.2 (Post Repository Cleanup)  
+**Status**: Production Ready with Complete Asset Generation + Git Hygiene
 
 ---
 
-## 🔄 WHAT CHANGED (vs v2.0)
+## 🔄 WHAT CHANGED (vs v2.1)
+
+### Repository Cleanup (March 13, 2026):
+
+✅ **Git Repository Optimization**
+   - Reduced tracked files: 6,479 → 1,600 (-75%)
+   - Reduced .git/ size: 453MB → 289MB (-36%)
+   - Removed: .wrangler/ cache, server folders, backup copies, doc duplicates
+   - **NEW**: [GIT_COMMIT_CHECKLIST.md](GIT_COMMIT_CHECKLIST.md) - Quick reference for clean commits
+   - **UPDATED**: [MASS_PRODUCTION_WORKFLOW_COMPLETE.md](MASS_PRODUCTION_WORKFLOW_COMPLETE.md) - Added Git best practices section
+
+⚠️ **IMPORTANT**: BEFORE every commit, check [GIT_COMMIT_CHECKLIST.md](GIT_COMMIT_CHECKLIST.md) to avoid pushing:
+   - .wrangler/ (dev cache)
+   - node_modules/ (dependencies)
+   - Backup/ folders
+   - *_copy.txt (documentation duplicates)
+   - Large server files
+
+---
+
+## 🔄 WHAT CHANGED (v2.1 vs v2.0)
 
 ### Major Improvements:
 

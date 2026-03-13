@@ -914,12 +914,262 @@ Week | Spec | AI Tutor | Advanced | Easy | Validation | Assets | Status
 - [ ] No console errors
 
 **Commit**:
+- [ ] **TRƯỚC KHI COMMIT**: Kiểm tra Git status (xem section Git Best Practices phía dưới)
 - [ ] `git add src/data/weeks/week_XX`
 - [ ] `git add src/data/weeks_easy/week_XX`
 - [ ] `git add public/audio/week_XX`
 - [ ] `git add public/images/week_XX`
+- [ ] ⚠️ **KHÔNG commit**: .wrangler/, Backup/, server folders, large .txt files
+- [ ] Verify: `git diff --cached --stat` (chỉ thấy week files)
 - [ ] `git commit -m "Week XX: [Title] - Complete"`
 - [ ] `git push`
+
+---
+
+## 🧹 GIT HYGIENE & REPOSITORY BEST PRACTICES
+
+> **⚠️ QUAN TRỌNG**: Repository được clean up vào March 13, 2026
+> - Giảm từ 6,479 → 1,600 tracked files (-75%)
+> - Giảm .git/ size từ 453MB → 289MB (-36%)
+> - ✅ Tất cả file không cần thiết đã được loại bỏ khỏi Git history
+
+### 📁 Files NÊN COMMIT (Production Code):
+
+```bash
+✅ Source Code:
+   - src/data/weeks/week_XX/**/*.js
+   - src/data/weeks_easy/week_XX/**/*.js
+   - src/components/**/*.jsx
+   - src/services/**/*.js
+   - src/hooks/**/*.js
+
+✅ Assets (Curated):
+   - public/audio/week_XX/**/*.mp3      # Chỉ audio đã validate
+   - public/images/week_XX/**/*.jpg     # Chỉ images đã optimize
+   - public/videos/                     # Nếu self-hosted
+
+✅ Configuration:
+   - package.json, package-lock.json
+   - vite.config.js, wrangler.toml
+   - .gitignore (luôn update!)
+   - MASS/tools/**/*.cjs               # Production scripts
+   - MASS/PROMPTS/**/*.txt             # AI prompts
+
+✅ Documentation (Essential Only):
+   - README.md
+   - MASS_PRODUCTION_*.md (latest versions)
+   - ARCHITECTURE_*.md
+   - API_*.md
+```
+
+### 🚫 Files KHÔNG BAO GIỜ COMMIT:
+
+```bash
+❌ Development Cache:
+   - .wrangler/                    # Cloudflare dev cache (100MB+)
+   - node_modules/                 # NPM packages (auto-install)
+   - dist/                         # Build output (auto-generate)
+   - .debris/                      # Temp files
+
+❌ Backend/Servers:
+   - esl_server/                   # TTS backend (deprecated)
+   - mcp-server/                   # VSCode dev tool (local only)
+   - Any */node_modules/           # Nested dependencies
+
+❌ Backups & Archives:
+   - Backup/                       # Local backups
+   - Production_FINAL/             # Archive folders
+   - MASS_Final/                   # Old versions
+   - *_backup/                     # Any backup folders
+
+❌ Large Documentation Duplicates:
+   - *MASTER PROMPT*.txt           # Keep only in MASS/PROMPTS/
+   - *_copy.txt, *_copy 2.txt      # Delete duplicates
+   - *SYLLABUS*.txt                # Keep only in database
+
+❌ OS & IDE Files:
+   - .DS_Store                     # MacOS folder metadata
+   - Icon\r                        # MacOS custom icons
+   - .vscode/                      # VSCode workspace settings
+   - *.swp, *.swo                  # Vim temp files
+
+❌ Sensitive Data:
+   - .env, .env.local              # API keys
+   - *API keys*.txt                # Credentials
+```
+
+### ✅ Pre-Commit Checklist (TRƯỚC MỖI LẦN COMMIT):
+
+```bash
+# 1. Kiểm tra Git status
+git status
+
+# 2. Review danh sách files STAGED
+#    ✅ CHỈ nên thấy: src/data/weeks/*, public/audio/*, public/images/*
+#    ❌ KHÔNG nên thấy: .wrangler/, node_modules/, Backup/, *.txt copies
+git diff --cached --name-only
+
+# 3. Nếu thấy file KHÔNG nên commit → UNSTAGE ngay:
+git reset HEAD .wrangler/
+git reset HEAD "*.txt"
+git reset HEAD Backup/
+
+# 4. Kiểm tra kích thước commit (nên < 10MB cho code, < 50MB cho assets)
+git diff --cached --stat
+
+# 5. Verify .gitignore đang hoạt động
+git check-ignore -v .wrangler/
+# Expected: .gitignore:XX:.wrangler/    .wrangler/
+
+# 6. CHỈ ADD files cần thiết (KHÔNG dùng "git add .")
+git add src/data/weeks/week_XX
+git add public/audio/week_XX
+git add public/images/week_XX
+
+# 7. Commit với message rõ ràng
+git commit -m "feat: Week XX - [Topic Title]
+
+- Add 14 Advanced station files
+- Add 13 Easy station files
+- Add 143 audio files (vocab, dictation, shadowing, etc.)
+- Add 23 images (vocab, covers, logic puzzles)"
+
+# 8. Push to GitHub
+git push
+```
+
+### 🔍 Git Status Examples:
+
+**✅ GOOD - Chỉ commit production files:**
+```bash
+$ git status
+Changes to be committed:
+  new file:   src/data/weeks/week_15/vocab.js
+  new file:   src/data/weeks/week_15/read.js
+  new file:   public/audio/week_15/vocab_running.mp3
+  new file:   public/images/week_15/vocab_running.jpg
+```
+
+**❌ BAD - Có file không cần thiết:**
+```bash
+$ git status
+Changes to be committed:
+  new file:   src/data/weeks/week_15/vocab.js
+  new file:   .wrangler/state/v3/r2/blobs/abc123    ← ❌ UNSTAGE!
+  new file:   Backup/old_version.js                 ← ❌ UNSTAGE!
+  modified:   ENGQUEST MASTER PROMPT V27 copy.txt   ← ❌ UNSTAGE!
+```
+
+**FIX:**
+```bash
+git reset HEAD .wrangler/
+git reset HEAD Backup/
+git reset HEAD "*.txt"
+```
+
+### 🛡️ .gitignore Maintenance:
+
+```bash
+# Verify .gitignore is tracking everything correctly
+cat .gitignore
+
+# Expected entries:
+# - .wrangler/
+# - esl_server/
+# - mcp-server/
+# - Backup/
+# - Production_FINAL/
+# - MASS_Final/
+# - *MASTER PROMPT*.txt
+# - *_copy.txt
+# - Icon?
+
+# Test if files are properly ignored
+git status --ignored
+
+# Should show:
+# Ignored files:
+#   (use "git add -f <file>..." to include in what will be committed)
+#         .wrangler/
+#         esl_server/
+#         ...
+```
+
+### 📊 Monitoring Repository Health:
+
+```bash
+# Check repository size
+du -sh .git/
+# Target: < 300MB (current: 289MB after cleanup)
+
+# Count tracked files
+git ls-files | wc -l
+# Target: < 2000 files (current: 1,600 files)
+
+# Find largest files in repository
+git rev-list --objects --all \
+  | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+  | awk '$1=="blob" && $3 > 1000000 {print $3/1024/1024 " MB", $4}' \
+  | sort -rn | head -10
+
+# Expected: Only legitimate images (1-2MB each), NO code files > 1MB
+
+# Check for accidentally committed large files
+git log --all --pretty=format: --name-only --diff-filter=A \
+  | sort -u \
+  | while read file; do
+      [ -f "$file" ] && [ $(stat -f%z "$file" 2>/dev/null || stat -c%s "$file") -gt 1000000 ] && echo "$(du -h "$file")"
+    done
+```
+
+### 🚨 Emergency: Nếu Commit Nhầm File Lớn:
+
+**Trường hợp 1: CHƯA PUSH (local only)**
+```bash
+# Undo commit nhưng giữ changes
+git reset --soft HEAD~1
+
+# Unstage file không cần thiết
+git reset HEAD .wrangler/
+git reset HEAD "large_file.txt"
+
+# Commit lại (chỉ files cần thiết)
+git add src/data/weeks/week_XX/
+git commit -m "Week XX: Complete"
+```
+
+**Trường hợp 2: ĐÃ PUSH lên GitHub**
+```bash
+# ⚠️ WARNING: Phải force push, sẽ rewrite history!
+
+# Remove from latest commit
+git rm --cached -r .wrangler/
+git commit --amend -m "Week XX: Complete (removed cache files)"
+git push --force
+
+# Remove from ALL history (nếu đã commit nhiều lần)
+# 1. Install BFG: brew install bfg
+# 2. Backup: git clone --mirror <repo> backup.git
+# 3. Clean: bfg --delete-folders .wrangler .
+# 4. Expire: git reflog expire --expire=now --all
+# 5. GC: git gc --prune=now --aggressive
+# 6. Push: git push --force
+```
+
+### 📝 Weekly Git Workflow Summary:
+
+**Mỗi tuần sản xuất (Week XX):**
+
+1. **Generate content** → Local files created
+2. **Validate** → Ensure quality
+3. **Generate assets** → Audio/images ready
+4. **Pre-commit check** → `git status` (verify ONLY production files)
+5. **Selective add** → `git add src/data/weeks/week_XX public/audio/week_XX public/images/week_XX`
+6. **Verify staged** → `git diff --cached --stat` (should be ~170 files, ~20-50MB)
+7. **Commit** → Clear message with breakdown
+8. **Push** → `git push` (should be fast, <100KB for code)
+
+**🎯 Result**: Clean commits, fast pushes, no repository bloat!
 
 ---
 
