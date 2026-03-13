@@ -229,6 +229,241 @@ echo "✅ PASS: Both modes validated"
 
 ---
 
+### A5. AI Tutor Content Not Updated From Cloned Week
+
+**Nguồn:** Week 15 (discovered after all other bugs fixed)  
+**Mức độ:** 🔴 CRITICAL — Primary product feature showing wrong content
+
+**Triệu chứng:**
+- `week_N_real.js` file tồn tại, syntax OK
+- TOP metadata đã update đúng (week_title_en, grammar_focus, target_vocab)
+- Nhưng BOTTOM sections vẫn chứa nội dung tuần cũ:
+  - **story_missions[0-2]**: Mission context, target_vocab, story_arc vẫn là Week 7
+  - **freetalk_knowledge**: week_title, knowledge_base, example_questions vẫn cũ
+  - **conversation_cards**: 3 cards vẫn chứa theme và exchanges của tuần cũ
+- User reports: "AI Tutor/FreeTalk/Conversation card đang là của tuần 6 hoặc 7"
+- Mission 3 trong Story Mission cũng hiện nội dung sai
+
+**Nguyên nhân gốc:**
+1. Agent clone `week_07_real.js` → `week_N_real.js`
+2. Agent chỉ update phần đầu file (lines 1-100: metadata, title, grammar)
+3. **QUÊN** update phần lớn file (lines 200-700: missions, freetalk, cards)
+4. File có ~720 lines, agent chỉ sửa 10% → 90% còn lại vẫn Week 7
+
+**Ví dụ Week 15 (The Busy Park):**
+
+❌ **WRONG - After clone but before edit:**
+```javascript
+// Lines 1-100: ✅ CORRECT
+week_title_en: "The Busy Park (Actions Now)",
+grammar_focus: "Present Continuous: S + am/is/are + V-ing",
+target_vocab: ["running", "walking", "sitting", "eating", ...],
+
+// Lines 200-700: ❌ STILL WEEK 7
+story_missions: [
+  {
+    mission_id: 1,
+    title: "Busy Park Observation",  // ✅ Title updated
+    mission_context: `This is Week 7 Mission 1 - Backpack Check...`,  // ❌ Context still Week 7
+    target_vocab: ["pen", "ruler", "eraser", "book", "notebook"],  // ❌ Vocab still Week 7
+    story_arc: [
+      { phase: "introduction", phase_questions: [
+        "Open your backpack! Can you see a pen or ruler?"  // ❌ Questions still Week 7
+      ]}
+    ]
+  }
+],
+freetalk_knowledge: {
+  week_title: "Inside My Backpack",  // ❌ Still Week 7
+  week_number: 7,  // ❌ Wrong week
+  knowledge_base: ["School supplies: pen, ruler, eraser..."]  // ❌ Week 7 content
+},
+conversation_cards: [
+  {
+    title: "What's In My Bag?",  // ❌ Week 7 theme
+    theme: "School Supplies — There Is",  // ❌ Week 7 grammar
+    exchanges: [...]  // ❌ All about backpack/classroom
+  }
+]
+```
+
+✅ **CORRECT - After full update:**
+```javascript
+// Lines 1-100: ✅ CORRECT
+week_title_en: "The Busy Park (Actions Now)",
+grammar_focus: "Present Continuous: S + am/is/are + V-ing",
+target_vocab: ["running", "walking", "sitting", "eating", ...],
+
+// Lines 200-700: ✅ ALL UPDATED TO WEEK 15
+story_missions: [
+  {
+    mission_id: 1,
+    title: "Busy Park Observation",
+    mission_context: `This is Week 15 Mission 1 - Busy Park Observation...`,  // ✅
+    target_vocab: ["running", "walking", "sitting", "eating", ...],  // ✅
+    story_arc: [
+      { phase: "observe_first_actions", phase_questions: [
+        "Look at the boy! What is he doing? Say: He is running!"  // ✅
+      ]}
+    ]
+  }
+],
+freetalk_knowledge: {
+  week_title: "The Busy Park (Actions Now)",  // ✅
+  week_number: 15,  // ✅
+  knowledge_base: ["Park activities: running, walking, sitting, eating..."]  // ✅
+},
+conversation_cards: [
+  {
+    title: "What Are They Doing?",  // ✅ Week 15 theme
+    theme: "Park Activities — Present Continuous",  // ✅ Week 15 grammar
+    exchanges: [...]  // ✅ All about park actions
+  }
+]
+```
+
+**🚨 MANDATORY VERIFICATION - AI Tutor File:**
+
+```bash
+# BƯỚC 1: File có đủ lớn không? (week_N_real.js phải ~700+ lines)
+wc -l src/data/weeks/week_N_real.js
+# Expected: 700-750 lines
+# If < 200 lines → file bị cắt, chưa hoàn chỉnh
+
+# BƯỚC 2: Verify 3 missions đã update
+for i in 1 2 3; do
+  echo "Mission $i context:"
+  grep "mission_context.*Week" src/data/weeks/week_N_real.js | sed -n "${i}p"
+done
+# All 3 must say "Week N Mission X" (NOT "Week 7 Mission X")
+
+# BƯỚC 3: Verify FreeTalk week_number
+grep "week_number:" src/data/weeks/week_N_real.js
+# Must show: week_number: N (NOT 7 or 6)
+
+# BƯỚC 4: Count theme vocabulary in missions
+THEME_COUNT=$(grep -ic "THEME_WORD_1\|THEME_WORD_2\|THEME_WORD_3" src/data/weeks/week_N_real.js)
+echo "Theme vocabulary mentions: $THEME_COUNT"
+# Week 15 example: grep -ic "running\|walking\|sitting\|eating"
+# Expected: 100+ matches (if 0-10 → content not updated)
+
+# BƯỚC 5: Verify conversation cards theme
+grep "title:" src/data/weeks/week_N_real.js | grep -A1 "conversation_cards" | head -10
+# Titles should match week theme (NOT generic "What's In My Bag?" for a park week)
+
+# BƯỚC 6: Test import structure
+node -e "import('./src/data/weeks/week_N_real.js').then(m => {
+  console.log('✅ Import OK');
+  console.log('Week:', m.default.week_number);
+  console.log('Missions:', m.default.story_missions.length);
+  console.log('Cards:', m.default.conversation_cards.length);
+  console.log('Mission 1 vocab:', m.default.story_missions[0].target_vocab.slice(0,3));
+})"
+# Check that Mission 1 vocab matches week theme
+```
+
+**Sections That Must Be Updated (All in week_N_real.js):**
+
+1. **Top Metadata** (lines 1-100):
+   - ✅ `week_id`, `week_number`
+   - ✅ `week_title_en`, `week_title_vi`
+   - ✅ `grammar_focus`, `grammar_pattern`, `grammar_examples`
+   - ✅ `target_vocab[]` (10 words)
+
+2. **Mission 1** (lines ~200-300):
+   - ❌ Often forgotten: `mission_context` (contains "Week 7 Mission 1")
+   - ❌ Often forgotten: `target_vocab[]` inside mission
+   - ❌ Often forgotten: `story_arc[].phase_questions[]` (all questions)
+
+3. **Mission 2** (lines ~300-400):
+   - ❌ Same as Mission 1 - all fields must update
+
+4. **Mission 3** (lines ~400-500):
+   - ❌ Same - title, context, vocab, story_arc all must update
+
+5. **FreeTalk Knowledge** (lines ~550-600):
+   - ❌ Often forgotten: `week_title`, `week_number`
+   - ❌ Often forgotten: `knowledge_base[]` array (10 items about theme)
+   - ❌ Often forgotten: `example_opening_questions[]`
+   - ❌ Often forgotten: `bonus_roleplay` (id, labels, intro, context)
+
+6. **Conversation Cards** (lines ~600-720):
+   - ❌ Often forgotten: All 3 cards: `title`, `emoji`, `theme`
+   - ❌ Often forgotten: Each card's `exchanges[]` (5-6 exchanges per card)
+   - ❌ Often forgotten: `completion_message` with week-specific vocabulary
+
+**Prevention Workflow:**
+
+```bash
+# Step 1: Clone golden standard
+cp src/data/weeks/week_07_real.js src/data/weeks/week_N_real.js
+
+# Step 2: Update in SECTIONS (not all at once)
+# - Section 1: Top metadata
+# - Section 2: Mission 1 (full replacement)
+# - Section 3: Mission 2 (full replacement)
+# - Section 4: Mission 3 (full replacement)
+# - Section 5: FreeTalk knowledge
+# - Section 6: Conversation cards (all 3)
+
+# Step 3: Validate EACH section after editing
+node -e "import('./src/data/weeks/week_N_real.js').then(m => console.log('Section OK'))"
+
+# Step 4: Final theme check
+grep -ic "OLD_THEME_WORD" src/data/weeks/week_N_real.js
+# Expected: 0 (if > 0 → old content still exists)
+
+grep -ic "NEW_THEME_WORD" src/data/weeks/week_N_real.js
+# Expected: 100+ (if < 10 → new content not added)
+```
+
+**Common Mistakes:**
+
+❌ **Mistake #1: Only update top metadata**
+```javascript
+// Agent updates these:
+week_title_en: "The Busy Park (Actions Now)",  // ✅
+grammar_focus: "Present Continuous",  // ✅
+
+// But forgets these remain Week 7:
+story_missions[0].mission_context: "Week 7 Mission 1 - Backpack Check"  // ❌
+freetalk_knowledge.week_number: 7  // ❌
+conversation_cards[0].theme: "School Supplies"  // ❌
+```
+
+❌ **Mistake #2: Update mission titles but not content**
+```javascript
+// Agent updates title:
+story_missions[0].title: "Busy Park Observation",  // ✅
+
+// But forgets to update:
+story_missions[0].target_vocab: ["pen", "ruler", "eraser"],  // ❌ Still Week 7
+story_missions[0].story_arc[0].phase_questions: [
+  "Open your backpack! Can you see a pen?"  // ❌ Still Week 7
+]
+```
+
+❌ **Mistake #3: Copy/paste same content to all 3 missions**
+```javascript
+// All 3 missions have identical story_arc (wrong):
+story_missions[0].story_arc === story_missions[1].story_arc === story_missions[2].story_arc
+// Each mission needs UNIQUE story progression
+```
+
+**Week 15 Impact:**
+- Discovered AFTER fixing A4, B6, C3, C4, C5 (5 other bugs)
+- User reported: "AI Tutor/FreeTalk/Conversation card đang là của tuần 6 hoặc 7 sau khi clone"
+- All 3 missions + FreeTalk + 3 conversation cards needed complete rewrite (~500 lines)
+- Fix required: 6 major sections updated with 254 insertions/252 deletions
+
+**Lesson Learned:**
+- `week_N_real.js` is 720 lines, NOT just 100 lines of metadata
+- Cloning is 10% of work, updating content is 90%
+- MUST validate bottom sections (missions, freetalk, cards), not just top metadata
+- This bug is SILENT - file imports OK, but content is wrong
+
+---
+
 ## 🟠 CATEGORY B: STRUCTURE & FILE ERRORS
 
 ### B1. Thiếu index.js — Week Không Load Được
@@ -1061,16 +1296,17 @@ curl -I "https://cdn.../audio/week14/dictation_1.mp3" | grep "200 OK"
 | D6 | R2 file cũ không overwrite | Audio | 🟡 Medium | W12 |
 | D7 | TTS store sync broken | Audio | 🟠 High | W13 |
 
-**Tổng: 11 Critical, 9 High, 6 Medium = 26 lỗi known**
+**Tổng: 12 Critical, 9 High, 6 Medium = 27 lỗi known**
 
 **Week 15 All Bugs:**
 - **A4:** Easy mode files not created (first run) - UI completely blank (NEW - 🔴 CRITICAL)
+- **A5:** AI Tutor content not updated from Week 7 clone (NEW - 🔴 CRITICAL)
 - **B6:** metadata.js sidebar title generic (RECURRENCE - 🟠 HIGH)
 - **C3:** Daily Watch videos broken - Upgraded from 🟠 High → 🔴 Critical
 - **C4:** Word Power schema error - UI stuck loading (NEW - 🔴 CRITICAL)
 - **C5:** Vocab definition differentiation violation (NEW - 🟠 HIGH)
 
-**Week 15 Impact:** 5 bugs total (3 new, 1 recurrence, 1 severity upgrade)
+**Week 15 Impact:** 6 bugs total (4 new, 1 recurrence, 1 severity upgrade)
 
 ---
 
