@@ -2,7 +2,7 @@
 
 > **Mục đích:** Tổng hợp TẤT CẢ lỗi đã gặp qua các tuần sản xuất, dùng chung cho mọi tuần tương lai.  
 > **Cách dùng:** Agent PHẢI đọc file này TRƯỚC khi bắt đầu production bất kỳ tuần nào.  
-> **Last Updated:** March 13, 2026 (after Week 15)
+> **Last Updated:** March 13, 2026 (after Week 15 - COMPLETE AUDIT)
 
 ---
 
@@ -109,6 +109,126 @@ done
 
 ---
 
+### A4. Agent Không Tạo Easy Mode Files Trong Lượt Đầu
+
+**Nguồn:** Week 15 (first production run)  
+**Mức độ:** 🔴 CRITICAL — Easy mode hoàn toàn không load
+
+**Triệu chứng:**
+- Agent báo cáo "✅ Week 15 COMPLETE" 
+- Advanced mode: 100% hoạt động, tất cả stations load đúng
+- Easy mode: UI trống hoàn toàn, không có content gì
+- Console: "Cannot find module './weeks_easy/week_15/read.js'" hoặc fallback về Week 7
+
+**Nguyên nhân gốc:**
+1. Agent chỉ focus vào Advanced mode (`src/data/weeks/week_N/`)
+2. Quên HOÀN TOÀN folder Easy mode (`src/data/weeks_easy/week_N/`)
+3. Hoặc: Clone folder nhưng không sửa nội dung (A3 applies to Easy too)
+4. Hoặc: Tạo 1 vài files nhưng thiếu index.js (B1)
+
+**🚨 MANDATORY CHECKLIST - EASY MODE:**
+
+```bash
+# BƯỚC 1: Verify folder tồn tại
+ls -la src/data/weeks_easy/week_N/
+# Expected: 15 files (14 stations + index.js)
+
+# BƯỚC 2: Count files
+ls src/data/weeks_easy/week_N/*.js | wc -l
+# Expected: 15 (NOT 0, NOT 14)
+
+# BƯỚC 3: Verify index.js exists
+test -f src/data/weeks_easy/week_N/index.js && echo "✅ index.js exists" || echo "❌ MISSING index.js"
+
+# BƯỚC 4: Test import syntax
+node -e "import('./src/data/weeks_easy/week_N/read.js').then(m => console.log('✅ Easy read.js OK'))"
+# If error → syntax issue
+
+# BƯỚC 5: Check content là Easy mode (KHÔNG phải copy Advanced)
+grep -c "I " src/data/weeks_easy/week_N/read.js
+# Easy mode: first-person (I, my, we)
+# Advanced mode: third-person (There is, The park, etc.)
+# If Easy has "There is" without "I" → WRONG, copied from Advanced
+
+# BƯỚC 6: Verify trong browser
+# Navigate to Week N → Switch to EASY MODE toggle
+# All 14 stations must load (not "Station unavailable")
+```
+
+**Common Mistakes:**
+
+❌ **Mistake #1: Chỉ tạo Advanced mode**
+```bash
+# Agent làm:
+cp -r src/data/weeks/week_06/ src/data/weeks/week_15/
+# Edit files in src/data/weeks/week_15/
+# ✅ Done!
+
+# Thiếu:
+cp -r src/data/weeks_easy/week_06/ src/data/weeks_easy/week_15/
+# Edit files với Easy mode content requirements
+```
+
+❌ **Mistake #2: Clone Easy nhưng không sửa**
+```bash
+# Agent làm:
+cp -r src/data/weeks_easy/week_06/ src/data/weeks_easy/week_15/
+# Báo "Done!"
+
+# Nhưng files vẫn chứa Week 6 content (A3 violation)
+# Phải sửa TỪNG FILE với Week 15 content
+```
+
+❌ **Mistake #3: Tạo 14 files, thiếu index.js**
+```bash
+# Agent tạo:
+vocab.js, word_power.js, read.js, ... (14 files)
+
+# Thiếu:
+index.js  # ← CRITICAL, app không load được week
+```
+
+**Prevention Workflow:**
+
+1. **Generate Advanced mode FIRST** (với 100% validation)
+2. **Then generate Easy mode SEPARATELY** (đừng copy/paste)
+3. **Validate BOTH modes** trước khi báo "Done"
+4. **Test BOTH modes** trong browser
+
+**Quick Validation Script:**
+```bash
+#!/bin/bash
+WEEK=$1
+
+echo "🔍 Validating Week $WEEK - BOTH MODES..."
+
+# Advanced mode
+ADV_COUNT=$(ls src/data/weeks/week_$WEEK/*.js 2>/dev/null | wc -l)
+echo "Advanced files: $ADV_COUNT (expected: 15)"
+
+# Easy mode
+EASY_COUNT=$(ls src/data/weeks_easy/week_$WEEK/*.js 2>/dev/null | wc -l)
+echo "Easy files: $EASY_COUNT (expected: 15)"
+
+if [ $ADV_COUNT -ne 15 ] || [ $EASY_COUNT -ne 15 ]; then
+  echo "❌ FAIL: Files missing!"
+  exit 1
+fi
+
+# Test imports
+node -e "import('./src/data/weeks/week_$WEEK/read.js').then(() => console.log('✅ Advanced read.js OK'))" || exit 1
+node -e "import('./src/data/weeks_easy/week_$WEEK/read.js').then(() => console.log('✅ Easy read.js OK'))" || exit 1
+
+echo "✅ PASS: Both modes validated"
+```
+
+**Week 15 Impact:**
+- First run: ❌ Easy mode files NOT created → User reported "Easy ko load gì cả"
+- Subsequent fixes: ✅ Files created, but had other bugs (C4 schema, C5 definitions)
+- Lesson: ALWAYS validate BOTH modes before reporting "Complete"
+
+---
+
 ## 🟠 CATEGORY B: STRUCTURE & FILE ERRORS
 
 ### B1. Thiếu index.js — Week Không Load Được
@@ -187,13 +307,15 @@ import('./src/data/weeks/week_N_real.js').then(m => {
 
 ### B6. metadata.js Không Cập Nhật — Sidebar Hiện "Week N" Generic
 
-**Nguồn:** Week 14  
-**Mức độ:** 🟡 MEDIUM — Ảnh hưởng UX (không phải bug kỹ thuật)
+**Nguồn:** Week 13, Week 14, **Week 15**  
+**Mức độ:** 🟠 HIGH — Ảnh hưởng UX nghiêm trọng, tái diễn nhiều lần
 
 **Triệu chứng:**
 - Agent tạo xong tuần N, tất cả file tồn tại, app chạy OK
 - Nhưng sidebar hiển thị "Week N" (generic) thay vì theme title
-- Ví dụ: Week 14 hiển thị "Week 14" thay vì "Welcome to My World (Project Showcase)"
+- Ví dụ: 
+  - Week 14: Hiển thị "Week 14" thay vì "Welcome to My World (Project Showcase)"
+  - **Week 15: Hiển thị "Week 15" thay vì "The Busy Park (Actions Now)"** ← TÁI DIỄN
 
 **Nguyên nhân gốc:**
 - Agent cập nhật `week_N_real.js` với `week_title_en` đầy đủ
@@ -214,24 +336,61 @@ export const weekTitles = {
 
 **Phòng tránh:**
 ```bash
-# Sau khi tạo week_N_real.js, LUÔN xác nhận metadata.js:
+# 🚨 MANDATORY: Sau khi tạo week_N_real.js, LUÔN LUÔN xác nhận metadata.js:
 grep -A 1 "  N:" src/data/weeks/metadata.js | grep "title_en"
 # Expected: Shows proper theme (NOT "Week N")
 
 # Nếu vẫn là "Week N", sửa metadata.js:
 # 1. Đọc theme từ syllabus
 grep "Week N:" "1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt"
+# Example output for Week 15:
+# "Week 15: The Busy Park (Actions Now) (Tuần 15: Công viên Bận rộn - Hành động ngay lúc này)"
+
 # 2. Cập nhật metadata.js với title_en + title_vi
+vim src/data/weeks/metadata.js
+# Change:
+# 15: { title_en: "Week 15", title_vi: "Tuần 15" },
+# To:
+# 15: { title_en: "The Busy Park (Actions Now)", title_vi: "Công viên Bận rộn" },
+
 # 3. Verify lại bằng grep command trên
+grep -A 1 "  15:" src/data/weeks/metadata.js
+# Should show: title_en: "The Busy Park (Actions Now)"
+```
+
+**🚨 AUTOMATED VALIDATION - RUN BEFORE COMMIT:**
+```bash
+#!/bin/bash
+WEEK=$1
+
+echo "🔍 Validating metadata.js for Week $WEEK..."
+
+# Check if metadata has proper theme (NOT "Week N")
+TITLE=$(grep -A 1 "  $WEEK:" src/data/weeks/metadata.js | grep title_en | grep -v "Week $WEEK")
+
+if [ -z "$TITLE" ]; then
+  echo "❌ FAIL: metadata.js still shows generic 'Week $WEEK'"
+  echo "Expected: Theme from syllabus"
+  echo "Found:"
+  grep -A 1 "  $WEEK:" src/data/weeks/metadata.js
+  exit 1
+fi
+
+echo "✅ PASS: metadata.js has proper theme"
+echo "$TITLE"
 ```
 
 **Impact:**
-- ❌ Sidebar navigation hiển thị generic "Week 14" thay vì theme
+- ❌ Sidebar navigation hiển thị generic "Week N" thay vì theme
+- ❌ UX degradation: Users không biết tuần này học gì
+- ❌ Navigation inefficient: Phải click vào mới biết content
 - ✅ App vẫn chạy OK (không crash)
 - ✅ Content tuần vẫn đúng (chỉ title sai)
-- Users: Khó nhớ tuần nào học chủ đề gì
 
-**Fixed:** March 12, 2026
+**Week 15 Status:** 
+- First production: ❌ FAILED (showed "Week 15")
+- Fixed: March 13, 2026 (updated to "The Busy Park (Actions Now)")
+- Lesson: Lỗi này TÁI DIỄN Week 13 → 14 → 15, cần automated check
 
 ---
 
@@ -878,11 +1037,13 @@ curl -I "https://cdn.../audio/week14/dictation_1.mp3" | grep "200 OK"
 | A1 | Agent báo xong nhưng file không tồn tại | Execution | 🔴 Critical | W12, W13 |
 | A2 | Python tạo JS file sai | Execution | 🔴 Critical | W12 |
 | A3 | Clone nhưng không sửa nội dung | Execution | 🔴 Critical | W13 |
+| **A4** | **Agent không tạo Easy mode files lượt đầu** | **Execution** | **🔴 Critical** | **W15** |
 | B1 | Thiếu index.js | Structure | 🔴 Critical | W13 |
 | B2 | Thiếu UI imports (3 files) | Structure | 🔴 Critical | W12 |
 | B3 | CDN_WEEKS không cập nhật | Structure | 🟠 High | W12 |
 | B4 | story_arc mixed format | Structure | 🔴 Critical | W12 |
 | B5 | opening_narrative trùng phase_questions[0] | Structure | 🟠 High | W12 |
+| **B6** | **metadata.js sidebar title generic** | **Structure** | **🟠 High** | **W13, W14, W15** |
 | C1 | Easy mode = copy Advanced | Content | 🟠 High | W12 |
 | C2 | Dictation/shadowing không copy từ read.js | Content | 🟠 High | W12 |
 | C3 | Daily Watch videos không chạy/sai | Content | 🔴 Critical | W13, **W15** |
@@ -900,12 +1061,16 @@ curl -I "https://cdn.../audio/week14/dictation_1.mp3" | grep "200 OK"
 | D6 | R2 file cũ không overwrite | Audio | 🟡 Medium | W12 |
 | D7 | TTS store sync broken | Audio | 🟠 High | W13 |
 
-**Tổng: 10 Critical, 8 High, 6 Medium = 24 lỗi known**
+**Tổng: 11 Critical, 9 High, 6 Medium = 26 lỗi known**
 
-**Week 15 New Bugs:**
-- C3: Upgraded from 🟠 High → 🔴 Critical (videos completely broken, detailed workflow documented)
-- C4: Word Power schema error - UI stuck loading (NEW)
-- C5: Vocab definition differentiation violation (NEW)
+**Week 15 All Bugs:**
+- **A4:** Easy mode files not created (first run) - UI completely blank (NEW - 🔴 CRITICAL)
+- **B6:** metadata.js sidebar title generic (RECURRENCE - 🟠 HIGH)
+- **C3:** Daily Watch videos broken - Upgraded from 🟠 High → 🔴 Critical
+- **C4:** Word Power schema error - UI stuck loading (NEW - 🔴 CRITICAL)
+- **C5:** Vocab definition differentiation violation (NEW - 🟠 HIGH)
+
+**Week 15 Impact:** 5 bugs total (3 new, 1 recurrence, 1 severity upgrade)
 
 ---
 
