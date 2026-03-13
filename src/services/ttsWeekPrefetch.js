@@ -37,8 +37,8 @@ class TTSWeekPrefetchService {
     const { text, station, audioPath, weekNumber, mode, voice } = item;
     if (!text || text.length < 3) return false;
 
-    // Check if already cached
-    const cached = await TTSCache.get(text, station);
+    // Check if already cached (with voice-specific key)
+    const cached = await TTSCache.get(text, station, voice);
     if (cached) {
       URL.revokeObjectURL(cached);
       this.stats.skipped++;
