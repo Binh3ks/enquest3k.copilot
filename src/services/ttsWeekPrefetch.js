@@ -31,9 +31,10 @@ class TTSWeekPrefetchService {
   }
 
   /**
-   * Fetch and cache single text
+   * Fetch and cache single text with audio path and voice
    */
-  async cacheSingle(text, station) {
+  async cacheSingle(item) {
+    const { text, station, audioPath, weekNumber, mode, voice } = item;
     if (!text || text.length < 3) return false;
 
     // Check if already cached
@@ -45,7 +46,7 @@ class TTSWeekPrefetchService {
     }
 
     try {
-      await VoiceService.prefetch(text, station);
+      await VoiceService.prefetch(text, station, audioPath, weekNumber, mode, voice);
       this.stats.cached++;
       console.log(`[Week Prefetch] ✅ Cached: ${text.substring(0, 30)}... (${station})`);
       return true;
@@ -72,9 +73,35 @@ class TTSWeekPrefetchService {
     const stations = weekData?.stations;
     if (!stations) return { priority1, priority2, priority3 };
 
+    const weekNumber = weekData.weekId || weekData.week_id;
+    const mode = weekData.isEasy ? 'easy' : 'advanced';
+    const voiceConfig = weekData.voiceConfig || {};
+
+    // Helper to get voice for station
+    const getVoice = (stationKey) => {
+      const voiceMap = {
+        'read': 'narration',
+        'read_explore': 'narration',
+        'explore': 'narration',
+        'dictation': 'dictation',
+        'shadowing': 'narration',
+        'logic_lab': 'narration',
+        'mindmap': 'mindmap'
+      };
+      const voiceKey = voiceMap[stationKey] || 'narration';
+      return voiceConfig[voiceKey];
+    };
+
     // Helper to determine priority with HARD LIMITS
-    const addToPriority = (text, station, stationKey) => {
-      const item = { text, station };
+    const addToPriority = (text, station, stationKey, audioPath = null) => {
+      const item = { 
+        text, 
+        station, 
+        audioPath,
+        weekNumber,
+        mode,
+        voice: getVoice(stationKey)
+      };
       if (currentStation === stationKey || currentStation === station) {
         if (priority1.length < 8) { // MAX 8 items for priority 1
           priority1.push(item);
@@ -90,39 +117,49 @@ class TTSWeekPrefetchService {
     // 1. READ STATION - Long form content
     if (stations.read_explore?.content_en) {
       const cleanText = stations.read_explore.content_en.replace(/\*\*/g, '');
-      addToPriority(cleanText, 'read', 'read_explore');
+      const audioPath = stations.read_explore.audio_url;
+      addToPriority(cleanText, 'read', 'read_explore', audioPath);
     }
 
     // 2. EXPLORE STATION - Long form content
     if (stations.explore?.content_en) {
       const cleanText = stations.explore.content_en.replace(/\*\*/g, '');
-      addToPriority(cleanText, 'explore', 'explore');
+      const audioPath = stations.explore.audio_url || stations.explore.explore_audio_url;
+      addToPriority(cleanText, 'explore', 'explore', audioPath);
     }
 
     // 3. DICTATION - First 8 sentences only
     if (stations.dictation?.sentences) {
-      stations.dictation.sentences.slice(0, 8).forEach(item => {
-        if (item.text_en) addToPriority(item.text_en, 'dictation', 'dictation');
+      stations.dictation.sentences.slice(0, 8).forEach((item, idx) => {
+        if (item.text_en) {
+          const audioPath = item.audio_url || `audio/week${weekNumber}/dictation_${idx + 1}.mp3`;
+          addToPriority(item.text_en, 'dictation', 'dictation', audioPath);
+        }
       });
     }
 
     // 4. SHADOWING - First 4 items only
     if (stations.shadowing?.script) {
-      stations.shadowing.script.slice(0, 4).forEach(item => {
-        if (item.text_en) addToPriority(item.text_en, 'shadowing', 'shadowing');
+      stations.shadowing.script.slice(0, 4).forEach((item, idx) => {
+        if (item.text_en) {
+          const audioPath = item.audio_url || `audio/week${weekNumber}/shadowing_${idx + 1}.mp3`;
+          addToPriority(item.text_en, 'shadowing', 'shadowing', audioPath);
+        }
       });
     }
 
     // 5. LOGIC LAB - Long content
     if (stations.logic_lab?.content_en) {
       const cleanText = stations.logic_lab.content_en.replace(/\*\*/g, '');
-      addToPriority(cleanText, 'read', 'logic_lab');
+      const audioPath = stations.logic_lab.audio_url;
+      addToPriority(cleanText, 'read', 'logic_lab', audioPath);
     }
 
     // 6. MINDMAP - Content only (skip individual stems)
     if (stations.mindmap?.content_en) {
       const cleanText = stations.mindmap.content_en.replace(/\*\*/g, '');
-      addToPriority(cleanText, 'read', 'mindmap');
+      const audioPath = stations.mindmap.audio_url;
+      addToPriority(cleanText, 'read', 'mindmap', audioPath);
     }
 
     // 7-8. SKIP VOCAB - Too many items, low priority
@@ -136,8 +173,7 @@ class TTSWeekPrefetchService {
    */
   async cacheItems(items, delayMs = 2500) {
     for (let i = 0; i < items.length; i++) {
-      const { text, station } = items[i];
-      await this.cacheSingle(text, station);
+      await this.cacheSingle(items[i]);
       
       // Delay between requests to avoid overwhelming FREE tier server
       if (i < items.length - 1) {
