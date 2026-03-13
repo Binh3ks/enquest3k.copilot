@@ -47,6 +47,7 @@ const GOOGLE_TO_DEEPGRAM_VOICE = {
 // Station → voiceConfig key mapping (for looking up correct voice)
 const STATION_VOICE_KEY = {
   'read': 'narration',
+  'read_explore': 'narration',  // CRITICAL: Week data uses 'read_explore' as station key
   'new_word': 'vocabulary',
   'dictation': 'dictation',
   'shadowing': 'shadowing',  // Should use same voice as dictation
@@ -300,8 +301,15 @@ export const VoiceService = {
   async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
+    // Convert Google voice format to Deepgram if needed (Neural2-J → aura-zeus-en)
+    let finalVoice = voice;
+    if (finalVoice && finalVoice.includes('Neural2')) {
+      finalVoice = GOOGLE_TO_DEEPGRAM_VOICE[finalVoice] || finalVoice;
+      console.log(`[Prefetch] 🔄 Voice conversion: ${voice} → ${finalVoice}`);
+    }
+
     // Already cached? Nothing to do (check with voice-specific cache key)
-    const cached = await TTSCache.get(cleanedText, station, voice);
+    const cached = await TTSCache.get(cleanedText, station, finalVoice);
     if (cached) return;
 
     const isStaticStation = STATIC_STATIONS.includes(station);
@@ -317,7 +325,7 @@ export const VoiceService = {
         clearTimeout(timeoutId);
         if (response.ok) {
           const blob = await response.blob();
-          await TTSCache.set(cleanedText, station, blob, voice);
+          await TTSCache.set(cleanedText, station, blob, finalVoice);
           return;
         }
       } catch {}
@@ -325,9 +333,9 @@ export const VoiceService = {
 
     // NEW: Generate via Deepgram Worker with audioPath & voice for on-demand caching
     try {
-      const blob = await this.useGoogleTTS(cleanedText, station, voice, audioPath);
-      await TTSCache.set(cleanedText, station, blob, voice);
-      console.log(`[Prefetch] 💾 Generated & cached: ${audioPath || 'dynamic'} [voice: ${voice || 'default'}]`);
+      const blob = await this.useGoogleTTS(cleanedText, station, finalVoice, audioPath);
+      await TTSCache.set(cleanedText, station, blob, finalVoice);
+      console.log(`[Prefetch] 💾 Generated & cached: ${audioPath || 'dynamic'} [voice: ${finalVoice || 'default'}]`);
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed to generate:`, error.message);
       // Prefetch is non-critical, don't throw
