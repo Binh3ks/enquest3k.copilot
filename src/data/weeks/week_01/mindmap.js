@@ -27,12 +27,12 @@ const mindMapContent = {
       "Lisa Brown"
     ],
     "I am ___ years old.": [
-      "six years old",
-      "seven years old",
-      "eight years old",
-      "nine years old",
-      "ten years old",
-      "five years old"
+      "six",
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "five"
     ],
     "I am a ___.":  [
       "student with big dreams",
