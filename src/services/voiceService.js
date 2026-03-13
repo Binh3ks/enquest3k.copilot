@@ -164,10 +164,16 @@ export const VoiceService = {
       voiceConfig = await getVoiceConfigForWeek(weekNumber);
     }
     
+    // Extract voice for this station (for cache key)
+    const voiceKey = STATION_VOICE_KEY[station];
+    const googleVoice = voiceConfig?.[voiceKey];
+    const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
+    const cacheVoice = deepgramVoice || googleVoice;  // Use Deepgram voice for cache key (more consistent)
+    
     // 🔍 TIER 1: Check Client Cache first (instant replay, 0ms)
-    const cachedUrl = await TTSCache.get(cleanedText, station);
+    const cachedUrl = await TTSCache.get(cleanedText, station, cacheVoice);
     if (cachedUrl) {
-      console.log(`[TTS] ✅ Cache hit (0ms)`);
+      console.log(`[TTS] ✅ Cache hit (0ms) [voice: ${cacheVoice || 'default'}]`);
       return this.playAudio(cachedUrl, true);
     }
     
@@ -204,9 +210,9 @@ export const VoiceService = {
       }
 
       if (audioBlob) {
-        await TTSCache.set(cleanedText, station, audioBlob);
+        await TTSCache.set(cleanedText, station, audioBlob, deepgramVoice || cacheVoice);
         const blobUrl = URL.createObjectURL(audioBlob);
-        console.log(`[TTS] ✅ Worker won (${(audioBlob.size / 1024).toFixed(1)}KB)`);
+        console.log(`[TTS] ✅ Worker won (${(audioBlob.size / 1024).toFixed(1)}KB) [voice: ${deepgramVoice || cacheVoice || 'default'}]`);
         return this.playAudio(blobUrl, true);
       }
 
@@ -221,8 +227,8 @@ export const VoiceService = {
       workerPromise
         .then(async (blob) => {
           if (blob) {
-            await TTSCache.set(cleanedText, station, blob);
-            console.log(`[TTS] 💾 Late Deepgram cached for next replay`);
+            await TTSCache.set(cleanedText, station, blob, deepgramVoice || cacheVoice);
+            console.log(`[TTS] 💾 Late Deepgram cached for next replay [voice: ${deepgramVoice || cacheVoice || 'default'}]`);
           }
         })
         .catch(() => {});
@@ -244,14 +250,12 @@ export const VoiceService = {
         // On R2 miss: generate on-demand with correct voice for this station
         if (voiceConfig && TTS_WORKER_URL) {
           try {
-            const voiceKey = STATION_VOICE_KEY[station];
-            const googleVoice = voiceConfig[voiceKey];
-            const deepgramVoice = GOOGLE_TO_DEEPGRAM_VOICE[googleVoice];
+            // Voice already extracted above for cache check
             console.log(`[TTS] 🎤 Generating on-demand: ${station} with ${deepgramVoice || 'default'}`);
             
             // Pass audioUrl so Worker saves to exact R2 path (not hash-based)
             const audioBlob = await this.useGoogleTTS(cleanedText, station, deepgramVoice, audioUrl);
-            await TTSCache.set(cleanedText, station, audioBlob);
+            await TTSCache.set(cleanedText, station, audioBlob, deepgramVoice || cacheVoice);
             const blobUrl = URL.createObjectURL(audioBlob);
             return this.playAudio(blobUrl, true);
           } catch (genErr) {
@@ -265,19 +269,19 @@ export const VoiceService = {
     // 🎙️ TIER 3: Deepgram Worker (for static stations on R2 miss, or stations without audioUrl)
     // This ensures audio always matches the current on-screen text, even if R2 files are stale/missing
     try {
-      // Extract voice from voiceConfig
-      const voiceKey = STATION_VOICE_KEY[station];
-      const googleVoice = voiceConfig?.[voiceKey];
-      const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
+      // Voice already extracted above for cache check
+      // const voiceKey = STATION_VOICE_KEY[station];
+      // const googleVoice = voiceConfig?.[voiceKey];
+      // const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
 
       const audioBlob = await Promise.race([
         this.useGoogleTTS(cleanedText, station, deepgramVoice, audioUrl),
         new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
       ]);
       if (audioBlob) {
-        await TTSCache.set(cleanedText, station, audioBlob);
+        await TTSCache.set(cleanedText, station, audioBlob, deepgramVoice || cacheVoice);
         const blobUrl = URL.createObjectURL(audioBlob);
-        console.log(`[TTS] ✅ Deepgram worker (static fallback)`);
+        console.log(`[TTS] ✅ Deepgram worker (static fallback) [voice: ${deepgramVoice || cacheVoice || 'default'}]`);
         return this.playAudio(blobUrl, true);
       }
     } catch (err) {
@@ -296,8 +300,8 @@ export const VoiceService = {
   async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
-    // Already cached? Nothing to do
-    const cached = await TTSCache.get(cleanedText, station);
+    // Already cached? Nothing to do (check with voice-specific cache key)
+    const cached = await TTSCache.get(cleanedText, station, voice);
     if (cached) return;
 
     const isStaticStation = STATIC_STATIONS.includes(station);
@@ -313,7 +317,7 @@ export const VoiceService = {
         clearTimeout(timeoutId);
         if (response.ok) {
           const blob = await response.blob();
-          await TTSCache.set(cleanedText, station, blob);
+          await TTSCache.set(cleanedText, station, blob, voice);
           return;
         }
       } catch {}
@@ -322,8 +326,8 @@ export const VoiceService = {
     // NEW: Generate via Deepgram Worker with audioPath & voice for on-demand caching
     try {
       const blob = await this.useGoogleTTS(cleanedText, station, voice, audioPath);
-      await TTSCache.set(cleanedText, station, blob);
-      console.log(`[Prefetch] 💾 Generated & cached: ${audioPath || 'dynamic'}`);
+      await TTSCache.set(cleanedText, station, blob, voice);
+      console.log(`[Prefetch] 💾 Generated & cached: ${audioPath || 'dynamic'} [voice: ${voice || 'default'}]`);
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed to generate:`, error.message);
       // Prefetch is non-critical, don't throw
@@ -393,6 +397,12 @@ export const VoiceService = {
    * @returns {Promise<void>}
    */
   async useCDN(text, station, audioUrl, weekNumber, mode, voiceConfig = null) {
+    // Extract voice for cache key
+    const voiceKey = STATION_VOICE_KEY[station];
+    const googleVoice = voiceConfig?.[voiceKey];
+    const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
+    const cacheVoice = deepgramVoice || googleVoice;
+    
     // If audio URL is provided by station data, use it directly
     let cdnUrl;
     
@@ -433,8 +443,8 @@ export const VoiceService = {
       // Got audio from CDN!
       const audioBlob = await response.blob();
       
-      // Cache locally for instant replay
-      await TTSCache.set(text, station, audioBlob);
+      // Cache locally for instant replay (with voice-specific key)
+      await TTSCache.set(text, station, audioBlob, cacheVoice);
       
       // Play immediately
       const blobUrl = URL.createObjectURL(audioBlob);
@@ -502,8 +512,8 @@ export const VoiceService = {
     
     console.log(`[TTS] ✅ ${cacheHit ? '☁️ R2' : '🎤 Generated'} (${(audioBlob.size / 1024).toFixed(1)}KB) - now cached to R2: ${cleanPath}`);
     
-    // Cache locally for instant replay
-    await TTSCache.set(text, station, audioBlob);
+    // Cache locally for instant replay (with voice-specific key)
+    await TTSCache.set(text, station, audioBlob, deepgramVoice);
     
     // Play immediately
     const blobUrl = URL.createObjectURL(audioBlob);
@@ -601,7 +611,7 @@ export const VoiceService = {
     for (let attempt = 1; attempt <= maxAttempts; attempt++) {
       try {
         const audioBlob = await this._fetchFromPool(text, station, 30000);
-        await TTSCache.set(text, station, audioBlob);
+        await TTSCache.set(text, station, audioBlob, null);  // Legacy method, no voice
         const audioUrl = URL.createObjectURL(audioBlob);
         return this.playAudio(audioUrl, true);
       } catch (error) {
@@ -662,14 +672,14 @@ export const VoiceService = {
     try {
       console.log(`[TTS] 🔄 Prefetching (Google TTS)...`);
       const audioBlob = await this.useGoogleTTS(text, station);
-      await TTSCache.set(text, station, audioBlob);
+      await TTSCache.set(text, station, audioBlob, null);  // Legacy method, no voice
       console.log(`[TTS] ✅ Google TTS prefetched and cached (${(audioBlob.size / 1024).toFixed(1)}KB)`);
     } catch {
       // Fallback to HF Space
       try {
         console.log(`[TTS] 🔄 Prefetching (HF Space fallback)...`);
         const audioBlob = await this._fetchFromPool(text, station, 30000);
-        await TTSCache.set(text, station, audioBlob);
+        await TTSCache.set(text, station, audioBlob, null);  // Legacy method, no voice
         console.log(`[TTS] ✅ HF Space prefetched and cached (${(audioBlob.size / 1024).toFixed(1)}KB)`);
       } catch (error) {
         throw new Error(`Prefetch failed: ${error.message}`);

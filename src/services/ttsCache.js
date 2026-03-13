@@ -20,7 +20,7 @@
 
 const DB_NAME = 'EngQuestTTSCache';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 4;  // Bumped Feb 2026 v3: clears stale IndexedDB blobs, force-cache → no-cache in useCDN to prevent stale HTTP cache
+const DB_VERSION = 5;  // Bumped v5 (March 2026): Added voice to cache key - clears old cache without voice suffix
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -79,30 +79,41 @@ class TTSCacheService {
   }
 
   /**
-   * Generate cache key from text + station
+   * Generate cache key from text + station + voice
    * @param {string} text - Text to speak
    * @param {string} station - Station ID
+   * @param {string} voice - Voice ID (e.g., 'en-US-Neural2-J' or 'aura-zeus-en')
    * @returns {string} - Cache key
    */
-  getCacheKey(text, station) {
+  getCacheKey(text, station, voice = null) {
     // Simple hash function (for cache key, not security)
     const hash = text.split('').reduce((acc, char) => {
       return ((acc << 5) - acc) + char.charCodeAt(0);
     }, 0);
-    return `tts_${station}_${Math.abs(hash)}`;
+    
+    // Add voice to cache key for voice-specific caching
+    // Extract last part of voice ID (e.g., 'Neural2-J' → 'J', 'aura-zeus-en' → 'zeus')
+    let voiceSuffix = '';
+    if (voice) {
+      const voiceMatch = voice.match(/Neural2-([A-Z])|aura-(\w+)-/i);
+      voiceSuffix = voiceMatch ? `_${(voiceMatch[1] || voiceMatch[2]).toLowerCase()}` : `_${voice.substring(0, 5)}`;
+    }
+    
+    return `tts_${station}_${Math.abs(hash)}${voiceSuffix}`;
   }
 
   /**
    * Get cached audio blob URL
    * @param {string} text - Text to speak
    * @param {string} station - Station ID
+   * @param {string} voice - Voice ID (e.g., 'en-US-Neural2-J' or 'aura-zeus-en')
    * @returns {Promise<string|null>} - Blob URL or null if not cached
    */
-  async get(text, station) {
+  async get(text, station, voice = null) {
     await this.initPromise;
     if (!this.db) return null;
 
-    const key = this.getCacheKey(text, station);
+    const key = this.getCacheKey(text, station, voice);
     
     return new Promise((resolve) => {
       try {
@@ -168,17 +179,19 @@ class TTSCacheService {
    * @param {string} text - Text to speak
    * @param {string} station - Station ID
    * @param {Blob} blob - Audio blob (MP3)
+   * @param {string} voice - Voice ID (e.g., 'en-US-Neural2-J' or 'aura-zeus-en')
    * @returns {Promise<boolean>} - Success status
    */
-  async set(text, station, blob) {
+  async set(text, station, blob, voice = null) {
     await this.initPromise;
     if (!this.db) return false;
 
-    const key = this.getCacheKey(text, station);
+    const key = this.getCacheKey(text, station, voice);
     const record = {
       key,
       text: text.substring(0, 100), // Store first 100 chars for debugging
       station,
+      voice,  // Store voice for debugging
       blob,
       timestamp: Date.now()
     };
