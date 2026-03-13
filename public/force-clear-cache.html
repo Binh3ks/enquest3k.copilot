@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Force Clear TTS Cache - EngQuest</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    #status {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+      display: none;
+    }
+    .success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .info {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+    .steps {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .steps h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 16px;
+    }
+    .steps ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    .steps li {
+      margin: 8px 0;
+      color: #555;
+      font-size: 14px;
+    }
+    .code {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 12px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧹 Force Clear TTS Cache</h1>
+    <p class="subtitle">Week 15 Advanced Mode Voice Fix</p>
+    
+    <button onclick="clearCache()">🗑️ DELETE INDEXEDDB NOW</button>
+    
+    <div id="status"></div>
+    
+    <div class="steps">
+      <h3>📋 What This Does:</h3>
+      <ol>
+        <li>Deletes <strong>EngQuestTTSCache</strong> database completely</li>
+        <li>Clears all old voice cache entries</li>
+        <li>Forces upgrade to DB_VERSION 7</li>
+        <li>Next load will use NEW voice (aura-zeus-en)</li>
+      </ol>
+      
+      <h3>⚠️ After Clicking:</h3>
+      <ol>
+        <li>Wait for success message</li>
+        <li><strong>Close this tab</strong></li>
+        <li>Go back to <code>/week/15/read_explore</code></li>
+        <li><strong>Hard refresh</strong>: Cmd+Shift+R (Mac)</li>
+        <li>Check console logs for:</li>
+      </ol>
+      <div class="code">[TTSCache] 🗑️ Old cache cleared (version upgrade)
+[TTSCache] 🆕 Created object store
+[TTSCache] ✅ IndexedDB ready</div>
+    </div>
+  </div>
+
+  <script>
+    async function clearCache() {
+      const statusDiv = document.getElementById('status');
+      statusDiv.style.display = 'block';
+      statusDiv.className = 'info';
+      statusDiv.innerHTML = '⏳ Deleting IndexedDB database...';
+      
+      try {
+        // Delete the database
+        const deleteRequest = indexedDB.deleteDatabase('EngQuestTTSCache');
+        
+        deleteRequest.onerror = (event) => {
+          console.error('Delete failed:', event);
+          statusDiv.className = 'error';
+          statusDiv.innerHTML = `
+            <strong>❌ Failed to delete database</strong><br>
+            Error: ${event.target.error || 'Unknown error'}<br><br>
+            <strong>Manual steps:</strong><br>
+            1. Open DevTools (F12)<br>
+            2. Application tab → IndexedDB<br>
+            3. Expand IndexedDB section<br>
+            4. Right-click "EngQuestTTSCache" → Delete database<br>
+            5. Hard refresh the page
+          `;
+        };
+        
+        deleteRequest.onsuccess = () => {
+          console.log('✅ Database deleted successfully');
+          statusDiv.className = 'success';
+          statusDiv.innerHTML = `
+            <strong>✅ IndexedDB Deleted Successfully!</strong><br><br>
+            <strong>Next steps:</strong><br>
+            1. Close this tab<br>
+            2. Go to <strong>/week/15/read_explore</strong><br>
+            3. Hard refresh: <strong>Cmd+Shift+R</strong> (Mac) or <strong>Ctrl+Shift+R</strong> (Win)<br>
+            4. Check Console logs for "🗑️ Old cache cleared"<br>
+            5. Play audio - should be <strong>male voice</strong> (aura-zeus-en)<br><br>
+            <em>If still wrong voice, contact developer with console logs.</em>
+          `;
+          
+          // Also try to clear localStorage TTS keys (just in case)
+          try {
+            for (let key in localStorage) {
+              if (key.startsWith('tts_') || key.includes('cache')) {
+                localStorage.removeItem(key);
+                console.log(`Cleared localStorage key: ${key}`);
+              }
+            }
+          } catch (e) {
+            console.warn('Could not clear localStorage:', e);
+          }
+        };
+        
+        deleteRequest.onblocked = () => {
+          statusDiv.className = 'error';
+          statusDiv.innerHTML = `
+            <strong>⚠️ Database deletion blocked</strong><br><br>
+            Another tab or connection is using the database.<br><br>
+            <strong>Fix:</strong><br>
+            1. Close ALL EngQuest tabs<br>
+            2. Return to this page<br>
+            3. Click the button again<br>
+            4. Or use manual deletion in DevTools
+          `;
+        };
+        
+      } catch (error) {
+        console.error('Exception during delete:', error);
+        statusDiv.className = 'error';
+        statusDiv.innerHTML = `
+          <strong>❌ Error:</strong> ${error.message}<br><br>
+          Please delete manually via DevTools → Application → IndexedDB
+        `;
+      }
+    }
+    
+    // Log current state on page load
+    console.log('=== TTS Cache Clear Tool Loaded ===');
+    const request = indexedDB.open('EngQuestTTSCache');
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      console.log('Current DB version:', db.version);
+      console.log('Object stores:', Array.from(db.objectStoreNames));
+      db.close();
+    };
+    request.onerror = () => {
+      console.log('Database does not exist or is inaccessible');
+    };
+  </script>
+</body>
+</html>
