@@ -548,9 +548,14 @@ export const VoiceService = {
       if (audioPath) {
         const cleanPath = audioPath.startsWith('/') ? audioPath.slice(1) : audioPath;
         workerUrl += `&path=${encodeURIComponent(cleanPath)}`;
-        console.log(`[TTS] 🔧 DEBUG v525dcfd: Passing path param to Worker: ${cleanPath}`);
+        console.log(`[TTS] 🔧 Worker Call:`, {
+          station,
+          voice: voiceToUse,
+          path: cleanPath,
+          textPreview: text.substring(0, 50) + '...'
+        });
       } else {
-        console.warn(`[TTS] ⚠️ DEBUG v525dcfd: NO audioPath provided! Will save to dynamic/`);
+        console.warn(`[TTS] ⚠️ NO audioPath provided! Will save to dynamic/`);
       }
       
       const res = await fetch(workerUrl);
