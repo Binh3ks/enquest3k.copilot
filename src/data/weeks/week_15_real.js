@@ -205,12 +205,12 @@ const week15RealData = {
         backstory: "Ms. Nova visits the park every day to see people having fun!",
         speaking_style: "Warm, describes actions, uses Present Continuous",
         facts: {
-          loves_backpacks: true,
-          has_backpack: true,
-          favorite_item: "notebook",
-          backpack_color: "blue",
-          organized: true,
-          checks_supplies: true
+          loves_parks: true,
+          visits_daily: true,
+          favorite_activity: "watching people",
+          favorite_place: "park bench",
+          observant: true,
+          enjoys_nature: true
         }
       },
       
@@ -219,114 +219,114 @@ const week15RealData = {
       
       nova_greeting: "Hi! Let's watch the park together!", // DEPRECATED
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 1 - Backpack Check. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova is packing her own backpack and loves checking what students have in theirs. OPENING: Ask student's name, then say "Let's check your backpack together! What is in your backpack? Say: There is a pen in my backpack." STRICT GAME RULES: 1. ONLY ask about items IN STUDENT'S BACKPACK. 2. Student MUST say "There is a [item] in my backpack." 3. If student gives yes/no only, prompt full sentence: "Say: There is a ruler in my backpack!" 4. Ask about ONE item per question. VOCABULARY TARGET: pen, ruler, eraser, book, notebook, pencil case, backpack. ALLOWED QUESTIONS: "What is in your backpack?", "Is there a ruler?", "What color is your book?", "Where is your pencil case?" GRAMMAR ENFORCEMENT: Every answer must practice "There is a [item]" - recast all errors naturally. GAME MECHANIC: Ask about ONE backpack item per turn → student says 'There is a [item] in my backpack' → confirm/recast → ask about next item. FORBIDDEN: Do NOT ask about feelings, preferences, or unrelated topics. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Multiple items per turn, complex sentences. covering at least 5 different items. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 15 Mission 1 - Busy Park Observation. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Ms. Nova loves watching people at the park and describing what they are doing. OPENING: Ask student's name, then say "Look at the park! It's so busy! What is that boy doing? Say: He is running!" STRICT GAME RULES: 1. ONLY ask about ACTIONS people are doing at the park. 2. Student MUST say "He/She is [V-ing]" or "They are [V-ing]". 3. If student gives yes/no only, prompt full sentence: "Say: He is running!" 4. Ask about ONE person/action per question. VOCABULARY TARGET: running, walking, sitting, eating, flying, playing, jogging, relaxing. ALLOWED QUESTIONS: "What is he doing?", "Is she eating?", "What are they doing?", "Where is he sitting?" GRAMMAR ENFORCEMENT: Every answer must practice Present Continuous "He/She is V-ing" - recast all errors naturally. GAME MECHANIC: Point at ONE person → student says 'He/She is [V-ing]' → confirm/recast → point at next person. FORBIDDEN: Do NOT ask about feelings, preferences, or unrelated topics. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Multiple people per turn, complex sentences. Cover at least 5 different actions. Do NOT ask another question on the last turn.`,
       
-      target_vocab: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
+      target_vocab: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing"],
       
-      grammar_pattern: "There is a [item] in my backpack",
+      grammar_pattern: "He/She is [verb]-ing",
       
       // 📖 STORY ARC
       story_arc: [
         {
-          phase: "introduction",
+          phase: "observe_first_actions",
           turns: "1-4",
-          goal: "Open backpack, check first items with scaffolding",
-          required_vocab: [],
+          goal: "Observe people doing basic actions at the park",
+          required_vocab: ["running", "walking", "sitting"],
           phase_questions: [
             {
-              template: "(After name) {student_answer}! Great name! Open your backpack! Can you see a pen or a ruler? Say: Yes, there is a pen or Yes, there is a ruler",
-              hints: ["Yes", "there", "is", "a", "pen", "ruler", "No", "isn't"]
+              template: "(After name) {student_answer}! Great name! Look! That boy over there! What is he doing? Say: He is running or He is walking",
+              hints: ["He", "is", "running", "walking", "jogging"]
             },
             {
-              template: "(After first item) {student_answer}! Good! Can you see a book or a notebook? Say: Yes, there is a book or Yes, there is a notebook",
-              hints: ["Yes", "there", "is", "a", "book", "notebook", "No", "isn't"]
+              template: "(After first action) {student_answer}! Good! Look at that girl! What is she doing? Say: She is sitting or She is walking",
+              hints: ["She", "is", "sitting", "walking", "running"]
             },
             {
-              template: "(After second item) {student_answer}! Great! What about an eraser? Do you have an eraser? Say: Yes, there is an eraser or No, there isn't an eraser",
-              hints: ["Yes", "there", "is", "an", "eraser", "No", "isn't"]
+              template: "(After second action) {student_answer}! Great! Look at the old man on the bench! What is he doing? Say: He is sitting or He is relaxing",
+              hints: ["He", "is", "sitting", "relaxing", "resting"]
             },
             {
-              template: "(After eraser) {student_answer}! Perfect! Your backpack has many things! Let's check more! 📚",
+              template: "(After third action) {student_answer}! Perfect! The park is so busy! Let's look at more people! 🏞️",
               hints: ["Yes", "Okay", "Great"]
             }
           ]
         },
         {
-          phase: "item_check",
+          phase: "observe_more_actions",
           turns: "5-12",
-          goal: "Check more items with full sentence practice",
-          required_vocab: ["pen", "ruler", "eraser", "book", "notebook"],
+          goal: "Observe more people doing different activities",
+          required_vocab: ["eating", "playing", "flying"],
           phase_questions: [
             {
-              template: "Can you see a notebook? Say: Yes, there is a notebook or No, there isn't a notebook",
-              hints: ["Yes", "there", "is", "a", "notebook", "No", "isn't"]
+              template: "Look at that girl with ice cream! What is she doing? Say: She is eating or She is eating ice cream",
+              hints: ["She", "is", "eating", "ice cream"]
             },
             {
-              template: "Can you see a pencil case? Say: Yes, there is a pencil case or No, there isn't a pencil case",
-              hints: ["Yes", "there", "is", "a", "pencil", "case", "No", "isn't"]
+              template: "Look at those children over there! What are they doing? Say: They are playing or They are playing soccer",
+              hints: ["They", "are", "playing", "soccer", "games"]
             },
             {
-              template: "Open the pencil case! What do you see inside? Say: There is a pen or There is an eraser",
-              hints: ["There", "is", "a", "pen", "an", "eraser"]
+              template: "Wow! Look up! What are those kids doing? Say: They are flying kites or They are flying a kite",
+              hints: ["They", "are", "flying", "kites", "a kite"]
             },
             {
-              template: "How many pens are in the pencil case? Say: There is one pen or There are two pens",
-              hints: ["There", "is", "one", "pen", "are", "two", "pens"]
+              template: "Look at that woman in the jogging clothes! What is she doing? Say: She is jogging or She is running",
+              hints: ["She", "is", "jogging", "running", "exercising"]
             },
             {
-              template: "What color is your notebook? Say: My notebook is blue or My notebook is red",
-              hints: ["My", "notebook", "is", "blue", "red", "white"]
+              template: "Look at that family on the grass! What are they doing? Say: They are having a picnic or They are relaxing",
+              hints: ["They", "are", "having", "a picnic", "relaxing", "eating"]
             },
             {
-              template: "How many books do you have? Say: There is one book or There are two books",
-              hints: ["There", "is", "one", "book", "are", "two", "books"]
+              template: "Look near the fountain! Who is there? Say: Children are playing or People are sitting",
+              hints: ["Children", "are", "playing", "People", "sitting", "walking"]
             },
             {
-              template: "Where is your ruler? Say: There is a ruler in my backpack or There is a ruler on the desk",
-              hints: ["There", "is", "a", "ruler", "in", "my", "backpack", "on", "the", "desk"]
+              template: "What is happening at the fountain? Say: Children are playing or Water is splashing",
+              hints: ["Children", "are", "playing", "Water", "splashing", "running"]
             },
             {
-              template: "What else is in your backpack? Say: There is a pen or There is an eraser",
-              hints: ["There", "is", "a", "pen", "an", "eraser", "ruler"]
+              template: "Look at those people under the tree! What are they doing? Say: They are relaxing or They are sitting",
+              hints: ["They", "are", "relaxing", "sitting", "resting"]
             }
           ]
         },
         {
-          phase: "favorite_item",
+          phase: "action_details",
           turns: "13-16",
-          goal: "Ask about favorite school supply",
+          goal: "Describe actions with more details",
           required_vocab: [],
           phase_questions: [
             {
-              template: "What is your favorite item? Say: My favorite is the pen or My favorite is the book",
-              hints: ["My", "favorite", "is", "the", "pen", "book", "ruler"]
+              template: "Tell me one thing YOU see at the park! Say: I see a boy running or I see a girl eating",
+              hints: ["I", "see", "a boy", "running", "a girl", "eating"]
             },
             {
-              template: "Why do you like it? Say: I like it because it is useful or I like it because it is pretty",
-              hints: ["I", "like", "it", "because", "is", "useful", "pretty", "good"]
+              template: "What is YOUR favorite activity at the park? Say: I like playing or I like running",
+              hints: ["I", "like", "playing", "running", "eating", "relaxing"]
             },
             {
-              template: "What color is your favorite item? Say: It is blue or It is red",
-              hints: ["It", "is", "blue", "red", "green", "yellow"]
+              template: "What can you do at the park? Say: I can run or I can play",
+              hints: ["I", "can", "run", "play", "sit", "eat"]
             },
             {
-              template: "Is your backpack full or empty? Say: My backpack is full or My backpack is empty",
-              hints: ["My", "backpack", "is", "full", "empty"]
+              template: "Are the people happy? Say: Yes, they are happy or Yes, they are having fun",
+              hints: ["Yes", "they", "are", "happy", "having fun"]
             }
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          goal: "Wrap up backpack check",
+          goal: "Wrap up park observation",
           required_vocab: [],
           phase_questions: [
             {
-              template: "Your backpack has many items! Great job!",
+              template: "The park is so busy! Everyone is having fun! Great job watching!",
               hints: ["Thank", "you", "Yes", "Great"]
             },
             {
-              template: "Ready for school? Goodbye! Say: Goodbye!",
+              template: "Let's go to the park soon! Goodbye! Say: Goodbye!",
               hints: ["Goodbye", "Yes", "Bye", "See", "you"]
             }
           ]
@@ -345,98 +345,98 @@ const week15RealData = {
       theme: "Park Action Guessing",
       
       nova_greeting: "Let's play Spot the Action! I describe, you guess!", // DEPRECATED
-      default_hints: ["There", "is", "a", "whiteboard"],
+      default_hints: ["He", "is", "running"],
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 2 - Classroom Treasure Hunt. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a whiteboard" or "Say: There is a desk". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item student sees. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?". ONLY allowed questions: "(Point 👉) What is this?", "(Point 👉) What do you see?", "Look here! What is it?". GAME MECHANIC: Point to ONE classroom item per turn → student says 'There is a [item]' → confirm/recast → point to next item. NEVER ask about preferences, feelings, or descriptions - ONLY IDENTIFY ITEMS WITH 'There is a...'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 15 Mission 2 - Spot the Action Game. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ACTIONS people are doing. GRAMMAR: "He/She is [V-ing]" pattern. Give FULL scaffolding: "Say: He is running" or "Say: She is eating". VOCABULARY: running, walking, sitting, eating, flying, playing, jogging, relaxing. STRICT FOCUS: ACTION IDENTIFICATION ONLY - Every question must be about WHAT people are doing. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?". ONLY allowed questions: "What is he doing?", "Is she eating?", "What are they doing?". GAME MECHANIC: Describe ONE person's action → student says 'He/She is [V-ing]' → confirm/recast → describe next action. NEVER ask about preferences, feelings, or descriptions - ONLY IDENTIFY ACTIONS. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
       
-      target_vocab: ["whiteboard", "computer", "desk", "chair", "book", "pen", "ruler", "teacher"],
+      target_vocab: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing"],
       
-      grammar_pattern: "There is a [item]",
+      grammar_pattern: "He/She is [verb]-ing",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
         name: "Ms. Nova",
-        personality: "friendly teacher, loves pointing at classroom items",
-        backstory: "I teach in this classroom! Let me show you around! There are many things here!",
-        speaking_style: "excited, points at objects one by one, celebrates correct answers",
+        personality: "friendly observer, loves guessing what people are doing",
+        backstory: "I love playing guessing games at the park! Let's guess together!",
+        speaking_style: "excited, gives clues about actions, celebrates correct answers",
         facts: {
-          loves_teaching: true,
-          has_classroom: true,
-          favorite_item: "whiteboard",
-          desk_color: "brown",
-          students: 20,
-          teaches_English: true
+          loves_games: true,
+          favorite_game: "action guessing",
+          visits_park: true,
+          observant: true,
+          playful: true,
+          enjoys_guessing: true
         },
-        role: "Teacher showing classroom items by pointing"
+        role: "Game host giving action clues"
       },
 
-      opening_narrative: "Hi! I'm Ms. Nova! 🔍 Let's play Spot the Action! I see someone with ice cream! What is she doing? Say: She is eating...",
+      opening_narrative: "Hi! I'm Ms. Nova! 🔍 Let's play Spot the Action! I see someone with ice cream! What is she doing? Say: She is eating ice cream!",
 
       story_arc: [
         {
-          phase: "treasure_hunt_start",
+          phase: "action_clues_easy",
           turns: "1-4",
-          phase_name: "Start Treasure Hunt!",
-          focus: "Find first hidden items with full scaffolding",
+          phase_name: "Easy Action Clues!",
+          focus: "Guess simple actions from clues",
           phase_questions: [
-            "(Point 👉 at whiteboard) 🔍 Look! I found something at the front! What is this? Say: There is a...",
-            "(Point 👉 at desk) Yay! I found another! What do you see? Say: There is a...",
-            "(Point 👉 at chair) Wow! One more! What is it? Say: There is a...",
-            "(Point 👉 at computer) Great! Look here! What is this? Say: There is a..."
+            "🏃 I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running!",
+            "🚶 I see someone moving slowly! One step, two step, three step! What is it? Say: Walking or She is walking!",
+            "🪑 I see someone on a bench! Not moving! Resting! What is it? Say: Sitting or He is sitting!",
+            "🍦 I see someone with ice cream! Mouth open, ice cream going in! What is it? Say: Eating or She is eating!"
           ],
           example_answers: [
-            "There is a whiteboard",
-            "There is a desk",
-            "There is a chair",
-            "There is a computer"
+            "Running",
+            "Walking",
+            "Sitting",
+            "Eating"
           ]
         },
         {
-          phase: "more_treasures",
+          phase: "action_clues_harder",
           turns: "5-12",
-          phase_name: "Find More Treasures!",
-          focus: "Keep finding items with excitement",
+          phase_name: "Harder Action Clues!",
+          focus: "Guess more actions with full sentences",
           phase_questions: [
-            "(Point 👉 at book) 📖 I see something! What is it? Say: There is a...",
-            "(Point 👉 at pen) ✏️ Look! For writing! What is this? Say: There is a...",
-            "(Point 👉 at ruler) 📏 Yay! For measuring! What is this? Say: There is a...",
-            "(Point 👉 under desk) 🔍 Under here! What do you see? Say: There is a...",
-            "(Point 👉 on desk) ✨ On top! What is this? Say: There is a...",
-            "(Point 👉 near window) By the window! What is it? Say: There is a...",
-            "(Point 👉 in corner) In the corner! What do you see? Say: There is a...",
-            "(Point 👉 on wall) On the wall! What is this? Say: There is a..."
+            "⚽ I see kids with a ball! Kicking! Running! Having fun! What are they doing? Say: They are playing or Playing soccer!",
+            "🪁 I see something flying in the sky! String! Wind! Not a bird! What are they doing? Say: Flying kites or They are flying a kite!",
+            "🏃‍♀️ I see someone in sports clothes! Running slowly! Exercise! What is she doing? Say: She is jogging or Jogging!",
+            "😌 I see a family lying on the grass! Peaceful! Not busy! Eyes closed! What are they doing? Say: They are relaxing or Relaxing!",
+            "🧺 I see food on a blanket! Sandwiches! Fruit! Family eating outside! What are they doing? Say: Having a picnic or They are having a picnic!",
+            "⛲ I see water! Splashing! Children laughing! Near water! Where are they? Say: At the fountain or Near the fountain!",
+            "📖 I see someone with a book! Sitting on bench! Looking at pages! What is he doing? Say: He is reading or Reading!",
+            "🎶 I see someone moving to music! Arms up! Feet moving! What is she doing? Say: She is dancing or Dancing!"
           ],
           example_answers: [
-            "There is a book",
-            "There is a pen",
-            "There is a ruler",
-            "There is a desk",
-            "There is a chair",
-            "There is a whiteboard",
-            "There is a computer",
-            "There is a book"
+            "Playing soccer",
+            "Flying kites",
+            "Jogging",
+            "Relaxing",
+            "Having a picnic",
+            "At the fountain",
+            "Reading",
+            "Dancing"
           ]
         },
         {
-          phase: "item_locations",
+          phase: "full_sentences",
           turns: "13-16",
-          phase_name: "Where Are Items",
-          focus: "Ask about locations of items",
+          phase_name: "Full Sentence Practice",
+          focus: "Use complete Present Continuous sentences",
           phase_questions: [
-            "Where is the whiteboard? At the front or at the back?",
-            "Where is your desk? Near the door or near the window?",
-            "Where is the pen? On the desk or in the bag?",
-            "What is on the desk? A book, a pen, or a ruler?"
+            "Point at someone running! Say: He is running or She is running!",
+            "Point at someone sitting! Say: He is sitting or She is sitting on the bench!",
+            "Point at children playing! Say: They are playing or The children are playing!",
+            "What is happening at the park? Say: People are having fun or Everyone is playing!"
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          phase_name: "Wrap Up Tour",
-          focus: "Celebrate learning classroom items",
+          phase_name: "Game Complete",
+          focus: "Celebrate action spotting success",
           phase_questions: [
-            "We saw many things in the classroom! What is your favorite? Whiteboard, computer, or desk?",
-            "Great job! You know all the classroom items! Bye bye! 👋"
+            "You found all the actions! You are a great action spotter! Which action do you like? Running, eating, or playing?",
+            "Great job! See you at the park! Goodbye! 👋"
           ]
         }
       ],
@@ -447,103 +447,103 @@ const week15RealData = {
     },
     {
       mission_id: 3,
-      title: "The Magic Backpack",
-      title_vi: "Chiếc Balo Phép Thuật",
-      theme: "Magic Guessing Game",
+      title: "Park Story Time",
+      title_vi: "Giờ Kể Chuyện Công Viên",
+      theme: "Creating a Park Story",
       
-      nova_greeting: "I have a magic backpack! Let's see what appears inside!", // DEPRECATED
-      default_hints: ["There", "is", "a", "pen"],
+      nova_greeting: "Let's make a park story together! What do you see?", // DEPRECATED
+      default_hints: ["He", "is", "running"],
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 7 Mission 3 - The Magic Backpack. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. ONLY ask about ITEMS using WHAT questions. GRAMMAR: "There is a [item]" pattern. Give FULL scaffolding: "Say: There is a pen" or "Say: There is a notebook". VOCABULARY: whiteboard, teacher, computer, pen, ruler, eraser, book, notebook, pencil case, backpack. STRICT FOCUS: ITEM IDENTIFICATION ONLY - Every question must be about WHAT item is in the backpack. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?", "Do you want...?", "What color...?", "Is it big?". ONLY allowed questions: "(Feel 👋) What is it?", "(Shake 🎒) What do you hear?", "What is this item?". GAME MECHANIC: Nova reaches in magic backpack → gives ONE clue → student guesses 'There is a/an [item]' → confirm/recast → next item. NEVER ask about preferences, feelings, or descriptions - ONLY GUESS ITEMS WITH 'There is a...'. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 15 Mission 3 - Park Story Time. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. Build a story together about the park scene. GRAMMAR: "He/She is [V-ing]" and "They are [V-ing]" pattern. Give FULL scaffolding: "Say: A boy is running" or "Say: Children are playing". VOCABULARY: running, walking, sitting, eating, flying, playing, jogging, relaxing, picnic, fountain. STRICT FOCUS: STORY BUILDING - Each question adds one sentence to the park story. FORBIDDEN: Do NOT ask "Do you like...?", "What do you think...?", "How do you feel...?". ONLY allowed questions: "What is happening?", "Who is there?", "What are they doing?". GAME MECHANIC: Nova starts story → student adds one action sentence → Nova adds next part → student adds action → build complete park story together. NEVER ask about preferences or feelings - ONLY BUILD STORY WITH ACTIONS. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Do NOT ask another question on the last turn.`,
       
-      target_vocab: ["pen", "ruler", "eraser", "book", "notebook", "pencil case", "backpack"],
+      target_vocab: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"],
       
-      grammar_pattern: "There is a [item] in my backpack",
+      grammar_pattern: "They are [verb]-ing / A [person] is [verb]-ing",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
         name: "Ms. Nova",
-        personality: "mysterious, playful, loves magic tricks and surprises",
-        backstory: "I have a MAGIC backpack! I can't see inside, but I can feel things! Let's guess together!",
-        speaking_style: "mysterious, gives clues about what she feels, celebrates correct guesses",
+        personality: "creative storyteller, loves making up park stories",
+        backstory: "I love creating stories about the busy park! Let's build one together!",
+        speaking_style: "engaging, builds story step by step, celebrates each addition",
         facts: {
-          has_magic_backpack: true,
-          cant_see_inside: true,
-          loves_mysteries: true,
-          feels_items: true,
-          favorite_item: "notebook",
-          backpack_color: "purple"
+          loves_stories: true,
+          creative: true,
+          visits_park: true,
+          favorite_story: "park adventures",
+          enjoys_collaboration: true,
+          imaginative: true
         },
-        role: "Magic backpack host giving mystery clues for student to guess"
+        role: "Story guide helping student build park narrative"
       },
 
-      opening_narrative: "Look! 📦 I have a MAGIC backpack! I can't see inside! (Feel 👋) Hmm... I feel something... What is it? Say: There is a...",
+      opening_narrative: "📖 Let's make a park story together! It's a sunny day... The park is busy... What do you see first? Say: I see a boy running or I see children playing!",
 
       story_arc: [
         {
-          phase: "intro",
+          phase: "story_opening",
           turns: "1-4",
-          phase_name: "Magic Backpack Opens!",
-          focus: "First mystery items with full scaffolding",
+          phase_name: "Start the Story!",
+          focus: "Begin park story with first characters",
           phase_questions: [
-            "(Feel 👋 something long and thin ✏️) I can't see! What is it? Say: There is a...",
-            "(Feel 👋 something flat with pages 📖) Hmm... What is this? Say: There is a...",
-            "(Feel 👋 something small and soft 🧽) For cleaning! What is it? Say: There is an...",
-            "(Shake 🎒 pencil case rattles) I hear noise! What is inside? Say: There is a..."
+            "It's a sunny day at the park! Who do you see? Say: I see a boy or I see a girl or I see children!",
+            "{student_answer}! Good! What is the boy doing? Say: He is running or He is walking!",
+            "{student_answer}! Great! There are more people! Who else is there? Say: I see an old man or I see a woman!",
+            "{student_answer}! Perfect! What is she doing? Say: She is sitting or She is jogging!"
           ],
           example_answers: [
-            "There is a pen",
-            "There is a book",
-            "There is an eraser",
-            "There is a pencil case"
+            "I see a boy",
+            "He is running",
+            "I see a woman",
+            "She is jogging"
           ]
         },
         {
-          phase: "mystery_clues",
+          phase: "story_middle",
           turns: "5-12",
-          phase_name: "More Mystery Items!",
-          focus: "Keep guessing with excitement",
+          phase_name: "Build the Story!",
+          focus: "Add more actions and characters",
           phase_questions: [
-            "(Feel 👋 something long and straight 📏) Hmm... long and hard! For measuring! What is it? Say: There is a...",
-            "(Feel 👋 many pages 📓) Wow! So many blank pages! For writing notes! What is it? Say: There is a...",
-            "(Hear click click 🖊️) Listen! Click click! Inside pencil case! What is it? Say: There is a...",
-            "(Feel 👋 very thin 📐) So thin! Like paper! For drawing straight lines! What is it? Say: There is a...",
-            "(Shake 🎒 hear rattle) Rattle rattle! Many things! What's inside? Say: There is a...",
-            "(Feel 👋 thick and heavy 📚) So heavy! Hundreds of pages! What is it? Say: There is a...",
-            "(Squeeze 🧽 soft and squishy) Squishy! For cleaning mistakes! What is it? Say: There is an...",
-            "(Pull out mystery item) Ta-da! 🎉 Last item! What is this? Say: There is a..."
+            "Look! Near the fountain! Who is there? Say: Children are there or A girl is there!",
+            "What are the children doing? Say: They are playing or They are splashing water!",
+            "Wow! Look at the sky! What do you see? Say: I see a kite or I see kites flying!",
+            "Who is flying the kite? Say: A boy is flying a kite or Children are flying kites!",
+            "On the grass! A family! What are they doing? Say: They are having a picnic or They are eating!",
+            "Under the tree! Someone is resting! What is he doing? Say: He is sitting or He is relaxing!",
+            "Near the path! A woman in sports clothes! What is she doing? Say: She is jogging or She is running!",
+            "Everyone looks happy! What is happening? Say: They are having fun or People are enjoying the park!"
           ],
           example_answers: [
-            "There is a ruler",
-            "There is a notebook",
-            "There is a pen",
-            "There is a ruler",
-            "There is a book",
-            "There is a book",
-            "There is an eraser",
-            "There is a pencil case"
+            "Children are there",
+            "They are playing",
+            "I see kites flying",
+            "Children are flying kites",
+            "They are having a picnic",
+            "He is relaxing",
+            "She is jogging",
+            "They are having fun"
           ]
         },
         {
-          phase: "verification",
+          phase: "story_ending",
           turns: "13-16",
-          phase_name: "Check Everything",
-          focus: "Verify all items are packed",
+          phase_name: "Finish the Story!",
+          focus: "Complete the story with wrap-up",
           phase_questions: [
-            "Let's check! Is there a pen? Yes or no?",
-            "Is there a ruler? Yes or no?",
-            "Is there a notebook? Yes or no?",
-            "Perfect! Your backpack is full! Ready for school?"
+            "The sun is shining! The park is busy! What is your favorite part? Say: I like the fountain or I like the picnic!",
+            "Who is having the most fun? Say: The children or Everyone!",
+            "What do you want to do at the park? Say: I want to run or I want to play!",
+            "Great story! Shall we read it again? Say: Yes or Okay!"
           ]
         },
         {
           phase: "conclusion",
           turns: "17-18",
-          phase_name: "Ready for School",
-          focus: "Celebrate being prepared",
+          phase_name: "Story Complete!",
+          focus: "Celebrate the completed story",
           phase_questions: [
-            "Great job! Your backpack has everything! You are ready for school! 🎒",
-            "See you at school tomorrow! Goodbye! 👋"
+            "We made a wonderful park story! You are a great storyteller! 📖",
+            "Let's go to the park and make our own story! Goodbye! 👋"
           ]
         }
       ],
@@ -556,31 +556,31 @@ const week15RealData = {
 
   // === FREE TALK KNOWLEDGE BASE ===
   freetalk_knowledge: {
-    week_title: "Inside My Backpack",
-    week_number: 7,
-    theme: "School Supplies",
+    week_title: "The Busy Park (Actions Now)",
+    week_number: 15,
+    theme: "Park Activities and Present Continuous",
     
     knowledge_base: [
-      "School supplies: pen, ruler, eraser, book, notebook, pencil case, backpack",
-      "Classroom items: whiteboard, computer, desk, chair, teacher",
-      "Grammar: There is a... (There is a pen in my backpack)",
-      "We use pens and pencils for writing",
-      "We use rulers for measuring and drawing lines",
-      "We use erasers to remove pencil marks",
-      "Books and notebooks help us learn at school",
-      "We carry school supplies in our backpacks",
-      "The classroom has a whiteboard, desks, and chairs",
-      "We need to pack our backpacks before school"
+      "Park activities: running, walking, sitting, eating, flying kites, playing, jogging, relaxing, having a picnic",
+      "Places at the park: fountain, bench, grass, trees, path, playground",
+      "Grammar: Present Continuous - He/She is [V-ing], They are [V-ing]",
+      "People run and jog for exercise at the park",
+      "Children play games and fly kites in open spaces",
+      "Families have picnics on the grass and relax under trees",
+      "The fountain is a popular place where children play",
+      "People eat snacks and ice cream while enjoying the park",
+      "The park is busy with people doing many different activities",
+      "We use Present Continuous to describe actions happening now"
     ],
     
     example_opening_questions: [
-      "What is in your backpack?",
-      "Do you have a pen?",
-      "What is your favorite school supply?",
-      "What color is your backpack?",
-      "What do you see in the classroom?",
-      "Is there a whiteboard in your classroom?",
-      "How many books do you have?"
+      "What do you see at the park?",
+      "What is the boy doing?",
+      "Is the girl eating ice cream?",
+      "What are the children playing?",
+      "Who is sitting on the bench?",
+      "What are people doing at the park?",
+      "Do you like going to the park?"
     ],
     
     // ✅ FREE TALK 2.0: Starter prompts (Fixed buttons for all weeks)
@@ -593,123 +593,125 @@ const week15RealData = {
     
     // Legacy bonus roleplay (kept for backward compatibility)
     bonus_roleplay: {
-      id: 'week7_backpack_check',
-      label_en: "Backpack Checker 🎒",
-      label_vi: "Kiểm tra Balo 🎒",
-      icon: "🎒",
-      ai_role: "Teacher checking student's backpack",
-      user_role: "Student showing backpack items",
-      intro: "Hi! Let's check your backpack together! Open it! What do you have inside?",
-      context: "Week 7 theme - School Supplies. AI acts as friendly teacher checking backpack items one by one (pen, ruler, eraser, book, notebook). Teacher asks 'Is there a...?' and student responds 'There is a...' patterns. Teacher should be encouraging and use simple words suitable for A0+ level."
+      id: 'week15_park_observer',
+      label_en: "Park Observer 🏞️",
+      label_vi: "Quan Sát Công Viên 🏞️",
+      icon: "🏞️",
+      ai_role: "Friendly guide at the park",
+      user_role: "Child observing people at the park",
+      intro: "Hi! Welcome to the park! It's so busy here! Look around! What do you see? Who is running? Who is playing?",
+      context: "Week 15 theme - The Busy Park. AI acts as friendly park guide observing people doing activities (running, walking, sitting, eating, flying kites, playing, jogging, relaxing, having a picnic). Guide asks 'What is he/she doing?' and student responds with Present Continuous 'He/She is [V-ing]' patterns. Guide should be enthusiastic and use simple words suitable for A0+ level."
     }
   },
 
 
   conversation_cards: [
     {
-      id: "whats_in_my_bag",
-      title: "What's In My Bag?",
-      emoji: "🎒",
-      theme: "School Supplies — There Is",
+      id: "what_are_they_doing",
+      title: "What Are They Doing?",
+      emoji: "👀",
+      theme: "Park Activities — Present Continuous",
       difficulty: "easy",
       exchanges: [
         {
-          ai: "Let's look in your school bag! Is there a book? Say: Yes, there is a book!",
-          accept: ["Yes", "there is", "a book", "book"]
+          ai: "Look at the park! A boy is there! What is he doing? Say: He is running!",
+          accept: ["He", "is", "running", "He is running"]
         },
         {
-          ai: "What else is in your bag? Say: There is a ___",
-          fill_blank: "There is a ___",
-          accept_words: ["pen", "book", "pencil", "notebook", "ruler", "eraser", "there is"]
+          ai: "I see a girl with ice cream! What is she doing? Say: She is ___",
+          fill_blank: "She is ___",
+          accept_words: ["eating", "is eating", "eating ice cream"]
         },
         {
-          ai: "Is there a ruler? Say: Yes, there is a ruler! or No, there is no ruler!",
-          options: ["Yes, there is a ruler!", "No, there is no ruler!"]
+          ai: "An old man is on the bench! Is he sitting? Say: Yes, he is sitting! or No, he is walking!",
+          options: ["Yes, he is sitting!", "No, he is walking!"]
         },
         {
-          ai: "Remember: AN before vowels! Is there an eraser? Say: There is an ___",
-          fill_blank: "There is an ___",
-          accept_words: ["eraser", "an eraser", "umbrella", "apple"]
+          ai: "Children are near the fountain! What are they doing? Say: They are ___",
+          fill_blank: "They are ___",
+          accept_words: ["playing", "are playing", "splashing", "having fun"]
         },
         {
-          ai: "Tell me one thing you have in your bag! Say: There is a ___",
-          fill_blank: "There is a ___",
-          accept_words: ["pen", "book", "pencil", "ruler", "eraser", "notebook", "bag", "there is"]
+          ai: "Tell me one thing you see! Say: I see a boy ___ or I see a girl ___",
+          fill_blank: "I see ___",
+          accept_words: ["running", "walking", "eating", "playing", "sitting", "boy", "girl", "is"]
         }
       ],
-      completion_message: "Your bag is ready for school! 🎒 You used: There is a pen/book/ruler/eraser!"
+      completion_message: "Great job! 👀 You used Present Continuous: He is running! She is eating! They are playing!"
     },
     {
-      id: "pencil_case_check",
-      title: "Pencil Case Check!",
-      emoji: "✏️",
-      theme: "Counting School Supplies",
+      id: "at_the_park_now",
+      title: "At the Park Now!",
+      emoji: "🏞️",
+      theme: "Describing Current Actions",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Open your pencil case! Is there a pencil? Say: Yes, there is a pencil in my pencil case!",
-          accept: ["Yes", "there is", "pencil", "a pencil"]
+          ai: "What is happening at the park NOW? Say: A boy is running NOW!",
+          accept: ["boy", "is", "running", "now", "A boy is running"]
         },
         {
-          ai: "Is there a red pen? Choose: Yes, there is a red pen or No, there is a blue pen or No, there is no pen",
-          options: ["Yes, there is a red pen", "No, there is a blue pen", "No, there is no pen"]
+          ai: "Choose what is happening: She is eating ice cream NOW or She ate ice cream YESTERDAY",
+          options: ["She is eating ice cream NOW", "She ate ice cream YESTERDAY"]
         },
         {
-          ai: "AN before vowel sounds! Say: There is an ___ in my pencil case!",
-          fill_blank: "There is an ___",
-          accept_words: ["eraser", "an eraser", "umbrella"]
+          ai: "Look up! What do you see? Say: A kite is ___ or Kites are ___",
+          fill_blank: "___ flying",
+          accept_words: ["A kite is", "Kites are", "They are", "is", "are"]
         },
         {
-          ai: "Is there a sharpener? Choose: Yes, there is a sharpener or No, there is no sharpener",
-          options: ["Yes, there is a sharpener", "No, there is no sharpener"]
+          ai: "A woman in sports clothes! What is she doing? Choose: She is jogging or She is sitting",
+          options: ["She is jogging", "She is sitting"]
         },
         {
-          ai: "What colour is your pencil case? Say: My pencil case is ___",
-          fill_blank: "My pencil case is ___",
-          accept_words: ["red", "blue", "green", "yellow", "pink", "black", "white", "purple", "pencil case"]
+          ai: "A family on the grass with food! What are they doing? Say: They are having ___",
+          fill_blank: "They are having ___",
+          accept_words: ["a picnic", "lunch", "dinner", "fun", "food"]
         },
         {
-          ai: "Tell me TWO things in your pencil case! Say: There is a ___ and there is a ___",
-          accept: ["there is", "and", "pencil", "pen", "eraser", "ruler", "sharpener"]
+          ai: "Tell me TWO things happening now! Say: A boy is ___ and a girl is ___",
+          accept: ["boy", "is", "running", "girl", "eating", "and", "walking", "sitting", "playing"]
         }
       ],
-      completion_message: "Pencil case ready! ✏️ You used: There is a pencil/eraser/ruler/sharpener!"
+      completion_message: "Perfect! 🏞️ You described actions happening NOW using Present Continuous!"
     },
     {
-      id: "classroom_quest",
-      title: "Classroom Quest!",
-      emoji: "🏫",
-      theme: "Finding Things in the Classroom",
+      id: "park_action_game",
+      title: "Park Action Game!",
+      emoji: "🎯",
+      theme: "Guessing Park Activities",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Look around your classroom! Is there a board? Say: Yes, there is a board!",
-          accept: ["Yes", "there is", "a board", "board"]
+          ai: "I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running!",
+          accept: ["Running", "He", "is", "running", "She is running"]
         },
         {
-          ai: "Look around! What do you see? Say: There is a ___ in my classroom",
-          fill_blank: "There is a ___ in my classroom",
-          accept_words: ["desk", "chair", "board", "window", "door", "computer", "book", "there is"]
+          ai: "I see something flying in the sky! String! Wind! What is it? Say: A kite is ___ or Kites are ___",
+          fill_blank: "___ flying",
+          accept_words: ["A kite is", "Kites are", "They are", "flying"]
         },
         {
-          ai: "Is there a book on your desk right now? Say: Yes, there is a book! or No, there is no book!",
-          options: ["Yes, there is a book!", "No, there is no book!"]
+          ai: "Mouth open! Ice cream going in! Yummy! What is happening? Choose: She is eating or She is drinking",
+          options: ["She is eating", "She is drinking"]
         },
         {
-          ai: "Is there a pen on the desk? Choose: Yes, there is a pen or No, there is no pen",
-          options: ["Yes, there is a pen", "No, there is no pen"]
+          ai: "I see food on a blanket! Family together! Outdoors! What are they doing? Say: They are having ___",
+          fill_blank: "They are having ___",
+          accept_words: ["a picnic", "lunch", "fun", "dinner"]
         },
         {
-          ai: "What do you see in your classroom? Say: There is a ___",
-          fill_blank: "There is a ___",
-          accept_words: ["board", "desk", "chair", "book", "pen", "pencil", "window", "door", "teacher", "there is"]
+          ai: "What do YOU like doing at the park? Say: I like ___ or I am ___",
+          fill_blank: "I ___",
+          accept_words: ["running", "playing", "eating", "like running", "am playing", "sitting", "relaxing"]
         },
         {
-          ai: "Which school supply is most important? Choose: A book is most important or A pen is most important or A bag is most important",
-          options: ["A book is most important", "A pen is most important", "A bag is most important"]
+          ai: "Last one! Water splashing! Children laughing! Where are they? Say: At the ___ or Near the ___",
+          fill_blank: "___ fountain",
+          accept_words: ["at the", "near the", "fountain", "the fountain"]
         }
       ],
-      completion_message: "Quest complete! 🏫🏆 You found everything using: There is a pen/book/desk/board!"
+      completion_message: "You win! 🎯🏆 You guessed all the park actions! Great job using Present Continuous!"
     }
   ]
 };
