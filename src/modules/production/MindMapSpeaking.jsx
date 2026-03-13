@@ -171,6 +171,17 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     // ✅ Normalize speech input: Speech recognition doesn't provide punctuation/capitalization
     // Add capital letter at start + period at end to match target format
     let normalizedInput = userInput.trim();
+    
+    // ✅ Convert numerals to words (0-10): Speech recognition converts spoken "five" → "5"
+    const numberWords = {
+      '0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four',
+      '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', '10': 'ten'
+    };
+    Object.keys(numberWords).forEach(num => {
+      const regex = new RegExp(`\\b${num}\\b`, 'g');
+      normalizedInput = normalizedInput.replace(regex, numberWords[num]);
+    });
+    
     if (normalizedInput && !/^[A-Z]/.test(normalizedInput)) {
       normalizedInput = normalizedInput.charAt(0).toUpperCase() + normalizedInput.slice(1);
     }
