@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "My Day - Daily Routine | Kids Vocabulary | English Singsing", videoId: "qD1pnquN_DM", duration: "06:17", sim_duration: 377, thumb: "https://img.youtube.com/vi/qD1pnquN_DM/mqdefault.jpg" },
-    { id: 2, title: "Wake Up! Daily Routines Song for Kids | Dream English Kids", videoId: "eUXkj6j6Ezw", duration: "02:15", sim_duration: 135, thumb: "https://img.youtube.com/vi/eUXkj6j6Ezw/mqdefault.jpg" },
-    { id: 3, title: "This Is The Way | Kids Songs | Super Simple Songs", videoId: "4XLQpRI_wOQ", duration: "03:39", sim_duration: 219, thumb: "https://img.youtube.com/vi/4XLQpRI_wOQ/mqdefault.jpg" },
-    { id: 4, title: "Action Verbs (v1) - Kids Vocabulary - Action Words - Learn English for Kids", videoId: "4c6FyuetSVo", duration: "04:23", sim_duration: 263, thumb: "https://img.youtube.com/vi/4c6FyuetSVo/mqdefault.jpg" },
-    { id: 5, title: "Let's Plant a Garden! | Squeaks Grows a Garden! | SciShow Kids", videoId: "0TJuJTFEBbs", duration: "04:40", sim_duration: 280, thumb: "https://img.youtube.com/vi/0TJuJTFEBbs/mqdefault.jpg" }
+    { id: 1, title: "What are you doing? (Present progressive) - English song for Kids - Enjoy the song", videoId: "Ja0xp2j_JhM", duration: "01:34", sim_duration: 94, thumb: "https://img.youtube.com/vi/Ja0xp2j_JhM/mqdefault.jpg" },
+    { id: 2, title: "English Singsing - Grammar for Kids", videoId: "ZBGr2qbzYoo", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/ZBGr2qbzYoo/mqdefault.jpg" },
+    { id: 3, title: "The Carter Family 4 | A Camping Trip! | Family | Little Fox | Bedtime Stories", videoId: "OdNv-J31Kk8", duration: "03:26", sim_duration: 206, thumb: "https://img.youtube.com/vi/OdNv-J31Kk8/mqdefault.jpg" },
+    { id: 4, title: "English for Kids - Super Simple Songs", videoId: "e54m6XOpRgU", duration: "01:58", sim_duration: 118, thumb: "https://img.youtube.com/vi/e54m6XOpRgU/mqdefault.jpg" },
+    { id: 5, title: "Where Does Wind Come From? | The Science of Flying | SciShow Kids", videoId: "oHUVxkx8QRo", duration: "05:19", sim_duration: 319, thumb: "https://img.youtube.com/vi/oHUVxkx8QRo/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };
