@@ -20,7 +20,7 @@
 
 const DB_NAME = 'EngQuestTTSCache';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 6;  // Bumped v6 (March 13, 2026): Force clear all old cache entries (v5 had lingering old keys)
+const DB_VERSION = 7;  // Bumped v7 (March 13, 2026): Force clear after adding 'read_explore' to STATION_VOICE_KEY
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
