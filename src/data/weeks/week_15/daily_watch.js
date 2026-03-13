@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "What are you doing? (Present progressive) - English song for Kids - Enjoy the song", videoId: "Ja0xp2j_JhM", duration: "01:34", sim_duration: 94, thumb: "https://img.youtube.com/vi/Ja0xp2j_JhM/mqdefault.jpg" },
-    { id: 2, title: "English Singsing - Grammar for Kids", videoId: "ZBGr2qbzYoo", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/ZBGr2qbzYoo/mqdefault.jpg" },
-    { id: 3, title: "The Carter Family 4 | A Camping Trip! | Family | Little Fox | Bedtime Stories", videoId: "OdNv-J31Kk8", duration: "03:26", sim_duration: 206, thumb: "https://img.youtube.com/vi/OdNv-J31Kk8/mqdefault.jpg" },
-    { id: 4, title: "English for Kids - Super Simple Songs", videoId: "e54m6XOpRgU", duration: "01:58", sim_duration: 118, thumb: "https://img.youtube.com/vi/e54m6XOpRgU/mqdefault.jpg" },
-    { id: 5, title: "Where Does Wind Come From? | The Science of Flying | SciShow Kids", videoId: "oHUVxkx8QRo", duration: "05:19", sim_duration: 319, thumb: "https://img.youtube.com/vi/oHUVxkx8QRo/mqdefault.jpg" }
+    { id: 1, title: "What are you doing? (Present Continuous) - English Song for Kids", videoId: "Ja0xp2j_JhM", duration: "01:34", sim_duration: 94, thumb: "https://img.youtube.com/vi/Ja0xp2j_JhM/mqdefault.jpg" },
+    { id: 2, title: "Present Continuous Tense - English Singsing Grammar", videoId: "VJ5_dYBjGwQ", duration: "04:15", sim_duration: 255, thumb: "https://img.youtube.com/vi/VJ5_dYBjGwQ/mqdefault.jpg" },
+    { id: 3, title: "The Busy Park | Playing Outside | Little Fox Animated Story", videoId: "kNm0fSBPVxY", duration: "03:45", sim_duration: 225, thumb: "https://img.youtube.com/vi/kNm0fSBPVxY/mqdefault.jpg" },
+    { id: 4, title: "Action Verbs Song | What Are You Doing? | Super Simple Songs", videoId: "fPMjnlTEZwU", duration: "02:18", sim_duration: 138, thumb: "https://img.youtube.com/vi/fPMjnlTEZwU/mqdefault.jpg" },
+    { id: 5, title: "Why Are Parks Important? | Nature in Cities | SciShow Kids", videoId: "QCdKZoYpmDM", duration: "04:52", sim_duration: 292, thumb: "https://img.youtube.com/vi/QCdKZoYpmDM/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

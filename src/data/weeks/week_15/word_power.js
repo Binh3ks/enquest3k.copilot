@@ -1,51 +1,49 @@
 export default {
-  title: "Word Power - Present Continuous Collocations",
-  image_url: "/images/week15/word_power_cover_w15.jpg",
-  audio_url: "/audio/week15/word_power_main.mp3",
-  collocations: [
+  words: [
     {
       id: 1,
-      phrase: "running fast",
-      example_en: "The boy is running fast to catch the bus.",
-      example_vi: "Cậu bé đang chạy nhanh để bắt xe buýt.",
-      audio: "/audio/week15/wp_col1.mp3",
-      image_url: "/images/week15/wp_running_fast.jpg"
+      word: "running fast",
+      pronunciation: "/ˈrʌnɪŋ fæst/",
+      definition_vi: "chạy nhanh",
+      definition_en: "moving quickly on foot",
+      example: "The boy is running fast to catch the bus.",
+      model_sentence: "The boy is running fast to catch the bus.",
+      collocation: "running fast",
+      image_url: "/images/week15/wordpower_running_fast.jpg",
+      audio_word: "/audio/week15/wordpower_running_fast.mp3",
+      audio_definition: "/audio/week15/wordpower_def_running_fast.mp3",
+      audio_example: "/audio/week15/wordpower_ex_running_fast.mp3",
+      audio_collocation: "/audio/week15/wordpower_coll_running_fast.mp3"
     },
     {
       id: 2,
-      phrase: "eating lunch",
-      example_en: "We are eating lunch in the park today.",
-      example_vi: "Hôm nay chúng tôi đang ăn trưa trong công viên.",
-      audio: "/audio/week15/wp_col2.mp3",
-      image_url: "/images/week15/wp_eating_lunch.jpg"
+      word: "eating lunch",
+      pronunciation: "/ˈiːtɪŋ lʌntʃ/",
+      definition_vi: "ăn trưa",
+      definition_en: "having a meal in the middle of the day",
+      example: "We are eating lunch in the park today.",
+      model_sentence: "We are eating lunch in the park today.",
+      collocation: "eating lunch",
+      image_url: "/images/week15/wordpower_eating_lunch.jpg",
+      audio_word: "/audio/week15/wordpower_eating_lunch.mp3",
+      audio_definition: "/audio/week15/wordpower_def_eating_lunch.mp3",
+      audio_example: "/audio/week15/wordpower_ex_eating_lunch.mp3",
+      audio_collocation: "/audio/week15/wordpower_coll_eating_lunch.mp3"
     },
     {
       id: 3,
-      phrase: "sitting down",
-      example_en: "The old man is sitting down on the comfortable bench.",
-      example_vi: "Ông già đang ngồi xuống trên chiếc ghế thoải mái.",
-      audio: "/audio/week15/wp_col3.mp3",
-      image_url: "/images/week15/wp_sitting_down.jpg"
-    }
-  ],
-  practice_sentences: [
-    {
-      id: 1,
-      text_en: "The children are _____ in the playground.",
-      answer: ["running fast", "playing happily", "having fun"],
-      audio: "/audio/week15/wp_practice1.mp3"
-    },
-    {
-      id: 2,
-      text_en: "My family is _____ together at the table.",
-      answer: ["eating lunch", "eating dinner", "having a meal"],
-      audio: "/audio/week15/wp_practice2.mp3"
-    },
-    {
-      id: 3,
-      text_en: "Everyone is _____ to rest after walking.",
-      answer: ["sitting down", "taking a break", "relaxing now"],
-      audio: "/audio/week15/wp_practice3.mp3"
+      word: "sitting down",
+      pronunciation: "/ˈsɪtɪŋ daʊn/",
+      definition_vi: "ngồi xuống",
+      definition_en: "taking a seat on something",
+      example: "The old man is sitting down on the bench.",
+      model_sentence: "The old man is sitting down on the comfortable bench.",
+      collocation: "sitting down",
+      image_url: "/images/week15/wordpower_sitting_down.jpg",
+      audio_word: "/audio/week15/wordpower_sitting_down.mp3",
+      audio_definition: "/audio/week15/wordpower_def_sitting_down.mp3",
+      audio_example: "/audio/week15/wordpower_ex_sitting_down.mp3",
+      audio_collocation: "/audio/week15/wordpower_coll_sitting_down.mp3"
     }
   ]
 };
