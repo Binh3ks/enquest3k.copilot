@@ -21,11 +21,12 @@ const weekData = {
   global_vocab: vocab.vocab,
   
   voiceConfig: {
-    narration: 'en-US-Neural2-D',
-    vocabulary: 'en-US-Neural2-F',
-    dictation: 'en-US-Neural2-F',
-    questions: 'en-US-Neural2-D',
-    mindmap: 'en-US-Neural2-D'
+    narration: 'en-US-Neural2-J',   // aura-zeus-en (UPGRADED: energetic, clear, higher pitch male)
+    vocabulary: 'en-US-Neural2-F',  // aura-asteria-en (female, natural & expressive)
+    dictation: 'en-US-Neural2-C',   // aura-luna-en (female, soft & warm for listening)
+    shadowing: 'en-US-Neural2-F',   // aura-asteria-en (female, clear for repeating)
+    questions: 'en-US-Neural2-J',   // aura-zeus-en (male, energetic for questions)
+    mindmap: 'en-US-Neural2-F'      // aura-asteria-en (female, natural)
   },
   
   stations: {
