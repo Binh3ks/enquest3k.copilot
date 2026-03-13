@@ -50,8 +50,9 @@ Backup/
 _backup*/
 *.backup
 
-# Production documentation & planning (keep in separate repo)
+# Production documentation & planning
 Production_FINAL/
+!Production_FINAL/MASTER PROMPT/  # Allow mass production documentation
 MASS_Final/
 
 # Debris/temp folders
