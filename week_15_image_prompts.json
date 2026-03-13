@@ -1,0 +1,84 @@
+{
+  "week_15_vocab_images": [
+    {
+      "id": 1,
+      "word": "running",
+      "prompt": "A young boy running fast in a bright sunny park, wearing a red t-shirt and blue shorts, big smile on his face, motion blur on legs showing speed, green grass and trees in background, vibrant children's book illustration style, warm daylight, energetic and joyful atmosphere"
+    },
+    {
+      "id": 2,
+      "word": "walking",
+      "prompt": "A diverse group of people walking together on a park path, including children, adults, and elderly person, casual clothing, happy expressions, tree-lined walkway, flowers along the path, soft afternoon sunlight, friendly and peaceful atmosphere, colorful illustration style"
+    },
+    {
+      "id": 3,
+      "word": "sitting",
+      "prompt": "An elderly man sitting comfortably on a wooden park bench, reading a newspaper, wearing a cardigan and glasses, peaceful expression, bench under a large shady tree, dappled sunlight through leaves, birds nearby, calm and relaxing atmosphere, warm colors"
+    },
+    {
+      "id": 4,
+      "word": "eating",
+      "prompt": "A happy little girl eating a colorful ice cream cone in the park, wearing a yellow summer dress with white polka dots, ice cream dripping slightly, big delighted smile, park playground visible in background, bright sunny day, cheerful and fun atmosphere"
+    },
+    {
+      "id": 5,
+      "word": "flying",
+      "prompt": "Three children flying a large colorful kite in an open park field, kite soaring high in clear blue sky with puffy white clouds, children holding string together, wind blowing their hair, excited expressions, green grass field, dynamic and exciting composition"
+    },
+    {
+      "id": 6,
+      "word": "playing",
+      "prompt": "Group of diverse kids playing soccer together in the park, wearing mixed colored jerseys, one child kicking ball mid-action, others running and cheering, soccer goal post visible, sunny weather, dynamic movement, energetic and teamwork atmosphere, vibrant illustration"
+    },
+    {
+      "id": 7,
+      "word": "jogging",
+      "prompt": "A woman jogging in the early morning park, wearing purple athletic wear and running shoes, ponytail bouncing, earbuds in ears, peaceful smile, sunrise golden light through trees, morning mist, healthy and calm atmosphere, professional fitness illustration style"
+    },
+    {
+      "id": 8,
+      "word": "reading",
+      "prompt": "A teenage girl reading a book while sitting cross-legged on a picnic blanket under a tree, wearing casual jeans and t-shirt, completely absorbed in book, backpack beside her, dappled shade, peaceful park setting, quiet and contemplative atmosphere"
+    },
+    {
+      "id": 9,
+      "word": "sleeping",
+      "prompt": "A young man sleeping peacefully on grass in the park, lying on his back with hands behind head, gentle smile, baseball cap over face blocking sun, open book beside him, soft grass, warm afternoon, relaxed and peaceful summer atmosphere"
+    },
+    {
+      "id": 10,
+      "word": "swinging",
+      "prompt": "Two children swinging on park swings, one child swinging high with legs extended forward, big smile and wind in hair, another child on neighboring swing, colorful modern playground equipment, blue sky background, joyful and carefree childhood atmosphere"
+    }
+  ],
+  "week_15_extra_images": [
+    {
+      "type": "read_cover",
+      "prompt": "A bustling park scene showing many people doing different activities simultaneously, children playing on playground equipment, families having picnics, people jogging on paths, someone flying a kite in distance, elderly people on benches, dogs running, vibrant and alive atmosphere, illustration book cover style, present continuous tense theme, title space at top 'The Busy Park'"
+    },
+    {
+      "type": "explore_cover",
+      "prompt": "Wide panoramic view of a beautiful city park on a sunny afternoon, diverse people engaged in various activities throughout the park, playground area with children, walking paths with joggers, picnic areas with families, open fields for sports, tall trees providing shade, colorful flowers, birds flying, welcoming and energetic community atmosphere"
+    },
+    {
+      "type": "logic_1",
+      "prompt": "Simple logic puzzle illustration showing 4 children in a line at park entrance, each wearing different colored t-shirts (red, blue, yellow, green), holding different items (ball, kite, book, ice cream), clean educational diagram style with clear labels"
+    },
+    {
+      "type": "logic_2",
+      "prompt": "Pattern recognition puzzle showing sequences of park activities icons: running person, sitting person, playing person, eating person icons arranged in a pattern with one missing space, simple flat icon style, bright colors, educational worksheet design"
+    },
+    {
+      "type": "logic_3",
+      "prompt": "Math word problem illustration showing a park bench with 5 birds sitting on it, 2 birds flying away, clean simple cartoon style, numbers visible, child-friendly educational problem visualization"
+    },
+    {
+      "type": "logic_4",
+      "prompt": "Venn diagram puzzle showing two overlapping circles, one labeled 'Things you can do in park', other labeled 'Things that need equipment', items like running, kite flying, soccer, reading shown in appropriate sections, clear educational diagram"
+    },
+    {
+      "type": "logic_5",
+      "prompt": "Time sequence puzzle showing same park scene at 4 different times of day: morning (sunrise), noon (bright sun), afternoon (warm light), evening (sunset), same activities happening but different lighting, teach time progression concept"
+    }
+  ]
+}
