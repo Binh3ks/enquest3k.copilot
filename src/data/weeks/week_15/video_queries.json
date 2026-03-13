@@ -1,0 +1,58 @@
+{
+  "weekId": 15,
+  "theme": "My Day at the Park",
+  "grammar_focus": "Present Continuous Tense (be + V-ing)",
+  "vocabulary_focus": "running walking sitting eating flying playing jogging reading sleeping swinging",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present continuous what are you doing ESL for kids",
+      "backup_search": "present continuous song kids ESL cartoons grammar lesson",
+      "target_grammar": "Present Continuous (What are you doing? I am V-ing)",
+      "target_channel": "English Singsing",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "Super Simple Songs actions song running jumping playing ESL kids",
+      "backup_search": "action verbs song I'm running I'm jumping ESL cartoons",
+      "target_grammar": "Action verbs with present continuous",
+      "target_channel": "Super Simple Songs",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox park story playing outside activities ESL for kids",
+      "backup_search": "Peppa Pig park playground story cartoons for kids",
+      "target_grammar": "Activities at the park (story context)",
+      "target_channel": "Little Fox",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "British Council actions doing activities present continuous primary school ESL",
+      "backup_search": "KidsTV123 action verbs what are they doing ESL kids",
+      "target_grammar": "Action vocabulary (running playing eating etc)",
+      "target_channel": "British Council",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids exercise movement why we move science for kids",
+      "backup_search": "National Geographic Kids running playing outdoor activities children",
+      "target_grammar": "Science of movement and exercise",
+      "target_channel": "SciShow Kids",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    }
+  ]
+}

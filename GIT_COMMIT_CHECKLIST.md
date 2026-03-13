@@ -49,8 +49,8 @@ node MASS/tools/create_week.cjs 15
 # Files được tạo:
 # - src/data/weeks/week_15/*.js (14 files)
 # - src/data/weeks_easy/week_15/*.js (13 files)
-# - public/audio/week_15/*.mp3 (143 files)
-# - public/images/week_15/*.jpg (23 files)
+# - public/audio/week_15/*.mp3 (143 files) → ⚠️ UPLOADED TO R2, NOT COMMITTED TO GIT
+# - public/images/week_15/*.jpg (23 files) → ⚠️ UPLOADED TO R2, NOT COMMITTED TO GIT
 ```
 
 ### STEP 2: Validate Output
@@ -80,8 +80,11 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
         src/data/weeks/week_15/
         src/data/weeks_easy/week_15/
-        public/audio/week_15/
-        public/images/week_15/
+
+Ignored files:
+  (use "git add -f <file>..." to include in what will be committed)
+        public/audio/week_15/    ← Served from R2, in .gitignore
+        public/images/week_15/   ← Served from R2, in .gitignore
 ```
 
 **Unexpected Output (❌ BAD - DO NOT COMMIT):**
@@ -97,11 +100,14 @@ Untracked files:
 #### B. Selective Add (NEVER use "git add .")
 
 ```bash
-# ✅ CORRECT: Add specific folders only
+# ✅ CORRECT: Add specific folders only (CODE ONLY, assets on R2)
 git add src/data/weeks/week_15
 git add src/data/weeks_easy/week_15
-git add public/audio/week_15
-git add public/images/week_15
+
+# ❌ DO NOT ADD: public/audio and public/images (already in .gitignore)
+# Assets are uploaded to R2 and served via Cloudflare CDN
+# git add public/audio/week_15     ← NOT NEEDED
+# git add public/images/week_15    ← NOT NEEDED
 
 # ❌ WRONG: Never use this!
 # git add .              ← Will add EVERYTHING including cache!
@@ -114,13 +120,13 @@ git add public/images/week_15
 # See list of staged files
 git diff --cached --name-only
 
-# Expected: Only week_15 files (should be ~170 files)
-# NOT expecting: .wrangler/, node_modules/, Backup/
+# Expected: Only week_15 CODE files (should be ~27 files: 14 Advanced + 13 Easy)
+# NOT expecting: .wrangler/, node_modules/, Backup/, public/audio/, public/images/
 
 # Check sizes
 git diff --cached --stat | tail -1
-# Expected: "170 files changed, 15000 insertions(+)"
-# File size: ~20-50MB total (code + assets)
+# Expected: "27 files changed, 2000-3000 insertions(+)"
+# File size: ~200-500KB (CODE ONLY, no audio/images)
 ```
 
 #### D. If Found Unwanted Files → UNSTAGE
@@ -148,11 +154,12 @@ git commit -m "feat: Week 15 - The Busy Park (Present Continuous)
 Content:
 - 14 Advanced station files (vocab, read, grammar, dictation, etc.)
 - 13 Easy station files (simplified versions)
+- 1 video_queries.json (for video search/update tool)
 
-Assets:
-- 143 audio files (vocab: 40, dictation: 12, shadowing: 12, mindmap: 42, etc.)
-- 23 images (vocab: 10, covers: 2, logic: 5, word match: 6)
-- 5 video references (YouTube IDs)
+Assets (NOT in Git, uploaded to R2):
+- 143 audio files → R2: engquest-audio/audio/week15/
+- 23 images → R2: engquest-images/images/week15/
+- 5 video references (YouTube IDs embedded in daily_watch.js)
 
 Validation: ✅ All schemas compliant, no placeholders"
 ```
@@ -176,12 +183,12 @@ git show --stat
 git push
 
 # Expected output:
-# Writing objects: 100% (175/175), 25.3 MiB
-# Total 175 (delta 12), reused 0 (delta 0)
+# Writing objects: 100% (29/29), 350 KiB
+# Total 29 (delta 12), reused 0 (delta 0)
 # To https://github.com/Binh3ks/enquest3k.copilot.git
 #    a5a4fd4..b6c7e85  main -> main
 
-# Push should be < 1 minute for code, < 5 minutes for assets
+# Push should be < 10 seconds (CODE ONLY, no large assets)
 ```
 
 ---
@@ -293,25 +300,26 @@ git rev-list --objects --all \
 
 ## ✅ GOOD COMMIT EXAMPLES
 
-### Example 1: Week 15 Production Files
+### Example 1: Week 15 Production Files (UPDATED - R2 Assets)
 
 ```bash
-$ git add src/data/weeks/week_15 public/audio/week_15 public/images/week_15
+$ git add src/data/weeks/week_15 src/data/weeks_easy/week_15
 $ git commit -m "feat: Week 15 - The Busy Park
 
-- Add 14 station files (vocab, read, grammar, etc.)
-- Add 143 audio files (TTS generated)
-- Add 23 images (vocab + covers)
+- Add 14 Advanced station files
+- Add 13 Easy station files
+- Add video_queries.json (search criteria)
+- Assets uploaded to R2 (not in Git)
 - Validation: All schemas compliant"
 
 $ git push
 ```
 
 **Result**: 
-- Commit size: ~25MB
-- Files: 180
-- Push time: 2 minutes
-- ✅ Clean commit
+- Commit size: ~350KB (CODE ONLY)
+- Files: 28 (27 JS + 1 JSON)
+- Push time: < 10 seconds
+- ✅ Clean commit, NO bloat
 
 ### Example 2: Bug Fix
 

@@ -915,14 +915,13 @@ Week | Spec | AI Tutor | Advanced | Easy | Validation | Assets | Status
 
 **Commit**:
 - [ ] **TRƯỚC KHI COMMIT**: Kiểm tra Git status (xem section Git Best Practices phía dưới)
-- [ ] `git add src/data/weeks/week_XX`
-- [ ] `git add src/data/weeks_easy/week_XX`
-- [ ] `git add public/audio/week_XX`
-- [ ] `git add public/images/week_XX`
+- [ ] `git add src/data/weeks/week_XX` (CODE ONLY)
+- [ ] `git add src/data/weeks_easy/week_XX` (CODE ONLY)
+- [ ] ⚠️ **KHÔNG commit**: public/audio/, public/images/ (đã upload lên R2)
 - [ ] ⚠️ **KHÔNG commit**: .wrangler/, Backup/, server folders, large .txt files
-- [ ] Verify: `git diff --cached --stat` (chỉ thấy week files)
+- [ ] Verify: `git diff --cached --stat` (chỉ thấy ~27 JS files, ~350KB)
 - [ ] `git commit -m "Week XX: [Title] - Complete"`
-- [ ] `git push`
+- [ ] `git push` (< 10 giây)
 
 ---
 
@@ -943,10 +942,10 @@ Week | Spec | AI Tutor | Advanced | Easy | Validation | Assets | Status
    - src/services/**/*.js
    - src/hooks/**/*.js
 
-✅ Assets (Curated):
-   - public/audio/week_XX/**/*.mp3      # Chỉ audio đã validate
-   - public/images/week_XX/**/*.jpg     # Chỉ images đã optimize
-   - public/videos/                     # Nếu self-hosted
+⚠️ Assets (Served from R2, NOT in Git Repository):
+   - public/audio/week_XX/**/*.mp3      # ❌ Uploaded to R2, don't commit to Git
+   - public/images/week_XX/**/*.jpg     # ❌ Uploaded to R2, don't commit to Git
+   - Videos use YouTube embed IDs       # No video files needed
 
 ✅ Configuration:
    - package.json, package-lock.json
@@ -1023,16 +1022,16 @@ git check-ignore -v .wrangler/
 
 # 6. CHỈ ADD files cần thiết (KHÔNG dùng "git add .")
 git add src/data/weeks/week_XX
-git add public/audio/week_XX
-git add public/images/week_XX
+git add src/data/weeks_easy/week_XX
+# ❌ DO NOT ADD: public/audio and public/images (served from R2)
 
 # 7. Commit với message rõ ràng
 git commit -m "feat: Week XX - [Topic Title]
 
 - Add 14 Advanced station files
 - Add 13 Easy station files
-- Add 143 audio files (vocab, dictation, shadowing, etc.)
-- Add 23 images (vocab, covers, logic puzzles)"
+- Add video_queries.json
+- Assets (143 audio, 23 images) uploaded to R2 (not in Git)"
 
 # 8. Push to GitHub
 git push
@@ -1040,14 +1039,19 @@ git push
 
 ### 🔍 Git Status Examples:
 
-**✅ GOOD - Chỉ commit production files:**
+**✅ GOOD - Chỉ commit production CODE files:**
 ```bash
 $ git status
 Changes to be committed:
   new file:   src/data/weeks/week_15/vocab.js
   new file:   src/data/weeks/week_15/read.js
-  new file:   public/audio/week_15/vocab_running.mp3
-  new file:   public/images/week_15/vocab_running.jpg
+  new file:   src/data/weeks/week_15/video_queries.json
+  new file:   src/data/weeks_easy/week_15/vocab.js
+
+Ignored files:
+  (use "git add -f <file>..." to include in what will be committed)
+        public/audio/week_15/       # ✅ In .gitignore, served from R2
+        public/images/week_15/      # ✅ In .gitignore, served from R2
 ```
 
 **❌ BAD - Có file không cần thiết:**
@@ -1160,16 +1164,16 @@ git push --force
 
 **Mỗi tuần sản xuất (Week XX):**
 
-1. **Generate content** → Local files created
-2. **Validate** → Ensure quality
-3. **Generate assets** → Audio/images ready
-4. **Pre-commit check** → `git status` (verify ONLY production files)
-5. **Selective add** → `git add src/data/weeks/week_XX public/audio/week_XX public/images/week_XX`
-6. **Verify staged** → `git diff --cached --stat` (should be ~170 files, ~20-50MB)
-7. **Commit** → Clear message with breakdown
-8. **Push** → `git push` (should be fast, <100KB for code)
+1. **Generate content** → Local files created (JS + JSON)
+2. **Upload assets to R2** → Audio/images uploaded to Cloudflare R2
+3. **Validate** → Ensure quality (schemas, paths, etc.)
+4. **Pre-commit check** → `git status` (verify ONLY code files, NO assets)
+5. **Selective add** → `git add src/data/weeks/week_XX src/data/weeks_easy/week_XX`
+6. **Verify staged** → `git diff --cached --stat` (should be ~27 files, ~350KB)
+7. **Commit** → Clear message: "Week XX: [Title] - Assets on R2"
+8. **Push** → `git push` (should be fast, < 10 seconds)
 
-**🎯 Result**: Clean commits, fast pushes, no repository bloat!
+**🎯 Result**: Clean commits (~350KB code), fast pushes, no repository bloat!
 
 ---
 

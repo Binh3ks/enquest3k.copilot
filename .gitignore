@@ -31,6 +31,8 @@ dist-ssr
 public/audio/
 public/audio_cache/
 public/audio copy/
+public/images/week*/  # Week images served from R2 (don't commit to Git)
+public/videos/week*/  # Week videos served from YouTube/R2 (don't commit to Git)
 
 # Wrangler local development (Cloudflare Workers emulator)
 .wrangler/
