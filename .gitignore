@@ -26,6 +26,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
 # public/ large audio dirs (served from CDN/R2)
 public/audio/
 public/audio_cache/
@@ -33,4 +34,36 @@ public/audio copy/
 
 # Wrangler local development (Cloudflare Workers emulator)
 .wrangler/
+
+# ====== BACKEND/SERVER CODE (NOT NEEDED FOR FRONTEND DEPLOY) ======
+# ESL TTS Server (134MB - HuggingFace Space deployment)
+esl_server/
+
+# MCP Server (47MB - VSCode extension development)
+mcp-server/
+
+# ====== BACKUP & DOCUMENTATION FOLDERS ======
+# Backup files (not needed in repo)
+Backup/
+_backup*/
+*.backup
+
+# Production documentation & planning (keep in separate repo)
+Production_FINAL/
+MASS_Final/
+
+# Debris/temp folders
+.debris/
+debris/
+
+# MacOS system folders
+Icon
+Icon?
+
+# ====== LARGE DOCUMENTATION FILES ======
+# Keep production docs but ignore large duplicates
+*MASTER PROMPT*.txt
+*_copy*.txt
+*SYLLABUS*.txt
+
 # Force rebuild Thu Mar  5 12:38:21 +07 2026
