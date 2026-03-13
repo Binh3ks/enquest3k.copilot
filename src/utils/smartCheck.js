@@ -88,12 +88,37 @@ export const analyzeAnswer = (userInput, correctAnswers, mode = 'strict', unit =
         bestMatch = t; matchType = 'fuzzy'; break;
       } else if ((mode === 'academic' || mode === 'explore') && normInput.length >= 3) {
          // Check if key words match (more flexible matching)
-         const tWords = normT.split(' ').filter(w => w.length > 2);
-         const iWords = normInput.split(' ').filter(w => w.length > 2);
-         const commonWords = tWords.filter(w => iWords.includes(w));
-         // If 60%+ of target's key words are in input, consider it a match
-         if (commonWords.length >= tWords.length * 0.6 && tWords.length > 0) {
-            bestMatch = t; matchType = 'subset'; break;
+         // 🔧 FIX: For mindmap-style sentences, DON'T filter out short words/numbers
+         const tWords = normT.split(' ');
+         const iWords = normInput.split(' ');
+         
+         // If sentences are similar length (mindmap fill-in-blank), require stricter match
+         const isMindmapStyle = Math.abs(tWords.length - iWords.length) <= 2;
+         
+         if (isMindmapStyle) {
+           // For mindmap: Check ALL words including numbers and short words
+           const tWordsSet = new Set(tWords);
+           const iWordsSet = new Set(iWords);
+           const commonWords = tWords.filter(w => iWordsSet.has(w));
+           
+           // Require 85% match AND all numbers must match
+           const matchPercent = commonWords.length / tWords.length;
+           const tNumbers = tWords.filter(w => /\d/.test(w));
+           const iNumbers = iWords.filter(w => /\d/.test(w));
+           const numbersMatch = tNumbers.length === 0 || tNumbers.every(n => iNumbers.includes(n));
+           
+           if (matchPercent >= 0.85 && numbersMatch) {
+             bestMatch = t; matchType = 'subset'; break;
+           }
+         } else {
+           // For longer answers: Use original flexible matching (filter long words only)
+           const tWordsFiltered = tWords.filter(w => w.length > 2);
+           const iWordsFiltered = iWords.filter(w => w.length > 2);
+           const commonWords = tWordsFiltered.filter(w => iWordsFiltered.includes(w));
+           // If 60%+ of target's key words are in input, consider it a match
+           if (commonWords.length >= tWordsFiltered.length * 0.6 && tWordsFiltered.length > 0) {
+             bestMatch = t; matchType = 'subset'; break;
+           }
          }
          // Original regex checks
          const regex = new RegExp(`\\b${normT}\\b`, 'i');

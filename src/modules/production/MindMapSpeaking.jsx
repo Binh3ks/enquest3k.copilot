@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Mic, Volume2, CheckCircle, Brain, ArrowLeft, Sparkles, Volume1, Edit2, AlertCircle } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -21,6 +21,9 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const [completedBranches, setCompletedBranches] = useState(() => {
     return savedData.completedBranches ? new Set(savedData.completedBranches) : new Set();
   });
+  
+  // 🔧 FIX: Store recognition instance to allow stopping before retry
+  const recognitionRef = useRef(null);
   
   // 🔥 ALL useEffect HOOKS MUST BE BEFORE ANY CONDITIONAL RETURNS
   // Save to Universal Progress System
@@ -117,16 +120,46 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   const startSTT = (id) => {
     const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!Recognition) return alert("Microphone not supported!");
+    
+    // 🔧 FIX: Stop previous recognition before starting new one
+    if (recognitionRef.current) {
+      try {
+        recognitionRef.current.stop();
+      } catch (e) {
+        console.log('Could not stop previous recognition:', e);
+      }
+    }
+    
     const rec = new Recognition();
     rec.lang = 'en-US';
-    rec.onstart = () => setIsListening(id);
+    rec.interimResults = false;
+    rec.maxAlternatives = 1;
+    
+    rec.onstart = () => {
+      setIsListening(id);
+      recognitionRef.current = rec;
+    };
+    
     rec.onresult = (e) => {
       const transcript = e.results[0][0].transcript;
       setBranchInputs(prev => ({ ...prev, [id]: transcript }));
       setIsListening(null);
+      recognitionRef.current = null;
       validateBranch(id, transcript);
     };
-    rec.onerror = () => setIsListening(null);
+    
+    rec.onerror = (event) => {
+      console.log('Speech recognition error:', event.error);
+      setIsListening(null);
+      recognitionRef.current = null;
+    };
+    
+    // 🔧 FIX: Add onend handler to properly reset state
+    rec.onend = () => {
+      setIsListening(null);
+      recognitionRef.current = null;
+    };
+    
     rec.start();
   };
 
