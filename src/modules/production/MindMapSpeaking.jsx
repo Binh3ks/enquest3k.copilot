@@ -168,9 +168,19 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     const branch = branches.find(b => b.id === branchId);
     if (!branch) return;
     
+    // ✅ Normalize speech input: Speech recognition doesn't provide punctuation/capitalization
+    // Add capital letter at start + period at end to match target format
+    let normalizedInput = userInput.trim();
+    if (normalizedInput && !/^[A-Z]/.test(normalizedInput)) {
+      normalizedInput = normalizedInput.charAt(0).toUpperCase() + normalizedInput.slice(1);
+    }
+    if (normalizedInput && !/[.!?]$/.test(normalizedInput)) {
+      normalizedInput += '.';
+    }
+    
     // ✅ Use 'strict' mode - Mindmap requires FULL sentences with proper spelling, punctuation & grammar
     // Target is already fullSentence (stem + branch): e.g., "I am seven years old."
-    const result = analyzeAnswer(userInput, branch.target, 'strict');
+    const result = analyzeAnswer(normalizedInput, branch.target, 'strict');
     setFeedback(prev => ({ ...prev, [branchId]: result }));
     
     if (result.isCorrect) {
