@@ -184,8 +184,13 @@ export const VoiceService = {
     if (instant && isDynamicStation) {
       let browserPlayed = false;
 
+      // Extract voice from voiceConfig
+      const voiceKey = STATION_VOICE_KEY[station];
+      const googleVoice = voiceConfig?.[voiceKey];
+      const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
+
       // ── Phase 1: Worker (Deepgram or R2 HIT) ─────────────────────────────
-      const workerPromise = this.useGoogleTTS(cleanedText, station);
+      const workerPromise = this.useGoogleTTS(cleanedText, station, deepgramVoice, audioUrl);
       let audioBlob = null;
       let workerErr = null;
 
@@ -260,8 +265,13 @@ export const VoiceService = {
     // 🎙️ TIER 3: Deepgram Worker (for static stations on R2 miss, or stations without audioUrl)
     // This ensures audio always matches the current on-screen text, even if R2 files are stale/missing
     try {
+      // Extract voice from voiceConfig
+      const voiceKey = STATION_VOICE_KEY[station];
+      const googleVoice = voiceConfig?.[voiceKey];
+      const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
+
       const audioBlob = await Promise.race([
-        this.useGoogleTTS(cleanedText, station),
+        this.useGoogleTTS(cleanedText, station, deepgramVoice, audioUrl),
         new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
       ]);
       if (audioBlob) {
