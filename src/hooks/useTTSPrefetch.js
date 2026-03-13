@@ -19,11 +19,16 @@ export function useTTSPrefetch(station = 'read') {
   const isPrefetchingRef = useRef(false);
 
   /**
-   * Prefetch single text
-   * @param {string} text - Text to pre-cache
+   * Prefetch single text or item object
+   * @param {string|Object} textOrItem - Text string OR {text, audioPath, voice}
    * @returns {Promise<boolean>} - Success status
    */
-  const prefetchText = async (text) => {
+  const prefetchText = async (textOrItem) => {
+    // Support both old string format and new object format
+    const text = typeof textOrItem === 'string' ? textOrItem : textOrItem?.text;
+    const audioPath = typeof textOrItem === 'object' ? textOrItem?.audioPath : null;
+    const voice = typeof textOrItem === 'object' ? textOrItem?.voice : null;
+    
     if (!text || text.length < 3) return false; // Skip empty/short text
     
     // Check if already cached
@@ -34,21 +39,23 @@ export function useTTSPrefetch(station = 'read') {
     }
     
     // Check if already in queue
-    if (prefetchQueueRef.current.has(text)) {
+    const queueKey = audioPath || text;
+    if (prefetchQueueRef.current.has(queueKey)) {
       return false; // Already prefetching
     }
     
     // Add to queue and prefetch via VoiceService (goes through HF semaphore)
-    prefetchQueueRef.current.add(text);
+    prefetchQueueRef.current.add(queueKey);
     
     try {
-      await VoiceService.prefetch(text, station);
+      // Pass audioPath and voice to VoiceService for proper caching
+      await VoiceService.prefetch(text, station, audioPath, null, 'advanced', voice);
       console.log(`[Prefetch] ✅ Cached for ${station}: ${text.substring(0, 30)}...`);
       return true;
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed for ${station}:`, error.message);
     } finally {
-      prefetchQueueRef.current.delete(text);
+      prefetchQueueRef.current.delete(queueKey);
     }
     
     return false;
@@ -78,18 +85,24 @@ export function useTTSPrefetch(station = 'read') {
    * Prefetch all sentences from an array of objects (e.g., dictation)
    * @param {Array<Object>} items - Array of items with text/text_en property
    * @param {string} textKey - Key to extract text from (e.g., 'text', 'text_en')
+   * @param {string} audioKey - Key to extract audioPath from (e.g., 'audio_url')
+   * @param {string} voice - Voice to use for TTS
    * @returns {Promise<void>}
    */
-  const prefetchFromArray = (items, textKey = 'text_en') => {
+  const prefetchFromArray = (items, textKey = 'text_en', audioKey = 'audio_url', voice = null) => {
     if (!items || !Array.isArray(items)) return Promise.resolve();
     
-    const texts = items
-      .map(item => item[textKey] || item.text)
-      .filter(Boolean)
+    const itemObjects = items
+      .map(item => ({
+        text: item[textKey] || item.text,
+        audioPath: item[audioKey] || item.audio,
+        voice: voice
+      }))
+      .filter(obj => obj.text)
       .slice(0, 6); // Limit to first 6 items to avoid HF server overload
     
-    if (texts.length > 0) {
-      return prefetchMultiple(texts, 1000); // 1s delay to protect HF FREE tier
+    if (itemObjects.length > 0) {
+      return prefetchMultiple(itemObjects, 1000); // 1s delay to protect HF FREE tier
     }
     
     return Promise.resolve();

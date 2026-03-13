@@ -209,17 +209,36 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
         wordsLength: data.words.length
       });
       
-      const texts = [];
+      // NEW: Build objects with text and audioPath
+      const items = [];
       data.words.forEach(word => {
-        if (word.word) texts.push(word.word);
-        if (word.definition_en) texts.push(word.definition_en);
+        if (word.word) {
+          items.push({
+            text: word.word,
+            audioPath: word.audio_word,
+            voice: data.voiceConfig?.vocabulary
+          });
+        }
+        if (word.definition_en) {
+          items.push({
+            text: word.definition_en,
+            audioPath: word.audio_def,
+            voice: data.voiceConfig?.vocabulary
+          });
+        }
         const context = word.collocation_en || word.collocation || word.model_sentence_en || word.model_sentence || word.example_en || word.example;
-        if (context) texts.push(context);
+        if (context) {
+          items.push({
+            text: context,
+            audioPath: word.audio_sent || word.audio_coll,
+            voice: data.voiceConfig?.vocabulary
+          });
+        }
       });
       
-      console.log(`[WordPower] 🚀 Starting prefetch for ${texts.length} items...`);
+      console.log(`[WordPower] 🚀 Starting prefetch for ${items.length} items with paths...`);
       // Prefetch with 800ms delay between each to avoid overwhelming server
-      prefetchMultiple(texts, 800).catch(err => {
+      prefetchMultiple(items, 800).catch(err => {
         console.warn('[WordPower] ❌ Prefetch failed:', err);
       });
     }

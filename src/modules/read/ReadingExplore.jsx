@@ -101,7 +101,12 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
         });
         console.log('[ReadingExplore] �🚀 Starting prefetch for full content...');
         const cleanText = data.content_en.replace(/\*\*/g, '');
-        prefetchText(cleanText).catch(err => {
+        // NEW: Pass object with audioPath if available
+        prefetchText({
+          text: cleanText,
+          audioPath: data.audio_url,
+          voice: data.voiceConfig?.narration
+        }).catch(err => {
           console.warn('[ReadingExplore] ❌ Prefetch failed:', err);
         });
       }

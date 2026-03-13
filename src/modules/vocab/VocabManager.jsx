@@ -246,19 +246,29 @@ const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress, 
     if (vocabList && vocabList.length > 0) {
       hasPrefetched.current = true;
       const itemsToPrefetch = vocabList.slice(0, 8); // Limit to first 8 items
-      const texts = itemsToPrefetch.flatMap(word => [
-        word.word,
-        word.definition_en
-      ]).filter(Boolean);
       
-      if (texts.length > 0) {
-        console.log(`[VocabManager] 🚀 Starting prefetch for ${itemsToPrefetch.length} words (${texts.length} texts)...`);
-        prefetchMultiple(texts, 1000).catch(err => {
+      // NEW: Pass objects with text, audioPath, and voice (if available)
+      const items = itemsToPrefetch.flatMap(word => [
+        {
+          text: word.word,
+          audioPath: word.audio_word || word.audio_url,
+          voice: data?.voiceConfig?.vocabulary // Get voice from voiceConfig if available
+        },
+        {
+          text: word.definition_en,
+          audioPath: word.audio_def,
+          voice: data?.voiceConfig?.vocabulary
+        }
+      ]).filter(item => item.text);
+      
+      if (items.length > 0) {
+        console.log(`[VocabManager] 🚀 Starting prefetch for ${itemsToPrefetch.length} words (${items.length} items with paths)...`);
+        prefetchMultiple(items, 1000).catch(err => {
           console.warn('[VocabManager] ❌ Prefetch failed:', err);
         });
       }
     }
-  }, [vocabList, prefetchMultiple, mode]);
+  }, [vocabList, prefetchMultiple, mode, data]);
 
   // Auto-save when cardsData changes
   useEffect(() => {

@@ -281,9 +281,9 @@ export const VoiceService = {
 
   /**
    * Pre-cache TTS audio WITHOUT playing (for background prefetch)
-   * Only caches from R2 CDN - does not generate new audio
+   * Now generates audio via Deepgram Worker with proper path & voice
    */
-  async prefetch(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced') {
+  async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
     // Already cached? Nothing to do
@@ -292,10 +292,10 @@ export const VoiceService = {
 
     const isStaticStation = STATIC_STATIONS.includes(station);
 
-    // Try R2 CDN (only for static stations with pre-generated audio)
-    if (isStaticStation && audioUrl && weekNumber && CDN_WEEKS.includes(weekNumber)) {
+    // Try R2 CDN first (only for static stations with pre-generated audio)
+    if (isStaticStation && audioPath && weekNumber && CDN_WEEKS.includes(weekNumber)) {
       try {
-        const cleanPath = audioUrl.startsWith('/') ? audioUrl.slice(1) : audioUrl;
+        const cleanPath = audioPath.startsWith('/') ? audioPath.slice(1) : audioPath;
         const cdnUrl = `${CDN_URL}/${cleanPath}`;
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000);
@@ -309,8 +309,15 @@ export const VoiceService = {
       } catch {}
     }
 
-    // Don't generate audio in prefetch - only cache what's already on R2
-    // If R2 miss, the speak() function will handle fallback to browser TTS
+    // NEW: Generate via Deepgram Worker with audioPath & voice for on-demand caching
+    try {
+      const blob = await this.useGoogleTTS(cleanedText, station, voice, audioPath);
+      await TTSCache.set(cleanedText, station, blob);
+      console.log(`[Prefetch] 💾 Generated & cached: ${audioPath || 'dynamic'}`);
+    } catch (error) {
+      console.warn(`[Prefetch] ⚠️ Failed to generate:`, error.message);
+      // Prefetch is non-critical, don't throw
+    }
   },
 
   /**
