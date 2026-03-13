@@ -168,8 +168,9 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
     const branch = branches.find(b => b.id === branchId);
     if (!branch) return;
     
-    // Use 'academic' mode instead of 'strict' - only checks spelling/pronunciation, not punctuation
-    const result = analyzeAnswer(userInput, branch.target, 'academic');
+    // ✅ Use 'strict' mode - Mindmap requires FULL sentences with proper spelling, punctuation & grammar
+    // Target is already fullSentence (stem + branch): e.g., "I am seven years old."
+    const result = analyzeAnswer(userInput, branch.target, 'strict');
     setFeedback(prev => ({ ...prev, [branchId]: result }));
     
     if (result.isCorrect) {
