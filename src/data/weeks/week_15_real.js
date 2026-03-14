@@ -612,7 +612,6 @@ const week15RealData = {
       emoji: "👀",
       theme: "Park Activities — Present Continuous",
       difficulty: "easy",
-      version: 2, // 🆕 Force TTS regeneration after fixes
       exchanges: [
         {
           ai: "Look at the park! A boy is there! What is he doing? Say: He is running or He is playing or He is walking!",
@@ -643,7 +642,6 @@ const week15RealData = {
       emoji: "🏞️",
       theme: "Describing Current Actions",
       difficulty: "medium",
-      version: 2, // 🆕 Force TTS regeneration after fixes
       exchanges: [
         {
           ai: "What is happening at the park NOW? Say: A boy is running NOW or A girl is eating NOW or Children are playing NOW!",
@@ -678,7 +676,6 @@ const week15RealData = {
       emoji: "🎯",
       theme: "Guessing Park Activities",
       difficulty: "medium",
-      version: 2, // 🆕 Force TTS regeneration after fixes
       exchanges: [
         {
           ai: "I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running or Jogging!",

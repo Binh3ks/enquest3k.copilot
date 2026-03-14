@@ -181,36 +181,37 @@ async function generateCacheInfo(text, context = {}, voiceId = 'aura-asteria-en'
     };
   }
   
-  // ===== 2. STORY MISSION CONTENT (hardcoded in week data) =====
+  // ===== 2. STORY MISSION CONTENT (content-based hash for on-demand regeneration) =====
   if (context.type === 'story' && context.weekNum && context.stationId) {
-    // Build descriptive filename
-    const parts = [
-      context.stationId,
-      context.questionId,
-      context.subType
-    ].filter(Boolean);
+    // 🔥 CRITICAL FIX: Hash text content instead of question/station IDs
+    // Old logic used fixed IDs which cached old content even after edits
+    // New logic: hash(text) → unique filename → auto-regenerate on text change
+    const hash = await generateHash(text);
     
-    const filename = parts.join('_');
+    // Build descriptive path for organization
+    const parts = [context.stationId, context.questionId, context.subType].filter(Boolean);
+    const folder = parts.slice(0, 2).join('_'); // e.g., "mission1_q1"
     
     return {
-      cacheKey: `${voiceId}_${filename}`,
-      audioPath: `audio/ai_tutor/story/${voiceId}/week${context.weekNum}/${filename}.mp3`,
-      isStatic: true,
+      cacheKey: `${voiceId}_story_${hash}`,
+      audioPath: `audio/ai_tutor/story/${voiceId}/week${context.weekNum}/${folder}/${hash}.mp3`,
+      isStatic: false, // Content-based, may change
       category: 'story'
     };
   }
   
-  // ===== 3. CONVERSATION CARDS (hardcoded in card data) =====
+  // ===== 3. CONVERSATION CARDS (content-based hash for on-demand regeneration) =====
   if (context.type === 'conversation' && context.cardId) {
-    const version = context.version || 1; // 🆕 Support versioning
-    const filename = context.questionNum 
-      ? `q${context.questionNum}`
-      : 'intro';
+    // 🔥 CRITICAL FIX: Hash text content to ensure regeneration when text changes
+    // Old logic used fixed q1, q2, q3... which cached old text even after edits
+    // New logic: hash(text) → unique filename → auto-regenerate on text change
+    const hash = await generateHash(text);
     
+    // Keep organized folder structure but use hash for filename
     return {
-      cacheKey: `${voiceId}_${context.cardId}_v${version}_${filename}`,
-      audioPath: `audio/ai_tutor/conversation/${voiceId}/${context.cardId}/v${version}/${filename}.mp3`,
-      isStatic: true,
+      cacheKey: `${voiceId}_${context.cardId}_${hash}`,
+      audioPath: `audio/ai_tutor/conversation/${voiceId}/${context.cardId}/${hash}.mp3`,
+      isStatic: false, // Content-based, may change
       category: 'conversation'
     };
   }
@@ -237,24 +238,34 @@ async function generateCacheInfo(text, context = {}, voiceId = 'aura-asteria-en'
     };
   }
   
-  // ===== 6. FREETALK GREETING (hardcoded to avoid AI number bug) =====
+  // ===== 6. FREETALK GREETING (content-based hash for on-demand regeneration) =====
   if (context.type === 'freetalk_greeting') {
+    // 🔥 CRITICAL FIX: Hash text content instead of week number
+    // Old logic used weekNum which cached old greetings even after edits
+    // New logic: hash(text) → unique filename → auto-regenerate on text change
+    const hash = await generateHash(text);
     const weekNum = context.weekNum || 1;
+    
     return {
-      cacheKey: `${voiceId}_freetalk_greeting_week${weekNum}`,
-      audioPath: `audio/ai_tutor/freetalk/${voiceId}/greeting_week${weekNum}.mp3`,
-      isStatic: true,
+      cacheKey: `${voiceId}_freetalk_greeting_${hash}`,
+      audioPath: `audio/ai_tutor/freetalk/${voiceId}/greeting_week${weekNum}_${hash}.mp3`,
+      isStatic: false, // Content-based, may change
       category: 'freetalk'
     };
   }
   
-  // ===== 7. GRAMMAR SENTENCES (hardcoded examples from week data) =====
+  // ===== 7. GRAMMAR SENTENCES (content-based hash for on-demand regeneration) =====
   if (context.type === 'grammar' && context.sentenceId) {
+    // 🔥 CRITICAL FIX: Hash text content instead of sentence ID
+    // Old logic used sentenceId which cached old sentences even after edits
+    // New logic: hash(text) → unique filename → auto-regenerate on text change
+    const hash = await generateHash(text);
     const weekNum = context.weekNum || 1;
+    
     return {
-      cacheKey: `${voiceId}_grammar_${weekNum}_${context.sentenceId}`,
-      audioPath: `audio/ai_tutor/grammar/${voiceId}/week${weekNum}/${context.sentenceId}.mp3`,
-      isStatic: true,
+      cacheKey: `${voiceId}_grammar_${hash}`,
+      audioPath: `audio/ai_tutor/grammar/${voiceId}/week${weekNum}/${hash}.mp3`,
+      isStatic: false, // Content-based, may change
       category: 'grammar'
     };
   }
