@@ -215,7 +215,7 @@ const week15RealData = {
       },
       
       // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Ms. Nova! I'm at the park! 🏞️ It's so busy here! Look! What is that boy doing? He is running! What is your name? Say: My name is [your name]",
+      opening_narrative: "Hi! I'm Ms. Nova! I'm at the park! 🏞️ It's so busy here! Look! What is that boy doing? He is running! What is your name? Say: My name is ___ or I am ___!",
       
       nova_greeting: "Hi! Let's watch the park together!", // DEPRECATED
       
@@ -370,7 +370,7 @@ const week15RealData = {
         role: "Game host giving action clues"
       },
 
-      opening_narrative: "Hi! I'm Ms. Nova! 🔍 Let's play Spot the Action! I see someone with ice cream! What is she doing? Say: She is eating ice cream!",
+      opening_narrative: "Hi! I'm Ms. Nova! 🔍 Let's play Spot the Action! I see someone with ice cream! What is she doing? Say: She is eating or She is drinking or She is sitting!",
 
       story_arc: [
         {
@@ -379,10 +379,10 @@ const week15RealData = {
           phase_name: "Easy Action Clues!",
           focus: "Guess simple actions from clues",
           phase_questions: [
-            "🏃 I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running!",
-            "🚶 I see someone moving slowly! One step, two step, three step! What is it? Say: Walking or She is walking!",
-            "🪑 I see someone on a bench! Not moving! Resting! What is it? Say: Sitting or He is sitting!",
-            "🍦 I see someone with ice cream! Mouth open, ice cream going in! What is it? Say: Eating or She is eating!"
+            "🏃 I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running or She is jogging!",
+            "🚶 I see someone moving slowly! One step, two step, three step! What is it? Say: Walking or She is walking or He is walking!",
+            "🪑 I see someone on a bench! Not moving! Resting! What is it? Say: Sitting or He is sitting or She is relaxing!",
+            "🍦 I see someone with ice cream! Mouth open, ice cream going in! What is it? Say: Eating or She is eating or Eating ice cream!"
           ],
           example_answers: [
             "Running",
@@ -614,27 +614,24 @@ const week15RealData = {
       difficulty: "easy",
       exchanges: [
         {
-          ai: "Look at the park! A boy is there! What is he doing? Say: He is running!",
-          accept: ["He", "is", "running", "He is running"]
+          ai: "Look at the park! A boy is there! What is he doing? Say: He is running or He is playing or He is walking!",
+          accept: ["He", "is", "running", "playing", "walking", "He is running", "He is playing"]
         },
         {
-          ai: "I see a girl with ice cream! What is she doing? Say: She is ___",
-          fill_blank: "She is ___",
-          accept_words: ["eating", "is eating", "eating ice cream"]
+          ai: "I see a girl with ice cream! What is she doing? Say: She is eating or She is walking or She is sitting!",
+          accept: ["She", "is", "eating", "walking", "sitting", "She is eating", "She is walking"]
         },
         {
           ai: "An old man is on the bench! Is he sitting? Say: Yes, he is sitting! or No, he is walking!",
           options: ["Yes, he is sitting!", "No, he is walking!"]
         },
         {
-          ai: "Children are near the fountain! What are they doing? Say: They are ___",
-          fill_blank: "They are ___",
-          accept_words: ["playing", "are playing", "splashing", "having fun"]
+          ai: "Children are near the fountain! What are they doing? Say: They are playing or They are splashing or They are running!",
+          accept: ["They", "are", "playing", "splashing", "running", "They are playing", "having fun"]
         },
         {
-          ai: "Tell me one thing you see! Say: I see a boy ___ or I see a girl ___",
-          fill_blank: "I see ___",
-          accept_words: ["running", "walking", "eating", "playing", "sitting", "boy", "girl", "is"]
+          ai: "Tell me one thing you see! Say: I see a boy running or I see a girl eating or I see children playing!",
+          accept: ["I", "see", "boy", "girl", "children", "running", "walking", "eating", "playing", "is", "are"]
         }
       ],
       completion_message: "Great job! 👀 You used Present Continuous: He is running! She is eating! They are playing!"
@@ -647,30 +644,28 @@ const week15RealData = {
       difficulty: "medium",
       exchanges: [
         {
-          ai: "What is happening at the park NOW? Say: A boy is running NOW!",
-          accept: ["boy", "is", "running", "now", "A boy is running"]
+          ai: "What is happening at the park NOW? Say: A boy is running NOW or A girl is eating NOW or Children are playing NOW!",
+          accept: ["boy", "girl", "children", "is", "are", "running", "eating", "playing", "now", "A boy is running"]
         },
         {
           ai: "Choose what is happening: She is eating ice cream NOW or She ate ice cream YESTERDAY",
           options: ["She is eating ice cream NOW", "She ate ice cream YESTERDAY"]
         },
         {
-          ai: "Look up! What do you see? Say: A kite is ___ or Kites are ___",
-          fill_blank: "___ flying",
-          accept_words: ["A kite is", "Kites are", "They are", "is", "are"]
+          ai: "Look up! What do you see? Say: A kite is flying or Kites are flying or I see a bird!",
+          accept: ["kite", "kites", "bird", "is", "are", "flying", "A kite is", "Kites are", "I see"]
         },
         {
           ai: "A woman in sports clothes! What is she doing? Choose: She is jogging or She is sitting",
           options: ["She is jogging", "She is sitting"]
         },
         {
-          ai: "A family on the grass with food! What are they doing? Say: They are having ___",
-          fill_blank: "They are having ___",
-          accept_words: ["a picnic", "lunch", "dinner", "fun", "food"]
+          ai: "A family on the grass with food! What are they doing? Say: They are having a picnic or They are eating or They are relaxing!",
+          accept: ["They", "are", "having", "picnic", "eating", "relaxing", "lunch", "fun"]
         },
         {
-          ai: "Tell me TWO things happening now! Say: A boy is ___ and a girl is ___",
-          accept: ["boy", "is", "running", "girl", "eating", "and", "walking", "sitting", "playing"]
+          ai: "Tell me TWO things happening now! Say: A boy is running and a girl is eating or Children are playing and a man is sitting!",
+          accept: ["boy", "girl", "children", "man", "is", "are", "running", "eating", "playing", "sitting", "and", "walking"]
         }
       ],
       completion_message: "Perfect! 🏞️ You described actions happening NOW using Present Continuous!"
@@ -683,21 +678,20 @@ const week15RealData = {
       difficulty: "medium",
       exchanges: [
         {
-          ai: "I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running!",
-          accept: ["Running", "He", "is", "running", "She is running"]
+          ai: "I see someone moving very fast! Legs going fast! What is it? Say: Running or He is running or Jogging!",
+          accept: ["Running", "Jogging", "He", "She", "is", "running", "jogging", "He is running"]
         },
         {
-          ai: "I see something flying in the sky! String! Wind! What is it? Say: A kite is ___ or Kites are ___",
-          fill_blank: "___ flying",
-          accept_words: ["A kite is", "Kites are", "They are", "flying"]
+          ai: "I see something flying in the sky! String! Wind! What is it? Say: A kite is flying or Kites are flying or Flying a kite!",
+          accept: ["kite", "kites", "is", "are", "flying", "A kite is", "Kites are", "They are"]
         },
         {
           ai: "Mouth open! Ice cream going in! Yummy! What is happening? Choose: She is eating or She is drinking",
           options: ["She is eating", "She is drinking"]
         },
         {
-          ai: "I see food on a blanket! Family together! Outdoors! What are they doing? Say: They are having ___",
-          fill_blank: "They are having ___",
+          ai: "I see food on a blanket! Family together! Outdoors! What are they doing? Say: They are having a picnic or They are eating or They are relaxing!",
+          accept: ["They", "are", "having", "picnic", "eating", "relaxing", "lunch"],
           accept_words: ["a picnic", "lunch", "fun", "dinner"]
         },
         {
