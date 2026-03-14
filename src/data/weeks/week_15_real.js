@@ -648,16 +648,16 @@ const week15RealData = {
           accept: ["boy", "girl", "children", "is", "are", "running", "eating", "playing", "now", "A boy is running"]
         },
         {
-          ai: "Choose what is happening: She is eating ice cream NOW or She ate ice cream YESTERDAY",
-          options: ["She is eating ice cream NOW", "She ate ice cream YESTERDAY"]
+          ai: "I see a girl with ice cream! What is she doing NOW? Choose: She is eating ice cream or She is holding ice cream",
+          options: ["She is eating ice cream", "She is holding ice cream"]
         },
         {
           ai: "Look up! What do you see? Say: A kite is flying or Kites are flying or I see a bird!",
           accept: ["kite", "kites", "bird", "is", "are", "flying", "A kite is", "Kites are", "I see"]
         },
         {
-          ai: "A woman in sports clothes! What is she doing? Choose: She is jogging or She is sitting",
-          options: ["She is jogging", "She is sitting"]
+          ai: "Look at that woman in sports clothes! What is she doing? Say: She is jogging or She is sitting or She is walking!",
+          accept: ["She", "is", "jogging", "sitting", "walking", "running", "She is jogging", "She is sitting"]
         },
         {
           ai: "A family on the grass with food! What are they doing? Say: They are having a picnic or They are eating or They are relaxing!",
@@ -686,8 +686,8 @@ const week15RealData = {
           accept: ["kite", "kites", "is", "are", "flying", "A kite is", "Kites are", "They are"]
         },
         {
-          ai: "Mouth open! Ice cream going in! Yummy! What is happening? Choose: She is eating or She is drinking",
-          options: ["She is eating", "She is drinking"]
+          ai: "Mouth open! Ice cream going in! Yummy! What is happening? Say: She is eating or She is licking or She is tasting!",
+          accept: ["She", "is", "eating", "licking", "tasting", "holding", "She is eating", "She is licking"]
         },
         {
           ai: "I see food on a blanket! Family together! Outdoors! What are they doing? Say: They are having a picnic or They are eating or They are relaxing!",
@@ -695,9 +695,8 @@ const week15RealData = {
           accept_words: ["a picnic", "lunch", "fun", "dinner"]
         },
         {
-          ai: "What do YOU like doing at the park? Say: I like ___ or I am ___",
-          fill_blank: "I ___",
-          accept_words: ["running", "playing", "eating", "like running", "am playing", "sitting", "relaxing"]
+          ai: "Now YOU! What are you doing at the park? Say: I am running or I am sitting or I am playing!",
+          accept: ["I", "am", "running", "sitting", "playing", "walking", "eating", "I am running", "I am sitting", "I am playing"]
         },
         {
           ai: "Last one! Water splashing! Children laughing! Where are they? Say: At the ___ or Near the ___",
