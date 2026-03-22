@@ -1,0 +1,58 @@
+{
+  "weekId": 16,
+  "theme": "Sports Commentary",
+  "grammar_focus": "Present Continuous (is/are + verb-ing)",
+  "vocabulary_focus": "playing kicking catching running throwing jumping scoring training practicing winning",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "British Council present continuous sports playing kicking ESL primary kids",
+      "backup_search": "English Singsing present continuous progressive tense action verbs sports kids",
+      "target_grammar": "Present Continuous (What is he doing? He is playing soccer)",
+      "target_channel": "British Council",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present progressive sports verbs running kicking throwing ESL",
+      "backup_search": "present continuous action verbs grammar lesson kids ESL",
+      "target_grammar": "Present Continuous with sports action verbs",
+      "target_channel": "English Singsing",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox sports story kids playing soccer basketball friends level 1",
+      "backup_search": "Vooks sports day story kids primary school",
+      "target_grammar": "Story about sports and playing games",
+      "target_channel": "Little Fox",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "British Council Learn English Kids sports vocabulary soccer basketball ESL",
+      "backup_search": "Fun Kids English sports action verbs playing kicking throwing",
+      "target_grammar": "Sports and action vocabulary",
+      "target_channel": "British Council",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 5,
+      "purpose": "STEM",
+      "priority_search": "SciShow Kids energy motion sports science why do we move physics for kids",
+      "backup_search": "Crash Course Kids energy and motion forces movement science",
+      "target_grammar": "STEM: Energy and motion in sports",
+      "target_channel": "SciShow Kids",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    }
+  ]
+}
