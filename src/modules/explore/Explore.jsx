@@ -7,10 +7,17 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 import { getImageUrl } from '../../utils/imageUrl';
 import { useUserStore } from '../../stores/useUserStore';
+import TabbedExplore from '../../components/Explore/TabbedExplore';
 
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const { learningMode } = useUserStore();
+  
+  // 🔥 Week 16+: Detect new dual-tab structure (explore_stem + explore_social)
+  const isW16Plus = data && (data.explore_stem || data.explore_social);
+  if (isW16Plus) {
+    return <TabbedExplore weekNumber={parseInt(weekId)} weekData={data} />;
+  }
   
   // 🔥 Universal Progress System Integration
   const { savedData, saveProgress, markComplete } = useStationProgress(

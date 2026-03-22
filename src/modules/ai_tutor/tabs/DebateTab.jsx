@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Users, ThumbsUp, ThumbsDown, Lightbulb, Loader2 } from 'lucide-react';
+import { Users, ThumbsUp, ThumbsDown, Lightbulb, Loader2, Award, Target } from 'lucide-react';
 import ChatBubble from '../components/ChatBubble';
 import InputBar from '../components/InputBar';
 import { sendToAI } from '../../../services/ai_tutor/aiRouter';
@@ -34,6 +34,10 @@ const DebateTab = () => {
   const [turnCount, setTurnCount] = useState(0);
   const [initialized, setInitialized] = useState(false);
   
+  // 🎯 2-Tier Debate System
+  const debateTier = weekNumber >= 113 ? 'formal' : 'simple';
+  const [debatePhase, setDebatePhase] = useState(1); // For formal debates: 1-5
+  
   const chatEndRef = useRef(null);
   const chatContainerRef = useRef(null);
 
@@ -64,7 +68,9 @@ const DebateTab = () => {
 
       const welcomeMessage = {
         role: 'assistant',
-        content: `👋 Hi ${user?.name || 'there'}! Let's have a friendly debate!\n\n🤔 Here's what I think: "${selectedTopic}"\n\nDo you agree or disagree? Why?`,
+        content: debateTier === 'formal'
+          ? `👋 Hi ${user?.name || 'there'}! Welcome to our formal debate session!\n\n📋 Today's debate topic: "${selectedTopic}"\n\n🎯 I'll be playing Devil's Advocate - I'll challenge your ideas to help you think deeper. Let's begin!\n\nWhat's your position: Do you agree or disagree?`
+          : `👋 Hi ${user?.name || 'there'}! Let's have a friendly debate!\n\n🤔 Here's what I think: "${selectedTopic}"\n\nDo you agree or disagree? Why?`,
         timestamp: Date.now()
       };
       addMessage("debate", welcomeMessage);
@@ -72,6 +78,18 @@ const DebateTab = () => {
   };
 
   const generateDebateTopics = (weekTopic) => {
+    // 🎯 Formal Debate Topics (W113-144): 3 Major Cycles
+    if (debateTier === 'formal') {
+      if (weekNumber >= 113 && weekNumber <= 120) {
+        return ['Should homework be banned in primary schools?'];
+      } else if (weekNumber >= 121 && weekNumber <= 128) {
+        return ['Should primary school students be allowed to play video games every day?'];
+      } else if (weekNumber >= 129 && weekNumber <= 144) {
+        return ['Should children under 12 be allowed to have their own smartphones?'];
+      }
+    }
+    
+    // 🎯 Simple Debate Topics (W40-112): Dynamic per week theme
     const topicMap = {
       // Week 1: Identity & Heroes
       'Introduction & Superheroes': [
@@ -139,6 +157,11 @@ const DebateTab = () => {
     addMessage("debate", userMsg);
     setIsLoading(true);
     setTurnCount(prev => prev + 1);
+    
+    // 🎯 Formal Debate: Progress through phases
+    if (debateTier === 'formal' && debatePhase < 5) {
+      setDebatePhase(prev => Math.min(prev + 1, 5));
+    }
 
     try {
       // Build debate prompt (simplified)
@@ -148,7 +171,45 @@ const DebateTab = () => {
       const vocabArray = weekDataInfo?.global_vocab || weekDataInfo?.vocabulary || [];
       const vocabList = vocabArray.map(v => v.word).join(', ') || 'student, teacher, school, classroom, backpack, book, notebook, library, scientist';
       
-      const systemPrompt = `You are Ms. Nova, an ESL teacher for young learners (ages 6-12).
+      // 🎯 Dynamic System Prompt based on Debate Tier
+      const systemPrompt = debateTier === 'formal' 
+        ? `You are Ms. Nova, an ESL debate coach for young learners (ages 9-12) in a formal debate setting.
+
+**MODE: FORMAL DEBATE (Devil's Advocate - Phase 3 Academic Preparation)**
+
+**YOUR ROLE:**
+You are a Devil's Advocate - you ALWAYS take the OPPOSITE position from the student to challenge their thinking. Your job is to help them defend their ideas with strong reasoning.
+
+**5-PHASE DEBATE STRUCTURE:**
+Phase 1: OPINION - Student states their position clearly
+Phase 2: REASON - Challenge them to explain WHY (ask for evidence/examples)
+Phase 3: COUNTER-ARGUMENT - Present strong opposing view (Devil's Advocate)
+Phase 4: DEFENSE - Push student to counter your argument
+Phase 5: CONCLUSION - Ask student to summarize their final stance
+
+**CURRENT DEBATE TOPIC:** ${debateTopic}
+**STUDENT POSITION:** ${userPosition || 'not stated yet'}
+**CURRENT PHASE:** ${debatePhase}/5
+**WEEK VOCAB:** ${vocabList}
+**ALLOWED GRAMMAR:** Present simple, present perfect, comparatives, conditionals
+
+**RESPONSE RULES:**
+- Keep responses under 30 words
+- ALWAYS oppose student's view (Devil's Advocate mode)
+- Push for deeper reasoning: "But what about...", "Have you considered..."
+- Use sentence frames: "On the other hand...", "However...", "While I understand..."
+- Guide through phases sequentially
+- Use Recast for grammar errors
+- Be respectful but challenging
+
+**FORBIDDEN:**
+- NO emojis (text-to-speech reads them)
+- Never agree with student (you're Devil's Advocate!)
+- Don't let them skip phases
+- Don't make it personal
+
+Challenge their thinking to help them grow!`
+        : `You are Ms. Nova, an ESL teacher for young learners (ages 6-12).
 
 **MODE: SIMPLE DEBATE (Age-Appropriate Opinion Sharing)**
 
@@ -241,21 +302,45 @@ Keep it simple, short, and encouraging!`;
       <div className="bg-white border-b border-red-200 px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-              <Users size={20} className="text-red-600" />
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              debateTier === 'formal' ? 'bg-purple-100' : 'bg-red-100'
+            }`}>
+              {debateTier === 'formal' ? <Award size={20} className="text-purple-600" /> : <Users size={20} className="text-red-600" />}
             </div>
             <div>
-              <h2 className="text-lg font-bold text-gray-800">Friendly Debate</h2>
-              <p className="text-xs text-gray-500">Share your opinion!</p>
+              <h2 className="text-lg font-bold text-gray-800">
+                {debateTier === 'formal' ? 'Formal Debate' : 'Friendly Debate'}
+              </h2>
+              <p className="text-xs text-gray-500">
+                {debateTier === 'formal' ? `Phase ${debatePhase}/5 • Devil's Advocate Mode` : 'Share your opinion!'}
+              </p>
             </div>
           </div>
 
-          {/* Turn Counter */}
-          <div className="flex items-center space-x-2">
-            <span className="text-sm font-medium text-gray-700">
-              {turnCount} {turnCount === 1 ? 'turn' : 'turns'}
-            </span>
-          </div>
+          {/* Turn Counter / Phase Progress */}
+          {debateTier === 'formal' ? (
+            <div className="flex items-center space-x-1">
+              {[1, 2, 3, 4, 5].map(phase => (
+                <div
+                  key={phase}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
+                    debatePhase >= phase
+                      ? 'bg-purple-600 text-white scale-110'
+                      : 'bg-gray-200 text-gray-400'
+                  }`}
+                  title={['Opinion', 'Reason', 'Counter', 'Defense', 'Conclusion'][phase - 1]}
+                >
+                  {phase}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex items-center space-x-2">
+              <span className="text-sm font-medium text-gray-700">
+                {turnCount} {turnCount === 1 ? 'turn' : 'turns'}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -323,23 +408,57 @@ Keep it simple, short, and encouraging!`;
       </div>
 
       {/* Helpful Phrases */}
-      {userPosition && turnCount < 3 && (
-        <div className="px-6 py-3 bg-yellow-50 border-t border-yellow-200">
+      {userPosition && (
+        <div className={`px-6 py-3 border-t ${
+          debateTier === 'formal' ? 'bg-purple-50 border-purple-200' : 'bg-yellow-50 border-yellow-200'
+        }`}>
           <div className="max-w-2xl mx-auto">
-            <p className="text-xs font-medium text-yellow-800 mb-2">💡 Helpful phrases:</p>
+            <p className={`text-xs font-medium mb-2 ${
+              debateTier === 'formal' ? 'text-purple-800' : 'text-yellow-800'
+            }`}>
+              💡 {debateTier === 'formal' ? 'Debate Sentence Frames:' : 'Helpful phrases:'}
+            </p>
             <div className="flex flex-wrap gap-2">
-              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
-                I think...
-              </span>
-              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
-                Because...
-              </span>
-              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
-                In my opinion...
-              </span>
-              <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
-                For example...
-              </span>
+              {debateTier === 'formal' ? (
+                <>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    I believe that...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    The reason is...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    For example...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    On the other hand...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    However...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    While I understand...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-purple-300">
+                    In conclusion...
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                    I think...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                    Because...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                    In my opinion...
+                  </span>
+                  <span className="text-xs bg-white px-2 py-1 rounded-full text-gray-700 border border-yellow-300">
+                    For example...
+                  </span>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -354,7 +473,14 @@ Keep it simple, short, and encouraging!`;
       />
 
       {/* Encouragement */}
-      {turnCount >= 5 && (
+      {debateTier === 'formal' && debatePhase === 5 && (
+        <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 text-center">
+          <p className="text-xs text-gray-700">
+            🏆 Excellent debate! You've completed all 5 phases with strong reasoning!
+          </p>
+        </div>
+      )}
+      {debateTier === 'simple' && turnCount >= 5 && (
         <div className="bg-gradient-to-r from-red-100 to-orange-100 px-4 py-2 text-center">
           <p className="text-xs text-gray-700">
             🌟 Great debate! You're learning to express your ideas clearly!

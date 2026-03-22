@@ -5,6 +5,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { analyzeAnswer } from '../../utils/smartCheck';
 import { useUserStore } from '../../stores/useUserStore';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import TabbedLogicLab from '../../components/LogicLab/TabbedLogicLab';
 
 const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
@@ -17,6 +18,13 @@ const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =>
   const [feedback, setFeedback] = useState({});
   const [showHint, setShowHint] = useState({});
   const [completedIds, setCompletedIds] = useState(savedData.puzzlesSolved || []);
+
+  // 🔥 Week 16+: Detect new dual-tab structure (logic_science + singapore_math)
+  // Early return AFTER all hooks to comply with React Rules of Hooks
+  const isW16Plus = data && (data.logic_science || data.singapore_math);
+  if (isW16Plus) {
+    return <TabbedLogicLab weekNumber={parseInt(weekId)} weekData={data} />;
+  }
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Logic Lab...</div>;
 

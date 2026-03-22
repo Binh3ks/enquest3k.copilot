@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { Volume2, Zap, Globe, CheckCircle, Edit3, BookOpen, Star } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -245,7 +245,7 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
-  const handleCardComplete = (id) => {
+  const handleCardComplete = useCallback((id) => {
       setCompletedIds(prev => {
           if (prev.includes(id)) return prev;
           const newCompleted = [...prev, id];
@@ -254,7 +254,7 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
           if (onReportProgress) onReportProgress(percent);
           return newCompleted;
       });
-  };
+  }, [data?.words?.length, onReportProgress]);
 
   if (!data || !data.words) return <div className="p-8 text-center text-teal-400 font-bold">Loading Word Power...</div>;
 
