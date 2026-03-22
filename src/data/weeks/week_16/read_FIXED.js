@@ -1,0 +1,12 @@
+export default {
+  title: "My First Soccer Game",
+  image_url: "/images/week16/read_cover_w016.jpg",
+  content_en: "Today is my first soccer game! I am very excited. My mom is coming to watch. My dad is bringing his camera. Look at me! I am **running** very fast. My legs are moving quickly. My heart is beating fast. This is fun! My friend is **kicking** the ball to me. I am **catching** it with my foot. Now I am **passing** it to another friend. He is **running** to the **goal**. Wow! The ball has **energy**. It is in **motion**. The ball is moving fast through the air. Our **team** is playing well. We are working together. Everyone is **cheering**. \"Go, go, go!\" they shout. Oh no! I **throw** the ball with my hands. That's a mistake! In soccer, I can only use my feet. The other **team** is **scoring** a **goal**. They **jump** up and down. They are happy. I want to **score** a **goal** too! Next time, I will practice more. I love playing soccer!",
+  content_vi: "Hôm nay là trận bóng đầu tiên của tôi! Tôi rất phấn khích. Mẹ tôi đến xem. Bố tôi mang máy ảnh. Nhìn tôi kìa! Tôi đang **chạy** rất nhanh. Chân tôi đang di chuyển nhanh. Tim tôi đập nhanh. Vui quá! Bạn tôi đang **sút** bóng cho tôi. Tôi đang **bắt** nó bằng chân. Bây giờ tôi đang **chuyền** nó cho bạn khác. Bạn ấy đang **chạy** về phía khung **thành**. Ồ! Quả bóng có **năng lượng**. Nó đang **chuyển động**. Bóng đang bay nhanh trong không khí. **Đội** chúng tôi chơi tốt. Chúng tôi làm việc cùng nhau. Mọi người đang **cổ vũ**. \"Lên nào, lên nào!\" họ hét. Ôi không! Tôi **ném** bóng bằng tay. Đó là sai lầm! Trong bóng đá, tôi chỉ có thể dùng chân. **Đội** kia đang **ghi** một **bàn thắng**. Họ **nhảy** lên xuống. Họ vui mừng. Tôi cũng muốn **ghi** **bàn thắng**! Lần sau, tôi sẽ luyện tập nhiều hơn. Tôi yêu chơi bóng đá!",
+  audio_url: "/audio/week16/read_main.mp3",
+  comprehension_questions: [
+    { id: 1, question_en: "How does the boy feel about his first soccer game?", answer: ["He is very excited", "Very excited", "Excited"], hint_en: "The boy is...", hint_vi: "Cậu bé..." },
+    { id: 2, question_en: "What is the boy doing with the ball?", answer: ["He is catching and passing it", "Catching and passing", "Passing the ball"], hint_en: "He is...", hint_vi: "Cậu bé đang..." },
+    { id: 3, question_en: "What gives the ball energy to move?", answer: ["Kicking it", "Kicking", "The kick"], hint_en: "Kicking...", hint_vi: "Sút..." }
+  ]
+};

@@ -1,0 +1,58 @@
+{
+  "weekId": 16,
+  "theme": "Sports Commentary (Easy)",
+  "grammar_focus": "Present Continuous (am/is/are + verb-ing)",
+  "vocabulary_focus": "playing kicking running jumping throwing ball team game",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present continuous what are you doing playing sports kids ESL",
+      "backup_search": "British Council present continuous grammar lesson simple ESL kids",
+      "target_grammar": "Present Continuous basic (I am playing)",
+      "target_channel": "English Singsing",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 2,
+      "purpose": "STORY",
+      "priority_search": "Peppa Pig sports day playing games kids cartoons",
+      "backup_search": "Little Fox simple sports story soccer playing kids level 1",
+      "target_grammar": "Simple story about playing sports",
+      "target_channel": "Peppa Pig",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 3,
+      "purpose": "VOCABULARY",
+      "priority_search": "Maple Leaf Learning sports action verbs song for kids ESL",
+      "backup_search": "Fun Kids English sports vocabulary simple kicking throwing running",
+      "target_grammar": "Simple sports action vocabulary",
+      "target_channel": "Maple Leaf Learning",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "Cocomelon playing ball sports action song toddlers kids",
+      "backup_search": "Super Simple Songs sports verbs action song kids",
+      "target_grammar": "Sports vocabulary song",
+      "target_channel": "Cocomelon",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 5,
+      "purpose": "STEM",
+      "priority_search": "Peekaboo Kidz why do we move energy science simple kids",
+      "backup_search": "SciShow Kids energy motion how things move science",
+      "target_grammar": "STEM: How bodies move (simple)",
+      "target_channel": "Peekaboo Kidz",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    }
+  ]
+}
