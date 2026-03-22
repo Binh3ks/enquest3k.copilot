@@ -19,14 +19,14 @@ const TutorWindow = () => {
   // 🔥 Parse week number from URL
   const weekNumber = parseInt(location.pathname.match(/\/week\/(\d+)/)?.[1] || '1');
   
-  // 🔒 Debate unlocks at week 20
-  const isDebateUnlocked = weekNumber >= 20;
+  // 🔒 Debate unlocks at week 40 (Phase 1 ending)
+  const isDebateUnlocked = weekNumber >= 40;
 
   const tabs = [
     { id: 'story', label: 'Story', icon: BookOpen },
     { id: 'freetalk', label: 'Chat', icon: MessageCircle },
     { id: 'pronunciation', label: 'Speak', icon: Mic },
-    { id: 'debate', label: 'Debate', icon: MessageSquare, locked: !isDebateUnlocked, requireWeek: 20 }
+    { id: 'debate', label: 'Debate', icon: MessageSquare, locked: !isDebateUnlocked, requireWeek: 40 }
   ];
 
   const toggleSize = () => {
@@ -108,7 +108,7 @@ const TutorWindow = () => {
             <Lock size={48} className="mb-4 text-gray-400" />
             <h3 className="text-lg font-bold mb-2">Debate Locked</h3>
             <p className="text-sm text-center">
-              This feature unlocks at <span className="font-bold text-purple-600">Week 20</span>
+              This feature unlocks at <span className="font-bold text-purple-600">Week 40</span>
             </p>
             <p className="text-xs text-center mt-2">
               Keep learning! You're currently on Week {weekNumber}
