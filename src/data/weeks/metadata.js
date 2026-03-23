@@ -16,11 +16,11 @@ export const weekTitles = {
   13: { title_en: "The Daily Routine", title_vi: "Thói Quen Hàng Ngày" },
   14: { title_en: "Welcome to My World (Project Showcase)", title_vi: "Chào mừng đến Thế giới của Tôi" },
   15: { title_en: "The Busy Park (Actions Now)", title_vi: "Công viên Bận rộn" },
-  16: { title_en: "Week 16", title_vi: "Tuần 16" },
+  16: { title_en: "Sports Commentary", title_vi: "Bình Luận Thể Thao" },
   17: { title_en: "Week 17", title_vi: "Tuần 17" },
-  18: { title_en: "Week 18", title_vi: "Tuần 18" },
-  19: { title_en: "My Baby Album", title_vi: "Album Bé Yêu" },
-  20: { title_en: "Week 20", title_vi: "Tuần 20" },
+  18: { title_en: "The Lost Dog", title_vi: "Chú Chó Đi Lạc" },
+  19: { title_en: "My Baby Album", title_vi: "Album Ảnh Hồi Bé" },
+  20: { title_en: "The Old Town", title_vi: "Thị Trấn Cũ" },
   // Add more as weeks are created
 };
 
