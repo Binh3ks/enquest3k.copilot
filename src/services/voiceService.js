@@ -34,11 +34,13 @@ const CDN_URL = import.meta.env.VITE_CDN_URL || 'https://pub-8f917d02000c4be2a72
 // Used for on-demand generation when R2 CDN misses
 const GOOGLE_TO_DEEPGRAM_VOICE = {
   // Female voices
-  'en-US-Neural2-C': 'aura-luna-en',      // Soft, warm (dictation, shadowing)
-  'en-US-Neural2-F': 'aura-asteria-en',   // Natural, expressive (vocabulary, mindmap)
-  'en-US-Neural2-H': 'aura-stella-en',    // Bright, clear
+  'en-US-Neural2-C': 'aura-luna-en',      // Soft, warm (legacy only — no longer used in new weeks)
+  'en-US-Neural2-F': 'aura-asteria-en',   // Natural, expressive (vocabulary, dictation, shadowing)
+  'en-US-Neural2-H': 'aura-stella-en',    // Bright, clear (narration, explore)
+  'en-US-Neural2-E': 'aura-asteria-en',   // Female fallback → asteria
   // Male voices
-  'en-US-Neural2-D': 'aura-orion-en',     // Deep, authoritative (narration)
+  'en-US-Neural2-B': 'aura-helios-en',    // Clean, clear, friendly (mindmap, ask-ai — week 16+)
+  'en-US-Neural2-D': 'aura-orion-en',     // Deep, authoritative (legacy narration)
   'en-US-Neural2-J': 'aura-zeus-en',      // Energetic, engaging (questions)
   'en-US-Neural2-A': 'aura-orion-en',     // Fallback male
   'en-US-Neural2-I': 'aura-zeus-en',      // Fallback energetic

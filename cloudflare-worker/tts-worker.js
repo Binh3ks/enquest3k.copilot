@@ -31,7 +31,7 @@ const DEEPGRAM_MODEL   = 'aura-asteria-en'; // Default voice (changed from luna 
 // Allowed voice overrides (whitelist for security)
 const ALLOWED_VOICES = new Set([
   'aura-luna-en', 'aura-asteria-en', 'aura-stella-en', 'aura-athena-en', 'aura-hera-en',
-  'aura-orion-en', 'aura-zeus-en'  // Male voices for narration & questions
+  'aura-orion-en', 'aura-zeus-en', 'aura-helios-en'  // aura-helios-en: clean, clear male (week 16+ mindmap/ask-ai)
 ]);
 const DEEPGRAM_TIMEOUT = 8000;  // 8s hard cap — Deepgram rarely takes >1s
 

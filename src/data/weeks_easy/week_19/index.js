@@ -18,13 +18,15 @@ const weekData = {
   weekTitle_vi: "Album Ảnh Hồi Bé",
   grammar_focus: "Was / Were",
   global_vocab: vocab.vocab,
-  // ⚠️ MANDATORY: voiceConfig for unique voices per week
+  // 🎙️ Voice mix: 2F (asteria, stella) + 2M (zeus, helios) — swapped vs week 18
   voiceConfig: {
-    narration: 'en-US-Neural2-D',    // Male, authoritative for stories
-    vocabulary: 'en-US-Neural2-F',   // Female, clear for vocab definitions
-    dictation: 'en-US-Neural2-E',    // Neutral for dictation exercises
-    questions: 'en-US-Neural2-D',    // Male for logic/ask_ai questions
-    mindmap: 'en-US-Neural2-F'       // Female for mindmap branches
+    narration:    'en-US-Neural2-F',  // → aura-asteria-en  (F2: natural, expressive)
+    vocabulary:   'en-US-Neural2-H',  // → aura-stella-en   (F1: bright, clear)
+    dictation:    'en-US-Neural2-H',  // → aura-stella-en   (F1)
+    shadowing:    'en-US-Neural2-H',  // → aura-stella-en   (F1)
+    questions:    'en-US-Neural2-J',  // → aura-zeus-en     (M2: energetic)
+    mindmap:      'en-US-Neural2-B',  // → aura-helios-en   (M1: clean, clear)
+    logic_science:'en-US-Neural2-J',  // → aura-zeus-en     (M2)
   },
   stations: {
     read_explore: read,
