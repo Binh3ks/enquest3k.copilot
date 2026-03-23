@@ -12,8 +12,8 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, onReportProgress, wee
   // 🔥 Universal Progress System
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_shadowing');
   
-  // 🚀 TTS Prefetch
-  const { prefetchFromArray } = useTTSPrefetch('shadowing');
+  // 🚀 TTS Prefetch (with weekNumber for auto voice detection)
+  const { prefetchFromArray } = useTTSPrefetch('shadowing', currentWeek);
   
   // Get script BEFORE any useState (to avoid hooks order issues)
   const script = data?.script || data?.sentences || [];

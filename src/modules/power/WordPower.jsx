@@ -187,11 +187,12 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
 const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const { learningMode } = useUserStore();
+  const currentWeek = parseInt(weekId);
   const [completedIds, setCompletedIds] = useState([]);
   const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
   
-  // 🚀 TTS Prefetch - auto-cache word power content
-  const { prefetchMultiple } = useTTSPrefetch('word_power');
+  // 🚀 TTS Prefetch - auto-cache word power content (with weekNumber for auto voice detection)
+  const { prefetchMultiple } = useTTSPrefetch('word_power', currentWeek);
 
   // 🚀 Pre-cache all vocabulary items when data loads (ONCE per data load)
   useEffect(() => {

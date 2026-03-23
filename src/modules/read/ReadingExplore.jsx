@@ -12,6 +12,7 @@ import { useUserStore } from '../../stores/useUserStore';
 const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const { learningMode } = useUserStore();
+  const currentWeek = parseInt(weekId);
   
   // 🔥 W36+: Detect triple-tab structure (Culture, Technology, Social) - DISABLED for W16-35
   // const isW36Plus = data && (data.read_stem || data.read_social);
@@ -22,8 +23,8 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   // 🔥 Universal Progress System
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_reading');
   
-  // 🚀 TTS Prefetch - auto-cache reading content
-  const { prefetchText } = useTTSPrefetch('read');
+  // 🚀 TTS Prefetch - auto-cache reading content (with weekNumber for auto voice detection)
+  const { prefetchText } = useTTSPrefetch('read', currentWeek);
   
   const [sentences, setSentences] = useState([]);
   const [isReady, setIsReady] = useState(false);

@@ -14,8 +14,8 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
   const { savedData, saveProgress, markComplete, mode: hookMode } = useStationProgress(parseInt(weekId), 'skill_dictation');
   const mode = propMode || hookMode || 'advanced';
   
-  // 🚀 TTS Prefetch - auto-cache dictation sentences
-  const { prefetchFromArray } = useTTSPrefetch('dictation');
+  // 🚀 TTS Prefetch - auto-cache dictation sentences (with weekNumber for auto voice detection)
+  const { prefetchFromArray } = useTTSPrefetch('dictation', currentWeek);
   
   const [level, setLevel] = useState(savedData.level || 1);
   const [inputs, setInputs] = useState(savedData.inputs || {});

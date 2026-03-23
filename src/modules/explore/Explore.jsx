@@ -12,6 +12,7 @@ import { useUserStore } from '../../stores/useUserStore';
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const { learningMode } = useUserStore();
+  const currentWeek = parseInt(weekId);
   
   // 🔥 W36+: Detect triple-tab structure (Culture, Technology, Social) - DISABLED for W16-35
   // const isW36Plus = data && (data.explore_stem || data.explore_social);
@@ -25,8 +26,8 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
     'explore'
   );
   
-  // 🚀 TTS Prefetch - auto-cache explore content
-  const { prefetchText } = useTTSPrefetch('explore');
+  // 🚀 TTS Prefetch - auto-cache explore content (with weekNumber for auto voice detection)
+  const { prefetchText } = useTTSPrefetch('explore', currentWeek);
   
   const [inputs, setInputs] = useState(savedData.inputs || {});
   const [feedback, setFeedback] = useState(savedData.feedback || {});

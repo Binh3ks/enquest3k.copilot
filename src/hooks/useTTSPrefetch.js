@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react';
 import { TTSCache } from '../services/ttsCache';
 import { VoiceService } from '../services/voiceService';
 
-export function useTTSPrefetch(station = 'read') {
+export function useTTSPrefetch(station = 'read', weekNumber = null) {
   const prefetchQueueRef = useRef(new Set());
   const isPrefetchingRef = useRef(false);
 
@@ -48,8 +48,8 @@ export function useTTSPrefetch(station = 'read') {
     prefetchQueueRef.current.add(queueKey);
     
     try {
-      // Pass audioPath and voice to VoiceService for proper caching
-      await VoiceService.prefetch(text, station, audioPath, null, 'advanced', voice);
+      // Pass audioPath, weekNumber and voice to VoiceService for proper caching
+      await VoiceService.prefetch(text, station, audioPath, weekNumber, 'advanced', voice);
       console.log(`[Prefetch] ✅ Cached for ${station}: ${text.substring(0, 30)}...`);
       return true;
     } catch (error) {

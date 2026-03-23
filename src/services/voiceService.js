@@ -302,6 +302,19 @@ export const VoiceService = {
   async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
+    // If voice not provided, auto-detect from week voiceConfig
+    if (!voice && weekNumber) {
+      const voiceConfig = await getVoiceConfigForWeek(weekNumber);
+      if (voiceConfig) {
+        const voiceKey = STATION_VOICE_KEY[station];
+        const googleVoice = voiceConfig[voiceKey];
+        if (googleVoice) {
+          voice = GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] || googleVoice;
+          console.log(`[Prefetch] 🎯 Auto-detected voice: ${voice} (from ${voiceKey})`);
+        }
+      }
+    }
+
     // Convert Google voice format to Deepgram if needed (Neural2-J → aura-zeus-en)
     let finalVoice = voice;
     if (finalVoice && finalVoice.includes('Neural2')) {

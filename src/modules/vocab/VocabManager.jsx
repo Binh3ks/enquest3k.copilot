@@ -218,8 +218,8 @@ const VocabManager = ({ data, themeColor, isVi, onToggleLang, onReportProgress, 
   const { savedData, saveProgress, markComplete, mode: hookMode } = useStationProgress(parseInt(weekId), 'vocab_mastery');
   const mode = propMode || hookMode || 'advanced';
   
-  // 🚀 TTS Prefetch
-  const { prefetchMultiple } = useTTSPrefetch('new_word');
+  // 🚀 TTS Prefetch (with weekNumber for auto voice detection)
+  const { prefetchMultiple } = useTTSPrefetch('new_word', currentWeek);
   
   const vocabList = data?.vocab || [];
   
