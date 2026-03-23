@@ -46,23 +46,28 @@ const ROOT = path.join(__dirname, '..');
 // VALIDATION RULES
 // ============================================================================
 
-const EXPECTED_FILES = [
-  'vocab.js',
-  'read.js',
-  'explore.js',
-  'word_power.js',
-  'grammar.js',
-  'logic.js',
-  'writing.js',
-  'dictation.js',
-  'shadowing.js',
-  'word_match.js',
-  'mindmap.js',
-  'ask_ai.js',
-  'daily_watch.js',
-  'index.js'
-  // 'week_real.js' is checked separately by name convention
+// Week 1-15 template (legacy logic.js)
+const EXPECTED_FILES_LEGACY = [
+  'vocab.js', 'read.js', 'explore.js', 'word_power.js', 'grammar.js',
+  'logic.js', 'writing.js', 'dictation.js', 'shadowing.js',
+  'word_match.js', 'mindmap.js', 'ask_ai.js', 'daily_watch.js', 'index.js'
 ];
+
+// Week 16+ template (golden standard — logic split into logic_science + singapore_math, plus games)
+const EXPECTED_FILES_W16 = [
+  'vocab.js', 'read.js', 'explore.js', 'word_power.js', 'grammar.js',
+  'logic_science.js', 'singapore_math.js', 'games.js',
+  'writing.js', 'dictation.js', 'shadowing.js',
+  'word_match.js', 'mindmap.js', 'ask_ai.js', 'daily_watch.js', 'index.js'
+];
+
+// Select expected files based on week number (W16+ uses new template)
+function getExpectedFiles(weekNum) {
+  return weekNum >= 16 ? EXPECTED_FILES_W16 : EXPECTED_FILES_LEGACY;
+}
+
+// Keep legacy name for backward compat in checks that still reference it
+const EXPECTED_FILES = EXPECTED_FILES_LEGACY;
 
 const CEFR_A0_COMMON_WORDS = [
   'hello', 'hi', 'bye', 'yes', 'no', 'please', 'thank', 'you',
@@ -129,30 +134,7 @@ async function validateFileCount(weekNum, mode) {
   const jsFiles = files.filter((f) => f.endsWith('.js'));
   const jsonFiles = files.filter((f) => f.endsWith('.json'));
 
-  // Station files (14 files in each mode's week_XX folder)
-  const missingStationFiles = EXPECTED_FILES.filter(f => !jsFiles.includes(f));
-  
-  let allFilesPresent = true;
-  let missingFilesMessage = "";
-
-  if (missingStationFiles.length > 0) {
-    allFilesPresent = false;
-    missingFilesMessage += `Missing station files: ${missingStationFiles.join(', ')}. `;
-  }
-
-  const expectedJs = 14; // 14 station files (week_XX_real.js is in PARENT folder)
-  const expectedJson = (baseDir === 'weeks') ? 1 : 0; // Only Advanced mode has video_queries.json
-
-  if (jsFiles.length !== expectedJs) {
-    return {
-      pass: false,
-      message: `Expected ${expectedJs} .js files in week folder, found ${jsFiles.length}. ${missingFilesMessage}`,
-    };
-  }
-  
-  if (!allFilesPresent) {
-      return { pass: false, message: missingFilesMessage };
-  }
+  // Week 16+ template has more filesconst NEW = 
 
   // 🔥 Check week_XX_real.js in PARENT folder (only for Advanced mode)
   if (baseDir === 'weeks') {

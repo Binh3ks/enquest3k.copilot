@@ -57,6 +57,8 @@ const STATION_VOICE_KEY = {
   'word_power': 'vocabulary',
   'ask_ai': 'questions',
   'logic_lab': 'questions',
+  'singapore_math': 'questions',  // BUG-21 FIX: W16+ sub-station (bar model problems)
+  'social_quiz': 'questions',    // BUG-21 FIX: W16+ sub-station (geography/history MCQ)
   'mindmap_speaking': 'mindmap',
   'ai_tutor': null,  // Dynamic content, uses saved voice preference
   'gamehub': 'questions',
@@ -163,7 +165,7 @@ function getAudioCtx() {
 const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 // Static stations that can use CDN (pre-generated content)
-const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai', 'mindmap_speaking'];
+const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai', 'mindmap_speaking', 'logic_lab', 'singapore_math', 'social_quiz'];
 
 // Dynamic stations that need live generation (AI Tutor, Gamehub)
 const DYNAMIC_STATIONS = ['ai_tutor', 'gamehub', 'freetalk', 'ai_story'];
