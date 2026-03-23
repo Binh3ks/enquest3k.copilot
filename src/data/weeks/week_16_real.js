@@ -1,11 +1,109 @@
 const week16RealData = {
   weekId: 16,
+  week_number: 16,
   title: "Sports Commentary",
   weekTitle_en: "Sports Commentary",
   weekTitle_vi: "Bình luận Thể thao",
+  topic: "Describing sports actions happening right now",
+  topic_vi: "Mô tả các hành động thể thao đang diễn ra",
+  theme: "Sports actions and Present Continuous commentary",
+
   grammar_focus: "Present Continuous (is/are + verb-ing)",
+  grammar_pattern: "Subject + am/is/are + verb-ing + (object)",
+  grammar_examples: [
+    "I am running very fast.",
+    "My friend is kicking the ball.",
+    "The team is playing well together.",
+    "They are cheering loudly.",
+    "What are you doing right now?"
+  ],
+
+  // === TARGET VOCABULARY (13 SPORTS WORDS) ===
+  target_vocab: [
+    { word: "kick",   pronunciation: "/kɪk/",      definition_vi: "đá",         definition_en: "to hit something with your foot",              example: "I am kicking the ball into the goal!",          syllabus_context: "Sports actions" },
+    { word: "throw",  pronunciation: "/θroʊ/",     definition_vi: "ném",        definition_en: "to send something through the air",            example: "She is throwing the ball to her teammate.",     syllabus_context: "Sports actions" },
+    { word: "catch",  pronunciation: "/kætʃ/",     definition_vi: "bắt",        definition_en: "to stop and hold something moving",            example: "He is catching the ball with his hands.",       syllabus_context: "Sports actions" },
+    { word: "run",    pronunciation: "/rʌn/",      definition_vi: "chạy",       definition_en: "to move fast on your feet",                    example: "The players are running across the field.",     syllabus_context: "Sports actions" },
+    { word: "jump",   pronunciation: "/dʒʌmp/",    definition_vi: "nhảy",       definition_en: "to push yourself up into the air",             example: "She is jumping to catch the ball.",             syllabus_context: "Sports actions" },
+    { word: "score",  pronunciation: "/skɔːr/",    definition_vi: "ghi bàn",    definition_en: "to get a point in a game",                     example: "Our team is scoring a goal!",                   syllabus_context: "Sports outcomes" },
+    { word: "hit",    pronunciation: "/hɪt/",      definition_vi: "đập/đánh",   definition_en: "to touch something with force",                example: "He is hitting the ball over the net.",          syllabus_context: "Sports actions" },
+    { word: "pass",   pronunciation: "/pæs/",      definition_vi: "chuyền",     definition_en: "to give the ball to another player",           example: "I am passing the ball to my friend.",           syllabus_context: "Teamwork actions" },
+    { word: "cheer",  pronunciation: "/tʃɪr/",     definition_vi: "cổ vũ",      definition_en: "to shout happily to support someone",          example: "Everyone is cheering for our team!",            syllabus_context: "Spectator actions" },
+    { word: "goal",   pronunciation: "/ɡoʊl/",     definition_vi: "bàn thắng",  definition_en: "the point you score in soccer",                example: "They are celebrating the goal!",                syllabus_context: "Sports outcomes" },
+    { word: "energy", pronunciation: "/ˈɛnərdʒi/", definition_vi: "năng lượng", definition_en: "the power or strength to do things",           example: "The players have so much energy today!",        syllabus_context: "Physical state" },
+    { word: "motion", pronunciation: "/ˈmoʊʃən/",  definition_vi: "chuyển động", definition_en: "the act of moving",                           example: "The ball is in motion through the air.",         syllabus_context: "Physics / actions" },
+    { word: "team",   pronunciation: "/tiːm/",     definition_vi: "đội",        definition_en: "a group who work or play together",            example: "Our team is playing very well.",                 syllabus_context: "Group activities" }
+  ],
+
   global_vocab: ["kick", "throw", "catch", "run", "jump", "score", "hit", "pass", "cheer", "goal", "energy", "motion", "team"],
-  
+
+  // === AI TUTOR BEHAVIOR (week-level tuning) ===
+  nova_instructions: {
+    persona: "Energetic sports coach and commentator, enthusiastic and encouraging",
+    tone: "Active, upbeat, loves describing sports in real time",
+    opening_lines_by_mission: {
+      mission_1: "Hi! I am Coach Alex! Welcome to sports practice! It is very exciting here! Look! What are you doing right now? Say: I am...",
+      mission_2: "Welcome back! You are now a sports commentator! The game is starting! Tell me what you see! What are the players doing? Say: They are...",
+      mission_3: "Amazing! The team is full of energy today! So much is happening! What is the team doing right now? Say: The team is..."
+    },
+    conversation_style: [
+      "Active and energetic - like watching a live game together",
+      "One clear question per turn",
+      "Model Present Continuous in every response",
+      "NO emojis - text-to-speech will read them aloud",
+      "Keep responses under 30 words",
+      "Maintain conversation for minimum 10-12 turns per mission",
+      "ONLY use Present Continuous: 'S + am/is/are + V-ing' - Week 16 grammar scope"
+    ],
+    recast_strategy: "ALWAYS recast student errors by modeling correct Present Continuous form naturally",
+    recast_example: {
+      student: "I kick ball.",
+      nova_recast: "Yes! You ARE KICKING the ball! Say: I am kicking! What else are you doing?"
+    },
+    vocabulary_scaffolding: [
+      "Mission 1: kick, run, jump, throw, catch — personal sports actions",
+      "Mission 2: kick, pass, goal, score, cheer — game commentary",
+      "Mission 3: team, energy, motion, run, jump — describing team actions"
+    ],
+    questioning_skill: [
+      "What are you doing right now?",
+      "What is your friend doing?",
+      "What are the players doing?",
+      "Is the ball in motion?",
+      "Who is scoring the goal?"
+    ]
+  },
+
+  // === AI RESPONSE FORMAT CONTRACT (V28 standard) ===
+  v28_format_notes: {
+    response_format: "ack + recast + question (V28 ONLY - NOT V25)",
+    ack_options: ["Nice!", "Great!", "Wonderful!", "Good job!", "Perfect!"],
+    recast_max_words: 8,
+    recast_rules: [
+      "Mirror the student's key verb back in Present Continuous form",
+      "Fix grammar naturally without explanation",
+      "Keep it conversational and encouraging"
+    ],
+    question_patterns_allowed: [
+      "What is...?",
+      "What are...?",
+      "Is...?",
+      "Are...?",
+      "Who is...?"
+    ],
+    question_patterns_forbidden: [
+      "Why...?",
+      "What does... mean?",
+      "Do you understand?"
+    ],
+    example_exchanges: [
+      { student: "I kick ball.", tutor_response: "Great! You ARE KICKING the ball! Say: I am kicking the ball. What is your friend doing?" },
+      { student: "They run.", tutor_response: "Nice! They ARE RUNNING! Say: They are running fast. What else are they doing?" },
+      { student: "Score goal.", tutor_response: "Wonderful! The team IS SCORING a goal! Say: The team is scoring! Are they cheering?" }
+    ]
+  },
+
+  // === 3 STORY MISSIONS ===
   story_missions: [
     {
       mission_id: 1,
@@ -283,7 +381,55 @@ const week16RealData = {
     "Practice speaking fluently as a sports commentator",
     "Build confidence in describing ongoing actions"
   ],
-  
+
+  // === FREE TALK KNOWLEDGE BASE ===
+  freetalk_knowledge: {
+    week_title: "Sports Commentary",
+    week_number: 16,
+    theme: "Sports Actions & Present Continuous",
+
+    knowledge_base: [
+      "Sports vocabulary: kick, throw, catch, run, jump, score, hit, pass, cheer, goal, energy, motion, team",
+      "Grammar: Present Continuous — I am [verb]-ing, He/She is [verb]-ing, They are [verb]-ing",
+      "Players use kick and pass to move the ball in soccer",
+      "A goal is scored when the ball goes into the net",
+      "The crowd cheers and celebrates when their team scores",
+      "Energy is needed to run fast and play hard",
+      "A team works together — passing, running, and cheering",
+      "Motion describes movement — the ball is in motion when it flies through the air",
+      "We use Present Continuous for actions happening RIGHT NOW"
+    ],
+
+    example_opening_questions: [
+      "What sport are you playing?",
+      "What is the player doing?",
+      "Is the ball in motion?",
+      "What are the players running toward?",
+      "Who is scoring the goal?",
+      "What are the fans doing?"
+    ],
+
+    // ✅ FREE TALK 2.0: Starter prompts
+    starter_prompts: [
+      { text_en: "I want to play games! 🎮", text_vi: "Tôi muốn chơi game!", type: "game" },
+      { text_en: "Translate this for me... 📖", text_vi: "Dịch giúp con câu/chữ này...", type: "help" },
+      { text_en: "Let's do roleplay! 🎭", text_vi: "Chơi nhập vai đi cô!", type: "roleplay" },
+      { text_en: "I have a question! ❓", text_vi: "Con có câu hỏi!", type: "ask_anything" }
+    ],
+
+    // Bonus roleplay scenario
+    bonus_roleplay: {
+      id: 'week16_sports_commentator',
+      label_en: "Sports Commentator 📣",
+      label_vi: "Bình Luận Viên Thể Thao 📣",
+      icon: "📣",
+      ai_role: "Co-commentator watching the match",
+      user_role: "Child sports commentator describing the game",
+      intro: "Welcome to today's big match! The game is starting! What are the players doing? Tell me! Use: They are running / He is kicking / She is jumping!",
+      context: "Week 16 theme - Sports Commentary. AI acts as co-commentator watching a soccer game with the student. Guide asks 'What is happening now?' and student responds with Present Continuous 'He/She/They is/are [V-ing]' patterns. Guide should be enthusiastic, use sports commentary style, and keep energy high."
+    }
+  },
+
   conversation_cards: [
     {
       id: "sports_practice",
