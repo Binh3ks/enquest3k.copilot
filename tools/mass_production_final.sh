@@ -324,6 +324,20 @@ if [ $? -ne 0 ]; then
 fi
 echo ""
 
+# Step 8.5: CODE QUALITY GATE — checks React components + service files
+# (data validators above only check .js data files, not JSX/service code)
+echo -e "${YELLOW}[8.5/9] 🛡️  Code Quality Gate — code pattern checks...${NC}"
+echo ""
+bash tools/code_quality_gate.sh $WEEK
+GATE_EXIT=$?
+if [ $GATE_EXIT -ne 0 ]; then
+  echo ""
+  echo -e "${RED}❌ CODE QUALITY GATE FAILED. Fix errors above before committing.${NC}"
+  echo -e "${YELLOW}   Reference: LESSONS_LEARNED_WEEK_9-11_FOR_W12.md (BUG-18/19/20)${NC}"
+  exit 1
+fi
+echo ""
+
 # Step 9: Report & cleanup
 echo -e "${YELLOW}[9/9] 📊 Final report${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

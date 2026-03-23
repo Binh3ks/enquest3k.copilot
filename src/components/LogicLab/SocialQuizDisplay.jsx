@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Globe, CheckCircle, XCircle, Award, Volume2 } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { getImageUrl } from '../../utils/imageUrl';
 
 /**
  * SocialQuizDisplay - Geography & History MCQ (7 Questions)
@@ -163,7 +164,7 @@ const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress }) => {
         {/* Question Image */}
         {question.image_url && (
           <img 
-            src={question.image_url} 
+            src={getImageUrl(question.image_url)} 
             alt="Question visual" 
             className="w-full max-w-md mx-auto rounded-lg shadow-md"
           />

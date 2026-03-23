@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BookOpen, Microscope, Globe, Volume2 } from 'lucide-react';
+import { getImageUrl } from '../../utils/imageUrl';
 
 /**
  * TabbedReadExplore - Dual Tab Component for W35+ Structure
@@ -131,7 +132,7 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
             {/* Featured Image */}
             {currentContent.image_url && (
               <img 
-                src={currentContent.image_url} 
+                src={getImageUrl(currentContent.image_url)} 
                 alt={currentContent.title_en}
                 className="w-full rounded-xl shadow-lg"
               />

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Lightbulb, CheckCircle, Award, Volume2 } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { getImageUrl } from '../../utils/imageUrl';
 
 /**
  * LogicScienceDisplay - Critical Thinking Questions (3 Questions)
@@ -160,7 +161,7 @@ const LogicScienceDisplay = ({ weekNumber, questions = [], onProgress }) => {
         {/* Image if available */}
         {question.image_url && (
           <img 
-            src={question.image_url} 
+            src={getImageUrl(question.image_url)} 
             alt="Question context" 
             className="w-full max-w-md mx-auto rounded-lg shadow-md"
           />
