@@ -427,7 +427,7 @@ else
     [ ! -f "$mode_dir" ] && continue
     LABEL=$([ "$mode_dir" = "$IDX_ADV" ] && echo "Advanced" || echo "Easy")
     MISS_V=""
-    for key in narration vocabulary dictation questions mindmap; do
+    for key in narration vocabulary dictation shadowing questions mindmap; do
       grep -q "${key}:" "$mode_dir" || MISS_V="$MISS_V $key"
     done
     if [ -n "$MISS_V" ]; then
