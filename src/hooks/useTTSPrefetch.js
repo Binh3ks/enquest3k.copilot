@@ -99,7 +99,7 @@ export function useTTSPrefetch(station = 'read', weekNumber = null) {
         voice: voice
       }))
       .filter(obj => obj.text)
-      .slice(0, 6); // Limit to first 6 items to avoid HF server overload
+      .slice(0, 12); // Limit to first 12 items (doubled from 6)
     
     if (itemObjects.length > 0) {
       return prefetchMultiple(itemObjects, 1000); // 1s delay to protect HF FREE tier
