@@ -1,5 +1,5 @@
 // ✅ EXTRACTED FROM read.js - My First Soccer Game (100% extraction per Mass Production rules)
-// 🔧 audio_url removed — TTS generates on-demand with correct voiceConfig (Neural2-C → aura-luna-en)
+// 🔧 audio_url removed — TTS generates on-demand with voiceConfig (Neural2-F → aura-asteria-en)
 export default {
   title: "My First Soccer Game",
   script: [

@@ -26,8 +26,8 @@ const weekData = {
   voiceConfig: {
     narration: 'en-US-Neural2-H',  // → aura-stella-en (Female, bright, clear)
     vocabulary: 'en-US-Neural2-F',
-    dictation: 'en-US-Neural2-C',  // → aura-luna-en (Female, soft, warm)
-    shadowing: 'en-US-Neural2-C',  // → aura-luna-en (Female, soft, warm - MUST MATCH dictation)
+    dictation: 'en-US-Neural2-F',  // → aura-asteria-en (natural, expressive - matches advanced)
+    shadowing: 'en-US-Neural2-F',  // → aura-asteria-en (natural, expressive - matches advanced)
     questions: 'en-US-Neural2-J',  // → aura-zeus-en (Male, energetic, clear)
     mindmap: 'en-US-Neural2-J',    // → aura-zeus-en (Male, energetic, clear)
     logic_science: 'en-US-Neural2-J'  // → aura-zeus-en (Male, energetic, clear)
