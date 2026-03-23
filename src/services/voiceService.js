@@ -136,7 +136,7 @@ function isServerWarm() {
 
 // Weeks that have pre-generated Deepgram files on R2 CDN
 // Week 1-7: originally Kokoro (legacy), Week 8+: all Deepgram Aura-2
-// Week 16+: Auto-cached from on-demand generation (Worker + R2)
+// IndexedDB uses text hash for cache key - auto-detects content changes
 const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 // Static stations that can use CDN (pre-generated content)
