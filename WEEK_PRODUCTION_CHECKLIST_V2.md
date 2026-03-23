@@ -1,5 +1,5 @@
 # ✅ WEEK PRODUCTION CHECKLIST V2.0
-*Updated Jan 26, 2026 - Based on Week 7 lessons learned*
+*Updated Jan 26, 2026 - Based on Week 7 lessons learned | Updated March 23, 2026 - Added Week 16 bugs (BUG-18/19/20)*
 
 ---
 
@@ -2228,6 +2228,18 @@ npm run dev
 5. **Run validation scripts before manual testing**
    - `node tools/validate_week.js [N]` catches file count issues
    - `node tools/check_urls.js [N]` catches missing URLs
+
+6. **Wrap ALL image `src` with `getImageUrl()` (BUG-18 — March 2026)**
+   - Kết nối: `import { getImageUrl } from '../../utils/imageUrl'`
+   - Mọi `<img src={...}>` từ data file MUST dùng `src={getImageUrl(item.path)}`
+   - `src={item.path}` trực tiếp → 404 production vì images nằm trên R2 CDN
+   - Kiểm tra: grep `src={[^g]` trong JSX component mới → phải = 0 results
+
+7. **Dùng đúng station name khi gọi `speakText()` (BUG-19 — March 2026)**
+   - MindMap: `station='mindmap_speaking'` (KHÔNG phải `'read'`)
+   - Đối chiếu với `STATION_VOICE_KEY` trong `src/services/voiceService.js`
+   - Station sai → sai giọng, không dùng R2 CDN, fallback browser TTS
+   - Lưu ý khi copy-paste `speakText()` call từ component khác: kiểm tra lại station string
 
 ---
 

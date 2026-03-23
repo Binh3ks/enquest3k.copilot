@@ -556,5 +556,152 @@ git push
 
 ---
 
+## 🟠 BUGS PHÁT HIỆN TRONG WEEK 16 (March 23, 2026)
+
+### **BUG-18: Bar Model Images Không Hiện — Thiếu `getImageUrl()`**
+
+**Context:** Singapore Math sub-tab (Logic Lab) hiển thị "[Bar model image will be generated]" thay vì ảnh thực tế.
+
+**What Went Wrong:**
+```jsx
+// src/components/LogicLab/SingaporeMathDisplay.jsx
+// ❌ SAI — dùng raw relative path:
+<img src={problem.bar_model} />
+// problem.bar_model = "/images/week16_easy/barmodel_w16_p1.jpg"
+// → 404 trong production (images nằm trên R2 CDN, KHÔNG phải static)
+
+// ✅ ĐÚNG:
+import { getImageUrl } from '../../utils/imageUrl';
+<img src={getImageUrl(problem.bar_model)} />
+// → https://pub-xxxx.r2.dev/images/week16_easy/barmodel_w16_p1.jpg ✅
+```
+
+**Root Cause:** `SingaporeMathDisplay.jsx` là component mới, khi viết không thêm `getImageUrl()` wrapper. `onError` handler ẩn `<img>` và hiện fallback text.
+
+**Fix:** Commit `d9e1ea5`
+```jsx
+import { getImageUrl } from '../../utils/imageUrl';
+// ...
+src={getImageUrl(problem.bar_model)}
+```
+
+**PREVENTION CHO TẤT CẢ CÁC TUẦN TIẾP THEO:**
+```markdown
+🔴 **QUY TẮC BẮT BUỘC — IMAGES TRONG PRODUCTION:**
+
+BẤT KỲ component nào render <img> từ data file PHẢI dùng getImageUrl():
+  import { getImageUrl } from '../../utils/imageUrl';
+  <img src={getImageUrl(item.image_path)} />
+
+Không bao giờ dùng:
+  <img src={item.image_path} />  // ❌ → 404 trong production
+  <img src={`/images/...`} />    // ❌ → 404 trong production
+
+File util: src/utils/imageUrl.js
+→ nếu VITE_IMAGES_CDN_URL set → prepend R2 CDN URL
+→ nếu không → dùng relative path (dev only)
+
+KHI TẠO COMPONENT MỚI: tìm bất kỳ <img> nào có src từ data → wrap với getImageUrl()
+```
+
+---
+
+### **BUG-19: MindMap TTS Dùng Sai Station Name → Sai Voice**
+
+**Context:** MindMap Speaking station gọi TTS với `station='read'` thay vì `station='mindmap_speaking'`.
+
+**What Went Wrong:**
+```jsx
+// src/modules/production/MindMapSpeaking.jsx
+// ❌ SAI — hardcoded 'read':
+speakText(s.text, s.audioUrl, 1.0, null, 'read', parseInt(weekId), 'advanced', true);
+// → voiceService dùng STATION_VOICE_KEY['read'] = 'narration' voice
+// → Dùng giọng narration (aura-stella-en) thay vì mindmap (aura-helios-en)
+// → mindmap KHÔNG phải STATIC_STATIONS → không thử R2 CDN → fallback to browser TTS
+
+// ✅ ĐÚNG:
+speakText(s.text, s.audioUrl, 1.0, null, 'mindmap_speaking', parseInt(weekId), 'advanced', true);
+```
+
+**Root Cause:** Developer copy-paste từ station khác và quên đổi tên station.
+
+**Fix:** Commit `d9e1ea5`
+- `MindMapSpeaking.jsx`: 3 chỗ gọi `speakText` đổi `'read'` → `'mindmap_speaking'`
+- `voiceService.js`: thêm `'mindmap_speaking'` vào `STATIC_STATIONS` array
+
+**PREVENTION:**
+```markdown
+🔴 **STATION NAME MAPPING — PHẢI ĐÚNG:**
+
+File: src/services/voiceService.js → const STATION_VOICE_KEY = { ... }
+
+Station strings hợp lệ:
+  'read'              → narration voice
+  'read_explore'      → narration voice
+  'new_word'          → vocabulary voice
+  'dictation'         → dictation voice
+  'shadowing'         → shadowing voice
+  'explore'           → narration voice
+  'word_power'        → vocabulary voice
+  'ask_ai'            → questions voice
+  'logic_lab'         → questions voice
+  'mindmap_speaking'  → mindmap voice  ← KHI VIẾT MINDMAP COMPONENT
+  'ai_tutor'          → dynamic (null)
+  'gamehub'           → questions voice
+  'freetalk'          → dynamic (null)
+
+KHI TẠO COMPONENT MỚI: đối chiếu station name vs STATION_VOICE_KEY map
+KHI COPY-PASTE CODE: luôn kiểm tra lại station string argument
+```
+
+---
+
+### **BUG-20: Giọng Nam TTS Nhỏ Hơn Giọng Nữ**
+
+**Context:** MindMap dùng `aura-helios-en` (giọng nam) — user thấy nhỏ hơn dictation/shadowing dùng `aura-asteria-en` (giọng nữ).
+
+**Root Cause:**
+- HTML5 `audio.volume` bị giới hạn tối đa 1.0 — không thể boost vượt qua đó
+- Giọng nam có nhiều âm tần thấp (bass) hơn → perceived loudness thấp hơn ở cùng RMS (Fletcher-Munson equal-loudness effect)
+- `aura-helios-en`, `aura-zeus-en`, `aura-orion-en` đều bị ảnh hưởng
+
+**Fix:** Commit `1e6ffcc` — Web Audio API GainNode (cho phép gain > 1.0)
+```javascript
+// src/services/voiceService.js
+const VOICE_GAIN_BOOST = {
+  'aura-helios-en': 1.45,  // +45% gain
+  'aura-zeus-en':   1.40,  // +40% gain
+  'aura-orion-en':  1.45,  // +45% gain
+  // Giọng nữ (asteria, stella, luna): không cần boost (1.0)
+};
+// Applied via GainNode in playAudio() — shared AudioContext
+```
+
+**PREVENTION:**
+```markdown
+ℹ️ **ĐÃ FIX TỰ ĐỘNG** — Không cần action cho các tuần tiếp theo.
+
+Fix hiện tại trong voiceService.js:
+- VOICE_GAIN_BOOST table tự động áp dụng gain khi detect giọng nam
+- Hoạt động với TẤT CẢ stations dùng aura-helios-en/zeus-en/orion-en
+
+Nếu thêm voice mới trong tương lai và nghe nhỏ:
+1. Kiểm tra voice name trong GOOGLE_TO_DEEPGRAM_VOICE map
+2. Thêm vào VOICE_GAIN_BOOST nếu là giọng nam/trầm
+3. Test với các stations khác để so sánh volume
+```
+
+---
+
+## 📋 CHI TIẾT CẬP NHẬT WORKFLOW (March 23, 2026)
+
+Ba files đã được cập nhật trong commit `d9e1ea5` và `1e6ffcc`:
+
+1. **`src/components/LogicLab/SingaporeMathDisplay.jsx`** — thêm `getImageUrl()` cho bar model
+2. **`src/modules/production/MindMapSpeaking.jsx`** — sửa station `'read'` → `'mindmap_speaking'` (3 chỗ)
+3. **`src/services/voiceService.js`** — thêm `mindmap_speaking` vào `STATIC_STATIONS`, thêm `VOICE_GAIN_BOOST` + `getAudioCtx()` + GainNode trong `playAudio()`
+
+---
+
 **END OF LESSONS LEARNED**  
 **Ready for Week 12 Production: GO! 🚀**

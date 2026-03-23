@@ -1,5 +1,5 @@
-# MASS PRODUCTION CONTEXT - UPDATED MARCH 13, 2026
-**Version**: 2.2 (Post Repository Cleanup)  
+# MASS PRODUCTION CONTEXT - UPDATED MARCH 23, 2026
+**Version**: 2.3 (Post Week 16 Bugs — Image CDN + TTS Voice + Volume)  
 **Status**: Production Ready with Complete Asset Generation + Git Hygiene
 
 ---
@@ -394,11 +394,21 @@ node tools/generate_images_nano.js <week_num> [mode]
 - [ ] No mixed `weekX` vs `week_XX` references
 - [ ] Audio refs match generated locations
 
+**Image CDN (BUG-18 prevention)**:
+- [ ] Tất cả `<img>` trong components MỚI đều dùng `getImageUrl()` wrapper
+- [ ] Không có `src={item.path}` hay `src={\`/images/...\`}` raw trong JSX
+
+**TTS Station Names (BUG-19 prevention)**:
+- [ ] MindMap component dùng `station='mindmap_speaking'` (KHÔNG phải `'read'`)
+- [ ] Component mới đối chiếu station name vs `STATION_VOICE_KEY` trong voiceService.js
+- [ ] `mindmap_speaking` có trong `STATIC_STATIONS` array
+
 **Functional**:
 - [ ] Week loads in UI without errors
 - [ ] All stations accessible
 - [ ] Audio plays correctly
-- [ ] Images display correctly
+- [ ] Images display correctly (KHÔNG thấy "[image will be generated]" placeholder)
+- [ ] MindMap audio nghe to ngang với dictation/shadowing
 - [ ] Easy mode toggle works
 
 ---
@@ -528,6 +538,66 @@ node tools/generate_complete_audio.js <week> easy
 3. 📌 Fix Easy mode image generator
 4. 📌 Add progress bar for audio generation
 5. 📌 Create asset diff tool (compare vs Week 4)
+
+---
+
+## 🟠 BUGS PHÁT HIỆN WEEK 16 — March 23, 2026
+
+> Xem chi tiết đầy đủ: [LESSONS_LEARNED_WEEK_9-11_FOR_W12.md](LESSONS_LEARNED_WEEK_9-11_FOR_W12.md) (BUG-18/19/20)
+
+### BUG-18: Bar Model Images 404 — Thiếu `getImageUrl()`
+
+**Symptom:** Singapore Math sub-tab hiển thị "[Bar model image will be generated]" thay vì ảnh.
+
+**Root Cause:** `SingaporeMathDisplay.jsx` dùng `src={problem.bar_model}` (raw path) thay vì `src={getImageUrl(problem.bar_model)}`. Trong production, images nằm trên R2 CDN → relative path → 404.
+
+**Fix:** `import { getImageUrl } from '../../utils/imageUrl'` + wrap tất cả `src` từ data.
+
+**🔴 RULE MỚI — BẮT BUỘC cho tất cả components:**
+```jsx
+// ❌ KHÔNG BAO GIỜ làm thế này:
+<img src={item.image_path} />
+<img src={`/images/week16/...`} />
+
+// ✅ LUÔN LUÔN dùng:
+import { getImageUrl } from '../../utils/imageUrl';
+<img src={getImageUrl(item.image_path)} />
+```
+
+---
+
+### BUG-19: MindMap TTS Dùng Sai Station String
+
+**Symptom:** MindMap audio dùng sai giọng (narration thay vì mindmap), không load từ R2 CDN.
+
+**Root Cause:** `MindMapSpeaking.jsx` hardcoded `station='read'` (copy-paste từ component khác). Đúng phải là `'mindmap_speaking'`.
+
+**Fix:** Đổi tất cả 3 chỗ gọi `speakText()` trong MindMapSpeaking.jsx + thêm `'mindmap_speaking'` vào `STATIC_STATIONS` array.
+
+**🔴 STATION NAME MAP — Tham khảo khi viết component mới:**
+```
+'read'             → narration voice
+'dictation'        → dictation voice  
+'shadowing'        → shadowing voice
+'mindmap_speaking' → mindmap voice ← ĐÚNG cho MindMap
+'word_power'       → vocabulary voice
+'ask_ai'           → questions voice
+'logic_lab'        → questions voice
+```
+
+---
+
+### BUG-20: Giọng Nam TTS Nhỏ Hơn Giọng Nữ
+
+**Symptom:** `aura-helios-en` (mindmap), `aura-zeus-en` (questions) nghe nhỏ hơn `aura-asteria-en` (dictation/shadowing).
+
+**Root Cause:** Giọng nam có nhiều âm bass → perceived loudness thấp hơn (Fletcher-Munson effect). HTML5 `audio.volume` không thể > 1.0.
+
+**Fix:** Web Audio API GainNode trong `playAudio()`:  
+- `VOICE_GAIN_BOOST`: helios/orion = 1.45x, zeus = 1.40x  
+- Tự động áp dụng cho tất cả stations dùng giọng nam
+
+**ℹ️ Đã fix trong voiceService.js — không cần action thêm.**
 
 ---
 
