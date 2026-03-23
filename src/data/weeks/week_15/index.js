@@ -23,8 +23,8 @@ const weekData = {
   voiceConfig: {
     narration: 'en-US-Neural2-D',   // aura-orion-en (CLEAR: deep, authoritative male - excellent clarity)
     vocabulary: 'en-US-Neural2-F',  // aura-asteria-en (female, natural & expressive)
-    dictation: 'en-US-Neural2-C',   // aura-luna-en (female, soft & warm for listening)
-    shadowing: 'en-US-Neural2-C',   // aura-luna-en (CHANGED: consistent with dictation)
+    dictation: 'en-US-Neural2-F',   // aura-asteria-en (natural, expressive)
+    shadowing: 'en-US-Neural2-F',   // aura-asteria-en (natural, expressive)
     questions: 'en-US-Neural2-J',   // aura-zeus-en (male, energetic for questions - Ask AI/Logic Lab)
     mindmap: 'en-US-Neural2-F'      // aura-asteria-en (female, natural)
   },
