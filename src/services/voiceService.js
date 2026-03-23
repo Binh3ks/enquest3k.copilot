@@ -143,7 +143,7 @@ function isServerWarm() {
 const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 // Static stations that can use CDN (pre-generated content)
-const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai'];
+const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai', 'mindmap_speaking'];
 
 // Dynamic stations that need live generation (AI Tutor, Gamehub)
 const DYNAMIC_STATIONS = ['ai_tutor', 'gamehub', 'freetalk', 'ai_story'];

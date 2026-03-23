@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Calculator, CheckCircle, XCircle, Lightbulb, Volume2, Award } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { getImageUrl } from '../../utils/imageUrl';
 
 /**
  * SingaporeMathDisplay - Bar Model Word Problems (5 Questions)
@@ -203,7 +204,7 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress }) => {
           <div className="bg-blue-50 rounded-lg p-4">
             <p className="text-sm text-blue-800 font-semibold mb-2">Bar Model:</p>
             <img 
-              src={problem.bar_model} 
+              src={getImageUrl(problem.bar_model)} 
               alt="Bar Model Diagram" 
               className="w-full max-w-md mx-auto"
               onError={(e) => {
