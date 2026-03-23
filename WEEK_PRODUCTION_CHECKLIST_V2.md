@@ -5,6 +5,38 @@
 
 ## 📋 PRE-PRODUCTION (5 phút)
 
+### ✅ STEM Integration Detection (NEW - Mar 2026)
+⚠️ **CRITICAL DECISION POINT: Is this Week 16 or later?**
+
+```bash
+# Check week number
+WEEK_NUM=[N]  # Replace [N] with actual week number
+
+if [ $WEEK_NUM -ge 16 ]; then
+  echo "🧬 STEM INTEGRATION REQUIRED - Apply W16+ strategy"
+  echo "📖 Read: STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md"
+  STEM_MODE=true
+else
+  echo "📝 LANGUAGE FOUNDATION ONLY - No STEM reasoning"
+  STEM_MODE=false
+fi
+```
+
+- [ ] **IF WEEK_NUM >= 16:**
+  - [ ] 📖 **Read reference doc**: `STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md` 
+  - [ ] 🧬 **Select STEM topic**: Choose 1 Science topic (Physics/Biology/Ecology) aligned with week theme
+  - [ ] 🔬 **Research science content**: Consult SGK VN / Singapore textbooks / Khan Academy
+  - [ ] ✅ **Verify science accuracy**: Cross-check facts with 2+ reliable sources
+  - [ ] 📐 **Plan Singapore Math**: Choose 1-2 math problem types (Part-Whole, Comparison, etc.)
+  - [ ] 🎯 **Plan dual-mode** differentiation: How will Easy vs Advanced differ?
+    - Vocabulary tier (everyday vs academic)
+    - Reasoning depth (1-step vs multi-step)
+    - Visual support (heavy vs minimal)
+
+- [ ] **IF WEEK_NUM < 16:**
+  - [ ] Proceed with pure language content (existing workflow)
+  - [ ] Math/Science vocab only (e.g., "Circle = hình tròn", NO word problems yet)
+
 ### ✅ Input Requirements
 - [ ] **Syllabus data** collected for Week [N]:
   - [ ] Week title (EN + VI)
@@ -461,7 +493,7 @@ export default {
 
 ---
 
-### ✅ 3.3 read.js (Both modes)
+### ✅ 3.3 read.js (Both modes) - 🆕 STEM INTEGRATION (W16+)
 
 **Path**: `src/data/weeks/week_[N]/read.js` + `src/data/weeks_easy/week_[N]/read.js`
 
@@ -493,18 +525,151 @@ export default {
 };
 ```
 
-**Checklist:**
-- [ ] story_en has 12-15 sentences
+**Standard Checklist (ALL weeks):**
+- [ ] story_en has 12-15 sentences (Easy: 6-8, Advanced: 10-15)
 - [ ] Uses ALL 10 target vocab words
-- [ ] Uses week's grammar pattern ONLY
+- [ ] Uses week's grammar pattern ONLY (no past tense in present simple week!)
 - [ ] sentences array matches story (same count)
 - [ ] questions array has 5 comprehension questions
 - [ ] image_url points to cover image
 - [ ] audio_url points to narration audio
 
+**📌 IF WEEK < 16:**
+- [ ] Content: Personal stories (family, hobbies, daily life, school events)
+- [ ] Context: Concrete, relatable situations
+- [ ] Example topics: "My Weekend", "At the Park", "My Family", "My Favorite Toy"
+
+**📌 IF WEEK >= 16: STEM Integration Required**
+
+🧬 **REFERENCE**: `STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md` Section 2A
+
+**Additional Checklist (W16+ ONLY):**
+
+**STEM Context Selection:**
+- [ ] Story incorporates STEM topic aligned with week theme
+- [ ] Science topic chosen from Phase-appropriate list:
+  - **Phase 1 (W16-54)**: Simple biology (life cycles, animal types), basic physics (magnets, gravity), ecology (food chains, habitats)
+  - **Phase 2 (W55-120)**: Applied science (ecosystems, body systems, heat transfer), history/geography
+  - **Phase 3 (W121+)**: Complex science (cells, climate change), advanced social studies
+- [ ] STEM vocabulary naturally integrated (3-5 STEM terms out of 10 total vocab)
+- [ ] Context remains age-appropriate (6-12 years old)
+
+**Science Accuracy:**
+- [ ] Facts verified with SGK VN / Singapore Science textbooks / Khan Academy
+- [ ] NO misconceptions (e.g., ❌ "Heavy things fall faster", ❌ "We only use 10% of brain")
+- [ ] Scientific terminology spelled correctly in English
+- [ ] Concepts explained simply (no university-level jargon)
+
+**Dual-Mode Differentiation (W16+):**
+| Aspect | EASY MODE | ADVANCED MODE |
+|--------|-----------|---------------|
+| **Length** | 6-8 sentences | 10-15 sentences |
+| **STEM Vocab** | Everyday science terms (plant, water, animal, magnet) | Academic terms (photosynthesis, predator, ecosystem, gravity) |
+| **Complexity** | Concrete, observable (ice melts when hot) | Abstract reasoning (states of matter change due to energy) |
+| **Grammar** | Syllabus grammar only (simple sentences) | Syllabus + complex sentences (clauses, passive) |
+| **Context** | Simple science phenomena | Advanced STEM topics (history, geography, scientific method) |
+
+**STEM Content Examples (W16+):**
+
+**Phase 1 Example (W16-54) - Biology:**
+```javascript
+// EASY MODE
+title_en: "The Butterfly's Life",
+story_en: `
+A tiny egg sits on a leaf.
+The egg cracks open. A small caterpillar comes out.
+The caterpillar is hungry. It eats and eats!
+The caterpillar grows big. Then it makes a hard shell called a cocoon.
+Inside the cocoon, something amazing happens.
+One day, a beautiful butterfly breaks out! It has colorful wings.
+The butterfly flies away to find flowers.
+`,
+// STEM vocab: egg, caterpillar, cocoon, butterfly, shell
+// Grammar: Simple present, action verbs
+// Reading level: 8 sentences, concrete
+
+// ADVANCED MODE
+title_en: "Metamorphosis: The Butterfly's Transformation",
+story_en: `
+A butterfly undergoes complete metamorphosis during its life cycle.
+First, the female butterfly lays a tiny egg on a host plant.
+After a few days, a larva (also called a caterpillar) hatches from the egg.
+The hungry larva consumes leaves to store energy for its transformation.
+Once the larva reaches full size, it forms a protective casing called a chrysalis or pupa.
+Inside the chrysalis, the caterpillar's body breaks down and reorganizes.
+Specialized cells create the adult butterfly's wings, antennae, and legs.
+After 10-14 days, an adult butterfly emerges from the chrysalis.
+The butterfly pumps fluid into its wings and waits for them to harden.
+Finally, the butterfly begins its adult life, searching for nectar and a mate.
+`,
+// STEM vocab: metamorphosis, larva, hatches, chrysalis, pupa, emerges, transformation
+// Grammar: Present simple for facts, passive voice, complex sentences
+// Reading level: 12 sentences, abstract concepts
+```
+
+**Phase 2 Example (W55-120) - Ecology:**
+```javascript
+// ADVANCED MODE
+title_en: "The Food Web Mystery",
+story_en: `
+In the grassland ecosystem, many organisms depend on each other for survival.
+Grass uses sunlight to make its own food through photosynthesis.
+Rabbits eat the grass and gain energy from it.
+Foxes hunt rabbits as their main food source.
+Hawks also prey on rabbits from the sky.
+One year, hunters removed all the foxes from the area.
+The rabbit population increased rapidly because they had fewer predators.
+Soon, the rabbits ate too much grass.
+Many plants disappeared, and the soil eroded.
+The ecosystem became unbalanced, and even the rabbits began to suffer from lack of food.
+This shows why every organism in a food web is important.
+`,
+// STEM vocab: ecosystem, photosynthesis, prey, predator, population, eroded, food web
+// Science concept: Food web balance, ecological consequences
+// Reading level: 12 sentences, cause-effect reasoning
+```
+
+**Phase 3 Example (W121+) - History + Engineering:**
+```javascript
+// ADVANCED MODE
+title_en: "The Engineering Marvel of Ancient Egypt",
+story_en: `
+The Great Pyramid of Giza was built around 2560 BCE and remains one of history's greatest engineering achievements.
+Ancient Egyptian workers constructed this massive structure using approximately 2.3 million limestone blocks.
+Each block weighed between 2 to 15 tons.
+Without modern machinery, how did they move such heavy stones?
+Archaeologists believe workers used simple machines such as ramps and levers.
+Teams of workers pulled blocks on wooden sleds lubricated with water.
+The pyramid's base covers 13 acres and was originally 146 meters tall.
+The construction employed tens of thousands of workers over 20 years.
+The pyramid aligns almost perfectly with true north, showing advanced astronomical knowledge.
+Inside, narrow passages lead to the Pharaoh's burial chamber.
+This monument demonstrates how ancient civilizations applied physics and mathematics to create enduring structures.
+`,
+// STEM vocab: engineering, archaeological, levers, ramps, astronomical, physics, mathematics, structure
+// Social Studies: Ancient Egypt, historical timeline (BCE)
+// Science: Simple machines (lever, ramp), weight measurement (tons)
+// Reading level: 13 sentences, complex vocabulary, passive voice
+```
+
+**🚫 STEM Content RED FLAGS (W16+):**
+- ❌ Science error detected (e.g., "Gravity only affects heavy objects")
+- ❌ Too advanced for age (e.g., Quantum mechanics for 6-year-olds)
+- ❌ Missing context (using "photosynthesis" without explaining)
+- ❌ Unnatural English (translated literally from Vietnamese)
+- ❌ Advanced = Easy + longer (must differ in vocab tier & reasoning depth)
+
+**✅ Pre-Publish Validation (W16+):**
+- [ ] Science facts cross-checked with 2+ reliable sources
+- [ ] STEM vocabulary appropriate for target Phase
+- [ ] Story remains engaging (not a dry textbook)
+- [ ] Grammar matches week's syllabus focus
+- [ ] Audio narration will be natural and expressive (not robotic science lecture)
+
 **⚠️ Critical:**
 - This file is the SOURCE for dictation.js and shadowing.js
 - Sentence count MUST be exact (dictation and shadowing will match)
+- STEM content should feel like a story, not a textbook chapter
 
 ---
 
@@ -813,11 +978,19 @@ export default {
 
 ---
 
-### ✅ 3.11 logic.js (Both modes)
+### ✅ 3.11 logic.js (Both modes) - 🆕 DUAL SUB-TAB STRUCTURE (W16+)
 
-**Path**: `src/data/weeks/week_[N]/logic.js` + `src/data/weeks_easy/week_[N]/logic.js`
+**Path**: 
+- `src/data/weeks/week_[N]/logic_science.js` (W16+ only - Logic & Critical Thinking)
+- `src/data/weeks/week_[N]/singapore_math.js` (W16+ only - Math Word Problems)
+- `src/data/weeks/week_[N]/logic.js` (W1-15 - Legacy format)
+- `src/data/weeks_easy/week_[N]/logic.js` (Easy Mode legacy)
 
-**Structure**:
+---
+
+#### 📌 IF WEEK < 16: Use Legacy Format (Language-focused Logic)
+
+**Structure** (legacy logic.js):
 ```javascript
 export default {
   puzzles: [
@@ -837,18 +1010,187 @@ export default {
 };
 ```
 
-**Checklist:**
+**Checklist (W1-15):**
 - [ ] Exactly 5 puzzles
-- [ ] Each puzzle has id: 1-5
-- [ ] type can be: riddle, sequence, pattern, wordplay, logic
-- [ ] Each has 4 options
-- [ ] correct is index 0-3
-- [ ] Each has explanation
+- [ ] type: riddle, sequence, pattern, wordplay, simple_vocab_logic
+- [ ] Content: Math/Science **VOCABULARY ONLY** (e.g., "Circle = ?" → "Round shape")
+- [ ] NO complex reasoning (NO "If A then B" logic, NO word problems)
+- [ ] Each has 4 options, correct index, explanation
 - [ ] Each has audio_url: `/audio/week[N]/logic_[number].mp3`
 
 ---
 
-### ✅ 3.12 ask_ai.js (Both modes)
+#### 📌 IF WEEK >= 16: Use Dual Sub-Tab Structure (STEM Integration)
+
+🧬 **REFERENCE DOC**: `STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md` Section 2C  
+📐 **BLUEPRINT**: `LOGIC_LAB_DUAL_TAB_BLUEPRINT.md` (Full specs)
+
+---
+
+##### **SUB-TAB 1: logic_science.js** (🧠 Critical Thinking)
+
+**Path**: `src/data/weeks/week_[N]/logic_science.js`
+
+**Focus**: Logical reasoning, patterns, science facts, classification - **NO ARITHMETIC WORD PROBLEMS**
+
+**Structure**:
+```javascript
+export default {
+  problems: [
+    {
+      id: 1,
+      type: "pattern", // or logic_yesno, science_fact, tool_function, classification
+      question_en: "[Question in English]",
+      question_vi: "[Question in Vietnamese]",
+      options: ["[Option A]", "[Option B]", "[Option C]", "[Option D]"],
+      correct: 0, // Index 0-3
+      answer: ["[Correct answer text]", "[Alternative format]"], // Array
+      reasoning_type: "inductive", // or deductive, factual, functional, categorical
+      explanation_en: "[Why this is the answer - reasoning process]",
+      explanation_vi: "[Explanation VI]",
+      audio_url: "/audio/week[N]/logic_science_1.mp3",
+      image_url: "/images/week[N]/logic_science_1.png" // Optional visual aid
+    },
+    // ... 4 more (TOTAL: 5 problems)
+  ]
+};
+```
+
+**Question Type Reference:**
+| Type | Description | Example | Reasoning |
+|------|-------------|---------|-----------|
+| `pattern` | Identify sequence continuation | "Past, Present, Future, ?" → "Future" | Inductive (pattern recognition) |
+| `logic_yesno` | Deductive YES/NO questions | "T-Rex eats meat. Is it vegetarian?" → "No" | Deductive (syllogism) |
+| `science_fact` | Science knowledge question | "Can plants grow without sunlight?" → "No" | Factual (domain knowledge) |
+| `tool_function` | What tool does X? | "Which tool makes things bigger?" → "Magnifying glass" | Functional (purpose identification) |
+| `classification` | Category identification | "Which is NOT a real dinosaur?" → "Dragon" | Categorical (set membership) |
+
+**Checklist (logic_science.js - W16+):**
+- [ ] Exactly 5 problems (Phase 1), 7 problems (Phase 2), 10 problems (Phase 3)
+- [ ] type chosen from: pattern, logic_yesno, science_fact, tool_function, classification
+- [ ] **NO arithmetic** (e.g., "5 + 3 = ?" belongs in singapore_math.js)
+- [ ] reasoning_type specified: inductive, deductive, factual, functional, categorical
+- [ ] STEM content aligns with week theme
+- [ ] Science facts verified (cross-check 2+ sources)
+- [ ] Dual-mode differentiation:
+  - **Easy**: Everyday vocab, concrete examples, heavy visuals
+  - **Advanced**: Academic vocab, abstract reasoning, minimal visuals
+- [ ] Each has audio_url + optional image_url
+- [ ] answer array includes multiple valid formats (e.g., ["No", "no", "No, it is not"])
+
+**Science Topic Distribution (Aim for balanced coverage):**
+- 2 Physics questions (gravity, motion, states of matter, simple machines)
+- 1 Biology question (animal classification, plant needs, life cycles)
+- 1 Ecology question (food chains, habitats)
+- 1 Logical reasoning (patterns, deduction, classification)
+
+---
+
+##### **SUB-TAB 2: singapore_math.js** (📐 Word Problems + Bar Model)
+
+**Path**: `src/data/weeks/week_[N]/singapore_math.js`
+
+**Focus**: Math word problems using Singapore Bar Model Method - **ONLY ARITHMETIC WORD PROBLEMS HERE**
+
+**Structure**:
+```javascript
+export default {
+  problems: [
+    {
+      id: 1,
+      type: "part_whole", // or comparison, missing_part, groups, before_after
+      question_en: "[Word problem in English]",
+      question_vi: "[Word problem in Vietnamese]",
+      bar_model: "/images/week[N]/singapore_math/bar_partwhole_q1.svg", // MUST have bar model diagram
+      answer: ["8 eggs", "eight eggs", "8"], // MUST include unit in first answer
+      cpa_stage: "pictorial", // concrete, pictorial, or abstract
+      math_vocab: ["total", "part", "whole", "more"], // Math vocabulary used
+      hint_en: "Think: Part 1 + Part 2 = Whole",
+      hint_vi: "Nghĩ: Phần 1 + Phần 2 = Tổng",
+      explanation_en: "[Step-by-step solution]",
+      explanation_vi: "[Explanation VI]",
+      audio_url: "/audio/week[N]/singapore_math_1.mp3"
+    },
+    // ... 4 more (TOTAL: 5 problems)
+  ]
+};
+```
+
+**Problem Type Reference:**
+| Type | Description | Example | Bar Model |
+|------|-------------|---------|-----------|
+| `part_whole` | Two parts make a whole | "5 eggs + 3 eggs = ?" | Two bars combine |
+| `comparison` | How much more/less/taller | "15m tree vs 9m tree = ?" | Two bars, compare height |
+| `missing_part` | Unknown addend | "12 buttons - 5 blue = ? red" | Whole bar with one part unknown |
+| `groups` | Multiplication as repeated addition | "3 knights × 2 swords = ?" | 3 equal-sized bars |
+| `before_after` | Timeline/change over time | "2026 - 200 years = ?" | Number line visual |
+
+**CPA Progression:**
+| Stage | Description | Difficulty |
+|-------|-------------|------------|
+| `concrete` | Physical objects (manipulatives) | Easiest - Early Phase 1 |
+| `pictorial` | Visual diagrams (bar models, pictures) | Medium - Main Phase 1 |
+| `abstract` | Symbolic math (numbers only, no pictures) | Hardest - Phase 2+ |
+
+**Checklist (singapore_math.js - W16+):**
+- [ ] Exactly 5 problems (Phase 1), 7 problems (Phase 2), 10 problems (Phase 3)
+- [ ] type chosen from: part_whole, comparison, missing_part, groups, before_after
+- [ ] **bar_model REQUIRED**: Every problem has SVG diagram path
+  - SVG templates available: `LOGIC_LAB_DUAL_TAB_BLUEPRINT.md` Section 4
+  - Create custom SVGs based on templates
+- [ ] **answer array MUST include units** in first element (e.g., "8 eggs" NOT just "8")
+- [ ] cpa_stage specified:
+  - Phase 1 (W16-54): mostly "pictorial", some "concrete"
+  - Phase 2 (W55-120): "pictorial" → transition to "abstract"
+  - Phase 3 (W121+): mostly "abstract" with occasional "pictorial" for complex problems
+- [ ] math_vocab array: 3-6 math vocabulary words used in problem
+  - Reference: `LOGIC_LAB_DUAL_TAB_BLUEPRINT.md` Section 5 (Math Vocab Library)
+  - Examples: total, part, whole, more, less, taller, difference, each, groups, left
+- [ ] hint_en uses "Think:" format (e.g., "Think: Part 1 + Part 2 = Whole")
+- [ ] Problem context aligns with week theme (e.g., W16 "Time Traveler" → dinosaur eggs, castle heights)
+- [ ] Dual-mode differentiation:
+  - **Easy**: Smaller numbers (within 20), concrete objects, clear diagrams
+  - **Advanced**: Larger numbers (within 100), abstract scenarios, complex bar models
+- [ ] Each has audio_url for question reading
+
+**Math Complexity by Phase:**
+- **Phase 1 (W16-54)**: Addition/Subtraction within 20, multiplication 2× 5× 10×
+- **Phase 2 (W55-120)**: Multi-step problems, division, fractions (1/2, 1/4)
+- **Phase 3 (W121+)**: Pre-algebra (? + 5 = 12), ratios, percentage basics
+
+---
+
+#### 📌 STEM Content Validation (W16+ ONLY)
+
+Before finalizing Logic Lab content, verify:
+
+**Science Accuracy (logic_science.js):**
+- [ ] Facts cross-checked with SGK VN / Singapore textbooks / Khan Academy
+- [ ] Age-appropriate complexity (no university-level concepts)
+- [ ] Correct scientific terminology in English
+- [ ] NO common misconceptions (e.g., "heavy objects fall faster" ❌)
+
+**Math Pedagogy (singapore_math.js):**
+- [ ] Bar Model diagrams created (not just placeholder paths)
+- [ ] CPA stage matches problem difficulty
+- [ ] Units included in answers ("8 eggs" not "8")
+- [ ] Math vocabulary intentionally taught
+- [ ] Problems solvable by target age group (6-12 years)
+
+**Dual-Mode Differentiation:**
+- [ ] Easy ≠ Advanced in meaningful ways (not just length)
+- [ ] Vocabulary tiers differ (everyday vs academic)
+- [ ] Reasoning depth differs (1-step vs multi-step)
+- [ ] Visual support differs (heavy vs minimal)
+
+**Research Sources Used:**
+- [ ] Documented where science facts came from
+- [ ] Math problem difficulty benchmarked against Grade standards
+- [ ] Ready for expert review (science teacher / math specialist)
+
+---
+
+### ✅ 3.12 ask_ai.js (Both modes) - 🆕 STEM INQUIRY INTEGRATION (W16+)
 
 **Path**: `src/data/weeks/week_[N]/ask_ai.js` + `src/data/weeks_easy/week_[N]/ask_ai.js`
 
@@ -864,14 +1206,15 @@ export default {
       context_vi: "[Context VI]",
       answer: ["[Question format 1]", "[Question format 2]", "[Question format 3]"],
       hint: ["[Question starter]", "[Alternative starter]"],
-      audio_url: "/audio/week[N]/ask_ai_1.mp3"
+      audio_url: "/audio/week[N]/ask_ai_1.mp3",
+      stem_context: true // NEW: Mark as STEM content for W16+
     },
     // ... 4 more (TOTAL: 5 prompts)
   ]
 };
 ```
 
-**Pattern Templates:**
+**Standard Pattern Templates (ALL WEEKS):**
 ```javascript
 // ✅ CORRECT (Student asks questions):
 {
@@ -888,7 +1231,7 @@ export default {
 }
 ```
 
-**Checklist:**
+**Standard Checklist (ALL WEEKS):**
 - [ ] Exactly 5 prompts
 - [ ] Each prompt id: 1-5
 - [ ] context_en describes situation needing QUESTION
@@ -899,13 +1242,178 @@ export default {
 - [ ] Each has audio_url: `/audio/week[N]/ask_ai_[number].mp3`
 - [ ] **NO answer_audio_url field** (only context gets audio)
 
-**⚠️ Week 7 Lessons Learned:**
-- ❌ **BAD**: "Your friend asks... Tell them." → Tests answering (wrong mechanic)
-- ✅ **GOOD**: "You want to know... Ask them." → Tests question forming (correct mechanic)
+---
+
+**📌 IF WEEK < 16: Pure Language Focus**
+
+**Content:** Personal/everyday questions only
+- "What is your friend's favorite color?"
+- "Where is the library?"
+- "Can you help me find my pencil?"
+- "Do you like pizza?"
+- "How do you go to school?"
+
+**No science reasoning** - Focus 100% on question intonation and structure
 
 ---
 
-### ✅ 3.13 daily_watch.js (Both modes - AUTO-GENERATED)
+**📌 IF WEEK >= 16: STEM Inquiry Integration**
+
+🧬 **REFERENCE**: `STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md` Section 2D
+
+**Additional Checklist (W16+ ONLY):**
+
+**STEM Context Selection:**
+- [ ] 2-3 out of 5 prompts incorporate STEM inquiry (40-60% STEM)
+- [ ] 2-3 prompts remain everyday language practice (balance)
+- [ ] STEM questions aligned with week theme
+- [ ] Science context appropriate for Phase:
+  - **Phase 1 (W16-54)**: Simple observation questions (Why is the sky blue? What do plants need?)
+  - **Phase 2 (W55-120)**: Cause-effect questions (Why do volcanoes erupt? How does rain form?)
+  - **Phase 3 (W121+)**: Hypothesis/argumentation (Does homework improve learning? What evidence supports this?)
+
+**STEM Inquiry Scaffolding Levels:**
+
+| Phase | Scaffolding | Example Prompt | Student Question |
+|-------|-------------|----------------|------------------|
+| **Phase 1 (W16-54)** | Shadow Asking (Full sentence given) | "You see a magnet. Ask the scientist: 'Why does the magnet stick to metal?'" | "Why does the magnet stick to metal?" (Repeat model) |
+| **Phase 2 (W55-120)** | Guided Asking (Keywords given) | "You wonder why volcanoes erupt. Ask AI. Keywords: Why / volcanoes / erupt?" | "Why do volcanoes erupt?" (Assemble from keywords) |
+| **Phase 3 (W121+)** | Free Inquiry (Topic only) | "AI says homework is good. Ask AI about the stress harm of homework." | "Does homework cause stress?" or "What are the negative effects of homework?" (Free formulation) |
+
+**STEM Content Examples:**
+
+**Phase 1 Example (W16-54) - Shadow Asking + STEM Vocab:**
+```javascript
+// EASY MODE
+{
+  id: 1,
+  context_en: "You see a plant with yellow leaves. Ask the gardener why it is yellow.",
+  context_vi: "Bạn thấy một cây lá vàng. Hỏi người làm vườn tại sao lá vàng.",
+  answer: ["Why are the leaves yellow?", "Why is the plant yellow?"],
+  hint: ["Why", "Why are"],
+  audio_url: "/audio/week16/ask_ai_1.mp3",
+  stem_context: true,
+  stem_vocab: ["plant", "leaves", "yellow", "gardener"]
+}
+
+// ADVANCED MODE
+{
+  id: 1,
+  context_en: "You notice that a plant in the shade has yellow leaves. Ask the botanist why chlorophyll production stopped.",
+  context_vi: "Bạn nhận thấy cây ở bóng râm có lá vàng. Hỏi nhà thực vật học tại sao không sản xuất chất diệp lục nữa.",
+  answer: [
+    "Why did chlorophyll production stop?",
+    "Why is the plant not producing chlorophyll?",
+    "What caused the chlorophyll to break down?"
+  ],
+  hint: ["Why", "What caused", "Why did"],
+  audio_url: "/audio/week16/ask_ai_1.mp3",
+  stem_context: true,
+  stem_vocab: ["chlorophyll", "production", "botanist", "break down", "shade"]
+}
+```
+
+**Phase 2 Example (W55-120) - Guided Asking + STEM Reasoning:**
+```javascript
+// EASY MODE
+{
+  id: 2,
+  context_en: "You want to know what rabbits eat. Ask about their food. Keywords: What / rabbits / eat?",
+  context_vi: "Bạn muốn biết thỏ ăn gì. Hỏi về thức ăn của chúng. Từ khóa: What / rabbits / eat?",
+  answer: [
+    "What do rabbits eat?",
+    "What food do rabbits eat?"
+  ],
+  hint: ["What do", "What food"],
+  audio_url: "/audio/week60/ask_ai_2.mp3",
+  stem_context: true,
+  stem_vocab: ["rabbits", "eat", "food chain"]
+}
+
+// ADVANCED MODE
+{
+  id: 2,
+  context_en: "In the food web, foxes disappeared. You wonder what happens to the rabbit population. Ask AI to explain the ecological impact. Keywords: What / happens / rabbit population / foxes / disappear?",
+  context_vi: "Trong hệ sinh thái, cáo biến mất. Bạn tự hỏi điều gì xảy ra với quần thể thỏ. Hỏi AI giải thích tác động sinh thái. Từ khóa: What / happens / rabbit population / foxes / disappear?",
+  answer: [
+    "What happens to the rabbit population when foxes disappear?",
+    "What is the ecological impact when foxes disappear?",
+    "How does the rabbit population change if foxes disappear?"
+  ],
+  hint: ["What happens", "What is the impact", "How does"],
+  audio_url: "/audio/week60/ask_ai_2.mp3",
+  stem_context: true,
+  stem_vocab: ["population", "ecological", "impact", "food web", "predator", "prey"]
+}
+```
+
+**Phase 3 Example (W121+) - Free Inquiry + Critical Thinking:**
+```javascript
+// EASY MODE
+{
+  id: 3,
+  context_en: "You want to know if recycling is important. Ask AI why recycling helps the environment.",
+  context_vi: "Bạn muốn biết tái chế có quan trọng không. Hỏi AI tại sao tái chế giúp môi trường.",
+  answer: [
+    "Why is recycling important?",
+    "How does recycling help the environment?",
+    "Why should we recycle?"
+  ],
+  hint: ["Why", "How does", "Why should"],
+  audio_url: "/audio/week130/ask_ai_3.mp3",
+  stem_context: true,
+  stem_vocab: ["recycling", "environment", "important", "help"]
+}
+
+// ADVANCED MODE
+{
+  id: 3,
+  context_en: "AI claims that homework improves academic performance. You want to ask about the potential negative effects, such as stress and reduced family time. Challenge this claim.",
+  context_vi: "AI nói rằng bài tập về nhà cải thiện kết quả học tập. Bạn muốn hỏi về tác động tiêu cực tiềm năng, như căng thẳng và giảm thời gian gia đình. Thách thức quan điểm này.",
+  answer: [
+    "Does homework cause stress for students?",
+    "What are the negative effects of too much homework?",
+    "Doesn't homework reduce family time?",
+    "Can homework harm students' mental health?"
+  ],
+  hint: ["Does", "What are the negative", "Doesn't", "Can"],
+  audio_url: "/audio/week130/ask_ai_3.mp3",
+  stem_context: true,
+  stem_vocab: ["homework", "academic performance", "stress", "negative effects", "mental health", "claim", "challenge"]
+}
+```
+
+**🚫 STEM Ask AI RED FLAGS (W16+):**
+- ❌ Student ANSWERS science questions (wrong mechanic - should ASK, not answer)
+- ❌ Science question too advanced (e.g., "Why do quantum particles behave probabilistically?")
+- ❌ Context gives answer away (e.g., "Plants need water to grow. Ask why." → Too obvious)
+- ❌ Missing keywords for Guided Asking in Phase 2+
+- ❌ Scientific terminology without scaffolding (using "chlorophyll" in Easy Mode)
+
+**✅ STEM Inquiry Best Practices (W16+):**
+- ✅ Balance: 2-3 STEM prompts + 2-3 everyday prompts (avoid 100% science)
+- ✅ Authentic curiosity: "You notice X... You wonder why... Ask AI to explain."
+- ✅ Scaffolding appropriate: Shadow → Guided → Free based on Phase
+- ✅ Science vocabulary introduced naturally in context
+- ✅ Questions encourage genuine inquiry, not rote recall
+
+**Dual-Mode Differentiation (W16+):**
+| Aspect | EASY MODE | ADVANCED MODE |
+|--------|-----------|---------------|
+| **Question Complexity** | Simple 1-clause questions (Why is X?) | Complex multi-clause questions (What happens to Y when X disappears?) |
+| **STEM Vocab** | Everyday science terms (plant, food, eat) | Academic terms (chlorophyll, predator, ecological impact) |
+| **Scaffolding** | Full sentence model given (Shadow) | Keywords only (Guided) or no support (Free) |
+| **Context Length** | 1-2 simple sentences | 2-3 complex sentences with background |
+| **Scientific Depth** | Observable phenomena (ice melts) | Abstract concepts (state change due to energy) |
+
+**⚠️ Week 7 Lessons Learned:**
+- ❌ **BAD**: "Your friend asks... Tell them." → Tests answering (wrong mechanic)
+- ✅ **GOOD**: "You want to know... Ask them." → Tests question forming (correct mechanic)
+- ✅ **STEM GOOD**: "You notice X. Ask the scientist why Y happens." → Encourages scientific inquiry
+
+---
+
+### ✅ 3.13 daily_watch.js (Both modes - AUTO-GENERATED) - 🆕 STEM CHANNELS (W16+)
 
 **⚠️ DO NOT CREATE MANUALLY - Use video generation tools**
 
@@ -946,17 +1454,227 @@ export default {
 };
 ```
 
-**Checklist:**
+**Standard Checklist (ALL WEEKS):**
 - [ ] 5 videos generated (not manually typed)
-- [ ] Video purposes: 2 GRAMMAR, 1 STORY, 1 VOCAB, 1 SCIENCE/MATH
 - [ ] Duration: 1-15 minutes per video
 - [ ] All videos from whitelisted channels
 - [ ] Titles match week theme + grammar
 - [ ] **Same videos in both Advanced and Easy modes**
 
+---
+
+**📌 IF WEEK < 16: Language-Focused Channels Only**
+
+**Video Purposes Distribution:**
+- 2 GRAMMAR videos (English Singsing, Little Fox)
+- 1 STORY video (Little Fox, Vooks)
+- 1 VOCABULARY video (Super Simple Songs, Fun Kids English)
+- 1 FUN/CULTURE video (Peppa Pig, Cocomelon theme-based)
+
+**Whitelisted Channels (W1-15):**
+- English Singsing (Grammar songs)
+- Super Simple Songs (Vocabulary songs)
+- Little Fox (Stories + Grammar)
+- Fun Kids English (Vocabulary)
+- Vooks (Story read-alouds)
+- Peppa Pig (Theme episodes)
+- Cocomelon (Theme songs)
+- Numberblocks (Math vocabulary only - counting, shapes)
+- Alphablocks (Phonics)
+
+**Example Query (W1-15):**
+```json
+{
+  "id": 1,
+  "purpose": "GRAMMAR",
+  "priority_search": "English Singsing present simple to be ESL for kids",
+  "backup_search": "I am you are grammar song ESL kids"
+}
+```
+
+---
+
+**📌 IF WEEK >= 16: STEM-Integrated Channels (W16+)**
+
+🧬 **REFERENCE**: `STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md` Section 2
+
+**Video Purposes Distribution (W16+):**
+- 2 GRAMMAR videos (English Singsing, Little Fox) - **STILL NEEDED** (grammar anchor)
+- 1 STEM video (SciShow Kids, NatGeo Kids, Khan Academy Kids) - **NEW**
+- 1 VOCABULARY video (STEM-focused if possible) - **ADAPTED**
+- 1 STORY/CULTURE video (STEM context if possible) - **ADAPTED**
+
+**Additional Whitelisted Channels (W16+ ONLY):**
+- **SciShow Kids** (Physics, Biology, Ecology explanations)
+- **National Geographic Kids** (Animals, Nature, Geography)
+- **Khan Academy Kids** (Math, Science concepts)
+- **Crash Course Kids** (Science topics, age-appropriate)
+- **Mystery Science** (Hands-on science investigations)
+- **Peekaboo Kidz** (Science facts)
+- **Homeschool Pop** (Science, History, Geography)
+
+**STEM Video Selection Criteria:**
+- [ ] Content aligns with week STEM topic (life cycles, food chains, simple machines, etc.)
+- [ ] English narration (NOT Vietnamese dub)
+- [ ] Age-appropriate (6-12 years old)
+- [ ] Length: 3-10 minutes (attention span)
+- [ ] High production quality (clear audio, good visuals)
+- [ ] Scientifically accurate (no misconceptions)
+
+**Example Queries (W16+):**
+
+**Phase 1 Example (W16-54):**
+```json
+{
+  "weekId": 16,
+  "theme": "Time Traveler",
+  "stem_topic": "Dinosaurs - Life cycle, Fossils",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing simple past tense ESL for kids",
+      "backup_search": "past tense grammar song ESL kids"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "Little Fox grammar simple past story level 1",
+      "backup_search": "past tense story ESL kids"
+    },
+    {
+      "id": 3,
+      "purpose": "STEM_SCIENCE",
+      "priority_search": "SciShow Kids dinosaurs life cycle fossils",
+      "backup_search": "National Geographic Kids dinosaurs for kids",
+      "stem_category": "Biology - Life cycle"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "dinosaur vocabulary ESL kids English Singsing",
+      "backup_search": "dinosaur names kids learning English"
+    },
+    {
+      "id": 5,
+      "purpose": "STORY",
+      "priority_search": "Little Fox time travel story dinosaurs level 1",
+      "backup_search": "dinosaur story kids read aloud Vooks"
+    }
+  ]
+}
+```
+
+**Phase 2 Example (W55-120):**
+```json
+{
+  "weekId": 80,
+  "theme": "Rainforest Adventure",
+  "stem_topic": "Ecosystems - Food webs, Layers of rainforest",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present perfect ESL for kids",
+      "backup_search": "have has been grammar song ESL"
+    },
+    {
+      "id": 2,
+      "purpose": "STEM_SCIENCE",
+      "priority_search": "SciShow Kids rainforest ecosystem food web",
+      "backup_search": "National Geographic Kids rainforest layers animals",
+      "stem_category": "Ecology - Ecosystems"
+    },
+    {
+      "id": 3,
+      "purpose": "STEM_SCIENCE",
+      "priority_search": "Khan Academy Kids food chain predator prey",
+      "backup_search": "food web ecosystem kids science",
+      "stem_category": "Ecology - Food webs"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "rainforest animals vocabulary ESL kids",
+      "backup_search": "jungle animals names kids English"
+    },
+    {
+      "id": 5,
+      "purpose": "STORY",
+      "priority_search": "rainforest conservation story kids",
+      "backup_search": "save the rainforest story read aloud"
+    }
+  ]
+}
+```
+
+**Phase 3 Example (W121+):**
+```json
+{
+  "weekId": 130,
+  "theme": "Young Scientists",
+  "stem_topic": "Scientific method, Climate change",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing passive voice ESL for kids",
+      "backup_search": "passive voice grammar lesson kids"
+    },
+    {
+      "id": 2,
+      "purpose": "STEM_SCIENCE",
+      "priority_search": "SciShow Kids scientific method experiment hypothesis",
+      "backup_search": "how scientists think kids science",
+      "stem_category": "Scientific Method"
+    },
+    {
+      "id": 3,
+      "purpose": "STEM_SCIENCE",
+      "priority_search": "Crash Course Kids climate change global warming",
+      "backup_search": "National Geographic Kids climate change explained",
+      "stem_category": "Ecology - Climate change"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "science vocabulary hypothesis variable kids",
+      "backup_search": "scientific terms kids learning"
+    },
+    {
+      "id": 5,
+      "purpose": "DEBATE",
+      "priority_search": "recycling importance debate kids",
+      "backup_search": "environmental issues kids discussion"
+    }
+  ]
+}
+```
+
+**Dual-Mode Differentiation (W16+):**
+- **Easy Mode**: Prioritize simple explanations, heavy visuals (NatGeo Kids, Peekaboo Kidz)
+- **Advanced Mode**: Allow more complex narration (SciShow Kids, Crash Course Kids)
+- **NOTE**: Auto-generation currently uses SAME videos for both modes, but can be enhanced to differentiate in future
+
+**🚫 STEM Video RED FLAGS:**
+- ❌ Scientifically inaccurate (e.g., "Heavy objects fall faster")
+- ❌ Too advanced (e.g., Quantum physics for 6-year-olds)
+- ❌ Not in English (Vietnamese dub, Spanish, etc.)
+- ❌ Poor production quality (unclear audio, shaky camera)
+- ❌ Too long (>15 minutes = attention span loss)
+- ❌ From unverified channels (not on whitelist)
+
+**✅ Manual Review Checklist (After Auto-Generation):**
+- [ ] Watch first 30 seconds of each video (spot-check quality)
+- [ ] Verify STEM video aligns with week topic
+- [ ] Check for science accuracy (cross-reference facts)
+- [ ] Ensure grammar videos still cover week's grammar pattern
+- [ ] Balance: 2 grammar + 1-2 STEM + 1-2 vocab/story/fun
+
 **⚠️ Week 7 Lessons Learned:**
 - ❌ **BAD**: Manually typing random YouTube URLs → Videos not educational, wrong level
 - ✅ **GOOD**: Auto-generated with whitelist filtering → Curated, age-appropriate content
+- ✅ **STEM GOOD (W16+)**: Include SciShow Kids, NatGeo Kids for science content
 
 ---
 

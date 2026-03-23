@@ -97,34 +97,121 @@ NHÓM 1: ĐẦU VÀO & TỪ VỰNG (INPUT)
 	•	Danh sách whitelist bắt buộc tìm, trước khi tìm rộng hơn: English Singsing , Super Simple Songs, British Council: LearnEnglish Kids, , KidsTV123, Dream English Kids, Fun Kids English, Cocomelon, Little Baby Bum, ChuChu TV, Sesame Street, Peppa Pig, National Geographic Kids, Art for Kids Hub, Steve and Maggie, Numberblocks, SciShow Kids và Numberblocks (Toán), Alphablocks (Ngôn ngữ), BBC Learning English - Kids/LearnEnglish Kids (Toàn diện), SciShow Kids (Khoa học), Blippi, Steve and Maggie (Xã hội & Tổng hợp), Storyline Online (Đọc hiểu & Xã hội), và Khan Academy Kids (Toán, Khoa học, Ngôn ngữ), giúp trẻ học kiến thức tổng hợp một cách vui nhộn bằng tiếng Anh.
 
 NHÓM 2: KỸ NĂNG & TƯ DUY (LOGIC & SKILLS)
-5. Tab Logic Lab (Toán & Tư duy)
+5. Tab Logic Lab (Toán & Tư duy) - 🆕 DUAL SUB-TAB STRUCTURE (Updated Mar 2026)
 	•	Yêu cầu bắt buộc: Luôn có context (ngữ cảnh) cho các câu hỏi, theo đúng văn phong bản xứ trong SGK, để giúp học sinh làm quen với tiếng Anh trong toán và khoa học. Nội dung là toán có lời văn và tư duy logic, các khái niệm đơn giản trong khoa học và xã hội.
 	•	Số lượng:
-	•	Phase 1: 5 câu/tuần.
-	•	Phase 2: 7 câu/tuần.
-	•	Phase 3: 10 câu/tuần.
+	•	Phase 1: 5 câu/tuần (mỗi sub-tab).
+	•	Phase 2: 7 câu/tuần (mỗi sub-tab).
+	•	Phase 3: 10 câu/tuần (mỗi sub-tab).
+	
+	•	🆕 CẤU TRÚC 2 SUB-TAB (từ Week 16+):
+	
+	A. **Sub-tab 1: LOGIC & SCIENCE** (🧠 Critical Thinking)
+	   - Focus: Patterns, deductive reasoning, science facts, classification
+	   - Content: YES/NO logic, sequences, scientific concepts
+	   - NO arithmetic word problems (để cho Singapore Math)
+	   - Examples: 
+	     * "T-Rex eats meat → vegetarian?" (deduction)
+	     * "Egg → Larva → Pupa → ?" (life cycle)
+	     * "Remove fox from food chain → rabbits?" (ecology)
+	
+	B. **Sub-tab 2: SINGAPORE MATH** (📐 Word Problems + Bar Model)
+	   - Focus: Math vocabulary in English + visual problem solving
+	   - Content: Part-Whole, Comparison, Missing Part, Groups, Before-After
+	   - MUST have: Bar Model diagram (static SVG), units in answer
+	   - Examples:
+	     * "5 eggs + 3 eggs = ? total" (Part-Whole)
+	     * "15m tree - 9m tree = ? taller" (Comparison)
+	     * "12 buttons - 5 blue = ? red" (Missing Part)
+	
 	•	Biến đổi nội dung (Content Morphing):
-	•	Phase 1 (Weeks 1-54): Vocab & Patterns (Math Bridge)
-	•	Nội dung: Nối hình với từ (Circle - Hình tròn), Quy luật màu sắc (Đỏ-Xanh-Đỏ-?), Đọc phép tính (One plus one equals two).
-	•	Quy định: CẤM tính toán đố mẹo phức tạp hoặc toán lời văn dài dòng ở Easy Mode. Mục tiêu là làm quen từ vựng Toán.
-	•	Phase 2 (Weeks 55-120): Word Problems (Toán đố)
-	•	Nội dung: Bài toán có lời văn (If Johnny has 5 apples...). Giải thích các bước giải (Step-by-step) + Logical problems.
-	•	Phase 3 (Weeks 121+): Data Analysis & Critical Logic
-	•	Nội dung: Đọc biểu đồ (Charts), tìm lỗi ngụy biện (Logical Fallacies), Thống kê (Mean/Median).
-6. Tab Ask AI (Luyện Nói & Hỏi đáp) - CẬP NHẬT VOICE-FIRST
+	
+	•	Phase 1 (Weeks 1-15): LANGUAGE FOUNDATION ONLY
+	   - Logic Lab = Basic Math Vocabulary (Circle, Square, Plus, Minus)
+	   - NO Science content yet (focus 100% on language)
+	   - Easy Mode: Simple counting, basic shapes
+	   - Advanced Mode: Slightly more complex patterns
+	
+	•	Phase 1+ (Weeks 16-54): 🆕 STEM INTEGRATION BEGINS
+	   - 🧠 Logic & Science:
+	     * 2 Physics questions (gravity, motion, simple machines)
+	     * 1 Biology question (animal types, plant needs, life cycles)
+	     * 1 Ecology question (food chains, habitats)
+	     * 1 Logical reasoning (patterns, deduction)
+	   - 📐 Singapore Math:
+	     * Part-Whole models (addition within 20)
+	     * Comparison models (subtraction for difference)
+	     * Missing Part (unknown addend)
+	     * Groups (multiplication as repeated addition, 2× 5×)
+	     * Before-After (timeline problems)
+	   - Dual-Mode Differentiation:
+	     * Easy: Simple vocabulary, concrete examples, pictorial models
+	     * Advanced: Academic vocabulary, abstract reasoning, complex scenarios
+	
+	•	Phase 2 (Weeks 55-120): APPLIED STEM + PRE-ALGEBRA
+	   - 🧠 Logic & Science:
+	     * Physics experiments (states of matter, heat transfer, energy)
+	     * Biology systems (body parts, food webs, ecosystems)
+	     * Scientific method (hypothesis, variables, prediction)
+	     * Constraint puzzles (clock problems, scheduling)
+	   - 📐 Singapore Math:
+	     * Multi-step word problems
+	     * Simple equations (Bar Model Method: x + 5 = 12)
+	     * Ratio introduction (2:3 with visual models)
+	     * Fractions (1/2, 1/4 with bar models)
+	     * Area/Perimeter (composite shapes intro)
+	   - Dual-Mode Differentiation:
+	     * Easy: Step-by-step scaffolding, heavy visual support
+	     * Advanced: Multi-variable problems, minimal scaffolding
+	
+	•	Phase 3 (Weeks 121+): COMPETITION-READY STEM
+	   - 🧠 Logic & Science:
+	     * Advanced physics (electricity, forces, chemical reactions)
+	     * Data interpretation (charts, graphs, statistics)
+	     * Logical fallacies (ad hominem, false cause, etc.)
+	     * Venn diagrams (set theory, overlapping categories)
+	   - 📐 Singapore Math:
+	     * Algebraic word problems (2 variables: 2p = 5c)
+	     * Composite geometry (overlapping shapes, area calculations)
+	     * Advanced ratio (a:b:c, three quantities)
+	     * Percentage applications (discount, increase/decrease)
+	     * Mean/Median/Mode (data analysis)
+	   - 🎯 Advanced Mode Target: 90-100% coverage of competitive entrance exams (e.g., Trần Đại Nghĩa)
+	   - Easy Mode: Maintain accessibility for general ESL learners
+6. Tab Ask AI (Luyện Nói & Hỏi đáp) - CẬP NHẬT VOICE-FIRST + 🆕 STEM INTEGRATION (từ W16+)
 	•	Yêu cầu bắt buộc: luôn có context cho các câu gợi ý (không dung câu cụt lủn), sao cho học sinh có thể suy diễn ra được câu hỏi trong bối cảnh đó, nhưng tuyệt đối không lộ câu hỏi.
 	•	Cơ chế Nhập liệu: Mặc định là Microphone (Voice-First). Khuyến khích trẻ nói.
 	•	Số lượng: Tối thiểu 5 Prompts/tuần.
 	•	Lộ trình Scaffolding (Giàn giáo):
-	•	Phase 1 (Shadow Asking):
-	•	Prompt: "Bạn đang ở sở thú. Hãy bấm mic và hỏi người trông thú sư tử ăn gì: 'What do lions eat?'"
-	•	Mục tiêu: Luyện ngữ điệu câu hỏi (Mimicry).
-	•	Phase 2 (Guided Asking):
-	•	Prompt: "Bạn là nhà khoa học. Hãy hỏi AI tại sao núi lửa phun trào. Gợi ý: Why / volcanoes / erupt?"
-	•	Mục tiêu: Trẻ tự lắp ghép từ khóa thành câu hoàn chỉnh ("Why do volcanoes erupt?").
-	•	Phase 3 (Free Inquiry):
-	•	Prompt: "AI nói bài tập về nhà là tốt. Hãy hỏi AI về tác hại gây căng thẳng (stress) của nó."
-	•	Mục tiêu: Tự do phản biện và tìm kiếm thông tin.
+	
+	•	Phase 1 (Weeks 1-15): LANGUAGE FOCUS (Shadow Asking)
+	   - Prompt: "Bạn đang ở sở thú. Hãy bấm mic và hỏi người trông thú sư tử ăn gì: 'What do lions eat?'"
+	   - Mục tiêu: Luyện ngữ điệu câu hỏi (Mimicry).
+	   - NO Science reasoning yet
+	
+	•	Phase 1+ (Weeks 16-54): 🆕 SHADOW ASKING + SCIENCE VOCABULARY
+	   - Prompt: "You see a magnet. Ask the scientist: 'Why does the magnet stick to metal?'"
+	   - Tích hợp: Science vocabulary (magnet, metal, stick, scientist)
+	   - Vẫn shadow asking (cho câu mẫu) nhưng context = STEM
+	   - Dual-Mode:
+	     * Easy: Everyday science (plants, animals, simple tools)
+	     * Advanced: Academic science (gravity, photosynthesis, food chains)
+	
+	•	Phase 2 (Weeks 55-120): GUIDED ASKING + STEM REASONING
+	   - Prompt: "Bạn là nhà khoa học. Hãy hỏi AI tại sao núi lửa phun trào. Gợi ý: Why / volcanoes / erupt?"
+	   - Mục tiêu: Trẻ tự lắp ghép từ khóa thành câu hoàn chỉnh ("Why do volcanoes erupt?").
+	   - Tích hợp: Science/Math reasoning questions
+	   - Dual-Mode:
+	     * Easy: Simple "Why" questions (Why do plants need water?)
+	     * Advanced: Complex causation (Why does removing predators increase prey population?)
+	
+	•	Phase 3 (Weeks 121+): FREE INQUIRY + CRITICAL THINKING
+	   - Prompt: "AI nói bài tập về nhà là tốt. Hãy hỏi AI về tác hại gây căng thẳng (stress) của nó."
+	   - Mục tiêu: Tự do phản biện và tìm kiếm thông tin.
+	   - Tích hợp: STEM debates, hypothesis testing, data interpretation
+	   - Dual-Mode:
+	     * Easy: Opinion-based STEM (Is recycling important? Why?)
+	     * Advanced: Argumentation with evidence (Does homework improve learning? What data supports this?)
 7. Tab Grammar
 	•	Số lượng: 20 câu/tuần.
 	•	Yêu cầu về nội dung: câu không được quá ngắn, phải có context tương tự cấu trúc trong bài đọc.

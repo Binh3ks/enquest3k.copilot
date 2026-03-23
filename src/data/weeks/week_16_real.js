@@ -59,11 +59,11 @@ const week16RealData = {
           focus: "Simple Present Continuous for self",
           goal: "Student describes own actions",
           phase_questions: [
-            "Great! You are playing {sport}! What are you doing right now? Say: I am running or I am jumping or I am kicking",
-            "Excellent! You are {action}! Where are you kicking the ball? Say: I am kicking the ball toward the goal or I am kicking the ball to my friend",
+            "Great! What are you doing right now? Say: I am running or I am jumping or I am kicking",
+            "Excellent! Where are you kicking the ball? Say: I am kicking the ball toward the goal or I am kicking the ball to my friend",
             "Perfect! Now, are you running or jumping? Say: I am running or I am jumping",
-            "Good! You are {action}! What is your friend doing? Say: My friend is kicking or My friend is throwing or My friend is catching",
-            "Nice! Your friend is {action}! Look at the team! What are they doing? Say: They are running or They are jumping or They are kicking"
+            "Good! What is your friend doing? Say: My friend is kicking or My friend is throwing or My friend is catching",
+            "Nice! Look at the team! What are they doing? Say: They are running or They are jumping or They are kicking"
           ]
         },
         {
@@ -73,11 +73,11 @@ const week16RealData = {
           focus: "Third person Present Continuous",
           goal: "Student describes what others are doing",
           phase_questions: [
-            "Yes! The team is {action}! Are they running fast or slow? Say: They are running fast or They are running slow",
-            "Great! They are running {speed}! Now look at the ball! Is it in the air or on the ground? Say: The ball is in the air or The ball is on the ground",
-            "I see! The ball is {location}! Is someone catching it? Say: Yes someone is catching it or No",
+            "Yes! Are they running fast or slow? Say: They are running fast or They are running slow",
+            "Great! Now look at the ball! Is it in the air or on the ground? Say: The ball is in the air or The ball is on the ground",
+            "I see! Is someone catching it? Say: Yes someone is catching it or No",
             "Perfect! What else are the players doing? Say: They are passing the ball or They are scoring a goal or They are cheering",
-            "Wonderful! The players are {action}! Are you tired or excited? Say: I am tired or I am excited or I am happy"
+            "Wonderful! Are you tired or excited? Say: I am tired or I am excited or I am happy"
           ]
         },
         {
@@ -87,7 +87,7 @@ const week16RealData = {
           focus: "Final check and goodbye",
           goal: "Wrap up with final Present Continuous question",
           phase_questions: [
-            "You are {feeling}! Perfect! Tell me one more action you are practicing. Say: I am practicing kicking or I am practicing running or I am practicing jumping",
+            "Perfect! Tell me one more action you are practicing. Say: I am practicing kicking or I am practicing running or I am practicing jumping",
             "Excellent practice! You learned to describe sports actions using 'I am [verb-ing]' and 'They are [verb-ing]'. Great job today! See you next practice! 👋"
           ]
         }
@@ -149,10 +149,10 @@ const week16RealData = {
           focus: "Describing individual player actions",
           goal: "Student describes single player's action",
           phase_questions: [
-            "Great! The player is {action}! Now look! Another player is catching the ball! What is that player doing now? Say: The player is throwing the ball or The player is running with the ball",
-            "Perfect! The player is {action}! Where is the ball going? Say: The ball is going toward the goal or The ball is going to a teammate",
-            "Excellent! The ball is going {location}! What is the goalkeeper doing? Say: The goalkeeper is jumping or The goalkeeper is catching or The goalkeeper is watching",
-            "Good! The goalkeeper is {action}! Now look at the team! What are they doing? Say: The team is running or The team is passing or The team is cheering"
+            "Great! Now look! Another player is catching the ball! What is that player doing now? Say: The player is throwing the ball or The player is running with the ball",
+            "Perfect! Where is the ball going? Say: The ball is going toward the goal or The ball is going to a teammate",
+            "Excellent! What is the goalkeeper doing? Say: The goalkeeper is jumping or The goalkeeper is catching or The goalkeeper is watching",
+            "Good! Now look at the team! What are they doing? Say: The team is running or The team is passing or The team is cheering"
           ]
         },
         {
@@ -162,11 +162,11 @@ const week16RealData = {
           focus: "Describing team and crowd actions",
           goal: "Student describes multiple actions happening together",
           phase_questions: [
-            "Yes! The team is {action}! Is someone scoring a goal? Say: Yes someone is scoring or No not yet",
-            "Wow! {result}! What are the fans doing? Say: The fans are cheering or The fans are shouting or The fans are clapping",
-            "Amazing! The fans are {action}! Look! A player is passing the ball! Who is catching it? Say: A teammate is catching it or No one is catching it",
-            "Great commentary! {result}! What is happening now on the field? Say: The players are running or The players are passing or The players are hitting the ball",
-            "Excellent! The players are {action}! Is the ball in the goal or out? Say: The ball is in the goal or The ball is out"
+            "Yes! Is someone scoring a goal? Say: Yes someone is scoring or No not yet",
+            "Wow! What are the fans doing? Say: The fans are cheering or The fans are shouting or The fans are clapping",
+            "Amazing! Look! A player is passing the ball! Who is catching it? Say: A teammate is catching it or No one is catching it",
+            "Great commentary! What is happening now on the field? Say: The players are running or The players are passing or The players are hitting the ball",
+            "Excellent! Is the ball in the goal or out? Say: The ball is in the goal or The ball is out"
           ]
         },
         {
@@ -176,7 +176,7 @@ const week16RealData = {
           focus: "Final moments and wrap-up",
           goal: "Describe final action and say goodbye",
           phase_questions: [
-            "The ball is {location}! The game is almost over! What is one more thing you see? Say: The players are shaking hands or The team is celebrating or The fans are leaving",
+            "The game is almost over! What is one more thing you see? Say: The players are shaking hands or The team is celebrating or The fans are leaving",
             "Perfect commentary! You described the game beautifully using Present Continuous! You learned to watch and describe what is happening RIGHT NOW! Great job being a commentator! 📣"
           ]
         }
@@ -238,10 +238,10 @@ const week16RealData = {
           focus: "Team actions and teamwork",
           goal: "Student describes team activities",
           phase_questions: [
-            "Great! You play {answer}! What sport does your team play? Say: My team plays soccer or My team plays basketball or My team plays volleyball",
-            "Wonderful! Your team plays {sport}! What is your team doing when you practice? Say: My team is running or My team is practicing or My team is playing",
-            "Excellent! Your team is {action}! Does your team work together? Say: Yes my team works together or Yes we work as a team",
-            "Perfect! Your team {answer}! Is teamwork important? Say: Yes teamwork is important or Yes we need teamwork",
+            "Great! What sport does your team play? Say: My team plays soccer or My team plays basketball or My team plays volleyball",
+            "Wonderful! What is your team doing when you practice? Say: My team is running or My team is practicing or My team is playing",
+            "Excellent! Does your team work together? Say: Yes my team works together or Yes we work as a team",
+            "Perfect! Is teamwork important? Say: Yes teamwork is important or Yes we need teamwork",
             "I agree! Teamwork IS important! Now let's talk about ENERGY! Does your team have energy when you play? Say: Yes my team has energy or Yes we are full of energy"
           ]
         },
@@ -252,11 +252,11 @@ const week16RealData = {
           focus: "STEM concepts in sports context",
           goal: "Student describes energy and motion",
           phase_questions: [
-            "Great! Your team {answer}! Where do you get energy? Say: I get energy from food or I get energy from rest or I get energy from sleep",
-            "Yes! You get energy from {source}! Now look at the ball! Is the ball moving? Say: Yes the ball is moving or Yes the ball is in motion",
+            "Great! Where do you get energy? Say: I get energy from food or I get energy from rest or I get energy from sleep",
+            "Yes! Now look at the ball! Is the ball moving? Say: Yes the ball is moving or Yes the ball is in motion",
             "Perfect! The ball IS in motion! 'Motion' means moving! Is the ball moving fast or slow? Say: The ball is moving fast or The ball is moving slow",
-            "Good! The ball is moving {speed}! What else is in motion on the field? Say: The players are in motion or The team is in motion or Everything is moving",
-            "Excellent! {answer}! When you run, you USE energy and you CREATE motion! Amazing! Now, how does your team score? Say: My team is scoring goals or My team is getting points"
+            "Good! What else is in motion on the field? Say: The players are in motion or The team is in motion or Everything is moving",
+            "Excellent! When you run, you USE energy and you CREATE motion! Amazing! Now, how does your team score? Say: My team is scoring goals or My team is getting points"
           ]
         },
         {
@@ -266,7 +266,7 @@ const week16RealData = {
           focus: "Final connection and goodbye",
           goal: "Wrap up with key learning",
           phase_questions: [
-            "Perfect! Your team {answer}! Tell me: Do you like learning about energy and motion in sports? Say: Yes I like it or Yes it is fun or Yes I learned a lot",
+            "Perfect! Tell me: Do you like learning about energy and motion in sports? Say: Yes I like it or Yes it is fun or Yes I learned a lot",
             "Wonderful! You learned that TEAMS work together, ENERGY helps us move, and MOTION is when things are moving! Sports are full of science! Great job! 🔬⚽"
           ]
         }
@@ -298,7 +298,7 @@ const week16RealData = {
           accept: ["My name is", "I am", "I'm", "My name"]
         },
         {
-          ai: "Nice! Are you ready to play? What sport are you playing today? Choose: I am playing soccer or I am playing basketball",
+          ai: "Nice! Are you ready to play? What sport are you playing today? Say: I am playing soccer or I am playing basketball",
           options: ["I am playing soccer", "I am playing basketball"]
         },
         {
@@ -307,16 +307,15 @@ const week16RealData = {
           accept_words: ["running", "jumping", "kicking", "throwing", "catching"]
         },
         {
-          ai: "Excellent! The team is practicing hard. Are they running or jumping? Choose one",
+          ai: "Excellent! The team is practicing hard. Are they running or jumping? Say: They are running or They are jumping",
           options: ["They are running", "They are jumping"]
         },
         {
-          ai: "I see the goal! Are you trying to score? Say yes or no",
-          fill_blank: "___",
-          accept_words: ["yes", "no", "I am", "scoring", "trying"]
+          ai: "I see the goal! Are you trying to score? Say: Yes or No",
+          options: ["Yes", "No", "Yes, I am", "No, I'm not"]
         },
         {
-          ai: "You are doing great! What do you think makes a good team player? Choose: Passing the ball or Cheering for friends or Both",
+          ai: "You are doing great! What do you think makes a good team player? Say: Passing the ball or Cheering for friends or Both",
           options: ["Passing the ball", "Cheering for friends", "Both"]
         }
       ],
@@ -335,7 +334,7 @@ const week16RealData = {
           accept_words: ["running", "kicking", "passing", "playing"]
         },
         {
-          ai: "Exciting! One player is running toward the goal. What is he doing now? Choose: He is kicking the ball or He is passing the ball",
+          ai: "Exciting! One player is running toward the goal. What is he doing now? Say: He is kicking the ball or He is passing the ball",
           options: ["He is kicking the ball", "He is passing the ball"]
         },
         {
@@ -347,8 +346,8 @@ const week16RealData = {
           options: ["The player scores", "The goalkeeper catches it"]
         },
         {
-          ai: "Amazing commentary! What is the energy like in the stadium? Say: high or exciting or loud",
-          accept: ["high", "exciting", "loud", "energy"]
+          ai: "Amazing commentary! What is the energy like in the stadium? Say: The energy is high or The energy is exciting or It is loud",
+          options: ["The energy is high", "The energy is exciting", "It is loud"]
         }
       ],
       completion_message: "You are a great commentator! 📣 You described the game using Present Continuous!"
@@ -365,7 +364,7 @@ const week16RealData = {
           accept: ["Yes", "I play", "My team"]
         },
         {
-          ai: "Cool! What is your team doing right now? Are they practicing or playing a game? Choose one",
+          ai: "Cool! What is your team doing right now? Are they practicing or playing a game? Say: They are practicing or They are playing a game",
           options: ["They are practicing", "They are playing a game"]
         },
         {
@@ -374,12 +373,12 @@ const week16RealData = {
           accept_words: ["passing", "running", "kicking", "catching", "throwing"]
         },
         {
-          ai: "Great teamwork! Is your team working together well? Choose: Yes, we are working together or No, we need to practice more",
+          ai: "Great teamwork! Is your team working together well? Say: Yes, we are working together or No, we need to practice more",
           options: ["Yes, we are working together", "No, we need to practice more"]
         },
         {
-          ai: "What is your team trying to do? Say: scorea goal, win the game, or have fun",
-          accept: ["score", "win", "have fun", "goal", "game"]
+          ai: "What is your team trying to do? Say: Score a goal or Win the game or Have fun",
+          options: ["Score a goal", "Win the game", "Have fun"]
         }
       ],
       completion_message: "Wonderful! You described team sports using Present Continuous! 👥 Great use of  'is/are + verb-ing'!"
