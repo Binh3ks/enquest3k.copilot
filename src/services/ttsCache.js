@@ -20,7 +20,7 @@
 
 const DB_NAME = 'EngQuestTTSCache';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 7;  // Bumped v7 (March 13, 2026): Force clear after adding 'read_explore' to STATION_VOICE_KEY
+const DB_VERSION = 8;  // Bumped v8 (March 23, 2026): Force clear after Week 16 content change (Hero Academy → Soccer Game) + voice change to asteria
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {

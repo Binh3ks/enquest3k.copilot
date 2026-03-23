@@ -131,9 +131,10 @@ class TTSWeekPrefetchService {
     // 3. DICTATION - First 8 sentences only
     if (stations.dictation?.sentences) {
       stations.dictation.sentences.slice(0, 8).forEach((item, idx) => {
-        if (item.text_en) {
+        const itemText = item.text_en || item.text;
+        if (itemText) {
           const audioPath = item.audio_url || `audio/week${weekNumber}/dictation_${idx + 1}.mp3`;
-          addToPriority(item.text_en, 'dictation', 'dictation', audioPath);
+          addToPriority(itemText, 'dictation', 'dictation', audioPath);
         }
       });
     }
@@ -141,9 +142,10 @@ class TTSWeekPrefetchService {
     // 4. SHADOWING - First 4 items only
     if (stations.shadowing?.script) {
       stations.shadowing.script.slice(0, 4).forEach((item, idx) => {
-        if (item.text_en) {
+        const itemText = item.text_en || item.text;
+        if (itemText) {
           const audioPath = item.audio_url || `audio/week${weekNumber}/shadowing_${idx + 1}.mp3`;
-          addToPriority(item.text_en, 'shadowing', 'shadowing', audioPath);
+          addToPriority(itemText, 'shadowing', 'shadowing', audioPath);
         }
       });
     }
