@@ -84,8 +84,8 @@ class TTSWeekPrefetchService {
         'read_explore': 'narration',
         'explore': 'narration',
         'dictation': 'dictation',
-        'shadowing': 'narration',
-        'logic_lab': 'narration',
+        'shadowing': 'shadowing',  // CRITICAL: Must match voiceConfig key for aura-luna-en
+        'logic_lab': 'questions',
         'mindmap': 'mindmap'
       };
       const voiceKey = voiceMap[stationKey] || 'narration';
