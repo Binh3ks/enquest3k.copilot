@@ -1,0 +1,22 @@
+export default [
+  { id: 1,  text: "Today it is raining!" },
+  { id: 2,  text: "I look out the window." },
+  { id: 3,  text: "The sky is grey." },
+  { id: 4,  text: "It is cold outside." },
+  { id: 5,  text: "I pick up my coat." },
+  { id: 6,  text: "I put on my boots." },
+  { id: 7,  text: "I find my umbrella." },
+  { id: 8,  text: "Now I am ready!" },
+  { id: 9,  text: "I am wearing my coat and boots." },
+  { id: 10, text: "I am carrying my umbrella." },
+  { id: 11, text: "I walk to school." },
+  { id: 12, text: "My feet stay dry." },
+  { id: 13, text: "My body is warm." },
+  { id: 14, text: "The rain falls from the clouds." },
+  { id: 15, text: "My teacher says the rain is called precipitation." },
+  { id: 16, text: "Water goes up as evaporation." },
+  { id: 17, text: "Then it comes back down as rain!" },
+  { id: 18, text: "It is sunny sometimes." },
+  { id: 19, text: "But today it is raining." },
+  { id: 20, text: "I love rainy days!" }
+];
