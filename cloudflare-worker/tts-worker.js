@@ -26,7 +26,7 @@
 // Male voices:
 // aura-orion-en   → deep, authoritative (narration, stories)
 // aura-zeus-en    → energetic, engaging (questions, challenges)
-const DEEPGRAM_MODEL   = 'aura-luna-en';
+const DEEPGRAM_MODEL   = 'aura-asteria-en'; // Default voice (changed from luna to asteria - Mar 2026)
 
 // Allowed voice overrides (whitelist for security)
 const ALLOWED_VOICES = new Set([
@@ -215,6 +215,7 @@ function corsHeaders() {
   return {
     'Access-Control-Allow-Origin':  '*',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Expose-Headers': 'X-Cache, X-TTS-Source, X-Voice'  // Allow client to read cache status
   };
 }
