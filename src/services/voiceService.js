@@ -346,11 +346,16 @@ export const VoiceService = {
       } catch {}
     }
 
-    // NEW: Generate via Deepgram Worker with audioPath & voice for on-demand caching
+    // NEW: Generate via Deepgram Worker.
+    // CRITICAL: Only pass audioPath to Worker if week is in CDN_WEEKS.
+    // If NOT in CDN_WEEKS, the R2 path may contain STALE audio (old content) —
+    // Worker would return the stale R2 file and we'd cache wrong audio under the new text's hash.
+    // Passing null forces Worker to generate fresh Deepgram audio to 'dynamic/' path.
+    const safePath = (weekNumber && CDN_WEEKS.includes(weekNumber)) ? audioPath : null;
     try {
-      const blob = await this.useGoogleTTS(cleanedText, station, finalVoice, audioPath);
+      const blob = await this.useGoogleTTS(cleanedText, station, finalVoice, safePath);
       await TTSCache.set(cleanedText, station, blob, finalVoice);
-      console.log(`[Prefetch] 💾 Generated & cached: ${audioPath || 'dynamic'} [voice: ${finalVoice || 'default'}]`);
+      console.log(`[Prefetch] 💾 Generated & cached: ${safePath || 'dynamic'} [voice: ${finalVoice || 'default'}]`);
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed to generate:`, error.message);
       // Prefetch is non-critical, don't throw
