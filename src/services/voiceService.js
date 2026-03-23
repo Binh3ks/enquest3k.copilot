@@ -136,6 +136,26 @@ function isServerWarm() {
   return _serverWarm && (Date.now() - _lastSuccessTime < WARM_WINDOW_MS);
 }
 
+// Per-voice gain boost: compensates for perceived loudness difference between
+// male (bass) and female voices at the same RMS level (Fletcher-Munson effect).
+// Female voices (asteria, stella, luna) are already loud — no boost needed.
+// Values are linear gain multipliers applied via Web Audio API GainNode.
+const VOICE_GAIN_BOOST = {
+  'aura-helios-en': 1.45,  // Male, clean-clear — noticeably quieter than females
+  'aura-zeus-en':   1.40,  // Male, energetic
+  'aura-orion-en':  1.45,  // Male, deep-authoritative — most bass, most quiet
+};
+
+// Shared AudioContext (one per page is the Web Audio API recommendation)
+let _audioCtx = null;
+function getAudioCtx() {
+  if (!_audioCtx || _audioCtx.state === 'closed') {
+    _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (_audioCtx.state === 'suspended') _audioCtx.resume();
+  return _audioCtx;
+}
+
 // Weeks that have pre-generated Deepgram files on R2 CDN
 // Week 1-7: originally Kokoro (legacy), Week 8+: all Deepgram Aura-2
 // Week 16: REMOVED temporarily - content changed from "Hero Academy" to "Soccer Game"
@@ -174,6 +194,9 @@ export const VoiceService = {
     const googleVoice = voiceConfig?.[voiceKey];
     const deepgramVoice = googleVoice ? GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] : null;
     const cacheVoice = deepgramVoice || googleVoice;  // Use Deepgram voice for cache key (more consistent)
+
+    // Volume compensation: bass male voices are quieter than female voices
+    this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
     // 🔍 TIER 1: Check Client Cache first (instant replay, 0ms)
     const cachedUrl = await TTSCache.get(cleanedText, station, cacheVoice);
@@ -686,6 +709,24 @@ export const VoiceService = {
     const audio = new Audio(audioUrl);
     const savedRate = parseFloat(localStorage.getItem('tts_speed') || '1.0');
     audio.playbackRate = (savedRate >= 0.5 && savedRate <= 2.0) ? savedRate : 1.0;
+
+    // Apply Web Audio API gain boost for bass male voices.
+    // native audio.volume is capped at 1.0 -- GainNode allows > 1.0 amplification.
+    const gain = this._speakGain || 1.0;
+    if (gain > 1.0 && (window.AudioContext || window.webkitAudioContext)) {
+      try {
+        const ctx = getAudioCtx();
+        const source = ctx.createMediaElementSource(audio);
+        const gainNode = ctx.createGain();
+        gainNode.gain.value = gain;
+        source.connect(gainNode);
+        gainNode.connect(ctx.destination);
+      } catch (e) {
+        // createMediaElementSource throws if element already connected.
+        // Audio will still play at native 1.0 volume.
+        console.warn('[TTS] WebAudio gain skipped:', e.message);
+      }
+    }
 
     return new Promise((resolve, reject) => {
       audio.onended = () => {
