@@ -7,17 +7,17 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 import { getImageUrl } from '../../utils/imageUrl';
 import { useUserStore } from '../../stores/useUserStore';
-import TabbedExplore from '../../components/Explore/TabbedExplore';
+// import TabbedExplore from '../../components/Explore/TabbedExplore'; // W36+ only
 
 const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const { learningMode } = useUserStore();
   
-  // 🔥 Week 16+: Detect new dual-tab structure (explore_stem + explore_social)
-  const isW16Plus = data && (data.explore_stem || data.explore_social);
-  if (isW16Plus) {
-    return <TabbedExplore weekNumber={parseInt(weekId)} weekData={data} />;
-  }
+  // 🔥 W36+: Detect triple-tab structure (Culture, Technology, Social) - DISABLED for W16-35
+  // const isW36Plus = data && (data.explore_stem || data.explore_social);
+  // if (isW36Plus) {
+  //   return <TabbedExplore weekNumber={parseInt(weekId)} weekData={data} />;
+  // }
   
   // 🔥 Universal Progress System Integration
   const { savedData, saveProgress, markComplete } = useStationProgress(

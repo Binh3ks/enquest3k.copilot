@@ -7,17 +7,17 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 import { useTTSPrefetch } from '../../hooks/useTTSPrefetch';
 import { getImageUrl } from '../../utils/imageUrl';
 import { useUserStore } from '../../stores/useUserStore';
-import TabbedReadExplore from '../../components/ReadExplore/TabbedReadExplore';
+// import TabbedReadExplore from '../../components/ReadExplore/TabbedReadExplore'; // W36+ only
 
 const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   const { weekId } = useParams();
   const { learningMode } = useUserStore();
   
-  // 🔥 Week 16+: Detect new dual-tab structure (read_stem + read_social)
-  const isW16Plus = data && (data.read_stem || data.read_social);
-  if (isW16Plus) {
-    return <TabbedReadExplore weekNumber={parseInt(weekId)} weekData={data} />;
-  }
+  // 🔥 W36+: Detect triple-tab structure (Culture, Technology, Social) - DISABLED for W16-35
+  // const isW36Plus = data && (data.read_stem || data.read_social);
+  // if (isW36Plus) {
+  //   return <TabbedReadExplore weekNumber={parseInt(weekId)} weekData={data} />;
+  // }
   
   // 🔥 Universal Progress System
   const { savedData, saveProgress, markComplete } = useStationProgress(parseInt(weekId), 'skill_reading');
