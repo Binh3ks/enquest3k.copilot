@@ -24,12 +24,12 @@ const weekData = {
   global_vocab: vocab.vocab,
 
   voiceConfig: {
-    narration: 'en-US-Neural2-F',
-    vocabulary: 'en-US-Neural2-H',
-    dictation: 'en-US-Neural2-D',
-    questions: 'en-US-Neural2-F',
-    mindmap: 'en-US-Neural2-H',
-    logic_science: 'en-US-Neural2-C'
+    narration: 'en-US-Neural2-H',  // → aura-stella-en (Female, bright, clear)
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-C',  // → aura-luna-en (Female, soft, warm)
+    questions: 'en-US-Neural2-J',  // → aura-zeus-en (Male, energetic, clear)
+    mindmap: 'en-US-Neural2-J',    // → aura-zeus-en (Male, energetic, clear)
+    logic_science: 'en-US-Neural2-J'  // → aura-zeus-en (Male, energetic, clear)
   },
 
   stations: {
