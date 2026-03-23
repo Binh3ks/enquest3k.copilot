@@ -24,7 +24,7 @@ const weekData = {
     narration: 'en-US-Neural2-D',   // aura-orion-en (male, deep voice for stories)
     vocabulary: 'en-US-Neural2-F',  // aura-asteria-en (female, natural & expressive)
     dictation: 'en-US-Neural2-C',   // aura-luna-en (female, soft & warm - for listening)
-    shadowing: 'en-US-Neural2-F',   // aura-asteria-en (female, clear & natural - for repeating)
+    shadowing: 'en-US-Neural2-C',   // aura-luna-en (CHANGED: consistent with dictation)
     questions: 'en-US-Neural2-J',   // aura-zeus-en (male, energetic)
     mindmap: 'en-US-Neural2-F'      // aura-asteria-en (female, natural)
   },
