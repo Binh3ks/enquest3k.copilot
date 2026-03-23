@@ -155,26 +155,38 @@ fi
 echo ""
 
 # =============================================================================
-# CHECK 3: CDN_WEEKS must include the new week number
+# CHECK 3: CDN_WEEKS — on-demand TTS (W16+) or pre-generated R2 (W1-15)
 # =============================================================================
-echo -e "${BOLD}[CHECK 3] CDN_WEEKS in voiceService.js — must include week $WEEK_INT${NC}"
-echo "   ⚠️  This check is a WARNING until R2 audio upload is confirmed."
+echo -e "${BOLD}[CHECK 3] TTS Architecture — verify correct mode for week $WEEK_INT${NC}"
 VOICE_SERVICE="src/services/voiceService.js"
 
 if [ ! -f "$VOICE_SERVICE" ]; then
-  echo -e "   ${RED}❌ FAIL: $VOICE_SERVICE not found${NC}"
-  ERRORS=$((ERRORS + 1))
-else
+  echo -e "   ${RED}❌ FAIL: $VOICE_SERVICE not found${NC}"; ERRORS=$((ERRORS+1))
+elif [ "$WEEK_INT" -ge 16 ]; then
+  # W16+: On-demand TTS via Deepgram Worker — CDN_WEEKS is NOT expected to include this week
   CDN_LINE=$(grep "^const CDN_WEEKS" "$VOICE_SERVICE" | head -1)
   if echo "$CDN_LINE" | grep -qw "$WEEK_INT"; then
-    echo -e "   ${GREEN}✅ PASS: Week $WEEK_INT found in CDN_WEEKS${NC}"
+    echo -e "   ${YELLOW}⚠️  WARNING: Week $WEEK_INT is in CDN_WEEKS — unexpected for on-demand architecture${NC}"
+    echo -e "   ${CYAN}   $CDN_LINE${NC}"
+    echo -e "   ${YELLOW}   W16+ should NOT be in CDN_WEEKS (on-demand: Worker handles R2 caching)${NC}"
+    WARNINGS=$((WARNINGS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: Week $WEEK_INT correctly NOT in CDN_WEEKS (on-demand TTS mode)${NC}"
+    echo -e "   ${CYAN}   On-demand: audio_url in data = R2 storage key for Deepgram Worker${NC}"
+    echo -e "   ${CYAN}   First playback: Worker generates via Deepgram → cached to R2 automatically${NC}"
+    echo -e "   ${CYAN}   $CDN_LINE${NC}"
+  fi
+else
+  # W1-15: Pre-generated audio should be in CDN_WEEKS
+  CDN_LINE=$(grep "^const CDN_WEEKS" "$VOICE_SERVICE" | head -1)
+  if echo "$CDN_LINE" | grep -qw "$WEEK_INT"; then
+    echo -e "   ${GREEN}✅ PASS: Week $WEEK_INT in CDN_WEEKS (pre-generated audio on R2)${NC}"
     echo -e "   ${CYAN}   $CDN_LINE${NC}"
   else
     echo -e "   ${YELLOW}⚠️  WARNING: Week $WEEK_INT NOT in CDN_WEEKS${NC}"
     echo -e "   ${CYAN}   Current: $CDN_LINE${NC}"
-    echo -e "   ${YELLOW}   ACTION NEEDED: Upload audio to R2 first, then add $WEEK_INT to CDN_WEEKS${NC}"
-    echo -e "   ${YELLOW}   Without this: Week $WEEK_INT TTS falls back to live Deepgram (slower, not cached)${NC}"
-    WARNINGS=$((WARNINGS + 1))
+    echo -e "   ${YELLOW}   ACTION: Upload audio to R2 first, then add $WEEK_INT to CDN_WEEKS${NC}"
+    WARNINGS=$((WARNINGS+1))
   fi
 fi
 echo ""

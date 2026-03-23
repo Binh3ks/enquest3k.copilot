@@ -96,11 +96,12 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "${CYAN}📋 INSTRUCTIONS:${NC}"
 echo -e "${CYAN}   1. Read: ENGQUEST MASTER PROMPT V25-FINAL.txt${NC}"
 echo -e "${CYAN}   2. Read: Syllabus for Week ${WEEK}${NC}"
-echo -e "${CYAN}   3. Generate 29 files:${NC}"
-echo -e "${CYAN}      - Advanced: 14 files in src/data/weeks/week_$(printf '%02d' $WEEK)/${NC}"
-echo -e "${CYAN}      - Easy: 14 files in src/data/weeks_easy/week_$(printf '%02d' $WEEK)/${NC}"
+echo -e "${CYAN}   3. Generate files (W16+ template):${NC}"
+echo -e "${CYAN}      - Advanced: 16 JS files in src/data/weeks/week_$(printf '%02d' $WEEK)/${NC}"
+echo -e "${CYAN}      - Easy: 16 JS files in src/data/weeks_easy/week_$(printf '%02d' $WEEK)/${NC}"
 echo -e "${CYAN}      - AI Tutor: 1 file in src/data/weeks/week_$(printf '%02d' $WEEK)_real.js${NC}"
-echo -e "${CYAN}   4. Use Week 1 & 2 as Golden Standard${NC}"
+echo -e "${CYAN}      (W16 adds: logic_science.js + singapore_math.js + games.js — no logic.js)${NC}"
+echo -e "${CYAN}   4. Use Week 16 as Golden Standard (NOT Week 1/2 — W16 = current template)${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 read -p "Press Enter after you have created all 29 files (or Ctrl+C to abort)..."
@@ -205,24 +206,34 @@ fi
 echo -e "${GREEN}✅ Ask-AI validation passed${NC}"
 echo ""
 
-# Step 5: Generate audio files
-echo -e "${YELLOW}[5/9] 🔊 Generating audio files...${NC}"
-python3 tools/generate_audio_final.py $WEEK
-if [ $? -ne 0 ]; then
-  echo -e "${RED}❌ Audio generation failed!${NC}"
-  exit 1
+# Step 5: Audio — W16+ uses on-demand TTS (no local pre-generation)
+# W1-15: Generate local audio via Google TTS → manual upload to R2 → add to CDN_WEEKS
+# W16+:  audio_url in data files = R2 storage key. Worker generates on first play.
+WEEK_INT_NUM=$(echo "$WEEK" | sed 's/^0*//')
+if [ "$WEEK_INT_NUM" -lt 16 ]; then
+  echo -e "${YELLOW}[5/9] 🔊 Generating audio files (pre-generation for W1-15)...${NC}"
+  python3 tools/generate_audio_final.py $WEEK
+  if [ $? -ne 0 ]; then
+    echo -e "${RED}❌ Audio generation failed!${NC}"
+    exit 1
+  fi
+  echo -e "${GREEN}✅ Audio generation complete${NC}"
+else
+  echo -e "${CYAN}[5/9] ⏭️  On-demand TTS — no audio pre-generation for W16+${NC}"
+  echo -e "${CYAN}   audio_url fields in data = R2 storage keys for Deepgram Worker cache${NC}"
+  echo -e "${CYAN}   Audio is generated on first playback and cached to R2 automatically${NC}"
 fi
-echo -e "${GREEN}✅ Audio generation complete${NC}"
 echo ""
 
-# Step 5.5: Auto-fill audio URLs for mindmap
-echo -e "${YELLOW}[5.5/9] 🔗 Auto-filling mindmap audio URLs...${NC}"
+# Step 5.5: Auto-fill audio URL paths in data files (still needed for W16+ on-demand R2 keys)
+# These are NOT local file paths — they are R2 storage keys used by the Deepgram Worker.
+echo -e "${YELLOW}[5.5/9] 🔗 Auto-filling audio URL paths (R2 storage keys)...${NC}"
 node tools/update_mindmap_audio_urls.js $WEEK
 if [ $? -ne 0 ]; then
-  echo -e "${RED}❌ Mindmap audio URL auto-fill failed!${NC}"
+  echo -e "${RED}❌ Audio URL path auto-fill failed!${NC}"
   exit 1
 fi
-echo -e "${GREEN}✅ Mindmap audio URLs auto-filled${NC}"
+echo -e "${GREEN}✅ Audio URL paths auto-filled${NC}"
 echo ""
 
 # Step 6: Generate images
@@ -275,30 +286,38 @@ audio_adv = len(glob.glob(f"public/audio/week{week}/*.mp3")) + len(glob.glob(f"p
 audio_easy = len(glob.glob(f"public/audio/week{week}_easy/*.mp3")) + len(glob.glob(f"public/audio/week_{week_str}_easy/*.mp3"))
 
 print(f"\n📊 WEEK {week} FINAL REPORT:")
-print(f"   📄 Content Advanced: {content_adv}/14 files")
-print(f"   📄 Content Easy: {content_easy}/14 files")
+# W16+ uses on-demand TTS: 16 JS files per mode (not 14)
+expected_js = 16 if week >= 16 else 14
+on_demand_tts = week >= 16
+
+print(f"   📄 Content Advanced: {content_adv}/{expected_js} JS files")
+print(f"   📄 Content Easy: {content_easy}/{expected_js} JS files")
 print(f"   🤖 AI Tutor: {'✅' if ai_tutor else '❌ MISSING'}")
 print(f"   🖼️  Images Advanced: {images_adv} files (Expected: 15-20)")
 print(f"   🖼️  Images Easy: {images_easy} files (Expected: 25-35)")
-print(f"   🔊 Audio Advanced: {audio_adv} files (Expected: 120-150)")
-print(f"   🔊 Audio Easy: {audio_easy} files (Expected: 115-145)")
+if on_demand_tts:
+    print(f"   🔊 Audio: ⏭️  On-demand TTS (W16+) — no local pre-generated files")
+else:
+    print(f"   🔊 Audio Advanced: {audio_adv} files (Expected: 120-150)")
+    print(f"   🔊 Audio Easy: {audio_easy} files (Expected: 115-145)")
 
 issues = []
 warnings = []
 
 # Critical checks
-if content_adv < 14:
-    issues.append(f"Advanced content incomplete ({content_adv}/14)")
-if content_easy < 14:
-    issues.append(f"Easy content incomplete ({content_easy}/14)")
+if content_adv < expected_js:
+    issues.append(f"Advanced content incomplete ({content_adv}/{expected_js} JS files)")
+if content_easy < expected_js:
+    issues.append(f"Easy content incomplete ({content_easy}/{expected_js} JS files)")
 if not ai_tutor:
     issues.append(f"AI Tutor file missing: week_{week_str}_real.js")
 
-# Asset checks (warnings only - might vary by content)
-if audio_adv < 100:
-    warnings.append(f"Advanced audio suspiciously low ({audio_adv} files, Week 1 has 130)")
-if audio_easy < 100:
-    warnings.append(f"Easy audio suspiciously low ({audio_easy} files, Week 1 has 126)")
+# Asset checks (W1-15 pre-gen audio only)
+if not on_demand_tts:
+    if audio_adv < 100:
+        warnings.append(f"Advanced audio suspiciously low ({audio_adv} files, Week 1 has 130)")
+    if audio_easy < 100:
+        warnings.append(f"Easy audio suspiciously low ({audio_easy} files, Week 1 has 126)")
 if images_adv < 10:
     warnings.append(f"Advanced images suspiciously low ({images_adv} files, Week 1 has 17)")
 if images_easy < 15:

@@ -2,27 +2,36 @@
  * Multi-Tier TTS Voice Service
  * Optimized fallback chain for performance + reliability
  * 
- * FALLBACK STRATEGY:
- * 1. Client Cache (IndexedDB) - Instant replay (0ms)
- * 2. Deepgram Worker API - AI Tutor only, direct to Deepgram Aura (300-500ms)
- * 3. R2 CDN (Cloudflare R2) - Pre-generated Deepgram files for static stations (<100ms)
- * 4. Browser TTS (Web Speech) - Built-in fallback (500ms) [Last resort]
- * 
+ * TTS ARCHITECTURE — Two modes depending on week:
+ *
+ * W1-15 (pre-generated):
+ *   1. Client Cache (IndexedDB) — Instant replay (0ms)
+ *   2. R2 CDN direct fetch — Pre-generated Deepgram files in CDN_WEEKS (~100ms)
+ *   3. Deepgram Worker — On R2 miss or dynamic content (~300-500ms)
+ *   4. Browser TTS — Last resort (~500ms)
+ *
+ * W16+ (on-demand via Worker):
+ *   1. Client Cache (IndexedDB) — Instant replay (0ms)
+ *   2. TIER 2 SKIPPED — not in CDN_WEEKS (no bulk pre-generation)
+ *   3. Deepgram Worker — Checks R2 first, generates on miss, saves to R2 path from audio_url
+ *   4. Browser TTS — Last resort (~500ms)
+ *
+ *   audio_url in data files = R2 storage key. Worker generates on first play,
+ *   then ALL users get R2 hit (<100ms) on subsequent plays.
+ *
  * STATION CLASSIFICATION:
- * - Static: read, new_word, dictation, shadowing, explore, word_power, ask_ai
- *   → Load pre-generated audio from R2 CDN (all generated with Deepgram)
- * - Dynamic: ai_tutor, gamehub, freetalk
- *   → Call Deepgram Worker API directly (live generation)
- * 
- * IMPORTANT: All static content is pre-generated using Deepgram Aura-2 TTS
- * and uploaded to R2. No Kokoro fallback - if R2 misses, browser TTS is used.
- * 
+ * - Static (STATIC_STATIONS): read, new_word, dictation, shadowing, explore, word_power,
+ *   ask_ai, mindmap_speaking, logic_lab, singapore_math, social_quiz
+ *   → Use audio_url path for R2 caching (structured filenames)
+ * - Dynamic (DYNAMIC_STATIONS): ai_tutor, gamehub, freetalk, ai_story
+ *   → Live generation via Deepgram Worker (hash-based R2 paths)
+ *
  * Features:
- * - Station-based voice selection (Deepgram Aura-2 voices)
- * - Pre-generated Deepgram TTS files on R2 CDN (weeks 1-8: all modes)
- * - Deepgram Worker API for dynamic AI Tutor content
- * - Client-side caching for all sources (IndexedDB)
- * - Graceful degradation: R2 → Browser TTS (no intermediate fallbacks)
+ * - Station-based voice selection (Deepgram Aura-2 voices via voiceConfig)
+ * - W1-15: CDN_WEEKS pre-generated audio on R2 (Google TTS → uploaded manually)
+ * - W16+: On-demand Worker generation with structured R2 caching per audio_url
+ * - Client-side IndexedDB caching for all sources
+ * - Graceful degradation: Worker → Browser TTS
  */
 
 import { TTSCache } from './ttsCache';
@@ -158,11 +167,11 @@ function getAudioCtx() {
   return _audioCtx;
 }
 
-// Weeks that have pre-generated Deepgram files on R2 CDN
-// Week 1-7: originally Kokoro (legacy), Week 8+: all Deepgram Aura-2
-// Week 16: REMOVED temporarily - content changed from "Hero Academy" to "Soccer Game"
-// Will add back after new content fully propagated to R2
-const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// W1-15: Pre-generated audio — uploaded to R2, app can fetch directly (TIER 2 path).
+// W16+:  On-demand via Deepgram Worker — no pre-generation, no manual R2 upload.
+//        Worker checks R2 on each play; generates + caches on first miss.
+//        CDN_WEEKS intentionally stops at 15 — do NOT add W16+ here.
+const CDN_WEEKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];  // W16+ = on-demand
 
 // Static stations that can use CDN (pre-generated content)
 const STATIC_STATIONS = ['read', 'new_word', 'dictation', 'shadowing', 'explore', 'word_power', 'ask_ai', 'mindmap_speaking', 'logic_lab', 'singapore_math', 'social_quiz'];
@@ -373,12 +382,12 @@ export const VoiceService = {
       } catch {}
     }
 
-    // NEW: Generate via Deepgram Worker.
-    // CRITICAL: Only pass audioPath to Worker if week is in CDN_WEEKS.
-    // If NOT in CDN_WEEKS, the R2 path may contain STALE audio (old content) —
-    // Worker would return the stale R2 file and we'd cache wrong audio under the new text's hash.
-    // Passing null forces Worker to generate fresh Deepgram audio to 'dynamic/' path.
-    const safePath = (weekNumber && CDN_WEEKS.includes(weekNumber)) ? audioPath : null;
+    // Generate via Deepgram Worker, using audioPath as the R2 storage key.
+    // For W16+ (on-demand): audioPath is a structured path like /audio/week16/mindmap_stem_1.mp3
+    // — Worker will save there so future callers get an R2 hit.
+    // Historical note: safePath=null was used during W16 content migration to avoid stale R2 hits.
+    // That transition is complete; always pass audioPath for structured caching.
+    const safePath = audioPath;
     try {
       const blob = await this.useGoogleTTS(cleanedText, station, finalVoice, safePath);
       await TTSCache.set(cleanedText, station, blob, finalVoice);
