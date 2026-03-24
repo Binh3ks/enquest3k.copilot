@@ -1,0 +1,58 @@
+{
+  "weekId": 19,
+  "theme": "When I Was Small",
+  "grammar_focus": "Was / Were (Past State): I am big. I was small.",
+  "vocabulary_focus": "baby cute little noisy quiet kindergarten grow past young",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "British Council was were past tense verb to be ESL kids primary",
+      "backup_search": "English Singsing was were past tense I was you were grammar kids",
+      "target_grammar": "Was / Were (Past of 'Be')",
+      "target_channel": "British Council",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing past tense was were song baby grow up kids ESL",
+      "backup_search": "was were song grammar lesson past simple to be kids",
+      "target_grammar": "Was / Were past state contrasts (I am now / I was before)",
+      "target_channel": "English Singsing",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox when I was little baby grow up story kids level 1",
+      "backup_search": "kids story was were past tense baby growing up ESL",
+      "target_grammar": "Story using was/were about being small in the past",
+      "target_channel": "Little Fox",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "baby kindergarten grow up vocabulary kids ESL primary learning English",
+      "backup_search": "past tense vocabulary was were baby children young ESL",
+      "target_grammar": "Vocabulary: baby, cute, little, kindergarten, grow",
+      "target_channel": "Various ESL",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    },
+    {
+      "id": 5,
+      "purpose": "SONG",
+      "priority_search": "was were song kids grammar past tense Super Simple Songs",
+      "backup_search": "I was you were grammar song ESL kids",
+      "target_grammar": "Was/Were song (contrasting past and present)",
+      "target_channel": "Super Simple Songs",
+      "age_group": "6-12 primary",
+      "reuse_from_week": null
+    }
+  ]
+}
