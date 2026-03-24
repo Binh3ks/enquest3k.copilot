@@ -1,4 +1,5 @@
-export default [
+export default {
+  sentences: [
   { id: 1,  text: "Today it is raining!" },
   { id: 2,  text: "I look out the window." },
   { id: 3,  text: "The sky is grey." },
@@ -19,4 +20,5 @@ export default [
   { id: 18, text: "It is sunny sometimes." },
   { id: 19, text: "But today it is raining." },
   { id: 20, text: "I love rainy days!" }
-];
+  ]
+};
