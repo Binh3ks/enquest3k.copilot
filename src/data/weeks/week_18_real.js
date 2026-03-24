@@ -206,7 +206,7 @@ const week18RealData = {
       target_pattern: "[Name] is + [verb]-ing + [object].",
 
       conversation_topics: [
-        "Who are you going to interview? (parent/sibling/friend/pet)",
+        "Who is near you right now? (parent/sibling/friend/pet)",
         "Ask the interview question: What are you doing?",
         "Report the answer to the audience: She/He is...",
         "Ask a follow-up question: Why are you doing that?",
@@ -231,7 +231,7 @@ const week18RealData = {
         role: "Studio anchor receiving live field reports from the student"
       },
 
-      opening_narrative: "And now, over to our field reporter! Hello reporter! Pick ONE person near you to interview. Who are you going to interview? Say: I am going to interview my mum or my friend or my brother",
+      opening_narrative: "And now, over to our field reporter! Hello reporter! Pick ONE person near you to interview. Who is near you right now? Say: My mum is here or My friend is here with me or My brother is sitting near me",
 
       story_arc: [
         {
