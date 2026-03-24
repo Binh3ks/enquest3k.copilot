@@ -1,39 +1,39 @@
 export default {
   prompts: [
-    { 
-      id: 1, 
-      context_vi: "Bạn đang đóng vai Thám tử Conan. Bạn thấy một bạn nhỏ đang khóc. Hãy hỏi xem Vấn đề của bạn ấy là gì.", 
-      context_en: "You are Detective Conan. You see a crying child. Ask what the problem is.", 
-      answer: ["What is the problem?", "What is wrong?"], 
-      hint: "What is..." 
+    {
+      id: 1,
+      prompt_en: "What are you doing right now?",
+      prompt_vi: "Bạn đang làm gì ngay lúc này?",
+      example_answer_en: "I am sitting and learning English.",
+      audio_url: "/audio/week18_easy/ask_ai_1.mp3"
     },
-    { 
-      id: 2, 
-      context_vi: "Bạn muốn giúp đỡ. Hãy hỏi xem bạn có thể tìm Giải pháp không.", 
-      context_en: "You want to help. Ask if you can find a solution.", 
-      answer: ["Can I find a solution?", "Can I help you?"], 
-      hint: "Can I..." 
+    {
+      id: 2,
+      prompt_en: "What is happening in your room right now?",
+      prompt_vi: "Điều gì đang xảy ra trong phòng của bạn ngay lúc này?",
+      example_answer_en: "My cat is sleeping. My fan is running.",
+      audio_url: "/audio/week18_easy/ask_ai_2.mp3"
     },
-    { 
-      id: 3, 
-      context_vi: "Bạn nhỏ bị lạc mất chó. Hãy hỏi xem chú chó tên là gì.", 
-      context_en: "The child lost their dog. Ask what the dog's name is.", 
-      answer: ["What is the dog's name?", "What is his name?"], 
-      hint: "What is..." 
+    {
+      id: 3,
+      prompt_en: "Pretend you are a live reporter. Describe one person near you!",
+      prompt_vi: "Giả vờ bạn là phóng viên trực tiếp. Mô tả một người gần bạn!",
+      example_answer_en: "My mum is cooking in the kitchen right now.",
+      audio_url: "/audio/week18_easy/ask_ai_3.mp3"
     },
-    { 
-      id: 4, 
-      context_vi: "Bạn muốn biết chú chó trông như thế nào (to hay nhỏ).", 
-      context_en: "You want to know if the dog is big or small.", 
-      answer: ["Is the dog big or small?", "What does he look like?"], 
-      hint: "Is the dog..." 
+    {
+      id: 4,
+      prompt_en: "What is your favourite news story? Why is it exciting?",
+      prompt_vi: "Câu chuyện tin tức yêu thích của bạn là gì? Tại sao nó hào hứng?",
+      example_answer_en: "I like news about animals. It is exciting because I love animals.",
+      audio_url: "/audio/week18_easy/ask_ai_4.mp3"
     },
-    { 
-      id: 5, 
-      context_vi: "Cuối cùng, bạn đã tìm thấy chú chó! Hãy hỏi bạn nhỏ xem bạn ấy có vui không.", 
-      context_en: "Finally, you found the dog! Ask the child if they are happy.", 
-      answer: ["Are you happy?", "Are you happy now?"], 
-      hint: "Are you..." 
+    {
+      id: 5,
+      prompt_en: "Who would you like to interview? What question would you ask?",
+      prompt_vi: "Bạn muốn phỏng vấn ai? Bạn sẽ hỏi câu gì?",
+      example_answer_en: "I want to interview my teacher. I would ask: What are you doing today?",
+      audio_url: "/audio/week18_easy/ask_ai_5.mp3"
     }
   ]
 };

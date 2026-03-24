@@ -16,10 +16,10 @@ import games from './games.js';
 
 const weekData = {
   weekId: 18,
-  isEasy: true,
+  isEasy: false,
   weekTitle_en: "The Live Reporter",
   weekTitle_vi: "Phóng Viên Trực Tiếp",
-  grammar_focus: "Present Continuous: I am + verb-ing / She is + verb-ing / They are + verb-ing.",
+  grammar_focus: "Present Continuous: I am reporting / She is filming / They are watching.",
   global_vocab: vocab.vocab,
 
   voiceConfig: {

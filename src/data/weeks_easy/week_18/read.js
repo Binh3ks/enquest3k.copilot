@@ -1,12 +1,30 @@
 export default {
-  title: "Where is Max?",
-  image_url: "/images/week18_easy/read_cover_easy_w18.jpg",
-  content_en: "(Beginning) One sunny morning, I took my dog Max to the **park**. Suddenly, the leash **slipped**. Max ran away! This was a big **problem**. I was **scared**. (Middle) I **searched** everywhere. I looked behind the bush. I **called** his name loudly. (End) Finally, a policeman **found** him. That was the **solution**! I hugged Max. We were **happy** again.",
-  content_vi: "(Mở đầu) Một sáng nắng đẹp, tôi dẫn chó Max ra công viên. Đột nhiên, dây xích bị tuột. Max chạy mất! Đây là một vấn đề lớn. Tôi rất sợ. (Thân bài) Tôi đã tìm kiếm khắp nơi. Tôi nhìn sau bụi cây. Tôi gọi to tên nó. (Kết thúc) Cuối cùng, một chú cảnh sát đã tìm thấy nó. Đó là giải pháp! Tôi ôm chầm lấy Max. Chúng tôi lại vui vẻ.",
-  audio_url: null,
+  title: "Alex the Reporter",
+  image_url: "/images/week18_easy/read_cover_w18.jpg",
+  content_en: "Alex loves the news. Today he has a toy **microphone** and a toy **camera**. He wants to be a **reporter**! He stands in the living room. He says: Good morning! This is **live** **news** from my home! He begins to **describe** the **scene**. He says: My mum is making breakfast. My little brother is playing with his toy. My cat is sleeping on the sofa. What a busy **scene**! He turns to his cat. He holds out the **microphone**. He says: I will now **interview** the cat! The cat looks up. Alex laughs. He says: The cat has no **report** today! His mum and brother clap. They are the **audience**. Alex bows. It is so **exciting** to be a **reporter**! He loves describing what is **happening** at home.",
+  content_vi: "Alex rất thích xem tin tức. Hôm nay cậu có một cái **micro** đồ chơi và một cái **máy quay** đồ chơi. Cậu muốn trở thành **phóng viên**! Cậu đứng trong phòng khách. Cậu nói: Chào buổi sáng! Đây là **tin tức trực tiếp** từ nhà tôi! Cậu bắt đầu **mô tả** **khung cảnh**. Cậu nói: Mẹ tôi đang làm bữa sáng. Em trai tôi đang chơi đồ chơi. Mèo của tôi đang ngủ trên ghế sofa. Thật là một **khung cảnh** sôi động! Cậu quay sang con mèo. Cậu giơ **micro** ra. Cậu nói: Bây giờ tôi sẽ **phỏng vấn** con mèo! Con mèo ngước nhìn. Alex bật cười. Cậu nói: Con mèo không có **bản tin** nào hôm nay! Mẹ và em trai cậu vỗ tay. Họ là **khán giả**. Alex cúi chào. Thật **hào hứng** khi được làm **phóng viên**! Cậu thích mô tả những gì đang **xảy ra** ở nhà.",
+  audio_url: "/audio/week18_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What was the problem?", answer: ["Max ran away.", "The dog was lost."], hint_en: "Max ran...", hint_vi: "Max đã chạy..." },
-    { id: 2, question_en: "What did the boy do in the middle?", answer: ["He searched and called Max."], hint_en: "He searched...", hint_vi: "Cậu ấy đã tìm..." },
-    { id: 3, question_en: "What was the solution?", answer: ["A policeman found Max."], hint_en: "A policeman...", hint_vi: "Một chú cảnh sát..." }
+    {
+      id: 1,
+      question_en: "What does Alex use to be a reporter?",
+      answer: ["A toy microphone and a toy camera", "Microphone and camera", "A toy microphone and camera"],
+      hint_en: "He has two toys...",
+      hint_vi: "Cậu có hai đồ chơi..."
+    },
+    {
+      id: 2,
+      question_en: "Who is the audience for Alex's news show?",
+      answer: ["His mum and brother", "Mum and little brother", "His mum and little brother"],
+      hint_en: "They clap for Alex...",
+      hint_vi: "Họ vỗ tay cho Alex..."
+    },
+    {
+      id: 3,
+      question_en: "What is the cat doing?",
+      answer: ["Sleeping on the sofa", "The cat is sleeping", "It is sleeping on the sofa"],
+      hint_en: "The cat is on the sofa...",
+      hint_vi: "Con mèo đang ở trên ghế sofa..."
+    }
   ]
 };

@@ -10,6 +10,16 @@
     ]
   },
   {
+    "weekId": 18,
+    "videos": [
+      { "id": 1, "query": "Present continuous song kids what are you doing" },
+      { "id": 2, "query": "Be a reporter kids describe scene English" },
+      { "id": 3, "query": "Action verbs song for kids is are am verb-ing" },
+      { "id": 4, "query": "What is happening describe actions English for kids" },
+      { "id": 5, "query": "Live news reporter for kids school" }
+    ]
+  },
+  {
     "weekId": 20,
     "videos": [
       { "id": 1, "query": "History of my city" },
