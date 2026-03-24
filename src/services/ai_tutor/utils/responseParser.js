@@ -703,6 +703,6 @@ function buildContextualQuestion(lastUserMessage, roleplayId) {
     }
   }
   
-  // Generic fallback - Week 7 pattern
-  return ' Is there a pen in your backpack? Or a book?';
+  // Generic fallback - Week 16 pattern (Present Continuous)
+  return ' What are you doing right now? Say: I am sitting or I am learning!';
 }

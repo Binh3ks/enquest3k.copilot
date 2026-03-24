@@ -10,8 +10,6 @@ import { week2RealData } from '../../data/weeks/week_02_real.js';
 import { week3RealData } from '../../data/weeks/week_03_real.js';
 import week4RealData from '../../data/weeks/week_04_real.js';
 import week5RealData from '../../data/weeks/week_05_real.js';
-import week6RealData from '../../data/weeks/week_06_real.js';
-import week7RealData from '../../data/weeks/week_07_real.js';
 
 /**
  * Get ACCUMULATIVE vocabulary from Week 1 to current week
@@ -392,8 +390,8 @@ Use vocab words only: [suggest 2-3 words from ALLOWED VOCAB: ${vocab}]. Your tur
 CONTEXT-RICH PATTERN EXAMPLES BY WEEK:
 - Week 4 Pattern 1: "Complete this sentence: 'I like [V-ing].' Use: [playing, singing]."
 - Week 4 Pattern 2: "Complete this sentence: 'I like [V-ing] [object].' Try: reading + books, drawing + pictures."
-- Week 6: "Complete this sentence: 'The treasure is [ON/UNDER/IN] the [place].' Use: box, desk, floor."
-- Week 7: "Complete this sentence: 'There is a [item] in my [place].' Use: pen, backpack, book, desk."
+- Week 16: "Complete this sentence: 'Alex is [V-ing] right now.' Use: running, kicking, passing."
+- Week 16: "Complete this sentence: 'The players are [V-ing] together.' Use: playing, running, jumping."
 
 ROUND SCHEDULE (STRICT):
 - Turns 1-10: Use pattern 1 ONLY ("${gameConfig.patterns?.[0] || 'Pattern 1'}")
@@ -402,8 +400,8 @@ ROUND SCHEDULE (STRICT):
 ✅ CORRECT Examples (FOLLOW THESE):
 - Week 4: "Great! I like reading! 🎉 Complete this sentence: 'I like [V-ing].' Use: [playing, singing]. Your turn?"
 - Week 4: "Great! I like playing! 🎉 Complete this sentence: 'I like [V-ing] [object].' Try: reading + books, drawing + pictures. Your turn?"
-- Week 6: "Great! The treasure is on the desk! 🎉 Complete this sentence: 'The treasure is [ON/UNDER/IN] the [place].' Use: [box, floor]. Your turn?"
-- Week 7: "Great! There is a pen in my backpack! 🎉 Complete this sentence: 'There is a [item] in my [place].' Use: [book, desk]. Your turn?"
+- Week 16: "Great! Alex is running right now! 🎉 Complete this sentence: 'Alex is [V-ing] right now.' Use: [kicking, passing]. Your turn?"
+- Week 16: "Great! The players are jumping together! 🎉 Complete this sentence: 'The players are [V-ing] together.' Use: [running, cheering]. Your turn?"
 
 ❌ WRONG Examples (NEVER DO THIS):
 - "Great! I like reading too! 🎉 I like [V-ing] ____." ← TOO VAGUE! Missing context!
