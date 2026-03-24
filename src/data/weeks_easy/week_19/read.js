@@ -1,12 +1,12 @@
 export default {
-  title: "My Baby Album",
+  title: "When I Was Small",
   image_url: "/images/week19_easy/read_cover_w19.jpg",
-  content_en: "Today, I **was** looking at my baby album. I **was** so small! There **were** many photos of me. In one photo, I **was** in a crib. My mom **was** next to me. There **were** toys around me. My first teddy bear **was** brown. The room **was** blue and nice. I **was** a happy baby. Those days **were** special.",
-  content_vi: "Hôm nay, tớ xem album ảnh hồi bé. Tớ nhỏ xíu quá! Có nhiều ảnh của tớ. Trong một bức ảnh, tớ ở trong nôi. Mẹ tớ ở bên cạnh tớ. Có đồ chơi xung quanh tớ. Con gấu bông đầu tiên của tớ màu nâu. Căn phòng màu xanh và đẹp. Tớ là một em bé vui vẻ. Những ngày đó thật đặc biệt.",
-  audio_url: null,
+  content_en: "I **was** a **baby**. I **was** very **cute** and **little**. My hair **was** short. I **was** **quiet** when I slept. But I **was** **noisy** when I cried! I **was** in **kindergarten** when I **was** 5. I had many friends. They **were** **young** too. We **were** **small**. Now I **grow**. I am big! The **past** is special.",
+  content_vi: "Tớ **là** em **bé**. Tớ rất **dễ thương** và **nhỏ**. Tóc tớ **ngắn**. Tớ **yên lặng** khi ngủ. Nhưng tớ **ồn ào** khi khóc! Tớ học **mẫu giáo** khi tớ 5 tuổi. Tớ có nhiều bạn. Họ cũng **trẻ**. Chúng tớ **nhỏ**. Bây giờ tớ **lớn lên**. Tớ to rồi! **Quá khứ** thật đặc biệt.",
+  audio_url: "/audio/week19_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What was he looking at?", answer: ["His baby album.", "Baby album.", "The baby album."], hint_en: "His baby...", hint_vi: "Album ảnh..." },
-    { id: 2, question_en: "Where was he in one photo?", answer: ["In a crib.", "A crib.", "He was in a crib."], hint_en: "In a c...", hint_vi: "Trong nôi..." },
-    { id: 3, question_en: "What color was his first teddy bear?", answer: ["Brown.", "It was brown."], hint_en: "It was b...", hint_vi: "Màu nâu..." }
+    { id: 1, question_en: "Was the child cute?", answer: ["Yes", "Yes, very cute", "The child was cute"], hint_en: "Yes...", hint_vi: "Có..." },
+    { id: 2, question_en: "How old was the child in kindergarten?", answer: ["5", "Five", "5 years old"], hint_en: "The child was...", hint_vi: "Bé..." },
+    { id: 3, question_en: "Is the child small now?", answer: ["No", "No, big now", "No, not small"], hint_en: "No...", hint_vi: "Không..." }
   ]
 };
