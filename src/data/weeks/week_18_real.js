@@ -371,34 +371,101 @@ const week18RealData = {
 
   conversation_cards: [
     {
-      id: 1,
-      title: "Classroom Scene",
-      title_vi: "Khung cảnh lớp học",
-      context_en: "You are a live reporter standing in your classroom. Describe what 3 people are doing right now.",
-      context_vi: "Bạn là phóng viên đứng trong lớp học. Mô tả 3 người đang làm gì ngay lúc này.",
-      starter_en: "Welcome! This is your live reporter. Right now in the classroom...",
-      vocab_prompts: ["is reading", "is writing", "is drawing", "is talking", "is standing"],
-      grammar_target: "She/He is + verb-ing"
+      id: "classroom_reporter",
+      title: "Classroom Reporter",
+      emoji: "📰",
+      theme: "Live Reporting — Present Continuous",
+      difficulty: "easy",
+      exchanges: [
+        {
+          ai: "Welcome to the news desk! I am Nova. You are the reporter today! Look around you. What is happening right now? Say: I am sitting or She is reading or He is writing",
+          fill_blank: "I am ___",
+          accept_words: ["sitting", "standing", "reading", "writing", "learning", "watching", "talking", "drawing"]
+        },
+        {
+          ai: "Great report! Now describe someone near you. What is that person doing? Say: My mum is cooking or My friend is playing or My teacher is talking",
+          fill_blank: "___ is ___ing",
+          accept_words: ["is", "are"]
+        },
+        {
+          ai: "Wonderful! Are two people doing the same thing or different things? Say: They are both studying or They are doing different things",
+          options: ["They are both studying", "They are doing different things", "They are both working"]
+        },
+        {
+          ai: "This just in — what is the most exciting thing happening right now? Say: The most exciting thing is ___",
+          fill_blank: "The most exciting thing is ___",
+          accept_words: ["happening", "is", "are", "my", "the"]
+        },
+        {
+          ai: "Back to the studio! Great live report, reporter! What are YOU doing right now? Say: I am reporting or I am learning English or I am being a reporter",
+          options: ["I am reporting", "I am learning English", "I am being a reporter"]
+        }
+      ],
+      completion_message: "Excellent reporting! 📰 You described real actions using Present Continuous!"
     },
     {
-      id: 2,
+      id: "interview_practice",
       title: "Interview Practice",
-      title_vi: "Luyện tập phỏng vấn",
-      context_en: "You are interviewing a classmate. Ask what they are doing and report it to the audience.",
-      context_vi: "Bạn đang phỏng vấn một bạn học. Hỏi họ đang làm gì và báo cáo lại cho khán giả.",
-      starter_en: "Hello! Can I interview you? What are you doing right now?",
-      vocab_prompts: ["What are you doing?", "I am reporting that...", "My classmate is..."],
-      grammar_target: "What are you doing? / [Name] is + verb-ing"
+      emoji: "🎤",
+      theme: "Asking & Answering with Present Continuous",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "You are interviewing me for the school news! Say hello and ask what I am doing. Say: What are you doing right now?",
+          accept: ["What are you doing", "What are you doing right now", "What is happening"]
+        },
+        {
+          ai: "I am preparing the evening news broadcast! Now ask me — who else is working here? Say: Who else is working?",
+          accept: ["Who else is working", "Who is working", "Who is helping you"]
+        },
+        {
+          ai: "My cameraman Alex is filming, and Maya is writing the script right now. Can you repeat that? Say: Alex is filming and Maya is writing",
+          options: ["Alex is filming and Maya is writing", "Alex is writing and Maya is filming", "They are both filming"]
+        },
+        {
+          ai: "Great! Now ask me what the audience at home is doing right now. Say: What is the audience doing?",
+          accept: ["What is the audience doing", "What are the viewers doing", "What are people doing at home"]
+        },
+        {
+          ai: "The audience is watching and cheering right now! Thank your interviewee. Say: Thank you for talking with me or Thank you for your time",
+          options: ["Thank you for talking with me", "Thank you for your time", "Thank you very much"]
+        }
+      ],
+      completion_message: "Perfect interview technique! 🎤 You used 'What are you doing?' and Present Continuous answers!"
     },
     {
-      id: 3,
-      title: "Describing Actions",
-      title_vi: "Mô tả hành động",
-      context_en: "Look at a picture or look around you. Use Present Continuous to describe everything you see happening.",
-      context_vi: "Nhìn vào một bức tranh hoặc nhìn xung quanh bạn. Dùng thì Hiện tại tiếp diễn để mô tả tất cả những gì bạn thấy đang xảy ra.",
-      starter_en: "I can see many things happening right now! First...",
-      vocab_prompts: ["is running", "is sleeping", "is eating", "are playing", "are watching"],
-      grammar_target: "Multiple subjects with is/are + verb-ing"
+      id: "live_scene_description",
+      title: "Describe the Scene",
+      emoji: "🎬",
+      theme: "Multiple Subjects with is/are + verb-ing",
+      difficulty: "medium",
+      exchanges: [
+        {
+          ai: "You are a live reporter at the school! Describe what is happening using 'is'. Say: The teacher is writing or A student is reading",
+          fill_blank: "The ___ is ___ing",
+          accept_words: ["is", "teacher", "student", "child", "reporter", "person"]
+        },
+        {
+          ai: "Now use 'are' for more than one person. Say: The students are studying or The children are playing or My friends are running",
+          fill_blank: "The ___ are ___ing",
+          accept_words: ["are", "students", "children", "friends", "people", "teachers"]
+        },
+        {
+          ai: "Excellent! Now describe TWO different actions at the same time. Say: One person is ___ and another is ___",
+          fill_blank: "One person is ___ and another is ___",
+          accept_words: ["and", "is", "one", "another", "person"]
+        },
+        {
+          ai: "What is the most interesting action you can see? Use: Right now, ___ is/are ___ing",
+          fill_blank: "Right now, ___ is/are ___ing",
+          accept_words: ["right", "now", "is", "are"]
+        },
+        {
+          ai: "Brilliant scene description! Sign off your report. Say: This is your reporter, signing off or That is all from the scene or Thank you for watching",
+          options: ["This is your reporter, signing off", "That is all from the scene", "Thank you for watching"]
+        }
+      ],
+      completion_message: "Amazing scene description! 🎬 You used is/are + verb-ing with multiple subjects like a real reporter!"
     }
   ]
 };

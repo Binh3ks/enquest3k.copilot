@@ -2281,27 +2281,27 @@ GAME RULES BY TYPE:
    
    Example Rounds Based on Grammar:
    
-   **IF GRAMMAR IS "There is a..." (Week 7):**
-     question: "There [is] an eraser."
-     correct_answer: "There is an eraser."
+   **IF GRAMMAR IS "Present Continuous (am/is/are + verb-ing)" (Week 16-18):**
+     question: "She [is] running right now."
+     correct_answer: "She is running right now."
      options: [
-       "There is an eraser.",
-       "There is a eraser.", 
-       "There are an eraser.",
-       "There eraser."
+       "She is running right now.",
+       "She are running right now.",
+       "She running right now.",
+       "She is run right now."
      ]
-     explanation: "We use 'an' before vowel sounds like 'eraser'."
+     explanation: "We use 'is' with 'she/he/it' in Present Continuous."
    
-   **IF GRAMMAR IS "Prepositions (in/on/under/next to)" (Week 6):**
-     question: "The treasure is [at] the desk."
-     correct_answer: "The treasure is on the desk."
+   **IF GRAMMAR IS "What are you doing? / I am ___ing" (Week 16-18):**
+     question: "What [are] you doing right now?"
+     correct_answer: "What are you doing right now?"
      options: [
-       "The treasure is on the desk.",
-       "The treasure is at the desk.",
-       "The treasure is in the desk.",
-       "The treasure is under the desk."
+       "What are you doing right now?",
+       "What is you doing right now?",
+       "What you are doing right now?",
+       "What do you doing right now?"
      ]
-     explanation: "We use 'on' when something is on top of a surface."
+     explanation: "We use 'are' with 'you' in Present Continuous questions."
    
    **IF GRAMMAR IS "A/An" (Week 5):**
      question: "This [is] an table."

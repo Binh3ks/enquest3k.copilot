@@ -53,9 +53,10 @@ function checkGrammarGuard(input, weekNumber) {
   
   // ===== PAST TENSE GUARD (Week 19+) =====
   // Block past tense verbs and phrases before Week 19 (Block B1)
+  // Use word boundary regex to avoid false positives (e.g. "read" inside "reading")
   if (weekNumber < 19) {
     for (const verb of GRAMMAR_GUARD.PAST_SIMPLE_VERBS) {
-      if (lower.includes(verb)) {
+      if (new RegExp(`\\b${verb}\\b`, 'i').test(lower)) {
         return { valid: false, error: `We have not learned "${verb}" yet. Use present tense.` };
       }
     }
