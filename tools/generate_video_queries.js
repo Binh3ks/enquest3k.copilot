@@ -117,6 +117,34 @@ const BLUEPRINT_WEEKS = {
     keywords: "present, poster, family, abilities, talents, confident, proud",
     video_hint: "Show and Tell Song",
     read_topic: "Project Presentation - sharing about yourself and family"
+  },
+  15: {
+    theme: "The Busy Park",
+    grammar: "Present Continuous (S + am/is/are + V-ing)",
+    keywords: "actions, running, jumping, playing, eating, park activities",
+    video_hint: "What are you doing?",
+    read_topic: "At the Park - describing actions happening now"
+  },
+  16: {
+    theme: "Sports Commentary",
+    grammar: "Present Continuous (is/are + verb-ing)",
+    keywords: "sports, running, kicking, throwing, catching, scoring, commentary",
+    video_hint: "Sports action verbs",
+    read_topic: "Sports Reporter - describing live sports events"
+  },
+  17: {
+    theme: "Weather & Clothes",
+    grammar: "Cause and Effect: It is [weather], so I am wearing [clothes]",
+    keywords: "weather, sunny, rainy, cloudy, snowy, hot, cold, clothes, jacket, umbrella",
+    video_hint: "Weather Song",
+    read_topic: "Weather Reporter - describing weather and dressing"
+  },
+  18: {
+    theme: "The Live Reporter",
+    grammar: "Present Continuous: I am reporting / She is filming / They are watching",
+    keywords: "reporter, camera, filming, watching, happening, news, microphone, broadcasting",
+    video_hint: "What is happening now?",
+    read_topic: "Live News Reporter - describing current events"
   }
 };
 
@@ -393,6 +421,8 @@ const extractGrammarKeywords = (grammarStr) => {
     'Prepositions': 'prepositions of place in on under',
     'There is': 'there is there are',
     'There are': 'plural there are',
+    'Present Continuous': 'present continuous am is are doing',
+    'Cause and Effect': 'because so cause effect adjectives',
   };
   
   for (const [key, value] of Object.entries(patterns)) {
