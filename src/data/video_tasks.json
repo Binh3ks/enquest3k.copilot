@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "weekId": 17,
+    "note": "Weather & Clothes - SIMPLE queries based on video_hint",
+    "videos": [
+      { "id": 1, "purpose": "GRAMMAR", "query": "weather song for kids sunny rainy" },
+      { "id": 2, "purpose": "GRAMMAR", "query": "what should I wear today weather clothes song kids" },
+      { "id": 3, "purpose": "STORY", "query": "weather story for kids English" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "weather vocabulary sunny rainy cloudy snowy cold hot" },
+      { "id": 5, "purpose": "SCIENCE", "query": "types of weather for kids science" }
+    ]
+  },
+  {
+    "weekId": 18,
+    "note": "Present Continuous - Simple action-based queries",
+    "videos": [
+      { "id": 1, "purpose": "GRAMMAR", "query": "what are you doing song kids English" },
+      { "id": 2, "purpose": "GRAMMAR", "query": "present continuous tense action song kids" },
+      { "id": 3, "purpose": "STORY", "query": "what is he doing action story kids" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "action verbs running jumping playing kids vocabulary" },
+      { "id": 5, "purpose": "SCIENCE", "query": "how cameras work for kids" }
+    ]
+  }
+]
