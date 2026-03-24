@@ -50,6 +50,57 @@ export default {
       audio_example: "/audio/week17_easy/wordpower_ex_dress_for_the_weather.mp3",
       audio_collocation: "/audio/week17_easy/wordpower_coll_dress_for_the_weather.mp3",
       audio_model: "/audio/week17_easy/wordpower_model_dress_for_the_weather.mp3"
+    },
+    {
+      id: 4,
+      word: "put on boots",
+      pronunciation: "/pʊt ɒn buːts/",
+      cefr_level: "A1",
+      definition_en: "wear boots on your feet",
+      definition_vi: "mang ủng vào chân",
+      example: "I put on boots when it rains.",
+      model_sentence: "I put on my boots because it is raining and cold outside.",
+      collocation: "put on boots",
+      image_url: "/images/week17_easy/wordpower_put_on_boots.jpg",
+      audio_word: "/audio/week17_easy/wordpower_put_on_boots.mp3",
+      audio_definition: "/audio/week17_easy/wordpower_def_put_on_boots.mp3",
+      audio_example: "/audio/week17_easy/wordpower_ex_put_on_boots.mp3",
+      audio_collocation: "/audio/week17_easy/wordpower_coll_put_on_boots.mp3",
+      audio_model: "/audio/week17_easy/wordpower_model_put_on_boots.mp3"
+    },
+    {
+      id: 5,
+      word: "stay dry",
+      pronunciation: "/steɪ draɪ/",
+      cefr_level: "A1",
+      definition_en: "not get wet in the rain",
+      definition_vi: "không bị ướt khi trời mưa",
+      example: "I use an umbrella to stay dry.",
+      model_sentence: "I carry an umbrella to stay dry when it rains.",
+      collocation: "stay dry",
+      image_url: "/images/week17_easy/wordpower_stay_dry.jpg",
+      audio_word: "/audio/week17_easy/wordpower_stay_dry.mp3",
+      audio_definition: "/audio/week17_easy/wordpower_def_stay_dry.mp3",
+      audio_example: "/audio/week17_easy/wordpower_ex_stay_dry.mp3",
+      audio_collocation: "/audio/week17_easy/wordpower_coll_stay_dry.mp3",
+      audio_model: "/audio/week17_easy/wordpower_model_stay_dry.mp3"
+    },
+    {
+      id: 6,
+      word: "check the weather",
+      pronunciation: "/tʃɛk ðə ˈwɛðər/",
+      cefr_level: "A1",
+      definition_en: "look to see what the weather is like",
+      definition_vi: "xem thời tiết như thế nào",
+      example: "I check the weather every morning.",
+      model_sentence: "I check the weather before I go outside so I know what to wear.",
+      collocation: "check the weather",
+      image_url: "/images/week17_easy/wordpower_check_the_weather.jpg",
+      audio_word: "/audio/week17_easy/wordpower_check_the_weather.mp3",
+      audio_definition: "/audio/week17_easy/wordpower_def_check_the_weather.mp3",
+      audio_example: "/audio/week17_easy/wordpower_ex_check_the_weather.mp3",
+      audio_collocation: "/audio/week17_easy/wordpower_coll_check_the_weather.mp3",
+      audio_model: "/audio/week17_easy/wordpower_model_check_the_weather.mp3"
     }
   ]
 };

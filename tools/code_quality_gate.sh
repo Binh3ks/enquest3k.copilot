@@ -15,7 +15,7 @@
 #   Clone Week 16 (golden standard) → replace content → validate quality gate
 #   Gate checks: (1) code patterns + (2) W16 schema compliance + (3) content consistency
 #
-# CHECKS (16 total):
+# CHECKS (22 total):
 #   Code pattern checks (React/service bugs):
 #   [1]  Images: all <img src> from data use getImageUrl()
 #   [2]  MindMap: station='mindmap_speaking' (not 'read')
@@ -35,6 +35,14 @@
 #   [14] weekId in index.js matches week N
 #   [15] Audio/image paths reference week N (not stale from W16)
 #   [16] AI Tutor week_NN_real.js: 3 missions + v28_format_notes + nova + pacing
+#
+#   Data content checks (schema correctness per W16 golden standard):
+#   [17] dictation.js: exports { sentences: [...] } not plain array
+#   [18] singapore_math.js: answer=string[], bar_model=string, hint_en/hint_vi present
+#   [19] writing.js: has model_sentence, prompt_en, prompt_vi (no example_en/rubric)
+#   [20] word_power.js: has >= 6 words
+#   [21] mindmap.js: branchLabels keyed by stem text (no completions in centerStems)
+#   [22] metadata.js: week N has real title (not generic "Week N")
 #
 # Usage:
 #   bash tools/code_quality_gate.sh <week_number>
@@ -73,7 +81,7 @@ echo -e "${BLUE}${BOLD}═══════════════════
 echo -e "${BLUE}${BOLD}  CODE QUALITY GATE — Week ${WEEK_PAD} (Full App Coverage)${NC}"
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 echo ""
-echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template${NC}"
+echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template  |  Checks 17-22: content schema${NC}"
 echo ""
 
 # =============================================================================
@@ -547,12 +555,190 @@ fi
 echo ""
 
 # =============================================================================
+# CHECK 17: dictation.js must export { sentences: [...] } not a plain array
+# =============================================================================
+echo -e "${BOLD}[CHECK 17] dictation.js — must export { sentences: [...] } not a plain array${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  DICT_FILE="${dir}/dictation.js"
+  [ ! -f "$DICT_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): $DICT_FILE not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+  # Bad: export default [  (plain array at top level)
+  BAD_DICT=$(grep -n "^export default \[" "$DICT_FILE" || true)
+  if [ -n "$BAD_DICT" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): dictation.js exports plain array — must be { sentences: [...] }${NC}"
+    echo -e "      ${RED}$BAD_DICT${NC}"
+    echo -e "   ${YELLOW}FIX: export default { sentences: [ ...your array... ] };${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    HAS_SENTENCES=$(grep -c "sentences:" "$DICT_FILE" || true)
+    if [ "$HAS_SENTENCES" -gt 0 ]; then
+      echo -e "   ${GREEN}✅ PASS ($LABEL): dictation.js exports { sentences: [...] }${NC}"
+    else
+      echo -e "   ${YELLOW}⚠️  WARNING ($LABEL): 'sentences' key not found in dictation.js — verify schema${NC}"
+      WARNINGS=$((WARNINGS+1))
+    fi
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 18: singapore_math.js — correct answer/bar_model/hint schema
+# =============================================================================
+echo -e "${BOLD}[CHECK 18] singapore_math.js — answer must be string array, bar_model string, hint_en/hint_vi present${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  SM_FILE="${dir}/singapore_math.js"
+  [ ! -f "$SM_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): $SM_FILE not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+
+  SM_ERRS=""
+  # Bad: answer: [{ label: or answer: [{ value:  (object array instead of string array)
+  BAD_ANSWER=$(grep -n "answer: *\[{" "$SM_FILE" || true)
+  [ -n "$BAD_ANSWER" ] && SM_ERRS="${SM_ERRS}\n      answer is an object array (must be string array like [\"5\",\"five\"]): $BAD_ANSWER"
+
+  # Bad: bar_model: { (object instead of string path)
+  BAD_BAR=$(grep -n "bar_model: *{" "$SM_FILE" || true)
+  [ -n "$BAD_BAR" ] && SM_ERRS="${SM_ERRS}\n      bar_model is an object (must be string path like \"/images/...\"/): $BAD_BAR"
+
+  # Must have hint_en and hint_vi (not hints: [...] array)
+  HAS_HINT_EN=$(grep -c "hint_en:" "$SM_FILE" || true)
+  HAS_HINT_VI=$(grep -c "hint_vi:" "$SM_FILE" || true)
+  BAD_HINTS=$(grep -n "hints: *\[" "$SM_FILE" || true)
+  [ -n "$BAD_HINTS" ] && SM_ERRS="${SM_ERRS}\n      hints is an array (must be hint_en/hint_vi strings): $BAD_HINTS"
+  [ "$HAS_HINT_EN" -eq 0 ] && SM_ERRS="${SM_ERRS}\n      Missing hint_en fields"
+  [ "$HAS_HINT_VI" -eq 0 ] && SM_ERRS="${SM_ERRS}\n      Missing hint_vi fields"
+
+  if [ -n "$SM_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): singapore_math.js schema errors:${NC}"
+    echo -e "$SM_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: answer=[\"5\",\"five\"], bar_model=\"/images/...\", hint_en=\"...\", hint_vi=\"...\"${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): singapore_math.js schema correct${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 19: writing.js must have model_sentence, prompt_en, prompt_vi
+# =============================================================================
+echo -e "${BOLD}[CHECK 19] writing.js — must have model_sentence, prompt_en, prompt_vi (no example_en/rubric)${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  WR_FILE="${dir}/writing.js"
+  [ ! -f "$WR_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): $WR_FILE not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+
+  WR_ERRS=""
+  grep -q "model_sentence:" "$WR_FILE" || WR_ERRS="${WR_ERRS}\n      Missing: model_sentence"
+  grep -q "prompt_en:"      "$WR_FILE" || WR_ERRS="${WR_ERRS}\n      Missing: prompt_en"
+  grep -q "prompt_vi:"      "$WR_FILE" || WR_ERRS="${WR_ERRS}\n      Missing: prompt_vi"
+  BAD_EXAMPLE=$(grep -n "example_en:" "$WR_FILE" || true)
+  [ -n "$BAD_EXAMPLE" ] && WR_ERRS="${WR_ERRS}\n      Non-standard field 'example_en' (use model_sentence instead): $BAD_EXAMPLE"
+  BAD_RUBRIC=$(grep -n "rubric:" "$WR_FILE" || true)
+  [ -n "$BAD_RUBRIC" ] && WR_ERRS="${WR_ERRS}\n      Non-standard field 'rubric' (not in W16 schema): $BAD_RUBRIC"
+
+  if [ -n "$WR_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): writing.js schema errors:${NC}"
+    echo -e "$WR_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: Add model_sentence/prompt_en/prompt_vi, remove example_en/rubric${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): writing.js schema correct${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 20: word_power.js must have >= 6 words
+# =============================================================================
+echo -e "${BOLD}[CHECK 20] word_power.js — must have at least 6 words (W16 standard)${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  WP_FILE="${dir}/word_power.js"
+  [ ! -f "$WP_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): $WP_FILE not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+
+  WORD_COUNT=$(grep -c "\"id\":\|  id:" "$WP_FILE" || true)
+  if [ "$WORD_COUNT" -lt 6 ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has only $WORD_COUNT word(s) — need at least 6${NC}"
+    echo -e "   ${YELLOW}FIX: Add more words until count >= 6${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has $WORD_COUNT words (>= 6)${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 21: mindmap.js — branchLabels keyed by stem text, no completions in centerStems
+# =============================================================================
+echo -e "${BOLD}[CHECK 21] mindmap.js — branchLabels must be keyed by stem text, no completions array${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  MM_FILE="${dir}/mindmap.js"
+  [ ! -f "$MM_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): $MM_FILE not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+
+  MM_ERRS=""
+  # Bad: completions: [ in centerStems
+  BAD_COMPLETIONS=$(grep -n "completions:" "$MM_FILE" || true)
+  [ -n "$BAD_COMPLETIONS" ] && MM_ERRS="${MM_ERRS}\n      Found 'completions:' — must use branchLabels[stemText] instead: $BAD_COMPLETIONS"
+
+  # Bad: branchLabels with simple string values (not arrays of {text,audio})
+  # Detect: branchLabels: { weather: "Weather or weather: { (category object keys)
+  BAD_BL_STRING=$(grep -n "branchLabels:" "$MM_FILE" | head -1 || true)
+  # Check if branchLabels uses category name keys (not stem sentence keys)
+  BAD_CATEGORY=$(grep -n "weather:\|clothing:\|science:\|action:" "$MM_FILE" | grep -v "#\|//" || true)
+  [ -n "$BAD_CATEGORY" ] && MM_ERRS="${MM_ERRS}\n      branchLabels uses category name keys (must be keyed by exact stem text): $BAD_CATEGORY"
+
+  if [ -n "$MM_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): mindmap.js schema errors:${NC}"
+    echo -e "$MM_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: branchLabels[\"exact stem text\"] = [{text,audio},...] — no completions${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): mindmap.js schema correct${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 22: metadata.js — week N must not have generic "Week N" title
+# =============================================================================
+echo -e "${BOLD}[CHECK 22] metadata.js — week $WEEK_INT must have a real title (not generic 'Week $WEEK_INT')${NC}"
+META_FILE="src/data/weeks/metadata.js"
+if [ ! -f "$META_FILE" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: $META_FILE not found${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  # Look for the week entry and check for generic title
+  GENERIC_TITLE=$(grep -A2 "^  ${WEEK_INT}:" "$META_FILE" | grep -E "title_en: \"Week ${WEEK_INT}\"|title_en: 'Week ${WEEK_INT}'" || true)
+  if [ -n "$GENERIC_TITLE" ]; then
+    echo -e "   ${RED}❌ FAIL: metadata.js week $WEEK_INT still has generic title 'Week $WEEK_INT'${NC}"
+    echo -e "      ${RED}$GENERIC_TITLE${NC}"
+    echo -e "   ${YELLOW}FIX: Update title_en and title_vi in metadata.js for week $WEEK_INT${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    ACTUAL_TITLE=$(grep -A2 "^  ${WEEK_INT}:" "$META_FILE" | grep "title_en:" | head -1 || true)
+    if [ -n "$ACTUAL_TITLE" ]; then
+      echo -e "   ${GREEN}✅ PASS: metadata.js week $WEEK_INT has real title:${NC}"
+      echo -e "   ${CYAN}   $ACTUAL_TITLE${NC}"
+    else
+      echo -e "   ${YELLOW}⚠️  WARNING: Could not verify week $WEEK_INT title in metadata.js${NC}"
+      WARNINGS=$((WARNINGS+1))
+    fi
+  fi
+fi
+echo ""
+
+# =============================================================================
 # SUMMARY
 # =============================================================================
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   echo -e "${GREEN}${BOLD}  ✅ CODE QUALITY GATE PASSED — Week ${WEEK_PAD}${NC}"
-  echo -e "${GREEN}  All 16 checks passed. Safe to commit.${NC}"
+  echo -e "${GREEN}  All 22 checks passed. Safe to commit.${NC}"
 elif [ $ERRORS -eq 0 ]; then
   echo -e "${YELLOW}${BOLD}  ⚠️  PASSED WITH ${WARNINGS} WARNING(S) — Week ${WEEK_PAD}${NC}"
   echo -e "${YELLOW}  Zero errors (safe to commit). Review warnings before deploy.${NC}"
