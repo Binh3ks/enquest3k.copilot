@@ -1,4 +1,4 @@
-export const dailyWatchVideos = {
+export default {
   videos: [
     { id: 1, title: "Theme 4. Weather - How's the weather? It's sunny. | ESL Song & Story - Learning English for Kids", videoId: "P9abGg_gF1s", duration: "06:47", sim_duration: 407, thumb: "https://img.youtube.com/vi/P9abGg_gF1s/mqdefault.jpg" },
     { id: 2, title: "What Should I Wear Today? | Kids Songs | Super Simple Songs", videoId: "O7KZ-SM5f9M", duration: "02:30", sim_duration: 150, thumb: "https://img.youtube.com/vi/O7KZ-SM5f9M/mqdefault.jpg" },
