@@ -1,0 +1,39 @@
+{
+  "weekId": 17,
+  "theme": "Weather & Clothes",
+  "grammar_focus": "Cause and Effect: It is [weather], so I am wearing [clothes].",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing because so cause effect adjectives ESL for kids",
+      "backup_search": "because so cause effect adjectives song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present continuous I am wearing what are you wearing ESL for kids",
+      "backup_search": "present continuous I am wearing clothes ESL kids song cartoons"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox weather clothes story level 1 ESL for kids",
+      "backup_search": "Vooks weather seasons story read aloud cartoons for kids"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "Little Fox weather song ESL for kids",
+      "backup_search": "weather vocabulary song ESL kids cartoons"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids weather sunny rainy cloudy seasons for kids",
+      "backup_search": "weather seasons science for kids National Geographic Kids"
+    }
+  ],
+  "topic": "Weather Reporter - describing weather and dressing",
+  "science": "weather sunny rainy cloudy snowy hot cold clothes jacket umbrella"
+}

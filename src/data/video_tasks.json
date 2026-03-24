@@ -1,24 +1,24 @@
 [
   {
     "weekId": 17,
-    "note": "Weather & Clothes - Grammar: It is sunny so I am wearing",
+    "note": "Weather & Clothes - Grammar: It is [weather] so I am wearing [clothes]",
     "videos": [
-      { "id": 1, "query": "English Singsing it is raining snowing weather present continuous ESL for kids", "purpose": "GRAMMAR" },
-      { "id": 2, "query": "weather vocabulary WOW English TV ESL for kids young learners", "purpose": "VOCABULARY" },
-      { "id": 3, "query": "clothes vocabulary WOW English TV British Council ESL lesson young learners", "purpose": "VOCABULARY" },
-      { "id": 4, "query": "weather seasons story ESL for children young learners British Council", "purpose": "STORY" },
-      { "id": 5, "query": "weather conversation dialogue what are you wearing today ESL for kids young learners", "purpose": "SOCIAL" }
+      { "id": 1, "purpose": "GRAMMAR",    "query": "English Singsing weather verb to be it is sunny ESL for kids", "videoId": "P9abGg_gF1s" },
+      { "id": 2, "purpose": "GRAMMAR",    "query": "verb to be am is are weather adjectives grammar ESL for kids", "videoId": "I8RErTeacJQ" },
+      { "id": 3, "purpose": "STORY",      "query": "Little Fox what are you wearing clothes story ESL for kids", "videoId": "m94Oo5TDWCE" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "weather vocabulary sunny rainy cloudy snowy ESL for kids", "videoId": "ctUdDhkf68s" },
+      { "id": 5, "purpose": "SCIENCE",    "query": "SciShow Kids weather seasons rain clouds for kids", "videoId": "dLQ0lHpyZd8" }
     ]
   },
   {
     "weekId": 18,
-    "note": "The Live Reporter",
+    "note": "The Live Reporter - Grammar: Present Continuous",
     "videos": [
-      { "id": 1, "query": "Present continuous what are you doing song English Singsing" },
-      { "id": 2, "query": "Present continuous is doing are running walking kids English" },
-      { "id": 3, "query": "Action verbs song what are you doing kids Learn English" },
-      { "id": 4, "query": "Present continuous tense song kids grammar ESL" },
-      { "id": 5, "query": "What is she doing he doing present continuous kids English" }
+      { "id": 1, "purpose": "GRAMMAR",    "query": "English Singsing present continuous what are you doing ESL for kids", "videoId": "Ja0xp2j_JhM" },
+      { "id": 2, "purpose": "GRAMMAR",    "query": "English Singsing present continuous she is he is running eating ESL for kids", "videoId": "dcfxyH7CNQQ" },
+      { "id": 3, "purpose": "STORY",      "query": "Little Fox what is she doing actions story ESL for kids", "videoId": "VZ5Lz_CncnA" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "action verbs vocabulary ESL for kids young learners", "videoId": "4c6FyuetSVo" },
+      { "id": 5, "purpose": "SCIENCE",    "query": "SciShow Kids how does a camera work for kids", "videoId": "oHUVxkx8QRo" }
     ]
   },
   {

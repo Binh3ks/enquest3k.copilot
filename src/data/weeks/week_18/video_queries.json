@@ -1,0 +1,39 @@
+{
+  "weekId": 18,
+  "theme": "The Live Reporter",
+  "grammar_focus": "Present Continuous: I am reporting / She is filming / They are watching.",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present continuous am is are doing ESL for kids",
+      "backup_search": "present continuous am is are doing grammar song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing present continuous what are you doing she is he is ESL for kids",
+      "backup_search": "present continuous what are you doing she is running he is eating ESL kids song"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox what is happening actions story level 1 ESL for kids",
+      "backup_search": "Vooks action verbs story read aloud cartoons for kids"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "Little Fox action verbs vocabulary song ESL for kids",
+      "backup_search": "action verbs vocabulary song ESL kids cartoons Dream English"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids how does a camera microphone work for kids",
+      "backup_search": "how do cameras work science for kids National Geographic Kids"
+    }
+  ],
+  "topic": "Live News Reporter - describing current events",
+  "science": "reporter camera filming watching microphone broadcasting news"
+}
