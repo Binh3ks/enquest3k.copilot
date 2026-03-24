@@ -1,1 +1,19 @@
-[  {    "weekId": 20,    "videos": [      {        "id": 1,        "query": "History of my city"      },      {        "id": 2,        "query": "There was / There were"      }    ]  }]
+[
+  {
+    "weekId": 17,
+    "videos": [
+      { "id": 1, "query": "What is the weather today song for kids" },
+      { "id": 2, "query": "Clothes song what are you wearing kids" },
+      { "id": 3, "query": "Water cycle evaporation condensation precipitation kids science" },
+      { "id": 4, "query": "Types of weather for kids sunny rainy snowy" },
+      { "id": 5, "query": "Dressing for the weather what to wear kids" }
+    ]
+  },
+  {
+    "weekId": 20,
+    "videos": [
+      { "id": 1, "query": "History of my city" },
+      { "id": 2, "query": "There was / There were" }
+    ]
+  }
+]
