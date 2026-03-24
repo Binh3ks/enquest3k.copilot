@@ -1,13 +1,13 @@
 [
   {
     "weekId": 17,
-    "note": "Weather & Clothes",
+    "note": "Weather & Clothes - Grammar: It is sunny so I am wearing",
     "videos": [
-      { "id": 1, "query": "What is the weather today song for kids", "videoId": "rN5-4wVbcAo", "title": "Weather Song for Kids | What's The Weather? | Jack Hartmann", "duration": "03:44", "sim_duration": 224 },
-      { "id": 2, "query": "Clothes song what are you wearing kids", "videoId": "hg-zYZjxZzs", "title": "Clothes Song | What are you wearing today? | Fun Kids English", "duration": "02:40", "sim_duration": 160 },
-      { "id": 3, "query": "Water cycle evaporation condensation precipitation kids science", "videoId": "al-do-HGuIk", "title": "The Water Cycle | How Evaporation, Condensation and Precipitation Work", "duration": "05:23", "sim_duration": 323 },
-      { "id": 4, "query": "Types of weather for kids sunny rainy snowy", "videoId": "DpR_jbNl-Fk", "title": "Weather for Kids - Types of Weather - What is Weather? | Science for Kids", "duration": "04:19", "sim_duration": 259 },
-      { "id": 5, "query": "Dressing for the weather what to wear kids", "videoId": "V7joFkIlHrI", "title": "Dressing for the Weather | What Should I Wear? | Learning for Kids", "duration": "03:58", "sim_duration": 238 }
+      { "id": 1, "query": "English Singsing it is raining snowing weather present continuous ESL for kids", "purpose": "GRAMMAR" },
+      { "id": 2, "query": "weather vocabulary WOW English TV ESL for kids young learners", "purpose": "VOCABULARY" },
+      { "id": 3, "query": "clothes vocabulary WOW English TV British Council ESL lesson young learners", "purpose": "VOCABULARY" },
+      { "id": 4, "query": "weather seasons story ESL for children young learners British Council", "purpose": "STORY" },
+      { "id": 5, "query": "weather conversation dialogue what are you wearing today ESL for kids young learners", "purpose": "SOCIAL" }
     ]
   },
   {
