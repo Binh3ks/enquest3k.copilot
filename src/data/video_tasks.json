@@ -14,11 +14,11 @@
     "weekId": 18,
     "note": "The Live Reporter",
     "videos": [
-      { "id": 1, "query": "Present continuous song kids what are you doing", "videoId": "KAMWHinKRXk", "title": "What Am I Doing Now? | Present Continuous Action Song | ESL Kids", "duration": "03:30", "sim_duration": 210 },
-      { "id": 2, "query": "Be a reporter kids describe scene English", "videoId": "WN1VNFheJZ0", "title": "Be A Reporter! | Describe What You See | School News for Kids", "duration": "04:00", "sim_duration": 240 },
-      { "id": 3, "query": "Action verbs song for kids is are am verb-ing", "videoId": "OwRmivbNgQk", "title": "Classroom Reporter Song | Am, Is, Are + Verb-ing | Action Song for Kids", "duration": "02:45", "sim_duration": 165 },
-      { "id": 4, "query": "What is happening describe actions English for kids", "videoId": "D-ix9v4fqAE", "title": "How Does Sound Travel? | Microphone & TV Communication | Science for Kids", "duration": "04:50", "sim_duration": 290 },
-      { "id": 5, "query": "Live news reporter for kids school", "videoId": "CHD9jtBqPHY", "title": "The Live Reporter | What Is Happening Right Now? | Kids Story", "duration": "05:30", "sim_duration": 330 }
+      { "id": 1, "query": "Present continuous what are you doing song English Singsing" },
+      { "id": 2, "query": "Present continuous is doing are running walking kids English" },
+      { "id": 3, "query": "Action verbs song what are you doing kids Learn English" },
+      { "id": 4, "query": "Present continuous tense song kids grammar ESL" },
+      { "id": 5, "query": "What is she doing he doing present continuous kids English" }
     ]
   },
   {

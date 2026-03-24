@@ -1,68 +1,10 @@
 export default {
-  weekId: 17,
-  title: "Weather & Clothes",
   videos: [
-  {
-    "id": 1,
-    "category": "WATCH",
-    "videoId": "rN5-4wVbcAo",
-    "title": "Weather Song for Kids | What's The Weather? | Jack Hartmann",
-    "duration": "03:44",
-    "sim_duration": 224,
-    "thumb": "https://img.youtube.com/vi/rN5-4wVbcAo/mqdefault.jpg"
-  },
-  {
-    "id": 2,
-    "category": "WATCH",
-    "videoId": "hg-zYZjxZzs",
-    "title": "Clothes Song | What are you wearing today? | Fun Kids English",
-    "duration": "02:40",
-    "sim_duration": 160,
-    "thumb": "https://img.youtube.com/vi/hg-zYZjxZzs/mqdefault.jpg"
-  },
-  {
-    "id": 3,
-    "category": "WATCH",
-    "videoId": "al-do-HGuIk",
-    "title": "The Water Cycle | How Evaporation, Condensation and Precipitation Work",
-    "duration": "05:23",
-    "sim_duration": 323,
-    "thumb": "https://img.youtube.com/vi/al-do-HGuIk/mqdefault.jpg"
-  },
-  {
-    "id": 4,
-    "category": "WATCH",
-    "videoId": "DpR_jbNl-Fk",
-    "title": "Weather for Kids - Types of Weather - What is Weather? | Science for Kids",
-    "duration": "04:19",
-    "sim_duration": 259,
-    "thumb": "https://img.youtube.com/vi/DpR_jbNl-Fk/mqdefault.jpg"
-  },
-  {
-    "id": 5,
-    "category": "WATCH",
-    "videoId": "V7joFkIlHrI",
-    "title": "Dressing for the Weather | What Should I Wear? | Learning for Kids",
-    "duration": "03:58",
-    "sim_duration": 238,
-    "thumb": "https://img.youtube.com/vi/V7joFkIlHrI/mqdefault.jpg"
-  }
-],
-  bonus_games: [
-  {
-    "title": "Tongue Twisters",
-    "url": "https://learnenglishkids.britishcouncil.org/fun-games/tongue-twisters",
-    "description": "Twist your tongue & speak!"
-  },
-  {
-    "title": "Sentence Monkey",
-    "url": "https://www.eslgamesplus.com/sentence-monkey/",
-    "description": "Help the monkey build sentences!"
-  },
-  {
-    "title": "Fast English",
-    "url": "https://www.gamestolearnenglish.com/fast-english/",
-    "description": "Match words with pictures fast!"
-  }
-]
+    { id: 1, title: "How&#39;s The Weather? | Learn About Weather | Super Simple Songs", videoId: "rD6FRDd9Hew", duration: "02:07", sim_duration: 127, thumb: "https://img.youtube.com/vi/rD6FRDd9Hew/mqdefault.jpg" },
+    { id: 2, title: "Today I am Wearing Clothing Song | Learn Clothes | Dream English Kids", videoId: "FIo1_1-xg60", duration: "01:25", sim_duration: 85, thumb: "https://img.youtube.com/vi/FIo1_1-xg60/mqdefault.jpg" },
+    { id: 3, title: "Water Cycle | How the Hydrologic Cycle Works", videoId: "al-do-HGuIk", duration: "06:47", sim_duration: 407, thumb: "https://img.youtube.com/vi/al-do-HGuIk/mqdefault.jpg" },
+    { id: 4, title: "Sunny Day (Come And Play With Me) | Weather Song for Kids | Super Simple Songs", videoId: "CEFL-4weVsI", duration: "02:31", sim_duration: 151, thumb: "https://img.youtube.com/vi/CEFL-4weVsI/mqdefault.jpg" },
+    { id: 5, title: "Weather Song ☀️☔️☁️❄️| EP158 | What to Wear Today? | How&#39;s the Weather | LiaChaCha Nursery Rhymes", videoId: "y2fpgIyR5pI", duration: "03:18", sim_duration: 198, thumb: "https://img.youtube.com/vi/y2fpgIyR5pI/mqdefault.jpg" }
+  ],
+  bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };
