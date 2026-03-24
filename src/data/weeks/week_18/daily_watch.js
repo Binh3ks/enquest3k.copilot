@@ -1,4 +1,4 @@
-export const dailyWatchVideos = {
+export default {
   videos: [
     { id: 1, title: "[What] What are you doing? - Exciting song - Sing along | English Singsing", videoId: "dcfxyH7CNQQ", duration: "03:29", sim_duration: 209, thumb: "https://img.youtube.com/vi/dcfxyH7CNQQ/mqdefault.jpg" },
     { id: 2, title: "Present Continuous Tense Song | Fun Kids English", videoId: "N-bIHYM9M38", duration: "02:52", sim_duration: 172, thumb: "https://img.youtube.com/vi/N-bIHYM9M38/mqdefault.jpg" },
