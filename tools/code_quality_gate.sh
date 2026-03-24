@@ -15,7 +15,7 @@
 #   Clone Week 16 (golden standard) → replace content → validate quality gate
 #   Gate checks: (1) code patterns + (2) W16 schema compliance + (3) content consistency
 #
-# CHECKS (25 total):
+# CHECKS (26 total):
 #   Code pattern checks (React/service bugs):
 #   [1]  Images: all <img src> from data use getImageUrl()
 #   [2]  MindMap: station='mindmap_speaking' (not 'read')
@@ -48,6 +48,7 @@
 #   [23] daily_watch.js: video IDs are unique (no generic fallback from update_videos.js)
 #   [24] video_tasks.json: has queries for week N (video search was run)
 #   [25] Image prompt files exist for week N in Production_FINAL/IMAGE PROMPTS/
+#   [26] Cover image_url paths in read.js/explore.js resolve to actual files on disk
 #
 # Usage:
 #   bash tools/code_quality_gate.sh <week_number>
@@ -86,7 +87,7 @@ echo -e "${BLUE}${BOLD}═══════════════════
 echo -e "${BLUE}${BOLD}  CODE QUALITY GATE — Week ${WEEK_PAD} (Full App Coverage)${NC}"
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 echo ""
-echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template  |  Checks 17-22: content schema  |  Checks 23-25: production readiness${NC}"
+echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template  |  Checks 17-22: content schema  |  Checks 23-26: production readiness${NC}"
 echo ""
 
 # =============================================================================
@@ -796,7 +797,7 @@ EASY_PROMPTS="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_easy_image_prompts.txt"
 
 if [ ! -f "$ADV_PROMPTS" ]; then
   echo -e "   ${RED}❌ FAIL: Missing Advanced image prompts: $ADV_PROMPTS${NC}"
-  echo -e "   ${YELLOW}FIX: Create $ADV_PROMPTS with 20+ image prompts (vocab/wordpower/covers)${NC}"
+  echo -e "   ${YELLOW}FIX: Create $ADV_PROMPTS with 26 image prompts (vocab/wordpower/covers/barmodels)${NC}"
   ERRORS=$((ERRORS+1))
 else
   PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
@@ -814,12 +815,44 @@ fi
 echo ""
 
 # =============================================================================
+# CHECK 26: Cover image_url paths in read.js/explore.js must exist on disk
+# =============================================================================
+echo -e "${BOLD}[CHECK 26] Cover images — image_url in read.js/explore.js must match actual files on disk${NC}"
+if [ ! -d "$ADV_DIR" ] && [ ! -d "$EASY_DIR" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: Data directories not yet generated${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  COVER_ERRORS=0
+  for entry in \
+    "$ADV_DIR/read.js|public/images/week${WEEK_INT}" \
+    "$ADV_DIR/explore.js|public/images/week${WEEK_INT}" \
+    "$EASY_DIR/read.js|public/images/week${WEEK_INT}_easy" \
+    "$EASY_DIR/explore.js|public/images/week${WEEK_INT}_easy"; do
+    JS_FILE="${entry%%|*}"
+    IMG_DIR="${entry##*|}"
+    [ ! -f "$JS_FILE" ] && continue
+    IMG_URL=$(grep 'image_url' "$JS_FILE" | head -1 | sed "s/.*image_url:[[:space:]]*['\"]//;s/['\"].*//" || true)
+    [ -z "$IMG_URL" ] && continue
+    BASENAME=$(basename "$IMG_URL")
+    DISK_PATH="${IMG_DIR}/${BASENAME}"
+    if [ ! -f "$DISK_PATH" ]; then
+      echo -e "   ${RED}❌ FAIL ($(basename $JS_FILE) ${entry##*$ADV_DIR}${entry##*$EASY_DIR}): image_url='$IMG_URL' → file not found: $DISK_PATH${NC}"
+      echo -e "   ${YELLOW}FIX: image_url must use w${WEEK_INT} (no zero-padding), e.g. read_cover_w${WEEK_INT}.jpg — NOT w0${WEEK_INT}${NC}"
+      COVER_ERRORS=$((COVER_ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS: $(basename $JS_FILE) → $BASENAME exists${NC}"
+    fi
+  done
+  [ $COVER_ERRORS -gt 0 ] && ERRORS=$((ERRORS+COVER_ERRORS))
+fi
+echo ""
+
+# =============================================================================
 # SUMMARY
 # =============================================================================
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   echo -e "${GREEN}${BOLD}  ✅ CODE QUALITY GATE PASSED — Week ${WEEK_PAD}${NC}"
-  echo -e "${GREEN}  All 25 checks passed. Safe to commit.${NC}"
+  echo -e "${GREEN}  All 26 checks passed. Safe to commit.${NC}"
 elif [ $ERRORS -eq 0 ]; then
   echo -e "${YELLOW}${BOLD}  ⚠️  PASSED WITH ${WARNINGS} WARNING(S) — Week ${WEEK_PAD}${NC}"
   echo -e "${YELLOW}  Zero errors (safe to commit). Review warnings before deploy.${NC}"
