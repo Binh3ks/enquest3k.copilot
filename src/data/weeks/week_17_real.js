@@ -146,42 +146,42 @@ const week17RealData = {
       story_arc: [
         {
           phase: "weather_check",
-          turns: "1-4",
+          turns: "2-5",
           phase_name: "Describing the Weather",
-          focus: "Present weather conditions then clothing connection",
-          goal: "Student describes weather then connects to clothing with cause-effect",
-          note: "CRITICAL: opening_narrative already asked 'What is the weather like today?'. Turn 1 is the student's weather answer. Phase question 1 must NOT repeat the weather question — move directly to clothing/cause-effect.",
+          focus: "Clothing and cause-effect — the opening already asked about weather",
+          goal: "Student names their clothing, connects weather to clothing with cause-effect, and gives opinion",
+          note: "CRITICAL: opening_narrative ALREADY asked 'What is the weather like today?'. Turn 1 = student answered the weather. Phase Q1 MUST ask about CLOTHING — do NOT ask about weather again.",
           phase_questions: [
-            "Great! Now tell me: what are you wearing today? Say: It is ___, so I am wearing ___ or I am wearing a coat or I am wearing boots",
-            "Is it warm or cold today? Say: It is warm or It is cold or It is very cold",
-            "Connect weather to clothes! Say: It is cold so I am wearing a coat or It is sunny so I am wearing a hat or It is raining so I am carrying an umbrella",
-            "What do you think about this weather? Say: I like this weather or I do not like this weather or It is nice weather"
+            "What are you wearing today? Say: I am wearing a coat or I am wearing boots or I am wearing a hat",
+            "Is it warm or cold today? Say: It is warm or It is cold or It is very cold outside",
+            "Now connect weather and clothes! Say: It is cold, so I am wearing a coat or It is raining, so I am wearing boots",
+            "Do you like this kind of weather? Say: I like this weather or I do not like this weather or It is okay"
           ]
         },
         {
-          phase: "clothing_choices",
-          turns: "5-9",
-          phase_name: "Choosing the Right Clothes",
-          focus: "Cause and effect - weather to clothing",
-          goal: "Student connects weather to clothing choice with 'so'",
+          phase: "clothing_details",
+          turns: "6-9",
+          phase_name: "Clothing Details and Scenarios",
+          focus: "Specific clothing items not yet mentioned — footwear, accessories, other-weather scenarios",
+          goal: "Student describes footwear, accessories, and imagines clothing for a different weather type",
+          note: "clothing_details builds ON the previous phase — do NOT re-ask 'what are you wearing' again. Cover NEW aspects: feet, umbrella, if-weather scenarios, advice.",
           phase_questions: [
-            "Because of the weather, what are you wearing today? Say: It is cold, so I am wearing a coat or It is sunny, so I am wearing a hat",
-            "What are you wearing on your feet? Say: I am wearing boots or I am wearing shoes or It is raining so I am wearing boots",
-            "Do you have an umbrella today? Say: Yes, it is raining so I am carrying my umbrella or No, it is sunny today",
-            "Tell me one thing you are wearing! Say: I am wearing my ___ because it is ___",
-            "Now give me the full sentence! Say: It is [weather], so I am wearing [clothes]!"
+            "Look at your feet! What are you wearing on your feet today? Say: I am wearing boots or I am wearing shoes or It is raining so I am wearing boots",
+            "Do you have an umbrella with you? Say: Yes, it is raining so I have my umbrella or No, it is sunny so I do not need one",
+            "Now imagine it is very hot and sunny! What will you wear then? Say: If it is sunny, I will wear a hat or I will wear light clothes",
+            "Give advice to a friend going outside now! Say: You should wear a coat because it is cold or Take your umbrella because it is raining"
           ]
         },
         {
           phase: "closing",
           turns: "10-12",
           phase_name: "Weather Report Complete",
-          focus: "Final cause-effect check and goodbye",
-          goal: "Wrap up with a full cause-effect weather report",
+          focus: "Full cause-effect summary sentence and goodbye as a weather reporter",
+          goal: "Student delivers a complete cause-effect sentence and closes the weather report",
           phase_questions: [
-            "Tell me the weather and your clothes in ONE sentence. Say: It is ___, so I am wearing ___",
-            "What about tomorrow's weather? Say: Tomorrow it will be sunny or Tomorrow it will be rainy or Tomorrow it will be cold",
-            "Wonderful! You learned to connect weather and clothes! Say: It is [weather] so I am wearing [clothes]. Great job! See you at the next weather report!"
+            "Now give me the FULL cause-effect sentence with TWO clothing items! Say: It is cold, so I am wearing a coat and boots or It is raining, so I am wearing a raincoat and carrying an umbrella",
+            "What will the weather be like tomorrow? Say: Tomorrow it will be sunny or Tomorrow it will be cold or Tomorrow it will be rainy",
+            "Great weather report today! You are a real weather reporter! Say: Today it is [weather], so I am wearing [clothes]. Great job! See you at the next weather report!"
           ]
         }
       ],
@@ -369,11 +369,11 @@ const week17RealData = {
     }
   ],
 
-  free_talk_scenarios: [
+  conversation_cards: [
     {
       id: "rainy_day",
       title: "Rainy Day Conversation",
-      emoji: "Rainy",
+      emoji: "🌧️",
       theme: "Talking about rainy weather",
       difficulty: "easy",
       exchanges: [
@@ -404,7 +404,7 @@ const week17RealData = {
     {
       id: "seasons_clothes",
       title: "Seasons and Clothes",
-      emoji: "Seasons",
+      emoji: "🍂",
       theme: "Matching seasons to clothing choices",
       difficulty: "medium",
       exchanges: [
@@ -436,7 +436,7 @@ const week17RealData = {
     {
       id: "weather_science",
       title: "Weather Science Chat",
-      emoji: "Science",
+      emoji: "🔬",
       theme: "Talking about the science of weather",
       difficulty: "medium",
       exchanges: [

@@ -15,7 +15,7 @@
 #   Clone Week 16 (golden standard) → replace content → validate quality gate
 #   Gate checks: (1) code patterns + (2) W16 schema compliance + (3) content consistency
 #
-# CHECKS (22 total):
+# CHECKS (25 total):
 #   Code pattern checks (React/service bugs):
 #   [1]  Images: all <img src> from data use getImageUrl()
 #   [2]  MindMap: station='mindmap_speaking' (not 'read')
@@ -43,6 +43,11 @@
 #   [20] word_power.js: has >= 6 words
 #   [21] mindmap.js: branchLabels keyed by stem text (no completions in centerStems)
 #   [22] metadata.js: week N has real title (not generic "Week N")
+#
+#   Production readiness checks (content completeness):
+#   [23] daily_watch.js: video IDs are unique (no generic fallback from update_videos.js)
+#   [24] video_tasks.json: has queries for week N (video search was run)
+#   [25] Image prompt files exist for week N in Production_FINAL/IMAGE PROMPTS/
 #
 # Usage:
 #   bash tools/code_quality_gate.sh <week_number>
@@ -81,7 +86,7 @@ echo -e "${BLUE}${BOLD}═══════════════════
 echo -e "${BLUE}${BOLD}  CODE QUALITY GATE — Week ${WEEK_PAD} (Full App Coverage)${NC}"
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 echo ""
-echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template  |  Checks 17-22: content schema${NC}"
+echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template  |  Checks 17-22: content schema  |  Checks 23-25: production readiness${NC}"
 echo ""
 
 # =============================================================================
@@ -733,12 +738,88 @@ fi
 echo ""
 
 # =============================================================================
+# CHECK 23: daily_watch.js — must have unique video IDs (no generic fallback)
+# =============================================================================
+echo -e "${BOLD}[CHECK 23] daily_watch.js — video IDs must be unique (no generic fallback)${NC}"
+DW_ADV="src/data/weeks/week_${WEEK_PAD}/daily_watch.js"
+DW_EASY="src/data/weeks_easy/week_${WEEK_PAD}/daily_watch.js"
+
+for dw_file in "$DW_ADV" "$DW_EASY"; do
+  [ ! -f "$dw_file" ] && continue
+  LABEL=$([ "$dw_file" = "$DW_ADV" ] && echo "Advanced" || echo "Easy")
+
+  VIDEO_IDS=$(grep -o 'videoId: *"[^"]*"' "$dw_file" | grep -o '"[^"]*"$' | tr -d '"' | sort)
+  UNIQUE_COUNT=$(echo "$VIDEO_IDS" | sort -u | grep -c . || true)
+  TOTAL_COUNT=$(echo "$VIDEO_IDS" | grep -c . || true)
+
+  if [ "$TOTAL_COUNT" -eq 0 ]; then
+    echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): No videoId fields found in $dw_file${NC}"
+    WARNINGS=$((WARNINGS+1))
+  elif [ "$UNIQUE_COUNT" -lt 2 ]; then
+    FALLBACK_ID=$(echo "$VIDEO_IDS" | head -1)
+    echo -e "   ${RED}❌ FAIL ($LABEL): All $TOTAL_COUNT videos share same ID '$FALLBACK_ID' — generic fallback!${NC}"
+    echo -e "   ${YELLOW}FIX: Restore real topic-specific video IDs in $dw_file${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): $TOTAL_COUNT videos, $UNIQUE_COUNT unique IDs (no generic fallback)${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 24: video_tasks.json — must have week N queries
+# =============================================================================
+echo -e "${BOLD}[CHECK 24] video_tasks.json — must include Week ${WEEK_PAD} queries${NC}"
+VT_FILE="src/data/video_tasks.json"
+if [ ! -f "$VT_FILE" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: video_tasks.json not found${NC}"
+  WARNINGS=$((WARNINGS+1))
+else
+  HAS_WEEK=$(grep -c "\"weekId\": *${WEEK_INT}[^0-9]\|\"weekId\": *${WEEK_INT}$\|week_${WEEK_PAD}" "$VT_FILE" 2>/dev/null || true)
+  if [ "$HAS_WEEK" -eq 0 ]; then
+    echo -e "   ${RED}❌ FAIL: video_tasks.json missing Week ${WEEK_PAD} entries${NC}"
+    echo -e "   ${YELLOW}FIX: Add week_${WEEK_PAD} and week_${WEEK_PAD}_easy queries to video_tasks.json${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: video_tasks.json has Week ${WEEK_PAD} entries ($HAS_WEEK occurrences)${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
+# CHECK 25: Image prompt files must exist for week N
+# =============================================================================
+echo -e "${BOLD}[CHECK 25] Image prompts — files must exist for Week ${WEEK_PAD}${NC}"
+IMG_PROMPTS_DIR="Production_FINAL/IMAGE PROMPTS"
+ADV_PROMPTS="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_image_prompts.txt"
+EASY_PROMPTS="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_easy_image_prompts.txt"
+
+if [ ! -f "$ADV_PROMPTS" ]; then
+  echo -e "   ${RED}❌ FAIL: Missing Advanced image prompts: $ADV_PROMPTS${NC}"
+  echo -e "   ${YELLOW}FIX: Create $ADV_PROMPTS with 20+ image prompts (vocab/wordpower/covers)${NC}"
+  ERRORS=$((ERRORS+1))
+else
+  PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
+  echo -e "   ${GREEN}✅ PASS (Advanced): Found $PROMPT_COUNT image prompts${NC}"
+fi
+
+if [ ! -f "$EASY_PROMPTS" ]; then
+  echo -e "   ${RED}❌ FAIL: Missing Easy image prompts: $EASY_PROMPTS${NC}"
+  echo -e "   ${YELLOW}FIX: Create $EASY_PROMPTS with simplified image prompts for Easy version${NC}"
+  ERRORS=$((ERRORS+1))
+else
+  PROMPT_COUNT=$(grep -c "Filename:" "$EASY_PROMPTS" || true)
+  echo -e "   ${GREEN}✅ PASS (Easy): Found $PROMPT_COUNT image prompts${NC}"
+fi
+echo ""
+
+# =============================================================================
 # SUMMARY
 # =============================================================================
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   echo -e "${GREEN}${BOLD}  ✅ CODE QUALITY GATE PASSED — Week ${WEEK_PAD}${NC}"
-  echo -e "${GREEN}  All 22 checks passed. Safe to commit.${NC}"
+  echo -e "${GREEN}  All 25 checks passed. Safe to commit.${NC}"
 elif [ $ERRORS -eq 0 ]; then
   echo -e "${YELLOW}${BOLD}  ⚠️  PASSED WITH ${WARNINGS} WARNING(S) — Week ${WEEK_PAD}${NC}"
   echo -e "${YELLOW}  Zero errors (safe to commit). Review warnings before deploy.${NC}"

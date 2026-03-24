@@ -8,16 +8,22 @@
 #
 # Flow:
 #   0. Backup existing data
-#   1. Manual content generation (Claude creates 29 files)
+#   1. Manual content generation (29 JS files + 2 image prompt files)
 #   2. Validate content (schema, counts, URLs)
 #   3. Sync data (dictation/shadowing from read.js, auto-fill URLs)
 #   4. Register in database
 #   5. Generate audio files (TTS)
 #   5.5. Auto-fill mindmap audio URLs (prevent browser TTS fallback)
-#   6. Generate images (AI)
-#   7. Fetch videos (YouTube)
+#   6. Generate images (automated AI) — image prompt files must exist first
+#   7. Fetch videos (YouTube) — REQUIRES video_tasks.json entries, backs up daily_watch.js
 #   8. Final validation
+#   8.5. CODE QUALITY GATE (25 checks) — verifies image prompts + video IDs + all schemas
 #   9. Report & cleanup
+#
+# CRITICAL RULES:
+#   - Create image prompt files BEFORE Step 6: Production_FINAL/IMAGE PROMPTS/week_NN_*.txt
+#   - Add week entries to video_tasks.json BEFORE Step 7 (update_videos.js)
+#   - NEVER run update_videos.js without checking video_tasks.json — fallback destroys videos
 #
 # Usage:
 #   bash tools/mass_production_final.sh <week_number> [--skip-backup]
@@ -103,6 +109,12 @@ echo -e "${CYAN}      - AI Tutor: 1 file in src/data/weeks/week_$(printf '%02d' 
 echo -e "${CYAN}      (W16 adds: logic_science.js + singapore_math.js + games.js — no logic.js)${NC}"
 echo -e "${CYAN}   4. Use Week 16 as Golden Standard (NOT Week 1/2 — W16 = current template)${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${YELLOW}📸 ALSO REQUIRED — Image prompt files (for manual + AI image generation):${NC}"
+echo -e "${YELLOW}   Create BOTH files in Production_FINAL/IMAGE PROMPTS/:${NC}"
+echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_image_prompts.txt      (Advanced — 21 lines: 13 vocab + 6 wordpower + 2 covers)${NC}"
+echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_easy_image_prompts.txt  (Easy — same structure, simpler descriptions)${NC}"
+echo -e "${YELLOW}   Format: see week_16_image_prompts.txt as golden standard${NC}"
+echo -e "${YELLOW}   NOTE: Code Quality Gate Check 25 will FAIL if these files are missing${NC}"
 echo ""
 read -p "Press Enter after you have created all 29 files (or Ctrl+C to abort)..."
 echo -e "${GREEN}✅ Content files ready${NC}"
@@ -256,6 +268,39 @@ echo ""
 
 # Step 7: Fetch videos
 echo -e "${YELLOW}[7/9] 📹 Fetching videos from YouTube...${NC}"
+
+# SAFETY CHECK 1: video_tasks.json must have entries for this week
+echo -e "${CYAN}   Checking video_tasks.json has Week $(printf '%02d' $WEEK) entries...${NC}"
+VT_FILE="src/data/video_tasks.json"
+if [ ! -f "$VT_FILE" ]; then
+  echo -e "${RED}❌ ABORT: video_tasks.json not found. Cannot run update_videos.js safely.${NC}"
+  echo -e "${YELLOW}   FIX: Create video_tasks.json with week_$(printf '%02d' $WEEK) and week_$(printf '%02d' $WEEK)_easy queries.${NC}"
+  exit 1
+fi
+HAS_VT=$(grep -c "\"weekId\": *${WEEK_INT_NUM}[^0-9]\|\"weekId\": *${WEEK_INT_NUM}$\|week_$(printf '%02d' $WEEK)" "$VT_FILE" 2>/dev/null || true)
+if [ "$HAS_VT" -eq 0 ]; then
+  echo -e "${RED}❌ ABORT: video_tasks.json has no Week $(printf '%02d' $WEEK) entries.${NC}"
+  echo -e "${YELLOW}   FIX: Add week_$(printf '%02d' $WEEK) and week_$(printf '%02d' $WEEK)_easy query entries to video_tasks.json${NC}"
+  echo -e "${YELLOW}   THEN re-run this script from Step 7 (--skip-backup OK).${NC}"
+  exit 1
+fi
+echo -e "${GREEN}   ✅ video_tasks.json has Week $(printf '%02d' $WEEK) entries ($HAS_VT found)${NC}"
+
+# SAFETY CHECK 2: Backup daily_watch.js before update_videos.js can overwrite
+DW_ADV="src/data/weeks/week_$(printf '%02d' $WEEK)/daily_watch.js"
+DW_EASY="src/data/weeks_easy/week_$(printf '%02d' $WEEK)/daily_watch.js"
+if [ -f "$DW_ADV" ]; then
+  cp "$DW_ADV" "${DW_ADV}.bak"
+  echo -e "${CYAN}   💾 Backed up Advanced daily_watch.js (${DW_ADV}.bak)${NC}"
+fi
+if [ -f "$DW_EASY" ]; then
+  cp "$DW_EASY" "${DW_EASY}.bak"
+  echo -e "${CYAN}   💾 Backed up Easy daily_watch.js (${DW_EASY}.bak)${NC}"
+fi
+echo -e "${YELLOW}   ⚠️  WARNING: update_videos.js uses YouTube API. If API fails (quota/403), it will${NC}"
+echo -e "${YELLOW}   replace all videos with generic fallback IDs. Code Quality Gate Check 23 will${NC}"
+echo -e "${YELLOW}   catch this — if it fails, restore from .bak files above.${NC}"
+
 node tools/update_videos.js $WEEK
 if [ $? -ne 0 ]; then
   echo -e "${RED}❌ Video fetch failed!${NC}"
