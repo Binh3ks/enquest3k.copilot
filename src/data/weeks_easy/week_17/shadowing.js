@@ -1,6 +1,6 @@
 export default {
   title: "My Rainy Day",
-  sentences: [
+  script: [
     { id: 1,  text: "Today it is raining!",                                          vi: "Hôm nay trời đang mưa!" },
     { id: 2,  text: "I look out the window.",                                        vi: "Tôi nhìn ra cửa sổ." },
     { id: 3,  text: "The sky is grey.",                                              vi: "Bầu trời màu xám." },
