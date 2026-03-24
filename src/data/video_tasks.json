@@ -1,22 +1,24 @@
 [
   {
     "weekId": 17,
+    "note": "Weather & Clothes",
     "videos": [
-      { "id": 1, "query": "What is the weather today song for kids" },
-      { "id": 2, "query": "Clothes song what are you wearing kids" },
-      { "id": 3, "query": "Water cycle evaporation condensation precipitation kids science" },
-      { "id": 4, "query": "Types of weather for kids sunny rainy snowy" },
-      { "id": 5, "query": "Dressing for the weather what to wear kids" }
+      { "id": 1, "query": "What is the weather today song for kids", "videoId": "rN5-4wVbcAo", "title": "Weather Song for Kids | What's The Weather? | Jack Hartmann", "duration": "03:44", "sim_duration": 224 },
+      { "id": 2, "query": "Clothes song what are you wearing kids", "videoId": "hg-zYZjxZzs", "title": "Clothes Song | What are you wearing today? | Fun Kids English", "duration": "02:40", "sim_duration": 160 },
+      { "id": 3, "query": "Water cycle evaporation condensation precipitation kids science", "videoId": "al-do-HGuIk", "title": "The Water Cycle | How Evaporation, Condensation and Precipitation Work", "duration": "05:23", "sim_duration": 323 },
+      { "id": 4, "query": "Types of weather for kids sunny rainy snowy", "videoId": "DpR_jbNl-Fk", "title": "Weather for Kids - Types of Weather - What is Weather? | Science for Kids", "duration": "04:19", "sim_duration": 259 },
+      { "id": 5, "query": "Dressing for the weather what to wear kids", "videoId": "V7joFkIlHrI", "title": "Dressing for the Weather | What Should I Wear? | Learning for Kids", "duration": "03:58", "sim_duration": 238 }
     ]
   },
   {
     "weekId": 18,
+    "note": "The Live Reporter",
     "videos": [
-      { "id": 1, "query": "Present continuous song kids what are you doing" },
-      { "id": 2, "query": "Be a reporter kids describe scene English" },
-      { "id": 3, "query": "Action verbs song for kids is are am verb-ing" },
-      { "id": 4, "query": "What is happening describe actions English for kids" },
-      { "id": 5, "query": "Live news reporter for kids school" }
+      { "id": 1, "query": "Present continuous song kids what are you doing", "videoId": "KAMWHinKRXk", "title": "What Am I Doing Now? | Present Continuous Action Song | ESL Kids", "duration": "03:30", "sim_duration": 210 },
+      { "id": 2, "query": "Be a reporter kids describe scene English", "videoId": "WN1VNFheJZ0", "title": "Be A Reporter! | Describe What You See | School News for Kids", "duration": "04:00", "sim_duration": 240 },
+      { "id": 3, "query": "Action verbs song for kids is are am verb-ing", "videoId": "OwRmivbNgQk", "title": "Classroom Reporter Song | Am, Is, Are + Verb-ing | Action Song for Kids", "duration": "02:45", "sim_duration": 165 },
+      { "id": 4, "query": "What is happening describe actions English for kids", "videoId": "D-ix9v4fqAE", "title": "How Does Sound Travel? | Microphone & TV Communication | Science for Kids", "duration": "04:50", "sim_duration": 290 },
+      { "id": 5, "query": "Live news reporter for kids school", "videoId": "CHD9jtBqPHY", "title": "The Live Reporter | What Is Happening Right Now? | Kids Story", "duration": "05:30", "sim_duration": 330 }
     ]
   },
   {
