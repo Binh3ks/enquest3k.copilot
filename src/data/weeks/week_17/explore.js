@@ -1,7 +1,7 @@
 export default {
   title_en: "The Science of Weather",
   title_vi: "Khoa học về Thời tiết",
-  image_url: "/images/week17/explore_cover_w017.jpg",
+  image_url: "/images/week17/explore_cover_w17.jpg",
   audio_url: "/audio/week17/explore_main.mp3",
 
   content_en: `

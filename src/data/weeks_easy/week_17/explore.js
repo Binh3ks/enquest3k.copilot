@@ -1,7 +1,7 @@
 export default {
   title_en: "Why Does It Rain?",
   title_vi: "Tại Sao Trời Mưa?",
-  image_url: "/images/week17_easy/explore_cover_w017.jpg",
+  image_url: "/images/week17_easy/explore_cover_w17.jpg",
   audio_url: "/audio/week17_easy/explore_main.mp3",
 
   content_en: `
