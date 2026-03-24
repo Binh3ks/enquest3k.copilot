@@ -1,38 +1,51 @@
 export default {
-  prompts: [
-    { 
-      id: 1, 
-      context_en: "You see an old photo of yourself as a baby. You were very small and cute. You want to know more about that time.",
-      context_vi: "Bạn thấy một bức ảnh cũ của mình khi còn bé. Bạn rất nhỏ và dễ thương. Bạn muốn biết thêm về thời gian đó.",
-      audio_url: "/audio/week19_easy/ask_ai_1.mp3",
-      answer: ["Was I cute?", "How old was I?", "Was I a good baby?"],
-      hint: "Was I..."
+  contexts: [
+    {
+      id: 1,
+      context_en: "You see a baby photo. The baby was cute.",
+      context_vi: "Bạn thấy ảnh em bé. Em bé dễ thương.",
+      question_en: "Was I cute?",
+      question_vi: "Tớ có dễ thương không?",
+      answer: ["Yes, you were cute.", "Yes, very cute.", "You were cute."],
+      hint_en: "Yes, you were...",
+      hint_vi: "Có, bạn...",
+      audio_url: "/audio/week19_easy/ask_ai_1.mp3"
     },
-    { 
-      id: 2, 
-      context_en: "Mom shows you her old teddy bear. It was her favorite toy when she was young. You are curious about it.",
-      context_vi: "Mẹ cho bạn xem con gấu bông cũ của mẹ. Đó là đồ chơi yêu thích của mẹ khi còn nhỏ. Bạn tò mò về nó.",
-      audio_url: "/audio/week19_easy/ask_ai_2.mp3",
-      answer: ["Was it your favorite?", "Were you happy?", "Was it soft?"],
-      hint: "Was it... / Were you..."
+    {
+      id: 2,
+      context_en: "You were in kindergarten when you were 5.",
+      context_vi: "Bạn học mẫu giáo khi 5 tuổi.",
+      question_en: "Was I in kindergarten?",
+      question_vi: "Tớ có học mẫu giáo không?",
+      answer: ["Yes, you were.", "Yes, in kindergarten.", "You were there."],
+      hint_en: "Yes...",
+      hint_vi: "Có...",
+      audio_url: "/audio/week19_easy/ask_ai_2.mp3"
     },
-    { 
-      id: 3, 
-      context_en: "Dad tells you about his old school. It was very different from your school. There were no computers!",
-      context_vi: "Bố kể về trường cũ của bố. Nó rất khác so với trường của bạn. Không có máy tính!",
-      audio_url: "/audio/week19_easy/ask_ai_3.mp3",
-      answer: ["Was it big?", "Were there many kids?", "Was it fun?"],
-      hint: "Was it... / Were there..."
+    {
+      id: 3,
+      context_en: "Your friends were young and small.",
+      context_vi: "Bạn bè của bạn trẻ và nhỏ.",
+      question_en: "Were they young?",
+      question_vi: "Họ có trẻ không?",
+      answer: ["Yes, they were young.", "Yes, very young.", "They were young."],
+      hint_en: "Yes, they...",
+      hint_vi: "Có, họ...",
+      audio_url: "/audio/week19_easy/ask_ai_3.mp3"
     },
-    { 
-      id: 4, 
-      context_en: "You found old toys in a box. They were your mom's toys. They look different from your toys today.",
-      context_vi: "Bạn tìm thấy đồ chơi cũ trong hộp. Chúng là đồ chơi của mẹ. Chúng trông khác với đồ chơi của bạn bây giờ.",
-      audio_url: "/audio/week19_easy/ask_ai_4.mp3",
-      answer: ["Were they fun?", "Was this your favorite?", "Were they old?"],
-      hint: "Were they... / Was this..."
-    },
-    { 
+    {
+      id: 4,
+      context_en: "You grow every year. You are bigger now.",
+      context_vi: "Bạn lớn lên mỗi năm. Bạn to hơn bây giờ.",
+      question_en: "Do I grow?",
+      question_vi: "Tớ có lớn lên không?",
+      answer: ["Yes, you grow.", "Yes, every year.", "You grow up."],
+      hint_en: "Yes, you...",
+      hint_vi: "Có, bạn...",
+      audio_url: "/audio/week19_easy/ask_ai_4.mp3"
+    }
+  ]
+}; 
       id: 5, 
       context_en: "Grandma shows you a photo of her house. It was a small house in the countryside. It looks peaceful.",
       context_vi: "Bà cho bạn xem ảnh ngôi nhà của bà. Đó là một ngôi nhà nhỏ ở nông thôn. Nó trông yên bình.",

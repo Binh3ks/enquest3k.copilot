@@ -1,13 +1,40 @@
 export default {
   sentences: [
-    { id: 1, text: "Today, I was looking at my baby album.", meaning: "Hôm nay, tớ xem album ảnh hồi bé." },
-    { id: 2, text: "I was so small!", meaning: "Tớ nhỏ xíu quá!" },
-    { id: 3, text: "There were many photos of me.", meaning: "Có nhiều ảnh của tớ." },
-    { id: 4, text: "In one photo, I was in a crib.", meaning: "Trong một bức ảnh, tớ ở trong nôi." },
-    { id: 5, text: "My mom was next to me.", meaning: "Mẹ tớ ở bên cạnh tớ." },
-    { id: 6, text: "There were toys around me.", meaning: "Có đồ chơi xung quanh tớ." },
-    { id: 7, text: "My first teddy bear was brown.", meaning: "Con gấu bông đầu tiên của tớ màu nâu." },
-    { id: 8, text: "I was a happy baby.", meaning: "Tớ là một em bé vui vẻ." },
-    { id: 9, text: "Those days were special.", meaning: "Những ngày đó thật đặc biệt." }
+    {
+      id: 1,
+      sentence: "I was a baby.",
+      meaning: "When I was very young",
+      audio_url: "/audio/week19_easy/dictation_1.mp3"
+    },
+    {
+      id: 2,
+      sentence: "I was cute and little.",
+      meaning: "Describing how I looked",
+      audio_url: "/audio/week19_easy/dictation_2.mp3"
+    },
+    {
+      id: 3,
+      sentence: "I was quiet.",
+      meaning: "I made no sound",
+      audio_url: "/audio/week19_easy/dictation_3.mp3"
+    },
+    {
+      id: 4,
+      sentence: "I was in kindergarten.",
+      meaning: "I went to school for small kids",
+      audio_url: "/audio/week19_easy/dictation_4.mp3"
+    },
+    {
+      id: 5,
+      sentence: "They were young.",
+      meaning: "My friends were not old",
+      audio_url: "/audio/week19_easy/dictation_5.mp3"
+    },
+    {
+      id: 6,
+      sentence: "I grow every day.",
+      meaning: "I get bigger",
+      audio_url: "/audio/week19_easy/dictation_6.mp3"
+    }
   ]
 };
