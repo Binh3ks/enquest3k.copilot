@@ -145,6 +145,976 @@ const BLUEPRINT_WEEKS = {
     keywords: "reporter, camera, filming, watching, happening, news, microphone, broadcasting",
     video_hint: "What is happening now?",
     read_topic: "Live News Reporter - describing current events"
+  },
+  // ── BLOCK B: THE FIRST STEPS BACK (Weeks 19-36) ──────────────────────────
+  19: {
+    theme: "When I Was Small",
+    grammar: "Was / Were (Past State): I am big. I was small.",
+    keywords: "baby, cute, little, noisy, quiet, kindergarten, grow, past, young",
+    video_hint: "Was Were Song",
+    read_topic: "Baby Photos - contrasting past and present"
+  },
+  20: {
+    theme: "The Old Town",
+    grammar: "There was / There were (Past Existence)",
+    keywords: "old, new, building, tree, river, road, history, city, town",
+    video_hint: "There was There were",
+    read_topic: "History of My City - what existed before"
+  },
+  21: {
+    theme: "Yesterday's Diary",
+    grammar: "Past Simple Regular (-ed): walked, played, watched, cooked",
+    keywords: "walked, looked, cooked, played, watched, cleaned, yesterday, diary",
+    video_hint: "Past Tense -ed song",
+    read_topic: "My Diary - finished actions from yesterday"
+  },
+  22: {
+    theme: "The Time Detective",
+    grammar: "Past Simple Questions: Did you play? Yes I did / No I didn't",
+    keywords: "did, didn't, yesterday, last night, last week, interrogate, questions",
+    video_hint: "Did you? Past Simple questions",
+    read_topic: "Time Detective - asking about the past"
+  },
+  23: {
+    theme: "The Art Class",
+    grammar: "Past Simple Regular arts verbs: painted, colored, glued, folded",
+    keywords: "paint, colour, glue, fold, cut, picture, scissors, art, craft",
+    video_hint: "Past tense art verbs",
+    read_topic: "Art Class - describing what we created"
+  },
+  24: {
+    theme: "Feelings in the Past",
+    grammar: "Was/Were + Adjectives: I was scared because / They were excited",
+    keywords: "scared, tired, hungry, thirsty, excited, bored, surprised, feelings, emotions",
+    video_hint: "Feelings emotions song",
+    read_topic: "Emotion Diary - past feelings and reasons"
+  },
+  25: {
+    theme: "Sequencing Actions",
+    grammar: "Sequence Connectors: First, Next, Then, Finally",
+    keywords: "bread, jam, spread, knife, toothpaste, brush, rinse, sequence, order, steps",
+    video_hint: "How to sequence steps",
+    read_topic: "How I Made a Sandwich - step-by-step sequences"
+  },
+  26: {
+    theme: "My Weekend Comic",
+    grammar: "Past Simple Review: Regular Verbs (-ed) and Was/Were",
+    keywords: "comic, drawing, weekend, story, past, review",
+    video_hint: "Weekend story past tense",
+    read_topic: "My Weekend Comic - creative writing with past tense"
+  },
+  27: {
+    theme: "Nature Sequencing",
+    grammar: "Present Simple for Facts: It grows, It needs, It becomes",
+    keywords: "seed, soil, water, sun, root, stem, leaf, flower, plant, grow, cycle",
+    video_hint: "Plant Growth Life Cycle",
+    read_topic: "How a Seed Becomes a Plant - natural sequence"
+  },
+  28: {
+    theme: "The Tortoise and the Hare",
+    grammar: "Past Simple Irregular in context: ran, slept, won",
+    keywords: "fast, slow, race, sleep, win, lose, tortoise, hare, fable, story",
+    video_hint: "Tortoise and Hare story",
+    read_topic: "Story Retell - The Tortoise and the Hare"
+  },
+  29: {
+    theme: "The Magic Trip",
+    grammar: "Irregular Verbs 1 Movement: go-went, come-came, run-ran, fly-flew",
+    keywords: "trip, holiday, beach, mountain, airplane, car, went, came, ran, flew",
+    video_hint: "Irregular verbs movement song",
+    read_topic: "The Magic Holiday Trip - movement irregular verbs"
+  },
+  30: {
+    theme: "The Picnic",
+    grammar: "Irregular Verbs 2 Consumption: eat-ate, drink-drank, buy-bought, give-gave",
+    keywords: "picnic, basket, apple, juice, sandwich, share, ate, drank, bought, gave",
+    video_hint: "Irregular verbs food eating",
+    read_topic: "The Picnic - eating and drinking in past"
+  },
+  31: {
+    theme: "The Senses",
+    grammar: "Irregular Verbs 3 Perception: see-saw, hear-heard, feel-felt, smell-smelt",
+    keywords: "bird, song, soft, hard, loud, beautiful, saw, heard, felt, forest, senses",
+    video_hint: "5 senses song for kids",
+    read_topic: "Forest Senses - perceiving the world around us"
+  },
+  32: {
+    theme: "The Busy Day",
+    grammar: "Irregular Verbs 4 Tasks: do-did, make-made, have-had, take-took",
+    keywords: "homework, bed, breakfast, shower, mess, clean, did, made, had, took",
+    video_hint: "Chores housework irregular verbs",
+    read_topic: "Busy Day Chores - completed tasks in past"
+  },
+  33: {
+    theme: "The Mistake",
+    grammar: "Irregular Verbs 5 Accidents: break-broke, fall-fell, lose-lost, hurt-hurt",
+    keywords: "mistake, accident, fix, sorry, careful, clumsy, broke, fell, lost, hurt",
+    video_hint: "Accidents irregular verbs story",
+    read_topic: "Oops Accidents - explaining what went wrong"
+  },
+  34: {
+    theme: "The Lion and the Mouse",
+    grammar: "Mixed Regular and Irregular Past tense: story telling practice",
+    keywords: "net, trap, roar, help, friend, tiny, huge, lion, mouse, fable",
+    video_hint: "Lion and Mouse fable story",
+    read_topic: "Storytelling Practice - The Lion and the Mouse"
+  },
+  35: {
+    theme: "The Best Day Ever",
+    grammar: "Past Simple + Adjectives: describing best personal memories",
+    keywords: "best, day, memory, amazing, wonderful, exciting, beautiful, adjectives",
+    video_hint: "Best day story ESL kids",
+    read_topic: "Personal Recount - The Best Day Ever"
+  },
+  36: {
+    theme: "My Adventure Book",
+    grammar: "Past Simple Review: mix of regular and irregular verbs creative writing",
+    keywords: "adventure, book, journey, story, trip, write, illustrate, mini-book",
+    video_hint: "Adventure story past tense",
+    read_topic: "My Adventure Book - past tense creative writing"
+  },
+  // ── BLOCK C: CLIL FOUNDATIONS (Weeks 37-54) ──────────────────────────────
+  37: {
+    theme: "Living vs Non-Living",
+    grammar: "It is living because it breathes/grows (Logical Reasoning with Because)",
+    keywords: "living, non-living, breathe, grow, need, food, water, rock, plastic, science",
+    video_hint: "Living non-living things",
+    read_topic: "Nature Detective - investigating living things"
+  },
+  38: {
+    theme: "Animal Abilities",
+    grammar: "Can / Cannot (Can't): what animals can and cannot do",
+    keywords: "jump, fly, swim, hunt, climb, run, heavy, fast, animal abilities",
+    video_hint: "Animal abilities can cannot",
+    read_topic: "Animal Superpowers - comparing abilities"
+  },
+  39: {
+    theme: "Habitats",
+    grammar: "I think the animal lives in the place (Opinion + habitat)",
+    keywords: "habitat, desert, rainforest, ocean, polar, safe, dangerous, animals",
+    video_hint: "Animal habitats song",
+    read_topic: "Where Do Animals Live - habitats and environments"
+  },
+  40: {
+    theme: "Beast Battle",
+    grammar: "Comparative Adjectives (-er than): faster, stronger, bigger",
+    keywords: "teeth, claws, fur, skin, heavy, light, comparative, predator, animals",
+    video_hint: "Comparative adjectives faster stronger",
+    read_topic: "Beast Battle - comparing animals with comparatives"
+  },
+  41: {
+    theme: "Life Cycles",
+    grammar: "Present Simple 3rd Person: It changes, It grows, It becomes",
+    keywords: "egg, hatch, caterpillar, tadpole, chrysalis, butterfly, frog, life cycle",
+    video_hint: "Butterfly life cycle for kids",
+    read_topic: "Life Cycle Science - butterfly or frog transformation"
+  },
+  42: {
+    theme: "The Water Journey",
+    grammar: "Present Simple + Sequence: evaporation and water cycle",
+    keywords: "sun, cloud, rain, river, ocean, evaporation, go up, come down, cycle, water",
+    video_hint: "Water cycle song for kids",
+    read_topic: "The Water Cycle - never-ending journey of water"
+  },
+  43: {
+    theme: "The Plus Machine",
+    grammar: "2 plus 2 equals 4 / 2 and 2 is 4 (Math literacy sentences)",
+    keywords: "add, plus, combine, total, together, equals, addition, math language",
+    video_hint: "Addition song for kids",
+    read_topic: "Addition Language - reading math as sentences"
+  },
+  44: {
+    theme: "The Cookie Monster",
+    grammar: "Take away, Left, Minus (Subtraction language)",
+    keywords: "minus, subtract, take away, how many left, lose, cookies, math",
+    video_hint: "Subtraction song for kids",
+    read_topic: "Subtraction Stories - taking away in English"
+  },
+  45: {
+    theme: "Shape Detectives",
+    grammar: "It has [number] sides. It is round. (Geometric description)",
+    keywords: "square, circle, triangle, rectangle, side, corner, round, straight, shapes",
+    video_hint: "Shapes song for kids",
+    read_topic: "Shape Detectives - finding shapes in the classroom"
+  },
+  46: {
+    theme: "The Pattern Code",
+    grammar: "If [square] then [red] (Logical conditionals and patterns)",
+    keywords: "pattern, next, repeat, sequence, before, after, predict, logic",
+    video_hint: "Patterns and sequences for kids",
+    read_topic: "Pattern Code - cracking visual sequences"
+  },
+  47: {
+    theme: "Big Numbers",
+    grammar: "Hyphenated numbers: twenty-one, forty-five, ninety-nine",
+    keywords: "ten, twenty, thirty, hundred, count, how many, numbers, place value",
+    video_hint: "Numbers 1 to 100 song",
+    read_topic: "Big Numbers - counting and reading numbers to 100"
+  },
+  48: {
+    theme: "Measuring Up",
+    grammar: "It is [number] centimeters long/tall (Measurement sentences)",
+    keywords: "long, short, tall, measure, ruler, centimeter, meter, length, height",
+    video_hint: "Measuring length for kids",
+    read_topic: "Measure Up - comparing lengths and heights"
+  },
+  49: {
+    theme: "Future Dreams",
+    grammar: "I want to be a [job] / I am going to be (Future intentions)",
+    keywords: "doctor, teacher, pilot, artist, scientist, dream, future, job, career",
+    video_hint: "Jobs careers future song for kids",
+    read_topic: "When I Grow Up - jobs and future dreams"
+  },
+  50: {
+    theme: "Review Station 1",
+    grammar: "Past Present Future Mix: tense review grammar",
+    keywords: "past, present, future, review, tenses, mix, grammar",
+    video_hint: "Tenses review past present future",
+    read_topic: "Tense Review - board game with all tenses"
+  },
+  51: {
+    theme: "Review Station 2",
+    grammar: "Vocabulary CLIL review: Nature, Home, School, Math",
+    keywords: "nature, home, school, math, review, categorize, vocabulary",
+    video_hint: "Vocabulary categories review",
+    read_topic: "Vocab Categories - sorting words into groups"
+  },
+  52: {
+    theme: "Have You Ever Bingo",
+    grammar: "Have you ever...? Present Perfect chunks for experiences",
+    keywords: "have you ever, seen, been, eaten, experience, bingo, present perfect",
+    video_hint: "Have you ever experience song",
+    read_topic: "Experience Bingo - have you ever done it"
+  },
+  53: {
+    theme: "My Year in Review",
+    grammar: "Portfolio writing: About Me self-introduction",
+    keywords: "portfolio, best work, drawings, about me, introduction, year review",
+    video_hint: "All about me song for kids",
+    read_topic: "Year in Review - portfolio curation and self-introduction"
+  },
+  54: {
+    theme: "Phase 1 Graduation",
+    grammar: "I can present my portfolio (graduation speech)",
+    keywords: "graduation, showcase, portfolio, speech, parents, proud, present",
+    video_hint: "Graduation celebration kids",
+    read_topic: "Phase 1 Graduation Showcase - presenting work to parents"
+  },
+  // ── PHASE 2: ACADEMIC APPLICATION (Weeks 55-120) ─────────────────────────
+  55: {
+    theme: "Cause and Effect Sentences",
+    grammar: "Conjunctions Because (reason) vs So (result)",
+    keywords: "cause, effect, reason, result, happen, connect, because, so, therefore",
+    video_hint: "Cause and effect because so",
+    read_topic: "The Why Game - connecting ideas with because and so"
+  },
+  56: {
+    theme: "Cause and Effect Paragraph",
+    grammar: "Sentence connectors: This leads to, As a result (sequence logic)",
+    keywords: "lead to, due to, consequently, start, end, first, finally, chain reaction",
+    video_hint: "Cause effect paragraph writing",
+    read_topic: "Chain Reaction - explaining sequences of events"
+  },
+  57: {
+    theme: "Problem and Solution",
+    grammar: "Modals of Possibility: We can, We could, We should",
+    keywords: "problem, solution, fix, solve, idea, suggest, broken, repair, modals",
+    video_hint: "Problem solution modals can could should",
+    read_topic: "Fix-It Squad - identifying problems and suggesting fixes"
+  },
+  58: {
+    theme: "Problem Solution Paragraph",
+    grammar: "First Conditional: If we fix it, it will be better",
+    keywords: "plan, step, improve, better, success, fail, strategy, solution, result",
+    video_hint: "First conditional if then ESL",
+    read_topic: "The Master Plan - writing a detailed solution plan"
+  },
+  59: {
+    theme: "Message in a Bottle",
+    grammar: "Informal Tone: Contractions I'm It's, Greetings Hi Hey",
+    keywords: "dear, best, friend, write, news, fun, reply, miss you, letter, informal",
+    video_hint: "Writing a letter for kids",
+    read_topic: "Friendly Letter - writing to a mysterious friend"
+  },
+  60: {
+    theme: "The Mayor's Request",
+    grammar: "Polite Modals: May I, Could you, Would like (formal writing)",
+    keywords: "Sir, Madam, sincerely, request, improve, community, library, park, formal",
+    video_hint: "Formal letter writing polite request",
+    read_topic: "Formal Writing - polite request to the Mayor"
+  },
+  61: {
+    theme: "Main Idea Hunter",
+    grammar: "Subject + Verb core sentence identification (reading comprehension)",
+    keywords: "main idea, detail, support, topic, important, about, title, reading",
+    video_hint: "Main idea and details reading",
+    read_topic: "Main Idea - finding the gem in a text"
+  },
+  62: {
+    theme: "The Movie Trailer",
+    grammar: "Reported Speech Basic: He said that (summarizing)",
+    keywords: "summary, short, retell, story, scene, character, plot, paraphrase",
+    video_hint: "Summarizing stories reported speech",
+    read_topic: "Movie Trailer - retelling a story briefly"
+  },
+  63: {
+    theme: "Reading Maps",
+    grammar: "Prepositions of Location: North of, to the East of (compass directions)",
+    keywords: "North, South, East, West, compass, map, key, direction, straight, turn",
+    video_hint: "Compass directions map reading for kids",
+    read_topic: "Treasure Map - describing exact locations"
+  },
+  64: {
+    theme: "Data Stories",
+    grammar: "Quantifiers: The majority of, Most, Few (factual reporting)",
+    keywords: "chart, graph, show, data, popular, least, number, information, pictograph",
+    video_hint: "Reading graphs charts for kids",
+    read_topic: "Data Stories - writing sentences from charts and graphs"
+  },
+  65: {
+    theme: "Review Cycle 2.1",
+    grammar: "Review: Logic connectors, data language, letter writing",
+    keywords: "review, logic, data, letter, newsletter, class, vocabulary",
+    video_hint: "English review games for kids",
+    read_topic: "Class Newsletter - reviewing logic and data skills"
+  },
+  66: {
+    theme: "Email vs Handwritten Letters",
+    grammar: "Modals, Comparatives, Because/So (debate opinion sentences)",
+    keywords: "faster, slower, personal, easy, hard, keep, delete, email, letter",
+    video_hint: "Opinion debate kids ESL",
+    read_topic: "Micro-Debate - Email vs Handwritten Letters"
+  },
+  67: {
+    theme: "OREO Structure",
+    grammar: "Opinion Phrases: I strongly believe, In my view (persuasion intro)",
+    keywords: "opinion, believe, think, agree, disagree, reason, example, OREO paragraph",
+    video_hint: "Opinion writing OREO structure",
+    read_topic: "Opinion Sandwich - intro to persuasive writing"
+  },
+  68: {
+    theme: "Strong Reasons",
+    grammar: "Connectors of Addition: Furthermore, In addition, For example",
+    keywords: "support, detail, fact, true, prove, clear, furthermore, in addition",
+    video_hint: "Connectors furthermore in addition for kids",
+    read_topic: "Supporting the Argument - writing reasons and examples"
+  },
+  69: {
+    theme: "Environmental Protection",
+    grammar: "Modals of Obligation: Should, Must, Have to (persuasive advice)",
+    keywords: "protect, save, environment, pollution, waste, recycle, clean, dirty",
+    video_hint: "Environment protection should must",
+    read_topic: "Save the Earth - persuasive paragraph about environment"
+  },
+  70: {
+    theme: "My Green Idea Presentation",
+    grammar: "Speaking Transitions: First of all, Finally (public speaking)",
+    keywords: "speech, present, voice, loud, clear, audience, listen, environment",
+    video_hint: "Speech presentation transitions for kids",
+    read_topic: "Speaking for the Planet - persuasive speech presentation"
+  },
+  71: {
+    theme: "The Solar System",
+    grammar: "Superlative Adjectives: The biggest, The furthest, The hottest",
+    keywords: "planet, solar system, orbit, sun, moon, star, space, telescope, superlative",
+    video_hint: "Solar system planets for kids",
+    read_topic: "Space Giants - describing planets with superlatives"
+  },
+  72: {
+    theme: "Photosynthesis",
+    grammar: "Passive Voice intro Present Simple: Sunlight is absorbed",
+    keywords: "photosynthesis, sunlight, water, carbon dioxide, oxygen, energy, absorb, make",
+    video_hint: "Photosynthesis explained for kids",
+    read_topic: "Plant Power - how plants make food from sunlight"
+  },
+  73: {
+    theme: "The Water Cycle Advanced",
+    grammar: "Sequence Connectors Advanced: Subsequently, Following this, Eventually",
+    keywords: "evaporation, condensation, precipitation, collection, vapor, turn into, cycle",
+    video_hint: "Water cycle evaporation condensation",
+    read_topic: "The Never-Ending Journey - advanced water cycle explanation"
+  },
+  74: {
+    theme: "Food Chains",
+    grammar: "Zero Conditional scientific facts: If plants die, animals have no food",
+    keywords: "producer, consumer, predator, prey, energy, flow, eat, eaten by, food chain",
+    video_hint: "Food chain producers consumers predators",
+    read_topic: "Who Eats Who - energy flow in food chains"
+  },
+  75: {
+    theme: "Ancient Egypt",
+    grammar: "Used to / Would (Past habits): Egyptians used to build pyramids",
+    keywords: "pyramid, pharaoh, Egypt, ancient, hieroglyphics, sphinx, used to, history",
+    video_hint: "Ancient Egypt for kids pyramids pharaoh",
+    read_topic: "Pyramids and Pharaohs - descriptive paragraph about Ancient Egypt"
+  },
+  76: {
+    theme: "Explorers",
+    grammar: "Narrative Past Tense: Columbus sailed, Magellan discovered (historical)",
+    keywords: "explorer, ship, voyage, discover, map, ocean, Columbus, Magellan, navigate",
+    video_hint: "Famous explorers for kids",
+    read_topic: "Age of Exploration - writing about famous explorers"
+  },
+  77: {
+    theme: "World Landmarks",
+    grammar: "Relative Clauses intro: The Eiffel Tower, which is in Paris, is tall",
+    keywords: "landmark, Eiffel Tower, Great Wall, Colosseum, Statue of Liberty, famous",
+    video_hint: "World famous landmarks for kids",
+    read_topic: "World Wonders - describing famous world landmarks"
+  },
+  78: {
+    theme: "Cultures Around the World",
+    grammar: "Present Simple + Opinion: People in Japan eat sushi / I think that",
+    keywords: "culture, tradition, food, clothing, festival, celebrate, country, different",
+    video_hint: "Cultures world traditions for kids",
+    read_topic: "World Cultures - describing cultural traditions"
+  },
+  79: {
+    theme: "Review Social Studies",
+    grammar: "Review: Used to, Superlatives, Zero Conditional, Relative Clauses",
+    keywords: "review, history, geography, culture, world, countries, facts",
+    video_hint: "Social studies review for kids",
+    read_topic: "World Knowledge Review - history, geography, culture"
+  },
+  80: {
+    theme: "Project Presentation Prep",
+    grammar: "Presentation language: First I will talk about / In conclusion",
+    keywords: "present, project, poster, research, topic, introduction, conclusion",
+    video_hint: "Presentation skills for kids",
+    read_topic: "Project Presentation - organising and delivering research"
+  },
+  81: {
+    theme: "The Master Architect",
+    grammar: "Essay structure language: introduction, body, conclusion planning",
+    keywords: "essay, plan, structure, outline, thesis, argument, paragraph, architect",
+    video_hint: "Essay structure paragraph writing",
+    read_topic: "Planning an Essay - building structure like a house"
+  },
+  82: {
+    theme: "The Travel Vlogger",
+    grammar: "Descriptive writing: adjectives and sensory details",
+    keywords: "travel, place, describe, beautiful, amazing, favourite, adjectives, detail",
+    video_hint: "Travel descriptive writing for kids",
+    read_topic: "My Favourite Place - descriptive writing and drafting"
+  },
+  83: {
+    theme: "Landforms",
+    grammar: "It is formed by / It is located in (geographical description)",
+    keywords: "mountain, valley, plain, river, lake, ocean, landform, geographic, formed",
+    video_hint: "Landforms geography for kids",
+    read_topic: "Earth's Shapes - describing landforms of the world"
+  },
+  84: {
+    theme: "Volcanoes",
+    grammar: "Passive Voice: Lava is pushed out / Rocks are formed by cooling",
+    keywords: "volcano, lava, magma, erupt, crater, ash, explosion, rocks, tectonic",
+    video_hint: "Volcano eruption for kids",
+    read_topic: "Fire Mountain - how volcanoes work"
+  },
+  85: {
+    theme: "Advanced Maps",
+    grammar: "Prepositions of direction + Scale: 1 cm represents 10 km",
+    keywords: "map, scale, distance, legend, compass, north, south, geographic, grid",
+    video_hint: "Map reading scale for kids",
+    read_topic: "Advanced Maps - reading scales and understanding distance"
+  },
+  86: {
+    theme: "Weather vs Climate",
+    grammar: "Present Simple for scientific facts vs Present Continuous for now",
+    keywords: "weather, climate, temperature, season, pattern, forecast, warm, cold, humid",
+    video_hint: "Weather vs climate difference for kids",
+    read_topic: "Weather vs Climate - understanding the difference"
+  },
+  87: {
+    theme: "Human Body",
+    grammar: "Present Simple 3rd person: The heart pumps blood, Muscles move bones",
+    keywords: "heart, lungs, brain, bones, muscles, digest, breathe, blood, organ, body",
+    video_hint: "Human body organs for kids",
+    read_topic: "Body Systems - how the human body works"
+  },
+  88: {
+    theme: "Ancient Rome",
+    grammar: "Used to / Historical Past: Romans used to have baths, Gladiators fought",
+    keywords: "Rome, gladiator, colosseum, toga, emperor, senate, aqueduct, ancient",
+    video_hint: "Ancient Rome for kids gladiators",
+    read_topic: "Gladiators and Emperors - Ancient Rome history"
+  },
+  89: {
+    theme: "Inventions",
+    grammar: "Passive Voice: The telephone was invented by Bell (historical passive)",
+    keywords: "invention, invent, discover, light, telephone, computer, internet, electricity",
+    video_hint: "Famous inventions for kids",
+    read_topic: "Brilliant Inventions - how they changed the world"
+  },
+  90: {
+    theme: "Physics Forces",
+    grammar: "Zero Conditional + Because: If you push harder, it moves faster",
+    keywords: "force, push, pull, gravity, friction, speed, heavy, light, motion, physics",
+    video_hint: "Forces gravity friction for kids",
+    read_topic: "Forces in Action - push pull gravity and friction"
+  },
+  91: {
+    theme: "The Scientific Method",
+    grammar: "Logical sequence: First I hypothesized, Then I observed, Finally I concluded",
+    keywords: "hypothesis, experiment, observe, predict, results, conclusion, scientific",
+    video_hint: "Scientific method steps for kids",
+    read_topic: "Science Lab - following the scientific method"
+  },
+  92: {
+    theme: "Community Helpers",
+    grammar: "Present Simple + Modals: Doctors help people / We should thank helpers",
+    keywords: "doctor, firefighter, teacher, police, nurse, community, helper, job, role",
+    video_hint: "Community helpers jobs for kids",
+    read_topic: "Helpers in My Community - who keeps us safe"
+  },
+  93: {
+    theme: "Passion Project Topic Selection",
+    grammar: "Research question language: I want to find out about, My topic is",
+    keywords: "topic, research, question, outline, choose, interest, passion, project",
+    video_hint: "Research project choose topic for kids",
+    read_topic: "Passion Project - selecting a research topic"
+  },
+  94: {
+    theme: "Passion Project Drafting",
+    grammar: "Drafting and editing language: revise, improve, fix punctuation",
+    keywords: "draft, edit, revise, improve, writing, research, paragraph, sentence",
+    video_hint: "Drafting editing writing for kids",
+    read_topic: "Draft and Edit - improving your research writing"
+  },
+  95: {
+    theme: "Passion Project Research",
+    grammar: "Note-taking language: According to, It says that, The main idea is",
+    keywords: "research, notes, source, information, facts, according to, take notes",
+    video_hint: "Note taking research skills for kids",
+    read_topic: "Information Hunting - finding and recording facts"
+  },
+  96: {
+    theme: "Passion Project Presentation",
+    grammar: "Presentation transitions: First I will talk about, Thank you for listening",
+    keywords: "present, poster, project, audience, speak, slide, conclusion, thank",
+    video_hint: "Presentation speech for kids",
+    read_topic: "Show What You Know - presenting passion project"
+  },
+  97: {
+    theme: "Government",
+    grammar: "Modals of obligation: Citizens must vote / Leaders should listen",
+    keywords: "government, leader, laws, vote, parliament, president, rights, citizen",
+    video_hint: "Government how it works for kids",
+    read_topic: "How Government Works - rules, leaders and laws"
+  },
+  98: {
+    theme: "Democracy",
+    grammar: "Opinion and argument: In a democracy, people can choose / I believe",
+    keywords: "democracy, vote, election, fair, freedom, rights, majority, voice",
+    video_hint: "Democracy voting for kids",
+    read_topic: "Democracy in Action - voting and fairness"
+  },
+  99: {
+    theme: "Good Citizen",
+    grammar: "Should/Must for civic duties: We should respect / A good citizen must",
+    keywords: "citizen, responsibility, respect, community, help, laws, rights, duties",
+    video_hint: "Good citizen responsibilities for kids",
+    read_topic: "Being a Good Citizen - rights and responsibilities"
+  },
+  100: {
+    theme: "Rights and Responsibilities",
+    grammar: "Contrast connectors: We have the right to... but we also must...",
+    keywords: "rights, responsibilities, balance, freedom, speech, safety, fair, rule",
+    video_hint: "Rights responsibilities for kids",
+    read_topic: "My Rights and Duties - balancing freedom and responsibility"
+  },
+  101: {
+    theme: "Needs vs Wants",
+    grammar: "Distinction language: A need is something you must have / A want is",
+    keywords: "needs, wants, budget, money, spending, save, essential, luxury, economy",
+    video_hint: "Needs and wants for kids economics",
+    read_topic: "Smart Shopper - understanding needs versus wants"
+  },
+  102: {
+    theme: "Goods and Services",
+    grammar: "Noun classification: Goods are physical items / Services are actions",
+    keywords: "goods, services, buy, sell, market, store, physical, action, product",
+    video_hint: "Goods and services economics for kids",
+    read_topic: "Economy Basics - goods services and markets"
+  },
+  103: {
+    theme: "Producers and Consumers",
+    grammar: "Active vs Passive roles: Farmers produce food / We consume goods",
+    keywords: "producer, consumer, farmer, factory, market, supply, product, consume",
+    video_hint: "Producers consumers economy for kids",
+    read_topic: "Who Makes What - producers and consumers in the economy"
+  },
+  104: {
+    theme: "Supply and Demand",
+    grammar: "Conditional economics: If many people want it, the price goes up",
+    keywords: "supply, demand, price, popular, rare, market, expensive, cheap, trend",
+    video_hint: "Supply demand for kids economics",
+    read_topic: "Market Forces - supply demand and prices"
+  },
+  105: {
+    theme: "Research Topic and Big Questions",
+    grammar: "Question formation for research: What causes, How does, Why do",
+    keywords: "research, big question, brainstorm, topic, question, inquiry, explore",
+    video_hint: "Research questions how to ask for kids",
+    read_topic: "Big Questions - choosing a research topic to investigate"
+  },
+  106: {
+    theme: "Information Hunting",
+    grammar: "Source evaluation: This source says / I found that / According to",
+    keywords: "source, reliable, information, internet, book, article, fact, check",
+    video_hint: "Finding reliable information for kids",
+    read_topic: "Information Detective - finding reliable answers"
+  },
+  107: {
+    theme: "The Note-Taker",
+    grammar: "Paraphrasing: use my own words instead of copying directly",
+    keywords: "notes, summarise, keywords, paraphrase, own words, write, record",
+    video_hint: "Note taking paraphrasing for kids",
+    read_topic: "Taking Notes - recording information in your own words"
+  },
+  108: {
+    theme: "The Architect Outline",
+    grammar: "Essay outline: Introduction states, Body explains, Conclusion summarises",
+    keywords: "outline, structure, introduction, body, conclusion, organise, plan, essay",
+    video_hint: "Essay outline structure for kids",
+    read_topic: "Building an Outline - organising notes into structure"
+  },
+  109: {
+    theme: "Drafting Body Paragraph 1",
+    grammar: "Topic sentence + supporting details: My first main idea is / This shows that",
+    keywords: "topic sentence, main idea, detail, evidence, support, paragraph, draft",
+    video_hint: "Body paragraph writing for kids",
+    read_topic: "Body Paragraph 1 - writing the first main idea"
+  },
+  110: {
+    theme: "Drafting Body Paragraph 2",
+    grammar: "Linking between paragraphs: Another important point is / Furthermore",
+    keywords: "second paragraph, furthermore, another, linking, idea, evidence, transition",
+    video_hint: "Linking paragraphs writing for kids",
+    read_topic: "Body Paragraph 2 - writing the second main idea"
+  },
+  111: {
+    theme: "Introduction and Conclusion",
+    grammar: "Hook sentences + concluding language: In conclusion, To sum up",
+    keywords: "hook, introduction, conclusion, reader, wrap up, summary, in conclusion",
+    video_hint: "Introduction conclusion essay writing for kids",
+    read_topic: "The Frame - writing strong introductions and conclusions"
+  },
+  112: {
+    theme: "The Editor's Eye",
+    grammar: "Verb Tense Consistency: checking if text stays in Past or Present throughout",
+    keywords: "edit, proofread, revise, tense, consistency, correct, improve, check",
+    video_hint: "Editing proofreading writing for kids",
+    read_topic: "Polishing the Draft - editing and proofreading skills"
+  },
+  113: {
+    theme: "Visual Aids and Captions",
+    grammar: "Prepositional Phrases: In this picture, Next to the volcano, At the top",
+    keywords: "image, picture, caption, diagram, visual, label, describe, next to, show",
+    video_hint: "Visual aids captions for presentations kids",
+    read_topic: "Show and Tell with Images - adding visuals to writing"
+  },
+  114: {
+    theme: "Project Assembly",
+    grammar: "Presentation language: My poster shows / I used this image to illustrate",
+    keywords: "poster, assemble, layout, design, title, heading, image, project, display",
+    video_hint: "Making a poster project for kids",
+    read_topic: "Assembling the Project - putting the poster together"
+  },
+  115: {
+    theme: "Speaking Notes",
+    grammar: "Imperatives as self-prompts: Remember, Say, Show, Ask",
+    keywords: "cue cards, speaking notes, prompts, keywords, remind, practice, speech",
+    video_hint: "Cue cards public speaking for kids",
+    read_topic: "Cue Cards - using speaking notes for presentations"
+  },
+  116: {
+    theme: "Rehearsal Voice and Body",
+    grammar: "Speaking fluency: clear voice, eye contact, confident body language",
+    keywords: "rehearse, practice, voice, eye contact, confident, stand, speak, clear",
+    video_hint: "Public speaking confidence for kids",
+    read_topic: "Rehearsal Day - voice, body, and confidence practice"
+  },
+  117: {
+    theme: "The Knowledge Fair Group A",
+    grammar: "Presentation delivery: This is my topic / As you can see / In conclusion",
+    keywords: "knowledge fair, present, audience, question, poster, topic, showcase",
+    video_hint: "Presenting project science fair for kids",
+    read_topic: "Knowledge Fair Group A - presenting research to audience"
+  },
+  118: {
+    theme: "The Knowledge Fair Group B",
+    grammar: "Presentation delivery: answering questions, responding to feedback",
+    keywords: "knowledge fair, present, answer, question, feedback, audience, review",
+    video_hint: "Q and A presentation skills for kids",
+    read_topic: "Knowledge Fair Group B - presenting and answering questions"
+  },
+  119: {
+    theme: "Reflection and Portfolio",
+    grammar: "Past Tense Reflection: I learned, I improved, I was proud of",
+    keywords: "reflect, portfolio, progress, learn, improve, proud, achievement, review",
+    video_hint: "Reflection portfolio learning for kids",
+    read_topic: "Looking Back - reflection and portfolio review"
+  },
+  120: {
+    theme: "Phase 2 Graduation",
+    grammar: "Present Perfect achievement: I have learned / I can now",
+    keywords: "graduation, phase 2, celebrate, present, speech, achievement, complete",
+    video_hint: "Graduation celebration achievement speech",
+    read_topic: "Phase 2 Graduation - celebrating academic achievement"
+  },
+  // ── PHASE 3: ADVANCED ARGUMENTATION (Weeks 121-156) ──────────────────────
+  121: {
+    theme: "Intro to Argumentative Research",
+    grammar: "Modals of Possibility: It could cause stress / It might help students",
+    keywords: "argument, research, claim, evidence, stress, help, modal, could, might",
+    video_hint: "Argumentative writing introduction for students",
+    read_topic: "Argumentative Research - making claims with evidence"
+  },
+  122: {
+    theme: "Critical Listening",
+    grammar: "Reporting Verbs: The speaker claimed that / She argued that",
+    keywords: "listen, claim, argue, report, speaker, debate, stated, according to",
+    video_hint: "Critical listening debate skills for students",
+    read_topic: "Critical Listening - analysing arguments you hear"
+  },
+  123: {
+    theme: "The Thesis Statement",
+    grammar: "Concession: Although homework is useful, it causes stress (Although clause)",
+    keywords: "thesis, although, concession, argument, claim, statement, despite, while",
+    video_hint: "Thesis statement writing for students",
+    read_topic: "The Thesis - writing a strong argumentative claim"
+  },
+  124: {
+    theme: "Drafting Arguments",
+    grammar: "Linking Words Sequence: Firstly, Secondly, Furthermore (body paragraphs)",
+    keywords: "firstly, secondly, furthermore, argument, body, draft, evidence, paragraph",
+    video_hint: "Argumentative essay body paragraphs",
+    read_topic: "Building Arguments - drafting body paragraphs"
+  },
+  125: {
+    theme: "Introduction and Conclusion Argumentative",
+    grammar: "Persuasive Verbs: Urge, Recommend, Should (call to action)",
+    keywords: "hook, introduction, conclusion, urge, recommend, call to action, should",
+    video_hint: "Persuasive introduction conclusion writing",
+    read_topic: "Opening and Closing - strong intro and conclusion for arguments"
+  },
+  126: {
+    theme: "From Essay to Speech",
+    grammar: "Signposting: Moving on to, Let's look at, As I mentioned",
+    keywords: "signpost, speech, essay, convert, moving on, transition, oral, deliver",
+    video_hint: "Signposting speech transitions for students",
+    read_topic: "From Page to Stage - turning essay into spoken argument"
+  },
+  127: {
+    theme: "Rebuttal Practice",
+    grammar: "Contrast Connectors: On the contrary, However (disagreeing politely)",
+    keywords: "rebuttal, counter, on the contrary, however, disagree, response, debate",
+    video_hint: "Debate rebuttal skills for students",
+    read_topic: "The Counter-Strike - practising rebuttals in debate"
+  },
+  128: {
+    theme: "The Live Debate 1",
+    grammar: "Debate language: I agree/disagree because / With respect / My point is",
+    keywords: "debate, live, argue, agree, disagree, point, respect, teams, homework",
+    video_hint: "Student debate competition skills",
+    read_topic: "Live Debate - arguing about homework with evidence"
+  },
+  129: {
+    theme: "Debate 2 Preparation",
+    grammar: "Future Continuous: My partner will be discussing / We will be showing",
+    keywords: "video games, screen time, debate, prepare, strategy, team, topic, argument",
+    video_hint: "Video games debate for students",
+    read_topic: "Debate Prep - preparing arguments about video games"
+  },
+  130: {
+    theme: "Research on Video Games",
+    grammar: "Citation Phrases: According to researchers / Studies show that",
+    keywords: "research, video games, studies, statistics, evidence, health, benefits, risks",
+    video_hint: "Video games effects research for students",
+    read_topic: "Video Games Research - finding evidence for your argument"
+  },
+  131: {
+    theme: "Video Games Essay Structure",
+    grammar: "Contrast Transitions: However, Nevertheless, Yet, On the other hand",
+    keywords: "structure, essay, video games, contrast, nevertheless, however, yet, balance",
+    video_hint: "Balanced argument essay writing",
+    read_topic: "Video Games Essay - writing a balanced argument"
+  },
+  132: {
+    theme: "Live Debate 2",
+    grammar: "Debate delivery: fluency, tone, persuasion, responding to challenges",
+    keywords: "live debate, video games, argue, refute, agree, challenge, respond, score",
+    video_hint: "Debate tournament skills students",
+    read_topic: "Live Debate 2 - arguing about video games"
+  },
+  133: {
+    theme: "Deep Research and Data",
+    grammar: "Citation Phrases: According to a study by / Statistics show that",
+    keywords: "statistics, data, study, research, cited, evidence, findings, quantitative",
+    video_hint: "Using statistics in argument writing",
+    read_topic: "Data Driven Debate - finding and using statistical evidence"
+  },
+  134: {
+    theme: "Identifying Fallacies",
+    grammar: "Qualifiers: Some, Many, Often, Tend to (avoiding over-generalisation)",
+    keywords: "fallacy, generalise, some, many, often, overgeneralize, logical error, claim",
+    video_hint: "Logical fallacies for students",
+    read_topic: "Fallacy Detector - recognising and avoiding logical errors"
+  },
+  135: {
+    theme: "Counter-Argument Paragraph",
+    grammar: "Contrast Transitions Advanced: However, Nevertheless, Yet, On the other hand",
+    keywords: "counter-argument, concede, however, nevertheless, refute, balance, admit",
+    video_hint: "Counter argument paragraph writing",
+    read_topic: "Balanced Argumentation - writing the counter-argument paragraph"
+  },
+  136: {
+    theme: "Drafting the Full Essay",
+    grammar: "Cohesion: reviewing all linking words used throughout the text",
+    keywords: "full essay, cohesion, linking words, stamina, draft, complete, final",
+    video_hint: "Writing complete argumentative essay",
+    read_topic: "The Full Draft - writing the complete argumentative essay"
+  },
+  137: {
+    theme: "Editing Word Choice",
+    grammar: "Synonyms and Antonyms: using varied vocabulary to improve style",
+    keywords: "synonym, antonym, word choice, style, vocabulary, replace, precise, edit",
+    video_hint: "Synonyms antonyms word choice for students",
+    read_topic: "Word Craft - improving vocabulary and writing style"
+  },
+  138: {
+    theme: "Advanced Rebuttal",
+    grammar: "Polite Disagreement: I see your point but / With all due respect",
+    keywords: "polite, disagree, rebuttal, attack evidence, challenge, respectful, debate",
+    video_hint: "Advanced debate skills polite disagreement",
+    read_topic: "Attacking Evidence - advanced rebuttal techniques"
+  },
+  139: {
+    theme: "Team Strategy",
+    grammar: "Future Continuous: My partner will be discussing / We will be showing",
+    keywords: "team, strategy, plan, partner, role, speaker, timed, coordinate, debate",
+    video_hint: "Team debate strategy coordination for students",
+    read_topic: "Team Strategy - planning roles for the live debate"
+  },
+  140: {
+    theme: "Live Debate 2 Video Games",
+    grammar: "Debate fluency: spontaneous response, listening and rebutting",
+    keywords: "video games, live debate, spontaneous, fluency, respond, team, win",
+    video_hint: "Live debate video games competition",
+    read_topic: "The Big Debate - video games for and against"
+  },
+  141: {
+    theme: "Geometry Review Angles and Lines",
+    grammar: "Geometry description: An acute angle is less than 90 degrees",
+    keywords: "angle, line, acute, obtuse, right angle, parallel, perpendicular, degrees",
+    video_hint: "Angles lines geometry for students",
+    read_topic: "Angles and Lines Review - geometry vocabulary in English"
+  },
+  142: {
+    theme: "Geometry Review Area and Volume",
+    grammar: "Formula language: Area equals length times width",
+    keywords: "area, volume, perimeter, formula, length, width, height, calculate, units",
+    video_hint: "Area volume geometry formulas for kids",
+    read_topic: "Area and Volume Review - calculating space in English"
+  },
+  143: {
+    theme: "Critical Thinking Analysing Ads",
+    grammar: "Persuasive language identification: This ad claims that / The purpose is to",
+    keywords: "advertisement, ad, persuade, claim, target, trick, analyse, media, critical",
+    video_hint: "Analysing advertisements critical thinking for students",
+    read_topic: "Ad Detectives - analysing persuasive techniques in ads"
+  },
+  144: {
+    theme: "Capstone Preparation",
+    grammar: "Capstone planning language: I will argue that / My essay will discuss",
+    keywords: "capstone, final project, topic, plan, thesis, essay, argument, choose",
+    video_hint: "Capstone project planning for students",
+    read_topic: "Capstone Planning - preparing for the final project"
+  },
+  145: {
+    theme: "Independent Research",
+    grammar: "Source Attribution: According to [Author] in [Article Name]",
+    keywords: "independent, research, source, attribute, author, article, cite, bibliography",
+    video_hint: "Independent research citing sources for students",
+    read_topic: "Research Sprint - independent investigation of a topic"
+  },
+  146: {
+    theme: "Synthesizing Information",
+    grammar: "Connectors of Comparison: Similarly, Likewise, In the same way",
+    keywords: "synthesize, combine, sources, similarly, likewise, comparison, information",
+    video_hint: "Synthesizing information writing for students",
+    read_topic: "Synthesis Writing - combining information from multiple sources"
+  },
+  147: {
+    theme: "Advanced Thesis Writing",
+    grammar: "Subordinating Conjunctions: While, Whereas, Although (nuanced claims)",
+    keywords: "thesis, advanced, nuance, while, whereas, although, subordinate, claim",
+    video_hint: "Advanced thesis subordinating conjunctions writing",
+    read_topic: "Nuanced Claims - writing advanced thesis statements"
+  },
+  148: {
+    theme: "Drafting Final Essay Independent",
+    grammar: "Sentence variety: Simple, Compound, Complex structures in one text",
+    keywords: "final, essay, draft, sentence variety, simple, compound, complex, independent",
+    video_hint: "Writing varied sentence structures for students",
+    read_topic: "Final Draft - writing the capstone essay independently"
+  },
+  149: {
+    theme: "Final Polish and Peer Review",
+    grammar: "Punctuation and Capitalisation check: commas, colons, apostrophes",
+    keywords: "polish, peer review, punctuation, capitalisation, comma, colon, apostrophe",
+    video_hint: "Peer review editing writing skills for students",
+    read_topic: "Final Polish - peer review and proofreading the essay"
+  },
+  150: {
+    theme: "Mock Debate and Strategy",
+    grammar: "Debate preparation: rehearse, practice, respond to challenges",
+    keywords: "mock, debate, practice, strategy, respond, challenge, prepare, timer",
+    video_hint: "Mock debate practice strategy for students",
+    read_topic: "Mock Debate Day - practising the final debate"
+  },
+  151: {
+    theme: "The Capstone Debate",
+    grammar: "Full debate performance: argument, rebuttal, conclusion, Q&A",
+    keywords: "capstone, final debate, performance, argument, rebuttal, conclude, Q&A",
+    video_hint: "Final debate performance public speaking students",
+    read_topic: "The Capstone Debate - final performative debate event"
+  },
+  152: {
+    theme: "Genre Review Narrative",
+    grammar: "Narrative Tenses: Past Simple, Past Continuous, Past Perfect in stories",
+    keywords: "narrative, story, tenses, past simple, past continuous, past perfect, genre",
+    video_hint: "Narrative writing tenses story structure",
+    read_topic: "Narrative Genre - mastering story writing tenses"
+  },
+  153: {
+    theme: "Genre Review Expository",
+    grammar: "Cause Effect Connectors Advanced: Consequently, Due to the fact that",
+    keywords: "expository, explain, consequently, due to, fact, because, therefore, genre",
+    video_hint: "Expository writing cause effect for students",
+    read_topic: "Expository Genre - explaining with advanced connectors"
+  },
+  154: {
+    theme: "Impromptu Speaking Skills",
+    grammar: "Fillers and Connectors: That's an interesting question / To be honest",
+    keywords: "impromptu, speaking, filler, connector, pause, respond, spontaneous, fluency",
+    video_hint: "Impromptu speaking skills debate for students",
+    read_topic: "On the Spot - responding to unexpected questions"
+  },
+  155: {
+    theme: "Portfolio Preparation",
+    grammar: "Past vs Present Perfect: I used to make mistakes, but now I have learned",
+    keywords: "portfolio, present perfect, progress, used to, now, improvement, learning",
+    video_hint: "Portfolio reflection growth mindset for students",
+    read_topic: "Portfolio Day - curating your best work and reflecting on growth"
+  },
+  156: {
+    theme: "Graduation Ceremony and Final Showcase",
+    grammar: "Present Perfect achievement: I have completed / I can now",
+    keywords: "graduation, final, showcase, celebrate, speech, achievement, three years, complete",
+    video_hint: "Graduation ceremony celebration speech",
+    read_topic: "Final Showcase - three-year graduation ceremony"
   }
 };
 
@@ -541,7 +1511,7 @@ const main = () => {
   let weekIds = [];
   
   if (args[0] === '--all') {
-    weekIds = Array.from({ length: 54 }, (_, i) => i + 1);
+    weekIds = Array.from({ length: 156 }, (_, i) => i + 1);
   } else if (args[0].includes('-')) {
     const [start, end] = args[0].split('-').map(Number);
     weekIds = Array.from({ length: end - start + 1 }, (_, i) => start + i);

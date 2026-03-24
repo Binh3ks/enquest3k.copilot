@@ -1,39 +1,39 @@
 {
   "weekId": 18,
   "theme": "The Live Reporter",
-  "grammar_focus": "Present Continuous: I am reporting / She is filming / They are watching.",
+  "grammar_focus": "Present Continuous: I am reporting / She is filming / They are watching",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
       "priority_search": "English Singsing present continuous am is are doing ESL for kids",
-      "backup_search": "present continuous am is are doing grammar song ESL kids cartoons"
+      "backup_search": "present continuous am is are doing song ESL kids cartoons"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing present continuous what are you doing she is he is ESL for kids",
-      "backup_search": "present continuous what are you doing she is running he is eating ESL kids song"
+      "priority_search": "English Singsing present continuous am is are doing ESL for kids",
+      "backup_search": "present continuous am is are doing kids song ESL cartoons"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox what is happening actions story level 1 ESL for kids",
-      "backup_search": "Vooks action verbs story read aloud cartoons for kids"
+      "priority_search": "Little Fox live reporter live news reporter story level 1 ESL for kids",
+      "backup_search": "Vooks live reporter live news reporter story read aloud cartoons for kids"
     },
     {
       "id": 4,
       "purpose": "VOCABULARY",
-      "priority_search": "Little Fox action verbs vocabulary song ESL for kids",
-      "backup_search": "action verbs vocabulary song ESL kids cartoons Dream English"
+      "priority_search": "Little Fox What is happening now? song ESL for kids",
+      "backup_search": "What is happening now? ESL kids cartoons song"
     },
     {
       "id": 5,
       "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids how does a camera microphone work for kids",
-      "backup_search": "how do cameras work science for kids National Geographic Kids"
+      "priority_search": "SciShow Kids reporter, camera, filming, watching, happening, news, microphone, broadcasting for kids",
+      "backup_search": "reporter, camera, filming, watching, happening, news, microphone, broadcasting kids science cartoons"
     }
   ],
   "topic": "Live News Reporter - describing current events",
-  "science": "reporter camera filming watching microphone broadcasting news"
+  "science": "reporter, camera, filming, watching, happening, news, microphone, broadcasting"
 }
