@@ -23,13 +23,13 @@ const weekData = {
   global_vocab: vocab.vocab,
 
   voiceConfig: {
-    narration: 'en-US-Neural2-H',
-    vocabulary: 'en-US-Neural2-F',
-    dictation: 'en-US-Neural2-F',
-    shadowing: 'en-US-Neural2-F',
-    questions: 'en-US-Neural2-B',
-    mindmap: 'en-US-Neural2-B',
-    logic_science: 'en-US-Neural2-B'
+    narration: 'en-US-Neural2-H',      // Narrator / Read — Male, deep, friendly
+    vocabulary: 'en-US-Neural2-F',     // Vocab words — Female, bright, clear
+    dictation: 'en-US-Neural2-C',      // Dictation — Female, warm, distinct from vocab
+    shadowing: 'en-US-Neural2-J',      // Shadowing — Male, higher tone, energetic
+    questions: 'en-US-Neural2-B',      // Questions — Male, clean, clear
+    mindmap: 'en-US-Neural2-E',        // Mindmap — Female, smooth, different from vocab
+    logic_science: 'en-US-Neural2-D'   // Logic/Science — Male, measured, distinct
   },
 
   stations: {
