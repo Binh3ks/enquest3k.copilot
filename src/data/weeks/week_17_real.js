@@ -1,5 +1,5 @@
 const week17RealData = {
-  weekId: 17,
+  week_id: 17,
   week_number: 17,
   title: "Weather & Clothes",
   weekTitle_en: "Weather & Clothes",
