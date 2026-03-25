@@ -2,65 +2,65 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "I was 5 years old. Now I am 6. How many years did I grow?",
-      question_vi: "Tớ 5 tuổi. Bây giờ tớ 6 tuổi. Tớ đã lớn lên bao nhiêu năm?",
+      question_en: "I was a baby 5 years ago. Now I am in school. How old am I now?",
+      question_vi: "Tôi là em bé cách đây 5 năm. Bây giờ tôi đi học. Tôi bao nhiêu tuổi bây giờ?",
       options_en: [
-        "A. 1 year",
-        "B. 2 years",
-        "C. 5 years",
-        "D. 6 years"
+        "A. 3 years old",
+        "B. 5 years old",
+        "C. 7 years old",
+        "D. 10 years old"
       ],
       options_vi: [
-        "A. 1 năm",
-        "B. 2 năm",
-        "C. 5 năm",
-        "D. 6 năm"
+        "A. 3 tuổi",
+        "B. 5 tuổi",
+        "C. 7 tuổi",
+        "D. 10 tuổi"
       ],
-      correct_answer: "A",
-      explanation_en: "I was 5. Now I am 6. 6 - 5 = 1. I grew 1 year.",
-      explanation_vi: "Tớ 5 tuổi. Bây giờ 6 tuổi. 6 - 5 = 1. Tớ lớn thêm 1 năm.",
+      correct_answer: "B",
+      explanation_en: "If I was a baby (0 years old) 5 years ago, I am now 5 years old.",
+      explanation_vi: "Nếu tôi là em bé (0 tuổi) cách đây 5 năm, bây giờ tôi 5 tuổi.",
       audio_url: "/audio/week19_easy/logic_q1.mp3"
     },
     {
       id: 2,
-      question_en: "I was little. Now I am big. What changed?",
-      question_vi: "Tớ nhỏ. Bây giờ tớ lớn. Cái gì đã thay đổi?",
+      question_en: "I was small. My brother was smaller. Who was bigger?",
+      question_vi: "Tôi nhỏ. Em trai tôi nhỏ hơn. Ai to hơn?",
       options_en: [
-        "A. I grew up",
-        "B. I stayed the same",
-        "C. I got smaller",
-        "D. Nothing changed"
+        "A. Me",
+        "B. My brother",
+        "C. Same size",
+        "D. Not sure"
       ],
       options_vi: [
-        "A. Tớ lớn lên",
-        "B. Tớ vẫn vậy",
-        "C. Tớ nhỏ hơn",
-        "D. Không thay đổi"
+        "A. Tôi",
+        "B. Em trai tôi",
+        "C. Bằng nhau",
+        "D. Không chắc"
       ],
       correct_answer: "A",
-      explanation_en: "I was little. Now I am big. So I grew up.",
-      explanation_vi: "Tớ nhỏ. Bây giờ lớn. Vậy tớ đã lớn lên.",
+      explanation_en: "My brother was smaller than me. So I was bigger.",
+      explanation_vi: "Em trai nhỏ hơn tôi. Vậy tôi to hơn.",
       audio_url: "/audio/week19_easy/logic_q2.mp3"
     },
     {
       id: 3,
-      question_en: "When I was a baby, I was quiet. Now I am noisy. Am I the same?",
-      question_vi: "Khi tớ còn bé, tớ yên lặng. Bây giờ tớ ồn ào. Tớ có giống nhau không?",
+      question_en: "My album has 10 baby photos. I add 5 more photos. How many photos now?",
+      question_vi: "Album của tôi có 10 ảnh em bé. Tôi thêm 5 ảnh nữa. Bây giờ có bao nhiêu ảnh?",
       options_en: [
-        "A. No, I changed",
-        "B. Yes, I am the same",
-        "C. I don't know",
-        "D. Maybe"
+        "A. 10 photos",
+        "B. 12 photos",
+        "C. 15 photos",
+        "D. 20 photos"
       ],
       options_vi: [
-        "A. Không, tớ thay đổi",
-        "B. Có, tớ vẫn vậy",
-        "C. Tớ không biết",
-        "D. Có thể"
+        "A. 10 ảnh",
+        "B. 12 ảnh",
+        "C. 15 ảnh",
+        "D. 20 ảnh"
       ],
-      correct_answer: "A",
-      explanation_en: "I was quiet. Now I am noisy. That is different. So I changed.",
-      explanation_vi: "Tớ yên lặng. Bây giờ ồn ào. Khác nhau. Vậy tớ đã thay đổi.",
+      correct_answer: "C",
+      explanation_en: "10 photos + 5 photos = 15 photos total.",
+      explanation_vi: "10 ảnh + 5 ảnh = 15 ảnh tổng cộng.",
       audio_url: "/audio/week19_easy/logic_q3.mp3"
     }
   ]

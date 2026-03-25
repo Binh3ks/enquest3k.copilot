@@ -59,6 +59,7 @@ import week15RealData from '../data/weeks/week_15_real.js';
 import week16RealData from '../data/weeks/week_16_real.js';
 import week17RealData from '../data/weeks/week_17_real.js';
 import week18RealData from '../data/weeks/week_18_real.js';
+import week19RealData from '../data/weeks/week_19_real.js';
 
 export const GAME_OPTIONS = [
   { id: 'word_chain', name_en: 'Word Chain' },
@@ -131,7 +132,8 @@ const REAL_WEEK_DATA = {
   15: week15RealData,
   16: week16RealData,
   17: week17RealData,
-  18: week18RealData
+  18: week18RealData,
+  19: week19RealData
 };
 
 function extractVocabFromWeekData(weekData) {

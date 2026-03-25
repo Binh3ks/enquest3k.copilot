@@ -1,52 +1,38 @@
+// ✅ EXTRACTED FROM read.js - My Old Photo Album (100% extraction per Mass Production rules)
 export default {
   sentences: [
-    {
-      id: 1,
-      sentence: "I was a baby in 2015.",
-      meaning: "Describing when I was a baby (past time)",
-      audio_url: "/audio/week19/dictation_1.mp3"
-    },
-    {
-      id: 2,
-      sentence: "She was very cute when she was little.",
-      meaning: "Describing how she looked in the past",
-      audio_url: "/audio/week19/dictation_2.mp3"
-    },
-    {
-      id: 3,
-      sentence: "They were in kindergarten last year.",
-      meaning: "Talking about where they were in the past",
-      audio_url: "/audio/week19/dictation_3.mp3"
-    },
-    {
-      id: 4,
-      sentence: "My brother was noisy when he was young.",
-      meaning: "Describing behavior in the past",
-      audio_url: "/audio/week19/dictation_4.mp3"
-    },
-    {
-      id: 5,
-      sentence: "We were quiet babies.",
-      meaning: "Describing how we were as babies",
-      audio_url: "/audio/week19/dictation_5.mp3"
-    },
-    {
-      id: 6,
-      sentence: "The photos were from the past.",
-      meaning: "Talking about when the photos are from",
-      audio_url: "/audio/week19/dictation_6.mp3"
-    },
-    {
-      id: 7,
-      sentence: "I was small but now I am big.",
-      meaning: "Contrasting past and present size",
-      audio_url: "/audio/week19/dictation_7.mp3"
-    },
-    {
-      id: 8,
-      sentence: "You were a baby and you will grow.",
-      meaning: "Talking about past state and future growth",
-      audio_url: "/audio/week19/dictation_8.mp3"
-    }
+    { id: 1, text: "Today I found an old album in my grandma's house."},
+    { id: 2, text: "It is full of photos from the past."},
+    { id: 3, text: "Look at this one!"},
+    { id: 4, text: "Who is this baby?"},
+    { id: 5, text: "My mom says, That's you!"},
+    { id: 6, text: "I was so small!"},
+    { id: 7, text: "I was little and cute."},
+    { id: 8, text: "My face was round and my eyes were big."},
+    { id: 9, text: "In this photo, I was just one year old."},
+    { id: 10, text: "I was a noisy baby."},
+    { id: 11, text: "My mom says I cried a lot."},
+    { id: 12, text: "But in this picture, I was quiet."},
+    { id: 13, text: "I was sleeping peacefully."},
+    { id: 14, text: "My grandma says, You were such a cute baby."},
+    { id: 15, text: "Everyone loved you."},
+    { id: 16, text: "Here is another photo."},
+    { id: 17, text: "I was in kindergarten."},
+    { id: 18, text: "I was five years old."},
+    { id: 19, text: "I was not a baby anymore."},
+    { id: 20, text: "I was a young child."},
+    { id: 21, text: "I was still small, but I was beginning to grow."},
+    { id: 22, text: "Look at my clothes!"},
+    { id: 23, text: "They were so little!"},
+    { id: 24, text: "I cannot wear them now."},
+    { id: 25, text: "I grow bigger every year."},
+    { id: 26, text: "My body gets taller and stronger."},
+    { id: 27, text: "These photos are special memories."},
+    { id: 28, text: "They show me when I was small."},
+    { id: 29, text: "Now I am big!"},
+    { id: 30, text: "I have grown so much."},
+    { id: 31, text: "But I still keep these memories in my heart."},
+    { id: 32, text: "The past is different from now, but it is important."},
+    { id: 33, text: "It helps me remember who I was and how I grow."}
   ]
 };

@@ -1,40 +1,37 @@
+// ✅ EXTRACTED FROM read.js - My Old Photo Album (100% extraction per Mass Production rules)
 export default {
   sentences: [
-    {
-      id: 1,
-      sentence: "I was a baby.",
-      meaning: "When I was very young",
-      audio_url: "/audio/week19_easy/dictation_1.mp3"
-    },
-    {
-      id: 2,
-      sentence: "I was cute and little.",
-      meaning: "Describing how I looked",
-      audio_url: "/audio/week19_easy/dictation_2.mp3"
-    },
-    {
-      id: 3,
-      sentence: "I was quiet.",
-      meaning: "I made no sound",
-      audio_url: "/audio/week19_easy/dictation_3.mp3"
-    },
-    {
-      id: 4,
-      sentence: "I was in kindergarten.",
-      meaning: "I went to school for small kids",
-      audio_url: "/audio/week19_easy/dictation_4.mp3"
-    },
-    {
-      id: 5,
-      sentence: "They were young.",
-      meaning: "My friends were not old",
-      audio_url: "/audio/week19_easy/dictation_5.mp3"
-    },
-    {
-      id: 6,
-      sentence: "I grow every day.",
-      meaning: "I get bigger",
-      audio_url: "/audio/week19_easy/dictation_6.mp3"
-    }
+    { id: 1, text: "Look!"},
+    { id: 2, text: "I found an album."},
+    { id: 3, text: "It has old photos."},
+    { id: 4, text: "This is a photo of me."},
+    { id: 5, text: "I was a baby!"},
+    { id: 6, text: "I was so small."},
+    { id: 7, text: "I was little and cute."},
+    { id: 8, text: "My face was round."},
+    { id: 9, text: "In this photo, I was one year old."},
+    { id: 10, text: "I was a noisy baby."},
+    { id: 11, text: "But here I was quiet."},
+    { id: 12, text: "I was sleeping."},
+    { id: 13, text: "My grandma says, You were cute."},
+    { id: 14, text: "Here is another photo."},
+    { id: 15, text: "I was in kindergarten."},
+    { id: 16, text: "I was five."},
+    { id: 17, text: "I was not a baby."},
+    { id: 18, text: "I was a young child."},
+    { id: 19, text: "I was still small."},
+    { id: 20, text: "But I grow bigger now!"},
+    { id: 21, text: "Look at my old clothes!"},
+    { id: 22, text: "They were little."},
+    { id: 23, text: "I cannot wear them now."},
+    { id: 24, text: "I grow every year."},
+    { id: 25, text: "I get taller."},
+    { id: 26, text: "These photos are special memories."},
+    { id: 27, text: "They show me when I was small."},
+    { id: 28, text: "Now I am big!"},
+    { id: 29, text: "The past is different."},
+    { id: 30, text: "But I remember."},
+    { id: 31, text: "I remember when I was small."},
+    { id: 32, text: "I love my memories!"}
   ]
 };
