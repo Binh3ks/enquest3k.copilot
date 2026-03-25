@@ -1,7 +1,7 @@
 export default {
   title_en: "How We Grow and Change",
   title_vi: "Cách chúng ta lớn lên và thay đổi",
-  image_url: "/images/week19/explore_cover_w019.jpg",
+  image_url: "/images/week19/explore_cover_w19.jpg",
   audio_url: "/audio/week19/explore_main.mp3",
   
   content_en: `

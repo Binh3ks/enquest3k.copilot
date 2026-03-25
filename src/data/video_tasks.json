@@ -20,5 +20,16 @@
       { "id": 4, "purpose": "VOCABULARY", "query": "verbs vocabulary song kids ESL activities" },
       { "id": 5, "purpose": "SCIENCE", "query": "how cameras work for kids science" }
     ]
+  },
+  {
+    "weekId": 19,
+    "note": "When I Was Small - Past Simple was/were (Past State)",
+    "videos": [
+      { "id": 1, "purpose": "GRAMMAR", "query": "was were past simple song for kids" },
+      { "id": 2, "purpose": "GRAMMAR", "query": "past tense was were children ESL song" },
+      { "id": 3, "purpose": "STORY", "query": "Little Fox story childhood memories kids" },
+      { "id": 4, "purpose": "GRAMMAR", "query": "verb to be past was were kids lesson" },
+      { "id": 5, "purpose": "SCIENCE", "query": "how do you grow up body changes kids science" }
+    ]
   }
 ]

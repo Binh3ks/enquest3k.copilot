@@ -119,6 +119,59 @@ export default {
       question: "She ___ a cute baby.",
       answer: "was",
       hint: "She was"
+    },
+    {
+      id: 14,
+      type: "mc",
+      question: "My brother ___ very little when he was born.",
+      options: ["is", "was", "were"],
+      answer: "was",
+      hint: "My brother = He → was"
+    },
+    {
+      id: 15,
+      type: "fill",
+      question: "You ___ so small in that photo!",
+      answer: "were",
+      hint: "You were"
+    },
+    {
+      id: 16,
+      type: "mc",
+      question: "I ___ in kindergarten three years ago.",
+      options: ["am", "was", "were"],
+      answer: "was",
+      hint: "I + past"
+    },
+    {
+      id: 17,
+      type: "fill",
+      question: "My parents ___ young in the old photos.",
+      answer: "were",
+      hint: "Parents (they) = were"
+    },
+    {
+      id: 18,
+      type: "mc",
+      question: "The baby ___ quiet when she slept.",
+      options: ["is", "was", "were"],
+      answer: "was",
+      hint: "The baby = She → was"
+    },
+    {
+      id: 19,
+      type: "fill",
+      question: "I ___ noisy when I cried.",
+      answer: "was",
+      hint: "I was"
+    },
+    {
+      id: 20,
+      type: "mc",
+      question: "Now I am big. Before, I ___ small.",
+      options: ["am", "was", "were"],
+      answer: "was",
+      hint: "I + past = was"
     }
   ]
 };

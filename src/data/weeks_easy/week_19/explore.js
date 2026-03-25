@@ -1,7 +1,7 @@
 export default {
   title_en: "How We Grow",
   title_vi: "Cách chúng ta lớn lên",
-  image_url: "/images/week19_easy/explore_cover_w019.jpg",
+  image_url: "/images/week19_easy/explore_cover_w19.jpg",
   audio_url: "/audio/week19_easy/explore_main.mp3",
   
   content_en: `

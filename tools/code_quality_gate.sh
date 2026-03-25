@@ -15,7 +15,7 @@
 #   Clone Week 16 (golden standard) → replace content → validate quality gate
 #   Gate checks: (1) code patterns + (2) W16 schema compliance + (3) content consistency
 #
-# CHECKS (26 total):
+# CHECKS (30 total):
 #   Code pattern checks (React/service bugs):
 #   [1]  Images: all <img src> from data use getImageUrl()
 #   [2]  MindMap: station='mindmap_speaking' (not 'read')
@@ -36,12 +36,12 @@
 #   [15] Audio/image paths reference week N (not stale from W16)
 #   [16] AI Tutor week_NN_real.js: 3 missions + v28_format_notes + nova + pacing
 #
-#   Data content checks (schema correctness per W16 golden standard):
-#   [17] dictation.js: exports { sentences: [...] } not plain array
-#   [18] singapore_math.js: answer=string[], bar_model=string, hint_en/hint_vi present
-#   [19] writing.js: has model_sentence, prompt_en, prompt_vi (no example_en/rubric)
+#   Data content checks (schema correctness + actual content counts):
+#   [17] dictation.js: exports { sentences: [...] } + >= 5 sentence entries (by { id: count)
+#   [18] singapore_math.js: schema correct + >= 3 problems (question_en count)
+#   [19] writing.js: schema correct + model_sentence line >= 200 chars
 #   [20] word_power.js: has >= 6 words
-#   [21] mindmap.js: branchLabels keyed by stem text (no completions in centerStems)
+#   [21] mindmap.js: schema correct + >= 36 audio entries (6 stems × 6 branches, by audio: count)
 #   [22] metadata.js: week N has real title (not generic "Week N")
 #
 #   Production readiness checks (content completeness):
@@ -49,6 +49,12 @@
 #   [24] video_tasks.json: has queries for week N (video search was run)
 #   [25] Image prompt files exist for week N in Production_FINAL/IMAGE PROMPTS/
 #   [26] Cover image_url paths in read.js/explore.js resolve to actual files on disk
+#
+#   Content count / registration checks (catches missing wiring):
+#   [27] grammar.js: exactly 20 exercises per mode (question: count)
+#   [28] gameAdaptation.js: week N imports + weekGamesMap entry (GameHub wiring)
+#   [29] StoryMissionTab + FreeTalkTab: import/ternary for week N (AI Tutor wiring)
+#   [30] games.js: show_tell + make_sentence + ask_me present, >= 10 answer entries
 #
 # Usage:
 #   bash tools/code_quality_gate.sh <week_number>
@@ -87,7 +93,7 @@ echo -e "${BLUE}${BOLD}═══════════════════
 echo -e "${BLUE}${BOLD}  CODE QUALITY GATE — Week ${WEEK_PAD} (Full App Coverage)${NC}"
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 echo ""
-echo -e "${CYAN}Checks 1-10: code patterns  |  Checks 11-16: data schema/template  |  Checks 17-22: content schema  |  Checks 23-26: production readiness${NC}"
+echo -e "${CYAN}Checks 1-10: code patterns  |  11-16: data schema  |  17-22: content counts  |  23-26: production  |  27-30: wiring/registration${NC}"
 echo ""
 
 # =============================================================================
@@ -543,12 +549,12 @@ else
   grep -q "story_character"   "$AI_TUTOR" || AI_ERRS="${AI_ERRS}\n   • Missing: story_character"
   grep -q "minimum_turns"     "$AI_TUTOR" || AI_ERRS="${AI_ERRS}\n   • Missing: minimum_turns (≥10)"
   grep -q "grammar_examples"  "$AI_TUTOR" || AI_ERRS="${AI_ERRS}\n   • Missing: grammar_examples"
-  WN_LINE=$(grep "week_number:" "$AI_TUTOR" | head -1)
+  WN_LINE=$(grep "week_number:" "$AI_TUTOR" 2>/dev/null | head -1 || true)
   echo "$WN_LINE" | grep -qE "week_number: *${WEEK_INT}[^0-9]|week_number: *${WEEK_INT}$" || \
-    AI_ERRS="${AI_ERRS}\n   • week_number mismatch: $WN_LINE (expected $WEEK_INT)"
-  AI_WID=$(grep "weekId:" "$AI_TUTOR" | head -1)
-  echo "$AI_WID" | grep -qE "weekId: *${WEEK_INT}[^0-9]|weekId: *${WEEK_INT}$" || \
-    AI_ERRS="${AI_ERRS}\n   • weekId mismatch: $AI_WID (expected $WEEK_INT)"
+    AI_ERRS="${AI_ERRS}\n   • week_number mismatch or missing: '$WN_LINE' (expected week_number: $WEEK_INT)"
+  AI_WID=$(grep -E "weekId:|week_id:" "$AI_TUTOR" 2>/dev/null | head -1 || true)
+  echo "$AI_WID" | grep -qE "(weekId|week_id): *${WEEK_INT}[^0-9]|(weekId|week_id): *${WEEK_INT}$" || \
+    AI_ERRS="${AI_ERRS}\n   • weekId/week_id mismatch or missing: '$AI_WID' (expected: $WEEK_INT)"
 
   if [ -n "$AI_ERRS" ]; then
     echo -e "   ${RED}❌ FAIL: AI Tutor schema errors:${NC}"
@@ -579,7 +585,13 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
   else
     HAS_SENTENCES=$(grep -c "sentences:" "$DICT_FILE" || true)
     if [ "$HAS_SENTENCES" -gt 0 ]; then
-      echo -e "   ${GREEN}✅ PASS ($LABEL): dictation.js exports { sentences: [...] }${NC}"
+      SENT_COUNT=$(grep -c "  { id:" "$DICT_FILE" || true)
+      if [ "$SENT_COUNT" -lt 5 ]; then
+        echo -e "   ${RED}❌ FAIL ($LABEL): dictation.js has only $SENT_COUNT sentence(s) — need >= 5${NC}"
+        ERRORS=$((ERRORS+1))
+      else
+        echo -e "   ${GREEN}✅ PASS ($LABEL): dictation.js exports { sentences: [...] } with $SENT_COUNT entries${NC}"
+      fi
     else
       echo -e "   ${YELLOW}⚠️  WARNING ($LABEL): 'sentences' key not found in dictation.js — verify schema${NC}"
       WARNINGS=$((WARNINGS+1))
@@ -621,7 +633,13 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
     echo -e "   ${YELLOW}FIX: answer=[\"5\",\"five\"], bar_model=\"/images/...\", hint_en=\"...\", hint_vi=\"...\"${NC}"
     ERRORS=$((ERRORS+1))
   else
-    echo -e "   ${GREEN}✅ PASS ($LABEL): singapore_math.js schema correct${NC}"
+    PROB_COUNT=$(grep -c "question_en:" "$SM_FILE" || true)
+    if [ "$PROB_COUNT" -lt 3 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): singapore_math.js has only $PROB_COUNT problem(s) — need >= 3${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): singapore_math.js schema correct ($PROB_COUNT problems)${NC}"
+    fi
   fi
 done
 echo ""
@@ -651,15 +669,22 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
     echo -e "   ${YELLOW}FIX: Add model_sentence/prompt_en/prompt_vi, remove example_en/rubric${NC}"
     ERRORS=$((ERRORS+1))
   else
-    echo -e "   ${GREEN}✅ PASS ($LABEL): writing.js schema correct${NC}"
+    MODEL_CHARS=$(grep "model_sentence:" "$WR_FILE" | wc -c | tr -d ' ')
+    if [ "$MODEL_CHARS" -lt 200 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): writing.js model_sentence too short ($MODEL_CHARS chars on that line) — need >= 200${NC}"
+      echo -e "   ${YELLOW}   FIX: Expand model_sentence to >= 25 complete sentences covering week vocabulary${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): writing.js schema correct (model_sentence: $MODEL_CHARS chars)${NC}"
+    fi
   fi
 done
 echo ""
 
 # =============================================================================
-# CHECK 20: word_power.js must have >= 6 words
+# CHECK 20: word_power.js must have exactly 6 words (W16+ standard)
 # =============================================================================
-echo -e "${BOLD}[CHECK 20] word_power.js — must have at least 6 words (W16 standard)${NC}"
+echo -e "${BOLD}[CHECK 20] word_power.js — must have exactly 6 words (W16+ standard)${NC}"
 for dir in "$ADV_DIR" "$EASY_DIR"; do
   [ ! -d "$dir" ] && continue
   LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
@@ -667,12 +692,22 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
   [ ! -f "$WP_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): $WP_FILE not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
 
   WORD_COUNT=$(grep -c "\"id\":\|  id:" "$WP_FILE" || true)
-  if [ "$WORD_COUNT" -lt 6 ]; then
-    echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has only $WORD_COUNT word(s) — need at least 6${NC}"
-    echo -e "   ${YELLOW}FIX: Add more words until count >= 6${NC}"
-    ERRORS=$((ERRORS+1))
+  if [ "$WEEK_INT" -ge 16 ]; then
+    if [ "$WORD_COUNT" -ne 6 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has $WORD_COUNT word(s) — W16+ standard requires exactly 6${NC}"
+      echo -e "   ${YELLOW}FIX: Keep exactly 6 academic words (not the full vocab list)${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has exactly 6 words (W16+ standard)${NC}"
+    fi
   else
-    echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has $WORD_COUNT words (>= 6)${NC}"
+    if [ "$WORD_COUNT" -lt 6 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has only $WORD_COUNT word(s) — need at least 6${NC}"
+      echo -e "   ${YELLOW}FIX: Add more words until count >= 6${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has $WORD_COUNT words (>= 6)${NC}"
+    fi
   fi
 done
 echo ""
@@ -705,7 +740,13 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
     echo -e "   ${YELLOW}FIX: branchLabels[\"exact stem text\"] = [{text,audio},...] — no completions${NC}"
     ERRORS=$((ERRORS+1))
   else
-    echo -e "   ${GREEN}✅ PASS ($LABEL): mindmap.js schema correct${NC}"
+    BRANCH_COUNT=$(grep -c "audio:" "$MM_FILE" || true)
+    if [ "$BRANCH_COUNT" -lt 36 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): mindmap.js has only $BRANCH_COUNT audio entries — need >= 36 (6 stems × 6 branches)${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): mindmap.js schema correct ($BRANCH_COUNT audio entries)${NC}"
+    fi
   fi
 done
 echo ""
@@ -845,14 +886,115 @@ else
   [ $COVER_ERRORS -gt 0 ] && ERRORS=$((ERRORS+COVER_ERRORS))
 fi
 echo ""
+echo -e "${CYAN}${BOLD}────────────────── CONTENT COUNT / REGISTRATION CHECKS ────────────${NC}"
+echo -e "${CYAN}   Validates exercise counts, GameHub registry, AI Tutor tab wiring${NC}"
+echo -e "${CYAN}${BOLD}────────────────────────────────────────────────────────────────────${NC}"
+echo ""
 
+# =============================================================================
+# CHECK 27: grammar.js must have exactly 20 exercises per mode
+# =============================================================================
+echo -e "${BOLD}[CHECK 27] grammar.js — must have exactly 20 exercises (both modes)${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  GR_FILE="${dir}/grammar.js"
+  if [ ! -f "$GR_FILE" ]; then
+    echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): grammar.js not found${NC}"; WARNINGS=$((WARNINGS+1)); continue
+  fi
+  EX_COUNT=$(grep -c "question:" "$GR_FILE" || true)
+  if [ "$EX_COUNT" -ne 20 ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): grammar.js has $EX_COUNT exercises (expected exactly 20)${NC}"
+    echo -e "   ${YELLOW}FIX: Add/remove exercises until count = 20 in ${GR_FILE}${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): grammar.js has exactly $EX_COUNT exercises${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 28: gameAdaptation.js — weekGamesMap must register week N
+# =============================================================================
+echo -e "${BOLD}[CHECK 28] gameAdaptation.js — week $WEEK_INT must be in weekGamesMap${NC}"
+GA_FILE="src/config/gameAdaptation.js"
+if [ ! -f "$GA_FILE" ]; then
+  echo -e "   ${RED}❌ FAIL: src/config/gameAdaptation.js not found${NC}"; ERRORS=$((ERRORS+1))
+else
+  GA_ERRS=""
+  ADV_IMPORT=$(grep -c "week${WEEK_INT}GamesAdvanced" "$GA_FILE" || true)
+  EASY_IMPORT=$(grep -c "week${WEEK_INT}GamesEasy" "$GA_FILE" || true)
+  MAP_ENTRY=$(grep -cE "[[:space:]]+${WEEK_INT}: \{" "$GA_FILE" || true)
+  [ "$ADV_IMPORT" -eq 0 ] && GA_ERRS="${GA_ERRS}\n   • Missing import: week${WEEK_INT}GamesAdvanced"
+  [ "$EASY_IMPORT" -eq 0 ] && GA_ERRS="${GA_ERRS}\n   • Missing import: week${WEEK_INT}GamesEasy"
+  [ "$MAP_ENTRY" -eq 0 ] && GA_ERRS="${GA_ERRS}\n   • weekGamesMap missing entry for week $WEEK_INT"
+  if [ -n "$GA_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL: gameAdaptation.js not wired for week $WEEK_INT:${NC}"
+    echo -e "$GA_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: Add imports + register '${WEEK_INT}: { advanced: week${WEEK_INT}GamesAdvanced, easy: week${WEEK_INT}GamesEasy }' in weekGamesMap${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: gameAdaptation.js registers week $WEEK_INT (imports + weekGamesMap entry)${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
+# CHECK 29: StoryMissionTab.jsx + FreeTalkTab.jsx must import week N real data
+# =============================================================================
+echo -e "${BOLD}[CHECK 29] AI Tutor tabs — StoryMissionTab + FreeTalkTab must include week $WEEK_INT${NC}"
+for tab_file in \
+  "src/modules/ai_tutor/tabs/StoryMissionTab.jsx" \
+  "src/modules/ai_tutor/tabs/FreeTalkTab.jsx"; do
+  TAB_NAME=$(basename "$tab_file" .jsx)
+  if [ ! -f "$tab_file" ]; then
+    echo -e "   ${YELLOW}⚠️  SKIP: $TAB_NAME not found${NC}"; WARNINGS=$((WARNINGS+1)); continue
+  fi
+  HAS_IMPORT=$(grep -c "week${WEEK_INT}RealData\|week_${WEEK_PAD}_real" "$tab_file" || true)
+  if [ "$HAS_IMPORT" -eq 0 ]; then
+    echo -e "   ${RED}❌ FAIL ($TAB_NAME): week $WEEK_INT not wired — AI Tutor will fall back to older week content${NC}"
+    echo -e "   ${YELLOW}FIX: Add import week${WEEK_INT}RealData + ternary 'weekNumber === $WEEK_INT ? week${WEEK_INT}RealData :' in $tab_file${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($TAB_NAME): week $WEEK_INT import/ternary present ($HAS_IMPORT occurrence(s))${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 30: games.js — show_tell, make_sentence, ask_me must have content
+# =============================================================================
+echo -e "${BOLD}[CHECK 30] games.js — show_tell, make_sentence, ask_me must have content (both modes)${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  GM_FILE="${dir}/games.js"
+  if [ ! -f "$GM_FILE" ]; then
+    echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): games.js not found${NC}"; WARNINGS=$((WARNINGS+1)); continue
+  fi
+  GM_ERRS=""
+  grep -q "show_tell:" "$GM_FILE" || GM_ERRS="${GM_ERRS}\n   • Missing: show_tell section"
+  grep -q "make_sentence:" "$GM_FILE" || GM_ERRS="${GM_ERRS}\n   • Missing: make_sentence section"
+  grep -q "ask_me:" "$GM_FILE" || GM_ERRS="${GM_ERRS}\n   • Missing: ask_me section"
+  ANSWER_COUNT=$(grep -c "answer:" "$GM_FILE" || true)
+  [ "$ANSWER_COUNT" -lt 10 ] && GM_ERRS="${GM_ERRS}\n   • Too few sentence answers ($ANSWER_COUNT 'answer:' entries — need >= 10 across make_sentence + ask_me)"
+  if [ -n "$GM_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): games.js content issues:${NC}"
+    echo -e "$GM_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: Ensure show_tell/make_sentence/ask_me each have >= 5 items${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): games.js has all 3 game types ($ANSWER_COUNT answer entries)${NC}"
+  fi
+done
+echo ""
 # =============================================================================
 # SUMMARY
 # =============================================================================
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   echo -e "${GREEN}${BOLD}  ✅ CODE QUALITY GATE PASSED — Week ${WEEK_PAD}${NC}"
-  echo -e "${GREEN}  All 26 checks passed. Safe to commit.${NC}"
+  echo -e "${GREEN}  All 30 checks passed. Safe to commit.${NC}"
 elif [ $ERRORS -eq 0 ]; then
   echo -e "${YELLOW}${BOLD}  ⚠️  PASSED WITH ${WARNINGS} WARNING(S) — Week ${WEEK_PAD}${NC}"
   echo -e "${YELLOW}  Zero errors (safe to commit). Review warnings before deploy.${NC}"

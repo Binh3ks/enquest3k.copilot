@@ -41,6 +41,8 @@ import week17GamesAdvanced from '../data/weeks/week_17/games.js';
 import week17GamesEasy from '../data/weeks_easy/week_17/games.js';
 import week18GamesAdvanced from '../data/weeks/week_18/games.js';
 import week18GamesEasy from '../data/weeks_easy/week_18/games.js';
+import week19GamesAdvanced from '../data/weeks/week_19/games.js';
+import week19GamesEasy from '../data/weeks_easy/week_19/games.js';
 import { week1RealData } from '../data/weeks/week_01_real.js';
 import { week2RealData } from '../data/weeks/week_02_real.js';
 import { week3RealData } from '../data/weeks/week_03_real.js';
@@ -167,7 +169,8 @@ export function getGameData(weekNumber, learningMode = 'advanced', gameId) {
     15: { advanced: week15GamesAdvanced, easy: week15GamesEasy },
     16: { advanced: week16GamesAdvanced, easy: week16GamesEasy },
     17: { advanced: week17GamesAdvanced, easy: week17GamesEasy },
-    18: { advanced: week18GamesAdvanced, easy: week18GamesEasy }
+    18: { advanced: week18GamesAdvanced, easy: week18GamesEasy },
+    19: { advanced: week19GamesAdvanced, easy: week19GamesEasy }
   };
 
   const weekGames = weekGamesMap[weekNumber]?.[learningMode];

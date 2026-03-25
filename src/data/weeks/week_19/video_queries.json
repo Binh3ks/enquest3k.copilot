@@ -1,58 +1,39 @@
 {
   "weekId": 19,
   "theme": "When I Was Small",
-  "grammar_focus": "Past Simple: was/were (Past State)",
-  "vocabulary_focus": "baby cute little noisy quiet kindergarten grow past young small photo album memory",
+  "grammar_focus": "Was / Were (Past State): I am big. I was small.",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "British Council simple past was were grammar lesson when I was young ESL primary kids",
-      "backup_search": "English Singsing simple past tense was were past state grammar kids",
-      "target_grammar": "Simple Past: was/were (I was small, you were cute)",
-      "target_channel": "British Council",
-      "age_group": "6-12 primary",
-      "reuse_from_week": null
+      "priority_search": "English Singsing was / were ESL for kids",
+      "backup_search": "was / were song ESL kids cartoons"
     },
     {
       "id": 2,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing simple past was were when I was a baby grammar ESL kids",
-      "backup_search": "simple past tense was were past state story lesson kids ESL",
-      "target_grammar": "Past tense was/were in context (baby to now)",
-      "target_channel": "English Singsing",
-      "age_group": "6-12 primary",
-      "reuse_from_week": null
+      "priority_search": "English Singsing Past State ESL for kids",
+      "backup_search": "Past State kids song ESL cartoons"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox when I was small growing up story baby to child level 1-2",
-      "backup_search": "Vooks growing up story baby photos memories kids primary school",
-      "target_grammar": "Story about growing from baby to child",
-      "target_channel": "Little Fox",
-      "age_group": "6-12 primary",
-      "reuse_from_week": null
+      "priority_search": "Little Fox when small baby photos story level 1 ESL for kids",
+      "backup_search": "Vooks when small baby photos story read aloud cartoons for kids"
     },
     {
       "id": 4,
       "purpose": "VOCABULARY",
-      "priority_search": "British Council Learn English Kids baby childhood when I was small memories vocabulary ESL",
-      "backup_search": "Fun Kids English baby young old memories photo album childhood vocabulary",
-      "target_grammar": "Childhood vocabulary: baby, photo, album, memory, grow",
-      "target_channel": "British Council",
-      "age_group": "6-12 primary",
-      "reuse_from_week": null
+      "priority_search": "Little Fox Was Were Song song ESL for kids",
+      "backup_search": "Was Were Song ESL kids cartoons song"
     },
     {
       "id": 5,
-      "purpose": "STEM",
-      "priority_search": "SciShow Kids Peekaboo Kidz how babies grow children development from baby to kid science",
-      "backup_search": "Crash Course Kids Mystery Doug human growth baby to adult how we grow body changes",
-      "target_grammar": "STEM: How humans grow from baby to child",
-      "target_channel": "SciShow Kids",
-      "age_group": "6-12 primary",
-      "reuse_from_week": null
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids baby, cute, little, noisy, quiet, kindergarten, grow, past, young for kids",
+      "backup_search": "baby, cute, little, noisy, quiet, kindergarten, grow, past, young kids science cartoons"
     }
-  ]
+  ],
+  "topic": "Baby Photos - contrasting past and present",
+  "science": "baby, cute, little, noisy, quiet, kindergarten, grow, past, young"
 }

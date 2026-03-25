@@ -38,23 +38,23 @@ const mindMapContent = {
       { text: "still small", audio: "/audio/week19/mindmap_branch_21.mp3" },
       { text: "beginning to grow", audio: "/audio/week19/mindmap_branch_22.mp3" },
       { text: "a young child", audio: "/audio/week19/mindmap_branch_23.mp3" },
-      { text: "rest after playing", audio: "/audio/week16/mindmap_branch_24.mp3" }
+      { text: "learning new things", audio: "/audio/week19/mindmap_branch_24.mp3" }
     ],
-    "My team is ___.": [
-      { text: "playing together", audio: "/audio/week16/mindmap_branch_25.mp3" },
-      { text: "passing the ball", audio: "/audio/week16/mindmap_branch_26.mp3" },
-      { text: "cheering each other", audio: "/audio/week16/mindmap_branch_27.mp3" },
-      { text: "scoring many goals", audio: "/audio/week16/mindmap_branch_28.mp3" },
-      { text: "running fast", audio: "/audio/week16/mindmap_branch_29.mp3" },
-      { text: "winning the game", audio: "/audio/week16/mindmap_branch_30.mp3" }
+    "My memories are ___.": [
+      { text: "special to me", audio: "/audio/week19/mindmap_branch_25.mp3" },
+      { text: "in my heart", audio: "/audio/week19/mindmap_branch_26.mp3" },
+      { text: "from a long time ago", audio: "/audio/week19/mindmap_branch_27.mp3" },
+      { text: "sweet and happy", audio: "/audio/week19/mindmap_branch_28.mp3" },
+      { text: "about when I was little", audio: "/audio/week19/mindmap_branch_29.mp3" },
+      { text: "always with me", audio: "/audio/week19/mindmap_branch_30.mp3" }
     ],
-    "To score a goal, you must ___.": [
-      { text: "kick very hard", audio: "/audio/week16/mindmap_branch_31.mp3" },
-      { text: "aim at the goal", audio: "/audio/week16/mindmap_branch_32.mp3" },
-      { text: "run toward the net", audio: "/audio/week16/mindmap_branch_33.mp3" },
-      { text: "pass to your teammate", audio: "/audio/week16/mindmap_branch_34.mp3" },
-      { text: "use your energy", audio: "/audio/week16/mindmap_branch_35.mp3" },
-      { text: "work as a team", audio: "/audio/week16/mindmap_branch_36.mp3" }
+    "Now I am big, but I was ___.": [
+      { text: "very small before", audio: "/audio/week19/mindmap_branch_31.mp3" },
+      { text: "a tiny baby", audio: "/audio/week19/mindmap_branch_32.mp3" },
+      { text: "young and little", audio: "/audio/week19/mindmap_branch_33.mp3" },
+      { text: "cute in old photos", audio: "/audio/week19/mindmap_branch_34.mp3" },
+      { text: "short and round", audio: "/audio/week19/mindmap_branch_35.mp3" },
+      { text: "growing every year", audio: "/audio/week19/mindmap_branch_36.mp3" }
     ]
   }
 };
