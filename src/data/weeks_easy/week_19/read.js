@@ -1,12 +1,12 @@
 export default {
-  title: "When I Was Small",
-  image_url: "/images/week19_easy/read_cover_w19.jpg",
-  content_en: "I **was** a **baby**. I **was** very **cute** and **little**. My hair **was** short. I **was** **quiet** when I slept. But I **was** **noisy** when I cried! I **was** in **kindergarten** when I **was** 5. I had many friends. They **were** **young** too. We **were** **small**. Now I **grow**. I am big! The **past** is special.",
-  content_vi: "Tớ **là** em **bé**. Tớ rất **dễ thương** và **nhỏ**. Tóc tớ **ngắn**. Tớ **yên lặng** khi ngủ. Nhưng tớ **ồn ào** khi khóc! Tớ học **mẫu giáo** khi tớ 5 tuổi. Tớ có nhiều bạn. Họ cũng **trẻ**. Chúng tớ **nhỏ**. Bây giờ tớ **lớn lên**. Tớ to rồi! **Quá khứ** thật đặc biệt.",
+  title: "My Old Photo Album",
+  image_url: "/images/week19_easy/read_cover_w019.jpg",
+  content_en: "Look! I found an **album**. It has old **photos**. This is a **photo** of me. I was a **baby**! I was so **small**. I was **little** and **cute**. My face was round. In this **photo**, I was one year old. I was a **noisy** **baby**. But here I was **quiet**. I was sleeping. My grandma says, \"You were **cute**.\" Here is another **photo**. I was in **kindergarten**. I was five. I was not a **baby**. I was a **young** child. I was still **small**. But I **grow** bigger now! Look at my old clothes! They were **little**. I cannot wear them now. I **grow** every year. I get taller. These **photos** are special **memories**. They show me when I was **small**. Now I am big! The **past** is different. But I remember. I remember when I was **small**. I love my **memories**!",
+  content_vi: "Nhìn kìa! Tôi tìm thấy một **album**. Nó có **ảnh** cũ. Đây là **ảnh** của tôi. Tôi là một **em bé**! Tôi **nhỏ** quá. Tôi **nhỏ bé** và **dễ thương**. Mặt tôi tròn. Trong **ảnh** này, tôi một tuổi. Tôi là **em bé** **ồn ào**. Nhưng ở đây tôi **yên lặng**. Tôi đang ngủ. Bà tôi nói, \"Con **dễ thương**.\" Đây là **ảnh** khác. Tôi ở **mẫu giáo**. Tôi năm tuổi. Tôi không phải **em bé**. Tôi là trẻ **nhỏ tuổi**. Tôi vẫn **nhỏ**. Nhưng bây giờ tôi **lớn lên**! Nhìn quần áo cũ! Chúng **nhỏ**. Tôi không mặc được bây giờ. Tôi **lớn lên** mỗi năm. Tôi cao hơn. Những **ảnh** này là **kỷ niệm** đặc biệt. Chúng cho tôi thấy khi tôi **nhỏ**. Bây giờ tôi lớn! **Quá khứ** khác. Nhưng tôi nhớ. Tôi nhớ khi tôi **nhỏ**. Tôi yêu **kỷ niệm** của tôi!",
   audio_url: "/audio/week19_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "Was the child cute?", answer: ["Yes", "Yes, very cute", "The child was cute"], hint_en: "Yes...", hint_vi: "Có..." },
-    { id: 2, question_en: "How old was the child in kindergarten?", answer: ["5", "Five", "5 years old"], hint_en: "The child was...", hint_vi: "Bé..." },
-    { id: 3, question_en: "Is the child small now?", answer: ["No", "No, big now", "No, not small"], hint_en: "No...", hint_vi: "Không..." }
+    { id: 1, question_en: "What did the child find?", answer: ["An album", "A photo album", "An old album"], hint_en: "The child found...", hint_vi: "Đứa trẻ tìm thấy..." },
+    { id: 2, question_en: "How was the child before?", answer: ["Small and cute", "Small", "Little", "A baby"], hint_en: "The child was...", hint_vi: "Đứa trẻ..." },
+    { id: 3, question_en: "What are the photos?", answer: ["Special memories", "Memories"], hint_en: "The photos are...", hint_vi: "Những ảnh là..." }
   ]
 };

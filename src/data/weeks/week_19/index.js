@@ -19,17 +19,17 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "When I Was Small",
   weekTitle_vi: "Khi Tôi Còn Nhỏ",
-  grammar_focus: "Was / Were (Past State): I am big. I was small.",
+  grammar_focus: "Past Simple: was/were (Past State)",
   global_vocab: vocab.vocab,
   
   voiceConfig: {
-    narration: 'en-US-Neural2-H',
+    narration: 'en-US-Neural2-H',  // → aura-stella-en (Female, bright, clear)
     vocabulary: 'en-US-Neural2-F',
-    dictation: 'en-US-Neural2-F',
-    shadowing: 'en-US-Neural2-F',
-    questions: 'en-US-Neural2-B',
-    mindmap: 'en-US-Neural2-B',
-    logic_science: 'en-US-Neural2-B'
+    dictation: 'en-US-Neural2-F',  // → aura-asteria-en (natural, expressive)
+    shadowing: 'en-US-Neural2-F',  // → aura-asteria-en (natural, expressive)
+    questions: 'en-US-Neural2-B',  // → aura-helios-en (Male, clean, clear - less deep than zeus)
+    mindmap: 'en-US-Neural2-B',    // → aura-helios-en (Male, clean, clear)
+    logic_science: 'en-US-Neural2-B'  // → aura-helios-en (Male, clean, clear)
   },
   
   stations: {

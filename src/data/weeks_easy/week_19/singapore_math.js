@@ -2,66 +2,68 @@ export default {
   problems: [
     {
       id: 1,
-      problem_en: "Tom is 4. His sister is 7. How much older is sister?",
-      problem_vi: "Tom 4 tuổi. Chị 7 tuổi. Chị hơn bao nhiêu tuổi?",
-      bars: {
-        tom: { units: 4, label: "Tom" },
-        sister: { units: 7, label: "Sister" }
-      },
-      solution_en: "Sister is 7. Tom is 4. 7 - 4 = 3.",
-      solution_vi: "Chị 7 tuổi. Tom 4 tuổi. 7 - 4 = 3.",
-      answer: 3,
-      unit: "years",
-      audio_url: "/audio/week19_easy/singapore_math_q1.mp3",
-      image_url: "/images/week19_easy/bar_model_1.jpg"
+      type: "part_whole",
+      question_en: "I was 3 years old in this photo. Now I am 7 years old. How many years have passed?",
+      question_vi: "Tôi 3 tuổi trong ảnh này. Bây giờ tôi 7 tuổi. Đã qua bao nhiêu năm?",
+      answer: ["4", "four", "4 years"],
+      bar_model: "/images/week19_easy/barmodel_w19_p1.jpg",
+      cpa_stage: "pictorial",
+      math_vocab: ["past", "now", "difference"],
+      hint_en: "7 - 3 = ?",
+      hint_vi: "7 - 3 = ?",
+      audio_url: "/audio/week19_easy/singapore_math_q1.mp3"
     },
     {
       id: 2,
-      problem_en: "12 kids. 5 girls. How many boys?",
-      problem_vi: "12 trẻ. 5 bé gái. Bao nhiêu bé trai?",
-      bars: {
-        total: { units: 12, label: "Total" },
-        girls: { units: 5, label: "Girls" },
-        boys: { units: "?", label: "Boys" }
-      },
-      solution_en: "Total 12. Girls 5. Boys = 12 - 5 = 7.",
-      solution_vi: "Tổng 12. Gái 5. Trai = 12 - 5 = 7.",
-      answer: 7,
-      unit: "boys",
-      audio_url: "/audio/week19_easy/singapore_math_q2.mp3",
-      image_url: "/images/week19_easy/bar_model_2.jpg"
+      type: "comparison",
+      question_en: "When I was a baby, I was 50 cm tall. Now I am 80 cm tall. How much did I grow?",
+      question_vi: "Khi tôi là em bé, tôi cao 50 cm. Bây giờ tôi cao 80 cm. Tôi đã lớn bao nhiêu?",
+      answer: ["30", "thirty", "30 cm"],
+      bar_model: "/images/week19_easy/barmodel_w19_p2.jpg",
+      cpa_stage: "pictorial",
+      math_vocab: ["tall", "grow", "difference"],
+      hint_en: "80 - 50 = ?",
+      hint_vi: "80 - 50 = ?",
+      audio_url: "/audio/week19_easy/singapore_math_q2.mp3"
     },
     {
       id: 3,
-      problem_en: "Anna was 100 cm. She grew 8 cm. How tall now?",
-      problem_vi: "Anna 100 cm. Lớn 8 cm. Bây giờ cao bao nhiêu?",
-      bars: {
-        before: { units: 100, label: "Before" },
-        growth: { units: 8, label: "Growth" },
-        now: { units: "?", label: "Now" }
-      },
-      solution_en: "Before 100 cm. Growth 8 cm. Now = 100 + 8 = 108 cm.",
-      solution_vi: "Trước 100 cm. Lớn 8 cm. Bây giờ = 100 + 8 = 108 cm.",
-      answer: 108,
-      unit: "cm",
-      audio_url: "/audio/week19_easy/singapore_math_q3.mp3",
-      image_url: "/images/week19_easy/bar_model_3.jpg"
+      type: "part_whole",
+      question_en: "My album has 10 pages. Each page has 2 baby photos. How many photos in total?",
+      question_vi: "Album của tôi có 10 trang. Mỗi trang có 2 ảnh em bé. Tổng cộng có bao nhiêu ảnh?",
+      answer: ["20", "twenty", "20 photos"],
+      bar_model: "/images/week19_easy/barmodel_w19_p3.jpg",
+      cpa_stage: "pictorial",
+      math_vocab: ["total", "each page", "multiply"],
+      hint_en: "10 × 2 = ?",
+      hint_vi: "10 × 2 = ?",
+      audio_url: "/audio/week19_easy/singapore_math_q3.mp3"
     },
     {
       id: 4,
-      problem_en: "Ben had 15 toys. Now he has 23 toys. How many added?",
-      problem_vi: "Ben có 15 đồ chơi. Bây giờ có 23. Thêm bao nhiêu?",
-      bars: {
-        past: { units: 15, label: "Past" },
-        added: { units: "?", label: "Added" },
-        now: { units: 23, label: "Now" }
-      },
-      solution_en: "Past 15. Now 23. Added = 23 - 15 = 8.",
-      solution_vi: "Trước 15. Bây giờ 23. Thêm = 23 - 15 = 8.",
-      answer: 8,
-      unit: "toys",
-      audio_url: "/audio/week19_easy/singapore_math_q4.mp3",
-      image_url: "/images/week19_easy/bar_model_4.jpg"
+      type: "part_whole",
+      question_en: "My mom took 5 baby photos. My dad took 4 baby photos. How many photos in total?",
+      question_vi: "Mẹ tôi chụp 5 ảnh em bé. Bố tôi chụp 4 ảnh em bé. Tổng cộng có bao nhiêu ảnh?",
+      answer: ["9", "nine", "9 photos"],
+      bar_model: "/images/week19_easy/barmodel_w19_p4.jpg",
+      cpa_stage: "pictorial",
+      math_vocab: ["total", "add", "photos"],
+      hint_en: "5 + 4 = ?",
+      hint_vi: "5 + 4 = ?",
+      audio_url: "/audio/week19_easy/singapore_math_q4.mp3"
+    },
+    {
+      id: 5,
+      type: "comparison",
+      question_en: "I was 5 years old. My brother was 3 years old. How many years older was I?",
+      question_vi: "Tôi 5 tuổi. Em trai tôi 3 tuổi. Tôi lớn hơn bao nhiêu tuổi?",
+      answer: ["2", "two", "2 years"],
+      bar_model: "/images/week19_easy/barmodel_w19_p5.jpg",
+      cpa_stage: "pictorial",
+      math_vocab: ["older", "difference", "compare"],
+      hint_en: "5 - 3 = ?",
+      hint_vi: "5 - 3 = ?",
+      audio_url: "/audio/week19_easy/singapore_math_q5.mp3"
     }
   ]
 };
