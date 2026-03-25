@@ -1133,6 +1133,18 @@ fi
 ```
 - [ ] index.js voiceConfig has 5 DISTINCT voices (both modes)
 - [ ] word_power phrases spell-checked (no missing prepositions)
+- [ ] **W16+: word_power has EXACTLY 6 entries** (not 3/5/7 — W16+ override)
+- [ ] **W16+: Each `word` field in word_power.js is a MULTI-WORD collocation** (contains space — single words like "kindergarten" = ❌ FAIL)
+- [ ] **🔴 W16+ VALIDATION:**
+```bash
+# Count must equal 6
+grep -c 'word:' src/data/weeks/week_N/word_power.js
+# Must be: 6
+
+# Single-word violation check — output MUST be EMPTY
+grep -E '^\s+word: "[^ "]+",' src/data/weeks/week_N/word_power.js | grep -v 'audio_'
+# Empty output = PASS | Any output = FAIL → use phrase (e.g. "go to school" not "school")
+```
 - [ ] W16+: All 7 sub-tab files have theme-aligned content
 - [ ] All files content matches week theme (not old clone source)
 - [ ] All files syntax validated
@@ -1485,14 +1497,21 @@ node tools/generate_images_nano.js N
 
 # Output:
 # - public/images/Prompts/week_N_image_prompts.txt
-# - public/images/Prompts/week_N_easy_image_prompts.txt
+# ⚠️ W16+: NO week_N_easy_image_prompts.txt generated — Easy mode shares Advanced images!
 ```
 
 **Step 7.2: Manual workflow**
-1. Copy prompts from txt files
+1. Copy prompts from `week_N_image_prompts.txt`
 2. Paste into Nano Banana (banana.dev)
 3. Download generated images (format: `N_N_*.png`)
-4. Save to `public/images/weekN/` and `public/images/weekN_easy/`
+4. Save to `public/images/weekN/`
+
+**⚠️ W16+ SHARED IMAGE MODE:**
+- Easy mode vocab.js uses the SAME `/images/weekN/` paths as Advanced
+- Do **NOT** create a `public/images/weekN_easy/` folder
+- Do **NOT** generate a separate Easy prompts file
+- Audio stays separate: `/audio/weekN_easy/` (different definitions per mode)
+- word_power.js entries 14-19 (collocations) need wordpower-specific images — label with `[COLLOCATION: X]` in prompts file
 
 **Step 7.3: Auto-rename**
 ```bash
@@ -1503,19 +1522,27 @@ python3 tools/auto_rename.py N
 
 **Step 7.4: Upload to R2**
 ```bash
-python3 tools/upload_week_images_r2.py N
+# Upload using wrangler (npx wrangler r2 object put ...)
+# Example for all images in a folder:
+for f in public/images/weekN/*.jpg; do
+  npx wrangler r2 object put "engquest-images/images/weekN/$(basename $f)" --file "$f" --remote
+done
 
-# Uploads to:
-# - images/weekN/*.jpg
-# - images/weekN_easy/*.jpg
+# Verify upload:
+npx wrangler r2 object list engquest-images --prefix "images/weekN/" --remote | head -20
 ```
 
 #### Self-Check:
-- [ ] Prompts generated
+- [ ] Prompts generated (`week_N_image_prompts.txt` — 1 file only for W16+)
 - [ ] Images created via Nano Banana
 - [ ] Files renamed (*.jpg)
-- [ ] Uploaded to R2
-- [ ] Image paths in vocab.js match R2 structure
+- [ ] Uploaded to R2 via wrangler
+- [ ] Image paths in vocab.js use `/images/weekN/` (NOT `/images/weekN_easy/`)
+- [ ] **W16+ Easy mode: Verify zero `weekN_easy` in image_url fields:**
+```bash
+grep 'image_url' src/data/weeks_easy/week_N/vocab.js | grep 'weekN_easy'
+# Output MUST be EMPTY — any output = FAIL, fix paths
+```
 
 ---
 
