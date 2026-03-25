@@ -14,6 +14,77 @@
 
 ---
 
+## ⚠️ CRITICAL RULE: ALWAYS OVERWRITE OLD CONTENT
+
+**Áp dụng TRƯỚC KHI tạo bất kỳ file nào cho tuần mới**
+
+### Quy Trình Bắt Buộc:
+
+1. **Kiểm tra folder đã tồn tại chưa**:
+   ```bash
+   ls -la src/data/weeks/week_XX
+   ls -la src/data/weeks_easy/week_XX
+   ```
+
+2. **Nếu folder đã tồn tại → PHẢI OVERWRITE HOÀN TOÀN**:
+   - ❌ **KHÔNG BAO GIỜ** giả định nội dung cũ đúng
+   - ❌ **KHÔNG BAO GIỜ** giữ lại code từ format cũ
+   - ✅ **LUÔN LUÔN** dùng W16 làm template mới
+   - ✅ **LUÔN LUÔN** thay thế TOÀN BỘ nội dung file
+
+3. **Tại sao rule này quan trọng**:
+   - Old files có thể dùng schema cũ (`puzzles` thay vì `questions`)
+   - Old files có thể có vocabulary sai (không khớp BLUEPRINT)
+   - Old files có thể có format không tương thích (`text` thay vì `sentence`)
+   - Frontend chỉ nhận đúng schema của W16
+   - **Thực tế:** W19 Easy mode có nội dung cũ "My Baby Album" thay vì "When I Was Small" → Logic Lab bị lỗi, production site hiển thị sai
+
+### Cách Overwrite An Toàn:
+
+**Khi dùng `replace_string_in_file`:**
+```javascript
+// ✅ ĐÚNG: Thay thế TOÀN BỘ file từ đầu đến cuối
+oldString: "export default {\n  title: \"Old Content\",\n  ...\n};" // ← Toàn bộ file cũ
+newString: "export default {\n  title: \"New Content\",\n  ...\n};" // ← Toàn bộ file mới
+
+// ❌ SAI: Chỉ thay thế một phần, để lại code thừa
+oldString: "title: \"Old Content\""  // ← Chỉ thay title
+newString: "title: \"New Content\""  // ← Code cũ vẫn còn phía sau!
+```
+
+**Sau khi overwrite, BẮT BUỘC kiểm tra:**
+```bash
+# Kiểm tra file có bao nhiêu dòng (so với W16 tương ứng)
+wc -l src/data/weeks_easy/week_XX/read.js
+wc -l src/data/weeks_easy/week_16/read.js  # ← Reference
+
+# Nếu file mới NHIỀU HƠN template đáng kể → có code thừa!
+# Ví dụ: W16 read.js = 20 lines, W19 read.js = 45 lines → ⚠️ Nghi vấn
+```
+
+### Example - W19 Syntax Errors do Code Thừa:
+
+**mindmap.js** - Có code thừa sau khi overwrite:
+```javascript
+// Line 56: Kết thúc ĐÚNG
+  ]
+};  // ← File nên kết thúc ở đây
+
+// Line 57-86: CODE THỪA từ format cũ ❌
+    ],
+    "My family was ___.": [
+      "always with me",
+      ...
+    ]
+  }
+};
+export default mindMapContent;  // ← Dòng này từ format cũ!
+```
+
+**Result:** SyntaxError line 57, Cloudflare build failed ❌
+
+---
+
 ## WORKFLOW CHO MỖI TUẦN MỚI
 
 ### PHASE 1: PRE-GENERATION CHECKS ✅
@@ -411,7 +482,73 @@
   
   Status: 100% ALIGNED
 
-✓ CHECK 15: Build test
+✓ CHECK 15: Syntax validation 🔴 CRITICAL
+  Running syntax check on ALL JS files before commit
+  
+  Command: for file in src/data/weeks*/week_19/*.js; do
+             node -c "$file" || echo "ERROR: $file";
+           done
+  
+  Checking Advanced mode (17 files)...
+  ✅ daily_watch.js
+  ✅ vocab.js
+  ✅ grammar.js
+  ✅ read.js
+  ✅ dictation.js
+  ✅ shadowing.js
+  ✅ word_match.js
+  ✅ word_power.js
+  ✅ writing.js
+  ✅ ask_ai.js
+  ✅ explore.js
+  ✅ mindmap.js
+  ✅ games.js
+  ✅ logic_science.js
+  ✅ singapore_math.js
+  ✅ video_queries.json (skip - JSON)
+  ✅ index.js
+  
+  Checking Easy mode (17 files)...
+  ✅ All 17 files pass syntax check
+  
+  Checking AI Tutor...
+  ✅ week_19_real.js
+  
+  Status: ✅ ALL PASS (35 files)
+  
+  ⚠️ If any file fails:
+     1. Read file to locate syntax error
+     2. Check for leftover code from old format
+     3. Verify closing brackets/braces match
+     4. Re-run: node -c [filename] for detailed error
+
+✓ CHECK 16: Old format remnants detection
+  Checking for common leftover patterns after overwrite
+  
+  Patterns to check:
+  ❌ Multiple closing `};` in same file
+  ❌ Orphaned arrays after file end (], without opening [)
+  ❌ Export statements appearing twice
+  ❌ Old variable names (mindMapContent vs default export)
+  
+  Method:
+  ```bash
+  # Count '}' vs '{' - should be equal
+  grep -o '{' file.js | wc -l
+  grep -o '}' file.js | wc -l
+  
+  # Check for duplicate export
+  grep -n "export default" file.js  # Should appear once
+  ```
+  
+  Files checked:
+  ✅ All files have balanced brackets
+  ✅ No duplicate export statements
+  ✅ No orphaned arrays
+  
+  Status: ✅ CLEAN
+
+✓ CHECK 17: Build test
   Running: npm run build
   
   ⏳ Building...
@@ -421,13 +558,17 @@
   
   Status: PASS
 
-✓ CHECK 16: File size sanity
+✓ CHECK 18: File size sanity
   AI Tutor: 31.2 KB ✅ (range: 30-35 KB)
   Advanced stations: 82.5 KB ✅
   Easy stations: 58.7 KB ✅
   Total: 172.4 KB ✅
   
   Status: NORMAL RANGE
+  
+  ⚠️ If Easy mode files are significantly LARGER than Advanced:
+     → Likely contains leftover old content
+     → Re-check with old format remnants detection (CHECK 16)
 ```
 
 ---
@@ -502,8 +643,12 @@
   [✅] Grammar alignment (all files match focus)
   [✅] Duplicate detection (0 duplicates found)
   [✅] Readability check (A0-A1 confirmed)
+  [✅] **Syntax validation (35 files pass node -c)**
+  [✅] **Old format remnants detection (clean)**
   [✅] Build test (6.2s, no errors)
   [✅] Complete week validator (35/35 files)
+  
+  Total: 18/18 checks PASSED ✅
 
 📹 VIDEOS SELECTED:
   1. "Irregular Verbs Song" (KidsTV123) - 3:42
@@ -681,12 +826,14 @@ Tất cả outputs được parse và hiển thị trong framework.
 
 Mỗi tuần PHẢI có:
 
-- [ ] 16 validation checks passed
+- [ ] 18 validation checks passed (including syntax + old format remnants)
 - [ ] 35 files created
 - [ ] Build successful
 - [ ] Git committed with descriptive message
 - [ ] Summary report generated
 - [ ] No blockers for next week
+- [ ] **NEW:** All files pass `node -c` syntax check
+- [ ] **NEW:** No leftover code from old format detected
 
 **Nếu thiếu bất kỳ item nào → Week INCOMPLETE, không proceed sang tuần sau.**
 
