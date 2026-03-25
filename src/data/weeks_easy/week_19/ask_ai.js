@@ -45,13 +45,4 @@ export default {
       audio_url: "/audio/week19_easy/ask_ai_4.mp3"
     }
   ]
-}; 
-      id: 5, 
-      context_en: "Grandma shows you a photo of her house. It was a small house in the countryside. It looks peaceful.",
-      context_vi: "Bà cho bạn xem ảnh ngôi nhà của bà. Đó là một ngôi nhà nhỏ ở nông thôn. Nó trông yên bình.",
-      audio_url: "/audio/week19_easy/ask_ai_5.mp3",
-      answer: ["Was it quiet?", "Were there animals?", "Was it nice?"],
-      hint: "Was it... / Were there..."
-    }
-  ]
 };

@@ -54,32 +54,3 @@ export default {
     }
   ]
 };
-    ],
-    "My family was ___.": [
-      "always with me",
-      "very happy",
-      "small and loving",
-      "fun and caring",
-      "always busy",
-      "very kind to me"
-    ],
-    "I was happy because ___.": [
-      "I had many toys",
-      "my mom was there",
-      "I was safe",
-      "people loved me",
-      "I could play",
-      "life was simple"
-    ],
-    "Those days were ___.": [
-      "very special",
-      "fun and happy",
-      "simple and nice",
-      "full of love",
-      "wonderful",
-      "like a dream"
-    ]
-  }
-};
-
-export default mindMapContent;
