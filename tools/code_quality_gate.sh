@@ -842,6 +842,8 @@ echo ""
 
 # =============================================================================
 # CHECK 25: Image prompt files must exist for week N
+# If Easy mode shares images with Advanced (no week_easy images folder / all Easy
+# image_url point to /images/weekN/), only the Advanced prompts file is required.
 # =============================================================================
 echo -e "${BOLD}[CHECK 25] Image prompts — files must exist for Week ${WEEK_PAD}${NC}"
 IMG_PROMPTS_DIR="Production_FINAL/IMAGE PROMPTS"
@@ -854,12 +856,27 @@ if [ ! -f "$ADV_PROMPTS" ]; then
   ERRORS=$((ERRORS+1))
 else
   PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
-  echo -e "   ${GREEN}✅ PASS (Advanced): Found $PROMPT_COUNT image prompts${NC}"
+  if [ "$PROMPT_COUNT" -ne 26 ]; then
+    echo -e "   ${RED}❌ FAIL (Advanced): $ADV_PROMPTS has $PROMPT_COUNT prompts — need exactly 26${NC}"
+    echo -e "   ${YELLOW}FIX: 13 vocab + 6 wordpower (collocations) + 5 barmodels + 2 covers = 26${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS (Advanced): Found 26 image prompts${NC}"
+  fi
 fi
 
-if [ ! -f "$EASY_PROMPTS" ]; then
+# Check if Easy shares images with Advanced (no separate easy prompts needed)
+EASY_SHARED=false
+if [ -f "$EASY_DIR/vocab.js" ]; then
+  EASY_IMG_REFS=$(grep "image_url" "$EASY_DIR/vocab.js" 2>/dev/null | grep -c "week${WEEK}_easy" || true)
+  [ "${EASY_IMG_REFS:-0}" -eq 0 ] && EASY_SHARED=true
+fi
+
+if [ "$EASY_SHARED" = true ]; then
+  echo -e "   ${GREEN}✅ PASS (Easy): Shared images with Advanced — no separate prompts file needed${NC}"
+elif [ ! -f "$EASY_PROMPTS" ]; then
   echo -e "   ${RED}❌ FAIL: Missing Easy image prompts: $EASY_PROMPTS${NC}"
-  echo -e "   ${YELLOW}FIX: Create $EASY_PROMPTS with simplified image prompts for Easy version${NC}"
+  echo -e "   ${YELLOW}FIX: Either create $EASY_PROMPTS OR point all Easy image_url to /images/week${WEEK}/ (shared mode)${NC}"
   ERRORS=$((ERRORS+1))
 else
   PROMPT_COUNT=$(grep -c "Filename:" "$EASY_PROMPTS" || true)

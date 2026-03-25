@@ -8,7 +8,7 @@ export default {
       definition_en: "a very young child",
       example: "I was a baby.",
       collocation: "cute baby",
-      image_url: "/images/week19_easy/baby.jpg",
+      image_url: "/images/week19/baby.jpg",
       audio_word: "/audio/week19_easy/vocab_baby.mp3"
     },
     {
@@ -19,7 +19,7 @@ export default {
       definition_en: "very nice and sweet",
       example: "I was very cute.",
       collocation: "cute smile",
-      image_url: "/images/week19_easy/cute.jpg",
+      image_url: "/images/week19/cute.jpg",
       audio_word: "/audio/week19_easy/vocab_cute.mp3"
     },
     {
@@ -30,7 +30,7 @@ export default {
       definition_en: "small or young",
       example: "I was little.",
       collocation: "little child",
-      image_url: "/images/week19_easy/little.jpg",
+      image_url: "/images/week19/little.jpg",
       audio_word: "/audio/week19_easy/vocab_little.mp3"
     },
     {
@@ -41,7 +41,7 @@ export default {
       definition_en: "making lots of loud sounds",
       example: "I was a noisy baby.",
       collocation: "noisy children",
-      image_url: "/images/week19_easy/noisy.jpg",
+      image_url: "/images/week19/noisy.jpg",
       audio_word: "/audio/week19_easy/vocab_noisy.mp3"
     },
     {
@@ -52,7 +52,7 @@ export default {
       definition_en: "making no noise",
       example: "My brother was very quiet.",
       collocation: "quiet baby",
-      image_url: "/images/week19_easy/quiet.jpg",
+      image_url: "/images/week19/quiet.jpg",
       audio_word: "/audio/week19_easy/vocab_quiet.mp3"
     },
     {
@@ -63,7 +63,7 @@ export default {
       definition_en: "a school for small children",
       example: "I was in kindergarten.",
       collocation: "kindergarten class",
-      image_url: "/images/week19_easy/kindergarten.jpg",
+      image_url: "/images/week19/kindergarten.jpg",
       audio_word: "/audio/week19_easy/vocab_kindergarten.mp3"
     },
     {
@@ -74,7 +74,7 @@ export default {
       definition_en: "get bigger",
       example: "I grew bigger.",
       collocation: "grow up",
-      image_url: "/images/week19_easy/grow.jpg",
+      image_url: "/images/week19/grow.jpg",
       audio_word: "/audio/week19_easy/vocab_grow.mp3"
     },
     {
@@ -85,7 +85,7 @@ export default {
       definition_en: "the time before now",
       example: "In the past, I was little.",
       collocation: "in the past",
-      image_url: "/images/week19_easy/past.jpg",
+      image_url: "/images/week19/past.jpg",
       audio_word: "/audio/week19_easy/vocab_past.mp3"
     },
     {
@@ -96,7 +96,7 @@ export default {
       definition_en: "not old",
       example: "I was young.",
       collocation: "young child",
-      image_url: "/images/week19_easy/young.jpg",
+      image_url: "/images/week19/young.jpg",
       audio_word: "/audio/week19_easy/vocab_young.mp3"
     },
     {
@@ -107,7 +107,7 @@ export default {
       definition_en: "not big",
       example: "I was small.",
       collocation: "small child",
-      image_url: "/images/week19_easy/small.jpg",
+      image_url: "/images/week19/small.jpg",
       audio_word: "/audio/week19_easy/vocab_small.mp3"
     },
     {
@@ -118,7 +118,7 @@ export default {
       definition_en: "a picture from a camera",
       example: "This is my baby photo.",
       collocation: "baby photo",
-      image_url: "/images/week19_easy/photo.jpg",
+      image_url: "/images/week19/photo.jpg",
       audio_word: "/audio/week19_easy/vocab_photo.mp3"
     },
     {
@@ -129,7 +129,7 @@ export default {
       definition_en: "a book for photos",
       example: "My mom has a photo album.",
       collocation: "photo album",
-      image_url: "/images/week19_easy/album.jpg",
+      image_url: "/images/week19/album.jpg",
       audio_word: "/audio/week19_easy/vocab_album.mp3"
     },
     {
@@ -140,7 +140,7 @@ export default {
       definition_en: "something you remember",
       example: "I have a happy memory.",
       collocation: "happy memory",
-      image_url: "/images/week19_easy/memory.jpg",
+      image_url: "/images/week19/memory.jpg",
       audio_word: "/audio/week19_easy/vocab_memory.mp3"
     }
   ]
