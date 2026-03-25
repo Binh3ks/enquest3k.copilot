@@ -1,45 +1,67 @@
 export default {
-  puzzles: [
-    { 
-      id: 1, type: "math", 
-      title_en: "Birthday Candles", title_vi: "Nến sinh nhật", 
-      question_en: "Last year, I was 6. How old am I now?", 
-      question_vi: "Năm ngoái, tớ 6 tuổi. Giờ tớ bao nhiêu tuổi?", 
-      answer: ["7", "Seven", "7 years old"], target_number: 7, unit: "years old", 
-      hint_en: "6 + 1", hint_vi: "6 cộng 1" 
+  questions: [
+    {
+      id: 1,
+      question_en: "I was 5 years old. Now I am 6. How many years did I grow?",
+      question_vi: "Tớ 5 tuổi. Bây giờ tớ 6 tuổi. Tớ đã lớn lên bao nhiêu năm?",
+      options_en: [
+        "A. 1 year",
+        "B. 2 years",
+        "C. 5 years",
+        "D. 6 years"
+      ],
+      options_vi: [
+        "A. 1 năm",
+        "B. 2 năm",
+        "C. 5 năm",
+        "D. 6 năm"
+      ],
+      correct_answer: "A",
+      explanation_en: "I was 5. Now I am 6. 6 - 5 = 1. I grew 1 year.",
+      explanation_vi: "Tớ 5 tuổi. Bây giờ 6 tuổi. 6 - 5 = 1. Tớ lớn thêm 1 năm.",
+      audio_url: "/audio/week19_easy/logic_q1.mp3"
     },
-    { 
-      id: 2, type: "logic", 
-      title_en: "Growing Up", title_vi: "Lớn lên", 
-      question_en: "Baby → Child → ?. What comes after 'Child'?", 
-      question_vi: "Em bé → Trẻ em → ?. Cái gì đến sau 'Trẻ em'?", 
-      answer: ["Teenager", "Adult"], 
-      hint_en: "Bigger than child...", hint_vi: "Lớn hơn trẻ em..." 
+    {
+      id: 2,
+      question_en: "I was little. Now I am big. What changed?",
+      question_vi: "Tớ nhỏ. Bây giờ tớ lớn. Cái gì đã thay đổi?",
+      options_en: [
+        "A. I grew up",
+        "B. I stayed the same",
+        "C. I got smaller",
+        "D. Nothing changed"
+      ],
+      options_vi: [
+        "A. Tớ lớn lên",
+        "B. Tớ vẫn vậy",
+        "C. Tớ nhỏ hơn",
+        "D. Không thay đổi"
+      ],
+      correct_answer: "A",
+      explanation_en: "I was little. Now I am big. So I grew up.",
+      explanation_vi: "Tớ nhỏ. Bây giờ lớn. Vậy tớ đã lớn lên.",
+      audio_url: "/audio/week19_easy/logic_q2.mp3"
     },
-    { 
-      id: 3, type: "mc", 
-      title_en: "Photos", title_vi: "Bức ảnh", 
-      question_en: "I have 5 photos. Mom gives me 3 more. How many do I have?", 
-      question_vi: "Tớ có 5 bức ảnh. Mẹ cho thêm 3 bức. Tớ có bao nhiêu bức?", 
-      options: ["6 photos", "8 photos", "10 photos"],
-      answer: ["8 photos", "8"], target_number: 8, unit: "photos",
-      hint_en: "5 + 3", hint_vi: "5 cộng 3" 
-    },
-    { 
-      id: 4, type: "logic", 
-      title_en: "Past or Now", title_vi: "Quá khứ hay Hiện tại", 
-      question_en: "Which one is from the past? (Baby photo / Selfie / Video call)", 
-      question_vi: "Cái nào từ quá khứ? (Ảnh em bé / Selfie / Gọi video)", 
-      answer: ["Baby photo", "Baby"], 
-      hint_en: "From long ago...", hint_vi: "Từ lâu rồi..." 
-    },
-    { 
-      id: 5, type: "math", 
-      title_en: "Toys", title_vi: "Đồ chơi", 
-      question_en: "There were 4 toys in the box. I took 2 toys. How many are left?", 
-      question_vi: "Có 4 đồ chơi trong hộp. Tớ lấy 2 cái. Còn lại bao nhiêu?", 
-      answer: ["2 toys", "Two toys", "2"], target_number: 2, unit: "toys",
-      hint_en: "4 - 2", hint_vi: "4 trừ 2" 
+    {
+      id: 3,
+      question_en: "When I was a baby, I was quiet. Now I am noisy. Am I the same?",
+      question_vi: "Khi tớ còn bé, tớ yên lặng. Bây giờ tớ ồn ào. Tớ có giống nhau không?",
+      options_en: [
+        "A. No, I changed",
+        "B. Yes, I am the same",
+        "C. I don't know",
+        "D. Maybe"
+      ],
+      options_vi: [
+        "A. Không, tớ thay đổi",
+        "B. Có, tớ vẫn vậy",
+        "C. Tớ không biết",
+        "D. Có thể"
+      ],
+      correct_answer: "A",
+      explanation_en: "I was quiet. Now I am noisy. That is different. So I changed.",
+      explanation_vi: "Tớ yên lặng. Bây giờ ồn ào. Khác nhau. Vậy tớ đã thay đổi.",
+      audio_url: "/audio/week19_easy/logic_q3.mp3"
     }
   ]
 };
