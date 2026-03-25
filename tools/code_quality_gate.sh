@@ -682,9 +682,9 @@ done
 echo ""
 
 # =============================================================================
-# CHECK 20: word_power.js must have exactly 6 words (W16+ standard)
+# CHECK 20: word_power.js — exactly 6 words (W16+), each must be a multi-word collocation
 # =============================================================================
-echo -e "${BOLD}[CHECK 20] word_power.js — must have exactly 6 words (W16+ standard)${NC}"
+echo -e "${BOLD}[CHECK 20] word_power.js — exactly 6 collocation phrases (W16+ standard)${NC}"
 for dir in "$ADV_DIR" "$EASY_DIR"; do
   [ ! -d "$dir" ] && continue
   LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
@@ -695,15 +695,27 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
   if [ "$WEEK_INT" -ge 16 ]; then
     if [ "$WORD_COUNT" -ne 6 ]; then
       echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has $WORD_COUNT word(s) — W16+ standard requires exactly 6${NC}"
-      echo -e "   ${YELLOW}FIX: Keep exactly 6 academic words (not the full vocab list)${NC}"
+      echo -e "   ${YELLOW}FIX: Keep exactly 6 collocations (not the full vocab list)${NC}"
       ERRORS=$((ERRORS+1))
     else
-      echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has exactly 6 words (W16+ standard)${NC}"
+      echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has exactly 6 entries${NC}"
+    fi
+    # Validate each `word:` field is a multi-word collocation (must contain a space)
+    SINGLE_WORD_LINES=$(grep -E "^\s+word: \"[^ \"]+\"," "$WP_FILE" | grep -v "audio_word\|image_url\|audio_" || true)
+    if [ -n "$SINGLE_WORD_LINES" ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has single-word entries (should be collocations like 'grow up', 'in the past')${NC}"
+      echo "$SINGLE_WORD_LINES" | while read line; do
+        echo -e "   ${YELLOW}   → $line${NC}"
+      done
+      echo -e "   ${YELLOW}FIX: word field must be a collocation phrase (2+ words), NOT a single vocabulary word${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): all word entries are multi-word collocations${NC}"
     fi
   else
     if [ "$WORD_COUNT" -lt 6 ]; then
       echo -e "   ${RED}❌ FAIL ($LABEL): word_power.js has only $WORD_COUNT word(s) — need at least 6${NC}"
-      echo -e "   ${YELLOW}FIX: Add more words until count >= 6${NC}"
+      echo -e "   ${YELLOW}FIX: Add more collocations until count >= 6${NC}"
       ERRORS=$((ERRORS+1))
     else
       echo -e "   ${GREEN}✅ PASS ($LABEL): word_power.js has $WORD_COUNT words (>= 6)${NC}"
