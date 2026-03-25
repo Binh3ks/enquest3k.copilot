@@ -892,20 +892,19 @@ if [ ! -d "$ADV_DIR" ] && [ ! -d "$EASY_DIR" ]; then
   echo -e "   ${YELLOW}⚠️  SKIP: Data directories not yet generated${NC}"; WARNINGS=$((WARNINGS+1))
 else
   COVER_ERRORS=0
-  for entry in \
-    "$ADV_DIR/read.js|public/images/week${WEEK_INT}" \
-    "$ADV_DIR/explore.js|public/images/week${WEEK_INT}" \
-    "$EASY_DIR/read.js|public/images/week${WEEK_INT}_easy" \
-    "$EASY_DIR/explore.js|public/images/week${WEEK_INT}_easy"; do
-    JS_FILE="${entry%%|*}"
-    IMG_DIR="${entry##*|}"
+  for JS_FILE in \
+    "$ADV_DIR/read.js" \
+    "$ADV_DIR/explore.js" \
+    "$EASY_DIR/read.js" \
+    "$EASY_DIR/explore.js"; do
     [ ! -f "$JS_FILE" ] && continue
     IMG_URL=$(grep 'image_url' "$JS_FILE" | head -1 | sed "s/.*image_url:[[:space:]]*['\"]//;s/['\"].*//" || true)
     [ -z "$IMG_URL" ] && continue
     BASENAME=$(basename "$IMG_URL")
-    DISK_PATH="${IMG_DIR}/${BASENAME}"
+    # Resolve disk path from actual image_url (supports shared-image mode — W16+ Easy may point to /images/weekN/)
+    DISK_PATH="public${IMG_URL}"
     if [ ! -f "$DISK_PATH" ]; then
-      echo -e "   ${RED}❌ FAIL ($(basename $JS_FILE) ${entry##*$ADV_DIR}${entry##*$EASY_DIR}): image_url='$IMG_URL' → file not found: $DISK_PATH${NC}"
+      echo -e "   ${RED}❌ FAIL ($(basename $JS_FILE)): image_url='$IMG_URL' → file not found: $DISK_PATH${NC}"
       echo -e "   ${YELLOW}FIX: image_url must use w${WEEK_INT} (no zero-padding), e.g. read_cover_w${WEEK_INT}.jpg — NOT w0${WEEK_INT}${NC}"
       COVER_ERRORS=$((COVER_ERRORS+1))
     else
