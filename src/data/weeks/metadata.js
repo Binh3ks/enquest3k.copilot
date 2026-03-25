@@ -19,7 +19,7 @@ export const weekTitles = {
   16: { title_en: "Sports Commentary", title_vi: "Bình Luận Thể Thao" },
   17: { title_en: "Weather & Clothes", title_vi: "Thời Tiết & Trang Phục" },
   18: { title_en: "The Live Reporter", title_vi: "Phóng Viên Trực Tiếp" },
-  19: { title_en: "My Baby Album", title_vi: "Album Ảnh Hồi Bé" },
+  19: { title_en: "When I Was Small", title_vi: "Khi Tôi Còn Nhỏ" },
   20: { title_en: "The Old Town", title_vi: "Thị Trấn Cũ" },
   // Add more as weeks are created
 };
