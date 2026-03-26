@@ -1,14 +1,114 @@
 export default {
   vocab: [
-    { id: 1, word: "old", pronunciation: "/əʊld/", definition_vi: "Cũ", definition_en: "Not new.", example: "Old house.", collocation: "very old", image_url: "/images/week20_easy/old.jpg" },
-    { id: 2, word: "dirty", pronunciation: "/ˈdəːti/", definition_vi: "Bẩn", definition_en: "Not clean.", example: "Dirty hands.", collocation: "dirty face", image_url: "/images/week20_easy/dirty.jpg" },
-    { id: 3, word: "broken", pronunciation: "/ˈbrəʊk(ə)n/", definition_vi: "Hỏng/Vỡ", definition_en: "In pieces.", example: "Broken toy.", collocation: "broken chair", image_url: "/images/week20_easy/broken.jpg" },
-    { id: 4, word: "house", pronunciation: "/haʊs/", definition_vi: "Ngôi nhà", definition_en: "Where we live.", example: "My house.", collocation: "big house", image_url: "/images/week20_easy/house.jpg" },
-    { id: 5, word: "attic", pronunciation: "/ˈatɪk/", definition_vi: "Gác xép", definition_en: "Top room.", example: "Dark attic.", collocation: "in the attic", image_url: "/images/week20_easy/attic.jpg" },
-    { id: 6, word: "box", pronunciation: "/bɒks/", definition_vi: "Cái hộp", definition_en: "Container.", example: "Big box.", collocation: "cardboard box", image_url: "/images/week20_easy/box.jpg" },
-    { id: 7, word: "teddy bear", pronunciation: "/ˈtɛdi bɛː/", definition_vi: "Gấu bông", definition_en: "Soft toy.", example: "My teddy bear.", collocation: "cute teddy", image_url: "/images/week20_easy/teddy_bear.jpg" },
-    { id: 8, word: "dust", pronunciation: "/dʌst/", definition_vi: "Bụi", definition_en: "Grey powder.", example: "Dust on table.", collocation: "clean dust", image_url: "/images/week20_easy/dust.jpg" },
-    { id: 9, word: "spider", pronunciation: "/ˈspʌɪdə/", definition_vi: "Con nhện", definition_en: "8 legs.", example: "Scary spider.", collocation: "spider web", image_url: "/images/week20_easy/spider.jpg" },
-    { id: 10, word: "photo", pronunciation: "/ˈfəʊtəʊ/", definition_vi: "Bức ảnh", definition_en: "Picture.", example: "Old photo.", collocation: "take a photo", image_url: "/images/week20_easy/photo.jpg" }
+    {
+      id: 1,
+      word: "old",
+      pronunciation: "/oʊld/",
+      definition_vi: "cũ",
+      definition_en: "not new; from a long time ago",
+      example: "There was an old bridge.",
+      collocation: "old building",
+      image_url: "/images/week20/old.jpg",
+      audio_word: "/audio/week20_easy/vocab_old.mp3"
+    },
+    {
+      id: 2,
+      word: "new",
+      pronunciation: "/njuː/",
+      definition_vi: "mới",
+      definition_en: "recently made; not old",
+      example: "There is a new road.",
+      collocation: "new building",
+      image_url: "/images/week20/new.jpg",
+      audio_word: "/audio/week20_easy/vocab_new.mp3"
+    },
+    {
+      id: 3,
+      word: "building",
+      pronunciation: "/ˈbɪldɪŋ/",
+      definition_vi: "tòa nhà",
+      definition_en: "a house, shop, or big structure",
+      example: "There was a building near my house.",
+      collocation: "tall building",
+      image_url: "/images/week20/building.jpg",
+      audio_word: "/audio/week20_easy/vocab_building.mp3"
+    },
+    {
+      id: 4,
+      word: "tree",
+      pronunciation: "/triː/",
+      definition_vi: "cây",
+      definition_en: "a big plant with a trunk and leaves",
+      example: "There were trees near my house.",
+      collocation: "big tree",
+      image_url: "/images/week20/tree.jpg",
+      audio_word: "/audio/week20_easy/vocab_tree.mp3"
+    },
+    {
+      id: 5,
+      word: "river",
+      pronunciation: "/ˈrɪvər/",
+      definition_vi: "sông",
+      definition_en: "a big water flow",
+      example: "There was a river near the town.",
+      collocation: "clean river",
+      image_url: "/images/week20/river.jpg",
+      audio_word: "/audio/week20_easy/vocab_river.mp3"
+    },
+    {
+      id: 6,
+      word: "road",
+      pronunciation: "/roʊd/",
+      definition_vi: "đường",
+      definition_en: "a path for cars and people",
+      example: "There was one road in the village.",
+      collocation: "long road",
+      image_url: "/images/week20/road.jpg",
+      audio_word: "/audio/week20_easy/vocab_road.mp3"
+    },
+    {
+      id: 7,
+      word: "bridge",
+      pronunciation: "/brɪdʒ/",
+      definition_vi: "cầu",
+      definition_en: "something to cross a river",
+      example: "There was a bridge over the river.",
+      collocation: "old bridge",
+      image_url: "/images/week20/bridge.jpg",
+      audio_word: "/audio/week20_easy/vocab_bridge.mp3"
+    },
+    {
+      id: 8,
+      word: "market",
+      pronunciation: "/ˈmɑːrkɪt/",
+      definition_vi: "chợ",
+      definition_en: "a place to buy food and things",
+      example: "There was a market near my street.",
+      collocation: "old market",
+      image_url: "/images/week20/market.jpg",
+      audio_word: "/audio/week20_easy/vocab_market.mp3"
+    },
+    {
+      id: 9,
+      word: "temple",
+      pronunciation: "/ˈtempəl/",
+      definition_vi: "đền, chùa",
+      definition_en: "a place to pray",
+      example: "There was a temple in the village.",
+      collocation: "old temple",
+      image_url: "/images/week20/temple.jpg",
+      audio_word: "/audio/week20_easy/vocab_temple.mp3"
+    },
+    {
+      id: 10,
+      word: "village",
+      pronunciation: "/ˈvɪlɪdʒ/",
+      definition_vi: "làng",
+      definition_en: "a small town in the country",
+      example: "There was a small village here.",
+      collocation: "small village",
+      image_url: "/images/week20/village.jpg",
+      audio_word: "/audio/week20_easy/vocab_village.mp3"
+    }
   ]
 };

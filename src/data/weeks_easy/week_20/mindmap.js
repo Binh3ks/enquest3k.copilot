@@ -1,62 +1,60 @@
-// EASY MODE - WEEK 20 (REVISED FOR NATURAL LOGIC)
-
 const mindMapContent = {
   centerStems: [
-    "At the park, there was ___.",
-    "There were many ___.",
-    "I saw an animal that could ___.",
-    "The weather was ___.",
-    "After the trip, I felt ___.",
-    "I like that place because ___."
+    { text: "There was a ___ near my house.", audio: "/audio/week20_easy/mindmap_stem_1.mp3" },
+    { text: "There were ___ on the road.", audio: "/audio/week20_easy/mindmap_stem_2.mp3" },
+    { text: "The old market had ___.", audio: "/audio/week20_easy/mindmap_stem_3.mp3" },
+    { text: "Now my town has a new ___.", audio: "/audio/week20_easy/mindmap_stem_4.mp3" },
+    { text: "The old bridge was ___.", audio: "/audio/week20_easy/mindmap_stem_5.mp3" },
+    { text: "The temple is still ___.", audio: "/audio/week20_easy/mindmap_stem_6.mp3" }
   ],
   branchLabels: {
-    "At the park, there was ___.": [
-      "a big playground",
-      "a quiet lake",
-      "a long bridge",
-      "an ice cream shop",
-      "a tall fountain",
-      "a green field"
+    "There was a ___ near my house.": [
+      { text: "market", audio: "/audio/week20_easy/mindmap_branch_1.mp3" },
+      { text: "big tree", audio: "/audio/week20_easy/mindmap_branch_2.mp3" },
+      { text: "bridge", audio: "/audio/week20_easy/mindmap_branch_3.mp3" },
+      { text: "small road", audio: "/audio/week20_easy/mindmap_branch_4.mp3" },
+      { text: "temple", audio: "/audio/week20_easy/mindmap_branch_5.mp3" },
+      { text: "river", audio: "/audio/week20_easy/mindmap_branch_6.mp3" }
     ],
-    "There were many ___.": [
-      "tall trees",
-      "happy children",
-      "colorful flowers",
-      "fast bikes",
-      "cute dogs",
-      "white clouds"
+    "There were ___ on the road.": [
+      { text: "many trees", audio: "/audio/week20_easy/mindmap_branch_7.mp3" },
+      { text: "big buildings", audio: "/audio/week20_easy/mindmap_branch_8.mp3" },
+      { text: "small shops", audio: "/audio/week20_easy/mindmap_branch_9.mp3" },
+      { text: "people walking", audio: "/audio/week20_easy/mindmap_branch_10.mp3" },
+      { text: "flowers", audio: "/audio/week20_easy/mindmap_branch_11.mp3" },
+      { text: "old buildings", audio: "/audio/week20_easy/mindmap_branch_12.mp3" }
     ],
-    "I saw an animal that could ___.": [
-      "swim fast",
-      "climb a tree",
-      "run very fast",
-      "fly high",
-      "sing a song",
-      "hide in the grass"
+    "The old market had ___.": [
+      { text: "fresh food", audio: "/audio/week20_easy/mindmap_branch_13.mp3" },
+      { text: "many sellers", audio: "/audio/week20_easy/mindmap_branch_14.mp3" },
+      { text: "small stalls", audio: "/audio/week20_easy/mindmap_branch_15.mp3" },
+      { text: "fruit and vegetables", audio: "/audio/week20_easy/mindmap_branch_16.mp3" },
+      { text: "lots of people", audio: "/audio/week20_easy/mindmap_branch_17.mp3" },
+      { text: "wooden tables", audio: "/audio/week20_easy/mindmap_branch_18.mp3" }
     ],
-    "The weather was ___.": [
-      "warm and sunny",
-      "a little cloudy",
-      "cool and windy",
-      "very nice",
-      "not cold at all",
-      "perfect for a picnic"
+    "Now my town has a new ___.": [
+      { text: "road", audio: "/audio/week20_easy/mindmap_branch_19.mp3" },
+      { text: "bridge", audio: "/audio/week20_easy/mindmap_branch_20.mp3" },
+      { text: "building", audio: "/audio/week20_easy/mindmap_branch_21.mp3" },
+      { text: "market", audio: "/audio/week20_easy/mindmap_branch_22.mp3" },
+      { text: "park", audio: "/audio/week20_easy/mindmap_branch_23.mp3" },
+      { text: "school", audio: "/audio/week20_easy/mindmap_branch_24.mp3" }
     ],
-    "After the trip, I felt ___.": [
-      "very happy",
-      "a little tired",
-      "excited",
-      "hungry",
-      "great",
-      "calm and relaxed"
+    "The old bridge was ___.": [
+      { text: "made of wood", audio: "/audio/week20_easy/mindmap_branch_25.mp3" },
+      { text: "over the river", audio: "/audio/week20_easy/mindmap_branch_26.mp3" },
+      { text: "very old", audio: "/audio/week20_easy/mindmap_branch_27.mp3" },
+      { text: "small", audio: "/audio/week20_easy/mindmap_branch_28.mp3" },
+      { text: "used by people", audio: "/audio/week20_easy/mindmap_branch_29.mp3" },
+      { text: "part of history", audio: "/audio/week20_easy/mindmap_branch_30.mp3" }
     ],
-    "I like that place because ___.": [
-      "it is fun",
-      "it is beautiful",
-      "I can play there with my friends",
-      "it has many cute animals",
-      "it has a big playground",
-      "I always have a good time there"
+    "The temple is still ___.": [
+      { text: "there", audio: "/audio/week20_easy/mindmap_branch_31.mp3" },
+      { text: "beautiful", audio: "/audio/week20_easy/mindmap_branch_32.mp3" },
+      { text: "very old", audio: "/audio/week20_easy/mindmap_branch_33.mp3" },
+      { text: "visited by people", audio: "/audio/week20_easy/mindmap_branch_34.mp3" },
+      { text: "important to us", audio: "/audio/week20_easy/mindmap_branch_35.mp3" },
+      { text: "special", audio: "/audio/week20_easy/mindmap_branch_36.mp3" }
     ]
   }
 };

@@ -31,5 +31,16 @@
       { "id": 4, "purpose": "GRAMMAR", "query": "verb to be past was were kids lesson" },
       { "id": 5, "purpose": "SCIENCE", "query": "how do you grow up body changes kids science" }
     ]
+  },
+  {
+    "weekId": 20,
+    "note": "The Old Town Mystery - There was/There were (Past Existence)",
+    "videos": [
+      { "id": 1, "purpose": "GRAMMAR", "query": "there was there were past simple song for kids", "backup_query": "there was there were ESL kids grammar" },
+      { "id": 2, "purpose": "GRAMMAR", "query": "English Singsing there was there were grammar kids ESL", "backup_query": "there was there were grammar song children" },
+      { "id": 3, "purpose": "STORY", "query": "old town history changed over time story for kids", "backup_query": "Little Fox history past present story children" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "places in a town village vocabulary song kids ESL", "backup_query": "community places vocabulary kids English" },
+      { "id": 5, "purpose": "SOCIAL", "query": "how towns cities changed history kids learn", "backup_query": "buildings bridges history kids education" }
+    ]
   }
 ]
