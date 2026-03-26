@@ -29,6 +29,7 @@ import week16RealData from '../../../data/weeks/week_16_real'; // Week 16 syllab
 import week17RealData from '../../../data/weeks/week_17_real'; // Week 17 syllabus - Weather & Clothes
 import week18RealData from '../../../data/weeks/week_18_real'; // Week 18 syllabus - The Live Reporter
 import week19RealData from '../../../data/weeks/week_19_real'; // Week 19 syllabus - When I Was Small
+import week20RealData from '../../../data/weeks/week_20_real'; // Week 20 syllabus - The Old Town Mystery
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import TTSSettingsPanel from '../components/TTSSettingsPanel';
@@ -110,7 +111,7 @@ const StoryMissionTab = () => {
   const [studentName, setStudentName] = useState(savedData.studentName || null); // 🔥 Restore student name
   
   // 🔥 Dynamic week data selection based on current week (Fallback: Week 7 - Golden Standard)
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : weekNumber === 9 ? week9RealData : weekNumber === 10 ? week10RealData : weekNumber === 11 ? week11RealData : weekNumber === 12 ? week12RealData : weekNumber === 13 ? week13RealData : weekNumber === 14 ? week14RealData : weekNumber === 15 ? week15RealData : weekNumber === 16 ? week16RealData : weekNumber === 17 ? week17RealData : weekNumber === 18 ? week18RealData : weekNumber === 19 ? week19RealData : week7RealData;
+  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : weekNumber === 9 ? week9RealData : weekNumber === 10 ? week10RealData : weekNumber === 11 ? week11RealData : weekNumber === 12 ? week12RealData : weekNumber === 13 ? week13RealData : weekNumber === 14 ? week14RealData : weekNumber === 15 ? week15RealData : weekNumber === 16 ? week16RealData : weekNumber === 17 ? week17RealData : weekNumber === 18 ? week18RealData : weekNumber === 19 ? week19RealData : weekNumber === 20 ? week20RealData : week7RealData;
   const currentMission = weekRealData.story_missions?.[currentMissionIndex];
   
   // 🔥 DEBUG: Log week data on mount
