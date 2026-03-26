@@ -1,12 +1,12 @@
 export default {
-  title: "Grandma's Attic",
-  image_url: "/images/week20_easy/read_cover_w20.jpg",
-  content_en: "Yesterday, I went to **Grandma's** house. I climbed up to the attic. It was very **old** and **dirty**. **There was** a **broken** chair in the corner. **There were** many **boxes** on the floor. I opened one box. Inside, **there was** a **teddy bear**. It was cute but **dusty**. I cleaned it and played with it.",
-  content_vi: "Hôm qua, tớ đến nhà Bà. Tớ leo lên gác xép. Nó rất cũ và bẩn. Có một cái ghế gãy ở trong góc. Có nhiều cái hộp trên sàn. Tớ mở một hộp. Bên trong, có một con gấu bông. Nó dễ thương nhưng đầy bụi. Tớ đã lau sạch và chơi với nó.",
-  audio_url: null,
+  title: "My Neighborhood",
+  image_url: "/images/week20/read_cover_w20.jpg",
+  content_en: "I live in a town. My town has changed! Look at this **old** photo. There was a **market** near my house. There were big **trees** on the **road**. There was a **bridge** over the **river**. There was a **temple** next to the **market**. There were small **buildings** near the **road**. Now my town is different. There is a new **road**. There are new **buildings**. There is a new **bridge**. But the old **temple** is still there! My grandmother says, 'There was a **village** here before.' Now it is a big town. But the **temple** is still beautiful. It is our old history. I love my town!",
+  content_vi: "Tôi sống ở một thị trấn. Thị trấn tôi đã thay đổi! Nhìn ảnh **cũ** này. Có một **chợ** gần nhà tôi. Có những **cây** lớn trên **đường**. Có một **cầu** bắc qua **sông**. Có một ngôi **đền** bên cạnh **chợ**. Có những **tòa nhà** nhỏ gần **đường**. Bây giờ thị trấn tôi khác rồi. Có một **đường** **mới**. Có những **tòa nhà** **mới**. Có một **cầu** **mới**. Nhưng ngôi **đền** cũ vẫn còn! Bà tôi nói, 'Có một **làng** ở đây trước kia.' Bây giờ là thị trấn lớn. Nhưng ngôi **đền** vẫn đẹp. Đó là lịch sử cũ của chúng tôi. Tôi yêu thị trấn tôi!",
+  audio_url: "/audio/week20_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "Where did he go?", answer: ["He went to Grandma's house.", "Grandma's house.", "To Grandma's house.", "He went to the attic.", "Grandma's attic.", "The attic."], hint_en: "He went to Grandma's...", hint_vi: "Cậu ấy đi đến nhà..." },
-    { id: 2, question_en: "What was broken?", answer: ["A chair.", "The chair.", "A broken chair.", "The chair was broken.", "A chair was broken."], hint_en: "A broken...", hint_vi: "Một cái ghế..." },
-    { id: 3, question_en: "What was inside the box?", answer: ["A teddy bear.", "The teddy bear.", "There was a teddy bear.", "A bear.", "Teddy bear."], hint_en: "A teddy...", hint_vi: "Một con gấu..." }
+    { id: 1, question_en: "What was near the narrator's house?", answer: ["A market", "The market"], hint_en: "There was a...", hint_vi: "Có một..." },
+    { id: 2, question_en: "What is still there today?", answer: ["The temple", "A temple"], hint_en: "The old ___ is still there.", hint_vi: "Ngôi ___ cũ vẫn còn..." },
+    { id: 3, question_en: "How does the town feel now?", answer: ["Big", "Different", "A big town"], hint_en: "The town is now...", hint_vi: "Thị trấn bây giờ..." }
   ]
 };

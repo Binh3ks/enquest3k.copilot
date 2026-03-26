@@ -1,13 +1,22 @@
+// ✅ EXTRACTED FROM read.js - My Neighborhood (100% extraction per Mass Production rules)
 export default {
   sentences: [
-    { id: 1, text: "Yesterday, I went to Grandma's house.", meaning: "Hôm qua, tớ đến nhà Bà." },
-    { id: 2, text: "I climbed up to the attic.", meaning: "Tớ leo lên gác xép." },
-    { id: 3, text: "It was very old and dirty.", meaning: "Nó rất cũ và bẩn." },
-    { id: 4, text: "There was a broken chair in the corner.", meaning: "Có một cái ghế gãy ở trong góc." },
-    { id: 5, text: "There were many boxes on the floor.", meaning: "Có nhiều cái hộp trên sàn." },
-    { id: 6, text: "I opened one box.", meaning: "Tớ mở một hộp." },
-    { id: 7, text: "Inside, there was a teddy bear.", meaning: "Bên trong, có một con gấu bông." },
-    { id: 8, text: "It was cute but dusty.", meaning: "Nó dễ thương nhưng đầy bụi." },
-    { id: 9, text: "I cleaned it and played with it.", meaning: "Tớ đã lau sạch và chơi với nó." }
+    { id: 1, text: "I live in a town."},
+    { id: 2, text: "My town has changed."},
+    { id: 3, text: "There was a market near my house."},
+    { id: 4, text: "There were big trees on the road."},
+    { id: 5, text: "There was a bridge over the river."},
+    { id: 6, text: "There was a temple next to the market."},
+    { id: 7, text: "There were small buildings near the road."},
+    { id: 8, text: "Now my town is different."},
+    { id: 9, text: "There is a new road."},
+    { id: 10, text: "There are new buildings."},
+    { id: 11, text: "There is a new bridge."},
+    { id: 12, text: "But the old temple is still there."},
+    { id: 13, text: "My grandmother says, There was a village here before."},
+    { id: 14, text: "Now it is a big town."},
+    { id: 15, text: "But the temple is still beautiful."},
+    { id: 16, text: "It is our old history."},
+    { id: 17, text: "I love my town."}
   ]
 };

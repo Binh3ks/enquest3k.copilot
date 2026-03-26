@@ -1,0 +1,39 @@
+{
+  "weekId": 20,
+  "theme": "The Old Town",
+  "grammar_focus": "There was / There were (Past Existence)",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing there was / there were ESL for kids",
+      "backup_search": "there was / there were song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing Past Existence ESL for kids",
+      "backup_search": "Past Existence kids song ESL cartoons"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox town history of my city story level 1 ESL for kids",
+      "backup_search": "Vooks town history of my city story read aloud cartoons for kids"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "places in a town vocabulary song for kids ESL",
+      "backup_search": "community places village buildings vocabulary kids song"
+    },
+    {
+      "id": 5,
+      "purpose": "SOCIAL",
+      "priority_search": "SciShow Kids buildings bridges history city change for kids",
+      "backup_search": "history town city changes kids educational video"
+    }
+  ],
+  "topic": "History of My City - what existed before",
+  "science": "old, new, building, tree, river, road, history, city, town"
+}
