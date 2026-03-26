@@ -11,6 +11,9 @@ export default {
     { word: "bridge", match: "a structure built to cross a river" },
     { word: "market", match: "a place to buy and sell goods" },
     { word: "temple", match: "a building used for worship" },
-    { word: "village", match: "a small community in the countryside" }
+    { word: "village", match: "a small community in the countryside" },
+    { word: "history", match: "the study of past events" },
+    { word: "map", match: "a drawing showing roads and places" },
+    { word: "mystery", match: "something strange and unknown" }
   ]
 };

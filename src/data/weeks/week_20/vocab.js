@@ -139,6 +139,48 @@ export default {
       audio_definition: "/audio/week20/vocab_def_village.mp3",
       audio_example: "/audio/week20/vocab_ex_village.mp3",
       audio_collocation: "/audio/week20/vocab_coll_village.mp3"
+    },
+    {
+      id: 11,
+      word: "history",
+      pronunciation: "/ˈhɪs.tər.i/",
+      definition_vi: "lịch sử",
+      definition_en: "the study of past events and how things were long ago",
+      example: "There was a lot of history in the old town.",
+      collocation: "local history",
+      image_url: "/images/week20/history.jpg",
+      audio_word: "/audio/week20/vocab_history.mp3",
+      audio_definition: "/audio/week20/vocab_def_history.mp3",
+      audio_example: "/audio/week20/vocab_ex_history.mp3",
+      audio_collocation: "/audio/week20/vocab_coll_history.mp3"
+    },
+    {
+      id: 12,
+      word: "map",
+      pronunciation: "/mæp/",
+      definition_vi: "bản đồ",
+      definition_en: "a drawing that shows roads, rivers, and places from above",
+      example: "There was an old map of the town in the museum.",
+      collocation: "old map",
+      image_url: "/images/week20/map.jpg",
+      audio_word: "/audio/week20/vocab_map.mp3",
+      audio_definition: "/audio/week20/vocab_def_map.mp3",
+      audio_example: "/audio/week20/vocab_ex_map.mp3",
+      audio_collocation: "/audio/week20/vocab_coll_map.mp3"
+    },
+    {
+      id: 13,
+      word: "mystery",
+      pronunciation: "/ˈmɪs.tər.i/",
+      definition_vi: "bí ẩn",
+      definition_en: "something strange or unknown that is hard to explain",
+      example: "There was a mystery about the old building on the hill.",
+      collocation: "old mystery",
+      image_url: "/images/week20/mystery.jpg",
+      audio_word: "/audio/week20/vocab_mystery.mp3",
+      audio_definition: "/audio/week20/vocab_def_mystery.mp3",
+      audio_example: "/audio/week20/vocab_ex_mystery.mp3",
+      audio_collocation: "/audio/week20/vocab_coll_mystery.mp3"
     }
   ]
 };

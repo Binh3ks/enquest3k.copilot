@@ -9,6 +9,9 @@ export default {
     { word: "bridge", match: "to cross a river" },
     { word: "market", match: "a place to buy things" },
     { word: "temple", match: "a place to pray" },
-    { word: "village", match: "a small town" }
+    { word: "village", match: "a small town" },
+    { word: "history", match: "stories from the past" },
+    { word: "map", match: "a drawing of streets and places" },
+    { word: "mystery", match: "something nobody knows" }
   ]
 };
