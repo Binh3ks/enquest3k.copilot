@@ -148,7 +148,7 @@ export default {
       definition_en: "the study of past events and how things were long ago",
       example: "There was a lot of history in the old town.",
       collocation: "local history",
-      image_url: "/images/week20/history.jpg",
+      image_url: "/images/week20/detective.jpg",
       audio_word: "/audio/week20/vocab_history.mp3",
       audio_definition: "/audio/week20/vocab_def_history.mp3",
       audio_example: "/audio/week20/vocab_ex_history.mp3",

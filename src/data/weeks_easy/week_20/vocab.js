@@ -118,7 +118,7 @@ export default {
       definition_en: "stories from the past",
       example: "There was a lot of history here.",
       collocation: "local history",
-      image_url: "/images/week20/history.jpg",
+      image_url: "/images/week20/detective.jpg",
       audio_word: "/audio/week20_easy/vocab_history.mp3"
     },
     {
