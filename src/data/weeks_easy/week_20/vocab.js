@@ -109,6 +109,39 @@ export default {
       collocation: "small village",
       image_url: "/images/week20/village.jpg",
       audio_word: "/audio/week20_easy/vocab_village.mp3"
+    },
+    {
+      id: 11,
+      word: "history",
+      pronunciation: "/ˈhɪs.tri/",
+      definition_vi: "lịch sử",
+      definition_en: "stories from the past",
+      example: "There was a lot of history here.",
+      collocation: "local history",
+      image_url: "/images/week20/history.jpg",
+      audio_word: "/audio/week20_easy/vocab_history.mp3"
+    },
+    {
+      id: 12,
+      word: "map",
+      pronunciation: "/mæp/",
+      definition_vi: "bản đồ",
+      definition_en: "a drawing of streets and places",
+      example: "There was a map on the wall.",
+      collocation: "old map",
+      image_url: "/images/week20/map.jpg",
+      audio_word: "/audio/week20_easy/vocab_map.mp3"
+    },
+    {
+      id: 13,
+      word: "mystery",
+      pronunciation: "/ˈmɪs.tri/",
+      definition_vi: "bí ẩn",
+      definition_en: "something nobody knows",
+      example: "There was a mystery in the old town.",
+      collocation: "old mystery",
+      image_url: "/images/week20/mystery.jpg",
+      audio_word: "/audio/week20_easy/vocab_mystery.mp3"
     }
   ]
 };
