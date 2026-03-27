@@ -971,24 +971,7 @@ if [ "$WEEK_INT" -ge 20 ]; then
       echo -e "   ${YELLOW}FIX: Include non-bar-model assets (vocab/wordpower/covers). Bar models are handled separately.${NC}"
       ERRORS=$((ERRORS+1))
     else
-      MISSING_BAR=0
-      for i in; do
-        if ! grep -q "Filename: barmodel_w${WEEK_PAD}_adv_p${i}\.jpg" "$ADV_PROMPTS"; then
-          echo -e "   ${RED}FAIL: Missing barmodel_w${WEEK_PAD}_adv_p${i}.jpg in unified prompts${NC}"
-          MISSING_BAR=1
-        fi
-        if ! grep -q "Filename: barmodel_w${WEEK_PAD}_easy_p${i}\.jpg" "$ADV_PROMPTS"; then
-          echo -e "   ${RED}FAIL: Missing barmodel_w${WEEK_PAD}_easy_p${i}.jpg in unified prompts${NC}"
-          MISSING_BAR=1
-        fi
-      done
-
-      if [ "$MISSING_BAR" -eq 1 ]; then
-        echo -e "   ${YELLOW}FIX: Add full dual-mode bar model filenames (adv/easy p1..p5) to week_${WEEK_PAD}_image_prompts.txt${NC}"
-        ERRORS=$((ERRORS+1))
-      else
-        echo -e "   ${GREEN}PASS: Unified prompts found ($PROMPT_COUNT lines); bar-model prompt lines are optional legacy mode${NC}"
-      fi
+        echo -e "   ${GREEN}PASS: Unified prompts found ($PROMPT_COUNT lines)${NC}"
     fi
   fi
 

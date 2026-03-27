@@ -126,7 +126,7 @@ echo -e "${RED}      Check 26 will FAIL if image_url does not match a real file 
 echo -e "${YELLOW}   NOTE: Code Quality Gate Check 25 will FAIL if these files are missing${NC}"
 echo -e "${YELLOW}         Code Quality Gate Check 31 catches Singapore Math progression + bar_model integrity (W22+)${NC}"
 echo -e "${YELLOW}         Code Quality Gate Check 26 will FAIL if cover image_url doesn't match actual filename${NC}"
-echo -e "${YELLOW}         For W20+, bar-model lines in prompt file are optional legacy format (not required).${NC}"
+echo -e "${YELLOW}         W20+: Prompt files are for vocab/wordpower/covers only (no bar_model prompts).${NC}"
 echo ""
 echo -e "${CYAN}📐 SINGAPORE MATH SCAFFOLDING (MANDATORY FROM W22+):${NC}"
 echo -e "${CYAN}   • W22-24: 5 problems, >=2 types, Advanced wording longer + clearer reasoning than Easy${NC}"
@@ -146,6 +146,17 @@ echo -e "${CYAN}   • Advanced diagrams should carry more complex structure (co
 echo ""
 read -p "Press Enter after you have created all 29 files (or Ctrl+C to abort)..."
 echo -e "${GREEN}✅ Content files ready${NC}"
+echo ""
+
+# Step 1.5: Generate Logic Lab bar models from singapore_math.js
+echo -e "${YELLOW}[1.5/9] 🧱 Generating Logic Lab bar models from singapore_math.js...${NC}"
+python3 tools/generate_logiclab_barmodels.py $WEEK
+if [ $? -ne 0 ]; then
+  echo -e "${RED}❌ Bar model generation failed!${NC}"
+  echo -e "${YELLOW}FIX: Check singapore_math.js type/question_en/bar_model fields, then rerun tools/generate_logiclab_barmodels.py${NC}"
+  exit 1
+fi
+echo -e "${GREEN}✅ Bar model generation complete${NC}"
 echo ""
 
 # Step 2: Validate content quality (comprehensive)
