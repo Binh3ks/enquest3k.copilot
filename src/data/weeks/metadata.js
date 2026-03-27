@@ -21,6 +21,7 @@ export const weekTitles = {
   18: { title_en: "The Live Reporter", title_vi: "Phóng Viên Trực Tiếp" },
   19: { title_en: "When I Was Small", title_vi: "Khi Tôi Còn Nhỏ" },
   20: { title_en: "The Old Town", title_vi: "Thị Trấn Cũ" },
+  21: { title_en: "Yesterday's Diary", title_vi: "Nhật Ký Hôm Qua" },
   // Add more as weeks are created
 };
 

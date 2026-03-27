@@ -1,14 +1,21 @@
+// ✅ EXTRACTED FROM read.js - Max's Diary - Yesterday (100% extraction per Mass Production rules)
+// 🔧 audio_url removed — TTS generates on-demand with voiceConfig (Neural2-F → aura-asteria-en)
 export default {
-  title: "Grandma's Attic",
+  title: "Max's Diary - Yesterday",
   script: [
-    { id: 1, text: "I went to Grandma's attic.", vi: "Tớ lên gác xép của bà." },
-    { id: 2, text: "I found a big box.", vi: "Tớ tìm thấy một cái hộp lớn." },
-    { id: 3, text: "I opened it.", vi: "Tớ mở nó ra." },
-    { id: 4, text: "I saw an old photo of a girl.", vi: "Tớ thấy một bức ảnh cũ của một cô bé." },
-    { id: 5, text: "Grandma said, 'That is me!'.", vi: "Bà nói: 'Bà đấy!'." },
-    { id: 6, text: "I found a hat and a toy.", vi: "Tớ tìm thấy một cái mũ và một món đồ chơi." },
-    { id: 7, text: "Grandma told me a story.", vi: "Bà kể chuyện cho tớ nghe." },
-    { id: 8, text: "She gave me the toy.", vi: "Bà tặng tớ món đồ chơi." },
-    { id: 9, text: "I was happy.", vi: "Tớ rất vui." }
+    { id: 1, text: "Yesterday was a fun day!", vi: "Hôm qua là một ngày vui!" },
+    { id: 2, text: "In the morning, I walked to school.", vi: "Buổi sáng, tôi đã đi bộ đến trường." },
+    { id: 3, text: "I looked at the blue sky.", vi: "Tôi đã nhìn bầu trời xanh." },
+    { id: 4, text: "I talked to my friends.", vi: "Tôi đã nói chuyện với bạn bè." },
+    { id: 5, text: "At lunchtime, I helped my mom.", vi: "Đến trưa, tôi đã giúp mẹ." },
+    { id: 6, text: "She cooked rice and soup.", vi: "Mẹ đã nấu cơm và súp." },
+    { id: 7, text: "We cleaned the table together.", vi: "Chúng tôi đã dọn bàn cùng nhau." },
+    { id: 8, text: "In the afternoon, I played in the park.", vi: "Buổi chiều, tôi đã chơi ở công viên." },
+    { id: 9, text: "I watched my friend ride a bike.", vi: "Tôi đã xem bạn đạp xe." },
+    { id: 10, text: "I listened to the birds sing.", vi: "Tôi đã lắng nghe tiếng chim hót." },
+    { id: 11, text: "Then I washed my hands.", vi: "Rồi tôi đã rửa tay." },
+    { id: 12, text: "I finished my homework.", vi: "Tôi đã hoàn thành bài tập." },
+    { id: 13, text: "We started a new game.", vi: "Chúng tôi đã bắt đầu một trò chơi mới." },
+    { id: 14, text: "Yesterday was the best day!", vi: "Hôm qua là ngày tuyệt vời nhất!" }
   ]
 };

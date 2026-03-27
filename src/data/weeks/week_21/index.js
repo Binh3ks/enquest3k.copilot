@@ -2,25 +2,24 @@ import read from './read.js';
 import explore from './explore.js';
 import vocab from './vocab.js';
 import grammar from './grammar.js';
+import ask_ai from './ask_ai.js';
+import logic_science from './logic_science.js';
+import singapore_math from './singapore_math.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
 import writing from './writing.js';
-import word_match from './word_match.js';
 import word_power from './word_power.js';
 import mindmap from './mindmap.js';
-import ask_ai from './ask_ai.js';
 import daily_watch from './daily_watch.js';
-import logic_science from './logic_science.js';
-import singapore_math from './singapore_math.js';
+import word_match from './word_match.js';
 import games from './games.js';
 
 const weekData = {
   weekId: 21,
+  isEasy: false,
   weekTitle_en: "Yesterday's Diary",
-  weekTitle_vi: "Nhật Ký Hôm Qua",
-  grammar_focus: "Past Simple Regular Verbs (verb-ed)",
-  isEasy: true,
-
+  weekTitle_vi: "Nhat Ky Hom Qua",
+  grammar_focus: "Past Simple Regular Verbs (-ed)",
   global_vocab: vocab.vocab,
 
   voiceConfig: {
@@ -38,15 +37,15 @@ const weekData = {
     new_words: vocab,
     word_match: word_match,
     grammar: grammar,
-    mindmap_speaking: mindmap,
+    word_power: word_power,
     ask_ai: ask_ai,
+    logic_lab: { logic_science, singapore_math },
     dictation: dictation,
     shadowing: shadowing,
     writing: writing,
-    logic_lab: { logic_science, singapore_math },
-    word_power: word_power,
-    daily_watch: daily_watch,
     explore: explore,
+    mindmap_speaking: mindmap,
+    daily_watch: daily_watch,
     game_hub: games
   }
 };
