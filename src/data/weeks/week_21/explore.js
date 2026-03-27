@@ -7,7 +7,7 @@ export default {
     A diary is a special book where we write about things that already happened.
     That is why we use the past tense with regular verbs ending in -ed.
 
-    For example, we say: I walked to school, I listened to my teacher, and I played soccer.
+    For example, we say: I **walked** to school, I **listened** to my teacher, and I **played** soccer.
     These actions are finished actions from yesterday.
 
     We also use time words to make our diary clear.
@@ -15,17 +15,17 @@ export default {
     These words help the reader understand when each action happened.
 
     Did you know a diary can also be useful for science?
-    If you looked at the night sky yesterday, you can write what you watched and counted.
+    If you **looked** at the night sky yesterday, you can write what you **watched** and counted.
     Scientists do this too in a science log to record observations.
 
     So when you write your diary, think like a time detective.
-    Record clues with past tense verbs: walked, looked, cooked, played, watched, cleaned, helped, talked, listened, opened, washed, finished, and started.
+    Record clues with past tense verbs: **walked**, **looked**, **cooked**, **played**, **watched**, **cleaned**, **helped**, **talked**, **listened**, **opened**, **washed**, **finished**, and **started**.
   `,
   content_vi: `
     Nhat ky la mot cuon so dac biet de chung ta viet ve nhung viec da xay ra.
     Vi vay chung ta dung thi qua khu voi dong tu them -ed.
 
-    Vi du: I walked to school, I listened to my teacher, va I played soccer.
+    Vi du: I **walked** to school, I **listened** to my teacher, va I **played** soccer.
     Day la nhung hanh dong da ket thuc trong hom qua.
 
     Chung ta cung dung tu chi thoi gian de nhat ky ro rang hon.
@@ -37,7 +37,7 @@ export default {
     Cac nha khoa hoc cung lam vay trong science log de ghi nhan quan sat.
 
     Vi vay khi viet nhat ky, hay nghi nhu mot tham tu thoi gian.
-    Ghi lai manh moi bang dong tu qua khu: walked, looked, cooked, played, watched, cleaned, helped, talked, listened, opened, washed, finished, started.
+    Ghi lai manh moi bang dong tu qua khu: **walked**, **looked**, **cooked**, **played**, **watched**, **cleaned**, **helped**, **talked**, **listened**, **opened**, **washed**, **finished**, **started**.
   `,
   check_questions: [
     {
