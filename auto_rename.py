@@ -123,8 +123,9 @@ if __name__ == "__main__":
     folder_with_zero = f"week{week_num_padded}"  # week07
     folder_no_zero = f"week{week_num_clean}"     # week7
     
-    # Từ week 20+: dùng 1 prompt file chung (bao gồm cả bar model adv/easy) + 1 folder ảnh chung
-    if week_int >= 20:
+    # Week 20-21: dùng 1 prompt file chung (bao gồm cả bar model adv/easy) + 1 folder ảnh chung
+    # Week 22+: quay về flow cũ (advanced + easy prompts riêng như legacy).
+    if 20 <= week_int <= 21:
         prompt_unified = resolve_prompt_path(f"week_{week_num_clean}_image_prompts.txt")
         if os.path.exists(os.path.join(BASE_PATH, folder_with_zero)):
             process_folder_by_prompt(folder_with_zero, prompt_unified)
