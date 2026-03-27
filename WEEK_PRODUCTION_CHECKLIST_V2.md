@@ -1158,6 +1158,24 @@ export default {
 - **Phase 2 (W55-120)**: Multi-step problems, division, fractions (1/2, 1/4)
 - **Phase 3 (W121+)**: Pre-algebra (? + 5 = 12), ratios, percentage basics
 
+**Scaffold Ladder (Apply for new production from W22+):**
+- **W22-24 (Phase 1A):** 5 problems, at least 2 types; Advanced wording must be clearly richer than Easy (more reasoning cues, not just longer).
+- **W25-32 (Phase 1B):** 5 problems, at least 3 types and must include `missing_part`; Advanced numbers and contexts increase; include work-backward language.
+- **W33-40 (Phase 1C):** 5 problems, at least 4 types and must include `groups` + `missing_part`; stronger multi-step structure.
+- **W41-54 (Phase 1D):** 5 problems, all 5 Singapore types across the set; Advanced uses higher abstraction and denser academic math vocabulary.
+- **W55-120 (Phase 2):** 7 problems; introduce fraction/ratio/simple equation language with pictorial → abstract transition.
+- **W121+ (Phase 3):** 10 problems; emphasize algebraic model method, ratio/percent, and abstract-first reasoning.
+
+**Advanced vs Easy Rule (W22+):**
+- Easy = concrete contexts, fewer operations, simpler sentences.
+- Advanced = harder operations and structure + more formal language + inference steps.
+- Advanced must differ by difficulty depth, not only sentence length.
+
+**Bar Model Integrity Rule (W22+):**
+- Keep naming pattern: `barmodel_wNN_adv_p1..p5`, `barmodel_wNN_easy_p1..p5`.
+- Use versioned filenames (`_vN.jpg`) when regenerating to avoid CDN cache staleness.
+- Every `bar_model` path in `singapore_math.js` must resolve to a real image file in `public/images/weekN/`.
+
 ---
 
 #### 📌 STEM Content Validation (W16+ ONLY)

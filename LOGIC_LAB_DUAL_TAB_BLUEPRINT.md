@@ -555,6 +555,24 @@ When creating Week XX content:
 - [ ] MANDATORY: Include unit in answer ("8 eggs" not "8")
 - [ ] Align difficulty with VN/Singapore curriculum for that age
 
+**Scaffolded Difficulty Standard (for new production W22+):**
+- W22-24: 5 problems, >=2 question types, Advanced language moderately denser than Easy.
+- W25-32: 5 problems, >=3 question types, include missing_part, larger number ranges.
+- W33-40: 5 problems, >=4 question types, include groups + missing_part, more multi-step reasoning.
+- W41-54: 5 problems, full 5-type coverage across set, stronger abstract framing in Advanced.
+- W55-120: 7 problems, transition to Phase 2 topics (fractions, ratio intro, simple equations).
+- W121+: 10 problems, Phase 3 topics (algebraic model method, ratio/percent, abstract-first).
+
+**Advanced Language Rule (W22+):**
+- Advanced must be harder in BOTH math structure and language depth.
+- Use reasoning markers such as: while, after, before, remaining, difference, each, ratio, fraction.
+- Do not make Advanced by length alone; require deeper inference and clearer multi-step cues.
+
+**Bar Model Rule (W22+):**
+- Keep deterministic naming in production: barmodel_wNN_adv_p1..p5 and barmodel_wNN_easy_p1..p5.
+- Use versioned files (_vN.jpg) whenever a bar model is regenerated.
+- Ensure every bar_model path resolves to a real image file before release.
+
 #### **Step 4: Cross-Check for Overlap**
 - [ ] NO identical contexts between the 2 sub-tabs
 - [ ] If both use same theme (e.g., "dinosaurs"), ensure different approaches:
