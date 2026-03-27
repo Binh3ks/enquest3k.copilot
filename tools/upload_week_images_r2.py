@@ -5,10 +5,8 @@ Usage: python3 tools/upload_week_images_r2.py 9 10
        python3 tools/upload_week_images_r2.py 9    # Single week
 """
 
-import os
 import sys
 import subprocess
-import glob
 from pathlib import Path
 
 BUCKET_NAME = "engquest-images"  # Fixed: Images have their own bucket!
@@ -55,16 +53,28 @@ def upload_file_to_r2(local_path, r2_key):
         return False
 
 def upload_week_images(week_number):
-    """Upload all images for a specific week (advanced + easy modes)."""
+    """Upload all images for a specific week."""
     week_str_padded = str(week_number).zfill(2)
-    
-    # Week folder names to check
-    week_folders = [
-        f"week{week_str_padded}",        # week09
-        f"week{week_str_padded}_easy",   # week09_easy
-        f"week{week_number}",            # week9 (fallback)
-        f"week{week_number}_easy"        # week9_easy (fallback)
-    ]
+
+    # Từ week 20+: chỉ còn 1 folder ảnh chung (weekNN)
+    # Week < 20: legacy có thể có weekNN + weekNN_easy
+    if week_number >= 20:
+        candidates = [f"week{week_str_padded}", f"week{week_number}"]
+    else:
+        candidates = [
+            f"week{week_str_padded}",
+            f"week{week_str_padded}_easy",
+            f"week{week_number}",
+            f"week{week_number}_easy",
+        ]
+
+    week_folders = []
+    seen = set()
+    for folder in candidates:
+        if folder in seen:
+            continue
+        seen.add(folder)
+        week_folders.append(folder)
     
     total_uploaded = 0
     total_failed = 0

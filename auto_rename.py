@@ -1,6 +1,5 @@
 import os
 import sys
-import glob
 import re
 
 # Tự động detect thư mục gốc của project (nơi chứa script này)
@@ -104,27 +103,42 @@ if __name__ == "__main__":
     week_num = sys.argv[1]
     
     # Chuẩn hóa số tuần
-    week_num_clean = str(int(week_num))  # Bỏ số 0: "07" -> "7" (cho file prompt)
+    week_int = int(week_num)
+    week_num_clean = str(week_int)  # Bỏ số 0: "07" -> "7" (cho file prompt)
     week_num_padded = week_num.zfill(2)  # Thêm số 0: "7" -> "07" (format có số 0)
 
-    # Đường dẫn file prompt - Ưu tiên public/images/Prompts/ (mới), fallback về Production_FINAL, rồi MASS_Final (cũ)
-    prompt_adv_new = os.path.join(SCRIPT_DIR, "public", "images", "Prompts", f"week_{week_num_clean}_image_prompts.txt")
-    prompt_easy_new = os.path.join(SCRIPT_DIR, "public", "images", "Prompts", f"week_{week_num_clean}_easy_image_prompts.txt")
-    
-    prompt_adv_prod = os.path.join(SCRIPT_DIR, "Production_FINAL", "IMAGE PROMPTS", f"week_{week_num_clean}_image_prompts.txt")
-    prompt_easy_prod = os.path.join(SCRIPT_DIR, "Production_FINAL", "IMAGE PROMPTS", f"week_{week_num_clean}_easy_image_prompts.txt")
-    
-    prompt_adv_old = os.path.join(SCRIPT_DIR, "MASS_Final", "Image prompts", f"week_{week_num_clean}_image_prompts.txt")
-    prompt_easy_old = os.path.join(SCRIPT_DIR, "MASS_Final", "Image prompts", f"week_{week_num_clean}_easy_image_prompts.txt")
-    
-    # Chọn path đúng (ưu tiên mới -> Production_FINAL -> cũ)
-    prompt_adv = prompt_adv_new if os.path.exists(prompt_adv_new) else (prompt_adv_prod if os.path.exists(prompt_adv_prod) else prompt_adv_old)
-    prompt_easy = prompt_easy_new if os.path.exists(prompt_easy_new) else (prompt_easy_prod if os.path.exists(prompt_easy_prod) else prompt_easy_old)
+    def resolve_prompt_path(filename):
+        candidates = [
+            os.path.join(SCRIPT_DIR, "public", "images", "Prompts", filename),
+            os.path.join(SCRIPT_DIR, "Production_FINAL", "IMAGE PROMPTS", filename),
+            os.path.join(SCRIPT_DIR, "MASS_Final", "Image prompts", filename),
+        ]
+        for path in candidates:
+            if os.path.exists(path):
+                return path
+        # fallback cuối cùng để in warning rõ ràng
+        return candidates[0]
 
     # Kiểm tra thư mục nào tồn tại (có số 0 hoặc không số 0)
     folder_with_zero = f"week{week_num_padded}"  # week07
     folder_no_zero = f"week{week_num_clean}"     # week7
     
+    # Từ week 20+: dùng 1 prompt file chung (bao gồm cả bar model adv/easy) + 1 folder ảnh chung
+    if week_int >= 20:
+        prompt_unified = resolve_prompt_path(f"week_{week_num_clean}_image_prompts.txt")
+        if os.path.exists(os.path.join(BASE_PATH, folder_with_zero)):
+            process_folder_by_prompt(folder_with_zero, prompt_unified)
+        elif os.path.exists(os.path.join(BASE_PATH, folder_no_zero)):
+            print(f"⚠️ Tìm thấy thư mục {folder_no_zero} (không có số 0)")
+            process_folder_by_prompt(folder_no_zero, prompt_unified)
+        else:
+            print(f"⚠️ Không tìm thấy thư mục week{week_num_padded} hoặc week{week_num_clean}")
+        sys.exit(0)
+
+    # Week < 20: legacy 2 prompt files (advanced + easy)
+    prompt_adv = resolve_prompt_path(f"week_{week_num_clean}_image_prompts.txt")
+    prompt_easy = resolve_prompt_path(f"week_{week_num_clean}_easy_image_prompts.txt")
+
     # Ưu tiên folder có số 0, fallback về không số 0
     if os.path.exists(os.path.join(BASE_PATH, folder_with_zero)):
         process_folder_by_prompt(folder_with_zero, prompt_adv)

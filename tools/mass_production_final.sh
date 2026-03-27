@@ -8,7 +8,7 @@
 #
 # Flow:
 #   0. Backup existing data
-#   1. Manual content generation (29 JS files + 2 image prompt files)
+#   1. Manual content generation (29 JS files + image prompt file(s))
 #   2. Validate content (schema, counts, URLs)
 #   3. Sync data (dictation/shadowing from read.js, auto-fill URLs)
 #   4. Register in database
@@ -21,7 +21,7 @@
 #   9. Report & cleanup
 #
 # CRITICAL RULES:
-#   - Create image prompt files BEFORE Step 6: Production_FINAL/IMAGE PROMPTS/week_NN_*.txt
+#   - Create image prompt file(s) BEFORE Step 6: Production_FINAL/IMAGE PROMPTS/week_NN_*.txt
 #   - Add week entries to video_tasks.json BEFORE Step 7 (update_videos.js)
 #   - NEVER run update_videos.js without checking video_tasks.json — fallback destroys videos
 #
@@ -110,9 +110,18 @@ echo -e "${CYAN}      (W16 adds: logic_science.js + singapore_math.js + games.js
 echo -e "${CYAN}   4. Use Week 16 as Golden Standard (NOT Week 1/2 — W16 = current template)${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${YELLOW}📸 ALSO REQUIRED — Image prompt files (for manual + AI image generation):${NC}"
-echo -e "${YELLOW}   Create BOTH files in Production_FINAL/IMAGE PROMPTS/:${NC}"
-echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_image_prompts.txt      (Advanced — 26 lines: 13 vocab + 6 wordpower + 2 covers + 5 bar models)${NC}"
-echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_easy_image_prompts.txt  (Easy — same structure, simpler descriptions)${NC}"
+if [ "$WEEK" -ge 20 ]; then
+  echo -e "${YELLOW}   Create ONE unified file in Production_FINAL/IMAGE PROMPTS/:${NC}"
+  echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_image_prompts.txt${NC}"
+  echo -e "${YELLOW}      (31 lines: vocab/wordpower + 2 covers + 10 bar models for both modes)${NC}"
+  echo -e "${YELLOW}      Required bar model names:${NC}"
+  echo -e "${YELLOW}      - barmodel_w$(printf '%02d' $WEEK)_adv_p1.jpg ... barmodel_w$(printf '%02d' $WEEK)_adv_p5.jpg${NC}"
+  echo -e "${YELLOW}      - barmodel_w$(printf '%02d' $WEEK)_easy_p1.jpg ... barmodel_w$(printf '%02d' $WEEK)_easy_p5.jpg${NC}"
+else
+  echo -e "${YELLOW}   Create BOTH files in Production_FINAL/IMAGE PROMPTS/:${NC}"
+  echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_image_prompts.txt      (Advanced — 26 lines)${NC}"
+  echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_easy_image_prompts.txt  (Easy — same structure, simpler descriptions)${NC}"
+fi
 echo -e "${YELLOW}   Format: see week_16_image_prompts.txt as golden standard${NC}"
 echo -e "${RED}   ⚠️  COVER NAMING: image_url in read.js/explore.js must use w\${WEEK} (NO zero-padding)${NC}"
 echo -e "${RED}      e.g. read_cover_w17.jpg — NOT read_cover_w017.jpg (w016 is unique to W16 golden)${NC}"

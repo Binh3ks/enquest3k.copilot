@@ -951,48 +951,83 @@ echo ""
 
 # =============================================================================
 # CHECK 25: Image prompt files must exist for week N
-# If Easy mode shares images with Advanced (no week_easy images folder / all Easy
-# image_url point to /images/weekN/), only the Advanced prompts file is required.
+# Week 20+: one unified prompt file containing BOTH advanced/easy bar model names.
+# Week < 20: legacy mode (advanced + optional easy/shared prompts).
 # =============================================================================
-echo -e "${BOLD}[CHECK 25] Image prompts — files must exist for Week ${WEEK_PAD}${NC}"
+echo -e "${BOLD}[CHECK 25] Image prompts - files must exist for Week ${WEEK_PAD}${NC}"
 IMG_PROMPTS_DIR="Production_FINAL/IMAGE PROMPTS"
 ADV_PROMPTS="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_image_prompts.txt"
 EASY_PROMPTS="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_easy_image_prompts.txt"
 
-if [ ! -f "$ADV_PROMPTS" ]; then
-  echo -e "   ${RED}❌ FAIL: Missing Advanced image prompts: $ADV_PROMPTS${NC}"
-  echo -e "   ${YELLOW}FIX: Create $ADV_PROMPTS with 26 image prompts (vocab/wordpower/covers/barmodels)${NC}"
-  ERRORS=$((ERRORS+1))
-else
-  PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
-  if [ "$PROMPT_COUNT" -ne 26 ]; then
-    echo -e "   ${RED}❌ FAIL (Advanced): $ADV_PROMPTS has $PROMPT_COUNT prompts — need exactly 26${NC}"
-    echo -e "   ${YELLOW}FIX: 13 vocab + 6 wordpower (collocations) + 5 barmodels + 2 covers = 26${NC}"
+if [ "$WEEK_INT" -ge 20 ]; then
+  if [ ! -f "$ADV_PROMPTS" ]; then
+    echo -e "   ${RED}FAIL: Missing unified image prompts file: $ADV_PROMPTS${NC}"
+    echo -e "   ${YELLOW}FIX: Create ONE file week_${WEEK_PAD}_image_prompts.txt with both mode bar models${NC}"
     ERRORS=$((ERRORS+1))
   else
-    echo -e "   ${GREEN}✅ PASS (Advanced): Found 26 image prompts${NC}"
+    PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
+    if [ "$PROMPT_COUNT" -lt 31 ]; then
+      echo -e "   ${RED}FAIL: $ADV_PROMPTS has only $PROMPT_COUNT prompts - need >= 31 for W20+${NC}"
+      echo -e "   ${YELLOW}FIX: Include vocab/wordpower/covers + 10 bar models (adv/easy)${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      MISSING_BAR=0
+      for i in 1 2 3 4 5; do
+        if ! grep -q "Filename: barmodel_w${WEEK_PAD}_adv_p${i}\.jpg" "$ADV_PROMPTS"; then
+          echo -e "   ${RED}FAIL: Missing barmodel_w${WEEK_PAD}_adv_p${i}.jpg in unified prompts${NC}"
+          MISSING_BAR=1
+        fi
+        if ! grep -q "Filename: barmodel_w${WEEK_PAD}_easy_p${i}\.jpg" "$ADV_PROMPTS"; then
+          echo -e "   ${RED}FAIL: Missing barmodel_w${WEEK_PAD}_easy_p${i}.jpg in unified prompts${NC}"
+          MISSING_BAR=1
+        fi
+      done
+
+      if [ "$MISSING_BAR" -eq 1 ]; then
+        echo -e "   ${YELLOW}FIX: Add full dual-mode bar model filenames (adv/easy p1..p5) to week_${WEEK_PAD}_image_prompts.txt${NC}"
+        ERRORS=$((ERRORS+1))
+      else
+        echo -e "   ${GREEN}PASS: Unified prompts found ($PROMPT_COUNT lines) with full adv/easy bar model filenames${NC}"
+      fi
+    fi
   fi
-fi
 
-# Check if Easy shares images with Advanced (no separate easy prompts needed)
-EASY_SHARED=false
-if [ -f "$EASY_DIR/vocab.js" ]; then
-  EASY_IMG_REFS=$(grep "image_url" "$EASY_DIR/vocab.js" 2>/dev/null | grep -c "week${WEEK}_easy" || true)
-  [ "${EASY_IMG_REFS:-0}" -eq 0 ] && EASY_SHARED=true
-fi
-
-if [ "$EASY_SHARED" = true ]; then
-  echo -e "   ${GREEN}✅ PASS (Easy): Shared images with Advanced — no separate prompts file needed${NC}"
-elif [ ! -f "$EASY_PROMPTS" ]; then
-  echo -e "   ${RED}❌ FAIL: Missing Easy image prompts: $EASY_PROMPTS${NC}"
-  echo -e "   ${YELLOW}FIX: Either create $EASY_PROMPTS OR point all Easy image_url to /images/week${WEEK}/ (shared mode)${NC}"
-  ERRORS=$((ERRORS+1))
+  echo -e "   ${GREEN}PASS (Easy): Week ${WEEK_PAD} uses unified prompts file (no separate easy prompt file required)${NC}"
+  echo ""
 else
-  PROMPT_COUNT=$(grep -c "Filename:" "$EASY_PROMPTS" || true)
-  echo -e "   ${GREEN}✅ PASS (Easy): Found $PROMPT_COUNT image prompts${NC}"
-fi
-echo ""
+  if [ ! -f "$ADV_PROMPTS" ]; then
+    echo -e "   ${RED}FAIL: Missing Advanced image prompts: $ADV_PROMPTS${NC}"
+    echo -e "   ${YELLOW}FIX: Create $ADV_PROMPTS with 26 image prompts (vocab/wordpower/covers/barmodels)${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
+    if [ "$PROMPT_COUNT" -ne 26 ]; then
+      echo -e "   ${RED}FAIL (Advanced): $ADV_PROMPTS has $PROMPT_COUNT prompts - need exactly 26${NC}"
+      echo -e "   ${YELLOW}FIX: 13 vocab + 6 wordpower (collocations) + 5 barmodels + 2 covers = 26${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}PASS (Advanced): Found 26 image prompts${NC}"
+    fi
+  fi
 
+  EASY_SHARED=false
+  if [ -f "$EASY_DIR/vocab.js" ]; then
+    EASY_IMG_REFS=$(grep "image_url" "$EASY_DIR/vocab.js" 2>/dev/null | grep -c "week${WEEK}_easy" || true)
+    [ "${EASY_IMG_REFS:-0}" -eq 0 ] && EASY_SHARED=true
+  fi
+
+  if [ "$EASY_SHARED" = true ]; then
+    echo -e "   ${GREEN}PASS (Easy): Shared images with Advanced - no separate prompts file needed${NC}"
+  elif [ ! -f "$EASY_PROMPTS" ]; then
+    echo -e "   ${RED}FAIL: Missing Easy image prompts: $EASY_PROMPTS${NC}"
+    echo -e "   ${YELLOW}FIX: Either create $EASY_PROMPTS OR point all Easy image_url to /images/week${WEEK}/ (shared mode)${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    PROMPT_COUNT=$(grep -c "Filename:" "$EASY_PROMPTS" || true)
+    echo -e "   ${GREEN}PASS (Easy): Found $PROMPT_COUNT image prompts${NC}"
+  fi
+  echo ""
+fi
 # =============================================================================
 # CHECK 26: Cover image_url paths in read.js/explore.js must exist on disk
 # =============================================================================
