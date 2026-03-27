@@ -42,5 +42,16 @@
       { "id": 4, "purpose": "VOCABULARY", "query": "places in a town village vocabulary song kids ESL", "backup_query": "community places vocabulary kids English" },
       { "id": 5, "purpose": "SOCIAL", "query": "how towns cities changed history kids learn", "backup_query": "buildings bridges history kids education" }
     ]
+  },
+  {
+    "weekId": 21,
+    "note": "Yesterday's Diary - Past Simple Regular Verbs (-ed)",
+    "videos": [
+      { "id": 1, "purpose": "GRAMMAR", "query": "past simple regular verbs ed song for kids", "backup_query": "past tense ed verbs song children ESL" },
+      { "id": 2, "purpose": "GRAMMAR", "query": "English Singsing past tense verbs walked played cooked kids", "backup_query": "past simple regular verbs grammar song kids" },
+      { "id": 3, "purpose": "STORY", "query": "diary story yesterday kids activities past tense", "backup_query": "Little Fox diary activities past tense story children" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "daily activities verbs past tense song kids ESL", "backup_query": "daily routine past tense vocabulary children" },
+      { "id": 5, "purpose": "SOCIAL", "query": "kids talking about yesterday activities past tense", "backup_query": "what did you do yesterday kids English" }
+    ]
   }
 ]
