@@ -669,14 +669,92 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
     echo -e "   ${YELLOW}FIX: Add model_sentence/prompt_en/prompt_vi, remove example_en/rubric${NC}"
     ERRORS=$((ERRORS+1))
   else
-    MODEL_CHARS=$(grep "model_sentence:" "$WR_FILE" | wc -c | tr -d ' ')
+    MODEL_LINE=$(grep "model_sentence:" "$WR_FILE" | head -1 || true)
+    MODEL_CHARS=$(echo "$MODEL_LINE" | wc -c | tr -d ' ')
+    MODEL_TEXT=$(echo "$MODEL_LINE" | sed -E 's/^[[:space:]]*model_sentence:[[:space:]]*"(.*)",[[:space:]]*$/\1/' )
+    MODEL_WORDS=$(echo "$MODEL_TEXT" | tr -d '"' | wc -w | tr -d ' ')
+    MODEL_SENTENCES=$(echo "$MODEL_TEXT" | grep -o '[.!?]' | wc -l | tr -d ' ')
+
     if [ "$MODEL_CHARS" -lt 200 ]; then
       echo -e "   ${RED}❌ FAIL ($LABEL): writing.js model_sentence too short ($MODEL_CHARS chars on that line) — need >= 200${NC}"
       echo -e "   ${YELLOW}   FIX: Expand model_sentence to >= 25 complete sentences covering week vocabulary${NC}"
       ERRORS=$((ERRORS+1))
+    elif [ "$MODEL_WORDS" -lt 45 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): writing.js model_sentence has only $MODEL_WORDS words — need >= 45${NC}"
+      echo -e "   ${YELLOW}   FIX: Add richer model with full ideas (not short fragments)${NC}"
+      ERRORS=$((ERRORS+1))
+    elif [ "$MODEL_SENTENCES" -lt 6 ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): writing.js model_sentence has only $MODEL_SENTENCES sentence(s) — need >= 6${NC}"
+      echo -e "   ${YELLOW}   FIX: Ensure model_sentence includes multiple complete sentences for Write/Video guidance${NC}"
+      ERRORS=$((ERRORS+1))
     else
-      echo -e "   ${GREEN}✅ PASS ($LABEL): writing.js schema correct (model_sentence: $MODEL_CHARS chars)${NC}"
+      echo -e "   ${GREEN}✅ PASS ($LABEL): writing.js schema correct ($MODEL_CHARS chars, $MODEL_WORDS words, $MODEL_SENTENCES sentences)${NC}"
     fi
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 19.5: Core station schema must match runtime components
+# =============================================================================
+echo -e "${BOLD}[CHECK 19.5] Core station schema — read/explore/ask_ai/shadowing/logic_science${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  SCHEMA_ERRS=""
+
+  READ_FILE="${dir}/read.js"
+  EXP_FILE="${dir}/explore.js"
+  ASK_FILE="${dir}/ask_ai.js"
+  SH_FILE="${dir}/shadowing.js"
+  LOGIC_FILE="${dir}/logic_science.js"
+
+  if [ -f "$READ_FILE" ]; then
+    grep -q "content_en:" "$READ_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • read.js missing content_en"
+    grep -q "comprehension_questions:" "$READ_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • read.js missing comprehension_questions"
+  else
+    SCHEMA_ERRS="${SCHEMA_ERRS}\n   • Missing file: read.js"
+  fi
+
+  if [ -f "$EXP_FILE" ]; then
+    grep -q "content_en:" "$EXP_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • explore.js missing content_en"
+    grep -q "check_questions:" "$EXP_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • explore.js missing check_questions"
+    grep -q "question:" "$EXP_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • explore.js missing question block"
+  else
+    SCHEMA_ERRS="${SCHEMA_ERRS}\n   • Missing file: explore.js"
+  fi
+
+  if [ -f "$ASK_FILE" ]; then
+    grep -q "prompts:" "$ASK_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • ask_ai.js missing prompts array"
+    ASK_COUNT=$(grep -c "context_en:" "$ASK_FILE" || true)
+    [ "$ASK_COUNT" -lt 5 ] && SCHEMA_ERRS="${SCHEMA_ERRS}\n   • ask_ai.js has only $ASK_COUNT prompt(s) — need >= 5"
+  else
+    SCHEMA_ERRS="${SCHEMA_ERRS}\n   • Missing file: ask_ai.js"
+  fi
+
+  if [ -f "$SH_FILE" ]; then
+    grep -q "script:\|sentences:" "$SH_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • shadowing.js missing script/sentences array"
+    SH_COUNT=$(grep -c "text:" "$SH_FILE" || true)
+    [ "$SH_COUNT" -lt 8 ] && SCHEMA_ERRS="${SCHEMA_ERRS}\n   • shadowing.js has only $SH_COUNT line(s) — need >= 8"
+  else
+    SCHEMA_ERRS="${SCHEMA_ERRS}\n   • Missing file: shadowing.js"
+  fi
+
+  if [ -f "$LOGIC_FILE" ]; then
+    grep -q "questions:" "$LOGIC_FILE" || SCHEMA_ERRS="${SCHEMA_ERRS}\n   • logic_science.js missing questions array"
+    LOGIC_COUNT=$(grep -c "question_en:" "$LOGIC_FILE" || true)
+    [ "$LOGIC_COUNT" -lt 3 ] && SCHEMA_ERRS="${SCHEMA_ERRS}\n   • logic_science.js has only $LOGIC_COUNT question(s) — need >= 3"
+  else
+    SCHEMA_ERRS="${SCHEMA_ERRS}\n   • Missing file: logic_science.js"
+  fi
+
+  if [ -n "$SCHEMA_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): Core schema mismatch:${NC}"
+    echo -e "$SCHEMA_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: Align files to W16 runtime schema to avoid endless loading states${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): core runtime schema is valid${NC}"
   fi
 done
 echo ""
@@ -815,7 +893,38 @@ for dw_file in "$DW_ADV" "$DW_EASY"; do
     echo -e "   ${YELLOW}FIX: Restore real topic-specific video IDs in $dw_file${NC}"
     ERRORS=$((ERRORS+1))
   else
-    echo -e "   ${GREEN}✅ PASS ($LABEL): $TOTAL_COUNT videos, $UNIQUE_COUNT unique IDs (no generic fallback)${NC}"
+    BAD_FORMAT=$(echo "$VIDEO_IDS" | grep -vE '^[A-Za-z0-9_-]{11}$' || true)
+    if [ -n "$BAD_FORMAT" ]; then
+      echo -e "   ${RED}❌ FAIL ($LABEL): Invalid videoId format detected:${NC}"
+      echo "$BAD_FORMAT" | while IFS= read -r vid; do echo -e "   ${RED}   • $vid${NC}"; done
+      echo -e "   ${YELLOW}FIX: videoId must be valid 11-char YouTube ID${NC}"
+      ERRORS=$((ERRORS+1))
+      continue
+    fi
+
+    THUMB_FAIL=0
+    if command -v curl >/dev/null 2>&1; then
+      while IFS= read -r vid; do
+        [ -z "$vid" ] && continue
+        CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://img.youtube.com/vi/${vid}/mqdefault.jpg" || echo "000")
+        if [ "$CODE" = "404" ] || [ "$CODE" = "000" ]; then
+          echo -e "   ${RED}❌ FAIL ($LABEL): Thumbnail check failed for videoId '${vid}' (HTTP ${CODE})${NC}"
+          THUMB_FAIL=1
+        fi
+      done <<EOF
+$VIDEO_IDS
+EOF
+    else
+      echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): curl not available, thumbnail validation skipped${NC}"
+      WARNINGS=$((WARNINGS+1))
+    fi
+
+    if [ "$THUMB_FAIL" -eq 1 ]; then
+      echo -e "   ${YELLOW}FIX: Re-run update_videos.js or replace dead YouTube IDs${NC}"
+      ERRORS=$((ERRORS+1))
+    else
+      echo -e "   ${GREEN}✅ PASS ($LABEL): $TOTAL_COUNT videos, $UNIQUE_COUNT unique IDs + thumbnails reachable${NC}"
+    fi
   fi
 done
 echo ""

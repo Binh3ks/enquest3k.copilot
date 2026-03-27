@@ -17,7 +17,7 @@
 #   6. Generate images (automated AI) — image prompt files must exist first
 #   7. Fetch videos (YouTube) — REQUIRES video_tasks.json entries, backs up daily_watch.js
 #   8. Final validation
-#   8.5. CODE QUALITY GATE (25 checks) — verifies image prompts + video IDs + all schemas
+#   8.5. CODE QUALITY GATE (34 checks) — verifies image prompts + video IDs + all schemas + W20 lessons
 #   9. Report & cleanup
 #
 # CRITICAL RULES:
@@ -118,6 +118,7 @@ echo -e "${RED}   ⚠️  COVER NAMING: image_url in read.js/explore.js must use
 echo -e "${RED}      e.g. read_cover_w17.jpg — NOT read_cover_w017.jpg (w016 is unique to W16 golden)${NC}"
 echo -e "${RED}      Check 26 will FAIL if image_url does not match a real file on disk.${NC}"
 echo -e "${YELLOW}   NOTE: Code Quality Gate Check 25 will FAIL if these files are missing${NC}"
+echo -e "${YELLOW}         Code Quality Gate Checks 31-34 catch: no conv_cards / image missing / video dup / vocab count mismatch${NC}"
 echo -e "${YELLOW}         Code Quality Gate Check 26 will FAIL if cover image_url doesn't match actual filename${NC}"
 echo ""
 read -p "Press Enter after you have created all 29 files (or Ctrl+C to abort)..."
@@ -273,6 +274,20 @@ echo ""
 # Step 7: Fetch videos
 echo -e "${YELLOW}[7/9] 📹 Fetching videos from YouTube...${NC}"
 
+# SAFETY CHECK 0: Always regenerate week video_queries.json before update
+echo -e "${CYAN}   Regenerating week video_queries.json from blueprint...${NC}"
+node tools/generate_video_queries.js $WEEK
+if [ $? -ne 0 ]; then
+  echo -e "${RED}❌ Failed to generate video_queries.json for week $(printf '%02d' $WEEK)${NC}"
+  exit 1
+fi
+VQ_FILE="src/data/weeks/week_$(printf '%02d' $WEEK)/video_queries.json"
+if [ ! -f "$VQ_FILE" ]; then
+  echo -e "${RED}❌ ABORT: Missing $VQ_FILE after generation${NC}"
+  exit 1
+fi
+echo -e "${GREEN}   ✅ video_queries.json refreshed: $VQ_FILE${NC}"
+
 # SAFETY CHECK 1: video_tasks.json must have entries for this week
 echo -e "${CYAN}   Checking video_tasks.json has Week $(printf '%02d' $WEEK) entries...${NC}"
 VT_FILE="src/data/video_tasks.json"
@@ -308,6 +323,52 @@ echo -e "${YELLOW}   catch this — if it fails, restore from .bak files above.$
 node tools/update_videos.js $WEEK
 if [ $? -ne 0 ]; then
   echo -e "${RED}❌ Video fetch failed!${NC}"
+  exit 1
+fi
+
+# SAFETY CHECK 3: Validate fetched video thumbnails are not 404
+echo -e "${CYAN}   Validating fetched video thumbnails...${NC}"
+WEEK=$WEEK python3 << 'EOF'
+import os
+import re
+import sys
+from pathlib import Path
+from urllib.request import Request, urlopen
+
+week = int(os.environ.get('WEEK', 0))
+week_str = f"{week:02d}"
+files = [
+  Path(f"src/data/weeks/week_{week_str}/daily_watch.js"),
+  Path(f"src/data/weeks_easy/week_{week_str}/daily_watch.js"),
+]
+
+bad = []
+for f in files:
+  if not f.exists():
+    continue
+  txt = f.read_text(encoding='utf-8')
+  ids = re.findall(r'videoId:\s*"([^"]+)"', txt)
+  for vid in ids:
+    url = f"https://img.youtube.com/vi/{vid}/mqdefault.jpg"
+    try:
+      req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+      with urlopen(req, timeout=8) as r:
+        if r.status >= 400:
+          bad.append((str(f), vid, r.status))
+    except Exception:
+      bad.append((str(f), vid, 'ERR'))
+
+if bad:
+  print("❌ Thumbnail validation failed:")
+  for path, vid, code in bad:
+    print(f"   - {path}: {vid} -> {code}")
+  sys.exit(1)
+
+print("✅ All daily_watch thumbnail URLs are reachable")
+EOF
+if [ $? -ne 0 ]; then
+  echo -e "${RED}❌ Video thumbnail validation failed!${NC}"
+  echo -e "${YELLOW}   FIX: Re-run update_videos.js or replace invalid video IDs manually.${NC}"
   exit 1
 fi
 echo -e "${GREEN}✅ Video fetch complete${NC}"
