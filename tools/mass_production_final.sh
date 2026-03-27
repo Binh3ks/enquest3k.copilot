@@ -113,10 +113,7 @@ echo -e "${YELLOW}📸 ALSO REQUIRED — Image prompt files (for manual + AI ima
 if [ "$WEEK" -ge 20 ]; then
   echo -e "${YELLOW}   Create ONE unified file in Production_FINAL/IMAGE PROMPTS/:${NC}"
   echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_image_prompts.txt${NC}"
-  echo -e "${YELLOW}      (31 lines: vocab/wordpower + 2 covers + 10 bar models for both modes)${NC}"
-  echo -e "${YELLOW}      Required bar model names:${NC}"
-  echo -e "${YELLOW}      - barmodel_w$(printf '%02d' $WEEK)_adv_p1.jpg ... barmodel_w$(printf '%02d' $WEEK)_adv_p5.jpg${NC}"
-  echo -e "${YELLOW}      - barmodel_w$(printf '%02d' $WEEK)_easy_p1.jpg ... barmodel_w$(printf '%02d' $WEEK)_easy_p5.jpg${NC}"
+  echo -e "${YELLOW}      (>=21 lines: vocab/wordpower + cover images; bar models are generated separately)${NC}"
 else
   echo -e "${YELLOW}   Create BOTH files in Production_FINAL/IMAGE PROMPTS/:${NC}"
   echo -e "${YELLOW}      week_$(printf '%02d' $WEEK)_image_prompts.txt      (Advanced — 26 lines)${NC}"
@@ -129,6 +126,7 @@ echo -e "${RED}      Check 26 will FAIL if image_url does not match a real file 
 echo -e "${YELLOW}   NOTE: Code Quality Gate Check 25 will FAIL if these files are missing${NC}"
 echo -e "${YELLOW}         Code Quality Gate Check 31 catches Singapore Math progression + bar_model integrity (W22+)${NC}"
 echo -e "${YELLOW}         Code Quality Gate Check 26 will FAIL if cover image_url doesn't match actual filename${NC}"
+echo -e "${YELLOW}         For W20+, bar-model lines in prompt file are optional legacy format (not required).${NC}"
 echo ""
 echo -e "${CYAN}📐 SINGAPORE MATH SCAFFOLDING (MANDATORY FROM W22+):${NC}"
 echo -e "${CYAN}   • W22-24: 5 problems, >=2 types, Advanced wording longer + clearer reasoning than Easy${NC}"

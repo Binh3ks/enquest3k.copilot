@@ -951,7 +951,7 @@ echo ""
 
 # =============================================================================
 # CHECK 25: Image prompt files must exist for week N
-# Week 20+: one unified prompt file containing BOTH advanced/easy bar model names.
+# Week 20+: one unified prompt file for non-bar-model assets.
 # Week < 20: legacy mode (advanced + optional easy/shared prompts).
 # =============================================================================
 echo -e "${BOLD}[CHECK 25] Image prompts - files must exist for Week ${WEEK_PAD}${NC}"
@@ -962,17 +962,17 @@ EASY_PROMPTS="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_easy_image_prompts.txt"
 if [ "$WEEK_INT" -ge 20 ]; then
   if [ ! -f "$ADV_PROMPTS" ]; then
     echo -e "   ${RED}FAIL: Missing unified image prompts file: $ADV_PROMPTS${NC}"
-    echo -e "   ${YELLOW}FIX: Create ONE file week_${WEEK_PAD}_image_prompts.txt with both mode bar models${NC}"
+    echo -e "   ${YELLOW}FIX: Create ONE file week_${WEEK_PAD}_image_prompts.txt for vocab/wordpower/covers assets${NC}"
     ERRORS=$((ERRORS+1))
   else
     PROMPT_COUNT=$(grep -c "Filename:" "$ADV_PROMPTS" || true)
-    if [ "$PROMPT_COUNT" -lt 31 ]; then
-      echo -e "   ${RED}FAIL: $ADV_PROMPTS has only $PROMPT_COUNT prompts - need >= 31 for W20+${NC}"
-      echo -e "   ${YELLOW}FIX: Include vocab/wordpower/covers + 10 bar models (adv/easy)${NC}"
+    if [ "$PROMPT_COUNT" -lt 21 ]; then
+      echo -e "   ${RED}FAIL: $ADV_PROMPTS has only $PROMPT_COUNT prompts - need >= 21 for W20+${NC}"
+      echo -e "   ${YELLOW}FIX: Include non-bar-model assets (vocab/wordpower/covers). Bar models are handled separately.${NC}"
       ERRORS=$((ERRORS+1))
     else
       MISSING_BAR=0
-      for i in 1 2 3 4 5; do
+      for i in; do
         if ! grep -q "Filename: barmodel_w${WEEK_PAD}_adv_p${i}\.jpg" "$ADV_PROMPTS"; then
           echo -e "   ${RED}FAIL: Missing barmodel_w${WEEK_PAD}_adv_p${i}.jpg in unified prompts${NC}"
           MISSING_BAR=1
@@ -987,7 +987,7 @@ if [ "$WEEK_INT" -ge 20 ]; then
         echo -e "   ${YELLOW}FIX: Add full dual-mode bar model filenames (adv/easy p1..p5) to week_${WEEK_PAD}_image_prompts.txt${NC}"
         ERRORS=$((ERRORS+1))
       else
-        echo -e "   ${GREEN}PASS: Unified prompts found ($PROMPT_COUNT lines) with full adv/easy bar model filenames${NC}"
+        echo -e "   ${GREEN}PASS: Unified prompts found ($PROMPT_COUNT lines); bar-model prompt lines are optional legacy mode${NC}"
       fi
     fi
   fi
