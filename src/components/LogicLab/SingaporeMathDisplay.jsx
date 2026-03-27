@@ -14,7 +14,7 @@ import { getImageUrl } from '../../utils/imageUrl';
  * - Audio support for questions
  * - Hint system
  */
-const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress }) => {
+const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningMode = 'advanced' }) => {
   const [currentProblem, setCurrentProblem] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState(null);
@@ -25,14 +25,21 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress }) => {
   const problem = problems[currentProblem];
 
   useEffect(() => {
-    // Load saved progress
-    const saved = localStorage.getItem(`singapore_math_w${weekNumber}`);
+    // Load saved progress - include learningMode in key to separate Easy/Advanced
+    const saved = localStorage.getItem(`singapore_math_w${weekNumber}_${learningMode}`);
     if (saved) {
       const data = JSON.parse(saved);
       setCompleted(data.completed || []);
       setCurrentProblem(data.currentProblem || 0);
+    } else {
+      // Reset to first problem if no saved data for this mode
+      setCurrentProblem(0);
+      setCompleted([]);
     }
-  }, [weekNumber]);
+    setUserAnswer('');
+    setFeedback(null);
+    setShowHint(false);
+  }, [weekNumber, learningMode]);
 
   useEffect(() => {
     // Update parent progress
@@ -42,7 +49,7 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress }) => {
   }, [completed.length, onProgress]);
 
   const saveProgress = (newCompleted, newCurrent) => {
-    localStorage.setItem(`singapore_math_w${weekNumber}`, JSON.stringify({
+    localStorage.setItem(`singapore_math_w${weekNumber}_${learningMode}`, JSON.stringify({
       completed: newCompleted,
       currentProblem: newCurrent
     }));

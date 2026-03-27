@@ -12,7 +12,7 @@ import { getImageUrl } from '../../utils/imageUrl';
  * - Open-ended answers
  * - Progress tracking
  */
-const LogicScienceDisplay = ({ weekNumber, questions = [], onProgress }) => {
+const LogicScienceDisplay = ({ weekNumber, questions = [], onProgress, learningMode = 'advanced' }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState(null);
@@ -22,13 +22,18 @@ const LogicScienceDisplay = ({ weekNumber, questions = [], onProgress }) => {
   const question = questions[currentQuestion];
 
   useEffect(() => {
-    const saved = localStorage.getItem(`logic_science_w${weekNumber}`);
+    const saved = localStorage.getItem(`logic_science_w${weekNumber}_${learningMode}`);
     if (saved) {
       const data = JSON.parse(saved);
       setCompleted(data.completed || []);
       setCurrentQuestion(data.currentQuestion || 0);
+    } else {
+      setCurrentQuestion(0);
+      setCompleted([]);
     }
-  }, [weekNumber]);
+    setUserAnswer('');
+    setFeedback(null);
+  }, [weekNumber, learningMode]);
 
   useEffect(() => {
     if (onProgress) {
@@ -37,7 +42,7 @@ const LogicScienceDisplay = ({ weekNumber, questions = [], onProgress }) => {
   }, [completed.length, onProgress]);
 
   const saveProgress = (newCompleted, newCurrent) => {
-    localStorage.setItem(`logic_science_w${weekNumber}`, JSON.stringify({
+    localStorage.setItem(`logic_science_w${weekNumber}_${learningMode}`, JSON.stringify({
       completed: newCompleted,
       currentQuestion: newCurrent
     }));

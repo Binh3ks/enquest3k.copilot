@@ -7,6 +7,20 @@
 
 ---
 
+## 🚨 CRITICAL ARCHITECTURE NOTE (Updated March 27, 2026 — Post W20 Audit)
+
+**CURRENT DEPLOYED STRUCTURE (W16-W20 golden standard):**
+- **W16+ = 16 files/mode** (read.js + explore.js remain as single files)
+- Files: ask_ai, daily_watch, dictation, explore, games, grammar, index, logic_science, mindmap, read, shadowing, singapore_math, vocab, word_match, word_power, writing
+- **Total: 33 files** (1 AI Tutor + 16 Advanced + 16 Easy)
+- **Golden clone source: Week 16** (`src/data/weeks/week_16/` and `src/data/weeks_easy/week_16/`)
+
+**⚠️ Sub-tab architecture (social_quiz.js, read_stem.js, read_social.js, explore_stem.js, explore_social.js) is PLANNED but NOT YET DEPLOYED.**  
+Any references to "19 files" or "7 sub-tab files" below are aspirational specs — **IGNORE THEM until a separate spec says otherwise.**  
+**Rule: When in doubt, follow the Onboarding Prompt file count (33 files = 16+16+1).**
+
+---
+
 ## ⚠️ BEFORE I START: ANTI-HALLUCINATION PLEDGE
 
 **I, the AI Agent, commit to:**
@@ -598,7 +612,7 @@ grep -Eic "WEEK_N_KEYWORD1|WEEK_N_KEYWORD2|WEEK_N_KEYWORD3" src/data/weeks/week_
 #### 🔴 WEEK STRUCTURE VARIES BY WEEK NUMBER:
 
 **W1-15:** 14 stations + index.js = **15 files**  
-**W16+:** 11 stations + 7 sub-tabs + index.js = **19 files**
+**W16+:** 15 stations + index.js = **16 files** (read.js + explore.js + logic_science.js + singapore_math.js + games.js; logic.js REMOVED)
 
 #### Actions:
 
@@ -617,25 +631,18 @@ if [ N -le 15 ]; then
 fi
 ```
 
-**Step 3.1b: Clone files (W16+ - 19 files total)**
+**Step 3.1b: Clone files (W16+ - 16 files total) ← CURRENT GOLDEN STANDARD**
 ```bash
-# For Weeks 16+ ONLY
+# For Weeks 16+ ONLY — clone từ Week 16 (16 files, r/e/j stay as single files)
 if [ N -ge 16 ]; then
-  # 11 standard stations (NO read, explore, logic)
-  for file in vocab word_power grammar dictation shadowing word_match ask_ai mindmap writing daily_watch games; do
+  for file in ask_ai daily_watch dictation explore games grammar logic_science mindmap read shadowing singapore_math vocab word_match word_power writing; do
     cp "src/data/weeks/week_16/$file.js" "src/data/weeks/week_N/$file.js"
     echo "Cloned: $file.js"
   done
   
-  # 7 sub-tab files (NEW from W16+)
-  for file in logic_science singapore_math social_quiz read_stem read_social explore_stem explore_social; do
-    cp "src/data/weeks/week_16/$file.js" "src/data/weeks/week_N/$file.js"
-    echo "Cloned sub-tab: $file.js"
-  done
-  
   cp src/data/weeks/week_16/index.js src/data/weeks/week_N/index.js
   echo "Cloned: index.js"
-  echo "✅ W16+: 19 files cloned (11 stations + 7 sub-tabs + index)"
+  echo "✅ W16+: 16 files cloned (15 stations + index)"
 fi
 ```
 
@@ -652,7 +659,7 @@ fi
 
 **🚨 CRITICAL RULE - VOCAB COUNT & BOLD WORDS:**
 - **W1-15:** vocab.js = 10 words → read.js + explore.js MUST bold 10+ words
-- **W16+:** vocab.js = 13+ words (10 core + 3+ STEM/Social seeds) → read_stem.js + read_social.js + explore_stem.js + explore_social.js MUST bold 13+ words EACH
+- **W16+:** vocab.js = 13+ words (10 core + 3+ STEM/Social seeds) → read.js + explore.js MUST bold 13+ words EACH
 - **100% Coverage Rule:** ALL words in vocab.js MUST appear as **bold** across all story/activity files
 - **Reason:** Vocabulary continuity (vocab → read → explore → word_power workflow)
 
@@ -707,23 +714,14 @@ node --input-type=module < src/data/weeks/week_N/vocab.js && echo "✅ vocab.js 
 - [ ] All audio paths use `/audio/weekN/` (zero-padded)
 - [ ] Syntax validation PASSED
 
-**read.js (W1-15 ONLY):**
-- [ ] Story about Week N theme (Advanced context: school/formal)
-- [ ] 20-23 sentences (Advanced mode)
-- [ ] 10 bold words: `**word**` format
+**read.js (BOTH W1-15 and W16+):**
+- [ ] Story about Week N theme (Advanced context: school/formal for W1-15; STEM/Science for W16+)
+- [ ] 10 bold words: `**word**` format (W16+: min 13 bold words to cover all vocab)
 - [ ] `comprehension_questions` field (NOT `check_questions`)
 - [ ] Syntax validation PASSED
 
-**read_stem.js + read_social.js (W16+ ONLY):**
-- [ ] STEM story: Science/Tech/Engineering/Math context (5 paragraphs, 10 STEM vocab bolded)
-- [ ] Social story: History/Geography/Culture context (5 paragraphs, 10 social vocab bolded)
-- [ ] BOTH stories: 3-4 comprehension questions each
-- [ ] Audio paths: `/audio/weekN/read_stem.mp3` and `/audio/weekN/read_social.mp3`
-- [ ] Syntax validation PASSED
-
 **dictation.js & shadowing.js:**
-- [ ] W1-15: **COPIED EXACT SENTENCES from read.js** (NOT self-created)
-- [ ] W16+: **COPIED from read_stem.js** (use STEM story sentences)
+- [ ] **COPIED EXACT SENTENCES from read.js** (NOT self-created, applies to ALL weeks)
 - [ ] 20-23 items (matches source story sentence count)
 - [ ] Each item has `audio_url` field
 - [ ] `shadowing.js` has `audio_full` field at root
@@ -753,22 +751,17 @@ grep -c '"question":' src/data/weeks/week_N/grammar.js
 - [ ] Each has: question, answer array, bar_model path, hint, math_vocab
 - [ ] Syntax validation PASSED
 
-**social_quiz.js (W16+ ONLY):**
-- [ ] 7 MCQ questions (History + Geography + Culture)
-- [ ] Each has: category, question, 4 options, correct_answer, explanation
-- [ ] Syntax validation PASSED
+**social_quiz.js (W16+ — NOT YET DEPLOYED, skip until spec provided):**
+- ~~7 MCQ questions (History + Geography + Culture)~~ — ⚠️ PLANNED, use when spec available
 
-**explore_stem.js + explore_social.js (W16+ ONLY):**
-- [ ] STEM: 3 hands-on activities (experiment, observation, design)
-- [ ] Social: 3 activities (research, comparison, map work)
-- [ ] Each has materials/steps, concept tags, discussion questions
-- [ ] Syntax validation PASSED
+**explore_stem.js + explore_social.js (W16+ — NOT YET DEPLOYED, skip):**
+- ~~STEM + Social explore sub-tabs~~ — ⚠️ PLANNED, use explore.js (single file) until spec provided
 
 **index.js:**
-- [ ] W1-15: 15th file | W16+: 19th file — week WILL NOT LOAD without it!
+- [ ] W1-15: 15th file | W16+: 16th file — week WILL NOT LOAD without it!
 - [ ] voiceConfig has **5 DISTINCT** voice names (D, F, C, J, GB-B)
 - [ ] weekTitle_en and weekTitle_vi match Syllabus
-- [ ] W16+: Imports all 7 sub-tab files (logic_science, singapore_math, social_quiz, read_stem, read_social, explore_stem, explore_social)
+- [ ] W16+: Imports all 15 station files (incl. logic_science, singapore_math, games; NOT logic.js)
 - [ ] All import paths updated to week_N
 - [ ] Syntax validation PASSED
 
@@ -801,11 +794,10 @@ if [ N -le 15 ]; then
     exit 1
   fi
 else
-  # W16+: Check read_stem.js and read_social.js
-  stem_mentions=$(grep -Eic "WEEK_N_KEYWORD1|WEEK_N_KEYWORD2" src/data/weeks/week_N/read_stem.js)
-  social_mentions=$(grep -Eic "WEEK_N_KEYWORD1|WEEK_N_KEYWORD2" src/data/weeks/week_N/read_social.js)
-  if [[ $stem_mentions -lt 2 ]] || [[ $social_mentions -lt 2 ]]; then
-    echo "❌ FAILED: STEM or Social story missing theme keywords"
+  # W16+: Check read.js (single story file for W16+)
+  stem_mentions=$(grep -Eic "WEEK_N_KEYWORD1|WEEK_N_KEYWORD2" src/data/weeks/week_N/read.js)
+  if [[ $stem_mentions -lt 3 ]]; then
+    echo "❌ FAILED: read.js doesn't mention Week N theme"
     exit 1
   fi
 fi
@@ -1052,7 +1044,7 @@ head -10 src/data/weeks/week_N/grammar.js | grep -i "description"
 #### 🔴 WEEK STRUCTURE VARIES BY WEEK NUMBER:
 
 **W1-15:** 14 stations + index.js = **15 files**  
-**W16+:** 11 stations + 7 sub-tabs + index.js = **19 files**
+**W16+:** 15 stations + index.js = **16 files** (same file list as Advanced, simpler content)
 
 #### Actions:
 
@@ -1071,25 +1063,18 @@ if [ N -le 15 ]; then
 fi
 ```
 
-**Step 4.1b: Clone Easy files (W16+ - 19 files)**
+**Step 4.1b: Clone Easy files (W16+ - 16 files) ← CURRENT GOLDEN STANDARD**
 ```bash
-# For Weeks 16+ ONLY
+# For Weeks 16+ ONLY — clone từ Week 16 Easy (16 files)
 if [ N -ge 16 ]; then
-  # 11 standard stations
-  for file in vocab word_power grammar dictation shadowing word_match ask_ai mindmap writing daily_watch games; do
+  for file in ask_ai daily_watch dictation explore games grammar logic_science mindmap read shadowing singapore_math vocab word_match word_power writing; do
     cp "src/data/weeks_easy/week_16/$file.js" "src/data/weeks_easy/week_N/$file.js"
     echo "Cloned easy: $file.js"
   done
   
-  # 7 sub-tab files
-  for file in logic_science singapore_math social_quiz read_stem read_social explore_stem explore_social; do
-    cp "src/data/weeks_easy/week_16/$file.js" "src/data/weeks_easy/week_N/$file.js"
-    echo "Cloned easy sub-tab: $file.js"
-  done
-  
   cp src/data/weeks_easy/week_16/index.js src/data/weeks_easy/week_N/index.js
   echo "Cloned easy: index.js"
-  echo "✅ W16+ Easy: 19 files cloned"
+  echo "✅ W16+ Easy: 16 files cloned"
 fi
 ```
 
@@ -1110,10 +1095,10 @@ head -1 src/data/weeks_easy/week_N/read.js
 ```
 
 #### Self-Check:
-- [ ] W1-15: 15 Easy files | W16+: 19 Easy files created
+- [ ] W1-15: 15 Easy files | W16+: **16 Easy files** created
 - [ ] Easy vocabulary = Tier 1 (concrete actions: sing, dance, run)
 - [ ] W1-15: Easy read.js = Personal context ("I have...", "My name is...")
-- [ ] W16+: Easy read_stem.js + read_social.js = Personal context (simpler than Advanced)
+- [ ] W16+: Easy read.js = Simpler/personal context (same single file)
 - [ ] W1-15: Advanced read.js ≠ Easy read.js (first sentence different)
 - [ ] W16+: Advanced stories ≠ Easy stories (context/complexity different)
 - [ ] dictation.js/shadowing.js = Copied from Easy source story (NOT Advanced)
@@ -1128,7 +1113,7 @@ grep -c '"question":' src/data/weeks_easy/week_N/grammar.js    # = 20
 if [ N -ge 16 ]; then
   grep -c '"id":' src/data/weeks_easy/week_N/logic_science.js    # = 3
   grep -c '"id":' src/data/weeks_easy/week_N/singapore_math.js  # = 5
-  grep -c '"id":' src/data/weeks_easy/week_N/social_quiz.js     # = 7
+  # social_quiz.js: NOT YET DEPLOYED
 fi
 ```
 - [ ] index.js voiceConfig has 5 DISTINCT voices (both modes)
@@ -1145,7 +1130,7 @@ grep -c 'word:' src/data/weeks/week_N/word_power.js
 grep -E '^\s+word: "[^ "]+",' src/data/weeks/week_N/word_power.js | grep -v 'audio_'
 # Empty output = PASS | Any output = FAIL → use phrase (e.g. "go to school" not "school")
 ```
-- [ ] W16+: All 7 sub-tab files have theme-aligned content
+- [ ] W16+: logic_science.js + singapore_math.js + games.js have theme-aligned content
 - [ ] All files content matches week theme (not old clone source)
 - [ ] All files syntax validated
 
@@ -1606,6 +1591,42 @@ grep -oP 'videoId:\s*["'\''](\w+)' src/data/weeks_easy/week_N/daily_watch.js
 
 ---
 
+### 🛡️ BƯỚC 8.5: CODE QUALITY GATE (MANDATORY — W20 Lesson)
+
+**Time: ~2 minutes**  
+**Purpose: Automated validation of 34 checks — catches schema, content, and W20-class bugs BEFORE commit**
+
+> **W20 Lesson (March 27, 2026):** Agent bypassed manual checks → 3 UI files uncommitted, conversation_cards missing, 10 vocab instead of 13, images out of order.  
+> **Solution:** Always run quality gate script BEFORE committing ANY week.
+
+#### Actions:
+
+```bash
+# Run all 34 quality gate checks
+bash tools/code_quality_gate.sh N
+
+# Expected output ends with:
+# ✅ CODE QUALITY GATE PASSED — Week N
+# All 34 checks passed. Safe to commit.
+```
+
+#### What the 34 checks cover:
+- Checks 1-10: Code patterns (Python usage, template literals, STATIC_STATIONS)
+- Checks 11-22: Schema (directories, files, metadata.js title, vocab count)
+- Checks 23-26: Content (video IDs, image prompts, cover images on disk)
+- Checks 27-30: Counts & registration (grammar 20Q, gameAdaptation, AI Tutor tabs, games.js mini-games)
+- **CHECK 31 (W20):** `conversation_cards ≥ 3` in `week_N_real.js`
+- **CHECK 32 (W20):** All `image_url` in vocab.js exist on disk
+- **CHECK 33 (W20):** No duplicate video IDs from previous week
+- **CHECK 34 (W20):** vocab.js word count matches image prompts vocab count
+
+#### Self-Check:
+- [ ] `bash tools/code_quality_gate.sh N` → **ALL 34 PASSED**
+- [ ] 🔴 **If ANY check fails → STOP, fix the issue, re-run gate**
+- [ ] DO NOT commit until gate passes completely
+
+---
+
 ### ✅ BƯỚC 9: BROWSER TEST (MANDATORY BEFORE DEPLOY)
 
 **Time: ~10 minutes**  
@@ -1723,12 +1744,13 @@ grep "weekN" src/config/gameAdaptation.js
 #### Pre-Deploy Final Checklist:
 - [ ] **All content files created:**
   - W1-15: 31 files (1 AI Tutor + 15 Advanced + 15 Easy)
-  - W16+: 39 files (1 AI Tutor + 19 Advanced + 19 Easy with sub-tabs)
+  - W16+: **33 files** (1 AI Tutor + 16 Advanced + 16 Easy)
 - [ ] All files syntax validated (4 commands × N files)
 - [ ] UI imports added (3 files: StoryMissionTab, FreeTalkTab, gameAdaptation)
 - [ ] voiceConfig has 5 distinct voices per mode
 - [ ] All station content matches week theme (not clone source)
-- [ ] W16+: All 7 sub-tab files created (logic_science, singapore_math, social_quiz, read_stem, read_social, explore_stem, explore_social)
+- [ ] W16+: logic_science.js (3Q) + singapore_math.js (5Q) created
+- [ ] ❌ **REMOVED: All 7 sub-tab files** (social_quiz, read_stem, read_social, explore_stem, explore_social NOT YET DEPLOYED)
 - [ ] W16+: Logic Lab total = 15 questions (3+5+7)
 - [ ] Images uploaded to R2
 - [ ] Daily Watch videoIds are real YouTube videos (tested on youtube.com)
@@ -1743,7 +1765,7 @@ git status
 
 # Expected files:
 # W1-15: 31 content files (1 AI Tutor + 15 Adv + 15 Easy)
-# W16+: 39 content files (1 AI Tutor + 19 Adv + 19 Easy)
+# W16+: 33 content files (1 AI Tutor + 16 Adv + 16 Easy)
 # + 3 UI files (StoryMissionTab, FreeTalkTab, gameAdaptation)
 # + Images (~20-30 files)
 # + NO audio files (on-demand generation, no pre-upload)
@@ -1779,17 +1801,17 @@ if [ N -le 15 ]; then
 - Videos: 5 videos (4-5 priority channels)
 - UI: Updated StoryMissionTab + FreeTalkTab + gameAdaptation"
 else
-  git commit -m "Add Week N: AI Tutor + 36 stations + sub-tabs (W16+ structure)
+  git commit -m "Add Week N: AI Tutor + 32 stations (W16+ structure)
 
-- AI Tutor: 3 missions (Week 7 format)
-- Advanced: 18 stations (11 standard + 7 sub-tabs)
-- Easy: 18 stations (11 standard + 7 sub-tabs)
-- Sub-tabs: Logic Lab (3+5+7=15Q), Read (STEM+Social), Explore (STEM+Social)
+- AI Tutor: 3 missions (V28 format — nova_instructions, v28_format_notes)
+- Advanced: 16 stations (15 standard + index.js)
+- Easy: 16 stations (15 standard + index.js)
+- New vs W1-15: logic_science.js + singapore_math.js + games.js (replaces logic.js)
 - Audio: On-demand via Deepgram Worker
 - Images: Generated via Nano Banana, uploaded to R2
 - Videos: 5 videos (4-5 priority channels)
 - UI: Updated StoryMissionTab + FreeTalkTab + gameAdaptation
-- STEM/Social integration: 70/30 ratio per Blueprint V5.0"
+- STEM integration: logic_science (3Q) + singapore_math (5Q)"
 fi
 ```
 
@@ -1849,7 +1871,7 @@ Verify Easy:
 - ✅ Read Syllabus for Week N content
 - ✅ Clone Week 7 (AI Tutor) + Week 6/16 (Stations - depends on week number)
 - ✅ W1-15: Clone from Week 6 (15 files/mode)
-- ✅ W16+: Clone from Week 16 (19 files/mode with sub-tabs)
+- ✅ W16+: Clone from Week 16 (**16 files/mode**: read.js + explore.js + logic_science.js + singapore_math.js + games.js à 11 others)
 - ✅ Use Node.js for ALL .js file creation
 - ✅ Validate syntax IMMEDIATELY after EACH file (4 commands)
 - ✅ Update UI imports (3 files: StoryMissionTab, FreeTalkTab, gameAdaptation)
@@ -1859,7 +1881,7 @@ Verify Easy:
 - ✅ Test ONE Deepgram call before batch (model: `aura-orion-en`)
 - ✅ Grep all files for theme keywords after cloning
 - ✅ Verify Daily Watch videoIds are real YouTube videos
-- ✅ W16+: Create all 7 sub-tab files (logic_science, singapore_math, social_quiz, read_stem, read_social, explore_stem, explore_social)
+- ✅ W16+: Create all 3 new station files (logic_science, singapore_math, games)
 
 ### **What I MUST NOT DO:**
 - ❌ Use Python to create .js files
@@ -1873,8 +1895,8 @@ Verify Easy:
 - ❌ Use same voice for all stations in voiceConfig
 - ❌ Clone golden standard without editing content
 - ❌ Fabricate YouTube videoIds
-- ❌ W16+: Create only 15 files (must be 19 files with sub-tabs!)
-- ❌ W16+: Use read.js, explore.js, logic.js (these are REPLACED by split files)
+- ❌ W16+: Forget logic_science.js / singapore_math.js / games.js (3 new files vs W1-15 REQUIRED)
+- ❌ W16+: Use logic.js (REPLACED by logic_science.js)
 
 ### **When to STOP and ASK:**
 - ⚠️ If Syllabus content unclear
@@ -1895,7 +1917,7 @@ After completing all 11 steps (BƯỚC -1 through BƯỚC 10), I will report:
 Summary:
 - **Files Created:** 
   - W1-15: 31 files (1 AI Tutor + 15 Advanced + 15 Easy)
-  - W16+: 39 files (1 AI Tutor + 19 Advanced + 19 Easy)
+  - W16+: **33 files** (1 AI Tutor + 16 Advanced + 16 Easy)
 - **Audio Files:** ON-DEMAND via Deepgram Worker (no pre-generation needed)
   - Auto-generated on first play, cached to R2
 - **Images:** [count] (Advanced + Easy) uploaded to R2
@@ -1906,17 +1928,19 @@ Summary:
 - Pre-Production System Check: Deepgram API ✅, R2 Permission ✅
 - voiceConfig: 5 distinct voices per mode ✅
 - Grammar Count: 20 exercises per mode ✅
-- W16+ Sub-Tabs: logic_science (3Q) + singapore_math (5Q) + social_quiz (7Q) = 15Q ✅
+- W16+ Logic Lab: logic_science (3Q) + singapore_math (5Q) = 8Q ✅
+- **Quality Gate: ALL 34 CHECKS PASSED** (bash tools/code_quality_gate.sh N) ✅
 - Theme Grep: All files contain week theme keywords ✅
 - Deepgram Model: `aura-<name>-en` (no -2- prefix) ✅
 - Mode Differentiation: Easy ≠ Advanced tested separately ✅
 - Browser Test: PASSED both modes ✅
 - Rollback Point: Created (tag: pre-week-N-backup) ✅
+- **git status check: 0 uncommitted files** ✅
 
 Golden Standards Used:
-- AI Tutor: Week 7 (V5.0 format)
+- AI Tutor: Week 16 (V28 format — 3 missions, nova_instructions, v28_format_notes)
 - W1-15 Stations: Week 6 (15 files structure)
-- W16+ Stations: Week 16 (19 files with sub-tabs)
+- W16+ Stations: Week 16 (**16 files structure**)
 
 Python Usage: ZERO (.js files created with Node.js ONLY)
 

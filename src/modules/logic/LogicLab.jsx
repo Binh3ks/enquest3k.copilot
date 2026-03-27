@@ -23,7 +23,12 @@ const LogicLab = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =>
   // Early return AFTER all hooks to comply with React Rules of Hooks
   const isW16Plus = data && (data.logic_science || data.singapore_math);
   if (isW16Plus) {
-    return <TabbedLogicLab weekNumber={parseInt(weekId)} weekData={data} />;
+    return <TabbedLogicLab 
+      key={`logic_lab_${weekId}_${learningMode}`}
+      weekNumber={parseInt(weekId)} 
+      weekData={data} 
+      learningMode={learningMode}
+    />;
   }
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Logic Lab...</div>;

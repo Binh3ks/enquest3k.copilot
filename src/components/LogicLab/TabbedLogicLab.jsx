@@ -14,7 +14,7 @@ import SocialQuizDisplay from './SocialQuizDisplay';
  * 
  * Total: 15 questions per week (3+5+7)
  */
-const TabbedLogicLab = ({ weekNumber, weekData }) => {
+const TabbedLogicLab = ({ weekNumber, weekData, learningMode = 'advanced' }) => {
   const [activeTab, setActiveTab] = useState('logic');
   const [progress, setProgress] = useState({
     logic: { completed: 0, total: 3 },
@@ -162,6 +162,7 @@ const TabbedLogicLab = ({ weekNumber, weekData }) => {
             weekNumber={weekNumber}
             questions={weekData?.logic_science?.questions || []}
             onProgress={handleLogicProgress}
+            learningMode={learningMode}
           />
         )}
         
@@ -170,6 +171,7 @@ const TabbedLogicLab = ({ weekNumber, weekData }) => {
             weekNumber={weekNumber}
             problems={weekData?.singapore_math?.problems || []}
             onProgress={handleSingaporeProgress}
+            learningMode={learningMode}
           />
         )}
         
@@ -178,6 +180,7 @@ const TabbedLogicLab = ({ weekNumber, weekData }) => {
             weekNumber={weekNumber}
             questions={weekData?.social_quiz?.questions || []}
             onProgress={handleSocialProgress}
+            learningMode={learningMode}
           />
         )}
       </div>

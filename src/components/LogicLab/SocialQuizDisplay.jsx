@@ -13,7 +13,7 @@ import { getImageUrl } from '../../utils/imageUrl';
  * - Progress tracking
  * - Audio support
  */
-const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress }) => {
+const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress, learningMode = 'advanced' }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [feedback, setFeedback] = useState(null);
@@ -23,13 +23,18 @@ const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress }) => {
   const question = questions[currentQuestion];
 
   useEffect(() => {
-    const saved = localStorage.getItem(`social_quiz_w${weekNumber}`);
+    const saved = localStorage.getItem(`social_quiz_w${weekNumber}_${learningMode}`);
     if (saved) {
       const data = JSON.parse(saved);
       setCompleted(data.completed || []);
       setCurrentQuestion(data.currentQuestion || 0);
+    } else {
+      setCurrentQuestion(0);
+      setCompleted([]);
     }
-  }, [weekNumber]);
+    setSelectedAnswer(null);
+    setFeedback(null);
+  }, [weekNumber, learningMode]);
 
   useEffect(() => {
     if (onProgress) {
@@ -38,7 +43,7 @@ const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress }) => {
   }, [completed.length, onProgress]);
 
   const saveProgress = (newCompleted, newCurrent) => {
-    localStorage.setItem(`social_quiz_w${weekNumber}`, JSON.stringify({
+    localStorage.setItem(`social_quiz_w${weekNumber}_${learningMode}`, JSON.stringify({
       completed: newCompleted,
       currentQuestion: newCurrent
     }));
