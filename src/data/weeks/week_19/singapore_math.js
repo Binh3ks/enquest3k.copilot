@@ -3,7 +3,7 @@ export default {
     {
       id: 1,
       type: "part_whole",
-      question_en: "Mary was 3 years old when this photo was taken. Now she is 8 years old. How many years have passed?",
+      question_en: "In a childhood archive photo, Mary is documented at age 3, whereas her current age is 8. Determine the number of years that have elapsed between the two points in time.",
       question_vi: "Mary 3 tuổi khi chụp ảnh này. Bây giờ cô ấy 8 tuổi. Đã qua bao nhiêu năm?",
       answer: ["5", "five", "5 years"],
       bar_model: "/images/week19/barmodel_w19_p1.jpg",
@@ -16,7 +16,7 @@ export default {
     {
       id: 2,
       type: "comparison",
-      question_en: "When Tom was a baby, he was 50 cm tall. Now he is 120 cm tall. How much has he grown?",
+      question_en: "Historical growth records show Tom measured 50 cm as an infant and now measures 120 cm. By how many centimeters has his height increased overall?",
       question_vi: "Khi Tom là em bé, cậu ấy cao 50 cm. Bây giờ cậu ấy cao 120 cm. Cậu ấy đã lớn lên bao nhiêu?",
       answer: ["70", "seventy", "70 cm"],
       bar_model: "/images/week19/barmodel_w19_p2.jpg",
@@ -29,7 +29,7 @@ export default {
     {
       id: 3,
       type: "part_whole",
-      question_en: "An album has 20 pages. Each page has 3 baby photos. How many photos are in the whole album?",
+      question_en: "A memory album contains 20 pages, and each page presents 3 infant photographs. Compute the total number of photos contained in the entire album.",
       question_vi: "Một album có 20 trang. Mỗi trang có 3 ảnh em bé. Có bao nhiêu ảnh trong cả album?",
       answer: ["60", "sixty", "60 photos"],
       bar_model: "/images/week19/barmodel_w19_p3.jpg",
@@ -42,7 +42,7 @@ export default {
     {
       id: 4,
       type: "part_whole",
-      question_en: "Lisa's mom took 8 photos when Lisa was a baby. Her dad took 7 photos. How many photos do they have in total?",
+      question_en: "During Lisa's infancy, her mother captured 8 photographs and her father contributed 7 additional photographs. What is the combined total in the family collection?",
       question_vi: "Mẹ Lisa chụp 8 ảnh khi Lisa là em bé. Bố chụp 7 ảnh. Tổng cộng họ có bao nhiêu ảnh?",
       answer: ["15", "fifteen", "15 photos"],
       bar_model: "/images/week19/barmodel_w19_p4.jpg",
@@ -55,7 +55,7 @@ export default {
     {
       id: 5,
       type: "comparison",
-      question_en: "When I was in kindergarten, I was 5 years old. My brother was 3 years old. How many years older was I than my brother?",
+      question_en: "At the kindergarten stage, my recorded age was 5 while my brother's age was 3. Calculate the age gap to determine how many years older I was.",
       question_vi: "Khi tôi học mẫu giáo, tôi 5 tuổi. Em trai tôi 3 tuổi. Tôi lớn hơn em trai bao nhiêu tuổi?",
       answer: ["2", "two", "2 years"],
       bar_model: "/images/week19/barmodel_w19_p5.jpg",
