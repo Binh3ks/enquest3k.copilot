@@ -1017,12 +1017,117 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
 done
 echo ""
 # =============================================================================
+# CHECK 31: AI Tutor week_NN_real.js — must have conversation_cards array
+# =============================================================================
+echo -e "${BOLD}[CHECK 31] AI Tutor week_${WEEK_PAD}_real.js — must have conversation_cards (>= 3 cards)${NC}"
+if [ ! -f "$AI_TUTOR" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: $AI_TUTOR not yet created${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  CC_COUNT=$(grep -c "id:.*_cards\|id: \"[a-z_]*\"" "$AI_TUTOR" 2>/dev/null || true)
+  HAS_CC=$(grep -c "conversation_cards:" "$AI_TUTOR" 2>/dev/null || true)
+  CARD_IDS=$(grep -c "completion_message" "$AI_TUTOR" 2>/dev/null || true)
+  if [ "$HAS_CC" -eq 0 ]; then
+    echo -e "   ${RED}❌ FAIL: Missing conversation_cards array in $AI_TUTOR${NC}"
+    echo -e "   ${YELLOW}FIX: Add conversation_cards: [ ...3 cards... ] at end of file (before closing });)${NC}"
+    ERRORS=$((ERRORS+1))
+  elif [ "$CARD_IDS" -lt 3 ]; then
+    echo -e "   ${RED}❌ FAIL: conversation_cards has only $CARD_IDS card(s) — need >= 3${NC}"
+    echo -e "   ${YELLOW}FIX: Add at least 3 cards each with completion_message${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: conversation_cards present with $CARD_IDS card(s)${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
+# CHECK 32: Vocab image_url files must exist on disk (catches vocab added after prompts)
+# =============================================================================
+echo -e "${BOLD}[CHECK 32] vocab.js — all image_url files must exist on disk${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  VOCAB_FILE="${dir}/vocab.js"
+  [ ! -f "$VOCAB_FILE" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): vocab.js not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+  VOCAB_ERRS=""
+  while IFS= read -r img_path; do
+    # Strip quotes and trim
+    clean=$(echo "$img_path" | grep -o '"/images/[^"]*"' | tr -d '"')
+    [ -z "$clean" ] && continue
+    disk_path="public${clean}"
+    [ ! -f "$disk_path" ] && VOCAB_ERRS="${VOCAB_ERRS}\n   • MISSING on disk: $clean"
+  done < <(grep "image_url" "$VOCAB_FILE")
+  if [ -n "$VOCAB_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): vocab.js references images that don't exist:${NC}"
+    echo -e "$VOCAB_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX: Either add the image to public/images/week${WEEK}/ or reuse an existing image${NC}"
+    echo -e "   ${YELLOW}NOTE: If you added vocab words AFTER creating image prompts, update the prompt file too${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    VOCAB_IMG_COUNT=$(grep -c "image_url" "$VOCAB_FILE" || true)
+    echo -e "   ${GREEN}✅ PASS ($LABEL): All $VOCAB_IMG_COUNT vocab images exist on disk${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 33: daily_watch.js — video IDs must not duplicate previous week
+# =============================================================================
+echo -e "${BOLD}[CHECK 33] daily_watch.js — no duplicate video IDs from previous week (week $((WEEK_INT-1)))${NC}"
+PREV_WEEK=$((WEEK_INT - 1))
+PREV_WEEK_PAD=$(printf "%02d" $PREV_WEEK)
+PREV_DW="src/data/weeks/week_${PREV_WEEK_PAD}/daily_watch.js"
+DW_CURR="src/data/weeks/week_${WEEK_PAD}/daily_watch.js"
+if [ ! -f "$PREV_DW" ] || [ ! -f "$DW_CURR" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: Previous week daily_watch not found${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  PREV_IDS=$(grep -o 'videoId: *"[^"]*"' "$PREV_DW" | grep -o '"[^"]*"$' | tr -d '"' | sort)
+  CURR_IDS=$(grep -o 'videoId: *"[^"]*"' "$DW_CURR" | grep -o '"[^"]*"$' | tr -d '"' | sort)
+  DUPES=""
+  while IFS= read -r vid; do
+    echo "$PREV_IDS" | grep -qx "$vid" && DUPES="${DUPES} $vid"
+  done <<< "$CURR_IDS"
+  if [ -n "$DUPES" ]; then
+    echo -e "   ${RED}❌ FAIL: Videos duplicated from Week ${PREV_WEEK_PAD}:${DUPES}${NC}"
+    echo -e "   ${YELLOW}FIX: Run: node tools/update_videos.js ${WEEK_INT} --reset${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: No duplicate video IDs from Week ${PREV_WEEK_PAD}${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
+# CHECK 34: vocab.js word count must match image prompt Filename count
+# =============================================================================
+echo -e "${BOLD}[CHECK 34] vocab.js word count vs image prompt vocab count must match${NC}"
+ADV_PROMPTS_CHECK="${IMG_PROMPTS_DIR}/week_${WEEK_PAD}_image_prompts.txt"
+VOCAB_FILE_CHECK="${ADV_DIR}/vocab.js"
+if [ ! -f "$ADV_PROMPTS_CHECK" ] || [ ! -f "$VOCAB_FILE_CHECK" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: prompt file or vocab.js not found${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  # Count vocab entries — use image_url lines which appear exactly once per entry
+  PROMPT_VOCAB_COUNT=$(grep "Filename:" "$ADV_PROMPTS_CHECK" | grep -v "wordpower_\|barmodel_\|cover_\|_cover" | grep -c "Filename:" || true)
+  DATA_VOCAB_COUNT=$(grep -c "image_url:" "$VOCAB_FILE_CHECK" || true)
+  if [ "$PROMPT_VOCAB_COUNT" -ne "$DATA_VOCAB_COUNT" ]; then
+    echo -e "   ${RED}❌ FAIL: vocab.js has $DATA_VOCAB_COUNT words but image prompt has $PROMPT_VOCAB_COUNT vocab images${NC}"
+    echo -e "   ${YELLOW}FIX: If you added vocab words after images were generated, either:${NC}"
+    echo -e "   ${YELLOW}  (a) Reuse an existing image_url for the new word, OR${NC}"
+    echo -e "   ${YELLOW}  (b) Add the new word as prompt #$(($PROMPT_VOCAB_COUNT+1)) to the prompt file and generate the image${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: vocab.js ($DATA_VOCAB_COUNT words) matches image prompts ($PROMPT_VOCAB_COUNT vocab images)${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
 # SUMMARY
 # =============================================================================
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
   echo -e "${GREEN}${BOLD}  ✅ CODE QUALITY GATE PASSED — Week ${WEEK_PAD}${NC}"
-  echo -e "${GREEN}  All 30 checks passed. Safe to commit.${NC}"
+  echo -e "${GREEN}  All 34 checks passed. Safe to commit.${NC}"
 elif [ $ERRORS -eq 0 ]; then
   echo -e "${YELLOW}${BOLD}  ⚠️  PASSED WITH ${WARNINGS} WARNING(S) — Week ${WEEK_PAD}${NC}"
   echo -e "${YELLOW}  Zero errors (safe to commit). Review warnings before deploy.${NC}"
