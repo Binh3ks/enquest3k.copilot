@@ -16,6 +16,10 @@ export default {
     Time words are still important: yesterday, last night, and last week.
     They tell us exactly when an action happened.
 
+    In our case notes, we still record past actions with clear verbs:
+    **walked**, **talked**, **listened**, **played**, **helped**, **cleaned**,
+    **cooked**, **washed**, **watched**, **looked**, **opened**, **finished**, and **started**.
+
     In detective interviews, strong questions collect better evidence.
     So ask politely, listen carefully, and record each clue step by step.
   `,

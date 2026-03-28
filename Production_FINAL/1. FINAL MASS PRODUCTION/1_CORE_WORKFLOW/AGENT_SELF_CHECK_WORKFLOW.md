@@ -40,6 +40,13 @@ Any references to "19 files" or "7 sub-tab files" below are aspirational specs �
 - **MOST CRITICAL:** Agent reports "done" but files don't exist → BƯỚC 0.5 verification
 - **Prevention: Follow this checklist + verify every file with 4 commands**
 
+**Week 22 Regression Guards (MANDATORY):**
+- [ ] Do NOT run regex rewrite on `mindmap.js`; only object-safe update is allowed.
+- [ ] `mindmap.js` must fail review if any `text` contains `/audio/` or if any `text: { ... }` appears.
+- [ ] `ask_ai.js` answers must be natural, scenario-based, and not placeholder templates.
+- [ ] `week_NN_real.js` must be semantically new for the target week, not a prior-week storyline with renamed title.
+- [ ] `dictation.js` and `shadowing.js` must match current `read.js` narrative and grammar focus before final gate.
+
 ---
 
 ## 📋 11-STEP PRODUCTION WORKFLOW
@@ -1471,8 +1478,8 @@ git commit -m "Add Week N audio: 163 Advanced + 157 Easy (320 total)"
 
 ### ✅ BƯỚC 7: GENERATE & UPLOAD IMAGES
 
-**Time: ~20 minutes + manual Nano Banana**  
-**Purpose: Generate image prompts, create images, upload to R2**
+**Time: ~20 minutes + manual Nano Banana + auto bar-model generation**  
+**Purpose: Generate prompt-based images for vocab/word_power/covers, auto-render Logic Lab bar models, upload to R2**
 
 #### Actions:
 
@@ -1483,12 +1490,13 @@ node tools/generate_images_nano.js N
 # Output:
 # - public/images/Prompts/week_N_image_prompts.txt
 # ⚠️ W16+: NO week_N_easy_image_prompts.txt generated — Easy mode shares Advanced images!
+# ⚠️ Official workflow: prompt file is for vocab/word_power/covers only, NOT bar models
 ```
 
-**Step 7.2: Manual workflow**
+**Step 7.2: Manual prompt-image workflow**
 1. Copy prompts from `week_N_image_prompts.txt`
 2. Paste into Nano Banana (banana.dev)
-3. Download generated images (format: `N_N_*.png`)
+3. Download generated images for vocab/word_power/covers only (format: `N_N_*.png`)
 4. Save to `public/images/weekN/`
 
 **⚠️ W16+ SHARED IMAGE MODE:**
@@ -1505,7 +1513,20 @@ python3 tools/auto_rename.py N
 # Converts: 1_1_city.png → city.jpg
 ```
 
-**Step 7.4: Upload to R2**
+**Step 7.4: Auto-generate Logic Lab bar models**
+```bash
+python3 tools/generate_logiclab_barmodels.py N
+
+# Renders bar-model JPGs directly from singapore_math.js
+# Uses each item's `bar_model`, `type`, `question_en`, and answer data
+```
+
+**W21+ BAR MODEL RULES:**
+- Do **NOT** create bar models from prompt files
+- Every `singapore_math.js` item must point to a versioned `bar_model` filename that exists after generation
+- Generated diagram must match the Singapore Math structure (`part_whole`, `comparison`, `missing_part`, `groups`, `before_after`)
+
+**Step 7.5: Upload to R2**
 ```bash
 # Upload using wrangler (npx wrangler r2 object put ...)
 # Example for all images in a folder:
@@ -1519,10 +1540,12 @@ npx wrangler r2 object list engquest-images --prefix "images/weekN/" --remote | 
 
 #### Self-Check:
 - [ ] Prompts generated (`week_N_image_prompts.txt` — 1 file only for W16+)
-- [ ] Images created via Nano Banana
+- [ ] Prompt-based images created via Nano Banana
 - [ ] Files renamed (*.jpg)
+- [ ] Logic Lab bar models generated via `tools/generate_logiclab_barmodels.py`
 - [ ] Uploaded to R2 via wrangler
 - [ ] Image paths in vocab.js use `/images/weekN/` (NOT `/images/weekN_easy/`)
+- [ ] `singapore_math.js` bar_model paths exist on disk and match generated files
 - [ ] **W16+ Easy mode: Verify zero `weekN_easy` in image_url fields:**
 ```bash
 grep 'image_url' src/data/weeks_easy/week_N/vocab.js | grep 'weekN_easy'
@@ -1594,7 +1617,7 @@ grep -oP 'videoId:\s*["'\''](\w+)' src/data/weeks_easy/week_N/daily_watch.js
 ### 🛡️ BƯỚC 8.5: CODE QUALITY GATE (MANDATORY — W20 Lesson)
 
 **Time: ~2 minutes**  
-**Purpose: Automated validation of 34 checks — catches schema, content, and W20-class bugs BEFORE commit**
+**Purpose: Automated validation of 31 checks — catches schema, content, and W20/W21/W22+ bugs BEFORE commit**
 
 > **W20 Lesson (March 27, 2026):** Agent bypassed manual checks → 3 UI files uncommitted, conversation_cards missing, 10 vocab instead of 13, images out of order.  
 > **Solution:** Always run quality gate script BEFORE committing ANY week.
@@ -1602,26 +1625,24 @@ grep -oP 'videoId:\s*["'\''](\w+)' src/data/weeks_easy/week_N/daily_watch.js
 #### Actions:
 
 ```bash
-# Run all 34 quality gate checks
+# Run all 31 quality gate checks
 bash tools/code_quality_gate.sh N
 
 # Expected output ends with:
 # ✅ CODE QUALITY GATE PASSED — Week N
-# All 34 checks passed. Safe to commit.
+# All 31 checks passed. Safe to commit.
 ```
 
-#### What the 34 checks cover:
+#### What the 31 checks cover:
 - Checks 1-10: Code patterns (Python usage, template literals, STATIC_STATIONS)
 - Checks 11-22: Schema (directories, files, metadata.js title, vocab count)
-- Checks 23-26: Content (video IDs, image prompts, cover images on disk)
-- Checks 27-30: Counts & registration (grammar 20Q, gameAdaptation, AI Tutor tabs, games.js mini-games)
-- **CHECK 31 (W20):** `conversation_cards ≥ 3` in `week_N_real.js`
-- **CHECK 32 (W20):** All `image_url` in vocab.js exist on disk
-- **CHECK 33 (W20):** No duplicate video IDs from previous week
-- **CHECK 34 (W20):** vocab.js word count matches image prompts vocab count
+- Checks 23-24: Content integrity (video IDs, cover images on disk)
+- **CHECK 25 (W20+):** unified prompt file validates non-bar-model assets only (vocab/word_power/covers)
+- Checks 26-30: Counts & registration (grammar 20Q, gameAdaptation, AI Tutor tabs, games.js mini-games)
+- **CHECK 31 (W22+):** Singapore Math progression + bar_model integrity
 
 #### Self-Check:
-- [ ] `bash tools/code_quality_gate.sh N` → **ALL 34 PASSED**
+- [ ] `bash tools/code_quality_gate.sh N` → **ALL 31 PASSED**
 - [ ] 🔴 **If ANY check fails → STOP, fix the issue, re-run gate**
 - [ ] DO NOT commit until gate passes completely
 

@@ -16,25 +16,27 @@ export default {
     Then give short answers.
     Yes, I did. No, I didn't.
 
+    We can describe clues with past words:
+    **walked**, **talked**, **listened**, **played**, **helped**, **cleaned**,
+    **cooked**, **washed**, **watched**, **looked**, **opened**, **finished**, **started**.
+
     Use time words too: yesterday, last night, last week.
     These words make clues clear and easy to understand.
   `,
 
   content_vi: `
-    **Nhật ký** là một cuốn sách đặc biệt. Bạn viết về ngày của mình trong đó.
+    Tham tu thoi gian dat cau hoi ve hom qua.
 
-    Mỗi ngày, bạn làm nhiều việc. Bạn **đi bộ**, **nói chuyện**, **ăn**, và **chơi**.
-    Sau khi ngày **kết thúc**, bạn viết vào nhật ký!
+    Chung ta dung Did cho cau hoi yes/no trong qua khu.
+    Vi du: Did you walk? Did you play? Did you clean your room?
 
-    Bạn dùng thì quá khứ: "Tôi **đã đi bộ**. Tôi **đã chơi**. Tôi **đã nấu**."
+    Sau Did, dung dong tu nguyen mau.
+    Chung ta noi Did you walk, khong noi Did you walked.
 
-    Nhật ký giúp bạn nhớ những ngày vui. Chúng giống như cỗ máy thời gian cho ký ức của bạn!
+    Sau do, tra loi ngan: Yes, I did. No, I didn't.
 
-    Các nhà khoa học cũng giữ nhật ký. Họ viết những gì họ **đã xem** và **đã lắng nghe**.
-    Điều này gọi là **nhật ký khoa học**!
-
-    Các thám tử thời gian đọc nhật ký cũ. Họ tìm manh mối về quá khứ.
-    Bạn có thể là thám tử thời gian không?
+    Nhung tu chi thoi gian nhu yesterday, last night, last week
+    giup manh moi ro rang va de hieu.
   `,
 
   check_questions: [
