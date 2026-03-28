@@ -1,17 +1,25 @@
 export default {
   title: "Time Detective Questions",
   script: [
-    { id: 1, text: "Detective Nova asked me about yesterday.", vi: "Tham tu Nova da hoi toi ve ngay hom qua." },
-    { id: 2, text: "Did you walk to school? she asked.", vi: "Ban co di bo den truong khong? co ay hoi." },
-    { id: 3, text: "I walked to school with my friend.", vi: "Toi da di bo den truong voi ban." },
-    { id: 4, text: "I talked on the way and listened in class.", vi: "Toi da noi chuyen tren duong va lang nghe trong lop." },
-    { id: 5, text: "At break time, I played soccer.", vi: "Vao gio giai lao, toi da choi bong da." },
-    { id: 6, text: "After school, I helped my mom.", vi: "Sau gio hoc, toi da giup me." },
-    { id: 7, text: "We cooked dinner and cleaned the table.", vi: "Chung toi da nau bua toi va don ban." },
-    { id: 8, text: "I washed my hands before eating.", vi: "Toi da rua tay truoc khi an." },
-    { id: 9, text: "In the evening, I watched TV.", vi: "Buoi toi, toi da xem TV." },
-    { id: 10, text: "I looked at the moon from my window.", vi: "Toi da nhin mat trang tu cua so." },
-    { id: 11, text: "I opened my notebook and finished homework.", vi: "Toi da mo vo va hoan thanh bai tap." },
-    { id: 12, text: "Then I started writing a short diary note.", vi: "Sau do toi da bat dau viet mot doan nhat ky ngan." }
+    { id: 1,  text: "Detective Nova asked me simple questions about yesterday.",
+               vi: "Tham tu Nova dat cho toi nhung cau hoi don gian ve hom qua." },
+    { id: 2,  text: "I said I walked to school and talked with my friends.",
+               vi: "Toi noi rang toi da di bo den truong va noi chuyen voi ban be." },
+    { id: 3,  text: "In class, I listened carefully.",
+               vi: "Trong lop, toi da lang nghe can than." },
+    { id: 4,  text: "At break time, I played soccer.",
+               vi: "Vao gio giai lao, toi da choi bong da." },
+    { id: 5,  text: "After school, I helped my mom and cleaned the table.",
+               vi: "Sau gio hoc, toi da giup me va don dep ban an." },
+    { id: 6,  text: "In the evening, we cooked dinner.",
+               vi: "Buoi toi, gia dinh toi da nau bua toi." },
+    { id: 7,  text: "I washed my hands and watched TV.",
+               vi: "Toi da rua tay va xem TV." },
+    { id: 8,  text: "Then I looked at the moon and opened my notebook.",
+               vi: "Sau do toi da nhin mat trang va mo cuon vo." },
+    { id: 9,  text: "I finished homework and started a short diary note.",
+               vi: "Toi da hoan thanh bai tap va bat dau viet mot doan nhat ky ngan." },
+    { id: 10, text: "Nova smiled because my answers were good clues.",
+               vi: "Nova mim cuoi vi cau tra loi cua toi la nhung manh moi tot." }
   ]
 };
