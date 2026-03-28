@@ -19,22 +19,22 @@ const week22RealData = {
   ],
 
   target_vocab: [
-    { word: "walked",   pronunciation: "/wOkt/",        definition_vi: "da di bo",       definition_en: "moved on foot from one place to another",               example: "I walked to school with my friend.",        syllabus_context: "Daily diary" },
-    { word: "looked",   pronunciation: "/lUkt/",         definition_vi: "da nhin",        definition_en: "directed your eyes toward something to see it",         example: "I looked at the stars outside.",             syllabus_context: "Evening activity" },
-    { word: "cooked",   pronunciation: "/kUkt/",         definition_vi: "da nau an",      definition_en: "prepared food using heat",                              example: "Mom cooked dinner for the whole family.",    syllabus_context: "Home activities" },
-    { word: "played",   pronunciation: "/pleId/",        definition_vi: "da choi",        definition_en: "took part in a game or activity for fun",               example: "I played soccer at break time.",             syllabus_context: "School play" },
-    { word: "watched",  pronunciation: "/wOtSt/",        definition_vi: "da xem",         definition_en: "looked at something for a period of time",              example: "I watched TV for thirty minutes.",           syllabus_context: "Evening activities" },
-    { word: "cleaned",  pronunciation: "/kliEnd/",       definition_vi: "da don dep",     definition_en: "made something free of dirt or mess",                   example: "I cleaned my room after school.",            syllabus_context: "Chores" },
-    { word: "helped",   pronunciation: "/hElpt/",        definition_vi: "da giup do",     definition_en: "gave assistance to someone",                            example: "I helped my mother with the shopping.",     syllabus_context: "Family life" },
-    { word: "talked",   pronunciation: "/tOkt/",         definition_vi: "da noi chuyen",  definition_en: "spoke with someone in a conversation",                  example: "We talked about our homework on the way.",  syllabus_context: "Social interaction" },
-    { word: "listened", pronunciation: "/lIs@nd/",       definition_vi: "da lang nghe",   definition_en: "paid attention to a sound",                             example: "I listened to the teacher carefully.",       syllabus_context: "School activity" },
-    { word: "opened",   pronunciation: "/@Up@nd/",       definition_vi: "da mo",          definition_en: "moved something so it was no longer closed",            example: "I opened the door for my grandmother.",     syllabus_context: "Actions" },
-    { word: "washed",   pronunciation: "/wOSt/",         definition_vi: "da rua",         definition_en: "cleaned something with water and soap",                 example: "I washed my hands before dinner.",           syllabus_context: "Daily hygiene" },
-    { word: "finished", pronunciation: "/fInISt/",       definition_vi: "da hoan thanh",  definition_en: "completed something; came to the end of a task",        example: "I finished my homework at seven o clock.",   syllabus_context: "School tasks" },
-    { word: "started",  pronunciation: "/stAErtId/",     definition_vi: "da bat dau",     definition_en: "began doing an activity",                               example: "I started my project in the morning.",       syllabus_context: "Time sequence" }
+    { word: "yesterday",  pronunciation: "/jEs.t@.deI/",  definition_vi: "hom qua",        definition_en: "the day before today",                                  example: "I walked to school yesterday.",              syllabus_context: "Time expression" },
+    { word: "last night", pronunciation: "/lAEst naIt/",  definition_vi: "toi qua",        definition_en: "the night before today",                                example: "She watched TV last night.",                 syllabus_context: "Time expression" },
+    { word: "last week",  pronunciation: "/lAEst wiEk/",  definition_vi: "tuan truoc",     definition_en: "the week before this week",                             example: "We played soccer last week.",                syllabus_context: "Time expression" },
+    { word: "interview", pronunciation: "/In.t@.vjuE/",   definition_vi: "cuoc phong van", definition_en: "a meeting where someone asks another person questions",  example: "Detective Nova started the interview.",      syllabus_context: "Detective case" },
+    { word: "detective", pronunciation: "/dI.tEk.tIv/",   definition_vi: "tham tu",        definition_en: "a person who finds answers by asking questions",         example: "The detective opened her notebook.",         syllabus_context: "Detective case" },
+    { word: "clue",      pronunciation: "/kluE/",          definition_vi: "manh moi",       definition_en: "a fact that helps you find the answer",                 example: "Nova found a clue in the case file.",        syllabus_context: "Detective case" },
+    { word: "notebook",  pronunciation: "/n@Ut.bUk/",     definition_vi: "so tay",         definition_en: "a small book you write notes in",                       example: "She wrote every clue in her notebook.",      syllabus_context: "Detective tool" },
+    { word: "clearly",   pronunciation: "/klI@.liE/",     definition_vi: "ro rang",        definition_en: "in a way that is easy to understand",                   example: "Max answered clearly every question.",       syllabus_context: "Communication" },
+    { word: "case",      pronunciation: "/keIs/",          definition_vi: "vu an",          definition_en: "a mystery or problem a detective must solve",            example: "Nova closed the case after the interview.",  syllabus_context: "Detective case" },
+    { word: "report",    pronunciation: "/rI.pOEt/",      definition_vi: "bao cao",        definition_en: "a written record of facts and findings",                example: "She finished her report about yesterday.",   syllabus_context: "Detective tool" },
+    { word: "question",  pronunciation: "/kwEs.tS@n/",    definition_vi: "cau hoi",        definition_en: "something you ask to get information",                  example: "The detective asked one question at a time.", syllabus_context: "Interview" },
+    { word: "answer",    pronunciation: "/AEn.s@/",       definition_vi: "cau tra loi",    definition_en: "what you say when asked a question",                    example: "Max gave a clear answer to each question.",  syllabus_context: "Interview" },
+    { word: "suspect",   pronunciation: "/sVs.pEkt/",     definition_vi: "nghi can",       definition_en: "a person the detective wants to ask questions",          example: "Max was the first suspect in the case.",    syllabus_context: "Detective case" }
   ],
 
-  global_vocab: ["walked", "looked", "cooked", "played", "watched", "cleaned", "helped", "talked", "listened", "opened", "washed", "finished", "started"],
+  global_vocab: ["yesterday", "last night", "last week", "interview", "detective", "clue", "notebook", "clearly", "case", "report", "question", "answer", "suspect"],
 
   nova_instructions: {
     persona: "Enthusiastic time detective who solves yesterday case files",
@@ -178,12 +178,12 @@ const week22RealData = {
         {
           phase: "closing",
           turns: "11-12",
-          phase_name: "Diary Case Solved!",
+          phase_name: "Case File Closed!",
           focus: "Summary and goodbye",
-          goal: "Wrap up Max diary investigation",
+          goal: "Wrap up Max case file investigation",
           phase_questions: [
-            "Amazing detective work! Tell me one last thing from the diary - what did Max do last before sleeping? Say: He finished his diary or He opened his notebook",
-            "Case solved! Max had a wonderful day! He walked, talked, listened, played, and looked at the stars! Great diary detective work! Thank you for reading with me!"
+            "Amazing detective work! Tell me one last thing from the case file - what did Max do last before sleeping? Say: He finished his notes or He opened his notebook",
+            "Case file closed! Max had a wonderful day! He walked, talked, listened, played, and looked at the stars! Great detective work! Thank you for reading with me!"
           ]
         }
       ],
@@ -195,10 +195,10 @@ const week22RealData = {
     {
       mission_id: 2,
       id: 2,
-      title: "Your Diary - Tell Me About Yesterday!",
-      title_en: "Your Diary - Tell Me About Yesterday!",
-      title_vi: "Nhat Ky Cua Ban - Ke Cho Toi Nghe Ve Hom Qua!",
-      theme: "Writing your own diary entry about yesterday",
+      title: "Your Case Report - What Did YOU Do?",
+      title_en: "Your Case Report - What Did YOU Do?",
+      title_vi: "Ho So Cua Ban - Ban Da Lam Gi?",
+      theme: "Building your personal case report about yesterday",
 
       nova_greeting: "Hello time detective! Now it is YOUR turn! Let us build your case report about yesterday!",
 
@@ -223,7 +223,7 @@ const week22RealData = {
       story_character: {
         name: "Detective Nova",
         personality: "warm, encouraging, genuinely interested in the student day",
-        backstory: "Every detective keeps a diary! Let me help you write YOUR diary entry for yesterday!",
+        backstory: "Every detective writes a case report! Let me help you build YOUR case report for yesterday!",
         speaking_style: "personal questions, first-person focus, warm and supportive",
         facts: {
           loves_personal_stories: true,
@@ -231,7 +231,7 @@ const week22RealData = {
           celebrates_small_actions: true,
           favorite_question: "What did you do next?"
         },
-        role: "Diary Detective helping student write their own diary"
+        role: "Time Detective interviewing student to build their personal case report"
       },
 
       opening_narrative: "Hello time detective! Now it is YOUR turn! Let us build your case report! First - did you walk to school yesterday? Say: Yes I walked to school or I walked with my friend",
@@ -268,11 +268,11 @@ const week22RealData = {
         {
           phase: "closing",
           turns: "11-12",
-          phase_name: "Your Diary Is Complete!",
+          phase_name: "Your Case Report Complete!",
           focus: "Summary and celebration",
-          goal: "Complete the student diary entry with praise",
+          goal: "Complete the student case report with praise",
           phase_questions: [
-            "Your diary is almost done! What was the LAST thing you did before sleeping? Say: I started to sleep at nine or I finished reading",
+            "Your case report is almost complete! What was the LAST thing you did before sleeping? Say: I started to sleep at nine or I finished reading",
             "Your case report is AMAZING! Yesterday you walked, talked, listened, helped, and finished your homework! That is a great day! You are a WONDERFUL time detective!"
           ]
         }
@@ -285,9 +285,9 @@ const week22RealData = {
     {
       mission_id: 3,
       id: 3,
-      title: "Family Diary Interview",
-      title_en: "Family Diary Interview",
-      title_vi: "Phong Van Nhat Ky Gia Dinh",
+      title: "Family Case Interview",
+      title_en: "Family Case Interview",
+      title_vi: "Phong Van Ho So Gia Dinh",
       theme: "Interviewing family members about what they did yesterday",
 
       nova_greeting: "Hello time detective! Today we will interview your family! What did they do yesterday?",
@@ -321,7 +321,7 @@ const week22RealData = {
           celebrates_family_activities: true,
           favorite_question: "What did she do next?"
         },
-        role: "Diary Detective interviewing student family members"
+        role: "Time Detective interviewing student about family activities yesterday"
       },
 
       opening_narrative: "Hello time detective! Let us interview your family about yesterday! First - what did your mom do? Did she cook in the morning? Say: Yes she cooked breakfast or She started cooking early",
@@ -363,7 +363,7 @@ const week22RealData = {
             "Wonderful! He TALKED to the family! What did your whole family do together? Say: We watched TV or We talked and laughed at dinner",
             "How lovely! Your family time together! Who finished last in your house? Say: Dad finished last or Mom finished last",
             "Perfect! Tell me one special thing your family did together yesterday! Say: We cooked together or We watched stars or We talked at dinner",
-            "That is BEAUTIFUL! Your family cooked, talked, cleaned, helped, and finished the day together! That is the best diary entry of all! Thank you for sharing your family story, detective!"
+            "That is BEAUTIFUL! Your family cooked, talked, cleaned, helped, and finished the day together! That is the best case file of all! Thank you for sharing your family story, detective!"
           ]
         }
       ],
@@ -409,14 +409,14 @@ const week22RealData = {
       completion_message: "Amazing morning detective work! You used -ed verbs perfectly!"
     },
     {
-      id: "afternoon_diary",
-      title: "Afternoon Diary",
+      id: "afternoon_case_interview",
+      title: "Afternoon Case Interview",
       emoji: "B",
       theme: "Recording Afternoon Activities",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Let us write your afternoon diary! When you got home, did you start your homework? Say: Yes I started homework right away or I started after a snack",
+          ai: "Let us review your afternoon case file! When you got home, did you start your homework? Say: Yes I started homework right away or I started after a snack",
           options: ["Yes I started homework right away", "I started after a snack"]
         },
         {
@@ -436,7 +436,7 @@ const week22RealData = {
           options: ["Yes I watched TV", "I watched a cartoon"]
         }
       ],
-      completion_message: "Your afternoon diary is complete! Great -ed verb detective!"
+      completion_message: "Your afternoon case interview is complete! Great -ed verb detective!"
     },
     {
       id: "family_activities",
@@ -466,7 +466,7 @@ const week22RealData = {
           options: ["Dad finished last", "Mom finished last"]
         }
       ],
-      completion_message: "Beautiful family diary! Your family worked together wonderfully!"
+      completion_message: "Beautiful family case file! Your family worked together wonderfully!"
     }
   ]
 };
