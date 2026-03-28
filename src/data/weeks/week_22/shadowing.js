@@ -1,15 +1,15 @@
 export default {
-  title: "Diary Shadowing - Max's Busy Day",
+  title: "Time Detective Shadowing",
   script: [
-    { id: 1, text: "Yesterday was a busy day!", vi: "Hom qua la mot ngay ban ron!" },
-    { id: 2, text: "I walked to school with my friend.", vi: "Toi da di bo den truong voi ban." },
-    { id: 3, text: "We talked about our homework.", vi: "Chung toi da noi chuyen ve bai tap." },
-    { id: 4, text: "I listened to the teacher.", vi: "Toi da lang nghe giao vien." },
-    { id: 5, text: "I played soccer at break time.", vi: "Toi da choi bong da vao gio giai lao." },
-    { id: 6, text: "I helped my mother after school.", vi: "Toi da giup me sau gio hoc." },
-    { id: 7, text: "I cleaned my room.", vi: "Toi da don dep phong cua toi." },
-    { id: 8, text: "I watched TV for thirty minutes.", vi: "Toi da xem TV trong ba muoi phut." },
-    { id: 9, text: "Then I looked at the stars outside.", vi: "Sau do toi nhin len cac ngoi sao ben ngoai." },
-    { id: 10, text: "I finished my diary and started to sleep at nine.", vi: "Toi hoan thanh nhat ky va bat dau ngu luc chin gio." }
+    { id: 1, text: "Detective Nova started an interview yesterday.", vi: "Tham tu Nova da bat dau mot buoi phong van hom qua." },
+    { id: 2, text: "She asked clear Did questions.", vi: "Co ay da dat nhung cau hoi Did ro rang." },
+    { id: 3, text: "Did Max walk to school with his friend?", vi: "Max co di bo den truong voi ban khong?" },
+    { id: 4, text: "He talked on the way and listened in class.", vi: "Ban ay da noi chuyen tren duong va lang nghe trong lop." },
+    { id: 5, text: "Did he play soccer at break time?", vi: "Ban ay co choi bong da vao gio giai lao khong?" },
+    { id: 6, text: "After school, he helped his mother and cleaned his desk.", vi: "Sau gio hoc, ban ay da giup me va don dep ban hoc." },
+    { id: 7, text: "Did he wash his hands before dinner?", vi: "Ban ay co rua tay truoc bua toi khong?" },
+    { id: 8, text: "He watched TV with his family.", vi: "Ban ay da xem TV cung gia dinh." },
+    { id: 9, text: "Later, he looked at the moon and opened his diary.", vi: "Sau do, ban ay da nhin mat trang va mo nhat ky." },
+    { id: 10, text: "He finished his homework and started writing notes.", vi: "Ban ay da hoan thanh bai tap va bat dau viet ghi chu." }
   ]
 };
