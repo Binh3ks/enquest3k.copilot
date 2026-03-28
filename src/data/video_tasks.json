@@ -53,5 +53,16 @@
       { "id": 4, "purpose": "VOCABULARY", "query": "daily activities verbs past tense song kids ESL", "backup_query": "daily routine past tense vocabulary children" },
       { "id": 5, "purpose": "SOCIAL", "query": "kids talking about yesterday activities past tense", "backup_query": "what did you do yesterday kids English" }
     ]
+  },
+  {
+    "weekId": 22,
+    "note": "The Time Detective - Past Yes/No Questions with Did",
+    "videos": [
+      { "id": 1, "purpose": "GRAMMAR", "query": "did you questions past simple for kids", "backup_query": "past simple questions did ESL children" },
+      { "id": 2, "purpose": "GRAMMAR", "query": "English Singsing did you do yesterday grammar", "backup_query": "did and didn't song for kids" },
+      { "id": 3, "purpose": "STORY", "query": "kids detective story yesterday clues", "backup_query": "Little Fox detective mystery story children" },
+      { "id": 4, "purpose": "VOCABULARY", "query": "yesterday last night last week vocabulary kids", "backup_query": "time words past tense song kids" },
+      { "id": 5, "purpose": "SOCIAL", "query": "interview questions for kids in English", "backup_query": "kids asking and answering questions practice" }
+    ]
   }
 ]
