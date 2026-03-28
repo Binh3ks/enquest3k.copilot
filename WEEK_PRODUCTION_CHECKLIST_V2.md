@@ -2227,9 +2227,10 @@ npm run dev
 
 ### ✅ Best Practices Established
 
-1. **Always start with Week 5 as reference**
-   - Week 5 is the GOLDEN STANDARD (complete, debugged, feature-rich)
-   - Copy structure, adapt content
+1. **Always start with the correct golden standard for the current phase**
+  - AI Tutor: `week_16_real.js` for current V28+ structure
+  - Stations W16+: clone Week 16 structure
+  - Stations W1-15 only: use Week 6 legacy structure
 
 2. **Create data with complete URLs from the start**
    - Don't add URLs later

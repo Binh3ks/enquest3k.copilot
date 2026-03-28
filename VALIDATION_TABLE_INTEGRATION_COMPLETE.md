@@ -16,7 +16,7 @@
 - Count requirements by Phase (vocab: 10, word_power: 3/5/7, logic: 5/7/10, grammar: 20)
 - Audio file count formulas (fixed vs dynamic)
 - ALL Blueprint rules for each station
-- Golden Standard references (Week 5 for AI Tutor, Week 6 for Stations)
+- Golden Standard references by phase (Week 16_real.js for AI Tutor V28, Week 16 stations for W16+, Week 6 stations for W1-15)
 - Dual-Mode differentiation rules
 - Pre-Flight & Post-Flight validation checklists with bash commands
 - Common hallucinations to AVOID (false rules that don't exist)

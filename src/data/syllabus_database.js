@@ -82,6 +82,21 @@ const syllabusDB = {
       { id: 'grammar_lab', type: 'grammar', status: 'ready' }
     ]
   },
+
+  {
+    id: 22,
+    title: "Week 22",
+    level: "A0",
+    description: "Generated Content",
+    folder: "week_22",
+    stations: [
+      { id: 'daily_watch', type: 'video', status: 'ready' },
+      { id: 'vocab_mastery', type: 'vocab', status: 'ready' },
+      { id: 'ai_story', type: 'story', status: 'ready' },
+      { id: 'skill_reading', type: 'reading', status: 'ready' },
+      { id: 'grammar_lab', type: 'grammar', status: 'ready' }
+    ]
+  },
 ] 
   }
 };

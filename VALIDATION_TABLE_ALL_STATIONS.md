@@ -1211,7 +1211,7 @@ grep -c 'audio:.*mindmap_branch' src/data/weeks/week_12/mindmap.js  # Must be 36
 ## 🚀 USAGE INSTRUCTIONS
 
 1. **Before Creating Week 12 Easy Mode**: Review stations 1-16 requirements in this table
-2. **During Generation**: Follow Golden Standard file structures (Week 5/6)
+2. **During Generation**: Follow Golden Standard file structures by phase (Week 16_real.js for AI Tutor V28, Week 16 stations for W16+, Week 6 stations only for W1-15)
 3. **After Generation**: Run validation commands from "Post-Flight Check"
 4. **Fix Errors**: If validation fails, refer back to "TRUE RULES" section + Blueprint quotes
 5. **Update Master Prompt**: After user approval, integrate this table into Quick Ref or Master Prompt
