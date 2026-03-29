@@ -382,28 +382,28 @@ const week22RealData = {
       difficulty: "easy",
       exchanges: [
         {
-          ai: "Case File Open! I am Detective Nova and I need morning clues! First question for the suspect - did you walk to school yesterday? Say: Yes I walked to school or I walked with my friend",
-          options: ["Yes I walked to school", "I walked with my friend"]
+          ai: "Case notebook open! I am Detective Nova and you are my suspect today! First clue question - did you see or find anything interesting yesterday? Say: Yes I found something interesting yesterday or I discovered a clue yesterday",
+          options: ["Yes I found something interesting yesterday", "I discovered a clue yesterday"]
         },
         {
-          ai: "Clue one recorded in my notebook! Did you talk to a classmate before class started? Say: Yes I talked to my classmate or I talked about the homework",
-          options: ["Yes I talked to my classmate", "I talked about the homework"]
+          ai: "First clue recorded in my notebook! Now tell me about last night - did anything unusual happen last night? Say: Yes something happened last night or Last night was quiet and normal",
+          options: ["Yes something happened last night", "Last night was quiet and normal"]
         },
         {
-          ai: "Notebook entry complete! Now the class clue - did you listen to the teacher carefully? Say: Yes I listened carefully or I listened and wrote notes",
-          options: ["Yes I listened carefully", "I listened and wrote notes"]
+          ai: "Last night clue noted! I need a clear answer now - did Detective Nova or a teacher ask you a question yesterday? Say: Yes someone asked me a question yesterday or My teacher asked me a question yesterday",
+          options: ["Yes someone asked me a question yesterday", "My teacher asked me a question yesterday"]
         },
         {
-          ai: "Evidence confirmed! Break time question - did you play outside at break time? Say: Yes I played outside or I played with my classmates",
-          options: ["Yes I played outside", "I played with my classmates"]
+          ai: "Question clue confirmed! Think about last week - did you find or report any problem or clue last week? Say: Yes I found a clue last week or I reported a problem last week",
+          options: ["Yes I found a clue last week", "I reported a problem last week"]
         },
         {
-          ai: "New clue discovered! Did you wash your hands after playing? Say: Yes I washed my hands or I always washed my hands",
-          options: ["Yes I washed my hands", "I always washed my hands"]
+          ai: "Report clue written! Now I need your clearest answer - did you write anything in your notebook or make any notes yesterday? Say: Yes I wrote in my notebook yesterday or I made notes about the case yesterday",
+          options: ["Yes I wrote in my notebook yesterday", "I made notes about the case yesterday"]
         },
         {
-          ai: "Last morning clue! Did you finish all your schoolwork before going home? Say: Yes I finished everything or I finished most of it",
-          options: ["Yes I finished everything", "I finished most of it"]
+          ai: "Final case question! You have been a great suspect! Can you give me one clear answer to close this case - are you innocent? Say: Yes I am innocent and my answer is clear or I gave all my clues and I am innocent",
+          options: ["Yes I am innocent and my answer is clear", "I gave all my clues and I am innocent"]
         }
       ],
       completion_message: "Morning case file complete! Six perfect clues recorded. You are a true time detective!"

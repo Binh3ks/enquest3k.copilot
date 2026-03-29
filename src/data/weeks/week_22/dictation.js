@@ -1,14 +1,14 @@
 export default {
   sentences: [
-    { id: 1,  text: "Detective Nova opened her notebook and started the interview." },
-    { id: 2,  text: "She asked Max, Did you walk to school yesterday?" },
-    { id: 3,  text: "Did you talk to your friend before class?" },
-    { id: 4,  text: "Max answered clearly that he walked, talked, and listened in class." },
-    { id: 5,  text: "He played soccer at break time." },
-    { id: 6,  text: "After school, he helped his mother and cleaned his desk." },
-    { id: 7,  text: "In the evening, he washed his hands and watched TV with his family." },
-    { id: 8,  text: "Later, he looked at the moon and opened his diary." },
-    { id: 9,  text: "He finished his homework and started writing his notes." },
-    { id: 10, text: "Nova wrote every clue because each answer helped solve the time detective case and complete her report." }
+    { id: 1,  text: "Detective Nova opened her notebook and started the case interview." },
+    { id: 2,  text: "She had one important question for the suspect about last night." },
+    { id: 3,  text: "The suspect answered clearly and gave Nova her first clue." },
+    { id: 4,  text: "Nova wrote the clue in her notebook and asked the next question." },
+    { id: 5,  text: "She asked, Where were you yesterday morning and last week?" },
+    { id: 6,  text: "The suspect answered every question clearly and without hesitation." },
+    { id: 7,  text: "Nova added each clue to her report and organized the case file." },
+    { id: 8,  text: "Last night, the suspect stayed home and finished reading a book." },
+    { id: 9,  text: "Nova finished her final report and gave the answer to her team." },
+    { id: 10, text: "Every clue in the notebook helped Detective Nova solve the case." }
   ]
 };
