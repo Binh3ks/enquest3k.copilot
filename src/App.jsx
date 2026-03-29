@@ -315,7 +315,7 @@ const MainLayout = () => {
                  <ReviewDashboard key={`review-${learningMode}`} userId={currentUser?.id || currentUser?.name} isAuthenticated={!!currentUser} themeColor={currentStation.color} reviewItems={reviewItems} onWeekComplete={() => {}} />
               ) : (
                 <CurrentModule 
-                  key={`${tabKey}-${learningMode}`} 
+                  key={`${weekId}-${tabKey}-${learningMode}`} 
                   data={matchData} 
                   themeColor={currentStation.color} 
                   isVi={isVi} 

@@ -42,6 +42,22 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   const [showAnswer, setShowAnswer] = useState(() => savedData.questions?.showAnswer || {});
   const textareaRef = useRef(null);
   const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
+  const hasRestoredRef = useRef(false); // 🔥 Restore state from server once after async load
+
+  // Restore saved state after server data loads asynchronously
+  useEffect(() => {
+    if (hasRestoredRef.current) return; // Only restore once per mount
+    if (!savedData._savedAt) return;    // Skip if no real saved data yet
+    hasRestoredRef.current = true;
+    setCurrentIdx(savedData.lastPage || 0);
+    setInputValue(savedData.text || '');
+    setCommittedLength(savedData.committedLength || 0);
+    setQInputs(savedData.questions?.qInputs || {});
+    setQFeedback(savedData.questions?.qFeedback || {});
+    setQAttempts(savedData.questions?.qAttempts || {});
+    setShowAnswer(savedData.questions?.showAnswer || {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [savedData._savedAt]);
 
   const isComplete = sentences.length > 0 && currentIdx >= sentences.length;
   const currentSentence = !isComplete && sentences.length > 0 ? sentences[currentIdx] : null;

@@ -241,9 +241,29 @@ const PronunciationTab = () => {
     }
   };
 
-  // 🔥 Handle practice attempt with Deepgram STT (high accuracy)
+  // 🔥 Local scoring — no AI needed, Levenshtein-based
+  const scoreAnswer = (transcript, target, isWordMode) => {
+    const t = transcript.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+    const tgt = target.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+    if (!t) return 0;
+    if (t === tgt) return 100;
+    if (isWordMode) {
+      if (t.includes(tgt) || tgt.includes(t)) return 90;
+      return Math.round(calculateSimilarity(t, tgt) * 100);
+    } else {
+      // Sentence: use word-overlap ratio + similarity, take the higher
+      const tWords = t.split(/\s+/).filter(Boolean);
+      const tgtWords = tgt.split(/\s+/).filter(Boolean);
+      if (!tgtWords.length) return 0;
+      const overlapCount = tWords.filter(w => tgtWords.includes(w)).length;
+      const overlapScore = overlapCount / tgtWords.length;
+      const simScore = calculateSimilarity(t, tgt);
+      return Math.round(Math.max(overlapScore, simScore) * 100);
+    }
+  };
+
+  // 🔥 Handle practice attempt — Groq Whisper v3 (fast, no AI eval overhead)
   const handlePractice = async () => {
-    // ✅ Check if MediaRecorder is supported
     if (!isRecordingSupported()) {
       alert('⚠️ Recording not supported in this browser. Please use Chrome, Edge, or Firefox.');
       return;
@@ -251,125 +271,81 @@ const PronunciationTab = () => {
 
     setPracticeMode('recording');
     setCurrentFeedback(null);
-    
+
     try {
-      console.log('🎤 Starting audio recording...');
-      
-      // 🔥 Record 5 seconds of audio
-      const audioBlob = await recordAudio(5000);
-      
-      console.log('✅ Audio recorded:', audioBlob.size, 'bytes, type:', audioBlob.type);
-      
+      // Record 3 seconds (down from 5 — more responsive)
+      const audioBlob = await recordAudio(3000);
       setPracticeMode('evaluating');
-      
-      // Get current content based on practice type
+
       const isWordMode = practiceTypeRef.current === 'word';
       const word = currentWordRef.current;
       const sentence = currentSentenceRef.current;
-      const targetText = isWordMode 
+      const targetText = isWordMode
         ? (word?.word || word?.text || '').toLowerCase().trim()
-        : sentence?.trim() || '';
-      
+        : (sentence || '').toLowerCase().trim();
+
       if (!targetText) {
-        console.error('❌ No target text available');
-        setCurrentFeedback({
-          success: false,
-          score: 0,
-          message: 'Không tìm thấy nội dung để luyện. Hãy thử lại!'
-        });
+        setCurrentFeedback({ success: false, score: 0, message: 'Không tìm thấy nội dung để luyện. Hãy thử lại!' });
         setPracticeMode('listen');
         return;
       }
-      
-      console.log(`🎯 Evaluating ${isWordMode ? 'word' : 'sentence'}:`, targetText);
-      
-      // 🔥 Prepare FormData for backend
+
+      // 🚀 Groq Whisper v3 — transcribe directly from frontend (fast, accent-tolerant)
       const formData = new FormData();
-      formData.append('audio', audioBlob, 'recording.webm');
-      formData.append('targetText', targetText);
-      formData.append('mode', isWordMode ? 'word' : 'sentence');
-      
-      // 🔥 Send to Deepgram backend (Railway server)
-      const headers = {};
-      if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-      }
-      
-      const response = await fetch(`${API_BASE_URL}/pronunciation/evaluate-deepgram`, {
+      formData.append('file', audioBlob, 'recording.webm');
+      formData.append('model', 'whisper-large-v3');
+      formData.append('language', 'en');
+      formData.append('response_format', 'json');
+
+      const groqResp = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', {
         method: 'POST',
-        headers,
+        headers: { 'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}` },
         body: formData
       });
-      
-      if (!response.ok) {
-        throw new Error(`Backend error: ${response.status}`);
-      }
-      
-      const result = await response.json();
-      
-      if (!result.success) {
-        throw new Error(result.message || 'Evaluation failed');
-      }
-      
-      console.log('✅ Deepgram result:', {
-        transcript: result.transcript,
-        confidence: (result.confidence * 100).toFixed(1) + '%',
-        score: result.evaluation.score,
-        correct: result.evaluation.correct
-      });
-      
-      // 🔥 Display feedback with Deepgram's high confidence scores (90-95% typical)
-      setCurrentFeedback({
-        success: result.evaluation.correct,
-        score: result.evaluation.score,
-        message: result.evaluation.feedback,
-        tip: result.evaluation.tip,
-        spokenText: result.transcript,
-        confidence: (result.confidence * 100).toFixed(0)
-      });
-      
-      // Save progress if correct
-      if (result.evaluation.correct && result.evaluation.score >= 70) {
+
+      if (!groqResp.ok) throw new Error(`Groq error: ${groqResp.status}`);
+      const groqData = await groqResp.json();
+      const transcript = (groqData.text || '').toLowerCase().trim();
+
+      console.log('🎤 Groq Whisper transcript:', transcript, '→ target:', targetText);
+
+      // Local scoring — instant, no AI call
+      const score = scoreAnswer(transcript, targetText, isWordMode);
+      const isCorrect = score >= 70;
+
+      const feedbackMsg = isCorrect
+        ? score >= 90
+          ? `Xuất sắc! Phát âm rất chuẩn! 🌟 ("${transcript}")`
+          : `Tốt lắm! Khá chuẩn rồi! 👍 ("${transcript}")`
+        : `Cô nghe: "${transcript}". Hãy thử nói "${targetText}" rõ hơn nhé.`;
+
+      setCurrentFeedback({ success: isCorrect, score, message: feedbackMsg, spokenText: transcript });
+
+      if (isCorrect) {
         const newCorrectCount = correctCount + 1;
-        const newAttempts = [
-          ...attempts,
-          {
-            word: targetText,
-            score: result.evaluation.score,
-            timestamp: Date.now()
-          }
-        ];
-        
+        const newAttempts = [...attempts, { word: targetText, score, timestamp: Date.now() }];
         setCorrectCount(newCorrectCount);
         setAttempts(newAttempts);
-        
-        // 🔥 Save to station progress
         saveProgress({
           correctCount: newCorrectCount,
           attempts: newAttempts,
           currentWordIndex: isWordMode ? currentWordIndex : 0,
           currentSentenceIndex: !isWordMode ? currentSentenceIndex : 0
         });
-        
-        // ✅ SUCCESS: Show completion UI
         setPracticeMode('complete');
       } else {
-        // ❌ INCORRECT or LOW SCORE: Return to listen mode to try again
         setPracticeMode('listen');
       }
-      
+
     } catch (error) {
-      console.error('❌ Deepgram pronunciation error:', error);
-      
-      // User-friendly error message
+      console.error('❌ Groq pronunciation error:', error);
       setCurrentFeedback({
         success: false,
         score: 0,
-        message: error.name === 'NotAllowedError' 
+        message: error.name === 'NotAllowedError'
           ? 'Bạn cần cho phép truy cập microphone để luyện phát âm.'
           : 'Có lỗi xảy ra. Hãy kiểm tra kết nối mạng và thử lại!'
       });
-      
       setPracticeMode('listen');
     }
   };
