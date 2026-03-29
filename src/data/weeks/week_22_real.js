@@ -11,11 +11,11 @@ const week22RealData = {
   grammar_focus: "Past Simple Questions with Did",
   grammar_pattern: "Did + subject + base verb? | Yes, subject did. / No, subject didn't.",
   grammar_examples: [
-    "I walked to school yesterday.",
-    "She cooked dinner last night.",
-    "They played soccer after school.",
-    "He cleaned his room in the evening.",
-    "We watched TV for thirty minutes."
+    "Did Detective Nova open her notebook yesterday?",
+    "Did the suspect answer clearly last night?",
+    "The detective recorded every clue in the report.",
+    "Nova asked one clear question at a time.",
+    "Did the suspect report anything about last week?"
   ],
 
   target_vocab: [
@@ -40,9 +40,9 @@ const week22RealData = {
     persona: "Enthusiastic time detective who solves yesterday case files",
     tone: "Curious, encouraging, warm, detective-like",
     opening_lines_by_mission: {
-      mission_1: "Hello time detective! I found Max case file! What did Max do yesterday? Say: He walked to school or He played soccer!",
-      mission_2: "Welcome back, detective! Now let us build YOUR case report! What did YOU do yesterday? Say: I walked to school or I played outside!",
-      mission_3: "Hi detective! Let us interview your family! What did they do yesterday? Say: She cooked dinner or He cleaned the room!"
+      mission_1: "Case file open! I found Max detective notebook! Did Max answer questions clearly yesterday? Say: Yes he answered clearly or He reported the clue!",
+      mission_2: "Welcome back, detective! Now let us build YOUR personal case report! Did you answer questions clearly yesterday? Say: Yes I answered clearly or I recorded my clues!",
+      mission_3: "Hi detective! Let us interview your family! Did anyone in your family answer questions about last night? Say: Yes she answered clearly or He reported about last week!"
     },
     conversation_style: [
       "Warm time-detective energy - discovering what happened like finding clues",
@@ -56,13 +56,13 @@ const week22RealData = {
     ],
     recast_strategy: "ALWAYS recast student errors by modeling correct -ed form naturally",
     recast_example: {
-      student: "I walk to school.",
-      nova_recast: "Yes! I WALKED to school! Say: I walked to school. What did you do next?"
+      student: "Nova open the notebook.",
+      nova_recast: "Yes! Nova OPENED the notebook! Say: Nova opened her notebook. What was the first clue?"
     },
     vocabulary_scaffolding: [
-      "Mission 1: walked, talked, listened, played, watched - Max case story",
-      "Mission 2: cooked, cleaned, helped, washed, finished - your daily activities",
-      "Mission 3: started, opened, looked, talked, helped - family case interview"
+      "Mission 1: detective, clue, notebook, case, interview - Max detective case file vocabulary",
+      "Mission 2: suspect, question, answer, clearly, report - personal detective report vocabulary",
+      "Mission 3: yesterday, last night, last week, interview, case - time detective family vocabulary"
     ],
     questioning_skill: [
       "What did you do yesterday?",
@@ -95,9 +95,9 @@ const week22RealData = {
       "Do you understand?"
     ],
     example_exchanges: [
-      { student: "I walk to school", tutor_response: "Nice! I WALKED to school! Say: I walked to school. Who did you walk with?" },
-      { student: "play soccer", tutor_response: "Great! I PLAYED soccer! Say: I played soccer. When did you play?" },
-      { student: "help mom", tutor_response: "Wow! I HELPED mom! Say: I helped my mom. What did you help with?" }
+      { student: "Nova open the notebook", tutor_response: "Nice! Nova OPENED the notebook! Say: She opened her notebook. What was the first clue?" },
+      { student: "the suspect answer clearly", tutor_response: "Great! The suspect ANSWERED clearly! Say: The suspect answered clearly. What was the answer?" },
+      { student: "Nova record the clue", tutor_response: "Wow! Nova RECORDED the clue! Say: Nova recorded the clue. What happened next?" }
     ]
   },
 
@@ -114,20 +114,20 @@ const week22RealData = {
 
       mission_context: "CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: Say: ___ or ___! NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 22 Mission 1. STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. GRAMMAR FOCUS: Subject + verb-ed. VOCABULARY: walked, talked, listened, played, watched. STRICT FOCUS: REGULAR PAST TENSE ONLY. RECAST ERRORS: student says Max walk - model: Yes! Max WALKED! Say: He walked to school! Do NOT ask another question on the last turn.",
 
-      target_vocab: ["walked", "talked", "listened", "played", "watched"],
-      target_pattern: "Subject + verb(-ed) [+ object/time].",
+      target_vocab: ["detective", "clue", "notebook", "case", "interview"],
+      target_pattern: "Subject + verb(-ed) [+ detective object/time].",
 
       conversation_topics: [
-        "Introduction: I found Max case file! (detective opener)",
-        "Did Max walk to school? (morning routine)",
-        "Who did Max talk to on the way? (social interaction)",
-        "Did Max listen to the teacher? (school activity)",
-        "What did Max play at break time? (play)",
-        "Did Max wash his hands after playing? (hygiene)",
-        "Did Max finish his schoolwork? (study)",
-        "Did Max help someone at home? (family)",
-        "Did Max watch TV in the evening? (evening routine)",
-        "Did Max look at the stars? (nature element)"
+        "Introduction: Case file open! Nova has a detective notebook! (detective opener)",
+        "Did Max open his notebook during the interview? (notebook clue)",
+        "Did Nova ask Max one clear question? (question clue)",
+        "Did Max answer each question clearly? (clearly clue)",
+        "Did Nova record each answer as a clue? (clue recording)",
+        "Did the suspect give Nova an important case clue? (case clue)",
+        "Did Nova ask about last night? (last night clue)",
+        "Did Max report anything about last week? (last week clue)",
+        "Did Nova record all answers in the report? (report)",
+        "Did Nova close the case notebook? (case closed)"
       ],
 
       story_character: {
@@ -144,35 +144,35 @@ const week22RealData = {
         role: "Time Detective reading Max yesterday case entries"
       },
 
-      opening_narrative: "Hello time detective! Look! I found Max case file from yesterday! Let us read it together! The first entry says - Max was busy! Did Max walk to school? Say: Yes he walked to school or He walked with a friend",
+      opening_narrative: "Case notebook open! I am Detective Nova and I have a new case! First question for my suspect - did Max open his notebook during the detective interview? Say: Yes Max opened his notebook or He opened the case file yesterday",
 
       story_arc: [
         {
           phase: "morning_casefile",
           turns: "1-5",
-          phase_name: "Morning Case Entries",
-          focus: "verb-ed for morning activities",
-          goal: "Student reads and reports what Max did in the morning",
+          phase_name: "Opening the Case File",
+          focus: "detective, notebook, interview, question, clue",
+          goal: "Student reads Max case file and discovers detective interview clues",
           phase_questions: [
-            "Great clue! He WALKED to school! Did Max talk to his friend on the way? Say: Yes he talked to his friend or They talked about homework",
-            "Nice! They TALKED about homework! What did Max do at school? Did he listen to the teacher? Say: Yes he listened carefully or He listened and wrote notes",
-            "Excellent! He LISTENED to the teacher! Did Max play soccer at break time? Say: Yes he played soccer or He played with his classmates",
-            "Wow! He PLAYED soccer! Did he wash his hands after the game? Say: Yes he washed his hands or He always washed his hands",
-            "Right! He WASHED his hands! Did Max finish his schoolwork before home time? Say: Yes he finished his work or He finished everything early"
+            "Notebook open! Did Detective Nova start the interview by asking one clear question? Say: Yes she started the interview or She asked the first question clearly",
+            "Interview started! Did Max answer each question clearly? Say: Yes Max answered clearly or He answered every question clearly and carefully",
+            "Clear answers! Did Nova record each answer as a new clue in her notebook? Say: Yes she recorded each clue or She added each answer to the case notebook",
+            "Notebook filling up! Did the suspect give Nova an important clue about the case? Say: Yes the suspect gave a clue or Max gave Nova the important case clue",
+            "First clues found! Did Nova start reporting what she discovered for the case? Say: Yes she started the report or She began recording the case report"
           ]
         },
         {
           phase: "afternoon_casefile",
           turns: "6-10",
-          phase_name: "Afternoon Case Entries",
-          focus: "verb-ed for afternoon and evening",
-          goal: "Student continues reading the diary for afternoon activities",
+          phase_name: "Discovering More Clues",
+          focus: "yesterday, last night, last week, report, case",
+          goal: "Student discovers time-based case clues",
           phase_questions: [
-            "Great! He FINISHED his work! Did Max help his teacher after school? Say: Yes he helped the teacher or He helped collect the books",
-            "Wow! He HELPED the teacher! What did Max do at home? Did he clean his room? Say: Yes he cleaned his room or He cleaned and organized his desk",
-            "Nice! He CLEANED his room! Did Max watch TV in the evening? Say: Yes he watched TV or He watched for thirty minutes",
-            "Great clue! He WATCHED TV! What did Max do before going to bed? Did he look at the stars? Say: Yes he looked at the stars or He looked out the window",
-            "Amazing! He LOOKED at the stars! Did Max start his notes before sleeping? Say: Yes he started his notes or He opened his notebook"
+            "Morning case recorded! Did Max answer questions about last night? Say: Yes Max answered about last night or He reported about last night clearly",
+            "Last night clue! Did the suspect also report something about last week? Say: Yes the suspect answered about last week or He described last week in the interview",
+            "Last week evidence! Did Nova write every answer in her detective report? Say: Yes she recorded everything or Nova added every answer to the report",
+            "Report in progress! Did Nova ask the suspect one final clear question? Say: Yes she asked a final question or She recorded the last case question",
+            "Final clue! Did Detective Nova solve the case with all the notebook clues? Say: Yes she solved the case or Nova finished the interview and closed the case"
           ]
         },
         {
@@ -182,8 +182,8 @@ const week22RealData = {
           focus: "Summary and goodbye",
           goal: "Wrap up Max case file investigation",
           phase_questions: [
-            "Amazing detective work! Tell me one last thing from the case file - what did Max do last before sleeping? Say: He finished his notes or He opened his notebook",
-            "Case file closed! Max had a wonderful day! He walked, talked, listened, played, and looked at the stars! Great detective work! Thank you for reading with me!"
+            "One last clue needed! Did the suspect answer one final question about the case? Say: The suspect answered clearly or He gave Nova one last important clue",
+            "Case file closed! Max opened his notebook, answered every question clearly, Nova recorded every clue, and the report is complete! You are a brilliant time detective!"
           ]
         }
       ],
@@ -204,20 +204,20 @@ const week22RealData = {
 
       mission_context: "CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: Say: ___ or ___! NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 22 Mission 2. STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. GRAMMAR FOCUS: I + verb-ed. VOCABULARY: cooked, cleaned, helped, washed, finished. STRICT FOCUS: First-person PAST TENSE ONLY. RECAST ERRORS: student says I walk - model: Yes! I WALKED! Say: I walked to school! Do NOT ask another question on the last turn.",
 
-      target_vocab: ["cooked", "cleaned", "helped", "washed", "finished"],
-      target_pattern: "I + verb(-ed) [+ object/time].",
+      target_vocab: ["suspect", "question", "answer", "clearly", "report"],
+      target_pattern: "I + verb(-ed) [+ detective object/time].",
 
       conversation_topics: [
-        "Introduction: Your diary starts now! (personal context)",
-        "Did you walk to school? (morning transport)",
-        "What did you do at school? (school activities)",
-        "Did you finish your homework? (after school)",
-        "Did you help at home? (chores)",
-        "Did your family cook dinner? (family meal)",
-        "Did you clean your room? (tidying up)",
-        "Did you wash your hands? (hygiene habit)",
-        "Did you watch something in the evening? (leisure)",
-        "Closing: Your diary is amazing!"
+        "Introduction: Your detective notebook is open! (personal context)",
+        "Did you answer any questions clearly yesterday? (clearly)",
+        "Did you open your notebook or school book yesterday? (notebook)",
+        "Did you ask someone a question yesterday? (question)",
+        "Did you record or write notes yesterday? (record)",
+        "Did you answer about last night? (last night)",
+        "Did you open your notebook last night? (last night notebook)",
+        "Did you notice anything about last week? (last week)",
+        "Did your report turn out clearly? (report)",
+        "Closing: Your detective report is complete!"
       ],
 
       story_character: {
@@ -234,35 +234,35 @@ const week22RealData = {
         role: "Time Detective interviewing student to build their personal case report"
       },
 
-      opening_narrative: "Hello time detective! Now it is YOUR turn! Let us build your case report! First - did you walk to school yesterday? Say: Yes I walked to school or I walked with my friend",
+      opening_narrative: "Your detective notebook is open! Now I need to build your personal case report! First question - did you answer any questions clearly yesterday? Say: Yes I answered questions clearly or I answered my teacher clearly yesterday",
 
       story_arc: [
         {
           phase: "morning_you",
           turns: "1-5",
-          phase_name: "Your Morning",
-          focus: "I + verb-ed for morning activities",
-          goal: "Student talks about their own morning activities",
+          phase_name: "Your Morning Case Report",
+          focus: "I + verb-ed with detective vocabulary",
+          goal: "Student talks about their own activities using W22 detective words",
           phase_questions: [
-            "Nice! I WALKED to school! Did you talk to your friend on the way? Say: Yes I talked to my friend or I talked about the homework",
-            "Great! I TALKED to my friend! What did you do at school? Did you listen to all your teachers? Say: Yes I listened carefully or I listened and wrote notes",
-            "Well done! I LISTENED to my teachers! Did you play at break time? Say: Yes I played outside or I played with my classmates",
-            "Amazing! I PLAYED outside! Did you wash your hands after playing? Say: Yes I washed my hands or I always washed my hands",
-            "Perfect! I WASHED my hands! Did you finish all your schoolwork? Say: Yes I finished everything or I finished most of my schoolwork"
+            "First clue for your report! Did you open your notebook yesterday morning? Say: Yes I opened my notebook or I opened my school book yesterday",
+            "Notebook open! Did you ask anyone a question yesterday at school? Say: Yes I asked a question yesterday or I asked my teacher a question clearly",
+            "Question clue noted! Did you answer all your questions clearly yesterday? Say: Yes I answered clearly or I answered every question the teacher asked",
+            "Clear answers recorded! Did you write or record any notes in your notebook yesterday? Say: Yes I recorded my notes or I started writing in my notebook",
+            "Notes recorded! Did you report anything interesting about your morning yesterday? Say: Yes I reported to my friend or I described my morning clearly"
           ]
         },
         {
           phase: "afternoon_you",
           turns: "6-10",
-          phase_name: "Your Afternoon",
-          focus: "I + verb-ed for afternoon and home activities",
-          goal: "Student talks about their afternoon and evening",
+          phase_name: "Your Afternoon Case Report",
+          focus: "I + verb-ed with time detective clues",
+          goal: "Student talks using last night, last week, report, case vocabulary",
           phase_questions: [
-            "Excellent! I FINISHED my schoolwork! When you got home, did you help with dinner? Say: Yes I helped cook dinner or I helped set the table",
-            "Wonderful! I HELPED at home! Did your family cook dinner? Say: Yes mom cooked dinner or Yes dad cooked the rice",
-            "Delicious! Someone COOKED dinner! Did you clean your room after dinner? Say: Yes I cleaned my room or I cleaned and organized my things",
-            "Great job! I CLEANED my room! Did you watch TV or a video before bed? Say: Yes I watched TV or I watched a cartoon",
-            "Fun! I WATCHED TV! Before bed, did you open your diary or look at anything? Say: Yes I looked at my books or I opened my diary"
+            "Great morning case report! Did you answer any questions about last night? Say: Yes I answered questions about last night or I described last night clearly",
+            "Last night clue! Did you open your notebook or diary last night? Say: Yes I opened my notebook last night or I started writing last night",
+            "Notebook opened! Did you notice anything interesting and report it last week? Say: Yes I noticed something last week or I reported about last week",
+            "Last week evidence! Did your detective report turn out clearly written? Say: Yes my report is clear or I answered every question completely",
+            "Report ready! Did you close your notebook last night after recording your clues? Say: Yes I closed my notebook or I finished recording last night"
           ]
         },
         {
@@ -270,10 +270,10 @@ const week22RealData = {
           turns: "11-12",
           phase_name: "Your Case Report Complete!",
           focus: "Summary and celebration",
-          goal: "Complete the student case report with praise",
+          goal: "Complete the student detective case report with praise",
           phase_questions: [
-            "Your case report is almost complete! What was the LAST thing you did before sleeping? Say: I started to sleep at nine or I finished reading",
-            "Your case report is AMAZING! Yesterday you walked, talked, listened, helped, and finished your homework! That is a great day! You are a WONDERFUL time detective!"
+            "Your detective report is almost done! What was the last clue you added? Say: I answered the last question or I recorded the final clue clearly",
+            "Your case report is AMAZING! You opened your notebook, answered every question clearly, recorded your clues, and finished your report! You are a WONDERFUL time detective!"
           ]
         }
       ],
@@ -294,20 +294,20 @@ const week22RealData = {
 
       mission_context: "CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: Say: ___ or ___! NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 22 Mission 3. STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. GRAMMAR FOCUS: She/He + verb-ed. VOCABULARY: started, opened, looked, talked, helped. STRICT FOCUS: Third-person PAST TENSE ONLY. RECAST ERRORS: student says Mom cook - model: Yes! Mom COOKED! Say: She cooked rice! Do NOT ask another question on the last turn.",
 
-      target_vocab: ["started", "opened", "looked", "talked", "helped"],
-      target_pattern: "She/He + verb(-ed) [+ object/time].",
+      target_vocab: ["yesterday", "last night", "last week", "interview", "case"],
+      target_pattern: "She/He + verb(-ed) [+ detective object/time].",
 
       conversation_topics: [
-        "Introduction: Let us interview your family! (third person context)",
-        "What did your mom do in the morning? (mom activities)",
-        "Did your mom clean or cook? (mom chores)",
-        "What did your dad do yesterday? (dad activities)",
-        "Did your dad help at home? (dad helping)",
-        "Who started dinner? (family cooking)",
-        "Who opened the door when you came home? (family actions)",
-        "Who did you talk to most yesterday? (family conversation)",
-        "Who helped you with homework? (study support)",
-        "Closing: Your family had a busy day!"
+        "Introduction: Family interview open! Open the detective notebook! (third person context)",
+        "Did your mom answer questions clearly yesterday? (mom answers)",
+        "Did your mom open any notebook or book yesterday? (mom notebook)",
+        "Did your mom report anything about last week? (mom last week)",
+        "Did your mom answer your questions clearly? (mom clearly)",
+        "Did your dad answer questions about last night? (dad last night)",
+        "Did your dad open his notebook or workspace last night? (dad notebook)",
+        "Did your dad report anything about last week? (dad last week)",
+        "Did the whole family answer together? (family together)",
+        "Closing: Family case interview complete!"
       ],
 
       story_character: {
@@ -324,46 +324,46 @@ const week22RealData = {
         role: "Time Detective interviewing student about family activities yesterday"
       },
 
-      opening_narrative: "Hello time detective! Let us interview your family about yesterday! First - what did your mom do? Did she cook in the morning? Say: Yes she cooked breakfast or She started cooking early",
+      opening_narrative: "Family detective interview starting now! Open your notebook detective! First - did your mom answer any questions about her day yesterday? Say: Yes my mom answered questions yesterday or She answered clearly about her day",
 
       story_arc: [
         {
           phase: "mom_interview",
           turns: "1-4",
           phase_name: "Interviewing Mom",
-          focus: "She + verb-ed for mom activities",
-          goal: "Student talks about mom yesterday activities",
+          focus: "She + verb-ed with detective time vocabulary",
+          goal: "Student talks about mom using detective case vocabulary",
           phase_questions: [
-            "Nice! She COOKED breakfast! Did your mom walk anywhere? Say: Yes she walked to the market or She walked to the shop",
-            "Interesting! She WALKED! Did your mom talk to the neighbors or anyone? Say: Yes she talked to them or She talked on the phone",
-            "Great! She TALKED to the neighbors! Did your mom clean the house? Say: Yes she cleaned the house or She cleaned in the morning",
-            "Wow! She CLEANED the house! Did your mom help you with homework? Say: Yes she helped me or She helped before dinner"
+            "Mom clue noted! Did your mom open any notebook or start reading something yesterday? Say: Yes she opened a book or She started reading yesterday",
+            "Mom reading noted! Did your mom answer your questions clearly when you asked her? Say: Yes she answered me clearly or She gave a clear answer",
+            "Mom answer recorded! Did your mom report anything about last week to the family? Say: Yes she reported about last week or She described last week to us",
+            "Mom last week clue! Did your mom notice anything interesting about yesterday and describe it clearly? Say: Yes she noticed something interesting or She answered clearly about it"
           ]
         },
         {
           phase: "dad_interview",
           turns: "5-8",
           phase_name: "Interviewing Dad",
-          focus: "He + verb-ed for dad activities",
-          goal: "Student talks about dad yesterday activities",
+          focus: "He + verb-ed with detective time vocabulary",
+          goal: "Student talks about dad using detective case vocabulary",
           phase_questions: [
-            "Sweet! She HELPED you! Now let us ask about your dad! Did he start work early? Say: Yes he started work early or He worked all day",
-            "Busy dad! He STARTED work early! Did your dad cook or help with dinner? Say: Yes he cooked rice or He helped wash the dishes",
-            "Great teamwork! He HELPED with dinner! Did your dad open any books or look at anything? Say: Yes he looked at his phone or He opened a book",
-            "Interesting! He LOOKED after dinner! Did your dad talk to you last night? Say: Yes he talked to me or He talked to the whole family"
+            "Mom interview complete! Now the dad interview! Did your dad answer any questions about last night? Say: Yes he answered questions last night or He reported about last night",
+            "Dad last night clue! Did your dad open his notebook or start working last night? Say: Yes he opened his notebook or He started working last night",
+            "Dad work noted! Did your dad report anything interesting about last week? Say: Yes he reported something last week or He described last week clearly",
+            "Dad last week clue! Did your dad ask you a clear question yesterday? Say: Yes he asked me clearly or He questioned me about yesterday"
           ]
         },
         {
           phase: "family_together",
           turns: "9-12",
-          phase_name: "Family Together",
-          focus: "Everyone + verb-ed for family activities",
-          goal: "Student describes what the whole family did together",
+          phase_name: "Family Case File Together",
+          focus: "Everyone + verb-ed for family case activities",
+          goal: "Student describes what the whole family did using detective vocabulary",
           phase_questions: [
-            "Wonderful! He TALKED to the family! What did your whole family do together? Say: We watched TV or We talked and laughed at dinner",
-            "How lovely! Your family time together! Who finished last in your house? Say: Dad finished last or Mom finished last",
-            "Perfect! Tell me one special thing your family did together yesterday! Say: We cooked together or We watched stars or We talked at dinner",
-            "That is BEAUTIFUL! Your family cooked, talked, cleaned, helped, and finished the day together! That is the best case file of all! Thank you for sharing your family story, detective!"
+            "Amazing family interview! Did your whole family answer questions clearly together yesterday? Say: Yes we answered together or We all answered the questions clearly",
+            "Family answers recorded! Did anyone in your family open a notebook or start recording notes last night? Say: Yes someone opened a notebook or Someone started taking notes",
+            "Family evidence! Did someone in your family report something interesting about last week? Say: Yes someone reported about last week or We talked about last week clearly",
+            "Your family case interview is COMPLETE! Your family answered clearly, opened their notebooks, reported clues, and you recorded everything! Brilliant family detective work!"
           ]
         }
       ],

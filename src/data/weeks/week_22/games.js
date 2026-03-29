@@ -1,138 +1,138 @@
 /**
  * Week 22 Game Data - Advanced Mode (GameHub)
- * Theme: Time Detective Agency - Yesterday's Diary
- * Grammar: Past Simple Regular Verbs (-ed)
+ * Theme: The Time Detective - Case Interview Vocabulary
+ * Grammar: Past Simple Questions with Did
  */
 
 export const week22GamesAdvanced = {
   vocabulary: [
-    'walked', 'looked', 'cooked', 'played', 'watched',
-    'cleaned', 'helped', 'talked', 'listened', 'opened'
+    'detective', 'case', 'notebook', 'interview', 'question',
+    'clearly', 'answer', 'suspect', 'report', 'clue'
   ],
   show_tell: {
     steps: 3,
     word_list: [
-      'walked', 'looked', 'cooked', 'played', 'watched',
-      'cleaned', 'helped', 'talked', 'listened', 'opened'
+      'detective', 'case', 'notebook', 'interview', 'question',
+      'clearly', 'answer', 'suspect', 'report', 'clue'
     ],
-    instructions_easy: 'Say the past verb clearly, then add who did it, then make a full sentence.',
-    instructions_advanced: 'Use the past verb in a sentence about yesterday.',
+    instructions_easy: 'Say the detective word clearly, then add a phrase, then make a full detective sentence.',
+    instructions_advanced: 'Use the word in a sentence about the time detective case.',
     step_instructions: {
-      1: 'Step 1: say the past verb clearly.',
-      2: 'Step 2: add who did the action.',
-      3: 'Step 3: make a full past tense sentence.'
+      1: 'Step 1: say the detective word clearly.',
+      2: 'Step 2: add a short phrase with the word.',
+      3: 'Step 3: make a full sentence about the detective case.'
     },
-    frames_easy: ['Yesterday I ___', 'She ___ last night'],
-    frames_advanced: ['Yesterday I ___ to school', 'After school I ___'],
+    frames_easy: ['Nova is a ___', 'The ___ said'],
+    frames_advanced: ['Detective Nova ___ the case', 'The suspect answered ___'],
     details_easy: [],
     details_advanced: [],
     detail_map: {
-      'walked': ['walked', 'walked to school', 'I walked', 'Yesterday I walked to school with my friend.'],
-      'looked': ['looked', 'looked at', 'I looked', 'Last night I looked at the bright stars in the sky.'],
-      'cooked': ['cooked', 'cooked dinner', 'Mom cooked', 'My mom cooked rice and vegetables for dinner last night.'],
-      'played': ['played', 'played soccer', 'I played', 'I played soccer with my classmates at break time.'],
-      'watched': ['watched', 'watched TV', 'I watched', 'I watched my favorite TV show for thirty minutes.'],
-      'cleaned': ['cleaned', 'cleaned room', 'I cleaned', 'I cleaned my room after school and organized my desk.'],
-      'helped': ['helped', 'helped mom', 'I helped', 'I helped my mother set the table before dinner.'],
-      'talked': ['talked', 'talked to', 'We talked', 'We talked about our homework on the way to school.'],
-      'listened': ['listened', 'listened carefully', 'I listened', 'I listened to the teacher and wrote notes in my book.'],
-      'opened': ['opened', 'opened the door', 'I opened', 'I opened the door and welcomed my grandmother inside.']
+      'detective': ['detective', 'time detective', 'Nova is a detective', 'Detective Nova is the best time detective in the whole agency.'],
+      'case': ['case', 'detective case', 'Nova has a case', 'Detective Nova opened a new case and started asking questions about yesterday.'],
+      'notebook': ['notebook', 'detective notebook', 'Nova has a notebook', 'Nova wrote every clue clearly in her detective notebook during the interview.'],
+      'interview': ['interview', 'case interview', 'Nova started the interview', 'Detective Nova started the interview by asking the suspect one clear question.'],
+      'question': ['question', 'clear question', 'Nova asked a question', 'Nova asked the suspect one clear question at a time and wrote every answer.'],
+      'clearly': ['clearly', 'answered clearly', 'The suspect answered clearly', 'The suspect answered clearly and gave Nova her first important clue.'],
+      'answer': ['answer', 'clear answer', 'The suspect gave an answer', 'Every answer the suspect gave was written in Nova notebook as a new clue.'],
+      'suspect': ['suspect', 'main suspect', 'Max is the suspect', 'The suspect answered every question and helped Detective Nova close the case.'],
+      'report': ['report', 'case report', 'Nova wrote a report', 'Nova finished her report after the interview and closed the case successfully.'],
+      'clue': ['clue', 'important clue', 'Nova found a clue', 'Nova found an important clue in the suspect answer about last night.']
     },
     distractor_map: {
-      'walked': ['ran quickly', 'took the bus', 'drove a car'],
-      'looked': ['closed eyes', 'turned away', 'slept'],
-      'cooked': ['ordered food', 'bought snacks', 'ate out'],
-      'played': ['sat quietly', 'slept at school', 'read a book'],
-      'watched': ['turned off TV', 'closed laptop', 'went to sleep']
+      'detective': ['student', 'teacher', 'doctor'],
+      'case': ['diary', 'homework', 'letter'],
+      'notebook': ['phone', 'TV remote', 'soccer ball'],
+      'interview': ['football game', 'lunch break', 'school exam'],
+      'question': ['story', 'picture', 'map']
     },
     frame_map: {
-      'walked': ['I walked to school yesterday.'],
-      'cooked': ['Mom cooked dinner last night.'],
-      'played': ['I played soccer at break time.']
+      'detective': ['Nova is a detective who asks questions.'],
+      'case': ['Nova opened a new case yesterday.'],
+      'clue': ['The suspect gave Nova an important clue.']
     },
     sentence_hints_map: {
-      'walked': ['I walked to school.', 'She walked home.', 'We walked together.'],
-      'looked': ['I looked at the stars.', 'He looked out the window.', 'She looked at her book.'],
-      'cooked': ['Mom cooked dinner.', 'Dad cooked rice.', 'She cooked vegetables.'],
-      'played': ['I played soccer.', 'We played outside.', 'He played with his friends.'],
-      'watched': ['I watched TV.', 'She watched cartoons.', 'He watched for thirty minutes.'],
-      'cleaned': ['I cleaned my room.', 'She cleaned the table.', 'He cleaned the floor.'],
-      'helped': ['I helped mom.', 'She helped me.', 'He helped his sister.'],
-      'talked': ['We talked about homework.', 'She talked to her friend.', 'I talked on the phone.'],
-      'listened': ['I listened carefully.', 'She listened to music.', 'He listened to the teacher.'],
-      'opened': ['I opened the door.', 'She opened the window.', 'He opened his notebook.']
+      'detective': ['Nova is a detective.', 'She is the time detective.', 'Detective Nova asks questions.'],
+      'case': ['Nova opened a case.', 'The case had a clue.', 'She solved the case.'],
+      'notebook': ['Nova has a notebook.', 'She wrote in her notebook.', 'The clue was in the notebook.'],
+      'interview': ['Nova started the interview.', 'The interview had questions.', 'She finished the interview.'],
+      'question': ['Nova asked a question.', 'The question was clear.', 'She asked the first question.'],
+      'clearly': ['The suspect answered clearly.', 'Nova spoke clearly.', 'He answered clearly.'],
+      'answer': ['The suspect gave an answer.', 'The answer was a clue.', 'Nova wrote the answer.'],
+      'suspect': ['Max is the suspect.', 'The suspect answered.', 'Nova interviewed the suspect.'],
+      'report': ['Nova wrote a report.', 'The report had clues.', 'She finished the report.'],
+      'clue': ['Nova found a clue.', 'The clue was in the notebook.', 'Each answer was a clue.']
     }
   },
 
   make_sentence: {
-    instructions_easy: 'Unscramble the words to make a past tense sentence.',
-    instructions_advanced: 'Unscramble the words to make a past tense sentence.',
+    instructions_easy: 'Unscramble the words to make a detective sentence.',
+    instructions_advanced: 'Unscramble the words to make a detective case sentence.',
     sentences_easy: [
-      { scrambled: ['I', 'walked', 'to', 'school'], answer: 'I walked to school.' },
-      { scrambled: ['She', 'cooked', 'dinner'], answer: 'She cooked dinner.' },
-      { scrambled: ['He', 'played', 'soccer'], answer: 'He played soccer.' },
-      { scrambled: ['We', 'cleaned', 'the', 'room'], answer: 'We cleaned the room.' },
-      { scrambled: ['I', 'watched', 'TV'], answer: 'I watched TV.' },
-      { scrambled: ['She', 'helped', 'mom'], answer: 'She helped mom.' },
-      { scrambled: ['He', 'talked', 'to', 'me'], answer: 'He talked to me.' },
-      { scrambled: ['I', 'listened', 'carefully'], answer: 'I listened carefully.' },
-      { scrambled: ['She', 'opened', 'the', 'door'], answer: 'She opened the door.' },
-      { scrambled: ['He', 'looked', 'at', 'the', 'stars'], answer: 'He looked at the stars.' }
+      { scrambled: ['Nova', 'has', 'a', 'notebook'], answer: 'Nova has a notebook.' },
+      { scrambled: ['The', 'suspect', 'answered', 'clearly'], answer: 'The suspect answered clearly.' },
+      { scrambled: ['Nova', 'opened', 'her', 'notebook'], answer: 'Nova opened her notebook.' },
+      { scrambled: ['She', 'asked', 'a', 'question'], answer: 'She asked a question.' },
+      { scrambled: ['Nova', 'found', 'a', 'clue'], answer: 'Nova found a clue.' },
+      { scrambled: ['The', 'detective', 'wrote', 'a', 'report'], answer: 'The detective wrote a report.' },
+      { scrambled: ['Nova', 'started', 'the', 'interview'], answer: 'Nova started the interview.' },
+      { scrambled: ['The', 'suspect', 'gave', 'an', 'answer'], answer: 'The suspect gave an answer.' },
+      { scrambled: ['Nova', 'solved', 'the', 'case'], answer: 'Nova solved the case.' },
+      { scrambled: ['The', 'detective', 'asked', 'a', 'question'], answer: 'The detective asked a question.' }
     ],
     sentences_advanced: [
-      { scrambled: ['I', 'walked', 'to', 'school', 'yesterday', 'morning'], answer: 'I walked to school yesterday morning.', base_words: ['i', 'walked', 'to', 'school', 'yesterday', 'morning'], time_phrases: ['yesterday', 'last night', 'this morning'], location_phrases: ['to school', 'with my friend', 'along the road'] },
-      { scrambled: ['Mom', 'cooked', 'rice', 'and', 'vegetables', 'last', 'night'], answer: 'Mom cooked rice and vegetables last night.', base_words: ['mom', 'cooked', 'rice', 'and', 'vegetables', 'last', 'night'], time_phrases: ['last night', 'yesterday', 'in the evening'], location_phrases: ['in the kitchen', 'for dinner', 'for the family'] },
-      { scrambled: ['I', 'played', 'soccer', 'with', 'my', 'classmates'], answer: 'I played soccer with my classmates.', base_words: ['i', 'played', 'soccer', 'with', 'my', 'classmates'], time_phrases: ['yesterday', 'at break time', 'after school'], location_phrases: ['on the field', 'with my classmates', 'at school'] },
-      { scrambled: ['She', 'cleaned', 'her', 'room', 'after', 'school'], answer: 'She cleaned her room after school.', base_words: ['she', 'cleaned', 'her', 'room', 'after', 'school'], time_phrases: ['after school', 'yesterday', 'last evening'], location_phrases: ['her room', 'the whole house', 'the living room'] },
-      { scrambled: ['He', 'watched', 'his', 'favorite', 'TV', 'show'], answer: 'He watched his favorite TV show.', base_words: ['he', 'watched', 'his', 'favorite', 'tv', 'show'], time_phrases: ['yesterday', 'last night', 'in the evening'], location_phrases: ['at home', 'in the living room', 'for thirty minutes'] },
-      { scrambled: ['I', 'helped', 'my', 'mother', 'set', 'the', 'table'], answer: 'I helped my mother set the table.', base_words: ['i', 'helped', 'my', 'mother', 'set', 'the', 'table'], time_phrases: ['yesterday', 'before dinner', 'last night'], location_phrases: ['in the kitchen', 'at home', 'before dinner'] },
-      { scrambled: ['We', 'talked', 'about', 'our', 'homework', 'together'], answer: 'We talked about our homework together.', base_words: ['we', 'talked', 'about', 'our', 'homework', 'together'], time_phrases: ['yesterday', 'after school', 'on the way home'], location_phrases: ['on the way to school', 'in the classroom', 'together'] },
-      { scrambled: ['I', 'listened', 'to', 'the', 'teacher', 'carefully'], answer: 'I listened to the teacher carefully.', base_words: ['i', 'listened', 'to', 'the', 'teacher', 'carefully'], time_phrases: ['yesterday', 'in class', 'this morning'], location_phrases: ['in the classroom', 'during the lesson', 'at school'] },
-      { scrambled: ['She', 'opened', 'the', 'door', 'and', 'smiled'], answer: 'She opened the door and smiled.', base_words: ['she', 'opened', 'the', 'door', 'and', 'smiled'], time_phrases: ['yesterday', 'last night', 'when I arrived'], location_phrases: ['at the entrance', 'happily', 'for her grandmother'] },
-      { scrambled: ['He', 'looked', 'at', 'the', 'bright', 'stars'], answer: 'He looked at the bright stars.', base_words: ['he', 'looked', 'at', 'the', 'bright', 'stars'], time_phrases: ['last night', 'yesterday evening', 'before bed'], location_phrases: ['in the sky', 'from his window', 'outside'] }
+      { scrambled: ['Nova', 'opened', 'her', 'notebook', 'and', 'started', 'the', 'interview'], answer: 'Nova opened her notebook and started the interview.', base_words: ['nova', 'opened', 'her', 'notebook', 'and', 'started', 'the', 'interview'], time_phrases: ['yesterday', 'last night', 'this morning'], location_phrases: ['in the agency', 'at the office', 'in the room'] },
+      { scrambled: ['The', 'suspect', 'answered', 'every', 'question', 'clearly'], answer: 'The suspect answered every question clearly.', base_words: ['the', 'suspect', 'answered', 'every', 'question', 'clearly'], time_phrases: ['yesterday', 'last night', 'during the interview'], location_phrases: ['in the interview room', 'at the agency', 'clearly and slowly'] },
+      { scrambled: ['Detective', 'Nova', 'found', 'an', 'important', 'clue', 'in', 'the', 'case'], answer: 'Detective Nova found an important clue in the case.', base_words: ['detective', 'nova', 'found', 'an', 'important', 'clue', 'in', 'the', 'case'], time_phrases: ['yesterday', 'last week', 'after the interview'], location_phrases: ['in the case file', 'in the notebook', 'in the report'] },
+      { scrambled: ['Nova', 'wrote', 'every', 'answer', 'in', 'her', 'notebook', 'as', 'a', 'clue'], answer: 'Nova wrote every answer in her notebook as a clue.', base_words: ['nova', 'wrote', 'every', 'answer', 'in', 'her', 'notebook', 'as', 'a', 'clue'], time_phrases: ['during the interview', 'yesterday', 'last night'], location_phrases: ['in her notebook', 'in the case file', 'on the report'] },
+      { scrambled: ['The', 'suspect', 'gave', 'a', 'clear', 'answer', 'to', 'each', 'question'], answer: 'The suspect gave a clear answer to each question.', base_words: ['the', 'suspect', 'gave', 'a', 'clear', 'answer', 'to', 'each', 'question'], time_phrases: ['during the interview', 'yesterday', 'last night'], location_phrases: ['in the interview', 'to the detective', 'clearly and slowly'] },
+      { scrambled: ['Nova', 'finished', 'her', 'report', 'and', 'closed', 'the', 'case'], answer: 'Nova finished her report and closed the case.', base_words: ['nova', 'finished', 'her', 'report', 'and', 'closed', 'the', 'case'], time_phrases: ['yesterday', 'last night', 'after the interview'], location_phrases: ['at the agency', 'in her office', 'successfully'] },
+      { scrambled: ['Detective', 'Nova', 'asked', 'the', 'suspect', 'about', 'yesterday'], answer: 'Detective Nova asked the suspect about yesterday.', base_words: ['detective', 'nova', 'asked', 'the', 'suspect', 'about', 'yesterday'], time_phrases: ['yesterday', 'last week', 'in the morning'], location_phrases: ['in the interview room', 'at the agency', 'carefully'] },
+      { scrambled: ['The', 'interview', 'helped', 'Nova', 'find', 'every', 'clue'], answer: 'The interview helped Nova find every clue.', base_words: ['the', 'interview', 'helped', 'nova', 'find', 'every', 'clue'], time_phrases: ['yesterday', 'last night', 'last week'], location_phrases: ['in the case file', 'about the suspect', 'for the report'] },
+      { scrambled: ['Nova', 'wrote', 'a', 'clear', 'report', 'after', 'the', 'interview'], answer: 'Nova wrote a clear report after the interview.', base_words: ['nova', 'wrote', 'a', 'clear', 'report', 'after', 'the', 'interview'], time_phrases: ['after the interview', 'yesterday', 'last night'], location_phrases: ['at the agency', 'in her notebook', 'for the case'] },
+      { scrambled: ['The', 'detective', 'asked', 'one', 'clear', 'question', 'at', 'a', 'time'], answer: 'The detective asked one clear question at a time.', base_words: ['the', 'detective', 'asked', 'one', 'clear', 'question', 'at', 'a', 'time'], time_phrases: ['during the interview', 'yesterday', 'last week'], location_phrases: ['at the agency', 'to the suspect', 'carefully'] }
     ]
   },
   ask_me: {
-    instructions_easy: 'Ask a question that matches the context.',
-    instructions_advanced: 'Ask a question that matches the context.',
+    instructions_easy: 'Ask a question that matches the detective context.',
+    instructions_advanced: 'Ask a detective question that matches the context.',
     contexts_easy: [
       {
-        id: 'w21_did_what',
+        id: 'w22_nova_found_clue',
         task_type: 'find_question',
-        topic: 'past actions',
-        intro: 'I walked to school yesterday. Ask me what I did yesterday.',
-        acceptedQuestions: ['What did you do yesterday?', 'Did you walk to school?', 'Where did you walk?'],
-        answer: 'I walked to school yesterday.',
-        question_hints: ['What did you do yesterday?', 'Did you walk to school?'],
-        required_question_words: ['did', 'you'],
-        required_keywords: ['yesterday', 'walk'],
-        hints: { words: ['what', 'did', 'you', 'do', 'yesterday'], tricky: ['are', 'have'] }
+        topic: 'detective case',
+        intro: 'Nova found a clue in the notebook. Ask what she found.',
+        acceptedQuestions: ['What did Nova find?', 'Did Nova find a clue?', 'What did the detective find?'],
+        answer: 'Nova found a clue in the notebook.',
+        question_hints: ['What did Nova find?', 'Did Nova find a clue?'],
+        required_question_words: ['did', 'what'],
+        required_keywords: ['find', 'clue'],
+        hints: { words: ['what', 'did', 'nova', 'find', 'clue'], tricky: ['where', 'when'] }
       },
       {
-        id: 'w21_who_cooked',
+        id: 'w22_suspect_answered',
         task_type: 'find_question',
-        topic: 'past actions',
-        intro: 'Mom cooked dinner last night. Ask who cooked dinner.',
-        acceptedQuestions: ['Who cooked dinner?', 'Who cooked last night?', 'Did mom cook dinner?'],
-        answer: 'Mom cooked dinner last night.',
-        question_hints: ['Who cooked dinner?', 'Did mom cook?'],
-        required_question_words: ['who', 'cook'],
-        required_keywords: ['dinner', 'cooked'],
-        hints: { words: ['who', 'cooked', 'dinner', 'last', 'night'], tricky: ['what', 'where'] }
+        topic: 'detective interview',
+        intro: 'The suspect answered clearly. Ask how the suspect answered.',
+        acceptedQuestions: ['Did the suspect answer clearly?', 'How did the suspect answer?', 'Did the suspect answer?'],
+        answer: 'The suspect answered clearly.',
+        question_hints: ['Did the suspect answer clearly?', 'How did the suspect answer?'],
+        required_question_words: ['did', 'how'],
+        required_keywords: ['suspect', 'answer'],
+        hints: { words: ['did', 'the', 'suspect', 'answer', 'clearly'], tricky: ['what', 'who'] }
       }
     ],
     contexts_advanced: [
       {
-        id: 'w21_adv_diary',
+        id: 'w22_adv_interview',
         task_type: 'find_question',
-        topic: 'past actions',
-        intro: 'I cleaned my room after school yesterday. Ask what I did after school.',
-        acceptedQuestions: ['What did you do after school?', 'What did you do yesterday after school?'],
-        answer: 'I cleaned my room after school yesterday.',
-        question_hints: ['What did you do after school?'],
-        required_question_words: ['what', 'did', 'you'],
-        required_keywords: ['after', 'school'],
-        hints: { words: ['what', 'did', 'you', 'do', 'after', 'school'], tricky: ['where', 'when'] }
+        topic: 'detective case interview',
+        intro: 'Detective Nova asked the suspect about yesterday morning. Ask what Nova asked about.',
+        acceptedQuestions: ['What did Detective Nova ask about?', 'What did Nova ask the suspect?', 'Did Nova ask about yesterday?'],
+        answer: 'Detective Nova asked the suspect about yesterday morning.',
+        question_hints: ['What did Detective Nova ask about?', 'Did Nova ask about yesterday?'],
+        required_question_words: ['what', 'did'],
+        required_keywords: ['ask', 'yesterday'],
+        hints: { words: ['what', 'did', 'detective', 'nova', 'ask', 'about'], tricky: ['where', 'when'] }
       }
     ]
   }
