@@ -1,40 +1,40 @@
 export default {
   title: "Detective Nova's Case Interview",
   image_url: "/images/week22/read_cover_w22.jpg",
-  content_en: "**Detective** Nova is the best **detective** in the Time Agency. Every day she opens a new **case** and finds the truth. **Yesterday**, she had an important **interview** with her main **suspect**, a boy named Max. She opened her **notebook** and asked the first **question** very carefully. The **suspect** answered **clearly** and did not hide anything. Nova wrote every **answer** in her **notebook** as a new **clue**. She asked Max about **yesterday** morning, **last night**, and **last week**. Max said **clearly** that he was at home every time. Nova checked every **clue** and started writing her **report**. By the end of the **interview**, the **case** was almost solved. Nova finished her **report** and closed her **notebook**. She smiled because every good **detective** knows that a clear **question** always gets a clear **answer**.",
-  content_vi: "**Detective** Nova la **detective** gioi nhat trong Co Quan Thoi Gian. Moi ngay co ay mo mot **case** moi va tim su that. **Yesterday**, co ay co mot cuoc **interview** quan trong voi **suspect** chinh la cau be Max. Co ay mo **notebook** va dat **question** dau tien rat can than. **Suspect** tra loi **clearly** va khong giau dieu gi. Nova ghi lai moi **answer** vao **notebook** nhu la mot **clue** moi. Co ay hoi Max ve **yesterday** buoi sang, **last night**, va ca **last week**. Max noi **clearly** rang ban ay o nha moi lan. Nova kiem tra tung **clue** va bat dau viet **report**. Cuoi cuoc **interview**, **case** gan nhu duoc giai quyet. Nova hoan thanh **report** va dong **notebook** lai. Co ay mim cuoi vi moi **detective** gioi deu biet rang mot **question** ro rang luon nhan duoc mot **answer** ro rang.",
+  content_en: "**Detective** Nova opened her **notebook** and started the **case** **interview**. She had one important **question** for the **suspect** about **last night**. The **suspect** answered **clearly** and gave Nova her first **clue**. Nova wrote the **clue** in her **notebook** and asked the next **question**. She asked, 'Where were you **yesterday** morning and **last week**?' The **suspect** answered every **question** **clearly** and without hesitation. Nova added each **clue** to her **report** and organised the **case** file. **Last night**, the **suspect** stayed home and finished reading a book. Nova finished her final **report** and gave the **answer** to her team. Every **clue** in the **notebook** helped **Detective** Nova solve the **case**.",
+  content_vi: "**Detective** Nova da mo **notebook** va bat dau cuoc **interview** cho **case**. Co ay co mot **question** quan trong cho **suspect** ve **last night**. **Suspect** da tra loi **clearly** va cung cap **clue** dau tien cho Nova. Nova da ghi **clue** vao **notebook** va tiep tuc dat **question** tiep theo. Co ay da hoi: 'Ban o dau vao sang **yesterday** va **last week**?' **Suspect** da tra loi moi **question** mot cach **clearly** va khong do du. Nova da them tung **clue** vao **report** va sap xep ho so **case**. **Last night**, **suspect** o nha va doc xong mot cuon sach. Nova da hoan thanh **report** cuoi cung va trao **answer** cho doi nhom. Moi **clue** trong **notebook** da giup **Detective** Nova giai quyet **case**.",
   audio_url: "/audio/week22/read_main.mp3",
   comprehension_questions: [
     {
       id: 1,
-      question_en: "Who did Detective Nova interview?",
-      answer: ["Max", "A boy named Max", "Her main suspect Max"],
-      hint_en: "A boy named...",
-      hint_vi: "Mot cau be ten...",
+      question_en: "What did Detective Nova open to start the interview?",
+      answer: ["Her notebook", "A notebook", "She opened her notebook"],
+      hint_en: "She opened her...",
+      hint_vi: "Co ay da mo...",
       audio_url: "/audio/week22/read_q1.mp3"
     },
     {
       id: 2,
-      question_en: "What did Nova write in her notebook?",
-      answer: ["Clues", "Every clue", "Every answer as a clue"],
-      hint_en: "She wrote every...",
-      hint_vi: "Co ay ghi lai tung...",
+      question_en: "How did the suspect answer every question?",
+      answer: ["Clearly", "Clearly and without hesitation", "The suspect answered clearly"],
+      hint_en: "The suspect answered...",
+      hint_vi: "Nghi pham da tra loi...",
       audio_url: "/audio/week22/read_q2.mp3"
     },
     {
       id: 3,
-      question_en: "When did Nova ask Max about?",
-      answer: ["Yesterday, last night, and last week", "Yesterday morning and last night", "Last night and last week"],
-      hint_en: "She asked about three time expressions...",
-      hint_vi: "Co ay hoi ve ba bieu dat thoi gian...",
+      question_en: "What time expressions did Nova ask the suspect about?",
+      answer: ["Yesterday morning and last week", "Yesterday and last week", "Last night, yesterday morning and last week"],
+      hint_en: "She asked about yesterday morning and...",
+      hint_vi: "Co ay da hoi ve sang hom qua va...",
       audio_url: "/audio/week22/read_q3.mp3"
     },
     {
       id: 4,
-      question_en: "Why did Nova write every clue?",
-      answer: ["Each answer told the true story", "To record the true story", "Because each answer was a clue"],
-      hint_en: "Each answer helped solve the case.",
-      hint_vi: "Moi cau tra loi giup giai vu an.",
+      question_en: "What did Nova give to her team at the end?",
+      answer: ["The answer", "Her final report and the answer", "The answer to the case"],
+      hint_en: "Nova gave the...",
+      hint_vi: "Nova da trao...",
       audio_url: "/audio/week22/read_q4.mp3"
     }
   ]
