@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Volume2, CheckCircle, XCircle, Globe, Keyboard, LayoutList, Type, Info, AlertTriangle, ArrowRight } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -22,7 +22,23 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
   const [feedback, setFeedback] = useState(savedData.feedback || {});
   const [completedIds, setCompletedIds] = useState(() => new Set(savedData.correctSentences || []));
   
-  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
+  // 🔒 Memoize shuffled word order per sentence — prevents reshuffling on every keystroke
+  const shuffledWordsBySentence = useMemo(() => {
+    if (!data?.sentences) return {};
+    const result = {};
+    data.sentences.forEach(s => {
+      const words = (s.text_en || s.text || '')
+        .replace(/[.,?!]$/g, '').replace(/[,?!]/g, '').split(' ');
+      // Fisher-Yates shuffle (stable per mount)
+      for (let i = words.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [words[i], words[j]] = [words[j], words[i]];
+      }
+      result[s.id] = words;
+    });
+    return result;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data?.sentences]);
 
   // � DEBUG: Log sentences structure
   useEffect(() => {
@@ -35,7 +51,9 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
     });
   }, [data, mode]);
 
-  // �🔥 FIX: Reset state when mode changes
+  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
+  // 🔥 FIX: Reset state when mode changes
+
   useEffect(() => {
     setLevel(savedData.level || 1);
     setInputs(savedData.inputs || {});
@@ -189,16 +207,30 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
            </div>
 
            <div className="space-y-3">
-               {level === 1 && (
+               {level === 1 && shuffledWordsBySentence[s.id] && (
                    <div className="flex flex-wrap gap-2 mb-2">
-                       {(s.text_en || s.text || '').replace(/[.,?!]$/g, '').replace(/[,?!]/g, '').split(' ').sort(() => Math.random() - 0.5).map((w, i) => (
-                           <span key={i} className="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded text-base font-medium select-none text-slate-600">
-                               {w}
+                       {shuffledWordsBySentence[s.id].map((w, i) => (
+                           <span
+                             key={i}
+                             onClick={() => {
+                               if (completedIds.has(s.id)) return;
+                               const current = inputs[s.id] || '';
+                               const newVal = current ? current + ' ' + w : w;
+                               setInputs(prev => ({ ...prev, [s.id]: newVal }));
+                               setFeedback(prev => { const n = { ...prev }; delete n[s.id]; return n; });
+                             }}
+                             className={`px-3 py-1.5 border rounded text-base font-medium transition-all ${
+                               completedIds.has(s.id)
+                                 ? 'bg-slate-100 border-slate-200 text-slate-400 cursor-default'
+                                 : 'bg-slate-100 border-slate-300 text-slate-700 cursor-pointer hover:bg-indigo-100 hover:border-indigo-400 active:scale-95'
+                             }`}
+                           >
+                             {w}
                            </span>
                        ))}
                    </div>
                )}
-               
+
                {level === 2 && (
                    <p className="text-xl text-slate-500 font-mono bg-slate-50 p-3 rounded-lg border-2 border-dashed border-slate-200 tracking-wide select-none text-slate-600">
                        {getCloze(s.text_en || s.text)}
@@ -208,6 +240,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                <div className="relative">
                      <input 
                        type="text" 
+                       autoCapitalize="none" autoCorrect="off" spellCheck="false"
                        className={`w-full p-4 pr-24 bg-slate-50 border-2 rounded-xl outline-none text-xl font-medium transition-all ${
                            feedback[s.id]?.status === 'perfect' ? 'border-green-400 bg-green-50 text-green-800' : 
                            feedback[s.id]?.status === 'warning' ? 'border-amber-400 bg-amber-50 text-amber-800' :
@@ -217,18 +250,16 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
                        placeholder={isVi ? "Gõ lại cả câu..." : "Type full sentence..."}
                        value={inputs[s.id] || ''}
                        onChange={(e) => {
-                         setInputs({...inputs, [s.id]: e.target.value});
+                         setInputs(prev => ({ ...prev, [s.id]: e.target.value }));
                          if (feedback[s.id]) {
-                           const newFeedback = {...feedback};
-                           delete newFeedback[s.id];
-                           setFeedback(newFeedback);
+                           setFeedback(prev => { const n = { ...prev }; delete n[s.id]; return n; });
                          }
                        }}
                        onKeyDown={(e) => e.key === 'Enter' && handleCheck(s.id, s.text_en || s.text)}
                        disabled={completedIds.has(s.id)}
                      />
-                     <button 
-                       onClick={() => handleCheck(s.id, s.text_en || s.text)} 
+                     <button
+                       onClick={() => handleCheck(s.id, s.text_en || s.text)}
                        className={`absolute right-2 top-2 bottom-2 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
                            completedIds.has(s.id) ? 'bg-green-500 text-white cursor-not-allowed' : `bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 active:bg-slate-100`
                        }`}

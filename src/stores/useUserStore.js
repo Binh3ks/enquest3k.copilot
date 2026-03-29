@@ -107,6 +107,12 @@ const useUserStore = create(
       toggleLearningMode: () => {
         const newMode = get().learningMode === 'advanced' ? 'easy' : 'advanced';
         set({ learningMode: newMode });
+        // 🔥 Recalculate stars for all cached weeks after mode switch so the
+        // sidebar reflects the new mode's progress immediately.
+        const cached = get().progressCache;
+        Object.keys(cached).forEach(weekId => {
+          get().recalculateWeekCompletion(parseInt(weekId));
+        });
       },
       
       /**
@@ -125,6 +131,8 @@ const useUserStore = create(
        */
       recalculateWeekCompletion: (weekId) => {
         const weekProgress = get().progressCache[weekId];
+        const currentMode = get().learningMode || 'advanced';
+
         if (!weekProgress) {
           set(state => ({ 
             weekCompletion: { ...state.weekCompletion, [weekId]: 0 },
@@ -132,8 +140,18 @@ const useUserStore = create(
           }));
           return;
         }
-        
-        const stations = Object.values(weekProgress);
+
+        // 🔥 FIX: Filter to only count stations for the current learning mode.
+        // Advanced stores keys like 'vocab_mastery'; easy stores 'vocab_mastery_easy'.
+        // Without filtering, switching modes causes both variants to accumulate and
+        // doubles maxStars, making the star display jump randomly.
+        const modeProgress = Object.fromEntries(
+          Object.entries(weekProgress).filter(([key]) =>
+            currentMode === 'easy' ? key.endsWith('_easy') : !key.endsWith('_easy')
+          )
+        );
+
+        const stations = Object.values(modeProgress);
         const totalStations = stations.length;
         if (totalStations === 0) {
           set(state => ({ 
@@ -146,8 +164,8 @@ const useUserStore = create(
         const totalScore = stations.reduce((acc, station) => acc + (station.score || 0), 0);
         const averageCompletion = Math.round(totalScore / totalStations);
         
-        // Calculate stars for the week
-        const starData = calculateWeekStars(weekProgress);
+        // Calculate stars for the week using only mode-filtered progress
+        const starData = calculateWeekStars(modeProgress);
         
         set(state => ({
           weekCompletion: {

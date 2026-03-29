@@ -63,7 +63,7 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
   };
 
   const handleCopyCheck = (key, value) => {
-      const isCorrect = value.trim().toLowerCase() === word.word.toLowerCase();
+      const isCorrect = value.trim().toLowerCase() === word.word.trim().toLowerCase();
       setCopyStatus(prev => ({ ...prev, [key]: isCorrect }));
   };
 
@@ -88,8 +88,8 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
 
     if (warnings.length > 0) {
         setFeedback(prev => ({ ...prev, sentence: { isCorrect: false, status: 'warning', message: isVi ? `Lỗi: ${warnings.join(', ')}` : `Check: ${warnings.join(', ')}` } }));
-    } else if (input.split(' ').length < 3) {
-        setFeedback(prev => ({ ...prev, sentence: { isCorrect: false, status: 'warning', message: isVi ? 'Câu quá ngắn' : 'Too short' } }));
+    } else if (input.split(' ').length < 5) {
+        setFeedback(prev => ({ ...prev, sentence: { isCorrect: false, status: 'warning', message: isVi ? 'Câu quá ngắn (cần ít nhất 5 từ)' : 'Too short (need at least 5 words)' } }));
     } else {
         setFeedback(prev => ({ ...prev, sentence: { isCorrect: true, status: 'perfect', message: isVi ? 'Câu tốt!' : 'Good job!' } }));
     }
@@ -167,11 +167,12 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
                 key={i} 
                 type="text" 
                 placeholder={`${i}`} 
-                className={`w-1/3 p-3 text-xs border rounded-xl text-center outline-none transition-all font-mono capitalize ${copyStatus[`copy${i}`] === true ? 'border-green-400 bg-green-50' : copyStatus[`copy${i}`] === false ? 'border-rose-300 bg-rose-50' : 'focus:border-orange-400 focus:bg-white'}`}
+                className={`w-1/3 p-3 text-xs border rounded-xl text-center outline-none transition-all font-mono ${copyStatus[`copy${i}`] === true ? 'border-green-400 bg-green-50' : copyStatus[`copy${i}`] === false ? 'border-rose-300 bg-rose-50' : 'focus:border-orange-400 focus:bg-white'}`}
+                autoCapitalize="none" autoCorrect="off" spellCheck="false"
                 value={drill[`copy${i}`]} 
                 onChange={(e) => {
                     const val = e.target.value;
-                    setDrill({...drill, [`copy${i}`]: val});
+                    setDrill(prev => ({ ...prev, [`copy${i}`]: val }));
                     handleCopyCheck(`copy${i}`, val);
                 }} 
               />
@@ -182,8 +183,9 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
         <div className="relative">
             <input type="text" placeholder={isVi ? `Gõ: ${targetCollocation}` : `Type: ${targetCollocation}`} 
               className={`w-full p-3 pr-24 text-sm border-2 rounded-xl outline-none transition-all font-bold ${isColloCorrect ? 'border-green-400 bg-green-50' : 'border-slate-200 focus:border-indigo-400 focus:bg-white'}`}
+              autoCapitalize="none" autoCorrect="off" spellCheck="false"
               value={drill.collocation} 
-              onChange={(e) => { setDrill({...drill, collocation: e.target.value}); setFeedback({...feedback, collocation: null}); }}
+              onChange={(e) => { setDrill(prev => ({ ...prev, collocation: e.target.value })); setFeedback(prev => ({ ...prev, collocation: null })); }}
               onKeyDown={(e) => e.key === 'Enter' && handleCollocationCheck()}
             />
             <button onClick={handleCollocationCheck} className={`absolute right-1 top-1 bottom-1 px-4 rounded-lg font-bold text-white text-xs shadow-sm transition-all ${isColloCorrect ? 'bg-green-500' : 'bg-indigo-600 hover:bg-indigo-700'}`}>
@@ -196,8 +198,9 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
         <div className="relative">
             <input type="text" placeholder={isVi ? "Đặt câu..." : "Write a sentence..."} 
               className={`w-full p-3 pr-24 text-sm border-2 rounded-xl outline-none transition-all ${isSentCorrect ? 'border-green-400 bg-green-50' : 'border-slate-200 focus:border-orange-400 focus:bg-white'}`}
+              autoCapitalize="sentences" autoCorrect="off" spellCheck="false"
               value={drill.sentence} 
-              onChange={(e) => { setDrill({...drill, sentence: e.target.value}); setFeedback({...feedback, sentence: null}); }}
+              onChange={(e) => { setDrill(prev => ({ ...prev, sentence: e.target.value })); setFeedback(prev => ({ ...prev, sentence: null })); }}
               onKeyDown={(e) => e.key === 'Enter' && handleSentenceCheck()}
             />
             <button onClick={handleSentenceCheck} className={`absolute right-1 top-1 bottom-1 px-4 rounded-lg font-bold text-white text-xs shadow-sm transition-all ${isSentCorrect ? 'bg-green-500' : 'bg-orange-500 hover:bg-orange-600'}`}>
