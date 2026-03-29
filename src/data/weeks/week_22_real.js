@@ -378,95 +378,95 @@ const week22RealData = {
       id: "morning_detective",
       title: "Morning Detective",
       emoji: "D",
-      theme: "Discovering What Happened in the Morning",
+      theme: "Opening a Case File About Your Morning",
       difficulty: "easy",
       exchanges: [
         {
-          ai: "Hi! I am Nova! Let us find morning clues! Did you walk to school yesterday? Say: Yes I walked to school or I walked with my friend",
+          ai: "Case File Open! I am Detective Nova and I need morning clues! First question for the suspect - did you walk to school yesterday? Say: Yes I walked to school or I walked with my friend",
           options: ["Yes I walked to school", "I walked with my friend"]
         },
         {
-          ai: "Nice clue! Did you talk to anyone on the way? Say: Yes I talked to my friend or I talked to my neighbor",
-          options: ["Yes I talked to my friend", "I talked to my neighbor"]
+          ai: "Clue one recorded in my notebook! Did you talk to a classmate before class started? Say: Yes I talked to my classmate or I talked about the homework",
+          options: ["Yes I talked to my classmate", "I talked about the homework"]
         },
         {
-          ai: "Interesting! Did you listen to the teacher at school? Say: Yes I listened carefully or I listened and wrote notes",
+          ai: "Notebook entry complete! Now the class clue - did you listen to the teacher carefully? Say: Yes I listened carefully or I listened and wrote notes",
           options: ["Yes I listened carefully", "I listened and wrote notes"]
         },
         {
-          ai: "Great! Did you play outside at break time? Say: Yes I played outside or I played with my classmates",
+          ai: "Evidence confirmed! Break time question - did you play outside at break time? Say: Yes I played outside or I played with my classmates",
           options: ["Yes I played outside", "I played with my classmates"]
         },
         {
-          ai: "Exciting! Did you wash your hands after playing? Say: Yes I washed my hands or I always washed my hands",
+          ai: "New clue discovered! Did you wash your hands after playing? Say: Yes I washed my hands or I always washed my hands",
           options: ["Yes I washed my hands", "I always washed my hands"]
         },
         {
-          ai: "Perfect habit! Did you finish your schoolwork? Say: Yes I finished everything or I finished before lunch",
-          options: ["Yes I finished everything", "I finished before lunch"]
+          ai: "Last morning clue! Did you finish all your schoolwork before going home? Say: Yes I finished everything or I finished most of it",
+          options: ["Yes I finished everything", "I finished most of it"]
         }
       ],
-      completion_message: "Amazing morning detective work! You used -ed verbs perfectly!"
+      completion_message: "Morning case file complete! Six perfect clues recorded. You are a true time detective!"
     },
     {
       id: "afternoon_case_interview",
       title: "Afternoon Case Interview",
       emoji: "B",
-      theme: "Recording Afternoon Activities",
+      theme: "Detective Interview About Your Afternoon",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Let us review your afternoon case file! When you got home, did you start your homework? Say: Yes I started homework right away or I started after a snack",
-          options: ["Yes I started homework right away", "I started after a snack"]
+          ai: "Afternoon case interview started! I am opening my notebook now. When you got home, did you start your homework right away? Say: Yes I started right away or I started after a snack",
+          options: ["Yes I started right away", "I started after a snack"]
         },
         {
-          ai: "Hard worker! Did you help at home? Say: Yes I helped mom or I helped clean the kitchen",
-          options: ["Yes I helped mom", "I helped clean the kitchen"]
+          ai: "Clue one written! Next question for my report - did you help at home this afternoon? Say: Yes I helped my mom or I helped set the table",
+          options: ["Yes I helped my mom", "I helped set the table"]
         },
         {
-          ai: "Helpful! Did your mom cook dinner? Say: Yes she cooked dinner or She cooked rice and vegetables",
-          options: ["Yes she cooked dinner", "She cooked rice and vegetables"]
+          ai: "Family clue found! Very important evidence - did your family cook dinner last night? Say: Yes mom cooked dinner or She cooked rice and vegetables",
+          options: ["Yes mom cooked dinner", "She cooked rice and vegetables"]
         },
         {
-          ai: "Delicious! Did you clean your room after dinner? Say: Yes I cleaned my room or I cleaned and organized my things",
-          options: ["Yes I cleaned my room", "I cleaned and organized my things"]
+          ai: "Dinner clue recorded in the notebook! Did you clean anything after dinner? Say: Yes I cleaned my room or I cleaned the table",
+          options: ["Yes I cleaned my room", "I cleaned the table"]
         },
         {
-          ai: "Tidy! Did you watch TV in the evening? Say: Yes I watched TV or I watched a cartoon",
+          ai: "Final afternoon clue! Did you watch TV or relax before bed last night? Say: Yes I watched TV or I watched a cartoon",
           options: ["Yes I watched TV", "I watched a cartoon"]
         }
       ],
-      completion_message: "Your afternoon case interview is complete! Great -ed verb detective!"
+      completion_message: "Afternoon case interview complete! Five perfect clues recorded in my notebook!"
     },
     {
-      id: "family_activities",
-      title: "Family Activities",
+      id: "family_case_file",
+      title: "Family Case File",
       emoji: "F",
-      theme: "Sharing What Your Family Did Yesterday",
+      theme: "Interviewing Your Family Like a Time Detective",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Tell me about your family yesterday! What did your mom do? Say: She cooked dinner or She cleaned the house",
-          options: ["She cooked dinner", "She cleaned the house"]
+          ai: "Family case file open! Notebook ready! What did your mom do yesterday morning? Say: She cooked breakfast or She cleaned the house",
+          options: ["She cooked breakfast", "She cleaned the house"]
         },
         {
-          ai: "Busy mom! Did your dad help at home? Say: Yes he helped with dinner or He washed the dishes",
-          options: ["Yes he helped with dinner", "He washed the dishes"]
+          ai: "Mom clue recorded! Did your mom go anywhere yesterday? Say: Yes she walked to the market or She stayed at home",
+          options: ["Yes she walked to the market", "She stayed at home"]
         },
         {
-          ai: "Teamwork! Did your family talk together at dinner? Say: Yes we talked at dinner or We talked about our day",
+          ai: "Excellent evidence! Now the dad interview - what did your dad do last night? Say: He watched TV or He helped with homework",
+          options: ["He watched TV", "He helped with homework"]
+        },
+        {
+          ai: "Dad clue written in my notebook! Did your family talk together at dinner last night? Say: Yes we talked at dinner or We talked about our day",
           options: ["Yes we talked at dinner", "We talked about our day"]
         },
         {
-          ai: "Lovely! Did anyone look at the stars last night? Say: Yes I looked at the stars or We looked at the sky together",
-          options: ["Yes I looked at the stars", "We looked at the sky together"]
-        },
-        {
-          ai: "Magical! Who finished last in your family? Say: Dad finished last or Mom finished last",
+          ai: "Final family clue! Who finished their work last in your family yesterday? Say: Dad finished last or Mom finished last",
           options: ["Dad finished last", "Mom finished last"]
         }
       ],
-      completion_message: "Beautiful family case file! Your family worked together wonderfully!"
+      completion_message: "Family case file complete! All family clues recorded. Excellent detective investigation!"
     }
   ]
 };

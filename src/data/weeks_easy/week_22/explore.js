@@ -1,76 +1,57 @@
 export default {
-  title_en: "Time Detectives: Did Questions",
-  title_vi: "Tham Tu Thoi Gian: Cau Hoi Did",
+  title_en: "The Time Detective: Asking Questions About the Past",
+  title_vi: "Tham Tu Thoi Gian: Dat Cau Hoi Ve Qua Khu",
   image_url: "/images/week22/explore_cover_w22.jpg",
   audio_url: "/audio/week22_easy/explore_main.mp3",
-
   content_en: `
-    Time detectives ask questions about yesterday.
-
-    We use Did for past yes/no questions.
-    Did you walk? Did you play? Did you clean your room?
-
-    After Did, use the base verb.
-    We say Did you walk, not Did you walked.
-
-    Then give short answers.
-    Yes, I did. No, I didn't.
-
-    We can describe clues with past words:
-    **walked**, **talked**, **listened**, **played**, **helped**, **cleaned**,
-    **cooked**, **washed**, **watched**, **looked**, **opened**, **finished**, **started**.
-
-    Use time words too: yesterday, last night, last week.
-    These words make clues clear and easy to understand.
+    A **detective** asks questions to find important **clues**.
+    In every **interview**, the **detective** opens her **notebook** and listens **clearly**.
+    She asks: Did you walk to school **yesterday**? Did you watch TV **last night**? Did this happen **last week**?
+    Every **answer** from a **suspect** can be a **clue** for the **case**.
+    After the **interview**, the **detective** writes a short **report** with all the clues she found.
+    Good questions help detectives find the truth step by step.
+    Nova smiled because Max gave clear answers and she found every **clue** for her **case**.
   `,
-
   content_vi: `
-    Tham tu thoi gian dat cau hoi ve hom qua.
-
-    Chung ta dung Did cho cau hoi yes/no trong qua khu.
-    Vi du: Did you walk? Did you play? Did you clean your room?
-
-    Sau Did, dung dong tu nguyen mau.
-    Chung ta noi Did you walk, khong noi Did you walked.
-
-    Sau do, tra loi ngan: Yes, I did. No, I didn't.
-
-    Nhung tu chi thoi gian nhu yesterday, last night, last week
-    giup manh moi ro rang va de hieu.
+    Mot **detective** dat cau hoi de tim **clue** quan trong.
+    Trong moi **interview**, **detective** mo **notebook** va lang nghe **clearly**.
+    Co ay hoi: Ban co di hoc **yesterday** khong? Ban co xem TV **last night** khong? Dieu nay xay ra **last week** khong?
+    Moi **answer** tu **suspect** co the la mot **clue** cho **case**.
+    Sau **interview**, **detective** viet mot **report** ngan voi tat ca **clue** co ay tim duoc.
+    Nhung cau hoi tot giup tham tu tim ra su that tung buoc mot.
+    Nova mim cuoi vi Max tra loi ro rang va co ay tim duoc moi **clue** cho **case**.
   `,
-
   check_questions: [
     {
       id: 1,
-      question_en: "What word starts a past yes/no question?",
-      question_vi: "Tu nao bat dau cau hoi yes/no trong qua khu?",
-      answer: ["Did"],
-      hint_en: "D...",
-      hint_vi: "D..."
+      question_en: "What does a detective open to write down clues?",
+      question_vi: "Tham tu mo gi de ghi lai nhung manh moi?",
+      answer: ["Her notebook", "A notebook", "notebook"],
+      hint_en: "She opens her...",
+      hint_vi: "Co ay mo..."
     },
     {
       id: 2,
-      question_en: "How do you answer: Did you play?",
-      question_vi: "Ban tra loi the nao cho: Did you play?",
-      answer: ["Yes, I did", "No, I didn't"],
-      hint_en: "Yes... or No...",
-      hint_vi: "Yes... hoac No..."
+      question_en: "Give one time word a detective uses to ask when things happened.",
+      question_vi: "Ke mot tu chi thoi gian tham tu dung de hoi khi nao su viec xay ra.",
+      answer: ["Yesterday", "Last night", "Last week"],
+      hint_en: "Yesterday / Last night / Last week",
+      hint_vi: "Hom qua / Toi qua / Tuan truoc"
     },
     {
       id: 3,
-      question_en: "Name one time word for past actions.",
-      question_vi: "Ke mot tu chi thoi gian cho hanh dong qua khu.",
-      answer: ["Yesterday", "Last night", "Last week"],
-      hint_en: "Yesterday...",
-      hint_vi: "Hom qua..."
+      question_en: "What does a detective write after asking all the questions?",
+      question_vi: "Tham tu viet gi sau khi dat tat ca cac cau hoi?",
+      answer: ["A report", "A short report", "report"],
+      hint_en: "She writes a...",
+      hint_vi: "Co ay viet mot..."
     }
   ],
-
   question: {
-    text_en: "Write 2 Did questions and 2 short answers about yesterday.",
-    text_vi: "Viet 2 cau hoi Did va 2 cau tra loi ngan ve hom qua.",
+    text_en: "Imagine you are a detective. Write three questions you would ask a suspect about yesterday.",
+    text_vi: "Hay tuong tuong ban la tham tu. Viet ba cau hoi ban se hoi nghi can ve hom qua.",
     min_words: 15,
-    hint_en: "Did you...? Yes, I did.",
-    hint_vi: "Did you...? Yes, I did."
+    hint_en: "Did you...yesterday? Did you...last night?",
+    hint_vi: "Did you...yesterday? Did you...last night?"
   }
 };

@@ -79,6 +79,17 @@ export default {
     },
     {
       id: 8,
+      word: "clearly",
+      pronunciation: "/klI@liE/",
+      definition_vi: "ro rang",
+      definition_en: "in a way that is easy to understand",
+      example: "I answered clearly so Nova could hear me.",
+      collocation: "speak clearly",
+      image_url: "/images/week22/clearly.jpg",
+      audio_word: "/audio/week22_easy/vocab_clearly.mp3"
+    },
+    {
+      id: 9,
       word: "question",
       pronunciation: "/kwEstSən/",
       definition_vi: "cau hoi",
@@ -89,7 +100,7 @@ export default {
       audio_word: "/audio/week22_easy/vocab_question.mp3"
     },
     {
-      id: 9,
+      id: 10,
       word: "answer",
       pronunciation: "/AEnsər/",
       definition_vi: "cau tra loi",
@@ -100,7 +111,7 @@ export default {
       audio_word: "/audio/week22_easy/vocab_answer.mp3"
     },
     {
-      id: 10,
+      id: 11,
       word: "case",
       pronunciation: "/keIs/",
       definition_vi: "vu an",
@@ -109,6 +120,28 @@ export default {
       collocation: "solve the case",
       image_url: "/images/week22/case.jpg",
       audio_word: "/audio/week22_easy/vocab_case.mp3"
+    },
+    {
+      id: 12,
+      word: "report",
+      pronunciation: "/rIpOEt/",
+      definition_vi: "bao cao",
+      definition_en: "a written record of what you found out",
+      example: "Nova wrote a short report after the interview.",
+      collocation: "write a report",
+      image_url: "/images/week22/report.jpg",
+      audio_word: "/audio/week22_easy/vocab_report.mp3"
+    },
+    {
+      id: 13,
+      word: "suspect",
+      pronunciation: "/sVspEkt/",
+      definition_vi: "nghi can",
+      definition_en: "a person a detective wants to ask questions",
+      example: "Max was the suspect in the time detective case.",
+      collocation: "interview a suspect",
+      image_url: "/images/week22/suspect.jpg",
+      audio_word: "/audio/week22_easy/vocab_suspect.mp3"
     }
   ]
 };
