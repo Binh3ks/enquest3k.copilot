@@ -375,10 +375,10 @@ const week21RealData = {
 
   conversation_cards: [
     {
-      id: "morning_detective",
-      title: "Morning Detective",
+      id: "morning_diary",
+      title: "Morning Diary",
       emoji: "D",
-      theme: "Discovering What Happened in the Morning",
+      theme: "Recording What Happened in the Morning",
       difficulty: "easy",
       exchanges: [
         {

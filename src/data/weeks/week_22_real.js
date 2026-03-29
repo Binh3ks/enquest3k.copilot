@@ -375,98 +375,98 @@ const week22RealData = {
 
   conversation_cards: [
     {
-      id: "morning_detective",
-      title: "Morning Detective",
+      id: "did_you_find_a_clue",
+      title: "Did You Find a Clue?",
       emoji: "D",
-      theme: "Opening a Case File About Your Morning",
+      theme: "Practicing Did questions with detective vocabulary",
       difficulty: "easy",
       exchanges: [
         {
-          ai: "Case notebook open! I am Detective Nova and you are my suspect today! First clue question - did you see or find anything interesting yesterday? Say: Yes I found something interesting yesterday or I discovered a clue yesterday",
-          options: ["Yes I found something interesting yesterday", "I discovered a clue yesterday"]
+          ai: "Case notebook open! I am Detective Nova! First clue question - did you open any notebook or book yesterday? Say: Yes I opened my notebook yesterday or I opened my school book yesterday",
+          options: ["Yes I opened my notebook yesterday", "I opened my school book yesterday"]
         },
         {
-          ai: "First clue recorded in my notebook! Now tell me about last night - did anything unusual happen last night? Say: Yes something happened last night or Last night was quiet and normal",
-          options: ["Yes something happened last night", "Last night was quiet and normal"]
+          ai: "Notebook clue found! Did you find anything interesting or unusual yesterday? Say: Yes I found something interesting yesterday or I found a clue at school yesterday",
+          options: ["Yes I found something interesting yesterday", "I found a clue at school yesterday"]
         },
         {
-          ai: "Last night clue noted! I need a clear answer now - did Detective Nova or a teacher ask you a question yesterday? Say: Yes someone asked me a question yesterday or My teacher asked me a question yesterday",
-          options: ["Yes someone asked me a question yesterday", "My teacher asked me a question yesterday"]
+          ai: "Interesting clue! Did someone ask you a question yesterday? Say: Yes someone asked me a question yesterday or My teacher asked me a question clearly",
+          options: ["Yes someone asked me a question yesterday", "My teacher asked me a question clearly"]
         },
         {
-          ai: "Question clue confirmed! Think about last week - did you find or report any problem or clue last week? Say: Yes I found a clue last week or I reported a problem last week",
-          options: ["Yes I found a clue last week", "I reported a problem last week"]
+          ai: "Question clue recorded! Did you answer clearly when someone asked you? Say: Yes I answered every question clearly or Yes I gave a clear answer",
+          options: ["Yes I answered every question clearly", "Yes I gave a clear answer"]
         },
         {
-          ai: "Report clue written! Now I need your clearest answer - did you write anything in your notebook or make any notes yesterday? Say: Yes I wrote in my notebook yesterday or I made notes about the case yesterday",
-          options: ["Yes I wrote in my notebook yesterday", "I made notes about the case yesterday"]
+          ai: "Clear answer noted! Did you notice or report anything unusual last week? Say: Yes I noticed something last week or I reported something interesting last week",
+          options: ["Yes I noticed something last week", "I reported something interesting last week"]
         },
         {
-          ai: "Final case question! You have been a great suspect! Can you give me one clear answer to close this case - are you innocent? Say: Yes I am innocent and my answer is clear or I gave all my clues and I am innocent",
-          options: ["Yes I am innocent and my answer is clear", "I gave all my clues and I am innocent"]
+          ai: "Last week clue found! Final question - did you write any answers or notes in your notebook yesterday? Say: Yes I wrote notes in my notebook or I recorded my answers yesterday",
+          options: ["Yes I wrote notes in my notebook", "I recorded my answers yesterday"]
         }
       ],
-      completion_message: "Morning case file complete! Six perfect clues recorded. You are a true time detective!"
+      completion_message: "Case interview complete! Six perfect clues found! You answered every Did question clearly!"
     },
     {
-      id: "afternoon_case_interview",
-      title: "Afternoon Case Interview",
+      id: "case_notebook_report",
+      title: "Case Notebook Report",
       emoji: "B",
-      theme: "Detective Interview About Your Afternoon",
+      theme: "Building a case report using Did questions about yesterday",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Afternoon case interview started! I am opening my notebook now. When you got home, did you start your homework right away? Say: Yes I started right away or I started after a snack",
-          options: ["Yes I started right away", "I started after a snack"]
+          ai: "Case report time! Notebook open! Did you ask anyone a question yesterday at school? Say: Yes I asked a question yesterday or I asked my teacher a question clearly",
+          options: ["Yes I asked a question yesterday", "I asked my teacher a question clearly"]
         },
         {
-          ai: "Clue one written! Next question for my report - did you help at home this afternoon? Say: Yes I helped my mom or I helped set the table",
-          options: ["Yes I helped my mom", "I helped set the table"]
+          ai: "First report clue noted! Did you write any answers or record any notes last night? Say: Yes I wrote my notes last night or I recorded my answers last night",
+          options: ["Yes I wrote my notes last night", "I recorded my answers last night"]
         },
         {
-          ai: "Family clue found! Very important evidence - did your family cook dinner last night? Say: Yes mom cooked dinner or She cooked rice and vegetables",
-          options: ["Yes mom cooked dinner", "She cooked rice and vegetables"]
+          ai: "Last night evidence recorded! Did anyone give you a clear answer yesterday that helped you? Say: Yes someone answered me clearly or My friend gave me a clear answer yesterday",
+          options: ["Yes someone answered me clearly", "My friend gave me a clear answer yesterday"]
         },
         {
-          ai: "Dinner clue recorded in the notebook! Did you clean anything after dinner? Say: Yes I cleaned my room or I cleaned the table",
-          options: ["Yes I cleaned my room", "I cleaned the table"]
+          ai: "Clear answer clue! Very important question - did you notice any clue or interesting fact last week? Say: Yes I noticed a clue last week or I found something interesting last week",
+          options: ["Yes I noticed a clue last week", "I found something interesting last week"]
         },
         {
-          ai: "Final afternoon clue! Did you watch TV or relax before bed last night? Say: Yes I watched TV or I watched a cartoon",
-          options: ["Yes I watched TV", "I watched a cartoon"]
+          ai: "Last week clue in the report! Final question - did you solve any question or problem correctly yesterday? Say: Yes I solved a question correctly yesterday or I answered all my questions yesterday",
+          options: ["Yes I solved a question correctly yesterday", "I answered all my questions yesterday"]
         }
       ],
-      completion_message: "Afternoon case interview complete! Five perfect clues recorded in my notebook!"
+      completion_message: "Case notebook report complete! Every clue answered with Did questions! You are a brilliant time detective!"
     },
     {
       id: "family_case_file",
       title: "Family Case File",
       emoji: "F",
-      theme: "Interviewing Your Family Like a Time Detective",
+      theme: "Interviewing your family like a time detective with Did questions",
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Family case file open! Notebook ready! What did your mom do yesterday morning? Say: She cooked breakfast or She cleaned the house",
-          options: ["She cooked breakfast", "She cleaned the house"]
+          ai: "Family case file open! Notebook ready! First suspect: your mom! Did your mom answer any questions clearly yesterday? Say: Yes mom answered questions clearly or She gave clear answers yesterday",
+          options: ["Yes mom answered questions clearly", "She gave clear answers yesterday"]
         },
         {
-          ai: "Mom clue recorded! Did your mom go anywhere yesterday? Say: Yes she walked to the market or She stayed at home",
-          options: ["Yes she walked to the market", "She stayed at home"]
+          ai: "Mom clue recorded! Did your mom open any book or notebook and start reading or writing last night? Say: Yes she opened her notebook last night or She started writing last night",
+          options: ["Yes she opened her notebook last night", "She started writing last night"]
         },
         {
-          ai: "Excellent evidence! Now the dad interview - what did your dad do last night? Say: He watched TV or He helped with homework",
-          options: ["He watched TV", "He helped with homework"]
+          ai: "Mom notebook clue found! Now dad interview! Did your dad report or describe anything interesting about last week? Say: Yes dad described last week clearly or He reported something interesting last week",
+          options: ["Yes dad described last week clearly", "He reported something interesting last week"]
         },
         {
-          ai: "Dad clue written in my notebook! Did your family talk together at dinner last night? Say: Yes we talked at dinner or We talked about our day",
-          options: ["Yes we talked at dinner", "We talked about our day"]
+          ai: "Dad clue written! Did your whole family answer questions or share stories together last night? Say: Yes we answered questions together last night or We shared our day clearly",
+          options: ["Yes we answered questions together last night", "We shared our day clearly"]
         },
         {
-          ai: "Final family clue! Who finished their work last in your family yesterday? Say: Dad finished last or Mom finished last",
-          options: ["Dad finished last", "Mom finished last"]
+          ai: "Final family clue! Who asked the most questions in your family yesterday? Say: Mom asked the most questions yesterday or Dad asked the most questions yesterday",
+          options: ["Mom asked the most questions yesterday", "Dad asked the most questions yesterday"]
         }
       ],
-      completion_message: "Family case file complete! All family clues recorded. Excellent detective investigation!"
+      completion_message: "Family case file complete! All family clues recorded with Did questions! Excellent detective investigation!"
     }
   ]
 };
