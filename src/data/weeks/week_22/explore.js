@@ -1,77 +1,62 @@
 export default {
-  title_en: "Time Detectives: Asking About the Past",
-  title_vi: "Tham Tu Thoi Gian: Dat Cau Hoi Ve Qua Khu",
+  title_en: "The Time Detective: How to Run a Case Interview",
+  title_vi: "Tham Tu Thoi Gian: Cach Tien Hanh Mot Cuoc Phong Van",
   image_url: "/images/week22/explore_cover_w22.jpg",
   audio_url: "/audio/week22/explore_main.mp3",
   content_en: `
-    A time detective does not only read clues. A time detective asks clear questions.
-    In Week 22, we practice yes/no questions in the past with Did.
-
-    We ask: Did you walk to school? Did you clean your desk? Did you watch TV last night?
-    After Did, we use the base verb: walk, clean, watch.
-
-    Then we answer with short forms: Yes, I did. No, I didn't.
-    These short answers help conversations sound natural and confident.
-
-    Time words are still important: yesterday, last night, and last week.
-    They tell us exactly when an action happened.
-
-    In our case notes, we still record past actions with clear verbs:
-    **walked**, **talked**, **listened**, **played**, **helped**, **cleaned**,
-    **cooked**, **washed**, **watched**, **looked**, **opened**, **finished**, and **started**.
-
-    In detective interviews, strong questions collect better evidence.
-    So ask politely, listen carefully, and record each clue step by step.
+    A **detective** needs more than sharp eyes to solve a **case**.
+    Every great detective carries a **notebook** to record information from each **interview**.
+    During an **interview**, the detective asks one **question** at a time and listens **clearly** to the **answer** from every **suspect**.
+    Time words tell us exactly when each action happened: **yesterday**, **last night**, and **last week** are the most useful clues of all.
+    After the interview, the detective writes a complete **report** with every **clue** and every important detail.
+    Detectives know that a small clue from **yesterday** can unlock a mystery that started **last week**.
+    Nova opened her **notebook** and interviewed Max about everything he did the day before.
+    She listened **clearly** to each **answer** and wrote every fact as a **clue** in her **report**.
+    When the **case** file was complete, Nova had everything she needed to close the investigation.
+    Strong questions collect better evidence, so always ask politely, listen carefully, and never miss a **clue**.
   `,
   content_vi: `
-    Nhat ky la mot cuon so dac biet de chung ta viet ve nhung viec da xay ra.
-    Vi vay chung ta dung thi qua khu voi dong tu them -ed.
-
-    Vi du: I **walked** to school, I **listened** to my teacher, va I **played** soccer.
-    Day la nhung hanh dong da ket thuc trong hom qua.
-
-    Chung ta cung dung tu chi thoi gian de nhat ky ro rang hon.
-    Cac cum huu ich la yesterday, in the morning, after school, va last night.
-    Chung giup nguoi doc biet hanh dong xay ra luc nao.
-
-    Ban co biet nhat ky con huu ich cho khoa hoc khong?
-    Neu ban da nhin len bau troi dem hom qua, ban co the ghi lai dieu ban da xem va dem duoc.
-    Cac nha khoa hoc cung lam vay trong science log de ghi nhan quan sat.
-
-    Vi vay khi viet nhat ky, hay nghi nhu mot tham tu thoi gian.
-    Ghi lai manh moi bang dong tu qua khu: **walked**, **looked**, **cooked**, **played**, **watched**, **cleaned**, **helped**, **talked**, **listened**, **opened**, **washed**, **finished**, **started**.
+    Mot **detective** can nhieu hon la doi mat sac ben de giai mot **case**.
+    Moi **detective** gioi deu mang theo mot **notebook** de ghi lai thong tin tu moi **interview**.
+    Trong **interview**, tham tu dat tung **question** mot lan va lang nghe **clearly** cau **answer** tu **suspect**.
+    Cac tu chi thoi gian giup ghi chep manh moi chinh xac: **yesterday**, **last night**, va **last week** la nhung tu huu ich nhat.
+    Sau cuoc phong van, tham tu viet mot **report** day du voi moi **clue** va chi tiet quan trong.
+    Nova mo **notebook** va phong van Max ve tat ca nhung gi ban ay da lam ngay hom truoc.
+    Co ay lang nghe **clearly** tung **answer** va ghi lai moi su kien nhu mot **clue** trong **report**.
+    Khi ho so **case** hoan chinh, Nova da co moi thu can thiet de ket thuc cuoc dieu tra.
+    Nhung cau hoi manh me se thu thap bang chung tot hon, nen hay hoi lich su va lang nghe can than.
   `,
   check_questions: [
     {
       id: 1,
-      question_en: "What structure starts a past yes/no question?",
-      question_vi: "Cau truc nao bat dau cau hoi yes/no trong qua khu?",
-      answer: ["Did + subject + base verb", "Use Did", "Did question structure"],
-      hint_en: "It begins with Did.",
-      hint_vi: "No bat dau bang Did."
+      question_en: "What does a detective use to write down clues during an interview?",
+      question_vi: "Tham tu dung gi de ghi manh moi trong cuoc phong van?",
+      answer: ["A notebook", "Her notebook", "notebook"],
+      hint_en: "She opens her...",
+      hint_vi: "Co ay mo..."
     },
     {
       id: 2,
-      question_en: "Give one short answer for a Did question.",
-      question_vi: "Hay cho mot cau tra loi ngan cho cau hoi Did.",
-      answer: ["Yes, I did", "No, I didn't", "Yes, she did"],
-      hint_en: "Yes, I did / No, I didn't.",
-      hint_vi: "Yes, I did / No, I didn't."
+      question_en: "Name two time words a detective uses to say when things happened.",
+      question_vi: "Ke hai tu chi thoi gian ma tham tu dung de noi khi nao su viec xay ra.",
+      answer: ["yesterday and last night", "last night and last week", "yesterday and last week", "yesterday", "last night", "last week"],
+      hint_en: "Think about the three time words in the passage.",
+      hint_vi: "Nghi ve ba tu chi thoi gian trong bai doc."
     },
     {
       id: 3,
-      question_en: "Why are time words useful in detective interviews?",
-      question_vi: "Tai sao tu chi thoi gian huu ich trong phong van tham tu?",
-      answer: ["They show when actions happened", "They make clues clear", "They give exact timing"],
-      hint_en: "They show when.",
-      hint_vi: "Chung cho biet khi nao."
+      question_en: "What does a detective write after the interview is finished?",
+      question_vi: "Tham tu viet gi sau khi cuoc phong van ket thuc?",
+      answer: ["A report", "A complete report", "report with clues"],
+      hint_en: "She writes a complete...",
+      hint_vi: "Co ay viet mot..."
     }
   ],
   question: {
-    text_en: "If you were a time detective, what three Did questions would you ask a suspect?",
-    text_vi: "Neu ban la tham tu thoi gian, ban se dat ba cau hoi Did nao cho nghi can?",
-    min_words: 20,
-    hint_en: "Did you...? Did he...? Did they...?",
-    hint_vi: "Did you...? Did he...? Did they...?"
+    text_en: "Imagine you are Detective Nova. Write five questions you would ask a suspect about yesterday and last night.",
+    text_vi: "Hay tuong tuong ban la tham tu Nova. Viet nam cau hoi ban se hoi nghi can ve hom qua va toi qua.",
+    min_words: 25,
+    hint_en: "Did you...yesterday? Did you...last night?",
+    hint_vi: "Did you...yesterday? Did you...last night?"
   }
 };
