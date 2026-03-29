@@ -241,28 +241,7 @@ const PronunciationTab = () => {
     }
   };
 
-  // 🔥 Local scoring — no AI needed, Levenshtein-based
-  const scoreAnswer = (transcript, target, isWordMode) => {
-    const t = transcript.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
-    const tgt = target.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
-    if (!t) return 0;
-    if (t === tgt) return 100;
-    if (isWordMode) {
-      if (t.includes(tgt) || tgt.includes(t)) return 90;
-      return Math.round(calculateSimilarity(t, tgt) * 100);
-    } else {
-      // Sentence: use word-overlap ratio + similarity, take the higher
-      const tWords = t.split(/\s+/).filter(Boolean);
-      const tgtWords = tgt.split(/\s+/).filter(Boolean);
-      if (!tgtWords.length) return 0;
-      const overlapCount = tWords.filter(w => tgtWords.includes(w)).length;
-      const overlapScore = overlapCount / tgtWords.length;
-      const simScore = calculateSimilarity(t, tgt);
-      return Math.round(Math.max(overlapScore, simScore) * 100);
-    }
-  };
-
-  // 🔥 Handle practice attempt — Groq Whisper v3 (fast, no AI eval overhead)
+  // 🔥 Handle practice attempt — Deepgram STT via backend + local scoring
   const handlePractice = async () => {
     if (!isRecordingSupported()) {
       alert('⚠️ Recording not supported in this browser. Please use Chrome, Edge, or Firefox.');
@@ -273,7 +252,7 @@ const PronunciationTab = () => {
     setCurrentFeedback(null);
 
     try {
-      // Record 3 seconds (down from 5 — more responsive)
+      // Record 3 seconds — more responsive than 5s
       const audioBlob = await recordAudio(3000);
       setPracticeMode('evaluating');
 
@@ -290,40 +269,36 @@ const PronunciationTab = () => {
         return;
       }
 
-      // 🚀 Groq Whisper v3 — transcribe directly from frontend (fast, accent-tolerant)
       const formData = new FormData();
-      formData.append('file', audioBlob, 'recording.webm');
-      formData.append('model', 'whisper-large-v3');
-      formData.append('language', 'en');
-      formData.append('response_format', 'json');
+      formData.append('audio', audioBlob, 'recording.webm');
+      formData.append('targetText', targetText);
+      formData.append('mode', isWordMode ? 'word' : 'sentence');
 
-      const groqResp = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', {
+      const headers = {};
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
+      const response = await fetch(`${API_BASE_URL}/pronunciation/evaluate-deepgram`, {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}` },
+        headers,
         body: formData
       });
 
-      if (!groqResp.ok) throw new Error(`Groq error: ${groqResp.status}`);
-      const groqData = await groqResp.json();
-      const transcript = (groqData.text || '').toLowerCase().trim();
+      if (!response.ok) throw new Error(`Backend error: ${response.status}`);
+      const result = await response.json();
+      if (!result.success) throw new Error(result.message || 'Evaluation failed');
 
-      console.log('🎤 Groq Whisper transcript:', transcript, '→ target:', targetText);
+      console.log('🎤 Deepgram result:', result.transcript, '→ score:', result.evaluation.score);
 
-      // Local scoring — instant, no AI call
-      const score = scoreAnswer(transcript, targetText, isWordMode);
-      const isCorrect = score >= 70;
+      setCurrentFeedback({
+        success: result.evaluation.correct,
+        score: result.evaluation.score,
+        message: result.evaluation.feedback,
+        spokenText: result.transcript,
+      });
 
-      const feedbackMsg = isCorrect
-        ? score >= 90
-          ? `Xuất sắc! Phát âm rất chuẩn! 🌟 ("${transcript}")`
-          : `Tốt lắm! Khá chuẩn rồi! 👍 ("${transcript}")`
-        : `Cô nghe: "${transcript}". Hãy thử nói "${targetText}" rõ hơn nhé.`;
-
-      setCurrentFeedback({ success: isCorrect, score, message: feedbackMsg, spokenText: transcript });
-
-      if (isCorrect) {
+      if (result.evaluation.correct) {
         const newCorrectCount = correctCount + 1;
-        const newAttempts = [...attempts, { word: targetText, score, timestamp: Date.now() }];
+        const newAttempts = [...attempts, { word: targetText, score: result.evaluation.score, timestamp: Date.now() }];
         setCorrectCount(newCorrectCount);
         setAttempts(newAttempts);
         saveProgress({
@@ -338,7 +313,7 @@ const PronunciationTab = () => {
       }
 
     } catch (error) {
-      console.error('❌ Groq pronunciation error:', error);
+      console.error('❌ Pronunciation error:', error);
       setCurrentFeedback({
         success: false,
         score: 0,
