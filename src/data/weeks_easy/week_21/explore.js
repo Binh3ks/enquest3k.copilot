@@ -1,76 +1,75 @@
 export default {
-  title_en: "Time Detectives: How Do Diaries Work?",
-  title_vi: "Thám Tử Thời Gian: Nhật Ký Hoạt Động Như Thế Nào?",
+  title_en: "Scientists Who Keep Diaries",
+  title_vi: "Các Nhà Khoa Học Giữ Nhật Ký",
   image_url: "/images/week21/explore_cover_w21.jpg",
   audio_url: "/audio/week21_easy/explore_main.mp3",
-
   content_en: `
-    A **diary** is a special book. You write about your day in it.
+    Did you know that famous scientists kept diaries too?
+    They are called field journals, and they tell us amazing things about the world.
 
-    Every day, you do many things. You **walk**, **talk**, **eat**, and **play**.
-    After the day is **finished**, you write it in your diary!
+    Charles Darwin was a scientist 200 years ago.
+    He **walked** onto a ship and travelled to many islands.
+    Every day, he **looked** at animals and plants.
+    He **watched** birds and **listened** to their calls.
+    At night, he **opened** his journal and wrote what he saw.
+    He **finished** one diary, then **started** a new one!
 
-    You use past tense: "I **walked**. I **played**. I **cooked**."
+    Jane Goodall was a scientist who **watched** wild chimpanzees in Africa.
+    She **helped** us understand how they **played**, **talked**, and even **cooked** food with tools.
+    Jane **cleaned** her notes every evening and never missed a day.
 
-    Diaries help you remember happy days. They are like a time machine for your memories!
-
-    Scientists also keep diaries. They write what they **watched** and **listened** to.
-    This is called a **science log**!
-
-    Time detectives read old diaries. They find clues about the past.
-    Can you be a time detective? Look at the clues: "I **cleaned** my room. I **helped** my mom."
-    What kind of day was it?
+    Science diaries **helped** us learn so much about our world.
+    Maybe your diary today will help scientists in the future!
   `,
-
   content_vi: `
-    **Nhật ký** là một cuốn sách đặc biệt. Bạn viết về ngày của mình trong đó.
+    Bạn có biết các nhà khoa học nổi tiếng cũng giữ nhật ký không?
+    Chúng gọi là nhật ký thực địa, và chúng kể những điều tuyệt vời về thế giới.
 
-    Mỗi ngày, bạn làm nhiều việc. Bạn **đi bộ**, **nói chuyện**, **ăn**, và **chơi**.
-    Sau khi ngày **kết thúc**, bạn viết vào nhật ký!
+    Charles Darwin là nhà khoa học 200 năm trước.
+    Ông **walked** lên một con tàu và đến nhiều hòn đảo.
+    Mỗi ngày, ông **looked** động vật và cây cối.
+    Ông **watched** chim và **listened** tiếng hót của chúng.
+    Ban đêm, ông **opened** nhật ký và viết điều ông nhìn thấy.
+    Ông **finished** một cuốn nhật ký, rồi **started** cuốn mới!
 
-    Bạn dùng thì quá khứ: "Tôi **đã đi bộ**. Tôi **đã chơi**. Tôi **đã nấu**."
+    Jane Goodall là nhà khoa học đã **watched** tinh tinh hoang dã ở châu Phi.
+    Bà **helped** chúng ta hiểu cách chúng **played**, **talked**, và dùng công cụ để **cooked** thức ăn.
+    Jane **cleaned** ghi chú mỗi buổi tối và không bao giờ bỏ lỡ một ngày.
 
-    Nhật ký giúp bạn nhớ những ngày vui. Chúng giống như cỗ máy thời gian cho ký ức của bạn!
-
-    Các nhà khoa học cũng giữ nhật ký. Họ viết những gì họ **đã xem** và **đã lắng nghe**.
-    Điều này gọi là **nhật ký khoa học**!
-
-    Các thám tử thời gian đọc nhật ký cũ. Họ tìm manh mối về quá khứ.
-    Bạn có thể là thám tử thời gian không?
+    Nhật ký khoa học đã **helped** chúng ta hiểu rất nhiều về thế giới.
+    Có thể nhật ký của bạn hôm nay sẽ giúp các nhà khoa học trong tương lai!
   `,
-
   check_questions: [
     {
       id: 1,
-      question_en: "What do you write in a diary?",
-      question_vi: "Bạn viết gì trong nhật ký?",
-      answer: ["About your day", "Your day", "What you did"],
-      hint_en: "A...",
-      hint_vi: "Về..."
+      question_en: "What did Charles Darwin write in his field journal?",
+      question_vi: "Charles Darwin đã viết gì trong nhật ký thực địa của mình?",
+      answer: ["What he saw", "Animals and plants", "He looked at animals and wrote about them"],
+      hint_en: "He looked at animals and...",
+      hint_vi: "Ông nhìn thấy động vật và..."
     },
     {
       id: 2,
-      question_en: "What tense do you use in a diary?",
-      question_vi: "Bạn dùng thì nào trong nhật ký?",
-      answer: ["Past tense", "Past"],
-      hint_en: "P...",
-      hint_vi: "Thì..."
+      question_en: "Who watched chimpanzees in Africa for 60 years?",
+      question_vi: "Ai đã theo dõi tinh tinh ở châu Phi trong 60 năm?",
+      answer: ["Jane Goodall", "Jane"],
+      hint_en: "Her first name is Jane...",
+      hint_vi: "Tên của bà ấy là Jane..."
     },
     {
       id: 3,
-      question_en: "What is a science log?",
-      question_vi: "Nhật ký khoa học là gì?",
-      answer: ["A diary for scientists", "Scientists write what they watched"],
-      hint_en: "A diary...",
-      hint_vi: "Nhật ký..."
+      question_en: "How can a science diary help us?",
+      question_vi: "Nhật ký khoa học có thể giúp ích cho chúng ta như thế nào?",
+      answer: ["It helps us learn about the world", "It records important observations", "To understand animals and nature"],
+      hint_en: "It helps us learn about...",
+      hint_vi: "Nó giúp chúng ta học về..."
     }
   ],
-
   question: {
-    text_en: "If you wrote a diary about yesterday, what would you write?",
-    text_vi: "Nếu bạn viết nhật ký về hôm qua, bạn sẽ viết gì?",
+    text_en: "You are a young scientist. What three things would you write in your science diary today, and why?",
+    text_vi: "Bạn là một nhà khoa học trẻ. Bạn sẽ viết ba điều gì trong nhật ký khoa học của mình hôm nay, và tại sao?",
     min_words: 15,
-    hint_en: "Yesterday, I walked...",
-    hint_vi: "Hôm qua, tôi đã..."
+    hint_en: "Today I watched... I listened to... and I helped...",
+    hint_vi: "Hôm nay tôi đã xem... Tôi đã nghe... và tôi đã giúp..."
   }
 };

@@ -1,57 +1,77 @@
 export default {
-  title_en: "The Time Detective: Asking Questions About the Past",
-  title_vi: "Tham Tu Thoi Gian: Dat Cau Hoi Ve Qua Khu",
+  title_en: "Real Detectives: How Science Finds the Clues",
+  title_vi: "Thám Tử Thực Sự: Khoa Học Tìm Manh Mối Như Thế Nào",
   image_url: "/images/week22/explore_cover_w22.jpg",
   audio_url: "/audio/week22_easy/explore_main.mp3",
   content_en: `
-    A **detective** asks questions to find important **clues**.
-    In every **interview**, the **detective** opens her **notebook** and listens **clearly**.
-    She asks: Did you walk to school **yesterday**? Did you watch TV **last night**? Did this happen **last week**?
-    Every **answer** from a **suspect** can be a **clue** for the **case**.
-    After the **interview**, the **detective** writes a short **report** with all the clues she found.
-    Good questions help detectives find the truth step by step.
-    Nova smiled because Max gave clear answers and she found every **clue** for her **case**.
+    Real **detectives** use more than their eyes — they use science!
+    This is called forensic science, and it helps solve **cases** all over the world.
+
+    When something happens, a **detective** goes to the place and looks for **clues**.
+    A **clue** can be a fingerprint, a hair, or a footprint.
+    The **detective** writes every **clue** **clearly** in a **notebook**.
+    Later, all these **clues** go into an official **report**.
+
+    Scientists discovered that every person leaves tiny **clues** wherever they go.
+    So if a **suspect** was somewhere **yesterday** or **last night**, the **clues** will still be there!
+
+    **Detectives** also do **interviews** with people who saw what happened.
+    In an **interview**, they ask one **question** at a time and listen to every **answer**.
+    Did you walk here **last week**? What did you see **last night**?
+    Each **answer** is a new piece of the puzzle.
+
+    Because of forensic science, many **cases** are solved and innocent people are protected.
   `,
   content_vi: `
-    Mot **detective** dat cau hoi de tim **clue** quan trong.
-    Trong moi **interview**, **detective** mo **notebook** va lang nghe **clearly**.
-    Co ay hoi: Ban co di hoc **yesterday** khong? Ban co xem TV **last night** khong? Dieu nay xay ra **last week** khong?
-    Moi **answer** tu **suspect** co the la mot **clue** cho **case**.
-    Sau **interview**, **detective** viet mot **report** ngan voi tat ca **clue** co ay tim duoc.
-    Nhung cau hoi tot giup tham tu tim ra su that tung buoc mot.
-    Nova mim cuoi vi Max tra loi ro rang va co ay tim duoc moi **clue** cho **case**.
+    Các **detective** thực sự dùng nhiều hơn mắt — họ dùng khoa học!
+    Đây gọi là khoa học điều tra, và nó giúp giải quyết **case** trên toàn thế giới.
+
+    Khi có chuyện xảy ra, một **detective** đến địa điểm và tìm kiếm **clue**.
+    Một **clue** có thể là dấu vân tay, sợi tóc, hoặc dấu chân.
+    **Detective** viết mọi **clue** một cách **clearly** vào **notebook**.
+    Sau đó, tất cả **clue** này đưa vào một **report** chính thức.
+
+    Các nhà khoa học phát hiện rằng mỗi người để lại **clue** nhỏ ở bất cứ đâu họ đi.
+    Vì vậy nếu một **suspect** ở đâu đó **yesterday** hay **last night**, các **clue** vẫn sẽ ở đó!
+
+    Các **detective** cũng thực hiện **interview** với người chứng kiến.
+    Trong một **interview**, họ đặt từng **question** một và lắng nghe mọi **answer**.
+    Bạn có đi đến đây **last week** không? Bạn thấy gì **last night**?
+    Mỗi **answer** là một mảnh ghép mới của câu đố.
+
+    Nhờ khoa học điều tra, nhiều **case** được giải quyết và người vô tội được bảo vệ.
   `,
   check_questions: [
     {
       id: 1,
-      question_en: "What does a detective open to write down clues?",
-      question_vi: "Tham tu mo gi de ghi lai nhung manh moi?",
-      answer: ["Her notebook", "A notebook", "notebook"],
-      hint_en: "She opens her...",
-      hint_vi: "Co ay mo..."
+      question_en: "Name two types of clues a detective can find at a crime scene.",
+      question_vi: "Kể hai loại manh mối mà thám tử có thể tìm thấy tại hiện trường.",
+      answer: ["Fingerprint and hair", "Fingerprint and footprint", "Hair and footprint", "A fingerprint", "A hair", "A footprint"],
+      hint_en: "A fingerprint, a hair, or a...",
+      hint_vi: "Dấu vân tay, sợi tóc, hoặc..."
     },
     {
       id: 2,
-      question_en: "Give one time word a detective uses to ask when things happened.",
-      question_vi: "Ke mot tu chi thoi gian tham tu dung de hoi khi nao su viec xay ra.",
-      answer: ["Yesterday", "Last night", "Last week"],
-      hint_en: "Yesterday / Last night / Last week",
-      hint_vi: "Hom qua / Toi qua / Tuan truoc"
+      question_en: "Why do detectives ask questions about yesterday and last night?",
+      question_vi: "Tại sao thám tử hỏi câu hỏi về hôm qua và tối qua?",
+      answer: ["Because suspects leave clues wherever they go", "To find out where the suspect was", "Because clues from yesterday are still there"],
+      hint_en: "Because every person leaves clues...",
+      hint_vi: "Vì mỗi người để lại manh mối..."
     },
     {
       id: 3,
-      question_en: "What does a detective write after asking all the questions?",
-      question_vi: "Tham tu viet gi sau khi dat tat ca cac cau hoi?",
-      answer: ["A report", "A short report", "report"],
-      hint_en: "She writes a...",
-      hint_vi: "Co ay viet mot..."
+      question_en: "What does a detective write after finding all the clues?",
+      question_vi: "Thám tử viết gì sau khi tìm thấy tất cả các manh mối?",
+      answer: ["A report", "An official report", "report"],
+      hint_en: "All clues go into a...",
+      hint_vi: "Tất cả manh mối đưa vào..."
     }
   ],
   question: {
-    text_en: "Imagine you are a detective. Write three questions you would ask a suspect about yesterday.",
-    text_vi: "Hay tuong tuong ban la tham tu. Viet ba cau hoi ban se hoi nghi can ve hom qua.",
-    min_words: 15,
-    hint_en: "Did you...yesterday? Did you...last night?",
-    hint_vi: "Did you...yesterday? Did you...last night?"
+    text_en: "You are a detective. You find three clues at a scene. Write about the clues and two questions you would ask a suspect about yesterday and last night.",
+    text_vi: "Bạn là thám tử. Bạn tìm thấy ba manh mối tại hiện trường. Hãy viết về các manh mối và hai câu hỏi bạn sẽ hỏi nghi phạm về hôm qua và tối qua.",
+    min_words: 20,
+    hint_en: "I found a clue: ... Then I asked the suspect: Did you...yesterday? Did you...last night?",
+    hint_vi: "Tôi tìm thấy manh mối: ... Sau đó tôi hỏi nghi phạm: Bạn có...hôm qua không?"
   }
 };
