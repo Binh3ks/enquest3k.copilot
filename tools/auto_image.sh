@@ -1,4 +1,11 @@
 #!/bin/bash
+# =============================================================================
+# ⚠️  MANUAL EXECUTION ONLY — DO NOT RUN AUTOMATICALLY
+# =============================================================================
+# This script generates images using API keys (consumes paid credits).
+# AGENT MUST NEVER run this script without EXPLICIT user instruction.
+# WORKFLOW: Agent creates prompt files → User runs this manually
+# =============================================================================
 # Script để tự động tải ảnh từ API Imagine 4.0 sau khi nhận JSON Prompts từ Studio.
 
 # Đọc JSON từ STDIN
