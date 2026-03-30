@@ -1617,32 +1617,37 @@ grep -oP 'videoId:\s*["'\''](\w+)' src/data/weeks_easy/week_N/daily_watch.js
 ### 🛡️ BƯỚC 8.5: CODE QUALITY GATE (MANDATORY — W20 Lesson)
 
 **Time: ~2 minutes**  
-**Purpose: Automated validation of 31 checks — catches schema, content, and W20/W21/W22+ bugs BEFORE commit**
+**Purpose: Automated validation of 38 checks — catches schema, content, and W20/W21/W22+ bugs BEFORE commit**
 
 > **W20 Lesson (March 27, 2026):** Agent bypassed manual checks → 3 UI files uncommitted, conversation_cards missing, 10 vocab instead of 13, images out of order.  
+> **W22 Lesson (March 30, 2026):** 4 bugs found post-production — CHECKs 35-38 added to catch automatically.  
 > **Solution:** Always run quality gate script BEFORE committing ANY week.
 
 #### Actions:
 
 ```bash
-# Run all 31 quality gate checks
+# Run all 38 quality gate checks
 bash tools/code_quality_gate.sh N
 
 # Expected output ends with:
 # ✅ CODE QUALITY GATE PASSED — Week N
-# All 31 checks passed. Safe to commit.
+# All 38 checks passed. Safe to commit.
 ```
 
-#### What the 31 checks cover:
+#### What the 38 checks cover:
 - Checks 1-10: Code patterns (Python usage, template literals, STATIC_STATIONS)
 - Checks 11-22: Schema (directories, files, metadata.js title, vocab count)
 - Checks 23-24: Content integrity (video IDs, cover images on disk)
 - **CHECK 25 (W20+):** unified prompt file validates non-bar-model assets only (vocab/word_power/covers)
 - Checks 26-30: Counts & registration (grammar 20Q, gameAdaptation, AI Tutor tabs, games.js mini-games)
 - **CHECK 31 (W22+):** Singapore Math progression + bar_model integrity
+- **CHECK 35 (W22+):** Easy vocab.js word count phải bằng Advanced — BUG-21: W22 easy had 10 words, should be 13
+- **CHECK 36 (W22+):** read.js phải chứa >= 50% vocab words của tuần — dictation+shadowing là exact copies của read.js, nên chỉ cần fix read.js — BUG-20
+- **CHECK 37 (W22+):** explore.js phải là CLIL non-fiction article (>= 16 bold markers, >= 100 words content) — BUG-23: W21+W22 explore were grammar exercises
+- **CHECK 38 (W22+):** Nếu grammar_focus=past, read.js phải có >= 3 -ed forms — BUG-22: easy read.js was present tense
 
 #### Self-Check:
-- [ ] `bash tools/code_quality_gate.sh N` → **ALL 31 PASSED**
+- [ ] `bash tools/code_quality_gate.sh N` → **ALL 38 PASSED**
 - [ ] 🔴 **If ANY check fails → STOP, fix the issue, re-run gate**
 - [ ] DO NOT commit until gate passes completely
 
@@ -1950,7 +1955,7 @@ Summary:
 - voiceConfig: 5 distinct voices per mode ✅
 - Grammar Count: 20 exercises per mode ✅
 - W16+ Logic Lab: logic_science (3Q) + singapore_math (5Q) = 8Q ✅
-- **Quality Gate: ALL 34 CHECKS PASSED** (bash tools/code_quality_gate.sh N) ✅
+- **Quality Gate: ALL 38 CHECKS PASSED** (bash tools/code_quality_gate.sh N) ✅
 - Theme Grep: All files contain week theme keywords ✅
 - Deepgram Model: `aura-<name>-en` (no -2- prefix) ✅
 - Mode Differentiation: Easy ≠ Advanced tested separately ✅
