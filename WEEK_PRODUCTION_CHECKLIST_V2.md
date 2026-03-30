@@ -1,5 +1,5 @@
 # ✅ WEEK PRODUCTION CHECKLIST V2.0
-*Updated Jan 26, 2026 - Based on Week 7 lessons learned | Updated March 23, 2026 - Added Week 16 bugs (BUG-18/19/20)*
+*Updated Jan 26, 2026 - Based on Week 7 lessons learned | Updated March 23, 2026 - Added Week 16 bugs (BUG-18/19/20) | Updated March 30, 2026 - Added Week 22 bugs (BUG-20/21/22/23)*
 
 ---
 
@@ -2042,6 +2042,57 @@ node tools/check_urls.js [N]
 
 ---
 
+### ✅ 6.5 Station Data Cross-Contamination Check (BUG-20/21/22 — March 2026)
+
+**⚠️ CRITICAL: Run these checks after creating EVERY station file. Copy-paste from W(N-1) is the #1 cause of W22-style mass regressions.**
+
+#### Step 1 — Verify grammar tense BEFORE writing any station content
+```bash
+# Check grammar_focus in week_[N]_real.js
+grep "grammar_focus:" src/data/weeks/week_[N]_real.js
+# If it says "Past Simple" or "-ed" → ALL sentences must use past tense
+# W22 bug: easy mode shadowing/dictation were written in present tense
+```
+
+- [ ] `grammar_focus` identified from week_NN_real.js
+- [ ] If past tense week: ALL dictation + shadowing sentences use -ed verbs (**CHECK 38** auto-verifies)
+- [ ] If present tense week: NO -ed verbs in dictation/shadowing
+
+#### Step 2 — After creating vocab.js, verify word count in both modes
+```bash
+grep -c "image_url:" src/data/weeks/week_[N]/vocab.js       # Advanced count
+grep -c "image_url:" src/data/weeks_easy/week_[N]/vocab.js  # Easy count — must match
+# W22 bug: easy had 10, advanced had 13 → easy was missing 3 words across all stations
+```
+
+- [ ] Easy vocab.js has SAME number of words as Advanced vocab.js (**CHECK 35** auto-verifies)
+
+#### Step 3 — After creating dictation.js + shadowing.js, verify vocab usage
+```bash
+# Quick test: grep for 3 vocab words of the NEW week in dictation  
+grep -i "detective\|case\|clue" src/data/weeks/week_[N]/dictation.js
+# W22 bug: dictation had "walked, cooked, played" (W21 words) instead of W22 detective vocab
+```
+
+- [ ] At least 50% of new week's vocab words appear in dictation.js sentences (**CHECK 36** auto-verifies)
+- [ ] At least 50% of new week's vocab words appear in shadowing.js sentences
+
+#### Step 4 — After creating explore.js in BOTH modes, verify CLIL format
+```bash
+# Count **bold** markers (blueprint: 10 bold words = 20 markers)
+grep -o '\*\*' src/data/weeks/week_[N]/explore.js | wc -l     # Must be >= 16
+grep -o '\*\*' src/data/weeks_easy/week_[N]/explore.js | wc -l # Same
+# W21+W22 bug: explore.js was grammar exercises, NOT a CLIL non-fiction article
+```
+
+- [ ] explore.js `content_en` is a CLIL non-fiction article (real science/world topic tied to week theme)
+- [ ] explore.js has >= 10 **bolded** vocab words in the article text (NOT the questions)
+- [ ] explore.js has exactly 3 `check_questions` entries
+- [ ] explore.js has a `question` block with `min_words` (25-30 Advanced, 15-20 Easy)
+- [ ] explore.js is NOT a grammar exercise / fill-in-the-blank (**CHECK 37** auto-verifies)
+
+---
+
 ## 🚀 STEP 7: DEPLOYMENT TEST (15 phút)
 
 ### ✅ 7.1 Local Development Server
@@ -2260,6 +2311,33 @@ npm run dev
    - Station sai → sai giọng, không dùng R2 CDN, fallback browser TTS
    - Lưu ý khi copy-paste `speakText()` call từ component khác: kiểm tra lại station string
 
+8. **Cross-week vocab contamination khi copy template (BUG-20 — March 2026)**
+   - Triệu chứng: W22 dictation/shadowing/read/games/missions dùng W21 vocab (walked, cooked, played) thay vì W22 vocab (detective, case, clue...)
+   - Nguyên nhân: Agent copy file từ W(N-1) làm template, thay title/metadata nhưng KHÔNG rewrite content
+   - Fix: Sau khi tạo mỗi file, grep 3-5 từ từ vocab của tuần cũ → nếu xuất hiện thì là contamination
+   - Gate: **CHECK 36** — tự động kiểm tra >= 50% vocab words của tuần N có mặt trong dictation+shadowing
+   - Checklist: xem section "Station Data Cross-Contamination Check" ở dưới
+
+9. **Easy mode vocab count phải bằng Advanced (BUG-21 — March 2026)**
+   - Triệu chứng: W22 easy vocab.js có 10 từ, trong khi advanced có 13 → easy mode thiếu 3 từ trên toàn bộ app
+   - Nguyên nhân: Dùng template cũ (10 từ) không kiểm tra lại count sau khi syllabus cập nhật vocab
+   - Fix: Sau khi tạo easy vocab.js, đếm words và so sánh với advanced
+   - Gate: **CHECK 35** — tự động kiểm tra cả 2 mode có cùng số từ
+
+10. **Grammar tense inconsistency trong easy mode (BUG-22 — March 2026)**
+    - Triệu chứng: W22 easy mode shadowing/dictation/read dùng present tense ("She walks") trong khi W22 là past tense week ("She walked")
+    - Nguyên nhân: Easy mode template copy từ W21 (present) không đổi grammar focus
+    - Fix: Kiểm tra grammar_focus trong week_NN_real.js TRƯỚC khi viết nội dung cho bất kỳ station nào
+    - Gate: **CHECK 38** — nếu grammar_focus chứa "past", kiểm tra dictation+shadowing có >= 3 -ed forms
+
+11. **Explore.js không phải CLIL — viết sai format (BUG-23 — March 2026)**
+    - Triệu chứng: W21+W22 explore.js là bài grammar exercise ("Choose the correct -ed form...") thay vì CLIL non-fiction article
+    - Nguyên nhân: Agent hiểu sai blueprint — explore KHÔNG phải grammar drill, phải là bài đọc khoa học/thế giới thực có 10 **bolded** words
+    - Fix: Explore = real-world science article mở rộng chủ đề tuần; không được chỉ có câu hỏi grammar
+    - Gate: **CHECK 37** — explore.js phải có >= 16 `**` markers (= 8 bolded words) và content >= 100 words
+    - Template W22: "Forensic Science: How Real Detectives Solve Cases" (Locard, DNA evidence 1986)
+    - Template W21: "Science Field Journals" (Darwin HMS Beagle, Jane Goodall 60 years)
+
 ---
 
 ## 📝 QATÁR QUY TRÌNH SẢN XUẤT 1 TUẦN (Summary)
@@ -2278,6 +2356,7 @@ npm run dev
 
 4. **Station Data - Priority 1** (60 min)
    - vocab.js, read.js, dictation.js, shadowing.js, explore.js (both modes)
+   - **⚠️ After each file: run cross-contamination checks (6.5)**
 
 5. **Station Data - Priority 2** (30 min)
    - word_power.js, word_match.js, grammar.js, mindmap.js (both modes)
@@ -2339,6 +2418,8 @@ npm run dev
 **Version History:**
 - v1.0 (Dec 2025): Initial production prompt
 - v2.0 (Jan 2026): Updated after Week 7 lessons, added objectives requirement, fixed field naming issues
+- v2.1 (Mar 2026 — W16): Added BUG-18 getImageUrl(), BUG-19 speakText station, STEM integration, CHECKs 19-34
+- v2.2 (Mar 2026 — W22): Added BUG-20 cross-week vocab contamination, BUG-21 easy vocab count, BUG-22 grammar tense consistency, BUG-23 explore CLIL format; added Section 6.5 cross-contamination checklist; added CHECKs 35-38 to code_quality_gate.sh
 
 ---
 

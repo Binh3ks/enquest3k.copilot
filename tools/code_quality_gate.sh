@@ -1249,6 +1249,123 @@ fi
 echo ""
 
 # =============================================================================
+# CHECK 35: Easy vocab.js word count must match Advanced vocab.js (BUG-W22-B)
+# =============================================================================
+echo -e "${BOLD}[CHECK 35] vocab.js — Easy mode word count must equal Advanced word count${NC}"
+ADV_VOCAB_C35="${ADV_DIR}/vocab.js"
+EASY_VOCAB_C35="${EASY_DIR}/vocab.js"
+if [ ! -f "$ADV_VOCAB_C35" ] || [ ! -f "$EASY_VOCAB_C35" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: vocab.js not found in one or both modes${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  ADV_VCOUNT=$(grep -c "image_url:" "$ADV_VOCAB_C35" || true)
+  EASY_VCOUNT=$(grep -c "image_url:" "$EASY_VOCAB_C35" || true)
+  if [ "$ADV_VCOUNT" -ne "$EASY_VCOUNT" ]; then
+    echo -e "   ${RED}❌ FAIL: Advanced has $ADV_VCOUNT vocab words but Easy has $EASY_VCOUNT — must match${NC}"
+    echo -e "   ${YELLOW}FIX (BUG-W22-B): Easy vocab.js must include ALL syllabus words (same count as Advanced). W22 bug: easy had 10, should have been 13.${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: Both modes have $ADV_VCOUNT vocab words${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
+# CHECK 36: Vocab cross-contamination — dictation/shadowing must use this week's vocab (BUG-W22-A)
+# =============================================================================
+echo -e "${BOLD}[CHECK 36] Vocab cross-contamination — dictation+shadowing must use week $WEEK_INT vocab words${NC}"
+ADV_VOCAB_C36="${ADV_DIR}/vocab.js"
+ADV_DICT_C36="${ADV_DIR}/dictation.js"
+ADV_SHAD_C36="${ADV_DIR}/shadowing.js"
+if [ ! -f "$ADV_VOCAB_C36" ] || [ ! -f "$ADV_DICT_C36" ] || [ ! -f "$ADV_SHAD_C36" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: One or more files (vocab/dictation/shadowing) not found${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  VOCAB_WORDS=$(grep -E '^\s+word:' "$ADV_VOCAB_C36" | sed -E 's/.*word:[[:space:]]*"([^"]+)".*/\1/' | tr '[:upper:]' '[:lower:]')
+  TOTAL_VOCAB=$(echo "$VOCAB_WORDS" | grep -c "." || true)
+  MATCH_COUNT=0
+  while IFS= read -r vword; do
+    [ -z "$vword" ] && continue
+    if grep -qi "$vword" "$ADV_DICT_C36" 2>/dev/null || \
+       grep -qi "$vword" "$ADV_SHAD_C36" 2>/dev/null; then
+      MATCH_COUNT=$((MATCH_COUNT+1))
+    fi
+  done <<< "$VOCAB_WORDS"
+  MIN_MATCH=$(( TOTAL_VOCAB * 5 / 10 ))
+  if [ "$MATCH_COUNT" -lt "$MIN_MATCH" ]; then
+    echo -e "   ${RED}❌ FAIL: Only $MATCH_COUNT/$TOTAL_VOCAB vocab words appear in dictation+shadowing — need >= $MIN_MATCH${NC}"
+    echo -e "   ${YELLOW}FIX (BUG-W22-A): dictation/shadowing sentences were copied from previous week. Rewrite with this week's vocab.${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS: $MATCH_COUNT/$TOTAL_VOCAB vocab words confirmed in dictation+shadowing${NC}"
+  fi
+fi
+echo ""
+
+# =============================================================================
+# CHECK 37: explore.js — CLIL quality (BUG-W22-D): >= 8 bold markers + content length
+# =============================================================================
+echo -e "${BOLD}[CHECK 37] explore.js — CLIL quality: >= 8 **bold** vocab markers, content >= 100 words${NC}"
+for dir in "$ADV_DIR" "$EASY_DIR"; do
+  [ ! -d "$dir" ] && continue
+  LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+  EXP_FILE_C37="${dir}/explore.js"
+  [ ! -f "$EXP_FILE_C37" ] && echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): explore.js not found${NC}" && WARNINGS=$((WARNINGS+1)) && continue
+
+  EXP_ERRS=""
+  BOLD_COUNT=$(grep -o '\*\*' "$EXP_FILE_C37" | wc -l | tr -d ' ')
+  [ "$BOLD_COUNT" -lt 16 ] && EXP_ERRS="${EXP_ERRS}\n   • Only $BOLD_COUNT ** markers found — need >= 16 (= 8 bolded words). Blueprint requires 10."
+
+  CONTENT_WORDS=$(awk '/content_en:/,/`,$/' "$EXP_FILE_C37" | grep -oE '[A-Za-z]+' | wc -w | tr -d ' ')
+  [ "$CONTENT_WORDS" -lt 100 ] && EXP_ERRS="${EXP_ERRS}\n   • content_en has only ~$CONTENT_WORDS words — CLIL article must be >= 100 words"
+
+  CQ_COUNT=$(grep -c '"id":' "$EXP_FILE_C37" 2>/dev/null || grep -c 'id: [0-9]' "$EXP_FILE_C37" 2>/dev/null || true)
+  [ "$CQ_COUNT" -lt 3 ] && EXP_ERRS="${EXP_ERRS}\n   • Missing check_questions: only $CQ_COUNT id entries (need 3)"
+
+  if [ -n "$EXP_ERRS" ]; then
+    echo -e "   ${RED}❌ FAIL ($LABEL): explore.js CLIL quality issues:${NC}"
+    echo -e "$EXP_ERRS" | while IFS= read -r line; do echo -e "   ${RED}$line${NC}"; done
+    echo -e "   ${YELLOW}FIX (BUG-W22-D): explore.js must be a CLIL non-fiction article (real-world science), NOT grammar exercises. Bold all 10 vocab words in the text.${NC}"
+    ERRORS=$((ERRORS+1))
+  else
+    echo -e "   ${GREEN}✅ PASS ($LABEL): explore.js is a proper CLIL article (~$BOLD_COUNT ** markers, ~$CONTENT_WORDS words)${NC}"
+  fi
+done
+echo ""
+
+# =============================================================================
+# CHECK 38: Grammar tense consistency — dictation/shadowing tense must match week grammar_focus (BUG-W22-C)
+# =============================================================================
+echo -e "${BOLD}[CHECK 38] Grammar tense — dictation+shadowing tense must match week grammar_focus${NC}"
+AI_TUTOR_C38="src/data/weeks/week_${WEEK_PAD}_real.js"
+if [ ! -f "$AI_TUTOR_C38" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: week_${WEEK_PAD}_real.js not found${NC}"; WARNINGS=$((WARNINGS+1))
+else
+  GRAMMAR_FOCUS=$(grep -m1 "grammar_focus:" "$AI_TUTOR_C38" | sed -E 's/.*grammar_focus:[[:space:]]*"([^"]+)".*/\1/' | tr '[:upper:]' '[:lower:]')
+  if echo "$GRAMMAR_FOCUS" | grep -qiE "past|simple past|-ed"; then
+    for dir in "$ADV_DIR" "$EASY_DIR"; do
+      [ ! -d "$dir" ] && continue
+      LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
+      DICT_C38="${dir}/dictation.js"
+      SHAD_C38="${dir}/shadowing.js"
+      ED_COUNT=0
+      [ -f "$DICT_C38" ] && ED_COUNT=$(grep -oiE "[a-z]+ed[\"' ,.]" "$DICT_C38" | wc -l | tr -d ' ')
+      [ "$ED_COUNT" -lt 3 ] && [ -f "$SHAD_C38" ] && \
+        ED_COUNT=$((ED_COUNT + $(grep -oiE "[a-z]+ed[\"' ,.]" "$SHAD_C38" | wc -l | tr -d ' ')))
+      if [ "$ED_COUNT" -lt 3 ]; then
+        echo -e "   ${RED}❌ FAIL ($LABEL): grammar_focus='$GRAMMAR_FOCUS' (past) but only $ED_COUNT -ed verb form(s) found in dictation+shadowing — need >= 3${NC}"
+        echo -e "   ${YELLOW}FIX (BUG-W22-C): Sentences were written in present tense for a past-tense week. Rewrite dictation+shadowing in Simple Past.${NC}"
+        ERRORS=$((ERRORS+1))
+      else
+        echo -e "   ${GREEN}✅ PASS ($LABEL): Past-tense week — $ED_COUNT -ed forms confirmed in dictation+shadowing${NC}"
+      fi
+    done
+  else
+    echo -e "   ${GREEN}✅ PASS: grammar_focus='$GRAMMAR_FOCUS' — past-tense check not applicable${NC}"
+  fi
+fi
+echo ""
+
+
+# =============================================================================
 # SUMMARY
 # =============================================================================
 echo -e "${BLUE}${BOLD}═══════════════════════════════════════════════════════════════${NC}"
