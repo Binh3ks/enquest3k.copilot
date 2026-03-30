@@ -2046,17 +2046,18 @@ node tools/check_urls.js [N]
 
 **⚠️ CRITICAL: Run these checks after creating EVERY station file. Copy-paste from W(N-1) is the #1 cause of W22-style mass regressions.**
 
-#### Step 1 — Verify grammar tense BEFORE writing any station content
+#### Step 1 — Verify grammar tense BEFORE writing read.js
 ```bash
 # Check grammar_focus in week_[N]_real.js
 grep "grammar_focus:" src/data/weeks/week_[N]_real.js
-# If it says "Past Simple" or "-ed" → ALL sentences must use past tense
-# W22 bug: easy mode shadowing/dictation were written in present tense
+# If it says "Past Simple" or "-ed" → read.js story must use past tense
+# dictation.js + shadowing.js are exact copies of read.js — fixing read.js fixes all three
+# W22 bug: read.js easy mode was written in present tense → dictation+shadowing inherited wrong tense
 ```
 
 - [ ] `grammar_focus` identified from week_NN_real.js
-- [ ] If past tense week: ALL dictation + shadowing sentences use -ed verbs (**CHECK 38** auto-verifies)
-- [ ] If present tense week: NO -ed verbs in dictation/shadowing
+- [ ] If past tense week: read.js story uses -ed verbs throughout (**CHECK 38** auto-verifies via read.js)
+- [ ] If present tense week: NO -ed verbs in read.js story
 
 #### Step 2 — After creating vocab.js, verify word count in both modes
 ```bash
@@ -2067,15 +2068,16 @@ grep -c "image_url:" src/data/weeks_easy/week_[N]/vocab.js  # Easy count — mus
 
 - [ ] Easy vocab.js has SAME number of words as Advanced vocab.js (**CHECK 35** auto-verifies)
 
-#### Step 3 — After creating dictation.js + shadowing.js, verify vocab usage
+#### Step 3 — After creating read.js, verify vocab usage (dictation+shadowing will follow)
 ```bash
-# Quick test: grep for 3 vocab words of the NEW week in dictation  
-grep -i "detective\|case\|clue" src/data/weeks/week_[N]/dictation.js
-# W22 bug: dictation had "walked, cooked, played" (W21 words) instead of W22 detective vocab
+# Quick test: grep for 3 vocab words of the NEW week in read.js
+grep -i "detective\|case\|clue" src/data/weeks/week_[N]/read.js
+# W22 bug: read.js had "walked, cooked, played" (W21 words) instead of W22 detective vocab
+# dictation.js + shadowing.js are exact copies of read.js — fixing read.js fixes all three
 ```
 
-- [ ] At least 50% of new week's vocab words appear in dictation.js sentences (**CHECK 36** auto-verifies)
-- [ ] At least 50% of new week's vocab words appear in shadowing.js sentences
+- [ ] At least 50% of new week's vocab words appear in read.js story (**CHECK 36** auto-verifies)
+- [ ] ✅ dictation.js + shadowing.js are derived from read.js — no separate check needed
 
 #### Step 4 — After creating explore.js in BOTH modes, verify CLIL format
 ```bash
@@ -2312,10 +2314,10 @@ npm run dev
    - Lưu ý khi copy-paste `speakText()` call từ component khác: kiểm tra lại station string
 
 8. **Cross-week vocab contamination khi copy template (BUG-20 — March 2026)**
-   - Triệu chứng: W22 dictation/shadowing/read/games/missions dùng W21 vocab (walked, cooked, played) thay vì W22 vocab (detective, case, clue...)
-   - Nguyên nhân: Agent copy file từ W(N-1) làm template, thay title/metadata nhưng KHÔNG rewrite content
-   - Fix: Sau khi tạo mỗi file, grep 3-5 từ từ vocab của tuần cũ → nếu xuất hiện thì là contamination
-   - Gate: **CHECK 36** — tự động kiểm tra >= 50% vocab words của tuần N có mặt trong dictation+shadowing
+   - Triệu chứng: W22 read.js dùng W21 vocab (walked, cooked, played) → dictation+shadowing (là bản sao của read.js) tự động sai theo
+   - Nguyên nhân: Agent copy read.js từ W(N-1) làm template, thay title/metadata nhưng KHÔNG rewrite story content
+   - Fix: Sau khi viết read.js, grep 3-5 từ vocab của tuần cũ → nếu xuất hiện là contamination. dictation+shadowing sẽ tự đúng nếu read.js đúng.
+   - Gate: **CHECK 36** — tự động kiểm tra >= 50% vocab words của tuần N có mặt trong read.js
    - Checklist: xem section "Station Data Cross-Contamination Check" ở dưới
 
 9. **Easy mode vocab count phải bằng Advanced (BUG-21 — March 2026)**
@@ -2324,11 +2326,11 @@ npm run dev
    - Fix: Sau khi tạo easy vocab.js, đếm words và so sánh với advanced
    - Gate: **CHECK 35** — tự động kiểm tra cả 2 mode có cùng số từ
 
-10. **Grammar tense inconsistency trong easy mode (BUG-22 — March 2026)**
-    - Triệu chứng: W22 easy mode shadowing/dictation/read dùng present tense ("She walks") trong khi W22 là past tense week ("She walked")
-    - Nguyên nhân: Easy mode template copy từ W21 (present) không đổi grammar focus
-    - Fix: Kiểm tra grammar_focus trong week_NN_real.js TRƯỚC khi viết nội dung cho bất kỳ station nào
-    - Gate: **CHECK 38** — nếu grammar_focus chứa "past", kiểm tra dictation+shadowing có >= 3 -ed forms
+10. **Grammar tense inconsistency trong read.js (BUG-22 — March 2026)**
+    - Triệu chứng: W22 easy read.js dùng present tense ("She walks") → dictation+shadowing (bản sao read.js) tự động sai tense theo
+    - Nguyên nhân: Easy mode read.js copy từ W21 (present tense week) không đổi sang Simple Past
+    - Fix: Kiểm tra grammar_focus TRƯỚC khi viết read.js — nếu là past tense week, toàn bộ story dùng -ed verbs. dictation+shadowing sẽ đúng tự động.
+    - Gate: **CHECK 38** — nếu grammar_focus chứa "past", kiểm tra read.js có >= 3 -ed forms
 
 11. **Explore.js không phải CLIL — viết sai format (BUG-23 — March 2026)**
     - Triệu chứng: W21+W22 explore.js là bài grammar exercise ("Choose the correct -ed form...") thay vì CLIL non-fiction article

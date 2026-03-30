@@ -1269,33 +1269,29 @@ else
 fi
 echo ""
 
+# CHECK 36: Vocab cross-contamination — read.js must use this week's vocab (BUG-W22-A)
 # =============================================================================
-# CHECK 36: Vocab cross-contamination — dictation/shadowing must use this week's vocab (BUG-W22-A)
-# =============================================================================
-echo -e "${BOLD}[CHECK 36] Vocab cross-contamination — dictation+shadowing must use week $WEEK_INT vocab words${NC}"
+# dictation.js + shadowing.js are exact copies of read.js sentences — check read.js as the source.
+echo -e "${BOLD}[CHECK 36] Vocab cross-contamination — read.js must use week $WEEK_INT vocab words${NC}"
 ADV_VOCAB_C36="${ADV_DIR}/vocab.js"
-ADV_DICT_C36="${ADV_DIR}/dictation.js"
-ADV_SHAD_C36="${ADV_DIR}/shadowing.js"
-if [ ! -f "$ADV_VOCAB_C36" ] || [ ! -f "$ADV_DICT_C36" ] || [ ! -f "$ADV_SHAD_C36" ]; then
-  echo -e "   ${YELLOW}⚠️  SKIP: One or more files (vocab/dictation/shadowing) not found${NC}"; WARNINGS=$((WARNINGS+1))
+ADV_READ_C36="${ADV_DIR}/read.js"
+if [ ! -f "$ADV_VOCAB_C36" ] || [ ! -f "$ADV_READ_C36" ]; then
+  echo -e "   ${YELLOW}⚠️  SKIP: vocab.js or read.js not found${NC}"; WARNINGS=$((WARNINGS+1))
 else
   VOCAB_WORDS=$(grep -E '^\s+word:' "$ADV_VOCAB_C36" | sed -E 's/.*word:[[:space:]]*"([^"]+)".*/\1/' | tr '[:upper:]' '[:lower:]')
   TOTAL_VOCAB=$(echo "$VOCAB_WORDS" | grep -c "." || true)
   MATCH_COUNT=0
   while IFS= read -r vword; do
     [ -z "$vword" ] && continue
-    if grep -qi "$vword" "$ADV_DICT_C36" 2>/dev/null || \
-       grep -qi "$vword" "$ADV_SHAD_C36" 2>/dev/null; then
-      MATCH_COUNT=$((MATCH_COUNT+1))
-    fi
+    grep -qi "$vword" "$ADV_READ_C36" 2>/dev/null && MATCH_COUNT=$((MATCH_COUNT+1))
   done <<< "$VOCAB_WORDS"
   MIN_MATCH=$(( TOTAL_VOCAB * 5 / 10 ))
   if [ "$MATCH_COUNT" -lt "$MIN_MATCH" ]; then
-    echo -e "   ${RED}❌ FAIL: Only $MATCH_COUNT/$TOTAL_VOCAB vocab words appear in dictation+shadowing — need >= $MIN_MATCH${NC}"
-    echo -e "   ${YELLOW}FIX (BUG-W22-A): dictation/shadowing sentences were copied from previous week. Rewrite with this week's vocab.${NC}"
+    echo -e "   ${RED}❌ FAIL: Only $MATCH_COUNT/$TOTAL_VOCAB vocab words appear in read.js — need >= $MIN_MATCH${NC}"
+    echo -e "   ${YELLOW}FIX (BUG-W22-A): read.js was copied from previous week — rewrite story with this week's vocab. dictation+shadowing will follow automatically.${NC}"
     ERRORS=$((ERRORS+1))
   else
-    echo -e "   ${GREEN}✅ PASS: $MATCH_COUNT/$TOTAL_VOCAB vocab words confirmed in dictation+shadowing${NC}"
+    echo -e "   ${GREEN}✅ PASS: $MATCH_COUNT/$TOTAL_VOCAB vocab words confirmed in read.js${NC}"
   fi
 fi
 echo ""
@@ -1331,10 +1327,10 @@ for dir in "$ADV_DIR" "$EASY_DIR"; do
 done
 echo ""
 
+# CHECK 38: Grammar tense consistency — read.js tense must match week grammar_focus (BUG-W22-C)
 # =============================================================================
-# CHECK 38: Grammar tense consistency — dictation/shadowing tense must match week grammar_focus (BUG-W22-C)
-# =============================================================================
-echo -e "${BOLD}[CHECK 38] Grammar tense — dictation+shadowing tense must match week grammar_focus${NC}"
+# dictation.js + shadowing.js are exact copies of read.js sentences — checking read.js is sufficient.
+echo -e "${BOLD}[CHECK 38] Grammar tense — read.js tense must match week grammar_focus${NC}"
 AI_TUTOR_C38="src/data/weeks/week_${WEEK_PAD}_real.js"
 if [ ! -f "$AI_TUTOR_C38" ]; then
   echo -e "   ${YELLOW}⚠️  SKIP: week_${WEEK_PAD}_real.js not found${NC}"; WARNINGS=$((WARNINGS+1))
@@ -1344,18 +1340,17 @@ else
     for dir in "$ADV_DIR" "$EASY_DIR"; do
       [ ! -d "$dir" ] && continue
       LABEL=$([ "$dir" = "$ADV_DIR" ] && echo "Advanced" || echo "Easy")
-      DICT_C38="${dir}/dictation.js"
-      SHAD_C38="${dir}/shadowing.js"
-      ED_COUNT=0
-      [ -f "$DICT_C38" ] && ED_COUNT=$(grep -oiE "[a-z]+ed[\"' ,.]" "$DICT_C38" | wc -l | tr -d ' ')
-      [ "$ED_COUNT" -lt 3 ] && [ -f "$SHAD_C38" ] && \
-        ED_COUNT=$((ED_COUNT + $(grep -oiE "[a-z]+ed[\"' ,.]" "$SHAD_C38" | wc -l | tr -d ' ')))
+      READ_C38="${dir}/read.js"
+      if [ ! -f "$READ_C38" ]; then
+        echo -e "   ${YELLOW}⚠️  SKIP ($LABEL): read.js not found${NC}"; continue
+      fi
+      ED_COUNT=$(grep -oiE "[a-z]+ed[\"' ,.]" "$READ_C38" | wc -l | tr -d ' ')
       if [ "$ED_COUNT" -lt 3 ]; then
-        echo -e "   ${RED}❌ FAIL ($LABEL): grammar_focus='$GRAMMAR_FOCUS' (past) but only $ED_COUNT -ed verb form(s) found in dictation+shadowing — need >= 3${NC}"
-        echo -e "   ${YELLOW}FIX (BUG-W22-C): Sentences were written in present tense for a past-tense week. Rewrite dictation+shadowing in Simple Past.${NC}"
+        echo -e "   ${RED}❌ FAIL ($LABEL): grammar_focus='$GRAMMAR_FOCUS' (past) but read.js has only $ED_COUNT -ed verb form(s) — need >= 3${NC}"
+        echo -e "   ${YELLOW}FIX (BUG-W22-C): read.js story was written in wrong tense. Rewrite in Simple Past — dictation+shadowing will follow automatically.${NC}"
         ERRORS=$((ERRORS+1))
       else
-        echo -e "   ${GREEN}✅ PASS ($LABEL): Past-tense week — $ED_COUNT -ed forms confirmed in dictation+shadowing${NC}"
+        echo -e "   ${GREEN}✅ PASS ($LABEL): Past-tense week — $ED_COUNT -ed forms confirmed in read.js${NC}"
       fi
     done
   else
@@ -1363,6 +1358,7 @@ else
   fi
 fi
 echo ""
+
 
 
 # =============================================================================
