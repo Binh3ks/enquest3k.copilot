@@ -7,7 +7,7 @@ export default {
   check_questions: [
     {
       id: 1,
-      question: "Where do our feelings come from?",
+      question_en: "Where do our feelings come from?",
       answer: ["The brain", "Our brain", "They come from the brain"],
       hint_en: "Feelings come from our...",
       hint_vi: "Cam xuc den tu...",
@@ -15,7 +15,7 @@ export default {
     },
     {
       id: 2,
-      question: "What is the best thing to do when you feel scared?",
+      question_en: "What is the best thing to do when you feel scared?",
       answer: ["Name the feeling", "Say I feel scared", "Name it", "Tell someone"],
       hint_en: "The best thing to do is name your...",
       hint_vi: "Dieu tot nhat la dat ten cho cam xuc cua ban...",
@@ -23,11 +23,18 @@ export default {
     },
     {
       id: 3,
-      question: "What does it mean when you feel relieved?",
+      question_en: "What does it mean when you feel relieved?",
       answer: ["A problem is over", "The problem is finished", "It means a problem is over"],
       hint_en: "Relieved means a... is over.",
       hint_vi: "Relieved co nghia la... da qua.",
       audio_url: "/audio/week24_easy/explore_q3.mp3"
     }
-  ]
+  ],
+  question: {
+    text_en: "Think about a time you felt scared or excited. What happened? How did you feel? Use: I was ___ because ___.",
+    text_vi: "Hay nghi ve mot lan ban cam thay scared hoac excited. Chuyen gi da xay ra? Ban cam thay the nao? Dung: I was ___ because ___.",
+    min_words: 15,
+    hint_en: "I was ___ because ___. Then I was ___ when ___.",
+    hint_vi: "Toi da ___ vi ___. Sau do toi ___ khi ___."
+  }
 };

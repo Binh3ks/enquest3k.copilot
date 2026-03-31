@@ -7,7 +7,7 @@ export default {
   check_questions: [
     {
       id: 1,
-      question: "What does the brain do when something dangerous appears?",
+      question_en: "What does the brain do when something dangerous appears?",
       answer: ["It sends a signal and you feel scared", "Sends a fight-or-flight response", "The heart beats faster"],
       hint_en: "The brain sends a signal called fight-or-flight and you feel...",
       hint_vi: "Nao bo gui tin hieu fight-or-flight va ban cam thay...",
@@ -15,7 +15,7 @@ export default {
     },
     {
       id: 2,
-      question: "What chemical does the brain release when something good happens?",
+      question_en: "What chemical does the brain release when something good happens?",
       answer: ["Dopamine", "A chemical called dopamine"],
       hint_en: "Scientists call this chemical...",
       hint_vi: "Cac nha khoa hoc goi hoa chat nay la...",
@@ -23,11 +23,18 @@ export default {
     },
     {
       id: 3,
-      question: "What do scientists call people who study emotions?",
+      question_en: "What do scientists call people who study emotions?",
       answer: ["Psychologists", "They are called psychologists"],
       hint_en: "Scientists who study emotions are called...",
       hint_vi: "Cac nha khoa hoc nghien cuu cam xuc la...",
       audio_url: "/audio/week24/explore_q3.mp3"
     }
-  ]
+  ],
+  question: {
+    text_en: "Think about a time when you felt two different emotions on the same day — like scared in the morning but relieved by evening. Using was/were + adjective, describe your emotional journey and explain what caused each feeling.",
+    text_vi: "Hay nghi ve mot ngay ban cam thay hai cam xuc khac nhau — vi du scared vao buoi sang nhung relieved vao buoi toi. Dung was/were + tinh tu, mo ta hanh trinh cam xuc cua ban va giai thich nguyen nhan cua moi cam xuc.",
+    min_words: 30,
+    hint_en: "In the morning I was... because... But later I was... when... By the end of the day I was...",
+    hint_vi: "Buoi sang toi da... vi... Nhung sau do toi... khi... Den cuoi ngay toi..."
+  }
 };
