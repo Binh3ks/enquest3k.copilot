@@ -1,32 +1,32 @@
 export default {
-  title: "Why Do We Feel Emotions?",
+  title: "How Do We Feel?",
   image_url: "/images/week24/explore_cover_w24.jpg",
-  content_en: "Have you ever wondered **why** you feel **scared**, **excited**, or **tired**? Emotions are signals your **brain** sends to your body. They help you understand what is happening around you and **respond** in the right way.\n\nWhen something **dangerous** appears — like a loud sound at night — your brain sends a signal and you feel **scared**. This is called the **fight-or-flight** response. Your heart beats faster and your body gets ready to move. This kept our **ancestors** safe thousands of years ago.\n\nFeelings like being **excited** or **cheerful** happen when your brain releases a **chemical** called dopamine. This chemical flows when something good happens — like seeing a friend, winning a game, or smelling your favourite food. Being **hungry** or **thirsty** are also signals your brain sends when your body needs **energy** or water.\n\nEmotions like feeling **worried**, **angry**, or **upset** can feel uncomfortable, but they are important too. **Anger** tells you something is unfair. **Worry** helps you prepare for a test. **Calm** people often think more clearly because less stress **chemicals** are in their brains.\n\nScientists who study emotions are called **psychologists**. They have found that children who can name their feelings — like saying \"I was **scared** because...\" or \"I was **relieved** when...\" — handle **difficult** situations better. Learning the words for feelings is a superpower!\n\nSo next time you feel **bored**, **surprised**, or **tired**, remember: your brain is working hard to keep you safe, **healthy**, and happy.",
-  content_vi: "Ban co bao gio tu hoi **tai sao** ban cam thay **scared**, **excited**, hay **tired** khong? **Cam xuc** la tin hieu nao bo gui cho co the ban. Chung giup ban hieu dieu gi dang xay ra va **phan ung** dung cach.\n\nKhi co gi do **nguy hiem** xuat hien - nhu am thanh lon vao dem - nao bo gui tin hieu va ban **scared**. Day goi la phan ung **fight-or-flight**. Tim ban dap nhanh hon va co the san sang chuyen dong. Dieu nay giup **to tien** cua chung ta song sot hang nghin nam truoc.\n\nCam giac **excited** hay **cheerful** xay ra khi nao bo tiet ra mot **hoa chat** goi la dopamine. Hoa chat nay chay khi dieu gi tot xay ra - gap ban, thang tro choi, hay ngoi mui mon an yeu thich. Cam giac **hungry** hay **thirsty** cung la tin hieu nao bo gui khi co the can **nang luong** hoac nuoc.\n\nCam xuc nhu **worried**, **angry**, hay **upset** co the kho chiu, nhung cung rat quan trong. **Gian du** bao ban co gi do bat cong. **Lo lang** giup ban chuan bi cho bai kiem tra. Nguoi **calm** thuong suy nghi ro rang hon vi it **hoa chat** cang thang trong nao bo.\n\nCac nha khoa hoc nghien cuu cam xuc la **nha tam ly hoc**. Ho phat hien rang tre em co the dat ten cam xuc - nhu noi \"Toi **scared** vi...\" hay \"Toi **relieved** khi...\" - xu ly tinh huong **kho khan** tot hon. Hoc tu ngu ve cam xuc la sieu nang luc!\n\nVay lan toi khi ban cam thay **bored**, **surprised**, hay **tired**, hay nho rang: nao bo ban dang lam viec cham chi de giu ban an toan, **khoe manh** va hanh phuc.",
+  content_en: "Feelings are a big part of your life every day. When something **scary** happens, you feel **scared**. When something good happens, you feel **excited**. These feelings come from your **brain**.\n\nWhen you are **hungry** or **thirsty**, your body sends a message to your brain. Your **brain** then tells you what to do.\n\nSometimes we feel **worried** before a test. Sometimes we feel **angry** when something is not fair. Sometimes we feel **bored** when there is nothing fun to do. These feelings are all normal!\n\nThe best thing to do is **name** your feelings. When you are **scared**, say: \"I feel scared.\" When you are **tired**, you can rest. When you feel **calm**, you can think clearly.\n\nHere is a great tip: when you feel **relieved**, it means a problem is over. When you feel **cheerful**, it means you are happy and full of energy. Learning these feeling words is a superpower!",
+  content_vi: "**Cam xuc** la mot phan lon trong cuoc song hang ngay cua ban. Khi co dieu gi **dang so** xay ra, ban cam thay **scared**. Khi co dieu gi tot xay ra, ban cam thay **excited**. Nhung cam xuc nay den tu **nao bo** cua ban.\n\nKhi ban **doi** hoac **khat**, co the gui tin nhan cho nao bo. **Nao bo** sau do bao ban phai lam gi.\n\nDoi khi chung ta cam thay **worried** truoc bai kiem tra. Doi khi chung ta cam thay **angry** khi co dieu gi khong cong bang. Doi khi chung ta cam thay **bored** khi khong co gi vui. Nhung cam xuc nay deu binh thuong!\n\nDieu tot nhat la **dat ten** cho cam xuc cua ban. Khi ban **scared**, hay noi: \"I feel scared.\" Khi ban **tired**, ban co the nghi ngoi. Khi ban cam thay **calm**, ban co the suy nghi ro rang hon.\n\nDay la mot meo hay: khi ban cam thay **relieved**, co nghia la van de da qua. Khi ban cam thay **cheerful**, co nghia la ban vui ve va day nang luong. Hoc nhung tu cam xuc nay la sieu nang luc!",
   audio_url: "/audio/week24_easy/explore_main.mp3",
   check_questions: [
     {
       id: 1,
-      question: "What does the brain do when something dangerous appears?",
-      answer: ["It sends a signal and you feel scared", "Sends a fight-or-flight response", "The heart beats faster"],
-      hint_en: "The brain sends a signal called fight-or-flight and you feel...",
-      hint_vi: "Nao bo gui tin hieu fight-or-flight va ban cam thay...",
+      question: "Where do our feelings come from?",
+      answer: ["The brain", "Our brain", "They come from the brain"],
+      hint_en: "Feelings come from our...",
+      hint_vi: "Cam xuc den tu...",
       audio_url: "/audio/week24_easy/explore_q1.mp3"
     },
     {
       id: 2,
-      question: "What chemical does the brain release when something good happens?",
-      answer: ["Dopamine", "A chemical called dopamine"],
-      hint_en: "Scientists call this chemical...",
-      hint_vi: "Cac nha khoa hoc goi hoa chat nay la...",
+      question: "What is the best thing to do when you feel scared?",
+      answer: ["Name the feeling", "Say I feel scared", "Name it", "Tell someone"],
+      hint_en: "The best thing to do is name your...",
+      hint_vi: "Dieu tot nhat la dat ten cho cam xuc cua ban...",
       audio_url: "/audio/week24_easy/explore_q2.mp3"
     },
     {
       id: 3,
-      question: "What do scientists call people who study emotions?",
-      answer: ["Psychologists", "They are called psychologists"],
-      hint_en: "Scientists who study emotions are called...",
-      hint_vi: "Cac nha khoa hoc nghien cuu cam xuc la...",
+      question: "What does it mean when you feel relieved?",
+      answer: ["A problem is over", "The problem is finished", "It means a problem is over"],
+      hint_en: "Relieved means a... is over.",
+      hint_vi: "Relieved co nghia la... da qua.",
       audio_url: "/audio/week24_easy/explore_q3.mp3"
     }
   ]
