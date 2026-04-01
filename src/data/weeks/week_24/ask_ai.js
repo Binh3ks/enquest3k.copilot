@@ -1,49 +1,44 @@
 export default {
-  title: "Ask AI: Talking About Past Feelings",
-  image_url: "/images/week24/ask_ai_cover_w24.jpg",
-  audio_url: "/audio/week24/ask_ai_main.mp3",
-  intro_en: "Use these questions to practise talking about past feelings with was / were. Ask the AI and share your own answers too!",
-  intro_vi: "Dùng các câu hỏi này để luyện tập nói về cảm xúc trong quá khứ với was / were. Hỏi AI và chia sẻ câu trả lời của bạn!",
   prompts: [
     {
       id: 1,
-      context_en: "Were you ever scared of something when you were little? Tell me what it was and why you were scared.",
-      context_vi: "Bạn đã từng sợ điều gì đó khi còn nhỏ chưa? Kể cho tôi nghe đó là gì và tại sao bạn scared.",
-      grammar_focus: "I was scared because...",
+      context_en: "Your friend cried after the test. You want to know HOW they felt during the test. Ask them.",
+      context_vi: "Bạn của bạn khóc sau bài kiểm tra. Bạn muốn biết họ cảm thấy THẾ NÀO trong lúc làm bài. Hỏi họ.",
       audio_url: "/audio/week24/ask_ai_q1.mp3",
-      example_answer_en: "I was scared of the dark because I could not see anything. I felt better when my mum turned on the night light."
+      answer: ["How were you feeling?", "How did you feel?", "Were you scared?", "Were you nervous?"],
+      hint: "How were you...?"
     },
     {
       id: 2,
-      context_en: "Think about a time when you were very excited. Where were you and what made you feel that way?",
-      context_vi: "Nghĩ về một lần bạn rất excited. Bạn đang ở đâu và điều gì làm bạn cảm thấy như vậy?",
-      grammar_focus: "I was excited when / because...",
+      context_en: "Your classmate was very quiet at lunch today. You want to know if they were sad. Ask them.",
+      context_vi: "Bạn cùng lớp rất im lặng trong giờ ăn trưa hôm nay. Bạn muốn biết họ có buồn không. Hỏi họ.",
       audio_url: "/audio/week24/ask_ai_q2.mp3",
-      example_answer_en: "I was excited on my birthday because my family got me a new bicycle. I was so happy!"
+      answer: ["Were you sad?", "Were you upset?", "Were you okay?", "Were you feeling sad?"],
+      hint: "Were you...?"
     },
     {
       id: 3,
-      context_en: "Was there a time you felt worried before a test or a big event? How did you stay calm?",
-      context_vi: "Có lần nào bạn cảm thấy worried trước khi kiểm tra hay sự kiện quan trọng không? Bạn làm gì để stay calm?",
-      grammar_focus: "I was worried because... I tried to stay calm by...",
+      context_en: "Your little brother was jumping around the room this morning. You want to know WHY he was so excited. Ask him.",
+      context_vi: "Em trai bạn nhảy xung quanh phòng sáng nay. Bạn muốn biết TẠI SAO em ấy hào hứng vậy. Hỏi em ấy.",
       audio_url: "/audio/week24/ask_ai_q3.mp3",
-      example_answer_en: "I was worried before my swimming test. I stayed calm by taking deep breaths and thinking about the practise I did."
+      answer: ["Why were you so excited?", "Why were you jumping?", "Why were you so happy?"],
+      hint: "Why were you...?"
     },
     {
       id: 4,
-      context_en: "Tell me about a time when you were surprised. What happened and how did you feel after?",
-      context_vi: "Kể về một lần bạn surprised. Chuyện gì xảy ra và sau đó bạn cảm thấy thế nào?",
-      grammar_focus: "I was surprised when... After that, I was...",
+      context_en: "You see your friend hiding under the table during the school play rehearsal. You want to know if they were nervous. Ask them.",
+      context_vi: "Bạn thấy bạn mình trốn dưới bàn trong buổi tập vở kịch. Bạn muốn biết họ có hồi hộp không. Hỏi họ.",
       audio_url: "/audio/week24/ask_ai_q4.mp3",
-      example_answer_en: "I was surprised when my teacher gave me a sticker for my drawing. I was excited and relieved because I worked really hard on it."
+      answer: ["Were you nervous?", "Were you scared?", "Were you frightened?", "Were you afraid?"],
+      hint: "Were you nervous...?"
     },
     {
       id: 5,
-      context_en: "What do you do when you feel bored at home? Can you describe the last time you were bored?",
-      context_vi: "Bạn làm gì khi cảm thấy bored ở nhà? Bạn có thể mô tả lần cuối bạn bored không?",
-      grammar_focus: "I was bored when/because... I decided to...",
+      context_en: "Your teacher looked very tired this morning. You want to know if she was okay. Ask her politely.",
+      context_vi: "Cô giáo của bạn trông rất mệt sáng nay. Bạn muốn biết cô ấy có ổn không. Hỏi lịch sự.",
       audio_url: "/audio/week24/ask_ai_q5.mp3",
-      example_answer_en: "I was bored last Saturday because the weather was bad. I decided to read a book and after that I was not bored anymore."
+      answer: ["Were you okay?", "Are you okay?", "Were you tired?", "Were you feeling well?"],
+      hint: "Were you okay...?"
     }
   ]
 };

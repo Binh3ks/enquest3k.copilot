@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  api:
+    image: ghcr.io/danny-avila/librechat-api:latest
+    ports:
+      - "3080:3080"
+    environment:
+      - ANTHROPIC_API_KEY=sk-ant-YOUR_CLAUDE_KEY_HERE
+      - MONGO_URI=mongodb://mongo:27017/LibreChat
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:6
+    volumes:
+      - mongo-data:/data/db
+  frontend:
+    image: ghcr.io/danny-avila/librechat:latest
+    ports:
+      - "3090:3090"
+volumes:
+  mongo-data:

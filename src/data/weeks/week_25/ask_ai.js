@@ -1,49 +1,44 @@
 export default {
-  title: "Ask AI: Talking About Step-by-Step Processes",
-  image_url: "/images/week25/ask_ai_cover_w25.jpg",
-  audio_url: "/audio/week25/ask_ai_main.mp3",
-  intro_en: "Use these questions to practise describing sequences and processes with: First, Next, Then, Finally. Tell the AI your own steps too!",
-  intro_vi: "Dùng các câu hỏi này để luyện tập mô tả trình tự và quy trình với: First, Next, Then, Finally. Kể cho AI nghe các bước của bạn!",
   prompts: [
     {
       id: 1,
-      context_en: "Can you describe how you brush your teeth every morning? Use First, Next, Then, Finally to explain each step.",
-      context_vi: "Bạn có thể mô tả cách bạn đánh răng mỗi buổi sáng không? Dùng First, Next, Then, Finally để giải thích mỗi bước.",
-      grammar_focus: "First, I ___. Next, I ___. Then, I ___. Finally, I ___.",
+      context_en: "You see your friend making a sandwich but they put the jam on BEFORE getting the bread out. You want to know what they should do FIRST. Ask them.",
+      context_vi: "Bạn thấy bạn mình đang làm sandwich nhưng họ bôi mứt TRƯỚC KHI lấy bánh mì ra. Bạn muốn biết họ nên làm gì ĐẦU TIÊN. Hỏi họ.",
       audio_url: "/audio/week25/ask_ai_q1.mp3",
-      example_answer_en: "First, I squeeze a little toothpaste onto my brush. Next, I brush all my teeth for two minutes. Then, I rinse my mouth with clean water. Finally, I put away my toothbrush and tidy up."
+      answer: ["What should you do first?", "What do you do first?", "What comes first?", "Which step is first?"],
+      hint: "What should you do first?"
     },
     {
       id: 2,
-      context_en: "Tell me how you get ready for school in the morning. What do you do first, and what do you do last?",
-      context_vi: "Kể cho tôi nghe bạn chuẩn bị đến trường vào buổi sáng như thế nào. Bạn làm gì đầu tiên và bạn làm gì cuối cùng?",
-      grammar_focus: "First, I ___. Then, I ___. Finally, I ___.",
+      context_en: "Your friend is brushing their teeth but forgot to put toothpaste on the brush. You want to know what step comes NEXT after putting on the toothpaste. Ask them.",
+      context_vi: "Bạn của bạn đang đánh răng nhưng quên chưa bôi kem đánh răng. Bạn muốn biết bước TIẾP THEO sau khi bôi kem là gì. Hỏi họ.",
       audio_url: "/audio/week25/ask_ai_q2.mp3",
-      example_answer_en: "First, I wake up and wash my face. Next, I brush my teeth. Then, I get dressed and eat breakfast. Finally, I pack my bag and go to school."
+      answer: ["What comes next?", "What do you do next?", "What is the next step?", "What step comes next?"],
+      hint: "What comes next?"
     },
     {
       id: 3,
-      context_en: "Have you ever made food at home? Describe the steps you followed — what did you do first?",
-      context_vi: "Bạn đã bao giờ tự làm thức ăn ở nhà chưa? Mô tả các bước bạn đã làm — bạn đã làm gì đầu tiên?",
-      grammar_focus: "First, I ___. Next, I ___. Then, I ___. Finally, I ___.",
+      context_en: "Your little sister finished brushing her teeth but she forgot one thing before she finishes. You want to know what she should do THEN. Ask her.",
+      context_vi: "Em gái của bạn đã đánh răng xong nhưng còn quên một việc trước khi xong. Bạn muốn biết SAU ĐÓ em nên làm gì. Hỏi em ấy.",
       audio_url: "/audio/week25/ask_ai_q3.mp3",
-      example_answer_en: "Once I made a fruit salad. First, I washed the fruit. Next, I sliced the apples and bananas. Then, I mixed them in a bowl and added some honey. Finally, I put the salad in the fridge to cool before eating."
+      answer: ["What should you do then?", "What do you do then?", "Then what do you do?", "What comes then?"],
+      hint: "What should you do then?"
     },
     {
       id: 4,
-      context_en: "Think about packing your school bag. What is the sequence of steps you follow? Is there a step you must NEVER skip?",
-      context_vi: "Hãy nghĩ về việc xếp tui sách. Trình tự các bước bạn làm là gì? Có bước nào bạn KHÔNG BAO GIỜ được bỏ qua không?",
-      grammar_focus: "First, I ___. Next, I ___. I must never skip the step of ___.",
+      context_en: "Your classmate cooked rice for the first time and did all the steps correctly. You want to know what they did FINALLY at the end. Ask them.",
+      context_vi: "Bạn cùng lớp nấu cơm lần đầu tiên và đã làm đúng tất cả các bước. Bạn muốn biết CUỐI CÙNG họ đã làm gì. Hỏi họ.",
       audio_url: "/audio/week25/ask_ai_q4.mp3",
-      example_answer_en: "First, I check my timetable to see which books I need. Next, I put in all the right books. Then, I add my pencil case and water bottle. Finally, I zip up my bag. I must never skip checking the timetable — once I forgot my maths book and got in trouble!"
+      answer: ["What did you do finally?", "What did you do last?", "What was the last step?", "What was the final step?"],
+      hint: "What did you do finally?"
     },
     {
       id: 5,
-      context_en: "Can you think of a time when you did steps in the WRONG order by mistake? What happened? Tell me the story.",
-      context_vi: "Bạn có thể nghĩ về một lần bạn làm các bước theo THỨ TỰ SAI do nhầm lẫn không? Điều gì đã xảy ra? Kể cho tôi nghe câu chuyện.",
-      grammar_focus: "First, I was supposed to ___, but I ___. Next, I ___. Finally, I realised...",
+      context_en: "Your teacher is showing a science experiment with four steps. You missed step three. You want to know what happens AFTER step two. Ask the teacher.",
+      context_vi: "Giáo viên đang trình bày thí nghiệm khoa học có bốn bước. Bạn bỏ lỡ bước ba. Bạn muốn biết điều gì xảy ra SAU bước hai. Hỏi giáo viên.",
       audio_url: "/audio/week25/ask_ai_q5.mp3",
-      example_answer_en: "Once I poured water into my cup before putting the cup on the table. The water spilled everywhere! First, I was supposed to put the cup down on the table. Next, I should have poured the water. I got the steps in the wrong order and had to clean up the mess."
+      answer: ["What happens next?", "What do we do next?", "What comes after step two?", "What is the next step?"],
+      hint: "What happens next?"
     }
   ]
 };
