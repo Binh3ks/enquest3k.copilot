@@ -52,7 +52,11 @@ _backup*/
 
 # Production documentation & planning
 Production_FINAL/
-!Production_FINAL/MASTER PROMPT/  # Allow mass production documentation
+!Production_FINAL/MASTER PROMPT/
+!Production_FINAL/1. FINAL MASS PRODUCTION/
+!Production_FINAL/1. FINAL MASS PRODUCTION/**
+!Production_FINAL/IMAGE PROMPTS/
+!Production_FINAL/IMAGE PROMPTS/**
 MASS_Final/
 
 # Debris/temp folders
