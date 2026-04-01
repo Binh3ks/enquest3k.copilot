@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "Sequence Words: First, Next, Then, Finally - English for Kids", videoId: "nBJV56WUDng", duration: "02:45", sim_duration: 165, thumb: "https://img.youtube.com/vi/nBJV56WUDng/mqdefault.jpg" },
-    { id: 2, title: "Morning Routines Step by Step - Healthy Habits for Children", videoId: "5MgBikgcWnY", duration: "02:32", sim_duration: 152, thumb: "https://img.youtube.com/vi/5MgBikgcWnY/mqdefault.jpg" },
-    { id: 3, title: "What is an Algorithm? Computer Science for Kids", videoId: "6hfOvs8pY1k", duration: "03:48", sim_duration: 228, thumb: "https://img.youtube.com/vi/6hfOvs8pY1k/mqdefault.jpg" },
-    { id: 4, title: "How Sequences Work - Following Steps in Order", videoId: "HMnrl0tmd3k", duration: "05:15", sim_duration: 315, thumb: "https://img.youtube.com/vi/HMnrl0tmd3k/mqdefault.jpg" },
-    { id: 5, title: "Step by Step - Ordering Actions for Kids", videoId: "WM8bTdBs-cw", duration: "04:02", sim_duration: 242, thumb: "https://img.youtube.com/vi/WM8bTdBs-cw/mqdefault.jpg" }
+    { id: 1, title: "ESL Making a Pizza - Ingredients and Sequencers: First, then, finally", videoId: "mWxahMeRMrA", duration: "03:39", sim_duration: 219, thumb: "https://img.youtube.com/vi/mWxahMeRMrA/mqdefault.jpg" },
+    { id: 2, title: "What is Algorithm? - Coding Lessons for Kids", videoId: "NU0c_7BGa3w", duration: "01:39", sim_duration: 99, thumb: "https://img.youtube.com/vi/NU0c_7BGa3w/mqdefault.jpg" },
+    { id: 3, title: "Let&#39;s Make a Sandwich Song | Simple Food Song for Kids", videoId: "mK4O8hi30UA", duration: "01:50", sim_duration: 110, thumb: "https://img.youtube.com/vi/mK4O8hi30UA/mqdefault.jpg" },
+    { id: 4, title: "Morning Routines & Verbs Chant for Children | In the Morning Vocabulary | Fun Kids English", videoId: "ico9ztlb46k", duration: "03:19", sim_duration: 199, thumb: "https://img.youtube.com/vi/ico9ztlb46k/mqdefault.jpg" },
+    { id: 5, title: "How to use sequencers in English: FIRST, THEN, NEXT, AFTER THAT, FINALLY", videoId: "sFrHK7cHzkA", duration: "08:31", sim_duration: 511, thumb: "https://img.youtube.com/vi/sFrHK7cHzkA/mqdefault.jpg" }
   ],
-  bonus_games: [{ title: "Sequence Chef Challenge", url: "#", description: "Arrange the steps: can you make the perfect sandwich in order?" }]
+  bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };
