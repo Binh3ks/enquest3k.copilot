@@ -25,6 +25,7 @@ export const weekTitles = {
   22: { title_en: "The Time Detective", title_vi: "Tham Tu Thoi Gian" },
   23: { title_en: "The Art Class", title_vi: "Lop Hoc My Thuat" },
   24: { title_en: "Feelings in the Past", title_vi: "Cam Xuc Trong Qua Khu" },
+  25: { title_en: "The Sequence Challenge", title_vi: "Thu Thach Trinh Tu" },
   // Add more as weeks are created
 };
 
