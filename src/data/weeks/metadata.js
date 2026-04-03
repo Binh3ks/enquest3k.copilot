@@ -27,6 +27,7 @@ export const weekTitles = {
   24: { title_en: "Feelings in the Past", title_vi: "Cam Xuc Trong Qua Khu" },
   25: { title_en: "The Sequence Challenge", title_vi: "Thu Thach Trinh Tu" },
   26: { title_en: "My Weekend Comic Strip", title_vi: "Bo Truyen Tranh Cuoi Tuan Cua Toi" },
+  27: { title_en: "Maya's Growing Plant", title_vi: "Cay Trong Cua Maya" },
   // Add more as weeks are created
 };
 
