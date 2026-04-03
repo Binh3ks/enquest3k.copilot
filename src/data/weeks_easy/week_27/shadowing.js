@@ -12,6 +12,6 @@ export default {
     { id: 5, text: "A leaf uses sun to make food.", audio_url: "/audio/week27_easy/shadowing_s5.mp3" },
     { id: 6, text: "Finally, a small yellow flower grew at the top!", audio_url: "/audio/week27_easy/shadowing_s6.mp3" },
     { id: 7, text: "Maya saw the whole life cycle: seed, sprout, stem, leaf, and flower.", audio_url: "/audio/week27_easy/shadowing_s7.mp3" },
-    { id: 8, text: "A plant grows from a tiny seed all by itself!", audio_url: "/audio/week27_easy/shadowing_s8.mp3" }
+    { id: 8, text: "A sprout grows up towards the sun.", audio_url: "/audio/week27_easy/shadowing_s8.mp3" }
   ]
 };
