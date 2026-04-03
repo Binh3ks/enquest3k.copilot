@@ -23,7 +23,7 @@ export async function getCurrentWeekData(weekId) {
   try {
     // 🔥 PRIORITY 1: Try loading week_XX_real.js (AI Tutor syllabus)
     console.log(`🔍 Attempting to load: week_${paddedNumber}_real.js`);
-    const realModule = await import(`./weeks/week_${paddedNumber}_real.js`);
+    const realModule = await import(`./weeks/week_${paddedNumber}/week_${paddedNumber}_real.js`);
     console.log(`✅ Loaded REAL syllabus data for Week ${weekNumber}`);
     return realModule.default;
   } catch (realError) {

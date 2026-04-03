@@ -1,44 +1,50 @@
 export default {
-  prompts: [
+  title: "Ask AI: My Plant",
+  situations: [
     {
       id: 1,
-      context_en: "Your friend puts a plant pot in a dark room with no windows. You want to warn them. Say what the plant needs.",
-      context_vi: "Bạn đặt chậu cây vào phòng tối không có cửa sổ. Bạn muốn cảnh báo họ. Nói điều cây cần.",
-      audio_url: "/audio/week27_easy/ask_ai_q1.mp3",
-      answer: ["It needs sunlight.", "A plant needs sunlight to grow.", "The plant needs light."],
-      hint: "It needs sunlight."
+      type: "simple_question",
+      context_en: "Your plant is not growing. Ask Ms. Nova what is wrong.",
+      context_vi: "Cay cua ban khong moc. Hoi co Nova co chuyen gi vay.",
+      suggested_question_en: "Why is my plant not growing?",
+      suggested_question_vi: "Tai sao cay cua toi khong moc?",
+      audio_url: "/audio/week27_easy/ask_ai_s1.mp3"
     },
     {
       id: 2,
-      context_en: "Maya's teacher asks: What does the root do? Help Maya give a simple answer.",
-      context_vi: "Thầy giáo hỏi Maya: Rễ cây làm gì? Giúp Maya đưa ra câu trả lời đơn giản.",
-      audio_url: "/audio/week27_easy/ask_ai_q2.mp3",
-      answer: ["The root absorbs water.", "It absorbs water from the soil.", "The root drinks water from the soil."],
-      hint: "The root absorbs water from the soil."
+      type: "simple_question",
+      context_en: "You want to know how often to water your plant. Ask Ms. Nova.",
+      context_vi: "Ban muon biet nen tuoi cay bao nhieu lan. Hoi co Nova.",
+      suggested_question_en: "How often should I water my plant?",
+      suggested_question_vi: "Toi nen tuoi cay may lan?",
+      audio_url: "/audio/week27_easy/ask_ai_s2.mp3"
     },
     {
       id: 3,
-      context_en: "Your teacher asks you to say what a leaf does in one simple sentence.",
-      context_vi: "Thầy giáo yêu cầu bạn nói một câu đơn giản về chức năng của lá cây.",
-      audio_url: "/audio/week27_easy/ask_ai_q3.mp3",
-      answer: ["A leaf makes food.", "A leaf uses sunlight to make food.", "The leaf makes food using sunlight."],
-      hint: "A leaf uses sunlight to make food."
+      type: "simple_question",
+      context_en: "You see a tiny green thing coming out of the soil. Ask Ms. Nova what it is.",
+      context_vi: "Ban thay mot thu nho mau xanh lo ra tu dat. Hoi co Nova do la gi.",
+      suggested_question_en: "What is the green thing coming out of the soil?",
+      suggested_question_vi: "Thu mau xanh lo ra tu dat la gi vay?",
+      audio_url: "/audio/week27_easy/ask_ai_s3.mp3"
     },
     {
       id: 4,
-      context_en: "Maya's friend asks what happened on Day Five of the plant experiment. Tell them what appeared.",
-      context_vi: "Bạn của Maya hỏi điều gì xảy ra vào Ngày Thứ Năm của thí nghiệm cây. Nói cho họ biết thứ gì xuất hiện.",
-      audio_url: "/audio/week27_easy/ask_ai_q4.mp3",
-      answer: ["A sprout appeared.", "A tiny green sprout came out.", "A small green sprout pushed through the soil."],
-      hint: "A tiny green sprout appeared through the soil."
+      type: "simple_question",
+      context_en: "You want to know why leaves are green. Ask Ms. Nova.",
+      context_vi: "Ban muon biet tai sao la cay mau xanh. Hoi co Nova.",
+      suggested_question_en: "Why are leaves green?",
+      suggested_question_vi: "Tai sao la cay mau xanh?",
+      audio_url: "/audio/week27_easy/ask_ai_s4.mp3"
     },
     {
       id: 5,
-      context_en: "Your teacher asks you to use First, Next, After that, Finally to describe how a seed grows. Give your answer.",
-      context_vi: "Thầy giáo yêu cầu dùng First, Next, After that, Finally để mô tả cách hạt giống mọc lên. Hãy trả lời.",
-      audio_url: "/audio/week27_easy/ask_ai_q5.mp3",
-      answer: ["First, a seed is planted. Next, a sprout appears. After that, the stem grows. Finally, a flower blooms.", "First the seed is in the soil. Next it sprouts. After that the stem grows up. Finally a flower appears."],
-      hint: "First, a seed is planted. Next, a sprout appears. After that, the stem grows. Finally, a flower blooms."
+      type: "simple_question",
+      context_en: "You want to grow a flower at home. Ask Ms. Nova how to start.",
+      context_vi: "Ban muon trong hoa o nha. Hoi co Nova bat dau nhu the nao.",
+      suggested_question_en: "How can I grow a flower at home?",
+      suggested_question_vi: "Toi co the trong hoa o nha bang cach nao?",
+      audio_url: "/audio/week27_easy/ask_ai_s5.mp3"
     }
   ]
 };

@@ -1,44 +1,50 @@
 export default {
-  prompts: [
+  title: "Ask AI: Plant Growth",
+  situations: [
     {
       id: 1,
-      context_en: "Your classmate just planted a seed in a pot but put it in a dark cupboard. You want to warn them that the plant needs something important. Say what it needs.",
-      context_vi: "Bạn cùng lớp vừa trồng hạt vào chậu nhưng để vào trong tủ tối. Bạn muốn cảnh báo họ rằng cây cần điều gì đó quan trọng. Nói điều cây cần.",
-      audio_url: "/audio/week27/ask_ai_q1.mp3",
-      answer: ["It needs sunlight to grow.", "A plant needs sunlight.", "Plants need sunlight to germinate and grow.", "It needs sunlight and water."],
-      hint: "It needs sunlight to grow."
+      type: "critical_inquiry",
+      context_en: "Your friend puts a plant pot in a dark room with no windows. You want to warn them. Say what the plant needs.",
+      context_vi: "Ban cua ban dat chau cay trong phong toi khong co cua so. Ban muon canh bao ho. Noi ve dieu cay can.",
+      suggested_question_en: "Can a plant survive without sunlight?",
+      suggested_question_vi: "Mot cay co song sot duoc khong co anh sang mat troi khong?",
+      audio_url: "/audio/week27/ask_ai_s1.mp3"
     },
     {
       id: 2,
-      context_en: "Maya is explaining plant growth to a younger student. The student asks: What does the root do? Help Maya answer using a Present Simple fact sentence.",
-      context_vi: "Maya đang giải thích sự phát triển của cây cho một học sinh nhỏ hơn. Học sinh hỏi: Rễ cây làm gì? Hãy giúp Maya trả lời bằng một câu sự thật Hiện Tại Đơn.",
-      audio_url: "/audio/week27/ask_ai_q2.mp3",
-      answer: ["The root absorbs water from the soil.", "It absorbs water and nutrients.", "Roots absorb water and nutrients from the soil.", "The root takes in water from the soil."],
-      hint: "The root absorbs water from the soil."
+      type: "curiosity_question",
+      context_en: "You are curious: a seed is so small, but it grows into a big plant. Ask Ms. Nova how this happens.",
+      context_vi: "Ban tay mo: mot hat giong nho xiu, nhung no moc thanh cay lon. Hoi co Nova dieu nay xay ra nhu the nao.",
+      suggested_question_en: "How does a tiny seed grow into a big plant?",
+      suggested_question_vi: "Lam the nao mot hat giong nho xiu lai moc thanh cay lon?",
+      audio_url: "/audio/week27/ask_ai_s2.mp3"
     },
     {
       id: 3,
-      context_en: "Mr. Chen asks you to describe what photosynthesis is in one sentence using the words 'sunlight' and 'food'. Give a simple fact sentence.",
-      context_vi: "Thầy Chen yêu cầu bạn mô tả quang hợp là gì trong một câu dùng từ 'sunlight' và 'food'. Hãy đưa ra một câu sự thật đơn giản.",
-      audio_url: "/audio/week27/ask_ai_q3.mp3",
-      answer: ["Plants use sunlight to make food.", "Leaves use sunlight to make food — this is called photosynthesis.", "Photosynthesis is the process where plants use sunlight to produce food.", "A plant uses sunlight and water to make its own food."],
-      hint: "Plants use sunlight to make food."
+      type: "science_question",
+      context_en: "You learned about photosynthesis in class. Ask Ms. Nova to explain it in simple words.",
+      context_vi: "Ban hoc ve quang hop trong lop. Hay hoi co Nova giai thich no bang nhung tu don gian.",
+      suggested_question_en: "What is photosynthesis and why is it important?",
+      suggested_question_vi: "Quang hop la gi va tai sao no quan trong?",
+      audio_url: "/audio/week27/ask_ai_s3.mp3"
     },
     {
       id: 4,
-      context_en: "Your friend says: 'My plant is not growing. I give it water every day.' You think the problem is sunlight. Tell your friend what the plant also needs.",
-      context_vi: "Bạn của bạn nói: 'Cây của mình không lớn. Mình tưới nước mỗi ngày.' Bạn nghĩ vấn đề là ánh sáng. Nói cho bạn biết cây cũng cần gì.",
-      audio_url: "/audio/week27/ask_ai_q4.mp3",
-      answer: ["A plant also needs sunlight to grow.", "It also needs sunlight.", "Plants need sunlight as well as water.", "Your plant needs more sunlight to produce food."],
-      hint: "A plant also needs sunlight to grow."
+      type: "real_world",
+      context_en: "You want to grow a plant at home. Ask Ms. Nova what you need to do first.",
+      context_vi: "Ban muon trong cay o nha. Hoi co Nova ban can lam gi truoc tien.",
+      suggested_question_en: "What do I need to start growing a plant at home?",
+      suggested_question_vi: "Toi can gi de bat dau trong cay o nha?",
+      audio_url: "/audio/week27/ask_ai_s4.mp3"
     },
     {
       id: 5,
-      context_en: "Mr. Chen asks you to use 'First, Next, After that, Finally' to describe how a seed grows into a flower in one or two sentences. Give your answer.",
-      context_vi: "Thầy Chen yêu cầu dùng 'First, Next, After that, Finally' để mô tả cách hạt giống mọc thành hoa trong một hoặc hai câu. Hãy trả lời.",
-      audio_url: "/audio/week27/ask_ai_q5.mp3",
-      answer: ["First, a seed is planted. Next, it germinates. After that, the stem and leaves grow. Finally, a flower blooms.", "First a seed germinates, next a sprout appears, after that a stem and leaves grow, finally a flower blooms.", "First, a seed is in the soil. Next, it sprouts. After that, it grows stems and leaves. Finally, it blooms into a flower."],
-      hint: "First, a seed is planted. Next, it germinates. After that, the stem and leaves grow. Finally, a flower blooms."
+      type: "critical_thinking",
+      context_en: "You notice that plants in sunny spots grow faster. Ask Ms. Nova why this happens.",
+      context_vi: "Ban nhan thay cay o noi nhieu nang moc nhanh hon. Hoi co Nova tai sao dieu nay xay ra.",
+      suggested_question_en: "Why do plants grow faster in sunny places?",
+      suggested_question_vi: "Tai sao cay moc nhanh hon o noi nhieu nang?",
+      audio_url: "/audio/week27/ask_ai_s5.mp3"
     }
   ]
 };
