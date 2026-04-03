@@ -1,50 +1,45 @@
 export default {
   title: "Ask AI: My Plant",
-  situations: [
+  prompts: [
     {
       id: 1,
-      type: "simple_question",
       context_en: "Your plant is not growing. Ask Ms. Nova what is wrong.",
-      context_vi: "Cay cua ban khong moc. Hoi co Nova co chuyen gi vay.",
-      suggested_question_en: "Why is my plant not growing?",
-      suggested_question_vi: "Tai sao cay cua toi khong moc?",
-      audio_url: "/audio/week27_easy/ask_ai_s1.mp3"
+      context_vi: "Cây của bạn không mọc. Hỏi cô Nova có chuyện gì vậy.",
+      answer: ["Why is my plant not growing?", "What is wrong with my plant?", "Why doesn't my plant grow?"],
+      hint: "Why is my plant not growing?",
+      audio_url: "/audio/week27_easy/ask_ai_q1.mp3"
     },
     {
       id: 2,
-      type: "simple_question",
       context_en: "You want to know how often to water your plant. Ask Ms. Nova.",
-      context_vi: "Ban muon biet nen tuoi cay bao nhieu lan. Hoi co Nova.",
-      suggested_question_en: "How often should I water my plant?",
-      suggested_question_vi: "Toi nen tuoi cay may lan?",
-      audio_url: "/audio/week27_easy/ask_ai_s2.mp3"
+      context_vi: "Bạn muốn biết nên tưới cây bao nhiêu lần. Hỏi cô Nova.",
+      answer: ["How often should I water my plant?", "How many times a week should I water my plant?", "When should I water my plant?"],
+      hint: "How often should I water my plant?",
+      audio_url: "/audio/week27_easy/ask_ai_q2.mp3"
     },
     {
       id: 3,
-      type: "simple_question",
       context_en: "You see a tiny green thing coming out of the soil. Ask Ms. Nova what it is.",
-      context_vi: "Ban thay mot thu nho mau xanh lo ra tu dat. Hoi co Nova do la gi.",
-      suggested_question_en: "What is the green thing coming out of the soil?",
-      suggested_question_vi: "Thu mau xanh lo ra tu dat la gi vay?",
-      audio_url: "/audio/week27_easy/ask_ai_s3.mp3"
+      context_vi: "Bạn thấy một thứ nhỏ màu xanh ló ra từ đất. Hỏi cô Nova đó là gì.",
+      answer: ["What is the green thing coming out of the soil?", "What is growing out of the soil?", "What is that green thing in the soil?"],
+      hint: "What is the green thing coming out of the soil?",
+      audio_url: "/audio/week27_easy/ask_ai_q3.mp3"
     },
     {
       id: 4,
-      type: "simple_question",
       context_en: "You want to know why leaves are green. Ask Ms. Nova.",
-      context_vi: "Ban muon biet tai sao la cay mau xanh. Hoi co Nova.",
-      suggested_question_en: "Why are leaves green?",
-      suggested_question_vi: "Tai sao la cay mau xanh?",
-      audio_url: "/audio/week27_easy/ask_ai_s4.mp3"
+      context_vi: "Bạn muốn biết tại sao lá cây màu xanh. Hỏi cô Nova.",
+      answer: ["Why are leaves green?", "Why is a leaf green?", "What makes leaves green?"],
+      hint: "Why are leaves green?",
+      audio_url: "/audio/week27_easy/ask_ai_q4.mp3"
     },
     {
       id: 5,
-      type: "simple_question",
       context_en: "You want to grow a flower at home. Ask Ms. Nova how to start.",
-      context_vi: "Ban muon trong hoa o nha. Hoi co Nova bat dau nhu the nao.",
-      suggested_question_en: "How can I grow a flower at home?",
-      suggested_question_vi: "Toi co the trong hoa o nha bang cach nao?",
-      audio_url: "/audio/week27_easy/ask_ai_s5.mp3"
+      context_vi: "Bạn muốn trồng hoa ở nhà. Hỏi cô Nova bắt đầu như thế nào.",
+      answer: ["How can I grow a flower at home?", "How do I start growing a flower?", "What do I need to grow a flower?"],
+      hint: "How can I grow a flower at home?",
+      audio_url: "/audio/week27_easy/ask_ai_q5.mp3"
     }
   ]
 };
