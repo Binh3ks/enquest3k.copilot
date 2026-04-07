@@ -1,0 +1,37 @@
+{
+  "week": 28,
+  "date": "April 07, 2026",
+  "theme": "The Tortoise and the Hare",
+  "always_rules": [
+    "**`_real.js` files MUST be placed inside their week subfolder** (`weeks/week_NN/week_NN_real.js`), NOT at the root `weeks/` level — `weekData.js` → `getCurrentWeekData()` only tries the subfolder path at Priority 1 ⚠️ **BUG-W28:** `week_28_real.js` was at root level → `PronunciationTab` returned default data → 'No sentence available' on both Speak sub-tabs",
+    "**`ask_ai.js` prompts MUST follow question-making schema**: `{ context_en, context_vi, answer: [questions to ask Ms. Nova], hint }` — the activity is about teaching students HOW to form questions ⚠️ **BUG-W28:** Easy and Advanced both had wrong format — Easy used opinion answers, Advanced used long roleplay contexts",
+    "**Easy `ask_ai.js` context MUST be 1-2 short sentences** that motivate a simple question — model after W27 Easy format (short situation + 3 question variants) ⚠️ **BUG-W28:** Easy used long 3-sentence discussion contexts with `prompt_en`/`hint_en` invalid fields",
+    "**Advanced `ask_ai.js` context MUST be 1-2 short observation sentences** — NOT roleplay scenarios ('Your friend says: ...') ⚠️ **BUG-W28:** Advanced used long roleplay contexts that are incompatible with the question-making blueprint",
+    "**Image prompts file MUST go in `Production_FINAL/IMAGE PROMPTS/`** — NOT in project root `/Engquest3k/` ⚠️ **BUG-W28:** file was created at root level and had to be manually copied",
+    "**Image prompts count = 13 vocab + N wordpower collocations + 2 covers ONLY** — do NOT include grammar_cover, games_cover, ask_ai_cover, logic_cover, math_cover, wordmatch_cover in the 21-prompt file ⚠️ **BUG-W28:** original prompt file had 29 items including unused covers"
+  ],
+  "never_rules": [
+    "NEVER place `week_NN_real.js` at the `src/data/weeks/` root level — it must be inside `src/data/weeks/week_NN/week_NN_real.js` (or weekData.js must have a root-level fallback path)",
+    "NEVER write `ask_ai.js` as an opinion/discussion activity — it is strictly a question-making (question formation) exercise where `answer[]` contains the questions a student should ask Ms. Nova",
+    "NEVER add `prompt_en`, `prompt_vi`, or `hint_en` fields to `ask_ai.js` — schema is `{ id, context_en, context_vi, answer[], hint, audio_url }` only",
+    "NEVER create roleplay or advice-seeking contexts in `ask_ai.js` — contexts must be simple situational observations that naturally prompt a question",
+    "NEVER save image prompts files to the project root — always save to `Production_FINAL/IMAGE PROMPTS/week_NN_image_prompts.txt`",
+    "NEVER include activity covers (grammar, games, ask_ai, logic, math, wordmatch) in the numbered image prompts — only vocab, wordpower collocations, and read/explore covers"
+  ],
+  "real_js_checks": [
+    "- [ ] **`_real.js` file is inside subfolder** — verify `src/data/weeks/week_NN/week_NN_real.js` EXISTS (not at root `weeks/` level) ⚠️ **BUG-W28:** root-level placement → PronunciationTab broken"
+  ],
+  "explore_checks": [],
+  "math_checks": [],
+  "gate_notes": [
+    "CHECK 45 (W28+): `week_NN_real.js` must be at `src/data/weeks/week_NN/week_NN_real.js` — root-level path causes PronunciationTab to return default data",
+    "CHECK 46 (W28+): `ask_ai.js` BOTH modes must have `answer[]` containing QUESTION strings (ending with `?`), NOT opinion/statement answers — grep: answer items not ending in `?` = FAIL",
+    "CHECK 47 (W28+): `ask_ai.js` must NOT contain fields `prompt_en`, `prompt_vi`, or `hint_en` — these are invalid schema fields"
+  ],
+  "checklist_notes": [
+    "# [W28] _real.js LOCATION: must be at src/data/weeks/week_NN/week_NN_real.js (inside subfolder), NOT at weeks/ root",
+    "# [W28] ASK_AI SCHEMA: answer[] must contain question strings (ending ?), context must be 1-2 sentences only",
+    "# [W28] ASK_AI FIELDS: only { id, context_en, context_vi, answer[], hint, audio_url } — no prompt_en/prompt_vi/hint_en",
+    "# [W28] IMAGE PROMPTS: save to Production_FINAL/IMAGE PROMPTS/ — 21 items = 13 vocab + 6 wordpower + 2 covers only"
+  ]
+}
