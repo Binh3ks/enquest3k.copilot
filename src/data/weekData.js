@@ -21,24 +21,34 @@ export async function getCurrentWeekData(weekId) {
   const paddedNumber = weekNumber.padStart(2, '0');
 
   try {
-    // 🔥 PRIORITY 1: Try loading week_XX_real.js (AI Tutor syllabus)
-    console.log(`🔍 Attempting to load: week_${paddedNumber}_real.js`);
+    // 🔥 PRIORITY 1: Try subfolder format: weeks/week_XX/week_XX_real.js
+    console.log(`🔍 Attempting to load: week_${paddedNumber}/week_${paddedNumber}_real.js`);
     const realModule = await import(`./weeks/week_${paddedNumber}/week_${paddedNumber}_real.js`);
-    console.log(`✅ Loaded REAL syllabus data for Week ${weekNumber}`);
+    console.log(`✅ Loaded REAL syllabus data for Week ${weekNumber} (subfolder)`);
     return realModule.default;
-  } catch (realError) {
-    console.warn(`⚠️ week_${paddedNumber}_real.js not found, trying fallback...`);
-    
-    try {
-      // PRIORITY 2: Try loading regular week_XX.js
-      const fallbackModule = await import(`./weeks/week_${paddedNumber}.js`);
-      console.log(`✅ Loaded fallback week data for Week ${weekNumber}`);
-      return fallbackModule.default;
-    } catch (fallbackError) {
-      console.error(`❌ No data files found for Week ${weekNumber}`);
-      console.warn(`Using default data for Week ${weekNumber}`);
-      return getDefaultWeekData();
-    }
+  } catch {
+    // fall through
+  }
+
+  try {
+    // 🔥 PRIORITY 2: Try root-level format: weeks/week_XX_real.js
+    console.log(`🔍 Attempting to load: week_${paddedNumber}_real.js (root-level)`);
+    const realModule = await import(`./weeks/week_${paddedNumber}_real.js`);
+    console.log(`✅ Loaded REAL syllabus data for Week ${weekNumber} (root-level)`);
+    return realModule.default;
+  } catch {
+    // fall through
+  }
+
+  try {
+    // PRIORITY 3: Try legacy monolithic: weeks/week_XX.js
+    const fallbackModule = await import(`./weeks/week_${paddedNumber}.js`);
+    console.log(`✅ Loaded fallback week data for Week ${weekNumber}`);
+    return fallbackModule.default;
+  } catch {
+    console.error(`❌ No data files found for Week ${weekNumber}`);
+    console.warn(`Using default data for Week ${weekNumber}`);
+    return getDefaultWeekData();
   }
 }
 
