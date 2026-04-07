@@ -3,42 +3,42 @@ export default {
   prompts: [
     {
       id: 1,
-      context_en: "Your friend says: 'I started exercising every day but I get tired so fast. I want to give up.' You want to encourage them using the lesson from the fable.",
-      context_vi: "Bạn của bạn nói: 'Tớ bắt đầu tập thể dục mỗi ngày nhưng tớ mệt rất nhanh. Tớ muốn bỏ cuộc.' Bạn muốn khuyến khích họ bằng bài học từ câu chuyện ngụ ngôn.",
-      answer: ["What is the moral of the Tortoise and the Hare story?", "How did the tortoise manage to win the race?", "Why is it important to never give up even when we feel tired?"],
-      hint: "What is the moral of the Tortoise and the Hare story?",
+      context_en: "The tortoise was very slow but he still won the race against the faster hare. You are curious why. Ask Ms. Nova.",
+      context_vi: "Con rùa rất chậm nhưng vẫn thắng cuộc đua với con thỏ nhanh hơn. Bạn tò mò tại sao. Hỏi cô Nova.",
+      answer: ["Why did the tortoise win the race even though he was slow?", "How did the tortoise beat the faster hare?", "Why did slow and steady win the race?"],
+      hint: "Why did the tortoise win the race even though he was slow?",
       audio_url: "/audio/week28/ask_ai_q1.mp3"
     },
     {
       id: 2,
-      context_en: "You want to know more about why the hare lost. You are curious about overconfidence.",
-      context_vi: "Bạn muốn biết thêm tại sao con thỏ thua. Bạn tò mò về sự quá tự tin.",
-      answer: ["Why did the hare lose the race?", "What mistake did the hare make during the race?", "Why is being overconfident dangerous?"],
-      hint: "Why did the hare lose the race?",
+      context_en: "The hare was the fastest animal but he stopped to sleep and lost. You want to understand his mistake. Ask Ms. Nova.",
+      context_vi: "Con thỏ là con vật nhanh nhất nhưng nó dừng lại để ngủ và thua. Bạn muốn hiểu sai lầm của nó. Hỏi cô Nova.",
+      answer: ["Why did the hare lose even though he was the fastest?", "What mistake did the hare make that caused him to lose?", "Why did the hare stop running during the race?"],
+      hint: "Why did the hare lose even though he was the fastest?",
       audio_url: "/audio/week28/ask_ai_q2.mp3"
     },
     {
       id: 3,
-      context_en: "You are reading about Aesop's fables in class. You want to know more about what a fable is.",
-      context_vi: "Bạn đang đọc về truyện ngụ ngôn của Aesop trong lớp. Bạn muốn biết thêm về truyện ngụ ngôn là gì.",
-      answer: ["What is a fable?", "What makes a story a fable?", "Who is Aesop and why are his fables famous?"],
+      context_en: "Your teacher said this story is a fable and it teaches a moral lesson. You want to understand what a fable is. Ask Ms. Nova.",
+      context_vi: "Giáo viên nói câu chuyện này là truyện ngụ ngôn và dạy một bài học đạo đức. Bạn muốn hiểu truyện ngụ ngôn là gì. Hỏi cô Nova.",
+      answer: ["What is a fable?", "What makes this story a fable and not just a story?", "Why do fables always have a moral lesson?"],
       hint: "What is a fable?",
       audio_url: "/audio/week28/ask_ai_q3.mp3"
     },
     {
       id: 4,
-      context_en: "You just learned that run, sleep, and win are irregular verbs. You want to know why English has irregular verbs at all.",
-      context_vi: "Bạn vừa học rằng run, sleep và win là động từ bất quy tắc. Bạn muốn biết tại sao tiếng Anh lại có động từ bất quy tắc.",
-      answer: ["Why does English have irregular verbs?", "Why do some verbs change completely in past tense?", "How many irregular verbs are there in English?"],
-      hint: "Why does English have irregular verbs?",
+      context_en: "You notice that 'run' becomes 'ran' and 'sleep' becomes 'slept' in the past. You want to know why they don't just add -ed. Ask Ms. Nova.",
+      context_vi: "Bạn nhận thấy 'run' thành 'ran' và 'sleep' thành 'slept' ở quá khứ. Bạn muốn biết tại sao chúng không chỉ thêm -ed. Hỏi cô Nova.",
+      answer: ["Why do some verbs not follow the -ed rule in past tense?", "Why does 'run' become 'ran' instead of 'runned'?", "What are irregular verbs and why do they change differently?"],
+      hint: "Why do some verbs not follow the -ed rule in past tense?",
       audio_url: "/audio/week28/ask_ai_q4.mp3"
     },
     {
       id: 5,
-      context_en: "In real life, you had a race at school and you came last. You felt sad and embarrassed. You want advice.",
-      context_vi: "Trong thực tế, bạn có cuộc đua ở trường và bạn về bét. Bạn cảm thấy buồn và xấu hổ. Bạn muốn lời khuyên.",
-      answer: ["How can I feel better after losing a race?", "Is it okay to lose sometimes?", "What should I do after I lose a competition?"],
-      hint: "How can I feel better after losing a race?",
+      context_en: "In the story, the tortoise persevered and never gave up. You want to know what perseverance really means. Ask Ms. Nova.",
+      context_vi: "Trong câu chuyện, con rùa kiên trì và không bao giờ bỏ cuộc. Bạn muốn biết sự kiên trì thực sự có nghĩa gì. Hỏi cô Nova.",
+      answer: ["What does perseverance mean?", "Can you explain what it means to persevere?", "Why is perseverance important?"],
+      hint: "What does perseverance mean?",
       audio_url: "/audio/week28/ask_ai_q5.mp3"
     }
   ]
