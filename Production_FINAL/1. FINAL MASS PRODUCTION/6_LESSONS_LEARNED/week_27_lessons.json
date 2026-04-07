@@ -1,0 +1,36 @@
+{
+  "week": 27,
+  "date": "April 07, 2026",
+  "theme": "Maya's Growing Plant",
+  "always_rules": [
+    "**sentences[] in dictation.js and shadowing.js MUST be plain text (no `**bold**` markers)** — `content_en`/`content_vi` can have `**` for display, but sentences[] is fed directly to TTS ⚠️ **BUG-W27:** TTS reads `**` as 'star star'",
+    "**dictation.js sentences[] MUST use the same audio_url paths as shadowing.js** when text is identical — prevents double R2 storage and ensures audio consistency ⚠️ **BUG-W27:** dictation used `dictation_NNN.mp3` while shadowing used `shadowing_sN.mp3`, causing stale audio cache",
+    "**audio_url naming MUST use the `_sN` suffix pattern** (e.g. `shadowing_s1.mp3`) — NEVER use bare number suffix `_N` (e.g. `dictation_1.mp3`) which is the old W1-15 pattern ⚠️ **BUG-W27:** mixed naming caused R2 purge to miss files",
+    "**Easy mode word_power.js collocations may differ from Advanced** — always check ALL image_url filenames in BOTH weeks_easy and weeks data files before generating prompts; generate prompts for the UNION of both sets",
+    "**After ANY R2 audio purge, also clear browser IndexedDB** — R2 purge removes server cache but browser may still have old audio in IndexedDB (Layer 1 cache)"
+  ],
+  "never_rules": [
+    "NEVER copy sentences[] from read.js with `**bold**` markers directly into dictation.js or shadowing.js — strip all `**` before putting in sentences[]",
+    "NEVER use different audio_url patterns for dictation and shadowing when they share the same text — they must point to the same R2 file",
+    "NEVER assume R2 purge alone fixes stale audio — must also clear browser IndexedDB/site data",
+    "NEVER generate image prompts for only Advanced word_power without checking Easy word_power for additional unique collocations ⚠️ **BUG-W27:** 3 Easy-only collocations (grow_towards_the_sun, make_its_own_food, watch_it_grow) were missing images",
+    "NEVER use `node tools/generate_images_nano.js N` output as final prompts — the auto-generated descriptions use dictionary definitions, not visual scene descriptions; always rewrite with rich scene descriptions"
+  ],
+  "real_js_checks": [
+    "sentences[].text must contain NO `**` markdown markers — run: grep '\\*\\*' src/data/weeks/week_N/dictation.js src/data/weeks/week_N/shadowing.js (must return empty)",
+    "dictation.js and shadowing.js sentences[] must have matching audio_url paths when text is identical — cross-check with: diff <(grep audio_url src/data/weeks/week_N/dictation.js) <(grep audio_url src/data/weeks/week_N/shadowing.js | sed 's/shadowing/dictation/g')"
+  ],
+  "explore_checks": [],
+  "math_checks": [],
+  "gate_notes": [
+    "CHECK 42 (W27+): sentences[].text in dictation.js and shadowing.js must NOT contain `**` — grep pattern: `\\*\\*` in sentences array",
+    "CHECK 43 (W27+): dictation.js audio_url pattern must use `_sN` suffix, NOT bare `_N` suffix — pattern: `/dictation_[0-9]+\\.mp3` (without s) = FAIL",
+    "CHECK 44 (W27+): image prompts file must cover ALL image_url filenames from BOTH weeks/week_N/word_power.js AND weeks_easy/week_N/word_power.js"
+  ],
+  "checklist_notes": [
+    "# [W27] sentences[] PLAIN TEXT: strip all ** from dictation.js + shadowing.js sentences before commit",
+    "# [W27] AUDIO URL CONSISTENCY: dictation.js must reuse shadowing audio_url paths (same text = same file)",
+    "# [W27] IMAGE PROMPTS UNION: check word_power.js in BOTH modes — generate prompts for all unique image_url filenames",
+    "# [W27] R2 PURGE: after purging R2 audio, remind user to clear IndexedDB + site data in browser"
+  ]
+}
