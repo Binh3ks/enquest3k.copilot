@@ -1,17 +1,6 @@
 export default {
   vocab: [
     {
-      id: 1,
-      word: "name",
-      pronunciation: "/neɪm/",
-      definition_vi: "Tên",
-      definition_en: "What you are called.",
-      example: "My name is Alex.",
-      collocation: "my name",
-      image_url: "/images/week1_easy/name.jpg",
-      audio_word: "/audio/week1_easy/vocab_name.mp3"
-    },
-    {
       id: 2,
       word: "friend",
       pronunciation: "/frend/",

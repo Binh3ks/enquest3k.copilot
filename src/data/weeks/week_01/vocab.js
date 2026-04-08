@@ -98,17 +98,6 @@ export default {
       collocation: "famous scientist",
       image_url: "/images/week1/scientist.jpg",
       audio_word: "/audio/week1/vocab_scientist.mp3"
-    },
-    {
-      id: 10,
-      word: "name",
-      pronunciation: "/neɪm/",
-      definition_vi: "Tên",
-      definition_en: "What someone or something is called.",
-      example: "My name is Alex.",
-      collocation: "first name",
-      image_url: "/images/week1/name.jpg",
-      audio_word: "/audio/week1/vocab_name.mp3"
     }
   ]
 };
