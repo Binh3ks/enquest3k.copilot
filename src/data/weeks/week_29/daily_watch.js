@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "The Airport | Kids Learn English | GO! Storytime", videoId: "1f9NqFJqLK8", duration: "04:11", sim_duration: 251, thumb: "https://img.youtube.com/vi/1f9NqFJqLK8/mqdefault.jpg" },
-    { id: 2, title: "Irregular Past Tense Verbs Song | go went, run ran, fly flew | Fun English for Kids", videoId: "KfQ3hD5HNEU", duration: "02:15", sim_duration: 135, thumb: "https://img.youtube.com/vi/KfQ3hD5HNEU/mqdefault.jpg" },
-    { id: 3, title: "How Do Airplanes Fly? | Physics for Kids | SciShow Kids", videoId: "Gg0TXNXgz-w", duration: "04:34", sim_duration: 274, thumb: "https://img.youtube.com/vi/Gg0TXNXgz-w/mqdefault.jpg" },
-    { id: 4, title: "Types of Transport for Kids | Learn Vehicles | English", videoId: "hPYnKCeK7Qs", duration: "05:02", sim_duration: 302, thumb: "https://img.youtube.com/vi/hPYnKCeK7Qs/mqdefault.jpg" },
-    { id: 5, title: "Irregular Verbs in English | English Grammar for Kids | Go Went Gone", videoId: "_Itws1UmFE8", duration: "07:54", sim_duration: 474, thumb: "https://img.youtube.com/vi/_Itws1UmFE8/mqdefault.jpg" }
+    { id: 1, title: "English Singsing - Grammar for Kids", videoId: "ZBGr2qbzYoo", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/ZBGr2qbzYoo/mqdefault.jpg" },
+    { id: 2, title: "English for Kids - Super Simple Songs", videoId: "e54m6XOpRgU", duration: "01:58", sim_duration: 118, thumb: "https://img.youtube.com/vi/e54m6XOpRgU/mqdefault.jpg" },
+    { id: 3, title: "The Carter Family 4 | A Camping Trip! | Family | Little Fox | Bedtime Stories", videoId: "OdNv-J31Kk8", duration: "03:26", sim_duration: 206, thumb: "https://img.youtube.com/vi/OdNv-J31Kk8/mqdefault.jpg" },
+    { id: 4, title: "Irregular Verbs Song for Kids 🚆 | Learn English Grammar with the Verb Train", videoId: "pCtfYmWIxUI", duration: "01:33", sim_duration: 93, thumb: "https://img.youtube.com/vi/pCtfYmWIxUI/mqdefault.jpg" },
+    { id: 5, title: "Science for Kids - Learning Video", videoId: "V4Ij8hE5TsI", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/V4Ij8hE5TsI/mqdefault.jpg" }
   ],
-  bonus_games: [{ title: "Irregular Verb Match", url: "#", description: "Match base verbs to past forms" }]
+  bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

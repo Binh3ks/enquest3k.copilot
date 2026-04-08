@@ -1,0 +1,39 @@
+{
+  "weekId": 29,
+  "theme": "The Magic Trip",
+  "grammar_focus": "Irregular Verbs 1 Movement: go-went, come-came, run-ran, fly-flew",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing irregular verbs 1 movement: go-went, come-came, run-ran, fly-flew ESL for kids",
+      "backup_search": "irregular verbs 1 movement: go-went, come-came, run-ran, fly-flew song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing irregular verbs 1 movement: go-went, come-came, run-ran, fly-flew ESL for kids",
+      "backup_search": "irregular verbs 1 movement: go-went, come-came, run-ran, fly-flew kids song ESL cartoons"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox magic trip the magic holiday trip story level 1 ESL for kids",
+      "backup_search": "Vooks magic trip the magic holiday trip story read aloud cartoons for kids"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "Little Fox Irregular verbs movement song song ESL for kids",
+      "backup_search": "Irregular verbs movement song ESL kids cartoons song"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids trip, holiday, beach, mountain, airplane, car, went, came, ran, flew for kids",
+      "backup_search": "trip, holiday, beach, mountain, airplane, car, went, came, ran, flew kids science cartoons"
+    }
+  ],
+  "topic": "The Magic Holiday Trip - movement irregular verbs",
+  "science": "trip, holiday, beach, mountain, airplane, car, went, came, ran, flew"
+}

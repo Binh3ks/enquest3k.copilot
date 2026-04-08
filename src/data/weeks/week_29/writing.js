@@ -1,7 +1,7 @@
 export default {
   title: "Writing: My Journey Story",
   min_words: 50,
-  model_sentence: "Last weekend, my family went to the train station. We ran to platform 3 because we were nearly late. The train came on time and we all flew to our seats with excitement.",
+  model_sentence: "Last weekend, my family went to the airport for a holiday trip. We ran to the check-in desk because our departure was in thirty minutes. Mum came through the doors with two big suitcases and smiled at us. Finally, we boarded the plane and it flew high above the white clouds towards our destination. It was the best adventure we ever went on together as a family.",
   instruction_en: "Write about a real or imaginary journey. Use at least THREE of these past tense verbs: went, ran, came, flew. Include where you went, how you travelled, and how you felt.",
   instruction_vi: "Viết về một chuyến đi thật hoặc tưởng tượng. Dùng ít nhất BA động từ ở thì quá khứ: went, ran, came, flew. Bao gồm bạn đến đâu, đi bằng gì và cảm thấy thế nào.",
   prompt_en: "Tell me about a journey you went on. Where did you go? How did you travel? What happened during the journey?",

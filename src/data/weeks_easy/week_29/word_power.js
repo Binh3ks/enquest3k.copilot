@@ -51,6 +51,40 @@ export default {
       audio_example: "/audio/week29_easy/wordpower_w3_example.mp3",
       audio_collocation: "/audio/week29_easy/wordpower_w3_collocation.mp3",
       audio_model: "/audio/week29_easy/wordpower_w3_model.mp3"
+    },
+    {
+      id: 4,
+      word: "run to the gate",
+      pronunciation: "/rʌn tuː ðə ɡeɪt/",
+      cefr_level: "A1",
+      definition_en: "to run quickly to the airport gate so you do not miss your plane",
+      definition_vi: "chạy nhanh đến cổng máy bay để không bị lỡ chuyến",
+      example: "Dad ran to the gate because we were almost late.",
+      model_sentence: "We had to run to the gate as fast as we could!",
+      collocation: "run to the gate / run for the bus / run to catch",
+      image_url: "/images/week29/wordpower_run_gate.jpg",
+      audio_word: "/audio/week29_easy/wordpower_w4_word.mp3",
+      audio_definition: "/audio/week29_easy/wordpower_w4_def.mp3",
+      audio_example: "/audio/week29_easy/wordpower_w4_example.mp3",
+      audio_collocation: "/audio/week29_easy/wordpower_w4_collocation.mp3",
+      audio_model: "/audio/week29_easy/wordpower_w4_model.mp3"
+    },
+    {
+      id: 5,
+      word: "arrive at the destination",
+      pronunciation: "/əˈraɪv æt ðə ˌdɛstɪˈneɪʃən/",
+      cefr_level: "A1",
+      definition_en: "to reach the place where your journey ends",
+      definition_vi: "đến nơi kết thúc hành trình của bạn",
+      example: "We arrived at our destination after two hours on the plane.",
+      model_sentence: "When we arrived at our destination, I was so happy!",
+      collocation: "arrive at destination / reach destination / final destination",
+      image_url: "/images/week29/wordpower_destination.jpg",
+      audio_word: "/audio/week29_easy/wordpower_w5_word.mp3",
+      audio_definition: "/audio/week29_easy/wordpower_w5_def.mp3",
+      audio_example: "/audio/week29_easy/wordpower_w5_example.mp3",
+      audio_collocation: "/audio/week29_easy/wordpower_w5_collocation.mp3",
+      audio_model: "/audio/week29_easy/wordpower_w5_model.mp3"
     }
   ]
 };

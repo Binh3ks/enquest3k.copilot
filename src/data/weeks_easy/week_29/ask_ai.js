@@ -34,6 +34,14 @@ export default {
       answer: ["What is a departure gate at an airport?", "What happens at the departure gate?", "Why do passengers go to the departure gate?"],
       hint: "What is a departure gate at an airport?",
       audio_url: "/audio/week29_easy/ask_ai_q4.mp3"
+    },
+    {
+      id: 5,
+      context_en: "In the story, 'run' becomes 'ran' and 'fly' becomes 'flew'. Ask Ms. Nova why these verbs are different.",
+      context_vi: "Trong câu chuyện, 'run' thành 'ran' và 'fly' thành 'flew'. Hỏi cô Nova tại sao các động từ này khác nhau.",
+      answer: ["Why do some verbs change in a special way in the past?", "Why is the past of 'run' not 'runned'?", "What are irregular verbs?"],
+      hint: "Why do some verbs change in a special way in the past?",
+      audio_url: "/audio/week29_easy/ask_ai_q5.mp3"
     }
   ]
 };
