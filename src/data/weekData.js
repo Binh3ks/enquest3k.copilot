@@ -10,6 +10,37 @@
  * ⚡ DYNAMIC LOADING: Automatically loads week_XX_real.js for any week
  */
 
+// ─── Cambridge YLE / CEFR Level Mapping (S4.1) ───────────────────────────
+// W1-14:   Pre-A1  (YLE Starters prep)
+// W15-28:  A1      (Starters → Movers transition)
+// W29-54:  A1+     (YLE Movers prep)
+// W55-80:  A2      (Movers → Flyers transition)
+// W81-120: A2+     (YLE Flyers prep)
+// W121-144: B1     (B1 Preliminary prep)
+// W145-156: B1+    (B1 Preliminary mastery)
+
+export function getWeekCEFR(weekNumber) {
+  const w = parseInt(weekNumber) || 1;
+  if (w <= 14)  return { cefr: 'Pre-A1', cambridge: 'YLE Starters',   nextMilestone: 14,  color: 'blue'   };
+  if (w <= 28)  return { cefr: 'A1',     cambridge: 'YLE Starters',   nextMilestone: 28,  color: 'emerald' };
+  if (w <= 54)  return { cefr: 'A1+',    cambridge: 'YLE Movers',     nextMilestone: 54,  color: 'violet' };
+  if (w <= 80)  return { cefr: 'A2',     cambridge: 'YLE Movers',     nextMilestone: 80,  color: 'amber'  };
+  if (w <= 120) return { cefr: 'A2+',    cambridge: 'YLE Flyers',     nextMilestone: 120, color: 'orange' };
+  if (w <= 144) return { cefr: 'B1',     cambridge: 'B1 Preliminary', nextMilestone: 144, color: 'rose'   };
+  return              { cefr: 'B1+',    cambridge: 'B1 Preliminary', nextMilestone: 156, color: 'rose'   };
+}
+
+// Milestone weeks that unlock a badge
+export const MILESTONE_WEEKS = [14, 28, 54, 80, 120, 156];
+export const MILESTONE_BADGES = {
+  14:  { label: 'Starters Ready',  emoji: '⭐' },
+  28:  { label: 'A1 Complete',     emoji: '🌟' },
+  54:  { label: 'Movers Ready',    emoji: '🏆' },
+  80:  { label: 'A2 Complete',     emoji: '🎖️' },
+  120: { label: 'Flyers Ready',    emoji: '🚀' },
+  156: { label: 'B1 Champion',     emoji: '👑' },
+};
+
 /**
  * Get current week data by weekId (async)
  * @param {string} weekId - Format: 'week-1', 'week-2', etc.
