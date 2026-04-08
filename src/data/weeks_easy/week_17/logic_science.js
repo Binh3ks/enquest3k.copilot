@@ -62,6 +62,28 @@ export default {
       explanation_en: "It is sunny and warm, so light and comfortable clothes are the best choice.",
       explanation_vi: "Trời nắng và ấm, vì vậy quần áo nhẹ và thoải mái là lựa chọn tốt nhất.",
       audio_url: "/audio/week17_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "It was sunny in the morning. Then it rained at noon. What should you bring to school in the morning?",
+      question_vi: "Buổi sáng trời nắng. Sau đó trời mưa vào buổi trưa. Buổi sáng bạn nên mang gì đến trường?",
+      options_en: ["A. Only a coat", "B. Only an umbrella", "C. An umbrella AND a light jacket", "D. Nothing"],
+      options_vi: ["A. Chỉ mạng áo khoác", "B. Chỉ mang ô", "C. Cả ô VÀ áo khoác nhẹ", "D. Không mang gì"],
+      correct_answer: "C",
+      explanation_en: "In the morning it is sunny (need a light jacket), but it will rain at noon (need an umbrella). Bring both!",
+      explanation_vi: "Buổi sáng trời nắng (cần áo khoác nhẹ), nhưng buổi trưa sẽ mưa (cần ô). Mang cả hai!",
+      audio_url: "/audio/week17_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "It rained 2 days this week. There are 7 days in a week. How many days did it NOT rain?",
+      question_vi: "Tuần này trời mưa 2 ngày. Một tuần có 7 ngày. Có bao nhiêu ngày trời không mưa?",
+      options_en: ["A. 2 days", "B. 5 days", "C. 7 days", "D. 9 days"],
+      options_vi: ["A. 2 ngày", "B. 5 ngày", "C. 7 ngày", "D. 9 ngày"],
+      correct_answer: "B",
+      explanation_en: "7 days - 2 rainy days = 5 days without rain.",
+      explanation_vi: "7 ngày - 2 ngày mưa = 5 ngày không mưa.",
+      audio_url: "/audio/week17_easy/logic_q5.mp3"
     }
   ]
 };

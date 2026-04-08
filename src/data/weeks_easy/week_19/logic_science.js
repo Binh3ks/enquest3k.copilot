@@ -62,6 +62,28 @@ export default {
       explanation_en: "10 photos + 5 photos = 15 photos total.",
       explanation_vi: "10 ảnh + 5 ảnh = 15 ảnh tổng cộng.",
       audio_url: "/audio/week19_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Grandma is 60. Mom is 30. How many years older than mom is grandma?",
+      question_vi: "Bà nội 60 tuổi. Mẹ 30 tuổi. Bà nội hơn mẹ bao nhiêu tuổi?",
+      options_en: ["A. 20 years", "B. 30 years", "C. 40 years", "D. 90 years"],
+      options_vi: ["A. 20 tuổi", "B. 30 tuổi", "C. 40 tuổi", "D. 90 tuổi"],
+      correct_answer: "B",
+      explanation_en: "60 - 30 = 30. Grandma is 30 years older than mom.",
+      explanation_vi: "60 - 30 = 30. Bà nội hơn mẹ 30 tuổi.",
+      audio_url: "/audio/week19_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "When I was a baby, I could not walk. Now I can walk and run. What did I learn to do as I grew up?",
+      question_vi: "Khi còn bé, tôi không thể đi. Bây giờ tôi có thể đi và chạy. Tôi đã học được gì khi lớn lên?",
+      options_en: ["A. I learned to fly", "B. I learned to walk and run", "C. I learned to swim", "D. I learned to drive"],
+      options_vi: ["A. Tôi học bay", "B. Tôi học đi và chạy", "C. Tôi học bơi", "D. Tôi học lái xe"],
+      correct_answer: "B",
+      explanation_en: "The text says I could not walk as a baby, but now I can walk and run. So I learned to walk and run!",
+      explanation_vi: "Khi bé tôi không thể đi, nhưng giờ tôi có thể đi và chạy. Vậy tôi đã học đi và chạy!",
+      audio_url: "/audio/week19_easy/logic_q5.mp3"
     }
   ]
 };

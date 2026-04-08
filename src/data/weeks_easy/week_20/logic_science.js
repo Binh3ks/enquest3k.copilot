@@ -32,6 +32,28 @@ export default {
       explanation_en: "3 roads now - 1 old road = 2 new roads built.",
       explanation_vi: "3 đường hiện nay - 1 đường cũ = 2 đường mới được xây.",
       audio_url: "/audio/week20_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "An old school had 5 classrooms. The new school has 10 classrooms. How many MORE classrooms does the new school have?",
+      question_vi: "Một trường cũ có 5 phòng học. Trường mới có 10 phòng học. Trường mới có nhiều hơn bao nhiêu phòng học?",
+      options_en: ["A. 3 classrooms", "B. 5 classrooms", "C. 10 classrooms", "D. 15 classrooms"],
+      options_vi: ["A. 3 phòng", "B. 5 phòng", "C. 10 phòng", "D. 15 phòng"],
+      correct_answer: "B",
+      explanation_en: "10 - 5 = 5. The new school has 5 more classrooms.",
+      explanation_vi: "10 - 5 = 5. Trường mới có thêm 5 phòng học.",
+      audio_url: "/audio/week20_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "In the old town, there was a river, a church, and a market. The church is older than the river. The river is older than the market. Which one is the NEWEST?",
+      question_vi: "Trong thị trấn cũ, có một con sông, một nhà thờ và một chợ. Nhà thờ cũ hơn sông. Sông cũ hơn chợ. Cái nào MỚI NHẤT?",
+      options_en: ["A. The church", "B. The river", "C. The market", "D. All the same"],
+      options_vi: ["A. Nhà thờ", "B. Sông", "C. Chợ", "D. Giống nhau"],
+      correct_answer: "C",
+      explanation_en: "Church is oldest. River is in the middle. Market is the newest.",
+      explanation_vi: "Nhà thờ cũ nhất. Sông ở giữa. Chợ mới nhất.",
+      audio_url: "/audio/week20_easy/logic_q5.mp3"
     }
   ]
 };

@@ -62,6 +62,48 @@ export default {
       explanation_en: "20 pages × 4 photos per page = 80 photos total.",
       explanation_vi: "20 trang × 4 ảnh mỗi trang = 80 ảnh tổng cộng.",
       audio_url: "/audio/week19/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "A grandmother is 60 years old. Her son is half her age. Her grandson is 10 years younger than her son. How old is the grandson?",
+      question_vi: "Một bà nội 60 tuổi. Con trai của bà bằng một nửa tuổi của bà. Cháu nội của bà kém con trai 10 tuổi. Cháu nội bao nhiêu tuổi?",
+      options_en: [
+        "A. 10 years old",
+        "B. 20 years old",
+        "C. 25 years old",
+        "D. 30 years old"
+      ],
+      options_vi: [
+        "A. 10 tuổi",
+        "B. 20 tuổi",
+        "C. 25 tuổi",
+        "D. 30 tuổi"
+      ],
+      correct_answer: "B",
+      explanation_en: "Grandmother = 60. Son = 60 ÷ 2 = 30. Grandson = 30 - 10 = 20 years old.",
+      explanation_vi: "Bà nội = 60. Con trai = 60 ÷ 2 = 30. Cháu nội = 30 - 10 = 20 tuổi.",
+      audio_url: "/audio/week19/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "A baby's step is 20 cm. An adult walks 3 times farther in one step. If an adult takes 4 steps, how far does the adult walk in total?",
+      question_vi: "Bước chân của em bé là 20 cm. Người lớn bước dài gấp 3 lần em bé. Nếu người lớn đi 4 bước, người lớn đi được bao xa tổng cộng?",
+      options_en: [
+        "A. 80 cm",
+        "B. 120 cm",
+        "C. 240 cm",
+        "D. 300 cm"
+      ],
+      options_vi: [
+        "A. 80 cm",
+        "B. 120 cm",
+        "C. 240 cm",
+        "D. 300 cm"
+      ],
+      correct_answer: "C",
+      explanation_en: "Adult's step = 3 × 20 cm = 60 cm. For 4 steps: 60 × 4 = 240 cm.",
+      explanation_vi: "Bước người lớn = 3 × 20 cm = 60 cm. Sau 4 bước: 60 × 4 = 240 cm.",
+      audio_url: "/audio/week19/logic_q5.mp3"
     }
   ]
 };

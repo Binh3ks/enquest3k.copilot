@@ -1,5 +1,13 @@
 export default {
-  prompts: [
+  title: "Inside My Backpack",
+  prompt_en: "What is in your school bag? Write about 3 or more things you have inside. Use 'there is' and 'there are'.",
+  prompt_vi: "Có gì trong cặp sách của bạn? Viết về 3 thứ trở lên bạn có bên trong. Dùng 'there is' và 'there are'.",
+  instruction_en: "Use 'there is' for one thing and 'there are' for many things. Include words like: pencil, pen, book, ruler, eraser.",
+  instruction_vi: "Dùng 'there is' cho một thứ và 'there are' cho nhiều thứ. Bao gồm các từ như: pencil, pen, book, ruler, eraser.",
+  model_sentence: "There is a pencil and a ruler in my bag. There are three books inside too. I also have my lunch box. My school bag is blue and red!",
+  min_words: 20,
+  keywords: ["school bag", "pencil", "pen", "book", "ruler", "eraser", "there is", "there are"],
+  OLD_prompts: [
     {
       id: 1,
       prompt_en: "What is in your school bag? Draw and describe it.",

@@ -62,6 +62,48 @@ export default {
       explanation_en: "Total 11 players. Defenders (4) + Midfielders (3) = 7. So forwards = 11 - 7 = 4.",
       explanation_vi: "Tổng 11 cầu thủ. Hậu vệ (4) + Tiền vệ (3) = 7. Vậy tiền đạo = 11 - 7 = 4.",
       audio_url: "/audio/week16/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "In a relay race, Team A finishes 3 seconds before Team B. Team B finishes 5 seconds before Team C. How many seconds ahead of Team C does Team A finish?",
+      question_vi: "Trong một cuộc đua tiếp sức, Đội A về trước Đội B 3 giây. Đội B về trước Đội C 5 giây. Đội A về trước Đội C bao nhiêu giây?",
+      options_en: [
+        "A. 3 seconds",
+        "B. 5 seconds",
+        "C. 8 seconds",
+        "D. 2 seconds"
+      ],
+      options_vi: [
+        "A. 3 giây",
+        "B. 5 giây",
+        "C. 8 giây",
+        "D. 2 giây"
+      ],
+      correct_answer: "C",
+      explanation_en: "Team A is 3 seconds ahead of Team B, and Team B is 5 seconds ahead of Team C. So Team A is 3 + 5 = 8 seconds ahead of Team C.",
+      explanation_vi: "Đội A đến trước Đội B 3 giây, và Đội B đến trước Đội C 5 giây. Vậy Đội A đến trước Đội C 3 + 5 = 8 giây.",
+      audio_url: "/audio/week16/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "Maria can run but not swim. John can swim but not climb. Sam can run and swim. Which activity can both Sam and Maria do?",
+      question_vi: "Maria có thể chạy nhưng không biết bơi. John biết bơi nhưng không leo trèo được. Sam có thể chạy và bơi. Hoạt động nào cả Sam và Maria đều có thể làm?",
+      options_en: [
+        "A. Swimming",
+        "B. Climbing",
+        "C. Running",
+        "D. All three"
+      ],
+      options_vi: [
+        "A. Bơi lội",
+        "B. Leo trèo",
+        "C. Chạy",
+        "D. Cả ba"
+      ],
+      correct_answer: "C",
+      explanation_en: "Maria can run. Sam can run and swim. The activity both can do is running.",
+      explanation_vi: "Maria có thể chạy. Sam có thể chạy và bơi. Hoạt động cả hai đều làm được là chạy.",
+      audio_url: "/audio/week16/logic_q5.mp3"
     }
   ]
 };

@@ -62,6 +62,28 @@ export default {
       explanation_en: "We use scissors to cut paper in art class. Scissors have two sharp blades for cutting.",
       explanation_vi: "Chung ta dung cai keo de cat giay trong lop my thuat. Cai keo co hai luoi sac de cat.",
       audio_url: "/audio/week23_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Mia has 4 red crayons and 6 blue crayons. She gives 2 blue crayons to a friend. How many crayons does she have left?",
+      question_vi: "Mia có 4 bút sáp đỏ và 6 bút sáp xanh. Cô ấy cho bạn 2 bút sáp xanh. Cô ấy còn bao nhiêu bút sáp?",
+      options_en: ["A. 6 crayons", "B. 7 crayons", "C. 8 crayons", "D. 10 crayons"],
+      options_vi: ["A. 6 bút sáp", "B. 7 bút sáp", "C. 8 bút sáp", "D. 10 bút sáp"],
+      correct_answer: "C",
+      explanation_en: "Total = 4 + 6 = 10. She gave away 2. So 10 - 2 = 8 crayons left.",
+      explanation_vi: "Tổng = 4 + 6 = 10. Cô ấy cho đi 2. Vậy 10 - 2 = 8 bút sáp còn lại.",
+      audio_url: "/audio/week23_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "Red + yellow = orange. Blue + yellow = green. What color do you need to make BOTH orange and green?",
+      question_vi: "Trộn đỏ + vàng = cam. Trộn xanh lam + vàng = xanh lá. Bạn cần màu nào để tạo ra cả cam VÀ xanh lá?",
+      options_en: ["A. Only red", "B. Only yellow", "C. Yellow (and red or blue)", "D. All three colors"],
+      options_vi: ["A. Chỉ màu đỏ", "B. Chỉ màu vàng", "C. Màu vàng (và đỏ hoặc xanh lam)", "D. Cả ba màu"],
+      correct_answer: "D",
+      explanation_en: "Orange needs red + yellow. Green needs blue + yellow. So you need red, yellow AND blue — all three!",
+      explanation_vi: "Màu cam cần đỏ + vàng. Màu xanh lá cần xanh lam + vàng. Vậy bạn cần đỏ, vàng VÀ xanh lam — cả ba!",
+      audio_url: "/audio/week23_easy/logic_q5.mp3"
     }
   ]
 };

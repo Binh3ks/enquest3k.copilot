@@ -32,6 +32,28 @@ export default {
       explanation_en: "Lisa cleaned 3 rooms. Tom cleaned 2. 3 is more than 2. Lisa cleaned more!",
       explanation_vi: "Lisa dọn 3 phòng. Tom dọn 2. 3 nhiều hơn 2. Lisa dọn nhiều hơn!",
       audio_url: "/audio/week21_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Which word is in the PAST? walked / walk / walking",
+      question_vi: "Từ nào ở THÌ QUẠ KHỨ? walked / walk / walking",
+      options_en: ["A. walk", "B. walking", "C. walked", "D. All the same"],
+      options_vi: ["A. walk", "B. walking", "C. walked", "D. Giống nhau"],
+      correct_answer: "C",
+      explanation_en: "'walked' ends in -ed, which shows it happened in the PAST. 'walk' is present. 'walking' is happening now.",
+      explanation_vi: "'walked' kết thúc bằng -ed, cho thấy nó đã xảy ra trong QUẠ KHỨ. 'walk' là hiện tại. 'walking' đang xảy ra.",
+      audio_url: "/audio/week21_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "Max walked to school for 20 minutes and cleaned his room for 15 minutes. How many minutes in total?",
+      question_vi: "Max đi bộ đến trường 20 phút và dọn phòng 15 phút. Tổng cộng là bao nhiêu phút?",
+      options_en: ["A. 20 minutes", "B. 30 minutes", "C. 35 minutes", "D. 40 minutes"],
+      options_vi: ["A. 20 phút", "B. 30 phút", "C. 35 phút", "D. 40 phút"],
+      correct_answer: "C",
+      explanation_en: "20 + 15 = 35 minutes in total.",
+      explanation_vi: "20 + 15 = 35 phút tổng cộng.",
+      audio_url: "/audio/week21_easy/logic_q5.mp3"
     }
   ]
 };

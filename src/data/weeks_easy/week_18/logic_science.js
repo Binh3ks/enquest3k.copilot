@@ -62,6 +62,28 @@ export default {
       explanation_en: "Cat + brother + mum = 3. Alex is describing 3 different living things in his home scene!",
       explanation_vi: "Mèo + em trai + mẹ = 3. Alex đang mô tả 3 sinh vật sống khác nhau trong cảnh ở nhà của mình!",
       audio_url: "/audio/week18_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Alex interviews 2 students each day. After 3 days, how many students has he interviewed?",
+      question_vi: "Alex phỏng vấn 2 học sinh mỗi ngày. Sau 3 ngày, anh ấy đã phỏng vấn bao nhiêu học sinh?",
+      options_en: ["A. 2 students", "B. 3 students", "C. 5 students", "D. 6 students"],
+      options_vi: ["A. 2 học sinh", "B. 3 học sinh", "C. 5 học sinh", "D. 6 học sinh"],
+      correct_answer: "D",
+      explanation_en: "2 students each day × 3 days = 6 students in total.",
+      explanation_vi: "2 học sinh mỗi ngày × 3 ngày = 6 học sinh tổng cộng.",
+      audio_url: "/audio/week18_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "A good reporter talks clearly and listens well. Alex talks a lot but does not listen. Is Alex a good reporter?",
+      question_vi: "Một phóng viên tốt nói rõ ràng và biết lắng nghe. Alex nói rất nhiều nhưng không lắng nghe. Alex có phải phóng viên tốt không?",
+      options_en: ["A. Yes, Alex is great!", "B. No, he needs to listen too", "C. Yes, talking a lot helps", "D. We don't know"],
+      options_vi: ["A. Có, Alex rất tuyệt!", "B. Không, anh ấy cần biết lắng nghe", "C. Có, nói nhiều giúp ích", "D. Chúng ta không biết"],
+      correct_answer: "B",
+      explanation_en: "A good reporter must both talk clearly AND listen well. Alex only talks a lot, so he is not a good reporter yet.",
+      explanation_vi: "Một phóng viên tốt phải vừa nói rõ ràng VẪA biết lắng nghe. Alex chỉ nói nhiều thôi, nên anh ấy chưa phải phóng viên tốt.",
+      audio_url: "/audio/week18_easy/logic_q5.mp3"
     }
   ]
 };

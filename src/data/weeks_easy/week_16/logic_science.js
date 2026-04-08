@@ -62,6 +62,28 @@ export default {
       explanation_en: "We have 5 players. We need 6 players. 6 - 5 = 1. We need 1 more player.",
       explanation_vi: "Chúng tôi có 5 cầu thủ. Chúng tôi cần 6 cầu thủ. 6 - 5 = 1. Chúng tôi cần thêm 1 cầu thủ.",
       audio_url: "/audio/week16_easy/logic_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Tom can run. Lisa can swim. Sam can run AND swim. What sport can Sam and Tom BOTH do?",
+      question_vi: "Tom có thể chạy. Lisa có thể bơi. Sam có thể chạy VÀ bơi. Môn thể thao nào cả Sam và Tom đều có thể làm?",
+      options_en: ["A. Swimming", "B. Running", "C. Jumping", "D. Climbing"],
+      options_vi: ["A. Bơi lội", "B. Chạy", "C. Nhảy", "D. Leo trèo"],
+      correct_answer: "B",
+      explanation_en: "Tom can run. Sam can run too. So both Sam and Tom can run!",
+      explanation_vi: "Tom có thể chạy. Sam cũng có thể chạy. Vậy cả Sam và Tom đều có thể chạy!",
+      audio_url: "/audio/week16_easy/logic_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "A team scored 2 goals in the first half and 3 goals in the second half. How many goals did they score in total?",
+      question_vi: "Một đội gây được 2 bàn ở hiập đầu và 3 bàn ở hiập sau. Họ gây được tổng cộng bao nhiêu bàn?",
+      options_en: ["A. 3 goals", "B. 4 goals", "C. 5 goals", "D. 6 goals"],
+      options_vi: ["A. 3 bàn", "B. 4 bàn", "C. 5 bàn", "D. 6 bàn"],
+      correct_answer: "C",
+      explanation_en: "2 + 3 = 5 goals in total.",
+      explanation_vi: "2 + 3 = 5 bàn thắng tổng cộng.",
+      audio_url: "/audio/week16_easy/logic_q5.mp3"
     }
   ]
 };
