@@ -29,6 +29,7 @@ export const weekTitles = {
   26: { title_en: "My Weekend Comic Strip", title_vi: "Bo Truyen Tranh Cuoi Tuan Cua Toi" },
   27: { title_en: "Maya's Growing Plant", title_vi: "Cay Trong Cua Maya" },
   28: { title_en: "The Tortoise and the Hare", title_vi: "Rua va Tho" },
+  29: { title_en: "Off We Go! (Irregular Verbs 1)", title_vi: "Xuất Phát Thôi! (Động Từ Bất Quy Tắc 1)" },
   // Add more as weeks are created
 };
 
