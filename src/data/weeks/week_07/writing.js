@@ -1,6 +1,6 @@
 export default {
   title: "My School Supplies",
-  min_words: 35,
+  min_words: 40,
   model_sentence: "There is a backpack on my desk. In my backpack, there is a book, a notebook, and a pen. There is a pencil case in my backpack too. In my pencil case, there is a ruler, an eraser, and a marker. There is a computer in my classroom. There is a whiteboard near the teacher's desk. There is a teacher in the classroom. I like my school supplies very much!",
   instruction_en: "Write about your school supplies. Use 'There is a...' to describe what you have.",
   instruction_vi: "Viết về đồ dùng học tập của bạn. Dùng 'There is a...' để miêu tả những gì bạn có.",

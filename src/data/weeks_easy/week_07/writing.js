@@ -5,7 +5,7 @@ export default {
   instruction_en: "Use 'there is' for one thing and 'there are' for many things. Include words like: pencil, pen, book, ruler, eraser.",
   instruction_vi: "Dùng 'there is' cho một thứ và 'there are' cho nhiều thứ. Bao gồm các từ như: pencil, pen, book, ruler, eraser.",
   model_sentence: "There is a pencil and a ruler in my bag. There are three books inside too. I also have my lunch box. My school bag is blue and red!",
-  min_words: 20,
+  min_words: 30,
   keywords: ["school bag", "pencil", "pen", "book", "ruler", "eraser", "there is", "there are"],
   OLD_prompts: [
     {
