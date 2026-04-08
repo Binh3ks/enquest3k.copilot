@@ -11,7 +11,7 @@ export default {
       cpa_stage: "concrete",
       question_en: "My family packed 3 small bags and 2 big bags. How many bags in total?",
       question_vi: "Gia đình tôi đóng 3 túi nhỏ và 2 túi lớn. Tổng cộng bao nhiêu túi?",
-      bar_model: "/images/week29/barmodel_w29_easy_p1.jpg",
+      bar_model: "/images/week29/barmodel_w29_easy_p1_v1.jpg",
       solution_steps: [
         "Small bags: 3",
         "Big bags: 2",
@@ -31,7 +31,7 @@ export default {
       cpa_stage: "concrete",
       question_en: "There were 8 passengers on the bus. Then 3 got off. How many were left?",
       question_vi: "Có 8 hành khách trên xe buýt. Sau đó 3 người xuống. Còn lại bao nhiêu người?",
-      bar_model: "/images/week29/barmodel_w29_easy_p2.jpg",
+      bar_model: "/images/week29/barmodel_w29_easy_p2_v1.jpg",
       solution_steps: [
         "Passengers at start: 8",
         "Got off: 3",
@@ -51,7 +51,7 @@ export default {
       cpa_stage: "pictorial",
       question_en: "Dad bought 4 tickets and Mum bought 3 more tickets. How many tickets did they have altogether?",
       question_vi: "Bố mua 4 vé và Mẹ mua thêm 3 vé. Họ có tổng cộng bao nhiêu vé?",
-      bar_model: "/images/week29/barmodel_w29_easy_p3.jpg",
+      bar_model: "/images/week29/barmodel_w29_easy_p3_v1.jpg",
       solution_steps: [
         "Dad's tickets: 4",
         "Mum's tickets: 3",
@@ -71,7 +71,7 @@ export default {
       cpa_stage: "pictorial",
       question_en: "The flight takes 10 hours. We have already flown 6 hours. How many hours are left?",
       question_vi: "Chuyến bay mất 10 giờ. Chúng ta đã bay được 6 giờ. Còn lại bao nhiêu giờ?",
-      bar_model: "/images/week29/barmodel_w29_easy_p4.jpg",
+      bar_model: "/images/week29/barmodel_w29_easy_p4_v1.jpg",
       solution_steps: [
         "Total flight time: 10 hours",
         "Already flown: 6 hours",
@@ -84,6 +84,26 @@ export default {
       explanation_en: "10 - 6 = 4. There are 4 hours left in the flight.",
       math_vocab: ["left", "remaining", "how many more"],
       audio_url: "/audio/week29_easy/math_p4.mp3"
+    },
+    {
+      id: 5,
+      type: "comparison",
+      cpa_stage: "pictorial",
+      question_en: "Lily has 9 stickers. Tom has 5 stickers. How many more stickers does Lily have?",
+      question_vi: "Lily có 9 nhãn dán. Tom có 5 nhãn dán. Lily có nhiều hơn Tom bao nhiêu nhãn dán?",
+      bar_model: "/images/week29/barmodel_w29_easy_p5_v1.jpg",
+      solution_steps: [
+        "Lily's stickers: 9",
+        "Tom's stickers: 5",
+        "Difference: 9 - 5 = ?"
+      ],
+      answer: ["4 more stickers", "4", "four more"],
+      unit: "stickers",
+      hint_en: "9 - 5 = ?",
+      hint_vi: "9 - 5 = ?",
+      explanation_en: "9 - 5 = 4. Lily has 4 more stickers than Tom.",
+      math_vocab: ["more", "difference", "compare", "how many more"],
+      audio_url: "/audio/week29_easy/math_p5.mp3"
     }
   ]
 };
