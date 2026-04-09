@@ -1,6 +1,6 @@
 {
   "weekId": 29,
-  "theme": "The Magic Trip",
+  "theme": "Off We Go! Airport Journey",
   "grammar_focus": "Irregular Verbs 1 Movement: go-went, come-came, run-ran, fly-flew",
   "videos": [
     {
@@ -18,22 +18,22 @@
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox magic trip the magic holiday trip story level 1 ESL for kids",
-      "backup_search": "Vooks magic trip the magic holiday trip story read aloud cartoons for kids"
+      "priority_search": "Little Fox airport journey lily's family flies from hanoi to da nang — airport journey irregular verbs story level 1 ESL for kids",
+      "backup_search": "Vooks airport journey lily's family flies from hanoi to da nang — airport journey irregular verbs story read aloud cartoons for kids"
     },
     {
       "id": 4,
       "purpose": "VOCABULARY",
-      "priority_search": "Little Fox Irregular verbs movement song song ESL for kids",
-      "backup_search": "Irregular verbs movement song ESL kids cartoons song"
+      "priority_search": "Little Fox irregular verbs past tense went ran came flew kids song song ESL for kids",
+      "backup_search": "irregular verbs past tense went ran came flew kids song ESL kids cartoons song"
     },
     {
       "id": 5,
       "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids trip, holiday, beach, mountain, airplane, car, went, came, ran, flew for kids",
-      "backup_search": "trip, holiday, beach, mountain, airplane, car, went, came, ran, flew kids science cartoons"
+      "priority_search": "SciShow Kids airport, journey, plane, departure, arrival, luggage, gate, ticket, flew, went, came, ran for kids",
+      "backup_search": "airport, journey, plane, departure, arrival, luggage, gate, ticket, flew, went, came, ran kids science cartoons"
     }
   ],
-  "topic": "The Magic Holiday Trip - movement irregular verbs",
-  "science": "trip, holiday, beach, mountain, airplane, car, went, came, ran, flew"
+  "topic": "Lily's family flies from Hanoi to Da Nang — airport journey irregular verbs",
+  "science": "airport, journey, plane, departure, arrival, luggage, gate, ticket, flew, went, came, ran"
 }

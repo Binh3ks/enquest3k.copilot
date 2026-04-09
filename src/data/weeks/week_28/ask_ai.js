@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: The Tortoise and the Hare",
+  topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
   prompts: [
     {
       id: 1,

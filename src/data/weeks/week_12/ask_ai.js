@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a special talent you have. What are you good at? How did you learn it?",
   prompts: [
     {
       id: 1,

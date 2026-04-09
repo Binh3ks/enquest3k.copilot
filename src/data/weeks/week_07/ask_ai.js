@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about something special that belongs to you. What is it? Where do you keep it?",
   prompts: [
     {
       id: 1,

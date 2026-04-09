@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your daily routine. What do you usually do from morning to night?",
   prompts: [
     {
       id: 1,

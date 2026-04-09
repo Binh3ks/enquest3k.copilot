@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your last weekend. What did you do? Was it fun?",
   prompts: [
     {
       id: 1,

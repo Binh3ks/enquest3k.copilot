@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a time in the past when you felt very happy or very sad. What happened?",
   prompts: [
     {
       id: 1,

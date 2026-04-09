@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a sport you like. What do you do? Who do you play with?",
   prompts: [
     {
       id: 1,

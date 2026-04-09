@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: The Tortoise and the Hare",
+  topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
   image_url: "/images/week28/ask_ai_cover_w28.jpg",
   audio_url: "/audio/week28_easy/ask_ai_main.mp3",
   prompts: [

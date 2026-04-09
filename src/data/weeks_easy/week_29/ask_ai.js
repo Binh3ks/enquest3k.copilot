@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: My First Plane Trip",
+  topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go? How did you travel?",
   image_url: "/images/week29/ask_ai_cover_w29.jpg",
   audio_url: "/audio/week29_easy/ask_ai_main.mp3",
   prompts: [

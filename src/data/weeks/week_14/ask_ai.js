@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your favourite things — your room, toys, food, and activities. What do you like most?",
   prompts: [
     {
       id: 1,

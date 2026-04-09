@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your classroom. What do you see? How many children are there?",
   prompts: [
     {
       id: 1,

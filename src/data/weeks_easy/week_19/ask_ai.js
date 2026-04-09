@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about something you did when you were little. What happened?",
   prompts: [
     {
       id: 1,

@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: The Big Adventure",
+  topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go? How did you get there? What did you see or do?",
   prompts: [
     {
       id: 1,

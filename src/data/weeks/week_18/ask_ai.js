@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about an interesting event happening in your neighbourhood. What is going on?",
   prompts: [
     {
       id: 1,

@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your family. Who is in your family? What do they like?",
   prompts: [
     // ✅ Prompt 1 - What is this? (A0)
     {

@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about how you do something step by step. What is the process? What happens first?",
   prompts: [
     {
       id: 1,

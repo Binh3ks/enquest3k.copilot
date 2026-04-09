@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about something interesting that happened in the past week. What did you do or see?",
   prompts: [
     {
       id: 1,

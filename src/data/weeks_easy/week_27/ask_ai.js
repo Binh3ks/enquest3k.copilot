@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: My Plant",
+  topic_talk_prompt: "Tell me about a plant or flower you have seen. What colour is it? Where did it grow?",
   prompts: [
     {
       id: 1,

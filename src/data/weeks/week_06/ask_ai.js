@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your favourite place at home or at school. Where is it? What do you do there?",
   prompts: [
     {
       id: 1,

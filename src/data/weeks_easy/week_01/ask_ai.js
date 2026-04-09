@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your school bag. What is inside? What colours do you see?",
   prompts: [
     // ✅ Prompt 1 - What is this? (A0 - Super Simple)
     {

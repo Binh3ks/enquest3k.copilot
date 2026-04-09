@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about people at the park. What are they doing? Do you like the park?",
   prompts: [
     {
       id: 1,

@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about what people are doing at a park right now. What activities can you see?",
   prompts: [
     {
       id: 1,

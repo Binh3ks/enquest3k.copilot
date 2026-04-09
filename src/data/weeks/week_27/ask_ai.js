@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: Plant Growth",
+  topic_talk_prompt: "Tell me about a plant, garden, or living thing you have watched grow. What did you do? What changed?",
   prompts: [
     {
       id: 1,

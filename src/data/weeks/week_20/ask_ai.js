@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a place that looked different in the past. What did it look like before? How is it now?",
   prompts: [
     {
       id: 1,

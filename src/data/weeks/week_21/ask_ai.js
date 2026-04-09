@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about what you did yesterday. What happened from morning to night?",
   prompts: [
     {
       id: 1,

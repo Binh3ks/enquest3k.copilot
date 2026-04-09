@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about today's weather. Is it hot, cold, or rainy? What are you wearing?",
   prompts: [
     {
       id: 1,

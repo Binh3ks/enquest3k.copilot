@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your favourite place to go on weekends. What do you do there? Who do you go with?",
   prompts: [
     {
       id: 1,

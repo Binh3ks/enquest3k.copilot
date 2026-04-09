@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a city you know. What do you see? What sounds do you hear?",
   prompts: [
     {
       id: 1,

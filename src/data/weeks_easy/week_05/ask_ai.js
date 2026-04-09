@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your home. What rooms are there? What is your favourite room?",
   prompts: [
     {
       id: 1,

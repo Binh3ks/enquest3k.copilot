@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about something you are good at. What is it? Who taught you?",
   prompts: [
     {
       id: 1,

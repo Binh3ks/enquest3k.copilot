@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about how to make your favourite snack. What do you need? What do you do first?",
   prompts: [
     {
       id: 1,

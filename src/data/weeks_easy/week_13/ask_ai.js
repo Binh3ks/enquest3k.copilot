@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about your morning. What do you do first? What do you do next?",
   prompts: [
     {
       id: 1,

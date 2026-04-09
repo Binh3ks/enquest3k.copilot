@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about what is in your school bag. What things do you have? What colour are they?",
   prompts: [
     // ✅ Prompt 1 - What is this? (A0)
     {

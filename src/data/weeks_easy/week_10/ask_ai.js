@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about an animal you like. What does it look like? What does it eat?",
   prompts: [
     {
       id: 1,

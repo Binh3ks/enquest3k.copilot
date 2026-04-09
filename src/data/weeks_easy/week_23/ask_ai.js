@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a drawing or painting you like. What do you see in it?",
   prompts: [
     {
       id: 1,

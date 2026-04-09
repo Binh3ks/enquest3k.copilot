@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about a farm or animals you have seen. What animals were there? What did they do?",
   prompts: [
     {
       id: 1,

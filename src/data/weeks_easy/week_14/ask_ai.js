@@ -1,4 +1,5 @@
 export default {
+  topic_talk_prompt: "Tell me about one thing you love. What is it? Why do you like it?",
   prompts: [
     {
       id: 1,
