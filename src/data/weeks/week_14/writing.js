@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về ngày thuyết trình của bạn. Poster của bạn có gì? Bạn có tài năng gì? Bạn cảm thấy thế nào? Sử dụng: I present... I can... I am proud of...",
   prompt_en: "Describe your presentation. What is on your poster? What can you do well? How do you feel when you present? Who is in your family?",
   prompt_vi: "Mô tả bài thuyết trình của bạn. Poster của bạn có gì? Bạn giỏi làm gì? Bạn cảm thấy thế nào khi trình bày? Gia đình bạn có ai?",
-  keywords: ["present", "poster", "introduce", "family", "talented", "confident", "proud", "describe", "audience", "project"]
+  keywords: ["present", "poster", "introduce", "family", "talented", "confident", "proud", "describe", "audience", "project"],
+  topic_talk_prompt: "Tell me about your favourite things — your room, toys, food, or hobby. What makes your world special?",
 };

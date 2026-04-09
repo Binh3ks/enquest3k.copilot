@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Dùng 'I can...' và 'I can't...' để mô tả khả năng của bạn.",
   min_words: 50,
   model_sentence: "I can sing and I can draw. I can run fast but I can't swim yet. I want to learn to swim. Performing in a talent show is my dream!",
-  keywords: ["I can", "I can't", "sing", "dance", "draw", "run", "swim", "talent", "perform", "practice"]
+  keywords: ["I can", "I can't", "sing", "dance", "draw", "run", "swim", "talent", "perform", "practice"],
+  topic_talk_prompt: "Tell me about a special talent you have. What are you good at? How did you learn it?",
 };

@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về lớp học của bạn. Dùng 'There are...' để nói có gì trong lớp học của bạn.",
   prompt_en: "What is in your classroom? Use There are + desks, chairs, students, pencils...",
   prompt_vi: "Có gì trong lớp học của bạn? Dùng There are + bàn, ghế, học sinh, bút chì...",
-  keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are"]
+  keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are"],
+  topic_talk_prompt: "Tell me about your classroom. What do you see there?",
 };

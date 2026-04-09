@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Kể lại câu chuyện Rùa và Thỏ dùng Quá Khứ Đơn (bao gồm động từ bất quy tắc: ran, slept, won) và từ chỉ trình tự (First, Then, After that, Finally).",
   prompt_en: "Retell the Tortoise and the Hare story in your own words. Use Past Simple: The hare ran... The hare slept... The tortoise won... Use ALL of these sequence words: First... Then... After that... Finally... Include the moral at the end. Write at least 50 words.",
   prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn. Dùng Quá Khứ Đơn: The hare ran... The hare slept... The tortoise won... Dùng TẤT CẢ từ chỉ trình tự: First... Then... After that... Finally... Bao gồm bài học đạo đức ở cuối. Viết ít nhất 50 từ.",
-  keywords: ["tortoise", "hare", "race", "boast", "boasted", "ran", "fast", "slept", "nap", "steady", "determined", "won", "moral", "persevere", "cheer", "cheered", "finish", "first", "then", "after that", "finally", "confident", "overtake"]
+  keywords: ["tortoise", "hare", "race", "boast", "boasted", "ran", "fast", "slept", "nap", "steady", "determined", "won", "moral", "persevere", "cheer", "cheered", "finish", "first", "then", "after that", "finally", "confident", "overtake"],
+  topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
 };

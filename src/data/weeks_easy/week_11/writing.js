@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Dùng: there is / there are. Viết 2 câu trở lên về địa điểm đó.",
   min_words: 30,
   model_sentence: "My favourite place is the park. There is a big tree and there are many flowers. I go with my family. We play and walk together!",
-  keywords: ["park", "playground", "library", "zoo", "there is", "there are", "go", "play"]
+  keywords: ["park", "playground", "library", "zoo", "there is", "there are", "go", "play"],
+  topic_talk_prompt: "Tell me about your favourite place on weekends. What do you do there?",
 };

@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về hôm qua của bạn. Bạn đã làm gì? Dùng động từ thêm -ed!",
   prompt_en: "What did you do yesterday? Where did you go? Who did you help? How did you feel?",
   prompt_vi: "Bạn đã làm gì hôm qua? Bạn đã đi đâu? Bạn đã giúp ai? Bạn cảm thấy thế nào?",
-  keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "played", "watched", "washed", "finished", "started", "looked", "opened"]
+  keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "played", "watched", "washed", "finished", "started", "looked", "opened"],
+  topic_talk_prompt: "Tell me about what you did yesterday. What happened from morning to night?",
 };

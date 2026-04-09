@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viet ve cach lam hoac thuc hien dieu gi do theo tung buoc mot. Dung tu noi trinh tu.",
   prompt_en: "Write at least 4 sentences describing a step-by-step process. Use: First, Next, Then, Finally.",
   prompt_vi: "Viet it nhat 4 cau mo ta mot quy trinh tung buoc. Dung: First, Next, Then, Finally.",
-  keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "slice", "squeeze", "step", "sequence", "pour", "tidy"]
+  keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "slice", "squeeze", "step", "sequence", "pour", "tidy"],
+  topic_talk_prompt: "Tell me about how you do something step by step. What is the first step? What comes next? What is the last step?",
 };

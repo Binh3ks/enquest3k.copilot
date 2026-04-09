@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viet ve nhung gi ban da lam trong lop my thuat hom qua.",
   prompt_en: "Write 3 or more sentences about your art class. Use these words: painted, colored, folded, cut, glued.",
   prompt_vi: "Viet 3 cau hoac nhieu hon ve lop my thuat cua ban. Dung cac tu: painted, colored, folded, cut, glued.",
-  keywords: ["painted", "colored", "glued", "folded", "created", "cut", "picture", "scissors", "brush", "carefully"]
+  keywords: ["painted", "colored", "glued", "folded", "created", "cut", "picture", "scissors", "brush", "carefully"],
+  topic_talk_prompt: "Tell me about a picture or drawing you like. What do you see?",
 };

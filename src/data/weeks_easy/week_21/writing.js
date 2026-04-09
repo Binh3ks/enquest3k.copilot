@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về hôm qua của bạn. Bạn đã làm gì?",
   prompt_en: "What did you do yesterday? Use -ed verbs!",
   prompt_vi: "Bạn đã làm gì hôm qua? Dùng động từ thêm -ed!",
-  keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"]
+  keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
+  topic_talk_prompt: "Tell me about what you did yesterday. What happened?",
 };

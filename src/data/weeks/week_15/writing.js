@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về chuyến thăm công viên. Mọi người đang làm gì? Bạn thấy hoạt động gì? Sử dụng: is/are + verb-ing (running, walking, sitting, eating, playing, v.v.)",
   prompt_en: "Describe a busy park. What are people doing? What activities are happening? What are children doing? What is your family doing? How do you feel?",
   prompt_vi: "Mô tả một công viên đông đúc. Mọi người đang làm gì? Những hoạt động nào đang diễn ra? Trẻ em đang làm gì? Gia đình bạn đang làm gì? Bạn cảm thấy thế nào?",
-  keywords: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"]
+  keywords: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"],
+  topic_talk_prompt: "Tell me about what people are doing at a park right now. What actions can you see?",
 };

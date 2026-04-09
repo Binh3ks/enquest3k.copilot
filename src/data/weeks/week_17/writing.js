@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về thời tiết hôm nay. Bên ngoài như thế nào? Bạn đang mặc gì vì thời tiết?",
   prompt_en: "What is the weather like today? What are you wearing? Why are you wearing those clothes?",
   prompt_vi: "Thời tiết hôm nay như thế nào? Bạn đang mặc gì? Tại sao bạn mặc những quần áo đó?",
-  keywords: ["It is", "raining", "snowing", "sunny", "cold", "warm", "so", "wearing", "coat", "boots", "hat", "umbrella"]
+  keywords: ["It is", "raining", "snowing", "sunny", "cold", "warm", "so", "wearing", "coat", "boots", "hat", "umbrella"],
+  topic_talk_prompt: "Tell me about the weather today and what people are wearing. Why are those clothes good for the weather?",
 };

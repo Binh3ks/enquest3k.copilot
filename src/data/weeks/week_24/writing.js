@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viet ve mot ngay ban cam thay nhieu loai cam xuc khac nhau. Dung was / were + tinh tu.",
   prompt_en: "Write at least 4 sentences about a day with different feelings. Use: was, were, scared, excited, tired, relieved, cheerful, calm.",
   prompt_vi: "Viet it nhat 4 cau ve mot ngay voi nhieu cam xuc khac nhau. Dung: was, were, scared, excited, tired, relieved, cheerful, calm.",
-  keywords: ["was", "were", "scared", "excited", "tired", "relieved", "cheerful", "calm", "worried", "surprised", "bored", "hungry", "thirsty", "angry", "upset", "because", "when"]
+  keywords: ["was", "were", "scared", "excited", "tired", "relieved", "cheerful", "calm", "worried", "surprised", "bored", "hungry", "thirsty", "angry", "upset", "because", "when"],
+  topic_talk_prompt: "Tell me about a time in the past when you felt very happy or very sad. What happened? How did you feel?",
 };

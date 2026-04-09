@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về những gì có trong một thị trấn hoặc làng cũ. Trước đây có gì? Bây giờ có gì?",
   prompt_en: "Think about an old place. Was there a market? Were there trees? Was there a bridge? What is there now?",
   prompt_vi: "Nghĩ về một nơi cũ. Có chợ không? Có cây không? Có cầu không? Bây giờ có gì ở đó?",
-  keywords: ["there was", "there were", "old", "new", "building", "tree", "river", "road", "bridge", "market", "temple", "village"]
+  keywords: ["there was", "there were", "old", "new", "building", "tree", "river", "road", "bridge", "market", "temple", "village"],
+  topic_talk_prompt: "Tell me about a place that looked different in the past. What did it look like? What changed?",
 };

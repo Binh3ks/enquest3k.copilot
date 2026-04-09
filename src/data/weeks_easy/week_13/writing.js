@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về ngày của bạn. Dùng: I wake up. I eat. I go. I play. I sleep.",
   prompt_en: "What do you do every day? What time do you wake up? What do you do after school?",
   prompt_vi: "Bạn làm gì mỗi ngày? Bạn thức dậy lúc mấy giờ? Bạn làm gì sau giờ học?",
-  keywords: ["wake up", "brush teeth", "eat", "go", "school", "play", "homework", "dinner", "TV", "sleep"]
+  keywords: ["wake up", "brush teeth", "eat", "go", "school", "play", "homework", "dinner", "TV", "sleep"],
+  topic_talk_prompt: "Tell me about what you usually do every day.",
 };

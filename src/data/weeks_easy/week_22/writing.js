@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viet 2-3 cau hoi Did va cau tra loi ngan.",
   prompt_en: "Use this pattern: Did you ...? Yes, I did / No, I didn't.",
   prompt_vi: "Dung mau: Did you ...? Yes, I did / No, I didn't.",
-  keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"]
+  keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
+  topic_talk_prompt: "Tell me about something interesting that happened in the past.",
 };

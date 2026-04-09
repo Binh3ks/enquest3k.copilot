@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về cuối tuần của bạn như một bộ truyện tranh. Dùng Quá Khứ Đơn.",
   prompt_en: "Write 3 or more sentences about your weekend. Use: was, were, visited, played, watched, returned.",
   prompt_vi: "Viết 3 câu hoặc hơn về cuối tuần của bạn. Dùng: was, were, visited, played, watched, returned.",
-  keywords: ["was", "were", "visited", "played", "watched", "returned", "weekend", "happy", "tired", "panel", "comic strip", "caption"]
+  keywords: ["was", "were", "visited", "played", "watched", "returned", "weekend", "happy", "tired", "panel", "comic strip", "caption"],
+  topic_talk_prompt: "Tell me about what you did last weekend. Tell the story.",
 };

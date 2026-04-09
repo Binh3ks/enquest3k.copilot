@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về thói quen hàng ngày của bạn từ sáng tới tối. Sử dụng thì hiện tại đơn: I wake up... I brush... I eat... I go... Bạn làm gì mỗi ngày?",
   prompt_en: "Describe your daily routine. What time do you wake up? What do you eat for breakfast? What do you do after school? What time do you go to bed?",
   prompt_vi: "Miêu tả thói quen hàng ngày của bạn. Bạn thức dậy lúc mấy giờ? Bạn ăn gì vào bữa sáng? Bạn làm gì sau giờ học? Bạn đi ngủ lúc mấy giờ?",
-  keywords: ["wake up", "brush teeth", "eat breakfast", "go to school", "have lunch", "play", "do homework", "have dinner", "watch TV", "go to bed"]
+  keywords: ["wake up", "brush teeth", "eat breakfast", "go to school", "have lunch", "play", "do homework", "have dinner", "watch TV", "go to bed"],
+  topic_talk_prompt: "Tell me about your daily routine. What do you usually do from morning to night?",
 };

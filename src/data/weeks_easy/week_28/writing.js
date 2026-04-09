@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về những gì đã xảy ra trong cuộc đua. Dùng Quá Khứ Đơn và từ chỉ trình tự.",
   prompt_en: "Write 3 or more sentences about the story. Use: ran, slept, won. Use at least two sequence words: First, Then, After that, Finally.",
   prompt_vi: "Viết 3 câu hoặc hơn về câu chuyện. Dùng: ran, slept, won. Dùng ít nhất hai từ chỉ trình tự: First, Then, After that, Finally.",
-  keywords: ["tortoise", "hare", "race", "ran", "slept", "won", "lost", "slow", "steady", "fast", "nap", "finish", "lesson", "first", "then", "after that", "finally", "won", "cheer"]
+  keywords: ["tortoise", "hare", "race", "ran", "slept", "won", "lost", "slow", "steady", "fast", "nap", "finish", "lesson", "first", "then", "after that", "finally", "won", "cheer"],
+  topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
 };

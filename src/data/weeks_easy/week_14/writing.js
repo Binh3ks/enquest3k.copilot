@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về thế giới của bạn. Kể về bản thân, gia đình bạn, và những gì bạn có thể làm. Dùng: My name is... I have... I can... I help... I play...",
   prompt_en: "What can you tell about yourself? Who is in your family? What can you do? Who do you help? Who do you play with?",
   prompt_vi: "Bạn có thể nói gì về bản thân? Ai ở trong gia đình bạn? Bạn có thể làm gì? Bạn giúp ai? Bạn chơi với ai?",
-  keywords: ["show", "tell", "name", "family", "can", "help", "draw", "sing", "play", "friend"]
+  keywords: ["show", "tell", "name", "family", "can", "help", "draw", "sing", "play", "friend"],
+  topic_talk_prompt: "Tell me about your favourite things. What do you like most?",
 };

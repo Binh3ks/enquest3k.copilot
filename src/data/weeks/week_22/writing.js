@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viet mot bai phong van tham tu ngan dung cau hoi Did va cau tra loi ngan.",
   prompt_en: "Write at least 4 Did questions and 4 answers about yesterday.",
   prompt_vi: "Viet it nhat 4 cau hoi Did va 4 cau tra loi ve hom qua.",
-  keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "played", "watched", "washed", "finished", "started", "looked", "opened"]
+  keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "played", "watched", "washed", "finished", "started", "looked", "opened"],
+  topic_talk_prompt: "Tell me about something interesting that happened in the past. What clues helped you understand what occurred?",
 };

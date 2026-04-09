@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Tao ra bo truyen tranh 4 khung cua rieng ban ve cuoi tuan truoc. Dung cau Qua Khu Don.",
   prompt_en: "Describe 4 panels of your Weekend Comic Strip. Each panel must have a caption using Past Simple (-ed or was/were). Start with Panel 1: First... Panel 2: Next/Then... Panel 3: After that/Then... Panel 4: Finally...",
   prompt_vi: "Mo ta 4 khung trong Bo Truyen Tranh Cuoi Tuan cua ban. Moi khung phai co chu thich dung Qua Khu Don (-ed hoac was/were). Bat dau voi Khung 1: First... Khung 2: Next/Then... Khung 3: After that/Then... Khung 4: Finally...",
-  keywords: ["panel", "caption", "comic strip", "weekend", "visited", "played", "watched", "walked", "sketched", "returned", "was", "were", "first", "next", "then", "finally", "character", "scene", "adventure", "title"]
+  keywords: ["panel", "caption", "comic strip", "weekend", "visited", "played", "watched", "walked", "sketched", "returned", "was", "were", "first", "next", "then", "finally", "character", "scene", "adventure", "title"],
+  topic_talk_prompt: "Tell me about what you did last weekend from the beginning to the end. Tell it like a story.",
 };

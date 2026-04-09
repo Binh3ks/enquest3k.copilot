@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về trang trại. Dùng 'but' để chỉ sự khác biệt.",
   prompt_en: "What is different between city and farm? Do you like the farm?",
   prompt_vi: "Điều gì khác biệt giữa thành phố và trang trại? Bạn có thích trang trại không?",
-  keywords: ["city", "farm", "quiet", "clean", "but", "cow", "chicken", "animals", "field", "tree"]
+  keywords: ["city", "farm", "quiet", "clean", "but", "cow", "chicken", "animals", "field", "tree"],
+  topic_talk_prompt: "Tell me about animals on a farm. What do they do?",
 };

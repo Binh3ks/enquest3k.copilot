@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về thành phố của bạn. Bạn nhìn thấy gì? Bạn nghe thấy gì? Sử dụng tính từ: ồn ào, đông đúc, cao, hiện đại.",
   prompt_en: "Describe your city. What buildings and vehicles do you see? What sounds do you hear? What adjectives describe your city?",
   prompt_vi: "Miêu tả thành phố của bạn. Bạn nhìn thấy tòa nhà và phương tiện gì? Bạn nghe thấy âm thanh gì? Tính từ nào miêu tả thành phố của bạn?",
-  keywords: ["city", "street", "noisy", "busy", "tall", "modern", "car", "bus", "building", "traffic"]
+  keywords: ["city", "street", "noisy", "busy", "tall", "modern", "car", "bus", "building", "traffic"],
+  topic_talk_prompt: "Tell me about a city. What sounds and sights are there?",
 };

@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viet ve nhung gi ban da lam trong lop my thuat. Su dung dong tu co quy tac thi qua khu.",
   prompt_en: "Write at least 4 sentences about art class activities yesterday. Use: painted, colored, folded, cut, glued, created.",
   prompt_vi: "Viet it nhat 4 cau ve cac hoat dong lop my thuat hom qua. Dung: painted, colored, folded, cut, glued, created.",
-  keywords: ["painted", "colored", "glued", "folded", "created", "brushed", "cut", "picture", "scissors", "brush", "carefully", "texture", "symmetry", "pigment"]
+  keywords: ["painted", "colored", "glued", "folded", "created", "brushed", "cut", "picture", "scissors", "brush", "carefully", "texture", "symmetry", "pigment"],
+  topic_talk_prompt: "Tell me about a painting or drawing you like. What do you see in it? How does it make you feel?",
 };

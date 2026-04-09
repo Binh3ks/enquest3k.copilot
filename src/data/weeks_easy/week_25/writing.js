@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về cách làm hoặc thực hiện điều gì đó từng bước. Dùng từ nối trình tự.",
   prompt_en: "Write at least 3 sentences describing steps. Use: First, Next, Then, Finally.",
   prompt_vi: "Viết ít nhất 3 câu mô tả các bước. Dùng: First, Next, Then, Finally.",
-  keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "step", "sequence"]
+  keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "step", "sequence"],
+  topic_talk_prompt: "Tell me about how you do something. What are the steps?",
 };

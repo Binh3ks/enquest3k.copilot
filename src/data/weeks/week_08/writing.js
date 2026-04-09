@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về lớp học của bạn. Có gì trong lớp học của bạn? Có bao nhiêu thứ? Sử dụng 'There are...' với danh từ số nhiều.",
   prompt_en: "Describe your classroom. How many desks, chairs, students are there? What supplies are there? Use 'There are...' as much as possible.",
   prompt_vi: "Miêu tả lớp học của bạn. Có bao nhiêu bàn, ghế, học sinh? Có những đồ dùng gì? Sử dụng 'There are...' càng nhiều càng tốt.",
-  keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are", "many"]
+  keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are", "many"],
+  topic_talk_prompt: "Tell me about your classroom. What do you see around you? How many students and things are there?",
 };

@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về khi bạn còn nhỏ. Bạn như thế nào? Bạn khác bây giờ như thế nào?",
   prompt_en: "Look at an old photo. How old were you? What were you like? Were you noisy or quiet? How are you different now?",
   prompt_vi: "Nhìn một bức ảnh cũ. Bạn bao nhiêu tuổi? Bạn như thế nào? Bạn ồn ào hay yên lặng? Bạn khác bây giờ như thế nào?",
-  keywords: ["was", "were", "baby", "small", "little", "cute", "past", "photo", "album", "memory", "grow", "kindergarten", "young"]
+  keywords: ["was", "were", "baby", "small", "little", "cute", "past", "photo", "album", "memory", "grow", "kindergarten", "young"],
+  topic_talk_prompt: "Tell me about something you did when you were small. What happened? How is it different from now?",
 };

@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Dùng 'there is' và 'there are' ít nhất hai lần. Bao gồm từ vựng tuần này: park, playground, library, supermarket, restaurant, zoo.",
   min_words: 50,
   model_sentence: "My favourite place on the weekend is the park. There is a big lake and there are many trees. I go with my family. We walk and play together. There are ducks near the lake. I love the park because it is beautiful and peaceful!",
-  keywords: ["park", "playground", "library", "supermarket", "restaurant", "zoo", "there is", "there are", "go", "visit"]
+  keywords: ["park", "playground", "library", "supermarket", "restaurant", "zoo", "there is", "there are", "go", "visit"],
+  topic_talk_prompt: "Tell me about your favourite place to go on weekends. What do you do there? Why do you love it?",
 };

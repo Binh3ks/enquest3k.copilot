@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Mô tả cách hạt giống lớn lên thành cây sử dụng Hiện Tại Đơn cho sự thật và từ chỉ trình tự.",
   prompt_en: "Write the sequence of how a seed becomes a plant. Use Present Simple for facts (it grows, it needs, roots absorb). Use ALL of these sequence words: First... Next... After that... Finally... Include facts about what each plant part does (root, stem, leaf, flower).",
   prompt_vi: "Viết trình tự cách hạt giống trở thành cây. Dùng Hiện Tại Đơn cho sự thật (it grows, it needs, roots absorb). Dùng TẤT CẢ các từ chỉ trình tự này: First... Next... After that... Finally... Bao gồm sự thật về chức năng của từng bộ phận cây (root, stem, leaf, flower).",
-  keywords: ["seed", "soil", "root", "stem", "leaf", "flower", "sunlight", "germinate", "absorb", "nutrients", "sprout", "photosynthesis", "observe", "grows", "needs", "first", "next", "after that", "finally", "water"]
+  keywords: ["seed", "soil", "root", "stem", "leaf", "flower", "sunlight", "germinate", "absorb", "nutrients", "sprout", "photosynthesis", "observe", "grows", "needs", "first", "next", "after that", "finally", "water"],
+  topic_talk_prompt: "Tell me about a plant, garden, or living thing you have watched or taken care of. What changed over time?",
 };

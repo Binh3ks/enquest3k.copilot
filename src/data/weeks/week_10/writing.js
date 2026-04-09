@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về sự khác biệt giữa thành phố và trang trại. Dùng 'but' để chỉ sự đối lập. So sánh thành phố và nông thôn.",
   prompt_en: "Compare city and farm. What is different? Use 'but' to show contrast. Which do you like better?",
   prompt_vi: "So sánh thành phố và trang trại. Có gì khác? Dùng 'but' để chỉ sự đối lập. Bạn thích cái nào hơn?",
-  keywords: ["city", "farm", "countryside", "but", "noisy", "quiet", "clean", "peaceful", "animals", "field"]
+  keywords: ["city", "farm", "countryside", "but", "noisy", "quiet", "clean", "peaceful", "animals", "field"],
+  topic_talk_prompt: "Tell me about a farm or animals you have seen. What animals were there? What did they do?",
 };
