@@ -1,5 +1,6 @@
 export default {
   title: "Ask AI: The Perfect Picnic",
+  topic_talk_prompt: "Tell me about a picnic or meal you had outside with your family or friends. What did you eat? What did you drink? Did you share food with anyone?",
   prompts: [
     {
       id: 1,

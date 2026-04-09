@@ -2,6 +2,7 @@ export default {
   title: "Ask AI: Our Picnic Day",
   image_url: "/images/week30/ask_ai_cover_w30.jpg",
   audio_url: "/audio/week30_easy/ask_ai_main.mp3",
+  topic_talk_prompt: "Tell me about a meal you had with your family. What did you eat? What did you drink? Was it delicious?",
   prompts: [
     {
       id: 1,
