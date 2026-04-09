@@ -1,0 +1,39 @@
+{
+  "weekId": 30,
+  "theme": "The Perfect Picnic",
+  "grammar_focus": "Irregular Verbs 2 Consumption: eat-ate, drink-drank, buy-bought, give-gave",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing irregular verbs 2 consumption: eat-ate, drink-drank, buy-bought, give-gave ESL for kids",
+      "backup_search": "irregular verbs 2 consumption: eat-ate, drink-drank, buy-bought, give-gave song ESL kids cartoons"
+    },
+    {
+      "id": 2,
+      "purpose": "GRAMMAR",
+      "priority_search": "English Singsing irregular verbs 2 consumption: eat-ate, drink-drank, buy-bought, give-gave ESL for kids",
+      "backup_search": "irregular verbs 2 consumption: eat-ate, drink-drank, buy-bought, give-gave kids song ESL cartoons"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "priority_search": "Little Fox picnic family story Level 1 ESL for kids read aloud English",
+      "backup_search": "Vooks picnic family outdoor story read aloud cartoons for kids English"
+    },
+    {
+      "id": 4,
+      "purpose": "VOCABULARY",
+      "priority_search": "Little Fox Irregular verbs consumption song ESL for kids eat drink buy give",
+      "backup_search": "Irregular verbs consumption song ESL kids cartoons song ate drank bought gave"
+    },
+    {
+      "id": 5,
+      "purpose": "SCIENCE",
+      "priority_search": "SciShow Kids food groups healthy eating fruits vegetables protein carbohydrates vitamins for kids",
+      "backup_search": "food groups healthy eating balanced diet kids science cartoons"
+    }
+  ],
+  "topic": "The Perfect Picnic - consumption irregular verbs",
+  "science": "food groups, healthy eating, fruits, vegetables, protein, carbohydrates, vitamins"
+}

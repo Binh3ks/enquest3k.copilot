@@ -30,6 +30,7 @@ export const weekTitles = {
   27: { title_en: "Maya's Growing Plant", title_vi: "Cay Trong Cua Maya", cefr_level: "A1", cambridge_prep: "YLE Starters → Movers" },
   28: { title_en: "The Tortoise and the Hare", title_vi: "Rua va Tho", cefr_level: "A1", cambridge_prep: "YLE Starters → Movers" },
   29: { title_en: "Off We Go! (Irregular Verbs 1)", title_vi: "Xuất Phát Thôi! (Động Từ Bất Quy Tắc 1)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
+  30: { title_en: "Picnic Time! (Irregular Verbs 2)", title_vi: "Đến Giờ Dã Ngoại! (Động Từ Bất Quy Tắc 2)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   // Add more as weeks are created
 };
 
