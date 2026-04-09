@@ -29,5 +29,13 @@ export default {
       hint_vi: "Chúng ta uống vì cơ thể chủ yếu là...",
       audio_url: "/audio/week30_easy/explore_q3.mp3"
     }
-  ]
+  ],
+
+  question: {
+    text_en: "What is your favourite food to eat at a picnic? Tell me why you like it.",
+    text_vi: "Thức ăn yêu thích của bạn khi ăn dã ngoại là gì? Hãy nói cho tôi biết tại sao bạn thích nó.",
+    min_words: 15,
+    hint_en: "My favourite food is... because...",
+    hint_vi: "Thức ăn yêu thích của tôi là... vì..."
+  }
 };

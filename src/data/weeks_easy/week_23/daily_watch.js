@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "Adding -ed to Verbs | Regular Past Tense | Painted, Colored, Folded | Nessy English", videoId: "jxl28KQOHy4", duration: "02:18", sim_duration: 138, thumb: "https://img.youtube.com/vi/jxl28KQOHy4/mqdefault.jpg" },
-    { id: 2, title: "Regular Past Tense | Daily Routines Vocabulary in Past Simple | Learn English", videoId: "ool2Whw--7Y", duration: "06:59", sim_duration: 419, thumb: "https://img.youtube.com/vi/ool2Whw--7Y/mqdefault.jpg" },
-    { id: 3, title: "What Did You Make? - Role Play for Kids | Past Tense Art Talk", videoId: "pcWBtzTnpb8", duration: "05:32", sim_duration: 332, thumb: "https://img.youtube.com/vi/pcWBtzTnpb8/mqdefault.jpg" },
-    { id: 4, title: "Cause and Effect in Art | How Things Work | Science for Kids | Creative Thinking", videoId: "IW8Mvn_DEt0", duration: "05:42", sim_duration: 342, thumb: "https://img.youtube.com/vi/IW8Mvn_DEt0/mqdefault.jpg" },
-    { id: 5, title: "Color Mixing for Kids | Primary and Secondary Colors", videoId: "yu44JRTIxSQ", duration: "03:18", sim_duration: 198, thumb: "https://img.youtube.com/vi/yu44JRTIxSQ/mqdefault.jpg" }
+    { id: 1, title: "English Vocabulary - ART TOOLS", videoId: "0RciyDGEYI0", duration: "01:55", sim_duration: 115, thumb: "https://img.youtube.com/vi/0RciyDGEYI0/mqdefault.jpg" },
+    { id: 2, title: "Learn Past Tense Verbs 3 - Patterns Chants By ELF Learning - ELF Kids Videos", videoId: "n1VBke5Y2co", duration: "01:53", sim_duration: 113, thumb: "https://img.youtube.com/vi/n1VBke5Y2co/mqdefault.jpg" },
+    { id: 3, title: "Origami Ice Cream Cone Tutorial (Swirl) - Easy for Beginners!", videoId: "ybmxJVe2QpA", duration: "03:38", sim_duration: 218, thumb: "https://img.youtube.com/vi/ybmxJVe2QpA/mqdefault.jpg" },
+    { id: 4, title: "Symmetry! | Jack Hartmann", videoId: "79aZuCLPyCw", duration: "04:03", sim_duration: 243, thumb: "https://img.youtube.com/vi/79aZuCLPyCw/mqdefault.jpg" },
+    { id: 5, title: "Color (color mixing & rainbow colors) - Kids vocabulary - English educational video", videoId: "ybt2jhCQ3lA", duration: "04:39", sim_duration: 279, thumb: "https://img.youtube.com/vi/ybt2jhCQ3lA/mqdefault.jpg" }
   ],
-  bonus_games: [{ title: "Art Activity", url: "#", description: "Create your own art" }]
+  bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

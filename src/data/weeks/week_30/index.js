@@ -1,15 +1,51 @@
-export { default as vocab } from './vocab.js';
-export { default as read } from './read.js';
-export { default as explore } from './explore.js';
-export { default as grammar } from './grammar.js';
-export { default as writing } from './writing.js';
-export { default as dictation } from './dictation.js';
-export { default as shadowing } from './shadowing.js';
-export { default as wordMatch } from './word_match.js';
-export { default as wordPower } from './word_power.js';
-export { default as mindmap } from './mindmap.js';
-export { default as logicScience } from './logic_science.js';
-export { default as singaporeMath } from './singapore_math.js';
-export { default as askAi } from './ask_ai.js';
-export { default as dailyWatch } from './daily_watch.js';
-export { default as games } from './games.js';
+import read from './read.js';
+import explore from './explore.js';
+import vocab from './vocab.js';
+import grammar from './grammar.js';
+import ask_ai from './ask_ai.js';
+import logic_science from './logic_science.js';
+import singapore_math from './singapore_math.js';
+import dictation from './dictation.js';
+import shadowing from './shadowing.js';
+import writing from './writing.js';
+import word_power from './word_power.js';
+import mindmap from './mindmap.js';
+import daily_watch from './daily_watch.js';
+import word_match from './word_match.js';
+import { week30GamesAdvanced as games } from './games.js';
+
+const weekData = {
+  weekId: 30,
+  isEasy: false,
+  weekTitle_en: "The Perfect Picnic (Irregular Verbs 2)",
+  weekTitle_vi: "Bữa Dã Ngoại Hoàn Hảo (Động Từ Bất Quy Tắc 2)",
+  grammar_focus: "Past Simple Irregular Verbs 2: eat→ate, drink→drank, buy→bought, give→gave",
+  global_vocab: vocab.vocab,
+  voiceConfig: {
+    narration: "nova",
+    vocabulary: "nova",
+    dictation: "echo",
+    shadowing: "nova",
+    questions: "nova",
+    mindmap: "nova",
+    logic_science: "nova"
+  },
+  stations: {
+    read_explore: read,
+    new_words: vocab,
+    word_match,
+    grammar,
+    word_power,
+    ask_ai,
+    logic_lab: { logic_science, singapore_math },
+    dictation,
+    shadowing,
+    writing,
+    explore,
+    mindmap_speaking: mindmap,
+    daily_watch,
+    game_hub: games
+  }
+};
+
+export default weekData;

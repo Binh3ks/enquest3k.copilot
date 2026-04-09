@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "The Feelings Song - Emotions for Kids | Scared Excited Tired Happy", videoId: "WPPRYPKt6G0", duration: "02:18", sim_duration: 138, thumb: "https://img.youtube.com/vi/WPPRYPKt6G0/mqdefault.jpg" },
-    { id: 2, title: "All About Emotions - Why Do We Have Feelings? Science for Kids", videoId: "YIkewDhlSwQ", duration: "05:12", sim_duration: 312, thumb: "https://img.youtube.com/vi/YIkewDhlSwQ/mqdefault.jpg" },
-    { id: 3, title: "Inside Out - Meet the Emotions | Joy Sadness Fear Anger Disgust", videoId: "yRUAzGQ3nSY", duration: "03:48", sim_duration: 228, thumb: "https://img.youtube.com/vi/yRUAzGQ3nSY/mqdefault.jpg" },
-    { id: 4, title: "How Emotions Work in the Brain - Science for Kids", videoId: "q3fCcKpIQMU", duration: "05:42", sim_duration: 342, thumb: "https://img.youtube.com/vi/q3fCcKpIQMU/mqdefault.jpg" },
-    { id: 5, title: "Was and Were - Feelings in the Past - English Grammar for Kids", videoId: "0tSRok9I6Vc", duration: "03:18", sim_duration: 198, thumb: "https://img.youtube.com/vi/0tSRok9I6Vc/mqdefault.jpg" }
+    { id: 1, title: "This Is A Happy Face featuring Noodle & Pals | Learn Emotions! | Super Simple Songs", videoId: "lQZX1IIAnLw", duration: "05:42", sim_duration: 342, thumb: "https://img.youtube.com/vi/lQZX1IIAnLw/mqdefault.jpg" },
+    { id: 2, title: "The Brain for Kids | Learn cool facts about the human brain", videoId: "rVDZYQOoeHw", duration: "06:50", sim_duration: 410, thumb: "https://img.youtube.com/vi/rVDZYQOoeHw/mqdefault.jpg" },
+    { id: 3, title: "Emotions for Kids - Happiness, Sadness, Fear, Anger, Disgust and Surprise", videoId: "jetoWelJJJk", duration: "04:52", sim_duration: 292, thumb: "https://img.youtube.com/vi/jetoWelJJJk/mqdefault.jpg" },
+    { id: 4, title: "🧘‍♀️ RELAXATION, BREATHING, and MINDFULNESS for Kids 🌬️ SELF-REGULATION for Kids 💆", videoId: "cNfXu024ZTA", duration: "05:26", sim_duration: 326, thumb: "https://img.youtube.com/vi/cNfXu024ZTA/mqdefault.jpg" },
+    { id: 5, title: "Was - Were | Past Simple | Verb to be for kids | Grammar", videoId: "fsFPgAhDo4I", duration: "04:12", sim_duration: 252, thumb: "https://img.youtube.com/vi/fsFPgAhDo4I/mqdefault.jpg" }
   ],
-  bonus_games: [{ title: "Feelings Charades", url: "#", description: "Act out an emotion and say: I was ___!" }]
+  bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

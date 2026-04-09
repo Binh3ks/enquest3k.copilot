@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "English Singsing - Grammar for Kids", videoId: "ZBGr2qbzYoo", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/ZBGr2qbzYoo/mqdefault.jpg" },
-    { id: 2, title: "English for Kids - Super Simple Songs", videoId: "e54m6XOpRgU", duration: "01:58", sim_duration: 118, thumb: "https://img.youtube.com/vi/e54m6XOpRgU/mqdefault.jpg" },
-    { id: 3, title: "The Family Picnic | English Story | Beginner Level | Little Fox", videoId: "OdNv-J31Kk8", duration: "03:26", sim_duration: 206, thumb: "https://img.youtube.com/vi/OdNv-J31Kk8/mqdefault.jpg" },
-    { id: 4, title: "Irregular Verbs Song for Kids 🥪 | Learn eat-ate, drink-drank, buy-bought, give-gave", videoId: "pCtfYmWIxUI", duration: "01:33", sim_duration: 93, thumb: "https://img.youtube.com/vi/pCtfYmWIxUI/mqdefault.jpg" },
-    { id: 5, title: "Food Groups for Kids | Healthy Eating Science Video", videoId: "V4Ij8hE5TsI", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/V4Ij8hE5TsI/mqdefault.jpg" }
+    { id: 1, title: "Past Tense Verbs Song | Eat Ate, Drink Drank | English for Kids", videoId: "gf7OdFHCYfo", duration: "01:34", sim_duration: 94, thumb: "https://img.youtube.com/vi/gf7OdFHCYfo/mqdefault.jpg" },
+    { id: 2, title: "Irregular Verbs Past Tense | MightyOwl Language Arts | 2nd Grade", videoId: "_Itws1UmFE8", duration: "07:54", sim_duration: 474, thumb: "https://img.youtube.com/vi/_Itws1UmFE8/mqdefault.jpg" },
+    { id: 3, title: "Bedtime Stories for Kids | Family Stories | Little Fox", videoId: "gfbSIdwL0FE", duration: "08:02", sim_duration: 482, thumb: "https://img.youtube.com/vi/gfbSIdwL0FE/mqdefault.jpg" },
+    { id: 4, title: "What are proteins? - Healthy Eating for Kids", videoId: "U-_uuU1i7oE", duration: "03:18", sim_duration: 198, thumb: "https://img.youtube.com/vi/U-_uuU1i7oE/mqdefault.jpg" },
+    { id: 5, title: "Fables for Kids | Stories and Morals | English Learning", videoId: "cS3jchx0JJs", duration: "05:32", sim_duration: 332, thumb: "https://img.youtube.com/vi/cS3jchx0JJs/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

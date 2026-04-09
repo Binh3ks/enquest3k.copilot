@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "Photosynthesis for Kids | Science", videoId: "uixA8ZXx0KU", duration: "02:17", sim_duration: 137, thumb: "https://img.youtube.com/vi/uixA8ZXx0KU/mqdefault.jpg" },
-    { id: 2, title: "How to use sequencers in English: FIRST, THEN, NEXT, AFTER THAT, FINALLY", videoId: "sFrHK7cHzkA", duration: "08:31", sim_duration: 511, thumb: "https://img.youtube.com/vi/sFrHK7cHzkA/mqdefault.jpg" },
-    { id: 3, title: "Simple Present Tense - Facts & Habits | English Grammar for Kids", videoId: "ool2Whw--7Y", duration: "03:45", sim_duration: 225, thumb: "https://img.youtube.com/vi/ool2Whw--7Y/mqdefault.jpg" },
-    { id: 4, title: "Morning Routines & Daily Verbs Chant for Children | Fun Kids English", videoId: "ico9ztlb46k", duration: "03:19", sim_duration: 199, thumb: "https://img.youtube.com/vi/ico9ztlb46k/mqdefault.jpg" },
-    { id: 5, title: "Let's Make a Sandwich Song | Simple Process Steps for Kids", videoId: "mK4O8hi30UA", duration: "01:50", sim_duration: 110, thumb: "https://img.youtube.com/vi/mK4O8hi30UA/mqdefault.jpg" }
+    { id: 1, title: "Photosynthesis | The Dr. Binocs Show | Learn Videos For Kids", videoId: "D1Ymc311XS8", duration: "03:41", sim_duration: 221, thumb: "https://img.youtube.com/vi/D1Ymc311XS8/mqdefault.jpg" },
+    { id: 2, title: "How Does A Seed Become A Plant? | Backyard Science | SciShow Kids", videoId: "tkFPyue5X3Q", duration: "03:47", sim_duration: 227, thumb: "https://img.youtube.com/vi/tkFPyue5X3Q/mqdefault.jpg" },
+    { id: 3, title: "Present Simple | Grammar for kids | Daily Routines", videoId: "Cr5QLFMKPjU", duration: "06:18", sim_duration: 378, thumb: "https://img.youtube.com/vi/Cr5QLFMKPjU/mqdefault.jpg" },
+    { id: 4, title: "How to use sequencers in English: FIRST, THEN, NEXT, AFTER THAT, FINALLY", videoId: "sFrHK7cHzkA", duration: "08:31", sim_duration: 511, thumb: "https://img.youtube.com/vi/sFrHK7cHzkA/mqdefault.jpg" },
+    { id: 5, title: "Parts of a Plant and Their Functions for Kids | Root, Stem, Leaf, Flower & Fruit", videoId: "v6YhghG7mzQ", duration: "04:53", sim_duration: 293, thumb: "https://img.youtube.com/vi/v6YhghG7mzQ/mqdefault.jpg" }
   ],
-  bonus_games: [{ title: "Game", url: "#", description: "Review" }]
+  bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };
