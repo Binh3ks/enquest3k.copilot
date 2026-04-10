@@ -13,7 +13,10 @@
     "context:update": "npm run generate:ai-context && npm run context:log",
     "memory:add": "node scripts/add-memory.mjs",
     "memory:chat": "node scripts/add-chat-insights.mjs",
-    "generate:ai-context": "node scripts/generate_ai_context.cjs"
+    "generate:ai-context": "node scripts/generate_ai_context.cjs",
+    "dict:build": "node tools/build_dictionary.mjs",
+    "dict:build:week": "node tools/build_dictionary.mjs --week",
+    "dict:dry-run": "node tools/build_dictionary.mjs --dry-run"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
