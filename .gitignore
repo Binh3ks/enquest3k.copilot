@@ -42,7 +42,7 @@ public/videos/week*/  # Week videos served from YouTube/R2 (don't commit to Git)
 esl_server/
 
 # MCP Server (47MB - VSCode extension development)
-mcp-server/
+mcp-server/node_modules/
 
 # ====== BACKUP & DOCUMENTATION FOLDERS ======
 # Backup files (not needed in repo)
