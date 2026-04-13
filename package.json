@@ -16,7 +16,8 @@
     "generate:ai-context": "node scripts/generate_ai_context.cjs",
     "dict:build": "node tools/build_dictionary.mjs",
     "dict:build:week": "node tools/build_dictionary.mjs --week",
-    "dict:dry-run": "node tools/build_dictionary.mjs --dry-run"
+    "dict:dry-run": "node tools/build_dictionary.mjs --dry-run",
+    "dict:lint": "node tools/dict_lint.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
