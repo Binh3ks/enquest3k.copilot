@@ -14,23 +14,23 @@ const FloatingButton = () => {
   return (
     <button
       onClick={toggleWidget}
-      className="fixed top-[68px] z-50 transition-all duration-300 shadow-lg hover:shadow-purple-500/60"
-      style={{ left: 'calc(320px + (100vw - 320px) / 2)', transform: 'translateX(-50%)' }}
+      className="fixed top-[56px] z-50 transition-all duration-300 shadow-md hover:shadow-purple-500/50"
+      style={{ left: 'calc(288px + (100vw - 288px) / 2)', transform: 'translateX(-50%)' }}
       aria-label="Open AI Tutor"
     >
-      {/* Main Button - Large centered size */}
-      <div className="relative px-6 py-3 rounded-xl flex items-center gap-2.5 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:scale-105 active:scale-95 transition-transform duration-200">
+      {/* Main Button - compact */}
+      <div className="relative px-4 py-1.5 rounded-lg flex items-center gap-2 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:scale-105 active:scale-95 transition-transform duration-200">
         {/* Icon */}
-        <Sparkles className="text-white animate-pulse" size={24} />
+        <Sparkles className="text-white animate-pulse" size={16} />
         
         {/* Text */}
         <div className="flex flex-col leading-tight">
-          <span className="text-white font-black text-base">Ms. Nova</span>
-          <span className="text-white/90 font-bold text-sm">Talk with me!</span>
+          <span className="text-white font-black text-sm">Ms. Nova</span>
+          <span className="text-white/90 font-bold text-[10px]">Talk with me!</span>
         </div>
         
         {/* Glow Effect */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 opacity-0 hover:opacity-30 blur-lg transition-opacity duration-300" />
+        <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-purple-400 to-pink-400 opacity-0 hover:opacity-30 blur-lg transition-opacity duration-300" />
       </div>
     </button>
   );
