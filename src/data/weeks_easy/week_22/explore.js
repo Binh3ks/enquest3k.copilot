@@ -4,8 +4,7 @@ export default {
   image_url: "/images/week22/explore_cover_w22.jpg",
   audio_url: "/audio/week22_easy/explore_main.mp3",
   content_en: `
-    Real **detectives** use more than their eyes — they use science!
-    This is called forensic science, and it helps solve **cases** all over the world.
+    Real **detectives** use more than their eyes — they also use science. Science helps **detectives** solve **cases** all over the world!
 
     When something happens, a **detective** goes to the place and looks for **clues**.
     A **clue** can be a fingerprint, a hair, or a footprint.

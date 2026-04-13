@@ -1,32 +1,32 @@
 export default {
   title: "Explore: What We Eat",
   image_url: "/images/week30/explore_cover_w30.jpg",
-  content_en: "We eat food every day. Food gives us energy and helps us grow.\n\nThere are different types of food. **Fruits** and **vegetables** give our body vitamins. Vitamins help us stay healthy.\n\n**Bread**, rice, and pasta give us energy to run and play. These are called carbohydrates. They are our body's fuel!\n\n**Meat**, fish, eggs, and beans give us protein. Protein helps our muscles grow strong.\n\nWe also need to drink water and **juice** every day. Our body is mostly water, so drinking helps us stay healthy and not feel **thirsty**.\n\nTry to eat different foods every day. A picnic with fruits, sandwiches, and juice is a great healthy meal. **Delicious** AND good for you!",
-  content_vi: "Chúng ta ăn thức ăn mỗi ngày. Thức ăn cho chúng ta năng lượng và giúp chúng ta lớn lên.\n\nCó nhiều loại thức ăn khác nhau. **Trái cây** và **rau củ** cung cấp vitamin cho cơ thể. Vitamin giúp chúng ta khỏe mạnh.\n\n**Bánh mì**, cơm và mì ống cho chúng ta năng lượng để chạy và chơi. Những thứ này gọi là carbohydrate. Đó là nhiên liệu của cơ thể chúng ta!\n\n**Thịt**, cá, trứng và các loại đậu cho chúng ta protein. Protein giúp cơ bắp chúng ta phát triển mạnh mẽ.\n\nChúng ta cũng cần uống nước và **nước trái cây** mỗi ngày. Cơ thể chúng ta chủ yếu là nước, vì vậy uống đủ nước giúp chúng ta khỏe mạnh và không cảm thấy **khát nước**.\n\nHãy thử ăn nhiều loại thức ăn khác nhau mỗi ngày. Một buổi dã ngoại với trái cây, bánh mì kẹp và nước ép là một bữa ăn lành mạnh tuyệt vời. Vừa **ngon** lại tốt cho bạn!",
+  content_en: "Last Sunday, my family felt **hungry**, so we planned a **picnic** in the park!\n\nFirst, Dad **bought** some food from the market. He put everything in a big **basket**.\n\nAt the park, Mum **gave** everyone a **sandwich**. The **sandwiches** were so **delicious**!\n\nAfter we ran and played, we were very **thirsty**. We all **drank** cold **juice**. It was perfect!\n\nWe **ate** fruit and **shared** it with our neighbors. Everyone felt **cheerful** and happy.\n\nIt was the best **picnic** ever!",
+  content_vi: "Chủ nhật tuần trước, cả nhà tôi cảm thấy **đói** và chúng tôi lên kế hoạch đi **dã ngoại** ở công viên!\n\nĐầu tiên, bố **mua** thức ăn từ chợ về. Bố bỏ tất cả vào một cái **giỏ** lớn.\n\nỞ công viên, mẹ **phát** cho mỗi người một **bánh mì kẹp**. Các **bánh mì kẹp** thật **ngon**!\n\nSau khi chạy và chơi, chúng tôi rất **khát**. Chúng tôi đều **uống** **nước trái cây** lạnh. Thật tuyệt!\n\nChúng tôi **ăn** trái cây và **chia sẻ** với hàng xóm. Mọi người đều cảm thấy **vui vẻ** và hạnh phúc.\n\nĐó là buổi **dã ngoại** tuyệt vời nhất!",
   audio_url: "/audio/week30_easy/explore_main.mp3",
   check_questions: [
     {
       id: 1,
-      question_en: "What do fruits and vegetables give our body?",
-      answer: ["Vitamins", "They give us vitamins", "Fruits and vegetables give vitamins"],
-      hint_en: "Fruits and vegetables give our body...",
-      hint_vi: "Trái cây và rau củ cung cấp... cho cơ thể.",
+      question_en: "What did Dad buy from the market?",
+      answer: ["Food", "He bought food", "Some food", "He bought some food from the market"],
+      hint_en: "Dad bought some... from the market.",
+      hint_vi: "Bố mua... từ chợ về.",
       audio_url: "/audio/week30_easy/explore_q1.mp3"
     },
     {
       id: 2,
-      question_en: "What does protein help our body do?",
-      answer: ["Grow strong muscles", "It helps muscles grow strong", "Makes our muscles strong"],
-      hint_en: "Protein helps our... grow strong.",
-      hint_vi: "Protein giúp... chúng ta phát triển mạnh mẽ.",
+      question_en: "What did the family drink when they were thirsty?",
+      answer: ["Cold juice", "Juice", "They drank cold juice", "Cold juice from the picnic basket"],
+      hint_en: "They were thirsty so they drank cold...",
+      hint_vi: "Họ khát nên họ uống... lạnh.",
       audio_url: "/audio/week30_easy/explore_q2.mp3"
     },
     {
       id: 3,
-      question_en: "Why do we need to drink water and juice every day?",
-      answer: ["To stay healthy and not feel thirsty", "Because our body is mostly water", "To keep healthy and hydrated"],
-      hint_en: "We drink because our body is mostly...",
-      hint_vi: "Chúng ta uống vì cơ thể chủ yếu là...",
+      question_en: "How did everyone feel after sharing the fruit?",
+      answer: ["Cheerful and happy", "Cheerful", "Happy and cheerful", "Everyone felt cheerful"],
+      hint_en: "Everyone felt... and happy.",
+      hint_vi: "Mọi người cảm thấy... và hạnh phúc.",
       audio_url: "/audio/week30_easy/explore_q3.mp3"
     }
   ],

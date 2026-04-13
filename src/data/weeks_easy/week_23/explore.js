@@ -3,58 +3,28 @@ export default {
   title_vi: "Mau Sac Trong Nghe Thuat: Tron Sac To Va Tim Doi Xung",
   image_url: "/images/week23/explore_cover_w23.jpg",
   audio_url: "/audio/week23_easy/explore_main.mp3",
-  content_en: `
-    When we **paint** a **picture**, we use **pigment** to create colors.
-    **Pigment** is the part of **paint** that gives it color.
-    Red **pigment** makes red paint. Blue **pigment** makes blue paint.
+  content_en: `When we **paint** a **picture**, we use **pigment** to give it **color**.
 
-    Did you know we can mix **pigment** to create new colors?
-    Red and blue **pigment** mix to make purple.
-    Red and yellow **pigment** mix to make orange.
-    Blue and yellow **pigment** mix to make green.
+Did you know we can mix **pigment** to make new colors? Red + blue = purple. Red + yellow = orange. Blue + yellow = green!
 
-    When we **paint**, we use a **brush** to move the **pigment** onto paper.
-    A soft **brush** makes smooth lines.
-    We must hold the **brush** **carefully** to get good results.
+We use a **brush** to put the **pigment** onto paper. Hold your **brush** **carefully** for smooth lines.
 
-    The way a surface feels is called **texture**.
-    Rough paper has a bumpy **texture** that holds paint well.
-    Smooth paper has a flat **texture** and is good for writing.
-    When we **paint**, we choose our paper **carefully** for the right **texture**.
+The way paper feels is called **texture**. Rough paper has a bumpy **texture** that holds **paint** well. Choose your paper **carefully**!
 
-    **Symmetry** means both sides look the same.
-    When we **fold** a **picture** in half, we can check its **symmetry**.
-    A butterfly has **symmetry** - both wings look the same.
-    We can **create** **symmetry** in our art by painting, then **fold**ing the paper!
+**Symmetry** means both sides look the same. To **create** **symmetry**, **paint** on one side, then **fold** the paper. The **pigment** copies to the other side!
 
-    This is called butterfly printing.
-    First you **paint** on one side, then you **fold** the paper carefully.
-    The **pigment** transfers to the other side and you **create** a **picture** with perfect **symmetry**!
-    Then you can **color** and **glue** and **cut** to make it even more beautiful.
-  `,
-  content_vi: `
-    Khi chung ta **paint** mot **picture**, chung ta dung **pigment** de tao ra mau sac.
-    **Pigment** la phan cua **paint** cho no mau sac.
-    **Pigment** do tao ra son mau do. **Pigment** xanh tao ra son mau xanh.
+Then use **scissors** to **cut** the shape. Add **color**, then **glue** it onto another piece of paper. Your art is ready!`,
+  content_vi: `Khi chung ta **paint** mot **picture**, chung ta dung **pigment** de tao **color** cho no.
 
-    Ban co biet chung ta co the tron **pigment** de tao ra mau moi khong?
-    **Pigment** do va xanh lam tron thanh mau tim.
-    **Pigment** do va vang tron thanh mau cam.
-    **Pigment** xanh lam va vang tron thanh mau luc.
+Ban co biet chung ta co the tron **pigment** de tao mau moi khong? Do + xanh lam = tim. Do + vang = cam. Xanh lam + vang = xanh la!
 
-    Khi chung ta **paint**, chung ta dung **brush** de chuyen **pigment** len giay.
-    **Brush** mem tao cac duong thang min.
-    Chung ta phai cam **brush** **carefully** de co ket qua tot.
+Chung ta dung **brush** de dua **pigment** len giay. Hay cam **brush** **carefully** de co duong net min.
 
-    Cam giac cua mot be mat duoc goi la **texture**.
-    Giay tho co **texture** go gheh giu son tot.
-    Giay nhan co **texture** phang va tot cho viec viet.
+Cach giay cam nhan duoc goi la **texture**. Giay tho giu **paint** tot. Hay chon giay **carefully**!
 
-    **Symmetry** co nghia la ca hai ben trong giong nhau.
-    Khi chung ta **fold** mot **picture** lam doi, chung ta co the kiem tra **symmetry** cua no.
-    Con buom co **symmetry** - ca hai canh trong giong nhau.
-    Chung ta co the **create** **symmetry** trong nghe thuat bang cach ve, roi **fold** giay lai!
-  `,
+**Symmetry** co nghia la ca hai ben trong giong nhau. De **create** **symmetry**, hay **paint** mot ben, roi **fold** giay lai. **Pigment** in sang ben kia!
+
+Sau do dung **scissors** de **cut** hinh. Them **color**, roi **glue** len mot to giay khac. Tac pham nghe thuat cua ban da san sang!`,
   check_questions: [
     {
       id: 1,
