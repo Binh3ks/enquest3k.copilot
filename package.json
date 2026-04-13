@@ -17,7 +17,8 @@
     "dict:build": "node tools/build_dictionary.mjs",
     "dict:build:week": "node tools/build_dictionary.mjs --week",
     "dict:dry-run": "node tools/build_dictionary.mjs --dry-run",
-    "dict:lint": "node tools/dict_lint.mjs"
+    "dict:lint": "node tools/dict_lint.mjs",
+    "content:lint": "node tools/content_lint.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
