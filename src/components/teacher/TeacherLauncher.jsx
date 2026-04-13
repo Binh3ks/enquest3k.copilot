@@ -8,7 +8,7 @@ const TeacherLauncher = () => {
   const [showPanel, setShowPanel] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const currentUser = useUserStore(state => state.currentUser);
-  const isTeacher = currentUser?.role === 'teacher';
+  const isTeacher = currentUser?.role === 'teacher' || currentUser?.role === 'super_admin';
 
   // Poll for unread messages
   useEffect(() => {
