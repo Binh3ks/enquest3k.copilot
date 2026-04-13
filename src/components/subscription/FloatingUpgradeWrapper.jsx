@@ -1,62 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SubscriptionModal from './SubscriptionModal';
 import { Crown } from 'lucide-react';
-import { getCurrentUserPlan } from '../../services/SubscriptionManager';
-import { useUserStore } from '../../stores/useUserStore';
+import { usePlanAccess } from '../../hooks/usePlanAccess';
 
 const FloatingUpgradeWrapper = () => {
   const [showModal, setShowModal] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const currentUser = useUserStore(state => state.currentUser);
+  const { isPaid, effectivePlan } = usePlanAccess();
 
-  useEffect(() => {
-    const checkVisibility = () => {
-      // 1. Check User Role (Ẩn với student/teacher để tránh phiền)
-      const userRole = currentUser?.role || 'guest';
-
-      if (userRole === 'student' || userRole === 'teacher') {
-        setIsVisible(false);
-        return;
-      }
-
-      // 2. Check System Config (Admin có bật nút này không?)
-      try {
-        const sysConfig = localStorage.getItem('engquest_sys_config');
-        const showUpgradeBtn = sysConfig ? JSON.parse(sysConfig).showUpgradeBtn : false;
-        
-        if (!showUpgradeBtn) {
-          setIsVisible(false);
-          return;
-        }
-      } catch (e) {
-        setIsVisible(false);
-        return;
-      }
-
-      // 3. Check Plan (Đã mua Premium thì thôi)
-      const currentPlan = getCurrentUserPlan();
-      if (currentPlan === 'premium') {
-        setIsVisible(false);
-        return;
-      }
-
-      setIsVisible(true);
-    };
-
-    checkVisibility();
-    window.addEventListener('subscription-update', checkVisibility);
-    window.addEventListener('storage', checkVisibility);
-    // Poll nhẹ để cập nhật config real-time
-    const interval = setInterval(checkVisibility, 2000);
-
-    return () => {
-      window.removeEventListener('subscription-update', checkVisibility);
-      window.removeEventListener('storage', checkVisibility);
-      clearInterval(interval);
-    };
-  }, [currentUser]);
-
-  if (!isVisible) return null;
+  // Hide if already paid or plan is unlimited
+  if (isPaid || effectivePlan === 'unlimited') return null;
 
   return (
     <>
@@ -75,3 +27,4 @@ const FloatingUpgradeWrapper = () => {
 };
 
 export default FloatingUpgradeWrapper;
+
