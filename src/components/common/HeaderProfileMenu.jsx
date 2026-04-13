@@ -59,20 +59,6 @@ const HeaderProfileMenu = ({ user, onLogout, onOpenProfile, onOpenAdmin }) => {
               </div>
               <ChevronRight size={16} className="text-slate-300 group-hover:text-indigo-400" />
             </button>
-            {(user.role === 'admin' || user.role === 'super_admin') && onOpenAdmin && (
-              <button 
-                onClick={() => { setIsOpen(false); onOpenAdmin(); }}
-                className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 text-slate-600 hover:text-indigo-600 transition-all font-medium text-sm group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
-                    <ChevronRight size={18} />
-                  </div>
-                  Admin Panel
-                </div>
-                <ChevronRight size={16} className="text-slate-300 group-hover:text-indigo-400" />
-              </button>
-            )}
             <div className="h-px bg-slate-100 my-1 mx-2"></div>
             <button 
               onClick={() => { setIsOpen(false); onLogout(); }}
