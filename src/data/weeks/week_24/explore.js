@@ -1,40 +1,43 @@
 export default {
   title: "Why Do We Feel Emotions?",
   image_url: "/images/week24/explore_cover_w24.jpg",
-  content_en: "Have you ever wondered **why** you feel **scared**, **excited**, or **tired**? Emotions are signals your **brain** sends to your body. They help you understand what is happening around you and **respond** in the right way.\n\nWhen something **dangerous** appears — like a loud sound at night — your brain sends a signal and you feel **scared**. This is called the **fight-or-flight** response. Your heart beats faster and your body gets ready to move. This kept our **ancestors** safe thousands of years ago.\n\nFeelings like being **excited** or **cheerful** happen when your brain releases a **chemical** called dopamine. This chemical flows when something good happens — like seeing a friend, winning a game, or smelling your favourite food. Being **hungry** or **thirsty** are also signals your brain sends when your body needs **energy** or water.\n\nEmotions like feeling **worried**, **angry**, or **upset** can feel uncomfortable, but they are important too. **Anger** tells you something is unfair. **Worry** helps you prepare for a test. **Calm** people often think more clearly because less stress **chemicals** are in their brains.\n\nScientists who study emotions are called **psychologists**. They have found that children who can name their feelings — like saying \"I was **scared** because...\" or \"I was **relieved** when...\" — handle **difficult** situations better. Learning the words for feelings is a superpower!\n\nSo next time you feel **bored**, **surprised**, or **tired**, remember: your brain is working hard to keep you safe, **healthy**, and happy.",
-  content_vi: "Ban co bao gio tu hoi **tai sao** ban cam thay **scared**, **excited**, hay **tired** khong? **Cam xuc** la tin hieu nao bo gui cho co the ban. Chung giup ban hieu dieu gi dang xay ra va **phan ung** dung cach.\n\nKhi co gi do **nguy hiem** xuat hien - nhu am thanh lon vao dem - nao bo gui tin hieu va ban **scared**. Day goi la phan ung **fight-or-flight**. Tim ban dap nhanh hon va co the san sang chuyen dong. Dieu nay giup **to tien** cua chung ta song sot hang nghin nam truoc.\n\nCam giac **excited** hay **cheerful** xay ra khi nao bo tiet ra mot **hoa chat** goi la dopamine. Hoa chat nay chay khi dieu gi tot xay ra - gap ban, thang tro choi, hay ngoi mui mon an yeu thich. Cam giac **hungry** hay **thirsty** cung la tin hieu nao bo gui khi co the can **nang luong** hoac nuoc.\n\nCam xuc nhu **worried**, **angry**, hay **upset** co the kho chiu, nhung cung rat quan trong. **Gian du** bao ban co gi do bat cong. **Lo lang** giup ban chuan bi cho bai kiem tra. Nguoi **calm** thuong suy nghi ro rang hon vi it **hoa chat** cang thang trong nao bo.\n\nCac nha khoa hoc nghien cuu cam xuc la **nha tam ly hoc**. Ho phat hien rang tre em co the dat ten cam xuc - nhu noi \"Toi **scared** vi...\" hay \"Toi **relieved** khi...\" - xu ly tinh huong **kho khan** tot hon. Hoc tu ngu ve cam xuc la sieu nang luc!\n\nVay lan toi khi ban cam thay **bored**, **surprised**, hay **tired**, hay nho rang: nao bo ban dang lam viec cham chi de giu ban an toan, **khoe manh** va hanh phuc.",
+  content_en: "Every day, we feel many different emotions. But do you know why we feel them?\n\nWhen something scary happens — like hearing a loud noise at night — your heart beats fast and you feel **scared**. Your body is trying to keep you safe!\n\nWhen you see a friend or hear good news, your whole body feels **cheerful** and **excited**. You want to smile and share the feeling!\n\nFeeling **hungry** or **thirsty** are messages from your body. When you are **hungry**, your body says: 'Please give me food!' When you are **thirsty**, it says: 'Please give me water!'\n\nSometimes we feel **worried**, **angry**, or **upset**. These feelings are normal and important. Feeling **worried** helps you prepare. Feeling **angry** tells you something is not fair.\n\nWhen you feel **bored** or **surprised**, your body is asking for something new or different.\n\nAt the end of a long day, you feel **tired**. This is your body saying: 'You worked hard — rest now!'\n\nWhen you **stay calm**, you think clearly. And when you feel **relieved**, your whole body relaxes. Talk about your feelings — it really helps!",
+  content_vi: "Mỗi ngày, chúng ta cảm nhận nhiều cảm xúc khác nhau. Nhưng bạn có biết tại sao chúng ta cảm thấy như vậy không?\n\nKhi điều gì đó đáng sợ xảy ra — như nghe tiếng ồn lớn vào ban đêm — tim bạn đập nhanh và bạn cảm thấy **sợ hãi**. Cơ thể đang cố gắng bảo vệ bạn!\n\nKhi bạn gặp bạn bè hoặc nghe tin vui, cả người bạn cảm thấy **vui vẻ** và **phấn khích**. Bạn muốn cười và chia sẻ cảm xúc!\n\nCảm giác **đói** hoặc **khát** là thông điệp từ cơ thể. Khi **đói**, cơ thể nói: 'Hãy cho tôi thức ăn!' Khi **khát**, nó nói: 'Hãy cho tôi nước!'\n\nĐôi khi chúng ta cảm thấy **lo lắng**, **tức giận**, hoặc **khó chịu**. Những cảm xúc này hoàn toàn bình thường. Cảm giác **lo lắng** giúp bạn chuẩn bị. Cảm giác **tức giận** cho bạn biết có điều gì đó không công bằng.\n\nKhi bạn cảm thấy **chán nản** hay **ngạc nhiên**, cơ thể đang muốn có điều gì mới hoặc khác.\n\nVào cuối một ngày dài, bạn cảm thấy **mệt**. Đó là cơ thể nói: 'Bạn đã làm việc vất vả — hãy nghỉ ngơi!'\n\nKhi bạn **giữ bình tĩnh**, bạn suy nghĩ rõ ràng hơn. Và khi bạn cảm thấy **nhẹ nhõm**, cả người bạn thư giãn. Hãy nói về cảm xúc của bạn — điều đó thực sự giúp ích!",
   audio_url: "/audio/week24/explore_main.mp3",
   check_questions: [
     {
       id: 1,
-      question_en: "What does the brain do when something dangerous appears?",
-      answer: ["It sends a signal and you feel scared", "Sends a fight-or-flight response", "The heart beats faster"],
-      hint_en: "The brain sends a signal called fight-or-flight and you feel...",
-      hint_vi: "Nao bo gui tin hieu fight-or-flight va ban cam thay...",
+      question_en: "What happens to your body when you feel scared?",
+      question_vi: "Điều gì xảy ra với cơ thể khi bạn cảm thấy sợ hãi?",
+      answer: ["Your heart beats fast", "Heart beats faster", "Your heart beats faster"],
+      hint_en: "Your h...",
+      hint_vi: "Tim bạn...",
       audio_url: "/audio/week24/explore_q1.mp3"
     },
     {
       id: 2,
-      question_en: "What chemical does the brain release when something good happens?",
-      answer: ["Dopamine", "A chemical called dopamine"],
-      hint_en: "Scientists call this chemical...",
-      hint_vi: "Cac nha khoa hoc goi hoa chat nay la...",
+      question_en: "What does feeling hungry or thirsty tell you?",
+      question_vi: "Cảm giác đói hoặc khát nói lên điều gì?",
+      answer: ["Your body needs food or water", "To eat or drink something", "The body needs food or water"],
+      hint_en: "Your body needs...",
+      hint_vi: "Cơ thể của bạn cần...",
       audio_url: "/audio/week24/explore_q2.mp3"
     },
     {
       id: 3,
-      question_en: "What do scientists call people who study emotions?",
-      answer: ["Psychologists", "They are called psychologists"],
-      hint_en: "Scientists who study emotions are called...",
-      hint_vi: "Cac nha khoa hoc nghien cuu cam xuc la...",
+      question_en: "How does staying calm help you?",
+      question_vi: "Việc giữ bình tĩnh giúp ích gì cho bạn?",
+      answer: ["You can think clearly", "Think more clearly", "You think clearly"],
+      hint_en: "You can think...",
+      hint_vi: "Bạn có thể suy nghĩ...",
       audio_url: "/audio/week24/explore_q3.mp3"
     }
   ],
   question: {
-    text_en: "Think about a time when you felt two different emotions on the same day — like scared in the morning but relieved by evening. Using was/were + adjective, describe your emotional journey and explain what caused each feeling.",
-    text_vi: "Hay nghi ve mot ngay ban cam thay hai cam xuc khac nhau — vi du scared vao buoi sang nhung relieved vao buoi toi. Dung was/were + tinh tu, mo ta hanh trinh cam xuc cua ban va giai thich nguyen nhan cua moi cam xuc.",
+    text_en: "Think about your day yesterday. Did you feel excited, scared, worried, or relieved at any moment? Use 'I was [feeling] because...' or 'I was [feeling] when...' to describe THREE different emotions from your day.",
+    text_vi: "Hãy nghĩ về ngày hôm qua của bạn. Bạn có cảm thấy excited, scared, worried hay relieved lúc nào không? Dùng 'I was [cảm xúc] because...' hoặc 'I was [cảm xúc] when...' để mô tả BA cảm xúc khác nhau trong ngày của bạn.",
     min_words: 30,
     hint_en: "In the morning I was... because... But later I was... when... By the end of the day I was...",
-    hint_vi: "Buoi sang toi da... vi... Nhung sau do toi... khi... Den cuoi ngay toi..."
+    hint_vi: "Buổi sáng tôi cảm thấy... vì... Nhưng sau đó tôi... khi... Đến cuối ngày tôi..."
   }
 };
