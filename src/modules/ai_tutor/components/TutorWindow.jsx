@@ -38,16 +38,7 @@ const TutorWindow = () => {
   return (
     <div className="flex-1 h-screen flex flex-col bg-white overflow-hidden border-l border-gray-200 shadow-2xl z-10">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-3 text-white relative">
-        {/* Close Button - Top Right */}
-        <button
-          onClick={() => useTutorStore.getState().setWidgetOpen(false)}
-          className="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all"
-          aria-label="Close AI Tutor"
-        >
-          <X size={14} className="text-white" />
-        </button>
-        
+      <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-3 text-white">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-lg">
@@ -58,7 +49,16 @@ const TutorWindow = () => {
               <p className="text-xs text-white/80">Your AI English Coach</p>
             </div>
           </div>
-        </div>{/* end justify-between */}
+          {/* Close Button - clearly visible */}
+          <button
+            onClick={() => useTutorStore.getState().setWidgetOpen(false)}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/20 hover:bg-white/40 border border-white/30 transition-all text-white text-xs font-semibold"
+            aria-label="Close AI Tutor"
+          >
+            <X size={14} />
+            <span>Đóng</span>
+          </button>
+        </div>
 
         {/* Tab Navigation */}
         <div className="flex gap-2 mt-3 overflow-x-auto scrollbar-hide">
