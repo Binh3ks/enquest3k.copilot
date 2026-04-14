@@ -15,15 +15,10 @@ import TutorWindow from './components/TutorWindow';
  * - Resizable window (normal/large modes)
  */
 const AITutorWidget = () => {
-  const { isWidgetOpen } = useTutorStore();
-
   return (
     <>
-      {/* Floating Button - Always Visible */}
+      {/* Floating Button - Always Visible (TutorWindow rendered inside MainLayout) */}
       <FloatingButton />
-      
-      {/* Tutor Window - Visible When Open */}
-      {isWidgetOpen && <TutorWindow />}
     </>
   );
 };

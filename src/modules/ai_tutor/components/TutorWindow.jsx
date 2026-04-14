@@ -33,15 +33,10 @@ const TutorWindow = () => {
     setWidgetSize(widgetSize === 'normal' || widgetSize === 'medium' ? 'large' : 'normal');
   };
 
-  // 🔥 Full right-side screen layout — left-72 matches the sidebar width (w-72 = 288px)
-  const windowClasses = 'left-72 right-0 top-0 h-[100vh] text-xl fixed';
+  // 🔥 Inline flex layout — no fixed positioning needed (rendered inside MainLayout flex)
 
   return (
-    <div className={`
-      z-40 transition-all duration-300 shadow-2xl
-      bg-white overflow-hidden border-l border-gray-200
-      ${windowClasses}
-    `}>
+    <div className="flex-1 h-screen flex flex-col bg-white overflow-hidden border-l border-gray-200 shadow-2xl z-10">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-3 text-white relative">
         {/* Close Button - Top Right */}
@@ -98,7 +93,7 @@ const TutorWindow = () => {
       </div>
 
       {/* Content Area */}
-      <div className="h-[calc(100%-110px)] overflow-hidden">
+      <div className="flex-1 overflow-hidden">
         {activeTab === 'story' && <StoryMissionTab />}
         {activeTab === 'freetalk' && <FreeTalkTab />}
         {activeTab === 'pronunciation' && <PronunciationTab />}
