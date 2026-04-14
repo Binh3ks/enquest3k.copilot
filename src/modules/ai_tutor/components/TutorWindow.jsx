@@ -33,8 +33,8 @@ const TutorWindow = () => {
     setWidgetSize(widgetSize === 'normal' || widgetSize === 'medium' ? 'large' : 'normal');
   };
 
-  // 🔥 Full right-side screen layout
-  const windowClasses = 'w-[calc(100vw-320px)] h-[100vh] right-0 top-0 text-xl fixed';
+  // 🔥 Full right-side screen layout — left-72 matches the sidebar width (w-72 = 288px)
+  const windowClasses = 'left-72 right-0 top-0 h-[100vh] text-xl fixed';
 
   return (
     <div className={`
