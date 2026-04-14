@@ -39,7 +39,7 @@ const TutorWindow = () => {
   return (
     <div className={`
       z-40 transition-all duration-300 shadow-2xl
-      bg-white rounded-2xl overflow-hidden border border-gray-200
+      bg-white overflow-hidden border-l border-gray-200
       ${windowClasses}
     `}>
       {/* Header */}
