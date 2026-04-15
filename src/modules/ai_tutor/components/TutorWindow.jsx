@@ -39,29 +39,8 @@ const TutorWindow = () => {
     <div className="flex-1 h-screen flex flex-col bg-white overflow-hidden border-l border-gray-200 shadow-2xl z-10">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-3 text-white">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-lg">
-              ✨
-            </div>
-            <div>
-              <h3 className="font-bold text-base">Ms. Nova</h3>
-              <p className="text-xs text-white/80">Your AI English Coach</p>
-            </div>
-          </div>
-          {/* Close Button - solid white, clearly visible on any gradient */}
-          <button
-            onClick={() => useTutorStore.getState().setWidgetOpen(false)}
-            className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-purple-600 hover:bg-purple-50 text-xs font-bold shadow-sm transition-all"
-            aria-label="Close AI Tutor"
-          >
-            <X size={14} />
-            <span>Đóng</span>
-          </button>
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="flex gap-2 mt-3 overflow-x-auto scrollbar-hide">
+        {/* Tab Navigation + Close button in same row */}
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide items-center">
           {tabs.map(tab => {
             const Icon = tab.icon;
             const isLocked = tab.locked;
@@ -74,7 +53,7 @@ const TutorWindow = () => {
                 disabled={isLocked}
                 className={`
                   flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold text-xs
-                  whitespace-nowrap transition-all duration-200 relative
+                  whitespace-nowrap transition-all duration-200 relative flex-shrink-0
                   ${isLocked
                     ? 'bg-white/10 text-white/50 cursor-not-allowed'
                     : isActive
@@ -89,6 +68,15 @@ const TutorWindow = () => {
               </button>
             );
           })}
+          {/* Close button — always at end of tab row */}
+          <button
+            onClick={() => useTutorStore.getState().setWidgetOpen(false)}
+            className="ml-auto flex-shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-purple-600 hover:bg-purple-50 text-xs font-bold shadow-sm transition-all"
+            aria-label="Close AI Tutor"
+          >
+            <X size={14} />
+            <span>Đóng</span>
+          </button>
         </div>
       </div>
 
