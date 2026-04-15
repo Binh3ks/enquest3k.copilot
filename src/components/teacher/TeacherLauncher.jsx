@@ -10,6 +10,12 @@ const TeacherLauncher = () => {
   const currentUser = useUserStore(state => state.currentUser);
   const isTeacher = currentUser?.role === 'teacher' || currentUser?.role === 'super_admin';
 
+  useEffect(() => {
+    const handler = () => setShowPanel(true);
+    window.addEventListener('open-teacher-panel', handler);
+    return () => window.removeEventListener('open-teacher-panel', handler);
+  }, []);
+
   // Poll for unread messages
   useEffect(() => {
     if (!isTeacher) return;
