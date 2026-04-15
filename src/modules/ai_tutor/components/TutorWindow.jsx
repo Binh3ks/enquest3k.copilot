@@ -53,7 +53,7 @@ const TutorWindow = () => {
             aria-label="Close AI Tutor"
           >
             <X size={14} />
-            <span>Đóng</span>
+            <span>Close</span>
           </button>
         </div>
 
