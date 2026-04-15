@@ -16,3 +16,10 @@ CREATE INDEX IF NOT EXISTS idx_session_notes_teacher_student
 
 CREATE INDEX IF NOT EXISTS idx_session_notes_student
   ON teacher_session_notes(student_id, created_at DESC);
+
+-- Grant API user access
+DO $$ BEGIN
+  GRANT SELECT, INSERT, DELETE ON teacher_session_notes TO engquest_user;
+  GRANT USAGE, SELECT ON SEQUENCE teacher_session_notes_id_seq TO engquest_user;
+EXCEPTION WHEN undefined_object THEN NULL;
+END $$;
