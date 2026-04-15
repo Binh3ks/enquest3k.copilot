@@ -4,11 +4,13 @@ import { Users, Mail } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import { teacherAPI } from '../../services/api';
 
+const STAFF_ROLES = ['teacher', 'admin', 'super_admin', 'team_leader', 'center_director'];
+
 const TeacherLauncher = () => {
   const [showPanel, setShowPanel] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const currentUser = useUserStore(state => state.currentUser);
-  const isTeacher = currentUser?.role === 'teacher' || currentUser?.role === 'super_admin';
+  const isTeacher = STAFF_ROLES.includes(currentUser?.role);
 
   useEffect(() => {
     const handler = () => setShowPanel(true);
