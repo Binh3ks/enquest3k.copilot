@@ -49,10 +49,10 @@ const TutorWindow = () => {
               <p className="text-xs text-white/80">Your AI English Coach</p>
             </div>
           </div>
-          {/* Close Button - clearly visible */}
+          {/* Close Button - solid white, clearly visible on any gradient */}
           <button
             onClick={() => useTutorStore.getState().setWidgetOpen(false)}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white/20 hover:bg-white/40 border border-white/30 transition-all text-white text-xs font-semibold"
+            className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-purple-600 hover:bg-purple-50 text-xs font-bold shadow-sm transition-all"
             aria-label="Close AI Tutor"
           >
             <X size={14} />
