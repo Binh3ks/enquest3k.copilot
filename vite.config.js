@@ -15,6 +15,10 @@ function copyDataDir() {
       if (existsSync(resolve('public/sw.js'))) {
         copyFileSync(resolve('public/sw.js'), resolve('dist/sw.js'));
       }
+      // Copy Cloudflare Pages _redirects (SPA fallback + R2 proxy rules)
+      if (existsSync(resolve('public/_redirects'))) {
+        copyFileSync(resolve('public/_redirects'), resolve('dist/_redirects'));
+      }
     }
   };
 }
