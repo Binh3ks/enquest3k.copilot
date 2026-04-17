@@ -18,8 +18,8 @@ router.get('/vapid-public-key', (req, res) => {
   res.json({ publicKey: VAPID_PUBLIC });
 });
 
-// POST /api/push/subscribe — authenticated admin; stores push subscription
-router.post('/subscribe', [authMiddleware, adminOnly], async (req, res) => {
+// POST /api/push/subscribe — authenticated user (admin or parent); stores push subscription
+router.post('/subscribe', authMiddleware, async (req, res) => {
   try {
     const { subscription } = req.body;
     if (!subscription?.endpoint) return res.status(400).json({ message: 'Invalid subscription object' });

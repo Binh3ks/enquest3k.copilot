@@ -38,4 +38,38 @@ async function sendPushToAdmins(payload) {
   }
 }
 
-module.exports = { sendPushToAdmins, VAPID_PUBLIC };
+/**
+ * Send push notification to the parent of a given student.
+ * Silently no-ops if the parent has no push subscription.
+ */
+async function sendPushToParent(studentUserId, payload) {
+  try {
+    const parentResult = await db.query(
+      `SELECT ps.subscription_json, ps.endpoint
+       FROM push_subscriptions ps
+       JOIN users parent ON parent.username = ps.username
+       WHERE parent.id = (
+         SELECT parent_id FROM users WHERE id = $1
+       )`,
+      [studentUserId]
+    );
+    if (parentResult.rowCount === 0) return;
+    const pushPayload = JSON.stringify(payload);
+    for (const row of parentResult.rows) {
+      try {
+        const sub = JSON.parse(row.subscription_json);
+        await webpush.sendNotification(sub, pushPayload);
+      } catch (e) {
+        if (e.statusCode === 410 || e.statusCode === 404) {
+          await db.query('DELETE FROM push_subscriptions WHERE endpoint = $1', [row.endpoint]);
+        } else {
+          console.error('[Push] sendPushToParent error:', e.message);
+        }
+      }
+    }
+  } catch (err) {
+    console.error('[Push] sendPushToParent query error:', err.message);
+  }
+}
+
+module.exports = { sendPushToAdmins, sendPushToParent, VAPID_PUBLIC };
