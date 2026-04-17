@@ -22,3 +22,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 TTSPreload.initialize().catch(err => {
   console.warn('[Main] TTS preload failed:', err);
 });
+
+// Register service worker for Web Push notifications
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' })
+    .then(reg => console.log('[SW] Registered, scope:', reg.scope))
+    .catch(err => console.warn('[SW] Registration failed:', err));
+}
