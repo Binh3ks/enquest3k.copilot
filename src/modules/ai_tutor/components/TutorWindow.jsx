@@ -23,8 +23,8 @@ const TutorWindow = () => {
   const isDebateUnlocked = weekNumber >= 40;
 
   const tabs = [
-    { id: 'story', label: 'Story', icon: BookOpen },
-    { id: 'freetalk', label: 'Chat', icon: MessageCircle },
+    { id: 'story', label: 'Story Mission', icon: BookOpen },
+    { id: 'freetalk', label: 'Free Talk', icon: MessageCircle },
     { id: 'pronunciation', label: 'Pronunciation', icon: Mic },
     { id: 'debate', label: 'Debate', icon: MessageSquare, locked: !isDebateUnlocked, requireWeek: 40 }
   ];
