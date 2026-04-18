@@ -58,7 +58,7 @@ export const quizGameSchema = {
     },
     intro_text: { 
       type: "string", 
-      description: "Short intro from Ms. Nova (max 2 sentences, English)"
+      description: "Short intro from Nova (max 2 sentences, English)"
     },
     rounds: {
       type: "array",

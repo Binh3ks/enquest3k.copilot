@@ -18,7 +18,7 @@ const useTTSStore = create(
       voices: [
         { 
           id: 'aura-asteria-en', 
-          name: 'Ms. Nova (Warm)', 
+          name: 'Nova (Warm)', 
           type: 'female',
           description: 'Warm & friendly female voice'
         },
