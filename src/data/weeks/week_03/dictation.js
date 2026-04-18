@@ -1,6 +1,6 @@
 export default {
   sentences: [
-    { id: 1, text: "My teacher is Ms. Nova.", meaning: "Giáo viên của tôi là cô Nova." },
+    { id: 1, text: "My teacher is Nova.", meaning: "Giáo viên của tôi là cô Nova." },
     { id: 2, text: "She is very tall and beautiful with a lovely personality.", meaning: "Cô ấy rất cao và xinh đẹp với tính cách dễ thương." },
     { id: 3, text: "She has long black hair that is always neat and tidy.", meaning: "Cô ấy có mái tóc đen dài luôn gọn gàng và ngăn nắp." },
     { id: 4, text: "She has big brown eyes that sparkle brightly when she smiles.", meaning: "Cô ấy có đôi mắt to màu nâu lấp lánh khi cô cười." },

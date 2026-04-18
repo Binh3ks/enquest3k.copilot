@@ -12,7 +12,7 @@ export default {
     },
     {
       id: 2,
-      context_en: "A seed is so small, but it grows into a big plant. You are curious how this happens. Ask Ms. Nova.",
+      context_en: "A seed is so small, but it grows into a big plant. You are curious how this happens. Ask Nova.",
       context_vi: "Một hạt giống nhỏ xíu nhưng lại mọc thành cây lớn. Bạn tò mò điều này xảy ra như thế nào. Hỏi cô Nova.",
       answer: ["How does a tiny seed grow into a big plant?", "How does a seed become a plant?", "Why does a seed grow into a plant?"],
       hint: "How does a tiny seed grow into a big plant?",
@@ -20,7 +20,7 @@ export default {
     },
     {
       id: 3,
-      context_en: "You learned about photosynthesis in class but you don't fully understand it. Ask Ms. Nova to explain it simply.",
+      context_en: "You learned about photosynthesis in class but you don't fully understand it. Ask Nova to explain it simply.",
       context_vi: "Bạn học về quang hợp trong lớp nhưng chưa hiểu rõ. Hỏi cô Nova giải thích đơn giản.",
       answer: ["What is photosynthesis?", "Can you explain photosynthesis in simple words?", "How does photosynthesis work?"],
       hint: "What is photosynthesis?",
@@ -28,7 +28,7 @@ export default {
     },
     {
       id: 4,
-      context_en: "You want to grow a plant at home but don't know where to start. Ask Ms. Nova for advice.",
+      context_en: "You want to grow a plant at home but don't know where to start. Ask Nova for advice.",
       context_vi: "Bạn muốn trồng cây ở nhà nhưng không biết bắt đầu từ đâu. Hỏi cô Nova lời khuyên.",
       answer: ["How can I grow a plant at home?", "What do I need to grow a plant at home?", "Where should I start if I want to grow a plant?"],
       hint: "How can I grow a plant at home?",
@@ -36,7 +36,7 @@ export default {
     },
     {
       id: 5,
-      context_en: "You notice plants in sunny spots grow faster than plants in dark corners. Ask Ms. Nova why.",
+      context_en: "You notice plants in sunny spots grow faster than plants in dark corners. Ask Nova why.",
       context_vi: "Bạn nhận thấy cây ở nơi nhiều nắng mọc nhanh hơn cây ở góc tối. Hỏi cô Nova tại sao.",
       answer: ["Why do plants grow faster in sunny places?", "Why do plants need sunlight to grow fast?", "Do plants grow faster with more sunlight?"],
       hint: "Why do plants grow faster in sunny places?",

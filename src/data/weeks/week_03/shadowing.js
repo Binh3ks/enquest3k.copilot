@@ -1,5 +1,5 @@
 export default {
-  title: "My Teacher Ms. Nova",
+  title: "My Teacher Nova",
   audio_full: "/audio/week3/shadowing_full_w3.mp3",
   script: [
     { id: 1, text: "My teacher is Ms.", vi: "...", audio_url: "/audio/week3/shadowing_1.mp3" },
