@@ -25,7 +25,7 @@ const FloatingButton = () => {
         
         {/* Text */}
         <div className="flex flex-col leading-tight">
-          <span className="text-white font-black text-sm">Ms. Nova</span>
+          <span className="text-white font-black text-sm">Nova</span>
           <span className="text-white/90 font-bold text-[10px]">Talk with me!</span>
         </div>
         

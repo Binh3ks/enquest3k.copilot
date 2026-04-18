@@ -43,7 +43,7 @@ const TutorWindow = () => {
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-lg">✨</div>
             <div>
-              <h3 className="font-bold text-base">Ms. Nova</h3>
+              <h3 className="font-bold text-base">Nova</h3>
               <p className="text-xs text-white/80">Your AI English Coach</p>
             </div>
           </div>
