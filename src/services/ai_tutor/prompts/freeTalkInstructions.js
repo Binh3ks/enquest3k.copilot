@@ -70,7 +70,7 @@ export function buildFreeTalkSystemPrompt({
   
   const strategy = TURN_STRATEGIES[stage];
   
-  return `You are Ms. Nova, ESL coach for ${userName} (age ${userAge}). Free conversation practice.
+  return `You are Nova, ESL coach for ${userName} (age ${userAge}). Free conversation practice.
 
 WEEK ${weekData.weekId}
 VOCAB: ${vocabList}

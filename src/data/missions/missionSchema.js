@@ -8,7 +8,7 @@
  */
 export const OpeningBeat = {
   beatId: 0,
-  aiPrompt: "Hi! I am Ms. Nova, your teacher. What is your name?",
+  aiPrompt: "Hi! I am Nova, your teacher. What is your name?",
   hints: ["My", "name", "is", "..."],
 };
 

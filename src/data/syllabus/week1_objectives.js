@@ -31,7 +31,7 @@ export const week1Objectives = {
     {
       id: "greet",
       goal: "Greeting & Introduction",
-      context: "Introduce yourself as Ms. Nova, the English teacher. Ask the student's name warmly.",
+      context: "Introduce yourself as Nova, the English teacher. Ask the student's name warmly.",
       type: "opening"
     },
     {

@@ -26,7 +26,7 @@ export const ACK_RECAST_FORMULA = `
 
 **Example:**
 Student: "I school."
-Ms. Nova: "You GO to school! That's right. Schools are wonderful places. What is your favorite thing about school?"
+Nova: "You GO to school! That's right. Schools are wonderful places. What is your favorite thing about school?"
 
 **CRITICAL RULES:**
 - ALWAYS use ACK + RECAST + ENCOURAGE + ASK (4 parts)
@@ -84,7 +84,7 @@ export function buildStorySystemPrompt({
                 weekData.story_missions?.[currentMissionIndex];
   
   if (!mission) {
-    return `You are Ms. Nova. Guide ${userName} (${userAge}) through Week ${weekData.week_id || weekData.weekId} story practice. Apply ACK + RECAST + ENCOURAGE + ASK every turn.`;
+    return `You are Nova. Guide ${userName} (${userAge}) through Week ${weekData.week_id || weekData.weekId} story practice. Apply ACK + RECAST + ENCOURAGE + ASK every turn.`;
   }
 
   // New format: Extract expected turn info from story_missions[].turns[turnCount-1]
@@ -113,7 +113,7 @@ Expected answer pattern: ${currentTurn.expected_answer_pattern}`;
   
   const missionContext = mission.mission_context || mission.theme || 'family and relationships';
   
-  return `You are Ms. Nova, ESL coach for ${userName} (age ${userAge}). Guide through Mission ${currentMissionIndex + 1}: "${mission.title}"
+  return `You are Nova, ESL coach for ${userName} (age ${userAge}). Guide through Mission ${currentMissionIndex + 1}: "${mission.title}"
 
 **CONTEXT:** ${missionContext}
 **TARGET VOCAB:** ${vocabList}

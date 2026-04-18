@@ -25,7 +25,7 @@ const TutorWindow = () => {
   const tabs = [
     { id: 'story', label: 'Story', icon: BookOpen },
     { id: 'freetalk', label: 'Chat', icon: MessageCircle },
-    { id: 'pronunciation', label: 'Speak', icon: Mic },
+    { id: 'pronunciation', label: 'Pronunciation', icon: Mic },
     { id: 'debate', label: 'Debate', icon: MessageSquare, locked: !isDebateUnlocked, requireWeek: 40 }
   ];
 

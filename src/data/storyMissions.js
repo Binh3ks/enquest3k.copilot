@@ -10,7 +10,7 @@ export const Week1Missions = [
     weekId: 1,
     context: {
       scene:
-        "You are at school on your first day. Ms. Nova is your new teacher and she wants to know about you.",
+        "You are at school on your first day. Nova is your new teacher and she wants to know about you.",
     },
     targetVocabulary: [
       { word: "student", mustUse: true, definition: "a person who studies" },
@@ -23,7 +23,7 @@ export const Week1Missions = [
       mustUseWords: ["student", "teacher", "school", "name"],
     },
     openingBeat: {
-      aiPrompt: "Hi! I am Ms. Nova, your teacher. What is your name?",
+      aiPrompt: "Hi! I am Nova, your teacher. What is your name?",
       hints: ["My", "name", "is", "Minh"],
     },
     missionGoals: [
@@ -46,7 +46,7 @@ export const Week1Missions = [
     weekId: 1,
     context: {
       scene:
-        "You are at school and you cannot find your backpack! Ms. Nova is your teacher and wants to help you.",
+        "You are at school and you cannot find your backpack! Nova is your teacher and wants to help you.",
     },
     targetVocabulary: [
       { word: "backpack", mustUse: true, definition: "bag for school" },
@@ -89,7 +89,7 @@ export const Week1Missions = [
     weekId: 1,
     context: {
       scene:
-        "You are in the school library with Ms. Nova. There are many books around you.",
+        "You are in the school library with Nova. There are many books around you.",
     },
     targetVocabulary: [
       { word: "library", mustUse: true, definition: "place with many books" },
