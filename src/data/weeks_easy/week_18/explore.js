@@ -1,7 +1,7 @@
 export default {
   title_en: "How Does News Travel?",
   title_vi: "Tin Tức Di Chuyển Như Thế Nào?",
-  image_url: "/images/week18_easy/explore_cover_w18.jpg",
+  image_url: "/images/week18/explore_cover_w18.jpg",
   audio_url: "/audio/week18_easy/explore_main.mp3",
   content_en: `Have you ever watched the **news** on TV? A **reporter** stands in front of a **camera** and speaks into a **microphone**. They **describe** the **scene** and tell us what is **happening**.
 

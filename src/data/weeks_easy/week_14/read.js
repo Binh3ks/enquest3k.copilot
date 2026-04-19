@@ -1,6 +1,6 @@
 export default {
   title: "My Presentation Day",
-  image_url: "/images/week14_easy/read_cover_w14.jpg",
+  image_url: "/images/week14/read_cover_w14.jpg",
   audio_url: "/audio/week14_easy/read_explore_main.mp3",
   content_en: "Welcome to my presentation! My **name** is Emma. I am 8 years old. Today I **present** my poster. I want to **show** you my world. This is my **family**. I love my family. I have 4 people in my family. My mom, my dad, my sister, and me. Now I **tell** you about my talents. I **can** **sing** very well. I can also dance. I am good at **draw**ing too. I **draw** animals and flowers. I feel very **confident** today. The audience listens to me. I am **proud** of my work. Thank you for listening! Do you have questions? This is my special day!",
   content_vi: "Chào mừng đến với bài thuyết trình của tôi! Tên tôi là Emma. Tôi 8 tuổi. Hôm nay tôi trình bày poster của tôi. Tôi muốn cho bạn xem thế giới của tôi. Đây là gia đình tôi. Tôi yêu gia đình tôi. Tôi có 4 người trong gia đình. Mẹ tôi, bố tôi, chị gái tôi và tôi. Bây giờ tôi kể cho bạn về tài năng của tôi. Tôi có thể hát rất hay. Tôi cũng có thể nhảy. Tôi giỏi vẽ nữa. Tôi vẽ động vật và hoa. Tôi cảm thấy rất tự tin hôm nay. Khán giả lắng nghe tôi. Tôi tự hào về công việc của mình. Cảm ơn bạn đã lắng nghe! Bạn có câu hỏi không? Đây là ngày đặc biệt của tôi!",
