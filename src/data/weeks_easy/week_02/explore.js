@@ -1,7 +1,7 @@
 export default {
   title_en: "Families Are Teams",
   title_vi: "Gia đình là đội",
-  image_url: "/images/week2_easy/explore_cover_w02.jpg",
+  image_url: "/images/week2/explore_cover_w02.jpg",
   audio_url: "/audio/week2_easy/explore_main.mp3",
   content_en: "**Families** are everywhere. A **family** is a **team**. The **mother** and **father** take care of kids. **Brothers** and **sisters** play together. They **help** each other. Every family **loves** each other. At **home**, families are happy. Families work together like a team.",
   content_vi: "**Gia đình** ở khắp nơi. **Gia đình** là một **đội**. **Mẹ** và **bố** chăm sóc con. **Anh chị em** chơi cùng nhau. Họ **giúp** nhau. Mỗi gia đình **yêu thương** nhau. Ở **nhà**, gia đình hạnh phúc. Gia đình làm việc cùng nhau như một đội.",

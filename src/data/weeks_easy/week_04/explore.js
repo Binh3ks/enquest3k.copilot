@@ -1,7 +1,7 @@
 export default {
   title_en: "Why We Smile",
   title_vi: "Tại sao chúng ta cười",
-  image_url: "/images/week4_easy/explore_cover_w04.jpg",
+  image_url: "/images/week4/explore_cover_w04.jpg",
   audio_url: "/audio/week4_easy/explore_main.mp3",
   content_en: "Do you **like** to **smile**? **Smiling** is good for you! When you **smile**, you feel **happy**. Your **face** looks nice. Other people **smile** too! **Smiling** is **fun**. It makes everyone feel good. So **smile** every day!",
   content_vi: "Bạn có thích cười không? Cười tốt cho bạn! Khi bạn cười, bạn cảm thấy hạnh phúc. Khuôn mặt của bạn trông đẹp. Người khác cũng cười! Cười thật vui. Nó làm cho mọi người cảm thấy tốt. Vì vậy hãy cười mỗi ngày!",

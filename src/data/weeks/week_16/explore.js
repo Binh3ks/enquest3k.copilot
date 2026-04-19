@@ -1,7 +1,7 @@
 export default {
   title_en: "The Science of Sports",
   title_vi: "Khoa học về Thể thao",
-  image_url: "/images/week16/explore_cover_w016.jpg",
+  image_url: "/images/week16/explore_cover_w16.jpg",
   audio_url: "/audio/week16/explore_main.mp3",
   
   content_en: `

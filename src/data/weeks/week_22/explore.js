@@ -1,7 +1,7 @@
 export default {
   title_en: "How Real Detectives Solve Cases",
   title_vi: "Cách Thám Tử Thực Sự Giải Quyết Vụ Án",
-  image_url: "/images/week22/explore_cover_w22_v2.jpg",
+  image_url: "/images/week22/explore_cover_w22.jpg",
   audio_url: "/audio/week22/explore_main.mp3",
   content_en: `
     How do real **detectives** solve a **case**? They do not use luck — they work carefully, step by step.
