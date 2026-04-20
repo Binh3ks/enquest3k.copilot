@@ -1,74 +1,79 @@
 export default {
-  title: "Logic & Science: Travel Questions",
+  title: "Logic & Science: Transport and Travel",
   image_url: "/images/week29/logic_cover_w29.jpg",
-  audio_url: "/audio/week29_easy/logic_main.mp3",
-  intro_en: "Use what you know about the story and travel to answer these questions.",
-  intro_vi: "Dùng những gì bạn biết về câu chuyện và du lịch để trả lời các câu hỏi sau.",
+  audio_url: "/audio/week29/logic_main.mp3",
+  intro_en: "Use logic and science to answer questions about the story and travel topics.",
+  intro_vi: "Dùng logic và khoa học để trả lời các câu hỏi về câu chuyện và chủ đề du lịch.",
   questions: [
     {
       id: 1,
       type: "logic",
-      question_en: "Which sentence is correct?",
+      question_en: "A family must travel from Hanoi to Ho Chi Minh City (1,726 km). Options: plane (2 hours), train (30 hours), car (24 hours). The trip must be completed in under 5 hours. Which transport must they choose?",
       options: [
-        "We goed to the airport.",
-        "We went to the airport.",
-        "We go to the airport yesterday.",
-        "We goes to the airport."
+        "Train — it is the most comfortable",
+        "Car — it gives the most freedom",
+        "Plane — it is the only option that takes less than 5 hours",
+        "Any of the three — they all finish within 5 hours"
       ],
-      correct: "We went to the airport.",
-      explanation_en: "The past form of 'go' is 'went'. We do NOT say 'goed'. Correct: We went to the airport.",
-      audio_url: "/audio/week29_easy/logic_q1.mp3"
+      correct: "Plane — it is the only option that takes less than 5 hours",
+      explanation_en: "The only condition is: under 5 hours. Plane takes 2 hours ✓, train takes 30 hours ✗, car takes 24 hours ✗. Logic: apply the constraint first, then eliminate wrong options.",
+      audio_url: "/audio/week29/logic_q1.mp3"
     },
     {
       id: 2,
       type: "science",
-      question_en: "What gives a plane the power to move fast enough to fly?",
+      question_en: "A plane can fly because of its wings and engines. What force pushes a plane UP into the sky?",
       options: [
-        "The wheels",
-        "The engines (jet engines)",
-        "The windows",
-        "The seats"
+        "Gravity — it pulls the plane towards the ground",
+        "Lift — the wings create higher pressure below than above",
+        "Thrust — the engines push the plane forward",
+        "Drag — the air slows the plane down"
       ],
-      correct: "The engines (jet engines)",
-      explanation_en: "Planes have powerful jet engines that push them forward very fast. When the plane goes fast enough, the wings create lift and push it up into the sky!",
-      audio_url: "/audio/week29_easy/logic_q2.mp3"
+      correct: "Lift — the wings create higher pressure below than above",
+      explanation_en: "The shape of an aeroplane's wings is curved on top and flat below. As the plane moves forward, air moves faster over the top, creating low pressure. The higher pressure below pushes the plane UP. This upward force is called LIFT!",
+      audio_url: "/audio/week29/logic_q2.mp3"
     },
     {
       id: 3,
       type: "logic",
-      question_en: "Put in order: A) Board the plane  B) Buy a ticket  C) Arrive at destination  D) Check in luggage",
+      question_en: "Put these journey events in the correct order: A) Arrival in Da Nang  B) Buying tickets  C) Boarding the plane  D) Going through security",
       options: [
-        "B → D → A → C",
+        "B → D → C → A",
         "A → B → C → D",
-        "C → D → A → B",
-        "D → A → B → C"
+        "C → D → B → A",
+        "B → C → D → A"
       ],
-      correct: "B → D → A → C",
-      explanation_en: "First you buy a ticket (B). Then you check in your luggage (D). Next you board the plane (A). Finally you arrive at your destination (C).",
-      audio_url: "/audio/week29_easy/logic_q3.mp3"
+      correct: "B → D → C → A",
+      explanation_en: "First you buy tickets (B). Then you go through airport security (D). Next you board the plane (C). Finally you arrive at your destination (A). This is the correct order for air travel.",
+      audio_url: "/audio/week29/logic_q3.mp3"
     },
     {
       id: 4,
-      type: "logic",
-      question_en: "Which one is the Past Simple of 'fly'?",
-      options: ["flyed", "flown", "flew", "flies"],
-      correct: "flew",
-      explanation_en: "The past form of 'fly' is 'flew'. We say: The plane flew into the sky. NEVER 'flyed'!",
-      audio_url: "/audio/week29_easy/logic_q4.mp3"
+      type: "science",
+      question_en: "When a plane accelerates down the runway before taking off, passengers feel pushed back into their seats. What force causes this feeling?",
+      options: [
+        "Gravity — pulling passengers downwards",
+        "Inertia — the passenger's body resists the sudden forward acceleration",
+        "Lift — the wings pushing the plane upwards",
+        "Drag — air resistance slowing the plane"
+      ],
+      correct: "Inertia — the passenger's body resists the sudden forward acceleration",
+      explanation_en: "Inertia is the tendency of a body to resist changes in motion. When the plane suddenly accelerates forward, your body wants to stay where it is — so you feel pushed back into your seat. This is Newton's First Law of Motion in action.",
+      audio_url: "/audio/week29/logic_q4.mp3"
     },
     {
       id: 5,
       type: "science",
-      question_en: "At a very high altitude, the plane is above the clouds. What do clouds feel like if you touch them?",
+      question_en: "Long train journeys are considered more eco-friendly than flying. What is the main reason?",
       options: [
-        "Hard and cold like ice",
-        "Soft and fluffy like cotton",
-        "Wet — like tiny water droplets in the air",
-        "Dry and warm like sand"
+        "Trains are always faster than planes",
+        "Trains travel on the ground and use far less fuel per passenger than planes that must fight gravity to stay airborne",
+        "Planes use more fuel only because they are bigger than trains",
+        "Trains do not use any fuel at all"
       ],
-      correct: "Wet — like tiny water droplets in the air",
-      explanation_en: "Clouds look fluffy and white, but they are actually made of millions of tiny water droplets floating in the air. If you flew through a cloud, it would feel like light fog — cool and slightly wet!",
-      audio_url: "/audio/week29_easy/logic_q5.mp3"
+      correct: "Trains travel on the ground and use far less fuel per passenger than planes that must fight gravity to stay airborne",
+      explanation_en: "A plane must constantly burn fuel to fight gravity and stay in the air. Trains roll on tracks on the ground, which is far more fuel-efficient. Per passenger, trains typically produce much less CO₂ than aeroplanes for the same journey.",
+      audio_url: "/audio/week29/logic_q5.mp3"
     }
   ]
 };

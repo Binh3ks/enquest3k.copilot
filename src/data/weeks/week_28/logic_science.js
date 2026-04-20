@@ -8,15 +8,15 @@ export default {
     {
       id: 1,
       type: "logic",
-      question_en: "The Hare said 'I am the fastest — I will definitely win.' What grammar mistake would this be in Past Simple when retelling?",
+      question_en: "In the race, the tortoise kept going steadily while the hare took a nap. The hare woke up and ran as fast as he could, but the tortoise had already crossed the finish line. What is the key lesson?",
       options: [
-        "Using 'ran' instead of 'runned' — confusing irregular past forms",
-        "Saying 'The Hare runned fast' instead of 'The Hare ran fast'",
-        "Using 'was fastest' instead of 'is fastest'",
-        "Using 'will win' instead of 'won'"
+        "The tortoise was naturally faster than the hare",
+        "Steady effort and perseverance can beat natural talent used carelessly",
+        "Taking naps gives you more energy to win",
+        "Slow animals always beat fast animals"
       ],
-      correct: "Saying 'The Hare runned fast' instead of 'The Hare ran fast'",
-      explanation_en: "The most common mistake when retelling this fable in Past Simple is using 'runned' — run is an irregular verb and its past form is 'ran'. Always say: The Hare RAN fast.",
+      correct: "Steady effort and perseverance can beat natural talent used carelessly",
+      explanation_en: "The tortoise's steady, consistent effort beat the hare's natural speed because the hare was overconfident and wasted his advantage. This is the core message: persistence matters more than raw talent.",
       audio_url: "/audio/week28/logic_q1.mp3"
     },
     {
@@ -63,16 +63,16 @@ export default {
     },
     {
       id: 5,
-      type: "logic",
-      question_en: "Read this retelling: 'The hare ran fast. He taked a nap. The tortoise win.' How many Past Simple errors are in this retelling?",
+      type: "science",
+      question_en: "A tortoise pulls its head and legs inside its hard shell when it feels scared or threatened. What type of animal defence is this?",
       options: [
-        "2 errors: 'taked' should be 'took', and 'win' should be 'won'",
-        "1 error: only 'win' is wrong",
-        "3 errors: 'ran', 'taked', and 'win' are all wrong",
-        "0 errors: this retelling is correct"
+        "Camouflage — blending into the environment",
+        "Mimicry — copying a dangerous animal's appearance",
+        "Physical armour — using a hard body part as a protective shield",
+        "Venom — releasing poison to stop predators"
       ],
-      correct: "2 errors: 'taked' should be 'took', and 'win' should be 'won'",
-      explanation_en: "'The hare ran fast' is CORRECT — ran is the right irregular past. 'He taked a nap' is WRONG — take → took (irregular). 'The tortoise win' is WRONG — win → won (irregular). So there are 2 errors.",
+      correct: "Physical armour — using a hard body part as a protective shield",
+      explanation_en: "A tortoise shell is made of bone and keratin — the same material as fingernails. It is fused to the tortoise's skeleton. When threatened, the tortoise retreats inside — using its shell as built-in armour. This is a physical defence strategy.",
       audio_url: "/audio/week28/logic_q5.mp3"
     }
   ]

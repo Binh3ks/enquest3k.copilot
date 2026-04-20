@@ -7,16 +7,16 @@ export default {
   questions: [
     {
       id: 1,
-      type: "logic",
-      question_en: "Maya says: 'It needs water. It needs sunlight. It grows from a seed.' Which grammar rule is she using?",
+      type: "science",
+      question_en: "A scientist measures a plant's height every day for a week. The plant grew faster on sunny days than on cloudy days. What is the most likely reason?",
       options: [
-        "Present Simple for facts — using 'it needs' and 'it grows'",
-        "Past Simple — she is describing yesterday",
-        "Future Simple — she is predicting what will happen",
-        "Present Continuous — she is describing something happening right now"
+        "Plants use sunlight to make food through photosynthesis — more sunlight means more food and faster growth",
+        "Sunlight makes the soil warmer, which dries out the roots",
+        "Clouds block nutrients from reaching the plant",
+        "Plants always grow faster in sunlight, for no special reason"
       ],
-      correct: "Present Simple for facts — using 'it needs' and 'it grows'",
-      explanation_en: "When we state facts that are always true about nature, we use Present Simple: 'It needs', 'It grows'. These facts are always true, not just happening right now.",
+      correct: "Plants use sunlight to make food through photosynthesis — more sunlight means more food and faster growth",
+      explanation_en: "Photosynthesis is the process plants use to turn sunlight into glucose (food). More sunlight → more photosynthesis → more glucose → more energy for growth.",
       audio_url: "/audio/week27/logic_q1.mp3"
     },
     {
@@ -36,15 +36,15 @@ export default {
     {
       id: 3,
       type: "logic",
-      question_en: "Which sentence uses Present Simple CORRECTLY as a fact about plants?",
+      question_en: "Plant A is in a pot WITH holes at the bottom. Plant B is in a pot with NO holes. Both are watered the same amount daily. Which plant is more likely to develop root rot (roots dying from too much water)?",
       options: [
-        "The root absorbs water from the soil.",
-        "The root absorbed water from the soil yesterday.",
-        "The root is absorbing water right now.",
-        "The root will absorb water tomorrow."
+        "Plant A — the holes let pests into the soil",
+        "Plant B — water cannot drain away, so roots sit in water and rot",
+        "Both equally — watering amount is the same",
+        "Neither — root rot only happens in very hot climates"
       ],
-      correct: "The root absorbs water from the soil.",
-      explanation_en: "Present Simple for facts uses the base verb or verb + -s for singular subjects. 'Absorbs' is correct because 'the root' is singular and this is always true.",
+      correct: "Plant B — water cannot drain away, so roots sit in water and rot",
+      explanation_en: "Drainage holes allow excess water to escape. Without holes, water builds up at the bottom of the pot and the roots are constantly wet — this leads to root rot, which kills the plant.",
       audio_url: "/audio/week27/logic_q3.mp3"
     },
     {

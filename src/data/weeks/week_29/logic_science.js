@@ -8,15 +8,15 @@ export default {
     {
       id: 1,
       type: "logic",
-      question_en: "Dad said 'Did not went' — what is the correct Past Simple negative?",
+      question_en: "A family must travel from Hanoi to Ho Chi Minh City (1,726 km). Options: plane (2 hours), train (30 hours), car (24 hours). The trip must be completed in under 5 hours. Which transport must they choose?",
       options: [
-        "did not went",
-        "did not go",
-        "did not gone",
-        "did not goes"
+        "Train — it is the most comfortable",
+        "Car — it gives the most freedom",
+        "Plane — it is the only option that takes less than 5 hours",
+        "Any of the three — they all finish within 5 hours"
       ],
-      correct: "did not go",
-      explanation_en: "After 'did not', you always use the BASE form of the verb: go. NEVER use the past form 'went' or past participle 'gone' after 'did not'. Correct: 'We did not go.'",
+      correct: "Plane — it is the only option that takes less than 5 hours",
+      explanation_en: "The only condition is: under 5 hours. Plane takes 2 hours ✓, train takes 30 hours ✗, car takes 24 hours ✗. Logic: apply the constraint first, then eliminate wrong options.",
       audio_url: "/audio/week29/logic_q1.mp3"
     },
     {
@@ -50,29 +50,29 @@ export default {
     {
       id: 4,
       type: "science",
-      question_en: "A plane flies at 900 km/h. A car drives at 100 km/h. How many times faster is the plane than the car?",
+      question_en: "When a plane accelerates down the runway before taking off, passengers feel pushed back into their seats. What force causes this feeling?",
       options: [
-        "5 times faster",
-        "9 times faster",
-        "90 times faster",
-        "10 times faster"
+        "Gravity — pulling passengers downwards",
+        "Inertia — the passenger's body resists the sudden forward acceleration",
+        "Lift — the wings pushing the plane upwards",
+        "Drag — air resistance slowing the plane"
       ],
-      correct: "9 times faster",
-      explanation_en: "900 ÷ 100 = 9. The aeroplane is 9 times faster than the car. This is why planes are used for long journeys across countries and oceans.",
+      correct: "Inertia — the passenger's body resists the sudden forward acceleration",
+      explanation_en: "Inertia is the tendency of a body to resist changes in motion. When the plane suddenly accelerates forward, your body wants to stay where it is — so you feel pushed back into your seat. This is Newton's First Law of Motion in action.",
       audio_url: "/audio/week29/logic_q4.mp3"
     },
     {
       id: 5,
-      type: "logic",
-      question_en: "Which sentence uses ALL FOUR new irregular verbs correctly?",
+      type: "science",
+      question_en: "Long train journeys are considered more eco-friendly than flying. What is the main reason?",
       options: [
-        "We goed to the airport, runned to the gate, camed on the plane, and flyed home.",
-        "We went to the airport, Dad ran to the gate, Mum came with the bags, and we all flew home.",
-        "We went to the airport, Dad runned to the gate, Mum comed with the bags, and we flew home.",
-        "We go to the airport, ran to the gate, came on the plane, and flew home."
+        "Trains are always faster than planes",
+        "Trains travel on the ground and use far less fuel per passenger than planes that must fight gravity to stay airborne",
+        "Planes use more fuel only because they are bigger than trains",
+        "Trains do not use any fuel at all"
       ],
-      correct: "We went to the airport, Dad ran to the gate, Mum came with the bags, and we all flew home.",
-      explanation_en: "All four past forms are correct: went (go→went), ran (run→ran), came (come→came), flew (fly→flew). None of the fake forms like 'runned', 'comed', or 'goed' are ever correct!",
+      correct: "Trains travel on the ground and use far less fuel per passenger than planes that must fight gravity to stay airborne",
+      explanation_en: "A plane must constantly burn fuel to fight gravity and stay in the air. Trains roll on tracks on the ground, which is far more fuel-efficient. Per passenger, trains typically produce much less CO₂ than aeroplanes for the same journey.",
       audio_url: "/audio/week29/logic_q5.mp3"
     }
   ]

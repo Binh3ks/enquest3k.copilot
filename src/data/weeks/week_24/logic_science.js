@@ -59,29 +59,6 @@ export default {
       correct: "Because naming feelings uses the thinking part of your brain, not just the emotional part",
       explanation_en: "Using words activates the prefrontal cortex — the thinking brain — which helps reduce the strong emotional reaction.",
       audio_url: "/audio/week24/logic_q5.mp3"
-    },
-    {
-      id: 6,
-      type: "logic",
-      question_en: "Read the clue: 'She was not calm. She was not cheerful. She was not scared. She was HOT and wanted to drink water.' What was she?",
-      options: ["thirsty", "bored", "surprised", "excited"],
-      correct: "thirsty",
-      explanation_en: "The clue says she wanted to drink water — that is the feeling of being thirsty.",
-      audio_url: "/audio/week24/logic_q6.mp3"
-    },
-    {
-      id: 7,
-      type: "science",
-      question_en: "Dopamine is a chemical in the brain. When is it released?",
-      options: [
-        "When something good or exciting happens",
-        "When you are scared",
-        "When you are bored",
-        "When you are tired"
-      ],
-      correct: "When something good or exciting happens",
-      explanation_en: "Dopamine is the 'reward' chemical — it makes you feel cheerful and excited about positive events.",
-      audio_url: "/audio/week24/logic_q7.mp3"
     }
   ]
 };

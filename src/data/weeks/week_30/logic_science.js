@@ -8,15 +8,15 @@ export default {
     {
       id: 1,
       type: "logic",
-      question_en: "Luna said: 'I gived cookies to my friends.' What is the correct Past Simple form?",
+      question_en: "At the picnic, Luna packed: 2 sandwiches, a banana, juice, and cookies. Her friend only brought chips and soda. Whose picnic is more nutritious?",
       options: [
-        "I gived cookies to my friends.",
-        "I gave cookies to my friends.",
-        "I given cookies to my friends.",
-        "I gives cookies to my friends."
+        "Luna's friend — chips and soda give more energy",
+        "Luna's — she has grains, fruit, a drink, and a treat in a balanced variety",
+        "They are equal — both have snacks and drinks",
+        "Neither — picnic food is never nutritious"
       ],
-      correct: "I gave cookies to my friends.",
-      explanation_en: "The past simple of 'give' is 'gave' — NOT 'gived'. After 'I', we use the past form 'gave'. The negative form would be: 'I did not give...' (using the base verb 'give', not 'gave').",
+      correct: "Luna's — she has grains, fruit, a drink, and a treat in a balanced variety",
+      explanation_en: "Luna's picnic covers multiple food groups: grains (sandwiches), fruit (banana), and a drink (juice), with cookies as a small treat. Her friend's chips and soda are both processed and lack nutrients. Variety across food groups is what makes a meal nutritious.",
       audio_url: "/audio/week30/logic_q1.mp3"
     },
     {
@@ -63,16 +63,16 @@ export default {
     },
     {
       id: 5,
-      type: "logic",
-      question_en: "Which sentence uses ALL FOUR irregular consumption verbs correctly in one story?",
+      type: "science",
+      question_en: "Sunscreen protects skin from sunburn. The active ingredient absorbs ultraviolet (UV) rays before they damage skin cells. Why is it important to apply sunscreen BEFORE going outside, not after?",
       options: [
-        "Mum buyed the food, we eated sandwiches, dranked juice, and Tom gived away the cookies.",
-        "Mum bought the food, we ate sandwiches, drank juice, and Luna gave cookies to her friends.",
-        "Mum bought the food, we ate sandwiches, drank juice, and Luna gived cookies to her friends.",
-        "Mum buyed bread, we ate sandwiches, drank juice, and Luna gave cookies away."
+        "Because sunscreen needs time to absorb into the skin and form a protective layer before UV rays hit",
+        "Because sunscreen only works when it is dry from the container",
+        "Because UV rays only exist before you go outside",
+        "Because applying sunscreen inside makes it work longer"
       ],
-      correct: "Mum bought the food, we ate sandwiches, drank juice, and Luna gave cookies to her friends.",
-      explanation_en: "All four past forms must be correct: bought (buy→bought), ate (eat→ate), drank (drink→drank), gave (give→gave). The correct sentence uses bought, ate, drank, and gave — NOT buyed, eated, dranked, or gived. Those fake forms are NEVER correct in English!",
+      correct: "Because sunscreen needs time to absorb into the skin and form a protective layer before UV rays hit",
+      explanation_en: "Most sunscreens need about 15-20 minutes to absorb into the skin after application. If you apply it after going outside, your skin is already exposed to UV rays during that absorption window. Applying before = full protection from the moment you step outside.",
       audio_url: "/audio/week30/logic_q5.mp3"
     }
   ]
