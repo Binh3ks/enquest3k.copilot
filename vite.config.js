@@ -19,6 +19,10 @@ function copyDataDir() {
       if (existsSync(resolve('public/_redirects'))) {
         copyFileSync(resolve('public/_redirects'), resolve('dist/_redirects'));
       }
+      // Copy Cloudflare Pages _headers (cache control rules)
+      if (existsSync(resolve('public/_headers'))) {
+        copyFileSync(resolve('public/_headers'), resolve('dist/_headers'));
+      }
     }
   };
 }
