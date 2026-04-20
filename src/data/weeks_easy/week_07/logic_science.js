@@ -2,10 +2,10 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "📚 ✏️ 📚 ✏️ 📚 ... What comes next?",
-      question_vi: "📚 ✏️ 📚 ✏️ 📚 ... Tiếp theo là gì?",
-      hint_en: "Look at the school item pattern.",
-      sample_answer: "✏️ (pencil)",
+      question_en: "📚 book  ✏️ pencil  📚 book  ✏️ pencil  📚 book ... What comes next?",
+      question_vi: "📚 book  ✏️ pencil  📚 book  ✏️ pencil  📚 book ... Tiếp theo là gì?",
+      hint_en: "book and pencil keep repeating.",
+      sample_answer: "✏️ pencil",
       audio_url: null,
     },
     {
@@ -36,7 +36,7 @@ export default {
       id: 5,
       question_en: "1, 3, 5, 7, ___. What comes next?",
       question_vi: "1, 3, 5, 7, ___. Số tiếp theo là gì?",
-      hint_en: "Add 2 each time.",
+      hint_en: "The numbers skip one each time: 1, skip 2, 3, skip 4, 5...",
       sample_answer: "9 / nine",
       audio_url: null,
     },

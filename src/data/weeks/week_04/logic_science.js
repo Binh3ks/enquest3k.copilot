@@ -2,18 +2,18 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🍎 🍊 🍎 🍊 🍎 ... What comes next?",
-      question_vi: "🍎 🍊 🍎 🍊 🍎 ... Tiếp theo là gì?",
-      hint_en: "Look at the fruit pattern.",
-      sample_answer: "🍊 (orange)",
+      question_en: "🍎 apple  🍊 orange  🍎 apple  🍊 orange  🍎 apple ... What comes next?",
+      question_vi: "🍎 apple  🍊 orange  🍎 apple  🍊 orange  🍎 apple ... Tiếp theo là gì?",
+      hint_en: "apple and orange keep repeating.",
+      sample_answer: "🍊 orange",
       audio_url: null,
     },
     {
       id: 2,
-      question_en: "A jar has a lid. A bottle has a cap. What keeps things inside a jar?",
-      question_vi: "Bình thủy tinh có nắp. Chai có nắp vặn. Thứ gì giữ đồ bên trong bình?",
-      hint_en: "It goes on top of the jar.",
-      sample_answer: "the lid",
+      question_en: "A banana 🍌 is yellow. An apple 🍎 is red or green. What colour is a banana?",
+      question_vi: "Chuối 🍌 màu vàng. Táo 🍎 màu đỏ hoặc xanh lá. Chuối màu gì?",
+      hint_en: "Think about the colour of a banana.",
+      sample_answer: "yellow",
       audio_url: null,
     },
     {

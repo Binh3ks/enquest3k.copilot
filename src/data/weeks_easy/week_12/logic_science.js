@@ -10,10 +10,10 @@ export default {
     },
     {
       id: 2,
-      question_en: "🎵 🥁 🎵 🥁 🎵 ... What comes next?",
-      question_vi: "🎵 🥁 🎵 🥁 🎵 ... Tiếp theo là gì?",
-      hint_en: "Music note and drum alternate.",
-      sample_answer: "🥁 (drum)",
+      question_en: "🎵 music note  🥁 drum  🎵 music note  🥁 drum  🎵 music note ... What comes next?",
+      question_vi: "🎵 music note  🥁 drum  🎵 music note  🥁 drum  🎵 music note ... Tiếp theo là gì?",
+      hint_en: "music note and drum keep alternating.",
+      sample_answer: "🥁 drum",
       audio_url: null,
     },
     {

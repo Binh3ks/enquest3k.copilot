@@ -2,10 +2,10 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🐄 🐔 🐄 🐔 🐄 ... What animal comes next?",
-      question_vi: "🐄 🐔 🐄 🐔 🐄 ... Con vật nào tiếp theo?",
-      hint_en: "Cow and chicken alternate.",
-      sample_answer: "🐔 (chicken)",
+      question_en: "🐄 cow  🐔 chicken  🐄 cow  🐔 chicken  🐄 cow ... What animal comes next?",
+      question_vi: "🐄 cow  🐔 chicken  🐄 cow  🐔 chicken  🐄 cow ... Con vật nào tiếp theo?",
+      hint_en: "cow and chicken keep alternating.",
+      sample_answer: "🐔 chicken",
       audio_url: null,
     },
     {

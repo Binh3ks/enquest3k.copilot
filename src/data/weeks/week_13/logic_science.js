@@ -10,10 +10,10 @@ export default {
     },
     {
       id: 2,
-      question_en: "⏰ 📚 ⏰ 📚 ⏰ ... What comes next?",
-      question_vi: "⏰ 📚 ⏰ 📚 ⏰ ... Tiếp theo là gì?",
-      hint_en: "Clock and book alternate.",
-      sample_answer: "📚 (book)",
+      question_en: "⏰ clock  📚 book  ⏰ clock  📚 book  ⏰ clock ... What comes next?",
+      question_vi: "⏰ clock  📚 book  ⏰ clock  📚 book  ⏰ clock ... Tiếp theo là gì?",
+      hint_en: "clock and book keep alternating.",
+      sample_answer: "📚 book",
       audio_url: null,
     },
     {

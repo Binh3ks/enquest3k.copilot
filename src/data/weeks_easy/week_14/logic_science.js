@@ -10,10 +10,10 @@ export default {
     },
     {
       id: 2,
-      question_en: "👟 🧢 👟 🧢 👟 ... What comes next?",
-      question_vi: "👟 🧢 👟 🧢 👟 ... Tiếp theo là gì?",
-      hint_en: "Shoe and cap alternate.",
-      sample_answer: "🧢 (cap)",
+      question_en: "👟 shoe  🧢 cap  👟 shoe  🧢 cap  👟 shoe ... What comes next?",
+      question_vi: "👟 shoe  🧢 cap  👟 shoe  🧢 cap  👟 shoe ... Tiếp theo là gì?",
+      hint_en: "shoe and cap keep alternating.",
+      sample_answer: "🧢 cap",
       audio_url: null,
     },
     {

@@ -10,10 +10,10 @@ export default {
     },
     {
       id: 2,
-      question_en: "🟦 🟥 🟦 🟥 🟦 ... What colour comes next?",
-      question_vi: "🟦 🟥 🟦 🟥 🟦 ... Màu nào tiếp theo?",
-      hint_en: "Two colours alternate.",
-      sample_answer: "red / 🟥",
+      question_en: "🟦 blue  🟥 red  🟦 blue  🟥 red  🟦 blue ... What colour comes next?",
+      question_vi: "🟦 blue  🟥 red  🟦 blue  🟥 red  🟦 blue ... Màu nào tiếp theo?",
+      hint_en: "blue and red keep alternating.",
+      sample_answer: "red 🟥",
       audio_url: null,
     },
     {

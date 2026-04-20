@@ -2,10 +2,10 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "😊 😢 😊 😢 😊 ... What comes next?",
-      question_vi: "😊 😢 😊 😢 😊 ... Tiếp theo là gì?",
-      hint_en: "Look at the face pattern.",
-      sample_answer: "😢 (sad face)",
+      question_en: "😊 happy  😢 sad  😊 happy  😢 sad  😊 happy ... What comes next?",
+      question_vi: "😊 happy  😢 sad  😊 happy  😢 sad  😊 happy ... Tiếp theo là gì?",
+      hint_en: "happy and sad faces keep repeating.",
+      sample_answer: "😢 sad",
       audio_url: null,
     },
     {

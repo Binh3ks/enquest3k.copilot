@@ -2,10 +2,10 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🍴 🥄 🍴 🥄 🍴 ... What comes next?",
-      question_vi: "🍴 🥄 🍴 🥄 🍴 ... Tiếp theo là gì?",
-      hint_en: "Look at the cutlery pattern.",
-      sample_answer: "🥄 (spoon)",
+      question_en: "🍴 fork  🥄 spoon  🍴 fork  🥄 spoon  🍴 fork ... What comes next?",
+      question_vi: "🍴 fork  🥄 spoon  🍴 fork  🥄 spoon  🍴 fork ... Tiếp theo là gì?",
+      hint_en: "fork and spoon keep repeating.",
+      sample_answer: "🥄 spoon",
       audio_url: null,
     },
     {

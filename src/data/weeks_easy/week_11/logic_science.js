@@ -10,10 +10,10 @@ export default {
     },
     {
       id: 2,
-      question_en: "🏀 ⚽ 🏀 ⚽ 🏀 ... What comes next?",
-      question_vi: "🏀 ⚽ 🏀 ⚽ 🏀 ... Tiếp theo là gì?",
-      hint_en: "Basketball and football alternate.",
-      sample_answer: "⚽ (football)",
+      question_en: "🏀 basketball  ⚽ football  🏀 basketball  ⚽ football  🏀 basketball ... What comes next?",
+      question_vi: "🏀 basketball  ⚽ football  🏀 basketball  ⚽ football  🏀 basketball ... Tiếp theo là gì?",
+      hint_en: "basketball and football keep alternating.",
+      sample_answer: "⚽ football",
       audio_url: null,
     },
     {

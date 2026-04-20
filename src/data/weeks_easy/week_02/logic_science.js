@@ -18,10 +18,10 @@ export default {
     },
     {
       id: 3,
-      question_en: "🌙 ☀️ 🌙 ☀️ 🌙 ... What comes next?",
-      question_vi: "🌙 ☀️ 🌙 ☀️ 🌙 ... Tiếp theo là gì?",
-      hint_en: "Look at the repeating pattern.",
-      sample_answer: "☀️ (sun)",
+      question_en: "🌙 moon  ☀️ sun  🌙 moon  ☀️ sun  🌙 moon ... What comes next?",
+      question_vi: "🌙 moon  ☀️ sun  🌙 moon  ☀️ sun  🌙 moon ... Tiếp theo là gì?",
+      hint_en: "moon and sun keep repeating.",
+      sample_answer: "☀️ sun",
       audio_url: null,
     },
     {

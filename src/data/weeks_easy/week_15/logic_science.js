@@ -2,10 +2,10 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🌳 🌸 🌳 🌸 🌳 ... What comes next?",
-      question_vi: "🌳 🌸 🌳 🌸 🌳 ... Tiếp theo là gì?",
-      hint_en: "Tree and flower alternate.",
-      sample_answer: "🌸 (flower)",
+      question_en: "🌳 tree  🌸 flower  🌳 tree  🌸 flower  🌳 tree ... What comes next?",
+      question_vi: "🌳 tree  🌸 flower  🌳 tree  🌸 flower  🌳 tree ... Tiếp theo là gì?",
+      hint_en: "tree and flower keep alternating.",
+      sample_answer: "🌸 flower",
       audio_url: null,
     },
     {
@@ -18,10 +18,10 @@ export default {
     },
     {
       id: 3,
-      question_en: "A bench can seat 4 people. Two benches can seat ___ people.",
-      question_vi: "Một ghế dài ngồi được 4 người. Hai ghế dài ngồi được ___ người.",
-      hint_en: "4 + 4 = ?",
-      sample_answer: "8 / eight",
+      question_en: "A park 🌳🌸 is a place outside with trees and flowers. Is a park indoors or outdoors?",
+      question_vi: "Công viên 🌳🌸 là nơi có cây và hoa bên ngoài. Công viên ở trong nhà hay ngoài trời?",
+      hint_en: "Parks have trees, grass, and fresh air.",
+      sample_answer: "outdoors",
       audio_url: null,
     },
     {

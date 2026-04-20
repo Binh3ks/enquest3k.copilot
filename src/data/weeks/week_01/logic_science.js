@@ -2,18 +2,18 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "Stars, circles, stars, circles, stars... What comes next?",
-      question_vi: "Ngôi sao, vòng tròn, ngôi sao, vòng tròn, ngôi sao... Tiếp theo là gì?",
+      question_en: "⭐ star  ⭕ circle  ⭐ star  ⭕ circle  ⭐ star ... What comes next?",
+      question_vi: "⭐ star  ⭕ circle  ⭐ star  ⭕ circle  ⭐ star ... Tiếp theo là gì?",
       hint_en: "The shapes go in pairs: star, circle, star, circle...",
       sample_answer: "circle",
       audio_url: null,
     },
     {
       id: 2,
-      question_en: "A pencil is used for writing. A ruler is used for drawing straight lines. What is a rubber (eraser) used for?",
-      question_vi: "Bút chì dùng để viết. Thước dùng để kẻ đường thẳng. Cục tẩy dùng để làm gì?",
-      hint_en: "Think about what happens when you make a mistake.",
-      sample_answer: "erasing / rubbing out mistakes",
+      question_en: "We use a pencil ✏️ to write. We use an eraser to rub out mistakes. What do we use to rub out a mistake?",
+      question_vi: "Chúng ta dùng bút chì ✏️ để viết. Chúng ta dùng cục tẩy để xóa lỗi. Dùng gì để xóa lỗi?",
+      hint_en: "The answer is already in the question!",
+      sample_answer: "an eraser",
       audio_url: null,
     },
     {
