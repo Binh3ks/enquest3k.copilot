@@ -3,7 +3,7 @@
  * Sources: localStorage (SRS bank, adaptive state, checkpoint results, writing history)
  */
 
-import { getBankStats } from './wordMemoryBank';
+import { getBankStats, getAllWords } from './wordMemoryBank';
 import { getAdaptiveState } from './adaptiveEngine';
 import { getWeekCEFR } from '../data/weekData';
 
@@ -36,6 +36,7 @@ export function getWeeklyReport(weekNumber) {
       masteryPercent: srsStats.total > 0
         ? Math.round((srsStats.mastered / srsStats.total) * 100)
         : 0,
+      weakWords: getWeakWords(),
     },
 
     // Streak
@@ -82,6 +83,22 @@ function getSRSStats() {
     return getBankStats();
   } catch {
     return { total: 0, mastered: 0, reviewing: 0, learning: 0, new: 0 };
+  }
+}
+
+/**
+ * Get the top 5 weakest words (status = 'learning', sorted by fewest correct answers).
+ * Returns array of { word, meaning, week_number } for display in Parent Dashboard.
+ */
+function getWeakWords() {
+  try {
+    return getAllWords()
+      .filter(w => w.status === 'learning')
+      .sort((a, b) => (a.correct_count || 0) - (b.correct_count || 0))
+      .slice(0, 5)
+      .map(w => ({ word: w.word, meaning: w.meaning || '', week: w.week_number }));
+  } catch {
+    return [];
   }
 }
 

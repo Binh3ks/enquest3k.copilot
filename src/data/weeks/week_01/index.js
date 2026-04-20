@@ -3,6 +3,7 @@ import vocab from './vocab.js';
 import grammar from './grammar.js';
 import ask_ai from './ask_ai.js';
 import logic from './logic.js';
+import singapore_math from './singapore_math.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
 import writing from './writing.js';
@@ -34,7 +35,7 @@ const weekData = {
     word_match: word_match,
     grammar: grammar,
     ask_ai: ask_ai,
-    logic_lab: logic,
+    logic_lab: { singapore_math },
     dictation: dictation,
     shadowing: shadowing,
     video: writing,
