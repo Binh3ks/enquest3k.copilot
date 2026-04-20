@@ -3,6 +3,7 @@ import vocab from './vocab.js';
 import grammar from './grammar.js';
 import ask_ai from './ask_ai.js';
 import logic from './logic.js';
+import logic_science from './logic_science.js';
 import singapore_math from './singapore_math.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
@@ -35,7 +36,7 @@ const weekData = {
     grammar: grammar,
     word_power: word_power,
     ask_ai: ask_ai,
-    logic_lab: { singapore_math },
+    logic_lab: { logic_science, singapore_math },
     dictation: dictation,
     shadowing: shadowing,
     explore: explore,
