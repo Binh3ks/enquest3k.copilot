@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết một cuộc phỏng vấn ngắn về hôm qua! Viết 4 câu hỏi 'Did you...' và 4 câu trả lời đầy đủ. Hỏi về thức ăn, địa điểm, hoạt động và cảm xúc.",
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about something interesting that happened in the past.",
-  sentence_frames: [{"template":"Did you ___ yesterday? Yes, I did. I ___ed ___."},{"template":"Did you ___ last night? No, I didn't. I ___ed ___ instead."},{"template":"Did you ___ with ___? Yes, I did! It was ___."},{"template":"Did you feel ___ yesterday? I felt ___ because ___."}],
+  sentence_frames: [{"template":"Did you ___ yesterday? Yes, I did. I ___ed ___."},{"template":"Did you ___ last night? No, I didn't. I ___ed ___ instead."},{"template":"Did you ___ with ___? Yes, I did! It was ___."},{"template":"Did you eat ___ for breakfast? Yes/No, I ___."},{"template":"Did you go to ___? No, I stayed at ___ and ___."},{"template":"Did you feel ___ yesterday? I felt ___ because ___."},{"template":"It was a ___ day because ___!"}],
 };

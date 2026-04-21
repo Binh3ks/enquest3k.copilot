@@ -79,5 +79,5 @@ export default {
       ]
     }
   ],
-  sentence_frames: [{"template":"In my bag, there is a ___ and a ___."},{"template":"There is also a ___. It is ___."},{"template":"I use my ___ to ___."},{"template":"My favourite thing in my bag is my ___ because ___."}],
+  sentence_frames: [{"template":"In my bag, there is a ___ and a ___."},{"template":"There is also a ___. It is ___."},{"template":"I use my ___ to ___."},{"template":"My ___ is ___ colour and it is very ___."},{"template":"My favourite thing in my bag is my ___ because ___."}],
 };

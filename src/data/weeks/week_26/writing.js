@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về cuối tuần của bạn theo 4 phân cảnh truyện tranh! Buổi sáng bạn làm gì? Chuyện gì xảy ra tiếp theo? Khoảnh khắc thú vị hoặc buồn cười là gì? Cuối tuần kết thúc ra sao?",
   keywords: ["panel", "caption", "comic strip", "weekend", "visited", "played", "watched", "walked", "sketched", "returned", "was", "were", "first", "next", "then", "finally", "character", "scene", "adventure", "title"],
   topic_talk_prompt: "Tell me about what you did last weekend from the beginning to the end. Tell it like a story.",
-  sentence_frames: [{"template":"Panel 1: On Saturday morning, I ___ed ___."},{"template":"Panel 2: Then I ___ed ___ and it was ___."},{"template":"Panel 3: Suddenly, ___ happened! I ___ed ___."},{"template":"Panel 4: At the end of the day, I ___ed and felt ___."}],
+  sentence_frames: [{"template":"Panel 1: On Saturday morning, I ___ed ___."},{"template":"Panel 1: The weather was ___ and I felt ___."},{"template":"Panel 2: Then I ___ed ___ and it was ___."},{"template":"Panel 2: I also ___ed ___ with ___."},{"template":"Panel 3: Suddenly, ___ happened! I ___ed ___."},{"template":"Panel 3: Everyone ___ed because ___."},{"template":"Panel 4: At the end of the day, I ___ed and felt ___."},{"template":"Panel 4: It was the best Saturday because ___."}],
 };

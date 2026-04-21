@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về một buổi dã ngoại hoặc bữa ăn đặc biệt! Ở đâu? Ai tham dự? Bạn ăn và uống gì? Cùng nhau làm gì vui? Tại sao nó đặc biệt hoặc đáng nhớ?",
   topic_talk_prompt: "Tell me about a meal or picnic you had. What did you eat? What did you drink?",
   keywords: ["ate", "drank", "bought", "gave", "picnic", "sandwich", "juice", "basket", "delicious", "cheerful", "share", "hungry", "thirsty"],
-  sentence_frames: [{"template":"Last ___, my family had a picnic at ___."},{"template":"We ate ___ and drank ___."},{"template":"We also ___ed ___ and it was ___."},{"template":"It was my favourite ___ because ___."}],
+  sentence_frames: [{"template":"Last ___, my family had a picnic at ___."},{"template":"The weather was ___ and the place was ___."},{"template":"We ate ___ and drank ___."},{"template":"My favourite food was ___ because ___."},{"template":"We also ___ed ___ and it was ___."},{"template":"The funniest/best moment was when ___."},{"template":"After eating, we ___ed together."},{"template":"It was my favourite ___ because ___."}],
 };

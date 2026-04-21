@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết câu chuyện về giờ học mỹ thuật gần nhất! Bạn vẽ gì? Dùng màu nào? Làm một mình hay với bạn? Tác phẩm trông như thế nào?",
   keywords: ["painted", "colored", "glued", "folded", "created", "brushed", "cut", "picture", "scissors", "brush", "carefully", "texture", "symmetry", "pigment"],
   topic_talk_prompt: "Tell me about a painting or drawing you like. What do you see in it? How does it make you feel?",
-  sentence_frames: [{"template":"In art class yesterday, I painted/drew ___."},{"template":"I used ___ and ___ colours."},{"template":"I worked with ___ and we ___ed ___."},{"template":"My artwork looked ___ and I felt ___ about it."}],
+  sentence_frames: [{"template":"In art class yesterday, I painted/drew ___."},{"template":"I used ___ and ___ colours."},{"template":"First, I ___ed ___. Then I ___ed ___."},{"template":"I worked with ___ and we ___ed ___."},{"template":"My artwork showed ___."},{"template":"My artwork looked ___ and I felt ___ about it."},{"template":"My teacher said my artwork was ___."}],
 };

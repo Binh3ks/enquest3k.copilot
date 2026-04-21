@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về thời tiết hôm nay và trang phục! Thời tiết như thế nào? Nóng, lạnh, mưa hay nắng? Bạn đang mặc gì và tại sao? Thời tiết ảnh hưởng đến hoạt động của bạn ra sao?",
   keywords: ["It is", "raining", "snowing", "sunny", "cold", "warm", "so", "wearing", "coat", "boots", "hat", "umbrella"],
   topic_talk_prompt: "Tell me about the weather today and what people are wearing. Why are those clothes good for the weather?",
-  sentence_frames: [{"template":"Today the weather is ___ and ___."},{"template":"It is ___, so I am wearing ___."},{"template":"Because it is ___, I am ___ing ___."},{"template":"I love/don't like this weather because ___."}],
+  sentence_frames: [{"template":"Today the weather is ___ and ___."},{"template":"It is ___, so I am wearing ___."},{"template":"Because it is ___, I am ___ing ___."},{"template":"I am also wearing ___ because ___."},{"template":"The sky is ___ and I can see ___."},{"template":"I love/don't like this weather because ___."}],
 };

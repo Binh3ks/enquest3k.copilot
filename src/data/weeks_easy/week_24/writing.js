@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về một ngày với nhiều cảm xúc khác nhau! Khi nào bạn thấy hứng khởi? Khi nào sợ hoặc hồi hộp? Khi nào vui? Chuyện gì xảy ra?",
   keywords: ["was", "were", "scared", "excited", "tired", "relieved", "cheerful", "calm", "worried", "surprised", "bored", "hungry", "thirsty", "angry", "upset", "because", "when"],
   topic_talk_prompt: "Tell me about a time you felt very happy or very sad. What happened?",
-  sentence_frames: [{"template":"Yesterday was a day of big feelings!"},{"template":"I was ___ when ___."},{"template":"Then I felt ___ because ___."},{"template":"At the end of the day, I was ___ because ___."}],
+  sentence_frames: [{"template":"Yesterday was a day of big feelings!"},{"template":"In the morning, I was ___ because ___."},{"template":"I was ___ when ___."},{"template":"Then I felt ___ because ___."},{"template":"Later, I was ___ when ___."},{"template":"At the end of the day, I was ___ because ___."},{"template":"I will remember this day because ___."}],
 };

@@ -7,5 +7,5 @@ export default {
   prompt_en: "Describe where things are in your room! Where is your bag? Where are your books? Where is your favourite toy? Use prepositions: in, on, under, next to.",
   prompt_vi: "Mô tả vị trí đồ vật trong phòng bạn! Túi bạn ở đâu? Sách ở đâu? Đồ chơi yêu thích ở đâu? Dùng: in, on, under, next to.",
   keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"],
-  sentence_frames: [{"template":"My ___ is on the ___."},{"template":"My ___ is in the ___."},{"template":"My ___ is under the ___."},{"template":"My ___ is next to the ___."}],
+  sentence_frames: [{"template":"My ___ is on the ___."},{"template":"My ___ is in the ___."},{"template":"My ___ is under the ___."},{"template":"My ___ is next to the ___."},{"template":"I always put my ___ on the ___ because ___."}],
 };

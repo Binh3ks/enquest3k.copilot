@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về những gì bạn đã làm hôm qua! Bạn đi đâu? Bạn ăn gì? Bạn giúp ai hoặc chơi với ai? Điều tốt nhất trong ngày là gì?",
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about what you did yesterday. What happened?",
-  sentence_frames: [{"template":"Yesterday, I woke up at ___ and ___."},{"template":"In the morning, I ___ed ___."},{"template":"I went to ___ and ___ed with ___."},{"template":"The best part of my day was ___."}],
+  sentence_frames: [{"template":"Yesterday, I woke up at ___ and ___."},{"template":"In the morning, I ___ed ___."},{"template":"I went to ___ and ___ed with ___."},{"template":"I also ___ed ___ and ___."},{"template":"In the evening, I ___ed ___."},{"template":"I felt ___ because ___."},{"template":"The best part of my day was ___."}],
 };

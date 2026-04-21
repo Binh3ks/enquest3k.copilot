@@ -8,5 +8,5 @@ export default {
   model_sentence: "I can sing. I can dance. I can run fast. I can't swim yet but I want to learn!",
   keywords: ["I can", "I can't", "sing", "dance", "run", "jump", "swim", "draw"],
   topic_talk_prompt: "Tell me about something you are good at. What is your talent?",
-  sentence_frames: [{"template":"I can ___ and ___."},{"template":"I can't ___ yet, but I want to learn."},{"template":"My favourite talent is ___ because ___."},{"template":"When I perform, I feel ___."}],
+  sentence_frames: [{"template":"I can ___ and ___."},{"template":"I can't ___ yet, but I want to learn."},{"template":"My favourite talent is ___ because ___."},{"template":"I practise ___ every ___."},{"template":"My friends say I am good at ___."},{"template":"When I perform, I feel ___."}],
 };

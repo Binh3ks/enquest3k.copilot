@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Mô tả một nơi cũ — chợ, trường học hay làng quê! Có chợ không? Có cây không? Có nhiều người không? Ngày xưa như thế nào? Bây giờ ra sao?",
   keywords: ["there was", "there were", "old", "new", "building", "tree", "river", "road", "bridge", "market", "temple", "village"],
   topic_talk_prompt: "Tell me about a place that looked different in the past. What did it look like? What changed?",
-  sentence_frames: [{"template":"Long ago, there was a ___ in ___."},{"template":"There were ___ and ___."},{"template":"It was ___ and ___."},{"template":"Now there is/are ___ instead."}],
+  sentence_frames: [{"template":"Long ago, there was a ___ in ___."},{"template":"There were ___ and ___."},{"template":"It was ___ and ___."},{"template":"People used to ___ there every ___."},{"template":"But now, ___ has changed."},{"template":"Now there is/are ___ instead."}],
 };

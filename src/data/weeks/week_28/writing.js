@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn! Có những nhân vật nào? Thỏ đã làm gì? Rùa đã làm gì? Ai thắng và tại sao? Bài học là gì?",
   keywords: ["tortoise", "hare", "race", "boast", "boasted", "ran", "fast", "slept", "nap", "steady", "determined", "won", "moral", "persevere", "cheer", "cheered", "finish", "first", "then", "after that", "finally", "confident", "overtake"],
   topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
-  sentence_frames: [{"template":"Once upon a time, a ___ and a ___ had a race."},{"template":"The hare ran very fast, but then he ___."},{"template":"The tortoise walked slowly and ___ without stopping."},{"template":"In the end, the ___ won because ___. The lesson is: ___."}],
+  sentence_frames: [{"template":"Once upon a time, a ___ and a ___ had a race."},{"template":"The hare was very ___ and said '___!'"},{"template":"The hare ran very fast, but then he ___."},{"template":"The tortoise walked slowly and ___."},{"template":"While the hare was ___, the tortoise ___."},{"template":"Then the hare woke up and ___. But it was too ___!"},{"template":"In the end, the ___ won because ___."},{"template":"The lesson is: ___."}],
 };

@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết hướng dẫn từng bước làm điều gì đó bạn biết — làm bánh mì kẹp, chuẩn bị đi học, hay chơi một trò chơi. Dùng: First, Next, Then, Finally. Viết ít nhất 4 bước.",
   keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "step", "sequence"],
   topic_talk_prompt: "Tell me about how you do something. What are the steps?",
-  sentence_frames: [{"template":"Today I will show you how to ___."},{"template":"First, I ___."},{"template":"Next, I ___ and then I ___."},{"template":"Finally, I ___ and it was ___!"}],
+  sentence_frames: [{"template":"Today I will show you how to ___."},{"template":"You will need: ___, ___, and ___."},{"template":"First, I ___."},{"template":"Next, I ___ and then I ___."},{"template":"Then, I carefully ___."},{"template":"Finally, I ___ and it was ___!"},{"template":"Here is a tip: always remember to ___."}],
 };

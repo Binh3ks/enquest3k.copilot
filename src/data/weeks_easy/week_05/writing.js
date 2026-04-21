@@ -7,5 +7,5 @@ export default {
   prompt_en: "Describe your house! How many rooms does it have? What rooms are there? What is in the living room? What is in your bedroom? Do you have a garden?",
   prompt_vi: "Mô tả ngôi nhà của bạn! Có bao nhiêu phòng? Có những phòng nào? Phòng khách có gì? Phòng ngủ có gì? Nhà có sân vườn không?",
   keywords: ["bedroom", "bed", "chair", "table", "sleep", "play", "like"],
-  sentence_frames: [{"template":"My house has ___ rooms."},{"template":"There is a ___ and a ___ in my house."},{"template":"In my bedroom, there is a ___ and ___."},{"template":"I like my house because ___."}],
+  sentence_frames: [{"template":"My house has ___ rooms."},{"template":"There is a ___ and a ___ in my house."},{"template":"In my bedroom, there is a ___ and a ___."},{"template":"My favourite room is the ___ because ___."}],
 };

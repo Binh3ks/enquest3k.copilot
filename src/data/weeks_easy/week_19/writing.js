@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về bản thân khi còn nhỏ! Trong ảnh cũ bạn bao nhiêu tuổi? Trông như thế nào — to hay nhỏ, vui hay nhút nhát? Bạn ở đâu? Ai ở cùng?",
   keywords: ["was", "were", "baby", "small", "cute", "photo", "album", "memory", "grow", "kindergarten"],
   topic_talk_prompt: "Tell me about something you did when you were small.",
-  sentence_frames: [{"template":"In this photo, I was ___ years old."},{"template":"I was ___ and ___."},{"template":"I was at ___ with ___."},{"template":"Now I am ___, but then I was ___."}],
+  sentence_frames: [{"template":"In this photo, I was ___ years old."},{"template":"I was ___ and ___."},{"template":"I was at ___ with ___."},{"template":"My favourite thing to do was ___."},{"template":"I was different because ___."},{"template":"Now I am ___, but then I was ___."}],
 };

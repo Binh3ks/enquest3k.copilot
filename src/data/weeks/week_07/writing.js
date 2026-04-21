@@ -7,5 +7,5 @@ export default {
   prompt_en: "What is in your school bag? Describe at least 5 items. Is there a book? A pencil case? A ruler? What colour are they? What do you use them for?",
   prompt_vi: "Trong cặp sách có gì? Mô tả ít nhất 5 đồ vật. Có sách không? Hộp bút không? Thước không? Chúng màu gì? Dùng để làm gì?",
   keywords: ["backpack", "pen", "book", "notebook", "ruler", "eraser", "pencil case", "there is", "whiteboard", "computer", "teacher", "classroom"],
-  sentence_frames: [{"template":"In my bag, there is a ___ and a ___."},{"template":"There is also a ___. It is ___."},{"template":"I use my ___ to ___."},{"template":"My favourite thing in my bag is my ___ because ___."}],
+  sentence_frames: [{"template":"In my bag, there is a ___ and a ___."},{"template":"There is also a ___. It is ___."},{"template":"I use my ___ to ___."},{"template":"My ___ is ___ colour and it is very ___."},{"template":"My favourite thing in my bag is my ___ because ___."}],
 };

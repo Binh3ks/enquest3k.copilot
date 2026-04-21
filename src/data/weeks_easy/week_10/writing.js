@@ -8,5 +8,5 @@ export default {
   prompt_vi: "So sánh cuộc sống thành phố và nông thôn! Sống ở thành phố tốt điều gì? Sống ở nông thôn tốt điều gì? Bạn thích nơi nào hơn và tại sao? Dùng 'but'.",
   keywords: ["city", "farm", "quiet", "clean", "but", "cow", "chicken", "animals", "field", "tree"],
   topic_talk_prompt: "Tell me about animals on a farm. What do they do?",
-  sentence_frames: [{"template":"A city has ___, but a farm has ___."},{"template":"In a city, you can ___, but on a farm, you can ___."},{"template":"A city is ___, but a farm is ___."},{"template":"I prefer ___ because ___."}],
+  sentence_frames: [{"template":"A city has ___, but a farm has ___."},{"template":"In a city, you can ___, but on a farm, you can ___."},{"template":"A city is ___, but a farm is ___."},{"template":"People in a city ___, but people on a farm ___."},{"template":"I prefer ___ because ___."}],
 };

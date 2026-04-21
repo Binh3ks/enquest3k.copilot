@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Hãy tưởng tượng bạn đang thuyết trình ngắn về bản thân! Chủ đề là gì? Bạn giỏi điều gì? Bạn thích gì? Cảm giác khi thuyết trình? Một điều thú vị về bạn?",
   keywords: ["present", "poster", "introduce", "family", "talented", "confident", "proud", "describe", "audience", "project"],
   topic_talk_prompt: "Tell me about your favourite things — your room, toys, food, or hobby. What makes your world special?",
-  sentence_frames: [{"template":"Today I am presenting about ___."},{"template":"I can ___ and I can also ___."},{"template":"I like ___ and my favourite ___ is ___."},{"template":"When I present, I feel ___."}],
+  sentence_frames: [{"template":"Today I am presenting about ___."},{"template":"My topic is important because ___."},{"template":"I can ___ and I can also ___."},{"template":"I like ___ and my favourite ___ is ___."},{"template":"One interesting fact about me is ___."},{"template":"When I present, I feel ___."}],
 };

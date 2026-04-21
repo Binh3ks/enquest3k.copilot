@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Mô tả thói quen hàng ngày! Bạn thức dậy lúc mấy giờ? Buổi sáng làm gì? Sau giờ học làm gì? Đi ngủ lúc mấy giờ?",
   keywords: ["wake up", "brush teeth", "eat", "go", "school", "play", "homework", "dinner", "TV", "sleep"],
   topic_talk_prompt: "Tell me about what you usually do every day.",
-  sentence_frames: [{"template":"I wake up at ___ every day."},{"template":"In the morning, I ___ and ___."},{"template":"After school, I ___."},{"template":"I go to bed at ___."}],
+  sentence_frames: [{"template":"I wake up at ___ every day."},{"template":"In the morning, I ___ and ___."},{"template":"At school, I ___ and ___."},{"template":"After school, I ___."},{"template":"In the evening, I ___ and ___."},{"template":"I go to bed at ___."}],
 };

@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Viết về môn thể thao hoặc trò chơi yêu thích! Bạn đang chơi môn nào? Bạn đang làm gì trong trận đấu? Chơi cùng ai? Đang thắng không? Cảm giác thế nào?",
   keywords: ["I am", "is", "are", "playing", "running", "kicking", "scoring", "team", "energy"],
   topic_talk_prompt: "Tell me about your favourite sport. What are the players doing?",
-  sentence_frames: [{"template":"Right now I am playing ___."},{"template":"I am ___ing the ___ and my team is ___."},{"template":"We are playing against ___."},{"template":"I feel ___ because ___."}],
+  sentence_frames: [{"template":"Right now I am playing ___."},{"template":"I am ___ing the ___ and my team is ___."},{"template":"We are playing against ___."},{"template":"My job in the team is to ___."},{"template":"The score is ___ to ___."},{"template":"I feel ___ because ___."}],
 };

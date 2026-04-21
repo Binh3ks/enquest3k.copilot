@@ -8,5 +8,5 @@ export default {
   model_sentence: "My favourite place is the park. There is a big tree and there are many flowers. I go with my family. We play and walk together!",
   keywords: ["park", "playground", "library", "zoo", "there is", "there are", "go", "play"],
   topic_talk_prompt: "Tell me about your favourite place on weekends. What do you do there?",
-  sentence_frames: [{"template":"My favourite place on the weekend is the ___."},{"template":"I go there with ___."},{"template":"At the ___, I can ___ and ___."},{"template":"I love it because ___."}],
+  sentence_frames: [{"template":"My favourite place on the weekend is the ___."},{"template":"I go there with ___."},{"template":"At the ___, I can ___ and ___."},{"template":"The ___ is ___ and ___."},{"template":"I always feel ___ when I am there."},{"template":"I love it because ___."}],
 };

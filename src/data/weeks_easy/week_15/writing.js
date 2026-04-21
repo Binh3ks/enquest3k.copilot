@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Mô tả chuyến thăm công viên nhộn nhịp! Mọi người đang làm gì? Ai đang chạy? Ai đang ngồi? Trẻ em đang chơi gì? Thời tiết như thế nào?",
   keywords: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"],
   topic_talk_prompt: "Tell me about what people are doing at a park right now.",
-  sentence_frames: [{"template":"Today I am visiting ___. It is ___."},{"template":"I can see people ___ing ___."},{"template":"___ is ___ing near the ___."},{"template":"I am ___ing and I feel ___."}],
+  sentence_frames: [{"template":"Today I am visiting ___. It is ___."},{"template":"I can see people ___ing ___."},{"template":"___ is ___ing near the ___."},{"template":"Some children are ___ and some are ___."},{"template":"The weather is ___, so people are ___."},{"template":"I am ___ing and I feel ___."}],
 };

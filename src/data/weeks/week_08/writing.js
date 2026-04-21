@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Mô tả lớp học! Có bao nhiêu học sinh? Bao nhiêu bàn và ghế? Tường có gì? Bàn giáo viên có gì? Viết mô tả đầy đủ.",
   keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are", "many"],
   topic_talk_prompt: "Tell me about your classroom. What do you see around you? How many students and things are there?",
-  sentence_frames: [{"template":"In my classroom, there are ___ students."},{"template":"There are ___ desks and ___ chairs."},{"template":"On the wall, there are ___ and ___."},{"template":"I love my classroom because ___."}],
+  sentence_frames: [{"template":"In my classroom, there are ___ students."},{"template":"There are ___ desks and ___ chairs."},{"template":"On the wall, there are ___ and ___."},{"template":"On the teacher's table, there is a ___ and a ___."},{"template":"I love my classroom because ___."}],
 };

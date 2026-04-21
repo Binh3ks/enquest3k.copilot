@@ -8,5 +8,5 @@ export default {
   prompt_vi: "Mô tả thành phố/thị trấn của bạn! Có những công trình nào? Thấy những phương tiện nào? Thành phố to hay nhỏ? Điều đặc biệt là gì?",
   keywords: ["city", "street", "noisy", "busy", "tall", "modern", "car", "bus", "building", "traffic"],
   topic_talk_prompt: "Tell me about a city you know. What sounds can you hear? What can you see on the streets?",
-  sentence_frames: [{"template":"My city is called ___. It is a ___ city."},{"template":"There is a ___ and a ___ near my house."},{"template":"I can see ___ and ___ on the street."},{"template":"I love my city because ___."}],
+  sentence_frames: [{"template":"My city is called ___. It is a ___ city."},{"template":"There is a ___ and a ___ near my house."},{"template":"I can see ___ and ___ on the street."},{"template":"In my city, people like to ___."},{"template":"I love my city because ___."}],
 };
