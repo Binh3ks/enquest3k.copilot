@@ -1,9 +1,9 @@
 export default {
   title: "Inside My Backpack",
-  prompt_en: "What is in your school bag? Write about 3 or more things you have inside. Use 'there is' and 'there are'.",
-  prompt_vi: "Có gì trong cặp sách của bạn? Viết về 3 thứ trở lên bạn có bên trong. Dùng 'there is' và 'there are'.",
-  instruction_en: "Use 'there is' for one thing and 'there are' for many things. Include words like: pencil, pen, book, ruler, eraser.",
-  instruction_vi: "Dùng 'there is' cho một thứ và 'there are' cho nhiều thứ. Bao gồm các từ như: pencil, pen, book, ruler, eraser.",
+  prompt_en: "What is in your school bag? Describe at least 5 items. Is there a book? A pencil case? A ruler? What colour are they? What do you use them for?",
+  prompt_vi: "Trong cặp sách có gì? Mô tả ít nhất 5 đồ vật. Có sách không? Hộp bút không? Thước không? Chúng màu gì? Dùng để làm gì?",
+  instruction_en: "Use: There is a... in my bag. / It is (colour). / I use it to...",
+  instruction_vi: "Dùng: There is a... in my bag. / It is (colour). / I use it to...",
   model_sentence: "There is a pencil and a ruler in my bag. There are three books inside too. I also have my lunch box. My school bag is blue and red!",
   min_words: 30,
   keywords: ["school bag", "pencil", "pen", "book", "ruler", "eraser", "there is", "there are"],
@@ -79,5 +79,5 @@ export default {
       ]
     }
   ],
-  sentence_frames: [{"template":"In my backpack, there is a ___."},{"template":"There is also a ___ and a ___."},{"template":"There is a ___ in my classroom."},{"template":"I like school because there is ___."}],
+  sentence_frames: [{"template":"In my bag, there is a ___ and a ___."},{"template":"There is also a ___. It is ___."},{"template":"I use my ___ to ___."},{"template":"My favourite thing in my bag is my ___ because ___."}],
 };

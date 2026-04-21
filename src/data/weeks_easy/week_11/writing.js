@@ -1,12 +1,12 @@
 export default {
   title: "My Favourite Weekend Place",
-  prompt_en: "Write about your favourite place on the weekend. Where do you go? What is there? Use 'there is' or 'there are'.",
-  prompt_vi: "Viết về nơi yêu thích của bạn vào cuối tuần. Bạn đi đâu? Ở đó có gì? Dùng 'there is' hoặc 'there are'.",
-  instruction_en: "Use: there is / there are. Write 2 or more sentences about the place.",
-  instruction_vi: "Dùng: there is / there are. Viết 2 câu trở lên về địa điểm đó.",
+  prompt_en: "Write about your favourite place to visit on weekends! Where do you go? Who do you go with? What can you do there? Why do you love this place?",
+  prompt_vi: "Viết về địa điểm yêu thích cuối tuần! Bạn đi đâu? Đi cùng ai? Ở đó có thể làm gì? Tại sao bạn thích nơi đó?",
+  instruction_en: "Use: My favourite place is... / I go there with... / At the ___, I can... / I love it because...",
+  instruction_vi: "Dùng: My favourite place is... / I go there with... / At the ___, I can... / I love it because...",
   min_words: 30,
   model_sentence: "My favourite place is the park. There is a big tree and there are many flowers. I go with my family. We play and walk together!",
   keywords: ["park", "playground", "library", "zoo", "there is", "there are", "go", "play"],
   topic_talk_prompt: "Tell me about your favourite place on weekends. What do you do there?",
-  sentence_frames: [{"template":"My favourite place on the weekend is the ___."},{"template":"I go there with ___."},{"template":"At the ___, there is ___ and there are ___."},{"template":"I love the ___ because ___."}],
+  sentence_frames: [{"template":"My favourite place on the weekend is the ___."},{"template":"I go there with ___."},{"template":"At the ___, I can ___ and ___."},{"template":"I love it because ___."}],
 };

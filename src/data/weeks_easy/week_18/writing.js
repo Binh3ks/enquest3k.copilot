@@ -1,12 +1,12 @@
 export default {
   title: "My Home News Report",
   min_words: 30,
-  instruction_en: "Pretend you are a reporter at home! Describe what people around you are doing right now. Use Present Continuous (am/is/are + verb-ing).",
-  instruction_vi: "Giả vờ bạn là phóng viên ở nhà! Mô tả những gì mọi người xung quanh bạn đang làm ngay lúc này. Dùng thì Hiện tại tiếp diễn.",
-  prompt_en: "Look around your home. What is happening? Describe it like a reporter!",
-  prompt_vi: "Nhìn xung quanh nhà bạn. Điều gì đang xảy ra? Hãy mô tả như một phóng viên!",
+  instruction_en: "Use: I am standing at... / I can see... / ___ is ___ing... / Right now, people are...",
+  instruction_vi: "Dùng: I am standing at... / I can see... / ___ is ___ing... / Right now, people are...",
+  prompt_en: "Imagine you are a news reporter! What can you see right now? What are people doing around you? What is happening? Report the scene in 4–5 sentences.",
+  prompt_vi: "Hãy tưởng tượng bạn là phóng viên tin tức! Bạn đang nhìn thấy gì? Mọi người xung quanh đang làm gì? Chuyện gì đang xảy ra? Tường thuật 4–5 câu.",
   model_sentence: "Hello! This is live news from my home. I am sitting at my desk and learning English. My mum is cooking in the kitchen right now. My brother is reading a book in his room. My cat is sleeping on the big sofa. The fan is spinning quietly above us. It is a very busy and exciting scene at my house today!",
   keywords: ["I am", "is", "are", "happening", "reporter", "describe", "live", "-ing"],
   topic_talk_prompt: "Tell me about something interesting happening near you right now.",
-  sentence_frames: [{"template":"Hello! I am ___ broadcasting from ___."},{"template":"Right now, ___ is ___ing ___."},{"template":"___ are ___ing near the ___."},{"template":"This is what is happening right now!"}],
+  sentence_frames: [{"template":"Hello! I am reporting live from ___."},{"template":"Right now, I can see ___."},{"template":"___ is ___ing and ___ is ___ing."},{"template":"This is ___ reporting. Back to you!"}],
 };

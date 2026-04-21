@@ -1,12 +1,12 @@
 export default {
   title: "My Talents",
-  prompt_en: "Write 3-5 sentences about what you can do and can't do. Use 'I can...' and 'I can't...' (Example: I can sing. I can run fast. I can't swim yet.)",
-  prompt_vi: "Viết 3-5 câu về những gì bạn có thể và chưa thể làm. Dùng 'I can...' và 'I can't...' (Ví dụ: Tôi có thể hát. Tôi có thể chạy nhanh. Tôi chưa biết bơi.)",
-  instruction_en: "Use 'I can' and 'I can't' to write about your talents.",
-  instruction_vi: "Dùng 'I can' và 'I can't' để viết về tài năng của bạn.",
+  prompt_en: "Write about your talents for a talent show! What can you do well? What can't you do? What talent do you want to learn? How do you feel when you perform?",
+  prompt_vi: "Viết về tài năng của bạn cho buổi biểu diễn! Bạn giỏi làm gì? Không làm được gì? Muốn học tài năng nào? Cảm giác khi biểu diễn?",
+  instruction_en: "Use: I can... / I can't... / I want to learn to... / When I perform, I feel...",
+  instruction_vi: "Dùng: I can... / I can't... / I want to learn to... / When I perform, I feel...",
   min_words: 30,
   model_sentence: "I can sing. I can dance. I can run fast. I can't swim yet but I want to learn!",
   keywords: ["I can", "I can't", "sing", "dance", "run", "jump", "swim", "draw"],
   topic_talk_prompt: "Tell me about something you are good at. What is your talent?",
-  sentence_frames: [{"template":"I can ___ very well."},{"template":"I can also ___."},{"template":"I cannot ___ yet, but I want to learn."},{"template":"My dream is to ___ one day."}],
+  sentence_frames: [{"template":"I can ___ and ___."},{"template":"I can't ___ yet, but I want to learn."},{"template":"My favourite talent is ___ because ___."},{"template":"When I perform, I feel ___."}],
 };
