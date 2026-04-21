@@ -8,4 +8,5 @@ export default {
   prompt_vi: "So sánh thành phố và trang trại. Có gì khác? Dùng 'but' để chỉ sự đối lập. Bạn thích cái nào hơn?",
   keywords: ["city", "farm", "countryside", "but", "noisy", "quiet", "clean", "peaceful", "animals", "field"],
   topic_talk_prompt: "Tell me about a farm or animals you have seen. What animals were there? What did they do?",
+  sentence_frames: [{"template":"The city is ___, but the farm is ___."},{"template":"The city has ___, but the farm has ___."},{"template":"I like the ___ because it is ___."},{"template":"My favourite place is the ___ because ___."}],
 };

@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viet it nhat 4 cau mo ta mot quy trinh tung buoc. Dung: First, Next, Then, Finally.",
   keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "slice", "squeeze", "step", "sequence", "pour", "tidy"],
   topic_talk_prompt: "Tell me about how you do something step by step. What is the first step? What comes next? What is the last step?",
+  sentence_frames: [{"template":"First, I ___."},{"template":"Next, I ___."},{"template":"Then, I ___."},{"template":"Finally, I ___ and it was ___."}],
 };

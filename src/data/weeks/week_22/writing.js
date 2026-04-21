@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viet it nhat 4 cau hoi Did va 4 cau tra loi ve hom qua.",
   keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "played", "watched", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about something interesting that happened in the past. What clues helped you understand what occurred?",
+  sentence_frames: [{"template":"Did you ___ yesterday?"},{"template":"Yes, I did. I ___ed ___."},{"template":"Did you ___ last night?"},{"template":"No, I didn't. I ___ed ___ instead."}],
 };

@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn. Dùng Quá Khứ Đơn: The hare ran... The hare slept... The tortoise won... Dùng TẤT CẢ từ chỉ trình tự: First... Then... After that... Finally... Bao gồm bài học đạo đức ở cuối. Viết ít nhất 50 từ.",
   keywords: ["tortoise", "hare", "race", "boast", "boasted", "ran", "fast", "slept", "nap", "steady", "determined", "won", "moral", "persevere", "cheer", "cheered", "finish", "first", "then", "after that", "finally", "confident", "overtake"],
   topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
+  sentence_frames: [{"template":"Once upon a time, the ___ ___."},{"template":"First, the ___ ran/slept very ___."},{"template":"Then, the ___ ___ because ___."},{"template":"Finally, the ___ won because ___."}],
 };

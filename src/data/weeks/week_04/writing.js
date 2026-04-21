@@ -7,4 +7,5 @@ export default {
   prompt_en: "What do you like to do? Do you like playing, reading, or drawing? How do these things make you feel?",
   prompt_vi: "Bạn thích làm gì? Bạn có thích chơi, đọc hay vẽ không? Những điều này khiến bạn cảm thấy thế nào?",
   keywords: ["like", "playing", "reading", "drawing", "happy", "feel", "favorite"]
+  sentence_frames: [{"template":"I like ___ing."},{"template":"I also like ___ing."},{"template":"When I ___, I feel ___."},{"template":"My favourite thing is ___."}],
 };

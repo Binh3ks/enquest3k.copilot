@@ -7,4 +7,5 @@ export default {
   prompt_en: "What is in your backpack? What school supplies do you have? What is in your classroom?",
   prompt_vi: "Có gì trong ba lô của bạn? Bạn có đồ dùng học tập gì? Có gì trong lớp học của bạn?",
   keywords: ["backpack", "pen", "book", "notebook", "ruler", "eraser", "pencil case", "there is", "whiteboard", "computer", "teacher", "classroom"]
+  sentence_frames: [{"template":"In my backpack, there is a ___."},{"template":"There is also a ___ and a ___."},{"template":"There is a ___ in my classroom."},{"template":"I like school because there is ___."}],
 };

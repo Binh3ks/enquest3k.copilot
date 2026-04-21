@@ -7,4 +7,5 @@ export default {
   prompt_en: "What rooms are in your house? What furniture do you have? Which room is your favorite?",
   prompt_vi: "Ngôi nhà của bạn có những phòng nào? Bạn có đồ đạc gì? Phòng nào là phòng yêu thích của bạn?",
   keywords: ["house", "room", "bedroom", "kitchen", "sofa", "lamp", "mirror", "fridge", "furniture"]
+  sentence_frames: [{"template":"My house has a ___ and a ___."},{"template":"In my ___, there is a ___."},{"template":"My favourite room is the ___."},{"template":"I like my house because ___."}],
 };

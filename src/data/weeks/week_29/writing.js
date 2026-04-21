@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Hãy kể về một chuyến đi mà bạn đã thực hiện. Bạn đi đâu? Bạn đi bằng phương tiện gì? Điều gì đã xảy ra trong chuyến đi?",
   topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go? How did you get there? What did you see or do?",
   keywords: ["went", "ran", "came", "flew", "journey", "airport", "ticket", "luggage", "destination", "adventure", "passenger", "departure", "arrival"]
+  sentence_frames: [{"template":"Last ___, my family went to ___."},{"template":"We flew/came/ran to ___."},{"template":"First, we ___. Then, we ___."},{"template":"It was the best ___ because ___."}],
 };

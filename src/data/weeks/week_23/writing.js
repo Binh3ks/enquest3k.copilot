@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viet it nhat 4 cau ve cac hoat dong lop my thuat hom qua. Dung: painted, colored, folded, cut, glued, created.",
   keywords: ["painted", "colored", "glued", "folded", "created", "brushed", "cut", "picture", "scissors", "brush", "carefully", "texture", "symmetry", "pigment"],
   topic_talk_prompt: "Tell me about a painting or drawing you like. What do you see in it? How does it make you feel?",
+  sentence_frames: [{"template":"Yesterday I ___ed a ___."},{"template":"First, I ___ed ___."},{"template":"Then I ___ed the ___ and ___ed ___."},{"template":"My teacher said it was ___."}],
 };

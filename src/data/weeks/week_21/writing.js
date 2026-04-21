@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Bạn đã làm gì hôm qua? Bạn đã đi đâu? Bạn đã giúp ai? Bạn cảm thấy thế nào?",
   keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "played", "watched", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about what you did yesterday. What happened from morning to night?",
+  sentence_frames: [{"template":"Yesterday I ___ed ___."},{"template":"In the morning, I ___ed ___."},{"template":"After school, I ___ed ___."},{"template":"At the end of the day, I felt ___."}],
 };

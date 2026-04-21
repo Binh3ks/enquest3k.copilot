@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Hãy kể về một buổi dã ngoại hoặc bữa ăn đặc biệt mà bạn đã có. Bạn ăn gì? Bạn uống gì? Ai mua thức ăn hoặc cho bạn thứ gì đặc biệt?",
   topic_talk_prompt: "Tell me about a picnic or outdoor meal you have had. What did you eat and drink? Who were you with?",
   keywords: ["ate", "drank", "bought", "gave", "picnic", "basket", "sandwich", "lemonade", "watermelon", "blanket", "thirsty", "hungry", "cheerful", "delicious", "outdoor", "refreshing", "market", "shared"]
+  sentence_frames: [{"template":"Last ___, my family had a ___ at ___."},{"template":"We ate ___ and drank ___."},{"template":"Then we ___ and it was ___."},{"template":"It was the best ___ we ever ___."}],
 };

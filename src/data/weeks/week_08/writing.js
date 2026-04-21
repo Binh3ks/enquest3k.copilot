@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Miêu tả lớp học của bạn. Có bao nhiêu bàn, ghế, học sinh? Có những đồ dùng gì? Sử dụng 'There are...' càng nhiều càng tốt.",
   keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are", "many"],
   topic_talk_prompt: "Tell me about your classroom. What do you see around you? How many students and things are there?",
+  sentence_frames: [{"template":"There are ___ desks in my classroom."},{"template":"There are many ___ on the shelves."},{"template":"There are ___ students in my class."},{"template":"I love my classroom because there are ___."}],
 };
