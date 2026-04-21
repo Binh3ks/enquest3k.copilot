@@ -6,6 +6,6 @@ export default {
   instruction_vi: "Viết về một trò chơi săn kho báu ở nhà. Bạn tìm ở đâu? Bạn tìm thấy kho báu ở đâu? Sử dụng giới từ: trong, trên, dưới, bên cạnh.",
   prompt_en: "Describe a treasure hunt. Where do you look for the treasure? What prepositions do you use? Where is it hidden?",
   prompt_vi: "Miêu tả một cuộc săn kho báu. Bạn tìm kho báu ở đâu? Bạn sử dụng giới từ nào? Nó được giấu ở đâu?",
-  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"]
+  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"],
   sentence_frames: [{"template":"The ___ is ___ the ___."},{"template":"I look ___ the ___."},{"template":"I find the ___ ___ the ___."},{"template":"The treasure is ___!"}],
 };

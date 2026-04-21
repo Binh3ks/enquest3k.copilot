@@ -6,6 +6,6 @@ export default {
   instruction_vi: "Viết về gia đình của bạn. Kể cho chúng tôi nghe về mẹ, bố, anh chị em của bạn.",
   prompt_en: "Who is in your family? What are they like? How do you help each other?",
   prompt_vi: "Ai trong gia đình bạn? Họ như thế nào? Các bạn giúp đỡ nhau như thế nào?",
-  keywords: ["This is my", "mother", "father", "brother", "sister", "team", "family", "love", "home"]
+  keywords: ["This is my", "mother", "father", "brother", "sister", "team", "family", "love", "home"],
   sentence_frames: [{"template":"This is my ___."},{"template":"My ___ is ___."},{"template":"We are a ___."},{"template":"I love my ___."}],
 };

@@ -6,6 +6,6 @@ export default {
   instruction_vi: "Viết về trường của bạn. Kể cho chúng tôi nghe về bạn, giáo viên và lớp học của bạn.",
   prompt_en: "Who are you? What is your teacher like? What is in your classroom?",
   prompt_vi: "Bạn là ai? Giáo viên của bạn như thế nào? Có gì trong lớp học của bạn?",
-  keywords: ["I am", "is", "are", "teacher", "classroom", "student", "school"]
+  keywords: ["I am", "is", "are", "teacher", "classroom", "student", "school"],
   sentence_frames: [{"template":"My name is ___."},{"template":"I am ___ years old."},{"template":"I am a ___."},{"template":"I like ___."}],
 };

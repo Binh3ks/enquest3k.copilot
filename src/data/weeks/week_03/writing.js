@@ -6,6 +6,6 @@ export default {
   instruction_vi: "Viết về bạn thân của bạn. Kể cho chúng tôi nghe về ngoại hình của họ.",
   prompt_en: "Write about your best friend. What do they look like? Are they tall or short? What color is their hair? Do they wear glasses?",
   prompt_vi: "Viết về bạn thân của bạn. Họ trông như thế nào? Họ cao hay thấp? Tóc họ màu gì? Họ có đeo kính không?",
-  keywords: ["tall", "short", "hair", "eyes", "glasses", "face", "smile"]
+  keywords: ["tall", "short", "hair", "eyes", "glasses", "face", "smile"],
   sentence_frames: [{"template":"This is my ___."},{"template":"He/She is ___."},{"template":"He/She has ___ hair."},{"template":"I like my friend because ___."}],
 };
