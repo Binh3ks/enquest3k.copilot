@@ -1,5 +1,6 @@
 import read from './read.js';
 import vocab from './vocab.js';
+import writing from './writing.js';
 import grammar from './grammar.js';
 import ask_ai from './ask_ai.js';
 import logic from './logic.js';
@@ -39,6 +40,7 @@ const weekData = {
     logic_lab: { logic_science, singapore_math },
     dictation: dictation,
     shadowing: shadowing,
+    writing: writing,
     explore: explore,
     mindmap_speaking: mindmap,
     daily_watch: daily_watch
