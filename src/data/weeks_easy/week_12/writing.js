@@ -8,4 +8,5 @@ export default {
   model_sentence: "I can sing. I can dance. I can run fast. I can't swim yet but I want to learn!",
   keywords: ["I can", "I can't", "sing", "dance", "run", "jump", "swim", "draw"],
   topic_talk_prompt: "Tell me about something you are good at. What is your talent?",
+  sentence_frames: [{"template":"I can ___ very well."},{"template":"I can also ___."},{"template":"I cannot ___ yet, but I want to learn."},{"template":"My dream is to ___ one day."}],
 };

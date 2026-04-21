@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Miêu tả thành phố của bạn. Bạn nhìn thấy tòa nhà và phương tiện gì? Bạn nghe thấy âm thanh gì? Tính từ nào miêu tả thành phố của bạn?",
   keywords: ["city", "street", "noisy", "busy", "tall", "modern", "car", "bus", "building", "traffic"],
   topic_talk_prompt: "Tell me about a city. What sounds and sights are there?",
+  sentence_frames: [{"template":"My city is ___ and ___."},{"template":"I see ___ buildings and ___ cars."},{"template":"The streets are full of ___."},{"template":"I like my city because it is ___."}],
 };

@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viết ít nhất 3 câu mô tả các bước. Dùng: First, Next, Then, Finally.",
   keywords: ["first", "next", "then", "finally", "bread", "jam", "spread", "knife", "toothpaste", "brush", "rinse", "step", "sequence"],
   topic_talk_prompt: "Tell me about how you do something. What are the steps?",
+  sentence_frames: [{"template":"First, I ___."},{"template":"Next, I ___."},{"template":"Then, I ___."},{"template":"Finally, I ___ and it was ___."}],
 };

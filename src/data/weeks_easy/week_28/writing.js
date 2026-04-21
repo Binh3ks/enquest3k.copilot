@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viết 3 câu hoặc hơn về câu chuyện. Dùng: ran, slept, won. Dùng ít nhất hai từ chỉ trình tự: First, Then, After that, Finally.",
   keywords: ["tortoise", "hare", "race", "ran", "slept", "won", "lost", "slow", "steady", "fast", "nap", "finish", "lesson", "first", "then", "after that", "finally", "won", "cheer"],
   topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
+  sentence_frames: [{"template":"Once upon a time, the ___ ___."},{"template":"First, the ___ ran/slept very ___."},{"template":"Then, the ___ ___ because ___."},{"template":"Finally, the ___ won because ___."}],
 };

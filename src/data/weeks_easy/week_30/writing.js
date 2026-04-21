@@ -7,5 +7,6 @@ export default {
   prompt_en: "What did you eat? What did you drink? Who gave you food?",
   prompt_vi: "Bạn đã ăn gì? Bạn đã uống gì? Ai đã cho bạn đồ ăn?",
   topic_talk_prompt: "Tell me about a meal or picnic you had. What did you eat? What did you drink?",
-  keywords: ["ate", "drank", "bought", "gave", "picnic", "sandwich", "juice", "basket", "delicious", "cheerful", "share", "hungry", "thirsty"]
+  keywords: ["ate", "drank", "bought", "gave", "picnic", "sandwich", "juice", "basket", "delicious", "cheerful", "share", "hungry", "thirsty"],
+  sentence_frames: [{"template":"Last ___, my family had a ___ at ___."},{"template":"We ate ___ and drank ___."},{"template":"Then we ___ and it was ___."},{"template":"It was the best ___ we ever ___."}],
 };

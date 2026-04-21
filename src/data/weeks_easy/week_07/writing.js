@@ -78,5 +78,6 @@ export default {
         "There is a water bottle too."
       ]
     }
-  ]
+  ],
+  sentence_frames: [{"template":"In my backpack, there is a ___."},{"template":"There is also a ___ and a ___."},{"template":"There is a ___ in my classroom."},{"template":"I like school because there is ___."}],
 };

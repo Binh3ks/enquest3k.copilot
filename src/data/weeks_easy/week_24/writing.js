@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viet it nhat 4 cau ve mot ngay voi nhieu cam xuc khac nhau. Dung: was, were, scared, excited, tired, relieved, cheerful, calm.",
   keywords: ["was", "were", "scared", "excited", "tired", "relieved", "cheerful", "calm", "worried", "surprised", "bored", "hungry", "thirsty", "angry", "upset", "because", "when"],
   topic_talk_prompt: "Tell me about a time you felt very happy or very sad. What happened?",
+  sentence_frames: [{"template":"Yesterday I was ___ because ___."},{"template":"In the morning I was ___, but later I was ___."},{"template":"When ___ happened, I was ___."},{"template":"At the end of the day I was ___ but ___."}],
 };

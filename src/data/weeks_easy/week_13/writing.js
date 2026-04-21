@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Bạn làm gì mỗi ngày? Bạn thức dậy lúc mấy giờ? Bạn làm gì sau giờ học?",
   keywords: ["wake up", "brush teeth", "eat", "go", "school", "play", "homework", "dinner", "TV", "sleep"],
   topic_talk_prompt: "Tell me about what you usually do every day.",
+  sentence_frames: [{"template":"I wake up at ___ every morning."},{"template":"Then I ___ and ___."},{"template":"After school, I ___."},{"template":"I go to bed at ___."}],
 };

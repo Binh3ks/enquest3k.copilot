@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Dung mau: Did you ...? Yes, I did / No, I didn't.",
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about something interesting that happened in the past.",
+  sentence_frames: [{"template":"Did you ___ yesterday?"},{"template":"Yes, I did. I ___ed ___."},{"template":"Did you ___ last night?"},{"template":"No, I didn't. I ___ed ___ instead."}],
 };

@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Có gì trong lớp học của bạn? Dùng There are + bàn, ghế, học sinh, bút chì...",
   keywords: ["desk", "pencil", "student", "bag", "marker", "chair", "board", "paper", "shelf", "crayon", "there are"],
   topic_talk_prompt: "Tell me about your classroom. What do you see there?",
+  sentence_frames: [{"template":"There are ___ desks in my classroom."},{"template":"There are many ___ on the shelves."},{"template":"There are ___ students in my class."},{"template":"I love my classroom because there are ___."}],
 };

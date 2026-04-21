@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viết 3 câu hoặc hơn về sự phát triển của cây. Dùng: grows, needs, absorbs, uses, blooms. Dùng ít nhất hai từ chỉ trình tự: First, Next, After that, Finally.",
   keywords: ["seed", "soil", "root", "stem", "leaf", "flower", "sunlight", "water", "grows", "needs", "absorbs", "sprout", "first", "next", "after that", "finally", "plant"],
   topic_talk_prompt: "Tell me about a plant or animal you have watched grow or change.",
+  sentence_frames: [{"template":"First, a ___ is planted in ___."},{"template":"Next, it ___s and ___s."},{"template":"After that, the ___ grows ___."},{"template":"Finally, a ___ blooms at the top."}],
 };

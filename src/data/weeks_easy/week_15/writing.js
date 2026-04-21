@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Bạn làm gì ở công viên? Bạn thấy gì? Ai cùng đi với bạn? Họ đang làm gì? Bạn có thích công viên không?",
   keywords: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"],
   topic_talk_prompt: "Tell me about what people are doing at a park right now.",
+  sentence_frames: [{"template":"Today I am visiting ___."},{"template":"I can see people ___ing ___."},{"template":"___ is ___ing near the ___."},{"template":"I am ___ing and I feel ___."}],
 };

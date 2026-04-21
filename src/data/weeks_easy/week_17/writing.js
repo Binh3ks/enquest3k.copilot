@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Thời tiết hôm nay như thế nào? Bạn đang mặc gì?",
   keywords: ["It is", "raining", "snowing", "sunny", "cold", "warm", "so", "wearing", "coat", "boots", "hat", "umbrella"],
   topic_talk_prompt: "Tell me about the weather today. What are people wearing?",
+  sentence_frames: [{"template":"Today the weather is ___."},{"template":"It is ___, so I am wearing ___."},{"template":"I am also wearing ___ because ___."},{"template":"I always ___ when it is ___."}],
 };

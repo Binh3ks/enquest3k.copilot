@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về việc tìm kho báu. Kể cho chúng tôi biết bạn tìm ở đâu.",
   prompt_en: "Where do you look for the treasure? Do you look under the bed? Do you look on the desk? Where do you find it?",
   prompt_vi: "Bạn tìm kho báu ở đâu? Bạn có tìm dưới giường không? Bạn có tìm trên bàn không? Bạn tìm thấy ở đâu?",
-  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"]
+  keywords: ["treasure", "hunt", "hide", "find", "in", "on", "under", "next to", "box", "room"],
+  sentence_frames: [{"template":"The ___ is ___ the ___."},{"template":"I look ___ the ___."},{"template":"I find the ___ ___ the ___."},{"template":"The treasure is ___!"}],
 };

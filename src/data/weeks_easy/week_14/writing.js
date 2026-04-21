@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Bạn có thể nói gì về bản thân? Ai ở trong gia đình bạn? Bạn có thể làm gì? Bạn giúp ai? Bạn chơi với ai?",
   keywords: ["show", "tell", "name", "family", "can", "help", "draw", "sing", "play", "friend"],
   topic_talk_prompt: "Tell me about your favourite things. What do you like most?",
+  sentence_frames: [{"template":"Today I am presenting about ___."},{"template":"I feel ___ today."},{"template":"I can ___ and I can ___."},{"template":"My favourite thing about my world is ___."}],
 };

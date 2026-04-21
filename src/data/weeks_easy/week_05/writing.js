@@ -6,5 +6,6 @@ export default {
   instruction_vi: "Viết về phòng ngủ của bạn. Kể cho chúng tôi biết bạn có gì ở đó.",
   prompt_en: "What is in your bedroom? Do you have a bed? Do you have a chair? What do you do in your bedroom?",
   prompt_vi: "Phòng ngủ của bạn có gì? Bạn có giường không? Bạn có ghế không? Bạn làm gì trong phòng ngủ?",
-  keywords: ["bedroom", "bed", "chair", "table", "sleep", "play", "like"]
+  keywords: ["bedroom", "bed", "chair", "table", "sleep", "play", "like"],
+  sentence_frames: [{"template":"My house has a ___ and a ___."},{"template":"In my ___, there is a ___."},{"template":"My favourite room is the ___."},{"template":"I like my house because ___."}],
 };

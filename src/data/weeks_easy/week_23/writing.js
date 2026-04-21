@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viet 3 cau hoac nhieu hon ve lop my thuat cua ban. Dung cac tu: painted, colored, folded, cut, glued.",
   keywords: ["painted", "colored", "glued", "folded", "created", "cut", "picture", "scissors", "brush", "carefully"],
   topic_talk_prompt: "Tell me about a picture or drawing you like. What do you see?",
+  sentence_frames: [{"template":"Yesterday I ___ed a ___."},{"template":"First, I ___ed ___."},{"template":"Then I ___ed the ___ and ___ed ___."},{"template":"My teacher said it was ___."}],
 };

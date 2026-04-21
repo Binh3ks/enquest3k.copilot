@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Nhìn ảnh cũ. Bạn bao nhiêu tuổi? Bạn như thế nào? Bạn khác bây giờ thế nào?",
   keywords: ["was", "were", "baby", "small", "cute", "photo", "album", "memory", "grow", "kindergarten"],
   topic_talk_prompt: "Tell me about something you did when you were small.",
+  sentence_frames: [{"template":"In this old photo, I was ___."},{"template":"I was ___ years old."},{"template":"I was ___ when I was a baby."},{"template":"Now I am ___ and I can ___."}],
 };

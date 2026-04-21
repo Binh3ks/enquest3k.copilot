@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Điều gì khác biệt giữa thành phố và trang trại? Bạn có thích trang trại không?",
   keywords: ["city", "farm", "quiet", "clean", "but", "cow", "chicken", "animals", "field", "tree"],
   topic_talk_prompt: "Tell me about animals on a farm. What do they do?",
+  sentence_frames: [{"template":"The city is ___, but the farm is ___."},{"template":"The city has ___, but the farm has ___."},{"template":"I like the ___ because it is ___."},{"template":"My favourite place is the ___ because ___."}],
 };

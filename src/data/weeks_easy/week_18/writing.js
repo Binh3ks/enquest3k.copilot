@@ -8,4 +8,5 @@ export default {
   model_sentence: "Hello! This is live news from my home. I am sitting at my desk and learning English. My mum is cooking in the kitchen right now. My brother is reading a book in his room. My cat is sleeping on the big sofa. The fan is spinning quietly above us. It is a very busy and exciting scene at my house today!",
   keywords: ["I am", "is", "are", "happening", "reporter", "describe", "live", "-ing"],
   topic_talk_prompt: "Tell me about something interesting happening near you right now.",
+  sentence_frames: [{"template":"Hello! I am ___ broadcasting from ___."},{"template":"Right now, ___ is ___ing ___."},{"template":"___ are ___ing near the ___."},{"template":"This is what is happening right now!"}],
 };

@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Viết 3 câu hoặc hơn về cuối tuần của bạn. Dùng: was, were, visited, played, watched, returned.",
   keywords: ["was", "were", "visited", "played", "watched", "returned", "weekend", "happy", "tired", "panel", "comic strip", "caption"],
   topic_talk_prompt: "Tell me about what you did last weekend. Tell the story.",
+  sentence_frames: [{"template":"Panel 1: First, I ___ed ___."},{"template":"Panel 2: Next, I ___ed ___."},{"template":"Panel 3: Then, I ___ed ___."},{"template":"Panel 4: Finally, I ___ed ___ and felt ___."}],
 };

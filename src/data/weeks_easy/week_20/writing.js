@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Nghĩ về đường phố hoặc thị trấn của bạn. Có cây không? Có chợ không? Bây giờ có gì?",
   keywords: ["there was", "there were", "old", "new", "building", "tree", "river", "road", "bridge", "market", "temple", "village"],
   topic_talk_prompt: "Tell me about how a place looked in the past. What was it like?",
+  sentence_frames: [{"template":"There was a ___ near ___."},{"template":"There were many ___ along ___."},{"template":"Now there are ___ where ___ used to be."},{"template":"I want to protect ___."}],
 };

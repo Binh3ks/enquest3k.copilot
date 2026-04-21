@@ -8,4 +8,5 @@ export default {
   prompt_vi: "Bạn đã làm gì hôm qua? Dùng động từ thêm -ed!",
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about what you did yesterday. What happened?",
+  sentence_frames: [{"template":"Yesterday I ___ed ___."},{"template":"In the morning, I ___ed ___."},{"template":"After school, I ___ed ___."},{"template":"At the end of the day, I felt ___."}],
 };

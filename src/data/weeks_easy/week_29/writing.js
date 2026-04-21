@@ -7,5 +7,6 @@ export default {
   prompt_en: "Where did you go? How did you travel? What did you see?",
   prompt_vi: "Bạn đã đi đâu? Bạn đi bằng phương tiện gì? Bạn đã thấy gì?",
   topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go?",
-  keywords: ["went", "ran", "came", "flew", "airport", "plane", "ticket", "journey", "adventure", "destination"]
+  keywords: ["went", "ran", "came", "flew", "airport", "plane", "ticket", "journey", "adventure", "destination"],
+  sentence_frames: [{"template":"Last ___, my family went to ___."},{"template":"We flew/came/ran to ___."},{"template":"First, we ___. Then, we ___."},{"template":"It was the best ___ because ___."}],
 };
