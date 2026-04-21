@@ -58,7 +58,9 @@ export const generateSmartReviewAsync = async (currentWeekId = 1) => {
                     task: taskDisplay,
                     answer: answerKey,
                     checkType: 'text',
-                    hint: v.definition_en,
+                    hint: v.definition_en || '',
+                    hintVi: v.definition_vi || '',
+                    imageUrl: v.image_url || null,
                     audioUrl: v.audio_word || null,
                     content: `Week ${weekId}: ${v.word}`
                 });
@@ -81,7 +83,9 @@ export const generateSmartReviewAsync = async (currentWeekId = 1) => {
                     task: g.question, 
                     answer: ans,
                     checkType: 'text',
-                    hint: g.hint,
+                    hint: g.hint || '',
+                    hintVi: g.hint_vi || '',
+                    imageUrl: null,
                     audioUrl: null,
                     content: `Week ${weekId}: Grammar Q${g.id}`
                 });
