@@ -1,4 +1,4 @@
-import { BookOpen, Star, Target, Hash, Cpu, Mic, Feather, Eye, Compass, Zap, Youtube, Gamepad2 } from 'lucide-react';
+import { BookOpen, Star, Target, Hash, Cpu, Mic, Feather, Eye, Compass, Zap, Youtube, Gamepad2, Brain } from 'lucide-react';
 import ReadingExplore from '../modules/read/ReadingExplore';
 import VocabManager from '../modules/vocab/VocabManager';
 import WordMatch from '../modules/match/WordMatch';
@@ -14,12 +14,14 @@ import WordPower from '../modules/power/WordPower';
 import DailyWatch from '../modules/watch/DailyWatch';
 import GameHub from '../modules/games/GameHub';
 import SelfRegulation from '../modules/self_regulation/SelfRegulation';
+import ReviewDashboard from '../modules/review/ReviewDashboard';
 export const MODULE_COMPONENTS = {
   read_explore: ReadingExplore, new_words: VocabManager, word_match: WordMatch,
   grammar: GrammarEngine, mindmap_speaking: MindMapSpeaking, ask_ai: AskAi, 
   dictation: DictationEngine, shadowing: Shadowing, writing: VideoChallenge, 
   explore: Explore, logic_lab: LogicLab, word_power: WordPower, 
   daily_watch: DailyWatch, game_hub: GameHub, self_regulation: SelfRegulation,
+  review: ReviewDashboard,
 };
 
 // 🔥 UNIVERSAL PROGRESS SYSTEM - Station ID Mapping
@@ -69,6 +71,7 @@ export const STATIONS = [
   { key: 'daily_watch', stationId: 'daily_watch', icon: Youtube, title_en: 'Daily Watch', color: 'red' },
   { key: 'game_hub', stationId: 'game_hub', icon: Gamepad2, title_en: 'Game Hub', color: 'amber' },
   { key: 'self_regulation', stationId: 'self_regulation', icon: Target, title_en: 'My Goals', color: 'sky' },
+  { key: 'review', stationId: 'review_session', icon: Brain, title_en: 'Weekly Review', color: 'violet' },
 ];
 
 // Helper function to get station ID from tab key
