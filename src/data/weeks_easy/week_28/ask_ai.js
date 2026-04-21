@@ -1,48 +1,65 @@
 export default {
-  title: "Ask AI: The Tortoise and the Hare",
-  topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
-  image_url: "/images/week28/ask_ai_cover_w28.jpg",
-  audio_url: "/audio/week28_easy/ask_ai_main.mp3",
+  topic_talk_prompt: "Tell me about a story or book you've read. What happened? Who were the characters?",
   prompts: [
     {
       id: 1,
-      context_en: "The tortoise won the race but he was very slow. Ask Nova why.",
-      context_vi: "Con rùa thắng cuộc đua nhưng nó rất chậm. Hỏi cô Nova tại sao.",
-      answer: ["Why did the tortoise win the race?", "How did the tortoise win if he was slow?", "Why did the slow tortoise win?"],
-      hint: "Why did the tortoise win the race?",
-      audio_url: "/audio/week28_easy/ask_ai_q1.mp3"
+      nova_says: "I just finished reading a story about a young girl who found a magic key.",
+      nova_says_vi: "Cô vừa đọc xong một câu chuyện về một cô gái nhỏ tìm thấy chiếc chìa khóa ma thuật.",
+      task_en: "Ask Nova WHAT the story was about.",
+      task_vi: "Hỏi cô Nova câu chuyện đó kể về điều gì.",
+      question_word_bank: ["What","Who","Where"],
+      question_frame: "___ was the story about?",
+      answer: ["What was the story about?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "The hare ran very fast at the start but he stopped to sleep. Ask Nova why the hare slept.",
-      context_vi: "Con thỏ chạy rất nhanh lúc đầu nhưng nó dừng lại để ngủ. Hỏi cô Nova tại sao con thỏ ngủ.",
-      answer: ["Why did the hare sleep during the race?", "Why did the hare stop and take a nap?", "Why did the hare decide to sleep?"],
-      hint: "Why did the hare sleep during the race?",
-      audio_url: "/audio/week28_easy/ask_ai_q2.mp3"
+      nova_says: "The girl found the key under an old tree in the forest.",
+      nova_says_vi: "Cô gái tìm thấy chìa khóa dưới một cái cây cũ trong rừng.",
+      task_en: "Ask Nova WHERE the girl found the key.",
+      task_vi: "Hỏi cô Nova cô gái tìm thấy chìa khóa ở đâu.",
+      question_word_bank: ["Where","What","Who"],
+      question_frame: "___ did the girl find the key?",
+      answer: ["Where did the girl find the key?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You see the word 'ran' in the story. Ask Nova what verb it comes from.",
-      context_vi: "Bạn thấy từ 'ran' trong câu chuyện. Hỏi cô Nova từ đó đến từ động từ gì.",
-      answer: ["What verb does 'ran' come from?", "What is the base form of 'ran'?", "Is 'ran' the past form of 'run'?"],
-      hint: "What verb does 'ran' come from?",
-      audio_url: "/audio/week28_easy/ask_ai_q3.mp3"
+      nova_says: "The magic key could open a secret door to a beautiful garden.",
+      nova_says_vi: "Chiếc chìa khóa ma thuật có thể mở cánh cửa bí mật dẫn vào khu vườn đẹp.",
+      task_en: "Ask Nova WHAT the magic key could do.",
+      task_vi: "Hỏi cô Nova chiếc chìa khóa ma thuật có thể làm gì.",
+      question_word_bank: ["What","Why","How"],
+      question_frame: "___ could the magic key do?",
+      answer: ["What could the magic key do?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Nova said 'sleep' becomes 'slept' in the past. Ask Nova for another example like this.",
-      context_vi: "Cô Nova nói 'sleep' thành 'slept' ở thì quá khứ. Hỏi cô Nova cho một ví dụ khác như vậy.",
-      answer: ["Can you give me another example of an irregular verb?", "What is another verb that changes in the past like 'slept'?", "Can you show me another irregular past verb?"],
-      hint: "Can you give me another example of an irregular verb?",
-      audio_url: "/audio/week28_easy/ask_ai_q4.mp3"
+      nova_says: "At the end of the story, the girl shared the garden with her whole village.",
+      nova_says_vi: "Cuối câu chuyện, cô gái chia sẻ khu vườn với cả làng.",
+      task_en: "Ask Nova WHAT the girl did with the garden at the end.",
+      task_vi: "Hỏi cô Nova cuối truyện cô gái đã làm gì với khu vườn.",
+      question_word_bank: ["What","Who","How"],
+      question_frame: "___ did the girl do with the garden?",
+      answer: ["What did the girl do with the garden?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your teacher said this story is a fable. Ask Nova what a fable is.",
-      context_vi: "Giáo viên nói câu chuyện này là một truyện ngụ ngôn. Hỏi cô Nova truyện ngụ ngôn là gì.",
-      answer: ["What is a fable?", "What does 'fable' mean?", "Can you tell me what a fable is?"],
-      hint: "What is a fable?",
-      audio_url: "/audio/week28_easy/ask_ai_q5.mp3"
+      nova_says: "The story teaches us that sharing is more important than keeping things for yourself.",
+      nova_says_vi: "Câu chuyện dạy chúng ta rằng chia sẻ quan trọng hơn là giữ mọi thứ cho bản thân.",
+      task_en: "Ask Nova WHAT the story teaches us.",
+      task_vi: "Hỏi cô Nova câu chuyện dạy chúng ta điều gì.",
+      question_word_bank: ["What","Why","How"],
+      question_frame: "___ does the story teach us?",
+      answer: ["What does the story teach us?"],
+      hint_word: "What",
+      audio_url: null
     }
   ]
 };

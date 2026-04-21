@@ -1,85 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about your favourite place to go on weekends. What do you do there? Who do you go with?",
+  topic_talk_prompt: "Tell me about your favourite place to visit on weekends. What do you do there?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know what your friend does at the library. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình làm gì ở thư viện. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_1.mp3",
-      answer: ["What do you do at the library?", "What do you do there?", "Do you read at the library?"],
-      hint: "What do you..."
+      nova_says: "My favourite weekend place is the beach.",
+      nova_says_vi: "Nơi yêu thích của cô vào cuối tuần là bãi biển.",
+      task_en: "Ask Nova WHAT her favourite weekend place is.",
+      task_vi: "Hỏi cô Nova nơi yêu thích của cô vào cuối tuần là gì.",
+      question_frame: "What ___ your favourite weekend place?",
+      answer: ["What is your favourite weekend place?","What's your favourite weekend place?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You want to know what your friend can buy at the supermarket. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình có thể mua gì ở siêu thị. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_2.mp3",
-      answer: ["What can you buy at the supermarket?", "What do you buy there?", "What can I buy at the supermarket?"],
-      hint: "What can you..."
+      nova_says: "I go to the beach every Saturday.",
+      nova_says_vi: "Cô đi biển mỗi thứ Bảy.",
+      task_en: "Ask Nova HOW OFTEN she goes to the beach.",
+      task_vi: "Hỏi cô Nova cô đi biển bao lâu một lần.",
+      question_frame: "How ___ do you go to the beach?",
+      answer: ["How often do you go to the beach?"],
+      hint: "often",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You want to know where your friend plays on weekends. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình chơi ở đâu vào cuối tuần. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_3.mp3",
-      answer: ["Where do you play on weekends?", "Where do you play?", "Where do you go to play?"],
-      hint: "Where do you..."
+      nova_says: "I usually swim and build sandcastles there.",
+      nova_says_vi: "Cô thường bơi và xây lâu đài cát ở đó.",
+      task_en: "Ask Nova WHAT she usually does at the beach.",
+      task_vi: "Hỏi cô Nova cô thường làm gì ở biển.",
+      question_frame: "What ___ you usually do at the beach?",
+      answer: ["What do you usually do at the beach?"],
+      hint: "do",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to know what animals your friend sees at the zoo. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình thấy động vật gì ở sở thú. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_4.mp3",
-      answer: ["What animals do you see at the zoo?", "What do you see at the zoo?", "What animals are at the zoo?"],
-      hint: "What animals..."
+      nova_says: "I go to the beach with my family.",
+      nova_says_vi: "Cô đi biển với gia đình.",
+      task_en: "Ask Nova WHO she goes to the beach with.",
+      task_vi: "Hỏi cô Nova cô đi biển với ai.",
+      question_frame: "___ do you go to the beach with?",
+      answer: ["Who do you go to the beach with?"],
+      hint: "Who",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You want to know if your friend likes to go to the park. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình có thích đi công viên không. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_5.mp3",
-      answer: ["Do you like to go to the park?", "Do you like the park?", "Do you go to the park?"],
-      hint: "Do you like..."
-    },
-    {
-      id: 6,
-      context_en: "You want to know where your friend eats lunch. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình ăn trưa ở đâu. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_6.mp3",
-      answer: ["Where do you eat lunch?", "Where do you eat?", "Do you eat at the restaurant?"],
-      hint: "Where do you..."
-    },
-    {
-      id: 7,
-      context_en: "You want to know what your friend does at the playground. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình làm gì ở sân chơi. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_7.mp3",
-      answer: ["What do you do at the playground?", "What do you play at the playground?", "Do you play at the playground?"],
-      hint: "What do you..."
-    },
-    {
-      id: 8,
-      context_en: "You want to know if your friend goes to the library on weekends. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình có đi thư viện cuối tuần không. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_8.mp3",
-      answer: ["Do you go to the library on weekends?", "Do you visit the library?", "Do you read at the library?"],
-      hint: "Do you go..."
-    },
-    {
-      id: 9,
-      context_en: "You want to know what your friend's favorite weekend place is. Ask them.",
-      context_vi: "Bạn muốn biết nơi cuối tuần yêu thích của bạn mình là gì. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_9.mp3",
-      answer: ["What is your favorite weekend place?", "Where do you like to go?", "What place do you like?"],
-      hint: "What is your..."
-    },
-    {
-      id: 10,
-      context_en: "You want to know if your friend helps buy food at the supermarket. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình có giúp mua thức ăn ở siêu thị không. Hỏi họ.",
-      audio_url: "/audio/week11/ask_ai_10.mp3",
-      answer: ["Do you help buy food at the supermarket?", "Do you buy food?", "Do you help at the supermarket?"],
-      hint: "Do you help..."
+      nova_says: "The beach near my house is very clean.",
+      nova_says_vi: "Bãi biển gần nhà cô rất sạch sẽ.",
+      task_en: "Ask Nova HOW the beach near her house is.",
+      task_vi: "Hỏi cô Nova bãi biển gần nhà cô như thế nào.",
+      question_frame: "___ is the beach near your house?",
+      answer: ["How is the beach near your house?"],
+      hint: "How",
+      audio_url: null
     }
   ]
 };

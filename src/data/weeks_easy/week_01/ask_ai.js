@@ -1,54 +1,60 @@
 export default {
   topic_talk_prompt: "Tell me about your school bag. What is inside? What colours do you see?",
   prompts: [
-    // ✅ Prompt 1 - What is this? (A0 - Super Simple)
     {
       id: 1,
-      context_en: "You see a pen. Ask what.",
-      context_vi: "Bạn thấy cái bút. Hỏi cái gì.",
-      audio_url: null,
-      answer: ["What is this?", "What is it?"],
-      hint: "What is..."
+      nova_says: "I have a red bag.",
+      nova_says_vi: "Cô có một cái cặp màu đỏ.",
+      task_en: "Ask Nova WHAT COLOUR her bag is.",
+      task_vi: "Hỏi cô Nova cặp của cô màu gì.",
+      question_frame: "What ___ is your bag?",
+      answer: ["What colour is your bag?"],
+      hint: "colour",
+      audio_url: null
     },
-    
-    // ✅ Prompt 2 - Where is...? (A0 - Super Simple)
     {
       id: 2,
-      context_en: "You want your bag. Ask where.",
-      context_vi: "Bạn muốn cặp. Hỏi ở đâu.",
-      audio_url: null,
-      answer: ["Where is my bag?", "Where is it?"],
-      hint: "Where is..."
+      nova_says: "My pen is here.",
+      nova_says_vi: "Cái bút của cô ở đây.",
+      task_en: "Ask Nova WHERE her pen is.",
+      task_vi: "Hỏi cô Nova bút của cô ở đâu.",
+      question_frame: "Where ___ your pen?",
+      answer: ["Where is your pen?"],
+      hint: "is",
+      audio_url: null
     },
-    
-    // ✅ Prompt 3 - Is this...? (A0 - Super Simple)
     {
       id: 3,
-      context_en: "You see a desk. Ask if big.",
-      context_vi: "Bạn thấy bàn. Hỏi có to không.",
-      audio_url: null,
-      answer: ["Is this big?", "Is it big?"],
-      hint: "Is this..."
+      nova_says: "This is my book.",
+      nova_says_vi: "Đây là sách của cô.",
+      task_en: "Ask Nova if this is HER book.",
+      task_vi: "Hỏi cô Nova đây có phải sách của cô không.",
+      question_frame: "___ this your book?",
+      answer: ["Is this your book?"],
+      hint: "Is",
+      audio_url: null
     },
-    
-    // ✅ Prompt 4 - Can I...? (A0 - Super Simple)
     {
       id: 4,
-      context_en: "You want to sit. Ask.",
-      context_vi: "Bạn muốn ngồi. Hỏi.",
-      audio_url: null,
-      answer: ["Can I sit?"],
-      hint: "Can I..."
+      nova_says: "I have some crayons.",
+      nova_says_vi: "Cô có vài cái bút sáp.",
+      task_en: "Ask Nova if you can use her crayons.",
+      task_vi: "Hỏi cô Nova bạn có thể dùng bút sáp không.",
+      question_frame: "___ I use your crayons?",
+      answer: ["Can I use your crayons?"],
+      hint: "Can",
+      audio_url: null
     },
-    
-    // ✅ Prompt 5 - Do you...? (A0 - Super Simple)
     {
       id: 5,
-      context_en: "Ask friend: like school?",
-      context_vi: "Hỏi bạn: thích trường?",
-      audio_url: null,
+      nova_says: "I like my school.",
+      nova_says_vi: "Cô thích trường của mình.",
+      task_en: "Ask Nova if she likes school.",
+      task_vi: "Hỏi cô Nova cô có thích trường không.",
+      question_frame: "___ you like school?",
       answer: ["Do you like school?"],
-      hint: "Do you..."
+      hint: "Do",
+      audio_url: null
     }
   ]
 };

@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about a city you know. What do you see? What sounds do you hear?",
+  topic_talk_prompt: "Tell me about your city or town. What is there? What do you like about it?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know what makes a city noisy. Ask about it.",
-      context_vi: "Bạn muốn biết điều gì khiến thành phố ồn ào. Hỏi về nó.",
-      audio_url: "/audio/week09/ask_ai_1.mp3",
-      answer: ["What makes a city noisy?", "Why is the city noisy?", "What sounds are in a city?"],
-      hint: "What makes..."
+      nova_says: "My city has a beautiful park.",
+      nova_says_vi: "Thành phố của cô có một công viên đẹp.",
+      task_en: "Ask Nova WHAT her city has.",
+      task_vi: "Hỏi cô Nova thành phố của cô có gì.",
+      question_frame: "What ___ your city have?",
+      answer: ["What does your city have?"],
+      hint: "does",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You want to describe your city. Tell the AI about it.",
-      context_vi: "Bạn muốn miêu tả thành phố của mình. Nói với AI về nó.",
-      audio_url: "/audio/week09/ask_ai_2.mp3",
-      answer: ["My city is busy and modern", "I live in a noisy city", "My city has tall buildings"],
-      hint: "My city is..."
+      nova_says: "The market is near my house.",
+      nova_says_vi: "Chợ ở gần nhà của cô.",
+      task_en: "Ask Nova WHERE the market is.",
+      task_vi: "Hỏi cô Nova chợ ở đâu.",
+      question_frame: "___ is the market?",
+      answer: ["Where is the market?"],
+      hint: "Where",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You want to know about tall buildings. Ask why cities have them.",
-      context_vi: "Bạn muốn biết về các tòa nhà cao. Hỏi tại sao thành phố có chúng.",
-      audio_url: "/audio/week09/ask_ai_3.mp3",
-      answer: ["Why do cities have tall buildings?", "Why are buildings tall?", "Why are city buildings so tall?"],
-      hint: "Why do cities..."
+      nova_says: "My favourite place in the city is the library.",
+      nova_says_vi: "Nơi yêu thích của cô trong thành phố là thư viện.",
+      task_en: "Ask Nova WHAT her favourite place in the city is.",
+      task_vi: "Hỏi cô Nova nơi yêu thích của cô trong thành phố là gì.",
+      question_frame: "What ___ your favourite place in the city?",
+      answer: ["What is your favourite place in the city?","What's your favourite place in the city?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to know how to get around the city. Ask about transportation.",
-      context_vi: "Bạn muốn biết cách di chuyển trong thành phố. Hỏi về phương tiện giao thông.",
-      audio_url: "/audio/week09/ask_ai_4.mp3",
-      answer: ["How can I get around the city?", "What transportation is in the city?", "Can I ride a bus in the city?"],
-      hint: "How can I..."
+      nova_says: "There are many restaurants near the park.",
+      nova_says_vi: "Có nhiều nhà hàng gần công viên.",
+      task_en: "Ask Nova HOW MANY restaurants are near the park.",
+      task_vi: "Hỏi cô Nova có bao nhiêu nhà hàng gần công viên.",
+      question_frame: "How ___ restaurants are near the park?",
+      answer: ["How many restaurants are near the park?"],
+      hint: "many",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You want to know what traffic is. Ask the AI to explain.",
-      context_vi: "Bạn muốn biết giao thông là gì. Yêu cầu AI giải thích.",
-      audio_url: "/audio/week09/ask_ai_5.mp3",
-      answer: ["What is traffic?", "What does traffic mean?", "Can you explain traffic?"],
-      hint: "What is..."
+      nova_says: "I go to the park every weekend.",
+      nova_says_vi: "Cô đi công viên mỗi cuối tuần.",
+      task_en: "Ask Nova HOW OFTEN she goes to the park.",
+      task_vi: "Hỏi cô Nova cô đi công viên bao lâu một lần.",
+      question_frame: "How ___ do you go to the park?",
+      answer: ["How often do you go to the park?"],
+      hint: "often",
+      audio_url: null
     }
   ]
 };

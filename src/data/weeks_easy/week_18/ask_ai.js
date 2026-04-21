@@ -1,46 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about something interesting in your neighbourhood. What is happening?",
+  topic_talk_prompt: "Tell me about something interesting you observed or noticed recently.",
   prompts: [
     {
       id: 1,
-      context_en: "You are at home. You can see your mum doing something in the kitchen. You want to know WHAT she is doing. Ask her.",
-      context_vi: "Bạn đang ở nhà. Bạn thấy mẹ đang làm gì đó trong bếp. Bạn muốn biết mẹ ĐANG LÀM GÌ. Hỏi mẹ.",
-      audio_url: "/audio/week18_easy/ask_ai_1.mp3",
-      answer: ["What are you doing?", "Mum, what are you doing?", "What is Mum doing?"],
-      hint: "What are you..."
+      nova_says: "A butterfly is landing on a flower right now.",
+      nova_says_vi: "Một con bướm đang đậu trên hoa ngay lúc này.",
+      task_en: "Ask Nova WHAT is landing on the flower.",
+      task_vi: "Hỏi cô Nova có gì đang đậu trên hoa.",
+      question_word_bank: ["What","Where","Who"],
+      question_frame: "___ is landing on the flower?",
+      answer: ["What is landing on the flower?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You are a live reporter at home. Your cat is sleeping on the sofa. You want to describe WHAT the cat is doing. Say it to the camera!",
-      context_vi: "Bạn là phóng viên trực tiếp ở nhà. Con mèo đang ngủ trên ghế sofa. Bạn muốn mô tả CON MÈO ĐANG LÀM GÌ. Nói cho máy quay biết!",
-      audio_url: "/audio/week18_easy/ask_ai_2.mp3",
-      answer: ["My cat is sleeping.", "The cat is sleeping on the sofa.", "My cat is sleeping right now."],
-      hint: "My cat is..."
+      nova_says: "The butterfly has orange and black wings.",
+      nova_says_vi: "Con bướm có đôi cánh màu cam và đen.",
+      task_en: "Ask Nova WHAT colour the butterfly's wings are.",
+      task_vi: "Hỏi cô Nova cánh bướm màu gì.",
+      question_word_bank: ["What","How","Where"],
+      question_frame: "___ colour are the butterfly's wings?",
+      answer: ["What colour are the butterfly's wings?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your brother is reading a book in his room. You are a reporter. You want to describe WHAT your brother is doing right now. Report it!",
-      context_vi: "Anh trai bạn đang đọc sách trong phòng. Bạn là phóng viên. Bạn muốn mô tả ANH TRAI ĐANG LÀM GÌ ngay lúc này. Hãy đưa tin!",
-      audio_url: "/audio/week18_easy/ask_ai_3.mp3",
-      answer: ["My brother is reading.", "He is reading a book.", "My brother is reading a book in his room."],
-      hint: "He is..."
+      nova_says: "There are about ten butterflies in the garden.",
+      nova_says_vi: "Có khoảng mười con bướm trong vườn.",
+      task_en: "Ask Nova HOW MANY butterflies are in the garden.",
+      task_vi: "Hỏi cô Nova có bao nhiêu con bướm trong vườn.",
+      question_word_bank: ["How","What","Where"],
+      question_frame: "___ many butterflies are in the garden?",
+      answer: ["How many butterflies are in the garden?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to interview your cat as a reporter. The cat is playing with a toy. You want to know WHY it is playing. Ask the cat!",
-      context_vi: "Bạn muốn phỏng vấn mèo như một phóng viên. Con mèo đang chơi với đồ chơi. Bạn muốn biết TẠI SAO nó chơi. Hỏi con mèo!",
-      audio_url: "/audio/week18_easy/ask_ai_4.mp3",
-      answer: ["Why are you playing?", "What are you playing with?", "Why are you playing with the toy?"],
-      hint: "Why are you..."
+      nova_says: "The butterflies come here because there are lots of flowers.",
+      nova_says_vi: "Bướm đến đây vì có nhiều hoa.",
+      task_en: "Ask Nova WHY the butterflies come to the garden.",
+      task_vi: "Hỏi cô Nova tại sao bướm đến vườn.",
+      question_word_bank: ["Why","What","When"],
+      question_frame: "___ do butterflies come to the garden?",
+      answer: ["Why do butterflies come to the garden?"],
+      hint_word: "Why",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You are giving a live report. Three things are happening at your home right now. You want to describe ALL THREE. Say them like a reporter!",
-      context_vi: "Bạn đang đưa tin trực tiếp. Ba thứ đang xảy ra ở nhà bạn ngay lúc này. Bạn muốn mô tả TẤT CẢ BA. Nói như một phóng viên!",
-      audio_url: "/audio/week18_easy/ask_ai_5.mp3",
-      answer: ["My mum is cooking. My cat is sleeping. My brother is reading.", "The cat is sleeping. Mum is cooking. Brother is reading."],
-      hint: "[Person] is [verb]-ing..."
+      nova_says: "The butterflies will leave when winter comes.",
+      nova_says_vi: "Bướm sẽ rời đi khi mùa đông đến.",
+      task_en: "Ask Nova WHEN the butterflies will leave.",
+      task_vi: "Hỏi cô Nova bướm sẽ rời đi khi nào.",
+      question_word_bank: ["When","What","Where"],
+      question_frame: "___ will the butterflies leave?",
+      answer: ["When will the butterflies leave?"],
+      hint_word: "When",
+      audio_url: null
     }
   ]
 };
-

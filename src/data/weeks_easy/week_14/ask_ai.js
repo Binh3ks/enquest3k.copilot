@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about one thing you love. What is it? Why do you like it?",
+  topic_talk_prompt: "Tell me about yourself. Where are you from? What do you like to do?",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend shows a picture. You want to know what they can draw. Ask them.",
-      context_vi: "Bạn mình cho xem bức tranh. Bạn muốn biết họ vẽ được gì. Hỏi họ.",
-      audio_url: "/audio/week14_easy/ask_ai_1.mp3",
-      answer: ["What can you draw?", "What do you draw?", "Can you draw?"],
-      hint: "What can you..."
+      nova_says: "My name is Nova and I'm from England.",
+      nova_says_vi: "Tên cô là Nova và cô đến từ Anh.",
+      task_en: "Ask Nova WHERE she is from.",
+      task_vi: "Hỏi cô Nova cô đến từ đâu.",
+      question_frame: "___ are you from?",
+      answer: ["Where are you from?"],
+      hint: "Where",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend talks about their family. You want to know how many people. Ask them.",
-      context_vi: "Bạn mình nói về gia đình. Bạn muốn biết bao nhiêu người. Hỏi họ.",
-      audio_url: "/audio/week14_easy/ask_ai_2.mp3",
-      answer: ["How many people in your family?", "How many family members?", "How big is your family?"],
-      hint: "How many..."
+      nova_says: "I am a teacher and I love my job.",
+      nova_says_vi: "Cô là giáo viên và cô yêu công việc của mình.",
+      task_en: "Ask Nova WHAT her job is.",
+      task_vi: "Hỏi cô Nova nghề nghiệp của cô là gì.",
+      question_frame: "What ___ your job?",
+      answer: ["What is your job?","What's your job?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your friend is talented. You want to know what they can do. Ask them.",
-      context_vi: "Bạn mình có tài năng. Bạn muốn biết họ có thể làm gì. Hỏi họ.",
-      audio_url: "/audio/week14_easy/ask_ai_3.mp3",
-      answer: ["What can you do?", "What talents do you have?", "Can you sing?"],
-      hint: "What can you..."
+      nova_says: "I like reading books in my free time.",
+      nova_says_vi: "Cô thích đọc sách lúc rảnh.",
+      task_en: "Ask Nova WHAT she likes to do in her free time.",
+      task_vi: "Hỏi cô Nova cô thích làm gì lúc rảnh.",
+      question_frame: "What ___ you like to do in your free time?",
+      answer: ["What do you like to do in your free time?"],
+      hint: "do",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your friend helps at home. You want to know who they help. Ask them.",
-      context_vi: "Bạn mình giúp việc ở nhà. Bạn muốn biết họ giúp ai. Hỏi họ.",
-      audio_url: "/audio/week14_easy/ask_ai_4.mp3",
-      answer: ["Who do you help?", "Do you help your mom?", "Who helps you?"],
-      hint: "Who do you..."
+      nova_says: "I have lived in this city for five years.",
+      nova_says_vi: "Cô đã sống ở thành phố này được năm năm.",
+      task_en: "Ask Nova HOW LONG she has lived in this city.",
+      task_vi: "Hỏi cô Nova cô đã sống ở thành phố này bao lâu.",
+      question_frame: "How ___ have you lived here?",
+      answer: ["How long have you lived here?","How long have you lived in this city?"],
+      hint: "long",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your friend plays with someone. You want to know who they play with. Ask them.",
-      context_vi: "Bạn mình chơi với ai đó. Bạn muốn biết họ chơi với ai. Hỏi họ.",
-      audio_url: "/audio/week14_easy/ask_ai_5.mp3",
-      answer: ["Who do you play with?", "Do you play with friends?", "Who is your friend?"],
-      hint: "Who do you..."
+      nova_says: "I have one cat and two dogs at home.",
+      nova_says_vi: "Cô có một con mèo và hai con chó ở nhà.",
+      task_en: "Ask Nova HOW MANY pets she has.",
+      task_vi: "Hỏi cô Nova cô có bao nhiêu thú cưng.",
+      question_frame: "How ___ pets do you have?",
+      answer: ["How many pets do you have?"],
+      hint: "many",
+      audio_url: null
     }
   ]
 };

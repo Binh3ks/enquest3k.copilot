@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about how to make your favourite snack. What do you need? What do you do first?",
+  topic_talk_prompt: "Tell me about how to make or do something you know. What are the steps?",
   prompts: [
     {
       id: 1,
-      context_en: "You see your friend put the jam on the table BEFORE getting the bread out of the bag. You want to know what they should do FIRST. Ask them.",
-      context_vi: "Bạn thấy bạn mình đặt mứt lên bàn TRƯỚC KHI lấy bánh mì ra. Bạn muốn biết họ nên làm gì ĐẦU TIÊN. Hỏi họ.",
-      audio_url: "/audio/week25_easy/ask_ai_q1.mp3",
-      answer: ["What should you do first?", "What do you do first?", "What comes first?"],
-      hint: "What should you do first?"
+      nova_says: "First, I mixed the flour and eggs together.",
+      nova_says_vi: "Đầu tiên, cô đã trộn bột mì và trứng lại với nhau.",
+      task_en: "Ask Nova WHAT she mixed together first.",
+      task_vi: "Hỏi cô Nova đầu tiên cô đã trộn những gì lại với nhau.",
+      question_word_bank: ["What","How","Why"],
+      question_frame: "___ did you mix together first?",
+      answer: ["What did you mix together first?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your little brother brushed his teeth but forgot to rinse. You want to know what he should do NEXT. Ask him.",
-      context_vi: "Em trai của bạn đã đánh răng nhưng quên súc miệng. Bạn muốn biết TIẾP THEO em nên làm gì. Hỏi em ấy.",
-      audio_url: "/audio/week25_easy/ask_ai_q2.mp3",
-      answer: ["What should you do next?", "What do you do next?", "What comes next?"],
-      hint: "What should you do next?"
+      nova_says: "Then I added sugar and butter to the mix.",
+      nova_says_vi: "Sau đó cô đã thêm đường và bơ vào hỗn hợp.",
+      task_en: "Ask Nova WHAT she added to the mix.",
+      task_vi: "Hỏi cô Nova cô đã thêm gì vào hỗn hợp.",
+      question_word_bank: ["What","How","Why"],
+      question_frame: "___ did you add to the mix?",
+      answer: ["What did you add to the mix?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your friend finished making the sandwich but left the bread bag open and the knife dirty. You want to know what they should do THEN. Ask them.",
-      context_vi: "Bạn của bạn làm xong sandwich nhưng để túi bánh mì mở và dao bẩn. Bạn muốn biết SAU ĐÓ họ nên làm gì. Hỏi họ.",
-      audio_url: "/audio/week25_easy/ask_ai_q3.mp3",
-      answer: ["What should you do then?", "What do you do then?", "Then what should you do?"],
-      hint: "What should you do then?"
+      nova_says: "I put the cake in the oven at 180 degrees.",
+      nova_says_vi: "Cô đã cho bánh vào lò nướng ở 180 độ.",
+      task_en: "Ask Nova HOW HOT she set the oven.",
+      task_vi: "Hỏi cô Nova cô đã đặt lò nướng ở nhiệt độ bao nhiêu.",
+      question_word_bank: ["How","What","When"],
+      question_frame: "___ hot did you set the oven?",
+      answer: ["How hot did you set the oven?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your classmate finished all four steps of a recipe perfectly. You want to know what they did at the very END. Ask them.",
-      context_vi: "Bạn cùng lớp đã làm hoàn hảo cả bốn bước của công thức. Bạn muốn biết họ đã làm gì ở CUỐI CÙNG. Hỏi họ.",
-      audio_url: "/audio/week25_easy/ask_ai_q4.mp3",
-      answer: ["What did you do finally?", "What was the last step?", "What did you do last?"],
-      hint: "What did you do finally?"
+      nova_says: "The cake baked for thirty minutes.",
+      nova_says_vi: "Bánh nướng trong ba mươi phút.",
+      task_en: "Ask Nova HOW LONG the cake baked.",
+      task_vi: "Hỏi cô Nova bánh nướng bao lâu.",
+      question_word_bank: ["How","When","What"],
+      question_frame: "___ long did the cake bake?",
+      answer: ["How long did the cake bake?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your teacher is showing how to wash hands in four steps. You missed step two. You want to know what comes AFTER step one. Ask the teacher.",
-      context_vi: "Giáo viên đang hướng dẫn rửa tay bốn bước. Bạn bỏ lỡ bước hai. Bạn muốn biết điều gì đến SAU bước một. Hỏi giáo viên.",
-      audio_url: "/audio/week25_easy/ask_ai_q5.mp3",
-      answer: ["What comes next?", "What do we do next?", "What is the next step?"],
-      hint: "What comes next?"
+      nova_says: "Finally, I decorated the cake with cream and strawberries.",
+      nova_says_vi: "Cuối cùng, cô đã trang trí bánh bằng kem và dâu tây.",
+      task_en: "Ask Nova HOW she decorated the cake.",
+      task_vi: "Hỏi cô Nova cô đã trang trí bánh như thế nào.",
+      question_word_bank: ["How","What","Why"],
+      question_frame: "___ did you decorate the cake?",
+      answer: ["How did you decorate the cake?"],
+      hint_word: "How",
+      audio_url: null
     }
   ]
 };

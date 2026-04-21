@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about a time you felt happy or sad. What happened?",
+  topic_talk_prompt: "Tell me about a time you felt a strong emotion. What happened? How did you feel?",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend cannot stop smiling after school. You want to know if they were happy today. Ask them.",
-      context_vi: "Bạn của bạn không thể ngừng cười sau giờ học. Bạn muốn biết hôm nay họ có vui không. Hỏi họ.",
-      audio_url: "/audio/week24_easy/ask_ai_q1.mp3",
-      answer: ["Were you happy?", "Were you excited?", "Were you feeling happy?", "Are you happy?"],
-      hint: "Were you happy?"
+      nova_says: "I felt very excited on the day of the school trip.",
+      nova_says_vi: "Cô cảm thấy rất phấn khích vào ngày đi dã ngoại.",
+      task_en: "Ask Nova HOW she felt on the day of the school trip.",
+      task_vi: "Hỏi cô Nova cô cảm thấy thế nào vào ngày đi dã ngoại.",
+      question_word_bank: ["How","Why","What"],
+      question_frame: "___ did you feel on the day of the school trip?",
+      answer: ["How did you feel on the day of the school trip?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You see your classmate crying at break time. You want to know if they were upset. Ask them kindly.",
-      context_vi: "Bạn thấy bạn cùng lớp đang khóc trong giờ nghỉ. Bạn muốn biết họ có buồn không. Hỏi họ thân thiện.",
-      audio_url: "/audio/week24_easy/ask_ai_q2.mp3",
-      answer: ["Were you upset?", "Were you sad?", "Were you okay?", "Were you crying?"],
-      hint: "Were you upset?"
+      nova_says: "I was nervous before my piano recital.",
+      nova_says_vi: "Cô đã hồi hộp trước buổi biểu diễn đàn.",
+      task_en: "Ask Nova WHY she was nervous before the recital.",
+      task_vi: "Hỏi cô Nova tại sao cô hồi hộp trước buổi biểu diễn.",
+      question_word_bank: ["Why","How","When"],
+      question_frame: "___ were you nervous before the recital?",
+      answer: ["Why were you nervous before the recital?"],
+      hint_word: "Why",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your friend hid behind a tree during the school trip. You want to know if they were scared. Ask them.",
-      context_vi: "Bạn của bạn trốn sau cây trong buổi dã ngoại. Bạn muốn biết họ có sợ không. Hỏi họ.",
-      audio_url: "/audio/week24_easy/ask_ai_q3.mp3",
-      answer: ["Were you scared?", "Were you afraid?", "Were you frightened?"],
-      hint: "Were you scared?"
+      nova_says: "I was surprised when my friends threw me a party.",
+      nova_says_vi: "Cô đã bị bất ngờ khi bạn bè tổ chức tiệc cho cô.",
+      task_en: "Ask Nova WHAT surprised her.",
+      task_vi: "Hỏi cô Nova điều gì đã làm cô ngạc nhiên.",
+      question_word_bank: ["What","Who","Why"],
+      question_frame: "___ surprised you?",
+      answer: ["What surprised you?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your mum looks tired when she gets home. You want to know if she was okay. Ask her politely.",
-      context_vi: "Mẹ bạn trông mệt khi về nhà. Bạn muốn biết mẹ có ổn không. Hỏi lịch sự.",
-      audio_url: "/audio/week24_easy/ask_ai_q4.mp3",
-      answer: ["Were you okay?", "Are you okay?", "Were you tired?", "Were you all right?"],
-      hint: "Were you okay?"
+      nova_says: "I felt proud when I got full marks on my test.",
+      nova_says_vi: "Cô cảm thấy tự hào khi được điểm tuyệt đối trong bài kiểm tra.",
+      task_en: "Ask Nova WHEN she felt proud.",
+      task_vi: "Hỏi cô Nova cô cảm thấy tự hào khi nào.",
+      question_word_bank: ["When","Why","How"],
+      question_frame: "___ did you feel proud?",
+      answer: ["When did you feel proud?"],
+      hint_word: "When",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your little brother was very quiet during dinner. You want to know if he was bored. Ask him.",
-      context_vi: "Em trai của bạn rất im lặng trong bữa tối. Bạn muốn biết em có chán không. Hỏi em ấy.",
-      audio_url: "/audio/week24_easy/ask_ai_q5.mp3",
-      answer: ["Were you bored?", "Were you feeling bored?", "Were you quiet because you were bored?"],
-      hint: "Were you bored?"
+      nova_says: "I felt sad when my best friend moved to another city.",
+      nova_says_vi: "Cô cảm thấy buồn khi người bạn thân chuyển đến thành phố khác.",
+      task_en: "Ask Nova WHY she felt sad.",
+      task_vi: "Hỏi cô Nova tại sao cô cảm thấy buồn.",
+      question_word_bank: ["Why","When","How"],
+      question_frame: "___ did you feel sad?",
+      answer: ["Why did you feel sad?"],
+      hint_word: "Why",
+      audio_url: null
     }
   ]
 };

@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about a farm or animals you have seen. What animals were there? What did they do?",
+  topic_talk_prompt: "Tell me about an animal you like. What does it look like? Where does it live?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know what is different between the city and the farm. Ask your friend.",
-      context_vi: "Bạn muốn biết điều gì khác biệt giữa thành phố và trang trại. Hỏi bạn mình.",
-      audio_url: "/audio/week10/ask_ai_1.mp3",
-      answer: ["What is different between the city and the farm?", "What is the difference between the city and farm?", "How is the city different from the farm?"],
-      hint: "What is different..."
+      nova_says: "My favourite animal is a horse.",
+      nova_says_vi: "Con vật yêu thích của cô là con ngựa.",
+      task_en: "Ask Nova WHAT her favourite animal is.",
+      task_vi: "Hỏi cô Nova con vật yêu thích của cô là gì.",
+      question_frame: "What ___ your favourite animal?",
+      answer: ["What is your favourite animal?","What's your favourite animal?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You want to know why the farm is quiet. Ask your friend.",
-      context_vi: "Bạn muốn biết tại sao trang trại yên tĩnh. Hỏi bạn mình.",
-      audio_url: "/audio/week10/ask_ai_2.mp3",
-      answer: ["Why is the farm quiet?", "Why is the farm so quiet?", "Why is it quiet on the farm?"],
-      hint: "Why is the farm..."
+      nova_says: "Horses live on farms.",
+      nova_says_vi: "Ngựa sống ở trang trại.",
+      task_en: "Ask Nova WHERE horses live.",
+      task_vi: "Hỏi cô Nova ngựa sống ở đâu.",
+      question_frame: "___ do horses live?",
+      answer: ["Where do horses live?"],
+      hint: "Where",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You want to know what animals are on the farm. Ask your friend.",
-      context_vi: "Bạn muốn biết có những con vật gì ở trang trại. Hỏi bạn mình.",
-      audio_url: "/audio/week10/ask_ai_3.mp3",
-      answer: ["What animals are on the farm?", "What animals does the farm have?", "What animals are there?"],
-      hint: "What animals..."
+      nova_says: "Horses eat grass and carrots.",
+      nova_says_vi: "Ngựa ăn cỏ và cà rốt.",
+      task_en: "Ask Nova WHAT horses eat.",
+      task_vi: "Hỏi cô Nova ngựa ăn gì.",
+      question_frame: "What ___ horses eat?",
+      answer: ["What do horses eat?"],
+      hint: "do",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to know if your friend likes the city or the countryside. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình thích thành phố hay nông thôn. Hỏi họ.",
-      audio_url: "/audio/week10/ask_ai_4.mp3",
-      answer: ["Do you like the city or the countryside?", "Which do you like, the city or countryside?", "Do you prefer the city or farm?"],
-      hint: "Do you like..."
+      nova_says: "Some horses are very fast runners.",
+      nova_says_vi: "Một số con ngựa chạy rất nhanh.",
+      task_en: "Ask Nova HOW FAST horses can run.",
+      task_vi: "Hỏi cô Nova ngựa có thể chạy nhanh thế nào.",
+      question_frame: "How ___ can horses run?",
+      answer: ["How fast can horses run?"],
+      hint: "fast",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You want to know why the countryside is peaceful. Ask your friend.",
-      context_vi: "Bạn muốn biết tại sao vùng nông thôn yên bình. Hỏi bạn mình.",
-      audio_url: "/audio/week10/ask_ai_5.mp3",
-      answer: ["Why is the countryside peaceful?", "Why is the countryside so peaceful?", "Why is it peaceful in the countryside?"],
-      hint: "Is the treasure..."
+      nova_says: "Farmers use horses to help with work.",
+      nova_says_vi: "Nông dân dùng ngựa để giúp công việc.",
+      task_en: "Ask Nova WHY farmers use horses.",
+      task_vi: "Hỏi cô Nova tại sao nông dân dùng ngựa.",
+      question_frame: "___ do farmers use horses?",
+      answer: ["Why do farmers use horses?"],
+      hint: "Why",
+      audio_url: null
     }
   ]
 };

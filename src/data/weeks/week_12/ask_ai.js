@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about a special talent you have. What are you good at? How did you learn it?",
+  topic_talk_prompt: "Tell me about a talent or skill you have. What can you do well?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know what your friend can do. Ask them about their abilities.",
-      context_vi: "Bạn muốn biết bạn mình có thể làm gì. Hỏi họ về khả năng của họ.",
-      audio_url: "/audio/week12/ask_ai_1.mp3",
-      answer: ["What can you do?", "What are your talents?", "What abilities do you have?"],
-      hint: "What can you..."
+      nova_says: "I can play the piano very well.",
+      nova_says_vi: "Cô có thể chơi đàn piano rất giỏi.",
+      task_en: "Ask Nova WHAT she can play.",
+      task_vi: "Hỏi cô Nova cô có thể chơi nhạc cụ gì.",
+      question_frame: "What ___ you play?",
+      answer: ["What can you play?"],
+      hint: "can",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend looks athletic. Ask if they can run fast.",
-      context_vi: "Bạn mình trông thể thao. Hỏi xem họ có chạy nhanh được không.",
-      audio_url: "/audio/week12/ask_ai_2.mp3",
-      answer: ["Can you run fast?", "Can you run?", "Are you good at running?"],
-      hint: "Can you..."
+      nova_says: "I practise piano for one hour every day.",
+      nova_says_vi: "Cô tập đàn một tiếng mỗi ngày.",
+      task_en: "Ask Nova HOW LONG she practises piano each day.",
+      task_vi: "Hỏi cô Nova cô tập đàn bao lâu mỗi ngày.",
+      question_frame: "How ___ do you practise piano?",
+      answer: ["How long do you practise piano?","How long do you practise piano each day?"],
+      hint: "long",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "The talent show is tonight. Ask your friend if they can sing.",
-      context_vi: "Buổi biểu diễn tài năng tối nay. Hỏi bạn mình có thể hát không.",
-      audio_url: "/audio/week12/ask_ai_3.mp3",
-      answer: ["Can you sing?", "Can you sing at the talent show?", "Are you going to sing?"],
-      hint: "Can you..."
+      nova_says: "I learned piano when I was six.",
+      nova_says_vi: "Cô học đàn lúc sáu tuổi.",
+      task_en: "Ask Nova WHEN she learned to play piano.",
+      task_vi: "Hỏi cô Nova cô học đàn khi nào.",
+      question_frame: "___ did you learn to play piano?",
+      answer: ["When did you learn to play piano?"],
+      hint: "When",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You see someone performing on stage. Ask what they are doing.",
-      context_vi: "Bạn thấy ai đó đang biểu diễn trên sân khấu. Hỏi họ đang làm gì.",
-      audio_url: "/audio/week12/ask_ai_4.mp3",
-      answer: ["What are you doing?", "What can you do?", "What are you performing?"],
-      hint: "What are you..."
+      nova_says: "My piano teacher is very patient.",
+      nova_says_vi: "Giáo viên đàn của cô rất kiên nhẫn.",
+      task_en: "Ask Nova HOW her piano teacher is.",
+      task_vi: "Hỏi cô Nova giáo viên đàn của cô như thế nào.",
+      question_frame: "___ is your piano teacher?",
+      answer: ["How is your piano teacher?"],
+      hint: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your friend is very talented. Ask what their best talent is.",
-      context_vi: "Bạn mình rất tài năng. Hỏi tài năng tốt nhất của họ là gì.",
-      audio_url: "/audio/week12/ask_ai_5.mp3",
-      answer: ["What is your best talent?", "What is your talent?", "What are you best at?"],
-      hint: "What is your..."
+      nova_says: "I want to play in a concert one day.",
+      nova_says_vi: "Cô muốn biểu diễn trong một buổi hòa nhạc.",
+      task_en: "Ask Nova WHAT she wants to do one day.",
+      task_vi: "Hỏi cô Nova cô muốn làm gì một ngày nào đó.",
+      question_frame: "What ___ you want to do one day?",
+      answer: ["What do you want to do one day?"],
+      hint: "do",
+      audio_url: null
     }
   ]
 };

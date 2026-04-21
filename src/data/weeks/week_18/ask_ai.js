@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about an interesting event happening in your neighbourhood. What is going on?",
+  topic_talk_prompt: "Tell me about something interesting you observed or noticed recently.",
   prompts: [
     {
       id: 1,
-      context_en: "You can see a reporter standing outside a big building. The reporter just finished filming. You want to know WHAT the reporter is doing right now. Ask the reporter.",
-      context_vi: "Bạn thấy một phóng viên đang đứng ngoài tòa nhà lớn. Phóng viên vừa quay xong. Bạn muốn biết phóng viên đang làm GÌ ngay lúc này. Hỏi phóng viên.",
-      audio_url: "/audio/week18/ask_ai_1.mp3",
-      answer: ["What are you doing now?", "What are you doing right now?", "What is the reporter doing?"],
-      hint: "What are you doing..."
+      nova_says: "A butterfly is landing on a flower right now.",
+      nova_says_vi: "Một con bướm đang đậu trên hoa ngay lúc này.",
+      task_en: "Ask Nova WHAT is landing on the flower.",
+      task_vi: "Hỏi cô Nova có gì đang đậu trên hoa.",
+      question_word_bank: ["What","Where","Who","Why"],
+      question_frame: "___ is landing on the flower?",
+      answer: ["What is landing on the flower?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your teacher says there is very exciting news happening at school today. You want to know WHAT is happening. Ask your teacher.",
-      context_vi: "Giáo viên nói có tin tức rất hào hứng đang xảy ra ở trường hôm nay. Bạn muốn biết chuyện GÌ đang xảy ra. Hỏi giáo viên.",
-      audio_url: "/audio/week18/ask_ai_2.mp3",
-      answer: ["What is happening?", "What is happening at school?", "What is the exciting news?"],
-      hint: "What is happening..."
+      nova_says: "The butterfly has orange and black wings.",
+      nova_says_vi: "Con bướm có đôi cánh màu cam và đen.",
+      task_en: "Ask Nova WHAT colour the butterfly's wings are.",
+      task_vi: "Hỏi cô Nova cánh bướm màu gì.",
+      question_word_bank: ["What","How","Where","Why"],
+      question_frame: "___ colour are the butterfly's wings?",
+      answer: ["What colour are the butterfly's wings?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You see a camera person running fast toward the school. You want to know WHY the camera person is running. Ask the camera person.",
-      context_vi: "Bạn thấy người quay phim đang chạy nhanh về phía trường. Bạn muốn biết TẠI SAO người quay phim đang chạy. Hỏi người quay phim.",
-      audio_url: "/audio/week18/ask_ai_3.mp3",
-      answer: ["Why are you running?", "Why is the camera person running?", "Why are you running so fast?"],
-      hint: "Why are you running..."
+      nova_says: "There are about ten butterflies in the garden.",
+      nova_says_vi: "Có khoảng mười con bướm trong vườn.",
+      task_en: "Ask Nova HOW MANY butterflies are in the garden.",
+      task_vi: "Hỏi cô Nova có bao nhiêu con bướm trong vườn.",
+      question_word_bank: ["How","What","Where","Why"],
+      question_frame: "___ many butterflies are in the garden?",
+      answer: ["How many butterflies are in the garden?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Alex says he is doing a live interview right now. You want to know WHO he is interviewing. Ask Alex.",
-      context_vi: "Alex nói cậu ấy đang thực hiện một cuộc phỏng vấn trực tiếp ngay lúc này. Bạn muốn biết cậu ấy đang phỏng vấn AI. Hỏi Alex.",
-      audio_url: "/audio/week18/ask_ai_4.mp3",
-      answer: ["Who are you interviewing?", "Who is he interviewing?", "Who are you talking to?"],
-      hint: "Who are you interviewing..."
+      nova_says: "The butterflies come here because there are lots of flowers.",
+      nova_says_vi: "Bướm đến đây vì có nhiều hoa.",
+      task_en: "Ask Nova WHY the butterflies come to the garden.",
+      task_vi: "Hỏi cô Nova tại sao bướm đến vườn.",
+      question_word_bank: ["Why","What","When","How"],
+      question_frame: "___ do butterflies come to the garden?",
+      answer: ["Why do butterflies come to the garden?"],
+      hint_word: "Why",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "The whole audience is cheering very loudly at the end of the live show. You want to know WHY they are cheering. Ask someone in the audience.",
-      context_vi: "Toàn bộ khán giả đang vỗ tay rất to vào cuối buổi biểu diễn trực tiếp. Bạn muốn biết TẠI SAO họ đang vỗ tay. Hỏi ai đó trong khán giả.",
-      audio_url: "/audio/week18/ask_ai_5.mp3",
-      answer: ["Why are they cheering?", "Why is the audience cheering?", "Why are you all cheering?"],
-      hint: "Why are they cheering..."
+      nova_says: "The butterflies will leave when winter comes.",
+      nova_says_vi: "Bướm sẽ rời đi khi mùa đông đến.",
+      task_en: "Ask Nova WHEN the butterflies will leave.",
+      task_vi: "Hỏi cô Nova bướm sẽ rời đi khi nào.",
+      question_word_bank: ["When","What","Where","Why"],
+      question_frame: "___ will the butterflies leave?",
+      answer: ["When will the butterflies leave?"],
+      hint_word: "When",
+      audio_url: null
     }
   ]
 };

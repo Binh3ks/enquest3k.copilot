@@ -1,54 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about your family. Who is in your family? What does each person like to do?",
+  topic_talk_prompt: "Tell me about your family. Who is in your family? What do they like to do?",
   prompts: [
-    // ✅ Prompt 1 - What is this? (A0)
     {
       id: 1,
-      context_en: "You see something on the desk. Ask what it is.",
-      context_vi: "Bạn thấy cái gì trên bàn. Hỏi nó là gì.",
-      audio_url: "/audio/week2/ask_ai_1.mp3",
-      answer: ["What is this?", "What is it?"],
-      hint: "What is..."
+      nova_says: "I have a brother and a sister.",
+      nova_says_vi: "Cô có một anh trai và một chị gái.",
+      task_en: "Ask Nova HOW MANY brothers she has.",
+      task_vi: "Hỏi cô Nova cô có bao nhiêu anh trai.",
+      question_frame: "How many ___ do you have?",
+      answer: ["How many brothers do you have?"],
+      hint: "brothers",
+      audio_url: null
     },
-    
-    // ✅ Prompt 2 - Where is...? (A0)
     {
       id: 2,
-      context_en: "You cannot find your pen in your bag. Ask where it is.",
-      context_vi: "Bạn không tìm bút trong túi của bạn. Hỏi nó ở đâu.",
-      audio_url: "/audio/week2/ask_ai_2.mp3",
-      answer: ["Where is it?", "Where is my pen?"],
-      hint: "Where is..."
+      nova_says: "My mum works at a hospital.",
+      nova_says_vi: "Mẹ của cô làm việc ở bệnh viện.",
+      task_en: "Ask Nova WHERE her mum works.",
+      task_vi: "Hỏi cô Nova mẹ của cô làm việc ở đâu.",
+      question_frame: "Where ___ your mum work?",
+      answer: ["Where does your mum work?"],
+      hint: "does",
+      audio_url: null
     },
-    
-    // ✅ Prompt 3 - Is this...? (A0)
     {
       id: 3,
-      context_en: "You find a book on the desk. Ask if it is yours.",
-      context_vi: "Bạn tìm sách trên bàn. Hỏi có phải của bạn.",
-      audio_url: "/audio/week2/ask_ai_3.mp3",
-      answer: ["Is this mine?"],
-      hint: "Is this..."
+      nova_says: "My dad loves cooking.",
+      nova_says_vi: "Ba của cô rất thích nấu ăn.",
+      task_en: "Ask Nova WHAT her dad loves to do.",
+      task_vi: "Hỏi cô Nova ba của cô thích làm gì.",
+      question_frame: "What ___ your dad love?",
+      answer: ["What does your dad love?","What does your dad love to do?"],
+      hint: "does",
+      audio_url: null
     },
-    
-    // ✅ Prompt 4 - Can I...? (A0)
     {
       id: 4,
-      context_en: "Your friends are playing a game now. Ask if you can join.",
-      context_vi: "Bạn bè đang chơi trò chơi lúc này. Hỏi bạn có thể tham gia.",
-      audio_url: "/audio/week2/ask_ai_4.mp3",
-      answer: ["Can I play?", "Can I join?"],
-      hint: "Can I..."
+      nova_says: "My grandma is very kind.",
+      nova_says_vi: "Bà của cô rất tốt bụng.",
+      task_en: "Ask Nova if her grandma lives with her.",
+      task_vi: "Hỏi cô Nova bà của cô có sống cùng cô không.",
+      question_frame: "___ your grandma live with you?",
+      answer: ["Does your grandma live with you?"],
+      hint: "Does",
+      audio_url: null
     },
-    
-    // ✅ Prompt 5 - Do you...? (A0)
     {
       id: 5,
-      context_en: "Your friend comes to your home. Ask if they like games.",
-      context_vi: "Bạn đến nhà bạn. Hỏi bạn ấy có thích trò chơi.",
-      audio_url: "/audio/week2/ask_ai_5.mp3",
-      answer: ["Do you like games?"],
-      hint: "Do you..."
+      nova_says: "We eat dinner together every night.",
+      nova_says_vi: "Chúng tôi ăn tối cùng nhau mỗi đêm.",
+      task_en: "Ask Nova WHEN her family eats dinner.",
+      task_vi: "Hỏi cô Nova gia đình cô ăn tối khi nào.",
+      question_frame: "___ does your family eat dinner?",
+      answer: ["When does your family eat dinner?"],
+      hint: "When",
+      audio_url: null
     }
   ]
 };

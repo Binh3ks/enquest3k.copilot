@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about the weather today and what people are wearing. Do you like this kind of weather?",
+  topic_talk_prompt: "Tell me about the weather where you live. What seasons do you have?",
   prompts: [
     {
       id: 1,
-      context_en: "You see your friend walking in the rain without an umbrella. They are getting very wet. You want to know WHY they are not carrying an umbrella. Ask them.",
-      context_vi: "Bạn thấy bạn mình đang đi trong mưa mà không có ô. Bạn ấy đang bị ướt. Bạn muốn biết TẠI SAO bạn ấy không mang ô. Hỏi bạn ấy.",
-      audio_url: "/audio/week17/ask_ai_1.mp3",
-      answer: ["Why are you not carrying an umbrella?", "Why don't you have an umbrella?", "Why are you walking in the rain without an umbrella?"],
-      hint: "Why are you not..."
+      nova_says: "It's very hot and sunny today.",
+      nova_says_vi: "Hôm nay trời rất nóng và nắng.",
+      task_en: "Ask Nova HOW the weather is today.",
+      task_vi: "Hỏi cô Nova hôm nay thời tiết như thế nào.",
+      question_word_bank: ["How","What","Why","Where"],
+      question_frame: "___ is the weather today?",
+      answer: ["How is the weather today?","What is the weather like today?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "It is snowing outside. Your little sister wants to go out and play. You want to know WHAT she is planning to wear. Ask her.",
-      context_vi: "Bên ngoài đang có tuyết. Em gái bạn muốn ra ngoài chơi. Bạn muốn biết cô ấy định MẶC GÌ. Hỏi cô ấy.",
-      audio_url: "/audio/week17/ask_ai_2.mp3",
-      answer: ["What are you wearing?", "What are you going to wear?", "What clothes are you wearing?"],
-      hint: "What are you wearing..."
+      nova_says: "I'm wearing a sun hat because it's so bright.",
+      nova_says_vi: "Cô đang đội mũ vì trời quá sáng.",
+      task_en: "Ask Nova WHY she is wearing a sun hat.",
+      task_vi: "Hỏi cô Nova tại sao cô đang đội mũ.",
+      question_word_bank: ["Why","What","How","Where"],
+      question_frame: "___ are you wearing a sun hat?",
+      answer: ["Why are you wearing a sun hat?"],
+      hint_word: "Why",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "A weather scientist says today will have heavy precipitation. You want to know WHERE the precipitation will fall. Ask the scientist.",
-      context_vi: "Một nhà khoa học thời tiết nói hôm nay sẽ có nhiều lượng mưa. Bạn muốn biết lượng mưa sẽ rơi Ở ĐÂU. Hỏi nhà khoa học.",
-      audio_url: "/audio/week17/ask_ai_3.mp3",
-      answer: ["Where will the precipitation fall?", "Where will it rain?", "Where will the rain fall today?"],
-      hint: "Where will the..."
+      nova_says: "My favourite season is winter.",
+      nova_says_vi: "Mùa yêu thích của cô là mùa đông.",
+      task_en: "Ask Nova WHAT her favourite season is.",
+      task_vi: "Hỏi cô Nova mùa yêu thích của cô là gì.",
+      question_word_bank: ["What","When","How","Why"],
+      question_frame: "___ is your favourite season?",
+      answer: ["What is your favourite season?","What's your favourite season?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your teacher says water evaporates every day. You want to know HOW MUCH water evaporates from the ocean. Ask the teacher.",
-      context_vi: "Giáo viên nói nước bốc hơi mỗi ngày. Bạn muốn biết BAO NHIÊU nước bốc hơi từ đại dương. Hỏi giáo viên.",
-      audio_url: "/audio/week17/ask_ai_4.mp3",
-      answer: ["How much water evaporates from the ocean?", "How much water evaporates?", "How much evaporation happens?"],
-      hint: "How much water..."
+      nova_says: "It snows a lot in my hometown in winter.",
+      nova_says_vi: "Ở quê hương cô tuyết rơi nhiều vào mùa đông.",
+      task_en: "Ask Nova HOW MUCH it snows in her hometown.",
+      task_vi: "Hỏi cô Nova tuyết rơi nhiều như thế nào ở quê hương cô.",
+      question_word_bank: ["How","What","Where","When"],
+      question_frame: "___ much does it snow there?",
+      answer: ["How much does it snow there?","How much does it snow in your hometown?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You are outside and the weather is changing fast. One minute it is sunny, then it starts raining. You want to know WHY the weather changes so quickly. Ask a meteorologist.",
-      context_vi: "Bạn đang ở ngoài trời và thời tiết thay đổi nhanh chóng. Một phút nắng, sau đó bắt đầu mưa. Bạn muốn biết TẠI SAO thời tiết thay đổi nhanh như vậy. Hỏi nhà khí tượng học.",
-      audio_url: "/audio/week17/ask_ai_5.mp3",
-      answer: ["Why does the weather change so quickly?", "Why is the weather changing fast?", "Why does it change from sunny to rainy?"],
-      hint: "Why does the weather..."
+      nova_says: "I like to drink hot chocolate when it's cold.",
+      nova_says_vi: "Cô thích uống ca cao nóng khi trời lạnh.",
+      task_en: "Ask Nova WHAT she likes to drink when it's cold.",
+      task_vi: "Hỏi cô Nova cô thích uống gì khi trời lạnh.",
+      question_word_bank: ["What","When","Why","Where"],
+      question_frame: "___ do you like to drink when it's cold?",
+      answer: ["What do you like to drink when it's cold?"],
+      hint_word: "What",
+      audio_url: null
     }
   ]
 };

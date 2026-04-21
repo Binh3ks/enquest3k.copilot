@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about your morning. What do you do first? What do you do next?",
+  topic_talk_prompt: "Tell me about your morning routine. What do you do in the morning?",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend wakes up every morning. You want to know the time. Ask them.",
-      context_vi: "Bạn của bạn thức dậy mỗi sáng. Bạn muốn biết mấy giờ. Hỏi họ.",
-      audio_url: "/audio/week13_easy/ask_ai_1.mp3",
-      answer: ["What time do you wake up?", "When do you wake up?", "You wake up at what time?"],
-      hint: "What time..."
+      nova_says: "I wake up at six every morning.",
+      nova_says_vi: "Cô thức dậy lúc sáu giờ mỗi sáng.",
+      task_en: "Ask Nova WHAT TIME she wakes up.",
+      task_vi: "Hỏi cô Nova cô thức dậy lúc mấy giờ.",
+      question_frame: "What ___ do you wake up?",
+      answer: ["What time do you wake up?"],
+      hint: "time",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend eats something in the morning. You want to know what. Ask them.",
-      context_vi: "Bạn mình ăn gì đó vào buổi sáng. Bạn muốn biết là gì. Hỏi họ.",
-      audio_url: "/audio/week13_easy/ask_ai_2.mp3",
-      answer: ["What do you eat?", "What do you eat for breakfast?", "What is breakfast?"],
-      hint: "What do you..."
+      nova_says: "I eat breakfast before school.",
+      nova_says_vi: "Cô ăn sáng trước khi đi học.",
+      task_en: "Ask Nova WHEN she eats breakfast.",
+      task_vi: "Hỏi cô Nova cô ăn sáng khi nào.",
+      question_frame: "___ do you eat breakfast?",
+      answer: ["When do you eat breakfast?"],
+      hint: "When",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your friend goes to school. You want to know when. Ask them.",
-      context_vi: "Bạn mình đi học. Bạn muốn biết khi nào. Hỏi họ.",
-      audio_url: "/audio/week13_easy/ask_ai_3.mp3",
-      answer: ["What time do you go to school?", "When do you go to school?", "You go to school at what time?"],
-      hint: "What time..."
+      nova_says: "I brush my teeth for two minutes.",
+      nova_says_vi: "Cô đánh răng trong hai phút.",
+      task_en: "Ask Nova HOW LONG she brushes her teeth.",
+      task_vi: "Hỏi cô Nova cô đánh răng bao lâu.",
+      question_frame: "How ___ do you brush your teeth?",
+      answer: ["How long do you brush your teeth?"],
+      hint: "long",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "School is done. You want to play. Ask your friend if they play after school.",
-      context_vi: "Hết giờ học. Bạn muốn chơi. Hỏi bạn mình có chơi sau giờ học không.",
-      audio_url: "/audio/week13_easy/ask_ai_4.mp3",
-      answer: ["Do you play after school?", "Do you play?", "Can we play?"],
-      hint: "Do you play..."
+      nova_says: "I walk to school with my friend.",
+      nova_says_vi: "Cô đi bộ đến trường với bạn.",
+      task_en: "Ask Nova HOW she gets to school.",
+      task_vi: "Hỏi cô Nova cô đến trường bằng cách nào.",
+      question_frame: "How ___ you get to school?",
+      answer: ["How do you get to school?"],
+      hint: "do",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "It is nighttime. You want to know when your friend goes to sleep. Ask them.",
-      context_vi: "Đã tối rồi. Bạn muốn biết khi nào bạn mình đi ngủ. Hỏi họ.",
-      audio_url: "/audio/week13_easy/ask_ai_5.mp3",
-      answer: ["What time do you sleep?", "When do you sleep?", "What time do you go to bed?"],
-      hint: "What time..."
+      nova_says: "I pack my bag the night before.",
+      nova_says_vi: "Cô chuẩn bị cặp vào tối hôm trước.",
+      task_en: "Ask Nova WHEN she packs her bag.",
+      task_vi: "Hỏi cô Nova cô chuẩn bị cặp khi nào.",
+      question_frame: "___ do you pack your bag?",
+      answer: ["When do you pack your bag?"],
+      hint: "When",
+      audio_url: null
     }
   ]
 };

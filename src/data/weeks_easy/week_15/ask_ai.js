@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about people at the park. What are they doing? Do you like the park?",
+  topic_talk_prompt: "Tell me about what you are doing right now. What can you see around you?",
   prompts: [
     {
       id: 1,
-      context_en: "You see your friend at the park. You want to know what they are doing. Ask them.",
-      context_vi: "Bạn thấy bạn mình ở công viên. Bạn muốn biết họ đang làm gì. Hỏi họ.",
-      audio_url: "/audio/week15_easy/ask_ai_1.mp3",
-      answer: ["What are you doing?", "What are you playing?", "Are you playing?"],
-      hint: "What are you..."
+      nova_says: "I'm sitting in the park right now.",
+      nova_says_vi: "Hiện tại cô đang ngồi trong công viên.",
+      task_en: "Ask Nova WHERE she is right now.",
+      task_vi: "Hỏi cô Nova ngay lúc này cô đang ở đâu.",
+      question_word_bank: ["Where","What","Who"],
+      question_frame: "___ are you right now?",
+      answer: ["Where are you right now?","Where are you?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend is eating something. You want to know what it is. Ask them.",
-      context_vi: "Bạn của bạn đang ăn gì đó. Bạn muốn biết đó là gì. Hỏi họ.",
-      audio_url: "/audio/week15_easy/ask_ai_2.mp3",
-      answer: ["What are you eating?", "What is that?", "What food is that?"],
-      hint: "What are you eating..."
+      nova_says: "I'm eating a sandwich right now.",
+      nova_says_vi: "Hiện tại cô đang ăn bánh mì kẹp.",
+      task_en: "Ask Nova WHAT she is eating.",
+      task_vi: "Hỏi cô Nova cô đang ăn gì.",
+      question_word_bank: ["What","Where","Why"],
+      question_frame: "___ are you eating?",
+      answer: ["What are you eating?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You see children playing at the fountain. You want to know if the water is fun. Ask your friend.",
-      context_vi: "Bạn thấy trẻ em chơi ở đài phun nước. Bạn muốn biết nước có vui không. Hỏi bạn của bạn.",
-      audio_url: "/audio/week15_easy/ask_ai_3.mp3",
-      answer: ["Is it fun?", "Is the water fun?", "Do you like the water?"],
-      hint: "Is it..."
+      nova_says: "My friend Tom is playing football in the park.",
+      nova_says_vi: "Bạn Tom của cô đang chơi bóng đá trong công viên.",
+      task_en: "Ask Nova WHAT Tom is doing.",
+      task_vi: "Hỏi cô Nova Tom đang làm gì.",
+      question_word_bank: ["What","Where","Who"],
+      question_frame: "___ is Tom doing?",
+      answer: ["What is Tom doing?","What's Tom doing?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your mom is making sandwiches for the picnic. You want to know what is inside. Ask her.",
-      context_vi: "Mẹ bạn đang làm bánh sandwich cho buổi dã ngoại. Bạn muốn biết bên trong có gì. Hỏi mẹ.",
-      audio_url: "/audio/week15_easy/ask_ai_4.mp3",
-      answer: ["What is inside?", "What is in the sandwich?", "What are you putting in?"],
-      hint: "What is..."
+      nova_says: "The birds are singing beautifully.",
+      nova_says_vi: "Những con chim đang hót rất hay.",
+      task_en: "Ask Nova WHAT the birds are doing.",
+      task_vi: "Hỏi cô Nova những con chim đang làm gì.",
+      question_word_bank: ["What","Where","Why"],
+      question_frame: "___ are the birds doing?",
+      answer: ["What are the birds doing?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You see a boy flying a kite. You want to know what color it is. Ask him.",
-      context_vi: "Bạn thấy một cậu bé thả diều. Bạn muốn biết nó màu gì. Hỏi cậu ấy.",
-      audio_url: "/audio/week15_easy/ask_ai_5.mp3",
-      answer: ["What color is your kite?", "What color is it?", "Is it red?"],
-      hint: "What color..."
+      nova_says: "It is raining lightly at the park.",
+      nova_says_vi: "Trời đang mưa nhẹ ở công viên.",
+      task_en: "Ask Nova HOW the weather is at the park.",
+      task_vi: "Hỏi cô Nova thời tiết ở công viên như thế nào.",
+      question_word_bank: ["How","What","Why"],
+      question_frame: "___ is the weather at the park?",
+      answer: ["How is the weather at the park?","What is the weather like at the park?"],
+      hint_word: "How",
+      audio_url: null
     }
   ]
 };

@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about your classroom. What do you see around you? How many students are in your class?",
+  topic_talk_prompt: "Tell me about your classroom. What do you see? What do you do there?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know how many students are in your friend's class. Ask them.",
-      context_vi: "Bạn muốn biết lớp của bạn mình có bao nhiêu học sinh. Hỏi họ.",
-      audio_url: "/audio/week8/ask_ai_1.mp3",
-      answer: ["How many students are there in your class?", "How many students are in your class?", "Are there many students in your class?"],
-      hint: "How many students..."
+      nova_says: "My classroom has a big whiteboard.",
+      nova_says_vi: "Lớp học của cô có bảng trắng lớn.",
+      task_en: "Ask Nova WHAT her classroom has.",
+      task_vi: "Hỏi cô Nova lớp của cô có gì.",
+      question_frame: "What ___ your classroom have?",
+      answer: ["What does your classroom have?"],
+      hint: "does",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You want to know if there are enough chairs for everyone. Ask your teacher.",
-      context_vi: "Bạn muốn biết có đủ ghế cho tất cả mọi người không. Hỏi giáo viên.",
-      audio_url: "/audio/week8/ask_ai_2.mp3",
-      answer: ["Are there enough chairs for everyone?", "Are there chairs for all students?", "How many chairs are there?"],
-      hint: "Are there enough..."
+      nova_says: "We have English class every Tuesday.",
+      nova_says_vi: "Chúng tôi có tiết Anh văn mỗi thứ Ba.",
+      task_en: "Ask Nova WHEN they have English class.",
+      task_vi: "Hỏi cô Nova họ có tiết Anh văn khi nào.",
+      question_frame: "___ do you have English class?",
+      answer: ["When do you have English class?"],
+      hint: "When",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You want to know how many markers are on the board tray. Ask your classmate.",
-      context_vi: "Bạn muốn biết có bao nhiêu bút lông trong khay bảng. Hỏi bạn cùng lớp.",
-      audio_url: "/audio/week8/ask_ai_3.mp3",
-      answer: ["How many markers are there?", "How many markers are on the board?", "Are there many markers?"],
-      hint: "How many markers..."
+      nova_says: "My teacher's name is Mr Brown.",
+      nova_says_vi: "Tên thầy giáo của cô là thầy Brown.",
+      task_en: "Ask Nova WHAT her teacher's name is.",
+      task_vi: "Hỏi cô Nova tên giáo viên của cô là gì.",
+      question_frame: "What ___ your teacher's name?",
+      answer: ["What is your teacher's name?","What's your teacher's name?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to know what is on the shelves. Ask your friend.",
-      context_vi: "Bạn muốn biết trên kệ có gì. Hỏi bạn mình.",
-      audio_url: "/audio/week8/ask_ai_4.mp3",
-      answer: ["What is on the shelves?", "What are there on the shelves?", "Are there books on the shelves?"],
-      hint: "What is on..."
+      nova_says: "I sit at the front of the classroom.",
+      nova_says_vi: "Cô ngồi ở phía trước lớp.",
+      task_en: "Ask Nova WHERE she sits in the classroom.",
+      task_vi: "Hỏi cô Nova cô ngồi ở đâu trong lớp.",
+      question_frame: "Where ___ you sit in the classroom?",
+      answer: ["Where do you sit in the classroom?"],
+      hint: "do",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You need crayons for art class. Ask if there are crayons in the art box.",
-      context_vi: "Bạn cần bút sáp cho lớp nghệ thuật. Hỏi xem có bút sáp trong hộp nghệ thuật không.",
-      audio_url: "/audio/week8/ask_ai_5.mp3",
-      answer: ["Are there crayons in the art box?", "Are there crayons?", "How many crayons are there?"],
-      hint: "Are there crayons..."
+      nova_says: "We sing songs at the start of class.",
+      nova_says_vi: "Chúng tôi hát bài hát đầu giờ học.",
+      task_en: "Ask Nova WHAT they do at the start of class.",
+      task_vi: "Hỏi cô Nova họ làm gì đầu giờ học.",
+      question_frame: "What ___ you do at the start of class?",
+      answer: ["What do you do at the start of class?"],
+      hint: "do",
+      audio_url: null
     }
   ]
 };

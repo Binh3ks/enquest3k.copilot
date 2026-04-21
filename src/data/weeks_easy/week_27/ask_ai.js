@@ -1,46 +1,65 @@
 export default {
-  title: "Ask AI: My Plant",
-  topic_talk_prompt: "Tell me about a plant or flower you have seen. What colour is it? Where did it grow?",
+  topic_talk_prompt: "Tell me an interesting science fact you know. What did you learn about nature or animals?",
   prompts: [
     {
       id: 1,
-      context_en: "Your plant is not growing. Ask Nova what is wrong.",
-      context_vi: "Cây của bạn không mọc. Hỏi cô Nova có chuyện gì vậy.",
-      answer: ["Why is my plant not growing?", "What is wrong with my plant?", "Why doesn't my plant grow?"],
-      hint: "Why is my plant not growing?",
-      audio_url: "/audio/week27_easy/ask_ai_q1.mp3"
+      nova_says: "Did you know? Plants make their own food from sunlight.",
+      nova_says_vi: "Bạn có biết không? Cây tự tạo ra thức ăn từ ánh sáng mặt trời.",
+      task_en: "Ask Nova HOW plants make their food.",
+      task_vi: "Hỏi cô Nova cây tạo ra thức ăn như thế nào.",
+      question_word_bank: ["How","What","Why"],
+      question_frame: "___ do plants make their food?",
+      answer: ["How do plants make their food?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You want to know how often to water your plant. Ask Nova.",
-      context_vi: "Bạn muốn biết nên tưới cây bao nhiêu lần. Hỏi cô Nova.",
-      answer: ["How often should I water my plant?", "How many times a week should I water my plant?", "When should I water my plant?"],
-      hint: "How often should I water my plant?",
-      audio_url: "/audio/week27_easy/ask_ai_q2.mp3"
+      nova_says: "Plants need sunlight, water, and carbon dioxide to grow.",
+      nova_says_vi: "Cây cần ánh sáng, nước và khí CO2 để phát triển.",
+      task_en: "Ask Nova WHAT plants need to grow.",
+      task_vi: "Hỏi cô Nova cây cần gì để phát triển.",
+      question_word_bank: ["What","How","Why"],
+      question_frame: "___ do plants need to grow?",
+      answer: ["What do plants need to grow?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You see a tiny green thing coming out of the soil. Ask Nova what it is.",
-      context_vi: "Bạn thấy một thứ nhỏ màu xanh ló ra từ đất. Hỏi cô Nova đó là gì.",
-      answer: ["What is the green thing coming out of the soil?", "What is growing out of the soil?", "What is that green thing in the soil?"],
-      hint: "What is the green thing coming out of the soil?",
-      audio_url: "/audio/week27_easy/ask_ai_q3.mp3"
+      nova_says: "Without sunlight, plants cannot make food and they will die.",
+      nova_says_vi: "Không có ánh sáng, cây không thể tạo ra thức ăn và sẽ chết.",
+      task_en: "Ask Nova WHAT happens to plants without sunlight.",
+      task_vi: "Hỏi cô Nova điều gì xảy ra với cây nếu không có ánh sáng.",
+      question_word_bank: ["What","Why","How"],
+      question_frame: "___ happens to plants without sunlight?",
+      answer: ["What happens to plants without sunlight?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to know why leaves are green. Ask Nova.",
-      context_vi: "Bạn muốn biết tại sao lá cây màu xanh. Hỏi cô Nova.",
-      answer: ["Why are leaves green?", "Why is a leaf green?", "What makes leaves green?"],
-      hint: "Why are leaves green?",
-      audio_url: "/audio/week27_easy/ask_ai_q4.mp3"
+      nova_says: "This process is called photosynthesis.",
+      nova_says_vi: "Quá trình này gọi là quang hợp.",
+      task_en: "Ask Nova WHAT this process is called.",
+      task_vi: "Hỏi cô Nova quá trình này gọi là gì.",
+      question_word_bank: ["What","How","Why"],
+      question_frame: "___ is this process called?",
+      answer: ["What is this process called?","What's this process called?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You want to grow a flower at home. Ask Nova how to start.",
-      context_vi: "Bạn muốn trồng hoa ở nhà. Hỏi cô Nova bắt đầu như thế nào.",
-      answer: ["How can I grow a flower at home?", "How do I start growing a flower?", "What do I need to grow a flower?"],
-      hint: "How can I grow a flower at home?",
-      audio_url: "/audio/week27_easy/ask_ai_q5.mp3"
+      nova_says: "Photosynthesis happens mostly during the daytime.",
+      nova_says_vi: "Quang hợp xảy ra chủ yếu vào ban ngày.",
+      task_en: "Ask Nova WHEN photosynthesis happens.",
+      task_vi: "Hỏi cô Nova quang hợp xảy ra khi nào.",
+      question_word_bank: ["When","Why","How"],
+      question_frame: "___ does photosynthesis happen?",
+      answer: ["When does photosynthesis happen?"],
+      hint_word: "When",
+      audio_url: null
     }
   ]
 };

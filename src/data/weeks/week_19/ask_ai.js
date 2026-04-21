@@ -1,37 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about something you did when you were small. What happened? How do you feel about it now?",
+  topic_talk_prompt: "Tell me about an old photo you remember. Who was in it? What were they doing?",
   prompts: [
     {
       id: 1,
-      context_en: "You are looking at an old photo album. You see a cute baby in one photo. Your mom says it's you! You want to know HOW OLD you were in that photo. Ask your mom.",
-      context_vi: "Bạn đang xem album ảnh cũ. Bạn thấy một em bé dễ thương trong một bức ảnh. Mẹ bạn nói đó là bạn! Bạn muốn biết bạn BAO NHIÊU TUỔI trong ảnh đó. Hỏi mẹ.",
-      audio_url: "/audio/week19/ask_ai_1.mp3",
-      answer: ["How old was I?", "How old was I in this photo?", "What age was I?"],
-      hint: "How old was..."
+      nova_says: "Look! In this old photo, I was wearing a funny hat.",
+      nova_says_vi: "Nhìn này! Trong bức ảnh cũ này, cô đang đội một cái mũ buồn cười.",
+      task_en: "Ask Nova WHAT she was wearing in the photo.",
+      task_vi: "Hỏi cô Nova cô đang mặc gì trong ảnh.",
+      question_word_bank: ["What","Where","Who","Why"],
+      question_frame: "___ were you wearing in the photo?",
+      answer: ["What were you wearing in the photo?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your grandma tells you that you were very noisy when you were a baby. You want to know WHY you were so noisy. Ask your grandma.",
-      context_vi: "Bà bạn nói bạn rất ồn ào khi còn là em bé. Bạn muốn biết TẠI SAO bạn ồn ào như vậy. Hỏi bà.",
-      audio_url: "/audio/week19/ask_ai_2.mp3",
-      answer: ["Why was I so noisy?", "Why was I noisy?", "Why did I cry so much?"],
-      hint: "Why was I..."
+      nova_says: "This photo was taken at a birthday party.",
+      nova_says_vi: "Bức ảnh này được chụp tại một bữa tiệc sinh nhật.",
+      task_en: "Ask Nova WHERE the photo was taken.",
+      task_vi: "Hỏi cô Nova bức ảnh được chụp ở đâu.",
+      question_word_bank: ["Where","When","Who","What"],
+      question_frame: "___ was the photo taken?",
+      answer: ["Where was the photo taken?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You see your baby cousin sleeping quietly. You remember your mom said you were different when you were young. You want to know HOW you were different. Ask your mom.",
-      context_vi: "Bạn thấy em họ đang ngủ yên lặng. Bạn nhớ mẹ nói bạn khác khi còn nhỏ. Bạn muốn biết bạn KHÁC NHƯ THẾ NÀO. Hỏi mẹ.",
-      audio_url: "/audio/week19/ask_ai_3.mp3",
-      answer: ["How was I different?", "What was I like?", "How was I when I was a baby?"],
-      hint: "How was I..."
+      nova_says: "I was very young in this photo — maybe five years old.",
+      nova_says_vi: "Cô còn rất nhỏ trong ảnh này — có lẽ năm tuổi.",
+      task_en: "Ask Nova HOW OLD she was in the photo.",
+      task_vi: "Hỏi cô Nova cô bao nhiêu tuổi trong ảnh.",
+      question_word_bank: ["How","When","What","Where"],
+      question_frame: "___ old were you in the photo?",
+      answer: ["How old were you in the photo?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your dad shows you a photo from when you were in kindergarten. You look so small! You want to know WHERE you went to kindergarten. Ask your dad.",
-      context_vi: "Bố bạn cho bạn xem ảnh khi bạn học mẫu giáo. Bạn trông nhỏ quá! Bạn muốn biết bạn học mẫu giáo Ở ĐÂU. Hỏi bố.",
-      audio_url: "/audio/week19/ask_ai_4.mp3",
-      answer: ["Where was I in kindergarten?", "Where did I go to kindergarten?", "Where was my kindergarten?"],
-      hint: "Where was..."
+      nova_says: "My grandpa took this photo a long time ago.",
+      nova_says_vi: "Ông của cô chụp ảnh này từ rất lâu rồi.",
+      task_en: "Ask Nova WHO took the photo.",
+      task_vi: "Hỏi cô Nova ai đã chụp ảnh đó.",
+      question_word_bank: ["Who","What","When","Why"],
+      question_frame: "___ took the photo?",
+      answer: ["Who took the photo?"],
+      hint_word: "Who",
+      audio_url: null
+    },
+    {
+      id: 5,
+      nova_says: "Everyone in the photo was laughing and happy.",
+      nova_says_vi: "Mọi người trong ảnh đều đang cười và vui vẻ.",
+      task_en: "Ask Nova HOW everyone felt in the photo.",
+      task_vi: "Hỏi cô Nova mọi người cảm thấy thế nào trong ảnh.",
+      question_word_bank: ["How","What","Why","Who"],
+      question_frame: "___ was everyone feeling in the photo?",
+      answer: ["How was everyone feeling in the photo?","How did everyone feel in the photo?"],
+      hint_word: "How",
+      audio_url: null
     }
   ]
 };

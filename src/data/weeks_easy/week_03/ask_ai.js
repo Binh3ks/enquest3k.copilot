@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about someone in your family. What do they look like? Are they tall or short?",
+  topic_talk_prompt: "Tell me about your best friend. What is their name?",
   prompts: [
     {
       id: 1,
-      context_en: "You see a tall person. Ask how tall.",
-      context_vi: "Bạn thấy người cao. Hỏi cao bao nhiêu.",
-      audio_url: "/audio/week3/ask_ai_1.mp3",
-      answer: ["How tall are you?"],
-      hint: "How tall..."
+      nova_says: "My best friend's name is Lily.",
+      nova_says_vi: "Tên bạn thân của cô là Lily.",
+      task_en: "Ask Nova WHAT her best friend's name is.",
+      task_vi: "Hỏi cô Nova tên bạn thân của cô là gì.",
+      question_frame: "What ___ your best friend's name?",
+      answer: ["What is your best friend's name?","What's your best friend's name?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend wears glasses. Ask why.",
-      context_vi: "Bạn đeo kính. Hỏi tại sao.",
-      audio_url: "/audio/week3/ask_ai_2.mp3",
-      answer: ["Why do you wear glasses?"],
-      hint: "Why..."
+      nova_says: "Lily has long hair.",
+      nova_says_vi: "Lily có tóc dài.",
+      task_en: "Ask Nova WHAT Lily's hair looks like.",
+      task_vi: "Hỏi cô Nova tóc của Lily như thế nào.",
+      question_frame: "What ___ Lily's hair look like?",
+      answer: ["What does Lily's hair look like?"],
+      hint: "does",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You want to know hair color. Ask.",
-      context_vi: "Bạn muốn biết màu tóc. Hỏi.",
-      audio_url: "/audio/week3/ask_ai_3.mp3",
-      answer: ["What color is your hair?"],
-      hint: "What color..."
+      nova_says: "We play at school.",
+      nova_says_vi: "Chúng tôi chơi ở trường.",
+      task_en: "Ask Nova WHERE they play.",
+      task_vi: "Hỏi cô Nova họ chơi ở đâu.",
+      question_frame: "___ do you and Lily play?",
+      answer: ["Where do you and Lily play?","Where do you play?"],
+      hint: "Where",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You see curly hair. Ask if curly.",
-      context_vi: "Bạn thấy tóc quăn. Hỏi có quăn không.",
-      audio_url: "/audio/week3/ask_ai_4.mp3",
-      answer: ["Is your hair curly?"],
-      hint: "Is..."
+      nova_says: "Lily likes drawing.",
+      nova_says_vi: "Lily thích vẽ.",
+      task_en: "Ask Nova WHAT Lily likes to do.",
+      task_vi: "Hỏi cô Nova Lily thích làm gì.",
+      question_frame: "What ___ Lily like to do?",
+      answer: ["What does Lily like to do?"],
+      hint: "does",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You see a smile. Ask if happy.",
-      context_vi: "Bạn thấy nụ cười. Hỏi vui không.",
-      audio_url: "/audio/week3/ask_ai_5.mp3",
-      answer: ["Are you happy?"],
-      hint: "Are you..."
+      nova_says: "I see Lily on Saturdays.",
+      nova_says_vi: "Cô gặp Lily vào thứ Bảy.",
+      task_en: "Ask Nova WHEN she sees Lily.",
+      task_vi: "Hỏi cô Nova cô gặp Lily khi nào.",
+      question_frame: "___ do you see Lily?",
+      answer: ["When do you see Lily?"],
+      hint: "When",
+      audio_url: null
     }
   ]
 };

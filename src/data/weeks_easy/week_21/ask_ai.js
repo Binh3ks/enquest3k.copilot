@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about what you did yesterday. What happened? What did you eat?",
+  topic_talk_prompt: "Tell me about what you did yesterday. What was the best part of your day?",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend wrote in their diary: 'I walked to school.' You want to know WHERE they walked to. Ask them.",
-      context_vi: "Bạn viết trong nhật ký: 'Tôi đã đi bộ đến trường.' Bạn muốn biết họ đi bộ ĐẾN ĐÂU. Hỏi họ.",
-      audio_url: "/audio/week21_easy/ask_ai_1.mp3",
-      answer: ["Where did you walk?", "Where did you walk to?", "Did you walk to school?"],
-      hint: "Where did you..."
+      nova_says: "I went to the museum yesterday.",
+      nova_says_vi: "Hôm qua cô đã đi bảo tàng.",
+      task_en: "Ask Nova WHERE she went yesterday.",
+      task_vi: "Hỏi cô Nova hôm qua cô đã đi đâu.",
+      question_word_bank: ["Where","What","Who"],
+      question_frame: "___ did you go yesterday?",
+      answer: ["Where did you go yesterday?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Max says: 'I cooked something yesterday.' You want to know WHAT he cooked. Ask him.",
-      context_vi: "Max nói: 'Hôm qua tôi đã nấu gì đó.' Bạn muốn biết anh ấy đã nấu GÌ. Hỏi anh ấy.",
-      audio_url: "/audio/week21_easy/ask_ai_2.mp3",
-      answer: ["What did you cook?", "What did you make?"],
-      hint: "What did you..."
+      nova_says: "I saw a dinosaur exhibition at the museum.",
+      nova_says_vi: "Cô đã xem triển lãm khủng long ở bảo tàng.",
+      task_en: "Ask Nova WHAT she saw at the museum.",
+      task_vi: "Hỏi cô Nova cô đã xem gì ở bảo tàng.",
+      question_word_bank: ["What","Where","Why"],
+      question_frame: "___ did you see at the museum?",
+      answer: ["What did you see at the museum?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your sister says she played a game yesterday. You want to know WHO she played with. Ask her.",
-      context_vi: "Chị bạn nói chị đã chơi trò chơi hôm qua. Bạn muốn biết chị đã chơi VỚI AI. Hỏi chị.",
-      audio_url: "/audio/week21_easy/ask_ai_3.mp3",
-      answer: ["Who did you play with?", "Who was playing with you?"],
-      hint: "Who did you..."
+      nova_says: "I went with my younger sister.",
+      nova_says_vi: "Cô đã đi cùng em gái.",
+      task_en: "Ask Nova WHO she went with.",
+      task_vi: "Hỏi cô Nova cô đã đi cùng ai.",
+      question_word_bank: ["Who","What","Where"],
+      question_frame: "___ did you go with?",
+      answer: ["Who did you go with?"],
+      hint_word: "Who",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your friend says they watched something last night. You want to know WHAT they watched. Ask them.",
-      context_vi: "Bạn của bạn nói họ đã xem gì đó tối qua. Bạn muốn biết họ đã xem GÌ. Hỏi họ.",
-      audio_url: "/audio/week21_easy/ask_ai_4.mp3",
-      answer: ["What did you watch?", "What did you watch last night?"],
-      hint: "What did you..."
+      nova_says: "We stayed at the museum for three hours.",
+      nova_says_vi: "Chúng tôi đã ở bảo tàng trong ba tiếng.",
+      task_en: "Ask Nova HOW LONG they stayed at the museum.",
+      task_vi: "Hỏi cô Nova họ đã ở bảo tàng bao lâu.",
+      question_word_bank: ["How","When","What"],
+      question_frame: "___ long did you stay at the museum?",
+      answer: ["How long did you stay at the museum?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You see Max write in a diary. You want to know WHY he writes in a diary. Ask him.",
-      context_vi: "Bạn thấy Max viết nhật ký. Bạn muốn biết TẠI SAO anh ấy viết nhật ký. Hỏi anh ấy.",
-      audio_url: "/audio/week21_easy/ask_ai_5.mp3",
-      answer: ["Why do you write a diary?", "Why are you writing a diary?", "Why did you write that?"],
-      hint: "Why do you..."
+      nova_says: "The dinosaur bones were the best thing I saw.",
+      nova_says_vi: "Xương khủng long là thứ ấn tượng nhất cô đã thấy.",
+      task_en: "Ask Nova WHAT the best thing she saw was.",
+      task_vi: "Hỏi cô Nova thứ ấn tượng nhất cô đã thấy là gì.",
+      question_word_bank: ["What","How","Why"],
+      question_frame: "___ was the best thing you saw?",
+      answer: ["What was the best thing you saw?"],
+      hint_word: "What",
+      audio_url: null
     }
   ]
 };

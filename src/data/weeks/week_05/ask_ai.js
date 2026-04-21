@@ -1,50 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about your home. What rooms does it have? What is in your favourite room?",
+  topic_talk_prompt: "Tell me about your house. What rooms do you have? What is your favourite room?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know what room your friend sleeps in. Ask them.",
-      context_vi: "Bạn muốn biết bạn của mình ngủ ở phòng nào. Hỏi họ.",
-      audio_url: "/audio/week5/ask_ai_1.mp3",
-      answer: ["Where do you sleep?", "What room do you sleep in?", "Which room is your bedroom?"],
-      answer_audio_url: "/audio/week5/ask_ai_answer_1.mp3",
-      hint: "Where do you..."
+      nova_says: "I live in a big white house.",
+      nova_says_vi: "Cô sống trong một ngôi nhà trắng lớn.",
+      task_en: "Ask Nova WHAT colour her house is.",
+      task_vi: "Hỏi cô Nova nhà của cô màu gì.",
+      question_frame: "What ___ is your house?",
+      answer: ["What colour is your house?"],
+      hint: "colour",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You want to know what is in your friend's kitchen. Ask them.",
-      context_vi: "Bạn muốn biết trong bếp của bạn mình có gì. Hỏi họ.",
-      audio_url: "/audio/week5/ask_ai_2.mp3",
-      answer: ["What is in your kitchen?", "What do you have in the kitchen?", "What is in the kitchen?"],
-      answer_audio_url: "/audio/week5/ask_ai_answer_2.mp3",
-      hint: "What is..."
+      nova_says: "My bedroom is upstairs.",
+      nova_says_vi: "Phòng ngủ của cô ở tầng trên.",
+      task_en: "Ask Nova WHERE her bedroom is.",
+      task_vi: "Hỏi cô Nova phòng ngủ của cô ở đâu.",
+      question_frame: "___ is your bedroom?",
+      answer: ["Where is your bedroom?"],
+      hint: "Where",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You see a lamp in your friend's room. Ask about it.",
-      context_vi: "Bạn thấy một cái đèn trong phòng bạn của mình. Hỏi về nó.",
-      audio_url: "/audio/week5/ask_ai_3.mp3",
-      answer: ["What is this?", "Is this a lamp?", "What is that lamp?"],
-      answer_audio_url: "/audio/week5/ask_ai_answer_3.mp3",
-      hint: "What is..."
+      nova_says: "My favourite room is the kitchen.",
+      nova_says_vi: "Phòng yêu thích của cô là nhà bếp.",
+      task_en: "Ask Nova WHAT her favourite room is.",
+      task_vi: "Hỏi cô Nova phòng yêu thích của cô là gì.",
+      question_frame: "What ___ your favourite room?",
+      answer: ["What is your favourite room?","What's your favourite room?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You want to sit down. Ask if you can sit on the sofa.",
-      context_vi: "Bạn muốn ngồi xuống. Hỏi xem bạn có thể ngồi trên ghế sofa không.",
-      audio_url: "/audio/week5/ask_ai_4.mp3",
-      answer: ["Can I sit on the sofa?", "Can I sit here?", "May I sit on the sofa?"],
-      answer_audio_url: "/audio/week5/ask_ai_answer_4.mp3",
-      hint: "Can I..."
+      nova_says: "I have a garden behind my house.",
+      nova_says_vi: "Cô có một khu vườn sau nhà.",
+      task_en: "Ask Nova if she has a garden.",
+      task_vi: "Hỏi cô Nova cô có vườn không.",
+      question_frame: "___ you have a garden?",
+      answer: ["Do you have a garden?"],
+      hint: "Do",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You need to use the bathroom. Ask where it is.",
-      context_vi: "Bạn cần dùng phòng tắm. Hỏi nó ở đâu.",
-      audio_url: "/audio/week5/ask_ai_5.mp3",
-      answer: ["Where is the bathroom?", "Where is the toilet?", "Where can I find the bathroom?"],
-      answer_audio_url: "/audio/week5/ask_ai_answer_5.mp3",
-      hint: "Where is..."
+      nova_says: "I watch TV in the living room.",
+      nova_says_vi: "Cô xem TV trong phòng khách.",
+      task_en: "Ask Nova WHERE she watches TV.",
+      task_vi: "Hỏi cô Nova cô xem TV ở đâu.",
+      question_frame: "___ do you watch TV?",
+      answer: ["Where do you watch TV?"],
+      hint: "Where",
+      audio_url: null
     }
   ]
 };

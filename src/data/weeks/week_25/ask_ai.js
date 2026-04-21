@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about how you do something step by step. What is the process? What happens first?",
+  topic_talk_prompt: "Tell me about how to make or do something you know. What are the steps?",
   prompts: [
     {
       id: 1,
-      context_en: "You see your friend making a sandwich but they put the jam on BEFORE getting the bread out. You want to know what they should do FIRST. Ask them.",
-      context_vi: "Bạn thấy bạn mình đang làm sandwich nhưng họ bôi mứt TRƯỚC KHI lấy bánh mì ra. Bạn muốn biết họ nên làm gì ĐẦU TIÊN. Hỏi họ.",
-      audio_url: "/audio/week25/ask_ai_q1.mp3",
-      answer: ["What should you do first?", "What do you do first?", "What comes first?", "Which step is first?"],
-      hint: "What should you do first?"
+      nova_says: "First, I mixed the flour and eggs together.",
+      nova_says_vi: "Đầu tiên, cô đã trộn bột mì và trứng lại với nhau.",
+      task_en: "Ask Nova WHAT she mixed together first.",
+      task_vi: "Hỏi cô Nova đầu tiên cô đã trộn những gì lại với nhau.",
+      question_word_bank: ["What","How","Why","When"],
+      question_frame: "___ did you mix together first?",
+      answer: ["What did you mix together first?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend is brushing their teeth but forgot to put toothpaste on the brush. You want to know what step comes NEXT after putting on the toothpaste. Ask them.",
-      context_vi: "Bạn của bạn đang đánh răng nhưng quên chưa bôi kem đánh răng. Bạn muốn biết bước TIẾP THEO sau khi bôi kem là gì. Hỏi họ.",
-      audio_url: "/audio/week25/ask_ai_q2.mp3",
-      answer: ["What comes next?", "What do you do next?", "What is the next step?", "What step comes next?"],
-      hint: "What comes next?"
+      nova_says: "Then I added sugar and butter to the mix.",
+      nova_says_vi: "Sau đó cô đã thêm đường và bơ vào hỗn hợp.",
+      task_en: "Ask Nova WHAT she added to the mix.",
+      task_vi: "Hỏi cô Nova cô đã thêm gì vào hỗn hợp.",
+      question_word_bank: ["What","How","Why","When"],
+      question_frame: "___ did you add to the mix?",
+      answer: ["What did you add to the mix?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your little sister finished brushing her teeth but she forgot one thing before she finishes. You want to know what she should do THEN. Ask her.",
-      context_vi: "Em gái của bạn đã đánh răng xong nhưng còn quên một việc trước khi xong. Bạn muốn biết SAU ĐÓ em nên làm gì. Hỏi em ấy.",
-      audio_url: "/audio/week25/ask_ai_q3.mp3",
-      answer: ["What should you do then?", "What do you do then?", "Then what do you do?", "What comes then?"],
-      hint: "What should you do then?"
+      nova_says: "I put the cake in the oven at 180 degrees.",
+      nova_says_vi: "Cô đã cho bánh vào lò nướng ở 180 độ.",
+      task_en: "Ask Nova HOW HOT she set the oven.",
+      task_vi: "Hỏi cô Nova cô đã đặt lò nướng ở nhiệt độ bao nhiêu.",
+      question_word_bank: ["How","What","When","Why"],
+      question_frame: "___ hot did you set the oven?",
+      answer: ["How hot did you set the oven?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your classmate cooked rice for the first time and did all the steps correctly. You want to know what they did FINALLY at the end. Ask them.",
-      context_vi: "Bạn cùng lớp nấu cơm lần đầu tiên và đã làm đúng tất cả các bước. Bạn muốn biết CUỐI CÙNG họ đã làm gì. Hỏi họ.",
-      audio_url: "/audio/week25/ask_ai_q4.mp3",
-      answer: ["What did you do finally?", "What did you do last?", "What was the last step?", "What was the final step?"],
-      hint: "What did you do finally?"
+      nova_says: "The cake baked for thirty minutes.",
+      nova_says_vi: "Bánh nướng trong ba mươi phút.",
+      task_en: "Ask Nova HOW LONG the cake baked.",
+      task_vi: "Hỏi cô Nova bánh nướng bao lâu.",
+      question_word_bank: ["How","When","What","Why"],
+      question_frame: "___ long did the cake bake?",
+      answer: ["How long did the cake bake?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your teacher is showing a science experiment with four steps. You missed step three. You want to know what happens AFTER step two. Ask the teacher.",
-      context_vi: "Giáo viên đang trình bày thí nghiệm khoa học có bốn bước. Bạn bỏ lỡ bước ba. Bạn muốn biết điều gì xảy ra SAU bước hai. Hỏi giáo viên.",
-      audio_url: "/audio/week25/ask_ai_q5.mp3",
-      answer: ["What happens next?", "What do we do next?", "What comes after step two?", "What is the next step?"],
-      hint: "What happens next?"
+      nova_says: "Finally, I decorated the cake with cream and strawberries.",
+      nova_says_vi: "Cuối cùng, cô đã trang trí bánh bằng kem và dâu tây.",
+      task_en: "Ask Nova HOW she decorated the cake.",
+      task_vi: "Hỏi cô Nova cô đã trang trí bánh như thế nào.",
+      question_word_bank: ["How","What","Why","When"],
+      question_frame: "___ did you decorate the cake?",
+      answer: ["How did you decorate the cake?"],
+      hint_word: "How",
+      audio_url: null
     }
   ]
 };

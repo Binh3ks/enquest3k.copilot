@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about something you like doing. Do you like playing, drawing, or singing? Why?",
+  topic_talk_prompt: "Tell me about your favourite food. What do you like to eat?",
   prompts: [
     {
       id: 1,
-      context_en: "Ask your friend if they like to play.",
-      context_vi: "Hỏi bạn của bạn có thích chơi không.",
-      audio_url: "/audio/week4_easy/ask_ai_1.mp3",
-      answer: ["Do you like to play?", "Do you like playing?"],
-      hint: "Do you..."
+      nova_says: "My favourite food is pizza.",
+      nova_says_vi: "Món ăn yêu thích của cô là pizza.",
+      task_en: "Ask Nova WHAT her favourite food is.",
+      task_vi: "Hỏi cô Nova món ăn yêu thích của cô là gì.",
+      question_frame: "What ___ your favourite food?",
+      answer: ["What is your favourite food?","What's your favourite food?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Tell your teacher you are happy.",
-      context_vi: "Nói với giáo viên bạn vui.",
-      audio_url: "/audio/week4_easy/ask_ai_2.mp3",
-      answer: ["I am happy", "I feel happy"],
-      hint: "I am..."
+      nova_says: "I eat pizza on Fridays.",
+      nova_says_vi: "Cô ăn pizza vào thứ Sáu.",
+      task_en: "Ask Nova WHEN she eats pizza.",
+      task_vi: "Hỏi cô Nova cô ăn pizza khi nào.",
+      question_frame: "___ do you eat pizza?",
+      answer: ["When do you eat pizza?"],
+      hint: "When",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Ask what your friend likes.",
-      context_vi: "Hỏi bạn của bạn thích gì.",
-      audio_url: "/audio/week4_easy/ask_ai_3.mp3",
-      answer: ["What do you like?"],
-      hint: "What do..."
+      nova_says: "I don't like vegetables.",
+      nova_says_vi: "Cô không thích rau.",
+      task_en: "Ask Nova WHY she doesn't like vegetables.",
+      task_vi: "Hỏi cô Nova tại sao cô không thích rau.",
+      question_frame: "___ don't you like vegetables?",
+      answer: ["Why don't you like vegetables?"],
+      hint: "Why",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Say you like to draw.",
-      context_vi: "Nói bạn thích vẽ.",
-      audio_url: "/audio/week4_easy/ask_ai_4.mp3",
-      answer: ["I like to draw", "I like drawing"],
-      hint: "I like..."
+      nova_says: "My mum makes good soup.",
+      nova_says_vi: "Mẹ cô nấu canh ngon.",
+      task_en: "Ask Nova if her mum's soup is good.",
+      task_vi: "Hỏi cô Nova canh của mẹ cô có ngon không.",
+      question_frame: "___ your mum's soup good?",
+      answer: ["Is your mum's soup good?"],
+      hint: "Is",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Ask if your friend is happy.",
-      context_vi: "Hỏi bạn của bạn có vui không.",
-      audio_url: "/audio/week4_easy/ask_ai_5.mp3",
-      answer: ["Are you happy?", "Do you feel happy?"],
-      hint: "Are you..."
+      nova_says: "I like chocolate ice cream.",
+      nova_says_vi: "Cô thích kem sô-cô-la.",
+      task_en: "Ask Nova WHAT flavour ice cream she likes.",
+      task_vi: "Hỏi cô Nova cô thích kem vị gì.",
+      question_frame: "What ___ of ice cream do you like?",
+      answer: ["What flavour of ice cream do you like?"],
+      hint: "flavour",
+      audio_url: null
     }
   ]
 };

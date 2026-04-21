@@ -1,48 +1,55 @@
 export default {
-  title: "Ask AI: My First Plane Trip",
-  topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go? How did you travel?",
-  image_url: "/images/week29/ask_ai_cover_w29.jpg",
-  audio_url: "/audio/week29_easy/ask_ai_main.mp3",
+  topic_talk_prompt: "Tell me about a trip or journey you have taken. Where did you go? What did you see?",
   prompts: [
     {
       id: 1,
-      context_en: "The plane flew very fast and went up into the sky. Ask Nova how planes fly.",
-      context_vi: "Máy bay bay rất nhanh và lên bầu trời. Hỏi cô Nova máy bay bay như thế nào.",
-      answer: ["How do aeroplanes fly?", "How does a plane stay up in the sky?", "Why can planes fly so high?"],
-      hint: "How do aeroplanes fly?",
-      audio_url: "/audio/week29_easy/ask_ai_q1.mp3"
+      nova_says: "I just came back from a trip to the mountains!",
+      nova_says_vi: "Cô vừa trở về từ chuyến đi lên núi!",
+      task_en: "Ask Nova 2 questions about her trip to the mountains.",
+      task_vi: "Hỏi cô Nova 2 câu về chuyến đi lên núi của cô.",
+      question_starters: ["Where exactly did you...?","How long did you...?"],
+      answer: ["Where exactly did you go?","How long did you stay?","Who did you go with?"],
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "The family went to the airport and flew to Da Nang. Ask Nova what Da Nang is famous for.",
-      context_vi: "Gia đình đến sân bay và bay đến Đà Nẵng. Hỏi cô Nova Đà Nẵng nổi tiếng về điều gì.",
-      answer: ["What is Da Nang famous for?", "Why is Da Nang a popular city?", "What can you see in Da Nang?"],
-      hint: "What is Da Nang famous for?",
-      audio_url: "/audio/week29_easy/ask_ai_q2.mp3"
+      nova_says: "The mountain views were absolutely breathtaking.",
+      nova_says_vi: "Cảnh núi non thật sự ngoạn mục.",
+      task_en: "Ask Nova about the mountain views.",
+      task_vi: "Hỏi cô Nova về cảnh núi non.",
+      question_starters: ["What did you see...?","How did you feel...?"],
+      answer: ["What did you see from the top?","How did you feel when you saw the view?","What was the most beautiful part?"],
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "In the story, 'go' becomes 'went' in the past. Ask Nova why.",
-      context_vi: "Trong câu chuyện, 'go' thành 'went' ở quá khứ. Hỏi cô Nova tại sao.",
-      answer: ["Why does 'go' become 'went' in the past?", "Why is the past of 'go' not 'goed'?", "Why do some verbs change differently in the past?"],
-      hint: "Why does 'go' become 'went' in the past?",
-      audio_url: "/audio/week29_easy/ask_ai_q3.mp3"
+      nova_says: "We hiked up a very steep trail for two hours.",
+      nova_says_vi: "Chúng tôi leo lên một con đường dốc đứng trong hai tiếng.",
+      task_en: "Ask Nova about the hike.",
+      task_vi: "Hỏi cô Nova về chuyến leo núi.",
+      question_starters: ["How difficult was...?","What did you bring...?"],
+      answer: ["How difficult was the trail?","What did you bring with you?","How did you feel after hiking?"],
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "At the airport, there was luggage, tickets, and a departure gate. Ask Nova what a departure gate is.",
-      context_vi: "Tại sân bay có hành lý, vé và cổng khởi hành. Hỏi cô Nova cổng khởi hành là gì.",
-      answer: ["What is a departure gate at an airport?", "What happens at the departure gate?", "Why do passengers go to the departure gate?"],
-      hint: "What is a departure gate at an airport?",
-      audio_url: "/audio/week29_easy/ask_ai_q4.mp3"
+      nova_says: "We camped under the stars for one night.",
+      nova_says_vi: "Chúng tôi cắm trại dưới những ngôi sao một đêm.",
+      task_en: "Ask Nova about camping under the stars.",
+      task_vi: "Hỏi cô Nova về việc cắm trại dưới sao.",
+      question_starters: ["What was it like...?","Were you scared...?"],
+      answer: ["What was it like to sleep outside?","Were you scared sleeping under the stars?","What did you do at night?"],
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "In the story, 'run' becomes 'ran' and 'fly' becomes 'flew'. Ask Nova why these verbs are different.",
-      context_vi: "Trong câu chuyện, 'run' thành 'ran' và 'fly' thành 'flew'. Hỏi cô Nova tại sao các động từ này khác nhau.",
-      answer: ["Why do some verbs change in a special way in the past?", "Why is the past of 'run' not 'runned'?", "What are irregular verbs?"],
-      hint: "Why do some verbs change in a special way in the past?",
-      audio_url: "/audio/week29_easy/ask_ai_q5.mp3"
+      nova_says: "The best part of the trip was watching the sunrise.",
+      nova_says_vi: "Điều tuyệt nhất của chuyến đi là ngắm bình minh.",
+      task_en: "Ask Nova about the sunrise.",
+      task_vi: "Hỏi cô Nova về cảnh bình minh.",
+      question_starters: ["What time did...?","How did the sunrise...?"],
+      answer: ["What time did the sun rise?","How did the sunrise look?","Why was the sunrise special?"],
+      audio_url: null
     }
   ]
 };

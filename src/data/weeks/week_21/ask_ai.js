@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about what you did yesterday. What happened from morning to night?",
+  topic_talk_prompt: "Tell me about what you did yesterday. What was the best part of your day?",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend says: I walked to school yesterday. You want to know WHO walked with them. Ask your friend.",
-      context_vi: "Ban cua ban noi: Hom qua toi da di bo den truong. Ban muon biet ban ay di voi AI. Hay hoi ban ay.",
-      audio_url: "/audio/week21/ask_ai_1.mp3",
-      answer: ["Who walked with you?", "Did anyone walk with you?", "Who went with you?"],
-      hint: "Who walked..."
+      nova_says: "I went to the museum yesterday.",
+      nova_says_vi: "Hôm qua cô đã đi bảo tàng.",
+      task_en: "Ask Nova WHERE she went yesterday.",
+      task_vi: "Hỏi cô Nova hôm qua cô đã đi đâu.",
+      question_word_bank: ["Where","What","Who","When"],
+      question_frame: "___ did you go yesterday?",
+      answer: ["Where did you go yesterday?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Max says: I cooked dinner with my mom. You want to know WHAT they cooked. Ask Max.",
-      context_vi: "Max noi: Toi da nau bua toi voi me. Ban muon biet ho da nau GI. Hay hoi Max.",
-      audio_url: "/audio/week21/ask_ai_2.mp3",
-      answer: ["What did you cook?", "What did you cook for dinner?", "Did you cook rice and soup?"],
-      hint: "What did you..."
+      nova_says: "I saw a dinosaur exhibition at the museum.",
+      nova_says_vi: "Cô đã xem triển lãm khủng long ở bảo tàng.",
+      task_en: "Ask Nova WHAT she saw at the museum.",
+      task_vi: "Hỏi cô Nova cô đã xem gì ở bảo tàng.",
+      question_word_bank: ["What","Where","Why","How"],
+      question_frame: "___ did you see at the museum?",
+      answer: ["What did you see at the museum?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your classmate says: I played soccer at break time. You want to know WHERE they played. Ask your classmate.",
-      context_vi: "Ban cung lop noi: Toi da choi bong da vao gio giai lao. Ban muon biet ban ay choi O DAU. Hay hoi ban ay.",
-      audio_url: "/audio/week21/ask_ai_3.mp3",
-      answer: ["Where did you play soccer?", "Where did you play?", "Did you play on the school field?"],
-      hint: "Where did you..."
+      nova_says: "I went with my younger sister.",
+      nova_says_vi: "Cô đã đi cùng em gái.",
+      task_en: "Ask Nova WHO she went with.",
+      task_vi: "Hỏi cô Nova cô đã đi cùng ai.",
+      question_word_bank: ["Who","What","Where","Why"],
+      question_frame: "___ did you go with?",
+      answer: ["Who did you go with?"],
+      hint_word: "Who",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your sister says: I watched TV and listened to music last night. You want to know WHEN she did that. Ask her.",
-      context_vi: "Chi cua ban noi: Toi da xem TV va nghe nhac toi qua. Ban muon biet chi ay da lam luc KHI NAO. Hay hoi chi ay.",
-      audio_url: "/audio/week21/ask_ai_4.mp3",
-      answer: ["When did you watch TV?", "When did you listen to music?", "Did you do that last night?"],
-      hint: "When did you..."
+      nova_says: "We stayed at the museum for three hours.",
+      nova_says_vi: "Chúng tôi đã ở bảo tàng trong ba tiếng.",
+      task_en: "Ask Nova HOW LONG they stayed at the museum.",
+      task_vi: "Hỏi cô Nova họ đã ở bảo tàng bao lâu.",
+      question_word_bank: ["How","When","What","Where"],
+      question_frame: "___ long did you stay at the museum?",
+      answer: ["How long did you stay at the museum?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You read in a diary: I finished my homework and started a new story. You want to know WHY this was a good day. Ask your friend.",
-      context_vi: "Ban doc trong nhat ky: Toi da hoan thanh bai tap va bat dau mot cau chuyen moi. Ban muon biet TAI SAO day la mot ngay tot. Hay hoi ban cua ban.",
-      audio_url: "/audio/week21/ask_ai_5.mp3",
-      answer: ["Why was it a good day?", "Why were you happy yesterday?", "Did finishing homework make you happy?"],
-      hint: "Why was..."
+      nova_says: "The dinosaur bones were the best thing I saw.",
+      nova_says_vi: "Xương khủng long là thứ ấn tượng nhất cô đã thấy.",
+      task_en: "Ask Nova WHAT the best thing she saw was.",
+      task_vi: "Hỏi cô Nova thứ ấn tượng nhất cô đã thấy là gì.",
+      question_word_bank: ["What","How","Why","Where"],
+      question_frame: "___ was the best thing you saw?",
+      answer: ["What was the best thing you saw?"],
+      hint_word: "What",
+      audio_url: null
     }
-  ],
+  ]
 };

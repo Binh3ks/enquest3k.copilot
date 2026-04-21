@@ -1,46 +1,65 @@
 export default {
-  title: "Ask AI: The Tortoise and the Hare",
-  topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
+  topic_talk_prompt: "Tell me about a story or book you've read. What happened? Who were the characters?",
   prompts: [
     {
       id: 1,
-      context_en: "The tortoise was very slow but he still won the race against the faster hare. You are curious why. Ask Nova.",
-      context_vi: "Con rùa rất chậm nhưng vẫn thắng cuộc đua với con thỏ nhanh hơn. Bạn tò mò tại sao. Hỏi cô Nova.",
-      answer: ["Why did the tortoise win the race even though he was slow?", "How did the tortoise beat the faster hare?", "Why did slow and steady win the race?"],
-      hint: "Why did the tortoise win the race even though he was slow?",
-      audio_url: "/audio/week28/ask_ai_q1.mp3"
+      nova_says: "I just finished reading a story about a young girl who found a magic key.",
+      nova_says_vi: "Cô vừa đọc xong một câu chuyện về một cô gái nhỏ tìm thấy chiếc chìa khóa ma thuật.",
+      task_en: "Ask Nova WHAT the story was about.",
+      task_vi: "Hỏi cô Nova câu chuyện đó kể về điều gì.",
+      question_word_bank: ["What","Who","Where","How"],
+      question_frame: "___ was the story about?",
+      answer: ["What was the story about?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "The hare was the fastest animal but he stopped to sleep and lost. You want to understand his mistake. Ask Nova.",
-      context_vi: "Con thỏ là con vật nhanh nhất nhưng nó dừng lại để ngủ và thua. Bạn muốn hiểu sai lầm của nó. Hỏi cô Nova.",
-      answer: ["Why did the hare lose even though he was the fastest?", "What mistake did the hare make that caused him to lose?", "Why did the hare stop running during the race?"],
-      hint: "Why did the hare lose even though he was the fastest?",
-      audio_url: "/audio/week28/ask_ai_q2.mp3"
+      nova_says: "The girl found the key under an old tree in the forest.",
+      nova_says_vi: "Cô gái tìm thấy chìa khóa dưới một cái cây cũ trong rừng.",
+      task_en: "Ask Nova WHERE the girl found the key.",
+      task_vi: "Hỏi cô Nova cô gái tìm thấy chìa khóa ở đâu.",
+      question_word_bank: ["Where","What","Who","When"],
+      question_frame: "___ did the girl find the key?",
+      answer: ["Where did the girl find the key?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your teacher said this story is a fable and it teaches a moral lesson. You want to understand what a fable is. Ask Nova.",
-      context_vi: "Giáo viên nói câu chuyện này là truyện ngụ ngôn và dạy một bài học đạo đức. Bạn muốn hiểu truyện ngụ ngôn là gì. Hỏi cô Nova.",
-      answer: ["What is a fable?", "What makes this story a fable and not just a story?", "Why do fables always have a moral lesson?"],
-      hint: "What is a fable?",
-      audio_url: "/audio/week28/ask_ai_q3.mp3"
+      nova_says: "The magic key could open a secret door to a beautiful garden.",
+      nova_says_vi: "Chiếc chìa khóa ma thuật có thể mở cánh cửa bí mật dẫn vào khu vườn đẹp.",
+      task_en: "Ask Nova WHAT the magic key could do.",
+      task_vi: "Hỏi cô Nova chiếc chìa khóa ma thuật có thể làm gì.",
+      question_word_bank: ["What","Why","How","Where"],
+      question_frame: "___ could the magic key do?",
+      answer: ["What could the magic key do?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You notice that 'run' becomes 'ran' and 'sleep' becomes 'slept' in the past. You want to know why they don't just add -ed. Ask Nova.",
-      context_vi: "Bạn nhận thấy 'run' thành 'ran' và 'sleep' thành 'slept' ở quá khứ. Bạn muốn biết tại sao chúng không chỉ thêm -ed. Hỏi cô Nova.",
-      answer: ["Why do some verbs not follow the -ed rule in past tense?", "Why does 'run' become 'ran' instead of 'runned'?", "What are irregular verbs and why do they change differently?"],
-      hint: "Why do some verbs not follow the -ed rule in past tense?",
-      audio_url: "/audio/week28/ask_ai_q4.mp3"
+      nova_says: "At the end of the story, the girl shared the garden with her whole village.",
+      nova_says_vi: "Cuối câu chuyện, cô gái chia sẻ khu vườn với cả làng.",
+      task_en: "Ask Nova WHAT the girl did with the garden at the end.",
+      task_vi: "Hỏi cô Nova cuối truyện cô gái đã làm gì với khu vườn.",
+      question_word_bank: ["What","Who","How","Why"],
+      question_frame: "___ did the girl do with the garden?",
+      answer: ["What did the girl do with the garden?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "In the story, the tortoise persevered and never gave up. You want to know what perseverance really means. Ask Nova.",
-      context_vi: "Trong câu chuyện, con rùa kiên trì và không bao giờ bỏ cuộc. Bạn muốn biết sự kiên trì thực sự có nghĩa gì. Hỏi cô Nova.",
-      answer: ["What does perseverance mean?", "Can you explain what it means to persevere?", "Why is perseverance important?"],
-      hint: "What does perseverance mean?",
-      audio_url: "/audio/week28/ask_ai_q5.mp3"
+      nova_says: "The story teaches us that sharing is more important than keeping things for yourself.",
+      nova_says_vi: "Câu chuyện dạy chúng ta rằng chia sẻ quan trọng hơn là giữ mọi thứ cho bản thân.",
+      task_en: "Ask Nova WHAT the story teaches us.",
+      task_vi: "Hỏi cô Nova câu chuyện dạy chúng ta điều gì.",
+      question_word_bank: ["What","Why","How","Who"],
+      question_frame: "___ does the story teach us?",
+      answer: ["What does the story teach us?"],
+      hint_word: "What",
+      audio_url: null
     }
   ]
 };

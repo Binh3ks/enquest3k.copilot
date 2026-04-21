@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about something that happened this week. What did you do?",
+  topic_talk_prompt: "Tell me about something that happened in the past that was exciting or memorable.",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend says: I walked to school yesterday. You want to know WHERE your friend walked to. Ask your friend.",
-      context_vi: "Bạn viết trong nhật ký: 'Tôi đã đi bộ đến trường.' Bạn muốn biết họ đi bộ ĐẾN ĐÂU. Hỏi họ.",
-      audio_url: "/audio/week22_easy/ask_ai_1.mp3",
-      answer: ["Where did you walk to?", "Did you walk to school?", "Where did you go yesterday?"],
-      hint: "Where did you..."
+      nova_says: "Something amazing happened at my school last Friday.",
+      nova_says_vi: "Có điều gì đó tuyệt vời đã xảy ra ở trường cô thứ Sáu tuần trước.",
+      task_en: "Ask Nova WHAT happened at her school last Friday.",
+      task_vi: "Hỏi cô Nova chuyện gì đã xảy ra ở trường cô thứ Sáu tuần trước.",
+      question_word_bank: ["What","When","Where"],
+      question_frame: "___ happened at your school last Friday?",
+      answer: ["What happened at your school last Friday?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Max says: I cooked something last night. You want to know WHAT he cooked. Ask him politely.",
-      context_vi: "Max nói: 'Hôm qua tôi đã nấu gì đó.' Bạn muốn biết anh ấy đã nấu GÌ. Hỏi anh ấy.",
-      audio_url: "/audio/week22_easy/ask_ai_2.mp3",
-      answer: ["What did you cook?", "Did you cook dinner?", "What did you cook last night?"],
-      hint: "What did you..."
+      nova_says: "A famous singer came to perform at our school.",
+      nova_says_vi: "Một ca sĩ nổi tiếng đã đến biểu diễn ở trường cô.",
+      task_en: "Ask Nova WHO came to perform at the school.",
+      task_vi: "Hỏi cô Nova ai đã đến biểu diễn ở trường.",
+      question_word_bank: ["Who","What","Why"],
+      question_frame: "___ came to perform at your school?",
+      answer: ["Who came to perform at your school?"],
+      hint_word: "Who",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your sister says: I played a game yesterday. You want to know WHO she played with. Ask her.",
-      context_vi: "Chị bạn nói chị đã chơi trò chơi hôm qua. Bạn muốn biết chị đã chơi VỚI AI. Hỏi chị.",
-      audio_url: "/audio/week22_easy/ask_ai_3.mp3",
-      answer: ["Who did you play with?", "Did you play with your friends?", "Who was with you?"],
-      hint: "Who did you..."
+      nova_says: "The concert was in the school hall.",
+      nova_says_vi: "Buổi hòa nhạc diễn ra ở hội trường trường.",
+      task_en: "Ask Nova WHERE the concert was.",
+      task_vi: "Hỏi cô Nova buổi hòa nhạc ở đâu.",
+      question_word_bank: ["Where","When","What"],
+      question_frame: "___ was the concert?",
+      answer: ["Where was the concert?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your friend says: I watched TV last night. You want to know WHAT they watched. Ask your friend.",
-      context_vi: "Bạn của bạn nói họ đã xem gì đó tối qua. Bạn muốn biết họ đã xem GÌ. Hỏi họ.",
-      audio_url: "/audio/week22_easy/ask_ai_4.mp3",
-      answer: ["What did you watch?", "Did you watch cartoons?", "What did you watch last night?"],
-      hint: "What did you..."
+      nova_says: "Everybody loved the concert and clapped loudly.",
+      nova_says_vi: "Mọi người đều yêu thích buổi hòa nhạc và vỗ tay thật to.",
+      task_en: "Ask Nova HOW the students felt about the concert.",
+      task_vi: "Hỏi cô Nova học sinh cảm thấy thế nào về buổi hòa nhạc.",
+      question_word_bank: ["How","Why","What"],
+      question_frame: "___ did the students feel about the concert?",
+      answer: ["How did the students feel about the concert?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You see Max writing a diary. You want to know WHY he writes a diary. Ask him kindly.",
-      context_vi: "Bạn thấy Max viết nhật ký. Bạn muốn biết TẠI SAO anh ấy viết nhật ký. Hỏi anh ấy.",
-      audio_url: "/audio/week22_easy/ask_ai_5.mp3",
-      answer: ["Why do you write a diary?", "Do you write every day?", "Why did you write that?"],
-      hint: "Why do you..."
+      nova_says: "The concert started at two o'clock in the afternoon.",
+      nova_says_vi: "Buổi hòa nhạc bắt đầu lúc hai giờ chiều.",
+      task_en: "Ask Nova WHEN the concert started.",
+      task_vi: "Hỏi cô Nova buổi hòa nhạc bắt đầu khi nào.",
+      question_word_bank: ["When","Where","What"],
+      question_frame: "___ did the concert start?",
+      answer: ["When did the concert start?"],
+      hint_word: "When",
+      audio_url: null
     }
   ]
 };

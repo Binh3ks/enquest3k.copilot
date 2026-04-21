@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about a painting or drawing you like. What do you see in it? What colours are there?",
+  topic_talk_prompt: "Tell me about an artwork or drawing you made. What did it show?",
   prompts: [
     {
       id: 1,
-      context_en: "Your classmate says: I painted a garden picture in art class yesterday. You want to know WHAT colors she used. Ask politely.",
-      context_vi: "Ban cung lop noi: Hom qua toi da ve mot buc tranh khu vuon trong lop my thuat. Ban muon biet co ay dung MAU GI. Hay hoi ban ay.",
-      audio_url: "/audio/week23/ask_ai_1.mp3",
-      answer: ["What colors did you use?", "Which colors did you paint with?", "What color did you use for the flowers?"],
-      hint: "What colors did you..."
+      nova_says: "I drew a picture of a sunset over the ocean last week.",
+      nova_says_vi: "Tuần trước cô đã vẽ một bức tranh về hoàng hôn trên biển.",
+      task_en: "Ask Nova WHAT she drew last week.",
+      task_vi: "Hỏi cô Nova tuần trước cô đã vẽ gì.",
+      question_word_bank: ["What","When","Where","How"],
+      question_frame: "___ did you draw last week?",
+      answer: ["What did you draw last week?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Your friend says: I folded and cut paper in art class. You want to know WHAT SHAPE they made. Ask clearly.",
-      context_vi: "Ban cua ban noi: Toi da gap va cat giay trong lop my thuat. Ban muon biet ho da lam HINH GI. Hay hoi ban ay.",
-      audio_url: "/audio/week23/ask_ai_2.mp3",
-      answer: ["What shape did you make?", "What did you fold it into?", "Did you make a butterfly shape?"],
-      hint: "What shape did you..."
+      nova_says: "I used watercolour paints to make the picture.",
+      nova_says_vi: "Cô đã dùng màu nước để vẽ bức tranh.",
+      task_en: "Ask Nova WHAT kind of paint she used.",
+      task_vi: "Hỏi cô Nova cô đã dùng loại sơn gì.",
+      question_word_bank: ["What","Which","How","Why"],
+      question_frame: "___ kind of paint did you use?",
+      answer: ["What kind of paint did you use?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your teacher says: Mia created a masterpiece with texture and symmetry. You want to know HOW she created the texture. Ask now.",
-      context_vi: "Giao vien noi: Mia da tao ra mot tac pham nghe thuat voi ket cau va doi xung. Ban muon biet co ay tao ra ket cau BANG CACH NAO. Hay hoi.",
-      audio_url: "/audio/week23/ask_ai_3.mp3",
-      answer: ["How did she create the texture?", "How did Mia make the texture?", "What did she use to add texture?"],
-      hint: "How did she create the..."
+      nova_says: "The sky in my picture was orange and pink.",
+      nova_says_vi: "Bầu trời trong tranh của cô có màu cam và hồng.",
+      task_en: "Ask Nova WHAT colours the sky was in her picture.",
+      task_vi: "Hỏi cô Nova bầu trời trong tranh của cô có những màu gì.",
+      question_word_bank: ["What","How","Why","Where"],
+      question_frame: "___ colours was the sky in your picture?",
+      answer: ["What colours was the sky in your picture?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your sister says: I glued all the pieces together to finish my picture. You want to know WHERE she learned to do that. Ask directly.",
-      context_vi: "Chi cua ban noi: Toi da dan tat ca cac manh lai de hoan thanh buc tranh. Ban muon biet co ay hoc dieu do O DAU. Hay hoi.",
-      audio_url: "/audio/week23/ask_ai_4.mp3",
-      answer: ["Where did you learn to do that?", "Did you learn that in art class?", "Where did you glue things together?"],
-      hint: "Where did you learn..."
+      nova_says: "I spent two hours making the painting.",
+      nova_says_vi: "Cô đã dành hai tiếng để vẽ bức tranh.",
+      task_en: "Ask Nova HOW LONG she spent making the painting.",
+      task_vi: "Hỏi cô Nova cô đã dành bao lâu để vẽ bức tranh.",
+      question_word_bank: ["How","When","What","Why"],
+      question_frame: "___ long did you spend making the painting?",
+      answer: ["How long did you spend making the painting?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your friend painted red and blue pigments together. You want to know WHAT COLOR they created. Ask your friend.",
-      context_vi: "Ban cua ban tron sac to do va xanh lam lai. Ban muon biet ho da tao ra MAU GI. Hay hoi ban.",
-      audio_url: "/audio/week23/ask_ai_5.mp3",
-      answer: ["What color did you create?", "What color did you make by mixing them?", "Did you create purple?"],
-      hint: "What color did you create..."
+      nova_says: "I gave the painting to my mum as a gift.",
+      nova_says_vi: "Cô đã tặng bức tranh cho mẹ như một món quà.",
+      task_en: "Ask Nova WHO she gave the painting to.",
+      task_vi: "Hỏi cô Nova cô đã tặng bức tranh cho ai.",
+      question_word_bank: ["Who","What","Why","When"],
+      question_frame: "___ did you give the painting to?",
+      answer: ["Who did you give the painting to?"],
+      hint_word: "Who",
+      audio_url: null
     }
   ]
 };

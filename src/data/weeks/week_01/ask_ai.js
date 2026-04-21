@@ -1,54 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about what is in your school bag. What things do you have? What colour are they?",
+  topic_talk_prompt: "Tell me about your school bag. What things do you have? What colour are they?",
   prompts: [
-    // ✅ Prompt 1 - What is this? (A0)
     {
       id: 1,
-      context_en: "You see a bag. Ask what it is.",
-      context_vi: "Bạn thấy một cái cặp. Hỏi nó là gì.",
-      audio_url: null,
-      answer: ["What is this?", "What is it?"],
-      hint: "What is..."
+      nova_says: "I have a red bag.",
+      nova_says_vi: "Cô có một cái cặp màu đỏ.",
+      task_en: "Ask Nova what colour HER bag is.",
+      task_vi: "Hỏi cô Nova cặp của cô màu gì.",
+      question_frame: "What ___ is your bag?",
+      answer: ["What colour is your bag?"],
+      hint: "colour",
+      audio_url: null
     },
-    
-    // ✅ Prompt 2 - Where is...? (A0)
     {
       id: 2,
-      context_en: "You want the pen. Ask where.",
-      context_vi: "Bạn muốn cái bút. Hỏi ở đâu.",
-      audio_url: null,
-      answer: ["Where is the pen?", "Where is it?"],
-      hint: "Where is..."
+      nova_says: "My pencil is on the table.",
+      nova_says_vi: "Cái bút chì của cô ở trên bàn.",
+      task_en: "Ask Nova WHERE her pencil is.",
+      task_vi: "Hỏi cô Nova bút chì của cô ở đâu.",
+      question_frame: "Where ___ your pencil?",
+      answer: ["Where is your pencil?"],
+      hint: "is",
+      audio_url: null
     },
-    
-    // ✅ Prompt 3 - Is this...? (A0)
     {
       id: 3,
-      context_en: "You see a book. Ask if it is yours.",
-      context_vi: "Bạn thấy một quyển sách. Hỏi có phải của bạn.",
-      audio_url: null,
-      answer: ["Is this my book?", "Is this mine?"],
-      hint: "Is this..."
+      nova_says: "This is my book.",
+      nova_says_vi: "Đây là quyển sách của cô.",
+      task_en: "Ask Nova if this is HER book.",
+      task_vi: "Hỏi cô Nova đây có phải sách của cô không.",
+      question_frame: "___ this your book?",
+      answer: ["Is this your book?"],
+      hint: "Is",
+      audio_url: null
     },
-    
-    // ✅ Prompt 4 - Can I...? (A0)
     {
       id: 4,
-      context_en: "Friends play. You want to play.",
-      context_vi: "Bạn bè chơi. Bạn muốn chơi.",
-      audio_url: null,
-      answer: ["Can I play?"],
-      hint: "Can I..."
+      nova_says: "I have some crayons in my bag.",
+      nova_says_vi: "Cô có vài cái bút sáp trong cặp.",
+      task_en: "Ask Nova if you can use her crayons.",
+      task_vi: "Hỏi cô Nova bạn có thể dùng bút sáp của cô không.",
+      question_frame: "___ I use your crayons?",
+      answer: ["Can I use your crayons?"],
+      hint: "Can",
+      audio_url: null
     },
-    
-    // ✅ Prompt 5 - Do you...? (A0)
     {
       id: 5,
-      context_en: "You like school. Ask your friend.",
-      context_vi: "Bạn thích trường. Hỏi bạn mình.",
-      audio_url: null,
+      nova_says: "I like my school very much.",
+      nova_says_vi: "Cô rất thích trường của mình.",
+      task_en: "Ask Nova if she likes school.",
+      task_vi: "Hỏi cô Nova cô có thích trường không.",
+      question_frame: "___ you like school?",
       answer: ["Do you like school?"],
-      hint: "Do you..."
+      hint: "Do",
+      audio_url: null
     }
   ]
 };

@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about something interesting that happened in the past week. What did you do or see?",
+  topic_talk_prompt: "Tell me about something that happened in the past that was exciting or memorable.",
   prompts: [
     {
       id: 1,
-      context_en: "You are interviewing a classmate about yesterday. They say: I walked to school and talked with my friend. You want to know WHO they talked with. Ask politely.",
-      context_vi: "Ban cua ban noi: Hom qua toi da di bo den truong. Ban muon biet ban ay di voi AI. Hay hoi ban ay.",
-      audio_url: "/audio/week22/ask_ai_1.mp3",
-      answer: ["Who did you talk with?", "Who did you walk with?", "Did you talk with your best friend?"],
-      hint: "Who did you..."
+      nova_says: "Something amazing happened at my school last Friday.",
+      nova_says_vi: "Có điều gì đó tuyệt vời đã xảy ra ở trường cô thứ Sáu tuần trước.",
+      task_en: "Ask Nova WHAT happened at her school last Friday.",
+      task_vi: "Hỏi cô Nova chuyện gì đã xảy ra ở trường cô thứ Sáu tuần trước.",
+      question_word_bank: ["What","When","Where","Who"],
+      question_frame: "___ happened at your school last Friday?",
+      answer: ["What happened at your school last Friday?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "A witness says: Last night I cooked dinner with my mother. You want to know WHAT they cooked for dinner. Ask clearly.",
-      context_vi: "Max noi: Toi da nau bua toi voi me. Ban muon biet ho da nau GI. Hay hoi Max.",
-      audio_url: "/audio/week22/ask_ai_2.mp3",
-      answer: ["What did you cook for dinner?", "Did you cook rice and soup?", "What did your mother cook?"],
-      hint: "What did you..."
+      nova_says: "A famous singer came to perform at our school.",
+      nova_says_vi: "Một ca sĩ nổi tiếng đã đến biểu diễn ở trường cô.",
+      task_en: "Ask Nova WHO came to perform at the school.",
+      task_vi: "Hỏi cô Nova ai đã đến biểu diễn ở trường.",
+      question_word_bank: ["Who","What","Why","When"],
+      question_frame: "___ came to perform at your school?",
+      answer: ["Who came to perform at your school?"],
+      hint_word: "Who",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Your classmate says: I played soccer at break time yesterday. You want to know WHERE they played soccer. Ask now.",
-      context_vi: "Ban cung lop noi: Toi da choi bong da vao gio giai lao. Ban muon biet ban ay choi O DAU. Hay hoi ban ay.",
-      audio_url: "/audio/week22/ask_ai_3.mp3",
-      answer: ["Where did you play soccer?", "Did you play on the school field?", "Where did you play at break time?"],
-      hint: "Where did you..."
+      nova_says: "The concert was in the school hall.",
+      nova_says_vi: "Buổi hòa nhạc diễn ra ở hội trường trường.",
+      task_en: "Ask Nova WHERE the concert was.",
+      task_vi: "Hỏi cô Nova buổi hòa nhạc ở đâu.",
+      question_word_bank: ["Where","When","What","How"],
+      question_frame: "___ was the concert?",
+      answer: ["Where was the concert?"],
+      hint_word: "Where",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your sister says: I watched TV and listened to music yesterday. You want to know WHEN she watched TV. Ask directly.",
-      context_vi: "Chi cua ban noi: Toi da xem TV va nghe nhac toi qua. Ban muon biet chi ay da lam luc KHI NAO. Hay hoi chi ay.",
-      audio_url: "/audio/week22/ask_ai_4.mp3",
-      answer: ["When did you watch TV?", "Did you watch TV last night?", "When did you listen to music?"],
-      hint: "When did you..."
+      nova_says: "Everybody loved the concert and clapped loudly.",
+      nova_says_vi: "Mọi người đều yêu thích buổi hòa nhạc và vỗ tay thật to.",
+      task_en: "Ask Nova HOW the students felt about the concert.",
+      task_vi: "Hỏi cô Nova học sinh cảm thấy thế nào về buổi hòa nhạc.",
+      question_word_bank: ["How","Why","What","Who"],
+      question_frame: "___ did the students feel about the concert?",
+      answer: ["How did the students feel about the concert?"],
+      hint_word: "How",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You read in a diary: I finished homework and started a new story. You want to know WHY this was a good day. Ask your friend.",
-      context_vi: "Ban doc trong nhat ky: Toi da hoan thanh bai tap va bat dau mot cau chuyen moi. Ban muon biet TAI SAO day la mot ngay tot. Hay hoi ban cua ban.",
-      audio_url: "/audio/week22/ask_ai_5.mp3",
-      answer: ["Why was it a good day?", "Were you happy after finishing homework?", "Why did you start a new story?"],
-      hint: "Why did..."
+      nova_says: "The concert started at two o'clock in the afternoon.",
+      nova_says_vi: "Buổi hòa nhạc bắt đầu lúc hai giờ chiều.",
+      task_en: "Ask Nova WHEN the concert started.",
+      task_vi: "Hỏi cô Nova buổi hòa nhạc bắt đầu khi nào.",
+      question_word_bank: ["When","Where","What","How"],
+      question_frame: "___ did the concert start?",
+      answer: ["When did the concert start?"],
+      hint_word: "When",
+      audio_url: null
     }
-  ],
+  ]
 };

@@ -1,45 +1,60 @@
 export default {
-  topic_talk_prompt: "Tell me about your favourite place. Where is it? What do you do there?",
+  topic_talk_prompt: "Tell me about your classroom. What can you see? Where do you sit?",
   prompts: [
     {
       id: 1,
-      context_en: "You want to know where your friend hides treasures. Ask them.",
-      context_vi: "Bạn muốn biết bạn mình giấu kho báu ở đâu. Hỏi họ.",
-      audio_url: "/audio/week6_easy/ask_ai_1.mp3",
-      answer: ["Where do you hide treasures?", "Where do you hide things?", "Where is your hiding place?"],
-      hint: "Where do you..."
+      nova_says: "My pen is under the chair.",
+      nova_says_vi: "Cái bút của cô ở dưới ghế.",
+      task_en: "Ask Nova WHERE her pen is.",
+      task_vi: "Hỏi cô Nova bút của cô ở đâu.",
+      question_frame: "Where ___ your pen?",
+      answer: ["Where is your pen?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "You need to find something under the desk. Ask your friend what is under their desk.",
-      context_vi: "Bạn cần tìm thứ gì đó dưới bàn. Hỏi bạn mình có gì dưới bàn của họ.",
-      audio_url: "/audio/week6_easy/ask_ai_2.mp3",
-      answer: ["What is under your desk?", "What is under the desk?", "What do you have under your desk?"],
-      hint: "What is under..."
+      nova_says: "The clock is on the wall.",
+      nova_says_vi: "Đồng hồ ở trên tường.",
+      task_en: "Ask Nova WHAT is on the wall.",
+      task_vi: "Hỏi cô Nova có gì trên tường.",
+      question_frame: "What ___ on the wall?",
+      answer: ["What is on the wall?","What's on the wall?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "You want to play hide and seek with your friend. Ask them to play.",
-      context_vi: "Bạn muốn chơi trốn tìm với bạn mình. Mời họ chơi.",
-      audio_url: "/audio/week6_easy/ask_ai_3.mp3",
-      answer: ["Do you want to play hide and seek?", "Can we play hide and seek?", "Let's play hide and seek?"],
-      hint: "Do you want..."
+      nova_says: "My bag is next to the door.",
+      nova_says_vi: "Cặp của cô ở cạnh cửa.",
+      task_en: "Ask Nova WHERE her bag is.",
+      task_vi: "Hỏi cô Nova cặp của cô ở đâu.",
+      question_frame: "Where ___ your bag?",
+      answer: ["Where is your bag?"],
+      hint: "is",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "You see a box next to the door. Ask your friend what is in the box.",
-      context_vi: "Bạn thấy một cái hộp bên cạnh cửa. Hỏi bạn mình trong hộp có gì.",
-      audio_url: "/audio/week6_easy/ask_ai_4.mp3",
-      answer: ["What is in the box?", "What is in that box?", "What do you have in the box?"],
-      hint: "What is in..."
+      nova_says: "There are twenty students in my class.",
+      nova_says_vi: "Có hai mươi học sinh trong lớp của cô.",
+      task_en: "Ask Nova HOW MANY students are in her class.",
+      task_vi: "Hỏi cô Nova có bao nhiêu học sinh trong lớp của cô.",
+      question_frame: "How ___ students are in your class?",
+      answer: ["How many students are in your class?"],
+      hint: "many",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "You want to know if the treasure is on the floor. Ask your friend.",
-      context_vi: "Bạn muốn biết kho báu có ở trên sàn không. Hỏi bạn mình.",
-      audio_url: "/audio/week6_easy/ask_ai_5.mp3",
-      answer: ["Is the treasure on the floor?", "Is it on the floor?", "Where is the treasure?"],
-      hint: "Is the treasure..."
+      nova_says: "I sit near the window.",
+      nova_says_vi: "Cô ngồi gần cửa sổ.",
+      task_en: "Ask Nova WHERE she sits.",
+      task_vi: "Hỏi cô Nova cô ngồi ở đâu.",
+      question_frame: "Where ___ you sit?",
+      answer: ["Where do you sit?"],
+      hint: "do",
+      audio_url: null
     }
   ]
 };

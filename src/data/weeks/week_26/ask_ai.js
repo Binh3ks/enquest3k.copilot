@@ -1,45 +1,65 @@
 export default {
-  topic_talk_prompt: "Tell me about what you did last weekend from the beginning to the end. What happened?",
+  topic_talk_prompt: "Tell me about a funny or interesting story you know or read.",
   prompts: [
     {
       id: 1,
-      context_en: "Your friend is making a comic strip. They drew Panel One but left it blank — no caption underneath. You want to know what happened in that scene. Ask them.",
-      context_vi: "Bạn của bạn đang làm truyện tranh. Họ đã vẽ Khung 1 nhưng bỏ trống — không có chú thích bên dưới. Bạn muốn biết cảnh đó kể về điều gì. Hỏi họ.",
-      audio_url: "/audio/week26/ask_ai_q1.mp3",
-      answer: ["What happened in that panel?", "What happened in that scene?", "What is the caption for this panel?", "Can you describe this panel?"],
-      hint: "What happened in that panel?"
+      nova_says: "In the story, a fox tried to trick a crow.",
+      nova_says_vi: "Trong câu chuyện, một con cáo đã cố lừa một con quạ.",
+      task_en: "Ask Nova WHO tried to trick the crow.",
+      task_vi: "Hỏi cô Nova ai đã cố lừa con quạ.",
+      question_word_bank: ["Who","What","Why","How"],
+      question_frame: "___ tried to trick the crow?",
+      answer: ["Who tried to trick the crow?"],
+      hint_word: "Who",
+      audio_url: null
     },
     {
       id: 2,
-      context_en: "Leo told you he visited the park last weekend. You want to know if the weather was good or bad. Ask him.",
-      context_vi: "Leo nói với bạn là anh ấy đã đến công viên vào cuối tuần trước. Bạn muốn biết thời tiết có tốt không. Hỏi anh ấy.",
-      audio_url: "/audio/week26/ask_ai_q2.mp3",
-      answer: ["Was the weather good?", "Was it sunny?", "What was the weather like?", "How was the weather?"],
-      hint: "Was the weather good?"
+      nova_says: "The fox wanted to get the cheese the crow was holding.",
+      nova_says_vi: "Con cáo muốn lấy miếng pho mát mà con quạ đang giữ.",
+      task_en: "Ask Nova WHAT the fox wanted to get.",
+      task_vi: "Hỏi cô Nova con cáo muốn lấy gì.",
+      question_word_bank: ["What","Who","Why","How"],
+      question_frame: "___ did the fox want to get?",
+      answer: ["What did the fox want to get?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 3,
-      context_en: "Mia finished her comic strip but you didn't see Panel Four. You want to know what she did FINALLY at the end of her story. Ask her.",
-      context_vi: "Mia đã hoàn thành bộ truyện tranh nhưng bạn không thấy Khung 4. Bạn muốn biết CUỐI CÙNG cô ấy đã làm gì trong câu chuyện. Hỏi cô ấy.",
-      audio_url: "/audio/week26/ask_ai_q3.mp3",
-      answer: ["What happened in Panel Four?", "What did you do finally?", "What was the last panel?", "How did your story end?"],
-      hint: "What happened in Panel Four?"
+      nova_says: "The fox said the crow had a beautiful voice.",
+      nova_says_vi: "Con cáo nói con quạ có giọng hát hay.",
+      task_en: "Ask Nova WHAT the fox said to the crow.",
+      task_vi: "Hỏi cô Nova con cáo đã nói gì với con quạ.",
+      question_word_bank: ["What","Who","Why","How"],
+      question_frame: "___ did the fox say to the crow?",
+      answer: ["What did the fox say to the crow?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 4,
-      context_en: "Your classmate drew a character in their comic strip but forgot to add a speech bubble. You want to know what the character said. Ask your classmate.",
-      context_vi: "Bạn cùng lớp vẽ một nhân vật trong truyện tranh nhưng quên thêm bong bóng lời thoại. Bạn muốn biết nhân vật đã nói gì. Hỏi bạn đó.",
-      audio_url: "/audio/week26/ask_ai_q4.mp3",
-      answer: ["What did the character say?", "What is in the speech bubble?", "What does the character say?", "What words go in the speech bubble?"],
-      hint: "What did the character say?"
+      nova_says: "When the crow opened its mouth to sing, the cheese fell.",
+      nova_says_vi: "Khi con quạ mở miệng để hát, miếng pho mát rơi xuống.",
+      task_en: "Ask Nova WHAT happened when the crow opened its mouth.",
+      task_vi: "Hỏi cô Nova điều gì đã xảy ra khi con quạ mở miệng.",
+      question_word_bank: ["What","Why","When","How"],
+      question_frame: "___ happened when the crow opened its mouth?",
+      answer: ["What happened when the crow opened its mouth?"],
+      hint_word: "What",
+      audio_url: null
     },
     {
       id: 5,
-      context_en: "Your teacher finished explaining the comic strip project. You missed the part about how many panels to draw. You want to find out. Ask the teacher.",
-      context_vi: "Giáo viên vừa giải thích xong dự án truyện tranh. Bạn bỏ lỡ phần nói về số khung cần vẽ. Bạn muốn hỏi. Hỏi giáo viên.",
-      audio_url: "/audio/week26/ask_ai_q5.mp3",
-      answer: ["How many panels do we need to draw?", "How many panels should I draw?", "How many panels are there?", "How many panels do I need?"],
-      hint: "How many panels do we need to draw?"
+      nova_says: "The fox tricked the crow because the crow was too proud.",
+      nova_says_vi: "Con cáo lừa được con quạ vì con quạ quá tự kiêu.",
+      task_en: "Ask Nova WHY the fox was able to trick the crow.",
+      task_vi: "Hỏi cô Nova tại sao con cáo có thể lừa được con quạ.",
+      question_word_bank: ["Why","How","When","What"],
+      question_frame: "___ was the fox able to trick the crow?",
+      answer: ["Why was the fox able to trick the crow?"],
+      hint_word: "Why",
+      audio_url: null
     }
   ]
 };
