@@ -56,22 +56,26 @@ export const TAB_TO_STATION_ID = {
 };
 
 export const STATIONS = [
-  { key: 'read_explore', stationId: 'skill_reading', icon: BookOpen, title_en: 'Read & Exp.', color: 'indigo' },
-  { key: 'new_words', stationId: 'vocab_mastery', icon: Star, title_en: 'New Words', color: 'orange' }, 
-  { key: 'word_match', stationId: 'game_word_match', icon: Target, title_en: 'Word Match', color: 'purple' },
-  { key: 'grammar', stationId: 'grammar_lab', icon: Hash, title_en: 'Grammar', color: 'rose' },
-  { key: 'mindmap_speaking', stationId: 'production_mindmap', icon: Cpu, title_en: 'Mindmap', color: 'indigo' },
-  { key: 'ask_ai', stationId: 'ask_ai', icon: Cpu, title_en: 'Ask AI', color: 'emerald' },
-  { key: 'dictation', stationId: 'skill_dictation', icon: Mic, title_en: 'Dictation', color: 'cyan' },
-  { key: 'shadowing', stationId: 'skill_shadowing', icon: Feather, title_en: 'Shadow', color: 'blue' },
-  { key: 'writing', stationId: 'video_challenge', icon: Eye, title_en: 'Write/Video', color: 'pink' },
-  { key: 'explore', stationId: 'explore', icon: Compass, title_en: 'Explore', color: 'lime' },
-  { key: 'logic_lab', stationId: 'game_logic', icon: Zap, title_en: 'Logic Lab', color: 'violet' },
-  { key: 'word_power', stationId: 'game_word_power', icon: Zap, title_en: 'Word Power', color: 'teal' },
-  { key: 'daily_watch', stationId: 'daily_watch', icon: Youtube, title_en: 'Daily Watch', color: 'red' },
-  { key: 'game_hub', stationId: 'game_hub', icon: Gamepad2, title_en: 'Game Hub', color: 'amber' },
-  { key: 'self_regulation', stationId: 'self_regulation', icon: Target, title_en: 'My Goals', color: 'sky' },
-  { key: 'review', stationId: 'review_session', icon: Brain, title_en: 'Weekly Review', color: 'violet' },
+  // ── INPUT (Nạp kiến thức) ──────────────────────────────────────────────────
+  { key: 'read_explore',    stationId: 'skill_reading',     icon: BookOpen,  title_en: 'Read & Exp.',  color: 'indigo' },
+  { key: 'new_words',       stationId: 'vocab_mastery',     icon: Star,      title_en: 'New Words',    color: 'orange' },
+  { key: 'word_match',      stationId: 'game_word_match',   icon: Target,    title_en: 'Word Match',   color: 'purple' },
+  { key: 'daily_watch',     stationId: 'daily_watch',       icon: Youtube,   title_en: 'Daily Watch',  color: 'red' },
+  { key: 'word_power',      stationId: 'game_word_power',   icon: Zap,       title_en: 'Word Power',   color: 'teal' },
+  // ── PROCESSING (Luyện tập sâu) ────────────────────────────────────────────
+  { key: 'grammar',         stationId: 'grammar_lab',       icon: Hash,      title_en: 'Grammar',      color: 'rose' },
+  { key: 'logic_lab',       stationId: 'game_logic',        icon: Zap,       title_en: 'Logic Lab',    color: 'violet' },
+  { key: 'mindmap_speaking',stationId: 'production_mindmap',icon: Cpu,       title_en: 'Mindmap',      color: 'indigo' },
+  { key: 'ask_ai',          stationId: 'ask_ai',            icon: Cpu,       title_en: 'Ask AI',       color: 'emerald' },
+  { key: 'dictation',       stationId: 'skill_dictation',   icon: Mic,       title_en: 'Dictation',    color: 'cyan' },
+  { key: 'shadowing',       stationId: 'skill_shadowing',   icon: Feather,   title_en: 'Shadow',       color: 'blue' },
+  // ── OUTPUT (Sản xuất ngôn ngữ) ────────────────────────────────────────────
+  { key: 'writing',         stationId: 'video_challenge',   icon: Eye,       title_en: 'Writing',      color: 'pink' },
+  { key: 'explore',         stationId: 'explore',           icon: Compass,   title_en: 'Explore',      color: 'lime' },
+  { key: 'game_hub',        stationId: 'game_hub',          icon: Gamepad2,  title_en: 'Game Hub',     color: 'amber' },
+  { key: 'self_regulation', stationId: 'self_regulation',   icon: Target,    title_en: 'My Goals',     color: 'sky' },
+  // ── REVIEW GATE (Cổng kiểm soát) ─────────────────────────────────────────
+  { key: 'review',          stationId: 'review_session',    icon: Brain,     title_en: 'Weekly Review',color: 'violet' },
 ];
 
 // Helper function to get station ID from tab key
