@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <defs>
+    <!-- Nova body gradient: gold → amber -->
+    <radialGradient id="novaBody" cx="45%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="55%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </radialGradient>
+    <!-- Comet tail gradient -->
+    <linearGradient id="novaTail" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#CE93D8" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#AB47BC" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#7B1FA2" stop-opacity="0.9"/>
+    </linearGradient>
+    <!-- Shine -->
+    <radialGradient id="novaShine" cx="35%" cy="28%" r="35%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Glow filter -->
+    <filter id="novaGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Tail sparkle filter -->
+    <filter id="tailGlow" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── COMET TAIL ── -->
+  <!-- Main tail sweep -->
+  <path d="M90,48 Q75,38 55,30 Q40,24 18,20 Q8,18 2,20 Q10,26 22,30 Q38,36 52,42 Q68,50 82,58 Q90,62 95,60 Z"
+        fill="url(#novaTail)" filter="url(#tailGlow)" opacity="0.85"/>
+  <!-- Tail wisp 2 (narrower) -->
+  <path d="M88,52 Q72,45 50,38 Q34,33 12,30 Q5,29 2,32 Q12,36 28,40 Q48,46 66,54 Q80,60 90,60 Z"
+        fill="url(#novaTail)" opacity="0.45"/>
+  <!-- Sparkle dots in tail -->
+  <circle cx="30" cy="28" r="2.5" fill="#E1BEE7" opacity="0.9"/>
+  <circle cx="44" cy="36" r="1.8" fill="#F8BBD9" opacity="0.8"/>
+  <circle cx="22" cy="34" r="1.5" fill="#CE93D8" opacity="0.7"/>
+  <circle cx="60" cy="38" r="1.2" fill="#FFF9C4" opacity="0.9"/>
+  <circle cx="14" cy="24" r="1" fill="white" opacity="0.7"/>
+  <!-- Mini star sparkle -->
+  <path d="M38,22 L39.2,25.5 L43,25.5 L40.2,27.5 L41.4,31 L38,29 L34.6,31 L35.8,27.5 L33,25.5 L36.8,25.5 Z"
+        fill="white" opacity="0.5" transform="scale(0.6) translate(26,-2)"/>
+
+  <!-- ── NOVA BODY (shooting star core) ── -->
+  <!-- Outer glow halo -->
+  <circle cx="92" cy="52" r="26" fill="#FFD600" opacity="0.18" filter="url(#novaGlow)"/>
+  <!-- Ray spikes (8 short rays emanating from body) -->
+  <g fill="#FFD600" opacity="0.9">
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(0,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(45,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(90,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(135,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(180,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(225,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(270,92,52)"/>
+    <ellipse cx="92" cy="22" rx="2.5" ry="7" transform="rotate(315,92,52)"/>
+  </g>
+  <!-- Main round body -->
+  <circle cx="92" cy="52" r="20" fill="url(#novaBody)" filter="url(#novaGlow)"/>
+  <!-- Shine overlay -->
+  <circle cx="92" cy="52" r="20" fill="url(#novaShine)"/>
+
+  <!-- ── FACE ── -->
+  <!-- Left eye -->
+  <ellipse cx="85" cy="48" rx="4.5" ry="5" fill="white"/>
+  <ellipse cx="85.8" cy="48.5" rx="3" ry="3.5" fill="#1A237E"/>
+  <ellipse cx="86.8" cy="47.5" rx="1.5" ry="1.8" fill="#3949AB"/>
+  <circle  cx="87.5" cy="46.8" r="1.1" fill="white"/>
+  <!-- Right eye -->
+  <ellipse cx="99" cy="48" rx="4.5" ry="5" fill="white"/>
+  <ellipse cx="99.8" cy="48.5" rx="3" ry="3.5" fill="#1A237E"/>
+  <ellipse cx="100.8" cy="47.5" rx="1.5" ry="1.8" fill="#3949AB"/>
+  <circle  cx="101.5" cy="46.8" r="1.1" fill="white"/>
+  <!-- Rosy cheeks -->
+  <ellipse cx="81" cy="55" rx="4" ry="2.5" fill="#FF8A65" opacity="0.5"/>
+  <ellipse cx="103" cy="55" rx="4" ry="2.5" fill="#FF8A65" opacity="0.5"/>
+  <!-- Happy smile -->
+  <path d="M83,58 Q92,65 101,58" stroke="#B71C1C" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <!-- Inner mouth -->
+  <path d="M85,59.5 Q92,64 99,59.5" fill="#FF5252" opacity="0.5"/>
+
+  <!-- ── ACCENT SPARKLES around body ── -->
+  <path d="M75,36 l1.5,3.5 l3.5,1.5 l-3.5,1.5 l-1.5,3.5 l-1.5,-3.5 l-3.5,-1.5 l3.5,-1.5 Z"
+        fill="#FFEB3B" opacity="0.9"/>
+  <path d="M110,38 l1,2.5 l2.5,1 l-2.5,1 l-1,2.5 l-1,-2.5 l-2.5,-1 l2.5,-1 Z"
+        fill="white" opacity="0.85"/>
+  <path d="M114,60 l0.8,2 l2,0.8 l-2,0.8 l-0.8,2 l-0.8,-2 l-2,-0.8 l2,-0.8 Z"
+        fill="#FFF9C4" opacity="0.8"/>
+</svg>
