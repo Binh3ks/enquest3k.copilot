@@ -5,8 +5,8 @@
  */
 
 export const FREE_TALK_ACTIONS = [
-  { id: 'translate', label: 'Dịch tiếng Anh 📚', icon: '📚', type: 'system' },
-  { id: 'conversation', label: 'Hội thoại 💬', icon: '💬', type: 'menu' }
+  { id: 'translate', label: 'Translate 📚', icon: '📚', type: 'system' },
+  { id: 'conversation', label: 'Conversation 💬', icon: '💬', type: 'menu' }
 ];
 
 // ❌ GAME_OPTIONS removed - Games moved to GameHub
