@@ -18,19 +18,30 @@ const HintChips = ({ hints = [], onHintClick, show = true }) => {
       </div>
       
       <div className="flex flex-wrap gap-2">
-        {hints.map((hint, index) => (
-          <button
-            key={index}
-            onClick={() => onHintClick?.(hint)}
-            className="
-              px-3 py-1.5 bg-white border border-yellow-300 rounded-full
-              text-sm text-gray-700 hover:bg-yellow-100 hover:border-yellow-400
-              transition-all duration-200 shadow-sm hover:shadow
-            "
-          >
-            {hint}
-          </button>
-        ))}
+        {hints.map((hint, index) => {
+          // Render "___" as a styled inline blank so hint chips look natural
+          const parts = hint.split('___');
+          const label = parts.length > 1
+            ? parts.flatMap((part, i) =>
+                i < parts.length - 1
+                  ? [part, <span key={i} className="inline-block border-b-2 border-yellow-500 min-w-[2rem] mx-0.5" />]
+                  : [part]
+              )
+            : hint;
+          return (
+            <button
+              key={index}
+              onClick={() => onHintClick?.(hint)}
+              className="
+                px-3 py-1.5 bg-white border border-yellow-300 rounded-full
+                text-sm text-gray-700 hover:bg-yellow-100 hover:border-yellow-400
+                transition-all duration-200 shadow-sm hover:shadow
+              "
+            >
+              {label}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
