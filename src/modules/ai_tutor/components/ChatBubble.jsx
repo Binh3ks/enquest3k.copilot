@@ -31,20 +31,6 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [], mode =
   // Remove any JSON-like patterns that leaked through
   messageText = messageText.replace(/^[\{\[].*[\}\]]$/s, 'Processing...');
   
-  // Render message text, turning ___ into a styled fill-blank visual
-  const renderMessageText = (text) => {
-    if (!text.includes('___')) return text;
-    const parts = text.split('___');
-    return parts.map((part, i) => (
-      <span key={i}>
-        {part}
-        {i < parts.length - 1 && (
-          <span className="inline-block min-w-[40px] border-b-2 border-purple-400 mx-1 align-bottom" />
-        )}
-      </span>
-    ));
-  };
-
   return (
     <div className={`flex items-start space-x-2 mb-4 ${isAssistant ? '' : 'flex-row-reverse space-x-reverse'}`}>
       {/* Avatar */}
@@ -73,7 +59,7 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [], mode =
         `}>
           {/* Message Text */}
           <p className="text-base leading-relaxed whitespace-pre-wrap font-semibold">
-            {renderMessageText(messageText)}
+            {messageText}
           </p>
           
           {/* Timestamp */}
