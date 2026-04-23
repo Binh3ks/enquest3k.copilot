@@ -38,7 +38,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=engquest3k
+          command: pages deploy dist --project-name=enquest3k
 
   # ─── Job 2: Deploy backend to Railway (auto-deploy via Railway GitHub integration) ─
   # Railway auto-deploys on push when GitHub repo is connected.
