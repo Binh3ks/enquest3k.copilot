@@ -1,24 +1,31 @@
-import novaLogoSrc from '../assets/nova-logo.png';
+import novaHappy     from '../assets/nova-happy.png';
+import novaCelebrate from '../assets/nova-celebrate.png';
+import novaThinking  from '../assets/nova-thinking.png';
 
 /**
  * NovaMascot — Nova the turtle mascot for Lexio
  *
- * Uses the official Logo_Rùa Nova_new.png brand asset.
- *
  * Props:
- *   size      {number}  Width in px. Height auto (image natural ratio).
+ *   size      {number}  Width in px. Height auto.
  *   animate   {boolean} Enable nova-float animation.
- *   mood      {string}  Reserved for future expression variants (ignored for now).
+ *   mood      {string}  'happy' (default) | 'celebrate' | 'thinking'
  *   className {string}
  *
- * Usage:
- *   <NovaMascot size={80} />
- *   <NovaMascot size={110} animate />
+ * mood guide:
+ *   'happy'     → Nova_Vui vẻ.png      — landing page, sidebar logo
+ *   'celebrate' → Nova_Khen ngợi.png   — student completes a station/tab
+ *   'thinking'  → Nova_suy tư.png      — student takes long on a question
  */
+
+const MOOD_SRC = {
+  happy:     novaHappy,
+  celebrate: novaCelebrate,
+  thinking:  novaThinking,
+};
 
 const NovaMascot = ({ size = 80, animate = false, mood = 'happy', className = '' }) => (
   <img
-    src={novaLogoSrc}
+    src={MOOD_SRC[mood] ?? novaHappy}
     alt="Nova mascot"
     width={size}
     style={{ width: size, height: 'auto', display: 'inline-block' }}
