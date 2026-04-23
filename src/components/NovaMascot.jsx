@@ -1,35 +1,40 @@
-import novaHappy     from '../assets/nova-happy.png';
-import novaCelebrate from '../assets/nova-celebrate.png';
-import novaThinking  from '../assets/nova-thinking.png';
+import novaLanding    from '../assets/nova-landing.png';
+import novaSidebar    from '../assets/nova-sidebar.png';
+import novaHappy      from '../assets/nova-happy.png';
+import novaAchieve    from '../assets/nova-achievement.png';
+import novaEncourage  from '../assets/nova-encourage.png';
+import novaThinking   from '../assets/nova-thinking.png';
+import novaLetsgo     from '../assets/nova-letsgo.png';
+import novaListening  from '../assets/nova-listening.png';
 
-/**
- * NovaMascot — Nova the turtle mascot for Lexio
- *
- * Props:
- *   size      {number}  Width in px. Height auto.
- *   animate   {boolean} Enable nova-float animation.
- *   mood      {string}  'happy' (default) | 'celebrate' | 'thinking'
- *   className {string}
- *
- * mood guide:
- *   'happy'     → Nova_Vui vẻ.png      — landing page, sidebar logo
- *   'celebrate' → Nova_Khen ngợi.png   — student completes a station/tab
- *   'thinking'  → Nova_suy tư.png      — student takes long on a question
- */
+// mood → PNG mapping (see Các expression trong app.docx)
+// 'landing'     → Landing page hero
+// 'sidebar'     → Sidebar logo
+// 'happy'       → Chào đón đầu buổi học
+// 'achievement' → Trả lời đúng / khen ngợi
+// 'encourage'   → Trả lời sai / khuyến khích
+// 'thinking'    → AI xử lý / loading / câu khó
+// 'letsgo'      → Story Mission / Weekly Review boss
+// 'listening'   → Dictation / Shadowing
 
 const MOOD_SRC = {
-  happy:     novaHappy,
-  celebrate: novaCelebrate,
-  thinking:  novaThinking,
+  landing:     novaLanding,
+  sidebar:     novaSidebar,
+  happy:       novaHappy,
+  achievement: novaAchieve,
+  encourage:   novaEncourage,
+  thinking:    novaThinking,
+  letsgo:      novaLetsgo,
+  listening:   novaListening,
 };
 
-const NovaMascot = ({ size = 80, animate = false, mood = 'happy', className = '' }) => (
+const NovaMascot = ({ size = 80, mood = 'happy', className = '' }) => (
   <img
     src={MOOD_SRC[mood] ?? novaHappy}
     alt="Nova mascot"
     width={size}
     style={{ width: size, height: 'auto', display: 'inline-block' }}
-    className={`select-none ${animate ? 'nova-float' : ''} ${className}`}
+    className={`select-none ${className}`}
     draggable={false}
   />
 );
