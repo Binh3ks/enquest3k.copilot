@@ -1,6 +1,6 @@
 export default {
   title: "Explore: What We Eat",
-  image_url: "/images/week30/explore_cover_w30.jpg",
+  image_url: null,
   content_en: "Last Sunday, my family felt **hungry**, so we planned a **picnic** in the park!\n\nFirst, Dad **bought** some food from the market. He put everything in a big **basket**.\n\nAt the park, Mum **gave** everyone a **sandwich**. The **sandwiches** were so **delicious**!\n\nAfter we ran and played, we were very **thirsty**. We all **drank** cold **juice**. It was perfect!\n\nWe **ate** fruit and **shared** it with our neighbors. Everyone felt **cheerful** and happy.\n\nIt was the best **picnic** ever!",
   content_vi: "Chủ nhật tuần trước, cả nhà tôi cảm thấy **đói** và chúng tôi lên kế hoạch đi **dã ngoại** ở công viên!\n\nĐầu tiên, bố **mua** thức ăn từ chợ về. Bố bỏ tất cả vào một cái **giỏ** lớn.\n\nỞ công viên, mẹ **phát** cho mỗi người một **bánh mì kẹp**. Các **bánh mì kẹp** thật **ngon**!\n\nSau khi chạy và chơi, chúng tôi rất **khát**. Chúng tôi đều **uống** **nước trái cây** lạnh. Thật tuyệt!\n\nChúng tôi **ăn** trái cây và **chia sẻ** với hàng xóm. Mọi người đều cảm thấy **vui vẻ** và hạnh phúc.\n\nĐó là buổi **dã ngoại** tuyệt vời nhất!",
   audio_url: "/audio/week30_easy/explore_main.mp3",

@@ -8,7 +8,7 @@ export default {
       definition_en: "a big town",
       example: "I live in a city.",
       collocation: "big city",
-      image_url: "/images/week9_easy/city.jpg",
+      image_url: "/images/week09_easy/city.jpg",
       audio_word: "/audio/week9_easy/vocab_city.mp3"
     },
     {
@@ -19,7 +19,7 @@ export default {
       definition_en: "a road in a city",
       example: "I walk on the street.",
       collocation: "busy street",
-      image_url: "/images/week9_easy/street.jpg",
+      image_url: "/images/week09_easy/street.jpg",
       audio_word: "/audio/week9_easy/vocab_street.mp3"
     },
     {
@@ -30,7 +30,7 @@ export default {
       definition_en: "very loud",
       example: "The city is noisy.",
       collocation: "noisy place",
-      image_url: "/images/week9_easy/noisy.jpg",
+      image_url: "/images/week09_easy/noisy.jpg",
       audio_word: "/audio/week9_easy/vocab_noisy.mp3"
     },
     {
@@ -41,7 +41,7 @@ export default {
       definition_en: "full of people",
       example: "The street is busy.",
       collocation: "busy city",
-      image_url: "/images/week9_easy/busy.jpg",
+      image_url: "/images/week09_easy/busy.jpg",
       audio_word: "/audio/week9_easy/vocab_busy.mp3"
     },
     {
@@ -52,7 +52,7 @@ export default {
       definition_en: "very high",
       example: "It is a tall building.",
       collocation: "tall building",
-      image_url: "/images/week9_easy/tall.jpg",
+      image_url: "/images/week09_easy/tall.jpg",
       audio_word: "/audio/week9_easy/vocab_tall.mp3"
     },
     {
@@ -63,7 +63,7 @@ export default {
       definition_en: "new and nice",
       example: "The building is modern.",
       collocation: "modern city",
-      image_url: "/images/week9_easy/modern.jpg",
+      image_url: "/images/week09_easy/modern.jpg",
       audio_word: "/audio/week9_easy/vocab_modern.mp3"
     },
     {
@@ -74,7 +74,7 @@ export default {
       definition_en: "a vehicle with four wheels",
       example: "I see a red car.",
       collocation: "fast car",
-      image_url: "/images/week9_easy/car.jpg",
+      image_url: "/images/week09_easy/car.jpg",
       audio_word: "/audio/week9_easy/vocab_car.mp3"
     },
     {
@@ -85,7 +85,7 @@ export default {
       definition_en: "a big vehicle for many people",
       example: "I ride the bus.",
       collocation: "school bus",
-      image_url: "/images/week9_easy/bus.jpg",
+      image_url: "/images/week09_easy/bus.jpg",
       audio_word: "/audio/week9_easy/vocab_bus.mp3"
     },
     {
@@ -96,7 +96,7 @@ export default {
       definition_en: "a house or tall structure",
       example: "I see a tall building.",
       collocation: "tall building",
-      image_url: "/images/week9_easy/building.jpg",
+      image_url: "/images/week09_easy/building.jpg",
       audio_word: "/audio/week9_easy/vocab_building.mp3"
     },
     {
@@ -107,7 +107,7 @@ export default {
       definition_en: "cars and buses on roads",
       example: "The traffic is heavy.",
       collocation: "heavy traffic",
-      image_url: "/images/week9_easy/traffic.jpg",
+      image_url: "/images/week09_easy/traffic.jpg",
       audio_word: "/audio/week9_easy/vocab_traffic.mp3"
     }
   ]
