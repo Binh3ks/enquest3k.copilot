@@ -46,11 +46,11 @@ Sau do dung **scissors** de **cut** hinh. Them **color**, roi **glue** len mot t
     },
     {
       id: 3,
-      question_en: "What does a butterfly tell us about symmetry?",
-      question_vi: "Con buom cho chung ta biet gi ve tinh doi xung?",
-      answer: ["Both wings look the same", "A butterfly has symmetry because both wings look the same", "Both wings are the same"],
-      hint_en: "A butterfly has symmetry because both...",
-      hint_vi: "Con buom co doi xung vi ca hai...",
+      question_en: "What is texture?",
+      question_vi: "Texture (kết cấu) là gì?",
+      answer: ["The way paper feels", "How the paper feels", "It is how paper feels"],
+      hint_en: "Texture is the way paper...",
+      hint_vi: "Texture là cách tờ giấy...",
       audio_url: "/audio/week23_easy/explore_q3.mp3"
     }
   ],

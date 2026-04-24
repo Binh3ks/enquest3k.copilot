@@ -6,7 +6,7 @@ export default {
   audio_url: null,
   comprehension_questions: [
     { id: 1, question_en: "What is his name?", answer: ["Alex", "His name is Alex"], hint_en: "My name is...", hint_vi: "Tên tôi là..." },
-    { id: 2, question_en: "What color is his bag?", answer: ["Red", "It is red"], hint_en: "My bag is...", hint_vi: "Cặp màu..." },
+    { id: 2, question_en: "What does Alex have in his bag?", answer: ["A pen and a book", "Pen and a book", "pen and book", "pen", "book"], hint_en: "I have a pen and a...", hint_vi: "Tôi có bút và..." },
     { id: 3, question_en: "Who is next to Alex?", answer: ["Lily", "His friend Lily", "His friend"], hint_en: "My friend is...", hint_vi: "Bạn tôi là..." }
   ]
 };

@@ -34,10 +34,10 @@ export default {
     },
     {
       id: 3,
-      question_en: "How many senses do we use?",
-      answer: ["Five", "5", "We use five senses"],
-      hint_en: "Five...",
-      hint_vi: "Năm..."
+      question_en: "What do we use to know the world?",
+      answer: ["Our senses", "Senses", "We use our senses"],
+      hint_en: "We use our s...",
+      hint_vi: "Chúng ta dùng giác..."
     }
   ],
   question: {
