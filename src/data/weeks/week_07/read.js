@@ -17,14 +17,14 @@ export default {
       id: 2,
       question_en: "Where is the ruler?",
       question_vi: "Thước kẻ ở đâu?",
-      answer: "In the pencil case / Next to the pen",
+      answer: ["Next to the pen", "In the pencil case", "next to the pen"],
       hint_en: "Look in the pencil case..."
     },
     {
       id: 3,
       question_en: "What is in the classroom?",
       question_vi: "Có gì trong lớp học?",
-      answer: "A whiteboard / A teacher / A computer",
+      answer: ["A whiteboard", "A teacher", "A computer"],
       hint_en: "The teacher uses it to write..."
     }
   ]

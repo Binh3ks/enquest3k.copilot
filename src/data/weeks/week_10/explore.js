@@ -23,7 +23,7 @@ export default {
     {
       id: 3,
       question_en: "What is different between city and farm?",
-      answer: ["city is noisy but farm is quiet", "city has buildings but farm has trees", "city is busy but farm is peaceful", "city is crowded but farm has space"],
+      answer: ["city is noisy but countryside is quiet", "city is noisy but farm is quiet", "city has buildings but farm has trees", "city is busy but farm is peaceful", "city is crowded but farm has space"],
       hint_en: "Think about contrasts...",
       hint_vi: "Nghĩ về sự đối lập..."
     }

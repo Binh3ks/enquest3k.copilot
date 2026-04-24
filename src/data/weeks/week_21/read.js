@@ -32,7 +32,7 @@ export default {
     {
       id: 4,
       question_en: "What time did Max start to sleep?",
-      answer: ["At nine o clock", "At 9 o clock", "He slept at nine"],
+      answer: ["At nine o'clock", "At nine o clock", "At 9 o clock", "He slept at nine", "nine o'clock"],
       hint_en: "At ... o clock",
       hint_vi: "Luc ... gio",
       audio_url: "/audio/week21/read_q4.mp3"

@@ -44,7 +44,7 @@ export default {
       options_en: ["A. A bridge", "B. A market", "C. A road", "D. A building"],
       options_vi: ["A. Một cây cầu", "B. Một khu chợ", "C. Một con đường", "D. Một tòa nhà"],
       correct_answer: "B",
-      explanation_en: "Long ago, there was a market in every town.",
+      answer: ["A market", "market", "B"],
       explanation_vi: "Ngày xưa, có một khu chợ ở mỗi thị trấn.",
       audio_url: "/audio/week20_easy/explore_q1.mp3"
     },
@@ -55,7 +55,7 @@ export default {
       options_en: ["A. New buildings", "B. Old trees", "C. Old temples", "D. New roads"],
       options_vi: ["A. Tòa nhà mới", "B. Cây cũ", "C. Đền cũ", "D. Đường mới"],
       correct_answer: "C",
-      explanation_en: "Old temples are still standing. They show us the past.",
+      answer: ["Old temples", "temples", "C"],
       explanation_vi: "Các đền cũ vẫn còn đứng đó. Chúng cho ta thấy quá khứ.",
       audio_url: "/audio/week20_easy/explore_q2.mp3"
     }
