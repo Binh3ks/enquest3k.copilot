@@ -3,10 +3,10 @@ export default {
     title_en: "Contrast with 'but'",
     title_vi: "Đối lập với 'but'",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'but' to show difference: The city is noisy, but the farm is quiet.", rule_vi: "Dùng 'but' để chỉ sự khác biệt: The city is noisy, but the farm is quiet." },
-      { type: "rule", icon: "2️⃣", rule_en: "Pattern: [Place] is [adjective], but [place] is [adjective]", rule_vi: "Mẫu câu: [Nơi] is [tính từ], but [nơi] is [tính từ]" },
-      { type: "rule", icon: "3️⃣", rule_en: "'But' connects two opposite ideas in one sentence", rule_vi: "'But' nối hai ý tưởng đối lập trong một câu" },
-      { type: "rule", icon: "4️⃣", rule_en: "Use comma before 'but': The city is big, but the farm is small.", rule_vi: "Dùng dấu phẩy trước 'but': The city is big, but the farm is small." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'but' to show difference: The city is noisy, but the farm is quiet.", example_en: "The city is noisy, but the farm is quiet. The road is busy, but the path is empty.", example_vi: "Thành phố ồn ào, nhưng nông trại thì yên tĩnh. Đường phố bận rộn, nhưng con đường mòn thì vắng.", rule_vi: "Dùng 'but' để chỉ sự khác biệt: The city is noisy, but the farm is quiet." },
+      { type: "rule", icon: "2️⃣", rule_en: "Pattern: [Place] is [adjective], but [place] is [adjective]", example_en: "The city is big, but the village is small. The park is clean, but the street is dirty.", example_vi: "Thành phố to, nhưng làng nhỏ. Công viên sạch, nhưng đường phố bẩn.", rule_vi: "Mẫu câu: [Nơi] is [tính từ], but [nơi] is [tính từ]" },
+      { type: "rule", icon: "3️⃣", rule_en: "'But' connects two opposite ideas in one sentence", example_en: "I like the city, but I love the farm. It is hot here, but it is cool there.", example_vi: "Tôi thích thành phố, nhưng tôi yêu nông trại. Ở đây nóng, nhưng ở đó mát.", rule_vi: "'But' nối hai ý tưởng đối lập trong một câu" },
+      { type: "rule", icon: "4️⃣", rule_en: "Use comma before 'but': The city is big, but the farm is small.", example_en: "The school is near, but the library is far. The market is busy, but the lake is peaceful.", example_vi: "Trường gần, nhưng thư viện xa. Chợ bận rộn, nhưng hồ thì yên bình.", rule_vi: "Dùng dấu phẩy trước 'but': The city is big, but the farm is small." }
     ]
   },
   exercises: [

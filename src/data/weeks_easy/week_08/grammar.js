@@ -3,10 +3,10 @@ export default {
     title_en: "There are... (Plural)",
     title_vi: "There are... (Số nhiều)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "ONE thing: There IS a desk", rule_vi: "MỘT thứ: There IS a desk" },
-      { type: "rule", icon: "2️⃣", rule_en: "MANY things: There ARE desks", rule_vi: "NHIỀU thứ: There ARE desks" },
-      { type: "rule", icon: "3️⃣", rule_en: "Add -s: chair → chairs, bag → bags, desk → desks", rule_vi: "Thêm -s: chair → chairs, bag → bags, desk → desks" },
-      { type: "rule", icon: "4️⃣", rule_en: "Special: shelf → shelves", rule_vi: "Đặc biệt: shelf → shelves" }
+      { type: "rule", icon: "1️⃣", rule_en: "ONE thing: There IS a desk", example_en: "There is a desk. There is a bag.", example_vi: "Có một cái bàn. Có một cái túi.", rule_vi: "MỘT thứ: There IS a desk" },
+      { type: "rule", icon: "2️⃣", rule_en: "MANY things: There ARE desks", example_en: "There are desks in the classroom. There are bags on the floor.", example_vi: "Có những cái bàn trong lớp học. Có những cái túi trên sàn.", rule_vi: "NHIỀU thứ: There ARE desks" },
+      { type: "rule", icon: "3️⃣", rule_en: "Add -s: chair → chairs, bag → bags, desk → desks", example_en: "There are 5 chairs. There are many bags.", example_vi: "Có 5 cái ghế. Có nhiều cái túi.", rule_vi: "Thêm -s: chair → chairs, bag → bags, desk → desks" },
+      { type: "rule", icon: "4️⃣", rule_en: "Special: shelf → shelves", example_en: "There are shelves in my classroom. There are books on the shelves.", example_vi: "Có những kệ sách trong lớp học của tôi. Có sách trên kệ.", rule_vi: "Đặc biệt: shelf → shelves" }
     ]
   },
   exercises: [

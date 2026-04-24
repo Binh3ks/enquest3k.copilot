@@ -3,10 +3,10 @@ export default {
     title_en: "There was / There were (Past Existence)",
     title_vi: "There was / There were (Sự tồn tại trong quá khứ)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'There was' + singular: There was a market.", rule_vi: "Dùng 'There was' + danh từ số ít: There was a market." },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'There were' + plural: There were many trees.", rule_vi: "Dùng 'There were' + danh từ số nhiều: There were many trees." },
-      { type: "rule", icon: "3️⃣", rule_en: "Use for things that existed in the past: There was a bridge here.", rule_vi: "Dùng cho những thứ đã tồn tại trong quá khứ: There was a bridge here." },
-      { type: "rule", icon: "4️⃣", rule_en: "Negative: There was no market. / There were no trees.", rule_vi: "Phủ định: There was no market. / There were no trees." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'There was' + singular: There was a market.", example_en: "There was a market near our house. There was a big tree in the park.", example_vi: "Có một khu chợ gần nhà chúng tôi. Có một cây to trong công viên.", rule_vi: "Dùng 'There was' + danh từ số ít: There was a market." },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'There were' + plural: There were many trees.", example_en: "There were many trees here before. There were lots of children in the park.", example_vi: "Trước đây có nhiều cây ở đây. Có nhiều trẻ em trong công viên.", rule_vi: "Dùng 'There were' + danh từ số nhiều: There were many trees." },
+      { type: "rule", icon: "3️⃣", rule_en: "Use for things that existed in the past: There was a bridge here.", example_en: "There was a bridge here 50 years ago. There were old buildings on this street.", example_vi: "Có một cây cầu ở đây 50 năm trước. Có những tòa nhà cũ trên con phố này.", rule_vi: "Dùng cho những thứ đã tồn tại trong quá khứ: There was a bridge here." },
+      { type: "rule", icon: "4️⃣", rule_en: "Negative: There was no market. / There were no trees.", example_en: "There was no electricity before. There were no phones in the past.", example_vi: "Trước đây không có điện. Trong quá khứ không có điện thoại.", rule_vi: "Phủ định: There was no market. / There were no trees." }
     ]
   },
   exercises: [

@@ -3,9 +3,9 @@ export default {
     title_en: "is vs has (Describing People)",
     title_vi: "is vs has (Miêu tả Người)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'is' for qualities: She is tall", rule_vi: "Dùng 'is' cho đặc điểm: She is tall" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'has' for possession: She has long hair", rule_vi: "Dùng 'has' cho sở hữu: She has long hair" },
-      { type: "rule", icon: "3️⃣", rule_en: "Negative: is not (isn't), does not have", rule_vi: "Phủ định: is not (isn't), does not have" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'is' for qualities: She is tall", example_en: "She is tall. He is kind. My teacher is patient.", example_vi: "Cô ấy cao. Anh ấy tốt bụng. Giáo viên của tôi kiên nhẫn.", rule_vi: "Dùng 'is' cho đặc điểm: She is tall" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'has' for possession: She has long hair", example_en: "She has long hair. He has brown eyes. My friend has glasses.", example_vi: "Cô ấy có tóc dài. Anh ấy có mắt nâu. Bạn tôi đeo kính.", rule_vi: "Dùng 'has' cho sở hữu: She has long hair" },
+      { type: "rule", icon: "3️⃣", rule_en: "Negative: is not (isn't), does not have", example_en: "She is not short. He does not have curly hair.", example_vi: "Cô ấy không thấp. Anh ấy không có tóc xoăn.", rule_vi: "Phủ định: is not (isn't), does not have" }
     ]
   },
   exercises: [

@@ -3,10 +3,10 @@ export default {
     title_en: "Preposition 'at' with Places",
     title_vi: "Giới từ 'at' với Địa điểm",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'at' with places: at the park, at school", rule_vi: "Dùng 'at' với địa điểm: at the park, at school" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'at' when you do something: I play at the park", rule_vi: "Dùng 'at' khi bạn làm gì đó: I play at the park" },
-      { type: "rule", icon: "3️⃣", rule_en: "Pattern: I [action] at the [place]", rule_vi: "Mẫu câu: I [hành động] at the [địa điểm]" },
-      { type: "rule", icon: "4️⃣", rule_en: "Example: I read at the library, I buy at the supermarket", rule_vi: "Ví dụ: I read at the library, I buy at the supermarket" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'at' with places: at the park, at school", example_en: "I play at the park. She studies at school.", example_vi: "Tôi chơi ở công viên. Cô ấy học ở trường.", rule_vi: "Dùng 'at' với địa điểm: at the park, at school" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'at' when you do something: I play at the park", example_en: "I read at the library. We eat at the restaurant.", example_vi: "Tôi đọc sách ở thư viện. Chúng tôi ăn ở nhà hàng.", rule_vi: "Dùng 'at' khi bạn làm gì đó: I play at the park" },
+      { type: "rule", icon: "3️⃣", rule_en: "Pattern: I [action] at the [place]", example_en: "I swim at the pool. I study at the library.", example_vi: "Tôi bơi ở bể bơi. Tôi học ở thư viện.", rule_vi: "Mẫu câu: I [hành động] at the [địa điểm]" },
+      { type: "rule", icon: "4️⃣", rule_en: "Example: I read at the library, I buy at the supermarket", example_en: "I buy food at the supermarket. I see animals at the zoo.", example_vi: "Tôi mua thức ăn ở siêu thị. Tôi xem động vật ở sở thú.", rule_vi: "Ví dụ: I read at the library, I buy at the supermarket" }
     ]
   },
   exercises: [

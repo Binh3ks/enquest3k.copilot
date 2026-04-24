@@ -3,10 +3,10 @@ export default {
     title_en: "Contrast with 'but'",
     title_vi: "Đối lập với 'but'",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'but' to show difference: The city is noisy, but the farm is quiet.", rule_vi: "Dùng 'but' để chỉ sự khác biệt: The city is noisy, but the farm is quiet." },
-      { type: "rule", icon: "2️⃣", rule_en: "Pattern: [Place] is [adjective], but [place] is [adjective]", rule_vi: "Mẫu câu: [Nơi] is [tính từ], but [nơi] is [tính từ]" },
-      { type: "rule", icon: "3️⃣", rule_en: "'But' connects two opposite ideas", rule_vi: "'But' nối hai ý tưởng đối lập" },
-      { type: "rule", icon: "4️⃣", rule_en: "The city is big, but the farm is small.", rule_vi: "Thành phố lớn, nhưng trang trại nhỏ." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'but' to show difference: The city is noisy, but the farm is quiet.", example_en: "The city is noisy, but the farm is quiet. The road is busy, but the path is empty.", example_vi: "Thành phố ồn ào, nhưng nông trại yên tĩnh. Đường bận rộn, nhưng con đường mòn vắng.", rule_vi: "Dùng 'but' để chỉ sự khác biệt: The city is noisy, but the farm is quiet." },
+      { type: "rule", icon: "2️⃣", rule_en: "Pattern: [Place] is [adjective], but [place] is [adjective]", example_en: "The city is big, but the village is small. The park is clean, but the street is dirty.", example_vi: "Thành phố lớn, nhưng làng nhỏ. Công viên sạch, nhưng đường bẩn.", rule_vi: "Mẫu câu: [Nơi] is [tính từ], but [nơi] is [tính từ]" },
+      { type: "rule", icon: "3️⃣", rule_en: "'But' connects two opposite ideas", example_en: "It is hot here, but it is cool there. I like cats, but I don't like dogs.", example_vi: "Ở đây nóng, nhưng ở đó mát. Tôi thích mèo, nhưng không thích chó.", rule_vi: "'But' nối hai ý tưởng đối lập" },
+      { type: "rule", icon: "4️⃣", rule_en: "The city is big, but the farm is small.", example_en: "The city is big, but the farm is small. The school is near, but the library is far.", example_vi: "Thành phố lớn, nhưng nông trại nhỏ. Trường gần, nhưng thư viện xa.", rule_vi: "Thành phố lớn, nhưng trang trại nhỏ." }
     ]
   },
   exercises: [

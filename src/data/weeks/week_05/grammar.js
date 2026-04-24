@@ -3,9 +3,9 @@ export default {
     title_en: "Articles 'A/An' (Describing Things)",
     title_vi: "Mạo từ 'A/An' (Miêu tả Đồ vật)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'a' before consonant sounds: a sofa, a lamp", rule_vi: "Dùng 'a' trước phụ âm: a sofa, a lamp" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'an' before vowel sounds: an apple, an egg", rule_vi: "Dùng 'an' trước nguyên âm: an apple, an egg" },
-      { type: "rule", icon: "3️⃣", rule_en: "Pattern: This is a/an [noun]", rule_vi: "Cấu trúc: This is a/an [danh từ]" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'a' before consonant sounds: a sofa, a lamp", example_en: "There is a sofa in the living room. I see a lamp.", example_vi: "Có một chiếc sofa trong phòng khách. Tôi thấy một cây đèn.", rule_vi: "Dùng 'a' trước phụ âm: a sofa, a lamp" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'an' before vowel sounds: an apple, an egg", example_en: "There is an oven in the kitchen. I eat an orange.", example_vi: "Có một cái lò nướng trong bếp. Tôi ăn một quả cam.", rule_vi: "Dùng 'an' trước nguyên âm: an apple, an egg" },
+      { type: "rule", icon: "3️⃣", rule_en: "Pattern: This is a/an [noun]", example_en: "This is a bedroom. This is an armchair.", example_vi: "Đây là một phòng ngủ. Đây là một chiếc ghế bành.", rule_vi: "Cấu trúc: This is a/an [danh từ]" }
     ]
   },
   exercises: [

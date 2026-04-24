@@ -3,9 +3,9 @@ export default {
     title_en: "There is... (One Thing)",
     title_vi: "There is... (Một đồ vật)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'There is' for one thing: There is a pencil.", rule_vi: "Dùng 'There is' cho một đồ: There is a pencil." },
-      { type: "rule", icon: "2️⃣", rule_en: "Pattern: There is + a + [thing]", rule_vi: "Cấu trúc: There is + a + [đồ vật]" },
-      { type: "rule", icon: "3️⃣", rule_en: "Question: Is there a [thing]? Answer: Yes, there is. / No, there isn't.", rule_vi: "Câu hỏi: Is there a [đồ]? Trả lời: Yes, there is. / No, there isn't." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'There is' for one thing: There is a pencil.", example_en: "There is a pencil in my bag. There is a crayon on the desk.", example_vi: "Có một cái bút chì trong túi của tôi. Có một cây bút màu trên bàn.", rule_vi: "Dùng 'There is' cho một đồ: There is a pencil." },
+      { type: "rule", icon: "2️⃣", rule_en: "Pattern: There is + a + [thing]", example_en: "There is a pen. There is a ruler.", example_vi: "Có một cái bút. Có một cái thước.", rule_vi: "Cấu trúc: There is + a + [đồ vật]" },
+      { type: "rule", icon: "3️⃣", rule_en: "Question: Is there a [thing]? Answer: Yes, there is. / No, there isn't.", example_en: "Is there a pen? Yes, there is. Is there a ruler? No, there isn't.", example_vi: "Có bút không? Có. Có thước không? Không có.", rule_vi: "Câu hỏi: Is there a [đồ]? Trả lời: Yes, there is. / No, there isn't." }
     ]
   },
   exercises: [

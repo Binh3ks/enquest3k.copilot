@@ -3,10 +3,10 @@ export default {
     title_en: "Present Continuous (is/are + verb-ing)",
     title_vi: "Thì Hiện tại Tiếp diễn",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'am' with I: I am playing", rule_vi: "Dùng 'am' với I: I am playing" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'is' with he/she/it: He is running", rule_vi: "Dùng 'is' với he/she/it: He is running" },
-      { type: "rule", icon: "3️⃣", rule_en: "Use 'are' with you/we/they: They are playing", rule_vi: "Dùng 'are' với you/we/they: They are playing" },
-      { type: "rule", icon: "4️⃣", rule_en: "Add -ing to verbs: play → playing, run → running", rule_vi: "Thêm -ing vào động từ: play → playing, run → running" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'am' with I: I am playing", example_en: "I am playing in the park. I am eating lunch.", example_vi: "Tôi đang chơi trong công viên. Tôi đang ăn trưa.", rule_vi: "Dùng 'am' với I: I am playing" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'is' with he/she/it: He is running", example_en: "He is running fast. She is reading a book.", example_vi: "Anh ấy đang chạy nhanh. Cô ấy đang đọc sách.", rule_vi: "Dùng 'is' với he/she/it: He is running" },
+      { type: "rule", icon: "3️⃣", rule_en: "Use 'are' with you/we/they: They are playing", example_en: "They are playing football. We are watching TV.", example_vi: "Họ đang chơi bóng đá. Chúng tôi đang xem TV.", rule_vi: "Dùng 'are' với you/we/they: They are playing" },
+      { type: "rule", icon: "4️⃣", rule_en: "Add -ing to verbs: play → playing, run → running", example_en: "play → playing, run → running, swim → swimming, dance → dancing.", example_vi: "play → playing, run → running, swim → swimming, dance → dancing.", rule_vi: "Thêm -ing vào động từ: play → playing, run → running" }
     ]
   },
   exercises: [

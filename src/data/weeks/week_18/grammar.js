@@ -3,10 +3,10 @@ export default {
     title_en: "Present Continuous: Describing What Is Happening Right Now",
     title_vi: "Hiện tại Tiếp diễn: Mô tả những gì đang xảy ra ngay lúc này",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use am/is/are + verb-ing for actions happening RIGHT NOW.", rule_vi: "Dùng am/is/are + verb-ing cho hành động đang diễn ra NGAY LÚC NÀY." },
-      { type: "rule", icon: "2️⃣", rule_en: "I am → am + verb-ing. He/She/It → is + verb-ing. We/You/They → are + verb-ing.", rule_vi: "I am → am + verb-ing. He/She/It → is + verb-ing. We/You/They → are + verb-ing." },
-      { type: "rule", icon: "3️⃣", rule_en: "Add -ing: report → reporting, film → filming, run → running (double last letter), describe → describing.", rule_vi: "Thêm -ing: report → reporting, film → filming, run → running (gấp đôi chữ cuối), describe → describing." },
-      { type: "rule", icon: "4️⃣", rule_en: "Negative: He is NOT reporting. She is not filming.", rule_vi: "Phủ định: He is NOT reporting. She is not filming." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use am/is/are + verb-ing for actions happening RIGHT NOW.", example_en: "I am writing a report. She is filming the news.", example_vi: "Tôi đang viết báo cáo. Cô ấy đang quay tin tức.", rule_vi: "Dùng am/is/are + verb-ing cho hành động đang diễn ra NGAY LÚC NÀY." },
+      { type: "rule", icon: "2️⃣", rule_en: "I am → am + verb-ing. He/She/It → is + verb-ing. We/You/They → are + verb-ing.", example_en: "I am reporting. He is filming. They are interviewing.", example_vi: "Tôi đang đưa tin. Anh ấy đang quay phim. Họ đang phỏng vấn.", rule_vi: "I am → am + verb-ing. He/She/It → is + verb-ing. We/You/They → are + verb-ing." },
+      { type: "rule", icon: "3️⃣", rule_en: "Add -ing: report → reporting, film → filming, run → running (double last letter), describe → describing.", example_en: "She is describing the scene. He is running to the camera.", example_vi: "Cô ấy đang mô tả cảnh. Anh ấy đang chạy đến máy quay.", rule_vi: "Thêm -ing: report → reporting, film → filming, run → running (gấp đôi chữ cuối), describe → describing." },
+      { type: "rule", icon: "4️⃣", rule_en: "Negative: He is NOT reporting. She is not filming.", example_en: "He is not reporting today. She is not filming the interview.", example_vi: "Anh ấy không đưa tin hôm nay. Cô ấy không quay phim buổi phỏng vấn.", rule_vi: "Phủ định: He is NOT reporting. She is not filming." }
     ]
   },
   exercises: [

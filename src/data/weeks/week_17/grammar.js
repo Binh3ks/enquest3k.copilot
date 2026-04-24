@@ -3,10 +3,10 @@ export default {
     title_en: "Cause and Effect: 'It is [weather], so I am wearing [clothes].'",
     title_vi: "Quan hệ nhân quả: 'Trời đang [thời tiết], vì vậy tôi đang mặc [quần áo].'",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'so' to connect the weather cause to the clothing effect.", rule_vi: "Dùng 'so' để kết nối nguyên nhân thời tiết với hiệu quả quần áo." },
-      { type: "rule", icon: "2️⃣", rule_en: "Pattern: It is [weather], so I am wearing [clothes].", rule_vi: "Mẫu câu: Trời đang [thời tiết], vì vậy tôi đang mặc [quần áo]." },
-      { type: "rule", icon: "3️⃣", rule_en: "The weather part uses Present Simple: It is raining / It is cold.", rule_vi: "Phần thời tiết dùng Present Simple: It is raining / It is cold." },
-      { type: "rule", icon: "4️⃣", rule_en: "The clothing part uses Present Continuous: I am wearing a coat.", rule_vi: "Phần quần áo dùng Present Continuous: I am wearing a coat." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'so' to connect the weather cause to the clothing effect.", example_en: "It is cold, so I am wearing a coat. It is sunny, so I am wearing a hat.", example_vi: "Trời lạnh, vì vậy tôi đang mặc áo khoác. Trời nắng, vì vậy tôi đang đội mũ.", rule_vi: "Dùng 'so' để kết nối nguyên nhân thời tiết với hiệu quả quần áo." },
+      { type: "rule", icon: "2️⃣", rule_en: "Pattern: It is [weather], so I am wearing [clothes].", example_en: "It is raining, so I am wearing a raincoat. It is windy, so I am wearing a scarf.", example_vi: "Trời mưa, vì vậy tôi đang mặc áo mưa. Trời có gió, vì vậy tôi đang quàng khăn.", rule_vi: "Mẫu câu: Trời đang [thời tiết], vì vậy tôi đang mặc [quần áo]." },
+      { type: "rule", icon: "3️⃣", rule_en: "The weather part uses Present Simple: It is raining / It is cold.", example_en: "It is hot today. It is snowing outside.", example_vi: "Hôm nay trời nóng. Bên ngoài đang có tuyết rơi.", rule_vi: "Phần thời tiết dùng Present Simple: It is raining / It is cold." },
+      { type: "rule", icon: "4️⃣", rule_en: "The clothing part uses Present Continuous: I am wearing a coat.", example_en: "I am wearing a coat. She is wearing boots. He is carrying an umbrella.", example_vi: "Tôi đang mặc áo khoác. Cô ấy đang đi ủng. Anh ấy đang mang ô.", rule_vi: "Phần quần áo dùng Present Continuous: I am wearing a coat." }
     ]
   },
   exercises: [

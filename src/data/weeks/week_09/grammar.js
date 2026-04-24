@@ -3,10 +3,10 @@ export default {
     title_en: "It is a [adjective] [noun]",
     title_vi: "Cấu trúc: It is a [tính từ] [danh từ]",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'It is a' before adjective + noun: It is a busy street", rule_vi: "Dùng 'It is a' trước tính từ + danh từ: It is a busy street" },
-      { type: "rule", icon: "2️⃣", rule_en: "Adjectives describe nouns: noisy city, tall building", rule_vi: "Tính từ miêu tả danh từ: noisy city, tall building" },
-      { type: "rule", icon: "3️⃣", rule_en: "Adjective comes BEFORE the noun: a modern car (NOT a car modern)", rule_vi: "Tính từ đứng TRƯỚC danh từ: a modern car (KHÔNG PHẢI a car modern)" },
-      { type: "rule", icon: "4️⃣", rule_en: "Use 'a' before consonant sounds: a busy street, a tall building", rule_vi: "Dùng 'a' trước âm phụ âm: a busy street, a tall building" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'It is a' before adjective + noun: It is a busy street", example_en: "It is a busy street. It is a tall building.", example_vi: "Đó là một con đường bận rộn. Đó là một tòa nhà cao.", rule_vi: "Dùng 'It is a' trước tính từ + danh từ: It is a busy street" },
+      { type: "rule", icon: "2️⃣", rule_en: "Adjectives describe nouns: noisy city, tall building", example_en: "It is a noisy city. It is a modern building.", example_vi: "Đó là một thành phố ồn ào. Đó là một tòa nhà hiện đại.", rule_vi: "Tính từ miêu tả danh từ: noisy city, tall building" },
+      { type: "rule", icon: "3️⃣", rule_en: "Adjective comes BEFORE the noun: a modern car (NOT a car modern)", example_en: "a clean park (✓) — a park clean (✗). a quiet village (✓).", example_vi: "a clean park (✓) — a park clean (✗). a quiet village (✓).", rule_vi: "Tính từ đứng TRƯỚC danh từ: a modern car (KHÔNG PHẢI a car modern)" },
+      { type: "rule", icon: "4️⃣", rule_en: "Use 'a' before consonant sounds: a busy street, a tall building", example_en: "It is a busy road. It is an empty street.", example_vi: "Đó là một con đường bận rộn. Đó là một con phố trống vắng.", rule_vi: "Dùng 'a' trước âm phụ âm: a busy street, a tall building" }
     ]
   },
   exercises: [

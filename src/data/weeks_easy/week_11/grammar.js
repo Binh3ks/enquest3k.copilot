@@ -3,10 +3,10 @@ export default {
     title_en: "Using 'at' with Places",
     title_vi: "Dùng 'at' với Địa điểm",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'at' with places: at the park", rule_vi: "Dùng 'at' với địa điểm: at the park" },
-      { type: "rule", icon: "2️⃣", rule_en: "Say: I play at the park", rule_vi: "Nói: I play at the park" },
-      { type: "rule", icon: "3️⃣", rule_en: "Say: I read at the library", rule_vi: "Nói: I read at the library" },
-      { type: "rule", icon: "4️⃣", rule_en: "Say: I buy at the store", rule_vi: "Nói: I buy at the store" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'at' with places: at the park", example_en: "I am at the park. She is at school.", example_vi: "Tôi đang ở công viên. Cô ấy đang ở trường.", rule_vi: "Dùng 'at' với địa điểm: at the park" },
+      { type: "rule", icon: "2️⃣", rule_en: "Say: I play at the park", example_en: "I play at the park. We run at the park.", example_vi: "Tôi chơi ở công viên. Chúng tôi chạy ở công viên.", rule_vi: "Nói: I play at the park" },
+      { type: "rule", icon: "3️⃣", rule_en: "Say: I read at the library", example_en: "I read at the library. She reads at the library.", example_vi: "Tôi đọc sách ở thư viện. Cô ấy đọc sách ở thư viện.", rule_vi: "Nói: I read at the library" },
+      { type: "rule", icon: "4️⃣", rule_en: "Say: I buy at the store", example_en: "I buy food at the store. Mum buys milk at the supermarket.", example_vi: "Tôi mua thức ăn ở cửa hàng. Mẹ mua sữa ở siêu thị.", rule_vi: "Nói: I buy at the store" }
     ]
   },
   exercises: [

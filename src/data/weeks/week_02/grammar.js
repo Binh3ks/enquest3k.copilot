@@ -3,9 +3,9 @@ export default {
     title_en: "This is my... (Possession)",
     title_vi: "This is my... (Sở hữu)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "This is my + [family member]", rule_vi: "This is my + [thành viên gia đình]" },
-      { type: "rule", icon: "2️⃣", rule_en: "This is + [name]", rule_vi: "This is + [tên]" },
-      { type: "rule", icon: "3️⃣", rule_en: "We are a team", rule_vi: "We are a team (Chúng tôi là một đội)" }
+      { type: "rule", icon: "1️⃣", rule_en: "This is my + [family member]", example_en: "This is my mother. This is my brother.", example_vi: "Đây là mẹ tôi. Đây là anh trai tôi.", rule_vi: "This is my + [thành viên gia đình]" },
+      { type: "rule", icon: "2️⃣", rule_en: "This is + [name]", example_en: "This is Tom. This is Ms. Johnson.", example_vi: "Đây là Tom. Đây là cô Johnson.", rule_vi: "This is + [tên]" },
+      { type: "rule", icon: "3️⃣", rule_en: "We are a team", example_en: "We are a team. We help each other.", example_vi: "Chúng tôi là một đội. Chúng tôi giúp đỡ nhau.", rule_vi: "We are a team (Chúng tôi là một đội)" }
     ]
   },
   exercises: [

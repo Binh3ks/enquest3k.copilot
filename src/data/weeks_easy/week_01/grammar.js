@@ -3,9 +3,9 @@ export default {
     title_en: "Subject Pronouns & Verb to be",
     title_vi: "Đại từ nhân xưng chủ ngữ & Động từ to be",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "I + AM", rule_vi: "I + AM (Tôi + là)" },
-      { type: "rule", icon: "2️⃣", rule_en: "You / We / They + ARE", rule_vi: "You / We / They + ARE (Bạn / Chúng tôi / Họ + là)" },
-      { type: "rule", icon: "3️⃣", rule_en: "He / She / It + IS", rule_vi: "He / She / It + IS (Anh ấy / Cô ấy / Nó + là)" }
+      { type: "rule", icon: "1️⃣", rule_en: "I + AM", rule_vi: "I + AM (Tôi + là)", example_en: "I am Alex. I am happy.", example_vi: "Tôi là Alex. Tôi vui." },
+      { type: "rule", icon: "2️⃣", rule_en: "You / We / They + ARE", rule_vi: "You / We / They + ARE (Bạn / Chúng tôi / Họ + là)", example_en: "You are my friend. They are students.", example_vi: "Bạn là bạn của tôi. Họ là học sinh." },
+      { type: "rule", icon: "3️⃣", rule_en: "He / She / It + IS", rule_vi: "He / She / It + IS (Anh ấy / Cô ấy / Nó + là)", example_en: "She is kind. It is a pen.", example_vi: "Cô ấy tốt bụng. Nó là một cái bút." }
     ]
   },
   exercises: [

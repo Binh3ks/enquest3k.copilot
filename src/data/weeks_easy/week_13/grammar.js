@@ -3,9 +3,9 @@ export default {
     title_en: "Present Simple (I do every day)",
     title_vi: "Thì Hiện Tại Đơn (Tôi làm mỗi ngày)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "I wake up. I eat. I play.", rule_vi: "I wake up. I eat. I play." },
-      { type: "rule", icon: "2️⃣", rule_en: "She wakes up. He eats.", rule_vi: "She wakes up. He eats." },
-      { type: "rule", icon: "3️⃣", rule_en: "I go to school. I go to bed.", rule_vi: "I go to school. I go to bed." }
+      { type: "rule", icon: "1️⃣", rule_en: "I wake up. I eat. I play.", example_en: "I wake up at 6. I eat breakfast. I play after school.", example_vi: "Tôi thức dậy lúc 6 giờ. Tôi ăn sáng. Tôi chơi sau giờ học.", rule_vi: "I wake up. I eat. I play." },
+      { type: "rule", icon: "2️⃣", rule_en: "She wakes up. He eats.", example_en: "She wakes up early. He eats lunch at school.", example_vi: "Cô ấy thức dậy sớm. Anh ấy ăn trưa ở trường.", rule_vi: "She wakes up. He eats." },
+      { type: "rule", icon: "3️⃣", rule_en: "I go to school. I go to bed.", example_en: "I go to school at 7. I go to bed at 9 o'clock.", example_vi: "Tôi đi học lúc 7 giờ. Tôi đi ngủ lúc 9 giờ.", rule_vi: "I go to school. I go to bed." }
     ]
   },
   exercises: [

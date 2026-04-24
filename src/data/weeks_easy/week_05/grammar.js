@@ -3,9 +3,9 @@ export default {
     title_en: "Articles 'A/An' (Simple)",
     title_vi: "Mạo từ 'A/An' (Đơn giản)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'a' before words: a bed, a chair", rule_vi: "Dùng 'a' trước từ: a bed, a chair" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'an' before a, e, i, o, u: an apple", rule_vi: "Dùng 'an' trước a, e, i, o, u: an apple" },
-      { type: "rule", icon: "3️⃣", rule_en: "Say: This is a/an...", rule_vi: "Nói: This is a/an..." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'a' before words: a bed, a chair", example_en: "This is a bed. There is a chair in my room.", example_vi: "Đây là một chiếc giường. Có một chiếc ghế trong phòng tôi.", rule_vi: "Dùng 'a' trước từ: a bed, a chair" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'an' before a, e, i, o, u: an apple", example_en: "This is an apple. There is an egg on the table.", example_vi: "Đây là một quả táo. Có một quả trứng trên bàn.", rule_vi: "Dùng 'an' trước a, e, i, o, u: an apple" },
+      { type: "rule", icon: "3️⃣", rule_en: "Say: This is a/an...", example_en: "This is a sofa. This is an armchair.", example_vi: "Đây là một chiếc ghế dài. Đây là một chiếc ghế bành.", rule_vi: "Nói: This is a/an..." }
     ]
   },
   exercises: [

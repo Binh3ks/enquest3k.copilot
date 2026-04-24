@@ -3,10 +3,10 @@ export default {
     title_en: "There are... (Plural)",
     title_vi: "There are... (Số nhiều)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'There are' for PLURAL (more than 1): There are 20 desks", rule_vi: "Dùng 'There are' cho số nhiều (hơn 1): There are 20 desks" },
-      { type: "rule", icon: "2️⃣", rule_en: "Add -s to the noun: desk → desks, pencil → pencils, chair → chairs", rule_vi: "Thêm -s vào danh từ: desk → desks, pencil → pencils, chair → chairs" },
-      { type: "rule", icon: "3️⃣", rule_en: "Use 'There is' for ONE: There is a bag. Use 'There are' for MANY: There are bags", rule_vi: "Dùng 'There is' cho MỘT: There is a bag. Dùng 'There are' cho NHIỀU: There are bags" },
-      { type: "rule", icon: "4️⃣", rule_en: "You can use numbers: There are 3 markers. Or use 'many': There are many students", rule_vi: "Bạn có thể dùng số đếm: There are 3 markers. Hoặc dùng 'many': There are many students" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'There are' for PLURAL (more than 1): There are 20 desks", example_en: "There are 20 desks in my classroom. There are many students.", example_vi: "Có 20 cái bàn trong lớp học của tôi. Có nhiều học sinh.", rule_vi: "Dùng 'There are' cho số nhiều (hơn 1): There are 20 desks" },
+      { type: "rule", icon: "2️⃣", rule_en: "Add -s to the noun: desk → desks, pencil → pencils, chair → chairs", example_en: "There are pencils on the desk. There are chairs in the room.", example_vi: "Có những cái bút chì trên bàn. Có những chiếc ghế trong phòng.", rule_vi: "Thêm -s vào danh từ: desk → desks, pencil → pencils, chair → chairs" },
+      { type: "rule", icon: "3️⃣", rule_en: "Use 'There is' for ONE: There is a bag. Use 'There are' for MANY: There are bags", example_en: "There is a bag on the chair. There are bags on the floor.", example_vi: "Có một cái túi trên ghế. Có những cái túi trên sàn.", rule_vi: "Dùng 'There is' cho MỘT: There is a bag. Dùng 'There are' cho NHIỀU: There are bags" },
+      { type: "rule", icon: "4️⃣", rule_en: "You can use numbers: There are 3 markers. Or use 'many': There are many students", example_en: "There are 3 markers on the board. There are many books in the library.", example_vi: "Có 3 cái bút lông trên bảng. Có nhiều sách trong thư viện.", rule_vi: "Bạn có thể dùng số đếm: There are 3 markers. Hoặc dùng 'many': There are many students" }
     ]
   },
   exercises: [

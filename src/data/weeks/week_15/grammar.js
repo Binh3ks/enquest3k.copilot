@@ -3,10 +3,10 @@ export default {
     title_en: "Present Continuous (S + am/is/are + V-ing)",
     title_vi: "Thì hiện tại tiếp diễn (S + am/is/are + V-ing)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "I + am + V-ing: I am running in the park.", rule_vi: "I + am + V-ing: Tôi đang chạy trong công viên." },
-      { type: "rule", icon: "2️⃣", rule_en: "He/She/It + is + V-ing: She is eating ice cream.", rule_vi: "He/She/It + is + V-ing: Cô ấy đang ăn kem." },
-      { type: "rule", icon: "3️⃣", rule_en: "We/You/They + are + V-ing: They are playing soccer.", rule_vi: "We/You/They + are + V-ing: Họ đang chơi bóng đá." },
-      { type: "rule", icon: "4️⃣", rule_en: "Use Present Continuous for actions happening NOW.", rule_vi: "Dùng thì hiện tại tiếp diễn cho hành động đang xảy ra BÂY GIỜ." }
+      { type: "rule", icon: "1️⃣", rule_en: "I + am + V-ing: I am running in the park.", example_en: "I am running in the park. I am eating lunch now.", example_vi: "Tôi đang chạy trong công viên. Tôi đang ăn trưa bây giờ.", rule_vi: "I + am + V-ing: Tôi đang chạy trong công viên." },
+      { type: "rule", icon: "2️⃣", rule_en: "He/She/It + is + V-ing: She is eating ice cream.", example_en: "She is eating ice cream. He is playing football.", example_vi: "Cô ấy đang ăn kem. Anh ấy đang chơi bóng đá.", rule_vi: "He/She/It + is + V-ing: Cô ấy đang ăn kem." },
+      { type: "rule", icon: "3️⃣", rule_en: "We/You/They + are + V-ing: They are playing soccer.", example_en: "They are playing soccer. We are watching a film.", example_vi: "Họ đang chơi bóng đá. Chúng tôi đang xem phim.", rule_vi: "We/You/They + are + V-ing: Họ đang chơi bóng đá." },
+      { type: "rule", icon: "4️⃣", rule_en: "Use Present Continuous for actions happening NOW.", example_en: "Look! She is dancing. Listen! He is singing right now.", example_vi: "Nhìn kìa! Cô ấy đang nhảy. Nghe kìa! Anh ấy đang hát ngay bây giờ.", rule_vi: "Dùng thì hiện tại tiếp diễn cho hành động đang xảy ra BÂY GIỜ." }
     ]
   },
   exercises: [

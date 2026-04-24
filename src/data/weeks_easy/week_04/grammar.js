@@ -3,9 +3,9 @@ export default {
     title_en: "I like + V-ing (Expressing Preferences)",
     title_vi: "I like + V-ing (Diễn đạt Sở thích)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Add -ing to verbs after 'like': I like playing", rule_vi: "Thêm -ing vào động từ sau 'like': I like playing" },
-      { type: "rule", icon: "2️⃣", rule_en: "Negative: I don't like + V-ing", rule_vi: "Phủ định: I don't like + V-ing" },
-      { type: "rule", icon: "3️⃣", rule_en: "Question: Do you like + V-ing?", rule_vi: "Câu hỏi: Do you like + V-ing?" }
+      { type: "rule", icon: "1️⃣", rule_en: "Add -ing to verbs after 'like': I like playing", example_en: "I like playing. I like drawing pictures.", example_vi: "Tôi thích chơi. Tôi thích vẽ tranh.", rule_vi: "Thêm -ing vào động từ sau 'like': I like playing" },
+      { type: "rule", icon: "2️⃣", rule_en: "Negative: I don't like + V-ing", example_en: "I don't like running. I don't like waking up early.", example_vi: "Tôi không thích chạy. Tôi không thích thức dậy sớm.", rule_vi: "Phủ định: I don't like + V-ing" },
+      { type: "rule", icon: "3️⃣", rule_en: "Question: Do you like + V-ing?", example_en: "Do you like playing? Do you like reading?", example_vi: "Bạn có thích chơi không? Bạn có thích đọc sách không?", rule_vi: "Câu hỏi: Do you like + V-ing?" }
     ]
   },
   exercises: [

@@ -3,10 +3,10 @@ export default {
     title_en: "Review: Present Simple, Can/Can't, Possessives",
     title_vi: "Ôn Tập: Thì Hiện Tại Đơn, Can/Can't, Sở Hữu",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Present Simple: I present, She introduces (add -s with he/she)", rule_vi: "Thì Hiện Tại Đơn: I present, She introduces (thêm -s với he/she)" },
-      { type: "rule", icon: "2️⃣", rule_en: "Can/Can't: I can sing, He cannot draw (no -s after can)", rule_vi: "Can/Can't: I can sing, He cannot draw (không có -s sau can)" },
-      { type: "rule", icon: "3️⃣", rule_en: "Possessives: my poster, your project, his family, her talent", rule_vi: "Sở hữu: my poster, your project, his family, her talent" },
-      { type: "rule", icon: "4️⃣", rule_en: "Describe abilities: I am good at..., I am confident, I am proud of...", rule_vi: "Mô tả khả năng: I am good at..., I am confident, I am proud of..." }
+      { type: "rule", icon: "1️⃣", rule_en: "Present Simple: I present, She introduces (add -s with he/she)", example_en: "I present my project. She introduces her family.", example_vi: "Tôi thuyết trình dự án của mình. Cô ấy giới thiệu gia đình.", rule_vi: "Thì Hiện Tại Đơn: I present, She introduces (thêm -s với he/she)" },
+      { type: "rule", icon: "2️⃣", rule_en: "Can/Can't: I can sing, He cannot draw (no -s after can)", example_en: "I can sing a song. He cannot draw well. She can speak English.", example_vi: "Tôi có thể hát một bài hát. Anh ấy không thể vẽ tốt.", rule_vi: "Can/Can't: I can sing, He cannot draw (không có -s sau can)" },
+      { type: "rule", icon: "3️⃣", rule_en: "Possessives: my poster, your project, his family, her talent", example_en: "This is my poster. That is her talent. His family is big.", example_vi: "Đây là áp phích của tôi. Đó là tài năng của cô ấy. Gia đình anh ấy lớn.", rule_vi: "Sở hữu: my poster, your project, his family, her talent" },
+      { type: "rule", icon: "4️⃣", rule_en: "Describe abilities: I am good at..., I am confident, I am proud of...", example_en: "I am good at singing. I am proud of my drawing. She is confident on stage.", example_vi: "Tôi giỏi hát. Tôi tự hào về bức tranh của mình. Cô ấy tự tin trên sân khấu.", rule_vi: "Mô tả khả năng: I am good at..., I am confident, I am proud of..." }
     ]
   },
   exercises: [

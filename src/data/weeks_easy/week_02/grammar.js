@@ -3,9 +3,9 @@ export default {
     title_en: "This is my...",
     title_vi: "Đây là... của tôi",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "This is my + [person]", rule_vi: "This is my + [người]" },
-      { type: "rule", icon: "2️⃣", rule_en: "We are a team", rule_vi: "We are a team (Chúng tôi là đội)" },
-      { type: "rule", icon: "3️⃣", rule_en: "I love my family", rule_vi: "I love my family (Tôi yêu gia đình)" }
+      { type: "rule", icon: "1️⃣", rule_en: "This is my + [person]", example_en: "This is my mother. This is my father.", example_vi: "Đây là mẹ tôi. Đây là bố tôi.", rule_vi: "This is my + [người]" },
+      { type: "rule", icon: "2️⃣", rule_en: "We are a team", example_en: "We are a team. We love each other.", example_vi: "Chúng tôi là một đội. Chúng tôi yêu thương nhau.", rule_vi: "We are a team (Chúng tôi là đội)" },
+      { type: "rule", icon: "3️⃣", rule_en: "I love my family", example_en: "I love my family. My family is happy.", example_vi: "Tôi yêu gia đình tôi. Gia đình tôi hạnh phúc.", rule_vi: "I love my family (Tôi yêu gia đình)" }
     ]
   },
   exercises: [

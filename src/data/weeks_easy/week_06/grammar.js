@@ -3,10 +3,10 @@ export default {
     title_en: "Prepositions (In, On, Under, Next to)",
     title_vi: "Giới từ (Trong, Trên, Dưới, Bên cạnh)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'in' for inside: in the box, in the room", rule_vi: "Dùng 'in' cho bên trong: in the box, in the room" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'on' for on top: on the desk, on the floor", rule_vi: "Dùng 'on' cho trên: on the desk, on the floor" },
-      { type: "rule", icon: "3️⃣", rule_en: "Use 'under' for below: under the desk, under the chair", rule_vi: "Dùng 'under' cho dưới: under the desk, under the chair" },
-      { type: "rule", icon: "4️⃣", rule_en: "Use 'next to' for beside: next to the door, next to the window", rule_vi: "Dùng 'next to' cho bên cạnh: next to the door, next to the window" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'in' for inside: in the box, in the room", example_en: "The toy is in the box. The cat is in the room.", example_vi: "Đồ chơi ở trong hộp. Con mèo ở trong phòng.", rule_vi: "Dùng 'in' cho bên trong: in the box, in the room" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'on' for on top: on the desk, on the floor", example_en: "The book is on the desk. The ball is on the floor.", example_vi: "Cuốn sách ở trên bàn. Quả bóng ở trên sàn.", rule_vi: "Dùng 'on' cho trên: on the desk, on the floor" },
+      { type: "rule", icon: "3️⃣", rule_en: "Use 'under' for below: under the desk, under the chair", example_en: "My bag is under the desk. The cat is under the chair.", example_vi: "Túi của tôi ở dưới bàn. Con mèo ở dưới ghế.", rule_vi: "Dùng 'under' cho dưới: under the desk, under the chair" },
+      { type: "rule", icon: "4️⃣", rule_en: "Use 'next to' for beside: next to the door, next to the window", example_en: "The chair is next to the door. My toy is next to the window.", example_vi: "Ghế ở cạnh cửa. Đồ chơi của tôi ở cạnh cửa sổ.", rule_vi: "Dùng 'next to' cho bên cạnh: next to the door, next to the window" }
     ]
   },
   exercises: [

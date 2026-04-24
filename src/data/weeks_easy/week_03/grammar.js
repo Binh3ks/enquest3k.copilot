@@ -3,9 +3,9 @@ export default {
     title_en: "is vs has (Easy)",
     title_vi: "is vs has (Dễ)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "I am tall.", rule_vi: "Tôi cao." },
-      { type: "rule", icon: "2️⃣", rule_en: "I have long hair.", rule_vi: "Tôi có tóc dài." },
-      { type: "rule", icon: "3️⃣", rule_en: "I am not short.", rule_vi: "Tôi không thấp." }
+      { type: "rule", icon: "1️⃣", rule_en: "I am tall.", example_en: "I am tall. My friend is short.", example_vi: "Tôi cao. Bạn tôi thấp.", rule_vi: "Tôi cao." },
+      { type: "rule", icon: "2️⃣", rule_en: "I have long hair.", example_en: "I have long hair. She has curly hair.", example_vi: "Tôi có tóc dài. Cô ấy có tóc xoăn.", rule_vi: "Tôi có tóc dài." },
+      { type: "rule", icon: "3️⃣", rule_en: "I am not short.", example_en: "I am not short. He is not tall.", example_vi: "Tôi không thấp. Anh ấy không cao.", rule_vi: "Tôi không thấp." }
     ]
   },
   exercises: [

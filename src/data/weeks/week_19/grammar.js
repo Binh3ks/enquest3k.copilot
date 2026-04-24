@@ -3,10 +3,10 @@ export default {
     title_en: "Was/Were (Past State)",
     title_vi: "Was/Were (Trạng thái trong quá khứ)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'was' with I/he/she/it: I was small", rule_vi: "Dùng 'was' với I/he/she/it: I was small" },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'were' with you/we/they: They were young", rule_vi: "Dùng 'were' với you/we/they: They were young" },
-      { type: "rule", icon: "3️⃣", rule_en: "Use for past states, not actions: I was a baby", rule_vi: "Dùng cho trạng thái quá khứ, không phải hành động: I was a baby" },
-      { type: "rule", icon: "4️⃣", rule_en: "Compare: I am big now. I was small before.", rule_vi: "So sánh: Tôi lớn bây giờ. Tôi nhỏ trước đây." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'was' with I/he/she/it: I was small", example_en: "I was a baby. She was happy. It was cold.", example_vi: "Tôi là một em bé. Cô ấy đã vui vẻ. Trời lạnh.", rule_vi: "Dùng 'was' với I/he/she/it: I was small" },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'were' with you/we/they: They were young", example_en: "They were young. We were at school. You were happy.", example_vi: "Họ còn trẻ. Chúng tôi đã ở trường. Bạn đã vui.", rule_vi: "Dùng 'were' với you/we/they: They were young" },
+      { type: "rule", icon: "3️⃣", rule_en: "Use for past states, not actions: I was a baby", example_en: "I was in Grade 1. She was my teacher. It was a great day.", example_vi: "Tôi đã học lớp 1. Cô ấy là giáo viên của tôi. Đó là một ngày tuyệt vời.", rule_vi: "Dùng cho trạng thái quá khứ, không phải hành động: I was a baby" },
+      { type: "rule", icon: "4️⃣", rule_en: "Compare: I am big now. I was small before.", example_en: "Now I am tall, but I was short before. Now she is fast, but she was slow before.", example_vi: "Bây giờ tôi cao, nhưng trước đây tôi thấp. Bây giờ cô ấy nhanh, nhưng trước đây cô ấy chậm.", rule_vi: "So sánh: Tôi lớn bây giờ. Tôi nhỏ trước đây." }
     ]
   },
   exercises: [

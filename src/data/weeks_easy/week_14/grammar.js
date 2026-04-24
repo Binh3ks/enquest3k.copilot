@@ -3,9 +3,9 @@ export default {
     title_en: "I can, My name is, I have",
     title_vi: "Tôi có thể, Tên tôi là, Tôi có",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "I can sing. I can draw.", rule_vi: "Tôi có thể hát. Tôi có thể vẽ." },
-      { type: "rule", icon: "2️⃣", rule_en: "My name is Emma.", rule_vi: "Tên tôi là Emma." },
-      { type: "rule", icon: "3️⃣", rule_en: "I have a family.", rule_vi: "Tôi có một gia đình." }
+      { type: "rule", icon: "1️⃣", rule_en: "I can sing. I can draw.", example_en: "I can sing a song. I can draw a picture. She can dance.", example_vi: "Tôi có thể hát một bài. Tôi có thể vẽ tranh. Cô ấy có thể nhảy.", rule_vi: "Tôi có thể hát. Tôi có thể vẽ." },
+      { type: "rule", icon: "2️⃣", rule_en: "My name is Emma.", example_en: "My name is Emma. His name is Tom. Her name is Lily.", example_vi: "Tên tôi là Emma. Tên anh ấy là Tom. Tên cô ấy là Lily.", rule_vi: "Tên tôi là Emma." },
+      { type: "rule", icon: "3️⃣", rule_en: "I have a family.", example_en: "I have a family. I have a mother and a father. I have a bag.", example_vi: "Tôi có một gia đình. Tôi có bố và mẹ. Tôi có một cái túi.", rule_vi: "Tôi có một gia đình." }
     ]
   },
   exercises: [

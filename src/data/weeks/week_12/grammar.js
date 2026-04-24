@@ -3,10 +3,10 @@ export default {
     title_en: "I can / I can't (Abilities)",
     title_vi: "Tôi có thể / Tôi không thể (Khả năng)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'I can' to talk about abilities: I can swim.", rule_vi: "Dùng 'I can' để nói về khả năng: Tôi có thể bơi." },
-      { type: "rule", icon: "2️⃣", rule_en: "Use 'I can't' (cannot) for things you cannot do: I can't fly.", rule_vi: "Dùng 'I can't' cho việc không thể làm: Tôi không thể bay." },
-      { type: "rule", icon: "3️⃣", rule_en: "Use 'Can you...?' to ask about abilities: Can you dance?", rule_vi: "Dùng 'Can you...?' để hỏi về khả năng: Bạn có thể nhảy không?" },
-      { type: "rule", icon: "4️⃣", rule_en: "After 'can', always use base verb (not -ing or -s): He can run.", rule_vi: "Sau 'can', luôn dùng động từ gốc: Anh ấy có thể chạy." }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'I can' to talk about abilities: I can swim.", example_en: "I can swim. She can sing. He can draw.", example_vi: "Tôi có thể bơi. Cô ấy có thể hát. Anh ấy có thể vẽ.", rule_vi: "Dùng 'I can' để nói về khả năng: Tôi có thể bơi." },
+      { type: "rule", icon: "2️⃣", rule_en: "Use 'I can't' (cannot) for things you cannot do: I can't fly.", example_en: "I can't fly. She can't run fast. He can't cook.", example_vi: "Tôi không thể bay. Cô ấy không thể chạy nhanh. Anh ấy không thể nấu ăn.", rule_vi: "Dùng 'I can't' cho việc không thể làm: Tôi không thể bay." },
+      { type: "rule", icon: "3️⃣", rule_en: "Use 'Can you...?' to ask about abilities: Can you dance?", example_en: "Can you dance? Can she play the piano? Can he cook?", example_vi: "Bạn có thể nhảy không? Cô ấy có thể chơi đàn piano không?", rule_vi: "Dùng 'Can you...?' để hỏi về khả năng: Bạn có thể nhảy không?" },
+      { type: "rule", icon: "4️⃣", rule_en: "After 'can', always use base verb (not -ing or -s): He can run.", example_en: "He can run (✓). He can runs (✗). She can singing (✗).", example_vi: "He can run (✓). He can runs (✗). She can singing (✗).", rule_vi: "Sau 'can', luôn dùng động từ gốc: Anh ấy có thể chạy." }
     ]
   },
   exercises: [

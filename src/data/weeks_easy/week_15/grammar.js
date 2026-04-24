@@ -3,10 +3,10 @@ export default {
     title_en: "Present Continuous (am/is/are + V-ing)",
     title_vi: "Thì hiện tại tiếp diễn (am/is/are + V-ing)",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "I am running: I am running in the park.", rule_vi: "I am running: Tôi đang chạy trong công viên." },
-      { type: "rule", icon: "2️⃣", rule_en: "He/She is playing: She is playing games.", rule_vi: "He/She is playing: Cô ấy đang chơi trò chơi." },
-      { type: "rule", icon: "3️⃣", rule_en: "They are eating: They are eating snacks.", rule_vi: "They are eating: Họ đang ăn nhẹ." },
-      { type: "rule", icon: "4️⃣", rule_en: "Use for actions happening NOW.", rule_vi: "Dùng cho hành động đang xảy ra BÂY GIỜ." }
+      { type: "rule", icon: "1️⃣", rule_en: "I am running: I am running in the park.", example_en: "I am running in the park. I am eating lunch now.", example_vi: "Tôi đang chạy trong công viên. Tôi đang ăn trưa bây giờ.", rule_vi: "I am running: Tôi đang chạy trong công viên." },
+      { type: "rule", icon: "2️⃣", rule_en: "He/She is playing: She is playing games.", example_en: "She is playing games. He is reading a book.", example_vi: "Cô ấy đang chơi game. Anh ấy đang đọc sách.", rule_vi: "He/She is playing: Cô ấy đang chơi trò chơi." },
+      { type: "rule", icon: "3️⃣", rule_en: "They are eating: They are eating snacks.", example_en: "They are eating snacks. We are watching a movie.", example_vi: "Họ đang ăn vặt. Chúng tôi đang xem phim.", rule_vi: "They are eating: Họ đang ăn nhẹ." },
+      { type: "rule", icon: "4️⃣", rule_en: "Use for actions happening NOW.", example_en: "Look! She is dancing now. Listen! He is singing!", example_vi: "Nhìn kìa! Cô ấy đang nhảy. Nghe kìa! Anh ấy đang hát!", rule_vi: "Dùng cho hành động đang xảy ra BÂY GIỜ." }
     ]
   },
   exercises: [

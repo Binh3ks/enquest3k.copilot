@@ -3,9 +3,9 @@ export default {
     title_en: "It is a [adjective] [noun]",
     title_vi: "Cấu trúc: It is a [tính từ] [danh từ]",
     rules: [
-      { type: "rule", icon: "1️⃣", rule_en: "Use 'It is a' then adjective then noun", rule_vi: "Dùng 'It is a' rồi tính từ rồi danh từ" },
-      { type: "rule", icon: "2️⃣", rule_en: "Adjective describes the noun: noisy city, tall building", rule_vi: "Tính từ miêu tả danh từ: noisy city, tall building" },
-      { type: "rule", icon: "3️⃣", rule_en: "Adjective comes BEFORE the noun", rule_vi: "Tính từ đứng TRƯỚC danh từ" }
+      { type: "rule", icon: "1️⃣", rule_en: "Use 'It is a' then adjective then noun", example_en: "It is a big city. It is a small village.", example_vi: "Đó là một thành phố lớn. Đó là một ngôi làng nhỏ.", rule_vi: "Dùng 'It is a' rồi tính từ rồi danh từ" },
+      { type: "rule", icon: "2️⃣", rule_en: "Adjective describes the noun: noisy city, tall building", example_en: "It is a noisy city. It is a tall building.", example_vi: "Đó là một thành phố ồn ào. Đó là một tòa nhà cao.", rule_vi: "Tính từ miêu tả danh từ: noisy city, tall building" },
+      { type: "rule", icon: "3️⃣", rule_en: "Adjective comes BEFORE the noun", example_en: "a clean park (✓). a park clean (✗). a quiet street (✓).", example_vi: "a clean park (✓). a park clean (✗). a quiet street (✓).", rule_vi: "Tính từ đứng TRƯỚC danh từ" }
     ]
   },
   exercises: [
