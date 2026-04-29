@@ -1,6 +1,6 @@
 export default {
   title: "Shadowing: My Forest Walk",
-  image_url: "/images/week31/read_cover_w31.jpg",
+  image_url: null,
   audio_url: "/audio/week31/shadowing_main_easy.mp3",
   sentences: [
     { id: 1, text: "Last Saturday, Luna went to the forest with her dad.", audio_url: "/audio/week31/shadowing_s1_easy.mp3" },

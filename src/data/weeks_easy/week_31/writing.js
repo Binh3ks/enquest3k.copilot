@@ -8,13 +8,13 @@ export default {
   topic_talk_prompt: "Tell me about a walk or trip outside. What did you see, hear, feel, or smell? Use saw, heard, felt, or smelt.",
   min_words: 30,
   sentence_frames: [
-    { id: 1, frame: "I went to the ___ with ___.", example: "I went to the forest with my dad.", audio_url: "/audio/week31/writing_f1_easy.mp3" },
-    { id: 2, frame: "I saw a ___ ___.", example: "I saw a beautiful bird.", audio_url: "/audio/week31/writing_f2_easy.mp3" },
-    { id: 3, frame: "I heard a ___ sound.", example: "I heard a loud sound.", audio_url: "/audio/week31/writing_f3_easy.mp3" },
-    { id: 4, frame: "I felt the ___ ___.", example: "I felt the soft grass.", audio_url: "/audio/week31/writing_f4_easy.mp3" },
-    { id: 5, frame: "I smelt a ___ flower.", example: "I smelt a beautiful flower.", audio_url: "/audio/week31/writing_f5_easy.mp3" },
-    { id: 6, frame: "The ___ felt ___.", example: "The rock felt hard.", audio_url: "/audio/week31/writing_f6_easy.mp3" },
-    { id: 7, frame: "A cool ___ came through the trees.", example: "A cool breeze came through the trees.", audio_url: "/audio/week31/writing_f7_easy.mp3" },
-    { id: 8, frame: "I felt ___ because the forest was ___.", example: "I felt wonder because the forest was beautiful.", audio_url: "/audio/week31/writing_f8_easy.mp3" }
+    { id: 1, template: "I went to the ___ with ___.", example: "I went to the forest with my dad.", audio_url: "/audio/week31/writing_f1_easy.mp3" },
+    { id: 2, template: "I saw a ___ ___.", example: "I saw a beautiful bird.", audio_url: "/audio/week31/writing_f2_easy.mp3" },
+    { id: 3, template: "I heard a ___ sound.", example: "I heard a loud sound.", audio_url: "/audio/week31/writing_f3_easy.mp3" },
+    { id: 4, template: "I felt the ___ ___.", example: "I felt the soft grass.", audio_url: "/audio/week31/writing_f4_easy.mp3" },
+    { id: 5, template: "I smelt a ___ flower.", example: "I smelt a beautiful flower.", audio_url: "/audio/week31/writing_f5_easy.mp3" },
+    { id: 6, template: "The ___ felt ___.", example: "The rock felt hard.", audio_url: "/audio/week31/writing_f6_easy.mp3" },
+    { id: 7, template: "A cool ___ came through the trees.", example: "A cool breeze came through the trees.", audio_url: "/audio/week31/writing_f7_easy.mp3" },
+    { id: 8, template: "I felt ___ because the forest was ___.", example: "I felt wonder because the forest was beautiful.", audio_url: "/audio/week31/writing_f8_easy.mp3" }
   ]
 };
