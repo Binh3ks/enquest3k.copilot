@@ -23,17 +23,21 @@ router.post('/request', async (req, res) => {
 
   try {
     // Find user by email
+    console.log(`🔍 [Password Reset] Request for email: ${email}`);
     const userResult = await db.query(
       'SELECT id, username, email FROM users WHERE email = $1',
       [email]
     );
 
     if (userResult.rows.length === 0) {
+      console.log(`⚠️  [Password Reset] Email not found: ${email}`);
       // Security: Don't reveal if email exists
       return res.json({ message: 'If your email is registered, you will receive an OTP shortly.' });
     }
 
     const user = userResult.rows[0];
+    console.log(`✅ [Password Reset] User found - ID: ${user.id}, Email: ${user.email}`);
+    
     const otp = generateOTP();
     const expiresAt = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes
 
@@ -45,6 +49,7 @@ router.post('/request', async (req, res) => {
     );
 
     // Send OTP email
+    console.log(`📧 [Password Reset] Sending OTP to: ${user.email}`);
     await sendPasswordResetOTP(user.email, otp);
 
     res.json({ 
