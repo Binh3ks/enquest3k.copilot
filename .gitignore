@@ -78,3 +78,6 @@ Icon?
 # BFG Repo Cleaner reports (local cleanup logs)
 ..bfg-report/
 API keys.txt
+.frontend.pid
+.server.pid
+_update_*.py
