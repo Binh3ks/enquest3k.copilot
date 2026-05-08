@@ -10,8 +10,9 @@ export default {
   keywords: ["saw", "heard", "felt", "smelt", "forest", "creature", "rustling", "fragrant", "damp", "echo", "sensation", "texture", "vivid", "distant", "breeze", "startled", "whisper"],
   sentence_frames: [
     {"template": "Last ___, I went to ___ with ___."},
-    {"template": "I saw ___, heard ___, and felt ___."}, 
-    {"template": "I smelt ___ and it smelt ___."},
+    {"template": "I saw ___ and heard ___."},
+    {"template": "I felt ___ and smelt ___."},
+    {"template": "It smelt ___ and felt ___."},
     {"template": "The most amazing moment was when ___."}
   ],
   hints: {
@@ -22,22 +23,22 @@ export default {
       words: [
         {word: "saw", vi: "đã thấy", distractor: false},
         {word: "heard", vi: "đã nghe", distractor: false},
+        {word: "see", vi: "thấy", distractor: true},
         {word: "felt", vi: "đã cảm nhận", distractor: false},
         {word: "smelt", vi: "đã ngửi thấy", distractor: false},
+        {word: "hear", vi: "nghe", distractor: true},
         {word: "forest", vi: "rừng", distractor: false},
         {word: "creature", vi: "sinh vật", distractor: false},
+        {word: "feel", vi: "cảm nhận", distractor: true},
         {word: "rustling", vi: "tiếng xào xạc", distractor: false},
         {word: "fragrant", vi: "thơm", distractor: false},
+        {word: "smell", vi: "ngửi", distractor: true},
         {word: "damp", vi: "ẩm ướt", distractor: false},
         {word: "texture", vi: "kết cấu", distractor: false},
         {word: "vivid", vi: "sống động", distractor: false},
         {word: "breeze", vi: "gió nhẹ", distractor: false},
         {word: "distant", vi: "xa xôi", distractor: false},
-        {word: "whisper", vi: "tiếng thì thầm", distractor: false},
-        {word: "see", vi: "thấy (sai dạng)", distractor: true},
-        {word: "hear", vi: "nghe (sai dạng)", distractor: true},
-        {word: "feel", vi: "cảm nhận (sai dạng)", distractor: true},
-        {word: "smell", vi: "ngửi (sai dạng)", distractor: true}
+        {word: "whisper", vi: "tiếng thì thầm", distractor: false}
       ]
     },
     model_paragraph: {

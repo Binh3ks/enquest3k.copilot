@@ -8,7 +8,7 @@ export default {
   prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn! Có những nhân vật nào? Thỏ đã làm gì? Rùa đã làm gì? Ai thắng và tại sao? Bài học là gì?",
   keywords: ["tortoise", "hare", "race", "boast", "boasted", "ran", "fast", "slept", "nap", "steady", "determined", "won", "moral", "persevere", "cheer", "cheered", "finish", "first", "then", "after that", "finally", "confident", "overtake"],
   topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
-  sentence_frames: [{"template":"Once upon a time, a ___ and a ___ had a race."},{"template":"The hare ran very fast, but then he ___."},{"template":"While the hare was sleeping, the tortoise ___."},{"template":"In the end, the ___ won because ___."}],
+  sentence_frames: [{"template":"Once upon a time, a ___ and a ___ had a race."},{"template":"The hare ran very fast, but then he ___."},{"template":"While the hare was sleeping, the tortoise ___."},{"template":"When the hare woke up, it was too ___!"},{"template":"In the end, the ___ won because ___."}],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need words? Click here",
@@ -17,21 +17,18 @@ export default {
       words: [
         {word: "tortoise", vi: "con rùa", distractor: false},
         {word: "hare", vi: "con thỏ", distractor: false},
+        {word: "run", vi: "chạy", distractor: true},
         {word: "race", vi: "cuộc đua", distractor: false},
         {word: "boasted", vi: "khoe khoang", distractor: false},
         {word: "ran", vi: "đã chạy", distractor: false},
+        {word: "sleep", vi: "ngủ", distractor: true},
         {word: "slept", vi: "đã ngủ", distractor: false},
         {word: "won", vi: "đã thắng", distractor: false},
+        {word: "win", vi: "thắng", distractor: true},
         {word: "steady", vi: "đều đặn", distractor: false},
         {word: "determined", vi: "quyết tâm", distractor: false},
         {word: "moral", vi: "bài học", distractor: false},
-        {word: "finish", vi: "đích", distractor: false},
-        {word: "confident", vi: "tự tin", distractor: false},
-        {word: "persevere", vi: "kiên trì", distractor: false},
-        {word: "boast", vi: "khoe (sai dạng)", distractor: true},
-        {word: "run", vi: "chạy (sai dạng)", distractor: true},
-        {word: "sleep", vi: "ngủ (sai dạng)", distractor: true},
-        {word: "win", vi: "thắng (sai dạng)", distractor: true}
+        {word: "finish", vi: "đích", distractor: false}
       ]
     },
     model_paragraph: {

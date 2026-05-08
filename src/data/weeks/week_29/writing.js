@@ -7,10 +7,7 @@ export default {
   prompt_vi: "Viết về một chuyến đi bạn đã thực hiện! Bạn đi đâu? Đi bằng gì — xe hơi, xe bus hay máy bay? Ai đi cùng? Bạn thấy và làm gì? Kỷ niệm đẹp nhất là gì?",
   topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go? How did you get there? What did you see or do?",
   keywords: ["went", "ran", "came", "flew", "journey", "airport", "ticket", "luggage", "destination", "adventure", "passenger", "departure", "arrival"],
-  sentence_frames: [{"template":"Last ___, I went to ___ by ___."},
-{"template":"The most exciting moment was ___."},
-{"template":"I felt ___ because ___."},
-{"template":"This trip was special because ___."}],
+  sentence_frames: [{"template":"Last ___, I went to ___ by ___."},{"template":"When I arrived, I saw ___ and ___."},{"template":"The most exciting moment was ___."},{"template":"I felt ___ because ___."},{"template":"This trip was special because ___."}],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need words? Click here",
@@ -19,17 +16,17 @@ export default {
       words: [
         {word: "went", vi: "đã đi", distractor: false},
         {word: "ran", vi: "đã chạy", distractor: false},
+        {word: "go", vi: "đi", distractor: true},
         {word: "came", vi: "đã đến", distractor: false},
         {word: "flew", vi: "đã bay", distractor: false},
         {word: "journey", vi: "hành trình", distractor: false},
+        {word: "run", vi: "chạy", distractor: true},
         {word: "airport", vi: "sân bay", distractor: false},
         {word: "ticket", vi: "vé", distractor: false},
+        {word: "fly", vi: "bay", distractor: true},
         {word: "luggage", vi: "hành lý", distractor: false},
-        {word: "departure", vi: "khởi hành", distractor: false},
-        {word: "arrival", vi: "đến nơi", distractor: false},
-        {word: "fly", vi: "bay (sai dạng)", distractor: true},
-        {word: "go", vi: "đi (sai dạng)", distractor: true},
-        {word: "run", vi: "chạy (sai dạng)", distractor: true}
+        {word: "destination", vi: "điểm đến", distractor: false},
+        {word: "adventure", vi: "phiêu lưu", distractor: false}
       ]
     },
     model_paragraph: {
