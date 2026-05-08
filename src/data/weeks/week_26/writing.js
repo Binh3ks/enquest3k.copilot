@@ -24,6 +24,7 @@ export default {
       label_en: "💡 Need words? Click here",
       label_vi: "💡 Cần từ? Bấm đây",
       show_by_default: false,
+      scaffolding_stage: "low", // W26+: fully shuffled phrases/clauses
       words: [
         {word: "My name is Max and I am nine years old", vi: "Tên tôi là Max và tôi 9 tuổi", distractor: false},
         {word: "My name is Luna and I am eight years old", vi: "Tên tôi là Luna và tôi 8 tuổi", distractor: false},

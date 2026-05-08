@@ -25,6 +25,14 @@ export default {
       label_en: "💡 Need help? Click for word bank",
       label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
       show_by_default: false,
+      scaffolding_stage: "low",
+      cumulative_review_words: [
+        {word: "seed", vi: "hạt giống (ôn W27)", from_week: 27},
+        {word: "grows", vi: "lớn (ôn W27)", from_week: 27},
+        {word: "water", vi: "nước (ôn W27)", from_week: 27},
+        {word: "soil", vi: "đất (ôn W27)", from_week: 27},
+        {word: "sprout", vi: "mầm cây (ôn W27)", from_week: 27}
+      ],
       words: [
         {word: "tortoise", vi: "con rùa", distractor: false},
         {word: "hare", vi: "con thỏ", distractor: false},

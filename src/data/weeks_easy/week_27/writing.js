@@ -25,6 +25,14 @@ export default {
       label_en: "💡 Need help? Click for word bank",
       label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
       show_by_default: false,
+      scaffolding_stage: "low", // W26+: fully shuffled
+      cumulative_review_words: [
+        {word: "walked", vi: "đã đi bộ (ôn W26)", from_week: 26},
+        {word: "played", vi: "đã chơi (ôn W26)", from_week: 26},
+        {word: "watched", vi: "đã xem (ôn W26)", from_week: 26},
+        {word: "helped", vi: "đã giúp (ôn W26)", from_week: 26},
+        {word: "happy", vi: "vui (ôn W26)", from_week: 26}
+      ],
       words: [
         {word: "seed", vi: "hạt giống", distractor: false},
         {word: "grow", vi: "lớn (sai dạng)", distractor: true},
