@@ -9,4 +9,40 @@ export default {
   keywords: ["was", "were", "baby", "small", "cute", "photo", "album", "memory", "grow", "kindergarten"],
   topic_talk_prompt: "Tell me about something you did when you were small.",
   sentence_frames: [{"template":"In this photo, I was ___ years old."},{"template":"I was ___ and ___."},{"template":"I was at ___ with ___."},{"template":"My favourite thing to do was ___."},{"template":"I was different because ___."},{"template":"Now I am ___, but then I was ___."}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium-low",
+      words: [
+        {word: "=== AGE & ADJECTIVES (grouped) ===", vi: "", distractor: false},
+        {word: "two", vi: "2 tuổi", distractor: false},
+        {word: "three", vi: "3 tuổi", distractor: false},
+        {word: "five", vi: "5 tuổi", distractor: false},
+        {word: "small", vi: "nhỏ", distractor: false},
+        {word: "cute", vi: "đáng yêu", distractor: false},
+        {word: "happy", vi: "vui", distractor: false},
+        {word: "shy", vi: "nhút nhát", distractor: false},
+        {word: "noisy", vi: "ồn ào", distractor: false},
+        {word: "quiet", vi: "yên tĩnh", distractor: false},
+        {word: "tall", vi: "cao", distractor: false},
+        {word: "=== OTHER WORDS (shuffled) ===", vi: "", distractor: false},
+        {word: "kindergarten", vi: "mẫu giáo", distractor: false},
+        {word: "home", vi: "nhà", distractor: false},
+        {word: "the park", vi: "công viên", distractor: false},
+        {word: "my mom", vi: "mẹ tôi", distractor: false},
+        {word: "my dad", vi: "bố tôi", distractor: false},
+        {word: "my grandma", vi: "bà tôi", distractor: false},
+        {word: "playing", vi: "chơi", distractor: false},
+        {word: "running", vi: "chạy", distractor: false},
+        {word: "eating", vi: "ăn", distractor: false},
+        {word: "big", vi: "to", distractor: false},
+        {word: "smart", vi: "thông minh", distractor: false},
+        {word: "played", vi: "chơi (sai dạng)", distractor: true},
+        {word: "smalls", vi: "nhỏ (sai dạng)", distractor: true}
+      ]
+    }
+  }
 };

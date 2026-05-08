@@ -9,4 +9,39 @@ export default {
   keywords: ["I can", "I can't", "sing", "dance", "run", "jump", "swim", "draw"],
   topic_talk_prompt: "Tell me about something you are good at. What is your talent?",
   sentence_frames: [{"template":"I can ___ and ___."},{"template":"I can't ___ yet, but I want to learn."},{"template":"My favourite talent is ___ because ___."},{"template":"I practise ___ every ___."},{"template":"My friends say I am good at ___."},{"template":"When I perform, I feel ___."}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {word: "=== VERBS (Động từ) ===", vi: "", distractor: false},
+        {word: "sing", vi: "hát", distractor: false},
+        {word: "dance", vi: "nhảy", distractor: false},
+        {word: "draw", vi: "vẽ", distractor: false},
+        {word: "run", vi: "chạy", distractor: false},
+        {word: "jump", vi: "nhảy cao", distractor: false},
+        {word: "swim", vi: "bơi", distractor: false},
+        {word: "play piano", vi: "chơi piano", distractor: false},
+        {word: "play guitar", vi: "chơi guitar", distractor: false},
+        {word: "practise", vi: "luyện tập", distractor: false},
+        {word: "perform", vi: "biểu diễn", distractor: false},
+        {word: "=== NOUNS (Danh từ) ===", vi: "", distractor: false},
+        {word: "singing", vi: "hát", distractor: false},
+        {word: "dancing", vi: "nhảy", distractor: false},
+        {word: "drawing", vi: "vẽ", distractor: false},
+        {word: "day", vi: "ngày", distractor: false},
+        {word: "weekend", vi: "cuối tuần", distractor: false},
+        {word: "=== ADJECTIVES (Tính từ) ===", vi: "", distractor: false},
+        {word: "happy", vi: "vui", distractor: false},
+        {word: "proud", vi: "tự hào", distractor: false},
+        {word: "nervous", vi: "hồi hộp", distractor: false},
+        {word: "excited", vi: "hào hứng", distractor: false},
+        {word: "proudly", vi: "tự hào (sai loại từ)", distractor: true},
+        {word: "sang", vi: "hát (sai dạng)", distractor: true}
+      ]
+    }
+  }
 };

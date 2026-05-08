@@ -9,4 +9,41 @@ export default {
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about what you did yesterday. What happened?",
   sentence_frames: [{"template":"Yesterday, I woke up at ___ and ___."},{"template":"In the morning, I ___ed ___."},{"template":"I went to ___ and ___ed with ___."},{"template":"I also ___ed ___ and ___."},{"template":"In the evening, I ___ed ___."},{"template":"I felt ___ because ___."},{"template":"The best part of my day was ___."}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium-low",
+      words: [
+        {word: "=== PAST VERBS (grouped) ===", vi: "", distractor: false},
+        {word: "walked", vi: "đã đi bộ", distractor: false},
+        {word: "talked", vi: "đã nói chuyện", distractor: false},
+        {word: "played", vi: "đã chơi", distractor: false},
+        {word: "helped", vi: "đã giúp", distractor: false},
+        {word: "watched", vi: "đã xem", distractor: false},
+        {word: "listened", vi: "đã nghe", distractor: false},
+        {word: "cleaned", vi: "đã dọn dẹp", distractor: false},
+        {word: "cooked", vi: "đã nấu", distractor: false},
+        {word: "finished", vi: "đã hoàn thành", distractor: false},
+        {word: "=== OTHER WORDS (shuffled) ===", vi: "", distractor: false},
+        {word: "6 o'clock", vi: "6 giờ", distractor: false},
+        {word: "7 o'clock", vi: "7 giờ", distractor: false},
+        {word: "school", vi: "trường", distractor: false},
+        {word: "the park", vi: "công viên", distractor: false},
+        {word: "my homework", vi: "bài tập", distractor: false},
+        {word: "dinner", vi: "bữa tối", distractor: false},
+        {word: "TV", vi: "TV", distractor: false},
+        {word: "my friends", vi: "bạn tôi", distractor: false},
+        {word: "my mom", vi: "mẹ tôi", distractor: false},
+        {word: "happy", vi: "vui", distractor: false},
+        {word: "tired", vi: "mệt", distractor: false},
+        {word: "excited", vi: "hào hứng", distractor: false},
+        {word: "playing with my friends", vi: "chơi với bạn", distractor: false},
+        {word: "walk", vi: "đi bộ (sai dạng)", distractor: true},
+        {word: "helps", vi: "giúp (sai dạng)", distractor: true}
+      ]
+    }
+  }
 };

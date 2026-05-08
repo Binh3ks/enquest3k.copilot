@@ -9,4 +9,44 @@ export default {
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about something interesting that happened in the past.",
   sentence_frames: [{"template":"Did you ___ yesterday? Yes, I did. I ___ed ___."},{"template":"Did you ___ last night? No, I didn't. I ___ed ___ instead."},{"template":"Did you ___ with ___? Yes, I did! It was ___."},{"template":"Did you eat ___ for breakfast? Yes/No, I ___."},{"template":"Did you go to ___? No, I stayed at ___ and ___."},{"template":"Did you feel ___ yesterday? I felt ___ because ___."},{"template":"It was a ___ day because ___!"}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium-low",
+      words: [
+        {word: "=== PAST VERBS (grouped) ===", vi: "", distractor: false},
+        {word: "play", vi: "chơi", distractor: false},
+        {word: "watch", vi: "xem", distractor: false},
+        {word: "help", vi: "giúp", distractor: false},
+        {word: "walk", vi: "đi bộ", distractor: false},
+        {word: "talk", vi: "nói chuyện", distractor: false},
+        {word: "listen", vi: "nghe", distractor: false},
+        {word: "=== COMPLETE ANSWERS (shuffled) ===", vi: "", distractor: false},
+        {word: "played", vi: "đã chơi", distractor: false},
+        {word: "watched", vi: "đã xem", distractor: false},
+        {word: "helped", vi: "đã giúp", distractor: false},
+        {word: "walked", vi: "đã đi bộ", distractor: false},
+        {word: "read a book", vi: "đã đọc sách", distractor: false},
+        {word: "stayed home", vi: "đã ở nhà", distractor: false},
+        {word: "did my homework", vi: "đã làm bài", distractor: false},
+        {word: "rice", vi: "cơm", distractor: false},
+        {word: "bread", vi: "bánh mì", distractor: false},
+        {word: "noodles", vi: "mì", distractor: false},
+        {word: "did", vi: "có", distractor: false},
+        {word: "didn't", vi: "không", distractor: false},
+        {word: "school", vi: "trường", distractor: false},
+        {word: "the park", vi: "công viên", distractor: false},
+        {word: "home", vi: "nhà", distractor: false},
+        {word: "happy", vi: "vui", distractor: false},
+        {word: "tired", vi: "mệt", distractor: false},
+        {word: "great", vi: "tuyệt vời", distractor: false},
+        {word: "boring", vi: "nhàm chán", distractor: false},
+        {word: "plays", vi: "chơi (sai dạng)", distractor: true},
+        {word: "helping", vi: "giúp (sai dạng)", distractor: true}
+      ]
+    }
+  }
 };

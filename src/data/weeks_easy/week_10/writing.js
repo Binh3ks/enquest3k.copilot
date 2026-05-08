@@ -9,4 +9,43 @@ export default {
   keywords: ["city", "farm", "quiet", "clean", "but", "cow", "chicken", "animals", "field", "tree"],
   topic_talk_prompt: "Tell me about animals on a farm. What do they do?",
   sentence_frames: [{"template":"A city has ___, but a farm has ___."},{"template":"In a city, you can ___, but on a farm, you can ___."},{"template":"A city is ___, but a farm is ___."},{"template":"People in a city ___, but people on a farm ___."},{"template":"I prefer ___ because ___."}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {word: "=== NOUNS (Danh từ) ===", vi: "", distractor: false},
+        {word: "buildings", vi: "tòa nhà", distractor: false},
+        {word: "cars", vi: "ô tô", distractor: false},
+        {word: "shops", vi: "cửa hàng", distractor: false},
+        {word: "animals", vi: "động vật", distractor: false},
+        {word: "cows", vi: "bò", distractor: false},
+        {word: "chickens", vi: "gà", distractor: false},
+        {word: "fields", vi: "cánh đồng", distractor: false},
+        {word: "trees", vi: "cây", distractor: false},
+        {word: "city", vi: "thành phố", distractor: false},
+        {word: "farm", vi: "nông trại", distractor: false},
+        {word: "=== ADJECTIVES (Tính từ) ===", vi: "", distractor: false},
+        {word: "noisy", vi: "ồn ào", distractor: false},
+        {word: "quiet", vi: "yên tĩnh", distractor: false},
+        {word: "dirty", vi: "bẩn", distractor: false},
+        {word: "clean", vi: "sạch", distractor: false},
+        {word: "busy", vi: "bận rộn", distractor: false},
+        {word: "peaceful", vi: "yên bình", distractor: false},
+        {word: "green", vi: "xanh", distractor: false},
+        {word: "=== VERBS (Động từ) ===", vi: "", distractor: false},
+        {word: "shop", vi: "mua sắm", distractor: false},
+        {word: "work", vi: "làm việc", distractor: false},
+        {word: "drive", vi: "lái xe", distractor: false},
+        {word: "plant", vi: "trồng", distractor: false},
+        {word: "feed animals", vi: "cho ăn", distractor: false},
+        {word: "play outside", vi: "chơi ngoài trời", distractor: false},
+        {word: "quietly", vi: "yên tĩnh (sai loại từ)", distractor: true},
+        {word: "farming", vi: "nông trại (sai dạng)", distractor: true}
+      ]
+    }
+  }
 };

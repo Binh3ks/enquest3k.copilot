@@ -9,4 +9,42 @@ export default {
   keywords: ["city", "street", "noisy", "busy", "tall", "modern", "car", "bus", "building", "traffic"],
   topic_talk_prompt: "Tell me about a city. What sounds and sights are there?",
   sentence_frames: [{"template":"My city is called ___. It is a ___ city."},{"template":"There is a ___ and a ___ near my house."},{"template":"I can see ___ and ___ on the street."},{"template":"In my city, people like to ___."},{"template":"I love my city because ___."}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {word: "=== NOUNS (Danh từ) ===", vi: "", distractor: false},
+        {word: "Hanoi", vi: "Hà Nội", distractor: false},
+        {word: "Saigon", vi: "Sài Gòn", distractor: false},
+        {word: "city", vi: "thành phố", distractor: false},
+        {word: "building", vi: "tòa nhà", distractor: false},
+        {word: "mall", vi: "trung tâm thương mại", distractor: false},
+        {word: "park", vi: "công viên", distractor: false},
+        {word: "hospital", vi: "bệnh viện", distractor: false},
+        {word: "cars", vi: "ô tô", distractor: false},
+        {word: "buses", vi: "xe buýt", distractor: false},
+        {word: "motorcycles", vi: "xe máy", distractor: false},
+        {word: "people", vi: "người", distractor: false},
+        {word: "=== ADJECTIVES (Tính từ) ===", vi: "", distractor: false},
+        {word: "big", vi: "to", distractor: false},
+        {word: "small", vi: "nhỏ", distractor: false},
+        {word: "busy", vi: "bận rộn", distractor: false},
+        {word: "noisy", vi: "ồn ào", distractor: false},
+        {word: "modern", vi: "hiện đại", distractor: false},
+        {word: "tall", vi: "cao", distractor: false},
+        {word: "exciting", vi: "thú vị", distractor: false},
+        {word: "=== VERBS (Động từ) ===", vi: "", distractor: false},
+        {word: "shop", vi: "mua sắm", distractor: false},
+        {word: "visit", vi: "thăm", distractor: false},
+        {word: "walk", vi: "đi bộ", distractor: false},
+        {word: "play", vi: "chơi", distractor: false},
+        {word: "shopping", vi: "mua sắm (sai dạng)", distractor: true},
+        {word: "modernly", vi: "hiện đại (sai loại từ)", distractor: true}
+      ]
+    }
+  }
 };

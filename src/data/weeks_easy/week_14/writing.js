@@ -9,4 +9,39 @@ export default {
   keywords: ["show", "tell", "name", "family", "can", "help", "draw", "sing", "play", "friend"],
   topic_talk_prompt: "Tell me about your favourite things. What do you like most?",
   sentence_frames: [{"template":"Today I am presenting about ___."},{"template":"My topic is important because ___."},{"template":"I can ___ and I can also ___."},{"template":"I like ___ and my favourite ___ is ___."},{"template":"One interesting fact about me is ___."},{"template":"When I present, I feel ___."}],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {word: "=== TOPICS (Chủ đề) ===", vi: "", distractor: false},
+        {word: "my family", vi: "gia đình tôi", distractor: false},
+        {word: "my hobbies", vi: "sở thích tôi", distractor: false},
+        {word: "my talents", vi: "tài năng tôi", distractor: false},
+        {word: "my school", vi: "trường tôi", distractor: false},
+        {word: "=== VERBS (Động từ) ===", vi: "", distractor: false},
+        {word: "draw", vi: "vẽ", distractor: false},
+        {word: "sing", vi: "hát", distractor: false},
+        {word: "play", vi: "chơi", distractor: false},
+        {word: "dance", vi: "nhảy", distractor: false},
+        {word: "read", vi: "đọc", distractor: false},
+        {word: "cook", vi: "nấu ăn", distractor: false},
+        {word: "=== NOUNS (Danh từ) ===", vi: "", distractor: false},
+        {word: "sport", vi: "thể thao", distractor: false},
+        {word: "food", vi: "món ăn", distractor: false},
+        {word: "subject", vi: "môn học", distractor: false},
+        {word: "color", vi: "màu sắc", distractor: false},
+        {word: "=== ADJECTIVES (Tính từ) ===", vi: "", distractor: false},
+        {word: "happy", vi: "vui", distractor: false},
+        {word: "proud", vi: "tự hào", distractor: false},
+        {word: "nervous", vi: "hồi hộp", distractor: false},
+        {word: "confident", vi: "tự tin", distractor: false},
+        {word: "hobby", vi: "sở thích (sai loại từ)", distractor: true},
+        {word: "presenting", vi: "thuyết trình (sai dạng)", distractor: true}
+      ]
+    }
+  }
 };
