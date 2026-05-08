@@ -10,7 +10,7 @@ export default {
   sentence_frames: [{"template":"Panel 1: On Saturday morning, I ___ed ___."},
 {"template":"Panel 2: Then I ___ed ___ and it was ___."},
 {"template":"Panel 3: Suddenly, ___ happened!"},
-{"template":"Panel 4: At the end, I felt ___."}],
+{"template":"Panel 4: At the end, I felt ___."},{"template":"It was a ___ Saturday because ___."}],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need words? Click here",
@@ -19,17 +19,17 @@ export default {
       words: [
         {word: "visited", vi: "đã thăm", distractor: false},
         {word: "played", vi: "đã chơi", distractor: false},
+        {word: "play", vi: "chơi", distractor: true},
         {word: "watched", vi: "đã xem", distractor: false},
         {word: "walked", vi: "đã đi bộ", distractor: false},
+        {word: "watch", vi: "xem", distractor: true},
         {word: "returned", vi: "đã về", distractor: false},
         {word: "was", vi: "đã là/ở", distractor: false},
-        {word: "were", vi: "đã là/ở (nhiều người)", distractor: false},
+        {word: "were", vi: "đã là/ở", distractor: false},
+        {word: "visit", vi: "thăm", distractor: true},
         {word: "first", vi: "đầu tiên", distractor: false},
         {word: "next", vi: "tiếp theo", distractor: false},
-        {word: "finally", vi: "cuối cùng", distractor: false},
-        {word: "visit", vi: "thăm (sai dạng)", distractor: true},
-        {word: "play", vi: "chơi (sai dạng)", distractor: true},
-        {word: "watch", vi: "xem (sai dạng)", distractor: true}
+        {word: "finally", vi: "cuối cùng", distractor: false}
       ]
     },
     model_paragraph: {

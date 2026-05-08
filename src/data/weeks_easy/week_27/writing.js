@@ -8,7 +8,7 @@ export default {
   prompt_vi: "Viết về cách một hạt giống lớn thành cây! Hạt giống bắt đầu từ đâu? Nó cần gì — nước, ánh nắng, đất? Điều gì xảy ra trước, sau đó là gì? Cây trông như thế nào cuối cùng?",
   keywords: ["seed", "soil", "root", "stem", "leaf", "flower", "sunlight", "water", "grows", "needs", "absorbs", "sprout", "first", "next", "after that", "finally", "plant"],
   topic_talk_prompt: "Tell me about a plant or animal you have watched grow or change.",
-  sentence_frames: [{"template":"A seed starts in the ___. It needs ___, ___, and ___."},{"template":"First, the roots grow ___. Then, a small ___ appears."},{"template":"After that, the ___ grows toward the sunlight."},{"template":"The plant needs ___ water and ___ sunlight."},{"template":"Finally, a ___ blooms."},{"template":"A plant is important because ___."}],
+  sentence_frames: [{"template":"A seed starts in the ___. It needs ___, ___, and ___."},{"template":"First, you plant the seed in ___ soil."},{"template":"First, the roots grow ___. Then, a small ___ appears."},{"template":"After a few days, the ___ pushes through the soil."},{"template":"The plant grows ___ and its leaves are ___."},{"template":"It needs ___ water and ___ sunlight every day."},{"template":"Finally, it becomes a ___ plant that ___."},{"template":"A plant is important because ___."}],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Word Bank",
@@ -18,16 +18,17 @@ export default {
         {word: "seed", vi: "hạt giống", distractor: false},
         {word: "soil", vi: "đất", distractor: false},
         {word: "root", vi: "rễ cây", distractor: false},
+        {word: "grow", vi: "lớn", distractor: true},
         {word: "stem", vi: "thân cây", distractor: false},
         {word: "leaf", vi: "lá", distractor: false},
+        {word: "need", vi: "cần", distractor: true},
         {word: "flower", vi: "hoa", distractor: false},
         {word: "sunlight", vi: "ánh sáng mặt trời", distractor: false},
         {word: "grows", vi: "lớn lên", distractor: false},
         {word: "needs", vi: "cần", distractor: false},
         {word: "sprout", vi: "mầm non", distractor: false},
         {word: "water", vi: "nước", distractor: false},
-        {word: "grow", vi: "lớn (sai dạng)", distractor: true},
-        {word: "need", vi: "cần (sai dạng)", distractor: true}
+        {word: "absorbs", vi: "hấp thụ", distractor: false}
       ]
     },
     model_paragraph: {
