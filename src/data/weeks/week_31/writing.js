@@ -10,12 +10,43 @@ export default {
   keywords: ["saw", "heard", "felt", "smelt", "forest", "creature", "rustling", "fragrant", "damp", "echo", "sensation", "texture", "vivid", "distant", "breeze", "startled", "whisper"],
   sentence_frames: [
     {"template": "Last ___, I went to ___ with ___."},
-    {"template": "The first thing I saw was ___ — it was ___."},
-    {"template": "I heard ___ and it made me feel ___."},
-    {"template": "I reached out and felt ___ — the texture was ___."},
+    {"template": "I saw ___, heard ___, and felt ___."}, 
     {"template": "I smelt ___ and it smelt ___."},
-    {"template": "The most surprising moment was when ___."},
-    {"template": "I felt ___ (a sensation/feeling) because ___."},
-    {"template": "At the end, I felt ___ about the whole experience."}
-  ]
+    {"template": "The most amazing moment was when ___."}
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need words? Click here",
+      label_vi: "💡 Cần từ? Bấm đây",
+      show_by_default: false,
+      words: [
+        {word: "saw", vi: "đã thấy", distractor: false},
+        {word: "heard", vi: "đã nghe", distractor: false},
+        {word: "felt", vi: "đã cảm nhận", distractor: false},
+        {word: "smelt", vi: "đã ngửi thấy", distractor: false},
+        {word: "forest", vi: "rừng", distractor: false},
+        {word: "creature", vi: "sinh vật", distractor: false},
+        {word: "rustling", vi: "tiếng xào xạc", distractor: false},
+        {word: "fragrant", vi: "thơm", distractor: false},
+        {word: "damp", vi: "ẩm ướt", distractor: false},
+        {word: "texture", vi: "kết cấu", distractor: false},
+        {word: "vivid", vi: "sống động", distractor: false},
+        {word: "breeze", vi: "gió nhẹ", distractor: false},
+        {word: "distant", vi: "xa xôi", distractor: false},
+        {word: "whisper", vi: "tiếng thì thầm", distractor: false},
+        {word: "see", vi: "thấy (sai dạng)", distractor: true},
+        {word: "hear", vi: "nghe (sai dạng)", distractor: true},
+        {word: "feel", vi: "cảm nhận (sai dạng)", distractor: true},
+        {word: "smell", vi: "ngửi (sai dạng)", distractor: true}
+      ]
+    },
+    model_paragraph: {
+      label_en: "📖 See example? (Try writing first!)",
+      label_vi: "📖 Xem mẫu? (Thử viết trước nhé!)",
+      show_by_default: false,
+      warning_en: "⚠️ Try writing first before looking!",
+      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
+      text: "Last Saturday, my family went for a walk in the park near our house. I saw beautiful orange and yellow leaves on the ground. I heard birds singing softly in the trees — it was a wonderful sound. I felt the cool breeze on my face and smelt the fresh air after the rain. The roughness of the old stone wall felt interesting under my fingers. At the end, we sat on the damp grass and watched the sunset. It was the most peaceful and sensory-rich walk I have ever taken."
+    }
+  }
 };

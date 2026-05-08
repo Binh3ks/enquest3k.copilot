@@ -8,5 +8,39 @@ export default {
   prompt_vi: "Viết về cách một hạt giống lớn thành cây! Hạt giống bắt đầu từ đâu? Nó cần gì — nước, ánh nắng, đất? Điều gì xảy ra trước, sau đó là gì? Cây trông như thế nào cuối cùng?",
   keywords: ["seed", "soil", "root", "stem", "leaf", "flower", "sunlight", "germinate", "absorb", "nutrients", "sprout", "photosynthesis", "observe", "grows", "needs", "first", "next", "after that", "finally", "water"],
   topic_talk_prompt: "Tell me about a plant, garden, or living thing you have watched or taken care of. What changed over time?",
-  sentence_frames: [{"template":"A seed starts in the ___. It needs ___, ___, and ___."},{"template":"First, you plant the seed in ___ soil."},{"template":"First, the roots grow ___. Then, a small ___ appears."},{"template":"After a few days, the ___ pushes through the soil."},{"template":"The plant grows ___ and its leaves are ___."},{"template":"It needs ___ water and ___ sunlight every day."},{"template":"Finally, it becomes a ___ plant that ___."},{"template":"A plant is important because ___."}],
+  sentence_frames: [{"template":"First, a seed needs ___, ___, and ___ to grow."},{"template":"Then, the ___ pushes through the soil."},{"template":"After that, the ___ grows toward the sunlight."},{"template":"Finally, a ___ blooms and the plant is beautiful."}],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need words? Click here",
+      label_vi: "💡 Cần từ? Bấm đây",
+      show_by_default: false,
+      words: [
+        {word: "seed", vi: "hạt giống", distractor: false},
+        {word: "soil", vi: "đất", distractor: false},
+        {word: "root", vi: "rễ cây", distractor: false},
+        {word: "stem", vi: "thân cây", distractor: false},
+        {word: "leaf", vi: "lá", distractor: false},
+        {word: "flower", vi: "hoa", distractor: false},
+        {word: "sunlight", vi: "ánh sáng mặt trời", distractor: false},
+        {word: "germinates", vi: "nảy mầm", distractor: false},
+        {word: "grows", vi: "lớn lên", distractor: false},
+        {word: "needs", vi: "cần", distractor: false},
+        {word: "absorb", vi: "hấp thụ", distractor: false},
+        {word: "sprout", vi: "mầm non", distractor: false},
+        {word: "water", vi: "nước", distractor: false},
+        {word: "photosynthesis", vi: "quang hợp", distractor: false},
+        {word: "germinate", vi: "nảy mầm (sai dạng)", distractor: true},
+        {word: "grow", vi: "lớn (sai dạng)", distractor: true},
+        {word: "need", vi: "cần (sai dạng)", distractor: true}
+      ]
+    },
+    model_paragraph: {
+      label_en: "📖 See example? (Try writing first!)",
+      label_vi: "📖 Xem mẫu? (Thử viết trước nhé!)",
+      show_by_default: false,
+      warning_en: "⚠️ Try writing first before looking!",
+      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
+      text: "Here is how a seed grows into a plant. First, a seed is planted in warm, moist soil. It needs water and warmth to germinate. Next, the seed germinates and a tiny green sprout pushes through the soil. After that, the stem grows taller toward the sunlight. The roots absorb water and nutrients from the soil. The leaves open and use sunlight to make food through photosynthesis. Finally, a beautiful flower blooms at the top of the plant. It is amazing that a tiny seed grows into something so beautiful!"
+    }
+  }
 };

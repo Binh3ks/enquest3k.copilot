@@ -13,8 +13,37 @@ export default {
     { id: 3, template: "I heard a ___ sound.", example: "I heard a loud sound.", audio_url: "/audio/week31/writing_f3_easy.mp3" },
     { id: 4, template: "I felt the ___ ___.", example: "I felt the soft grass.", audio_url: "/audio/week31/writing_f4_easy.mp3" },
     { id: 5, template: "I smelt a ___ flower.", example: "I smelt a beautiful flower.", audio_url: "/audio/week31/writing_f5_easy.mp3" },
-    { id: 6, template: "The ___ felt ___.", example: "The rock felt hard.", audio_url: "/audio/week31/writing_f6_easy.mp3" },
-    { id: 7, template: "A cool ___ came through the trees.", example: "A cool breeze came through the trees.", audio_url: "/audio/week31/writing_f7_easy.mp3" },
-    { id: 8, template: "I felt ___ because the forest was ___.", example: "I felt wonder because the forest was beautiful.", audio_url: "/audio/week31/writing_f8_easy.mp3" }
-  ]
+    { id: 6, template: "The ___ felt ___.", example: "The rock felt hard.", audio_url: "/audio/week31/writing_f6_easy.mp3" }
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Word Bank",
+      label_vi: "💡 Ngân hàng từ",
+      show_by_default: true,
+      words: [
+        {word: "saw", vi: "đã thấy", distractor: false},
+        {word: "heard", vi: "đã nghe", distractor: false},
+        {word: "felt", vi: "đã cảm nhận", distractor: false},
+        {word: "smelt", vi: "đã ngửi thấy", distractor: false},
+        {word: "forest", vi: "rừng", distractor: false},
+        {word: "bird", vi: "chim", distractor: false},
+        {word: "flower", vi: "hoa", distractor: false},
+        {word: "grass", vi: "cỏ", distractor: false},
+        {word: "rock", vi: "đá", distractor: false},
+        {word: "breeze", vi: "gió nhẹ", distractor: false},
+        {word: "wonder", vi: "ngạc nhiên", distractor: false},
+        {word: "see", vi: "thấy (sai dạng)", distractor: true},
+        {word: "hear", vi: "nghe (sai dạng)", distractor: true},
+        {word: "feel", vi: "cảm nhận (sai dạng)", distractor: true}
+      ]
+    },
+    model_paragraph: {
+      label_en: "📖 See example paragraph",
+      label_vi: "📖 Xem bài mẫu",
+      show_by_default: false,
+      warning_en: "⚠️ Try writing first before looking!",
+      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
+      text: "Last Saturday, I went to the forest with my dad. I saw a beautiful blue and yellow bird sitting on a branch. I heard it sing a beautiful song. I felt the soft warm grass with my hands and touched a hard rock. I smelt a pink flower and it smelt sweet and nice. A cool breeze came through the trees. I felt wonder because the forest was so beautiful and quiet!"
+    }
+  }
 };

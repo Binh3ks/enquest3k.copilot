@@ -8,5 +8,35 @@ export default {
   prompt_vi: "Viết về cuối tuần của bạn theo 4 phân cảnh truyện tranh! Buổi sáng bạn làm gì? Chuyện gì xảy ra tiếp theo? Khoảnh khắc thú vị hoặc buồn cười là gì? Cuối tuần kết thúc ra sao?",
   keywords: ["was", "were", "visited", "played", "watched", "returned", "weekend", "happy", "tired", "panel", "comic strip", "caption"],
   topic_talk_prompt: "Tell me about what you did last weekend. Tell the story.",
-  sentence_frames: [{"template":"Panel 1: On Saturday morning, I ___ed ___."},{"template":"Panel 1: The weather was ___ and I felt ___."},{"template":"Panel 2: Then I ___ed ___ and it was ___."},{"template":"Panel 2: I also ___ed ___ with ___."},{"template":"Panel 3: Suddenly, ___ happened! I ___ed ___."},{"template":"Panel 3: Everyone ___ed because ___."},{"template":"Panel 4: At the end of the day, I ___ed and felt ___."},{"template":"Panel 4: It was the best Saturday because ___."}],
+  sentence_frames: [{"template":"Panel 1: On Saturday morning, I ___ed ___."},{"template":"Panel 1: The weather was ___ and I felt ___."},{"template":"Panel 2: Then I ___ed ___ and it was ___."},{"template":"Panel 2: I also ___ed ___ with ___."},{"template":"Panel 3: Suddenly, ___ happened!"},{"template":"Panel 4: At the end, I felt ___."}],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Word Bank",
+      label_vi: "💡 Ngân hàng từ",
+      show_by_default: true,
+      words: [
+        {word: "visited", vi: "đã thăm", distractor: false},
+        {word: "played", vi: "đã chơi", distractor: false},
+        {word: "watched", vi: "đã xem", distractor: false},
+        {word: "walked", vi: "đã đi bộ", distractor: false},
+        {word: "returned", vi: "đã về", distractor: false},
+        {word: "was", vi: "đã là/ở", distractor: false},
+        {word: "were", vi: "đã là/ở (nhiều người)", distractor: false},
+        {word: "first", vi: "đầu tiên", distractor: false},
+        {word: "next", vi: "tiếp theo", distractor: false},
+        {word: "finally", vi: "cuối cùng", distractor: false},
+        {word: "visit", vi: "thăm (sai dạng)", distractor: true},
+        {word: "play", vi: "chơi (sai dạng)", distractor: true},
+        {word: "watch", vi: "xem (sai dạng)", distractor: true}
+      ]
+    },
+    model_paragraph: {
+      label_en: "📖 See example paragraph",
+      label_vi: "📖 Xem bài mẫu",
+      show_by_default: false,
+      warning_en: "⚠️ Try writing first before looking!",
+      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
+      text: "Last weekend, I visited the park with my dog. First, we walked to the park together. It was sunny and warm. Then, my dog played with a ball. He was very happy and excited. We also watched some children playing. Finally, we returned home tired but happy. It was a great weekend adventure."
+    }
+  }
 };
