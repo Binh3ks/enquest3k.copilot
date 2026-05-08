@@ -9,18 +9,16 @@ export default {
   keywords: ["was", "were", "visited", "played", "watched", "returned", "weekend", "happy", "tired", "panel", "comic strip", "caption"],
   topic_talk_prompt: "Tell me about what you did last weekend. Tell the story.",
   sentence_frames: [
-    {"template":"On Saturday, I ___ed the ___."},
-    {"template":"It was very ___."},
-    {"template":"Then I ___ed ___ with my ___."},
-    {"template":"We felt ___."},
-    {"template":"In the afternoon, I ___ed ___."},
-    {"template":"At the end, I felt ___."}
+    {"template":"Panel 1: First, I ___."},
+    {"template":"Panel 2: Then, I ___."},
+    {"template":"Panel 3: Next, I ___."},
+    {"template":"Panel 4: Finally, I ___."}
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Word Bank",
-      label_vi: "💡 Ngân hàng từ",
-      show_by_default: true,
+      label_en: "💡 Need help? Click for word bank",
+      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      show_by_default: false,
       words: [
         {word: "visited", vi: "đã thăm", distractor: false},
         {word: "played", vi: "đã chơi", distractor: false},

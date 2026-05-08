@@ -15,9 +15,7 @@ export default {
     {"template":"I ___ed ___ with my ___."},
     {"template":"We also ___ed ___ which was very ___."},
     {"template":"The best moment was when ___."},
-    {"template":"I felt ___ because ___."},
-    {"template":"This trip was special because ___ and ___."},
-    {"template":"I want to go back to ___ because ___."}
+    {"template":"This trip was special because ___ and ___."}
   ],
   hints: {
     vocabulary_bank: {

@@ -9,17 +9,15 @@ export default {
   min_words: 30,
   sentence_frames: [
     { id: 1, template: "I went to the ___ with ___.", example: "I went to the forest with my dad.", audio_url: "/audio/week31/writing_f1_easy.mp3" },
-    { id: 2, template: "I saw a ___ ___.", example: "I saw a beautiful bird.", audio_url: "/audio/week31/writing_f2_easy.mp3" },
-    { id: 3, template: "I heard a ___ sound.", example: "I heard a loud sound.", audio_url: "/audio/week31/writing_f3_easy.mp3" },
-    { id: 4, template: "I smelt a ___ flower.", example: "I smelt a beautiful flower.", audio_url: "/audio/week31/writing_f4_easy.mp3" },
-    { id: 5, template: "I felt ___.", example: "I felt happy.", audio_url: "/audio/week31/writing_f5_easy.mp3" },
-    { id: 6, template: "It was a ___ experience.", example: "It was a wonderful experience.", audio_url: "/audio/week31/writing_f6_easy.mp3" }
+    { id: 2, template: "I saw ___ and heard ___.", example: "I saw a beautiful bird and heard a loud sound.", audio_url: "/audio/week31/writing_f2_easy.mp3" },
+    { id: 3, template: "I smelt ___ and felt ___.", example: "I smelt a beautiful flower and felt the soft grass.", audio_url: "/audio/week31/writing_f3_easy.mp3" },
+    { id: 4, template: "I felt ___. It was a ___ experience.", example: "I felt happy. It was a wonderful experience.", audio_url: "/audio/week31/writing_f4_easy.mp3" }
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Word Bank",
-      label_vi: "💡 Ngân hàng từ",
-      show_by_default: true,
+      label_en: "💡 Need help? Click for word bank",
+      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      show_by_default: false,
       words: [
         {word: "saw", vi: "đã nhìn", distractor: false},
         {word: "see", vi: "nhìn", distractor: true},

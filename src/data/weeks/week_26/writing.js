@@ -15,9 +15,7 @@ export default {
     {"template":"Panel 3: Suddenly, something ___ happened!"},
     {"template":"Panel 3: Everyone felt ___ because ___."},
     {"template":"Panel 4: In the afternoon, I ___ed ___ at the ___."},
-    {"template":"Panel 4: Finally, I ___ed home and felt ___."},
-    {"template":"My Saturday was ___ because ___."},
-    {"template":"Next weekend, I want to ___ again."}
+    {"template":"Panel 4: Finally, I ___ed home and felt ___."}
   ],
   hints: {
     vocabulary_bank: {

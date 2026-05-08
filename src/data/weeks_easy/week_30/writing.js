@@ -11,16 +11,14 @@ export default {
   sentence_frames: [
     {"template":"Last ___, my family had a picnic at the ___."},
     {"template":"We ate ___ and drank ___."},
-    {"template":"My favourite food was ___."},
     {"template":"We also ___ed ___ together."},
-    {"template":"I felt ___ after eating."},
-    {"template":"It was a ___ picnic."}
+    {"template":"I felt ___. It was a ___ picnic."}
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Word Bank",
-      label_vi: "💡 Ngân hàng từ",
-      show_by_default: true,
+      label_en: "💡 Need help? Click for word bank",
+      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      show_by_default: false,
       words: [
         {word: "ate", vi: "đã ăn", distractor: false},
         {word: "eat", vi: "ăn", distractor: true},

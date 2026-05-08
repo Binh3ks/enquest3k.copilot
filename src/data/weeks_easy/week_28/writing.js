@@ -10,17 +10,15 @@ export default {
   topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
   sentence_frames: [
     {"template":"Once upon a time, a ___ and a ___ had a race."},
-    {"template":"The hare ran very ___."},
-    {"template":"The tortoise walked ___."},
-    {"template":"The hare ___ed and the tortoise ___."},
-    {"template":"The ___ won the race."},
-    {"template":"The lesson is: ___."}
+    {"template":"The hare ran very ___, but the tortoise walked ___."},
+    {"template":"The hare ___ed and the tortoise ___ed past him."},
+    {"template":"The ___ won because ___. The lesson is: ___."}
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Word Bank",
-      label_vi: "💡 Ngân hàng từ",
-      show_by_default: true,
+      label_en: "💡 Need help? Click for word bank",
+      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      show_by_default: false,
       words: [
         {word: "tortoise", vi: "con rùa", distractor: false},
         {word: "hare", vi: "con thỏ", distractor: false},

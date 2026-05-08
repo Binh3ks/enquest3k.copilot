@@ -16,9 +16,7 @@ export default {
     {"template":"Meanwhile, the tortoise walked ___ and ___ without stopping."},
     {"template":"While the hare was ___ing, the tortoise ___ed past him."},
     {"template":"When the hare woke up, he saw the tortoise near the ___."},
-    {"template":"The hare tried to ___ but it was too ___!"},
-    {"template":"The ___ ___ed the race because he was ___ and ___."},
-    {"template":"The moral of the story is: ___ and ___ wins the race."}
+    {"template":"The ___ won because ___. The moral is: ___ and ___ wins."}
   ],
   hints: {
     vocabulary_bank: {

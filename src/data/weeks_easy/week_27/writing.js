@@ -10,17 +10,15 @@ export default {
   topic_talk_prompt: "Tell me about a plant or animal you have watched grow or change.",
   sentence_frames: [
     {"template":"A seed needs ___, ___, and ___."},
-    {"template":"First, you plant the seed in the ___."},
     {"template":"The ___ grows down from the seed."},
     {"template":"Then the ___ grows up."},
-    {"template":"The plant has ___ leaves."},
     {"template":"Finally, a ___ blooms."}
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Word Bank",
-      label_vi: "💡 Ngân hàng từ",
-      show_by_default: true,
+      label_en: "💡 Need help? Click for word bank",
+      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      show_by_default: false,
       words: [
         {word: "seed", vi: "hạt giống", distractor: false},
         {word: "soil", vi: "đất", distractor: false},

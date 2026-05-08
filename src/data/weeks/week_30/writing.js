@@ -14,11 +14,9 @@ export default {
     {"template":"Before the picnic, we ___ed food at the ___."},
     {"template":"We ate ___, ___, and ___ for lunch."},
     {"template":"We drank ___ and ___ to stay ___."},
-    {"template":"My favourite food was ___ because it was very ___."},
     {"template":"After eating, we ___ed ___ together on the ___."},
     {"template":"My ___ also ___ed some ___ with everyone."},
-    {"template":"The best moment was when ___."},
-    {"template":"It was a ___ picnic because ___ and ___."}
+    {"template":"The best moment was when ___. It was a ___ picnic."}
   ],
   hints: {
     vocabulary_bank: {

@@ -9,18 +9,16 @@ export default {
   topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go?",
   keywords: ["went", "ran", "came", "flew", "airport", "plane", "ticket", "journey", "adventure", "destination"],
   sentence_frames: [
-    {"template":"Last ___, my family went to ___."},
-    {"template":"We went by ___."},
+    {"template":"Last ___, my family went to ___ by ___."},
     {"template":"When we arrived, I saw ___ and ___."},
     {"template":"We ___ed ___ together."},
-    {"template":"It was very ___."},
-    {"template":"My favourite memory was ___."}
+    {"template":"It was very ___. My favourite memory was ___."}
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Word Bank",
-      label_vi: "💡 Ngân hàng từ",
-      show_by_default: true,
+      label_en: "💡 Need help? Click for word bank",
+      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      show_by_default: false,
       words: [
         {word: "went", vi: "đã đi", distractor: false},
         {word: "go", vi: "đi", distractor: true},

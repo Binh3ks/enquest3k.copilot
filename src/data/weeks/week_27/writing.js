@@ -13,12 +13,10 @@ export default {
     {"template":"When the seed ___, it starts to ___."},
     {"template":"The ___ pushes down into the ___ to absorb water."},
     {"template":"Then, the ___ pushes up through the soil toward the ___."},
-    {"template":"The stem helps the plant ___ tall and ___."},
     {"template":"After that, ___ grow on the stem."},
-    {"template":"The leaves are ___ and use ___ to make food."},
+    {"template":"The leaves use ___ to make food."},
     {"template":"This process is called ___."},
-    {"template":"Finally, a ___ ___ blooms on the plant."},
-    {"template":"The plant looks ___ and ___ when it is fully grown."}
+    {"template":"Finally, a ___ blooms on the plant."}
   ],
   hints: {
     vocabulary_bank: {
