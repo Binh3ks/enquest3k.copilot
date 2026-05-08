@@ -8,7 +8,14 @@ export default {
   prompt_vi: "Viết về một chuyến đi bạn đã thực hiện! Bạn đi đâu? Đi bằng gì — xe hơi, xe bus hay máy bay? Ai đi cùng? Bạn thấy và làm gì? Kỷ niệm đẹp nhất là gì?",
   topic_talk_prompt: "Tell me about a trip or journey you have been on. Where did you go?",
   keywords: ["went", "ran", "came", "flew", "airport", "plane", "ticket", "journey", "adventure", "destination"],
-  sentence_frames: [{"template":"Last ___, my family went to ___."},{"template":"We went by ___. It took ___ hours."},{"template":"When we arrived, I saw ___ and ___."},{"template":"We ___ed ___ and ___ together."},{"template":"We ate ___ and ___. It was ___."},{"template":"The most exciting thing was ___."},{"template":"My favourite memory was ___ because ___."},{"template":"I want to go back because ___."}],
+  sentence_frames: [
+    {"template":"Last ___, my family went to ___."},
+    {"template":"We went by ___."},
+    {"template":"When we arrived, I saw ___ and ___."},
+    {"template":"We ___ed ___ together."},
+    {"template":"It was very ___."},
+    {"template":"My favourite memory was ___."}
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Word Bank",
@@ -16,17 +23,22 @@ export default {
       show_by_default: true,
       words: [
         {word: "went", vi: "đã đi", distractor: false},
-        {word: "ran", vi: "đã chạy", distractor: false},
         {word: "go", vi: "đi", distractor: true},
-        {word: "came", vi: "đã đến", distractor: false},
         {word: "flew", vi: "đã bay", distractor: false},
-        {word: "journey", vi: "hành trình", distractor: false},
-        {word: "run", vi: "chạy", distractor: true},
-        {word: "airport", vi: "sân bay", distractor: false},
-        {word: "ticket", vi: "vé", distractor: false},
+        {word: "came", vi: "đã đến", distractor: false},
+        {word: "visited", vi: "đã thăm", distractor: false},
         {word: "fly", vi: "bay", distractor: true},
-        {word: "adventure", vi: "phiêu lưu", distractor: false},
-        {word: "destination", vi: "điểm đến", distractor: false}
+        {word: "beach", vi: "bãi biển", distractor: false},
+        {word: "mountain", vi: "núi", distractor: false},
+        {word: "city", vi: "thành phố", distractor: false},
+        {word: "run", vi: "chạy", distractor: true},
+        {word: "plane", vi: "máy bay", distractor: false},
+        {word: "car", vi: "xe ô tô", distractor: false},
+        {word: "train", vi: "tàu hỏa", distractor: false},
+        {word: "fun", vi: "vui", distractor: false},
+        {word: "exciting", vi: "thú vị", distractor: false},
+        {word: "tired", vi: "mệt", distractor: false},
+        {word: "beautiful", vi: "đẹp", distractor: false}
       ]
     },
     model_paragraph: {

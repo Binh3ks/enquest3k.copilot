@@ -8,7 +8,14 @@ export default {
   prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn! Có những nhân vật nào? Thỏ đã làm gì? Rùa đã làm gì? Ai thắng và tại sao? Bài học là gì?",
   keywords: ["tortoise", "hare", "race", "ran", "slept", "won", "lost", "slow", "steady", "fast", "nap", "finish", "lesson", "first", "then", "after that", "finally", "won", "cheer"],
   topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
-  sentence_frames: [{"template":"Once upon a time, a ___ and a ___ had a race."},{"template":"The hare was very ___ and said '___!'"},{"template":"The hare ran very fast, but then he ___."},{"template":"The tortoise walked slowly and never ___."},{"template":"While the hare was sleeping, the tortoise ___."},{"template":"Then the hare woke up and ___. But it was too ___!"},{"template":"In the end, the ___ won because ___."},{"template":"The lesson is: ___."}],
+  sentence_frames: [
+    {"template":"Once upon a time, a ___ and a ___ had a race."},
+    {"template":"The hare ran very ___."},
+    {"template":"The tortoise walked ___."},
+    {"template":"The hare ___ed and the tortoise ___."},
+    {"template":"The ___ won the race."},
+    {"template":"The lesson is: ___."}
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Word Bank",
@@ -17,16 +24,17 @@ export default {
       words: [
         {word: "tortoise", vi: "con rùa", distractor: false},
         {word: "hare", vi: "con thỏ", distractor: false},
-        {word: "race", vi: "cuộc đua", distractor: false},
         {word: "run", vi: "chạy", distractor: true},
+        {word: "race", vi: "cuộc đua", distractor: false},
         {word: "ran", vi: "đã chạy", distractor: false},
         {word: "slept", vi: "đã ngủ", distractor: false},
         {word: "sleep", vi: "ngủ", distractor: true},
         {word: "won", vi: "đã thắng", distractor: false},
-        {word: "steady", vi: "đều đặn", distractor: false},
-        {word: "win", vi: "thắng", distractor: true},
         {word: "fast", vi: "nhanh", distractor: false},
         {word: "slow", vi: "chậm", distractor: false},
+        {word: "slowly", vi: "chậm rãi", distractor: false},
+        {word: "win", vi: "thắng", distractor: true},
+        {word: "steady", vi: "đều đặn", distractor: false},
         {word: "finish", vi: "đích", distractor: false},
         {word: "lesson", vi: "bài học", distractor: false}
       ]

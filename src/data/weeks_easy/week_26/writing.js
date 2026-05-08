@@ -8,7 +8,14 @@ export default {
   prompt_vi: "Viết về cuối tuần của bạn theo 4 phân cảnh truyện tranh! Buổi sáng bạn làm gì? Chuyện gì xảy ra tiếp theo? Khoảnh khắc thú vị hoặc buồn cười là gì? Cuối tuần kết thúc ra sao?",
   keywords: ["was", "were", "visited", "played", "watched", "returned", "weekend", "happy", "tired", "panel", "comic strip", "caption"],
   topic_talk_prompt: "Tell me about what you did last weekend. Tell the story.",
-  sentence_frames: [{"template":"Panel 1: On Saturday morning, I ___ed ___."},{"template":"Panel 1: The weather was ___ and I felt ___."},{"template":"Panel 2: Then I ___ed ___ and it was ___."},{"template":"Panel 2: I also ___ed ___ with ___."},{"template":"Panel 3: Suddenly, ___ happened! I ___ed ___."},{"template":"Panel 3: Everyone ___ed because ___."},{"template":"Panel 4: At the end of the day, I ___ed and felt ___."},{"template":"Panel 4: It was the best Saturday because ___."}],
+  sentence_frames: [
+    {"template":"On Saturday, I ___ed the ___."},
+    {"template":"It was very ___."},
+    {"template":"Then I ___ed ___ with my ___."},
+    {"template":"We felt ___."},
+    {"template":"In the afternoon, I ___ed ___."},
+    {"template":"At the end, I felt ___."}
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Word Bank",
@@ -17,21 +24,20 @@ export default {
       words: [
         {word: "visited", vi: "đã thăm", distractor: false},
         {word: "played", vi: "đã chơi", distractor: false},
-        {word: "play", vi: "chơi", distractor: true},
+        {word: "visit", vi: "thăm", distractor: true},
         {word: "watched", vi: "đã xem", distractor: false},
         {word: "walked", vi: "đã đi bộ", distractor: false},
+        {word: "play", vi: "chơi", distractor: true},
+        {word: "park", vi: "công viên", distractor: false},
+        {word: "zoo", vi: "vườn thú", distractor: false},
         {word: "watch", vi: "xem", distractor: true},
-        {word: "returned", vi: "đã về", distractor: false},
-        {word: "was", vi: "đã là/ở", distractor: false},
-        {word: "were", vi: "đã là/ở (nhiều người)", distractor: false},
-        {word: "first", vi: "đầu tiên", distractor: false},
-        {word: "visit", vi: "thăm", distractor: true},
-        {word: "next", vi: "tiếp theo", distractor: false},
-        {word: "finally", vi: "cuối cùng", distractor: false},
-        {word: "sunny", vi: "nắng", distractor: false},
+        {word: "beach", vi: "bãi biển", distractor: false},
+        {word: "museum", vi: "bảo tàng", distractor: false},
+        {word: "fun", vi: "vui", distractor: false},
+        {word: "boring", vi: "chán", distractor: false},
+        {word: "exciting", vi: "thú vị", distractor: false},
         {word: "happy", vi: "vui", distractor: false},
-        {word: "tired", vi: "mệt", distractor: false},
-        {word: "excited", vi: "phấn khích", distractor: false}
+        {word: "tired", vi: "mệt", distractor: false}
       ]
     },
     model_paragraph: {

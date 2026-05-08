@@ -8,7 +8,18 @@ export default {
   prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn! Có những nhân vật nào? Thỏ đã làm gì? Rùa đã làm gì? Ai thắng và tại sao? Bài học là gì?",
   keywords: ["tortoise", "hare", "race", "boast", "boasted", "ran", "fast", "slept", "nap", "steady", "determined", "won", "moral", "persevere", "cheer", "cheered", "finish", "first", "then", "after that", "finally", "confident", "overtake"],
   topic_talk_prompt: "Tell me about a time when you worked slowly and steadily to finish something difficult. What happened in the end?",
-  sentence_frames: [{"template":"Once upon a time, a ___ and a ___ had a race."},{"template":"The hare ran very fast, but then he ___."},{"template":"While the hare was sleeping, the tortoise ___."},{"template":"When the hare woke up, it was too ___!"},{"template":"In the end, the ___ won because ___."}],
+  sentence_frames: [
+    {"template":"Once upon a time, a ___ and a ___ decided to have a ___."},
+    {"template":"The hare was very ___ and ___ed, 'I am the ___!'"},
+    {"template":"The race ___ed and the hare ran very ___."},
+    {"template":"After a while, the hare felt ___ and decided to ___."},
+    {"template":"Meanwhile, the tortoise walked ___ and ___ without stopping."},
+    {"template":"While the hare was ___ing, the tortoise ___ed past him."},
+    {"template":"When the hare woke up, he saw the tortoise near the ___."},
+    {"template":"The hare tried to ___ but it was too ___!"},
+    {"template":"The ___ ___ed the race because he was ___ and ___."},
+    {"template":"The moral of the story is: ___ and ___ wins the race."}
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need words? Click here",
@@ -28,7 +39,18 @@ export default {
         {word: "steady", vi: "đều đặn", distractor: false},
         {word: "determined", vi: "quyết tâm", distractor: false},
         {word: "moral", vi: "bài học", distractor: false},
-        {word: "finish", vi: "đích", distractor: false}
+        {word: "finish", vi: "đích", distractor: false},
+        {word: "fast", vi: "nhanh", distractor: false},
+        {word: "slow", vi: "chậm", distractor: false},
+        {word: "slowly", vi: "chậm rãi", distractor: false},
+        {word: "steadily", vi: "đều đặn", distractor: false},
+        {word: "confident", vi: "tự tin", distractor: false},
+        {word: "tired", vi: "mệt", distractor: false},
+        {word: "nap", vi: "giấc ngủ trưa", distractor: false},
+        {word: "started", vi: "bắt đầu", distractor: false},
+        {word: "passed", vi: "vượt qua", distractor: false},
+        {word: "late", vi: "muộn", distractor: false},
+        {word: "fastest", vi: "nhanh nhất", distractor: false}
       ]
     },
     model_paragraph: {

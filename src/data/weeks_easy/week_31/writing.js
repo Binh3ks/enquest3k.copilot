@@ -11,11 +11,9 @@ export default {
     { id: 1, template: "I went to the ___ with ___.", example: "I went to the forest with my dad.", audio_url: "/audio/week31/writing_f1_easy.mp3" },
     { id: 2, template: "I saw a ___ ___.", example: "I saw a beautiful bird.", audio_url: "/audio/week31/writing_f2_easy.mp3" },
     { id: 3, template: "I heard a ___ sound.", example: "I heard a loud sound.", audio_url: "/audio/week31/writing_f3_easy.mp3" },
-    { id: 4, template: "I felt the ___ ___.", example: "I felt the soft grass.", audio_url: "/audio/week31/writing_f4_easy.mp3" },
-    { id: 5, template: "I smelt a ___ flower.", example: "I smelt a beautiful flower.", audio_url: "/audio/week31/writing_f5_easy.mp3" },
-    { id: 6, template: "The ___ felt ___.", example: "The rock felt hard.", audio_url: "/audio/week31/writing_f6_easy.mp3" },
-    { id: 7, template: "I felt ___ because ___.", example: "I felt happy because the day was wonderful.", audio_url: "/audio/week31/writing_f7_easy.mp3" },
-    { id: 8, template: "It was a ___ experience.", example: "It was a wonderful experience.", audio_url: "/audio/week31/writing_f8_easy.mp3" }
+    { id: 4, template: "I smelt a ___ flower.", example: "I smelt a beautiful flower.", audio_url: "/audio/week31/writing_f4_easy.mp3" },
+    { id: 5, template: "I felt ___.", example: "I felt happy.", audio_url: "/audio/week31/writing_f5_easy.mp3" },
+    { id: 6, template: "It was a ___ experience.", example: "It was a wonderful experience.", audio_url: "/audio/week31/writing_f6_easy.mp3" }
   ],
   hints: {
     vocabulary_bank: {
@@ -23,20 +21,25 @@ export default {
       label_vi: "💡 Ngân hàng từ",
       show_by_default: true,
       words: [
-        {word: "saw", vi: "đã thấy", distractor: false},
+        {word: "saw", vi: "đã nhìn", distractor: false},
+        {word: "see", vi: "nhìn", distractor: true},
         {word: "heard", vi: "đã nghe", distractor: false},
-        {word: "see", vi: "thấy", distractor: true},
-        {word: "felt", vi: "đã cảm nhận", distractor: false},
-        {word: "smelt", vi: "đã ngửi thấy", distractor: false},
+        {word: "felt", vi: "đã cảm thấy", distractor: false},
         {word: "hear", vi: "nghe", distractor: true},
+        {word: "smelt", vi: "đã ngửi", distractor: false},
         {word: "forest", vi: "rừng", distractor: false},
+        {word: "smell", vi: "ngửi", distractor: true},
+        {word: "park", vi: "công viên", distractor: false},
+        {word: "beach", vi: "bãi biển", distractor: false},
         {word: "bird", vi: "chim", distractor: false},
-        {word: "feel", vi: "cảm nhận", distractor: true},
         {word: "flower", vi: "hoa", distractor: false},
+        {word: "tree", vi: "cây", distractor: false},
         {word: "grass", vi: "cỏ", distractor: false},
-        {word: "rock", vi: "đá", distractor: false},
-        {word: "breeze", vi: "gió nhẹ", distractor: false},
-        {word: "wonder", vi: "ngạc nhiên", distractor: false}
+        {word: "beautiful", vi: "đẹp", distractor: false},
+        {word: "loud", vi: "to", distractor: false},
+        {word: "soft", vi: "mềm", distractor: false},
+        {word: "happy", vi: "vui", distractor: false},
+        {word: "wonderful", vi: "tuyệt vời", distractor: false}
       ]
     },
     model_paragraph: {
