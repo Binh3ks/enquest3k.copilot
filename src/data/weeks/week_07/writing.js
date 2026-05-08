@@ -7,5 +7,60 @@ export default {
   prompt_en: "What is in your school bag? Describe at least 5 items. Is there a book? A pencil case? A ruler? What colour are they? What do you use them for?",
   prompt_vi: "Trong cặp sách có gì? Mô tả ít nhất 5 đồ vật. Có sách không? Hộp bút không? Thước không? Chúng màu gì? Dùng để làm gì?",
   keywords: ["backpack", "pen", "book", "notebook", "ruler", "eraser", "pencil case", "there is", "whiteboard", "computer", "teacher", "classroom"],
-  sentence_frames: [{"template":"In my bag, there is a ___ and a ___."},{"template":"There is also a ___. It is ___."},{"template":"I use my ___ to ___."},{"template":"My ___ is ___ colour and it is very ___."},{"template":"My favourite thing in my bag is my ___ because ___."}],
+  sentence_frames: [
+    {"template":"In my school bag, there is a ___ and a ___ that I use ___."},
+    {"template":"There is also a ___ and it is ___ colour."},
+    {"template":"I use my ___ to ___ and my ___ to ___."},
+    {"template":"My ___ is ___ colour and it is very ___ because ___."},
+    {"template":"My favourite thing in my bag is my ___ because ___ and I ___."},
+    {"template":"I always keep my bag ___ so I can ___ easily!"}
+  ],
+  
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "high",
+      words: [
+        {word: "[1] notebook", vi: "vở", distractor: false},
+        {word: "[1] textbook", vi: "sách giáo khoa", distractor: false},
+        {word: "[2] pencil case", vi: "hộp bút", distractor: false},
+        {word: "[2] ruler", vi: "thước", distractor: false},
+        {word: "[3] every day", vi: "mỗi ngày", distractor: false},
+        {word: "[3] in class", vi: "trong lớp", distractor: false},
+        {word: "[4] water bottle", vi: "bình nước", distractor: false},
+        {word: "[4] eraser", vi: "tậy", distractor: false},
+        {word: "[5] blue", vi: "xanh", distractor: false},
+        {word: "[5] red", vi: "đỏ", distractor: false},
+        {word: "[6] pen", vi: "bút", distractor: false},
+        {word: "[6] pencil", vi: "bút chì", distractor: false},
+        {word: "[7] write", vi: "viết", distractor: false},
+        {word: "[7] draw", vi: "vẽ", distractor: false},
+        {word: "[8] notebook", vi: "vở", distractor: false},
+        {word: "[8] ruler", vi: "thước", distractor: false},
+        {word: "[9] measure lines", vi: "đo đường kẻ", distractor: false},
+        {word: "[9] erase mistakes", vi: "xóa lỗi", distractor: false},
+        {word: "[10] pencil case", vi: "hộp bút", distractor: false},
+        {word: "[10] backpack", vi: "ba lô", distractor: false},
+        {word: "[11] green", vi: "xanh lá", distractor: false},
+        {word: "[11] yellow", vi: "vàng", distractor: false},
+        {word: "[12] useful", vi: "hữu ích", distractor: false},
+        {word: "[12] important", vi: "quan trọng", distractor: false},
+        {word: "[13] I need it for school", vi: "tôi cần nó cho trường", distractor: false},
+        {word: "[13] it helps me learn", vi: "nó giúp tôi học", distractor: false},
+        {word: "[14] colorful notebook", vi: "vở đầy màu sắc", distractor: false},
+        {word: "[14] special pen", vi: "bút đặc biệt", distractor: false},
+        {word: "[15] I can write stories in it", vi: "tôi viết truyện trong đó", distractor: false},
+        {word: "[15] it was a gift from my mom", vi: "nó là quà từ mẹ", distractor: false},
+        {word: "[16] use it every day", vi: "dùng nó mỗi ngày", distractor: false},
+        {word: "[16] take good care of it", vi: "chăm sóc nó", distractor: false},
+        {word: "[17] organized", vi: "gọn gàng", distractor: false},
+        {word: "[17] tidy", vi: "sạch sẽ", distractor: false},
+        {word: "[18] find things", vi: "tìm thứ", distractor: false},
+        {word: "[18] get ready for class", vi: "chuẩn bị học", distractor: false},
+        {word: "messy", vi: "bừa bộn (sai)", distractor: true}
+      ]
+    }
+  }
 };
