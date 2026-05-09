@@ -1,15 +1,45 @@
 export default {
   title: "My Weather Day",
-  min_words: 30,
-  model_sentence: "It is raining today, so I am wearing my coat. I am also carrying my umbrella. My boots keep my feet dry. The sky is grey and cloudy. The weather is cold and wet. I put on my hat before I go outside. When it is sunny, I wear a T-shirt and a cap. I always dress for the weather so I stay warm and dry!",
-  instruction_en: "Use: It is ___, so I am wearing... / Because it is..., I am ___ing...",
-  instruction_vi: "Dùng: It is ___, so I am wearing... / Because it is..., I am ___ing...",
-  prompt_en: "Write about the weather today and what you are wearing! What is the weather like? Is it hot, cold, rainy or sunny? What are you wearing and why? What are you doing because of the weather?",
-  prompt_vi: "Viết về thời tiết hôm nay và trang phục! Thời tiết như thế nào? Nóng, lạnh, mưa hay nắng? Bạn đang mặc gì và tại sao? Thời tiết ảnh hưởng đến hoạt động của bạn ra sao?",
-  keywords: ["It is", "raining", "snowing", "sunny", "cold", "warm", "so", "wearing", "coat", "boots", "hat", "umbrella"],
-  topic_talk_prompt: "Tell me about the weather today. What are people wearing?",
-  sentence_frames: [{"template":"Today the weather is ___ and ___."},{"template":"It is ___, so I am wearing ___."},{"template":"Because it is ___, I am ___ing ___."},{"template":"I am also wearing ___ because ___."},{"template":"The sky is ___ and I can see ___."},{"template":"I love/don't like this weather because ___."}],
-  
+  min_words: 25,
+  model_sentence: "It is raining today, so I am wearing my coat. I am also carrying my umbrella. My boots keep my feet dry. The sky is grey but I am happy.",
+  instruction_en: "Write about a rainy day!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 m\u1ed9t ng\u00e0y m\u01b0a!",
+  prompt_en: "What is the weather? What are you wearing? How do you feel?",
+  prompt_vi: "Th\u1eddi ti\u1ebft th\u1ebf n\u00e0o? B\u1ea1n m\u1eb7c g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["raining", "coat", "umbrella", "boots", "dry", "grey", "happy"],
+  topic_talk_prompt: "What is the weather like today?",
+  sentence_frames: [
+    {
+        "template": "It is ___ today.",
+        "answers": [
+            "raining"
+        ]
+    },
+    {
+        "template": "I am wearing my ___.",
+        "answers": [
+            "coat"
+        ]
+    },
+    {
+        "template": "I am carrying my ___.",
+        "answers": [
+            "umbrella"
+        ]
+    },
+    {
+        "template": "My boots keep my feet ___.",
+        "answers": [
+            "dry"
+        ]
+    },
+    {
+        "template": "I am still ___!",
+        "answers": [
+            "happy"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -17,35 +47,47 @@ export default {
       show_by_default: false,
       scaffolding_stage: "medium",
       words: [
-        {word: "=== WEATHER (Thời tiết) ===", vi: "", distractor: false},
-        {word: "sunny", vi: "nắng", distractor: false},
-        {word: "rainy", vi: "mưa", distractor: false},
-        {word: "cold", vi: "lạnh", distractor: false},
-        {word: "hot", vi: "nóng", distractor: false},
-        {word: "warm", vi: "ấm", distractor: false},
-        {word: "windy", vi: "có gió", distractor: false},
-        {word: "cloudy", vi: "nhiều mây", distractor: false},
-        {word: "=== CLOTHES (Quần áo) ===", vi: "", distractor: false},
-        {word: "a coat", vi: "áo khoác", distractor: false},
-        {word: "a jacket", vi: "áo khoác ngắn", distractor: false},
-        {word: "boots", vi: "ủng", distractor: false},
-        {word: "an umbrella", vi: "ô", distractor: false},
-        {word: "a hat", vi: "mũ", distractor: false},
-        {word: "a scarf", vi: "khăn quàng", distractor: false},
-        {word: "a T-shirt", vi: "áo thun", distractor: false},
-        {word: "shorts", vi: "quần đùi", distractor: false},
-        {word: "=== VERBS -ING (Động từ) ===", vi: "", distractor: false},
-        {word: "wearing", vi: "đang mặc", distractor: false},
-        {word: "carrying", vi: "đang mang", distractor: false},
-        {word: "staying", vi: "đang ở", distractor: false},
-        {word: "playing", vi: "đang chơi", distractor: false},
-        {word: "=== ADJECTIVES (Tính từ SKY) ===", vi: "", distractor: false},
-        {word: "blue", vi: "xanh", distractor: false},
-        {word: "grey", vi: "xám", distractor: false},
-        {word: "clear", vi: "trong", distractor: false},
-        {word: "wear", vi: "mặc (sai dạng)", distractor: true},
-        {word: "rained", vi: "mưa (sai dạng)", distractor: true}
-      ]
+    {
+        "word": "raining",
+        "vi": "mưa",
+        "distractor": false
+    },
+    {
+        "word": "coat",
+        "vi": "áo khoác",
+        "distractor": false
+    },
+    {
+        "word": "umbrella",
+        "vi": "ô/dù",
+        "distractor": false
+    },
+    {
+        "word": "dry",
+        "vi": "khô",
+        "distractor": false
+    },
+    {
+        "word": "happy",
+        "vi": "vui",
+        "distractor": false
+    },
+    {
+        "word": "sunny",
+        "vi": "nắng",
+        "distractor": true
+    },
+    {
+        "word": "sandals",
+        "vi": "dép",
+        "distractor": true
+    },
+    {
+        "word": "sad",
+        "vi": "buồn",
+        "distractor": true
+    }
+]
     }
   }
 };

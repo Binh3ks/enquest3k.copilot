@@ -1,63 +1,124 @@
 export default {
   title: "Writing: My Weekend Comic Strip",
-  min_words: 40,
-  instruction_en: "Panel 1: Saturday morning... / Panel 2: Then... / Panel 3: Suddenly.../The funny moment was... / Panel 4: At the end...",
-  instruction_vi: "Cảnh 1: Sáng thứ Bảy... / Cảnh 2: Sau đó... / Cảnh 3: Bất ngờ.../Khoảnh khắc buồn cười... / Cảnh 4: Cuối cùng...",
-  prompt_en: "Write about your weekend in 4 comic strip panels! What did you do in the morning? What happened next? What was the exciting or funny moment? How did your weekend end?",
-  prompt_vi: "Viết về cuối tuần của bạn theo 4 phân cảnh truyện tranh! Buổi sáng bạn làm gì? Chuyện gì xảy ra tiếp theo? Khoảnh khắc thú vị hoặc buồn cười là gì? Cuối tuần kết thúc ra sao?",
-  keywords: ["panel", "caption", "comic strip", "weekend", "visited", "played", "watched", "walked", "sketched", "returned", "was", "were", "first", "next", "then", "finally", "character", "scene", "adventure", "title"],
-  topic_talk_prompt: "Tell me about what you did last weekend from the beginning to the end. Tell it like a story.",
+  min_words: 45,
+  model_sentence: "Last weekend, my family went on a fun trip to the nature park. First, we packed a picnic basket with sandwiches and juice. Then, we hiked through the forest trail. After that, we saw a waterfall and took photos. Finally, we drove home feeling tired but grateful.",
+  instruction_en: "Write your weekend story using the four-panel comic strip format!",
+  instruction_vi: "Vi\u1ebft c\u00e2u chuy\u1ec7n cu\u1ed1i tu\u1ea7n theo \u0111\u1ecbnh d\u1ea1ng b\u1ed1n b\u1ea3ng truy\u1ec7n tranh!",
+  prompt_en: "What did you do at each stage of your weekend trip?",
+  prompt_vi: "B\u1ea1n l\u00e0m g\u00ec \u1edf m\u1ed7i giai \u0111o\u1ea1n c\u1ee7a chuy\u1ebfn \u0111i cu\u1ed1i tu\u1ea7n?",
+  keywords: ["trip", "nature park", "packed", "picnic", "hiked", "forest", "waterfall", "photos", "grateful"],
+  topic_talk_prompt: "Tell me about your weekend trip in four panels!",
   sentence_frames: [
-    {"template":"Hello! ___."},
-    {"template":"___, I woke up early in the morning."},
-    {"template":"The weather ___ and I felt very excited."},
-    {"template":"First, ___ with my dog."},
-    {"template":"We ___ on the grass together and had so much fun."},
-    {"template":"Then ___ in the kitchen."},
-    {"template":"We cooked ___ with rice and vegetables."},
-    {"template":"Next, ___ on TV and it was hilarious."},
-    {"template":"I ___ because the movie was so entertaining."},
-    {"template":"Finally, I ___ and went to bed feeling happy."}
-  ],
+    {
+        "template": "Last weekend, my family went on ___ to ___.",
+        "answers": [
+            "a fun trip",
+            "the nature park"
+        ]
+    },
+    {
+        "template": "First, we ___ with ___ and ___.",
+        "answers": [
+            "packed a picnic basket",
+            "sandwiches",
+            "juice"
+        ]
+    },
+    {
+        "template": "Then, we ___ through ___.",
+        "answers": [
+            "hiked",
+            "the forest trail"
+        ]
+    },
+    {
+        "template": "After that, we saw ___ and ___.",
+        "answers": [
+            "a waterfall",
+            "took photos"
+        ]
+    },
+    {
+        "template": "Finally, we drove home feeling ___ but ___.",
+        "answers": [
+            "tired",
+            "grateful"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need words? Click here",
-      label_vi: "💡 Cần từ? Bấm đây",
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       show_by_default: false,
-      scaffolding_stage: "low", // W26+: fully shuffled phrases/clauses
+      scaffolding_stage: "low",
       words: [
-        {word: "My name is Max and I am nine years old", vi: "Tên tôi là Max và tôi 9 tuổi", distractor: false},
-        {word: "My name is Luna and I am eight years old", vi: "Tên tôi là Luna và tôi 8 tuổi", distractor: false},
-        {word: "Last Saturday morning", vi: "Sáng thứ Bảy tuần trước", distractor: false},
-        {word: "Last Sunday morning", vi: "Sáng Chủ nhật tuần trước", distractor: false},
-        {word: "was sunny and warm", vi: "nắng và ấm", distractor: false},
-        {word: "was cloudy but nice", vi: "nhiều mây nhưng đẹp", distractor: false},
-        {word: "I walked to the park", vi: "tôi đi bộ đến công viên", distractor: false},
-        {word: "I ran to the playground", vi: "tôi chạy đến sân chơi", distractor: false},
-        {word: "played soccer and ran around", vi: "chơi bóng và chạy quanh", distractor: false},
-        {word: "threw a ball and chased it", vi: "ném bóng và đuổi theo", distractor: false},
-        {word: "I helped my mother", vi: "tôi giúp mẹ", distractor: false},
-        {word: "my father and I cooked together", vi: "bố và tôi nấu cùng nhau", distractor: false},
-        {word: "a delicious chicken dish", vi: "món gà ngon", distractor: false},
-        {word: "some tasty fish with sauce", vi: "cá ngon với nước sốt", distractor: false},
-        {word: "I watched a funny movie", vi: "tôi xem phim hài", distractor: false},
-        {word: "we saw an exciting cartoon", vi: "chúng tôi xem phim hoạt hình thú vị", distractor: false},
-        {word: "laughed a lot and clapped my hands", vi: "cười nhiều và vỗ tay", distractor: false},
-        {word: "was very happy and couldn't stop smiling", vi: "rất vui và không ngừng cười", distractor: false},
-        {word: "returned home feeling tired", vi: "trở về nhà cảm thấy mệt", distractor: false},
-        {word: "came back and rested on the sofa", vi: "trở lại và nghỉ trên ghế sofa", distractor: false},
-        {word: "go to the park", vi: "đi công viên (sai dạng)", distractor: true},
-        {word: "help my mother", vi: "giúp mẹ (sai dạng)", distractor: true},
-        {word: "watch a movie", vi: "xem phim (sai dạng)", distractor: true}
-      ]
+    {
+        "word": "a fun trip",
+        "vi": "một chuyến đi thú vị",
+        "distractor": false
     },
-    model_paragraph: {
-      label_en: "📖 See example? (Try writing first!)",
-      label_vi: "📖 Xem mẫu? (Thử viết trước nhé!)",
-      show_by_default: false,
-      warning_en: "⚠️ Try writing first before looking!",
-      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
-      text: "Here is my Weekend Comic Strip. Panel 1: First, I walked to the park with my friend on Saturday morning. It was sunny and warm. Panel 2: Next, we played on the swings and laughed a lot. We were very happy. Panel 3: Then, we watched some children do a dance performance. It was amazing! Panel 4: Finally, we returned home and I felt tired but happy. It was a wonderful weekend!"
+    {
+        "word": "the nature park",
+        "vi": "công viên tự nhiên",
+        "distractor": false
+    },
+    {
+        "word": "packed a picnic basket",
+        "vi": "đóng gói giỏ dã ngoại",
+        "distractor": false
+    },
+    {
+        "word": "sandwiches",
+        "vi": "bánh sandwich",
+        "distractor": false
+    },
+    {
+        "word": "juice",
+        "vi": "nước trái cây",
+        "distractor": false
+    },
+    {
+        "word": "hiked",
+        "vi": "đi bộ leo núi",
+        "distractor": false
+    },
+    {
+        "word": "the forest trail",
+        "vi": "đường mòn trong rừng",
+        "distractor": false
+    },
+    {
+        "word": "a waterfall",
+        "vi": "thác nước",
+        "distractor": false
+    },
+    {
+        "word": "took photos",
+        "vi": "chụp ảnh",
+        "distractor": false
+    },
+    {
+        "word": "tired",
+        "vi": "mệt mỏi",
+        "distractor": false
+    },
+    {
+        "word": "grateful",
+        "vi": "biết ơn",
+        "distractor": false
+    },
+    {
+        "word": "a boring day at home",
+        "vi": "một ngày nhàm chán ở nhà",
+        "distractor": true
+    },
+    {
+        "word": "unhappy and angry",
+        "vi": "không vui và tức giận",
+        "distractor": true
+    }
+]
     }
   }
 };

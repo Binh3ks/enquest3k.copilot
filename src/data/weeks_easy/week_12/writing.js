@@ -1,15 +1,45 @@
 export default {
   title: "My Talents",
-  prompt_en: "Write about your talents for a talent show! What can you do well? What can't you do? What talent do you want to learn? How do you feel when you perform?",
-  prompt_vi: "Viết về tài năng của bạn cho buổi biểu diễn! Bạn giỏi làm gì? Không làm được gì? Muốn học tài năng nào? Cảm giác khi biểu diễn?",
-  instruction_en: "Use: I can... / I can't... / I want to learn to... / When I perform, I feel...",
-  instruction_vi: "Dùng: I can... / I can't... / I want to learn to... / When I perform, I feel...",
-  min_words: 30,
+  min_words: 25,
   model_sentence: "I can sing. I can dance. I can run fast. I can't swim yet but I want to learn!",
-  keywords: ["I can", "I can't", "sing", "dance", "run", "jump", "swim", "draw"],
-  topic_talk_prompt: "Tell me about something you are good at. What is your talent?",
-  sentence_frames: [{"template":"I can ___ and ___."},{"template":"I can't ___ yet, but I want to learn."},{"template":"My favourite talent is ___ because ___."},{"template":"I practise ___ every ___."},{"template":"My friends say I am good at ___."},{"template":"When I perform, I feel ___."}],
-  
+  instruction_en: "Write about your talents!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 t\u00e0i n\u0103ng c\u1ee7a b\u1ea1n!",
+  prompt_en: "What can you do well? What can't you do yet? What do you want to learn?",
+  prompt_vi: "B\u1ea1n l\u00e0m \u0111\u01b0\u1ee3c g\u00ec gi\u1ecfi? B\u1ea1n ch\u01b0a l\u00e0m \u0111\u01b0\u1ee3c g\u00ec? B\u1ea1n mu\u1ed1n h\u1ecdc g\u00ec?",
+  keywords: ["sing", "dance", "run", "swim", "learn", "fast"],
+  topic_talk_prompt: "What can you do? What do you want to learn?",
+  sentence_frames: [
+    {
+        "template": "I can ___.",
+        "answers": [
+            "sing"
+        ]
+    },
+    {
+        "template": "I can also ___.",
+        "answers": [
+            "dance"
+        ]
+    },
+    {
+        "template": "I can run ___.",
+        "answers": [
+            "fast"
+        ]
+    },
+    {
+        "template": "I can't ___ yet.",
+        "answers": [
+            "swim"
+        ]
+    },
+    {
+        "template": "I want to ___ one day.",
+        "answers": [
+            "learn"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -17,31 +47,47 @@ export default {
       show_by_default: false,
       scaffolding_stage: "medium",
       words: [
-        {word: "=== VERBS (Động từ) ===", vi: "", distractor: false},
-        {word: "sing", vi: "hát", distractor: false},
-        {word: "dance", vi: "nhảy", distractor: false},
-        {word: "draw", vi: "vẽ", distractor: false},
-        {word: "run", vi: "chạy", distractor: false},
-        {word: "jump", vi: "nhảy cao", distractor: false},
-        {word: "swim", vi: "bơi", distractor: false},
-        {word: "play piano", vi: "chơi piano", distractor: false},
-        {word: "play guitar", vi: "chơi guitar", distractor: false},
-        {word: "practise", vi: "luyện tập", distractor: false},
-        {word: "perform", vi: "biểu diễn", distractor: false},
-        {word: "=== NOUNS (Danh từ) ===", vi: "", distractor: false},
-        {word: "singing", vi: "hát", distractor: false},
-        {word: "dancing", vi: "nhảy", distractor: false},
-        {word: "drawing", vi: "vẽ", distractor: false},
-        {word: "day", vi: "ngày", distractor: false},
-        {word: "weekend", vi: "cuối tuần", distractor: false},
-        {word: "=== ADJECTIVES (Tính từ) ===", vi: "", distractor: false},
-        {word: "happy", vi: "vui", distractor: false},
-        {word: "proud", vi: "tự hào", distractor: false},
-        {word: "nervous", vi: "hồi hộp", distractor: false},
-        {word: "excited", vi: "hào hứng", distractor: false},
-        {word: "proudly", vi: "tự hào (sai loại từ)", distractor: true},
-        {word: "sang", vi: "hát (sai dạng)", distractor: true}
-      ]
+    {
+        "word": "sing",
+        "vi": "hát",
+        "distractor": false
+    },
+    {
+        "word": "dance",
+        "vi": "nhảy",
+        "distractor": false
+    },
+    {
+        "word": "fast",
+        "vi": "nhanh",
+        "distractor": false
+    },
+    {
+        "word": "swim",
+        "vi": "bơi",
+        "distractor": false
+    },
+    {
+        "word": "learn",
+        "vi": "học",
+        "distractor": false
+    },
+    {
+        "word": "fly",
+        "vi": "bay",
+        "distractor": true
+    },
+    {
+        "word": "slowly",
+        "vi": "chậm chạp",
+        "distractor": true
+    },
+    {
+        "word": "forget",
+        "vi": "quên",
+        "distractor": true
+    }
+]
     }
   }
 };

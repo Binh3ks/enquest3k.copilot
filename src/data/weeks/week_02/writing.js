@@ -1,21 +1,42 @@
 export default {
   title: "My Family Squad",
-  min_words: 40,
-  model_sentence: "This is my family. This is my mother. She is kind. This is my father. He is strong. This is my brother. He helps me. This is my sister. She is funny. We are a team. We love each other. I am happy at home.",
-  instruction_en: "Use: This is my... / He/She is... / He/She has... / We have...",
-  instruction_vi: "Dùng: This is my... / He/She is... / He/She has... / We have...",
-  prompt_en: "Write about your family! Who is in your family? What do they look like? What do they do? Do you have a pet? Write 4–5 sentences.",
-  prompt_vi: "Viết về gia đình bạn! Gia đình có những ai? Họ trông như thế nào? Họ làm gì? Nhà bạn có thú cưng không? Viết 4–5 câu.",
-  keywords: ["This is my", "mother", "father", "brother", "sister", "team", "family", "love", "home"],
+  min_words: 30,
+  model_sentence: "This is my family. This is my mother. She is kind. This is my father. He is strong. This is my brother. He helps me.",
+  instruction_en: "Describe your family members using phrases!",
+  instruction_vi: "M\u00f4 t\u1ea3 c\u00e1c th\u00e0nh vi\u00ean gia \u0111\u00ecnh b\u1eb1ng c\u1ee5m t\u1eeb!",
+  prompt_en: "Who is in your family? What are they like? How do they help you?",
+  prompt_vi: "Ai trong gia \u0111\u00ecnh? H\u1ecd th\u1ebf n\u00e0o? H\u1ecd gi\u00fap b\u1ea1n th\u1ebf n\u00e0o?",
+  keywords: ["mother", "father", "brother", "kind", "strong", "helps"],
+  topic_talk_prompt: "Tell me about your family members!",
   sentence_frames: [
-    {"template":"Hello! This is my family and we are ___."},
-    {"template":"This is my ___. His/Her name is ___ and he/she is ___ years old."},
-    {"template":"He/She is very ___ and he/she has ___ hair and ___ eyes."},
-    {"template":"My ___ works as ___ and he/she loves ___."},
-    {"template":"We like to ___ together on weekends and it is always ___."},
-    {"template":"I love my family because ___!"}
-  ],
-  
+    {
+        "template": "This is my ___ and she is ___.",
+        "answers": [
+            "mother",
+            "kind"
+        ]
+    },
+    {
+        "template": "This is my ___ and he is ___.",
+        "answers": [
+            "father",
+            "strong"
+        ]
+    },
+    {
+        "template": "This is my ___ and he ___ me.",
+        "answers": [
+            "brother",
+            "helps"
+        ]
+    },
+    {
+        "template": "I love my family because they are always ___.",
+        "answers": [
+            "there for me"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -23,43 +44,52 @@ export default {
       show_by_default: false,
       scaffolding_stage: "high",
       words: [
-        {word: "[1] a happy team", vi: "một đội hạnh phúc", distractor: false},
-        {word: "[1] a close family", vi: "một gia đình gắn bó", distractor: false},
-        {word: "[1] very loving", vi: "rất yêu thương", distractor: false},
-        {word: "[2] mother", vi: "mẹ", distractor: false},
-        {word: "[2] father", vi: "bố", distractor: false},
-        {word: "[2] brother", vi: "anh/em trai", distractor: false},
-        {word: "[2] sister", vi: "chị/em gái", distractor: false},
-        {word: "[3] Linda", vi: "Linda (tên)", distractor: false},
-        {word: "[3] David", vi: "David (tên)", distractor: false},
-        {word: "[3] Sarah", vi: "Sarah (tên)", distractor: false},
-        {word: "[4] ten", vi: "10 tuổi", distractor: false},
-        {word: "[4] twelve", vi: "12 tuổi", distractor: false},
-        {word: "[4] forty", vi: "40 tuổi", distractor: false},
-        {word: "[5] kind", vi: "tử tế", distractor: false},
-        {word: "[5] strong", vi: "khỏe mạnh", distractor: false},
-        {word: "[5] funny", vi: "vui tính", distractor: false},
-        {word: "[6] long black", vi: "đen dài", distractor: false},
-        {word: "[6] short brown", vi: "nâu ngắn", distractor: false},
-        {word: "[7] brown", vi: "nâu", distractor: false},
-        {word: "[7] blue", vi: "xanh", distractor: false},
-        {word: "[8] mother", vi: "mẹ", distractor: false},
-        {word: "[8] father", vi: "bố", distractor: false},
-        {word: "[9] a teacher", vi: "giáo viên", distractor: false},
-        {word: "[9] a doctor", vi: "bác sĩ", distractor: false},
-        {word: "[9] an engineer", vi: "kỹ sư", distractor: false},
-        {word: "[10] helping people", vi: "giúp mọi người", distractor: false},
-        {word: "[10] cooking", vi: "nấu ăn", distractor: false},
-        {word: "[11] play games", vi: "chơi trò chơi", distractor: false},
-        {word: "[11] watch movies", vi: "xem phim", distractor: false},
-        {word: "[11] go to the park", vi: "đi công viên", distractor: false},
-        {word: "[12] fun", vi: "vui", distractor: false},
-        {word: "[12] enjoyable", vi: "thú vị", distractor: false},
-        {word: "[13] they always care for me", vi: "họ luôn quan tâm tôi", distractor: false},
-        {word: "[13] we help each other", vi: "chúng tôi giúp nhau", distractor: false},
-        {word: "sad", vi: "buồn (sai ngữ cảnh)", distractor: true},
-        {word: "angry", vi: "giận (sai ngữ cảnh)", distractor: true}
-      ]
+    {
+        "word": "mother",
+        "vi": "mẹ",
+        "distractor": false
+    },
+    {
+        "word": "kind",
+        "vi": "tốt bụng",
+        "distractor": false
+    },
+    {
+        "word": "father",
+        "vi": "bố",
+        "distractor": false
+    },
+    {
+        "word": "strong",
+        "vi": "mạnh mẽ",
+        "distractor": false
+    },
+    {
+        "word": "brother",
+        "vi": "anh/em trai",
+        "distractor": false
+    },
+    {
+        "word": "helps",
+        "vi": "giúp đỡ",
+        "distractor": false
+    },
+    {
+        "word": "there for me",
+        "vi": "luôn ở bên tôi",
+        "distractor": false
+    },
+    {
+        "word": "mean and strict",
+        "vi": "xấu tính và nghiêm khắc",
+        "distractor": true
+    },
+    {
+        "word": "never around",
+        "vi": "không bao giờ ở đây",
+        "distractor": true
+    }
+]
     }
   }
 };

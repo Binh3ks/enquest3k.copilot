@@ -1,15 +1,41 @@
 export default {
   title: "My World",
-  min_words: 40,
-  model_sentence: "My name is Emma and I want to show you my world. I have a wonderful family with my mom, my dad, and my little sister. I can draw beautiful pictures with colorful pencils. I can sing happy songs and dance to music. I help my mom cook delicious dinner every evening. I play fun games with my best friend Lily at the park. I am so proud to tell you about my world!",
-  instruction_en: "Use: Today I am presenting about... / I can... / I like... / I feel... when I present.",
-  instruction_vi: "Dùng: Today I am presenting about... / I can... / I like... / I feel... when I present.",
-  prompt_en: "Imagine you are giving a short presentation about yourself to the class! What is your topic? What can you do well? What do you like? How do you feel when you present? What is one interesting fact about you?",
-  prompt_vi: "Hãy tưởng tượng bạn đang thuyết trình ngắn về bản thân! Chủ đề là gì? Bạn giỏi điều gì? Bạn thích gì? Cảm giác khi thuyết trình? Một điều thú vị về bạn?",
-  keywords: ["show", "tell", "name", "family", "can", "help", "draw", "sing", "play", "friend"],
-  topic_talk_prompt: "Tell me about your favourite things. What do you like most?",
-  sentence_frames: [{"template":"Today I am presenting about ___."},{"template":"My topic is important because ___."},{"template":"I can ___ and I can also ___."},{"template":"I like ___ and my favourite ___ is ___."},{"template":"One interesting fact about me is ___."},{"template":"When I present, I feel ___."}],
-  
+  min_words: 25,
+  model_sentence: "My name is Emma and I want to show you my world. I have a wonderful family with my mom, my dad, and my little sister. I live in a nice house near the park.",
+  instruction_en: "Write about your world!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 th\u1ebf gi\u1edbi c\u1ee7a b\u1ea1n!",
+  prompt_en: "What is your name? What is your family like? Where do you live?",
+  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? Gia \u0111\u00ecnh th\u1ebf n\u00e0o? B\u1ea1n s\u1ed1ng \u1edf \u0111\u00e2u?",
+  keywords: ["Emma", "family", "mom", "dad", "sister", "house", "park"],
+  topic_talk_prompt: "Tell me about your world \u2014 your family and home!",
+  sentence_frames: [
+    {
+        "template": "My name is ___ and I want to show you my world.",
+        "answers": [
+            "Emma"
+        ]
+    },
+    {
+        "template": "I have a ___ family.",
+        "answers": [
+            "wonderful"
+        ]
+    },
+    {
+        "template": "My family has my ___, my ___, and my little ___.",
+        "answers": [
+            "mom",
+            "dad",
+            "sister"
+        ]
+    },
+    {
+        "template": "I live near the ___.",
+        "answers": [
+            "park"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -17,31 +43,52 @@ export default {
       show_by_default: false,
       scaffolding_stage: "medium",
       words: [
-        {word: "=== TOPICS (Chủ đề) ===", vi: "", distractor: false},
-        {word: "my family", vi: "gia đình tôi", distractor: false},
-        {word: "my hobbies", vi: "sở thích tôi", distractor: false},
-        {word: "my talents", vi: "tài năng tôi", distractor: false},
-        {word: "my school", vi: "trường tôi", distractor: false},
-        {word: "=== VERBS (Động từ) ===", vi: "", distractor: false},
-        {word: "draw", vi: "vẽ", distractor: false},
-        {word: "sing", vi: "hát", distractor: false},
-        {word: "play", vi: "chơi", distractor: false},
-        {word: "dance", vi: "nhảy", distractor: false},
-        {word: "read", vi: "đọc", distractor: false},
-        {word: "cook", vi: "nấu ăn", distractor: false},
-        {word: "=== NOUNS (Danh từ) ===", vi: "", distractor: false},
-        {word: "sport", vi: "thể thao", distractor: false},
-        {word: "food", vi: "món ăn", distractor: false},
-        {word: "subject", vi: "môn học", distractor: false},
-        {word: "color", vi: "màu sắc", distractor: false},
-        {word: "=== ADJECTIVES (Tính từ) ===", vi: "", distractor: false},
-        {word: "happy", vi: "vui", distractor: false},
-        {word: "proud", vi: "tự hào", distractor: false},
-        {word: "nervous", vi: "hồi hộp", distractor: false},
-        {word: "confident", vi: "tự tin", distractor: false},
-        {word: "hobby", vi: "sở thích (sai loại từ)", distractor: true},
-        {word: "presenting", vi: "thuyết trình (sai dạng)", distractor: true}
-      ]
+    {
+        "word": "Emma",
+        "vi": "",
+        "distractor": false
+    },
+    {
+        "word": "wonderful",
+        "vi": "tuyệt vời",
+        "distractor": false
+    },
+    {
+        "word": "mom",
+        "vi": "mẹ",
+        "distractor": false
+    },
+    {
+        "word": "dad",
+        "vi": "bố",
+        "distractor": false
+    },
+    {
+        "word": "sister",
+        "vi": "chị/em gái",
+        "distractor": false
+    },
+    {
+        "word": "park",
+        "vi": "công viên",
+        "distractor": false
+    },
+    {
+        "word": "terrible",
+        "vi": "tệ",
+        "distractor": true
+    },
+    {
+        "word": "brother",
+        "vi": "anh/em trai",
+        "distractor": true
+    },
+    {
+        "word": "school",
+        "vi": "trường",
+        "distractor": true
+    }
+]
     }
   }
 };

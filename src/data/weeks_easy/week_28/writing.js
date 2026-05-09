@@ -1,72 +1,88 @@
 export default {
   title: "Writing: The Tortoise and the Hare",
-  min_words: 30,
-  model_sentence: "One day, the hare ran very fast and got far ahead of the tortoise. Then he stopped and took a long nap under a big tree. He thought he had plenty of time. The tortoise walked slowly but never stopped. After a long time, the tortoise walked past the sleeping hare. Finally, the tortoise crossed the finish line and won the race. The lesson is: slow and steady wins the race!",
-  instruction_en: "Use: Once upon a time... / The hare ran/slept... / The tortoise walked/won... / The lesson is...",
-  instruction_vi: "Dùng: Once upon a time... / The hare ran/slept... / The tortoise walked/won... / The lesson is...",
-  prompt_en: "Retell the story of The Tortoise and the Hare in your own words! Who were the characters? What did the Hare do? What did the Tortoise do? Who won and why? What is the lesson?",
-  prompt_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn! Có những nhân vật nào? Thỏ đã làm gì? Rùa đã làm gì? Ai thắng và tại sao? Bài học là gì?",
-  keywords: ["tortoise", "hare", "race", "ran", "slept", "won", "lost", "slow", "steady", "fast", "nap", "finish", "lesson", "first", "then", "after that", "finally", "won", "cheer"],
-  topic_talk_prompt: "Tell me about a time you worked hard to finish something. What happened?",
+  min_words: 35,
+  model_sentence: "One day, the hare ran very fast and got far ahead of the tortoise. Then he stopped and took a long nap under a big tree. The tortoise kept walking slowly. In the end, the tortoise won the race!",
+  instruction_en: "Retell The Tortoise and the Hare!",
+  instruction_vi: "K\u1ec3 l\u1ea1i c\u00e2u chuy\u1ec7n R\u00f9a v\u00e0 Th\u1ecf!",
+  prompt_en: "What did the hare do? What did the tortoise do? Who won?",
+  prompt_vi: "Con th\u1ecf \u0111\u00e3 l\u00e0m g\u00ec? Con r\u00f9a \u0111\u00e3 l\u00e0m g\u00ec? Ai th\u1eafng?",
+  keywords: ["hare", "fast", "tortoise", "nap", "tree", "walking", "slowly", "won", "race"],
+  topic_talk_prompt: "Retell the story of the Tortoise and the Hare!",
   sentence_frames: [
-    {"template":"Once upon a time, a ___ and a ___ decided to have a ___."},
-    {"template":"The ___ was very proud and said, 'I am the ___!'"},
-    {"template":"The race ___ and the hare ___ very fast."},
-    {"template":"Soon the hare was ___ ahead, so he ___ to rest."},
-    {"template":"He ___ a long nap under a ___."},
-    {"template":"The ___ walked slowly but never ___."},
-    {"template":"After a long time, the tortoise ___ past the sleeping ___."},
-    {"template":"When the hare ___ up, he saw the tortoise near the ___ line."},
-    {"template":"The ___ crossed the line first and ___ the race!"},
-    {"template":"The lesson is: ___ and ___ wins the race."}
-  ],
+    {
+        "template": "The hare ran very ___ and got far ahead.",
+        "answers": [
+            "fast"
+        ]
+    },
+    {
+        "template": "He stopped and took a long ___ under a big ___.",
+        "answers": [
+            "nap",
+            "tree"
+        ]
+    },
+    {
+        "template": "The tortoise kept walking ___.",
+        "answers": [
+            "slowly"
+        ]
+    },
+    {
+        "template": "In the end, the tortoise ___ the race!",
+        "answers": [
+            "won"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need help? Click for word bank",
-      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       show_by_default: false,
       scaffolding_stage: "low",
-      cumulative_review_words: [
-        {word: "seed", vi: "hạt giống (ôn W27)", from_week: 27},
-        {word: "grows", vi: "lớn (ôn W27)", from_week: 27},
-        {word: "water", vi: "nước (ôn W27)", from_week: 27},
-        {word: "soil", vi: "đất (ôn W27)", from_week: 27},
-        {word: "sprout", vi: "mầm cây (ôn W27)", from_week: 27}
-      ],
       words: [
-        {word: "tortoise", vi: "con rùa", distractor: false},
-        {word: "hare", vi: "con thỏ", distractor: false},
-        {word: "race", vi: "cuộc đua", distractor: false},
-        {word: "fastest", vi: "nhanh nhất", distractor: false},
-        {word: "started", vi: "đã bắt đầu", distractor: false},
-        {word: "ran", vi: "đã chạy", distractor: false},
-        {word: "far", vi: "xa", distractor: false},
-        {word: "stopped", vi: "đã dừng lại", distractor: false},
-        {word: "took", vi: "đã nghỉ", distractor: false},
-        {word: "tree", vi: "cây", distractor: false},
-        {word: "walked", vi: "đã đi bộ", distractor: false},
-        {word: "hare", vi: "thỏ", distractor: false},
-        {word: "woke", vi: "đã tỉnh dậy", distractor: false},
-        {word: "finish", vi: "đích", distractor: false},
-        {word: "tortoise", vi: "rùa", distractor: false},
-        {word: "won", vi: "đã thắng", distractor: false},
-        {word: "slow", vi: "chậm", distractor: false},
-        {word: "steady", vi: "kiên trì", distractor: false},
-        {word: "fast", vi: "nhanh", distractor: false},
-        {word: "slowly", vi: "chậm rãi", distractor: false},
-        {word: "lesson", vi: "bài học", distractor: false},
-        {word: "start", vi: "bắt đầu (sai - thiếu -ed)", distractor: true},
-        {word: "stop", vi: "dừng (sai - thiếu -ed)", distractor: true},
-        {word: "walk", vi: "đi bộ (sai - thiếu -ed)", distractor: true}
-      ]
+    {
+        "word": "fast",
+        "vi": "nhanh",
+        "distractor": false
     },
-    model_paragraph: {
-      label_en: "📖 See example paragraph",
-      label_vi: "📖 Xem bài mẫu",
-      show_by_default: false,
-      warning_en: "⚠️ Try writing first before looking!",
-      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
-      text: "One day, the hare ran very fast and got far ahead of the tortoise. Then he stopped and took a long nap under a big tree. He thought he had plenty of time. The tortoise walked slowly but never stopped. After a long time, the tortoise walked past the sleeping hare. Finally, the tortoise crossed the finish line and won the race. The lesson is: slow and steady wins the race!"
+    {
+        "word": "nap",
+        "vi": "giấc ngủ ngắn",
+        "distractor": false
+    },
+    {
+        "word": "tree",
+        "vi": "cây",
+        "distractor": false
+    },
+    {
+        "word": "slowly",
+        "vi": "chậm rãi",
+        "distractor": false
+    },
+    {
+        "word": "won",
+        "vi": "thắng",
+        "distractor": false
+    },
+    {
+        "word": "slowly",
+        "vi": "chậm (dùng cho thỏ - sai)",
+        "distractor": true
+    },
+    {
+        "word": "lost",
+        "vi": "thua",
+        "distractor": true
+    },
+    {
+        "word": "school",
+        "vi": "trường học",
+        "distractor": true
+    }
+]
     }
   }
 };

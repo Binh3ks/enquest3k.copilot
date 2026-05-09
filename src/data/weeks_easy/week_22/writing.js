@@ -1,15 +1,45 @@
 export default {
   title: "My Time Detective Questions",
   min_words: 30,
-  model_sentence: "I was a time detective. I asked my brother, Did you play yesterday? He said, Yes, I did. I asked, Did you watch TV last night? He said, No, I didn't. Then I asked, Did you help mom? He said, Yes, I did. I wrote all answers in my notebook.",
-  instruction_en: "Use: Did you ___? Yes, I did. I ___ed... / No, I didn't. I ___ed... instead.",
-  instruction_vi: "Dùng: Did you ___? Yes, I did. I ___ed... / No, I didn't. I ___ed... instead.",
-  prompt_en: "Write a short interview about yesterday! Write 4 'Did you...' questions and 4 full answers. Ask about food, places, activities, and feelings.",
-  prompt_vi: "Viết một cuộc phỏng vấn ngắn về hôm qua! Viết 4 câu hỏi 'Did you...' và 4 câu trả lời đầy đủ. Hỏi về thức ăn, địa điểm, hoạt động và cảm xúc.",
-  keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
-  topic_talk_prompt: "Tell me about something interesting that happened in the past.",
-  sentence_frames: [{"template":"Did you ___ yesterday? Yes, I did. I ___ ___."},{"template":"Did you ___ last night? No, I didn't. I ___ ___ instead."},{"template":"Did you ___ with ___? Yes, I did! It was ___."},{"template":"Did you eat ___ for breakfast? Yes/No, I ___."},{"template":"Did you go to ___? No, I stayed at ___ and ___."},{"template":"Did you feel ___ yesterday? I felt ___ because ___."},{"template":"It was a ___ day because ___!"}],
-  
+  model_sentence: "I was a time detective. I asked my brother, Did you play yesterday? He said, Yes, I did. I asked, Did you watch TV last night? He said, No, I didn't.",
+  instruction_en: "Write your time detective questions and answers!",
+  instruction_vi: "Vi\u1ebft c\u00e2u h\u1ecfi v\u00e0 tr\u1ea3 l\u1eddi th\u00e1m t\u1eed th\u1eddi gian!",
+  prompt_en: "What questions did you ask? What were the answers?",
+  prompt_vi: "B\u1ea1n h\u1ecfi nh\u1eefng c\u00e2u h\u1ecfi g\u00ec? C\u00e2u tr\u1ea3 l\u1eddi l\u00e0 g\u00ec?",
+  keywords: ["detective", "asked", "play", "yesterday", "watch", "night", "did", "didn't"],
+  topic_talk_prompt: "Ask me time detective questions about yesterday!",
+  sentence_frames: [
+    {
+        "template": "I was a time ___.",
+        "answers": [
+            "detective"
+        ]
+    },
+    {
+        "template": "I asked, Did you ___ yesterday?",
+        "answers": [
+            "play"
+        ]
+    },
+    {
+        "template": "He said, Yes, I ___.",
+        "answers": [
+            "did"
+        ]
+    },
+    {
+        "template": "I asked, Did you ___ TV last night?",
+        "answers": [
+            "watch"
+        ]
+    },
+    {
+        "template": "He said, No, I ___.",
+        "answers": [
+            "didn't"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -17,36 +47,47 @@ export default {
       show_by_default: false,
       scaffolding_stage: "medium-low",
       words: [
-        {word: "=== PAST VERBS (grouped) ===", vi: "", distractor: false},
-        {word: "play", vi: "chơi", distractor: false},
-        {word: "watch", vi: "xem", distractor: false},
-        {word: "help", vi: "giúp", distractor: false},
-        {word: "walk", vi: "đi bộ", distractor: false},
-        {word: "talk", vi: "nói chuyện", distractor: false},
-        {word: "listen", vi: "nghe", distractor: false},
-        {word: "=== COMPLETE ANSWERS (shuffled) ===", vi: "", distractor: false},
-        {word: "played", vi: "đã chơi", distractor: false},
-        {word: "watched", vi: "đã xem", distractor: false},
-        {word: "helped", vi: "đã giúp", distractor: false},
-        {word: "walked", vi: "đã đi bộ", distractor: false},
-        {word: "read a book", vi: "đã đọc sách", distractor: false},
-        {word: "stayed home", vi: "đã ở nhà", distractor: false},
-        {word: "did my homework", vi: "đã làm bài", distractor: false},
-        {word: "rice", vi: "cơm", distractor: false},
-        {word: "bread", vi: "bánh mì", distractor: false},
-        {word: "noodles", vi: "mì", distractor: false},
-        {word: "did", vi: "có", distractor: false},
-        {word: "didn't", vi: "không", distractor: false},
-        {word: "school", vi: "trường", distractor: false},
-        {word: "the park", vi: "công viên", distractor: false},
-        {word: "home", vi: "nhà", distractor: false},
-        {word: "happy", vi: "vui", distractor: false},
-        {word: "tired", vi: "mệt", distractor: false},
-        {word: "great", vi: "tuyệt vời", distractor: false},
-        {word: "boring", vi: "nhàm chán", distractor: false},
-        {word: "plays", vi: "chơi (sai dạng)", distractor: true},
-        {word: "helping", vi: "giúp (sai dạng)", distractor: true}
-      ]
+    {
+        "word": "detective",
+        "vi": "thám tử",
+        "distractor": false
+    },
+    {
+        "word": "play",
+        "vi": "chơi",
+        "distractor": false
+    },
+    {
+        "word": "did",
+        "vi": "đã làm",
+        "distractor": false
+    },
+    {
+        "word": "watch",
+        "vi": "xem",
+        "distractor": false
+    },
+    {
+        "word": "didn't",
+        "vi": "không làm",
+        "distractor": false
+    },
+    {
+        "word": "scientist",
+        "vi": "nhà khoa học",
+        "distractor": true
+    },
+    {
+        "word": "tomorrow",
+        "vi": "ngày mai",
+        "distractor": true
+    },
+    {
+        "word": "will",
+        "vi": "sẽ (tương lai sai)",
+        "distractor": true
+    }
+]
     }
   }
 };

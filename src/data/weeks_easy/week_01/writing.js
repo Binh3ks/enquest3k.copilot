@@ -1,14 +1,45 @@
 export default {
   title: "My School",
-  min_words: 30,
+  min_words: 20,
   model_sentence: "I am Alex. I am a student. My teacher is kind. My class is big. I am happy.",
-  instruction_en: "Use: My name is... / I am... / I like... / My teacher is...",
-  instruction_vi: "Dùng: My name is... / I am... / I like... / My teacher is...",
-  prompt_en: "Introduce yourself! What is your name? How old are you? What do you like to do? Who is your teacher? Describe yourself in 4–5 sentences.",
-  prompt_vi: "Giới thiệu bản thân! Tên bạn là gì? Bạn bao nhiêu tuổi? Bạn thích làm gì? Thầy/Cô bạn là ai? Viết 4–5 câu về bản thân.",
-  keywords: ["I am", "is", "teacher", "school"],
-  sentence_frames: [{"template":"My name is ___."},{"template":"I am ___ years old."},{"template":"I like ___."},{"template":"My teacher is ___. He/She is ___."}],
-  
+  instruction_en: "Write about your school!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 tr\u01b0\u1eddng c\u1ee7a b\u1ea1n!",
+  prompt_en: "What is your name? How is your teacher? How is your class?",
+  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? Th\u1ea7y/c\u00f4 th\u1ebf n\u00e0o? L\u1edbp h\u1ecdc th\u1ebf n\u00e0o?",
+  keywords: ["student", "teacher", "class", "happy", "big"],
+  topic_talk_prompt: "Tell me about your school!",
+  sentence_frames: [
+    {
+        "template": "My name is ___.",
+        "answers": [
+            "Alex"
+        ]
+    },
+    {
+        "template": "I am a ___.",
+        "answers": [
+            "student"
+        ]
+    },
+    {
+        "template": "My teacher is ___.",
+        "answers": [
+            "kind"
+        ]
+    },
+    {
+        "template": "My class is ___.",
+        "answers": [
+            "big"
+        ]
+    },
+    {
+        "template": "I feel ___ at school.",
+        "answers": [
+            "happy"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -16,23 +47,47 @@ export default {
       show_by_default: false,
       scaffolding_stage: "high",
       words: [
-        {word: "[1] Alex", vi: "Alex (tên)", distractor: false},
-        {word: "[1] Emma", vi: "Emma (tên)", distractor: false},
-        {word: "[1] Max", vi: "Max (tên)", distractor: false},
-        {word: "[2] seven", vi: "7 tuổi", distractor: false},
-        {word: "[2] eight", vi: "8 tuổi", distractor: false},
-        {word: "[2] nine", vi: "9 tuổi", distractor: false},
-        {word: "[3] reading", vi: "đọc sách", distractor: false},
-        {word: "[3] playing", vi: "chơi", distractor: false},
-        {word: "[3] drawing", vi: "vẽ", distractor: false},
-        {word: "read", vi: "đọc (sai dạng)", distractor: true},
-        {word: "[4] Ms. Johnson", vi: "Cô Johnson", distractor: false},
-        {word: "[4] Mr. Brown", vi: "Thầy Brown", distractor: false},
-        {word: "[5] kind", vi: "tốt bụng", distractor: false},
-        {word: "[5] nice", vi: "dễ thương", distractor: false},
-        {word: "[5] friendly", vi: "thân thiện", distractor: false},
-        {word: "friend", vi: "bạn (sai loại từ)", distractor: true}
-      ]
+    {
+        "word": "Alex",
+        "vi": "",
+        "distractor": false
+    },
+    {
+        "word": "student",
+        "vi": "học sinh",
+        "distractor": false
+    },
+    {
+        "word": "kind",
+        "vi": "tốt bụng",
+        "distractor": false
+    },
+    {
+        "word": "big",
+        "vi": "to lớn",
+        "distractor": false
+    },
+    {
+        "word": "happy",
+        "vi": "vui",
+        "distractor": false
+    },
+    {
+        "word": "sad",
+        "vi": "buồn",
+        "distractor": true
+    },
+    {
+        "word": "mean",
+        "vi": "xấu tính",
+        "distractor": true
+    },
+    {
+        "word": "small",
+        "vi": "nhỏ",
+        "distractor": true
+    }
+]
     }
   }
 };

@@ -1,14 +1,45 @@
 export default {
   title: "What I Like",
-  min_words: 30,
-  model_sentence: "I like to play. I like to draw. I like to read. When I play, I smile. When I draw, I am happy. When I read, I feel good. I love these things. They are fun!",
-  instruction_en: "Use: I like + V-ing... / My favourite... is... / I don't like...",
-  instruction_vi: "Dùng: I like + V-ing... / My favourite... is... / I don't like...",
-  prompt_en: "Write about your favourite things! What do you like doing? What is your favourite food? What is your favourite subject at school? What don't you like? Write 4–5 sentences.",
-  prompt_vi: "Viết về những thứ yêu thích! Bạn thích làm gì? Món ăn yêu thích? Môn học yêu thích? Bạn không thích điều gì? Viết 4–5 câu.",
-  keywords: ["like", "play", "draw", "read", "happy", "fun"],
-  sentence_frames: [{"template":"I like ___ and ___."},{"template":"My favourite food is ___."},{"template":"I like ___ at school."},{"template":"I don't like ___. I like ___ instead."}],
-  
+  min_words: 20,
+  model_sentence: "I like to play. I like to draw. I like to read. When I play, I smile. When I draw, I am happy. When I read, I feel good.",
+  instruction_en: "Write about things you like!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng th\u1ee9 b\u1ea1n th\u00edch!",
+  prompt_en: "What do you like to do? How does it make you feel?",
+  prompt_vi: "B\u1ea1n th\u00edch l\u00e0m g\u00ec? N\u00f3 khi\u1ebfn b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["play", "draw", "read", "smile", "happy", "good"],
+  topic_talk_prompt: "What do you like to do?",
+  sentence_frames: [
+    {
+        "template": "I like to ___.",
+        "answers": [
+            "play"
+        ]
+    },
+    {
+        "template": "I also like to ___.",
+        "answers": [
+            "draw"
+        ]
+    },
+    {
+        "template": "I love to ___, too.",
+        "answers": [
+            "read"
+        ]
+    },
+    {
+        "template": "When I play, I ___.",
+        "answers": [
+            "smile"
+        ]
+    },
+    {
+        "template": "When I read, I feel ___.",
+        "answers": [
+            "good"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -16,25 +47,47 @@ export default {
       show_by_default: false,
       scaffolding_stage: "high",
       words: [
-        {word: "[1] playing", vi: "chơi", distractor: false},
-        {word: "[1] reading", vi: "đọc sách", distractor: false},
-        {word: "[1] drawing", vi: "vẽ", distractor: false},
-        {word: "play", vi: "chơi (sai dạng)", distractor: true},
-        {word: "[2] singing", vi: "hát", distractor: false},
-        {word: "[2] dancing", vi: "nhảy", distractor: false},
-        {word: "[2] swimming", vi: "bơi", distractor: false},
-        {word: "[3] pizza", vi: "pizza", distractor: false},
-        {word: "[3] rice", vi: "cơm", distractor: false},
-        {word: "[3] noodles", vi: "mì", distractor: false},
-        {word: "[4] English", vi: "tiếng Anh", distractor: false},
-        {word: "[4] Math", vi: "Toán", distractor: false},
-        {word: "[4] Art", vi: "Mỹ thuật", distractor: false},
-        {word: "[5] vegetables", vi: "rau", distractor: false},
-        {word: "[5] homework", vi: "bài tập", distractor: false},
-        {word: "vegetable", vi: "rau (sai dạng)", distractor: true},
-        {word: "[6] fruit", vi: "trái cây", distractor: false},
-        {word: "[6] playing outside", vi: "chơi ngoài trời", distractor: false}
-      ]
+    {
+        "word": "play",
+        "vi": "chơi",
+        "distractor": false
+    },
+    {
+        "word": "draw",
+        "vi": "vẽ",
+        "distractor": false
+    },
+    {
+        "word": "read",
+        "vi": "đọc",
+        "distractor": false
+    },
+    {
+        "word": "smile",
+        "vi": "cười",
+        "distractor": false
+    },
+    {
+        "word": "good",
+        "vi": "tốt/vui",
+        "distractor": false
+    },
+    {
+        "word": "cry",
+        "vi": "khóc",
+        "distractor": true
+    },
+    {
+        "word": "sleep",
+        "vi": "ngủ",
+        "distractor": true
+    },
+    {
+        "word": "sad",
+        "vi": "buồn",
+        "distractor": true
+    }
+]
     }
   }
 };

@@ -1,15 +1,46 @@
 export default {
   title: "My Art Class",
   min_words: 30,
-  model_sentence: "Yesterday in art class I painted a picture of flowers and leaves. First I picked up my brush and dipped it into red pigment. Then I carefully colored the petals blue and yellow. I folded the paper in half to check the symmetry of my butterfly shape. After that I cut small leaf pieces with scissors and glued them around my picture to create a colorful border. My teacher smiled and said it was beautiful!",
-  instruction_en: "Use: In art class, I painted/drew... / I used... / I worked with... / My artwork looked...",
-  instruction_vi: "Dùng: In art class, I painted/drew... / I used... / I worked with... / My artwork looked...",
-  prompt_en: "Write a story about your last art class! What did you paint or draw? What colours did you use? Did you work alone or with friends? How did your artwork look in the end?",
-  prompt_vi: "Viết câu chuyện về giờ học mỹ thuật gần nhất! Bạn vẽ gì? Dùng màu nào? Làm một mình hay với bạn? Tác phẩm trông như thế nào?",
-  keywords: ["painted", "colored", "glued", "folded", "created", "cut", "picture", "scissors", "brush", "carefully"],
-  topic_talk_prompt: "Tell me about a picture or drawing you like. What do you see?",
-  sentence_frames: [{"template":"In art class yesterday, I painted/drew ___."},{"template":"I used ___ and ___ colours."},{"template":"First, I ___ ___. Then I ___ ___."},{"template":"I worked with ___ and we ___ ___."},{"template":"My artwork showed ___."},{"template":"My artwork looked ___ and I felt ___ about it."},{"template":"My teacher said my artwork was ___."}],
-  
+  model_sentence: "Yesterday in art class I painted a picture of flowers and leaves. First I picked up my brush and dipped it into red pigment. Then I painted petals carefully.",
+  instruction_en: "Write about what you made in art class!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec b\u1ea1n l\u00e0m trong gi\u1edd m\u1ef9 thu\u1eadt!",
+  prompt_en: "What did you paint? How did you do it? What colours did you use?",
+  prompt_vi: "B\u1ea1n v\u1ebd g\u00ec? L\u00e0m th\u1ebf n\u00e0o? B\u1ea1n d\u00f9ng m\u00e0u g\u00ec?",
+  keywords: ["art", "painted", "flowers", "leaves", "brush", "red", "petals"],
+  topic_talk_prompt: "Tell me about your art class yesterday!",
+  sentence_frames: [
+    {
+        "template": "Yesterday in art class I ___ a picture.",
+        "answers": [
+            "painted"
+        ]
+    },
+    {
+        "template": "I painted ___ and ___.",
+        "answers": [
+            "flowers",
+            "leaves"
+        ]
+    },
+    {
+        "template": "I picked up my ___.",
+        "answers": [
+            "brush"
+        ]
+    },
+    {
+        "template": "I dipped it into ___ pigment.",
+        "answers": [
+            "red"
+        ]
+    },
+    {
+        "template": "I painted ___ carefully.",
+        "answers": [
+            "petals"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -17,37 +48,52 @@ export default {
       show_by_default: false,
       scaffolding_stage: "medium-low",
       words: [
-        {word: "=== ART VERBS (grouped) ===", vi: "", distractor: false},
-        {word: "painted", vi: "đã vẽ (màu)", distractor: false},
-        {word: "drew", vi: "đã vẽ (nét)", distractor: false},
-        {word: "colored", vi: "đã tô màu", distractor: false},
-        {word: "cut", vi: "đã cắt", distractor: false},
-        {word: "glued", vi: "đã dán", distractor: false},
-        {word: "folded", vi: "đã gấp", distractor: false},
-        {word: "created", vi: "đã tạo", distractor: false},
-        {word: "=== COLORS & OBJECTS (shuffled) ===", vi: "", distractor: false},
-        {word: "red", vi: "đỏ", distractor: false},
-        {word: "blue", vi: "xanh dương", distractor: false},
-        {word: "yellow", vi: "vàng", distractor: false},
-        {word: "green", vi: "xanh lá", distractor: false},
-        {word: "a flower", vi: "hoa", distractor: false},
-        {word: "a tree", vi: "cây", distractor: false},
-        {word: "a butterfly", vi: "bướm", distractor: false},
-        {word: "a house", vi: "nhà", distractor: false},
-        {word: "my friend", vi: "bạn tôi", distractor: false},
-        {word: "my partner", vi: "bạn cặp", distractor: false},
-        {word: "a rainbow", vi: "cầu vồng", distractor: false},
-        {word: "animals", vi: "động vật", distractor: false},
-        {word: "beautiful", vi: "đẹp", distractor: false},
-        {word: "colorful", vi: "nhiều màu", distractor: false},
-        {word: "happy", vi: "vui", distractor: false},
-        {word: "proud", vi: "tự hào", distractor: false},
-        {word: "amazing", vi: "tuyệt vời", distractor: false},
-        {word: "nice", vi: "đẹp", distractor: false},
-        {word: "paint", vi: "vẽ (sai - thiếu -ed)", distractor: true},
-        {word: "draw", vi: "vẽ (sai - thiếu -ed)", distractor: true},
-        {word: "colors", vi: "màu (sai dạng)", distractor: true}
-      ]
+    {
+        "word": "painted",
+        "vi": "vẽ",
+        "distractor": false
+    },
+    {
+        "word": "flowers",
+        "vi": "hoa",
+        "distractor": false
+    },
+    {
+        "word": "leaves",
+        "vi": "lá",
+        "distractor": false
+    },
+    {
+        "word": "brush",
+        "vi": "bút vẽ",
+        "distractor": false
+    },
+    {
+        "word": "red",
+        "vi": "đỏ",
+        "distractor": false
+    },
+    {
+        "word": "petals",
+        "vi": "cánh hoa",
+        "distractor": false
+    },
+    {
+        "word": "sang",
+        "vi": "hát",
+        "distractor": true
+    },
+    {
+        "word": "blue",
+        "vi": "xanh",
+        "distractor": true
+    },
+    {
+        "word": "stems",
+        "vi": "thân cây",
+        "distractor": true
+    }
+]
     }
   }
 };

@@ -1,73 +1,111 @@
 export default {
   title: "Writing: How a Seed Grows",
-  min_words: 30,
-  model_sentence: "Here is how a seed grows into a plant. First, a seed is planted in the soil. It needs water and sunlight to grow. Next, a tiny green sprout appears. After that, the stem grows taller and leaves open up. A leaf uses sunlight to make food. Finally, a beautiful flower blooms at the top. A plant is amazing!",
-  instruction_en: "Use Present Simple for facts: A seed needs... / It grows... / Roots go... / The plant becomes...",
-  instruction_vi: "Dùng Present Simple: A seed needs... / It grows... / Roots go... / The plant becomes...",
-  prompt_en: "Write about how a seed grows into a plant! Where does a seed start? What does it need — water, sunlight, soil? What happens first, then next? What does the plant look like in the end?",
-  prompt_vi: "Viết về cách một hạt giống lớn thành cây! Hạt giống bắt đầu từ đâu? Nó cần gì — nước, ánh nắng, đất? Điều gì xảy ra trước, sau đó là gì? Cây trông như thế nào cuối cùng?",
-  keywords: ["seed", "soil", "root", "stem", "leaf", "flower", "sunlight", "water", "grows", "needs", "absorbs", "sprout", "first", "next", "after that", "finally", "plant"],
-  topic_talk_prompt: "Tell me about a plant or animal you have watched grow or change.",
+  min_words: 35,
+  model_sentence: "Here is how a seed grows into a plant. First, a seed is planted in the soil. It needs water and sunlight to grow. Next, a small shoot appears. Then leaves grow. Finally, a flower blooms!",
+  instruction_en: "Write about how a seed grows step by step!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 c\u00e1ch h\u1ea1t gi\u1ed1ng n\u1ea3y m\u1ea7m t\u1eebng b\u01b0\u1edbc!",
+  prompt_en: "What does a seed need to grow? What happens at each stage?",
+  prompt_vi: "H\u1ea1t gi\u1ed1ng c\u1ea7n g\u00ec \u0111\u1ec3 l\u1edbn l\u00ean? Chuy\u1ec7n g\u00ec x\u1ea3y ra \u1edf m\u1ed7i giai \u0111o\u1ea1n?",
+  keywords: ["seed", "plant", "soil", "water", "sunlight", "shoot", "leaves", "flower", "blooms"],
+  topic_talk_prompt: "Explain how a seed grows into a plant!",
   sentence_frames: [
-    {"template":"A ___ is a tiny thing that can ___ into a plant."},
-    {"template":"First, we ___ the seed in the ___ and give it ___."},
-    {"template":"The seed needs ___, ___, and ___ to grow."},
-    {"template":"Next, a tiny ___ appears from the seed."},
-    {"template":"The ___ grows down into the soil to get ___."},
-    {"template":"Then the ___ grows up toward the ___."},
-    {"template":"After that, green ___ open on the stem."},
-    {"template":"The ___ use sunlight to make ___."},
-    {"template":"Finally, a beautiful ___ blooms at the top."},
-    {"template":"A seed growing into a ___ is amazing!"}
-  ],
+    {
+        "template": "First, a seed is ___ in the ___.",
+        "answers": [
+            "planted",
+            "soil"
+        ]
+    },
+    {
+        "template": "It needs ___ and ___ to grow.",
+        "answers": [
+            "water",
+            "sunlight"
+        ]
+    },
+    {
+        "template": "Next, a small ___ appears.",
+        "answers": [
+            "shoot"
+        ]
+    },
+    {
+        "template": "Then ___ grow.",
+        "answers": [
+            "leaves"
+        ]
+    },
+    {
+        "template": "Finally, a ___ ___!",
+        "answers": [
+            "flower",
+            "blooms"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need help? Click for word bank",
-      label_vi: "💡 Cần trợ giúp? Bấm để xem từ",
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       show_by_default: false,
-      scaffolding_stage: "low", // W26+: fully shuffled
-      cumulative_review_words: [
-        {word: "walked", vi: "đã đi bộ (ôn W26)", from_week: 26},
-        {word: "played", vi: "đã chơi (ôn W26)", from_week: 26},
-        {word: "watched", vi: "đã xem (ôn W26)", from_week: 26},
-        {word: "helped", vi: "đã giúp (ôn W26)", from_week: 26},
-        {word: "happy", vi: "vui (ôn W26)", from_week: 26}
-      ],
+      scaffolding_stage: "low",
       words: [
-        {word: "seed", vi: "hạt giống", distractor: false},
-        {word: "grow", vi: "lớn (sai dạng)", distractor: true},
-        {word: "grows", vi: "lớn", distractor: false},
-        {word: "plant", vi: "trồng", distractor: false},
-        {word: "soil", vi: "đất", distractor: false},
-        {word: "water", vi: "nước", distractor: false},
-        {word: "sunlight", vi: "ánh nắng mặt trời", distractor: false},
-        {word: "air", vi: "không khí", distractor: false},
-        {word: "warmth", vi: "sự ấm áp", distractor: false},
-        {word: "sprout", vi: "mầm cây", distractor: false},
-        {word: "root", vi: "rễ cây", distractor: false},
-        {word: "nutrients", vi: "chất dinh dưỡng", distractor: false},
-        {word: "stem", vi: "thân cây", distractor: false},
-        {word: "sun", vi: "mặt trời", distractor: false},
-        {word: "sky", vi: "bầu trời", distractor: false},
-        {word: "leaves", vi: "lá cây", distractor: false},
-        {word: "leaf", vi: "lá (số ít)", distractor: false},
-        {word: "food", vi: "thức ăn", distractor: false},
-        {word: "flower", vi: "hoa", distractor: false},
-        {word: "need", vi: "cần (sai dạng)", distractor: true},
-        {word: "leaf", vi: "lá", distractor: false},
-        {word: "flower", vi: "hoa", distractor: false},
-        {word: "green", vi: "xanh", distractor: false},
-        {word: "tall", vi: "cao", distractor: false},
-        {word: "beautiful", vi: "đẹp", distractor: false}
-      ]
+    {
+        "word": "planted",
+        "vi": "trồng",
+        "distractor": false
     },
-    model_paragraph: {
-      label_en: "📖 See example paragraph",
-      label_vi: "📖 Xem bài mẫu",
-      show_by_default: false,
-      warning_en: "⚠️ Try writing first before looking!",
-      warning_vi: "⚠️ Hãy thử viết trước khi xem!",
-      text: "Here is how a seed grows into a plant. First, a seed is planted in the soil. It needs water and sunlight to grow. Next, a tiny green sprout appears. After that, the stem grows taller and leaves open up. A leaf uses sunlight to make food. Finally, a beautiful flower blooms at the top. A plant is amazing!"
+    {
+        "word": "soil",
+        "vi": "đất",
+        "distractor": false
+    },
+    {
+        "word": "water",
+        "vi": "nước",
+        "distractor": false
+    },
+    {
+        "word": "sunlight",
+        "vi": "ánh sáng mặt trời",
+        "distractor": false
+    },
+    {
+        "word": "shoot",
+        "vi": "chồi non",
+        "distractor": false
+    },
+    {
+        "word": "leaves",
+        "vi": "lá cây",
+        "distractor": false
+    },
+    {
+        "word": "flower",
+        "vi": "bông hoa",
+        "distractor": false
+    },
+    {
+        "word": "blooms",
+        "vi": "nở",
+        "distractor": false
+    },
+    {
+        "word": "frozen",
+        "vi": "đóng băng",
+        "distractor": true
+    },
+    {
+        "word": "darkness",
+        "vi": "bóng tối",
+        "distractor": true
+    },
+    {
+        "word": "fades",
+        "vi": "tàn úa",
+        "distractor": true
+    }
+]
     }
   }
 };

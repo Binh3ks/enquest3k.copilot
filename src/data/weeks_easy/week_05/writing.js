@@ -1,14 +1,40 @@
 export default {
   title: "My Bedroom",
-  min_words: 30,
-  model_sentence: "I have a bedroom. My bedroom is nice. I have a bed in my bedroom. I sleep on my bed. I also have a chair and a table. I sit on the chair. I put my toys on the table. I like my bedroom. It is my favorite room. I play in my bedroom every day.",
-  instruction_en: "Use: My house has... / There is a... / There are... / In my bedroom there is...",
-  instruction_vi: "Dùng: My house has... / There is a... / There are... / In my bedroom there is...",
-  prompt_en: "Describe your house! How many rooms does it have? What rooms are there? What is in the living room? What is in your bedroom? Do you have a garden?",
-  prompt_vi: "Mô tả ngôi nhà của bạn! Có bao nhiêu phòng? Có những phòng nào? Phòng khách có gì? Phòng ngủ có gì? Nhà có sân vườn không?",
-  keywords: ["bedroom", "bed", "chair", "table", "sleep", "play", "like"],
-  sentence_frames: [{"template":"My house has ___ rooms."},{"template":"There is a ___ and a ___ in my house."},{"template":"In my bedroom, there is a ___ and a ___."},{"template":"My favourite room is the ___ because ___."}],
-  
+  min_words: 20,
+  model_sentence: "I have a bedroom. My bedroom is nice. I have a bed in my bedroom. I sleep on my bed. I also have a chair and a table. I like my room.",
+  instruction_en: "Write about your bedroom!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 ph\u00f2ng ng\u1ee7 c\u1ee7a b\u1ea1n!",
+  prompt_en: "What does your room look like? What do you have in it?",
+  prompt_vi: "Ph\u00f2ng c\u1ee7a b\u1ea1n tr\u00f4ng th\u1ebf n\u00e0o? B\u1ea1n c\u00f3 g\u00ec trong ph\u00f2ng?",
+  keywords: ["bedroom", "nice", "bed", "chair", "table", "like"],
+  topic_talk_prompt: "Tell me about your bedroom!",
+  sentence_frames: [
+    {
+        "template": "My bedroom is ___.",
+        "answers": [
+            "nice"
+        ]
+    },
+    {
+        "template": "I have a ___ to sleep on.",
+        "answers": [
+            "bed"
+        ]
+    },
+    {
+        "template": "I also have a ___ and a ___.",
+        "answers": [
+            "chair",
+            "table"
+        ]
+    },
+    {
+        "template": "I ___ my room.",
+        "answers": [
+            "like"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -16,27 +42,47 @@ export default {
       show_by_default: false,
       scaffolding_stage: "high",
       words: [
-        {word: "[1] three", vi: "ba", distractor: false},
-        {word: "[1] four", vi: "bốn", distractor: false},
-        {word: "[1] five", vi: "năm", distractor: false},
-        {word: "[2] living room", vi: "phòng khách", distractor: false},
-        {word: "[2] kitchen", vi: "nhà bếp", distractor: false},
-        {word: "[2] bathroom", vi: "phòng tắm", distractor: false},
-        {word: "[3] bedroom", vi: "phòng ngủ", distractor: false},
-        {word: "[3] dining room", vi: "phòng ăn", distractor: false},
-        {word: "bed", vi: "giường (sai từ)", distractor: true},
-        {word: "[4] bed", vi: "giường", distractor: false},
-        {word: "[4] table", vi: "bàn", distractor: false},
-        {word: "[4] chair", vi: "ghế", distractor: false},
-        {word: "[5] lamp", vi: "đèn", distractor: false},
-        {word: "[5] bookshelf", vi: "giá sách", distractor: false},
-        {word: "[5] toy box", vi: "hộp đồ chơi", distractor: false},
-        {word: "toys", vi: "đồ chơi (sai dạng)", distractor: true},
-        {word: "[6] bedroom", vi: "phòng ngủ", distractor: false},
-        {word: "[6] living room", vi: "phòng khách", distractor: false},
-        {word: "[7] I can play there", vi: "tôi có thể chơi ở đó", distractor: false},
-        {word: "[7] it is cozy", vi: "nó ấm cúng", distractor: false}
-      ]
+    {
+        "word": "nice",
+        "vi": "đẹp/dễ chịu",
+        "distractor": false
+    },
+    {
+        "word": "bed",
+        "vi": "giường",
+        "distractor": false
+    },
+    {
+        "word": "chair",
+        "vi": "ghế",
+        "distractor": false
+    },
+    {
+        "word": "table",
+        "vi": "bàn",
+        "distractor": false
+    },
+    {
+        "word": "like",
+        "vi": "thích",
+        "distractor": false
+    },
+    {
+        "word": "messy",
+        "vi": "bừa bộn",
+        "distractor": true
+    },
+    {
+        "word": "sofa",
+        "vi": "ghế sofa",
+        "distractor": true
+    },
+    {
+        "word": "hate",
+        "vi": "ghét",
+        "distractor": true
+    }
+]
     }
   }
 };

@@ -1,21 +1,30 @@
 export default {
   title: "My School Supplies",
-  min_words: 40,
-  model_sentence: "There is a backpack on my desk. In my backpack, there is a book, a notebook, and a pen. There is a pencil case in my backpack too. In my pencil case, there is a ruler, an eraser, and a marker. There is a computer in my classroom. There is a whiteboard near the teacher's desk. There is a teacher in the classroom. I like my school supplies very much!",
-  instruction_en: "Use: There is a... in my bag. / It is (colour). / I use it to...",
-  instruction_vi: "Dùng: There is a... in my bag. / It is (colour). / I use it to...",
-  prompt_en: "What is in your school bag? Describe at least 5 items. Is there a book? A pencil case? A ruler? What colour are they? What do you use them for?",
-  prompt_vi: "Trong cặp sách có gì? Mô tả ít nhất 5 đồ vật. Có sách không? Hộp bút không? Thước không? Chúng màu gì? Dùng để làm gì?",
-  keywords: ["backpack", "pen", "book", "notebook", "ruler", "eraser", "pencil case", "there is", "whiteboard", "computer", "teacher", "classroom"],
+  min_words: 30,
+  model_sentence: "There is a backpack on my desk. In my backpack, there is a book, a notebook, and a pen. There is a pencil case in my backpack with coloured pencils inside.",
+  instruction_en: "Write about your school supplies in detail!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 d\u1ee5ng c\u1ee5 h\u1ecdc t\u1eadp c\u1ee7a b\u1ea1n!",
+  prompt_en: "What school supplies do you have? Where are they?",
+  prompt_vi: "B\u1ea1n c\u00f3 nh\u1eefng d\u1ee5ng c\u1ee5 h\u1ecdc t\u1eadp g\u00ec? Ch\u00fang \u1edf \u0111\u00e2u?",
+  keywords: ["backpack", "book", "notebook", "pen", "pencil case", "coloured pencils"],
+  topic_talk_prompt: "Describe what is in your school backpack!",
   sentence_frames: [
-    {"template":"In my school bag, there is a ___ and a ___ that I use ___."},
-    {"template":"There is also a ___ and it is ___ colour."},
-    {"template":"I use my ___ to ___ and my ___ to ___."},
-    {"template":"My ___ is ___ colour and it is very ___ because ___."},
-    {"template":"My favourite thing in my bag is my ___ because ___ and I ___."},
-    {"template":"I always keep my bag ___ so I can ___ easily!"}
-  ],
-  
+    {
+        "template": "In my backpack, there is ___, ___, and ___.",
+        "answers": [
+            "a book",
+            "a notebook",
+            "a pen"
+        ]
+    },
+    {
+        "template": "There is also ___ with ___ inside.",
+        "answers": [
+            "a pencil case",
+            "coloured pencils"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -23,44 +32,42 @@ export default {
       show_by_default: false,
       scaffolding_stage: "high",
       words: [
-        {word: "[1] notebook", vi: "vở", distractor: false},
-        {word: "[1] textbook", vi: "sách giáo khoa", distractor: false},
-        {word: "[2] pencil case", vi: "hộp bút", distractor: false},
-        {word: "[2] ruler", vi: "thước", distractor: false},
-        {word: "[3] every day", vi: "mỗi ngày", distractor: false},
-        {word: "[3] in class", vi: "trong lớp", distractor: false},
-        {word: "[4] water bottle", vi: "bình nước", distractor: false},
-        {word: "[4] eraser", vi: "tậy", distractor: false},
-        {word: "[5] blue", vi: "xanh", distractor: false},
-        {word: "[5] red", vi: "đỏ", distractor: false},
-        {word: "[6] pen", vi: "bút", distractor: false},
-        {word: "[6] pencil", vi: "bút chì", distractor: false},
-        {word: "[7] write", vi: "viết", distractor: false},
-        {word: "[7] draw", vi: "vẽ", distractor: false},
-        {word: "[8] notebook", vi: "vở", distractor: false},
-        {word: "[8] ruler", vi: "thước", distractor: false},
-        {word: "[9] measure lines", vi: "đo đường kẻ", distractor: false},
-        {word: "[9] erase mistakes", vi: "xóa lỗi", distractor: false},
-        {word: "[10] pencil case", vi: "hộp bút", distractor: false},
-        {word: "[10] backpack", vi: "ba lô", distractor: false},
-        {word: "[11] green", vi: "xanh lá", distractor: false},
-        {word: "[11] yellow", vi: "vàng", distractor: false},
-        {word: "[12] useful", vi: "hữu ích", distractor: false},
-        {word: "[12] important", vi: "quan trọng", distractor: false},
-        {word: "[13] I need it for school", vi: "tôi cần nó cho trường", distractor: false},
-        {word: "[13] it helps me learn", vi: "nó giúp tôi học", distractor: false},
-        {word: "[14] colorful notebook", vi: "vở đầy màu sắc", distractor: false},
-        {word: "[14] special pen", vi: "bút đặc biệt", distractor: false},
-        {word: "[15] I can write stories in it", vi: "tôi viết truyện trong đó", distractor: false},
-        {word: "[15] it was a gift from my mom", vi: "nó là quà từ mẹ", distractor: false},
-        {word: "[16] use it every day", vi: "dùng nó mỗi ngày", distractor: false},
-        {word: "[16] take good care of it", vi: "chăm sóc nó", distractor: false},
-        {word: "[17] organized", vi: "gọn gàng", distractor: false},
-        {word: "[17] tidy", vi: "sạch sẽ", distractor: false},
-        {word: "[18] find things", vi: "tìm thứ", distractor: false},
-        {word: "[18] get ready for class", vi: "chuẩn bị học", distractor: false},
-        {word: "messy", vi: "bừa bộn (sai)", distractor: true}
-      ]
+    {
+        "word": "a book",
+        "vi": "một cuốn sách",
+        "distractor": false
+    },
+    {
+        "word": "a notebook",
+        "vi": "một cuốn vở",
+        "distractor": false
+    },
+    {
+        "word": "a pen",
+        "vi": "một cái bút",
+        "distractor": false
+    },
+    {
+        "word": "a pencil case",
+        "vi": "hộp bút",
+        "distractor": false
+    },
+    {
+        "word": "coloured pencils",
+        "vi": "bút chì màu",
+        "distractor": false
+    },
+    {
+        "word": "a television",
+        "vi": "một cái ti vi",
+        "distractor": true
+    },
+    {
+        "word": "a toy car",
+        "vi": "ô tô đồ chơi",
+        "distractor": true
+    }
+]
     }
   }
 };
