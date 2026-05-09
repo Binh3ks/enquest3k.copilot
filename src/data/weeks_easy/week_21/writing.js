@@ -8,7 +8,7 @@ export default {
   prompt_vi: "Viết về những gì bạn đã làm hôm qua! Bạn đi đâu? Bạn ăn gì? Bạn giúp ai hoặc chơi với ai? Điều tốt nhất trong ngày là gì?",
   keywords: ["walked", "talked", "played", "cooked", "cleaned", "helped", "watched", "listened", "washed", "finished", "started", "looked", "opened"],
   topic_talk_prompt: "Tell me about what you did yesterday. What happened?",
-  sentence_frames: [{"template":"Yesterday, I woke up at ___ and ___."},{"template":"In the morning, I ___ed ___."},{"template":"I went to ___ and ___ed with ___."},{"template":"I also ___ed ___ and ___."},{"template":"In the evening, I ___ed ___."},{"template":"I felt ___ because ___."},{"template":"The best part of my day was ___."}],
+  sentence_frames: [{"template":"Yesterday, I woke up at ___ and ___."},{"template":"In the morning, I ___ ___."},{"template":"I went to ___ and ___ with ___."},{"template":"I also ___ ___ and ___."},{"template":"In the evening, I ___ ___."},{"template":"I felt ___ because ___."},{"template":"The best part of my day was ___."}],
   
   hints: {
     vocabulary_bank: {
@@ -18,15 +18,18 @@ export default {
       scaffolding_stage: "medium-low",
       words: [
         {word: "=== PAST VERBS (grouped) ===", vi: "", distractor: false},
-        {word: "walk", vi: "đi bộ", distractor: false},
-        {word: "talk", vi: "nói chuyện", distractor: false},
-        {word: "play", vi: "chơi", distractor: false},
-        {word: "help", vi: "giúp", distractor: false},
-        {word: "watch", vi: "xem", distractor: false},
-        {word: "listen", vi: "nghe", distractor: false},
-        {word: "clean", vi: "dọn dẹp", distractor: false},
-        {word: "cook", vi: "nấu", distractor: false},
-        {word: "finish", vi: "hoàn thành", distractor: false},
+        {word: "walked", vi: "đi bộ", distractor: false},
+        {word: "talked", vi: "nói chuyện", distractor: false},
+        {word: "played", vi: "chơi", distractor: false},
+        {word: "helped", vi: "giúp", distractor: false},
+        {word: "watched", vi: "xem", distractor: false},
+        {word: "listened", vi: "nghe", distractor: false},
+        {word: "cleaned", vi: "dọn dẹp", distractor: false},
+        {word: "cooked", vi: "nấu", distractor: false},
+        {word: "finished", vi: "hoàn thành", distractor: false},
+        {word: "went", vi: "đi", distractor: false},
+        {word: "got dressed", vi: "mặc quần áo", distractor: false},
+        {word: "ate breakfast", vi: "ăn sáng", distractor: false},
         {word: "=== OTHER WORDS (shuffled) ===", vi: "", distractor: false},
         {word: "6 o'clock", vi: "6 giờ", distractor: false},
         {word: "7 o'clock", vi: "7 giờ", distractor: false},
@@ -41,7 +44,8 @@ export default {
         {word: "tired", vi: "mệt", distractor: false},
         {word: "excited", vi: "hào hứng", distractor: false},
         {word: "playing with my friends", vi: "chơi với bạn", distractor: false},
-        {word: "walk", vi: "đi bộ (sai dạng)", distractor: true},
+        {word: "walk", vi: "đi bộ (sai - thiếu -ed)", distractor: true},
+        {word: "talk", vi: "nói (sai - thiếu -ed)", distractor: true},
         {word: "helps", vi: "giúp (sai dạng)", distractor: true}
       ]
     }
