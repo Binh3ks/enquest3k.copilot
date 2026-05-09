@@ -8,7 +8,7 @@ export default {
   prompt_vi: "Viết câu chuyện về giờ học mỹ thuật gần nhất! Bạn vẽ gì? Dùng màu nào? Làm một mình hay với bạn? Tác phẩm trông như thế nào?",
   keywords: ["painted", "colored", "glued", "folded", "created", "cut", "picture", "scissors", "brush", "carefully"],
   topic_talk_prompt: "Tell me about a picture or drawing you like. What do you see?",
-  sentence_frames: [{"template":"In art class yesterday, I painted/drew ___."},{"template":"I used ___ and ___ colours."},{"template":"First, I ___ed ___. Then I ___ed ___."},{"template":"I worked with ___ and we ___ed ___."},{"template":"My artwork showed ___."},{"template":"My artwork looked ___ and I felt ___ about it."},{"template":"My teacher said my artwork was ___."}],
+  sentence_frames: [{"template":"In art class yesterday, I painted/drew ___."},{"template":"I used ___ and ___ colours."},{"template":"First, I ___ ___. Then I ___ ___."},{"template":"I worked with ___ and we ___ ___."},{"template":"My artwork showed ___."},{"template":"My artwork looked ___ and I felt ___ about it."},{"template":"My teacher said my artwork was ___."}],
   
   hints: {
     vocabulary_bank: {
@@ -18,13 +18,13 @@ export default {
       scaffolding_stage: "medium-low",
       words: [
         {word: "=== ART VERBS (grouped) ===", vi: "", distractor: false},
-        {word: "paint", vi: "vẽ (màu)", distractor: false},
-        {word: "draw", vi: "vẽ (nét)", distractor: false},
-        {word: "color", vi: "tô màu", distractor: false},
-        {word: "cut", vi: "cắt", distractor: false},
-        {word: "glue", vi: "dán", distractor: false},
-        {word: "fold", vi: "gấp", distractor: false},
-        {word: "create", vi: "tạo", distractor: false},
+        {word: "painted", vi: "đã vẽ (màu)", distractor: false},
+        {word: "drew", vi: "đã vẽ (nét)", distractor: false},
+        {word: "colored", vi: "đã tô màu", distractor: false},
+        {word: "cut", vi: "đã cắt", distractor: false},
+        {word: "glued", vi: "đã dán", distractor: false},
+        {word: "folded", vi: "đã gấp", distractor: false},
+        {word: "created", vi: "đã tạo", distractor: false},
         {word: "=== COLORS & OBJECTS (shuffled) ===", vi: "", distractor: false},
         {word: "red", vi: "đỏ", distractor: false},
         {word: "blue", vi: "xanh dương", distractor: false},
@@ -44,7 +44,8 @@ export default {
         {word: "proud", vi: "tự hào", distractor: false},
         {word: "amazing", vi: "tuyệt vời", distractor: false},
         {word: "nice", vi: "đẹp", distractor: false},
-        {word: "paint", vi: "vẽ (sai dạng)", distractor: true},
+        {word: "paint", vi: "vẽ (sai - thiếu -ed)", distractor: true},
+        {word: "draw", vi: "vẽ (sai - thiếu -ed)", distractor: true},
         {word: "colors", vi: "màu (sai dạng)", distractor: true}
       ]
     }
