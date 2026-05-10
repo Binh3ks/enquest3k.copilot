@@ -3,15 +3,14 @@ export default {
   image_url: "/images/week25/read_cover_w25.jpg",
   content_en: "It was Saturday morning and Leo decided to make a jam **sandwich** for breakfast — all by himself. First, he grabbed two **slices** of **bread** from the bag. Next, he picked up the **knife** and used it to **spread** strawberry **jam** on one **slice**. Then, he pressed the two **slices** together carefully. Finally, he cut the **sandwich** in half and put it on a **plate**.\n\nMia watched from the doorway and smiled. 'That was a perfect **sequence**!' she said. 'You followed every **step** in the right order.'\n\nLeo looked very pleased with himself. 'Now I understand why the **sequence** matters,' he said. 'If I tried to eat first and **spread** the **jam** later, it would be a disaster!'\n\nMia nodded. 'Exactly. Think about brushing your teeth too. First, you **squeeze** some **toothpaste** onto your **brush**. Next, you **brush** your teeth carefully for two minutes. Then, you **rinse** your mouth with clean water. Finally, you **tidy** up and wash your hands.'\n\n'Wow,' said Leo. 'So every morning task has its own **sequence**!' He poured himself a glass of juice — first he got the glass, then he **poured** the juice slowly, and finally he put the bottle back. Not a single drop was spilled.\n\n'Well done!' said Mia. 'You are a **sequence** champion!'",
   content_vi: "Do la sang thu Bay va Leo quyet dinh tu lam banh mi **sandwich** mit de an sang mot minh. Dau tien, anh lay hai **lat** **banh mi** tu tui. Tiep theo, anh cam **dao** va dung no de **phet** **mut** dau tay len mot **lat**. Sau do, anh ut hai **lat** lai voi nhau can than. Cuoi cung, anh cat **banh mi** lam doi va dat len **dia an**.\n\nMia dung nhin tu cua buoc vao va mim cuoi. 'Do la mot **trinh tu** hoan hao!' co noi. 'Anh da lam theo tung **buoc** theo dung thu tu.'\n\nLeo co ve rat hai long. 'Bay gio anh hieu tai sao **trinh tu** lai quan trong,' anh noi. 'Neu anh co gang an truoc va **phet** **mut** sau, do se la mot tham hoa!'\n\nMia gat dau. 'Dung vay. Hay nghi den danh rang cung vay. Dau tien, ban **bop** mot chut **kem danh rang** len **ban chai**. Tiep theo, ban **chai** rang can than trong hai phut. Sau do, ban **suc mieng** bang nuoc sach. Cuoi cung, ban **don dep** va rua tay.'\n\n'Oa,' Leo noi. 'Vay la moi cong viec buoi sang deu co **trinh tu** rieng!' Anh **rot** mot coc nuoc ep — dau tien anh lay coc, sau do **rot** nuoc ep cham cham, va cuoi cung dat chai lai. Khong mot giot nao roi ra ngoai.\n\n'Gioi lam!' Mia noi. 'Anh la nha vo dich **trinh tu**!'",
-  audio_url: "/audio/week25/shadowing_main.mp3",
   sentences: [
-    { id: 1, text: "First, Leo grabbed two slices of bread from the bag.", audio_url: "/audio/week25/shadowing_s1.mp3" },
-    { id: 2, text: "Next, he used the knife to spread jam on one slice.", audio_url: "/audio/week25/shadowing_s2.mp3" },
-    { id: 3, text: "Then, he pressed the two slices together carefully.", audio_url: "/audio/week25/shadowing_s3.mp3" },
-    { id: 4, text: "Finally, he cut the sandwich in half and put it on a plate.", audio_url: "/audio/week25/shadowing_s4.mp3" },
-    { id: 5, text: "First, you squeeze some toothpaste onto your brush.", audio_url: "/audio/week25/shadowing_s5.mp3" },
-    { id: 6, text: "Next, you brush your teeth carefully for two minutes.", audio_url: "/audio/week25/shadowing_s6.mp3" },
-    { id: 7, text: "Then, you rinse your mouth with clean water.", audio_url: "/audio/week25/shadowing_s7.mp3" },
-    { id: 8, text: "Finally, Leo poured himself a glass of juice without spilling a drop.", audio_url: "/audio/week25/shadowing_s8.mp3" }
+    { id: 1, text: "First, Leo grabbed two slices of bread from the bag." },
+    { id: 2, text: "Next, he used the knife to spread jam on one slice." },
+    { id: 3, text: "Then, he pressed the two slices together carefully." },
+    { id: 4, text: "Finally, he cut the sandwich in half and put it on a plate." },
+    { id: 5, text: "First, you squeeze some toothpaste onto your brush." },
+    { id: 6, text: "Next, you brush your teeth carefully for two minutes." },
+    { id: 7, text: "Then, you rinse your mouth with clean water." },
+    { id: 8, text: "Finally, Leo poured himself a glass of juice without spilling a drop." }
   ]
 };

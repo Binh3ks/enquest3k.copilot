@@ -1,7 +1,6 @@
 export default {
   title: "Sentence Shadowing",
   image_url: "/images/week15_easy/shadowing_cover_w15.jpg",
-  audio_url: "/audio/week15_easy/shadowing_main.mp3",
   audio_full: "/audio/week15_easy/shadowing_full.mp3",
   sentences: [
     {
