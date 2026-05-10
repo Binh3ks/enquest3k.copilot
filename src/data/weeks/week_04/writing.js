@@ -1,32 +1,50 @@
 export default {
-  title: "My Favorite Things",
-  min_words: 30,
-  model_sentence: "I like many things. I like playing with my toys. I like reading story books. I like drawing animals. When I play, I feel happy and excited.",
-  instruction_en: "Write about your favorite activities using phrases!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 ho\u1ea1t \u0111\u1ed9ng y\u00eau th\u00edch b\u1eb1ng c\u1ee5m t\u1eeb!",
-  prompt_en: "What do you like to do? How do you feel when you do them?",
-  prompt_vi: "B\u1ea1n th\u00edch l\u00e0m g\u00ec? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o khi l\u00e0m ch\u00fang?",
-  keywords: ["toys", "books", "animals", "happy", "excited", "playing", "reading", "drawing"],
-  topic_talk_prompt: "Tell me about your favorite things!",
+  title: "My Happy Jar",
+  min_words: 40,
+  model_sentence: "I am a friendly and curious person who loves exploring new things. I like playing football with my friends because it makes me feel free and energetic. I also love drawing animals because I can use my imagination and create my own world. When I read story books, I feel calm and excited at the same time. My favourite thing to do on weekends is playing board games with my family because we laugh and talk together. I think hobbies make us happier and smarter every day.",
+  instruction_en: "Write about your personality and hobbies using because and when!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 t\u00ednh c\u00e1ch v\u00e0 s\u1edf th\u00edch b\u1eb1ng because v\u00e0 when!",
+  prompt_en: "What are you like? What do you love doing and why? How do hobbies make you feel?",
+  prompt_vi: "B\u1ea1n l\u00e0 ng\u01b0\u1eddi th\u1ebf n\u00e0o? B\u1ea1n th\u00edch l\u00e0m g\u00ec v\u00e0 t\u1ea1i sao? S\u1edf th\u00edch khi\u1ebfn b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["curious", "exploring", "energetic", "imagination", "calm", "hobbies", "smarter"],
+  topic_talk_prompt: "Tell me about your personality and what you love doing!",
   sentence_frames: [
     {
-        "template": "I like ___ and ___.",
+        "template": "I like ___ because it makes me feel ___ and ___.",
         "answers": [
-            "playing with my toys",
-            "reading story books"
+            "playing football with my friends",
+            "free",
+            "energetic"
         ]
     },
     {
-        "template": "I also like ___.",
+        "template": "I also love ___ because I can use my ___ and create my own world.",
         "answers": [
-            "drawing animals"
+            "drawing animals",
+            "imagination"
         ]
     },
     {
-        "template": "When I play, I feel ___ and ___.",
+        "template": "When I ___, I feel ___ and ___ at the same time.",
         "answers": [
-            "happy",
+            "read story books",
+            "calm",
             "excited"
+        ]
+    },
+    {
+        "template": "My favourite thing on weekends is ___ because we ___ and ___ together.",
+        "answers": [
+            "playing board games with my family",
+            "laugh",
+            "talk"
+        ]
+    },
+    {
+        "template": "I think hobbies make us ___ and ___ every day.",
+        "answers": [
+            "happier",
+            "smarter"
         ]
     }
 ],
@@ -38,13 +56,18 @@ export default {
       scaffolding_stage: "high",
       words: [
     {
-        "word": "playing with my toys",
-        "vi": "chơi với đồ chơi",
+        "word": "playing football with my friends",
+        "vi": "đá bóng với bạn bè",
         "distractor": false
     },
     {
-        "word": "reading story books",
-        "vi": "đọc truyện",
+        "word": "free",
+        "vi": "tự do",
+        "distractor": false
+    },
+    {
+        "word": "energetic",
+        "vi": "tràn đầy năng lượng",
         "distractor": false
     },
     {
@@ -53,8 +76,18 @@ export default {
         "distractor": false
     },
     {
-        "word": "happy",
-        "vi": "vui",
+        "word": "imagination",
+        "vi": "trí tưởng tượng",
+        "distractor": false
+    },
+    {
+        "word": "read story books",
+        "vi": "đọc truyện",
+        "distractor": false
+    },
+    {
+        "word": "calm",
+        "vi": "bình yên",
         "distractor": false
     },
     {
@@ -63,13 +96,43 @@ export default {
         "distractor": false
     },
     {
-        "word": "doing nothing",
-        "vi": "không làm gì",
+        "word": "playing board games with my family",
+        "vi": "chơi trò chơi cờ cùng gia đình",
+        "distractor": false
+    },
+    {
+        "word": "laugh",
+        "vi": "cười",
+        "distractor": false
+    },
+    {
+        "word": "talk",
+        "vi": "nói chuyện",
+        "distractor": false
+    },
+    {
+        "word": "happier",
+        "vi": "vui hơn",
+        "distractor": false
+    },
+    {
+        "word": "smarter",
+        "vi": "thông minh hơn",
+        "distractor": false
+    },
+    {
+        "word": "staying home alone",
+        "vi": "ở nhà một mình",
         "distractor": true
     },
     {
-        "word": "bored and tired",
-        "vi": "chán và mệt",
+        "word": "bored and lazy",
+        "vi": "chán và lười",
+        "distractor": true
+    },
+    {
+        "word": "dumber",
+        "vi": "ngu hơn",
         "distractor": true
     }
 ]

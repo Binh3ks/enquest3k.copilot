@@ -1,18 +1,18 @@
 export default {
-  title: "My Favorite Sport",
+  title: "My Favourite Sport",
   min_words: 25,
-  model_sentence: "I love soccer. I am kicking the ball. My team is running fast. We are scoring goals. Everyone is cheering. I have energy and fun!",
+  model_sentence: "I love football. I am kicking the ball. My team is running fast. We are scoring a goal!",
   instruction_en: "Write about your favourite sport!",
   instruction_vi: "Vi\u1ebft v\u1ec1 m\u00f4n th\u1ec3 thao y\u00eau th\u00edch c\u1ee7a b\u1ea1n!",
-  prompt_en: "What sport do you play? What are you doing? How do you feel?",
-  prompt_vi: "B\u1ea1n ch\u01a1i m\u00f4n th\u1ec3 thao g\u00ec? B\u1ea1n \u0111ang l\u00e0m g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["soccer", "kicking", "ball", "running", "goals", "cheering", "energy"],
-  topic_talk_prompt: "What is your favourite sport?",
+  prompt_en: "What sport do you love? What are you doing? How does it feel?",
+  prompt_vi: "B\u1ea1n y\u00eau th\u00edch m\u00f4n th\u1ec3 thao n\u00e0o? B\u1ea1n \u0111ang l\u00e0m g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["football", "kicking", "ball", "running", "scoring", "goal"],
+  topic_talk_prompt: "Tell me about your favourite sport!",
   sentence_frames: [
     {
         "template": "I love ___.",
         "answers": [
-            "soccer"
+            "football"
         ]
     },
     {
@@ -28,15 +28,9 @@ export default {
         ]
     },
     {
-        "template": "We are scoring ___.",
+        "template": "We are scoring a ___!",
         "answers": [
-            "goals"
-        ]
-    },
-    {
-        "template": "Everyone is ___.",
-        "answers": [
-            "cheering"
+            "goal"
         ]
     }
 ],
@@ -48,7 +42,7 @@ export default {
       scaffolding_stage: "medium",
       words: [
     {
-        "word": "soccer",
+        "word": "football",
         "vi": "bóng đá",
         "distractor": false
     },
@@ -63,28 +57,23 @@ export default {
         "distractor": false
     },
     {
-        "word": "goals",
+        "word": "goal",
         "vi": "bàn thắng",
         "distractor": false
     },
     {
-        "word": "cheering",
-        "vi": "cổ vũ",
-        "distractor": false
-    },
-    {
         "word": "catching",
-        "vi": "bắt",
+        "vi": "bắt — không phải đá bóng",
         "distractor": true
     },
     {
         "word": "slowly",
-        "vi": "chậm chạp",
+        "vi": "chậm rãi",
         "distractor": true
     },
     {
-        "word": "sleeping",
-        "vi": "ngủ",
+        "word": "point",
+        "vi": "điểm — không phải goal",
         "distractor": true
     }
 ]

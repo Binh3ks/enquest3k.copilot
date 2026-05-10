@@ -1,46 +1,41 @@
 export default {
-  title: "Writing: My Weekend in Four Panels",
-  min_words: 35,
-  model_sentence: "Last weekend, I visited the park with my dog. First, we walked to the park together. It was sunny and warm. Then, my dog played in the grass and I had a snack. After that, we took a nap. Finally, we went home tired but happy.",
-  instruction_en: "Write about your weekend using First, Then, After that, Finally!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 cu\u1ed1i tu\u1ea7n d\u00f9ng First, Then, After that, Finally!",
-  prompt_en: "What did you do? Use the four sequence words!",
-  prompt_vi: "B\u1ea1n \u0111\u00e3 l\u00e0m g\u00ec? D\u00f9ng b\u1ed1n t\u1eeb n\u1ed1i tr\u00ecnh t\u1ef1!",
-  keywords: ["park", "dog", "walked", "sunny", "warm", "grass", "snack", "nap", "tired", "happy"],
-  topic_talk_prompt: "Tell me about your weekend in four parts!",
+  title: "My Weekend Story",
+  min_words: 32,
+  model_sentence: "Last weekend my family went to the park. We packed some food. We walked along the trail. We saw a waterfall. We drove home feeling happy.",
+  instruction_en: "Write your weekend story in order, like a comic strip!",
+  instruction_vi: "Vi\u1ebft c\u00e2u chuy\u1ec7n cu\u1ed1i tu\u1ea7n theo th\u1ee9 t\u1ef1 nh\u01b0 m\u1ed9t d\u1ea3i truy\u1ec7n tranh!",
+  prompt_en: "Where did you go? What did you do first? Then? At the end?",
+  prompt_vi: "B\u1ea1n \u0111\u00e3 \u0111i \u0111\u00e2u? \u0110\u1ea7u ti\u00ean l\u00e0m g\u00ec? Ti\u1ebfp theo? Cu\u1ed1i c\u00f9ng th\u1ebf n\u00e0o?",
+  keywords: ["weekend", "park", "packed", "trail", "waterfall", "happy"],
+  topic_talk_prompt: "Tell me about your last weekend like a four-panel story!",
   sentence_frames: [
     {
-        "template": "Last weekend, I ___ the park with my ___.",
+        "template": "Last weekend my family went to the ___.",
         "answers": [
-            "visited",
-            "dog"
+            "park"
         ]
     },
     {
-        "template": "First, we ___ to the park together. It was ___ and ___.",
+        "template": "We ___ some food.",
         "answers": [
-            "walked",
-            "sunny",
-            "warm"
+            "packed"
         ]
     },
     {
-        "template": "Then, my dog ___ in the grass and I had a ___.",
+        "template": "We walked along the ___.",
         "answers": [
-            "played",
-            "snack"
+            "trail"
         ]
     },
     {
-        "template": "After that, we ___ a nap.",
+        "template": "We saw a ___.",
         "answers": [
-            "took"
+            "waterfall"
         ]
     },
     {
-        "template": "Finally, we went home ___ but ___.",
+        "template": "We drove home feeling ___.",
         "answers": [
-            "tired",
             "happy"
         ]
     }
@@ -53,48 +48,23 @@ export default {
       scaffolding_stage: "low",
       words: [
     {
-        "word": "visited",
-        "vi": "thăm",
+        "word": "park",
+        "vi": "công viên",
         "distractor": false
     },
     {
-        "word": "dog",
-        "vi": "con chó",
+        "word": "packed",
+        "vi": "đóng gói",
         "distractor": false
     },
     {
-        "word": "walked",
-        "vi": "đi bộ",
+        "word": "trail",
+        "vi": "đường mòn",
         "distractor": false
     },
     {
-        "word": "sunny",
-        "vi": "nắng",
-        "distractor": false
-    },
-    {
-        "word": "warm",
-        "vi": "ấm áp",
-        "distractor": false
-    },
-    {
-        "word": "played",
-        "vi": "chơi",
-        "distractor": false
-    },
-    {
-        "word": "snack",
-        "vi": "bữa ăn nhẹ",
-        "distractor": false
-    },
-    {
-        "word": "took",
-        "vi": "thực hiện/ngủ",
-        "distractor": false
-    },
-    {
-        "word": "tired",
-        "vi": "mệt mỏi",
+        "word": "waterfall",
+        "vi": "thác nước",
         "distractor": false
     },
     {
@@ -103,18 +73,18 @@ export default {
         "distractor": false
     },
     {
-        "word": "ran away",
-        "vi": "bỏ chạy",
+        "word": "airport",
+        "vi": "sân bay",
         "distractor": true
     },
     {
-        "word": "cold",
-        "vi": "lạnh",
+        "word": "threw away",
+        "vi": "ném đi",
         "distractor": true
     },
     {
-        "word": "skipped",
-        "vi": "bỏ qua",
+        "word": "bored",
+        "vi": "chán nản",
         "distractor": true
     }
 ]

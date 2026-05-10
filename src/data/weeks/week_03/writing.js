@@ -1,33 +1,47 @@
 export default {
-  title: "My Best Friend",
-  min_words: 30,
-  model_sentence: "This is my best friend. His name is Tom. He is tall. He has short hair. His hair is black. He has brown eyes. He wears glasses.",
-  instruction_en: "Describe your best friend using phrases!",
-  instruction_vi: "M\u00f4 t\u1ea3 ng\u01b0\u1eddi b\u1ea1n th\u00e2n c\u1ee7a b\u1ea1n b\u1eb1ng c\u1ee5m t\u1eeb!",
-  prompt_en: "What does your best friend look like? What makes them special?",
-  prompt_vi: "Ng\u01b0\u1eddi b\u1ea1n th\u00e2n c\u1ee7a b\u1ea1n tr\u00f4ng th\u1ebf n\u00e0o?",
-  keywords: ["Tom", "tall", "short", "black", "brown", "glasses"],
-  topic_talk_prompt: "Describe your best friend in detail!",
+  title: "The Mirror Game",
+  min_words: 40,
+  model_sentence: "My best friend is Tom and he is tall with short curly hair. His hair is dark brown and his eyes are bright green. He wears round glasses because he cannot see well without them. He always wears a red cap and a blue jacket to school. He is slim but very strong because he trains every day. Everyone recognises him because he looks so unique and cool.",
+  instruction_en: "Describe your best friend from head to toe!",
+  instruction_vi: "M\u00f4 t\u1ea3 ng\u01b0\u1eddi b\u1ea1n th\u00e2n t\u1eeb \u0111\u1ea7u \u0111\u1ebfn ch\u00e2n!",
+  prompt_en: "What does your friend look like? What do they wear? What makes them look unique?",
+  prompt_vi: "B\u1ea1n c\u1ee7a b\u1ea1n tr\u00f4ng th\u1ebf n\u00e0o? H\u1ecd m\u1eb7c g\u00ec? \u0110i\u1ec1u g\u00ec l\u00e0m h\u1ecd n\u1ed5i b\u1eadt?",
+  keywords: ["curly", "dark brown", "bright green", "glasses", "slim", "unique", "recognises"],
+  topic_talk_prompt: "Describe your best friend's appearance in full detail!",
   sentence_frames: [
     {
-        "template": "My best friend's name is ___ and he is ___.",
+        "template": "My best friend is ___ and he is ___ with ___.",
         "answers": [
             "Tom",
-            "tall"
+            "tall",
+            "short curly hair"
         ]
     },
     {
-        "template": "He has ___ and his hair is ___.",
+        "template": "His hair is ___ and his eyes are ___.",
         "answers": [
-            "short hair",
-            "black"
+            "dark brown",
+            "bright green"
         ]
     },
     {
-        "template": "He has ___ eyes and he wears ___.",
+        "template": "He wears ___ because he cannot see well without them.",
         "answers": [
-            "brown",
-            "glasses"
+            "round glasses"
+        ]
+    },
+    {
+        "template": "He is ___ but very ___ because he trains every day.",
+        "answers": [
+            "slim",
+            "strong"
+        ]
+    },
+    {
+        "template": "Everyone recognises him because he looks so ___ and ___.",
+        "answers": [
+            "unique",
+            "cool"
         ]
     }
 ],
@@ -49,23 +63,43 @@ export default {
         "distractor": false
     },
     {
-        "word": "short hair",
-        "vi": "tóc ngắn",
+        "word": "short curly hair",
+        "vi": "tóc ngắn xoăn",
         "distractor": false
     },
     {
-        "word": "black",
-        "vi": "đen",
+        "word": "dark brown",
+        "vi": "nâu đậm",
         "distractor": false
     },
     {
-        "word": "brown",
-        "vi": "nâu",
+        "word": "bright green",
+        "vi": "xanh lá sáng",
         "distractor": false
     },
     {
-        "word": "glasses",
-        "vi": "kính",
+        "word": "round glasses",
+        "vi": "kính tròn",
+        "distractor": false
+    },
+    {
+        "word": "slim",
+        "vi": "gầy gò/thon",
+        "distractor": false
+    },
+    {
+        "word": "strong",
+        "vi": "mạnh mẽ",
+        "distractor": false
+    },
+    {
+        "word": "unique",
+        "vi": "độc đáo",
+        "distractor": false
+    },
+    {
+        "word": "cool",
+        "vi": "ngầu",
         "distractor": false
     },
     {
@@ -74,13 +108,13 @@ export default {
         "distractor": true
     },
     {
-        "word": "blonde hair",
-        "vi": "tóc vàng",
+        "word": "blonde and straight",
+        "vi": "vàng và thẳng",
         "distractor": true
     },
     {
-        "word": "green eyes",
-        "vi": "mắt xanh",
+        "word": "strange and weird",
+        "vi": "kỳ lạ",
         "distractor": true
     }
 ]

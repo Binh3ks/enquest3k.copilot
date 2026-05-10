@@ -1,44 +1,42 @@
 export default {
-  title: "Writing: My Trip Story",
-  min_words: 35,
-  model_sentence: "Last weekend, my family went to the airport. We ran to the gate because we were almost late. The plane flew up fast. I saw tiny houses below. We arrived and felt excited.",
-  instruction_en: "Write about your trip story!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 c\u00e2u chuy\u1ec7n chuy\u1ebfn \u0111i c\u1ee7a b\u1ea1n!",
-  prompt_en: "Where did you go? What happened? How did you feel?",
-  prompt_vi: "B\u1ea1n \u0111i \u0111\u00e2u? \u0110i\u1ec1u g\u00ec x\u1ea3y ra? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["airport", "ran", "gate", "late", "plane", "flew", "houses", "arrived", "excited"],
-  topic_talk_prompt: "Tell me about a trip you went on!",
+  title: "My Journey Story",
+  min_words: 32,
+  model_sentence: "Last weekend my family went on a journey. We woke up early. On the road we saw green valleys. We set up camp when we arrived. It was the best trip.",
+  instruction_en: "Write your journey story with rich details!",
+  instruction_vi: "Vi\u1ebft c\u00e2u chuy\u1ec7n h\u00e0nh tr\u00ecnh c\u1ee7a b\u1ea1n v\u1edbi chi ti\u1ebft phong ph\u00fa!",
+  prompt_en: "Where did you go? What did you see? What happened when you arrived?",
+  prompt_vi: "B\u1ea1n \u0111i \u0111\u00e2u? B\u1ea1n th\u1ea5y g\u00ec? \u0110i\u1ec1u g\u00ec x\u1ea3y ra khi b\u1ea1n \u0111\u1ebfn n\u01a1i?",
+  keywords: ["journey", "woke", "early", "valleys", "camp", "arrived", "best", "trip"],
+  topic_talk_prompt: "Tell me about an exciting journey you went on!",
   sentence_frames: [
     {
-        "template": "Last weekend, my family went to the ___.",
+        "template": "Last weekend my family went on a ___.",
         "answers": [
-            "airport"
+            "journey"
         ]
     },
     {
-        "template": "We ___ to the gate because we were almost ___.",
+        "template": "We ___ up early.",
         "answers": [
-            "ran",
-            "late"
+            "woke"
         ]
     },
     {
-        "template": "The plane ___ up fast.",
+        "template": "On the road we saw green ___.",
         "answers": [
-            "flew"
+            "valleys"
         ]
     },
     {
-        "template": "I saw tiny ___ below.",
+        "template": "We set up ___ when we arrived.",
         "answers": [
-            "houses"
+            "camp"
         ]
     },
     {
-        "template": "We ___ and felt ___.",
+        "template": "It was the best ___.",
         "answers": [
-            "arrived",
-            "excited"
+            "trip"
         ]
     }
 ],
@@ -50,53 +48,43 @@ export default {
       scaffolding_stage: "low",
       words: [
     {
-        "word": "airport",
-        "vi": "sân bay",
+        "word": "journey",
+        "vi": "hành trình",
         "distractor": false
     },
     {
-        "word": "ran",
-        "vi": "chạy",
+        "word": "woke",
+        "vi": "thức dậy",
         "distractor": false
     },
     {
-        "word": "late",
-        "vi": "muộn",
+        "word": "valleys",
+        "vi": "thung lũng",
         "distractor": false
     },
     {
-        "word": "flew",
-        "vi": "bay",
+        "word": "camp",
+        "vi": "trại",
         "distractor": false
     },
     {
-        "word": "houses",
-        "vi": "nhà cửa",
+        "word": "trip",
+        "vi": "chuyến đi",
         "distractor": false
     },
     {
-        "word": "arrived",
-        "vi": "đến nơi",
-        "distractor": false
-    },
-    {
-        "word": "excited",
-        "vi": "hào hứng",
-        "distractor": false
-    },
-    {
-        "word": "market",
-        "vi": "chợ",
+        "word": "argument",
+        "vi": "cuộc tranh cãi",
         "distractor": true
     },
     {
-        "word": "walked",
-        "vi": "đi bộ",
+        "word": "slept in",
+        "vi": "ngủ muộn",
         "distractor": true
     },
     {
-        "word": "early",
-        "vi": "sớm",
+        "word": "buildings",
+        "vi": "những tòa nhà",
         "distractor": true
     }
 ]

@@ -1,13 +1,13 @@
 export default {
-  title: "My School",
+  title: "Hello, World!",
   min_words: 20,
-  model_sentence: "I am Alex. I am a student. My teacher is kind. My class is big. I am happy.",
-  instruction_en: "Write about your school!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 tr\u01b0\u1eddng c\u1ee7a b\u1ea1n!",
-  prompt_en: "What is your name? How is your teacher? How is your class?",
-  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? Th\u1ea7y/c\u00f4 th\u1ebf n\u00e0o? L\u1edbp h\u1ecdc th\u1ebf n\u00e0o?",
-  keywords: ["student", "teacher", "class", "happy", "big"],
-  topic_talk_prompt: "Tell me about your school!",
+  model_sentence: "My name is Alex. I am eight years old. I am a student. I feel happy at school.",
+  instruction_en: "Write about yourself!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 b\u1ea3n th\u00e2n b\u1ea1n!",
+  prompt_en: "What is your name? How old are you? How do you feel at school?",
+  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? B\u1ea1n bao nhi\u00eau tu\u1ed5i? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o \u1edf tr\u01b0\u1eddng?",
+  keywords: ["name", "old", "student", "happy", "school"],
+  topic_talk_prompt: "Tell me about yourself!",
   sentence_frames: [
     {
         "template": "My name is ___.",
@@ -16,21 +16,15 @@ export default {
         ]
     },
     {
+        "template": "I am ___ years old.",
+        "answers": [
+            "eight"
+        ]
+    },
+    {
         "template": "I am a ___.",
         "answers": [
             "student"
-        ]
-    },
-    {
-        "template": "My teacher is ___.",
-        "answers": [
-            "kind"
-        ]
-    },
-    {
-        "template": "My class is ___.",
-        "answers": [
-            "big"
         ]
     },
     {
@@ -53,18 +47,13 @@ export default {
         "distractor": false
     },
     {
+        "word": "eight",
+        "vi": "tám",
+        "distractor": false
+    },
+    {
         "word": "student",
         "vi": "học sinh",
-        "distractor": false
-    },
-    {
-        "word": "kind",
-        "vi": "tốt bụng",
-        "distractor": false
-    },
-    {
-        "word": "big",
-        "vi": "to lớn",
         "distractor": false
     },
     {
@@ -78,13 +67,13 @@ export default {
         "distractor": true
     },
     {
-        "word": "mean",
-        "vi": "xấu tính",
+        "word": "teacher",
+        "vi": "giáo viên",
         "distractor": true
     },
     {
-        "word": "small",
-        "vi": "nhỏ",
+        "word": "ten",
+        "vi": "mười — sai tuổi",
         "distractor": true
     }
 ]

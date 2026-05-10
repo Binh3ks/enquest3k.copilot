@@ -1,39 +1,51 @@
 export default {
   title: "Write About Your Daily Routine",
-  min_words: 35,
-  model_sentence: "I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I eat breakfast with my family. I enjoy my daily routine.",
-  instruction_en: "Write your daily routine using sequence words!",
-  instruction_vi: "Vi\u1ebft th\u00f3i quen h\u00e0ng ng\u00e0y v\u1edbi t\u1eeb n\u1ed1i tr\u00ecnh t\u1ef1!",
-  prompt_en: "What do you do first, then, and finally each day?",
-  prompt_vi: "B\u1ea1n l\u00e0m g\u00ec \u0111\u1ea7u ti\u00ean, sau \u0111\u00f3 v\u00e0 cu\u1ed1i c\u00f9ng m\u1ed7i ng\u00e0y?",
-  keywords: ["wake", "brush", "wash", "breakfast", "family", "routine"],
-  topic_talk_prompt: "Describe your daily routine in order!",
+  min_words: 45,
+  model_sentence: "I have a very organised daily routine that helps me stay healthy and ready for school every day. I wake up at six thirty and immediately wash my face and brush my teeth so that I feel fresh and awake. Then I have a nutritious breakfast with my family, which usually includes eggs, toast, and a glass of fresh orange juice. After breakfast, I pack my school bag, put on my uniform, and leave the house by seven fifteen. At school I study hard and I always pay attention in class because I want to do well in my lessons. In the evening, I finish my homework first before I watch television or play with my toys. I go to bed at nine o'clock so that I get enough sleep and feel ready for the next day.",
+  instruction_en: "Write about your full daily routine from morning to night using sequence words!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 th\u00f3i quen c\u1ea3 ng\u00e0y t\u1eeb s\u00e1ng \u0111\u1ebfn t\u1ed1i d\u00f9ng t\u1eeb n\u1ed1i tr\u00ecnh t\u1ef1!",
+  prompt_en: "What is your routine from waking up to going to bed? Use First, Then, After, Finally!",
+  prompt_vi: "Th\u00f3i quen c\u1ee7a b\u1ea1n t\u1eeb khi th\u1ee9c d\u1eady \u0111\u1ebfn khi ng\u1ee7? D\u00f9ng First, Then, After, Finally!",
+  keywords: ["organised", "nutritious", "uniform", "attention", "homework", "television", "routine"],
+  topic_talk_prompt: "Walk me through your whole day from morning to night!",
   sentence_frames: [
     {
-        "template": "I wake up at ___ every ___.",
+        "template": "I wake up at ___ and immediately ___ and ___ so that I feel fresh and awake.",
         "answers": [
-            "7 o'clock",
-            "morning"
+            "six thirty",
+            "wash my face",
+            "brush my teeth"
         ]
     },
     {
-        "template": "First, I ___ and ___.",
+        "template": "Then I have ___ with my family, which usually includes ___, ___, and ___.",
         "answers": [
-            "brush my teeth",
-            "wash my face"
+            "a nutritious breakfast",
+            "eggs",
+            "toast",
+            "a glass of fresh orange juice"
         ]
     },
     {
-        "template": "Then I ___ with ___.",
+        "template": "After breakfast, I ___, put on my ___, and leave the house by ___.",
         "answers": [
-            "eat breakfast",
-            "my family"
+            "pack my school bag",
+            "uniform",
+            "seven fifteen"
         ]
     },
     {
-        "template": "I enjoy my daily ___.",
+        "template": "In the evening, I finish ___ first before I ___ or play with my toys.",
         "answers": [
-            "routine"
+            "my homework",
+            "watch television"
+        ]
+    },
+    {
+        "template": "I go to bed at ___ so that I get enough ___ and feel ready for the next day.",
+        "answers": [
+            "nine o'clock",
+            "sleep"
         ]
     }
 ],
@@ -45,18 +57,8 @@ export default {
       scaffolding_stage: "medium",
       words: [
     {
-        "word": "7 o'clock",
-        "vi": "7 giờ",
-        "distractor": false
-    },
-    {
-        "word": "morning",
-        "vi": "buổi sáng",
-        "distractor": false
-    },
-    {
-        "word": "brush my teeth",
-        "vi": "đánh răng",
+        "word": "six thirty",
+        "vi": "sáu giờ rưỡi",
         "distractor": false
     },
     {
@@ -65,18 +67,63 @@ export default {
         "distractor": false
     },
     {
-        "word": "eat breakfast",
-        "vi": "ăn sáng",
+        "word": "brush my teeth",
+        "vi": "đánh răng",
         "distractor": false
     },
     {
-        "word": "my family",
-        "vi": "gia đình tôi",
+        "word": "a nutritious breakfast",
+        "vi": "bữa sáng bổ dưỡng",
         "distractor": false
     },
     {
-        "word": "routine",
-        "vi": "thói quen",
+        "word": "eggs",
+        "vi": "trứng",
+        "distractor": false
+    },
+    {
+        "word": "toast",
+        "vi": "bánh mì nướng",
+        "distractor": false
+    },
+    {
+        "word": "a glass of fresh orange juice",
+        "vi": "một ly nước cam tươi",
+        "distractor": false
+    },
+    {
+        "word": "pack my school bag",
+        "vi": "đóng gói cặp sách",
+        "distractor": false
+    },
+    {
+        "word": "uniform",
+        "vi": "đồng phục",
+        "distractor": false
+    },
+    {
+        "word": "seven fifteen",
+        "vi": "bảy giờ mười lăm",
+        "distractor": false
+    },
+    {
+        "word": "my homework",
+        "vi": "bài tập về nhà",
+        "distractor": false
+    },
+    {
+        "word": "watch television",
+        "vi": "xem ti vi",
+        "distractor": false
+    },
+    {
+        "word": "nine o'clock",
+        "vi": "chín giờ",
+        "distractor": false
+    },
+    {
+        "word": "sleep",
+        "vi": "giấc ngủ",
         "distractor": false
     },
     {
@@ -85,13 +132,13 @@ export default {
         "distractor": true
     },
     {
-        "word": "watch television",
-        "vi": "xem ti vi",
+        "word": "junk food",
+        "vi": "thức ăn không lành mạnh",
         "distractor": true
     },
     {
-        "word": "lunchtime",
-        "vi": "giờ ăn trưa",
+        "word": "stay up all night",
+        "vi": "thức suốt đêm",
         "distractor": true
     }
 ]

@@ -1,40 +1,42 @@
 export default {
-  title: "Writing: My Picnic Story",
-  min_words: 35,
-  model_sentence: "Last Sunday, Mum bought sandwiches, fruit, and juice at the market. We went to the park and spread a blanket on the soft grass. We ate and talked and laughed together. It was a perfect sunny day.",
-  instruction_en: "Write about your picnic story!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 c\u00e2u chuy\u1ec7n d\u00e3 ngo\u1ea1i c\u1ee7a b\u1ea1n!",
-  prompt_en: "Where did you go? What did you eat? How did you feel?",
-  prompt_vi: "B\u1ea1n \u0111i \u0111\u00e2u? B\u1ea1n \u0103n g\u00ec? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["Sunday", "sandwiches", "fruit", "juice", "park", "blanket", "grass", "ate", "laughed", "sunny"],
-  topic_talk_prompt: "Tell me about a picnic you went on!",
+  title: "My Picnic Story",
+  min_words: 32,
+  model_sentence: "Last Sunday my family had a picnic in the park. Mum bought bread and fruit. We spread a blanket on the grass. We ate and laughed together. It was a happy day.",
+  instruction_en: "Write a detailed picnic story with rich language!",
+  instruction_vi: "Vi\u1ebft m\u1ed9t c\u00e2u chuy\u1ec7n d\u00e3 ngo\u1ea1i chi ti\u1ebft v\u1edbi ng\u00f4n ng\u1eef phong ph\u00fa!",
+  prompt_en: "Where did you go? What did you bring? What did you do? How did it feel?",
+  prompt_vi: "B\u1ea1n \u0111i \u0111\u00e2u? B\u1ea1n mang g\u00ec? B\u1ea1n l\u00e0m g\u00ec? C\u1ea3m gi\u00e1c th\u1ebf n\u00e0o?",
+  keywords: ["picnic", "bought", "bread", "blanket", "grass", "laughed", "happy"],
+  topic_talk_prompt: "Tell me about a wonderful picnic you had!",
   sentence_frames: [
     {
-        "template": "Last Sunday, Mum bought ___, ___, and ___.",
+        "template": "Last Sunday my family had a ___ in the park.",
         "answers": [
-            "sandwiches",
-            "fruit",
-            "juice"
+            "picnic"
         ]
     },
     {
-        "template": "We went to the ___ and spread a ___ on the grass.",
+        "template": "Mum ___ bread and fruit.",
         "answers": [
-            "park",
+            "bought"
+        ]
+    },
+    {
+        "template": "We spread a ___ on the grass.",
+        "answers": [
             "blanket"
         ]
     },
     {
-        "template": "We ate and ___ and ___ together.",
+        "template": "We ate and ___ together.",
         "answers": [
-            "talked",
             "laughed"
         ]
     },
     {
-        "template": "It was a perfect ___ day.",
+        "template": "It was a ___ day.",
         "answers": [
-            "sunny"
+            "happy"
         ]
     }
 ],
@@ -46,58 +48,43 @@ export default {
       scaffolding_stage: "low",
       words: [
     {
-        "word": "sandwiches",
-        "vi": "bánh sandwich",
+        "word": "picnic",
+        "vi": "dã ngoại",
         "distractor": false
     },
     {
-        "word": "fruit",
-        "vi": "trái cây",
-        "distractor": false
-    },
-    {
-        "word": "juice",
-        "vi": "nước ép",
-        "distractor": false
-    },
-    {
-        "word": "park",
-        "vi": "công viên",
+        "word": "bought",
+        "vi": "đã mua",
         "distractor": false
     },
     {
         "word": "blanket",
-        "vi": "tấm chăn/khăn trải",
-        "distractor": false
-    },
-    {
-        "word": "talked",
-        "vi": "nói chuyện",
+        "vi": "tấm chăn",
         "distractor": false
     },
     {
         "word": "laughed",
-        "vi": "cười",
+        "vi": "đã cười",
         "distractor": false
     },
     {
-        "word": "sunny",
-        "vi": "nắng",
+        "word": "happy",
+        "vi": "vui",
         "distractor": false
     },
     {
-        "word": "pizza",
-        "vi": "bánh pizza",
+        "word": "argument",
+        "vi": "cuộc cãi vã",
         "distractor": true
     },
     {
-        "word": "roof",
-        "vi": "mái nhà",
+        "word": "sold",
+        "vi": "đã bán",
         "distractor": true
     },
     {
         "word": "cried",
-        "vi": "khóc",
+        "vi": "đã khóc",
         "distractor": true
     }
 ]

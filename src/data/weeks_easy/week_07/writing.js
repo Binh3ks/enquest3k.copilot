@@ -1,35 +1,34 @@
 export default {
   title: "Inside My Backpack",
   min_words: 20,
-  model_sentence: "There is a pencil and a ruler in my bag. There are three books inside too. I also have my lunch box. My school bag is blue.",
-  instruction_en: "Write about what is in your bag!",
+  model_sentence: "There is a pencil in my bag. There are three books in my bag. I also have a lunch box. My bag is blue.",
+  instruction_en: "Write about what is in your school bag!",
   instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec c\u00f3 trong c\u1eb7p c\u1ee7a b\u1ea1n!",
-  prompt_en: "What do you have in your bag? What colour is it?",
+  prompt_en: "What do you have in your bag? What colour is your bag?",
   prompt_vi: "B\u1ea1n c\u00f3 g\u00ec trong c\u1eb7p? C\u1eb7p m\u00e0u g\u00ec?",
-  keywords: ["pencil", "ruler", "books", "lunch box", "blue"],
+  keywords: ["pencil", "books", "lunch box", "blue", "bag"],
   topic_talk_prompt: "What is inside your school bag?",
   sentence_frames: [
     {
-        "template": "There is a ___ and a ___ in my bag.",
+        "template": "There is a ___ in my bag.",
         "answers": [
-            "pencil",
-            "ruler"
+            "pencil"
         ]
     },
     {
-        "template": "There are three ___ inside too.",
+        "template": "There are ___ books in my bag.",
         "answers": [
-            "books"
+            "three"
         ]
     },
     {
-        "template": "I also have my ___.",
+        "template": "I also have a ___.",
         "answers": [
             "lunch box"
         ]
     },
     {
-        "template": "My school bag is ___.",
+        "template": "My bag is ___.",
         "answers": [
             "blue"
         ]
@@ -48,13 +47,8 @@ export default {
         "distractor": false
     },
     {
-        "word": "ruler",
-        "vi": "thước kẻ",
-        "distractor": false
-    },
-    {
-        "word": "books",
-        "vi": "sách",
+        "word": "three",
+        "vi": "ba",
         "distractor": false
     },
     {
@@ -64,17 +58,17 @@ export default {
     },
     {
         "word": "blue",
-        "vi": "màu xanh",
+        "vi": "xanh dương",
         "distractor": false
     },
     {
         "word": "eraser",
-        "vi": "tẩy",
+        "vi": "cục tẩy",
         "distractor": true
     },
     {
         "word": "red",
-        "vi": "màu đỏ",
+        "vi": "đỏ",
         "distractor": true
     },
     {

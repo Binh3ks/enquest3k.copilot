@@ -1,19 +1,25 @@
 export default {
-  title: "My First Day at School",
-  min_words: 30,
-  model_sentence: "I am Alex. I am a student. My teacher is Ms. Johnson. She is very kind. My classroom is big. There are many desks and books.",
-  instruction_en: "Describe your school using full phrases!",
-  instruction_vi: "M\u00f4 t\u1ea3 tr\u01b0\u1eddng c\u1ee7a b\u1ea1n b\u1eb1ng c\u1ee5m t\u1eeb \u0111\u1ea7y \u0111\u1ee7!",
-  prompt_en: "Who is your teacher? What is your classroom like? What do you see?",
-  prompt_vi: "Th\u1ea7y/c\u00f4 c\u1ee7a b\u1ea1n l\u00e0 ai? L\u1edbp h\u1ecdc tr\u00f4ng th\u1ebf n\u00e0o?",
-  keywords: ["student", "teacher", "classroom", "kind", "desks", "books"],
-  topic_talk_prompt: "Tell me about your school. What is your classroom like?",
+  title: "Hello, World!",
+  min_words: 35,
+  model_sentence: "My name is Alex and I am eight years old. I am a student at Green Hill School. My teacher is Ms. Johnson and she is very kind. I have many friends in my class. My favourite subject is English because I love reading stories. I feel excited and happy every day at school.",
+  instruction_en: "Write about yourself and your school in full sentences!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 b\u1ea3n th\u00e2n v\u00e0 tr\u01b0\u1eddng h\u1ecdc b\u1eb1ng c\u00e2u \u0111\u1ea7y \u0111\u1ee7!",
+  prompt_en: "What is your name and age? What is your school and teacher like? What do you love? How do you feel?",
+  prompt_vi: "T\u00ean v\u00e0 tu\u1ed5i? Tr\u01b0\u1eddng v\u00e0 th\u1ea7y/c\u00f4 th\u1ebf n\u00e0o? B\u1ea1n th\u00edch g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["name", "student", "teacher", "kind", "subject", "English", "excited"],
+  topic_talk_prompt: "Tell me about yourself and your school!",
   sentence_frames: [
     {
-        "template": "My name is ___ and I am ___.",
+        "template": "My name is ___ and I am ___ years old.",
         "answers": [
             "Alex",
-            "a student"
+            "eight"
+        ]
+    },
+    {
+        "template": "I am a student at ___ School.",
+        "answers": [
+            "Green Hill"
         ]
     },
     {
@@ -24,11 +30,17 @@ export default {
         ]
     },
     {
-        "template": "My classroom is ___ with many ___ and ___ on the shelves.",
+        "template": "My favourite subject is ___ because I love ___.",
         "answers": [
-            "big",
-            "desks",
-            "books"
+            "English",
+            "reading stories"
+        ]
+    },
+    {
+        "template": "I feel ___ and ___ every day at school.",
+        "answers": [
+            "excited",
+            "happy"
         ]
     }
 ],
@@ -45,8 +57,13 @@ export default {
         "distractor": false
     },
     {
-        "word": "a student",
-        "vi": "một học sinh",
+        "word": "eight",
+        "vi": "tám",
+        "distractor": false
+    },
+    {
+        "word": "Green Hill",
+        "vi": "",
         "distractor": false
     },
     {
@@ -60,28 +77,38 @@ export default {
         "distractor": false
     },
     {
-        "word": "big",
-        "vi": "to lớn",
+        "word": "English",
+        "vi": "môn tiếng Anh",
         "distractor": false
     },
     {
-        "word": "desks",
-        "vi": "bàn học",
+        "word": "reading stories",
+        "vi": "đọc truyện",
         "distractor": false
     },
     {
-        "word": "books",
-        "vi": "sách",
+        "word": "excited",
+        "vi": "hào hứng",
+        "distractor": false
+    },
+    {
+        "word": "happy",
+        "vi": "vui",
         "distractor": false
     },
     {
         "word": "very strict",
-        "vi": "rất nghiêm",
+        "vi": "rất nghiêm khắc",
         "distractor": true
     },
     {
-        "word": "very messy",
-        "vi": "rất bừa bộn",
+        "word": "maths",
+        "vi": "toán — sai môn",
+        "distractor": true
+    },
+    {
+        "word": "bored and tired",
+        "vi": "chán và mệt",
         "distractor": true
     }
 ]

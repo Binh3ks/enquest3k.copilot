@@ -1,37 +1,42 @@
 export default {
-  title: "Writing: The Tortoise and the Hare",
-  min_words: 35,
-  model_sentence: "One day, the hare ran very fast and got far ahead of the tortoise. Then he stopped and took a long nap under a big tree. The tortoise kept walking slowly. In the end, the tortoise won the race!",
-  instruction_en: "Retell The Tortoise and the Hare!",
-  instruction_vi: "K\u1ec3 l\u1ea1i c\u00e2u chuy\u1ec7n R\u00f9a v\u00e0 Th\u1ecf!",
-  prompt_en: "What did the hare do? What did the tortoise do? Who won?",
-  prompt_vi: "Con th\u1ecf \u0111\u00e3 l\u00e0m g\u00ec? Con r\u00f9a \u0111\u00e3 l\u00e0m g\u00ec? Ai th\u1eafng?",
-  keywords: ["hare", "fast", "tortoise", "nap", "tree", "walking", "slowly", "won", "race"],
-  topic_talk_prompt: "Retell the story of the Tortoise and the Hare!",
+  title: "Retell The Tortoise and the Hare",
+  min_words: 32,
+  model_sentence: "Once the Hare and the Tortoise had a race. The Hare ran very fast. Then he stopped to rest. He fell asleep. The Tortoise walked slowly and won.",
+  instruction_en: "Retell the story of the tortoise and the hare in your own words!",
+  instruction_vi: "K\u1ec3 l\u1ea1i c\u00e2u chuy\u1ec7n R\u00f9a v\u00e0 Th\u1ecf b\u1eb1ng l\u1eddi c\u1ee7a b\u1ea1n!",
+  prompt_en: "Who were the characters? What happened? Who won and why?",
+  prompt_vi: "Nh\u00e2n v\u1eadt l\u00e0 ai? Chuy\u1ec7n g\u00ec x\u1ea3y ra? Ai th\u1eafng v\u00e0 t\u1ea1i sao?",
+  keywords: ["hare", "tortoise", "race", "rested", "asleep", "slowly", "won"],
+  topic_talk_prompt: "Retell the story of the tortoise and the hare!",
   sentence_frames: [
     {
-        "template": "The hare ran very ___ and got far ahead.",
+        "template": "Once the ___ and the Tortoise had a race.",
+        "answers": [
+            "Hare"
+        ]
+    },
+    {
+        "template": "The Hare ran very ___.",
         "answers": [
             "fast"
         ]
     },
     {
-        "template": "He stopped and took a long ___ under a big ___.",
+        "template": "Then he stopped to ___.",
         "answers": [
-            "nap",
-            "tree"
+            "rest"
         ]
     },
     {
-        "template": "The tortoise kept walking ___.",
+        "template": "He fell ___.",
+        "answers": [
+            "asleep"
+        ]
+    },
+    {
+        "template": "The Tortoise walked ___ and won.",
         "answers": [
             "slowly"
-        ]
-    },
-    {
-        "template": "In the end, the tortoise ___ the race!",
-        "answers": [
-            "won"
         ]
     }
 ],
@@ -43,18 +48,23 @@ export default {
       scaffolding_stage: "low",
       words: [
     {
+        "word": "Hare",
+        "vi": "Thỏ",
+        "distractor": false
+    },
+    {
         "word": "fast",
         "vi": "nhanh",
         "distractor": false
     },
     {
-        "word": "nap",
-        "vi": "giấc ngủ ngắn",
+        "word": "rest",
+        "vi": "nghỉ ngơi",
         "distractor": false
     },
     {
-        "word": "tree",
-        "vi": "cây",
+        "word": "asleep",
+        "vi": "ngủ say",
         "distractor": false
     },
     {
@@ -63,23 +73,18 @@ export default {
         "distractor": false
     },
     {
-        "word": "won",
-        "vi": "thắng",
-        "distractor": false
-    },
-    {
-        "word": "slowly",
-        "vi": "chậm (dùng cho thỏ - sai)",
+        "word": "Elephant",
+        "vi": "Voi — sai nhân vật",
         "distractor": true
     },
     {
-        "word": "lost",
-        "vi": "thua",
+        "word": "quietly",
+        "vi": "im lặng — không phải nhanh",
         "distractor": true
     },
     {
-        "word": "school",
-        "vi": "trường học",
+        "word": "exercise",
+        "vi": "tập thể dục — sai",
         "distractor": true
     }
 ]

@@ -1,34 +1,51 @@
 export default {
   title: "When I Was Small",
-  min_words: 40,
-  model_sentence: "I was a baby in this old photo. I was very small and cute. My mom says I was noisy. I cried a lot! But I was quiet when she held me.",
-  instruction_en: "Write about your baby years using past tense phrases!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 tu\u1ed5i th\u01a1 b\u1eb1ng c\u1ee5m t\u1eeb th\u00ec qu\u00e1 kh\u1ee9!",
-  prompt_en: "What were you like? What did your mom say? What made you quiet?",
-  prompt_vi: "B\u1ea1n nh\u01b0 th\u1ebf n\u00e0o? M\u1eb9 b\u1ea1n n\u00f3i g\u00ec? \u0110i\u1ec1u g\u00ec l\u00e0m b\u1ea1n y\u00ean l\u1eb7ng?",
-  keywords: ["baby", "small", "cute", "noisy", "cried", "quiet", "held"],
-  topic_talk_prompt: "Describe what you were like as a baby!",
+  min_words: 48,
+  model_sentence: "When I look at old photos from when I was a baby, I can see how much I have changed over the years. I was a very small and chubby baby with a round face, big dark eyes, and very little hair on my head. My mother says I was an extremely noisy baby because I cried all the time, especially at night, and the only thing that could make me stop was music. I could not walk or talk yet, but I could already smile and recognise the faces of the people I loved. According to my dad, I was always reaching for things I could not have, and I tried to climb out of my cot when I was only nine months old! Looking at those photos makes me laugh and feel grateful for how far I have come.",
+  instruction_en: "Write about what you were like as a baby using was, were, and could!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 l\u00fac c\u00f2n nh\u1ecf d\u00f9ng was, were v\u00e0 could!",
+  prompt_en: "What did you look like? What were you like? What could or couldn't you do?",
+  prompt_vi: "B\u1ea1n tr\u00f4ng th\u1ebf n\u00e0o? B\u1ea1n nh\u01b0 th\u1ebf n\u00e0o? B\u1ea1n c\u00f3 th\u1ec3 ho\u1eb7c kh\u00f4ng th\u1ec3 l\u00e0m g\u00ec?",
+  keywords: ["chubby", "extremely", "recognise", "reaching", "cot", "grateful", "changed"],
+  topic_talk_prompt: "Describe yourself as a baby \u2014 what did you look like and what were you like?",
   sentence_frames: [
     {
-        "template": "I was ___ and I was very ___ and ___.",
+        "template": "I was a very ___ and ___ baby with a ___ face and ___.",
         "answers": [
-            "a baby",
             "small",
-            "cute"
+            "chubby",
+            "round",
+            "big dark eyes"
         ]
     },
     {
-        "template": "My mom says I was ___ and I ___ a lot.",
+        "template": "My mother says I was ___ because I cried all the time, and the only thing that could stop me was ___.",
         "answers": [
-            "noisy",
-            "cried"
+            "an extremely noisy baby",
+            "music"
         ]
     },
     {
-        "template": "But I was ___ when she ___ me.",
+        "template": "I could not ___ or ___ yet, but I could already ___ and ___ the faces of people I loved.",
         "answers": [
-            "quiet",
-            "held"
+            "walk",
+            "talk",
+            "smile",
+            "recognise"
+        ]
+    },
+    {
+        "template": "According to my dad, I was always ___ and tried to ___ when I was only nine months old.",
+        "answers": [
+            "reaching for things",
+            "climb out of my cot"
+        ]
+    },
+    {
+        "template": "Looking at those photos makes me ___ and feel ___ for how far I have come.",
+        "answers": [
+            "laugh",
+            "grateful"
         ]
     }
 ],
@@ -40,53 +57,88 @@ export default {
       scaffolding_stage: "medium-low",
       words: [
     {
-        "word": "a baby",
-        "vi": "một em bé",
-        "distractor": false
-    },
-    {
         "word": "small",
         "vi": "nhỏ",
         "distractor": false
     },
     {
-        "word": "cute",
-        "vi": "dễ thương",
+        "word": "chubby",
+        "vi": "mũm mĩm",
         "distractor": false
     },
     {
-        "word": "noisy",
-        "vi": "ồn ào",
+        "word": "round",
+        "vi": "tròn",
         "distractor": false
     },
     {
-        "word": "cried",
-        "vi": "khóc",
+        "word": "big dark eyes",
+        "vi": "đôi mắt to đen",
         "distractor": false
     },
     {
-        "word": "quiet",
-        "vi": "yên lặng",
+        "word": "an extremely noisy baby",
+        "vi": "một em bé rất ồn ào",
         "distractor": false
     },
     {
-        "word": "held",
-        "vi": "ôm",
+        "word": "music",
+        "vi": "âm nhạc",
         "distractor": false
     },
     {
-        "word": "very old",
-        "vi": "rất già",
-        "distractor": true
+        "word": "walk",
+        "vi": "đi bộ",
+        "distractor": false
     },
     {
-        "word": "laughed",
+        "word": "talk",
+        "vi": "nói chuyện",
+        "distractor": false
+    },
+    {
+        "word": "smile",
+        "vi": "mỉm cười",
+        "distractor": false
+    },
+    {
+        "word": "recognise",
+        "vi": "nhận ra",
+        "distractor": false
+    },
+    {
+        "word": "reaching for things",
+        "vi": "vươn tay lấy đồ vật",
+        "distractor": false
+    },
+    {
+        "word": "climb out of my cot",
+        "vi": "trèo ra khỏi nôi",
+        "distractor": false
+    },
+    {
+        "word": "laugh",
         "vi": "cười",
+        "distractor": false
+    },
+    {
+        "word": "grateful",
+        "vi": "biết ơn",
+        "distractor": false
+    },
+    {
+        "word": "very tall",
+        "vi": "rất cao — sai với baby",
         "distractor": true
     },
     {
-        "word": "ignored",
-        "vi": "phớt lờ",
+        "word": "completely silent",
+        "vi": "hoàn toàn im lặng",
+        "distractor": true
+    },
+    {
+        "word": "ashamed",
+        "vi": "xấu hổ",
         "distractor": true
     }
 ]

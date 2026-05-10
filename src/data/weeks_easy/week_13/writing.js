@@ -1,42 +1,36 @@
 export default {
   title: "My Day",
   min_words: 25,
-  model_sentence: "I wake up at 7 o'clock. I brush my teeth. I eat breakfast. I go to school. I have lunch. I play with friends. I do homework. I go to bed.",
-  instruction_en: "Write about your day from morning to night!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 ng\u00e0y c\u1ee7a b\u1ea1n t\u1eeb s\u00e1ng \u0111\u1ebfn t\u1ed1i!",
-  prompt_en: "What do you do in the morning? At school? In the evening?",
-  prompt_vi: "B\u1ea1n l\u00e0m g\u00ec bu\u1ed5i s\u00e1ng? \u1ede tr\u01b0\u1eddng? Bu\u1ed5i t\u1ed1i?",
-  keywords: ["wake", "brush", "breakfast", "school", "lunch", "play", "homework", "bed"],
-  topic_talk_prompt: "Tell me about your daily routine!",
+  model_sentence: "I wake up at seven. I brush my teeth. I eat breakfast. Then I go to school.",
+  instruction_en: "Write about your morning routine!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 th\u00f3i quen bu\u1ed5i s\u00e1ng c\u1ee7a b\u1ea1n!",
+  prompt_en: "What do you do in the morning? What order do you do things in?",
+  prompt_vi: "B\u1ea1n l\u00e0m g\u00ec v\u00e0o bu\u1ed5i s\u00e1ng? B\u1ea1n l\u00e0m theo th\u1ee9 t\u1ef1 n\u00e0o?",
+  keywords: ["wake", "brush", "teeth", "breakfast", "school"],
+  topic_talk_prompt: "Tell me about your morning step by step!",
   sentence_frames: [
     {
-        "template": "I wake up at ___ o'clock.",
+        "template": "I wake up at ___.",
         "answers": [
-            "7"
+            "seven"
         ]
     },
     {
-        "template": "I ___ my teeth in the morning.",
+        "template": "I ___ my teeth.",
         "answers": [
             "brush"
         ]
     },
     {
-        "template": "I eat ___ with my family.",
+        "template": "I eat ___.",
         "answers": [
             "breakfast"
         ]
     },
     {
-        "template": "I go to ___ every day.",
+        "template": "Then I go to ___.",
         "answers": [
             "school"
-        ]
-    },
-    {
-        "template": "In the evening, I do my ___.",
-        "answers": [
-            "homework"
         ]
     }
 ],
@@ -48,7 +42,7 @@ export default {
       scaffolding_stage: "medium",
       words: [
     {
-        "word": "7",
+        "word": "seven",
         "vi": "bảy giờ",
         "distractor": false
     },
@@ -68,18 +62,13 @@ export default {
         "distractor": false
     },
     {
-        "word": "homework",
-        "vi": "bài tập về nhà",
-        "distractor": false
-    },
-    {
-        "word": "12",
-        "vi": "mười hai giờ (sai giờ thức)",
+        "word": "midnight",
+        "vi": "nửa đêm",
         "distractor": true
     },
     {
         "word": "comb",
-        "vi": "chải (không phải răng)",
+        "vi": "chải — không phải răng",
         "distractor": true
     },
     {

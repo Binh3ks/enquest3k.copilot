@@ -1,38 +1,50 @@
 export default {
   title: "The Time Detective Interview",
-  min_words: 40,
-  model_sentence: "I interviewed my friend like a time detective. I asked, Did you walk to school yesterday? Did you talk to your teacher? My friend answered every question carefully.",
-  instruction_en: "Write a time detective interview using past tense questions!",
-  instruction_vi: "Vi\u1ebft cu\u1ed9c ph\u1ecfng v\u1ea5n th\u00e1m t\u1eed th\u1eddi gian v\u1edbi c\u00e2u h\u1ecfi qu\u00e1 kh\u1ee9!",
-  prompt_en: "What questions did you ask? How did your friend respond?",
-  prompt_vi: "B\u1ea1n h\u1ecfi nh\u1eefng g\u00ec? B\u1ea1n b\u00e8 c\u1ee7a b\u1ea1n tr\u1ea3 l\u1eddi th\u1ebf n\u00e0o?",
-  keywords: ["interviewed", "time detective", "walk", "school", "talk", "teacher", "answered"],
-  topic_talk_prompt: "Conduct a time detective interview about yesterday!",
+  min_words: 45,
+  model_sentence: "Yesterday I pretended to be a time detective and I interviewed my friend about everything she did the day before. I had a clipboard and a pencil and I asked her questions in a very serious voice. Did you walk to school or did you come by bus? Did you talk to your teacher? Did you finish all your homework last night? My friend laughed at first but then she answered every question carefully and honestly. She said she walked to school, talked to three teachers, and finished her maths but not her reading. I wrote down all her answers in my detective notebook and then I made my official report: my friend had a normal but productive day, and the time detective was satisfied with the evidence.",
+  instruction_en: "Write a time detective interview in full using past tense questions and answers!",
+  instruction_vi: "Vi\u1ebft cu\u1ed9c ph\u1ecfng v\u1ea5n th\u00e1m t\u1eed th\u1eddi gian \u0111\u1ea7y \u0111\u1ee7 b\u1eb1ng c\u00e2u h\u1ecfi v\u00e0 tr\u1ea3 l\u1eddi qu\u00e1 kh\u1ee9!",
+  prompt_en: "What did you ask? How did your friend answer? What was your official report?",
+  prompt_vi: "B\u1ea1n h\u1ecfi g\u00ec? B\u1ea1n c\u1ee7a b\u1ea1n tr\u1ea3 l\u1eddi th\u1ebf n\u00e0o? B\u00e1o c\u00e1o ch\u00ednh th\u1ee9c c\u1ee7a b\u1ea1n l\u00e0 g\u00ec?",
+  keywords: ["detective", "clipboard", "seriously", "honestly", "productive", "evidence", "official", "satisfied"],
+  topic_talk_prompt: "Tell me about your time detective interview \u2014 what did you ask and what did you find out?",
   sentence_frames: [
     {
-        "template": "I ___ my friend like ___.",
+        "template": "I had ___ and asked my friend questions in a ___.",
         "answers": [
-            "interviewed",
-            "a time detective"
+            "a clipboard and a pencil",
+            "very serious voice"
         ]
     },
     {
-        "template": "I asked, Did you ___ yesterday?",
+        "template": "Did you ___ or did you come by bus? Did you ___ to your teacher?",
         "answers": [
-            "walk to school"
+            "walk to school",
+            "talk"
         ]
     },
     {
-        "template": "I also asked, Did you ___ to your ___?",
+        "template": "Did you ___ last night? My friend answered ___ and ___.",
         "answers": [
-            "talk",
-            "teacher"
+            "finish all your homework",
+            "carefully",
+            "honestly"
         ]
     },
     {
-        "template": "My friend answered every question ___.",
+        "template": "She said she ___, talked to three teachers, and finished ___ but not ___.",
         "answers": [
-            "carefully"
+            "walked to school",
+            "her maths",
+            "her reading"
+        ]
+    },
+    {
+        "template": "I wrote down all her answers and made my ___ report: she had a ___ but ___ day.",
+        "answers": [
+            "official",
+            "normal",
+            "productive"
         ]
     }
 ],
@@ -44,13 +56,13 @@ export default {
       scaffolding_stage: "medium-low",
       words: [
     {
-        "word": "interviewed",
-        "vi": "phỏng vấn",
+        "word": "a clipboard and a pencil",
+        "vi": "một tập kẹp giấy và bút chì",
         "distractor": false
     },
     {
-        "word": "a time detective",
-        "vi": "một thám tử thời gian",
+        "word": "very serious voice",
+        "vi": "giọng rất nghiêm túc",
         "distractor": false
     },
     {
@@ -64,8 +76,8 @@ export default {
         "distractor": false
     },
     {
-        "word": "teacher",
-        "vi": "giáo viên",
+        "word": "finish all your homework",
+        "vi": "hoàn thành hết bài tập về nhà",
         "distractor": false
     },
     {
@@ -74,18 +86,53 @@ export default {
         "distractor": false
     },
     {
-        "word": "ignored",
-        "vi": "bỏ qua",
+        "word": "honestly",
+        "vi": "thành thật",
+        "distractor": false
+    },
+    {
+        "word": "walked to school",
+        "vi": "đã đi bộ đến trường",
+        "distractor": false
+    },
+    {
+        "word": "her maths",
+        "vi": "bài toán",
+        "distractor": false
+    },
+    {
+        "word": "her reading",
+        "vi": "bài đọc",
+        "distractor": false
+    },
+    {
+        "word": "official",
+        "vi": "chính thức",
+        "distractor": false
+    },
+    {
+        "word": "normal",
+        "vi": "bình thường",
+        "distractor": false
+    },
+    {
+        "word": "productive",
+        "vi": "hiệu quả",
+        "distractor": false
+    },
+    {
+        "word": "a toy sword",
+        "vi": "một thanh kiếm đồ chơi",
         "distractor": true
     },
     {
-        "word": "a superhero",
-        "vi": "siêu anh hùng",
+        "word": "carelessly",
+        "vi": "bất cẩn",
         "distractor": true
     },
     {
-        "word": "tomorrow",
-        "vi": "ngày mai",
+        "word": "a terrible day",
+        "vi": "một ngày tệ hại",
         "distractor": true
     }
 ]

@@ -1,24 +1,59 @@
 export default {
   title: "My Yesterday",
-  min_words: 40,
-  model_sentence: "Yesterday was a wonderful and busy day for me. In the morning, I walked to school with my best friend and talked about our homework. In class, I listened to my teacher carefully and opened my notebook to write important ideas. After school, I helped my mom in the kitchen. She cooked rice and soup, and I washed my hands before we ate dinner together. In the evening, I cleaned my room, watched TV for a short time, and looked at the bright stars outside. Before bed, I finished my homework and started a new story in my diary. I felt proud, calm, and very happy at the end of the day.",
-  instruction_en: "Write about your day yesterday using full phrases!",
-  instruction_vi: "Viết về ngày hôm qua bằng cụm từ hoàn chỉnh!",
-  prompt_en: "Write about what you did yesterday! Use the phrases in the word bank to fill each blank.",
-  prompt_vi: "Viết về những gì bạn đã làm hôm qua! Dùng cụm từ trong bảng từ để điền vào mỗi ô.",
-  keywords: ["walked", "talked", "listened", "helped", "cooked", "cleaned", "watched", "finished", "started", "felt"],
-  topic_talk_prompt: "Tell me about what you did yesterday. What happened from morning to night?",
+  min_words: 45,
+  model_sentence: "Yesterday was a wonderful and busy day, and I want to tell you about all the things I did from morning to night. In the morning, I walked to school with my best friend and we talked about our favourite books on the way. In class, I listened carefully to my teacher and opened my notebook to write down the most important ideas. After school, I helped my mum in the kitchen because she was cooking a big pot of soup and rice for dinner, and the smell made me very hungry. In the evening, I cleaned my room, watched a short programme about animals, and then looked at the bright stars from my window. Before I went to bed, I finished all my homework and wrote three sentences in my diary. I felt proud, calm, and very happy at the end of the day.",
+  instruction_en: "Write about your yesterday in full detail using past tense \u2014 morning to night!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 h\u00f4m qua chi ti\u1ebft b\u1eb1ng th\u00ec qu\u00e1 kh\u1ee9 \u2014 t\u1eeb s\u00e1ng \u0111\u1ebfn t\u1ed1i!",
+  prompt_en: "What did you do morning, afternoon, and evening? How did you feel at the end?",
+  prompt_vi: "B\u1ea1n \u0111\u00e3 l\u00e0m g\u00ec s\u00e1ng, chi\u1ec1u, t\u1ed1i? Cu\u1ed1i ng\u00e0y b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["walked", "talked", "listened", "notebook", "cleaned", "programme", "diary", "proud"],
+  topic_talk_prompt: "Tell me everything you did yesterday from morning to night!",
   sentence_frames: [
-    {"template": "Yesterday was ___.", "answers": ["a wonderful and busy day for me"]},
-    {"template": "In the morning, I ___ and ___.", "answers": ["walked to school with my best friend", "talked about our homework"]},
-    {"template": "In class, I ___ and ___ to write important ideas.", "answers": ["listened to my teacher carefully", "opened my notebook"]},
-    {"template": "After school, ___.", "answers": ["I helped my mom in the kitchen"]},
-    {"template": "___, and I washed my hands before we ate dinner together.", "answers": ["She cooked rice and soup"]},
-    {"template": "In the evening, I ___, ___, and ___.", "answers": ["cleaned my room", "watched TV for a short time", "looked at the bright stars outside"]},
-    {"template": "Before bed, I ___ and ___.", "answers": ["finished my homework", "started a new story in my diary"]},
-    {"template": "I felt ___ at the end of the day.", "answers": ["proud, calm, and very happy"]}
-  ],
-
+    {
+        "template": "In the morning, I ___ to school with my best friend and we ___ about our favourite books.",
+        "answers": [
+            "walked",
+            "talked"
+        ]
+    },
+    {
+        "template": "In class, I ___ carefully to my teacher and ___ my notebook to write down important ideas.",
+        "answers": [
+            "listened",
+            "opened"
+        ]
+    },
+    {
+        "template": "After school, I ___ my mum because she was ___ a big pot of soup and rice.",
+        "answers": [
+            "helped",
+            "cooking"
+        ]
+    },
+    {
+        "template": "In the evening, I ___ my room, ___ a short programme, and then ___ at the bright stars.",
+        "answers": [
+            "cleaned",
+            "watched",
+            "looked"
+        ]
+    },
+    {
+        "template": "Before I went to bed, I ___ all my homework and ___ three sentences in my diary.",
+        "answers": [
+            "finished",
+            "wrote"
+        ]
+    },
+    {
+        "template": "I felt ___, ___, and very ___ at the end of the day.",
+        "answers": [
+            "proud",
+            "calm",
+            "happy"
+        ]
+    }
+],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -26,23 +61,92 @@ export default {
       show_by_default: false,
       scaffolding_stage: "medium-low",
       words: [
-        {word: "a wonderful and busy day for me", vi: "một ngày tuyệt vời và bận rộn", distractor: false},
-        {word: "walked to school with my best friend", vi: "đi bộ đến trường với bạn thân", distractor: false},
-        {word: "talked about our homework", vi: "nói chuyện về bài tập", distractor: false},
-        {word: "listened to my teacher carefully", vi: "lắng nghe thầy/cô cẩn thận", distractor: false},
-        {word: "opened my notebook", vi: "mở vở ra", distractor: false},
-        {word: "I helped my mom in the kitchen", vi: "tôi giúp mẹ trong bếp", distractor: false},
-        {word: "She cooked rice and soup", vi: "cô ấy nấu cơm và canh", distractor: false},
-        {word: "cleaned my room", vi: "dọn phòng", distractor: false},
-        {word: "watched TV for a short time", vi: "xem TV một lúc", distractor: false},
-        {word: "looked at the bright stars outside", vi: "nhìn những ngôi sao sáng bên ngoài", distractor: false},
-        {word: "finished my homework", vi: "hoàn thành bài tập", distractor: false},
-        {word: "started a new story in my diary", vi: "bắt đầu câu chuyện mới trong nhật ký", distractor: false},
-        {word: "proud, calm, and very happy", vi: "tự hào, bình tĩnh và rất vui", distractor: false},
-        {word: "a boring and terrible day", vi: "một ngày tẻ nhạt và tệ (sai nghĩa)", distractor: true},
-        {word: "walked to the wrong place", vi: "đi nhầm chỗ (sai nghĩa)", distractor: true},
-        {word: "very angry and upset", vi: "rất tức giận và buồn bực (sai nghĩa)", distractor: true}
-      ]
+    {
+        "word": "walked",
+        "vi": "đi bộ",
+        "distractor": false
+    },
+    {
+        "word": "talked",
+        "vi": "trò chuyện",
+        "distractor": false
+    },
+    {
+        "word": "listened",
+        "vi": "lắng nghe",
+        "distractor": false
+    },
+    {
+        "word": "opened",
+        "vi": "mở ra",
+        "distractor": false
+    },
+    {
+        "word": "helped",
+        "vi": "giúp đỡ",
+        "distractor": false
+    },
+    {
+        "word": "cooking",
+        "vi": "nấu ăn",
+        "distractor": false
+    },
+    {
+        "word": "cleaned",
+        "vi": "dọn dẹp",
+        "distractor": false
+    },
+    {
+        "word": "watched",
+        "vi": "xem",
+        "distractor": false
+    },
+    {
+        "word": "looked",
+        "vi": "nhìn",
+        "distractor": false
+    },
+    {
+        "word": "finished",
+        "vi": "hoàn thành",
+        "distractor": false
+    },
+    {
+        "word": "wrote",
+        "vi": "viết",
+        "distractor": false
+    },
+    {
+        "word": "proud",
+        "vi": "tự hào",
+        "distractor": false
+    },
+    {
+        "word": "calm",
+        "vi": "bình tĩnh",
+        "distractor": false
+    },
+    {
+        "word": "happy",
+        "vi": "vui",
+        "distractor": false
+    },
+    {
+        "word": "runs",
+        "vi": "chạy — sai thì",
+        "distractor": true
+    },
+    {
+        "word": "arguing",
+        "vi": "tranh cãi",
+        "distractor": true
+    },
+    {
+        "word": "stressed and tired",
+        "vi": "căng thẳng và mệt",
+        "distractor": true
+    }
+]
     }
   }
 };

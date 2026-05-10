@@ -1,16 +1,16 @@
 export default {
   title: "My World",
   min_words: 25,
-  model_sentence: "My name is Emma and I want to show you my world. I have a wonderful family with my mom, my dad, and my little sister. I live in a nice house near the park.",
-  instruction_en: "Write about your world!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 th\u1ebf gi\u1edbi c\u1ee7a b\u1ea1n!",
-  prompt_en: "What is your name? What is your family like? Where do you live?",
-  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? Gia \u0111\u00ecnh th\u1ebf n\u00e0o? B\u1ea1n s\u1ed1ng \u1edf \u0111\u00e2u?",
-  keywords: ["Emma", "family", "mom", "dad", "sister", "house", "park"],
-  topic_talk_prompt: "Tell me about your world \u2014 your family and home!",
+  model_sentence: "My name is Emma. I have a wonderful family. I live near the park. I feel happy every day.",
+  instruction_en: "Write about your world \u2014 your family, home, and feelings!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 th\u1ebf gi\u1edbi c\u1ee7a b\u1ea1n \u2014 gia \u0111\u00ecnh, nh\u00e0 v\u00e0 c\u1ea3m x\u00fac!",
+  prompt_en: "What is your name? What is your family like? Where do you live? How do you feel?",
+  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? Gia \u0111\u00ecnh th\u1ebf n\u00e0o? B\u1ea1n s\u1ed1ng \u1edf \u0111\u00e2u? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+  keywords: ["Emma", "wonderful", "family", "park", "happy"],
+  topic_talk_prompt: "Tell me about your world!",
   sentence_frames: [
     {
-        "template": "My name is ___ and I want to show you my world.",
+        "template": "My name is ___.",
         "answers": [
             "Emma"
         ]
@@ -22,17 +22,15 @@ export default {
         ]
     },
     {
-        "template": "My family has my ___, my ___, and my little ___.",
-        "answers": [
-            "mom",
-            "dad",
-            "sister"
-        ]
-    },
-    {
         "template": "I live near the ___.",
         "answers": [
             "park"
+        ]
+    },
+    {
+        "template": "I feel ___ every day.",
+        "answers": [
+            "happy"
         ]
     }
 ],
@@ -54,38 +52,28 @@ export default {
         "distractor": false
     },
     {
-        "word": "mom",
-        "vi": "mẹ",
-        "distractor": false
-    },
-    {
-        "word": "dad",
-        "vi": "bố",
-        "distractor": false
-    },
-    {
-        "word": "sister",
-        "vi": "chị/em gái",
-        "distractor": false
-    },
-    {
         "word": "park",
         "vi": "công viên",
         "distractor": false
     },
     {
+        "word": "happy",
+        "vi": "vui",
+        "distractor": false
+    },
+    {
         "word": "terrible",
-        "vi": "tệ",
+        "vi": "tệ hại",
         "distractor": true
     },
     {
-        "word": "brother",
-        "vi": "anh/em trai",
+        "word": "library",
+        "vi": "thư viện",
         "distractor": true
     },
     {
-        "word": "school",
-        "vi": "trường",
+        "word": "sad",
+        "vi": "buồn",
         "distractor": true
     }
 ]

@@ -1,35 +1,35 @@
 export default {
-  title: "My Bedroom",
+  title: "The Mystery House",
   min_words: 20,
-  model_sentence: "I have a bedroom. My bedroom is nice. I have a bed in my bedroom. I sleep on my bed. I also have a chair and a table. I like my room.",
-  instruction_en: "Write about your bedroom!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 ph\u00f2ng ng\u1ee7 c\u1ee7a b\u1ea1n!",
-  prompt_en: "What does your room look like? What do you have in it?",
-  prompt_vi: "Ph\u00f2ng c\u1ee7a b\u1ea1n tr\u00f4ng th\u1ebf n\u00e0o? B\u1ea1n c\u00f3 g\u00ec trong ph\u00f2ng?",
-  keywords: ["bedroom", "nice", "bed", "chair", "table", "like"],
-  topic_talk_prompt: "Tell me about your bedroom!",
+  model_sentence: "My house has a bedroom and a kitchen. I have a bed in my bedroom. There is a big table in the kitchen. I like my house.",
+  instruction_en: "Write about your house!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 ng\u00f4i nh\u00e0 c\u1ee7a b\u1ea1n!",
+  prompt_en: "What rooms does your house have? What is in each room?",
+  prompt_vi: "Nh\u00e0 b\u1ea1n c\u00f3 nh\u1eefng ph\u00f2ng n\u00e0o? M\u1ed7i ph\u00f2ng c\u00f3 g\u00ec?",
+  keywords: ["bedroom", "kitchen", "bed", "table", "house"],
+  topic_talk_prompt: "Describe your house and rooms!",
   sentence_frames: [
     {
-        "template": "My bedroom is ___.",
+        "template": "My house has a ___ and a ___.",
         "answers": [
-            "nice"
+            "bedroom",
+            "kitchen"
         ]
     },
     {
-        "template": "I have a ___ to sleep on.",
+        "template": "I have a ___ in my bedroom.",
         "answers": [
             "bed"
         ]
     },
     {
-        "template": "I also have a ___ and a ___.",
+        "template": "There is a big ___ in the kitchen.",
         "answers": [
-            "chair",
             "table"
         ]
     },
     {
-        "template": "I ___ my room.",
+        "template": "I ___ my house.",
         "answers": [
             "like"
         ]
@@ -43,18 +43,18 @@ export default {
       scaffolding_stage: "high",
       words: [
     {
-        "word": "nice",
-        "vi": "đẹp/dễ chịu",
+        "word": "bedroom",
+        "vi": "phòng ngủ",
+        "distractor": false
+    },
+    {
+        "word": "kitchen",
+        "vi": "nhà bếp",
         "distractor": false
     },
     {
         "word": "bed",
         "vi": "giường",
-        "distractor": false
-    },
-    {
-        "word": "chair",
-        "vi": "ghế",
         "distractor": false
     },
     {
@@ -68,8 +68,8 @@ export default {
         "distractor": false
     },
     {
-        "word": "messy",
-        "vi": "bừa bộn",
+        "word": "garage",
+        "vi": "nhà để xe",
         "distractor": true
     },
     {

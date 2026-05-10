@@ -1,42 +1,36 @@
 export default {
-  title: "What I Like",
+  title: "My Happy Jar",
   min_words: 20,
-  model_sentence: "I like to play. I like to draw. I like to read. When I play, I smile. When I draw, I am happy. When I read, I feel good.",
-  instruction_en: "Write about things you like!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng th\u1ee9 b\u1ea1n th\u00edch!",
-  prompt_en: "What do you like to do? How does it make you feel?",
-  prompt_vi: "B\u1ea1n th\u00edch l\u00e0m g\u00ec? N\u00f3 khi\u1ebfn b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["play", "draw", "read", "smile", "happy", "good"],
-  topic_talk_prompt: "What do you like to do?",
+  model_sentence: "I like playing. I like drawing. I like reading. I feel happy when I draw.",
+  instruction_en: "Write about things you like doing!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng vi\u1ec7c b\u1ea1n th\u00edch l\u00e0m!",
+  prompt_en: "What do you like doing? How do you feel when you do it?",
+  prompt_vi: "B\u1ea1n th\u00edch l\u00e0m g\u00ec? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o khi l\u00e0m \u0111i\u1ec1u \u0111\u00f3?",
+  keywords: ["playing", "drawing", "reading", "happy"],
+  topic_talk_prompt: "What do you like doing? How does it make you feel?",
   sentence_frames: [
     {
-        "template": "I like to ___.",
+        "template": "I like ___.",
         "answers": [
-            "play"
+            "playing"
         ]
     },
     {
-        "template": "I also like to ___.",
+        "template": "I also like ___.",
         "answers": [
-            "draw"
+            "drawing"
         ]
     },
     {
-        "template": "I love to ___, too.",
+        "template": "I love ___, too.",
         "answers": [
-            "read"
+            "reading"
         ]
     },
     {
-        "template": "When I play, I ___.",
+        "template": "I feel ___ when I draw.",
         "answers": [
-            "smile"
-        ]
-    },
-    {
-        "template": "When I read, I feel ___.",
-        "answers": [
-            "good"
+            "happy"
         ]
     }
 ],
@@ -48,43 +42,38 @@ export default {
       scaffolding_stage: "high",
       words: [
     {
-        "word": "play",
+        "word": "playing",
         "vi": "chơi",
         "distractor": false
     },
     {
-        "word": "draw",
+        "word": "drawing",
         "vi": "vẽ",
         "distractor": false
     },
     {
-        "word": "read",
+        "word": "reading",
         "vi": "đọc",
         "distractor": false
     },
     {
-        "word": "smile",
-        "vi": "cười",
+        "word": "happy",
+        "vi": "vui",
         "distractor": false
     },
     {
-        "word": "good",
-        "vi": "tốt/vui",
-        "distractor": false
-    },
-    {
-        "word": "cry",
-        "vi": "khóc",
-        "distractor": true
-    },
-    {
-        "word": "sleep",
+        "word": "sleeping",
         "vi": "ngủ",
         "distractor": true
     },
     {
         "word": "sad",
         "vi": "buồn",
+        "distractor": true
+    },
+    {
+        "word": "cooking",
+        "vi": "nấu ăn",
         "distractor": true
     }
 ]

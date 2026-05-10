@@ -1,44 +1,41 @@
 export default {
-  title: "Writing: How a Seed Grows",
-  min_words: 35,
-  model_sentence: "Here is how a seed grows into a plant. First, a seed is planted in the soil. It needs water and sunlight to grow. Next, a small shoot appears. Then leaves grow. Finally, a flower blooms!",
-  instruction_en: "Write about how a seed grows step by step!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 c\u00e1ch h\u1ea1t gi\u1ed1ng n\u1ea3y m\u1ea7m t\u1eebng b\u01b0\u1edbc!",
-  prompt_en: "What does a seed need to grow? What happens at each stage?",
-  prompt_vi: "H\u1ea1t gi\u1ed1ng c\u1ea7n g\u00ec \u0111\u1ec3 l\u1edbn l\u00ean? Chuy\u1ec7n g\u00ec x\u1ea3y ra \u1edf m\u1ed7i giai \u0111o\u1ea1n?",
-  keywords: ["seed", "plant", "soil", "water", "sunlight", "shoot", "leaves", "flower", "blooms"],
-  topic_talk_prompt: "Explain how a seed grows into a plant!",
+  title: "How a Seed Grows",
+  min_words: 32,
+  model_sentence: "First a seed is planted in soil. It needs water and sunlight. Next a tiny shoot grows up. Then leaves appear. Finally a flower blooms.",
+  instruction_en: "Describe how a seed grows step by step!",
+  instruction_vi: "M\u00f4 t\u1ea3 c\u00e1ch m\u1ed9t h\u1ea1t gi\u1ed1ng m\u1ecdc l\u00ean theo t\u1eebng b\u01b0\u1edbc!",
+  prompt_en: "What happens first? What does the seed need? What comes next?",
+  prompt_vi: "\u0110i\u1ec1u g\u00ec x\u1ea3y ra \u0111\u1ea7u ti\u00ean? H\u1ea1t gi\u1ed1ng c\u1ea7n g\u00ec? Ti\u1ebfp theo l\u00e0 g\u00ec?",
+  keywords: ["seed", "soil", "water", "sunlight", "shoot", "leaves", "flower", "blooms"],
+  topic_talk_prompt: "Explain how a seed grows into a plant step by step!",
   sentence_frames: [
     {
-        "template": "First, a seed is ___ in the ___.",
+        "template": "First a seed is ___ in soil.",
         "answers": [
-            "planted",
-            "soil"
+            "planted"
         ]
     },
     {
-        "template": "It needs ___ and ___ to grow.",
+        "template": "It needs ___ and sunlight.",
         "answers": [
-            "water",
-            "sunlight"
+            "water"
         ]
     },
     {
-        "template": "Next, a small ___ appears.",
+        "template": "Next a tiny ___ grows up.",
         "answers": [
             "shoot"
         ]
     },
     {
-        "template": "Then ___ grow.",
+        "template": "Then ___ appear.",
         "answers": [
             "leaves"
         ]
     },
     {
-        "template": "Finally, a ___ ___!",
+        "template": "Finally a flower ___.",
         "answers": [
-            "flower",
             "blooms"
         ]
     }
@@ -52,12 +49,7 @@ export default {
       words: [
     {
         "word": "planted",
-        "vi": "trồng",
-        "distractor": false
-    },
-    {
-        "word": "soil",
-        "vi": "đất",
+        "vi": "được trồng",
         "distractor": false
     },
     {
@@ -66,43 +58,33 @@ export default {
         "distractor": false
     },
     {
-        "word": "sunlight",
-        "vi": "ánh sáng mặt trời",
-        "distractor": false
-    },
-    {
         "word": "shoot",
-        "vi": "chồi non",
+        "vi": "mầm cây",
         "distractor": false
     },
     {
         "word": "leaves",
-        "vi": "lá cây",
-        "distractor": false
-    },
-    {
-        "word": "flower",
-        "vi": "bông hoa",
+        "vi": "lá",
         "distractor": false
     },
     {
         "word": "blooms",
-        "vi": "nở",
+        "vi": "nở hoa",
         "distractor": false
     },
     {
-        "word": "frozen",
-        "vi": "đóng băng",
+        "word": "thrown",
+        "vi": "bị ném",
         "distractor": true
     },
     {
-        "word": "darkness",
-        "vi": "bóng tối",
+        "word": "fire",
+        "vi": "lửa",
         "distractor": true
     },
     {
-        "word": "fades",
-        "vi": "tàn úa",
+        "word": "falls",
+        "vi": "rụng xuống",
         "distractor": true
     }
 ]

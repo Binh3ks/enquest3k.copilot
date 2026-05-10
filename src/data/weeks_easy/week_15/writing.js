@@ -1,22 +1,22 @@
 export default {
   title: "Write About My Park Day",
   min_words: 25,
-  model_sentence: "Today I am going to the park! The park is fun! I am walking with my mom. My dad is jogging. I see a boy running with his dog.",
-  instruction_en: "Write about your park day!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 ng\u00e0y \u1edf c\u00f4ng vi\u00ean c\u1ee7a b\u1ea1n!",
-  prompt_en: "Who is at the park? What are people doing? How do you feel?",
-  prompt_vi: "Ai \u1edf c\u00f4ng vi\u00ean? M\u1ecdi ng\u01b0\u1eddi \u0111ang l\u00e0m g\u00ec? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["park", "fun", "walking", "mom", "jogging", "running", "dog"],
-  topic_talk_prompt: "Tell me about a day at the park!",
+  model_sentence: "The park is fun today. I am walking with my mum. My dad is jogging. A boy is running with his dog.",
+  instruction_en: "Write about what people are doing in the park right now!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec m\u1ecdi ng\u01b0\u1eddi \u0111ang l\u00e0m trong c\u00f4ng vi\u00ean ngay l\u00fac n\u00e0y!",
+  prompt_en: "What is happening in the park? What are different people doing?",
+  prompt_vi: "Chuy\u1ec7n g\u00ec \u0111ang x\u1ea3y ra trong c\u00f4ng vi\u00ean? M\u1ecdi ng\u01b0\u1eddi \u0111ang l\u00e0m g\u00ec?",
+  keywords: ["fun", "walking", "mum", "jogging", "running", "dog"],
+  topic_talk_prompt: "Describe what you see happening in the park right now!",
   sentence_frames: [
     {
-        "template": "The park is ___.",
+        "template": "The park is ___ today.",
         "answers": [
             "fun"
         ]
     },
     {
-        "template": "I am ___ with my mom.",
+        "template": "I am ___ with my mum.",
         "answers": [
             "walking"
         ]
@@ -28,10 +28,9 @@ export default {
         ]
     },
     {
-        "template": "I see a boy ___ with his ___.",
+        "template": "A boy is ___ with his dog.",
         "answers": [
-            "running",
-            "dog"
+            "running"
         ]
     }
 ],
@@ -63,23 +62,18 @@ export default {
         "distractor": false
     },
     {
-        "word": "dog",
-        "vi": "con chó",
-        "distractor": false
-    },
-    {
         "word": "boring",
         "vi": "chán",
         "distractor": true
     },
     {
         "word": "swimming",
-        "vi": "bơi",
+        "vi": "bơi lội",
         "distractor": true
     },
     {
-        "word": "cat",
-        "vi": "con mèo",
+        "word": "sleeping",
+        "vi": "đang ngủ",
         "distractor": true
     }
 ]

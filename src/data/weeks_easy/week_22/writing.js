@@ -1,42 +1,42 @@
 export default {
-  title: "My Time Detective Questions",
-  min_words: 30,
-  model_sentence: "I was a time detective. I asked my brother, Did you play yesterday? He said, Yes, I did. I asked, Did you watch TV last night? He said, No, I didn't.",
-  instruction_en: "Write your time detective questions and answers!",
-  instruction_vi: "Vi\u1ebft c\u00e2u h\u1ecfi v\u00e0 tr\u1ea3 l\u1eddi th\u00e1m t\u1eed th\u1eddi gian!",
-  prompt_en: "What questions did you ask? What were the answers?",
-  prompt_vi: "B\u1ea1n h\u1ecfi nh\u1eefng c\u00e2u h\u1ecfi g\u00ec? C\u00e2u tr\u1ea3 l\u1eddi l\u00e0 g\u00ec?",
-  keywords: ["detective", "asked", "play", "yesterday", "watch", "night", "did", "didn't"],
-  topic_talk_prompt: "Ask me time detective questions about yesterday!",
+  title: "The Time Detective",
+  min_words: 28,
+  model_sentence: "I am a time detective. I asked my friend questions. Did you walk to school? Did you eat breakfast? My friend answered yes to both.",
+  instruction_en: "Write a time detective interview using past tense questions!",
+  instruction_vi: "Vi\u1ebft m\u1ed9t cu\u1ed9c ph\u1ecfng v\u1ea5n th\u00e1m t\u1eed th\u1eddi gian b\u1eb1ng c\u00e2u h\u1ecfi qu\u00e1 kh\u1ee9!",
+  prompt_en: "What questions did you ask? What did your friend answer?",
+  prompt_vi: "B\u1ea1n \u0111\u00e3 h\u1ecfi g\u00ec? B\u1ea1n c\u1ee7a b\u1ea1n \u0111\u00e3 tr\u1ea3 l\u1eddi g\u00ec?",
+  keywords: ["detective", "asked", "walk", "breakfast", "answered"],
+  topic_talk_prompt: "Interview a friend using past tense questions!",
   sentence_frames: [
     {
-        "template": "I was a time ___.",
+        "template": "I am a time ___.",
         "answers": [
             "detective"
         ]
     },
     {
-        "template": "I asked, Did you ___ yesterday?",
+        "template": "I ___ my friend questions.",
         "answers": [
-            "play"
+            "asked"
         ]
     },
     {
-        "template": "He said, Yes, I ___.",
+        "template": "Did you ___ to school?",
         "answers": [
-            "did"
+            "walk"
         ]
     },
     {
-        "template": "I asked, Did you ___ TV last night?",
+        "template": "Did you eat ___?",
         "answers": [
-            "watch"
+            "breakfast"
         ]
     },
     {
-        "template": "He said, No, I ___.",
+        "template": "My friend ___ yes to both.",
         "answers": [
-            "didn't"
+            "answered"
         ]
     }
 ],
@@ -53,38 +53,38 @@ export default {
         "distractor": false
     },
     {
-        "word": "play",
-        "vi": "chơi",
+        "word": "asked",
+        "vi": "đã hỏi",
         "distractor": false
     },
     {
-        "word": "did",
-        "vi": "đã làm",
+        "word": "walk",
+        "vi": "đi bộ",
         "distractor": false
     },
     {
-        "word": "watch",
-        "vi": "xem",
+        "word": "breakfast",
+        "vi": "bữa sáng",
         "distractor": false
     },
     {
-        "word": "didn't",
-        "vi": "không làm",
+        "word": "answered",
+        "vi": "đã trả lời",
         "distractor": false
     },
     {
-        "word": "scientist",
-        "vi": "nhà khoa học",
+        "word": "superhero",
+        "vi": "siêu anh hùng",
         "distractor": true
     },
     {
-        "word": "tomorrow",
-        "vi": "ngày mai",
+        "word": "telling",
+        "vi": "đang nói",
         "distractor": true
     },
     {
-        "word": "will",
-        "vi": "sẽ (tương lai sai)",
+        "word": "lunch",
+        "vi": "bữa trưa — không khớp",
         "distractor": true
     }
 ]

@@ -1,42 +1,36 @@
 export default {
-  title: "My Family",
+  title: "My Family Squad",
   min_words: 20,
-  model_sentence: "This is my family. This is my mother. She is kind. This is my father. He is strong. We are a team. I love my family.",
+  model_sentence: "This is my mother. She is kind. This is my father. He is strong.",
   instruction_en: "Write about your family!",
   instruction_vi: "Vi\u1ebft v\u1ec1 gia \u0111\u00ecnh c\u1ee7a b\u1ea1n!",
   prompt_en: "Who is in your family? What are they like?",
-  prompt_vi: "Ai \u1edf trong gia \u0111\u00ecnh c\u1ee7a b\u1ea1n? H\u1ecd th\u1ebf n\u00e0o?",
-  keywords: ["family", "mother", "father", "kind", "strong", "love"],
+  prompt_vi: "Ai \u1edf trong gia \u0111\u00ecnh b\u1ea1n? H\u1ecd th\u1ebf n\u00e0o?",
+  keywords: ["mother", "father", "kind", "strong", "family"],
   topic_talk_prompt: "Tell me about your family!",
   sentence_frames: [
     {
         "template": "This is my ___.",
         "answers": [
-            "family"
+            "mother"
         ]
     },
     {
-        "template": "My mother is ___.",
+        "template": "She is ___.",
         "answers": [
             "kind"
         ]
     },
     {
-        "template": "My father is ___.",
+        "template": "This is my ___.",
+        "answers": [
+            "father"
+        ]
+    },
+    {
+        "template": "He is ___.",
         "answers": [
             "strong"
-        ]
-    },
-    {
-        "template": "We are a ___.",
-        "answers": [
-            "team"
-        ]
-    },
-    {
-        "template": "I ___ my family.",
-        "answers": [
-            "love"
         ]
     }
 ],
@@ -48,8 +42,8 @@ export default {
       scaffolding_stage: "high",
       words: [
     {
-        "word": "family",
-        "vi": "gia đình",
+        "word": "mother",
+        "vi": "mẹ",
         "distractor": false
     },
     {
@@ -58,19 +52,19 @@ export default {
         "distractor": false
     },
     {
+        "word": "father",
+        "vi": "bố",
+        "distractor": false
+    },
+    {
         "word": "strong",
         "vi": "mạnh mẽ",
         "distractor": false
     },
     {
-        "word": "team",
-        "vi": "đội",
-        "distractor": false
-    },
-    {
-        "word": "love",
-        "vi": "yêu",
-        "distractor": false
+        "word": "sister",
+        "vi": "chị/em gái",
+        "distractor": true
     },
     {
         "word": "mean",
@@ -80,11 +74,6 @@ export default {
     {
         "word": "weak",
         "vi": "yếu",
-        "distractor": true
-    },
-    {
-        "word": "hate",
-        "vi": "ghét",
         "distractor": true
     }
 ]

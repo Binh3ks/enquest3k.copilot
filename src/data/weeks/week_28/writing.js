@@ -1,46 +1,57 @@
 export default {
-  title: "Writing: Retell The Tortoise and the Hare",
+  title: "Retell The Tortoise and the Hare",
   min_words: 50,
-  model_sentence: "Once upon a time, the Hare boasted about his speed every day. One morning, the Tortoise challenged him to a race. At first, the Hare ran very fast and was far ahead. Then he stopped to rest under a shady tree and fell asleep. The Tortoise kept walking steadily and crossed the finish line first. Slow and steady wins the race!",
-  instruction_en: "Retell the fable using past tense and narrative phrases!",
-  instruction_vi: "K\u1ec3 l\u1ea1i ng\u1ee5 ng\u00f4n b\u1eb1ng th\u00ec qu\u00e1 kh\u1ee9 v\u00e0 c\u1ee5m t\u1eeb k\u1ec3 chuy\u1ec7n!",
-  prompt_en: "What happened at the beginning, middle and end?",
-  prompt_vi: "\u0110i\u1ec1u g\u00ec x\u1ea3y ra \u1edf \u0111\u1ea7u, gi\u1eefa v\u00e0 cu\u1ed1i c\u00e2u chuy\u1ec7n?",
-  keywords: ["boasted", "speed", "Tortoise", "challenged", "race", "ahead", "rest", "shady", "steadily", "finish line"],
-  topic_talk_prompt: "Retell the full story of the Tortoise and the Hare!",
+  model_sentence: "One bright morning in the forest, the boastful Hare was bragging loudly to all the animals about how fast he could run, and he declared that nobody could ever beat him in a race. The calm and steady Tortoise decided to challenge him, and all the forest animals gathered at the starting line to watch. When the race began, the Hare burst forward at top speed and disappeared around the corner in a cloud of dust. Feeling very confident that he had already won, the Hare decided to stop under a shady oak tree and take a short nap. However, while the Hare slept soundly, the Tortoise kept moving forward slowly and steadily, never stopping and never looking back. By the time the Hare woke up and sprinted to the finish line in a panic, the Tortoise had already crossed it and was being cheered by all the animals. The moral of the story is that slow and steady wins the race.",
+  instruction_en: "Retell the fable in full using past tense and story phrases like one morning, however, by the time!",
+  instruction_vi: "K\u1ec3 l\u1ea1i truy\u1ec7n ng\u1ee5 ng\u00f4n \u0111\u1ea7y \u0111\u1ee7 b\u1eb1ng th\u00ec qu\u00e1 kh\u1ee9 v\u00e0 c\u1ee5m t\u1eeb k\u1ec3 chuy\u1ec7n!",
+  prompt_en: "What did the Hare do? What did the Tortoise do? What is the moral?",
+  prompt_vi: "Th\u1ecf \u0111\u00e3 l\u00e0m g\u00ec? R\u00f9a \u0111\u00e3 l\u00e0m g\u00ec? B\u00e0i h\u1ecdc l\u00e0 g\u00ec?",
+  keywords: ["boastful", "bragging", "declared", "steadily", "burst", "confidence", "sprinted", "moral"],
+  topic_talk_prompt: "Retell the tortoise and the hare story with all the details!",
   sentence_frames: [
     {
-        "template": "Once upon a time, the Hare ___ about his ___ every day.",
+        "template": "The boastful Hare was ___ loudly to all the animals and declared that nobody could ___ him.",
         "answers": [
-            "boasted",
-            "speed"
+            "bragging",
+            "beat"
         ]
     },
     {
-        "template": "The Tortoise ___ him to ___.",
+        "template": "The calm Tortoise decided to ___ him, and all the animals gathered at ___ to watch.",
         "answers": [
-            "challenged",
-            "a race"
+            "challenge",
+            "the starting line"
         ]
     },
     {
-        "template": "At first, the Hare was ___ but then he stopped to rest under ___.",
+        "template": "The Hare ___ at top speed and then stopped under a ___ to take ___.",
         "answers": [
-            "far ahead",
-            "a shady tree"
+            "burst forward",
+            "shady oak tree",
+            "a short nap"
         ]
     },
     {
-        "template": "The Tortoise ___ and crossed ___ first.",
+        "template": "While the Hare ___, the Tortoise kept moving ___ and ___, never stopping.",
         "answers": [
-            "kept walking steadily",
-            "the finish line"
+            "slept soundly",
+            "forward",
+            "steadily"
         ]
     },
     {
-        "template": "The lesson is: ___ wins the race!",
+        "template": "By the time the Hare ___ to the finish line, the Tortoise had already ___ and was being ___ by all the animals.",
         "answers": [
-            "slow and steady"
+            "sprinted",
+            "crossed it",
+            "cheered"
+        ]
+    },
+    {
+        "template": "The moral is that ___ and ___ wins the race.",
+        "answers": [
+            "slow",
+            "steady"
         ]
     }
 ],
@@ -52,63 +63,93 @@ export default {
       scaffolding_stage: "low",
       words: [
     {
-        "word": "boasted",
+        "word": "bragging",
         "vi": "khoe khoang",
         "distractor": false
     },
     {
-        "word": "speed",
-        "vi": "tốc độ",
+        "word": "beat",
+        "vi": "đánh bại",
         "distractor": false
     },
     {
-        "word": "challenged",
+        "word": "challenge",
         "vi": "thách thức",
         "distractor": false
     },
     {
-        "word": "a race",
-        "vi": "một cuộc đua",
+        "word": "the starting line",
+        "vi": "vạch xuất phát",
         "distractor": false
     },
     {
-        "word": "far ahead",
-        "vi": "dẫn trước xa",
+        "word": "burst forward",
+        "vi": "lao về phía trước",
         "distractor": false
     },
     {
-        "word": "a shady tree",
-        "vi": "một cây có bóng mát",
+        "word": "shady oak tree",
+        "vi": "cây sồi có bóng mát",
         "distractor": false
     },
     {
-        "word": "kept walking steadily",
-        "vi": "tiếp tục đi bộ đều đặn",
+        "word": "a short nap",
+        "vi": "một giấc ngủ ngắn",
         "distractor": false
     },
     {
-        "word": "the finish line",
-        "vi": "đích đến",
+        "word": "slept soundly",
+        "vi": "ngủ say",
         "distractor": false
     },
     {
-        "word": "slow and steady",
-        "vi": "chậm mà chắc",
+        "word": "forward",
+        "vi": "về phía trước",
         "distractor": false
     },
     {
-        "word": "complained",
-        "vi": "phàn nàn",
+        "word": "steadily",
+        "vi": "đều đặn",
+        "distractor": false
+    },
+    {
+        "word": "sprinted",
+        "vi": "chạy nước rút",
+        "distractor": false
+    },
+    {
+        "word": "crossed it",
+        "vi": "đã về đích",
+        "distractor": false
+    },
+    {
+        "word": "cheered",
+        "vi": "cổ vũ",
+        "distractor": false
+    },
+    {
+        "word": "slow",
+        "vi": "chậm",
+        "distractor": false
+    },
+    {
+        "word": "steady",
+        "vi": "kiên định",
+        "distractor": false
+    },
+    {
+        "word": "complimenting",
+        "vi": "khen ngợi — sai nghĩa",
         "distractor": true
     },
     {
-        "word": "gave up",
-        "vi": "bỏ cuộc",
+        "word": "a swimming pool",
+        "vi": "bể bơi",
         "distractor": true
     },
     {
-        "word": "fast and careless",
-        "vi": "nhanh và bất cẩn",
+        "word": "booed",
+        "vi": "la ó",
         "distractor": true
     }
 ]

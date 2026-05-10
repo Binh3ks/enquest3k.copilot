@@ -1,12 +1,12 @@
 export default {
   title: "My Talents",
   min_words: 25,
-  model_sentence: "I can sing. I can dance. I can run fast. I can't swim yet but I want to learn!",
-  instruction_en: "Write about your talents!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 t\u00e0i n\u0103ng c\u1ee7a b\u1ea1n!",
-  prompt_en: "What can you do well? What can't you do yet? What do you want to learn?",
-  prompt_vi: "B\u1ea1n l\u00e0m \u0111\u01b0\u1ee3c g\u00ec gi\u1ecfi? B\u1ea1n ch\u01b0a l\u00e0m \u0111\u01b0\u1ee3c g\u00ec? B\u1ea1n mu\u1ed1n h\u1ecdc g\u00ec?",
-  keywords: ["sing", "dance", "run", "swim", "learn", "fast"],
+  model_sentence: "I can sing. I can draw pictures. I cannot swim yet. I want to learn.",
+  instruction_en: "Write about what you can and cannot do!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec b\u1ea1n c\u00f3 th\u1ec3 v\u00e0 ch\u01b0a l\u00e0m \u0111\u01b0\u1ee3c!",
+  prompt_en: "What can you do? What can't you do yet? What do you want to learn?",
+  prompt_vi: "B\u1ea1n c\u00f3 th\u1ec3 l\u00e0m g\u00ec? Ch\u01b0a l\u00e0m \u0111\u01b0\u1ee3c g\u00ec? B\u1ea1n mu\u1ed1n h\u1ecdc g\u00ec?",
+  keywords: ["sing", "draw", "swim", "learn", "yet"],
   topic_talk_prompt: "What can you do? What do you want to learn?",
   sentence_frames: [
     {
@@ -16,25 +16,19 @@ export default {
         ]
     },
     {
-        "template": "I can also ___.",
+        "template": "I can also ___ pictures.",
         "answers": [
-            "dance"
+            "draw"
         ]
     },
     {
-        "template": "I can run ___.",
-        "answers": [
-            "fast"
-        ]
-    },
-    {
-        "template": "I can't ___ yet.",
+        "template": "I cannot ___ yet.",
         "answers": [
             "swim"
         ]
     },
     {
-        "template": "I want to ___ one day.",
+        "template": "I want to ___.",
         "answers": [
             "learn"
         ]
@@ -53,13 +47,8 @@ export default {
         "distractor": false
     },
     {
-        "word": "dance",
-        "vi": "nhảy",
-        "distractor": false
-    },
-    {
-        "word": "fast",
-        "vi": "nhanh",
+        "word": "draw",
+        "vi": "vẽ",
         "distractor": false
     },
     {
@@ -78,8 +67,8 @@ export default {
         "distractor": true
     },
     {
-        "word": "slowly",
-        "vi": "chậm chạp",
+        "word": "already",
+        "vi": "rồi — sai nghĩa với yet",
         "distractor": true
     },
     {

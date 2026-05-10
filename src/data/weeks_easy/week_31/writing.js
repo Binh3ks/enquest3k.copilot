@@ -1,39 +1,36 @@
 export default {
-  title: "Writing: My Forest Walk",
-  min_words: 35,
-  model_sentence: "Last Saturday, I went to the forest with my dad. I saw a beautiful blue and yellow bird sitting on a branch. I heard it singing a sweet song. I smelled fresh leaves in the air.",
-  instruction_en: "Write about a walk in the forest!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 m\u1ed9t chuy\u1ebfn \u0111i b\u1ed9 trong r\u1eebng!",
-  prompt_en: "What did you see, hear, and smell? How did you feel?",
-  prompt_vi: "B\u1ea1n th\u1ea5y, nghe v\u00e0 ng\u1eedi th\u1ea5y g\u00ec? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["forest", "dad", "bird", "branch", "singing", "song", "smelled", "leaves"],
-  topic_talk_prompt: "Tell me about a walk in nature!",
+  title: "My Sensory Walk",
+  min_words: 32,
+  model_sentence: "Last Saturday I went for a walk in the park. I saw orange leaves on the ground. I heard birds singing. I smelled fresh flowers. I felt the cool breeze.",
+  instruction_en: "Write a sensory walk using saw, heard, smelled, and felt!",
+  instruction_vi: "Vi\u1ebft m\u1ed9t chuy\u1ebfn \u0111i d\u00f9ng saw, heard, smelled v\u00e0 felt!",
+  prompt_en: "What did you see, hear, smell, and feel on your walk?",
+  prompt_vi: "B\u1ea1n th\u1ea5y, nghe, ng\u1eedi v\u00e0 c\u1ea3m nh\u1eadn g\u00ec trong chuy\u1ebfn \u0111i b\u1ed9?",
+  keywords: ["walk", "leaves", "birds", "singing", "flowers", "breeze"],
+  topic_talk_prompt: "Describe a walk using all five of your senses!",
   sentence_frames: [
     {
-        "template": "Last Saturday, I went to the ___ with my ___.",
+        "template": "I saw orange ___ on the ground.",
         "answers": [
-            "forest",
-            "dad"
+            "leaves"
         ]
     },
     {
-        "template": "I saw a beautiful ___ sitting on a ___.",
+        "template": "I heard ___ singing.",
         "answers": [
-            "bird",
-            "branch"
+            "birds"
         ]
     },
     {
-        "template": "I heard it ___ a sweet ___.",
+        "template": "I smelled fresh ___.",
         "answers": [
-            "singing",
-            "song"
+            "flowers"
         ]
     },
     {
-        "template": "I ___ fresh leaves in the air.",
+        "template": "I felt the cool ___.",
         "answers": [
-            "smelled"
+            "breeze"
         ]
     }
 ],
@@ -45,53 +42,38 @@ export default {
       scaffolding_stage: "low",
       words: [
     {
-        "word": "forest",
-        "vi": "khu rừng",
+        "word": "leaves",
+        "vi": "lá",
         "distractor": false
     },
     {
-        "word": "dad",
-        "vi": "bố",
+        "word": "birds",
+        "vi": "chim",
         "distractor": false
     },
     {
-        "word": "bird",
-        "vi": "con chim",
+        "word": "flowers",
+        "vi": "hoa",
         "distractor": false
     },
     {
-        "word": "branch",
-        "vi": "cành cây",
+        "word": "breeze",
+        "vi": "gió nhẹ",
         "distractor": false
     },
     {
-        "word": "singing",
-        "vi": "hát",
-        "distractor": false
-    },
-    {
-        "word": "song",
-        "vi": "bài hát",
-        "distractor": false
-    },
-    {
-        "word": "smelled",
-        "vi": "ngửi",
-        "distractor": false
-    },
-    {
-        "word": "desert",
-        "vi": "sa mạc",
+        "word": "clouds",
+        "vi": "mây — không phải trên mặt đất",
         "distractor": true
     },
     {
-        "word": "mom",
-        "vi": "mẹ",
+        "word": "dogs",
+        "vi": "chó — không phải hát",
         "distractor": true
     },
     {
-        "word": "barking",
-        "vi": "sủa",
+        "word": "heat",
+        "vi": "nóng bức — không phải mát",
         "distractor": true
     }
 ]

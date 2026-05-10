@@ -1,37 +1,50 @@
 export default {
   title: "The Talent Show",
-  min_words: 35,
-  model_sentence: "I can sing and I can draw. I can run fast but I can't swim yet. I want to learn to swim. Performing in a talent show is my dream.",
-  instruction_en: "Write about your talents for a talent show!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 t\u00e0i n\u0103ng c\u1ee7a b\u1ea1n cho bu\u1ed5i bi\u1ec3u di\u1ec5n!",
-  prompt_en: "What can you do? What can't you do yet? What is your dream?",
-  prompt_vi: "B\u1ea1n c\u00f3 th\u1ec3 l\u00e0m g\u00ec? Ch\u01b0a l\u00e0m \u0111\u01b0\u1ee3c g\u00ec? Gi\u1ea5c m\u01a1 c\u1ee7a b\u1ea1n l\u00e0 g\u00ec?",
-  keywords: ["sing", "draw", "run", "swim", "talent show", "dream"],
-  topic_talk_prompt: "What talent would you show at a talent show?",
+  min_words: 45,
+  model_sentence: "I have several talents that I am proud of and I would love to perform them in a talent show one day. I can sing clearly and loudly because I have practised every morning for two years. I can also draw very detailed pictures of animals and nature, and my art teacher says I have a gift. However, I cannot dance well yet because my legs get confused when I try to follow the beat. I also cannot speak French yet, but I am planning to start lessons next term because I think it is a beautiful language. My dream is to stand on a big stage one day and perform for a large audience who will cheer and clap for me.",
+  instruction_en: "Write about your talents and things you want to learn using can, cannot, and because!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 t\u00e0i n\u0103ng v\u00e0 \u0111i\u1ec1u mu\u1ed1n h\u1ecdc b\u1eb1ng can, cannot v\u00e0 because!",
+  prompt_en: "What can you do well? What can't you do yet? What is your dream?",
+  prompt_vi: "B\u1ea1n l\u00e0m t\u1ed1t g\u00ec? Ch\u01b0a l\u00e0m \u0111\u01b0\u1ee3c g\u00ec? Gi\u1ea5c m\u01a1 c\u1ee7a b\u1ea1n l\u00e0 g\u00ec?",
+  keywords: ["talents", "perform", "practised", "detailed", "confused", "beat", "audience", "cheer"],
+  topic_talk_prompt: "What are your talents and what do you dream of performing?",
   sentence_frames: [
     {
-        "template": "I can ___ and I can ___.",
+        "template": "I can ___ because I have ___ every morning for two years.",
         "answers": [
-            "sing",
-            "draw"
+            "sing clearly and loudly",
+            "practised"
         ]
     },
     {
-        "template": "I can run fast but I can't ___ yet.",
+        "template": "I can also ___ and my art teacher says I have a ___.",
         "answers": [
-            "swim"
+            "draw very detailed pictures of animals",
+            "gift"
         ]
     },
     {
-        "template": "I want to learn to ___ one day.",
+        "template": "However, I cannot ___ yet because my legs get confused when I try to follow ___.",
         "answers": [
-            "swim"
+            "dance well",
+            "the beat"
         ]
     },
     {
-        "template": "Performing in ___ is my dream.",
+        "template": "I cannot speak ___ yet, but I am planning to ___ next term because it is ___.",
         "answers": [
-            "a talent show"
+            "French",
+            "start lessons",
+            "a beautiful language"
+        ]
+    },
+    {
+        "template": "My dream is to stand on ___ and perform for ___ who will ___ and ___ for me.",
+        "answers": [
+            "a big stage",
+            "a large audience",
+            "cheer",
+            "clap"
         ]
     }
 ],
@@ -43,38 +56,83 @@ export default {
       scaffolding_stage: "medium",
       words: [
     {
-        "word": "sing",
-        "vi": "hát",
+        "word": "sing clearly and loudly",
+        "vi": "hát rõ và to",
         "distractor": false
     },
     {
-        "word": "draw",
-        "vi": "vẽ",
+        "word": "practised",
+        "vi": "đã luyện tập",
         "distractor": false
     },
     {
-        "word": "swim",
-        "vi": "bơi",
+        "word": "draw very detailed pictures of animals",
+        "vi": "vẽ tranh động vật rất chi tiết",
         "distractor": false
     },
     {
-        "word": "a talent show",
-        "vi": "một buổi biểu diễn tài năng",
+        "word": "gift",
+        "vi": "tài năng/thiên phú",
         "distractor": false
     },
     {
-        "word": "fly like a bird",
-        "vi": "bay như chim",
+        "word": "dance well",
+        "vi": "nhảy tốt",
+        "distractor": false
+    },
+    {
+        "word": "the beat",
+        "vi": "nhịp điệu",
+        "distractor": false
+    },
+    {
+        "word": "French",
+        "vi": "tiếng Pháp",
+        "distractor": false
+    },
+    {
+        "word": "start lessons",
+        "vi": "bắt đầu học",
+        "distractor": false
+    },
+    {
+        "word": "a beautiful language",
+        "vi": "một ngôn ngữ đẹp",
+        "distractor": false
+    },
+    {
+        "word": "a big stage",
+        "vi": "một sân khấu lớn",
+        "distractor": false
+    },
+    {
+        "word": "a large audience",
+        "vi": "khán giả đông đảo",
+        "distractor": false
+    },
+    {
+        "word": "cheer",
+        "vi": "cổ vũ",
+        "distractor": false
+    },
+    {
+        "word": "clap",
+        "vi": "vỗ tay",
+        "distractor": false
+    },
+    {
+        "word": "shout and boo",
+        "vi": "la ó",
         "distractor": true
     },
     {
-        "word": "drive a car",
-        "vi": "lái xe ô tô",
+        "word": "an empty room",
+        "vi": "phòng trống",
         "distractor": true
     },
     {
-        "word": "a cooking class",
-        "vi": "lớp nấu ăn",
+        "word": "a terrible singer",
+        "vi": "người hát tệ",
         "distractor": true
     }
 ]

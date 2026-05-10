@@ -1,43 +1,42 @@
 export default {
-  title: "My Art Class",
-  min_words: 30,
-  model_sentence: "Yesterday in art class I painted a picture of flowers and leaves. First I picked up my brush and dipped it into red pigment. Then I painted petals carefully.",
-  instruction_en: "Write about what you made in art class!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec b\u1ea1n l\u00e0m trong gi\u1edd m\u1ef9 thu\u1eadt!",
-  prompt_en: "What did you paint? How did you do it? What colours did you use?",
-  prompt_vi: "B\u1ea1n v\u1ebd g\u00ec? L\u00e0m th\u1ebf n\u00e0o? B\u1ea1n d\u00f9ng m\u00e0u g\u00ec?",
-  keywords: ["art", "painted", "flowers", "leaves", "brush", "red", "petals"],
-  topic_talk_prompt: "Tell me about your art class yesterday!",
+  title: "My Art Class Story",
+  min_words: 28,
+  model_sentence: "Yesterday I had art class. First I picked up my brush. Then I dipped it in red paint. I painted a flower. It looked beautiful.",
+  instruction_en: "Write a sequence story about your art class!",
+  instruction_vi: "Vi\u1ebft m\u1ed9t c\u00e2u chuy\u1ec7n theo tr\u00ecnh t\u1ef1 v\u1ec1 gi\u1edd h\u1ecdc m\u1ef9 thu\u1eadt!",
+  prompt_en: "What did you do first? Then? What did you make?",
+  prompt_vi: "\u0110\u1ea7u ti\u00ean b\u1ea1n l\u00e0m g\u00ec? Ti\u1ebfp theo? B\u1ea1n l\u00e0m ra g\u00ec?",
+  keywords: ["art", "picked", "brush", "dipped", "paint", "flower", "beautiful"],
+  topic_talk_prompt: "Tell me what you did in art class step by step!",
   sentence_frames: [
     {
-        "template": "Yesterday in art class I ___ a picture.",
+        "template": "Yesterday I had ___ class.",
         "answers": [
-            "painted"
+            "art"
         ]
     },
     {
-        "template": "I painted ___ and ___.",
-        "answers": [
-            "flowers",
-            "leaves"
-        ]
-    },
-    {
-        "template": "I picked up my ___.",
+        "template": "First I picked up my ___.",
         "answers": [
             "brush"
         ]
     },
     {
-        "template": "I dipped it into ___ pigment.",
+        "template": "Then I dipped it in red ___.",
         "answers": [
-            "red"
+            "paint"
         ]
     },
     {
-        "template": "I painted ___ carefully.",
+        "template": "I painted a ___.",
         "answers": [
-            "petals"
+            "flower"
+        ]
+    },
+    {
+        "template": "It looked ___.",
+        "answers": [
+            "beautiful"
         ]
     }
 ],
@@ -49,48 +48,43 @@ export default {
       scaffolding_stage: "medium-low",
       words: [
     {
-        "word": "painted",
-        "vi": "vẽ",
-        "distractor": false
-    },
-    {
-        "word": "flowers",
-        "vi": "hoa",
-        "distractor": false
-    },
-    {
-        "word": "leaves",
-        "vi": "lá",
+        "word": "art",
+        "vi": "mỹ thuật",
         "distractor": false
     },
     {
         "word": "brush",
-        "vi": "bút vẽ",
+        "vi": "cọ vẽ",
         "distractor": false
     },
     {
-        "word": "red",
-        "vi": "đỏ",
+        "word": "paint",
+        "vi": "sơn/màu vẽ",
         "distractor": false
     },
     {
-        "word": "petals",
-        "vi": "cánh hoa",
+        "word": "flower",
+        "vi": "bông hoa",
         "distractor": false
     },
     {
-        "word": "sang",
-        "vi": "hát",
+        "word": "beautiful",
+        "vi": "đẹp",
+        "distractor": false
+    },
+    {
+        "word": "maths",
+        "vi": "toán — sai môn học",
         "distractor": true
     },
     {
-        "word": "blue",
-        "vi": "xanh",
+        "word": "spoon",
+        "vi": "thìa — không phải cọ",
         "distractor": true
     },
     {
-        "word": "stems",
-        "vi": "thân cây",
+        "word": "terrible",
+        "vi": "tệ",
         "distractor": true
     }
 ]

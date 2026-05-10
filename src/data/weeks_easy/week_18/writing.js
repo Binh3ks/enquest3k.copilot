@@ -1,12 +1,12 @@
 export default {
   title: "My Home News Report",
   min_words: 25,
-  model_sentence: "Hello! This is live news from my home. I am sitting at my desk and learning English. My mum is cooking in the kitchen right now.",
-  instruction_en: "Write a news report from your home!",
-  instruction_vi: "Vi\u1ebft m\u1ed9t b\u1ea3n tin t\u1eeb nh\u00e0 c\u1ee7a b\u1ea1n!",
+  model_sentence: "Hello! This is live news from my home. I am sitting at my desk. My mum is cooking in the kitchen. My dad is reading a book.",
+  instruction_en: "Write a live news report from your home!",
+  instruction_vi: "Vi\u1ebft m\u1ed9t b\u1ea3n tin tr\u1ef1c ti\u1ebfp t\u1eeb nh\u00e0 c\u1ee7a b\u1ea1n!",
   prompt_en: "What is happening at home right now? What is each person doing?",
   prompt_vi: "Chuy\u1ec7n g\u00ec \u0111ang x\u1ea3y ra \u1edf nh\u00e0 l\u00fac n\u00e0y? M\u1ed7i ng\u01b0\u1eddi \u0111ang l\u00e0m g\u00ec?",
-  keywords: ["news", "home", "sitting", "learning", "mum", "cooking", "kitchen"],
+  keywords: ["news", "sitting", "desk", "mum", "cooking", "dad", "reading"],
   topic_talk_prompt: "Report the news from your home right now!",
   sentence_frames: [
     {
@@ -22,16 +22,15 @@ export default {
         ]
     },
     {
-        "template": "I am ___ English.",
+        "template": "My mum is ___ in the kitchen.",
         "answers": [
-            "learning"
+            "cooking"
         ]
     },
     {
-        "template": "My mum is ___ in the ___.",
+        "template": "My dad is ___ a book.",
         "answers": [
-            "cooking",
-            "kitchen"
+            "reading"
         ]
     }
 ],
@@ -49,27 +48,22 @@ export default {
     },
     {
         "word": "sitting",
-        "vi": "ngồi",
-        "distractor": false
-    },
-    {
-        "word": "learning",
-        "vi": "học",
+        "vi": "đang ngồi",
         "distractor": false
     },
     {
         "word": "cooking",
-        "vi": "nấu ăn",
+        "vi": "đang nấu ăn",
         "distractor": false
     },
     {
-        "word": "kitchen",
-        "vi": "nhà bếp",
+        "word": "reading",
+        "vi": "đang đọc",
         "distractor": false
     },
     {
         "word": "old stories",
-        "vi": "tin cũ",
+        "vi": "tin cũ — sai",
         "distractor": true
     },
     {
@@ -78,8 +72,8 @@ export default {
         "distractor": true
     },
     {
-        "word": "bedroom",
-        "vi": "phòng ngủ",
+        "word": "sleeping",
+        "vi": "đang ngủ — không phải đọc sách",
         "distractor": true
     }
 ]
