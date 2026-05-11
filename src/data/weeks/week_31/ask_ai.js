@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a time you used all your senses outside. What did you see, hear, feel, and smell?",
+  topic_talk_prompt: "Tell me about a time you used all your senses outside. What did you see, hear, feel, and smell? What were things made of — wood, metal, stone, or cotton?",
   prompts: [
     {
       id: 1,
@@ -49,6 +49,16 @@ export default {
       task_vi: "Hỏi cô Nova về bất ngờ từ con chim gõ kiến cuối chuyến đi.",
       question_starters: ["How startled were you...?", "What did everyone do...?"],
       answer: ["How startled were you by the woodpecker?", "What did everyone do when they felt startled?", "Did you see the woodpecker fly away?"],
+      audio_url: null
+    },
+    {
+      id: 6,
+      nova_says: "I touched a wooden bench, a metal gate, and a stone path during my forest walk.",
+      nova_says_vi: "Tôi sờ một chiếc ghế gỗ, một cổng kim loại và một con đường đá trong chuyến đi rừng.",
+      task_en: "Ask Nova WHAT the metal gate felt like.",
+      task_vi: "Hỏi cô Nova cổng kim loại cảm giác như thế nào.",
+      question_starters: ["What did the metal gate feel like...?", "Was the stone path smooth...?"],
+      answer: ["What did the metal gate feel like?", "Was the stone path smooth or rough?", "Which material did you like best?"],
       audio_url: null
     }
   ]

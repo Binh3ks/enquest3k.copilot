@@ -15,6 +15,12 @@ export default {
     { word: "cheerful", meaning: "vui vẻ", audio_url: "/audio/week30/wm_cheerful.mp3" },
     { word: "delicious", meaning: "ngon", audio_url: "/audio/week30/wm_delicious.mp3" },
     { word: "outdoor", meaning: "ngoài trời", audio_url: "/audio/week30/wm_outdoor.mp3" },
-    { word: "refreshing", meaning: "mát mẻ", audio_url: "/audio/week30/wm_refreshing.mp3" }
+    { word: "refreshing", meaning: "mát mẻ", audio_url: "/audio/week30/wm_refreshing.mp3" },
+    { word: "engineer", meaning: "kỹ sư", audio_url: "/audio/week30/wm_engineer.mp3" },
+    { word: "scientist", meaning: "nhà khoa học", audio_url: "/audio/week30/wm_scientist.mp3" },
+    { word: "artist", meaning: "họa sĩ / nghệ sĩ", audio_url: "/audio/week30/wm_artist.mp3" },
+    { word: "dentist", meaning: "nha sĩ", audio_url: "/audio/week30/wm_dentist.mp3" },
+    { word: "firefighter", meaning: "lính cứu hỏa", audio_url: "/audio/week30/wm_firefighter.mp3" },
+    { word: "chef", meaning: "đầu bếp", audio_url: "/audio/week30/wm_chef.mp3" }
   ]
 };

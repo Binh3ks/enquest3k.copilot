@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a meal you shared with someone. What did you eat? How did you feel?",
+  topic_talk_prompt: "Tell me about a meal you shared with someone. What did you eat? How did you feel? Do you know who prepared it — a chef or a cook?",
   prompts: [
     {
       id: 1,
@@ -49,6 +49,16 @@ export default {
       task_vi: "Hỏi cô Nova cuối ngày như thế nào.",
       question_starters: ["How did everyone feel...?","What time did you...?"],
       answer: ["How did everyone feel at the end?","What time did you go home?","Would you go on a picnic again?"],
+      audio_url: null
+    },
+    {
+      id: 6,
+      nova_says: "The chef at the park cooked fresh food for everyone. She was a scientist of flavours!",
+      nova_says_vi: "Đầu bếp tại công viên nấu ăn tươi ngon cho mọi người. Cô ấy là một nhà khoa học về hương vị!",
+      task_en: "Ask Nova WHAT the chef cooked.",
+      task_vi: "Hỏi cô Nova đầu bếp nấu gì.",
+      question_starters: ["What did the chef cook...?","Why was she like a scientist...?"],
+      answer: ["What did the chef cook?","Why was the chef like a scientist?","Was the food delicious?"],
       audio_url: null
     }
   ]

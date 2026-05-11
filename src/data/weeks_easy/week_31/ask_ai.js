@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a time you went for a walk outside. What did you see, hear, and feel?",
+  topic_talk_prompt: "Tell me about a time you went for a walk outside. What did you see, hear, and feel? What were things made of — wood, stone, or cotton?",
   prompts: [
     {
       id: 1,

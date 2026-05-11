@@ -14,6 +14,12 @@ export default {
     { id: 10, word: "delicious", meaning: "ngon", audio_url: "/audio/week30_easy/word_match_10.mp3" },
     { id: 11, word: "thirsty", meaning: "khát nước", audio_url: "/audio/week30_easy/word_match_11.mp3" },
     { id: 12, word: "hungry", meaning: "đói bụng", audio_url: "/audio/week30_easy/word_match_12.mp3" },
-    { id: 13, word: "cheerful", meaning: "vui vẻ", audio_url: "/audio/week30_easy/word_match_13.mp3" }
+    { id: 13, word: "cheerful", meaning: "vui vẻ", audio_url: "/audio/week30_easy/word_match_13.mp3" },
+    { id: 14, word: "engineer", meaning: "kỹ sư", audio_url: "/audio/week30_easy/word_match_14.mp3" },
+    { id: 15, word: "scientist", meaning: "nhà khoa học", audio_url: "/audio/week30_easy/word_match_15.mp3" },
+    { id: 16, word: "artist", meaning: "họa sĩ / nghệ sĩ", audio_url: "/audio/week30_easy/word_match_16.mp3" },
+    { id: 17, word: "dentist", meaning: "nha sĩ", audio_url: "/audio/week30_easy/word_match_17.mp3" },
+    { id: 18, word: "firefighter", meaning: "lính cứu hỏa", audio_url: "/audio/week30_easy/word_match_18.mp3" },
+    { id: 19, word: "chef", meaning: "đầu bếp", audio_url: "/audio/week30_easy/word_match_19.mp3" }
   ]
 };

@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a story or book you've read. What happened? Who were the characters?",
+  topic_talk_prompt: "Tell me about a story or book you've read. What happened? Who were the characters? How did they travel — by car, bus, train, or boat?",
   prompts: [
     {
       id: 1,

@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a trip or journey you have taken. Where did you go? What did you see?",
+  topic_talk_prompt: "Tell me about a trip or journey you have taken. Where did you go? What did you see? Who helped you — a pilot, a doctor, a teacher?",
   prompts: [
     {
       id: 1,

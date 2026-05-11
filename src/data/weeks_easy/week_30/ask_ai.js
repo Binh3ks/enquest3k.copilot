@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a meal you shared with someone. What did you eat? How did you feel?",
+  topic_talk_prompt: "Tell me about a meal you shared with someone. What did you eat? How did you feel? Do you know a chef or a firefighter?",
   prompts: [
     {
       id: 1,

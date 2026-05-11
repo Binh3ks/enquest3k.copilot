@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a trip or journey you have taken. Where did you go? What did you see?",
+  topic_talk_prompt: "Tell me about a trip or journey you have taken. Where did you go? What did you see? Who helped you — a pilot, a driver, or a nurse?",
   prompts: [
     {
       id: 1,
@@ -49,6 +49,16 @@ export default {
       task_vi: "Hỏi cô Nova về cảnh bình minh.",
       question_starters: ["What time did...?","How did the sunrise...?"],
       answer: ["What time did the sun rise?","How did the sunrise look?","Why was the sunrise special?"],
+      audio_url: null
+    },
+    {
+      id: 6,
+      nova_says: "A pilot flew us to the island. He was very friendly and explained how to fly a plane.",
+      nova_says_vi: "Một phi công đã bay đưa chúng tôi đến hòn đảo. Ông ấy rất thân thiện và giải thích cách lái máy bay.",
+      task_en: "Ask Nova WHO flew the plane.",
+      task_vi: "Hỏi cô Nova ai đã lái máy bay.",
+      question_starters: ["Who flew...?","What did the pilot...?"],
+      answer: ["Who flew the plane?","What did the pilot say?","Was the pilot friendly?"],
       audio_url: null
     }
   ]

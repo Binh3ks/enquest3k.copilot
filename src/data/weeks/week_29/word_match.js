@@ -43,6 +43,19 @@ export default {
         { left: "The family", right: "went to the airport by taxi" },
         { left: "The plane", right: "flew up into the sky" }
       ]
+    },
+    {
+      id: "cambridge_occupations_1",
+      label_en: "Job → Meaning",
+      label_vi: "Nghề nghiệp → Nghĩa",
+      pairs: [
+        { left: "pilot", right: "phi công" },
+        { left: "doctor", right: "bác sĩ" },
+        { left: "farmer", right: "nông dân" },
+        { left: "teacher", right: "giáo viên" },
+        { left: "driver", right: "tài xế" },
+        { left: "nurse", right: "y tá" }
+      ]
     }
   ]
 };

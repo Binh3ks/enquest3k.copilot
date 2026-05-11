@@ -44,6 +44,21 @@ export default {
         { left: "persevere", right: "kiên trì" },
         { left: "fable", right: "truyện ngụ ngôn" }
       ]
+    },
+    {
+      id: "cambridge_transport",
+      label_en: "Transport → Meaning",
+      label_vi: "Phương tiện → Nghĩa",
+      pairs: [
+        { left: "car", right: "xe ô tô" },
+        { left: "bus", right: "xe buýt" },
+        { left: "train", right: "tàu hỏa" },
+        { left: "boat", right: "thuyền" },
+        { left: "bicycle", right: "xe đạp" },
+        { left: "taxi", right: "xe taxi" },
+        { left: "motorbike", right: "xe máy" },
+        { left: "ship", right: "tàu biển" }
+      ]
     }
   ]
 };

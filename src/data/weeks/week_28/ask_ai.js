@@ -1,5 +1,5 @@
 export default {
-  topic_talk_prompt: "Tell me about a story or book you've read. What happened? Who were the characters?",
+  topic_talk_prompt: "Tell me about a story or book you've read. What happened? Who were the characters? How did they travel — by car, bus, train, or another transport?",
   prompts: [
     {
       id: 1,
@@ -59,6 +59,18 @@ export default {
       question_frame: "___ does the story teach us?",
       answer: ["What does the story teach us?"],
       hint_word: "What",
+      audio_url: null
+    },
+    {
+      id: 6,
+      nova_says: "In the story, after the race the tortoise went home by bicycle and the hare took a taxi.",
+      nova_says_vi: "Trong câu chuyện, sau cuộc đua con rùa đi xe đạp về nhà và con thỏ bắt taxi.",
+      task_en: "Ask Nova HOW the tortoise went home.",
+      task_vi: "Hỏi cô Nova con rùa đi về nhà bằng cách nào.",
+      question_word_bank: ["How","What","Where","Who"],
+      question_frame: "___ did the tortoise go home?",
+      answer: ["How did the tortoise go home?"],
+      hint_word: "How",
       audio_url: null
     }
   ]

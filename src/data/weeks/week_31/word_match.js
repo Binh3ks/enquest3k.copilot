@@ -15,6 +15,12 @@ export default {
     { word: "distant", meaning: "xa xa", audio_url: "/audio/week31/wm_distant.mp3" },
     { word: "breeze", meaning: "làn gió nhẹ", audio_url: "/audio/week31/wm_breeze.mp3" },
     { word: "startled", meaning: "giật mình", audio_url: "/audio/week31/wm_startled.mp3" },
-    { word: "whisper", meaning: "thì thầm", audio_url: "/audio/week31/wm_whisper.mp3" }
+    { word: "whisper", meaning: "thì thầm", audio_url: "/audio/week31/wm_whisper.mp3" },
+    { word: "wood", meaning: "gỗ", audio_url: "/audio/week31/wm_wood.mp3" },
+    { word: "metal", meaning: "kim loại", audio_url: "/audio/week31/wm_metal.mp3" },
+    { word: "plastic", meaning: "nhựa", audio_url: "/audio/week31/wm_plastic.mp3" },
+    { word: "glass", meaning: "thủy tinh", audio_url: "/audio/week31/wm_glass.mp3" },
+    { word: "stone", meaning: "đá", audio_url: "/audio/week31/wm_stone.mp3" },
+    { word: "cotton", meaning: "vải cotton", audio_url: "/audio/week31/wm_cotton.mp3" }
   ]
 };
