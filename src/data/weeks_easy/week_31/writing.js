@@ -1,13 +1,13 @@
 export default {
-  title: "My Sensory Walk",
+  title: "My Day at the Market",
   min_words: 32,
-  model_sentence: "Last Saturday I went for a walk in the park. I saw orange leaves on the ground. I heard birds singing. I smelled fresh flowers. I felt the cool breeze.",
-  instruction_en: "Write a sensory walk using saw, heard, smelled, and felt!",
+  model_sentence: "Last Saturday I went to the market. I saw glass jars with golden honey. I touched a wooden shelf and it felt rough. I smelt warm spices. I felt the soft cotton scarves. It was a great day!",
+  instruction_en: "Write about a visit to the market! Use: saw, felt, smelt, heard. Try to use at least TWO materials: wood, metal, glass, stone, cotton, or plastic!",
   instruction_vi: "Vi\u1ebft m\u1ed9t chuy\u1ebfn \u0111i d\u00f9ng saw, heard, smelled v\u00e0 felt!",
   prompt_en: "What did you see, hear, smell, and feel on your walk?",
   prompt_vi: "B\u1ea1n th\u1ea5y, nghe, ng\u1eedi v\u00e0 c\u1ea3m nh\u1eadn g\u00ec trong chuy\u1ebfn \u0111i b\u1ed9?",
-  keywords: ["walk", "leaves", "birds", "singing", "flowers", "breeze"],
-  topic_talk_prompt: "Describe a walk using all five of your senses!",
+  keywords: ["glass", "wood", "stone", "cotton", "metal", "plastic", "saw", "heard", "felt", "smelt"],
+  topic_talk_prompt: "Describe a visit to a market using your five senses — mention the materials!",
   sentence_frames: [
     {
         "template": "I saw orange ___ on the ground.",

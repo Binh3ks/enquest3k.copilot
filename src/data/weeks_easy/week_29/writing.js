@@ -1,93 +1,12 @@
 export default {
-  title: "My Journey Story",
-  min_words: 32,
-  model_sentence: "Last weekend my family went on a journey. We woke up early. On the road we saw green valleys. We set up camp when we arrived. It was the best trip.",
-  instruction_en: "Write your journey story with rich details!",
-  instruction_vi: "Vi\u1ebft c\u00e2u chuy\u1ec7n h\u00e0nh tr\u00ecnh c\u1ee7a b\u1ea1n v\u1edbi chi ti\u1ebft phong ph\u00fa!",
-  prompt_en: "Where did you go? What did you see? What happened when you arrived?",
-  prompt_vi: "B\u1ea1n \u0111i \u0111\u00e2u? B\u1ea1n th\u1ea5y g\u00ec? \u0110i\u1ec1u g\u00ec x\u1ea3y ra khi b\u1ea1n \u0111\u1ebfn n\u01a1i?",
-  keywords: ["journey", "woke", "early", "valleys", "camp", "arrived", "best", "trip"],
-  topic_talk_prompt: "Tell me about an exciting journey you went on!",
-  sentence_frames: [
-    {
-        "template": "Last weekend my family went on a ___.",
-        "answers": [
-            "journey"
-        ]
-    },
-    {
-        "template": "We ___ up early.",
-        "answers": [
-            "woke"
-        ]
-    },
-    {
-        "template": "On the road we saw green ___.",
-        "answers": [
-            "valleys"
-        ]
-    },
-    {
-        "template": "We set up ___ when we arrived.",
-        "answers": [
-            "camp"
-        ]
-    },
-    {
-        "template": "It was the best ___.",
-        "answers": [
-            "trip"
-        ]
-    }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "low",
-      words: [
-    {
-        "word": "journey",
-        "vi": "hành trình",
-        "distractor": false
-    },
-    {
-        "word": "woke",
-        "vi": "thức dậy",
-        "distractor": false
-    },
-    {
-        "word": "valleys",
-        "vi": "thung lũng",
-        "distractor": false
-    },
-    {
-        "word": "camp",
-        "vi": "trại",
-        "distractor": false
-    },
-    {
-        "word": "trip",
-        "vi": "chuyến đi",
-        "distractor": false
-    },
-    {
-        "word": "argument",
-        "vi": "cuộc tranh cãi",
-        "distractor": true
-    },
-    {
-        "word": "slept in",
-        "vi": "ngủ muộn",
-        "distractor": true
-    },
-    {
-        "word": "buildings",
-        "vi": "những tòa nhà",
-        "distractor": true
-    }
-]
-    }
-  }
+  title: "Writing: My Magic Trip",
+  image_url: null,
+  instruction_en: "Write about a magic trip! Use the past tense. Where did you GO? Who did you MEET? Use: went, flew, came, ran. Try to include a pilot, doctor, farmer, teacher, driver, or nurse!",
+  instruction_vi: "Vi\u1ebft v\u1ec1 m\u1ed9t chuy\u1ebfn \u0111i k\u1ef3 di\u1ec7u! D\u00f9ng th\u00ec qu\u00e1 kh\u1ee9. B\u1ea1n \u0111\u00e3 \u0110I \u0111\u00e2u? B\u1ea1n g\u1eb6P ai? D\u00f9ng: went, flew, came, ran.",
+  prompt_en: "Imagine you found a magic carpet. Where did it go? Who did you meet on the way?",
+  prompt_vi: "H\u00e3y t\u01b0\u1edfng t\u01b0\u1ee3ng b\u1ea1n t\u00ecm th\u1ea5y m\u1ed9t t\u1ea5m th\u1ea3m k\u1ef3 di\u1ec7u. N\u00f3 \u0111\u00e3 \u0111i \u0111\u00e2u? B\u1ea1n g\u1eb6p ai tr\u00ean \u0111\u01b0\u1eddng \u0111i?",
+  model_sentence: "Last night I found a magic carpet. It flew me to a farm. A farmer came out and gave me a banana. Then the carpet went to the sea. A pilot flew past and waved. Then it came home again. It was the best trip!",
+  keywords: ["went", "flew", "came", "ran", "pilot", "doctor", "farmer", "teacher", "driver", "nurse"],
+  topic_talk_prompt: "What job would you like — pilot, doctor, farmer, teacher, driver, or nurse? Why?",
+  audio_model: "/audio/week29/writing_model_easy.mp3"
 };
