@@ -29,9 +29,9 @@ export function validateMakeSentence({ input, targetSentence }) {
   }
 
   const smart = analyzeAnswer(clean, targetSentence, 'critical');
-  if (smart.status === 'correct' || smart.status === 'warning') {
+  if (smart.isCorrect) {
     return { correct: true, message: smart.message || 'Close enough!' };
   }
 
-  return { correct: false, message: 'Not quite. Try arranging the words differently.' };
+  return { correct: false, message: smart.message || 'Not quite. Try arranging the words differently.' };
 }
