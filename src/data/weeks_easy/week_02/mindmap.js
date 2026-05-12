@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "My father is ___.", audio: "/audio/week2_easy/mindmap_stem_m7yl79.mp3" },
     { text: "We are ___.", audio: "/audio/week2_easy/mindmap_stem_7vhtjh.mp3" },
     { text: "I love ___.", audio: "/audio/week2_easy/mindmap_stem_ovwuxm.mp3" },
-    { text: "At home, we ___.", audio: "/audio/week2_easy/mindmap_stem_27vb6n.mp3" }
+    { text: "My family makes me ___.", audio: "/audio/week2_easy/mindmap_stem_f8gdw4.mp3" }
   ],
   branchLabels: {
     "This is my ___.": [
@@ -48,13 +48,13 @@ const mindMapContent = {
       { text: "my team", audio: "/audio/week2_easy/mindmap_branch_nztlch.mp3" },
       { text: "everyone", audio: "/audio/week2_easy/mindmap_branch_4nvqzv.mp3" }
     ],
-    "At home, we ___.": [
-      { text: "play", audio: "/audio/week2_easy/mindmap_branch_21t10.mp3" },
-      { text: "eat", audio: "/audio/week2_easy/mindmap_branch_25aw.mp3" },
-      { text: "talk", audio: "/audio/week2_easy/mindmap_branch_2452k.mp3" },
-      { text: "help", audio: "/audio/week2_easy/mindmap_branch_1wk75.mp3" },
+    "My family makes me ___.": [
+      { text: "happy", audio: "/audio/week2_easy/mindmap_branch_1myx9c.mp3" },
+      { text: "feel safe", audio: "/audio/week2_easy/mindmap_branch_ocyou1.mp3" },
+      { text: "smile", audio: "/audio/week2_easy/mindmap_branch_1t86bs.mp3" },
       { text: "laugh", audio: "/audio/week2_easy/mindmap_branch_1p6741.mp3" },
-      { text: "are happy", audio: "/audio/week2_easy/mindmap_branch_wb82jw.mp3" }
+      { text: "feel loved", audio: "/audio/week2_easy/mindmap_branch_q2rxh4.mp3" },
+      { text: "very proud", audio: "/audio/week2_easy/mindmap_branch_sll5ri.mp3" }
     ]
   }
 };

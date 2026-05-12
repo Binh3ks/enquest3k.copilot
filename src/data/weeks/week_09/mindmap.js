@@ -2,10 +2,10 @@ const mindMapContent = {
   centerStems: [
     { text: "In the city I see ___.", audio: "/audio/week9/mindmap_stem_5qkete.mp3" },
     { text: "In the city I hear ___.", audio: "/audio/week9/mindmap_stem_bz3rb5.mp3" },
-    { text: "It is a ___ building.", audio: "/audio/week9/mindmap_stem_u4w1zt.mp3" },
-    { text: "The street is ___.", audio: "/audio/week9/mindmap_stem_fsn0bb.mp3" },
+    { text: "My favourite place in the city is ___.", audio: "/audio/week9/mindmap_stem_5dx1ee.mp3" },
+    { text: "I live near ___.", audio: "/audio/week9/mindmap_stem_4agae.mp3" },
     { text: "I can ride a ___.", audio: "/audio/week9/mindmap_stem_pakhzl.mp3" },
-    { text: "The city is ___.", audio: "/audio/week9/mindmap_stem_k1lpj5.mp3" }
+    { text: "I think my city is ___.", audio: "/audio/week9/mindmap_stem_rencu9.mp3" }
   ],
   branchLabels: {
     "In the city I see ___.": [
@@ -24,21 +24,21 @@ const mindMapContent = {
       { text: "busy sounds", audio: "/audio/week9/mindmap_branch_hkzx6d.mp3" },
       { text: "city noise", audio: "/audio/week9/mindmap_branch_ssykez.mp3" }
     ],
-    "It is a ___ building.": [
-      { text: "tall", audio: "/audio/week9/mindmap_branch_2452l.mp3" },
-      { text: "modern", audio: "/audio/week9/mindmap_branch_hoc2qp.mp3" },
-      { text: "big", audio: "/audio/week9/mindmap_branch_239c.mp3" },
-      { text: "glass", audio: "/audio/week9/mindmap_branch_1mlugs.mp3" },
-      { text: "high", audio: "/audio/week9/mindmap_branch_1wn1e.mp3" },
-      { text: "beautiful", audio: "/audio/week9/mindmap_branch_szsqy7.mp3" }
+    "My favourite place in the city is ___.": [
+      { text: "the park", audio: "/audio/week9/mindmap_branch_h63k1l.mp3" },
+      { text: "the library", audio: "/audio/week9/mindmap_branch_g8ikgc.mp3" },
+      { text: "the school", audio: "/audio/week9/mindmap_branch_m2vk77.mp3" },
+      { text: "the shopping centre", audio: "/audio/week9/mindmap_branch_7xgb8k.mp3" },
+      { text: "the sports centre", audio: "/audio/week9/mindmap_branch_99kxjn.mp3" },
+      { text: "the museum", audio: "/audio/week9/mindmap_branch_jioy3l.mp3" }
     ],
-    "The street is ___.": [
-      { text: "busy", audio: "/audio/week9/mindmap_branch_1t2bd.mp3" },
-      { text: "noisy", audio: "/audio/week9/mindmap_branch_1qihim.mp3" },
-      { text: "crowded", audio: "/audio/week9/mindmap_branch_h695ho.mp3" },
-      { text: "wide", audio: "/audio/week9/mindmap_branch_267rn.mp3" },
-      { text: "long", audio: "/audio/week9/mindmap_branch_1zblo.mp3" },
-      { text: "clean", audio: "/audio/week9/mindmap_branch_1keqmh.mp3" }
+    "I live near ___.": [
+      { text: "a busy road", audio: "/audio/week9/mindmap_branch_gp57vc.mp3" },
+      { text: "a market", audio: "/audio/week9/mindmap_branch_jsplwl.mp3" },
+      { text: "a park", audio: "/audio/week9/mindmap_branch_ok3ph3.mp3" },
+      { text: "a school", audio: "/audio/week9/mindmap_branch_gxil0t.mp3" },
+      { text: "a river", audio: "/audio/week9/mindmap_branch_k2ag0d.mp3" },
+      { text: "a shopping centre", audio: "/audio/week9/mindmap_branch_e0w17w.mp3" }
     ],
     "I can ride a ___.": [
       { text: "bus", audio: "/audio/week9/mindmap_branch_23k0.mp3" },
@@ -48,13 +48,13 @@ const mindMapContent = {
       { text: "train", audio: "/audio/week9/mindmap_branch_1tuzuw.mp3" },
       { text: "subway", audio: "/audio/week9/mindmap_branch_eqshu9.mp3" }
     ],
-    "The city is ___.": [
-      { text: "busy", audio: "/audio/week9/mindmap_branch_1t2bd.mp3" },
-      { text: "noisy", audio: "/audio/week9/mindmap_branch_1qihim.mp3" },
-      { text: "modern", audio: "/audio/week9/mindmap_branch_hoc2qp.mp3" },
+    "I think my city is ___.": [
+      { text: "beautiful", audio: "/audio/week9/mindmap_branch_szsqy7.mp3" },
       { text: "exciting", audio: "/audio/week9/mindmap_branch_wxjlxj.mp3" },
-      { text: "crowded", audio: "/audio/week9/mindmap_branch_h695ho.mp3" },
-      { text: "big", audio: "/audio/week9/mindmap_branch_239c.mp3" }
+      { text: "busy", audio: "/audio/week9/mindmap_branch_1t2bd.mp3" },
+      { text: "interesting", audio: "/audio/week9/mindmap_branch_wmwrco.mp3" },
+      { text: "wonderful", audio: "/audio/week9/mindmap_branch_r4qn6q.mp3" },
+      { text: "the best place I know", audio: "/audio/week9/mindmap_branch_6fffns.mp3" }
     ]
   }
 };

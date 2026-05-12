@@ -5,56 +5,56 @@ const mindMapContent = {
     { text: "I eat ___.", audio: "/audio/week13_easy/mindmap_stem_4iy4u.mp3" },
     { text: "I ___ with friends.", audio: "/audio/week13_easy/mindmap_stem_qnxnq3.mp3" },
     { text: "I go to ___.", audio: "/audio/week13_easy/mindmap_stem_5wm51v.mp3" },
-    { text: "I like ___.", audio: "/audio/week13_easy/mindmap_stem_44gjvj.mp3" }
+    { text: "My favourite part of the day is ___.", audio: "/audio/week13_easy/mindmap_stem_5nkle3.mp3" }
   ],
   branchLabels: {
     "I ___ up.": [
       { text: "wake", audio: "/audio/week13_easy/mindmap_branch_26204.mp3" },
       { text: "get", audio: "/audio/week13_easy/mindmap_branch_26vq.mp3" },
       { text: "stand", audio: "/audio/week13_easy/mindmap_branch_1tchcm.mp3" },
-      { text: "jump", audio: "/audio/week13_easy/mindmap_branch_1y626.mp3" },
       { text: "sit", audio: "/audio/week13_easy/mindmap_branch_2fvi.mp3" },
-      { text: "look", audio: "/audio/week13_easy/mindmap_branch_1zbmn.mp3" }
+      { text: "dress", audio: "/audio/week13_easy/mindmap_branch_1l2dkn.mp3" },
+      { text: "clean", audio: "/audio/week13_easy/mindmap_branch_1keqmh.mp3" }
     ],
     "I brush my ___.": [
       { text: "teeth", audio: "/audio/week13_easy/mindmap_branch_1tms94.mp3" },
       { text: "hair", audio: "/audio/week13_easy/mindmap_branch_1wh5u.mp3" },
-      { text: "teeth every day", audio: "/audio/week13_easy/mindmap_branch_xlgzgf.mp3" },
-      { text: "teeth at night", audio: "/audio/week13_easy/mindmap_branch_kr3jpf.mp3" },
-      { text: "teeth with paste", audio: "/audio/week13_easy/mindmap_branch_hh5xv3.mp3" },
-      { text: "teeth in the morning", audio: "/audio/week13_easy/mindmap_branch_pl9zny.mp3" }
+      { text: "clothes", audio: "/audio/week13_easy/mindmap_branch_ebxl54.mp3" },
+      { text: "bag", audio: "/audio/week13_easy/mindmap_branch_232g.mp3" },
+      { text: "coat", audio: "/audio/week13_easy/mindmap_branch_1tkf3.mp3" },
+      { text: "shoes", audio: "/audio/week13_easy/mindmap_branch_1t53oo.mp3" }
     ],
     "I eat ___.": [
       { text: "breakfast", audio: "/audio/week13_easy/mindmap_branch_vdoe1x.mp3" },
       { text: "lunch", audio: "/audio/week13_easy/mindmap_branch_1pitka.mp3" },
       { text: "dinner", audio: "/audio/week13_easy/mindmap_branch_m0uvm6.mp3" },
+      { text: "a snack", audio: "/audio/week13_easy/mindmap_branch_k2wzwv.mp3" },
       { text: "rice", audio: "/audio/week13_easy/mindmap_branch_230t5.mp3" },
-      { text: "bread", audio: "/audio/week13_easy/mindmap_branch_1jyry0.mp3" },
-      { text: "eggs", audio: "/audio/week13_easy/mindmap_branch_1uolq.mp3" }
+      { text: "toast", audio: "/audio/week13_easy/mindmap_branch_1tt353.mp3" }
     ],
     "I ___ with friends.": [
       { text: "play", audio: "/audio/week13_easy/mindmap_branch_21t10.mp3" },
-      { text: "eat", audio: "/audio/week13_easy/mindmap_branch_25aw.mp3" },
-      { text: "go", audio: "/audio/week13_easy/mindmap_branch_2js.mp3" },
       { text: "talk", audio: "/audio/week13_easy/mindmap_branch_2452k.mp3" },
-      { text: "walk", audio: "/audio/week13_easy/mindmap_branch_26215.mp3" },
-      { text: "run", audio: "/audio/week13_easy/mindmap_branch_2fez.mp3" }
+      { text: "run", audio: "/audio/week13_easy/mindmap_branch_2fez.mp3" },
+      { text: "eat", audio: "/audio/week13_easy/mindmap_branch_25aw.mp3" },
+      { text: "laugh", audio: "/audio/week13_easy/mindmap_branch_1p6741.mp3" },
+      { text: "study", audio: "/audio/week13_easy/mindmap_branch_1tcvyh.mp3" }
     ],
     "I go to ___.": [
       { text: "school", audio: "/audio/week13_easy/mindmap_branch_f0l47g.mp3" },
-      { text: "bed", audio: "/audio/week13_easy/mindmap_branch_235t.mp3" },
-      { text: "home", audio: "/audio/week13_easy/mindmap_branch_1wrmn.mp3" },
       { text: "the park", audio: "/audio/week13_easy/mindmap_branch_h63k1l.mp3" },
-      { text: "class", audio: "/audio/week13_easy/mindmap_branch_1keo3c.mp3" },
-      { text: "sleep", audio: "/audio/week13_easy/mindmap_branch_1t7g7r.mp3" }
+      { text: "bed", audio: "/audio/week13_easy/mindmap_branch_235t.mp3" },
+      { text: "my room", audio: "/audio/week13_easy/mindmap_branch_nzsj4f.mp3" },
+      { text: "the library", audio: "/audio/week13_easy/mindmap_branch_g8ikgc.mp3" },
+      { text: "the store", audio: "/audio/week13_easy/mindmap_branch_z39c36.mp3" }
     ],
-    "I like ___.": [
-      { text: "playing", audio: "/audio/week13_easy/mindmap_branch_85usb6.mp3" },
-      { text: "eating", audio: "/audio/week13_easy/mindmap_branch_lo3vjq.mp3" },
-      { text: "TV", audio: "/audio/week13_easy/mindmap_branch_22q.mp3" },
-      { text: "school", audio: "/audio/week13_easy/mindmap_branch_f0l47g.mp3" },
-      { text: "sleeping", audio: "/audio/week13_easy/mindmap_branch_mx3vbp.mp3" },
-      { text: "morning", audio: "/audio/week13_easy/mindmap_branch_kicres.mp3" }
+    "My favourite part of the day is ___.": [
+      { text: "breakfast", audio: "/audio/week13_easy/mindmap_branch_vdoe1x.mp3" },
+      { text: "playtime", audio: "/audio/week13_easy/mindmap_branch_v34rnl.mp3" },
+      { text: "lunch", audio: "/audio/week13_easy/mindmap_branch_1pitka.mp3" },
+      { text: "after school", audio: "/audio/week13_easy/mindmap_branch_6a6dyw.mp3" },
+      { text: "bedtime", audio: "/audio/week13_easy/mindmap_branch_3ttrg2.mp3" },
+      { text: "dinner with my family", audio: "/audio/week13_easy/mindmap_branch_9xhi3w.mp3" }
     ]
   }
 };

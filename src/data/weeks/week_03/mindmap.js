@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "My hair is ___.", audio: "/audio/week3/mindmap_stem_cxp8dh.mp3" },
     { text: "My eyes are ___.", audio: "/audio/week3/mindmap_stem_6z0vp7.mp3" },
     { text: "I look ___.", audio: "/audio/week3/mindmap_stem_h9sztl.mp3" },
-    { text: "I wear ___.", audio: "/audio/week3/mindmap_stem_klo03r.mp3" }
+    { text: "My favourite thing about me is ___.", audio: "/audio/week3/mindmap_stem_salxhp.mp3" }
   ],
   branchLabels: {
     "I am ___.": [
@@ -45,16 +45,16 @@ const mindMapContent = {
       { text: "like my mother", audio: "/audio/week3/mindmap_branch_ebsf3i.mp3" },
       { text: "like my father", audio: "/audio/week3/mindmap_branch_asry13.mp3" },
       { text: "beautiful when I smile", audio: "/audio/week3/mindmap_branch_7v64p2.mp3" },
-      { text: "in the mirror", audio: "/audio/week3/mindmap_branch_17fbqh.mp3" },
-      { text: "very nice", audio: "/audio/week3/mindmap_branch_ljn2m1.mp3" }
+      { text: "very nice", audio: "/audio/week3/mindmap_branch_ljn2m1.mp3" },
+      { text: "in the mirror", audio: "/audio/week3/mindmap_branch_17fbqh.mp3" }
     ],
-    "I wear ___.": [
-      { text: "glasses to read", audio: "/audio/week3/mindmap_branch_b7iztn.mp3" },
-      { text: "glasses every day", audio: "/audio/week3/mindmap_branch_gtdkkf.mp3" },
-      { text: "no glasses", audio: "/audio/week3/mindmap_branch_itrpaj.mp3" },
-      { text: "a big smile", audio: "/audio/week3/mindmap_branch_bbymfr.mp3" },
-      { text: "nice clothes", audio: "/audio/week3/mindmap_branch_xhb0qj.mp3" },
-      { text: "my happy face", audio: "/audio/week3/mindmap_branch_qf6vsf.mp3" }
+    "My favourite thing about me is ___.": [
+      { text: "my smile", audio: "/audio/week3/mindmap_branch_xiyb9w.mp3" },
+      { text: "my kind heart", audio: "/audio/week3/mindmap_branch_i4dbji.mp3" },
+      { text: "my bright eyes", audio: "/audio/week3/mindmap_branch_xlhxv0.mp3" },
+      { text: "my long hair", audio: "/audio/week3/mindmap_branch_eg0uc2.mp3" },
+      { text: "my strong body", audio: "/audio/week3/mindmap_branch_4mkrmx.mp3" },
+      { text: "my happy personality", audio: "/audio/week3/mindmap_branch_qbdkfu.mp3" }
     ]
   }
 };

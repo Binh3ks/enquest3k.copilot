@@ -3,8 +3,8 @@ const mindMapContent = {
     { text: "At the park, I am ___.", audio: "/audio/week15/mindmap_stem_qyjuoi.mp3" },
     { text: "My family is ___.", audio: "/audio/week15/mindmap_stem_tot5gd.mp3" },
     { text: "I see children ___.", audio: "/audio/week15/mindmap_stem_t5jizw.mp3" },
-    { text: "People are ___ near the fountain.", audio: "/audio/week15/mindmap_stem_5xpd69.mp3" },
-    { text: "The boy is ___ with his dog.", audio: "/audio/week15/mindmap_stem_y5drye.mp3" },
+    { text: "I enjoy ___.", audio: "/audio/week15/mindmap_stem_odzohx.mp3" },
+    { text: "My favourite outdoor activity is ___.", audio: "/audio/week15/mindmap_stem_dk7r5p.mp3" },
     { text: "I am ___ on the grass.", audio: "/audio/week15/mindmap_stem_q9sbzq.mp3" }
   ],
   branchLabels: {
@@ -18,42 +18,42 @@ const mindMapContent = {
     ],
     "My family is ___.": [
       { text: "having a picnic", audio: "/audio/week15/mindmap_branch_jpcoso.mp3" },
-      { text: "eating sandwiches", audio: "/audio/week15/mindmap_branch_8ovgch.mp3" },
-      { text: "sitting on the grass", audio: "/audio/week15/mindmap_branch_di13q2.mp3" },
-      { text: "enjoying the park", audio: "/audio/week15/mindmap_branch_ctwx8e.mp3" },
       { text: "walking together", audio: "/audio/week15/mindmap_branch_vxohdr.mp3" },
-      { text: "relaxing in the shade", audio: "/audio/week15/mindmap_branch_2k566p.mp3" }
+      { text: "playing a game", audio: "/audio/week15/mindmap_branch_lm6np9.mp3" },
+      { text: "very happy", audio: "/audio/week15/mindmap_branch_sqacne.mp3" },
+      { text: "resting near the fountain", audio: "/audio/week15/mindmap_branch_l0bqon.mp3" },
+      { text: "enjoying the sunshine", audio: "/audio/week15/mindmap_branch_mtg4tz.mp3" }
     ],
     "I see children ___.": [
-      { text: "playing at the fountain", audio: "/audio/week15/mindmap_branch_bes10e.mp3" },
-      { text: "running around", audio: "/audio/week15/mindmap_branch_a80uya.mp3" },
-      { text: "flying colorful kites", audio: "/audio/week15/mindmap_branch_mq9mlt.mp3" },
-      { text: "eating ice cream", audio: "/audio/week15/mindmap_branch_3strbr.mp3" },
-      { text: "laughing and playing", audio: "/audio/week15/mindmap_branch_tosovu.mp3" },
-      { text: "sitting and resting", audio: "/audio/week15/mindmap_branch_al8169.mp3" }
+      { text: "playing on the swings", audio: "/audio/week15/mindmap_branch_86ddmb.mp3" },
+      { text: "running in the grass", audio: "/audio/week15/mindmap_branch_hlrob1.mp3" },
+      { text: "flying kites", audio: "/audio/week15/mindmap_branch_m8as6r.mp3" },
+      { text: "eating snacks", audio: "/audio/week15/mindmap_branch_tep1ol.mp3" },
+      { text: "playing tag", audio: "/audio/week15/mindmap_branch_4x3azc.mp3" },
+      { text: "chasing each other", audio: "/audio/week15/mindmap_branch_63f4xm.mp3" }
     ],
-    "People are ___ near the fountain.": [
-      { text: "playing with water", audio: "/audio/week15/mindmap_branch_1ywtjl.mp3" },
-      { text: "sitting and watching", audio: "/audio/week15/mindmap_branch_cajp74.mp3" },
-      { text: "taking photos", audio: "/audio/week15/mindmap_branch_lpcyvx.mp3" },
-      { text: "relaxing on benches", audio: "/audio/week15/mindmap_branch_b05b1n.mp3" },
-      { text: "walking around", audio: "/audio/week15/mindmap_branch_c5o4h8.mp3" },
-      { text: "enjoying the view", audio: "/audio/week15/mindmap_branch_ctsxoj.mp3" }
+    "I enjoy ___.": [
+      { text: "running at the park", audio: "/audio/week15/mindmap_branch_jh8dwb.mp3" },
+      { text: "walking with my family", audio: "/audio/week15/mindmap_branch_9ere9x.mp3" },
+      { text: "playing with my friends", audio: "/audio/week15/mindmap_branch_6vo53d.mp3" },
+      { text: "flying my kite", audio: "/audio/week15/mindmap_branch_iwdfw2.mp3" },
+      { text: "eating at the park", audio: "/audio/week15/mindmap_branch_37v1tc.mp3" },
+      { text: "resting on the grass", audio: "/audio/week15/mindmap_branch_ll255k.mp3" }
     ],
-    "The boy is ___ with his dog.": [
-      { text: "running fast", audio: "/audio/week15/mindmap_branch_cxcnbx.mp3" },
-      { text: "playing catch", audio: "/audio/week15/mindmap_branch_vfzd55.mp3" },
-      { text: "walking slowly", audio: "/audio/week15/mindmap_branch_3q5nhn.mp3" },
-      { text: "jogging together", audio: "/audio/week15/mindmap_branch_94h7tv.mp3" },
-      { text: "sitting and resting", audio: "/audio/week15/mindmap_branch_al8169.mp3" },
-      { text: "having fun", audio: "/audio/week15/mindmap_branch_hd0f0c.mp3" }
+    "My favourite outdoor activity is ___.": [
+      { text: "running", audio: "/audio/week15/mindmap_branch_pnaojj.mp3" },
+      { text: "playing with friends", audio: "/audio/week15/mindmap_branch_3ns0lv.mp3" },
+      { text: "flying a kite", audio: "/audio/week15/mindmap_branch_r0l50h.mp3" },
+      { text: "cycling", audio: "/audio/week15/mindmap_branch_kas277.mp3" },
+      { text: "swimming", audio: "/audio/week15/mindmap_branch_1ifxgj.mp3" },
+      { text: "playing football", audio: "/audio/week15/mindmap_branch_30stlt.mp3" }
     ],
     "I am ___ on the grass.": [
-      { text: "relaxing peacefully", audio: "/audio/week15/mindmap_branch_xwo7fu.mp3" },
-      { text: "sitting down", audio: "/audio/week15/mindmap_branch_url5rq.mp3" },
-      { text: "eating my lunch", audio: "/audio/week15/mindmap_branch_x3yqno.mp3" },
+      { text: "running fast", audio: "/audio/week15/mindmap_branch_cxcnbx.mp3" },
+      { text: "sitting with my family", audio: "/audio/week15/mindmap_branch_7l63la.mp3" },
       { text: "playing with friends", audio: "/audio/week15/mindmap_branch_3ns0lv.mp3" },
-      { text: "lying down", audio: "/audio/week15/mindmap_branch_c0q4rx.mp3" },
+      { text: "reading a book", audio: "/audio/week15/mindmap_branch_jkgb6s.mp3" },
+      { text: "relaxing", audio: "/audio/week15/mindmap_branch_960xpq.mp3" },
       { text: "having a picnic", audio: "/audio/week15/mindmap_branch_jpcoso.mp3" }
     ]
   }

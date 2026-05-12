@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "My hair is ___.", audio: "/audio/week3_easy/mindmap_stem_cxp8dh.mp3" },
     { text: "My eyes are ___.", audio: "/audio/week3_easy/mindmap_stem_6z0vp7.mp3" },
     { text: "I look ___.", audio: "/audio/week3_easy/mindmap_stem_h9sztl.mp3" },
-    { text: "I wear ___.", audio: "/audio/week3_easy/mindmap_stem_klo03r.mp3" }
+    { text: "I like my ___.", audio: "/audio/week3_easy/mindmap_stem_wn7fch.mp3" }
   ],
   branchLabels: {
     "I am ___.": [
@@ -45,16 +45,16 @@ const mindMapContent = {
       { text: "like my mom", audio: "/audio/week3_easy/mindmap_branch_ngjqyo.mp3" },
       { text: "like my dad", audio: "/audio/week3_easy/mindmap_branch_ngjjy4.mp3" },
       { text: "nice", audio: "/audio/week3_easy/mindmap_branch_20gv1.mp3" },
-      { text: "in the mirror", audio: "/audio/week3_easy/mindmap_branch_17fbqh.mp3" },
-      { text: "good", audio: "/audio/week3_easy/mindmap_branch_1w4ot.mp3" }
+      { text: "good", audio: "/audio/week3_easy/mindmap_branch_1w4ot.mp3" },
+      { text: "in the mirror", audio: "/audio/week3_easy/mindmap_branch_17fbqh.mp3" }
     ],
-    "I wear ___.": [
-      { text: "glasses", audio: "/audio/week3_easy/mindmap_branch_1sp4x6.mp3" },
-      { text: "no glasses", audio: "/audio/week3_easy/mindmap_branch_itrpaj.mp3" },
-      { text: "a smile", audio: "/audio/week3_easy/mindmap_branch_k2wj2h.mp3" },
-      { text: "nice clothes", audio: "/audio/week3_easy/mindmap_branch_xhb0qj.mp3" },
-      { text: "my hair long", audio: "/audio/week3_easy/mindmap_branch_hgvu6e.mp3" },
-      { text: "my happy face", audio: "/audio/week3_easy/mindmap_branch_qf6vsf.mp3" }
+    "I like my ___.": [
+      { text: "smile", audio: "/audio/week3_easy/mindmap_branch_1t86bs.mp3" },
+      { text: "eyes", audio: "/audio/week3_easy/mindmap_branch_1v1wi.mp3" },
+      { text: "hair", audio: "/audio/week3_easy/mindmap_branch_1wh5u.mp3" },
+      { text: "face", audio: "/audio/week3_easy/mindmap_branch_1v719.mp3" },
+      { text: "hands", audio: "/audio/week3_easy/mindmap_branch_1myvhg.mp3" },
+      { text: "happy look", audio: "/audio/week3_easy/mindmap_branch_cd223l.mp3" }
     ]
   }
 };

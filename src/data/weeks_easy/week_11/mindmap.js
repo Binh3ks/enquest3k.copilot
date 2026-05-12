@@ -3,58 +3,58 @@ const mindMapContent = {
     { text: "I ___ at the park.", audio: "/audio/week11_easy/mindmap_stem_ghx3s0.mp3" },
     { text: "I ___ at the library.", audio: "/audio/week11_easy/mindmap_stem_gspjsn.mp3" },
     { text: "I ___ at the store.", audio: "/audio/week11_easy/mindmap_stem_fx93bl.mp3" },
-    { text: "I go to the ___.", audio: "/audio/week11_easy/mindmap_stem_1wf25a.mp3" },
-    { text: "I see ___ at the zoo.", audio: "/audio/week11_easy/mindmap_stem_1z9gx7.mp3" },
-    { text: "Weekend is ___.", audio: "/audio/week11_easy/mindmap_stem_3ep4oc.mp3" }
+    { text: "My favourite place is ___.", audio: "/audio/week11_easy/mindmap_stem_i5y0pt.mp3" },
+    { text: "I love going to ___.", audio: "/audio/week11_easy/mindmap_stem_107vg7.mp3" },
+    { text: "At the weekend, I ___.", audio: "/audio/week11_easy/mindmap_stem_n9h1qz.mp3" }
   ],
   branchLabels: {
     "I ___ at the park.": [
       { text: "play", audio: "/audio/week11_easy/mindmap_branch_21t10.mp3" },
       { text: "run", audio: "/audio/week11_easy/mindmap_branch_2fez.mp3" },
-      { text: "have fun", audio: "/audio/week11_easy/mindmap_branch_3ssm2v.mp3" },
-      { text: "jump", audio: "/audio/week11_easy/mindmap_branch_1y626.mp3" },
-      { text: "walk", audio: "/audio/week11_easy/mindmap_branch_26215.mp3" },
-      { text: "relax", audio: "/audio/week11_easy/mindmap_branch_1sjbtc.mp3" }
+      { text: "fly my kite", audio: "/audio/week11_easy/mindmap_branch_f8rgiy.mp3" },
+      { text: "eat a snack", audio: "/audio/week11_easy/mindmap_branch_hbfx89.mp3" },
+      { text: "sit on the grass", audio: "/audio/week11_easy/mindmap_branch_macd6g.mp3" },
+      { text: "have fun", audio: "/audio/week11_easy/mindmap_branch_3ssm2v.mp3" }
     ],
     "I ___ at the library.": [
       { text: "read", audio: "/audio/week11_easy/mindmap_branch_22xsm.mp3" },
-      { text: "study", audio: "/audio/week11_easy/mindmap_branch_1tcvyh.mp3" },
-      { text: "learn", audio: "/audio/week11_easy/mindmap_branch_1p8chw.mp3" },
-      { text: "look at books", audio: "/audio/week11_easy/mindmap_branch_jtk8wy.mp3" },
-      { text: "sit", audio: "/audio/week11_easy/mindmap_branch_2fvi.mp3" },
-      { text: "stay quiet", audio: "/audio/week11_easy/mindmap_branch_xstcur.mp3" }
+      { text: "borrow books", audio: "/audio/week11_easy/mindmap_branch_ctjj5r.mp3" },
+      { text: "do homework", audio: "/audio/week11_easy/mindmap_branch_zaeil7.mp3" },
+      { text: "look for books", audio: "/audio/week11_easy/mindmap_branch_k15e3y.mp3" },
+      { text: "sit quietly", audio: "/audio/week11_easy/mindmap_branch_snezcv.mp3" },
+      { text: "study", audio: "/audio/week11_easy/mindmap_branch_1tcvyh.mp3" }
     ],
     "I ___ at the store.": [
-      { text: "buy", audio: "/audio/week11_easy/mindmap_branch_23k6.mp3" },
-      { text: "shop", audio: "/audio/week11_easy/mindmap_branch_23ncm.mp3" },
-      { text: "get food", audio: "/audio/week11_easy/mindmap_branch_vpz3s8.mp3" },
-      { text: "help", audio: "/audio/week11_easy/mindmap_branch_1wk75.mp3" },
-      { text: "look", audio: "/audio/week11_easy/mindmap_branch_1zbmn.mp3" },
-      { text: "carry bags", audio: "/audio/week11_easy/mindmap_branch_juok0g.mp3" }
+      { text: "buy food", audio: "/audio/week11_easy/mindmap_branch_h8spxk.mp3" },
+      { text: "help my mum", audio: "/audio/week11_easy/mindmap_branch_gb23gw.mp3" },
+      { text: "choose snacks", audio: "/audio/week11_easy/mindmap_branch_bqr7ci.mp3" },
+      { text: "look for things", audio: "/audio/week11_easy/mindmap_branch_qp87fh.mp3" },
+      { text: "count items", audio: "/audio/week11_easy/mindmap_branch_7k2r1r.mp3" },
+      { text: "find fruit", audio: "/audio/week11_easy/mindmap_branch_mml34j.mp3" }
     ],
-    "I go to the ___.": [
-      { text: "park", audio: "/audio/week11_easy/mindmap_branch_21l9m.mp3" },
-      { text: "playground", audio: "/audio/week11_easy/mindmap_branch_zeq4at.mp3" },
-      { text: "school", audio: "/audio/week11_easy/mindmap_branch_f0l47g.mp3" },
-      { text: "zoo", audio: "/audio/week11_easy/mindmap_branch_2l7e.mp3" },
-      { text: "library", audio: "/audio/week11_easy/mindmap_branch_2qyfgb.mp3" },
-      { text: "store", audio: "/audio/week11_easy/mindmap_branch_1tcrtt.mp3" }
+    "My favourite place is ___.": [
+      { text: "the park", audio: "/audio/week11_easy/mindmap_branch_h63k1l.mp3" },
+      { text: "the library", audio: "/audio/week11_easy/mindmap_branch_g8ikgc.mp3" },
+      { text: "the playground", audio: "/audio/week11_easy/mindmap_branch_roptca.mp3" },
+      { text: "the store", audio: "/audio/week11_easy/mindmap_branch_z39c36.mp3" },
+      { text: "the museum", audio: "/audio/week11_easy/mindmap_branch_jioy3l.mp3" },
+      { text: "the swimming pool", audio: "/audio/week11_easy/mindmap_branch_blqepc.mp3" }
     ],
-    "I see ___ at the zoo.": [
-      { text: "animals", audio: "/audio/week11_easy/mindmap_branch_e67409.mp3" },
-      { text: "lions", audio: "/audio/week11_easy/mindmap_branch_1pb6qf.mp3" },
-      { text: "monkeys", audio: "/audio/week11_easy/mindmap_branch_kg3lds.mp3" },
-      { text: "tigers", audio: "/audio/week11_easy/mindmap_branch_eg9kks.mp3" },
-      { text: "birds", audio: "/audio/week11_easy/mindmap_branch_1jtasa.mp3" },
-      { text: "elephants", audio: "/audio/week11_easy/mindmap_branch_2td20u.mp3" }
+    "I love going to ___.": [
+      { text: "the park", audio: "/audio/week11_easy/mindmap_branch_h63k1l.mp3" },
+      { text: "the library", audio: "/audio/week11_easy/mindmap_branch_g8ikgc.mp3" },
+      { text: "the store", audio: "/audio/week11_easy/mindmap_branch_z39c36.mp3" },
+      { text: "the playground", audio: "/audio/week11_easy/mindmap_branch_roptca.mp3" },
+      { text: "the cinema", audio: "/audio/week11_easy/mindmap_branch_eljzwg.mp3" },
+      { text: "my grandparents' house", audio: "/audio/week11_easy/mindmap_branch_xjw3ai.mp3" }
     ],
-    "Weekend is ___.": [
-      { text: "fun", audio: "/audio/week11_easy/mindmap_branch_26in.mp3" },
-      { text: "good", audio: "/audio/week11_easy/mindmap_branch_1w4ot.mp3" },
-      { text: "happy", audio: "/audio/week11_easy/mindmap_branch_1myx9c.mp3" },
-      { text: "great", audio: "/audio/week11_easy/mindmap_branch_1mpqx9.mp3" },
-      { text: "nice", audio: "/audio/week11_easy/mindmap_branch_20gv1.mp3" },
-      { text: "special", audio: "/audio/week11_easy/mindmap_branch_x7sdon.mp3" }
+    "At the weekend, I ___.": [
+      { text: "go to the park", audio: "/audio/week11_easy/mindmap_branch_tqdrly.mp3" },
+      { text: "read a book", audio: "/audio/week11_easy/mindmap_branch_ktn566.mp3" },
+      { text: "play with friends", audio: "/audio/week11_easy/mindmap_branch_yoyn53.mp3" },
+      { text: "help at home", audio: "/audio/week11_easy/mindmap_branch_s4u4ab.mp3" },
+      { text: "go shopping", audio: "/audio/week11_easy/mindmap_branch_jy0bs0.mp3" },
+      { text: "visit my family", audio: "/audio/week11_easy/mindmap_branch_6ry8u5.mp3" }
     ]
   }
 };

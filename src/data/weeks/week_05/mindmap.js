@@ -1,14 +1,14 @@
 const mindMapContent = {
   centerStems: [
-    { text: "In my house, there is ___.", audio: "/audio/week5/mindmap_stem_jqzpqm.mp3" },
+    { text: "My house has ___.", audio: "/audio/week5/mindmap_stem_qzox5j.mp3" },
     { text: "I have a ___ in my bedroom.", audio: "/audio/week5/mindmap_stem_kalx6c.mp3" },
-    { text: "The ___ is upstairs.", audio: "/audio/week5/mindmap_stem_frj3c3.mp3" },
+    { text: "My bedroom is ___.", audio: "/audio/week5/mindmap_stem_r61qz7.mp3" },
     { text: "I see a ___ in the living room.", audio: "/audio/week5/mindmap_stem_vcay72.mp3" },
-    { text: "The kitchen has ___.", audio: "/audio/week5/mindmap_stem_l9i0xs.mp3" },
-    { text: "My favorite furniture is ___.", audio: "/audio/week5/mindmap_stem_kvw8wp.mp3" }
+    { text: "My favourite room is ___.", audio: "/audio/week5/mindmap_stem_8zbwyd.mp3" },
+    { text: "My favourite furniture is ___.", audio: "/audio/week5/mindmap_stem_r9mhys.mp3" }
   ],
   branchLabels: {
-    "In my house, there is ___.": [
+    "My house has ___.": [
       { text: "a bedroom", audio: "/audio/week5/mindmap_branch_7ufnrx.mp3" },
       { text: "a kitchen", audio: "/audio/week5/mindmap_branch_hko5.mp3" },
       { text: "a living room", audio: "/audio/week5/mindmap_branch_jz0cb1.mp3" },
@@ -24,13 +24,13 @@ const mindMapContent = {
       { text: "cabinet", audio: "/audio/week5/mindmap_branch_8x3ioo.mp3" },
       { text: "soft bed", audio: "/audio/week5/mindmap_branch_lryaa3.mp3" }
     ],
-    "The ___ is upstairs.": [
-      { text: "bedroom", audio: "/audio/week5/mindmap_branch_3tuwx0.mp3" },
-      { text: "bathroom", audio: "/audio/week5/mindmap_branch_rxpfw2.mp3" },
-      { text: "study room", audio: "/audio/week5/mindmap_branch_8sotgu.mp3" },
-      { text: "mirror", audio: "/audio/week5/mindmap_branch_hrdmwx.mp3" },
-      { text: "lamp", audio: "/audio/week5/mindmap_branch_1z17c.mp3" },
-      { text: "cabinet", audio: "/audio/week5/mindmap_branch_8x3ioo.mp3" }
+    "My bedroom is ___.": [
+      { text: "big and comfortable", audio: "/audio/week5/mindmap_branch_1invsz.mp3" },
+      { text: "small but cosy", audio: "/audio/week5/mindmap_branch_4gg1sa.mp3" },
+      { text: "my favourite place", audio: "/audio/week5/mindmap_branch_zc3eec.mp3" },
+      { text: "very tidy", audio: "/audio/week5/mindmap_branch_ljj8ng.mp3" },
+      { text: "full of my things", audio: "/audio/week5/mindmap_branch_5dqzvl.mp3" },
+      { text: "always clean", audio: "/audio/week5/mindmap_branch_v31amg.mp3" }
     ],
     "I see a ___ in the living room.": [
       { text: "sofa", audio: "/audio/week5/mindmap_branch_23sbb.mp3" },
@@ -40,15 +40,15 @@ const mindMapContent = {
       { text: "TV", audio: "/audio/week5/mindmap_branch_22q.mp3" },
       { text: "table", audio: "/audio/week5/mindmap_branch_1tk5vy.mp3" }
     ],
-    "The kitchen has ___.": [
-      { text: "a fridge", audio: "/audio/week5/mindmap_branch_muucm4.mp3" },
-      { text: "a cabinet", audio: "/audio/week5/mindmap_branch_kle3dl.mp3" },
-      { text: "shelves", audio: "/audio/week5/mindmap_branch_y14prc.mp3" },
-      { text: "a table", audio: "/audio/week5/mindmap_branch_k38imn.mp3" },
-      { text: "food", audio: "/audio/week5/mindmap_branch_1vhpa.mp3" },
-      { text: "dishes", audio: "/audio/week5/mindmap_branch_m0rt4o.mp3" }
+    "My favourite room is ___.": [
+      { text: "my bedroom", audio: "/audio/week5/mindmap_branch_1njm94.mp3" },
+      { text: "the living room", audio: "/audio/week5/mindmap_branch_5nvqyl.mp3" },
+      { text: "the kitchen", audio: "/audio/week5/mindmap_branch_1tr4z9.mp3" },
+      { text: "the bathroom", audio: "/audio/week5/mindmap_branch_z12l99.mp3" },
+      { text: "the study", audio: "/audio/week5/mindmap_branch_z39g7u.mp3" },
+      { text: "the dining room", audio: "/audio/week5/mindmap_branch_pzwq4t.mp3" }
     ],
-    "My favorite furniture is ___.": [
+    "My favourite furniture is ___.": [
       { text: "the sofa", audio: "/audio/week5/mindmap_branch_h65r3a.mp3" },
       { text: "my bed", audio: "/audio/week5/mindmap_branch_hk1mgj.mp3" },
       { text: "the lamp", audio: "/audio/week5/mindmap_branch_h60zzb.mp3" },

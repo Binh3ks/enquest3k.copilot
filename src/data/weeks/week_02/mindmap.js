@@ -4,8 +4,8 @@ const mindMapContent = {
     { text: "My mother is ___.", audio: "/audio/week2/mindmap_stem_x7hih0.mp3" },
     { text: "My father is ___.", audio: "/audio/week2/mindmap_stem_m7yl79.mp3" },
     { text: "My family is ___.", audio: "/audio/week2/mindmap_stem_tot5gd.mp3" },
-    { text: "We love to ___.", audio: "/audio/week2/mindmap_stem_4s21co.mp3" },
-    { text: "At home, we ___.", audio: "/audio/week2/mindmap_stem_27vb6n.mp3" }
+    { text: "My favourite family activity is ___.", audio: "/audio/week2/mindmap_stem_6pc6or.mp3" },
+    { text: "I love my family because ___.", audio: "/audio/week2/mindmap_stem_krjf7c.mp3" }
   ],
   branchLabels: {
     "This is my ___.": [
@@ -40,21 +40,21 @@ const mindMapContent = {
       { text: "very happy", audio: "/audio/week2/mindmap_branch_sqacne.mp3" },
       { text: "my treasure", audio: "/audio/week2/mindmap_branch_k86ezh.mp3" }
     ],
-    "We love to ___.": [
-      { text: "play games together", audio: "/audio/week2/mindmap_branch_u3okij.mp3" },
-      { text: "eat dinner as a family", audio: "/audio/week2/mindmap_branch_utm9x1.mp3" },
-      { text: "talk and laugh", audio: "/audio/week2/mindmap_branch_vyrg5g.mp3" },
-      { text: "help each other", audio: "/audio/week2/mindmap_branch_n4dx8w.mp3" },
-      { text: "spend time at home", audio: "/audio/week2/mindmap_branch_8736cb.mp3" },
-      { text: "share stories", audio: "/audio/week2/mindmap_branch_ymd71q.mp3" }
+    "My favourite family activity is ___.": [
+      { text: "playing games together", audio: "/audio/week2/mindmap_branch_n5w1lh.mp3" },
+      { text: "cooking together", audio: "/audio/week2/mindmap_branch_ypmvwg.mp3" },
+      { text: "watching movies as a family", audio: "/audio/week2/mindmap_branch_t5xysh.mp3" },
+      { text: "reading stories together", audio: "/audio/week2/mindmap_branch_10vtdn.mp3" },
+      { text: "going to the park", audio: "/audio/week2/mindmap_branch_i8ev4o.mp3" },
+      { text: "telling stories at night", audio: "/audio/week2/mindmap_branch_nbidj.mp3" }
     ],
-    "At home, we ___.": [
-      { text: "work as a team", audio: "/audio/week2/mindmap_branch_k7qh2d.mp3" },
-      { text: "cook together", audio: "/audio/week2/mindmap_branch_yjmck2.mp3" },
-      { text: "clean the house", audio: "/audio/week2/mindmap_branch_433p96.mp3" },
-      { text: "watch TV", audio: "/audio/week2/mindmap_branch_90j2ib.mp3" },
-      { text: "do homework", audio: "/audio/week2/mindmap_branch_zaeil7.mp3" },
-      { text: "take care of each other", audio: "/audio/week2/mindmap_branch_fi40w4.mp3" }
+    "I love my family because ___.": [
+      { text: "they always help me", audio: "/audio/week2/mindmap_branch_bdv8ou.mp3" },
+      { text: "we laugh together every day", audio: "/audio/week2/mindmap_branch_67745e.mp3" },
+      { text: "they care for me deeply", audio: "/audio/week2/mindmap_branch_gjox9p.mp3" },
+      { text: "we share everything", audio: "/audio/week2/mindmap_branch_rudxzu.mp3" },
+      { text: "they are always there for me", audio: "/audio/week2/mindmap_branch_lpf29k.mp3" },
+      { text: "they love me very much", audio: "/audio/week2/mindmap_branch_neb657.mp3" }
     ]
   }
 };

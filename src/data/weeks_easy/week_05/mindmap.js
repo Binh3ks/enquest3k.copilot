@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "I eat in the ___.", audio: "/audio/week5_easy/mindmap_stem_5pwp22.mp3" },
     { text: "I have a ___ in my bedroom.", audio: "/audio/week5_easy/mindmap_stem_kalx6c.mp3" },
     { text: "I sit on a ___.", audio: "/audio/week5_easy/mindmap_stem_otv8c6.mp3" },
-    { text: "I like to explore my ___.", audio: "/audio/week5_easy/mindmap_stem_p9m277.mp3" }
+    { text: "My favourite room is ___.", audio: "/audio/week5_easy/mindmap_stem_8zbwyd.mp3" }
   ],
   branchLabels: {
     "My house has ___.": [
@@ -48,13 +48,13 @@ const mindMapContent = {
       { text: "red chair", audio: "/audio/week5_easy/mindmap_branch_6isznu.mp3" },
       { text: "blue chair", audio: "/audio/week5_easy/mindmap_branch_oz7z41.mp3" }
     ],
-    "I like to explore my ___.": [
-      { text: "house", audio: "/audio/week5_easy/mindmap_branch_1n7yu8.mp3" },
-      { text: "bedroom", audio: "/audio/week5_easy/mindmap_branch_3tuwx0.mp3" },
-      { text: "kitchen", audio: "/audio/week5_easy/mindmap_branch_bnt00s.mp3" },
-      { text: "living room", audio: "/audio/week5_easy/mindmap_branch_r8jtgy.mp3" },
-      { text: "bathroom", audio: "/audio/week5_easy/mindmap_branch_rxpfw2.mp3" },
-      { text: "big house", audio: "/audio/week5_easy/mindmap_branch_84giyo.mp3" }
+    "My favourite room is ___.": [
+      { text: "my bedroom", audio: "/audio/week5_easy/mindmap_branch_1njm94.mp3" },
+      { text: "the kitchen", audio: "/audio/week5_easy/mindmap_branch_1tr4z9.mp3" },
+      { text: "the living room", audio: "/audio/week5_easy/mindmap_branch_5nvqyl.mp3" },
+      { text: "the bathroom", audio: "/audio/week5_easy/mindmap_branch_z12l99.mp3" },
+      { text: "the garden", audio: "/audio/week5_easy/mindmap_branch_gdenr8.mp3" },
+      { text: "the dining room", audio: "/audio/week5_easy/mindmap_branch_pzwq4t.mp3" }
     ]
   }
 };

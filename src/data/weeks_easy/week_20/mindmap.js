@@ -1,11 +1,11 @@
 const mindMapContent = {
   centerStems: [
     { text: "There was a ___ near my house.", audio: "/audio/week20_easy/mindmap_stem_dbkvs3.mp3" },
-    { text: "There were ___ on the road.", audio: "/audio/week20_easy/mindmap_stem_ys2poe.mp3" },
+    { text: "I remember ___.", audio: "/audio/week20_easy/mindmap_stem_tbyqi3.mp3" },
     { text: "The old market had ___.", audio: "/audio/week20_easy/mindmap_stem_85oogw.mp3" },
     { text: "Now my town has a new ___.", audio: "/audio/week20_easy/mindmap_stem_bfciig.mp3" },
-    { text: "The old bridge was ___.", audio: "/audio/week20_easy/mindmap_stem_wxqsb9.mp3" },
-    { text: "The temple is still ___.", audio: "/audio/week20_easy/mindmap_stem_8jnp7r.mp3" }
+    { text: "My favourite old place is ___.", audio: "/audio/week20_easy/mindmap_stem_8u7bl4.mp3" },
+    { text: "I wish my town still had ___.", audio: "/audio/week20_easy/mindmap_stem_sgkhgo.mp3" }
   ],
   branchLabels: {
     "There was a ___ near my house.": [
@@ -16,13 +16,13 @@ const mindMapContent = {
       { text: "temple", audio: "/audio/week20_easy/mindmap_branch_eicp0z.mp3" },
       { text: "river", audio: "/audio/week20_easy/mindmap_branch_1sm39o.mp3" }
     ],
-    "There were ___ on the road.": [
-      { text: "many trees", audio: "/audio/week20_easy/mindmap_branch_4zjous.mp3" },
-      { text: "big buildings", audio: "/audio/week20_easy/mindmap_branch_u1ajmp.mp3" },
-      { text: "small shops", audio: "/audio/week20_easy/mindmap_branch_wijzdw.mp3" },
-      { text: "people walking", audio: "/audio/week20_easy/mindmap_branch_dro9go.mp3" },
-      { text: "flowers", audio: "/audio/week20_easy/mindmap_branch_cnxr48.mp3" },
-      { text: "old buildings", audio: "/audio/week20_easy/mindmap_branch_2fxuva.mp3" }
+    "I remember ___.": [
+      { text: "many trees on the road", audio: "/audio/week20_easy/mindmap_branch_nf9c04.mp3" },
+      { text: "small old shops", audio: "/audio/week20_easy/mindmap_branch_y4sus5.mp3" },
+      { text: "people walking everywhere", audio: "/audio/week20_easy/mindmap_branch_ji3q3o.mp3" },
+      { text: "flowers by the road", audio: "/audio/week20_easy/mindmap_branch_5jmf00.mp3" },
+      { text: "old beautiful buildings", audio: "/audio/week20_easy/mindmap_branch_no4nbd.mp3" },
+      { text: "a wooden bridge", audio: "/audio/week20_easy/mindmap_branch_7ixz8s.mp3" }
     ],
     "The old market had ___.": [
       { text: "fresh food", audio: "/audio/week20_easy/mindmap_branch_dr9nu8.mp3" },
@@ -40,21 +40,21 @@ const mindMapContent = {
       { text: "park", audio: "/audio/week20_easy/mindmap_branch_21l9m.mp3" },
       { text: "school", audio: "/audio/week20_easy/mindmap_branch_f0l47g.mp3" }
     ],
-    "The old bridge was ___.": [
-      { text: "made of wood", audio: "/audio/week20_easy/mindmap_branch_ft99vv.mp3" },
-      { text: "over the river", audio: "/audio/week20_easy/mindmap_branch_h7xt8x.mp3" },
-      { text: "very old", audio: "/audio/week20_easy/mindmap_branch_wruf9f.mp3" },
-      { text: "small", audio: "/audio/week20_easy/mindmap_branch_1t80ef.mp3" },
-      { text: "used by people", audio: "/audio/week20_easy/mindmap_branch_og5tqt.mp3" },
-      { text: "part of history", audio: "/audio/week20_easy/mindmap_branch_skipi0.mp3" }
+    "My favourite old place is ___.": [
+      { text: "the old temple", audio: "/audio/week20_easy/mindmap_branch_okl8qd.mp3" },
+      { text: "the big old tree", audio: "/audio/week20_easy/mindmap_branch_yujesa.mp3" },
+      { text: "the old bridge", audio: "/audio/week20_easy/mindmap_branch_g8ukdt.mp3" },
+      { text: "the riverside", audio: "/audio/week20_easy/mindmap_branch_dst7qs.mp3" },
+      { text: "the town square", audio: "/audio/week20_easy/mindmap_branch_82j5xg.mp3" },
+      { text: "the old market", audio: "/audio/week20_easy/mindmap_branch_l75so4.mp3" }
     ],
-    "The temple is still ___.": [
-      { text: "there", audio: "/audio/week20_easy/mindmap_branch_1top5w.mp3" },
-      { text: "beautiful", audio: "/audio/week20_easy/mindmap_branch_szsqy7.mp3" },
-      { text: "very old", audio: "/audio/week20_easy/mindmap_branch_wruf9f.mp3" },
-      { text: "visited by people", audio: "/audio/week20_easy/mindmap_branch_hi277i.mp3" },
-      { text: "important to us", audio: "/audio/week20_easy/mindmap_branch_j498gr.mp3" },
-      { text: "special", audio: "/audio/week20_easy/mindmap_branch_x7sdon.mp3" }
+    "I wish my town still had ___.": [
+      { text: "the old market", audio: "/audio/week20_easy/mindmap_branch_l75so4.mp3" },
+      { text: "the wooden bridge", audio: "/audio/week20_easy/mindmap_branch_yjx8pw.mp3" },
+      { text: "the clean river", audio: "/audio/week20_easy/mindmap_branch_1p1dy.mp3" },
+      { text: "the old trees", audio: "/audio/week20_easy/mindmap_branch_z62nal.mp3" },
+      { text: "more quiet streets", audio: "/audio/week20_easy/mindmap_branch_flc97r.mp3" },
+      { text: "the old school", audio: "/audio/week20_easy/mindmap_branch_o2ctjw.mp3" }
     ]
   }
 };

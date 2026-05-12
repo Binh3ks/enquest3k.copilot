@@ -1,11 +1,11 @@
 const mindMapContent = {
   centerStems: [
     { text: "In the game, I am ___.", audio: "/audio/week16/mindmap_stem_kmdurg.mp3" },
-    { text: "The players are ___.", audio: "/audio/week16/mindmap_stem_m7qge0.mp3" },
+    { text: "My favourite sport is ___.", audio: "/audio/week16/mindmap_stem_md32xa.mp3" },
     { text: "When I play sports, I ___.", audio: "/audio/week16/mindmap_stem_1u4cso.mp3" },
-    { text: "Athletes need to ___.", audio: "/audio/week16/mindmap_stem_vtsoza.mp3" },
+    { text: "I train every day by ___.", audio: "/audio/week16/mindmap_stem_cuh2yo.mp3" },
     { text: "My team is ___.", audio: "/audio/week16/mindmap_stem_1rgrvu.mp3" },
-    { text: "To score a goal, you must ___.", audio: "/audio/week16/mindmap_stem_gytuq4.mp3" }
+    { text: "I scored a goal by ___.", audio: "/audio/week16/mindmap_stem_lbt001.mp3" }
   ],
   branchLabels: {
     "In the game, I am ___.": [
@@ -16,45 +16,45 @@ const mindMapContent = {
       { text: "catching the ball", audio: "/audio/week16/mindmap_branch_cwrlrt.mp3" },
       { text: "cheering loudly", audio: "/audio/week16/mindmap_branch_az23u.mp3" }
     ],
-    "The players are ___.": [
-      { text: "passing the ball quickly", audio: "/audio/week16/mindmap_branch_hjctjd.mp3" },
-      { text: "running on the field", audio: "/audio/week16/mindmap_branch_ue6csr.mp3" },
-      { text: "scoring amazing goals", audio: "/audio/week16/mindmap_branch_elri38.mp3" },
-      { text: "working as a team", audio: "/audio/week16/mindmap_branch_sx9t17.mp3" },
-      { text: "using their energy", audio: "/audio/week16/mindmap_branch_qezxee.mp3" },
-      { text: "moving with speed", audio: "/audio/week16/mindmap_branch_uj8nlt.mp3" }
+    "My favourite sport is ___.": [
+      { text: "football", audio: "/audio/week16/mindmap_branch_6iz4h9.mp3" },
+      { text: "swimming", audio: "/audio/week16/mindmap_branch_1ifxgj.mp3" },
+      { text: "badminton", audio: "/audio/week16/mindmap_branch_x6az22.mp3" },
+      { text: "running", audio: "/audio/week16/mindmap_branch_pnaojj.mp3" },
+      { text: "cycling", audio: "/audio/week16/mindmap_branch_kas277.mp3" },
+      { text: "basketball", audio: "/audio/week16/mindmap_branch_c0xccl.mp3" }
     ],
     "When I play sports, I ___.": [
-      { text: "kick with force", audio: "/audio/week16/mindmap_branch_uckb3f.mp3" },
-      { text: "run at full speed", audio: "/audio/week16/mindmap_branch_dwyxqq.mp3" },
-      { text: "jump as high as I can", audio: "/audio/week16/mindmap_branch_87rx0z.mp3" },
-      { text: "throw the ball far", audio: "/audio/week16/mindmap_branch_zc31of.mp3" },
-      { text: "catch with both hands", audio: "/audio/week16/mindmap_branch_pq48qu.mp3" },
-      { text: "hit the ball hard", audio: "/audio/week16/mindmap_branch_8df5u8.mp3" }
+      { text: "feel excited", audio: "/audio/week16/mindmap_branch_thatgg.mp3" },
+      { text: "run my fastest", audio: "/audio/week16/mindmap_branch_nmbpwr.mp3" },
+      { text: "work as a team", audio: "/audio/week16/mindmap_branch_k7qh2d.mp3" },
+      { text: "enjoy every moment", audio: "/audio/week16/mindmap_branch_mth4h2.mp3" },
+      { text: "play fair", audio: "/audio/week16/mindmap_branch_w0ptv4.mp3" },
+      { text: "cheer for my teammates", audio: "/audio/week16/mindmap_branch_no1fzt.mp3" }
     ],
-    "Athletes need to ___.": [
-      { text: "train every day", audio: "/audio/week16/mindmap_branch_qn6dj3.mp3" },
-      { text: "eat healthy food", audio: "/audio/week16/mindmap_branch_vg8c3b.mp3" },
-      { text: "have a lot of energy", audio: "/audio/week16/mindmap_branch_86cb4l.mp3" },
-      { text: "practice teamwork", audio: "/audio/week16/mindmap_branch_xaknxv.mp3" },
-      { text: "stay strong", audio: "/audio/week16/mindmap_branch_il45ku.mp3" },
-      { text: "rest after playing", audio: "/audio/week16/mindmap_branch_cslv8i.mp3" }
+    "I train every day by ___.": [
+      { text: "running in the morning", audio: "/audio/week16/mindmap_branch_smcqvv.mp3" },
+      { text: "practising my skills", audio: "/audio/week16/mindmap_branch_ny288u.mp3" },
+      { text: "eating healthy food", audio: "/audio/week16/mindmap_branch_orr1lj.mp3" },
+      { text: "drinking lots of water", audio: "/audio/week16/mindmap_branch_ae2lhy.mp3" },
+      { text: "sleeping well", audio: "/audio/week16/mindmap_branch_t4jiub.mp3" },
+      { text: "working hard with my team", audio: "/audio/week16/mindmap_branch_de1xb1.mp3" }
     ],
     "My team is ___.": [
-      { text: "playing together", audio: "/audio/week16/mindmap_branch_tp0rv8.mp3" },
-      { text: "passing the ball", audio: "/audio/week16/mindmap_branch_wvbp2b.mp3" },
-      { text: "cheering each other", audio: "/audio/week16/mindmap_branch_yckdok.mp3" },
-      { text: "scoring many goals", audio: "/audio/week16/mindmap_branch_fgzzxs.mp3" },
-      { text: "running fast", audio: "/audio/week16/mindmap_branch_cxcnbx.mp3" },
-      { text: "winning the game", audio: "/audio/week16/mindmap_branch_vhow5t.mp3" }
+      { text: "strong and fast", audio: "/audio/week16/mindmap_branch_cl0hw2.mp3" },
+      { text: "always helping each other", audio: "/audio/week16/mindmap_branch_1tm0rl.mp3" },
+      { text: "the best team", audio: "/audio/week16/mindmap_branch_gk1p7a.mp3" },
+      { text: "very supportive", audio: "/audio/week16/mindmap_branch_au2rzh.mp3" },
+      { text: "practising every day", audio: "/audio/week16/mindmap_branch_ig3n4x.mp3" },
+      { text: "my favourite group", audio: "/audio/week16/mindmap_branch_zgxezw.mp3" }
     ],
-    "To score a goal, you must ___.": [
-      { text: "kick very hard", audio: "/audio/week16/mindmap_branch_n8ladh.mp3" },
-      { text: "aim at the goal", audio: "/audio/week16/mindmap_branch_689e8k.mp3" },
-      { text: "run toward the net", audio: "/audio/week16/mindmap_branch_menoxy.mp3" },
-      { text: "pass to your teammate", audio: "/audio/week16/mindmap_branch_z0abgn.mp3" },
-      { text: "use your energy", audio: "/audio/week16/mindmap_branch_fq1rzw.mp3" },
-      { text: "work as a team", audio: "/audio/week16/mindmap_branch_k7qh2d.mp3" }
+    "I scored a goal by ___.": [
+      { text: "kicking the ball hard", audio: "/audio/week16/mindmap_branch_dof95.mp3" },
+      { text: "running very fast", audio: "/audio/week16/mindmap_branch_3qxnob.mp3" },
+      { text: "passing to a teammate", audio: "/audio/week16/mindmap_branch_6txmtz.mp3" },
+      { text: "being in the right position", audio: "/audio/week16/mindmap_branch_l4ba16.mp3" },
+      { text: "practising every day", audio: "/audio/week16/mindmap_branch_ig3n4x.mp3" },
+      { text: "working with my team", audio: "/audio/week16/mindmap_branch_dcpcoq.mp3" }
     ]
   }
 };
