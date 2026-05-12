@@ -1,15 +1,16 @@
 /**
- * Game Hub - Main Container (New Games)
+ * Game Hub - Main Container
+ * Games: Word Duel (retrieval), Story Remix (vocab-in-context), Hot Seat (coming soon)
  */
 
 import { useState } from 'react';
 import { PRODUCTION_GAMES } from '../../services/ai_tutor/games/index';
-import ShowTellLadderGame from './games/ShowTellLadderGame';
-import MakeSentenceGame from './games/MakeSentenceGame';
-import AskMeGame from './games/AskMeGame';
+import WordDuelGame from './games/WordDuelGame';
+import StoryRemixGame from './games/StoryRemixGame';
+import HotSeatGame from './games/HotSeatGame';
 
 function getAvailableGamesForWeek() {
-  return ['show_tell', 'make_sentence', 'ask_me'];
+  return ['word_duel', 'story_remix', 'hot_seat'];
 }
 
 export default function GameHub({ weekNumber = 1, learningMode = 'advanced' }) {
@@ -36,22 +37,22 @@ export default function GameHub({ weekNumber = 1, learningMode = 'advanced' }) {
           ← Back to Games
         </button>
 
-        {selectedGame === 'show_tell' && (
-          <ShowTellLadderGame
+        {selectedGame === 'word_duel' && (
+          <WordDuelGame
             weekNumber={weekNumber}
             learningMode={learningMode}
             onGameComplete={handleGameComplete}
           />
         )}
-        {selectedGame === 'make_sentence' && (
-          <MakeSentenceGame
+        {selectedGame === 'story_remix' && (
+          <StoryRemixGame
             weekNumber={weekNumber}
             learningMode={learningMode}
             onGameComplete={handleGameComplete}
           />
         )}
-        {selectedGame === 'ask_me' && (
-          <AskMeGame
+        {selectedGame === 'hot_seat' && (
+          <HotSeatGame
             weekNumber={weekNumber}
             learningMode={learningMode}
             onGameComplete={handleGameComplete}
