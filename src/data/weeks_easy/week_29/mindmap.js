@@ -4,8 +4,8 @@ const mindMapContent = {
     { text: "Lily met a kind ___ on the trip.", audio: "/audio/week29_easy/mindmap_stem_5q7c8j.mp3" },
     { text: "I want to be a ___ one day.", audio: "/audio/week29_easy/mindmap_stem_8yx9j7.mp3" },
     { text: "A doctor ___.", audio: "/audio/week29_easy/mindmap_stem_k4pze7.mp3" },
-    { text: "In my family, ___ is a ___.", audio: "/audio/week29_easy/mindmap_stem_3cvss2.mp3" },
-    { text: "I like ___ because ___.", audio: "/audio/week29_easy/mindmap_stem_bvkypw.mp3" }
+    { text: "In my family, ___.", audio: "/audio/week29_easy/mindmap_stem_ci47eo.mp3" },
+    { text: "I like ___.", audio: "/audio/week29_easy/mindmap_stem_44gjvj.mp3" }
   ],
   branchLabels: {
     "The carpet flew to a ___.": [
@@ -40,21 +40,21 @@ const mindMapContent = {
       { text: "saves lives", audio: "/audio/week29_easy/mindmap_branch_g27i0z.mp3" },
       { text: "wears a white coat", audio: "/audio/week29_easy/mindmap_branch_x4cfz3.mp3" }
     ],
-    "In my family, ___ is a ___.": [
-      { text: "Mum, a nurse", audio: "/audio/week29_easy/mindmap_branch_8y39gl.mp3" },
-      { text: "Dad, a driver", audio: "/audio/week29_easy/mindmap_branch_r8igbi.mp3" },
-      { text: "my aunt, a teacher", audio: "/audio/week29_easy/mindmap_branch_fqagld.mp3" },
-      { text: "my uncle, a doctor", audio: "/audio/week29_easy/mindmap_branch_w3zn6n.mp3" },
-      { text: "my grandpa, a farmer", audio: "/audio/week29_easy/mindmap_branch_vo7dj5.mp3" },
-      { text: "my sister, a pilot", audio: "/audio/week29_easy/mindmap_branch_4u50wj.mp3" }
+    "In my family, ___.": [
+      { text: "Mum is a nurse", audio: "/audio/week29_easy/mindmap_branch_78atbx.mp3" },
+      { text: "Dad is a driver", audio: "/audio/week29_easy/mindmap_branch_tc5nwc.mp3" },
+      { text: "my aunt is a teacher", audio: "/audio/week29_easy/mindmap_branch_gweoin.mp3" },
+      { text: "my uncle is a doctor", audio: "/audio/week29_easy/mindmap_branch_la08n7.mp3" },
+      { text: "my grandpa is a farmer", audio: "/audio/week29_easy/mindmap_branch_g00o4h.mp3" },
+      { text: "my sister is a pilot", audio: "/audio/week29_easy/mindmap_branch_5eihjf.mp3" }
     ],
-    "I like ___ because ___.": [
-      { text: "doctors, they help people", audio: "/audio/week29_easy/mindmap_branch_df16gu.mp3" },
-      { text: "teachers, they are kind", audio: "/audio/week29_easy/mindmap_branch_rdgaa5.mp3" },
-      { text: "pilots, they fly planes", audio: "/audio/week29_easy/mindmap_branch_93d30t.mp3" },
-      { text: "nurses, they care for us", audio: "/audio/week29_easy/mindmap_branch_rpvak6.mp3" },
-      { text: "farmers, they grow food", audio: "/audio/week29_easy/mindmap_branch_y2shxl.mp3" },
-      { text: "drivers, they take us places", audio: "/audio/week29_easy/mindmap_branch_2xhfm6.mp3" }
+    "I like ___.": [
+      { text: "doctors because they help people", audio: "/audio/week29_easy/mindmap_branch_iudqw4.mp3" },
+      { text: "teachers because they are kind", audio: "/audio/week29_easy/mindmap_branch_4u8lox.mp3" },
+      { text: "pilots because they fly planes", audio: "/audio/week29_easy/mindmap_branch_20cual.mp3" },
+      { text: "nurses because they care for us", audio: "/audio/week29_easy/mindmap_branch_hz84y8.mp3" },
+      { text: "farmers because they grow food", audio: "/audio/week29_easy/mindmap_branch_hpamjn.mp3" },
+      { text: "drivers because they take us places", audio: "/audio/week29_easy/mindmap_branch_jwttfi.mp3" }
     ]
   }
 };

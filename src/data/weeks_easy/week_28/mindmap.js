@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "The hare stopped to ___.", audio: "/audio/week28_easy/mindmap_stem_lkqn7o.mp3" },
     { text: "I go to school by ___.", audio: "/audio/week28_easy/mindmap_stem_qelimo.mp3" },
     { text: "My favourite vehicle is ___.", audio: "/audio/week28_easy/mindmap_stem_2qby0q.mp3" },
-    { text: "A ___ is ___.", audio: "/audio/week28_easy/mindmap_stem_6qa3p7.mp3" },
+    { text: "A ___.", audio: "/audio/week28_easy/mindmap_stem_vb9j4e.mp3" },
     { text: "I want to travel by ___ one day.", audio: "/audio/week28_easy/mindmap_stem_bj06jg.mp3" }
   ],
   branchLabels: {
@@ -40,7 +40,7 @@ const mindMapContent = {
       { text: "boat", audio: "/audio/week28_easy/mindmap_branch_1sxfk.mp3" },
       { text: "motorbike", audio: "/audio/week28_easy/mindmap_branch_6o2r6y.mp3" }
     ],
-    "A ___ is ___.": [
+    "A ___.": [
       { text: "bus is big and red", audio: "/audio/week28_easy/mindmap_branch_3z4sb6.mp3" },
       { text: "car is fast and loud", audio: "/audio/week28_easy/mindmap_branch_4jr3it.mp3" },
       { text: "bicycle is small and fun", audio: "/audio/week28_easy/mindmap_branch_efafxk.mp3" },
