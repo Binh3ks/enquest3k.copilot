@@ -14,7 +14,7 @@ export default {
     { id: 7, text: "Luna shared her biscuits with the children nearby.", audio_url: "/audio/week30_easy/shadowing_s7.mp3" },
     { id: 8, text: "It was a perfect picnic day!", audio_url: "/audio/week30_easy/shadowing_s8.mp3" }
 ,
-    { id: 9, text: "The chef made sandwiches and brought them in a big basket.", audio_url: "/audio/week30_easy/shadowing_s9.mp3" }
+    { id: 9, text: "The chef made sandwiches and brought them in a big basket.", audio_url: "/audio/week30_easy/shadowing_s9.mp3" },
     { id: 10, text: "The scientist brought fresh watermelon for the picnic.", audio_url: "/audio/week30_easy/shadowing_s10.mp3" }
   ]
 };
