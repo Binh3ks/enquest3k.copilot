@@ -1,60 +1,60 @@
 const mindMapContent = {
   centerStems: [
-    { text: "First, Mum ___.", audio: "/audio/week30_easy/mindmap_stem_1.mp3" },
-    { text: "At the park, we ___.", audio: "/audio/week30_easy/mindmap_stem_2.mp3" },
-    { text: "Luna was hungry so she ___.", audio: "/audio/week30_easy/mindmap_stem_3.mp3" },
-    { text: "Tom was thirsty so he ___.", audio: "/audio/week30_easy/mindmap_stem_4.mp3" },
-    { text: "Dad gave us ___.", audio: "/audio/week30_easy/mindmap_stem_5.mp3" },
-    { text: "After the picnic, everyone felt ___.", audio: "/audio/week30_easy/mindmap_stem_6.mp3" }
+    { text: "The chef ___.", audio: "/audio/week30_easy/mindmap_stem_1.mp3" },
+    { text: "The scientist brought ___.", audio: "/audio/week30_easy/mindmap_stem_2.mp3" },
+    { text: "The engineer ___.", audio: "/audio/week30_easy/mindmap_stem_3.mp3" },
+    { text: "The firefighters ___.", audio: "/audio/week30_easy/mindmap_stem_4.mp3" },
+    { text: "The artist ___.", audio: "/audio/week30_easy/mindmap_stem_5.mp3" },
+    { text: "The dentist ___.", audio: "/audio/week30_easy/mindmap_stem_6.mp3" }
   ],
   branchLabels: {
-    "First, Mum ___.": [
-      { text: "bought bread and juice at the market", audio: "/audio/week30_easy/mindmap_branch_1.mp3" },
-      { text: "packed a basket with lots of food", audio: "/audio/week30_easy/mindmap_branch_2.mp3" },
-      { text: "bought fruit for the picnic", audio: "/audio/week30_easy/mindmap_branch_3.mp3" },
-      { text: "went shopping for picnic food", audio: "/audio/week30_easy/mindmap_branch_4.mp3" },
-      { text: "bought sandwiches and fruit", audio: "/audio/week30_easy/mindmap_branch_5.mp3" },
-      { text: "packed the big picnic basket", audio: "/audio/week30_easy/mindmap_branch_6.mp3" }
+    "The chef ___.": [
+      { text: "made delicious sandwiches for the picnic", audio: "/audio/week30_easy/mindmap_branch_1.mp3" },
+      { text: "packed cookies and lemonade in the basket", audio: "/audio/week30_easy/mindmap_branch_2.mp3" },
+      { text: "cooked the best picnic food for everyone", audio: "/audio/week30_easy/mindmap_branch_3.mp3" },
+      { text: "prepared all the food — he is Tom's dad!", audio: "/audio/week30_easy/mindmap_branch_4.mp3" },
+      { text: "made sandwiches and said: a chef makes the best food!", audio: "/audio/week30_easy/mindmap_branch_5.mp3" },
+      { text: "cooked for the picnic — Tom was very proud", audio: "/audio/week30_easy/mindmap_branch_6.mp3" }
     ],
-    "At the park, we ___.": [
-      { text: "spread a blanket on the grass", audio: "/audio/week30_easy/mindmap_branch_7.mp3" },
-      { text: "sat down and ate together", audio: "/audio/week30_easy/mindmap_branch_8.mp3" },
-      { text: "put the blanket under a tree", audio: "/audio/week30_easy/mindmap_branch_9.mp3" },
-      { text: "opened the basket and ate", audio: "/audio/week30_easy/mindmap_branch_10.mp3" },
-      { text: "spread the blanket and sat down", audio: "/audio/week30_easy/mindmap_branch_11.mp3" },
-      { text: "ate and drank on the grass", audio: "/audio/week30_easy/mindmap_branch_12.mp3" }
+    "The scientist brought ___.": [
+      { text: "colourful fruit — apples, bananas, and watermelon", audio: "/audio/week30_easy/mindmap_branch_7.mp3" },
+      { text: "healthy fruit because fruit has vitamins", audio: "/audio/week30_easy/mindmap_branch_8.mp3" },
+      { text: "fresh fruit for everyone at the picnic", audio: "/audio/week30_easy/mindmap_branch_9.mp3" },
+      { text: "a bag of fruit — she is Mia's mum!", audio: "/audio/week30_easy/mindmap_branch_10.mp3" },
+      { text: "lots of fruit because scientists love healthy food", audio: "/audio/week30_easy/mindmap_branch_11.mp3" },
+      { text: "watermelon, apples, and bananas to the picnic", audio: "/audio/week30_easy/mindmap_branch_12.mp3" }
     ],
-    "Luna was hungry so she ___.": [
-      { text: "ate a big sandwich", audio: "/audio/week30_easy/mindmap_branch_13.mp3" },
-      { text: "got a sandwich from the basket", audio: "/audio/week30_easy/mindmap_branch_14.mp3" },
-      { text: "ate her sandwich quickly", audio: "/audio/week30_easy/mindmap_branch_15.mp3" },
-      { text: "asked Mum for a sandwich", audio: "/audio/week30_easy/mindmap_branch_16.mp3" },
-      { text: "had a sandwich and some fruit", audio: "/audio/week30_easy/mindmap_branch_17.mp3" },
-      { text: "ate and said 'Delicious!'", audio: "/audio/week30_easy/mindmap_branch_18.mp3" }
+    "The engineer ___.": [
+      { text: "built the wooden bridge near the park", audio: "/audio/week30_easy/mindmap_branch_13.mp3" },
+      { text: "designed and built the bridge with maths", audio: "/audio/week30_easy/mindmap_branch_14.mp3" },
+      { text: "made the bridge — he is Luna's uncle!", audio: "/audio/week30_easy/mindmap_branch_15.mp3" },
+      { text: "built things with science and maths", audio: "/audio/week30_easy/mindmap_branch_16.mp3" },
+      { text: "built the bridge that the friends walked over", audio: "/audio/week30_easy/mindmap_branch_17.mp3" },
+      { text: "makes roads and bridges for everyone", audio: "/audio/week30_easy/mindmap_branch_18.mp3" }
     ],
-    "Tom was thirsty so he ___.": [
-      { text: "drank some cold apple juice", audio: "/audio/week30_easy/mindmap_branch_19.mp3" },
-      { text: "had a bottle of cold juice", audio: "/audio/week30_easy/mindmap_branch_20.mp3" },
-      { text: "drank juice and smiled", audio: "/audio/week30_easy/mindmap_branch_21.mp3" },
-      { text: "drank two cups of juice", audio: "/audio/week30_easy/mindmap_branch_22.mp3" },
-      { text: "got some juice from the basket", audio: "/audio/week30_easy/mindmap_branch_23.mp3" },
-      { text: "drank cold juice from his cup", audio: "/audio/week30_easy/mindmap_branch_24.mp3" }
+    "The firefighters ___.": [
+      { text: "parked their big red truck near the park", audio: "/audio/week30_easy/mindmap_branch_19.mp3" },
+      { text: "were resting and eating their lunch", audio: "/audio/week30_easy/mindmap_branch_20.mp3" },
+      { text: "waved at Tom with big smiles", audio: "/audio/week30_easy/mindmap_branch_21.mp3" },
+      { text: "sat by the red fire truck on their break", audio: "/audio/week30_easy/mindmap_branch_22.mp3" },
+      { text: "are brave — they put out fires and save people", audio: "/audio/week30_easy/mindmap_branch_23.mp3" },
+      { text: "drove a big red truck to the park", audio: "/audio/week30_easy/mindmap_branch_24.mp3" }
     ],
-    "Dad gave us ___.": [
-      { text: "a cookie after lunch", audio: "/audio/week30_easy/mindmap_branch_25.mp3" },
-      { text: "a piece of sweet fruit", audio: "/audio/week30_easy/mindmap_branch_26.mp3" },
-      { text: "some biscuits from the bag", audio: "/audio/week30_easy/mindmap_branch_27.mp3" },
-      { text: "cookies and we said thank you", audio: "/audio/week30_easy/mindmap_branch_28.mp3" },
-      { text: "a big slice of watermelon", audio: "/audio/week30_easy/mindmap_branch_29.mp3" },
-      { text: "some fruit and some cookies", audio: "/audio/week30_easy/mindmap_branch_30.mp3" }
+    "The artist ___.": [
+      { text: "painted the lake with bright colours", audio: "/audio/week30_easy/mindmap_branch_25.mp3" },
+      { text: "sat at an easel in the park", audio: "/audio/week30_easy/mindmap_branch_26.mp3" },
+      { text: "got a cookie from Luna", audio: "/audio/week30_easy/mindmap_branch_27.mp3" },
+      { text: "made a beautiful painting of the park", audio: "/audio/week30_easy/mindmap_branch_28.mp3" },
+      { text: "smiled and waved when Luna gave a cookie", audio: "/audio/week30_easy/mindmap_branch_29.mp3" },
+      { text: "painted pretty pictures — it was so beautiful!", audio: "/audio/week30_easy/mindmap_branch_30.mp3" }
     ],
-    "After the picnic, everyone felt ___.": [
-      { text: "cheerful and happy", audio: "/audio/week30_easy/mindmap_branch_31.mp3" },
-      { text: "full and refreshed", audio: "/audio/week30_easy/mindmap_branch_32.mp3" },
-      { text: "very happy at the picnic", audio: "/audio/week30_easy/mindmap_branch_33.mp3" },
-      { text: "cheerful after the food", audio: "/audio/week30_easy/mindmap_branch_34.mp3" },
-      { text: "happy and not hungry", audio: "/audio/week30_easy/mindmap_branch_35.mp3" },
-      { text: "glad it was picnic day", audio: "/audio/week30_easy/mindmap_branch_36.mp3" }
+    "The dentist ___.": [
+      { text: "will not be happy if Tom eats too many cookies!", audio: "/audio/week30_easy/mindmap_branch_31.mp3" },
+      { text: "looks after our teeth and keeps them clean", audio: "/audio/week30_easy/mindmap_branch_32.mp3" },
+      { text: "said: eat less sugar to keep your teeth healthy", audio: "/audio/week30_easy/mindmap_branch_33.mp3" },
+      { text: "checks our teeth and helps us smile", audio: "/audio/week30_easy/mindmap_branch_34.mp3" },
+      { text: "is important — healthy teeth help us eat and smile!", audio: "/audio/week30_easy/mindmap_branch_35.mp3" },
+      { text: "was mentioned by Mia when Tom ate too many cookies", audio: "/audio/week30_easy/mindmap_branch_36.mp3" }
     ]
   }
 };
