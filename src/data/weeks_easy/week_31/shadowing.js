@@ -12,5 +12,8 @@ export default {
     { id: 8, text: "Suddenly, a bag of plastic bottles fell down with a big crash." },
     { id: 9, text: "Luna felt surprised, but then she laughed." },
     { id: 10, text: "'A market is full of things to touch and feel!' said Luna." }
+,
+    { id: 11, text: "The seller gave Luna a mango from the market.", audio_url: "/audio/week31_easy/shadowing_s11.mp3" }
+    { id: 12, text: "She touched the shelf and felt its rough texture.", audio_url: "/audio/week31_easy/shadowing_s12.mp3" }
   ]
 };

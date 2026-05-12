@@ -23,5 +23,9 @@ export default {
     { id: 16, text: "All the animals cheered.", audio_url: "/audio/week28_easy/shadowing_s16.mp3" },
     { id: 17, text: "The hare woke up, but it was too late.", audio_url: "/audio/week28_easy/shadowing_s17.mp3" },
     { id: 18, text: "The lesson is: slow and steady wins the race.", audio_url: "/audio/week28_easy/shadowing_s18.mp3" }
+,
+    { id: 19, text: "The animals took the bus to watch the race.", audio_url: "/audio/week28_easy/shadowing_s19.mp3" }
+    { id: 20, text: "After the race, the hare took a taxi home.", audio_url: "/audio/week28_easy/shadowing_s20.mp3" }
+    { id: 21, text: "Some animals came by boat and others by bicycle.", audio_url: "/audio/week28_easy/shadowing_s21.mp3" }
   ]
 };

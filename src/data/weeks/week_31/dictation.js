@@ -17,5 +17,8 @@ export default {
     { id: 10, text: "She heard vendors calling, children laughing, and footsteps echoing on the stone path.", audio_url: "/audio/week31/shadowing_s10.mp3" },
     { id: 11, text: "Suddenly, a tall stack of plastic bottles fell over and made a huge crash.", audio_url: "/audio/week31/shadowing_s11.mp3" },
     { id: 12, text: "I never knew a market could speak to every single sense!", audio_url: "/audio/week31/shadowing_s12.mp3" }
+,
+    { id: 13, text: "The seller at the craft stall showed Luna a beautiful stone sculpture.", audio_url: "/audio/week31/shadowing_s13.mp3" }
+    { id: 14, text: "Luna loved the rough texture of the wooden shelf under her fingers.", audio_url: "/audio/week31/shadowing_s14.mp3" }
   ]
 };

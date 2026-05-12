@@ -17,5 +17,9 @@ export default {
     { id: 10, text: "After the sandwiches and cookies, they felt thirsty again — so they drank more cold lemonade from the basket.", audio_url: "/audio/week30/shadowing_s10.mp3" },
     { id: 11, text: "Finally, they ate fresh fruits — apples, bananas, and slices of sweet watermelon.", audio_url: "/audio/week30/shadowing_s11.mp3" },
     { id: 12, text: "It was a truly perfect and refreshing day at the park.", audio_url: "/audio/week30/shadowing_s12.mp3" }
+,
+    { id: 13, text: "Tom's dad is a talented chef who makes the most delicious food for every picnic.", audio_url: "/audio/week30/shadowing_s13.mp3" }
+    { id: 14, text: "Mia's mum is a scientist who studies food and health — she brought fresh watermelon.", audio_url: "/audio/week30/shadowing_s14.mp3" }
+    { id: 15, text: "Luna's uncle is an engineer who designed the beautiful wooden bridge in the park.", audio_url: "/audio/week30/shadowing_s15.mp3" }
   ]
 };

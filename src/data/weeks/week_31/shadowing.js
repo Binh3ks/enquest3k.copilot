@@ -14,5 +14,8 @@ export default {
     { id: 10, text: "She heard vendors calling, children laughing, and footsteps echoing on the stone path." },
     { id: 11, text: "Suddenly, a tall stack of plastic bottles fell over and made a huge crash." },
     { id: 12, text: "I never knew a market could speak to every single sense!" }
+,
+    { id: 13, text: "The seller smiled and showed Luna colourful cotton scarves.", audio_url: "/audio/week31/shadowing_s13.mp3" }
+    { id: 14, text: "Luna ran her fingers across the rough texture of the wooden shelf.", audio_url: "/audio/week31/shadowing_s14.mp3" }
   ]
 };

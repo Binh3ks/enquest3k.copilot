@@ -15,7 +15,7 @@ export default {
     },
     {
       id: 2,
-      nova_says: "The tortoise challenged the hare to a race. All the animals cheered.",
+      nova_says: "The tortoise challenged the hare to a race. All the animals cheered! Some came by bus, some by boat, and others by bicycle or train.",
       nova_says_vi: "Con rùa thách con thỏ thi đua. Tất cả các con vật đều cổ vũ.",
       task_en: "Ask Nova WHAT the tortoise did.",
       task_vi: "Hỏi cô Nova con rùa đã làm gì.",
