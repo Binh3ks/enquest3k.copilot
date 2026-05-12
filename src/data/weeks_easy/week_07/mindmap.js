@@ -9,52 +9,52 @@ const mindMapContent = {
   ],
   branchLabels: {
     "I draw with ___.": [
-      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_ibga50.mp3" },
-      { text: "a pen", audio: "/audio/week7_easy/mindmap_branch_1hyuoq.mp3" },
-      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_oa3vx7.mp3" },
-      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_jsplwn.mp3" },
-      { text: "a brush", audio: "/audio/week7_easy/mindmap_branch_jtngzf.mp3" },
-      { text: "a coloured pencil", audio: "/audio/week7_easy/mindmap_branch_lzhdnh.mp3" }
+      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_sskdgt.mp3" },
+      { text: "a pen", audio: "/audio/week7_easy/mindmap_branch_imohx3.mp3" },
+      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_dzj9v0.mp3" },
+      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_h2grc0.mp3" },
+      { text: "a brush", audio: "/audio/week7_easy/mindmap_branch_a2vxko.mp3" },
+      { text: "a coloured pencil", audio: "/audio/week7_easy/mindmap_branch_d02v4w.mp3" }
     ],
     "I cut with ___.": [
-      { text: "scissors", audio: "/audio/week7_easy/mindmap_branch_auinzd.mp3" },
-      { text: "a knife", audio: "/audio/week7_easy/mindmap_branch_jyit5y.mp3" },
-      { text: "a paper cutter", audio: "/audio/week7_easy/mindmap_branch_7nb8ya.mp3" },
-      { text: "small scissors", audio: "/audio/week7_easy/mindmap_branch_d804k0.mp3" },
-      { text: "craft scissors", audio: "/audio/week7_easy/mindmap_branch_92rlyh.mp3" },
-      { text: "my scissors", audio: "/audio/week7_easy/mindmap_branch_h2rqbv.mp3" }
+      { text: "scissors", audio: "/audio/week7_easy/mindmap_branch_mmeivi.mp3" },
+      { text: "a knife", audio: "/audio/week7_easy/mindmap_branch_ut7fjh.mp3" },
+      { text: "a paper cutter", audio: "/audio/week7_easy/mindmap_branch_onuo7r.mp3" },
+      { text: "small scissors", audio: "/audio/week7_easy/mindmap_branch_fm2a07.mp3" },
+      { text: "craft scissors", audio: "/audio/week7_easy/mindmap_branch_3f6fua.mp3" },
+      { text: "my scissors", audio: "/audio/week7_easy/mindmap_branch_g3tkfc.mp3" }
     ],
     "There is ___ in my bag.": [
-      { text: "a book", audio: "/audio/week7_easy/mindmap_branch_okcczc.mp3" },
-      { text: "a notebook", audio: "/audio/week7_easy/mindmap_branch_wx5s56.mp3" },
-      { text: "a pencil case", audio: "/audio/week7_easy/mindmap_branch_bdw6ck.mp3" },
-      { text: "a ruler", audio: "/audio/week7_easy/mindmap_branch_k2hwfr.mp3" },
-      { text: "an eraser", audio: "/audio/week7_easy/mindmap_branch_8yb8in.mp3" },
-      { text: "a lunch box", audio: "/audio/week7_easy/mindmap_branch_rtkct2.mp3" }
+      { text: "a book", audio: "/audio/week7_easy/mindmap_branch_3jwcgz.mp3" },
+      { text: "a notebook", audio: "/audio/week7_easy/mindmap_branch_1lxf4l.mp3" },
+      { text: "a pencil case", audio: "/audio/week7_easy/mindmap_branch_jzi585.mp3" },
+      { text: "a ruler", audio: "/audio/week7_easy/mindmap_branch_mm9zum.mp3" },
+      { text: "an eraser", audio: "/audio/week7_easy/mindmap_branch_g6bjc6.mp3" },
+      { text: "a lunch box", audio: "/audio/week7_easy/mindmap_branch_nhvj43.mp3" }
     ],
     "I eat from my ___.": [
-      { text: "lunch box", audio: "/audio/week7_easy/mindmap_branch_v72nrp.mp3" },
-      { text: "food box", audio: "/audio/week7_easy/mindmap_branch_690ao9.mp3" },
-      { text: "school bag", audio: "/audio/week7_easy/mindmap_branch_1m471g.mp3" },
-      { text: "home", audio: "/audio/week7_easy/mindmap_branch_1wrmn.mp3" },
-      { text: "plate", audio: "/audio/week7_easy/mindmap_branch_1rjzti.mp3" },
-      { text: "bowl", audio: "/audio/week7_easy/mindmap_branch_1sxya.mp3" }
+      { text: "lunch box", audio: "/audio/week7_easy/mindmap_branch_s1azre.mp3" },
+      { text: "food box", audio: "/audio/week7_easy/mindmap_branch_5lyq54.mp3" },
+      { text: "school bag", audio: "/audio/week7_easy/mindmap_branch_k3ix7.mp3" },
+      { text: "home", audio: "/audio/week7_easy/mindmap_branch_z6eumq.mp3" },
+      { text: "plate", audio: "/audio/week7_easy/mindmap_branch_ssltxx.mp3" },
+      { text: "bowl", audio: "/audio/week7_easy/mindmap_branch_z34anj.mp3" }
     ],
     "I write with ___.": [
-      { text: "a pen", audio: "/audio/week7_easy/mindmap_branch_1hyuoq.mp3" },
-      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_ibga50.mp3" },
-      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_jsplwn.mp3" },
-      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_oa3vx7.mp3" },
-      { text: "chalk", audio: "/audio/week7_easy/mindmap_branch_1kc3yz.mp3" },
-      { text: "a stylus", audio: "/audio/week7_easy/mindmap_branch_gnva8f.mp3" }
+      { text: "a pen", audio: "/audio/week7_easy/mindmap_branch_yhrpsm.mp3" },
+      { text: "a pencil", audio: "/audio/week7_easy/mindmap_branch_50auio.mp3" },
+      { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_k5s2nn.mp3" },
+      { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_n8pk4n.mp3" },
+      { text: "chalk", audio: "/audio/week7_easy/mindmap_branch_yhxccr.mp3" },
+      { text: "a stylus", audio: "/audio/week7_easy/mindmap_branch_oqbzfp.mp3" }
     ],
     "My favourite thing in my bag is ___.": [
-      { text: "my notebook", audio: "/audio/week7_easy/mindmap_branch_gy7f3l.mp3" },
-      { text: "my pencil case", audio: "/audio/week7_easy/mindmap_branch_lzkzyp.mp3" },
-      { text: "my book", audio: "/audio/week7_easy/mindmap_branch_nzibbx.mp3" },
-      { text: "my ruler", audio: "/audio/week7_easy/mindmap_branch_xijon6.mp3" },
-      { text: "my lunch box", audio: "/audio/week7_easy/mindmap_branch_qjfq8v.mp3" },
-      { text: "my eraser", audio: "/audio/week7_easy/mindmap_branch_wp5ta8.mp3" }
+      { text: "my notebook", audio: "/audio/week7_easy/mindmap_branch_8u74xz.mp3" },
+      { text: "my pencil case", audio: "/audio/week7_easy/mindmap_branch_a2ph1z.mp3" },
+      { text: "my book", audio: "/audio/week7_easy/mindmap_branch_pzngjr.mp3" },
+      { text: "my ruler", audio: "/audio/week7_easy/mindmap_branch_gozx5o.mp3" },
+      { text: "my lunch box", audio: "/audio/week7_easy/mindmap_branch_shchaz.mp3" },
+      { text: "my eraser", audio: "/audio/week7_easy/mindmap_branch_e3f3q.mp3" }
     ]
   }
 };

@@ -9,52 +9,52 @@ const mindMapContent = {
   ],
   branchLabels: {
     "I am ___.": [
-      { text: "running", audio: "/audio/week16_easy/mindmap_branch_pnaojj.mp3" },
-      { text: "jumping", audio: "/audio/week16_easy/mindmap_branch_kra1vw.mp3" },
-      { text: "kicking", audio: "/audio/week16_easy/mindmap_branch_bx0d9g.mp3" },
-      { text: "catching", audio: "/audio/week16_easy/mindmap_branch_szjuv.mp3" },
-      { text: "throwing", audio: "/audio/week16_easy/mindmap_branch_oj90sc.mp3" },
-      { text: "cheering", audio: "/audio/week16_easy/mindmap_branch_pg94l1.mp3" }
+      { text: "running", audio: "/audio/week16_easy/mindmap_branch_9amauk.mp3" },
+      { text: "jumping", audio: "/audio/week16_easy/mindmap_branch_8mzcx5.mp3" },
+      { text: "kicking", audio: "/audio/week16_easy/mindmap_branch_ip3dht.mp3" },
+      { text: "catching", audio: "/audio/week16_easy/mindmap_branch_ttb32i.mp3" },
+      { text: "throwing", audio: "/audio/week16_easy/mindmap_branch_fwrxu3.mp3" },
+      { text: "cheering", audio: "/audio/week16_easy/mindmap_branch_cibbvg.mp3" }
     ],
     "My favourite sport is ___.": [
-      { text: "football", audio: "/audio/week16_easy/mindmap_branch_6iz4h9.mp3" },
-      { text: "swimming", audio: "/audio/week16_easy/mindmap_branch_1ifxgj.mp3" },
-      { text: "running", audio: "/audio/week16_easy/mindmap_branch_pnaojj.mp3" },
-      { text: "badminton", audio: "/audio/week16_easy/mindmap_branch_x6az22.mp3" },
-      { text: "cycling", audio: "/audio/week16_easy/mindmap_branch_kas277.mp3" },
-      { text: "basketball", audio: "/audio/week16_easy/mindmap_branch_c0xccl.mp3" }
+      { text: "football", audio: "/audio/week16_easy/mindmap_branch_e9yb0e.mp3" },
+      { text: "swimming", audio: "/audio/week16_easy/mindmap_branch_kmj8sy.mp3" },
+      { text: "running", audio: "/audio/week16_easy/mindmap_branch_i6ub4e.mp3" },
+      { text: "badminton", audio: "/audio/week16_easy/mindmap_branch_16cac9.mp3" },
+      { text: "cycling", audio: "/audio/week16_easy/mindmap_branch_5iytjq.mp3" },
+      { text: "basketball", audio: "/audio/week16_easy/mindmap_branch_ue2dp2.mp3" }
     ],
     "We are ___.": [
-      { text: "a team", audio: "/audio/week16_easy/mindmap_branch_ok12ys.mp3" },
-      { text: "playing together", audio: "/audio/week16_easy/mindmap_branch_tp0rv8.mp3" },
-      { text: "winning", audio: "/audio/week16_easy/mindmap_branch_mbmky8.mp3" },
-      { text: "having fun", audio: "/audio/week16_easy/mindmap_branch_hd0f0c.mp3" },
-      { text: "practising", audio: "/audio/week16_easy/mindmap_branch_yfmva0.mp3" },
-      { text: "very happy", audio: "/audio/week16_easy/mindmap_branch_sqacne.mp3" }
+      { text: "a team", audio: "/audio/week16_easy/mindmap_branch_f7h2q4.mp3" },
+      { text: "playing together", audio: "/audio/week16_easy/mindmap_branch_sqp8hw.mp3" },
+      { text: "winning", audio: "/audio/week16_easy/mindmap_branch_nwwgkc.mp3" },
+      { text: "having fun", audio: "/audio/week16_easy/mindmap_branch_4gqy50.mp3" },
+      { text: "practising", audio: "/audio/week16_easy/mindmap_branch_yithc8.mp3" },
+      { text: "very happy", audio: "/audio/week16_easy/mindmap_branch_1qqn46.mp3" }
     ],
     "I like to ___.": [
-      { text: "run fast", audio: "/audio/week16_easy/mindmap_branch_cj0ekx.mp3" },
-      { text: "kick the ball", audio: "/audio/week16_easy/mindmap_branch_lov27c.mp3" },
-      { text: "jump high", audio: "/audio/week16_easy/mindmap_branch_ad2dlg.mp3" },
-      { text: "swim", audio: "/audio/week16_easy/mindmap_branch_23ybs.mp3" },
-      { text: "cycle", audio: "/audio/week16_easy/mindmap_branch_1kn086.mp3" },
-      { text: "play with my team", audio: "/audio/week16_easy/mindmap_branch_2f1pr1.mp3" }
+      { text: "run fast", audio: "/audio/week16_easy/mindmap_branch_l7nu96.mp3" },
+      { text: "kick the ball", audio: "/audio/week16_easy/mindmap_branch_ptg3d3.mp3" },
+      { text: "jump high", audio: "/audio/week16_easy/mindmap_branch_k6c231.mp3" },
+      { text: "swim", audio: "/audio/week16_easy/mindmap_branch_1tjbtf.mp3" },
+      { text: "cycle", audio: "/audio/week16_easy/mindmap_branch_m5722t.mp3" },
+      { text: "play with my team", audio: "/audio/week16_easy/mindmap_branch_39tqhq.mp3" }
     ],
     "At school, I ___.": [
-      { text: "play sports", audio: "/audio/week16_easy/mindmap_branch_8dsjdh.mp3" },
-      { text: "run in PE", audio: "/audio/week16_easy/mindmap_branch_x9m8e3.mp3" },
-      { text: "do exercises", audio: "/audio/week16_easy/mindmap_branch_42vwe2.mp3" },
-      { text: "practise with my team", audio: "/audio/week16_easy/mindmap_branch_9wo0tw.mp3" },
-      { text: "learn new sports", audio: "/audio/week16_easy/mindmap_branch_y4u0d7.mp3" },
-      { text: "enjoy PE class", audio: "/audio/week16_easy/mindmap_branch_kxrurm.mp3" }
+      { text: "play sports", audio: "/audio/week16_easy/mindmap_branch_un6167.mp3" },
+      { text: "run in PE", audio: "/audio/week16_easy/mindmap_branch_wsgj1b.mp3" },
+      { text: "do exercises", audio: "/audio/week16_easy/mindmap_branch_sgevw.mp3" },
+      { text: "practise with my team", audio: "/audio/week16_easy/mindmap_branch_h5lewe.mp3" },
+      { text: "learn new sports", audio: "/audio/week16_easy/mindmap_branch_tq0fmh.mp3" },
+      { text: "enjoy PE class", audio: "/audio/week16_easy/mindmap_branch_6j1x28.mp3" }
     ],
     "Sports make me ___.": [
-      { text: "happy", audio: "/audio/week16_easy/mindmap_branch_1myx9c.mp3" },
-      { text: "strong", audio: "/audio/week16_easy/mindmap_branch_er28a1.mp3" },
-      { text: "healthy", audio: "/audio/week16_easy/mindmap_branch_d5nmal.mp3" },
-      { text: "excited", audio: "/audio/week16_easy/mindmap_branch_lumqqu.mp3" },
-      { text: "energetic", audio: "/audio/week16_easy/mindmap_branch_f9m1k6.mp3" },
-      { text: "very proud", audio: "/audio/week16_easy/mindmap_branch_sll5ri.mp3" }
+      { text: "happy", audio: "/audio/week16_easy/mindmap_branch_jiiz3v.mp3" },
+      { text: "strong", audio: "/audio/week16_easy/mindmap_branch_8ad734.mp3" },
+      { text: "healthy", audio: "/audio/week16_easy/mindmap_branch_kw90yg.mp3" },
+      { text: "excited", audio: "/audio/week16_easy/mindmap_branch_ucmmff.mp3" },
+      { text: "energetic", audio: "/audio/week16_easy/mindmap_branch_tqlyob.mp3" },
+      { text: "very proud", audio: "/audio/week16_easy/mindmap_branch_3it5mt.mp3" }
     ]
   }
 };

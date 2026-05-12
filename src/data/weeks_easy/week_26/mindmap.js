@@ -9,52 +9,52 @@ const mindMapContent = {
   ],
   branchLabels: {
     "It was ___.": [
-      { text: "sunny and warm", audio: "/audio/week26_easy/mindmap_branch_yc39pl.mp3" },
-      { text: "a lovely day", audio: "/audio/week26_easy/mindmap_branch_qewbru.mp3" },
-      { text: "brilliant at the park", audio: "/audio/week26_easy/mindmap_branch_ci9l5v.mp3" },
-      { text: "a great adventure", audio: "/audio/week26_easy/mindmap_branch_oztym6.mp3" },
-      { text: "very exciting", audio: "/audio/week26_easy/mindmap_branch_iigi33.mp3" },
-      { text: "a perfect weekend day", audio: "/audio/week26_easy/mindmap_branch_1ilvv5.mp3" }
+      { text: "sunny and warm", audio: "/audio/week26_easy/mindmap_branch_vrvtlh.mp3" },
+      { text: "a lovely day", audio: "/audio/week26_easy/mindmap_branch_6liqbc.mp3" },
+      { text: "brilliant at the park", audio: "/audio/week26_easy/mindmap_branch_2cfk8t.mp3" },
+      { text: "a great adventure", audio: "/audio/week26_easy/mindmap_branch_9jvtdo.mp3" },
+      { text: "very exciting", audio: "/audio/week26_easy/mindmap_branch_mquck7.mp3" },
+      { text: "a perfect weekend day", audio: "/audio/week26_easy/mindmap_branch_awuw95.mp3" }
     ],
     "They were ___.": [
-      { text: "tired but happy", audio: "/audio/week26_easy/mindmap_branch_i8frfn.mp3" },
-      { text: "very excited", audio: "/audio/week26_easy/mindmap_branch_c1xpe8.mp3" },
-      { text: "at the park", audio: "/audio/week26_easy/mindmap_branch_87zp16.mp3" },
-      { text: "ready to go home", audio: "/audio/week26_easy/mindmap_branch_7dstf5.mp3" },
-      { text: "watching the show together", audio: "/audio/week26_easy/mindmap_branch_3yvs1.mp3" },
-      { text: "having a great time", audio: "/audio/week26_easy/mindmap_branch_mmsf9i.mp3" }
+      { text: "tired but happy", audio: "/audio/week26_easy/mindmap_branch_8mapg8.mp3" },
+      { text: "very excited", audio: "/audio/week26_easy/mindmap_branch_g4at87.mp3" },
+      { text: "at the park", audio: "/audio/week26_easy/mindmap_branch_iwhrkf.mp3" },
+      { text: "ready to go home", audio: "/audio/week26_easy/mindmap_branch_gxccfs.mp3" },
+      { text: "watching the show together", audio: "/audio/week26_easy/mindmap_branch_cl849y.mp3" },
+      { text: "having a great time", audio: "/audio/week26_easy/mindmap_branch_17xlp7.mp3" }
     ],
     "Leo visited ___.": [
-      { text: "the park on Saturday", audio: "/audio/week26_easy/mindmap_branch_llqest.mp3" },
-      { text: "the park with Max", audio: "/audio/week26_easy/mindmap_branch_9ysaof.mp3" },
-      { text: "the park near his house", audio: "/audio/week26_easy/mindmap_branch_bqqe5b.mp3" },
-      { text: "his favourite green park", audio: "/audio/week26_easy/mindmap_branch_lcpkk.mp3" },
-      { text: "the park early in the morning", audio: "/audio/week26_easy/mindmap_branch_aok5mq.mp3" },
-      { text: "the park for the first time that weekend", audio: "/audio/week26_easy/mindmap_branch_v5au0s.mp3" }
+      { text: "the park on Saturday", audio: "/audio/week26_easy/mindmap_branch_hxc9gb.mp3" },
+      { text: "the park with Max", audio: "/audio/week26_easy/mindmap_branch_vralc3.mp3" },
+      { text: "the park near his house", audio: "/audio/week26_easy/mindmap_branch_g5tldf.mp3" },
+      { text: "his favourite green park", audio: "/audio/week26_easy/mindmap_branch_vh04xq.mp3" },
+      { text: "the park early in the morning", audio: "/audio/week26_easy/mindmap_branch_s6468g.mp3" },
+      { text: "the park for the first time that weekend", audio: "/audio/week26_easy/mindmap_branch_lkx8fq.mp3" }
     ],
     "Max played ___.": [
-      { text: "with his ball for one hour", audio: "/audio/week26_easy/mindmap_branch_4bj2we.mp3" },
-      { text: "in the green grass", audio: "/audio/week26_easy/mindmap_branch_ay21wv.mp3" },
-      { text: "all afternoon at the park", audio: "/audio/week26_easy/mindmap_branch_sdsrj7.mp3" },
-      { text: "with the red ball happily", audio: "/audio/week26_easy/mindmap_branch_9zue98.mp3" },
-      { text: "until he was very tired", audio: "/audio/week26_easy/mindmap_branch_exloye.mp3" },
-      { text: "and chased the ball everywhere", audio: "/audio/week26_easy/mindmap_branch_36nd8d.mp3" }
+      { text: "with his ball for one hour", audio: "/audio/week26_easy/mindmap_branch_fy0q29.mp3" },
+      { text: "in the green grass", audio: "/audio/week26_easy/mindmap_branch_h27u6q.mp3" },
+      { text: "all afternoon at the park", audio: "/audio/week26_easy/mindmap_branch_y4t48s.mp3" },
+      { text: "with the red ball happily", audio: "/audio/week26_easy/mindmap_branch_j4bzmd.mp3" },
+      { text: "until he was very tired", audio: "/audio/week26_easy/mindmap_branch_pf1sk5.mp3" },
+      { text: "and chased the ball everywhere", audio: "/audio/week26_easy/mindmap_branch_mea4m8.mp3" }
     ],
     "In the story, Leo ___.": [
-      { text: "sketched the park in Panel One", audio: "/audio/week26_easy/mindmap_branch_z5r6f5.mp3" },
-      { text: "drew Max with the ball in Panel Two", audio: "/audio/week26_easy/mindmap_branch_gza6dz.mp3" },
-      { text: "drew the street show in Panel Three", audio: "/audio/week26_easy/mindmap_branch_6cy8dg.mp3" },
-      { text: "drew the walk home in Panel Four", audio: "/audio/week26_easy/mindmap_branch_dbh2po.mp3" },
-      { text: "wrote the title at the top", audio: "/audio/week26_easy/mindmap_branch_za6slx.mp3" },
-      { text: "added the last caption in Panel Four", audio: "/audio/week26_easy/mindmap_branch_hni6o8.mp3" }
+      { text: "sketched the park in Panel One", audio: "/audio/week26_easy/mindmap_branch_r24ckc.mp3" },
+      { text: "drew Max with the ball in Panel Two", audio: "/audio/week26_easy/mindmap_branch_2rkzwy.mp3" },
+      { text: "drew the street show in Panel Three", audio: "/audio/week26_easy/mindmap_branch_souzc5.mp3" },
+      { text: "drew the walk home in Panel Four", audio: "/audio/week26_easy/mindmap_branch_imuc3j.mp3" },
+      { text: "wrote the title at the top", audio: "/audio/week26_easy/mindmap_branch_3zcdom.mp3" },
+      { text: "added the last caption in Panel Four", audio: "/audio/week26_easy/mindmap_branch_g1od8d.mp3" }
     ],
     "Last weekend, I ___.": [
-      { text: "visited the park with my family", audio: "/audio/week26_easy/mindmap_branch_30oc3z.mp3" },
-      { text: "played football with my friends", audio: "/audio/week26_easy/mindmap_branch_l4eiet.mp3" },
-      { text: "watched a movie at home", audio: "/audio/week26_easy/mindmap_branch_a4tgdx.mp3" },
-      { text: "created a drawing in my notebook", audio: "/audio/week26_easy/mindmap_branch_kci7vx.mp3" },
-      { text: "returned home tired but happy", audio: "/audio/week26_easy/mindmap_branch_zdsab7.mp3" },
-      { text: "had a great adventure outside", audio: "/audio/week26_easy/mindmap_branch_j6y6aa.mp3" }
+      { text: "visited the park with my family", audio: "/audio/week26_easy/mindmap_branch_6kumhl.mp3" },
+      { text: "played football with my friends", audio: "/audio/week26_easy/mindmap_branch_dm7myn.mp3" },
+      { text: "watched a movie at home", audio: "/audio/week26_easy/mindmap_branch_x0uvdh.mp3" },
+      { text: "created a drawing in my notebook", audio: "/audio/week26_easy/mindmap_branch_bum1dl.mp3" },
+      { text: "returned home tired but happy", audio: "/audio/week26_easy/mindmap_branch_9xfvvb.mp3" },
+      { text: "had a great adventure outside", audio: "/audio/week26_easy/mindmap_branch_59aswo.mp3" }
     ]
   }
 };

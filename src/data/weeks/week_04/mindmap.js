@@ -9,52 +9,52 @@ const mindMapContent = {
   ],
   branchLabels: {
     "I like ___.": [
-      { text: "playing games", audio: "/audio/week4/mindmap_branch_vi6edr.mp3" },
-      { text: "reading books", audio: "/audio/week4/mindmap_branch_407j12.mp3" },
-      { text: "drawing pictures", audio: "/audio/week4/mindmap_branch_pwetiv.mp3" },
-      { text: "singing songs", audio: "/audio/week4/mindmap_branch_wzb90v.mp3" },
-      { text: "dancing", audio: "/audio/week4/mindmap_branch_nrzels.mp3" },
-      { text: "having fun", audio: "/audio/week4/mindmap_branch_hd0f0c.mp3" }
+      { text: "playing games", audio: "/audio/week4/mindmap_branch_qice7j.mp3" },
+      { text: "reading books", audio: "/audio/week4/mindmap_branch_qm0qfq.mp3" },
+      { text: "drawing pictures", audio: "/audio/week4/mindmap_branch_85aliz.mp3" },
+      { text: "singing songs", audio: "/audio/week4/mindmap_branch_ybq1hr.mp3" },
+      { text: "dancing", audio: "/audio/week4/mindmap_branch_b4h8i8.mp3" },
+      { text: "having fun", audio: "/audio/week4/mindmap_branch_34a5co.mp3" }
     ],
     "I feel ___.": [
-      { text: "happy when I play", audio: "/audio/week4/mindmap_branch_har5yn.mp3" },
-      { text: "excited when I sing", audio: "/audio/week4/mindmap_branch_p2fvbu.mp3" },
-      { text: "calm when I read", audio: "/audio/week4/mindmap_branch_g03ngu.mp3" },
-      { text: "creative when I draw", audio: "/audio/week4/mindmap_branch_exavlc.mp3" },
-      { text: "joyful when I dance", audio: "/audio/week4/mindmap_branch_17ubbh.mp3" },
-      { text: "good when I help", audio: "/audio/week4/mindmap_branch_xqesfv.mp3" }
+      { text: "happy when I play", audio: "/audio/week4/mindmap_branch_mu5rz4.mp3" },
+      { text: "excited when I sing", audio: "/audio/week4/mindmap_branch_n69ncb.mp3" },
+      { text: "calm when I read", audio: "/audio/week4/mindmap_branch_vfsvjt.mp3" },
+      { text: "creative when I draw", audio: "/audio/week4/mindmap_branch_frryf9.mp3" },
+      { text: "joyful when I dance", audio: "/audio/week4/mindmap_branch_ecbaak.mp3" },
+      { text: "good when I help", audio: "/audio/week4/mindmap_branch_al7d8w.mp3" }
     ],
     "My favourite hobby is ___.": [
-      { text: "playing with friends", audio: "/audio/week4/mindmap_branch_3ns0lv.mp3" },
-      { text: "reading stories", audio: "/audio/week4/mindmap_branch_ibgxmp.mp3" },
-      { text: "drawing animals", audio: "/audio/week4/mindmap_branch_7oag39.mp3" },
-      { text: "singing my favourite songs", audio: "/audio/week4/mindmap_branch_cq5g9s.mp3" },
-      { text: "dancing to music", audio: "/audio/week4/mindmap_branch_oyz9lc.mp3" },
-      { text: "making new friends", audio: "/audio/week4/mindmap_branch_z9iy00.mp3" }
+      { text: "playing with friends", audio: "/audio/week4/mindmap_branch_j7y0bo.mp3" },
+      { text: "reading stories", audio: "/audio/week4/mindmap_branch_u1fglw.mp3" },
+      { text: "drawing animals", audio: "/audio/week4/mindmap_branch_5l38zu.mp3" },
+      { text: "singing my favourite songs", audio: "/audio/week4/mindmap_branch_9hsbyp.mp3" },
+      { text: "dancing to music", audio: "/audio/week4/mindmap_branch_c2v4xr.mp3" },
+      { text: "making new friends", audio: "/audio/week4/mindmap_branch_l844up.mp3" }
     ],
     "I am ___ today.": [
-      { text: "happy", audio: "/audio/week4/mindmap_branch_1myx9c.mp3" },
-      { text: "excited", audio: "/audio/week4/mindmap_branch_lumqqu.mp3" },
-      { text: "friendly", audio: "/audio/week4/mindmap_branch_nj900l.mp3" },
-      { text: "funny", audio: "/audio/week4/mindmap_branch_1m82a2.mp3" },
-      { text: "calm", audio: "/audio/week4/mindmap_branch_1taan.mp3" },
-      { text: "creative", audio: "/audio/week4/mindmap_branch_u3tynj.mp3" }
+      { text: "happy", audio: "/audio/week4/mindmap_branch_1nkoh6.mp3" },
+      { text: "excited", audio: "/audio/week4/mindmap_branch_dpe6gg.mp3" },
+      { text: "friendly", audio: "/audio/week4/mindmap_branch_yubskl.mp3" },
+      { text: "funny", audio: "/audio/week4/mindmap_branch_xhaf40.mp3" },
+      { text: "calm", audio: "/audio/week4/mindmap_branch_133gwf.mp3" },
+      { text: "creative", audio: "/audio/week4/mindmap_branch_xk2pzz.mp3" }
     ],
     "Playing makes me ___.": [
-      { text: "happy", audio: "/audio/week4/mindmap_branch_1myx9c.mp3" },
-      { text: "excited", audio: "/audio/week4/mindmap_branch_lumqqu.mp3" },
-      { text: "feel good", audio: "/audio/week4/mindmap_branch_od622x.mp3" },
-      { text: "smile", audio: "/audio/week4/mindmap_branch_1t86bs.mp3" },
-      { text: "laugh", audio: "/audio/week4/mindmap_branch_1p6741.mp3" },
-      { text: "joyful", audio: "/audio/week4/mindmap_branch_j33idz.mp3" }
+      { text: "happy", audio: "/audio/week4/mindmap_branch_6itkfd.mp3" },
+      { text: "excited", audio: "/audio/week4/mindmap_branch_lkbaq9.mp3" },
+      { text: "feel good", audio: "/audio/week4/mindmap_branch_54e4tu.mp3" },
+      { text: "smile", audio: "/audio/week4/mindmap_branch_bwsdj5.mp3" },
+      { text: "laugh", audio: "/audio/week4/mindmap_branch_8f31uw.mp3" },
+      { text: "joyful", audio: "/audio/week4/mindmap_branch_p8bfai.mp3" }
     ],
     "I love ___.": [
-      { text: "my friends", audio: "/audio/week4/mindmap_branch_4fvkkf.mp3" },
-      { text: "my hobbies", audio: "/audio/week4/mindmap_branch_ndvjwc.mp3" },
-      { text: "playing", audio: "/audio/week4/mindmap_branch_85usb6.mp3" },
-      { text: "learning new things", audio: "/audio/week4/mindmap_branch_4ngl4p.mp3" },
-      { text: "being creative", audio: "/audio/week4/mindmap_branch_42gt8w.mp3" },
-      { text: "having fun", audio: "/audio/week4/mindmap_branch_hd0f0c.mp3" }
+      { text: "my friends", audio: "/audio/week4/mindmap_branch_z35svq.mp3" },
+      { text: "my hobbies", audio: "/audio/week4/mindmap_branch_poy2dh.mp3" },
+      { text: "playing", audio: "/audio/week4/mindmap_branch_ejtj3d.mp3" },
+      { text: "learning new things", audio: "/audio/week4/mindmap_branch_ucdvq6.mp3" },
+      { text: "being creative", audio: "/audio/week4/mindmap_branch_mnornd.mp3" },
+      { text: "having fun", audio: "/audio/week4/mindmap_branch_aag4y5.mp3" }
     ]
   }
 };

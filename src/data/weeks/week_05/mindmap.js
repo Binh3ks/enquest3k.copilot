@@ -9,52 +9,52 @@ const mindMapContent = {
   ],
   branchLabels: {
     "My house has ___.": [
-      { text: "a bedroom", audio: "/audio/week5/mindmap_branch_7ufnrx.mp3" },
-      { text: "a kitchen", audio: "/audio/week5/mindmap_branch_hko5.mp3" },
-      { text: "a living room", audio: "/audio/week5/mindmap_branch_jz0cb1.mp3" },
-      { text: "a bathroom", audio: "/audio/week5/mindmap_branch_l65wb7.mp3" },
-      { text: "nice furniture", audio: "/audio/week5/mindmap_branch_4h635.mp3" },
-      { text: "a big sofa", audio: "/audio/week5/mindmap_branch_hyqoeu.mp3" }
+      { text: "a bedroom", audio: "/audio/week5/mindmap_branch_n629th.mp3" },
+      { text: "a kitchen", audio: "/audio/week5/mindmap_branch_i619tv.mp3" },
+      { text: "a living room", audio: "/audio/week5/mindmap_branch_md5xcb.mp3" },
+      { text: "a bathroom", audio: "/audio/week5/mindmap_branch_z404e1.mp3" },
+      { text: "nice furniture", audio: "/audio/week5/mindmap_branch_sby9fp.mp3" },
+      { text: "a big sofa", audio: "/audio/week5/mindmap_branch_tev7k2.mp3" }
     ],
     "I have a ___ in my bedroom.": [
-      { text: "lamp", audio: "/audio/week5/mindmap_branch_1z17c.mp3" },
-      { text: "mirror", audio: "/audio/week5/mindmap_branch_hrdmwx.mp3" },
-      { text: "rug", audio: "/audio/week5/mindmap_branch_2fes.mp3" },
-      { text: "shelf", audio: "/audio/week5/mindmap_branch_1t4wfe.mp3" },
-      { text: "cabinet", audio: "/audio/week5/mindmap_branch_8x3ioo.mp3" },
-      { text: "soft bed", audio: "/audio/week5/mindmap_branch_lryaa3.mp3" }
+      { text: "lamp", audio: "/audio/week5/mindmap_branch_2cr7zh.mp3" },
+      { text: "mirror", audio: "/audio/week5/mindmap_branch_kxkkjw.mp3" },
+      { text: "rug", audio: "/audio/week5/mindmap_branch_k7kw13.mp3" },
+      { text: "shelf", audio: "/audio/week5/mindmap_branch_ajofy9.mp3" },
+      { text: "cabinet", audio: "/audio/week5/mindmap_branch_900fu5.mp3" },
+      { text: "soft bed", audio: "/audio/week5/mindmap_branch_r3ed34.mp3" }
     ],
     "My bedroom is ___.": [
-      { text: "big and comfortable", audio: "/audio/week5/mindmap_branch_1invsz.mp3" },
-      { text: "small but cosy", audio: "/audio/week5/mindmap_branch_4gg1sa.mp3" },
-      { text: "my favourite place", audio: "/audio/week5/mindmap_branch_zc3eec.mp3" },
-      { text: "very tidy", audio: "/audio/week5/mindmap_branch_ljj8ng.mp3" },
-      { text: "full of my things", audio: "/audio/week5/mindmap_branch_5dqzvl.mp3" },
-      { text: "always clean", audio: "/audio/week5/mindmap_branch_v31amg.mp3" }
+      { text: "big and comfortable", audio: "/audio/week5/mindmap_branch_i06029.mp3" },
+      { text: "small but cosy", audio: "/audio/week5/mindmap_branch_8o988q.mp3" },
+      { text: "my favourite place", audio: "/audio/week5/mindmap_branch_32caus.mp3" },
+      { text: "very tidy", audio: "/audio/week5/mindmap_branch_xc2ug8.mp3" },
+      { text: "full of my things", audio: "/audio/week5/mindmap_branch_goevd7.mp3" },
+      { text: "always clean", audio: "/audio/week5/mindmap_branch_xx1g0o.mp3" }
     ],
     "I see a ___ in the living room.": [
-      { text: "sofa", audio: "/audio/week5/mindmap_branch_23sbb.mp3" },
-      { text: "lamp", audio: "/audio/week5/mindmap_branch_1z17c.mp3" },
-      { text: "rug", audio: "/audio/week5/mindmap_branch_2fes.mp3" },
-      { text: "shelf", audio: "/audio/week5/mindmap_branch_1t4wfe.mp3" },
-      { text: "TV", audio: "/audio/week5/mindmap_branch_22q.mp3" },
-      { text: "table", audio: "/audio/week5/mindmap_branch_1tk5vy.mp3" }
+      { text: "sofa", audio: "/audio/week5/mindmap_branch_ts83og.mp3" },
+      { text: "lamp", audio: "/audio/week5/mindmap_branch_3h2aht.mp3" },
+      { text: "rug", audio: "/audio/week5/mindmap_branch_1dweef.mp3" },
+      { text: "shelf", audio: "/audio/week5/mindmap_branch_7avex9.mp3" },
+      { text: "TV", audio: "/audio/week5/mindmap_branch_5rj1f9.mp3" },
+      { text: "table", audio: "/audio/week5/mindmap_branch_dilvkf.mp3" }
     ],
     "My favourite room is ___.": [
-      { text: "my bedroom", audio: "/audio/week5/mindmap_branch_1njm94.mp3" },
-      { text: "the living room", audio: "/audio/week5/mindmap_branch_5nvqyl.mp3" },
-      { text: "the kitchen", audio: "/audio/week5/mindmap_branch_1tr4z9.mp3" },
-      { text: "the bathroom", audio: "/audio/week5/mindmap_branch_z12l99.mp3" },
-      { text: "the study", audio: "/audio/week5/mindmap_branch_z39g7u.mp3" },
-      { text: "the dining room", audio: "/audio/week5/mindmap_branch_pzwq4t.mp3" }
+      { text: "my bedroom", audio: "/audio/week5/mindmap_branch_o6ukiy.mp3" },
+      { text: "the living room", audio: "/audio/week5/mindmap_branch_sir32x.mp3" },
+      { text: "the kitchen", audio: "/audio/week5/mindmap_branch_1nrhvv.mp3" },
+      { text: "the bathroom", audio: "/audio/week5/mindmap_branch_ahrhrf.mp3" },
+      { text: "the study", audio: "/audio/week5/mindmap_branch_cwbf2o.mp3" },
+      { text: "the dining room", audio: "/audio/week5/mindmap_branch_jlkvnt.mp3" }
     ],
     "My favourite furniture is ___.": [
-      { text: "the sofa", audio: "/audio/week5/mindmap_branch_h65r3a.mp3" },
-      { text: "my bed", audio: "/audio/week5/mindmap_branch_hk1mgj.mp3" },
-      { text: "the lamp", audio: "/audio/week5/mindmap_branch_h60zzb.mp3" },
-      { text: "the mirror", audio: "/audio/week5/mindmap_branch_jc31hq.mp3" },
-      { text: "the shelf", audio: "/audio/week5/mindmap_branch_z31gor.mp3" },
-      { text: "the rug", audio: "/audio/week5/mindmap_branch_mcxnl7.mp3" }
+      { text: "the sofa", audio: "/audio/week5/mindmap_branch_46j5pn.mp3" },
+      { text: "my bed", audio: "/audio/week5/mindmap_branch_8prm8s.mp3" },
+      { text: "the lamp", audio: "/audio/week5/mindmap_branch_42ftai.mp3" },
+      { text: "the mirror", audio: "/audio/week5/mindmap_branch_kyitxf.mp3" },
+      { text: "the shelf", audio: "/audio/week5/mindmap_branch_cjl4hc.mp3" },
+      { text: "the rug", audio: "/audio/week5/mindmap_branch_25n956.mp3" }
     ]
   }
 };

@@ -9,52 +9,52 @@ const mindMapContent = {
   ],
   branchLabels: {
     "I like ___.": [
-      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_85usb6.mp3" },
-      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_vmyfby.mp3" },
-      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_hv90ng.mp3" },
-      { text: "running", audio: "/audio/week4_easy/mindmap_branch_pnaojj.mp3" },
-      { text: "singing", audio: "/audio/week4_easy/mindmap_branch_yn114j.mp3" },
-      { text: "dancing", audio: "/audio/week4_easy/mindmap_branch_nrzels.mp3" }
+      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_ff21si.mp3" },
+      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_tbtcv2.mp3" },
+      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_u00o3w.mp3" },
+      { text: "running", audio: "/audio/week4_easy/mindmap_branch_1xx9en.mp3" },
+      { text: "singing", audio: "/audio/week4_easy/mindmap_branch_7aon83.mp3" },
+      { text: "dancing", audio: "/audio/week4_easy/mindmap_branch_b4h8i8.mp3" }
     ],
     "I am ___.": [
-      { text: "happy", audio: "/audio/week4_easy/mindmap_branch_1myx9c.mp3" },
-      { text: "excited", audio: "/audio/week4_easy/mindmap_branch_lumqqu.mp3" },
-      { text: "funny", audio: "/audio/week4_easy/mindmap_branch_1m82a2.mp3" },
-      { text: "calm", audio: "/audio/week4_easy/mindmap_branch_1taan.mp3" },
-      { text: "kind", audio: "/audio/week4_easy/mindmap_branch_1yk5w.mp3" },
-      { text: "creative", audio: "/audio/week4_easy/mindmap_branch_u3tynj.mp3" }
+      { text: "happy", audio: "/audio/week4_easy/mindmap_branch_j5ai51.mp3" },
+      { text: "excited", audio: "/audio/week4_easy/mindmap_branch_si7aep.mp3" },
+      { text: "funny", audio: "/audio/week4_easy/mindmap_branch_jsf6in.mp3" },
+      { text: "calm", audio: "/audio/week4_easy/mindmap_branch_m7vz5e.mp3" },
+      { text: "kind", audio: "/audio/week4_easy/mindmap_branch_mcfh25.mp3" },
+      { text: "creative", audio: "/audio/week4_easy/mindmap_branch_er142q.mp3" }
     ],
     "I can ___.": [
-      { text: "run fast", audio: "/audio/week4_easy/mindmap_branch_cj0ekx.mp3" },
-      { text: "draw well", audio: "/audio/week4_easy/mindmap_branch_1gsl62.mp3" },
-      { text: "read books", audio: "/audio/week4_easy/mindmap_branch_wp1r34.mp3" },
-      { text: "sing a song", audio: "/audio/week4_easy/mindmap_branch_ai7nbv.mp3" },
-      { text: "dance", audio: "/audio/week4_easy/mindmap_branch_1krp2r.mp3" },
-      { text: "help my friends", audio: "/audio/week4_easy/mindmap_branch_avqdeo.mp3" }
+      { text: "run fast", audio: "/audio/week4_easy/mindmap_branch_pmfsa.mp3" },
+      { text: "draw well", audio: "/audio/week4_easy/mindmap_branch_bvhcqd.mp3" },
+      { text: "read books", audio: "/audio/week4_easy/mindmap_branch_ks7921.mp3" },
+      { text: "sing a song", audio: "/audio/week4_easy/mindmap_branch_lkdeds.mp3" },
+      { text: "dance", audio: "/audio/week4_easy/mindmap_branch_rtsrxe.mp3" },
+      { text: "help my friends", audio: "/audio/week4_easy/mindmap_branch_iuno17.mp3" }
     ],
     "I love ___.": [
-      { text: "my family", audio: "/audio/week4_easy/mindmap_branch_wh98dk.mp3" },
-      { text: "my friends", audio: "/audio/week4_easy/mindmap_branch_4fvkkf.mp3" },
-      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_85usb6.mp3" },
-      { text: "learning", audio: "/audio/week4_easy/mindmap_branch_q18nq6.mp3" },
-      { text: "music", audio: "/audio/week4_easy/mindmap_branch_1q2q05.mp3" },
-      { text: "fun", audio: "/audio/week4_easy/mindmap_branch_26in.mp3" }
+      { text: "my family", audio: "/audio/week4_easy/mindmap_branch_w3jdkd.mp3" },
+      { text: "my friends", audio: "/audio/week4_easy/mindmap_branch_z35svq.mp3" },
+      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_ejtj3d.mp3" },
+      { text: "learning", audio: "/audio/week4_easy/mindmap_branch_vqwdi1.mp3" },
+      { text: "music", audio: "/audio/week4_easy/mindmap_branch_shwyww.mp3" },
+      { text: "fun", audio: "/audio/week4_easy/mindmap_branch_ovrxcq.mp3" }
     ],
     "I feel ___.": [
-      { text: "happy", audio: "/audio/week4_easy/mindmap_branch_1myx9c.mp3" },
-      { text: "excited", audio: "/audio/week4_easy/mindmap_branch_lumqqu.mp3" },
-      { text: "calm", audio: "/audio/week4_easy/mindmap_branch_1taan.mp3" },
-      { text: "joyful", audio: "/audio/week4_easy/mindmap_branch_j33idz.mp3" },
-      { text: "good", audio: "/audio/week4_easy/mindmap_branch_1w4ot.mp3" },
-      { text: "creative", audio: "/audio/week4_easy/mindmap_branch_u3tynj.mp3" }
+      { text: "happy", audio: "/audio/week4_easy/mindmap_branch_n5la5t.mp3" },
+      { text: "excited", audio: "/audio/week4_easy/mindmap_branch_joto95.mp3" },
+      { text: "calm", audio: "/audio/week4_easy/mindmap_branch_c4kqgc.mp3" },
+      { text: "joyful", audio: "/audio/week4_easy/mindmap_branch_repuqm.mp3" },
+      { text: "good", audio: "/audio/week4_easy/mindmap_branch_c70wni.mp3" },
+      { text: "creative", audio: "/audio/week4_easy/mindmap_branch_cckf18.mp3" }
     ],
     "My hobby is ___.": [
-      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_vmyfby.mp3" },
-      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_hv90ng.mp3" },
-      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_85usb6.mp3" },
-      { text: "singing", audio: "/audio/week4_easy/mindmap_branch_yn114j.mp3" },
-      { text: "dancing", audio: "/audio/week4_easy/mindmap_branch_nrzels.mp3" },
-      { text: "running", audio: "/audio/week4_easy/mindmap_branch_pnaojj.mp3" }
+      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_iwwf4s.mp3" },
+      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_jl3qdm.mp3" },
+      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_ptyzis.mp3" },
+      { text: "singing", audio: "/audio/week4_easy/mindmap_branch_348ai7.mp3" },
+      { text: "dancing", audio: "/audio/week4_easy/mindmap_branch_lje68i.mp3" },
+      { text: "running", audio: "/audio/week4_easy/mindmap_branch_8gzobn.mp3" }
     ]
   }
 };
