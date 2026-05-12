@@ -9,31 +9,13 @@ export default {
   keywords: ["glass", "wood", "stone", "cotton", "metal", "plastic", "saw", "heard", "felt", "smelt"],
   topic_talk_prompt: "Describe a visit to a market using your five senses — mention the materials!",
   sentence_frames: [
-    {
-        "template": "I saw orange ___ on the ground.",
-        "answers": [
-            "leaves"
-        ]
-    },
-    {
-        "template": "I heard ___ singing.",
-        "answers": [
-            "birds"
-        ]
-    },
-    {
-        "template": "I smelled fresh ___.",
-        "answers": [
-            "flowers"
-        ]
-    },
-    {
-        "template": "I felt the cool ___.",
-        "answers": [
-            "breeze"
-        ]
-    }
-],
+    { "template": "I went to the ___ market with my ___.", "answers": ["old town", "family"] },
+    { "template": "I saw rows of ___ stalls. There were ___ and ___.", "answers": ["colourful", "cotton scarves", "glass jars"] },
+    { "template": "I heard vendors ___ and children ___.", "answers": ["calling out prices", "laughing"] },
+    { "template": "I felt the ___ cloth / shelf. It felt so ___!", "answers": ["cotton", "soft"] },
+    { "template": "I smelt sweet ___ near the ___ stall.", "answers": ["cinnamon", "spice"] },
+    { "template": "My favourite thing at the market was the ___. It was made of ___.", "answers": ["stone bowl", "stone"] }
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -41,42 +23,13 @@ export default {
       show_by_default: false,
       scaffolding_stage: "low",
       words: [
-    {
-        "word": "leaves",
-        "vi": "lá",
-        "distractor": false
-    },
-    {
-        "word": "birds",
-        "vi": "chim",
-        "distractor": false
-    },
-    {
-        "word": "flowers",
-        "vi": "hoa",
-        "distractor": false
-    },
-    {
-        "word": "breeze",
-        "vi": "gió nhẹ",
-        "distractor": false
-    },
-    {
-        "word": "clouds",
-        "vi": "mây — không phải trên mặt đất",
-        "distractor": true
-    },
-    {
-        "word": "dogs",
-        "vi": "chó — không phải hát",
-        "distractor": true
-    },
-    {
-        "word": "heat",
-        "vi": "nóng bức — không phải mát",
-        "distractor": true
-    }
-]
+        { "word": "colourful", "vi": "đầy màu sắc", "distractor": false },
+        { "word": "cotton scarves", "vi": "khăn cotton", "distractor": false },
+        { "word": "cinnamon", "vi": "quế", "distractor": false },
+        { "word": "stone bowl", "vi": "bát đá", "distractor": false },
+        { "word": "vendors", "vi": "người bán hàng — không phải chim", "distractor": true },
+        { "word": "forest", "vi": "rừng — không phải chợ", "distractor": true }
+      ]
     }
   }
 };

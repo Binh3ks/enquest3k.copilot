@@ -8,5 +8,13 @@ export default {
   model_sentence: "Last night I found a magic carpet. It flew me to a farm. A farmer came out and gave me a banana. Then the carpet went to the sea. A pilot flew past and waved. Then it came home again. It was the best trip!",
   keywords: ["went", "flew", "came", "ran", "pilot", "doctor", "farmer", "teacher", "driver", "nurse"],
   topic_talk_prompt: "What job would you like — pilot, doctor, farmer, teacher, driver, or nurse? Why?",
-  audio_model: "/audio/week29/writing_model_easy.mp3"
+  audio_model: "/audio/week29/writing_model_easy.mp3",
+  sentence_frames: [
+    { "template": "One ___ I found a magic carpet in my ___." },
+    { "template": "The carpet ___ me to a big farm. A farmer ___ out and waved." },
+    { "template": "Then the carpet ___ to the ___. I saw ___ jumping in the sea!" },
+    { "template": "A ___ came and ___ past in a plane / helped me / waved at me." },
+    { "template": "I felt ___ because the trip was so ___!" },
+    { "template": "Then the carpet ___ home and I ___ my family everything." }
+  ]
 };

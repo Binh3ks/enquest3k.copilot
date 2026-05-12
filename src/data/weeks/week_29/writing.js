@@ -8,5 +8,39 @@ export default {
   model_sentence: "Last night, I found a magic carpet under my bed. I sat on it and it flew up! I went to a farm and a kind farmer gave me an apple. Then the carpet came down near a hospital and a doctor and nurse waved hello. A pilot flew past in his plane and I ran back to the carpet before it flew home. It was the best trip I ever had!",
   keywords: ["went", "flew", "came", "ran", "pilot", "doctor", "farmer", "teacher", "driver", "nurse", "adventure", "journey"],
   topic_talk_prompt: "What job would you like to have — pilot, doctor, farmer, teacher, driver, or nurse? Why? Speak for at least 5 sentences!",
-  audio_model: "/audio/week29/writing_model.mp3"
+  audio_model: "/audio/week29/writing_model.mp3",
+  sentence_frames: [
+    {
+      "template": "I found a ___ under my ___ and it flew me to a ___.",
+      "answers": ["magic carpet", "bed", "wonderful island"]
+    },
+    {
+      "template": "When I arrived, I saw ___ creatures and ___ dolphins near the ___.",
+      "answers": ["tiny", "friendly", "coast"]
+    },
+    {
+      "template": "I met a ___ who ___ and helped me ___.",
+      "answers": ["kind doctor", "came quickly", "feel better"]
+    },
+    {
+      "template": "A ___ drove us along the ___ road while the ___ flew above.",
+      "answers": ["friendly driver", "tiny island", "pilot"]
+    },
+    {
+      "template": "We took a ___ of the dolphins and the ___ teacher ___ at the camera.",
+      "answers": ["photo", "wonderful", "smiled"]
+    },
+    {
+      "template": "The farmer ___ us fresh fruit and the nurse ___ everyone safely.",
+      "answers": ["gave", "checked"]
+    },
+    {
+      "template": "At the station, we found the magic ___ again and it ___ us safely ___.",
+      "answers": ["carpet", "carried", "home"]
+    },
+    {
+      "template": "It was the most ___ trip I ever had because I met so many ___ people and saw ___ things.",
+      "answers": ["wonderful", "kind", "amazing"]
+    }
+  ]
 };
