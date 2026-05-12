@@ -54,7 +54,7 @@ const mindMapContent = {
       { text: "juice, first I get a clean glass", audio: "/audio/week25_easy/mindmap_branch_33.mp3" },
       { text: "my bag ready, first I check my timetable", audio: "/audio/week25_easy/mindmap_branch_34.mp3" },
       { text: "a fruit salad, first I wash the fruit", audio: "/audio/week25_easy/mindmap_branch_35.mp3" },
-      { text: "porridge, first I pour the oats in the bowl", audio: "/audio/week25_easy/mindmap_branch_36.mp3" }
+      { text: "porridge, first I pour oats in a bowl", audio: "/audio/week25_easy/mindmap_branch_36.mp3" }
     ]
   }
 };
