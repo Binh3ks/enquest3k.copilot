@@ -8,6 +8,7 @@ export default {
       id: 1,
       question_en: "What is her name?",
       answer: ["Mia"],
+      clue_statement: "Her name is Mia.",
       hint_en: "It starts with 'M'...",
       hint_vi: "Nó bắt đầu bằng chữ 'M'..."
     },
@@ -15,6 +16,7 @@ export default {
       id: 2,
       question_en: "Does she like to play?",
       answer: ["yes", "yes she does"],
+      clue_statement: "She likes to play.",
       hint_en: "The answer is 'yes' or 'no'...",
       hint_vi: "Câu trả lời là 'yes' hoặc 'no'..."
     },
@@ -22,6 +24,7 @@ export default {
       id: 3,
       question_en: "What does she do when she plays?",
       answer: ["smile", "she smiles"],
+      clue_statement: "She smiles when she plays.",
       hint_en: "She makes a happy face...",
       hint_vi: "Cô ấy tạo ra một khuôn mặt vui vẻ..."
     }
