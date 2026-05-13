@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Where do you visit?",
       answer: ["farm", "the farm", "a farm"],
+      clue_statement: "You visit the farm.",
       hint_en: "A place with animals...",
       hint_vi: "Một nơi có động vật..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What animals do you see?",
       answer: ["cow and chicken", "cow", "chicken", "animals"],
+      clue_statement: "You see cow and chicken.",
       hint_en: "Farm animals...",
       hint_vi: "Động vật trang trại..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "Is the farm quiet or noisy?",
       answer: ["quiet", "the farm is quiet"],
+      clue_statement: "The farm is quiet.",
       hint_en: "Not loud...",
       hint_vi: "Không ồn..."
+    },
+    {
+      id: 4,
+      question_en: "What does the cow eat?",
+      answer: ["grass", "grass"],
+      clue_statement: "The cow eats grass.",
+      hint_en: "Think about what the cow eats...",
+      hint_vi: "Nghĩ về the cow..."
+    },
+    {
+      id: 5,
+      question_en: "What is the field like?",
+      answer: ["green", "The field is green"],
+      clue_statement: "The field is green.",
+      hint_en: "Think about the field...",
+      hint_vi: "Nghĩ về field..."
     }
   ],
   question: {

@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Where do I play?",
       answer: ["park", "at the park", "playground", "at the playground"],
+      clue_statement: "I play at the playground.",
       hint_en: "A place outside...",
       hint_vi: "Một nơi bên ngoài..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What do I do at the library?",
       answer: ["read", "read a book"],
+      clue_statement: "Read a book.",
       hint_en: "With books...",
       hint_vi: "Với sách..."
     },
@@ -23,6 +25,7 @@ export default {
       id: 3,
       question_en: "Where do we buy food?",
       answer: ["store", "at the store", "the store"],
+      clue_statement: "We buy food at the store.",
       hint_en: "A place to buy...",
       hint_vi: "Nơi để mua..."
     },
@@ -30,6 +33,7 @@ export default {
       id: 4,
       question_en: "What animal do I see?",
       answer: ["lion", "a lion", "big lion"],
+      clue_statement: "I see big lion.",
       hint_en: "A big animal...",
       hint_vi: "Một con vật lớn..."
     },
@@ -37,6 +41,7 @@ export default {
       id: 5,
       question_en: "When do I go to school?",
       answer: ["monday", "on monday", "on Monday"],
+      clue_statement: "I go to school on monday.",
       hint_en: "A day of the week...",
       hint_vi: "Một ngày trong tuần..."
     }

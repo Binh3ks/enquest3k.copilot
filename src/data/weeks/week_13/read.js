@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What time does the child wake up?",
       answer: ["7 o'clock", "7", "seven"],
+      clue_statement: "The child wake ups 7 o'clock.",
       hint_en: "A time in the morning...",
       hint_vi: "Một thời gian buổi sáng..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What does the child eat for breakfast?",
       answer: ["rice and eggs", "rice", "eggs"],
+      clue_statement: "The child eat fors rice and eggs breakfast.",
       hint_en: "A type of food...",
       hint_vi: "Một loại thức ăn..."
     },
@@ -23,6 +25,7 @@ export default {
       id: 3,
       question_en: "What time does the child go to bed?",
       answer: ["9 o'clock", "9", "nine"],
+      clue_statement: "The child go toes 9 o'clock.",
       hint_en: "A time at night...",
       hint_vi: "Một thời gian buổi tối..."
     }

@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Where does the child play with friends?",
       answer: ["park", "at the park", "the park"],
+      clue_statement: "The child play withs at the park friends.",
       hint_en: "A place with grass and trees...",
       hint_vi: "Một nơi có cỏ và cây..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What does the child do at the library?",
       answer: ["read", "read a book", "reads"],
+      clue_statement: "Read a book.",
       hint_en: "Something you do with books...",
       hint_vi: "Điều bạn làm với sách..."
     },
@@ -23,6 +25,7 @@ export default {
       id: 3,
       question_en: "Where do they buy food?",
       answer: ["supermarket", "at the supermarket", "the supermarket"],
+      clue_statement: "They buy food at the supermarket.",
       hint_en: "A large store...",
       hint_vi: "Một cửa hàng lớn..."
     },
@@ -30,6 +33,7 @@ export default {
       id: 4,
       question_en: "What animals does the child see at the zoo?",
       answer: ["lion and monkey", "lion monkey", "a lion and a monkey", "monkey and lion"],
+      clue_statement: "The child see ats a lion and a monkey.",
       hint_en: "Two animals...",
       hint_vi: "Hai con vật..."
     },
@@ -37,6 +41,7 @@ export default {
       id: 5,
       question_en: "Where do they eat lunch?",
       answer: ["restaurant", "at the restaurant", "the restaurant", "at a restaurant"],
+      clue_statement: "They eat lunch at the restaurant.",
       hint_en: "A place to eat food...",
       hint_vi: "Một nơi để ăn..."
     }

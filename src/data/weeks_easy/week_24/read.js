@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Why was I worried in the morning?",
       answer: ["Because I could not find my homework", "She lost her homework", "She could not find her homework"],
+      clue_statement: "Because I could not find my homework.",
       hint_en: "I was worried because I could not find my...",
       hint_vi: "Toi worried vi toi khong the tim thay...",
       audio_url: "/audio/week24_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "Why were we excited at school?",
       answer: ["Because there was a special visitor", "There was a famous author", "A special visitor came"],
+      clue_statement: "Because there was a special visitor.",
       hint_en: "We were excited because there was a special...",
       hint_vi: "Chung toi excited vi co mot vi khach...",
       audio_url: "/audio/week24_easy/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "How did I feel at the end of the day?",
       answer: ["Tired but happy", "I was tired but happy", "Tired and happy"],
+      clue_statement: "I was tired but happy.",
       hint_en: "At the end of the day, I was... but...",
       hint_vi: "Cuoi ngay, toi... nhung...",
       audio_url: "/audio/week24_easy/read_q3.mp3"

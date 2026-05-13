@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is in the student's bag?",
       answer: ["pencils", "markers", "pencils and markers"],
+      clue_statement: "There is pencils and markers in the student's bag.",
       hint_en: "Look in the bag...",
       hint_vi: "Nhìn vào trong túi..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What is on the shelves?",
       answer: ["books", "there are books", "books on the shelves"],
+      clue_statement: "There is books on the shelves on the shelves.",
       hint_en: "The shelves have...",
       hint_vi: "Kệ có..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What do they use for art today?",
       answer: ["crayons and papers", "crayons", "papers"],
+      clue_statement: "They use crayons and papers for art today.",
       hint_en: "They use... for art",
       hint_vi: "Họ dùng... cho nghệ thuật"
+    },
+    {
+      id: 4,
+      question_en: "What are in the my room?",
+      answer: ["desks", "desks", "There are desks"],
+      clue_statement: "There are desks in the my room.",
+      hint_en: "Look in the my room...",
+      hint_vi: "Nhìn vào my room..."
+    },
+    {
+      id: 5,
+      question_en: "Where does i sit?",
+      answer: ["chair at a desk", "on the chair at a desk", "on chair at a desk"],
+      clue_statement: "I sit on the chair at a desk.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ],
   question: {

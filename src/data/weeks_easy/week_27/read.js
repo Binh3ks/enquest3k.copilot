@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What does Maya put in the pot first?",
       answer: ["A seed", "One seed", "Seeds"],
+      clue_statement: "Maya put ins one seed the pot first.",
       hint_en: "Maya put a... in the soil.",
       hint_vi: "Maya bo mot... vao dat.",
       audio_url: "/audio/week27_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What three things do plants need?",
       answer: ["Water, sun, and nutrients", "Water, sunlight, and nutrients"],
+      clue_statement: "Water, sunlight, and nutrients.",
       hint_en: "Plants need water, sun, and...",
       hint_vi: "Cay can nuoc, mat troi, va...",
       audio_url: "/audio/week27_easy/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "On which day did the sprout come out?",
       answer: ["Day Five", "On Day Five", "The fifth day"],
+      clue_statement: "The fifth day.",
       hint_en: "The sprout came out on Day...",
       hint_vi: "Mam cay lo ra vao Ngay thu...",
       audio_url: "/audio/week27_easy/read_q3.mp3"
@@ -33,9 +36,18 @@ export default {
       id: 4,
       question_en: "What is the life cycle order?",
       answer: ["Seed, sprout, stem, leaf, flower"],
+      clue_statement: "The life cycle order is seed, sprout, stem, leaf, flower.",
       hint_en: "Seed, sprout, stem, leaf, and...",
       hint_vi: "Hat giong, mam cay, than cay, la, va...",
       audio_url: "/audio/week27_easy/read_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "What does she added?",
+      answer: ["water", "water"],
+      clue_statement: "She added water.",
+      hint_en: "Think about what she addeds...",
+      hint_vi: "Nghĩ về she..."
     }
   ]
 };

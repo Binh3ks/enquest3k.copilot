@@ -5,8 +5,24 @@ export default {
   content_vi: "Hôm qua là một ngày vui! Buổi sáng, tôi **đã đi bộ** đến trường. Tôi **đã nhìn** bầu trời xanh. Tôi **đã nói chuyện** với bạn bè. Đến trưa, tôi **đã giúp** mẹ. Mẹ **đã nấu** cơm và súp. Chúng tôi **đã dọn** bàn cùng nhau. Buổi chiều, tôi **đã chơi** ở công viên. Tôi **đã xem** bạn đạp xe. Tôi **đã lắng nghe** tiếng chim hót. Rồi tôi **đã rửa** tay. Tôi **đã hoàn thành** bài tập. Chúng tôi **đã bắt đầu** một trò chơi mới. Hôm qua là ngày tuyệt vời nhất!",
   audio_url: "/audio/week21_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "Where did Max walk in the morning?", answer: ["To school", "He walked to school", "School"], hint_en: "He walked to...", hint_vi: "Cậu ấy đi bộ đến..." },
-    { id: 2, question_en: "What did his mom cook?", answer: ["Rice and soup", "She cooked rice and soup"], hint_en: "She cooked...", hint_vi: "Mẹ nấu..." },
-    { id: 3, question_en: "What did Max do in the park?", answer: ["He played", "He played in the park", "Played"], hint_en: "He...", hint_vi: "Cậu ấy..." }
+    { id: 1, question_en: "Where did Max walk in the morning?", answer: ["To school", "He walked to school", "School"], clue_statement: "He walked to school.", hint_en: "He walked to...", hint_vi: "Cậu ấy đi bộ đến..." },
+    { id: 2, question_en: "What did his mom cook?", answer: ["Rice and soup", "She cooked rice and soup"], clue_statement: "She cooked rice and soup.", hint_en: "She cooked...", hint_vi: "Mẹ nấu..." },
+    { id: 3, question_en: "What did Max do in the park?", answer: ["He played", "He played in the park", "Played"], clue_statement: "He played in the park.", hint_en: "He...", hint_vi: "Cậu ấy..." },
+    {
+      id: 4,
+      question_en: "Where does i looked?",
+      answer: ["blue sky and smiled", "at the blue sky and smiled", "at blue sky and smiled"],
+      clue_statement: "I looked at the blue sky and smiled.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "Where does i talked?",
+      answer: ["my friends outside the school gate", "to the my friends outside the school gate", "to my friends outside the school gate"],
+      clue_statement: "I talked to the my friends outside the school gate.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    }
   ]
 };

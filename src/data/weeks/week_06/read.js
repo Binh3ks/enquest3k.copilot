@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What are the children looking for?",
       answer: ["treasure", "hidden treasure", "gold coins"],
+      clue_statement: "The children looking for are hidden treasure.",
       hint_en: "Something valuable...",
       hint_vi: "Thứ gì đó quý giá..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "Where did they find the first clue?",
       answer: ["in the box", "box"],
+      clue_statement: "They find the in the box first clue.",
       hint_en: "A container...",
       hint_vi: "Một cái hộp..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "Where was the treasure hiding?",
       answer: ["under the desk", "under the big desk", "desk"],
+      clue_statement: "Under the big desk.",
       hint_en: "Below something you work on...",
       hint_vi: "Dưới thứ bạn làm việc trên đó..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i look?",
+      answer: ["floor", "on the floor", "on floor"],
+      clue_statement: "I look on the floor.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does he find?",
+      answer: ["clue", "a clue"],
+      clue_statement: "He finds a clue.",
+      hint_en: "Think about what he finds...",
+      hint_vi: "Nghĩ về he..."
     }
   ],
   question: {

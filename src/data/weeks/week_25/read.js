@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What was the FIRST thing Leo did to make his sandwich?",
       answer: ["He got two slices of bread", "He grabbed two slices of bread from the bag", "First, he took two slices of bread"],
+      clue_statement: "He grabbed two slices of bread from the bag.",
       hint_en: "First, he got two... of bread.",
       hint_vi: "Dau tien, anh lay hai... banh mi.",
       audio_url: "/audio/week25/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What did Leo use the knife for?",
       answer: ["To spread jam on the bread", "He used the knife to spread jam", "To spread strawberry jam on one slice"],
+      clue_statement: "Leo use the to spread strawberry jam on one slice knife for.",
       hint_en: "He used the knife to spread...",
       hint_vi: "Anh dung dao de phet...",
       audio_url: "/audio/week25/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "What are the four steps to brush your teeth described in the story?",
       answer: ["Squeeze toothpaste, brush teeth, rinse mouth, tidy up", "First squeeze toothpaste, next brush teeth, then rinse, finally tidy up"],
+      clue_statement: "The four steps to brush your teeth described in the story are first squeeze toothpaste, next brush teeth, then rinse, finally tidy up.",
       hint_en: "First... Next... Then... Finally...",
       hint_vi: "First... Next... Then... Finally...",
       audio_url: "/audio/week25/read_q3.mp3"
@@ -33,6 +36,7 @@ export default {
       id: 4,
       question_en: "Why does Leo think the sequence is important?",
       answer: ["Because if you do steps in the wrong order it will be a disaster", "If you eat first and spread jam later it would be a disaster", "The sequence keeps things in the right order"],
+      clue_statement: "Because if you do steps in the wrong order it will be a disaster.",
       hint_en: "Leo said if he tried to eat first and spread jam later, it would be...",
       hint_vi: "Leo noi neu anh co gang an truoc va phet mut sau, do se la...",
       audio_url: "/audio/week25/read_q4.mp3"

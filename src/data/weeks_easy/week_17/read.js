@@ -5,8 +5,24 @@ export default {
   content_vi: "Hôm nay trời **mưa**! Tôi nhìn ra cửa sổ. Bầu trời màu xám. Trời **lạnh** bên ngoài. Tôi lấy **áo khoác**. Tôi mang **ủng**. Tôi tìm **ô**. Bây giờ tôi sẵn sàng rồi! Tôi đang **mặc** **áo khoác** và **ủng**. Tôi đang mang **ô**. Tôi đi bộ đến trường. Chân tôi không bị ướt. Người tôi **ấm**. Mưa rơi từ mây. Cô giáo tôi nói mưa được gọi là **lượng mưa**. Nước bốc lên như **sự bốc hơi**. Rồi nó rơi xuống thành mưa! Đôi khi trời **nắng**. Nhưng hôm nay trời đang **mưa**. Tôi thích những ngày **mưa**!",
   audio_url: "/audio/week17_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What is the weather like today?", answer: ["It is raining", "Raining", "It is cold and raining"], hint_en: "The weather is...", hint_vi: "Thời tiết..." },
-    { id: 2, question_en: "What is the child wearing?", answer: ["A coat and boots", "Coat and boots", "Wearing a coat and boots"], hint_en: "The child is wearing...", hint_vi: "Đứa trẻ đang mặc..." },
-    { id: 3, question_en: "What is precipitation?", answer: ["Rain", "Rain is precipitation", "Precipitation is rain"], hint_en: "Precipitation is...", hint_vi: "Lượng mưa là..." }
+    { id: 1, question_en: "What is the weather like today?", answer: ["It is raining", "Raining", "It is cold and raining"], clue_statement: "It is cold and raining.", hint_en: "The weather is...", hint_vi: "Thời tiết..." },
+    { id: 2, question_en: "What is the child wearing?", answer: ["A coat and boots", "Coat and boots", "Wearing a coat and boots"], clue_statement: "The child wearing is wearing a coat and boots.", hint_en: "The child is wearing...", hint_vi: "Đứa trẻ đang mặc..." },
+    { id: 3, question_en: "What is precipitation?", answer: ["Rain", "Rain is precipitation", "Precipitation is rain"], clue_statement: "Rain is precipitation.", hint_en: "Precipitation is...", hint_vi: "Lượng mưa là..." },
+    {
+      id: 4,
+      question_en: "What is the sky like?",
+      answer: ["grey", "The sky is grey"],
+      clue_statement: "The sky is grey.",
+      hint_en: "Think about the sky...",
+      hint_vi: "Nghĩ về sky..."
+    },
+    {
+      id: 5,
+      question_en: "Where does i put?",
+      answer: ["my boots", "on the my boots", "on my boots"],
+      clue_statement: "I put on the my boots.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    }
   ]
 };

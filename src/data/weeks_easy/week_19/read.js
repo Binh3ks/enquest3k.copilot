@@ -5,8 +5,16 @@ export default {
   content_vi: "Nhìn kìa! Tôi tìm thấy một **album**. Nó có **ảnh** cũ. Đây là **ảnh** của tôi. Tôi là một **em bé**! Tôi **nhỏ** quá. Tôi **nhỏ bé** và **dễ thương**. Mặt tôi tròn. Trong **ảnh** này, tôi một tuổi. Tôi là **em bé** **ồn ào**. Nhưng ở đây tôi **yên lặng**. Tôi đang ngủ. Bà tôi nói, \"Con **dễ thương**.\" Đây là **ảnh** khác. Tôi ở **mẫu giáo**. Tôi năm tuổi. Tôi không phải **em bé**. Tôi là trẻ **nhỏ tuổi**. Tôi vẫn **nhỏ**. Nhưng bây giờ tôi **lớn lên**! Nhìn quần áo cũ! Chúng **nhỏ**. Tôi không mặc được bây giờ. Tôi **lớn lên** mỗi năm. Tôi cao hơn. Những **ảnh** này là **kỷ niệm** đặc biệt. Chúng cho tôi thấy khi tôi **nhỏ**. Bây giờ tôi lớn! **Quá khứ** khác. Nhưng tôi nhớ. Tôi nhớ khi tôi **nhỏ**. Tôi yêu **kỷ niệm** của tôi!",
   audio_url: "/audio/week19_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What did the child find?", answer: ["An album", "A photo album", "An old album"], hint_en: "The child found...", hint_vi: "Đứa trẻ tìm thấy..." },
-    { id: 2, question_en: "How was the child before?", answer: ["Small and cute", "Small", "Little", "A baby"], hint_en: "The child was...", hint_vi: "Đứa trẻ..." },
-    { id: 3, question_en: "What are the photos?", answer: ["Special memories", "Memories"], hint_en: "The photos are...", hint_vi: "Những ảnh là..." }
+    { id: 1, question_en: "What did the child find?", answer: ["An album", "A photo album", "An old album"], clue_statement: "The child find a photo album.", hint_en: "The child found...", hint_vi: "Đứa trẻ tìm thấy..." },
+    { id: 2, question_en: "How was the child before?", answer: ["Small and cute", "Small", "Little", "A baby"], clue_statement: "Small and cute.", hint_en: "The child was...", hint_vi: "Đứa trẻ..." },
+    { id: 3, question_en: "What are the photos?", answer: ["Special memories", "Memories"], clue_statement: "The photos are special memories.", hint_en: "The photos are...", hint_vi: "Những ảnh là..." },
+    {
+      id: 4,
+      question_en: "What is the past like?",
+      answer: ["different", "The past is different"],
+      clue_statement: "The past is different.",
+      hint_en: "Think about the past...",
+      hint_vi: "Nghĩ về past..."
+    }
   ]
 };

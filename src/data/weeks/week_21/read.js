@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Did Max walk or take the bus to school?",
       answer: ["He walked", "Max walked to school", "He walked to school"],
+      clue_statement: "Max walk did not or take the bus to school.",
       hint_en: "He went to school on...",
       hint_vi: "Ban ay den truong bang...",
       audio_url: "/audio/week21/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What did Max do at break time?",
       answer: ["He played soccer", "He played football", "Played soccer"],
+      clue_statement: "He played football.",
       hint_en: "He played...",
       hint_vi: "Ban ay da choi...",
       audio_url: "/audio/week21/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "How many stars did Max count?",
       answer: ["Ten stars", "10 stars", "He counted ten stars"],
+      clue_statement: "He counted ten stars.",
       hint_en: "He counted...",
       hint_vi: "Ban ay dem duoc...",
       audio_url: "/audio/week21/read_q3.mp3"
@@ -33,6 +36,7 @@ export default {
       id: 4,
       question_en: "What time did Max start to sleep?",
       answer: ["At nine o'clock", "At nine o clock", "At 9 o clock", "He slept at nine", "nine o'clock"],
+      clue_statement: "He slept at nine.",
       hint_en: "At ... o clock",
       hint_vi: "Luc ... gio",
       audio_url: "/audio/week21/read_q4.mp3"

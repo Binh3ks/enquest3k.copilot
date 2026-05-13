@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What did Leo decide to create on Sunday afternoon?",
       answer: ["A comic strip", "He created a comic strip", "A comic strip about his weekend"],
+      clue_statement: "Leo decide to a comic strip about his weekend create on Sunday afternoon.",
       hint_en: "Leo decided to create a...",
       hint_vi: "Leo quyet dinh tao ra mot...",
       audio_url: "/audio/week26_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What did Max do in Panel Two?",
       answer: ["Max played with his ball", "He played with his ball", "Max chased the ball"],
+      clue_statement: "Max played with his ball in panel two.",
       hint_en: "Max played with his...",
       hint_vi: "Max choi voi...",
       audio_url: "/audio/week26_easy/read_q2.mp3"
@@ -25,9 +27,26 @@ export default {
       id: 3,
       question_en: "How did Leo and Max feel at the end of the weekend?",
       answer: ["They were tired but very happy", "Tired but happy", "Very happy but tired"],
+      clue_statement: "They were tired but very happy.",
       hint_en: "They were tired but very...",
       hint_vi: "Ho met nhung rat...",
       audio_url: "/audio/week26_easy/read_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Where does he wanted?",
+      answer: ["create a comic strip about his weekend", "to the create a comic strip about his weekend", "to create a comic strip about his weekend"],
+      clue_statement: "He wanted to the create a comic strip about his weekend.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does everyone watched?",
+      answer: ["and clapped", "and clapped"],
+      clue_statement: "Everyone watched and clapped.",
+      hint_en: "Think about what everyone watcheds...",
+      hint_vi: "Nghĩ về everyone..."
     }
   ]
 };

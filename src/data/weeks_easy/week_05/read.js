@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is his name?",
       answer: ["Tim"],
+      clue_statement: "His name is tim.",
       hint_en: "It starts with 'T'...",
       hint_vi: "Nó bắt đầu bằng chữ 'T'..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "Where does he sleep?",
       answer: ["bedroom", "in his bedroom", "in the bedroom"],
+      clue_statement: "He sleeps in his bedroom.",
       hint_en: "The room where you sleep...",
       hint_vi: "Phòng mà bạn ngủ..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What is in his bedroom?",
       answer: ["bed", "a bed"],
+      clue_statement: "There is a bed in his bedroom.",
       hint_en: "You sleep on it...",
       hint_vi: "Bạn ngủ trên nó..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i live?",
+      answer: ["house", "in the house", "in house"],
+      clue_statement: "I live in the house.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "Where does i sleep?",
+      answer: ["my bedroom", "in the my bedroom", "in my bedroom"],
+      clue_statement: "I sleep in the my bedroom.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ],
   question: {

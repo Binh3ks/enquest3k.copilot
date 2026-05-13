@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is the young boy doing in the park?",
       answer: ["running after his dog", "running", "chasing his dog"],
+      clue_statement: "The young boy doing in the park is running after his dog.",
       hint_en: "He's moving fast...",
       hint_vi: "Cậu ấy đang di chuyển nhanh..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What are the teenagers flying?",
       answer: ["kites", "colorful kites", "flying kites"],
+      clue_statement: "The teenagers flying are colorful kites.",
       hint_en: "Something in the sky with string...",
       hint_vi: "Thứ gì đó trên trời có dây..."
     },
@@ -23,6 +25,7 @@ export default {
       id: 3,
       question_en: "Where is the family having their picnic?",
       answer: ["on the grass", "grass", "on grass"],
+      clue_statement: "The family having their picnic is on the grass.",
       hint_en: "A green area...",
       hint_vi: "Một khu vực xanh..."
     },
@@ -30,6 +33,7 @@ export default {
       id: 4,
       question_en: "What are the two women doing?",
       answer: ["jogging", "jogging around the path", "running"],
+      clue_statement: "The two women doing are jogging around the path.",
       hint_en: "An exercise activity...",
       hint_vi: "Một hoạt động thể dục..."
     }

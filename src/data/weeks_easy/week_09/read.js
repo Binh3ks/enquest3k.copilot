@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What kind of building does the child see?",
       answer: ["tall building", "modern building", "tall", "modern"],
+      clue_statement: "Modern building.",
       hint_en: "Very high...",
       hint_vi: "Rất cao..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What color is the bus?",
       answer: ["yellow", "yellow bus"],
+      clue_statement: "Yellow bus.",
       hint_en: "A bright color...",
       hint_vi: "Một màu sáng..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "How is the traffic?",
       answer: ["heavy", "heavy traffic", "busy"],
+      clue_statement: "Heavy traffic.",
       hint_en: "Many vehicles...",
       hint_vi: "Nhiều phương tiện..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i walk?",
+      answer: ["busy street", "on the busy street", "on busy street"],
+      clue_statement: "I walk on the busy street.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does a yellow bus?",
+      answer: ["stops near me", "stops near me"],
+      clue_statement: "A yellow bus stops near me.",
+      hint_en: "Think about what a yellow buss...",
+      hint_vi: "Nghĩ về a yellow..."
     }
   ],
   question: {

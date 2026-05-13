@@ -18,6 +18,7 @@ export default {
       question_en: "Where is the ruler?",
       question_vi: "Thước kẻ ở đâu?",
       answer: ["Next to the pen", "In the pencil case", "next to the pen"],
+      clue_statement: "The ruler is in the pencil case.",
       hint_en: "Look in the pencil case..."
     },
     {
@@ -25,6 +26,7 @@ export default {
       question_en: "What is in the classroom?",
       question_vi: "Có gì trong lớp học?",
       answer: ["A whiteboard", "A teacher", "A computer"],
+      clue_statement: "There is a whiteboard in the classroom.",
       hint_en: "The teacher uses it to write..."
     }
   ]

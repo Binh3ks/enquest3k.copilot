@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is Emma's poster about?",
       answer: ["her world", "family and talents", "her family", "family"],
+      clue_statement: "Emma's poster about is family and talents.",
       hint_en: "About Emma's life...",
       hint_vi: "Về cuộc sống của Emma..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "How many people are in Emma's family?",
       answer: ["4", "four", "4 people"],
+      clue_statement: "4 people.",
       hint_en: "A number...",
       hint_vi: "Một con số..."
     },
@@ -23,6 +25,7 @@ export default {
       id: 3,
       question_en: "What can Emma do well?",
       answer: ["sing", "dance", "draw", "sing and dance"],
+      clue_statement: "Sing and dance.",
       hint_en: "Her talents...",
       hint_vi: "Tài năng của cô ấy..."
     }

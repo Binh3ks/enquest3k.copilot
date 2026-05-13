@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is the girl's name?",
       answer: ["Emma"],
+      clue_statement: "The girl's name is emma.",
       hint_en: "Her name...",
       hint_vi: "Tên cô ấy..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What can Emma do?",
       answer: ["sing", "dance", "draw", "sing and dance", "draw animals"],
+      clue_statement: "Sing and dance.",
       hint_en: "Her talents...",
       hint_vi: "Tài năng của cô ấy..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "How many people in Emma's family?",
       answer: ["4", "four", "4 people"],
+      clue_statement: "4 people.",
       hint_en: "A number...",
       hint_vi: "Một con số..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i want?",
+      answer: ["show you my world", "to the show you my world", "to show you my world"],
+      clue_statement: "I want to the show you my world.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "Where does audience listen?",
+      answer: ["me", "to the me", "to me"],
+      clue_statement: "Audience listens to the me.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ],
   question: {

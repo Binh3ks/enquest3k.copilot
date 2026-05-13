@@ -5,8 +5,24 @@ export default {
   content_vi: "Hôm nay là trận bóng đầu tiên của tôi! Tôi rất phấn khích. Mẹ tôi đến xem. Bố tôi mang máy ảnh. Nhìn tôi kìa! Tôi đang **chạy** rất nhanh. Chân tôi đang di chuyển nhanh. Tim tôi đập nhanh. Vui quá! Bạn tôi đang **sút** bóng cho tôi. Tôi đang **bắt** nó bằng chân. Bây giờ tôi đang **chuyền** nó cho bạn khác. Bạn ấy đang **chạy** về phía khung **thành**. Ồ! Quả bóng có **năng lượng**. Nó đang **chuyển động**. Bóng đang bay nhanh trong không khí. **Đội** chúng tôi chơi tốt. Chúng tôi làm việc cùng nhau. Mọi người đang **cổ vũ**. \"Lên nào, lên nào!\" họ hét. Ôi không! Tôi **ném** bóng bằng tay. Đó là sai lầm! Trong bóng đá, tôi chỉ có thể dùng chân. **Đội** kia đang **ghi** một **bàn thắng**. Họ **nhảy** lên xuống. Họ vui mừng. Tôi cũng muốn **ghi** **bàn thắng**! Lần sau, tôi sẽ luyện tập nhiều hơn. Tôi yêu chơi bóng đá!",
   audio_url: "/audio/week16/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "How does the boy feel about his first soccer game?", answer: ["He is very excited", "Very excited", "Excited"], hint_en: "The boy is...", hint_vi: "Cậu bé..." },
-    { id: 2, question_en: "What is the boy doing with the ball?", answer: ["He is catching and passing it", "Catching and passing", "Passing the ball"], hint_en: "He is...", hint_vi: "Cậu bé đang..." },
-    { id: 3, question_en: "What gives the ball energy to move?", answer: ["Kicking it", "Kicking", "The kick"], hint_en: "Kicking...", hint_vi: "Sút..." }
+    { id: 1, question_en: "How does the boy feel about his first soccer game?", answer: ["He is very excited", "Very excited", "Excited"], clue_statement: "He is very excited.", hint_en: "The boy is...", hint_vi: "Cậu bé..." },
+    { id: 2, question_en: "What is the boy doing with the ball?", answer: ["He is catching and passing it", "Catching and passing", "Passing the ball"], clue_statement: "He is catching and passing it.", hint_en: "He is...", hint_vi: "Cậu bé đang..." },
+    { id: 3, question_en: "What gives the ball energy to move?", answer: ["Kicking it", "Kicking", "The kick"], clue_statement: "Kicking it.", hint_en: "Kicking...", hint_vi: "Sút..." },
+    {
+      id: 4,
+      question_en: "What is the this like?",
+      answer: ["fun", "The this is fun"],
+      clue_statement: "The this is fun.",
+      hint_en: "Think about the this...",
+      hint_vi: "Nghĩ về this..."
+    },
+    {
+      id: 5,
+      question_en: "What does the ball have?",
+      answer: ["energy", "energy"],
+      clue_statement: "The ball has energy.",
+      hint_en: "Think about what the ball haves...",
+      hint_vi: "Nghĩ về the ball..."
+    }
   ]
 };

@@ -5,8 +5,24 @@ export default {
   content_vi: "Thám tử Luna yêu thích những bí ẩn. Một ngày, cô tìm thấy một bản đồ **cũ** của thị trấn. Bản đồ từ một trăm năm trước! Luna nghiên cứu bản đồ cẩn thận. Có một khu **chợ** lớn gần **sông**. Có nhiều cây **cây** cao dọc theo **đường**. Có một ngôi **đền** đẹp ở cuối **đường** chính. Có một chiếc **cầu** gỗ bắc qua **sông**. Có những **tòa nhà** nhỏ xung quanh **chợ**. Luna đi đến cùng một nơi hôm nay. Bây giờ có những **tòa nhà** **mới** cao nơi **chợ** **cũ** đã từng đứng. Có một chiếc **cầu** **mới** lớn bắc qua **sông**. Vẫn còn một số **cây**, nhưng không nhiều. Chỉ có ngôi **đền** vẫn còn ở đó! Luna đứng trước ngôi **đền**. Cô nhìn vào bản đồ **cũ** rồi nhìn vào thị trấn **mới**. Cô mỉm cười. **Làng** đã lớn thành một thành phố lớn. Nhưng ngôi **đền** **cũ** vẫn còn đứng đó. Đó là sợi dây liên kết giữa quá khứ và hiện tại. Luna nói, 'Quá khứ vẫn còn đây nếu bạn nhìn cẩn thận!'",
   audio_url: "/audio/week20/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What did Detective Luna find one day?", answer: ["An old map", "A map of her town", "An old town map"], hint_en: "Detective Luna found...", hint_vi: "Thám tử Luna tìm thấy..." },
-    { id: 2, question_en: "What was near the river on the old map?", answer: ["A market", "A big market", "The market"], hint_en: "Near the river there was...", hint_vi: "Gần sông có..." },
-    { id: 3, question_en: "What building is still there today?", answer: ["The temple", "A temple", "Temple"], hint_en: "Only the ___ is still there.", hint_vi: "Chỉ còn..." }
+    { id: 1, question_en: "What did Detective Luna find one day?", answer: ["An old map", "A map of her town", "An old town map"], clue_statement: "Detective Luna find a map of her town one day.", hint_en: "Detective Luna found...", hint_vi: "Thám tử Luna tìm thấy..." },
+    { id: 2, question_en: "What was near the river on the old map?", answer: ["A market", "A big market", "The market"], clue_statement: "Near the river on the old map was a big market.", hint_en: "Near the river there was...", hint_vi: "Gần sông có..." },
+    { id: 3, question_en: "What building is still there today?", answer: ["The temple", "A temple", "Temple"], clue_statement: "The temple.", hint_en: "Only the ___ is still there.", hint_vi: "Chỉ còn..." },
+    {
+      id: 4,
+      question_en: "What does luna studied?",
+      answer: ["map carefully", "the map carefully"],
+      clue_statement: "Luna studied the map carefully.",
+      hint_en: "Think about what luna studieds...",
+      hint_vi: "Nghĩ về luna..."
+    },
+    {
+      id: 5,
+      question_en: "Where does luna walked?",
+      answer: ["same place today", "to the same place today", "to same place today"],
+      clue_statement: "Luna walked to the same place today.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    }
   ]
 };

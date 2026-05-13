@@ -5,8 +5,24 @@ export default {
   content_vi: "Hôm nay là trận bóng đầu tiên của tôi! Tôi rất phấn khích. Nhìn kìa! Tôi đang **chạy** nhanh. Chân tôi đang di chuyển. Vui quá! Bạn tôi đang **sút** **bóng**. Tôi đang **bắt** nó. Bây giờ tôi đang **chuyền** nó. **Bóng** có **năng lượng**. Nó đang **chuyển động**. **Bóng** đang di chuyển! **Đội** chúng tôi đang chơi. Mọi người đang **cổ vũ**. \"Lên nào!\" họ hét. Ôi không! Tôi **ném** **bóng**. Sai rồi! Tôi chỉ có thể dùng chân. **Đội** kia đang **ghi** **bàn thắng**. Họ **nhảy** lên. Họ vui. Tôi cũng muốn **ghi** **bàn thắng**! Tôi yêu bóng đá!",
   audio_url: "/audio/week16_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "How does the boy feel?", answer: ["He is very excited", "Very excited", "Excited"], hint_en: "The boy is...", hint_vi: "Cậu bé..." },
-    { id: 2, question_en: "What is the boy doing?", answer: ["He is catching and passing", "Catching and passing", "Passing"], hint_en: "He is...", hint_vi: "Cậu bé đang..." },
-    { id: 3, question_en: "What does the ball have?", answer: ["Energy", "The ball has energy"], hint_en: "The ball has...", hint_vi: "Bóng có..." }
+    { id: 1, question_en: "How does the boy feel?", answer: ["He is very excited", "Very excited", "Excited"], clue_statement: "He is very excited.", hint_en: "The boy is...", hint_vi: "Cậu bé..." },
+    { id: 2, question_en: "What is the boy doing?", answer: ["He is catching and passing", "Catching and passing", "Passing"], clue_statement: "He is catching and passing.", hint_en: "He is...", hint_vi: "Cậu bé đang..." },
+    { id: 3, question_en: "What does the ball have?", answer: ["Energy", "The ball has energy"], clue_statement: "The ball has energy.", hint_en: "The ball has...", hint_vi: "Bóng có..." },
+    {
+      id: 4,
+      question_en: "What is the this like?",
+      answer: ["fun", "The this is fun"],
+      clue_statement: "The this is fun.",
+      hint_en: "Think about the this...",
+      hint_vi: "Nghĩ về this..."
+    },
+    {
+      id: 5,
+      question_en: "What is the ball like?",
+      answer: ["moving", "The ball is moving"],
+      clue_statement: "The ball is moving.",
+      hint_en: "Think about the ball...",
+      hint_vi: "Nghĩ về ball..."
+    }
   ]
 };

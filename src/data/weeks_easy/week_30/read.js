@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What job does Tom's dad have?",
       answer: ["He is a chef", "Tom's dad is a chef", "A chef"],
+      clue_statement: "Tom's dad is a chef.",
       hint_en: "Tom's dad is a ___. He made the best food.",
       hint_vi: "Bo Tom la ___. Ong ay lam thuc an ngon nhat.",
       audio_url: "/audio/week30_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What did Luna's uncle build?",
       answer: ["He built a wooden bridge", "Luna's uncle built the wooden bridge", "The bridge near the park"],
+      clue_statement: "Luna's uncle build luna's uncle built the wooden bridge.",
       hint_en: "Luna's uncle is an engineer. He built a wooden ___.",
       hint_vi: "Chu Luna la ky su. Ong ay xay ___ go.",
       audio_url: "/audio/week30_easy/read_q2.mp3"
@@ -25,9 +27,18 @@ export default {
       id: 3,
       question_en: "Why did Mia mention the dentist?",
       answer: ["Because Tom ate too many cookies", "Tom ate five cookies and Mia said the dentist would not be happy", "Because too many cookies are bad for teeth"],
+      clue_statement: "Mia mention the dentist because tom ate five cookies and Mia said the dentist would not be happy.",
       hint_en: "Tom ate five ___. Mia said the ___ will not be happy.",
       hint_vi: "Tom an nam cai ___. Mia noi ___ se khong vui.",
       audio_url: "/audio/week30_easy/read_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Where does tom waved?",
+      answer: ["them", "at the them", "at them"],
+      clue_statement: "Tom waved at the them.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

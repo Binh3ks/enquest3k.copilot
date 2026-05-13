@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What does Alex use to be a reporter?",
       answer: ["A toy microphone and a toy camera", "Microphone and camera", "A toy microphone and camera"],
+      clue_statement: "Alex uses A toy microphone and a toy camera to be a reporter.",
       hint_en: "He has two toys...",
       hint_vi: "Cậu có hai đồ chơi..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "Who is the audience for Alex's news show?",
       answer: ["His mum and brother", "Mum and little brother", "His mum and little brother"],
+      clue_statement: "His mum and little brother is the audience for Alex's news show.",
       hint_en: "They clap for Alex...",
       hint_vi: "Họ vỗ tay cho Alex..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What is the cat doing?",
       answer: ["Sleeping on the sofa", "The cat is sleeping", "It is sleeping on the sofa"],
+      clue_statement: "It is sleeping on the sofa.",
       hint_en: "The cat is on the sofa...",
       hint_vi: "Con mèo đang ở trên ghế sofa..."
+    },
+    {
+      id: 4,
+      question_en: "What does alex love?",
+      answer: ["news", "the news"],
+      clue_statement: "Alex loves the news.",
+      hint_en: "Think about what alex loves...",
+      hint_vi: "Nghĩ về alex..."
+    },
+    {
+      id: 5,
+      question_en: "Where does he want?",
+      answer: ["be a reporter", "to the be a reporter", "to be a reporter"],
+      clue_statement: "He wants to the be a reporter.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

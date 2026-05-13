@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Why was Mia worried in the morning?",
       answer: ["She could not find her homework", "She lost her homework", "Because she could not find her homework"],
+      clue_statement: "Because she could not find her homework.",
       hint_en: "She could not find her...",
       hint_vi: "Co ay khong tim duoc...",
       audio_url: "/audio/week24/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "Why was the class excited at school?",
       answer: ["There was a special surprise visitor", "Because there was a famous author visiting", "A famous author came to visit"],
+      clue_statement: "Because there was a famous author visiting.",
       hint_en: "There was a special surprise...",
       hint_vi: "Co mot khach moi bat ngo...",
       audio_url: "/audio/week24/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "Why were some students bored during the talk?",
       answer: ["The author spoke very slowly", "Because the author spoke slowly", "The visitor spoke very slowly"],
+      clue_statement: "Because the author spoke slowly.",
       hint_en: "The author spoke very...",
       hint_vi: "Nha van noi rat...",
       audio_url: "/audio/week24/read_q3.mp3"
@@ -33,6 +36,7 @@ export default {
       id: 4,
       question_en: "How did Mia feel at the end of the day?",
       answer: ["Tired but happy", "She was tired but happy", "Tired and happy"],
+      clue_statement: "She was tired but happy.",
       hint_en: "She was tired but...",
       hint_vi: "Co ay met nhung...",
       audio_url: "/audio/week24/read_q4.mp3"

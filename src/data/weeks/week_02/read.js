@@ -5,8 +5,24 @@ export default {
   content_vi: "Tên tôi là Emma. Đây là gia đình của tôi. Chúng tôi như một đội! Đây là mẹ của tôi. Bà là người lãnh đạo đội gia đình chúng tôi. Bà giúp đỡ chúng tôi mỗi ngày. Đây là bố của tôi. Ông mạnh mẽ và tốt bụng. Ông làm việc chăm chỉ cho gia đình. Đây là anh trai tôi, Tom. Anh ấy là người giúp đỡ tốt. Anh ấy giúp tôi làm bài tập. Đây là em gái tôi, Lily. Em ấy vui tính và dễ thương. Chúng tôi yêu thương nhau rất nhiều. Nhà của chúng tôi đầy yêu thương và tiếng cười. Chúng tôi làm việc cùng nhau như một đội. Tôi hạnh phúc với đội gia đình của mình!",
   audio_url: null,
   comprehension_questions: [
-    { id: 1, question_en: "What is the girl's name?", answer: ["Emma", "Her name is Emma"], hint_en: "The first word...", hint_vi: "Tên bắt đầu bằng..." },
-    { id: 2, question_en: "Who is the leader of the family team?", answer: ["Mother", "Her mother", "The mother", "Mom"], hint_en: "The mother is...", hint_vi: "Mẹ là..." },
-    { id: 3, question_en: "What is Emma's brother's name?", answer: ["Tom", "His name is Tom"], hint_en: "T...", hint_vi: "T..." }
+    { id: 1, question_en: "What is the girl's name?", answer: ["Emma", "Her name is Emma"], clue_statement: "Her name is Emma.", hint_en: "The first word...", hint_vi: "Tên bắt đầu bằng..." },
+    { id: 2, question_en: "Who is the leader of the family team?", answer: ["Mother", "Her mother", "The mother", "Mom"], clue_statement: "Her mother is the leader of the family team.", hint_en: "The mother is...", hint_vi: "Mẹ là..." },
+    { id: 3, question_en: "What is Emma's brother's name?", answer: ["Tom", "His name is Tom"], clue_statement: "His name is Tom.", hint_en: "T...", hint_vi: "T..." },
+    {
+      id: 4,
+      question_en: "What does she help?",
+      answer: ["us every day", "us every day"],
+      clue_statement: "She helps us every day.",
+      hint_en: "Think about what she helps...",
+      hint_vi: "Nghĩ về she..."
+    },
+    {
+      id: 5,
+      question_en: "What does he help?",
+      answer: ["me with homework", "me with homework"],
+      clue_statement: "He helps me with homework.",
+      hint_en: "Think about what he helps...",
+      hint_vi: "Nghĩ về he..."
+    }
   ]
 };

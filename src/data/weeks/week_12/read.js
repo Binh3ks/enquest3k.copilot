@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What event is happening today?",
       answer: ["talent show", "the school talent show", "school talent show"],
+      clue_statement: "The school talent show.",
       hint_en: "A performance event...",
       hint_vi: "Một sự kiện biểu diễn..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What can Sarah do?",
       answer: ["sing", "sing beautifully", "she can sing"],
+      clue_statement: "Sing beautifully.",
       hint_en: "She uses her voice...",
       hint_vi: "Cô sử dụng giọng nói..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "Who can run faster than anyone?",
       answer: ["Mike", "mike"],
+      clue_statement: "Mike can run faster than anyone.",
       hint_en: "A boy on the track...",
       hint_vi: "Cậu bé trên đường đua..."
+    },
+    {
+      id: 4,
+      question_en: "Where does he dance?",
+      answer: ["fast music with great moves", "to the fast music with great moves", "to fast music with great moves"],
+      clue_statement: "He dances to the fast music with great moves.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does emma can?",
+      answer: ["jump very high", "jump very high"],
+      clue_statement: "Emma can jump very high.",
+      hint_en: "Think about what emma cans...",
+      hint_vi: "Nghĩ về emma..."
     }
   ],
   question: {

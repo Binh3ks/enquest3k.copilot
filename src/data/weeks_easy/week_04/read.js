@@ -27,6 +27,14 @@ export default {
       clue_statement: "She smiles when she plays.",
       hint_en: "She makes a happy face...",
       hint_vi: "Cô ấy tạo ra một khuôn mặt vui vẻ..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i like?",
+      answer: ["play with my toys every afternoon", "to the play with my toys every afternoon", "to play with my toys every afternoon"],
+      clue_statement: "I like to the play with my toys every afternoon.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ],
   question: {

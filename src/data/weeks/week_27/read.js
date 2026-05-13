@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What three things does Mr. Chen say a plant needs?",
       answer: ["Water, sunlight, and nutrients", "Water, sunlight, and nutrients from the soil"],
+      clue_statement: "Water, sunlight, and nutrients from the soil.",
       hint_en: "Mr. Chen said plants need three things: water, sunlight, and...",
       hint_vi: "Thay Chen noi cay can ba thu: nuoc, anh sang, va...",
       audio_url: "/audio/week27/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "On which day did the green sprout first appear?",
       answer: ["Day Five", "On Day Five", "The fifth day"],
+      clue_statement: "The fifth day.",
       hint_en: "The sprout appeared on Day...",
       hint_vi: "Mam cay xuat hien vao ngay thu...",
       audio_url: "/audio/week27/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "What is photosynthesis?",
       answer: ["The process where a leaf uses sunlight to make food", "When leaves use sunlight to produce food"],
+      clue_statement: "The process where a leaf uses sunlight to make food.",
       hint_en: "Photosynthesis is when a leaf uses sunlight to make...",
       hint_vi: "Quang hop la khi la dung anh sang de tao ra...",
       audio_url: "/audio/week27/read_q3.mp3"
@@ -33,9 +36,18 @@ export default {
       id: 4,
       question_en: "What is the complete life cycle sequence Maya observed?",
       answer: ["Seed, sprout, stem, leaf, flower", "Seed to sprout to stem to leaf to flower"],
+      clue_statement: "The complete life cycle sequence Maya observed is seed to sprout to stem to leaf to flower.",
       hint_en: "The sequence: seed, sprout, stem, leaf, and...",
       hint_vi: "Trinh tu: hat giong, mam cay, than cay, la, va...",
       audio_url: "/audio/week27/read_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "What does she added?",
+      answer: ["water", "water"],
+      clue_statement: "She added water.",
+      hint_en: "Think about what she addeds...",
+      hint_vi: "Nghĩ về she..."
     }
   ]
 };

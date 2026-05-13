@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is the writer doing with mom?",
       answer: ["walking", "walking with mom", "holding hands"],
+      clue_statement: "The writer doing with mom is walking with mom.",
       hint_en: "Moving slowly...",
       hint_vi: "Di chuyển chậm..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What color is the sister's kite?",
       answer: ["red", "red kite"],
+      clue_statement: "Red kite.",
       hint_en: "A color...",
       hint_vi: "Một màu..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What is the family eating?",
       answer: ["sandwiches", "yummy sandwiches"],
+      clue_statement: "The family eating is yummy sandwiches.",
       hint_en: "Food for picnic...",
       hint_vi: "Đồ ăn dã ngoại..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i want?",
+      answer: ["play too", "to the play too", "to play too"],
+      clue_statement: "I want to the play too.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What is the kite like?",
+      answer: ["beautiful", "The kite is beautiful"],
+      clue_statement: "The kite is beautiful.",
+      hint_en: "Think about the kite...",
+      hint_vi: "Nghĩ về kite..."
     }
   ],
   question: {

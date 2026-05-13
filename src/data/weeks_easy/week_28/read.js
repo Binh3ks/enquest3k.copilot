@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What vehicle did the hare choose?",
       answer: ["A bicycle", "The hare chose a bicycle", "He chose a bicycle"],
+      clue_statement: "The hare choose the hare chose a bicycle.",
       hint_en: "The hare chose a ___.",
       hint_vi: "Con tho chon ___.",
       audio_url: "/audio/week28_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What did the hare do during the race?",
       answer: ["He stopped to show off and fell asleep", "He showed off and slept", "He stopped and took a nap"],
+      clue_statement: "He stopped to show off and fell asleep.",
       hint_en: "The hare stopped to ___ and then fell ___.",
       hint_vi: "Con tho dung lai de ___ roi ngu ___.",
       audio_url: "/audio/week28_easy/read_q2.mp3"
@@ -25,9 +27,26 @@ export default {
       id: 3,
       question_en: "Who won the race?",
       answer: ["The tortoise won", "The tortoise", "The tortoise won again"],
+      clue_statement: "The tortoise won again.",
       hint_en: "The ___ won the race again.",
       hint_vi: "Con ___ lai thang cuoc dua.",
       audio_url: "/audio/week28_easy/read_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Where does rabbit jumped?",
+      answer: ["bus", "on the bus", "on bus"],
+      clue_statement: "Rabbit jumped on the bus.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "Where does elephant rode?",
+      answer: ["train", "on the train", "on train"],
+      clue_statement: "Elephant rode on the train.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

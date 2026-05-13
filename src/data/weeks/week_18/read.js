@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is Alex doing today?",
       answer: ["He is a reporter", "He is reporting the news", "He is a TV reporter"],
+      clue_statement: "He is reporting the news.",
       hint_en: "Alex has a special job today...",
       hint_vi: "Alex có một nhiệm vụ đặc biệt hôm nay..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What is Maya writing about?",
       answer: ["Ocean animals", "She is writing about ocean animals", "A report about ocean animals"],
+      clue_statement: "She is writing about ocean animals.",
       hint_en: "Maya says she is writing a report about...",
       hint_vi: "Maya nói cô bé đang viết bản tin về..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What is happening in Room 5?",
       answer: ["They are making a TV show", "A school TV show", "Students are doing a live news show"],
+      clue_statement: "Students are doing a live news show.",
       hint_en: "The class is making a...",
       hint_vi: "Lớp đang làm một..."
+    },
+    {
+      id: 4,
+      question_en: "What does alex have?",
+      answer: ["special job", "a special job"],
+      clue_statement: "Alex has a special job.",
+      hint_en: "Think about what alex haves...",
+      hint_vi: "Nghĩ về alex..."
+    },
+    {
+      id: 5,
+      question_en: "Where does alex begin?",
+      answer: ["describe the scene around him", "to the describe the scene around him", "to describe the scene around him"],
+      clue_statement: "Alex begins to the describe the scene around him.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

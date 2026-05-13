@@ -5,8 +5,16 @@ export default {
   content_vi: "Tôi sống ở một thị trấn. Thị trấn tôi đã thay đổi! Nhìn ảnh **cũ** này. Có một **chợ** gần nhà tôi. Có những **cây** lớn trên **đường**. Có một **cầu** bắc qua **sông**. Có một ngôi **đền** bên cạnh **chợ**. Có những **tòa nhà** nhỏ gần **đường**. Bây giờ thị trấn tôi khác rồi. Có một **đường** **mới**. Có những **tòa nhà** **mới**. Có một **cầu** **mới**. Nhưng ngôi **đền** cũ vẫn còn! Bà tôi nói, 'Có một **làng** ở đây trước kia.' Bây giờ là thị trấn lớn. Nhưng ngôi **đền** vẫn đẹp. Đó là lịch sử cũ của chúng tôi. Tôi yêu thị trấn tôi!",
   audio_url: "/audio/week20_easy/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What was near the narrator's house?", answer: ["A market", "The market"], hint_en: "There was a...", hint_vi: "Có một..." },
-    { id: 2, question_en: "What is still there today?", answer: ["The temple", "A temple"], hint_en: "The old ___ is still there.", hint_vi: "Ngôi ___ cũ vẫn còn..." },
-    { id: 3, question_en: "How does the town feel now?", answer: ["Big", "Different", "A big town"], hint_en: "The town is now...", hint_vi: "Thị trấn bây giờ..." }
+    { id: 1, question_en: "What was near the narrator's house?", answer: ["A market", "The market"], clue_statement: "Near the narrator's house was the market.", hint_en: "There was a...", hint_vi: "Có một..." },
+    { id: 2, question_en: "What is still there today?", answer: ["The temple", "A temple"], clue_statement: "Still there today is the temple.", hint_en: "The old ___ is still there.", hint_vi: "Ngôi ___ cũ vẫn còn..." },
+    { id: 3, question_en: "How does the town feel now?", answer: ["Big", "Different", "A big town"], clue_statement: "The town feels a big town.", hint_en: "The town is now...", hint_vi: "Thị trấn bây giờ..." },
+    {
+      id: 4,
+      question_en: "Where does i live?",
+      answer: ["town", "in the town", "in town"],
+      clue_statement: "I live in the town.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    }
   ]
 };

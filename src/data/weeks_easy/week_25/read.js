@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What was the FIRST thing the child did to make the sandwich?",
       answer: ["Got two slices of bread", "First, I got two slices of bread", "Took two slices of bread from the bag"],
+      clue_statement: "The FIRST thing the child did to make the sandwich was took two slices of bread from the bag.",
       hint_en: "First, I got two... of bread.",
       hint_vi: "Dau tien, toi lay hai... banh mi.",
       audio_url: "/audio/week25_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What did the child do AFTER spreading the jam?",
       answer: ["Pressed the two slices together", "Then pressed the slices together", "Put the two slices together"],
+      clue_statement: "The child Then pressed the slices together after spreading the jam.",
       hint_en: "Then, I pressed the two slices...",
       hint_vi: "Sau do, toi ut hai lat...",
       audio_url: "/audio/week25_easy/read_q2.mp3"
@@ -25,9 +27,18 @@ export default {
       id: 3,
       question_en: "What did Mum say about how the child did everything?",
       answer: ["She said the child did everything in the right sequence", "You did everything in the right sequence", "Mum said she was proud"],
+      clue_statement: "She said the child did everything in the right sequence.",
       hint_en: "Mum said: You did everything in the right...",
       hint_vi: "Me noi: Con da lam moi thu theo dung...",
       audio_url: "/audio/week25_easy/read_q3.mp3"
+    },
+    {
+      id: 4,
+      question_en: "Where does mum came?",
+      answer: ["and smiled", "in the and smiled", "in and smiled"],
+      clue_statement: "Mum came in the and smiled.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

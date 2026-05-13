@@ -8,6 +8,7 @@ export default {
       id: 1,
       question_en: "What does Sam have at home?",
       answer: ["a happy jar", "happy jar"],
+      clue_statement: "Sam have ats a happy jar home.",
       hint_en: "It starts with 'h'...",
       hint_vi: "Nó bắt đầu bằng chữ 'h'..."
     },
@@ -15,6 +16,7 @@ export default {
       id: 2,
       question_en: "What color is the star?",
       answer: ["yellow", "yellow star"],
+      clue_statement: "Yellow star.",
       hint_en: "The color of the sun...",
       hint_vi: "Màu của mặt trời..."
     },
@@ -22,8 +24,17 @@ export default {
       id: 3,
       question_en: "Who is friendly and funny?",
       answer: ["mom", "his mom", "Sam's mom", "mother"],
+      clue_statement: "Sam's mom is friendly and funny.",
       hint_en: "She makes Sam laugh...",
       hint_vi: "Bà làm Sam cười..."
+    },
+    {
+      id: 4,
+      question_en: "What does she make?",
+      answer: ["me laugh every day", "me laugh every day"],
+      clue_statement: "She makes me laugh every day.",
+      hint_en: "Think about what she makes...",
+      hint_vi: "Nghĩ về she..."
     }
   ],
   question: {

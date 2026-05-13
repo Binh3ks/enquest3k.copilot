@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Where does the child visit?",
       answer: ["farm", "uncle's farm", "the farm"],
+      clue_statement: "The child visits uncle's farm.",
       hint_en: "A place in the countryside...",
       hint_vi: "Một nơi ở vùng nông thôn..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What animals does the child see?",
       answer: ["cow and chicken", "a cow and a chicken", "cow, chicken"],
+      clue_statement: "The child sees a cow and a chicken.",
       hint_en: "Two farm animals...",
       hint_vi: "Hai con vật ở trang trại..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "Is the farm noisy or quiet?",
       answer: ["quiet", "the farm is quiet"],
+      clue_statement: "The farm is quiet.",
       hint_en: "Not noisy...",
       hint_vi: "Không ồn..."
+    },
+    {
+      id: 4,
+      question_en: "What is the air like?",
+      answer: ["fresh", "The air is fresh"],
+      clue_statement: "The air is fresh.",
+      hint_en: "Think about the air...",
+      hint_vi: "Nghĩ về air..."
+    },
+    {
+      id: 5,
+      question_en: "Where does i walk?",
+      answer: ["big green field", "in the big green field", "in big green field"],
+      clue_statement: "I walk in the big green field.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ],
   question: {

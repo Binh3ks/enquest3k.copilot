@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What is the child's name?",
       answer: ["Tom"],
+      clue_statement: "The child's name is tom.",
       hint_en: "The name...",
       hint_vi: "Tên..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What does Tom eat for breakfast?",
       answer: ["bread"],
+      clue_statement: "Tom eat fors bread breakfast.",
       hint_en: "Food...",
       hint_vi: "Thức ăn..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What does Tom watch?",
       answer: ["TV", "cartoons", "television"],
+      clue_statement: "Tom watches television.",
       hint_en: "On TV...",
       hint_vi: "Trên ti vi..."
+    },
+    {
+      id: 4,
+      question_en: "What does mom wake?",
+      answer: ["me up", "me up"],
+      clue_statement: "Mom wakes me up.",
+      hint_en: "Think about what mom wakes...",
+      hint_vi: "Nghĩ về mom..."
+    },
+    {
+      id: 5,
+      question_en: "Where does i go?",
+      answer: ["school", "to the school", "to school"],
+      clue_statement: "I go to the school.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ],
   question: {

@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Who is the teacher?",
       answer: ["Nova", "Teacher is Nova", "The teacher is Nova"],
+      clue_statement: "The teacher is Nova.",
       hint_en: "Ms...",
       hint_vi: "Cô..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "What does she wear?",
       answer: ["Glasses", "She wears glasses", "Glasses to see"],
+      clue_statement: "She wears glasses.",
       hint_en: "She wears...",
       hint_vi: "Cô ấy đeo..."
     },
@@ -23,8 +25,17 @@ export default {
       id: 3,
       question_en: "Is she tall or short?",
       answer: ["Tall", "She is tall", "Very tall"],
+      clue_statement: "She is tall.",
       hint_en: "She is...",
       hint_vi: "Cô ấy..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i want?",
+      answer: ["be tall like her", "to the be tall like her", "to be tall like her"],
+      clue_statement: "I want to the be tall like her.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

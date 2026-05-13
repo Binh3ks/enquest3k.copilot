@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What can I do with music?",
       answer: ["sing", "dance", "sing and dance"],
+      clue_statement: "Sing and dance.",
       hint_en: "Make sounds or move...",
       hint_vi: "Tạo âm thanh hoặc di chuyển..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "Where do I run?",
       answer: ["park", "in the park", "the park"],
+      clue_statement: "I run in the park.",
       hint_en: "A place with grass...",
       hint_vi: "Nơi có cỏ..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What do I draw?",
       answer: ["family", "pictures of family", "my family"],
+      clue_statement: "I draw pictures of family.",
       hint_en: "People I love...",
       hint_vi: "Người tôi yêu..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i swim?",
+      answer: ["summer", "in the summer", "in summer"],
+      clue_statement: "I swim in the summer.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does what can?",
+      answer: ["you do", "you do"],
+      clue_statement: "What can you do.",
+      hint_en: "Think about what what cans...",
+      hint_vi: "Nghĩ về what..."
     }
   ],
   question: {

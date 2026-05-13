@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What do I see?",
       answer: ["My face", "Face", "I see my face"],
+      clue_statement: "I see my face.",
       hint_en: "My...",
       hint_vi: "Khuôn mặt..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "Am I tall?",
       answer: ["No", "No I am not", "Short", "I am short"],
+      clue_statement: "I am not tall.",
       hint_en: "No...",
       hint_vi: "Không..."
     },
@@ -23,8 +25,17 @@ export default {
       id: 3,
       question_en: "Who wears glasses?",
       answer: ["My friend", "Friend", "My friend wears glasses"],
+      clue_statement: "My friend wears glasses.",
       hint_en: "My...",
       hint_vi: "Bạn..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i look?",
+      answer: ["mirror every day", "in the mirror every day", "in mirror every day"],
+      clue_statement: "I look in the mirror every day.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What did Detective Nova open to start the interview?",
       answer: ["Her notebook", "A notebook", "She opened her notebook"],
+      clue_statement: "She opened her notebook.",
       hint_en: "She opened her...",
       hint_vi: "Co ay da mo...",
       audio_url: "/audio/week22/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "How did the suspect answer every question?",
       answer: ["Clearly", "Clearly and without hesitation", "The suspect answered clearly"],
+      clue_statement: "Clearly and without hesitation.",
       hint_en: "The suspect answered...",
       hint_vi: "Nghi pham da tra loi...",
       audio_url: "/audio/week22/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "What time expressions did Nova ask the suspect about?",
       answer: ["Yesterday morning and last week", "Yesterday and last week", "Last night, yesterday morning and last week"],
+      clue_statement: "Last night, yesterday morning and last week.",
       hint_en: "She asked about yesterday morning and...",
       hint_vi: "Co ay da hoi ve sang hom qua va...",
       audio_url: "/audio/week22/read_q3.mp3"
@@ -33,9 +36,18 @@ export default {
       id: 4,
       question_en: "What did Nova give to her team at the end?",
       answer: ["The answer", "Her final report and the answer", "The answer to the case"],
+      clue_statement: "Nova give to her final report and the answer her team at the end.",
       hint_en: "Nova gave the...",
       hint_vi: "Nova da trao...",
       audio_url: "/audio/week22/read_q4.mp3"
+    },
+    {
+      id: 5,
+      question_en: "Where does she arrived?",
+      answer: ["scene and immediately opened her notebook", "at the scene and immediately opened her notebook", "at scene and immediately opened her notebook"],
+      clue_statement: "She arrived at the scene and immediately opened her notebook.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     }
   ]
 };

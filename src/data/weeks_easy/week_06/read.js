@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "Where is the toy car?",
       answer: ["under the desk", "desk"],
+      clue_statement: "The toy car is under the desk.",
       hint_en: "Below the table...",
       hint_vi: "Dưới bàn..."
     },
@@ -16,6 +17,7 @@ export default {
       id: 2,
       question_en: "Where is the ball?",
       answer: ["next to the door", "door"],
+      clue_statement: "The ball is next to the door.",
       hint_en: "Beside the entrance...",
       hint_vi: "Bên cạnh cửa..."
     },
@@ -23,8 +25,25 @@ export default {
       id: 3,
       question_en: "What game do they play?",
       answer: ["hide and seek", "hiding game", "seeking"],
+      clue_statement: "They play hide and seek.",
       hint_en: "A game about hiding...",
       hint_vi: "Trò chơi về ẩn nấp..."
+    },
+    {
+      id: 4,
+      question_en: "Where does i look?",
+      answer: ["floor", "on the floor", "on floor"],
+      clue_statement: "I look on the floor.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does he find?",
+      answer: ["it", "it"],
+      clue_statement: "He finds it.",
+      hint_en: "Think about what he finds...",
+      hint_vi: "Nghĩ về he..."
     }
   ],
   question: {

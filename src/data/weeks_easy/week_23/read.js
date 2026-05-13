@@ -9,6 +9,7 @@ export default {
       id: 1,
       question_en: "What did I paint a picture of in art class?",
       answer: ["A garden", "A picture of a garden"],
+      clue_statement: "I paint a a picture of a garden picture of in art class.",
       hint_en: "I painted a picture of a...",
       hint_vi: "Toi da ve mot buc tranh ve...",
       audio_url: "/audio/week23_easy/read_q1.mp3"
@@ -17,6 +18,7 @@ export default {
       id: 2,
       question_en: "What shape did I fold the paper into?",
       answer: ["A butterfly shape", "Butterfly", "A butterfly"],
+      clue_statement: "I fold the a butterfly shape.",
       hint_en: "I folded it into a... shape.",
       hint_vi: "Toi da gap no thanh hinh...",
       audio_url: "/audio/week23_easy/read_q2.mp3"
@@ -25,6 +27,7 @@ export default {
       id: 3,
       question_en: "What did the teacher say about my picture?",
       answer: ["It had good symmetry nice texture and bright pigment", "She said it had good symmetry", "It had symmetry texture and pigment"],
+      clue_statement: "It had good symmetry nice texture and bright pigment.",
       hint_en: "She said it had good...",
       hint_vi: "Co ay noi no co...",
       audio_url: "/audio/week23_easy/read_q3.mp3"
