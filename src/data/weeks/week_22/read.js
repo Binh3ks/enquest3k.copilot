@@ -44,7 +44,7 @@ export default {
     {
       id: 5,
       question_en: "Where does she arrived?",
-      answer: ["scene and immediately opened her notebook", "at the scene and immediately opened her notebook", "at scene and immediately opened her notebook"],
+      answer: ["scene and immediately opened her notebook", "at the scene and immediately opened her notebook"],
       clue_statement: "She arrived at the scene and immediately opened her notebook.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."

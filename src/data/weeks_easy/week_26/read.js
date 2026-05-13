@@ -35,8 +35,8 @@ export default {
     {
       id: 4,
       question_en: "Where does he wanted?",
-      answer: ["create a comic strip about his weekend", "to the create a comic strip about his weekend", "to create a comic strip about his weekend"],
-      clue_statement: "He wanted to the create a comic strip about his weekend.",
+      answer: ["create a comic strip about his weekend", "to create a comic strip about his weekend"],
+      clue_statement: "He wanted to create a comic strip about his weekend.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },

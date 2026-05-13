@@ -39,11 +39,11 @@ export default {
     },
     {
       id: 5,
-      question_en: "What does nobody know?",
-      answer: ["what is inside", "what is inside"],
-      clue_statement: "Nobody knows what is inside.",
-      hint_en: "Think about what nobody knows...",
-      hint_vi: "Nghĩ về nobody..."
+      question_en: "What does the room have?",
+      answer: ["rug on the floor", "a rug on the floor"],
+      clue_statement: "The room has a rug on the floor.",
+      hint_en: "Think about what the room haves...",
+      hint_vi: "Nghĩ về the room..."
     }
   ],
   question: {

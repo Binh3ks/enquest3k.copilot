@@ -35,16 +35,16 @@ export default {
     {
       id: 4,
       question_en: "Where does rabbit jumped?",
-      answer: ["bus", "on the bus", "on bus"],
-      clue_statement: "Rabbit jumped on the bus.",
+      answer: ["bus", "on a bus"],
+      clue_statement: "Rabbit jumped on a bus.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },
     {
       id: 5,
       question_en: "Where does elephant rode?",
-      answer: ["train", "on the train", "on train"],
-      clue_statement: "Elephant rode on the train.",
+      answer: ["train", "on a train"],
+      clue_statement: "Elephant rode on a train.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

@@ -19,7 +19,7 @@ export default {
     {
       id: 5,
       question_en: "Where does luna walked?",
-      answer: ["same place today", "to the same place today", "to same place today"],
+      answer: ["same place today", "to the same place today"],
       clue_statement: "Luna walked to the same place today.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."

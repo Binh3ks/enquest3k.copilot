@@ -39,9 +39,9 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where does i go?",
-      answer: ["school", "to the school", "to school"],
-      clue_statement: "I go to the school.",
+      question_en: "Where do I go?",
+      answer: ["school", "to school"],
+      clue_statement: "I go to school.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

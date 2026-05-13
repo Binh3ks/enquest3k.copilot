@@ -29,16 +29,16 @@ export default {
     {
       id: 4,
       question_en: "Where does she sat?",
-      answer: ["it and it flew up", "on the it and it flew up", "on it and it flew up"],
-      clue_statement: "She sat on the it and it flew up.",
+      answer: ["it and it flew up", "on it and it flew up"],
+      clue_statement: "She sat on it and it flew up.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },
     {
       id: 5,
       question_en: "Where does a pilot?",
-      answer: ["red plane flew past", "in the red plane flew past", "in red plane flew past"],
-      clue_statement: "A pilot in the red plane flew past.",
+      answer: ["red plane flew past", "in a red plane flew past"],
+      clue_statement: "A pilot in a red plane flew past.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

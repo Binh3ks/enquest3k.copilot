@@ -31,19 +31,19 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i want?",
-      answer: ["play too", "to the play too", "to play too"],
-      clue_statement: "I want to the play too.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
       question_en: "What is the kite like?",
       answer: ["beautiful", "The kite is beautiful"],
       clue_statement: "The kite is beautiful.",
       hint_en: "Think about the kite...",
       hint_vi: "Nghĩ về kite..."
+    },
+    {
+      id: 5,
+      question_en: "What is the dog like?",
+      answer: ["cute", "The dog is cute"],
+      clue_statement: "The dog is cute.",
+      hint_en: "Think about the dog...",
+      hint_vi: "Nghĩ về dog..."
     }
   ],
   question: {

@@ -39,11 +39,11 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where does he want?",
-      answer: ["be a reporter", "to the be a reporter", "to be a reporter"],
-      clue_statement: "He wants to the be a reporter.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
+      question_en: "What does he want?",
+      answer: ["to be a reporter", "to be a reporter"],
+      clue_statement: "He wants to be a reporter.",
+      hint_en: "Think about what he wants...",
+      hint_vi: "Nghĩ về he..."
     }
   ]
 };

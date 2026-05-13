@@ -39,9 +39,9 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where does i sit?",
-      answer: ["chair at a desk", "on the chair at a desk", "on chair at a desk"],
-      clue_statement: "I sit on the chair at a desk.",
+      question_en: "Where do I sit?",
+      answer: ["chair at a desk", "on a chair at a desk"],
+      clue_statement: "I sit on a chair at a desk.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

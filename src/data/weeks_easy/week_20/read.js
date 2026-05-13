@@ -10,9 +10,9 @@ export default {
     { id: 3, question_en: "How does the town feel now?", answer: ["Big", "Different", "A big town"], clue_statement: "The town feels a big town.", hint_en: "The town is now...", hint_vi: "Thị trấn bây giờ..." },
     {
       id: 4,
-      question_en: "Where does i live?",
-      answer: ["town", "in the town", "in town"],
-      clue_statement: "I live in the town.",
+      question_en: "Where do I live?",
+      answer: ["town", "in a town"],
+      clue_statement: "I live in a town.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

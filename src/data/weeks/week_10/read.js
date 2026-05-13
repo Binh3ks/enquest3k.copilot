@@ -39,8 +39,8 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where does i walk?",
-      answer: ["big green field", "in the big green field", "in big green field"],
+      question_en: "Where do I walk?",
+      answer: ["big green field", "in the big green field"],
       clue_statement: "I walk in the big green field.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."

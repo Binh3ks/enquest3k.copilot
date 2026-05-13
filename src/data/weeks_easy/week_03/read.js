@@ -31,8 +31,8 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i look?",
-      answer: ["mirror every day", "in the mirror every day", "in mirror every day"],
+      question_en: "Where do I look?",
+      answer: ["mirror every day", "in the mirror every day"],
       clue_statement: "I look in the mirror every day.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."

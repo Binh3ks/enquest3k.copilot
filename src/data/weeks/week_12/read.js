@@ -32,8 +32,8 @@ export default {
     {
       id: 4,
       question_en: "Where does he dance?",
-      answer: ["fast music with great moves", "to the fast music with great moves", "to fast music with great moves"],
-      clue_statement: "He dances to the fast music with great moves.",
+      answer: ["fast music with great moves", "to fast music with great moves"],
+      clue_statement: "He dances to fast music with great moves.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },

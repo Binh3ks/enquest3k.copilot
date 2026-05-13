@@ -18,9 +18,9 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where does i put?",
-      answer: ["my boots", "on the my boots", "on my boots"],
-      clue_statement: "I put on the my boots.",
+      question_en: "Where do I put?",
+      answer: ["my boots", "on my boots"],
+      clue_statement: "I put on my boots.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

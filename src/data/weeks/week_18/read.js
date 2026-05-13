@@ -40,8 +40,8 @@ export default {
     {
       id: 5,
       question_en: "Where does alex begin?",
-      answer: ["describe the scene around him", "to the describe the scene around him", "to describe the scene around him"],
-      clue_statement: "Alex begins to the describe the scene around him.",
+      answer: ["describe the scene around him", "to describe the scene around him"],
+      clue_statement: "Alex begins to describe the scene around him.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

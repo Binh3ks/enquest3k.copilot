@@ -31,8 +31,8 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i look?",
-      answer: ["floor", "on the floor", "on floor"],
+      question_en: "Where do I look?",
+      answer: ["floor", "on the floor"],
       clue_statement: "I look on the floor.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."

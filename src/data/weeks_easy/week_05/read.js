@@ -31,17 +31,17 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i live?",
-      answer: ["house", "in the house", "in house"],
-      clue_statement: "I live in the house.",
+      question_en: "Where do I live?",
+      answer: ["house", "in a house"],
+      clue_statement: "I live in a house.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },
     {
       id: 5,
-      question_en: "Where does i sleep?",
-      answer: ["my bedroom", "in the my bedroom", "in my bedroom"],
-      clue_statement: "I sleep in the my bedroom.",
+      question_en: "Where do I sleep?",
+      answer: ["my bedroom", "in my bedroom"],
+      clue_statement: "I sleep in my bedroom.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

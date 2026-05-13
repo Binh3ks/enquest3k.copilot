@@ -28,14 +28,6 @@ export default {
       clue_statement: "She is tall.",
       hint_en: "She is...",
       hint_vi: "Cô ấy..."
-    },
-    {
-      id: 4,
-      question_en: "Where does i want?",
-      answer: ["be tall like her", "to the be tall like her", "to be tall like her"],
-      clue_statement: "I want to the be tall like her.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ]
 };

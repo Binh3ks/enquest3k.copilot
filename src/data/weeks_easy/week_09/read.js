@@ -31,9 +31,9 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i walk?",
-      answer: ["busy street", "on the busy street", "on busy street"],
-      clue_statement: "I walk on the busy street.",
+      question_en: "Where do I walk?",
+      answer: ["busy street", "on a busy street"],
+      clue_statement: "I walk on a busy street.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },

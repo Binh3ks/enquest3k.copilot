@@ -35,8 +35,8 @@ export default {
     {
       id: 4,
       question_en: "Where does tom waved?",
-      answer: ["them", "at the them", "at them"],
-      clue_statement: "Tom waved at the them.",
+      answer: ["them", "at them"],
+      clue_statement: "Tom waved at them.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

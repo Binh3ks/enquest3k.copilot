@@ -35,8 +35,8 @@ export default {
     {
       id: 4,
       question_en: "Where does mum came?",
-      answer: ["and smiled", "in the and smiled", "in and smiled"],
-      clue_statement: "Mum came in the and smiled.",
+      answer: ["and smiled", "in and smiled"],
+      clue_statement: "Mum came in and smiled.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

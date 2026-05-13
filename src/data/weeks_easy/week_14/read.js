@@ -31,17 +31,9 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i want?",
-      answer: ["show you my world", "to the show you my world", "to show you my world"],
-      clue_statement: "I want to the show you my world.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
       question_en: "Where does audience listen?",
-      answer: ["me", "to the me", "to me"],
-      clue_statement: "Audience listens to the me.",
+      answer: ["me", "to me"],
+      clue_statement: "Audience listens to me.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

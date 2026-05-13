@@ -31,9 +31,9 @@ export default {
     },
     {
       id: 4,
-      question_en: "Where does i swim?",
-      answer: ["summer", "in the summer", "in summer"],
-      clue_statement: "I swim in the summer.",
+      question_en: "Where do I swim?",
+      answer: ["summer", "in summer"],
+      clue_statement: "I swim in summer.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },
