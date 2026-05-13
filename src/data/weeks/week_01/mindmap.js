@@ -46,7 +46,7 @@ const mindMapContent = {
       { text: "always there for me", audio: "/audio/week1/mindmap_branch_t2dws2.mp3" },
       { text: "great at telling stories", audio: "/audio/week1/mindmap_branch_9o6l4o.mp3" },
       { text: "someone I can trust", audio: "/audio/week1/mindmap_branch_volrl3.mp3" },
-      { text: "my favourite person", audio: "/audio/week1/mindmap_branch_iiw85y.mp3" }
+      { text: "my favorite person", audio: "/audio/week1/mindmap_branch_iiw85y.mp3" }
     ],
     "When I grow up, I want to be ___.": [
       { text: "a scientist discovering things", audio: "/audio/week1/mindmap_branch_m2gkdl.mp3" },

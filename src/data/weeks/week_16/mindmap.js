@@ -1,7 +1,7 @@
 const mindMapContent = {
   centerStems: [
     { text: "In the game, I am ___.", audio: "/audio/week16/mindmap_stem_kmdurg.mp3" },
-    { text: "My favourite sport is ___.", audio: "/audio/week16/mindmap_stem_md32xa.mp3" },
+    { text: "My favorite sport is ___.", audio: "/audio/week16/mindmap_stem_md32xa.mp3" },
     { text: "When I play sports, I ___.", audio: "/audio/week16/mindmap_stem_1u4cso.mp3" },
     { text: "I train every day by ___.", audio: "/audio/week16/mindmap_stem_cuh2yo.mp3" },
     { text: "My team is ___.", audio: "/audio/week16/mindmap_stem_1rgrvu.mp3" },
@@ -16,7 +16,7 @@ const mindMapContent = {
       { text: "catching the ball", audio: "/audio/week16/mindmap_branch_nhcpf8.mp3" },
       { text: "cheering loudly", audio: "/audio/week16/mindmap_branch_70abqp.mp3" }
     ],
-    "My favourite sport is ___.": [
+    "My favorite sport is ___.": [
       { text: "football", audio: "/audio/week16/mindmap_branch_e9yb0e.mp3" },
       { text: "swimming", audio: "/audio/week16/mindmap_branch_kmj8sy.mp3" },
       { text: "badminton", audio: "/audio/week16/mindmap_branch_16cac9.mp3" },
@@ -46,7 +46,7 @@ const mindMapContent = {
       { text: "the best team", audio: "/audio/week16/mindmap_branch_sdv0sr.mp3" },
       { text: "very supportive", audio: "/audio/week16/mindmap_branch_sfpy82.mp3" },
       { text: "practising every day", audio: "/audio/week16/mindmap_branch_a6cj9k.mp3" },
-      { text: "my favourite group", audio: "/audio/week16/mindmap_branch_zfgqq5.mp3" }
+      { text: "my favorite group", audio: "/audio/week16/mindmap_branch_zfgqq5.mp3" }
     ],
     "I scored a goal by ___.": [
       { text: "kicking the ball hard", audio: "/audio/week16/mindmap_branch_rvekzd.mp3" },

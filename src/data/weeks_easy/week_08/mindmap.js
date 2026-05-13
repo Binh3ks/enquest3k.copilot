@@ -1,7 +1,7 @@
 const mindMapContent = {
   centerStems: [
     { text: "My classroom has ___.", audio: "/audio/week8_easy/mindmap_stem_42pbe.mp3" },
-    { text: "My favourite number is ___.", audio: "/audio/week8_easy/mindmap_stem_ndypyf.mp3" },
+    { text: "My favorite number is ___.", audio: "/audio/week8_easy/mindmap_stem_ndypyf.mp3" },
     { text: "There are ___ in my bag.", audio: "/audio/week8_easy/mindmap_stem_icn0ug.mp3" },
     { text: "I put ___ on my desk.", audio: "/audio/week8_easy/mindmap_stem_jg3b2x.mp3" },
     { text: "I like ___ at school.", audio: "/audio/week8_easy/mindmap_stem_ar3eow.mp3" },
@@ -16,7 +16,7 @@ const mindMapContent = {
       { text: "a shelf", audio: "/audio/week8_easy/mindmap_branch_dh23oq.mp3" },
       { text: "a teacher", audio: "/audio/week8_easy/mindmap_branch_3hzwfm.mp3" }
     ],
-    "My favourite number is ___.": [
+    "My favorite number is ___.": [
       { text: "one", audio: "/audio/week8_easy/mindmap_branch_ndo6we.mp3" },
       { text: "five", audio: "/audio/week8_easy/mindmap_branch_elqcge.mp3" },
       { text: "ten", audio: "/audio/week8_easy/mindmap_branch_ndl6f9.mp3" },

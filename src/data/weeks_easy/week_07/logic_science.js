@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "📚 book  ✏️ pencil  📚 book  ✏️ pencil  📚 book ... What comes next?",
+      question_en: "📚 book ✏️ pencil 📚 book ✏️ pencil 📚 book ... What comes next?",
       question_vi: "📚 book  ✏️ pencil  📚 book  ✏️ pencil  📚 book ... Tiếp theo là gì?",
       hint_en: "book and pencil keep repeating.",
       sample_answer: "✏️ pencil",

@@ -1,14 +1,14 @@
 export default {
-  topic_talk_prompt: "Tell me about your favourite place to visit on weekends. What do you do there?",
+  topic_talk_prompt: "Tell me about your favorite place to visit on weekends. What do you do there?",
   prompts: [
     {
       id: 1,
-      nova_says: "My favourite weekend place is the beach.",
+      nova_says: "My favorite weekend place is the beach.",
       nova_says_vi: "Nơi yêu thích của cô vào cuối tuần là bãi biển.",
-      task_en: "Ask Nova WHAT her favourite weekend place is.",
+      task_en: "Ask Nova WHAT her favorite weekend place is.",
       task_vi: "Hỏi cô Nova nơi yêu thích của cô vào cuối tuần là gì.",
-      question_frame: "What ___ your favourite weekend place?",
-      answer: ["What is your favourite weekend place?","What's your favourite weekend place?"],
+      question_frame: "What ___ your favorite weekend place?",
+      answer: ["What is your favorite weekend place?","What's your favorite weekend place?"],
       hint: "is",
       audio_url: null
     },

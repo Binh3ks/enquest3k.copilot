@@ -2,7 +2,7 @@ const mindMapContent = {
   centerStems: [
     { text: "I like ___.", audio: "/audio/week4/mindmap_stem_44gjvj.mp3" },
     { text: "I feel ___.", audio: "/audio/week4/mindmap_stem_otcnym.mp3" },
-    { text: "My favourite hobby is ___.", audio: "/audio/week4/mindmap_stem_7bsb8s.mp3" },
+    { text: "My favorite hobby is ___.", audio: "/audio/week4/mindmap_stem_7bsb8s.mp3" },
     { text: "I am ___ today.", audio: "/audio/week4/mindmap_stem_hnd7px.mp3" },
     { text: "Playing makes me ___.", audio: "/audio/week4/mindmap_stem_gp9zdi.mp3" },
     { text: "I love ___.", audio: "/audio/week4/mindmap_stem_ovwuxm.mp3" }
@@ -24,11 +24,11 @@ const mindMapContent = {
       { text: "joyful when I dance", audio: "/audio/week4/mindmap_branch_ecbaak.mp3" },
       { text: "good when I help", audio: "/audio/week4/mindmap_branch_al7d8w.mp3" }
     ],
-    "My favourite hobby is ___.": [
+    "My favorite hobby is ___.": [
       { text: "playing with friends", audio: "/audio/week4/mindmap_branch_j7y0bo.mp3" },
       { text: "reading stories", audio: "/audio/week4/mindmap_branch_u1fglw.mp3" },
       { text: "drawing animals", audio: "/audio/week4/mindmap_branch_5l38zu.mp3" },
-      { text: "singing my favourite songs", audio: "/audio/week4/mindmap_branch_9hsbyp.mp3" },
+      { text: "singing my favorite songs", audio: "/audio/week4/mindmap_branch_9hsbyp.mp3" },
       { text: "dancing to music", audio: "/audio/week4/mindmap_branch_c2v4xr.mp3" },
       { text: "making new friends", audio: "/audio/week4/mindmap_branch_l844up.mp3" }
     ],

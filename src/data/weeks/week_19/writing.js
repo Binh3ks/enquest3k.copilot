@@ -1,12 +1,12 @@
 export default {
   title: "When I Was Small",
   min_words: 48,
-  model_sentence: "When I look at old photos from when I was a baby, I can see how much I have changed over the years. I was a very small and chubby baby with a round face, big dark eyes, and very little hair on my head. My mother says I was an extremely noisy baby because I cried all the time, especially at night, and the only thing that could make me stop was music. I could not walk or talk yet, but I could already smile and recognise the faces of the people I loved. According to my dad, I was always reaching for things I could not have, and I tried to climb out of my cot when I was only nine months old! Looking at those photos makes me laugh and feel grateful for how far I have come.",
+  model_sentence: "When I look at old photos from when I was a baby, I can see how much I have changed over the years. I was a very small and chubby baby with a round face, big dark eyes, and very little hair on my head. My mother says I was an extremely noisy baby because I cried all the time, especially at night, and the only thing that could make me stop was music. I could not walk or talk yet, but I could already smile and recognize the faces of the people I loved. According to my dad, I was always reaching for things I could not have, and I tried to climb out of my cot when I was only nine months old! Looking at those photos makes me laugh and feel grateful for how far I have come.",
   instruction_en: "Write about what you were like as a baby using was, were, and could!",
   instruction_vi: "Vi\u1ebft v\u1ec1 l\u00fac c\u00f2n nh\u1ecf d\u00f9ng was, were v\u00e0 could!",
   prompt_en: "What did you look like? What were you like? What could or couldn't you do?",
   prompt_vi: "B\u1ea1n tr\u00f4ng th\u1ebf n\u00e0o? B\u1ea1n nh\u01b0 th\u1ebf n\u00e0o? B\u1ea1n c\u00f3 th\u1ec3 ho\u1eb7c kh\u00f4ng th\u1ec3 l\u00e0m g\u00ec?",
-  keywords: ["chubby", "extremely", "recognise", "reaching", "cot", "grateful", "changed"],
+  keywords: ["chubby", "extremely", "recognize", "reaching", "cot", "grateful", "changed"],
   topic_talk_prompt: "Describe yourself as a baby \u2014 what did you look like and what were you like?",
   sentence_frames: [
     {
@@ -31,7 +31,7 @@ export default {
             "walk",
             "talk",
             "smile",
-            "recognise"
+            "recognize"
         ]
     },
     {
@@ -102,7 +102,7 @@ export default {
         "distractor": false
     },
     {
-        "word": "recognise",
+        "word": "recognize",
         "vi": "nhận ra",
         "distractor": false
     },

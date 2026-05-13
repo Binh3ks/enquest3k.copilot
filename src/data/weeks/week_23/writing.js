@@ -1,7 +1,7 @@
 export default {
   title: "My Art Class Story",
   min_words: 45,
-  model_sentence: "Yesterday morning I had the most exciting art class I have ever had, and I want to describe every step of what I made. First, my teacher placed a large white canvas on each desk and told us we were going to paint a garden scene with at least three different colours. I picked up my thickest brush, dipped it carefully into bright red pigment, and began to paint a large rose in the centre of my canvas. Next, I used a finer brush to add detailed green leaves and curving stems around the rose, which made it look more realistic. Then I mixed yellow and orange together to paint a golden sun in the top right corner, and I used a thin brush to add little white clouds floating beside it. After I finished painting, I stepped back and looked at my work and I felt a strong sense of pride because the garden scene was even more beautiful than I had imagined.",
+  model_sentence: "Yesterday morning I had the most exciting art class I have ever had, and I want to describe every step of what I made. First, my teacher placed a large white canvas on each desk and told us we were going to paint a garden scene with at least three different colors. I picked up my thickest brush, dipped it carefully into bright red pigment, and began to paint a large rose in the center of my canvas. Next, I used a finer brush to add detailed green leaves and curving stems around the rose, which made it look more realistic. Then I mixed yellow and orange together to paint a golden sun in the top right corner, and I used a thin brush to add little white clouds floating beside it. After I finished painting, I stepped back and looked at my work and I felt a strong sense of pride because the garden scene was even more beautiful than I had imagined.",
   instruction_en: "Write a detailed step-by-step art class story using first, next, then, after!",
   instruction_vi: "Vi\u1ebft c\u00e2u chuy\u1ec7n m\u1ef9 thu\u1eadt chi ti\u1ebft theo t\u1eebng b\u01b0\u1edbc d\u00f9ng first, next, then, after!",
   prompt_en: "What did you paint? What steps did you follow? How did you feel at the end?",
@@ -17,7 +17,7 @@ export default {
         ]
     },
     {
-        "template": "I picked up my ___, dipped it into ___, and began to ___ in the centre.",
+        "template": "I picked up my ___, dipped it into ___, and began to ___ in the center.",
         "answers": [
             "thickest brush",
             "bright red pigment",

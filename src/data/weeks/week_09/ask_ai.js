@@ -25,12 +25,12 @@ export default {
     },
     {
       id: 3,
-      nova_says: "My favourite place in the city is the library.",
+      nova_says: "My favorite place in the city is the library.",
       nova_says_vi: "Nơi yêu thích của cô trong thành phố là thư viện.",
-      task_en: "Ask Nova WHAT her favourite place in the city is.",
+      task_en: "Ask Nova WHAT her favorite place in the city is.",
       task_vi: "Hỏi cô Nova nơi yêu thích của cô trong thành phố là gì.",
-      question_frame: "What ___ your favourite place in the city?",
-      answer: ["What is your favourite place in the city?","What's your favourite place in the city?"],
+      question_frame: "What ___ your favorite place in the city?",
+      answer: ["What is your favorite place in the city?","What's your favorite place in the city?"],
       hint: "is",
       audio_url: null
     },

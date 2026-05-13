@@ -25,7 +25,7 @@ export default {
       id: 2,
       type: "comparison",
       cpa_stage: "pictorial",
-      question_en: "Anna has 45 coloured pencils. Ben has 28 coloured pencils. How many more pencils does Anna have?",
+      question_en: "Anna has 45 colored pencils. Ben has 28 colored pencils. How many more pencils does Anna have?",
       question_vi: "Anna có 45 bút màu. Ben có 28 bút màu. Anna có nhiều hơn bao nhiêu bút?",
       bar_model: "/images/week21/barmodel_w21_easy_p2_v1.jpg",
       solution_steps: ["Anna's pencils: 45", "Ben's pencils: 28", "Difference: 45 - 28 = ?"],

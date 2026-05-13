@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "I eat in the ___.", audio: "/audio/week5_easy/mindmap_stem_5pwp22.mp3" },
     { text: "I have a ___ in my bedroom.", audio: "/audio/week5_easy/mindmap_stem_kalx6c.mp3" },
     { text: "I sit on a ___.", audio: "/audio/week5_easy/mindmap_stem_otv8c6.mp3" },
-    { text: "My favourite room is ___.", audio: "/audio/week5_easy/mindmap_stem_8zbwyd.mp3" }
+    { text: "My favorite room is ___.", audio: "/audio/week5_easy/mindmap_stem_8zbwyd.mp3" }
   ],
   branchLabels: {
     "My house has ___.": [
@@ -48,7 +48,7 @@ const mindMapContent = {
       { text: "red chair", audio: "/audio/week5_easy/mindmap_branch_d79m5d.mp3" },
       { text: "blue chair", audio: "/audio/week5_easy/mindmap_branch_ttdb5k.mp3" }
     ],
-    "My favourite room is ___.": [
+    "My favorite room is ___.": [
       { text: "my bedroom", audio: "/audio/week5_easy/mindmap_branch_o6ukiy.mp3" },
       { text: "the kitchen", audio: "/audio/week5_easy/mindmap_branch_1nrhvv.mp3" },
       { text: "the living room", audio: "/audio/week5_easy/mindmap_branch_sir32x.mp3" },

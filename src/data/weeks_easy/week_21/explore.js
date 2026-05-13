@@ -4,23 +4,23 @@ export default {
   image_url: "/images/week21/explore_cover_w21.jpg",
   audio_url: "/audio/week21_easy/explore_main.mp3",
   content_en: `
-    Did you know that famous scientists kept diaries too?
-    They are called field journals, and they tell us amazing things about the world.
+ Did you know that famous scientists kept diaries too?
+ They are called field journals, and they tell us amazing things about the world.
 
-    Charles Darwin was a scientist 200 years ago.
-    He **walked** onto a ship and travelled to many islands.
-    Every day, he **looked** at animals and plants.
-    He **watched** birds and **listened** to their calls.
-    At night, he **opened** his journal and wrote what he saw.
-    He **finished** one diary, then **started** a new one!
+ Charles Darwin was a scientist 200 years ago.
+ He **walked** onto a ship and traveled to many islands.
+ Every day, he **looked** at animals and plants.
+ He **watched** birds and **listened** to their calls.
+ At night, he **opened** his journal and wrote what he saw.
+ He **finished** one diary, then **started** a new one!
 
-    Jane Goodall was a scientist who **watched** wild chimpanzees in Africa.
-    She **helped** us understand how they **played**, **talked**, and even **cooked** food with tools.
-    Jane **cleaned** her notes every evening and never missed a day.
+ Jane Goodall was a scientist who **watched** wild chimpanzees in Africa.
+ She **helped** us understand how they **played**, **talked**, and even **cooked** food with tools.
+ Jane **cleaned** her notes every evening and never missed a day.
 
-    Science diaries **helped** us learn so much about our world.
-    Maybe your diary today will help scientists in the future!
-  `,
+ Science diaries **helped** us learn so much about our world.
+ Maybe your diary today will help scientists in the future!
+ `,
   content_vi: `
     Bạn có biết các nhà khoa học nổi tiếng cũng giữ nhật ký không?
     Chúng gọi là nhật ký thực địa, và chúng kể những điều tuyệt vời về thế giới.

@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "At home, I have ___.", audio: "/audio/week31/mindmap_stem_998je8.mp3" },
     { text: "I think ___.", audio: "/audio/week31/mindmap_stem_ey2kek.mp3" },
     { text: "When I touch ___.", audio: "/audio/week31/mindmap_stem_f1mdwz.mp3" },
-    { text: "My favourite material is ___.", audio: "/audio/week31/mindmap_stem_6ij5fb.mp3" }
+    { text: "My favorite material is ___.", audio: "/audio/week31/mindmap_stem_6ij5fb.mp3" }
   ],
   branchLabels: {
     "At the market, Luna touched ___.": [
@@ -48,13 +48,13 @@ const mindMapContent = {
       { text: "glass, it feels perfectly smooth and a little cold", audio: "/audio/week31/mindmap_branch_lqc7jy.mp3" },
       { text: "plastic, it feels light and slightly flexible", audio: "/audio/week31/mindmap_branch_xobh3s.mp3" }
     ],
-    "My favourite material is ___.": [
+    "My favorite material is ___.": [
       { text: "wood because it is warm, natural, and beautiful", audio: "/audio/week31/mindmap_branch_pza2n8.mp3" },
       { text: "cotton because it is soft and comfortable to wear", audio: "/audio/week31/mindmap_branch_5h8wyj.mp3" },
       { text: "glass because it is clear and beautiful in the light", audio: "/audio/week31/mindmap_branch_pc70pc.mp3" },
       { text: "stone because it feels cool and strong and ancient", audio: "/audio/week31/mindmap_branch_7vatbn.mp3" },
       { text: "metal because it is strong, shiny, and long-lasting", audio: "/audio/week31/mindmap_branch_l414qm.mp3" },
-      { text: "plastic because it can be any colour or shape", audio: "/audio/week31/mindmap_branch_h28p5w.mp3" }
+      { text: "plastic because it can be any color or shape", audio: "/audio/week31/mindmap_branch_h28p5w.mp3" }
     ]
   }
 };

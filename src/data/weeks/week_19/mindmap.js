@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "My photos from the past were ___.", audio: "/audio/week19/mindmap_stem_7ha2wq.mp3" },
     { text: "In my old album, I was ___.", audio: "/audio/week19/mindmap_stem_5epwcu.mp3" },
     { text: "When I was in kindergarten, I was ___.", audio: "/audio/week19/mindmap_stem_gdq4pq.mp3" },
-    { text: "My favourite childhood memory is ___.", audio: "/audio/week19/mindmap_stem_rkn75l.mp3" },
+    { text: "My favorite childhood memory is ___.", audio: "/audio/week19/mindmap_stem_rkn75l.mp3" },
     { text: "Now I am big, but I was ___.", audio: "/audio/week19/mindmap_stem_k9zcjn.mp3" }
   ],
   branchLabels: {
@@ -22,7 +22,7 @@ const mindMapContent = {
       { text: "full of memories", audio: "/audio/week19/mindmap_branch_y5bsqc.mp3" },
       { text: "black and white", audio: "/audio/week19/mindmap_branch_8cci9y.mp3" },
       { text: "in an old album", audio: "/audio/week19/mindmap_branch_mbtlad.mp3" },
-      { text: "my favourite pictures", audio: "/audio/week19/mindmap_branch_kf490n.mp3" }
+      { text: "my favorite pictures", audio: "/audio/week19/mindmap_branch_kf490n.mp3" }
     ],
     "In my old album, I was ___.": [
       { text: "very small", audio: "/audio/week19/mindmap_branch_x4z60e.mp3" },
@@ -40,7 +40,7 @@ const mindMapContent = {
       { text: "drawing pictures", audio: "/audio/week19/mindmap_branch_hvuyso.mp3" },
       { text: "singing songs", audio: "/audio/week19/mindmap_branch_425x3g.mp3" }
     ],
-    "My favourite childhood memory is ___.": [
+    "My favorite childhood memory is ___.": [
       { text: "playing at the park", audio: "/audio/week19/mindmap_branch_smqo4.mp3" },
       { text: "swimming with my family", audio: "/audio/week19/mindmap_branch_z9eg7r.mp3" },
       { text: "reading with my mum", audio: "/audio/week19/mindmap_branch_4i16w1.mp3" },

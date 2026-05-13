@@ -1,12 +1,12 @@
 export default {
   title: "My City",
   min_words: 45,
-  model_sentence: "I live in Ho Chi Minh City, which is one of the largest and most exciting cities in Vietnam. The streets are always busy and noisy because millions of people live and work here every day. I can see tall modern skyscrapers next to old French colonial buildings, and I think that mix makes the city look very interesting. There are huge shopping centres, busy markets, and beautiful parks spread all across the city. However, the traffic can be very heavy during rush hour so many people ride motorbikes to move faster. I love my city because there is always something new to discover and explore. Living here makes me feel proud and excited about the future.",
+  model_sentence: "I live in Ho Chi Minh City, which is one of the largest and most exciting cities in Vietnam. The streets are always busy and noisy because millions of people live and work here every day. I can see tall modern skyscrapers next to old French colonial buildings, and I think that mix makes the city look very interesting. There are huge shopping centers, busy markets, and beautiful parks spread all across the city. However, the traffic can be very heavy during rush hour so many people ride motorbikes to move faster. I love my city because there is always something new to discover and explore. Living here makes me feel proud and excited about the future.",
   instruction_en: "Write a detailed description of your city with comparisons and reasons!",
   instruction_vi: "Vi\u1ebft m\u00f4 t\u1ea3 chi ti\u1ebft v\u1ec1 th\u00e0nh ph\u1ed1 c\u1ee7a b\u1ea1n v\u1edbi so s\u00e1nh v\u00e0 l\u00fd do!",
   prompt_en: "What makes your city special? What are the good and bad things? How does living there make you feel?",
   prompt_vi: "\u0110i\u1ec1u g\u00ec l\u00e0m th\u00e0nh ph\u1ed1 c\u1ee7a b\u1ea1n \u0111\u1eb7c bi\u1ec7t? \u0110i\u1ec1u t\u1ed1t v\u00e0 x\u1ea5u l\u00e0 g\u00ec? S\u1ed1ng \u1edf \u0111\u00f3 khi\u1ebfn b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["skyscrapers", "colonial", "shopping centres", "traffic", "rush hour", "discover", "explore"],
+  keywords: ["skyscrapers", "colonial", "shopping centers", "traffic", "rush hour", "discover", "explore"],
   topic_talk_prompt: "Describe your city \u2014 what is great about it and what is not so great?",
   sentence_frames: [
     {
@@ -29,7 +29,7 @@ export default {
     {
         "template": "There are ___, ___, and ___ spread all across the city.",
         "answers": [
-            "huge shopping centres",
+            "huge shopping centers",
             "busy markets",
             "beautiful parks"
         ]
@@ -98,7 +98,7 @@ export default {
         "distractor": false
     },
     {
-        "word": "huge shopping centres",
+        "word": "huge shopping centers",
         "vi": "các trung tâm thương mại lớn",
         "distractor": false
     },

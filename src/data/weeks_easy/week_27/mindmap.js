@@ -33,9 +33,9 @@ const mindMapContent = {
       { text: "grows toward the sun", audio: "/audio/week27_easy/mindmap_branch_77li35.mp3" }
     ],
     "Finally, the flower ___.": [
-      { text: "blooms in bright colours", audio: "/audio/week27_easy/mindmap_branch_3papa5.mp3" },
+      { text: "blooms in bright colors", audio: "/audio/week27_easy/mindmap_branch_3papa5.mp3" },
       { text: "opens wide in the sun", audio: "/audio/week27_easy/mindmap_branch_e40h63.mp3" },
-      { text: "fills the garden with colour", audio: "/audio/week27_easy/mindmap_branch_w235rp.mp3" },
+      { text: "fills the garden with color", audio: "/audio/week27_easy/mindmap_branch_w235rp.mp3" },
       { text: "makes seeds for new plants", audio: "/audio/week27_easy/mindmap_branch_4kz053.mp3" },
       { text: "closes at night", audio: "/audio/week27_easy/mindmap_branch_t09vpf.mp3" },
       { text: "smells wonderful", audio: "/audio/week27_easy/mindmap_branch_hbczln.mp3" }

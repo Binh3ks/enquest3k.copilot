@@ -40,7 +40,7 @@ export default {
     {
       id: 4,
       type: "logic",
-      question_en: "Anna was excited about her birthday party. When she arrived, the party was cancelled. What was she most likely feeling?",
+      question_en: "Anna was excited about her birthday party. When she arrived, the party was canceled. What was she most likely feeling?",
       options: ["upset and disappointed", "cheerful and calm", "relieved and surprised", "hungry and tired"],
       correct: "upset and disappointed",
       explanation_en: "When something we are excited about does not happen, we usually feel upset or disappointed.",

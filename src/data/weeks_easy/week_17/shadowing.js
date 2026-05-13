@@ -3,7 +3,7 @@ export default {
   script: [
     { id: 1,  text: "Today it is raining!",                                          vi: "Hôm nay trời đang mưa!" },
     { id: 2,  text: "I look out the window.",                                        vi: "Tôi nhìn ra cửa sổ." },
-    { id: 3,  text: "The sky is grey.",                                              vi: "Bầu trời màu xám." },
+    { id: 3,  text: "The sky is gray.",                                              vi: "Bầu trời màu xám." },
     { id: 4,  text: "It is cold outside.",                                           vi: "Trời lạnh bên ngoài." },
     { id: 5,  text: "I pick up my coat.",                                            vi: "Tôi lấy áo khoác." },
     { id: 6,  text: "I put on my boots.",                                            vi: "Tôi mang ủng." },

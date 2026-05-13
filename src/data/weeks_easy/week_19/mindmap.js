@@ -3,7 +3,7 @@ const mindMapContent = {
     { text: "I was ___.", audio: "/audio/week19_easy/mindmap_stem_l8xh0d.mp3" },
     { text: "My photo was ___.", audio: "/audio/week19_easy/mindmap_stem_da2rfs.mp3" },
     { text: "When I was small, I was ___.", audio: "/audio/week19_easy/mindmap_stem_cpltok.mp3" },
-    { text: "My favourite memory is ___.", audio: "/audio/week19_easy/mindmap_stem_6z1k4v.mp3" },
+    { text: "My favorite memory is ___.", audio: "/audio/week19_easy/mindmap_stem_6z1k4v.mp3" },
     { text: "In my album, I was ___.", audio: "/audio/week19_easy/mindmap_stem_5l8uvb.mp3" },
     { text: "Now I am big, but I was ___.", audio: "/audio/week19_easy/mindmap_stem_k9zcjn.mp3" }
   ],
@@ -22,7 +22,7 @@ const mindMapContent = {
       { text: "in an old album", audio: "/audio/week19_easy/mindmap_branch_m7dlnb.mp3" },
       { text: "in black and white", audio: "/audio/week19_easy/mindmap_branch_zh9vyn.mp3" },
       { text: "a baby photo", audio: "/audio/week19_easy/mindmap_branch_ykpb1u.mp3" },
-      { text: "my favourite", audio: "/audio/week19_easy/mindmap_branch_mgv36o.mp3" }
+      { text: "my favorite", audio: "/audio/week19_easy/mindmap_branch_mgv36o.mp3" }
     ],
     "When I was small, I was ___.": [
       { text: "very tiny", audio: "/audio/week19_easy/mindmap_branch_8tzf95.mp3" },
@@ -32,7 +32,7 @@ const mindMapContent = {
       { text: "very happy", audio: "/audio/week19_easy/mindmap_branch_g3urdp.mp3" },
       { text: "with my mum", audio: "/audio/week19_easy/mindmap_branch_uv57jc.mp3" }
     ],
-    "My favourite memory is ___.": [
+    "My favorite memory is ___.": [
       { text: "playing at the park", audio: "/audio/week19_easy/mindmap_branch_dwf5pg.mp3" },
       { text: "swimming with my family", audio: "/audio/week19_easy/mindmap_branch_42aun.mp3" },
       { text: "a holiday", audio: "/audio/week19_easy/mindmap_branch_ta9egn.mp3" },

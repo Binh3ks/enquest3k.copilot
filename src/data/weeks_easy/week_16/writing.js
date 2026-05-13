@@ -1,13 +1,13 @@
 export default {
-  title: "My Favourite Sport",
+  title: "My Favorite Sport",
   min_words: 25,
   model_sentence: "I love football. I am kicking the ball. My team is running fast. We are scoring a goal!",
-  instruction_en: "Write about your favourite sport!",
+  instruction_en: "Write about your favorite sport!",
   instruction_vi: "Vi\u1ebft v\u1ec1 m\u00f4n th\u1ec3 thao y\u00eau th\u00edch c\u1ee7a b\u1ea1n!",
   prompt_en: "What sport do you love? What are you doing? How does it feel?",
   prompt_vi: "B\u1ea1n y\u00eau th\u00edch m\u00f4n th\u1ec3 thao n\u00e0o? B\u1ea1n \u0111ang l\u00e0m g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
   keywords: ["football", "kicking", "ball", "running", "scoring", "goal"],
-  topic_talk_prompt: "Tell me about your favourite sport!",
+  topic_talk_prompt: "Tell me about your favorite sport!",
   sentence_frames: [
     {
         "template": "I love ___.",

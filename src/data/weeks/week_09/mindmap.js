@@ -2,7 +2,7 @@ const mindMapContent = {
   centerStems: [
     { text: "In the city I see ___.", audio: "/audio/week9/mindmap_stem_5qkete.mp3" },
     { text: "In the city I hear ___.", audio: "/audio/week9/mindmap_stem_bz3rb5.mp3" },
-    { text: "My favourite place in the city is ___.", audio: "/audio/week9/mindmap_stem_5dx1ee.mp3" },
+    { text: "My favorite place in the city is ___.", audio: "/audio/week9/mindmap_stem_5dx1ee.mp3" },
     { text: "I live near ___.", audio: "/audio/week9/mindmap_stem_4agae.mp3" },
     { text: "I can ride a ___.", audio: "/audio/week9/mindmap_stem_pakhzl.mp3" },
     { text: "I think my city is ___.", audio: "/audio/week9/mindmap_stem_rencu9.mp3" }
@@ -24,12 +24,12 @@ const mindMapContent = {
       { text: "busy sounds", audio: "/audio/week9/mindmap_branch_u6pf7x.mp3" },
       { text: "city noise", audio: "/audio/week9/mindmap_branch_sjg2x3.mp3" }
     ],
-    "My favourite place in the city is ___.": [
+    "My favorite place in the city is ___.": [
       { text: "the park", audio: "/audio/week9/mindmap_branch_m7etsi.mp3" },
       { text: "the library", audio: "/audio/week9/mindmap_branch_u0ggbb.mp3" },
       { text: "the school", audio: "/audio/week9/mindmap_branch_e8vb38.mp3" },
-      { text: "the shopping centre", audio: "/audio/week9/mindmap_branch_tfvypb.mp3" },
-      { text: "the sports centre", audio: "/audio/week9/mindmap_branch_3xieoo.mp3" },
+      { text: "the shopping center", audio: "/audio/week9/mindmap_branch_tfvypb.mp3" },
+      { text: "the sports center", audio: "/audio/week9/mindmap_branch_3xieoo.mp3" },
       { text: "the museum", audio: "/audio/week9/mindmap_branch_5wabye.mp3" }
     ],
     "I live near ___.": [
@@ -38,7 +38,7 @@ const mindMapContent = {
       { text: "a park", audio: "/audio/week9/mindmap_branch_z7ctm.mp3" },
       { text: "a school", audio: "/audio/week9/mindmap_branch_9ubcww.mp3" },
       { text: "a river", audio: "/audio/week9/mindmap_branch_vdw470.mp3" },
-      { text: "a shopping centre", audio: "/audio/week9/mindmap_branch_uea42d.mp3" }
+      { text: "a shopping center", audio: "/audio/week9/mindmap_branch_uea42d.mp3" }
     ],
     "I can ride a ___.": [
       { text: "bus", audio: "/audio/week9/mindmap_branch_pai48i.mp3" },

@@ -10,7 +10,7 @@ export default {
     },
     {
       id: 2,
-      question_en: "🏀 basketball  ⚽ football  🏀 basketball  ⚽ football  🏀 basketball ... What comes next?",
+      question_en: "🏀 basketball ⚽ football 🏀 basketball ⚽ football 🏀 basketball ... What comes next?",
       question_vi: "🏀 basketball  ⚽ football  🏀 basketball  ⚽ football  🏀 basketball ... Tiếp theo là gì?",
       hint_en: "basketball and football keep alternating.",
       sample_answer: "⚽ football",
@@ -36,7 +36,7 @@ export default {
       id: 5,
       question_en: "First place wins a gold medal. Second place wins silver. Third place wins ___?",
       question_vi: "Hạng nhất nhận huy chương vàng. Hạng nhì nhận bạc. Hạng ba nhận ___?",
-      hint_en: "There are three medal colours.",
+      hint_en: "There are three medal colors.",
       sample_answer: "bronze",
       audio_url: null,
     },

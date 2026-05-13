@@ -28,7 +28,7 @@ const mindMapContent = {
       { text: "the park on Saturday", audio: "/audio/week26_easy/mindmap_branch_hxc9gb.mp3" },
       { text: "the park with Max", audio: "/audio/week26_easy/mindmap_branch_vralc3.mp3" },
       { text: "the park near his house", audio: "/audio/week26_easy/mindmap_branch_g5tldf.mp3" },
-      { text: "his favourite green park", audio: "/audio/week26_easy/mindmap_branch_vh04xq.mp3" },
+      { text: "his favorite green park", audio: "/audio/week26_easy/mindmap_branch_vh04xq.mp3" },
       { text: "the park early in the morning", audio: "/audio/week26_easy/mindmap_branch_s6468g.mp3" },
       { text: "the park for the first time that weekend", audio: "/audio/week26_easy/mindmap_branch_lkx8fq.mp3" }
     ],

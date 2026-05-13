@@ -1,7 +1,7 @@
 export default {
   title: "Inside My Backpack",
   min_words: 40,
-  model_sentence: "Every morning I pack my school bag very carefully so that I do not forget anything important. In my backpack there is a notebook, a textbook, and a pencil case with coloured pencils and an eraser inside. I also carry a water bottle and a healthy snack because I get hungry between lessons. My bag is dark blue and it has a small pocket at the front for my bus card and my library card. It is quite heavy but I do not mind because I love being organised and ready for school. Being prepared makes me feel confident every day.",
+  model_sentence: "Every morning I pack my school bag very carefully so that I do not forget anything important. In my backpack there is a notebook, a textbook, and a pencil case with colored pencils and an eraser inside. I also carry a water bottle and a healthy snack because I get hungry between lessons. My bag is dark blue and it has a small pocket at the front for my bus card and my library card. It is quite heavy but I do not mind because I love being organised and ready for school. Being prepared makes me feel confident every day.",
   instruction_en: "Describe everything in your school bag and why you carry it!",
   instruction_vi: "M\u00f4 t\u1ea3 m\u1ecdi th\u1ee9 trong c\u1eb7p v\u00e0 t\u1ea1i sao b\u1ea1n mang ch\u00fang!",
   prompt_en: "What is in your bag? Why do you carry each item? How does being prepared make you feel?",
@@ -15,7 +15,7 @@ export default {
             "a notebook",
             "a textbook",
             "a pencil case",
-            "coloured pencils"
+            "colored pencils"
         ]
     },
     {
@@ -71,7 +71,7 @@ export default {
         "distractor": false
     },
     {
-        "word": "coloured pencils",
+        "word": "colored pencils",
         "vi": "bút chì màu",
         "distractor": false
     },

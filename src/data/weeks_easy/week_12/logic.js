@@ -41,8 +41,8 @@ export default {
       question_en: "Anna can dance very well. She loves dancing! Anna is a great ___. (Write: dancer or singer)",
       question_vi: "Anna co the nhay rat gioi. Co ay yeu thich nhay! Anna la mot ___ tuyet voi. (Viet: dancer hoac singer)",
       answer: ["dancer"],
-      hint_en: "Anna loves dancing. dance + r = dancer.  sing + er = singer.",
-      hint_vi: "Anna yeu thich nhay. dance + r = dancer.  sing + er = singer.",
+      hint_en: "Anna loves dancing. dance + r = dancer. sing + er = singer.",
+      hint_vi: "Anna yeu thich nhay. dance + r = dancer. sing + er = singer.",
       audio_url: "/audio/week12_easy/logic_4.mp3"
     },
     {

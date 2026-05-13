@@ -43,7 +43,7 @@ const mindMapContent = {
     "I am ___ a picture.": [
       { text: "drawing", audio: "/audio/week18_easy/mindmap_branch_fiajgy.mp3" },
       { text: "painting", audio: "/audio/week18_easy/mindmap_branch_q7h6jy.mp3" },
-      { text: "colouring", audio: "/audio/week18_easy/mindmap_branch_mqlrd6.mp3" },
+      { text: "coloring", audio: "/audio/week18_easy/mindmap_branch_mqlrd6.mp3" },
       { text: "describing", audio: "/audio/week18_easy/mindmap_branch_hxqvxm.mp3" },
       { text: "looking at", audio: "/audio/week18_easy/mindmap_branch_cs5u3i.mp3" },
       { text: "creating", audio: "/audio/week18_easy/mindmap_branch_ipir89.mp3" }

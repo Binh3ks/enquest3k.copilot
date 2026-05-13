@@ -36,7 +36,7 @@ export default {
     {
       id: 3,
       type: "logic",
-      question_en: "Put these journey events in the correct order: A) Arrival in Da Nang  B) Buying tickets  C) Boarding the plane  D) Going through security",
+      question_en: "Put these journey events in the correct order: A) Arrival in Da Nang B) Buying tickets C) Boarding the plane D) Going through security",
       options: [
         "B → D → C → A",
         "A → B → C → D",

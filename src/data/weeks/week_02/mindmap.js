@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "My mother is ___.", audio: "/audio/week2/mindmap_stem_x7hih0.mp3" },
     { text: "My father is ___.", audio: "/audio/week2/mindmap_stem_m7yl79.mp3" },
     { text: "My family is ___.", audio: "/audio/week2/mindmap_stem_tot5gd.mp3" },
-    { text: "My favourite family activity is ___.", audio: "/audio/week2/mindmap_stem_6pc6or.mp3" },
+    { text: "My favorite family activity is ___.", audio: "/audio/week2/mindmap_stem_6pc6or.mp3" },
     { text: "I love my family because ___.", audio: "/audio/week2/mindmap_stem_krjf7c.mp3" }
   ],
   branchLabels: {
@@ -40,7 +40,7 @@ const mindMapContent = {
       { text: "very happy", audio: "/audio/week2/mindmap_branch_hwzbme.mp3" },
       { text: "my treasure", audio: "/audio/week2/mindmap_branch_3shbnd.mp3" }
     ],
-    "My favourite family activity is ___.": [
+    "My favorite family activity is ___.": [
       { text: "playing games together", audio: "/audio/week2/mindmap_branch_d5ip1p.mp3" },
       { text: "cooking together", audio: "/audio/week2/mindmap_branch_m2q4wo.mp3" },
       { text: "watching movies as a family", audio: "/audio/week2/mindmap_branch_pw0tq5.mp3" },

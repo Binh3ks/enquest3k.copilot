@@ -5,20 +5,20 @@ export default {
   audio_url: "/audio/week20_easy/explore_main.mp3",
 
   content_en: `
-    Look at an old town! Long ago, there was a **market** in every town. People went to the **market** to buy food and things.
+ Look at an old town! Long ago, there was a **market** in every town. People went to the **market** to buy food and things.
 
-    There were trees on every **road**. The trees gave shade. People walked under the **trees**.
+ There were trees on every **road**. The trees gave shade. People walked under the **trees**.
 
-    There was one **bridge** over the **river**. People used the **bridge** to get to the other side. The **bridge** was made of wood.
+ There was one **bridge** over the **river**. People used the **bridge** to get to the other side. The **bridge** was made of wood.
 
-    There was a **temple** in the center of the **village**. People went to the **temple** to pray. The **temple** was very beautiful.
+ There was a **temple** in the center of the **village**. People went to the **temple** to pray. The **temple** was very beautiful.
 
-    Now towns are different! There are new **buildings** and new **roads**. There are new **bridges**. Some old places are gone.
+ Now towns are different! There are new **buildings** and new **roads**. There are new **bridges**. Some old places are gone.
 
-    But some **old** places are still there! Old **temples** are still standing. They are important to us. They show us the past.
+ But some **old** places are still there! Old **temples** are still standing. They are important to us. They show us the past.
 
-    Can you find an **old** place in your town? Is there an **old** **temple** or **old** **building**? These are special. They are part of our history!
-  `,
+ Can you find an **old** place in your town? Is there an **old** **temple** or **old** **building**? These are special. They are part of our history!
+ `,
 
   content_vi: `
     Nhìn thị trấn cũ! Ngày xưa, có một **chợ** ở mỗi thị trấn. Người ta đến **chợ** để mua thực phẩm.

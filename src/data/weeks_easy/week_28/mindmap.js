@@ -3,7 +3,7 @@ const mindMapContent = {
     { text: "The tortoise chose a ___.", audio: "/audio/week28_easy/mindmap_stem_o0t5gm.mp3" },
     { text: "The hare stopped to ___.", audio: "/audio/week28_easy/mindmap_stem_lkqn7o.mp3" },
     { text: "I go to school by ___.", audio: "/audio/week28_easy/mindmap_stem_qelimo.mp3" },
-    { text: "My favourite vehicle is ___.", audio: "/audio/week28_easy/mindmap_stem_2qby0q.mp3" },
+    { text: "My favorite vehicle is ___.", audio: "/audio/week28_easy/mindmap_stem_2qby0q.mp3" },
     { text: "A ___.", audio: "/audio/week28_easy/mindmap_stem_vb9j4e.mp3" },
     { text: "I want to travel by ___ one day.", audio: "/audio/week28_easy/mindmap_stem_bj06jg.mp3" }
   ],
@@ -32,7 +32,7 @@ const mindMapContent = {
       { text: "on foot", audio: "/audio/week28_easy/mindmap_branch_7an5a8.mp3" },
       { text: "taxi", audio: "/audio/week28_easy/mindmap_branch_xh83rl.mp3" }
     ],
-    "My favourite vehicle is ___.": [
+    "My favorite vehicle is ___.": [
       { text: "bus", audio: "/audio/week28_easy/mindmap_branch_2q9k9n.mp3" },
       { text: "train", audio: "/audio/week28_easy/mindmap_branch_dgrlr1.mp3" },
       { text: "bicycle", audio: "/audio/week28_easy/mindmap_branch_2ibbie.mp3" },

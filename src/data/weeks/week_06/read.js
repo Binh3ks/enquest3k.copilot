@@ -40,8 +40,8 @@ export default {
     {
       id: 5,
       question_en: "What is on the wall?",
-      answer: ["another clue", "the another clue", "There is another clue"],
-      clue_statement: "There is the another clue on the wall.",
+      answer: ["another clue", "another clue", "There is another clue"],
+      clue_statement: "There is another clue on the wall.",
       hint_en: "Look on the wall...",
       hint_vi: "Nhìn vào wall..."
     }

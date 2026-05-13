@@ -1,14 +1,14 @@
 export default {
-  topic_talk_prompt: "Tell me about your favourite food. What do you like to eat? When do you eat it?",
+  topic_talk_prompt: "Tell me about your favorite food. What do you like to eat? When do you eat it?",
   prompts: [
     {
       id: 1,
-      nova_says: "My favourite food is pizza.",
+      nova_says: "My favorite food is pizza.",
       nova_says_vi: "Món ăn yêu thích của cô là pizza.",
-      task_en: "Ask Nova WHAT her favourite food is.",
+      task_en: "Ask Nova WHAT her favorite food is.",
       task_vi: "Hỏi cô Nova món ăn yêu thích của cô là gì.",
-      question_frame: "What ___ your favourite food?",
-      answer: ["What is your favourite food?","What's your favourite food?"],
+      question_frame: "What ___ your favorite food?",
+      answer: ["What is your favorite food?","What's your favorite food?"],
       hint: "is",
       audio_url: null
     },
@@ -49,11 +49,11 @@ export default {
       id: 5,
       nova_says: "I like chocolate ice cream for dessert.",
       nova_says_vi: "Cô thích kem sô-cô-la tráng miệng.",
-      task_en: "Ask Nova WHAT flavour ice cream she likes.",
+      task_en: "Ask Nova WHAT flavor ice cream she likes.",
       task_vi: "Hỏi cô Nova cô thích kem vị gì.",
       question_frame: "What ___ of ice cream do you like?",
-      answer: ["What flavour of ice cream do you like?","What flavour ice cream do you like?"],
-      hint: "flavour",
+      answer: ["What flavor of ice cream do you like?","What flavor ice cream do you like?"],
+      hint: "flavor",
       audio_url: null
     }
   ]

@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🐄 cow  🐔 chicken  🐄 cow  🐔 chicken  🐄 cow ... What animal comes next?",
+      question_en: "🐄 cow 🐔 chicken 🐄 cow 🐔 chicken 🐄 cow ... What animal comes next?",
       question_vi: "🐄 cow  🐔 chicken  🐄 cow  🐔 chicken  🐄 cow ... Con vật nào tiếp theo?",
       hint_en: "cow and chicken keep alternating.",
       sample_answer: "🐔 chicken",

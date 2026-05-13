@@ -29,7 +29,7 @@ export default {
       id: 2,
       type: "comparison",
       cpa_stage: "pictorial",
-      question_en: "Maya kicked the ball 15 metres. Ben kicked it 8 metres. How many more metres did Maya kick the ball than Ben?",
+      question_en: "Maya kicked the ball 15 meters. Ben kicked it 8 meters. How many more meters did Maya kick the ball than Ben?",
       question_vi: "Maya đá bóng đi 15 mét. Ben đá được 8 mét. Maya đá xa hơn Ben bao nhiêu mét?",
       bar_model: "/images/week16/barmodel_w16_adv_p2_v1.jpg",
       solution_steps: [
@@ -37,12 +37,12 @@ export default {
         "Ben's distance: 8 m",
         "Difference: 15 - 8 = ?"
       ],
-      answer: ["7", "seven", "7 metres"],
-      unit: "metres",
+      answer: ["7", "seven", "7 meters"],
+      unit: "meters",
       hint_en: "Find the difference between the two distances: 15 - 8.",
       hint_vi: "Tìm hiệu số giữa hai khoảng cách: 15 - 8.",
-      explanation_en: "15 - 8 = 7. Maya kicked the ball 7 metres further than Ben.",
-      math_vocab: ["more than", "difference", "compare", "metres"],
+      explanation_en: "15 - 8 = 7. Maya kicked the ball 7 meters further than Ben.",
+      math_vocab: ["more than", "difference", "compare", "meters"],
       audio_url: "/audio/week16/math_p2.mp3"
     },
     {

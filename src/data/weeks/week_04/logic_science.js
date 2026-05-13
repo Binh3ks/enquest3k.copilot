@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🍎 apple  🍊 orange  🍎 apple  🍊 orange  🍎 apple ... What comes next?",
+      question_en: "🍎 apple 🍊 orange 🍎 apple 🍊 orange 🍎 apple ... What comes next?",
       question_vi: "🍎 apple  🍊 orange  🍎 apple  🍊 orange  🍎 apple ... Tiếp theo là gì?",
       hint_en: "apple and orange keep repeating.",
       sample_answer: "🍊 orange",
@@ -10,9 +10,9 @@ export default {
     },
     {
       id: 2,
-      question_en: "A banana 🍌 is yellow. An apple 🍎 is red or green. What colour is a banana?",
+      question_en: "A banana 🍌 is yellow. An apple 🍎 is red or green. What color is a banana?",
       question_vi: "Chuối 🍌 màu vàng. Táo 🍎 màu đỏ hoặc xanh lá. Chuối màu gì?",
-      hint_en: "Think about the colour of a banana.",
+      hint_en: "Think about the color of a banana.",
       sample_answer: "yellow",
       audio_url: null,
     },

@@ -2,7 +2,7 @@ const mindMapContent = {
   centerStems: [
     { text: "My town used to have ___.", audio: "/audio/week20/mindmap_stem_7tc7jf.mp3" },
     { text: "I remember when my town ___.", audio: "/audio/week20/mindmap_stem_fisq5v.mp3" },
-    { text: "My favourite old place in my town is ___.", audio: "/audio/week20/mindmap_stem_ajtval.mp3" },
+    { text: "My favorite old place in my town is ___.", audio: "/audio/week20/mindmap_stem_ajtval.mp3" },
     { text: "Now my town has ___ instead.", audio: "/audio/week20/mindmap_stem_xeu7zr.mp3" },
     { text: "I wish my town still had ___.", audio: "/audio/week20/mindmap_stem_sgkhgo.mp3" },
     { text: "The oldest thing in my town is ___.", audio: "/audio/week20/mindmap_stem_h6wi7g.mp3" }
@@ -24,7 +24,7 @@ const mindMapContent = {
       { text: "had a beautiful old temple", audio: "/audio/week20/mindmap_branch_dijg8v.mp3" },
       { text: "had a clean river flowing through it", audio: "/audio/week20/mindmap_branch_etjw3r.mp3" }
     ],
-    "My favourite old place in my town is ___.": [
+    "My favorite old place in my town is ___.": [
       { text: "the old temple", audio: "/audio/week20/mindmap_branch_yik1a3.mp3" },
       { text: "the old bridge", audio: "/audio/week20/mindmap_branch_ai2rlt.mp3" },
       { text: "the riverside", audio: "/audio/week20/mindmap_branch_lu0xm0.mp3" },
@@ -35,7 +35,7 @@ const mindMapContent = {
     "Now my town has ___ instead.": [
       { text: "a new road", audio: "/audio/week20/mindmap_branch_dcvufx.mp3" },
       { text: "a modern bridge", audio: "/audio/week20/mindmap_branch_uugd9x.mp3" },
-      { text: "a shopping centre", audio: "/audio/week20/mindmap_branch_yosv9a.mp3" },
+      { text: "a shopping center", audio: "/audio/week20/mindmap_branch_yosv9a.mp3" },
       { text: "tall buildings", audio: "/audio/week20/mindmap_branch_8qwhfu.mp3" },
       { text: "a new market", audio: "/audio/week20/mindmap_branch_xh42x3.mp3" },
       { text: "more cars and buses", audio: "/audio/week20/mindmap_branch_pnjbl3.mp3" }

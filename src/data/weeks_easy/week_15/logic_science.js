@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🌳 tree  🌸 flower  🌳 tree  🌸 flower  🌳 tree ... What comes next?",
+      question_en: "🌳 tree 🌸 flower 🌳 tree 🌸 flower 🌳 tree ... What comes next?",
       question_vi: "🌳 tree  🌸 flower  🌳 tree  🌸 flower  🌳 tree ... Tiếp theo là gì?",
       hint_en: "tree and flower keep alternating.",
       sample_answer: "🌸 flower",

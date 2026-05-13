@@ -1,15 +1,15 @@
 export default {
-  topic_talk_prompt: "Tell me about your house. What rooms do you have? What is your favourite room?",
+  topic_talk_prompt: "Tell me about your house. What rooms do you have? What is your favorite room?",
   prompts: [
     {
       id: 1,
       nova_says: "I live in a big white house.",
       nova_says_vi: "Cô sống trong một ngôi nhà trắng lớn.",
-      task_en: "Ask Nova WHAT colour her house is.",
+      task_en: "Ask Nova WHAT color her house is.",
       task_vi: "Hỏi cô Nova nhà của cô màu gì.",
       question_frame: "What ___ is your house?",
-      answer: ["What colour is your house?"],
-      hint: "colour",
+      answer: ["What color is your house?"],
+      hint: "color",
       audio_url: null
     },
     {
@@ -25,12 +25,12 @@ export default {
     },
     {
       id: 3,
-      nova_says: "My favourite room is the kitchen.",
+      nova_says: "My favorite room is the kitchen.",
       nova_says_vi: "Phòng yêu thích của cô là nhà bếp.",
-      task_en: "Ask Nova WHAT her favourite room is.",
+      task_en: "Ask Nova WHAT her favorite room is.",
       task_vi: "Hỏi cô Nova phòng yêu thích của cô là gì.",
-      question_frame: "What ___ your favourite room?",
-      answer: ["What is your favourite room?","What's your favourite room?"],
+      question_frame: "What ___ your favorite room?",
+      answer: ["What is your favorite room?","What's your favorite room?"],
       hint: "is",
       audio_url: null
     },

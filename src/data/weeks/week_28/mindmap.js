@@ -3,7 +3,7 @@ const mindMapContent = {
     { text: "The tortoise won the race because ___.", audio: "/audio/week28/mindmap_stem_wwkhih.mp3" },
     { text: "The other vehicles failed because ___.", audio: "/audio/week28/mindmap_stem_ofb6lq.mp3" },
     { text: "I usually travel to school by ___.", audio: "/audio/week28/mindmap_stem_aziier.mp3" },
-    { text: "My favourite vehicle is ___.", audio: "/audio/week28/mindmap_stem_2qby0q.mp3" },
+    { text: "My favorite vehicle is ___.", audio: "/audio/week28/mindmap_stem_2qby0q.mp3" },
     { text: "If I could travel anywhere, I would go by ___.", audio: "/audio/week28/mindmap_stem_kovf9e.mp3" },
     { text: "I think the best vehicle for a long journey is ___.", audio: "/audio/week28/mindmap_stem_japcvh.mp3" }
   ],
@@ -32,7 +32,7 @@ const mindMapContent = {
       { text: "on foot", audio: "/audio/week28/mindmap_branch_e2wdnn.mp3" },
       { text: "taxi", audio: "/audio/week28/mindmap_branch_e90wr8.mp3" }
     ],
-    "My favourite vehicle is ___.": [
+    "My favorite vehicle is ___.": [
       { text: "bicycle because it is healthy and fun", audio: "/audio/week28/mindmap_branch_4hf69a.mp3" },
       { text: "train because it is fast and comfortable", audio: "/audio/week28/mindmap_branch_614ymj.mp3" },
       { text: "boat because I love being on the water", audio: "/audio/week28/mindmap_branch_6hsfbi.mp3" },

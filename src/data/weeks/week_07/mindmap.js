@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "I use a ___ to write.", audio: "/audio/week7/mindmap_stem_32qkpo.mp3" },
     { text: "In my classroom, I see ___.", audio: "/audio/week7/mindmap_stem_aasgw1.mp3" },
     { text: "I keep my ___ organized.", audio: "/audio/week7/mindmap_stem_eabbnm.mp3" },
-    { text: "My favourite school supply is ___.", audio: "/audio/week7/mindmap_stem_t0kf91.mp3" },
+    { text: "My favorite school supply is ___.", audio: "/audio/week7/mindmap_stem_t0kf91.mp3" },
     { text: "There is a ___ on my desk.", audio: "/audio/week7/mindmap_stem_lxyiy0.mp3" }
   ],
   branchLabels: {
@@ -40,13 +40,13 @@ const mindMapContent = {
       { text: "desk", audio: "/audio/week7/mindmap_branch_2v0xfo.mp3" },
       { text: "locker", audio: "/audio/week7/mindmap_branch_1uldnp.mp3" }
     ],
-    "My favourite school supply is ___.": [
+    "My favorite school supply is ___.": [
       { text: "a pen", audio: "/audio/week7/mindmap_branch_v0a6o6.mp3" },
       { text: "my notebook", audio: "/audio/week7/mindmap_branch_4c5mg5.mp3" },
       { text: "my pencil case", audio: "/audio/week7/mindmap_branch_m4omux.mp3" },
       { text: "a ruler", audio: "/audio/week7/mindmap_branch_zet7lv.mp3" },
       { text: "an eraser", audio: "/audio/week7/mindmap_branch_wk6ppn.mp3" },
-      { text: "coloured pencils", audio: "/audio/week7/mindmap_branch_sij8ix.mp3" }
+      { text: "colored pencils", audio: "/audio/week7/mindmap_branch_sij8ix.mp3" }
     ],
     "There is a ___ on my desk.": [
       { text: "book", audio: "/audio/week7/mindmap_branch_4adifw.mp3" },

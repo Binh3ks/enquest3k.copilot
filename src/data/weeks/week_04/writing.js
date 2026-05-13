@@ -1,7 +1,7 @@
 export default {
   title: "My Happy Jar",
   min_words: 40,
-  model_sentence: "I am a friendly and curious person who loves exploring new things. I like playing football with my friends because it makes me feel free and energetic. I also love drawing animals because I can use my imagination and create my own world. When I read story books, I feel calm and excited at the same time. My favourite thing to do on weekends is playing board games with my family because we laugh and talk together. I think hobbies make us happier and smarter every day.",
+  model_sentence: "I am a friendly and curious person who loves exploring new things. I like playing football with my friends because it makes me feel free and energetic. I also love drawing animals because I can use my imagination and create my own world. When I read story books, I feel calm and excited at the same time. My favorite thing to do on weekends is playing board games with my family because we laugh and talk together. I think hobbies make us happier and smarter every day.",
   instruction_en: "Write about your personality and hobbies using because and when!",
   instruction_vi: "Vi\u1ebft v\u1ec1 t\u00ednh c\u00e1ch v\u00e0 s\u1edf th\u00edch b\u1eb1ng because v\u00e0 when!",
   prompt_en: "What are you like? What do you love doing and why? How do hobbies make you feel?",
@@ -33,7 +33,7 @@ export default {
         ]
     },
     {
-        "template": "My favourite thing on weekends is ___ because we ___ and ___ together.",
+        "template": "My favorite thing on weekends is ___ because we ___ and ___ together.",
         "answers": [
             "playing board games with my family",
             "laugh",

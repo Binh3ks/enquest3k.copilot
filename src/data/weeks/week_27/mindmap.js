@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "Next, the sprout ___.", audio: "/audio/week27/mindmap_stem_5xbqww.mp3" },
     { text: "After that, the stem ___.", audio: "/audio/week27/mindmap_stem_yrskvs.mp3" },
     { text: "Finally, the flower ___.", audio: "/audio/week27/mindmap_stem_z9knoy.mp3" },
-    { text: "My favourite plant is ___.", audio: "/audio/week27/mindmap_stem_v92g05.mp3" },
+    { text: "My favorite plant is ___.", audio: "/audio/week27/mindmap_stem_v92g05.mp3" },
     { text: "A leaf uses ___.", audio: "/audio/week27/mindmap_stem_idi3vk.mp3" }
   ],
   branchLabels: {
@@ -33,14 +33,14 @@ const mindMapContent = {
       { text: "holds the plant up toward the sun", audio: "/audio/week27/mindmap_branch_ef83le.mp3" }
     ],
     "Finally, the flower ___.": [
-      { text: "blooms in beautiful bright colours", audio: "/audio/week27/mindmap_branch_5lb0j8.mp3" },
+      { text: "blooms in beautiful bright colors", audio: "/audio/week27/mindmap_branch_5lb0j8.mp3" },
       { text: "opens wide to attract insects", audio: "/audio/week27/mindmap_branch_34fcpc.mp3" },
       { text: "produces pollen for pollination", audio: "/audio/week27/mindmap_branch_r9glb2.mp3" },
       { text: "creates seeds for the next generation", audio: "/audio/week27/mindmap_branch_yy0zgr.mp3" },
       { text: "closes at night and opens in the morning", audio: "/audio/week27/mindmap_branch_79khbv.mp3" },
       { text: "fills the garden with a sweet scent", audio: "/audio/week27/mindmap_branch_bmd7nz.mp3" }
     ],
-    "My favourite plant is ___.": [
+    "My favorite plant is ___.": [
       { text: "a sunflower because it is tall and bright", audio: "/audio/week27/mindmap_branch_w7oh4v.mp3" },
       { text: "a rose because it smells wonderful", audio: "/audio/week27/mindmap_branch_hqxpbv.mp3" },
       { text: "a cactus because it is tough and interesting", audio: "/audio/week27/mindmap_branch_fuxyeb.mp3" },
@@ -54,7 +54,7 @@ const mindMapContent = {
       { text: "water and sunlight for photosynthesis", audio: "/audio/week27/mindmap_branch_w0pg02.mp3" },
       { text: "sunlight to convert water into glucose", audio: "/audio/week27/mindmap_branch_byxssq.mp3" },
       { text: "sunlight to help the plant grow tall and strong", audio: "/audio/week27/mindmap_branch_ea7dnf.mp3" },
-      { text: "energy from the sun to produce green colour", audio: "/audio/week27/mindmap_branch_7izya6.mp3" }
+      { text: "energy from the sun to produce green color", audio: "/audio/week27/mindmap_branch_7izya6.mp3" }
     ]
   }
 };

@@ -5,20 +5,20 @@ export default {
   audio_url: "/audio/week19_easy/explore_main.mp3",
   
   content_en: `
-    Look at old **photos**! You **were** a **baby**. You **were** so **small** and **cute**!
-    
-    When you **were** a **baby**, you **were** **little**. Now you **grow** bigger every year!
-    
-    Food helps you **grow**. When you **were** **young**, you drank milk. Milk makes bones strong. You also ate fruits. They help you **grow** healthy.
-    
-    Sleep helps you **grow** too! When you **were** a **baby**, you slept a lot. Sometimes you **were** **quiet**. Sometimes you **were** **noisy** and cried. Your body **grows** when you sleep!
-    
-    Your brain **grows** too! When you **were** in **kindergarten**, you learned to read. You learned to count. Each **memory** helps your brain **grow** strong!
-    
-    Every year you **grow**! Look at **photos** - you **were** **little**! Now you are tall. You can reach high things now!
-    
-    These **memories** of when we **were** **small** are special. Everyone starts as a **baby**. Everyone **grows**!
-  `,
+ Look at old **photos**! You **were** a **baby**. You **were** so **small** and **cute**!
+ 
+ When you **were** a **baby**, you **were** **little**. Now you **grow** bigger every year!
+ 
+ Food helps you **grow**. When you **were** **young**, you drank milk. Milk makes bones strong. You also ate fruits. They help you **grow** healthy.
+ 
+ Sleep helps you **grow** too! When you **were** a **baby**, you slept a lot. Sometimes you **were** **quiet**. Sometimes you **were** **noisy** and cried. Your body **grows** when you sleep!
+ 
+ Your brain **grows** too! When you **were** in **kindergarten**, you learned to read. You learned to count. Each **memory** helps your brain **grow** strong!
+ 
+ Every year you **grow**! Look at **photos** - you **were** **little**! Now you are tall. You can reach high things now!
+ 
+ These **memories** of when we **were** **small** are special. Everyone starts as a **baby**. Everyone **grows**!
+ `,
   
   content_vi: `
     Nhìn **ảnh** cũ! Bạn **là** **em bé**. Bạn **rất** **nhỏ** và **dễ thương**!

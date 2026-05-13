@@ -18,7 +18,7 @@ export default {
     },
     {
       id: 3,
-      question_en: "🌙 moon  ☀️ sun  🌙 moon  ☀️ sun  🌙 moon ... What comes next?",
+      question_en: "🌙 moon ☀️ sun 🌙 moon ☀️ sun 🌙 moon ... What comes next?",
       question_vi: "🌙 moon  ☀️ sun  🌙 moon  ☀️ sun  🌙 moon ... Tiếp theo là gì?",
       hint_en: "moon and sun keep repeating.",
       sample_answer: "☀️ sun",

@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "I remember ___.", audio: "/audio/week20_easy/mindmap_stem_tbyqi3.mp3" },
     { text: "The old market had ___.", audio: "/audio/week20_easy/mindmap_stem_85oogw.mp3" },
     { text: "Now my town has a new ___.", audio: "/audio/week20_easy/mindmap_stem_bfciig.mp3" },
-    { text: "My favourite old place is ___.", audio: "/audio/week20_easy/mindmap_stem_8u7bl4.mp3" },
+    { text: "My favorite old place is ___.", audio: "/audio/week20_easy/mindmap_stem_8u7bl4.mp3" },
     { text: "I wish my town still had ___.", audio: "/audio/week20_easy/mindmap_stem_sgkhgo.mp3" }
   ],
   branchLabels: {
@@ -40,7 +40,7 @@ const mindMapContent = {
       { text: "park", audio: "/audio/week20_easy/mindmap_branch_oe4cl.mp3" },
       { text: "school", audio: "/audio/week20_easy/mindmap_branch_wyyi5t.mp3" }
     ],
-    "My favourite old place is ___.": [
+    "My favorite old place is ___.": [
       { text: "the old temple", audio: "/audio/week20_easy/mindmap_branch_aiqfj4.mp3" },
       { text: "the big old tree", audio: "/audio/week20_easy/mindmap_branch_gvmchd.mp3" },
       { text: "the old bridge", audio: "/audio/week20_easy/mindmap_branch_fhqtk4.mp3" },

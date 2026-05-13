@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "There is ___ in my bag.", audio: "/audio/week7_easy/mindmap_stem_z55i62.mp3" },
     { text: "I eat from my ___.", audio: "/audio/week7_easy/mindmap_stem_5pnop8.mp3" },
     { text: "I write with ___.", audio: "/audio/week7_easy/mindmap_stem_o4qp5d.mp3" },
-    { text: "My favourite thing in my bag is ___.", audio: "/audio/week7_easy/mindmap_stem_52ncpj.mp3" }
+    { text: "My favorite thing in my bag is ___.", audio: "/audio/week7_easy/mindmap_stem_52ncpj.mp3" }
   ],
   branchLabels: {
     "I draw with ___.": [
@@ -14,7 +14,7 @@ const mindMapContent = {
       { text: "a crayon", audio: "/audio/week7_easy/mindmap_branch_dzj9v0.mp3" },
       { text: "a marker", audio: "/audio/week7_easy/mindmap_branch_h2grc0.mp3" },
       { text: "a brush", audio: "/audio/week7_easy/mindmap_branch_a2vxko.mp3" },
-      { text: "a coloured pencil", audio: "/audio/week7_easy/mindmap_branch_d02v4w.mp3" }
+      { text: "a colored pencil", audio: "/audio/week7_easy/mindmap_branch_d02v4w.mp3" }
     ],
     "I cut with ___.": [
       { text: "scissors", audio: "/audio/week7_easy/mindmap_branch_mmeivi.mp3" },
@@ -48,7 +48,7 @@ const mindMapContent = {
       { text: "chalk", audio: "/audio/week7_easy/mindmap_branch_yhxccr.mp3" },
       { text: "a stylus", audio: "/audio/week7_easy/mindmap_branch_oqbzfp.mp3" }
     ],
-    "My favourite thing in my bag is ___.": [
+    "My favorite thing in my bag is ___.": [
       { text: "my notebook", audio: "/audio/week7_easy/mindmap_branch_8u74xz.mp3" },
       { text: "my pencil case", audio: "/audio/week7_easy/mindmap_branch_a2ph1z.mp3" },
       { text: "my book", audio: "/audio/week7_easy/mindmap_branch_pzngjr.mp3" },

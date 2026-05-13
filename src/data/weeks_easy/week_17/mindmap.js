@@ -2,7 +2,7 @@ const mindMapContent = {
   centerStems: [
     { text: "It is raining, so I am ___.", audio: "/audio/week17_easy/mindmap_stem_eboglz.mp3" },
     { text: "When it is cold, I wear ___.", audio: "/audio/week17_easy/mindmap_stem_86sthi.mp3" },
-    { text: "My favourite weather is ___.", audio: "/audio/week17_easy/mindmap_stem_8loh82.mp3" },
+    { text: "My favorite weather is ___.", audio: "/audio/week17_easy/mindmap_stem_8loh82.mp3" },
     { text: "It is snowing, so I need ___.", audio: "/audio/week17_easy/mindmap_stem_mrpqeo.mp3" },
     { text: "On sunny days, the weather is ___.", audio: "/audio/week17_easy/mindmap_stem_7nsavp.mp3" },
     { text: "On rainy days, I like to ___.", audio: "/audio/week17_easy/mindmap_stem_6rj8tl.mp3" }
@@ -24,7 +24,7 @@ const mindMapContent = {
       { text: "a hat", audio: "/audio/week17_easy/mindmap_branch_evu20t.mp3" },
       { text: "my warmest jacket", audio: "/audio/week17_easy/mindmap_branch_dgwfa0.mp3" }
     ],
-    "My favourite weather is ___.": [
+    "My favorite weather is ___.": [
       { text: "sunny", audio: "/audio/week17_easy/mindmap_branch_hc2iru.mp3" },
       { text: "rainy", audio: "/audio/week17_easy/mindmap_branch_i477yw.mp3" },
       { text: "snowy", audio: "/audio/week17_easy/mindmap_branch_hfw99l.mp3" },

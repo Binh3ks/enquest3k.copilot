@@ -4,7 +4,7 @@ export default {
   model_sentence: "My friend is tall. She has long hair. Her hair is black. She has big eyes.",
   instruction_en: "Describe your friend's appearance!",
   instruction_vi: "M\u00f4 t\u1ea3 ngo\u1ea1i h\u00ecnh c\u1ee7a b\u1ea1n b\u00e8!",
-  prompt_en: "Is your friend tall or short? What does their hair look like? What colour are their eyes?",
+  prompt_en: "Is your friend tall or short? What does their hair look like? What color are their eyes?",
   prompt_vi: "B\u1ea1n c\u1ee7a b\u1ea1n cao hay th\u1ea5p? T\u00f3c h\u1ecd th\u1ebf n\u00e0o? M\u1eaft m\u00e0u g\u00ec?",
   keywords: ["tall", "hair", "long", "black", "eyes", "big"],
   topic_talk_prompt: "Describe what your friend looks like!",

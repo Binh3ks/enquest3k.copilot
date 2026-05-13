@@ -25,7 +25,7 @@ export default {
       id: 2,
       type: "comparison",
       cpa_stage: "pictorial",
-      question_en: "Tom has 38 colour pencils and Mai has 25 colour pencils for their comic strips. How many more pencils does Tom have?",
+      question_en: "Tom has 38 color pencils and Mai has 25 color pencils for their comic strips. How many more pencils does Tom have?",
       question_vi: "Tom có 38 bút chì màu và Mai có 25 bút chì để vẽ truyện tranh. Tom có nhiều hơn bao nhiêu bút chì?",
       bar_model: "/images/week26/barmodel_w26_easy_p2_v1.jpg",
       solution_steps: ["Tom's pencils: 38", "Mai's pencils: 25", "Difference: 38 - 25 = ?"],

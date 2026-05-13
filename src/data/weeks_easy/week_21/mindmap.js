@@ -36,7 +36,7 @@ const mindMapContent = {
       { text: "playing at the park", audio: "/audio/week21_easy/mindmap_branch_yzk54j.mp3" },
       { text: "reading books", audio: "/audio/week21_easy/mindmap_branch_jz4lit.mp3" },
       { text: "cooking with mum", audio: "/audio/week21_easy/mindmap_branch_8f67ee.mp3" },
-      { text: "watching my favourite show", audio: "/audio/week21_easy/mindmap_branch_cf3s80.mp3" },
+      { text: "watching my favorite show", audio: "/audio/week21_easy/mindmap_branch_cf3s80.mp3" },
       { text: "playing with my best friend", audio: "/audio/week21_easy/mindmap_branch_ifeb3h.mp3" },
       { text: "visiting my grandparents", audio: "/audio/week21_easy/mindmap_branch_4gtlgt.mp3" }
     ],

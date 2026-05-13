@@ -64,15 +64,15 @@ export default {
     {
       id: 5,
       type: "science",
-      question_en: "A tortoise pulls its head and legs inside its hard shell when it feels scared or threatened. What type of animal defence is this?",
+      question_en: "A tortoise pulls its head and legs inside its hard shell when it feels scared or threatened. What type of animal defense is this?",
       options: [
         "Camouflage — blending into the environment",
         "Mimicry — copying a dangerous animal's appearance",
-        "Physical armour — using a hard body part as a protective shield",
+        "Physical armor — using a hard body part as a protective shield",
         "Venom — releasing poison to stop predators"
       ],
-      correct: "Physical armour — using a hard body part as a protective shield",
-      explanation_en: "A tortoise shell is made of bone and keratin — the same material as fingernails. It is fused to the tortoise's skeleton. When threatened, the tortoise retreats inside — using its shell as built-in armour. This is a physical defence strategy.",
+      correct: "Physical armor — using a hard body part as a protective shield",
+      explanation_en: "A tortoise shell is made of bone and keratin — the same material as fingernails. It is fused to the tortoise's skeleton. When threatened, the tortoise retreats inside — using its shell as built-in armor. This is a physical defense strategy.",
       audio_url: "/audio/week28/logic_q5.mp3"
     }
   ]

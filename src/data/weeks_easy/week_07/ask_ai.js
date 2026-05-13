@@ -14,12 +14,12 @@ export default {
     },
     {
       id: 2,
-      nova_says: "My favourite colour pencil is blue.",
+      nova_says: "My favorite color pencil is blue.",
       nova_says_vi: "Màu bút chì yêu thích của cô là màu xanh.",
-      task_en: "Ask Nova WHAT her favourite colour pencil is.",
+      task_en: "Ask Nova WHAT her favorite color pencil is.",
       task_vi: "Hỏi cô Nova bút chì màu yêu thích của cô là gì.",
-      question_frame: "What ___ your favourite colour pencil?",
-      answer: ["What is your favourite colour pencil?","What's your favourite colour pencil?"],
+      question_frame: "What ___ your favorite color pencil?",
+      answer: ["What is your favorite color pencil?","What's your favorite color pencil?"],
       hint: "is",
       audio_url: null
     },

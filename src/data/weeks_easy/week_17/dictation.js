@@ -2,7 +2,7 @@ export default {
   sentences: [
   { id: 1,  text: "Today it is raining!" },
   { id: 2,  text: "I look out the window." },
-  { id: 3,  text: "The sky is grey." },
+  { id: 3,  text: "The sky is gray." },
   { id: 4,  text: "It is cold outside." },
   { id: 5,  text: "I pick up my coat." },
   { id: 6,  text: "I put on my boots." },

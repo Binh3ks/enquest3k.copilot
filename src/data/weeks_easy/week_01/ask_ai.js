@@ -1,15 +1,15 @@
 export default {
-  topic_talk_prompt: "Tell me about your school bag. What is inside? What colours do you see?",
+  topic_talk_prompt: "Tell me about your school bag. What is inside? What colors do you see?",
   prompts: [
     {
       id: 1,
       nova_says: "I have a red bag.",
       nova_says_vi: "Cô có một cái cặp màu đỏ.",
-      task_en: "Ask Nova WHAT COLOUR her bag is.",
+      task_en: "Ask Nova WHAT COLOR her bag is.",
       task_vi: "Hỏi cô Nova cặp của cô màu gì.",
       question_frame: "What ___ is your bag?",
-      answer: ["What colour is your bag?"],
-      hint: "colour",
+      answer: ["What color is your bag?"],
+      hint: "color",
       audio_url: null
     },
     {

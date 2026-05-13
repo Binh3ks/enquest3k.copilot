@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "I eat ___.", audio: "/audio/week13_easy/mindmap_stem_4iy4u.mp3" },
     { text: "I ___ with friends.", audio: "/audio/week13_easy/mindmap_stem_qnxnq3.mp3" },
     { text: "I go to ___.", audio: "/audio/week13_easy/mindmap_stem_5wm51v.mp3" },
-    { text: "My favourite part of the day is ___.", audio: "/audio/week13_easy/mindmap_stem_5nkle3.mp3" }
+    { text: "My favorite part of the day is ___.", audio: "/audio/week13_easy/mindmap_stem_5nkle3.mp3" }
   ],
   branchLabels: {
     "I ___ up.": [
@@ -48,7 +48,7 @@ const mindMapContent = {
       { text: "the library", audio: "/audio/week13_easy/mindmap_branch_uiczx6.mp3" },
       { text: "the store", audio: "/audio/week13_easy/mindmap_branch_u7oxhc.mp3" }
     ],
-    "My favourite part of the day is ___.": [
+    "My favorite part of the day is ___.": [
       { text: "breakfast", audio: "/audio/week13_easy/mindmap_branch_ajg57z.mp3" },
       { text: "playtime", audio: "/audio/week13_easy/mindmap_branch_shaosx.mp3" },
       { text: "lunch", audio: "/audio/week13_easy/mindmap_branch_smxwcg.mp3" },

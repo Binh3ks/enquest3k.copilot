@@ -1,7 +1,7 @@
 export default {
   title: "Hello, World!",
   min_words: 35,
-  model_sentence: "My name is Alex and I am eight years old. I am a student at Green Hill School. My teacher is Ms. Johnson and she is very kind. I have many friends in my class. My favourite subject is English because I love reading stories. I feel excited and happy every day at school.",
+  model_sentence: "My name is Alex and I am eight years old. I am a student at Green Hill School. My teacher is Ms. Johnson and she is very kind. I have many friends in my class. My favorite subject is English because I love reading stories. I feel excited and happy every day at school.",
   instruction_en: "Write about yourself and your school in full sentences!",
   instruction_vi: "Vi\u1ebft v\u1ec1 b\u1ea3n th\u00e2n v\u00e0 tr\u01b0\u1eddng h\u1ecdc b\u1eb1ng c\u00e2u \u0111\u1ea7y \u0111\u1ee7!",
   prompt_en: "What is your name and age? What is your school and teacher like? What do you love? How do you feel?",
@@ -30,7 +30,7 @@ export default {
         ]
     },
     {
-        "template": "My favourite subject is ___ because I love ___.",
+        "template": "My favorite subject is ___ because I love ___.",
         "answers": [
             "English",
             "reading stories"

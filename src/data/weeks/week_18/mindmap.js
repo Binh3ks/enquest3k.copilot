@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "I am watching ___.", audio: "/audio/week18/mindmap_stem_66jzkv.mp3" },
     { text: "My friends are ___.", audio: "/audio/week18/mindmap_stem_cott0m.mp3" },
     { text: "I always ___.", audio: "/audio/week18/mindmap_stem_yv8spj.mp3" },
-    { text: "My favourite thing to describe is ___.", audio: "/audio/week18/mindmap_stem_msnebc.mp3" }
+    { text: "My favorite thing to describe is ___.", audio: "/audio/week18/mindmap_stem_msnebc.mp3" }
   ],
   branchLabels: {
     "I am describing ___.": [
@@ -28,9 +28,9 @@ const mindMapContent = {
       { text: "a football match", audio: "/audio/week18/mindmap_branch_t4fvn7.mp3" },
       { text: "the news", audio: "/audio/week18/mindmap_branch_dylmo4.mp3" },
       { text: "a cartoon", audio: "/audio/week18/mindmap_branch_jh1wep.mp3" },
-      { text: "a nature programme", audio: "/audio/week18/mindmap_branch_1utqxw.mp3" },
+      { text: "a nature program", audio: "/audio/week18/mindmap_branch_1utqxw.mp3" },
       { text: "a cooking show", audio: "/audio/week18/mindmap_branch_3pdwqk.mp3" },
-      { text: "my favourite show", audio: "/audio/week18/mindmap_branch_gc7912.mp3" }
+      { text: "my favorite show", audio: "/audio/week18/mindmap_branch_gc7912.mp3" }
     ],
     "My friends are ___.": [
       { text: "studying together", audio: "/audio/week18/mindmap_branch_47a5aw.mp3" },
@@ -48,10 +48,10 @@ const mindMapContent = {
       { text: "speak clearly", audio: "/audio/week18/mindmap_branch_mzpg58.mp3" },
       { text: "tell the truth", audio: "/audio/week18/mindmap_branch_k2b4p.mp3" }
     ],
-    "My favourite thing to describe is ___.": [
+    "My favorite thing to describe is ___.": [
       { text: "my school", audio: "/audio/week18/mindmap_branch_d4bovj.mp3" },
       { text: "my family", audio: "/audio/week18/mindmap_branch_yj208v.mp3" },
-      { text: "my favourite sport", audio: "/audio/week18/mindmap_branch_jc9ah0.mp3" },
+      { text: "my favorite sport", audio: "/audio/week18/mindmap_branch_jc9ah0.mp3" },
       { text: "my city", audio: "/audio/week18/mindmap_branch_k9ajoo.mp3" },
       { text: "my home", audio: "/audio/week18/mindmap_branch_k6fwgs.mp3" },
       { text: "my best friend", audio: "/audio/week18/mindmap_branch_1ozo3j.mp3" }

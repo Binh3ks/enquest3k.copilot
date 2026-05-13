@@ -10,7 +10,7 @@ export default {
     },
     {
       id: 2,
-      question_en: "⏰ clock  📚 book  ⏰ clock  📚 book  ⏰ clock ... What comes next?",
+      question_en: "⏰ clock 📚 book ⏰ clock 📚 book ⏰ clock ... What comes next?",
       question_vi: "⏰ clock  📚 book  ⏰ clock  📚 book  ⏰ clock ... Tiếp theo là gì?",
       hint_en: "clock and book keep alternating.",
       sample_answer: "📚 book",

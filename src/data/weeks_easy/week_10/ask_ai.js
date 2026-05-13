@@ -3,12 +3,12 @@ export default {
   prompts: [
     {
       id: 1,
-      nova_says: "My favourite animal is a horse.",
+      nova_says: "My favorite animal is a horse.",
       nova_says_vi: "Con vật yêu thích của cô là con ngựa.",
-      task_en: "Ask Nova WHAT her favourite animal is.",
+      task_en: "Ask Nova WHAT her favorite animal is.",
       task_vi: "Hỏi cô Nova con vật yêu thích của cô là gì.",
-      question_frame: "What ___ your favourite animal?",
-      answer: ["What is your favourite animal?","What's your favourite animal?"],
+      question_frame: "What ___ your favorite animal?",
+      answer: ["What is your favorite animal?","What's your favorite animal?"],
       hint: "is",
       audio_url: null
     },

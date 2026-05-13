@@ -5,18 +5,18 @@ export default {
   audio_url: "/audio/week16/explore_main.mp3",
   
   content_en: `
-    Sports are exciting! But do you know what happens in your body when you play?
+ Sports are exciting! But do you know what happens in your body when you play?
 
-    When you **run** fast, your body uses **energy**. This **energy** comes from the food you eat. Eat well and you will have more **energy** to run and play!
+ When you **run** fast, your body uses **energy**. This **energy** comes from the food you eat. Eat well and you will have more **energy** to run and play!
 
-    When you **kick** a **ball**, the ball goes into **motion**. **Motion** means moving! The harder you **kick**, the further the ball travels. The ball flies to the **goal**!
+ When you **kick** a **ball**, the ball goes into **motion**. **Motion** means moving! The harder you **kick**, the further the ball travels. The ball flies to the **goal**!
 
-    When you **throw** a **ball** to a friend, it flies through the air. Your friend **jumps** to **catch** it — that uses leg muscles and lots of **energy** too!
+ When you **throw** a **ball** to a friend, it flies through the air. Your friend **jumps** to **catch** it — that uses leg muscles and lots of **energy** too!
 
-    In a **team** sport, players **pass** the **ball** to each other quickly. They **run** together and watch where their teammates are going.
+ In a **team** sport, players **pass** the **ball** to each other quickly. They **run** together and watch where their teammates are going.
 
-    When your **team** **scores** a **goal**, everyone **cheers**! Sports are about **energy**, **motion**, working as a **team**, and having fun. Play more sports every day!
-  `,
+ When your **team** **scores** a **goal**, everyone **cheers**! Sports are about **energy**, **motion**, working as a **team**, and having fun. Play more sports every day!
+ `,
   
   content_vi: `
     Thể thao thật thú vị! Nhưng bạn có biết điều gì xảy ra trong cơ thể khi bạn chơi không?
@@ -60,10 +60,10 @@ export default {
   ],
   
   question: {
-    text_en: "Tell us about your favourite sport. What do you do? Use these words: kick, throw, catch, run, pass, cheer, team, energy.",
+    text_en: "Tell us about your favorite sport. What do you do? Use these words: kick, throw, catch, run, pass, cheer, team, energy.",
     text_vi: "Hãy kể về môn thể thao yêu thích của bạn. Bạn làm gì? Dùng các từ: kick, throw, catch, run, pass, cheer, team, energy.",
     min_words: 20,
-    hint_en: "In my favourite sport, I... My team...",
+    hint_en: "In my favorite sport, I... My team...",
     hint_vi: "Trong môn thể thao yêu thích của tôi, tôi... Đội của tôi..."
   }
 };

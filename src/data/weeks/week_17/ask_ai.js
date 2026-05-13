@@ -27,13 +27,13 @@ export default {
     },
     {
       id: 3,
-      nova_says: "My favourite season is winter.",
+      nova_says: "My favorite season is winter.",
       nova_says_vi: "Mùa yêu thích của cô là mùa đông.",
-      task_en: "Ask Nova WHAT her favourite season is.",
+      task_en: "Ask Nova WHAT her favorite season is.",
       task_vi: "Hỏi cô Nova mùa yêu thích của cô là gì.",
       question_word_bank: ["What","When","How","Why"],
-      question_frame: "___ is your favourite season?",
-      answer: ["What is your favourite season?","What's your favourite season?"],
+      question_frame: "___ is your favorite season?",
+      answer: ["What is your favorite season?","What's your favorite season?"],
       hint_word: "What",
       audio_url: null
     },

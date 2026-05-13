@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "I eat ___ before school.", audio: "/audio/week13/mindmap_stem_q6y95l.mp3" },
     { text: "After school, I ___.", audio: "/audio/week13/mindmap_stem_arplua.mp3" },
     { text: "At night, I go to ___.", audio: "/audio/week13/mindmap_stem_o8i5oy.mp3" },
-    { text: "My favourite part of the day is ___.", audio: "/audio/week13/mindmap_stem_5nkle3.mp3" }
+    { text: "My favorite part of the day is ___.", audio: "/audio/week13/mindmap_stem_5nkle3.mp3" }
   ],
   branchLabels: {
     "I ___ at 7 o'clock.": [
@@ -30,7 +30,7 @@ const mindMapContent = {
       { text: "cereal", audio: "/audio/week13/mindmap_branch_6s5dt2.mp3" },
       { text: "fruit and milk", audio: "/audio/week13/mindmap_branch_i8z5ai.mp3" },
       { text: "a sandwich", audio: "/audio/week13/mindmap_branch_gcoi68.mp3" },
-      { text: "my favourite breakfast", audio: "/audio/week13/mindmap_branch_2r6oye.mp3" }
+      { text: "my favorite breakfast", audio: "/audio/week13/mindmap_branch_2r6oye.mp3" }
     ],
     "After school, I ___.": [
       { text: "do my homework", audio: "/audio/week13/mindmap_branch_edddp8.mp3" },
@@ -48,7 +48,7 @@ const mindMapContent = {
       { text: "read a story", audio: "/audio/week13/mindmap_branch_q818wv.mp3" },
       { text: "say goodnight", audio: "/audio/week13/mindmap_branch_w64hp1.mp3" }
     ],
-    "My favourite part of the day is ___.": [
+    "My favorite part of the day is ___.": [
       { text: "morning breakfast with my family", audio: "/audio/week13/mindmap_branch_fhbbzh.mp3" },
       { text: "playing after school", audio: "/audio/week13/mindmap_branch_yst16w.mp3" },
       { text: "reading before bed", audio: "/audio/week13/mindmap_branch_60969q.mp3" },

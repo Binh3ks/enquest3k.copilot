@@ -3,7 +3,7 @@ const mindMapContent = {
     { text: "I ___ at the park.", audio: "/audio/week11_easy/mindmap_stem_ghx3s0.mp3" },
     { text: "I ___ at the library.", audio: "/audio/week11_easy/mindmap_stem_gspjsn.mp3" },
     { text: "I ___ at the store.", audio: "/audio/week11_easy/mindmap_stem_fx93bl.mp3" },
-    { text: "My favourite place is ___.", audio: "/audio/week11_easy/mindmap_stem_i5y0pt.mp3" },
+    { text: "My favorite place is ___.", audio: "/audio/week11_easy/mindmap_stem_i5y0pt.mp3" },
     { text: "I love going to ___.", audio: "/audio/week11_easy/mindmap_stem_107vg7.mp3" },
     { text: "At the weekend, I ___.", audio: "/audio/week11_easy/mindmap_stem_n9h1qz.mp3" }
   ],
@@ -32,7 +32,7 @@ const mindMapContent = {
       { text: "count items", audio: "/audio/week11_easy/mindmap_branch_13kem9.mp3" },
       { text: "find fruit", audio: "/audio/week11_easy/mindmap_branch_byslxp.mp3" }
     ],
-    "My favourite place is ___.": [
+    "My favorite place is ___.": [
       { text: "the park", audio: "/audio/week11_easy/mindmap_branch_35n1z7.mp3" },
       { text: "the library", audio: "/audio/week11_easy/mindmap_branch_9mr4r0.mp3" },
       { text: "the playground", audio: "/audio/week11_easy/mindmap_branch_5jgzse.mp3" },

@@ -3,7 +3,7 @@ const mindMapContent = {
     { text: "It is raining, so I am ___.", audio: "/audio/week17/mindmap_stem_eboglz.mp3" },
     { text: "When it is cold, I wear ___.", audio: "/audio/week17/mindmap_stem_86sthi.mp3" },
     { text: "The weather today is ___.", audio: "/audio/week17/mindmap_stem_gx17th.mp3" },
-    { text: "My favourite weather is ___.", audio: "/audio/week17/mindmap_stem_8loh82.mp3" },
+    { text: "My favorite weather is ___.", audio: "/audio/week17/mindmap_stem_8loh82.mp3" },
     { text: "It is snowing, so I am ___.", audio: "/audio/week17/mindmap_stem_o84qu2.mp3" },
     { text: "On rainy days, I like to ___.", audio: "/audio/week17/mindmap_stem_6rj8tl.mp3" }
   ],
@@ -32,7 +32,7 @@ const mindMapContent = {
       { text: "perfect for a walk", audio: "/audio/week17/mindmap_branch_szmsqo.mp3" },
       { text: "great for playing outside", audio: "/audio/week17/mindmap_branch_rnhmcf.mp3" }
     ],
-    "My favourite weather is ___.": [
+    "My favorite weather is ___.": [
       { text: "sunny", audio: "/audio/week17/mindmap_branch_hc2iru.mp3" },
       { text: "rainy", audio: "/audio/week17/mindmap_branch_i477yw.mp3" },
       { text: "snowy", audio: "/audio/week17/mindmap_branch_hfw99l.mp3" },

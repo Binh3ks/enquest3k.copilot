@@ -25,7 +25,7 @@ const mindMapContent = {
       { text: "described each scene using Past Simple verbs", audio: "/audio/week26/mindmap_branch_c0fhqe.mp3" }
     ],
     "After that, I ___.": [
-      { text: "coloured all four panels carefully", audio: "/audio/week26/mindmap_branch_qbijzq.mp3" },
+      { text: "colored all four panels carefully", audio: "/audio/week26/mindmap_branch_qbijzq.mp3" },
       { text: "checked every caption for Past Simple verbs", audio: "/audio/week26/mindmap_branch_yd0m67.mp3" },
       { text: "added detail to each background scene", audio: "/audio/week26/mindmap_branch_fewz7l.mp3" },
       { text: "drew a border around each panel", audio: "/audio/week26/mindmap_branch_i441gh.mp3" },
@@ -36,7 +36,7 @@ const mindMapContent = {
       { text: "finished the comic strip with a happy ending", audio: "/audio/week26/mindmap_branch_ujsgt2.mp3" },
       { text: "shared my comic strip with the class", audio: "/audio/week26/mindmap_branch_igd5w5.mp3" },
       { text: "felt proud of my finished work", audio: "/audio/week26/mindmap_branch_lazlqh.mp3" },
-      { text: "added colour to the last panel", audio: "/audio/week26/mindmap_branch_rlgzi2.mp3" },
+      { text: "added color to the last panel", audio: "/audio/week26/mindmap_branch_rlgzi2.mp3" },
       { text: "smiled at the finished story", audio: "/audio/week26/mindmap_branch_dn8rfl.mp3" },
       { text: "gave the comic to my teacher", audio: "/audio/week26/mindmap_branch_elpa2w.mp3" }
     ],

@@ -5,18 +5,18 @@ export default {
   audio_url: "/audio/week17/explore_main.mp3",
 
   content_en: `
-    Have you ever wondered why the sky cries? That is how some children describe **raining**! Let's explore the science of weather.
+ Have you ever wondered why the sky cries? That is how some children describe **raining**! Let's explore the science of weather.
 
-    The water cycle is nature's recycling system. It starts with **evaporation**. When the sun shines on rivers, lakes, and oceans, the heat turns liquid water into invisible water vapor. This is **evaporation** - water becoming gas and floating upward.
+ The water cycle is nature's recycling system. It starts with **evaporation**. When the sun shines on rivers, lakes, and oceans, the heat turns liquid water into invisible water vapor. This is **evaporation** - water becoming gas and floating upward.
 
-    This water vapor rises into the **atmosphere** - the giant layer of air surrounding our planet Earth. High up in the **atmosphere**, it is very **cold**. The water vapor cools down and turns into tiny water droplets. Millions of these droplets stick together to form clouds!
+ This water vapor rises into the **atmosphere** - the giant layer of air surrounding our planet Earth. High up in the **atmosphere**, it is very **cold**. The water vapor cools down and turns into tiny water droplets. Millions of these droplets stick together to form clouds!
 
-    When clouds collect enough water, the droplets get heavy and fall back down. This is called **precipitation**. **Precipitation** includes both **raining** (liquid water) and **snowing** (frozen water crystals). In **warm** places, water falls as **raining**. In very **cold** places, **precipitation** falls as **snowing** instead!
+ When clouds collect enough water, the droplets get heavy and fall back down. This is called **precipitation**. **Precipitation** includes both **raining** (liquid water) and **snowing** (frozen water crystals). In **warm** places, water falls as **raining**. In very **cold** places, **precipitation** falls as **snowing** instead!
 
-    The type of **precipitation** affects what **wearing** is appropriate. Scientists study these patterns to help people prepare. When meteorologists predict heavy **precipitation**, we know to start **wearing** our **coat**, **boots**, **hat**, and **umbrella** before going outside.
+ The type of **precipitation** affects what **wearing** is appropriate. Scientists study these patterns to help people prepare. When meteorologists predict heavy **precipitation**, we know to start **wearing** our **coat**, **boots**, **hat**, and **umbrella** before going outside.
 
-    On **sunny** days with no **precipitation**, the water cycle continues quietly. **Evaporation** happens from every surface, sending water vapor back into the **atmosphere**. The cycle never stops - water moves from Earth to sky and back again, forever!
-  `,
+ On **sunny** days with no **precipitation**, the water cycle continues quietly. **Evaporation** happens from every surface, sending water vapor back into the **atmosphere**. The cycle never stops - water moves from Earth to sky and back again, forever!
+ `,
 
   content_vi: `
     Bạn có bao giờ tự hỏi tại sao bầu trời lại "khóc"? Đó là cách một số trẻ em mô tả **mưa**! Hãy cùng khám phá khoa học về thời tiết.

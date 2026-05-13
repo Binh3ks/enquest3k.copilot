@@ -15,7 +15,7 @@ export default {
     },
     {
       id: 2,
-      nova_says: "I used watercolour paints to make the picture.",
+      nova_says: "I used watercolor paints to make the picture.",
       nova_says_vi: "Cô đã dùng màu nước để vẽ bức tranh.",
       task_en: "Ask Nova WHAT kind of paint she used.",
       task_vi: "Hỏi cô Nova cô đã dùng loại sơn gì.",
@@ -29,11 +29,11 @@ export default {
       id: 3,
       nova_says: "The sky in my picture was orange and pink.",
       nova_says_vi: "Bầu trời trong tranh của cô có màu cam và hồng.",
-      task_en: "Ask Nova WHAT colours the sky was in her picture.",
+      task_en: "Ask Nova WHAT colors the sky was in her picture.",
       task_vi: "Hỏi cô Nova bầu trời trong tranh của cô có những màu gì.",
       question_word_bank: ["What","How","Why"],
-      question_frame: "___ colours was the sky in your picture?",
-      answer: ["What colours was the sky in your picture?"],
+      question_frame: "___ colors was the sky in your picture?",
+      answer: ["What colors was the sky in your picture?"],
       hint_word: "What",
       audio_url: null
     },

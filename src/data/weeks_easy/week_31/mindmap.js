@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "She touched ___.", audio: "/audio/week31_easy/mindmap_stem_o3wdlt.mp3" },
     { text: "At home, I have ___.", audio: "/audio/week31_easy/mindmap_stem_998je8.mp3" },
     { text: "When I touch ___.", audio: "/audio/week31_easy/mindmap_stem_f1mdwz.mp3" },
-    { text: "My favourite material is ___.", audio: "/audio/week31_easy/mindmap_stem_6ij5fb.mp3" },
+    { text: "My favorite material is ___.", audio: "/audio/week31_easy/mindmap_stem_6ij5fb.mp3" },
     { text: "I like the market because ___.", audio: "/audio/week31_easy/mindmap_stem_e79j0s.mp3" }
   ],
   branchLabels: {
@@ -13,7 +13,7 @@ const mindMapContent = {
       { text: "big market", audio: "/audio/week31_easy/mindmap_branch_y56z96.mp3" },
       { text: "market with her dad", audio: "/audio/week31_easy/mindmap_branch_b2pido.mp3" },
       { text: "busy market", audio: "/audio/week31_easy/mindmap_branch_e1fhnb.mp3" },
-      { text: "colourful market", audio: "/audio/week31_easy/mindmap_branch_4j2ptj.mp3" },
+      { text: "colorful market", audio: "/audio/week31_easy/mindmap_branch_4j2ptj.mp3" },
       { text: "market on Saturday", audio: "/audio/week31_easy/mindmap_branch_jfofbg.mp3" }
     ],
     "She touched ___.": [
@@ -40,18 +40,18 @@ const mindMapContent = {
       { text: "glass, it feels smooth and cool", audio: "/audio/week31_easy/mindmap_branch_pmv02o.mp3" },
       { text: "plastic, it feels light and smooth", audio: "/audio/week31_easy/mindmap_branch_cs2ozp.mp3" }
     ],
-    "My favourite material is ___.": [
+    "My favorite material is ___.": [
       { text: "wood because it is warm and natural", audio: "/audio/week31_easy/mindmap_branch_i8k8e5.mp3" },
       { text: "cotton because it is soft and comfortable", audio: "/audio/week31_easy/mindmap_branch_wxwji9.mp3" },
       { text: "glass because it is pretty and shiny", audio: "/audio/week31_easy/mindmap_branch_i586or.mp3" },
       { text: "stone because it is cool and strong", audio: "/audio/week31_easy/mindmap_branch_hd8trp.mp3" },
       { text: "metal because it is strong and shiny", audio: "/audio/week31_easy/mindmap_branch_bcvsth.mp3" },
-      { text: "plastic because it can be any colour", audio: "/audio/week31_easy/mindmap_branch_s8wagk.mp3" }
+      { text: "plastic because it can be any color", audio: "/audio/week31_easy/mindmap_branch_s8wagk.mp3" }
     ],
     "I like the market because ___.": [
       { text: "it is fun", audio: "/audio/week31_easy/mindmap_branch_4dybjn.mp3" },
       { text: "there are many stalls", audio: "/audio/week31_easy/mindmap_branch_lz3xkx.mp3" },
-      { text: "it is very colourful", audio: "/audio/week31_easy/mindmap_branch_oejk7d.mp3" },
+      { text: "it is very colorful", audio: "/audio/week31_easy/mindmap_branch_oejk7d.mp3" },
       { text: "I can touch new things", audio: "/audio/week31_easy/mindmap_branch_i4318.mp3" },
       { text: "the food is fresh", audio: "/audio/week31_easy/mindmap_branch_snpzpc.mp3" },
       { text: "I learn new things", audio: "/audio/week31_easy/mindmap_branch_jidy0p.mp3" }

@@ -30,13 +30,13 @@ const mindMapContent = {
       { text: "brushed my teeth carefully", audio: "/audio/week21/mindmap_branch_jnsol.mp3" },
       { text: "walked to school with a friend", audio: "/audio/week21/mindmap_branch_k5u629.mp3" },
       { text: "did some exercise", audio: "/audio/week21/mindmap_branch_kklya8.mp3" },
-      { text: "read my favourite book", audio: "/audio/week21/mindmap_branch_waqif3.mp3" }
+      { text: "read my favorite book", audio: "/audio/week21/mindmap_branch_waqif3.mp3" }
     ],
     "I really enjoyed ___.": [
       { text: "playing at the park", audio: "/audio/week21/mindmap_branch_o5bt9u.mp3" },
       { text: "cooking with my family", audio: "/audio/week21/mindmap_branch_qxwscq.mp3" },
       { text: "reading a great story", audio: "/audio/week21/mindmap_branch_npkt2r.mp3" },
-      { text: "watching my favourite show", audio: "/audio/week21/mindmap_branch_5jcwqp.mp3" },
+      { text: "watching my favorite show", audio: "/audio/week21/mindmap_branch_5jcwqp.mp3" },
       { text: "playing with my best friend", audio: "/audio/week21/mindmap_branch_i6ld4c.mp3" },
       { text: "visiting my grandparents", audio: "/audio/week21/mindmap_branch_katzg2.mp3" }
     ],

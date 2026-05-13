@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "My family is ___.", audio: "/audio/week15/mindmap_stem_tot5gd.mp3" },
     { text: "I see children ___.", audio: "/audio/week15/mindmap_stem_t5jizw.mp3" },
     { text: "I enjoy ___.", audio: "/audio/week15/mindmap_stem_odzohx.mp3" },
-    { text: "My favourite outdoor activity is ___.", audio: "/audio/week15/mindmap_stem_dk7r5p.mp3" },
+    { text: "My favorite outdoor activity is ___.", audio: "/audio/week15/mindmap_stem_dk7r5p.mp3" },
     { text: "I am ___ on the grass.", audio: "/audio/week15/mindmap_stem_q9sbzq.mp3" }
   ],
   branchLabels: {
@@ -40,7 +40,7 @@ const mindMapContent = {
       { text: "eating at the park", audio: "/audio/week15/mindmap_branch_qj9moi.mp3" },
       { text: "resting on the grass", audio: "/audio/week15/mindmap_branch_snp1na.mp3" }
     ],
-    "My favourite outdoor activity is ___.": [
+    "My favorite outdoor activity is ___.": [
       { text: "running", audio: "/audio/week15/mindmap_branch_s55pbx.mp3" },
       { text: "playing with friends", audio: "/audio/week15/mindmap_branch_z2k1cj.mp3" },
       { text: "flying a kite", audio: "/audio/week15/mindmap_branch_cpyuql.mp3" },

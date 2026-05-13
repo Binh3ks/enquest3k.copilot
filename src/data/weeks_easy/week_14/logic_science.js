@@ -10,7 +10,7 @@ export default {
     },
     {
       id: 2,
-      question_en: "👟 shoe  🧢 cap  👟 shoe  🧢 cap  👟 shoe ... What comes next?",
+      question_en: "👟 shoe 🧢 cap 👟 shoe 🧢 cap 👟 shoe ... What comes next?",
       question_vi: "👟 shoe  🧢 cap  👟 shoe  🧢 cap  👟 shoe ... Tiếp theo là gì?",
       hint_en: "shoe and cap keep alternating.",
       sample_answer: "🧢 cap",

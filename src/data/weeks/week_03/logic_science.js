@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "😊 happy  😢 sad  😊 happy  😢 sad  😊 happy ... What comes next?",
+      question_en: "😊 happy 😢 sad 😊 happy 😢 sad 😊 happy ... What comes next?",
       question_vi: "😊 happy  😢 sad  😊 happy  😢 sad  😊 happy ... Tiếp theo là gì?",
       hint_en: "happy and sad faces keep repeating.",
       sample_answer: "😢 sad",
@@ -29,7 +29,7 @@ export default {
       question_en: "Which does NOT belong: happy, sad, red, angry?",
       question_vi: "Từ nào KHÔNG thuộc nhóm: vui, buồn, đỏ, tức giận?",
       hint_en: "Most are feelings.",
-      sample_answer: "red (it is a colour, not a feeling)",
+      sample_answer: "red (it is a color, not a feeling)",
       audio_url: null,
     },
     {

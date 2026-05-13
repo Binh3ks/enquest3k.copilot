@@ -10,7 +10,7 @@ export default {
     },
     {
       id: 2,
-      question_en: "🟦 blue  🟥 red  🟦 blue  🟥 red  🟦 blue ... What colour comes next?",
+      question_en: "🟦 blue 🟥 red 🟦 blue 🟥 red 🟦 blue ... What color comes next?",
       question_vi: "🟦 blue  🟥 red  🟦 blue  🟥 red  🟦 blue ... Màu nào tiếp theo?",
       hint_en: "blue and red keep alternating.",
       sample_answer: "red 🟥",

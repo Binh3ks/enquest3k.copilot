@@ -1,7 +1,7 @@
 export default {
   title: "City vs Farm",
   min_words: 45,
-  model_sentence: "The city and the farm are very different places to live, and both have their own advantages and disadvantages. The city is exciting and modern because there are many shops, schools, restaurants, and entertainment centres. However, the city is also very noisy and crowded, and the air can be polluted because of heavy traffic. The farm, on the other hand, is peaceful and green with fresh air and wide open spaces. Although the farm is quiet and there is less to do, I think it is a healthier place to live. I would choose to live on the farm during the summer holidays because I love animals and nature. But I also need the city for school and learning, so the best solution might be to experience both.",
+  model_sentence: "The city and the farm are very different places to live, and both have their own advantages and disadvantages. The city is exciting and modern because there are many shops, schools, restaurants, and entertainment centers. However, the city is also very noisy and crowded, and the air can be polluted because of heavy traffic. The farm, on the other hand, is peaceful and green with fresh air and wide open spaces. Although the farm is quiet and there is less to do, I think it is a healthier place to live. I would choose to live on the farm during the summer holidays because I love animals and nature. But I also need the city for school and learning, so the best solution might be to experience both.",
   instruction_en: "Write a full compare and contrast text about city and farm life!",
   instruction_vi: "Vi\u1ebft b\u00e0i so s\u00e1nh v\u00e0 \u0111\u1ed1i chi\u1ebfu \u0111\u1ea7y \u0111\u1ee7 v\u1ec1 th\u00e0nh ph\u1ed1 v\u00e0 n\u00f4ng tr\u1ea1i!",
   prompt_en: "What are the advantages and disadvantages of each? Which would you choose and why?",
@@ -10,7 +10,7 @@ export default {
   topic_talk_prompt: "Compare city life and farm life \u2014 which is better and why?",
   sentence_frames: [
     {
-        "template": "The city is ___ and ___ because there are many shops, schools, and ___ centres.",
+        "template": "The city is ___ and ___ because there are many shops, schools, and ___ centers.",
         "answers": [
             "exciting",
             "modern",

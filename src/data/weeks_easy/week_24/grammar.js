@@ -43,7 +43,7 @@ export default {
     { id: 14, type: "mc", question: "It ___ cold outside.", options: ["was", "were", "are"], answer: "was", hint: "It → was" },
     { id: 15, type: "fill", question: "Everyone ___ happy at the end.", answer: "was", hint: "Everyone = singular → was" },
     { id: 16, type: "mc", question: "Which is correct?", options: ["I was scared.", "I were scared.", "I is scared."], answer: "I was scared.", hint: "I → was" },
-    { id: 17, type: "mc", question: "Which is correct?", options: ["They was bored.", "They were bored.", "They is bored."], answer: "They were bored.", hint: "They → were" },
+    { id: 17, type: "mc", question: "Which is correct?", options: ["They was bored.", "They were bored.", "They are bored."], answer: "They were bored.", hint: "They → were" },
     { id: 18, type: "fill", question: "___ he angry? (Was / Were)", answer: "Was", hint: "He → Was in a question?" },
     { id: 19, type: "mc", question: "We ___ not tired — we were cheerful!", options: ["wasn't", "weren't", "isn't"], answer: "weren't", hint: "We → weren't in negative" },
     { id: 20, type: "unscramble", question: "Order: [ she / not / was / bored ]", answer: "She was not bored.", hint: "Subject + was + not + adjective" }

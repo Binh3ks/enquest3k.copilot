@@ -24,7 +24,7 @@ export default {
     { id: 12, type: "unscramble", question: "Order:", words: ["city", "The", "is", "big", "but", "the", "farm", "is", "small"], answer: "The city is big, but the farm is small.", hint: "The city is" },
     { id: 13, type: "mc", question: "The farm has cows, ___ the city has people.", options: ["and", "but", "or"], answer: "but", hint: "contrast" },
     { id: 14, type: "fill", question: "The city is fast, ___ the farm is slow.", answer: "but", hint: "opposite" },
-    { id: 15, type: "mc", question: "The countryside is green, ___ the city is grey.", options: ["and", "but", "or"], answer: "but", hint: "showing difference" },
+    { id: 15, type: "mc", question: "The countryside is green, ___ the city is gray.", options: ["and", "but", "or"], answer: "but", hint: "showing difference" },
     { id: 16, type: "fill", question: "The farm is quiet, ___ the city is loud.", answer: "but", hint: "contrast" },
     { id: 17, type: "mc", question: "The city has buildings, ___ the farm has fields.", options: ["and", "but", "or"], answer: "but", hint: "opposite" },
     { id: 18, type: "fill", question: "The farm has chickens, ___ the city has buses.", answer: "but", hint: "contrast" },

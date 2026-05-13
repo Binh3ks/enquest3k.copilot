@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🚗 car  🚌 bus  🚗 car  🚌 bus  🚗 car ... What comes next?",
+      question_en: "🚗 car 🚌 bus 🚗 car 🚌 bus 🚗 car ... What comes next?",
       question_vi: "🚗 car  🚌 bus  🚗 car  🚌 bus  🚗 car ... Tiếp theo là gì?",
       hint_en: "car and bus keep alternating.",
       sample_answer: "🚌 bus",

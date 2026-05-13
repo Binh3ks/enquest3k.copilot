@@ -45,7 +45,7 @@ const mindMapContent = {
       { text: "many cars and buses", audio: "/audio/week10/mindmap_branch_nluy5w.mp3" },
       { text: "lots of people everywhere", audio: "/audio/week10/mindmap_branch_debf41.mp3" },
       { text: "noise and pollution", audio: "/audio/week10/mindmap_branch_blbhfa.mp3" },
-      { text: "traffic and shopping centres", audio: "/audio/week10/mindmap_branch_24n1en.mp3" },
+      { text: "traffic and shopping centers", audio: "/audio/week10/mindmap_branch_24n1en.mp3" },
       { text: "fast food restaurants", audio: "/audio/week10/mindmap_branch_igpac9.mp3" }
     ],
     "The farm is ___.": [

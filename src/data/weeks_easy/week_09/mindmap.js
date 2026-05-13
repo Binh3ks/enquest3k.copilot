@@ -2,7 +2,7 @@ const mindMapContent = {
   centerStems: [
     { text: "In the city I see ___.", audio: "/audio/week9_easy/mindmap_stem_5qkete.mp3" },
     { text: "In the city I hear ___.", audio: "/audio/week9_easy/mindmap_stem_bz3rb5.mp3" },
-    { text: "My favourite place is ___.", audio: "/audio/week9_easy/mindmap_stem_i5y0pt.mp3" },
+    { text: "My favorite place is ___.", audio: "/audio/week9_easy/mindmap_stem_i5y0pt.mp3" },
     { text: "I live near ___.", audio: "/audio/week9_easy/mindmap_stem_4agae.mp3" },
     { text: "I can ride a ___.", audio: "/audio/week9_easy/mindmap_stem_pakhzl.mp3" },
     { text: "The city is ___.", audio: "/audio/week9_easy/mindmap_stem_k1lpj5.mp3" }
@@ -24,7 +24,7 @@ const mindMapContent = {
       { text: "city sounds", audio: "/audio/week9_easy/mindmap_branch_tu44ij.mp3" },
       { text: "traffic", audio: "/audio/week9_easy/mindmap_branch_fbohj3.mp3" }
     ],
-    "My favourite place is ___.": [
+    "My favorite place is ___.": [
       { text: "the park", audio: "/audio/week9_easy/mindmap_branch_35n1z7.mp3" },
       { text: "the library", audio: "/audio/week9_easy/mindmap_branch_9mr4r0.mp3" },
       { text: "the school", audio: "/audio/week9_easy/mindmap_branch_o2hjuh.mp3" },

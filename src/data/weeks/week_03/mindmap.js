@@ -5,7 +5,7 @@ const mindMapContent = {
     { text: "My hair is ___.", audio: "/audio/week3/mindmap_stem_cxp8dh.mp3" },
     { text: "My eyes are ___.", audio: "/audio/week3/mindmap_stem_6z0vp7.mp3" },
     { text: "I look ___.", audio: "/audio/week3/mindmap_stem_h9sztl.mp3" },
-    { text: "My favourite thing about me is ___.", audio: "/audio/week3/mindmap_stem_salxhp.mp3" }
+    { text: "My favorite thing about me is ___.", audio: "/audio/week3/mindmap_stem_salxhp.mp3" }
   ],
   branchLabels: {
     "I am ___.": [
@@ -48,7 +48,7 @@ const mindMapContent = {
       { text: "very nice", audio: "/audio/week3/mindmap_branch_8d5bxr.mp3" },
       { text: "in the mirror", audio: "/audio/week3/mindmap_branch_vepuoh.mp3" }
     ],
-    "My favourite thing about me is ___.": [
+    "My favorite thing about me is ___.": [
       { text: "my smile", audio: "/audio/week3/mindmap_branch_6s58kc.mp3" },
       { text: "my kind heart", audio: "/audio/week3/mindmap_branch_rqltry.mp3" },
       { text: "my bright eyes", audio: "/audio/week3/mindmap_branch_jeoyn0.mp3" },

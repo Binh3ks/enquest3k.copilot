@@ -30,7 +30,7 @@ const mindMapContent = {
       { text: "a teacher because I enjoy helping others learn", audio: "/audio/week29/mindmap_branch_m1kc7n.mp3" },
       { text: "a farmer because I love animals and nature", audio: "/audio/week29/mindmap_branch_5dy678.mp3" },
       { text: "a nurse because I want to care for patients", audio: "/audio/week29/mindmap_branch_wfqyzw.mp3" },
-      { text: "a driver because I enjoy travelling to new places", audio: "/audio/week29/mindmap_branch_gxae68.mp3" }
+      { text: "a driver because I enjoy traveling to new places", audio: "/audio/week29/mindmap_branch_gxae68.mp3" }
     ],
     "I think being a pilot is ___.": [
       { text: "exciting because you fly all over the world", audio: "/audio/week29/mindmap_branch_uhqfsw.mp3" },

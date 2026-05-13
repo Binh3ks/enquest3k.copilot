@@ -10,7 +10,7 @@ const mindMapContent = {
   branchLabels: {
     "I ___ in art class.": [
       { text: "painted a picture", audio: "/audio/week23_easy/mindmap_branch_mlmour.mp3" },
-      { text: "coloured the flowers", audio: "/audio/week23_easy/mindmap_branch_k7k9eh.mp3" },
+      { text: "colored the flowers", audio: "/audio/week23_easy/mindmap_branch_k7k9eh.mp3" },
       { text: "folded the paper", audio: "/audio/week23_easy/mindmap_branch_pvqbs2.mp3" },
       { text: "cut the paper", audio: "/audio/week23_easy/mindmap_branch_chfkl2.mp3" },
       { text: "glued the pieces", audio: "/audio/week23_easy/mindmap_branch_fl5pbq.mp3" },
@@ -21,11 +21,11 @@ const mindMapContent = {
       { text: "scissors to cut", audio: "/audio/week23_easy/mindmap_branch_gtt97w.mp3" },
       { text: "glue to stick pieces", audio: "/audio/week23_easy/mindmap_branch_767df7.mp3" },
       { text: "my fingers to fold", audio: "/audio/week23_easy/mindmap_branch_nrfbyy.mp3" },
-      { text: "a brush to colour", audio: "/audio/week23_easy/mindmap_branch_5qq8k2.mp3" },
+      { text: "a brush to color", audio: "/audio/week23_easy/mindmap_branch_5qq8k2.mp3" },
       { text: "scissors to cut shapes", audio: "/audio/week23_easy/mindmap_branch_lma306.mp3" }
     ],
     "My picture had ___.": [
-      { text: "bright colours", audio: "/audio/week23_easy/mindmap_branch_5kfn3y.mp3" },
+      { text: "bright colors", audio: "/audio/week23_easy/mindmap_branch_5kfn3y.mp3" },
       { text: "painted flowers", audio: "/audio/week23_easy/mindmap_branch_xea5wc.mp3" },
       { text: "leaf borders", audio: "/audio/week23_easy/mindmap_branch_fanx1a.mp3" },
       { text: "a folded butterfly", audio: "/audio/week23_easy/mindmap_branch_rfj3v5.mp3" },
@@ -35,14 +35,14 @@ const mindMapContent = {
     "I ___ the paper.": [
       { text: "folded", audio: "/audio/week23_easy/mindmap_branch_lwyz4q.mp3" },
       { text: "cut", audio: "/audio/week23_easy/mindmap_branch_l4bsau.mp3" },
-      { text: "coloured", audio: "/audio/week23_easy/mindmap_branch_dvmsb5.mp3" },
+      { text: "colored", audio: "/audio/week23_easy/mindmap_branch_dvmsb5.mp3" },
       { text: "glued", audio: "/audio/week23_easy/mindmap_branch_2mrbmh.mp3" },
       { text: "painted", audio: "/audio/week23_easy/mindmap_branch_dsonmd.mp3" },
       { text: "folded carefully", audio: "/audio/week23_easy/mindmap_branch_qt8w8x.mp3" }
     ],
     "Yesterday I ___.": [
       { text: "painted a picture", audio: "/audio/week23_easy/mindmap_branch_ui5k7b.mp3" },
-      { text: "coloured the flowers", audio: "/audio/week23_easy/mindmap_branch_gcew1x.mp3" },
+      { text: "colored the flowers", audio: "/audio/week23_easy/mindmap_branch_gcew1x.mp3" },
       { text: "glued the leaves", audio: "/audio/week23_easy/mindmap_branch_wqxl4z.mp3" },
       { text: "cut the paper", audio: "/audio/week23_easy/mindmap_branch_7ecqs.mp3" },
       { text: "folded a butterfly", audio: "/audio/week23_easy/mindmap_branch_v5ppcr.mp3" },

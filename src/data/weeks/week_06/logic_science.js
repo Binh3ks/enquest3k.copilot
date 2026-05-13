@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "🍴 fork  🥄 spoon  🍴 fork  🥄 spoon  🍴 fork ... What comes next?",
+      question_en: "🍴 fork 🥄 spoon 🍴 fork 🥄 spoon 🍴 fork ... What comes next?",
       question_vi: "🍴 fork  🥄 spoon  🍴 fork  🥄 spoon  🍴 fork ... Tiếp theo là gì?",
       hint_en: "fork and spoon keep repeating.",
       sample_answer: "🥄 spoon",

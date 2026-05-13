@@ -36,7 +36,7 @@ export default {
     {
       id: 3,
       type: "logic",
-      question_en: "Put these picnic events in the correct order: A) They felt thirsty and drank lemonade  B) Mum bought food at the market  C) They ate watermelon and fruits  D) They ate sandwiches",
+      question_en: "Put these picnic events in the correct order: A) They felt thirsty and drank lemonade B) Mum bought food at the market C) They ate watermelon and fruits D) They ate sandwiches",
       options: [
         "B → D → A → C",
         "A → B → C → D",

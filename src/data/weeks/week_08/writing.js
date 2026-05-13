@@ -1,8 +1,8 @@
 export default {
   title: "My Busy Classroom",
   min_words: 40,
-  model_sentence: "My classroom is very bright and cheerful because the walls are covered with colourful posters and student artwork. There are exactly twenty-eight students in my class and we all sit at wooden desks arranged in four rows. On the front wall there is a large whiteboard and two interactive screens that the teacher uses every day. Along the back wall there is a tall bookshelf with over a hundred books organised by subject and reading level. Our classroom also has a reading corner with soft cushions where we can sit and read quietly during free time. I feel proud of our classroom because we all help to keep it neat and tidy.",
-  instruction_en: "Describe your busy classroom with numbers, colours, and reasons!",
+  model_sentence: "My classroom is very bright and cheerful because the walls are covered with colorful posters and student artwork. There are exactly twenty-eight students in my class and we all sit at wooden desks arranged in four rows. On the front wall there is a large whiteboard and two interactive screens that the teacher uses every day. Along the back wall there is a tall bookshelf with over a hundred books organised by subject and reading level. Our classroom also has a reading corner with soft cushions where we can sit and read quietly during free time. I feel proud of our classroom because we all help to keep it neat and tidy.",
+  instruction_en: "Describe your busy classroom with numbers, colors, and reasons!",
   instruction_vi: "M\u00f4 t\u1ea3 l\u1edbp h\u1ecdc c\u1ee7a b\u1ea1n v\u1edbi s\u1ed1 \u0111\u1ebfm, m\u00e0u s\u1eafc v\u00e0 l\u00fd do!",
   prompt_en: "What does your classroom look like? How many of each thing? Why do you feel proud?",
   prompt_vi: "L\u1edbp h\u1ecdc tr\u00f4ng th\u1ebf n\u00e0o? C\u00f3 bao nhi\u00eau th\u1ee9 m\u1ed7i lo\u1ea1i? T\u1ea1i sao b\u1ea1n t\u1ef1 h\u00e0o?",
@@ -14,7 +14,7 @@ export default {
         "answers": [
             "very bright",
             "cheerful",
-            "colourful posters",
+            "colorful posters",
             "student artwork"
         ]
     },
@@ -66,7 +66,7 @@ export default {
         "distractor": false
     },
     {
-        "word": "colourful posters",
+        "word": "colorful posters",
         "vi": "áp phích đầy màu sắc",
         "distractor": false
     },

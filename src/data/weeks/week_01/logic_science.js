@@ -2,7 +2,7 @@ export default {
   questions: [
     {
       id: 1,
-      question_en: "⭐ star  ⭕ circle  ⭐ star  ⭕ circle  ⭐ star ... What comes next?",
+      question_en: "⭐ star ⭕ circle ⭐ star ⭕ circle ⭐ star ... What comes next?",
       question_vi: "⭐ star  ⭕ circle  ⭐ star  ⭕ circle  ⭐ star ... Tiếp theo là gì?",
       hint_en: "The shapes go in pairs: star, circle, star, circle...",
       sample_answer: "circle",

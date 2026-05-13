@@ -1,13 +1,13 @@
 export default {
-  title: "My Favourite Weekend Place",
+  title: "My Favorite Weekend Place",
   min_words: 45,
-  model_sentence: "My favourite place to visit on the weekend is the large park near my house, and I go there almost every Saturday morning. The park has a beautiful lake, tall shady trees, and a wide path where people jog, cycle, and walk their dogs. I usually go with my parents and my younger sister because we all enjoy spending time outdoors together. We bring a picnic blanket and some sandwiches and then we find a quiet spot near the lake to sit and relax. My sister loves to feed the ducks while I fly my kite and my parents chat and read. By the time we go home in the afternoon, we all feel refreshed and happy.",
-  instruction_en: "Write about your favourite weekend place with lots of details!",
+  model_sentence: "My favorite place to visit on the weekend is the large park near my house, and I go there almost every Saturday morning. The park has a beautiful lake, tall shady trees, and a wide path where people jog, cycle, and walk their dogs. I usually go with my parents and my younger sister because we all enjoy spending time outdoors together. We bring a picnic blanket and some sandwiches and then we find a quiet spot near the lake to sit and relax. My sister loves to feed the ducks while I fly my kite and my parents chat and read. By the time we go home in the afternoon, we all feel refreshed and happy.",
+  instruction_en: "Write about your favorite weekend place with lots of details!",
   instruction_vi: "Vi\u1ebft v\u1ec1 n\u01a1i y\u00eau th\u00edch cu\u1ed1i tu\u1ea7n v\u1edbi nhi\u1ec1u chi ti\u1ebft!",
   prompt_en: "Where is it? What is there? Who goes with you? What do you all do?",
   prompt_vi: "N\u01a1i \u0111\u00f3 \u1edf \u0111\u00e2u? \u1ede \u0111\u00f3 c\u00f3 g\u00ec? Ai \u0111i c\u00f9ng b\u1ea1n? C\u1ea3 nh\u00e0 l\u00e0m g\u00ec?",
   keywords: ["lake", "shady", "jog", "picnic", "blanket", "refreshed", "ducks", "kite"],
-  topic_talk_prompt: "Describe your favourite weekend place from start to finish!",
+  topic_talk_prompt: "Describe your favorite weekend place from start to finish!",
   sentence_frames: [
     {
         "template": "The park has ___, ___, and ___ where people jog, cycle, and walk their dogs.",

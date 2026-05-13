@@ -4,7 +4,7 @@ const mindMapContent = {
     { text: "I hide ___ the desk.", audio: "/audio/week6_easy/mindmap_stem_a87zr2.mp3" },
     { text: "I look ___ the box.", audio: "/audio/week6_easy/mindmap_stem_g9bpnn.mp3" },
     { text: "My bag is ___.", audio: "/audio/week6_easy/mindmap_stem_li7iop.mp3" },
-    { text: "My favourite game is ___.", audio: "/audio/week6_easy/mindmap_stem_a1t8qm.mp3" },
+    { text: "My favorite game is ___.", audio: "/audio/week6_easy/mindmap_stem_a1t8qm.mp3" },
     { text: "I can find things ___.", audio: "/audio/week6_easy/mindmap_stem_83s5t6.mp3" }
   ],
   branchLabels: {
@@ -40,7 +40,7 @@ const mindMapContent = {
       { text: "beside my bed", audio: "/audio/week6_easy/mindmap_branch_uervuj.mp3" },
       { text: "on the shelf", audio: "/audio/week6_easy/mindmap_branch_nsmqy.mp3" }
     ],
-    "My favourite game is ___.": [
+    "My favorite game is ___.": [
       { text: "hide and seek", audio: "/audio/week6_easy/mindmap_branch_qhb8qq.mp3" },
       { text: "treasure hunt", audio: "/audio/week6_easy/mindmap_branch_nzf0jn.mp3" },
       { text: "a finding game", audio: "/audio/week6_easy/mindmap_branch_d6ba37.mp3" },

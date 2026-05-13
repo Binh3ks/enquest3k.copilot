@@ -4,7 +4,7 @@ export default {
   model_sentence: "There is a pencil in my bag. There are three books in my bag. I also have a lunch box. My bag is blue.",
   instruction_en: "Write about what is in your school bag!",
   instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec c\u00f3 trong c\u1eb7p c\u1ee7a b\u1ea1n!",
-  prompt_en: "What do you have in your bag? What colour is your bag?",
+  prompt_en: "What do you have in your bag? What color is your bag?",
   prompt_vi: "B\u1ea1n c\u00f3 g\u00ec trong c\u1eb7p? C\u1eb7p m\u00e0u g\u00ec?",
   keywords: ["pencil", "books", "lunch box", "blue", "bag"],
   topic_talk_prompt: "What is inside your school bag?",

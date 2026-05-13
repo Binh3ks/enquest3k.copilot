@@ -17,8 +17,8 @@ export default {
       nova_says_vi: "Chúng tôi mang bánh mì kẹp, trái cây và nước chanh.",
       task_en: "Ask Nova about the food at the picnic.",
       task_vi: "Hỏi cô Nova về thức ăn trong buổi dã ngoại.",
-      question_starters: ["What was your favourite...?","Did you make...?"],
-      answer: ["What was your favourite food at the picnic?","Did you make the sandwiches yourself?","What did the lemonade taste like?"],
+      question_starters: ["What was your favorite...?","Did you make...?"],
+      answer: ["What was your favorite food at the picnic?","Did you make the sandwiches yourself?","What did the lemonade taste like?"],
       audio_url: null
     },
     {

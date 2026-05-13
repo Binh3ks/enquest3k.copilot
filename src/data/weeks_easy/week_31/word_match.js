@@ -6,7 +6,7 @@ export default {
     { word: "market", meaning: "chợ", audio_url: "/audio/week31/wm_market.mp3" },
     { word: "stall", meaning: "quầy hàng", audio_url: "/audio/week31/wm_stall.mp3" },
     { word: "seller", meaning: "người bán hàng", audio_url: "/audio/week31/wm_seller.mp3" },
-    { word: "colourful", meaning: "đầy màu sắc", audio_url: "/audio/week31/wm_colourful.mp3" },
+    { word: "colorful", meaning: "đầy màu sắc", audio_url: "/audio/week31/wm_colourful.mp3" },
     { word: "texture", meaning: "chất liệu / bề mặt", audio_url: "/audio/week31/wm_texture.mp3" },
     { word: "fresh", meaning: "tươi / mới", audio_url: "/audio/week31/wm_fresh.mp3" },
     { word: "sweet", meaning: "ngọt ngào", audio_url: "/audio/week31/wm_sweet.mp3" },

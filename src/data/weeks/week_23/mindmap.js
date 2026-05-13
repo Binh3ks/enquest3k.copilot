@@ -10,7 +10,7 @@ const mindMapContent = {
   branchLabels: {
     "I ___ in art class.": [
       { text: "painted a beautiful picture", audio: "/audio/week23/mindmap_branch_8qa4zg.mp3" },
-      { text: "coloured the flowers blue", audio: "/audio/week23/mindmap_branch_1qi671.mp3" },
+      { text: "colored the flowers blue", audio: "/audio/week23/mindmap_branch_1qi671.mp3" },
       { text: "folded the paper carefully", audio: "/audio/week23/mindmap_branch_cqjul7.mp3" },
       { text: "cut shapes with scissors", audio: "/audio/week23/mindmap_branch_3dlwfa.mp3" },
       { text: "glued the pieces together", audio: "/audio/week23/mindmap_branch_rv6nis.mp3" },
@@ -25,7 +25,7 @@ const mindMapContent = {
       { text: "scissors to cut shapes", audio: "/audio/week23/mindmap_branch_lma306.mp3" }
     ],
     "The picture had ___.": [
-      { text: "bright pigment colours", audio: "/audio/week23/mindmap_branch_2qxddn.mp3" },
+      { text: "bright pigment colors", audio: "/audio/week23/mindmap_branch_2qxddn.mp3" },
       { text: "interesting texture", audio: "/audio/week23/mindmap_branch_errstb.mp3" },
       { text: "beautiful symmetry", audio: "/audio/week23/mindmap_branch_s5b2zn.mp3" },
       { text: "painted flowers", audio: "/audio/week23/mindmap_branch_q885dr.mp3" },
@@ -42,7 +42,7 @@ const mindMapContent = {
     ],
     "Yesterday, I ___.": [
       { text: "painted a garden picture", audio: "/audio/week23/mindmap_branch_94pgvg.mp3" },
-      { text: "coloured the flowers blue", audio: "/audio/week23/mindmap_branch_i68is5.mp3" },
+      { text: "colored the flowers blue", audio: "/audio/week23/mindmap_branch_i68is5.mp3" },
       { text: "glued leaves to the border", audio: "/audio/week23/mindmap_branch_s38it0.mp3" },
       { text: "cut paper with scissors", audio: "/audio/week23/mindmap_branch_kuk5wk.mp3" },
       { text: "folded paper into a butterfly", audio: "/audio/week23/mindmap_branch_wxve7n.mp3" },

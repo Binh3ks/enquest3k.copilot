@@ -2,7 +2,7 @@ const mindMapContent = {
   centerStems: [
     { text: "The chef ___.", audio: "/audio/week30_easy/mindmap_stem_gtxw12.mp3" },
     { text: "At the picnic, the friends ___.", audio: "/audio/week30_easy/mindmap_stem_ig0czt.mp3" },
-    { text: "My favourite food is ___.", audio: "/audio/week30_easy/mindmap_stem_lc3tv2.mp3" },
+    { text: "My favorite food is ___.", audio: "/audio/week30_easy/mindmap_stem_lc3tv2.mp3" },
     { text: "I think ___.", audio: "/audio/week30_easy/mindmap_stem_ey2kek.mp3" },
     { text: "In my family, ___.", audio: "/audio/week30_easy/mindmap_stem_ci47eo.mp3" },
     { text: "My dream job is ___.", audio: "/audio/week30_easy/mindmap_stem_i2uefj.mp3" }
@@ -24,7 +24,7 @@ const mindMapContent = {
       { text: "felt full and cheerful", audio: "/audio/week30_easy/mindmap_branch_1pzl7v.mp3" },
       { text: "had a great time", audio: "/audio/week30_easy/mindmap_branch_wvdm2a.mp3" }
     ],
-    "My favourite food is ___.": [
+    "My favorite food is ___.": [
       { text: "sandwiches", audio: "/audio/week30_easy/mindmap_branch_6o2vae.mp3" },
       { text: "watermelon", audio: "/audio/week30_easy/mindmap_branch_kyja7n.mp3" },
       { text: "cookies", audio: "/audio/week30_easy/mindmap_branch_ryg2aq.mp3" },

@@ -9,7 +9,7 @@ export default {
       id: 1,
       question_en: "What is in the student's bag?",
       answer: ["pencils", "markers", "pencils and markers"],
-      clue_statement: "There is pencils and markers in the student's bag.",
+      clue_statement: "There are pencils and markers in the bag.",
       hint_en: "Look in the bag...",
       hint_vi: "Nhìn vào trong túi..."
     },
@@ -17,7 +17,7 @@ export default {
       id: 2,
       question_en: "What is on the shelves?",
       answer: ["books", "there are books", "books on the shelves"],
-      clue_statement: "There is books on the shelves on the shelves.",
+      clue_statement: "There are books on the shelves.",
       hint_en: "The shelves have...",
       hint_vi: "Kệ có..."
     },
@@ -31,11 +31,11 @@ export default {
     },
     {
       id: 4,
-      question_en: "What are in the my room?",
-      answer: ["desks", "desks", "There are desks"],
-      clue_statement: "There are desks in the my room.",
-      hint_en: "Look in the my room...",
-      hint_vi: "Nhìn vào my room..."
+      question_en: "What is in my room?",
+      answer: ["desks", "There are desks"],
+      clue_statement: "There are desks in my room.",
+      hint_en: "Look around the room...",
+      hint_vi: "Nhìn quanh phòng...."
     },
     {
       id: 5,
@@ -47,17 +47,17 @@ export default {
     },
     {
       id: 6,
-      question_en: "What are in the my pencil case?",
-      answer: ["also markers", "also markers", "There are also markers"],
-      clue_statement: "There are also markers in the my pencil case.",
-      hint_en: "Look in the my pencil case...",
-      hint_vi: "Nhìn vào my pencil case..."
+      question_en: "What is in my pencil case?",
+      answer: ["markers", "There are markers"],
+      clue_statement: "There are markers in my pencil case.",
+      hint_en: "Look inside the pencil case...",
+      hint_vi: "Nhìn vào hộp bút..."
     },
     {
       id: 7,
-      question_en: "Where does teacher write?",
+      question_en: "Where does the teacher write?",
       answer: ["board", "on the board"],
-      clue_statement: "Teacher writes on the board.",
+      clue_statement: "The teacher writes on the board.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     },
@@ -65,7 +65,7 @@ export default {
       id: 8,
       question_en: "What are on the board?",
       answer: ["words", "the words", "There are words"],
-      clue_statement: "There are the words on the board.",
+      clue_statement: "There are words on the board.",
       hint_en: "Look on the board...",
       hint_vi: "Nhìn vào board..."
     }

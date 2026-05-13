@@ -14,12 +14,12 @@ export default {
     },
     {
       id: 2,
-      nova_says: "I practise piano for one hour every day.",
+      nova_says: "I practice piano for one hour every day.",
       nova_says_vi: "Cô tập đàn một tiếng mỗi ngày.",
       task_en: "Ask Nova HOW LONG she practises piano each day.",
       task_vi: "Hỏi cô Nova cô tập đàn bao lâu mỗi ngày.",
-      question_frame: "How ___ do you practise piano?",
-      answer: ["How long do you practise piano?","How long do you practise piano each day?"],
+      question_frame: "How ___ do you practice piano?",
+      answer: ["How long do you practice piano?","How long do you practice piano each day?"],
       hint: "long",
       audio_url: null
     },

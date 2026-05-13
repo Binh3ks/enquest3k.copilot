@@ -1,7 +1,7 @@
 export default {
   title: "A Day at the Market",
   min_words: 50,
-  model_sentence: "Last Saturday, my class and I went on a field trip to the old town market, and our teacher told us to use all five senses as we explored. First, I saw rows of colourful stalls with glass jars filled with honey glowing in the sunlight, and wooden shelves carved with beautiful leaf patterns. I touched a heavy stone bowl that felt cool and smooth in my hands, and a cotton scarf so soft it was like touching a cloud. When I walked past the spice stall, I smelt cinnamon and sweet roses drifting through the air and filling my nose with warmth. I heard vendors calling their prices, children laughing loudly, and the echo of footsteps on the stone path. Then, near the entrance, a tall stack of plastic bottles fell over with a crash and everyone felt startled — but then we all laughed together. It was the most exciting and sensory lesson I have ever had, and I saw that everything around me was made of a different material: glass, wood, stone, cotton, metal, or plastic.",
+  model_sentence: "Last Saturday, my class and I went on a field trip to the old town market, and our teacher told us to use all five senses as we explored. First, I saw rows of colorful stalls with glass jars filled with honey glowing in the sunlight, and wooden shelves carved with beautiful leaf patterns. I touched a heavy stone bowl that felt cool and smooth in my hands, and a cotton scarf so soft it was like touching a cloud. When I walked past the spice stall, I smelt cinnamon and sweet roses drifting through the air and filling my nose with warmth. I heard vendors calling their prices, children laughing loudly, and the echo of footsteps on the stone path. Then, near the entrance, a tall stack of plastic bottles fell over with a crash and everyone felt startled — but then we all laughed together. It was the most exciting and sensory lesson I have ever had, and I saw that everything around me was made of a different material: glass, wood, stone, cotton, metal, or plastic.",
   instruction_en: "Write about a visit to a market or place, using all five senses and at least FOUR materials words (wood, metal, glass, stone, cotton, plastic)!",
   instruction_vi: "Vi\u1ebft b\u00e0i \u0111i b\u1ed9 c\u1ea3m gi\u00e1c chi ti\u1ebft d\u00f9ng c\u1ea3 n\u0103m gi\u00e1c quan v\u1edbi ng\u00f4n ng\u1eef sinh \u0111\u1ed9ng!",
   prompt_en: "What did you see, hear, smell, and feel? What materials did you notice?",
@@ -11,7 +11,7 @@ export default {
   sentence_frames: [
     {
       "template": "I saw rows of ___ stalls with ___ jars glowing in the sunlight and ___ shelves carved with beautiful patterns.",
-      "answers": ["colourful", "glass", "wooden"]
+      "answers": ["colorful", "glass", "wooden"]
     },
     {
       "template": "I touched a heavy ___ bowl that felt ___ and smooth, and a ___ scarf so soft it was like a cloud.",
@@ -49,7 +49,7 @@ export default {
       show_by_default: false,
       scaffolding_stage: "low",
       words: [
-    {"word": "colourful", "vi": "nhiều màu sắc", "distractor": false},
+    {"word": "colorful", "vi": "nhiều màu sắc", "distractor": false},
     {"word": "glass", "vi": "thủy tinh", "distractor": false},
     {"word": "wooden", "vi": "bằng gỗ", "distractor": false},
     {"word": "stone", "vi": "đá", "distractor": false},
