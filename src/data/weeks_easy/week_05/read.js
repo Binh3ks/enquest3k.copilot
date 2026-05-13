@@ -39,9 +39,17 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where do I sleep?",
-      answer: ["my bedroom", "in my bedroom"],
-      clue_statement: "I sleep in my bedroom.",
+      question_en: "Where do I eat?",
+      answer: ["kitchen", "in the kitchen"],
+      clue_statement: "I eat in the kitchen.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 6,
+      question_en: "Where do I sit?",
+      answer: ["chair at the table", "on a chair at the table"],
+      clue_statement: "I sit on a chair at the table.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
     }

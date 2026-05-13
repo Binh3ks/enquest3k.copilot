@@ -5,8 +5,16 @@ export default {
   content_vi: "Hôm nay tôi tìm thấy một cuốn **album** cũ trong nhà bà. Nó đầy những **ảnh** từ **quá khứ**. Nhìn cái này! Ai là **em bé** này? Mẹ tôi nói, \"Đó là con!\" Tôi đã **nhỏ** như vậy! Tôi **nhỏ bé** và **dễ thương**. Khuôn mặt tôi tròn và mắt tôi to. Trong **ảnh** này, tôi chỉ mới một tuổi. Tôi là một **em bé** **ồn ào**. Mẹ tôi nói tôi khóc nhiều lắm. Nhưng trong ảnh này, tôi đang **yên lặng**. Tôi đang ngủ say. Bà tôi nói, \"Con là một **em bé** **dễ thương**. Mọi người yêu con.\" Đây là **ảnh** khác. Tôi đang ở **mẫu giáo**. Tôi năm tuổi. Tôi không còn là **em bé** nữa. Tôi là một đứa trẻ **nhỏ tuổi**. Tôi vẫn còn **nhỏ**, nhưng tôi đang bắt đầu **lớn lên**. Nhìn quần áo của tôi! Chúng **nhỏ** quá! Tôi không thể mặc chúng bây giờ. Tôi **lớn lên** mỗi năm. Cơ thể tôi cao hơn và khỏe hơn. Những **ảnh** này là **kỷ niệm** đặc biệt. Chúng cho tôi thấy khi tôi còn **nhỏ**. Bây giờ tôi lớn rồi! Tôi đã lớn lên nhiều. Nhưng tôi vẫn giữ những **kỷ niệm** này trong tim. **Quá khứ** khác với bây giờ, nhưng nó quan trọng. Nó giúp tôi nhớ tôi đã từng là ai và cách tôi **lớn lên**.",
   audio_url: "/audio/week19/read_main.mp3",
   comprehension_questions: [
-    { id: 1, question_en: "What did the child find at grandma's house?", answer: ["An old album", "A photo album", "An album"], clue_statement: "The child find at a photo album grandma's house.", hint_en: "The child found...", hint_vi: "Đứa trẻ tìm thấy..." },
+    { id: 1, question_en: "What did the child find at grandma's house?", answer: ["An old album", "A photo album", "An album"], clue_statement: "The child find a photo album at grandma's house.", hint_en: "The child found...", hint_vi: "Đứa trẻ tìm thấy..." },
     { id: 2, question_en: "How was the child when they were a baby?", answer: ["Small and cute", "Little and cute", "Noisy", "Small"], clue_statement: "Little and cute.", hint_en: "The child was...", hint_vi: "Đứa trẻ..." },
-    { id: 3, question_en: "What do the photos help the child remember?", answer: ["When they were small", "The past", "Their memories", "Who they were"], clue_statement: "When they were small.", hint_en: "The photos help...", hint_vi: "Những ảnh giúp..." }
+    { id: 3, question_en: "What do the photos help the child remember?", answer: ["When they were small", "The past", "Their memories", "Who they were"], clue_statement: "When they were small.", hint_en: "The photos help...", hint_vi: "Những ảnh giúp..." },
+    {
+      id: 4,
+      question_en: "What does my mom say?",
+      answer: ["i cried a lot", "i cried a lot"],
+      clue_statement: "My mom says i cried a lot.",
+      hint_en: "Think about what my mom says...",
+      hint_vi: "Nghĩ về mom..."
+    }
   ]
 };

@@ -33,7 +33,7 @@ export default {
       id: 4,
       question_en: "What animals does the child see at the zoo?",
       answer: ["lion and monkey", "lion monkey", "a lion and a monkey", "monkey and lion"],
-      clue_statement: "The child see ats a lion and a monkey.",
+      clue_statement: "The child sees a lion and a monkey at the zoo.",
       hint_en: "Two animals...",
       hint_vi: "Hai con vật..."
     },
@@ -44,6 +44,22 @@ export default {
       clue_statement: "They eat lunch at the restaurant.",
       hint_en: "A place to eat food...",
       hint_vi: "Một nơi để ăn..."
+    },
+    {
+      id: 6,
+      question_en: "Where do I play?",
+      answer: ["park with my friends", "at the park with my friends"],
+      clue_statement: "I play at the park with my friends.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 7,
+      question_en: "What is the food like?",
+      answer: ["delicious", "The food is delicious"],
+      clue_statement: "The food is delicious.",
+      hint_en: "Think about the food...",
+      hint_vi: "Nghĩ về food..."
     }
   ],
   question: {

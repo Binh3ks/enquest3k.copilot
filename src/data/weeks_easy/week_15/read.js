@@ -31,6 +31,14 @@ export default {
     },
     {
       id: 4,
+      question_en: "What is park like?",
+      answer: ["busy and fun", "Park is busy and fun"],
+      clue_statement: "Park is busy and fun.",
+      hint_en: "Two describing words...",
+      hint_vi: "Hai từ miêu tả..."
+    },
+    {
+      id: 5,
       question_en: "What is the kite like?",
       answer: ["beautiful", "The kite is beautiful"],
       clue_statement: "The kite is beautiful.",
@@ -38,7 +46,15 @@ export default {
       hint_vi: "Nghĩ về kite..."
     },
     {
-      id: 5,
+      id: 6,
+      question_en: "What is grass like?",
+      answer: ["soft and green", "Grass is soft and green"],
+      clue_statement: "Grass is soft and green.",
+      hint_en: "Two describing words...",
+      hint_vi: "Hai từ miêu tả..."
+    },
+    {
+      id: 7,
       question_en: "What is the dog like?",
       answer: ["cute", "The dog is cute"],
       clue_statement: "The dog is cute.",

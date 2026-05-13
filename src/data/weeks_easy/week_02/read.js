@@ -7,6 +7,30 @@ export default {
   comprehension_questions: [
     { id: 1, question_en: "Who is kind?", answer: ["Mother", "My mother", "The mother"], clue_statement: "The mother is kind.", hint_en: "The mother is...", hint_vi: "Mẹ là..." },
     { id: 2, question_en: "Who is strong?", answer: ["Father", "My father", "The father"], clue_statement: "The father is strong.", hint_en: "The father is...", hint_vi: "Bố là..." },
-    { id: 3, question_en: "Are they a team?", answer: ["Yes", "Yes they are", "Yes, they are"], clue_statement: "Yes, they are.", hint_en: "Yes...", hint_vi: "Có..." }
+    { id: 3, question_en: "Are they a team?", answer: ["Yes", "Yes they are", "Yes, they are"], clue_statement: "Yes, they are.", hint_en: "Yes...", hint_vi: "Có..." },
+    {
+      id: 4,
+      question_en: "What is my mother like?",
+      answer: ["kind", "My mother is kind"],
+      clue_statement: "My mother is kind and makes food for us.",
+      hint_en: "A describing word...",
+      hint_vi: "Một từ miêu tả..."
+    },
+    {
+      id: 5,
+      question_en: "What is my father like?",
+      answer: ["strong", "My father is strong"],
+      clue_statement: "My father is strong and plays with me.",
+      hint_en: "A describing word...",
+      hint_vi: "Một từ miêu tả..."
+    },
+    {
+      id: 6,
+      question_en: "What is my sister like?",
+      answer: ["funny", "My sister is funny"],
+      clue_statement: "My sister is funny and draws pictures.",
+      hint_en: "A describing word...",
+      hint_vi: "Một từ miêu tả..."
+    }
   ]
 };

@@ -36,14 +36,6 @@ export default {
       clue_statement: "I swim in summer.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "What does what can?",
-      answer: ["you do", "you do"],
-      clue_statement: "What can you do.",
-      hint_en: "Think about what what cans...",
-      hint_vi: "Nghĩ về what..."
     }
   ],
   question: {

@@ -28,22 +28,6 @@ export default {
       clue_statement: "Mike can run faster than anyone.",
       hint_en: "A boy on the track...",
       hint_vi: "Cậu bé trên đường đua..."
-    },
-    {
-      id: 4,
-      question_en: "Where does he dance?",
-      answer: ["fast music with great moves", "to fast music with great moves"],
-      clue_statement: "He dances to fast music with great moves.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "What does emma can?",
-      answer: ["jump very high", "jump very high"],
-      clue_statement: "Emma can jump very high.",
-      hint_en: "Think about what emma cans...",
-      hint_vi: "Nghĩ về emma..."
     }
   ],
   question: {

@@ -17,7 +17,7 @@ export default {
       id: 2,
       question_en: "What does the child eat for breakfast?",
       answer: ["rice and eggs", "rice", "eggs"],
-      clue_statement: "The child eat fors rice and eggs breakfast.",
+      clue_statement: "The child eats rice and eggs for breakfast.",
       hint_en: "A type of food...",
       hint_vi: "Một loại thức ăn..."
     },
@@ -25,9 +25,17 @@ export default {
       id: 3,
       question_en: "What time does the child go to bed?",
       answer: ["9 o'clock", "9", "nine"],
-      clue_statement: "The child go toes 9 o'clock.",
+      clue_statement: "The child goes to bed at 9 o'clock.",
       hint_en: "A time at night...",
       hint_vi: "Một thời gian buổi tối..."
+    },
+    {
+      id: 4,
+      question_en: "What does my mom say?",
+      answer: ["goodnight", "goodnight"],
+      clue_statement: "My mom says goodnight.",
+      hint_en: "Think about what my mom says...",
+      hint_vi: "Nghĩ về mom..."
     }
   ],
   question: {

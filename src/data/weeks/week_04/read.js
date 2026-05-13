@@ -8,7 +8,7 @@ export default {
       id: 1,
       question_en: "What does Sam have at home?",
       answer: ["a happy jar", "happy jar"],
-      clue_statement: "Sam have ats a happy jar home.",
+      clue_statement: "Sam has a happy jar at home.",
       hint_en: "It starts with 'h'...",
       hint_vi: "Nó bắt đầu bằng chữ 'h'..."
     },
@@ -27,14 +27,6 @@ export default {
       clue_statement: "Sam's mom is friendly and funny.",
       hint_en: "She makes Sam laugh...",
       hint_vi: "Bà làm Sam cười..."
-    },
-    {
-      id: 4,
-      question_en: "What does she make?",
-      answer: ["me laugh every day", "me laugh every day"],
-      clue_statement: "She makes me laugh every day.",
-      hint_en: "Think about what she makes...",
-      hint_vi: "Nghĩ về she..."
     }
   ],
   question: {

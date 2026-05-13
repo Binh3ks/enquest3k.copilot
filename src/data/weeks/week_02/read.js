@@ -7,22 +7,6 @@ export default {
   comprehension_questions: [
     { id: 1, question_en: "What is the girl's name?", answer: ["Emma", "Her name is Emma"], clue_statement: "Her name is Emma.", hint_en: "The first word...", hint_vi: "Tên bắt đầu bằng..." },
     { id: 2, question_en: "Who is the leader of the family team?", answer: ["Mother", "Her mother", "The mother", "Mom"], clue_statement: "Her mother is the leader of the family team.", hint_en: "The mother is...", hint_vi: "Mẹ là..." },
-    { id: 3, question_en: "What is Emma's brother's name?", answer: ["Tom", "His name is Tom"], clue_statement: "His name is Tom.", hint_en: "T...", hint_vi: "T..." },
-    {
-      id: 4,
-      question_en: "What does she help?",
-      answer: ["us every day", "us every day"],
-      clue_statement: "She helps us every day.",
-      hint_en: "Think about what she helps...",
-      hint_vi: "Nghĩ về she..."
-    },
-    {
-      id: 5,
-      question_en: "What does he help?",
-      answer: ["me with homework", "me with homework"],
-      clue_statement: "He helps me with homework.",
-      hint_en: "Think about what he helps...",
-      hint_vi: "Nghĩ về he..."
-    }
+    { id: 3, question_en: "What is Emma's brother's name?", answer: ["Tom", "His name is Tom"], clue_statement: "His name is Tom.", hint_en: "T...", hint_vi: "T..." }
   ]
 };

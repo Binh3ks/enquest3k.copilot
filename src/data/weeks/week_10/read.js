@@ -44,6 +44,30 @@ export default {
       clue_statement: "I walk in the big green field.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
+    },
+    {
+      id: 6,
+      question_en: "What is the field like?",
+      answer: ["beautiful", "The field is beautiful"],
+      clue_statement: "The field is beautiful.",
+      hint_en: "Think about the field...",
+      hint_vi: "Nghĩ về field..."
+    },
+    {
+      id: 7,
+      question_en: "How many trees are there?",
+      answer: ["many", "There are many trees"],
+      clue_statement: "There are many trees.",
+      hint_en: "A number...",
+      hint_vi: "Một con số..."
+    },
+    {
+      id: 8,
+      question_en: "What is the trees like?",
+      answer: ["tall", "The trees is tall"],
+      clue_statement: "The trees is tall.",
+      hint_en: "Think about the trees...",
+      hint_vi: "Nghĩ về trees..."
     }
   ],
   question: {

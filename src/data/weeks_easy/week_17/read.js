@@ -18,11 +18,11 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where do I put?",
-      answer: ["my boots", "on my boots"],
-      clue_statement: "I put on my boots.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
+      question_en: "What is my body like?",
+      answer: ["warm", "My body is warm"],
+      clue_statement: "My body is warm.",
+      hint_en: "A describing word...",
+      hint_vi: "Một từ miêu tả..."
     }
   ]
 };

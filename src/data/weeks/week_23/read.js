@@ -9,7 +9,7 @@ export default {
       id: 1,
       question_en: "What did Mia paint a picture of in art class?",
       answer: ["A garden", "A picture of a garden", "She painted a garden"],
-      clue_statement: "Mia paint a a picture of a garden picture of in art class.",
+      clue_statement: "Mia paint a picture of a garden a picture of in art class.",
       hint_en: "She painted a picture of a...",
       hint_vi: "Co ay ve mot buc tranh ve...",
       audio_url: "/audio/week23/read_q1.mp3"
@@ -27,7 +27,7 @@ export default {
       id: 3,
       question_en: "What did Mia use scissors to cut?",
       answer: ["Small leaf shapes", "Green paper", "Small leaf shapes from green paper"],
-      clue_statement: "Mia use scissors small leaf shapes from green paper to cut.",
+      clue_statement: "Mia use small leaf shapes from green paper scissors to cut.",
       hint_en: "She cut small leaf shapes from...",
       hint_vi: "Co ay cat cac hinh la nho tu...",
       audio_url: "/audio/week23/read_q3.mp3"

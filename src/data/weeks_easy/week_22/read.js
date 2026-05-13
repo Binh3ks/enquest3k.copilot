@@ -7,14 +7,6 @@ export default {
   comprehension_questions: [
     { id: 1, question_en: "What did Detective Nova have?", answer: ["A case", "A case to solve", "A notebook and a case"], clue_statement: "Detective Nova have a notebook and a case.", hint_en: "She had a...", hint_vi: "Co ay co mot..." },
     { id: 2, question_en: "How did the suspect answer?", answer: ["Clearly", "The suspect answered clearly"], clue_statement: "The suspect answered clearly.", hint_en: "The suspect answered...", hint_vi: "Nghi pham tra loi..." },
-    { id: 3, question_en: "When did Nova ask about?", answer: ["Yesterday and last night", "Yesterday, last night, and last week", "Last night and last week"], clue_statement: "Nova ask about yesterday, last night, and last week.", hint_en: "She asked about time words...", hint_vi: "Co ay hoi ve cac tu chi thoi gian..." },
-    {
-      id: 4,
-      question_en: "What does the suspect remembered?",
-      answer: ["everything clearly", "everything clearly"],
-      clue_statement: "The suspect remembered everything clearly.",
-      hint_en: "Think about what the suspect remembereds...",
-      hint_vi: "Nghĩ về the suspect..."
-    }
+    { id: 3, question_en: "When did Nova ask about?", answer: ["Yesterday and last night", "Yesterday, last night, and last week", "Last night and last week"], clue_statement: "Nova ask about yesterday, last night, and last week.", hint_en: "She asked about time words...", hint_vi: "Co ay hoi ve cac tu chi thoi gian..." }
   ]
 };

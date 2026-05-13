@@ -39,11 +39,11 @@ export default {
     },
     {
       id: 5,
-      question_en: "Where does alex begin?",
-      answer: ["describe the scene around him", "to describe the scene around him"],
-      clue_statement: "Alex begins to describe the scene around him.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
+      question_en: "What does alex love?",
+      answer: ["being a reporter", "being a reporter"],
+      clue_statement: "Alex loves being a reporter.",
+      hint_en: "Think about what alex loves...",
+      hint_vi: "Nghĩ về alex..."
     }
   ]
 };

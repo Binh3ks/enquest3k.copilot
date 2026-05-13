@@ -39,11 +39,11 @@ export default {
     },
     {
       id: 5,
-      question_en: "What does a yellow bus?",
-      answer: ["stops near me", "stops near me"],
-      clue_statement: "A yellow bus stops near me.",
-      hint_en: "Think about what a yellow buss...",
-      hint_vi: "Nghĩ về a yellow..."
+      question_en: "How many people and cars are there?",
+      answer: ["many", "There are many people and cars"],
+      clue_statement: "There are many people and cars.",
+      hint_en: "A number...",
+      hint_vi: "Một con số..."
     }
   ],
   question: {

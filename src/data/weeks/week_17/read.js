@@ -18,11 +18,19 @@ export default {
     },
     {
       id: 5,
-      question_en: "What does everything look?",
-      answer: ["clean and bright", "clean and bright"],
-      clue_statement: "Everything looks clean and bright.",
-      hint_en: "Think about what everything looks...",
-      hint_vi: "Nghĩ về everything..."
+      question_en: "What does linh take?",
+      answer: ["off her hat too", "off her hat too"],
+      clue_statement: "Linh takes off her hat too.",
+      hint_en: "Think about what linh takes...",
+      hint_vi: "Nghĩ về linh..."
+    },
+    {
+      id: 6,
+      question_en: "What does nam close?",
+      answer: ["his umbrella", "his umbrella"],
+      clue_statement: "Nam closes his umbrella.",
+      hint_en: "Think about what nam closes...",
+      hint_vi: "Nghĩ về nam..."
     }
   ]
 };

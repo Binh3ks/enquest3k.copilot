@@ -28,14 +28,6 @@ export default {
       clue_statement: "4 people.",
       hint_en: "A number...",
       hint_vi: "Một con số..."
-    },
-    {
-      id: 4,
-      question_en: "Where does audience listen?",
-      answer: ["me", "to me"],
-      clue_statement: "Audience listens to me.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ],
   question: {

@@ -18,7 +18,7 @@ export default {
       id: 2,
       question_en: "What did Leo use the knife for?",
       answer: ["To spread jam on the bread", "He used the knife to spread jam", "To spread strawberry jam on one slice"],
-      clue_statement: "Leo use the to spread strawberry jam on one slice knife for.",
+      clue_statement: "Leo use to spread strawberry jam on one slice the knife for.",
       hint_en: "He used the knife to spread...",
       hint_vi: "Anh dung dao de phet...",
       audio_url: "/audio/week25/read_q2.mp3"

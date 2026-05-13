@@ -31,22 +31,6 @@ export default {
       hint_en: "The ___ won the race again.",
       hint_vi: "Con ___ lai thang cuoc dua.",
       audio_url: "/audio/week28_easy/read_q3.mp3"
-    },
-    {
-      id: 4,
-      question_en: "Where does rabbit jumped?",
-      answer: ["bus", "on a bus"],
-      clue_statement: "Rabbit jumped on a bus.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "Where does elephant rode?",
-      answer: ["train", "on a train"],
-      clue_statement: "Elephant rode on a train.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ]
 };

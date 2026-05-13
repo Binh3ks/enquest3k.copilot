@@ -17,7 +17,7 @@ export default {
       id: 2,
       question_en: "What does Tom eat for breakfast?",
       answer: ["bread"],
-      clue_statement: "Tom eat fors bread breakfast.",
+      clue_statement: "Tom eats bread for breakfast.",
       hint_en: "Food...",
       hint_vi: "Thức ăn..."
     },
@@ -31,19 +31,27 @@ export default {
     },
     {
       id: 4,
-      question_en: "What does mom wake?",
-      answer: ["me up", "me up"],
-      clue_statement: "Mom wakes me up.",
-      hint_en: "Think about what mom wakes...",
-      hint_vi: "Nghĩ về mom..."
+      question_en: "Where do I play?",
+      answer: ["school", "at school"],
+      clue_statement: "I play at school.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
     },
     {
       id: 5,
-      question_en: "Where do I go?",
-      answer: ["school", "to school"],
-      clue_statement: "I go to school.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
+      question_en: "What is the lunch like?",
+      answer: ["good", "The lunch is good"],
+      clue_statement: "The lunch is good.",
+      hint_en: "Think about the lunch...",
+      hint_vi: "Nghĩ về lunch..."
+    },
+    {
+      id: 6,
+      question_en: "What is the dinner like?",
+      answer: ["yummy", "The dinner is yummy"],
+      clue_statement: "The dinner is yummy.",
+      hint_en: "Think about the dinner...",
+      hint_vi: "Nghĩ về dinner..."
     }
   ],
   question: {

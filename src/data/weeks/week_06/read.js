@@ -39,11 +39,11 @@ export default {
     },
     {
       id: 5,
-      question_en: "What does he find?",
-      answer: ["clue", "a clue"],
-      clue_statement: "He finds a clue.",
-      hint_en: "Think about what he finds...",
-      hint_vi: "Nghĩ về he..."
+      question_en: "What is on the wall?",
+      answer: ["another clue", "the another clue", "There is another clue"],
+      clue_statement: "There is the another clue on the wall.",
+      hint_en: "Look on the wall...",
+      hint_vi: "Nhìn vào wall..."
     }
   ],
   question: {

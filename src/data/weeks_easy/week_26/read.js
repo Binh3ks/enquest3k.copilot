@@ -31,22 +31,6 @@ export default {
       hint_en: "They were tired but very...",
       hint_vi: "Ho met nhung rat...",
       audio_url: "/audio/week26_easy/read_q3.mp3"
-    },
-    {
-      id: 4,
-      question_en: "Where does he wanted?",
-      answer: ["create a comic strip about his weekend", "to create a comic strip about his weekend"],
-      clue_statement: "He wanted to create a comic strip about his weekend.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "What does everyone watched?",
-      answer: ["and clapped", "and clapped"],
-      clue_statement: "Everyone watched and clapped.",
-      hint_en: "Think about what everyone watcheds...",
-      hint_vi: "Nghĩ về everyone..."
     }
   ]
 };

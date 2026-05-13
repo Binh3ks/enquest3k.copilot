@@ -44,6 +44,14 @@ export default {
       clue_statement: "The field is green.",
       hint_en: "Think about the field...",
       hint_vi: "Nghĩ về field..."
+    },
+    {
+      id: 6,
+      question_en: "What is the trees like?",
+      answer: ["tall", "The trees is tall"],
+      clue_statement: "The trees is tall.",
+      hint_en: "Think about the trees...",
+      hint_vi: "Nghĩ về trees..."
     }
   ],
   question: {

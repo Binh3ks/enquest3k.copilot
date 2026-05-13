@@ -10,19 +10,11 @@ export default {
     { id: 3, question_en: "What did Max do in the park?", answer: ["He played", "He played in the park", "Played"], clue_statement: "He played in the park.", hint_en: "He...", hint_vi: "Cậu ấy..." },
     {
       id: 4,
-      question_en: "Where do I looked?",
-      answer: ["blue sky and smiled", "at the blue sky and smiled"],
-      clue_statement: "I looked at the blue sky and smiled.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "Where do I talked?",
-      answer: ["my friends outside the school gate", "to my friends outside the school gate"],
-      clue_statement: "I talked to my friends outside the school gate.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
+      question_en: "What is sun like?",
+      answer: ["bright and warm", "Sun is bright and warm"],
+      clue_statement: "Sun is bright and warm.",
+      hint_en: "Two describing words...",
+      hint_vi: "Hai từ miêu tả..."
     }
   ]
 };

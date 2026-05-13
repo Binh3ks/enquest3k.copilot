@@ -7,6 +7,6 @@ export default {
   comprehension_questions: [
     { id: 1, question_en: "What is the student's name?", answer: ["Alex", "His name is Alex"], clue_statement: "His name is Alex.", hint_en: "The first word...", hint_vi: "Tên bắt đầu bằng..." },
     { id: 2, question_en: "Who is Alex's teacher?", answer: ["Ms. Johnson", "Ms Johnson", "Johnson"], clue_statement: "Ms. Johnson is Alex's teacher.", hint_en: "Ms. J...", hint_vi: "Cô J..." },
-    { id: 3, question_en: "What does Alex want to become?", answer: ["A scientist", "Scientist"], clue_statement: "Alex want toes a scientist become.", hint_en: "When I grow up...", hint_vi: "Khi lớn lên..." }
+    { id: 3, question_en: "What does Alex want to become?", answer: ["A scientist", "Scientist"], clue_statement: "Alex wants to become a scientist.", hint_en: "When I grow up...", hint_vi: "Khi lớn lên..." }
   ]
 };

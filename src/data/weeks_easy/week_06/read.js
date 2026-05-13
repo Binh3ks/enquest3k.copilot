@@ -36,14 +36,6 @@ export default {
       clue_statement: "I look on the floor.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "What does he find?",
-      answer: ["it", "it"],
-      clue_statement: "He finds it.",
-      hint_en: "Think about what he finds...",
-      hint_vi: "Nghĩ về he..."
     }
   ],
   question: {

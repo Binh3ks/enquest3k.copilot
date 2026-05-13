@@ -31,14 +31,6 @@ export default {
       hint_en: "Tom ate five ___. Mia said the ___ will not be happy.",
       hint_vi: "Tom an nam cai ___. Mia noi ___ se khong vui.",
       audio_url: "/audio/week30_easy/read_q3.mp3"
-    },
-    {
-      id: 4,
-      question_en: "Where does tom waved?",
-      answer: ["them", "at them"],
-      clue_statement: "Tom waved at them.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ]
 };

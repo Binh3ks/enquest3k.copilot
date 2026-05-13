@@ -31,14 +31,6 @@ export default {
       hint_en: "Mum said: You did everything in the right...",
       hint_vi: "Me noi: Con da lam moi thu theo dung...",
       audio_url: "/audio/week25_easy/read_q3.mp3"
-    },
-    {
-      id: 4,
-      question_en: "Where does mum came?",
-      answer: ["and smiled", "in and smiled"],
-      clue_statement: "Mum came in and smiled.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ]
 };

@@ -25,22 +25,6 @@ export default {
       options: ["A pilot", "A teacher", "A doctor", "A driver"],
       correct: "A pilot",
       audio_url: "/audio/week29/read_q3_easy.mp3"
-    },
-    {
-      id: 4,
-      question_en: "Where does she sat?",
-      answer: ["it and it flew up", "on it and it flew up"],
-      clue_statement: "She sat on it and it flew up.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 5,
-      question_en: "Where does a pilot?",
-      answer: ["red plane flew past", "in a red plane flew past"],
-      clue_statement: "A pilot in a red plane flew past.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ]
 };

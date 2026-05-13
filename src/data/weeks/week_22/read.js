@@ -36,18 +36,10 @@ export default {
       id: 4,
       question_en: "What did Nova give to her team at the end?",
       answer: ["The answer", "Her final report and the answer", "The answer to the case"],
-      clue_statement: "Nova give to her final report and the answer her team at the end.",
+      clue_statement: "Nova give her final report and the answer to her team at the end.",
       hint_en: "Nova gave the...",
       hint_vi: "Nova da trao...",
       audio_url: "/audio/week22/read_q4.mp3"
-    },
-    {
-      id: 5,
-      question_en: "Where does she arrived?",
-      answer: ["scene and immediately opened her notebook", "at the scene and immediately opened her notebook"],
-      clue_statement: "She arrived at the scene and immediately opened her notebook.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
     }
   ]
 };

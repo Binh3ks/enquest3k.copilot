@@ -44,6 +44,14 @@ export default {
       clue_statement: "I go to school on monday.",
       hint_en: "A day of the week...",
       hint_vi: "Một ngày trong tuần..."
+    },
+    {
+      id: 6,
+      question_en: "What is the food like?",
+      answer: ["good", "The food is good"],
+      clue_statement: "The food is good.",
+      hint_en: "Think about the food...",
+      hint_vi: "Nghĩ về food..."
     }
   ],
   question: {

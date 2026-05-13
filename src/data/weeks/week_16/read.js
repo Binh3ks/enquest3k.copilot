@@ -10,14 +10,6 @@ export default {
     { id: 3, question_en: "What gives the ball energy to move?", answer: ["Kicking it", "Kicking", "The kick"], clue_statement: "Kicking it.", hint_en: "Kicking...", hint_vi: "Sút..." },
     {
       id: 4,
-      question_en: "What is the this like?",
-      answer: ["fun", "The this is fun"],
-      clue_statement: "The this is fun.",
-      hint_en: "Think about the this...",
-      hint_vi: "Nghĩ về this..."
-    },
-    {
-      id: 5,
       question_en: "What does the ball have?",
       answer: ["energy", "energy"],
       clue_statement: "The ball has energy.",

@@ -40,14 +40,6 @@ export default {
       hint_en: "The sequence: seed, sprout, stem, leaf, and...",
       hint_vi: "Trinh tu: hat giong, mam cay, than cay, la, va...",
       audio_url: "/audio/week27/read_q4.mp3"
-    },
-    {
-      id: 5,
-      question_en: "What does she added?",
-      answer: ["water", "water"],
-      clue_statement: "She added water.",
-      hint_en: "Think about what she addeds...",
-      hint_vi: "Nghĩ về she..."
     }
   ]
 };

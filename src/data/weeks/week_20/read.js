@@ -7,22 +7,6 @@ export default {
   comprehension_questions: [
     { id: 1, question_en: "What did Detective Luna find one day?", answer: ["An old map", "A map of her town", "An old town map"], clue_statement: "Detective Luna find a map of her town one day.", hint_en: "Detective Luna found...", hint_vi: "Thám tử Luna tìm thấy..." },
     { id: 2, question_en: "What was near the river on the old map?", answer: ["A market", "A big market", "The market"], clue_statement: "Near the river on the old map was a big market.", hint_en: "Near the river there was...", hint_vi: "Gần sông có..." },
-    { id: 3, question_en: "What building is still there today?", answer: ["The temple", "A temple", "Temple"], clue_statement: "The temple.", hint_en: "Only the ___ is still there.", hint_vi: "Chỉ còn..." },
-    {
-      id: 4,
-      question_en: "What does luna studied?",
-      answer: ["map carefully", "the map carefully"],
-      clue_statement: "Luna studied the map carefully.",
-      hint_en: "Think about what luna studieds...",
-      hint_vi: "Nghĩ về luna..."
-    },
-    {
-      id: 5,
-      question_en: "Where does luna walked?",
-      answer: ["same place today", "to the same place today"],
-      clue_statement: "Luna walked to the same place today.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    }
+    { id: 3, question_en: "What building is still there today?", answer: ["The temple", "A temple", "Temple"], clue_statement: "The temple.", hint_en: "Only the ___ is still there.", hint_vi: "Chỉ còn..." }
   ]
 };

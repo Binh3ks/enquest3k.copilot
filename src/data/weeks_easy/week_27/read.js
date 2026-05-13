@@ -9,7 +9,7 @@ export default {
       id: 1,
       question_en: "What does Maya put in the pot first?",
       answer: ["A seed", "One seed", "Seeds"],
-      clue_statement: "Maya put ins one seed the pot first.",
+      clue_statement: "Maya puts one seed in the pot first.",
       hint_en: "Maya put a... in the soil.",
       hint_vi: "Maya bo mot... vao dat.",
       audio_url: "/audio/week27_easy/read_q1.mp3"
@@ -40,14 +40,6 @@ export default {
       hint_en: "Seed, sprout, stem, leaf, and...",
       hint_vi: "Hat giong, mam cay, than cay, la, va...",
       audio_url: "/audio/week27_easy/read_q4.mp3"
-    },
-    {
-      id: 5,
-      question_en: "What does she added?",
-      answer: ["water", "water"],
-      clue_statement: "She added water.",
-      hint_en: "Think about what she addeds...",
-      hint_vi: "Nghĩ về she..."
     }
   ]
 };

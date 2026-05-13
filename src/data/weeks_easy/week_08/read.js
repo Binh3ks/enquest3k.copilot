@@ -44,6 +44,30 @@ export default {
       clue_statement: "I sit on a chair at a desk.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
+    },
+    {
+      id: 6,
+      question_en: "What are in the my pencil case?",
+      answer: ["also markers", "also markers", "There are also markers"],
+      clue_statement: "There are also markers in the my pencil case.",
+      hint_en: "Look in the my pencil case...",
+      hint_vi: "Nhìn vào my pencil case..."
+    },
+    {
+      id: 7,
+      question_en: "Where does teacher write?",
+      answer: ["board", "on the board"],
+      clue_statement: "Teacher writes on the board.",
+      hint_en: "A place...",
+      hint_vi: "Một nơi..."
+    },
+    {
+      id: 8,
+      question_en: "What are on the board?",
+      answer: ["words", "the words", "There are words"],
+      clue_statement: "There are the words on the board.",
+      hint_en: "Look on the board...",
+      hint_vi: "Nhìn vào board..."
     }
   ],
   question: {

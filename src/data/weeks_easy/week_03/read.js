@@ -36,6 +36,14 @@ export default {
       clue_statement: "I look in the mirror every day.",
       hint_en: "A place...",
       hint_vi: "Một nơi..."
+    },
+    {
+      id: 5,
+      question_en: "What does my friend wear?",
+      answer: ["glasses to read", "glasses to read"],
+      clue_statement: "My friend wears glasses to read.",
+      hint_en: "Think about what my friend wears...",
+      hint_vi: "Nghĩ về friend..."
     }
   ]
 };
