@@ -7,7 +7,7 @@ export default {
       nova_says_vi: "Chủ nhật tuần trước chúng tôi có một buổi dã ngoại vui ở công viên.",
       task_en: "Ask Nova 2 questions about the picnic.",
       task_vi: "Hỏi cô Nova 2 câu về buổi dã ngoại.",
-      question_starters: ["Who did you...?","What did you bring...?"],
+      question_starters: ["Who did you go with...?","Where in the park did you...?"],
       answer: ["Who did you go with?","What did you bring to the picnic?","Where was the picnic?"],
       audio_url: null
     },
@@ -17,7 +17,7 @@ export default {
       nova_says_vi: "Chúng tôi mang bánh mì kẹp, trái cây và nước chanh.",
       task_en: "Ask Nova about the food at the picnic.",
       task_vi: "Hỏi cô Nova về thức ăn trong buổi dã ngoại.",
-      question_starters: ["What was your favorite...?","Did you make...?"],
+      question_starters: ["What was your favorite food...?","Did you make the sandwiches...?"],
       answer: ["What was your favorite food at the picnic?","Did you make the sandwiches yourself?","What did the lemonade taste like?"],
       audio_url: null
     },
@@ -37,7 +37,7 @@ export default {
       nova_says_vi: "Thời tiết hoàn hảo — ấm áp với gió nhẹ.",
       task_en: "Ask Nova about the weather during the picnic.",
       task_vi: "Hỏi cô Nova về thời tiết trong buổi dã ngoại.",
-      question_starters: ["How warm was...?","Did it rain...?"],
+      question_starters: ["How warm was it...?","What did the breeze feel like...?"],
       answer: ["How warm was it?","Did it rain at all?","What was the weather like?"],
       audio_url: null
     },
