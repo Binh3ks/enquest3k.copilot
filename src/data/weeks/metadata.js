@@ -32,6 +32,7 @@ export const weekTitles = {
   29: { title_en: "Off We Go! (Irregular Verbs 1)", title_vi: "Xuất Phát Thôi! (Động Từ Bất Quy Tắc 1)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   30: { title_en: "Picnic Time! (Irregular Verbs 2)", title_vi: "Đến Giờ Dã Ngoại! (Động Từ Bất Quy Tắc 2)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   31: { title_en: "The Senses (Irregular Verbs 3)", title_vi: "Các Giác Quan (Động Từ Bất Quy Tắc 3)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
+  32: { title_en: "The Busy Day (Irregular Verbs 4)", title_vi: "Ngày Bận Rộn (Động Từ Bất Quy Tắc 4)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   // Add more as weeks are created
 };
 
