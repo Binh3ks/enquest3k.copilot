@@ -31,4 +31,14 @@ function copyDataDir() {
 export default defineConfig({
   plugins: [react(), copyDataDir()],
   publicDir: false, // Disable auto-copy public/ → dist/ (media served from R2 CDN)
+  build: {
+    rollupOptions: {
+      output: {
+        // Remove hash from the main entry file so index.html always points to
+        // the same filename — eliminates MIME errors caused by stale index.html
+        // referencing an old hashed chunk that no longer exists after a new deploy.
+        entryFileNames: 'assets/index.js',
+      }
+    }
+  }
 })
