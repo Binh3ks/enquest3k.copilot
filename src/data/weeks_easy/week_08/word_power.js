@@ -9,7 +9,7 @@ export default {
       definition_vi: "có học sinh ở một nơi",
       example: "There are students in my class.",
       model_sentence: "There are many students at school today.",
-      collocation: "many students / a lot of students / there are students",
+      collocation: "many students / a lot of students / a full classroom",
       image_url: "/images/week8_easy/wordpower_students.jpg",
       audio_word: "/audio/week8_easy/wordpower_there_are_students.mp3",
       audio_definition: "/audio/week8_easy/wordpower_def_there_are_students.mp3",
