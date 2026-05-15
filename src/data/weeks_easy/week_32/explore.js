@@ -6,16 +6,37 @@ export default {
   audio_narration: "/audio/week32_easy/explore_narration.mp3",
   check_questions: [
     {
+      id: 1,
       question_en: "What does the writer do every Saturday morning?",
-      answer: ["Wake up early and do chores", "Help with chores and keep the room tidy", "Make the bed and tidy the room"]
+      answer: ["Wake up early and do chores", "Help with chores and keep the room tidy", "Make the bed and tidy the room"],
+      hint_en: "Look at the first paragraph.",
+      hint_vi: "Xem đoạn đầu tiên.",
+      audio_url: "/audio/week32_easy/explore_q1.mp3"
     },
     {
+      id: 2,
       question_en: "Who does the writer write letters to?",
-      answer: ["Grandmother", "My grandmother who lives in another city", "A grandmother in another city"]
+      answer: ["Grandmother", "My grandmother who lives in another city", "A grandmother in another city"],
+      hint_en: "The text says: I write a letter to my ___.",
+      hint_vi: "Bài đọc nói: I write a letter to my ___.",
+      audio_url: "/audio/week32_easy/explore_q2.mp3"
     },
     {
+      id: 3,
       question_en: "What treat does the writer choose after finishing all the chores?",
-      answer: ["A chocolate muffin at the café", "A muffin from the café", "They go to the café for a treat"]
+      answer: ["A chocolate muffin at the café", "A muffin from the café", "They go to the café for a treat"],
+      hint_en: "The text says: I choose a special ___ after my chores.",
+      hint_vi: "Bài đọc nói: I choose a special ___ after my chores.",
+      audio_url: "/audio/week32_easy/explore_q3.mp3"
+    },
+    {
+      id: 4,
+      type: "critical_thinking",
+      question_en: "Why do you think it is good for children to help with chores at home? Give one reason.",
+      answer: ["It helps the family", "Children learn to be responsible", "Chores teach us to work hard and be helpful", "It makes the home clean and happy"],
+      hint_en: "Think about what you learn or how you feel when you help at home.",
+      hint_vi: "Hãy nghĩ về những gì bạn học được hoặc cảm thấy khi giúp việc nhà.",
+      audio_url: "/audio/week32_easy/explore_q4.mp3"
     }
   ],
   question: "What chores do you do at home? Which one is your favourite?",
