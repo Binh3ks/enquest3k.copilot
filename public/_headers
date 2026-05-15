@@ -1,8 +1,10 @@
 # Never cache the HTML entry point — ensures browser always gets latest JS chunk names
 /index.html
   Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
   CDN-Cache-Control: no-store
   Surrogate-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
 
 # Cache hashed assets forever (filename changes on every build)
 /assets/*
