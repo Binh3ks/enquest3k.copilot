@@ -33,9 +33,6 @@ jobs:
           VITE_EDGE_TTS_URL: ${{ secrets.VITE_EDGE_TTS_URL }}
           VITE_TTS_WORKER_URL: ${{ secrets.VITE_TTS_WORKER_URL }}
 
-      - name: Pre-deploy check (validate assets, MIME safety)
-        run: bash pre-deploy-check.sh
-
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:

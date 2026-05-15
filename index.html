@@ -11,15 +11,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Auto-reload once if a JS module fails to load (e.g., MIME error after new deployment) -->
-    <script>
-      window.addEventListener('error', function(e) {
-        if (e.target && e.target.tagName === 'SCRIPT' && !sessionStorage.getItem('_assetReload')) {
-          sessionStorage.setItem('_assetReload', '1');
-          setTimeout(function() { location.reload(true); }, 500);
-        }
-      }, true);
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

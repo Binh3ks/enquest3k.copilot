@@ -23,10 +23,6 @@ function copyDataDir() {
       if (existsSync(resolve('public/_headers'))) {
         copyFileSync(resolve('public/_headers'), resolve('dist/_headers'));
       }
-      // Copy 404.html — shown when a JS/CSS asset is missing (prevents MIME error)
-      if (existsSync(resolve('public/404.html'))) {
-        copyFileSync(resolve('public/404.html'), resolve('dist/404.html'));
-      }
     }
   };
 }

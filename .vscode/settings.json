@@ -1,0 +1,19 @@
+{
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/assets/**": true,
+    "**/public/**": true,
+    "**/.git/**": true
+  },
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/assets/**": true,
+    "**/public/**": true,
+    "**/.git/**": true
+  },
+
+  "git.autoRepositoryDetection": "subFolders",
+  "git.enabled": true,
+
+  "typescript.disableAutomaticTypeAcquisition": true
+}
