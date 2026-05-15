@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EngQuest — Loading...</title>
+    <style>
+      body { margin: 0; font-family: 'Nunito', sans-serif; background: #f0f4ff;
+             display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+      .card { background: white; border-radius: 16px; padding: 40px 48px; text-align: center;
+              box-shadow: 0 4px 24px rgba(0,0,0,.08); max-width: 400px; }
+      h1 { color: #4f46e5; font-size: 2rem; margin: 0 0 8px; }
+      p { color: #6b7280; margin: 0 0 24px; line-height: 1.6; }
+      button { background: #4f46e5; color: white; border: none; border-radius: 10px;
+               padding: 12px 28px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+      button:hover { background: #4338ca; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>🔄 Đang cập nhật...</h1>
+      <p>EngQuest vừa được cập nhật phiên bản mới.<br>Đang tải lại trang cho bạn...</p>
+      <button onclick="location.reload(true)">Tải lại ngay</button>
+    </div>
+    <script>
+      // Auto-reload after 2 seconds to get fresh assets after a new deployment
+      setTimeout(function() { location.reload(true); }, 2000);
+    </script>
+  </body>
+</html>

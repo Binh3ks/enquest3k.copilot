@@ -1,5 +1,9 @@
 # Proxy audio requests to Cloudflare R2 CDN
 /audio/* https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev/audio/:splat 200
 
-# SPA fallback
+# Assets must NOT fall through to SPA fallback — missing asset = 404, not HTML
+# This prevents MIME type errors (browser expects JS but gets text/html from index.html)
+/assets/* /404.html 404
+
+# SPA fallback — only for HTML navigation routes (React Router)
 /* /index.html 200
