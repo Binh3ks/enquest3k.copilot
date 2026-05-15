@@ -9,7 +9,7 @@ export default {
       definition_vi: "Hoàn thành bài tập ở nhà.",
       example: "I do my homework every evening after dinner.",
       model_sentence: "Every student should do homework to practice what they learned in class.",
-      collocation: "do your homework",
+      collocation: "do your homework / finish your homework / complete your homework",
       image_url: "/images/week1/wordpower_do_homework.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "Đi đến trường để học.",
       example: "I go to school by bus every morning.",
       model_sentence: "Children go to school five days a week to learn new things.",
-      collocation: "go to school early",
+      collocation: "go to school / walk to school / take the bus to school",
       image_url: "/images/week1/wordpower_go_to_school.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "Tập trung và lắng nghe cẩn thận.",
       example: "I always pay attention when my teacher is talking.",
       model_sentence: "Students should pay attention in class to understand the lesson better.",
-      collocation: "pay close attention",
+      collocation: "pay attention / pay close attention / pay attention in class",
       image_url: "/images/week1/wordpower_pay_attention.jpg"
     }
   ]

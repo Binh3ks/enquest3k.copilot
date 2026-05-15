@@ -9,7 +9,7 @@ export default {
       definition_vi: "Người bạn của tôi.",
       example: "This is my friend.",
       model_sentence: "My friend is nice and kind.",
-      collocation: "my good friend",
+      collocation: "my good friend / my best friend / a good friend",
       image_url: "/images/week1_easy/wordpower_my_friend.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "Trên bàn.",
       example: "My pen is on the desk.",
       model_sentence: "Put your bag on the desk.",
-      collocation: "on my desk",
+      collocation: "on the desk / on my desk / on top of the desk",
       image_url: "/images/week1_easy/wordpower_on_the_desk.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "Trong hộp.",
       example: "The toy is in the box.",
       model_sentence: "Put your pen in the box.",
-      collocation: "in a big box",
+      collocation: "in the box / in a big box / put in the box",
       image_url: "/images/week1_easy/wordpower_in_the_box.jpg"
     }
   ]

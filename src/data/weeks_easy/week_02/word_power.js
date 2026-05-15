@@ -9,7 +9,7 @@ export default {
       definition_vi: "Chăm sóc ai đó.",
       example: "My mother takes care of me.",
       model_sentence: "Parents take care of kids.",
-      collocation: "take care of",
+      collocation: "take care of / take good care of / look after",
       image_url: "/images/week2_easy/wordpower_take_care_of.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "Giúp đỡ nhau.",
       example: "We help each other.",
       model_sentence: "Families help each other.",
-      collocation: "help each other",
+      collocation: "help each other / help one another / help out",
       image_url: "/images/week2_easy/wordpower_help_each_other.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "Làm việc cùng nhau.",
       example: "We work together.",
       model_sentence: "Families work together.",
-      collocation: "work together",
+      collocation: "work together / work as a team / work side by side",
       image_url: "/images/week2_easy/wordpower_work_together.jpg"
     }
   ]

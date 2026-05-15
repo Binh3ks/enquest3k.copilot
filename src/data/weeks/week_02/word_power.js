@@ -9,7 +9,7 @@ export default {
       definition_vi: "Chăm sóc ai đó và đảm bảo họ an toàn và khỏe mạnh.",
       example: "My mother takes care of me when I am sick.",
       model_sentence: "Parents take care of their children every day.",
-      collocation: "take care of family",
+      collocation: "take care of / take good care of / take care of yourself",
       image_url: "/images/week2/wordpower_take_care_of.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "Giúp đỡ lẫn nhau trong nhóm.",
       example: "We help each other with homework.",
       model_sentence: "Family members help each other every day.",
-      collocation: "always help each other",
+      collocation: "help each other / help one another / help out",
       image_url: "/images/week2/wordpower_help_each_other.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "Làm điều gì đó như một đội hoặc nhóm.",
       example: "My family works together to clean the house.",
       model_sentence: "Families work together to make their home happy.",
-      collocation: "work together as a team",
+      collocation: "work together / work as a team / work side by side",
       image_url: "/images/week2/wordpower_work_together.jpg"
     }
   ]
