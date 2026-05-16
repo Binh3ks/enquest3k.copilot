@@ -1,45 +1,21 @@
 export default {
   title: "My Picnic Story",
   min_words: 32,
-  model_sentence: "Last Sunday my family had a picnic in the park. Mum bought bread and fruit. We spread a blanket on the grass. We ate and laughed together. It was a happy day.",
+  model_sentence: "Last Sunday my family had a picnic at the park. Mum bought bread, fruit, cheese, and lemonade. We spread a colorful blanket on the green grass near the pond. We ate sandwiches, played games, and laughed at funny stories. A little bird hopped close to our crumbs and made us smile. In the afternoon the sun was warm and the breeze was gentle. We packed everything away and walked home feeling happy.",
   instruction_en: "Write a detailed picnic story with rich language!",
-  instruction_vi: "Vi\u1ebft m\u1ed9t c\u00e2u chuy\u1ec7n d\u00e3 ngo\u1ea1i chi ti\u1ebft v\u1edbi ng\u00f4n ng\u1eef phong ph\u00fa!",
+  instruction_vi: "Viết một câu chuyện dã ngoại chi tiết với ngôn ngữ phong phú!",
   prompt_en: "Where did you go? What did you bring? What did you do? How did it feel?",
-  prompt_vi: "B\u1ea1n \u0111i \u0111\u00e2u? B\u1ea1n mang g\u00ec? B\u1ea1n l\u00e0m g\u00ec? C\u1ea3m gi\u00e1c th\u1ebf n\u00e0o?",
-  keywords: ["picnic", "bought", "bread", "blanket", "grass", "laughed", "happy"],
-  topic_talk_prompt: "Tell me about a wonderful picnic you had!",
+  prompt_vi: "Bạn đi đâu? Bạn mang gì? Bạn làm gì? Cảm giác thế nào?",
+  keywords: ["picnic", "bread", "fruit", "blanket", "cheese", "lemonade", "bird", "grass", "sunny", "happy"],
+  topic_talk_prompt: "Tell me about a nice picnic you had in at least five sentences.",
   sentence_frames: [
-    {
-        "template": "Last Sunday my family had a ___ in the park.",
-        "answers": [
-            "picnic"
-        ]
-    },
-    {
-        "template": "Mum ___ bread and fruit.",
-        "answers": [
-            "bought"
-        ]
-    },
-    {
-        "template": "We spread a ___ on the grass.",
-        "answers": [
-            "blanket"
-        ]
-    },
-    {
-        "template": "We ate and ___ together.",
-        "answers": [
-            "laughed"
-        ]
-    },
-    {
-        "template": "It was a ___ day.",
-        "answers": [
-            "happy"
-        ]
-    }
-],
+    { template: "Last Sunday my family had a ___ at the park.", answers: ["picnic"] },
+    { template: "Mum bought ___, ___, and ___.", answers: ["bread", "fruit", "cheese"] },
+    { template: "We spread a ___ on the ___.", answers: ["blanket", "grass"] },
+    { template: "A little ___ hopped close to our ___.", answers: ["bird", "crumbs"] },
+    { template: "The sun was ___ and the breeze was ___.", answers: ["warm", "gentle"] },
+    { template: "We packed everything away and walked home feeling ___.", answers: ["happy"] }
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -47,47 +23,14 @@ export default {
       show_by_default: false,
       scaffolding_stage: "low",
       words: [
-    {
-        "word": "picnic",
-        "vi": "dã ngoại",
-        "distractor": false
-    },
-    {
-        "word": "bought",
-        "vi": "đã mua",
-        "distractor": false
-    },
-    {
-        "word": "blanket",
-        "vi": "tấm chăn",
-        "distractor": false
-    },
-    {
-        "word": "laughed",
-        "vi": "đã cười",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "argument",
-        "vi": "cuộc cãi vã",
-        "distractor": true
-    },
-    {
-        "word": "sold",
-        "vi": "đã bán",
-        "distractor": true
-    },
-    {
-        "word": "cried",
-        "vi": "đã khóc",
-        "distractor": true
-    }
-]
+        { word: "picnic", vi: "dã ngoại", distractor: false },
+        { word: "bread", vi: "bánh mì", distractor: false },
+        { word: "fruit", vi: "trái cây", distractor: false },
+        { word: "blanket", vi: "tấm chăn", distractor: false },
+        { word: "cheese", vi: "phô mai", distractor: false },
+        { word: "lemonade", vi: "nước chanh", distractor: false },
+        { word: "bird", vi: "chim", distractor: false }
+      ]
     }
   }
 };

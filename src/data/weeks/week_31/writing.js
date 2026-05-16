@@ -1,45 +1,53 @@
 export default {
-  title: "A Day at the Market",
-  min_words: 50,
-  model_sentence: "Last Saturday, my class and I went on a field trip to the old town market, and our teacher told us to use all five senses as we explored. First, I saw rows of colorful stalls with glass jars filled with honey glowing in the sunlight, and wooden shelves carved with beautiful leaf patterns. I touched a heavy stone bowl that felt cool and smooth in my hands, and a cotton scarf so soft it was like touching a cloud. When I walked past the spice stall, I smelt cinnamon and sweet roses drifting through the air and filling my nose with warmth. I heard vendors calling their prices, children laughing loudly, and the echo of footsteps on the stone path. Then, near the entrance, a tall stack of plastic bottles fell over with a crash and everyone felt startled — but then we all laughed together. It was the most exciting and sensory lesson I have ever had, and I saw that everything around me was made of a different material: glass, wood, stone, cotton, metal, or plastic.",
-  instruction_en: "Write about a visit to a market or place, using all five senses and at least FOUR materials words (wood, metal, glass, stone, cotton, plastic)!",
-  instruction_vi: "Vi\u1ebft b\u00e0i \u0111i b\u1ed9 c\u1ea3m gi\u00e1c chi ti\u1ebft d\u00f9ng c\u1ea3 n\u0103m gi\u00e1c quan v\u1edbi ng\u00f4n ng\u1eef sinh \u0111\u1ed9ng!",
-  prompt_en: "What did you see, hear, smell, and feel? What materials did you notice?",
-  prompt_vi: "B\u1ea1n th\u1ea5y, nghe, ng\u1eedi, c\u1ea3m v\u00e0 n\u1ebfm g\u00ec? D\u00f9ng t\u1eeb m\u00f4 t\u1ea3 phong ph\u00fa!",
-  keywords: ["glass", "wood", "stone", "cotton", "metal", "plastic", "saw", "heard", "felt", "smelt"],
-  topic_talk_prompt: "Describe a walk through all five senses \u2014 sight, sound, smell, touch, and taste!",
+  title: "My Market Visit",
+  min_words: 70,
+  model_sentence: "Last Sunday, I walked to the busy market with my mum. The stalls were full of fresh fruit, colorful cloth, paper bags, glass bottles, and shiny metal pots. I saw oranges, green vegetables, and bright red apples. I heard the sellers calling and the sound of coins on the wooden table. I smelt warm bread and spicy ginger near the food stall. I felt the smooth cotton scarf, the rough stone tile, and the cold metal tray. Later I bought a sweet mango and a cool lemonade. The market was noisy, exciting, and full of new smells.",
+  instruction_en: "Write about a visit to the market using saw, heard, felt, and smelt. Mention at least TWO materials words such as cotton, metal, paper, glass, stone, or wood.",
+  instruction_vi: "Viết về chuyến đi chợ dùng saw, heard, felt, smelt. Dùng ít nhất HAI từ vật liệu như cotton, metal, paper, glass, stone hoặc wood.",
+  prompt_en: "What did you see, hear, smell, and feel at the market? Which market materials did you notice?",
+  prompt_vi: "Bạn thấy, nghe, ngửi và cảm nhận gì ở chợ? Bạn nhận thấy vật liệu nào ở chợ?",
+  keywords: ["market", "fruit", "cloth", "paper", "glass", "metal", "stone", "cotton", "seller", "heard", "saw", "felt", "smelt", "busy", "spicy", "bread"],
+  topic_talk_prompt: "Describe a busy market using your senses and materials words.",
   sentence_frames: [
     {
-      "template": "I saw rows of ___ stalls with ___ jars glowing in the sunlight and ___ shelves carved with beautiful patterns.",
-      "answers": ["colorful", "glass", "wooden"]
+      "template": "Last Sunday I went to the busy ___ with my ___.",
+      "answers": ["market", "mum"]
     },
     {
-      "template": "I touched a heavy ___ bowl that felt ___ and smooth, and a ___ scarf so soft it was like a cloud.",
-      "answers": ["stone", "cool", "cotton"]
+      "template": "The stalls had fresh ___, colorful ___, and big bags of ___.",
+      "answers": ["fruit", "cloth", "rice"]
     },
     {
-      "template": "When I walked past the spice stall, I smelt ___ and ___ drifting through the air.",
-      "answers": ["cinnamon", "sweet roses"]
+      "template": "I saw a seller counting ___ on the ___ table.",
+      "answers": ["coins", "wooden"]
     },
     {
-      "template": "I heard the sellers calling their ___, children ___, and the echo of footsteps on the ___ path.",
-      "answers": ["prices", "laughing", "stone"]
+      "template": "I heard people ___ and the sound of ___ in the market.",
+      "answers": ["calling", "coins"]
     },
     {
-      "template": "A stack of ___ bottles fell with a crash and everyone felt ___ — but then we all ___ together.",
-      "answers": ["plastic", "startled", "laughed"]
+      "template": "I smelt warm ___ and spicy ___ from the food stall.",
+      "answers": ["bread", "ginger"]
     },
     {
-      "template": "I noticed that everything was made of a different material: ___, ___, ___, or ___.",
-      "answers": ["glass", "wood", "metal", "plastic"]
+      "template": "I felt the smooth ___ scarf and the rough ___ pot.",
+      "answers": ["cotton", "metal"]
     },
     {
-      "template": "A cool ___ blew through the market and made the ___ cloth at the fabric stall ___.",
-      "answers": ["breeze", "cotton", "flutter"]
+      "template": "The paper ___ were full of ___ and small ___.",
+      "answers": ["bags", "fruit", "goods"]
     },
     {
-      "template": "It was the most ___ and ___ lesson I had ever had, and I wanted to go back every ___.",
-      "answers": ["exciting", "sensory", "weekend"]
+      "template": "I bought a sweet ___ and a cool ___ drink.",
+      "answers": ["mango", "lemonade"]
+    },
+    {
+      "template": "The market smelled ___, looked ___, and felt ___.",
+      "answers": ["busy", "colorful", "exciting"]
+    },
+    {
+      "template": "At the end, I said the market was ___ and I wanted to ___.",
+      "answers": ["amazing", "come back"]
     }
   ],
   hints: {
@@ -49,28 +57,25 @@ export default {
       show_by_default: false,
       scaffolding_stage: "low",
       words: [
-    {"word": "colorful", "vi": "nhiều màu sắc", "distractor": false},
-    {"word": "glass", "vi": "thủy tinh", "distractor": false},
-    {"word": "wooden", "vi": "bằng gỗ", "distractor": false},
-    {"word": "stone", "vi": "đá", "distractor": false},
-    {"word": "cool", "vi": "mát lạnh", "distractor": false},
-    {"word": "cotton", "vi": "vải bông", "distractor": false},
-    {"word": "cinnamon", "vi": "quế", "distractor": false},
-    {"word": "sweet roses", "vi": "hoa hồng ngọt ngào", "distractor": false},
-    {"word": "prices", "vi": "giá cả", "distractor": false},
-    {"word": "laughing", "vi": "tiếng cười", "distractor": false},
-    {"word": "plastic", "vi": "nhựa", "distractor": false},
-    {"word": "startled", "vi": "giật mình", "distractor": false},
-    {"word": "laughed", "vi": "cười", "distractor": false},
-    {"word": "metal", "vi": "kim loại", "distractor": false},
-    {"word": "breeze", "vi": "gió nhẹ", "distractor": false},
-    {"word": "flutter", "vi": "bay phấp phới", "distractor": false},
-    {"word": "exciting", "vi": "thú vị", "distractor": false},
-    {"word": "sensory", "vi": "giác quan", "distractor": false},
-    {"word": "weekend", "vi": "cuối tuần", "distractor": false},
-    {"word": "a pile of rubbish", "vi": "đống rác", "distractor": true},
-    {"word": "roaring traffic", "vi": "tiếng xe cộ ầm ĩ", "distractor": true}
-]
+        {"word": "forest", "vi": "rừng", "distractor": false},
+        {"word": "breeze", "vi": "gió nhẹ", "distractor": false},
+        {"word": "butterfly", "vi": "con bướm", "distractor": false},
+        {"word": "rustling", "vi": "tiếng xào xạc", "distractor": false},
+        {"word": "leaf", "vi": "lá", "distractor": false},
+        {"word": "bark", "vi": "vỏ cây", "distractor": false},
+        {"word": "moss", "vi": "rêu", "distractor": false},
+        {"word": "stone", "vi": "đá", "distractor": false},
+        {"word": "roses", "vi": "hoa hồng", "distractor": false},
+        {"word": "path", "vi": "lối đi", "distractor": false},
+        {"word": "heard", "vi": "nghe", "distractor": false},
+        {"word": "saw", "vi": "thấy", "distractor": false},
+        {"word": "felt", "vi": "cảm thấy", "distractor": false},
+        {"word": "smelt", "vi": "ngửi thấy", "distractor": false},
+        {"word": "amazing", "vi": "tuyệt vời", "distractor": false},
+        {"word": "happy", "vi": "vui", "distractor": false},
+        {"word": "a tall tree", "vi": "một cây cao", "distractor": true},
+        {"word": "a busy market", "vi": "một chợ đông đúc", "distractor": true}
+      ]
     }
   }
 };

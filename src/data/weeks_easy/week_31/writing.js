@@ -1,35 +1,21 @@
 export default {
-  title: "My Day at the Market",
-  min_words: 32,
-  model_sentence: "Last Saturday I went to the market. I saw glass jars with golden honey. I touched a wooden shelf and it felt rough. I smelt warm spices. I felt the soft cotton scarves. It was a great day!",
-  instruction_en: "Write about a visit to the market! Use: saw, felt, smelt, heard. Try to use at least TWO materials: wood, metal, glass, stone, cotton, or plastic!",
-  instruction_vi: "Vi\u1ebft m\u1ed9t chuy\u1ebfn \u0111i d\u00f9ng saw, heard, smelled v\u00e0 felt!",
-  prompt_en: "What did you see, hear, smell, and feel on your walk?",
-  prompt_vi: "B\u1ea1n th\u1ea5y, nghe, ng\u1eedi v\u00e0 c\u1ea3m nh\u1eadn g\u00ec trong chuy\u1ebfn \u0111i b\u1ed9?",
-  keywords: ["glass", "wood", "stone", "cotton", "metal", "plastic", "saw", "heard", "felt", "smelt"],
-  topic_talk_prompt: "Describe a visit to a market using your five senses — mention the materials!",
+  title: "My Market Visit",
+  min_words: 50,
+  model_sentence: "Last Sunday my mum and I went to the market. The stalls were full of fresh fruit, colorful cloth, paper bags, glass bottles and shiny metal pots. I saw oranges and bright red apples. I heard sellers calling and the coins jingling on the wooden table. I smelt warm bread and spicy food from the next stall. I felt the smooth cotton scarf and the cold metal tray. I bought a sweet mango and carried it home in a paper bag. The market was noisy and exciting.",
+  instruction_en: "Write about a visit to the market using saw, heard, felt, and smelt. Mention at least TWO materials words such as cotton, metal, paper, glass, stone, or wood.",
+  instruction_vi: "Viết về chuyến đi chợ dùng saw, heard, felt, smelt. Dùng ít nhất HAI từ vật liệu như cotton, metal, paper, glass, stone hoặc wood.",
+  prompt_en: "What did you see, hear, smell, and feel at the market? Which market materials did you notice?",
+  prompt_vi: "Bạn thấy, nghe, ngửi và cảm nhận gì ở chợ? Bạn nhận thấy vật liệu nào ở chợ?",
+  keywords: ["market", "fruit", "cloth", "paper", "glass", "metal", "cotton", "seller", "heard", "saw", "felt", "smelt", "busy", "spicy", "bread"],
+  topic_talk_prompt: "Describe a busy market using your senses and materials words.",
   sentence_frames: [
-    { "template": "I went to the ___ market with my ___.", "answers": ["old town", "family"] },
-    { "template": "I saw rows of ___ stalls. There were ___ and ___.", "answers": ["colorful", "cotton scarves", "glass jars"] },
-    { "template": "I heard vendors ___ and children ___.", "answers": ["calling out prices", "laughing"] },
-    { "template": "I felt the ___ cloth / shelf. It felt so ___!", "answers": ["cotton", "soft"] },
-    { "template": "I smelt sweet ___ near the ___ stall.", "answers": ["cinnamon", "spice"] },
-    { "template": "My favorite thing at the market was the ___. It was made of ___.", "answers": ["stone bowl", "stone"] }
-  ],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "low",
-      words: [
-        { "word": "colorful", "vi": "đầy màu sắc", "distractor": false },
-        { "word": "cotton scarves", "vi": "khăn cotton", "distractor": false },
-        { "word": "cinnamon", "vi": "quế", "distractor": false },
-        { "word": "stone bowl", "vi": "bát đá", "distractor": false },
-        { "word": "vendors", "vi": "người bán hàng — không phải chim", "distractor": true },
-        { "word": "forest", "vi": "rừng — không phải chợ", "distractor": true }
-      ]
-    }
-  }
+    { "template": "Last Sunday I went to the busy ___ with my ___.", "answers": ["market", "mum"] },
+    { "template": "The stalls had fresh ___, colorful ___, and big bags of ___.", "answers": ["fruit", "cloth", "rice"] },
+    { "template": "I saw a seller counting ___ on the ___ table.", "answers": ["coins", "wooden"] },
+    { "template": "I smelt warm ___ and spicy ___ from the food stall.", "answers": ["bread", "ginger"] },
+    { "template": "I felt the smooth ___ scarf and the cold ___ pot.", "answers": ["cotton", "metal"] },
+    { "template": "I bought a sweet ___ and a ___ bag.", "answers": ["mango", "paper"] },
+    { "template": "The market smelled ___, looked ___ and felt ___.", "answers": ["busy", "colorful", "exciting"] },
+    { "template": "At the end I said the market was ___ and I wanted to ___.", "answers": ["amazing", "come back"] }
+  ]
 };

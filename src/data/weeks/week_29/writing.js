@@ -1,6 +1,7 @@
 export default {
   title: "Writing: The Magic Trip",
   image_url: null,
+  min_words: 50,
   instruction_en: "Write about a magic trip! Use the past tense. Where did you GO? Who did you MEET (a pilot, a doctor, a farmer, a teacher, a driver, or a nurse)? What CAME to help you? Include at least THREE occupations words!",
   instruction_vi: "H\u00e3y vi\u1ebft v\u1ec1 m\u1ed9t chuy\u1ebfn \u0111i k\u1ef3 di\u1ec7u! D\u00f9ng th\u00ec qu\u00e1 kh\u1ee9. B\u1ea1n \u0111\u00e3 \u0110I \u0111\u00e2u? B\u1ea1n g\u1eb6P ai (m\u1ed9t phi c\u00f4ng, b\u00e1c s\u0129, n\u00f4ng d\u00e2n, gi\u00e1o vi\u00ean, t\u00e0i x\u1ebf, hay y t\u00e1)? \u0110i\u1ec1u g\u00ec \u0110\u1ebcN \u0111\u1ec3 gi\u00fap b\u1ea1n?",
   prompt_en: "Imagine you found a magic carpet, a magic boat, or a magic bicycle. Describe your trip using went, flew, came, and ran.",
