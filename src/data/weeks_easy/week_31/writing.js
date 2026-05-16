@@ -17,5 +17,35 @@ export default {
     { "template": "I bought a sweet ___ and a ___ bag.", "answers": ["mango", "paper"] },
     { "template": "The market smelled ___, looked ___ and felt ___.", "answers": ["busy", "colorful", "exciting"] },
     { "template": "At the end I said the market was ___ and I wanted to ___.", "answers": ["amazing", "come back"] }
-  ]
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {"word": "market", "vi": "chợ", "distractor": false},
+        {"word": "mum", "vi": "mẹ", "distractor": false},
+        {"word": "fruit", "vi": "trái cây", "distractor": false},
+        {"word": "cloth", "vi": "vải", "distractor": false},
+        {"word": "rice", "vi": "cơm", "distractor": false},
+        {"word": "coins", "vi": "đồng xu", "distractor": false},
+        {"word": "wooden", "vi": "bằng gỗ", "distractor": false},
+        {"word": "bread", "vi": "bánh mì", "distractor": false},
+        {"word": "ginger", "vi": "gừng", "distractor": false},
+        {"word": "cotton", "vi": "cotton", "distractor": false},
+        {"word": "metal", "vi": "kim loại", "distractor": false},
+        {"word": "mango", "vi": "xoài", "distractor": false},
+        {"word": "paper", "vi": "giấy", "distractor": false},
+        {"word": "busy", "vi": "bận rộn", "distractor": false},
+        {"word": "colorful", "vi": "nhiều màu", "distractor": false},
+        {"word": "exciting", "vi": "hào hứng", "distractor": false},
+        {"word": "amazing", "vi": "tuyệt vời", "distractor": true},
+        {"word": "come back", "vi": "trở lại", "distractor": true},
+        {"word": "forest", "vi": "khu rừng", "distractor": true},
+        {"word": "animal", "vi": "động vật", "distractor": true}
+      ]
+    }
+  }
 };
