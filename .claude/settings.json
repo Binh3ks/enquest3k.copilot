@@ -3,5 +3,47 @@
     "allow": [
       "Bash(otool:*)"
     ]
+  },
+  "workspace": {
+    "name": "EngQuest3K",
+    "description": "English learning app for Vietnamese K-12 students (156 weeks curriculum)",
+    "version": "5.0",
+    "production": {
+      "weeksCompleted": 32,
+      "weeksTotal": 156,
+      "goldenStandards": {
+        "aiTutor": "week_16_real.js",
+        "stationsW1_15": "week_06",
+        "stationsW16": "week_16"
+      }
+    },
+    "toolkit": {
+      "enabled": true,
+      "preflight": "tools/preflight_check.sh",
+      "bugPrevention": "tools/bug_prevention_check.sh",
+      "qualityGate": "tools/code_quality_gate.sh",
+      "e2eTests": "tests/e2e/week_production.spec.js"
+    },
+    "workflow": {
+      "mainPrompt": "Production_FINAL/1. FINAL MASS PRODUCTION/1_CORE_WORKFLOW/AGENT_SELF_CHECK_WORKFLOW.md",
+      "onboarding": "Production_FINAL/1. FINAL MASS PRODUCTION/1_CORE_WORKFLOW/0. NEW_AGENT_ONBOARDING_PROMPT.md",
+      "toolkitGuide": "Production_FINAL/1. FINAL MASS PRODUCTION/1_CORE_WORKFLOW/TOOLKIT_INTEGRATION.md",
+      "bugInstincts": "PRODUCTION_BUG_INSTINCTS.md"
+    },
+    "paths": {
+      "weekData": "src/data/weeks/",
+      "weekDataEasy": "src/data/weeks_easy/",
+      "appModules": "src/modules/",
+      "appComponents": "src/components/",
+      "appServices": "src/services/",
+      "appConfig": "src/config/",
+      "productionPrompts": "Production_FINAL/",
+      "masterPrompts": "ENGQUEST MASTER PROMPT V*.txt"
+    },
+    "validation": {
+      "runOnWrite": true,
+      "runOnCommit": true,
+      "secretDetection": true
+    }
   }
 }

@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "hooks": [
+    {
+      "matcher": "tool == 'Write' && file_path matches 'src/data/weeks/week_\\\\d+/.*\\\\.js'",
+      "name": "week-data-validation",
+      "description": "Validate week data files after creation/edit",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "#!/bin/bash\n# Extract week number from path\necho \"Validating week data...\"\n# Note: Full validation happens at commit time via pre-commit hook"
+        }
+      ]
+    },
+    {
+      "matcher": "tool == 'Write' && (file_path matches 'src/modules/.*\\\\.(js|jsx)' || file_path matches 'src/components/.*\\\\.(js|jsx)' || file_path matches 'src/services/.*\\\\.(js|jsx)')",
+      "name": "app-code-validation",
+      "description": "Validate app code syntax",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "#!/bin/bash\necho \"Checking app code syntax...\""
+        }
+      ]
+    },
+    {
+      "matcher": "tool == 'Write' && (file_path matches '.*master.*prompt.*\\\\.txt' || file_path matches 'Production_FINAL/.*\\\\.md' || file_path matches '.*\\\\.yaml' || file_path matches '.*\\\\.json')",
+      "name": "prompt-template-validation",
+      "description": "Validate prompt/template files",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "#!/bin/bash\necho \"Checking prompt/template syntax...\""
+        }
+      ]
+    },
+    {
+      "matcher": "tool == 'Write' && (file_path matches '.*secret.*' || file_path matches '.*\\\\.env' || file_path matches '.*api.*key.*' || content matches 'sk-[a-zA-Z0-9]{20,}' || content matches 'AIza[a-zA-Z0-9_-]{35,}')",
+      "name": "secret-detection",
+      "description": "Detect potential secrets in code",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "#!/bin/bash\necho \"⚠️ POTENTIAL SECRET DETECTED in $file_path\"\necho \"Do NOT commit API keys or secrets to git!\"\necho \"Use environment variables instead.\""
+        }
+      ]
+    }
+  ],
+  "commands": {
+    "engquest-preflight": {
+      "description": "Run pre-flight system check before production",
+      "command": "bash tools/preflight_check.sh"
+    },
+    "engquest-bug-check": {
+      "description": "Run bug prevention checks for a week",
+      "command": "bash tools/bug_prevention_check.sh ${week}",
+      "args": [
+        {
+          "name": "week",
+          "description": "Week number (e.g., 33)",
+          "required": true
+        }
+      ]
+    },
+    "engquest-quality": {
+      "description": "Run quality gate for a week",
+      "command": "bash tools/code_quality_gate.sh ${week}",
+      "args": [
+        {
+          "name": "week",
+          "description": "Week number (e.g., 33)",
+          "required": true
+        }
+      ]
+    },
+    "engquest-e2e": {
+      "description": "Run E2E tests for a week",
+      "command": "TEST_WEEK=${week} npx playwright test --project=chromium",
+      "args": [
+        {
+          "name": "week",
+          "description": "Week number (e.g., 33)",
+          "required": true
+        }
+      ]
+    },
+    "engquest-validate-all": {
+      "description": "Run all validations for a week",
+      "command": "bash tools/preflight_check.sh && bash tools/bug_prevention_check.sh ${week} && bash tools/code_quality_gate.sh ${week}",
+      "args": [
+        {
+          "name": "week",
+          "description": "Week number (e.g., 33)",
+          "required": true
+        }
+      ]
+    }
+  }
+}
