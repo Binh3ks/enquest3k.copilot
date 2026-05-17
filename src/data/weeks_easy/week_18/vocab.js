@@ -7,7 +7,7 @@ export default {
     definition_vi: "phóng viên",
     definition_en: "a person who tells the news",
     example: "Alex is a reporter.",
-    collocation: "school reporter / is a reporter / a reporter",
+    collocation: "school reporter / is a reporter / a school reporter",
     image_url: "/images/week18_easy/reporter.jpg",
     audio_word: "/audio/week18_easy/vocab_reporter.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "máy quay / máy ảnh",
     definition_en: "a device for taking pictures or video",
     example: "He holds a camera.",
-    collocation: "toy camera / holds a camera / a camera",
+    collocation: "toy camera / holds a camera / a toy camera",
     image_url: "/images/week18_easy/camera.jpg",
     audio_word: "/audio/week18_easy/vocab_camera.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "micro",
     definition_en: "a device that makes your voice louder",
     example: "She speaks into a microphone.",
-    collocation: "hold a microphone / into a microphone / a microphone",
+    collocation: "hold a microphone / into a microphone / a hold a microphone",
     image_url: "/images/week18_easy/microphone.jpg",
     audio_word: "/audio/week18_easy/vocab_microphone.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "tin tức",
     definition_en: "information about what is happening",
     example: "I watch the news on TV.",
-    collocation: "the news / watch the news on TV / a news",
+    collocation: "the news / watch the news on TV / the news",
     image_url: "/images/week18_easy/news.jpg",
     audio_word: "/audio/week18_easy/vocab_news.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "trực tiếp",
     definition_en: "happening right now, not recorded",
     example: "This is live news!",
-    collocation: "live news / This is live news / a live",
+    collocation: "live news / This is live news / a live news",
     image_url: "/images/week18_easy/live.jpg",
     audio_word: "/audio/week18_easy/vocab_live.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "mô tả",
     definition_en: "use words to explain what you see",
     example: "I describe the scene.",
-    collocation: "describe the scene / I describe the scene / a describe",
+    collocation: "describe the scene / I describe the scene / a describe the scene",
     image_url: "/images/week18_easy/describe.jpg",
     audio_word: "/audio/week18_easy/vocab_describe.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "khung cảnh",
     definition_en: "a view or situation to describe",
     example: "He films the scene.",
-    collocation: "the scene / films the scene / a scene",
+    collocation: "the scene / films the scene / the scene",
     image_url: "/images/week18_easy/scene.jpg",
     audio_word: "/audio/week18_easy/vocab_scene.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "trường quay",
     definition_en: "a room where TV shows are made",
     example: "The studio is ready.",
-    collocation: "TV studio / The studio is ready / a studio",
+    collocation: "TV studio / The studio is ready / a TV studio",
     image_url: "/images/week18_easy/studio.jpg",
     audio_word: "/audio/week18_easy/vocab_studio.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "bản tin / báo cáo",
     definition_en: "to tell about an event in detail",
     example: "Alex gives a report.",
-    collocation: "give a report / gives a report / a report",
+    collocation: "give a report / gives a report / give a report",
     image_url: "/images/week18_easy/report.jpg",
     audio_word: "/audio/week18_easy/vocab_report.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "hào hứng",
     definition_en: "makes you feel happy and interested",
     example: "The news is exciting!",
-    collocation: "so exciting / news is exciting / a exciting",
+    collocation: "so exciting / news is exciting / a so exciting",
     image_url: "/images/week18_easy/exciting.jpg",
     audio_word: "/audio/week18_easy/vocab_exciting.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "đang xảy ra",
     definition_en: "taking place right now",
     example: "What is happening?",
-    collocation: "what is happening / What is happening / a happening",
+    collocation: "what is happening / What is happening / a what is happening",
     image_url: "/images/week18_easy/happening.jpg",
     audio_word: "/audio/week18_easy/vocab_happening.mp3"
   },
@@ -128,7 +128,7 @@ export default {
     definition_vi: "khán giả",
     definition_en: "people watching a show or performance",
     example: "The audience is watching.",
-    collocation: "the audience / The audience is watching / a audience",
+    collocation: "the audience / The audience is watching / the audience",
     image_url: "/images/week18_easy/audience.jpg",
     audio_word: "/audio/week18_easy/vocab_audience.mp3"
   },
@@ -139,7 +139,7 @@ export default {
     definition_vi: "phỏng vấn",
     definition_en: "ask someone questions to learn more",
     example: "I will interview my friend.",
-    collocation: "do an interview / I will interview my friend / a interview",
+    collocation: "do an interview / I will interview my friend / a do an interview",
     image_url: "/images/week18_easy/interview.jpg",
     audio_word: "/audio/week18_easy/vocab_interview.mp3"
   }

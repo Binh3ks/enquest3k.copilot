@@ -7,7 +7,7 @@ export default {
     definition_vi: "đá",
     definition_en: "hit with your foot",
     example: "I kick the ball.",
-    collocation: "kick the ball / I kick the ball / a kick",
+    collocation: "kick the ball / I kick the ball / a kick the ball",
     image_url: "/images/week16_easy/kick.jpg",
     audio_word: "/audio/week16_easy/vocab_kick.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "ném",
     definition_en: "send through the air",
     example: "I throw the ball to my friend.",
-    collocation: "throw the ball / I throw the ball / a throw",
+    collocation: "throw the ball / I throw the ball / a throw the ball",
     image_url: "/images/week16_easy/throw.jpg",
     audio_word: "/audio/week16_easy/vocab_throw.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "bắt",
     definition_en: "grab something moving",
     example: "I catch the ball with my hands.",
-    collocation: "catch the ball / I catch the ball / a catch",
+    collocation: "catch the ball / I catch the ball / a catch the ball",
     image_url: "/images/week16_easy/catch.jpg",
     audio_word: "/audio/week16_easy/vocab_catch.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "nhảy",
     definition_en: "go up in the air",
     example: "I jump very high!",
-    collocation: "jump high / I jump very high / a jump",
+    collocation: "jump high / I jump very high / jump high",
     image_url: "/images/week16_easy/jump.jpg",
     audio_word: "/audio/week16_easy/vocab_jump.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "ghi bàn",
     definition_en: "make a point in a game",
     example: "I score a goal!",
-    collocation: "score a goal / I score a goal / a score",
+    collocation: "score a goal / I score a goal / a score a goal",
     image_url: "/images/week16_easy/score.jpg",
     audio_word: "/audio/week16_easy/vocab_score.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "đánh",
     definition_en: "touch hard with hands",
     example: "I hit the ball.",
-    collocation: "hit the ball / I hit the ball / a hit",
+    collocation: "hit the ball / I hit the ball / a hit the ball",
     image_url: "/images/week16_easy/hit.jpg",
     audio_word: "/audio/week16_easy/vocab_hit.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "chuyền",
     definition_en: "give to another player",
     example: "I pass the ball to you.",
-    collocation: "pass the ball / I pass the ball / a pass",
+    collocation: "pass the ball / I pass the ball / a pass the ball",
     image_url: "/images/week16_easy/pass.jpg",
     audio_word: "/audio/week16_easy/vocab_pass.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "cổ vũ",
     definition_en: "shout happily for your team",
     example: "I cheer for my team!",
-    collocation: "cheer loudly / I cheer for my / a cheer",
+    collocation: "cheer loudly / I cheer for my / a cheer loudly",
     image_url: "/images/week16_easy/cheer.jpg",
     audio_word: "/audio/week16_easy/vocab_cheer.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "bàn thắng",
     definition_en: "a point in soccer",
     example: "My team scored three goals.",
-    collocation: "score a goal / scored three goals / a goal",
+    collocation: "score a goal / scored three goals / a score a goal",
     image_url: "/images/week16_easy/goal.jpg",
     audio_word: "/audio/week16_easy/vocab_goal.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "năng lượng",
     definition_en: "power to move and play",
     example: "I have lots of energy today!",
-    collocation: "full of energy / lots of energy today / a energy",
+    collocation: "full of energy / lots of energy today / a full of energy",
     image_url: "/images/week16_easy/energy.jpg",
     audio_word: "/audio/week16_easy/vocab_energy.mp3"
   },
@@ -128,7 +128,7 @@ export default {
     definition_vi: "chuyển động",
     definition_en: "moving from place to place",
     example: "The ball is in motion.",
-    collocation: "in motion / is in motion / a motion",
+    collocation: "in motion / is in motion / in motion",
     image_url: "/images/week16_easy/motion.jpg",
     audio_word: "/audio/week16_easy/vocab_motion.mp3"
   },
@@ -139,7 +139,7 @@ export default {
     definition_vi: "đội",
     definition_en: "a group playing together",
     example: "I play with my team.",
-    collocation: "my team / with my team / a team",
+    collocation: "my team / with my team / my team",
     image_url: "/images/week16_easy/team.jpg",
     audio_word: "/audio/week16_easy/vocab_team.mp3"
   }

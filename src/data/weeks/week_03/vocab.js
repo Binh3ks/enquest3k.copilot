@@ -106,7 +106,7 @@ export default {
     definition_vi: "giống, trông giống",
     definition_en: "to be similar to someone or something",
     example: "I look like my mother.",
-    collocation: "look like my dad / a look like / the look like",
+    collocation: "look like my dad / I look like my dad / look like my dad",
     image_url: "/images/week3/look_like.jpg",
     audio_word: "/audio/week3/vocab_look_like.mp3"
   }

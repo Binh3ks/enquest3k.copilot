@@ -7,7 +7,7 @@ export default {
     definition_vi: "cho xem",
     definition_en: "to let someone see something",
     example: "I show my picture to mom.",
-    collocation: "show my picture / I show my picture / a show",
+    collocation: "show my picture / I show my picture / show my picture",
     image_url: "/images/week14_easy/show.jpg",
     audio_word: "/audio/week14_easy/vocab_show.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "nói, kể",
     definition_en: "to say words to someone",
     example: "I tell my friend about my family.",
-    collocation: "tell my friend / I tell my friend / a tell",
+    collocation: "tell my friend / I tell my friend / tell my friend",
     image_url: "/images/week14_easy/tell.jpg",
     audio_word: "/audio/week14_easy/vocab_tell.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "tên",
     definition_en: "what people call you",
     example: "My name is Emma.",
-    collocation: "my name / My name is Emma / a name",
+    collocation: "my name / My name is Emma / my name",
     image_url: "/images/week14_easy/name.jpg",
     audio_word: "/audio/week14_easy/vocab_name.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "gia đình",
     definition_en: "mom, dad, and children",
     example: "I have a big family.",
-    collocation: "my family / a big family / a family",
+    collocation: "my family / a big family / my family",
     image_url: "/images/week14_easy/family.jpg",
     audio_word: "/audio/week14_easy/vocab_family.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "có thể",
     definition_en: "to be able to do something",
     example: "I can sing a song.",
-    collocation: "I can sing / I can sing a / a can",
+    collocation: "I can sing / I can sing a / an I can sing",
     image_url: "/images/week14_easy/can.jpg",
     audio_word: "/audio/week14_easy/vocab_can.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "vẽ",
     definition_en: "to make pictures with a pencil or pen",
     example: "I draw a picture of my family.",
-    collocation: "draw a picture / I draw a picture / a draw",
+    collocation: "draw a picture / I draw a picture / draw a picture",
     image_url: "/images/week14_easy/draw.jpg",
     audio_word: "/audio/week14_easy/vocab_draw.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "bạn",
     definition_en: "someone you like and play with",
     example: "My friend helps me.",
-    collocation: "my friend / My friend helps me / a friend",
+    collocation: "my friend / My friend helps me / my friend",
     image_url: "/images/week14_easy/friend.jpg",
     audio_word: "/audio/week14_easy/vocab_friend.mp3"
   }

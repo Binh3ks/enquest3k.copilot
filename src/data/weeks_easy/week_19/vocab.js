@@ -7,7 +7,7 @@ export default {
     definition_vi: "em bé",
     definition_en: "a very young child",
     example: "I was a baby.",
-    collocation: "cute baby / was a baby / a baby",
+    collocation: "cute baby / was a baby / a cute baby",
     image_url: "/images/week19/baby.jpg",
     audio_word: "/audio/week19_easy/vocab_baby.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "dễ thương",
     definition_en: "very nice and sweet",
     example: "I was very cute.",
-    collocation: "cute smile / was very cute / a cute",
+    collocation: "cute smile / was very cute / a cute smile",
     image_url: "/images/week19/cute.jpg",
     audio_word: "/audio/week19_easy/vocab_cute.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "nhỏ bé",
     definition_en: "small or young",
     example: "I was little.",
-    collocation: "little child / I was little / a little",
+    collocation: "little child / I was little / a little child",
     image_url: "/images/week19/little.jpg",
     audio_word: "/audio/week19_easy/vocab_little.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "ồn ào",
     definition_en: "making lots of loud sounds",
     example: "I was a noisy baby.",
-    collocation: "noisy children / was a noisy baby / a noisy",
+    collocation: "noisy children / was a noisy baby / a noisy children",
     image_url: "/images/week19/noisy.jpg",
     audio_word: "/audio/week19_easy/vocab_noisy.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "mẫu giáo",
     definition_en: "a school for small children",
     example: "I was in kindergarten.",
-    collocation: "kindergarten class / was in kindergarten / a kindergarten",
+    collocation: "kindergarten class / was in kindergarten / a kindergarten class",
     image_url: "/images/week19/kindergarten.jpg",
     audio_word: "/audio/week19_easy/vocab_kindergarten.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "quá khứ",
     definition_en: "the time before now",
     example: "In the past, I was little.",
-    collocation: "in the past / In the past , I / a past",
+    collocation: "in the past / In the past , I / in the past",
     image_url: "/images/week19/past.jpg",
     audio_word: "/audio/week19_easy/vocab_past.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "trẻ",
     definition_en: "not old",
     example: "I was young.",
-    collocation: "young child / I was young / a young",
+    collocation: "young child / I was young / a young child",
     image_url: "/images/week19/young.jpg",
     audio_word: "/audio/week19_easy/vocab_young.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "ảnh",
     definition_en: "a picture from a camera",
     example: "This is my baby photo.",
-    collocation: "baby photo / my baby photo / a photo",
+    collocation: "baby photo / my baby photo / a baby photo",
     image_url: "/images/week19/photo.jpg",
     audio_word: "/audio/week19_easy/vocab_photo.mp3"
   },
@@ -128,7 +128,7 @@ export default {
     definition_vi: "album ảnh",
     definition_en: "a book for photos",
     example: "My mom has a photo album.",
-    collocation: "photo album / a photo album / a album",
+    collocation: "photo album / a photo album / a photo album",
     image_url: "/images/week19/album.jpg",
     audio_word: "/audio/week19_easy/vocab_album.mp3"
   },
@@ -139,7 +139,7 @@ export default {
     definition_vi: "ký ức",
     definition_en: "something you remember",
     example: "I have a happy memory.",
-    collocation: "happy memory / a happy memory / a memory",
+    collocation: "happy memory / a happy memory / a happy memory",
     image_url: "/images/week19/memory.jpg",
     audio_word: "/audio/week19_easy/vocab_memory.mp3"
   }

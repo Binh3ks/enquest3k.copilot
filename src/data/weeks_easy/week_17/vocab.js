@@ -7,7 +7,7 @@ export default {
     definition_vi: "đang mưa",
     definition_en: "water falling from the sky",
     example: "It is raining today.",
-    collocation: "it is raining / It is raining today / a raining",
+    collocation: "it is raining / It is raining today / an it is raining",
     image_url: "/images/week17_easy/raining.jpg",
     audio_word: "/audio/week17_easy/vocab_raining.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "đang có tuyết",
     definition_en: "white flakes falling from the sky",
     example: "It is snowing outside.",
-    collocation: "it is snowing / It is snowing outside / a snowing",
+    collocation: "it is snowing / It is snowing outside / an it is snowing",
     image_url: "/images/week17_easy/snowing.jpg",
     audio_word: "/audio/week17_easy/vocab_snowing.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "nắng",
     definition_en: "bright and clear weather",
     example: "It is sunny today.",
-    collocation: "sunny day / It is sunny today / a sunny",
+    collocation: "sunny day / It is sunny today / a sunny day",
     image_url: "/images/week17_easy/sunny.jpg",
     audio_word: "/audio/week17_easy/vocab_sunny.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "ấm",
     definition_en: "pleasantly high temperature",
     example: "It is warm and sunny.",
-    collocation: "warm weather / It is warm and sunny / a warm",
+    collocation: "warm weather / It is warm and sunny / a warm weather",
     image_url: "/images/week17_easy/warm.jpg",
     audio_word: "/audio/week17_easy/vocab_warm.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "áo khoác",
     definition_en: "a thick jacket for cold weather",
     example: "I wear my coat.",
-    collocation: "wear a coat / wear my coat / a coat",
+    collocation: "wear a coat / wear my coat / wear a coat",
     image_url: "/images/week17_easy/coat.jpg",
     audio_word: "/audio/week17_easy/vocab_coat.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "ủng",
     definition_en: "shoes that cover the ankle",
     example: "I wear boots in the rain.",
-    collocation: "rubber boots / I wear boots in the / a boots",
+    collocation: "rubber boots / I wear boots in the / a rubber boots",
     image_url: "/images/week17_easy/boots.jpg",
     audio_word: "/audio/week17_easy/vocab_boots.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "mũ",
     definition_en: "a covering for the head",
     example: "I wear my hat.",
-    collocation: "wear a hat / wear my hat / a hat",
+    collocation: "wear a hat / wear my hat / wear a hat",
     image_url: "/images/week17_easy/hat.jpg",
     audio_word: "/audio/week17_easy/vocab_hat.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "ô (dù)",
     definition_en: "a tool to stay dry in rain",
     example: "I carry my umbrella.",
-    collocation: "carry an umbrella / carry my umbrella / a umbrella",
+    collocation: "carry an umbrella / carry my umbrella / carry an umbrella",
     image_url: "/images/week17_easy/umbrella.jpg",
     audio_word: "/audio/week17_easy/vocab_umbrella.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "đang mặc",
     definition_en: "having clothes on the body",
     example: "I am wearing a coat.",
-    collocation: "wearing a coat / I am wearing a coat / a wearing",
+    collocation: "wearing a coat / I am wearing a coat / a wearing a coat",
     image_url: "/images/week17_easy/wearing.jpg",
     audio_word: "/audio/week17_easy/vocab_wearing.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "sự bốc hơi",
     definition_en: "water turning into vapour",
     example: "The sun causes evaporation.",
-    collocation: "water evaporation / sun causes evaporation / a evaporation",
+    collocation: "water evaporation / sun causes evaporation / a water evaporation",
     image_url: "/images/week17_easy/evaporation.jpg",
     audio_word: "/audio/week17_easy/vocab_evaporation.mp3"
   },
@@ -128,7 +128,7 @@ export default {
     definition_vi: "khí quyển",
     definition_en: "the air around the Earth",
     example: "Clouds form in the atmosphere.",
-    collocation: "the atmosphere / in the atmosphere / a atmosphere",
+    collocation: "the atmosphere / in the atmosphere / the atmosphere",
     image_url: "/images/week17_easy/atmosphere.jpg",
     audio_word: "/audio/week17_easy/vocab_atmosphere.mp3"
   },
@@ -139,7 +139,7 @@ export default {
     definition_vi: "lượng mưa",
     definition_en: "rain or snow from clouds",
     example: "Rain is precipitation.",
-    collocation: "heavy precipitation / Rain is precipitation / a precipitation",
+    collocation: "heavy precipitation / Rain is precipitation / a heavy precipitation",
     image_url: "/images/week17_easy/precipitation.jpg",
     audio_word: "/audio/week17_easy/vocab_precipitation.mp3"
   }

@@ -18,7 +18,7 @@ export default {
     definition_vi: "yêu thích",
     definition_en: "to really really like something",
     example: "I love my mom.",
-    collocation: "love reading / I love my mom / a love reading",
+    collocation: "love reading / I love my mom / love reading",
     image_url: "/images/week4_easy/love.jpg",
     audio_word: "/audio/week4_easy/vocab_love.mp3"
   },
