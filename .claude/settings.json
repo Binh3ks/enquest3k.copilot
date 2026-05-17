@@ -30,6 +30,11 @@
       "toolkitGuide": "Production_FINAL/1. FINAL MASS PRODUCTION/1_CORE_WORKFLOW/TOOLKIT_INTEGRATION.md",
       "bugInstincts": "PRODUCTION_BUG_INSTINCTS.md"
     },
+    "referenceDocs": {
+      "syllabus": "Production_FINAL/1. FINAL MASS PRODUCTION/2_REFERENCE_DOCS/Syllabus_V5_PublicationReady.docx",
+      "blueprint": "Production_FINAL/1. FINAL MASS PRODUCTION/2_REFERENCE_DOCS/ENGQUEST_BLUEPRINT_DETAILED_SPECS_V5.0.md",
+      "stemIntegration": "Production_FINAL/1. FINAL MASS PRODUCTION/2_REFERENCE_DOCS/STEM_INTEGRATION_STRATEGY_W16_ONWARDS.md"
+    },
     "paths": {
       "weekData": "src/data/weeks/",
       "weekDataEasy": "src/data/weeks_easy/",
