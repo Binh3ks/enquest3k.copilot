@@ -18,7 +18,7 @@ export default {
     definition_vi: "đẹp trai",
     definition_en: "nice to look at (for boys or men)",
     example: "My father is handsome.",
-    collocation: "handsome man / father is handsome / a handsome",
+    collocation: "handsome man / father is handsome / a handsome man",
     image_url: "/images/week3/handsome.jpg",
     audio_word: "/audio/week3/vocab_handsome.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "xinh đẹp",
     definition_en: "nice to look at (for girls or women)",
     example: "My sister is pretty.",
-    collocation: "pretty face / sister is pretty / a pretty",
+    collocation: "pretty face / sister is pretty / a pretty face",
     image_url: "/images/week3/pretty.jpg",
     audio_word: "/audio/week3/vocab_pretty.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "trẻ",
     definition_en: "not old; having lived for a short time",
     example: "My little brother is young.",
-    collocation: "young boy / brother is young / a young",
+    collocation: "young boy / brother is young / a young boy",
     image_url: "/images/week3/young.jpg",
     audio_word: "/audio/week3/vocab_young.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "mảnh mai, gầy",
     definition_en: "thin in a nice way",
     example: "My mother is slim.",
-    collocation: "slim body / mother is slim / a slim",
+    collocation: "slim body / mother is slim / a slim body",
     image_url: "/images/week3/slim.jpg",
     audio_word: "/audio/week3/vocab_slim.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "dễ thương",
     definition_en: "nice and sweet to look at",
     example: "The baby is cute.",
-    collocation: "cute smile / baby is cute / a cute",
+    collocation: "cute smile / baby is cute / a cute smile",
     image_url: "/images/week3/cute.jpg",
     audio_word: "/audio/week3/vocab_cute.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "tròn",
     definition_en: "shaped like a circle",
     example: "I have a round face.",
-    collocation: "round face / have a round face / a round",
+    collocation: "round face / have a round face / a round face",
     image_url: "/images/week3/round.jpg",
     audio_word: "/audio/week3/vocab_round.mp3"
   },

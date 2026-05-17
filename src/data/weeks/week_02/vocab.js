@@ -7,7 +7,7 @@ export default {
     definition_vi: "Mẹ",
     definition_en: "A female parent who takes care of her children.",
     example: "This is my mother. She loves me very much.",
-    collocation: "loving mother / is my mother . She / a mother",
+    collocation: "loving mother / is my mother . She / a loving mother",
     image_url: "/images/week2/mother.jpg",
     audio_word: "/audio/week2/vocab_mother.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "Cha, bố",
     definition_en: "A male parent who takes care of his children.",
     example: "This is my father. He is strong and kind.",
-    collocation: "proud father / is my father . He / a father",
+    collocation: "proud father / is my father . He / a proud father",
     image_url: "/images/week2/father.jpg",
     audio_word: "/audio/week2/vocab_father.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "Anh trai, em trai",
     definition_en: "A boy who has the same parents as you.",
     example: "This is my brother. He plays with me.",
-    collocation: "younger brother / is my brother . He / a brother",
+    collocation: "younger brother / is my brother . He / a younger brother",
     image_url: "/images/week2/brother.jpg",
     audio_word: "/audio/week2/vocab_brother.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "Chị gái, em gái",
     definition_en: "A girl who has the same parents as you.",
     example: "This is my sister. She is very smart.",
-    collocation: "little sister / is my sister . She / a sister",
+    collocation: "little sister / is my sister . She / a little sister",
     image_url: "/images/week2/sister.jpg",
     audio_word: "/audio/week2/vocab_sister.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "Đội, nhóm",
     definition_en: "A group of people who work together.",
     example: "My family is a team. We help each other.",
-    collocation: "family team / is a team . We / a team",
+    collocation: "family team / is a team . We / a family team",
     image_url: "/images/week2/team.jpg",
     audio_word: "/audio/week2/vocab_team.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "Người lãnh đạo",
     definition_en: "A person who guides and helps others.",
     example: "My mother is the leader of our family team.",
-    collocation: "team leader / is the leader of our / a leader",
+    collocation: "team leader / is the leader of our / a team leader",
     image_url: "/images/week2/leader.jpg",
     audio_word: "/audio/week2/vocab_leader.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "Người giúp đỡ",
     definition_en: "A person who gives help to others.",
     example: "My brother is a good helper. He helps with cleaning.",
-    collocation: "good helper / a good helper . He / a helper",
+    collocation: "good helper / a good helper . He / a good helper",
     image_url: "/images/week2/helper.jpg",
     audio_word: "/audio/week2/vocab_helper.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "Yêu thương",
     definition_en: "A strong feeling of care and affection.",
     example: "I love my family very much.",
-    collocation: "family love / I love my family / a love",
+    collocation: "family love / I love my family / a family love",
     image_url: "/images/week2/love.jpg",
     audio_word: "/audio/week2/vocab_love.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "Gia đình",
     definition_en: "People who are related to each other, like parents and children.",
     example: "My family has four people.",
-    collocation: "happy family / My family has four / a family",
+    collocation: "happy family / My family has four / a happy family",
     image_url: "/images/week2/family.jpg",
     audio_word: "/audio/week2/vocab_family.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "Nhà, gia đình",
     definition_en: "The place where you live with your family.",
     example: "I am happy at home with my family.",
-    collocation: "sweet home / happy at home with my / a home",
+    collocation: "sweet home / happy at home with my / a sweet home",
     image_url: "/images/week2/home.jpg",
     audio_word: "/audio/week2/vocab_home.mp3"
   }

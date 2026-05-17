@@ -7,7 +7,7 @@ export default {
     definition_vi: "phòng ngủ",
     definition_en: "a room where you sleep",
     example: "I sleep in my bedroom.",
-    collocation: "my bedroom / in my bedroom / a bedroom",
+    collocation: "my bedroom / in my bedroom / my bedroom",
     image_url: "/images/week5_easy/bedroom.jpg",
     audio_word: "/audio/week5_easy/vocab_bedroom.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "giường",
     definition_en: "where you sleep at night",
     example: "I sleep on my bed.",
-    collocation: "my bed / on my bed / a bed",
+    collocation: "my bed / on my bed / my bed",
     image_url: "/images/week5_easy/bed.jpg",
     audio_word: "/audio/week5_easy/vocab_bed.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "ghế",
     definition_en: "you sit on this",
     example: "I sit on a chair.",
-    collocation: "sit on a chair / on a chair / a chair",
+    collocation: "sit on a chair / on a chair / sit on a chair",
     image_url: "/images/week5_easy/chair.jpg",
     audio_word: "/audio/week5_easy/vocab_chair.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "ngôi nhà",
     definition_en: "a place where you live",
     example: "I live in a house.",
-    collocation: "my house / in a house / a house",
+    collocation: "my house / in a house / my house",
     image_url: "/images/week5_easy/house.jpg",
     audio_word: "/audio/week5_easy/vocab_house.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "khám phá",
     definition_en: "to look around and find things",
     example: "Let's explore the house.",
-    collocation: "explore the house / ' s explore the house / a explore",
+    collocation: "explore the house / ' s explore the house / an explore the house",
     image_url: "/images/week5_easy/explore.jpg",
     audio_word: "/audio/week5_easy/vocab_explore.mp3"
   }

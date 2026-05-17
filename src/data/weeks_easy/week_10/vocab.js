@@ -7,7 +7,7 @@ export default {
     definition_vi: "vùng nông thôn",
     definition_en: "land outside cities",
     example: "The countryside is quiet.",
-    collocation: "peaceful countryside / The countryside is quiet / a countryside",
+    collocation: "peaceful countryside / The countryside is quiet / a peaceful countryside",
     image_url: "/images/week10_easy/countryside.jpg",
     audio_word: "/audio/week10_easy/vocab_countryside.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "trang trại",
     definition_en: "place where people grow food",
     example: "I visit the farm.",
-    collocation: "big farm / visit the farm / a farm",
+    collocation: "big farm / visit the farm / a big farm",
     image_url: "/images/week10_easy/farm.jpg",
     audio_word: "/audio/week10_easy/vocab_farm.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "yên bình",
     definition_en: "quiet and calm",
     example: "The farm is peaceful.",
-    collocation: "peaceful place / farm is peaceful / a peaceful",
+    collocation: "peaceful place / farm is peaceful / a peaceful place",
     image_url: "/images/week10_easy/peaceful.jpg",
     audio_word: "/audio/week10_easy/vocab_peaceful.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "động vật",
     definition_en: "living things like cows",
     example: "The farm has animals.",
-    collocation: "farm animals / farm has animals / a animals",
+    collocation: "farm animals / farm has animals / a farm animals",
     image_url: "/images/week10_easy/animals.jpg",
     audio_word: "/audio/week10_easy/vocab_animals.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "con bò",
     definition_en: "a big animal on a farm",
     example: "I see a cow.",
-    collocation: "big cow / see a cow / a cow",
+    collocation: "big cow / see a cow / a big cow",
     image_url: "/images/week10_easy/cow.jpg",
     audio_word: "/audio/week10_easy/vocab_cow.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "con gà",
     definition_en: "a farm bird",
     example: "The chicken runs fast.",
-    collocation: "small chicken / The chicken runs fast / a chicken",
+    collocation: "small chicken / The chicken runs fast / a small chicken",
     image_url: "/images/week10_easy/chicken.jpg",
     audio_word: "/audio/week10_easy/vocab_chicken.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "cánh đồng",
     definition_en: "open land for growing",
     example: "The field is green.",
-    collocation: "big field / The field is green / a field",
+    collocation: "big field / The field is green / a big field",
     image_url: "/images/week10_easy/field.jpg",
     audio_word: "/audio/week10_easy/vocab_field.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "cây",
     definition_en: "a tall plant",
     example: "The tree is tall.",
-    collocation: "green tree / The tree is tall / a tree",
+    collocation: "green tree / The tree is tall / a green tree",
     image_url: "/images/week10_easy/tree.jpg",
     audio_word: "/audio/week10_easy/vocab_tree.mp3"
   }

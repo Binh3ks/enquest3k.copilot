@@ -7,7 +7,7 @@ export default {
     definition_en: "High, not short",
     definition_vi: "Cao",
     example: "She is tall.",
-    collocation: "tall boy / She is tall / a tall",
+    collocation: "tall boy / She is tall / a tall boy",
     image_url: "/images/week3_easy/tall.jpg",
     audio_word: "/audio/week3_easy/vocab_tall.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_en: "Not high, small",
     definition_vi: "Thấp, nhỏ",
     example: "He is short.",
-    collocation: "short hair / He is short / a short",
+    collocation: "short hair / He is short / a short hair",
     image_url: "/images/week3_easy/short.jpg",
     audio_word: "/audio/week3_easy/vocab_short.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_en: "On your head",
     definition_vi: "Tóc",
     example: "My hair is black.",
-    collocation: "black hair / My hair is black / a hair",
+    collocation: "black hair / My hair is black / a black hair",
     image_url: "/images/week3_easy/hair.jpg",
     audio_word: "/audio/week3_easy/vocab_hair.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_en: "You see with them",
     definition_vi: "Mắt",
     example: "I have brown eyes.",
-    collocation: "brown eyes / have brown eyes / a eyes",
+    collocation: "brown eyes / have brown eyes / a brown eyes",
     image_url: "/images/week3_easy/eyes.jpg",
     audio_word: "/audio/week3_easy/vocab_eyes.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_en: "Not short",
     definition_vi: "Dài",
     example: "She has long hair.",
-    collocation: "long hair / She has long hair / a long",
+    collocation: "long hair / She has long hair / a long hair",
     image_url: "/images/week3_easy/long.jpg",
     audio_word: "/audio/week3_easy/vocab_long.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_en: "Hair is round",
     definition_vi: "Quăn",
     example: "My hair is curly.",
-    collocation: "curly hair / hair is curly / a curly",
+    collocation: "curly hair / hair is curly / a curly hair",
     image_url: "/images/week3_easy/curly.jpg",
     audio_word: "/audio/week3_easy/vocab_curly.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_en: "Not round, not curly",
     definition_vi: "Thẳng",
     example: "His hair is straight.",
-    collocation: "straight hair / hair is straight / a straight",
+    collocation: "straight hair / hair is straight / a straight hair",
     image_url: "/images/week3_easy/straight.jpg",
     audio_word: "/audio/week3_easy/vocab_straight.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_en: "Help you see",
     definition_vi: "Kính",
     example: "I wear glasses.",
-    collocation: "wear glasses / I wear glasses / a glasses",
+    collocation: "wear glasses / I wear glasses / wear glasses",
     image_url: "/images/week3_easy/glasses.jpg",
     audio_word: "/audio/week3_easy/vocab_glasses.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_en: "Front of head",
     definition_vi: "Mặt",
     example: "She has a pretty face.",
-    collocation: "pretty face / a pretty face / a face",
+    collocation: "pretty face / a pretty face / a pretty face",
     image_url: "/images/week3_easy/face.jpg",
     audio_word: "/audio/week3_easy/vocab_face.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_en: "Happy face",
     definition_vi: "Nụ cười",
     example: "I smile at my mom.",
-    collocation: "big smile / I smile at my / a smile",
+    collocation: "big smile / I smile at my / a big smile",
     image_url: "/images/week3_easy/smile.jpg",
     audio_word: "/audio/week3_easy/vocab_smile.mp3"
   }

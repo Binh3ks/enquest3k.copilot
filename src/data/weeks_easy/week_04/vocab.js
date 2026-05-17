@@ -7,7 +7,7 @@ export default {
     definition_vi: "thích",
     definition_en: "to enjoy something",
     example: "I like ice cream.",
-    collocation: "like playing / I like ice cream / a like",
+    collocation: "like playing / I like ice cream / a like playing",
     image_url: "/images/week4_easy/like.jpg",
     audio_word: "/audio/week4_easy/vocab_like.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "yêu thích",
     definition_en: "to really really like something",
     example: "I love my mom.",
-    collocation: "love reading / I love my mom / a love",
+    collocation: "love reading / I love my mom / a love reading",
     image_url: "/images/week4_easy/love.jpg",
     audio_word: "/audio/week4_easy/vocab_love.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "nụ cười",
     definition_en: "happy face with mouth up",
     example: "She has a big smile.",
-    collocation: "big smile / a big smile / a smile",
+    collocation: "big smile / a big smile / a big smile",
     image_url: "/images/week4_easy/smile.jpg",
     audio_word: "/audio/week4_easy/vocab_smile.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "cười",
     definition_en: "to make sounds when happy",
     example: "He makes me laugh.",
-    collocation: "laugh loudly / makes me laugh / a laugh",
+    collocation: "laugh loudly / makes me laugh / a laugh loudly",
     image_url: "/images/week4_easy/laugh.jpg",
     audio_word: "/audio/week4_easy/vocab_laugh.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "vẽ",
     definition_en: "to make pictures",
     example: "I draw cats.",
-    collocation: "draw pictures / I draw cats / a draw",
+    collocation: "draw pictures / I draw cats / draw pictures",
     image_url: "/images/week4_easy/draw.jpg",
     audio_word: "/audio/week4_easy/vocab_draw.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "nhảy",
     definition_en: "to go up in the air",
     example: "I jump high.",
-    collocation: "jump rope / I jump high / a jump",
+    collocation: "jump rope / I jump high / jump rope",
     image_url: "/images/week4_easy/jump.jpg",
     audio_word: "/audio/week4_easy/vocab_jump.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "vui vẻ",
     definition_en: "something that makes you happy",
     example: "This is fun!",
-    collocation: "have fun / This is fun / a fun",
+    collocation: "have fun / This is fun / have fun",
     image_url: "/images/week4_easy/fun.jpg",
     audio_word: "/audio/week4_easy/vocab_fun.mp3"
   }
