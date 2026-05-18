@@ -2,14 +2,12 @@
 // Dictation Station — Advanced Mode
 
 export default {
-  title: "Dictation — Week 33",
-  theme: "accidents_and_consequences",
   sentences: [
-    "Jake hit his knee on the table.",
-    "He fell down and broke the cup.",
-    "His knee hurt a lot.",
-    "The nurse put a cold pack on his knee.",
-    "Jake learned an important lesson.",
-    "Always walk carefully in the corridor."
+    { id: 1, text: "Jake hit his knee on the table." },
+    { id: 2, text: "He fell down and broke the glass cup." },
+    { id: 3, text: "His knee hurt a lot after the fall." },
+    { id: 4, text: "The nurse put a cold pack on his knee." },
+    { id: 5, text: "Jake learned an important lesson." },
+    { id: 6, text: "Always walk carefully in the corridor." }
   ]
 };

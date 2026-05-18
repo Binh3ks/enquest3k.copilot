@@ -1,9 +1,109 @@
-// WEEK 33: THE MISTAKE — Easy Mode
+// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
+// Word Power Station — Easy Mode
+
 export default {
-  title: "Word Power — Easy",
-  theme: "accidents_and_consequences",
-  collocations: [
-    { word: "have an accident", meaning_vi: "bị tai nạn", example_en: "Have an accident.", example_vi: "Bị tai nạn." },
-    { word: "walk carefully", meaning_vi: "đi cẩn thận", example_en: "Walk carefully.", example_vi: "Đi cẩn thận." }
+  words: [
+    {
+      id: 1,
+      word: "have an accident",
+      pronunciation: "/hæv ən ˈæksɪdənt/",
+      cefr_level: "A1",
+      definition_en: "something bad happens to you",
+      definition_vi: "bị tai nạn",
+      example: "Jake had an accident.",
+      model_sentence: "I had an accident yesterday.",
+      collocation: "have an accident",
+      image_url: "/images/week33_easy/wp_have_accident.jpg",
+      audio_word: "/audio/week33_easy/wp_have_accident.mp3",
+      audio_definition: "/audio/week33_easy/wp_def_have_accident.mp3",
+      audio_example: "/audio/week33_easy/wp_ex_have_accident.mp3",
+      audio_collocation: "/audio/week33_easy/wp_coll_have_accident.mp3",
+      audio_model: "/audio/week33_easy/wp_model_have_accident.mp3"
+    },
+    {
+      id: 2,
+      word: "walk carefully",
+      pronunciation: "/wɔːk ˈkeəfəli/",
+      cefr_level: "A1",
+      definition_en: "to walk without running",
+      definition_vi: "đi cẩn thận",
+      example: "Walk carefully in school.",
+      model_sentence: "You must walk carefully.",
+      collocation: "walk carefully",
+      image_url: "/images/week33_easy/wp_walk_carefully.jpg",
+      audio_word: "/audio/week33_easy/wp_walk_carefully.mp3",
+      audio_definition: "/audio/week33_easy/wp_def_walk_carefully.mp3",
+      audio_example: "/audio/week33_easy/wp_ex_walk_carefully.mp3",
+      audio_collocation: "/audio/week33_easy/wp_coll_walk_carefully.mp3",
+      audio_model: "/audio/week33_easy/wp_model_walk_carefully.mp3"
+    },
+    {
+      id: 3,
+      word: "fall down",
+      pronunciation: "/fɔːl daʊn/",
+      cefr_level: "A1",
+      definition_en: "to drop to the ground",
+      definition_vi: "ngã xuống",
+      example: "He fell down.",
+      model_sentence: "I fell down.",
+      collocation: "fall down",
+      image_url: "/images/week33_easy/wp_fall_down.jpg",
+      audio_word: "/audio/week33_easy/wp_fall_down.mp3",
+      audio_definition: "/audio/week33_easy/wp_def_fall_down.mp3",
+      audio_example: "/audio/week33_easy/wp_ex_fall_down.mp3",
+      audio_collocation: "/audio/week33_easy/wp_coll_fall_down.mp3",
+      audio_model: "/audio/week33_easy/wp_model_fall_down.mp3"
+    },
+    {
+      id: 4,
+      word: "break something",
+      pronunciation: "/breɪk ˈsʌmθɪŋ/",
+      cefr_level: "A1",
+      definition_en: "to damage something",
+      definition_vi: "làm vỡ thứ gì đó",
+      example: "Jake broke a cup.",
+      model_sentence: "I broke my cup.",
+      collocation: "break something",
+      image_url: "/images/week33_easy/wp_break_something.jpg",
+      audio_word: "/audio/week33_easy/wp_break_something.mp3",
+      audio_definition: "/audio/week33_easy/wp_def_break_something.mp3",
+      audio_example: "/audio/week33_easy/wp_ex_break_something.mp3",
+      audio_collocation: "/audio/week33_easy/wp_coll_break_something.mp3",
+      audio_model: "/audio/week33_easy/wp_model_break_something.mp3"
+    },
+    {
+      id: 5,
+      word: "learn a lesson",
+      pronunciation: "/lɜːn ə ˈlesən/",
+      cefr_level: "A1",
+      definition_en: "to understand something important",
+      definition_vi: "học được bài học",
+      example: "Jake learned a lesson.",
+      model_sentence: "I learned a lesson.",
+      collocation: "learn a lesson",
+      image_url: "/images/week33_easy/wp_learn_lesson.jpg",
+      audio_word: "/audio/week33_easy/wp_learn_lesson.mp3",
+      audio_definition: "/audio/week33_easy/wp_def_learn_lesson.mp3",
+      audio_example: "/audio/week33_easy/wp_ex_learn_lesson.mp3",
+      audio_collocation: "/audio/week33_easy/wp_coll_learn_lesson.mp3",
+      audio_model: "/audio/week33_easy/wp_model_learn_lesson.mp3"
+    },
+    {
+      id: 6,
+      word: "feel terrible",
+      pronunciation: "/fiːl ˈterəbəl/",
+      cefr_level: "A1",
+      definition_en: "to feel very bad",
+      definition_vi: "cảm thấy kinh khủng",
+      example: "I felt terrible.",
+      model_sentence: "I felt terrible after the accident.",
+      collocation: "feel terrible",
+      image_url: "/images/week33_easy/wp_feel_terrible.jpg",
+      audio_word: "/audio/week33_easy/wp_feel_terrible.mp3",
+      audio_definition: "/audio/week33_easy/wp_def_feel_terrible.mp3",
+      audio_example: "/audio/week33_easy/wp_ex_feel_terrible.mp3",
+      audio_collocation: "/audio/week33_easy/wp_coll_feel_terrible.mp3",
+      audio_model: "/audio/week33_easy/wp_model_feel_terrible.mp3"
+    }
   ]
 };

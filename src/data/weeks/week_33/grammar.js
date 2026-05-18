@@ -126,6 +126,35 @@ export default {
       question_en: "Correct the sentence: Jake goed to the nurse.",
       answer: "Jake went to the nurse",
       hint: "go-went is from Group 4, not Group 5"
+    },
+    {
+      id: 17,
+      type: "fill_blank",
+      question_en: "The mosquito ___ Tom's arm during the picnic yesterday.",
+      answer: "bit",
+      hint: "bite-bit (cắn)"
+    },
+    {
+      id: 18,
+      type: "fill_blank",
+      question_en: "The movie ___ at 7 PM and ended at 9 PM last night.",
+      answer: "began",
+      hint: "begin-began (bắt đầu)"
+    },
+    {
+      id: 19,
+      type: "unscramble",
+      question_en: "Unscramble the words:",
+      words: ["forgot", "He", "to", "do", "his", "homework"],
+      answer: "He forgot to do his homework"
+    },
+    {
+      id: 20,
+      type: "mc",
+      question_en: "Which sentence is CORRECT?",
+      options: ["Jake hitted the table.", "Jake hit the table.", "Jake hitting the table.", "Jake hits the table."],
+      answer: "Jake hit the table.",
+      hint: "hit-hit is an irregular verb"
     }
   ]
 };

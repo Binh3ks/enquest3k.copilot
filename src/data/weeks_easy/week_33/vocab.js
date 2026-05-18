@@ -4,7 +4,7 @@
 export default {
   title: "The Mistake — Week 33 (Easy)",
   theme: "accidents_and_consequences",
-  words: [
+  vocab: [
     { id: 1, word: "accident", meaning_vi: "tai nạn", part_of_speech: "noun", example_en: "Jake had an accident.", example_vi: "Jake bị tai nạn." },
     { id: 2, word: "corridor", meaning_vi: "hành lang", part_of_speech: "noun", example_en: "Run in the corridor.", example_vi: "Chạy trong hành lang." },
     { id: 3, word: "carefully", meaning_vi: "cẩn thận", part_of_speech: "adverb", example_en: "Walk carefully.", example_vi: "Đi cẩn thận." },

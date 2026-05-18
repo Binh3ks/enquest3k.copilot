@@ -1,10 +1,12 @@
-// WEEK 33: THE MISTAKE — Easy Mode
+// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
+// Dictation Station — Easy Mode
+
 export default {
-  title: "Dictation — Easy",
-  theme: "accidents_and_consequences",
   sentences: [
-    "Jake hit his knee.",
-    "He fell down.",
-    "His knee hurt."
+    { id: 1, text: "Jake hit his knee." },
+    { id: 2, text: "He fell down." },
+    { id: 3, text: "His knee hurt." },
+    { id: 4, text: "The nurse helped Jake." },
+    { id: 5, text: "Walk carefully in school." }
   ]
 };

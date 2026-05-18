@@ -5,7 +5,7 @@
 export default {
   title: "The Mistake — Week 33",
   theme: "accidents_and_consequences",
-  words: [
+  vocab: [
     {
       id: 1,
       word: "accident",
