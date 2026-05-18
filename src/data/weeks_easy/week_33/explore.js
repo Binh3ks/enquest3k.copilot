@@ -5,18 +5,8 @@ export default {
   title: "Jake's Bad Day — Explore",
   theme: "accidents_and_consequences",
   image_url: "/images/week33/explore_w33.jpg",
-  content_en: "Last Monday, **Jake** was running in the school **corridor**. He was late for class and he **forgot** to walk **carefully**. Suddenly, he **hit** his knee on a table. He **fell** down and **broke** a glass cup. It made a very **terrible** noise! Everyone looked at Jake.
-
-Jake felt very **terrible**. His knee **hurt** a lot and there was a big red bump. The school **nurse** put a **cold pack** on his knee to help the bump go down. She gave him a brave sticker because he was not crying.
-
-The teacher asked Jake to **explain** what happened. Jake told the truth honestly. He was running because he was late for class. The teacher said running in the corridor is dangerous.
-
-Jake **understood** the **lesson**: always walk **carefully** in the school corridor. He never ran in the corridor again.",
-  content_vi: "Thứ Hai tuần trước, **Jake** đang chạy trong **hành lang** trường. Cậu bị muộn và **quên** phải đi **cẩn thận**. Đột nhiên, cậu **đập** đầu gối vào bàn. Cậu **ngã** xuống và **làm vỡ** một chiếc cốc. Âm thanh **kinh khủng**!
-
-Jake cảm thấy rất **kinh khủng**. Đầu gối **đau** nhiều và có một vết bầm lớn. Y tá đặt **túi chườm lạnh** lên đầu gối. Cậu nhận được sticker dũng cảm vì không khóc.
-
-Giáo viên yêu cầu Jake **giải thích** chuyện gì đã xảy ra. Jake **hiểu** **bài học** quan trọng: luôn đi **cẩn thận** trong hành lang trường học.",
+  content_en: "Last Monday, **Jake** was running in the school **corridor**. He was late for class and he **forgot** to walk **carefully**. Suddenly, he **hit** his knee on a table. He **fell** down and **broke** a glass cup. It made a very **terrible** noise! Everyone looked at Jake.\n\nJake felt very **terrible**. His knee **hurt** a lot and there was a big red bump. The school **nurse** put a **cold pack** on his knee to help the bump go down. She gave him a brave sticker because he was not crying.\n\nThe teacher asked Jake to **explain** what happened. Jake told the truth honestly. He was running because he was late for class. The teacher said running in the corridor is dangerous.\n\nJake **understood** the **lesson**: always walk **carefully** in the school corridor. He never ran in the corridor again.",
+  content_vi: "Thứ Hai tuần trước, **Jake** đang chạy trong **hành lang** trường. Cậu bị muộn và **quên** đi **cẩn thận**. Đột nhiên, cậu **đập** đầu gối vào bàn. Cậu **ngã** xuống và **làm vỡ** một chiếc cốc.\n\nJake cảm thấy rất **kinh khủng**. Đầu gối **đau** nhiều. Y tá đặt **túi chườm lạnh** lên đầu gối. Cậu nhận được sticker dũng cảm vì không khóc.\n\nGiáo viên yêu cầu Jake **giải thích** chuyện gì đã xảy ra. Jake **hiểu** **bài học** quan trọng: luôn đi **cẩn thận** trong hành lang.",
   check_questions: [
     {
       id: 1,
