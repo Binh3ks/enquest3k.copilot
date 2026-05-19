@@ -2,73 +2,17 @@ export default {
   title: "The Farm Adventure",
   image_url: "/images/week10/read_cover_w10.jpg",
   audio_url: "/audio/week10/read_explore_main.mp3",
-  content_en: "Today I visit my uncle's **farm** in the **countryside**. The city is noisy, but the **farm is quiet**. I am so happy! In the city, there are many cars, but here there are many **animals**. I see a big **cow**. The cow is eating grass. I see a **chicken**. The chicken runs fast! The city is dirty, but the **farm is clean**. The air is fresh. I walk in the big green **field**. The field is beautiful. There are many **trees**. The trees are tall. The city is busy, but the **countryside is peaceful**. I love the farm! My uncle says: 'The city is big, but the farm is beautiful. The city has buildings, but the farm has nature.' I agree! Next time, I want to stay longer. The farm is the best place!",
+  content_en: "Today I **visit my uncle's** farm in the countryside. The city is noisy, but **the farm is quiet**. I am so happy! In the city, there are many cars, but here there are many animals. I see a big cow. The cow **is eating fresh** grass. I see a chicken. The chicken runs fast! The city is dirty, but **the farm is clean**. The air is fresh. I **walk in the big** green field. The field is beautiful. There are many trees. The trees are tall. The city is busy, but **the countryside is peaceful**. I love the farm! My uncle says: 'The city is big, but the farm is beautiful. The city has buildings, but the farm has nature.' I agree! Next time, I want to stay longer. The farm is the best place!",
   content_vi: "Hôm nay tôi đến thăm trang trại của chú trong vùng nông thôn. Thành phố ồn ào, nhưng trang trại yên tĩnh. Tôi rất vui! Ở thành phố có nhiều xe hơi, nhưng ở đây có nhiều động vật. Tôi thấy một con bò lớn. Con bò đang ăn cỏ. Tôi thấy một con gà. Con gà chạy nhanh! Thành phố bẩn, nhưng trang trại sạch sẽ. Không khí trong lành. Tôi đi bộ trên cánh đồng xanh rộng lớn. Cánh đồng đẹp quá. Có nhiều cây. Những cây cao. Thành phố bận rộn, nhưng vùng nông thôn yên bình. Tôi yêu trang trại! Chú tôi nói: 'Thành phố lớn, nhưng trang trại đẹp. Thành phố có toà nhà, nhưng trang trại có thiên nhiên.' Tôi đồng ý! Lần sau, tôi muốn ở lại lâu hơn. Trang trại là nơi tuyệt nhất!",
   comprehension_questions: [
-    {
-      id: 1,
-      question_en: "Where does the child visit?",
-      answer: ["farm", "uncle's farm", "the farm"],
-      clue_statement: "The child visits uncle's farm.",
-      hint_en: "A place in the countryside...",
-      hint_vi: "Một nơi ở vùng nông thôn..."
-    },
-    {
-      id: 2,
-      question_en: "What animals does the child see?",
-      answer: ["cow and chicken", "a cow and a chicken", "cow, chicken"],
-      clue_statement: "The child sees a cow and a chicken.",
-      hint_en: "Two farm animals...",
-      hint_vi: "Hai con vật ở trang trại..."
-    },
-    {
-      id: 3,
-      question_en: "Is the farm noisy or quiet?",
-      answer: ["quiet", "the farm is quiet"],
-      clue_statement: "The farm is quiet.",
-      hint_en: "Not noisy...",
-      hint_vi: "Không ồn..."
-    },
-    {
-      id: 4,
-      question_en: "What is the air like?",
-      answer: ["fresh", "The air is fresh"],
-      clue_statement: "The air is fresh.",
-      hint_en: "Think about the air...",
-      hint_vi: "Nghĩ về air..."
-    },
-    {
-      id: 5,
-      question_en: "Where do I walk?",
-      answer: ["big green field", "in the big green field"],
-      clue_statement: "I walk in the big green field.",
-      hint_en: "A place...",
-      hint_vi: "Một nơi..."
-    },
-    {
-      id: 6,
-      question_en: "What is the field like?",
-      answer: ["beautiful", "The field is beautiful"],
-      clue_statement: "The field is beautiful.",
-      hint_en: "Think about the field...",
-      hint_vi: "Nghĩ về field..."
-    },
-    {
-      id: 7,
-      question_en: "How many trees are there?",
-      answer: ["many", "There are many trees"],
-      clue_statement: "There are many trees.",
-      hint_en: "A number...",
-      hint_vi: "Một con số..."
-    },
-    {
-      id: 8,
-      question_en: "What is the trees like?",
-      answer: ["tall", "The trees is tall"],
-      clue_statement: "The trees is tall.",
-      hint_en: "Think about the trees...",
-      hint_vi: "Nghĩ về trees..."
-    }
+    { id: 1, question_en: "Where does the child visit?", answer: ["farm", "uncle's farm", "the farm"], clue_statement: "The child visits uncle's farm.", hint_en: "A place in the countryside...", hint_vi: "Một nơi ở vùng nông thôn..." },
+    { id: 2, question_en: "What animals does the child see?", answer: ["cow and chicken", "a cow and a chicken", "cow, chicken"], clue_statement: "The child sees a cow and a chicken.", hint_en: "Two farm animals...", hint_vi: "Hai con vật ở trang trại..." },
+    { id: 3, question_en: "Is the farm noisy or quiet?", answer: ["quiet", "the farm is quiet"], clue_statement: "The farm is quiet.", hint_en: "Not noisy...", hint_vi: "Không ồn..." },
+    { id: 4, question_en: "What is the air like?", answer: ["fresh", "The air is fresh"], clue_statement: "The air is fresh.", hint_en: "Think about the air...", hint_vi: "Nghĩ về air..." },
+    { id: 5, question_en: "Where do I walk?", answer: ["big green field", "in the big green field"], clue_statement: "I walk in the big green field.", hint_en: "A place...", hint_vi: "Một nơi..." },
+    { id: 6, question_en: "What is the field like?", answer: ["beautiful", "The field is beautiful"], clue_statement: "The field is beautiful.", hint_en: "Think about the field...", hint_vi: "Nghĩ về field..." },
+    { id: 7, question_en: "How many trees are there?", answer: ["many", "There are many trees"], clue_statement: "There are many trees.", hint_en: "A number...", hint_vi: "Một con số..." },
+    { id: 8, question_en: "What is the trees like?", answer: ["tall", "The trees is tall"], clue_statement: "The trees is tall.", hint_en: "Think about the trees...", hint_vi: "Nghĩ về trees..." }
   ],
   question: {
     text_en: "Do you like the city or the countryside? Why?",
