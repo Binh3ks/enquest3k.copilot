@@ -1,51 +1,62 @@
-// WEEK 04: ask_ai — Fixed scaffolding (W1-27 format)
-// Standard 6 wh-word bank + question frame per prompt
 export default {
-  prompts: [
+    prompts: [
     {
+      id: 1,
       nova_says: "My favorite food is pizza.",
       nova_says_vi: "Món ăn yêu thích của cô là pizza.",
-      context_en: "Nova talks about her favorite food.",
       task_en: "Ask Nova WHAT her favorite food is.",
       task_vi: "Hỏi cô Nova món ăn yêu thích của cô là gì.",
+
+      context_en: "Nova likes chocolate ice cream.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "What ___ your favorite food?"
+            question_frame: "What ___ your favorite food?",
+      answer: ["What is your favorite food?","What's your favorite food?"],
+      hint: "is",
+      audio_url: null
     },
     {
+      id: 2,
       nova_says: "I eat pizza on Fridays.",
       nova_says_vi: "Cô ăn pizza vào thứ Sáu.",
-      context_en: "Nova eats pizza on Fridays.",
       task_en: "Ask Nova WHEN she eats pizza.",
       task_vi: "Hỏi cô Nova cô ăn pizza khi nào.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you eat pizza?"
+      question_frame: "___ do you eat pizza?",
+      answer: ["When do you eat pizza?"],
+      hint: "When",
+      audio_url: null
     },
     {
-      nova_says: "I don",
+      id: 3,
+      nova_says: "I don't like vegetables.",
       nova_says_vi: "Cô không thích rau.",
-      context_en: "Nova shares her food preferences.",
-      task_en: "Ask Nova WHY she doesn",
+      task_en: "Ask Nova WHY she doesn't like vegetables.",
       task_vi: "Hỏi cô Nova tại sao cô không thích rau.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ don"
+      question_frame: "___ don't you like vegetables?",
+      answer: ["Why don't you like vegetables?"],
+      hint: "Why",
+      audio_url: null
     },
     {
+      id: 4,
       nova_says: "My mum makes good soup.",
       nova_says_vi: "Mẹ cô nấu canh ngon.",
-      context_en: "Nova describes her mother's cooking.",
-      task_en: "Ask Nova if her mum",
+      task_en: "Ask Nova if her mum's soup is good.",
       task_vi: "Hỏi cô Nova canh của mẹ cô có ngon không.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ your mum"
+      question_frame: "___ your mum's soup good?",
+      answer: ["Is your mum's soup good?"],
+      hint: "Is",
+      audio_url: null
     },
     {
+      id: 5,
       nova_says: "I like chocolate ice cream.",
       nova_says_vi: "Cô thích kem sô-cô-la.",
-      context_en: "Nova talks about dessert.",
       task_en: "Ask Nova WHAT flavor ice cream she likes.",
       task_vi: "Hỏi cô Nova cô thích kem vị gì.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "What ___ of ice cream do you like?"
+      question_frame: "What ___ of ice cream do you like?",
+      answer: ["What flavor of ice cream do you like?"],
+      hint: "flavor",
+      audio_url: null
     }
   ]
 };

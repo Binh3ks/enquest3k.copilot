@@ -1,51 +1,62 @@
-// WEEK 01: ask_ai — Fixed scaffolding (W1-27 format)
-// Standard 6 wh-word bank + question frame per prompt
 export default {
-  prompts: [
+    prompts: [
     {
+      id: 1,
       nova_says: "I have a red bag.",
       nova_says_vi: "Cô có một cái cặp màu đỏ.",
-      context_en: "Nova talks about her school bag.",
       task_en: "Ask Nova WHAT COLOR her bag is.",
       task_vi: "Hỏi cô Nova cặp của cô màu gì.",
+
+      context_en: "Nova likes school.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "What ___ is your bag?"
+            question_frame: "What ___ is your bag?",
+      answer: ["What color is your bag?"],
+      hint: "color",
+      audio_url: null
     },
     {
+      id: 2,
       nova_says: "My pen is here.",
       nova_says_vi: "Cái bút của cô ở đây.",
-      context_en: "Nova describes her school bag.",
       task_en: "Ask Nova WHERE her pen is.",
       task_vi: "Hỏi cô Nova bút của cô ở đâu.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "Where ___ your pen?"
+      question_frame: "Where ___ your pen?",
+      answer: ["Where is your pen?"],
+      hint: "is",
+      audio_url: null
     },
     {
+      id: 3,
       nova_says: "This is my book.",
       nova_says_vi: "Đây là sách của cô.",
-      context_en: "Nova shows her school items.",
       task_en: "Ask Nova if this is HER book.",
       task_vi: "Hỏi cô Nova đây có phải sách của cô không.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ this your book?"
+      question_frame: "___ this your book?",
+      answer: ["Is this your book?"],
+      hint: "Is",
+      audio_url: null
     },
     {
+      id: 4,
       nova_says: "I have some crayons.",
       nova_says_vi: "Cô có vài cái bút sáp.",
-      context_en: "Nova shares about school.",
       task_en: "Ask Nova if you can use her crayons.",
       task_vi: "Hỏi cô Nova bạn có thể dùng bút sáp không.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ I use your crayons?"
+      question_frame: "___ I use your crayons?",
+      answer: ["Can I use your crayons?"],
+      hint: "Can",
+      audio_url: null
     },
     {
+      id: 5,
       nova_says: "I like my school.",
       nova_says_vi: "Cô thích trường của mình.",
-      context_en: "Nova says she likes school.",
       task_en: "Ask Nova if she likes school.",
       task_vi: "Hỏi cô Nova cô có thích trường không.",
-      question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ you like school?"
+      question_frame: "___ you like school?",
+      answer: ["Do you like school?"],
+      hint: "Do",
+      audio_url: null
     }
   ]
 };
