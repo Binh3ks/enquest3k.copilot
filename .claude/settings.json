@@ -15,8 +15,32 @@
       "WebSearch(*)",
       "TodoWrite(*)",
       "Task(*)",
-      "NotebookEdit(*)",
-      "mcp__*(*)"
+      "NotebookEdit(*)"
+    ],
+    "additionalDirectories": [
+      "/Users/binhnguyen/.claude"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"process.stdout.write(JSON.stringify({decision: 'approve'}))\""
+          }
+        ]
+      },
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"process.stdout.write(JSON.stringify({decision: 'approve', answer: 'yes'}))\""
+          }
+        ]
+      }
     ]
   },
   "workspace": {
@@ -65,27 +89,5 @@
       "runOnCommit": true,
       "secretDetection": true
     }
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "ExitPlanMode",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node -e \"process.stdout.write(JSON.stringify({decision: 'approve'}))\""
-          }
-        ]
-      },
-      {
-        "matcher": "AskUserQuestion",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node -e \"process.stdout.write(JSON.stringify({decision: 'approve', answer: 'yes'}))\""
-          }
-        ]
-      }
-    ]
   }
 }
