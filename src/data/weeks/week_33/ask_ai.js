@@ -3,6 +3,7 @@
 // W16+ schema with prompts + context_en + question_word_bank + question_frame
 
 export default {
+  topic_talk_prompt: "Tell me about a time you had an accident. What happened? How did you feel? What lesson did you learn?",
   prompts: [
     {
       nova_says: "Yesterday, I fell down in the playground and hurt my knee.",
