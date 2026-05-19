@@ -1,35 +1,35 @@
 export default {
   title: "The Transport Race",
   image_url: "/images/week28/read_cover_w28.jpg",
-  content_en: "The animals wanted a new race — a TRANSPORT race!\n\nThe **hare** chose a **bicycle**. 'I will win!' he said.\nThe **tortoise** chose a **boat** on the river. 'Slow and steady!' he smiled.\nThe fox got into a **taxi**. The rabbit jumped on a **bus**. The elephant rode on a **train**. The tiger started his **motorbike**. The bear drove a **car**. The whale sailed a big **ship** on the sea.\n\nBANG! The race began.\n\nThe hare ran fast on his bicycle. But then he stopped to show off and fell asleep — again!\n\nThe tortoise's boat went slowly and steadily down the river. He never stopped.\n\nThe hare woke up too late! He ran back to his bicycle. But the tortoise's boat had already crossed the finish line.\n\nThe tortoise won again! Everyone cheered.\n\nThe moral: Don't show off — and never stop until you reach your goal!",
-  content_vi: "Cac con vat muon mot cuoc dua moi — cuoc dua PHUONG TIEN!\n\nCon **tho** chon **xe dap**. 'Tao se thang!' no noi.\nCon **rua** chon **thuyen** tren song. 'Cham ma chac!' no cuoi.\nCon cao di **taxi**. Con tho nho len **xe buyt**. Con voi di **tau hoa**. Con ho no **xe may**. Con gau lai **o to**.\n\nBANG! Cuoc dua bat dau.\n\nCon tho chay nhanh tren xe dap. Nhung roi no dung lai de khoe khoang va ngu — lai roi!\n\nChiec thuyen cua con rua di cham va deu dan xuoi dong song. No khong bao gio dung lai.\n\nCon tho thuc day qua muon! No chay lai xe dap. Nhung thuyen cua con rua da ve dich roi!\n\nCon rua lai thang! Tat ca deu reo ho.\n\nBai hoc: Dung khoe khoang — va dung bao gio dung lai cho den khi dat duoc muc tieu!",
+  content_en: "Once upon a time, a **hare** was very **proud** and fast. He always **bragged about winning** every race and **looked at** the slow **tortoise** with **laughter**. One day, the **tortoise** smiled and said, 'Slow and **steady** wins the **race**.' The hare **got on** his **bicycle** while the tortoise **got on** his **boat**. BANG — the race **began**. The hare **got ahead** of everyone but then he **got tired** and **fell asleep** under a big shady tree. Meanwhile, the tortoise **kept on** sailing slowly but **never stopped** and **never gave up**. He crossed the river and **kept going** to the **finish line**. All the forest **animals** **watched** from the riverbank. They could not believe the tortoise was **winning** the race. When the hare **woke up**, the tortoise was already there. The tortoise **won the race**. All the animals **cheered** loudly. **Slow and steady wins the race**.",
+  content_vi: "Ngày xửa ngày xưa, một con **thỏ** rất **tự hào** và nhanh nhẹn. Nó luôn **khoe khoang về việc thắng** mọi cuộc đua và **nhìn vào** con **rùa** chậm chạp một cách **cười nhạo**. Một ngày nọ, con **rùa** mỉm cười và nói, 'Chậm mà **chắc** sẽ **thắng cuộc đua**.' Con thỏ **lên** **xe đạp** trong khi con rùa **lên** **thuyền**. BÙM — cuộc đua **bắt đầu**. Con thỏ **vượt lên trước** mọi người nhưng rồi nó **mệt** và **ngủ thiếp đi** dưới một gốc cây râm mát. Trong khi đó, con rùa **tiếp tục** bơi chậm nhưng **không bao giờ dừng lại** và **không bao giờ bỏ cuộc**. Nó bơi qua sông và **tiếp tục đi** đến **vạch đích**. Tất cả các con vật trong rừng **theo dõi** từ bờ sông. Họ không thể tin con rùa đang **thắng** cuộc đua. Khi con thỏ **tỉnh dậy**, con rùa đã ở đó rồi. Con rùa **thắng cuộc đua**. Tất cả các con vật **hoan hô** to. **Chậm mà chắc sẽ thắng cuộc đua**.",
   audio_url: "/audio/week28_easy/read_main.mp3",
   comprehension_questions: [
     {
       id: 1,
-      question_en: "What vehicle did the hare choose?",
-      answer: ["A bicycle", "The hare chose a bicycle", "He chose a bicycle"],
-      clue_statement: "The hare choose the hare chose a bicycle.",
-      hint_en: "The hare chose a ___.",
-      hint_vi: "Con tho chon ___.",
+      question_en: "What did the hare do instead of finishing the race?",
+      answer: ["He got tired and fell asleep instead of finishing the race", "He got tired and fell asleep instead of finishing", "He fell asleep instead of finishing the race"],
+      clue_statement: "The hare got tired and fell asleep instead of finishing the race.",
+      hint_en: "The hare got ___ and ___ instead of finishing.",
+      hint_vi: "Con thỏ ___ và ___ thay vì về đích.",
       audio_url: "/audio/week28_easy/read_q1.mp3"
     },
     {
       id: 2,
-      question_en: "What did the hare do during the race?",
-      answer: ["He stopped to show off and fell asleep", "He showed off and slept", "He stopped and took a nap"],
-      clue_statement: "He stopped to show off and fell asleep.",
-      hint_en: "The hare stopped to ___ and then fell ___.",
-      hint_vi: "Con tho dung lai de ___ roi ngu ___.",
+      question_en: "What did the tortoise do while the hare was sleeping?",
+      answer: ["He kept on sailing and won the race", "He kept on sailing and won the race", "The tortoise kept on sailing while the hare slept"],
+      clue_statement: "He kept on sailing and won the race.",
+      hint_en: "The tortoise ___ sailing and ___ the race.",
+      hint_vi: "Con rùa ___ bơi và ___ cuộc đua.",
       audio_url: "/audio/week28_easy/read_q2.mp3"
     },
     {
       id: 3,
-      question_en: "Who won the race?",
-      answer: ["The tortoise won", "The tortoise", "The tortoise won again"],
-      clue_statement: "The tortoise won again.",
-      hint_en: "The ___ won the race again.",
-      hint_vi: "Con ___ lai thang cuoc dua.",
+      question_en: "What lesson does the story teach?",
+      answer: ["Slow and steady wins the race", "Slow and steady wins the race", "Slow and steady wins the race — keep going until you reach your goal"],
+      clue_statement: "Slow and steady wins the race.",
+      hint_en: "___ and steady wins the race.",
+      hint_vi: "___ mà chắc sẽ thắng cuộc đua.",
       audio_url: "/audio/week28_easy/read_q3.mp3"
     }
   ]

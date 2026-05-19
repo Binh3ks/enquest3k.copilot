@@ -1,65 +1,50 @@
+// WEEK 30: THE OLD TOWN MARKET — Irregular Verbs 2: eat, drink, buy, give
+// Ask AI Station — Advanced Mode
+// W16+ schema with prompts + context_en + question_word_bank + question_frame
+
 export default {
-  topic_talk_prompt: "Tell me about a meal you shared with someone. What did you eat? How did you feel? Do you know who prepared it — a chef or a cook?",
   prompts: [
     {
-      id: 1,
-      nova_says: "Last Sunday we had a lovely picnic in the park.",
-      nova_says_vi: "Chủ nhật tuần trước chúng tôi có một buổi dã ngoại vui ở công viên.",
-      task_en: "Ask Nova 2 questions about the picnic.",
-      task_vi: "Hỏi cô Nova 2 câu về buổi dã ngoại.",
-      question_starters: ["Who did you go with...?","Where in the park did you...?"],
-      answer: ["Who did you go with?","What did you bring to the picnic?","Where was the picnic?"],
-      audio_url: null
+      nova_says: "Last Saturday my class went on a field trip to the old town market. The teacher said we had to use all our senses to explore!",
+      nova_says_vi: "Thứ Bảy tuần trước lớp tôi đi dã ngoại đến chợ phố cổ. Cô giáo nói chúng tôi phải dùng tất cả các giác quan để khám phá!",
+      context_en: "Nova's class visits the old town market for a senses exploration trip. Student asks about the field trip.",
+      question_word_bank: ["What", "How", "Did", "Who"],
+      question_frame: "___ did you see at the market? or ___ did your teacher say about the senses? or Tell me more!"
     },
     {
-      id: 2,
-      nova_says: "We brought sandwiches, fruit, and lemonade.",
-      nova_says_vi: "Chúng tôi mang bánh mì kẹp, trái cây và nước chanh.",
-      task_en: "Ask Nova about the food at the picnic.",
-      task_vi: "Hỏi cô Nova về thức ăn trong buổi dã ngoại.",
-      question_starters: ["What was your favorite food...?","Did you make the sandwiches...?"],
-      answer: ["What was your favorite food at the picnic?","Did you make the sandwiches yourself?","What did the lemonade taste like?"],
-      audio_url: null
+      nova_says: "I saw rows of colorful stalls and smooth glass jars filled with golden honey. The colors were so bright and beautiful!",
+      nova_says_vi: "Tôi thấy những dãy gian hàng đầy màu sắc và những lọ thủy tinh nhẵn bóng đựng mật ong vàng. Màu sắc thật rực rỡ và đẹp!",
+      context_en: "Nova describes the colorful stalls and glass jars she saw at the market. Student asks about what she saw.",
+      question_word_bank: ["What", "How", "Were", "Did"],
+      question_frame: "___ else did you see? or ___ were the glass jars made of? or Tell me more!"
     },
     {
-      id: 3,
-      nova_says: "After eating, we played games and flew a kite.",
-      nova_says_vi: "Sau khi ăn, chúng tôi chơi trò chơi và thả diều.",
-      task_en: "Ask Nova about the activities after eating.",
-      task_vi: "Hỏi cô Nova về các hoạt động sau khi ăn.",
-      question_starters: ["What games did you...?","How high did the kite...?"],
-      answer: ["What games did you play?","How high did the kite fly?","Was it hard to fly the kite?"],
-      audio_url: null
+      nova_says: "I touched a wooden shelf carved with leaf patterns — it felt rough and warm. Then I picked up a heavy stone bowl — it felt cool and smooth.",
+      nova_says_vi: "Tôi chạm vào một chiếc kệ gỗ khắc hoa văn lá cây — bề mặt thô ráp và ấm. Rồi tôi nhấc một cái bát đá nặng — bề mặt mát lạnh và nhẵn bóng.",
+      context_en: "Nova describes the textures she felt — rough wooden shelf and smooth stone bowl. Student asks about textures.",
+      question_word_bank: ["Which", "What", "How", "Did"],
+      question_frame: "___ felt rougher — the wooden shelf or the stone bowl? or ___ was the wooden shelf made of? or Tell me more!"
     },
     {
-      id: 4,
-      nova_says: "The weather was perfect — warm with a gentle breeze.",
-      nova_says_vi: "Thời tiết hoàn hảo — ấm áp với gió nhẹ.",
-      task_en: "Ask Nova about the weather during the picnic.",
-      task_vi: "Hỏi cô Nova về thời tiết trong buổi dã ngoại.",
-      question_starters: ["How warm was it...?","What did the breeze feel like...?"],
-      answer: ["How warm was it?","Did it rain at all?","What was the weather like?"],
-      audio_url: null
+      nova_says: "At the fabric stall, I felt soft cotton scarves in every color. Cotton is so light and gentle — nothing like cold metal railings!",
+      nova_says_vi: "Ở quầy vải, tôi cảm nhận những chiếc khăn cotton mềm mại đủ màu. Cotton thật nhẹ nhàng — hoàn toàn khác với lan can kim loại lạnh lẽo!",
+      context_en: "Nova describes touching soft cotton scarves and comparing them to cold metal. Student asks about materials.",
+      question_word_bank: ["Which", "What", "How", "Did"],
+      question_frame: "___ material did you like more — cotton or metal? or ___ does cotton feel like? or Tell me more!"
     },
     {
-      id: 5,
-      nova_says: "At the end of the day, we were all tired but very happy.",
-      nova_says_vi: "Cuối ngày, chúng tôi đều mệt mỏi nhưng rất vui.",
-      task_en: "Ask Nova how the day ended.",
-      task_vi: "Hỏi cô Nova cuối ngày như thế nào.",
-      question_starters: ["How did everyone feel...?","What time did you...?"],
-      answer: ["How did everyone feel at the end?","What time did you go home?","Would you go on a picnic again?"],
-      audio_url: null
+      nova_says: "Near the spice stall, I smelt cinnamon and sweet roses drifting through the air. I heard vendors calling and children laughing everywhere!",
+      nova_says_vi: "Gần quầy gia vị, tôi ngửi thấy mùi quế và hoa hồng ngọt ngào lan trong không khí. Tôi nghe tiếng người bán hàng rao và tiếng trẻ em cười vang.",
+      context_en: "Nova describes the smells and sounds at the market — cinnamon, roses, vendors, children. Student asks about senses.",
+      question_word_bank: ["What", "How", "Did", "Was"],
+      question_frame: "___ did the cinnamon smell like? or ___ was the loudest sound you heard? or Tell me more!"
     },
     {
-      id: 6,
-      nova_says: "The chef at the park cooked fresh food for everyone. She was a scientist of flavors!",
-      nova_says_vi: "Đầu bếp tại công viên nấu ăn tươi ngon cho mọi người. Cô ấy là một nhà khoa học về hương vị!",
-      task_en: "Ask Nova WHAT the chef cooked.",
-      task_vi: "Hỏi cô Nova đầu bếp nấu gì.",
-      question_starters: ["What did the chef cook...?","Why was she like a scientist...?"],
-      answer: ["What did the chef cook?","Why was the chef like a scientist?","Was the food delicious?"],
-      audio_url: null
+      nova_says: "My favorite thing was a beautiful cotton cloth with a bright flower pattern. What is your school bag made of? Is it plastic, metal, or cotton?",
+      nova_says_vi: "Thứ tôi yêu thích nhất là một tấm vải cotton đẹp với hoa văn hoa rực rỡ. Túi cặp của bạn làm bằng gì? Nhựa, kim loại hay cotton?",
+      context_en: "Nova shares her favorite thing — a cotton cloth — and asks about the student's bag materials.",
+      question_word_bank: ["What", "Was", "Did", "Why"],
+      question_frame: "___ was your favorite thing at the market? or ___ did you like the cotton cloth? or Tell me more!"
     }
   ]
 };

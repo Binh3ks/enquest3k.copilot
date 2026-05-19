@@ -1,65 +1,43 @@
+// WEEK 28: THE TRANSPORT RACE — Past Simple: Regular & Irregular Verbs
+// Ask AI Station — Easy Mode
+// W16+ schema with prompts + context_en + question_word_bank + question_frame
+
 export default {
-  topic_talk_prompt: "Tell me about the Tortoise and the Hare race! Who won and why? What did you learn from the story?",
   prompts: [
     {
-      id: 1,
-      nova_says: "I just finished reading 'The Tortoise and the Hare'! The hare boasted that he was the fastest animal.",
-      nova_says_vi: "Cô vừa đọc xong 'Rùa và Thỏ'! Con thỏ khoe khoang rằng nó là con vật nhanh nhất.",
-      task_en: "Ask Nova WHO boasted about being fast.",
-      task_vi: "Hỏi cô Nova AI đã khoe khoang về việc nhanh nhất.",
-      question_word_bank: ["Who", "What", "Where"],
-      question_frame: "___ boasted about being fast?",
-      answer: ["Who boasted about being fast?"],
-      hint_word: "Who",
-      audio_url: null
+      nova_says: "I just read 'The Tortoise and the Hare'! The hare fell asleep and the tortoise won.",
+      nova_says_vi: "Cô vừa đọc 'Rùa và Thỏ'! Con thỏ ngủ thiếp đi và con rùa thắng.",
+      context_en: "The Tortoise and the Hare story. The hare slept and the tortoise won. Student asks questions.",
+      question_word_bank: ["Who", "What", "Why"],
+      question_frame: "___ won the race? or ___ did the hare sleep? or Tell me more!"
     },
     {
-      id: 2,
-      nova_says: "The tortoise challenged the hare to a race. All the animals cheered! Some came by bus, some by boat, and others by bicycle or train.",
-      nova_says_vi: "Con rùa thách con thỏ thi đua. Tất cả các con vật đều cổ vũ.",
-      task_en: "Ask Nova WHAT the tortoise did.",
-      task_vi: "Hỏi cô Nova con rùa đã làm gì.",
-      question_word_bank: ["What", "Who", "How"],
-      question_frame: "___ did the tortoise do?",
-      answer: ["What did the tortoise do?"],
-      hint_word: "What",
-      audio_url: null
+      nova_says: "The hare was very fast! He ran at the start of the race. Then he stopped and slept.",
+      nova_says_vi: "Con thỏ rất nhanh! Nó chạy ở đầu cuộc đua. Rồi nó dừng lại và ngủ.",
+      context_en: "The hare ran fast but stopped to sleep. Student asks about the hare.",
+      question_word_bank: ["What", "Why", "Did"],
+      question_frame: "___ did the hare do? or ___ he sleep? or Tell me more!"
     },
     {
-      id: 3,
-      nova_says: "During the race, the hare ran fast and then decided to take a nap under a tree!",
-      nova_says_vi: "Trong cuộc đua, thỏ chạy nhanh rồi quyết định ngủ trưa dưới gốc cây!",
-      task_en: "Ask Nova WHERE the hare took a nap.",
-      task_vi: "Hỏi cô Nova con thỏ đã ngủ trưa ở đâu.",
-      question_word_bank: ["Where", "Why", "When"],
-      question_frame: "___ did the hare take a nap?",
-      answer: ["Where did the hare take a nap?"],
-      hint_word: "Where",
-      audio_url: null
+      nova_says: "The tortoise walked slowly but he never stopped. He won because he never gave up!",
+      nova_says_vi: "Con rùa đi chậm nhưng không bao giờ dừng. Nó thắng vì không bao giờ bỏ cuộc!",
+      context_en: "The tortoise won because he was determined. Student asks about the tortoise.",
+      question_word_bank: ["Why", "How", "Who"],
+      question_frame: "___ won? or ___ did he never stop? or Tell me more!"
     },
     {
-      id: 4,
-      nova_says: "While the hare slept, the tortoise kept walking — slowly but steadily. He never stopped!",
-      nova_says_vi: "Trong khi thỏ ngủ, rùa cứ đi — chậm mà chắc. Rùa không bao giờ dừng lại!",
-      task_en: "Ask Nova HOW the tortoise walked.",
-      task_vi: "Hỏi cô Nova con rùa đã đi như thế nào.",
-      question_word_bank: ["How", "Why", "Where"],
-      question_frame: "___ did the tortoise walk?",
-      answer: ["How did the tortoise walk?"],
-      hint_word: "How",
-      audio_url: null
+      nova_says: "The moral is: slow and steady wins the race! Do you agree?",
+      nova_says_vi: "Bài học là: chậm mà chắc sẽ thắng cuộc đua! Bạn đồng ý không?",
+      context_en: "The moral of the story. Student shares their opinion.",
+      question_word_bank: ["What", "Do", "Why"],
+      question_frame: "___ is the moral? or ___ you agree? or Tell me more!"
     },
     {
-      id: 5,
-      nova_says: "In the end, the tortoise crossed the finish line first! The moral is: slow and steady wins the race.",
-      nova_says_vi: "Cuối cùng, rùa vượt qua vạch đích đầu tiên! Bài học là: chậm mà chắc sẽ thắng.",
-      task_en: "Ask Nova WHAT the moral of the story is.",
-      task_vi: "Hỏi cô Nova bài học của câu chuyện là gì.",
-      question_word_bank: ["What", "Who", "Why"],
-      question_frame: "___ is the moral of the story?",
-      answer: ["What is the moral of the story?"],
-      hint_word: "What",
-      audio_url: null
+      nova_says: "The hare rode a bicycle and the tortoise rode in a boat. Do you ride a bicycle?",
+      nova_says_vi: "Con thỏ đi xe đạp và con rùa ngồi thuyền. Bạn có đi xe đạp không?",
+      context_en: "Transport from the story. Student talks about transport.",
+      question_word_bank: ["What", "Do", "How"],
+      question_frame: "___ transport do you use? or ___ you like bicycles? or Tell me more!"
     }
   ]
 };

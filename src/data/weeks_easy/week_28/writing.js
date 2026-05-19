@@ -1,7 +1,7 @@
 export default {
   title: "Retell The Tortoise and the Hare",
   min_words: 32,
-  model_sentence: "Once the Hare and the Tortoise had a race. The Hare ran very fast. Then he stopped to rest. He fell asleep. The Tortoise walked slowly and won.",
+  model_sentence: "Once the Hare and the Tortoise had a race. The Hare was very confident and ran very fast at the start. He was sure he would win. Then he stopped to rest under a big tree. He fell asleep. The Tortoise walked slowly but steadily and never gave up. The Tortoise won the race.",
   instruction_en: "Retell the story of the tortoise and the hare in your own words!",
   instruction_vi: "K\u1ec3 l\u1ea1i c\u00e2u chuy\u1ec7n R\u00f9a v\u00e0 Th\u1ecf b\u1eb1ng l\u1eddi c\u1ee7a b\u1ea1n!",
   prompt_en: "Who were the characters? What happened? Who won and why?",

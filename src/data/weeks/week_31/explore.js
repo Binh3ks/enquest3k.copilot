@@ -30,6 +30,11 @@ export default {
       audio_url: "/audio/week31/explore_q3.mp3"
     }
   ],
-  writing_prompt_en: "Compare two materials you learned about today. What are they made of? What are they used for? How do they feel? Write at least 40 words.",
-  writing_prompt_vi: "So s\u00e1nh hai v\u1eadt li\u1ec7u b\u1ea1n h\u1ecdc h\u00f4m nay. Ch\u00fang \u0111\u01b0\u1ee3c l\u00e0m t\u1eeb g\u00ec? Ch\u00fang \u0111\u01b0\u1ee3c d\u00f9ng \u0111\u1ec3 l\u00e0m g\u00ec? Ch\u1ea1m v\u00e0o ch\u00fang c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?"
+  question: {
+    text_en: "Compare two materials you learned about today. What are they made of? What are they used for? How do they feel? Write at least 40 words.",
+    text_vi: "So s\u00e1nh hai v\u1eadt li\u1ec7u b\u1ea1n h\u1ecdc h\u00f4m nay. Ch\u00fang \u0111\u01b0\u1ee3c l\u00e0m t\u1eeb g\u00ec? Ch\u00fang \u0111\u01b0\u1ee3c d\u00f9ng \u0111\u1ec3 l\u00e0m g\u00ec? Ch\u1ea1m v\u00e0o ch\u00fang c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
+    min_words: 40,
+    hint_en: "Wood comes from trees and feels warm. It is used to build furniture. Glass comes from sand and feels smooth. It is used to make windows. Wood is natural but glass is...",
+    hint_vi: "G\u1ed7 \u0111\u1ebfn t\u1eeb c\u00e2y v\u00e0 c\u1ea3m th\u1ea5y \u1ea5m. N\u00f3 \u0111\u01b0\u1ee3c d\u00f9ng \u0111\u1ec3 x\u00e2y nh\u00e0. K\u00ednh \u0111\u1ebfn t\u1eeb c\u00e1t v\u00e0 c\u1ea3m th\u1ea5y m\u1ecbn. N\u00f3 \u0111\u01b0\u1ee3c d\u00f9ng \u0111\u1ec3 l\u00e0m c\u1eeda s\u1ed5. G\u1ed7 l\u00e0 t\u1ef1 nhi\u00ean nh\u01b0ng k\u00ednh l\u00e0..."
+  }
 };

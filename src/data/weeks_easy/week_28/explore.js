@@ -1,8 +1,8 @@
 export default {
   title: "Types of Transport",
   image_url: "/images/week28/explore_cover_w28.jpg",
-  content_en: "How do people travel from place to place? Let us learn about different types of **transport**!\n\nA **car** is fast and comfortable. Many families travel by **car**. A **bus** is big and carries many people at once. In Vietnam, lots of people ride a **motorbike** every day!\n\nA **train** travels on rails. It can carry hundreds of passengers on a long journey. If you need to get somewhere fast, you can take a **taxi** — the driver will take you there!\n\nA **bicycle** is fun and healthy. It does not use fuel — just your legs! Slow and steady, just like the tortoise!\n\nTo travel on water, you use a **boat** or a **ship**. A **boat** is small and good for rivers. A **ship** is very big and travels across the sea.",
-  content_vi: "M\u1ecdi ng\u01b0\u1eddi di chuy\u1ec3n t\u1eeb n\u01a1i n\u00e0y sang n\u01a1i kh\u00e1c nh\u01b0 th\u1ebf n\u00e0o? H\u00e3y h\u1ecdc v\u1ec1 c\u00e1c lo\u1ea1i **ph\u01b0\u01a1ng ti\u1ec7n giao th\u00f4ng**!\n\n**\u00d4 t\u00f4** nhanh v\u00e0 ti\u1ec7n. Nhi\u1ec1u gia \u0111\u00ecnh \u0111i **\u00f4 t\u00f4**. **Xe bu\u00fdt** l\u1edbn v\u00e0 ch\u1edf nhi\u1ec1u ng\u01b0\u1eddi. \u1eede Vi\u1ec7t Nam, nhi\u1ec1u ng\u01b0\u1eddi \u0111i **xe m\u00e1y** m\u1ed7i ng\u00e0y!\n\n**T\u00e0u h\u1ecfa** ch\u1ea1y tr\u00ean \u0111\u01b0\u1eddng ray. N\u1ebfu b\u1ea1n c\u1ea7n \u0111i nhanh, b\u1ea1n c\u00f3 th\u1ec3 g\u1ecdi **taxi**!\n\n**Xe \u0111\u1ea1p** vui v\u1ebbe v\u00e0 t\u1ed1t cho s\u1ee9c kh\u1ecfe. Kh\u00f4ng c\u1ea7n nhi\u00ean li\u1ec7u!\n\n\u0110\u1ec3 \u0111i tr\u00ean n\u01b0\u1edbc, b\u1ea1n d\u00f9ng **thuy\u1ec1n** ho\u1eb7c **t\u00e0u bi\u1ec3n**. **Thuy\u1ec1n** nh\u1ecf, t\u1ed1t cho s\u00f4ng. **T\u00e0u bi\u1ec3n** r\u1ea5t l\u1edbn.",
+  content_en: "How do people travel from place to place? Let us learn about different types of **transport**!\n\nOn the road, a **car** is fast and comfortable. Many families travel by **car** every day. A **bus** is big and carries many people at once. In Vietnam, lots of people ride a **motorbike** to school and work every morning!\n\nFor longer journeys, a **train** is a great choice. A **train** travels on steel rails and can carry hundreds of passengers. Some trains travel at over 300 kilometres per hour! If you need to get somewhere quickly without your own vehicle, you can take a **taxi**. A **taxi** driver will take you exactly where you need to go.\n\nA **bicycle** is fun, healthy, and good for the environment. It does not use fuel — just your legs! Slow and steady, just like the tortoise. To travel on water, you use a **boat** or a **ship**. A **boat** is small and great for rivers. A **ship** is enormous and can carry thousands of passengers across the sea. Just like every vehicle, every mode of **transport** has its own strengths.",
+  content_vi: "Mọi người di chuyển từ nơi này sang nơi khác bằng cách nào? Hãy học về các loại **phương tiện giao thông**!\n\nTrên đường, **ô tô** nhanh và tiện. Nhiều gia đình đi **ô tô** mỗi ngày. **Xe buýt** lớn và chở nhiều người. Ở Việt Nam, nhiều người đi **xe máy** mỗi sáng!\n\nVới chuyến đi dài, **tàu hỏa** là lựa chọn tuyệt vời. **Tàu hỏa** có thể chở hàng trăm hành khách. Nếu bạn cần đi nhanh, hãy gọi **taxi**!\n\n**Xe đạp** vui, tốt cho sức khỏe và thân thiện với môi trường. Để đi trên nước, bạn dùng **thuyền** hoặc **tàu biển**. **Thuyền** nhỏ cho sông. **Tàu biển** rất lớn và đi qua đại dương.",
   audio_url: "/audio/week28_easy/explore_main.mp3",
   check_questions: [
     {
@@ -29,5 +29,12 @@ export default {
       hint_vi: "Xe đạp tốt cho sức khỏe vì dùng ___ của bạn, không cần nhiên liệu.",
       audio_url: "/audio/week28_easy/explore_q3.mp3"
     }
-  ]
+  ],
+  question: {
+    text_en: "Choose two types of transport from the article. Write about what each one is used for and why you would choose it. Use at least four vocabulary words from this week.",
+    text_vi: "Chọn hai loại phương tiện trong bài. Viết về mỗi loại được dùng để làm gì và tại sao bạn sẽ chọn nó. Dùng ít nhất bốn từ vựng tuần này.",
+    min_words: 40,
+    hint_en: "A car is used for... I would choose it because... A bicycle is good for... because...",
+    hint_vi: "Ô tô được dùng để... Tôi sẽ chọn vì... Xe đạp tốt để... vì..."
+  }
 };

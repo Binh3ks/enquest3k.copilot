@@ -1,16 +1,40 @@
 export default {
-  title: "Our Picnic Day",
+  title: "Shadowing: A Special Picnic Day",
   image_url: "/images/week30/read_cover_w30.jpg",
-  content_en: "Last Sunday, my family had a **picnic** in the park. Mum packed a **basket** with lots of food.\n\nWe put a big blanket on the grass. Then we sat down and ate together.\n\nMum **bought** some fruit and **sandwiches** at the market. They were so **delicious**!\n\nTom said he was **thirsty**. He **drank** some cold apple **juice**. Luna said she was **hungry** too. She ate a big sandwich!\n\nDad **gave** us each a cookie after lunch. Luna **shared** her biscuits with the children nearby.\n\nEveryone felt **cheerful**. It was a perfect picnic day!",
-  content_vi: "Chủ Nhật vừa rồi, gia đình tôi đi **dã ngoại** ở công viên. Mẹ xếp một **cái giỏ** với nhiều thức ăn.\n\nChúng tôi trải một tấm chăn lớn trên cỏ. Rồi chúng tôi ngồi xuống và ăn cùng nhau.\n\nMẹ đã **mua** một số trái cây và **bánh mì kẹp** ở chợ. Chúng rất **ngon**!\n\nTom nói anh ấy **khát nước**. Anh ấy đã **uống** nước táo lạnh. Luna nói cô bé cũng **đói bụng**. Cô bé ăn một chiếc bánh mì kẹp lớn!\n\nBố đã **cho** mỗi người một chiếc bánh quy sau bữa trưa. Luna **chia sẻ** bánh quy với các bạn gần đó.\n\nMọi người cảm thấy **vui vẻ**. Đó là một ngày dã ngoại tuyệt vời!",
+  audio_url: "/audio/week30_easy/shadowing_main.mp3",
+  content_en: `Last Sunday, Luna **went to** a **picnic** in the park with her friends Tom and Mia. Tom's dad is a **chef** who **made** the best food — **sandwiches**, cookies, and cold **lemonade**. He **put** all the food in a big **basket**.
+
+Mia's mum is a **scientist** who **brought** fresh strawberries. Luna's dad **bought** a big red **watermelon** at the **market**. The children **ate** their **sandwiches** and **drank** cold **lemonade**. Tom also **brought** fresh mango juice.
+
+At the park, an **artist** was **painting** the lake. Luna **gave** a cookie to the **artist** and he **gave** a little wave back. Tom's friend is a **dentist** — she **smiled** and **said** hello.
+
+The children **ate** and **drank** and felt very **cheerful**. After lunch, they **played games** and **watched** the ducks on the lake. Then they **put** everything **away** and **went home** happy.
+
+Luna **told** her mum all about the picnic when she got home. 'We **ate** yummy food, **met** kind people, and **had** the best day!'`,
+  content_vi: `Chủ nhật trước, Luna **đến** một buổi **dã ngoại** trong công viên với bạn Tom và Mia. Bố của Tom là đầu **bếp** **làm** đồ ăn ngon nhất — bánh mì kẹp, bánh quy, và nước **chanh** lạnh. Anh ấy **đặt** tất cả đồ ăn vào một **giỏ** lớn.
+
+Mẹ của Mia là nhà **khoa học** **mang** dâu tây tươi. Bố của Luna **mua** một quả **dưa hấu** đỏ lớn ở **chợ**. Các bé **ăn** bánh mì kẹp và **uống** nước **chanh** lạnh. Tom cũng **mang** nước ép xoài tươi.
+
+Trong công viên, một **họa sĩ** đang **vẽ** hồ nước. Luna **cho** một cái bánh quy cho **họa sĩ** và anh ấy **đáp** một cái vẫy nhỏ. Bạn của Tom là **nha sĩ** — cô ấy **mỉm cười** và **nói** lời chào.
+
+Các bé **ăn** và **uống** và cảm thấy rất **vui vẻ**. Sau bữa trưa, họ **chơi trò chơi** và **xem** những con vịt trên hồ. Rồi họ **cất** mọi thứ **vào** và **về nhà** vui vẻ.
+
+Luna **kể** cho mẹ nghe về buổi dã ngoại khi về đến nhà. 'Chúng con **ăn** đồ ăn ngon, **gặp** những người tốt, và **có** một ngày tuyệt nhất!'`,
   sentences: [
-    { id: 1, text: "Last Sunday, my family had a picnic in the park." },
-    { id: 2, text: "Mum packed a basket with lots of food." },
-    { id: 3, text: "Mum bought some fruit and sandwiches at the market." },
-    { id: 4, text: "Tom said he was thirsty." },
-    { id: 5, text: "He drank some cold apple juice." },
-    { id: 6, text: "Dad gave us each a cookie after lunch." },
-    { id: 7, text: "Luna shared her biscuits with the children nearby." },
-    { id: 8, text: "It was a perfect picnic day!" }
+    { id: 1, text: "Last Sunday, Luna went to a picnic in the park with her friends Tom and Mia.", audio_url: "/audio/week30_easy/shadowing_s1.mp3" },
+    { id: 2, text: "Tom's dad is a chef who made the best food — sandwiches, cookies, and cold lemonade.", audio_url: "/audio/week30_easy/shadowing_s2.mp3" },
+    { id: 3, text: "He put all the food in a big basket.", audio_url: "/audio/week30_easy/shadowing_s3.mp3" },
+    { id: 4, text: "Mia's mum is a scientist who brought fresh strawberries.", audio_url: "/audio/week30_easy/shadowing_s4.mp3" },
+    { id: 5, text: "Luna's dad bought a big red watermelon at the market.", audio_url: "/audio/week30_easy/shadowing_s5.mp3" },
+    { id: 6, text: "The children ate their sandwiches and drank cold lemonade.", audio_url: "/audio/week30_easy/shadowing_s6.mp3" },
+    { id: 7, text: "Tom also brought fresh mango juice.", audio_url: "/audio/week30_easy/shadowing_s7.mp3" },
+    { id: 8, text: "At the park, an artist was painting the lake.", audio_url: "/audio/week30_easy/shadowing_s8.mp3" },
+    { id: 9, text: "Luna gave a cookie to the artist and he gave a little wave back.", audio_url: "/audio/week30_easy/shadowing_s9.mp3" },
+    { id: 10, text: "Tom's friend is a dentist — she smiled and said hello.", audio_url: "/audio/week30_easy/shadowing_s10.mp3" },
+    { id: 11, text: "The children ate and drank and felt very cheerful.", audio_url: "/audio/week30_easy/shadowing_s11.mp3" },
+    { id: 12, text: "After lunch, they played games and watched the ducks on the lake.", audio_url: "/audio/week30_easy/shadowing_s12.mp3" },
+    { id: 13, text: "Then they put everything away and went home happy.", audio_url: "/audio/week30_easy/shadowing_s13.mp3" },
+    { id: 14, text: "Luna told her mum all about the picnic when she got home.", audio_url: "/audio/week30_easy/shadowing_s14.mp3" },
+    { id: 15, text: "'We ate yummy food, met kind people, and had the best day!'", audio_url: "/audio/week30_easy/shadowing_s15.mp3" }
   ]
 };

@@ -1,40 +1,15 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
+// WEEK 33: THE MISTAKE — Adverbs of Manner
 // Reading Station — Easy Mode
-// Title: "Jake's Bad Day"
 
 export default {
   title: "Jake's Bad Day",
   image_url: "/images/week33/read_cover_w33.jpg",
-  audio_url: "/audio/week33/read_main.mp3",
-  content_en: "Last Monday, Jake was running in the school **corridor**. He was late. He **forgot** to walk **carefully**. He **hit** his knee on the table. He **fell** down. He **broke** a cup.\n\nJake felt **terrible**. His knee **hurt** a lot. The nurse put a **cold pack** on his knee. The teacher asked Jake to **explain** what happened. Jake **understood** — he must walk carefully in the corridor.\n\nAt home, Jake's mum told him to **rest** so his knee could **recover**. By Friday, Jake was better. He **learned** a **lesson**: always walk **carefully**.",
-  content_vi: "Vào thứ Hai, Jake đang chạy trong hành lang trường. Cậu bị muộn. Cậu **quên** đi **cẩn thận**. Cậu **đập** đầu gối vào bàn. Cậu **ngã** xuống. Cậu **làm vỡ** một chiếc cốc.\n\nJake cảm thấy **kinh khủng**. Đầu gối cậu **đau** nhiều. Y tá đặt **túi chườm lạnh** lên đầu gối. Giáo viên yêu cầu Jake **giải thích** chuyện gì xảy ra. Jake **hiểu** — cậu phải đi cẩn thận trong hành lang.\n\nỞ nhà, mẹ Jake bảo cậu **nghỉ ngơi** để đầu gối có thể **hồi phục**. Đến thứ Sáu, Jake đã khá hơn. Cậu **học** được một **bài học**: luôn đi **cẩn thận**.",
+  audio_url: "/audio/week33_easy/read_main.mp3",
+  content_en: "Last Tuesday, Jake had an **accident** at school. He was **running** in the **corridor** because he was late. He ran too **quickly** and did not walk **carefully**.\n\nSuddenly, Jake **hit** his knee on a table. He **fell** down and **broke** a glass cup. The cup made a **terrible** noise!\n\nJake's knee **hurt** a lot. His friend ran to the **nurse**. The **nurse** came and put a **cold pack** on his knee.\n\nThe teacher asked Jake to **explain**. Jake told the truth. He said he was running because he was late. The teacher said it was an important **lesson** — everyone must walk **carefully** in the corridor. Jake **understood**.\n\nAt home, Jake's mum told him to **rest** so his knee could **recover**. Jake **learned** his **lesson** — always walk **carefully**!",
+  content_vi: "Vào thứ Ba tuần trước, Jake bị **tai nạn** ở trường. Cậu đang **chạy** trong **hành lang** vì bị muộn. Cậu chạy quá nhanh và không đi **cẩn thận**.\n\nĐột nhiên, Jake **đập** đầu gối vào bàn. Cậu **ngã** xuống và **làm vỡ** một chiếc cốc thủy tinh. Chiếc cốc tạo ra tiếng **kinh khủng**!\n\nĐầu gối Jake **đau** nhiều. Bạn cậu chạy đến gặp **y tá**. **Y tá** đến và đặt **túi chườm lạnh** lên đầu gối cậu.\n\nGiáo viên yêu cầu Jake **giải thích**. Jake nói sự thật. Cậu bảo cậu chạy vì bị muộn. Giáo viên nói đó là một **bài học** quan trọng — ai cũng phải đi **cẩn thận** trong hành lang. Jake **hiểu**.\n\nỞ nhà, mẹ Jake bảo cậu **nghỉ ngơi** để đầu gối có thể **hồi phục**. Jake **học** được **bài học** của mình — luôn đi **cẩn thận**!",
   comprehension_questions: [
-    {
-      id: 1,
-      question_en: "Why was Jake running?",
-      answer: ["He was late", "Jake was late for class"],
-      clue_statement: "Jake was running because he was late.",
-      hint_en: "Jake was ___.",
-      hint_vi: "Jake bị ___.",
-      audio_url: "/audio/week33/read_q1.mp3"
-    },
-    {
-      id: 2,
-      question_en: "What did Jake break?",
-      answer: ["A cup", "A glass cup"],
-      clue_statement: "Jake broke a cup when he fell.",
-      hint_en: "Jake broke a ___.",
-      hint_vi: "Jake làm vỡ một ___.",
-      audio_url: "/audio/week33/read_q2.mp3"
-    },
-    {
-      id: 3,
-      question_en: "What lesson did Jake learn?",
-      answer: ["Always walk carefully", "Be careful"],
-      clue_statement: "Jake learned to always walk carefully in the corridor.",
-      hint_en: "Always ___ ___.",
-      hint_vi: "Luôn ___ ___.",
-      audio_url: "/audio/week33/read_q3.mp3"
-    }
+    { id: 1, question_en: "Why was Jake running?", question_vi: "Tại sao Jake lại chạy?", answer: "He was late for class.", answer_vi: "Cậu bị muộn giờ học.", options: ["He was late", "He was scared", "He was playing", "He was happy"], audio_url: "/audio/week33/read_q1_easy.mp3" },
+    { id: 2, question_en: "What did Jake break when he fell?", question_vi: "Jake làm vỡ gì khi ngã?", answer: "A glass cup.", answer_vi: "Một chiếc cốc thủy tinh.", options: ["A table", "A glass cup", "A window", "A book"], audio_url: "/audio/week33/read_q2_easy.mp3" },
+    { id: 3, question_en: "What lesson did Jake learn?", question_vi: "Jake học được bài học gì?", answer: "Always walk carefully in the corridor.", answer_vi: "Luôn đi cẩn thận trong hành lang.", options: ["Always walk carefully", "Never go to school", "Never run in class", "Always tell the truth"], audio_url: "/audio/week33/read_q3_easy.mp3" }
   ]
 };

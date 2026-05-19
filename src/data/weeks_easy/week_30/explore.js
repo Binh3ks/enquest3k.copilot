@@ -29,5 +29,12 @@ export default {
       hint_vi: "Lính cứu hỏa dũng cảm vì họ dập ___ và cứu ___.",
       audio_url: "/audio/week30_easy/explore_q3.mp3"
     }
-  ]
+  ],
+  question: {
+    text_en: "Choose two jobs from the article. Write about what each person does and explain why you think their job is important. Use at least four vocabulary words.",
+    text_vi: "Chọn hai nghề trong bài. Viết về mỗi người làm gì và giải thích tại sao bạn nghĩ công việc của họ quan trọng. Dùng ít nhất bốn từ vựng.",
+    min_words: 35,
+    hint_en: "An engineer uses maths and science to build things. This job is important because... A firefighter puts out fires and rescues people. This job is brave because...",
+    hint_vi: "Kỹ sư dùng toán học và khoa học để xây dựng. Công việc này quan trọng vì... Lính cứu hỏa dập lửa và cứu người. Công việc này dũng cảm vì..."
+  }
 };

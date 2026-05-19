@@ -1,20 +1,36 @@
 export default {
-  title: "The Perfect Picnic",
+  title: "Shadowing: A Special Picnic Day",
   image_url: "/images/week30/read_cover_w30.jpg",
-  content_en: "Last Sunday, Luna had an outdoor **picnic** with her friends Tom and Mia. It was a beautiful, **cheerful** day!\n\nFirst, Mum went to the market. She bought a crusty loaf of bread, fresh fruits, cold juice, and some cookies. She packed everything into a big **basket** with a warm **blanket** folded on top.\n\nThe three friends went to the park and spread the **blanket** on the soft, green grass under a tall tree. Tom looked at the **basket** and rubbed his stomach. 'I am so **hungry**!' he said.\n\nFirst, they ate **sandwiches**. Luna ate one big **sandwich** filled with cheese. 'Mmm — these are **delicious**!' said Mia. Then, they drank juice. Luna **drank** cold apple juice — it was **refreshing** and sweet. Tom **drank** orange juice and smiled with happiness.\n\nNext, Luna opened the cookie box. She gave some cookies to Tom. She gave some to Mia, too. 'Thank you!' they said. They shared everything. Sharing is caring!\n\nAfter the sandwiches and cookies, they felt **thirsty** again — so they drank more cold lemonade from the **basket**. Finally, they ate fresh fruits — apples, bananas, and slices of sweet **watermelon**.\n\n'This **outdoor** meal is the best one ever!' said Tom.\n\n'I love picnics!' said Luna.\n\n'Me too!' said everyone.\n\nIt was a truly perfect and **refreshing** day at the park.",
-  content_vi: "Chủ Nhật vừa rồi, Luna có buổi **dã ngoại** ngoài trời cùng bạn Tom và Mia. Đó là một ngày đẹp và **vui vẻ**!\n\nTrước tiên, Mẹ đi chợ. Mẹ mua một ổ bánh mì, trái cây tươi, nước ép lạnh và bánh quy. Mẹ xếp mọi thứ vào một chiếc **giỏ** lớn với chiếc **chăn** gấp lại ở trên.\n\nBa người bạn đến công viên và trải **chăn** lên bãi cỏ mềm xanh mướt dưới một cây cao. Tom nhìn vào **giỏ** và xoa bụng. 'Con **đói** lắm rồi!' cậu nói.\n\nTrước tiên, họ ăn **bánh mì kẹp**. Luna ăn một chiếc **bánh mì kẹp** lớn nhồi phô mai. 'Ôi — **ngon** quá!' Mia nói. Rồi họ uống nước ép. Luna uống nước ép táo lạnh — **mát mẻ** và ngọt. Tom uống nước ép cam và mỉm cười vui vẻ.\n\nTiếp theo, Luna mở hộp bánh quy. Cô cho Tom một ít. Cô cũng cho Mia một ít. 'Cảm ơn!' họ nói. Họ chia sẻ mọi thứ. Chia sẻ là quan tâm!\n\nSau bánh mì kẹp và bánh quy, họ lại **khát nước** — nên họ uống thêm **nước chanh** lạnh từ **giỏ**. Cuối cùng, họ ăn trái cây tươi — táo, chuối và những lát **dưa hấu** ngọt.\n\n'Bữa ăn **ngoài trời** này là ngon nhất!' Tom nói.\n\n'Mình yêu thích dã ngoại!' Luna nói.\n\n'Mình cũng vậy!' mọi người nói.\n\nĐó thực sự là một ngày hoàn hảo và **mát mẻ** ở công viên.",
+  audio_url: "/audio/week30/shadowing_main.mp3",
+  content_en: `Last Sunday, the children **went to** a **picnic** in the park. Tom's dad is a **chef** and **made the** best food — cheese **sandwiches**, cookies, and cold **lemonade**. He **put the** food in a big **basket** and **said to** the children, 'A **chef** always **prepares the** best food!'
+
+Mia's mum is a **scientist** who **brought fresh** fruits and **said to** them, 'The more colourful, the healthier!' Luna's dad is an **engineer** and **designed the** beautiful wooden bridge they **crossed the** river on. 'I **helped to** build this bridge!' he said proudly.
+
+Near the park, **firefighters** were having lunch beside their truck. Tom **waved at** them. They **waved back** with big smiles. At the **market**, Luna's dad **bought a** big red **watermelon**. 'The **market** always has the freshest food!' he **said to** everyone.
+
+In the park, an **artist** was **painting the** lake. Luna **gave a** cookie to the **artist** and he **gave a** little wave in return. They **spread the** **blanket** on the soft green grass. The children **ate the** **sandwiches** and **drank the** **lemonade**. 'Don't **eat too many** cookies!' laughed Mia. 'The **dentist** will not be happy!' Everyone **ate and drank** and felt very **cheerful**.`,
+  content_vi: `Chủ nhật trước, các bé **đến** một buổi **dã ngoại** trong công viên. Bố của Tom là đầu bếp và **làm** đồ ăn ngon nhất — bánh mì phô mai, bánh quy, và nước **chanh** lạnh. Anh ấy **đặt** đồ ăn vào **giỏ** lớn và **nói với** các bé, 'Đầu bếp luôn **chuẩn bị** đồ ăn ngon nhất!'
+
+Mẹ của Mia là nhà khoa học **mang** trái cây tươi và **nói với** họ, 'Càng nhiều màu sắc, càng tốt cho sức khỏe!' Bố của Luna là kỹ sư và **thiết kế** cây cầu gỗ đẹp mà họ **băng qua** sông. 'Con **giúp xây** cây cầu này!' anh ấy nói tự hào.
+
+Gần công viên, những lính cứu hỏa đang ăn trưa bên cạnh xe tải. Tom **vẫy** họ. Họ **vẫy lại** bằng nụ cười lớn. Tại **chợ**, bố của Luna **mua** một quả **dưa hấu** đỏ lớn. '**Chợ** luôn có đồ ăn tươi nhất!' anh ấy **nói với** mọi người.
+
+Trong công viên, một họa sĩ đang **vẽ** hồ nước. Luna **cho** một cái bánh quy cho họa sĩ và anh ấy **đáp lại** bằng một cái vẫy nhỏ. Họ **trải** tấm **khăn** trên cỏ xanh mềm. Các bé **ăn** bánh mì và **uống** nước **chanh**. 'Đừng **ăn quá nhiều** bánh quy!' Mia cười. '**Nha sĩ** sẽ không vui đâu!' Mọi người **ăn và uống** và cảm thấy rất **vui vẻ**.`,
   sentences: [
-    { id: 1, text: "Last Sunday, Luna had an outdoor picnic with her friends Tom and Mia." },
-    { id: 2, text: "It was a beautiful, cheerful day!" },
-    { id: 3, text: "She packed everything into a big basket with a warm blanket folded on top." },
-    { id: 4, text: "'I am so hungry!' he said." },
-    { id: 5, text: "Luna ate one big sandwich filled with cheese." },
-    { id: 6, text: "Luna drank cold apple juice — it was refreshing and sweet." },
-    { id: 7, text: "Tom drank orange juice and smiled with happiness." },
-    { id: 8, text: "She gave some cookies to Tom." },
-    { id: 9, text: "They shared everything." },
-    { id: 10, text: "After the sandwiches and cookies, they felt thirsty again — so they drank more cold lemonade from the basket." },
-    { id: 11, text: "Finally, they ate fresh fruits — apples, bananas, and slices of sweet watermelon." },
-    { id: 12, text: "It was a truly perfect and refreshing day at the park." }
+    { id: 1, text: "Last Sunday, the children **went to** a **picnic** in the park" },
+    { id: 2, text: "Tom's dad is a **chef** and **made the** best food — cheese **sandwiches**, cookies, and cold **lemonade**" },
+    { id: 3, text: "He **put the** food in a big **basket** and **said to** the children, 'A **chef** always **prepares the** best food!'" },
+    { id: 4, text: "'I **helped to** build this bridge!' he said proudly" },
+    { id: 5, text: "Near the park, **firefighters** were having lunch beside their truck" },
+    { id: 6, text: "Tom **waved at** them" },
+    { id: 7, text: "They **waved back** with big smiles" },
+    { id: 8, text: "At the **market**, Luna's dad **bought a** big red **watermelon**" },
+    { id: 9, text: "'The **market** always has the freshest food!' he **said to** everyone" },
+    { id: 10, text: "In the park, an **artist** was **painting the** lake" },
+    { id: 11, text: "Luna **gave a** cookie to the **artist** and he **gave a** little wave in return" },
+    { id: 12, text: "They **spread the** **blanket** on the soft green grass" },
+    { id: 13, text: "The children **ate the** **sandwiches** and **drank the** **lemonade**" },
+    { id: 14, text: "'Don't **eat too many** cookies!' laughed Mia" },
+    { id: 15, text: "'The **dentist** will not be happy!' Everyone **ate and drank** and felt very **cheerful**" }
   ]
 };
