@@ -40,7 +40,7 @@ export default {
     definition_vi: "ồn ào",
     definition_en: "making lots of loud sounds",
     example: "I was a noisy baby.",
-    collocation: "noisy children / was a noisy baby / a noisy children",
+    collocation: "noisy baby / was noisy / noisy children",
     image_url: "/images/week19/noisy.jpg",
     audio_word: "/audio/week19_easy/vocab_noisy.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "yên tĩnh",
     definition_en: "making no noise",
     example: "My brother was very quiet.",
-    collocation: "quiet baby / was very quiet / very quiet",
+    collocation: "was quiet / very quiet / quiet baby",
     image_url: "/images/week19/quiet.jpg",
     audio_word: "/audio/week19_easy/vocab_quiet.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "lớn lên",
     definition_en: "get bigger",
     example: "I grew bigger.",
-    collocation: "grow up / a grow / the grow",
+    collocation: "grow up / growing up / get bigger",
     image_url: "/images/week19/grow.jpg",
     audio_word: "/audio/week19_easy/vocab_grow.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "quá khứ",
     definition_en: "the time before now",
     example: "In the past, I was little.",
-    collocation: "in the past / In the past , I / in the past",
+    collocation: "in the past / was different in the past / from the past",
     image_url: "/images/week19/past.jpg",
     audio_word: "/audio/week19_easy/vocab_past.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "nhỏ",
     definition_en: "not big",
     example: "I was small.",
-    collocation: "small child / I was small / very small",
+    collocation: "was small / very small / small child",
     image_url: "/images/week19/small.jpg",
     audio_word: "/audio/week19_easy/vocab_small.mp3"
   },

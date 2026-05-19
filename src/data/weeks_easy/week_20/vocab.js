@@ -7,7 +7,7 @@ export default {
     definition_vi: "cũ",
     definition_en: "not new; from a long time ago",
     example: "There was an old bridge.",
-    collocation: "old building / was an old bridge / very old",
+    collocation: "old bridge / was old / very old",
     image_url: "/images/week20/old.jpg",
     audio_word: "/audio/week20_easy/vocab_old.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "mới",
     definition_en: "recently made; not old",
     example: "There is a new road.",
-    collocation: "new building / is a new road / very new",
+    collocation: "new road / is new / very new",
     image_url: "/images/week20/new.jpg",
     audio_word: "/audio/week20_easy/vocab_new.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "tòa nhà",
     definition_en: "a house, shop, or big structure",
     example: "There was a building near my house.",
-    collocation: "tall building / was a building near my / a tall building",
+    collocation: "new buildings / were small / tall building",
     image_url: "/images/week20/building.jpg",
     audio_word: "/audio/week20_easy/vocab_building.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "cây",
     definition_en: "a big plant with a trunk and leaves",
     example: "There were trees near my house.",
-    collocation: "big tree / There were trees near my / a big tree",
+    collocation: "big tree / were big / along the road",
     image_url: "/images/week20/tree.jpg",
     audio_word: "/audio/week20_easy/vocab_tree.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "sông",
     definition_en: "a big water flow",
     example: "There was a river near the town.",
-    collocation: "clean river / was a river near the / clean river",
+    collocation: "the river / near the river / over the river",
     image_url: "/images/week20/river.jpg",
     audio_word: "/audio/week20_easy/vocab_river.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "đường",
     definition_en: "a path for cars and people",
     example: "There was one road in the village.",
-    collocation: "long road / was one road in the / a long road",
+    collocation: "the road / on the road / one road",
     image_url: "/images/week20/road.jpg",
     audio_word: "/audio/week20_easy/vocab_road.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "cầu",
     definition_en: "something to cross a river",
     example: "There was a bridge over the river.",
-    collocation: "old bridge / was a bridge over the / an old bridge",
+    collocation: "old bridge / a bridge / over the river",
     image_url: "/images/week20/bridge.jpg",
     audio_word: "/audio/week20_easy/vocab_bridge.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "chợ",
     definition_en: "a place to buy food and things",
     example: "There was a market near my street.",
-    collocation: "old market / was a market near my / an old market",
+    collocation: "old market / near my house / a market",
     image_url: "/images/week20/market.jpg",
     audio_word: "/audio/week20_easy/vocab_market.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "đền, chùa",
     definition_en: "a place to pray",
     example: "There was a temple in the village.",
-    collocation: "old temple / was a temple in the / an old temple",
+    collocation: "old temple / next to the market / a temple",
     image_url: "/images/week20/temple.jpg",
     audio_word: "/audio/week20_easy/vocab_temple.mp3"
   },
