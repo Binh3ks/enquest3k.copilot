@@ -7,7 +7,7 @@ export default {
     definition_vi: "thích",
     definition_en: "to enjoy something",
     example: "I like ice cream.",
-    collocation: "like playing / I like ice cream / a like playing",
+    collocation: "like playing / I like playing games",
     image_url: "/images/week4_easy/like.jpg",
     audio_word: "/audio/week4_easy/vocab_like.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "cười",
     definition_en: "to make sounds when happy",
     example: "He makes me laugh.",
-    collocation: "laugh loudly / makes me laugh / a laugh loudly",
+    collocation: "laugh loudly / makes me laugh",
     image_url: "/images/week4_easy/laugh.jpg",
     audio_word: "/audio/week4_easy/vocab_laugh.mp3"
   },
