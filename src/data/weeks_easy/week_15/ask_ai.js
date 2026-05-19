@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHERE she is right now.",
       task_vi: "Hỏi cô Nova ngay lúc này cô đang ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ are you right now?"
+      question_frame: "___ are you right now?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "I",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHAT she is eating.",
       task_vi: "Hỏi cô Nova cô đang ăn gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ are you eating?"
+      question_frame: "___ are you eating?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "My friend Tom is playing football in the park.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT Tom is doing.",
       task_vi: "Hỏi cô Nova Tom đang làm gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is Tom doing?"
+      question_frame: "___ is Tom doing?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "The birds are singing beautifully.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHAT the birds are doing.",
       task_vi: "Hỏi cô Nova những con chim đang làm gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ are the birds doing?"
+      question_frame: "___ are the birds doing?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "It is raining lightly at the park.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova HOW the weather is at the park.",
       task_vi: "Hỏi cô Nova thời tiết ở công viên như thế nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is the weather at the park?"
+      question_frame: "___ is the weather at the park?",
+      correctWord: "HOW"
     }
   ]
 };

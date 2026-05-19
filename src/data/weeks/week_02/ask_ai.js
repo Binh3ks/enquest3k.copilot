@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT she has.",
       task_vi: "Hỏi cô Nova cô có gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does she have?"
+      question_frame: "___ does she have?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "My mum works at a hospital.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE her mum works.",
       task_vi: "Hỏi cô Nova mẹ cô làm việc ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does your mum work?"
+      question_frame: "___ does your mum work?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "My dad loves cooking.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT her dad loves.",
       task_vi: "Hỏi cô Nova ba cô thích gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does your dad love?"
+      question_frame: "___ does your dad love?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "My grandma is very kind.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHERE her grandma lives.",
       task_vi: "Hỏi cô Nova bà cô sống ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does your grandma live?"
+      question_frame: "___ does your grandma live?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "We eat dinner together.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHEN you eat dinner.",
       task_vi: "Hỏi cô Nova khi nào bạn ăn tối.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you eat dinner?"
+      question_frame: "___ do you eat dinner?",
+      correctWord: "WHEN"
     }
   ]
 };

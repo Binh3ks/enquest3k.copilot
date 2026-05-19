@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHERE her pen is.",
       task_vi: "Hỏi cô Nova bút của cô ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your pen?"
+      question_frame: "___ is your pen?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "The clock is on the wall.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE the clock is.",
       task_vi: "Hỏi cô Nova đồng hồ ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is the clock?"
+      question_frame: "___ is the clock?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "My bag is next to the door.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHERE her bag is.",
       task_vi: "Hỏi cô Nova cặp của cô ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your bag?"
+      question_frame: "___ is your bag?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "There are twenty students in my class.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova HOW MANY students are in her class.",
       task_vi: "Hỏi cô Nova có bao nhiêu học sinh trong lớp.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ students are in your class?"
+      question_frame: "___ students are in your class?",
+      correctWord: "HOW"
     },
     {
       nova_says: "I sit near the window.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHERE she sits.",
       task_vi: "Hỏi cô Nova cô ngồi ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you sit?"
+      question_frame: "___ do you sit?",
+      correctWord: "WHERE"
     }
   ]
 };

@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her favorite animal is.",
       task_vi: "Hỏi cô Nova con vật yêu thích của cô là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your favorite animal?"
+      question_frame: "___ is your favorite animal?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "Horses live on farms.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE horses live.",
       task_vi: "Hỏi cô Nova ngựa sống ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do horses live?"
+      question_frame: "___ do horses live?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "Horses eat grass and carrots.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT horses eat.",
       task_vi: "Hỏi cô Nova ngựa ăn gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do horses eat?"
+      question_frame: "___ do horses eat?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "Some horses are very fast runners.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova HOW horses run.",
       task_vi: "Hỏi cô Nova ngựa chạy như thế nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do horses run?"
+      question_frame: "___ do horses run?",
+      correctWord: "HOW"
     },
     {
       nova_says: "Farmers use horses to help with work.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova HOW farmers use horses.",
       task_vi: "Hỏi cô Nova nông dân dùng ngựa như thế nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do farmers use horses?"
+      question_frame: "___ do farmers use horses?",
+      correctWord: "HOW"
     }
   ]
 };

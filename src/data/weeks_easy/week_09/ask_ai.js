@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her city has.",
       task_vi: "Hỏi cô Nova thành phố của cô có gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does your city have?"
+      question_frame: "___ does your city have?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "The market is near my house.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE the market is.",
       task_vi: "Hỏi cô Nova chợ ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is the market?"
+      question_frame: "___ is the market?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "My favorite place in the city is the library.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT her favorite place is.",
       task_vi: "Hỏi cô Nova nơi yêu thích của cô là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your favorite place in the city?"
+      question_frame: "___ is your favorite place in the city?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "There are many restaurants near the park.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova HOW MANY restaurants are near the park.",
       task_vi: "Hỏi cô Nova có bao nhiêu nhà hàng gần công viên.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ restaurants are near the park?"
+      question_frame: "___ restaurants are near the park?",
+      correctWord: "HOW"
     },
     {
       nova_says: "I go to the park every weekend.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHEN she goes to the park.",
       task_vi: "Hỏi cô Nova cô đi công viên khi nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you go to the park?"
+      question_frame: "___ do you go to the park?",
+      correctWord: "WHEN"
     }
   ]
 };

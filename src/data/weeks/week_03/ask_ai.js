@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her best friend's name is.",
       task_vi: "Hỏi cô Nova tên bạn thân của cô là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your best friend's name?"
+      question_frame: "___ is your best friend's name?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "Lily has long curly hair.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHAT Lily looks like.",
       task_vi: "Hỏi cô Nova Lily trông như thế nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does Lily look like?"
+      question_frame: "___ does Lily look like?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "We play games at school every day.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHERE you play games.",
       task_vi: "Hỏi cô Nova họ chơi trò chơi ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you play games?"
+      question_frame: "___ do you play games?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "Lily likes drawing and painting.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHAT Lily likes to do.",
       task_vi: "Hỏi cô Nova Lily thích làm gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does Lily like to do?"
+      question_frame: "___ does Lily like to do?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I see Lily on Saturdays.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHEN she sees Lily.",
       task_vi: "Hỏi cô Nova cô gặp Lily khi nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you see Lily?"
+      question_frame: "___ do you see Lily?",
+      correctWord: "WHEN"
     }
   ]
 };

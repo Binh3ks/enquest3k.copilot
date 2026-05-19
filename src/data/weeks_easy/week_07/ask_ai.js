@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova HOW MANY books she has.",
       task_vi: "Hỏi cô Nova cô có bao nhiêu sách.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ books do you have?"
+      question_frame: "___ books do you have?",
+      correctWord: "HOW"
     },
     {
       nova_says: "My favorite color pencil is blue.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHAT her favorite color is.",
       task_vi: "Hỏi cô Nova màu yêu thích của cô là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your favorite color?"
+      question_frame: "___ is your favorite color?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I don't have scissors in my bag today.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT she doesn't have.",
       task_vi: "Hỏi cô Nova cô không có gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you not have today?"
+      question_frame: "___ do you not have today?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I use a ruler to draw straight lines.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHAT she uses to draw.",
       task_vi: "Hỏi cô Nova cô dùng gì để vẽ.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you use to draw?"
+      question_frame: "___ do you use to draw?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I put my homework in my bag every morning.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHERE she puts her homework.",
       task_vi: "Hỏi cô Nova cô bỏ bài tập ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you put your homework?"
+      question_frame: "___ do you put your homework?",
+      correctWord: "WHERE"
     }
   ]
 };

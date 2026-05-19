@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her favorite food is.",
       task_vi: "Hỏi cô Nova món ăn yêu thích của cô là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your favorite food?"
+      question_frame: "___ is your favorite food?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I eat pizza on Fridays.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHEN she eats pizza.",
       task_vi: "Hỏi cô Nova cô ăn pizza khi nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you eat pizza?"
+      question_frame: "___ do you eat pizza?",
+      correctWord: "WHEN"
     },
     {
       nova_says: "I don't like vegetables.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHY she doesn't like vegetables.",
       task_vi: "Hỏi cô Nova tại sao cô không thích rau.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ don't you like vegetables?"
+      question_frame: "___ don't you like vegetables?",
+      correctWord: "WHY"
     },
     {
       nova_says: "My mum makes good soup.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHAT her mum makes.",
       task_vi: "Hỏi cô Nova mẹ cô nấu gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does your mum make?"
+      question_frame: "___ does your mum make?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I like chocolate ice cream.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHAT kind of ice cream she likes.",
       task_vi: "Hỏi cô Nova cô thích kem vị gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ kind of ice cream do you like?"
+      question_frame: "___ kind of ice cream do you like?",
+      correctWord: "WHAT"
     }
   ]
 };

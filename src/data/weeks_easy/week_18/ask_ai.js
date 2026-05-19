@@ -7,35 +7,40 @@ export default {
       nova_says_vi: "Một con bướm đang đậu trên hoa ngay lúc này.",
       context_en: "A butterfly is on a flower.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is landing on the flower?"
+      question_frame: "___ is landing on the flower?",
+      correctWord: "What"
     },
     {
       nova_says: "The butterfly has orange and black wings.",
       nova_says_vi: "Con bướm có đôi cánh màu cam và đen.",
       context_en: "The butterfly has wings.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ color are the butterfly"
+      question_frame: "___ color are the butterfly",
+      correctWord: "What"
     },
     {
       nova_says: "There are about ten butterflies in the garden.",
       nova_says_vi: "Có khoảng mười con bướm trong vườn.",
       context_en: "There are butterflies in the garden.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ many butterflies are in the garden?"
+      question_frame: "___ many butterflies are in the garden?",
+      correctWord: "How"
     },
     {
       nova_says: "The butterflies come here because there are lots of flowers.",
       nova_says_vi: "Bướm đến đây vì có nhiều hoa.",
       context_en: "Butterflies come for flowers.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do butterflies come to the garden?"
+      question_frame: "___ do butterflies come to the garden?",
+      correctWord: "Why"
     },
     {
       nova_says: "The butterflies will leave when winter comes.",
       nova_says_vi: "Bướm sẽ rời đi khi mùa đông đến.",
       context_en: "Butterflies leave in winter.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ will the butterflies leave?"
+      question_frame: "___ will the butterflies leave?",
+      correctWord: "When"
     }
   ]
 };

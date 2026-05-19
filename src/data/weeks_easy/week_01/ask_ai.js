@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her bag is.",
       task_vi: "Hỏi cô Nova cặp của cô màu gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your bag?"
+      question_frame: "___ is your bag?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "My pencil is on the table.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE her pencil is.",
       task_vi: "Hỏi cô Nova bút chì của cô ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your pencil?"
+      question_frame: "___ is your pencil?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "This is my book.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT this is.",
       task_vi: "Hỏi cô Nova đây là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is this?"
+      question_frame: "___ is this?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I have some crayons in my bag.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHAT she has in her bag.",
       task_vi: "Hỏi cô Nova cô có gì trong cặp.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does she have in her bag?"
+      question_frame: "___ does she have in her bag?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I like my school very much.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHAT she likes.",
       task_vi: "Hỏi cô Nova cô thích gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does she like?"
+      question_frame: "___ does she like?",
+      correctWord: "WHAT"
     }
   ]
 };

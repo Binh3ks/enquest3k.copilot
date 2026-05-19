@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT TIME she wakes up.",
       task_vi: "Hỏi cô Nova cô thức dậy lúc mấy giờ.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you wake up?"
+      question_frame: "___ do you wake up?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I eat breakfast before school.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHEN she eats breakfast.",
       task_vi: "Hỏi cô Nova cô ăn sáng khi nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you eat breakfast?"
+      question_frame: "___ do you eat breakfast?",
+      correctWord: "WHEN"
     },
     {
       nova_says: "I brush my teeth for two minutes.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova HOW LONG she brushes her teeth.",
       task_vi: "Hỏi cô Nova cô đánh răng bao lâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you brush your teeth?"
+      question_frame: "___ do you brush your teeth?",
+      correctWord: "HOW"
     },
     {
       nova_says: "I walk to school with my friend.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova HOW she gets to school.",
       task_vi: "Hỏi cô Nova cô đến trường bằng cách nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you get to school?"
+      question_frame: "___ do you get to school?",
+      correctWord: "HOW"
     },
     {
       nova_says: "I pack my bag the night before.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHEN she packs her bag.",
       task_vi: "Hỏi cô Nova cô sắp xếp cặp khi nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you pack your bag?"
+      question_frame: "___ do you pack your bag?",
+      correctWord: "WHEN"
     }
   ]
 };

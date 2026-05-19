@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her house is like.",
       task_vi: "Hỏi cô Nova nhà của cô như thế nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your house like?"
+      question_frame: "___ is your house like?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "My bedroom is upstairs.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE her bedroom is.",
       task_vi: "Hỏi cô Nova phòng ngủ của cô ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your bedroom?"
+      question_frame: "___ is your bedroom?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "My favorite room is the kitchen.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT her favorite room is.",
       task_vi: "Hỏi cô Nova căn phòng yêu thích của cô là gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your favorite room?"
+      question_frame: "___ is your favorite room?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I have a garden behind my house.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHERE her garden is.",
       task_vi: "Hỏi cô Nova vườn của cô ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your garden?"
+      question_frame: "___ is your garden?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "I watch TV in the living room.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHERE she watches TV.",
       task_vi: "Hỏi cô Nova cô xem TV ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you watch TV?"
+      question_frame: "___ do you watch TV?",
+      correctWord: "WHERE"
     }
   ]
 };

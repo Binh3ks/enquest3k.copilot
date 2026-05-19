@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHERE she is from.",
       task_vi: "Hỏi cô Nova cô đến từ đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ are you from?"
+      question_frame: "___ are you from?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "I am a teacher and I love my job.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHAT she is.",
       task_vi: "Hỏi cô Nova cô làm nghề gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ are you?"
+      question_frame: "___ are you?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I like reading books in my free time.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT she likes to do.",
       task_vi: "Hỏi cô Nova cô thích làm gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you like to do in your free time?"
+      question_frame: "___ do you like to do in your free time?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I have lived in this city for five years.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova HOW LONG she has lived here.",
       task_vi: "Hỏi cô Nova cô sống ở đây bao lâu rồi.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ have you lived here?"
+      question_frame: "___ have you lived here?",
+      correctWord: "HOW"
     },
     {
       nova_says: "I have one cat and two dogs at home.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHAT pets she has.",
       task_vi: "Hỏi cô Nova cô có những thú cưng gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ pets do you have?"
+      question_frame: "___ pets do you have?",
+      correctWord: "WHAT"
     }
   ]
 };

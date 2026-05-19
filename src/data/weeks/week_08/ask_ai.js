@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT her classroom has.",
       task_vi: "Hỏi cô Nova lớp của cô có gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ does your classroom have?"
+      question_frame: "___ does your classroom have?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "We have English class every Tuesday.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHEN they have English class.",
       task_vi: "Hỏi cô Nova khi nào có tiết Anh.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you have English class?"
+      question_frame: "___ do you have English class?",
+      correctWord: "WHEN"
     },
     {
       nova_says: "My teacher is very kind.",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHAT her teacher is like.",
       task_vi: "Hỏi cô Nova giáo viên của cô như thế nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is your teacher like?"
+      question_frame: "___ is your teacher like?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "I sit at the front of the classroom.",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHERE she sits.",
       task_vi: "Hỏi cô Nova cô ngồi ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you sit in the classroom?"
+      question_frame: "___ do you sit in the classroom?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "We sing songs at the start of class.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHAT they do at the start of class.",
       task_vi: "Hỏi cô Nova họ làm gì ở đầu tiết.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you do at the start of class?"
+      question_frame: "___ do you do at the start of class?",
+      correctWord: "WHAT"
     }
   ]
 };

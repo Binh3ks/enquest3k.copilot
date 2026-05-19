@@ -9,7 +9,8 @@ export default {
       task_en: "Ask Nova WHAT sport she is playing right now.",
       task_vi: "Hỏi cô Nova ngay lúc này cô đang chơi môn thể thao gì.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ sport are you playing?"
+      question_frame: "___ sport are you playing?",
+      correctWord: "WHAT"
     },
     {
       nova_says: "We are playing in the school gym.",
@@ -18,7 +19,8 @@ export default {
       task_en: "Ask Nova WHERE they are playing.",
       task_vi: "Hỏi cô Nova họ đang chơi ở đâu.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ are you playing?"
+      question_frame: "___ are you playing?",
+      correctWord: "WHERE"
     },
     {
       nova_says: "My team is winning the game!",
@@ -27,7 +29,8 @@ export default {
       task_en: "Ask Nova WHO is winning.",
       task_vi: "Hỏi cô Nova ai đang thắng.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ is winning?"
+      question_frame: "___ is winning?",
+      correctWord: "WHO"
     },
     {
       nova_says: "I love basketball because it",
@@ -36,7 +39,8 @@ export default {
       task_en: "Ask Nova WHY she loves basketball.",
       task_vi: "Hỏi cô Nova tại sao cô thích bóng rổ.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you love basketball?"
+      question_frame: "___ do you love basketball?",
+      correctWord: "WHY"
     },
     {
       nova_says: "We play basketball every Saturday morning.",
@@ -45,7 +49,8 @@ export default {
       task_en: "Ask Nova WHEN they play basketball.",
       task_vi: "Hỏi cô Nova họ chơi bóng rổ khi nào.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-      question_frame: "___ do you play basketball?"
+      question_frame: "___ do you play basketball?",
+      correctWord: "WHEN"
     }
   ]
 };
