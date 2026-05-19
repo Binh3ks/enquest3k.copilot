@@ -1,62 +1,51 @@
+// WEEK 03: ask_ai — W1-14 format
+// 6-word bank, frame starts with ___, task_en with correct wh-word in ALL CAPS hint
 export default {
-    prompts: [
+  prompts: [
     {
-      id: 1,
       nova_says: "My best friend's name is Lily.",
-      nova_says_vi: "Tên bạn thân của cô là Lily.",
+      nova_says_vi: "Tên người bạn thân nhất của cô là Lily.",
+      context_en: "My best friend's name is Lily.",
       task_en: "Ask Nova WHAT her best friend's name is.",
       task_vi: "Hỏi cô Nova tên bạn thân của cô là gì.",
-
-      context_en: "Nova sees Lily on Saturdays.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
-            question_frame: "What ___ your best friend's name?",
-      answer: ["What is your best friend's name?","What's your best friend's name?"],
-      hint: "is",
-      audio_url: null
+      question_frame: "___ is your best friend's name?"
     },
     {
-      id: 2,
-      nova_says: "Lily has long hair.",
-      nova_says_vi: "Lily có tóc dài.",
-      task_en: "Ask Nova WHAT Lily's hair looks like.",
-      task_vi: "Hỏi cô Nova tóc của Lily như thế nào.",
-      question_frame: "What ___ Lily's hair look like?",
-      answer: ["What does Lily's hair look like?"],
-      hint: "does",
-      audio_url: null
+      nova_says: "Lily has long curly hair.",
+      nova_says_vi: "Lily có mái tóc dài xoăn.",
+      context_en: "Lily has long curly hair.",
+      task_en: "Ask Nova WHAT Lily looks like.",
+      task_vi: "Hỏi cô Nova Lily trông như thế nào.",
+      question_word_bank: ["What","When","Where","Who","Why","How"],
+      question_frame: "___ does Lily look like?"
     },
     {
-      id: 3,
-      nova_says: "We play at school.",
-      nova_says_vi: "Chúng tôi chơi ở trường.",
-      task_en: "Ask Nova WHERE they play.",
-      task_vi: "Hỏi cô Nova họ chơi ở đâu.",
-      question_frame: "___ do you and Lily play?",
-      answer: ["Where do you and Lily play?","Where do you play?"],
-      hint: "Where",
-      audio_url: null
+      nova_says: "We play games at school every day.",
+      nova_says_vi: "Chúng tôi chơi trò chơi ở trường mỗi ngày.",
+      context_en: "We play games at school every day.",
+      task_en: "Ask Nova WHERE you play games.",
+      task_vi: "Hỏi cô Nova họ chơi trò chơi ở đâu.",
+      question_word_bank: ["What","When","Where","Who","Why","How"],
+      question_frame: "___ do you play games?"
     },
     {
-      id: 4,
-      nova_says: "Lily likes drawing.",
-      nova_says_vi: "Lily thích vẽ.",
+      nova_says: "Lily likes drawing and painting.",
+      nova_says_vi: "Lily thích vẽ và tô màu.",
+      context_en: "Lily likes drawing and painting.",
       task_en: "Ask Nova WHAT Lily likes to do.",
       task_vi: "Hỏi cô Nova Lily thích làm gì.",
-      question_frame: "What ___ Lily like to do?",
-      answer: ["What does Lily like to do?"],
-      hint: "does",
-      audio_url: null
+      question_word_bank: ["What","When","Where","Who","Why","How"],
+      question_frame: "___ does Lily like to do?"
     },
     {
-      id: 5,
       nova_says: "I see Lily on Saturdays.",
-      nova_says_vi: "Cô gặp Lily vào thứ Bảy.",
+      nova_says_vi: "Cô gặp Lily vào các ngày thứ Bảy.",
+      context_en: "I see Lily on Saturdays.",
       task_en: "Ask Nova WHEN she sees Lily.",
       task_vi: "Hỏi cô Nova cô gặp Lily khi nào.",
-      question_frame: "___ do you see Lily?",
-      answer: ["When do you see Lily?"],
-      hint: "When",
-      audio_url: null
+      question_word_bank: ["What","When","Where","Who","Why","How"],
+      question_frame: "___ do you see Lily?"
     }
   ]
 };
