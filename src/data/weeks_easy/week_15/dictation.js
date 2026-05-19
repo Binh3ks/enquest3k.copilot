@@ -1,92 +1,31 @@
 export default {
-  title: "Dictation Practice",
-  image_url: "/images/week15_easy/dictation_cover_w15.jpg",
-  audio_url: "/audio/week15_easy/dictation_main.mp3",
   sentences: [
-    {
-      id: 1,
-      text: "Today I am going to the park with my family.",
-      audio: "/audio/week15_easy/dictation_s1.mp3"
-    },
-    {
-      id: 2,
-      text: "The park is busy and fun!",
-      audio: "/audio/week15_easy/dictation_s2.mp3"
-    },
-    {
-      id: 3,
-      text: "I am walking with my mom.",
-      audio: "/audio/week15_easy/dictation_s3.mp3"
-    },
-    {
-      id: 4,
-      text: "She is holding my hand.",
-      audio: "/audio/week15_easy/dictation_s4.mp3"
-    },
-    {
-      id: 5,
-      text: "My dad is jogging ahead of us.",
-      audio: "/audio/week15_easy/dictation_s5.mp3"
-    },
-    {
-      id: 6,
-      text: "He is wearing his blue shirt.",
-      audio: "/audio/week15_easy/dictation_s6.mp3"
-    },
-    {
-      id: 7,
-      text: "I see a boy.",
-      audio: "/audio/week15_easy/dictation_s7.mp3"
-    },
-    {
-      id: 8,
-      text: "He is running very fast!",
-      audio: "/audio/week15_easy/dictation_s8.mp3"
-    },
-    {
-      id: 9,
-      text: "His dog is running too.",
-      audio: "/audio/week15_easy/dictation_s9.mp3"
-    },
-    {
-      id: 10,
-      text: "An old man is sitting on a bench.",
-      audio: "/audio/week15_easy/dictation_s10.mp3"
-    },
-    {
-      id: 11,
-      text: "He is reading a book.",
-      audio: "/audio/week15_easy/dictation_s11.mp3"
-    },
-    {
-      id: 12,
-      text: "Near the fountain, some kids are playing.",
-      audio: "/audio/week15_easy/dictation_s12.mp3"
-    },
-    {
-      id: 13,
-      text: "They are laughing and happy.",
-      audio: "/audio/week15_easy/dictation_s13.mp3"
-    },
-    {
-      id: 14,
-      text: "I want to play too!",
-      audio: "/audio/week15_easy/dictation_s14.mp3"
-    },
-    {
-      id: 15,
-      text: "My family is having a picnic now.",
-      audio: "/audio/week15_easy/dictation_s15.mp3"
-    },
-    {
-      id: 16,
-      text: "We are eating yummy sandwiches.",
-      audio: "/audio/week15_easy/dictation_s16.mp3"
-    },
-    {
-      id: 17,
-      text: "I am drinking apple juice.",
-      audio: "/audio/week15_easy/dictation_s17.mp3"
-    }
+    { id: 1, text: "Today I am going to the park with my family.", meaning: "Hôm nay tôi đang đi công viên với gia đình." },
+    { id: 2, text: "The park is busy and fun!", meaning: "Công viên đông đúc và vui!" },
+    { id: 3, text: "I am walking with my mom.", meaning: "Tôi đang đi bộ với mẹ." },
+    { id: 4, text: "She is holding my hand.", meaning: "Mẹ đang nắm tay tôi." },
+    { id: 5, text: "My dad is jogging ahead of us.", meaning: "Bố tôi đang chạy bộ phía trước chúng tôi." },
+    { id: 6, text: "He is wearing his blue shirt.", meaning: "Bố đang mặc áo xanh." },
+    { id: 7, text: "I see a boy.", meaning: "Tôi thấy một cậu bé." },
+    { id: 8, text: "He is running very fast!", meaning: "Cậu ấy đang chạy rất nhanh!" },
+    { id: 9, text: "His dog is running too.", meaning: "Chó của cậu ấy cũng đang chạy." },
+    { id: 10, text: "An old man is sitting on a bench.", meaning: "Một ông già đang ngồi trên ghế." },
+    { id: 11, text: "He is reading a book.", meaning: "Ông ấy đang đọc sách." },
+    { id: 12, text: "Near the fountain, some kids are playing.", meaning: "Gần đài phun nước, một số trẻ đang chơi." },
+    { id: 13, text: "They are laughing and happy.", meaning: "Chúng đang cười và vui vẻ." },
+    { id: 14, text: "I want to play too!", meaning: "Tôi cũng muốn chơi!" },
+    { id: 15, text: "My family is having a picnic now.", meaning: "Gia đình tôi đang dã ngoại bây giờ." },
+    { id: 16, text: "We are eating yummy sandwiches.", meaning: "Chúng tôi đang ăn bánh sandwich ngon." },
+    { id: 17, text: "I am drinking apple juice.", meaning: "Tôi đang uống nước táo." },
+    { id: 18, text: "My sister is flying her red kite.", meaning: "Em gái tôi đang thả diều đỏ của em ấy." },
+    { id: 19, text: "It is going very high!", meaning: "Nó bay rất cao!" },
+    { id: 20, text: "The kite is beautiful.", meaning: "Con diều đẹp quá." },
+    { id: 21, text: "I am relaxing on the grass.", meaning: "Tôi đang thư giãn trên cỏ." },
+    { id: 22, text: "The grass is soft and green.", meaning: "Cỏ mềm và xanh." },
+    { id: 23, text: "I see flowers everywhere.", meaning: "Tôi thấy hoa ở khắp nơi." },
+    { id: 24, text: "A girl is walking her small dog.", meaning: "Một cô bé đang dắt chó nhỏ của cô ấy." },
+    { id: 25, text: "The dog is cute!", meaning: "Chú chó dễ thương!" },
+    { id: 26, text: "I am having so much fun.", meaning: "Tôi đang vui lắm." },
+    { id: 27, text: "The park is my favorite place!", meaning: "Công viên là nơi yêu thích của tôi!" }
   ]
 };

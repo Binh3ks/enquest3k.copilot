@@ -1,92 +1,31 @@
 export default {
-  title: "Sentence Shadowing",
-  image_url: "/images/week15_easy/shadowing_cover_w15.jpg",
-  audio_full: "/audio/week15_easy/shadowing_full.mp3",
-  sentences: [
-    {
-      id: 1,
-      text: "Today I am going to the park with my family.",
-      audio: "/audio/week15_easy/shadowing_s1.mp3"
-    },
-    {
-      id: 2,
-      text: "The park is busy and fun!",
-      audio: "/audio/week15_easy/shadowing_s2.mp3"
-    },
-    {
-      id: 3,
-      text: "I am walking with my mom.",
-      audio: "/audio/week15_easy/shadowing_s3.mp3"
-    },
-    {
-      id: 4,
-      text: "She is holding my hand.",
-      audio: "/audio/week15_easy/shadowing_s4.mp3"
-    },
-    {
-      id: 5,
-      text: "My dad is jogging ahead of us.",
-      audio: "/audio/week15_easy/shadowing_s5.mp3"
-    },
-    {
-      id: 6,
-      text: "He is wearing his blue shirt.",
-      audio: "/audio/week15_easy/shadowing_s6.mp3"
-    },
-    {
-      id: 7,
-      text: "I see a boy.",
-      audio: "/audio/week15_easy/shadowing_s7.mp3"
-    },
-    {
-      id: 8,
-      text: "He is running very fast!",
-      audio: "/audio/week15_easy/shadowing_s8.mp3"
-    },
-    {
-      id: 9,
-      text: "His dog is running too.",
-      audio: "/audio/week15_easy/shadowing_s9.mp3"
-    },
-    {
-      id: 10,
-      text: "An old man is sitting on a bench.",
-      audio: "/audio/week15_easy/shadowing_s10.mp3"
-    },
-    {
-      id: 11,
-      text: "He is reading a book.",
-      audio: "/audio/week15_easy/shadowing_s11.mp3"
-    },
-    {
-      id: 12,
-      text: "Near the fountain, some kids are playing.",
-      audio: "/audio/week15_easy/shadowing_s12.mp3"
-    },
-    {
-      id: 13,
-      text: "They are laughing and happy.",
-      audio: "/audio/week15_easy/shadowing_s13.mp3"
-    },
-    {
-      id: 14,
-      text: "I want to play too!",
-      audio: "/audio/week15_easy/shadowing_s14.mp3"
-    },
-    {
-      id: 15,
-      text: "My family is having a picnic now.",
-      audio: "/audio/week15_easy/shadowing_s15.mp3"
-    },
-    {
-      id: 16,
-      text: "We are eating yummy sandwiches.",
-      audio: "/audio/week15_easy/shadowing_s16.mp3"
-    },
-    {
-      id: 17,
-      text: "I am drinking apple juice.",
-      audio: "/audio/week15_easy/shadowing_s17.mp3"
-    }
+  script: [
+    { id: 1, text: "Today I am going to the park with my family.", vi: "Hôm nay tôi đang đi công viên với gia đình." },
+    { id: 2, text: "The park is busy and fun!", vi: "Công viên đông đúc và vui!" },
+    { id: 3, text: "I am walking with my mom.", vi: "Tôi đang đi bộ với mẹ." },
+    { id: 4, text: "She is holding my hand.", vi: "Mẹ đang nắm tay tôi." },
+    { id: 5, text: "My dad is jogging ahead of us.", vi: "Bố tôi đang chạy bộ phía trước chúng tôi." },
+    { id: 6, text: "He is wearing his blue shirt.", vi: "Bố đang mặc áo xanh." },
+    { id: 7, text: "I see a boy.", vi: "Tôi thấy một cậu bé." },
+    { id: 8, text: "He is running very fast!", vi: "Cậu ấy đang chạy rất nhanh!" },
+    { id: 9, text: "His dog is running too.", vi: "Chó của cậu ấy cũng đang chạy." },
+    { id: 10, text: "An old man is sitting on a bench.", vi: "Một ông già đang ngồi trên ghế." },
+    { id: 11, text: "He is reading a book.", vi: "Ông ấy đang đọc sách." },
+    { id: 12, text: "Near the fountain, some kids are playing.", vi: "Gần đài phun nước, một số trẻ đang chơi." },
+    { id: 13, text: "They are laughing and happy.", vi: "Chúng đang cười và vui vẻ." },
+    { id: 14, text: "I want to play too!", vi: "Tôi cũng muốn chơi!" },
+    { id: 15, text: "My family is having a picnic now.", vi: "Gia đình tôi đang dã ngoại bây giờ." },
+    { id: 16, text: "We are eating yummy sandwiches.", vi: "Chúng tôi đang ăn bánh sandwich ngon." },
+    { id: 17, text: "I am drinking apple juice.", vi: "Tôi đang uống nước táo." },
+    { id: 18, text: "My sister is flying her red kite.", vi: "Em gái tôi đang thả diều đỏ của em ấy." },
+    { id: 19, text: "It is going very high!", vi: "Nó bay rất cao!" },
+    { id: 20, text: "The kite is beautiful.", vi: "Con diều đẹp quá." },
+    { id: 21, text: "I am relaxing on the grass.", vi: "Tôi đang thư giãn trên cỏ." },
+    { id: 22, text: "The grass is soft and green.", vi: "Cỏ mềm và xanh." },
+    { id: 23, text: "I see flowers everywhere.", vi: "Tôi thấy hoa ở khắp nơi." },
+    { id: 24, text: "A girl is walking her small dog.", vi: "Một cô bé đang dắt chó nhỏ của cô ấy." },
+    { id: 25, text: "The dog is cute!", vi: "Chú chó dễ thương!" },
+    { id: 26, text: "I am having so much fun.", vi: "Tôi đang vui lắm." },
+    { id: 27, text: "The park is my favorite place!", vi: "Công viên là nơi yêu thích của tôi!" }
   ]
 };
