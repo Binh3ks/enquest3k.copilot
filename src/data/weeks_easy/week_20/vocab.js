@@ -106,7 +106,7 @@ export default {
     definition_vi: "làng",
     definition_en: "a small town in the country",
     example: "There was a small village here.",
-    collocation: "small village / a small village here / a small village",
+    collocation: "small village / was a village / lived in a village",
     image_url: "/images/week20/village.jpg",
     audio_word: "/audio/week20_easy/vocab_village.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "lịch sử",
     definition_en: "stories from the past",
     example: "There was a lot of history here.",
-    collocation: "local history / lot of history here / a local history",
+    collocation: "our history / local history / part of history",
     image_url: "/images/week20/detective.jpg",
     audio_word: "/audio/week20_easy/vocab_history.mp3"
   },
@@ -128,7 +128,7 @@ export default {
     definition_vi: "bản đồ",
     definition_en: "a drawing of streets and places",
     example: "There was a map on the wall.",
-    collocation: "old map / was a map on the / an old map",
+    collocation: "old map / an old map / was a map",
     image_url: "/images/week20/map.jpg",
     audio_word: "/audio/week20_easy/vocab_map.mp3"
   },
@@ -137,9 +137,9 @@ export default {
     word: "mystery",
     pronunciation: "/ˈmɪs.tri/",
     definition_vi: "bí ẩn",
-    definition_en: "something nobody knows",
+    definition_en: "something strange nobody can explain",
     example: "There was a mystery in the old town.",
-    collocation: "old mystery / was a mystery in the / an old mystery",
+    collocation: "old mystery / a mystery / was a mystery",
     image_url: "/images/week20/mystery.jpg",
     audio_word: "/audio/week20_easy/vocab_mystery.mp3"
   }

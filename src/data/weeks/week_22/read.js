@@ -1,8 +1,20 @@
 export default {
   title: "Detective Nova's Case Interview",
   image_url: "/images/week22/read_cover_w22.jpg",
-  content_en: "**Detective** Nova was working on a difficult **case** in the old town of Hội An, Vietnam. She arrived at the scene and immediately opened her **notebook**. The narrow lantern-lit streets were quiet, but someone had reported a mystery **last night**.\n\nNova began the **interview** calmly. She had three important **questions** for the **suspect**. 'Where were you **yesterday** morning?' she asked **clearly**. The **suspect** answered **clearly** and without hesitation. Nova wrote every **answer** as a new **clue** in her **notebook**.\n\nShe continued: 'What did you do **last night** and **last week**?' Again, the **suspect** answered every **question** **clearly**. Nova studied each **clue** carefully in the warm lantern light.\n\nFinally, Nova organised the **case** file and wrote her final **report**. She handed the **answer** to the local police team in Hội An. Every **clue** in her **notebook** had helped. **Detective** Nova had solved the **case** once again.",
-  content_vi: "**Detective** Nova dang lam viec voi mot **case** kho o pho co Hoi An, Viet Nam. Co ay den hien truong va lap tuc mo **notebook**. Nhung con pho vang ve voi den long dep, nhung ai do da bao cao mot bi an **last night**.\n\nNova bat dau **interview** mot cach binh tinh. Co ay co ba **question** quan trong cho **suspect**. 'Ban o dau vao sang **yesterday**?' co ay hoi **clearly**. **Suspect** da tra loi **clearly** va khong do du. Nova da ghi moi **answer** nhu la mot **clue** moi vao **notebook**.\n\nCo ay tiep tuc: 'Ban da lam gi **last night** va **last week**?' Mot lan nua, **suspect** da tra loi moi **question** mot cach **clearly**. Nova da xem xet tung **clue** can than duoi anh den long.\n\nCuoi cung, Nova sap xep ho so **case** va viet **report** cuoi cung. Co ay da trao **answer** cho doi canh sat dia phuong o Hoi An. Moi **clue** trong **notebook** da giup co. **Detective** Nova da giai quyet **case** them mot lan nua.",
+  content_en: "**Was working on** a difficult case in the old town of Hội An, Vietnam. She **arrived at the** scene and **opened her** notebook immediately. The narrow lantern-lit streets **were quiet**, but someone **had reported a** mystery **last night**.
+
+Nova **began the interview** calmly. She **had three questions** for the suspect. \"Where **were you yesterday** morning?\" she **asked clearly**. The suspect **answered clearly** and without hesitation. Nova **wrote every** answer **as a new** clue **in her notebook**.
+
+She **continued**: \"What **did you do last** night and **last week**?\" Again, the suspect **answered every** question **clearly**. Nova **studied each** clue carefully **in the warm** lantern light.
+
+Finally, Nova **organized the** case file and **wrote her final** report. She **handed the answer** to the local police team in Hội An. Every clue **in her notebook** had helped. Detective Nova **had solved the** case once again.",
+  content_vi: "Nova **đang làm việc** với một case khó ở phố cổ Hội An, Việt Nam. Cô ấy **đến hiện trường** và **mở quyển sổ** ngay lập tức. Những con phố đèn lồng hẹp **yên tĩnh**, nhưng ai đó **đã báo cáo** một bí ẩn **đêm qua**.
+
+Nova **bắt đầu phỏng vấn** một cách bình tĩnh. Cô ấy **có ba câu hỏi** cho nghi phạm. \"Anh/chị **ở đâu hôm qua** sáng?\" cô ấy **hỏi rõ ràng**. Nghi phạm **trả lời rõ ràng** và không do dự. Nova **ghi mọi** câu trả lời **như một** manh mối mới **vào sổ của cô**.
+
+Cô ấy **tiếp tục**: \"Anh/chị **đã làm gì đêm** qua và **tuần trước**?\" Một lần nữa, nghi phạm **trả lời mọi** câu hỏi **một cách rõ ràng**. Nova **xem xét từng** manh mối cẩn thận **dưới ánh** đèn lồng ấm áp.
+
+Cuối cùng, Nova **sắp xếp hồ sơ** case và **viết báo cáo cuối** cùng. Cô ấy **trao câu trả lời** cho đội cảnh sát địa phương ở Hội An. Mọi manh mối **trong sổ của cô** đã giúp ích. Thám tử Nova **đã giải quyết** case thêm một lần nữa.",
   audio_url: "/audio/week22/read_main.mp3",
   comprehension_questions: [
     {
@@ -11,7 +23,7 @@ export default {
       answer: ["Her notebook", "A notebook", "She opened her notebook"],
       clue_statement: "She opened her notebook.",
       hint_en: "She opened her...",
-      hint_vi: "Co ay da mo...",
+      hint_vi: "Cô ấy đã mở...",
       audio_url: "/audio/week22/read_q1.mp3"
     },
     {
@@ -20,7 +32,7 @@ export default {
       answer: ["Clearly", "Clearly and without hesitation", "The suspect answered clearly"],
       clue_statement: "Clearly and without hesitation.",
       hint_en: "The suspect answered...",
-      hint_vi: "Nghi pham da tra loi...",
+      hint_vi: "Nghi phạm trả lời...",
       audio_url: "/audio/week22/read_q2.mp3"
     },
     {
@@ -29,7 +41,7 @@ export default {
       answer: ["Yesterday morning and last week", "Yesterday and last week", "Last night, yesterday morning and last week"],
       clue_statement: "Last night, yesterday morning and last week.",
       hint_en: "She asked about yesterday morning and...",
-      hint_vi: "Co ay da hoi ve sang hom qua va...",
+      hint_vi: "Cô ấy đã hỏi về sáng hôm qua và...",
       audio_url: "/audio/week22/read_q3.mp3"
     },
     {
@@ -38,7 +50,7 @@ export default {
       answer: ["The answer", "Her final report and the answer", "The answer to the case"],
       clue_statement: "Nova give her final report and the answer to her team at the end.",
       hint_en: "Nova gave the...",
-      hint_vi: "Nova da trao...",
+      hint_vi: "Nova đã trao...",
       audio_url: "/audio/week22/read_q4.mp3"
     }
   ]

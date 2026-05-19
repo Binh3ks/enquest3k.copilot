@@ -5,35 +5,27 @@ export default {
   audio_url: "/audio/week20_easy/explore_main.mp3",
 
   content_en: `
- Look at an old town! Long ago, there was a **market** in every town. People went to the **market** to buy food and things.
+ Look at an old town! Long ago, people **went to the market** to buy food and things. There **were trees on every** road. People **walked under the** trees. There **was a bridge over** the river. People **used the bridge** to get to the other side.
 
- There were trees on every **road**. The trees gave shade. People walked under the **trees**.
+ There **was a temple in** the center of the village. People **went to the temple** to pray. The temple **was very beautiful**.
 
- There was one **bridge** over the **river**. People used the **bridge** to get to the other side. The **bridge** was made of wood.
+ Now towns **are different**! There **are new buildings**. There **are new roads**. There **is a new bridge**. Some old places **are gone**.
 
- There was a **temple** in the center of the **village**. People went to the **temple** to pray. The **temple** was very beautiful.
+ But some old places **are still there**! Old temples **are still standing**. They **are important to** us. They **show us the** past.
 
- Now towns are different! There are new **buildings** and new **roads**. There are new **bridges**. Some old places are gone.
-
- But some **old** places are still there! Old **temples** are still standing. They are important to us. They show us the past.
-
- Can you find an **old** place in your town? Is there an **old** **temple** or **old** **building**? These are special. They are part of our history!
+ Can you **find an old** place in your town? Is there an old temple? These **are special**. They **are part of** our history!
  `,
 
   content_vi: `
-    Nhìn thị trấn cũ! Ngày xưa, có một **chợ** ở mỗi thị trấn. Người ta đến **chợ** để mua thực phẩm.
+    Nhìn thị trấn cũ! Ngày xưa, người ta **đến chợ** để mua thực phẩm. **Có cây trên** mỗi đường. Người ta **đi bộ dưới** những cây đó. **Có cầu bắc qua** sông. Người ta **dùng cầu để** sang bờ bên kia.
 
-    Có **cây** trên mỗi **đường**. Những **cây** cho bóng mát. Người ta đi bộ dưới bóng **cây**.
+    **Có đền ở** trung tâm làng. Người ta **đến đền để** cầu nguyện. Ngôi đền **rất đẹp**.
 
-    Có một **cầu** bắc qua **sông**. Người ta dùng **cầu** để sang bờ bên kia. **Cầu** làm bằng gỗ.
+    Bây giờ thị trấn **khác rồi**! **Có tòa nhà mới**. **Có đường mới**. **Có cầu mới**. Một số nơi cũ **đã biến mất**.
 
-    Có một ngôi **đền** ở trung tâm **làng**. Người ta đến **đền** để cầu nguyện. Ngôi **đền** rất đẹp.
+    Nhưng một số nơi **vẫn còn đó**! Đền cũ **vẫn còn đứng đó**. Chúng **quan trọng với** chúng ta. Chúng **cho ta thấy** quá khứ.
 
-    Bây giờ thị trấn khác rồi! Có **tòa nhà** mới và **đường** mới. Có **cầu** mới. Một số nơi cũ đã biến mất.
-
-    Nhưng một số nơi **cũ** vẫn còn! Các **đền** cũ vẫn còn đứng đó. Chúng quan trọng với chúng ta. Chúng cho ta thấy quá khứ.
-
-    Bạn có thể tìm thấy nơi **cũ** trong thị trấn của bạn không? Có **đền** hoặc **tòa nhà** **cũ** không? Những nơi này đặc biệt. Chúng là một phần lịch sử của chúng ta!
+    Bạn có thể **tìm nơi cũ** trong thị trấn của bạn không? Có đền cũ không? Những nơi này **đặc biệt**. Chúng **là một phần** lịch sử của chúng ta!
   `,
 
   check_questions: [
