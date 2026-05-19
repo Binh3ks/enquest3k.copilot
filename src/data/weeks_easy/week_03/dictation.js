@@ -10,6 +10,6 @@ export default {
     { id: 8, text: "I have a happy smile today.", meaning: "..." },
     { id: 9, text: "My friend wears glasses to read.", meaning: "..." },
     { id: 10, text: "Her hair is curly and long.", meaning: "..." },
-    { id: 11, text: "We are good friends.", meaning: "..." }
+    { id: 11, text: "We are good friends and look different from each other.", meaning: "..." }
   ]
 };

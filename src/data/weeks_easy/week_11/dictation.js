@@ -15,10 +15,9 @@ export default {
     { id: 13, text: "I slide down!", meaning: "Tôi trượt xuống!", audio_url: "/audio/week11_easy/dictation_13_easy.mp3" },
     { id: 14, text: "On Sunday, I go to the zoo.", meaning: "Vào Chủ nhật, tôi đi sở thú.", audio_url: "/audio/week11_easy/dictation_14_easy.mp3" },
     { id: 15, text: "I see a big lion at the zoo!", meaning: "Tôi thấy con sư tử lớn ở sở thú!", audio_url: "/audio/week11_easy/dictation_15_easy.mp3" },
-    { id: 16, text: "Then I eat lunch.", meaning: "Sau đó tôi ăn trưa.", audio_url: "/audio/week11_easy/dictation_16_easy.mp3" },
+    { id: 16, text: "I eat lunch at home.", meaning: "Tôi ăn trưa ở nhà.", audio_url: "/audio/week11_easy/dictation_16_easy.mp3" },
     { id: 17, text: "The food is good!", meaning: "Đồ ăn ngon!", audio_url: "/audio/week11_easy/dictation_17_easy.mp3" },
     { id: 18, text: "I go to school on Monday.", meaning: "Tôi đi học vào thứ Hai.", audio_url: "/audio/week11_easy/dictation_18_easy.mp3" },
-    { id: 19, text: "I like my weekend!", meaning: "Tôi thích cuối tuần!", audio_url: "/audio/week11_easy/dictation_19_easy.mp3" },
-    { id: 20, text: "I have fun on weekends!", meaning: "Tôi vui vào cuối tuần!", audio_url: "/audio/week11_easy/dictation_20_easy.mp3" }
+    { id: 19, text: "I like my weekend!", meaning: "Tôi thích cuối tuần!", audio_url: "/audio/week11_easy/dictation_19_easy.mp3" }
   ]
 };

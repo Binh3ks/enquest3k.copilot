@@ -12,6 +12,6 @@ export default {
     { id: 8, text: "I have a happy smile today.", vi: "..." },
     { id: 9, text: "My friend wears glasses to read.", vi: "..." },
     { id: 10, text: "Her hair is curly and long.", vi: "..." },
-    { id: 11, text: "We are good friends.", vi: "..." }
+    { id: 11, text: "We are good friends and look different from each other.", vi: "..." }
   ]
 };

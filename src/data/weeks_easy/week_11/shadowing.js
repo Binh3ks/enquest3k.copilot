@@ -18,7 +18,7 @@ export default {
     { id: 14, text: "I slide down!", vi: "Tôi trượt xuống!" },
     { id: 15, text: "On Sunday, I go to the zoo.", vi: "Vào Chủ nhật, tôi đi sở thú." },
     { id: 16, text: "I see a big lion at the zoo!", vi: "Tôi thấy con sư tử lớn ở sở thú!" },
-    { id: 17, text: "Then I eat lunch.", vi: "Sau đó tôi ăn trưa." },
+    { id: 17, text: "I eat lunch at home.", vi: "Tôi ăn trưa ở nhà." },
     { id: 18, text: "The food is good!", vi: "Đồ ăn ngon!" },
     { id: 19, text: "I go to school on Monday.", vi: "Tôi đi học vào thứ Hai." },
     { id: 20, text: "I like my weekend!", vi: "Tôi thích cuối tuần!" }

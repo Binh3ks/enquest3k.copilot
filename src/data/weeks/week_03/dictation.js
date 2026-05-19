@@ -6,7 +6,7 @@ export default {
     { id: 4, text: "She has big brown eyes that sparkle brightly when she smiles.", meaning: "Cô ấy có đôi mắt to màu nâu lấp lánh khi cô cười." },
     { id: 5, text: "She wears glasses to see the board clearly.", meaning: "Cô ấy đeo kính để nhìn rõ bảng." },
     { id: 6, text: "She has a kind face that makes everyone feel welcome and safe.", meaning: "Cô ấy có khuôn mặt tử tế khiến mọi người cảm thấy được chào đón và an toàn." },
-    { id: 7, text: "She always has a warm smile for her students.", meaning: "Cô ấy luôn có nụ cười ấm áp dành cho học sinh." },
+    { id: 7, text: "She has a warm smile for her students.", meaning: "Cô ấy luôn có nụ cười ấm áp dành cho học sinh." },
     { id: 8, text: "I like my teacher because she is very nice.", meaning: "Tôi thích giáo viên của mình vì cô ấy rất tốt." },
     { id: 9, text: "She is not short like me.", meaning: "Cô ấy không thấp như tôi." },
     { id: 10, text: "Her hair is straight and shiny.", meaning: "Tóc của cô ấy thẳng và bóng." },

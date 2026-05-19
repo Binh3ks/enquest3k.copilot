@@ -7,10 +7,12 @@ export default {
     { id: 5, text: "I look in the box.", meaning: "Tôi nhìn trong hộp.", audio_url: "/audio/week6_easy/dictation_5.mp3" },
     { id: 6, text: "My friend helps me.", meaning: "Bạn tôi giúp tôi.", audio_url: "/audio/week6_easy/dictation_6.mp3" },
     { id: 7, text: "He looks under the desk.", meaning: "Cậu ấy nhìn dưới bàn.", audio_url: "/audio/week6_easy/dictation_7.mp3" },
-    { id: 8, text: "The toy car is under the desk!", meaning: "Xe ô tô đồ chơi ở dưới bàn!", audio_url: "/audio/week6_easy/dictation_8.mp3" },
-    { id: 9, text: "It is next to the door.", meaning: "Nó ở bên cạnh cửa.", audio_url: "/audio/week6_easy/dictation_9.mp3" },
-    { id: 10, text: "Now we hide things.", meaning: "Bây giờ chúng tôi giấu đồ.", audio_url: "/audio/week6_easy/dictation_10.mp3" },
-    { id: 11, text: "I hide my ball in the box.", meaning: "Tôi giấu quả bóng trong hộp.", audio_url: "/audio/week6_easy/dictation_11.mp3" },
-    { id: 12, text: "This game is fun!", meaning: "Trò chơi này vui quá!", audio_url: "/audio/week6_easy/dictation_12.mp3" }
+    { id: 8, text: "He finds it!", meaning: "Cậu ấy tìm thấy nó!", audio_url: "/audio/week6_easy/dictation_8.mp3" },
+    { id: 9, text: "The toy car is under the desk!", meaning: "Xe ô tô đồ chơi ở dưới bàn!", audio_url: "/audio/week6_easy/dictation_9.mp3" },
+    { id: 10, text: "It is next to the door.", meaning: "Nó ở bên cạnh cửa.", audio_url: "/audio/week6_easy/dictation_10.mp3" },
+    { id: 11, text: "Now we play hide and seek.", meaning: "Bây giờ chúng tôi chơi trốn tìm.", audio_url: "/audio/week6_easy/dictation_11.mp3" },
+    { id: 12, text: "I hide my ball in the box.", meaning: "Tôi giấu quả bóng trong hộp.", audio_url: "/audio/week6_easy/dictation_12.mp3" },
+    { id: 13, text: "We seek them again.", meaning: "Chúng tôi tìm chúng lại.", audio_url: "/audio/week6_easy/dictation_13.mp3" },
+    { id: 14, text: "This game is so much fun!", meaning: "Trò chơi này vui quá!", audio_url: "/audio/week6_easy/dictation_14.mp3" }
   ]
 };

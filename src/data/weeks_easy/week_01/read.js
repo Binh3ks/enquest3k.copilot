@@ -1,7 +1,7 @@
 export default {
   title: "My New Classroom",
   image_url: "/images/week1/read_cover_w01.jpg",
-  content_en: "Hi! My **name is** Alex. I am at school today. I am in Grade 1. This is my desk and chair. I **sit next to** my friend. I have a pen and a book in my bag. I see a colorful picture on the wall and a big door at the front. My teacher is kind. I like my classroom! Every day **is a happy day** to learn.",
+  content_en: "Hi! My **name is** Alex. I **am at school** today. I **am in Grade** 1. This is my desk and chair. I **sit next to** my friend. I **have a pen** and a book in my bag. I **see a colorful** picture on the wall and a big door at the front. My teacher is kind. I **like my classroom**! Every day **is a happy** day to learn. I can see many things in my classroom. I can see books on the shelf. I can see my name on my desk.",
   content_vi: "Chào! Tên mình là Alex. Mình ở trường. Đây là bàn và ghế của mình. Bạn mình là Lily. Mình có bút trong cặp. Mình thấy tranh và cửa. Mình thích lớp!",
   audio_url: null,
   comprehension_questions: [

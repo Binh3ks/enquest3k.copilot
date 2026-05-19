@@ -4,18 +4,17 @@ export default {
   script: [
     { id: 1, text: "Today is treasure hunt day!", vi: "Hôm nay là ngày săn kho báu!" },
     { id: 2, text: "My friends and I look for hidden treasure.", vi: "Bạn bè tôi và tôi tìm kiếm kho báu ẩn giấu." },
-    { id: 3, text: "I look under the desk.", vi: "Tôi nhìn dưới bàn." },
+    { id: 3, text: "I look on the floor.", vi: "Tôi nhìn trên sàn." },
     { id: 4, text: "No treasure there!", vi: "Không có kho báu ở đó!" },
-    { id: 5, text: "I look on the floor.", vi: "Tôi nhìn trên sàn." },
-    { id: 6, text: "My friend looks in the box.", vi: "Bạn tôi nhìn trong hộp." },
-    { id: 7, text: "He finds a clue!", vi: "Cậu ấy tìm thấy một manh mối!" },
-    { id: 8, text: "The clue says: 'Look next to the window.'", vi: "Manh mối nói: 'Hãy nhìn bên cạnh cửa sổ.'" },
-    { id: 9, text: "We run to the window.", vi: "Chúng tôi chạy đến cửa sổ." },
-    { id: 10, text: "There is another clue on the wall!", vi: "Có một manh mối khác trên tường!" },
-    { id: 11, text: "We look under the big desk.", vi: "Chúng tôi nhìn dưới cái bàn lớn." },
-    { id: 12, text: "A box full of gold coins!", vi: "Một hộp đầy tiền vàng!" },
-    { id: 13, text: "The treasure is ours!", vi: "Kho báu là của chúng tôi!" },
-    { id: 14, text: "Hunting for treasure makes us work together.", vi: "Săn tìm kho báu khiến chúng tôi làm việc cùng nhau." },
-    { id: 15, text: "Next time, I will hide the treasure next to the door!", vi: "Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!" }
+    { id: 5, text: "I look in the box.", vi: "Tôi nhìn trong hộp." },
+    { id: 6, text: "My friend finds a clue!", vi: "Bạn tôi tìm thấy một manh mối!" },
+    { id: 7, text: "The clue says: 'Look next to the window.'", vi: "Manh mối nói: 'Hãy nhìn bên cạnh cửa sổ.'" },
+    { id: 8, text: "We run to the window.", vi: "Chúng tôi chạy đến cửa sổ." },
+    { id: 9, text: "There is another clue on the wall!", vi: "Có một manh mối khác trên tường!" },
+    { id: 10, text: "We look under the big desk.", vi: "Chúng tôi nhìn dưới cái bàn lớn." },
+    { id: 11, text: "A box full of gold coins!", vi: "Một hộp đầy tiền vàng!" },
+    { id: 12, text: "The treasure is ours!", vi: "Kho báu là của chúng tôi!" },
+    { id: 13, text: "Hunting for treasure makes us work together.", vi: "Săn tìm kho báu khiến chúng tôi làm việc cùng nhau." },
+    { id: 14, text: "Next time, I will hide the treasure next to the door!", vi: "Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!" }
   ]
 };

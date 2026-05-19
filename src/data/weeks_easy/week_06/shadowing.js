@@ -12,8 +12,9 @@ export default {
     { id: 8, text: "He finds it!", vi: "Cậu ấy tìm thấy nó!" },
     { id: 9, text: "The toy car is under the desk!", vi: "Xe ô tô đồ chơi ở dưới bàn!" },
     { id: 10, text: "It is next to the door.", vi: "Nó ở bên cạnh cửa." },
-    { id: 11, text: "Now we hide things.", vi: "Bây giờ chúng tôi giấu đồ." },
+    { id: 11, text: "Now we play hide and seek.", vi: "Bây giờ chúng tôi chơi trốn tìm." },
     { id: 12, text: "I hide my ball in the box.", vi: "Tôi giấu quả bóng trong hộp." },
-    { id: 13, text: "This game is fun!", vi: "Trò chơi này vui quá!" }
+    { id: 13, text: "We seek them again.", vi: "Chúng tôi tìm chúng lại." },
+    { id: 14, text: "This game is so much fun!", vi: "Trò chơi này vui quá!" }
   ]
 };

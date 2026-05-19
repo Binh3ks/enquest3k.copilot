@@ -4,11 +4,14 @@ export default {
   script: [
     { id: 1, text: "Hi!", vi: "Chào!" },
     { id: 2, text: "My name is Alex.", vi: "Tên mình là Alex." },
-    { id: 3, text: "I am at school.", vi: "Mình ở trường." },
-    { id: 4, text: "This is my desk and chair.", vi: "Đây là bàn và ghế của mình." },
-    { id: 5, text: "My friend is Lily.", vi: "Bạn mình là Lily." },
-    { id: 6, text: "I have a pen in my bag.", vi: "Mình có bút trong cặp." },
-    { id: 7, text: "I see a picture and a door.", vi: "Mình thấy tranh và cửa." },
-    { id: 8, text: "I like my classroom!", vi: "Mình thích lớp!" }
+    { id: 3, text: "I am at school today.", vi: "Mình ở trường." },
+    { id: 4, text: "I am in Grade 1.", vi: "Mình học lớp 1." },
+    { id: 5, text: "This is my desk and chair.", vi: "Đây là bàn và ghế của mình." },
+    { id: 6, text: "I sit next to my friend.", vi: "Mình ngồi cạnh bạn." },
+    { id: 7, text: "I have a pen and a book in my bag.", vi: "Mình có bút và sách trong cặp." },
+    { id: 8, text: "I see a colorful picture on the wall and a big door at the front.", vi: "Mình thấy tranh màu trên tường và cửa lớn ở phía trước." },
+    { id: 9, text: "My teacher is kind.", vi: "Cô giáo mình tốt." },
+    { id: 10, text: "I like my classroom!", vi: "Mình thích lớp!" },
+    { id: 11, text: "Every day is a happy day to learn.", vi: "Mỗi ngày là một ngày vui để học." }
   ]
 };
