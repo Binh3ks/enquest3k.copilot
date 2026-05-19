@@ -2,7 +2,6 @@ export default {
   title_en: "Ask Nova: My Very Busy Saturday",
   title_vi: "Hỏi Nova: Ngày Thứ Bảy Bận Rộn của Tôi",
   audio_url: null,
-  topic_talk_prompt: "Tell me about your Saturday! What did you do? What was fun? What chores did you help with?",
   prompts: [
     {
       id: 1,
