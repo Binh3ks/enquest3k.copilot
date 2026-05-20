@@ -7,7 +7,7 @@ export default {
     definition_vi: "bữa sáng",
     definition_en: "the first meal of the day",
     example: "I eat breakfast every morning.",
-    collocation: "eat breakfast / I eat breakfast every morning / eat breakfast",
+    collocation: "eat breakfast / have breakfast",
     image_url: "/images/week13_easy/breakfast.jpg",
     audio_word: "/audio/week13_easy/vocab_breakfast.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "răng",
     definition_en: "the hard white things in your mouth",
     example: "I brush my teeth every day.",
-    collocation: "brush teeth / brush my teeth every day / a brush teeth",
+    collocation: "brush teeth / clean teeth",
     image_url: "/images/week13_easy/teeth.jpg",
     audio_word: "/audio/week13_easy/vocab_teeth.mp3"
   },
@@ -28,8 +28,8 @@ export default {
     pronunciation: "/skuːl/",
     definition_vi: "trường học",
     definition_en: "a place where you go to learn",
-    example: "I go to school at 8 o'clock.",
-    collocation: "go to school / go to school at 8 / go to school",
+    example: "I go to school every day.",
+    collocation: "go to school / at school",
     image_url: "/images/week13_easy/school.jpg",
     audio_word: "/audio/week13_easy/vocab_school.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "bữa trưa",
     definition_en: "the meal you eat in the middle of the day",
     example: "I have lunch at 12 o'clock.",
-    collocation: "have lunch / I have lunch at 12 / have lunch",
+    collocation: "have lunch / eat lunch",
     image_url: "/images/week13_easy/lunch.jpg",
     audio_word: "/audio/week13_easy/vocab_lunch.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "bữa tối",
     definition_en: "the meal you eat in the evening",
     example: "I have dinner at 7 o'clock.",
-    collocation: "have dinner / I have dinner at 7 / have dinner",
+    collocation: "have dinner / eat dinner",
     image_url: "/images/week13_easy/dinner.jpg",
     audio_word: "/audio/week13_easy/vocab_dinner.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "giường",
     definition_en: "a thing you sleep on",
     example: "I go to bed at 9 o'clock.",
-    collocation: "go to bed / go to bed at 9 / go to bed",
+    collocation: "go to bed / in bed",
     image_url: "/images/week13_easy/bed.jpg",
     audio_word: "/audio/week13_easy/vocab_bed.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "chơi",
     definition_en: "to do things for fun",
     example: "I play with my friends after school.",
-    collocation: "play with friends / I play with my / play it",
+    collocation: "play with friends / play games",
     image_url: "/images/week13_easy/play.jpg",
     audio_word: "/audio/week13_easy/vocab_play.mp3"
   },
@@ -83,8 +83,8 @@ export default {
     pronunciation: "/ˈhoʊmwɜːrk/",
     definition_vi: "bài tập về nhà",
     definition_en: "school work you do at home",
-    example: "I do homework after dinner.",
-    collocation: "do homework / I do homework after dinner / a do homework",
+    example: "I do homework after school.",
+    collocation: "do homework / finish homework",
     image_url: "/images/week13_easy/homework.jpg",
     audio_word: "/audio/week13_easy/vocab_homework.mp3"
   },
@@ -94,8 +94,8 @@ export default {
     pronunciation: "/klɑːk/",
     definition_vi: "đồng hồ",
     definition_en: "a thing that shows the time",
-    example: "I look at the clock every morning.",
-    collocation: "alarm clock / at the clock every morning / an alarm clock",
+    example: "I look at the alarm clock.",
+    collocation: "alarm clock / on the clock",
     image_url: "/images/week13_easy/clock.jpg",
     audio_word: "/audio/week13_easy/vocab_clock.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "tắm",
     definition_en: "washing your whole body with water",
     example: "I take a bath before bed.",
-    collocation: "take a bath / take a bath before bed / take a bath",
+    collocation: "take a bath / have a bath",
     image_url: "/images/week13_easy/bath.jpg",
     audio_word: "/audio/week13_easy/vocab_bath.mp3"
   }

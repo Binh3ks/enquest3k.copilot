@@ -6,8 +6,8 @@ export default {
     pronunciation: "/frend/",
     definition_vi: "Bạn",
     definition_en: "A person you like.",
-    example: "My friend is nice.",
-    collocation: "good friend / My friend is nice / a good friend",
+    example: "My good friend is nice.",
+    collocation: "good friend / best friend",
     image_url: "/images/week1_easy/friend.jpg",
     audio_word: "/audio/week1_easy/vocab_friend.mp3"
   },
@@ -17,8 +17,8 @@ export default {
     pronunciation: "/desk/",
     definition_vi: "Bàn học",
     definition_en: "A table for studying.",
-    example: "I have a desk.",
-    collocation: "my desk / have a desk / my desk",
+    example: "I sit at my desk.",
+    collocation: "my desk / sit at a desk",
     image_url: "/images/week1_easy/desk.jpg",
     audio_word: "/audio/week1_easy/vocab_desk.mp3"
   },
@@ -28,8 +28,8 @@ export default {
     pronunciation: "/tʃer/",
     definition_vi: "Ghế",
     definition_en: "You sit on it.",
-    example: "This is my chair.",
-    collocation: "red chair / is my chair / a red chair",
+    example: "I sit on a red chair.",
+    collocation: "red chair / sit on a chair",
     image_url: "/images/week1_easy/chair.jpg",
     audio_word: "/audio/week1_easy/vocab_chair.mp3"
   },
@@ -39,8 +39,8 @@ export default {
     pronunciation: "/pen/",
     definition_vi: "Bút",
     definition_en: "You write with it.",
-    example: "I have a pen.",
-    collocation: "blue pen / have a pen / a blue pen",
+    example: "I write with a blue pen.",
+    collocation: "blue pen / use a pen",
     image_url: "/images/week1_easy/pen.jpg",
     audio_word: "/audio/week1_easy/vocab_pen.mp3"
   },
@@ -50,8 +50,8 @@ export default {
     pronunciation: "/bæɡ/",
     definition_vi: "Túi",
     definition_en: "You carry things in it.",
-    example: "My bag is red.",
-    collocation: "school bag / My bag is red / a school bag",
+    example: "My school bag is red.",
+    collocation: "school bag / carry a bag",
     image_url: "/images/week1_easy/bag.jpg",
     audio_word: "/audio/week1_easy/vocab_bag.mp3"
   },
@@ -61,8 +61,8 @@ export default {
     pronunciation: "/tɔɪ/",
     definition_vi: "Đồ chơi",
     definition_en: "Thing to play with.",
-    example: "I like toys.",
-    collocation: "fun toy / I like toys / a fun toy",
+    example: "I play with a fun toy.",
+    collocation: "fun toy / play with toys",
     image_url: "/images/week1_easy/toy.jpg",
     audio_word: "/audio/week1_easy/vocab_toy.mp3"
   },
@@ -72,8 +72,8 @@ export default {
     pronunciation: "/ˈpɪktʃər/",
     definition_vi: "Tranh, ảnh",
     definition_en: "An image or photo.",
-    example: "Look at this picture.",
-    collocation: "nice picture / at this picture / a nice picture",
+    example: "Look at this nice picture.",
+    collocation: "nice picture / draw a picture",
     image_url: "/images/week1_easy/picture.jpg",
     audio_word: "/audio/week1_easy/vocab_picture.mp3"
   },
@@ -83,8 +83,8 @@ export default {
     pronunciation: "/bɑks/",
     definition_vi: "Hộp",
     definition_en: "A container.",
-    example: "There is a box.",
-    collocation: "big box / is a box / a big box",
+    example: "There is a big box on the floor.",
+    collocation: "big box / open the box",
     image_url: "/images/week1_easy/box.jpg",
     audio_word: "/audio/week1_easy/vocab_box.mp3"
   },
@@ -94,8 +94,8 @@ export default {
     pronunciation: "/dɔr/",
     definition_vi: "Cửa",
     definition_en: "You open it to go in.",
-    example: "The door is big.",
-    collocation: "open door / The door is big / open door",
+    example: "I open the door.",
+    collocation: "open door / close the door",
     image_url: "/images/week1_easy/door.jpg",
     audio_word: "/audio/week1_easy/vocab_door.mp3"
   }

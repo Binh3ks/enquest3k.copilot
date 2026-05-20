@@ -7,7 +7,7 @@ export default {
     definition_vi: "đã đi bộ",
     definition_en: "moved on foot in the past",
     example: "I walked to school.",
-    collocation: "walked to school / I walked to school / walked to school",
+    collocation: "walked to school / walked home",
     image_url: "/images/week21/walked.jpg",
     audio_word: "/audio/week21_easy/vocab_walked.mp3"
   },
@@ -18,7 +18,7 @@ export default {
     definition_vi: "đã nhìn",
     definition_en: "used your eyes to see",
     example: "I looked at the sky.",
-    collocation: "looked at / I looked at the / a looked at",
+    collocation: "looked at / looked around",
     image_url: "/images/week21/looked.jpg",
     audio_word: "/audio/week21_easy/vocab_looked.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "đã nấu ăn",
     definition_en: "made food with heat",
     example: "My mom cooked dinner.",
-    collocation: "cooked dinner / My mom cooked dinner / a cooked dinner",
+    collocation: "cooked dinner / cooked lunch",
     image_url: "/images/week21/cooked.jpg",
     audio_word: "/audio/week21_easy/vocab_cooked.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "đã chơi",
     definition_en: "had fun with a game",
     example: "We played in the park.",
-    collocation: "played in the park / We played in the park / played in the park",
+    collocation: "played in the park / played games",
     image_url: "/images/week21/played.jpg",
     audio_word: "/audio/week21_easy/vocab_played.mp3"
   },
@@ -50,8 +50,8 @@ export default {
     pronunciation: "/wɒtʃt/",
     definition_vi: "đã xem",
     definition_en: "looked at something for a while",
-    example: "I watched TV.",
-    collocation: "watched TV / I watched TV / a watched TV",
+    example: "I watched TV last night.",
+    collocation: "watched TV / watched a movie",
     image_url: "/images/week21/watched.jpg",
     audio_word: "/audio/week21_easy/vocab_watched.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "đã dọn dẹp",
     definition_en: "made something tidy",
     example: "I cleaned my room.",
-    collocation: "cleaned my room / I cleaned my room / a cleaned my room",
+    collocation: "cleaned my room / cleaned the house",
     image_url: "/images/week21/cleaned.jpg",
     audio_word: "/audio/week21_easy/vocab_cleaned.mp3"
   },
@@ -73,7 +73,7 @@ export default {
     definition_vi: "đã giúp đỡ",
     definition_en: "made things easier for someone",
     example: "I helped my mom.",
-    collocation: "helped my mom / I helped my mom / a helped my mom",
+    collocation: "helped my mom / helped at home",
     image_url: "/images/week21/helped.jpg",
     audio_word: "/audio/week21_easy/vocab_helped.mp3"
   },
@@ -84,7 +84,7 @@ export default {
     definition_vi: "đã nói chuyện",
     definition_en: "spoke to someone",
     example: "I talked to my friend.",
-    collocation: "talked to / I talked to my / a talked to",
+    collocation: "talked to / talked with",
     image_url: "/images/week21/talked.jpg",
     audio_word: "/audio/week21_easy/vocab_talked.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "đã lắng nghe",
     definition_en: "paid attention to a sound",
     example: "I listened to music.",
-    collocation: "listened to music / I listened to music / a listened to music",
+    collocation: "listened to music / listened carefully",
     image_url: "/images/week21/listened.jpg",
     audio_word: "/audio/week21_easy/vocab_listened.mp3"
   },
@@ -105,8 +105,8 @@ export default {
     pronunciation: "/ˈoʊpənd/",
     definition_vi: "đã mở",
     definition_en: "made something not closed",
-    example: "I opened my book.",
-    collocation: "opened the door / I opened my book / an opened the door",
+    example: "I opened the door.",
+    collocation: "opened the door / opened my book",
     image_url: "/images/week21/opened.jpg",
     audio_word: "/audio/week21_easy/vocab_opened.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "đã rửa",
     definition_en: "cleaned with water",
     example: "I washed my hands.",
-    collocation: "washed my hands / I washed my hands / a washed my hands",
+    collocation: "washed my hands / washed dishes",
     image_url: "/images/week21/washed.jpg",
     audio_word: "/audio/week21_easy/vocab_washed.mp3"
   },
@@ -128,7 +128,7 @@ export default {
     definition_vi: "đã hoàn thành",
     definition_en: "completed something",
     example: "I finished my homework.",
-    collocation: "finished my homework / I finished my homework / a finished my homework",
+    collocation: "finished my homework / finished early",
     image_url: "/images/week21/finished.jpg",
     audio_word: "/audio/week21_easy/vocab_finished.mp3"
   },
@@ -139,7 +139,7 @@ export default {
     definition_vi: "đã bắt đầu",
     definition_en: "began something new",
     example: "We started a new game.",
-    collocation: "started a new game / We started a new / a started a new game",
+    collocation: "started a game / started early",
     image_url: "/images/week21/started.jpg",
     audio_word: "/audio/week21_easy/vocab_started.mp3"
   }

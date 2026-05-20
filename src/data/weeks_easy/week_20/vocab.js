@@ -6,8 +6,8 @@ export default {
     pronunciation: "/oʊld/",
     definition_vi: "cũ",
     definition_en: "not new; from a long time ago",
-    example: "There was an old bridge.",
-    collocation: "old bridge / was old / very old",
+    example: "There was an old bridge in the town.",
+    collocation: "old bridge / old town",
     image_url: "/images/week20/old.jpg",
     audio_word: "/audio/week20_easy/vocab_old.mp3"
   },
@@ -17,8 +17,8 @@ export default {
     pronunciation: "/njuː/",
     definition_vi: "mới",
     definition_en: "recently made; not old",
-    example: "There is a new road.",
-    collocation: "new road / is new / very new",
+    example: "There is a new road near my house.",
+    collocation: "new road / brand new",
     image_url: "/images/week20/new.jpg",
     audio_word: "/audio/week20_easy/vocab_new.mp3"
   },
@@ -28,8 +28,8 @@ export default {
     pronunciation: "/ˈbɪldɪŋ/",
     definition_vi: "tòa nhà",
     definition_en: "a house, shop, or big structure",
-    example: "There was a building near my house.",
-    collocation: "new buildings / were small / tall building",
+    example: "There was a tall building near my house.",
+    collocation: "tall building / old building",
     image_url: "/images/week20/building.jpg",
     audio_word: "/audio/week20_easy/vocab_building.mp3"
   },
@@ -39,8 +39,8 @@ export default {
     pronunciation: "/triː/",
     definition_vi: "cây",
     definition_en: "a big plant with a trunk and leaves",
-    example: "There were trees near my house.",
-    collocation: "big tree / were big / along the road",
+    example: "There was a big tree in the garden.",
+    collocation: "big tree / old tree",
     image_url: "/images/week20/tree.jpg",
     audio_word: "/audio/week20_easy/vocab_tree.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "sông",
     definition_en: "a big water flow",
     example: "There was a river near the town.",
-    collocation: "the river / near the river / over the river",
+    collocation: "the river / near the river",
     image_url: "/images/week20/river.jpg",
     audio_word: "/audio/week20_easy/vocab_river.mp3"
   },
@@ -61,8 +61,8 @@ export default {
     pronunciation: "/roʊd/",
     definition_vi: "đường",
     definition_en: "a path for cars and people",
-    example: "There was one road in the village.",
-    collocation: "the road / on the road / one road",
+    example: "There was a long road in the village.",
+    collocation: "the road / on the road",
     image_url: "/images/week20/road.jpg",
     audio_word: "/audio/week20_easy/vocab_road.mp3"
   },
@@ -72,8 +72,8 @@ export default {
     pronunciation: "/brɪdʒ/",
     definition_vi: "cầu",
     definition_en: "something to cross a river",
-    example: "There was a bridge over the river.",
-    collocation: "old bridge / a bridge / over the river",
+    example: "There was an old bridge over the river.",
+    collocation: "old bridge / over the river",
     image_url: "/images/week20/bridge.jpg",
     audio_word: "/audio/week20_easy/vocab_bridge.mp3"
   },
@@ -83,8 +83,8 @@ export default {
     pronunciation: "/ˈmɑːrkɪt/",
     definition_vi: "chợ",
     definition_en: "a place to buy food and things",
-    example: "There was a market near my street.",
-    collocation: "old market / near my house / a market",
+    example: "There was an old market near my house.",
+    collocation: "old market / near the market",
     image_url: "/images/week20/market.jpg",
     audio_word: "/audio/week20_easy/vocab_market.mp3"
   },
@@ -94,8 +94,8 @@ export default {
     pronunciation: "/ˈtempəl/",
     definition_vi: "đền, chùa",
     definition_en: "a place to pray",
-    example: "There was a temple in the village.",
-    collocation: "old temple / next to the market / a temple",
+    example: "There was an old temple in the village.",
+    collocation: "old temple / near the temple",
     image_url: "/images/week20/temple.jpg",
     audio_word: "/audio/week20_easy/vocab_temple.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "làng",
     definition_en: "a small town in the country",
     example: "There was a small village here.",
-    collocation: "small village / was a village / lived in a village",
+    collocation: "small village / old village",
     image_url: "/images/week20/village.jpg",
     audio_word: "/audio/week20_easy/vocab_village.mp3"
   },
@@ -116,8 +116,8 @@ export default {
     pronunciation: "/ˈhɪs.tri/",
     definition_vi: "lịch sử",
     definition_en: "stories from the past",
-    example: "There was a lot of history here.",
-    collocation: "our history / local history / part of history",
+    example: "There was a lot of local history here.",
+    collocation: "local history / part of history",
     image_url: "/images/week20/detective.jpg",
     audio_word: "/audio/week20_easy/vocab_history.mp3"
   },
@@ -127,8 +127,8 @@ export default {
     pronunciation: "/mæp/",
     definition_vi: "bản đồ",
     definition_en: "a drawing of streets and places",
-    example: "There was a map on the wall.",
-    collocation: "old map / an old map / was a map",
+    example: "There was an old map on the wall.",
+    collocation: "old map / world map",
     image_url: "/images/week20/map.jpg",
     audio_word: "/audio/week20_easy/vocab_map.mp3"
   },
@@ -139,7 +139,7 @@ export default {
     definition_vi: "bí ẩn",
     definition_en: "something strange nobody can explain",
     example: "There was a mystery in the old town.",
-    collocation: "old mystery / a mystery / was a mystery",
+    collocation: "solve a mystery / old mystery",
     image_url: "/images/week20/mystery.jpg",
     audio_word: "/audio/week20_easy/vocab_mystery.mp3"
   }

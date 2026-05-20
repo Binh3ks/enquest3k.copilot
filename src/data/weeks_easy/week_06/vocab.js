@@ -7,7 +7,7 @@ export default {
     definition_vi: "hộp",
     definition_en: "a container for things",
     example: "I put toys in the box.",
-    collocation: "in the box / a box / the box",
+    collocation: "in the box / open the box",
     image_url: "/images/week6_easy/box.jpg",
     audio_word: "/audio/week6_easy/vocab_box.mp3"
   },
@@ -17,8 +17,8 @@ export default {
     pronunciation: "/desk/",
     definition_vi: "bàn",
     definition_en: "a table for working",
-    example: "I do homework on my desk.",
-    collocation: "on the desk / on my desk / on the desk",
+    example: "I do homework on the desk.",
+    collocation: "on the desk / my desk",
     image_url: "/images/week6_easy/desk.jpg",
     audio_word: "/audio/week6_easy/vocab_desk.mp3"
   },
@@ -29,7 +29,7 @@ export default {
     definition_vi: "sàn nhà",
     definition_en: "you walk on this",
     example: "The toy is on the floor.",
-    collocation: "on the floor / a floor / the floor",
+    collocation: "on the floor / the floor",
     image_url: "/images/week6_easy/floor.jpg",
     audio_word: "/audio/week6_easy/vocab_floor.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "tường",
     definition_en: "the side of a room",
     example: "A picture is on the wall.",
-    collocation: "on the wall / a wall / the wall",
+    collocation: "on the wall / the wall",
     image_url: "/images/week6_easy/wall.jpg",
     audio_word: "/audio/week6_easy/vocab_wall.mp3"
   },
@@ -51,7 +51,7 @@ export default {
     definition_vi: "cửa sổ",
     definition_en: "you can see outside from this",
     example: "I look out the window.",
-    collocation: "the window / out the window / the window",
+    collocation: "look out the window / the window",
     image_url: "/images/week6_easy/window.jpg",
     audio_word: "/audio/week6_easy/vocab_window.mp3"
   },
@@ -62,7 +62,7 @@ export default {
     definition_vi: "cửa ra vào",
     definition_en: "you open this to go in",
     example: "Open the door, please.",
-    collocation: "the door / Open the door , please / the door",
+    collocation: "open the door / close the door",
     image_url: "/images/week6_easy/door.jpg",
     audio_word: "/audio/week6_easy/vocab_door.mp3"
   },
@@ -72,8 +72,8 @@ export default {
     pronunciation: "/haɪd/",
     definition_vi: "trốn, giấu",
     definition_en: "to put where no one can see",
-    example: "I hide under the desk.",
-    collocation: "hide and seek / I hide under the / a hide and seek",
+    example: "I play hide and seek.",
+    collocation: "hide and seek / hide under",
     image_url: "/images/week6_easy/hide.jpg",
     audio_word: "/audio/week6_easy/vocab_hide.mp3"
   },
@@ -83,8 +83,8 @@ export default {
     pronunciation: "/siːk/",
     definition_vi: "tìm kiếm",
     definition_en: "to look for something",
-    example: "I seek my toy.",
-    collocation: "seek and find / I seek my toy / a seek and find",
+    example: "I play seek and find.",
+    collocation: "seek and find / look and seek",
     image_url: "/images/week6_easy/seek.jpg",
     audio_word: "/audio/week6_easy/vocab_seek.mp3"
   },
@@ -94,8 +94,8 @@ export default {
     pronunciation: "/bɔːl/",
     definition_vi: "quả bóng",
     definition_en: "a round toy you play with",
-    example: "The ball is under the chair.",
-    collocation: "play with a ball / The ball is under / play with a ball",
+    example: "I play with a ball.",
+    collocation: "play with a ball / kick the ball",
     image_url: "/images/week6_easy/ball.jpg",
     audio_word: "/audio/week6_easy/vocab_ball.mp3"
   },
@@ -105,8 +105,8 @@ export default {
     pronunciation: "/tɔɪ/",
     definition_vi: "đồ chơi",
     definition_en: "something you play with",
-    example: "My toy is in the box.",
-    collocation: "play with toys / My toy is in / play with toys",
+    example: "I play with toys.",
+    collocation: "play with toys / have toys",
     image_url: "/images/week6_easy/toy.jpg",
     audio_word: "/audio/week6_easy/vocab_toy.mp3"
   }
