@@ -16,7 +16,7 @@ const mindMapContent = {
       audio: "/audio/week33_easy/mindmap_stem_c9w4j.mp3"
     },
     {
-      text: "My ___ ___ a lot.",
+      text: "My knee ___ a lot.",
       audio: "/audio/week33_easy/mindmap_stem_d2f8d.mp3"
     },
     {
@@ -54,12 +54,12 @@ const mindMapContent = {
       { text: "fell / bit / tongue", audio: "/audio/week33_easy/mindmap_branch_c6n4j.mp3" }
     ],
     "My ___ ___ a lot.": [
-      { text: "knee hurt", audio: "/audio/week33_easy/mindmap_branch_d1p8m.mp3" },
-      { text: "arm hurt", audio: "/audio/week33_easy/mindmap_branch_d2q2r.mp3" },
-      { text: "head hurt", audio: "/audio/week33_easy/mindmap_branch_d3v5d.mp3" },
-      { text: "hand hurt", audio: "/audio/week33_easy/mindmap_branch_d4x7y.mp3" },
-      { text: "tongue hurt", audio: "/audio/week33_easy/mindmap_branch_d5m1t.mp3" },
-      { text: "finger hurt", audio: "/audio/week33_easy/mindmap_branch_d6n5k.mp3" }
+      { text: "was hurt", audio: "/audio/week33_easy/mindmap_branch_d1p8m.mp3" },
+      { text: "hurt", audio: "/audio/week33_easy/mindmap_branch_d2q2r.mp3" },
+      { text: "bled", audio: "/audio/week33_easy/mindmap_branch_d3v5d.mp3" },
+      { text: "ached", audio: "/audio/week33_easy/mindmap_branch_d4x7y.mp3" },
+      { text: "throbbed", audio: "/audio/week33_easy/mindmap_branch_d5m1t.mp3" },
+      { text: "was swollen", audio: "/audio/week33_easy/mindmap_branch_d6n5k.mp3" }
     ],
     "The nurse ___ a ___ ___ on my ___.": [
       { text: "put / cold pack / knee", audio: "/audio/week33_easy/mindmap_branch_e1f4v.mp3" },
@@ -67,7 +67,7 @@ const mindMapContent = {
       { text: "cleaned / cut / knee", audio: "/audio/week33_easy/mindmap_branch_e3s9x.mp3" },
       { text: "checked / swelling / head", audio: "/audio/week33_easy/mindmap_branch_e4k3w.mp3" },
       { text: "gave / ice pack / arm", audio: "/audio/week33_easy/mindmap_branch_e5m2p.mp3" },
-      { text: "sat with / hurt boy / nurse room", audio: "/audio/week33_easy/mindmap_branch_e6n1j.mp3" }
+      { text: "sat with / a hurt boy / nurse's room", audio: "/audio/week33_easy/mindmap_branch_e6n1j.mp3" }
     ],
     "I learned: always ___ ___.": [
       { text: "walk carefully", audio: "/audio/week33_easy/mindmap_branch_f1p6m.mp3" },
