@@ -29,7 +29,7 @@ export default {
 
     Trong môn thể thao đội, các cầu thủ chuyền bóng cho nhau nhanh chóng. Họ chạy cùng nhau và quan sát đồng đội đang ở đâu.
 
-    Khi đội của bạn **ghi** được bàn thắng, mọi người cổ vũ! Thể thao là về năng lượng, chuyển động, làm việc đội nhóm, và niềm vui. Hãy chơi thể thao mỗi ngày!
+    Khi đội của bạn ghi được bàn thắng, mọi người cổ vũ! Thể thao là về năng lượng, chuyển động, làm việc đội nhóm, và niềm vui. Hãy chơi thể thao mỗi ngày!
   `,
   
   check_questions: [

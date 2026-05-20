@@ -14,7 +14,7 @@ The people who watch at home are called the **audience**. They sit in front of t
 Thanks to modern technology, a **reporter** can **describe** an **exciting** **scene** and the **audience** can watch it at the same moment — even if they are on the other side of the world!`,
   content_vi: `Bạn có bao giờ tự hỏi tin tức từ phóng viên đến màn hình TV của bạn như thế nào không?
 
-Tất cả bắt đầu khi có điều gì đó hào hứng hoặc quan trọng đang xảy ra trên thế giới. Một phóng viên cầm máy quay và **micro** rồi đến hiện trường. Họ đứng trước máy quay và mô tả những gì họ thấy ở khung cảnh đó.
+Tất cả bắt đầu khi có điều gì đó hào hứng hoặc quan trọng đang xảy ra trên thế giới. Một phóng viên cầm máy quay và micro rồi đến hiện trường. Họ đứng trước máy quay và mô tả những gì họ thấy ở khung cảnh đó.
 
 Nhưng làm thế nào mà buổi phát sóng trực tiếp di chuyển xa như vậy? Máy quay gửi tín hiệu lên một vệ tinh trong không gian. Vệ tinh phản chiếu tín hiệu đó xuống đài truyền hình. Tại đài, một nhóm kiểm tra bản tin và phát ra cho hàng triệu gia đình.
 

@@ -33,7 +33,7 @@ Do you like sports? Let's learn about the science in sports!
     
     Trong môn thể thao đội, bạn chuyền bóng cho bạn bè. Bạn làm việc cùng nhau. Đây là làm việc nhóm!
     
-    Khi bạn **ghi** một bàn thắng, mọi người cổ vũ! Thể thao vui! Chúng cũng dùng khoa học!
+    Khi bạn ghi một bàn thắng, mọi người cổ vũ! Thể thao vui! Chúng cũng dùng khoa học!
   `,
   
   check_questions: [

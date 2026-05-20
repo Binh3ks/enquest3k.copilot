@@ -15,4 +15,14 @@ export default {
     { id: 13, text: "At home, Jake recovered quickly.", vi: "Ở nhà, Jake hồi phục nhanh." },
     { id: 14, text: "He learned one very important lesson: always walk carefully, even when you are late.", vi: "Cậu học được một bài học quan trọng: luôn đi cẩn thận, kể cả khi bị muộn." }
   ]
+,
+  content_en: `Something **terrible** happened at school last Monday. Jake was running in the corridor because he was late for class. He forgot to **walk carefully**.
+
+**Suddenly**, Jake **hit** his knee on the corner of a table. He **fell down** hard and **broke** the glass cup that another student was holding. His arm **hurt** when he tried to catch the falling cup.
+
+Jake **bit** his tongue when he **fell down**, and his hand **hit** the floor. He **began** to cry because everything **hurt** at once. His teacher came quickly and called the school nurse.
+
+The nurse **put** a cold pack on Jake's knee and arm. She **told** Jake it was an important lesson — everyone must **walk carefully** in the corridor. Jake **understood** that running in the corridor was dangerous.
+
+At home, Jake **recovered** quickly. He **learned** one very important lesson: always **walk carefully**, even when you are late.`
 };

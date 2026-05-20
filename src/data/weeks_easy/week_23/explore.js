@@ -14,15 +14,15 @@ The way paper feels is called **texture**. Rough paper has a bumpy **texture** t
 **Symmetry** means both sides look the same. To **create** **symmetry**, **paint** on one side, then **fold** the paper. The **pigment** copies to the other side!
 
 Then use **scissors** to **cut** the shape. Add **color**, then **glue** it onto another piece of paper. Your art is ready!`,
-  content_vi: `Khi chung ta paint mot **picture**, chung ta dung **pigment** de tao color cho no.
+  content_vi: `Khi chung ta paint mot picture, chung ta dung pigment de tao color cho no.
 
-Ban co biet chung ta co the tron **pigment** de tao mau moi khong? Do + xanh lam = tim. Do + vang = cam. Xanh lam + vang = xanh la!
+Ban co biet chung ta co the tron pigment de tao mau moi khong? Do + xanh lam = tim. Do + vang = cam. Xanh lam + vang = xanh la!
 
-Chung ta dung brush de dua **pigment** len giay. Hay cam brush carefully de co duong net min.
+Chung ta dung brush de dua pigment len giay. Hay cam brush carefully de co duong net min.
 
-Cach giay cam nhan duoc goi la **texture**. Giay tho giu paint tot. Hay chon giay carefully!
+Cach giay cam nhan duoc goi la texture. Giay tho giu paint tot. Hay chon giay carefully!
 
-**Symmetry** co nghia la ca hai ben trong giong nhau. De create **symmetry**, hay paint mot ben, roi fold giay lai. **Pigment** in sang ben kia!
+Symmetry co nghia la ca hai ben trong giong nhau. De create symmetry, hay paint mot ben, roi fold giay lai. Pigment in sang ben kia!
 
 Sau do dung scissors de cut hinh. Them color, roi glue len mot to giay khac. Tac pham nghe thuat cua ban da san sang!`,
   check_questions: [
