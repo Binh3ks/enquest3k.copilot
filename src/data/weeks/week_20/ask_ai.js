@@ -16,7 +16,7 @@ export default {
       context_en: "The street was quiet.",
       question_word_bank: ["What","When","Where","Who","Why","How"],
       question_frame: "___ was this street when you were young?",
-      correctWord: "What"
+      correctWord: "How"
     },
     {
       nova_says: "There used to be a small market on this corner.",

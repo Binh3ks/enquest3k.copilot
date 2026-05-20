@@ -2,8 +2,8 @@ export default {
   title: "Counting in Class",
   image_url: "/images/week8/read_cover_w08.jpg",
   audio_url: "/audio/week8_easy/read_explore_main.mp3",
-  content_en: "Today I am at school. I look around my classroom. There are desks in neat rows in my room. There are chairs too. I sit on a chair at a desk. I open my bag and take out my pencil. In my pencil case there are markers. The teacher writes on the board. There are words on the board! On the wall there are shelves. There are books on the shelves. We do art today. There are crayons and papers on the desks. I love my classroom! There are so many things here.",
-  content_vi: "Hôm nay tôi đến trường. Tôi nhìn quanh lớp học của mình. Có những cái bàn trong phòng tôi. Cũng có những chiếc ghế. Tôi ngồi trên ghế tại bàn. Tôi mở túi. Trong túi có bút chì. Cũng có bút lông trong hộp bút. Giáo viên viết lên bảng. Có chữ trên bảng! Trên tường có kệ sách. Có sách trên kệ. Hôm nay chúng tôi làm nghệ thuật. Có bút sáp và tờ giấy trên bàn. Tôi yêu lớp học của mình! Có rất nhiều thứ ở đây.",
+  content_en: "Today I am at school. I **look around** my classroom. There are desks **in neat rows** in my room. There are chairs too. I **sit on** a chair **at a desk**. I **open my bag** and **take out** my pencil. In my pencil case there are **markers**. The teacher **writes on** the board. There are words **on the board**! **On the wall** there are shelves. There are books **on the shelves**. We do art today. There are crayons and papers **on the desks**. I love my classroom! There are so many things here.",
+  content_vi: "Hôm nay tôi đến trường. Tôi nhìn quanh lớp học của mình. Có những cái bàn xếp thẳng hàng trong phòng. Cũng có những chiếc ghế. Tôi ngồi trên ghế ở bàn. Tôi mở túi và lấy bút chì. Trong hộp bút có bút lông. Giáo viên viết lên bảng. Có chữ trên bảng! Trên tường có kệ sách. Có sách trên kệ. Hôm nay chúng tôi làm nghệ thuật. Có bút sáp và giấy trên bàn. Tôi yêu lớp học của mình! Có rất nhiều thứ ở đây.",
   comprehension_questions: [
     { id: 1, question_en: "What is in the student's bag?", answer: ["pencils", "markers", "pencils and markers"], clue_statement: "There are pencils and markers in the bag.", hint_en: "Look in the bag...", hint_vi: "Nhìn vào trong túi..." },
     { id: 2, question_en: "What is on the shelves?", answer: ["books", "there are books", "books on the shelves"], clue_statement: "There are books on the shelves.", hint_en: "The shelves have...", hint_vi: "Kệ có..." },
@@ -12,7 +12,7 @@ export default {
     { id: 5, question_en: "Where do I sit?", answer: ["chair at a desk", "on a chair at a desk"], clue_statement: "I sit on a chair at a desk.", hint_en: "A place...", hint_vi: "Một nơi..." },
     { id: 6, question_en: "What is in my pencil case?", answer: ["markers", "There are markers"], clue_statement: "There are markers in my pencil case.", hint_en: "Look inside the pencil case...", hint_vi: "Nhìn vào hộp bút..." },
     { id: 7, question_en: "Where does the teacher write?", answer: ["board", "on the board"], clue_statement: "The teacher writes on the board.", hint_en: "A place...", hint_vi: "Một nơi..." },
-    { id: 8, question_en: "What are on the board?", answer: ["words", "the words", "There are words"], clue_statement: "There are words on the board.", hint_en: "Look on the board...", hint_vi: "Nhìn vào board..." }
+    { id: 8, question_en: "What is on the board?", answer: ["words", "the words", "There are words"], clue_statement: "There are words on the board.", hint_en: "Look on the board...", hint_vi: "Nhìn vào bảng..." }
   ],
   question: {
     text_en: "What is in your classroom? Tell me: There are...",
