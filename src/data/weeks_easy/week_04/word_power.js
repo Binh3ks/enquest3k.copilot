@@ -9,7 +9,7 @@ export default {
       definition_vi: "rất vui",
       example: "I am very happy today.",
       model_sentence: "I am very happy when I play with my toys.",
-      collocation: "very happy / very happy today / feel very happy",
+      collocation: "very happy / so happy / feel happy",
       image_url: "/images/week4_easy/wordpower_very_happy.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "rất buồn cười",
       example: "This joke is so funny.",
       model_sentence: "My dad is so funny when he tells stories.",
-      collocation: "so funny / so very funny / really funny",
+      collocation: "so funny / very funny / feel funny",
       image_url: "/images/week4_easy/wordpower_so_funny.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "thích chơi",
       example: "I like playing games.",
       model_sentence: "I like playing with my friends every day.",
-      collocation: "like playing / like playing games / love playing",
+      collocation: "like playing / enjoy playing / love playing",
       image_url: "/images/week4_easy/wordpower_like_playing.jpg"
     }
   ]

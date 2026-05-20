@@ -9,7 +9,7 @@ export default {
       definition_vi: "tóc dài đến vai hoặc dài hơn",
       example: "My sister has long hair down to her back.",
       model_sentence: "Many girls like to have long hair because it looks beautiful.",
-      collocation: "have long hair / long beautiful hair / short or long hair",
+      collocation: "long hair / have long hair / short hair",
       image_url: "/images/week3_easy/wordpower_long_hair.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "đôi mắt to",
       example: "The baby has big eyes like her mother.",
       model_sentence: "People with big eyes often look cute and friendly.",
-      collocation: "have big eyes / big bright eyes / wide eyes",
+      collocation: "big eyes / have big eyes / wide eyes",
       image_url: "/images/week3_easy/wordpower_big_eyes.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "đeo kính để nhìn rõ hơn",
       example: "My teacher wears glasses when she reads books.",
       model_sentence: "Many students wear glasses to help them see the board clearly.",
-      collocation: "wear glasses / wear glasses to read / put on glasses",
+      collocation: "wear glasses / put on glasses / need glasses",
       image_url: "/images/week3_easy/wordpower_wear_glasses.jpg"
     }
   ]

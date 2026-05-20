@@ -9,7 +9,7 @@ export default {
       definition_vi: "thị trấn chợ lâu đời",
       example: "There was an old market town near the river.",
       model_sentence: "I live in an old market town.",
-      collocation: "an old market town / a historic market town / the old market",
+      collocation: "an old market town / historic market town / the old market",
       image_url: "/images/week20/wordpower_market_town.jpg",
       audio_word: "/audio/week20_easy/wordpower_market_town.mp3"
     },
