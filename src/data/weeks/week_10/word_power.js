@@ -9,7 +9,7 @@ export default {
       definition_vi: "vùng nông thôn yên bình",
       example: "The peaceful countryside is beautiful.",
       model_sentence: "I love the peaceful countryside.",
-      collocation: "peaceful countryside / quiet countryside / out in the countryside",
+      collocation: "peaceful countryside / quiet countryside / the countryside",
       image_url: "/images/week10/wordpower_peaceful_countryside.jpg",
       audio_word: "/audio/week10/wordpower_peaceful_countryside.mp3",
       audio_definition: "/audio/week10/wordpower_def_peaceful_countryside.mp3",

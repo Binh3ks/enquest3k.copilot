@@ -9,7 +9,7 @@ export default {
       definition_vi: "cảm thấy vui vẻ",
       example: "I feel happy when I play.",
       model_sentence: "I feel happy when I sing my favorite song.",
-      collocation: "feel happy / feel really happy / feel happy about",
+      collocation: "feel happy / feel really happy / look happy",
       image_url: "/images/week4/wordpower_feel_happy.jpg",
       audio_word: "/audio/week4/wordpower_feel_happy.mp3",
       audio_definition: "/audio/week4/wordpower_def_feel_happy.mp3",

@@ -9,7 +9,7 @@ export default {
       definition_vi: "Hoàn thành bài tập ở nhà.",
       example: "I do my homework every evening after dinner.",
       model_sentence: "Every student should do homework to practice what they learned in class.",
-      collocation: "do your homework / finish your homework / complete your homework",
+      collocation: "do homework / do your homework / finish homework",
       image_url: "/images/week1/wordpower_do_homework.jpg"
     },
     {
@@ -33,7 +33,7 @@ export default {
       definition_vi: "Tập trung và lắng nghe cẩn thận.",
       example: "I always pay attention when my teacher is talking.",
       model_sentence: "Students should pay attention in class to understand the lesson better.",
-      collocation: "pay attention / pay close attention / pay attention in class",
+      collocation: "pay attention / pay close attention / listen carefully",
       image_url: "/images/week1/wordpower_pay_attention.jpg"
     }
   ]

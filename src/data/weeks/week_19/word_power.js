@@ -15,7 +15,7 @@ export default {
       audio_definition: "/audio/week19/wordpower_def_kindergarten.mp3",
       audio_example: "/audio/week19/wordpower_ex_kindergarten.mp3",
       audio_collocation: "/audio/week19/wordpower_coll_kindergarten.mp3",
-      audio_model: "/audio/week19/wordpower_model_kindergarten.mp3",
+      audio_model: "/audio/week19/wordpower_model_kindergarten.mp3"
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export default {
       audio_definition: "/audio/week19/wordpower_def_grow.mp3",
       audio_example: "/audio/week19/wordpower_ex_grow.mp3",
       audio_collocation: "/audio/week19/wordpower_coll_grow.mp3",
-      audio_model: "/audio/week19/wordpower_model_grow.mp3",
+      audio_model: "/audio/week19/wordpower_model_grow.mp3"
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ export default {
       audio_definition: "/audio/week19/wordpower_def_past.mp3",
       audio_example: "/audio/week19/wordpower_ex_past.mp3",
       audio_collocation: "/audio/week19/wordpower_coll_past.mp3",
-      audio_model: "/audio/week19/wordpower_model_past.mp3",
+      audio_model: "/audio/week19/wordpower_model_past.mp3"
     },
     {
       id: 4,
@@ -66,7 +66,7 @@ export default {
       audio_definition: "/audio/week19/wordpower_def_young.mp3",
       audio_example: "/audio/week19/wordpower_ex_young.mp3",
       audio_collocation: "/audio/week19/wordpower_coll_young.mp3",
-      audio_model: "/audio/week19/wordpower_model_young.mp3",
+      audio_model: "/audio/week19/wordpower_model_young.mp3"
     },
     {
       id: 5,
@@ -83,7 +83,7 @@ export default {
       audio_definition: "/audio/week19/wordpower_def_album.mp3",
       audio_example: "/audio/week19/wordpower_ex_album.mp3",
       audio_collocation: "/audio/week19/wordpower_coll_album.mp3",
-      audio_model: "/audio/week19/wordpower_model_album.mp3",
+      audio_model: "/audio/week19/wordpower_model_album.mp3"
     },
     {
       id: 6,
@@ -100,7 +100,7 @@ export default {
       audio_definition: "/audio/week19/wordpower_def_memory.mp3",
       audio_example: "/audio/week19/wordpower_ex_memory.mp3",
       audio_collocation: "/audio/week19/wordpower_coll_memory.mp3",
-      audio_model: "/audio/week19/wordpower_model_memory.mp3",
-    },
+      audio_model: "/audio/week19/wordpower_model_memory.mp3"
+    }
   ]
 };

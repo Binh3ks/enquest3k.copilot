@@ -7,7 +7,7 @@ export default {
       definition_vi: "xếp đồ vào túi",
       example_en: "I pack my bag every morning.",
       example_vi: "Tôi xếp đồ vào túi mỗi sáng.",
-      collocation_en: "pack your bag / pack your bag carefully / get your bag ready",
+      collocation_en: "pack your bag / pack carefully / get your bag ready",
       collocation_vi: "xếp túi cẩn thận",
       model_sentence_en: "You should pack your bag before school.",
       model_sentence_vi: "Bạn nên xếp túi trước khi đi học.",

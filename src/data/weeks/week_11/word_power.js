@@ -26,7 +26,7 @@ export default {
       definition_vi: "đọc ở thư viện",
       example: "I read at the library every week.",
       model_sentence: "I like to read at the library because it is quiet.",
-      collocation: "at the library / go to the library / read at the library",
+      collocation: "at the library / go to the library / read quietly",
       image_url: "/images/week11/wordpower_read_at_library.jpg",
       audio_word: "/audio/week11/wordpower_read_at_the_library.mp3",
       audio_definition: "/audio/week11/wordpower_def_read_at_the_library.mp3",

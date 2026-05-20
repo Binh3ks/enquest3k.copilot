@@ -43,7 +43,7 @@ export default {
       definition_vi: "ở bên cạnh cửa",
       example: "The chair is next to the door.",
       model_sentence: "I stand next to the door and wait.",
-      collocation: "next to the door / stand next to the door / wait by the door",
+      collocation: "next to the door / stand next to the door / sit next to the door",
       image_url: "/images/week6/wordpower_next_to_the_door.jpg",
       audio_word: "/audio/week6/wordpower_next_to_the_door.mp3",
       audio_definition: "/audio/week6/wordpower_def_next_to_the_door.mp3",

@@ -9,7 +9,7 @@ export default {
       definition_vi: "trông đẹp",
       example: "You look beautiful today.",
       model_sentence: "My mother looks beautiful in her red dress.",
-      collocation: "look beautiful / look nice / look great today",
+      collocation: "look beautiful / look nice / look great",
       image_url: "/images/week3/wordpower_look_beautiful.jpg"
     },
     {
@@ -21,7 +21,7 @@ export default {
       definition_vi: "rất trẻ",
       example: "My baby sister is very young.",
       model_sentence: "Very young children need to sleep a lot every day.",
-      collocation: "very young / still very young / a very young child",
+      collocation: "very young / still young / young child",
       image_url: "/images/week3/wordpower_very_young.jpg"
     },
     {

@@ -9,7 +9,7 @@ export default {
       definition_vi: "Chăm sóc ai đó và đảm bảo họ an toàn và khỏe mạnh.",
       example: "My mother takes care of me when I am sick.",
       model_sentence: "Parents take care of their children every day.",
-      collocation: "take care of / take good care of / take care of yourself",
+      collocation: "take care of / take good care of / care for",
       image_url: "/images/week2/wordpower_take_care_of.jpg"
     },
     {
