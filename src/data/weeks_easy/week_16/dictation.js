@@ -14,7 +14,7 @@ export default {
     { id: 12, text: "The ball is moving!", meaning: "Bóng đang di chuyển!" },
     { id: 13, text: "Our team is playing.", meaning: "Đội chúng tôi đang chơi." },
     { id: 14, text: "Everyone is cheering.", meaning: "Mọi người đang cổ vũ." },
-    { id: 15, text: ""Go, go!" they shout.", meaning: ""Lên nào!" họ hét." },
+    { id: 15, text: "\"Go, go!\" they shout.", meaning: "\"Lên nào!\" họ hét." },
     { id: 16, text: "Oh no!", meaning: "Ôi không!" },
     { id: 17, text: "I throw the ball.", meaning: "Tôi ném bóng." },
     { id: 18, text: "That is wrong!", meaning: "Sai rồi!" },
@@ -23,6 +23,10 @@ export default {
     { id: 21, text: "They are jumping up.", meaning: "Họ đang nhảy lên." },
     { id: 22, text: "They are happy.", meaning: "Họ vui." },
     { id: 23, text: "I want to score a goal too!", meaning: "Tôi muốn ghi bàn thắng nữa!" },
-    { id: 24, text: "I love soccer!", meaning: "Tôi yêu bóng đá!" }
+    { id: 24, text: "I love soccer!", meaning: "Tôi yêu bóng đá!" },
+    { id: 25, text: "My mom watches me.", meaning: "" },
+    { id: 26, text: "The grass is green.", meaning: "" },
+    { id: 27, text: "My dad takes photos.", meaning: "" },
+    { id: 28, text: "I drink water after the game.", meaning: "" }
   ]
 };

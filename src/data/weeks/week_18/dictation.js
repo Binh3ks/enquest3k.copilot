@@ -8,7 +8,7 @@ export default {
     { id: 6, text: "He picks up a toy microphone and stands next to a toy camera.", meaning: "Cậu cầm lấy một micro đồ chơi và đứng cạnh một máy quay đồ chơi." },
     { id: 7, text: "The classroom is now a studio.", meaning: "Lớp học giờ là một trường quay." },
     { id: 8, text: "Alex speaks warmly into the microphone.", meaning: "Alex nói ấm áp vào micro." },
-    { id: 9, text: "He says: "Welcome to the live morning news from Room 5!" Alex begins to describe the scene around him.", meaning: "Cậu nói: "Chào mừng đến với tin tức buổi sáng trực tiếp từ Phòng 5!" Alex bắt đầu mô tả khung cảnh xung quanh mình." },
+    { id: 9, text: "He says: \"Welcome to the live morning news from Room 5!\" Alex begins to describe the scene around him.", meaning: "Cậu nói: \"Chào mừng đến với tin tức buổi sáng trực tiếp từ Phòng 5!\" Alex bắt đầu mô tả khung cảnh xung quanh mình." },
     { id: 10, text: "He can see Tom drawing a rocket.", meaning: "Cậu có thể thấy Tom đang vẽ tên lửa." },
     { id: 11, text: "Sara is reading quietly.", meaning: "Sara đang đọc yên tĩnh." },
     { id: 12, text: "Mr.", meaning: "Thầy Lee đang viết trên bảng." },
@@ -21,11 +21,11 @@ export default {
     { id: 19, text: "She says yes and smiles.", meaning: "Alex hỏi cô bé đang làm gì." },
     { id: 20, text: "Alex asks what she is doing.", meaning: "Maya nói cô bé đang viết bản tin về động vật biển." },
     { id: 21, text: "Maya says she is writing a report about ocean animals.", meaning: "Alex quay lại máy quay." },
-    { id: 22, text: "Alex turns back to the camera.", meaning: ""Đây rồi, khán giả!" },
-    { id: 23, text: ""There you have it, audience!", meaning: "Một bản tin trực tiếp từ Phòng 5!" },
+    { id: 22, text: "Alex turns back to the camera.", meaning: "\"Đây rồi, khán giả!" },
+    { id: 23, text: "\"There you have it, audience!", meaning: "Một bản tin trực tiếp từ Phòng 5!" },
     { id: 24, text: "A live report from Room 5!", meaning: "Đây là Alex, phóng viên của trường." },
-    { id: 25, text: "This is Alex, your school reporter.", meaning: "Tạm biệt hẹn gặp lại!" Mọi người vỗ tay và reo hò." },
-    { id: 26, text: "Back to you!" Everyone claps and cheers.", meaning: "Alex rất thích làm phóng viên!" },
+    { id: 25, text: "This is Alex, your school reporter.", meaning: "Tạm biệt hẹn gặp lại!\" Mọi người vỗ tay và reo hò." },
+    { id: 26, text: "Back to you!\" Everyone claps and cheers.", meaning: "Alex rất thích làm phóng viên!" },
     { id: 27, text: "Alex loves being a reporter!", meaning: "" }
   ]
 };

@@ -14,8 +14,10 @@ export default {
     { id: 12, text: "There is a new bridge.", meaning: "Có một cầu mới." },
     { id: 13, text: "But the old temple is still.", meaning: "Nhưng ngôi đền cũ vẫn còn." },
     { id: 14, text: "My grandmother says, 'There was a village here before.' Now it is a big town.", meaning: "Bà tôi nói, 'Có một làng ở đây trước kia.' Bây giờ là một thị trấn lớn." },
-    { id: 15, text: "But the temple is still beautiful.", meaning: "Nhưng ngôi đền vẫn đẹp." },
-    { id: 16, text: "It is our old history.", meaning: "Đó là lịch sử cũ của chúng tôi." },
-    { id: 17, text: "I love my town!", meaning: "Tôi yêu thị trấn của tôi!" }
+    { id: 15, text: "The new buildings are tall and bright.", meaning: "Nhưng ngôi đền vẫn đẹp." },
+    { id: 16, text: "The old market is gone.", meaning: "Đó là lịch sử cũ của chúng tôi." },
+    { id: 17, text: "But the temple is still beautiful.", meaning: "Tôi yêu thị trấn của tôi!" },
+    { id: 18, text: "It is our old history.", meaning: "" },
+    { id: 19, text: "I love my town!", meaning: "" }
   ]
 };

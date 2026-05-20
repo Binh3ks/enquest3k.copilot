@@ -5,7 +5,7 @@ export default {
     { id: 3, text: "Big drops of water are falling from the sky.", meaning: "Những giọt nước lớn đang rơi từ bầu trời." },
     { id: 4, text: "I look outside the window.", meaning: "Tôi nhìn ra ngoài cửa sổ." },
     { id: 5, text: "The streets are wet.", meaning: "Đường phố ướt mèm." },
-    { id: 6, text: "My teacher says: "It is raining, so please be careful!" I am wearing my blue coat today.", meaning: "Giáo viên tôi nói: "Trời đang mưa, hãy cẩn thận!" Tôi đang mặc chiếc áo khoác màu xanh hôm nay." },
+    { id: 6, text: "My teacher says: \"It is raining, so please be careful!\" I am wearing my blue coat today.", meaning: "Giáo viên tôi nói: \"Trời đang mưa, hãy cẩn thận!\" Tôi đang mặc chiếc áo khoác màu xanh hôm nay." },
     { id: 7, text: "It keeps me dry and warm.", meaning: "Nó giữ tôi khô ráo và ấm." },
     { id: 8, text: "My friend Linh is wearing her red hat.", meaning: "Bạn Linh đang mặc chiếc mũ màu đỏ." },
     { id: 9, text: "She looks so funny!", meaning: "Trông buồn cười lắm!" },

@@ -12,7 +12,7 @@ export default {
     { id: 10, text: "I was noisy.", vi: "Tôi ồn ào." },
     { id: 11, text: "But here I was quiet.", vi: "Nhưng ở đây tôi yên lặng." },
     { id: 12, text: "I was sleeping.", vi: "Tôi ngủ say." },
-    { id: 13, text: "My grandma says, "You were cute." Here is another photo.", vi: "Bà tôi nói, "Con dễ thương." Đây là ảnh khác." },
+    { id: 13, text: "My grandma says, \"You were cute.\" Here is another photo.", vi: "Bà tôi nói, \"Con dễ thương.\" Đây là ảnh khác." },
     { id: 14, text: "I was in kindergarten.", vi: "Tôi ở mẫu giáo." },
     { id: 15, text: "I was five.", vi: "Tôi năm tuổi." },
     { id: 16, text: "I was not a baby.", vi: "Tôi không phải em bé." },

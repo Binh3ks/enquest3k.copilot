@@ -12,7 +12,7 @@ export default {
     { id: 10, text: "I was noisy.", meaning: "Tôi ồn ào." },
     { id: 11, text: "But here I was quiet.", meaning: "Nhưng ở đây tôi yên lặng." },
     { id: 12, text: "I was sleeping.", meaning: "Tôi ngủ say." },
-    { id: 13, text: "My grandma says, "You were cute." Here is another photo.", meaning: "Bà tôi nói, "Con dễ thương." Đây là ảnh khác." },
+    { id: 13, text: "My grandma says, \"You were cute.\" Here is another photo.", meaning: "Bà tôi nói, \"Con dễ thương.\" Đây là ảnh khác." },
     { id: 14, text: "I was in kindergarten.", meaning: "Tôi ở mẫu giáo." },
     { id: 15, text: "I was five.", meaning: "Tôi năm tuổi." },
     { id: 16, text: "I was not a baby.", meaning: "Tôi không phải em bé." },

@@ -20,7 +20,7 @@ export default {
     { id: 18, text: "Our team is playing well.", vi: "Đội chúng tôi đang chơi tốt." },
     { id: 19, text: "We are working together.", vi: "Chúng tôi làm việc cùng nhau." },
     { id: 20, text: "Everyone is cheering.", vi: "Mọi người đang cổ vũ." },
-    { id: 21, text: ""Go, go, go!" they shout.", vi: ""Lên nào, lên nào!" họ hét." },
+    { id: 21, text: "\"Go, go, go!\" they shout.", vi: "\"Lên nào, lên nào!\" họ hét." },
     { id: 22, text: "Oh no!", vi: "Ôi không!" },
     { id: 23, text: "I throw the ball with my hands.", vi: "Tôi ném bóng bằng tay." },
     { id: 24, text: "That is a mistake!", vi: "Đó là sai lầm!" },
