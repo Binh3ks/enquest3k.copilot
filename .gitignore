@@ -83,3 +83,4 @@ API keys.txt
 .frontend.pid
 .server.pid
 _update_*.py
+docs/ARCHITECTURE.md
