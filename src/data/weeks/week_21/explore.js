@@ -15,9 +15,8 @@ export default {
 
  In Africa, scientist Jane Goodall **watched** wild chimpanzees every day for over 60 years.
  She **listened** carefully to their sounds, **talked** to local guides, and **cleaned** her notes every evening.
- She **started** a new page every morning and **finished** each entry with data: how far the animals **walked**, how long they **played**, and what they **cooked** with tools.
+ Each morning she **started** a new page and **finished** each entry with data: how far the animals **walked**, how long they **played**, and what they **cooked** with tools.
 
- Today, astronauts on the International Space Station still keep science logs.
  These journals are our map of the natural world, built one careful observation at a time.
  `,
   content_vi: `

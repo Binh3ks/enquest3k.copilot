@@ -1,13 +1,13 @@
 export default {
   title: "The Time Detective Questions",
   image_url: "/images/week22/read_cover_w22.jpg",
-  content_en: "Nova was a detective in the beautiful city of Hội An, Vietnam. She **was working on** a difficult case. She **opened her** notebook and **began the interview** in a quiet tea shop near the river. The streets outside were calm and peaceful.
+  content_en: "Nova was a detective in the beautiful city of Hoi An, Vietnam. She **was working on** a difficult case. She **opened her** notebook and **began the interview** in a quiet tea shop near the river. The streets outside were calm and peaceful. She worked patiently and calmly.
 
-Nova **asked one** question at a time. The suspect **answered clearly** and without hesitation. Nova **wrote every** answer **as a** clue **in her notebook**.
+Nova **asked one** question at a time. The suspect **answered clearly** and without hesitation. Nova **wrote every** answer **as a** clue **in her notebook**. Nova wrote the answers carefully in her book.
 
-She **asked about yesterday** morning and what the suspect **did last night**. She also asked about events **from last week**. The suspect **remembered everything clearly**.
+She **asked about yesterday** morning and what the suspect **did last night**. She also asked about events **from last week**. The suspect **remembered everything clearly**. The tea shop was quiet and the river sparkled in the sunlight.
 
-Nova **checked every** clue **in her notebook** carefully. Then she **wrote her final** report and **solved the** case! Well done, detective Nova!",
+Nova **checked every** clue **in her notebook** carefully. Then she **wrote her final** report and **solved the** case! The tea shop was warm and quiet. Well done, detective Nova!",
   content_vi: "Nova là một thám tử ở thành phố đẹp Hội An, Việt Nam. Cô ấy **đang làm việc** với một case khó. Cô ấy **mở sổ của cô** và **bắt đầu phỏng vấn** trong một quán trà yên tĩnh gần sông.
 
 Nova **hỏi từng** câu hỏi một. Nghi phạm **trả lời rõ ràng** và không do dự. Nova **ghi mọi** câu trả lời **như một** manh mối **vào sổ của cô**.
