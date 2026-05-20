@@ -18,4 +18,6 @@ export default {
     { id: 14, text: "There are so many things in our busy classroom!", vi: "Có rất nhiều thứ trong lớp học bận rộn của chúng tôi!" },
     { id: 15, text: "We love counting at school!", vi: "Chúng tôi thích đếm ở trường!" }
   ]
+,
+  content_en: `It is Monday morning. The students arrive **at school**. **There are 30 students in our class**! Every student has a bag. There are bags **on the floor** and **on the hooks**. There are desks **in neat rows**. There are also chairs — one chair for each student! The teacher writes **on the board**. There are markers in the tray next to the board. There are pencils **in every pencil case**. There are papers **on each desk** for today's art project. There are crayons and markers in the art box. There are three shelves **on the wall**, full of books. There are **so many things** in our busy **classroom**! We love counting **at school**!`
 };

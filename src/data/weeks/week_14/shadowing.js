@@ -14,4 +14,6 @@ export default {
     { id: 12, text: "Thank you for listening!", vi: "Cảm ơn bạn đã lắng nghe tôi!" },
     { id: 13, text: "This is my special day!", vi: "Bạn có câu hỏi nào về bài thuyết trình của tôi không?" }
   ]
+,
+  content_en: `Welcome to my presentation! My name is Emma and I am 8 years old. Today I present my poster because I want to **share my world** with you. This is my family. I have 4 people in my family: my mom, my dad, my sister, and me. Now I talk about my talents! I can **sing very well**, and I can also dance when I am happy. I am good at drawing too. When I **stand here**, I **feel very confident** because the audience **listen carefully**. I **introduce myself** with a big smile, and then I describe my project **in detail**. I am **so proud of my work**. **Thank you for listening**! This is my special day!`
 };

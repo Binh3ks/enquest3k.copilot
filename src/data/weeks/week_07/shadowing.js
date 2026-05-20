@@ -17,4 +17,6 @@ export default {
     { id: 13, text: "Sam is happy.", vi: "Sam rất vui." },
     { id: 14, text: "He has all his school supplies!", vi: "Bé có tất cả đồ dùng học tập!" }
   ]
+,
+  content_en: `Sam goes to school today. There is a backpack on his chair. He looks inside. There is a pen **in the pencil case**. There is a ruler **next to the pen**. There is an eraser **in the pencil case** too. Sam checks his desk. There is a book **on the desk**. There is a notebook next to the book. **At school**, there is a whiteboard **in the classroom**. There is a computer on the teacher's desk. There is a teacher **near the whiteboard**. The teacher says, "Welcome! There is a pencil case **for everyone**!" Sam is happy. He has all his school supplies!`
 };

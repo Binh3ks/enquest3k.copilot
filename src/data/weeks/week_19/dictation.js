@@ -32,4 +32,6 @@ export default {
     { id: 30, text: "The past was different.", meaning: "Quá khứ khác rồi." },
     { id: 31, text: "It helps me remember who I was growing up.", meaning: "Nó giúp tôi nhớ tôi đã từng là ai khi lớn lên." }
   ]
+,
+  content_en: `Today I found an album in my grandma's house. It is full of photos from the past. Look at this one! Who is this baby? My mom says, \\`
 };

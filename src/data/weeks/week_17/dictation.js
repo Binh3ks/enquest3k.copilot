@@ -28,4 +28,6 @@ export default {
     { id: 26, text: "Nam closes his umbrella.", meaning: "Nam đóng ô lại." },
     { id: 27, text: "We love learning about weather!", meaning: "Chúng tôi thích tìm hiểu về thời tiết!" }
   ]
+,
+  content_en: `Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: \\`
 };

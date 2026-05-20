@@ -28,4 +28,6 @@ export default {
     { id: 26, text: "Back to you!\" Everyone claps and cheers.", vi: "Alex rất thích làm phóng viên!" },
     { id: 27, text: "Alex loves being a reporter!", vi: "" }
   ]
+,
+  content_en: `Alex loves watching the news on TV. Today his class is doing something exciting! They are making a school TV show. Alex has a special job. He is the reporter! He **picks up a toy microphone** and **stands next to a toy camera**. The classroom is now a studio. Alex speaks warmly into the microphone. He says: \\`
 };

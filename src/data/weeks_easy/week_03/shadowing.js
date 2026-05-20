@@ -14,4 +14,6 @@ export default {
     { id: 10, text: "Her hair is curly and long.", vi: "..." },
     { id: 11, text: "We are good friends and look different from each other.", vi: "..." }
   ]
+,
+  content_en: `I look in the mirror **every day**. I see my **face**. I have two brown **eyes**. I have **hair** **on my head**. My hair is **straight** and black. I am not very **tall** yet. I am short **for my age**. I have a happy **smile** today. My friend **wears glasses** to read. Her hair is **curly** and **long**. We are good friends and look different **from each other**.`
 };

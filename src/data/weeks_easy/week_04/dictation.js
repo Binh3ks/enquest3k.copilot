@@ -11,4 +11,6 @@ export default {
     { id: 9, text: "They make me feel good every day.", meaning: "Chúng làm cho tôi cảm thấy tốt mỗi ngày." },
     { id: 10, text: "Every afternoon is a happy time for me!", meaning: "Mỗi buổi chiều là một khoảng thời gian hạnh phúc cho tôi!" }
   ]
+,
+  content_en: `My name is Mia. I **play with** my toys **every afternoon**. I **draw pictures** of animals and flowers. I **read books** **before bed**. **When I play**, I smile. **When I draw**, I laugh with joy. **When I read**, I feel very happy. I have many happy things. I love **each moment**. They make me feel good **every day**. **Every afternoon** is a happy time for me!`
 };

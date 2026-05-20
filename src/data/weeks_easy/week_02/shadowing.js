@@ -12,4 +12,6 @@ export default {
     { id: 8, text: "We have dinner together and talk about our day.", vi: "Chúng tôi ăn tối cùng nhau và nói về ngày của mình." },
     { id: 9, text: "I am very lucky to have my family!", vi: "Tôi rất may mắn khi có gia đình!" }
   ]
+,
+  content_en: `This is my family. My **mother** is kind. She **makes food** **for us** **every day**. My **father** is strong. He **plays with me** **in the park**. My **brother** **helps me with** my homework. My **sister** is funny. She **draws pictures** for me. We love **each other**. We **work together** as a great team. Our home is full of happiness. We **have dinner** together **every evening** and **talk about** our day. I am very lucky **to have** my family!`
 };

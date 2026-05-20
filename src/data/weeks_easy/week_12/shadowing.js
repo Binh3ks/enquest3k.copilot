@@ -11,4 +11,6 @@ export default {
     { id: 9, text: "I jump and laugh.", vi: "Tôi nhảy và cười." },
     { id: 10, text: "I can climb on the playground.", vi: "Tôi có thể leo trên sân chơi." }
   ]
+,
+  content_en: `I have many talents! I can **sing happy songs**. I sing every day at home. I can **dance when I hear music**. I dance and have fun. I can **run fast in the park**. I **run with my friends**. I can **jump over small boxes**. I jump and laugh. I can **climb on the playground**. I climb up high. I can **draw pictures of my family**. I draw with colors. I can **ride my bike to school**. I ride every morning. I can **swim in the pool**. I swim in summer. I can **cook with my mom**. I cook easy food. I can **play games with my friends**. I **play after school**. What can you do?`
 };

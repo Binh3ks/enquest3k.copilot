@@ -31,4 +31,6 @@ export default {
     { id: 29, text: "I remember when I was little.", vi: "Tôi nhớ khi tôi nhỏ bé." },
     { id: 30, text: "I love my memories!", vi: "Tôi yêu kỷ niệm!" }
   ]
+,
+  content_en: `Look! I found an album. It has old photos. This is a photo of me. I **was a baby**! I **was little**! I was little and cute. My face was round. In this photo, I was one year old. I was noisy. But here I was quiet. I was sleeping. My grandma says, \\`
 };

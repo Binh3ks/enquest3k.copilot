@@ -19,4 +19,6 @@ export default {
     { id: 17, text: "It is so exciting to be a reporter!", vi: "Thật hào hứng khi được làm phóng viên!" },
     { id: 18, text: "He loves describing what is happening at home.", vi: "Cậu thích mô tả những gì đang xảy ra ở nhà." }
   ]
+,
+  content_en: `Alex loves the news. Today he has a toy microphone and a toy camera. He wants to be a reporter! He stands in the living room. He says: \\`
 };

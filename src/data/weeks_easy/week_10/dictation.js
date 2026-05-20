@@ -16,4 +16,6 @@ export default {
     { id: 14, text: "I love the farm!", meaning: "Tôi yêu trang trại!", audio_url: "/audio/week10_easy/dictation_14.mp3" },
     { id: 15, text: "The farm is the best!", meaning: "Trang trại là nơi tuyệt nhất!", audio_url: "/audio/week10_easy/dictation_15.mp3" }
   ]
+,
+  content_en: `Today I visit a farm. The farm is quiet. I am happy! I see a big **cow**. The cow **eats grass** **in the field**. I see a **chicken**. The chicken runs very fast! The farm is clean. The field is green. I see many **trees**. The trees are tall. The countryside is peaceful. I see many animals **on the farm**. I love the farm! My uncle says the farm is nice. I agree! The farm is the best!`
 };

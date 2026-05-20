@@ -29,4 +29,6 @@ export default {
     { id: 27, text: "My dad takes photos.", meaning: "" },
     { id: 28, text: "I drink water after the game.", meaning: "" }
   ]
+,
+  content_en: `Today is my first soccer game! I am very excited. Look! I am **running very fast**. My legs are moving. This is fun! My friend is **kicking the ball**. I am **catching it**. Now I am **passing it**. The ball has energy. It is in motion. The ball is moving! Our team is **playing soccer**. Everyone is **cheering loudly**. \\`
 };

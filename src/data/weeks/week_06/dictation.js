@@ -14,4 +14,6 @@ export default {
     { id: 12, text: "The treasure is ours!", meaning: "Kho báu là của chúng tôi!", audio_url: "/audio/week6/dictation_12.mp3" },
     { id: 13, text: "Next time, I will hide the treasure next to the door!", meaning: "Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!", audio_url: "/audio/week6/dictation_13.mp3" }
   ]
+,
+  content_en: `Today is treasure hunt day! My friends and I **look for** hidden treasure. I **look on the floor**. No treasure there! I **look in the box**. Nothing! My friend finds a clue! The clue says: 'Look **next to the window**.' We run to the window. There is another clue **on the wall**! It says: 'The treasure is **in the room**. **Look under the big desk**.' We **look under the big desk**. We **find it**! A box full of gold coins! The treasure is ours! We are happy. Hide and seek is fun. Hunting for treasure makes us work together. Next time, I will hide the treasure **next to the door**!`
 };

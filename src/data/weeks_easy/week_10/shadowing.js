@@ -18,4 +18,6 @@ export default {
     { id: 14, text: "I love the farm!", vi: "Tôi yêu trang trại!" },
     { id: 15, text: "The farm is the best!", vi: "Trang trại là nơi tuyệt nhất!" }
   ]
+,
+  content_en: `Today I visit a farm. The farm is quiet. I am happy! I see a big **cow**. The cow **eats grass** **in the field**. I see a **chicken**. The chicken runs very fast! The farm is clean. The field is green. I see many **trees**. The trees are tall. The countryside is peaceful. I see many animals **on the farm**. I love the farm! My uncle says the farm is nice. I agree! The farm is the best!`
 };

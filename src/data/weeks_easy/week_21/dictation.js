@@ -17,4 +17,6 @@ export default {
     { id: 15, text: "Then we started a new board game as a family.", meaning: "Hôm qua là ngày tuyệt vời nhất!" },
     { id: 16, text: "Yesterday was the best day!", meaning: "" }
   ]
+,
+  content_en: `Yesterday was a fun day! In the morning, I **walked to school**. The sun was bright and warm. I looked at the blue sky and smiled. I talked to my friends outside the school gate. We laughed together before class started.\\n\\nAt lunchtime, I **helped my mother**. She cooked rice and vegetable soup. We cleaned the table together after eating.\\n\\nIn the afternoon, I **played soccer** with my neighbor. I watched my friend ride a bike and cheered for her. We listened to the birds sing in the trees.\\n\\nIn the evening, I **washed my hands** and sat down for dinner. After dinner, I finished all my homework. Then we started a new board game as a family. Yesterday was the best day!`
 };

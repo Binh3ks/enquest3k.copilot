@@ -11,4 +11,6 @@ export default {
     { id: 9, text: "It helps me remember all the good moments in my life.", meaning: "Nó giúp tôi nhớ lại tất cả những khoảnh khắc tốt đẹp trong cuộc sống của mình." },
     { id: 10, text: "My jar is now full of happy things!", meaning: "Bây giờ hũ của tôi đầy những thứ hạnh phúc!" }
   ]
+,
+  content_en: `My name is Sam. I have a happy jar at home. **Every day**, I put happy things in my jar. When I am playing with my dog, I **feel excited**. I put a yellow star in my jar. When I am reading a good book, I **feel calm** and **feel happy**. I put a blue heart in my jar. When I am drawing pictures, I **feel creative**. I put a green circle in my jar. My mom is friendly and funny. She makes me laugh every day. I love my happy jar. It helps me **remember all the good moments**. My jar is now full of happy things!`
 };

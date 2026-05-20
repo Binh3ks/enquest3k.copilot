@@ -18,4 +18,6 @@ export default {
     { id: 16, text: "But it is exciting!", meaning: "Nhưng nó rất thú vị!", audio_url: "/audio/week09/dictation_16.mp3" },
     { id: 17, text: "I like exploring the modern city.", meaning: "Tôi thích khám phá thành phố hiện đại.", audio_url: "/audio/week09/dictation_17.mp3" }
   ]
+,
+  content_en: `Today I visit the city! I walk on a busy street. There are many people and cars. It is a noisy place. I **hear car horns** and people talking. I see a tall building. It is very high! It is **next to the bus stop**. A yellow bus **get on the bus** near me. Many people get on the bus. There is **lots of traffic**. Many vehicles move slowly. I see another street. It is less busy than the main street. I walk there and it is quieter. The city has tall buildings, busy streets, and **lots of traffic**. But it is exciting! I like exploring the modern city. Next time, I want to ride a bus and see more buildings!`
 };

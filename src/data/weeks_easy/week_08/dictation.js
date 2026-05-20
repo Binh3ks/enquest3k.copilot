@@ -15,4 +15,6 @@ export default {
     { id: 13, text: "I love my classroom!", meaning: "Tôi yêu lớp học của mình!", audio_url: "/audio/week8_easy/dictation_13.mp3" },
     { id: 14, text: "There are so many things here.", meaning: "Có rất nhiều thứ ở đây.", audio_url: "/audio/week8_easy/dictation_14.mp3" }
   ]
+,
+  content_en: `Today I am at school. I **look around** my classroom. There are desks **in neat rows** in my room. There are chairs too. I **sit on** a chair **at a desk**. I **open my bag** and **take out** my pencil. In my pencil case there are **markers**. The teacher **writes on** the board. There are words **on the board**! **On the wall** there are shelves. There are books **on the shelves**. We do art today. There are crayons and papers **on the desks**. I love my classroom! There are so many things here.`
 };

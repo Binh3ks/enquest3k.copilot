@@ -15,4 +15,6 @@ export default {
     { id: 13, text: "We seek them again.", meaning: "Chúng tôi tìm chúng lại.", audio_url: "/audio/week6_easy/dictation_13.mp3" },
     { id: 14, text: "This game is so much fun!", meaning: "Trò chơi này vui quá!", audio_url: "/audio/week6_easy/dictation_14.mp3" }
   ]
+,
+  content_en: `Today I play a game. I **look for** my toy car. I **look on** the floor. It is not there! I **look in** the box. No toy! My friend helps me. He **looks under** the desk. He finds it! The toy car is **under the desk**! Now I **look for** my ball. It is **next to** the door. Now we play **hide and seek**. I **hide my ball** **in the box**. My friend **hides his toy** **next to** the window. We **seek them** again. This game is so much fun!`
 };

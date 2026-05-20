@@ -32,4 +32,6 @@ export default {
     { id: 30, text: "Next time, I will practice more.", vi: "Lần sau, tôi sẽ luyện tập nhiều hơn." },
     { id: 31, text: "I love playing soccer!", vi: "Tôi yêu chơi bóng đá!" }
   ]
+,
+  content_en: `Today is my first soccer game! I am very excited. My mom is **coming to watch**. My dad is bringing his camera. Look at me! I am **running very fast**. My legs are moving quickly. My heart is beating fast. This is fun! My friend is **kicking the ball** to me. I am **catching it with my foot**. Now I am **passing it to another friend**. He is **running to the goal**. Wow! The ball has energy. It is in motion. The ball is moving fast through the air. Our team is **playing soccer**. We are **working together**. Everyone is cheering. \\`
 };

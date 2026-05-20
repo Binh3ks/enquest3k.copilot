@@ -16,4 +16,12 @@ export default {
     { id: 14, text: "Every clue in her notebook had helped.", vi: "Detective Nova da giai quyet case them mot lan nua." },
     { id: 15, text: "Detective Nova had solved the case once again.", vi: "" }
   ]
+,
+  content_en: `Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful. She arrived at the scene and opened her notebook immediately. The narrow lantern-lit streets were quiet, but someone had reported a mystery **last night**.
+
+Nova began the interview calmly. She had three questions for the suspect. "Where were you **yesterday morning**?" she asked. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a new clue **in her notebook**.
+
+She asked next: "What did you do **last night** and **last week**?" Again, the suspect **answered clearly** every question. Nova studied each clue carefully in the warm lantern light.
+
+Finally, Nova organized the case file and wrote her final report. She handed the report to the local police team **in Hoi An**. Every clue in her notebook had helped. Detective Nova **had solved the case** once again.`
 };

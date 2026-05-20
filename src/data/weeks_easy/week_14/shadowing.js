@@ -21,4 +21,6 @@ export default {
     { id: 19, text: "Do you have questions?", vi: "Bạn có câu hỏi không?" },
     { id: 20, text: "This is my special day!", vi: "Đây là ngày đặc biệt của tôi!" }
   ]
+,
+  content_en: `Welcome to my presentation! My name is Emma. I am 8 years old. Today I **present my poster**. I want to **show you my world**. This is my family. I love my family. I have 4 people in my family. My mom, my dad, my sister, and me. Now I tell you about my talents. I can **sing very well**. I can also dance. I am good at drawing too. I draw animals and flowers. I **feel very confident** today. The audience **listen to me**. I **feel proud of my work**. Thank you for listening! Do you **have questions**? This is my special day!`
 };
