@@ -4,26 +4,26 @@ export default {
   image_url: "/images/week22/explore_cover_w22.jpg",
   audio_url: "/audio/week22_easy/explore_main.mp3",
   content_en: `
- Real detectives use more than their eyes — they also **use science**. Science **helps detectives solve** cases all over the world!
+ Real detectives use more than their eyes — they also use science. Science helps detectives solve cases all over the world!
 
- When something happens, a detective **goes to the** place and **looks for** clues. A clue **can be a** fingerprint, a hair, or a footprint. The detective **writes every** clue **clearly** in a notebook. Later, all these clues **go into an** official report.
+ When something happens, a detective goes to the place and looks for clues. A clue can be a fingerprint, a hair, or a footprint. The detective writes every clue **clearly** in a notebook. Later, all these clues go into an official report.
 
- Scientists discovered that every person **leaves tiny clues** wherever they go. So if a suspect **was somewhere yesterday** or **last night**, the clues **will still be** there!
+ Scientists discovered that every person leaves tiny clues wherever they go. So if a suspect was somewhere yesterday or last night, the clues will still be there!
 
- Detectives also **do interviews with** people who saw what happened. In an interview, they **ask one question** at a time and **listen to every** answer. **Did you walk here** last week? **What did you see** last night? Each answer **is a new** piece of the puzzle.
+ Detectives also do interviews with people who saw what happened. In an interview, they ask one question at a time and listen to every answer. Did you walk here last week? What did you see last night? Each answer is a new piece of the puzzle.
 
- Because of forensic science, many cases **are solved and** innocent people **are protected**.
+ Because of forensic science, many cases are solved and innocent people are protected.
  `,
   content_vi: `
-    Các thám tử thực sự dùng nhiều hơn mắt — họ cũng **dùng khoa học**. Khoa học **giúp thám tử giải quyết** case trên toàn thế giới!
+    Các thám tử thực sự dùng nhiều hơn mắt — họ cũng dùng khoa học. Khoa học giúp thám tử giải quyết case trên toàn thế giới!
 
-    Khi có chuyện xảy ra, một thám tử **đến địa điểm** và **tìm kiếm** manh mối. Một manh mối **có thể là** dấu vân tay, sợi tóc, hoặc dấu chân. Thám tử **ghi mọi** manh mối **rõ ràng** vào sổ tay. Sau đó, tất cả manh mối này **đưa vào một** báo cáo chính thức.
+    Khi có chuyện xảy ra, một thám tử đến địa điểm và tìm kiếm manh mối. Một manh mối có thể là dấu vân tay, sợi tóc, hoặc dấu chân. Thám tử ghi mọi manh mối rõ ràng vào sổ tay. Sau đó, tất cả manh mối này đưa vào một báo cáo chính thức.
 
-    Các nhà khoa học phát hiện rằng mỗi người **để lại manh mối nhỏ** ở bất cứ đâu họ đi. Vì vậy nếu một nghi phạm **ở đâu đó hôm qua** hay **tối qua**, các manh mối **vẫn sẽ ở đó**!
+    Các nhà khoa học phát hiện rằng mỗi người để lại manh mối nhỏ ở bất cứ đâu họ đi. Vì vậy nếu một nghi phạm ở đâu đó hôm qua hay tối qua, các manh mối vẫn sẽ ở đó!
 
-    Các thám tử cũng **thực hiện phỏng vấn** với người chứng kiến. Trong một phỏng vấn, họ **đặt từng câu hỏi** một và **lắng nghe mọi** câu trả lời. **Bạn có đi đến đây** tuần trước không? **Bạn thấy gì** tối qua? Mỗi câu trả lời **là một mảnh ghép** mới của câu đố.
+    Các thám tử cũng thực hiện phỏng vấn với người chứng kiến. Trong một phỏng vấn, họ đặt từng câu hỏi một và lắng nghe mọi câu trả lời. Bạn có đi đến đây tuần trước không? Bạn thấy gì tối qua? Mỗi câu trả lời là một mảnh ghép mới của câu đố.
 
-    Nhờ khoa học điều tra, nhiều case **được giải quyết và** người vô tội **được bảo vệ**.
+    Nhờ khoa học điều tra, nhiều case được giải quyết và người vô tội được bảo vệ.
   `,
   check_questions: [
     {

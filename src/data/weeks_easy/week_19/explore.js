@@ -21,19 +21,19 @@ export default {
  `,
   
   content_vi: `
-    Nhìn **ảnh** cũ! Bạn **là** **em bé**. Bạn **rất** **nhỏ** và **dễ thương**!
+    Nhìn ảnh cũ! Bạn là em bé. Bạn rất nhỏ và dễ thương!
     
-    Khi bạn **là** **em bé**, bạn **rất** **nhỏ bé**. Bây giờ bạn **lớn lên** mỗi năm!
+    Khi bạn là em bé, bạn rất nhỏ bé. Bây giờ bạn lớn lên mỗi năm!
     
-    Thức ăn giúp bạn **lớn lên**. Khi bạn **còn** **nhỏ**, bạn uống sữa. Sữa làm xương chắc khỏe. Bạn cũng ăn trái cây. Chúng giúp bạn **lớn lên** khỏe mạnh.
+    Thức ăn giúp bạn lớn lên. Khi bạn còn nhỏ, bạn uống sữa. Sữa làm xương chắc khỏe. Bạn cũng ăn trái cây. Chúng giúp bạn lớn lên khỏe mạnh.
     
-    Giấc ngủ cũng giúp bạn **lớn lên**! Khi bạn **là** **em bé**, bạn ngủ nhiều. Đôi khi bạn **yên lặng**. Đôi khi bạn **ồn ào** và khóc. Cơ thể **lớn lên** khi bạn ngủ!
+    Giấc ngủ cũng giúp bạn lớn lên! Khi bạn là em bé, bạn ngủ nhiều. Đôi khi bạn yên lặng. Đôi khi bạn ồn ào và khóc. Cơ thể lớn lên khi bạn ngủ!
     
-    Não bạn cũng **lớn lên**! Khi bạn **học** **mẫu giáo**, bạn học đọc. Bạn học đếm. Mỗi **kỷ niệm** giúp não **lớn lên** khỏe!
+    Não bạn cũng lớn lên! Khi bạn học mẫu giáo, bạn học đọc. Bạn học đếm. Mỗi kỷ niệm giúp não lớn lên khỏe!
     
-    Mỗi năm bạn **lớn lên**! Nhìn **ảnh** - bạn **đã** **nhỏ**! Bây giờ bạn cao. Bạn có thể với tới thứ cao bây giờ!
+    Mỗi năm bạn lớn lên! Nhìn ảnh - bạn đã nhỏ! Bây giờ bạn cao. Bạn có thể với tới thứ cao bây giờ!
     
-    Những **kỷ niệm** khi chúng ta **còn** **nhỏ** thật đặc biệt. Mọi người bắt đầu như **em bé**. Mọi người **lớn lên**!
+    Những kỷ niệm khi chúng ta còn nhỏ thật đặc biệt. Mọi người bắt đầu như em bé. Mọi người lớn lên!
   `,
   
   check_questions: [

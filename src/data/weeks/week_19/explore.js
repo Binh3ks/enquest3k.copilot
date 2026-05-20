@@ -20,21 +20,21 @@ export default {
 
 	 These **memories** of when we **were** **small** are precious. Everyone **grows** at their own pace!`,
 
-  content_vi: `Khi bạn nhìn những **ảnh** cũ trong một **album**, bạn thấy **quá khứ** của mình. Bạn **đã từng** là một **em bé** - rất **nhỏ** và **dễ thương**! Nhưng bây giờ bạn lớn hơn. Bạn đã **lớn lên** như thế nào?
+  content_vi: `Khi bạn nhìn những ảnh cũ trong một album, bạn thấy quá khứ của mình. Bạn đã từng là một em bé - rất nhỏ và dễ thương! Nhưng bây giờ bạn lớn hơn. Bạn đã lớn lên như thế nào?
 
-    Khi bạn **là** một **em bé**, xương **mềm** và **nhỏ**. Theo thời gian trôi qua, bạn bắt đầu **lớn lên**. Xương dài hơn và chắc hơn!
+    Khi bạn là một em bé, xương mềm và nhỏ. Theo thời gian trôi qua, bạn bắt đầu lớn lên. Xương dài hơn và chắc hơn!
 
-    Thức ăn giúp chúng ta **lớn lên**. Canxi làm xương chắc khỏe. Vitamin từ rau giúp cơ thể **lớn lên** khỏe mạnh.
+    Thức ăn giúp chúng ta lớn lên. Canxi làm xương chắc khỏe. Vitamin từ rau giúp cơ thể lớn lên khỏe mạnh.
 
-    Giấc ngủ cũng quan trọng! Trong lúc ngủ, cơ thể **lớn lên**. Đây là lý do trẻ em cần ngủ nhiều hơn người lớn.
+    Giấc ngủ cũng quan trọng! Trong lúc ngủ, cơ thể lớn lên. Đây là lý do trẻ em cần ngủ nhiều hơn người lớn.
 
-    Não của bạn cũng **lớn lên**! Khi bạn **học mẫu giáo**, bạn học đếm và đọc. Mỗi **kỷ niệm** giúp não **lớn lên** mạnh hơn.
+    Não của bạn cũng lớn lên! Khi bạn học mẫu giáo, bạn học đếm và đọc. Mỗi kỷ niệm giúp não lớn lên mạnh hơn.
 
-    Mỗi năm bạn **lớn lên** hơn. Nhìn **ảnh** cũ - bạn **đã** rất **nhỏ**! Bây giờ bạn cao. Bạn có thể học những điều không thể học khi **còn nhỏ**.
+    Mỗi năm bạn lớn lên hơn. Nhìn ảnh cũ - bạn đã rất nhỏ! Bây giờ bạn cao. Bạn có thể học những điều không thể học khi còn nhỏ.
 
-    **Quá khứ** cho chúng ta thấy chúng ta đã thay đổi bao nhiêu. Nhưng **lớn lên** không bao giờ dừng lại! Lớn lên là trở nên thông minh và có khả năng hơn!
+    Quá khứ cho chúng ta thấy chúng ta đã thay đổi bao nhiêu. Nhưng lớn lên không bao giờ dừng lại! Lớn lên là trở nên thông minh và có khả năng hơn!
 
-    Những **kỷ niệm** về khi chúng ta **còn nhỏ** thật quý giá. Mỗi người **lớn lên** theo tốc độ riêng!`,
+    Những kỷ niệm về khi chúng ta còn nhỏ thật quý giá. Mỗi người lớn lên theo tốc độ riêng!`,
   check_questions: [
     {
       id: 1,

@@ -21,15 +21,15 @@ export default {
   content_vi: `
     Bạn đã bao giờ hỏi: tại sao trời mưa?
 
-    Mặt trời chiếu vào nước. Nước trở nên nóng. Sau đó nó bay lên không khí. Điều này gọi là **bốc hơi**! Nước trở nên nhẹ và bay lên.
+    Mặt trời chiếu vào nước. Nước trở nên nóng. Sau đó nó bay lên không khí. Điều này gọi là bốc hơi! Nước trở nên nhẹ và bay lên.
 
-    Nước bay lên cao vào trong **khí quyển**. **Khí quyển** là không khí xung quanh Trái đất. Trên đó, nước trở nên lạnh. Nó tạo thành mây!
+    Nước bay lên cao vào trong khí quyển. Khí quyển là không khí xung quanh Trái đất. Trên đó, nước trở nên lạnh. Nó tạo thành mây!
 
-    Khi có nhiều nước trong mây, mây trở nên nặng. Sau đó nước rơi xuống. Điều này gọi là **lượng mưa**!
+    Khi có nhiều nước trong mây, mây trở nên nặng. Sau đó nước rơi xuống. Điều này gọi là lượng mưa!
 
-    **Lượng mưa** có thể là mưa. Nó cũng có thể là tuyết! Khi trời rất **lạnh**, chúng ta có **tuyết** thay vì mưa.
+    Lượng mưa có thể là mưa. Nó cũng có thể là tuyết! Khi trời rất lạnh, chúng ta có tuyết thay vì mưa.
 
-    Vào những ngày **nắng**, bạn mặc quần áo nhẹ. Bạn cảm thấy **ấm**. Vào những ngày **mưa**, bạn mặc **áo khoác** và mang **ô**. Chúng ta mặc đồ phù hợp với thời tiết!
+    Vào những ngày nắng, bạn mặc quần áo nhẹ. Bạn cảm thấy ấm. Vào những ngày mưa, bạn mặc áo khoác và mang ô. Chúng ta mặc đồ phù hợp với thời tiết!
   `,
 
   check_questions: [

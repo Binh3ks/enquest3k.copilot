@@ -23,17 +23,17 @@ Do you like sports? Let's learn about the science in sports!
   content_vi: `
     Bạn có thích thể thao không? Hãy học về khoa học trong thể thao!
     
-    Khi bạn **chạy**, cơ thể bạn cần **năng lượng**. **Năng lượng** đến từ thức ăn! Thức ăn cho bạn sức mạnh để chơi.
+    Khi bạn chạy, cơ thể bạn cần năng lượng. Năng lượng đến từ thức ăn! Thức ăn cho bạn sức mạnh để chơi.
     
-    Khi bạn **sút** một quả **bóng**, nó bắt đầu di chuyển. Điều này gọi là **chuyển động**. Quả **bóng** đang **chuyển động** khi nó bay.
+    Khi bạn sút một quả bóng, nó bắt đầu di chuyển. Điều này gọi là chuyển động. Quả bóng đang chuyển động khi nó bay.
     
-    Khi bạn **ném** một quả **bóng**, nó đi lên. Sau đó nó rơi xuống. Tại sao? Vì trọng lực! Trọng lực kéo vật xuống Trái đất.
+    Khi bạn ném một quả bóng, nó đi lên. Sau đó nó rơi xuống. Tại sao? Vì trọng lực! Trọng lực kéo vật xuống Trái đất.
     
-    Khi bạn **nhảy** để **bắt** một quả **bóng**, bạn dùng **năng lượng**. Chân bạn đẩy bạn lên!
+    Khi bạn nhảy để bắt một quả bóng, bạn dùng năng lượng. Chân bạn đẩy bạn lên!
     
-    Trong môn thể thao **đội**, bạn **chuyền** **bóng** cho bạn bè. Bạn làm việc cùng nhau. Đây là làm việc nhóm!
+    Trong môn thể thao đội, bạn chuyền bóng cho bạn bè. Bạn làm việc cùng nhau. Đây là làm việc nhóm!
     
-    Khi bạn **ghi** một **bàn thắng**, mọi người **cổ vũ**! Thể thao vui! Chúng cũng dùng khoa học!
+    Khi bạn **ghi** một bàn thắng, mọi người cổ vũ! Thể thao vui! Chúng cũng dùng khoa học!
   `,
   
   check_questions: [

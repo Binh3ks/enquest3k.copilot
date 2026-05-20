@@ -19,17 +19,17 @@ export default {
  `,
 
   content_vi: `
-    Bạn có bao giờ tự hỏi tại sao bầu trời lại "khóc"? Đó là cách một số trẻ em mô tả **mưa**! Hãy cùng khám phá khoa học về thời tiết.
+    Bạn có bao giờ tự hỏi tại sao bầu trời lại "khóc"? Đó là cách một số trẻ em mô tả mưa! Hãy cùng khám phá khoa học về thời tiết.
 
-    Vòng tuần hoàn nước là hệ thống tái chế của tự nhiên. Nó bắt đầu bằng **bốc hơi**. Khi mặt trời chiếu vào sông, hồ và đại dương, nhiệt độ biến nước lỏng thành hơi nước vô hình. Đây là **bốc hơi** - nước trở thành khí và bay lên trên.
+    Vòng tuần hoàn nước là hệ thống tái chế của tự nhiên. Nó bắt đầu bằng bốc hơi. Khi mặt trời chiếu vào sông, hồ và đại dương, nhiệt độ biến nước lỏng thành hơi nước vô hình. Đây là bốc hơi - nước trở thành khí và bay lên trên.
 
-    Hơi nước này bay lên **bầu khí quyển** - lớp không khí khổng lồ bao quanh hành tinh Trái Đất của chúng ta. Cao trên **bầu khí quyển**, rất **lạnh**. Hơi nước nguội đi và biến thành những giọt nước nhỏ li ti. Hàng triệu giọt nước này kết lại tạo thành mây!
+    Hơi nước này bay lên bầu khí quyển - lớp không khí khổng lồ bao quanh hành tinh Trái Đất của chúng ta. Cao trên bầu khí quyển, rất lạnh. Hơi nước nguội đi và biến thành những giọt nước nhỏ li ti. Hàng triệu giọt nước này kết lại tạo thành mây!
 
-    Khi mây thu thập đủ nước, các giọt nước nặng dần và rơi xuống. Đây được gọi là **lượng mưa**. **Lượng mưa** bao gồm cả **mưa** (nước lỏng) và **tuyết rơi** (tinh thể nước đóng băng). Ở những nơi **ấm**, nước rơi dưới dạng **mưa**. Ở những nơi rất **lạnh**, **lượng mưa** rơi dưới dạng **tuyết** thay vào đó!
+    Khi mây thu thập đủ nước, các giọt nước nặng dần và rơi xuống. Đây được gọi là lượng mưa. Lượng mưa bao gồm cả mưa (nước lỏng) và tuyết rơi (tinh thể nước đóng băng). Ở những nơi ấm, nước rơi dưới dạng mưa. Ở những nơi rất lạnh, lượng mưa rơi dưới dạng tuyết thay vào đó!
 
-    Loại **lượng mưa** ảnh hưởng đến việc **mặc** gì là phù hợp. Các nhà khoa học nghiên cứu các mô hình này để giúp mọi người chuẩn bị. Khi các nhà khí tượng học dự báo **lượng mưa** lớn, chúng ta biết cần bắt đầu **mặc** **áo khoác**, **ủng**, **mũ** và mang **ô** trước khi ra ngoài.
+    Loại lượng mưa ảnh hưởng đến việc mặc gì là phù hợp. Các nhà khoa học nghiên cứu các mô hình này để giúp mọi người chuẩn bị. Khi các nhà khí tượng học dự báo lượng mưa lớn, chúng ta biết cần bắt đầu mặc áo khoác, ủng, mũ và mang ô trước khi ra ngoài.
 
-    Vào những ngày **nắng** không có **lượng mưa**, vòng tuần hoàn nước vẫn tiếp tục lặng lẽ. **Bốc hơi** xảy ra từ mọi bề mặt, đưa hơi nước trở lại **bầu khí quyển**. Chu kỳ không bao giờ dừng lại - nước di chuyển từ Trái Đất lên bầu trời và trở lại mãi mãi!
+    Vào những ngày nắng không có lượng mưa, vòng tuần hoàn nước vẫn tiếp tục lặng lẽ. Bốc hơi xảy ra từ mọi bề mặt, đưa hơi nước trở lại bầu khí quyển. Chu kỳ không bao giờ dừng lại - nước di chuyển từ Trái Đất lên bầu trời và trở lại mãi mãi!
   `,
 
   check_questions: [

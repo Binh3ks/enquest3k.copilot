@@ -23,15 +23,15 @@ export default {
     Từ lâu trước khi có máy ảnh và máy tính, các nhà khoa học dùng một công cụ rất đơn giản: nhật ký.
     Những cuốn này gọi là nhật ký thực địa, và các nhà khoa học vĩ đại đã ghi chép trong hàng trăm năm.
 
-    Năm 1831, nhà khoa học trẻ Charles Darwin **walked** lên một con tàu tên HMS Beagle.
-    Trong năm năm, ông **looked** động vật, thực vật và đá trên các hòn đảo khắp thế giới.
-    Mỗi buổi tối, ông **opened** nhật ký và ghi lại điều ông nhìn thấy.
-    Ông **watched** rùa khổng lồ ở quần đảo Galapagos và **listened** tiếng hót của các loài chim.
-    Nhật ký thực địa của Darwin đã **helped** ông phát triển lý thuyết tiến hóa.
+    Năm 1831, nhà khoa học trẻ Charles Darwin walked lên một con tàu tên HMS Beagle.
+    Trong năm năm, ông looked động vật, thực vật và đá trên các hòn đảo khắp thế giới.
+    Mỗi buổi tối, ông opened nhật ký và ghi lại điều ông nhìn thấy.
+    Ông watched rùa khổng lồ ở quần đảo Galapagos và listened tiếng hót của các loài chim.
+    Nhật ký thực địa của Darwin đã helped ông phát triển lý thuyết tiến hóa.
 
-    Ở châu Phi, nhà khoa học Jane Goodall **watched** tinh tinh hoang dã mỗi ngày trong hơn 60 năm.
-    Bà **listened** cẩn thận tiếng chúng, **talked** với hướng dẫn địa phương, và **cleaned** ghi chú mỗi buổi tối.
-    Bà **started** một trang mới mỗi sáng và **finished** mỗi mục với dữ liệu về cách chúng **walked**, **played** và **cooked** bằng công cụ.
+    Ở châu Phi, nhà khoa học Jane Goodall watched tinh tinh hoang dã mỗi ngày trong hơn 60 năm.
+    Bà listened cẩn thận tiếng chúng, talked với hướng dẫn địa phương, và cleaned ghi chú mỗi buổi tối.
+    Bà started một trang mới mỗi sáng và finished mỗi mục với dữ liệu về cách chúng walked, played và cooked bằng công cụ.
 
     Ngày nay, các phi hành gia trên Trạm Vũ trụ Quốc tế vẫn ghi nhật ký khoa học.
     Những nhật ký này là bản đồ thế giới tự nhiên của chúng ta.

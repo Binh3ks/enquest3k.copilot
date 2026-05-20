@@ -26,17 +26,17 @@ export default {
     Chúng gọi là nhật ký thực địa, và chúng kể những điều tuyệt vời về thế giới.
 
     Charles Darwin là nhà khoa học 200 năm trước.
-    Ông **walked** lên một con tàu và đến nhiều hòn đảo.
-    Mỗi ngày, ông **looked** động vật và cây cối.
-    Ông **watched** chim và **listened** tiếng hót của chúng.
-    Ban đêm, ông **opened** nhật ký và viết điều ông nhìn thấy.
-    Ông **finished** một cuốn nhật ký, rồi **started** cuốn mới!
+    Ông walked lên một con tàu và đến nhiều hòn đảo.
+    Mỗi ngày, ông looked động vật và cây cối.
+    Ông watched chim và listened tiếng hót của chúng.
+    Ban đêm, ông opened nhật ký và viết điều ông nhìn thấy.
+    Ông finished một cuốn nhật ký, rồi started cuốn mới!
 
-    Jane Goodall là nhà khoa học đã **watched** tinh tinh hoang dã ở châu Phi.
-    Bà **helped** chúng ta hiểu cách chúng **played**, **talked**, và dùng công cụ để **cooked** thức ăn.
-    Jane **cleaned** ghi chú mỗi buổi tối và không bao giờ bỏ lỡ một ngày.
+    Jane Goodall là nhà khoa học đã watched tinh tinh hoang dã ở châu Phi.
+    Bà helped chúng ta hiểu cách chúng played, talked, và dùng công cụ để cooked thức ăn.
+    Jane cleaned ghi chú mỗi buổi tối và không bao giờ bỏ lỡ một ngày.
 
-    Nhật ký khoa học đã **helped** chúng ta hiểu rất nhiều về thế giới.
+    Nhật ký khoa học đã helped chúng ta hiểu rất nhiều về thế giới.
     Có thể nhật ký của bạn hôm nay sẽ giúp các nhà khoa học trong tương lai!
   `,
   check_questions: [

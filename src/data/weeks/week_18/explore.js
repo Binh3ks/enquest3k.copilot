@@ -12,15 +12,15 @@ But how does the **live** broadcast travel so far? The **camera** sends a signal
 The people who watch at home are called the **audience**. They sit in front of their TV sets and watch the **reporter** speak from inside a **studio** or from a real location.
 
 Thanks to modern technology, a **reporter** can **describe** an **exciting** **scene** and the **audience** can watch it at the same moment — even if they are on the other side of the world!`,
-  content_vi: `Bạn có bao giờ tự hỏi tin tức từ **phóng viên** đến màn hình TV của bạn như thế nào không?
+  content_vi: `Bạn có bao giờ tự hỏi tin tức từ phóng viên đến màn hình TV của bạn như thế nào không?
 
-Tất cả bắt đầu khi có điều gì đó **hào hứng** hoặc quan trọng đang **xảy ra** trên thế giới. Một **phóng viên** cầm **máy quay** và **micro** rồi đến hiện trường. Họ đứng trước **máy quay** và **mô tả** những gì họ thấy ở **khung cảnh** đó.
+Tất cả bắt đầu khi có điều gì đó hào hứng hoặc quan trọng đang xảy ra trên thế giới. Một phóng viên cầm máy quay và **micro** rồi đến hiện trường. Họ đứng trước máy quay và mô tả những gì họ thấy ở khung cảnh đó.
 
-Nhưng làm thế nào mà buổi phát sóng **trực tiếp** di chuyển xa như vậy? **Máy quay** gửi tín hiệu lên một vệ tinh trong không gian. Vệ tinh phản chiếu tín hiệu đó xuống đài truyền hình. Tại đài, một nhóm kiểm tra **bản tin** và phát ra cho hàng triệu gia đình.
+Nhưng làm thế nào mà buổi phát sóng trực tiếp di chuyển xa như vậy? Máy quay gửi tín hiệu lên một vệ tinh trong không gian. Vệ tinh phản chiếu tín hiệu đó xuống đài truyền hình. Tại đài, một nhóm kiểm tra bản tin và phát ra cho hàng triệu gia đình.
 
-Những người xem ở nhà được gọi là **khán giả**. Họ ngồi trước TV và xem **phóng viên** nói từ bên trong **trường quay** hoặc từ một địa điểm thực.
+Những người xem ở nhà được gọi là khán giả. Họ ngồi trước TV và xem phóng viên nói từ bên trong trường quay hoặc từ một địa điểm thực.
 
-Nhờ công nghệ hiện đại, một **phóng viên** có thể **mô tả** một **khung cảnh hào hứng** và **khán giả** có thể xem ngay lúc đó — dù họ đang ở phía bên kia thế giới!`,
+Nhờ công nghệ hiện đại, một phóng viên có thể mô tả một khung cảnh hào hứng và khán giả có thể xem ngay lúc đó — dù họ đang ở phía bên kia thế giới!`,
   check_questions: [
     {
       id: 1,

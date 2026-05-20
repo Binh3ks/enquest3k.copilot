@@ -21,15 +21,15 @@ export default {
   content_vi: `
     Thể thao thật thú vị! Nhưng bạn có biết điều gì xảy ra trong cơ thể khi bạn chơi không?
 
-    Khi bạn **chạy** nhanh, cơ thể dùng **năng lượng**. **Năng lượng** này đến từ thức ăn. Ăn tốt thì bạn có nhiều **năng lượng** hơn để chạy và chơi!
+    Khi bạn chạy nhanh, cơ thể dùng năng lượng. Năng lượng này đến từ thức ăn. Ăn tốt thì bạn có nhiều năng lượng hơn để chạy và chơi!
 
-    Khi bạn **sút** một quả **bóng**, quả bóng bắt đầu **chuyển động**. **Chuyển động** nghĩa là di chuyển! Bạn **sút** càng mạnh, quả bóng bay càng xa. Quả bóng bay về phía **khung thành**!
+    Khi bạn sút một quả bóng, quả bóng bắt đầu chuyển động. Chuyển động nghĩa là di chuyển! Bạn sút càng mạnh, quả bóng bay càng xa. Quả bóng bay về phía khung thành!
 
-    Khi bạn **ném** **bóng** cho bạn, nó bay qua không khí. Bạn của bạn **nhảy** lên để **bắt** quả bóng — điều đó cũng cần nhiều cơ bắp và **năng lượng**!
+    Khi bạn ném bóng cho bạn, nó bay qua không khí. Bạn của bạn nhảy lên để bắt quả bóng — điều đó cũng cần nhiều cơ bắp và năng lượng!
 
-    Trong môn thể thao **đội**, các cầu thủ **chuyền** **bóng** cho nhau nhanh chóng. Họ **chạy** cùng nhau và quan sát đồng đội đang ở đâu.
+    Trong môn thể thao đội, các cầu thủ chuyền bóng cho nhau nhanh chóng. Họ chạy cùng nhau và quan sát đồng đội đang ở đâu.
 
-    Khi **đội** của bạn **ghi** được **bàn thắng**, mọi người **cổ vũ**! Thể thao là về **năng lượng**, **chuyển động**, làm việc **đội** nhóm, và niềm vui. Hãy chơi thể thao mỗi ngày!
+    Khi đội của bạn **ghi** được bàn thắng, mọi người cổ vũ! Thể thao là về năng lượng, chuyển động, làm việc đội nhóm, và niềm vui. Hãy chơi thể thao mỗi ngày!
   `,
   
   check_questions: [
