@@ -34,11 +34,10 @@ jobs:
           VITE_TTS_WORKER_URL: ${{ secrets.VITE_TTS_WORKER_URL }}
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=enquest3k
+        run: npx wrangler pages deploy dist --project-name=enquest3k
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
   # ─── Job 2: Deploy backend to Railway (auto-deploy via Railway GitHub integration) ─
   # Railway auto-deploys on push when GitHub repo is connected.
