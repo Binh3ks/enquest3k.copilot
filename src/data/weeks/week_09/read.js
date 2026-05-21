@@ -16,4 +16,4 @@ export default {
     hint_en: "Talk about buildings, streets, vehicles, and sounds...",
     hint_vi: "Nói về tòa nhà, đường phố, phương tiện, và âm thanh..."
   }
-};
+  };

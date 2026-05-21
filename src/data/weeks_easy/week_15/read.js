@@ -9,6 +9,5 @@ export default {
     { id: 2, question_en: "What color is the sister's kite?", answer: ["red", "red kite"], clue_statement: "The kite is red.", hint_en: "A color...", hint_vi: "Một màu..." },
     { id: 3, question_en: "What is the family eating?", answer: ["sandwiches", "yummy sandwiches"], clue_statement: "The family is eating yummy sandwiches.", hint_en: "Food for picnic...", hint_vi: "Đồ ăn dã ngoại..." },
   ],
-  ],
   question: { text_en: "What do you do at the park? Who do you go with?", text_vi: "Bạn làm gì ở công viên? Bạn đi với ai?", min_words: 25, hint_en: "Talk about your park activities and who you go with...", hint_vi: "Nói về hoạt động ở công viên và ai đi cùng bạn..." }
 };

@@ -16,4 +16,4 @@ export default {
     hint_en: "Talk about your favorite weekend places...",
     hint_vi: "Nói về những nơi cuối tuần yêu thích..."
   }
-};
+  };

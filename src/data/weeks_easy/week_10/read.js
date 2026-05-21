@@ -16,4 +16,4 @@ export default {
     hint_en: "Talk about farm animals...",
     hint_vi: "Nói về động vật trang trại..."
   }
-};
+  };

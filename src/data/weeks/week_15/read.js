@@ -10,4 +10,4 @@ export default {
     { id: 3, question_en: "Where is the family having their picnic?", answer: ["on the grass", "grass", "on grass"], clue_statement: "The family is having their picnic on the grass.", hint_en: "A green area...", hint_vi: "Một khu vực xanh..." },
   ],
   question: { text_en: "What activities do you see when you visit a park? What do you like doing in parks?", text_vi: "Bạn thấy những hoạt động gì khi bạn đến công viên? Bạn thích làm gì ở công viên?", min_words: 40, hint_en: "Describe the activities and people you see in parks...", text_vi: "Mô tả các hoạt động và người bạn thấy ở công viên..." }
-};
+  };

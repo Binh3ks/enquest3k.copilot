@@ -16,4 +16,4 @@ export default {
     hint_en: "Talk about your morning, afternoon, and evening activities...",
     hint_vi: "Nói về các hoạt động buổi sáng, chiều và tối của bạn..."
   }
-};
+  };

@@ -16,4 +16,4 @@ export default {
     hint_en: "Talk about differences between city and countryside...",
     hint_vi: "Nói về sự khác biệt giữa thành phố và nông thôn..."
   }
-};
+  };

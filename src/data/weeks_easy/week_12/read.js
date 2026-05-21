@@ -16,4 +16,4 @@ export default {
     hint_en: "Talk about your abilities...",
     hint_vi: "Nói về khả năng của bạn..."
   }
-};
+  };

@@ -16,4 +16,4 @@ export default {
     hint_en: "Tell me about your weekend...",
     hint_vi: "Nói cho tôi về cuối tuần..."
   }
-};
+  };

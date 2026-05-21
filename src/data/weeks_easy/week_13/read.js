@@ -16,4 +16,4 @@ export default {
     hint_en: "I wake up, I eat, I play...",
     hint_vi: "Tôi thức dậy, tôi ăn, tôi chơi..."
   }
-};
+  };
