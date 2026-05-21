@@ -7,9 +7,10 @@ export default {
     definition_vi: "đá",
     definition_en: "hit with your foot",
     example: "I kick the ball.",
-    collocation: "kick the ball / kick hard",
+    collocation: ["kick the ball", "kick hard"],
     image_url: "/images/week16_easy/kick.jpg",
-    audio_word: "/audio/week16_easy/vocab_kick.mp3"
+    audio_word: "/audio/week16_easy/vocab_kick.mp3",
+    audio_example: "/audio/week16/vocab_ex_kick.mp3"
   },
     {
     id: 2,
@@ -18,9 +19,10 @@ export default {
     definition_vi: "ném",
     definition_en: "send through the air",
     example: "I throw the ball to my friend.",
-    collocation: "throw the ball / throw it",
+    collocation: ["throw the ball", "throw it"],
     image_url: "/images/week16_easy/throw.jpg",
-    audio_word: "/audio/week16_easy/vocab_throw.mp3"
+    audio_word: "/audio/week16_easy/vocab_throw.mp3",
+    audio_example: "/audio/week16/vocab_ex_throw.mp3"
   },
     {
     id: 3,
@@ -29,9 +31,10 @@ export default {
     definition_vi: "bắt",
     definition_en: "grab something moving",
     example: "I catch the ball with my hands.",
-    collocation: "catch the ball / catch it",
+    collocation: ["catch the ball", "catch it"],
     image_url: "/images/week16_easy/catch.jpg",
-    audio_word: "/audio/week16_easy/vocab_catch.mp3"
+    audio_word: "/audio/week16_easy/vocab_catch.mp3",
+    audio_example: "/audio/week16/vocab_ex_catch.mp3"
   },
     {
     id: 4,
@@ -40,9 +43,10 @@ export default {
     definition_vi: "chạy",
     definition_en: "move very fast",
     example: "I run fast in the park.",
-    collocation: "run fast / run quickly",
+    collocation: ["run fast", "run quickly"],
     image_url: "/images/week16_easy/run.jpg",
-    audio_word: "/audio/week16_easy/vocab_run.mp3"
+    audio_word: "/audio/week16_easy/vocab_run.mp3",
+    audio_example: "/audio/week16/vocab_ex_run.mp3"
   },
     {
     id: 5,
@@ -51,9 +55,10 @@ export default {
     definition_vi: "nhảy",
     definition_en: "go up in the air",
     example: "I jump very high!",
-    collocation: "jump high / jump up",
+    collocation: ["jump high", "jump up"],
     image_url: "/images/week16_easy/jump.jpg",
-    audio_word: "/audio/week16_easy/vocab_jump.mp3"
+    audio_word: "/audio/week16_easy/vocab_jump.mp3",
+    audio_example: "/audio/week16/vocab_ex_jump.mp3"
   },
     {
     id: 6,
@@ -62,9 +67,10 @@ export default {
     definition_vi: "ghi bàn",
     definition_en: "make a point in a game",
     example: "I score a goal!",
-    collocation: "score a goal / win the score",
+    collocation: ["score a goal", "win the score"],
     image_url: "/images/week16_easy/score.jpg",
-    audio_word: "/audio/week16_easy/vocab_score.mp3"
+    audio_word: "/audio/week16_easy/vocab_score.mp3",
+    audio_example: "/audio/week16/vocab_ex_score.mp3"
   },
     {
     id: 7,
@@ -73,9 +79,10 @@ export default {
     definition_vi: "đánh",
     definition_en: "touch hard with hands",
     example: "I hit the ball.",
-    collocation: "hit the ball / hit it hard",
+    collocation: ["hit the ball", "hit it hard"],
     image_url: "/images/week16_easy/hit.jpg",
-    audio_word: "/audio/week16_easy/vocab_hit.mp3"
+    audio_word: "/audio/week16_easy/vocab_hit.mp3",
+    audio_example: "/audio/week16/vocab_ex_hit.mp3"
   },
     {
     id: 8,
@@ -84,9 +91,10 @@ export default {
     definition_vi: "chuyền",
     definition_en: "give to another player",
     example: "I pass the ball to you.",
-    collocation: "pass the ball / pass it",
+    collocation: ["pass the ball", "pass it"],
     image_url: "/images/week16_easy/pass.jpg",
-    audio_word: "/audio/week16_easy/vocab_pass.mp3"
+    audio_word: "/audio/week16_easy/vocab_pass.mp3",
+    audio_example: "/audio/week16/vocab_ex_pass.mp3"
   },
     {
     id: 9,
@@ -95,9 +103,10 @@ export default {
     definition_vi: "cổ vũ",
     definition_en: "shout happily for your team",
     example: "I cheer loudly for my team!",
-    collocation: "cheer loudly / cheer for your team",
+    collocation: ["cheer loudly", "cheer for your team"],
     image_url: "/images/week16_easy/cheer.jpg",
-    audio_word: "/audio/week16_easy/vocab_cheer.mp3"
+    audio_word: "/audio/week16_easy/vocab_cheer.mp3",
+    audio_example: "/audio/week16/vocab_ex_cheer.mp3"
   },
     {
     id: 10,
@@ -106,9 +115,10 @@ export default {
     definition_vi: "bàn thắng",
     definition_en: "a point in soccer",
     example: "My team scored three goals.",
-    collocation: "score a goal / win a goal",
+    collocation: ["score a goal", "win a goal"],
     image_url: "/images/week16_easy/goal.jpg",
-    audio_word: "/audio/week16_easy/vocab_goal.mp3"
+    audio_word: "/audio/week16_easy/vocab_goal.mp3",
+    audio_example: "/audio/week16/vocab_ex_goal.mp3"
   },
     {
     id: 11,
@@ -117,9 +127,10 @@ export default {
     definition_vi: "năng lượng",
     definition_en: "power to move and play",
     example: "I have lots of energy today!",
-    collocation: "lots of energy / full of energy",
+    collocation: ["lots of energy", "full of energy"],
     image_url: "/images/week16_easy/energy.jpg",
-    audio_word: "/audio/week16_easy/vocab_energy.mp3"
+    audio_word: "/audio/week16_easy/vocab_energy.mp3",
+    audio_example: "/audio/week16/vocab_ex_energy.mp3"
   },
     {
     id: 12,
@@ -128,9 +139,10 @@ export default {
     definition_vi: "chuyển động",
     definition_en: "moving from place to place",
     example: "The ball is in motion.",
-    collocation: "in motion / fast motion",
+    collocation: ["in motion", "fast motion"],
     image_url: "/images/week16_easy/motion.jpg",
-    audio_word: "/audio/week16_easy/vocab_motion.mp3"
+    audio_word: "/audio/week16_easy/vocab_motion.mp3",
+    audio_example: "/audio/week16/vocab_ex_motion.mp3"
   },
     {
     id: 13,
@@ -139,9 +151,10 @@ export default {
     definition_vi: "đội",
     definition_en: "a group playing together",
     example: "I play with my team.",
-    collocation: "my team / our team",
+    collocation: ["my team", "our team"],
     image_url: "/images/week16_easy/team.jpg",
-    audio_word: "/audio/week16_easy/vocab_team.mp3"
+    audio_word: "/audio/week16_easy/vocab_team.mp3",
+    audio_example: "/audio/week16/vocab_ex_team.mp3"
   }
   ]
 };

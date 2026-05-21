@@ -7,9 +7,10 @@ export default {
     definition_vi: "chạy",
     definition_en: "moving fast on foot",
     example: "I am running fast.",
-    collocation: "running fast / running exercise",
+    collocation: ["running in the park", "running to school"],
     image_url: "/images/week15_easy/running.jpg",
-    audio_word: "/audio/week15_easy/vocab_running.mp3"
+    audio_word: "/audio/week15_easy/vocab_running.mp3",
+    audio_example: "/audio/week15/vocab_ex_running.mp3"
   },
     {
     id: 2,
@@ -18,9 +19,10 @@ export default {
     definition_vi: "đi bộ",
     definition_en: "moving on foot slowly",
     example: "I am walking slowly.",
-    collocation: "walking slowly / walking to school",
+    collocation: ["walking in the park", "walking to school"],
     image_url: "/images/week15_easy/walking.jpg",
-    audio_word: "/audio/week15_easy/vocab_walking.mp3"
+    audio_word: "/audio/week15_easy/vocab_walking.mp3",
+    audio_example: "/audio/week15/vocab_ex_walking.mp3"
   },
     {
     id: 3,
@@ -29,9 +31,10 @@ export default {
     definition_vi: "ngồi",
     definition_en: "resting on a chair or bench",
     example: "I am sitting down.",
-    collocation: "sitting down / sitting on a chair",
+    collocation: ["sitting comfortably", "sitting on the grass"],
     image_url: "/images/week15_easy/sitting.jpg",
-    audio_word: "/audio/week15_easy/vocab_sitting.mp3"
+    audio_word: "/audio/week15_easy/vocab_sitting.mp3",
+    audio_example: "/audio/week15/vocab_ex_sitting.mp3"
   },
     {
     id: 4,
@@ -40,9 +43,10 @@ export default {
     definition_vi: "ăn",
     definition_en: "having food",
     example: "I am eating snacks.",
-    collocation: "eating snacks / eating lunch",
+    collocation: ["eating fruit", "eating breakfast"],
     image_url: "/images/week15_easy/eating.jpg",
-    audio_word: "/audio/week15_easy/vocab_eating.mp3"
+    audio_word: "/audio/week15_easy/vocab_eating.mp3",
+    audio_example: "/audio/week15/vocab_ex_eating.mp3"
   },
     {
     id: 5,
@@ -51,9 +55,10 @@ export default {
     definition_vi: "thả (diều)",
     definition_en: "making a kite move in the air",
     example: "I am flying a kite.",
-    collocation: "flying a kite / flying kites",
+    collocation: ["flying a kite", "flying in the sky"],
     image_url: "/images/week15_easy/flying.jpg",
-    audio_word: "/audio/week15_easy/vocab_flying.mp3"
+    audio_word: "/audio/week15_easy/vocab_flying.mp3",
+    audio_example: "/audio/week15/vocab_ex_flying.mp3"
   },
     {
     id: 6,
@@ -62,9 +67,10 @@ export default {
     definition_vi: "chơi",
     definition_en: "having fun with games or toys",
     example: "I am playing games.",
-    collocation: "playing games / playing with friends",
+    collocation: ["playing games", "playing with friends"],
     image_url: "/images/week15_easy/playing.jpg",
-    audio_word: "/audio/week15_easy/vocab_playing.mp3"
+    audio_word: "/audio/week15_easy/vocab_playing.mp3",
+    audio_example: "/audio/week15/vocab_ex_playing.mp3"
   },
     {
     id: 7,
@@ -73,9 +79,10 @@ export default {
     definition_vi: "chạy bộ",
     definition_en: "running slowly for exercise",
     example: "My dad goes jogging every morning.",
-    collocation: "go jogging / jogging daily",
+    collocation: ["go jogging", "jogging daily"],
     image_url: "/images/week15_easy/jogging.jpg",
-    audio_word: "/audio/week15_easy/vocab_jogging.mp3"
+    audio_word: "/audio/week15_easy/vocab_jogging.mp3",
+    audio_example: "/audio/week15/vocab_ex_jogging.mp3"
   },
     {
     id: 8,
@@ -84,9 +91,10 @@ export default {
     definition_vi: "thư giãn",
     definition_en: "resting and becoming calm",
     example: "I am having a relaxing time.",
-    collocation: "relaxing time / relaxing afternoon",
+    collocation: ["relaxing time", "relaxing afternoon"],
     image_url: "/images/week15_easy/relaxing.jpg",
-    audio_word: "/audio/week15_easy/vocab_relaxing.mp3"
+    audio_word: "/audio/week15_easy/vocab_relaxing.mp3",
+    audio_example: "/audio/week15/vocab_ex_relaxing.mp3"
   },
     {
     id: 9,
@@ -95,9 +103,10 @@ export default {
     definition_vi: "dã ngoại",
     definition_en: "an outdoor meal",
     example: "My family is having a picnic.",
-    collocation: "have a picnic / go on a picnic",
+    collocation: ["have a picnic", "go on a picnic"],
     image_url: "/images/week15_easy/picnic.jpg",
-    audio_word: "/audio/week15_easy/vocab_picnic.mp3"
+    audio_word: "/audio/week15_easy/vocab_picnic.mp3",
+    audio_example: "/audio/week15/vocab_ex_picnic.mp3"
   },
     {
     id: 10,
@@ -106,9 +115,10 @@ export default {
     definition_vi: "đài phun nước",
     definition_en: "water that shoots into the air",
     example: "I see a fountain near the park.",
-    collocation: "near the fountain / beautiful fountain",
+    collocation: ["near the fountain", "beautiful fountain"],
     image_url: "/images/week15_easy/fountain.jpg",
-    audio_word: "/audio/week15_easy/vocab_fountain.mp3"
+    audio_word: "/audio/week15_easy/vocab_fountain.mp3",
+    audio_example: "/audio/week15/vocab_ex_fountain.mp3"
   }
   ]
 };
