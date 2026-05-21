@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react';
 import { TTSCache } from '../services/ttsCache';
 import { VoiceService } from '../services/voiceService';
 
-export function useTTSPrefetch(station = 'read', weekNumber = null) {
+export function useTTSPrefetch(station = 'read', weekNumber = null, mode = 'advanced') {
   const prefetchQueueRef = useRef(new Set());
   const isPrefetchingRef = useRef(false);
 
@@ -49,7 +49,7 @@ export function useTTSPrefetch(station = 'read', weekNumber = null) {
     
     try {
       // Pass audioPath, weekNumber and voice to VoiceService for proper caching
-      await VoiceService.prefetch(text, station, audioPath, weekNumber, 'advanced', voice);
+      await VoiceService.prefetch(text, station, audioPath, weekNumber, mode, voice);
       console.log(`[Prefetch] ✅ Cached for ${station}: ${text.substring(0, 30)}...`);
       return true;
     } catch (error) {
@@ -91,7 +91,7 @@ export function useTTSPrefetch(station = 'read', weekNumber = null) {
    */
   const prefetchFromArray = (items, textKey = 'text_en', audioKey = 'audio_url', voice = null) => {
     if (!items || !Array.isArray(items)) return Promise.resolve();
-    
+
     const itemObjects = items
       .map(item => ({
         text: item[textKey] || item.text,
@@ -99,19 +99,39 @@ export function useTTSPrefetch(station = 'read', weekNumber = null) {
         voice: voice
       }))
       .filter(obj => obj.text)
-      .slice(0, 12); // Limit to first 12 items (doubled from 6)
-    
+      .slice(0, 12);
+
     if (itemObjects.length > 0) {
-      return prefetchMultiple(itemObjects, 1000); // 1s delay to protect HF FREE tier
+      return prefetchMultiple(itemObjects, 1000);
     }
-    
+
     return Promise.resolve();
+  };
+
+  /**
+   * Prefetch vocab word audio — maps {text, audioUrl, type} objects.
+   * @param {Array<Object>} words - Array of {text, audioUrl, type} objects
+   * @returns {Promise<void>}
+   */
+  const prefetchWordAudio = (words) => {
+    if (!words || !Array.isArray(words)) return;
+    const items = words.map(w => ({
+      text: w.text || w.word,
+      audioPath: w.audioUrl || w.audio_word,
+      type: w.type
+    })).filter(obj => obj.text);
+    if (items.length > 0) {
+      prefetchMultiple(items, 500).catch(err => {
+        console.warn('[useTTSPrefetch] prefetchWordAudio failed:', err);
+      });
+    }
   };
 
   return {
     prefetchText,
     prefetchMultiple,
-    prefetchFromArray
+    prefetchFromArray,
+    prefetchWordAudio
   };
 }
 
