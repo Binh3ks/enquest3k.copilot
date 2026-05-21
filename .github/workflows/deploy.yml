@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_URL: https://enquest3k.up.railway.app/api
           VITE_CDN_URL: ${{ secrets.VITE_CDN_URL }}
           VITE_EDGE_TTS_URL: ${{ secrets.VITE_EDGE_TTS_URL }}
           VITE_TTS_WORKER_URL: ${{ secrets.VITE_TTS_WORKER_URL }}
