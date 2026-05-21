@@ -7,12 +7,7 @@ export default {
   comprehension_questions: [
     { id: 1, question_en: "What is in the student's bag?", answer: ["pencils", "markers", "pencils and markers"], clue_statement: "There are pencils and markers in the bag.", hint_en: "Look in the bag...", hint_vi: "Nhìn vào trong túi..." },
     { id: 2, question_en: "What is on the shelves?", answer: ["books", "there are books", "books on the shelves"], clue_statement: "There are books on the shelves.", hint_en: "The shelves have...", hint_vi: "Kệ có..." },
-    { id: 3, question_en: "What do they use for art today?", answer: ["crayons and papers", "crayons", "papers"], clue_statement: "They use crayons and papers for art today.", hint_en: "They use... for art", hint_vi: "Họ dùng... cho nghệ thuật" },
-    { id: 4, question_en: "What is in my room?", answer: ["desks", "There are desks"], clue_statement: "There are desks in my room.", hint_en: "Look around the room...", hint_vi: "Nhìn quanh phòng...." },
-    { id: 5, question_en: "Where do I sit?", answer: ["chair at a desk", "on a chair at a desk"], clue_statement: "I sit on a chair at a desk.", hint_en: "A place...", hint_vi: "Một nơi..." },
-    { id: 6, question_en: "What is in my pencil case?", answer: ["markers", "There are markers"], clue_statement: "There are markers in my pencil case.", hint_en: "Look inside the pencil case...", hint_vi: "Nhìn vào hộp bút..." },
-    { id: 7, question_en: "Where does the teacher write?", answer: ["board", "on the board"], clue_statement: "The teacher writes on the board.", hint_en: "A place...", hint_vi: "Một nơi..." },
-    { id: 8, question_en: "What is on the board?", answer: ["words", "the words", "There are words"], clue_statement: "There are words on the board.", hint_en: "Look on the board...", hint_vi: "Nhìn vào bảng..." }
+    { id: 3, question_en: "What do they use for art today?", answer: ["crayons and papers", "crayons", "papers"], clue_statement: "They use crayons and papers for art today.", hint_en: "They use... for art", hint_vi: "Họ dùng... cho nghệ thuật" }
   ],
   question: {
     text_en: "What is in your classroom? Tell me: There are...",

@@ -6,8 +6,8 @@ export default {
   audio_url: "/audio/week7_easy/read_explore_main.mp3",
   image_url: "/images/week7/read_cover_w07.jpg",
   comprehension_questions: [
-    { id: 1, question_en: "What is on the bed?", question_vi: "Có gì trên giường?", answer: "A school bag", hint_en: "It carries school things..." },
-    { id: 2, question_en: "What is in the pencil case?", question_vi: "Có gì trong hộp bút?", answer: "Glue and scissors", hint_en: "Two things for art..." },
-    { id: 3, question_en: "Is the child ready for school?", question_vi: "Bé sẵn sàng đi học chưa?", answer: "Yes", hint_en: "Read the last sentence..." }
+    { id: 1, question_en: "What is on the bed?", question_vi: "Có gì trên giường?", answer: ["A school bag", "School bag", "a school bag"], clue_statement: "There is a school bag on the bed.", hint_en: "It carries school things...", hint_vi: "Có thứ mang đi học trên giường..." },
+    { id: 2, question_en: "What is in the pencil case?", question_vi: "Có gì trong hộp bút?", answer: ["Glue and scissors", "Scissors and glue", "glue and scissors"], clue_statement: "There is glue and scissors in the pencil case.", hint_en: "Two things for art...", hint_vi: "Hai thứ dùng để làm thủ công..." },
+    { id: 3, question_en: "Is the child ready for school?", question_vi: "Bé sẵn sàng đi học chưa?", answer: ["Yes", "yes"], clue_statement: "The child is ready for school.", hint_en: "Look at the last sentence...", hint_vi: "Nhìn câu cuối cùng..." }
   ]
 };

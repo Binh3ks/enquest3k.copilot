@@ -6,8 +6,8 @@ export default {
   audio_url: "/audio/week8/read_explore_main.mp3",
   image_url: "/images/week8/read_cover_w08.jpg",
   comprehension_questions: [
-    { id: 1, question_en: "How many students are in the class?", question_vi: "Có bao nhiêu học sinh trong lớp?", answer: "30 students", hint_en: "Count the students..." },
-    { id: 2, question_en: "Where are the bags?", question_vi: "Những chiếc túi ở đâu?", answer: "On the floor and on the hooks", hint_en: "The bags are on the..." },
-    { id: 3, question_en: "What are on the three shelves?", question_vi: "Trên ba cái kệ có gì?", answer: "Books", hint_en: "The shelves are full of..." }
+    { id: 1, question_en: "How many students are in the class?", question_vi: "Có bao nhiêu học sinh trong lớp?", answer: ["30 students", "Thirty students", "thirty students"], clue_statement: "There are 30 students in the class.", hint_en: "Count the students...", hint_vi: "Đếm số học sinh trong lớp..." },
+    { id: 2, question_en: "Where are the bags?", question_vi: "Những chiếc túi ở đâu?", answer: ["On the floor and on the hooks", "On the hooks and on the floor", "On the hooks", "on the floor and hooks"], clue_statement: "The bags are on the floor and on the hooks.", hint_en: "The bags are on the...", hint_vi: "Những chiếc túi ở trên sàn và trên móc treo..." },
+    { id: 3, question_en: "What are on the three shelves?", question_vi: "Trên ba cái kệ có gì?", answer: ["Books", "books", "Book"], clue_statement: "There are books on the three shelves.", hint_en: "The shelves are full of...", hint_vi: "Ba cái kệ đầy những thứ gì..." }
   ]
 };

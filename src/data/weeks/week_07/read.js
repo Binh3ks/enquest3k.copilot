@@ -6,8 +6,8 @@ export default {
   audio_url: "/audio/week7/read_explore_main.mp3",
   image_url: "/images/week7/read_cover_w07.jpg",
   comprehension_questions: [
-    { id: 1, question_en: "What is on Sam's chair?", question_vi: "Có gì trên ghế của Sam?", answer: "A backpack", hint_en: "It's something you carry on your back..." },
-    { id: 2, question_en: "Where is the ruler?", question_vi: "Thước kẻ ở đâu?", answer: ["Next to the pen", "next to the pen"], clue_statement: "The ruler is next to the pen.", hint_en: "Look next to the pen..." },
-    { id: 3, question_en: "What is in the classroom?", question_vi: "Có gì trong lớp học?", answer: ["A whiteboard", "A teacher", "A computer"], clue_statement: "There is a whiteboard in the classroom.", hint_en: "The teacher uses it to write..." }
+    { id: 1, question_en: "What is on Sam's chair?", question_vi: "Có gì trên ghế của Sam?", answer: ["A backpack", "backpack"], clue_statement: "There is a backpack on Sam's chair.", hint_en: "It's something you carry on your back...", hint_vi: "Có thứ mang đi học trên ghế..." },
+    { id: 2, question_en: "Where is the ruler?", question_vi: "Thước kẻ ở đâu?", answer: ["Next to the pen", "next to the pen"], clue_statement: "The ruler is next to the pen.", hint_en: "Look next to the pen...", hint_vi: "Nhìn bên cạnh cây bút..." },
+    { id: 3, question_en: "What is in the classroom?", question_vi: "Có gì trong lớp học?", answer: ["A whiteboard", "A teacher", "A computer"], clue_statement: "There is a whiteboard in the classroom.", hint_en: "The teacher uses it to write...", hint_vi: "Giáo viên dùng nó để viết..." }
   ]
 };
