@@ -6,13 +6,8 @@ export default {
   content_vi: "Hôm nay tôi đến thăm trang trại của chú trong vùng nông thôn. Thành phố ồn ào, nhưng trang trại yên tĩnh. Tôi rất vui! Ở thành phố có nhiều xe hơi, nhưng ở đây có nhiều động vật. Tôi thấy một con bò lớn. Con bò đang ăn cỏ. Tôi thấy một con gà. Con gà chạy nhanh! Thành phố bẩn, nhưng trang trại sạch sẽ. Không khí trong lành. Tôi đi bộ trên cánh đồng xanh rộng lớn. Cánh đồng đẹp quá. Có nhiều cây. Những cây cao. Thành phố bận rộn, nhưng vùng nông thôn yên bình. Tôi yêu trang trại! Chú tôi nói: 'Thành phố lớn, nhưng trang trại đẹp. Thành phố có toà nhà, nhưng trang trại có thiên nhiên.' Tôi đồng ý! Lần sau, tôi muốn ở lại lâu hơn. Trang trại là nơi tuyệt nhất!",
   comprehension_questions: [
     { id: 1, question_en: "Where does the child visit?", answer: ["farm", "uncle's farm", "the farm"], clue_statement: "The child visits uncle's farm.", hint_en: "A place in the countryside...", hint_vi: "Một nơi ở vùng nông thôn..." },
-    { id: 2, question_en: "What animals does the child see?", answer: ["a cow and a chicken", "cow and chicken", "cow, chicken"], clue_statement: "The child sees a cow and a chicken.", hint_en: "Two farm animals...", hint_vi: "Hai con vật ở trang trại..." },
-    { id: 3, question_en: "Is the farm noisy or quiet?", answer: ["quiet", "the farm is quiet"], clue_statement: "The farm is quiet.", hint_en: "Not noisy...", hint_vi: "Không ồn..." },
-    { id: 4, question_en: "What is the air like?", answer: ["fresh", "The air is fresh"], clue_statement: "The air is fresh.", hint_en: "Think about the air...", hint_vi: "Nghĩ về không khí..." },
-    { id: 5, question_en: "Where do I walk?", answer: ["in the big green field", "the big green field"], clue_statement: "I walk in the big green field.", hint_en: "A place...", hint_vi: "Một nơi..." },
-    { id: 6, question_en: "What is the field like?", answer: ["beautiful", "The field is beautiful"], clue_statement: "The field is beautiful.", hint_en: "Think about the field...", hint_vi: "Nghĩ về cánh đồng..." },
-    { id: 7, question_en: "How many trees are there?", answer: ["many", "There are many trees"], clue_statement: "There are many trees.", hint_en: "A number...", hint_vi: "Một con số..." },
-    { id: 8, question_en: "What are the trees like?", answer: ["tall", "The trees are tall"], clue_statement: "The trees are tall.", hint_en: "Think about the trees...", hint_vi: "Nghĩ về những cây..." }
+    { id: 2, question_en: "Is the farm noisy or quiet?", answer: ["quiet", "the farm is quiet"], clue_statement: "The farm is quiet.", hint_en: "Not noisy...", hint_vi: "Không ồn..." },
+    { id: 3, question_en: "Where do I walk?", answer: ["in the big green field", "the big green field"], clue_statement: "I walk in the big green field.", hint_en: "A place...", hint_vi: "Một nơi..." }
   ],
   question: {
     text_en: "Do you like the city or the countryside? Why?",

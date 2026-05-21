@@ -8,7 +8,6 @@ export default {
     { id: 1, question_en: "What is the young boy doing in the park?", answer: ["running after his dog", "running", "chasing his dog"], clue_statement: "The young boy is running after his dog.", hint_en: "He's moving fast...", hint_vi: "Cậu ấy đang di chuyển nhanh..." },
     { id: 2, question_en: "What are the teenagers flying?", answer: ["kites", "colorful kites", "flying kites"], clue_statement: "The teenagers are flying colorful kites.", hint_en: "Something in the sky with string...", hint_vi: "Thứ gì đó trên trời có dây..." },
     { id: 3, question_en: "Where is the family having their picnic?", answer: ["on the grass", "grass", "on grass"], clue_statement: "The family is having their picnic on the grass.", hint_en: "A green area...", hint_vi: "Một khu vực xanh..." },
-    { id: 4, question_en: "What are the two women doing?", answer: ["jogging", "jogging around the path", "running"], clue_statement: "The two women are jogging around the path.", hint_en: "An exercise activity...", hint_vi: "Một hoạt động thể dục..." }
   ],
   question: { text_en: "What activities do you see when you visit a park? What do you like doing in parks?", text_vi: "Bạn thấy những hoạt động gì khi bạn đến công viên? Bạn thích làm gì ở công viên?", min_words: 40, hint_en: "Describe the activities and people you see in parks...", text_vi: "Mô tả các hoạt động và người bạn thấy ở công viên..." }
 };

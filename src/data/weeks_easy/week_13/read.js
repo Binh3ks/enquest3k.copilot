@@ -8,9 +8,6 @@ export default {
     { id: 1, question_en: "What is the child's name?", answer: ["Tom"], clue_statement: "The child's name is Tom.", hint_en: "The name...", hint_vi: "Tên..." },
     { id: 2, question_en: "What does Tom eat for breakfast?", answer: ["bread"], clue_statement: "Tom eats bread for breakfast.", hint_en: "Food...", hint_vi: "Thức ăn..." },
     { id: 3, question_en: "What does Tom watch?", answer: ["TV", "cartoons", "television"], clue_statement: "Tom watches TV.", hint_en: "On TV...", hint_vi: "Trên ti vi..." },
-    { id: 4, question_en: "Where does Tom play?", answer: ["school", "at school"], clue_statement: "Tom plays at school.", hint_en: "A place...", hint_vi: "Một nơi..." },
-    { id: 5, question_en: "How is the lunch?", answer: ["good", "The lunch is good"], clue_statement: "The lunch is good.", hint_en: "Think about the lunch...", hint_vi: "Nghĩ về bữa trưa..." },
-    { id: 6, question_en: "How is the dinner?", answer: ["yummy", "The dinner is yummy"], clue_statement: "The dinner is yummy.", hint_en: "Think about the dinner...", hint_vi: "Nghĩ về bữa tối..." }
   ],
   question: {
     text_en: "What is YOUR day? Tell me!",

@@ -8,7 +8,6 @@ export default {
     { id: 1, question_en: "What event is happening today?", answer: ["talent show", "the school talent show", "school talent show"], clue_statement: "The school talent show.", hint_en: "A performance event...", hint_vi: "Một sự kiện biểu diễn..." },
     { id: 2, question_en: "What can Sarah do?", answer: ["sing", "sing beautifully", "she can sing"], clue_statement: "She can sing beautifully.", hint_en: "She uses her voice...", hint_vi: "Cô sử dụng giọng nói..." },
     { id: 3, question_en: "Who can run faster than anyone?", answer: ["Mike", "mike"], clue_statement: "Mike can run faster than anyone.", hint_en: "A boy on the track...", hint_vi: "Cậu bé trên đường đua..." }
-  ],
   question: {
     text_en: "What special talent do you have? What can you do well?",
     text_vi: "Bạn có tài năng đặc biệt gì? Bạn có thể làm gì giỏi?",

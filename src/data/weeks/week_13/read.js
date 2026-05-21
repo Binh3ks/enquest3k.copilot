@@ -8,7 +8,6 @@ export default {
     { id: 1, question_en: "What time does the child wake up?", answer: ["7 o'clock", "7", "seven"], clue_statement: "The child wakes up at 7 o'clock.", hint_en: "A time in the morning...", hint_vi: "Một thời gian buổi sáng..." },
     { id: 2, question_en: "What does the child eat for breakfast?", answer: ["rice and eggs", "rice", "eggs"], clue_statement: "The child eats rice and eggs for breakfast.", hint_en: "A type of food...", hint_vi: "Một loại thức ăn..." },
     { id: 3, question_en: "What time does the child go to bed?", answer: ["9 o'clock", "9", "nine"], clue_statement: "The child goes to bed at 9 o'clock.", hint_en: "A time at night...", hint_vi: "Một thời gian buổi tối..." },
-    { id: 4, question_en: "What does my mom say?", answer: ["goodnight", "goodnight"], clue_statement: "My mom says goodnight.", hint_en: "Think about what my mom says before bed...", hint_vi: "Nghĩ về điều mẹ nói..." }
   ],
   question: {
     text_en: "What is YOUR daily routine? What time do you wake up and go to bed?",

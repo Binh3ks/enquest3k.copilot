@@ -8,10 +8,7 @@ export default {
     { id: 1, question_en: "What am I doing with my mom?", answer: ["walking", "walking with mom", "holding hands"], clue_statement: "I am walking with my mom.", hint_en: "Moving slowly...", hint_vi: "Di chuyển chậm..." },
     { id: 2, question_en: "What color is the sister's kite?", answer: ["red", "red kite"], clue_statement: "The kite is red.", hint_en: "A color...", hint_vi: "Một màu..." },
     { id: 3, question_en: "What is the family eating?", answer: ["sandwiches", "yummy sandwiches"], clue_statement: "The family is eating yummy sandwiches.", hint_en: "Food for picnic...", hint_vi: "Đồ ăn dã ngoại..." },
-    { id: 4, question_en: "How is the park?", answer: ["busy and fun", "The park is busy and fun"], clue_statement: "The park is busy and fun.", hint_en: "Two describing words...", hint_vi: "Hai từ miêu tả..." },
-    { id: 5, question_en: "How is the kite?", answer: ["going very high", "The kite is going very high"], clue_statement: "The kite is going very high.", hint_en: "Think about the kite...", hint_vi: "Nghĩ về con diều..." },
-    { id: 6, question_en: "How is the grass?", answer: ["soft", "The grass is soft"], clue_statement: "The grass is soft.", hint_en: "A describing word...", hint_vi: "Một từ miêu tả..." },
-    { id: 7, question_en: "How is the dog?", answer: ["cute", "The dog is cute"], clue_statement: "The dog is cute.", hint_en: "Think about the dog...", hint_vi: "Nghĩ về con chó..." }
+  ],
   ],
   question: { text_en: "What do you do at the park? Who do you go with?", text_vi: "Bạn làm gì ở công viên? Bạn đi với ai?", min_words: 25, hint_en: "Talk about your park activities and who you go with...", hint_vi: "Nói về hoạt động ở công viên và ai đi cùng bạn..." }
 };

@@ -8,7 +8,6 @@ export default {
     { id: 1, question_en: "What can I do with music?", answer: ["sing", "dance", "sing and dance"], clue_statement: "Sing and dance.", hint_en: "Make sounds or move...", hint_vi: "Tạo âm thanh hoặc di chuyển..." },
     { id: 2, question_en: "Where do I run?", answer: ["park", "in the park", "the park"], clue_statement: "I run in the park.", hint_en: "A place with grass...", hint_vi: "Nơi có cỏ..." },
     { id: 3, question_en: "What do I draw?", answer: ["family", "pictures of family", "my family"], clue_statement: "I draw pictures of my family.", hint_en: "People I love...", hint_vi: "Người tôi yêu..." },
-    { id: 4, question_en: "When do I swim?", answer: ["summer", "in summer"], clue_statement: "I swim in summer.", hint_en: "A hot season...", hint_vi: "Một mùa nóng..." }
   ],
   question: {
     text_en: "What can you do? What is your talent?",
