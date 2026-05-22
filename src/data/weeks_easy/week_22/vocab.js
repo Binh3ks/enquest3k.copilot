@@ -18,7 +18,7 @@ export default {
     definition_vi: "toi qua",
     definition_en: "the night before today",
     example: "I looked at the moon last night.",
-    collocation: "last night / very last night",
+    collocation: "last night / last night at 9pm / last night before",
     image_url: "/images/week22/last_night.jpg",
     audio_word: "/audio/week22_easy/vocab_last_night.mp3"
   },
@@ -40,7 +40,7 @@ export default {
     definition_vi: "buoi phong van",
     definition_en: "when someone asks you questions",
     example: "Nova started the interview.",
-    collocation: "the interview / started the interview",
+    collocation: "a job interview / start an interview / pass an interview",
     image_url: "/images/week22/interview.jpg",
     audio_word: "/audio/week22_easy/vocab_interview.mp3"
   },
@@ -95,7 +95,7 @@ export default {
     definition_vi: "cau hoi",
     definition_en: "something you ask to get information",
     example: "Nova asked me simple questions.",
-    collocation: "simple questions / ask a question",
+    collocation: "a simple question / ask a question / a difficult question",
     image_url: "/images/week22/question.jpg",
     audio_word: "/audio/week22_easy/vocab_question.mp3"
   },
@@ -106,7 +106,7 @@ export default {
     definition_vi: "cau tra loi",
     definition_en: "what you say when someone asks you a question",
     example: "I gave a good answer.",
-    collocation: "a good answer / give an answer",
+    collocation: "the correct answer / a wrong answer / know the answer",
     image_url: "/images/week22/answer.jpg",
     audio_word: "/audio/week22_easy/vocab_answer.mp3"
   },
@@ -117,7 +117,7 @@ export default {
     definition_vi: "vu an",
     definition_en: "a mystery that needs to be solved",
     example: "Nova smiled because she solved the case.",
-    collocation: "solve the case / the case",
+    collocation: "solve the case / crack the case / the case is solved",
     image_url: "/images/week22/case.jpg",
     audio_word: "/audio/week22_easy/vocab_case.mp3"
   },
