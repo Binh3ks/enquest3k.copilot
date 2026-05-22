@@ -4,9 +4,9 @@ export default {
   audio_url: "/audio/week30_easy/read_main.mp3",
   content_en: `Last Sunday, Luna went to a **fun picnic** in the park with her friends Tom and Mia. Tom's dad is a **kind chef** who **made fresh** sandwiches, cookies, and cold lemonade. He **put everything** in a big basket.
 
-Mia's mum is a **nice scientist** who **brought fresh** strawberries. Luna's dad **bought a** big red watermelon at the **local market**. The children **ate yummy** sandwiches and **drank lots of lemonade**. Tom also **brought fresh** mango juice.
+Mia's mum is a **nice scientist** who **brought fresh** strawberries. Luna's dad bought a big red watermelon at the **local market**. The children **ate yummy** sandwiches and **drank lots of lemonade**. Tom also **brought fresh** mango juice.
 
-At the park, a **friendly artist** was painting the lake. Luna **gave a** cookie to the artist and he **smiled warmly** and **said hello** back. Tom's friend is a **nice dentist** — she **smiled warmly** and **said hello** too.
+At the park, a **friendly artist** was painting the lake. Luna gave a cookie to the artist and he **smiled warmly** and **said hello** back. Tom's friend is a **nice dentist** — she **smiled warmly** and **said hello** too.
 
 The children **ate lots of** food and **drank lots of lemonade** and **felt very cheerful**. After lunch, they played games and **watched the ducks** on the lake. **After that** they **put everything away** and went home happy.
 
