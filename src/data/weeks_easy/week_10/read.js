@@ -2,7 +2,7 @@ export default {
   title: "My Farm Visit",
   image_url: "/images/week10/read_cover_w10.jpg",
   audio_url: "/audio/week10_easy/read_explore_main.mp3",
-  content_en: "Today I visit a farm. The farm is quiet. I am happy! I see a big **cow**. The cow **eats grass** **in the field**. I see a **chicken**. The chicken runs very fast! The farm is clean. The field is green. I see many **trees**. The trees are tall. The countryside is peaceful. I see many animals **on the farm**. I love the farm! My uncle says the farm is nice. I agree! The farm is the best!",
+  content_en: "Today I visit a farm. The farm is quiet. I am happy! I see a **big brown cow**. The **big brown cow** **eats grass** **in the field**. I see a **small white chicken**. The **small white chicken** runs very fast! The farm is **clean and quiet**. The **green grass** is soft. The field is green. I see many **tall trees**. The **tall trees** are tall. The countryside is peaceful. I see many animals **on the farm**. I love the farm! My uncle says the farm is nice. I agree! The farm is the best!",
   content_vi: "Hôm nay tôi đến thăm một trang trại. Trang trại yên tĩnh. Tôi vui! Tôi thấy một con bò lớn. Con bò ăn cỏ trong đồng. Tôi thấy một con gà. Con gà chạy nhanh! Trang trại sạch sẽ. Đồng xanh. Tôi thấy nhiều cây. Các cây cao. Vùng nông thôn yên bình. Tôi thấy nhiều động vật trên trang trại. Tôi yêu trang trại! Chú tôi nói trang trại đẹp. Tôi đồng ý! Trang trại là nơi tuyệt nhất!",
   comprehension_questions: [
     { id: 1, question_en: "Where do you visit?", answer: ["farm", "the farm", "a farm"], clue_statement: "You visit a farm.", hint_en: "A place with animals...", hint_vi: "Một nơi có động vật..." },

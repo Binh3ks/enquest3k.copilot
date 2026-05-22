@@ -5,7 +5,7 @@ export default {
 
 Nova began the interview calmly. She had three questions for the suspect. "Where were you **yesterday morning**?" she asked. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a new clue **in her notebook**.
 
-She asked next: "What did you do **last night** and **last week**?" Again, the suspect **answered clearly** every question. Nova studied each clue carefully in the warm lantern light.
+She asked next: "What did you do **last night** and **last week**?" Again, the suspect **answered clearly** every question. Nova **studied each clue carefully** in the warm lantern light.
 
 Finally, Nova organized the case file and wrote her final report. She handed the report to the local police team **in Hoi An**. Every clue in her notebook had helped. Detective Nova **had solved the case** once again.`,
   content_vi: `Nova đang làm việc với một vụ án khó ở phố cổ Hội An, Việt Nam. Cô ấy rất cẩn thận. Cô ấy đến hiện trường và mở quyển sổ ngay lập tức. Những con phố đèn lồng hẹp yên tĩnh, nhưng ai đó đã báo cáo một bí ẩn đêm qua.
