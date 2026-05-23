@@ -137,30 +137,12 @@ const mindMapContent = {
       }
     ],
     "Is it ___ or ___?": [
-      {
-        "text": "raining",
-        "audio": "/audio/week17/mindmap_branch_5_1.mp3"
-      },
-      {
-        "text": "cold",
-        "audio": "/audio/week17/mindmap_branch_5_2.mp3"
-      },
-      {
-        "text": "warm",
-        "audio": "/audio/week17/mindmap_branch_5_3.mp3"
-      },
-      {
-        "text": "sunny",
-        "audio": "/audio/week17/mindmap_branch_5_4.mp3"
-      },
-      {
-        "text": "windy",
-        "audio": "/audio/week17/mindmap_branch_5_5.mp3"
-      },
-      {
-        "text": "cloudy",
-        "audio": "/audio/week17/mindmap_branch_5_6.mp3"
-      }
+      { text: "raining or sunny", audio: "/audio/week17/mindmap_branch_5_1.mp3" },
+      { text: "cold or warm", audio: "/audio/week17/mindmap_branch_5_2.mp3" },
+      { text: "windy or calm", audio: "/audio/week17/mindmap_branch_5_3.mp3" },
+      { text: "cloudy or clear", audio: "/audio/week17/mindmap_branch_5_4.mp3" },
+      { text: "wet or dry", audio: "/audio/week17/mindmap_branch_5_5.mp3" },
+      { text: "hot or cool", audio: "/audio/week17/mindmap_branch_5_6.mp3" }
     ],
     "Do you ___ rainy weather?": [
       {

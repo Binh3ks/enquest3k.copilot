@@ -137,30 +137,12 @@ const mindMapContent = {
       }
     ],
     "Do you ___ or ___?": [
-      {
-        "text": "work hard",
-        "audio": "/audio/week34/mindmap_branch_5_1.mp3"
-      },
-      {
-        "text": "play",
-        "audio": "/audio/week34/mindmap_branch_5_2.mp3"
-      },
-      {
-        "text": "prepare",
-        "audio": "/audio/week34/mindmap_branch_5_3.mp3"
-      },
-      {
-        "text": "rest",
-        "audio": "/audio/week34/mindmap_branch_5_4.mp3"
-      },
-      {
-        "text": "save",
-        "audio": "/audio/week34/mindmap_branch_5_5.mp3"
-      },
-      {
-        "text": "enjoy",
-        "audio": "/audio/week34/mindmap_branch_5_6.mp3"
-      }
+      { text: "work or play", audio: "/audio/week34/mindmap_branch_5_1.mp3" },
+      { text: "save or spend", audio: "/audio/week34/mindmap_branch_5_2.mp3" },
+      { text: "prepare or wait", audio: "/audio/week34/mindmap_branch_5_3.mp3" },
+      { text: "run or rest", audio: "/audio/week34/mindmap_branch_5_4.mp3" },
+      { text: "plan or improvise", audio: "/audio/week34/mindmap_branch_5_5.mp3" },
+      { text: "help or watch", audio: "/audio/week34/mindmap_branch_5_6.mp3" }
     ],
     "What is your ___ lesson?": [
       {

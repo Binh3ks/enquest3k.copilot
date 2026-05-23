@@ -137,30 +137,12 @@ const mindMapContent = {
       }
     ],
     "Is the city ___ or ___?": [
-      {
-        "text": "busy",
-        "audio": "/audio/week9/mindmap_branch_5_1.mp3"
-      },
-      {
-        "text": "quiet",
-        "audio": "/audio/week9/mindmap_branch_5_2.mp3"
-      },
-      {
-        "text": "noisy",
-        "audio": "/audio/week9/mindmap_branch_5_3.mp3"
-      },
-      {
-        "text": "big",
-        "audio": "/audio/week9/mindmap_branch_5_4.mp3"
-      },
-      {
-        "text": "small",
-        "audio": "/audio/week9/mindmap_branch_5_5.mp3"
-      },
-      {
-        "text": "clean",
-        "audio": "/audio/week9/mindmap_branch_5_6.mp3"
-      }
+      { text: "big or small", audio: "/audio/week9/mindmap_branch_5_1.mp3" },
+      { text: "noisy or quiet", audio: "/audio/week9/mindmap_branch_5_2.mp3" },
+      { text: "busy or peaceful", audio: "/audio/week9/mindmap_branch_5_3.mp3" },
+      { text: "modern or old", audio: "/audio/week9/mindmap_branch_5_4.mp3" },
+      { text: "clean or dirty", audio: "/audio/week9/mindmap_branch_5_5.mp3" },
+      { text: "safe or dangerous", audio: "/audio/week9/mindmap_branch_5_6.mp3" }
     ],
     "Do you like the ___?": [
       {
