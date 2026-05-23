@@ -74,7 +74,7 @@ export default {
     },
     {
       id: 5,
-      type: "before_after",
+      type: "missing_part",
       cpa_stage: "pictorial",
       question_en: "Jake took 18 big steps in the corridor. After some steps, he had 8 steps left. How many steps did he take?",
       question_vi: "Jake cần đi 18 bước lớn trong hành lang. Sau một số bước, cậu còn 8 bước. Jake đã đi bao nhiêu bước?",
