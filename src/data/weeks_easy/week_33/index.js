@@ -14,6 +14,7 @@ import writing from './writing.js';
 import word_power from './word_power.js';
 import mindmap from './mindmap.js';
 import word_match from './word_match.js';
+import daily_watch from './daily_watch.js';
 import { week33GamesEasy as games } from './games.js';
 
 const weekData = {
@@ -48,6 +49,7 @@ const weekData = {
     writing: writing,
     explore: explore,
     mindmap_speaking: mindmap,
+    daily_watch: daily_watch,
     game_hub: games
   }
 };
