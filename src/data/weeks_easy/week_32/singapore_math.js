@@ -7,7 +7,7 @@ export default {
   problems: [
     {
       id: 1,
-      type: "part_whole",
+      type: "missing_part",
       cpa_stage: "pictorial",
       question_en: "I have 24 chores on my chore chart. I finished 15 chores this week. How many chores do I still need to finish?",
       question_vi: "Tôi có 24 việc cần làm. Tôi đã hoàn thành 15 việc tuần này. Tôi còn phải làm bao nhiêu việc nữa?",
@@ -71,7 +71,7 @@ export default {
     },
     {
       id: 5,
-      type: "part_whole",
+      type: "missing_part",
       cpa_stage: "pictorial",
       question_en: "I had 40 star stickers for my chore chart. I used 23 stickers this month. How many stickers do I have left?",
       question_vi: "Tôi có 40 nhãn dán sao cho bảng việc nhà. Tôi đã dùng 23 cái tháng này. Tôi còn lại bao nhiêu cái?",

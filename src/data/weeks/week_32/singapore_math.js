@@ -7,7 +7,7 @@ export default {
   problems: [
     {
       id: 1,
-      type: "part_whole",
+      type: "missing_part",
       cpa_stage: "pictorial",
       question_en: "Tom has 45 chores on his yearly chore chart. He finished 27 chores in the first six months. How many chores does he still need to finish?",
       question_vi: "Tom có 45 việc cần làm trong cả năm. Cậu đã hoàn thành 27 việc trong sáu tháng đầu. Cậu còn phải làm bao nhiêu việc nữa?",
@@ -71,7 +71,7 @@ export default {
     },
     {
       id: 5,
-      type: "part_whole",
+      type: "missing_part",
       cpa_stage: "pictorial",
       question_en: "Tom saved £65 to buy garden tools. He spent £38 on a new saw. How much money does he have left?",
       question_vi: "Tom tiết kiệm được 65 bảng để mua dụng cụ làm vườn. Cậu đã tiêu 38 bảng mua cưa mới. Cậu còn lại bao nhiêu tiền?",
