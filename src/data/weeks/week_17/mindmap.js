@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "It is raining, so I am ___.", audio: "/audio/week17/mindmap_stem_eboglz.mp3" },
-    { text: "When it is cold, I wear ___.", audio: "/audio/week17/mindmap_stem_86sthi.mp3" },
-    { text: "The weather today is ___.", audio: "/audio/week17/mindmap_stem_gx17th.mp3" },
-    { text: "My favorite weather is ___.", audio: "/audio/week17/mindmap_stem_8loh82.mp3" },
-    { text: "It is snowing, so I am ___.", audio: "/audio/week17/mindmap_stem_o84qu2.mp3" },
-    { text: "On rainy days, I like to ___.", audio: "/audio/week17/mindmap_stem_6rj8tl.mp3" }
+  "centerStems": [
+    {
+      "text": "It is ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week17/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "The rain is ___ from the sky.",
+      "type": "affirmative",
+      "audio": "/audio/week17/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The school is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week17/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I do not ___ in the rain.",
+      "type": "negative",
+      "audio": "/audio/week17/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "Is it ___ or ___?",
+      "type": "question",
+      "audio": "/audio/week17/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you ___ rainy weather?",
+      "type": "question",
+      "audio": "/audio/week17/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "It is raining, so I am ___.": [
-      { text: "wearing a coat", audio: "/audio/week17/mindmap_branch_cbvfi1.mp3" },
-      { text: "carrying an umbrella", audio: "/audio/week17/mindmap_branch_b4ig5m.mp3" },
-      { text: "wearing my boots", audio: "/audio/week17/mindmap_branch_3k029i.mp3" },
-      { text: "staying dry inside", audio: "/audio/week17/mindmap_branch_22khec.mp3" },
-      { text: "putting on my hat", audio: "/audio/week17/mindmap_branch_tq4poj.mp3" },
-      { text: "dressing for the weather", audio: "/audio/week17/mindmap_branch_d2cv39.mp3" }
+  "branchLabels": {
+    "It is ___ today.": [
+      {
+        "text": "raining",
+        "audio": "/audio/week17/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "cold",
+        "audio": "/audio/week17/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "wet",
+        "audio": "/audio/week17/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "windy",
+        "audio": "/audio/week17/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "cloudy",
+        "audio": "/audio/week17/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "dark",
+        "audio": "/audio/week17/mindmap_branch_1_6.mp3"
+      }
     ],
-    "When it is cold, I wear ___.": [
-      { text: "a thick coat", audio: "/audio/week17/mindmap_branch_i6tyci.mp3" },
-      { text: "a scarf and gloves", audio: "/audio/week17/mindmap_branch_l01m12.mp3" },
-      { text: "warm boots", audio: "/audio/week17/mindmap_branch_9txmo3.mp3" },
-      { text: "a hat", audio: "/audio/week17/mindmap_branch_evu20t.mp3" },
-      { text: "my warmest jacket", audio: "/audio/week17/mindmap_branch_dgwfa0.mp3" },
-      { text: "layers of clothes", audio: "/audio/week17/mindmap_branch_2mbbq4.mp3" }
+    "The rain is ___ from the sky.": [
+      {
+        "text": "falling",
+        "audio": "/audio/week17/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "coming",
+        "audio": "/audio/week17/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "dropping",
+        "audio": "/audio/week17/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "pouring",
+        "audio": "/audio/week17/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "drizzling",
+        "audio": "/audio/week17/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "flowing",
+        "audio": "/audio/week17/mindmap_branch_2_6.mp3"
+      }
     ],
-    "The weather today is ___.": [
-      { text: "sunny and warm", audio: "/audio/week17/mindmap_branch_2kn3yz.mp3" },
-      { text: "cold and windy", audio: "/audio/week17/mindmap_branch_fr3nxi.mp3" },
-      { text: "cloudy", audio: "/audio/week17/mindmap_branch_xzxiky.mp3" },
-      { text: "rainy", audio: "/audio/week17/mindmap_branch_hah1j9.mp3" },
-      { text: "perfect for a walk", audio: "/audio/week17/mindmap_branch_szmsqo.mp3" },
-      { text: "great for playing outside", audio: "/audio/week17/mindmap_branch_rnhmcf.mp3" }
+    "The school is not ___ today.": [
+      {
+        "text": "warm",
+        "audio": "/audio/week17/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "open",
+        "audio": "/audio/week17/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "dry",
+        "audio": "/audio/week17/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week17/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week17/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "quiet",
+        "audio": "/audio/week17/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My favorite weather is ___.": [
-      { text: "sunny", audio: "/audio/week17/mindmap_branch_hc2iru.mp3" },
-      { text: "rainy", audio: "/audio/week17/mindmap_branch_i477yw.mp3" },
-      { text: "snowy", audio: "/audio/week17/mindmap_branch_hfw99l.mp3" },
-      { text: "cool and breezy", audio: "/audio/week17/mindmap_branch_dxn6ki.mp3" },
-      { text: "warm", audio: "/audio/week17/mindmap_branch_htm5t6.mp3" },
-      { text: "cloudy with a breeze", audio: "/audio/week17/mindmap_branch_y9jhs9.mp3" }
+    "I do not ___ in the rain.": [
+      {
+        "text": "run",
+        "audio": "/audio/week17/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "play",
+        "audio": "/audio/week17/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "walk",
+        "audio": "/audio/week17/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "go outside",
+        "audio": "/audio/week17/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "stand",
+        "audio": "/audio/week17/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "sit",
+        "audio": "/audio/week17/mindmap_branch_4_6.mp3"
+      }
     ],
-    "It is snowing, so I am ___.": [
-      { text: "wearing thick boots", audio: "/audio/week17/mindmap_branch_fjkeh4.mp3" },
-      { text: "putting on my gloves", audio: "/audio/week17/mindmap_branch_8qt6el.mp3" },
-      { text: "going outside to play", audio: "/audio/week17/mindmap_branch_xb2lcx.mp3" },
-      { text: "making a snowman", audio: "/audio/week17/mindmap_branch_hempgg.mp3" },
-      { text: "watching from the window", audio: "/audio/week17/mindmap_branch_wxy9h7.mp3" },
-      { text: "feeling very excited", audio: "/audio/week17/mindmap_branch_xssbz.mp3" }
+    "Is it ___ or ___?": [
+      {
+        "text": "raining",
+        "audio": "/audio/week17/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "cold",
+        "audio": "/audio/week17/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "warm",
+        "audio": "/audio/week17/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "sunny",
+        "audio": "/audio/week17/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "windy",
+        "audio": "/audio/week17/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "cloudy",
+        "audio": "/audio/week17/mindmap_branch_5_6.mp3"
+      }
     ],
-    "On rainy days, I like to ___.": [
-      { text: "read books at home", audio: "/audio/week17/mindmap_branch_vxpje0.mp3" },
-      { text: "stay indoors", audio: "/audio/week17/mindmap_branch_2i0lqd.mp3" },
-      { text: "watch movies", audio: "/audio/week17/mindmap_branch_8tlcv4.mp3" },
-      { text: "drink hot chocolate", audio: "/audio/week17/mindmap_branch_skjyih.mp3" },
-      { text: "listen to the rain", audio: "/audio/week17/mindmap_branch_o9anl1.mp3" },
-      { text: "draw pictures", audio: "/audio/week17/mindmap_branch_zfxhih.mp3" }
+    "Do you ___ rainy weather?": [
+      {
+        "text": "like",
+        "audio": "/audio/week17/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "love",
+        "audio": "/audio/week17/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "hate",
+        "audio": "/audio/week17/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "enjoy",
+        "audio": "/audio/week17/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "prefer",
+        "audio": "/audio/week17/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "have",
+        "audio": "/audio/week17/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

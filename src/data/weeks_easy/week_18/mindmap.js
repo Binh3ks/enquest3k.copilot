@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "I am ___ right now.", audio: "/audio/week18_easy/mindmap_stem_yex7t2.mp3" },
-    { text: "My teacher is ___.", audio: "/audio/week18_easy/mindmap_stem_203gst.mp3" },
-    { text: "At home, Mum is ___.", audio: "/audio/week18_easy/mindmap_stem_z5dwsq.mp3" },
-    { text: "My class is ___.", audio: "/audio/week18_easy/mindmap_stem_hrvz61.mp3" },
-    { text: "I am ___ a picture.", audio: "/audio/week18_easy/mindmap_stem_ft5w9f.mp3" },
-    { text: "My pet is ___.", audio: "/audio/week18_easy/mindmap_stem_et0ols.mp3" }
+  "centerStems": [
+    {
+      "text": "The reporter is ___ on TV.",
+      "type": "affirmative",
+      "audio": "/audio/week18/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "The news is ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week18/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The camera is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week18/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I do not ___ the news.",
+      "type": "negative",
+      "audio": "/audio/week18/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "Do you ___ the news?",
+      "type": "question",
+      "audio": "/audio/week18/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "What is your ___ show?",
+      "type": "question",
+      "audio": "/audio/week18/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "I am ___ right now.": [
-      { text: "reading", audio: "/audio/week18_easy/mindmap_branch_z7c2gj.mp3" },
-      { text: "writing", audio: "/audio/week18_easy/mindmap_branch_7gegxp.mp3" },
-      { text: "drawing", audio: "/audio/week18_easy/mindmap_branch_y41v0l.mp3" },
-      { text: "eating", audio: "/audio/week18_easy/mindmap_branch_or2b91.mp3" },
-      { text: "playing", audio: "/audio/week18_easy/mindmap_branch_waewd1.mp3" },
-      { text: "learning", audio: "/audio/week18_easy/mindmap_branch_9r4d3z.mp3" }
+  "branchLabels": {
+    "The reporter is ___ on TV.": [
+      {
+        "text": "speaking",
+        "audio": "/audio/week18/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "standing",
+        "audio": "/audio/week18/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "reporting",
+        "audio": "/audio/week18/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "sitting",
+        "audio": "/audio/week18/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "reading",
+        "audio": "/audio/week18/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "watching",
+        "audio": "/audio/week18/mindmap_branch_1_6.mp3"
+      }
     ],
-    "My teacher is ___.": [
-      { text: "talking", audio: "/audio/week18_easy/mindmap_branch_730s9w.mp3" },
-      { text: "writing on the board", audio: "/audio/week18_easy/mindmap_branch_sux1qo.mp3" },
-      { text: "explaining", audio: "/audio/week18_easy/mindmap_branch_dr3pwf.mp3" },
-      { text: "helping us", audio: "/audio/week18_easy/mindmap_branch_eauk4z.mp3" },
-      { text: "walking around", audio: "/audio/week18_easy/mindmap_branch_dhqi16.mp3" },
-      { text: "asking questions", audio: "/audio/week18_easy/mindmap_branch_bbqprg.mp3" }
+    "The news is ___ today.": [
+      {
+        "text": "live",
+        "audio": "/audio/week18/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "exciting",
+        "audio": "/audio/week18/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "important",
+        "audio": "/audio/week18/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week18/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week18/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "new",
+        "audio": "/audio/week18/mindmap_branch_2_6.mp3"
+      }
     ],
-    "At home, Mum is ___.": [
-      { text: "cooking dinner", audio: "/audio/week18_easy/mindmap_branch_1henmt.mp3" },
-      { text: "watching TV", audio: "/audio/week18_easy/mindmap_branch_aobdtm.mp3" },
-      { text: "reading a book", audio: "/audio/week18_easy/mindmap_branch_44t0on.mp3" },
-      { text: "cleaning the house", audio: "/audio/week18_easy/mindmap_branch_au2vav.mp3" },
-      { text: "talking on the phone", audio: "/audio/week18_easy/mindmap_branch_lg0pm3.mp3" },
-      { text: "doing the laundry", audio: "/audio/week18_easy/mindmap_branch_vdpr0k.mp3" }
+    "The camera is not ___ today.": [
+      {
+        "text": "working",
+        "audio": "/audio/week18/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "on",
+        "audio": "/audio/week18/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "open",
+        "audio": "/audio/week18/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "ready",
+        "audio": "/audio/week18/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "bright",
+        "audio": "/audio/week18/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "new",
+        "audio": "/audio/week18/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My class is ___.": [
-      { text: "listening", audio: "/audio/week18_easy/mindmap_branch_u4ynbh.mp3" },
-      { text: "learning", audio: "/audio/week18_easy/mindmap_branch_5m16mu.mp3" },
-      { text: "laughing", audio: "/audio/week18_easy/mindmap_branch_yinsz1.mp3" },
-      { text: "writing", audio: "/audio/week18_easy/mindmap_branch_nt2t58.mp3" },
-      { text: "working hard", audio: "/audio/week18_easy/mindmap_branch_jgbcau.mp3" },
-      { text: "very happy today", audio: "/audio/week18_easy/mindmap_branch_gudgql.mp3" }
+    "I do not ___ the news.": [
+      {
+        "text": "watch",
+        "audio": "/audio/week18/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week18/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "read",
+        "audio": "/audio/week18/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "report",
+        "audio": "/audio/week18/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "follow",
+        "audio": "/audio/week18/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "enjoy",
+        "audio": "/audio/week18/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I am ___ a picture.": [
-      { text: "drawing", audio: "/audio/week18_easy/mindmap_branch_fiajgy.mp3" },
-      { text: "painting", audio: "/audio/week18_easy/mindmap_branch_q7h6jy.mp3" },
-      { text: "coloring", audio: "/audio/week18_easy/mindmap_branch_mqlrd6.mp3" },
-      { text: "describing", audio: "/audio/week18_easy/mindmap_branch_hxqvxm.mp3" },
-      { text: "looking at", audio: "/audio/week18_easy/mindmap_branch_cs5u3i.mp3" },
-      { text: "creating", audio: "/audio/week18_easy/mindmap_branch_ipir89.mp3" }
+    "Do you ___ the news?": [
+      {
+        "text": "watch",
+        "audio": "/audio/week18/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week18/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "read",
+        "audio": "/audio/week18/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "follow",
+        "audio": "/audio/week18/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "enjoy",
+        "audio": "/audio/week18/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "have",
+        "audio": "/audio/week18/mindmap_branch_5_6.mp3"
+      }
     ],
-    "My pet is ___.": [
-      { text: "sleeping on the sofa", audio: "/audio/week18_easy/mindmap_branch_9oy80r.mp3" },
-      { text: "running in the garden", audio: "/audio/week18_easy/mindmap_branch_13y8a7.mp3" },
-      { text: "playing", audio: "/audio/week18_easy/mindmap_branch_m8oc7z.mp3" },
-      { text: "eating", audio: "/audio/week18_easy/mindmap_branch_w8w1ur.mp3" },
-      { text: "sitting quietly", audio: "/audio/week18_easy/mindmap_branch_f73ozi.mp3" },
-      { text: "very fluffy", audio: "/audio/week18_easy/mindmap_branch_ib21dx.mp3" }
+    "What is your ___ show?": [
+      {
+        "text": "favorite",
+        "audio": "/audio/week18/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "best",
+        "audio": "/audio/week18/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "new",
+        "audio": "/audio/week18/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week18/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "exciting",
+        "audio": "/audio/week18/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "TV",
+        "audio": "/audio/week18/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

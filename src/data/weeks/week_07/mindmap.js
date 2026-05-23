@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "There is a ___ in my backpack.", audio: "/audio/week7/mindmap_stem_p93nad.mp3" },
-    { text: "I use a ___ to write.", audio: "/audio/week7/mindmap_stem_32qkpo.mp3" },
-    { text: "In my classroom, I see ___.", audio: "/audio/week7/mindmap_stem_aasgw1.mp3" },
-    { text: "I keep my ___ organized.", audio: "/audio/week7/mindmap_stem_eabbnm.mp3" },
-    { text: "My favorite school supply is ___.", audio: "/audio/week7/mindmap_stem_t0kf91.mp3" },
-    { text: "There is a ___ on my desk.", audio: "/audio/week7/mindmap_stem_lxyiy0.mp3" }
+  "centerStems": [
+    {
+      "text": "There is a ___ on the desk.",
+      "type": "affirmative",
+      "audio": "/audio/week7/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "Sam is ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week7/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "There is not a ___ in the room.",
+      "type": "negative",
+      "audio": "/audio/week7/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "Sam does not ___ his pencil case.",
+      "type": "negative",
+      "audio": "/audio/week7/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "What is ___ the pencil case?",
+      "type": "question",
+      "audio": "/audio/week7/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you have ___ at school?",
+      "type": "question",
+      "audio": "/audio/week7/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "There is a ___ in my backpack.": [
-      { text: "book", audio: "/audio/week7/mindmap_branch_1w8m21.mp3" },
-      { text: "notebook", audio: "/audio/week7/mindmap_branch_m4hjgp.mp3" },
-      { text: "pencil case", audio: "/audio/week7/mindmap_branch_rh90sf.mp3" },
-      { text: "ruler", audio: "/audio/week7/mindmap_branch_k25kha.mp3" },
-      { text: "eraser", audio: "/audio/week7/mindmap_branch_5co4sm.mp3" },
-      { text: "pen", audio: "/audio/week7/mindmap_branch_pw7hmz.mp3" }
+  "branchLabels": {
+    "There is a ___ on the desk.": [
+      {
+        "text": "book",
+        "audio": "/audio/week7/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "pen",
+        "audio": "/audio/week7/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "bag",
+        "audio": "/audio/week7/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "pencil case",
+        "audio": "/audio/week7/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "notebook",
+        "audio": "/audio/week7/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "eraser",
+        "audio": "/audio/week7/mindmap_branch_1_6.mp3"
+      }
     ],
-    "I use a ___ to write.": [
-      { text: "pen", audio: "/audio/week7/mindmap_branch_lbckea.mp3" },
-      { text: "pencil", audio: "/audio/week7/mindmap_branch_xuz2ts.mp3" },
-      { text: "marker", audio: "/audio/week7/mindmap_branch_c7sd2b.mp3" },
-      { text: "crayon", audio: "/audio/week7/mindmap_branch_6gt61.mp3" },
-      { text: "chalk", audio: "/audio/week7/mindmap_branch_dnjta8.mp3" },
-      { text: "stylus", audio: "/audio/week7/mindmap_branch_39e3rf.mp3" }
+    "Sam is ___ today.": [
+      {
+        "text": "happy",
+        "audio": "/audio/week7/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week7/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "ready",
+        "audio": "/audio/week7/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "smart",
+        "audio": "/audio/week7/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "proud",
+        "audio": "/audio/week7/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week7/mindmap_branch_2_6.mp3"
+      }
     ],
-    "In my classroom, I see ___.": [
-      { text: "a whiteboard", audio: "/audio/week7/mindmap_branch_83htog.mp3" },
-      { text: "a computer", audio: "/audio/week7/mindmap_branch_hm17wi.mp3" },
-      { text: "a teacher", audio: "/audio/week7/mindmap_branch_etfjrx.mp3" },
-      { text: "a desk", audio: "/audio/week7/mindmap_branch_e6tgqk.mp3" },
-      { text: "a chair", audio: "/audio/week7/mindmap_branch_e4et7q.mp3" },
-      { text: "a clock", audio: "/audio/week7/mindmap_branch_e1ytn3.mp3" }
+    "There is not a ___ in the room.": [
+      {
+        "text": "teacher",
+        "audio": "/audio/week7/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "window",
+        "audio": "/audio/week7/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "door",
+        "audio": "/audio/week7/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "clock",
+        "audio": "/audio/week7/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "computer",
+        "audio": "/audio/week7/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "lamp",
+        "audio": "/audio/week7/mindmap_branch_3_6.mp3"
+      }
     ],
-    "I keep my ___ organized.": [
-      { text: "backpack", audio: "/audio/week7/mindmap_branch_qrxkw3.mp3" },
-      { text: "pencil case", audio: "/audio/week7/mindmap_branch_tt9cre.mp3" },
-      { text: "notebook", audio: "/audio/week7/mindmap_branch_l76khq.mp3" },
-      { text: "folders", audio: "/audio/week7/mindmap_branch_z1j2yw.mp3" },
-      { text: "desk", audio: "/audio/week7/mindmap_branch_2v0xfo.mp3" },
-      { text: "locker", audio: "/audio/week7/mindmap_branch_1uldnp.mp3" }
+    "Sam does not ___ his pencil case.": [
+      {
+        "text": "open",
+        "audio": "/audio/week7/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "lose",
+        "audio": "/audio/week7/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "forget",
+        "audio": "/audio/week7/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "need",
+        "audio": "/audio/week7/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "use",
+        "audio": "/audio/week7/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "find",
+        "audio": "/audio/week7/mindmap_branch_4_6.mp3"
+      }
     ],
-    "My favorite school supply is ___.": [
-      { text: "a pen", audio: "/audio/week7/mindmap_branch_v0a6o6.mp3" },
-      { text: "my notebook", audio: "/audio/week7/mindmap_branch_4c5mg5.mp3" },
-      { text: "my pencil case", audio: "/audio/week7/mindmap_branch_m4omux.mp3" },
-      { text: "a ruler", audio: "/audio/week7/mindmap_branch_zet7lv.mp3" },
-      { text: "an eraser", audio: "/audio/week7/mindmap_branch_wk6ppn.mp3" },
-      { text: "colored pencils", audio: "/audio/week7/mindmap_branch_sij8ix.mp3" }
+    "What is ___ the pencil case?": [
+      {
+        "text": "in",
+        "audio": "/audio/week7/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "next to",
+        "audio": "/audio/week7/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "on",
+        "audio": "/audio/week7/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "inside",
+        "audio": "/audio/week7/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "near",
+        "audio": "/audio/week7/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "under",
+        "audio": "/audio/week7/mindmap_branch_5_6.mp3"
+      }
     ],
-    "There is a ___ on my desk.": [
-      { text: "book", audio: "/audio/week7/mindmap_branch_4adifw.mp3" },
-      { text: "notebook", audio: "/audio/week7/mindmap_branch_f2euqy.mp3" },
-      { text: "pen", audio: "/audio/week7/mindmap_branch_wbdj3y.mp3" },
-      { text: "ruler", audio: "/audio/week7/mindmap_branch_r387dt.mp3" },
-      { text: "eraser", audio: "/audio/week7/mindmap_branch_ys1c55.mp3" },
-      { text: "pencil case", audio: "/audio/week7/mindmap_branch_f3z6fg.mp3" }
+    "Do you have ___ at school?": [
+      {
+        "text": "a pen",
+        "audio": "/audio/week7/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "a ruler",
+        "audio": "/audio/week7/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "a book",
+        "audio": "/audio/week7/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "a bag",
+        "audio": "/audio/week7/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "a friend",
+        "audio": "/audio/week7/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "a desk",
+        "audio": "/audio/week7/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

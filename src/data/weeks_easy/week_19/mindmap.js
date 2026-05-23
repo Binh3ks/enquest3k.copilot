@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "I was ___.", audio: "/audio/week19_easy/mindmap_stem_l8xh0d.mp3" },
-    { text: "My photo was ___.", audio: "/audio/week19_easy/mindmap_stem_da2rfs.mp3" },
-    { text: "When I was small, I was ___.", audio: "/audio/week19_easy/mindmap_stem_cpltok.mp3" },
-    { text: "My favorite memory is ___.", audio: "/audio/week19_easy/mindmap_stem_6z1k4v.mp3" },
-    { text: "In my album, I was ___.", audio: "/audio/week19_easy/mindmap_stem_5l8uvb.mp3" },
-    { text: "Now I am big, but I was ___.", audio: "/audio/week19_easy/mindmap_stem_k9zcjn.mp3" }
+  "centerStems": [
+    {
+      "text": "I ___ little when I was young.",
+      "type": "affirmative",
+      "audio": "/audio/week19/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "My family was ___ in the past.",
+      "type": "affirmative",
+      "audio": "/audio/week19/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "I am not ___ anymore.",
+      "type": "negative",
+      "audio": "/audio/week19/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "The past was not ___ the present.",
+      "type": "negative",
+      "audio": "/audio/week19/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "Do you have ___ photos?",
+      "type": "question",
+      "audio": "/audio/week19/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you ___ your memories?",
+      "type": "question",
+      "audio": "/audio/week19/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "I was ___.": [
-      { text: "very small", audio: "/audio/week19_easy/mindmap_branch_do1kf7.mp3" },
-      { text: "very cute", audio: "/audio/week19_easy/mindmap_branch_tl3ylt.mp3" },
-      { text: "learning to walk", audio: "/audio/week19_easy/mindmap_branch_7ip1gs.mp3" },
-      { text: "always happy", audio: "/audio/week19_easy/mindmap_branch_hkvr75.mp3" },
-      { text: "a baby", audio: "/audio/week19_easy/mindmap_branch_r6tat1.mp3" },
-      { text: "tiny", audio: "/audio/week19_easy/mindmap_branch_jqjktc.mp3" }
+  "branchLabels": {
+    "I ___ little when I was young.": [
+      {
+        "text": "was",
+        "audio": "/audio/week19/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "am",
+        "audio": "/audio/week19/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "felt",
+        "audio": "/audio/week19/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "looked",
+        "audio": "/audio/week19/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "seemed",
+        "audio": "/audio/week19/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "appeared",
+        "audio": "/audio/week19/mindmap_branch_1_6.mp3"
+      }
     ],
-    "My photo was ___.": [
-      { text: "very cute", audio: "/audio/week19_easy/mindmap_branch_f4iqca.mp3" },
-      { text: "very funny", audio: "/audio/week19_easy/mindmap_branch_qwmfhn.mp3" },
-      { text: "in an old album", audio: "/audio/week19_easy/mindmap_branch_m7dlnb.mp3" },
-      { text: "in black and white", audio: "/audio/week19_easy/mindmap_branch_zh9vyn.mp3" },
-      { text: "a baby photo", audio: "/audio/week19_easy/mindmap_branch_ykpb1u.mp3" },
-      { text: "my favorite", audio: "/audio/week19_easy/mindmap_branch_mgv36o.mp3" }
+    "My family was ___ in the past.": [
+      {
+        "text": "happy",
+        "audio": "/audio/week19/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "young",
+        "audio": "/audio/week19/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "small",
+        "audio": "/audio/week19/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "different",
+        "audio": "/audio/week19/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week19/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "together",
+        "audio": "/audio/week19/mindmap_branch_2_6.mp3"
+      }
     ],
-    "When I was small, I was ___.": [
-      { text: "very tiny", audio: "/audio/week19_easy/mindmap_branch_8tzf95.mp3" },
-      { text: "always playing", audio: "/audio/week19_easy/mindmap_branch_x17gyk.mp3" },
-      { text: "learning to talk", audio: "/audio/week19_easy/mindmap_branch_9i2392.mp3" },
-      { text: "wearing baby clothes", audio: "/audio/week19_easy/mindmap_branch_asmrwi.mp3" },
-      { text: "very happy", audio: "/audio/week19_easy/mindmap_branch_g3urdp.mp3" },
-      { text: "with my mum", audio: "/audio/week19_easy/mindmap_branch_uv57jc.mp3" }
+    "I am not ___ anymore.": [
+      {
+        "text": "little",
+        "audio": "/audio/week19/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "young",
+        "audio": "/audio/week19/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "small",
+        "audio": "/audio/week19/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "cute",
+        "audio": "/audio/week19/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "short",
+        "audio": "/audio/week19/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "a baby",
+        "audio": "/audio/week19/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My favorite memory is ___.": [
-      { text: "playing at the park", audio: "/audio/week19_easy/mindmap_branch_dwf5pg.mp3" },
-      { text: "swimming with my family", audio: "/audio/week19_easy/mindmap_branch_42aun.mp3" },
-      { text: "a holiday", audio: "/audio/week19_easy/mindmap_branch_ta9egn.mp3" },
-      { text: "my first day at school", audio: "/audio/week19_easy/mindmap_branch_ldl6b7.mp3" },
-      { text: "baking with my grandma", audio: "/audio/week19_easy/mindmap_branch_cyhdtc.mp3" },
-      { text: "a day with my family", audio: "/audio/week19_easy/mindmap_branch_qqm53p.mp3" }
+    "The past was not ___ the present.": [
+      {
+        "text": "like",
+        "audio": "/audio/week19/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "same as",
+        "audio": "/audio/week19/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "equal to",
+        "audio": "/audio/week19/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "similar to",
+        "audio": "/audio/week19/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "the same as",
+        "audio": "/audio/week19/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "close to",
+        "audio": "/audio/week19/mindmap_branch_4_6.mp3"
+      }
     ],
-    "In my album, I was ___.": [
-      { text: "very small", audio: "/audio/week19_easy/mindmap_branch_qk7j47.mp3" },
-      { text: "very cute", audio: "/audio/week19_easy/mindmap_branch_h4wi2v.mp3" },
-      { text: "laughing", audio: "/audio/week19_easy/mindmap_branch_gbf86j.mp3" },
-      { text: "wearing baby clothes", audio: "/audio/week19_easy/mindmap_branch_ebqhnf.mp3" },
-      { text: "sitting with my family", audio: "/audio/week19_easy/mindmap_branch_jh809w.mp3" },
-      { text: "learning to walk", audio: "/audio/week19_easy/mindmap_branch_yeelw6.mp3" }
+    "Do you have ___ photos?": [
+      {
+        "text": "old",
+        "audio": "/audio/week19/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "family",
+        "audio": "/audio/week19/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "baby",
+        "audio": "/audio/week19/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week19/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "favorite",
+        "audio": "/audio/week19/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "special",
+        "audio": "/audio/week19/mindmap_branch_5_6.mp3"
+      }
     ],
-    "Now I am big, but I was ___.": [
-      { text: "very small", audio: "/audio/week19_easy/mindmap_branch_kf27gj.mp3" },
-      { text: "afraid of the dark", audio: "/audio/week19_easy/mindmap_branch_oecpst.mp3" },
-      { text: "a baby", audio: "/audio/week19_easy/mindmap_branch_xvfqdx.mp3" },
-      { text: "learning to walk", audio: "/audio/week19_easy/mindmap_branch_okkc1g.mp3" },
-      { text: "tiny", audio: "/audio/week19_easy/mindmap_branch_b0b45c.mp3" },
-      { text: "always crying", audio: "/audio/week19_easy/mindmap_branch_1z5v59.mp3" }
+    "Do you ___ your memories?": [
+      {
+        "text": "remember",
+        "audio": "/audio/week19/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week19/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "keep",
+        "audio": "/audio/week19/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "love",
+        "audio": "/audio/week19/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "share",
+        "audio": "/audio/week19/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "have",
+        "audio": "/audio/week19/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

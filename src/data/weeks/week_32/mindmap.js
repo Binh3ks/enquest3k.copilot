@@ -1,78 +1,192 @@
 const mindMapContent = {
-  centerStems: [
+  "centerStems": [
     {
-      text: "Last Saturday, Tom ___.",
-      audio: "/audio/week32/mindmap_stem_n4k7m.mp3"
+      "text": "Tom is very ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week32/mindmap_stem_1.mp3"
     },
     {
-      text: "Tom felt proud because he ___.",
-      audio: "/audio/week32/mindmap_stem_r2p9v.mp3"
+      "text": "Tom ___ his bed this morning.",
+      "type": "affirmative",
+      "audio": "/audio/week32/mindmap_stem_2.mp3"
     },
     {
-      text: "I woke up ___ this morning.",
-      audio: "/audio/week32/mindmap_stem_b6w3j.mp3"
+      "text": "Tom did not ___ yesterday.",
+      "type": "negative",
+      "audio": "/audio/week32/mindmap_stem_3.mp3"
     },
     {
-      text: "My favourite Saturday task is ___.",
-      audio: "/audio/week32/mindmap_stem_q8f5d.mp3"
+      "text": "The morning was not ___ yesterday.",
+      "type": "negative",
+      "audio": "/audio/week32/mindmap_stem_4.mp3"
     },
     {
-      text: "I always ___ before bedtime.",
-      audio: "/audio/week32/mindmap_stem_d3h1c.mp3"
+      "text": "What did Tom ___ on Saturday?",
+      "type": "question",
+      "audio": "/audio/week32/mindmap_stem_5.mp3"
     },
     {
-      text: "Tom's room was always ___.",
-      audio: "/audio/week32/mindmap_stem_y7s4x.mp3"
+      "text": "Do you have a ___ Saturday?",
+      "type": "question",
+      "audio": "/audio/week32/mindmap_stem_6.mp3"
     }
   ],
-  branchLabels: {
-    "Last Saturday, Tom ___." : [
-      { text: "woke up early and made his bed", audio: "/audio/week32/mindmap_branch_k5m2p.mp3" },
-      { text: "wrote a long letter to his grandmother", audio: "/audio/week32/mindmap_branch_r9n7q.mp3" },
-      { text: "cut the grass in the garden with his dad", audio: "/audio/week32/mindmap_branch_b3w8j.mp3" },
-      { text: "built a wooden birdhouse with his dad", audio: "/audio/week32/mindmap_branch_d6h4c.mp3" },
-      { text: "put all his tools away neatly", audio: "/audio/week32/mindmap_branch_y1s6x.mp3" },
-      { text: "chose his shirt and paid for lunch at the café", audio: "/audio/week32/mindmap_branch_t4k9w.mp3" }
+  "branchLabels": {
+    "Tom is very ___ today.": [
+      {
+        "text": "busy",
+        "audio": "/audio/week32/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "happy",
+        "audio": "/audio/week32/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week32/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week32/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "active",
+        "audio": "/audio/week32/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "energetic",
+        "audio": "/audio/week32/mindmap_branch_1_6.mp3"
+      }
     ],
-    "Tom felt proud because he ___." : [
-      { text: "did all his homework carefully", audio: "/audio/week32/mindmap_branch_m7p3r.mp3" },
-      { text: "kept his room perfectly tidy", audio: "/audio/week32/mindmap_branch_n2q8b.mp3" },
-      { text: "built a birdhouse with his own hands", audio: "/audio/week32/mindmap_branch_j5v1d.mp3" },
-      { text: "wrote a letter to his grandmother", audio: "/audio/week32/mindmap_branch_c8x4y.mp3" },
-      { text: "kept every promise he made", audio: "/audio/week32/mindmap_branch_w3m6t.mp3" },
-      { text: "paid for his own lunch alone", audio: "/audio/week32/mindmap_branch_p9n2k.mp3" }
+    "Tom ___ his bed this morning.": [
+      {
+        "text": "made",
+        "audio": "/audio/week32/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "slept on",
+        "audio": "/audio/week32/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "used",
+        "audio": "/audio/week32/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "cleaned",
+        "audio": "/audio/week32/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "tidied",
+        "audio": "/audio/week32/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "sat on",
+        "audio": "/audio/week32/mindmap_branch_2_6.mp3"
+      }
     ],
-    "I woke up ___ this morning." : [
-      { text: "early and made my bed right away", audio: "/audio/week32/mindmap_branch_q4f7v.mp3" },
-      { text: "at six and chose my favourite shirt", audio: "/audio/week32/mindmap_branch_d1h5c.mp3" },
-      { text: "before sunrise to do my homework", audio: "/audio/week32/mindmap_branch_y8s3x.mp3" },
-      { text: "late and felt a little tired", audio: "/audio/week32/mindmap_branch_t6k2w.mp3" },
-      { text: "early and had a very busy morning", audio: "/audio/week32/mindmap_branch_r5m9p.mp3" },
-      { text: "happy and ready for a busy Saturday", audio: "/audio/week32/mindmap_branch_b7n4j.mp3" }
+    "Tom did not ___ yesterday.": [
+      {
+        "text": "play",
+        "audio": "/audio/week32/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "run",
+        "audio": "/audio/week32/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "rest",
+        "audio": "/audio/week32/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "relax",
+        "audio": "/audio/week32/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "watch TV",
+        "audio": "/audio/week32/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "sleep",
+        "audio": "/audio/week32/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My favourite Saturday task is ___." : [
-      { text: "making the bed because everything looks neat", audio: "/audio/week32/mindmap_branch_k3p8m.mp3" },
-      { text: "writing letters to my grandparents", audio: "/audio/week32/mindmap_branch_n6q2r.mp3" },
-      { text: "cutting the grass and working in the garden", audio: "/audio/week32/mindmap_branch_j9v5d.mp3" },
-      { text: "building things with wood and tools", audio: "/audio/week32/mindmap_branch_c2x7y.mp3" },
-      { text: "choosing what to wear for the day", audio: "/audio/week32/mindmap_branch_w4m1t.mp3" },
-      { text: "putting away my toys and keeping my room tidy", audio: "/audio/week32/mindmap_branch_p7n5k.mp3" }
+    "The morning was not ___ yesterday.": [
+      {
+        "text": "busy",
+        "audio": "/audio/week32/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "early",
+        "audio": "/audio/week32/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week32/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "exciting",
+        "audio": "/audio/week32/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week32/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "active",
+        "audio": "/audio/week32/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I always ___ before bedtime." : [
-      { text: "put away my toys and keep my room tidy", audio: "/audio/week32/mindmap_branch_q1f4v.mp3" },
-      { text: "choose my clothes for the next morning", audio: "/audio/week32/mindmap_branch_d8h2c.mp3" },
-      { text: "write in my diary about my day", audio: "/audio/week32/mindmap_branch_y5s9x.mp3" },
-      { text: "make sure all my books are on the shelf", audio: "/audio/week32/mindmap_branch_t3k7w.mp3" },
-      { text: "do a quick tidy of my desk and floor", audio: "/audio/week32/mindmap_branch_r8m2p.mp3" },
-      { text: "fall asleep quickly because I am so tired", audio: "/audio/week32/mindmap_branch_b4n1j.mp3" }
+    "What did Tom ___ on Saturday?": [
+      {
+        "text": "do",
+        "audio": "/audio/week32/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "make",
+        "audio": "/audio/week32/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "build",
+        "audio": "/audio/week32/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "write",
+        "audio": "/audio/week32/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "walk",
+        "audio": "/audio/week32/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "watch",
+        "audio": "/audio/week32/mindmap_branch_5_6.mp3"
+      }
     ],
-    "Tom's room was always ___." : [
-      { text: "perfectly tidy with every book in place", audio: "/audio/week32/mindmap_branch_k6p3m.mp3" },
-      { text: "neat and clean because he worked hard", audio: "/audio/week32/mindmap_branch_n9q7r.mp3" },
-      { text: "organised after he put all his toys away", audio: "/audio/week32/mindmap_branch_j2v8d.mp3" },
-      { text: "a great place to do homework quietly", audio: "/audio/week32/mindmap_branch_c5x1y.mp3" },
-      { text: "tidy after Tom kept his promise to his mum", audio: "/audio/week32/mindmap_branch_w7m4t.mp3" },
-      { text: "the tidiest room in the whole house", audio: "/audio/week32/mindmap_branch_p3n8k.mp3" }
+    "Do you have a ___ Saturday?": [
+      {
+        "text": "busy",
+        "audio": "/audio/week32/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week32/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week32/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "happy",
+        "audio": "/audio/week32/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "quiet",
+        "audio": "/audio/week32/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "special",
+        "audio": "/audio/week32/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

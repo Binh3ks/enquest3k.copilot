@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "My town used to have ___.", audio: "/audio/week20/mindmap_stem_7tc7jf.mp3" },
-    { text: "I remember when my town ___.", audio: "/audio/week20/mindmap_stem_fisq5v.mp3" },
-    { text: "My favorite old place in my town is ___.", audio: "/audio/week20/mindmap_stem_ajtval.mp3" },
-    { text: "Now my town has ___ instead.", audio: "/audio/week20/mindmap_stem_xeu7zr.mp3" },
-    { text: "I wish my town still had ___.", audio: "/audio/week20/mindmap_stem_sgkhgo.mp3" },
-    { text: "The oldest thing in my town is ___.", audio: "/audio/week20/mindmap_stem_h6wi7g.mp3" }
+  "centerStems": [
+    {
+      "text": "There ___ an old temple.",
+      "type": "affirmative",
+      "audio": "/audio/week20/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "The town is very ___.",
+      "type": "affirmative",
+      "audio": "/audio/week20/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The map is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week20/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "There is not a ___ here.",
+      "type": "negative",
+      "audio": "/audio/week20/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "Is there a ___?",
+      "type": "question",
+      "audio": "/audio/week20/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you like ___ towns?",
+      "type": "question",
+      "audio": "/audio/week20/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "My town used to have ___.": [
-      { text: "a wooden bridge", audio: "/audio/week20/mindmap_branch_y0ig3a.mp3" },
-      { text: "a big market", audio: "/audio/week20/mindmap_branch_h62os7.mp3" },
-      { text: "dirt roads", audio: "/audio/week20/mindmap_branch_lrdhd4.mp3" },
-      { text: "a small temple", audio: "/audio/week20/mindmap_branch_lrwp4j.mp3" },
-      { text: "a clean river", audio: "/audio/week20/mindmap_branch_1gtacs.mp3" },
-      { text: "old houses with gardens", audio: "/audio/week20/mindmap_branch_928emq.mp3" }
+  "branchLabels": {
+    "There ___ an old temple.": [
+      {
+        "text": "is",
+        "audio": "/audio/week20/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "was",
+        "audio": "/audio/week20/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "stands",
+        "audio": "/audio/week20/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "lives",
+        "audio": "/audio/week20/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "stays",
+        "audio": "/audio/week20/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "exists",
+        "audio": "/audio/week20/mindmap_branch_1_6.mp3"
+      }
     ],
-    "I remember when my town ___.": [
-      { text: "had no tall buildings", audio: "/audio/week20/mindmap_branch_aq2wf8.mp3" },
-      { text: "was quiet and peaceful", audio: "/audio/week20/mindmap_branch_xynzo1.mp3" },
-      { text: "had a big old market", audio: "/audio/week20/mindmap_branch_4yyyn5.mp3" },
-      { text: "had many trees on the road", audio: "/audio/week20/mindmap_branch_idjsfl.mp3" },
-      { text: "had a beautiful old temple", audio: "/audio/week20/mindmap_branch_dijg8v.mp3" },
-      { text: "had a clean river flowing through it", audio: "/audio/week20/mindmap_branch_etjw3r.mp3" }
+    "The town is very ___.": [
+      {
+        "text": "old",
+        "audio": "/audio/week20/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "beautiful",
+        "audio": "/audio/week20/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "quiet",
+        "audio": "/audio/week20/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "big",
+        "audio": "/audio/week20/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week20/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "peaceful",
+        "audio": "/audio/week20/mindmap_branch_2_6.mp3"
+      }
     ],
-    "My favorite old place in my town is ___.": [
-      { text: "the old temple", audio: "/audio/week20/mindmap_branch_yik1a3.mp3" },
-      { text: "the old bridge", audio: "/audio/week20/mindmap_branch_ai2rlt.mp3" },
-      { text: "the riverside", audio: "/audio/week20/mindmap_branch_lu0xm0.mp3" },
-      { text: "the town square", audio: "/audio/week20/mindmap_branch_72uh74.mp3" },
-      { text: "the old school", audio: "/audio/week20/mindmap_branch_itaypg.mp3" },
-      { text: "the old market", audio: "/audio/week20/mindmap_branch_zd9bg.mp3" }
+    "The map is not ___ today.": [
+      {
+        "text": "new",
+        "audio": "/audio/week20/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "clear",
+        "audio": "/audio/week20/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "right",
+        "audio": "/audio/week20/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week20/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "complete",
+        "audio": "/audio/week20/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "working",
+        "audio": "/audio/week20/mindmap_branch_3_6.mp3"
+      }
     ],
-    "Now my town has ___ instead.": [
-      { text: "a new road", audio: "/audio/week20/mindmap_branch_dcvufx.mp3" },
-      { text: "a modern bridge", audio: "/audio/week20/mindmap_branch_uugd9x.mp3" },
-      { text: "a shopping center", audio: "/audio/week20/mindmap_branch_yosv9a.mp3" },
-      { text: "tall buildings", audio: "/audio/week20/mindmap_branch_8qwhfu.mp3" },
-      { text: "a new market", audio: "/audio/week20/mindmap_branch_xh42x3.mp3" },
-      { text: "more cars and buses", audio: "/audio/week20/mindmap_branch_pnjbl3.mp3" }
+    "There is not a ___ here.": [
+      {
+        "text": "river",
+        "audio": "/audio/week20/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "bridge",
+        "audio": "/audio/week20/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "temple",
+        "audio": "/audio/week20/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "market",
+        "audio": "/audio/week20/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "building",
+        "audio": "/audio/week20/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "tree",
+        "audio": "/audio/week20/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I wish my town still had ___.": [
-      { text: "the old market", audio: "/audio/week20/mindmap_branch_ysl3kv.mp3" },
-      { text: "the wooden bridge", audio: "/audio/week20/mindmap_branch_plldnx.mp3" },
-      { text: "the clean river", audio: "/audio/week20/mindmap_branch_20obw1.mp3" },
-      { text: "the old trees", audio: "/audio/week20/mindmap_branch_24y9xy.mp3" },
-      { text: "more quiet streets", audio: "/audio/week20/mindmap_branch_wtpvec.mp3" },
-      { text: "fewer cars", audio: "/audio/week20/mindmap_branch_7f8gff.mp3" }
+    "Is there a ___?": [
+      {
+        "text": "river",
+        "audio": "/audio/week20/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "bridge",
+        "audio": "/audio/week20/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "temple",
+        "audio": "/audio/week20/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "market",
+        "audio": "/audio/week20/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "park",
+        "audio": "/audio/week20/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "lake",
+        "audio": "/audio/week20/mindmap_branch_5_6.mp3"
+      }
     ],
-    "The oldest thing in my town is ___.": [
-      { text: "the temple", audio: "/audio/week20/mindmap_branch_9ig0z1.mp3" },
-      { text: "the big old tree", audio: "/audio/week20/mindmap_branch_5zei5f.mp3" },
-      { text: "the old bridge", audio: "/audio/week20/mindmap_branch_9wqrwo.mp3" },
-      { text: "the river", audio: "/audio/week20/mindmap_branch_1psomu.mp3" },
-      { text: "the town square", audio: "/audio/week20/mindmap_branch_pg67uf.mp3" },
-      { text: "the old school building", audio: "/audio/week20/mindmap_branch_yftnwb.mp3" }
+    "Do you like ___ towns?": [
+      {
+        "text": "old",
+        "audio": "/audio/week20/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "beautiful",
+        "audio": "/audio/week20/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "quiet",
+        "audio": "/audio/week20/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "big",
+        "audio": "/audio/week20/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week20/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "new",
+        "audio": "/audio/week20/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

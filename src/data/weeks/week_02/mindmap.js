@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "This is my ___.", audio: "/audio/week2/mindmap_stem_ii1s8f.mp3" },
-    { text: "My mother is ___.", audio: "/audio/week2/mindmap_stem_x7hih0.mp3" },
-    { text: "My father is ___.", audio: "/audio/week2/mindmap_stem_m7yl79.mp3" },
-    { text: "My family is ___.", audio: "/audio/week2/mindmap_stem_tot5gd.mp3" },
-    { text: "My favorite family activity is ___.", audio: "/audio/week2/mindmap_stem_6pc6or.mp3" },
-    { text: "I love my family because ___.", audio: "/audio/week2/mindmap_stem_krjf7c.mp3" }
+  "centerStems": [
+    {
+      "text": "My family is ___ together.",
+      "type": "affirmative",
+      "audio": "/audio/week2/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "My mother is the ___ of the family.",
+      "type": "affirmative",
+      "audio": "/audio/week2/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "My father is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week2/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I do not ___ my family every day.",
+      "type": "negative",
+      "audio": "/audio/week2/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "Who is the ___ of your family?",
+      "type": "question",
+      "audio": "/audio/week2/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you ___ your family?",
+      "type": "question",
+      "audio": "/audio/week2/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "This is my ___.": [
-      { text: "mother and father", audio: "/audio/week2/mindmap_branch_19qx1o.mp3" },
-      { text: "big brother", audio: "/audio/week2/mindmap_branch_ivjutu.mp3" },
-      { text: "little sister", audio: "/audio/week2/mindmap_branch_vifym8.mp3" },
-      { text: "happy family", audio: "/audio/week2/mindmap_branch_hy6bva.mp3" },
-      { text: "sweet home", audio: "/audio/week2/mindmap_branch_9q8rz5.mp3" },
-      { text: "family team", audio: "/audio/week2/mindmap_branch_d2kl05.mp3" }
+  "branchLabels": {
+    "My family is ___ together.": [
+      {
+        "text": "happy",
+        "audio": "/audio/week2/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "strong",
+        "audio": "/audio/week2/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week2/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week2/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "loud",
+        "audio": "/audio/week2/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "close",
+        "audio": "/audio/week2/mindmap_branch_1_6.mp3"
+      }
     ],
-    "My mother is ___.": [
-      { text: "the team leader", audio: "/audio/week2/mindmap_branch_f9duki.mp3" },
-      { text: "very kind", audio: "/audio/week2/mindmap_branch_aup2sj.mp3" },
-      { text: "always helping us", audio: "/audio/week2/mindmap_branch_zhw0lp.mp3" },
-      { text: "cooking for us", audio: "/audio/week2/mindmap_branch_ku26g6.mp3" },
-      { text: "taking care of everyone", audio: "/audio/week2/mindmap_branch_ye34bq.mp3" },
-      { text: "my best friend", audio: "/audio/week2/mindmap_branch_i3zah1.mp3" }
+    "My mother is the ___ of the family.": [
+      {
+        "text": "leader",
+        "audio": "/audio/week2/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "helper",
+        "audio": "/audio/week2/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "cook",
+        "audio": "/audio/week2/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "driver",
+        "audio": "/audio/week2/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "teacher",
+        "audio": "/audio/week2/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "nurse",
+        "audio": "/audio/week2/mindmap_branch_2_6.mp3"
+      }
     ],
-    "My father is ___.": [
-      { text: "strong and brave", audio: "/audio/week2/mindmap_branch_6aip4q.mp3" },
-      { text: "working hard", audio: "/audio/week2/mindmap_branch_o3jb72.mp3" },
-      { text: "teaching me things", audio: "/audio/week2/mindmap_branch_a8hsuq.mp3" },
-      { text: "playing with us", audio: "/audio/week2/mindmap_branch_svzf9u.mp3" },
-      { text: "making us laugh", audio: "/audio/week2/mindmap_branch_e82yg0.mp3" },
-      { text: "a good helper", audio: "/audio/week2/mindmap_branch_ybe6f6.mp3" }
+    "My father is not ___ today.": [
+      {
+        "text": "home",
+        "audio": "/audio/week2/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week2/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week2/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "working",
+        "audio": "/audio/week2/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "sleeping",
+        "audio": "/audio/week2/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "cooking",
+        "audio": "/audio/week2/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My family is ___.": [
-      { text: "like a team", audio: "/audio/week2/mindmap_branch_4lh48n.mp3" },
-      { text: "full of love", audio: "/audio/week2/mindmap_branch_qmf356.mp3" },
-      { text: "always together", audio: "/audio/week2/mindmap_branch_qy2181.mp3" },
-      { text: "helping each other", audio: "/audio/week2/mindmap_branch_r5dw9c.mp3" },
-      { text: "very happy", audio: "/audio/week2/mindmap_branch_hwzbme.mp3" },
-      { text: "my treasure", audio: "/audio/week2/mindmap_branch_3shbnd.mp3" }
+    "I do not ___ my family every day.": [
+      {
+        "text": "see",
+        "audio": "/audio/week2/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "miss",
+        "audio": "/audio/week2/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "call",
+        "audio": "/audio/week2/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "visit",
+        "audio": "/audio/week2/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "help",
+        "audio": "/audio/week2/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "love",
+        "audio": "/audio/week2/mindmap_branch_4_6.mp3"
+      }
     ],
-    "My favorite family activity is ___.": [
-      { text: "playing games together", audio: "/audio/week2/mindmap_branch_d5ip1p.mp3" },
-      { text: "cooking together", audio: "/audio/week2/mindmap_branch_m2q4wo.mp3" },
-      { text: "watching movies as a family", audio: "/audio/week2/mindmap_branch_pw0tq5.mp3" },
-      { text: "reading stories together", audio: "/audio/week2/mindmap_branch_ukq919.mp3" },
-      { text: "going to the park", audio: "/audio/week2/mindmap_branch_2rps5w.mp3" },
-      { text: "telling stories at night", audio: "/audio/week2/mindmap_branch_iw8rxt.mp3" }
+    "Who is the ___ of your family?": [
+      {
+        "text": "leader",
+        "audio": "/audio/week2/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "cook",
+        "audio": "/audio/week2/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "helper",
+        "audio": "/audio/week2/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "driver",
+        "audio": "/audio/week2/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "boss",
+        "audio": "/audio/week2/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "teacher",
+        "audio": "/audio/week2/mindmap_branch_5_6.mp3"
+      }
     ],
-    "I love my family because ___.": [
-      { text: "they always help me", audio: "/audio/week2/mindmap_branch_v1dyxj.mp3" },
-      { text: "we laugh together every day", audio: "/audio/week2/mindmap_branch_apxm5h.mp3" },
-      { text: "they care for me deeply", audio: "/audio/week2/mindmap_branch_ujzob0.mp3" },
-      { text: "we share everything", audio: "/audio/week2/mindmap_branch_veq9dt.mp3" },
-      { text: "they are always there for me", audio: "/audio/week2/mindmap_branch_j8v2al.mp3" },
-      { text: "they love me very much", audio: "/audio/week2/mindmap_branch_jprv4.mp3" }
+    "Do you ___ your family?": [
+      {
+        "text": "love",
+        "audio": "/audio/week2/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "miss",
+        "audio": "/audio/week2/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "call",
+        "audio": "/audio/week2/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "help",
+        "audio": "/audio/week2/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "see",
+        "audio": "/audio/week2/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week2/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

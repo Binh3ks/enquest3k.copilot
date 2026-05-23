@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "At the market, Luna touched ___.", audio: "/audio/week31/mindmap_stem_h0623t.mp3" },
-    { text: "Luna was surprised when ___.", audio: "/audio/week31/mindmap_stem_h9k0xh.mp3" },
-    { text: "At home, I have ___.", audio: "/audio/week31/mindmap_stem_998je8.mp3" },
-    { text: "I think ___.", audio: "/audio/week31/mindmap_stem_ey2kek.mp3" },
-    { text: "When I touch ___.", audio: "/audio/week31/mindmap_stem_f1mdwz.mp3" },
-    { text: "My favorite material is ___.", audio: "/audio/week31/mindmap_stem_6ij5fb.mp3" }
+  "centerStems": [
+    {
+      "text": "The market is very ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week31/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "The fruit looks ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week31/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The market is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week31/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I did not ___ the market.",
+      "type": "negative",
+      "audio": "/audio/week31/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "What did you ___ at the market?",
+      "type": "question",
+      "audio": "/audio/week31/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you like ___ markets?",
+      "type": "question",
+      "audio": "/audio/week31/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "At the market, Luna touched ___.": [
-      { text: "wood and felt its rough, warm texture", audio: "/audio/week31/mindmap_branch_6r3d5c.mp3" },
-      { text: "stone and felt how cool and heavy it was", audio: "/audio/week31/mindmap_branch_d419o.mp3" },
-      { text: "cotton and felt how soft and light it was", audio: "/audio/week31/mindmap_branch_8lsks6.mp3" },
-      { text: "metal and felt how cold and hard it was", audio: "/audio/week31/mindmap_branch_vkdtp.mp3" },
-      { text: "glass and felt how smooth and fragile it was", audio: "/audio/week31/mindmap_branch_wklx8x.mp3" },
-      { text: "plastic and felt how light and flexible it was", audio: "/audio/week31/mindmap_branch_8q81q.mp3" }
+  "branchLabels": {
+    "The market is very ___ today.": [
+      {
+        "text": "colorful",
+        "audio": "/audio/week31/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week31/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "loud",
+        "audio": "/audio/week31/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week31/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "noisy",
+        "audio": "/audio/week31/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "exciting",
+        "audio": "/audio/week31/mindmap_branch_1_6.mp3"
+      }
     ],
-    "Luna was surprised when ___.": [
-      { text: "she touched the smooth, cold glass", audio: "/audio/week31/mindmap_branch_sb3w5h.mp3" },
-      { text: "she felt how heavy the stone was", audio: "/audio/week31/mindmap_branch_79t1ol.mp3" },
-      { text: "the cotton felt so soft and light", audio: "/audio/week31/mindmap_branch_lvi30.mp3" },
-      { text: "the metal was cold even inside the market", audio: "/audio/week31/mindmap_branch_9f3dn6.mp3" },
-      { text: "the wood felt warm and rough together", audio: "/audio/week31/mindmap_branch_z26plw.mp3" },
-      { text: "the plastic bent without breaking", audio: "/audio/week31/mindmap_branch_bqies1.mp3" }
+    "The fruit looks ___ today.": [
+      {
+        "text": "fresh",
+        "audio": "/audio/week31/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "delicious",
+        "audio": "/audio/week31/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "colorful",
+        "audio": "/audio/week31/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week31/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "ripe",
+        "audio": "/audio/week31/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "juicy",
+        "audio": "/audio/week31/mindmap_branch_2_6.mp3"
+      }
     ],
-    "At home, I have ___.": [
-      { text: "a chair made of wood", audio: "/audio/week31/mindmap_branch_l4ss60.mp3" },
-      { text: "a bowl made of stone", audio: "/audio/week31/mindmap_branch_b72bzv.mp3" },
-      { text: "a window made of glass", audio: "/audio/week31/mindmap_branch_p5er40.mp3" },
-      { text: "a water bottle made of plastic", audio: "/audio/week31/mindmap_branch_npdbi5.mp3" },
-      { text: "a pot made of metal", audio: "/audio/week31/mindmap_branch_n5ahv4.mp3" },
-      { text: "a pillow cover made of cotton", audio: "/audio/week31/mindmap_branch_kpvvlp.mp3" }
+    "The market is not ___ today.": [
+      {
+        "text": "open",
+        "audio": "/audio/week31/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week31/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week31/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "colorful",
+        "audio": "/audio/week31/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "noisy",
+        "audio": "/audio/week31/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "loud",
+        "audio": "/audio/week31/mindmap_branch_3_6.mp3"
+      }
     ],
-    "I think ___.": [
-      { text: "metal is the strongest material because it does not break or bend easily", audio: "/audio/week31/mindmap_branch_p3kznu.mp3" },
-      { text: "stone is the strongest material because it lasts for hundreds of years", audio: "/audio/week31/mindmap_branch_9ellag.mp3" },
-      { text: "wood is the strongest material because it is thick, tough, and natural", audio: "/audio/week31/mindmap_branch_q6x4vc.mp3" },
-      { text: "glass is the strongest material because it is hard and does not absorb water", audio: "/audio/week31/mindmap_branch_99to2b.mp3" },
-      { text: "plastic is the strongest material because it is light but very durable", audio: "/audio/week31/mindmap_branch_gmbzkf.mp3" },
-      { text: "cotton is the strongest material because it stretches without tearing", audio: "/audio/week31/mindmap_branch_4m5obf.mp3" }
+    "I did not ___ the market.": [
+      {
+        "text": "visit",
+        "audio": "/audio/week31/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "see",
+        "audio": "/audio/week31/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "enjoy",
+        "audio": "/audio/week31/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week31/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "go to",
+        "audio": "/audio/week31/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "explore",
+        "audio": "/audio/week31/mindmap_branch_4_6.mp3"
+      }
     ],
-    "When I touch ___.": [
-      { text: "wood, it feels rough and warm under my fingers", audio: "/audio/week31/mindmap_branch_nuod0y.mp3" },
-      { text: "stone, it feels cool and very smooth", audio: "/audio/week31/mindmap_branch_lxb6tl.mp3" },
-      { text: "cotton, it feels soft and gentle against my skin", audio: "/audio/week31/mindmap_branch_j5au23.mp3" },
-      { text: "metal, it feels cold and hard", audio: "/audio/week31/mindmap_branch_pjwj9l.mp3" },
-      { text: "glass, it feels perfectly smooth and a little cold", audio: "/audio/week31/mindmap_branch_lqc7jy.mp3" },
-      { text: "plastic, it feels light and slightly flexible", audio: "/audio/week31/mindmap_branch_xobh3s.mp3" }
+    "What did you ___ at the market?": [
+      {
+        "text": "see",
+        "audio": "/audio/week31/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "buy",
+        "audio": "/audio/week31/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "eat",
+        "audio": "/audio/week31/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "smell",
+        "audio": "/audio/week31/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "feel",
+        "audio": "/audio/week31/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "hear",
+        "audio": "/audio/week31/mindmap_branch_5_6.mp3"
+      }
     ],
-    "My favorite material is ___.": [
-      { text: "wood because it is warm, natural, and beautiful", audio: "/audio/week31/mindmap_branch_pza2n8.mp3" },
-      { text: "cotton because it is soft and comfortable to wear", audio: "/audio/week31/mindmap_branch_5h8wyj.mp3" },
-      { text: "glass because it is clear and beautiful in the light", audio: "/audio/week31/mindmap_branch_pc70pc.mp3" },
-      { text: "stone because it feels cool and strong and ancient", audio: "/audio/week31/mindmap_branch_7vatbn.mp3" },
-      { text: "metal because it is strong, shiny, and long-lasting", audio: "/audio/week31/mindmap_branch_l414qm.mp3" },
-      { text: "plastic because it can be any color or shape", audio: "/audio/week31/mindmap_branch_h28p5w.mp3" }
+    "Do you like ___ markets?": [
+      {
+        "text": "local",
+        "audio": "/audio/week31/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "big",
+        "audio": "/audio/week31/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "colorful",
+        "audio": "/audio/week31/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week31/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week31/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "quiet",
+        "audio": "/audio/week31/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

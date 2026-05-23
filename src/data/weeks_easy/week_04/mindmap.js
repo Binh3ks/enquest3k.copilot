@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "I like ___.", audio: "/audio/week4_easy/mindmap_stem_44gjvj.mp3" },
-    { text: "I am ___.", audio: "/audio/week4_easy/mindmap_stem_307ui4.mp3" },
-    { text: "I can ___.", audio: "/audio/week4_easy/mindmap_stem_ao4bme.mp3" },
-    { text: "I love ___.", audio: "/audio/week4_easy/mindmap_stem_ovwuxm.mp3" },
-    { text: "I feel ___.", audio: "/audio/week4_easy/mindmap_stem_otcnym.mp3" },
-    { text: "My hobby is ___.", audio: "/audio/week4_easy/mindmap_stem_buao65.mp3" }
+  "centerStems": [
+    {
+      "text": "I feel ___ when I read a book.",
+      "type": "affirmative",
+      "audio": "/audio/week4/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "I put ___ things in my happy jar.",
+      "type": "affirmative",
+      "audio": "/audio/week4/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "My happy jar is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week4/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I do not ___ my happy jar every day.",
+      "type": "negative",
+      "audio": "/audio/week4/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "What do you put in your ___?",
+      "type": "question",
+      "audio": "/audio/week4/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you feel ___ today?",
+      "type": "question",
+      "audio": "/audio/week4/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "I like ___.": [
-      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_ff21si.mp3" },
-      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_tbtcv2.mp3" },
-      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_u00o3w.mp3" },
-      { text: "running", audio: "/audio/week4_easy/mindmap_branch_1xx9en.mp3" },
-      { text: "singing", audio: "/audio/week4_easy/mindmap_branch_7aon83.mp3" },
-      { text: "dancing", audio: "/audio/week4_easy/mindmap_branch_b4h8i8.mp3" }
+  "branchLabels": {
+    "I feel ___ when I read a book.": [
+      {
+        "text": "calm",
+        "audio": "/audio/week4/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "happy",
+        "audio": "/audio/week4/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week4/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "curious",
+        "audio": "/audio/week4/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "relaxed",
+        "audio": "/audio/week4/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "focused",
+        "audio": "/audio/week4/mindmap_branch_1_6.mp3"
+      }
     ],
-    "I am ___.": [
-      { text: "happy", audio: "/audio/week4_easy/mindmap_branch_j5ai51.mp3" },
-      { text: "excited", audio: "/audio/week4_easy/mindmap_branch_si7aep.mp3" },
-      { text: "funny", audio: "/audio/week4_easy/mindmap_branch_jsf6in.mp3" },
-      { text: "calm", audio: "/audio/week4_easy/mindmap_branch_m7vz5e.mp3" },
-      { text: "kind", audio: "/audio/week4_easy/mindmap_branch_mcfh25.mp3" },
-      { text: "creative", audio: "/audio/week4_easy/mindmap_branch_er142q.mp3" }
+    "I put ___ things in my happy jar.": [
+      {
+        "text": "happy",
+        "audio": "/audio/week4/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week4/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "special",
+        "audio": "/audio/week4/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week4/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "nice",
+        "audio": "/audio/week4/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "bright",
+        "audio": "/audio/week4/mindmap_branch_2_6.mp3"
+      }
     ],
-    "I can ___.": [
-      { text: "run fast", audio: "/audio/week4_easy/mindmap_branch_pmfsa.mp3" },
-      { text: "draw well", audio: "/audio/week4_easy/mindmap_branch_bvhcqd.mp3" },
-      { text: "read books", audio: "/audio/week4_easy/mindmap_branch_ks7921.mp3" },
-      { text: "sing a song", audio: "/audio/week4_easy/mindmap_branch_lkdeds.mp3" },
-      { text: "dance", audio: "/audio/week4_easy/mindmap_branch_rtsrxe.mp3" },
-      { text: "help my friends", audio: "/audio/week4_easy/mindmap_branch_iuno17.mp3" }
+    "My happy jar is not ___ today.": [
+      {
+        "text": "full",
+        "audio": "/audio/week4/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "empty",
+        "audio": "/audio/week4/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "closed",
+        "audio": "/audio/week4/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "lost",
+        "audio": "/audio/week4/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "broken",
+        "audio": "/audio/week4/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "old",
+        "audio": "/audio/week4/mindmap_branch_3_6.mp3"
+      }
     ],
-    "I love ___.": [
-      { text: "my family", audio: "/audio/week4_easy/mindmap_branch_w3jdkd.mp3" },
-      { text: "my friends", audio: "/audio/week4_easy/mindmap_branch_z35svq.mp3" },
-      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_ejtj3d.mp3" },
-      { text: "learning", audio: "/audio/week4_easy/mindmap_branch_vqwdi1.mp3" },
-      { text: "music", audio: "/audio/week4_easy/mindmap_branch_shwyww.mp3" },
-      { text: "fun", audio: "/audio/week4_easy/mindmap_branch_ovrxcq.mp3" }
+    "I do not ___ my happy jar every day.": [
+      {
+        "text": "open",
+        "audio": "/audio/week4/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "fill",
+        "audio": "/audio/week4/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "check",
+        "audio": "/audio/week4/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "close",
+        "audio": "/audio/week4/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "carry",
+        "audio": "/audio/week4/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "use",
+        "audio": "/audio/week4/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I feel ___.": [
-      { text: "happy", audio: "/audio/week4_easy/mindmap_branch_n5la5t.mp3" },
-      { text: "excited", audio: "/audio/week4_easy/mindmap_branch_joto95.mp3" },
-      { text: "calm", audio: "/audio/week4_easy/mindmap_branch_c4kqgc.mp3" },
-      { text: "joyful", audio: "/audio/week4_easy/mindmap_branch_repuqm.mp3" },
-      { text: "good", audio: "/audio/week4_easy/mindmap_branch_c70wni.mp3" },
-      { text: "creative", audio: "/audio/week4_easy/mindmap_branch_cckf18.mp3" }
+    "What do you put in your ___?": [
+      {
+        "text": "jar",
+        "audio": "/audio/week4/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "room",
+        "audio": "/audio/week4/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "bag",
+        "audio": "/audio/week4/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "heart",
+        "audio": "/audio/week4/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "mind",
+        "audio": "/audio/week4/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "desk",
+        "audio": "/audio/week4/mindmap_branch_5_6.mp3"
+      }
     ],
-    "My hobby is ___.": [
-      { text: "drawing", audio: "/audio/week4_easy/mindmap_branch_iwwf4s.mp3" },
-      { text: "reading", audio: "/audio/week4_easy/mindmap_branch_jl3qdm.mp3" },
-      { text: "playing", audio: "/audio/week4_easy/mindmap_branch_ptyzis.mp3" },
-      { text: "singing", audio: "/audio/week4_easy/mindmap_branch_348ai7.mp3" },
-      { text: "dancing", audio: "/audio/week4_easy/mindmap_branch_lje68i.mp3" },
-      { text: "running", audio: "/audio/week4_easy/mindmap_branch_8gzobn.mp3" }
+    "Do you feel ___ today?": [
+      {
+        "text": "happy",
+        "audio": "/audio/week4/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "sad",
+        "audio": "/audio/week4/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week4/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week4/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "calm",
+        "audio": "/audio/week4/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "worried",
+        "audio": "/audio/week4/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

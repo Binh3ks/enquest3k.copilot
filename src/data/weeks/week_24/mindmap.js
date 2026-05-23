@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "Yesterday, I was ___.", audio: "/audio/week24/mindmap_stem_ajr8kz.mp3" },
-    { text: "She was ___.", audio: "/audio/week24/mindmap_stem_1612u.mp3" },
-    { text: "They were ___.", audio: "/audio/week24/mindmap_stem_6vz6k6.mp3" },
-    { text: "He was ___.", audio: "/audio/week24/mindmap_stem_7icyyf.mp3" },
-    { text: "Were you ___?", audio: "/audio/week24/mindmap_stem_9dxtwg.mp3" },
-    { text: "We were all ___ at the end.", audio: "/audio/week24/mindmap_stem_u28y2m.mp3" }
+  "centerStems": [
+    {
+      "text": "I feel ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week24/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "The visitor was ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week24/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "I do not feel ___ today.",
+      "type": "negative",
+      "audio": "/audio/week24/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "The day was not ___ yesterday.",
+      "type": "negative",
+      "audio": "/audio/week24/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "How do you ___ today?",
+      "type": "question",
+      "audio": "/audio/week24/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Did you have a ___ day?",
+      "type": "question",
+      "audio": "/audio/week24/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "Yesterday, I was ___.": [
-      { text: "scared of the dark", audio: "/audio/week24/mindmap_branch_ei0xss.mp3" },
-      { text: "excited about the trip", audio: "/audio/week24/mindmap_branch_doece5.mp3" },
-      { text: "tired after running", audio: "/audio/week24/mindmap_branch_5i29gb.mp3" },
-      { text: "bored at home", audio: "/audio/week24/mindmap_branch_qhmyw2.mp3" },
-      { text: "surprised by the news", audio: "/audio/week24/mindmap_branch_99hstw.mp3" },
-      { text: "cheerful all morning", audio: "/audio/week24/mindmap_branch_gimbgr.mp3" }
+  "branchLabels": {
+    "I feel ___ today.": [
+      {
+        "text": "happy",
+        "audio": "/audio/week24/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week24/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "worried",
+        "audio": "/audio/week24/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week24/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "sad",
+        "audio": "/audio/week24/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "cheerful",
+        "audio": "/audio/week24/mindmap_branch_1_6.mp3"
+      }
     ],
-    "She was ___.": [
-      { text: "scared because it was dark", audio: "/audio/week24/mindmap_branch_9g8g9t.mp3" },
-      { text: "relieved because she found it", audio: "/audio/week24/mindmap_branch_upown6.mp3" },
-      { text: "upset because she lost her bag", audio: "/audio/week24/mindmap_branch_cx1o8t.mp3" },
-      { text: "excited because of the visitor", audio: "/audio/week24/mindmap_branch_8tszkh.mp3" },
-      { text: "worried because of the test", audio: "/audio/week24/mindmap_branch_jw9gq3.mp3" },
-      { text: "angry because of the noise", audio: "/audio/week24/mindmap_branch_gkn6ms.mp3" }
+    "The visitor was ___ today.": [
+      {
+        "text": "famous",
+        "audio": "/audio/week24/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "special",
+        "audio": "/audio/week24/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "kind",
+        "audio": "/audio/week24/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "happy",
+        "audio": "/audio/week24/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week24/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "exciting",
+        "audio": "/audio/week24/mindmap_branch_2_6.mp3"
+      }
     ],
-    "They were ___.": [
-      { text: "surprised when he walked in", audio: "/audio/week24/mindmap_branch_bo3g4a.mp3" },
-      { text: "excited when they heard the news", audio: "/audio/week24/mindmap_branch_olu4cd.mp3" },
-      { text: "scared when the lights went out", audio: "/audio/week24/mindmap_branch_1h48sl.mp3" },
-      { text: "relieved when it was over", audio: "/audio/week24/mindmap_branch_7pnt0l.mp3" },
-      { text: "bored when it rained all day", audio: "/audio/week24/mindmap_branch_iquegc.mp3" },
-      { text: "cheerful when they heard music", audio: "/audio/week24/mindmap_branch_moybhq.mp3" }
+    "I do not feel ___ today.": [
+      {
+        "text": "happy",
+        "audio": "/audio/week24/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week24/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "sad",
+        "audio": "/audio/week24/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "worried",
+        "audio": "/audio/week24/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week24/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "bored",
+        "audio": "/audio/week24/mindmap_branch_3_6.mp3"
+      }
     ],
-    "He was ___.": [
-      { text: "not scared — he was calm", audio: "/audio/week24/mindmap_branch_lno0nu.mp3" },
-      { text: "not bored — he was curious", audio: "/audio/week24/mindmap_branch_xzwhmz.mp3" },
-      { text: "not upset — he was relieved", audio: "/audio/week24/mindmap_branch_7x8fog.mp3" },
-      { text: "not angry — he was worried", audio: "/audio/week24/mindmap_branch_n0hmey.mp3" },
-      { text: "not tired — he was cheerful", audio: "/audio/week24/mindmap_branch_b12mfv.mp3" },
-      { text: "not sad — he was surprised", audio: "/audio/week24/mindmap_branch_vhxp3k.mp3" }
+    "The day was not ___ yesterday.": [
+      {
+        "text": "emotional",
+        "audio": "/audio/week24/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week24/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week24/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week24/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week24/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "special",
+        "audio": "/audio/week24/mindmap_branch_4_6.mp3"
+      }
     ],
-    "Were you ___?": [
-      { text: "scared about the test", audio: "/audio/week24/mindmap_branch_v1q63v.mp3" },
-      { text: "excited about the party", audio: "/audio/week24/mindmap_branch_baoyov.mp3" },
-      { text: "worried about your friend", audio: "/audio/week24/mindmap_branch_f948yx.mp3" },
-      { text: "upset about the result", audio: "/audio/week24/mindmap_branch_e68iyv.mp3" },
-      { text: "cheerful about the holiday", audio: "/audio/week24/mindmap_branch_rp0cxz.mp3" },
-      { text: "surprised about the change", audio: "/audio/week24/mindmap_branch_yerlh4.mp3" }
+    "How do you ___ today?": [
+      {
+        "text": "feel",
+        "audio": "/audio/week24/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "are",
+        "audio": "/audio/week24/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "do",
+        "audio": "/audio/week24/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "seem",
+        "audio": "/audio/week24/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "look",
+        "audio": "/audio/week24/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "appear",
+        "audio": "/audio/week24/mindmap_branch_5_6.mp3"
+      }
     ],
-    "We were all ___ at the end.": [
-      { text: "tired", audio: "/audio/week24/mindmap_branch_u9qwe9.mp3" },
-      { text: "relieved", audio: "/audio/week24/mindmap_branch_v4v99h.mp3" },
-      { text: "cheerful", audio: "/audio/week24/mindmap_branch_cakqcr.mp3" },
-      { text: "hungry", audio: "/audio/week24/mindmap_branch_h6v9d4.mp3" },
-      { text: "surprised", audio: "/audio/week24/mindmap_branch_pq3t7i.mp3" },
-      { text: "calm", audio: "/audio/week24/mindmap_branch_hkqj0m.mp3" }
+    "Did you have a ___ day?": [
+      {
+        "text": "good",
+        "audio": "/audio/week24/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "happy",
+        "audio": "/audio/week24/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "busy",
+        "audio": "/audio/week24/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week24/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "special",
+        "audio": "/audio/week24/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "long",
+        "audio": "/audio/week24/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

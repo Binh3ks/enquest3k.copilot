@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "My house has ___.", audio: "/audio/week5_easy/mindmap_stem_qzox5j.mp3" },
-    { text: "I sleep in my ___.", audio: "/audio/week5_easy/mindmap_stem_ety8wo.mp3" },
-    { text: "I eat in the ___.", audio: "/audio/week5_easy/mindmap_stem_5pwp22.mp3" },
-    { text: "I have a ___ in my bedroom.", audio: "/audio/week5_easy/mindmap_stem_kalx6c.mp3" },
-    { text: "I sit on a ___.", audio: "/audio/week5_easy/mindmap_stem_otv8c6.mp3" },
-    { text: "My favorite room is ___.", audio: "/audio/week5_easy/mindmap_stem_8zbwyd.mp3" }
+  "centerStems": [
+    {
+      "text": "The house has a ___ upstairs.",
+      "type": "affirmative",
+      "audio": "/audio/week5/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "There is a ___ on the table.",
+      "type": "affirmative",
+      "audio": "/audio/week5/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The house is not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week5/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I do not ___ the door slowly.",
+      "type": "negative",
+      "audio": "/audio/week5/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "What is in the ___?",
+      "type": "question",
+      "audio": "/audio/week5/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you ___ a mystery house?",
+      "type": "question",
+      "audio": "/audio/week5/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "My house has ___.": [
-      { text: "bedroom", audio: "/audio/week5_easy/mindmap_branch_n629th.mp3" },
-      { text: "kitchen", audio: "/audio/week5_easy/mindmap_branch_i619tv.mp3" },
-      { text: "bathroom", audio: "/audio/week5_easy/mindmap_branch_z404e1.mp3" },
-      { text: "living room", audio: "/audio/week5_easy/mindmap_branch_md5xcb.mp3" },
-      { text: "many rooms", audio: "/audio/week5_easy/mindmap_branch_6irkqr.mp3" },
-      { text: "four rooms", audio: "/audio/week5_easy/mindmap_branch_t4jyxi.mp3" }
+  "branchLabels": {
+    "The house has a ___ upstairs.": [
+      {
+        "text": "bedroom",
+        "audio": "/audio/week5/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "bathroom",
+        "audio": "/audio/week5/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "kitchen",
+        "audio": "/audio/week5/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "living room",
+        "audio": "/audio/week5/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "garden",
+        "audio": "/audio/week5/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "balcony",
+        "audio": "/audio/week5/mindmap_branch_1_6.mp3"
+      }
     ],
-    "I sleep in my ___.": [
-      { text: "bedroom", audio: "/audio/week5_easy/mindmap_branch_a0dhw5.mp3" },
-      { text: "bed", audio: "/audio/week5_easy/mindmap_branch_etw7dm.mp3" },
-      { text: "room", audio: "/audio/week5_easy/mindmap_branch_xb2nt2.mp3" },
-      { text: "house", audio: "/audio/week5_easy/mindmap_branch_s723dz.mp3" },
-      { text: "nice bed", audio: "/audio/week5_easy/mindmap_branch_7j7vrd.mp3" },
-      { text: "big bedroom", audio: "/audio/week5_easy/mindmap_branch_8rlux7.mp3" }
+    "There is a ___ on the table.": [
+      {
+        "text": "lamp",
+        "audio": "/audio/week5/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "book",
+        "audio": "/audio/week5/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "cup",
+        "audio": "/audio/week5/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "plate",
+        "audio": "/audio/week5/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "vase",
+        "audio": "/audio/week5/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "clock",
+        "audio": "/audio/week5/mindmap_branch_2_6.mp3"
+      }
     ],
-    "I eat in the ___.": [
-      { text: "kitchen", audio: "/audio/week5_easy/mindmap_branch_uvma51.mp3" },
-      { text: "dining room", audio: "/audio/week5_easy/mindmap_branch_ofh6w9.mp3" },
-      { text: "house", audio: "/audio/week5_easy/mindmap_branch_vqri55.mp3" },
-      { text: "living room", audio: "/audio/week5_easy/mindmap_branch_xcnebd.mp3" },
-      { text: "big kitchen", audio: "/audio/week5_easy/mindmap_branch_rnwygl.mp3" },
-      { text: "my house", audio: "/audio/week5_easy/mindmap_branch_dw8nzd.mp3" }
+    "The house is not ___ today.": [
+      {
+        "text": "quiet",
+        "audio": "/audio/week5/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "empty",
+        "audio": "/audio/week5/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "closed",
+        "audio": "/audio/week5/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "clean",
+        "audio": "/audio/week5/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "dark",
+        "audio": "/audio/week5/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "small",
+        "audio": "/audio/week5/mindmap_branch_3_6.mp3"
+      }
     ],
-    "I have a ___ in my bedroom.": [
-      { text: "bed", audio: "/audio/week5_easy/mindmap_branch_mb226i.mp3" },
-      { text: "chair", audio: "/audio/week5_easy/mindmap_branch_g7z2rq.mp3" },
-      { text: "table", audio: "/audio/week5_easy/mindmap_branch_hec8f1.mp3" },
-      { text: "toy", audio: "/audio/week5_easy/mindmap_branch_ewuf3n.mp3" },
-      { text: "book", audio: "/audio/week5_easy/mindmap_branch_6kkuam.mp3" },
-      { text: "big bed", audio: "/audio/week5_easy/mindmap_branch_lrinca.mp3" }
+    "I do not ___ the door slowly.": [
+      {
+        "text": "open",
+        "audio": "/audio/week5/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "close",
+        "audio": "/audio/week5/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "lock",
+        "audio": "/audio/week5/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "push",
+        "audio": "/audio/week5/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "knock",
+        "audio": "/audio/week5/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "touch",
+        "audio": "/audio/week5/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I sit on a ___.": [
-      { text: "chair", audio: "/audio/week5_easy/mindmap_branch_31xnio.mp3" },
-      { text: "bed", audio: "/audio/week5_easy/mindmap_branch_otx9v8.mp3" },
-      { text: "big chair", audio: "/audio/week5_easy/mindmap_branch_5p56j4.mp3" },
-      { text: "small chair", audio: "/audio/week5_easy/mindmap_branch_uhhnt.mp3" },
-      { text: "red chair", audio: "/audio/week5_easy/mindmap_branch_d79m5d.mp3" },
-      { text: "blue chair", audio: "/audio/week5_easy/mindmap_branch_ttdb5k.mp3" }
+    "What is in the ___?": [
+      {
+        "text": "kitchen",
+        "audio": "/audio/week5/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "bedroom",
+        "audio": "/audio/week5/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "living room",
+        "audio": "/audio/week5/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "house",
+        "audio": "/audio/week5/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "room",
+        "audio": "/audio/week5/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "fridge",
+        "audio": "/audio/week5/mindmap_branch_5_6.mp3"
+      }
     ],
-    "My favorite room is ___.": [
-      { text: "the bedroom", audio: "/audio/week5_easy/mindmap_branch_o6ukiy.mp3" },
-      { text: "the kitchen", audio: "/audio/week5_easy/mindmap_branch_1nrhvv.mp3" },
-      { text: "the living room", audio: "/audio/week5_easy/mindmap_branch_sir32x.mp3" },
-      { text: "the bathroom", audio: "/audio/week5_easy/mindmap_branch_ahrhrf.mp3" },
-      { text: "the garden", audio: "/audio/week5_easy/mindmap_branch_gr7ipe.mp3" },
-      { text: "the dining room", audio: "/audio/week5_easy/mindmap_branch_jlkvnt.mp3" }
+    "Do you ___ a mystery house?": [
+      {
+        "text": "like",
+        "audio": "/audio/week5/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "know",
+        "audio": "/audio/week5/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "have",
+        "audio": "/audio/week5/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "see",
+        "audio": "/audio/week5/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "visit",
+        "audio": "/audio/week5/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "want",
+        "audio": "/audio/week5/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

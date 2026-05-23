@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "I am ___.", audio: "/audio/week3_easy/mindmap_stem_307ui4.mp3" },
-    { text: "I have ___.", audio: "/audio/week3_easy/mindmap_stem_opr6q8.mp3" },
-    { text: "My hair is ___.", audio: "/audio/week3_easy/mindmap_stem_cxp8dh.mp3" },
-    { text: "My eyes are ___.", audio: "/audio/week3_easy/mindmap_stem_6z0vp7.mp3" },
-    { text: "I look ___.", audio: "/audio/week3_easy/mindmap_stem_h9sztl.mp3" },
-    { text: "I like my ___.", audio: "/audio/week3_easy/mindmap_stem_wn7fch.mp3" }
+  "centerStems": [
+    {
+      "text": "My teacher is ___ and beautiful.",
+      "type": "affirmative",
+      "audio": "/audio/week3/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "My teacher has ___ hair.",
+      "type": "affirmative",
+      "audio": "/audio/week3/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "My teacher does not ___ every day.",
+      "type": "negative",
+      "audio": "/audio/week3/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I am not ___ in class.",
+      "type": "negative",
+      "audio": "/audio/week3/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "What does your teacher ___?",
+      "type": "question",
+      "audio": "/audio/week3/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you ___ your teacher?",
+      "type": "question",
+      "audio": "/audio/week3/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "I am ___.": [
-      { text: "tall", audio: "/audio/week3_easy/mindmap_branch_mh8h7o.mp3" },
-      { text: "short", audio: "/audio/week3_easy/mindmap_branch_dtyp9t.mp3" },
-      { text: "happy", audio: "/audio/week3_easy/mindmap_branch_j5ai51.mp3" },
-      { text: "nice", audio: "/audio/week3_easy/mindmap_branch_me2mpg.mp3" },
-      { text: "kind", audio: "/audio/week3_easy/mindmap_branch_mcfh25.mp3" },
-      { text: "good", audio: "/audio/week3_easy/mindmap_branch_mac5ck.mp3" }
+  "branchLabels": {
+    "My teacher is ___ and beautiful.": [
+      {
+        "text": "tall",
+        "audio": "/audio/week3/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "kind",
+        "audio": "/audio/week3/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "smart",
+        "audio": "/audio/week3/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week3/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "nice",
+        "audio": "/audio/week3/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "young",
+        "audio": "/audio/week3/mindmap_branch_1_6.mp3"
+      }
     ],
-    "I have ___.": [
-      { text: "long hair", audio: "/audio/week3_easy/mindmap_branch_qhl8zt.mp3" },
-      { text: "short hair", audio: "/audio/week3_easy/mindmap_branch_8yjw7t.mp3" },
-      { text: "brown eyes", audio: "/audio/week3_easy/mindmap_branch_mjry75.mp3" },
-      { text: "black eyes", audio: "/audio/week3_easy/mindmap_branch_hw45xy.mp3" },
-      { text: "a smile", audio: "/audio/week3_easy/mindmap_branch_1uuhay.mp3" },
-      { text: "a face", audio: "/audio/week3_easy/mindmap_branch_8wfgdt.mp3" }
+    "My teacher has ___ hair.": [
+      {
+        "text": "long black",
+        "audio": "/audio/week3/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "short brown",
+        "audio": "/audio/week3/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "curly",
+        "audio": "/audio/week3/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "straight",
+        "audio": "/audio/week3/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "red",
+        "audio": "/audio/week3/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "blonde",
+        "audio": "/audio/week3/mindmap_branch_2_6.mp3"
+      }
     ],
-    "My hair is ___.": [
-      { text: "black", audio: "/audio/week3_easy/mindmap_branch_ehot7.mp3" },
-      { text: "brown", audio: "/audio/week3_easy/mindmap_branch_i1t38.mp3" },
-      { text: "long", audio: "/audio/week3_easy/mindmap_branch_pde09y.mp3" },
-      { text: "short", audio: "/audio/week3_easy/mindmap_branch_8ebcam.mp3" },
-      { text: "curly", audio: "/audio/week3_easy/mindmap_branch_10sibx.mp3" },
-      { text: "straight", audio: "/audio/week3_easy/mindmap_branch_tt3kfc.mp3" }
+    "My teacher does not ___ every day.": [
+      {
+        "text": "wear glasses",
+        "audio": "/audio/week3/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "smile",
+        "audio": "/audio/week3/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "teach",
+        "audio": "/audio/week3/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "talk",
+        "audio": "/audio/week3/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "help",
+        "audio": "/audio/week3/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "read",
+        "audio": "/audio/week3/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My eyes are ___.": [
-      { text: "brown", audio: "/audio/week3_easy/mindmap_branch_mc0atu.mp3" },
-      { text: "black", audio: "/audio/week3_easy/mindmap_branch_mfkf3v.mp3" },
-      { text: "big", audio: "/audio/week3_easy/mindmap_branch_6yyr4s.mp3" },
-      { text: "nice", audio: "/audio/week3_easy/mindmap_branch_2tzpol.mp3" },
-      { text: "happy", audio: "/audio/week3_easy/mindmap_branch_jr2kho.mp3" },
-      { text: "pretty", audio: "/audio/week3_easy/mindmap_branch_a7jcn6.mp3" }
+    "I am not ___ in class.": [
+      {
+        "text": "quiet",
+        "audio": "/audio/week3/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week3/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "bored",
+        "audio": "/audio/week3/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "sad",
+        "audio": "/audio/week3/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "scared",
+        "audio": "/audio/week3/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "sleepy",
+        "audio": "/audio/week3/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I look ___.": [
-      { text: "happy", audio: "/audio/week3_easy/mindmap_branch_i6i44o.mp3" },
-      { text: "like my mom", audio: "/audio/week3_easy/mindmap_branch_xknv08.mp3" },
-      { text: "like my dad", audio: "/audio/week3_easy/mindmap_branch_xkhtj0.mp3" },
-      { text: "nice", audio: "/audio/week3_easy/mindmap_branch_wki68p.mp3" },
-      { text: "good", audio: "/audio/week3_easy/mindmap_branch_wo8nll.mp3" },
-      { text: "in the mirror", audio: "/audio/week3_easy/mindmap_branch_vepuoh.mp3" }
+    "What does your teacher ___?": [
+      {
+        "text": "teach",
+        "audio": "/audio/week3/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "wear",
+        "audio": "/audio/week3/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "say",
+        "audio": "/audio/week3/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "look like",
+        "audio": "/audio/week3/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "do",
+        "audio": "/audio/week3/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week3/mindmap_branch_5_6.mp3"
+      }
     ],
-    "I like my ___.": [
-      { text: "smile", audio: "/audio/week3_easy/mindmap_branch_ehqans.mp3" },
-      { text: "eyes", audio: "/audio/week3_easy/mindmap_branch_hnkzfu.mp3" },
-      { text: "hair", audio: "/audio/week3_easy/mindmap_branch_hot4h6.mp3" },
-      { text: "face", audio: "/audio/week3_easy/mindmap_branch_hnpej3.mp3" },
-      { text: "hands", audio: "/audio/week3_easy/mindmap_branch_jvqms4.mp3" },
-      { text: "happy look", audio: "/audio/week3_easy/mindmap_branch_onp899.mp3" }
+    "Do you ___ your teacher?": [
+      {
+        "text": "like",
+        "audio": "/audio/week3/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "miss",
+        "audio": "/audio/week3/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "see",
+        "audio": "/audio/week3/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "respect",
+        "audio": "/audio/week3/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "help",
+        "audio": "/audio/week3/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "know",
+        "audio": "/audio/week3/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "I can ___.", audio: "/audio/week14_easy/mindmap_stem_ao4bme.mp3" },
-    { text: "My name is ___.", audio: "/audio/week14_easy/mindmap_stem_kbb210.mp3" },
-    { text: "I have ___.", audio: "/audio/week14_easy/mindmap_stem_opr6q8.mp3" },
-    { text: "I show ___.", audio: "/audio/week14_easy/mindmap_stem_ww8qit.mp3" },
-    { text: "I help ___.", audio: "/audio/week14_easy/mindmap_stem_k1drlj.mp3" },
-    { text: "I am proud of ___.", audio: "/audio/week14_easy/mindmap_stem_rzt3vt.mp3" }
+  "centerStems": [
+    {
+      "text": "I am ___ years old.",
+      "type": "affirmative",
+      "audio": "/audio/week14/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "I can ___ very well.",
+      "type": "affirmative",
+      "audio": "/audio/week14/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "I am not ___ today.",
+      "type": "negative",
+      "audio": "/audio/week14/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "I do not ___ my work.",
+      "type": "negative",
+      "audio": "/audio/week14/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "What is on your ___?",
+      "type": "question",
+      "audio": "/audio/week14/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Do you feel ___ when you present?",
+      "type": "question",
+      "audio": "/audio/week14/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "I can ___.": [
-      { text: "sing", audio: "/audio/week14_easy/mindmap_branch_o2nnc8.mp3" },
-      { text: "draw", audio: "/audio/week14_easy/mindmap_branch_oar2m5.mp3" },
-      { text: "read", audio: "/audio/week14_easy/mindmap_branch_o3a9lb.mp3" },
-      { text: "run", audio: "/audio/week14_easy/mindmap_branch_aogx1m.mp3" },
-      { text: "write", audio: "/audio/week14_easy/mindmap_branch_xy6ssq.mp3" },
-      { text: "dance", audio: "/audio/week14_easy/mindmap_branch_rtsrxe.mp3" }
+  "branchLabels": {
+    "I am ___ years old.": [
+      {
+        "text": "8",
+        "audio": "/audio/week14/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "9",
+        "audio": "/audio/week14/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "7",
+        "audio": "/audio/week14/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "10",
+        "audio": "/audio/week14/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "6",
+        "audio": "/audio/week14/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "11",
+        "audio": "/audio/week14/mindmap_branch_1_6.mp3"
+      }
     ],
-    "My name is ___.": [
-      { text: "Tom", audio: "/audio/week14_easy/mindmap_branch_kb4ddd.mp3" },
-      { text: "Anna", audio: "/audio/week14_easy/mindmap_branch_9zpnjb.mp3" },
-      { text: "Ben", audio: "/audio/week14_easy/mindmap_branch_kaso7s.mp3" },
-      { text: "Mary", audio: "/audio/week14_easy/mindmap_branch_9tcbpe.mp3" },
-      { text: "John", audio: "/audio/week14_easy/mindmap_branch_9uqzci.mp3" },
-      { text: "Lisa", audio: "/audio/week14_easy/mindmap_branch_9tr08i.mp3" }
+    "I can ___ very well.": [
+      {
+        "text": "sing",
+        "audio": "/audio/week14/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "dance",
+        "audio": "/audio/week14/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "draw",
+        "audio": "/audio/week14/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "speak",
+        "audio": "/audio/week14/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "present",
+        "audio": "/audio/week14/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "read",
+        "audio": "/audio/week14/mindmap_branch_2_6.mp3"
+      }
     ],
-    "I have ___.": [
-      { text: "a family", audio: "/audio/week14_easy/mindmap_branch_u4nma2.mp3" },
-      { text: "a friend", audio: "/audio/week14_easy/mindmap_branch_wwykc0.mp3" },
-      { text: "a book", audio: "/audio/week14_easy/mindmap_branch_8uhgv9.mp3" },
-      { text: "a pet", audio: "/audio/week14_easy/mindmap_branch_r7c0gh.mp3" },
-      { text: "a school", audio: "/audio/week14_easy/mindmap_branch_8pxawq.mp3" },
-      { text: "a home", audio: "/audio/week14_easy/mindmap_branch_8xs6sv.mp3" }
+    "I am not ___ today.": [
+      {
+        "text": "scared",
+        "audio": "/audio/week14/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "nervous",
+        "audio": "/audio/week14/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "tired",
+        "audio": "/audio/week14/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "sad",
+        "audio": "/audio/week14/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "worried",
+        "audio": "/audio/week14/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "bored",
+        "audio": "/audio/week14/mindmap_branch_3_6.mp3"
+      }
     ],
-    "I show ___.": [
-      { text: "my poster", audio: "/audio/week14_easy/mindmap_branch_6659s7.mp3" },
-      { text: "my work", audio: "/audio/week14_easy/mindmap_branch_hjl3w5.mp3" },
-      { text: "my picture", audio: "/audio/week14_easy/mindmap_branch_2swlvs.mp3" },
-      { text: "my book", audio: "/audio/week14_easy/mindmap_branch_h81d7h.mp3" },
-      { text: "my drawing", audio: "/audio/week14_easy/mindmap_branch_4e56g8.mp3" },
-      { text: "my project", audio: "/audio/week14_easy/mindmap_branch_78t5kz.mp3" }
+    "I do not ___ my work.": [
+      {
+        "text": "finish",
+        "audio": "/audio/week14/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "show",
+        "audio": "/audio/week14/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "present",
+        "audio": "/audio/week14/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "share",
+        "audio": "/audio/week14/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "explain",
+        "audio": "/audio/week14/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "like",
+        "audio": "/audio/week14/mindmap_branch_4_6.mp3"
+      }
     ],
-    "I help ___.": [
-      { text: "my teacher", audio: "/audio/week14_easy/mindmap_branch_cd8m3s.mp3" },
-      { text: "my friend", audio: "/audio/week14_easy/mindmap_branch_oxvq6c.mp3" },
-      { text: "my mum", audio: "/audio/week14_easy/mindmap_branch_o0lmz9.mp3" },
-      { text: "my classmate", audio: "/audio/week14_easy/mindmap_branch_842asj.mp3" },
-      { text: "my family", audio: "/audio/week14_easy/mindmap_branch_gyduta.mp3" },
-      { text: "everyone", audio: "/audio/week14_easy/mindmap_branch_qd4057.mp3" }
+    "What is on your ___?": [
+      {
+        "text": "poster",
+        "audio": "/audio/week14/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "desk",
+        "audio": "/audio/week14/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "table",
+        "audio": "/audio/week14/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "board",
+        "audio": "/audio/week14/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "project",
+        "audio": "/audio/week14/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "page",
+        "audio": "/audio/week14/mindmap_branch_5_6.mp3"
+      }
     ],
-    "I am proud of ___.": [
-      { text: "my poster", audio: "/audio/week14_easy/mindmap_branch_tubn9x.mp3" },
-      { text: "my work", audio: "/audio/week14_easy/mindmap_branch_e9wnfz.mp3" },
-      { text: "my family", audio: "/audio/week14_easy/mindmap_branch_iegkf2.mp3" },
-      { text: "my friends", audio: "/audio/week14_easy/mindmap_branch_ycp0t7.mp3" },
-      { text: "my drawing", audio: "/audio/week14_easy/mindmap_branch_ohdl8k.mp3" },
-      { text: "myself", audio: "/audio/week14_easy/mindmap_branch_anp6qa.mp3" }
+    "Do you feel ___ when you present?": [
+      {
+        "text": "confident",
+        "audio": "/audio/week14/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "happy",
+        "audio": "/audio/week14/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "nervous",
+        "audio": "/audio/week14/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "scared",
+        "audio": "/audio/week14/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "proud",
+        "audio": "/audio/week14/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "excited",
+        "audio": "/audio/week14/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

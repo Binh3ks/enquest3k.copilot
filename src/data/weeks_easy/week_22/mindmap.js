@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "Nova is a ___.", audio: "/audio/week22_easy/mindmap_stem_y0a95c.mp3" },
-    { text: "Did the suspect ___?", audio: "/audio/week22_easy/mindmap_stem_jn238n.mp3" },
-    { text: "Nova found a ___.", audio: "/audio/week22_easy/mindmap_stem_1klbj4.mp3" },
-    { text: "Yesterday, Nova ___.", audio: "/audio/week22_easy/mindmap_stem_au1v0t.mp3" },
-    { text: "Nova wrote a ___.", audio: "/audio/week22_easy/mindmap_stem_ursnkt.mp3" },
-    { text: "I think a good detective is ___.", audio: "/audio/week22_easy/mindmap_stem_s844px.mp3" }
+  "centerStems": [
+    {
+      "text": "Nova is a ___ detective.",
+      "type": "affirmative",
+      "audio": "/audio/week22/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "Nova ___ the case carefully.",
+      "type": "affirmative",
+      "audio": "/audio/week22/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The case was not ___ yesterday.",
+      "type": "negative",
+      "audio": "/audio/week22/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "Nova did not ___ the report.",
+      "type": "negative",
+      "audio": "/audio/week22/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "When did you ___ the case?",
+      "type": "question",
+      "audio": "/audio/week22/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "Are you a ___ detective?",
+      "type": "question",
+      "audio": "/audio/week22/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "Nova is a ___.": [
-      { text: "detective", audio: "/audio/week22_easy/mindmap_branch_n11f5m.mp3" },
-      { text: "time detective", audio: "/audio/week22_easy/mindmap_branch_8it70r.mp3" },
-      { text: "good detective", audio: "/audio/week22_easy/mindmap_branch_mg2n1h.mp3" },
-      { text: "brilliant detective", audio: "/audio/week22_easy/mindmap_branch_38kzzx.mp3" },
-      { text: "notebook detective", audio: "/audio/week22_easy/mindmap_branch_axo9kt.mp3" },
-      { text: "case detective", audio: "/audio/week22_easy/mindmap_branch_me8j94.mp3" }
+  "branchLabels": {
+    "Nova is a ___ detective.": [
+      {
+        "text": "careful",
+        "audio": "/audio/week22/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "smart",
+        "audio": "/audio/week22/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week22/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "great",
+        "audio": "/audio/week22/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "famous",
+        "audio": "/audio/week22/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "careful",
+        "audio": "/audio/week22/mindmap_branch_1_6.mp3"
+      }
     ],
-    "Did the suspect ___?": [
-      { text: "answer clearly", audio: "/audio/week22_easy/mindmap_branch_fy7tgu.mp3" },
-      { text: "open the notebook", audio: "/audio/week22_easy/mindmap_branch_l17phk.mp3" },
-      { text: "give a clue", audio: "/audio/week22_easy/mindmap_branch_g4c50v.mp3" },
-      { text: "start the interview", audio: "/audio/week22_easy/mindmap_branch_six7vg.mp3" },
-      { text: "report the answer", audio: "/audio/week22_easy/mindmap_branch_4rp1lr.mp3" },
-      { text: "help with the case", audio: "/audio/week22_easy/mindmap_branch_fvk650.mp3" }
+    "Nova ___ the case carefully.": [
+      {
+        "text": "studied",
+        "audio": "/audio/week22/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "solved",
+        "audio": "/audio/week22/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "worked on",
+        "audio": "/audio/week22/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "organized",
+        "audio": "/audio/week22/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "opened",
+        "audio": "/audio/week22/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "handed",
+        "audio": "/audio/week22/mindmap_branch_2_6.mp3"
+      }
     ],
-    "Nova found a ___.": [
-      { text: "clue", audio: "/audio/week22_easy/mindmap_branch_m8b5ng.mp3" },
-      { text: "clue in the notebook", audio: "/audio/week22_easy/mindmap_branch_r5t8yn.mp3" },
-      { text: "good clue", audio: "/audio/week22_easy/mindmap_branch_lc4vyb.mp3" },
-      { text: "clue in the report", audio: "/audio/week22_easy/mindmap_branch_u3acnu.mp3" },
-      { text: "case clue", audio: "/audio/week22_easy/mindmap_branch_ejosty.mp3" },
-      { text: "new clue yesterday", audio: "/audio/week22_easy/mindmap_branch_6eu9z6.mp3" }
+    "The case was not ___ yesterday.": [
+      {
+        "text": "solved",
+        "audio": "/audio/week22/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "easy",
+        "audio": "/audio/week22/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "new",
+        "audio": "/audio/week22/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "ready",
+        "audio": "/audio/week22/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "open",
+        "audio": "/audio/week22/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "clear",
+        "audio": "/audio/week22/mindmap_branch_3_6.mp3"
+      }
     ],
-    "Yesterday, Nova ___.": [
-      { text: "opened the notebook", audio: "/audio/week22_easy/mindmap_branch_xoep6z.mp3" },
-      { text: "started the interview", audio: "/audio/week22_easy/mindmap_branch_tmkl21.mp3" },
-      { text: "asked a question", audio: "/audio/week22_easy/mindmap_branch_cocf99.mp3" },
-      { text: "found a clue", audio: "/audio/week22_easy/mindmap_branch_vowl8a.mp3" },
-      { text: "solved the case", audio: "/audio/week22_easy/mindmap_branch_1b6j1u.mp3" },
-      { text: "recorded the answer", audio: "/audio/week22_easy/mindmap_branch_ly6dyp.mp3" }
+    "Nova did not ___ the report.": [
+      {
+        "text": "finish",
+        "audio": "/audio/week22/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "hand",
+        "audio": "/audio/week22/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "write",
+        "audio": "/audio/week22/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "submit",
+        "audio": "/audio/week22/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "complete",
+        "audio": "/audio/week22/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "give",
+        "audio": "/audio/week22/mindmap_branch_4_6.mp3"
+      }
     ],
-    "Nova wrote a ___.": [
-      { text: "report", audio: "/audio/week22_easy/mindmap_branch_4y0l4c.mp3" },
-      { text: "clear report", audio: "/audio/week22_easy/mindmap_branch_ugx10n.mp3" },
-      { text: "case report", audio: "/audio/week22_easy/mindmap_branch_cwhsq0.mp3" },
-      { text: "short report", audio: "/audio/week22_easy/mindmap_branch_vna8fs.mp3" },
-      { text: "report about the case", audio: "/audio/week22_easy/mindmap_branch_fdqe3m.mp3" },
-      { text: "report about the suspect", audio: "/audio/week22_easy/mindmap_branch_zgn94n.mp3" }
+    "When did you ___ the case?": [
+      {
+        "text": "solve",
+        "audio": "/audio/week22/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "study",
+        "audio": "/audio/week22/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "work on",
+        "audio": "/audio/week22/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "open",
+        "audio": "/audio/week22/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "start",
+        "audio": "/audio/week22/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "finish",
+        "audio": "/audio/week22/mindmap_branch_5_6.mp3"
+      }
     ],
-    "I think a good detective is ___.": [
-      { text: "clever and brave", audio: "/audio/week22_easy/mindmap_branch_apnemc.mp3" },
-      { text: "patient and careful", audio: "/audio/week22_easy/mindmap_branch_rve1g2.mp3" },
-      { text: "always asking questions", audio: "/audio/week22_easy/mindmap_branch_xtrw25.mp3" },
-      { text: "good at finding clues", audio: "/audio/week22_easy/mindmap_branch_wehzen.mp3" },
-      { text: "honest and smart", audio: "/audio/week22_easy/mindmap_branch_i26hbx.mp3" },
-      { text: "never giving up", audio: "/audio/week22_easy/mindmap_branch_porqin.mp3" }
+    "Are you a ___ detective?": [
+      {
+        "text": "good",
+        "audio": "/audio/week22/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "great",
+        "audio": "/audio/week22/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "smart",
+        "audio": "/audio/week22/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "careful",
+        "audio": "/audio/week22/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "famous",
+        "audio": "/audio/week22/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "real",
+        "audio": "/audio/week22/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };

@@ -1,60 +1,192 @@
 const mindMapContent = {
-  centerStems: [
-    { text: "The tortoise chose a ___.", audio: "/audio/week28_easy/mindmap_stem_o0t5gm.mp3" },
-    { text: "The hare stopped to ___.", audio: "/audio/week28_easy/mindmap_stem_lkqn7o.mp3" },
-    { text: "I go to school by ___.", audio: "/audio/week28_easy/mindmap_stem_qelimo.mp3" },
-    { text: "My favorite vehicle is ___.", audio: "/audio/week28_easy/mindmap_stem_2qby0q.mp3" },
-    { text: "A ___.", audio: "/audio/week28_easy/mindmap_stem_vb9j4e.mp3" },
-    { text: "I want to travel by ___ one day.", audio: "/audio/week28_easy/mindmap_stem_bj06jg.mp3" }
+  "centerStems": [
+    {
+      "text": "The tortoise is very ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week28/mindmap_stem_1.mp3"
+    },
+    {
+      "text": "The hare ran very ___ today.",
+      "type": "affirmative",
+      "audio": "/audio/week28/mindmap_stem_2.mp3"
+    },
+    {
+      "text": "The race was not ___ yesterday.",
+      "type": "negative",
+      "audio": "/audio/week28/mindmap_stem_3.mp3"
+    },
+    {
+      "text": "The hare did not ___ the race.",
+      "type": "negative",
+      "audio": "/audio/week28/mindmap_stem_4.mp3"
+    },
+    {
+      "text": "Do you ___ or ___?",
+      "type": "question",
+      "audio": "/audio/week28/mindmap_stem_5.mp3"
+    },
+    {
+      "text": "What is your ___ transport?",
+      "type": "question",
+      "audio": "/audio/week28/mindmap_stem_6.mp3"
+    }
   ],
-  branchLabels: {
-    "The tortoise chose a ___.": [
-      { text: "boat", audio: "/audio/week28_easy/mindmap_branch_yc1gsd.mp3" },
-      { text: "small boat", audio: "/audio/week28_easy/mindmap_branch_xg5qvq.mp3" },
-      { text: "boat on the river", audio: "/audio/week28_easy/mindmap_branch_9758cd.mp3" },
-      { text: "slow and steady boat", audio: "/audio/week28_easy/mindmap_branch_ck9q8t.mp3" },
-      { text: "boat that never stopped", audio: "/audio/week28_easy/mindmap_branch_w1mg4n.mp3" },
-      { text: "boat and won the race", audio: "/audio/week28_easy/mindmap_branch_sz2p3u.mp3" }
+  "branchLabels": {
+    "The tortoise is very ___ today.": [
+      {
+        "text": "slow",
+        "audio": "/audio/week28/mindmap_branch_1_1.mp3"
+      },
+      {
+        "text": "steady",
+        "audio": "/audio/week28/mindmap_branch_1_2.mp3"
+      },
+      {
+        "text": "careful",
+        "audio": "/audio/week28/mindmap_branch_1_3.mp3"
+      },
+      {
+        "text": "patient",
+        "audio": "/audio/week28/mindmap_branch_1_4.mp3"
+      },
+      {
+        "text": "quiet",
+        "audio": "/audio/week28/mindmap_branch_1_5.mp3"
+      },
+      {
+        "text": "strong",
+        "audio": "/audio/week28/mindmap_branch_1_6.mp3"
+      }
     ],
-    "The hare stopped to ___.": [
-      { text: "sleep", audio: "/audio/week28_easy/mindmap_branch_g1t65g.mp3" },
-      { text: "show off", audio: "/audio/week28_easy/mindmap_branch_cty7it.mp3" },
-      { text: "sleep under a tree", audio: "/audio/week28_easy/mindmap_branch_z0jg8j.mp3" },
-      { text: "boast to other animals", audio: "/audio/week28_easy/mindmap_branch_m9oh2k.mp3" },
-      { text: "do tricks on his bicycle", audio: "/audio/week28_easy/mindmap_branch_2jijp6.mp3" },
-      { text: "rest and show off", audio: "/audio/week28_easy/mindmap_branch_4k9vpi.mp3" }
+    "The hare ran very ___ today.": [
+      {
+        "text": "fast",
+        "audio": "/audio/week28/mindmap_branch_2_1.mp3"
+      },
+      {
+        "text": "quickly",
+        "audio": "/audio/week28/mindmap_branch_2_2.mp3"
+      },
+      {
+        "text": "easily",
+        "audio": "/audio/week28/mindmap_branch_2_3.mp3"
+      },
+      {
+        "text": "happily",
+        "audio": "/audio/week28/mindmap_branch_2_4.mp3"
+      },
+      {
+        "text": "suddenly",
+        "audio": "/audio/week28/mindmap_branch_2_5.mp3"
+      },
+      {
+        "text": "slowly",
+        "audio": "/audio/week28/mindmap_branch_2_6.mp3"
+      }
     ],
-    "I go to school by ___.": [
-      { text: "bus", audio: "/audio/week28_easy/mindmap_branch_qenwdr.mp3" },
-      { text: "car", audio: "/audio/week28_easy/mindmap_branch_qeo4ij.mp3" },
-      { text: "bicycle", audio: "/audio/week28_easy/mindmap_branch_2t6mxc.mp3" },
-      { text: "motorbike", audio: "/audio/week28_easy/mindmap_branch_542h7r.mp3" },
-      { text: "on foot", audio: "/audio/week28_easy/mindmap_branch_7an5a8.mp3" },
-      { text: "taxi", audio: "/audio/week28_easy/mindmap_branch_xh83rl.mp3" }
+    "The race was not ___ yesterday.": [
+      {
+        "text": "fair",
+        "audio": "/audio/week28/mindmap_branch_3_1.mp3"
+      },
+      {
+        "text": "fun",
+        "audio": "/audio/week28/mindmap_branch_3_2.mp3"
+      },
+      {
+        "text": "exciting",
+        "audio": "/audio/week28/mindmap_branch_3_3.mp3"
+      },
+      {
+        "text": "interesting",
+        "audio": "/audio/week28/mindmap_branch_3_4.mp3"
+      },
+      {
+        "text": "good",
+        "audio": "/audio/week28/mindmap_branch_3_5.mp3"
+      },
+      {
+        "text": "clear",
+        "audio": "/audio/week28/mindmap_branch_3_6.mp3"
+      }
     ],
-    "My favorite vehicle is ___.": [
-      { text: "bus", audio: "/audio/week28_easy/mindmap_branch_2q9k9n.mp3" },
-      { text: "train", audio: "/audio/week28_easy/mindmap_branch_dgrlr1.mp3" },
-      { text: "bicycle", audio: "/audio/week28_easy/mindmap_branch_2ibbie.mp3" },
-      { text: "car", audio: "/audio/week28_easy/mindmap_branch_2q9c4v.mp3" },
-      { text: "boat", audio: "/audio/week28_easy/mindmap_branch_dl8jvt.mp3" },
-      { text: "motorbike", audio: "/audio/week28_easy/mindmap_branch_b5lz8x.mp3" }
+    "The hare did not ___ the race.": [
+      {
+        "text": "win",
+        "audio": "/audio/week28/mindmap_branch_4_1.mp3"
+      },
+      {
+        "text": "finish",
+        "audio": "/audio/week28/mindmap_branch_4_2.mp3"
+      },
+      {
+        "text": "start",
+        "audio": "/audio/week28/mindmap_branch_4_3.mp3"
+      },
+      {
+        "text": "run",
+        "audio": "/audio/week28/mindmap_branch_4_4.mp3"
+      },
+      {
+        "text": "complete",
+        "audio": "/audio/week28/mindmap_branch_4_5.mp3"
+      },
+      {
+        "text": "enter",
+        "audio": "/audio/week28/mindmap_branch_4_6.mp3"
+      }
     ],
-    "A ___.": [
-      { text: "bus is big and red", audio: "/audio/week28_easy/mindmap_branch_7yvi2r.mp3" },
-      { text: "car is fast and loud", audio: "/audio/week28_easy/mindmap_branch_pnsmsm.mp3" },
-      { text: "bicycle is small and fun", audio: "/audio/week28_easy/mindmap_branch_5nfbon.mp3" },
-      { text: "boat is slow and quiet", audio: "/audio/week28_easy/mindmap_branch_f02m4z.mp3" },
-      { text: "train is long and fast", audio: "/audio/week28_easy/mindmap_branch_8tswro.mp3" },
-      { text: "motorbike is loud and fast", audio: "/audio/week28_easy/mindmap_branch_xqahvs.mp3" }
+    "Do you ___ or ___?": [
+      {
+        "text": "run",
+        "audio": "/audio/week28/mindmap_branch_5_1.mp3"
+      },
+      {
+        "text": "walk",
+        "audio": "/audio/week28/mindmap_branch_5_2.mp3"
+      },
+      {
+        "text": "go by bus",
+        "audio": "/audio/week28/mindmap_branch_5_3.mp3"
+      },
+      {
+        "text": "use a car",
+        "audio": "/audio/week28/mindmap_branch_5_4.mp3"
+      },
+      {
+        "text": "ride a bike",
+        "audio": "/audio/week28/mindmap_branch_5_5.mp3"
+      },
+      {
+        "text": "swim",
+        "audio": "/audio/week28/mindmap_branch_5_6.mp3"
+      }
     ],
-    "I want to travel by ___ one day.": [
-      { text: "ship", audio: "/audio/week28_easy/mindmap_branch_3dszpd.mp3" },
-      { text: "train", audio: "/audio/week28_easy/mindmap_branch_hmvzf1.mp3" },
-      { text: "boat", audio: "/audio/week28_easy/mindmap_branch_tla4eb.mp3" },
-      { text: "plane", audio: "/audio/week28_easy/mindmap_branch_3dzdnl.mp3" },
-      { text: "bicycle", audio: "/audio/week28_easy/mindmap_branch_qliza4.mp3" },
-      { text: "motorbike", audio: "/audio/week28_easy/mindmap_branch_gh97dn.mp3" }
+    "What is your ___ transport?": [
+      {
+        "text": "favorite",
+        "audio": "/audio/week28/mindmap_branch_6_1.mp3"
+      },
+      {
+        "text": "best",
+        "audio": "/audio/week28/mindmap_branch_6_2.mp3"
+      },
+      {
+        "text": "fast",
+        "audio": "/audio/week28/mindmap_branch_6_3.mp3"
+      },
+      {
+        "text": "slow",
+        "audio": "/audio/week28/mindmap_branch_6_4.mp3"
+      },
+      {
+        "text": "new",
+        "audio": "/audio/week28/mindmap_branch_6_5.mp3"
+      },
+      {
+        "text": "common",
+        "audio": "/audio/week28/mindmap_branch_6_6.mp3"
+      }
     ]
   }
 };
