@@ -40,8 +40,10 @@ export const generateSmartReviewAsync = async (currentWeekId = 1) => {
                 let typeDisplay = "Word Recall";
 
                 if (v.collocation) {
+                    // Handle both string and array collocations (W1-W33 use arrays)
+                    const colloStr = Array.isArray(v.collocation) ? v.collocation[0] : v.collocation;
                     const regex = new RegExp(v.word, "gi");
-                    taskDisplay = v.collocation.replace(regex, "_____");
+                    taskDisplay = colloStr.replace(regex, "_____");
                     answerKey = v.word; 
                     typeDisplay = "Collocation Fill";
                 } else {
