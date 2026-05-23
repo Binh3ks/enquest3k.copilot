@@ -39,11 +39,11 @@ const mindMapContent = {
     ],
     "The lazy grasshopper ___ songs all day.": [
       { text: "sang", audio: "/audio/week34_easy/mindmap_branch_b1p3r.mp3" },
-      { text: "played", audio: "/audio/week34_easy/mindmap_branch_b2q8b.mp3" },
+      { text: "practised", audio: "/audio/week34_easy/mindmap_branch_b5m6t.mp3" },
+      { text: "learned", audio: "/audio/week34_easy/mindmap_branch_b2q8b.mp3" },
+      { text: "listened to", audio: "/audio/week34_easy/mindmap_branch_b6w2p.mp3" },
       { text: "danced", audio: "/audio/week34_easy/mindmap_branch_b3v1d.mp3" },
-      { text: "jumped", audio: "/audio/week34_easy/mindmap_branch_b4x4y.mp3" },
-      { text: "chirpped", audio: "/audio/week34_easy/mindmap_branch_b5m6t.mp3" },
-      { text: "laughed", audio: "/audio/week34_easy/mindmap_branch_b6w2p.mp3" }
+      { text: "jumped", audio: "/audio/week34_easy/mindmap_branch_b4x4y.mp3" }
     ],
     "When ___ came, the ant had food but the grasshopper had ___.": [
       { text: "winter / nothing", audio: "/audio/week34_easy/mindmap_branch_c1f7v.mp3" },
