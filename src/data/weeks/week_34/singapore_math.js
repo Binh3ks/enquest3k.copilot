@@ -5,7 +5,7 @@
 export default {
   title: "Math Story Problems — Week 34",
   theme: "storytelling_fable",
-  questions: [
+  problems: [
     {
       id: 1,
       type: "part_whole",
