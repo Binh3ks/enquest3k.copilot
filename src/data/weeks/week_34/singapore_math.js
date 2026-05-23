@@ -44,7 +44,7 @@ export default {
     },
     {
       id: 5,
-      type: "missing_part",
+      type: "before_after",
       question_en: "The grasshopper collected some seeds for winter. After giving 14 seeds to the ant, he had 11 seeds left. How many seeds did the grasshopper collect at first?",
       bar_model: "/images/week34/barmodel_w34_adv_p5_v1.jpg",
       answer: ["25"],
