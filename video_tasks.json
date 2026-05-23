@@ -3,6 +3,21 @@
     {
       "weekId": 3,
       "videos": []
+    },
+    {
+      "weekId": 34,
+      "videos": [
+        { "id": "0UD8d_7IXFI", "type": "advanced" },
+        { "id": "9tIqhM5Gwp0", "type": "advanced" },
+        { "id": "bN5qXowAFBI", "type": "advanced" },
+        { "id": "c4EFGW6lOGs", "type": "advanced" },
+        { "id": "fX_qVLl4pgM", "type": "advanced" },
+        { "id": "0G5lAnKxG4Y", "type": "easy" },
+        { "id": "COX-x-vgGdE", "type": "easy" },
+        { "id": "Z8K7hP0HlBY", "type": "easy" },
+        { "id": "c0rS-Ii2h8E", "type": "easy" },
+        { "id": "hUCzH6i0xao", "type": "easy" }
+      ]
     }
   ]
 }
