@@ -2,51 +2,58 @@
 // Daily Watch Station — Easy Mode
 
 export default {
+  weekId: 34,
+  title: "Storytelling Practice 1 — The Ant and the Grasshopper",
   videos: [
     {
       id: 1,
-      title: "The Ant and the Grasshopper — Animated Story",
-      videoId: "COX-x-vgGdE",
-      duration: "3:42",
-      sim_duration: 222,
-      thumb: "https://img.youtube.com/vi/COX-x-vgGdE/mqdefault.jpg"
+      category: "STORY",
+      videoId: "XPZXpuoIndo",
+      title: "The Ant and the Grasshopper — Bedtime Stories for Kids",
+      duration: "8:58",
+      sim_duration: 538,
+      thumb: "https://img.youtube.com/vi/XPZXpuoIndo/mqdefault.jpg"
     },
     {
       id: 2,
-      title: "Aesop's Fables for Kids — The Ant and the Grasshopper",
-      videoId: "c0rS-Ii2h8E",
-      duration: "4:15",
-      sim_duration: 255,
-      thumb: "https://img.youtube.com/vi/c0rS-Ii2h8E/mqdefault.jpg"
+      category: "STORY",
+      videoId: "_svBrlehmMo",
+      title: "Aesop's Fables: The Ant and the Grasshopper",
+      duration: "5:09",
+      sim_duration: 309,
+      thumb: "https://img.youtube.com/vi/_svBrlehmMo/mqdefault.jpg"
     },
     {
       id: 3,
-      title: "Relative Clauses — WHO, WHICH, THAT for Kids",
-      videoId: "hUCzH6i0xao",
-      duration: "5:22",
-      sim_duration: 322,
-      thumb: "https://img.youtube.com/vi/hUCzH6i0xao/mqdefault.jpg"
+      category: "GRAMMAR",
+      videoId: "V-RqOsl_Nz4",
+      title: "Relative Clauses: WHO, Which or That?",
+      duration: "3:01",
+      sim_duration: 181,
+      thumb: "https://img.youtube.com/vi/V-RqOsl_Nz4/mqdefault.jpg"
     },
     {
       id: 4,
-      title: "Fables: The Tortoise and the Hare",
-      videoId: "0G5lAnKxG4Y",
-      duration: "3:30",
-      sim_duration: 210,
-      thumb: "https://img.youtube.com/vi/0G5lAnKxG4Y/mqdefault.jpg"
+      category: "STORY",
+      videoId: "GfsGU4L7iTw",
+      title: "Aesop's Fables: The Tortoise and the Hare",
+      duration: "4:22",
+      sim_duration: 262,
+      thumb: "https://img.youtube.com/vi/GfsGU4L7iTw/mqdefault.jpg"
     },
     {
       id: 5,
-      title: "Aesop's Fables Collection for Children",
-      videoId: "Z8K7hP0HlBY",
-      duration: "8:05",
-      sim_duration: 485,
-      thumb: "https://img.youtube.com/vi/Z8K7hP0HlBY/mqdefault.jpg"
+      category: "SCIENCE",
+      videoId: "YuO4WB4SwCg",
+      title: "What Is a Food Chain? — Dr. Binocs Show",
+      duration: "3:27",
+      sim_duration: 207,
+      thumb: "https://img.youtube.com/vi/YuO4WB4SwCg/mqdefault.jpg"
     }
   ],
   bonus_games: [
-    { title: "Fast English", url: "https://www.gamestolearnenglish.com/fast-english/", description: "Match words with pictures fast!" },
-    { title: "Questions Game", url: "https://www.gamestolearnenglish.com/questions/", description: "Practice asking and answering questions." },
-    { title: "Word Shake", url: "https://learnenglishkids.britishcouncil.org/games/wordshake", description: "Create words from letters." }
+    { title: "Relative Clause Game", url: "https://www.gamestolearnenglish.com/", description: "Practice WHO, WHICH, and THAT in sentences." },
+    { title: "Story Ordering Game", url: "https://www.eslgamesplus.com/story-sequencing/", description: "Put story events in the correct order." },
+    { title: "Word Shake", url: "https://learnenglishkids.britishcouncil.org/games/wordshake", description: "Create words from letters about fables." }
   ]
 };
