@@ -18,6 +18,21 @@
         { "id": "c0rS-Ii2h8E", "type": "easy" },
         { "id": "hUCzH6i0xao", "type": "easy" }
       ]
+    },
+    {
+      "weekId": 35,
+      "videos": [
+        { "id": "owNRxLha8A8", "type": "advanced" },
+        { "id": "YwxTq0yLrRo", "type": "advanced" },
+        { "id": "qQBXKkC1qYI", "type": "advanced" },
+        { "id": "G62hzWQ3x5A", "type": "advanced" },
+        { "id": "W0D4K6eWPgE", "type": "advanced" },
+        { "id": "owNRxLha8A8", "type": "easy" },
+        { "id": "YwxTq0yLrRo", "type": "easy" },
+        { "id": "qQBXKkC1qYI", "type": "easy" },
+        { "id": "G62hzWQ3x5A", "type": "easy" },
+        { "id": "W0D4K6eWPgE", "type": "easy" }
+      ]
     }
   ]
 }

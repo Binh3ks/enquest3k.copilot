@@ -1,60 +1,32 @@
-// WEEK 35 EASY: ENVIRONMENTAL ISSUES
+// WEEK 35: Environmental Issues
 // Reading Station — Easy Mode
 
 export default {
-  title: "Our Earth Needs Help",
+  title: "Our Planet Needs Our Help",
   image_url: "/images/week35/read_cover_w35.jpg",
-  audio_url: null,
-  content_en: `The Earth is our home. But our home is getting sick. This is because of **climate change**. Climate change makes the Earth get warmer.
+  audio_url: "/audio/week35_easy/read_main.mp3",
+  content_en: `**Our planet Earth is very beautiful**. It has **blue oceans**, **green forests**, and **high mountains**. But **our planet is in danger**. Many things **are changing** because of pollution.
 
-People burn things like coal and oil. This puts bad air into the sky. The bad air traps heat. This makes the Earth too warm.
+**Factories make a lot of smoke**. Cars and buses **produce harmful gases**. **Cutting down trees** destroys animal homes. **Throwing away plastic** pollutes our oceans and rivers.
 
-What happens when the Earth gets warm? Ice melts. Sea levels rise. Animals lose their homes. The weather gets strange.
+**Climate change is a serious problem**. The Earth **is getting warmer**. **Polar ice is melting**. **Sea levels are rising**. Some animals **are losing their homes**.
 
-But we can help! We can use **clean energy**. The sun gives us solar power. Wind gives us wind power. These are good for the Earth.
+**But we can make a difference**! We **must protect our planet**. We **should reduce, reuse, and recycle**. We **can plant more trees**. Small actions **can make a big difference**.
 
-We can also help by recycling. We can use less plastic. We can plant trees. Every little thing helps.
+**Together, we can save our planet**. We **must act now**. **Our planet needs our help**.`,
+  content_vi: `**Hành tinh Trái Đất của chúng ta rất đẹp**. Nó có **đại dương xanh**, **rừng xanh**, và **núi cao**. Nhưng **hành tinh của chúng ta đang gặp nguy hiểm**. Nhiều thứ **đang thay đổi** vì ô nhiễm.
 
-Let's work together to make our Earth healthy again!`,
-  content_vi: `Trái Đất là ngôi nhà của chúng ta. Nhưng ngôi nhà của chúng ta đang bị ốm. Đó là vì **biến đổi khí hậu**. Biến đổi khí hậu làm Trái Đất ấm lên.
+**Nhà máy tạo ra nhiều khói**. Ô tô và xe buýt **tạo ra các khí độc hại**. **Đốn cây** phá hủy nhà của động vật. **Vứt rác thải nhựa** ô nhiễm đại dương và sông.
 
-Con người đốt than và dầu. Điều này tạo ra không khí xấu bay lên trời. Không khí xấu giữ nhiệt. Điều này làm Trái Đất quá nóng.
+**Biến đổi khí hậu là một vấn đề nghiêm trọng**. Trái Đất **đang nóng lên**. **Băng ở hai cực đang tan**. **Mực nước biển đang dâng cao**. Một số động vật **đang mất nhà**.
 
-Chuyện gì xảy ra khi Trái Đất ấm lên? Băng tan ra. Mực nước biển dâng lên. Động vật mất nhà. Thời tiết trở nên kỳ lạ.
+**Nhưng chúng ta có thể tạo ra sự khác biệt**! Chúng ta **phải bảo vệ hành tinh của mình**. Chúng ta **nên giảm, tái sử dụng, và tái chế**. Chúng ta **có thể trồng nhiều cây hơn**. Những hành động nhỏ **có thể tạo ra sự khác biệt lớn**.
 
-Nhưng chúng ta có thể giúp! Chúng ta có thể dùng **năng lượng sạch**. Mặt trời cho chúng ta năng lượng mặt trời. Gió cho chúng ta năng lượng gió. Những thứ này tốt cho Trái Đất.
-
-Chúng ta cũng có thể giúp bằng cách tái chế. Chúng ta có thể dùng ít nhựa hơn. Chúng ta có thể trồng cây. Mỗi điều nhỏ đều giúp ích.
-
-Hãy cùng nhau làm cho Trái Đất của chúng ta khỏe mạnh trở lại!`,
+**Cùng nhau, chúng ta có thể cứu hành tinh của mình**. Chúng ta **phải hành động ngay bây giờ**. **Hành tinh của chúng ta cần sự giúp đỡ của chúng ta**.`,
   comprehension_questions: [
-    {
-      id: 1,
-      question_en: "Why is the Earth getting sick?",
-      clue_statement: "This is because of climate change.",
-      hint_en: "C...",
-      hint_vi: "Biến đổi..."
-    },
-    {
-      id: 2,
-      question_en: "What makes the Earth get warm?",
-      clue_statement: "People burn things like coal and oil. This puts bad air into the sky.",
-      hint_en: "B...",
-      hint_vi: "Đốt..."
-    },
-    {
-      id: 3,
-      question_en: "What are two clean energy sources?",
-      clue_statement: "The sun gives us solar power. Wind gives us wind power.",
-      hint_en: "S...",
-      hint_vi: "Năng lượng..."
-    },
-    {
-      id: 4,
-      question_en: "What can we do to help the Earth?",
-      clue_statement: "We can also help by recycling. We can use less plastic. We can plant trees.",
-      hint_en: "R...",
-      hint_vi: "Tái chế..."
-    }
+    { id: 1, question_en: "What is polluting our oceans and rivers?", answer: ["Throwing away plastic", "Plastic waste", "Throwing plastic"], clue_statement: "Throwing away plastic pollutes our oceans and rivers.", hint_en: "What pollutes the ___ and ___?", hint_vi: "Điều gì ô nhiễm ___ và ___?", audio_url: "/audio/week35_easy/read_q1.mp3" },
+    { id: 2, question_en: "What can we do to help the planet?", answer: ["Reduce, reuse, and recycle", "Plant more trees and use less plastic", "Turn off lights and use less water"], clue_statement: "We should reduce, reuse, and recycle to help the planet.", hint_en: "We should ___, ___, and ___.", hint_vi: "Chúng ta nên ___, ___, và ___.", audio_url: "/audio/week35_easy/read_q2.mp3" },
+    { id: 3, question_en: "What must we do to save our planet?", answer: ["Act now", "Take action immediately", "Start protecting today"], clue_statement: "We must act now to save our planet.", hint_en: "We must ___ ___.", hint_vi: "Chúng ta phải ___ ___.", audio_url: "/audio/week35_easy/read_q3.mp3" },
+    { id: 4, question_en: "Why is the Earth getting warmer?", answer: ["Because of climate change", "Because of pollution and greenhouse gases", "Because of factories and cars"], clue_statement: "Climate change is causing the Earth to get warmer because of pollution.", hint_en: "Because of ___ ___ and ___ ___.", hint_vi: "Vì sự biến đổi ___ và ___ ___.", audio_url: "/audio/week35_easy/read_q4.mp3" }
   ]
 };

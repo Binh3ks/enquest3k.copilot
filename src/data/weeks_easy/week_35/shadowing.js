@@ -1,54 +1,24 @@
-// WEEK 35 EASY: ENVIRONMENTAL ISSUES
+// WEEK 35: Environmental Issues
 // Shadowing Station — Easy Mode
 
 export default {
-  title: "Shadowing Practice",
-  image_url: "/images/week35/shadowing_cover_w35.jpg",
-  intro_en: "Practice speaking by shadowing these sentences.",
-  intro_vi: "Luyện nói bằng cách đọc theo các câu này.",
-  content_en: "The Earth is our home. Solar power comes from the sun. We should protect the Earth. Recycling helps our planet. Clean air is good for health. Every little thing helps.",
-  sentences: [
-    {
-      id: 1,
-      audio_url: "/audio/week35_easy/shadowing_1.mp3",
-      text: "The Earth is our home.",
-      translation_vi: "Trái Đất là ngôi nhà của chúng ta.",
-      chunk: "our home"
-    },
-    {
-      id: 2,
-      audio_url: "/audio/week35_easy/shadowing_2.mp3",
-      text: "Solar power comes from the sun.",
-      translation_vi: "Năng lượng mặt trời đến từ mặt trời.",
-      chunk: "comes from the sun"
-    },
-    {
-      id: 3,
-      audio_url: "/audio/week35_easy/shadowing_3.mp3",
-      text: "We should protect the Earth.",
-      translation_vi: "Chúng ta nên bảo vệ Trái Đất.",
-      chunk: "should protect"
-    },
-    {
-      id: 4,
-      audio_url: "/audio/week35_easy/shadowing_4.mp3",
-      text: "Recycling helps our planet.",
-      translation_vi: "Tái chế giúp hành tinh của chúng ta.",
-      chunk: "helps our planet"
-    },
-    {
-      id: 5,
-      audio_url: "/audio/week35_easy/shadowing_5.mp3",
-      text: "Clean air is good for health.",
-      translation_vi: "Không khí sạch tốt cho sức khỏe.",
-      chunk: "good for health"
-    },
-    {
-      id: 6,
-      audio_url: "/audio/week35_easy/shadowing_6.mp3",
-      text: "Every little thing helps.",
-      translation_vi: "Mỗi điều nhỏ đều giúp ích.",
-      chunk: "every little thing helps"
-    }
+  content_en: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger. Climate change is making the Earth warmer. Polar ice is melting. Sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Small actions can make a big difference. We must act now!",
+  script: [
+    { id: 1, text: "Our planet Earth is very beautiful.", vi: "Hành tinh Trái Đất của chúng ta rất đẹp." },
+    { id: 2, text: "It has blue oceans, green forests, and high mountains.", vi: "Nó có đại dương xanh, rừng xanh, và núi cao." },
+    { id: 3, text: "But our planet is in danger.", vi: "Nhưng hành tinh của chúng ta đang gặp nguy hiểm." },
+    { id: 4, text: "Many things are changing because of pollution.", vi: "Nhiều thứ đang thay đổi vì ô nhiễm." },
+    { id: 5, text: "Climate change is a serious problem.", vi: "Biến đổi khí hậu là một vấn đề nghiêm trọng." },
+    { id: 6, text: "The Earth is getting warmer.", vi: "Trái Đất đang nóng lên." },
+    { id: 7, text: "Polar ice is melting.", vi: "Băng ở hai cực đang tan." },
+    { id: 8, text: "Sea levels are rising.", vi: "Mực nước biển đang dâng cao." },
+    { id: 9, text: "We must protect our planet.", vi: "Chúng ta phải bảo vệ hành tinh của mình." },
+    { id: 10, text: "We should reduce, reuse, and recycle.", vi: "Chúng ta nên giảm, tái sử dụng, và tái chế." },
+    { id: 11, text: "We can plant more trees.", vi: "Chúng ta có thể trồng nhiều cây hơn." },
+    { id: 12, text: "Small actions can make a big difference.", vi: "Những hành động nhỏ có thể tạo ra sự khác biệt lớn." },
+    { id: 13, text: "Together, we can save our planet.", vi: "Cùng nhau, chúng ta có thể cứu hành tinh của mình." },
+    { id: 14, text: "We must act now to save our planet.", vi: "Chúng ta phải hành động ngay để cứu hành tinh của mình." },
+    { id: 15, text: "Solar power can help reduce air pollution.", vi: "Năng lượng mặt trời có thể giúp giảm ô nhiễm không khí." },
+    { id: 16, text: "Our planet needs our help right now.", vi: "Hành tinh của chúng ta cần sự giúp đỡ của chúng ta ngay bây giờ." }
   ]
 };
