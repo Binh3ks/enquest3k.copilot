@@ -24,7 +24,7 @@ const weekData = {
   weekTitle_vi: "Các Vấn Đề Môi Trường",
   grammar_focus: "Modal Verbs: Must, Should, Can",
 
-  global_vocab: vocab.vocabulary,
+  global_vocab: vocab.vocab,
 
   voiceConfig: {
     narration: 'en-US-Neural2-H',
