@@ -1,19 +1,17 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper
+// WEEK 35: Environmental Issues
 // Word Match Station — Advanced Mode
 
 export default {
+  title: "Environmental Issues — Match Modal Verbs",
+  theme: "environmental_issues",
+  instruction_en: "Match each environmental problem with the correct solution using modal verbs.",
+  instruction_vi: "Nối mỗi vấn đề môi trường với giải pháp đúng sử dụng động từ modal.",
   pairs: [
-    { left_id: 1, right_match: "a small insect that works very hard" },
-    { left_id: 2, right_match: "a green insect that jumps and makes sounds" },
-    { left_id: 3, right_match: "a short story that teaches a lesson" },
-    { left_id: 4, right_match: "a place that protects you from cold weather" },
-    { left_id: 5, right_match: "to collect and pick up things from the ground" },
-    { left_id: 6, right_match: "to make something ready before you need it" },
-    { left_id: 7, right_match: "to give part of your food to others" },
-    { left_id: 8, right_match: "very cold white ice that appears in winter" },
-    { left_id: 9, right_match: "the time that comes after now" },
-    { left_id: 10, right_match: "not wanting to work or do anything" },
-    { left_id: 11, right_match: "working with a lot of effort and care" },
-    { left_id: 12, right_match: "a clause that gives more information about a noun" },
+    { left_id: 1, left_text: "Factories produce harmful gases", right_match: "must reduce emissions", right_id: 1 },
+    { left_id: 2, left_text: "Polar ice is melting", right_match: "should act now to protect planet", right_id: 2 },
+    { left_id: 3, left_text: "Plastic pollutes oceans", right_match: "can recycle and reuse plastic", right_id: 3 },
+    { left_id: 4, left_text: "Sea levels are rising", right_match: "must protect coastal areas", right_id: 4 },
+    { left_id: 5, left_text: "Forests are being cut down", right_match: "should plant more trees", right_id: 5 },
+    { left_id: 6, left_text: "Fossil fuels cause pollution", right_match: "can use solar and wind power", right_id: 6 }
   ]
 };

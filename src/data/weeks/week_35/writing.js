@@ -4,7 +4,7 @@
 export default {
   title: "Environmental Issues — Write About Protecting Our Planet",
   theme: "environmental_issues",
-  min_words: 45,
+  min_words: 160,
   model_sentence: "Our planet Earth is beautiful but in danger. Climate change is causing temperatures to rise, polar ice to melt, and sea levels to rise. We must protect our planet. We should reduce, reuse, and recycle. Solar power and wind power can replace fossil fuels. Small actions like turning off lights and planting trees can make a big difference. Together, we can save our planet if we act now.",
   instruction_en: "Write a paragraph about environmental issues. Use modal verbs (must, should, can) and vocabulary from this week. Explain one problem and one solution.",
   instruction_vi: "Viết một đoạn văn về các vấn đề môi trường. Sử dụng động từ modal (must, should, can) và từ vựng từ tuần này. Giải thích một vấn đề và một giải pháp.",
