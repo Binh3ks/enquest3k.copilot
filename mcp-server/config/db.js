@@ -11,8 +11,8 @@ const pool = new Pool({
   database: (process.env.PG_DATABASE || '').trim(),
   password: (process.env.PG_PASSWORD || '').trim(),
   port: parseInt((process.env.PG_PORT || '5432').trim(), 10),
-  // SSL required for Neon.tech (and most cloud PostgreSQL providers)
-  ssl: (process.env.PG_SSL || '').trim() === 'true' ? { rejectUnauthorized: false } : false,
+  // SSL required for Neon.tech and CockroachDB
+  ssl: (process.env.PG_SSL || '').trim() !== 'false',
 });
 
 // We export a query function that will be used throughout the application
