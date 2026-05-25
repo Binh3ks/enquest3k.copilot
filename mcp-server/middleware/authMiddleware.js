@@ -1,20 +1,14 @@
 /* eslint-env node */
 const jwt = require('jsonwebtoken');
 
-// Lazy-loaded ESM module for Supabase JWT verification (ES256)
-let jose = null;
-async function getJose() {
-  if (!jose) jose = await import('jose');
-  return jose;
-}
-
-let supabaseJWKSet = null;
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://dlvjqdyvatceidzeyfnq.supabase.co';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'sb_publishable_z9iUKGkbsXC4IkHgpD7tng_thmSuMGP';
 
 /**
  * Middleware to protect routes that require authentication.
  * Supports two token types:
  * 1. Railway JWT (old) — signed with process.env.JWT_SECRET (HS256)
- * 2. Supabase JWT (new) — signed by Supabase, verified via JWKS (ES256)
+ * 2. Supabase JWT (new) — verified via Supabase /auth/v1/user endpoint
  */
 const authMiddleware = async (req, res, next) => {
   const authHeader = req.header('Authorization');
@@ -37,23 +31,22 @@ const authMiddleware = async (req, res, next) => {
     return next();
   } catch (_) {}
 
-  // Try Supabase JWT (ES256, asymmetric) using JWKS
-  if (process.env.SUPABASE_URL) {
-    try {
-      const { createRemoteJWKSet, jwtVerify } = await getJose();
-      if (!supabaseJWKSet) {
-        const supabaseUrl = process.env.SUPABASE_URL;
-        const jwksUrl = new URL(`${supabaseUrl}/auth/v1/jwks`);
-        supabaseJWKSet = createRemoteJWKSet(jwksUrl);
-      }
-      const { payload } = await jwtVerify(token, supabaseJWKSet, {
-        issuer: process.env.SUPABASE_URL,
-      });
-      req.user = { id: payload.sub, supabase_uid: payload.sub, email: payload.email };
-      req.tokenType = 'supabase';
-      return next();
-    } catch (_) {}
-  }
+  // Try Supabase JWT — verify via Supabase Auth /user endpoint
+  try {
+    const res2 = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'apikey': SUPABASE_ANON_KEY,
+      },
+    });
+    if (!res2.ok) {
+      return res.status(401).json({ message: 'Token is not valid' });
+    }
+    const user = await res2.json();
+    req.user = { id: user.id, supabase_uid: user.id, email: user.email };
+    req.tokenType = 'supabase';
+    return next();
+  } catch (_) {}
 
   res.status(401).json({ message: 'Token is not valid' });
 };
