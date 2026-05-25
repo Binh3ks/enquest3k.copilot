@@ -1,11 +1,20 @@
 /* eslint-env node */
 const jwt = require('jsonwebtoken');
 
+// Lazy-loaded ESM module for Supabase JWT verification (ES256)
+let jose = null;
+async function getJose() {
+  if (!jose) jose = await import('jose');
+  return jose;
+}
+
+let supabaseJWKSet = null;
+
 /**
  * Middleware to protect routes that require authentication.
  * Supports two token types:
- * 1. Railway JWT (old) — signed with process.env.JWT_SECRET
- * 2. Supabase JWT (new) — signed by Supabase, verified with process.env.SUPABASE_JWT_SECRET
+ * 1. Railway JWT (old) — signed with process.env.JWT_SECRET (HS256)
+ * 2. Supabase JWT (new) — signed by Supabase, verified via JWKS (ES256)
  */
 const authMiddleware = async (req, res, next) => {
   const authHeader = req.header('Authorization');
@@ -20,7 +29,7 @@ const authMiddleware = async (req, res, next) => {
 
   const token = parts[1];
 
-  // Try Railway JWT first (for backward compatibility)
+  // Try Railway JWT first (HS256, symmetric)
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
@@ -28,12 +37,19 @@ const authMiddleware = async (req, res, next) => {
     return next();
   } catch (_) {}
 
-  // Try Supabase JWT
-  if (process.env.SUPABASE_JWT_SECRET) {
+  // Try Supabase JWT (ES256, asymmetric) using JWKS
+  if (process.env.SUPABASE_URL) {
     try {
-      const decoded = jwt.verify(token, process.env.SUPABASE_JWT_SECRET);
-      // Supabase JWT structure: { sub: supabase_uid, email: ..., user_metadata: {...} }
-      req.user = { id: decoded.sub, supabase_uid: decoded.sub, email: decoded.email };
+      const { createRemoteJWKSet, jwtVerify } = await getJose();
+      if (!supabaseJWKSet) {
+        const supabaseUrl = process.env.SUPABASE_URL;
+        const jwksUrl = new URL(`${supabaseUrl}/auth/v1/jwks`);
+        supabaseJWKSet = createRemoteJWKSet(jwksUrl);
+      }
+      const { payload } = await jwtVerify(token, supabaseJWKSet, {
+        issuer: process.env.SUPABASE_URL,
+      });
+      req.user = { id: payload.sub, supabase_uid: payload.sub, email: payload.email };
       req.tokenType = 'supabase';
       return next();
     } catch (_) {}
