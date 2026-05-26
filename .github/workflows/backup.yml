@@ -1,11 +1,12 @@
 name: Database Backup
 
 on:
+  # Every 15 minutes (minimum for free GitHub Actions)
   schedule:
-    # Run every 2 hours
-    - cron: '0 */2 * * *'
-  # Allow manual trigger from GitHub Actions tab
+    - cron: '*/15 * * * *'
+  # Manual trigger from GitHub Actions tab
   workflow_dispatch:
+  # Push to main: run backup immediately
   push:
     branches: [main]
 
@@ -17,16 +18,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/backup_db.cjs
+            mcp-server/node_modules/pg
+          sparse-checkout-cone-mode: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: mcp-server/package-lock.json
 
-      - name: Install dependencies
-        run: cd mcp-server && npm install --omit=dev 2>/dev/null || true
+      - name: Install pg
+        run: npm install pg 2>/dev/null
 
       - name: Run backup
         env:
@@ -35,25 +39,31 @@ jobs:
           SUPABASE_DB_PASS: ${{ secrets.SUPABASE_DB_PASS }}
           SUPABASE_DB_PORT: ${{ secrets.SUPABASE_DB_PORT }}
           SUPABASE_DB_NAME: ${{ secrets.SUPABASE_DB_NAME }}
-          BACKUP_OUTPUT_DIR: ${{ github.workspace }}/backups
-        run: node scripts/backup_db.js
+          BACKUP_OUTPUT_DIR: ${{ github.workspace }}/backup_latest
+        run: node scripts/backup_db.cjs --latest
 
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Only commit backup data to separate branch
-          git checkout backup || git checkout --orphan backup
+          git checkout backup 2>/dev/null || git checkout --orphan backup
+          git checkout -- .
+          git clean -fd
 
       - name: Commit backup
         run: |
-          TIMESTAMP=$(date +%Y-%m-%dT%H:%M:%SZ)
-          BACKUP_DIR=$(ls -td ${{ github.workspace }}/backups/*/ | head -1)
-          cp -r "$BACKUP_DIR" ${{ github.workspace }}/backup_latest/
-          rm -rf ${{ github.workspace }}/backup_latest/$(ls ${{ github.workspace }}/backup_latest/ | grep -v latest | sort | head -1)
-          # Keep only last 12 backups (24 hours at 2h intervals)
-          ls -td ${{ github.workspace }}/backups/*/ | tail -n +13 | xargs -r rm -rf
+          set -e
+          BACKUP_DIR="${{ github.workspace }}/backup_latest"
+          mkdir -p backup_history
+          cp -r "$BACKUP_DIR"/* backup_history/
+          # Keep last 48 backups (12 hours at 15min intervals)
+          ls -dt backup_history/*/ | tail -n +49 | xargs -r rm -rf
           git add -A
-          git diff --cached --quiet && echo "No changes to commit" || \
-            git commit -m "backup: $(date +%Y-%m-%d\ %H:%M)" && \
-            git push origin backup || echo "Push skipped (no changes)"
+          CHANGES=$(git status --porcelain)
+          if [ -z "$CHANGES" ]; then
+            echo "No changes — backup unchanged"
+          else
+            git commit -m "backup: $(date +%Y-%m-%d\ %H:%M)"
+            git push origin backup --force
+            echo "Backup pushed successfully"
+          fi
