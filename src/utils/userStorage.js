@@ -3,18 +3,34 @@ const BILLING_KEY = 'engquest_billing_requests';
 const AVATARS_KEY = 'engquest_global_avatars';
 
 // --- DEFAULT AVATARS (Đẹp & Phong phú hơn) ---
+// These are DiceBear CDN fallbacks — primary gallery is loaded from
+// /api/admin/global-avatars (64 presets stored in Supabase).
+// When DB gallery is empty/404, this fallback is used.
 export const DEFAULT_AVATARS = [
-  // Chibi Boys
-  { id: 'boy_1', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Felix&backgroundColor=b6e3f4' },
-  { id: 'boy_2', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Ivan&backgroundColor=c0ebd7' },
-  // Chibi Girls
-  { id: 'girl_1', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Amara&backgroundColor=ffdfbf' },
-  { id: 'girl_2', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Nora&backgroundColor=fdf4e3' },
-  // Thú cưng & vui vẻ
-  { id: 'cat', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Kitty&backgroundColor=ffdfbf' },
-  { id: 'bear', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Bear&backgroundColor=b6e3f4' },
-  { id: 'panda', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Panda&backgroundColor=e0e7ff' },
-  { id: 'bunny', url: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Bunny&backgroundColor=fce7f3' },
+  // Micah (anime-style)
+  { id: 'mx_yuki', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Yuki&backgroundColor=fdf4e3' },
+  { id: 'mx_hana', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Hana&backgroundColor=e8d5f5' },
+  { id: 'mx_sora', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Sora&backgroundColor=b6e3f4' },
+  { id: 'mx_mei', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Mei&backgroundColor=ffd5dc' },
+  { id: 'mx_ryu', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Ryu&backgroundColor=c0aede' },
+  { id: 'mx_luna', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Luna&backgroundColor=d1f4e0' },
+  { id: 'mx_aiko', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Aiko&backgroundColor=fce4ec' },
+  { id: 'mx_haru', url: 'https://api.dicebear.com/9.x/micah/svg?seed=Haru&backgroundColor=e8eaf6' },
+  // Avataaars (cartoon)
+  { id: 'av_kenji', url: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Kenji&backgroundColor=b6e3f4' },
+  { id: 'av_leomiu', url: 'https://api.dicebear.com/9.x/avataaars/svg?seed=LeoMiu&backgroundColor=ffd5dc' },
+  { id: 'av_nao', url: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Nao&backgroundColor=c0aede' },
+  { id: 'av_riku', url: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Riku&backgroundColor=fce4ec' },
+  // Adventurer (colorful)
+  { id: 'ad_ren', url: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Ren&backgroundColor=c0aede' },
+  { id: 'ad_mika', url: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Mika&backgroundColor=d1f4e0' },
+  { id: 'ad_hina', url: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Hina&backgroundColor=fdf4e3' },
+  { id: 'ad_junya', url: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Junya&backgroundColor=e8d5f5' },
+  // Lorelei (anime-like)
+  { id: 'lr_yuki2', url: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Yuki2&backgroundColor=fce4ec' },
+  { id: 'lr_sora2', url: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Sora2&backgroundColor=e8eaf6' },
+  { id: 'lr_ren', url: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Ren&backgroundColor=fdf4e3' },
+  { id: 'lr_mika2', url: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Mika2&backgroundColor=ffd5dc' },
 ];
 
 // --- AVATAR MANAGEMENT ---
