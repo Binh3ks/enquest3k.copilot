@@ -23,6 +23,10 @@ function copyDataDir() {
       if (existsSync(resolve('public/_headers'))) {
         copyFileSync(resolve('public/_headers'), resolve('dist/_headers'));
       }
+      // Copy avatar gallery SVGs
+      if (existsSync(resolve('public/avatars'))) {
+        cpSync(resolve('public/avatars'), resolve('dist/avatars'), { recursive: true });
+      }
     }
   };
 }
