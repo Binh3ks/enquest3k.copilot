@@ -1,0 +1,59 @@
+name: Database Backup
+
+on:
+  schedule:
+    # Run every 2 hours
+    - cron: '0 */2 * * *'
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: mcp-server/package-lock.json
+
+      - name: Install dependencies
+        run: cd mcp-server && npm install --omit=dev 2>/dev/null || true
+
+      - name: Run backup
+        env:
+          SUPABASE_DB_HOST: ${{ secrets.SUPABASE_DB_HOST }}
+          SUPABASE_DB_USER: ${{ secrets.SUPABASE_DB_USER }}
+          SUPABASE_DB_PASS: ${{ secrets.SUPABASE_DB_PASS }}
+          SUPABASE_DB_PORT: ${{ secrets.SUPABASE_DB_PORT }}
+          SUPABASE_DB_NAME: ${{ secrets.SUPABASE_DB_NAME }}
+          BACKUP_OUTPUT_DIR: ${{ github.workspace }}/backups
+        run: node scripts/backup_db.js
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Only commit backup data to separate branch
+          git checkout backup || git checkout --orphan backup
+
+      - name: Commit backup
+        run: |
+          TIMESTAMP=$(date +%Y-%m-%dT%H:%M:%SZ)
+          BACKUP_DIR=$(ls -td ${{ github.workspace }}/backups/*/ | head -1)
+          cp -r "$BACKUP_DIR" ${{ github.workspace }}/backup_latest/
+          rm -rf ${{ github.workspace }}/backup_latest/$(ls ${{ github.workspace }}/backup_latest/ | grep -v latest | sort | head -1)
+          # Keep only last 12 backups (24 hours at 2h intervals)
+          ls -td ${{ github.workspace }}/backups/*/ | tail -n +13 | xargs -r rm -rf
+          git add -A
+          git diff --cached --quiet && echo "No changes to commit" || \
+            git commit -m "backup: $(date +%Y-%m-%d\ %H:%M)" && \
+            git push origin backup || echo "Push skipped (no changes)"
