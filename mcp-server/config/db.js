@@ -2,26 +2,20 @@
 require('dotenv').config();
 const { Pool } = require('pg');
 
-let pool;
+// Supabase pooler connection
+const SB_HOST = process.env.SUPABASE_DB_HOST || 'aws-1-ap-northeast-1.pooler.supabase.com';
+const SB_USER = process.env.SUPABASE_DB_USER || 'postgres.dlvjqdyvatceidzeyfnq';
+const SB_PASS = process.env.SUPABASE_DB_PASS || '!4hqV$bpceK!?KR';
+const SB_PORT = parseInt(process.env.SUPABASE_DB_PORT || '5432', 10);
+const SB_DB = process.env.SUPABASE_DB_NAME || 'postgres';
 
-const dbUrl = process.env.RAILWAY_DATABASE_URL || process.env.DATABASE_URL;
+const connStr = `postgresql://${SB_USER}:${encodeURIComponent(SB_PASS)}@${SB_HOST}:${SB_PORT}/${SB_DB}`;
 
-if (dbUrl) {
-  pool = new Pool({
-    connectionString: dbUrl,
-    ssl: { rejectUnauthorized: false },
-    max: 10,
-  });
-} else {
-  pool = new Pool({
-    user: (process.env.PG_USER || '').trim(),
-    host: (process.env.PG_HOST || '').trim(),
-    database: (process.env.PG_DATABASE || '').trim(),
-    password: (process.env.PG_PASSWORD || '').trim(),
-    port: parseInt((process.env.PG_PORT || '5432').trim(), 10),
-    ssl: (process.env.PG_SSL || '').trim() !== 'false',
-  });
-}
+const pool = new Pool({
+  connectionString: connStr,
+  ssl: { rejectUnauthorized: false },
+  max: 10,
+});
 
 pool.on('error', err => console.error('[db] Pool error:', err.message));
 
