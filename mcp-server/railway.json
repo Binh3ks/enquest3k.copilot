@@ -1,4 +1,8 @@
 {
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "source": "mcp-server/"
+  },
   "deploy": {
     "startCommand": "node index.js",
     "restartPolicyType": "ON_FAILURE",
