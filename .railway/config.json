@@ -1,0 +1,27 @@
+{
+  "projects": {
+    "/Users/binhnguyen/Downloads/Engquest3k": {
+      "projectPath": "/Users/binhnguyen/Downloads/Engquest3k",
+      "name": "heartfelt-mindfulness",
+      "project": "e547f378-6f99-4719-b8a8-d45788b94519",
+      "environment": "ae976f08-cb38-4be7-8503-ca44322c1a55",
+      "environmentName": "production",
+      "service": null
+    },
+    "/Users/binhnguyen/Downloads/Engquest3k/mcp-server": {
+      "projectPath": "/Users/binhnguyen/Downloads/Engquest3k/mcp-server",
+      "name": "heartfelt-mindfulness",
+      "project": "e547f378-6f99-4719-b8a8-d45788b94519",
+      "environment": "ae976f08-cb38-4be7-8503-ca44322c1a55",
+      "environmentName": "production",
+      "service": null
+    }
+  },
+  "user": {
+    "token": null,
+    "accessToken": "2130755c-790d-4721-8729-babc9c5de8ef",
+    "refreshToken": null,
+    "tokenExpiresAt": null
+  },
+  "linkedFunctions": null
+}

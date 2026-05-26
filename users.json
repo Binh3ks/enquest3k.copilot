@@ -1,0 +1,15 @@
+[{
+  "username": "yang",
+  "email": "yang@engquest.com",
+  "full_name": "Binh",
+  "role": "admin",
+  "plan": "free",
+  "created_at": "2026-05-25T05:48:14.851175Z",
+  "display_name": null,
+  "trial_expires_at": null,
+  "plan_expires_at": null,
+  "seats_total": 0,
+  "parent_id": null,
+  "real_email": null,
+  "password_hash": null
+}]
