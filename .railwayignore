@@ -1,0 +1,15 @@
+node_modules/
+src/
+public/
+tests/
+production_kit/
+tools/
+mcp-server/node_modules/
+mcp-server/data/
+*.log
+*.mp3
+*.wav
+*.ogg
+*.sqlite
+.DS_Store
+.git/

@@ -1,0 +1,9 @@
+node_modules/
+*.log
+*.mp3
+*.wav
+*.ogg
+data/
+*.sqlite
+*.db
+.DS_Store
