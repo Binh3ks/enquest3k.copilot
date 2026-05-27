@@ -11,7 +11,7 @@ const mindMapContent = {
       "audio": "/audio/week35_easy/mindmap_stem_1.mp3"
     },
     {
-      "text": "Solar power can ___ our planet.",
+      "text": "Solar power can make our planet ___.",
       "type": "affirmative",
       "audio": "/audio/week35_easy/mindmap_stem_2.mp3"
     },
@@ -45,13 +45,13 @@ const mindMapContent = {
       { "text": "take care of", "audio": "/audio/week35_easy/mindmap_branch_1_5.mp3" },
       { "text": "act now to", "audio": "/audio/week35_easy/mindmap_branch_1_6.mp3" }
     ],
-    "Solar power can ___ our planet.": [
-      { "text": "help save", "audio": "/audio/week35_easy/mindmap_branch_2_1.mp3" },
-      { "text": "protect", "audio": "/audio/week35_easy/mindmap_branch_2_2.mp3" },
-      { "text": "reduce pollution on", "audio": "/audio/week35_easy/mindmap_branch_2_3.mp3" },
-      { "text": "make cleaner", "audio": "/audio/week35_easy/mindmap_branch_2_4.mp3" },
-      { "text": "power", "audio": "/audio/week35_easy/mindmap_branch_2_5.mp3" },
-      { "text": "benefit", "audio": "/audio/week35_easy/mindmap_branch_2_6.mp3" }
+    "Solar power can make our planet ___.": [
+      { "text": "cleaner", "audio": "/audio/week35_easy/mindmap_branch_2_4.mp3" },
+      { "text": "clean", "audio": "/audio/week35_easy/mindmap_branch_2_1.mp3" },
+      { "text": "greener", "audio": "/audio/week35_easy/mindmap_branch_2_2.mp3" },
+      { "text": "safer", "audio": "/audio/week35_easy/mindmap_branch_2_3.mp3" },
+      { "text": "better", "audio": "/audio/week35_easy/mindmap_branch_2_5.mp3" },
+      { "text": "healthier", "audio": "/audio/week35_easy/mindmap_branch_2_6.mp3" }
     ],
     "We must not ___ plastic into the ocean.": [
       { "text": "throw", "audio": "/audio/week35_easy/mindmap_branch_3_1.mp3" },
