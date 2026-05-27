@@ -18,3 +18,8 @@
 # Service worker must never be cached
 /sw.js
   Cache-Control: no-cache, no-store, must-revalidate
+
+# Avatar gallery SVGs
+/avatars/*
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=86400
