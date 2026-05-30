@@ -16,7 +16,7 @@ export default {
     { template: "Once upon a time, there was a ___ ant and a ___ grasshopper." },
     { template: "The ant ___ seeds every day in the summer." },
     { template: "The grasshopper only ___ ___ all day." },
-    { template: "When ___ came, the ant had a ___ ___." },
+    { template: "When ___ came, the ant had a ___ ___ and the grasshopper had a ___ ___." },
     { template: "The grasshopper was ___ and ___." },
     { template: "The ___ ant ___ its food with the grasshopper." },
     { template: "The lesson is: always ___ ___ ___. " }
