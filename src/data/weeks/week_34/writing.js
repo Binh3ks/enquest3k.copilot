@@ -1,24 +1,128 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper (Fable)
+// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper
 // Writing Station — Advanced Mode
 
 export default {
-  title: "The Ant and the Grasshopper — Write Your Own Ending",
-  theme: "storytelling_fable",
+  title: "The Ant and the Grasshopper — Write Your Ending",
+  theme: "fable_and_moral",
   min_words: 45,
-  model_sentence: "The ant and the grasshopper lived in a beautiful meadow. The ant was always busy — she gathered seeds every day and stored food for winter. The grasshopper was always lazy — he sang songs and jumped around while the ant worked. When winter came, the grasshopper was cold and hungry. But the kind ant shared her food with him. The grasshopper learned an important lesson: always prepare for the future, even when the sun is shining.",
-  instruction_en: "Write your own version of the fable. Use relative clauses with WHO, WHICH, and THAT. Write about the ant, the grasshopper, and what they learned.",
-  instruction_vi: "Viết phiên bản ngụ ngôn của riêng bạn. Sử dụng mệnh đề quan hệ với WHO, WHICH, và THAT. Viết về con kiến, con châu chấu, và điều họ học được.",
-  prompt_en: "What happened in your version? Did the grasshopper change? What lesson did both animals learn? Use WHO, WHICH, and THAT in your sentences.",
-  prompt_vi: "Chuyện gì xảy ra trong phiên bản của bạn? Con châu chấu có thay đổi không? Hai con vật học được bài học gì? Dùng WHO, WHICH, và THAT trong câu của bạn.",
-  keywords: ["ant", "grasshopper", "fable", "gather", "prepare", "future", "hard-working", "lazy", "share", "shelter", "frost", "lesson", "worked together"],
-  topic_talk_prompt: "Tell me about your version of the fable — what did the ant do? What did the grasshopper do? What lesson did they learn?",
-  // Writing Part 6 seed
-  part6_seed: "Dear friend,\n\nLast summer, I met a very ___ ant and a very ___ grasshopper. The ant ___ every day while the grasshopper just ___. Then ___ came and ___. I learned that we should always ___. Love, ___",
+  model_sentence: "Once upon a time, there was a hard-working ant who gathered seeds every day. There was also a lazy grasshopper who only played and sang songs. When winter came, the grasshopper was cold and hungry. The kind ant shared food with the grasshopper. Both learned a lesson: always prepare for the future!",
+  topic_talk_prompt: "Tell me about a time when you worked hard with your friends to finish a project!",
   sentence_frames: [
-    { template: "The ant, ___ was always busy, ___ seeds every day in summer." },
-    { template: "The grasshopper, ___ never worked, just ___ songs all day long." },
-    { template: "The frost ___ appeared in autumn made the grasshopper ___ cold." },
-    { template: "The ant, ___ had plenty of food, ___ it with the grasshopper." },
-    { template: "They both learned a lesson ___ everyone should prepare for the future." }
-  ]
+    {
+        "template": "Once upon a time, there was ___ ant who ___ every day and a ___ grasshopper who only ___ and ___ songs all day.",
+        "answers": [
+            "a hard-working",
+            "gathered seeds",
+            "stored food",
+            "lazy",
+            "played",
+            "sang"
+        ]
+    },
+    {
+        "template": "The ant ___ to the field ___ and ___ seeds to ___ for the coming winter.",
+        "answers": [
+            "went",
+            "every day",
+            "gathered",
+            "store",
+            "prepare"
+        ]
+    },
+    {
+        "template": "The grasshopper only ___ games and ___ happily in the ___ summer sunshine.",
+        "answers": [
+            "played",
+            "danced",
+            "jumped",
+            "sang",
+            "warm",
+            "bright"
+        ]
+    },
+    {
+        "template": "When ___ came, the grasshopper felt very ___ and very ___ because he had not ___ any food.",
+        "answers": [
+            "winter",
+            "autumn",
+            "cold",
+            "hungry",
+            "stored",
+            "gathered"
+        ]
+    },
+    {
+        "template": "The grasshopper ___ to the ant's house and ___ for food, saying 'Please ___ me!'",
+        "answers": [
+            "came",
+            "went",
+            "asked",
+            "begged",
+            "help",
+            "food"
+        ]
+    },
+    {
+        "template": "The kind ant ___ the grasshopper some food and ___ him inside to ___ ___ ___ ___.",
+        "answers": [
+            "gave",
+            "shared",
+            "invited",
+            "warm up",
+            "get warm",
+            "rest safely"
+        ]
+    },
+    {
+        "template": "The grasshopper ___ an important ___: always ___ ___ and ___ ___ ___ ___.",
+        "answers": [
+            "learned",
+            "remembered",
+            "lesson",
+            "work hard",
+            "prepare for the future",
+            "save for winter"
+        ]
+    },
+    {
+        "template": "From that day on, both the ant and the grasshopper ___ ___ together and ___ ___ for the rest of the year.",
+        "answers": [
+            "worked hard",
+            "helped each other",
+            "prepared food",
+            "saved seeds"
+        ]
+    }
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "hard-working", "vi": "chăm chỉ", "distractor": false },
+        { "word": "gathered", "vi": "nhặt", "distractor": false },
+        { "word": "stored", "vi": "dự trữ", "distractor": false },
+        { "word": "lazy", "vi": "lười biếng", "distractor": false },
+        { "word": "played", "vi": "chơi", "distractor": false },
+        { "word": "sang", "vi": "hát", "distractor": false },
+        { "word": "winter", "vi": "mùa đông", "distractor": false },
+        { "word": "autumn", "vi": "mùa thu", "distractor": false },
+        { "word": "cold", "vi": "lạnh", "distractor": false },
+        { "word": "hungry", "vi": "đói", "distractor": false },
+        { "word": "came", "vi": "đến", "distractor": false },
+        { "word": "asked", "vi": "xin", "distractor": false },
+        { "word": "gave", "vi": "cho", "distractor": false },
+        { "word": "shared", "vi": "chia sẻ", "distractor": false },
+        { "word": "learned", "vi": "học được", "distractor": false },
+        { "word": "lesson", "vi": "bài học", "distractor": false },
+        { "word": "prepare", "vi": "chuẩn bị", "distractor": false },
+        { "word": "future", "vi": "tương lai", "distractor": false },
+        { "word": "worked hard", "vi": "làm việc chăm chỉ", "distractor": false },
+        { "word": "warm", "vi": "ấm", "distractor": true },
+        { "word": "hot", "vi": "nóng", "distractor": true }
+      ]
+    }
+  }
 };

@@ -1,46 +1,66 @@
-// WEEK 35: Environmental Issues
+// WEEK 35: ENVIRONMENTAL ISSUES
 // Writing Station — Easy Mode
 
 export default {
   title: "Writing: How We Can Protect Our Planet",
   audio_url: null,
   min_words: 30,
-  model_sentence: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger because of pollution. Climate change is making the Earth warmer. Polar ice is melting and sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Small actions can make a big difference. Together, we can save our planet. We must act now!",
-  instruction_en: "Write about environmental issues and what we can do to help. Use at least 4 of these words: planet, pollution, climate, recycle, renewable, solar, protect, act now!",
-  instruction_vi: "Viết về các vấn đề môi trường và những gì chúng ta có thể làm để giúp. Dùng ít nhất 4 từ: planet, pollution, climate, recycle, renewable, solar, protect, act now!",
-  prompt_en: "Write about how we can protect our planet. Use: planet, pollution, climate, recycle, protect, act now, solar power, renewable",
-  prompt_vi: "Viết về cách chúng ta có thể bảo vệ hành tinh. Dùng: planet, pollution, climate, recycle, protect, act now, solar power, renewable",
-  keywords: ["planet", "pollution", "climate", "recycle", "renewable", "solar", "protect", "act now", "melting", "sea level", "greenhouse", "energy", "trees", "clean", "environment"],
-  topic_talk_prompt: "Tell me about environmental issues — what problems are there? What can we do to help? Why must we act now?",
+  model_sentence: "Our planet Earth is very beautiful but it is in danger. The ice is melting and the sea is rising. We must protect our planet. We can plant trees and recycle more. We can use less plastic and save energy. Small actions can make a big difference!",
+  instruction_en: "Write about how we can protect our planet. Use at least 3 of these words: planet, protect, recycle, trees, energy, save, plastic, pollution, climate",
+  instruction_vi: "Viết về cách chúng ta có thể bảo vệ hành tinh. Dùng ít nhất 3 từ: planet, protect, recycle, trees, energy, save, plastic, pollution, climate",
+  prompt_en: "Write about protecting our planet: Our planet is in danger. We must protect it. We can plant trees, recycle, and save energy.",
+  prompt_vi: "Viết về bảo vệ hành tinh của chúng ta: Hành tinh của chúng ta đang gặp nguy hiểm. Chúng ta phải bảo vệ nó. Chúng ta có thể trồng cây, tái chế và tiết kiệm năng lượng.",
+  keywords: ["planet", "protect", "recycle", "trees", "energy", "save", "plastic", "pollution", "climate", "ice", "sea", "danger", "act now"],
+  topic_talk_prompt: "Tell me about something you do to help the environment!",
   sentence_frames: [
-    { template: "Our planet Earth is very beautiful but it is in ___." },
-    { template: "Climate change is making the Earth ___" },
-    { template: "We ___ protect our planet." },
-    { template: "We ___ recycle paper and plastic." },
-    { template: "Solar power is ___ energy." },
-    { template: "We must ___ ___ to save our planet." }
+    {
+      template: "Our planet ___ is very beautiful but it is in ___.",
+      blank_labels: ["Earth", "danger"]
+    },
+    {
+      template: "The ___ is ___ and the ___ is rising.",
+      blank_labels: ["ice/polar ice", "melting", "sea/ocean"]
+    },
+    {
+      template: "We must ___ our ___ to help the planet.",
+      blank_labels: ["protect", "Earth/planet/world"]
+    },
+    {
+      template: "We can ___ ___ and ___ more to help the environment.",
+      blank_labels: ["plant trees", "recycle", "save energy"]
+    },
+    {
+      template: "We should use less ___ and save ___ every day.",
+      blank_labels: ["plastic", "water/energy"]
+    },
+    {
+      template: "Small ___ like recycling can make a big ___.",
+      blank_labels: ["actions/things", "difference"]
+    }
   ],
   hints: {
     vocabulary_bank: {
-      label_en: "Need help? Click next to each blank",
-      label_vi: "Can giup? Bam ben canh moi o trong",
-      show_by_default: false,
-      scaffolding_stage: "medium",
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: true,
+      scaffolding_stage: "high",
       words: [
-        {"word": "planet", "vi": "hanh tinh", "distractor": false},
-        {"word": "pollution", "vi": "o nhiem", "distractor": false},
-        {"word": "climate", "vi": "khi hau", "distractor": false},
-        {"word": "recycle", "vi": "tai che", "distractor": false},
-        {"word": "renewable", "vi": "tai tao", "distractor": false},
-        {"word": "solar", "vi": "mat troi", "distractor": false},
-        {"word": "protect", "vi": "bao ve", "distractor": false},
-        {"word": "act now", "vi": "hanh dong ngay", "distractor": false},
-        {"word": "melting", "vi": "tan chay", "distractor": true},
-        {"word": "sea level", "vi": "muc nuoc bien", "distractor": true},
-        {"word": "warmer", "vi": "nong hon", "distractor": true},
-        {"word": "green", "vi": "xanh", "distractor": true},
-        {"word": "danger", "vi": "nguy hiem", "distractor": false},
-        {"word": "energy", "vi": "nang luong", "distractor": true}
+        { "word": "planet", "vi": "hành tinh", "distractor": false },
+        { "word": "Earth", "vi": "Trái Đất", "distractor": false },
+        { "word": "danger", "vi": "nguy hiểm", "distractor": false },
+        { "word": "ice", "vi": "băng", "distractor": false },
+        { "word": "melting", "vi": "tan chảy", "distractor": false },
+        { "word": "sea", "vi": "biển", "distractor": false },
+        { "word": "rising", "vi": "dâng cao", "distractor": false },
+        { "word": "protect", "vi": "bảo vệ", "distractor": false },
+        { "word": "plant", "vi": "trồng", "distractor": false },
+        { "word": "trees", "vi": "cây", "distractor": false },
+        { "word": "recycle", "vi": "tái chế", "distractor": false },
+        { "word": "energy", "vi": "năng lượng", "distractor": false },
+        { "word": "save", "vi": "tiết kiệm", "distractor": false },
+        { "word": "plastic", "vi": "nhựa", "distractor": false },
+        { "word": "pollution", "vi": "ô nhiễm", "distractor": false },
+        { "word": "act now", "vi": "hành động ngay", "distractor": true }
       ]
     }
   }
