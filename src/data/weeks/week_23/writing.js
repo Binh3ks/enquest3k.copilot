@@ -1,147 +1,74 @@
 export default {
   title: "My Art Class Story",
   min_words: 45,
-  model_sentence: "Yesterday morning I had the most exciting art class I have ever had, and I want to describe every step of what I made. First, my teacher placed a large white canvas on each desk and told us we were going to paint a garden scene with at least three different colors. I picked up my thickest brush, dipped it carefully into bright red pigment, and began to paint a large rose in the center of my canvas. Next, I used a finer brush to add detailed green leaves and curving stems around the rose, which made it look more realistic. Then I mixed yellow and orange together to paint a golden sun in the top right corner, and I used a thin brush to add little white clouds floating beside it. After I finished painting, I stepped back and looked at my work and I felt a strong sense of pride because the garden scene was even more beautiful than I had imagined.",
-  instruction_en: "Write a detailed step-by-step art class story using first, next, then, after!",
-  instruction_vi: "Vi\u1ebft c\u00e2u chuy\u1ec7n m\u1ef9 thu\u1eadt chi ti\u1ebft theo t\u1eebng b\u01b0\u1edbc d\u00f9ng first, next, then, after!",
+  model_sentence: "Yesterday, Mia arrived at art class and picked up her brush. She dipped her brush into red pigment and painted a picture of red flowers. Mia colored carefully the flowers in her picture using blue and yellow. Then she folded carefully a sheet of paper into a butterfly shape. Both wings were the same — perfect symmetry! She used the scissors to cut shapes carefully from green paper. Mia glued the leaves around her picture to create a beautiful border. She pressed carefully each piece to check the texture of the paper. Finally, Mia held up proudly the picture she had worked so hard to create. The teacher clapped loudly and said the picture had wonderful texture, bright pigment, and beautiful symmetry.",
+  instruction_en: "Write a step-by-step art class story using first, next, then, and finally!",
+  instruction_vi: "Viết câu chuyện mỹ thuật theo từng bước dùng first, next, then, finally!",
   prompt_en: "What did you paint? What steps did you follow? How did you feel at the end?",
-  prompt_vi: "B\u1ea1n v\u1ebd g\u00ec? B\u1ea1n \u0111\u00e3 l\u00e0m theo nh\u1eefng b\u01b0\u1edbc n\u00e0o? Cu\u1ed1i c\u00f9ng b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["canvas", "pigment", "realistic", "stems", "curving", "floating", "pride", "imagined"],
-  topic_talk_prompt: "Describe your art class step by step \u2014 what did you make and how?",
+  prompt_vi: "Bạn vẽ gì? Bạn đã làm theo những bước nào? Cuối cùng bạn cảm thấy thế nào?",
+  keywords: ["picked up", "painted a picture", "colored carefully", "folded carefully", "cut shapes", "glued", "pressed carefully", "held up proudly"],
+  topic_talk_prompt: "Describe your art class step by step — what did you make and how did it turn out?",
   sentence_frames: [
     {
-        "template": "My teacher placed ___ on each desk and told us we were going to paint ___.",
-        "answers": [
-            "a large white canvas",
-            "a garden scene"
-        ]
+      "template": "Yesterday I arrived at art class and ___ my ___.",
+      "answers": ["picked up", "brush"]
     },
     {
-        "template": "I picked up my ___, dipped it into ___, and began to ___ in the center.",
-        "answers": [
-            "thickest brush",
-            "bright red pigment",
-            "paint a large rose"
-        ]
+      "template": "I ___ my brush into ___ pigment and ___ a picture of ___.",
+      "answers": ["dipped", "bright red", "painted", "red flowers"]
     },
     {
-        "template": "Next, I used ___ to add ___ and ___ around the rose, which made it look more realistic.",
-        "answers": [
-            "a finer brush",
-            "detailed green leaves",
-            "curving stems"
-        ]
+      "template": "Then I ___ a sheet of paper into a butterfly shape and ___ both wings carefully.",
+      "answers": ["folded", "studied"]
     },
     {
-        "template": "Then I ___ and ___ together to paint a golden sun, and added ___ beside it.",
-        "answers": [
-            "mixed yellow",
-            "orange",
-            "little white clouds"
-        ]
+      "template": "I ___ the scissors to ___ ___ from green paper.",
+      "answers": ["used", "cut shapes"]
     },
     {
-        "template": "I felt ___ because the garden scene was even more ___ than I had ___.",
-        "answers": [
-            "a strong sense of pride",
-            "beautiful",
-            "imagined"
-        ]
+      "template": "I ___ the leaves around my picture to create a beautiful ___.",
+      "answers": ["glued", "border"]
+    },
+    {
+      "template": "I ___ ___ each piece to check the texture of the paper.",
+      "answers": ["pressed carefully"]
+    },
+    {
+      "template": "Finally, I ___ ___ the picture I had worked so hard to create.",
+      "answers": ["held up proudly"]
+    },
+    {
+      "template": "The teacher ___ ___ and said my picture had wonderful ___ and beautiful ___.",
+      "answers": ["clapped loudly", "texture", "symmetry"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      label_en: "Need help? Click next to each blank",
+      label_vi: "Cần trợ giúp? Bấm bên cạnh mỗi ô",
       show_by_default: false,
       scaffolding_stage: "medium-low",
       words: [
-    {
-        "word": "a large white canvas",
-        "vi": "một tấm vải trắng lớn",
-        "distractor": false
-    },
-    {
-        "word": "a garden scene",
-        "vi": "cảnh vườn hoa",
-        "distractor": false
-    },
-    {
-        "word": "thickest brush",
-        "vi": "cọ dày nhất",
-        "distractor": false
-    },
-    {
-        "word": "bright red pigment",
-        "vi": "màu đỏ sáng",
-        "distractor": false
-    },
-    {
-        "word": "paint a large rose",
-        "vi": "vẽ một bông hồng lớn",
-        "distractor": false
-    },
-    {
-        "word": "a finer brush",
-        "vi": "cọ mảnh hơn",
-        "distractor": false
-    },
-    {
-        "word": "detailed green leaves",
-        "vi": "lá xanh chi tiết",
-        "distractor": false
-    },
-    {
-        "word": "curving stems",
-        "vi": "thân cong",
-        "distractor": false
-    },
-    {
-        "word": "mixed yellow",
-        "vi": "trộn màu vàng",
-        "distractor": false
-    },
-    {
-        "word": "orange",
-        "vi": "màu cam",
-        "distractor": false
-    },
-    {
-        "word": "little white clouds",
-        "vi": "những đám mây nhỏ trắng",
-        "distractor": false
-    },
-    {
-        "word": "a strong sense of pride",
-        "vi": "cảm giác tự hào mạnh mẽ",
-        "distractor": false
-    },
-    {
-        "word": "beautiful",
-        "vi": "đẹp",
-        "distractor": false
-    },
-    {
-        "word": "imagined",
-        "vi": "tưởng tượng",
-        "distractor": false
-    },
-    {
-        "word": "a dirty eraser",
-        "vi": "tẩy bẩn",
-        "distractor": true
-    },
-    {
-        "word": "ugly and messy",
-        "vi": "xấu và bừa bộn",
-        "distractor": true
-    },
-    {
-        "word": "forgotten",
-        "vi": "quên mất",
-        "distractor": true
-    }
-]
+        { "word": "picked up", "vi": "nhặt lên", "distractor": false },
+        { "word": "brush", "vi": "cọ vẽ", "distractor": false },
+        { "word": "dipped", "vi": "nhúng", "distractor": false },
+        { "word": "bright red pigment", "vi": "màu đỏ sáng", "distractor": false },
+        { "word": "painted a picture", "vi": "vẽ một bức tranh", "distractor": false },
+        { "word": "red flowers", "vi": "hoa đỏ", "distractor": false },
+        { "word": "folded", "vi": "gấp", "distractor": false },
+        { "word": "studied both wings", "vi": "quan sát hai cánh", "distractor": false },
+        { "word": "used the scissors", "vi": "dùng kéo", "distractor": false },
+        { "word": "cut shapes", "vi": "cắt hình", "distractor": false },
+        { "word": "glued", "vi": "dán", "distractor": false },
+        { "word": "border", "vi": "viền tranh", "distractor": false },
+        { "word": "pressed carefully", "vi": "ấn cẩn thận", "distractor": false },
+        { "word": "held up proudly", "vi": "giơ lên tự hào", "distractor": false },
+        { "word": "clapped loudly", "vi": "vỗ tay lớn", "distractor": false },
+        { "word": "texture", "vi": "kết cấu bề mặt", "distractor": false },
+        { "word": "symmetry", "vi": "đối xứng", "distractor": false },
+        { "word": "a dirty plate", "vi": "đĩa bẩn", "distractor": true },
+        { "word": "threw away", "vi": "ném đi", "distractor": true }
+      ]
     }
   }
 };

@@ -1,93 +1,71 @@
 export default {
-  title: "My Yesterday",
-  min_words: 28,
-  model_sentence: "Yesterday I walked to school. I listened to my teacher. After school I helped my mum. In the evening I watched TV. Then I finished my homework.",
+  title: "Max's Diary - Yesterday",
+  min_words: 30,
   instruction_en: "Write about what you did yesterday using past tense!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec b\u1ea1n \u0111\u00e3 l\u00e0m h\u00f4m qua b\u1eb1ng th\u00ec qu\u00e1 kh\u1ee9!",
+  instruction_vi: "Viết về những gì bạn đã làm hôm qua bằng thì quá khứ!",
   prompt_en: "What did you do in the morning? After school? In the evening?",
-  prompt_vi: "Bu\u1ed5i s\u00e1ng b\u1ea1n \u0111\u00e3 l\u00e0m g\u00ec? Sau tr\u01b0\u1eddng? T\u1ed1i th\u00ec sao?",
-  keywords: ["walked", "listened", "helped", "watched", "finished"],
-  topic_talk_prompt: "What did you do yesterday \u2014 morning, afternoon, and evening?",
+  prompt_vi: "Buổi sáng bạn đã làm gì? Sau trường? Tối thì sao?",
+  topic_talk_prompt: "What did you do yesterday — morning, afternoon, and evening?",
+  show_by_default: true,
   sentence_frames: [
     {
-        "template": "Yesterday I ___ to school.",
-        "answers": [
-            "walked"
-        ]
+      "template": "Yesterday I **woke up early** and **brushed my teeth**.",
+      "answers": [
+        "woke up early",
+        "brushed my teeth"
+      ]
     },
     {
-        "template": "I ___ to my teacher.",
-        "answers": [
-            "listened"
-        ]
+      "template": "I **packed my bag** and **walked to school** with my friend.",
+      "answers": [
+        "packed my bag",
+        "walked to school"
+      ]
     },
     {
-        "template": "After school I ___ my mum.",
-        "answers": [
-            "helped"
-        ]
+      "template": "At school, I listened carefully to my teacher.",
+      "answers": [
+        "listened carefully"
+      ]
     },
     {
-        "template": "In the evening I ___ TV.",
-        "answers": [
-            "watched"
-        ]
+      "template": "**At break time**, I **played soccer**. I **shouted with excitement** when we scored a goal!",
+      "answers": [
+        "At break time",
+        "played soccer",
+        "shouted with excitement"
+      ]
     },
     {
-        "template": "Then I ___ my homework.",
-        "answers": [
-            "finished"
-        ]
+      "template": "After school, I **helped my mother prepare dinner**. Then I **cleaned my room**.",
+      "answers": [
+        "helped my mother prepare dinner",
+        "cleaned my room"
+      ]
+    },
+    {
+      "template": "In the evening, I **looked at the stars** and **counted ten** of them. Then I **started to fall asleep**.",
+      "answers": [
+        "looked at the stars",
+        "counted ten",
+        "started to fall asleep"
+      ]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium-low",
-      words: [
-    {
-        "word": "walked",
-        "vi": "đã đi bộ",
-        "distractor": false
-    },
-    {
-        "word": "listened",
-        "vi": "đã lắng nghe",
-        "distractor": false
-    },
-    {
-        "word": "helped",
-        "vi": "đã giúp",
-        "distractor": false
-    },
-    {
-        "word": "watched",
-        "vi": "đã xem",
-        "distractor": false
-    },
-    {
-        "word": "finished",
-        "vi": "đã hoàn thành",
-        "distractor": false
-    },
-    {
-        "word": "runs",
-        "vi": "chạy — sai thì",
-        "distractor": true
-    },
-    {
-        "word": "ignores",
-        "vi": "bỏ qua — sai",
-        "distractor": true
-    },
-    {
-        "word": "starts",
-        "vi": "bắt đầu — sai thì",
-        "distractor": true
-    }
-]
-    }
-  }
+  ],
+  scaffolding_stage: "medium-low",
+  vocabulary_bank: [
+    "woke up early",
+    "brushed my teeth",
+    "packed my bag",
+    "walked to school",
+    "listened carefully",
+    "At break time",
+    "played soccer",
+    "shouted with excitement",
+    "helped my mother prepare dinner",
+    "cleaned my room",
+    "looked at the stars",
+    "counted ten",
+    "started to fall asleep"
+  ]
 };

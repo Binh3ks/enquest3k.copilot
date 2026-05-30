@@ -1,82 +1,57 @@
 export default {
-  title: "My Weather Day",
-  min_words: 25,
-  model_sentence: "It is raining today. I am wearing my coat. I am carrying my umbrella. I still feel happy.",
-  instruction_en: "Write about a rainy day and what you are doing!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 m\u1ed9t ng\u00e0y m\u01b0a v\u00e0 nh\u1eefng g\u00ec b\u1ea1n \u0111ang l\u00e0m!",
-  prompt_en: "What is the weather like? What are you wearing? How do you feel?",
-  prompt_vi: "Th\u1eddi ti\u1ebft th\u1ebf n\u00e0o? B\u1ea1n \u0111ang m\u1eb7c g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["raining", "wearing", "coat", "umbrella", "happy"],
-  topic_talk_prompt: "Describe a rainy day \u2014 what are you wearing and how do you feel?",
+  title: "A Rainy Day at School",
+  min_words: 30,
+  instruction_en: "Write about a rainy day!",
+  instruction_vi: "Viết về một ngày mưa!",
+  prompt_en: "What is the weather like? What are you wearing?",
+  prompt_vi: "Thời tiết thế nào? Bạn đang mặc gì?",
+  topic_talk_prompt: "Talk about a rainy day!",
+  show_by_default: true,
   sentence_frames: [
     {
-        "template": "It is ___ today.",
-        "answers": [
-            "raining"
-        ]
+      "template": "It is ___ today.",
+      "answers": [
+        "raining"
+      ]
     },
     {
-        "template": "I am wearing my ___.",
-        "answers": [
-            "coat"
-        ]
+      "template": "I am wearing my ___ to stay warm.",
+      "answers": [
+        "blue coat"
+      ]
     },
     {
-        "template": "I am carrying my ___.",
-        "answers": [
-            "umbrella"
-        ]
+      "template": "The streets are ___.",
+      "answers": [
+        "wet"
+      ]
     },
     {
-        "template": "I still feel ___.",
-        "answers": [
-            "happy"
-        ]
+      "template": "Nam is carrying his ___ because it is raining.",
+      "answers": [
+        "umbrella"
+      ]
+    },
+    {
+      "template": "It is very ___ today.",
+      "answers": [
+        "cold"
+      ]
+    },
+    {
+      "template": "After school, I **take off my coat** because the weather is ___.",
+      "answers": [
+        "warm outside now"
+      ]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "raining",
-        "vi": "mưa",
-        "distractor": false
-    },
-    {
-        "word": "coat",
-        "vi": "áo khoác",
-        "distractor": false
-    },
-    {
-        "word": "umbrella",
-        "vi": "ô/dù",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "sunny",
-        "vi": "nắng — không phải hôm nay",
-        "distractor": true
-    },
-    {
-        "word": "sandals",
-        "vi": "dép — không phải mưa",
-        "distractor": true
-    },
-    {
-        "word": "sad",
-        "vi": "buồn",
-        "distractor": true
-    }
-]
-    }
-  }
+  ],
+  scaffolding_stage: "medium",
+  vocabulary_bank: [
+    "raining",
+    "blue coat",
+    "wet",
+    "umbrella",
+    "cold",
+    "warm outside now"
+  ]
 };

@@ -1,147 +1,70 @@
 export default {
-  title: "Write About Your Daily Routine",
+  title: "A Perfect School Day",
   min_words: 45,
-  model_sentence: "I have a very organised daily routine that helps me stay healthy and ready for school every day. I wake up at six thirty and immediately wash my face and brush my teeth so that I feel fresh and awake. Then I have a nutritious breakfast with my family, which usually includes eggs, toast, and a glass of fresh orange juice. After breakfast, I pack my school bag, put on my uniform, and leave the house by seven fifteen. At school I study hard and I always pay attention in class because I want to do well in my lessons. In the evening, I finish my homework first before I watch television or play with my toys. I go to bed at nine o'clock so that I get enough sleep and feel ready for the next day.",
-  instruction_en: "Write about your full daily routine from morning to night using sequence words!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 th\u00f3i quen c\u1ea3 ng\u00e0y t\u1eeb s\u00e1ng \u0111\u1ebfn t\u1ed1i d\u00f9ng t\u1eeb n\u1ed1i tr\u00ecnh t\u1ef1!",
-  prompt_en: "What is your routine from waking up to going to bed? Use First, Then, After, Finally!",
-  prompt_vi: "Th\u00f3i quen c\u1ee7a b\u1ea1n t\u1eeb khi th\u1ee9c d\u1eady \u0111\u1ebfn khi ng\u1ee7? D\u00f9ng First, Then, After, Finally!",
-  keywords: ["organised", "nutritious", "uniform", "attention", "homework", "television", "routine"],
-  topic_talk_prompt: "Walk me through your whole day from morning to night!",
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: false,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "wake up", "vi": "thuc day", "distractor": false },
+      { "word": "at seven oclock", "vi": "luc bay gio", "distractor": false },
+      { "word": "brush my teeth", "vi": "danh rang", "distractor": false },
+      { "word": "with my blue toothbrush", "vi": "voi chan boi xanh", "distractor": false },
+      { "word": "eat breakfast", "vi": "an sang", "distractor": false },
+      { "word": "with my family", "vi": "voi gia dinh", "distractor": false },
+      { "word": "rice and eggs", "vi": "com va trung", "distractor": false },
+      { "word": "yummy", "vi": "ngon", "distractor": false },
+      { "word": "go to school", "vi": "di hoc", "distractor": false },
+      { "word": "with my friends", "vi": "voi ban be", "distractor": false },
+      { "word": "at twelve oclock", "vi": "luc muoi hai gio", "distractor": false },
+      { "word": "have lunch", "vi": "an trua", "distractor": false },
+      { "word": "play with", "vi": "choi voi", "distractor": false },
+      { "word": "do homework", "vi": "lam bai tap", "distractor": false },
+      { "word": "every afternoon", "vi": "moi ngay chieu", "distractor": false },
+      { "word": "have dinner", "vi": "an toi", "distractor": false },
+      { "word": "watch TV", "vi": "xem ti vi", "distractor": false },
+      { "word": "watch cartoons", "vi": "xem hoat hinh", "distractor": false },
+      { "word": "go to bed", "vi": "di ngu", "distractor": false },
+      { "word": "at nine oclock", "vi": "luc chin gio", "distractor": false },
+      { "word": "fall asleep", "vi": "ngu", "distractor": false },
+      { "word": "midnight", "vi": "nua dem", "distractor": true },
+      { "word": "skip breakfast", "vi": "bo an sang", "distractor": true },
+      { "word": "watch TV all day", "vi": "xem ti vi ca ngay", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "I wake up at ___ and immediately ___ and ___ so that I feel fresh and awake.",
-        "answers": [
-            "six thirty",
-            "wash my face",
-            "brush my teeth"
-        ]
+      "template": "Today is a perfect school day! I ___ ___ at ___.",
+      "answers": ["wake up", "at seven oclock"]
     },
     {
-        "template": "Then I have ___ with my family, which usually includes ___, ___, and ___.",
-        "answers": [
-            "a nutritious breakfast",
-            "eggs",
-            "toast",
-            "a glass of fresh orange juice"
-        ]
+      "template": "I ___ ___ ___ before I go to school. My teeth are clean and fresh!",
+      "answers": ["brush my teeth", "with my blue toothbrush"]
     },
     {
-        "template": "After breakfast, I ___, put on my ___, and leave the house by ___.",
-        "answers": [
-            "pack my school bag",
-            "uniform",
-            "seven fifteen"
-        ]
+      "template": "Then I ___ ___ ___. I eat ___. It is ___!",
+      "answers": ["eat breakfast", "with my family", "rice and eggs", "yummy"]
     },
     {
-        "template": "In the evening, I finish ___ first before I ___ or play with my toys.",
-        "answers": [
-            "my homework",
-            "watch television"
-        ]
+      "template": "At eight oclock, I ___ ___ ___ ___.",
+      "answers": ["go to school", "with my friends"]
     },
     {
-        "template": "I go to bed at ___ so that I get enough ___ and feel ready for the next day.",
-        "answers": [
-            "nine o'clock",
-            "sleep"
-        ]
+      "template": "At twelve oclock, I ___ ___. After lunch, I ___ my friends and we play tag.",
+      "answers": ["have lunch", "play with"]
+    },
+    {
+      "template": "At four oclock, I go home. I ___ ___ ___. I write and read my books.",
+      "answers": ["do homework", "every afternoon"]
+    },
+    {
+      "template": "At seven oclock, I ___ ___ ___. After that, I ___ and ___.",
+      "answers": ["have dinner", "with my family", "watch TV", "watch cartoons"]
+    },
+    {
+      "template": "At nine oclock, I ___ ___. I close my eyes and ___. Tomorrow will be another perfect day!",
+      "answers": ["go to bed", "at nine oclock", "fall asleep"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "six thirty",
-        "vi": "sáu giờ rưỡi",
-        "distractor": false
-    },
-    {
-        "word": "wash my face",
-        "vi": "rửa mặt",
-        "distractor": false
-    },
-    {
-        "word": "brush my teeth",
-        "vi": "đánh răng",
-        "distractor": false
-    },
-    {
-        "word": "a nutritious breakfast",
-        "vi": "bữa sáng bổ dưỡng",
-        "distractor": false
-    },
-    {
-        "word": "eggs",
-        "vi": "trứng",
-        "distractor": false
-    },
-    {
-        "word": "toast",
-        "vi": "bánh mì nướng",
-        "distractor": false
-    },
-    {
-        "word": "a glass of fresh orange juice",
-        "vi": "một ly nước cam tươi",
-        "distractor": false
-    },
-    {
-        "word": "pack my school bag",
-        "vi": "đóng gói cặp sách",
-        "distractor": false
-    },
-    {
-        "word": "uniform",
-        "vi": "đồng phục",
-        "distractor": false
-    },
-    {
-        "word": "seven fifteen",
-        "vi": "bảy giờ mười lăm",
-        "distractor": false
-    },
-    {
-        "word": "my homework",
-        "vi": "bài tập về nhà",
-        "distractor": false
-    },
-    {
-        "word": "watch television",
-        "vi": "xem ti vi",
-        "distractor": false
-    },
-    {
-        "word": "nine o'clock",
-        "vi": "chín giờ",
-        "distractor": false
-    },
-    {
-        "word": "sleep",
-        "vi": "giấc ngủ",
-        "distractor": false
-    },
-    {
-        "word": "midnight",
-        "vi": "nửa đêm",
-        "distractor": true
-    },
-    {
-        "word": "junk food",
-        "vi": "thức ăn không lành mạnh",
-        "distractor": true
-    },
-    {
-        "word": "stay up all night",
-        "vi": "thức suốt đêm",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

@@ -1,88 +1,66 @@
 export default {
-  title: "My Neighbourhood",
-  min_words: 28,
-  model_sentence: "I live near a river. There was an old market near my house. There were big trees on the road. The neighbourhood was quiet and green.",
-  instruction_en: "Write about your neighbourhood \u2014 now and in the past!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 khu ph\u1ed1 c\u1ee7a b\u1ea1n \u2014 hi\u1ec7n t\u1ea1i v\u00e0 trong qu\u00e1 kh\u1ee9!",
-  prompt_en: "What is near your house? What was there before? How was it different?",
-  prompt_vi: "G\u1ea7n nh\u00e0 b\u1ea1n c\u00f3 g\u00ec? Tr\u01b0\u1edbc \u0111\u00e2y c\u00f3 g\u00ec? N\u00f3 kh\u00e1c nhau nh\u01b0 th\u1ebf n\u00e0o?",
-  keywords: ["river", "market", "trees", "road", "quiet", "green"],
-  topic_talk_prompt: "Describe your neighbourhood \u2014 past and present!",
+  title: "The Old Town Mystery",
+  min_words: 30,
+  instruction_en: "Write about how your neighbourhood has changed!",
+  instruction_vi: "Viết về khu phố của bạn đã thay đổi như thế nào!",
+  prompt_en: "What was there before? What is there now? How is it different?",
+  prompt_vi: "Trước đây có gì? Bây giờ có gì? Nó khác nhau thế nào?",
+  topic_talk_prompt: "Describe your neighbourhood — now and before!",
+  show_by_default: true,
   sentence_frames: [
     {
-        "template": "I live near a ___.",
-        "answers": [
-            "river"
-        ]
+      "template": "Detective Luna found an **old map**. The map was from a long time ago.",
+      "answers": [
+        "old map"
+      ]
     },
     {
-        "template": "There was an old ___ near my house.",
-        "answers": [
-            "market"
-        ]
+      "template": "On the old map, there was a big **local market** near the **long river**.",
+      "answers": [
+        "local market",
+        "long river"
+      ]
     },
     {
-        "template": "There were big ___ on the road.",
-        "answers": [
-            "trees"
-        ]
+      "template": "There were tall **tall trees** **along the road**.",
+      "answers": [
+        "tall trees",
+        "along the road"
+      ]
     },
     {
-        "template": "The neighbourhood was ___ and ___.",
-        "answers": [
-            "quiet",
-            "green"
-        ]
+      "template": "There was a **old temple** at the end of the road. It **still stands** today!",
+      "answers": [
+        "old temple",
+        "still stands"
+      ]
+    },
+    {
+      "template": "There was a **wooden bridge** **over the river**.",
+      "answers": [
+        "wooden bridge",
+        "over the river"
+      ]
+    },
+    {
+      "template": "Now there are new buildings. However, the **old temple** is still here!",
+      "answers": [
+        "new buildings",
+        "old temple"
+      ]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium-low",
-      words: [
-    {
-        "word": "river",
-        "vi": "sông",
-        "distractor": false
-    },
-    {
-        "word": "market",
-        "vi": "chợ",
-        "distractor": false
-    },
-    {
-        "word": "trees",
-        "vi": "cây",
-        "distractor": false
-    },
-    {
-        "word": "quiet",
-        "vi": "yên tĩnh",
-        "distractor": false
-    },
-    {
-        "word": "green",
-        "vi": "xanh mát",
-        "distractor": false
-    },
-    {
-        "word": "mountain",
-        "vi": "núi",
-        "distractor": true
-    },
-    {
-        "word": "factory",
-        "vi": "nhà máy",
-        "distractor": true
-    },
-    {
-        "word": "noisy",
-        "vi": "ồn ào",
-        "distractor": true
-    }
-]
-    }
-  }
+  ],
+  scaffolding_stage: "medium-low",
+  vocabulary_bank: [
+    "old map",
+    "local market",
+    "long river",
+    "tall trees",
+    "along the road",
+    "old temple",
+    "still stands",
+    "wooden bridge",
+    "over the river",
+    "new buildings"
+  ]
 };

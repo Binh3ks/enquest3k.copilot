@@ -1,141 +1,67 @@
 export default {
-  title: "Write About Your Park Visit",
+  title: "The Busy Park",
   min_words: 45,
-  model_sentence: "I am visiting the busy park near my school with my class today and everyone is doing something different. Some children are playing football on the grass while others are sitting under the trees and drawing pictures. A group of older people are doing morning exercises near the fountain, and they look very energetic and happy. Two little girls are feeding the ducks beside the small pond, and the ducks are splashing and quacking loudly. My teacher is standing at the entrance and taking photos of all of us because she wants to remember this special trip. I am sitting on a bench and writing in my notebook because I want to describe everything I see.",
-  instruction_en: "Describe a lively park scene using present continuous for everyone!",
-  instruction_vi: "M\u00f4 t\u1ea3 c\u1ea3nh c\u00f4ng vi\u00ean s\u00f4i \u0111\u1ed9ng b\u1eb1ng th\u00ec hi\u1ec7n t\u1ea1i ti\u1ebfp di\u1ec5n!",
-  prompt_en: "What is everyone doing? Use is/are + -ing for each person or group!",
-  prompt_vi: "M\u1ecdi ng\u01b0\u1eddi \u0111ang l\u00e0m g\u00ec? D\u00f9ng is/are + -ing cho t\u1eebng ng\u01b0\u1eddi ho\u1eb7c nh\u00f3m!",
-  keywords: ["fountain", "energetic", "splashing", "quacking", "entrance", "bench", "notebook"],
-  topic_talk_prompt: "Describe the park scene \u2014 what is everyone doing right now?",
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: false,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "the beautiful park", "vi": "cong vien dep", "distractor": false },
+      { "word": "enjoying their day", "vi": "dang huong thu ngay", "distractor": false },
+      { "word": "running after his dog", "vi": "chay theo cho cua anh ay", "distractor": false },
+      { "word": "is barking happily", "vi": "dang sua vui ve", "distractor": false },
+      { "word": "sitting on a wooden bench", "vi": "ngoi tren ghe go", "distractor": false },
+      { "word": "is reading peacefully", "vi": "dang doc sach binh thanh", "distractor": false },
+      { "word": "jogging around the path", "vi": "chay bo quanh duong di", "distractor": false },
+      { "word": "playing with water", "vi": "choi voi nuoc", "distractor": false },
+      { "word": "laughing loudly", "vi": "cuoi to", "distractor": false },
+      { "word": "having a picnic", "vi": "dang da ngoai", "distractor": false },
+      { "word": "eating sandwiches", "vi": "dang an sandwich", "distractor": false },
+      { "word": "is spreading a blanket", "vi": "dang trai chan da ngoai", "distractor": false },
+      { "word": "is unpacking the food basket", "vi": "dang mo gio do an", "distractor": false },
+      { "word": "walking her puppy", "vi": "dang dac cho con", "distractor": false },
+      { "word": "flying colorful kites", "vi": "dang th diec nhieu mau sac", "distractor": false },
+      { "word": "relaxing under big trees", "vi": "dang thu gian duoi cay lon", "distractor": false },
+      { "word": "a wonderful time", "vi": "khoang thoi gian tuyet voi", "distractor": false },
+      { "word": "the best school trip ever", "vi": "chuyen di hoc that tuyet voi nhat", "distractor": false },
+      { "word": "sleeping on the bench", "vi": "ngu tren ghe", "distractor": true },
+      { "word": "crying loudly", "vi": "khoc to", "distractor": true },
+      { "word": "leaving the park", "vi": "roi khoi cong vien", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "Some children are ___ while others are ___ and ___.",
-        "answers": [
-            "playing football on the grass",
-            "sitting under the trees",
-            "drawing pictures"
-        ]
+      "template": "Today our class is visiting ___ ___. The park is very busy! Many people are ___.",
+      "answers": ["the beautiful park", "enjoying their day"]
     },
     {
-        "template": "A group of older people are ___ near the fountain, and they look ___ and ___.",
-        "answers": [
-            "doing morning exercises",
-            "very energetic",
-            "happy"
-        ]
+      "template": "A young boy is ___ near the trees. The dog ___ and looks so happy!",
+      "answers": ["running after his dog", "is barking happily"]
     },
     {
-        "template": "Two little girls are ___ beside the pond, and the ducks are ___ and ___ loudly.",
-        "answers": [
-            "feeding the ducks",
-            "splashing",
-            "quacking"
-        ]
+      "template": "An elderly man is ___ and ___ while he enjoys the fresh air.",
+      "answers": ["sitting on a wooden bench", "is reading peacefully"]
     },
     {
-        "template": "My teacher is ___ because she wants to ___ this special trip.",
-        "answers": [
-            "standing at the entrance and taking photos",
-            "remember"
-        ]
+      "template": "Two women are ___ and some children are ___ ___ ___.",
+      "answers": ["jogging around the path", "playing with water", "laughing loudly"]
     },
     {
-        "template": "I am ___ and ___ because I want to describe everything I see.",
-        "answers": [
-            "sitting on a bench",
-            "writing in my notebook"
-        ]
+      "template": "A family is ___. The mother ___ and the father ___.",
+      "answers": ["having a picnic", "is spreading a blanket", "is unpacking the food basket"]
+    },
+    {
+      "template": "A little girl is ___ and three teenagers are ___ in the sky.",
+      "answers": ["walking her puppy", "flying colorful kites"]
+    },
+    {
+      "template": "Some people are ___ ___ because the trees give cool shade.",
+      "answers": ["relaxing under big trees"]
+    },
+    {
+      "template": "Everyone is having ___ ___. This is really ___ ___ ___!",
+      "answers": ["a wonderful time", "the best school trip ever"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "playing football on the grass",
-        "vi": "đá bóng trên bãi cỏ",
-        "distractor": false
-    },
-    {
-        "word": "sitting under the trees",
-        "vi": "ngồi dưới bóng cây",
-        "distractor": false
-    },
-    {
-        "word": "drawing pictures",
-        "vi": "vẽ tranh",
-        "distractor": false
-    },
-    {
-        "word": "doing morning exercises",
-        "vi": "tập thể dục buổi sáng",
-        "distractor": false
-    },
-    {
-        "word": "very energetic",
-        "vi": "rất tràn đầy năng lượng",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "feeding the ducks",
-        "vi": "cho vịt ăn",
-        "distractor": false
-    },
-    {
-        "word": "splashing",
-        "vi": "vẫy nước",
-        "distractor": false
-    },
-    {
-        "word": "quacking",
-        "vi": "kêu quạc quạc",
-        "distractor": false
-    },
-    {
-        "word": "standing at the entrance and taking photos",
-        "vi": "đứng ở cổng và chụp ảnh",
-        "distractor": false
-    },
-    {
-        "word": "remember",
-        "vi": "nhớ lại",
-        "distractor": false
-    },
-    {
-        "word": "sitting on a bench",
-        "vi": "ngồi trên ghế",
-        "distractor": false
-    },
-    {
-        "word": "writing in my notebook",
-        "vi": "viết vào cuốn sổ",
-        "distractor": false
-    },
-    {
-        "word": "sleeping on the bench",
-        "vi": "đang ngủ trên ghế",
-        "distractor": true
-    },
-    {
-        "word": "very bored and sad",
-        "vi": "rất chán và buồn",
-        "distractor": true
-    },
-    {
-        "word": "forget",
-        "vi": "quên",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

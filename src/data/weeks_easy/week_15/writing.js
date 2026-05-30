@@ -1,82 +1,55 @@
 export default {
-  title: "Write About My Park Day",
-  min_words: 25,
-  model_sentence: "The park is fun today. I am walking with my mum. My dad is jogging. A boy is running with his dog.",
-  instruction_en: "Write about what people are doing in the park right now!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng g\u00ec m\u1ecdi ng\u01b0\u1eddi \u0111ang l\u00e0m trong c\u00f4ng vi\u00ean ngay l\u00fac n\u00e0y!",
-  prompt_en: "What is happening in the park? What are different people doing?",
-  prompt_vi: "Chuy\u1ec7n g\u00ec \u0111ang x\u1ea3y ra trong c\u00f4ng vi\u00ean? M\u1ecdi ng\u01b0\u1eddi \u0111ang l\u00e0m g\u00ec?",
-  keywords: ["fun", "walking", "mum", "jogging", "running", "dog"],
-  topic_talk_prompt: "Describe what you see happening in the park right now!",
+  title: "My Day at the Park",
+  min_words: 30,
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: true,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "walking with my mom", "vi": "di bo voi me", "distractor": false },
+      { "word": "holding my hand", "vi": "nam tay toi", "distractor": false },
+      { "word": "jogging ahead of us", "vi": "chay truoc chung toi", "distractor": false },
+      { "word": "running very fast", "vi": "chay rat nhanh", "distractor": false },
+      { "word": "sitting on a bench", "vi": "ngoi tren ghe", "distractor": false },
+      { "word": "reading a book", "vi": "doc sach", "distractor": false },
+      { "word": "having a picnic", "vi": "da ngoai", "distractor": false },
+      { "word": "eating yummy sandwiches", "vi": "an sandwich ngon", "distractor": false },
+      { "word": "relaxing under the trees", "vi": "thu gian duoi cay", "distractor": false },
+      { "word": "soft", "vi": "mem", "distractor": false },
+      { "word": "flowers everywhere", "vi": "hoa khap noi", "distractor": false },
+      { "word": "my favorite place", "vi": "noi yeu thich cua toi", "distractor": false },
+      { "word": "busy and fun", "vi": "dong duc va vui", "distractor": false },
+      { "word": "walking her small dog", "vi": "dac cho con", "distractor": false },
+      { "word": "sleeping", "vi": "ngu", "distractor": true },
+      { "word": "boring", "vi": "nham chan", "distractor": true },
+      { "word": "crying", "vi": "khoc", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "The park is ___ today.",
-        "answers": [
-            "fun"
-        ]
+      "template": "Today I am going to the park with my family. The park is ___!",
+      "answers": ["busy and fun"]
     },
     {
-        "template": "I am ___ with my mum.",
-        "answers": [
-            "walking"
-        ]
+      "template": "I am ___ ___. She is ___ ___.",
+      "answers": ["walking with my mom", "holding my hand"]
     },
     {
-        "template": "My dad is ___.",
-        "answers": [
-            "jogging"
-        ]
+      "template": "My dad is ___. I see a boy. He is ___!",
+      "answers": ["jogging ahead of us", "running very fast"]
     },
     {
-        "template": "A boy is ___ with his dog.",
-        "answers": [
-            "running"
-        ]
+      "template": "An old man is ___ ___. He is ___ ___.",
+      "answers": ["sitting on a bench", "reading a book"]
+    },
+    {
+      "template": "My family is ___ now. We are ___ ___.",
+      "answers": ["having a picnic", "eating yummy sandwiches"]
+    },
+    {
+      "template": "I am ___ ___. The grass is ___. I see ___ ___ ___! The park is ___!",
+      "answers": ["relaxing under the trees", "soft", "flowers everywhere", "my favorite place"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "fun",
-        "vi": "thú vị",
-        "distractor": false
-    },
-    {
-        "word": "walking",
-        "vi": "đi bộ",
-        "distractor": false
-    },
-    {
-        "word": "jogging",
-        "vi": "chạy bộ",
-        "distractor": false
-    },
-    {
-        "word": "running",
-        "vi": "chạy",
-        "distractor": false
-    },
-    {
-        "word": "boring",
-        "vi": "chán",
-        "distractor": true
-    },
-    {
-        "word": "swimming",
-        "vi": "bơi lội",
-        "distractor": true
-    },
-    {
-        "word": "sleeping",
-        "vi": "đang ngủ",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

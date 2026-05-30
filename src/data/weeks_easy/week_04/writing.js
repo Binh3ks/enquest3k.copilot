@@ -1,82 +1,59 @@
 export default {
   title: "My Happy Jar",
-  min_words: 20,
-  model_sentence: "I like playing. I like drawing. I like reading. I feel happy when I draw.",
-  instruction_en: "Write about things you like doing!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 nh\u1eefng vi\u1ec7c b\u1ea1n th\u00edch l\u00e0m!",
+  min_words: 30,
+  model_sentence: "My name is Mia. I play with my toys every afternoon. I draw pictures of animals and flowers. I read books before bed. When I play, I smile. When I draw, I laugh with joy. When I read, I feel very happy. I have many happy things. I love each moment. They make me feel good every day. Every afternoon is a happy time for me!",
+  instruction_en: "Write about things you like doing and how they make you feel!",
+  instruction_vi: "Viết về những việc bạn thích làm và cảm giác của bạn!",
   prompt_en: "What do you like doing? How do you feel when you do it?",
-  prompt_vi: "B\u1ea1n th\u00edch l\u00e0m g\u00ec? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o khi l\u00e0m \u0111i\u1ec1u \u0111\u00f3?",
-  keywords: ["playing", "drawing", "reading", "happy"],
+  prompt_vi: "Bạn thích làm gì? Bạn cảm thấy thế nào khi làm điều đó?",
+  keywords: ["play with toys", "every afternoon", "draw pictures", "of animals and flowers", "read books", "before bed", "smile", "laugh with joy", "feel happy", "each moment", "every day", "happy time"],
   topic_talk_prompt: "What do you like doing? How does it make you feel?",
   sentence_frames: [
     {
-        "template": "I like ___.",
-        "answers": [
-            "playing"
-        ]
+      "template": "My name is ___.",
+      "answers": ["Mia"]
     },
     {
-        "template": "I also like ___.",
-        "answers": [
-            "drawing"
-        ]
+      "template": "I ___ with my toys ___.",
+      "answers": ["play", "every afternoon"]
     },
     {
-        "template": "I love ___, too.",
-        "answers": [
-            "reading"
-        ]
+      "template": "I ___ pictures of animals and flowers.",
+      "answers": ["draw"]
     },
     {
-        "template": "I feel ___ when I draw.",
-        "answers": [
-            "happy"
-        ]
+      "template": "I ___ books ___ bed.",
+      "answers": ["read", "before"]
+    },
+    {
+      "template": "When I ___, I ___. When I draw, I ___.",
+      "answers": ["play", "smile", "laugh with joy"]
+    },
+    {
+      "template": "I feel ___ when I read.",
+      "answers": ["happy"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
       label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
+      show_by_default: true,
       scaffolding_stage: "high",
       words: [
-    {
-        "word": "playing",
-        "vi": "chơi",
-        "distractor": false
-    },
-    {
-        "word": "drawing",
-        "vi": "vẽ",
-        "distractor": false
-    },
-    {
-        "word": "reading",
-        "vi": "đọc",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "sleeping",
-        "vi": "ngủ",
-        "distractor": true
-    },
-    {
-        "word": "sad",
-        "vi": "buồn",
-        "distractor": true
-    },
-    {
-        "word": "cooking",
-        "vi": "nấu ăn",
-        "distractor": true
-    }
-]
+        { "word": "Mia", "vi": "", "distractor": false },
+        { "word": "play", "vi": "chơi", "distractor": false },
+        { "word": "every afternoon", "vi": "mỗi buổi chiều", "distractor": false },
+        { "word": "draw", "vi": "vẽ", "distractor": false },
+        { "word": "read", "vi": "đọc", "distractor": false },
+        { "word": "before", "vi": "trước khi", "distractor": false },
+        { "word": "smile", "vi": "mỉm cười", "distractor": false },
+        { "word": "laugh with joy", "vi": "cười vui", "distractor": false },
+        { "word": "happy", "vi": "vui", "distractor": false },
+        { "word": "sleeping", "vi": "ngủ", "distractor": true },
+        { "word": "sad", "vi": "buồn", "distractor": true },
+        { "word": "cooking", "vi": "nấu ăn", "distractor": true }
+      ]
     }
   }
 };

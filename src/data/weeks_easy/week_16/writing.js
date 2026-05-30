@@ -1,82 +1,60 @@
 export default {
-  title: "My Favorite Sport",
-  min_words: 25,
-  model_sentence: "I love football. I am kicking the ball. My team is running fast. We are scoring a goal!",
-  instruction_en: "Write about your favorite sport!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 m\u00f4n th\u1ec3 thao y\u00eau th\u00edch c\u1ee7a b\u1ea1n!",
-  prompt_en: "What sport do you love? What are you doing? How does it feel?",
-  prompt_vi: "B\u1ea1n y\u00eau th\u00edch m\u00f4n th\u1ec3 thao n\u00e0o? B\u1ea1n \u0111ang l\u00e0m g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["football", "kicking", "ball", "running", "scoring", "goal"],
-  topic_talk_prompt: "Tell me about your favorite sport!",
+  title: "My First Soccer Game",
+  min_words: 30,
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: true,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "very excited", "vi": "rat phan khich", "distractor": false },
+      { "word": "running very fast", "vi": "chay rat nhanh", "distractor": false },
+      { "word": "kicking the ball", "vi": "sut bong", "distractor": false },
+      { "word": "catching it", "vi": "bat no", "distractor": false },
+      { "word": "passing it", "vi": "chuyen no", "distractor": false },
+      { "word": "has energy", "vi": "co nang luong", "distractor": false },
+      { "word": "in motion", "vi": "dang chuyen dong", "distractor": false },
+      { "word": "moving fast", "vi": "di chuyen nhanh", "distractor": false },
+      { "word": "playing soccer", "vi": "choi bong", "distractor": false },
+      { "word": "cheering loudly", "vi": "co vu to", "distractor": false },
+      { "word": "shout with excitement", "vi": "het len voi vui", "distractor": false },
+      { "word": "throw the ball", "vi": "nem bong", "distractor": false },
+      { "word": "use my feet", "vi": "dung chan", "distractor": false },
+      { "word": "wrong", "vi": "sai roi", "distractor": false },
+      { "word": "scoring a goal", "vi": "ghi ban", "distractor": false },
+      { "word": "jumping up and down", "vi": "nhay len xuong", "distractor": false },
+      { "word": "comes to watch", "vi": "den xem", "distractor": false },
+      { "word": "takes photos", "vi": "chup anh", "distractor": false },
+      { "word": "drink water", "vi": "uong nuoc", "distractor": false },
+      { "word": "sleep", "vi": "ngu", "distractor": true },
+      { "word": "hate soccer", "vi": "ghet bong", "distractor": true },
+      { "word": "give up", "vi": "bo cuoc", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "I love ___.",
-        "answers": [
-            "football"
-        ]
+      "template": "Today is my first soccer game! I am ___!",
+      "answers": ["very excited"]
     },
     {
-        "template": "I am ___ the ball.",
-        "answers": [
-            "kicking"
-        ]
+      "template": "Look! I am ___ ___. My legs are moving fast. This is fun!",
+      "answers": ["running very fast"]
     },
     {
-        "template": "My team is running ___.",
-        "answers": [
-            "fast"
-        ]
+      "template": "My friend is ___ ___. I am ___ ___.",
+      "answers": ["kicking the ball", "catching it"]
     },
     {
-        "template": "We are scoring a ___!",
-        "answers": [
-            "goal"
-        ]
+      "template": "Now I am ___. The ball ___ ___. It is ___!",
+      "answers": ["passing it", "has energy", "in motion"]
+    },
+    {
+      "template": "Our team is ___ ___. Everyone is ___ ___ ___!",
+      "answers": ["playing soccer", "cheering loudly", "shout with excitement"]
+    },
+    {
+      "template": "Oh no! I ___ ___ ___. That is ___! In soccer I can only ___ ___. The other team is ___ ___. They are ___ ___ ___! I want to score a goal too!",
+      "answers": ["throw the ball", "wrong", "use my feet", "scoring a goal", "jumping up and down"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "football",
-        "vi": "bóng đá",
-        "distractor": false
-    },
-    {
-        "word": "kicking",
-        "vi": "đá",
-        "distractor": false
-    },
-    {
-        "word": "fast",
-        "vi": "nhanh",
-        "distractor": false
-    },
-    {
-        "word": "goal",
-        "vi": "bàn thắng",
-        "distractor": false
-    },
-    {
-        "word": "catching",
-        "vi": "bắt — không phải đá bóng",
-        "distractor": true
-    },
-    {
-        "word": "slowly",
-        "vi": "chậm rãi",
-        "distractor": true
-    },
-    {
-        "word": "point",
-        "vi": "điểm — không phải goal",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

@@ -1,129 +1,73 @@
 export default {
   title: "My Family Squad",
-  min_words: 40,
-  model_sentence: "I have a wonderful family. My mother is a teacher and she is very kind and patient. My father is a doctor and he works very hard every day. My older sister is funny and she always makes me laugh. My little brother is only three years old but he is already very smart. We love each other and we do everything together.",
+  min_words: 45,
+  model_sentence: "My name is Emma. This is my family. We are like a team! This is my mother. She is the leader of our family and she helps us every day. This is my father. He is strong and kind. He works hard for our family. This is my big brother Tom. He helps me with homework. This is my little sister Lily. She is funny and sweet. We love each other very much. Our home is full of love. We work together as a great team.",
   instruction_en: "Describe each family member in detail!",
-  instruction_vi: "M\u00f4 t\u1ea3 t\u1eebng th\u00e0nh vi\u00ean gia \u0111\u00ecnh chi ti\u1ebft!",
-  prompt_en: "What does each person do? What are they like? What do you do together?",
-  prompt_vi: "M\u1ed7i ng\u01b0\u1eddi l\u00e0m g\u00ec? H\u1ecd th\u1ebf n\u00e0o? C\u1ea3 nh\u00e0 l\u00e0m g\u00ec c\u00f9ng nhau?",
-  keywords: ["wonderful", "teacher", "patient", "doctor", "funny", "laugh", "smart", "together"],
+  instruction_vi: "Mô tả từng thành viên gia đình chi tiết!",
+  prompt_en: "What does each person do? What are they like? What do you do together as a family?",
+  prompt_vi: "Mỗi người làm gì? Họ thế nào? Cả nhà làm gì cùng nhau?",
+  keywords: ["like a team", "leader", "helps us every day", "strong and kind", "works hard", "big brother", "little sister", "funny and sweet", "love each other", "full of love", "work together"],
   topic_talk_prompt: "Tell me about each person in your family!",
   sentence_frames: [
     {
-        "template": "My mother is ___ and she is ___ and ___.",
-        "answers": [
-            "a teacher",
-            "very kind",
-            "patient"
-        ]
+      "template": "This is my ___. She is the ___ of our family.",
+      "answers": ["mother", "leader"]
     },
     {
-        "template": "My father is ___ and he works ___ every day.",
-        "answers": [
-            "a doctor",
-            "very hard"
-        ]
+      "template": "My mother helps us ___.",
+      "answers": ["every day"]
     },
     {
-        "template": "My older sister is ___ and she always ___.",
-        "answers": [
-            "funny",
-            "makes me laugh"
-        ]
+      "template": "This is my ___. He is ___ and kind.",
+      "answers": ["father", "strong"]
     },
     {
-        "template": "My little brother is only ___ but he is already ___.",
-        "answers": [
-            "three years old",
-            "very smart"
-        ]
+      "template": "He works ___ for our family.",
+      "answers": ["very hard"]
     },
     {
-        "template": "We ___ each other and do ___ together.",
-        "answers": [
-            "love",
-            "everything"
-        ]
+      "template": "This is my ___ ___. His name is ___.",
+      "answers": ["big brother", "Tom"]
+    },
+    {
+      "template": "He ___ me with ___.",
+      "answers": ["helps", "homework"]
+    },
+    {
+      "template": "This is my ___ ___. She is ___ and ___.",
+      "answers": ["little sister", "funny", "sweet"]
+    },
+    {
+      "template": "We ___ each other and ___ together as a great team.",
+      "answers": ["love", "work"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
       label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       show_by_default: false,
-      scaffolding_stage: "high",
+      scaffolding_stage: "low",
       words: [
-    {
-        "word": "a teacher",
-        "vi": "giáo viên",
-        "distractor": false
-    },
-    {
-        "word": "very kind",
-        "vi": "rất tốt bụng",
-        "distractor": false
-    },
-    {
-        "word": "patient",
-        "vi": "kiên nhẫn",
-        "distractor": false
-    },
-    {
-        "word": "a doctor",
-        "vi": "bác sĩ",
-        "distractor": false
-    },
-    {
-        "word": "very hard",
-        "vi": "rất chăm chỉ",
-        "distractor": false
-    },
-    {
-        "word": "funny",
-        "vi": "hài hước",
-        "distractor": false
-    },
-    {
-        "word": "makes me laugh",
-        "vi": "khiến tôi cười",
-        "distractor": false
-    },
-    {
-        "word": "three years old",
-        "vi": "ba tuổi",
-        "distractor": false
-    },
-    {
-        "word": "very smart",
-        "vi": "rất thông minh",
-        "distractor": false
-    },
-    {
-        "word": "love",
-        "vi": "yêu thương",
-        "distractor": false
-    },
-    {
-        "word": "everything",
-        "vi": "mọi thứ",
-        "distractor": false
-    },
-    {
-        "word": "very mean",
-        "vi": "rất xấu tính",
-        "distractor": true
-    },
-    {
-        "word": "never talks to me",
-        "vi": "không bao giờ nói chuyện",
-        "distractor": true
-    },
-    {
-        "word": "ignores everyone",
-        "vi": "phớt lờ mọi người",
-        "distractor": true
-    }
-]
+        { "word": "mother", "vi": "mẹ", "distractor": false },
+        { "word": "leader", "vi": "người lãnh đạo", "distractor": false },
+        { "word": "every day", "vi": "mỗi ngày", "distractor": false },
+        { "word": "father", "vi": "bố", "distractor": false },
+        { "word": "strong", "vi": "mạnh mẽ", "distractor": false },
+        { "word": "very hard", "vi": "rất chăm chỉ", "distractor": false },
+        { "word": "big brother", "vi": "anh trai", "distractor": false },
+        { "word": "Tom", "vi": "", "distractor": false },
+        { "word": "helps", "vi": "giúp đỡ", "distractor": false },
+        { "word": "homework", "vi": "bài tập về nhà", "distractor": false },
+        { "word": "little sister", "vi": "em gái", "distractor": false },
+        { "word": "funny", "vi": "vui tính", "distractor": false },
+        { "word": "sweet", "vi": "dễ thương", "distractor": false },
+        { "word": "love", "vi": "yêu thương", "distractor": false },
+        { "word": "work", "vi": "làm việc", "distractor": false },
+        { "word": "very mean", "vi": "rất xấu tính", "distractor": true },
+        { "word": "never talks", "vi": "không bao giờ nói chuyện", "distractor": true },
+        { "word": "ignores everyone", "vi": "phớt lờ mọi người", "distractor": true }
+      ]
     }
   }
 };

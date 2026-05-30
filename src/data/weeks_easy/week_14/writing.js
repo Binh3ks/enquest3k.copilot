@@ -1,82 +1,57 @@
 export default {
-  title: "My World",
-  min_words: 25,
-  model_sentence: "My name is Emma. I have a wonderful family. I live near the park. I feel happy every day.",
-  instruction_en: "Write about your world \u2014 your family, home, and feelings!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 th\u1ebf gi\u1edbi c\u1ee7a b\u1ea1n \u2014 gia \u0111\u00ecnh, nh\u00e0 v\u00e0 c\u1ea3m x\u00fac!",
-  prompt_en: "What is your name? What is your family like? Where do you live? How do you feel?",
-  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? Gia \u0111\u00ecnh th\u1ebf n\u00e0o? B\u1ea1n s\u1ed1ng \u1edf \u0111\u00e2u? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["Emma", "wonderful", "family", "park", "happy"],
-  topic_talk_prompt: "Tell me about your world!",
+  title: "My Presentation Day",
+  min_words: 30,
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: true,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "8 years old", "vi": "8 tuoi", "distractor": false },
+      { "word": "present my poster", "vi": "trinh bay poster", "distractor": false },
+      { "word": "show you my world", "vi": "cho ban xem the gioi cua toi", "distractor": false },
+      { "word": "my loving family", "vi": "gia dinh yeu thuong", "distractor": false },
+      { "word": "love", "vi": "yeu", "distractor": false },
+      { "word": "4 people", "vi": "4 nguoi", "distractor": false },
+      { "word": "my mom, my dad, my sister, and me", "vi": "me, bo, chi, va toi", "distractor": false },
+      { "word": "sing very well", "vi": "hat rat hay", "distractor": false },
+      { "word": "dance happily", "vi": "nhay vui ve", "distractor": false },
+      { "word": "drawing pictures of animals and flowers", "vi": "ve tranh dong vat va hoa", "distractor": false },
+      { "word": "feel very confident", "vi": "cam thay tu tin", "distractor": false },
+      { "word": "listen to me", "vi": "lang nghe toi", "distractor": false },
+      { "word": "feel proud of my work", "vi": "tu hao ve cong viec", "distractor": false },
+      { "word": "Thank you for listening", "vi": "Cam on da lang nghe", "distractor": false },
+      { "word": "very special day", "vi": "ngay dac biet", "distractor": false },
+      { "word": "have questions", "vi": "co cau hoi", "distractor": false },
+      { "word": "terrible", "vi": "te hai", "distractor": true },
+      { "word": "boring", "vi": "nham chan", "distractor": true },
+      { "word": "sad", "vi": "buon", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "My name is ___.",
-        "answers": [
-            "Emma"
-        ]
+      "template": "Welcome to my presentation! My name is Emma. I am ___.",
+      "answers": ["8 years old"]
     },
     {
-        "template": "I have a ___ family.",
-        "answers": [
-            "wonderful"
-        ]
+      "template": "Today I ___ ___. I want to ___ ___ ___.",
+      "answers": ["present my poster", "show you my world"]
     },
     {
-        "template": "I live near the ___.",
-        "answers": [
-            "park"
-        ]
+      "template": "This is ___. I ___ my family. I have ___: ___.",
+      "answers": ["my loving family", "love", "4 people", "my mom, my dad, my sister, and me"]
     },
     {
-        "template": "I feel ___ every day.",
-        "answers": [
-            "happy"
-        ]
+      "template": "I can ___. I can also ___. I am good at ___.",
+      "answers": ["sing very well", "dance happily", "drawing pictures of animals and flowers"]
+    },
+    {
+      "template": "I ___ ___ today. The audience ___.",
+      "answers": ["feel very confident", "listen to me"]
+    },
+    {
+      "template": "I ___ ___ ___. ___! This is my ___! Do you ___?",
+      "answers": ["feel proud of my work", "Thank you for listening", "very special day", "have questions"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "Emma",
-        "vi": "",
-        "distractor": false
-    },
-    {
-        "word": "wonderful",
-        "vi": "tuyệt vời",
-        "distractor": false
-    },
-    {
-        "word": "park",
-        "vi": "công viên",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "terrible",
-        "vi": "tệ hại",
-        "distractor": true
-    },
-    {
-        "word": "library",
-        "vi": "thư viện",
-        "distractor": true
-    },
-    {
-        "word": "sad",
-        "vi": "buồn",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

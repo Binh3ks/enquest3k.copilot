@@ -1,94 +1,57 @@
 export default {
   title: "My City",
-  min_words: 25,
-  model_sentence: "I live in a big city. The city is busy and noisy. I see tall buildings every day. People go to work and school.",
-  instruction_en: "Write about your city!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 th\u00e0nh ph\u1ed1 c\u1ee7a b\u1ea1n!",
-  prompt_en: "Where do you live? What is it like? What do you see?",
-  prompt_vi: "B\u1ea1n s\u1ed1ng \u1edf \u0111\u00e2u? N\u01a1i \u0111\u00f3 nh\u01b0 th\u1ebf n\u00e0o? B\u1ea1n nh\u00ecn th\u1ea5y g\u00ec?",
-  keywords: ["city", "busy", "noisy", "buildings", "people", "work", "school"],
-  topic_talk_prompt: "Tell me about your city!",
+  min_words: 30,
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: true,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "a busy street", "vi": "duong pho dong cua", "distractor": false },
+      { "word": "many people and cars", "vi": "nhieu nguoi va xe", "distractor": false },
+      { "word": "a noisy place", "vi": "noi on ao", "distractor": false },
+      { "word": "a tall building", "vi": "toa nha cao", "distractor": false },
+      { "word": "very high", "vi": "rat cao", "distractor": false },
+      { "word": "the yellow bus", "vi": "xe buyt mau vang", "distractor": false },
+      { "word": "stops near me", "vi": "dung gan toi", "distractor": false },
+      { "word": "get on the bus", "vi": "len xe buyt", "distractor": false },
+      { "word": "lots of traffic", "vi": "nhieu giao thong", "distractor": false },
+      { "word": "move slowly", "vi": "di chuyen cham", "distractor": false },
+      { "word": "a quiet street", "vi": "con pho yen tinh", "distractor": false },
+      { "word": "less busy than the main street", "vi": "it dong cu hon con pho chinh", "distractor": false },
+      { "word": "tall buildings", "vi": "nhung toa nha cao", "distractor": false },
+      { "word": "busy streets", "vi": "duong pho dong cua", "distractor": false },
+      { "word": "the modern city", "vi": "thanh pho hien dai", "distractor": false },
+      { "word": "exploring", "vi": "kham pha", "distractor": false },
+      { "word": "quiet and empty", "vi": "yen tinh va trong vac", "distractor": true },
+      { "word": "nothing exciting", "vi": "khong co gi thu vi", "distractor": true },
+      { "word": "hate the city", "vi": "ghet thanh pho", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "I live in a ___ city.",
-        "answers": [
-            "big"
-        ]
+      "template": "I walk on ___ every day. There are ___ everywhere.",
+      "answers": ["a busy street", "many people and cars"]
     },
     {
-        "template": "The city is ___ and ___.",
-        "answers": [
-            "busy",
-            "noisy"
-        ]
+      "template": "It is ___. I hear car horns and people talking.",
+      "answers": ["a noisy place"]
     },
     {
-        "template": "I see ___ buildings every day.",
-        "answers": [
-            "tall"
-        ]
+      "template": "I see ___. It is ___!",
+      "answers": ["a tall building", "very high"]
     },
     {
-        "template": "People go to ___ and ___.",
-        "answers": [
-            "work",
-            "school"
-        ]
+      "template": "A ___ ___ near me. People ___ to go to work.",
+      "answers": ["yellow bus", "stops near me", "get on the bus"]
+    },
+    {
+      "template": "There is ___ on the road. Vehicles ___.",
+      "answers": ["lots of traffic", "move slowly"]
+    },
+    {
+      "template": "I also see ___. It is ___. I like the city!",
+      "answers": ["a quiet street", "less busy than the main street"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "big",
-        "vi": "to lớn",
-        "distractor": false
-    },
-    {
-        "word": "busy",
-        "vi": "bận rộn",
-        "distractor": false
-    },
-    {
-        "word": "noisy",
-        "vi": "ồn ào",
-        "distractor": false
-    },
-    {
-        "word": "tall",
-        "vi": "cao",
-        "distractor": false
-    },
-    {
-        "word": "work",
-        "vi": "làm việc",
-        "distractor": false
-    },
-    {
-        "word": "school",
-        "vi": "trường học",
-        "distractor": false
-    },
-    {
-        "word": "tiny",
-        "vi": "rất nhỏ",
-        "distractor": true
-    },
-    {
-        "word": "peaceful",
-        "vi": "bình yên",
-        "distractor": true
-    },
-    {
-        "word": "silent",
-        "vi": "im lặng — sai ngữ cảnh",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

@@ -1,117 +1,74 @@
 export default {
   title: "Hello, World!",
-  min_words: 35,
-  model_sentence: "My name is Alex and I am eight years old. I am a student at Green Hill School. My teacher is Ms. Johnson and she is very kind. I have many friends in my class. My favorite subject is English because I love reading stories. I feel excited and happy every day at school.",
+  min_words: 45,
+  model_sentence: "My name is Alex and I am eight years old. I am a new student at Greenwood Elementary School. Every morning, I wake up early and get ready for school. My backpack is heavy because I carry my story book and small notebook every day. My teacher, Ms. Johnson, is very kind and patient. She teaches us English, Math, and Science. I love learning new things and studying every day. I want to become a young scientist when I grow up.",
   instruction_en: "Write about yourself and your school in full sentences!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 b\u1ea3n th\u00e2n v\u00e0 tr\u01b0\u1eddng h\u1ecdc b\u1eb1ng c\u00e2u \u0111\u1ea7y \u0111\u1ee7!",
-  prompt_en: "What is your name and age? What is your school and teacher like? What do you love? How do you feel?",
-  prompt_vi: "T\u00ean v\u00e0 tu\u1ed5i? Tr\u01b0\u1eddng v\u00e0 th\u1ea7y/c\u00f4 th\u1ebf n\u00e0o? B\u1ea1n th\u00edch g\u00ec? C\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["name", "student", "teacher", "kind", "subject", "English", "excited"],
+  instruction_vi: "Viết về bản thân và trường học bằng câu đầy đủ!",
+  prompt_en: "What is your name and age? What is your school like? What do you carry in your bag? What do you want to become?",
+  prompt_vi: "Tên và tuổi bạn là gì? Trường của bạn thế nào? Bạn mang gì trong cặp? Bạn muốn trở thành gì?",
+  keywords: ["new student", "Greenwood Elementary", "wake up early", "get ready", "story book", "small notebook", "very kind and patient", "English", "Math", "Science", "learning new things", "studying every day", "young scientist"],
   topic_talk_prompt: "Tell me about yourself and your school!",
   sentence_frames: [
     {
-        "template": "My name is ___ and I am ___ years old.",
-        "answers": [
-            "Alex",
-            "eight"
-        ]
+      "template": "My name is ___ and I am ___ years old.",
+      "answers": ["Alex", "eight"]
     },
     {
-        "template": "I am a student at ___ School.",
-        "answers": [
-            "Green Hill"
-        ]
+      "template": "I am a ___ at ___ School.",
+      "answers": ["new student", "Greenwood Elementary"]
     },
     {
-        "template": "My teacher is ___ and she is ___.",
-        "answers": [
-            "Ms. Johnson",
-            "very kind"
-        ]
+      "template": "Every morning, I ___ and ___ for school.",
+      "answers": ["wake up early", "get ready"]
     },
     {
-        "template": "My favorite subject is ___ because I love ___.",
-        "answers": [
-            "English",
-            "reading stories"
-        ]
+      "template": "My teacher is ___ and she is ___.",
+      "answers": ["Ms. Johnson", "very kind and patient"]
     },
     {
-        "template": "I feel ___ and ___ every day at school.",
-        "answers": [
-            "excited",
-            "happy"
-        ]
+      "template": "She teaches us ___, ___, and ___.",
+      "answers": ["English", "Math", "Science"]
+    },
+    {
+      "template": "My backpack is heavy because I carry my ___ and ___ every day.",
+      "answers": ["story book", "small notebook"]
+    },
+    {
+      "template": "I love ___ and ___ every day.",
+      "answers": ["learning new things", "studying"]
+    },
+    {
+      "template": "I want to become a ___ when I grow up.",
+      "answers": ["young scientist"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
       label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       show_by_default: false,
-      scaffolding_stage: "high",
+      scaffolding_stage: "low",
       words: [
-    {
-        "word": "Alex",
-        "vi": "",
-        "distractor": false
-    },
-    {
-        "word": "eight",
-        "vi": "tám",
-        "distractor": false
-    },
-    {
-        "word": "Green Hill",
-        "vi": "",
-        "distractor": false
-    },
-    {
-        "word": "Ms. Johnson",
-        "vi": "",
-        "distractor": false
-    },
-    {
-        "word": "very kind",
-        "vi": "rất tốt bụng",
-        "distractor": false
-    },
-    {
-        "word": "English",
-        "vi": "môn tiếng Anh",
-        "distractor": false
-    },
-    {
-        "word": "reading stories",
-        "vi": "đọc truyện",
-        "distractor": false
-    },
-    {
-        "word": "excited",
-        "vi": "hào hứng",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "very strict",
-        "vi": "rất nghiêm khắc",
-        "distractor": true
-    },
-    {
-        "word": "maths",
-        "vi": "toán — sai môn",
-        "distractor": true
-    },
-    {
-        "word": "bored and tired",
-        "vi": "chán và mệt",
-        "distractor": true
-    }
-]
+        { "word": "Alex", "vi": "", "distractor": false },
+        { "word": "eight", "vi": "tám", "distractor": false },
+        { "word": "new student", "vi": "học sinh mới", "distractor": false },
+        { "word": "Greenwood Elementary", "vi": "", "distractor": false },
+        { "word": "wake up early", "vi": "thức dậy sớm", "distractor": false },
+        { "word": "get ready", "vi": "chuẩn bị sẵn sàng", "distractor": false },
+        { "word": "Ms. Johnson", "vi": "", "distractor": false },
+        { "word": "very kind and patient", "vi": "rất tốt bụng và kiên nhẫn", "distractor": false },
+        { "word": "English", "vi": "tiếng Anh", "distractor": false },
+        { "word": "Math", "vi": "Toán", "distractor": false },
+        { "word": "Science", "vi": "Khoa học", "distractor": false },
+        { "word": "story book", "vi": "sách truyện", "distractor": false },
+        { "word": "small notebook", "vi": "quyển vở nhỏ", "distractor": false },
+        { "word": "learning new things", "vi": "học những điều mới", "distractor": false },
+        { "word": "studying", "vi": "học tập", "distractor": false },
+        { "word": "young scientist", "vi": "nhà khoa học trẻ", "distractor": false },
+        { "word": "very strict", "vi": "rất nghiêm khắc", "distractor": true },
+        { "word": "sleeping late", "vi": "ngủ muộn", "distractor": true },
+        { "word": "bored and tired", "vi": "chán và mệt", "distractor": true }
+      ]
     }
   }
 };

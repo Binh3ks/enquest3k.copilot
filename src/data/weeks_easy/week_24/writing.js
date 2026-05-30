@@ -1,93 +1,57 @@
 export default {
   title: "My Emotional Day",
-  min_words: 28,
-  model_sentence: "Yesterday I felt scared. I could not find my bag. Then I felt relieved. My mum helped me. I was proud at the end.",
+  min_words: 30,
+  model_sentence: "Yesterday I felt worried. I could not find my homework. Then I felt relieved. My mum helped me. At school I felt excited because there was a special visitor. It was a famous author. At the end I felt tired but happy.",
   instruction_en: "Write about an emotional day using feeling words!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 m\u1ed9t ng\u00e0y \u0111\u1ea7y c\u1ea3m x\u00fac b\u1eb1ng c\u00e1c t\u1eeb c\u1ea3m x\u00fac!",
+  instruction_vi: "Viết về một ngày đầy cảm xúc bằng các từ cảm xúc!",
   prompt_en: "How did you feel? What happened? How did you feel at the end?",
-  prompt_vi: "B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o? Chuy\u1ec7n g\u00ec x\u1ea3y ra? Cu\u1ed1i c\u00f9ng b\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o?",
-  keywords: ["scared", "bag", "relieved", "helped", "proud"],
+  prompt_vi: "Bạn cảm thấy thế nào? Chuyện gì xảy ra? Cuối cùng bạn cảm thấy thế nào?",
+  keywords: ["worried", "relieved", "excited", "surprised", "bored", "tired", "happy"],
   topic_talk_prompt: "Tell me about a time you felt many different emotions in one day!",
   sentence_frames: [
     {
-        "template": "Yesterday I felt ___.",
-        "answers": [
-            "scared"
-        ]
+      "template": "Yesterday I felt ___.",
+      "answers": ["worried"]
     },
     {
-        "template": "I could not find my ___.",
-        "answers": [
-            "bag"
-        ]
+      "template": "I could not find my ___.",
+      "answers": ["homework"]
     },
     {
-        "template": "Then I felt ___.",
-        "answers": [
-            "relieved"
-        ]
+      "template": "Then I felt ___.",
+      "answers": ["relieved"]
     },
     {
-        "template": "My mum ___ me.",
-        "answers": [
-            "helped"
-        ]
+      "template": "At school I felt ___ because there was a ___ visitor.",
+      "answers": ["excited", "special"]
     },
     {
-        "template": "I was ___ at the end.",
-        "answers": [
-            "proud"
-        ]
+      "template": "It was a ___ author!",
+      "answers": ["famous"]
+    },
+    {
+      "template": "At the end I felt ___ but ___.",
+      "answers": ["tired", "happy"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
+      label_en: "Need help? Click next to each blank",
+      label_vi: "Cần trợ giúp? Bấm bên cạnh mỗi ô",
+      show_by_default: true,
       scaffolding_stage: "medium-low",
       words: [
-    {
-        "word": "scared",
-        "vi": "sợ hãi",
-        "distractor": false
-    },
-    {
-        "word": "bag",
-        "vi": "cặp sách",
-        "distractor": false
-    },
-    {
-        "word": "relieved",
-        "vi": "nhẹ nhõm",
-        "distractor": false
-    },
-    {
-        "word": "helped",
-        "vi": "đã giúp",
-        "distractor": false
-    },
-    {
-        "word": "proud",
-        "vi": "tự hào",
-        "distractor": false
-    },
-    {
-        "word": "bored",
-        "vi": "chán",
-        "distractor": true
-    },
-    {
-        "word": "homework",
-        "vi": "bài tập — không khớp",
-        "distractor": true
-    },
-    {
-        "word": "angry",
-        "vi": "tức giận",
-        "distractor": true
-    }
-]
+        { "word": "worried", "vi": "lo lắng", "distractor": false },
+        { "word": "homework", "vi": "bài tập về nhà", "distractor": false },
+        { "word": "relieved", "vi": "nhẹ nhõm", "distractor": false },
+        { "word": "excited", "vi": "hào hứng", "distractor": false },
+        { "word": "special", "vi": "đặc biệt", "distractor": false },
+        { "word": "famous author", "vi": "nhà văn nổi tiếng", "distractor": false },
+        { "word": "tired", "vi": "mệt", "distractor": false },
+        { "word": "happy", "vi": "vui", "distractor": false },
+        { "word": "bored", "vi": "chán", "distractor": true },
+        { "word": "angry", "vi": "tức giận", "distractor": true }
+      ]
     }
   }
 };

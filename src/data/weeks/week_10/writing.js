@@ -1,158 +1,66 @@
 export default {
   title: "City vs Farm",
   min_words: 45,
-  model_sentence: "The city and the farm are very different places to live, and both have their own advantages and disadvantages. The city is exciting and modern because there are many shops, schools, restaurants, and entertainment centers. However, the city is also very noisy and crowded, and the air can be polluted because of heavy traffic. The farm, on the other hand, is peaceful and green with fresh air and wide open spaces. Although the farm is quiet and there is less to do, I think it is a healthier place to live. I would choose to live on the farm during the summer holidays because I love animals and nature. But I also need the city for school and learning, so the best solution might be to experience both.",
-  instruction_en: "Write a full compare and contrast text about city and farm life!",
-  instruction_vi: "Vi\u1ebft b\u00e0i so s\u00e1nh v\u00e0 \u0111\u1ed1i chi\u1ebfu \u0111\u1ea7y \u0111\u1ee7 v\u1ec1 th\u00e0nh ph\u1ed1 v\u00e0 n\u00f4ng tr\u1ea1i!",
-  prompt_en: "What are the advantages and disadvantages of each? Which would you choose and why?",
-  prompt_vi: "\u01afu v\u00e0 nh\u01b0\u1ee3c \u0111i\u1ec3m c\u1ee7a m\u1ed7i n\u01a1i l\u00e0 g\u00ec? B\u1ea1n ch\u1ecdn n\u01a1i n\u00e0o v\u00e0 t\u1ea1i sao?",
-  keywords: ["advantages", "disadvantages", "polluted", "entertainment", "peaceful", "solution", "experience"],
-  topic_talk_prompt: "Compare city life and farm life \u2014 which is better and why?",
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: false,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "exciting and modern", "vi": "thu vi va hien dai", "distractor": false },
+      { "word": "shops, schools, and entertainment", "vi": "cua hang, truong hoc, giai tri", "distractor": false },
+      { "word": "very noisy and crowded", "vi": "rat on ao va dong duc", "distractor": false },
+      { "word": "polluted", "vi": "o nhiem", "distractor": false },
+      { "word": "heavy traffic", "vi": "giao thong mac", "distractor": false },
+      { "word": "peaceful and green", "vi": "yen binh va xanh", "distractor": false },
+      { "word": "fresh air", "vi": "khong khi trong lanh", "distractor": false },
+      { "word": "wide open spaces", "vi": "khong gian rong mo", "distractor": false },
+      { "word": "quiet and less busy", "vi": "yen tinh va it ban ron", "distractor": false },
+      { "word": "a healthier place", "vi": "noi lamh manh hon", "distractor": false },
+      { "word": "live on the farm", "vi": "song o nong trai", "distractor": false },
+      { "word": "many animals", "vi": "nhieu dong vat", "distractor": false },
+      { "word": "beautiful nature", "vi": "thien nhien dep", "distractor": false },
+      { "word": "need the city", "vi": "can thanh pho", "distractor": false },
+      { "word": "school and learning", "vi": "truong hoc va hoc tap", "distractor": false },
+      { "word": "experience both places", "vi": "trai nghiem ca hai noi", "distractor": false },
+      { "word": "the best of both worlds", "vi": "tot nhat cua ca hai", "distractor": false },
+      { "word": "dangerous and unsafe", "vi": "nguy hiem va khong an toan", "distractor": true },
+      { "word": "boring and useless", "vi": "nham chan va vo ich", "distractor": true },
+      { "word": "avoid the farm", "vi": "tranh xa nong trai", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "The city is ___ and ___ because there are many shops, schools, and ___ centers.",
-        "answers": [
-            "exciting",
-            "modern",
-            "entertainment"
-        ]
+      "template": "The city is ___ because there are many ___, restaurants, and entertainment centers.",
+      "answers": ["exciting and modern", "shops, schools, and entertainment"]
     },
     {
-        "template": "However, the city is also ___ and ___, and the air can be ___ because of heavy traffic.",
-        "answers": [
-            "very noisy",
-            "crowded",
-            "polluted"
-        ]
+      "template": "However, the city is also ___ and ___, and the air can be ___ because of ___.",
+      "answers": ["very noisy and crowded", "polluted", "heavy traffic"]
     },
     {
-        "template": "The farm, on the other hand, is ___ and ___ with fresh air and ___.",
-        "answers": [
-            "peaceful",
-            "green",
-            "wide open spaces"
-        ]
+      "template": "The farm, on the other hand, is ___ with ___ and ___.",
+      "answers": ["peaceful and green", "fresh air", "wide open spaces"]
     },
     {
-        "template": "Although the farm is ___ and there is less to do, I think it is a ___ place to live.",
-        "answers": [
-            "quiet",
-            "healthier"
-        ]
+      "template": "Although the farm is ___ and there is less to do, I think it is ___ to live.",
+      "answers": ["quiet and less busy", "a healthier place"]
     },
     {
-        "template": "I would choose ___ during the summer because I love ___ and ___.",
-        "answers": [
-            "to live on the farm",
-            "animals",
-            "nature"
-        ]
+      "template": "I would choose to ___ during the summer holidays because I love ___ and ___.",
+      "answers": ["live on the farm", "many animals", "beautiful nature"]
     },
     {
-        "template": "The best solution might be to ___ both.",
-        "answers": [
-            "experience"
-        ]
+      "template": "But I also ___ for ___ and ___.",
+      "answers": ["need the city", "school and learning"]
+    },
+    {
+      "template": "The best solution might be to ___ every year.",
+      "answers": ["experience both places"]
+    },
+    {
+      "template": "That way, I can enjoy ___ and never feel bored!",
+      "answers": ["the best of both worlds"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "exciting",
-        "vi": "thú vị",
-        "distractor": false
-    },
-    {
-        "word": "modern",
-        "vi": "hiện đại",
-        "distractor": false
-    },
-    {
-        "word": "entertainment",
-        "vi": "giải trí",
-        "distractor": false
-    },
-    {
-        "word": "very noisy",
-        "vi": "rất ồn ào",
-        "distractor": false
-    },
-    {
-        "word": "crowded",
-        "vi": "đông đúc",
-        "distractor": false
-    },
-    {
-        "word": "polluted",
-        "vi": "ô nhiễm",
-        "distractor": false
-    },
-    {
-        "word": "peaceful",
-        "vi": "bình yên",
-        "distractor": false
-    },
-    {
-        "word": "green",
-        "vi": "xanh tươi",
-        "distractor": false
-    },
-    {
-        "word": "wide open spaces",
-        "vi": "không gian rộng mở",
-        "distractor": false
-    },
-    {
-        "word": "quiet",
-        "vi": "yên tĩnh",
-        "distractor": false
-    },
-    {
-        "word": "healthier",
-        "vi": "lành mạnh hơn",
-        "distractor": false
-    },
-    {
-        "word": "to live on the farm",
-        "vi": "sống ở nông trại",
-        "distractor": false
-    },
-    {
-        "word": "animals",
-        "vi": "động vật",
-        "distractor": false
-    },
-    {
-        "word": "nature",
-        "vi": "thiên nhiên",
-        "distractor": false
-    },
-    {
-        "word": "experience",
-        "vi": "trải nghiệm",
-        "distractor": false
-    },
-    {
-        "word": "dangerous",
-        "vi": "nguy hiểm",
-        "distractor": true
-    },
-    {
-        "word": "boring and useless",
-        "vi": "nhàm chán và vô ích",
-        "distractor": true
-    },
-    {
-        "word": "avoid",
-        "vi": "tránh xa",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

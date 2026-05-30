@@ -1,141 +1,69 @@
 export default {
   title: "My Favorite Weekend Place",
   min_words: 45,
-  model_sentence: "My favorite place to visit on the weekend is the large park near my house, and I go there almost every Saturday morning. The park has a beautiful lake, tall shady trees, and a wide path where people jog, cycle, and walk their dogs. I usually go with my parents and my younger sister because we all enjoy spending time outdoors together. We bring a picnic blanket and some sandwiches and then we find a quiet spot near the lake to sit and relax. My sister loves to feed the ducks while I fly my kite and my parents chat and read. By the time we go home in the afternoon, we all feel refreshed and happy.",
-  instruction_en: "Write about your favorite weekend place with lots of details!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 n\u01a1i y\u00eau th\u00edch cu\u1ed1i tu\u1ea7n v\u1edbi nhi\u1ec1u chi ti\u1ebft!",
-  prompt_en: "Where is it? What is there? Who goes with you? What do you all do?",
-  prompt_vi: "N\u01a1i \u0111\u00f3 \u1edf \u0111\u00e2u? \u1ede \u0111\u00f3 c\u00f3 g\u00ec? Ai \u0111i c\u00f9ng b\u1ea1n? C\u1ea3 nh\u00e0 l\u00e0m g\u00ec?",
-  keywords: ["lake", "shady", "jog", "picnic", "blanket", "refreshed", "ducks", "kite"],
-  topic_talk_prompt: "Describe your favorite weekend place from start to finish!",
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: false,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "a fun weekend plan", "vi": "ke hoach cuoi tuan vui ve", "distractor": false },
+      { "word": "go to the park", "vi": "di den cong vien", "distractor": false },
+      { "word": "play at the park", "vi": "choi o cong vien", "distractor": false },
+      { "word": "with my friends", "vi": "voi ban be", "distractor": false },
+      { "word": "read a story book", "vi": "doc sach truyen", "distractor": false },
+      { "word": "at the library", "vi": "o thu vien", "distractor": false },
+      { "word": "very interesting", "vi": "rat thu vi", "distractor": false },
+      { "word": "buy food", "vi": "mua thuc an", "distractor": false },
+      { "word": "at the supermarket", "vi": "o sieu thi", "distractor": false },
+      { "word": "help my mom", "vi": "giup me", "distractor": false },
+      { "word": "carry the bags", "vi": "mang tui", "distractor": false },
+      { "word": "slide down", "vi": "truot xuong", "distractor": false },
+      { "word": "at the playground", "vi": "o san choi", "distractor": false },
+      { "word": "On Sunday", "vi": "Vao chu nhat", "distractor": false },
+      { "word": "go to the zoo", "vi": "di so thu", "distractor": false },
+      { "word": "a lion and a monkey", "vi": "su tu va khi", "distractor": false },
+      { "word": "have lunch", "vi": "an trua", "distractor": false },
+      { "word": "at a restaurant", "vi": "o nha hang", "distractor": false },
+      { "word": "very delicious", "vi": "rat ngon", "distractor": false },
+      { "word": "special and fun", "vi": "dac biet va vui", "distractor": false },
+      { "word": "a boring weekend", "vi": "cuoi tuan nham chan", "distractor": true },
+      { "word": "stay at home alone", "vi": "o nha mot minh", "distractor": true },
+      { "word": "hate the zoo", "vi": "ghet so thu", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "The park has ___, ___, and ___ where people jog, cycle, and walk their dogs.",
-        "answers": [
-            "a beautiful lake",
-            "tall shady trees",
-            "a wide path"
-        ]
+      "template": "Today is Saturday! I have ___. First, I ___ ___ with my friends.",
+      "answers": ["a fun weekend plan", "go to the park", "play at the park"]
     },
     {
-        "template": "I usually go with ___ because we all enjoy ___.",
-        "answers": [
-            "my parents and my younger sister",
-            "spending time outdoors together"
-        ]
+      "template": "Then I ___ ___ ___ at the library. The book is ___.",
+      "answers": ["read a story book", "at the library", "very interesting"]
     },
     {
-        "template": "We bring ___ and ___ and then find a quiet spot near the lake to ___.",
-        "answers": [
-            "a picnic blanket",
-            "some sandwiches",
-            "sit and relax"
-        ]
+      "template": "After that, my mom and I ___ ___ ___.",
+      "answers": ["buy food", "at the supermarket"]
     },
     {
-        "template": "My sister loves to ___ while I ___ and my parents ___.",
-        "answers": [
-            "feed the ducks",
-            "fly my kite",
-            "chat and read"
-        ]
+      "template": "I ___ and ___ when we go shopping together.",
+      "answers": ["help my mom", "carry the bags"]
     },
     {
-        "template": "By the time we go home, we all feel ___ and ___.",
-        "answers": [
-            "refreshed",
-            "happy"
-        ]
+      "template": "Finally, we go to the playground. I ___ at the playground and it is so much fun!",
+      "answers": ["slide down"]
+    },
+    {
+      "template": "___ I ___ and see ___ at the zoo.",
+      "answers": ["On Sunday", "go to the zoo", "a lion and a monkey"]
+    },
+    {
+      "template": "Then we ___ ___ ___. The food is ___!",
+      "answers": ["have lunch", "at a restaurant", "very delicious"]
+    },
+    {
+      "template": "I love my weekend! Every place is ___ and ___!",
+      "answers": ["special", "fun"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "a beautiful lake",
-        "vi": "một hồ đẹp",
-        "distractor": false
-    },
-    {
-        "word": "tall shady trees",
-        "vi": "cây cao có bóng mát",
-        "distractor": false
-    },
-    {
-        "word": "a wide path",
-        "vi": "con đường rộng",
-        "distractor": false
-    },
-    {
-        "word": "my parents and my younger sister",
-        "vi": "bố mẹ và em gái",
-        "distractor": false
-    },
-    {
-        "word": "spending time outdoors together",
-        "vi": "cùng dành thời gian ngoài trời",
-        "distractor": false
-    },
-    {
-        "word": "a picnic blanket",
-        "vi": "tấm chăn dã ngoại",
-        "distractor": false
-    },
-    {
-        "word": "some sandwiches",
-        "vi": "một vài bánh sandwich",
-        "distractor": false
-    },
-    {
-        "word": "sit and relax",
-        "vi": "ngồi và thư giãn",
-        "distractor": false
-    },
-    {
-        "word": "feed the ducks",
-        "vi": "cho vịt ăn",
-        "distractor": false
-    },
-    {
-        "word": "fly my kite",
-        "vi": "thả diều",
-        "distractor": false
-    },
-    {
-        "word": "chat and read",
-        "vi": "nói chuyện và đọc sách",
-        "distractor": false
-    },
-    {
-        "word": "refreshed",
-        "vi": "sảng khoái",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "a noisy construction site",
-        "vi": "công trường ồn ào",
-        "distractor": true
-    },
-    {
-        "word": "bored and tired",
-        "vi": "chán và mệt",
-        "distractor": true
-    },
-    {
-        "word": "argue and fight",
-        "vi": "cãi nhau và đánh nhau",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

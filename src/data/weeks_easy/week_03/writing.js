@@ -1,82 +1,57 @@
 export default {
   title: "The Mirror Game",
-  min_words: 20,
-  model_sentence: "My friend is tall. She has long hair. Her hair is black. She has big eyes.",
-  instruction_en: "Describe your friend's appearance!",
-  instruction_vi: "M\u00f4 t\u1ea3 ngo\u1ea1i h\u00ecnh c\u1ee7a b\u1ea1n b\u00e8!",
-  prompt_en: "Is your friend tall or short? What does their hair look like? What color are their eyes?",
-  prompt_vi: "B\u1ea1n c\u1ee7a b\u1ea1n cao hay th\u1ea5p? T\u00f3c h\u1ecd th\u1ebf n\u00e0o? M\u1eaft m\u00e0u g\u00ec?",
-  keywords: ["tall", "hair", "long", "black", "eyes", "big"],
-  topic_talk_prompt: "Describe what your friend looks like!",
+  min_words: 30,
+  model_sentence: "I look in the mirror every day. I see my round face. I have two brown eyes. I have long brown hair. My hair is straight. I am not very tall yet. I am short for my age. My friend wears glasses to read. Her hair is curly and very long. We are good friends and we look different from each other.",
+  instruction_en: "Describe your appearance and your friend's appearance!",
+  instruction_vi: "Mô tả ngoại hình của bạn và bạn của bạn!",
+  prompt_en: "What do you look like? What about your friend? Are you the same or different?",
+  prompt_vi: "Bạn trông thế nào? Còn bạn của bạn thì sao? Các bạn giống hay khác nhau?",
+  keywords: ["look in the mirror", "every day", "round face", "two brown eyes", "long brown hair", "straight", "not very tall", "short for my age", "wears glasses", "curly", "good friends", "different from each other"],
+  topic_talk_prompt: "Describe what you and your friend look like!",
   sentence_frames: [
     {
-        "template": "My friend is ___.",
-        "answers": [
-            "tall"
-        ]
+      "template": "I ___ in the mirror ___.",
+      "answers": ["look", "every day"]
     },
     {
-        "template": "She has ___ hair.",
-        "answers": [
-            "long"
-        ]
+      "template": "I see my ___ face.",
+      "answers": ["round"]
     },
     {
-        "template": "Her hair is ___.",
-        "answers": [
-            "black"
-        ]
+      "template": "I have two ___ eyes.",
+      "answers": ["brown"]
     },
     {
-        "template": "She has ___ eyes.",
-        "answers": [
-            "big"
-        ]
+      "template": "I have ___ ___ hair.",
+      "answers": ["long brown"]
+    },
+    {
+      "template": "I am not very ___ yet. I am short.",
+      "answers": ["tall"]
+    },
+    {
+      "template": "My friend ___ ___ to read.",
+      "answers": ["wears glasses"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
       label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
+      show_by_default: true,
       scaffolding_stage: "high",
       words: [
-    {
-        "word": "tall",
-        "vi": "cao",
-        "distractor": false
-    },
-    {
-        "word": "long",
-        "vi": "dài",
-        "distractor": false
-    },
-    {
-        "word": "black",
-        "vi": "đen",
-        "distractor": false
-    },
-    {
-        "word": "big",
-        "vi": "to",
-        "distractor": false
-    },
-    {
-        "word": "short",
-        "vi": "thấp",
-        "distractor": true
-    },
-    {
-        "word": "blonde",
-        "vi": "vàng",
-        "distractor": true
-    },
-    {
-        "word": "tiny",
-        "vi": "rất nhỏ",
-        "distractor": true
-    }
-]
+        { "word": "look", "vi": "nhìn", "distractor": false },
+        { "word": "every day", "vi": "mỗi ngày", "distractor": false },
+        { "word": "round", "vi": "tròn", "distractor": false },
+        { "word": "brown", "vi": "nâu", "distractor": false },
+        { "word": "long brown", "vi": "dài nâu", "distractor": false },
+        { "word": "tall", "vi": "cao", "distractor": false },
+        { "word": "wears glasses", "vi": "đeo kính", "distractor": false },
+        { "word": "short", "vi": "thấp", "distractor": true },
+        { "word": "blonde", "vi": "vàng", "distractor": true },
+        { "word": "tiny", "vi": "rất nhỏ", "distractor": true }
+      ]
     }
   }
 };

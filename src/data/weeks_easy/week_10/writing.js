@@ -1,94 +1,55 @@
 export default {
-  title: "City and Farm",
-  min_words: 25,
-  model_sentence: "The city is noisy but the farm is quiet. The city is dirty but the farm is clean. I see cows on the farm. I like the farm.",
-  instruction_en: "Compare the city and the farm!",
-  instruction_vi: "So s\u00e1nh th\u00e0nh ph\u1ed1 v\u00e0 n\u00f4ng tr\u1ea1i!",
-  prompt_en: "What is different about the city and the farm? Which do you prefer?",
-  prompt_vi: "Th\u00e0nh ph\u1ed1 v\u00e0 n\u00f4ng tr\u1ea1i kh\u00e1c nhau th\u1ebf n\u00e0o? B\u1ea1n th\u00edch c\u00e1i n\u00e0o h\u01a1n?",
-  keywords: ["noisy", "quiet", "dirty", "clean", "farm", "cows"],
-  topic_talk_prompt: "Do you prefer the city or the farm? Tell me why!",
+  title: "My Farm Visit",
+  min_words: 30,
+  vocabulary_bank: {
+    label_en: "Need help? Click next to each blank",
+    label_vi: "Can ho tro? Bam ben canh moi o",
+    show_by_default: true,
+    scaffolding_stage: "medium",
+    words: [
+      { "word": "quiet and clean", "vi": "yen tinh va sach se", "distractor": false },
+      { "word": "busy and noisy", "vi": "bon ron va on ao", "distractor": false },
+      { "word": "in the countryside", "vi": "o nong thon", "distractor": false },
+      { "word": "a big brown cow", "vi": "con bo lon mau nau", "distractor": false },
+      { "word": "eats grass", "vi": "an co", "distractor": false },
+      { "word": "in the field", "vi": "o trong dong", "distractor": false },
+      { "word": "a small white chicken", "vi": "con ga nho mau trang", "distractor": false },
+      { "word": "runs very fast", "vi": "chay rat nhanh", "distractor": false },
+      { "word": "tall trees", "vi": "nhung cay cao", "distractor": false },
+      { "word": "the green grass", "vi": "co xanh", "distractor": false },
+      { "word": "soft", "vi": "mem", "distractor": false },
+      { "word": "peaceful", "vi": "yen binh", "distractor": false },
+      { "word": "many animals", "vi": "nhieu dong vat", "distractor": false },
+      { "word": "the best place", "vi": "noi tot nhat", "distractor": false },
+      { "word": "dirty and crowded", "vi": "ban va dong duc", "distractor": true },
+      { "word": "silent and useless", "vi": "im lang va vo duong", "distractor": true },
+      { "word": "hate the farm", "vi": "ghet nong trai", "distractor": true }
+    ]
+  },
   sentence_frames: [
     {
-        "template": "The city is ___ but the farm is ___.",
-        "answers": [
-            "noisy",
-            "quiet"
-        ]
+      "template": "Today I visit a farm ___.",
+      "answers": ["in the countryside"]
     },
     {
-        "template": "The city is ___ but the farm is ___.",
-        "answers": [
-            "dirty",
-            "clean"
-        ]
+      "template": "The farm is ___ but the city is ___.",
+      "answers": ["quiet and clean", "busy and noisy"]
     },
     {
-        "template": "I see ___ on the farm.",
-        "answers": [
-            "cows"
-        ]
+      "template": "I see ___. The cow ___ in the field.",
+      "answers": ["a big brown cow", "eats grass"]
     },
     {
-        "template": "I like the ___.",
-        "answers": [
-            "farm"
-        ]
+      "template": "I see ___. It ___!",
+      "answers": ["a small white chicken", "runs very fast"]
+    },
+    {
+      "template": "I see ___ everywhere. ___ is soft. The farm is ___.",
+      "answers": ["tall trees", "The green grass", "peaceful"]
+    },
+    {
+      "template": "I see ___ on the farm. I love the farm! It is ___!",
+      "answers": ["many animals", "the best place"]
     }
-],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-    {
-        "word": "noisy",
-        "vi": "ồn ào",
-        "distractor": false
-    },
-    {
-        "word": "quiet",
-        "vi": "yên tĩnh",
-        "distractor": false
-    },
-    {
-        "word": "dirty",
-        "vi": "bẩn",
-        "distractor": false
-    },
-    {
-        "word": "clean",
-        "vi": "sạch",
-        "distractor": false
-    },
-    {
-        "word": "cows",
-        "vi": "bò",
-        "distractor": false
-    },
-    {
-        "word": "farm",
-        "vi": "nông trại",
-        "distractor": false
-    },
-    {
-        "word": "silent",
-        "vi": "im lặng",
-        "distractor": true
-    },
-    {
-        "word": "tidy",
-        "vi": "gọn gàng",
-        "distractor": true
-    },
-    {
-        "word": "city",
-        "vi": "thành phố",
-        "distractor": true
-    }
-]
-    }
-  }
+  ]
 };

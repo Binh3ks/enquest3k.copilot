@@ -1,135 +1,70 @@
 export default {
   title: "My Emotional Day",
   min_words: 45,
-  model_sentence: "Yesterday was one of the most emotional days I have had in a long time because I experienced so many different feelings from morning to night. In the morning I was very scared because I could not find my school bag anywhere, and I searched the whole house in a panic while my mum remained calm and told me to breathe slowly. When we finally found it under my bed, I felt enormous relief and I hugged my mum tightly because she had been so patient with me. At school I felt proud and confident because I scored the highest mark in our spelling test and my teacher praised me in front of the whole class. However, in the afternoon I felt a little disappointed because my team lost our football match, even though we had practised very hard all week. By the time I went home, I felt peaceful and grateful because, despite the ups and downs, it had been a truly memorable day.",
+  model_sentence: "Yesterday was a very emotional day for me because I felt so many different things from morning to night. In the morning I felt very worried because I could not find my homework anywhere. My brother looked so angry because someone took his pencil, but our mum stayed very calm and helped us both look everywhere. I felt so relieved when I found the homework inside my school bag. At school the class felt very excited because there was a special visitor — it was a famous author! Everyone looked so surprised. During the long talk, some students felt very bored because the author spoke very slowly. After the snack, the children felt hungry and thirsty. By lunchtime, the whole class felt very cheerful again. At the end of the day I felt so tired but happy. What an emotional day!",
   instruction_en: "Write about an emotional day from morning to night using because and feeling words!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 m\u1ed9t ng\u00e0y \u0111\u1ea7y c\u1ea3m x\u00fac t\u1eeb s\u00e1ng \u0111\u1ebfn t\u1ed1i d\u00f9ng because v\u00e0 t\u1eeb c\u1ea3m x\u00fac!",
+  instruction_vi: "Viết về một ngày đầy cảm xúc từ sáng đến tối dùng because và từ cảm xúc!",
   prompt_en: "What happened? How did you feel and why? How did the day end?",
-  prompt_vi: "Chuy\u1ec7n g\u00ec x\u1ea3y ra? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o v\u00e0 t\u1ea1i sao? Ng\u00e0y k\u1ebft th\u00fac th\u1ebf n\u00e0o?",
-  keywords: ["panic", "relief", "praised", "disappointed", "practised", "peaceful", "grateful", "memorable"],
-  topic_talk_prompt: "Describe an emotional day \u2014 what feelings did you have and why?",
+  prompt_vi: "Chuyện gì xảy ra? Bạn cảm thấy thế nào và tại sao? Ngày kết thúc thế nào?",
+  keywords: ["worried", "relieved", "excited", "surprised", "bored", "hungry", "cheerful", "tired"],
+  topic_talk_prompt: "Describe an emotional day — what feelings did you have and why?",
   sentence_frames: [
     {
-        "template": "In the morning I was very ___ because I could not find ___ anywhere.",
-        "answers": [
-            "scared",
-            "my school bag"
-        ]
+      "template": "Yesterday was a very ___ day for me because I felt ___ things from morning to night.",
+      "answers": ["emotional", "so many different"]
     },
     {
-        "template": "When we finally found it, I felt ___ and I hugged my mum because she had been so ___.",
-        "answers": [
-            "enormous relief",
-            "patient"
-        ]
+      "template": "In the morning I felt very ___ because I could not ___ my homework anywhere.",
+      "answers": ["worried", "find"]
     },
     {
-        "template": "At school I felt ___ because I scored ___ and my teacher ___ me in front of the class.",
-        "answers": [
-            "proud and confident",
-            "the highest mark",
-            "praised"
-        ]
+      "template": "I felt so ___ when I found the homework ___ my school bag.",
+      "answers": ["relieved", "inside"]
     },
     {
-        "template": "In the afternoon I felt ___ because my team ___ our football match.",
-        "answers": [
-            "a little disappointed",
-            "lost"
-        ]
+      "template": "At school the class felt very ___ because there was a ___ visitor.",
+      "answers": ["excited", "special"]
     },
     {
-        "template": "By the time I went home, I felt ___ and ___ because it had been a ___ day.",
-        "answers": [
-            "peaceful",
-            "grateful",
-            "truly memorable"
-        ]
+      "template": "Everyone ___ so surprised — it was a ___ author!",
+      "answers": ["looked", "famous"]
+    },
+    {
+      "template": "During the talk, some students felt very ___ because the author spoke very ___.",
+      "answers": ["bored", "slowly"]
+    },
+    {
+      "template": "By lunchtime, the whole class felt very ___ and ___ again.",
+      "answers": ["cheerful", "excited"]
+    },
+    {
+      "template": "At the end of the day I felt so ___ but happy. What an ___ day!",
+      "answers": ["tired", "emotional"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      label_en: "Need help? Click next to each blank",
+      label_vi: "Cần trợ giúp? Bấm bên cạnh mỗi ô",
       show_by_default: false,
       scaffolding_stage: "medium-low",
       words: [
-    {
-        "word": "scared",
-        "vi": "sợ hãi",
-        "distractor": false
-    },
-    {
-        "word": "my school bag",
-        "vi": "cặp sách của tôi",
-        "distractor": false
-    },
-    {
-        "word": "enormous relief",
-        "vi": "sự nhẹ nhõm to lớn",
-        "distractor": false
-    },
-    {
-        "word": "patient",
-        "vi": "kiên nhẫn",
-        "distractor": false
-    },
-    {
-        "word": "proud and confident",
-        "vi": "tự hào và tự tin",
-        "distractor": false
-    },
-    {
-        "word": "the highest mark",
-        "vi": "điểm cao nhất",
-        "distractor": false
-    },
-    {
-        "word": "praised",
-        "vi": "đã khen ngợi",
-        "distractor": false
-    },
-    {
-        "word": "a little disappointed",
-        "vi": "hơi thất vọng",
-        "distractor": false
-    },
-    {
-        "word": "lost",
-        "vi": "đã thua",
-        "distractor": false
-    },
-    {
-        "word": "peaceful",
-        "vi": "bình yên",
-        "distractor": false
-    },
-    {
-        "word": "grateful",
-        "vi": "biết ơn",
-        "distractor": false
-    },
-    {
-        "word": "truly memorable",
-        "vi": "thực sự đáng nhớ",
-        "distractor": false
-    },
-    {
-        "word": "confused and angry",
-        "vi": "bối rối và tức giận",
-        "distractor": true
-    },
-    {
-        "word": "won easily",
-        "vi": "đã thắng dễ dàng",
-        "distractor": true
-    },
-    {
-        "word": "a boring and forgettable",
-        "vi": "nhàm chán và không đáng nhớ",
-        "distractor": true
-    }
-]
+        { "word": "emotional", "vi": "đầy cảm xúc", "distractor": false },
+        { "word": "worried", "vi": "lo lắng", "distractor": false },
+        { "word": "find", "vi": "tìm thấy", "distractor": false },
+        { "word": "relieved", "vi": "nhẹ nhõm", "distractor": false },
+        { "word": "inside my school bag", "vi": "bên trong cặp sách", "distractor": false },
+        { "word": "excited", "vi": "hào hứng", "distractor": false },
+        { "word": "special visitor", "vi": "khách đặc biệt", "distractor": false },
+        { "word": "looked so surprised", "vi": "trông rất ngạc nhiên", "distractor": false },
+        { "word": "famous author", "vi": "nhà văn nổi tiếng", "distractor": false },
+        { "word": "bored", "vi": "chán", "distractor": false },
+        { "word": "slowly", "vi": "chậm rãi", "distractor": false },
+        { "word": "cheerful", "vi": "vui vẻ", "distractor": false },
+        { "word": "tired", "vi": "mệt mỏi", "distractor": false },
+        { "word": "confused and angry", "vi": "bối rối và tức giận", "distractor": true },
+        { "word": "quickly", "vi": "nhanh chóng", "distractor": true }
+      ]
     }
   }
 };

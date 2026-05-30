@@ -1,82 +1,59 @@
 export default {
   title: "Hello, World!",
-  min_words: 20,
-  model_sentence: "My name is Alex. I am eight years old. I am a student. I feel happy at school.",
-  instruction_en: "Write about yourself!",
-  instruction_vi: "Vi\u1ebft v\u1ec1 b\u1ea3n th\u00e2n b\u1ea1n!",
-  prompt_en: "What is your name? How old are you? How do you feel at school?",
-  prompt_vi: "T\u00ean b\u1ea1n l\u00e0 g\u00ec? B\u1ea1n bao nhi\u00eau tu\u1ed5i? B\u1ea1n c\u1ea3m th\u1ea5y th\u1ebf n\u00e0o \u1edf tr\u01b0\u1eddng?",
-  keywords: ["name", "old", "student", "happy", "school"],
+  min_words: 30,
+  model_sentence: "My name is Alex. I am eight years old. I am a student. I am at school today. I sit next to my friend Lily. I have a blue pen and a story book in my bag. I can see a colorful picture on the wall. My kind teacher is kind. I like my classroom. Every day is a happy day to learn.",
+  instruction_en: "Write about yourself and your classroom!",
+  instruction_vi: "Viết về bản thân và lớp học của bạn!",
+  prompt_en: "What is your name? How old are you? What do you have? Who is next to you?",
+  prompt_vi: "Tên bạn là gì? Bạn bao nhiêu tuổi? Bạn có gì? Ai ngồi cạnh bạn?",
+  keywords: ["name", "eight years old", "student", "at school", "sit next to", "friend Lily", "blue pen", "story book", "in my bag", "colorful picture", "on the wall", "kind teacher", "happy day"],
   topic_talk_prompt: "Tell me about yourself!",
   sentence_frames: [
     {
-        "template": "My name is ___.",
-        "answers": [
-            "Alex"
-        ]
+      "template": "My name is ___.",
+      "answers": ["Alex"]
     },
     {
-        "template": "I am ___ years old.",
-        "answers": [
-            "eight"
-        ]
+      "template": "I am ___ years old.",
+      "answers": ["eight"]
     },
     {
-        "template": "I am a ___.",
-        "answers": [
-            "student"
-        ]
+      "template": "I am a ___.",
+      "answers": ["student"]
     },
     {
-        "template": "I feel ___ at school.",
-        "answers": [
-            "happy"
-        ]
+      "template": "I sit ___ to my friend ___.",
+      "answers": ["next to", "Lily"]
+    },
+    {
+      "template": "I have a ___ pen and a ___ book ___ my bag.",
+      "answers": ["blue", "story", "in"]
+    },
+    {
+      "template": "I can see a colorful picture ___ the wall.",
+      "answers": ["on"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
       label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
+      show_by_default: true,
       scaffolding_stage: "high",
       words: [
-    {
-        "word": "Alex",
-        "vi": "",
-        "distractor": false
-    },
-    {
-        "word": "eight",
-        "vi": "tám",
-        "distractor": false
-    },
-    {
-        "word": "student",
-        "vi": "học sinh",
-        "distractor": false
-    },
-    {
-        "word": "happy",
-        "vi": "vui",
-        "distractor": false
-    },
-    {
-        "word": "sad",
-        "vi": "buồn",
-        "distractor": true
-    },
-    {
-        "word": "teacher",
-        "vi": "giáo viên",
-        "distractor": true
-    },
-    {
-        "word": "ten",
-        "vi": "mười — sai tuổi",
-        "distractor": true
-    }
-]
+        { "word": "Alex", "vi": "", "distractor": false },
+        { "word": "eight", "vi": "tám", "distractor": false },
+        { "word": "student", "vi": "học sinh", "distractor": false },
+        { "word": "next to", "vi": "cạnh", "distractor": false },
+        { "word": "Lily", "vi": "", "distractor": false },
+        { "word": "blue", "vi": "xanh dương", "distractor": false },
+        { "word": "story", "vi": "truyện", "distractor": false },
+        { "word": "in", "vi": "trong", "distractor": false },
+        { "word": "on", "vi": "trên", "distractor": false },
+        { "word": "sad", "vi": "buồn", "distractor": true },
+        { "word": "teacher", "vi": "giáo viên", "distractor": true },
+        { "word": "ten", "vi": "mười — sai tuổi", "distractor": true }
+      ]
     }
   }
 };

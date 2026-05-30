@@ -1,93 +1,58 @@
 export default {
-  title: "Retell The Tortoise and the Hare",
-  min_words: 32,
-  model_sentence: "Once the Hare and the Tortoise had a race. The Hare was very confident and ran very fast at the start. He was sure he would win. Then he stopped to rest under a big tree. He fell asleep. The Tortoise walked slowly but steadily and never gave up. The Tortoise won the race.",
+  title: "The Tortoise and the Hare",
+  min_words: 30,
+  model_sentence: "Once the Hare and the Tortoise had a race. The Hare was very fast. He was sure he would win. Then he stopped under a big tree. He fell asleep. The Tortoise walked slowly but steadily. The Tortoise won the race.",
   instruction_en: "Retell the story of the tortoise and the hare in your own words!",
-  instruction_vi: "K\u1ec3 l\u1ea1i c\u00e2u chuy\u1ec7n R\u00f9a v\u00e0 Th\u1ecf b\u1eb1ng l\u1eddi c\u1ee7a b\u1ea1n!",
+  instruction_vi: "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn!",
   prompt_en: "Who were the characters? What happened? Who won and why?",
-  prompt_vi: "Nh\u00e2n v\u1eadt l\u00e0 ai? Chuy\u1ec7n g\u00ec x\u1ea3y ra? Ai th\u1eafng v\u00e0 t\u1ea1i sao?",
-  keywords: ["hare", "tortoise", "race", "rested", "asleep", "slowly", "won"],
+  prompt_vi: "Nhân vật là ai? Chuyện gì xảy ra? Ai thắng và tại sao?",
+  keywords: ["hare", "tortoise", "race", "fast", "asleep", "slowly", "won", "steady"],
   topic_talk_prompt: "Retell the story of the tortoise and the hare!",
   sentence_frames: [
     {
-        "template": "Once the ___ and the Tortoise had a race.",
-        "answers": [
-            "Hare"
-        ]
+      "template": "Once the ___ and the Tortoise had a ___.",
+      "answers": ["Hare", "race"]
     },
     {
-        "template": "The Hare ran very ___.",
-        "answers": [
-            "fast"
-        ]
+      "template": "The Hare ran very ___.",
+      "answers": ["fast"]
     },
     {
-        "template": "Then he stopped to ___.",
-        "answers": [
-            "rest"
-        ]
+      "template": "Then he stopped under a big ___ and ___ asleep.",
+      "answers": ["tree", "fell"]
     },
     {
-        "template": "He fell ___.",
-        "answers": [
-            "asleep"
-        ]
+      "template": "The Tortoise walked ___ but ___ and never gave up.",
+      "answers": ["slowly", "steadily"]
     },
     {
-        "template": "The Tortoise walked ___ and won.",
-        "answers": [
-            "slowly"
-        ]
+      "template": "The Tortoise ___ the race.",
+      "answers": ["won"]
+    },
+    {
+      "template": "Slow and ___ wins the race.",
+      "answers": ["steady"]
     }
-],
+  ],
   hints: {
     vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
+      label_en: "Need help? Click next to each blank",
+      label_vi: "Cần trợ giúp? Bấm bên cạnh mỗi ô",
+      show_by_default: true,
       scaffolding_stage: "low",
       words: [
-    {
-        "word": "Hare",
-        "vi": "Thỏ",
-        "distractor": false
-    },
-    {
-        "word": "fast",
-        "vi": "nhanh",
-        "distractor": false
-    },
-    {
-        "word": "rest",
-        "vi": "nghỉ ngơi",
-        "distractor": false
-    },
-    {
-        "word": "asleep",
-        "vi": "ngủ say",
-        "distractor": false
-    },
-    {
-        "word": "slowly",
-        "vi": "chậm rãi",
-        "distractor": false
-    },
-    {
-        "word": "Elephant",
-        "vi": "Voi — sai nhân vật",
-        "distractor": true
-    },
-    {
-        "word": "quietly",
-        "vi": "im lặng — không phải nhanh",
-        "distractor": true
-    },
-    {
-        "word": "exercise",
-        "vi": "tập thể dục — sai",
-        "distractor": true
-    }
-]
+        { "word": "Hare", "vi": "Thỏ", "distractor": false },
+        { "word": "race", "vi": "cuộc đua", "distractor": false },
+        { "word": "fast", "vi": "nhanh", "distractor": false },
+        { "word": "tree", "vi": "cây", "distractor": false },
+        { "word": "fell asleep", "vi": "ngủ thiếp đi", "distractor": false },
+        { "word": "slowly", "vi": "chậm rãi", "distractor": false },
+        { "word": "steadily", "vi": "đều đặn", "distractor": false },
+        { "word": "won", "vi": "thắng", "distractor": false },
+        { "word": "steady", "vi": "chắc", "distractor": false },
+        { "word": "Elephant", "vi": "Voi", "distractor": true },
+        { "word": "quietly", "vi": "im lặng", "distractor": true }
+      ]
     }
   }
 };
