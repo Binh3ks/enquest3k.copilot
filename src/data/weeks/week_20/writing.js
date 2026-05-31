@@ -1,6 +1,7 @@
 export default {
   title: "The Old Town Mystery",
   min_words: 45,
+  model_sentence: "Detective Luna loves mysteries. She found an old map of her town. On the old map, there was a local market near a long river with tall trees along the road. There was a wooden bridge over the river. Now the market is gone. There is a new bridge and new buildings. But the old temple still stands. Luna smiled and said, 'The past is still here if you look carefully!'",
   instruction_en: "Write about how a place has changed over time using was, were, there was, and however!",
   instruction_vi: "Viết về sự thay đổi của một nơi theo thời gian dùng was, were, there was và however!",
   prompt_en: "What was the place like before? What has changed? How do you feel about it?",
