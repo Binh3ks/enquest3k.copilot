@@ -15,6 +15,6 @@ export default {
     { id: 8, text: "In the afternoon, I **chose** my favourite shirt and we went to the **café**.", audio_url: "/audio/week32_easy/shadowing_s8.mp3" },
     { id: 9, text: "I paid for my own juice with my pocket money — all by myself!", audio_url: "/audio/week32_easy/shadowing_s9.mp3" },
     { id: 10, text: "At night, I put everything away and fell asleep very quickly." },
-    { id: 11, text: "It was the best busy Saturday ever — the whole day was wonderful!", audio_url: "/audio/week32_easy/shadowing_s11.mp3" }
+    { id: 11, text: "It was the best Saturday ever — the whole day was wonderful!", audio_url: "/audio/week32_easy/shadowing_s11.mp3" }
   ]
 };
