@@ -21,13 +21,13 @@ Buổi chiều, tôi chọn chiếc áo yêu thích và chúng tôi đến quán
   sentences: [
     { id: 1, text: "Last Saturday morning, I woke up very early and had a very busy day.", audio_url: "/audio/week32_easy/shadowing_s1.mp3" },
     { id: 2, text: "First of all, I got dressed quickly and made my bed.", audio_url: "/audio/week32_easy/shadowing_s2.mp3" },
-    { id: 3, text: "I kept my room neat and very tidy.", audio_url: "/audio/week32_easy/shadowing_s3.mp3" },
+    { id: 3, text: "I kept my room neat and tidy.", audio_url: "/audio/week32_easy/shadowing_s3.mp3" },
     { id: 4, text: "After that I wrote a short letter to my lovely grandmother.", audio_url: "/audio/week32_easy/shadowing_s4.mp3" },
     { id: 5, text: "After breakfast, I helped Dad cut the long grass in the garden. The long grass had grown very tall.", audio_url: "/audio/week32_easy/shadowing_s5.mp3" },
     { id: 6, text: "We also built a little birdhouse together. I chose the best plank of wood for the little roof.", audio_url: "/audio/week32_easy/shadowing_s6.mp3" },
     { id: 7, text: "We put the birdhouse on our big apple tree.", audio_url: "/audio/week32_easy/shadowing_s7.mp3" },
     { id: 8, text: "In the afternoon, I chose my favourite shirt and we went to the local cafe.", audio_url: "/audio/week32_easy/shadowing_s8.mp3" },
     { id: 9, text: "I paid for my own juice with my pocket money — all by myself!", audio_url: "/audio/week32_easy/shadowing_s9.mp3" },
-    { id: 10, text: "At night, I put everything away and fell asleep quickly. It was the best busy Saturday afternoon ever — the whole day was wonderful!", audio_url: "/audio/week32_easy/shadowing_s10.mp3" }
+    { id: 10, text: "At night, I put everything away and fell asleep quickly. It was the best busy Saturday ever — the whole day was wonderful!", audio_url: "/audio/week32_easy/shadowing_s10.mp3" }
   ]
 };

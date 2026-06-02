@@ -2,42 +2,40 @@ export default {
   title: "Dictation: My Day at the Market",
   image_url: "/images/week31/read_cover_w31.jpg",
   audio_url: "/audio/week31_easy/dictation_main.mp3",
-  content_en: `Last Saturday, Luna **went to** a **local market** with her mum. The market was **very colourful** and fun.
+  content_en: `Last Saturday, Luna **went to** a **local market** with her mum. The market was colourful and fun.
 
 Luna **looked around** and could see many stalls. At a craft stall, she could see smooth glass jars full of golden honey. The light **shone through** glass and made little rainbows!
 
-Luna **picked up** a **wooden shelf**. The wood **felt rough** and warm under her fingers. She also touched a **stone bowl**. The stone **felt cool** and smooth.
+Luna **picked up** a **wooden shelf**. The wood felt rough and warm under her fingers. She also touched a **stone bowl**. The stone felt cool and smooth.
 
 Then Luna felt **soft cotton** scarves. They were very light and gentle. She touched the **cold metal** gate at the entrance.
 
-Luna **smelt sweet** strawberries from the fruit stall. She tasted a small piece of mango. It was juicy and sweet.
+Luna smelt sweet strawberries from the fruit stall. She tasted a small piece of mango. It was juicy and sweet.
 
 A plastic bag broke near the gate with a big crash! Luna **felt surprised**. Then she laughed.
 
-'A **local market** is full of things **to see and feel**!' said Luna.`,
-  content_vi: `Thu Bay tuan truoc, Luna di cho voi me. Cho dau sac va vui ve.
+'A **local market** is full of things **to see and touch**!' said Luna.`,
+  content_vi: `Thứ Bảy tuần trước, Luna đi chợ với mẹ. Chợ đầy màu sắc và vui vẻ.
 
-Luna nhin quanh va thay nhieu gian hang. O gian thu cong, co thay nhung lo thuy tinh nhan bang duc day mat ong vang. Anh sang chieu qua thuy tinh tao ra nhung cau vong nho!
+Luna nhìn quanh và thấy nhiều gian hàng. Ở gian thủ công, cô thấy những lọ thủy tinh nhẵn bóng đựng đầy mật ong vàng.Ánh sáng chiếu qua thủy tinh tạo ra những cầu vồng nhỏ!
 
-Luna nhat cai ke go. Go cam thay tho va am ap duoi ngon tay co. Co cung cham vao mot cai bat da. Da cam thay mat va nhan bang.
+Luna nhặt một cái kệ gỗ. Gỗ cảm thấy thô ráp và ấm áp dưới ngón tay cô. Cô cũng chạm vào một cái bát đá. Đá cảm thấy mát và nhẵn bóng.
 
-Sau do Luna cam that khan cotton mem mai. Chung rat nhe va nhe nhang. Co cham cai cong kim loai lanh o lo vao.
+Rồi Luna sờ những chiếc khăn cotton mềm mại. Chúng rất nhẹ và dịu dàng. Cô chạm cổng kim loại lạnh ở lối vào.
 
-Luna ngum ngot tu gian hang trai cay. Co nem mot mieng nho xoai. No ngot va thom.
+Luna ngửi thấy dâu ngọt từ gian hàng trái cây. Cô nếm một miếng nhỏ xoài. Nó ngọt và thơm.
 
-Mot tui nhua bi rach gan cong voi tieng dong lon! Co bi ngoang. Sau do co cuoi.
+Một túi nhựa bị rách gần cổng với tiếng động lớn! Luna giật mình. Rồi cô cười.
 
-'Cho day nhung thu de nhin va cam nhan!' Luna noi.`,
+'Chợ đầy những thứ để nhìn và chạm!' Luna nói.`,
   sentences: [
     { id: 1, text: "Last Saturday, Luna **went to** a **local market** with her mum.", audio_url: "/audio/week31_easy/dictation_s1.mp3" },
-    { id: 2, text: "The market was **very colourful** and fun.", audio_url: "/audio/week31_easy/dictation_s2.mp3" },
+    { id: 2, text: "The market was colourful and fun.", audio_url: "/audio/week31_easy/dictation_s2.mp3" },
     { id: 3, text: "Luna **looked around** and could see many stalls.", audio_url: "/audio/week31_easy/dictation_s3.mp3" },
     { id: 4, text: "The light **shone through** glass and made little rainbows!", audio_url: "/audio/week31_easy/dictation_s4.mp3" },
     { id: 5, text: "Luna **picked up** a **wooden shelf**.", audio_url: "/audio/week31_easy/dictation_s5.mp3" },
-    { id: 6, text: "The wood **felt rough** and warm under her fingers.", audio_url: "/audio/week31_easy/dictation_s6.mp3" },
-    { id: 7, text: "She also touched a **stone bowl**. The stone **felt cool** and smooth.", audio_url: "/audio/week31_easy/dictation_s7.mp3" },
-    { id: 8, text: "Then Luna felt **soft cotton** scarves. They were very light and gentle. She touched the **cold metal** gate at the entrance.", audio_url: "/audio/week31_easy/dictation_s8.mp3" },
-    { id: 9, text: "Luna **smelt sweet** strawberries from the fruit stall.", audio_url: "/audio/week31_easy/dictation_s9.mp3" },
-    { id: 10, text: "A plastic bag broke near the gate with a big crash! Luna **felt surprised**. Then she **laughed**.", audio_url: "/audio/week31_easy/dictation_s10.mp3" }
+    { id: 6, text: "She also touched a **stone bowl**. The stone felt cool and smooth.", audio_url: "/audio/week31_easy/dictation_s6.mp3" },
+    { id: 7, text: "Then Luna felt **soft cotton** scarves. They were very light and gentle. She touched the **cold metal** gate at the entrance.", audio_url: "/audio/week31_easy/dictation_s7.mp3" },
+    { id: 8, text: "Luna smelt sweet strawberries from the fruit stall.", audio_url: "/audio/week31_easy/dictation_s8.mp3" }
   ]
 };

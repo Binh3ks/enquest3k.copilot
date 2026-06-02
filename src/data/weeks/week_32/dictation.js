@@ -32,7 +32,7 @@ Buổi chiều, Tom và mẹ đi bộ đến **quán cà phê** gần nhà. Tom 
     { id: 5, text: "He **put the letter** in an envelope and **stuck a stamp** on it.", audio_url: "/audio/week32/dictation_s5.mp3" },
     { id: 6, text: "After breakfast, Tom helped Dad **cut the long grass** in the garden. The **long grass** had grown very tall during the rainy week.", audio_url: "/audio/week32/dictation_s6.mp3" },
     { id: 7, text: "Three sparrows **sat on the fence** and **watched them work**.", audio_url: "/audio/week32/dictation_s7.mp3" },
-    { id: 8, text: "**After that** Tom and his dad **built a small birdhouse** together.", audio_url: "/audio/week32/dictation_s8.mp3" },
+    { id: 8, text: "After that, Tom and his dad **built a small birdhouse** together.", audio_url: "/audio/week32/dictation_s8.mp3" },,
     { id: 9, text: "Tom had to **choose the smoothest** plank of wood for the **little roof**.", audio_url: "/audio/week32/dictation_s9.mp3" },
     { id: 10, text: "They **hammered the nails** carefully and **put the birdhouse** on the tall oak tree near the fence.", audio_url: "/audio/week32/dictation_s10.mp3" },
     { id: 11, text: "In the afternoon, Tom and his mum **walked to the local cafe**.", audio_url: "/audio/week32/dictation_s11.mp3" },
