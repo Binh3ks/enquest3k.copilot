@@ -1,14 +1,14 @@
 export default {
   title: "Dictation: The Magic Trip",
   image_url: "/images/week29/read_cover_w29.jpg",
-  audio_url: "/audio/week29/read_main.mp3",
+  audio_url: "/audio/week29/dictation_main.mp3",
   content_en: `Last week, the children at Green School **went on** a **magic trip** to a **wonderful place**. First, they **got on** a **magic carpet** that **flew to** a tiny green island in the sea.
 
-On the island, a **friendly pilot** **came to** help them. He **picked up** a beautiful photo and **gave** it to the teacher. A kind **farmer** **went to** the field and **gave** them fresh mangoes. The children **looked at** the bright fruit and smiled.
+On the island, a **friendly pilot** **came to** help them. He **picked up** a beautiful photo and **gave it** to the teacher. A **kind farmer** **went to** the field and **gave them** fresh mangoes. The children **looked at** the bright fruit and smiled.
 
-An engineer **looked at** an old map and **showed** them a tiny lighthouse. A scientist **saw** the stars through a telescope and **said**, 'Come and **look at** this!' The children **looked at** the tiny point of light together.
+An engineer **looked at** an old map and **showed them** a tiny lighthouse. A scientist **looked through** a telescope and **said loudly**, 'Come and **look at** this!' The children **looked at** the tiny point of light together.
 
-On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**. A **friendly doctor** **came to** help a tired child and **gave** her some water.
+On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**. A **friendly doctor** **came to** help a tired child and **gave her** some water.
 
 The **magic carpet** **flew back** over the sea to the school station. All the children **went home** happy and tired.
 
@@ -28,17 +28,14 @@ Tấm thảm thần kỳ bay về trên biển đến ga trường. Tất cả c
     { id: 1, text: "Last week, the children at Green School **went on** a **magic trip** to a **wonderful place**.", audio_url: "/audio/week29/dictation_s1.mp3" },
     { id: 2, text: "First, they **got on** a **magic carpet** that **flew to** a tiny green island in the sea.", audio_url: "/audio/week29/dictation_s2.mp3" },
     { id: 3, text: "On the island, a **friendly pilot** **came to** help them.", audio_url: "/audio/week29/dictation_s3.mp3" },
-    { id: 4, text: "He **picked up** a beautiful photo and **gave** it to the teacher.", audio_url: "/audio/week29/dictation_s4.mp3" },
-    { id: 5, text: "A kind **farmer** **went to** the field and **gave** them fresh mangoes.", audio_url: "/audio/week29/dictation_s5.mp3" },
-    { id: 6, text: "The children **looked at** the bright fruit and smiled.", audio_url: "/audio/week29/dictation_s6.mp3" },
-    { id: 7, text: "An engineer **looked at** an old map and **showed** them a tiny lighthouse.", audio_url: "/audio/week29/dictation_s7.mp3" },
-    { id: 8, text: "A scientist **saw** the stars through a telescope and **said**, 'Come and **look at** this!'", audio_url: "/audio/week29/dictation_s8.mp3" },
-    { id: 9, text: "The children **looked at** the tiny point of light together.", audio_url: "/audio/week29/dictation_s9.mp3" },
-    { id: 10, text: "On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**.", audio_url: "/audio/week29/dictation_s10.mp3" },
-    { id: 11, text: "A **friendly doctor** **came to** help a tired child and **gave** her some water.", audio_url: "/audio/week29/dictation_s11.mp3" },
-    { id: 12, text: "The **magic carpet** **flew back** over the sea to the school station.", audio_url: "/audio/week29/dictation_s12.mp3" },
-    { id: 13, text: "All the children **went home** happy and tired.", audio_url: "/audio/week29/dictation_s13.mp3" },
-    { id: 14, text: "'What a **wonderful trip**!' they **said together**.", audio_url: "/audio/week29/dictation_s14.mp3" },
-    { id: 15, text: "'We will always **remember this adventure**.'", audio_url: "/audio/week29/dictation_s15.mp3" }
+    { id: 4, text: "A **kind farmer** **went to** the field and **gave them** fresh mangoes.", audio_url: "/audio/week29/dictation_s4.mp3" },
+    { id: 5, text: "The children **looked at** the bright fruit and smiled.", audio_url: "/audio/week29/dictation_s5.mp3" },
+    { id: 6, text: "An engineer **looked at** an old map and **showed them** a tiny lighthouse.", audio_url: "/audio/week29/dictation_s6.mp3" },
+    { id: 7, text: "A scientist **looked through** a telescope and **said loudly**, 'Come and **look at** this!'", audio_url: "/audio/week29/dictation_s7.mp3" },
+    { id: 8, text: "The children **looked at** the tiny point of light together.", audio_url: "/audio/week29/dictation_s8.mp3" },
+    { id: 9, text: "On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**.", audio_url: "/audio/week29/dictation_s9.mp3" },
+    { id: 10, text: "A **friendly doctor** **came to** help a tired child and **gave her** some water.", audio_url: "/audio/week29/dictation_s10.mp3" },
+    { id: 11, text: "The **magic carpet** **flew back** over the sea to the school station.", audio_url: "/audio/week29/dictation_s11.mp3" },
+    { id: 12, text: "'What a **wonderful trip**!' they **said together**.", audio_url: "/audio/week29/dictation_s12.mp3" }
   ]
 };

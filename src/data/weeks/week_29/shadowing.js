@@ -4,30 +4,27 @@ export default {
   audio_url: "/audio/week29/shadowing_main.mp3",
   content_en: `Last week, the children at Green School **went on** a **magic trip** to a **wonderful place**. First, they **got on** a **magic carpet** that **flew to** a tiny green island in the sea.
 
-On the island, a **friendly pilot** **came to** help them. He **picked up** a beautiful photo and **gave** it to the teacher. A kind **farmer** **went to** the field and **gave** them fresh mangoes. The children **looked at** the bright fruit and smiled.
+On the island, a **friendly pilot** **came to** help them. He **picked up** a beautiful photo and **gave it** to the teacher. A **kind farmer** **went to** the field and **gave them** fresh mangoes. The children **looked at** the bright fruit and smiled.
 
-An engineer **looked at** an old map and **showed** them a tiny lighthouse. A scientist **saw** the stars through a telescope and **said**, 'Come and **look at** this!' The children **looked at** the tiny point of light together.
+An engineer **looked at** an old map and **showed them** a tiny lighthouse. A scientist **looked through** a telescope and **said loudly**, 'Come and **look at** this!' The children **looked at** the tiny point of light together.
 
-On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**. A **friendly doctor** **came to** help a tired child and **gave** her some water.
+On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**. A **friendly doctor** **came to** help a tired child and **gave her** some water.
 
 The **magic carpet** **flew back** over the sea to the school station. All the children **went home** happy and tired.
 
 'What a **wonderful trip**!' they **said together**. 'We will always **remember this adventure**.'`,
   sentences: [
-    { id: 1, text: "Last week, the children at Green School **went on** a **magic trip** to a **wonderful place**." },
-    { id: 2, text: "First, they **got on** a **magic carpet** that **flew to** a tiny green island in the sea." },
-    { id: 3, text: "On the island, a **friendly pilot** **came to** help them." },
-    { id: 4, text: "He **picked up** a beautiful photo and **gave** it to the teacher." },
-    { id: 5, text: "A kind **farmer** **went to** the field and **gave** them fresh mangoes." },
-    { id: 6, text: "The children **looked at** the bright fruit and smiled." },
-    { id: 7, text: "An engineer **looked at** an old map and **showed** them a tiny lighthouse." },
-    { id: 8, text: "A scientist **saw** the stars through a telescope and **said**, 'Come and **look at** this!'" },
-    { id: 9, text: "The children **looked at** the tiny point of light together." },
-    { id: 10, text: "On the way back, **the dolphins** **jumped out** of the water and **swam alongside** the **magic carpet**." },
-    { id: 11, text: "A **friendly doctor** **came to** help a tired child and **gave** her some water." },
-    { id: 12, text: "The **magic carpet** **flew back** over the sea to the school station." },
-    { id: 13, text: "All the children **went home** happy and tired." },
-    { id: 14, text: "'What a **wonderful trip**!' they **said together**." },
-    { id: 15, text: "'We will always **remember this adventure**.'" }
+    { id: 1, text: "Last week, the children at Green School went on a magic trip to a wonderful place." },
+    { id: 2, text: "First, they got on a magic carpet that flew to a tiny green island in the sea." },
+    { id: 3, text: "On the island, a friendly pilot came to help them." },
+    { id: 4, text: "A kind farmer went to the field and gave them fresh mangoes." },
+    { id: 5, text: "An engineer looked at an old map and showed them a tiny lighthouse." },
+    { id: 6, text: "A scientist looked through a telescope and said loudly, 'Come and look at this!'" },
+    { id: 7, text: "The children looked at the tiny point of light together." },
+    { id: 8, text: "On the way back, the dolphins jumped out of the water and swam alongside the magic carpet." },
+    { id: 9, text: "A friendly doctor came to help a tired child and gave her some water." },
+    { id: 10, text: "The magic carpet flew back over the sea to the school station." },
+    { id: 11, text: "'What a wonderful trip!' they said together." },
+    { id: 12, text: "We will always remember this adventure." }
   ]
 };
