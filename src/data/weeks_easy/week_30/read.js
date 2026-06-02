@@ -6,7 +6,7 @@ export default {
 
 Mia's mum brought **fresh strawberries**. Luna's dad bought a big red watermelon at the **local market**. The children **drank lemonade**. Tom also brought **mango juice**.
 
-At the park, an artist was **painting by the lake**. Luna gave a cookie to the artist and he **said hello** back. Tom's friend **said hello** too.
+At the park, an artist was painting by the lake. Luna gave a cookie to the artist and he **said hello** back. Tom's friend **said hello** too.
 
 The children **had fun** and **felt cheerful**. After lunch, they played games and **watched the ducks** on the lake. **After that** they **put everything away** and went home happy.
 
