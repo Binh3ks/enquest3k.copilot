@@ -4,13 +4,13 @@ export default {
   audio_url: "/audio/week30_easy/read_main.mp3",
   content_en: `Last Sunday, Luna went to a **fun picnic** in the park with her friends Tom and Mia. Tom's dad is a **good cook** who made sandwiches, cookies, and cold lemonade. He **put everything** in a big basket.
 
-Mia's mum brought strawberries. Luna's dad bought a big red watermelon at the **local market**. The children ate yummy sandwiches and drank lemonade. Tom also brought mango juice.
+Mia's mum **brought fresh strawberries**. Luna's dad bought a big red watermelon at the **local market**. The children **ate lots of food** and **drank lemonade**. Tom also **brought mango juice**.
 
-At the park, an **artist** was painting by the lake. Luna gave a cookie to the artist and he **smiled warmly** and **said hello** back. Tom's friend smiled warmly and said hello too.
+At the park, an artist was **painting by the lake**. Luna gave a cookie to the artist and he **said hello** back. Tom's friend **said hello** too.
 
-The children ate lots of food and drank lemonade and **felt very cheerful**. After lunch, they played games and **watched the ducks** on the lake. **After that** they **put everything away** and went home happy.
+The children **had fun** and **felt cheerful**. After lunch, they played games and **watched the ducks** on the lake. **After that** they **put everything away** and went home happy.
 
-Luna **told her mum** all about the picnic when she got home. 'We **had fun** together and **had the best** day ever!'`,
+Luna **told her mum** all about the picnic when she got home. 'We **had the best** day ever!'`,
   content_vi: `Chủ nhật trước, Luna đến một buổi dã ngoại vui vẻ trong công viên với bạn Tom và Mia. Bố của Tom là đầu bếp làm đồ ăn ngon nhất — bánh mì kẹp, bánh quy, và nước chanh lạnh. Anh ấy đặt tất cả đồ ăn vào một giỏ lớn.
 
 Mẹ của Mia là nhà khoa học tốt bụng mang dâu tươi. Bố của Luna mua một quả dưa hấu đỏ lớn ở chợ. Các bé ăn bánh mì kẹp và uống nước chanh lạnh. Tom cũng mang nước ép xoài tươi.
