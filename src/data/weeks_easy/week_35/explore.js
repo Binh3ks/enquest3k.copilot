@@ -8,19 +8,19 @@ export default {
   title_vi: "Khoa Học Khí Hậu: Hành Tinh Đang Thay Đổi",
   content_en: `What is **climate change**?
 
-**Climate change** means the Earth's **climate** is getting warmer. The planet is about **1.1°C warmer** than 100 years ago. This sounds small, but it causes big problems for animals and people.
+**Climate change** means the Earth's climate is getting warmer. The planet is about **1.1°C warmer** than 100 years ago. This sounds small, but it causes big problems for animals and people.
 
 Why is the Earth warming up?
 
-When we **burn fossil fuels** like **coal**, **oil**, and **gas**, we put **greenhouse gases** into the air. These gases are like a **warm blanket** around the Earth. They trap heat from the sun and make the planet hotter.
+When we **burn fossil fuels** like coal, oil, and gas, we put **greenhouse gases** into the air. These gases are like a **warm blanket** around the Earth. They trap heat from the sun and make the planet hotter.
 
 What is the **greenhouse effect**?
 
 The sun sends light to Earth. The Earth reflects some heat back. But greenhouse gases trap this heat. More gases = more heat = a **warmer planet**.
 
-What happens when ice **melts**?
+What happens when ice melts?
 
-When polar ice **melts**, it becomes water. This water goes into the ocean. Then **sea levels rise**. Some animal homes disappear under the water.
+When polar ice melts, it becomes water. This water goes into the ocean. Then **sea levels rise**. Some animal homes disappear under the water.
 
 **The good news**: We can all help! We **must protect** our planet!`,
   content_vi: `Biến đổi khí hậu nghĩa là gì?

@@ -11,11 +11,11 @@ export default {
     { id: 9, text: "The teacher explained an important lesson — everyone must **walk carefully in the corridor**.", meaning: "Giáo viên giải thích một bài học quan trọng — mọi người phải đi cẩn thận trong hành lang." },
     { id: 10, text: "The next day, Jake **walked slowly and safely** to class.", meaning: "Ngày hôm sau, Jake đi chậm và an toàn đến lớp." }
   ],
-  content_en: `Jake had a bad day at school last Tuesday. He was late, so he **ran** in the **corridor**. He **hit** his knee on the table. He **fell** down and **broke** a glass cup. His books fell on the floor and his pencil case opened. Everything went wrong that morning.
+  content_en: `Jake had a bad day at school last Tuesday. He was late, so he ran in the corridor. He hit his knee on the table. He fell down and broke a glass cup. His books fell on the floor and his pencil case opened. Everything went wrong that morning.
 
-Jake's knee **was hurt** a lot. The nurse came and **put** a cold pack on his knee. His arm **was hurt** too. His friends **saw** him and felt sorry for him. Everyone at school knew Jake had a very bad day.
+Jake's knee **was hurt** a lot. The nurse came and put a cold pack on his knee. His arm **was hurt** too. His friends saw him and felt sorry for him. Everyone at school knew Jake had a very bad day.
 
-The teacher asked Jake what happened. Jake **told** the truth. The teacher explained an important lesson — everyone must **walk carefully** in the **corridor**. Jake understood and **promised** to be careful. His teacher smiled and **gave** him a pass to go home early.
+The teacher asked Jake what happened. Jake told the truth. The teacher explained an important lesson — everyone must **walk carefully** in the corridor. Jake understood and promised to be careful. His teacher smiled and gave him a pass to go home early.
 
-At home, Jake rested and his knee **got better**. He **learned** a big lesson: always **walk carefully** in the **corridor**. He never forgot this lesson. The next day, Jake **walked** slowly and safely to class.`
+At home, Jake rested and his knee **got better**. He learned a big lesson: always **walk carefully** in the corridor. He never forgot this lesson. The next day, Jake walked slowly and safely to class.`
 };

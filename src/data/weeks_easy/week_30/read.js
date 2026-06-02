@@ -10,7 +10,7 @@ At the park, an artist was painting by the lake. Luna gave a cookie to the artis
 
 The children **had fun** and **felt cheerful**. After lunch, they played games and **watched the ducks** on the lake. **After that** they **put everything away** and went home happy.
 
-Luna **told her mum** all about the picnic when she got home. 'We **had the best** day ever!'`,
+Luna told her mum all about the picnic when she got home. 'We **had the best** day ever!'`,
   content_vi: `Chủ nhật trước, Luna đến một buổi dã ngoại vui vẻ trong công viên với bạn Tom và Mia. Bố của Tom là đầu bếp làm đồ ăn ngon nhất — bánh mì kẹp, bánh quy, và nước chanh lạnh. Anh ấy đặt tất cả đồ ăn vào một giỏ lớn.
 
 Mẹ của Mia là nhà khoa học tốt bụng mang dâu tươi. Bố của Luna mua một quả dưa hấu đỏ lớn ở chợ. Các bé ăn bánh mì kẹp và uống nước chanh lạnh. Tom cũng mang nước ép xoài tươi.

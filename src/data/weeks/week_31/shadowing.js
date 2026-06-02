@@ -2,7 +2,7 @@ export default {
   title: "Shadowing: A Day at the Market",
   image_url: "/images/week31/read_cover_w31.jpg",
   audio_url: "/audio/week31/shadowing_main.mp3",
-  content_en: `Last Saturday, Luna **went to** a **local market** with her mum. The old town market was colourful and busy. Luna **looked around** and could see many different stalls.
+  content_en: `Last Saturday, Luna went to a **local market** with her mum. The old town market was colourful and busy. Luna **looked around** and could see many different stalls.
 
 First, she could see a craft stall with rows of smooth glass jars. The light **shone through** the glass and made little rainbows. A friendly seller smiled at Luna and showed her a beautiful wooden sculpture.
 

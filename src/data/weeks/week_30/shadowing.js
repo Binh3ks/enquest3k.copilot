@@ -6,7 +6,7 @@ export default {
 
 Mia's mum brought **fresh strawberries** and said, 'The more colourful, the healthier!' Luna's dad is an engineer who designed the beautiful wooden bridge they crossed the river on. 'I helped to **build this bridge**!' he said proudly.
 
-Near the park, firefighters were **having lunch** beside their big red fire truck. Tom **waved at** them and they **waved back** with big smiles. At the market, Luna's dad bought a big **juicy watermelon**. 'The **local market** always has the freshest food!' he said to everyone.
+Near the park, firefighters were **having lunch** beside their big red fire truck. Tom waved at them and they **waved back** with big smiles. At the market, Luna's dad bought a big **juicy watermelon**. 'The **local market** always has the freshest food!' he said to everyone.
 
 In the park, an artist was painting by the lake. Luna gave a cookie to the artist and he **waved back** with a big smile. They **spread out** the **soft blanket** on the green grass. The children **ate the food** and **drank lemonade**. 'Don't eat too many cookies!' laughed Mia. Everyone **felt cheerful**.`,
   content_vi: `Chủ nhật trước, các bé có một buổi dã ngoại ở công viên. Bố của Tom là đầu bếp giỏi và làm đồ ăn tươi — bánh mì phô mai, bánh quy và nước chanh lạnh. Anh ấy đặt mọi thứ vào giỏ nhiều. Mia's dad is an engineer who thiết kế cây cầu đẹp they crossed the river on. Lính cứu hỏa đang dùng bữa beside their truck. Tom vẫy họ và họ vẫy lại. Tại chợ, bố Luna mua một quả dưa hấu ngon. Một họa sĩ đang vẽ by the lake. Luna cho một cái bánh quy cho họa sĩ và anh ấy vẫy lại. Họ trải ra tấm khăn mềm trên bãi cỏ xanh. Các bé ăn đồ ăn và uống nước chanh. 'Đừng ăn quá nhiều bánh quy!' Mia cười. Mọi người rất vui.`,

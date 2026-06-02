@@ -2,7 +2,7 @@ export default {
   title: "Dictation: A Day at the Market",
   image_url: "/images/week31/read_cover_w31.jpg",
   audio_url: "/audio/week31/dictation_main.mp3",
-  content_en: `Last Saturday, Luna **went to** a **local market** with her mum. The old town market was colourful and busy. Luna **looked around** and could see many different stalls.
+  content_en: `Last Saturday, Luna went to a **local market** with her mum. The old town market was colourful and busy. Luna **looked around** and could see many different stalls.
 
 First, she could see a craft stall with rows of smooth glass jars. The light **shone through** the glass and made little rainbows. A friendly seller smiled at Luna and showed her a beautiful wooden sculpture.
 
@@ -21,7 +21,7 @@ Luna ngửi ngọt dâu và nếm một miếng xoài. Nó ngọt và thơm. T�
 
 'Tôi ngửi, chạm, thấy, và nếm nhiều thứ!' Luna nói. 'Chợ là nơi tốt nhất cho tất cả năm giác quan!'`,
   sentences: [
-    { id: 1, text: "Last Saturday, Luna **went to** a **local market** with her mum.", audio_url: "/audio/week31/dictation_s1.mp3" },
+    { id: 1, text: "Last Saturday, Luna went to a **local market** with her mum.", audio_url: "/audio/week31/dictation_s1.mp3" },
     { id: 2, text: "The old town market was colourful and busy.", audio_url: "/audio/week31/dictation_s2.mp3" },
     { id: 3, text: "Luna **looked around** and could see many different stalls.", audio_url: "/audio/week31/dictation_s3.mp3" },
     { id: 4, text: "The light **shone through** the glass and made little rainbows.", audio_url: "/audio/week31/dictation_s4.mp3" },

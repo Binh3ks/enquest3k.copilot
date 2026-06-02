@@ -2,7 +2,7 @@ export default {
   title: "Dictation: My Day at the Market",
   image_url: "/images/week31/read_cover_w31.jpg",
   audio_url: "/audio/week31_easy/dictation_main.mp3",
-  content_en: `Last Saturday, Luna **went to** a **local market** with her mum. The market was colourful and fun.
+  content_en: `Last Saturday, Luna went to a **local market** with her mum. The market was colourful and fun.
 
 Luna **looked around** and could see many stalls. At a craft stall, she could see smooth glass jars full of golden honey. The light **shone through** glass and made little rainbows!
 
@@ -12,7 +12,7 @@ Then Luna felt **soft cotton** scarves. They were very light and gentle. She tou
 
 Luna smelt sweet strawberries from the fruit stall. She tasted a small piece of mango. It was juicy and sweet.
 
-A plastic bag broke near the gate with a big crash! Luna **felt surprised**. Then she laughed.
+A plastic bag broke near the gate with a big crash! Luna felt surprised. Then she laughed.
 
 'A **local market** is full of things **to see and touch**!' said Luna.`,
   content_vi: `Thứ Bảy tuần trước, Luna đi chợ với mẹ. Chợ đầy màu sắc và vui vẻ.
@@ -29,7 +29,7 @@ Một túi nhựa bị rách gần cổng với tiếng động lớn! Luna gi�
 
 'Chợ đầy những thứ để nhìn và chạm!' Luna nói.`,
   sentences: [
-    { id: 1, text: "Last Saturday, Luna **went to** a **local market** with her mum.", audio_url: "/audio/week31_easy/dictation_s1.mp3" },
+    { id: 1, text: "Last Saturday, Luna went to a **local market** with her mum.", audio_url: "/audio/week31_easy/dictation_s1.mp3" },
     { id: 2, text: "The market was colourful and fun.", audio_url: "/audio/week31_easy/dictation_s2.mp3" },
     { id: 3, text: "Luna **looked around** and could see many stalls.", audio_url: "/audio/week31_easy/dictation_s3.mp3" },
     { id: 4, text: "The light **shone through** glass and made little rainbows!", audio_url: "/audio/week31_easy/dictation_s4.mp3" },

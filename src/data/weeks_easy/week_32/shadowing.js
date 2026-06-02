@@ -2,15 +2,15 @@ export default {
   title: "Shadowing: My Very Busy Saturday",
   image_url: "/images/week32/read_cover_w32.jpg",
   audio_url: "/audio/week32_easy/shadowing_main.mp3",
-  content_en: `Last **Saturday morning**, I woke up **very early** and had a very busy day. **First of all**, I **got dressed quickly** and **made my bed**. I **kept my room** neat and **very tidy**.
+  content_en: `Last **Saturday morning**, I woke up **very early** and had a very busy day. **First of all**, I **got dressed quickly** and made my bed. I kept my room neat and **very tidy**.
 
 **After that** I **wrote a short letter** to my **lovely grandmother**. I drew a picture of our cat for the letter — she always loves that!
 
-After breakfast, I helped Dad **cut the long grass** in the garden. The **long grass** had grown very tall. We also **built a little birdhouse** together. I **chose the best** plank of wood for the **little roof**. We **put the birdhouse** on our big apple tree.
+After breakfast, I helped Dad **cut the long grass** in the garden. The **long grass** had grown very tall. We also **built a little birdhouse** together. I chose the best plank of wood for the **little roof**. We put the birdhouse on our big apple tree.
 
-In the afternoon, I **chose my favourite** shirt and we **went to the local cafe**. I **paid for my own** juice with my **pocket money** — all by myself!
+In the afternoon, I chose my favourite shirt and we **went to the local cafe**. I **paid for my own** juice with my **pocket money** — all by myself!
 
-At night, I **put everything away** and **fell asleep quickly**. It was the best busy **Saturday** ever — the whole day was wonderful!`,
+At night, I **put everything away** and **fell asleep quickly**. It was the best busy Saturday ever — the whole day was wonderful!`,
   content_vi: `Vào thứ Bảy tuần trước, tôi dậy sớm và có một ngày rất bận rộn. Đầu tiên, tôi mặc quần áo và dọn giường. Tôi giữ phòng mình ngăn nắp.
 
 Rồi tôi viết một lá thư ngắn cho bà của tôi. Tôi vẽ hình con mèo cho lá thư — bà luôn thích điều đó!

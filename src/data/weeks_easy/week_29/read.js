@@ -5,7 +5,7 @@ export default {
   title: "The Magic Trip",
   image_url: "/images/week29/read_cover_w29.jpg",
   audio_url: "/audio/week29/read_main_easy.mp3",
-  content_en: `One night, Lily found the magic carpet **under her bed**. She sat on it and it **flew up** into the dark blue sky!
+  content_en: `One night, Lily found the magic carpet **under her bed**. She sat on it and it flew up into the dark blue sky!
 
 First, the carpet went to a farm. A farmer came out of his red barn and waved at Lily. He gave her a sweet, ripe mango from the field. 'What a **wonderful trip**!' she said with a big smile.
 

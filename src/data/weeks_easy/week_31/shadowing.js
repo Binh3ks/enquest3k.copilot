@@ -2,7 +2,7 @@ export default {
   title: "Shadowing: My Day at the Market",
   image_url: "/images/week31/read_cover_w31.jpg",
   audio_url: "/audio/week31_easy/shadowing_main.mp3",
-  content_en: `Last Saturday, Luna **went to** a **local market** with her mum. The market was colourful and fun.
+  content_en: `Last Saturday, Luna went to a **local market** with her mum. The market was colourful and fun.
 
 Luna **looked around** and could see many stalls. At a craft stall, she could see smooth glass jars full of golden honey. The light **shone through** glass and made little rainbows!
 
@@ -12,7 +12,7 @@ Then Luna felt **soft cotton** scarves. They were very light and gentle. She tou
 
 Luna smelt sweet strawberries from the fruit stall. She tasted a small piece of mango. It was juicy and sweet.
 
-A plastic bag broke near the gate with a big crash! Luna **felt surprised**. Then she laughed.
+A plastic bag broke near the gate with a big crash! Luna felt surprised. Then she laughed.
 
 'A **local market** is full of things **to see and touch**!' said Luna.`,
   content_vi: `Thứ Bảy tuần trước, Luna đi chợ với mẹ. Chợ đầy màu sắc và vui vẻ.
