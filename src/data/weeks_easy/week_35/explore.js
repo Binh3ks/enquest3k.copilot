@@ -20,7 +20,7 @@ The sun sends light to Earth. The Earth reflects some heat back. But greenhouse 
 
 What happens when ice melts?
 
-When polar ice melts, it becomes water. This water goes into the ocean. Then **sea levels rise**. Some animal homes disappear under the water.
+When polar ice melts, it becomes water. This water goes into the ocean. Then sea levels rise. Some animal homes disappear under the water.
 
 **The good news**: We can all help! We **must protect** our planet!`,
   content_vi: `Biến đổi khí hậu nghĩa là gì?

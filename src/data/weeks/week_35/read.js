@@ -11,7 +11,7 @@ Factories make a lot of smoke. Cars and buses produce **harmful gases**. **Cutti
 
 **Climate change** is a serious problem. The Earth is getting warmer. **Polar ice** is melting. **Sea levels** are rising. Some animals are losing their homes.
 
-But we can **make a difference**! We must protect our planet. We should **reduce, reuse, and recycle**. We can **plant more trees**. We can use less plastic.
+But we can **make a difference**! We must protect our planet. We should **reduce, reuse, and recycle**. We can plant more trees. We can use less plastic.
 
 Many countries are **working together**. They must reduce **carbon emissions**. They should invest in **renewable energy**. Solar power and wind power can replace **fossil fuels**.
 

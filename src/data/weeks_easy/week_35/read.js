@@ -11,7 +11,7 @@ Factories make a lot of smoke. Cars and buses produce **harmful gases**. **Cutti
 
 **Climate change** is a serious problem. The Earth is getting warmer. **Polar ice** is melting. **Sea levels** are rising. Some animals are losing their homes.
 
-But we can **make a difference**! We must protect our planet. We should **reduce, reuse, and recycle**. We can **plant more trees**. Small actions can make a big difference.
+But we can **make a difference**! We must protect our planet. We should **reduce, reuse, and recycle**. We can plant more trees. Small actions can make a big difference.
 
 Together, we can **save our planet**. We must **act now**. Our planet needs our help.`,
   content_vi: `Hành tinh Trái Đất của chúng ta rất đẹp. Nó có đại dương xanh, rừng xanh, và núi cao. Nhưng hành tinh của chúng ta đang gặp nguy hiểm. Nhiều thứ đang thay đổi vì ô nhiễm.
