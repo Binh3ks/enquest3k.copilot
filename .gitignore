@@ -84,3 +84,7 @@ API keys.txt
 .server.pid
 _update_*.py
 docs/ARCHITECTURE.md
+
+# Python cache
+__pycache__/
+*.pyc
