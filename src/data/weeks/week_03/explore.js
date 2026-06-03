@@ -2,7 +2,7 @@ export default {
   title_en: "Our Amazing Bodies",
   title_vi: "Cơ thể Tuyệt vời",
   image_url: "/images/week3/explore_cover_w03.jpg",
-  content_en: "**Humans** have amazing **bodies**. Our **skin** covers our body. We have **bones** inside us. Our **brain** helps us think and learn. We use our **senses** to know the world. We can **see** with our eyes. We can **hear** with our ears. We can **touch** things with our hands. Every body is special and different.",
+  content_en: "Humans have amazing bodies. Our skin covers our body. We have bones inside us. Our brain helps us think and learn. We use our senses to know the world. We can see with our eyes. We can hear with our ears. We can touch things with our hands. Every body is special and different.",
   content_vi: "Con người có cơ thể tuyệt vời. Da của chúng ta bao phủ cơ thể. Chúng ta có xương bên trong. Não giúp chúng ta suy nghĩ và học. Chúng ta dùng giác quan để biết thế giới. Chúng ta có thể nhìn bằng mắt. Chúng ta có thể nghe bằng tai. Chúng ta có thể chạm vào mọi thứ bằng tay. Mỗi cơ thể đều đặc biệt và khác nhau.",
   audio_url: null,
   vocab: [

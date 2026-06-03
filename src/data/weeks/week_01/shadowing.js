@@ -14,5 +14,5 @@ export default {
     { id: 10, text: "I want to become a scientist when I grow up.", vi: "Tôi muốn trở thành nhà khoa học khi lớn lên." }
   ]
 ,
-  content_en: `My name is Alex. I am a **student** at Greenwood Elementary School. Every morning, I **wake up early** and **get ready for school**. My backpack is heavy because I carry my **book** and **notebook** every day. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is **very kind and patient**. She teaches us English, Math, and Science. I love **learning new things** every day. After school, I **go to the library** to read. I want to become a **scientist** when I grow up.`
+  content_en: `My name is Alex. I am a student at Greenwood Elementary School. Every morning, I **wake up early** and **get ready for school**. My backpack is heavy because I carry my book and notebook every day. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is **very kind and patient**. She teaches us English, Math, and Science. I love **learning new things** every day. After school, I **go to the library** to read. I want to become a scientist when I grow up.`
 };

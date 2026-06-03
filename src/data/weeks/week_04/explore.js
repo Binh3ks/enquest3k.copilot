@@ -3,7 +3,7 @@ export default {
   title_vi: "Khoa học về Nụ cười",
   image_url: "/images/week4/explore_cover_w04.jpg",
   audio_url: "/audio/week4/explore_main.mp3",
-  content_en: "Do you know that **smiling** makes you feel **happy**? When you smile, your **brain** sends special signals to your body. These signals tell your body to feel good! **Scientists** say that **smiling** can even make you feel **better** when you are sad. When you see someone **smile**, you want to smile too! This is called a smile **chain**. **Smiling** is like a magic trick for your **feelings**. So remember to smile every day!",
+  content_en: "Do you know that smiling makes you feel happy? When you smile, your brain sends special signals to your body. These signals tell your body to feel good! Scientists say that smiling can even make you feel better when you are sad. When you see someone smile, you want to smile too! This is called a smile chain. Smiling is like a magic trick for your feelings. So remember to smile every day!",
   content_vi: "Bạn có biết rằng cười làm cho bạn cảm thấy hạnh phúc không? Khi bạn cười, não của bạn gửi tín hiệu đặc biệt đến cơ thể bạn. Những tín hiệu này nói với cơ thể bạn rằng hãy cảm thấy tốt! Các nhà khoa học nói rằng cười thậm chí có thể làm cho bạn cảm thấy tốt hơn khi bạn buồn. Khi bạn nhìn thấy ai đó cười, bạn cũng muốn cười! Đây được gọi là chuỗi nụ cười. Cười giống như một trò ảo thuật cho cảm xúc của bạn. Vì vậy hãy nhớ cười mỗi ngày!",
   check_questions: [
     {

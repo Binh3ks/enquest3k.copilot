@@ -2,7 +2,7 @@ export default {
   title_en: "My Body Parts",
   title_vi: "Các bộ phận cơ thể",
   image_url: "/images/week3/explore_cover_w03.jpg",
-  content_en: "I have a **body**. I have a **head** on top. I have two **ears** to hear sounds. I have a **nose** to smell things. I have a **mouth** to eat and talk. I have two **hands** to hold things. I have two **feet** to walk and run. My body helps me every day. All body parts work together. I take care of my body.",
+  content_en: "I have a body. I have a head on top. I have two ears to hear sounds. I have a nose to smell things. I have a mouth to eat and talk. I have two hands to hold things. I have two feet to walk and run. My body helps me every day. All body parts work together. I take care of my body.",
   content_vi: "Tôi có cơ thể. Tôi có đầu ở trên. Tôi có hai tai để nghe âm thanh. Tôi có mũi để ngửi. Tôi có miệng để ăn và nói. Tôi có hai tay để cầm đồ. Tôi có hai chân để đi và chạy. Cơ thể giúp tôi mỗi ngày. Tất cả bộ phận làm việc cùng nhau. Tôi chăm sóc cơ thể của mình.",
   audio_url: null,
   vocab: [

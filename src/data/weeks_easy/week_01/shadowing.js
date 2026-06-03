@@ -15,5 +15,5 @@ export default {
     { id: 11, text: "Every day is a happy day.", vi: "Mỗi ngày là một ngày vui." }
   ]
 ,
-  content_en: `Hi! My name is Alex. I am at **school** today. I am in Grade 1. This is my desk and chair. I **sit next to** my friend Lily. I have a **pen** and a **book in my bag**. I can see a picture **on the wall** and a big door **at the front**. My teacher is kind. I like my classroom! **Every day** is a **happy day**.`
+  content_en: `Hi! My name is Alex. I am at school today. I am in Grade 1. This is my desk and chair. I **sit next to** my friend Lily. I have a pen and a **book in my bag**. I can see a picture **on the wall** and a big door **at the front**. My teacher is kind. I like my classroom! **Every day** is a **happy day**.`
 };

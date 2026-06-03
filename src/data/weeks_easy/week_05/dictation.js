@@ -13,5 +13,5 @@ export default {
     { id: 11, text: "I love my house!", audio_url: "/audio/week5_easy/dictation_11.mp3", meaning: "Tôi yêu ngôi nhà của mình!" }
   ]
 ,
-  content_en: `My name is Tim. I live in a house. My house has many rooms. I sleep **in my bedroom**. I have a soft bed **in my bedroom**. I eat **in the kitchen**. I **sit on** a chair **at the table**. I **wash my hands** **in the bathroom**. I **watch TV** **in the living room** **every evening**. I like **to explore** every room. Every room in my house is fun. I love my house!`
+  content_en: `My name is Tim. I live in a house. My house has many rooms. I sleep **in my bedroom**. I have a soft bed **in my bedroom**. I eat in the kitchen. I **sit on** a chair **at the table**. I **wash my hands** **in the bathroom**. I **watch TV** **in the living room** **every evening**. I like **to explore** every room. Every room in my house is fun. I love my house!`
 };

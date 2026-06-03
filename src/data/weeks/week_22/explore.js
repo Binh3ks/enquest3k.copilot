@@ -6,9 +6,9 @@ export default {
   content_en: `
  How do real detectives solve a case? They do not use luck — they work carefully, step by step.
 
- First, a detective arrives at the scene and opens a notebook. They look for every small clue: a footprint, a lost object, or something unusual. They write every clue **clearly** in their notebook.
+ First, a detective arrives at the scene and opens a notebook. They look for every small clue: a footprint, a lost object, or something unusual. They write every clue clearly in their notebook.
 
- Next, the detective talks to people who were there — including the suspect. This is called an interview. A good interview asks one careful question at a time. The detective listens and writes every answer **clearly**. They ask: were you here yesterday? Did you see anything last night? What happened last week?
+ Next, the detective talks to people who were there — including the suspect. This is called an interview. A good interview asks one careful question at a time. The detective listens and writes every answer clearly. They ask: were you here yesterday? Did you see anything last night? What happened last week?
 
  Then, the detective reads all the clues and answers together. Little by little, the picture of the case becomes clear.
 

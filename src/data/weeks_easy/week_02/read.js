@@ -1,7 +1,7 @@
 export default {
   title: "My Family",
   image_url: "/images/week2/read_cover_w02.jpg",
-  content_en: "This is my family. My **lovely mother** is kind. She **makes food** **for us** **every day**. My **funny father** is strong. He **plays with me** **in the park**. My **big brother** **helps me with** my homework. My **little sister** is funny. She **draws pictures** for me. We love **each other**. We **work together** as a great team. Our home is full of happiness. We **have dinner** together **every evening** and **talk about** our day. I am very lucky **to have** my family!",
+  content_en: "This is my family. My **lovely mother** is kind. She **makes food** **for us** **every day**. My **funny father** is strong. He **plays with me** in the park. My **big brother** **helps me with** my homework. My **little sister** is funny. She **draws pictures** for me. We love **each other**. We **work together** as a great team. Our home is full of happiness. We **have dinner** together **every evening** and **talk about** our day. I am very lucky **to have** my family!",
   content_vi: "Đây là gia đình tôi. Đây là mẹ tôi. Bà tốt bụng. Đây là bố tôi. Ông mạnh mẽ. Đây là anh trai tôi. Anh ấy giúp tôi. Đây là em gái tôi. Em ấy vui tính. Chúng tôi là một đội. Chúng tôi yêu nhau. Tôi hạnh phúc ở nhà.",
   audio_url: null,
   comprehension_questions: [

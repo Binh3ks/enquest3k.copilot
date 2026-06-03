@@ -10,5 +10,5 @@ export default {
     { id: 8, text: "I put everything in my bag.", text_en: "I put everything in my bag.", text_vi: "Tôi cho tất cả vào cặp.", audio_url: "/audio/week7_easy/dictation_8.mp3" }
   ]
 ,
-  content_en: `Today I go to school. There is a school bag **on my bed**. I **open it**. There is a **pencil** inside the bag. There is a **crayon** too. There is **paper** in the bag. There is a **folder** **for my homework**. I see my **lunch box**. There is a **water bottle** **next to** it. There is **glue** **in my pencil case**. There are **scissors** too. There is a **marker** to draw. I **put everything** in my bag. Now I am ready **for school**!`
+  content_en: `Today I go to school. There is a school bag **on my bed**. I **open it**. There is a pencil inside the bag. There is a crayon too. There is paper in the bag. There is a folder **for my homework**. I see my **lunch box**. There is a **water bottle** **next to** it. There is glue **in my pencil case**. There are scissors too. There is a marker to draw. I **put everything** in my bag. Now I am ready **for school**!`
 };

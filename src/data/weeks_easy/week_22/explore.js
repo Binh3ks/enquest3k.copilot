@@ -6,7 +6,7 @@ export default {
   content_en: `
  Real detectives use more than their eyes — they also use science. Science helps detectives solve cases all over the world!
 
- When something happens, a detective goes to the place and looks for clues. A clue can be a fingerprint, a hair, or a footprint. The detective writes every clue **clearly** in a notebook. Later, all these clues go into an official report.
+ When something happens, a detective goes to the place and looks for clues. A clue can be a fingerprint, a hair, or a footprint. The detective writes every clue clearly in a notebook. Later, all these clues go into an official report.
 
  Scientists discovered that every person leaves tiny clues wherever they go. So if a suspect was somewhere yesterday or last night, the clues will still be there!
 
