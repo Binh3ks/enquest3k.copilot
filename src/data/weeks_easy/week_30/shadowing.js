@@ -4,7 +4,7 @@ export default {
   audio_url: "/audio/week30_easy/shadowing_main.mp3",
   content_en: `Last Sunday, Luna went to a **fun picnic** in the park with her friends Tom and Mia. Tom's dad is a **good cook** who made sandwiches, cookies, and cold lemonade. He put everything in a big basket.
 
-Mia's mum brought **fresh strawberries**. Luna's dad bought a big red watermelon at the **local market**. The children **drank lemonade**. Tom also brought **mango juice**.
+Mia's mum brought **fresh strawberries**. Luna's dad bought a big red watermelon at the **local market**. The children drank lemonade. Tom also brought **mango juice**.
 
 At the park, an artist was painting by the lake. Luna gave a cookie to the artist and he **said hello** back. Tom's friend **said hello** too.
 
@@ -17,7 +17,7 @@ Luna told her mum all about the picnic when she got home. 'We **had the best** d
     { id: 2, text: "Tom's dad is a **good cook** who made sandwiches, cookies, and cold lemonade." },
     { id: 3, text: "He put everything in a big basket." },
     { id: 4, text: "Luna's dad bought a big red watermelon at the **local market**." },
-    { id: 5, text: "The children **drank lemonade**." },
+    { id: 5, text: "The children drank lemonade." },
     { id: 6, text: "At the park, an artist was painting by the lake." },
     { id: 7, text: "Luna gave a cookie to the artist and he **said hello** back." },
     { id: 8, text: "The children **had fun** and **felt cheerful**." },

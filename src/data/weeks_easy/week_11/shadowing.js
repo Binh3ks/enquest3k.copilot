@@ -24,5 +24,5 @@ export default {
     { id: 20, text: "I like my weekend!", vi: "Tôi thích cuối tuần!" }
   ]
 ,
-  content_en: `Today is Saturday! I am happy. I **go to** the park. I **play at** the park. It is fun! Then I **go to** the library. I **read a book** **at the library**. I like books! My mom and I **go to** the store. We **buy food** **at the store**. I **help mom**! We **go to** the playground. I **play at** the playground. I **slide down**! **On Sunday**, I **go to** the zoo. I see a big lion **at the zoo**! Then I **eat lunch** **at home**. The food is good! I **go to** school **on Monday**. I like my weekend!`
+  content_en: `Today is Saturday! I am happy. I **go to** the park. I **play at** the park. It is fun! Then I **go to** the library. I **read a book** **at the library**. I like books! My mom and I **go to** the store. We buy food **at the store**. I **help mom**! We **go to** the playground. I **play at** the playground. I **slide down**! **On Sunday**, I **go to** the zoo. I see a big lion **at the zoo**! Then I **eat lunch** **at home**. The food is good! I **go to** school **on Monday**. I like my weekend!`
 };
