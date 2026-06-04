@@ -7,15 +7,15 @@ export default {
   content_en: `
  Have you ever wondered why the sky cries? Some children describe raining! Let's explore the science of weather.
 
- The water cycle starts with evaporation. When the sun shines on rivers and oceans, water turns into invisible vapor. This is evaporation - water becoming gas and floating upward.
+ The **water cycle** starts with evaporation. When the sun shines on rivers and oceans, water **turns into** **invisible vapor**. This is evaporation - water becoming gas and floating upward.
 
- This vapor rises into the atmosphere - the layer of air around Earth. High up, it is very cold. The vapor cools and becomes tiny water droplets. Millions of droplets stick together to form clouds!
+ This vapor rises into the atmosphere - the layer of air around Earth. High up, it is very cold. The vapor cools and becomes tiny **water droplets**. Millions of droplets **stick together** to form clouds!
 
- When clouds get heavy, water falls back down. This is precipitation. Precipitation is either raining or snowing. In warm places, water falls as raining. In cold places, it falls as snowing!
+ When clouds get heavy, water **falls back down**. This is precipitation. Precipitation is either raining or snowing. In warm places, water falls as raining. In cold places, it falls as snowing!
 
  Meteorologists predict precipitation to help us prepare. When it is raining, we wear our umbrella. When it is snowing, we wear our coat, boots, and hat.
 
- On sunny days, the cycle continues. Evaporation sends water back into the atmosphere. The cycle never stops - water moves from Earth to sky and back again, forever!
+ On **sunny days**, the cycle continues. Evaporation sends water back into the atmosphere. The cycle never stops - water moves from Earth to sky and back again, forever!
  `,
 
   content_vi: `

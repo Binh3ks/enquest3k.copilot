@@ -7,15 +7,15 @@ export default {
   content_en: `
  Have you ever asked: why does it rain?
 
- The sun shines on water. The water gets hot. Then it goes up into the air. This is called evaporation! The water becomes light and floats up.
+ The sun shines on water. The water gets hot. Then it **goes up into** the air. This is called evaporation! The water becomes light and floats up.
 
- The water goes high up into the atmosphere. The atmosphere is the air around the Earth. Up there, the water gets cold. It forms clouds!
+ The water goes high up into the atmosphere. The atmosphere is the air **around the Earth**. Up there, the water **gets cold**. It forms clouds!
 
- When lots of water is in the clouds, the clouds get heavy. Then the water falls back down. This is called precipitation!
+ When lots of water is in the clouds, the clouds get heavy. Then the water **falls back down**. This is called precipitation!
 
- Precipitation can be rain. It can also be snow! When it is very cold, we get snowing instead of rain.
+ Precipitation can be rain. It can also be snow! When it is very cold, we get snowing **instead of** rain.
 
- On sunny days, you wear light clothes. You feel warm. On raining days, you wear your coat and carry your umbrella. We dress for the weather!
+ On **sunny days**, you wear **light clothes**. You feel warm. On raining days, you wear your coat and carry your umbrella. We **dress for the weather**!
  `,
 
   content_vi: `

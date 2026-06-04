@@ -3,17 +3,17 @@ export default {
   title_vi: "Mau Sac Trong Nghe Thuat: Tron Sac To Va Tim Doi Xung",
   image_url: "/images/week23/explore_cover_w23.jpg",
   audio_url: "/audio/week23_easy/explore_main.mp3",
-  content_en: `When we paint a picture, we use pigment to give it color.
+  content_en: `When we **paint a picture**, we use pigment to **give it color**.
 
-Did you know we can mix pigment to make new colors? Red + blue = purple. Red + yellow = orange. Blue + yellow = green!
+Did you know we can mix pigment to **make new colors**? Red + blue = purple. Red + yellow = orange. Blue + yellow = green!
 
-We use a brush to put the pigment onto paper. Hold your brush carefully for smooth lines.
+We use a brush to put the pigment onto paper. Hold your brush carefully for **smooth lines**.
 
-The way paper feels is called texture. Rough paper has a bumpy texture that holds paint well. Choose your paper carefully!
+The way paper feels is called texture. Rough paper has a **bumpy texture** that holds paint well. Choose your paper carefully!
 
-Symmetry means both sides look the same. To create symmetry, paint on one side, then fold the paper. The pigment copies to the other side!
+Symmetry means both sides **look the same**. To create symmetry, paint on one side, then fold the paper. The pigment copies to the other side!
 
-Then use scissors to cut the shape. Add color, then glue it onto another piece of paper. Your art is ready!`,
+Then use scissors to cut the shape. Add color, then glue it onto another **piece of paper**. Your art is ready!`,
   content_vi: `Khi chung ta paint mot picture, chung ta dung pigment de tao color cho no.
 
 Ban co biet chung ta co the tron pigment de tao mau moi khong? Do + xanh lam = tim. Do + vang = cam. Xanh lam + vang = xanh la!
