@@ -22,7 +22,7 @@ What happens when ice melts?
 
 When polar ice melts, it becomes water. This water goes into the ocean. Then sea levels rise. Some animal homes disappear under the water.
 
-**The good news**: We can all help! We **must protect** our planet!`,
+The good news: We can all help! We **must protect** our planet!`,
   content_vi: `Biến đổi khí hậu nghĩa là gì?
 
 Biến đổi khí hậu có nghĩa là khí hậu của Trái Đất đang nóng lên. Hành tinh ấm hơn khoảng 1,1°C so với 100 năm trước. Điều này nghe có vẻ nhỏ, nhưng nó gây ra những vấn đề lớn cho động vật và con người.

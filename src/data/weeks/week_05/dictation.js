@@ -16,5 +16,5 @@ export default {
     { id: 14, text: "I love this mystery house!", meaning: "Tôi yêu ngôi nhà bí ẩn này!", audio_url: "/audio/week5/dictation_14.mp3" }
   ]
 ,
-  content_en: `**There is a big house on the hill**. It is a mystery house. Nobody knows what is inside. One day, I open the door. Upstairs, there is **a nice bedroom**. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find **the living room**. There is a big sofa and many shelves with books. In the kitchen, I open the cabinet and look in the fridge. There is food and drinks inside! This mystery house has beautiful furniture. Now it is my new home. I love this mystery house!`
+  content_en: `**There is a big house on the hill**. It is a mystery house. Nobody knows what is inside. One day, I open the door. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find **the living room**. There is a big sofa and many shelves with books. In the kitchen, I open the cabinet and look in the fridge. There is food and drinks inside! This mystery house has beautiful furniture. Now it is my new home. I love this mystery house!`
 };
