@@ -3,7 +3,7 @@ export default {
   title_vi: "So Thich Cua Toi",
   image_url: "/images/week12/explore_cover_w12.jpg",
   audio_url: "/audio/week12_easy/explore_main.mp3",
-  content_en: `I have many hobbies! I sing my favorite songs at home every day. I dance when I listen to music. On weekends, I **ride my bike in** the park. Sometimes I **draw pictures of** my family and my pets. I like to **swim in the** summer. I also **cook simple food** with my mom in the kitchen. I love to try new things and **practice every day**! All my hobbies make me happy and healthy.`,
+  content_en: `I have many hobbies! I sing my favorite songs at home every day. I dance when I listen to music. On weekends, I **ride my bike in** the park. Sometimes I **draw pictures of** my family and my pets. I like to **swim in the** summer. I also **cook simple food** with my mom in the kitchen. I love to try new things and practice every day! All my hobbies make me happy and healthy.`,
   content_vi: `Toi co nhieu so thich! Toi co the hat nhung bai hat yeu thich o nha. Toi co the nhay khi nghe nhac. Cuoi tuan, toi dap xe trong cong vien. Doi khi toi ve tranh gia dinh va thu cung. Toi thich boi vao mua he. Toi cung nau mon an don gian voi me. Toi thich thu nhung dieu moi va luyen tap moi ngay!`,
   check_questions: [
     {

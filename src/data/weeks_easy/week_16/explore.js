@@ -9,7 +9,7 @@ Do you like sports? Let's **learn about** the science in sports!
 
  When you run, your body needs energy. Energy comes from food! The food gives you power to play.
 
- When you **kick a ball**, it starts to move. This is called motion. The ball is **in motion** when it flies.
+ When you kick a ball, it starts to move. This is called motion. The ball is **in motion** when it flies.
 
  When you **throw a ball**, it goes up. Then it comes down. Why? **Because of** gravity! Gravity pulls things down to Earth.
 

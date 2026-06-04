@@ -5,7 +5,7 @@ export default {
   audio_url: "/audio/week23_easy/explore_main.mp3",
   content_en: `When we **paint a picture**, we use pigment to **give it color**.
 
-Did you know we can mix pigment to **make new colors**? Red + blue = purple. Red + yellow = orange. Blue + yellow = green!
+Did you know we can mix pigment to make new colors? Red + blue = purple. Red + yellow = orange. Blue + yellow = green!
 
 We use a brush to put the pigment onto paper. Hold your brush carefully for **smooth lines**.
 
