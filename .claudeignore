@@ -1,0 +1,93 @@
+# Claude Code ignore patterns
+# Excludes large/cache files from AI context to prevent "Request too large" errors
+
+# === VCS ===
+.git/
+
+# === Build / Cache ===
+.wrangler/
+node_modules/
+dist/
+build/
+.next/
+out/
+.cache/
+coverage/
+dist-ssr/
+*.local
+.vscode/*
+.idea/
+
+# === Public assets (regenerated, not source) ===
+public/images/
+public/audio/
+public/audio copy/
+public/audio_cache/
+public/audio cache/
+
+# === Wrangler state files (R2/SQLite) ===
+public/audio/.wrangler/
+public/audio/**/.wrangler/
+**/.wrangler/
+**/*.sqlite-wal
+**/*.sqlite-shm
+**/*.sqlite
+
+# === Media files ===
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.ico
+*.svg
+
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.flac
+*.aac
+
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+
+# === Archives ===
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.7z
+*.rar
+
+# === Logs ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# === Env / OS ===
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# === Backup / Historical / Archives ===
+Production_FINAL/
+Backup/
+*.bak
+*.backup
+
+# === Editor temp ===
+*.swp
+*.swo
+*~
+
+# === Large generated data files (if not actively edited) ===
+public/data/lessonPlans.json
+dist/data/lessonPlans.json
