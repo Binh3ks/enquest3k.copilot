@@ -13,7 +13,7 @@ export default {
  
  Sleep **helps you grow** too! When you **were a baby**, you **slept a lot**. Sometimes you were quiet. Sometimes you were noisy and cried. Your body grows when you sleep!
  
- Your brain grows too! When you were in kindergarten, you **learned to read**. You learned to count. Each memory helps your brain **grow strong**!
+ Your brain grows too! When you were in **kindergarten**, you **learned to read**. You learned to count. Each memory helps your brain **grow strong**!
  
  **every year** you grow! **Look at** photos - you were little! Now you are tall. You can reach high things now!
  

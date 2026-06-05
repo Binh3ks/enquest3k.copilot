@@ -2,11 +2,11 @@ export default {
   title: "A Special Picnic Day",
   image_url: "/images/week30/read_cover_w30.jpg",
   audio_url: "/audio/week30_easy/read_main.mp3",
-  content_en: `**last sunday**, **luna went** to a **fun picnic** in the park with her friends Tom and Mia. Tom's dad is a **good cook** who made sandwiches, cookies, and **cold lemonade**. He **put everything** in a big basket.
+  content_en: `**last sunday**, **luna went** to a **fun picnic** **in the park** with **her friends** Tom and Mia. Tom's dad is a **good cook** who made sandwiches, cookies, and **cold lemonade**. He **put everything** in a big basket.
 
 Mia's **mum brought** **fresh strawberries**. Luna's **dad bought** a **big red watermelon** at the **local market**. The children **drank lemonade**. Tom also brought **mango juice**.
 
-At the park, an artist was painting by the lake. **Luna gave** a cookie to the artist and he **said hello** back. Tom's friend **said hello** too.
+**at the park**, an artist was painting **by the lake**. **Luna gave** a cookie to the artist and he **said hello** back. Tom's friend **said hello** too.
 
 The children **had fun** and **felt cheerful**. **after lunch**, they played games and **watched the ducks** on the lake. **After that** they **put everything away** and **went home happy**.
 

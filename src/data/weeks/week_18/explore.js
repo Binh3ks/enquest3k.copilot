@@ -5,11 +5,11 @@ export default {
   audio_url: "/audio/week18/explore_main.mp3",
   content_en: `Have you ever wondered how the news gets from a reporter to your **tv screen**?
 
-It all starts when something exciting or important happening in the world. A reporter grabs a camera and a microphone and goes to the scene. They stand **in front of** the camera and describe what they see in the scene.
+It all starts when something exciting or important happening **in the world**. A reporter grabs a camera and a microphone and goes to the scene. They stand **in front of** the camera and describe what they see in the scene.
 
-But how does the **live broadcast** travel so far? The camera **sends a signal** to a satellite in space. The satellite bounces that signal down to a **TV station**. At the station, a team checks the report and sends it out to millions of homes.
+But how does the **live broadcast** travel **so far**? The camera **sends a signal** to a satellite in space. The satellite bounces that signal down to a **TV station**. At the station, a team checks the report and sends it out to millions of homes.
 
-The people who watch at home are called the audience. They sit **in front of** their TV sets and watch the reporter speak from inside a studio or from a real location.
+The people who watch **at home** are called the audience. They sit **in front of** their TV sets and watch the reporter speak from inside a studio or from a real location.
 
 **Thanks to** **modern technology**, a reporter can describe an exciting scene and the audience can watch it **at the same moment** — even if they are **around the world**!`,
   content_vi: `Bạn có bao giờ tự hỏi tin tức từ phóng viên đến màn hình TV của bạn như thế nào không?

@@ -9,7 +9,7 @@ export default {
 
  There was a temple **in the center of** the village. People went to the temple to pray. The temple was very beautiful.
 
- Now towns are different! There are new buildings. There are new roads. There is a **new bridge**. Some old places are gone.
+ Now towns are different! There are **new buildings**. There are new roads. There is a **new bridge**. Some old places are gone.
 
  But some old places are still there! Old temples are **still standing**. They are **important to us**. They show us the past.
 

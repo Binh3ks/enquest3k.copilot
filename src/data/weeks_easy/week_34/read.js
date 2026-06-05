@@ -13,7 +13,7 @@ export default {
 
 Then one **cold day** in autumn, the **first frost appeared**. The grasshopper felt very cold and very hungry. He came to the ant's house and asked for food. The ant gave the grasshopper some food and invited him inside, saying he should work harder **next summer**.
 
-All winter long, the two animals shared food together. The grasshopper **learned an important lesson**: **work hard** and **prepare for the future**. The ant **smiled and agreed**. **From that day on**, both the **ant and the grasshopper** worked together and stayed happy and healthy for the rest of the year. The fable teaches us that **hard work pays off** in the end.`,
+All winter long, the two animals shared food together. The grasshopper **learned an important lesson**: **work hard** and **prepare for the future**. The ant **smiled and agreed**. **From that day on**, both the **ant and the grasshopper** worked together and stayed happy and healthy **for the rest of the year**. The fable teaches us that **hard work pays off** in the end.`,
   content_vi: `**Rất lâu trước đây**, có **một con kiến chăm chỉ** sống trên một gò đất nhỏ. Cũng có **một con châu chấu lười biếng** sống dưới một chiếc lá xanh lớn. Con kiến **luôn bận rộn** trong khi con châu chấu **luôn chơi trò chơi**.
 
 **Dưới ánh nắng mùa hè ấm áp**, con kiến **đi ra đồng** mỗi ngày. Cô ấy **nhặt hạt** và **dự trữ thức ăn** cho mùa đông sắp tới. Con châu chấu **nhảy tung tăng** và **hát ríu rít** cả ngày. Nó **không bao giờ làm việc** và **không bao giờ lo lắng** về ngày mai.

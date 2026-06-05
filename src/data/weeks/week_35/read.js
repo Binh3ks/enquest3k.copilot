@@ -7,7 +7,7 @@ export default {
   audio_url: "/audio/week35/read_main.mp3",
   content_en: `**Our planet** is very beautiful. It has **blue oceans**, **green forests**, and **high mountains**. But **our planet** is **in danger**. many things are changing **because of** pollution.
 
-Factories make a lot of smoke. Cars and buses produce **harmful gases**. **Cutting down trees** destroys **animal homes**. **Throwing away plastic** pollutes our oceans and rivers.
+Factories make **a lot of** smoke. Cars and buses produce **harmful gases**. **Cutting down trees** destroys **animal homes**. **Throwing away plastic** pollutes our oceans and rivers.
 
 **Climate change** is a **serious problem**. The Earth is **getting warmer**. **Polar ice** is melting. **Sea levels** are rising. Some animals are losing their homes.
 

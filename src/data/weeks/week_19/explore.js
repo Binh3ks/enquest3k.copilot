@@ -12,7 +12,7 @@ export default {
 
 	 Sleep is important! During sleep, your body grows. This is why children need more sleep than adults.
 
-	 Your brain also grows! When you were in kindergarten, you learned to count and read. Each **memory you make** helps your brain grow stronger.
+	 Your brain also grows! When you were in **kindergarten**, you learned to count and read. Each **memory you make** helps your brain grow stronger.
 
 	 **every year** you **grow bigger**. **Look at** **old photos** - you were so little! Now you are tall. You can learn things you couldn't learn when you were young.
 

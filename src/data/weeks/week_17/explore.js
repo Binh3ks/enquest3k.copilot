@@ -13,7 +13,7 @@ export default {
 
  When clouds get heavy, water **falls back down**. This is precipitation. Precipitation is either raining or snowing. In warm places, water falls as raining. In cold places, it falls as snowing!
 
- Meteorologists predict precipitation to help us prepare. When **it is raining**, we wear our umbrella. When it is snowing, we wear our coat, boots, and hat.
+ Meteorologists predict precipitation to **help us** prepare. When **it is raining**, we wear our umbrella. When it is snowing, we wear our coat, boots, and hat.
 
  On **sunny days**, the cycle continues. Evaporation sends water back into the atmosphere. The cycle never stops - water moves from Earth to sky and back again, forever!
  `,
