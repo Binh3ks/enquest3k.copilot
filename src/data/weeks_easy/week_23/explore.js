@@ -11,7 +11,7 @@ We use a brush to put the pigment onto paper. Hold your brush carefully for **sm
 
 The way paper feels is called texture. Rough paper has a **bumpy texture** that holds paint well. Choose your paper carefully!
 
-Symmetry means both sides **look the same**. To create symmetry, paint on one side, then fold the paper. The pigment copies to the **other side**!
+Symmetry means both sides **look the same**. To create symmetry, paint on one side, then fold the paper. The pigment copies to the other side!
 
 Then use scissors to cut the shape. Add color, then glue it onto another **piece of paper**. Your art is ready!`,
   content_vi: `Khi chung ta paint mot picture, chung ta dung pigment de tao color cho no.

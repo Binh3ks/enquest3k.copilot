@@ -12,7 +12,7 @@ export default {
 
  Detectives also **do interviews** with people who saw **what happened**. In an interview, they ask **one question** **at a time** and **listen to** **every answer**. Did you walk here **last week**? What did you see **last night**? Each answer is a new **piece of the puzzle**.
 
- **because of** **forensic science**, many cases are solved and **innocent people** are protected.
+ **Because of** **forensic science**, many cases are solved and **innocent people** are protected.
  `,
   content_vi: `
     Các thám tử thực sự dùng nhiều hơn mắt — họ cũng dùng khoa học. Khoa học giúp thám tử giải quyết case trên toàn thế giới!
