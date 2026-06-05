@@ -9,14 +9,14 @@ export default {
 
  Charles Darwin was a scientist 200 years ago.
  He walked onto a ship and traveled to many islands.
- Every day, he looked at animals and plants.
+ **every day**, he looked at animals and plants.
  He watched birds and **listened to** their calls.
  At night, he opened his journal and wrote what he saw.
  He finished one diary, then started a new one!
 
- Jane Goodall was a scientist who watched wild chimpanzees in Africa.
+ Jane Goodall was a scientist who watched **wild chimpanzees** in Africa.
  She helped us understand how they played, talked, and even cooked food with tools.
- Jane cleaned her notes every evening and **never missed a day**.
+ Jane cleaned her notes **every evening** and **never missed a day**.
 
  Science diaries helped us learn so much about our world.
  Maybe your diary today will help scientists **in the future**!

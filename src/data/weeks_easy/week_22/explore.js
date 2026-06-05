@@ -8,11 +8,11 @@ export default {
 
  When something happens, a detective goes to the place and **looks for** clues. A clue can be a fingerprint, a hair, or a footprint. The detective writes every clue clearly in a notebook. Later, all these clues go into an **official report**.
 
- Scientists discovered that every person leaves tiny clues wherever they go. So if a suspect was somewhere yesterday or last night, the clues will still be there!
+ Scientists discovered that every person leaves tiny clues wherever they go. So if a suspect was somewhere yesterday or **last night**, the clues will still be there!
 
- Detectives also **do interviews** with people who saw what happened. In an interview, they ask **one question** at a time and listen to every answer. Did you walk here last week? What did you see last night? Each answer is a new **piece of the puzzle**.
+ Detectives also **do interviews** with people who saw what happened. In an interview, they ask **one question** **at a time** and **listen to** every answer. Did you walk here **last week**? What did you see **last night**? Each answer is a new **piece of the puzzle**.
 
- Because of **forensic science**, many cases are solved and innocent people are protected.
+ **because of** **forensic science**, many cases are solved and innocent people are protected.
  `,
   content_vi: `
     Các thám tử thực sự dùng nhiều hơn mắt — họ cũng dùng khoa học. Khoa học giúp thám tử giải quyết case trên toàn thế giới!

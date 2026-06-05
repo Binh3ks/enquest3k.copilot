@@ -1,7 +1,7 @@
 export default {
   title_en: "My School Bag",
   title_vi: "Cặp sách của tôi",
-  content_en: `Today I go to school. There is a school bag **on my bed**. I **open it**. There is a **yellow pencil** inside the bag. There is a **red crayon** too. There is **blank paper** in the bag. There is a **blue folder** **for my homework**. I see my **lunch box**. There is a **water bottle** **next to** it. There is **white glue** **in my pencil case**. There are **sharp scissors** too. There is a **big marker** to draw. I put everything in my bag. Now I am ready **for school**!`,
+  content_en: `Today I **go to school**. **there is** a school bag **on my bed**. I **open it**. **there is** a **yellow pencil** inside the bag. **there is** a **red crayon** too. **there is** **blank paper** in the bag. **there is** a **blue folder** **for my homework**. I see my **lunch box**. **there is** a **water bottle** **next to** it. **there is** **white glue** **in my pencil case**. **there are** **sharp scissors** too. **there is** a **big marker** to draw. I put everything in my bag. Now I **am ready** **for school**!`,
   content_vi: `Hôm nay tôi đi học. Có cặp sách trên giường. Tôi mở ra. Có bút chì bên trong. Cũng có bút sáp. Có giấy trong cặp. Có bìa kẹp cho bài tập. Tôi thấy hộp cơm. Có bình nước bên cạnh. Có keo trong hộp bút. Cũng có kéo. Có bút lông để vẽ. Tôi cho tất cả vào cặp. Tôi sẵn sàng đi học!`,
   audio_url: "/audio/week7_easy/read_explore_main.mp3",
   image_url: "/images/week7/read_cover_w07.jpg",
