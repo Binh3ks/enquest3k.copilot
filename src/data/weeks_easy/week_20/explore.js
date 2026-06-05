@@ -5,7 +5,7 @@ export default {
   audio_url: "/audio/week20_easy/explore_main.mp3",
 
   content_en: `
- **Look at** an old town! **Long ago**, people went to the market to buy food and things. There were trees on every road. People walked under the trees. There was a bridge over the river. People used the bridge to **get to the other side**.
+ **Look at** an old town! **Long ago**, people went to the market to buy food and things. There were trees on every road. People walked under the trees. There was a bridge over the river. People used the bridge to **cross the river**.
 
  There was a temple **in the center of** the village. People went to the temple to pray. The temple was very beautiful.
 

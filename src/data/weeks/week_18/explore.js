@@ -11,7 +11,7 @@ But how does the **live broadcast** travel so far? The camera **sends a signal**
 
 The people who watch at home are called the audience. They sit in front of their TV sets and watch the reporter speak from inside a studio or from a real location.
 
-**Thanks to** **modern technology**, a reporter can describe an exciting scene and the audience can watch it **at the same moment** — even if they are **on the other side of the world**!`,
+**Thanks to** **modern technology**, a reporter can describe an exciting scene and the audience can watch it **at the same moment** — even if they are **around the world**!`,
   content_vi: `Bạn có bao giờ tự hỏi tin tức từ phóng viên đến màn hình TV của bạn như thế nào không?
 
 Tất cả bắt đầu khi có điều gì đó hào hứng hoặc quan trọng đang xảy ra trên thế giới. Một phóng viên cầm máy quay và micro rồi đến hiện trường. Họ đứng trước máy quay và mô tả những gì họ thấy ở khung cảnh đó.

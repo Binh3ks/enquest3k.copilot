@@ -5,9 +5,9 @@ export default {
   title: "The Ant and the Grasshopper",
   image_url: "/images/week34/read_cover_w34.jpg",
   audio_url: "/audio/week34_easy/read_main.mp3",
-  content_en: `**A very long time ago**, there was a hard-working ant who lived in a small hill. There was also a lazy grasshopper who lived under a big green leaf. The ant was **always busy** while the grasshopper was always playing.
+  content_en: `**Long ago**, there was a hard-working ant who lived in a small hill. There was also a lazy grasshopper who lived under a big green leaf. The ant was **always busy** while the grasshopper was always playing.
 
-**In the warm summer sun**, the ant went to the field every day. She **gathered seeds** and **stored food** for the coming winter. The grasshopper **jumped around** and **sang songs** all day long. He never worked and never worried about tomorrow.
+**In the summer sun**, the ant went to the field every day. She **gathered seeds** and **stored food** for the coming winter. The grasshopper **jumped around** and **sang songs** all day long. He never worked and never worried about tomorrow.
 
 **Day after day**, the ant worked very hard all summer long. She **carried heavy seeds** and **built a warm shelter** in the hill. The grasshopper just kept playing and danced in the **warm sunshine**. He laughed and sang all summer long.
 

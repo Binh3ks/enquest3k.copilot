@@ -10,7 +10,7 @@ export default {
 
  Scientists discovered that every person leaves tiny clues wherever they go. So if a suspect was somewhere yesterday or last night, the clues will still be there!
 
- Detectives also **do interviews** with people who saw what happened. In an interview, they ask **one question at a time** and listen to every answer. Did you walk here last week? What did you see last night? Each answer is a new **piece of the puzzle**.
+ Detectives also **do interviews** with people who saw what happened. In an interview, they ask **one question** at a time and listen to every answer. Did you walk here last week? What did you see last night? Each answer is a new **piece of the puzzle**.
 
  Because of **forensic science**, many cases are solved and innocent people are protected.
  `,
