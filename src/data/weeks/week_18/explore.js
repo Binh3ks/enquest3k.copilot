@@ -3,7 +3,7 @@ export default {
   title_vi: "Tin Tức TV Đến Với Bạn Như Thế Nào",
   image_url: "/images/week18/explore_cover_w18.jpg",
   audio_url: "/audio/week18/explore_main.mp3",
-  content_en: `Have you ever wondered how the news gets from a reporter to your TV screen?
+  content_en: `Have you ever wondered how the news gets from a reporter to your **tv screen**?
 
 It all starts when something exciting or important happening in the world. A reporter grabs a camera and a microphone and goes to the scene. They stand **in front of** the camera and describe what they see in the scene.
 

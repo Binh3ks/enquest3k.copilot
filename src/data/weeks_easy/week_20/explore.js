@@ -5,11 +5,11 @@ export default {
   audio_url: "/audio/week20_easy/explore_main.mp3",
 
   content_en: `
- **Look at** an old town! **Long ago**, people **went to the market** to buy food and things. **there were** trees on every road. People walked under the trees. **there was** a bridge over the river. People used the bridge to **cross the river**.
+ **Look at** an **old town**! **Long ago**, people **went to the market** to **buy food** and things. **there were** trees on every road. People walked under the trees. **there was** a **bridge over** the river. People used the bridge to **cross the river**.
 
  **there was** a temple **in the center of** the village. People went to the temple to pray. The temple was very beautiful.
 
- Now towns are different! **there are** new buildings. **there are** new roads. **there is** a new bridge. Some old places are gone.
+ Now towns are different! **there are** **new buildings**. **there are** new roads. **there is** a **new bridge**. Some old places are gone.
 
  But some old places are still there! Old temples are **still standing**. They are **important to us**. They show us the past.
 

@@ -4,7 +4,7 @@ export default {
   image_url: "/images/week21/explore_cover_w21.jpg",
   audio_url: "/audio/week21/explore_main.mp3",
   content_en: `
- Long before cameras and computers, scientists used a very simple tool: a diary.
+ Long before cameras and computers, scientists used a very **simple tool**: a diary.
  These are called **field journal**s, and great scientists have kept them for **hundreds of years**.
 
  In 1831, the **young scientist** Charles Darwin walked onto a ship called HMS Beagle.
@@ -15,9 +15,9 @@ export default {
 
  In Africa, scientist Jane Goodall watched **wild chimpanzees** **every day** for over 60 years.
  She listened carefully to their sounds, talked to **local guides**, and cleaned her notes **every evening**.
- Each morning she started a new page and finished each entry with data: how far the animals walked, how long they played, and what they cooked with tools.
+ Each morning she started a **new page** and finished each entry with data: how far the animals walked, how long they played, and what they cooked with tools.
 
- These journals are our map of the **natural world**, built one careful observation **at a time**.
+ These journals are our map of the **natural world**, built one **careful observation** **at a time**.
  `,
   content_vi: `
     Từ lâu trước khi có máy ảnh và máy tính, các nhà khoa học dùng một công cụ rất đơn giản: nhật ký.

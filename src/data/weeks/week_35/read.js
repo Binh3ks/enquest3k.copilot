@@ -5,17 +5,17 @@ export default {
   title: "Our Planet Needs Our Help",
   image_url: "/images/week35/read_cover_w35.jpg",
   audio_url: "/audio/week35/read_main.mp3",
-  content_en: `**Our planet** is very beautiful. It has **blue oceans**, **green forests**, and **high mountains**. But **our planet** is **in danger**. Many things are changing **because of** pollution.
+  content_en: `**Our planet** is very beautiful. It has **blue oceans**, **green forests**, and **high mountains**. But **our planet** is **in danger**. **many things** are changing **because of** pollution.
 
-Factories make a lot of smoke. Cars and buses produce **harmful gases**. **Cutting down trees** destroys animal homes. **Throwing away plastic** pollutes our oceans and rivers.
+Factories make a lot of smoke. Cars and buses produce **harmful gases**. **Cutting down trees** destroys **animal homes**. **Throwing away plastic** pollutes our oceans and rivers.
 
-**Climate change** is a serious problem. The Earth is getting warmer. **Polar ice** is melting. **Sea levels** are rising. Some animals are losing their homes.
+**Climate change** is a **serious problem**. The Earth is **getting warmer**. **Polar ice** is melting. **Sea levels** are rising. Some animals are losing their homes.
 
-But we can **make a difference**! We **must protect** **our planet**. We should **reduce, reuse, and recycle**. We can plant more trees. We can use less plastic.
+But we can **make a difference**! We **must protect** **our planet**. We should **reduce, reuse, and recycle**. We can **plant more trees**. We can **use less** plastic.
 
 Many countries are **working together**. They must reduce **carbon emissions**. They should invest in **renewable energy**. **solar power** and **wind power** can replace **fossil fuels**.
 
-Young people can help too. You can turn off lights when you leave a room. You should use less water. You must not litter. Small actions can make a big difference.
+**young people** can help too. You can **turn off** lights when you leave a room. You should **use less** water. You must not litter. Small actions can make a **big difference**.
 
 Together, we can **save our planet**. We must **act now**. The future **depends on** the choices we make today. **our planet** needs our help.`,
   content_vi: `Hành tinh Trái Đất của chúng ta rất đẹp. Nó có đại dương xanh, rừng xanh, và núi cao. Nhưng hành tinh của chúng ta đang gặp nguy hiểm. Nhiều thứ đang thay đổi vì ô nhiễm.

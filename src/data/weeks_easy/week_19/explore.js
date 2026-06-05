@@ -7,7 +7,7 @@ export default {
   content_en: `
  **Look at** **old photos**! You **were a baby**. You were so small and cute!
  
- When you **were a baby**, you were little. Now you grow bigger **every year**!
+ When you **were a baby**, you were little. Now you **grow bigger** **every year**!
  
  Food **helps you grow**. When you were young, you drank milk. Milk makes bones strong. You also ate fruits. They help you grow healthy.
  

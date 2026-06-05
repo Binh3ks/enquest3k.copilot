@@ -3,7 +3,7 @@ export default {
   title_vi: "Ngôi nhà của tôi Đặc biệt",
   image_url: "/images/week5/explore_cover_w05.jpg",
   audio_url: "/audio/week5_easy/explore_main.mp3",
-  content_en: "Every house is special. Your house has rooms. A bedroom is where you sleep. You have a bed there. A kitchen is where you eat. You **sit on** a chair **at the table**. A bathroom is where you wash. A living room is where you play and **watch tv**. You can explore all the rooms in your house. Each room helps you do different things. What is your favorite room?",
+  content_en: "Every house is special. Your house has rooms. A bedroom is where you sleep. You have a bed there. A kitchen is where you eat. You **sit on** a chair **at the table**. A bathroom is where you wash. A **living room** is where you play and **watch tv**. You can explore all the rooms in your house. Each room helps you do different things. What is your favorite room?",
   content_vi: "Mỗi ngôi nhà đều đặc biệt. Ngôi nhà của bạn có các phòng. Phòng ngủ là nơi bạn ngủ. Bạn có một cái giường ở đó. Nhà bếp là nơi bạn ăn. Bạn ngồi trên ghế ở bàn. Phòng tắm là nơi bạn rửa. Phòng khách là nơi bạn chơi và xem TV. Bạn có thể khám phá tất cả các phòng trong nhà của bạn. Mỗi phòng giúp bạn làm những việc khác nhau. Phòng yêu thích của bạn là gì?",
   check_questions: [
     {
