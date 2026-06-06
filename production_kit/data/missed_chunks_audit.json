@@ -1,52 +1,19 @@
 {
   "summary": {
-    "files_with_missed": 13,
-    "total_missed_chunks": 21
+    "files_with_missed": 4,
+    "total_missed_chunks": 6
   },
   "files": {
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_07/read.js": [
-      "there is"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_07/explore.js": [
-      "there is"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_08/read.js": [
-      "there are"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_21/explore.js": [
-      "field journals"
-    ],
     "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_33/read.js": [
       "cold pack"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_34/read.js": [
-      "all winter long",
-      "there was"
     ],
     "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks/week_35/explore.js": [
       "fossil fuels",
       "there is",
       "what can we do"
     ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks_easy/week_07/read.js": [
-      "there are",
-      "there is"
-    ],
     "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks_easy/week_12/explore.js": [
       "draw pictures"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks_easy/week_20/explore.js": [
-      "there are",
-      "there is",
-      "there was",
-      "there were"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks_easy/week_34/read.js": [
-      "all winter long",
-      "there was"
-    ],
-    "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks_easy/week_34/explore.js": [
-      "there was"
     ],
     "/Users/binhnguyen/Downloads/Engquest3k/src/data/weeks_easy/week_35/explore.js": [
       "fossil fuels"
