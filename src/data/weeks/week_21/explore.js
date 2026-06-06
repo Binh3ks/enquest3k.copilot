@@ -5,13 +5,13 @@ export default {
   audio_url: "/audio/week21/explore_main.mp3",
   content_en: `
  Long before cameras and computers, scientists used a very **simple tool**: a diary.
- These are called **field journal**s, and great scientists have kept them for **hundreds of years**.
+ These are called **field journals**, and great scientists have kept them for **hundreds of years**.
 
  In 1831, the **young scientist** Charles Darwin walked onto a ship called HMS Beagle.
  For five years, he looked at animals, plants, and rocks on islands **across the world**.
  **every evening**, he opened his journal and wrote what he saw.
  He watched giant tortoises in the Galapagos Islands and **listened to** tropical birds.
- Darwin's **field journal** helped him develop the **theory of evolution**, one of the biggest ideas in science.
+ Darwin's **field journals** helped him develop the **theory of evolution**, one of the biggest ideas in science.
 
  In Africa, scientist Jane Goodall watched **wild chimpanzees** **every day** for over 60 years.
  She listened carefully to their sounds, talked to **local guides**, and cleaned her notes **every evening**.
