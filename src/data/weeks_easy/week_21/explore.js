@@ -9,7 +9,7 @@ export default {
 
  Charles Darwin was a scientist 200 **years ago**.
  He walked onto a ship and traveled to many islands.
- **every day**, he looked at animals and plants.
+ **every day**, he **looked at** animals and plants.
  He watched birds and **listened to** their calls.
  **at night**, he opened his journal and wrote what he saw.
  He finished one diary, then started a new one!

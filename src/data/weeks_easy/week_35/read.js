@@ -5,7 +5,7 @@ export default {
   title: "Our Planet Needs Our Help",
   image_url: "/images/week35/read_cover_w35.jpg",
   audio_url: "/audio/week35_easy/read_main.mp3",
-  content_en: `**Our planet** is very beautiful. It has **blue oceans**, **green forests**, and **high mountains**. But **our planet** is **in danger**. many things are changing **because of** pollution.
+  content_en: `**Our planet** is very beautiful. It has **blue oceans**, **green forests**, and **high mountains**. But **our planet** is **in danger**. **many things** are changing **because of** pollution.
 
 Factories make **a lot of** smoke. Cars and buses produce **harmful gases**. **Cutting down trees** destroys **animal homes**. **Throwing away plastic** pollutes our oceans and rivers.
 

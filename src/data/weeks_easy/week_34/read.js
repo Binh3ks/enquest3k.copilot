@@ -5,15 +5,15 @@ export default {
   title: "The Ant and the Grasshopper",
   image_url: "/images/week34/read_cover_w34.jpg",
   audio_url: "/audio/week34_easy/read_main.mp3",
-  content_en: `**Long ago**, **there was** a hard-**working ant** **who lived** in a **small hill**. **There was** also a **lazy grasshopper** **who lived** under a big **green leaf**. The ant was **always busy** while the grasshopper was always playing.
+  content_en: `**Long ago**, **there was** a hard-**working ant** **who lived** in a **small hill**. **There was** also a **lazy grasshopper** **who lived** under a big **green leaf**. The ant was **always busy** while the grasshopper was **always playing**.
 
-**In the summer sun**, the **ant went** to the field **every day**. She **gathered seeds** and **stored food** for the **coming winter**. The grasshopper **jumped around** and **sang songs** all day long. He never worked and never worried about tomorrow.
+**In the summer sun**, the **ant went** to the field **every day**. She **gathered seeds** and **stored food** for the **coming winter**. The grasshopper **jumped around** and **sang songs** **all day** long. He **never worked** and **never worried** about tomorrow.
 
-**Day after day**, the ant worked very hard all summer long. She **carried heavy seeds** and **built a warm shelter** in the hill. The grasshopper just kept playing and danced in the **warm sunshine**. He laughed and sang all summer long.
+**Day after day**, the ant **worked very hard all summer long**. She **carried heavy seeds** and **built a warm shelter** in the hill. The grasshopper just **kept playing** and danced in the **warm sunshine**. He laughed and sang **all summer long**.
 
-Then one **cold day** in autumn, the **first frost appeared**. The grasshopper felt very cold and very hungry. He came to the ant's house and asked for food. The ant gave the grasshopper some food and invited him inside, saying he should work harder **next summer**.
+Then one **cold day** in autumn, the **first frost appeared**. The grasshopper **felt very cold and very hungry**. He **came to the ant's house** and **asked for food**. The ant **gave the grasshopper some food** and invited him inside, saying he should work harder **next summer**.
 
-**All winter long**, the two animals shared food together. The grasshopper **learned an important lesson**: **work hard** and **prepare for the future**. The ant **smiled and agreed**. **From that day on**, both the **ant and the grasshopper** worked together and stayed happy and healthy **for the rest of the year**. The fable teaches us that **hard work pays off** in the end.`,
+**All winter long**, the two animals **shared food together**. The grasshopper **learned an important lesson**: **work hard** and **prepare for the future**. The ant **smiled and agreed**. **From that day on**, both the **ant and the grasshopper** worked together and stayed **happy and healthy** **for the rest of the year**. The fable teaches us that **hard work pays off** in the end.`,
   content_vi: `**Rất lâu trước đây**, có **một con kiến chăm chỉ** sống trên một gò đất nhỏ. Cũng có **một con châu chấu lười biếng** sống dưới một chiếc lá xanh lớn. Con kiến **luôn bận rộn** trong khi con châu chấu **luôn chơi trò chơi**.
 
 **Dưới ánh nắng mùa hè ấm áp**, con kiến **đi ra đồng** mỗi ngày. Cô ấy **nhặt hạt** và **dự trữ thức ăn** cho mùa đông sắp tới. Con châu chấu **nhảy tung tăng** và **hát ríu rít** cả ngày. Nó **không bao giờ làm việc** và **không bao giờ lo lắng** về ngày mai.
