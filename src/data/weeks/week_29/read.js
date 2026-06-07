@@ -2,7 +2,7 @@ export default {
   title: "The Magic Trip",
   image_url: "/images/week29/read_cover_w29.jpg",
   audio_url: "/audio/week29/read_main.mp3",
-  content_en: `**last week**, the children at Green School **went on** a **magic trip** to a **wonderful place**. First, they **got on** a **magic carpet** that **flew to** a **tiny green island** **in the sea**.
+  content_en: `**Last week**, the children at Green School **went on** a **magic trip** to a **wonderful place**. First, they **got on** a **magic carpet** that **flew to** a **tiny green island** **in the sea**.
 
 **on the island**, a **friendly pilot** **came to** **help them**. He **picked up** a beautiful photo and **gave it** to the teacher. A **kind farmer** **went to the field** and **gave them** fresh mangoes. The children **looked at** the bright fruit and smiled.
 

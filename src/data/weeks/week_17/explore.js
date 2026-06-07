@@ -5,7 +5,7 @@ export default {
   audio_url: "/audio/week17/explore_main.mp3",
 
   content_en: `
- Have you ever wondered why the sky cries? **some children** describe raining! Let's explore the science of weather.
+ Have you ever wondered why the sky cries? **Some children** describe raining! Let's explore the science of weather.
 
  The **water cycle** starts with evaporation. When the sun shines on rivers and oceans, water **turns into** **invisible vapor**. This is evaporation - water becoming gas and floating upward.
 

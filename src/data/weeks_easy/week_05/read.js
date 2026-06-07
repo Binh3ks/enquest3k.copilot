@@ -2,7 +2,7 @@ export default {
   title: "My House",
   image_url: "/images/week5/read_cover_w05.jpg",
   audio_url: "/audio/week5_easy/read_explore_main.mp3",
-  content_en: "**my name** is Tim. I live in a house. **my house** has many rooms. I sleep **in my bedroom**. I have a **soft bed** **in my bedroom**. I eat **in the kitchen**. I **sit on** a chair **at the table**. I **wash my hands** **in the bathroom**. I **watch TV** **in the living room** **every evening**. I like **to explore** **every room**. **every room** in **my house** is fun. I love **my house**!",
+  content_en: "**My name** is Tim. I live in a house. **My house** has many rooms. I sleep **in my bedroom**. I have a **soft bed** **in my bedroom**. I eat **in the kitchen**. I **sit on** a chair **at the table**. I **wash my hands** **in the bathroom**. I **watch TV** **in the living room** **every evening**. I like **to explore** **every room**. **Every room** in **my house** is fun. I love **my house**!",
   content_vi: "Tên tôi là Tim. Tôi sống trong một ngôi nhà. Ngôi nhà của tôi có nhiều phòng. Tôi ngủ trong phòng ngủ của tôi. Tôi có một cái giường trong phòng ngủ. Tôi ăn trong bếp. Tôi ngồi trên ghế ở bàn. Tôi rửa tay trong phòng tắm. Tôi xem TV trong phòng khách. Tôi thích khám phá ngôi nhà của mình. Mỗi phòng đều vui. Tôi yêu ngôi nhà của mình!",
   comprehension_questions: [
     { id: 1, question_en: "What is his name?", answer: ["Tim"], clue_statement: "His name is Tim.", hint_en: "It starts with 'T'...", hint_vi: "Nó bắt đầu bằng chữ 'T'..." },

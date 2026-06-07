@@ -9,7 +9,7 @@ export default {
 
 Suddenly, Jake **hit his knee** on the corner of a table. He **fell down** hard and broke the **glass cup** that another student was holding. His arm hurt when he tried to catch the falling cup.
 
-Jake bit his tongue when he **fell down**, and his hand hit the floor. He began to cry because everything hurt **at once**. **his teacher** **came quickly** and called the school nurse.
+Jake bit his tongue when he **fell down**, and his hand hit the floor. He began to cry because everything hurt **at once**. **His teacher** **came quickly** and called the school nurse.
 
 **The nurse** **put a cold pack** on Jake's knee and arm. She told Jake it was an **important lesson** — **everyone must** **walk carefully** in the corridor. Jake understood that running in the corridor was dangerous.
 
