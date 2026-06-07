@@ -13,7 +13,7 @@ Jake bit his tongue when he **fell down**, and his hand hit the floor. He began 
 
 **The nurse** **put a cold pack** on Jake's knee and arm. She told Jake it was an **important lesson** — **everyone must** **walk carefully** in the corridor. Jake understood that running in the corridor was dangerous.
 
-**at home**, Jake recovered quickly. He learned one very **important lesson**: always **walk carefully**, even when you are late.`,
+**At home**, Jake recovered quickly. He learned one very **important lesson**: always **walk carefully**, even when you are late.`,
   content_vi: `Một điều kinh khủng đã xảy ra ở trường vào thứ Hai tuần trước. Jake đang chạy trong hành lang vì cậu bị muộn. Cậu quên đi cẩn thận.
 
 Đột nhiên, Jake đập đầu gối vào góc bàn. Cậu ngã mạnh xuống và làm vỡ chiếc cốc thủy tinh mà một học sinh khác đang cầm. Cánh tay cậu bị đau khi cậu cố bắt chiếc cốc đang rơi.

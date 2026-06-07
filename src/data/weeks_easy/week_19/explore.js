@@ -15,7 +15,7 @@ export default {
  
  Your brain grows too! When you were in **kindergarten**, you **learned to read**. You learned to count. Each memory helps your brain **grow strong**!
  
- **every year** you grow! **Look at** photos - you were little! Now you are tall. You can reach high things now!
+ **Every year** you grow! **Look at** photos - you were little! Now you are tall. You can reach high things now!
  
  These memories of when we were small are special. Everyone starts as a baby. Everyone grows!
  `,

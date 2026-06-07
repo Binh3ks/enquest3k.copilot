@@ -14,7 +14,7 @@ export default {
 
 	 Your brain also grows! When you were in **kindergarten**, you learned to count and read. Each **memory you make** helps your brain grow stronger.
 
-	 **every year** you **grow bigger**. **Look at** **old photos** - you were so little! Now you are tall. You can learn things you couldn't learn when you were young.
+	 **Every year** you **grow bigger**. **Look at** **old photos** - you were so little! Now you are tall. You can learn things you couldn't learn when you were young.
 
 	 The past shows us how much we have changed. But growing never stops! Growing is about becoming smarter and more capable!
 

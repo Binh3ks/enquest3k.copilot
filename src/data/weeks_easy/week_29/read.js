@@ -15,7 +15,7 @@ Then the carpet went **over the ocean**. The **dolphins jumped out** of the wate
 
 Below, **the doctor** and **the nurse** **waved at** a big hospital near the beach. They were very friendly.
 
-**at last**, the **carpet flew** home. A **taxi driver** in a **yellow taxi** **stopped the taxi** and **helped carry** the carpet inside. 'I **went to** a farm! I **flew over** the sea! **The dolphins** **came to swim** with me!' Lily **told her mum** happily. 'That was the **best trip** ever!'`,
+**At last**, the **carpet flew** home. A **taxi driver** in a **yellow taxi** **stopped the taxi** and **helped carry** the carpet inside. 'I **went to** a farm! I **flew over** the sea! **The dolphins** **came to swim** with me!' Lily **told her mum** happily. 'That was the **best trip** ever!'`,
   content_vi: `Một đêm nọ, Lily tìm thấy một tấm thảm thần kỳ dưới giường. Cô ngồi lên nó và nó bay lên trời đêm xanh thẫm!
 
 Đầu tiên, tấm thảm đến một trang trại. Một nông dân tốt bụng bước ra từ chuồng ngựa đỏ và vẫy tay với Lily. Anh ấy tặng cô một quả xoài chín ngọt từ cánh đồng. 'Chuyến đi tuyệt vời biết bao!' cô nói với nụ cười lớn.

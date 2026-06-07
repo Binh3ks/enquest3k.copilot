@@ -7,7 +7,7 @@ export default {
 
 The reporter does this live — that means it is happening **right now**! Their voice travels through the microphone to a machine. The machine sends the sound and picture to your TV.
 
-**at home**, you are part of the audience. You watch the reporter and **listen to** their report. **It is so exciting** because you can **learn about** the world from your sofa!
+**At home**, you are part of the audience. You watch the reporter and **listen to** their report. **It is so exciting** because you can **learn about** the world from your sofa!
 
 Even Alex **at home** can be a reporter. He **picks up** a **toy microphone**, looks at the camera, and starts to **describe the scene** around him. You can be a reporter too!`,
   content_vi: `Bạn đã bao giờ xem tin tức trên TV chưa? Một phóng viên đứng trước máy quay và nói vào micro. Họ mô tả khung cảnh và cho chúng ta biết điều gì đang xảy ra.

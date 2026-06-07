@@ -9,7 +9,7 @@ export default {
 
  In 1831, the **young scientist** Charles Darwin walked onto a ship called HMS Beagle.
  For five years, he **looked at** animals, plants, and rocks on islands **across the world**.
- **every evening**, he opened his journal and wrote what he saw.
+ **Every evening**, he opened his journal and wrote what he saw.
  He watched giant tortoises in the Galapagos Islands and **listened to** tropical birds.
  Darwin's **field journals** helped him develop the **theory of evolution**, one of the biggest ideas in science.
 
