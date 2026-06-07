@@ -13,6 +13,7 @@ import word_power from './word_power.js';
 import mindmap from './mindmap.js';
 import daily_watch from './daily_watch.js';
 import word_match from './word_match.js';
+import { week11GamesAdvanced as games } from './games.js';
 
 const weekData = {
   weekId: 11,
@@ -21,15 +22,16 @@ const weekData = {
   weekTitle_vi: "Các Địa Điểm Vui Chơi Cuối Tuần",
   grammar_focus: "Preposition 'at' (I play at the park)",
   global_vocab: vocab.vocab,
-  
+
   voiceConfig: {
     narration: 'en-US-Neural2-D',
     vocabulary: 'en-US-Neural2-F',
     dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Neural2-D',
     questions: 'en-US-Neural2-D',
     mindmap: 'en-US-Neural2-D'
   },
-  
+
   stations: {
     read_explore: read,
     new_words: vocab,
@@ -43,7 +45,8 @@ const weekData = {
     writing: writing,
     explore: explore,
     mindmap_speaking: mindmap,
-    daily_watch: daily_watch
+    daily_watch: daily_watch,
+    game_hub: games
   }
 };
 

@@ -13,6 +13,7 @@ import word_power from './word_power.js';
 import word_match from './word_match.js';
 import mindmap from './mindmap.js';
 import daily_watch from './daily_watch.js';
+import { week7GamesAdvanced as games } from './games.js';
 
 const weekData = {
   weekId: 7,
@@ -21,7 +22,15 @@ const weekData = {
   weekTitle_vi: "Trong Balo của tôi",
   grammar_focus: "There is a... (Singular)",
   global_vocab: vocab.vocab,
-  
+  voiceConfig: {
+    narration: "nova",
+    vocabulary: "nova",
+    dictation: "echo",
+    shadowing: "nova",
+    questions: "nova",
+    mindmap: "nova"
+  },
+
   stations: {
     read_explore: read,
     new_words: vocab,
@@ -35,7 +44,8 @@ const weekData = {
     writing: writing,
     explore: explore,
     mindmap_speaking: mindmap,
-    daily_watch: daily_watch
+    daily_watch: daily_watch,
+    game_hub: games
   }
 };
 

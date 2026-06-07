@@ -1,6 +1,11 @@
 export default {
   title: "My Favorite Weekend Place",
   min_words: 30,
+  instruction_en: "Write about your favorite places on the weekend!",
+  instruction_vi: "Viết về những nơi bạn thích vào cuối tuần!",
+  model_sentence: "Today is Saturday! I am happy. I go to the park. I play at the park. It is fun! Then I go to the library. I read a book. I like books! My mom and I go to the store. We buy food. I help mom! We go to the playground. I slide down! It is fun! On Sunday I go to the zoo. I see a big lion. Then we eat lunch at home. The food is good! I love my weekend!",
+  prompt_en: "Where do you go on the weekend?",
+  prompt_vi: "Bạn đi đâu vào cuối tuần?",
   vocabulary_bank: {
     label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",

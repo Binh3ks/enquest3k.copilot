@@ -3,6 +3,7 @@ export default {
   min_words: 45,
   instruction_en: "Write about your yesterday in full detail using past tense — morning to night!",
   instruction_vi: "Viết về hôm qua chi tiết bằng thì quá khứ — từ sáng đến tối!",
+  model_sentence: "Yesterday was a busy and beautiful day. I woke up early, brushed my teeth, and packed my bag. I walked to school with my friend Lily, and we talked all the way about our science homework. At school, I listened carefully to the teacher. At break time, I played soccer with my classmates. We shouted with excitement when our team scored a goal. After school, I helped my mother prepare dinner. Then I cleaned my room and organised my books. I washed my hands before dinner and watched my favourite TV program for thirty minutes. In the evening, I looked at the stars through my bedroom window and counted ten of them. I was very tired, so I started to fall asleep at nine o'clock. What a busy and beautiful day!",
   prompt_en: "What did you do morning, afternoon, and evening? How did you feel at the end?",
   prompt_vi: "Bạn đã làm gì sáng, chiều, tối? Cuối ngày bạn cảm thấy thế nào?",
   topic_talk_prompt: "Tell me everything you did yesterday from morning to night!",

@@ -50,6 +50,57 @@ export default {
       audio_example: "/audio/week11_easy/wordpower_ex_buy_at_store.mp3",
       audio_collocation: "/audio/week11_easy/wordpower_coll_buy_at_store.mp3",
       audio_model: "/audio/week11_easy/wordpower_model_buy_at_store.mp3"
+    },
+    {
+      id: 4,
+      word: "at the playground",
+      pronunciation: "/æt ðə ˈpleɪɡraʊnd/",
+      cefr_level: "A1",
+      definition_en: "in the place with slides and swings",
+      definition_vi: "ở sân chơi",
+      example: "I play at the playground.",
+      model_sentence: "I have fun at the playground.",
+      collocation: "at the playground / go to the playground",
+      image_url: null,
+      audio_word: "/audio/week11_easy/wordpower_at_the_playground.mp3",
+      audio_definition: "/audio/week11_easy/wordpower_def_at_the_playground.mp3",
+      audio_example: "/audio/week11_easy/wordpower_ex_at_the_playground.mp3",
+      audio_collocation: "/audio/week11_easy/wordpower_coll_at_the_playground.mp3",
+      audio_model: "/audio/week11_easy/wordpower_model_at_the_playground.mp3"
+    },
+    {
+      id: 5,
+      word: "at the zoo",
+      pronunciation: "/æt ðə zuː/",
+      cefr_level: "A1",
+      definition_en: "in the place with wild animals",
+      definition_vi: "ở sở thú",
+      example: "I see animals at the zoo.",
+      model_sentence: "I see a big lion at the zoo.",
+      collocation: "at the zoo / go to the zoo",
+      image_url: null,
+      audio_word: "/audio/week11_easy/wordpower_at_the_zoo.mp3",
+      audio_definition: "/audio/week11_easy/wordpower_def_at_the_zoo.mp3",
+      audio_example: "/audio/week11_easy/wordpower_ex_at_the_zoo.mp3",
+      audio_collocation: "/audio/week11_easy/wordpower_coll_at_the_zoo.mp3",
+      audio_model: "/audio/week11_easy/wordpower_model_at_the_zoo.mp3"
+    },
+    {
+      id: 6,
+      word: "at home",
+      pronunciation: "/æt hoʊm/",
+      cefr_level: "A1",
+      definition_en: "in your house",
+      definition_vi: "ở nhà",
+      example: "I eat lunch at home.",
+      model_sentence: "I rest at home on Sunday.",
+      collocation: "at home / stay at home",
+      image_url: null,
+      audio_word: "/audio/week11_easy/wordpower_at_home.mp3",
+      audio_definition: "/audio/week11_easy/wordpower_def_at_home.mp3",
+      audio_example: "/audio/week11_easy/wordpower_ex_at_home.mp3",
+      audio_collocation: "/audio/week11_easy/wordpower_coll_at_home.mp3",
+      audio_model: "/audio/week11_easy/wordpower_model_at_home.mp3"
     }
   ]
 };
