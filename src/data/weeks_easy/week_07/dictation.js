@@ -1,13 +1,19 @@
 export default {
   sentences: [
-    { id: 1, text: "Today I go to school.", text_en: "Today I go to school.", text_vi: "Hôm nay tôi đi học.", audio_url: "/audio/week7_easy/dictation_1.mp3" },
-    { id: 2, text: "There is a school bag on my bed.", text_en: "There is a school bag on my bed.", text_vi: "Có cặp sách trên giường.", audio_url: "/audio/week7_easy/dictation_2.mp3" },
-    { id: 3, text: "There is a pencil inside the bag.", text_en: "There is a pencil inside the bag.", text_vi: "Có bút chì bên trong cặp.", audio_url: "/audio/week7_easy/dictation_3.mp3" },
-    { id: 4, text: "There is a crayon too.", text_en: "There is a crayon too.", text_vi: "Cũng có bút sáp.", audio_url: "/audio/week7_easy/dictation_4.mp3" },
-    { id: 5, text: "There is paper in the bag.", text_en: "There is paper in the bag.", text_vi: "Có giấy trong cặp.", audio_url: "/audio/week7_easy/dictation_5.mp3" },
-    { id: 6, text: "There is a folder for my homework.", text_en: "There is a folder for my homework.", text_vi: "Có bìa kẹp cho bài tập.", audio_url: "/audio/week7_easy/dictation_6.mp3" },
-    { id: 7, text: "There is a water bottle next to it.", text_en: "There is a water bottle next to it.", text_vi: "Có bình nước bên cạnh.", audio_url: "/audio/week7_easy/dictation_7.mp3" },
-    { id: 8, text: "I put everything in my bag.", text_en: "I put everything in my bag.", text_vi: "Tôi cho tất cả vào cặp.", audio_url: "/audio/week7_easy/dictation_8.mp3" }
+    { id: 1, text: "Today I go to school.", meaning: "(cụm từ: Today I go to school.)" },
+      { id: 2, text: "There is a school bag on my bed.", meaning: "(cụm từ: There is a school bag on my bed.)" },
+      { id: 3, text: "I open it.", meaning: "(cụm từ: I open it.)" },
+      { id: 4, text: "There is a yellow pencil inside the bag.", meaning: "(cụm từ: There is a yellow pencil inside the bag.)" },
+      { id: 5, text: "There is a red crayon too.", meaning: "(cụm từ: There is a red crayon too.)" },
+      { id: 6, text: "There is blank paper in the bag.", meaning: "(cụm từ: There is blank paper in the bag.)" },
+      { id: 7, text: "There is a blue folder for my homework.", meaning: "(cụm từ: There is a blue folder for my homework.)" },
+      { id: 8, text: "I see my lunch box.", meaning: "(cụm từ: I see my lunch box.)" },
+      { id: 9, text: "There is a water bottle next to it.", meaning: "(cụm từ: There is a water bottle next to it.)" },
+      { id: 10, text: "There is white glue in my pencil case.", meaning: "(cụm từ: There is white glue in my pencil case.)" },
+      { id: 11, text: "There are sharp scissors too.", meaning: "(cụm từ: There are sharp scissors too.)" },
+      { id: 12, text: "There is a big marker to draw.", meaning: "(cụm từ: There is a big marker to draw.)" },
+      { id: 13, text: "I put everything in my bag.", meaning: "(cụm từ: I put everything in my bag.)" },
+      { id: 14, text: "Now I am ready for school!", meaning: "(cụm từ: Now I am ready for school!)" }
   ]
 ,
   content_en: `Today I go to school. There is a school bag **on my bed**. I **open it**. There is a pencil inside the bag. There is a crayon too. There is paper in the bag. There is a folder **for my homework**. I see my **lunch box**. There is a **water bottle** **next to** it. There is glue **in my pencil case**. There are scissors too. There is a marker to draw. I **put everything** in my bag. Now I am ready **for school**!`
