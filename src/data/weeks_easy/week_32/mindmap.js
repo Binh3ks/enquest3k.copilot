@@ -176,7 +176,7 @@ const mindMapContent = {
         "audio": "/audio/week32/mindmap_branch_6_3.mp3"
       },
       {
-        "text": "happy",
+        "text": "relaxing",
         "audio": "/audio/week32/mindmap_branch_6_4.mp3"
       },
       {

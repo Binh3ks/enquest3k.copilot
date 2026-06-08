@@ -139,7 +139,7 @@ const mindMapContent = {
     "Do you ___ or ___?": [
       { text: "walk or run", audio: "/audio/week28/mindmap_branch_5_1.mp3" },
       { text: "swim or dive", audio: "/audio/week28/mindmap_branch_5_2.mp3" },
-      { text: "fly or glide", audio: "/audio/week28/mindmap_branch_5_3.mp3" },
+      { text: "skate or slide", audio: "/audio/week28/mindmap_branch_5_3.mp3" },
       { text: "climb or jump", audio: "/audio/week28/mindmap_branch_5_4.mp3" },
       { text: "skip or hop", audio: "/audio/week28/mindmap_branch_5_5.mp3" },
       { text: "bike or skate", audio: "/audio/week28/mindmap_branch_5_6.mp3" }
