@@ -21,7 +21,7 @@ const mindMapContent = {
       "audio": "/audio/week24/mindmap_stem_4.mp3"
     },
     {
-      "text": "How do you ___ today?",
+      "text": "How is your ___ today?",
       "type": "question",
       "audio": "/audio/week24/mindmap_stem_5.mp3"
     },
@@ -136,29 +136,29 @@ const mindMapContent = {
         "audio": "/audio/week24/mindmap_branch_4_6.mp3"
       }
     ],
-    "How do you ___ today?": [
+    "How is your ___ today?": [
       {
-        "text": "feel",
+        "text": "day",
         "audio": "/audio/week24/mindmap_branch_5_1.mp3"
       },
       {
-        "text": "are",
+        "text": "mood",
         "audio": "/audio/week24/mindmap_branch_5_2.mp3"
       },
       {
-        "text": "do",
+        "text": "energy",
         "audio": "/audio/week24/mindmap_branch_5_3.mp3"
       },
       {
-        "text": "seem",
+        "text": "focus",
         "audio": "/audio/week24/mindmap_branch_5_4.mp3"
       },
       {
-        "text": "look",
+        "text": "sleep",
         "audio": "/audio/week24/mindmap_branch_5_5.mp3"
       },
       {
-        "text": "appear",
+        "text": "work",
         "audio": "/audio/week24/mindmap_branch_5_6.mp3"
       }
     ],

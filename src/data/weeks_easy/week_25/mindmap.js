@@ -26,7 +26,7 @@ const mindMapContent = {
       "audio": "/audio/week25/mindmap_stem_5.mp3"
     },
     {
-      "text": "Do you ___ making sandwiches?",
+      "text": "Do you know how to ___ a sandwich?",
       "type": "question",
       "audio": "/audio/week25/mindmap_stem_6.mp3"
     }
@@ -128,11 +128,11 @@ const mindMapContent = {
         "audio": "/audio/week25/mindmap_branch_4_4.mp3"
       },
       {
-        "text": "spread",
+        "text": "taste",
         "audio": "/audio/week25/mindmap_branch_4_5.mp3"
       },
       {
-        "text": "put",
+        "text": "share",
         "audio": "/audio/week25/mindmap_branch_4_6.mp3"
       }
     ],
@@ -162,29 +162,29 @@ const mindMapContent = {
         "audio": "/audio/week25/mindmap_branch_5_6.mp3"
       }
     ],
-    "Do you ___ making sandwiches?": [
+    "Do you know how to ___ a sandwich?": [
       {
-        "text": "like",
+        "text": "make",
         "audio": "/audio/week25/mindmap_branch_6_1.mp3"
       },
       {
-        "text": "enjoy",
+        "text": "prepare",
         "audio": "/audio/week25/mindmap_branch_6_2.mp3"
       },
       {
-        "text": "know how to",
+        "text": "cut",
         "audio": "/audio/week25/mindmap_branch_6_3.mp3"
       },
       {
-        "text": "have",
+        "text": "share",
         "audio": "/audio/week25/mindmap_branch_6_4.mp3"
       },
       {
-        "text": "make",
+        "text": "decorate",
         "audio": "/audio/week25/mindmap_branch_6_5.mp3"
       },
       {
-        "text": "help",
+        "text": "taste",
         "audio": "/audio/week25/mindmap_branch_6_6.mp3"
       }
     ]

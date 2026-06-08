@@ -6,7 +6,7 @@ const mindMapContent = {
       "audio": "/audio/week8/mindmap_stem_1.mp3"
     },
     {
-      "text": "The bags are ___ the floor.",
+      "text": "The bags are ___ the chair.",
       "type": "affirmative",
       "audio": "/audio/week8/mindmap_stem_2.mp3"
     },
@@ -58,7 +58,7 @@ const mindMapContent = {
         "audio": "/audio/week8/mindmap_branch_1_6.mp3"
       }
     ],
-    "The bags are ___ the floor.": [
+    "The bags are ___ the chair.": [
       {
         "text": "on",
         "audio": "/audio/week8/mindmap_branch_2_1.mp3"

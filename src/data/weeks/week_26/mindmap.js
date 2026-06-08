@@ -172,7 +172,7 @@ const mindMapContent = {
         "audio": "/audio/week26/mindmap_branch_6_2.mp3"
       },
       {
-        "text": "fun",
+        "text": "funniest",
         "audio": "/audio/week26/mindmap_branch_6_3.mp3"
       },
       {
@@ -180,7 +180,7 @@ const mindMapContent = {
         "audio": "/audio/week26/mindmap_branch_6_4.mp3"
       },
       {
-        "text": "interesting",
+        "text": "most interesting",
         "audio": "/audio/week26/mindmap_branch_6_5.mp3"
       },
       {

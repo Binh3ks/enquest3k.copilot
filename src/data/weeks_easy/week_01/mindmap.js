@@ -21,7 +21,7 @@ const mindMapContent = {
       "audio": "/audio/week1/mindmap_stem_4.mp3"
     },
     {
-      "text": "Who is your ___?",
+      "text": "What is your favorite ___?",
       "type": "question",
       "audio": "/audio/week1/mindmap_stem_5.mp3"
     },
@@ -136,29 +136,29 @@ const mindMapContent = {
         "audio": "/audio/week1/mindmap_branch_24.mp3"
       }
     ],
-    "Who is your ___?": [
+    "What is your favorite ___?": [
       {
-        "text": "teacher",
+        "text": "subject",
         "audio": "/audio/week1/mindmap_branch_25.mp3"
       },
       {
-        "text": "friend",
+        "text": "color",
         "audio": "/audio/week1/mindmap_branch_26.mp3"
       },
       {
-        "text": "name",
+        "text": "food",
         "audio": "/audio/week1/mindmap_branch_27.mp3"
       },
       {
-        "text": "favorite subject",
+        "text": "animal",
         "audio": "/audio/week1/mindmap_branch_28.mp3"
       },
       {
-        "text": "classmate",
+        "text": "sport",
         "audio": "/audio/week1/mindmap_branch_29.mp3"
       },
       {
-        "text": "school",
+        "text": "game",
         "audio": "/audio/week1/mindmap_branch_30.mp3"
       }
     ],

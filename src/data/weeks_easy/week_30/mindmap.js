@@ -90,7 +90,7 @@ const mindMapContent = {
         "audio": "/audio/week30/mindmap_branch_3_1.mp3"
       },
       {
-        "text": "ready",
+        "text": "perfect",
         "audio": "/audio/week30/mindmap_branch_3_2.mp3"
       },
       {
@@ -102,7 +102,7 @@ const mindMapContent = {
         "audio": "/audio/week30/mindmap_branch_3_4.mp3"
       },
       {
-        "text": "happy",
+        "text": "memorable",
         "audio": "/audio/week30/mindmap_branch_3_5.mp3"
       },
       {

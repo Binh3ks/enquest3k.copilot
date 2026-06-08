@@ -46,11 +46,11 @@ const mindMapContent = {
         "audio": "/audio/week13/mindmap_branch_1_3.mp3"
       },
       {
-        "text": "have lunch",
+        "text": "leave home",
         "audio": "/audio/week13/mindmap_branch_1_4.mp3"
       },
       {
-        "text": "go to bed",
+        "text": "get dressed",
         "audio": "/audio/week13/mindmap_branch_1_5.mp3"
       },
       {

@@ -54,7 +54,7 @@ const mindMapContent = {
         "audio": "/audio/week22/mindmap_branch_1_5.mp3"
       },
       {
-        "text": "careful",
+        "text": "young",
         "audio": "/audio/week22/mindmap_branch_1_6.mp3"
       }
     ],
@@ -72,7 +72,7 @@ const mindMapContent = {
         "audio": "/audio/week22/mindmap_branch_2_3.mp3"
       },
       {
-        "text": "organized",
+        "text": "examined",
         "audio": "/audio/week22/mindmap_branch_2_4.mp3"
       },
       {
@@ -80,7 +80,7 @@ const mindMapContent = {
         "audio": "/audio/week22/mindmap_branch_2_5.mp3"
       },
       {
-        "text": "handed",
+        "text": "investigated",
         "audio": "/audio/week22/mindmap_branch_2_6.mp3"
       }
     ],
@@ -98,7 +98,7 @@ const mindMapContent = {
         "audio": "/audio/week22/mindmap_branch_3_3.mp3"
       },
       {
-        "text": "ready",
+        "text": "urgent",
         "audio": "/audio/week22/mindmap_branch_3_4.mp3"
       },
       {
@@ -116,7 +116,7 @@ const mindMapContent = {
         "audio": "/audio/week22/mindmap_branch_4_1.mp3"
       },
       {
-        "text": "hand",
+        "text": "present",
         "audio": "/audio/week22/mindmap_branch_4_2.mp3"
       },
       {
@@ -132,7 +132,7 @@ const mindMapContent = {
         "audio": "/audio/week22/mindmap_branch_4_5.mp3"
       },
       {
-        "text": "give",
+        "text": "send",
         "audio": "/audio/week22/mindmap_branch_4_6.mp3"
       }
     ],

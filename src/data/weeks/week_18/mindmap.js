@@ -38,23 +38,23 @@ const mindMapContent = {
         "audio": "/audio/week18/mindmap_branch_1_1.mp3"
       },
       {
-        "text": "standing",
+        "text": "reporting",
         "audio": "/audio/week18/mindmap_branch_1_2.mp3"
       },
       {
-        "text": "reporting",
+        "text": "hosting",
         "audio": "/audio/week18/mindmap_branch_1_3.mp3"
       },
       {
-        "text": "sitting",
+        "text": "presenting",
         "audio": "/audio/week18/mindmap_branch_1_4.mp3"
       },
       {
-        "text": "reading",
+        "text": "talking",
         "audio": "/audio/week18/mindmap_branch_1_5.mp3"
       },
       {
-        "text": "watching",
+        "text": "appearing",
         "audio": "/audio/week18/mindmap_branch_1_6.mp3"
       }
     ],
@@ -94,7 +94,7 @@ const mindMapContent = {
         "audio": "/audio/week18/mindmap_branch_3_2.mp3"
       },
       {
-        "text": "open",
+        "text": "fixed",
         "audio": "/audio/week18/mindmap_branch_3_3.mp3"
       },
       {

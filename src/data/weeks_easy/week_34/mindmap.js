@@ -94,7 +94,7 @@ const mindMapContent = {
         "audio": "/audio/week34/mindmap_branch_3_2.mp3"
       },
       {
-        "text": "sleeping",
+        "text": "still",
         "audio": "/audio/week34/mindmap_branch_3_3.mp3"
       },
       {

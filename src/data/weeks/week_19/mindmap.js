@@ -1,7 +1,7 @@
 const mindMapContent = {
   "centerStems": [
     {
-      "text": "I ___ little when I was young.",
+      "text": "I was ___ when I was young.",
       "type": "affirmative",
       "audio": "/audio/week19/mindmap_stem_1.mp3"
     },
@@ -32,29 +32,29 @@ const mindMapContent = {
     }
   ],
   "branchLabels": {
-    "I ___ little when I was young.": [
+    "I was ___ when I was young.": [
       {
-        "text": "was",
+        "text": "small",
         "audio": "/audio/week19/mindmap_branch_1_1.mp3"
       },
       {
-        "text": "am",
+        "text": "shy",
         "audio": "/audio/week19/mindmap_branch_1_2.mp3"
       },
       {
-        "text": "felt",
+        "text": "happy",
         "audio": "/audio/week19/mindmap_branch_1_3.mp3"
       },
       {
-        "text": "looked",
+        "text": "quiet",
         "audio": "/audio/week19/mindmap_branch_1_4.mp3"
       },
       {
-        "text": "seemed",
+        "text": "carefree",
         "audio": "/audio/week19/mindmap_branch_1_5.mp3"
       },
       {
-        "text": "appeared",
+        "text": "curious",
         "audio": "/audio/week19/mindmap_branch_1_6.mp3"
       }
     ],
@@ -116,7 +116,7 @@ const mindMapContent = {
         "audio": "/audio/week19/mindmap_branch_4_1.mp3"
       },
       {
-        "text": "same as",
+        "text": "the same as",
         "audio": "/audio/week19/mindmap_branch_4_2.mp3"
       },
       {
@@ -128,11 +128,11 @@ const mindMapContent = {
         "audio": "/audio/week19/mindmap_branch_4_4.mp3"
       },
       {
-        "text": "the same as",
+        "text": "close to",
         "audio": "/audio/week19/mindmap_branch_4_5.mp3"
       },
       {
-        "text": "close to",
+        "text": "as easy as",
         "audio": "/audio/week19/mindmap_branch_4_6.mp3"
       }
     ],

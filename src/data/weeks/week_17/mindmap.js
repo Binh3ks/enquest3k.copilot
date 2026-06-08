@@ -80,7 +80,7 @@ const mindMapContent = {
         "audio": "/audio/week17/mindmap_branch_2_5.mp3"
       },
       {
-        "text": "flowing",
+        "text": "rushing",
         "audio": "/audio/week17/mindmap_branch_2_6.mp3"
       }
     ],
