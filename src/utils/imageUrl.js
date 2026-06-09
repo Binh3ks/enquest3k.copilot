@@ -1,12 +1,15 @@
 /**
  * imageUrl.js - Resolve image paths to CDN or local
  *
- * Images are served from Cloudflare Pages static assets (/public/images/).
- * To serve from CDN instead, set VITE_IMAGES_CDN_URL env var.
- * e.g. VITE_IMAGES_CDN_URL=https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev
+ * Images live on the R2 image bucket. The env var is checked first so a
+ * dashboard override can re-point to a mirror (e.g. during a migration),
+ * but the fallback is hard-coded to the canonical image bucket so a
+ * missing/typo'd env var in Cloudflare Pages dashboard doesn't 404 every
+ * image across the deployed app.
  */
 
-const IMAGES_CDN = import.meta.env.VITE_IMAGES_CDN_URL ?? '';
+const IMAGES_CDN =
+  import.meta.env.VITE_IMAGES_CDN_URL || 'https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev';
 
 /**
  * Convert a relative image path to the CDN URL.
