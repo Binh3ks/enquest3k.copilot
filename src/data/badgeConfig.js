@@ -81,6 +81,37 @@ export const BADGE_DEFINITIONS = {
     icon: '🏅',
     color: 'bg-rose-600',
     requirement: '5 weeks with all 3-star ratings'
+  },
+
+  collection_1: {
+    id: 'collection_1',
+    name: 'My World Collector',
+    nameVi: 'Nhà Sưu Tập Thế Giới',
+    description: 'Complete Collection 1 (Weeks 1-4)',
+    descriptionVi: 'Hoàn thành Bộ Sưu Tập 1 (Tuần 1-4)',
+    icon: '🎒',
+    color: 'bg-blue-500',
+    requirement: 'Complete weeks 1-4 (100% each)'
+  },
+  collection_2: {
+    id: 'collection_2',
+    name: 'Nature Explorer',
+    nameVi: 'Nhà Thám Hiểm Thiên Nhiên',
+    description: 'Complete Collection 2 (Weeks 5-8)',
+    descriptionVi: 'Hoàn thành Bộ Sưu Tập 2 (Tuần 5-8)',
+    icon: '🌿',
+    color: 'bg-green-500',
+    requirement: 'Complete weeks 5-8 (100% each)'
+  },
+  collection_3: {
+    id: 'collection_3',
+    name: 'Community Champion',
+    nameVi: 'Nhà Vô Địch Cộng Đồng',
+    description: 'Complete Collection 3 (Weeks 9-12)',
+    descriptionVi: 'Hoàn thành Bộ Sưu Tập 3 (Tuần 9-12)',
+    icon: '🏙️',
+    color: 'bg-amber-500',
+    requirement: 'Complete weeks 9-12 (100% each)'
   }
 };
 
@@ -137,7 +168,10 @@ export const getBadgeTier = (badgeId) => {
     ten_weeks: 3,
     star_collector: 3,
     dedication: 4,
-    champion: 5
+    champion: 5,
+    collection_1: 1,
+    collection_2: 1,
+    collection_3: 1,
   };
   return tierMap[badgeId] || 0;
 };
