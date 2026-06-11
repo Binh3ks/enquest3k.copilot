@@ -54,5 +54,18 @@ export default {
         { "word": "quietly", "vi": "im lặng", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week28/story_writing_pic.jpg',
+      image_prompt: "Today, my teacher told us the famous story about a tortoise and a hare, but she gave it a very fun and modern twist! The hare was a very proud and confident animal, and he always boasted to his friends. He loudly said, \"I am faster than a fast car, a big bus, and even a long train!\" The tortoise, on the other hand, was quiet, patient, and very steady. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["Hare","race","fast","tree","fell asleep","slowly","steadily","won","steady"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

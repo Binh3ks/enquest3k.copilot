@@ -53,5 +53,39 @@ export default {
         { "word": "spoon", "vi": "thìa", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week23/story_writing_pic.jpg',
+      image_prompt: "Last week, my class had a wonderful art project, and we worked together in small groups to create a beautiful model of a mystery house. We started the big project early in the morning, and everyone was very excited. First, my friend Peter designed the shape of the house on a large piece of white paper. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["art class","picked up","brush","red paint","painted","flower","beautiful","wonderful"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 1
+      ,
+      sentence_frames: [
+  {
+    "template": "Yesterday I had ___ class.",
+    "answers": [
+      "art"
+    ]
+  },
+  {
+    "template": "First I ___ my brush.",
+    "answers": [
+      "picked up"
+    ]
+  },
+  {
+    "template": "Then I dipped it in ___ paint.",
+    "answers": [
+      "red"
+    ]
   }
-};
+]
+    }
+  }
+}

@@ -63,5 +63,41 @@ export default {
     "wooden bridge",
     "over the river",
     "new buildings"
-  ]
-};
+  ],
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week20/story_writing_pic.jpg',
+      image_prompt: "My father is telling me a fascinating story about his old village. Long ago, the town was very different from how it looks today. There were no modern cars, and there were no tall glass buildings anywhere. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 1
+      ,
+      sentence_frames: [
+  {
+    "template": "Detective Luna found an **old map**. The map was from a long time ago.",
+    "answers": [
+      "old map"
+    ]
+  },
+  {
+    "template": "On the old map, there was a big **local market** near the **long river**.",
+    "answers": [
+      "local market",
+      "long river"
+    ]
+  },
+  {
+    "template": "There were tall **tall trees** **along the road**.",
+    "answers": [
+      "tall trees",
+      "along the road"
+    ]
+  }
+]
+    }
+  }
+}

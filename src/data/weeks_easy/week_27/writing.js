@@ -89,5 +89,18 @@ export default {
     }
 ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week27/story_writing_pic.jpg',
+      image_prompt: "In my science class this morning, I am learning all about nature and how different plants grow from tiny seeds. This beautiful picture clearly shows the amazing life cycle of a tall, yellow sunflower. A healthy plant always needs good soil, fresh water, and bright, warm sun to grow properly. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["planted","water","shoot","leaves","blooms"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

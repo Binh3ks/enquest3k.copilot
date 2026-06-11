@@ -47,5 +47,18 @@ export default {
         {"word": "animal", "vi": "động vật", "distractor": true}
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week31/story_writing_pic.jpg',
+      image_prompt: "Yesterday morning, I woke up very early and went to the busy old market with my mother to buy some special gifts for our family. It was an incredibly colourful and noisy place, and I used all my senses to explore everything around me! First, I looked around the big shops and saw beautiful traditional clothes made of soft cotton, and shiny winter shoes made of strong leather. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["market","mum","fruit","cloth","rice","coins","wooden","bread","ginger","cotton","metal","mango","paper","busy"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

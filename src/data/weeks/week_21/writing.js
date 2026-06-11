@@ -83,5 +83,43 @@ export default {
     "looked at the stars",
     "counted ten",
     "started to fall asleep"
-  ]
-};
+  ],
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week21/story_writing_pic.jpg',
+      image_prompt: "This is a page from my personal diary, and it is all about my day yesterday. It was a very busy but incredibly happy day for me. In the morning, I walked slowly to school with my best friend, and we talked happily about our English homework. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 1
+      ,
+      sentence_frames: [
+  {
+    "template": "Yesterday was a busy and beautiful day. I **woke up early**, **brushed my teeth**, and **packed my bag**.",
+    "answers": [
+      "woke up early",
+      "brushed my teeth",
+      "packed my bag"
+    ]
+  },
+  {
+    "template": "I **walked to school** with my friend Lily, and we **talked all the way** about our science homework.",
+    "answers": [
+      "walked to school",
+      "talked all the way"
+    ]
+  },
+  {
+    "template": "At school, I listened carefully to the teacher during every lesson. **At break time**, I **played soccer** with my classmates.",
+    "answers": [
+      "At break time",
+      "played soccer"
+    ]
+  }
+]
+    }
+  }
+}

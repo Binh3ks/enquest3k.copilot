@@ -44,5 +44,18 @@ export default {
         {"word": "early", "vi": "sớm", "distractor": true}
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week32/story_writing_pic.jpg',
+      image_prompt: "My grandmother is a very active, healthy, and independent woman, and she had an incredibly busy Saturday last weekend. Early in the morning, she woke up at five o'clock, opened all her windows, and completely tidied her big, messy bedroom until it was perfectly clean. Then, she put on her old leather boots, went out to the large garden, and cut the long green grass near the wooden fence. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["woke","made","did","wrote","cut","built","put","kept","chose","paid"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

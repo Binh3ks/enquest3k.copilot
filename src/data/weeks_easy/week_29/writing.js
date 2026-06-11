@@ -58,5 +58,18 @@ export default {
         { "word": "fell down", "vi": "nga xuong", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week29/story_writing_pic.jpg',
+      image_prompt: "Last night, I went to bed early and had a wonderful, crazy dream about a truly magic trip! In my dream, I sat on a beautiful flying carpet, and it flew quietly over the deep blue sea. Soon, I arrived safely at a beautiful, secret magic island. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["magic carpet","flew","wonderful island","sea","friendly pilot","came","helped me","kind farmer","gave me mangoes","flew back home","best trip ever"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

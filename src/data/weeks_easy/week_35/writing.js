@@ -63,5 +63,18 @@ export default {
         { "word": "act now", "vi": "hành động ngay", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week35/story_writing_pic.jpg',
+      image_prompt: "I have a very good friend named Max, and I want to tell you a story about his important personal experience. In the past, Max always did things very quickly, noisily, and carelessly. Because he was always in a big hurry, he often walked loudly down the school halls, closed the heavy doors forcefully, and accidentally broke his expensive toys. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["planet","Earth","danger","ice","melting","sea","rising","protect","plant","trees","recycle","energy","save","plastic"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

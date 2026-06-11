@@ -75,5 +75,39 @@ export default {
     "last week",
     "studied each clue carefully",
     "had solved the case"
-  ]
-};
+  ],
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week22/story_writing_pic.jpg',
+      image_prompt: "I am playing a very fun and exciting game with my family today. I am wearing a big hat and holding a notebook because I am the Time Detective! Someone ate my delicious chocolate cake last night, and I really want to find out who did it. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 1
+      ,
+      sentence_frames: [
+  {
+    "template": "Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful.",
+    "answers": [
+      "Hoi An"
+    ]
+  },
+  {
+    "template": "She arrived at the scene and opened her notebook immediately. The **narrow lantern-lit streets** were quiet.",
+    "answers": [
+      "narrow lantern-lit streets"
+    ]
+  },
+  {
+    "template": "Nova began the interview calmly. She had three questions for the suspect.",
+    "answers": [
+      "began the interview calmly"
+    ]
+  }
+]
+    }
+  }
+}

@@ -32,5 +32,18 @@ export default {
         { word: "bird", vi: "chim", distractor: false }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week30/story_writing_pic.jpg',
+      image_prompt: "On a beautiful, breezy Sunday morning, my family woke up early, packed our heavy bags, and prepared for a wonderful picnic in the quiet, green countryside. We drove our car for an hour and finally found a perfect, grassy spot near a small river. My father is an intelligent engineer, and he carefully built a strong wooden shelter for us in case the weather suddenly turned bad. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["picnic","bread","fruit","blanket","cheese","lemonade","bird"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

@@ -64,5 +64,18 @@ export default {
         { "word": "beautiful", "vi": "đẹp", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week25/story_writing_pic.jpg',
+      image_prompt: "Today, I want to teach you how to make a perfect, delicious sandwich for a fun weekend picnic with your friends. You just need to follow these simple steps in the right order. First, you take two pieces of fresh, soft bread and put them neatly on a clean plate. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["grabbed two slices","soft bread","sharp knife","spread strawberry jam","pressed together","cut the sandwich","put it on","dinner plate","right sequence","disaster","follows its own"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

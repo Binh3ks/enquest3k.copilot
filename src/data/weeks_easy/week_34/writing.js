@@ -67,5 +67,18 @@ export default {
         { "word": "played", "vi": "chơi", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week34/story_writing_pic.jpg',
+      image_prompt: "In our fun English storytelling class today, my group confidently presented the classic story of the Three Little Pigs, but we used all our new vocabulary to make the story special! The first pig was a very lazy and careless animal, so he quickly built a weak house using light paper and soft cotton. He did not work hard at all, and he just wanted to play. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["ant","grasshopper","worked","gathered","seeds","winter","cold","hungry","kind","gave","shared","lesson","prepare","future"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}

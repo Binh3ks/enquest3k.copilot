@@ -53,5 +53,39 @@ export default {
     "umbrella",
     "cold",
     "warm outside now"
-  ]
-};
+  ],
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week17/story_writing_pic.jpg',
+      image_prompt: "In this very interesting picture, there are four good friends living in four different cities, and the weather in each place is completely different today! First, let's look at London. It is raining heavily and the sky is very dark, so the boy is wearing a thick yellow raincoat and big rubber boots. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 1
+      ,
+      sentence_frames: [
+  {
+    "template": "It is ___ today.",
+    "answers": [
+      "raining"
+    ]
+  },
+  {
+    "template": "I am wearing my ___ to stay warm.",
+    "answers": [
+      "blue coat"
+    ]
+  },
+  {
+    "template": "The streets are ___.",
+    "answers": [
+      "wet"
+    ]
+  }
+]
+    }
+  }
+}

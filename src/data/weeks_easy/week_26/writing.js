@@ -51,5 +51,18 @@ export default {
         { "word": "threw away", "vi": "ném đi", "distractor": true }
       ]
     }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: '/images/week26/story_writing_pic.jpg',
+      image_prompt: "This is my personal weekend comic book, and I drew all the colorful pictures by myself! It tells a fun and exciting story about my different activities last weekend. First, on Saturday morning, I was very excited and full of energy. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      word_bank: ["create a comic strip","wrote the title","walking to the park","chased a ball","watched a street musician","walked home tired but happy"],
+      writing_prompts: {
+        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
+        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+      },
+      rubric_tier: 2
+    }
   }
-};
+}
