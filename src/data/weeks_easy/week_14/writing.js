@@ -53,34 +53,5 @@ export default {
       "template": "I ___ ___ ___. ___! This is my ___! Do you ___?",
       "answers": ["feel proud of my work", "Thank you for listening", "very special day", "have questions"]
     }
-  ],
-
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "low",
-      words: [
-        { "word": "made a snowman", "vi": "made a snowman", "distractor": false },
-        { "word": "wore a big coat", "vi": "wore a big coat", "distractor": false },
-        { "word": "walked in the snow", "vi": "walked in the snow", "distractor": false },
-        { "word": "drank hot chocolate", "vi": "drank hot chocolate", "distractor": false },
-        { "word": "skated on ice", "vi": "skated on ice", "distractor": false },
-        { "word": "threw snowballs", "vi": "threw snowballs", "distractor": false },
-        { "word": "caught a snowflake", "vi": "caught a snowflake", "distractor": false },
-        { "word": "wore warm gloves", "vi": "wore warm gloves", "distractor": false },
-        { "word": "a white winter day", "vi": "a white winter day", "distractor": false },
-        { "word": "ran in cold wind", "vi": "ran in cold wind", "distractor": false },
-        { "word": "felt very cold", "vi": "felt very cold", "distractor": false },
-        { "word": "had rosy cheeks", "vi": "had rosy cheeks", "distractor": false },
-        { "word": "built an igloo", "vi": "built an igloo", "distractor": false },
-        { "word": "watched the snowfall", "vi": "watched the snowfall", "distractor": false },
-        { "word": "ate a hot meal", "vi": "ate a hot meal", "distractor": false },
-        { "word": "slept in a warm bed", "vi": "slept in a warm bed", "distractor": true },
-        { "word": "woke up happy", "vi": "woke up happy", "distractor": true },
-        { "word": "was very hungry", "vi": "was very hungry", "distractor": true }
-      ]
-    }
-  },
+  ]
 };

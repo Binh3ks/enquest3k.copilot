@@ -68,46 +68,5 @@ export default {
     "looked at the stars",
     "counted ten",
     "started to fall asleep"
-  ],
-    hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium-low",
-      words: [
-        { "word": "walked slowly", "vi": "walked slowly", "distractor": false },
-        { "word": "talked happily", "vi": "talked happily", "distractor": false },
-        { "word": "listened carefully", "vi": "listened carefully", "distractor": false },
-        { "word": "worked hard", "vi": "worked hard", "distractor": false },
-        { "word": "helped my mother", "vi": "helped my mother", "distractor": false },
-        { "word": "cooked dinner", "vi": "cooked dinner", "distractor": false },
-        { "word": "washed vegetables", "vi": "washed vegetables", "distractor": false },
-        { "word": "cleaned the table", "vi": "cleaned the table", "distractor": false },
-        { "word": "played board game", "vi": "played board game", "distractor": false },
-        { "word": "watched a movie", "vi": "watched a movie", "distractor": false },
-        { "word": "slept very well", "vi": "slept very well", "distractor": false },
-        { "word": "woke up early", "vi": "woke up early", "distractor": false },
-        { "word": "brushed my teeth", "vi": "brushed my teeth", "distractor": false },
-        { "word": "packed my bag", "vi": "packed my bag", "distractor": false },
-        { "word": "walked to school", "vi": "walked to school", "distractor": false },
-        { "word": "ate breakfast quickly", "vi": "ate breakfast quickly", "distractor": true },
-        { "word": "did my homework", "vi": "did my homework", "distractor": true },
-        { "word": "studied in the evening", "vi": "studied in the evening", "distractor": true }
-      ]
-    }
-  },
-  story_prompts: {
-    picture_mode: {
-      type: "picture",
-      image_url: "/images/week21/story_writing_pic.jpg",
-      image_prompt: "A diary page about yesterday.",
-      word_bank: [],
-      writing_prompts: {
-        en: "Look at the picture. What can you see? Use simple sentences.",
-        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
-      },
-      rubric_tier: 1
-    }
-  }
+  ]
 };

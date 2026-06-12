@@ -63,46 +63,5 @@ export default {
     "wooden bridge",
     "over the river",
     "new buildings"
-  ],
-    hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium-low",
-      words: [
-        { "word": "old village", "vi": "old village", "distractor": false },
-        { "word": "long ago", "vi": "long ago", "distractor": false },
-        { "word": "modern cars", "vi": "modern cars", "distractor": false },
-        { "word": "glass buildings", "vi": "glass buildings", "distractor": false },
-        { "word": "ancient temple", "vi": "ancient temple", "distractor": false },
-        { "word": "winding blue river", "vi": "winding blue river", "distractor": false },
-        { "word": "leafy trees", "vi": "leafy trees", "distractor": false },
-        { "word": "narrow dirt roads", "vi": "narrow dirt roads", "distractor": false },
-        { "word": "busy outdoor market", "vi": "busy outdoor market", "distractor": false },
-        { "word": "friendly people", "vi": "friendly people", "distractor": false },
-        { "word": "fresh fruits", "vi": "fresh fruits", "distractor": false },
-        { "word": "colorful vegetables", "vi": "colorful vegetables", "distractor": false },
-        { "word": "wooden bridge", "vi": "wooden bridge", "distractor": false },
-        { "word": "tall modern buildings", "vi": "tall modern buildings", "distractor": false },
-        { "word": "peaceful and beautiful", "vi": "peaceful and beautiful", "distractor": false },
-        { "word": "bought some flowers", "vi": "bought some flowers", "distractor": true },
-        { "word": "ate some fruit", "vi": "ate some fruit", "distractor": true },
-        { "word": "watched the river", "vi": "watched the river", "distractor": true }
-      ]
-    }
-  },
-  story_prompts: {
-    picture_mode: {
-      type: "picture",
-      image_url: "/images/week20/story_writing_pic.jpg",
-      image_prompt: "An old village with a river, temple, and market.",
-      word_bank: [],
-      writing_prompts: {
-        en: "Look at the picture. What can you see? Use simple sentences.",
-        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
-      },
-      rubric_tier: 1
-    }
-  }
+  ]
 };

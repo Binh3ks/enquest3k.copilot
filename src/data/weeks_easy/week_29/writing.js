@@ -58,18 +58,5 @@ export default {
         { "word": "fell down", "vi": "nga xuong", "distractor": true }
       ]
     }
-  },
-  story_prompts: {
-    picture_mode: {
-      type: "picture",
-      image_url: "/images/week29/story_writing_pic.jpg",
-      image_prompt: "A magic dream trip to an island.",
-      word_bank: [],
-      writing_prompts: {
-        en: "Look at the picture. What can you see? Use simple sentences.",
-        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
-      },
-      rubric_tier: 1
-    }
   }
 };

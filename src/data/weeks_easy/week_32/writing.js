@@ -44,18 +44,5 @@ export default {
         {"word": "early", "vi": "sớm", "distractor": true}
       ]
     }
-  },
-  story_prompts: {
-    picture_mode: {
-      type: "picture",
-      image_url: "/images/week32/story_writing_pic.jpg",
-      image_prompt: "Grandmother busy Saturday activities.",
-      word_bank: [],
-      writing_prompts: {
-        en: "Look at the picture. What can you see? Use simple sentences.",
-        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
-      },
-      rubric_tier: 1
-    }
   }
 };

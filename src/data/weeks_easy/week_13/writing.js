@@ -53,34 +53,5 @@ export default {
       "template": "At home, I ___. I write my name. Then I ___ ___ ___ ___. Good night!",
       "answers": ["do homework", "have dinner", "watch TV", "cartoons", "go to bed"]
     }
-  ],
-
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "low",
-      words: [
-        { "word": "woke up late", "vi": "woke up late", "distractor": false },
-        { "word": "ran to school", "vi": "ran to school", "distractor": false },
-        { "word": "missed the bus", "vi": "missed the bus", "distractor": false },
-        { "word": "forgot my homework", "vi": "forgot my homework", "distractor": false },
-        { "word": "helped my friend", "vi": "helped my friend", "distractor": false },
-        { "word": "studied very hard", "vi": "studied very hard", "distractor": false },
-        { "word": "ate lunch quickly", "vi": "ate lunch quickly", "distractor": false },
-        { "word": "played at break", "vi": "played at break", "distractor": false },
-        { "word": "listened to teacher", "vi": "listened to teacher", "distractor": false },
-        { "word": "did all my homework", "vi": "did all my homework", "distractor": false },
-        { "word": "ate a snack", "vi": "ate a snack", "distractor": false },
-        { "word": "tied my shoes", "vi": "tied my shoes", "distractor": false },
-        { "word": "lost my pencil", "vi": "lost my pencil", "distractor": false },
-        { "word": "found my bag", "vi": "found my bag", "distractor": false },
-        { "word": "shared with friends", "vi": "shared with friends", "distractor": false },
-        { "word": "walked home", "vi": "walked home", "distractor": true },
-        { "word": "watched the sun set", "vi": "watched the sun set", "distractor": true },
-        { "word": "told a story", "vi": "told a story", "distractor": true }
-      ]
-    }
-  },
+  ]
 };

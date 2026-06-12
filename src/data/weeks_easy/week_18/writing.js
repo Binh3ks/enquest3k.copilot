@@ -55,46 +55,5 @@ export default {
     "walk to my friend",
     "ask if I can interview her",
     "what is happening"
-  ],
-    hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium-low",
-      words: [
-        { "word": "broadcasting live", "vi": "broadcasting live", "distractor": false },
-        { "word": "school courtyard", "vi": "school courtyard", "distractor": false },
-        { "word": "annual Spring Festival", "vi": "annual Spring Festival", "distractor": false },
-        { "word": "painting a giant mural", "vi": "painting a giant mural", "distractor": false },
-        { "word": "using bright paints", "vi": "using bright paints", "distractor": false },
-        { "word": "mixing mysterious liquids", "vi": "mixing mysterious liquids", "distractor": false },
-        { "word": "changing color", "vi": "changing color", "distractor": false },
-        { "word": "practicing for their play", "vi": "practicing for their play", "distractor": false },
-        { "word": "speaking loudly", "vi": "speaking loudly", "distractor": false },
-        { "word": "clapping happily", "vi": "clapping happily", "distractor": false },
-        { "word": "smiling and chatting", "vi": "smiling and chatting", "distractor": false },
-        { "word": "exciting activities", "vi": "exciting activities", "distractor": false },
-        { "word": "playing beautiful music", "vi": "playing beautiful music", "distractor": false },
-        { "word": "watching the stage", "vi": "watching the stage", "distractor": false },
-        { "word": "waving colorful flags", "vi": "waving colorful flags", "distractor": false },
-        { "word": "eating festival snacks", "vi": "eating festival snacks", "distractor": true },
-        { "word": "wearing school uniform", "vi": "wearing school uniform", "distractor": true },
-        { "word": "very proud students", "vi": "very proud students", "distractor": true }
-      ]
-    }
-  },
-  story_prompts: {
-    picture_mode: {
-      type: "picture",
-      image_url: "/images/week18/story_writing_pic.jpg",
-      image_prompt: "Students at the school festival — painting, mixing, acting.",
-      word_bank: [],
-      writing_prompts: {
-        en: "Look at the picture. What can you see? Use simple sentences.",
-        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
-      },
-      rubric_tier: 1
-    }
-  }
+  ]
 };
