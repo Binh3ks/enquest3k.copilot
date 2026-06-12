@@ -1,84 +1,98 @@
 export default {
-  title: "A Funny Rainy Day",
+  title: "Live from the School Festival",
   min_words: 35,
   min_sentences: 6,
-  instruction_en: "Write about a funny rainy day!",
-  instruction_vi: "Viết về một ngày mưa vui nhộn!",
-  prompt_en: "What happened when you got caught in the rain? What were you wearing?",
-  prompt_vi: "Chuyện gì xảy ra khi bạn bị mắc kẹt trong mưa? Bạn đang mặc gì?",
-  topic_talk_prompt: "Tell the class about a funny rainy day!",
+  instruction_en: "Write about the school festival using the present continuous tense!",
+  instruction_vi: "Viết về ngày hội trường học dùng thì hiện tại tiếp diễn!",
+  prompt_en: "What can you see at the festival? What are the students doing right now?",
+  prompt_vi: "Bạn thấy gì ở ngày hội? Học sinh đang làm gì lúc này?",
+  topic_talk_prompt: "Tell the class about a school festival you attended!",
   show_by_default: true,
   scaffolding_stage: "medium",
   vocabulary_bank: [
-    "caught in the rain",
-    "started pouring down",
-    "wearing the wrong clothes",
-    "getting completely muddy",
-    "splashing through puddles",
-    "running for shelter",
-    "soaking wet but laughing",
-    "check the weather first"
+    "broadcasting live",
+    "school courtyard",
+    "painting a giant mural",
+    "using bright paints",
+    "mixing mysterious liquids",
+    "changing color",
+    "practicing for their play",
+    "speaking loudly",
+    "clapping happily",
+    "smiling and chatting"
   ],
   sentence_frames: [
     {
-      "template": "I am walking to school. Suddenly, it ___ ___ ___ ___!",
-      "answers": ["started pouring down"]
+      "template": "I am ___ ___ from the school ___.",
+      "answers": ["broadcasting live", "courtyard"]
     },
     {
-      "template": "I am ___ ___ ___ because I am wearing the wrong clothes.",
-      "answers": ["caught in the rain"]
+      "template": "Students are ___ a giant ___ on the wall.",
+      "answers": ["painting", "mural"]
     },
     {
-      "template": "I am ___ through puddles. My shoes are ___ ___!",
-      "answers": ["splashing", "getting muddy"]
+      "template": "Sarah is ___ two liquids in a small ___.",
+      "answers": ["mixing", "tube"]
     },
     {
-      "template": "I am ___ ___ ___ ___ the rain is getting heavier.",
-      "answers": ["running for shelter"]
+      "template": "The Drama Club is ___ for their school ___.",
+      "answers": ["practicing", "play"]
     },
     {
-      "template": "I am ___ ___ ___ ___ but I am ___ ___.",
-      "answers": ["soaking wet but laughing"]
+      "template": "Teachers are ___ ___ for the young ___.",
+      "answers": ["clapping happily", "actors"]
     },
     {
-      "template": "Next time, I will ___ the weather first!",
-      "answers": ["check"]
+      "template": "Everyone is ___ and ___ this wonderful day!",
+      "answers": ["smiling", "chatting"]
     }
   ],
   story_prompts: {
     picture_mode: {
       type: 'picture',
       image_url: '/images/week18/story_writing_pic.jpg',
-      image_prompt: "A funny scene of a child caught in heavy rain on the way to school. The child is wearing the wrong clothes — no raincoat, no umbrella. The child is splashing through big puddles, getting completely muddy, but laughing at the same time. Other children are running for shelter. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      image_prompt: "A colorful school festival in a busy courtyard. Students are painting a giant mural at the Art Club booth, a girl with safety glasses is mixing liquids at the Science Club, and Drama Club students are acting on a small stage. Teachers and students are watching and clapping. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
       word_bank: [
-        "caught in the rain",
-        "started pouring down",
-        "wearing the wrong clothes",
-        "getting completely muddy",
-        "splashing through puddles",
-        "running for shelter",
-        "soaking wet but laughing",
-        "check the weather first"
+        "broadcasting live",
+        "school courtyard",
+        "annual Spring Festival",
+        "painting a giant mural",
+        "using bright paints",
+        "mixing mysterious liquids",
+        "changing color",
+        "practicing for their play",
+        "speaking loudly",
+        "clapping happily",
+        "smiling and chatting",
+        "exciting activities"
       ],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? What is happening? Why is it funny? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Điều gì đang xảy ra? Tại sao nó buồn cười? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. You are a student reporter at the school festival. What clubs can you see? What are the students doing right now? Use 3+ words from the word bank.",
+        vi: "Nhìn bức tranh. Bạn là phóng viên học sinh tại ngày hội trường. Bạn thấy câu lạc bộ nào? Học sinh đang làm gì lúc này? Dùng 3+ từ trong ngân hàng từ."
       },
       rubric_tier: 1,
       sentence_frames: [
         {
-          "template": "The child is ___ ___ ___ ___ because it started pouring down.",
-          "answers": ["caught in the rain"]
+          "template": "I am ___ ___ from the school ___. The festival is happening!",
+          "answers": ["broadcasting live", "courtyard"]
         },
         {
-          "template": "The child is ___ ___ ___ ___ and ___ ___ ___ ___.",
-          "answers": ["splashing through puddles", "getting completely muddy"]
+          "template": "At the Art Club, students are ___ a giant ___ on the wall.",
+          "answers": ["painting", "mural"]
         },
         {
-          "template": "The child is ___ ___ ___ ___, so the children are ___ ___ ___ ___.",
-          "answers": ["soaking wet but laughing", "running for shelter"]
+          "template": "Sarah is ___ two liquids. The liquid is ___ ___!",
+          "answers": ["mixing", "changing color"]
+        },
+        {
+          "template": "The Drama Club is ___ for their school ___.",
+          "answers": ["practicing", "play"]
+        },
+        {
+          "template": "Teachers are ___ ___ and students are ___ ___.",
+          "answers": ["clapping happily", "smiling and chatting"]
         }
       ]
     }
   }
-}
+};
