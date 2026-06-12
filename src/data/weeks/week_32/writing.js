@@ -2,6 +2,7 @@ export default {
   title: "Writing: Tom's Very Busy Saturday",
   audio_url: null,
   min_words: 50,
+  min_sentences: 8,
   model_sentence: "Last Saturday, I woke up early and had a very busy day. First, I made my bed and kept my room tidy. Then I wrote a letter to my grandmother and did all my homework. In the afternoon, I helped Dad cut the grass and we built a birdhouse together. At the café, I chose my own lunch and paid for it myself. By evening, I put everything away and fell asleep very quickly — it was my best Saturday ever!",
   instruction_en: "Write about a busy Saturday using at least 5 task verbs (woke, made, did, wrote, cut, built, put, kept, chose, or paid)!",
   instruction_vi: "Viết về một ngày thứ Bảy bận rộn, sử dụng ít nhất 5 động từ công việc (woke, made, did, wrote, cut, built, put, kept, chose, hoặc paid)!",
