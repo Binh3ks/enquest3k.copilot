@@ -10,37 +10,12 @@ export default {
   keywords: ["seed", "soil", "water", "sunlight", "shoot", "leaves", "flower", "blooms"],
   topic_talk_prompt: "Explain how a seed grows into a plant step by step!",
   sentence_frames: [
-    {
-        "template": "First a seed is ___ in soil.",
-        "answers": [
-            "planted"
-        ]
-    },
-    {
-        "template": "It needs ___ and sunlight.",
-        "answers": [
-            "water"
-        ]
-    },
-    {
-        "template": "Next a tiny ___ grows up.",
-        "answers": [
-            "shoot"
-        ]
-    },
-    {
-        "template": "Then ___ appear.",
-        "answers": [
-            "leaves"
-        ]
-    },
-    {
-        "template": "Finally a flower ___.",
-        "answers": [
-            "blooms"
-        ]
-    }
-],
+    { "template": "First, ___", "answers": ["plant the seed"] },
+    { "template": "Next, ___", "answers": ["add water"] },
+    { "template": "Then, ___", "answers": ["it sprouts"] },
+    { "template": "After that, ___", "answers": ["leaves grow"] },
+    { "template": "Finally, ___", "answers": ["it blooms"] }
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -104,11 +79,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        { "template": "First, the farmer puts a ___ in the ground.", "answers": ["tiny seed"] },
-        { "template": "Then the plant grows a ___ from the soil.", "answers": ["strong root"] },
-        { "template": "After that, a ___ starts to reach for the sun.", "answers": ["green stem"] },
-        { "template": "Next, broad ___ appear on the stem.", "answers": ["green leaves"] },
-        { "template": "Finally, a ___ opens in the warm sunlight.", "answers": ["bright yellow flower"] }
+        { "template": "First, ___", "answers": ["plant the seed"] },
+        { "template": "Next, ___", "answers": ["add water"] },
+        { "template": "Then, ___", "answers": ["it sprouts"] },
+        { "template": "After that, ___", "answers": ["leaves grow"] },
+        { "template": "Finally, ___", "answers": ["it blooms"] }
       ]
     }
   }

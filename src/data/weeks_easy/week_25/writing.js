@@ -10,30 +10,11 @@ export default {
   keywords: ["sandwich", "slices", "bread", "jam", "spread", "cut", "right sequence"],
   topic_talk_prompt: "Give me a step-by-step guide for something you know how to do!",
   sentence_frames: [
-    {
-      "template": "First of all I take two ___ of ___.",
-      "answers": ["slices", "bread"]
-    },
-    {
-      "template": "After that I ___ strawberry ___ on one slice.",
-      "answers": ["spread", "jam"]
-    },
-    {
-      "template": "Then I press the two ___ together.",
-      "answers": ["slices"]
-    },
-    {
-      "template": "At the very end I ___ it in half.",
-      "answers": ["cut"]
-    },
-    {
-      "template": "Now I understand why the ___ ___ matters!",
-      "answers": ["right sequence"]
-    },
-    {
-      "template": "If I ate first and spread jam later, it would be a ___!",
-      "answers": ["disaster"]
-    }
+    { "template": "First, ___", "answers": ["get the bread"] },
+    { "template": "Next, ___", "answers": ["wash hands"] },
+    { "template": "Then, ___", "answers": ["add jam"] },
+    { "template": "After that, ___", "answers": ["press it down"] },
+    { "template": "Finally, ___", "answers": ["cut in half"] }
   ],
   hints: {
     vocabulary_bank: {
@@ -67,11 +48,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        { "template": "First, you take ___ and put it on a ___.", "answers": ["fresh soft bread", "clean plate"] },
-        { "template": "Next, you wash your hands at the ___.", "answers": ["kitchen sink"] },
-        { "template": "Then you add ___ and a ___ of cheese.", "answers": ["cold meat", "thick slice"] },
-        { "template": "You also add some ___ on top.", "answers": ["green vegetables"] },
-        { "template": "Finally, you ___ and enjoy!", "answers": ["press it down gently"] }
+        { "template": "First, ___", "answers": ["get the bread"] },
+        { "template": "Next, ___", "answers": ["wash hands"] },
+        { "template": "Then, ___", "answers": ["add jam"] },
+        { "template": "After that, ___", "answers": ["press it down"] },
+        { "template": "Finally, ___", "answers": ["cut in half"] }
       ]
     }
   }

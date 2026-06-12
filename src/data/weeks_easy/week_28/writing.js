@@ -10,30 +10,11 @@ export default {
   keywords: ["hare", "tortoise", "race", "fast", "asleep", "slowly", "won", "steady"],
   topic_talk_prompt: "Retell the story of the tortoise and the hare!",
   sentence_frames: [
-    {
-      "template": "Once the ___ and the Tortoise had a ___.",
-      "answers": ["Hare", "race"]
-    },
-    {
-      "template": "The Hare ran very ___.",
-      "answers": ["fast"]
-    },
-    {
-      "template": "Then he stopped under a big ___ and ___ asleep.",
-      "answers": ["tree", "fell"]
-    },
-    {
-      "template": "The Tortoise walked ___ but ___ and never gave up.",
-      "answers": ["slowly", "steadily"]
-    },
-    {
-      "template": "The Tortoise ___ the race.",
-      "answers": ["won"]
-    },
-    {
-      "template": "Slow and ___ wins the race.",
-      "answers": ["steady"]
-    }
+    { "template": "The hare was ___", "answers": ["very fast"] },
+    { "template": "The tortoise was ___", "answers": ["very slow"] },
+    { "template": "One day, ___", "answers": ["they raced"] },
+    { "template": "Meanwhile, ___", "answers": ["the hare slept"] },
+    { "template": "In the end, ___", "answers": ["the tortoise won"] }
   ],
   hints: {
     vocabulary_bank: {
@@ -67,11 +48,11 @@ export default {
         vi: "Nhìn bức tranh. Con rùa và con thỏ đã đua nhau! Con nào nhanh? Con nào chậm? Chuyện gì đã xảy ra? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
       sentence_frames: [
-        { template: "The hare was very ___ and ___.", blank_labels: ["proud", "confident"] },
-        { template: "The tortoise was quiet and ___ with his old ___.", blank_labels: ["patient", "bicycle"] },
-        { template: "The hare took a long nap under a ___ ___.", blank_labels: ["shady tree"] },
-        { template: "The tortoise walked slowly on the ___ ___.", blank_labels: ["bumpy road"] },
-        { template: "The tortoise reached the ___ ___ first.", blank_labels: ["finish line"] }
+        { "template": "The hare was ___", "answers": ["very fast"] },
+        { "template": "The tortoise was ___", "answers": ["very slow"] },
+        { "template": "One day, ___", "answers": ["they raced"] },
+        { "template": "Meanwhile, ___", "answers": ["the hare slept"] },
+        { "template": "In the end, ___", "answers": ["the tortoise won"] }
       ],
       min_sentences: 6,
       rubric_tier: 1

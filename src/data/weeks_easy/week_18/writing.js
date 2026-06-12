@@ -22,30 +22,11 @@ export default {
     "smiling and chatting"
   ],
   sentence_frames: [
-    {
-      "template": "I am ___ ___ from the school ___.",
-      "answers": ["broadcasting live", "courtyard"]
-    },
-    {
-      "template": "Students are ___ a giant ___ on the wall.",
-      "answers": ["painting", "mural"]
-    },
-    {
-      "template": "Sarah is ___ two liquids in a small ___.",
-      "answers": ["mixing", "tube"]
-    },
-    {
-      "template": "The Drama Club is ___ for their school ___.",
-      "answers": ["practicing", "play"]
-    },
-    {
-      "template": "Teachers are ___ ___ for the young ___.",
-      "answers": ["clapping happily", "actors"]
-    },
-    {
-      "template": "Everyone is ___ and ___ this wonderful day!",
-      "answers": ["smiling", "chatting"]
-    }
+    { "template": "At the Art Club, ___", "answers": ["students are painting"] },
+    { "template": "At the Science Club, ___", "answers": ["Sarah is mixing liquids"] },
+    { "template": "At the Drama Club, ___", "answers": ["students are acting"] },
+    { "template": "Meanwhile, ___", "answers": ["the crowd is clapping"] },
+    { "template": "Everywhere I look, ___", "answers": ["people are smiling"] }
   ],
   story_prompts: {
     picture_mode: {
@@ -72,26 +53,11 @@ export default {
       },
       rubric_tier: 1,
       sentence_frames: [
-        {
-          "template": "I am ___ ___ from the school ___. The festival is happening!",
-          "answers": ["broadcasting live", "courtyard"]
-        },
-        {
-          "template": "At the Art Club, students are ___ a giant ___ on the wall.",
-          "answers": ["painting", "mural"]
-        },
-        {
-          "template": "Sarah is ___ two liquids. The liquid is ___ ___!",
-          "answers": ["mixing", "changing color"]
-        },
-        {
-          "template": "The Drama Club is ___ for their school ___.",
-          "answers": ["practicing", "play"]
-        },
-        {
-          "template": "Teachers are ___ ___ and students are ___ ___.",
-          "answers": ["clapping happily", "smiling and chatting"]
-        }
+        { "template": "At the Art Club, ___", "answers": ["students are painting"] },
+        { "template": "At the Science Club, ___", "answers": ["Sarah is mixing liquids"] },
+        { "template": "At the Drama Club, ___", "answers": ["students are acting"] },
+        { "template": "Meanwhile, ___", "answers": ["the crowd is watching"] },
+        { "template": "Everywhere I look, ___", "answers": ["people are smiling"] }
       ]
     }
   }

@@ -24,38 +24,12 @@ export default {
     "smiling and chatting"
   ],
   sentence_frames: [
-    {
-      "template": "I am broadcasting live from the busy ___ ___! The annual Spring Festival is ___.",
-      "answers": ["school courtyard", "happening"]
-    },
-    {
-      "template": "At the Art Club booth, students are ___ a giant ___ on the wall.",
-      "answers": ["painting", "colorful mural"]
-    },
-    {
-      "template": "They are using bright ___ and blue paints to ___ an ocean scene.",
-      "answers": ["yellow", "create"]
-    },
-    {
-      "template": "Meanwhile, the Science Club is doing a fascinating ___ ___. Sarah is ___ two mysterious liquids.",
-      "answers": ["chemistry experiment", "mixing"]
-    },
-    {
-      "template": "The liquid is changing ___ from clear to dark ___. Everyone is gasping!",
-      "answers": ["color", "purple"]
-    },
-    {
-      "template": "On the other side, the Drama Club is ___ for their upcoming school ___.",
-      "answers": ["practicing", "play"]
-    },
-    {
-      "template": "A group of teachers is sitting on the grass, ___ happily for the young ___.",
-      "answers": ["clapping", "actors"]
-    },
-    {
-      "template": "Everywhere I look, people are ___ and ___ this wonderful day!",
-      "answers": ["smiling", "enjoying"]
-    }
+    { "template": "At the Art Club, ___", "answers": ["students are painting"] },
+    { "template": "At the Science Club, ___", "answers": ["a girl is mixing liquids"] },
+    { "template": "At the Drama Club, ___", "answers": ["students are acting"] },
+    { "template": "Meanwhile, ___", "answers": ["the crowd is watching"] },
+    { "template": "Everywhere I look, ___", "answers": ["people are smiling"] },
+    { "template": "After the show, ___", "answers": ["everyone is clapping"] }
   ],
   story_prompts: {
     picture_mode: {
@@ -84,26 +58,11 @@ export default {
       },
       rubric_tier: 1,
       sentence_frames: [
-        {
-          "template": "I am ___ ___ from the busy school ___. The Spring Festival is ___!",
-          "answers": ["broadcasting live", "courtyard", "happening"]
-        },
-        {
-          "template": "At the Art Club, students are ___ a giant ___ on the wall.",
-          "answers": ["painting", "colorful mural"]
-        },
-        {
-          "template": "Sarah is ___ two mysterious liquids in a small ___ ___.",
-          "answers": ["mixing", "glass tube"]
-        },
-        {
-          "template": "The Drama Club is ___ for their upcoming school ___. They are ___ loudly.",
-          "answers": ["practicing", "play", "acting"]
-        },
-        {
-          "template": "Teachers are ___ ___ for the young ___. Everyone is ___ and ___!",
-          "answers": ["sitting on the grass", "actors", "smiling", "chatting"]
-        }
+        { "template": "At the Art Club, ___", "answers": ["students are painting a mural"] },
+        { "template": "At the Science Club, ___", "answers": ["Sarah is mixing liquids"] },
+        { "template": "At the Drama Club, ___", "answers": ["students are acting loudly"] },
+        { "template": "Meanwhile, ___", "answers": ["teachers are clapping"] },
+        { "template": "Everywhere I look, ___", "answers": ["people are smiling"] }
       ]
     }
   }

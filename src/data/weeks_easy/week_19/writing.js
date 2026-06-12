@@ -22,30 +22,12 @@ export default {
     "wonderful pictures"
   ],
   sentence_frames: [
-    {
-      "template": "I am looking at my ___ ___. There are many pictures inside.",
-      "answers": ["old photo album"]
-    },
-    {
-      "template": "I was a ___ ___. I was ___ and ___.",
-      "answers": ["young tiny baby", "very small", "cute"]
-    },
-    {
-      "template": "My baby brother was ___ ___. He cried a lot!",
-      "answers": ["extremely noisy"]
-    },
-    {
-      "template": "In this picture, I am ___ and ___. I like this photo!",
-      "answers": ["very brave", "smart"]
-    },
-    {
-      "template": "This is my ___ ___. I have a ___ ___. I am a little ___.",
-      "answers": ["first day of kindergarten", "big blue backpack", "shy"]
-    },
-    {
-      "template": "These are ___ ___ pictures. I ___ them!",
-      "answers": ["wonderful", "love"]
-    }
+    { "template": "In this photo, I ___", "answers": ["was young"] },
+    { "template": "My brother ___", "answers": ["was kind"] },
+    { "template": "On my first day of school, ___", "answers": ["I was nervous"] },
+    { "template": "The classroom was ___", "answers": ["big"] },
+    { "template": "But now, I ___", "answers": ["am taller"] },
+    { "template": "These photos ___", "answers": ["are wonderful"] }
   ],
   story_prompts: {
     picture_mode: {
@@ -70,18 +52,11 @@ export default {
       },
       rubric_tier: 1,
       sentence_frames: [
-        {
-          "template": "I am looking at my ___ ___ with my mother.",
-          "answers": ["old photo album"]
-        },
-        {
-          "template": "In this first picture, I was a ___ ___. I was ___ and ___.",
-          "answers": ["young tiny baby", "very small and cute"]
-        },
-        {
-          "template": "My mother says I was ___ ___. But now I am ___ and ___.",
-          "answers": ["extremely noisy", "tall and confident"]
-        }
+        { "template": "In this photo, I ___", "answers": ["was young"] },
+        { "template": "My brother ___", "answers": ["was kind"] },
+        { "template": "On my first day of school, ___", "answers": ["I was nervous"] },
+        { "template": "The classroom was ___", "answers": ["big"] },
+        { "template": "But now, I ___", "answers": ["am taller"] }
       ]
     }
   }

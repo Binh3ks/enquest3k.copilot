@@ -10,49 +10,11 @@ export default {
   topic_talk_prompt: "What did you do yesterday — morning, afternoon, and evening?",
   show_by_default: true,
   sentence_frames: [
-    {
-      "template": "Yesterday I **woke up early** and **brushed my teeth**.",
-      "answers": [
-        "woke up early",
-        "brushed my teeth"
-      ]
-    },
-    {
-      "template": "I **packed my bag** and **walked to school** with my friend.",
-      "answers": [
-        "packed my bag",
-        "walked to school"
-      ]
-    },
-    {
-      "template": "At school, I listened carefully to my teacher.",
-      "answers": [
-        "listened carefully"
-      ]
-    },
-    {
-      "template": "**At break time**, I **played soccer**. I **shouted with excitement** when we scored a goal!",
-      "answers": [
-        "At break time",
-        "played soccer",
-        "shouted with excitement"
-      ]
-    },
-    {
-      "template": "After school, I **helped my mother prepare dinner**. Then I **cleaned my room**.",
-      "answers": [
-        "helped my mother prepare dinner",
-        "cleaned my room"
-      ]
-    },
-    {
-      "template": "In the evening, I **looked at the stars** and **counted ten** of them. Then I **started to fall asleep**.",
-      "answers": [
-        "looked at the stars",
-        "counted ten",
-        "started to fall asleep"
-      ]
-    }
+    { "template": "Yesterday morning, I ___", "answers": ["woke up"] },
+    { "template": "At school, I ___", "answers": ["listened carefully"] },
+    { "template": "In the afternoon, ___", "answers": ["I played soccer"] },
+    { "template": "After dinner, ___", "answers": ["I cleaned up"] },
+    { "template": "Before bed, ___", "answers": ["I felt tired"] }
   ],
   scaffolding_stage: "medium-low",
   vocabulary_bank: [
@@ -83,11 +45,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        { "template": "Yesterday, I walked ___ to school with my ___.", "answers": ["slowly", "friend"] },
-        { "template": "I helped my mother ___ in the kitchen.", "answers": ["cook dinner"] },
-        { "template": "After school, I played ___ with my sister.", "answers": ["a board game"] },
-        { "template": "In the evening, I watched a ___ movie.", "answers": ["comedy"] },
-        { "template": "Before bed, I talked about my ___ with Dad.", "answers": ["day"] }
+        { "template": "Yesterday morning, I ___", "answers": ["woke up"] },
+        { "template": "At school, I ___", "answers": ["listened carefully"] },
+        { "template": "In the afternoon, ___", "answers": ["I played soccer"] },
+        { "template": "After dinner, ___", "answers": ["I cleaned up"] },
+        { "template": "Before bed, ___", "answers": ["I felt tired"] }
       ]
     }
   }

@@ -10,30 +10,12 @@ export default {
   keywords: ["art class", "picked up", "brush", "painted", "flower", "beautiful", "clapped"],
   topic_talk_prompt: "Tell me what you did in art class step by step!",
   sentence_frames: [
-    {
-      "template": "Yesterday I had ___ class.",
-      "answers": ["art"]
-    },
-    {
-      "template": "First I ___ my brush.",
-      "answers": ["picked up"]
-    },
-    {
-      "template": "Then I dipped it in ___ paint.",
-      "answers": ["red"]
-    },
-    {
-      "template": "I ___ a picture of a ___.",
-      "answers": ["painted", "flower"]
-    },
-    {
-      "template": "It looked ___.",
-      "answers": ["beautiful"]
-    },
-    {
-      "template": "My teacher ___ loudly and said it was ___.",
-      "answers": ["clapped", "wonderful"]
-    }
+    { "template": "First, ___", "answers": ["I started"] },
+    { "template": "Then, ___", "answers": ["I painted"] },
+    { "template": "After that, ___", "answers": ["I folded"] },
+    { "template": "We also ___", "answers": ["cut shapes"] },
+    { "template": "Finally, ___", "answers": ["I held it up"] },
+    { "template": "We were very ___", "answers": ["proud"] }
   ],
   hints: {
     vocabulary_bank: {
@@ -68,11 +50,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        { "template": "First, we designed the ___ of the house.", "answers": ["shape"] },
-        { "template": "Then we painted the ___ red.", "answers": ["roof"] },
-        { "template": "We used ___ to make the walls strong.", "answers": ["thick cardboard"] },
-        { "template": "My friend ___ the walls together carefully.", "answers": ["glued"] },
-        { "template": "Our teacher said we did a ___!", "answers": ["fantastic job"] }
+        { "template": "First, ___", "answers": ["I started"] },
+        { "template": "Then, ___", "answers": ["I painted"] },
+        { "template": "After that, ___", "answers": ["I folded"] },
+        { "template": "We also ___", "answers": ["cut shapes"] },
+        { "template": "Finally, ___", "answers": ["I held it up"] }
       ]
     }
   }

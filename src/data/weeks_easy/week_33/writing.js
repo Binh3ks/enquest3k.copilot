@@ -14,30 +14,11 @@ export default {
   keywords: ["hurt", "fell", "walked", "ran", "teacher", "corridor", "knee", "bandage", "help", "carefully"],
   topic_talk_prompt: "Tell me about a time when you got hurt or saw someone get hurt!",
   sentence_frames: [
-    {
-      template: "Last week I ___ in the corridor and ___ down.",
-      blank_labels: ["walked/ran", "fell"]
-    },
-    {
-      template: "I ___ my ___ and it hurt a lot.",
-      blank_labels: ["hurt", "knee/elbow/leg"]
-    },
-    {
-      template: "My ___ came and ___ me right away.",
-      blank_labels: ["teacher/friend", "helped"]
-    },
-    {
-      template: "She ___ a ___ on my ___.",
-      blank_labels: ["put", "bandage/plaster", "knee/arm"]
-    },
-    {
-      template: "I learned to ___ ___ in the corridor.",
-      blank_labels: ["walk carefully"]
-    },
-    {
-      template: "Now I always ___ slowly and ___ carefully.",
-      blank_labels: ["walk/go", "look/be careful"]
-    }
+    { "template": "Leo was ___", "answers": ["running fast"] },
+    { "template": "Suddenly, ___", "answers": ["he fell down"] },
+    { "template": "His teacher ___", "answers": ["came to help"] },
+    { "template": "After that, ___", "answers": ["she put a bandage"] },
+    { "template": "Now, Leo ___", "answers": ["walks slowly"] }
   ],
   hints: {
     vocabulary_bank: {
@@ -72,11 +53,11 @@ export default {
         vi: "Nhìn bức tranh. Leo bị tai nạn ở trường! Chuyện gì xảy ra với cậu ấy? Ai giúp cậu ấy? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
       sentence_frames: [
-        { template: "He was running very ___ in the corridor.", blank_labels: ["fast"] },
-        { template: "He fell down and hurt his ___.", blank_labels: ["knee"] },
-        { template: "He started ___ because it hurt a lot.", blank_labels: ["crying"] },
-        { template: "The kind teacher put a ___ on his knee.", blank_labels: ["cold ice pack"] },
-        { template: "He learned to ___ ___ from this mistake.", blank_labels: ["walk carefully"] }
+        { "template": "Leo was ___", "answers": ["running fast"] },
+        { "template": "Suddenly, ___", "answers": ["he fell down"] },
+        { "template": "His teacher ___", "answers": ["came to help"] },
+        { "template": "After that, ___", "answers": ["she put a bandage"] },
+        { "template": "Now, Leo ___", "answers": ["walks slowly"] }
       ],
       min_sentences: 6,
       rubric_tier: 1

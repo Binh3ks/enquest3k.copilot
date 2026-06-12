@@ -10,12 +10,11 @@ export default {
   keywords: ["picnic", "bread", "fruit", "blanket", "cheese", "lemonade", "bird", "grass", "sunny", "happy"],
   topic_talk_prompt: "Tell me about a nice picnic you had in at least five sentences.",
   sentence_frames: [
-    { template: "Last Sunday my family had a ___ at the park.", answers: ["picnic"] },
-    { template: "Mum bought ___, ___, and ___.", answers: ["bread", "fruit", "cheese"] },
-    { template: "We spread a ___ on the ___.", answers: ["blanket", "grass"] },
-    { template: "A little ___ hopped close to our ___.", answers: ["bird", "crumbs"] },
-    { template: "The sun was ___ and the breeze was ___.", answers: ["warm", "gentle"] },
-    { template: "We packed everything away and walked home feeling ___.", answers: ["happy"] }
+    { "template": "In the morning, we ___", "answers": ["packed the food"] },
+    { "template": "At the picnic spot, ___", "answers": ["we spread a blanket"] },
+    { "template": "But suddenly, ___", "answers": ["it started to rain"] },
+    { "template": "We ran under ___", "answers": ["a big tree"] },
+    { "template": "In the end, ___", "answers": ["the sun came back"] }
   ],
   hints: {
     vocabulary_bank: {
@@ -45,11 +44,11 @@ export default {
         vi: "Nhìn bức tranh. Gia đình bạn đi dã ngoại! Bạn ăn gì? Thời tiết thế nào? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
       sentence_frames: [
-        { template: "We woke up early and ___ for a picnic.", blank_labels: ["prepared"] },
-        { template: "We found a perfect ___ near the river.", blank_labels: ["grassy spot"] },
-        { template: "We ate tasty ___ and drank cold ___.", blank_labels: ["chicken sandwiches", "lemonade"] },
-        { template: "Dark grey ___ came and it started to ___.", blank_labels: ["clouds", "rain"] },
-        { template: "We ran fast under the ___!", blank_labels: ["shelter"] }
+        { "template": "In the morning, we ___", "answers": ["packed the food"] },
+        { "template": "At the picnic spot, ___", "answers": ["we spread a blanket"] },
+        { "template": "But suddenly, ___", "answers": ["it started to rain"] },
+        { "template": "We ran under ___", "answers": ["a big tree"] },
+        { "template": "In the end, ___", "answers": ["the sun came back"] }
       ],
       min_sentences: 6,
       rubric_tier: 1

@@ -11,14 +11,11 @@ export default {
   keywords: ["woke", "made", "did", "wrote", "cut", "built", "put", "chose", "paid", "tidy", "birdhouse", "letter", "café", "early", "asleep"],
   topic_talk_prompt: "Tell me about your Saturday — what did you make, do, or build? Did you wake up early? What did you choose?",
   sentence_frames: [
-    { template: "Last Saturday, I woke up ___ and made ___." },
-    { template: "First, I kept my room ___ by ___." },
-    { template: "Then I wrote ___ to my ___." },
-    { template: "I helped ___ cut the ___." },
-    { template: "We built ___ together." },
-    { template: "I chose ___ at the ___." },
-    { template: "I paid for ___ with my ___." },
-    { template: "At night, I put ___ away and fell asleep ___." }
+    { "template": "Early in the morning, ___", "answers": ["I woke up early"] },
+    { "template": "Then, ___", "answers": ["I made my bed"] },
+    { "template": "In the afternoon, ___", "answers": ["I cut the grass"] },
+    { "template": "Later, ___", "answers": ["I wrote a letter"] },
+    { "template": "In the evening, ___", "answers": ["I put things away"] }
   ],
   hints: {
     vocabulary_bank: {
@@ -57,11 +54,11 @@ export default {
         vi: "Nhìn bức tranh. Bà có một ngày thứ Bảy rất bận rộn! Bà làm gì trước? Bà xây gì? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
       sentence_frames: [
-        { template: "She woke up and tidied her ___.", blank_labels: ["bedroom"] },
-        { template: "She put on her old ___ boots and cut the ___.", blank_labels: ["leather", "long green grass"] },
-        { template: "She built a beautiful ___ for the birds.", blank_labels: ["birdhouse"] },
-        { template: "She wrote a long ___ and drank ___.", blank_labels: ["letter", "herbal tea"] },
-        { template: "She was very tired but ___.", blank_labels: ["satisfied"] }
+        { "template": "Early in the morning, ___", "answers": ["she woke up early"] },
+        { "template": "Then, ___", "answers": ["she made her bed"] },
+        { "template": "In the afternoon, ___", "answers": ["she cut the grass"] },
+        { "template": "Later, ___", "answers": ["she wrote a letter"] },
+        { "template": "In the evening, ___", "answers": ["she put things away"] }
       ],
       min_sentences: 6,
       rubric_tier: 1
