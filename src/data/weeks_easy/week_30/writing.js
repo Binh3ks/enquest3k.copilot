@@ -1,7 +1,6 @@
 export default {
-  title: "The Wonderful Picnic",
-  min_words: 50,
-  min_sentences: 6,
+  title: "My Picnic Story",
+  min_words: 32,
   model_sentence: "Last Sunday my family had a picnic at the park. Mum bought bread, fruit, cheese, and lemonade. We spread a colorful blanket on the green grass near the pond. We ate sandwiches, played games, and laughed at funny stories. A little bird hopped close to our crumbs and made us smile. In the afternoon the sun was warm and the breeze was gentle. We packed everything away and walked home feeling happy.",
   instruction_en: "Write a detailed picnic story with rich language!",
   instruction_vi: "Viết một câu chuyện dã ngoại chi tiết với ngôn ngữ phong phú!",
@@ -36,23 +35,15 @@ export default {
   },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week30/story_writing_pic.jpg',
-      image_prompt: "On a beautiful, breezy Sunday morning, my family woke up early, packed our heavy bags, and prepared for a wonderful picnic in the quiet, green countryside. We drove our car for an hour and finally found a perfect, grassy spot near a small river. My father is an intelligent engineer, and he carefully built a strong wooden shelter for us in case the weather suddenly turned bad. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["woke up early","prepared for a picnic","perfect grassy spot","strong wooden shelter","tasty chicken sandwiches","sweet cold lemonade","beautiful flower crown","soft green grass","dark grey clouds","heavy rain","ran fast under the shelter","wonderful picnic"],
+      type: "picture",
+      image_url: "/images/week30/story_writing_pic.jpg",
+      image_prompt: "A family picnic with a rain surprise.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. Your family went on a picnic! What did you eat? What happened with the weather? Use 3+ words from the word bank to tell your story.",
-        vi: "Nhìn bức tranh. Gia đình bạn đi dã ngoại! Bạn ăn gì? Thời tiết thế nào? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      sentence_frames: [
-        { template: "We woke up early and ___ for a picnic.", blank_labels: ["prepared"] },
-        { template: "We found a perfect ___ near the river.", blank_labels: ["grassy spot"] },
-        { template: "We ate tasty ___ and drank cold ___.", blank_labels: ["chicken sandwiches", "lemonade"] },
-        { template: "Dark grey ___ came and it started to ___.", blank_labels: ["clouds", "rain"] },
-        { template: "We ran fast under the ___!", blank_labels: ["shelter"] }
-      ],
-      min_sentences: 6,
       rubric_tier: 1
     }
   }
-}
+};

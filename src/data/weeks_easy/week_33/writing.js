@@ -2,10 +2,9 @@
 // Writing Station — Easy Mode
 
 export default {
-  title: "The Mistake in the Corridor",
+  title: "Writing: My Accident Story",
   audio_url: null,
-  min_words: 50,
-  min_sentences: 6,
+  min_words: 30,
   model_sentence: "Last week I was at school. I walked in the corridor and fell down. I hurt my knee. My teacher came and helped me. She put a bandage on my knee. I learned to walk carefully in the corridor!",
   instruction_en: "Write about a time when you got hurt or saw someone get hurt. Use at least 3 of these words: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
   instruction_vi: "Viết về một lần bạn bị đau hoặc thấy ai đó bị đau. Dùng ít nhất 3 từ: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
@@ -63,23 +62,15 @@ export default {
   },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week33/story_writing_pic.jpg',
-      image_prompt: "This interesting picture shows a terrible and painful accident that happened at my school yesterday afternoon. My good friend Leo was running very fast down the main corridor because he was late for his important math class. He did not look carefully where he was going, and he completely ignored the strict school rules. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["running very fast","slipped on the wet floor","fell down hard","hit his knee","arm and leg hurt","started crying","kind teacher helped","cold ice pack","gentle on his knee","careless mistake","walk carefully","learned a lesson"],
+      type: "picture",
+      image_url: "/images/week33/story_writing_pic.jpg",
+      image_prompt: "A student falls in the corridor, teacher helps.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. Leo had an accident at school! What happened to him? Who helped him? Use 3+ words from the word bank to tell the story.",
-        vi: "Nhìn bức tranh. Leo bị tai nạn ở trường! Chuyện gì xảy ra với cậu ấy? Ai giúp cậu ấy? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      sentence_frames: [
-        { "template": "Leo was ___", "answers": ["running fast"] },
-        { "template": "Suddenly, ___", "answers": ["he fell down"] },
-        { "template": "His teacher ___", "answers": ["came to help"] },
-        { "template": "After that, ___", "answers": ["she put a bandage"] },
-        { "template": "Now, Leo ___", "answers": ["walks slowly"] }
-      ],
-      min_sentences: 6,
       rubric_tier: 1
     }
   }
-}
+};

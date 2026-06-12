@@ -1,7 +1,6 @@
 export default {
-  title: "My Weekend Comic",
-  min_words: 45,
-  min_sentences: 6,
+  title: "My Weekend Story",
+  min_words: 30,
   model_sentence: "It was Sunday afternoon and Leo sat down to create a comic strip. First he wrote the title. In Panel One he drew himself walking to the park. In Panel Two Max chased a ball. In Panel Three they watched a street musician. In Panel Four they walked home tired but happy. It was a perfect day!",
   instruction_en: "Write your weekend story in order, like a four-panel comic strip!",
   instruction_vi: "Viết câu chuyện cuối tuần theo thứ tự như một dải truyện tranh bốn khung!",
@@ -55,23 +54,15 @@ export default {
   },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week26/story_writing_pic.jpg',
-      image_prompt: "This is my personal weekend comic book, and I drew all the colorful pictures by myself! It tells a fun and exciting story about my different activities last weekend. First, on Saturday morning, I was very excited and full of energy. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["excited and full of energy","played soccer","team won the match","rained heavily","helped my mother cook","felt really proud","history museum","amazing things to see","funny comedy movie","laughed a lot","sweet popcorn","wonderful feelings"],
+      type: "picture",
+      image_url: "/images/week26/story_writing_pic.jpg",
+      image_prompt: "A fun weekend comic strip.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. You made a weekend comic! Write about your Saturday and Sunday using words from the word bank.",
-        vi: "Nhìn bức tranh. Bạn đã làm truyện tranh cuối tuần! Viết về thứ Bảy và Chủ nhật của bạn dùng các từ trong ngân hàng từ."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      rubric_tier: 1,
-      min_sentences: 6,
-      sentence_frames: [
-        { "template": "On Saturday morning, ___", "answers": ["I was excited"] },
-        { "template": "In the afternoon, ___", "answers": ["we played soccer"] },
-        { "template": "On Sunday, ___", "answers": ["we went out"] },
-        { "template": "In the evening, ___", "answers": ["I watched a movie"] },
-        { "template": "At the end, ___", "answers": ["I was happy"] }
-      ]
+      rubric_tier: 1
     }
   }
-}
+};

@@ -1,7 +1,6 @@
 export default {
-  title: "The Time Detective",
-  min_words: 40,
-  min_sentences: 6,
+  title: "Detective Nova's Case Interview",
+  min_words: 30,
   instruction_en: "Write about a detective interview using past tense!",
   instruction_vi: "Viết về cuộc phỏng vấn thám tử bằng thì quá khứ!",
   prompt_en: "What questions did the detective ask? How did the suspect answer?",
@@ -61,48 +60,17 @@ export default {
     "studied each clue carefully",
     "had solved the case"
   ],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-        {"word":"big hat","vi":"mũ lớn","distractor":false},
-        {"word":"notebook","vi":"vở","distractor":false},
-        {"word":"asked questions","vi":"hỏi câu hỏi","distractor":false},
-        {"word":"wrote answers","vi":"viết câu trả lời","distractor":false},
-        {"word":"very curious","vi":"tò mò","distractor":false},
-        {"word":"looking for clues","vi":"tìm kiếm manh mối","distractor":false},
-        {"word":"found something","vi":"tìm thấy cái gì đó","distractor":false},
-        {"word":"mystery solved","vi":"bí ẩn đã giải","distractor":false},
-        {"word":"yesterday morning","vi":"sáng hôm qua","distractor":false},
-        {"word":"last weekend","vi":"cuối tuần trước","distractor":false},
-        {"word":"eating snacks","vi":"ăn vặt","distractor":true},
-        {"word":"sleeping","vi":"ngủ","distractor":true}
-      ]
-    }
-  },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week22/story_writing_pic.jpg',
-      image_prompt: "I am playing a very fun and exciting game with my family today. I am wearing a big hat and holding a notebook because I am the Time Detective! Someone ate my delicious chocolate cake last night, and I really want to find out who did it. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["Time Detective","chocolate cake","big hat","holding a notebook","cooked a big dinner","washed the dishes","worked in the garden","chocolate on his face","very hungry","mystery solved","last night","this morning"],
+      type: "picture",
+      image_url: "/images/week22/story_writing_pic.jpg",
+      image_prompt: "A student detective investigating a mystery.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. You are the Time Detective! Someone ate the chocolate cake last night. Write about your detective game using words from the word bank.",
-        vi: "Nhìn bức tranh. Bạn là Thám Tử Thời Gian! Ai đó đã ăn bánh sô cô la tối qua. Viết về trò chơi thám tử của bạn dùng các từ trong ngân hàng từ."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      rubric_tier: 1,
-      min_sentences: 6,
-      sentence_frames: [
-        { "template": "Did you ___ last night?", "answers": ["eat my cake"] },
-        { "template": "No, I ___", "answers": ["cooked dinner"] },
-        { "template": "Did you ___ this morning?", "answers": ["see my cake"] },
-        { "template": "I wrote ___", "answers": ["a clue"] },
-        { "template": "Then I ___", "answers": ["checked again"] },
-        { "template": "The mystery ___", "answers": ["was solved"] }
-      ]
+      rubric_tier: 1
     }
   }
-}
+};

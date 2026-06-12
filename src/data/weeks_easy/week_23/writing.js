@@ -1,7 +1,6 @@
 export default {
-  title: "The Creative Art Class",
-  min_words: 40,
-  min_sentences: 6,
+  title: "My Art Class Story",
+  min_words: 30,
   model_sentence: "Yesterday I had art class. First I picked up my brush. Then I dipped it in red paint. I painted a flower. It looked beautiful. My teacher clapped and said it was wonderful.",
   instruction_en: "Write a sequence story about your art class!",
   instruction_vi: "Viết một câu chuyện theo trình tự về giờ học mỹ thuật!",
@@ -57,23 +56,15 @@ export default {
   },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week23/story_writing_pic.jpg',
-      image_prompt: "Last week, my class had a wonderful art project, and we worked together in small groups to create a beautiful model of a mystery house. We started the big project early in the morning, and everyone was very excited. First, my friend Peter designed the shape of the house on a large piece of white paper. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["art project","small groups","designed the shape","white paper","thick cardboard","folded carefully","glued the walls","painted the roof","wooden windows","mixed colors","small stones","fantastic job"],
+      type: "picture",
+      image_url: "/images/week23/story_writing_pic.jpg",
+      image_prompt: "Students doing an art project together.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. Your class built a model house together! Write about the art project step by step using words from the word bank.",
-        vi: "Nhìn bức tranh. Lớp bạn đã cùng nhau làm mô hình ngôi nhà! Viết về dự án mỹ thuật từng bước dùng các từ trong ngân hàng từ."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      rubric_tier: 1,
-      min_sentences: 6,
-      sentence_frames: [
-        { "template": "First, ___", "answers": ["I started"] },
-        { "template": "Then, ___", "answers": ["I painted"] },
-        { "template": "After that, ___", "answers": ["I folded"] },
-        { "template": "We also ___", "answers": ["cut shapes"] },
-        { "template": "Finally, ___", "answers": ["I held it up"] }
-      ]
+      rubric_tier: 1
     }
   }
-}
+};

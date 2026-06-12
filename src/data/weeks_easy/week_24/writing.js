@@ -1,7 +1,6 @@
 export default {
-  title: "A Rollercoaster of Feelings",
-  min_words: 45,
-  min_sentences: 6,
+  title: "My Emotional Day",
+  min_words: 30,
   model_sentence: "Yesterday I felt worried. I could not find my homework. Then I felt relieved. My mum helped me. At school I felt excited because there was a special visitor. It was a famous author. At the end I felt tired but happy.",
   instruction_en: "Write about an emotional day using feeling words!",
   instruction_vi: "Viết về một ngày đầy cảm xúc bằng các từ cảm xúc!",
@@ -57,23 +56,15 @@ export default {
   },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week24/story_writing_pic.jpg',
-      image_prompt: "Yesterday, I went to a big, noisy amusement park with my funny older brother, and I went through a complete rollercoaster of different feelings! Early in the morning, I was very excited because I saw a huge, fast rollercoaster near the front entrance of the park. But when we slowly climbed to the top of the steep ride, I was suddenly terrified. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["amusement park","very excited","scared because","proud of myself","brave enough","hungry and thirsty","cold lemonade","bored and tired","stuffed bear","surprised and happy","exhausting day","wonderful feelings"],
+      type: "picture",
+      image_url: "/images/week24/story_writing_pic.jpg",
+      image_prompt: "A fun day at the amusement park.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. You went to the amusement park! Write about all the different feelings you had using words from the word bank.",
-        vi: "Nhìn bức tranh. Bạn đã đi đến công viên giải trí! Viết về tất cả cảm xúc khác nhau bạn trải qua dùng các từ trong ngân hàng từ."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      rubric_tier: 1,
-      min_sentences: 6,
-      sentence_frames: [
-        { "template": "In the morning, I felt ___", "answers": ["excited"] },
-        { "template": "But then, ___", "answers": ["I got scared"] },
-        { "template": "Because ___", "answers": ["it was high"] },
-        { "template": "By noon, ___", "answers": ["I was hungry"] },
-        { "template": "At the end, ___", "answers": ["I was happy"] }
-      ]
+      rubric_tier: 1
     }
   }
-}
+};

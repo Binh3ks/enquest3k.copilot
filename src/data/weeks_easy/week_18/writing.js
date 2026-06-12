@@ -1,106 +1,72 @@
 export default {
-  title: "Live from the School Festival",
-  min_words: 35,
-  min_sentences: 6,
-  instruction_en: "Write about the school festival using the present continuous tense!",
-  instruction_vi: "Viết về ngày hội trường học dùng thì hiện tại tiếp diễn!",
-  prompt_en: "What can you see at the festival? What are the students doing right now?",
-  prompt_vi: "Bạn thấy gì ở ngày hội? Học sinh đang làm gì lúc này?",
-  topic_talk_prompt: "Tell the class about a school festival you attended!",
+  title: "The Live Reporter",
+  min_words: 30,
+  instruction_en: "Write a live news report from your classroom!",
+  instruction_vi: "Viết bản tin trực tiếp từ lớp học của bạn!",
+  prompt_en: "What is everyone doing in your classroom right now?",
+  prompt_vi: "Mỗi người trong lớp đang làm gì lúc này?",
+  topic_talk_prompt: "Report the news from your classroom!",
   show_by_default: true,
-  scaffolding_stage: "medium",
-  vocabulary_bank: [
-    "broadcasting live",
-    "school courtyard",
-    "painting a giant mural",
-    "using bright paints",
-    "mixing mysterious liquids",
-    "changing color",
-    "practicing for their play",
-    "speaking loudly",
-    "clapping happily",
-    "smiling and chatting"
-  ],
   sentence_frames: [
     {
-      "template": "I am ___ ___ from the school ___.",
-      "answers": ["broadcasting live", "courtyard"]
+      "template": "Welcome to the **live morning news**!",
+      "answers": [
+        "live morning news"
+      ]
     },
     {
-      "template": "Students are ___ a giant ___ on the wall.",
-      "answers": ["painting", "mural"]
+      "template": "I am the ___. I pick up the microphone.",
+      "answers": [
+        "reporter"
+      ]
     },
     {
-      "template": "Sarah is ___ two liquids in a small ___.",
-      "answers": ["mixing", "tube"]
+      "template": "Tom is ___ a rocket.",
+      "answers": [
+        "drawing"
+      ]
     },
     {
-      "template": "The Drama Club is ___ for their school ___.",
-      "answers": ["practicing", "play"]
+      "template": "Sara is ___ at her desk.",
+      "answers": [
+        "reading quietly"
+      ]
     },
     {
-      "template": "Teachers are ___ ___ for the young ___.",
-      "answers": ["clapping happily", "actors"]
+      "template": "I **walk to my friend** Maya. I **ask if I can interview her**.",
+      "answers": [
+        "walk to my friend",
+        "ask if I can interview her"
+      ]
     },
     {
-      "template": "Everyone is ___ and ___ this wonderful day!",
-      "answers": ["smiling", "chatting"]
+      "template": "Maya says she is writing a report. This is **what is happening** right now!",
+      "answers": [
+        "what is happening"
+      ]
     }
   ],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium",
-      words: [
-        {"word":"happening now","vi":"đang xảy ra","distractor":false},
-        {"word":"walking around","vi":"đi bộ xung quanh","distractor":false},
-        {"word":"looking at something","vi":"nhìn vào cái gì đó","distractor":false},
-        {"word":"standing near the gate","vi":"đứng gần cổng","distractor":false},
-        {"word":"talking to friends","vi":"nói chuyện với bạn","distractor":false},
-        {"word":"smiling happily","vi":"mỉm cười vui vẻ","distractor":false},
-        {"word":"playing games","vi":"chơi trò chơi","distractor":false},
-        {"word":"sitting under a tree","vi":"ngồi dưới gốc cây","distractor":false},
-        {"word":"reading a book","vi":"đọc sách","distractor":false},
-        {"word":"eating lunch","vi":"ăn trưa","distractor":false},
-        {"word":"writing notes","vi":"viết ghi chú","distractor":false},
-        {"word":"sleeping","vi":"ngủ","distractor":true},
-        {"word":"flying away","vi":"bay đi","distractor":true}
-      ]
-    }
-  },
+  scaffolding_stage: "medium",
+  vocabulary_bank: [
+    "live morning news",
+    "reporter",
+    "drawing",
+    "reading quietly",
+    "walk to my friend",
+    "ask if I can interview her",
+    "what is happening"
+  ],
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week18/story_writing_pic.jpg',
-      image_prompt: "A colorful school festival in a busy courtyard. Students are painting a giant mural at the Art Club booth, a girl with safety glasses is mixing liquids at the Science Club, and Drama Club students are acting on a small stage. Teachers and students are watching and clapping. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: [
-        "broadcasting live",
-        "school courtyard",
-        "annual Spring Festival",
-        "painting a giant mural",
-        "using bright paints",
-        "mixing mysterious liquids",
-        "changing color",
-        "practicing for their play",
-        "speaking loudly",
-        "clapping happily",
-        "smiling and chatting",
-        "exciting activities"
-      ],
+      type: "picture",
+      image_url: "/images/week18/story_writing_pic.jpg",
+      image_prompt: "Students at the school festival — painting, mixing, acting.",
+      word_bank: [],
       writing_prompts: {
-        en: "Look at the picture. You are a student reporter at the school festival. What clubs can you see? What are the students doing right now? Use 3+ words from the word bank.",
-        vi: "Nhìn bức tranh. Bạn là phóng viên học sinh tại ngày hội trường. Bạn thấy câu lạc bộ nào? Học sinh đang làm gì lúc này? Dùng 3+ từ trong ngân hàng từ."
+        en: "Look at the picture. What can you see? Use simple sentences.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết những câu đơn giản."
       },
-      rubric_tier: 1,
-      sentence_frames: [
-        { "template": "At the Art Club, ___", "answers": ["students are painting"] },
-        { "template": "At the Science Club, ___", "answers": ["Sarah is mixing liquids"] },
-        { "template": "At the Drama Club, ___", "answers": ["students are acting"] },
-        { "template": "Meanwhile, ___", "answers": ["the crowd is watching"] },
-        { "template": "Everywhere I look, ___", "answers": ["people are smiling"] }
-      ]
+      rubric_tier: 1
     }
   }
 };
