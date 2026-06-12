@@ -1,6 +1,6 @@
 export default {
   title: "A Rainy Day at School",
-  min_words: 30,
+  min_words: 35,
   instruction_en: "Write about a rainy day!",
   instruction_vi: "Viết về một ngày mưa!",
   prompt_en: "What is the weather like? What are you wearing?",

@@ -4,7 +4,7 @@
 export default {
   title: "Writing: How We Can Protect Our Planet",
   audio_url: null,
-  min_words: 30,
+  min_words: 50,
   model_sentence: "Our planet Earth is very beautiful but it is in danger. The ice is melting and the sea is rising. We must protect our planet. We can plant trees and recycle more. We can use less plastic and save energy. Small actions can make a big difference!",
   instruction_en: "Write about how we can protect our planet. Use at least 3 of these words: planet, protect, recycle, trees, energy, save, plastic, pollution, climate",
   instruction_vi: "Viết về cách chúng ta có thể bảo vệ hành tinh. Dùng ít nhất 3 từ: planet, protect, recycle, trees, energy, save, plastic, pollution, climate",

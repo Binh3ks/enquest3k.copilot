@@ -1,6 +1,6 @@
 export default {
   title: "My Old Photo Album",
-  min_words: 30,
+  min_words: 35,
   instruction_en: "Write about an old photo of yourself!",
   instruction_vi: "Viết về một bức ảnh cũ của bạn!",
   prompt_en: "What did you look like as a baby? What were you like?",

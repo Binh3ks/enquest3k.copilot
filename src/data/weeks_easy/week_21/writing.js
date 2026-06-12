@@ -1,6 +1,6 @@
 export default {
   title: "Max's Diary - Yesterday",
-  min_words: 30,
+  min_words: 40,
   instruction_en: "Write about what you did yesterday using past tense!",
   instruction_vi: "Viết về những gì bạn đã làm hôm qua bằng thì quá khứ!",
   model_sentence: "Yesterday I woke up early and brushed my teeth. I packed my bag and walked to school with my friend. At school, I listened carefully to my teacher. At break time, I played soccer. I shouted with excitement when we scored a goal! After school, I helped my mother prepare dinner. Then I cleaned my room. In the evening, I looked at the stars and counted ten of them. Then I started to fall asleep. What a busy day!",

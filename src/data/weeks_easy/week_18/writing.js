@@ -1,6 +1,6 @@
 export default {
   title: "The Live Reporter",
-  min_words: 30,
+  min_words: 35,
   instruction_en: "Write a live news report from your classroom!",
   instruction_vi: "Viết bản tin trực tiếp từ lớp học của bạn!",
   prompt_en: "What is everyone doing in your classroom right now?",

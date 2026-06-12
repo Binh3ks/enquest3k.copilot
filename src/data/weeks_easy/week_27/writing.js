@@ -1,6 +1,6 @@
 export default {
   title: "How a Seed Grows",
-  min_words: 32,
+  min_words: 45,
   model_sentence: "First a seed is planted in soil. It needs water and sunlight. Next a tiny shoot grows up. Then leaves appear. Finally a flower blooms.",
   instruction_en: "Describe how a seed grows step by step!",
   instruction_vi: "M\u00f4 t\u1ea3 c\u00e1ch m\u1ed9t h\u1ea1t gi\u1ed1ng m\u1ecdc l\u00ean theo t\u1eebng b\u01b0\u1edbc!",

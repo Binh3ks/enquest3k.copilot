@@ -17,8 +17,8 @@ import games from './games.js';
 const weekData = {
   weekId: 18,
   isEasy: false,
-  weekTitle_en: "The Live Reporter",
-  weekTitle_vi: "Phóng Viên Trực Tiếp",
+  weekTitle_en: "A Funny Rainy Day",
+  weekTitle_vi: "Một Ngày Mưa Vui Nhộn",
   grammar_focus: "Present Continuous: I am reporting / She is filming / They are watching.",
   global_vocab: vocab.vocab,
 

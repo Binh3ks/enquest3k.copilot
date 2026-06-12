@@ -1,6 +1,6 @@
 export default {
   title: "My First Soccer Game",
-  min_words: 30,
+  min_words: 35,
   vocabulary_bank: {
     label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",

@@ -5,7 +5,7 @@ export default {
   title: "Jake's Accident Story",
   min_sentences: 8,
   theme: "accidents_and_consequences",
-  min_words: 45,
+  min_words: 65,
   model_sentence: "Last week, Jake walked too fast in the school corridor and fell down near the staircase. He hurt his knee badly. His teacher came and said, 'Walk carefully, Jake!' The nurse cleaned the wound and put a bandage on it. Jake learned an important lesson: always walk carefully in the corridor. We must walk carefully to stay safe!",
   topic_talk_prompt: "Tell me about a time when you got hurt or saw someone get hurt at school!",
   sentence_frames: [

@@ -1,6 +1,6 @@
 export default {
   title: "My Emotional Day",
-  min_words: 30,
+  min_words: 45,
   model_sentence: "Yesterday I felt worried. I could not find my homework. Then I felt relieved. My mum helped me. At school I felt excited because there was a special visitor. It was a famous author. At the end I felt tired but happy.",
   instruction_en: "Write about an emotional day using feeling words!",
   instruction_vi: "Viết về một ngày đầy cảm xúc bằng các từ cảm xúc!",

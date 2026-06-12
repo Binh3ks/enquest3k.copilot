@@ -1,6 +1,6 @@
 export default {
   title: "Detective Nova's Case Interview",
-  min_words: 30,
+  min_words: 40,
   instruction_en: "Write about a detective interview using past tense!",
   instruction_vi: "Viết về cuộc phỏng vấn thám tử bằng thì quá khứ!",
   prompt_en: "What questions did the detective ask? How did the suspect answer?",

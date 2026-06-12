@@ -1,6 +1,6 @@
 export default {
   title: "My Step-by-Step Guide",
-  min_words: 30,
+  min_words: 45,
   model_sentence: "Here is how I make a jam sandwich. First of all I take two slices of bread. After that I spread strawberry jam on one slice. Then I press the two slices together. At the very end I cut it in half. Now I understand why the right sequence matters!",
   instruction_en: "Write a step-by-step guide using First of all, After that, Then, At the very end!",
   instruction_vi: "Viết hướng dẫn từng bước dùng First of all, After that, Then, At the very end!",

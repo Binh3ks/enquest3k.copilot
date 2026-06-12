@@ -1,7 +1,7 @@
 export default {
   title: "Writing: My Magic Trip",
   image_url: null,
-  min_words: 30,
+  min_words: 50,
   instruction_en: "Write about a magic trip! Use the past tense. Where did you GO? Who did you MEET? Use: went, flew, came, ran. Try to include a pilot, doctor, farmer, or teacher!",
   instruction_vi: "Viết về một chuyến đi kỳ diệu! Dùng thì quá khứ. Bạn đã ĐI đâu? Bạn GẶP ai? Dùng: went, flew, came, ran.",
   prompt_en: "Imagine you found a magic carpet. Where did it go? Who did you meet on the way?",
