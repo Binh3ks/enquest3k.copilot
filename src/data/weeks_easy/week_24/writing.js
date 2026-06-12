@@ -10,11 +10,30 @@ export default {
   keywords: ["worried", "relieved", "excited", "surprised", "bored", "tired", "happy"],
   topic_talk_prompt: "Tell me about a time you felt many different emotions in one day!",
   sentence_frames: [
-    { "template": "In the morning, I felt ___", "answers": ["excited"] },
-    { "template": "But then, ___", "answers": ["I got scared"] },
-    { "template": "Because ___", "answers": ["it was high"] },
-    { "template": "By noon, ___", "answers": ["I was hungry"] },
-    { "template": "At the end, ___", "answers": ["I was happy"] }
+    {
+      "template": "Yesterday I felt ___.",
+      "answers": ["worried"]
+    },
+    {
+      "template": "I could not find my ___.",
+      "answers": ["homework"]
+    },
+    {
+      "template": "Then I felt ___.",
+      "answers": ["relieved"]
+    },
+    {
+      "template": "At school I felt ___ because there was a ___ visitor.",
+      "answers": ["excited", "special"]
+    },
+    {
+      "template": "It was a ___ author!",
+      "answers": ["famous"]
+    },
+    {
+      "template": "At the end I felt ___ but ___.",
+      "answers": ["tired", "happy"]
+    }
   ],
   hints: {
     vocabulary_bank: {

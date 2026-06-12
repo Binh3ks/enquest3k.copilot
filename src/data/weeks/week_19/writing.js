@@ -24,12 +24,38 @@ export default {
     "wonderful funny pictures"
   ],
   sentence_frames: [
-    { "template": "In this photo, I ___", "answers": ["was young"] },
-    { "template": "My brother ___", "answers": ["was kind"] },
-    { "template": "On my first day of school, ___", "answers": ["I was nervous"] },
-    { "template": "The classroom was ___", "answers": ["big"] },
-    { "template": "But now, I ___", "answers": ["am taller"] },
-    { "template": "These photos ___", "answers": ["are wonderful"] }
+    {
+      "template": "Today is a rainy afternoon, so I am ___ ___ ___ ___ ___ with my mother. We are ___ ___ ___ ___ ___ ___ ___.",
+      "answers": ["sitting in the living room", "looking at an old photo album"]
+    },
+    {
+      "template": "In this first picture, I was just a young, ___ ___ ___. I was very small, round, and ___ ___ ___.",
+      "answers": ["tiny baby", "cute"]
+    },
+    {
+      "template": "My mother says I was also extremely ___ ___ ___! I was definitely not quiet like my ___ ___ ___ ___.",
+      "answers": ["noisy", "older brother"]
+    },
+    {
+      "template": "He was very ___ ___ ___ and smart. Whenever I was ___ ___ ___ ___, he was always there to ___ ___ ___ ___ ___.",
+      "answers": ["brave", "scared", "hold my hand"]
+    },
+    {
+      "template": "This next picture shows me on my very ___ ___ ___ ___ ___ ___ ___. My blue school backpack was so ___ ___ ___ that it looked funny on my ___ ___ ___ ___.",
+      "answers": ["first day of kindergarten", "big", "small back"]
+    },
+    {
+      "template": "I was very happy to wear my new uniform, but I was also a ___ ___ ___ ___ because all the other children were ___ ___ ___ ___ ___ ___.",
+      "answers": ["little shy", "strangers to me"]
+    },
+    {
+      "template": "The classroom was very ___ ___ ___ and the teacher was incredibly ___ ___ ___.",
+      "answers": ["bright", "kind"]
+    },
+    {
+      "template": "Now I am ten years old. I am a tall, ___ ___ ___, and confident student. I love these wonderful ___ ___ ___ ___ from when I was very small!",
+      "answers": ["strong", "funny pictures"]
+    }
   ],
   story_prompts: {
     picture_mode: {

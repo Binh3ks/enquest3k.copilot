@@ -10,11 +10,30 @@ export default {
   keywords: ["hare", "tortoise", "race", "fast", "asleep", "slowly", "won", "steady"],
   topic_talk_prompt: "Retell the story of the tortoise and the hare!",
   sentence_frames: [
-    { "template": "The hare was ___", "answers": ["very fast"] },
-    { "template": "The tortoise was ___", "answers": ["very slow"] },
-    { "template": "One day, ___", "answers": ["they raced"] },
-    { "template": "Meanwhile, ___", "answers": ["the hare slept"] },
-    { "template": "In the end, ___", "answers": ["the tortoise won"] }
+    {
+      "template": "Once the ___ and the Tortoise had a ___.",
+      "answers": ["Hare", "race"]
+    },
+    {
+      "template": "The Hare ran very ___.",
+      "answers": ["fast"]
+    },
+    {
+      "template": "Then he stopped under a big ___ and ___ asleep.",
+      "answers": ["tree", "fell"]
+    },
+    {
+      "template": "The Tortoise walked ___ but ___ and never gave up.",
+      "answers": ["slowly", "steadily"]
+    },
+    {
+      "template": "The Tortoise ___ the race.",
+      "answers": ["won"]
+    },
+    {
+      "template": "Slow and ___ wins the race.",
+      "answers": ["steady"]
+    }
   ],
   hints: {
     vocabulary_bank: {

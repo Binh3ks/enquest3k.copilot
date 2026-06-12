@@ -14,11 +14,30 @@ export default {
   keywords: ["hurt", "fell", "walked", "ran", "teacher", "corridor", "knee", "bandage", "help", "carefully"],
   topic_talk_prompt: "Tell me about a time when you got hurt or saw someone get hurt!",
   sentence_frames: [
-    { "template": "Leo was ___", "answers": ["running fast"] },
-    { "template": "Suddenly, ___", "answers": ["he fell down"] },
-    { "template": "His teacher ___", "answers": ["came to help"] },
-    { "template": "After that, ___", "answers": ["she put a bandage"] },
-    { "template": "Now, Leo ___", "answers": ["walks slowly"] }
+    {
+      template: "Last week I ___ in the corridor and ___ down.",
+      blank_labels: ["walked/ran", "fell"]
+    },
+    {
+      template: "I ___ my ___ and it hurt a lot.",
+      blank_labels: ["hurt", "knee/elbow/leg"]
+    },
+    {
+      template: "My ___ came and ___ me right away.",
+      blank_labels: ["teacher/friend", "helped"]
+    },
+    {
+      template: "She ___ a ___ on my ___.",
+      blank_labels: ["put", "bandage/plaster", "knee/arm"]
+    },
+    {
+      template: "I learned to ___ ___ in the corridor.",
+      blank_labels: ["walk carefully"]
+    },
+    {
+      template: "Now I always ___ slowly and ___ carefully.",
+      blank_labels: ["walk/go", "look/be careful"]
+    }
   ],
   hints: {
     vocabulary_bank: {

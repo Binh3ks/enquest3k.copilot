@@ -10,11 +10,30 @@ export default {
   keywords: ["comic strip", "title", "panel", "walked", "park", "chased", "watched", "tired", "happy"],
   topic_talk_prompt: "Tell me about your last weekend like a four-panel story!",
   sentence_frames: [
-    { "template": "On Saturday morning, ___", "answers": ["I was excited"] },
-    { "template": "In the afternoon, ___", "answers": ["we played soccer"] },
-    { "template": "On Sunday, ___", "answers": ["we went out"] },
-    { "template": "In the evening, ___", "answers": ["I watched a movie"] },
-    { "template": "At the end, ___", "answers": ["I was happy"] }
+    {
+      "template": "Leo sat down to ___ a comic ___.",
+      "answers": ["create", "strip"]
+    },
+    {
+      "template": "First he ___ the title.",
+      "answers": ["wrote"]
+    },
+    {
+      "template": "In Panel One he drew himself ___ to the ___.",
+      "answers": ["walking", "park"]
+    },
+    {
+      "template": "In Panel Two Max ___ a ball.",
+      "answers": ["chased"]
+    },
+    {
+      "template": "In Panel Three they ___ a street ___.",
+      "answers": ["watched", "musician"]
+    },
+    {
+      "template": "In Panel Four they ___ home ___ but ___.",
+      "answers": ["walked", "tired", "happy"]
+    }
   ],
   hints: {
     vocabulary_bank: {

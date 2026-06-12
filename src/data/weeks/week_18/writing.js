@@ -24,12 +24,38 @@ export default {
     "smiling and chatting"
   ],
   sentence_frames: [
-    { "template": "At the Art Club, ___", "answers": ["students are painting"] },
-    { "template": "At the Science Club, ___", "answers": ["a girl is mixing liquids"] },
-    { "template": "At the Drama Club, ___", "answers": ["students are acting"] },
-    { "template": "Meanwhile, ___", "answers": ["the crowd is watching"] },
-    { "template": "Everywhere I look, ___", "answers": ["people are smiling"] },
-    { "template": "After the show, ___", "answers": ["everyone is clapping"] }
+    {
+      "template": "I am broadcasting live from the busy ___ ___! The annual Spring Festival is ___.",
+      "answers": ["school courtyard", "happening"]
+    },
+    {
+      "template": "At the Art Club booth, students are ___ a giant ___ on the wall.",
+      "answers": ["painting", "colorful mural"]
+    },
+    {
+      "template": "They are using bright ___ and blue paints to ___ an ocean scene.",
+      "answers": ["yellow", "create"]
+    },
+    {
+      "template": "Meanwhile, the Science Club is doing a fascinating ___ ___. Sarah is ___ two mysterious liquids.",
+      "answers": ["chemistry experiment", "mixing"]
+    },
+    {
+      "template": "The liquid is changing ___ from clear to dark ___. Everyone is gasping!",
+      "answers": ["color", "purple"]
+    },
+    {
+      "template": "On the other side, the Drama Club is ___ for their upcoming school ___.",
+      "answers": ["practicing", "play"]
+    },
+    {
+      "template": "A group of teachers is sitting on the grass, ___ happily for the young ___.",
+      "answers": ["clapping", "actors"]
+    },
+    {
+      "template": "Everywhere I look, people are ___ and ___ this wonderful day!",
+      "answers": ["smiling", "enjoying"]
+    }
   ],
   story_prompts: {
     picture_mode: {

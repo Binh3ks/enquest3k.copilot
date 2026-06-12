@@ -22,11 +22,30 @@ export default {
     "wearing a jacket"
   ],
   sentence_frames: [
-    { "template": "In London, ___", "answers": ["it is raining"] },
-    { "template": "In New York, ___", "answers": ["it is snowing"] },
-    { "template": "In Sydney, ___", "answers": ["it is sunny and hot"] },
-    { "template": "Because the weather is ___, ___", "answers": ["cold", "I am wearing a jacket"] },
-    { "template": "Meanwhile, ___", "answers": ["people are doing different things"] }
+    {
+      "template": "It is ___ heavily in London today.",
+      "answers": ["raining"]
+    },
+    {
+      "template": "The boy is wearing a ___ and ___ ___ ___.",
+      "answers": ["raincoat", "big rubber boots"]
+    },
+    {
+      "template": "In Moscow, it is ___ hard. The girl is wearing a ___ ___.",
+      "answers": ["snowing", "warm hat"]
+    },
+    {
+      "template": "In Cairo, it is a ___ and ___ ___. The children are ___ ___.",
+      "answers": ["sunny", "hot day", "eating ice cream"]
+    },
+    {
+      "template": "It is ___ and ___. We are ___ a big ___.",
+      "answers": ["cloudy", "windy", "flying", "kite"]
+    },
+    {
+      "template": "I am ___ a jacket because the weather is ___ ___.",
+      "answers": ["wearing", "cold outside"]
+    }
   ],
   story_prompts: {
     picture_mode: {

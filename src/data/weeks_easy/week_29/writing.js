@@ -12,12 +12,30 @@ export default {
   topic_talk_prompt: "What job would you like — pilot, doctor, farmer, or teacher? Why?",
   audio_model: "/audio/week29/writing_model_easy.mp3",
   sentence_frames: [
-    { "template": "Last night, I ___", "answers": ["went to bed early"] },
-    { "template": "On the island, I ___", "answers": ["saw a magic forest"] },
-    { "template": "I met a ___", "answers": ["friendly pilot"] },
-    { "template": "Before I left, ___", "answers": ["I took a photo"] },
-    { "template": "When I woke up, ___", "answers": ["it was a dream"] },
-    { "template": "The adventure ___", "answers": ["was wonderful"] }
+    {
+      "template": "One night I found a ___ ___.",
+      "answers": ["magic carpet"]
+    },
+    {
+      "template": "It ___ me to a wonderful island in the ___.",
+      "answers": ["flew", "sea"]
+    },
+    {
+      "template": "A ___ ___ and helped me.",
+      "answers": ["friendly pilot", "came"]
+    },
+    {
+      "template": "A ___ ___ gave me some mangoes.",
+      "answers": ["kind farmer"]
+    },
+    {
+      "template": "Then the carpet ___ back home.",
+      "answers": ["flew"]
+    },
+    {
+      "template": "It was the best ___ ever!",
+      "answers": ["trip"]
+    }
   ],
   hints: {
     vocabulary_bank: {

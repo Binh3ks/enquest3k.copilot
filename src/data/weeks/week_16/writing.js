@@ -24,12 +24,38 @@ export default {
     "creating a wonderful atmosphere"
   ],
   sentence_frames: [
-    { "template": "Right now, ___", "answers": ["the whole school is celebrating"] },
-    { "template": "At the track, ___", "answers": ["students are running fast"] },
-    { "template": "On the field, ___", "answers": ["the game is very exciting"] },
-    { "template": "Meanwhile, ___", "answers": ["the crowd is cheering loudly"] },
-    { "template": "At the bleachers, ___", "answers": ["parents are waving flags"] },
-    { "template": "After the race, ___", "answers": ["everyone is celebrating"] }
+    {
+      "template": "Look at the track! Hundreds of students are ___ ___ ___ ___. The whole schoolyard is full of ___ ___ ___!",
+      "answers": ["running in different races", "energy and excitement"]
+    },
+    {
+      "template": "Minh is ___ ___ ___ ___. He is overtaking other runners with ___ ___ ___.",
+      "answers": ["running quickly", "strong strides"]
+    },
+    {
+      "template": "Lan is making her attempt at the long jump. She is ___ ___ ___ ___ and landing safely in the ___ ___ ___.",
+      "answers": ["jumping very high", "sandpit"]
+    },
+    {
+      "template": "Nam is ___ ___ ___ ___ ___ toward the opponent's goal. The goalkeeper is ___ ___ ___ ___ the ball!",
+      "answers": ["kicking the ball powerfully", "leaping to catch"]
+    },
+    {
+      "template": "On the bleachers, the crowd is ___ ___ ___ ___ ___ and waving bright ___ ___ ___ ___.",
+      "answers": ["cheering enthusiastically", "colorful flags"]
+    },
+    {
+      "template": "Teachers and parents are ___ ___ ___ and ___ ___ ___ ___ for the young athletes.",
+      "answers": ["standing", "cheering loudly"]
+    },
+    {
+      "template": "I am ___ ___ ___ the field because the event is ___ ___ ___ ___ and full of life!",
+      "answers": ["standing at the edge of", "incredibly exciting"]
+    },
+    {
+      "template": "I am ___ ___ ___ ___ because every moment is a memory! What a ___ ___ ___ ___!",
+      "answers": ["jumping up and down", "wonderful sports day"]
+    }
   ],
   story_prompts: {
     picture_mode: {

@@ -11,11 +11,14 @@ export default {
   keywords: ["woke", "made", "did", "wrote", "cut", "built", "put", "chose", "paid", "tidy", "birdhouse", "letter", "café", "early", "asleep"],
   topic_talk_prompt: "Tell me about your Saturday — what did you make, do, or build? Did you wake up early? What did you choose?",
   sentence_frames: [
-    { "template": "Early in the morning, ___", "answers": ["I woke up early"] },
-    { "template": "Then, ___", "answers": ["I made my bed"] },
-    { "template": "In the afternoon, ___", "answers": ["I cut the grass"] },
-    { "template": "Later, ___", "answers": ["I wrote a letter"] },
-    { "template": "In the evening, ___", "answers": ["I put things away"] }
+    { template: "Last Saturday, I woke up ___ and made ___." },
+    { template: "First, I kept my room ___ by ___." },
+    { template: "Then I wrote ___ to my ___." },
+    { template: "I helped ___ cut the ___." },
+    { template: "We built ___ together." },
+    { template: "I chose ___ at the ___." },
+    { template: "I paid for ___ with my ___." },
+    { template: "At night, I put ___ away and fell asleep ___." }
   ],
   hints: {
     vocabulary_bank: {

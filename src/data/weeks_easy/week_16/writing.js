@@ -22,11 +22,30 @@ export default {
     "trying their best"
   ],
   sentence_frames: [
-    { "template": "Right now, ___", "answers": ["the students are running"] },
-    { "template": "At the track, ___", "answers": ["the race is starting"] },
-    { "template": "Meanwhile, ___", "answers": ["the crowd is cheering"] },
-    { "template": "At the bleachers, ___", "answers": ["friends are waving flags"] },
-    { "template": "After the race, ___", "answers": ["everyone is happy"] }
+    {
+      "template": "Today is Sports Day. The whole schoolyard is ___ ___!",
+      "answers": ["full of energy"]
+    },
+    {
+      "template": "Minh is ___ in different ___. He is running fast!",
+      "answers": ["running", "races"]
+    },
+    {
+      "template": "Lan is ___ very ___. She wants to win!",
+      "answers": ["jumping", "high"]
+    },
+    {
+      "template": "My friends are ___ ___ ___ for their team.",
+      "answers": ["cheering loudly", "waving colorful flags"]
+    },
+    {
+      "template": "Tom is ___ ___ ___ ___ the ball. He is strong!",
+      "answers": ["kicking the ball powerfully"]
+    },
+    {
+      "template": "Everyone is ___ their ___! This is a great day!",
+      "answers": ["trying", "best"]
+    }
   ],
   story_prompts: {
     picture_mode: {

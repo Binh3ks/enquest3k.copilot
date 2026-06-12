@@ -8,12 +8,59 @@ export default {
   prompt_vi: "Nova đã hỏi câu nào? Nghi phạm trả lời thế nào? Báo cáo cuối cùng là gì?",
   topic_talk_prompt: "Tell me about a detective interview — what questions were asked and how were they answered?",
   sentence_frames: [
-    { "template": "Did you ___ last night?", "answers": ["eat my cake"] },
-    { "template": "No, I ___", "answers": ["cooked dinner"] },
-    { "template": "Did you ___ this morning?", "answers": ["see my cake"] },
-    { "template": "I wrote ___", "answers": ["a clue"] },
-    { "template": "Then I ___", "answers": ["checked again"] },
-    { "template": "The mystery ___", "answers": ["was solved"] }
+    {
+      "template": "Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful.",
+      "answers": [
+        "Hoi An"
+      ]
+    },
+    {
+      "template": "She arrived at the scene and opened her notebook immediately. The **narrow lantern-lit streets** were quiet.",
+      "answers": [
+        "narrow lantern-lit streets"
+      ]
+    },
+    {
+      "template": "Nova began the interview calmly. She had three questions for the suspect.",
+      "answers": [
+        "began the interview calmly"
+      ]
+    },
+    {
+      "template": "'Where were you **yesterday morning**?' The suspect **answered clearly** and **without hesitation**.",
+      "answers": [
+        "yesterday morning",
+        "answered clearly",
+        "without hesitation"
+      ]
+    },
+    {
+      "template": "Nova **wrote every answer** as a new clue **in her notebook**.",
+      "answers": [
+        "wrote every answer",
+        "in her notebook"
+      ]
+    },
+    {
+      "template": "She asked next: 'What did you do **last night** and **last week**?' Again, the suspect **answered clearly**.",
+      "answers": [
+        "last night",
+        "last week",
+        "answered clearly"
+      ]
+    },
+    {
+      "template": "Nova **studied each clue carefully** in the warm lantern light.",
+      "answers": [
+        "studied each clue carefully"
+      ]
+    },
+    {
+      "template": "Finally, Nova organized the case file and wrote her final report. She **had solved the case** once again!",
+      "answers": [
+        "had solved the case"
+      ]
+    }
   ],
   scaffolding_stage: "medium",
   vocabulary_bank: [

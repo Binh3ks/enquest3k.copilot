@@ -10,11 +10,12 @@ export default {
   keywords: ["picnic", "bread", "fruit", "blanket", "cheese", "lemonade", "bird", "grass", "sunny", "happy"],
   topic_talk_prompt: "Tell me about a nice picnic you had in at least five sentences.",
   sentence_frames: [
-    { "template": "In the morning, we ___", "answers": ["packed the food"] },
-    { "template": "At the picnic spot, ___", "answers": ["we spread a blanket"] },
-    { "template": "But suddenly, ___", "answers": ["it started to rain"] },
-    { "template": "We ran under ___", "answers": ["a big tree"] },
-    { "template": "In the end, ___", "answers": ["the sun came back"] }
+    { template: "Last Sunday my family had a ___ at the park.", answers: ["picnic"] },
+    { template: "Mum bought ___, ___, and ___.", answers: ["bread", "fruit", "cheese"] },
+    { template: "We spread a ___ on the ___.", answers: ["blanket", "grass"] },
+    { template: "A little ___ hopped close to our ___.", answers: ["bird", "crumbs"] },
+    { template: "The sun was ___ and the breeze was ___.", answers: ["warm", "gentle"] },
+    { template: "We packed everything away and walked home feeling ___.", answers: ["happy"] }
   ],
   hints: {
     vocabulary_bank: {

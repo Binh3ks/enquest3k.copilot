@@ -23,11 +23,30 @@ export default {
     "peaceful and beautiful"
   ],
   sentence_frames: [
-    { "template": "Long ago, there ___", "answers": ["was a village"] },
-    { "template": "Near the river, there ___", "answers": ["were trees"] },
-    { "template": "Every morning, ___", "answers": ["people walked"] },
-    { "template": "Now the town ___", "answers": ["is different"] },
-    { "template": "Sometimes, I wish ___", "answers": ["I could visit"] }
+    {
+      "template": "Long ago, there was a small ___ near the river.",
+      "answers": ["old village"]
+    },
+    {
+      "template": "There were ___ ___ ___ along the road.",
+      "answers": ["leafy trees"]
+    },
+    {
+      "template": "There was an ___ ___ at the end of the road.",
+      "answers": ["ancient temple"]
+    },
+    {
+      "template": "There was a ___ ___ near the ___ ___.",
+      "answers": ["wooden bridge", "winding river"]
+    },
+    {
+      "template": "Now there are ___ ___ ___. The old temple is still here!",
+      "answers": ["modern buildings"]
+    },
+    {
+      "template": "The old town was ___ and ___. I love this place!",
+      "answers": ["peaceful", "beautiful"]
+    }
   ],
   story_prompts: {
     picture_mode: {
