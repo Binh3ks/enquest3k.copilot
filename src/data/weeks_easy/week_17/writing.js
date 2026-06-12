@@ -47,6 +47,28 @@ export default {
       "answers": ["wearing", "cold outside"]
     }
   ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {"word":"rainy day","vi":"ngày mưa","distractor":false},
+        {"word":"wearing a raincoat","vi":"mặc áo mưa","distractor":false},
+        {"word":"cold and wet","vi":"lạnh và ướt","distractor":false},
+        {"word":"splashing through puddles","vi":"nhảy qua vũng nước","distractor":false},
+        {"word":"holding an umbrella","vi":"cầm ô","distractor":false},
+        {"word":"walking in the rain","vi":"đi bộ trong mưa","distractor":false},
+        {"word":"running to school","vi":"chạy đến trường","distractor":false},
+        {"word":"getting soaked","vi":"bị ướt hết","distractor":false},
+        {"word":"thick rubber boots","vi":"ủng cao su dày","distractor":false},
+        {"word":"big umbrella","vi":"cái ô lớn","distractor":false},
+        {"word":"windy and cloudy","vi":"gió và nhiều mây","distractor":false},
+        {"word":"sunny and hot","vi":"nắng nóng","distractor":true}
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: 'picture',

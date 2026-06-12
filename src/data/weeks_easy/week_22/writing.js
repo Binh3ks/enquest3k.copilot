@@ -61,6 +61,28 @@ export default {
     "studied each clue carefully",
     "had solved the case"
   ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {"word":"big hat","vi":"mũ lớn","distractor":false},
+        {"word":"notebook","vi":"vở","distractor":false},
+        {"word":"asked questions","vi":"hỏi câu hỏi","distractor":false},
+        {"word":"wrote answers","vi":"viết câu trả lời","distractor":false},
+        {"word":"very curious","vi":"tò mò","distractor":false},
+        {"word":"looking for clues","vi":"tìm kiếm manh mối","distractor":false},
+        {"word":"found something","vi":"tìm thấy cái gì đó","distractor":false},
+        {"word":"mystery solved","vi":"bí ẩn đã giải","distractor":false},
+        {"word":"yesterday morning","vi":"sáng hôm qua","distractor":false},
+        {"word":"last weekend","vi":"cuối tuần trước","distractor":false},
+        {"word":"eating snacks","vi":"ăn vặt","distractor":true},
+        {"word":"sleeping","vi":"ngủ","distractor":true}
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: 'picture',

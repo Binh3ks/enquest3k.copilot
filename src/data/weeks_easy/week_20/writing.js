@@ -48,6 +48,28 @@ export default {
       "answers": ["peaceful", "beautiful"]
     }
   ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium-low",
+      words: [
+        {"word":"long time ago","vi":"lâu lâu rồi","distractor":false},
+        {"word":"small village","vi":"làng nhỏ","distractor":false},
+        {"word":"old wooden houses","vi":"nhà gỗ cũ","distractor":false},
+        {"word":"narrow streets","vi":"đường hẹp","distractor":false},
+        {"word":"local market","vi":"chợ địa phương","distractor":false},
+        {"word":"friendly people","vi":"người thân thiện","distractor":false},
+        {"word":"fresh fruit","vi":"trái cây tươi","distractor":false},
+        {"word":"old church","vi":"nhà thờ cũ","distractor":false},
+        {"word":"tall trees","vi":"cây cao","distractor":false},
+        {"word":"busy streets","vi":"đường phố đông đúc","distractor":false},
+        {"word":"modern cars","vi":"xe hơi hiện đại","distractor":true},
+        {"word":"skyscrapers","vi":"tòa nhà chọc trời","distractor":true}
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: 'picture',

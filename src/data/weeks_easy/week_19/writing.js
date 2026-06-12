@@ -47,6 +47,28 @@ export default {
       "answers": ["wonderful", "love"]
     }
   ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium-low",
+      words: [
+        {"word":"old photo album","vi":"album ảnh cũ","distractor":false},
+        {"word":"baby pictures","vi":"ảnh em bé","distractor":false},
+        {"word":"tiny baby","vi":"em bé nhỏ xíu","distractor":false},
+        {"word":"cute and round","vi":"dễ thương và tròn trịa","distractor":false},
+        {"word":"noisy baby","vi":"em bé ồn ào","distractor":false},
+        {"word":"sitting in the living room","vi":"ngồi trong phòng khách","distractor":false},
+        {"word":"looking at old photos","vi":"nhìn ảnh cũ","distractor":false},
+        {"word":"big blue backpack","vi":"ba-lô xanh lớn","distractor":false},
+        {"word":"first day of school","vi":"ngày đầu tiên đi học","distractor":false},
+        {"word":"confident smile","vi":"nụ cười tự tin","distractor":false},
+        {"word":"angry baby","vi":"em bé giận dữ","distractor":true},
+        {"word":"boring photos","vi":"ảnh nhàm chán","distractor":true}
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: 'picture',

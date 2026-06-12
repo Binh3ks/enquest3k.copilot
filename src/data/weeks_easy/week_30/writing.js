@@ -45,11 +45,11 @@ export default {
         vi: "Nhìn bức tranh. Gia đình bạn đi dã ngoại! Bạn ăn gì? Thời tiết thế nào? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
       sentence_frames: [
-        { "template": "In the morning, we ___", "answers": ["packed the food"] },
-        { "template": "At the picnic spot, ___", "answers": ["we spread a blanket"] },
-        { "template": "But suddenly, ___", "answers": ["it started to rain"] },
-        { "template": "We ran under ___", "answers": ["a big tree"] },
-        { "template": "In the end, ___", "answers": ["the sun came back"] }
+        { template: "We woke up early and ___ for a picnic.", blank_labels: ["prepared"] },
+        { template: "We found a perfect ___ near the river.", blank_labels: ["grassy spot"] },
+        { template: "We ate tasty ___ and drank cold ___.", blank_labels: ["chicken sandwiches", "lemonade"] },
+        { template: "Dark grey ___ came and it started to ___.", blank_labels: ["clouds", "rain"] },
+        { template: "We ran fast under the ___!", blank_labels: ["shelter"] }
       ],
       min_sentences: 6,
       rubric_tier: 1

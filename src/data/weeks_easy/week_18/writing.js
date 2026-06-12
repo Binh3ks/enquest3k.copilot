@@ -47,6 +47,29 @@ export default {
       "answers": ["smiling", "chatting"]
     }
   ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        {"word":"happening now","vi":"đang xảy ra","distractor":false},
+        {"word":"walking around","vi":"đi bộ xung quanh","distractor":false},
+        {"word":"looking at something","vi":"nhìn vào cái gì đó","distractor":false},
+        {"word":"standing near the gate","vi":"đứng gần cổng","distractor":false},
+        {"word":"talking to friends","vi":"nói chuyện với bạn","distractor":false},
+        {"word":"smiling happily","vi":"mỉm cười vui vẻ","distractor":false},
+        {"word":"playing games","vi":"chơi trò chơi","distractor":false},
+        {"word":"sitting under a tree","vi":"ngồi dưới gốc cây","distractor":false},
+        {"word":"reading a book","vi":"đọc sách","distractor":false},
+        {"word":"eating lunch","vi":"ăn trưa","distractor":false},
+        {"word":"writing notes","vi":"viết ghi chú","distractor":false},
+        {"word":"sleeping","vi":"ngủ","distractor":true},
+        {"word":"flying away","vi":"bay đi","distractor":true}
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: 'picture',
