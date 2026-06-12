@@ -60,6 +60,34 @@ export default {
     "studied each clue carefully",
     "had solved the case"
   ],
+    hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium-low",
+      words: [
+        { "word": "Time Detective", "vi": "Time Detective", "distractor": false },
+        { "word": "big hat", "vi": "big hat", "distractor": false },
+        { "word": "holding a notebook", "vi": "holding a notebook", "distractor": false },
+        { "word": "chocolate cake", "vi": "chocolate cake", "distractor": false },
+        { "word": "ask questions", "vi": "ask questions", "distractor": false },
+        { "word": "last night", "vi": "last night", "distractor": false },
+        { "word": "cooked dinner", "vi": "cooked dinner", "distractor": false },
+        { "word": "washed the dishes", "vi": "washed the dishes", "distractor": false },
+        { "word": "this morning", "vi": "this morning", "distractor": false },
+        { "word": "last weekend", "vi": "last weekend", "distractor": false },
+        { "word": "worked in the garden", "vi": "worked in the garden", "distractor": false },
+        { "word": "an hour ago", "vi": "an hour ago", "distractor": false },
+        { "word": "very hungry", "vi": "very hungry", "distractor": false },
+        { "word": "mystery solved", "vi": "mystery solved", "distractor": false },
+        { "word": "wrote down clues", "vi": "wrote down clues", "distractor": false },
+        { "word": "asked about last night", "vi": "asked about last night", "distractor": true },
+        { "word": "found some evidence", "vi": "found some evidence", "distractor": true },
+        { "word": "checked all the rooms", "vi": "checked all the rooms", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

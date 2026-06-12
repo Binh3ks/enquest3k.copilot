@@ -57,5 +57,34 @@ export default {
       "template": "David can ___. He prepares ___ for the show. ___ ___ ___! It is wonderful to see so many talents together.",
       "answers": ["cook simple meals", "a tasty snack on stage", "every child has", "special talents"]
     }
-  ]
+  ],
+
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "low",
+      words: [
+        { "word": "read a book", "vi": "read a book", "distractor": false },
+        { "word": "wrote a story", "vi": "wrote a story", "distractor": false },
+        { "word": "painted a picture", "vi": "painted a picture", "distractor": false },
+        { "word": "watched a movie", "vi": "watched a movie", "distractor": false },
+        { "word": "listened to music", "vi": "listened to music", "distractor": false },
+        { "word": "ate a sandwich", "vi": "ate a sandwich", "distractor": false },
+        { "word": "played in the park", "vi": "played in the park", "distractor": false },
+        { "word": "made a sandcastle", "vi": "made a sandcastle", "distractor": false },
+        { "word": "swam in the pool", "vi": "swam in the pool", "distractor": false },
+        { "word": "slept all afternoon", "vi": "slept all afternoon", "distractor": false },
+        { "word": "baked a cake", "vi": "baked a cake", "distractor": false },
+        { "word": "cleaned the room", "vi": "cleaned the room", "distractor": false },
+        { "word": "washed the dishes", "vi": "washed the dishes", "distractor": false },
+        { "word": "walked the dog", "vi": "walked the dog", "distractor": false },
+        { "word": "fed the cat", "vi": "fed the cat", "distractor": false },
+        { "word": "called grandma", "vi": "called grandma", "distractor": true },
+        { "word": "bought a gift", "vi": "bought a gift", "distractor": true },
+        { "word": "opened a present", "vi": "opened a present", "distractor": true }
+      ]
+    }
+  },
 };

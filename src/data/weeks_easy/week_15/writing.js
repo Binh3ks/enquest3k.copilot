@@ -51,5 +51,34 @@ export default {
       "template": "I am ___ ___. The grass is ___. I see ___ ___ ___! The park is ___!",
       "answers": ["relaxing under the trees", "soft", "flowers everywhere", "my favorite place"]
     }
-  ]
+  ],
+
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "low",
+      words: [
+        { "word": "lived on a farm", "vi": "lived on a farm", "distractor": false },
+        { "word": "had many animals", "vi": "had many animals", "distractor": false },
+        { "word": "fed the chickens", "vi": "fed the chickens", "distractor": false },
+        { "word": "milked the cow", "vi": "milked the cow", "distractor": false },
+        { "word": "rode the horse", "vi": "rode the horse", "distractor": false },
+        { "word": "planted the rice", "vi": "planted the rice", "distractor": false },
+        { "word": "picked the apples", "vi": "picked the apples", "distractor": false },
+        { "word": "watched the sunset", "vi": "watched the sunset", "distractor": false },
+        { "word": "rested under a tree", "vi": "rested under a tree", "distractor": false },
+        { "word": "walked in the fields", "vi": "walked in the fields", "distractor": false },
+        { "word": "played with kittens", "vi": "played with kittens", "distractor": false },
+        { "word": "loved the farm life", "vi": "loved the farm life", "distractor": false },
+        { "word": "ate fresh eggs", "vi": "ate fresh eggs", "distractor": false },
+        { "word": "made fresh butter", "vi": "made fresh butter", "distractor": false },
+        { "word": "told old stories", "vi": "told old stories", "distractor": false },
+        { "word": "waved to neighbors", "vi": "waved to neighbors", "distractor": true },
+        { "word": "wore straw hat", "vi": "wore straw hat", "distractor": true },
+        { "word": "felt so peaceful", "vi": "felt so peaceful", "distractor": true }
+      ]
+    }
+  },
 };
