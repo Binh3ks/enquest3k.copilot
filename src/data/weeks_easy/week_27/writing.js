@@ -1,6 +1,7 @@
 export default {
-  title: "How a Seed Grows",
+  title: "The Life of a Sunflower",
   min_words: 45,
+  min_sentences: 6,
   model_sentence: "First a seed is planted in soil. It needs water and sunlight. Next a tiny shoot grows up. Then leaves appear. Finally a flower blooms.",
   instruction_en: "Describe how a seed grows step by step!",
   instruction_vi: "M\u00f4 t\u1ea3 c\u00e1ch m\u1ed9t h\u1ea1t gi\u1ed1ng m\u1ecdc l\u00ean theo t\u1eebng b\u01b0\u1edbc!",
@@ -95,12 +96,20 @@ export default {
       type: 'picture',
       image_url: '/images/week27/story_writing_pic.jpg',
       image_prompt: "In my science class this morning, I am learning all about nature and how different plants grow from tiny seeds. This beautiful picture clearly shows the amazing life cycle of a tall, yellow sunflower. A healthy plant always needs good soil, fresh water, and bright, warm sun to grow properly. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["planted","water","shoot","leaves","blooms"],
+      word_bank: ["tiny seed","small hole","dark ground","strong root","green stem","warm sunlight","broad green leaves","bright yellow flower","my own garden","magical","amazed and happy"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. You planted a sunflower seed! Write about how the sunflower grows step by step using words from the word bank.",
+        vi: "Nhìn bức tranh. Bạn đã trồng một hạt hướng dương! Viết về cách hướng dương lớn lên từng bước dùng các từ trong ngân hàng từ."
       },
-      rubric_tier: 2
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+        { "template": "First, the farmer puts a ___ in the ground.", "answers": ["tiny seed"] },
+        { "template": "Then the plant grows a ___ from the soil.", "answers": ["strong root"] },
+        { "template": "After that, a ___ starts to reach for the sun.", "answers": ["green stem"] },
+        { "template": "Next, broad ___ appear on the stem.", "answers": ["green leaves"] },
+        { "template": "Finally, a ___ opens in the warm sunlight.", "answers": ["bright yellow flower"] }
+      ]
     }
   }
 }

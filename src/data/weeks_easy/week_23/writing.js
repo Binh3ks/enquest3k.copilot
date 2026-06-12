@@ -1,6 +1,7 @@
 export default {
-  title: "My Art Class Story",
+  title: "The Creative Art Class",
   min_words: 40,
+  min_sentences: 6,
   model_sentence: "Yesterday I had art class. First I picked up my brush. Then I dipped it in red paint. I painted a flower. It looked beautiful. My teacher clapped and said it was wonderful.",
   instruction_en: "Write a sequence story about your art class!",
   instruction_vi: "Viết một câu chuyện theo trình tự về giờ học mỹ thuật!",
@@ -59,33 +60,20 @@ export default {
       type: 'picture',
       image_url: '/images/week23/story_writing_pic.jpg',
       image_prompt: "Last week, my class had a wonderful art project, and we worked together in small groups to create a beautiful model of a mystery house. We started the big project early in the morning, and everyone was very excited. First, my friend Peter designed the shape of the house on a large piece of white paper. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["art class","picked up","brush","red paint","painted","flower","beautiful","wonderful"],
+      word_bank: ["art project","small groups","designed the shape","white paper","thick cardboard","folded carefully","glued the walls","painted the roof","wooden windows","mixed colors","small stones","fantastic job"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. Your class built a model house together! Write about the art project step by step using words from the word bank.",
+        vi: "Nhìn bức tranh. Lớp bạn đã cùng nhau làm mô hình ngôi nhà! Viết về dự án mỹ thuật từng bước dùng các từ trong ngân hàng từ."
       },
-      rubric_tier: 1
-      ,
+      rubric_tier: 1,
+      min_sentences: 6,
       sentence_frames: [
-  {
-    "template": "Yesterday I had ___ class.",
-    "answers": [
-      "art"
-    ]
-  },
-  {
-    "template": "First I ___ my brush.",
-    "answers": [
-      "picked up"
-    ]
-  },
-  {
-    "template": "Then I dipped it in ___ paint.",
-    "answers": [
-      "red"
-    ]
-  }
-]
+        { "template": "First, we designed the ___ of the house.", "answers": ["shape"] },
+        { "template": "Then we painted the ___ red.", "answers": ["roof"] },
+        { "template": "We used ___ to make the walls strong.", "answers": ["thick cardboard"] },
+        { "template": "My friend ___ the walls together carefully.", "answers": ["glued"] },
+        { "template": "Our teacher said we did a ___!", "answers": ["fantastic job"] }
+      ]
     }
   }
 }

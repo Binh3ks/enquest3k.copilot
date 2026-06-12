@@ -1,7 +1,8 @@
 export default {
-  title: "Writing: My Very Busy Saturday",
+  title: "Grandmother's Busy Saturday",
   audio_url: null,
   min_words: 50,
+  min_sentences: 6,
   model_sentence: "Last Saturday, I woke up early and made my bed. Then I wrote a letter to my grandmother. I helped Dad cut the grass and we built a birdhouse. At the café, I chose a muffin and paid for it myself. I put all my things away in the evening. I fell asleep early because I was so tired!",
   instruction_en: "Write about your own busy Saturday using at least 4 task verbs (woke, made, did, wrote, cut, built, put, chose, or paid)!",
   instruction_vi: "Viết về ngày thứ Bảy bận rộn của bạn, sử dụng ít nhất 4 động từ công việc (woke, made, did, wrote, cut, built, put, chose, hoặc paid)!",
@@ -50,12 +51,20 @@ export default {
       type: 'picture',
       image_url: '/images/week32/story_writing_pic.jpg',
       image_prompt: "My grandmother is a very active, healthy, and independent woman, and she had an incredibly busy Saturday last weekend. Early in the morning, she woke up at five o'clock, opened all her windows, and completely tidied her big, messy bedroom until it was perfectly clean. Then, she put on her old leather boots, went out to the large garden, and cut the long green grass near the wooden fence. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["woke","made","did","wrote","cut","built","put","kept","chose","paid"],
+      word_bank: ["completely tidied her bedroom","old leather boots","cut the long green grass","built a beautiful birdhouse","hung it on a tree","drank herbal tea","wrote a long letter","chose soft cotton fabric","make a new summer dress","very tired but satisfied"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. Grandma had a very busy Saturday! What did she do first? What did she build? Use 3+ words from the word bank to tell her story.",
+        vi: "Nhìn bức tranh. Bà có một ngày thứ Bảy rất bận rộn! Bà làm gì trước? Bà xây gì? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
-      rubric_tier: 2
+      sentence_frames: [
+        { template: "She woke up and tidied her ___.", blank_labels: ["bedroom"] },
+        { template: "She put on her old ___ boots and cut the ___.", blank_labels: ["leather", "long green grass"] },
+        { template: "She built a beautiful ___ for the birds.", blank_labels: ["birdhouse"] },
+        { template: "She wrote a long ___ and drank ___.", blank_labels: ["letter", "herbal tea"] },
+        { template: "She was very tired but ___.", blank_labels: ["satisfied"] }
+      ],
+      min_sentences: 6,
+      rubric_tier: 1
     }
   }
 }

@@ -1,6 +1,7 @@
 export default {
-  title: "My Emotional Day",
+  title: "A Rollercoaster of Feelings",
   min_words: 45,
+  min_sentences: 6,
   model_sentence: "Yesterday I felt worried. I could not find my homework. Then I felt relieved. My mum helped me. At school I felt excited because there was a special visitor. It was a famous author. At the end I felt tired but happy.",
   instruction_en: "Write about an emotional day using feeling words!",
   instruction_vi: "Viết về một ngày đầy cảm xúc bằng các từ cảm xúc!",
@@ -59,12 +60,20 @@ export default {
       type: 'picture',
       image_url: '/images/week24/story_writing_pic.jpg',
       image_prompt: "Yesterday, I went to a big, noisy amusement park with my funny older brother, and I went through a complete rollercoaster of different feelings! Early in the morning, I was very excited because I saw a huge, fast rollercoaster near the front entrance of the park. But when we slowly climbed to the top of the steep ride, I was suddenly terrified. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["worried","homework","relieved","excited","special","famous author","tired","happy"],
+      word_bank: ["amusement park","very excited","scared because","proud of myself","brave enough","hungry and thirsty","cold lemonade","bored and tired","stuffed bear","surprised and happy","exhausting day","wonderful feelings"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. You went to the amusement park! Write about all the different feelings you had using words from the word bank.",
+        vi: "Nhìn bức tranh. Bạn đã đi đến công viên giải trí! Viết về tất cả cảm xúc khác nhau bạn trải qua dùng các từ trong ngân hàng từ."
       },
-      rubric_tier: 2
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+        { "template": "I was very ___ because I saw a big rollercoaster.", "answers": ["excited"] },
+        { "template": "I felt ___ because the ride went very fast.", "answers": ["scared"] },
+        { "template": "I was ___ and ___ after walking all day.", "answers": ["hungry", "thirsty"] },
+        { "template": "I felt ___ when I won a stuffed bear.", "answers": ["proud of myself"] },
+        { "template": "It was an ___ day with wonderful feelings!", "answers": ["exhausting"] }
+      ]
     }
   }
 }

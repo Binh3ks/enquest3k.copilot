@@ -1,6 +1,7 @@
 export default {
-  title: "Detective Nova's Case Interview",
+  title: "The Time Detective",
   min_words: 40,
+  min_sentences: 6,
   instruction_en: "Write about a detective interview using past tense!",
   instruction_vi: "Viết về cuộc phỏng vấn thám tử bằng thì quá khứ!",
   prompt_en: "What questions did the detective ask? How did the suspect answer?",
@@ -65,34 +66,20 @@ export default {
       type: 'picture',
       image_url: '/images/week22/story_writing_pic.jpg',
       image_prompt: "I am playing a very fun and exciting game with my family today. I am wearing a big hat and holding a notebook because I am the Time Detective! Someone ate my delicious chocolate cake last night, and I really want to find out who did it. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: [],
+      word_bank: ["Time Detective","chocolate cake","big hat","holding a notebook","cooked a big dinner","washed the dishes","worked in the garden","chocolate on his face","very hungry","mystery solved","last night","this morning"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. You are the Time Detective! Someone ate the chocolate cake last night. Write about your detective game using words from the word bank.",
+        vi: "Nhìn bức tranh. Bạn là Thám Tử Thời Gian! Ai đó đã ăn bánh sô cô la tối qua. Viết về trò chơi thám tử của bạn dùng các từ trong ngân hàng từ."
       },
-      rubric_tier: 1
-      ,
+      rubric_tier: 1,
+      min_sentences: 6,
       sentence_frames: [
-  {
-    "template": "Nova was working on a case in **Hoi An**, Vietnam.",
-    "answers": [
-      "Hoi An"
-    ]
-  },
-  {
-    "template": "She arrived at the scene and opened her notebook.",
-    "answers": [
-      "opened her notebook"
-    ]
-  },
-  {
-    "template": "'Where were you **yesterday morning**?' The suspect **answered clearly**.",
-    "answers": [
-      "yesterday morning",
-      "answered clearly"
-    ]
-  }
-]
+        { "template": "Did you eat my cake ___?", "answers": ["last night"] },
+        { "template": "No, I ___ last night.", "answers": ["cooked a big dinner"] },
+        { "template": "Did you ___ the dishes?", "answers": ["wash"] },
+        { "template": "I found chocolate on ___ face!", "answers": ["his"] },
+        { "template": "The ___ is solved!", "answers": ["mystery"] }
+      ]
     }
   }
 }

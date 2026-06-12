@@ -2,9 +2,10 @@
 // Writing Station — Easy Mode
 
 export default {
-  title: "Writing: My Accident Story",
+  title: "The Mistake in the Corridor",
   audio_url: null,
   min_words: 50,
+  min_sentences: 6,
   model_sentence: "Last week I was at school. I walked in the corridor and fell down. I hurt my knee. My teacher came and helped me. She put a bandage on my knee. I learned to walk carefully in the corridor!",
   instruction_en: "Write about a time when you got hurt or saw someone get hurt. Use at least 3 of these words: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
   instruction_vi: "Viết về một lần bạn bị đau hoặc thấy ai đó bị đau. Dùng ít nhất 3 từ: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
@@ -65,12 +66,20 @@ export default {
       type: 'picture',
       image_url: '/images/week33/story_writing_pic.jpg',
       image_prompt: "This interesting picture shows a terrible and painful accident that happened at my school yesterday afternoon. My good friend Leo was running very fast down the main corridor because he was late for his important math class. He did not look carefully where he was going, and he completely ignored the strict school rules. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["walked","ran","fell","hurt","knee","teacher","corridor","helped","bandage","carefully"],
+      word_bank: ["running very fast","slipped on the wet floor","fell down hard","hit his knee","arm and leg hurt","started crying","kind teacher helped","cold ice pack","gentle on his knee","careless mistake","walk carefully","learned a lesson"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. Leo had an accident at school! What happened to him? Who helped him? Use 3+ words from the word bank to tell the story.",
+        vi: "Nhìn bức tranh. Leo bị tai nạn ở trường! Chuyện gì xảy ra với cậu ấy? Ai giúp cậu ấy? Dùng 3+ từ trong ngân hàng từ để kể câu chuyện."
       },
-      rubric_tier: 2
+      sentence_frames: [
+        { template: "He was running very ___ in the corridor.", blank_labels: ["fast"] },
+        { template: "He fell down and hurt his ___.", blank_labels: ["knee"] },
+        { template: "He started ___ because it hurt a lot.", blank_labels: ["crying"] },
+        { template: "The kind teacher put a ___ on his knee.", blank_labels: ["cold ice pack"] },
+        { template: "He learned to ___ ___ from this mistake.", blank_labels: ["walk carefully"] }
+      ],
+      min_sentences: 6,
+      rubric_tier: 1
     }
   }
 }

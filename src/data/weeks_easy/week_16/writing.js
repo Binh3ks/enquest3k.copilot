@@ -1,60 +1,50 @@
 export default {
-  title: "My First Soccer Game",
+  title: "School Sports Day",
   min_words: 35,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
-    label_vi: "Can ho tro? Bam ben canh moi o",
-    show_by_default: true,
-    scaffolding_stage: "medium",
-    words: [
-      { "word": "very excited", "vi": "rat phan khich", "distractor": false },
-      { "word": "running very fast", "vi": "chay rat nhanh", "distractor": false },
-      { "word": "kicking the ball", "vi": "sut bong", "distractor": false },
-      { "word": "catching it", "vi": "bat no", "distractor": false },
-      { "word": "passing it", "vi": "chuyen no", "distractor": false },
-      { "word": "has energy", "vi": "co nang luong", "distractor": false },
-      { "word": "in motion", "vi": "dang chuyen dong", "distractor": false },
-      { "word": "moving fast", "vi": "di chuyen nhanh", "distractor": false },
-      { "word": "playing soccer", "vi": "choi bong", "distractor": false },
-      { "word": "cheering loudly", "vi": "co vu to", "distractor": false },
-      { "word": "shout with excitement", "vi": "het len voi vui", "distractor": false },
-      { "word": "throw the ball", "vi": "nem bong", "distractor": false },
-      { "word": "use my feet", "vi": "dung chan", "distractor": false },
-      { "word": "wrong", "vi": "sai roi", "distractor": false },
-      { "word": "scoring a goal", "vi": "ghi ban", "distractor": false },
-      { "word": "jumping up and down", "vi": "nhay len xuong", "distractor": false },
-      { "word": "comes to watch", "vi": "den xem", "distractor": false },
-      { "word": "takes photos", "vi": "chup anh", "distractor": false },
-      { "word": "drink water", "vi": "uong nuoc", "distractor": false },
-      { "word": "sleep", "vi": "ngu", "distractor": true },
-      { "word": "hate soccer", "vi": "ghet bong", "distractor": true },
-      { "word": "give up", "vi": "bo cuoc", "distractor": true }
-    ]
-  },
+  min_sentences: 6,
+  instruction_en: "Write about a school sports day!",
+  instruction_vi: "Viết về ngày thể thao ở trường!",
+  prompt_en: "What sports are you playing? What can you see?",
+  prompt_vi: "Bạn đang chơi môn thể thao nào? Bạn thấy gì?",
+  topic_talk_prompt: "Talk about a sports day at school!",
+  show_by_default: true,
+  scaffolding_stage: "medium",
+  vocabulary_bank: [
+    "running in different races",
+    "cheering loudly",
+    "waving colorful flags",
+    "kicking the ball powerfully",
+    "jumping very high",
+    "landing safely",
+    "overtaking other runners",
+    "the whole schoolyard",
+    "full of energy",
+    "trying their best"
+  ],
   sentence_frames: [
     {
-      "template": "Today is my first soccer game! I am ___!",
-      "answers": ["very excited"]
+      "template": "Today is Sports Day. The whole schoolyard is ___ ___!",
+      "answers": ["full of energy"]
     },
     {
-      "template": "Look! I am ___ ___. My legs are moving fast. This is fun!",
-      "answers": ["running very fast"]
+      "template": "Minh is ___ in different ___. He is running fast!",
+      "answers": ["running", "races"]
     },
     {
-      "template": "My friend is ___ ___. I am ___ ___.",
-      "answers": ["kicking the ball", "catching it"]
+      "template": "Lan is ___ very ___. She wants to win!",
+      "answers": ["jumping", "high"]
     },
     {
-      "template": "Now I am ___. The ball ___ ___. It is ___!",
-      "answers": ["passing it", "has energy", "in motion"]
+      "template": "My friends are ___ ___ ___ for their team.",
+      "answers": ["cheering loudly", "waving colorful flags"]
     },
     {
-      "template": "Our team is ___ ___. Everyone is ___ ___ ___!",
-      "answers": ["playing soccer", "cheering loudly", "shout with excitement"]
+      "template": "Tom is ___ ___ ___ ___ the ball. He is strong!",
+      "answers": ["kicking the ball powerfully"]
     },
     {
-      "template": "Oh no! I ___ ___ ___. That is ___! In soccer I can only ___ ___. The other team is ___ ___. They are ___ ___ ___! I want to score a goal too!",
-      "answers": ["throw the ball", "wrong", "use my feet", "scoring a goal", "jumping up and down"]
+      "template": "Everyone is ___ their ___! This is a great day!",
+      "answers": ["trying", "best"]
     }
   ],
   story_prompts: {
@@ -62,34 +52,37 @@ export default {
       type: 'picture',
       image_url: '/images/week16/story_writing_pic.jpg',
       image_prompt: "This is a fantastic picture of an incredibly exciting football match at my school. The weather is perfect for sports, and the students are playing with great energy on the big green field. The game is moving very fast, and everyone is trying their absolute best to win. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["very excited","running very fast","kicking the ball","catching it","passing it","has energy","in motion","moving fast","playing soccer","cheering loudly","shout with excitement","throw the ball","use my feet","wrong"],
+      word_bank: [
+        "running in different races",
+        "cheering loudly",
+        "waving colorful flags",
+        "kicking the ball powerfully",
+        "jumping very high",
+        "landing safely",
+        "overtaking other runners",
+        "the whole schoolyard",
+        "full of energy",
+        "trying their best"
+      ],
       writing_prompts: {
         en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
         vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
       },
-      rubric_tier: 1
-      ,
+      rubric_tier: 1,
       sentence_frames: [
-  {
-    "template": "Today is my first soccer game! I am ___!",
-    "answers": [
-      "very excited"
-    ]
-  },
-  {
-    "template": "Look! I am ___ ___. My legs are moving fast. This is fun!",
-    "answers": [
-      "running very fast"
-    ]
-  },
-  {
-    "template": "My friend is ___ ___. I am ___ ___.",
-    "answers": [
-      "kicking the ball",
-      "catching it"
-    ]
-  }
-]
+        {
+          "template": "Minh is ___ ___ ___ on the schoolyard.",
+          "answers": ["running in different races"]
+        },
+        {
+          "template": "Lan is ___ very ___ near the finish line.",
+          "answers": ["jumping", "high"]
+        },
+        {
+          "template": "The students are ___ ___ for their team.",
+          "answers": ["cheering loudly"]
+        }
+      ]
     }
   }
 }

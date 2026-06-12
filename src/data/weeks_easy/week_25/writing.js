@@ -1,6 +1,7 @@
 export default {
-  title: "My Step-by-Step Guide",
+  title: "How to Make a Perfect Sandwich",
   min_words: 45,
+  min_sentences: 6,
   model_sentence: "Here is how I make a jam sandwich. First of all I take two slices of bread. After that I spread strawberry jam on one slice. Then I press the two slices together. At the very end I cut it in half. Now I understand why the right sequence matters!",
   instruction_en: "Write a step-by-step guide using First of all, After that, Then, At the very end!",
   instruction_vi: "Viết hướng dẫn từng bước dùng First of all, After that, Then, At the very end!",
@@ -58,12 +59,20 @@ export default {
       type: 'picture',
       image_url: '/images/week25/story_writing_pic.jpg',
       image_prompt: "Today, I want to teach you how to make a perfect, delicious sandwich for a fun weekend picnic with your friends. You just need to follow these simple steps in the right order. First, you take two pieces of fresh, soft bread and put them neatly on a clean plate. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["slices of bread","spread","strawberry jam","slices together","cut it in half","right sequence","disaster"],
+      word_bank: ["fresh soft bread","clean plate","green vegetables","cold meat","fried egg","thick slice of cheese","press it down gently","wash your hands","clean the table","kitchen sink","simple steps"],
       writing_prompts: {
-        en: "Look at the picture. Who can you see? Where are they? What are they doing? Use 3+ words from the word bank to describe the scene.",
-        vi: "Nhìn bức tranh. Bạn thấy ai? Họ ở đâu? Họ đang làm gì? Dùng 3+ từ trong ngân hàng từ để mô tả."
+        en: "Look at the picture. You are making a sandwich! Write about how to make the perfect sandwich step by step using words from the word bank.",
+        vi: "Nhìn bức tranh. Bạn đang làm bánh mì sandwich! Viết về cách làm bánh mì hoàn hảo từng bước dùng các từ trong ngân hàng từ."
       },
-      rubric_tier: 2
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+        { "template": "First, you take ___ and put it on a ___.", "answers": ["fresh soft bread", "clean plate"] },
+        { "template": "Next, you wash your hands at the ___.", "answers": ["kitchen sink"] },
+        { "template": "Then you add ___ and a ___ of cheese.", "answers": ["cold meat", "thick slice"] },
+        { "template": "You also add some ___ on top.", "answers": ["green vegetables"] },
+        { "template": "Finally, you ___ and enjoy!", "answers": ["press it down gently"] }
+      ]
     }
   }
 }
