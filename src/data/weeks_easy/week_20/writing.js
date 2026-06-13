@@ -10,48 +10,30 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Detective Luna found an old map. The map was from a long time ago.",
-      "answers": [
-        "old map"
-      ]
+      "template": "Detective Luna found an ___. The map was from a long time ago.",
+      "answers": ["old map"]
     },
     {
-      "template": "On the old map, there was a big local market near the long river.",
-      "answers": [
-        "local market",
-        "long river"
-      ]
+      "template": "On the old map, there was a big ___ near the ___.",
+      "answers": ["local market","long river"]
     },
     {
-      "template": "There were tall tall trees along the road.",
-      "answers": [
-        "tall trees",
-        "along the road"
-      ]
+      "template": "There were ___ trees along the road.",
+      "answers": ["tall"]
     },
     {
-      "template": "There was a old temple at the end of the road. It still stands today!",
-      "answers": [
-        "old temple",
-        "still stands"
-      ]
+      "template": "There was an ___ at the end of the road. It still stands today!",
+      "answers": ["old temple"]
     },
     {
-      "template": "There was a wooden bridge over the river.",
-      "answers": [
-        "wooden bridge",
-        "over the river"
-      ]
+      "template": "There was a ___ bridge over the ___.",
+      "answers": ["wooden","river"]
     },
     {
-      "template": "Now there are new buildings. However, the old temple is still here!",
-      "answers": [
-        "new buildings",
-        "old temple"
-      ]
+      "template": "Now there are new ___. However, the old temple is still here!",
+      "answers": ["buildings"]
     }
   ],
-  scaffolding_stage: "medium-low",
   vocabulary_bank: [
     "old map",
     "local market",
@@ -91,7 +73,18 @@ export default {
       type: "picture",
       image_url: "/images/week20/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 20 story writing.",
-      word_bank: [],
+      word_bank: [
+        "old village",
+        "long ago",
+        "modern cars",
+        "ancient temple",
+        "winding river",
+        "leafy trees",
+        "busy market",
+        "fresh fruits",
+        "wooden bridge",
+        "tall buildings"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

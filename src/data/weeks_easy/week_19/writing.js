@@ -85,7 +85,18 @@ export default {
       type: "picture",
       image_url: "/images/week19/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 19 story writing.",
-      word_bank: [],
+      word_bank: [
+        "photo album",
+        "looking at pictures",
+        "tiny baby",
+        "very cute",
+        "extremely noisy",
+        "brave and smart",
+        "first day of school",
+        "big backpack",
+        "shy and nervous",
+        "funny pictures"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

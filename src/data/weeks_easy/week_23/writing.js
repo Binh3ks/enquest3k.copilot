@@ -60,7 +60,16 @@ export default {
       type: "picture",
       image_url: "/images/week23/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 23 story writing.",
-      word_bank: [],
+      word_bank: [
+        "art class",
+        "painted a picture",
+        "colored carefully",
+        "folded paper",
+        "cut shapes",
+        "glued pieces",
+        "beautiful border",
+        "bright colors"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

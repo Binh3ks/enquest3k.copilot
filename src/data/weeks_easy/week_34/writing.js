@@ -74,7 +74,18 @@ export default {
       type: "picture",
       image_url: "/images/week34/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 34 story writing.",
-      word_bank: [],
+      word_bank: [
+        "ant",
+        "grasshopper",
+        "worked hard",
+        "gathered seeds",
+        "played songs",
+        "cold winter",
+        "hungry",
+        "kind ant",
+        "shared food",
+        "important lesson"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

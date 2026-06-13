@@ -81,7 +81,18 @@ export default {
       type: "picture",
       image_url: "/images/week17/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 17 story writing.",
-      word_bank: [],
+      word_bank: [
+        "raining heavily",
+        "wearing a raincoat",
+        "big rubber boots",
+        "snowing hard",
+        "warm hat",
+        "making a snowman",
+        "sunny day",
+        "wearing sunglasses",
+        "cloudy and windy",
+        "flying a kite"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

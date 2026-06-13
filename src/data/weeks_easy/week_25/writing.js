@@ -59,7 +59,16 @@ export default {
       type: "picture",
       image_url: "/images/week25/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 25 story writing.",
-      word_bank: [],
+      word_bank: [
+        "fresh bread",
+        "green vegetables",
+        "fried egg",
+        "slice of cheese",
+        "press gently",
+        "wash hands",
+        "clean table",
+        "kitchen sink"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

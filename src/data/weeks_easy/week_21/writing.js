@@ -10,50 +10,34 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Yesterday I woke up early and brushed my teeth.",
-      "answers": [
-        "woke up early",
-        "brushed my teeth"
-      ]
+      "template": "Yesterday, I ___ at 6:30 a.m.",
+      "answers": ["woke up"]
     },
     {
-      "template": "I packed my bag and walked to school with my friend.",
-      "answers": [
-        "packed my bag",
-        "walked to school"
-      ]
+      "template": "First, I made my bed and ___ my room.",
+      "answers": ["cleaned"]
     },
     {
-      "template": "At school, I listened carefully to my teacher.",
-      "answers": [
-        "listened carefully"
-      ]
+      "template": "Then I wrote a ___ to my grandma.",
+      "answers": ["letter"]
     },
     {
-      "template": "At break time, I played soccer. I shouted with excitement when we scored a goal!",
-      "answers": [
-        "At break time",
-        "played soccer",
-        "shouted with excitement"
-      ]
+      "template": "I helped Dad cut the ___ in the garden.",
+      "answers": ["grass"]
     },
     {
-      "template": "After school, I helped my mother prepare dinner. Then I cleaned my room.",
-      "answers": [
-        "helped my mother prepare dinner",
-        "cleaned my room"
-      ]
+      "template": "We built a ___ together.",
+      "answers": ["birdhouse"]
     },
     {
-      "template": "In the evening, I looked at the stars and counted ten of them. Then I started to fall asleep.",
-      "answers": [
-        "looked at the stars",
-        "counted ten",
-        "started to fall asleep"
-      ]
+      "template": "At the café, I chose a ___ and paid for it.",
+      "answers": ["muffin"]
+    },
+    {
+      "template": "By evening, I put all my toys away and fell ___.",
+      "answers": ["asleep"]
     }
   ],
-  scaffolding_stage: "medium-low",
   vocabulary_bank: [
     "woke up early",
     "brushed my teeth",
@@ -96,7 +80,18 @@ export default {
       type: "picture",
       image_url: "/images/week21/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 21 story writing.",
-      word_bank: [],
+      word_bank: [
+        "walked slowly",
+        "talked happily",
+        "worked hard",
+        "helped my mother",
+        "cooked dinner",
+        "washed vegetables",
+        "cleaned the table",
+        "watched a movie",
+        "slept well",
+        "woke up early"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

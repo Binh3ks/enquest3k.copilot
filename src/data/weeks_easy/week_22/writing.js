@@ -9,46 +9,37 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Nova was working on a case in Hoi An, Vietnam.",
-      "answers": [
-        "Hoi An"
-      ]
+      "template": "My name is Mia and I am a Time ___.",
+      "answers": ["Detective"]
     },
     {
-      "template": "She arrived at the scene and opened her notebook.",
-      "answers": [
-        "opened her notebook"
-      ]
+      "template": "I wear a big ___ and carry a notebook.",
+      "answers": ["hat"]
     },
     {
-      "template": "'Where were you yesterday morning?' The suspect answered clearly.",
-      "answers": [
-        "yesterday morning",
-        "answered clearly"
-      ]
+      "template": "Yesterday, Mum cooked a delicious cake for my ___!",
+      "answers": ["birthday"]
     },
     {
-      "template": "'What did you do last night?' She wrote every answer in her notebook.",
-      "answers": [
-        "last night",
-        "wrote every answer",
-        "in her notebook"
-      ]
+      "template": "But someone ate the cake last ___!",
+      "answers": ["night"]
     },
     {
-      "template": "Nova studied each clue carefully in the warm lantern light.",
-      "answers": [
-        "studied each clue carefully"
-      ]
+      "template": "I asked everyone in the ___.",
+      "answers": ["house"]
     },
     {
-      "template": "Nova had solved the case. Detective Nova handed her final report to the team in Hoi An.",
-      "answers": [
-        "had solved the case"
-      ]
+      "template": "Dad cooked dinner at 6 and washed the ___ at 7.",
+      "answers": ["dishes"]
+    },
+    {
+      "template": "Mum worked in the garden last weekend."
+    },
+    {
+      "template": "The mystery was ___! My brother ate the cake!",
+      "answers": ["solved"]
     }
   ],
-  scaffolding_stage: "medium",
   vocabulary_bank: [
     "Hoi An",
     "opened her notebook",
@@ -87,7 +78,18 @@ export default {
       type: "picture",
       image_url: "/images/week22/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 22 story writing.",
-      word_bank: [],
+      word_bank: [
+        "Time Detective",
+        "big hat",
+        "chocolate cake",
+        "ask questions",
+        "last night",
+        "cooked dinner",
+        "washed dishes",
+        "this morning",
+        "very hungry",
+        "mystery solved"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

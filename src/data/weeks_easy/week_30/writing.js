@@ -39,7 +39,16 @@ export default {
       type: "picture",
       image_url: "/images/week30/story_writing_pic.jpg",
       image_prompt: "A simple picture for week 30 story writing.",
-      word_bank: [],
+      word_bank: [
+        "woke up early",
+        "perfect spot",
+        "wooden shelter",
+        "tasty sandwiches",
+        "cold lemonade",
+        "beautiful flowers",
+        "dark clouds",
+        "heavy rain"
+      ],
       writing_prompts: {
         en: "Look at the picture. What can you see? Write simply.",
         vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
