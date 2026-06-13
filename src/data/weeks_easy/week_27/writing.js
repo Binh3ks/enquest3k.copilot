@@ -34,7 +34,6 @@ export default {
       ]
     }
   },
-,
   story_prompts: {
     picture_mode: {
       type: "picture",
