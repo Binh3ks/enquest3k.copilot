@@ -97,10 +97,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "Did you ___ last night?", "answers": ["eat my cake"]},
-        {"template": "No, I ___", "answers": ["did not"]},
-        {"template": "Did you ___ this morning?", "answers": ["see the crumbs"]},
-        {"template": "The mystery ___", "answers": ["was finally solved"]}
+        {"template": "I am a Time ___", "answers": ["Detective"]},
+        {"template": "Someone ate the ___", "answers": ["chocolate cake"]},
+        {"template": "Dad cooked ___", "answers": ["dinner"]},
+        {"template": "Mum worked ___", "answers": ["in the garden"]},
+        {"template": "The mystery was ___", "answers": ["solved"]},
+        {"template": "My brother ___", "answers": ["ate the cake"]}
       ]
     }
   }

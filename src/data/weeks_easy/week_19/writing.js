@@ -104,10 +104,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "In this photo, I ___", "answers": ["was a baby"]},
-        {"template": "My brother ___", "answers": ["was very noisy"]},
-        {"template": "On my first day, ___", "answers": ["I was so shy"]},
-        {"template": "But now, I ___", "answers": ["am much taller"]}
+        {"template": "I am looking at ___", "answers": ["an old photo"]},
+        {"template": "In this picture, I am a ___", "answers": ["tiny baby"]},
+        {"template": "My sister is ___", "answers": ["very brave"]},
+        {"template": "On my first day of ___", "answers": ["school"]},
+        {"template": "I am wearing ___", "answers": ["a big backpack"]},
+        {"template": "These are ___", "answers": ["wonderful pictures"]}
       ]
     }
   }

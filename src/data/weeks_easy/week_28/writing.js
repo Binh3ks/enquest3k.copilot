@@ -78,10 +78,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "The hare was ___", "answers": ["very proud"]},
-        {"template": "The tortoise was ___", "answers": ["very slow"]},
-        {"template": "One day, ___", "answers": ["they had a race"]},
-        {"template": "In the end, ___", "answers": ["the tortoise won"]}
+        {"template": "The hare was very ___", "answers": ["proud"]},
+        {"template": "The tortoise was ___", "answers": ["quiet and patient"]},
+        {"template": "They had a big ___", "answers": ["race"]},
+        {"template": "The hare took a ___", "answers": ["long nap"]},
+        {"template": "The tortoise walked past the ___", "answers": ["finish line"]},
+        {"template": "The hare learned a ___", "answers": ["valuable lesson"]}
       ]
     }
   }

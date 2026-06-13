@@ -68,10 +68,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "Early in the morning, ___", "answers": ["she woke up early"]},
-        {"template": "Then, she ___", "answers": ["tidied her bedroom"]},
-        {"template": "In the afternoon, ___", "answers": ["she wrote a letter"]},
-        {"template": "In the evening, ___", "answers": ["she felt tired but happy"]}
+        {"template": "Last Saturday, I woke up ___", "answers": ["early"]},
+        {"template": "First, I ___", "answers": ["tidied my room"]},
+        {"template": "Then I wrote a ___", "answers": ["letter"]},
+        {"template": "We built a ___", "answers": ["birdhouse"]},
+        {"template": "At the café, I chose ___", "answers": ["a muffin"]},
+        {"template": "By evening I felt ___", "answers": ["tired but happy"]}
       ]
     }
   }

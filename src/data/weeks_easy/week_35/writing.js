@@ -89,10 +89,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "In the past, Max ___", "answers": ["did things carelessly"]},
-        {"template": "One day, he ___", "answers": ["broke a glass cup"]},
-        {"template": "Now, he ___", "answers": ["does everything carefully"]},
-        {"template": "Finally, ___", "answers": ["everyone is proud of him"]}
+        {"template": "Max used to do things ___", "answers": ["carelessly"]},
+        {"template": "He walked ___", "answers": ["loudly"]},
+        {"template": "Then Max decided to ___", "answers": ["change"]},
+        {"template": "Now he does homework ___", "answers": ["carefully"]},
+        {"template": "He speaks ___", "answers": ["kindly and quietly"]},
+        {"template": "Everyone is ___", "answers": ["proud of him"]}
       ]
     }
   }

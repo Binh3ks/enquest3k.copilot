@@ -71,10 +71,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "At the market, I ___", "answers": ["saw fresh fruit"]},
-        {"template": "I saw ___", "answers": ["bright red apples"]},
-        {"template": "I heard ___", "answers": ["sellers calling out"]},
-        {"template": "I smelt ___", "answers": ["warm bread"]}
+        {"template": "I walked to the ___", "answers": ["busy market"]},
+        {"template": "The stalls were full of ___", "answers": ["fresh fruit"]},
+        {"template": "I saw bright toys made of ___", "answers": ["plastic"]},
+        {"template": "I picked up a juicy ___", "answers": ["apple"]},
+        {"template": "I asked for the ___", "answers": ["price"]},
+        {"template": "The market was ___", "answers": ["colourful and noisy"]}
       ]
     }
   }

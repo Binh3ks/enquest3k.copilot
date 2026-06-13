@@ -100,9 +100,11 @@ export default {
       min_sentences: 6,
       sentence_frames: [
         {"template": "Yesterday morning, I ___", "answers": ["woke up early"]},
-        {"template": "At school, I ___", "answers": ["listened carefully"]},
-        {"template": "In the afternoon, ___", "answers": ["I helped my mother"]},
-        {"template": "Before bed, ___", "answers": ["I felt very tired"]}
+        {"template": "First, I ___", "answers": ["cleaned my room"]},
+        {"template": "Then I ___", "answers": ["wrote a letter"]},
+        {"template": "At the café, I ___", "answers": ["chose a muffin"]},
+        {"template": "By evening, I ___", "answers": ["felt tired"]},
+        {"template": "It was a ___", "answers": ["busy Saturday"]}
       ]
     }
   }

@@ -102,10 +102,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "At the Art Club, ___", "answers": ["students are painting"]},
-        {"template": "At the Science Club, ___", "answers": ["a girl mixes liquids"]},
-        {"template": "At the Drama Club, ___", "answers": ["students are acting"]},
-        {"template": "Everywhere I look, ___", "answers": ["people are smiling"]}
+        {"template": "At the festival, ___", "answers": ["students are painting"]},
+        {"template": "The reporter is ___", "answers": ["broadcasting live"]},
+        {"template": "On stage, ___", "answers": ["students are singing"]},
+        {"template": "The audience is ___", "answers": ["clapping happily"]},
+        {"template": "At the science corner, ___", "answers": ["students are mixing colors"]},
+        {"template": "Everyone feels ___", "answers": ["excited and happy"]}
       ]
     }
   }

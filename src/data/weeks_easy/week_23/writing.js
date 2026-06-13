@@ -77,10 +77,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "First, ___", "answers": ["we designed the house"]},
-        {"template": "Then, ___", "answers": ["we cut the cardboard"]},
-        {"template": "After that, ___", "answers": ["we painted the walls"]},
-        {"template": "Finally, ___", "answers": ["we showed our project"]}
+        {"template": "I arrived at art class and ___", "answers": ["picked up my brush"]},
+        {"template": "I painted a picture of ___", "answers": ["red flowers"]},
+        {"template": "I folded paper into ___", "answers": ["a butterfly"]},
+        {"template": "I cut shapes from ___", "answers": ["green paper"]},
+        {"template": "I glued leaves ___", "answers": ["around my picture"]},
+        {"template": "The teacher said ___", "answers": ["it was wonderful"]}
       ]
     }
   }

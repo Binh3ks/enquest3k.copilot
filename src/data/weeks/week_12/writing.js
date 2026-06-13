@@ -1,8 +1,9 @@
 export default {
   title: "The Talent Show",
   min_words: 45,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: false,
     scaffolding_stage: "medium",
@@ -23,6 +24,7 @@ export default {
       { "word": "boring performance", "vi": "bieu dien nham chan", "distractor": true },
       { "word": "no one claps", "vi": "khong ai vua tay", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

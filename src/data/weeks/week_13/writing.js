@@ -1,8 +1,9 @@
 export default {
   title: "A Perfect School Day",
   min_words: 45,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: false,
     scaffolding_stage: "medium",
@@ -32,6 +33,7 @@ export default {
       { "word": "skip breakfast", "vi": "bo an sang", "distractor": true },
       { "word": "watch TV all day", "vi": "xem ti vi ca ngay", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

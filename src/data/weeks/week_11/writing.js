@@ -6,8 +6,9 @@ export default {
   model_sentence: "Today is Saturday! I have a fun weekend plan. First, I go to the park. I play at the park with my friends. We run and laugh! Then I go to the library. I read a story book at the library. The book is very interesting! After that, my mom and I buy food at the supermarket. I help my mom carry the bags. Finally, we go to the playground. I slide down at the playground and it is so much fun! On Sunday I go to the zoo and see a lion and a monkey at the zoo. Then we have lunch at a restaurant. The food is very delicious! I love my weekend! Every place is special and fun!",
   prompt_en: "Tell me about the places you like to visit on the weekend!",
   prompt_vi: "Hãy kể về những nơi bạn thích đến vào cuối tuần!",
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: false,
     scaffolding_stage: "medium",
@@ -36,6 +37,7 @@ export default {
       { "word": "stay at home alone", "vi": "o nha mot minh", "distractor": true },
       { "word": "hate the zoo", "vi": "ghet so thu", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

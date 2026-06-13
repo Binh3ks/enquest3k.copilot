@@ -93,10 +93,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "The first pig ___", "answers": ["built a weak house"]},
-        {"template": "The second pig ___", "answers": ["built a wooden house"]},
-        {"template": "The third pig ___", "answers": ["built a strong house"]},
-        {"template": "In the end, ___", "answers": ["the pigs were safe"]}
+        {"template": "The first pig built a ___", "answers": ["weak house"]},
+        {"template": "The second pig used ___", "answers": ["wood"]},
+        {"template": "The third pig used ___", "answers": ["strong metal"]},
+        {"template": "The wolf blew down ___", "answers": ["the first house"]},
+        {"template": "The pigs ran and ___", "answers": ["locked the door"]},
+        {"template": "In the end they ___", "answers": ["sang a happy song"]}
       ]
     }
   }

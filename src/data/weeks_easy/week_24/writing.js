@@ -77,10 +77,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "In the morning, I felt ___", "answers": ["very excited"]},
-        {"template": "But then, ___", "answers": ["I got scared"]},
-        {"template": "Because ___", "answers": ["it was very high"]},
-        {"template": "At the end, ___", "answers": ["I felt proud"]}
+        {"template": "In the morning I felt ___", "answers": ["worried"]},
+        {"template": "My brother looked ___", "answers": ["angry"]},
+        {"template": "I felt so ___", "answers": ["relieved"]},
+        {"template": "The class felt ___", "answers": ["excited"]},
+        {"template": "By lunchtime I felt ___", "answers": ["cheerful"]},
+        {"template": "At the end I felt ___", "answers": ["tired but happy"]}
       ]
     }
   }

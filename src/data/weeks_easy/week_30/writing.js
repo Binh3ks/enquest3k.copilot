@@ -56,10 +56,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "In the morning, we ___", "answers": ["prepared sandwiches"]},
-        {"template": "At the picnic spot, ___", "answers": ["we ate happily"]},
-        {"template": "But suddenly, ___", "answers": ["dark clouds appeared"]},
-        {"template": "In the end, ___", "answers": ["we stayed dry"]}
+        {"template": "Last Sunday, we had a ___", "answers": ["picnic"]},
+        {"template": "We sat on ___", "answers": ["the grass"]},
+        {"template": "We ate ___", "answers": ["sandwiches"]},
+        {"template": "Then dark ___", "answers": ["clouds appeared"]},
+        {"template": "We ran under the ___", "answers": ["shelter"]},
+        {"template": "It was a ___", "answers": ["wonderful picnic"]}
       ]
     }
   }

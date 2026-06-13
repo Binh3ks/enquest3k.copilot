@@ -1,8 +1,9 @@
 export default {
   title: "The Busy Park",
   min_words: 45,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: false,
     scaffolding_stage: "medium",
@@ -29,6 +30,7 @@ export default {
       { "word": "crying loudly", "vi": "khoc to", "distractor": true },
       { "word": "leaving the park", "vi": "roi khoi cong vien", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

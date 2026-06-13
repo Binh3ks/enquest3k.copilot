@@ -85,10 +85,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "Leo was ___", "answers": ["running too fast"]},
-        {"template": "Suddenly, he ___", "answers": ["fell down hard"]},
-        {"template": "His teacher ___", "answers": ["ran over to help"]},
-        {"template": "Now, Leo ___", "answers": ["walks carefully"]}
+        {"template": "Jake ran ___", "answers": ["very fast"]},
+        {"template": "He slipped on the ___", "answers": ["wet floor"]},
+        {"template": "He fell and ___", "answers": ["hurt his knee"]},
+        {"template": "He started ___", "answers": ["crying loudly"]},
+        {"template": "His teacher ___", "answers": ["came to help"]},
+        {"template": "Jake learned to ___", "answers": ["walk carefully"]}
       ]
     }
   }

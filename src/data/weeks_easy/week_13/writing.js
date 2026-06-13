@@ -1,8 +1,9 @@
 export default {
   title: "My Day",
   min_words: 30,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: true,
     scaffolding_stage: "medium",
@@ -27,6 +28,7 @@ export default {
       { "word": "comb", "vi": "chai", "distractor": true },
       { "word": "hate school", "vi": "ghet truong", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

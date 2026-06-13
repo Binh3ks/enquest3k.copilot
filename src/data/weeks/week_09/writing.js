@@ -1,8 +1,9 @@
 export default {
   title: "My City",
   min_words: 45,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: false,
     scaffolding_stage: "medium",
@@ -31,6 +32,7 @@ export default {
       { "word": "nothing exciting", "vi": "khong co gi thu vi", "distractor": true },
       { "word": "hate the city", "vi": "ghet thanh pho", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

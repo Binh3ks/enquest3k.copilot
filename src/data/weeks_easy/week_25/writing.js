@@ -76,10 +76,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "First, ___", "answers": ["you take the bread"]},
-        {"template": "Next, ___", "answers": ["you add vegetables"]},
-        {"template": "Then, ___", "answers": ["you put cheese on top"]},
-        {"template": "Finally, ___", "answers": ["you cut it in half"]}
+        {"template": "First, I got ___", "answers": ["two slices of bread"]},
+        {"template": "I spread ___", "answers": ["jam on the bread"]},
+        {"template": "I added ___", "answers": ["vegetables"]},
+        {"template": "I put it on a ___", "answers": ["clean plate"]},
+        {"template": "I cut it in ___", "answers": ["half"]},
+        {"template": "It was ___", "answers": ["delicious"]}
       ]
     }
   }

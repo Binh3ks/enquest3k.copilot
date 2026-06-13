@@ -103,7 +103,9 @@ export default {
         {"template": "In London, ___", "answers": ["it is raining"]},
         {"template": "In New York, ___", "answers": ["it is snowing"]},
         {"template": "In Sydney, ___", "answers": ["it is sunny"]},
-        {"template": "In my city, ___", "answers": ["the weather is nice"]}
+        {"template": "The boy is wearing ___", "answers": ["a warm hat"]},
+        {"template": "In my city, ___", "answers": ["the weather is windy"]},
+        {"template": "I am flying ___", "answers": ["a big kite"]}
       ]
     }
   }

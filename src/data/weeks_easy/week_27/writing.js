@@ -113,10 +113,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "First, ___", "answers": ["the seed is small"]},
-        {"template": "Next, ___", "answers": ["a root grows down"]},
-        {"template": "Then, ___", "answers": ["a green stem appears"]},
-        {"template": "Finally, ___", "answers": ["a flower blooms"]}
+        {"template": "First, you plant a ___", "answers": ["seed"]},
+        {"template": "A strong ___", "answers": ["root grows"]},
+        {"template": "Then a green ___", "answers": ["stem appears"]},
+        {"template": "The plant needs ___", "answers": ["warm sunlight"]},
+        {"template": "Broad green ___", "answers": ["leaves grow"]},
+        {"template": "A bright yellow ___", "answers": ["flower blooms"]}
       ]
     }
   }

@@ -92,10 +92,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "Long ago, there ___", "answers": ["was an old village"]},
+        {"template": "Long ago, there ___", "answers": ["was a village"]},
         {"template": "Near the river, ___", "answers": ["there was a market"]},
-        {"template": "But now, the town ___", "answers": ["has modern buildings"]},
-        {"template": "Sometimes, I wish ___", "answers": ["I could go back"]}
+        {"template": "There was a ___", "answers": ["wooden bridge"]},
+        {"template": "But now, ___", "answers": ["there are new buildings"]},
+        {"template": "The old temple ___", "answers": ["still stands"]},
+        {"template": "I wish ___", "answers": ["I could visit"]}
       ]
     }
   }

@@ -1,8 +1,9 @@
 export default {
   title: "City vs Farm",
   min_words: 45,
-  vocabulary_bank: {
-    label_en: "Need help? Click next to each blank",
+  hints: {
+vocabulary_bank: {
+      label_en: "Need help? Click next to each blank",
     label_vi: "Can ho tro? Bam ben canh moi o",
     show_by_default: false,
     scaffolding_stage: "medium",
@@ -28,6 +29,7 @@ export default {
       { "word": "boring and useless", "vi": "nham chan va vo ich", "distractor": true },
       { "word": "avoid the farm", "vi": "tranh xa nong trai", "distractor": true }
     ]
+  }
   },
   sentence_frames: [
     {

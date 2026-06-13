@@ -82,10 +82,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "Last night, I ___", "answers": ["went to a magic island"]},
-        {"template": "On the island, I ___", "answers": ["met a friendly dolphin"]},
-        {"template": "I met a ___", "answers": ["wise purple monkey"]},
-        {"template": "When I woke up, ___", "answers": ["I was so happy"]}
+        {"template": "The children went on a ___", "answers": ["magic trip"]},
+        {"template": "They got on a ___", "answers": ["flying carpet"]},
+        {"template": "They met a tiny ___", "answers": ["monkey"]},
+        {"template": "They saw a ___", "answers": ["friendly dolphin"]},
+        {"template": "They took a ___", "answers": ["photo"]},
+        {"template": "They flew ___", "answers": ["back home"]}
       ]
     }
   }

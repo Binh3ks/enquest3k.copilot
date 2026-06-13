@@ -75,10 +75,12 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "On Saturday, ___", "answers": ["I played soccer"]},
-        {"template": "In the afternoon, ___", "answers": ["it rained"]},
-        {"template": "On Sunday, ___", "answers": ["we went to the museum"]},
-        {"template": "At the end, ___", "answers": ["we had a great time"]}
+        {"template": "Leo sat down with his ___", "answers": ["pencils"]},
+        {"template": "He decided to create ___", "answers": ["a comic strip"]},
+        {"template": "First he drew ___", "answers": ["the characters"]},
+        {"template": "Then he added ___", "answers": ["speech bubbles"]},
+        {"template": "It rained ___", "answers": ["heavily"]},
+        {"template": "Leo felt ___", "answers": ["really proud"]}
       ]
     }
   }
