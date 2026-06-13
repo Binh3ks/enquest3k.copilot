@@ -41,28 +41,28 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today is ___! I am happy. I ___ ___.",
-      "answers": ["Saturday", "go to", "the park"]
+      "template": "Today is Saturday! I am ___.",
+      "answers": ["happy"]
     },
     {
-      "template": "I ___ ___ ___. It is ___!",
-      "answers": ["play at", "the park", "fun"]
+      "template": "I go to the ___ to play with friends.",
+      "answers": ["park"]
     },
     {
-      "template": "Then I ___ ___ ___. I like books!",
-      "answers": ["go to", "the library", "read a book"]
+      "template": "It is very ___!",
+      "answers": ["fun"]
     },
     {
-      "template": "My mom and I ___ ___. We ___ ___ ___.",
-      "answers": ["go to", "the store", "buy food", "help mom"]
+      "template": "Then I go to the ___ to read a book.",
+      "answers": ["library"]
     },
     {
-      "template": "We ___ ___. I ___! It is ___!",
-      "answers": ["go to", "the playground", "slide down", "fun"]
+      "template": "My mom and I buy food at the ___.",
+      "answers": ["store"]
     },
     {
-      "template": "___ I ___ ___. I see ___. Then we ___ ___. The food is ___! I love my weekend!",
-      "answers": ["On Sunday", "go to", "the zoo", "a big lion", "eat lunch", "at home", "good"]
+      "template": "I have ___ every weekend!",
+      "answers": ["fun"]
     }
   ]
 };

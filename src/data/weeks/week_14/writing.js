@@ -33,36 +33,48 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Welcome to my presentation! My name is Emma and I am 8 years old. Today I ___ because I want to ___ ___.",
-      "answers": ["present my poster", "share my world"]
+      "template": "Welcome to my ___! My name is Emma.",
+      "answers": ["presentation"]
     },
     {
-      "template": "This is ___. I have ___ in my family: ___.",
-      "answers": ["my loving family", "4 people", "my mom, my dad, my sister, and me"]
+      "template": "I am 8 years old and I want to ___ my world.",
+      "answers": ["share"]
     },
     {
-      "template": "Now I talk about my talents! I can ___ and I can also ___ ___.",
-      "answers": ["sing very well", "dance when happy"]
+      "template": "This is my loving ___. I have 4 people in it.",
+      "answers": ["family"]
     },
     {
-      "template": "I am also good at ___ of animals and flowers for my classmates.",
-      "answers": ["drawing pictures"]
+      "template": "My mom, my dad, my sister, and ___.",
+      "answers": ["me"]
     },
     {
-      "template": "When I ___ ___, I ___ ___ ___ the audience ___.",
-      "answers": ["stand here", "feel very confident", "because the audience", "listen carefully"]
+      "template": "I can sing very ___.",
+      "answers": ["well"]
     },
     {
-      "template": "I ___ ___ ___ ___ ___.",
-      "answers": ["introduce myself", "with a big smile", "and then describe my project in detail"]
+      "template": "I can also ___ when I hear music.",
+      "answers": ["dance"]
     },
     {
-      "template": "I am ___ ___ my poster. I hope everyone enjoys it!",
-      "answers": ["so proud of my work"]
+      "template": "I am good at drawing ___ of animals and flowers.",
+      "answers": ["pictures"]
     },
     {
-      "template": "___. This is my very special day and I will never forget it!",
-      "answers": ["Thank you for listening"]
+      "template": "When I stand here, I feel very ___.",
+      "answers": ["confident"]
+    },
+    {
+      "template": "The audience listens to me and enjoys my ___.",
+      "answers": ["poster"]
+    },
+    {
+      "template": "I am so ___ of my work today.",
+      "answers": ["proud"]
+    },
+    {
+      "template": "Thank you for ___. This is my special day!",
+      "answers": ["listening"]
     }
   ]
 };

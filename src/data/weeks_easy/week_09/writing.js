@@ -32,28 +32,32 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "I walk on ___ every day. There are ___ everywhere.",
-      "answers": ["a busy street", "many people and cars"]
+      "template": "I walk on a busy ___ every day.",
+      "answers": ["street"]
     },
     {
-      "template": "It is ___. I hear car horns and people talking.",
-      "answers": ["a noisy place"]
+      "template": "There are many ___ and cars everywhere.",
+      "answers": ["people"]
     },
     {
-      "template": "I see ___. It is ___!",
-      "answers": ["a tall building", "very high"]
+      "template": "It is a very ___ place.",
+      "answers": ["noisy"]
     },
     {
-      "template": "A ___ ___ near me. People ___ to go to work.",
-      "answers": ["yellow bus", "stops near me", "get on the bus"]
+      "template": "I see a tall ___ near the bus stop.",
+      "answers": ["building"]
     },
     {
-      "template": "There is ___ on the road. Vehicles ___.",
-      "answers": ["lots of traffic", "move slowly"]
+      "template": "There is lots of ___ on the road.",
+      "answers": ["traffic"]
     },
     {
-      "template": "I also see ___. It is ___. I like the city!",
-      "answers": ["a quiet street", "less busy than the main street"]
+      "template": "I also see a ___ street nearby.",
+      "answers": ["quiet"]
+    },
+    {
+      "template": "I like my ___.",
+      "answers": ["city"]
     }
   ]
 };

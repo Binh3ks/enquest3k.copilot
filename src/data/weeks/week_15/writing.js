@@ -34,36 +34,52 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today our class is visiting ___ ___. The park is very busy! Many people are ___.",
-      "answers": ["the beautiful park", "enjoying their day"]
+      "template": "Today our class is visiting the beautiful ___.",
+      "answers": ["park"]
     },
     {
-      "template": "A young boy is ___ near the trees. The dog ___ and looks so happy!",
-      "answers": ["running after his dog", "is barking happily"]
+      "template": "Many people are enjoying their ___.",
+      "answers": ["day"]
     },
     {
-      "template": "An elderly man is ___ and ___ while he enjoys the fresh air.",
-      "answers": ["sitting on a wooden bench", "is reading peacefully"]
+      "template": "A young boy is running after his ___ near the trees.",
+      "answers": ["dog"]
     },
     {
-      "template": "Two women are ___ and some children are ___ ___ ___.",
-      "answers": ["jogging around the path", "playing with water", "laughing loudly"]
+      "template": "The dog is barking ___.",
+      "answers": ["happily"]
     },
     {
-      "template": "A family is ___. The mother ___ and the father ___.",
-      "answers": ["having a picnic", "is spreading a blanket", "is unpacking the food basket"]
+      "template": "An elderly man is sitting on a wooden ___.",
+      "answers": ["bench"]
     },
     {
-      "template": "A little girl is ___ and three teenagers are ___ in the sky.",
-      "answers": ["walking her puppy", "flying colorful kites"]
+      "template": "He is reading ___ while he enjoys the fresh air.",
+      "answers": ["peacefully"]
     },
     {
-      "template": "Some people are ___ ___ because the trees give cool shade.",
-      "answers": ["relaxing under big trees"]
+      "template": "Two women are jogging around the ___.",
+      "answers": ["path"]
     },
     {
-      "template": "Everyone is having ___ ___. This is really ___ ___ ___!",
-      "answers": ["a wonderful time", "the best school trip ever"]
+      "template": "Some children are playing with water and laughing ___.",
+      "answers": ["loudly"]
+    },
+    {
+      "template": "A family is having a ___ on the soft green grass.",
+      "answers": ["picnic"]
+    },
+    {
+      "template": "A little girl is walking her ___.",
+      "answers": ["puppy"]
+    },
+    {
+      "template": "Some people are relaxing under big trees because the shade is ___.",
+      "answers": ["cool"]
+    },
+    {
+      "template": "Everyone is having a wonderful ___. The park is my favorite place!",
+      "answers": ["time"]
     }
   ]
 };

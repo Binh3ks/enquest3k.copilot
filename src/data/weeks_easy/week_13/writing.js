@@ -32,28 +32,28 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "My name is Tom. This is my day. I ___.",
-      "answers": ["wake up"]
+      "template": "I wake up at seven ___.",
+      "answers": ["o'clock"]
     },
     {
-      "template": "I ___ every morning. It is important to keep my teeth clean!",
-      "answers": ["brush my teeth"]
+      "template": "I brush my teeth and eat ___.",
+      "answers": ["breakfast"]
     },
     {
-      "template": "I ___. I like eating ___ for breakfast.",
-      "answers": ["eat breakfast", "bread"]
+      "template": "I go to ___ with my friends.",
+      "answers": ["school"]
     },
     {
-      "template": "I ___ ___. I see my teacher and ___ ___ ___.",
-      "answers": ["go to school", "with Ben", "play with", "my friends"]
+      "template": "At twelve o'clock, I have ___.",
+      "answers": ["lunch"]
     },
     {
-      "template": "I ___ at school. Lunch is good! Then I ___.",
-      "answers": ["have lunch", "come home"]
+      "template": "I do ___ after school.",
+      "answers": ["homework"]
     },
     {
-      "template": "At home, I ___. I write my name. Then I ___ ___ ___ ___. Good night!",
-      "answers": ["do homework", "have dinner", "watch TV", "cartoons", "go to bed"]
+      "template": "I go to ___ at nine o'clock.",
+      "answers": ["bed"]
     }
   ]
 };

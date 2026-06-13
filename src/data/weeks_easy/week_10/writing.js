@@ -30,28 +30,28 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today I visit a farm ___.",
-      "answers": ["in the countryside"]
+      "template": "The city has many shops and ___.",
+      "answers": ["schools"]
     },
     {
-      "template": "The farm is ___ but the city is ___.",
-      "answers": ["quiet and clean", "busy and noisy"]
+      "template": "It is very noisy and ___.",
+      "answers": ["crowded"]
     },
     {
-      "template": "I see ___. The cow ___ in the field.",
-      "answers": ["a big brown cow", "eats grass"]
+      "template": "The farm is ___ and green.",
+      "answers": ["peaceful"]
     },
     {
-      "template": "I see ___. It ___!",
-      "answers": ["a small white chicken", "runs very fast"]
+      "template": "The farm has fresh air and wide ___ spaces.",
+      "answers": ["open"]
     },
     {
-      "template": "I see ___ everywhere. ___ is soft. The farm is ___.",
-      "answers": ["tall trees", "The green grass", "peaceful"]
+      "template": "Farm life is ___ and quiet.",
+      "answers": ["simple"]
     },
     {
-      "template": "I see ___ on the farm. I love the farm! It is ___!",
-      "answers": ["many animals", "the best place"]
+      "template": "Both places have their own ___.",
+      "answers": ["advantages"]
     }
   ]
 };

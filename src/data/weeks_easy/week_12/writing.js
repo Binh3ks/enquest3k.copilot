@@ -31,28 +31,28 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "I have ___! I can ___ ___. I sing and have fun.",
-      "answers": ["many talents", "sing happy songs", "every day"]
+      "template": "Today is the school talent ___!",
+      "answers": ["show"]
     },
     {
-      "template": "I can also ___ when I hear music. I dance and laugh!",
-      "answers": ["dance when I hear music"]
+      "template": "Sarah can sing ___ on stage.",
+      "answers": ["happily"]
     },
     {
-      "template": "I can ___ ___ ___. I run and play ___.",
-      "answers": ["run fast in the park", "with my friends"]
+      "template": "Tom can dance with ___.",
+      "answers": ["energy"]
     },
     {
-      "template": "I can also ___ ___ and climb up high on the playground.",
-      "answers": ["jump over small boxes"]
+      "template": "Mike can run fast around the ___.",
+      "answers": ["track"]
     },
     {
-      "template": "I can ___ ___ ___. I draw with bright colors.",
-      "answers": ["draw pictures of my family", "with colors"]
+      "template": "Emma can jump very ___.",
+      "answers": ["high"]
     },
     {
-      "template": "I can also ___ ___ ___ and ___ ___ ___ with my mom. I have fun every day!",
-      "answers": ["swim in the pool", "in summer", "cook with my mom", "easy food"]
+      "template": "Every child has special ___!",
+      "answers": ["talents"]
     }
   ]
 };

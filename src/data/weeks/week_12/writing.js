@@ -28,36 +28,44 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today is ___! Many children showcase their amazing abilities on stage.",
-      "answers": ["the school talent show"]
+      "template": "Today is the school talent ___!",
+      "answers": ["show"]
     },
     {
-      "template": "Sarah can ___. ___ when she performs and the audience loves it.",
-      "answers": ["sing songs happily on stage"]
+      "template": "Sarah can sing songs ___ on stage.",
+      "answers": ["happily"]
     },
     {
-      "template": "Tom can ___ and everyone watches him dance with energy and style.",
-      "answers": ["dance happily with energy and style"]
+      "template": "The audience ___ her performance.",
+      "answers": ["loves"]
     },
     {
-      "template": "Mike can ___ faster than anyone in his grade.",
-      "answers": ["run fast around the track"]
+      "template": "Tom can dance with energy and ___.",
+      "answers": ["style"]
     },
     {
-      "template": "Emma can ___ very high and she always lands safely.",
-      "answers": ["jump high"]
+      "template": "Mike can run fast around the ___.",
+      "answers": ["track"]
     },
     {
-      "template": "Lisa can ___ ___ ___ for her classmates.",
-      "answers": ["draw pictures of animals and people"]
+      "template": "Emma can jump ___ and always lands safely.",
+      "answers": ["high"]
     },
     {
-      "template": "Amy can ___ because she practices every day.",
-      "answers": ["swim fast long distances without stopping"]
+      "template": "Lisa can draw pictures of ___ and flowers.",
+      "answers": ["animals"]
     },
     {
-      "template": "David can ___. He prepares ___ for the show. ___ ___ ___! It is wonderful to see so many talents together.",
-      "answers": ["cook simple meals", "a tasty snack on stage", "every child has", "special talents"]
+      "template": "Amy can swim ___ distances without stopping.",
+      "answers": ["long"]
+    },
+    {
+      "template": "David can cook simple meals and prepares a tasty ___ on stage.",
+      "answers": ["snack"]
+    },
+    {
+      "template": "Every child has special ___! It is wonderful to see them all!",
+      "answers": ["talents"]
     }
   ]
 };

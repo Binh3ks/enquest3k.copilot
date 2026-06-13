@@ -36,36 +36,44 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "I walk on ___ every day. There are ___ everywhere. It is ___.",
-      "answers": ["a busy street", "many people and cars", "a noisy place"]
+      "template": "I walk on a busy ___ every day.",
+      "answers": ["street"]
     },
     {
-      "template": "I see ___. It is ___! The building is also ___.",
-      "answers": ["a very tall building", "very high", "next to the bus stop"]
+      "template": "There are many people and cars ___.",
+      "answers": ["everywhere"]
     },
     {
-      "template": "A yellow bus ___ near me. Many people ___ to go to work or school.",
-      "answers": ["stops near me", "get on the bus"]
+      "template": "It is a very ___ place.",
+      "answers": ["noisy"]
     },
     {
-      "template": "There is ___ on the main road. Many vehicles ___ because everyone is in a hurry.",
-      "answers": ["lots of traffic", "move slowly"]
+      "template": "I see a very tall ___ near the bus stop.",
+      "answers": ["building"]
     },
     {
-      "template": "I also see ___. It is ___ the main street, and I like walking there.",
-      "answers": ["a quiet street", "less busy than the main street"]
+      "template": "A yellow bus ___ near me and people get on.",
+      "answers": ["stops"]
     },
     {
-      "template": "The city has ___, ___, and ___, so there is always something interesting to see.",
-      "answers": ["tall buildings", "busy streets", "lots of traffic"]
+      "template": "There is lots of ___ on the main road.",
+      "answers": ["traffic"]
     },
     {
-      "template": "But it is ___! I love ___ ___ and discovering new places every time.",
-      "answers": ["exciting", "exploring the modern city"]
+      "template": "Vehicles move ___ because everyone is in a hurry.",
+      "answers": ["slowly"]
     },
     {
-      "template": "___ time, I want to ___ and ___ to see even more of the city.",
-      "answers": ["Next time", "ride a bus", "see more buildings"]
+      "template": "I also see a quiet ___ that is less busy.",
+      "answers": ["street"]
+    },
+    {
+      "template": "It is nice to walk there and enjoy the ___.",
+      "answers": ["peace"]
+    },
+    {
+      "template": "I love my city because there is always something ___ to see.",
+      "answers": ["interesting"]
     }
   ]
 };

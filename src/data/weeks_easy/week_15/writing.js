@@ -30,28 +30,28 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today I am going to the park with my family. The park is ___!",
-      "answers": ["busy and fun"]
+      "template": "Today we are visiting the ___.",
+      "answers": ["park"]
     },
     {
-      "template": "I am ___ ___. She is ___ ___.",
-      "answers": ["walking with my mom", "holding my hand"]
+      "template": "Many people are enjoying their ___.",
+      "answers": ["day"]
     },
     {
-      "template": "My dad is ___. I see a boy. He is ___!",
-      "answers": ["jogging ahead of us", "running very fast"]
+      "template": "A boy is running after his ___.",
+      "answers": ["dog"]
     },
     {
-      "template": "An old man is ___ ___. He is ___ ___.",
-      "answers": ["sitting on a bench", "reading a book"]
+      "template": "An old man is sitting on a ___.",
+      "answers": ["bench"]
     },
     {
-      "template": "My family is ___ now. We are ___ ___.",
-      "answers": ["having a picnic", "eating yummy sandwiches"]
+      "template": "A family is having a ___ on the grass.",
+      "answers": ["picnic"]
     },
     {
-      "template": "I am ___ ___. The grass is ___. I see ___ ___ ___! The park is ___!",
-      "answers": ["relaxing under the trees", "soft", "flowers everywhere", "my favorite place"]
+      "template": "The park is my favorite ___!",
+      "answers": ["place"]
     }
   ]
 };

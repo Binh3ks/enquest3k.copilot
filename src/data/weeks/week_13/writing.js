@@ -37,36 +37,52 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today is a perfect school day! I ___ ___ at ___.",
-      "answers": ["wake up", "at seven oclock"]
+      "template": "Today is a perfect school day! I wake up at seven ___.",
+      "answers": ["o'clock"]
     },
     {
-      "template": "I ___ ___ ___ before I go to school. My teeth are clean and fresh!",
-      "answers": ["brush my teeth", "with my blue toothbrush"]
+      "template": "I brush my teeth with my blue ___.",
+      "answers": ["toothbrush"]
     },
     {
-      "template": "Then I ___ ___ ___. I eat ___. It is ___!",
-      "answers": ["eat breakfast", "with my family", "rice and eggs", "yummy"]
+      "template": "Then I eat breakfast with my ___.",
+      "answers": ["family"]
     },
     {
-      "template": "At eight oclock, I ___ ___ ___ ___.",
-      "answers": ["go to school", "with my friends"]
+      "template": "I eat rice and eggs. It is ___.",
+      "answers": ["yummy"]
     },
     {
-      "template": "At twelve oclock, I ___ ___. After lunch, I ___ my friends and we play tag.",
-      "answers": ["have lunch", "play with"]
+      "template": "At eight o'clock, I go to ___ with my friends.",
+      "answers": ["school"]
     },
     {
-      "template": "At four oclock, I go home. I ___ ___ ___. I write and read my books.",
-      "answers": ["do homework", "every afternoon"]
+      "template": "At twelve o'clock, I have ___.",
+      "answers": ["lunch"]
     },
     {
-      "template": "At seven oclock, I ___ ___ ___. After that, I ___ and ___.",
-      "answers": ["have dinner", "with my family", "watch TV", "watch cartoons"]
+      "template": "After lunch, I play ___ with my friends.",
+      "answers": ["tag"]
     },
     {
-      "template": "At nine oclock, I ___ ___. I close my eyes and ___. Tomorrow will be another perfect day!",
-      "answers": ["go to bed", "at nine oclock", "fall asleep"]
+      "template": "At four o'clock, I go home and do ___.",
+      "answers": ["homework"]
+    },
+    {
+      "template": "At seven o'clock, I have dinner with my ___.",
+      "answers": ["family"]
+    },
+    {
+      "template": "After dinner, I watch TV and read my ___.",
+      "answers": ["books"]
+    },
+    {
+      "template": "At nine o'clock, I go to ___ and close my eyes.",
+      "answers": ["bed"]
+    },
+    {
+      "template": "Tomorrow will be another perfect ___!",
+      "answers": ["day"]
     }
   ]
 };

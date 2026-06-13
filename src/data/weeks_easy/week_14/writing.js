@@ -32,28 +32,28 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Welcome to my presentation! My name is Emma. I am ___.",
-      "answers": ["8 years old"]
+      "template": "Welcome to my ___! My name is Emma.",
+      "answers": ["presentation"]
     },
     {
-      "template": "Today I ___ ___. I want to ___ ___ ___.",
-      "answers": ["present my poster", "show you my world"]
+      "template": "This is my loving ___.",
+      "answers": ["family"]
     },
     {
-      "template": "This is ___. I ___ my family. I have ___: ___.",
-      "answers": ["my loving family", "love", "4 people", "my mom, my dad, my sister, and me"]
+      "template": "I can sing very ___.",
+      "answers": ["well"]
     },
     {
-      "template": "I can ___. I can also ___. I am good at ___.",
-      "answers": ["sing very well", "dance happily", "drawing pictures of animals and flowers"]
+      "template": "I can also ___ to music.",
+      "answers": ["dance"]
     },
     {
-      "template": "I ___ ___ today. The audience ___.",
-      "answers": ["feel very confident", "listen to me"]
+      "template": "I am ___ of my work.",
+      "answers": ["proud"]
     },
     {
-      "template": "I ___ ___ ___. ___! This is my ___! Do you ___?",
-      "answers": ["feel proud of my work", "Thank you for listening", "very special day", "have questions"]
+      "template": "Thank you for ___!",
+      "answers": ["listening"]
     }
   ]
 };

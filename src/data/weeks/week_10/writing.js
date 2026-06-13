@@ -33,36 +33,44 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "The city is ___ because there are many ___, restaurants, and entertainment centers.",
-      "answers": ["exciting and modern", "shops, schools, and entertainment"]
+      "template": "The city is ___ because there are many shops and schools.",
+      "answers": ["exciting"]
     },
     {
-      "template": "However, the city is also ___ and ___, and the air can be ___ because of ___.",
-      "answers": ["very noisy and crowded", "polluted", "heavy traffic"]
+      "template": "But it can be very noisy and ___.",
+      "answers": ["crowded"]
     },
     {
-      "template": "The farm, on the other hand, is ___ with ___ and ___.",
-      "answers": ["peaceful and green", "fresh air", "wide open spaces"]
+      "template": "The air can be ___ because of heavy traffic.",
+      "answers": ["polluted"]
     },
     {
-      "template": "Although the farm is ___ and there is less to do, I think it is ___ to live.",
-      "answers": ["quiet and less busy", "a healthier place"]
+      "template": "The farm, on the other hand, is peaceful and ___.",
+      "answers": ["green"]
     },
     {
-      "template": "I would choose to ___ during the summer holidays because I love ___ and ___.",
-      "answers": ["live on the farm", "many animals", "beautiful nature"]
+      "template": "The farm has fresh ___ and wide open spaces.",
+      "answers": ["air"]
     },
     {
-      "template": "But I also ___ for ___ and ___.",
-      "answers": ["need the city", "school and learning"]
+      "template": "Farm life is ___ and less busy than the city.",
+      "answers": ["quiet"]
     },
     {
-      "template": "The best solution might be to ___ every year.",
-      "answers": ["experience both places"]
+      "template": "Many ___ live on farms and take care of animals.",
+      "answers": ["people"]
     },
     {
-      "template": "That way, I can enjoy ___ and never feel bored!",
-      "answers": ["the best of both worlds"]
+      "template": "The farm is a healthier ___ to live.",
+      "answers": ["place"]
+    },
+    {
+      "template": "Both the city and the farm have their own ___.",
+      "answers": ["advantages"]
+    },
+    {
+      "template": "I think the best ___ is to visit both.",
+      "answers": ["solution"]
     }
   ]
 };

@@ -41,36 +41,52 @@ vocabulary_bank: {
   },
   sentence_frames: [
     {
-      "template": "Today is Saturday! I have ___. First, I ___ ___ with my friends.",
-      "answers": ["a fun weekend plan", "go to the park", "play at the park"]
+      "template": "Today is Saturday! I have a fun weekend ___.",
+      "answers": ["plan"]
     },
     {
-      "template": "Then I ___ ___ ___ at the library. The book is ___.",
-      "answers": ["read a story book", "at the library", "very interesting"]
+      "template": "First, I go to the ___ and play with my friends.",
+      "answers": ["park"]
     },
     {
-      "template": "After that, my mom and I ___ ___ ___.",
-      "answers": ["buy food", "at the supermarket"]
+      "template": "We run, laugh, and have a great ___!",
+      "answers": ["time"]
     },
     {
-      "template": "I ___ and ___ when we go shopping together.",
-      "answers": ["help my mom", "carry the bags"]
+      "template": "Then I go to the ___ to read a story book.",
+      "answers": ["library"]
     },
     {
-      "template": "Finally, we go to the playground. I ___ at the playground and it is so much fun!",
-      "answers": ["slide down"]
+      "template": "The book is very ___. I learn new words.",
+      "answers": ["interesting"]
     },
     {
-      "template": "___ I ___ and see ___ at the zoo.",
-      "answers": ["On Sunday", "go to the zoo", "a lion and a monkey"]
+      "template": "After that, my mom and I buy ___ at the supermarket.",
+      "answers": ["food"]
     },
     {
-      "template": "Then we ___ ___ ___. The food is ___!",
-      "answers": ["have lunch", "at a restaurant", "very delicious"]
+      "template": "We also buy drinks and a small ___ for me.",
+      "answers": ["snack"]
     },
     {
-      "template": "I love my weekend! Every place is ___ and ___!",
-      "answers": ["special", "fun"]
+      "template": "In the afternoon, I go to the ___ with my dad.",
+      "answers": ["playground"]
+    },
+    {
+      "template": "I slide down the ___ and swing very high.",
+      "answers": ["slide"]
+    },
+    {
+      "template": "On Sunday we go to the zoo and see a ___ and a monkey.",
+      "answers": ["lion"]
+    },
+    {
+      "template": "We have lunch at a restaurant. The food is ___!",
+      "answers": ["delicious"]
+    },
+    {
+      "template": "I love my ___! Every place is special and fun!",
+      "answers": ["weekend"]
     }
   ]
 };
