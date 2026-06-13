@@ -9,37 +9,13 @@ export default {
   keywords: ["seed", "soil", "water", "sunlight", "shoot", "leaves", "flower", "blooms"],
   topic_talk_prompt: "Explain how a seed grows into a plant step by step!",
   sentence_frames: [
-    {
-        "template": "First a seed is ___ in soil.",
-        "answers": [
-            "planted"
-        ]
-    },
-    {
-        "template": "It needs ___ and sunlight.",
-        "answers": [
-            "water"
-        ]
-    },
-    {
-        "template": "Next a tiny ___ grows up.",
-        "answers": [
-            "shoot"
-        ]
-    },
-    {
-        "template": "Then ___ appear.",
-        "answers": [
-            "leaves"
-        ]
-    },
-    {
-        "template": "Finally a flower ___.",
-        "answers": [
-            "blooms"
-        ]
-    }
-],
+    {"template": "First a seed is ___ in soil.", "answers": ["planted"]},
+    {"template": "It needs ___ and sunlight.", "answers": ["water"]},
+    {"template": "Next a tiny ___ grows up.", "answers": ["stem"]},
+    {"template": "Then ___ appear.", "answers": ["leaves"]},
+    {"template": "A bright yellow ___ blooms.", "answers": ["flower"]},
+    {"template": "Finally the flower is truly ___.", "answers": ["magical"]}
+  ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
@@ -47,49 +23,17 @@ export default {
       show_by_default: false,
       scaffolding_stage: "low",
       words: [
-    {
-        "word": "planted",
-        "vi": "được trồng",
-        "distractor": false
-    },
-    {
-        "word": "water",
-        "vi": "nước",
-        "distractor": false
-    },
-    {
-        "word": "shoot",
-        "vi": "mầm cây",
-        "distractor": false
-    },
-    {
-        "word": "leaves",
-        "vi": "lá",
-        "distractor": false
-    },
-    {
-        "word": "blooms",
-        "vi": "nở hoa",
-        "distractor": false
-    },
-    {
-        "word": "thrown",
-        "vi": "bị ném",
-        "distractor": true
-    },
-    {
-        "word": "fire",
-        "vi": "lửa",
-        "distractor": true
-    },
-    {
-        "word": "falls",
-        "vi": "rụng xuống",
-        "distractor": true
+        { "word": "planted", "vi": "được trồng", "distractor": false },
+        { "word": "water", "vi": "nước", "distractor": false },
+        { "word": "shoot", "vi": "mầm cây", "distractor": false },
+        { "word": "leaves", "vi": "lá", "distractor": false },
+        { "word": "blooms", "vi": "nở hoa", "distractor": false },
+        { "word": "thrown", "vi": "bị ném", "distractor": true },
+        { "word": "fire", "vi": "lửa", "distractor": true },
+        { "word": "falls", "vi": "rụng xuống", "distractor": true }
+      ]
     }
-]
-    }
-  }
+  },
 ,
   story_prompts: {
     picture_mode: {
