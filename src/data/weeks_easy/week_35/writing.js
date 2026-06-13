@@ -78,31 +78,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      template: "Our planet ___ is very beautiful but it is in ___.",
-      blank_labels: ["Earth", "danger"]
-    },
-    {
-      template: "The ___ is ___ and the ___ is rising.",
-      blank_labels: ["ice/polar ice", "melting", "sea/ocean"]
-    },
-    {
-      template: "We must ___ our ___ to help the planet.",
-      blank_labels: ["protect", "Earth/planet/world"]
-    },
-    {
-      template: "We can ___ ___ and ___ more to help the environment.",
-      blank_labels: ["plant trees", "recycle", "save energy"]
-    },
-    {
-      template: "We should use less ___ and save ___ every day.",
-      blank_labels: ["plastic", "water/energy"]
-    },
-    {
-      template: "Small ___ like recycling can make a big ___.",
-      blank_labels: ["actions/things", "difference"]
-    }
-  ]
+        {"template": "In the past, Max ___", "answers": ["did things carelessly"]},
+        {"template": "One day, he ___", "answers": ["broke a glass cup"]},
+        {"template": "Now, he ___", "answers": ["does everything carefully"]},
+        {"template": "Finally, ___", "answers": ["everyone is proud of him"]}
+      ]
     }
   }
 }

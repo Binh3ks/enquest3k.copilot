@@ -68,31 +68,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Yesterday I felt ___.",
-      "answers": ["worried"]
-    },
-    {
-      "template": "I could not find my ___.",
-      "answers": ["homework"]
-    },
-    {
-      "template": "Then I felt ___.",
-      "answers": ["relieved"]
-    },
-    {
-      "template": "At school I felt ___ because there was a ___ visitor.",
-      "answers": ["excited", "special"]
-    },
-    {
-      "template": "It was a ___ author!",
-      "answers": ["famous"]
-    },
-    {
-      "template": "At the end I felt ___ but ___.",
-      "answers": ["tired", "happy"]
-    }
-  ]
+        {"template": "In the morning, I felt ___", "answers": ["very excited"]},
+        {"template": "But then, ___", "answers": ["I got scared"]},
+        {"template": "Because ___", "answers": ["it was very high"]},
+        {"template": "At the end, ___", "answers": ["I felt proud"]}
+      ]
     }
   }
 }

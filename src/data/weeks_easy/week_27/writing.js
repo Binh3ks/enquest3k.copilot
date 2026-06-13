@@ -104,37 +104,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-        "template": "First a seed is ___ in soil.",
-        "answers": [
-            "planted"
-        ]
-    },
-    {
-        "template": "It needs ___ and sunlight.",
-        "answers": [
-            "water"
-        ]
-    },
-    {
-        "template": "Next a tiny ___ grows up.",
-        "answers": [
-            "shoot"
-        ]
-    },
-    {
-        "template": "Then ___ appear.",
-        "answers": [
-            "leaves"
-        ]
-    },
-    {
-        "template": "Finally a flower ___.",
-        "answers": [
-            "blooms"
-        ]
-    }
-]
+        {"template": "First, ___", "answers": ["the seed is small"]},
+        {"template": "Next, ___", "answers": ["a root grows down"]},
+        {"template": "Then, ___", "answers": ["a green stem appears"]},
+        {"template": "Finally, ___", "answers": ["a flower blooms"]}
+      ]
     }
   }
 }

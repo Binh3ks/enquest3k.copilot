@@ -68,43 +68,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "It is ___ today.",
-      "answers": [
-        "raining"
+        {"template": "In London, ___", "answers": ["it is raining"]},
+        {"template": "In New York, ___", "answers": ["it is snowing"]},
+        {"template": "In Sydney, ___", "answers": ["it is sunny"]},
+        {"template": "In my city, ___", "answers": ["the weather is nice"]}
       ]
-    },
-    {
-      "template": "I am wearing my ___ to stay warm.",
-      "answers": [
-        "blue coat"
-      ]
-    },
-    {
-      "template": "The streets are ___.",
-      "answers": [
-        "wet"
-      ]
-    },
-    {
-      "template": "Nam is carrying his ___ because it is raining.",
-      "answers": [
-        "umbrella"
-      ]
-    },
-    {
-      "template": "It is very ___ today.",
-      "answers": [
-        "cold"
-      ]
-    },
-    {
-      "template": "After school, I **take off my coat** because the weather is ___.",
-      "answers": [
-        "warm outside now"
-      ]
-    }
-  ]
     }
   }
 }

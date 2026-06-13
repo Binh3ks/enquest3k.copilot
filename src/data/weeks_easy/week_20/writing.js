@@ -78,48 +78,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Detective Luna found an **old map**. The map was from a long time ago.",
-      "answers": [
-        "old map"
+        {"template": "Long ago, there ___", "answers": ["was an old village"]},
+        {"template": "Near the river, ___", "answers": ["there was a market"]},
+        {"template": "But now, the town ___", "answers": ["has modern buildings"]},
+        {"template": "Sometimes, I wish ___", "answers": ["I could go back"]}
       ]
-    },
-    {
-      "template": "On the old map, there was a big **local market** near the **long river**.",
-      "answers": [
-        "local market",
-        "long river"
-      ]
-    },
-    {
-      "template": "There were tall **tall trees** **along the road**.",
-      "answers": [
-        "tall trees",
-        "along the road"
-      ]
-    },
-    {
-      "template": "There was a **old temple** at the end of the road. It **still stands** today!",
-      "answers": [
-        "old temple",
-        "still stands"
-      ]
-    },
-    {
-      "template": "There was a **wooden bridge** **over the river**.",
-      "answers": [
-        "wooden bridge",
-        "over the river"
-      ]
-    },
-    {
-      "template": "Now there are new buildings. However, the **old temple** is still here!",
-      "answers": [
-        "new buildings",
-        "old temple"
-      ]
-    }
-  ]
     }
   }
 }

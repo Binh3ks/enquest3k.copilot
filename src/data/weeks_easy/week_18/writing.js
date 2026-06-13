@@ -70,44 +70,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Welcome to the **live morning news**!",
-      "answers": [
-        "live morning news"
+        {"template": "At the Art Club, ___", "answers": ["students are painting"]},
+        {"template": "At the Science Club, ___", "answers": ["a girl mixes liquids"]},
+        {"template": "At the Drama Club, ___", "answers": ["students are acting"]},
+        {"template": "Everywhere I look, ___", "answers": ["people are smiling"]}
       ]
-    },
-    {
-      "template": "I am the ___. I pick up the microphone.",
-      "answers": [
-        "reporter"
-      ]
-    },
-    {
-      "template": "Tom is ___ a rocket.",
-      "answers": [
-        "drawing"
-      ]
-    },
-    {
-      "template": "Sara is ___ at her desk.",
-      "answers": [
-        "reading quietly"
-      ]
-    },
-    {
-      "template": "I **walk to my friend** Maya. I **ask if I can interview her**.",
-      "answers": [
-        "walk to my friend",
-        "ask if I can interview her"
-      ]
-    },
-    {
-      "template": "Maya says she is writing a report. This is **what is happening** right now!",
-      "answers": [
-        "what is happening"
-      ]
-    }
-  ]
     }
   }
 }

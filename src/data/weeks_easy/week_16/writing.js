@@ -71,31 +71,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Today is my first soccer game! I am ___!",
-      "answers": ["very excited"]
-    },
-    {
-      "template": "Look! I am ___ ___. My legs are moving fast. This is fun!",
-      "answers": ["running very fast"]
-    },
-    {
-      "template": "My friend is ___ ___. I am ___ ___.",
-      "answers": ["kicking the ball", "catching it"]
-    },
-    {
-      "template": "Now I am ___. The ball ___ ___. It is ___!",
-      "answers": ["passing it", "has energy", "in motion"]
-    },
-    {
-      "template": "Our team is ___ ___. Everyone is ___ ___ ___!",
-      "answers": ["playing soccer", "cheering loudly", "shout with excitement"]
-    },
-    {
-      "template": "Oh no! I ___ ___ ___. That is ___! In soccer I can only ___ ___. The other team is ___ ___. They are ___ ___ ___! I want to score a goal too!",
-      "answers": ["throw the ball", "wrong", "use my feet", "scoring a goal", "jumping up and down"]
-    }
-  ]
+        {"template": "At the track, ___", "answers": ["students are running"]},
+        {"template": "On the field, ___", "answers": ["the game is exciting"]},
+        {"template": "Meanwhile, ___", "answers": ["the crowd is cheering"]},
+        {"template": "After the race, ___", "answers": ["everyone celebrates"]}
+      ]
     }
   }
 }

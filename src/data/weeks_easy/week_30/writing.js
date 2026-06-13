@@ -47,13 +47,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    { template: "Last Sunday my family had a ___ at the park.", answers: ["picnic"] },
-    { template: "Mum bought ___, ___, and ___.", answers: ["bread", "fruit", "cheese"] },
-    { template: "We spread a ___ on the ___.", answers: ["blanket", "grass"] },
-    { template: "A little ___ hopped close to our ___.", answers: ["bird", "crumbs"] },
-    { template: "The sun was ___ and the breeze was ___.", answers: ["warm", "gentle"] },
-    { template: "We packed everything away and walked home feeling ___.", answers: ["happy"] }
-  ]
+        {"template": "In the morning, we ___", "answers": ["prepared sandwiches"]},
+        {"template": "At the picnic spot, ___", "answers": ["we ate happily"]},
+        {"template": "But suddenly, ___", "answers": ["dark clouds appeared"]},
+        {"template": "In the end, ___", "answers": ["we stayed dry"]}
+      ]
     }
   }
 }

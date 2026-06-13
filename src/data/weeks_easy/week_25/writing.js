@@ -67,31 +67,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "First of all I take two ___ of ___.",
-      "answers": ["slices", "bread"]
-    },
-    {
-      "template": "After that I ___ strawberry ___ on one slice.",
-      "answers": ["spread", "jam"]
-    },
-    {
-      "template": "Then I press the two ___ together.",
-      "answers": ["slices"]
-    },
-    {
-      "template": "At the very end I ___ it in half.",
-      "answers": ["cut"]
-    },
-    {
-      "template": "Now I understand why the ___ ___ matters!",
-      "answers": ["right sequence"]
-    },
-    {
-      "template": "If I ate first and spread jam later, it would be a ___!",
-      "answers": ["disaster"]
-    }
-  ]
+        {"template": "First, ___", "answers": ["you take the bread"]},
+        {"template": "Next, ___", "answers": ["you add vegetables"]},
+        {"template": "Then, ___", "answers": ["you put cheese on top"]},
+        {"template": "Finally, ___", "answers": ["you cut it in half"]}
+      ]
     }
   }
 }

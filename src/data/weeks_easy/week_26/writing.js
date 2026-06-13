@@ -66,31 +66,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Leo sat down to ___ a comic ___.",
-      "answers": ["create", "strip"]
-    },
-    {
-      "template": "First he ___ the title.",
-      "answers": ["wrote"]
-    },
-    {
-      "template": "In Panel One he drew himself ___ to the ___.",
-      "answers": ["walking", "park"]
-    },
-    {
-      "template": "In Panel Two Max ___ a ball.",
-      "answers": ["chased"]
-    },
-    {
-      "template": "In Panel Three they ___ a street ___.",
-      "answers": ["watched", "musician"]
-    },
-    {
-      "template": "In Panel Four they ___ home ___ but ___.",
-      "answers": ["walked", "tired", "happy"]
-    }
-  ]
+        {"template": "On Saturday, ___", "answers": ["I played soccer"]},
+        {"template": "In the afternoon, ___", "answers": ["it rained"]},
+        {"template": "On Sunday, ___", "answers": ["we went to the museum"]},
+        {"template": "At the end, ___", "answers": ["we had a great time"]}
+      ]
     }
   }
 }

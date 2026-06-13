@@ -69,31 +69,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Once the ___ and the Tortoise had a ___.",
-      "answers": ["Hare", "race"]
-    },
-    {
-      "template": "The Hare ran very ___.",
-      "answers": ["fast"]
-    },
-    {
-      "template": "Then he stopped under a big ___ and ___ asleep.",
-      "answers": ["tree", "fell"]
-    },
-    {
-      "template": "The Tortoise walked ___ but ___ and never gave up.",
-      "answers": ["slowly", "steadily"]
-    },
-    {
-      "template": "The Tortoise ___ the race.",
-      "answers": ["won"]
-    },
-    {
-      "template": "Slow and ___ wins the race.",
-      "answers": ["steady"]
-    }
-  ]
+        {"template": "The hare was ___", "answers": ["very proud"]},
+        {"template": "The tortoise was ___", "answers": ["very slow"]},
+        {"template": "One day, ___", "answers": ["they had a race"]},
+        {"template": "In the end, ___", "answers": ["the tortoise won"]}
+      ]
     }
   }
 }

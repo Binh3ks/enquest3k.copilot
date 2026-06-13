@@ -74,46 +74,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Nova was working on a case in **Hoi An**, Vietnam.",
-      "answers": [
-        "Hoi An"
+        {"template": "Did you ___ last night?", "answers": ["eat my cake"]},
+        {"template": "No, I ___", "answers": ["did not"]},
+        {"template": "Did you ___ this morning?", "answers": ["see the crumbs"]},
+        {"template": "The mystery ___", "answers": ["was finally solved"]}
       ]
-    },
-    {
-      "template": "She arrived at the scene and opened her notebook.",
-      "answers": [
-        "opened her notebook"
-      ]
-    },
-    {
-      "template": "'Where were you **yesterday morning**?' The suspect **answered clearly**.",
-      "answers": [
-        "yesterday morning",
-        "answered clearly"
-      ]
-    },
-    {
-      "template": "'What did you do **last night**?' She **wrote every answer** **in her notebook**.",
-      "answers": [
-        "last night",
-        "wrote every answer",
-        "in her notebook"
-      ]
-    },
-    {
-      "template": "Nova **studied each clue carefully** in the warm lantern light.",
-      "answers": [
-        "studied each clue carefully"
-      ]
-    },
-    {
-      "template": "Nova **had solved the case**. Detective Nova handed her final report to the team in Hoi An.",
-      "answers": [
-        "had solved the case"
-      ]
-    }
-  ]
     }
   }
 }

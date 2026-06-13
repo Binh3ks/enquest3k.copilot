@@ -68,31 +68,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "Yesterday I had ___ class.",
-      "answers": ["art"]
-    },
-    {
-      "template": "First I ___ my brush.",
-      "answers": ["picked up"]
-    },
-    {
-      "template": "Then I dipped it in ___ paint.",
-      "answers": ["red"]
-    },
-    {
-      "template": "I ___ a picture of a ___.",
-      "answers": ["painted", "flower"]
-    },
-    {
-      "template": "It looked ___.",
-      "answers": ["beautiful"]
-    },
-    {
-      "template": "My teacher ___ loudly and said it was ___.",
-      "answers": ["clapped", "wonderful"]
-    }
-  ]
+        {"template": "First, ___", "answers": ["we designed the house"]},
+        {"template": "Then, ___", "answers": ["we cut the cardboard"]},
+        {"template": "After that, ___", "answers": ["we painted the walls"]},
+        {"template": "Finally, ___", "answers": ["we showed our project"]}
+      ]
     }
   }
 }

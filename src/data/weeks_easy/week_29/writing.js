@@ -73,31 +73,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "One night I found a ___ ___.",
-      "answers": ["magic carpet"]
-    },
-    {
-      "template": "It ___ me to a wonderful island in the ___.",
-      "answers": ["flew", "sea"]
-    },
-    {
-      "template": "A ___ ___ and helped me.",
-      "answers": ["friendly pilot", "came"]
-    },
-    {
-      "template": "A ___ ___ gave me some mangoes.",
-      "answers": ["kind farmer"]
-    },
-    {
-      "template": "Then the carpet ___ back home.",
-      "answers": ["flew"]
-    },
-    {
-      "template": "It was the best ___ ever!",
-      "answers": ["trip"]
-    }
-  ]
+        {"template": "Last night, I ___", "answers": ["went to a magic island"]},
+        {"template": "On the island, I ___", "answers": ["met a friendly dolphin"]},
+        {"template": "I met a ___", "answers": ["wise purple monkey"]},
+        {"template": "When I woke up, ___", "answers": ["I was so happy"]}
+      ]
     }
   }
 }

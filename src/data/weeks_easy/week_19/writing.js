@@ -72,45 +72,11 @@ export default {
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-    {
-      "template": "I was a ___ in this photo.",
-      "answers": [
-        "baby"
+        {"template": "In this photo, I ___", "answers": ["was a baby"]},
+        {"template": "My brother ___", "answers": ["was very noisy"]},
+        {"template": "On my first day, ___", "answers": ["I was so shy"]},
+        {"template": "But now, I ___", "answers": ["am much taller"]}
       ]
-    },
-    {
-      "template": "I **was little**! I was cute.",
-      "answers": [
-        "was little"
-      ]
-    },
-    {
-      "template": "My face **was round and** my eyes **were very big**.",
-      "answers": [
-        "was round and",
-        "were very big"
-      ]
-    },
-    {
-      "template": "I was noisy. I cried many times.",
-      "answers": [
-        "was noisy"
-      ]
-    },
-    {
-      "template": "I **was quiet and sleeping** in this picture.",
-      "answers": [
-        "was quiet and sleeping"
-      ]
-    },
-    {
-      "template": "These photos are **special memories**. I **keep these memories in my heart**.",
-      "answers": [
-        "special memories",
-        "keep these memories in my heart"
-      ]
-    }
-  ]
     }
   }
 }

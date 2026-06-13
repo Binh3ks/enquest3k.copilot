@@ -84,26 +84,10 @@ export default {
       },
       rubric_tier: 1,
       sentence_frames: [
-        {
-          "template": "I am ___ ___ from the busy school ___. The Spring Festival is ___!",
-          "answers": ["broadcasting live", "courtyard", "happening"]
-        },
-        {
-          "template": "At the Art Club, students are ___ a giant ___ on the wall.",
-          "answers": ["painting", "colorful mural"]
-        },
-        {
-          "template": "Sarah is ___ two mysterious liquids in a small ___ ___.",
-          "answers": ["mixing", "glass tube"]
-        },
-        {
-          "template": "The Drama Club is ___ for their upcoming school ___. They are ___ loudly.",
-          "answers": ["practicing", "play", "acting"]
-        },
-        {
-          "template": "Teachers are ___ ___ for the young ___. Everyone is ___ and ___!",
-          "answers": ["sitting on the grass", "actors", "smiling", "chatting"]
-        }
+        {"template": "At the Art Club, ___", "answers": ["students are painting"]},
+        {"template": "At the Science Club, ___", "answers": ["a girl mixes liquids"]},
+        {"template": "At the Drama Club, ___", "answers": ["students are acting"]},
+        {"template": "Everywhere I look, ___", "answers": ["people are smiling"]}
       ]
     }
   }
