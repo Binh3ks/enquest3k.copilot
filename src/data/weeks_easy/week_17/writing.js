@@ -9,40 +9,32 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "It is ___ today.",
-      "answers": [
-        "raining"
-      ]
+      "template": "In London, it is ___ today.",
+      "answers": ["raining"]
     },
     {
-      "template": "I am wearing my ___ to stay warm.",
-      "answers": [
-        "blue coat"
-      ]
+      "template": "The boy is wearing a thick ___ and rubber boots.",
+      "answers": ["raincoat"]
     },
     {
-      "template": "The streets are ___.",
-      "answers": [
-        "wet"
-      ]
+      "template": "In New York, it is ___ hard.",
+      "answers": ["snowing"]
     },
     {
-      "template": "Nam is carrying his ___ because it is raining.",
-      "answers": [
-        "umbrella"
-      ]
+      "template": "The girl is making a big ___ outside.",
+      "answers": ["snowman"]
     },
     {
-      "template": "It is very ___ today.",
-      "answers": [
-        "cold"
-      ]
+      "template": "In Sydney, it is sunny and ___.",
+      "answers": ["hot"]
     },
     {
-      "template": "After school, I take off my coat because the weather is ___.",
-      "answers": [
-        "warm outside now"
-      ]
+      "template": "In my city, it is cloudy and ___.",
+      "answers": ["windy"]
+    },
+    {
+      "template": "I am flying a big ___ in the park.",
+      "answers": ["kite"]
     }
   ],
   scaffolding_stage: "medium",

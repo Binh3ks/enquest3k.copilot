@@ -10,41 +10,29 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Detective Luna found an ___. The map was from a long time ago.",
-      "answers": ["old map"]
+      "template": "Detective Luna found an old ___ of her town.",
+      "answers": ["map"]
     },
     {
-      "template": "On the old map, there was a big ___ near the ___.",
-      "answers": ["local market","long river"]
+      "template": "On the map, there was a big market near the ___.",
+      "answers": ["river"]
     },
     {
-      "template": "There were ___ trees along the road.",
-      "answers": ["tall"]
+      "template": "There were tall ___ along the road.",
+      "answers": ["trees"]
     },
     {
-      "template": "There was an ___ at the end of the road. It still stands today!",
-      "answers": ["old temple"]
+      "template": "There was an old ___ at the end of the road.",
+      "answers": ["temple"]
     },
     {
-      "template": "There was a ___ bridge over the ___.",
-      "answers": ["wooden","river"]
+      "template": "There was a ___ bridge over the river.",
+      "answers": ["wooden"]
     },
     {
-      "template": "Now there are new ___. However, the old temple is still here!",
+      "template": "Now there are new ___. However, the old temple still stands.",
       "answers": ["buildings"]
     }
-  ],
-  vocabulary_bank: [
-    "old map",
-    "local market",
-    "long river",
-    "tall trees",
-    "along the road",
-    "old temple",
-    "still stands",
-    "wooden bridge",
-    "over the river",
-    "new buildings"
   ],
   hints: {
     vocabulary_bank: {

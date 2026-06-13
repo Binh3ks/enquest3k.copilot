@@ -10,48 +10,33 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Yesterday, I ___ at 6:30 a.m.",
-      "answers": ["woke up"]
+      "template": "Yesterday, I woke ___ at 6:30 a.m.",
+      "answers": ["up"]
     },
     {
-      "template": "First, I made my bed and ___ my room.",
-      "answers": ["cleaned"]
+      "template": "First, I made my bed and cleaned my ___.",
+      "answers": ["room"]
     },
     {
-      "template": "Then I wrote a ___ to my grandma.",
-      "answers": ["letter"]
+      "template": "Then I wrote a letter to my ___.",
+      "answers": ["grandmother"]
     },
     {
-      "template": "I helped Dad cut the ___ in the garden.",
-      "answers": ["grass"]
+      "template": "I helped Dad cut the grass in the ___.",
+      "answers": ["garden"]
     },
     {
       "template": "We built a ___ together.",
       "answers": ["birdhouse"]
     },
     {
-      "template": "At the café, I chose a ___ and paid for it.",
+      "template": "At the cafe, I chose a ___ and paid for it.",
       "answers": ["muffin"]
     },
     {
-      "template": "By evening, I put all my toys away and fell ___.",
+      "template": "By evening, I fell ___ early.",
       "answers": ["asleep"]
     }
-  ],
-  vocabulary_bank: [
-    "woke up early",
-    "brushed my teeth",
-    "packed my bag",
-    "walked to school",
-    "listened carefully",
-    "At break time",
-    "played soccer",
-    "shouted with excitement",
-    "helped my mother prepare dinner",
-    "cleaned my room",
-    "looked at the stars",
-    "counted ten",
-    "started to fall asleep"
   ],
   hints: {
     vocabulary_bank: {

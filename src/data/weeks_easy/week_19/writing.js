@@ -10,41 +10,27 @@ export default {
   sentence_frames: [
     {
       "template": "I was a ___ in this photo.",
-      "answers": [
-        "baby"
-      ]
+      "answers": ["baby"]
     },
     {
-      "template": "I was little! I was cute.",
-      "answers": [
-        "was little"
-      ]
+      "template": "I was little and ___.",
+      "answers": ["cute"]
     },
     {
-      "template": "My face was round and my eyes were very big.",
-      "answers": [
-        "was round and",
-        "were very big"
-      ]
+      "template": "My face was round and my eyes were very ___.",
+      "answers": ["big"]
     },
     {
-      "template": "I was noisy. I cried many times.",
-      "answers": [
-        "was noisy"
-      ]
+      "template": "I was very ___ and noisy.",
+      "answers": ["loud"]
     },
     {
-      "template": "I was quiet and sleeping in this picture.",
-      "answers": [
-        "was quiet and sleeping"
-      ]
+      "template": "This picture shows my first day of ___.",
+      "answers": ["school"]
     },
     {
-      "template": "These photos are special memories. I keep these memories in my heart.",
-      "answers": [
-        "special memories",
-        "keep these memories in my heart"
-      ]
+      "template": "I love these ___ from when I was small!",
+      "answers": ["pictures"]
     }
   ],
   scaffolding_stage: "medium-low",

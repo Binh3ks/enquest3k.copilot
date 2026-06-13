@@ -9,41 +9,28 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Welcome to the live morning news!",
-      "answers": [
-        "live morning news"
-      ]
+      "template": "Welcome to the school ___!",
+      "answers": ["festival"]
     },
     {
       "template": "I am the ___. I pick up the microphone.",
-      "answers": [
-        "reporter"
-      ]
+      "answers": ["reporter"]
     },
     {
-      "template": "Tom is ___ a rocket.",
-      "answers": [
-        "drawing"
-      ]
+      "template": "Students are painting a giant ___ on the wall.",
+      "answers": ["mural"]
     },
     {
-      "template": "Sara is ___ at her desk.",
-      "answers": [
-        "reading quietly"
-      ]
+      "template": "The Science Club is mixing two ___ liquids.",
+      "answers": ["mysterious"]
     },
     {
-      "template": "I walk to my friend Maya. I ask if I can interview her.",
-      "answers": [
-        "walk to my friend",
-        "ask if I can interview her"
-      ]
+      "template": "The Drama Club is practicing for their ___.",
+      "answers": ["play"]
     },
     {
-      "template": "Maya says she is writing a report. This is what is happening right now!",
-      "answers": [
-        "what is happening"
-      ]
+      "template": "Everyone is smiling and chatting ___.",
+      "answers": ["happily"]
     }
   ],
   scaffolding_stage: "medium",

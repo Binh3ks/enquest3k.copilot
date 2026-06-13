@@ -9,47 +9,29 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "My name is Mia and I am a Time ___.",
+      "template": "I am a Time ___.",
       "answers": ["Detective"]
     },
     {
-      "template": "I wear a big ___ and carry a notebook.",
-      "answers": ["hat"]
-    },
-    {
-      "template": "Yesterday, Mum cooked a delicious cake for my ___!",
-      "answers": ["birthday"]
-    },
-    {
-      "template": "But someone ate the cake last ___!",
-      "answers": ["night"]
-    },
-    {
-      "template": "I asked everyone in the ___.",
-      "answers": ["house"]
+      "template": "Someone ate the ___ cake last night!",
+      "answers": ["chocolate"]
     },
     {
       "template": "Dad cooked dinner at 6 and washed the ___ at 7.",
       "answers": ["dishes"]
     },
     {
-      "template": "Mum worked in the garden last weekend."
+      "template": "Mum worked in the garden last ___.",
+      "answers": ["weekend"]
     },
     {
-      "template": "The mystery was ___! My brother ate the cake!",
+      "template": "The mystery was ___!",
       "answers": ["solved"]
+    },
+    {
+      "template": "My brother ___ the cake!",
+      "answers": ["ate"]
     }
-  ],
-  vocabulary_bank: [
-    "Hoi An",
-    "opened her notebook",
-    "yesterday morning",
-    "answered clearly",
-    "last night",
-    "wrote every answer",
-    "in her notebook",
-    "studied each clue carefully",
-    "had solved the case"
   ],
   hints: {
     vocabulary_bank: {
