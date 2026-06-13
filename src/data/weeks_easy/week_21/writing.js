@@ -69,4 +69,64 @@ export default {
     "counted ten",
     "started to fall asleep"
   ]
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week21/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 21 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Yesterday I **woke up early** and **brushed my teeth**.",
+      "answers": [
+        "woke up early",
+        "brushed my teeth"
+      ]
+    },
+    {
+      "template": "I **packed my bag** and **walked to school** with my friend.",
+      "answers": [
+        "packed my bag",
+        "walked to school"
+      ]
+    },
+    {
+      "template": "At school, I listened carefully to my teacher.",
+      "answers": [
+        "listened carefully"
+      ]
+    },
+    {
+      "template": "**At break time**, I **played soccer**. I **shouted with excitement** when we scored a goal!",
+      "answers": [
+        "At break time",
+        "played soccer",
+        "shouted with excitement"
+      ]
+    },
+    {
+      "template": "After school, I **helped my mother prepare dinner**. Then I **cleaned my room**.",
+      "answers": [
+        "helped my mother prepare dinner",
+        "cleaned my room"
+      ]
+    },
+    {
+      "template": "In the evening, I **looked at the stars** and **counted ten** of them. Then I **started to fall asleep**.",
+      "answers": [
+        "looked at the stars",
+        "counted ten",
+        "started to fall asleep"
+      ]
+    }
+  ]
+    }
+  }
+}

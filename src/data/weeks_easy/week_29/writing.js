@@ -59,4 +59,45 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week29/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 29 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "One night I found a ___ ___.",
+      "answers": ["magic carpet"]
+    },
+    {
+      "template": "It ___ me to a wonderful island in the ___.",
+      "answers": ["flew", "sea"]
+    },
+    {
+      "template": "A ___ ___ and helped me.",
+      "answers": ["friendly pilot", "came"]
+    },
+    {
+      "template": "A ___ ___ gave me some mangoes.",
+      "answers": ["kind farmer"]
+    },
+    {
+      "template": "Then the carpet ___ back home.",
+      "answers": ["flew"]
+    },
+    {
+      "template": "It was the best ___ ever!",
+      "answers": ["trip"]
+    }
+  ]
+    }
+  }
+}

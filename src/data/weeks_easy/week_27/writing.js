@@ -90,4 +90,51 @@ export default {
 ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week27/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 27 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+        "template": "First a seed is ___ in soil.",
+        "answers": [
+            "planted"
+        ]
+    },
+    {
+        "template": "It needs ___ and sunlight.",
+        "answers": [
+            "water"
+        ]
+    },
+    {
+        "template": "Next a tiny ___ grows up.",
+        "answers": [
+            "shoot"
+        ]
+    },
+    {
+        "template": "Then ___ appear.",
+        "answers": [
+            "leaves"
+        ]
+    },
+    {
+        "template": "Finally a flower ___.",
+        "answers": [
+            "blooms"
+        ]
+    }
+]
+    }
+  }
+}

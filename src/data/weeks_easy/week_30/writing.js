@@ -33,4 +33,27 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week30/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 30 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    { template: "Last Sunday my family had a ___ at the park.", answers: ["picnic"] },
+    { template: "Mum bought ___, ___, and ___.", answers: ["bread", "fruit", "cheese"] },
+    { template: "We spread a ___ on the ___.", answers: ["blanket", "grass"] },
+    { template: "A little ___ hopped close to our ___.", answers: ["bird", "crumbs"] },
+    { template: "The sun was ___ and the breeze was ___.", answers: ["warm", "gentle"] },
+    { template: "We packed everything away and walked home feeling ___.", answers: ["happy"] }
+  ]
+    }
+  }
+}

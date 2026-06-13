@@ -58,4 +58,59 @@ export default {
     "special memories",
     "keep these memories in my heart"
   ]
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week19/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 19 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "I was a ___ in this photo.",
+      "answers": [
+        "baby"
+      ]
+    },
+    {
+      "template": "I **was little**! I was cute.",
+      "answers": [
+        "was little"
+      ]
+    },
+    {
+      "template": "My face **was round and** my eyes **were very big**.",
+      "answers": [
+        "was round and",
+        "were very big"
+      ]
+    },
+    {
+      "template": "I was noisy. I cried many times.",
+      "answers": [
+        "was noisy"
+      ]
+    },
+    {
+      "template": "I **was quiet and sleeping** in this picture.",
+      "answers": [
+        "was quiet and sleeping"
+      ]
+    },
+    {
+      "template": "These photos are **special memories**. I **keep these memories in my heart**.",
+      "answers": [
+        "special memories",
+        "keep these memories in my heart"
+      ]
+    }
+  ]
+    }
+  }
+}

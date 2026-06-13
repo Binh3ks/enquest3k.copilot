@@ -54,4 +54,45 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week23/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 23 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Yesterday I had ___ class.",
+      "answers": ["art"]
+    },
+    {
+      "template": "First I ___ my brush.",
+      "answers": ["picked up"]
+    },
+    {
+      "template": "Then I dipped it in ___ paint.",
+      "answers": ["red"]
+    },
+    {
+      "template": "I ___ a picture of a ___.",
+      "answers": ["painted", "flower"]
+    },
+    {
+      "template": "It looked ___.",
+      "answers": ["beautiful"]
+    },
+    {
+      "template": "My teacher ___ loudly and said it was ___.",
+      "answers": ["clapped", "wonderful"]
+    }
+  ]
+    }
+  }
+}

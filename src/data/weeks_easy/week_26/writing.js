@@ -52,4 +52,45 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week26/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 26 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Leo sat down to ___ a comic ___.",
+      "answers": ["create", "strip"]
+    },
+    {
+      "template": "First he ___ the title.",
+      "answers": ["wrote"]
+    },
+    {
+      "template": "In Panel One he drew himself ___ to the ___.",
+      "answers": ["walking", "park"]
+    },
+    {
+      "template": "In Panel Two Max ___ a ball.",
+      "answers": ["chased"]
+    },
+    {
+      "template": "In Panel Three they ___ a street ___.",
+      "answers": ["watched", "musician"]
+    },
+    {
+      "template": "In Panel Four they ___ home ___ but ___.",
+      "answers": ["walked", "tired", "happy"]
+    }
+  ]
+    }
+  }
+}

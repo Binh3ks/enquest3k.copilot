@@ -45,4 +45,29 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week32/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 32 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    { template: "Last Saturday, I woke up ___ and made ___." },
+    { template: "First, I kept my room ___ by ___." },
+    { template: "Then I wrote ___ to my ___." },
+    { template: "I helped ___ cut the ___." },
+    { template: "We built ___ together." },
+    { template: "I chose ___ at the ___." },
+    { template: "I paid for ___ with my ___." },
+    { template: "At night, I put ___ away and fell asleep ___." }
+  ]
+    }
+  }
+}

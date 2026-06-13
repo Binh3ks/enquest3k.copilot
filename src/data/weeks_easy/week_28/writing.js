@@ -55,4 +55,45 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week28/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 28 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Once the ___ and the Tortoise had a ___.",
+      "answers": ["Hare", "race"]
+    },
+    {
+      "template": "The Hare ran very ___.",
+      "answers": ["fast"]
+    },
+    {
+      "template": "Then he stopped under a big ___ and ___ asleep.",
+      "answers": ["tree", "fell"]
+    },
+    {
+      "template": "The Tortoise walked ___ but ___ and never gave up.",
+      "answers": ["slowly", "steadily"]
+    },
+    {
+      "template": "The Tortoise ___ the race.",
+      "answers": ["won"]
+    },
+    {
+      "template": "Slow and ___ wins the race.",
+      "answers": ["steady"]
+    }
+  ]
+    }
+  }
+}

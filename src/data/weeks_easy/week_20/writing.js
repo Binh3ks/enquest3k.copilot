@@ -64,4 +64,62 @@ export default {
     "over the river",
     "new buildings"
   ]
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week20/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 20 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Detective Luna found an **old map**. The map was from a long time ago.",
+      "answers": [
+        "old map"
+      ]
+    },
+    {
+      "template": "On the old map, there was a big **local market** near the **long river**.",
+      "answers": [
+        "local market",
+        "long river"
+      ]
+    },
+    {
+      "template": "There were tall **tall trees** **along the road**.",
+      "answers": [
+        "tall trees",
+        "along the road"
+      ]
+    },
+    {
+      "template": "There was a **old temple** at the end of the road. It **still stands** today!",
+      "answers": [
+        "old temple",
+        "still stands"
+      ]
+    },
+    {
+      "template": "There was a **wooden bridge** **over the river**.",
+      "answers": [
+        "wooden bridge",
+        "over the river"
+      ]
+    },
+    {
+      "template": "Now there are new buildings. However, the **old temple** is still here!",
+      "answers": [
+        "new buildings",
+        "old temple"
+      ]
+    }
+  ]
+    }
+  }
+}

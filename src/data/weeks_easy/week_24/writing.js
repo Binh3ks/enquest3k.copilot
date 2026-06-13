@@ -54,4 +54,45 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week24/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 24 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Yesterday I felt ___.",
+      "answers": ["worried"]
+    },
+    {
+      "template": "I could not find my ___.",
+      "answers": ["homework"]
+    },
+    {
+      "template": "Then I felt ___.",
+      "answers": ["relieved"]
+    },
+    {
+      "template": "At school I felt ___ because there was a ___ visitor.",
+      "answers": ["excited", "special"]
+    },
+    {
+      "template": "It was a ___ author!",
+      "answers": ["famous"]
+    },
+    {
+      "template": "At the end I felt ___ but ___.",
+      "answers": ["tired", "happy"]
+    }
+  ]
+    }
+  }
+}

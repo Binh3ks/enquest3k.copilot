@@ -68,4 +68,49 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week34/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 34 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      template: "Once upon a time there was an ___ and a ___.",
+      blank_labels: ["ant", "grasshopper"]
+    },
+    {
+      template: "The ant ___ hard every day and ___ seeds.",
+      blank_labels: ["worked", "gathered"]
+    },
+    {
+      template: "The grasshopper only ___ and ___ songs all summer.",
+      blank_labels: ["played", "sang"]
+    },
+    {
+      template: "When ___ came, the grasshopper was very ___ and ___.",
+      blank_labels: ["winter", "cold", "hungry"]
+    },
+    {
+      template: "The ___ ant ___ the grasshopper some food.",
+      blank_labels: ["kind", "gave", "shared"]
+    },
+    {
+      template: "They learned a ___: always ___ ___ ___.",
+      blank_labels: ["lesson", "prepare", "for the future"]
+    },
+    {
+      template: "Now the ant and the grasshopper ___ ___ together every day.",
+      blank_labels: ["work", "hard"]
+    }
+  ]
+    }
+  }
+}

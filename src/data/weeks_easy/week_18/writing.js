@@ -56,4 +56,58 @@ export default {
     "ask if I can interview her",
     "what is happening"
   ]
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week18/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 18 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Welcome to the **live morning news**!",
+      "answers": [
+        "live morning news"
+      ]
+    },
+    {
+      "template": "I am the ___. I pick up the microphone.",
+      "answers": [
+        "reporter"
+      ]
+    },
+    {
+      "template": "Tom is ___ a rocket.",
+      "answers": [
+        "drawing"
+      ]
+    },
+    {
+      "template": "Sara is ___ at her desk.",
+      "answers": [
+        "reading quietly"
+      ]
+    },
+    {
+      "template": "I **walk to my friend** Maya. I **ask if I can interview her**.",
+      "answers": [
+        "walk to my friend",
+        "ask if I can interview her"
+      ]
+    },
+    {
+      "template": "Maya says she is writing a report. This is **what is happening** right now!",
+      "answers": [
+        "what is happening"
+      ]
+    }
+  ]
+    }
+  }
+}

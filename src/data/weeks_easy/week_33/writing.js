@@ -60,4 +60,45 @@ export default {
       ]
     }
   }
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week33/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 33 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      template: "Last week I ___ in the corridor and ___ down.",
+      blank_labels: ["walked/ran", "fell"]
+    },
+    {
+      template: "I ___ my ___ and it hurt a lot.",
+      blank_labels: ["hurt", "knee/elbow/leg"]
+    },
+    {
+      template: "My ___ came and ___ me right away.",
+      blank_labels: ["teacher/friend", "helped"]
+    },
+    {
+      template: "She ___ a ___ on my ___.",
+      blank_labels: ["put", "bandage/plaster", "knee/arm"]
+    },
+    {
+      template: "I learned to ___ ___ in the corridor.",
+      blank_labels: ["walk carefully"]
+    },
+    {
+      template: "Now I always ___ slowly and ___ carefully.",
+      blank_labels: ["walk/go", "look/be careful"]
+    }
+  ]
+    }
+  }
+}

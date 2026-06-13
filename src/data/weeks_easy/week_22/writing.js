@@ -60,4 +60,60 @@ export default {
     "studied each clue carefully",
     "had solved the case"
   ]
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week22/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 22 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "Nova was working on a case in **Hoi An**, Vietnam.",
+      "answers": [
+        "Hoi An"
+      ]
+    },
+    {
+      "template": "She arrived at the scene and opened her notebook.",
+      "answers": [
+        "opened her notebook"
+      ]
+    },
+    {
+      "template": "'Where were you **yesterday morning**?' The suspect **answered clearly**.",
+      "answers": [
+        "yesterday morning",
+        "answered clearly"
+      ]
+    },
+    {
+      "template": "'What did you do **last night**?' She **wrote every answer** **in her notebook**.",
+      "answers": [
+        "last night",
+        "wrote every answer",
+        "in her notebook"
+      ]
+    },
+    {
+      "template": "Nova **studied each clue carefully** in the warm lantern light.",
+      "answers": [
+        "studied each clue carefully"
+      ]
+    },
+    {
+      "template": "Nova **had solved the case**. Detective Nova handed her final report to the team in Hoi An.",
+      "answers": [
+        "had solved the case"
+      ]
+    }
+  ]
+    }
+  }
+}

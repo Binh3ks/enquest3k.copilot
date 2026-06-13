@@ -54,4 +54,57 @@ export default {
     "cold",
     "warm outside now"
   ]
-};
+,
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week17/story_writing_pic.jpg",
+      image_prompt: "A simple picture for week 17 story writing.",
+      word_bank: [],
+      writing_prompts: {
+        en: "Look at the picture. What can you see? Write simply.",
+        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      },
+      rubric_tier: 1,
+      min_sentences: 6,
+      sentence_frames: [
+    {
+      "template": "It is ___ today.",
+      "answers": [
+        "raining"
+      ]
+    },
+    {
+      "template": "I am wearing my ___ to stay warm.",
+      "answers": [
+        "blue coat"
+      ]
+    },
+    {
+      "template": "The streets are ___.",
+      "answers": [
+        "wet"
+      ]
+    },
+    {
+      "template": "Nam is carrying his ___ because it is raining.",
+      "answers": [
+        "umbrella"
+      ]
+    },
+    {
+      "template": "It is very ___ today.",
+      "answers": [
+        "cold"
+      ]
+    },
+    {
+      "template": "After school, I **take off my coat** because the weather is ___.",
+      "answers": [
+        "warm outside now"
+      ]
+    }
+  ]
+    }
+  }
+}
