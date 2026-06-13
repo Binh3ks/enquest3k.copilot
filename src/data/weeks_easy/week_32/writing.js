@@ -10,14 +10,14 @@ export default {
   keywords: ["woke", "made", "did", "wrote", "cut", "built", "put", "chose", "paid", "tidy", "birdhouse", "letter", "café", "early", "asleep"],
   topic_talk_prompt: "Tell me about your Saturday — what did you make, do, or build? Did you wake up early? What did you choose?",
   sentence_frames: [
-    { template: "Last Saturday, I woke up ___ and made ___." },
-    { template: "First, I kept my room ___ by ___." },
-    { template: "Then I wrote ___ to my ___." },
-    { template: "I helped ___ cut the ___." },
-    { template: "We built ___ together." },
-    { template: "I chose ___ at the ___." },
-    { template: "I paid for ___ with my ___." },
-    { template: "At night, I put ___ away and fell asleep ___." }
+    { template: "Last Saturday, I woke up ___ and made ___.", answers: ["early", "my bed"] },
+    { template: "First, I kept my room ___ by ___.", answers: ["tidy", "cleaning"] },
+    { template: "Then I wrote ___ to my ___.", answers: ["a letter", "grandmother"] },
+    { template: "I helped ___ cut the ___.", answers: ["Dad", "grass"] },
+    { template: "We built ___ together.", answers: ["a birdhouse"] },
+    { template: "I chose ___ at the ___.", answers: ["a muffin", "café"] },
+    { template: "I paid for ___ with my ___.", answers: ["it", "own money"] },
+    { template: "At night, I put ___ away and fell asleep ___.", answers: ["my things", "early"] }
   ],
   hints: {
     vocabulary_bank: {

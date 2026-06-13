@@ -15,27 +15,27 @@ export default {
   sentence_frames: [
     {
       template: "Last week I ___ in the corridor and ___ down.",
-      blank_labels: ["walked/ran", "fell"]
+      answers: ["walked/ran", "fell"]
     },
     {
       template: "I ___ my ___ and it hurt a lot.",
-      blank_labels: ["hurt", "knee/elbow/leg"]
+      answers: ["hurt", "knee/elbow/leg"]
     },
     {
       template: "My ___ came and ___ me right away.",
-      blank_labels: ["teacher/friend", "helped"]
+      answers: ["teacher/friend", "helped"]
     },
     {
       template: "She ___ a ___ on my ___.",
-      blank_labels: ["put", "bandage/plaster", "knee/arm"]
+      answers: ["put", "bandage/plaster", "knee/arm"]
     },
     {
       template: "I learned to ___ ___ in the corridor.",
-      blank_labels: ["walk carefully"]
+      answers: ["walk carefully"]
     },
     {
       template: "Now I always ___ slowly and ___ carefully.",
-      blank_labels: ["walk/go", "look/be careful"]
+      answers: ["walk/go", "look/be careful"]
     }
   ],
   hints: {

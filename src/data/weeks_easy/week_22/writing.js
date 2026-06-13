@@ -9,7 +9,7 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Nova was working on a case in **Hoi An**, Vietnam.",
+      "template": "Nova was working on a case in Hoi An, Vietnam.",
       "answers": [
         "Hoi An"
       ]
@@ -21,14 +21,14 @@ export default {
       ]
     },
     {
-      "template": "'Where were you **yesterday morning**?' The suspect **answered clearly**.",
+      "template": "'Where were you yesterday morning?' The suspect answered clearly.",
       "answers": [
         "yesterday morning",
         "answered clearly"
       ]
     },
     {
-      "template": "'What did you do **last night**?' She **wrote every answer** **in her notebook**.",
+      "template": "'What did you do last night?' She wrote every answer in her notebook.",
       "answers": [
         "last night",
         "wrote every answer",
@@ -36,13 +36,13 @@ export default {
       ]
     },
     {
-      "template": "Nova **studied each clue carefully** in the warm lantern light.",
+      "template": "Nova studied each clue carefully in the warm lantern light.",
       "answers": [
         "studied each clue carefully"
       ]
     },
     {
-      "template": "Nova **had solved the case**. Detective Nova handed her final report to the team in Hoi An.",
+      "template": "Nova had solved the case. Detective Nova handed her final report to the team in Hoi An.",
       "answers": [
         "had solved the case"
       ]
@@ -59,8 +59,29 @@ export default {
     "in her notebook",
     "studied each clue carefully",
     "had solved the case"
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "Time Detective", "vi": "Thám tử Thời gian", "distractor": false },
+        { "word": "big hat", "vi": "mũ to", "distractor": false },
+        { "word": "chocolate cake", "vi": "bánh sô-cô-la", "distractor": false },
+        { "word": "ask questions", "vi": "hỏi câu hỏi", "distractor": false },
+        { "word": "last night", "vi": "tối qua", "distractor": false },
+        { "word": "cooked dinner", "vi": "nấu bữa tối", "distractor": false },
+        { "word": "washed dishes", "vi": "rửa bát", "distractor": false },
+        { "word": "this morning", "vi": "sáng nay", "distractor": false },
+        { "word": "last weekend", "vi": "cuối tuần trước", "distractor": false },
+        { "word": "very hungry", "vi": "rất đói", "distractor": false },
+        { "word": "watched TV", "vi": "xem TV", "distractor": true },
+        { "word": "played outside", "vi": "chơi ngoài trời", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

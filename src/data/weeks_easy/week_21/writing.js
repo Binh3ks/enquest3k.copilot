@@ -10,14 +10,14 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Yesterday I **woke up early** and **brushed my teeth**.",
+      "template": "Yesterday I woke up early and brushed my teeth.",
       "answers": [
         "woke up early",
         "brushed my teeth"
       ]
     },
     {
-      "template": "I **packed my bag** and **walked to school** with my friend.",
+      "template": "I packed my bag and walked to school with my friend.",
       "answers": [
         "packed my bag",
         "walked to school"
@@ -30,7 +30,7 @@ export default {
       ]
     },
     {
-      "template": "**At break time**, I **played soccer**. I **shouted with excitement** when we scored a goal!",
+      "template": "At break time, I played soccer. I shouted with excitement when we scored a goal!",
       "answers": [
         "At break time",
         "played soccer",
@@ -38,14 +38,14 @@ export default {
       ]
     },
     {
-      "template": "After school, I **helped my mother prepare dinner**. Then I **cleaned my room**.",
+      "template": "After school, I helped my mother prepare dinner. Then I cleaned my room.",
       "answers": [
         "helped my mother prepare dinner",
         "cleaned my room"
       ]
     },
     {
-      "template": "In the evening, I **looked at the stars** and **counted ten** of them. Then I **started to fall asleep**.",
+      "template": "In the evening, I looked at the stars and counted ten of them. Then I started to fall asleep.",
       "answers": [
         "looked at the stars",
         "counted ten",
@@ -68,8 +68,29 @@ export default {
     "looked at the stars",
     "counted ten",
     "started to fall asleep"
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "walked slowly", "vi": "đi chậm", "distractor": false },
+        { "word": "talked happily", "vi": "nói chuyện vui", "distractor": false },
+        { "word": "worked hard", "vi": "làm việc chăm chỉ", "distractor": false },
+        { "word": "helped mother", "vi": "giúp mẹ", "distractor": false },
+        { "word": "cooked dinner", "vi": "nấu bữa tối", "distractor": false },
+        { "word": "cleaned table", "vi": "lau bàn", "distractor": false },
+        { "word": "watched a movie", "vi": "xem phim", "distractor": false },
+        { "word": "slept well", "vi": "ngủ ngon", "distractor": false },
+        { "word": "woke up early", "vi": "thức dậy sớm", "distractor": false },
+        { "word": "brushed teeth", "vi": "đánh răng", "distractor": false },
+        { "word": "played games", "vi": "chơi trò chơi", "distractor": true },
+        { "word": "ate snacks", "vi": "ăn vặt", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

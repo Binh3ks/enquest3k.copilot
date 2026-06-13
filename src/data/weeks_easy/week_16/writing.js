@@ -56,8 +56,29 @@ export default {
       "template": "Oh no! I ___ ___ ___. That is ___! In soccer I can only ___ ___. The other team is ___ ___. They are ___ ___ ___! I want to score a goal too!",
       "answers": ["throw the ball", "wrong", "use my feet", "scoring a goal", "jumping up and down"]
     }
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "running fast", "vi": "chạy nhanh", "distractor": false },
+        { "word": "cheering loudly", "vi": "cổ vũ ầm ĩ", "distractor": false },
+        { "word": "kicking the ball", "vi": "sút bóng", "distractor": false },
+        { "word": "jumping high", "vi": "nhảy cao", "distractor": false },
+        { "word": "waving flags", "vi": "vẫy cờ", "distractor": false },
+        { "word": "running races", "vi": "chạy đua", "distractor": false },
+        { "word": "full of energy", "vi": "tràn đầy năng lượng", "distractor": false },
+        { "word": "very exciting", "vi": "rất thú vị", "distractor": false },
+        { "word": "so much fun", "vi": "vui lắm", "distractor": false },
+        { "word": "tired but happy", "vi": "mệt nhưng vui", "distractor": false },
+        { "word": "sitting under a tree", "vi": "ngồi dưới cây", "distractor": true },
+        { "word": "sleeping in class", "vi": "ngủ trong lớp", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

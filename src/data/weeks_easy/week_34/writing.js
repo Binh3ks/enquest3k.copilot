@@ -15,31 +15,31 @@ export default {
   sentence_frames: [
     {
       template: "Once upon a time there was an ___ and a ___.",
-      blank_labels: ["ant", "grasshopper"]
+      answers: ["ant", "grasshopper"]
     },
     {
       template: "The ant ___ hard every day and ___ seeds.",
-      blank_labels: ["worked", "gathered"]
+      answers: ["worked", "gathered"]
     },
     {
       template: "The grasshopper only ___ and ___ songs all summer.",
-      blank_labels: ["played", "sang"]
+      answers: ["played", "sang"]
     },
     {
       template: "When ___ came, the grasshopper was very ___ and ___.",
-      blank_labels: ["winter", "cold", "hungry"]
+      answers: ["winter", "cold", "hungry"]
     },
     {
       template: "The ___ ant ___ the grasshopper some food.",
-      blank_labels: ["kind", "gave", "shared"]
+      answers: ["kind", "gave", "shared"]
     },
     {
       template: "They learned a ___: always ___ ___ ___.",
-      blank_labels: ["lesson", "prepare", "for the future"]
+      answers: ["lesson", "prepare", "for the future"]
     },
     {
       template: "Now the ant and the grasshopper ___ ___ together every day.",
-      blank_labels: ["work", "hard"]
+      answers: ["work", "hard"]
     }
   ],
   hints: {

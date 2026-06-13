@@ -15,13 +15,13 @@ export default {
       ]
     },
     {
-      "template": "I **was little**! I was cute.",
+      "template": "I was little! I was cute.",
       "answers": [
         "was little"
       ]
     },
     {
-      "template": "My face **was round and** my eyes **were very big**.",
+      "template": "My face was round and my eyes were very big.",
       "answers": [
         "was round and",
         "were very big"
@@ -34,13 +34,13 @@ export default {
       ]
     },
     {
-      "template": "I **was quiet and sleeping** in this picture.",
+      "template": "I was quiet and sleeping in this picture.",
       "answers": [
         "was quiet and sleeping"
       ]
     },
     {
-      "template": "These photos are **special memories**. I **keep these memories in my heart**.",
+      "template": "These photos are special memories. I keep these memories in my heart.",
       "answers": [
         "special memories",
         "keep these memories in my heart"
@@ -57,8 +57,29 @@ export default {
     "was quiet and sleeping",
     "special memories",
     "keep these memories in my heart"
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "photo album", "vi": "albums ảnh", "distractor": false },
+        { "word": "living room", "vi": "phòng khách", "distractor": false },
+        { "word": "looking at pictures", "vi": "xem ảnh", "distractor": false },
+        { "word": "tiny baby", "vi": "em bé nhỏ", "distractor": false },
+        { "word": "very cute", "vi": "rất dễ thương", "distractor": false },
+        { "word": "very noisy", "vi": "rất ồn", "distractor": false },
+        { "word": "brave and smart", "vi": "dũng cảm và thông minh", "distractor": false },
+        { "word": "first day school", "vi": "ngày đầu đi học", "distractor": false },
+        { "word": "big backpack", "vi": "ba lô to", "distractor": false },
+        { "word": "shy and nervous", "vi": "nhút nhát và hồi hộp", "distractor": false },
+        { "word": "watching TV", "vi": "xem TV", "distractor": true },
+        { "word": "eating dinner", "vi": "ăn tối", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

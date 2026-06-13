@@ -9,7 +9,7 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Welcome to the **live morning news**!",
+      "template": "Welcome to the live morning news!",
       "answers": [
         "live morning news"
       ]
@@ -33,14 +33,14 @@ export default {
       ]
     },
     {
-      "template": "I **walk to my friend** Maya. I **ask if I can interview her**.",
+      "template": "I walk to my friend Maya. I ask if I can interview her.",
       "answers": [
         "walk to my friend",
         "ask if I can interview her"
       ]
     },
     {
-      "template": "Maya says she is writing a report. This is **what is happening** right now!",
+      "template": "Maya says she is writing a report. This is what is happening right now!",
       "answers": [
         "what is happening"
       ]
@@ -55,8 +55,29 @@ export default {
     "walk to my friend",
     "ask if I can interview her",
     "what is happening"
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "Spring Festival", "vi": "lễ hội mùa xuân", "distractor": false },
+        { "word": "painting pictures", "vi": "vẽ tranh", "distractor": false },
+        { "word": "bright paints", "vi": "sơn tươi sáng", "distractor": false },
+        { "word": "mixing colors", "vi": "pha màu", "distractor": false },
+        { "word": "changing color", "vi": "đổi màu", "distractor": false },
+        { "word": "practicing play", "vi": "tập kịch", "distractor": false },
+        { "word": "speaking loudly", "vi": "nói to", "distractor": false },
+        { "word": "clapping hands", "vi": "vỗ tay", "distractor": false },
+        { "word": "smiling happy", "vi": "cười vui", "distractor": false },
+        { "word": "playing music", "vi": "chơi nhạc", "distractor": false },
+        { "word": "eating snacks", "vi": "ăn vặt", "distractor": true },
+        { "word": "wearing uniforms", "vi": "mặc đồng phục", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

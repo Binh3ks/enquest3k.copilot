@@ -10,41 +10,41 @@ export default {
   show_by_default: true,
   sentence_frames: [
     {
-      "template": "Detective Luna found an **old map**. The map was from a long time ago.",
+      "template": "Detective Luna found an old map. The map was from a long time ago.",
       "answers": [
         "old map"
       ]
     },
     {
-      "template": "On the old map, there was a big **local market** near the **long river**.",
+      "template": "On the old map, there was a big local market near the long river.",
       "answers": [
         "local market",
         "long river"
       ]
     },
     {
-      "template": "There were tall **tall trees** **along the road**.",
+      "template": "There were tall tall trees along the road.",
       "answers": [
         "tall trees",
         "along the road"
       ]
     },
     {
-      "template": "There was a **old temple** at the end of the road. It **still stands** today!",
+      "template": "There was a old temple at the end of the road. It still stands today!",
       "answers": [
         "old temple",
         "still stands"
       ]
     },
     {
-      "template": "There was a **wooden bridge** **over the river**.",
+      "template": "There was a wooden bridge over the river.",
       "answers": [
         "wooden bridge",
         "over the river"
       ]
     },
     {
-      "template": "Now there are new buildings. However, the **old temple** is still here!",
+      "template": "Now there are new buildings. However, the old temple is still here!",
       "answers": [
         "new buildings",
         "old temple"
@@ -63,8 +63,29 @@ export default {
     "wooden bridge",
     "over the river",
     "new buildings"
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "old village", "vi": "làng cổ", "distractor": false },
+        { "word": "long ago", "vi": "cách đây lâu", "distractor": false },
+        { "word": "modern cars", "vi": "xe hơi hiện đại", "distractor": false },
+        { "word": "ancient temple", "vi": "ngôi đền cổ", "distractor": false },
+        { "word": "blue river", "vi": "sông xanh", "distractor": false },
+        { "word": "leafy trees", "vi": "cây lá xanh", "distractor": false },
+        { "word": "busy market", "vi": "chợ nhộn nhịp", "distractor": false },
+        { "word": "fresh fruits", "vi": "trái cây tươi", "distractor": false },
+        { "word": "wooden bridge", "vi": "cầu gỗ", "distractor": false },
+        { "word": "beautiful temple", "vi": "ngôi đền đẹp", "distractor": false },
+        { "word": "watched TV", "vi": "xem TV", "distractor": true },
+        { "word": "played games", "vi": "chơi trò chơi", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",

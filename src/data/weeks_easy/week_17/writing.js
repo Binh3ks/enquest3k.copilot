@@ -39,7 +39,7 @@ export default {
       ]
     },
     {
-      "template": "After school, I **take off my coat** because the weather is ___.",
+      "template": "After school, I take off my coat because the weather is ___.",
       "answers": [
         "warm outside now"
       ]
@@ -53,8 +53,29 @@ export default {
     "umbrella",
     "cold",
     "warm outside now"
-  ]
-,
+  ],
+  hints: {
+    vocabulary_bank: {
+      label_en: "💡 Need help? Click 💡 next to each blank",
+      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      show_by_default: false,
+      scaffolding_stage: "medium",
+      words: [
+        { "word": "raining hard", "vi": "mưa to", "distractor": false },
+        { "word": "wearing raincoat", "vi": "mặc áo mưa", "distractor": false },
+        { "word": "big boots", "vi": "ủng to", "distractor": false },
+        { "word": "snowing hard", "vi": "tuyết rơi dày", "distractor": false },
+        { "word": "warm hat", "vi": "mũ ấm", "distractor": false },
+        { "word": "making snowman", "vi": "làm người tuyết", "distractor": false },
+        { "word": "sunny day", "vi": "ngày nắng", "distractor": false },
+        { "word": "cool sunglasses", "vi": "kính mát", "distractor": false },
+        { "word": "cloudy and windy", "vi": "nhiều mây và gió", "distractor": false },
+        { "word": "flying a kite", "vi": "thả diều", "distractor": false },
+        { "word": "hot tea", "vi": "trà nóng", "distractor": true },
+        { "word": "going swimming", "vi": "đi bơi", "distractor": true }
+      ]
+    }
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",
