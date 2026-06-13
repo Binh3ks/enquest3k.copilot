@@ -14,32 +14,32 @@ export default {
   topic_talk_prompt: "Tell me about a time when you helped a friend or a friend helped you!",
   sentence_frames: [
     {
-      template: "Once upon a time there was an ___ and a ___.",
-      answers: ["ant", "grasshopper"]
+      "template": "Once upon a time there was an ___ and a ___.",
+      "answers": ["ant","grasshopper"]
     },
     {
-      template: "The ant ___ hard every day and ___ seeds.",
-      answers: ["worked", "gathered"]
+      "template": "The ant ___ hard every day and ___ seeds.",
+      "answers": ["worked","gathered"]
     },
     {
-      template: "The grasshopper only ___ and ___ songs all summer.",
-      answers: ["played", "sang"]
+      "template": "The grasshopper only ___ and ___ songs all summer.",
+      "answers": ["played","sang"]
     },
     {
-      template: "When ___ came, the grasshopper was very ___ and ___.",
-      answers: ["winter", "cold", "hungry"]
+      "template": "When ___ came, the grasshopper was very cold and ___.",
+      "answers": ["winter","hungry"]
     },
     {
-      template: "The ___ ant ___ the grasshopper some food.",
-      answers: ["kind", "gave", "shared"]
+      "template": "The kind ___ ant gave the grasshopper some ___.",
+      "answers": ["ant","food"]
     },
     {
-      template: "They learned a ___: always ___ ___ ___.",
-      answers: ["lesson", "prepare", "for the future"]
+      "template": "They learned an important ___: always prepare for the ___.",
+      "answers": ["lesson","future"]
     },
     {
-      template: "Now the ant and the grasshopper ___ ___ together every day.",
-      answers: ["work", "hard"]
+      "template": "Now the ant and the grasshopper work ___ together every day.",
+      "answers": ["hard"]
     }
   ],
   hints: {
