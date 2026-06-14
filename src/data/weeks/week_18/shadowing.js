@@ -1,4 +1,6 @@
 export default {
+  videoId: "HrHqq8xJiU4",
+  content_en: "Alex loves watching the news on TV. Today his class is doing something exciting! They are making a school TV show. Alex has a special job. He is the reporter! He **picks up a toy microphone** and **stands next to a toy camera**. The classroom is now a studio. Alex speaks warmly into the microphone. He says: \\",
   script: [
     { id: 1, text: "Alex loves watching the news on TV.", vi: "Alex rất thích xem tin tức trên TV." },
     { id: 2, text: "Today his class is doing something exciting!", vi: "Hôm nay lớp của cậu đang làm điều gì đó hào hứng!" },
@@ -26,8 +28,6 @@ export default {
     { id: 24, text: "A live report from Room 5!", vi: "Đây là Alex, phóng viên của trường." },
     { id: 25, text: "This is Alex, your school reporter.", vi: "Tạm biệt hẹn gặp lại!\" Mọi người vỗ tay và reo hò." },
     { id: 26, text: "Back to you!\" Everyone claps and cheers.", vi: "Alex rất thích làm phóng viên!" },
-    { id: 27, text: "Alex loves being a reporter!", vi: "" }
+    { id: 27, text: "Alex loves being a reporter!", vi: null },
   ]
-,
-  content_en: `Alex loves watching the news on TV. Today his class is doing something exciting! They are making a school TV show. Alex has a special job. He is the reporter! He **picks up a toy microphone** and **stands next to a toy camera**. The classroom is now a studio. Alex speaks warmly into the microphone. He says: \\`
 };

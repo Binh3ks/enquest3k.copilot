@@ -1,6 +1,7 @@
 export default {
   title: "My Weekend Adventure",
-  audio_full: "/audio/week11/shadowing_full.mp3",
+  videoId: "fpo3b33iCtU",
+  content_en: "Today is Saturday! I have a fun weekend plan. First, I **go to the park**. I **play at the park** with my friends. We run and laugh! Then, I go to the library. I **read a book** at the library. The book is about animals. It is very interesting! After that, my mom and I go to the supermarket. We buy food at the supermarket. I **help my mom** carry the bags. Finally, we go to the playground. I **slide down** at the playground. I love the slide! **On Sunday**, I go to the zoo. I see many animals at the zoo. I see a lion and a monkey! Then we **have lunch** at a restaurant. The food is delicious! I also go to school on Monday to read and learn. I love my weekend! Every place is special and fun!",
   script: [
     { id: 1, text: "Today is Saturday!", vi: "Hôm nay là thứ Bảy!" },
     { id: 2, text: "I have a fun weekend plan.", vi: "Tôi có kế hoạch cuối tuần vui vẻ." },
@@ -23,8 +24,6 @@ export default {
     { id: 19, text: "The food is delicious!", vi: "Đồ ăn rất ngon!" },
     { id: 20, text: "I also go to school on Monday to read and learn.", vi: "Tôi cũng đi học vào thứ Hai để đọc và học." },
     { id: 21, text: "I love my weekend!", vi: "Tôi yêu cuối tuần của mình!" },
-    { id: 22, text: "Every place is special and fun!", vi: "Mỗi nơi đều đặc biệt và vui!" }
+    { id: 22, text: "Every place is special and fun!", vi: "Mỗi nơi đều đặc biệt và vui!" },
   ]
-,
-  content_en: `Today is Saturday! I have a fun weekend plan. First, I **go to the park**. I **play at the park** with my friends. We run and laugh! Then, I go to the library. I **read a book** at the library. The book is about animals. It is very interesting! After that, my mom and I go to the supermarket. We buy food at the supermarket. I **help my mom** carry the bags. Finally, we go to the playground. I **slide down** at the playground. I love the slide! **On Sunday**, I go to the zoo. I see many animals at the zoo. I see a lion and a monkey! Then we **have lunch** at a restaurant. The food is delicious! I also go to school on Monday to read and learn. I love my weekend! Every place is special and fun!`
 };

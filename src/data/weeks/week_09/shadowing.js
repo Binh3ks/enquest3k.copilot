@@ -1,6 +1,7 @@
 export default {
   title: "Exploring the City",
-  audio_full: "/audio/week09/shadowing_full.mp3",
+  videoId: "x39KwsXxl_0",
+  content_en: "Today I visit the city! I walk on a busy street. There are many people and cars. It is a noisy place. I **hear car horns** and people talking. I see a tall building. It is very high! It is **next to the bus stop**. A yellow bus **get on the bus** near me. Many people get on the bus. There is **lots of traffic**. Many vehicles move slowly. I see another street. It is less busy than the main street. I walk there and it is quieter. The city has tall buildings, busy streets, and **lots of traffic**. But it is exciting! I like exploring the modern city. Next time, I want to ride a bus and see more buildings!",
   script: [
     { id: 1, text: "Today I visit the city!", vi: "Hôm nay tôi đến thành phố!" },
     { id: 2, text: "I walk on a busy street.", vi: "Tôi đi bộ trên một con phố đông đúc." },
@@ -18,8 +19,6 @@ export default {
     { id: 14, text: "It is less busy than the main street.", vi: "Nó ít đông đúc hơn con phố chính." },
     { id: 15, text: "I walk there and it is quieter.", vi: "Tôi đi bộ ở đó và nó yên tĩnh hơn." },
     { id: 16, text: "But it is exciting!", vi: "Nhưng nó rất thú vị!" },
-    { id: 17, text: "I like exploring the modern city.", vi: "Tôi thích khám phá thành phố hiện đại." }
+    { id: 17, text: "I like exploring the modern city.", vi: "Tôi thích khám phá thành phố hiện đại." },
   ]
-,
-  content_en: `Today I visit the city! I walk on a busy street. There are many people and cars. It is a noisy place. I **hear car horns** and people talking. I see a tall building. It is very high! It is **next to the bus stop**. A yellow bus **get on the bus** near me. Many people get on the bus. There is **lots of traffic**. Many vehicles move slowly. I see another street. It is less busy than the main street. I walk there and it is quieter. The city has tall buildings, busy streets, and **lots of traffic**. But it is exciting! I like exploring the modern city. Next time, I want to ride a bus and see more buildings!`
 };

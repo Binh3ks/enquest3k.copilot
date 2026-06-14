@@ -1,4 +1,6 @@
 export default {
+  videoId: "4c6FyuetSVo",
+  content_en: "Today I am going to the park with my family. The park is busy and fun! I am **walking with my mom**. She is **holding my hand**. My dad is **jogging ahead of us**. I see a boy. He is running very fast! His dog is running too. An old man is **sitting on a bench**. He is **reading a book**. Near the fountain, some kids are playing. They are laughing. My family is **having a picnic** now. We are **eating yummy sandwiches**. I am **drinking apple juice**. My sister is **flying her red kite**. It is **going very high**! I am **relaxing under the trees**. The grass is soft. I see flowers everywhere. A girl is walking her small dog. The dog is cute! The park is my favorite place!",
   script: [
     { id: 1, text: "Today I am going to the park with my family.", vi: "Hôm nay tôi đang đi công viên với gia đình." },
     { id: 2, text: "The park is busy and fun!", vi: "Công viên đông đúc và vui!" },
@@ -22,8 +24,6 @@ export default {
     { id: 20, text: "I see flowers.", vi: "Con diều đẹp quá." },
     { id: 21, text: "A girl is walking her small dog.", vi: "Tôi đang thư giãn trên cỏ." },
     { id: 22, text: "The dog is cute!", vi: "Cỏ mềm và xanh." },
-    { id: 23, text: "The park is my favorite place!", vi: "Tôi thấy hoa ở khắp nơi." }
+    { id: 23, text: "The park is my favorite place!", vi: "Tôi thấy hoa ở khắp nơi." },
   ]
-,
-  content_en: `Today I am going to the park with my family. The park is busy and fun! I am **walking with my mom**. She is **holding my hand**. My dad is **jogging ahead of us**. I see a boy. He is running very fast! His dog is running too. An old man is **sitting on a bench**. He is **reading a book**. Near the fountain, some kids are playing. They are laughing. My family is **having a picnic** now. We are **eating yummy sandwiches**. I am **drinking apple juice**. My sister is **flying her red kite**. It is **going very high**! I am **relaxing under the trees**. The grass is soft. I see flowers everywhere. A girl is walking her small dog. The dog is cute! The park is my favorite place!`
 };

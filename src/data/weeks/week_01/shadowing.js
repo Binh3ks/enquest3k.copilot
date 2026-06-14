@@ -1,6 +1,7 @@
 export default {
   title: "Alex's School Day",
-  audio_full: "/audio/week1/shadowing_full_w1.mp3",
+  videoId: "AS5nhKzaOqo",
+  content_en: "My name is Alex. I am a student at Greenwood Elementary School. Every morning, I **wake up early** and **get ready for school**. My backpack is heavy because I carry my book and notebook every day. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is **very kind and patient**. She teaches us English, Math, and Science. I love **learning new things** every day. After school, I **go to the library** to read. I want to become a scientist when I grow up.",
   script: [
     { id: 1, text: "My name is Alex.", vi: "Tên tôi là Alex." },
     { id: 2, text: "I am a student at Greenwood Elementary School.", vi: "Tôi là học sinh trường Tiểu học Greenwood." },
@@ -11,8 +12,6 @@ export default {
     { id: 7, text: "She teaches us English, Math, and Science.", vi: "Cô dạy chúng tôi tiếng Anh, Toán và Khoa học." },
     { id: 8, text: "I love learning new things every day.", vi: "Tôi thích học những điều mới mỗi ngày." },
     { id: 9, text: "After school, I go to the library to read.", vi: "Sau giờ học, tôi đến thư viện để đọc." },
-    { id: 10, text: "I want to become a scientist when I grow up.", vi: "Tôi muốn trở thành nhà khoa học khi lớn lên." }
+    { id: 10, text: "I want to become a scientist when I grow up.", vi: "Tôi muốn trở thành nhà khoa học khi lớn lên." },
   ]
-,
-  content_en: `My name is Alex. I am a student at Greenwood Elementary School. Every morning, I **wake up early** and **get ready for school**. My backpack is heavy because I carry my book and notebook every day. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is **very kind and patient**. She teaches us English, Math, and Science. I love **learning new things** every day. After school, I **go to the library** to read. I want to become a scientist when I grow up.`
 };

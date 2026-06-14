@@ -1,4 +1,6 @@
 export default {
+  videoId: "HrHqq8xJiU4",
+  content_en: "Alex loves the news. Today he has a toy microphone and a toy camera. He wants to be a reporter! He stands in the living room. He says: \\",
   script: [
     { id: 1, text: "Alex loves the news.", vi: "Alex rất thích xem tin tức." },
     { id: 2, text: "Today he has a toy microphone and a toy camera.", vi: "Hôm nay cậu có một cái micro đồ chơi và một cái máy quay đồ chơi." },
@@ -17,8 +19,6 @@ export default {
     { id: 15, text: "They are the audience.", vi: "Họ là khán giả." },
     { id: 16, text: "Alex bows.", vi: "Alex cúi chào." },
     { id: 17, text: "It is so exciting to be a reporter!", vi: "Thật hào hứng khi được làm phóng viên!" },
-    { id: 18, text: "He loves describing what is happening at home.", vi: "Cậu thích mô tả những gì đang xảy ra ở nhà." }
+    { id: 18, text: "He loves describing what is happening at home.", vi: "Cậu thích mô tả những gì đang xảy ra ở nhà." },
   ]
-,
-  content_en: `Alex loves the news. Today he has a toy microphone and a toy camera. He wants to be a reporter! He stands in the living room. He says: \\`
 };

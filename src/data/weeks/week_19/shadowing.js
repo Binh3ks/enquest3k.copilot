@@ -1,4 +1,6 @@
 export default {
+  videoId: "O3FdGPehN-E",
+  content_en: "Today I found an album in my grandma's house. It is full of photos from the past. Look at this one! Who is this baby? My mom says, \\",
   script: [
     { id: 1, text: "Today I found an album in my grandma's house.", vi: "Hôm nay tôi tìm thấy một cuốn album trong nhà bà." },
     { id: 2, text: "It is full of photos from the past.", vi: "Nó đầy những ảnh từ quá khứ." },
@@ -30,8 +32,6 @@ export default {
     { id: 28, text: "I have grown so much.", vi: "Tôi lớn lên nhiều." },
     { id: 29, text: "But I still keep these memories in my heart.", vi: "Nhưng tôi vẫn giữ những kỷ niệm này trong tim." },
     { id: 30, text: "The past was different.", vi: "Quá khứ khác rồi." },
-    { id: 31, text: "It helps me remember who I was growing up.", vi: "Nó giúp tôi nhớ tôi đã từng là ai khi lớn lên." }
+    { id: 31, text: "It helps me remember who I was growing up.", vi: "Nó giúp tôi nhớ tôi đã từng là ai khi lớn lên." },
   ]
-,
-  content_en: `Today I found an album in my grandma's house. It is full of photos from the past. Look at this one! Who is this baby? My mom says, \\`
 };

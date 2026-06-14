@@ -1,7 +1,6 @@
 export default {
   title: "Shadowing: My Day at the Market",
-  image_url: "/images/week31/read_cover_w31.jpg",
-  audio_url: "/audio/week31_easy/shadowing_main.mp3",
+  videoId: "b5sv_4u6LNc",
   content_en: `Last Saturday, Luna went to a **local market** with her mum. The market was colourful and fun.
 
 Luna **looked around** and could see many stalls. At a craft stall, she could see smooth glass jars full of golden honey. The light **shone through** glass and made little rainbows!
@@ -15,29 +14,16 @@ Luna smelt sweet strawberries from the fruit stall. She tasted a small piece of 
 A plastic bag broke near the gate with a big crash! Luna felt surprised. Then she laughed.
 
 'A **local market** is full of things **to see and touch**!' said Luna.`,
-  content_vi: `Thứ Bảy tuần trước, Luna đi chợ với mẹ. Chợ đầy màu sắc và vui vẻ.
-
-Luna nhìn quanh và thấy nhiều gian hàng. Ở gian thủ công, cô thấy những lọ thủy tinh nhẵn bóng đựng đầy mật ong vàng.Ánh sáng chiếu qua thủy tinh tạo ra những cầu vồng nhỏ!
-
-Luna nhặt một cái kệ gỗ. Gỗ cảm thấy thô ráp và ấm áp dưới ngón tay cô. Cô cũng chạm vào một cái bát đá. Đá cảm thấy mát và nhẵn bóng.
-
-Rồi Luna sờ những chiếc khăn cotton mềm mại. Chúng rất nhẹ và dịu dàng. Cô chạm cổng kim loại lạnh ở lối vào.
-
-Luna ngửi thấy dâu ngọt từ gian hàng trái cây. Cô nếm một miếng nhỏ xoài. Nó ngọt và thơm.
-
-Một túi nhựa bị rách gần cổng với tiếng động lớn! Luna giật mình. Rồi cô cười.
-
-'Chợ đầy những thứ để nhìn và chạm!' Luna nói.`,
-  sentences: [
-    { id: 1, text: "Last Saturday, Luna went to a local market with her mum." },
-    { id: 2, text: "The market was colourful and fun." },
-    { id: 3, text: "Luna looked around and could see many stalls." },
-    { id: 4, text: "The light shone through glass and made little rainbows!" },
-    { id: 5, text: "Luna picked up a wooden shelf." },
-    { id: 6, text: "She also touched a stone bowl. The stone felt cool and smooth." },
-    { id: 7, text: "Then Luna felt soft cotton scarves. They were very light and gentle. She touched the cold metal gate at the entrance." },
-    { id: 8, text: "Luna smelt sweet strawberries from the fruit stall." },
-    { id: 9, text: "A plastic bag broke near the gate with a big crash! Luna felt surprised. Then she laughed." },
-    { id: 10, text: "'A local market is full of things to see and touch!'" }
+  script: [
+    { id: 1, text: "Last Saturday, Luna went to a local market with her mum.", vi: null },
+    { id: 2, text: "The market was colourful and fun.", vi: null },
+    { id: 3, text: "Luna looked around and could see many stalls.", vi: null },
+    { id: 4, text: "The light shone through glass and made little rainbows!", vi: null },
+    { id: 5, text: "Luna picked up a wooden shelf.", vi: null },
+    { id: 6, text: "She also touched a stone bowl. The stone felt cool and smooth.", vi: null },
+    { id: 7, text: "Then Luna felt soft cotton scarves. They were very light and gentle. She touched the cold metal gate at the entrance.", vi: null },
+    { id: 8, text: "Luna smelt sweet strawberries from the fruit stall.", vi: null },
+    { id: 9, text: "A plastic bag broke near the gate with a big crash! Luna felt surprised. Then she laughed.", vi: null },
+    { id: 10, text: "'A local market is full of things to see and touch!'", vi: null },
   ]
 };

@@ -1,4 +1,6 @@
 export default {
+  videoId: "yDua9ms9_eg",
+  content_en: "Welcome to my presentation! My name is Emma and I am 8 years old. Today I present my poster because I want to **share my world** with you. This is my family. I have 4 people in my family: my mom, my dad, my sister, and me. Now I talk about my talents! I can **sing very well**, and I can also dance when I am happy. I am good at drawing too. When I **stand here**, I **feel very confident** because the audience **listen carefully**. I **introduce myself** with a big smile, and then I describe my project **in detail**. I am **so proud of my work**. **Thank you for listening**! This is my special day!",
   script: [
     { id: 1, text: "Welcome to my presentation!", vi: "Chào mừng đến với bài thuyết trình của tôi!" },
     { id: 2, text: "My name is Emma and I am 8 years old.", vi: "Tên tôi là Emma và tôi 8 tuổi." },
@@ -12,8 +14,6 @@ export default {
     { id: 10, text: "I introduce myself with a big smile, and then I describe my project in detail.", vi: "Tôi giới thiệu bản thân với nụ cười rộng, và sau đó tôi mô tả dự án của mình chi tiết." },
     { id: 11, text: "I am so proud of my work.", vi: "Tôi rất tự hào về công việc của mình vì tôi đã làm việc chăm chỉ." },
     { id: 12, text: "Thank you for listening!", vi: "Cảm ơn bạn đã lắng nghe tôi!" },
-    { id: 13, text: "This is my special day!", vi: "Bạn có câu hỏi nào về bài thuyết trình của tôi không?" }
+    { id: 13, text: "This is my special day!", vi: "Bạn có câu hỏi nào về bài thuyết trình của tôi không?" },
   ]
-,
-  content_en: `Welcome to my presentation! My name is Emma and I am 8 years old. Today I present my poster because I want to **share my world** with you. This is my family. I have 4 people in my family: my mom, my dad, my sister, and me. Now I talk about my talents! I can **sing very well**, and I can also dance when I am happy. I am good at drawing too. When I **stand here**, I **feel very confident** because the audience **listen carefully**. I **introduce myself** with a big smile, and then I describe my project **in detail**. I am **so proud of my work**. **Thank you for listening**! This is my special day!`
 };

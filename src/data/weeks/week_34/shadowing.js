@@ -1,7 +1,5 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper
-// Shadowing Station — Advanced Mode
-
 export default {
+  videoId: "XPZXpuoIndo",
   script: [
     { id: 1, text: "A very long time ago, there was a hard-working ant who lived in a small hill.", vi: "Rất lâu trước đây, có một con kiến chăm chỉ sống trên một gò đất nhỏ." },
     { id: 2, text: "There was also a lazy grasshopper who lived under a green leaf.", vi: "Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh." },
@@ -16,6 +14,6 @@ export default {
     { id: 11, text: "The ant gave the grasshopper some food from her winter store.", vi: "Con kiến cho châu chấu một ít thức ăn từ kho dự trữ mùa đông của cô ấy." },
     { id: 12, text: "All winter long, the two animals shared food together in the warm shelter.", vi: "Suốt mùa đông, hai con vật chia sẻ thức ăn cùng nhau trong nơi trú ẩn ấm áp." },
     { id: 13, text: "The grasshopper learned an important lesson: always work hard and prepare for the future.", vi: "Con châu chấu học được một bài học quan trọng: luôn làm việc chăm chỉ và chuẩn bị cho tương lai." },
-    { id: 14, text: "From that day on, both the ant and the grasshopper worked hard together for the rest of the year.", vi: "Từ ngày đó, cả kiến và châu chấu làm việc chăm chỉ cùng nhau suốt phần còn lại của năm." }
+    { id: 14, text: "From that day on, both the ant and the grasshopper worked hard together for the rest of the year.", vi: "Từ ngày đó, cả kiến và châu chấu làm việc chăm chỉ cùng nhau suốt phần còn lại của năm." },
   ]
 };

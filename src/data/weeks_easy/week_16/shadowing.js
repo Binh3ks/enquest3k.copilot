@@ -1,4 +1,6 @@
 export default {
+  videoId: "FIo1_1-xg60",
+  content_en: "Today is my first soccer game! I am very excited. Look! I am **running very fast**. My legs are moving. This is fun! My friend is **kicking the ball**. I am **catching it**. Now I am **passing it**. The ball has energy. It is in motion. The ball is moving! Our team is **playing soccer**. Everyone is **cheering loudly**. \\",
   script: [
     { id: 1, text: "Today is my first soccer game!", vi: "Hôm nay là trận bóng đầu tiên của tôi!" },
     { id: 2, text: "I am very excited.", vi: "Tôi rất phấn khích." },
@@ -24,11 +26,9 @@ export default {
     { id: 22, text: "They are happy.", vi: "Họ vui." },
     { id: 23, text: "I want to score a goal too!", vi: "Tôi muốn ghi bàn thắng nữa!" },
     { id: 24, text: "I love soccer!", vi: "Tôi yêu bóng đá!" },
-    { id: 25, text: "My mom watches me.", vi: "" },
-    { id: 26, text: "The grass is green.", vi: "" },
-    { id: 27, text: "My dad takes photos.", vi: "" },
-    { id: 28, text: "I drink water after the game.", vi: "" }
+    { id: 25, text: "My mom watches me.", vi: null },
+    { id: 26, text: "The grass is green.", vi: null },
+    { id: 27, text: "My dad takes photos.", vi: null },
+    { id: 28, text: "I drink water after the game.", vi: null },
   ]
-,
-  content_en: `Today is my first soccer game! I am very excited. Look! I am **running very fast**. My legs are moving. This is fun! My friend is **kicking the ball**. I am **catching it**. Now I am **passing it**. The ball has energy. It is in motion. The ball is moving! Our team is **playing soccer**. Everyone is **cheering loudly**. \\`
 };

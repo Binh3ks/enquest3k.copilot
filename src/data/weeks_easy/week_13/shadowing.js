@@ -1,6 +1,7 @@
 export default {
   title: "My Day",
-  audio_full: "/audio/week13_easy/shadowing_full.mp3",
+  videoId: "qD1pnquN_DM",
+  content_en: "My name is Tom. This is my day. I **wake up**. Mom wakes me up. I **brush my teeth**. I **eat breakfast**. I like bread. I **go to school**. I see my teacher. I play at school. I **play with** Ben. We have fun. I **have lunch**. Lunch is good. I come home. Mom is home. I **do homework**. I write my name. I **have dinner**. Dad is home too. Dinner is yummy. I **watch TV**. I watch cartoons. I **go to bed**. I close my eyes. Good night!",
   script: [
     { id: 1, text: "My name is Tom.", vi: "Tên tôi là Tom." },
     { id: 2, text: "This is my day.", vi: "Đây là một ngày của tôi." },
@@ -28,8 +29,6 @@ export default {
     { id: 24, text: "I watch cartoons.", vi: "Tôi xem hoạt hình." },
     { id: 25, text: "I go to bed.", vi: "Tôi đi ngủ." },
     { id: 26, text: "I close my eyes.", vi: "Tôi nhắm mắt." },
-    { id: 27, text: "Good night!", vi: "Chúc ngủ ngon!" }
+    { id: 27, text: "Good night!", vi: "Chúc ngủ ngon!" },
   ]
-,
-  content_en: `My name is Tom. This is my day. I **wake up**. Mom wakes me up. I **brush my teeth**. I **eat breakfast**. I like bread. I **go to school**. I see my teacher. I play at school. I **play with** Ben. We have fun. I **have lunch**. Lunch is good. I come home. Mom is home. I **do homework**. I write my name. I **have dinner**. Dad is home too. Dinner is yummy. I **watch TV**. I watch cartoons. I **go to bed**. I close my eyes. Good night!`
 };

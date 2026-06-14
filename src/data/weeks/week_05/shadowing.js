@@ -1,6 +1,7 @@
 export default {
   title: "The Mystery House",
-  audio_full: "/audio/week5/shadowing_full.mp3",
+  videoId: "drTyYqbz6Xk",
+  content_en: "**There is a big house on the hill**. It is a mystery house. Nobody knows what is inside. One day, I open the door. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find **the living room**. There is a big sofa and many shelves with books. In the kitchen, I open the cabinet and look in the fridge. There is food and drink inside! This mystery house has beautiful furniture. Now it is my new home. I love this mystery house!",
   script: [
     { id: 1, text: "There is a big house on the hill.", vi: "Có một ngôi nhà lớn trên đồi." },
     { id: 2, text: "It is a mystery house.", vi: "Đó là một ngôi nhà bí ẩn." },
@@ -15,8 +16,6 @@ export default {
     { id: 11, text: "There is food and drink inside!", vi: "Có thức ăn và đồ uống bên trong!" },
     { id: 12, text: "This mystery house has beautiful furniture.", vi: "Ngôi nhà bí ẩn này có đồ đạc đẹp." },
     { id: 13, text: "Now it is my new home.", vi: "Bây giờ đây là ngôi nhà mới của tôi." },
-    { id: 14, text: "I love this mystery house!", vi: "Tôi yêu ngôi nhà bí ẩn này!" }
+    { id: 14, text: "I love this mystery house!", vi: "Tôi yêu ngôi nhà bí ẩn này!" },
   ]
-,
-  content_en: `**There is a big house on the hill**. It is a mystery house. Nobody knows what is inside. One day, I open the door. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find **the living room**. There is a big sofa and many shelves with books. In the kitchen, I open the cabinet and look in the fridge. There is food and drink inside! This mystery house has beautiful furniture. Now it is my new home. I love this mystery house!`
 };

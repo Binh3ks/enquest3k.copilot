@@ -1,4 +1,12 @@
 export default {
+  videoId: "pcWBtzTnpb8",
+  content_en: `Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful. She arrived at the scene and opened her notebook immediately. The narrow lantern-lit streets were quiet, but someone had reported a mystery **last night**.
+
+Nova began the interview calmly. She had three questions for the suspect. "Where were you **yesterday morning**?" she asked. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a new clue **in her notebook**.
+
+She asked next: "What did you do **last night** and **last week**?" Again, the suspect **answered clearly** every question. Nova studied each clue carefully in the warm lantern light.
+
+Finally, Nova organized the case file and wrote her final report. She handed the report to the local police team **in Hoi An**. Every clue in her notebook had helped. Detective Nova **had solved the case** once again.`,
   script: [
     { id: 1, text: "Was working on a difficult case in the old town of Hoi An, Vietnam.", vi: "Detective Nova dang lam viec voi mot case kho o pho co Hoi An, Viet Nam." },
     { id: 2, text: "Nova was very careful.", vi: "Co ay den hien truong va lap tuc mo notebook." },
@@ -14,14 +22,6 @@ export default {
     { id: 12, text: "Finally, Nova organized the case file and wrote her final report.", vi: "Co ay da trao answer cho doi canh sat dia phuong o Hoi An." },
     { id: 13, text: "She handed the answer to the local police team in Hoi An.", vi: "Moi clue trong notebook da giup co." },
     { id: 14, text: "Every clue in her notebook had helped.", vi: "Detective Nova da giai quyet case them mot lan nua." },
-    { id: 15, text: "Detective Nova had solved the case once again.", vi: "" }
+    { id: 15, text: "Detective Nova had solved the case once again.", vi: null },
   ]
-,
-  content_en: `Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful. She arrived at the scene and opened her notebook immediately. The narrow lantern-lit streets were quiet, but someone had reported a mystery **last night**.
-
-Nova began the interview calmly. She had three questions for the suspect. "Where were you **yesterday morning**?" she asked. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a new clue **in her notebook**.
-
-She asked next: "What did you do **last night** and **last week**?" Again, the suspect **answered clearly** every question. Nova studied each clue carefully in the warm lantern light.
-
-Finally, Nova organized the case file and wrote her final report. She handed the report to the local police team **in Hoi An**. Every clue in her notebook had helped. Detective Nova **had solved the case** once again.`
 };

@@ -1,4 +1,6 @@
 export default {
+  videoId: "O3FdGPehN-E",
+  content_en: "Look! I found an album. It has old photos. This is a photo of me. I **was a baby**! I **was little**! I was little and cute. My face was round. In this photo, I was one year old. I was noisy. But here I was quiet. I was sleeping. My grandma says, \\",
   script: [
     { id: 1, text: "Look!", vi: "Nhìn kìa!" },
     { id: 2, text: "I found an album.", vi: "Tôi tìm thấy một album." },
@@ -29,8 +31,6 @@ export default {
     { id: 27, text: "The past was different.", vi: "Quá khứ khác rồi." },
     { id: 28, text: "But I remember.", vi: "Nhưng tôi nhớ." },
     { id: 29, text: "I remember when I was little.", vi: "Tôi nhớ khi tôi nhỏ bé." },
-    { id: 30, text: "I love my memories!", vi: "Tôi yêu kỷ niệm!" }
+    { id: 30, text: "I love my memories!", vi: "Tôi yêu kỷ niệm!" },
   ]
-,
-  content_en: `Look! I found an album. It has old photos. This is a photo of me. I **was a baby**! I **was little**! I was little and cute. My face was round. In this photo, I was one year old. I was noisy. But here I was quiet. I was sleeping. My grandma says, \\`
 };

@@ -1,6 +1,7 @@
 export default {
   title: "The Treasure Hunt",
-  audio_full: "/audio/week6/shadowing_full.mp3",
+  videoId: "fhe7vQjQBxM",
+  content_en: "Today is treasure hunt day! My friends and I **look for** hidden treasure. I **look on the floor**. No treasure there! I **look in the box**. Nothing! My friend finds a clue! The clue says: 'Look **next to the window**.' We run to the window. There is another clue **on the wall**! It says: 'The treasure is **in the room**. **Look under the big desk**.' We **look under the big desk**. We **find it**! A box full of gold coins! The treasure is ours! We are happy. Hide and seek is fun. Hunting for treasure makes us work together. Next time, I will hide the treasure **next to the door**!",
   script: [
     { id: 1, text: "Today is treasure hunt day!", vi: "Hôm nay là ngày săn kho báu!" },
     { id: 2, text: "My friends and I look for hidden treasure.", vi: "Bạn bè tôi và tôi tìm kiếm kho báu ẩn giấu." },
@@ -15,8 +16,6 @@ export default {
     { id: 11, text: "A box full of gold coins!", vi: "Một hộp đầy tiền vàng!" },
     { id: 12, text: "The treasure is ours!", vi: "Kho báu là của chúng tôi!" },
     { id: 13, text: "Hunting for treasure makes us work together.", vi: "Săn tìm kho báu khiến chúng tôi làm việc cùng nhau." },
-    { id: 14, text: "Next time, I will hide the treasure next to the door!", vi: "Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!" }
+    { id: 14, text: "Next time, I will hide the treasure next to the door!", vi: "Lần sau, tôi sẽ giấu kho báu bên cạnh cửa ra vào!" },
   ]
-,
-  content_en: `Today is treasure hunt day! My friends and I **look for** hidden treasure. I **look on the floor**. No treasure there! I **look in the box**. Nothing! My friend finds a clue! The clue says: 'Look **next to the window**.' We run to the window. There is another clue **on the wall**! It says: 'The treasure is **in the room**. **Look under the big desk**.' We **look under the big desk**. We **find it**! A box full of gold coins! The treasure is ours! We are happy. Hide and seek is fun. Hunting for treasure makes us work together. Next time, I will hide the treasure **next to the door**!`
 };

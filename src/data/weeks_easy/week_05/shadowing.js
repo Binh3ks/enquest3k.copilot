@@ -1,6 +1,7 @@
 export default {
   title: "My House",
-  audio_full: "/audio/week5_easy/shadowing_full.mp3",
+  videoId: "drTyYqbz6Xk",
+  content_en: "My name is Tim. I live in a house. My house has many rooms. I sleep **in my bedroom**. I have a soft bed **in my bedroom**. I eat in the kitchen. I **sit on** a chair **at the table**. I **wash my hands** **in the bathroom**. I **watch TV** **in the living room** **every evening**. I like **to explore** every room. Every room in my house is fun. I love my house!",
   script: [
     { id: 1, text: "My name is Tim.", vi: "Tên tôi là Tim." },
     { id: 2, text: "I live in a house.", vi: "Tôi sống trong một ngôi nhà." },
@@ -12,8 +13,6 @@ export default {
     { id: 8, text: "I wash my hands in the bathroom.", vi: "Tôi rửa tay trong phòng tắm." },
     { id: 9, text: "I watch TV in the living room every evening.", vi: "Tôi xem TV trong phòng khách mỗi tối." },
     { id: 10, text: "Every room in my house is fun.", vi: "Mỗi phòng trong nhà tôi đều vui." },
-    { id: 11, text: "I love my house!", vi: "Tôi yêu ngôi nhà của mình!" }
+    { id: 11, text: "I love my house!", vi: "Tôi yêu ngôi nhà của mình!" },
   ]
-,
-  content_en: `My name is Tim. I live in a house. My house has many rooms. I sleep **in my bedroom**. I have a soft bed **in my bedroom**. I eat in the kitchen. I **sit on** a chair **at the table**. I **wash my hands** **in the bathroom**. I **watch TV** **in the living room** **every evening**. I like **to explore** every room. Every room in my house is fun. I love my house!`
 };

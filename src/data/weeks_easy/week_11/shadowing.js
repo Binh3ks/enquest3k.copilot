@@ -1,6 +1,7 @@
 export default {
   title: "My Weekend",
-  audio_full: "/audio/week11_easy/shadowing_full_easy.mp3",
+  videoId: "fpo3b33iCtU",
+  content_en: "Today is Saturday! I am happy. I **go to** the park. I **play at** the park. It is fun! Then I **go to** the library. I **read a book** **at the library**. I like books! My mom and I **go to** the store. We buy food **at the store**. I **help mom**! We **go to** the playground. I **play at** the playground. I **slide down**! **On Sunday**, I **go to** the zoo. I see a big lion **at the zoo**! Then I **eat lunch** **at home**. The food is good! I **go to** school **on Monday**. I like my weekend!",
   script: [
     { id: 1, text: "Today is Saturday!", vi: "Hôm nay là thứ Bảy!" },
     { id: 2, text: "I am happy.", vi: "Tôi vui." },
@@ -21,8 +22,6 @@ export default {
     { id: 17, text: "I eat lunch at home.", vi: "Tôi ăn trưa ở nhà." },
     { id: 18, text: "The food is good!", vi: "Đồ ăn ngon!" },
     { id: 19, text: "I go to school on Monday.", vi: "Tôi đi học vào thứ Hai." },
-    { id: 20, text: "I like my weekend!", vi: "Tôi thích cuối tuần!" }
+    { id: 20, text: "I like my weekend!", vi: "Tôi thích cuối tuần!" },
   ]
-,
-  content_en: `Today is Saturday! I am happy. I **go to** the park. I **play at** the park. It is fun! Then I **go to** the library. I **read a book** **at the library**. I like books! My mom and I **go to** the store. We buy food **at the store**. I **help mom**! We **go to** the playground. I **play at** the playground. I **slide down**! **On Sunday**, I **go to** the zoo. I see a big lion **at the zoo**! Then I **eat lunch** **at home**. The food is good! I **go to** school **on Monday**. I like my weekend!`
 };

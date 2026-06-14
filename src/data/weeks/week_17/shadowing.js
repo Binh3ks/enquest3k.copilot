@@ -1,4 +1,6 @@
 export default {
+  videoId: "4qqxeWc5ql0",
+  content_en: "Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: \\",
   script: [
     { id: 1, text: "Today the weather is changing!", vi: "Hôm nay thời tiết đang thay đổi!" },
     { id: 2, text: "This morning, it is raining very hard.", vi: "Sáng nay, trời đang mưa rất to." },
@@ -26,8 +28,6 @@ export default {
     { id: 24, text: "I take off my coat because it is warm outside now.", vi: "Tôi cởi áo khoác vì bây giờ ấm bên ngoài." },
     { id: 25, text: "Linh takes off her hat too.", vi: "Linh cũng bỏ mũ ra." },
     { id: 26, text: "Nam closes his umbrella.", vi: "Nam đóng ô lại." },
-    { id: 27, text: "We love learning about weather!", vi: "Chúng tôi thích tìm hiểu về thời tiết!" }
+    { id: 27, text: "We love learning about weather!", vi: "Chúng tôi thích tìm hiểu về thời tiết!" },
   ]
-,
-  content_en: `Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: \\`
 };

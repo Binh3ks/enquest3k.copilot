@@ -1,6 +1,7 @@
 export default {
   title: "The Monday Morning Count",
-  audio_full: "/audio/week8/shadowing_full.mp3",
+  videoId: "AS5nhKzaOqo",
+  content_en: "It is Monday morning. The students arrive **at school**. **There are 30 students in our class**! Every student has a bag. There are bags on the floor and **on the hooks**. There are desks **in neat rows**. There are also chairs — one chair for each student! The teacher writes on the board. There are markers in the tray next to the board. There are pencils **in every pencil case**. There are papers **on each desk** for today's art project. There are crayons and markers in the art box. There are three shelves **on the wall**, full of books. There are **so many things** in our busy classroom! We love counting **at school**!",
   script: [
     { id: 1, text: "It is Monday morning.", vi: "Đó là sáng thứ Hai." },
     { id: 2, text: "The students arrive at school.", vi: "Các học sinh đến trường." },
@@ -16,8 +17,6 @@ export default {
     { id: 12, text: "There are crayons and markers in the art box.", vi: "Có bút sáp và bút lông trong hộp đồ nghệ thuật." },
     { id: 13, text: "There are three shelves on the wall, full of books.", vi: "Có ba cái kệ trên tường, đầy sách." },
     { id: 14, text: "There are so many things in our busy classroom!", vi: "Có rất nhiều thứ trong lớp học bận rộn của chúng tôi!" },
-    { id: 15, text: "We love counting at school!", vi: "Chúng tôi thích đếm ở trường!" }
+    { id: 15, text: "We love counting at school!", vi: "Chúng tôi thích đếm ở trường!" },
   ]
-,
-  content_en: `It is Monday morning. The students arrive **at school**. **There are 30 students in our class**! Every student has a bag. There are bags on the floor and **on the hooks**. There are desks **in neat rows**. There are also chairs — one chair for each student! The teacher writes on the board. There are markers in the tray next to the board. There are pencils **in every pencil case**. There are papers **on each desk** for today's art project. There are crayons and markers in the art box. There are three shelves **on the wall**, full of books. There are **so many things** in our busy classroom! We love counting **at school**!`
 };

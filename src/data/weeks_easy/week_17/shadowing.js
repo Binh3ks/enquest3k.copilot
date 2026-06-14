@@ -1,4 +1,6 @@
 export default {
+  videoId: "4qqxeWc5ql0",
+  content_en: "Today **it is raining**! I look out the window. The sky is gray. It is cold outside. I **pick up my coat**. I **put on my boots**. I carry my umbrella. Now I am ready! I am wearing my coat and boots. I walk to school. My feet stay dry. My body is warm. The rain **fall from the clouds**. I **put on my raincoat**. I love **rainy days**! I can **jump in puddles**. The sound of rain is nice. I wear my raincoat too. Rain helps the trees grow.",
   script: [
     { id: 1, text: "Today it is raining!", vi: "Hôm nay trời đang mưa!" },
     { id: 2, text: "I look out the window.", vi: "Tôi nhìn ra cửa sổ." },
@@ -20,10 +22,8 @@ export default {
     { id: 18, text: "But today it is raining.", vi: "Đôi khi trời nắng." },
     { id: 19, text: "I love rainy days!", vi: "Nhưng hôm nay trời đang mưa." },
     { id: 20, text: "I can jump in puddles.", vi: "Tôi thích những ngày mưa!" },
-    { id: 21, text: "The sound of rain is nice.", vi: "" },
-    { id: 22, text: "I wear my raincoat too.", vi: "" },
-    { id: 23, text: "Rain helps the trees grow.", vi: "" }
+    { id: 21, text: "The sound of rain is nice.", vi: null },
+    { id: 22, text: "I wear my raincoat too.", vi: null },
+    { id: 23, text: "Rain helps the trees grow.", vi: null },
   ]
-,
-  content_en: `Today **it is raining**! I look out the window. The sky is gray. It is cold outside. I **pick up my coat**. I **put on my boots**. I carry my umbrella. Now I am ready! I am wearing my coat and boots. I walk to school. My feet stay dry. My body is warm. The rain **fall from the clouds**. I **put on my raincoat**. I love **rainy days**! I can **jump in puddles**. The sound of rain is nice. I wear my raincoat too. Rain helps the trees grow.`
 };

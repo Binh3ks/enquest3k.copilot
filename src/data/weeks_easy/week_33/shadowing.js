@@ -1,4 +1,12 @@
 export default {
+  videoId: "rgbGxsquVvE",
+  content_en: `Jake had a bad day at school last Tuesday. He was late, so he ran in the corridor. He hit his knee on the table. He fell down and broke a glass cup. His books fell on the floor and his pencil case opened. Everything went wrong that morning.
+
+Jake's knee **was hurt** a lot. The nurse came and put a cold pack on his knee. His arm **was hurt** too. His friends saw him and felt sorry for him. Everyone at school knew Jake had a very bad day.
+
+The teacher asked Jake what happened. Jake told the truth. The teacher explained an important lesson — everyone must **walk carefully** in the corridor. Jake understood and promised to be careful. His teacher smiled and gave him a pass to go home early.
+
+At home, Jake rested and his knee **got better**. He learned a big lesson: always **walk carefully** in the corridor. He never forgot this lesson. The next day, Jake walked slowly and safely to class.`,
   script: [
     { id: 1, text: "Jake had a bad day at school last Tuesday.", vi: "Jake có một ngày tồi tệ ở trường vào thứ Ba tuần trước." },
     { id: 2, text: "He was late, so he ran in the corridor.", vi: "Cậu bị muộn, nên cậu chạy trong hành lang." },
@@ -19,13 +27,6 @@ export default {
     { id: 17, text: "At home, Jake rested and his knee got better.", vi: "Ở nhà, Jake nghỉ ngơi và đầu gối khá hơn." },
     { id: 18, text: "He learned a big lesson: always walk carefully in the corridor.", vi: "Cậu học được một bài học lớn: luôn đi cẩn thận trong hành lang." },
     { id: 19, text: "He never forgot this lesson.", vi: "Cậu không bao giờ quên bài học này." },
-    { id: 20, text: "The next day, Jake walked slowly and safely to class.", vi: "Ngày hôm sau, Jake đi chậm và an toàn đến lớp." }
-  ],
-  content_en: `Jake had a bad day at school last Tuesday. He was late, so he ran in the corridor. He hit his knee on the table. He fell down and broke a glass cup. His books fell on the floor and his pencil case opened. Everything went wrong that morning.
-
-Jake's knee **was hurt** a lot. The nurse came and put a cold pack on his knee. His arm **was hurt** too. His friends saw him and felt sorry for him. Everyone at school knew Jake had a very bad day.
-
-The teacher asked Jake what happened. Jake told the truth. The teacher explained an important lesson — everyone must **walk carefully** in the corridor. Jake understood and promised to be careful. His teacher smiled and gave him a pass to go home early.
-
-At home, Jake rested and his knee **got better**. He learned a big lesson: always **walk carefully** in the corridor. He never forgot this lesson. The next day, Jake walked slowly and safely to class.`
+    { id: 20, text: "The next day, Jake walked slowly and safely to class.", vi: "Ngày hôm sau, Jake đi chậm và an toàn đến lớp." },
+  ]
 };

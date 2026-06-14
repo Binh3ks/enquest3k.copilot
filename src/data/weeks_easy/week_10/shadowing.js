@@ -1,6 +1,7 @@
 export default {
   title: "My Farm Visit",
-  audio_full: "/audio/week10_easy/shadowing_full.mp3",
+  videoId: "t1tSx5cI9eg",
+  content_en: "Today I visit a farm. The farm is quiet. I am happy! I see a **big brown cow**. The animal **eats grass** in the field. I see a **small white chicken**. The bird **runs fast**! The farm is clean. The field is green. I see **tall trees**. The countryside is peaceful. I see **farm animals**. My uncle says the farm is nice. I agree!",
   script: [
     { id: 1, text: "Today I visit a farm.", vi: "Hôm nay tôi đến thăm trang trại." },
     { id: 2, text: "The farm is quiet.", vi: "Trang trại yên tĩnh." },
@@ -16,7 +17,6 @@ export default {
     { id: 12, text: "I see farm animals.", vi: "Tôi thấy động vật trên trang trại." },
     { id: 13, text: "I love the farm!", vi: "Tôi yêu trang trại!" },
     { id: 14, text: "My uncle says the farm is nice.", vi: "Chú tôi nói trang trại đẹp." },
-    { id: 15, text: "I agree!", vi: "Tôi đồng ý!" }
-  ],
-  content_en: `Today I visit a farm. The farm is quiet. I am happy! I see a **big brown cow**. The animal **eats grass** in the field. I see a **small white chicken**. The bird **runs fast**! The farm is clean. The field is green. I see **tall trees**. The countryside is peaceful. I see **farm animals**. My uncle says the farm is nice. I agree!`
+    { id: 15, text: "I agree!", vi: "Tôi đồng ý!" },
+  ]
 };
