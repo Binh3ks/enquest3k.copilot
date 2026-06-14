@@ -1,5 +1,5 @@
 export default {
-  videoId: "udmQXJn5ZyA",
+  videoId: "IJoAcD0oUww",
   content_en: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger. Many things are changing because of pollution. Factories make a lot of smoke. Cars and buses produce harmful gases. Cutting down trees destroys animal homes. Throwing away plastic pollutes our oceans and rivers. Climate change is a serious problem. The Earth is getting warmer. Polar ice is melting. Sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Solar power and wind power can replace fossil fuels. We must act now to save our planet.",
   script: [
     { id: 1, text: "Our planet is very beautiful.", vi: "Rất lâu trước đây, có một con kiến chăm chỉ sống trên một gò đất nhỏ." },

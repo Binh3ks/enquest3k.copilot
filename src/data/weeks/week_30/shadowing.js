@@ -1,6 +1,6 @@
 export default {
   title: "Shadowing: A Special Picnic Day",
-  videoId: "cS3jchx0JJs",
+  videoId: "gfbSIdwL0FE",
   content_en: `Last Sunday, the children **had a picnic** in the park. Tom's dad is a good cook and made **cheese sandwiches**, cookies, and cold lemonade. He put everything in a big **picnic basket** and said, 'A good cook always prepares the best food!'
 
 Mia's mum brought **fresh strawberries** and said, 'The more colourful, the healthier!' Luna's dad is an engineer who designed the beautiful wooden bridge they crossed the river on. 'I helped to **build this bridge**!' he said proudly.

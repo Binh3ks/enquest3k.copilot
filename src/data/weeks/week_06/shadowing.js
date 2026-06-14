@@ -1,6 +1,6 @@
 export default {
   title: "The Treasure Hunt",
-  videoId: "fhe7vQjQBxM",
+  videoId: "ewV4gJlP5hM",
   content_en: "Today is treasure hunt day! My friends and I **look for** hidden treasure. I **look on the floor**. No treasure there! I **look in the box**. Nothing! My friend finds a clue! The clue says: 'Look **next to the window**.' We run to the window. There is another clue **on the wall**! It says: 'The treasure is **in the room**. **Look under the big desk**.' We **look under the big desk**. We **find it**! A box full of gold coins! The treasure is ours! We are happy. Hide and seek is fun. Hunting for treasure makes us work together. Next time, I will hide the treasure **next to the door**!",
   script: [
     { id: 1, text: "Today is treasure hunt day!", vi: "Hôm nay là ngày săn kho báu!" },

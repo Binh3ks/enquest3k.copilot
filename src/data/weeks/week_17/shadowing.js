@@ -1,5 +1,5 @@
 export default {
-  videoId: "4qqxeWc5ql0",
+  videoId: "kqO42jnccO8",
   content_en: "Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: \\",
   script: [
     { id: 1, text: "Today the weather is changing!", vi: "Hôm nay thời tiết đang thay đổi!" },

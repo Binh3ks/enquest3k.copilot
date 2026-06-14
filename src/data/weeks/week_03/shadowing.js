@@ -1,6 +1,6 @@
 export default {
   title: "My Teacher Nova",
-  videoId: "t9MwMrawF_M",
+  videoId: "vGKmFzRmik8",
   content_en: "My teacher is Nova. She is very tall and beautiful with a lovely personality. She has **long black hair** that is always neat and tidy. She has **big brown eyes** that sparkle brightly when she smiles. She wears glasses to see the board clearly. She has a kind face that makes everyone feel welcome and safe. She has a **warm smile** for **her students**. I like my teacher because she is very nice. She is not short like me. Her hair is straight and shiny. I want to be tall like her. She is smart and caring. Her eyes are gentle and kind. I am very happy **in her class**.",
   script: [
     { id: 1, text: "My teacher is Nova.", vi: null },
