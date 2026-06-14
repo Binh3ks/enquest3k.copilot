@@ -103,14 +103,17 @@ export default function SentenceCard({
           )}
           <button
             onClick={() => onPractice(sentence)}
-            className={`p-2.5 rounded-full shadow-sm transition-all active:scale-95 ${
+            className={`group/mic relative p-2.5 rounded-full shadow-sm transition-all active:scale-95 ${
               isPracticed
                 ? 'bg-orange-500 text-white hover:bg-orange-600'
                 : `bg-${themeColor}-600 text-white hover:bg-${themeColor}-700`
             }`}
-            title="Practice"
+            title="Click to record yourself"
           >
             <Mic className="w-4 h-4" />
+            <span className="pointer-events-none absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover/mic:opacity-100 transition-opacity">
+              Click to record
+            </span>
           </button>
         </div>
       </div>

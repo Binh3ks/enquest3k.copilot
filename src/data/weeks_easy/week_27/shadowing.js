@@ -1,6 +1,6 @@
 export default {
   title: "Maya's Growing Plant",
-  videoId: "sFrHK7cHzkA",
+  videoId: "D1Ymc311XS8",
   content_en: `It was Monday morning. Maya came to school with a pot of soil, some seeds, and a notebook.
 
 'Today we start our plant project,' said Mr. Chen. 'Watch your seed every day and write what you see.'

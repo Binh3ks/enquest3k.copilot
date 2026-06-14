@@ -3,13 +3,14 @@ import { speakText } from '../utils/AudioHelper';
 
 const SPEED_OPTIONS = [0.5, 0.75, 1, 1.25, 1.5];
 const STORAGE_KEY = 'shadowing_speed';
+const DEFAULT_SPEED = 0.7;  // Slower than 0.8 for better shadowing practice
 
 function getStoredSpeed() {
   try {
     const v = parseFloat(localStorage.getItem(STORAGE_KEY));
-    return SPEED_OPTIONS.includes(v) ? v : 0.8;
+    return SPEED_OPTIONS.includes(v) ? v : DEFAULT_SPEED;
   } catch {
-    return 0.8;
+    return DEFAULT_SPEED;
   }
 }
 
@@ -27,7 +28,11 @@ export function useShadowingPlayer(script, weekNumber, mode) {
 
   const setSpeed = useCallback((s) => {
     setSpeedState(s);
-    try { localStorage.setItem(STORAGE_KEY, String(s)); } catch { /* ignore */ }
+    try {
+      // Persist in both keys: shadowing_speed (hook-local) and tts_speed (voiceService uses this)
+      localStorage.setItem(STORAGE_KEY, String(s));
+      localStorage.setItem('tts_speed', String(s));
+    } catch { /* ignore */ }
   }, []);
 
   // Play a single sentence
@@ -46,7 +51,7 @@ export function useShadowingPlayer(script, weekNumber, mode) {
     playbackRef.current = { sentenceId };
   }, [speed, weekNumber, mode]);
 
-  // Play all sentences sequentially
+  // Play all sentences sequentially with pause between each
   const playAll = useCallback((sentences) => {
     if (isPlayingAll) {
       // Stop
@@ -70,7 +75,13 @@ export function useShadowingPlayer(script, weekNumber, mode) {
       const text = (s.text || '').replace(/\*\*/g, '');
       setActiveSentenceId(s.id);
       speakText(text, null, speed, () => {
-        playIndex(idx + 1);
+        // Pause between sentences (scaled by speed)
+        const pauseMs = Math.max(400, 800 * speed);
+        setTimeout(() => {
+          if (!sequenceRef.current.cancelled) {
+            playIndex(idx + 1);
+          }
+        }, pauseMs);
       }, 'shadowing', weekNumber, mode);
     };
 

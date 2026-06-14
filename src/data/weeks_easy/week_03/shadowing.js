@@ -1,6 +1,6 @@
 export default {
   title: "Looking in the Mirror",
-  videoId: "t9MwMrawF_M",
+  videoId: "vGKmFzRmik8",
   content_en: "I look in the mirror **every day**. I see my face. I have two brown eyes. I have hair **on my head**. My hair is straight and black. I am not very tall yet. I am short **for my age**. I have a happy smile today. My friend **wears glasses** to read. Her hair is curly and long. We are good friends and look different **from each other**.",
   script: [
     { id: 1, text: "I look in the mirror every day.", vi: null },
