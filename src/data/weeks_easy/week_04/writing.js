@@ -14,20 +14,20 @@ export default {
       "answers": ["Mia"]
     },
     {
-      "template": "I ___ with my toys ___.",
-      "answers": ["play", "every afternoon"]
+      "template": "I ___ with my toys every afternoon.",
+      "answers": ["play"]
     },
     {
       "template": "I ___ pictures of animals and flowers.",
       "answers": ["draw"]
     },
     {
-      "template": "I ___ books ___ bed.",
-      "answers": ["read", "before"]
+      "template": "I ___ books before bed.",
+      "answers": ["read"]
     },
     {
-      "template": "When I ___, I ___. When I draw, I ___.",
-      "answers": ["play", "smile", "laugh with joy"]
+      "template": "When I play, I ___. When I draw, I laugh.",
+      "answers": ["smile"]
     },
     {
       "template": "I feel ___ when I read.",

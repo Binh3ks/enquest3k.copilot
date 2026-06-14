@@ -11,27 +11,31 @@ export default {
   sentence_frames: [
     {
       "template": "My name is ___.",
-      "answers": ["Alex"]
+      "answers": ["Tim"]
     },
     {
-      "template": "I am ___ years old.",
-      "answers": ["eight"]
+      "template": "I ___ in a house.",
+      "answers": ["live"]
     },
     {
-      "template": "I am a ___.",
-      "answers": ["student"]
+      "template": "My house has ___ rooms.",
+      "answers": ["many"]
     },
     {
-      "template": "I sit ___ to my friend ___.",
-      "answers": ["next to", "Lily"]
+      "template": "I sleep in my ___ and have a soft ___.",
+      "answers": ["bedroom","bed"]
     },
     {
-      "template": "I have a ___ pen and a ___ book ___ my bag.",
-      "answers": ["blue", "story", "in"]
+      "template": "I eat in the ___ and sit at the table.",
+      "answers": ["kitchen"]
     },
     {
-      "template": "I can see a colorful picture ___ the wall.",
-      "answers": ["on"]
+      "template": "I ___ my hands in the bathroom.",
+      "answers": ["wash"]
+    },
+    {
+      "template": "I watch TV in the ___ every evening.",
+      "answers": ["living room"]
     }
   ],
   hints: {

@@ -10,28 +10,28 @@ export default {
   topic_talk_prompt: "Tell me about your family!",
   sentence_frames: [
     {
-      "template": "This is my ___. She is ___.",
-      "answers": ["mother", "kind"]
+      "template": "This is my ___. She is kind.",
+      "answers": ["mother"]
     },
     {
-      "template": "She ___ for us ___.",
-      "answers": ["makes food", "every day"]
+      "template": "She ___ food for us every day.",
+      "answers": ["makes"]
     },
     {
-      "template": "This is my ___. He is ___.",
-      "answers": ["father", "strong"]
+      "template": "This is my ___. He is strong.",
+      "answers": ["father"]
     },
     {
-      "template": "He ___ with me ___ the park.",
-      "answers": ["plays", "in"]
+      "template": "He ___ with me in the park.",
+      "answers": ["plays"]
     },
     {
-      "template": "My ___ ___ helps me with ___.",
-      "answers": ["big brother", "helps", "homework"]
+      "template": "My big brother ___ me with homework.",
+      "answers": ["helps"]
     },
     {
       "template": "We ___ each other and ___ together.",
-      "answers": ["love", "work"]
+      "answers": ["love","work"]
     }
   ],
   hints: {

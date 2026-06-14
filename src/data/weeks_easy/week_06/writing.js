@@ -14,24 +14,24 @@ export default {
       "answers": ["look"]
     },
     {
-      "template": "I look ___ the floor. I look ___ the box.",
-      "answers": ["on", "in"]
+      "template": "I look ___ the floor.",
+      "answers": ["on"]
     },
     {
-      "template": "My friend ___ me. He looks ___ the desk.",
-      "answers": ["helps", "under"]
+      "template": "I look ___ the box.",
+      "answers": ["in"]
     },
     {
-      "template": "He finds it! The toy car is ___ the desk!",
+      "template": "My friend helps me. He looks ___ the desk.",
       "answers": ["under"]
     },
     {
-      "template": "Now I look for my ball. It is ___ ___ the door.",
-      "answers": ["next to"]
+      "template": "He finds it! The toy car is under the ___.",
+      "answers": ["desk"]
     },
     {
-      "template": "We play ___. I hide my ball in the ___. My friend hides his toy ___ the window.",
-      "answers": ["hide and seek", "box", "next to"]
+      "template": "Now I look for my ball. It is ___ the door.",
+      "answers": ["next to"]
     }
   ],
   hints: {

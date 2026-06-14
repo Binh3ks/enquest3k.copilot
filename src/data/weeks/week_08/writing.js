@@ -10,32 +10,32 @@ export default {
   topic_talk_prompt: "Give me a full detailed description of your classroom!",
   sentence_frames: [
     {
-      "template": "My classroom is ___ and ___ because the walls are covered with ___ and ___.",
-      "answers": ["very bright", "cheerful", "colorful posters", "student artwork"]
+      "template": "My classroom is very bright and cheerful because the walls are covered with colorful ___.",
+      "answers": ["posters"]
     },
     {
-      "template": "There are exactly ___ students and we sit at ___ arranged in ___.",
-      "answers": ["twenty-eight", "wooden desks", "four rows"]
+      "template": "There are exactly twenty-eight students and we sit at wooden desks arranged in four ___.",
+      "answers": ["rows"]
     },
     {
-      "template": "On the front wall there is ___ and ___ that the teacher uses every day.",
-      "answers": ["a large whiteboard", "two interactive screens"]
+      "template": "On the front wall there is a large whiteboard and two ___ screens.",
+      "answers": ["interactive"]
     },
     {
-      "template": "Along the back wall there is ___ with ___ organised by subject.",
-      "answers": ["a tall bookshelf", "over a hundred books"]
+      "template": "Along the back wall there is a tall bookshelf with over a hundred ___ organized by subject.",
+      "answers": ["books"]
     },
     {
-      "template": "Our classroom also has a ___ with ___ where we can sit and read quietly.",
-      "answers": ["reading corner", "soft cushions"]
+      "template": "Our classroom also has a reading corner with soft ___ where we can sit and read quietly.",
+      "answers": ["cushions"]
     },
     {
-      "template": "I feel ___ of our classroom because we all help to keep it ___.",
-      "answers": ["proud", "neat and tidy"]
+      "template": "I feel ___ of our classroom because we all help to keep it neat and tidy.",
+      "answers": ["proud"]
     },
     {
-      "template": "The teacher uses the ___ and ___ to teach us new things every day.",
-      "answers": ["whiteboard", "interactive screens"]
+      "template": "The teacher uses the whiteboard and interactive screens to teach us new things ___.",
+      "answers": ["every day"]
     },
     {
       "template": "I love coming to our classroom because it is ___ and we are a great team.",

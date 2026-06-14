@@ -11,31 +11,31 @@ export default {
   sentence_frames: [
     {
       "template": "My name is ___ and I am ___ years old.",
-      "answers": ["Alex", "eight"]
+      "answers": ["Alex","eight"]
     },
     {
       "template": "I am a ___ at ___ School.",
-      "answers": ["new student", "Greenwood Elementary"]
+      "answers": ["new student","Greenwood Elementary"]
     },
     {
       "template": "Every morning, I ___ and ___ for school.",
-      "answers": ["wake up early", "get ready"]
+      "answers": ["wake up early","get ready"]
     },
     {
-      "template": "My teacher is ___ and she is ___.",
-      "answers": ["Ms. Johnson", "very kind and patient"]
+      "template": "My teacher is Ms. Johnson and she is very ___.",
+      "answers": ["kind"]
     },
     {
-      "template": "She teaches us ___, ___, and ___.",
-      "answers": ["English", "Math", "Science"]
+      "template": "She teaches us English, Math, and ___.",
+      "answers": ["Science"]
     },
     {
-      "template": "My backpack is heavy because I carry my ___ and ___ every day.",
-      "answers": ["story book", "small notebook"]
+      "template": "My backpack is heavy because I carry my story book and ___ every day.",
+      "answers": ["small notebook"]
     },
     {
       "template": "I love ___ and ___ every day.",
-      "answers": ["learning new things", "studying"]
+      "answers": ["learning new things","studying"]
     },
     {
       "template": "I want to become a ___ when I grow up.",

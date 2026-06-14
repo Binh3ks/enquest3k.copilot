@@ -10,28 +10,28 @@ export default {
   topic_talk_prompt: "What is inside your school bag?",
   sentence_frames: [
     {
-      "template": "There is a ___ on my bed. I ___ it.",
-      "answers": ["backpack", "open"]
+      "template": "There is a ___ on my bed. I open it.",
+      "answers": ["backpack"]
     },
     {
-      "template": "There is a ___ pencil and a ___ crayon inside.",
-      "answers": ["yellow", "red"]
+      "template": "There is a ___ pencil and a red crayon inside.",
+      "answers": ["yellow"]
     },
     {
-      "template": "There is blank ___ in the bag.",
-      "answers": ["paper"]
+      "template": "There is ___ paper in the bag.",
+      "answers": ["blank"]
     },
     {
-      "template": "There is a ___ folder ___ my homework.",
-      "answers": ["blue", "for"]
+      "template": "There is a blue folder ___ my homework.",
+      "answers": ["for"]
     },
     {
-      "template": "I see my ___. There is a water bottle ___ it.",
-      "answers": ["lunch box", "next to"]
+      "template": "I see my lunch ___. There is a water bottle next to it.",
+      "answers": ["box"]
     },
     {
-      "template": "There is white ___ in my pencil case. Now I am ___ for school!",
-      "answers": ["glue", "ready"]
+      "template": "Now I am ___ for school!",
+      "answers": ["ready"]
     }
   ],
   hints: {

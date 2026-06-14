@@ -26,12 +26,12 @@ export default {
       "answers": ["at"]
     },
     {
-      "template": "I open my bag and ___ out my ___.",
-      "answers": ["take", "pencil"]
+      "template": "I open my bag and take out my ___.",
+      "answers": ["pencil"]
     },
     {
-      "template": "The teacher ___ on the board. There are ___ on the shelves.",
-      "answers": ["writes", "books"]
+      "template": "The teacher writes on the ___ and there are books on the shelves.",
+      "answers": ["board"]
     }
   ],
   hints: {

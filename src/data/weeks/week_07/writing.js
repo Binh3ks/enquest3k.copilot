@@ -10,36 +10,36 @@ export default {
   topic_talk_prompt: "Tell me everything that is in your school bag and why!",
   sentence_frames: [
     {
-      "template": "In my backpack there is a ___, a ___, and a ___ with ___ and an eraser inside.",
-      "answers": ["notebook", "textbook", "pencil case", "colored pencils"]
+      "template": "In my backpack there is a notebook, a textbook, and a ___ case.",
+      "answers": ["pencil"]
     },
     {
-      "template": "I also carry a ___ and a ___ because I get hungry between lessons.",
-      "answers": ["water bottle", "healthy snack"]
+      "template": "I also carry a water bottle and a ___ because I get hungry.",
+      "answers": ["snack"]
     },
     {
-      "template": "My bag is ___ and it has a ___ at the front for my ___ and ___. ",
-      "answers": ["dark blue", "small pocket", "bus card", "library card"]
+      "template": "My bag is dark blue and it has a ___ pocket at the front.",
+      "answers": ["small"]
     },
     {
-      "template": "It is quite ___ but I do not mind because I love being ___ and ready.",
-      "answers": ["heavy", "organised"]
+      "template": "It is quite heavy but I do not mind because I love being ___ and ready.",
+      "answers": ["organised"]
     },
     {
-      "template": "Being ___ makes me feel ___ every day.",
-      "answers": ["prepared", "confident"]
+      "template": "Being prepared makes me feel ___ every day.",
+      "answers": ["confident"]
     },
     {
-      "template": "I pack my bag ___ every morning so I do not forget anything.",
-      "answers": ["very carefully"]
+      "template": "I pack my bag very ___ every morning.",
+      "answers": ["carefully"]
     },
     {
-      "template": "I use my ___ to write and draw in class.",
-      "answers": ["colored pencils"]
+      "template": "I use my colored pencils to ___ and draw in class.",
+      "answers": ["write"]
     },
     {
-      "template": "Every afternoon I check my bag to make sure I have ___ ___ for the next day.",
-      "answers": ["everything ready"]
+      "template": "Every afternoon I check my bag to make sure I have everything ___ for the next day.",
+      "answers": ["ready"]
     }
   ],
   hints: {

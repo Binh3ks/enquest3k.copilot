@@ -10,36 +10,36 @@ export default {
   topic_talk_prompt: "Describe your house and your favorite room!",
   sentence_frames: [
     {
-      "template": "There is a ___ on the ___. Nobody knows what is inside.",
-      "answers": ["mystery house", "hill"]
+      "template": "There is a ___ on the hill. Nobody knows what is inside.",
+      "answers": ["mystery house"]
     },
     {
-      "template": "One day, I ___ the door ___. Upstairs, there is a ___.",
-      "answers": ["open", "slowly", "nice bedroom"]
+      "template": "One day, I open the door ___.",
+      "answers": ["slowly"]
     },
     {
-      "template": "I see a ___ on the table and a ___ on the wall.",
-      "answers": ["lamp", "mirror"]
+      "template": "Upstairs, there is a nice ___.",
+      "answers": ["bedroom"]
+    },
+    {
+      "template": "I see a ___ on the table and a mirror on the wall.",
+      "answers": ["lamp"]
     },
     {
       "template": "The room has a ___ on the floor.",
       "answers": ["rug"]
     },
     {
-      "template": "Downstairs, I find the ___. There is a ___ and many ___ with books.",
-      "answers": ["living room", "big sofa", "shelves"]
+      "template": "Downstairs, I find the living ___.",
+      "answers": ["room"]
     },
     {
-      "template": "In the kitchen, I ___ the cabinet ___ and look in the fridge.",
-      "answers": ["open", "carefully"]
+      "template": "There is a big sofa and many ___ with books.",
+      "answers": ["shelves"]
     },
     {
-      "template": "There is food and drinks inside the fridge.",
-      "answers": ["food and drinks"]
-    },
-    {
-      "template": "This mystery house has ___ furniture. Now it is my ___. ",
-      "answers": ["beautiful", "new home"]
+      "template": "I open the kitchen ___ carefully and look in the fridge.",
+      "answers": ["cabinet"]
     }
   ],
   hints: {

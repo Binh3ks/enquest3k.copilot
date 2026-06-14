@@ -10,8 +10,8 @@ export default {
   topic_talk_prompt: "Describe what you and your friend look like!",
   sentence_frames: [
     {
-      "template": "I ___ in the mirror ___.",
-      "answers": ["look", "every day"]
+      "template": "I ___ in the mirror every day.",
+      "answers": ["look"]
     },
     {
       "template": "I see my ___ face.",
@@ -22,16 +22,16 @@ export default {
       "answers": ["brown"]
     },
     {
-      "template": "I have ___ ___ hair.",
-      "answers": ["long brown"]
+      "template": "I have long ___ hair.",
+      "answers": ["brown"]
     },
     {
-      "template": "I am not very ___ yet. I am short.",
-      "answers": ["tall"]
+      "template": "I am not very tall ___. I am short.",
+      "answers": ["yet"]
     },
     {
-      "template": "My friend ___ ___ to read.",
-      "answers": ["wears glasses"]
+      "template": "My friend ___ glasses to read.",
+      "answers": ["wears"]
     }
   ],
   hints: {

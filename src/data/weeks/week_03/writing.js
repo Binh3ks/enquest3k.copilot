@@ -10,36 +10,36 @@ export default {
   topic_talk_prompt: "Describe your best friend's appearance in full detail!",
   sentence_frames: [
     {
-      "template": "My best friend is ___ and he is ___ with ___.",
-      "answers": ["Tom", "tall", "short curly hair"]
+      "template": "My best friend is Tom and he is tall with short curly ___.",
+      "answers": ["hair"]
     },
     {
-      "template": "His hair is ___ and his eyes are ___.",
-      "answers": ["dark brown", "bright green"]
+      "template": "His hair is dark brown and his eyes are bright ___.",
+      "answers": ["green"]
     },
     {
-      "template": "He wears ___ because he cannot ___ without them.",
-      "answers": ["round glasses", "see well"]
+      "template": "He wears round glasses because he cannot ___ well without them.",
+      "answers": ["see"]
     },
     {
-      "template": "He always wears a ___ and a ___ to school.",
-      "answers": ["red cap", "blue jacket"]
+      "template": "He always wears a red cap and a blue ___ to school.",
+      "answers": ["jacket"]
     },
     {
-      "template": "He is ___ but very ___ because he trains every day.",
-      "answers": ["slim", "strong"]
+      "template": "He is slim but very ___ because he trains every day.",
+      "answers": ["strong"]
     },
     {
-      "template": "He looks very ___ and everyone ___ him because of that.",
-      "answers": ["unique", "recognises"]
+      "template": "He looks very unique and everyone ___ him.",
+      "answers": ["recognizes"]
     },
     {
-      "template": "His eyes are ___ and his face is always ___.",
-      "answers": ["bright green", "friendly"]
+      "template": "His eyes are bright green and his face is always ___.",
+      "answers": ["friendly"]
     },
     {
-      "template": "I am happy to have such a ___ friend who is so ___.",
-      "answers": ["good", "cool"]
+      "template": "I am happy to have such a ___ friend who is so cool.",
+      "answers": ["good"]
     }
   ],
   hints: {

@@ -10,36 +10,36 @@ export default {
   topic_talk_prompt: "Tell me about each person in your family!",
   sentence_frames: [
     {
-      "template": "This is my ___. She is the ___ of our family.",
-      "answers": ["mother", "leader"]
+      "template": "This is my ___. She is the leader of our family.",
+      "answers": ["mother"]
     },
     {
-      "template": "My mother helps us ___.",
-      "answers": ["every day"]
+      "template": "My mother helps us ___ every day.",
+      "answers": ["with everything"]
     },
     {
-      "template": "This is my ___. He is ___ and kind.",
-      "answers": ["father", "strong"]
+      "template": "This is my ___. He is strong and kind.",
+      "answers": ["father"]
     },
     {
-      "template": "He works ___ for our family.",
-      "answers": ["very hard"]
+      "template": "He works very hard for our ___.",
+      "answers": ["family"]
     },
     {
-      "template": "This is my ___ ___. His name is ___.",
-      "answers": ["big brother", "Tom"]
+      "template": "This is my big brother. His name is ___.",
+      "answers": ["Tom"]
     },
     {
-      "template": "He ___ me with ___.",
-      "answers": ["helps", "homework"]
+      "template": "He ___ me with homework.",
+      "answers": ["helps"]
     },
     {
-      "template": "This is my ___ ___. She is ___ and ___.",
-      "answers": ["little sister", "funny", "sweet"]
+      "template": "This is my little sister. She is ___ and sweet.",
+      "answers": ["funny"]
     },
     {
-      "template": "We ___ each other and ___ together as a great team.",
-      "answers": ["love", "work"]
+      "template": "We ___ each other and work together as a great team.",
+      "answers": ["love"]
     }
   ],
   hints: {

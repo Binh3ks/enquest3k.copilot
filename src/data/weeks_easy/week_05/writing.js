@@ -10,28 +10,28 @@ export default {
   topic_talk_prompt: "Describe your house and rooms!",
   sentence_frames: [
     {
-      "template": "My name is ___. I ___ in a house.",
-      "answers": ["Tim", "live"]
+      "template": "I ___ for my toy car.",
+      "answers": ["look"]
     },
     {
-      "template": "My house has ___ rooms.",
-      "answers": ["many"]
+      "template": "I look ___ the floor and ___ the box.",
+      "answers": ["on","in"]
     },
     {
-      "template": "I sleep in my ___. I have a soft ___.",
-      "answers": ["bedroom", "bed"]
+      "template": "My friend ___ me. He looks under the ___.",
+      "answers": ["helps","desk"]
     },
     {
-      "template": "I eat in the ___. I sit on a chair ___ the table.",
-      "answers": ["kitchen", "at"]
+      "template": "He finds it! The toy car is under the ___.",
+      "answers": ["desk"]
     },
     {
-      "template": "I ___ my hands in the ___.",
-      "answers": ["wash", "bathroom"]
+      "template": "Now I look for my ball. It is ___ the door.",
+      "answers": ["next to"]
     },
     {
-      "template": "I watch TV in the ___ every evening. I love my house!",
-      "answers": ["living room"]
+      "template": "We play hide and ___.",
+      "answers": ["seek"]
     }
   ],
   hints: {

@@ -10,36 +10,36 @@ export default {
   topic_talk_prompt: "Tell me about your personality and what you love doing!",
   sentence_frames: [
     {
-      "template": "I have a ___ at home.",
-      "answers": ["happy jar"]
+      "template": "I have a happy jar at ___.",
+      "answers": ["home"]
     },
     {
-      "template": "When I am ___, I feel ___ and ___.",
-      "answers": ["playing with my dog", "excited", "happy"]
+      "template": "When I am playing, I feel ___ and happy.",
+      "answers": ["excited"]
     },
     {
-      "template": "When I am ___, I feel ___ and ___.",
-      "answers": ["reading a good book", "calm", "happy"]
+      "template": "When I am reading, I feel ___ and calm.",
+      "answers": ["happy"]
     },
     {
-      "template": "When I am ___, I feel ___ and ___.",
-      "answers": ["drawing colorful pictures", "creative", "joyful"]
+      "template": "When I am drawing, I feel ___ and joyful.",
+      "answers": ["creative"]
     },
     {
-      "template": "My mom is ___ and she ___ every day.",
-      "answers": ["friendly and funny", "makes me laugh"]
+      "template": "My mom is friendly and funny and she makes me laugh ___.",
+      "answers": ["every day"]
     },
     {
-      "template": "My happy jar helps me ___ all the ___ ___.",
-      "answers": ["remember", "happy moments"]
+      "template": "My happy jar helps me remember all the ___ moments.",
+      "answers": ["happy"]
     },
     {
-      "template": "Every day I put something new in my jar because I want to ___.",
-      "answers": ["remember good times"]
+      "template": "Every day I put something new in my jar because I want to ___ good times.",
+      "answers": ["remember"]
     },
     {
-      "template": "I love my ___ because it makes me feel ___ every day.",
-      "answers": ["happy jar", "grateful"]
+      "template": "I love my ___ jar because it makes me feel grateful.",
+      "answers": ["happy"]
     }
   ],
   hints: {
