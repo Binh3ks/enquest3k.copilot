@@ -1,29 +1,40 @@
 import React from 'react';
-import { Play, Mic, RotateCcw } from 'lucide-react';
+import { Play, Check, RotateCcw } from 'lucide-react';
 import { getStressStyle } from './ipaUtils';
 
 /**
  * SentenceCard — Matches shadowingenglish.com reference:
- * - Play button (left)
+ * - Numbered checkmark (left)
  * - Sentence text + IPA with colored underlines
- * - Practice/record button (right)
- * Active state: highlighted border + colored indicator bar
+ * - Time range below
+ * - Play back button when recorded (right)
+ * - Inline feedback (transcript + score) after recording
  */
 export default function SentenceCard({
   sentence,
   ipaWords,
-  index,
+  timeRange,          // { start, duration } from transcript segments
   isActive,
   isPlaying,
   isPracticed,
   score,
-  onPlay,
+  transcript,         // user's recorded transcript
+  onPlay,             // play TTS
+  onPlayBack,         // play user's recording
   onPractice,
   themeColor,
 }) {
+  // Format time as "m:ss.s" like "0:04.76"
+  const fmtTime = (s) => {
+    const m = Math.floor(s / 60);
+    const sec = (s % 60).toFixed(2);
+    return `${m}:${sec.padStart(5, '0')}`;
+  };
+
   return (
     <div
-      className={`relative px-4 py-3 rounded-xl transition-all duration-200 ${
+      onClick={() => onPlay(sentence.id, sentence.text)}
+      className={`relative px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer ${
         isActive
           ? `border-2 border-${themeColor}-400 bg-${themeColor}-50 shadow-md`
           : isPracticed
@@ -32,21 +43,20 @@ export default function SentenceCard({
       }`}
     >
       <div className="flex items-start gap-3">
-        {/* Play button */}
-        <button
-          onClick={() => onPlay(sentence.id, sentence.text)}
-          className={`mt-0.5 p-2 rounded-full transition-all shrink-0 ${
-            isActive && isPlaying
-              ? `bg-${themeColor}-500 text-white shadow-md animate-pulse`
+        {/* Numbered checkmark circle */}
+        <span
+          className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${
+            isPracticed
+              ? 'bg-green-500 text-white'
               : isActive
-              ? `bg-${themeColor}-100 text-${themeColor}-600`
-              : 'bg-slate-100 text-slate-400 hover:bg-slate-200 hover:text-slate-600'
+              ? `bg-${themeColor}-500 text-white`
+              : 'bg-slate-200 text-slate-500'
           }`}
         >
-          <Play className="w-4 h-4" />
-        </button>
+          {isPracticed ? <Check className="w-4 h-4" /> : sentence.id}
+        </span>
 
-        {/* Text + IPA */}
+        {/* Text + IPA + timestamp */}
         <div className="flex-1 min-w-0">
           <p className={`text-[15px] leading-relaxed ${
             isActive ? 'font-bold text-slate-900' : 'text-slate-700'
@@ -54,67 +64,63 @@ export default function SentenceCard({
             {sentence.text}
           </p>
 
-          {/* IPA word-by-word with colored underlines */}
+          {/* Time range from video transcript */}
+          {timeRange && (
+            <p className="text-[11px] text-slate-400 font-mono mt-0.5">
+              {fmtTime(timeRange.start)} – {fmtTime(timeRange.start + timeRange.duration)}{' '}
+              <span className="text-slate-300">({timeRange.duration.toFixed(1)}s)</span>
+            </p>
+          )}
+
+          {/* IPA word-by-word — small, subtle */}
           {ipaWords && ipaWords.length > 0 && (
-            <div className="flex flex-wrap gap-x-2 gap-y-1 mt-1.5">
+            <div className="flex flex-wrap gap-x-1.5 gap-y-0.5 mt-1.5">
               {ipaWords.map((w, i) => {
                 const style = getStressStyle(w.stress);
-                const wordHighlighted = isActive && isPlaying;
                 return (
-                  <span key={i} className="inline-flex flex-col items-center">
-                    <span
-                      className={`text-[11px] leading-tight font-semibold border-b-[3px] pb-0.5 transition-all duration-300 ${
-                        wordHighlighted
-                          ? `${style.text} border-b-current`
-                          : isActive
-                          ? `${style.text} ${style.underline}`
-                          : 'text-slate-500 border-b-transparent'
-                      }`}
-                      style={wordHighlighted ? { borderBottomColor: w.stress === 1 ? '#ef4444' : w.stress === 2 ? '#3b82f6' : '#94a3b8' } : undefined}
-                    >
-                      {w.word}
-                    </span>
-                    {w.ipa && (
-                      <span className="text-[10px] text-slate-400 font-mono leading-tight mt-0.5">
-                        {w.ipa}
-                      </span>
+                  <span key={i} className="text-[10px] font-mono text-slate-500">
+                    {w.word && w.ipa ? (
+                      <span className={style.text}>{w.ipa}</span>
+                    ) : (
+                      <span>{w.word}</span>
                     )}
                   </span>
                 );
               })}
             </div>
           )}
-        </div>
 
-        {/* Practice button + score */}
-        <div className="flex flex-col items-center gap-1 shrink-0 mt-0.5">
+          {/* Inline recording feedback — what the student said + score */}
           {isPracticed && score !== undefined && (
-            <div
-              className={`w-9 h-9 rounded-full flex items-center justify-center text-[10px] font-black ${
-                score >= 80
-                  ? 'bg-green-100 text-green-700 ring-2 ring-green-300'
-                  : score >= 50
-                  ? 'bg-amber-100 text-amber-700 ring-2 ring-amber-300'
-                  : 'bg-rose-100 text-rose-700 ring-2 ring-rose-300'
-              }`}
-            >
-              {score}%
+            <div className="mt-2 pt-2 border-t border-green-200/50">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span
+                  className={`text-[10px] font-black px-1.5 py-0.5 rounded ${
+                    score >= 80
+                      ? 'bg-green-100 text-green-700'
+                      : score >= 50
+                      ? 'bg-amber-100 text-amber-700'
+                      : 'bg-rose-100 text-rose-700'
+                  }`}
+                >
+                  {score}%
+                </span>
+                {transcript && (
+                  <span className="text-[10px] text-slate-400 italic">
+                    You said: "{transcript}"
+                  </span>
+                )}
+              </div>
+              {onPlayBack && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onPlayBack(sentence.id); }}
+                  className="mt-1.5 text-[10px] flex items-center gap-1 text-green-600 hover:text-green-700 font-bold"
+                >
+                  <Play className="w-3 h-3" /> Play back
+                </button>
+              )}
             </div>
           )}
-          <button
-            onClick={() => onPractice(sentence)}
-            className={`group/mic relative p-2.5 rounded-full shadow-sm transition-all active:scale-95 ${
-              isPracticed
-                ? 'bg-orange-500 text-white hover:bg-orange-600'
-                : `bg-${themeColor}-600 text-white hover:bg-${themeColor}-700`
-            }`}
-            title="Click to record yourself"
-          >
-            <Mic className="w-4 h-4" />
-            <span className="pointer-events-none absolute right-full mr-2 top-1/2 -translate-y-1/2 whitespace-nowrap bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover/mic:opacity-100 transition-opacity">
-              Click to record
-            </span>
-          </button>
         </div>
       </div>
 
