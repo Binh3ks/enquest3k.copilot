@@ -1,8 +1,8 @@
 import React from 'react';
-import { Play, Pause, Globe, ChevronDown } from 'lucide-react';
+import { Play, Pause, Mic, MicOff, Globe, ChevronDown } from 'lucide-react';
 
 /**
- * ShadowingHeader — Title bar with controls: lang toggle, speed selector, play-all.
+ * ShadowingHeader — Title bar with controls: lang toggle, speed selector, play-all, record-all.
  */
 export default function ShadowingHeader({
   title,
@@ -10,6 +10,8 @@ export default function ShadowingHeader({
   onToggleLang,
   isPlayingAll,
   onPlayAll,
+  isRecordingAll,
+  onRecordAll,
   speed,
   onSpeedChange,
   speedOptions,
@@ -56,6 +58,22 @@ export default function ShadowingHeader({
           </select>
           <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-400 pointer-events-none" />
         </div>
+
+        {/* Record All */}
+        <button
+          onClick={onRecordAll}
+          className={`px-4 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${
+            isRecordingAll
+              ? 'bg-rose-500 hover:bg-rose-600 animate-pulse'
+              : 'bg-indigo-500 hover:bg-indigo-600'
+          }`}
+        >
+          {isRecordingAll ? (
+            <><MicOff className="w-4 h-4 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
+          ) : (
+            <><Mic className="w-4 h-4 mr-1" /> {isVi ? 'Ghi Hết' : 'Record All'}</>
+          )}
+        </button>
 
         {/* Play All / Stop */}
         <button

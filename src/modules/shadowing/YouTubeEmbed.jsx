@@ -45,6 +45,8 @@ export default function YouTubeEmbed({ videoId }) {
             rel: 0,
             modestbranding: 1,
             fs: 1,
+            cc_load_policy: 1,  // Enable captions by default if available
+            cc_lang_pref: 'en',
           },
         });
       } catch (err) {
