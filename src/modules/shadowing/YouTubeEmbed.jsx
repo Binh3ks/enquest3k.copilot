@@ -64,8 +64,8 @@ export default function YouTubeEmbed({ videoId }) {
   if (!videoId) return null;
 
   return (
-    <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-md">
-      <div ref={containerRef} className="absolute inset-0" />
+    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+      <div ref={containerRef} className="absolute inset-0 w-full h-full" />
     </div>
   );
 }

@@ -3,14 +3,17 @@ import SentenceCard from './SentenceCard';
 
 /**
  * RightPanel — Clean scrollable list of sentences (right side).
- * Matches shadowingenglish.com: just numbered sentences, no IPA, no buttons.
- * Clicking a sentence selects it and shows IPA in the left panel's focused area.
+ * Matches shadowingenglish.com: numbered sentences with IPA display, play + record buttons.
  */
 export default function RightPanel({
   script,
+  ipaData,
+  scores,
   activeSentenceId,
+  isPlaying,
   onPlay,
   onSelect,
+  onPractice,
   themeColor,
 }) {
   return (
@@ -25,11 +28,13 @@ export default function RightPanel({
           <SentenceCard
             key={s.id}
             sentence={s}
-            index={idx}
+            ipaWords={ipaData?.[s.id] || null}
+            score={scores?.[s.id]?.score}
             isActive={activeSentenceId === s.id}
-            isPracticed={false}
+            isPlaying={isPlaying && activeSentenceId === s.id}
+            isPracticed={!!scores?.[s.id]}
             onPlay={onPlay}
-            onClick={onSelect}
+            onPractice={onPractice}
             themeColor={themeColor}
           />
         ))}

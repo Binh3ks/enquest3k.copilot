@@ -1,9 +1,9 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { speakText } from '../utils/AudioHelper';
 
-const SPEED_OPTIONS = [0.5, 0.75, 1, 1.25, 1.5];
+const SPEED_OPTIONS = [1.25, 1.0, 0.85, 0.75, 0.65];
 const STORAGE_KEY = 'shadowing_speed';
-const DEFAULT_SPEED = 0.7;  // Slower than 0.8 for better shadowing practice
+const DEFAULT_SPEED = 0.75;  // Default for new users
 
 function getStoredSpeed() {
   try {
@@ -75,8 +75,11 @@ export function useShadowingPlayer(script, weekNumber, mode) {
       const text = (s.text || '').replace(/\*\*/g, '');
       setActiveSentenceId(s.id);
       speakText(text, null, speed, () => {
-        // Pause between sentences (scaled by speed)
-        const pauseMs = Math.max(400, 800 * speed);
+        // Pause between sentences — inversely proportional to speed
+        // At speed 1.0: ~800ms pause. At 0.5: ~1600ms. At 1.5: ~533ms.
+        // Slower speed = longer pause for learner to process.
+        const basePause = 800;  // ms at 1x
+        const pauseMs = Math.round(basePause / speed);
         setTimeout(() => {
           if (!sequenceRef.current.cancelled) {
             playIndex(idx + 1);
