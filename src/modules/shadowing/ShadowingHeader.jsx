@@ -1,8 +1,8 @@
 import React from 'react';
-import { Play, Pause, Mic, MicOff, Globe, ChevronDown } from 'lucide-react';
+import { Play, Pause, Mic, MicOff, Globe, ChevronDown, PlayCircle, RotateCcw } from 'lucide-react';
 
 /**
- * ShadowingHeader — Title bar with controls: lang toggle, speed selector, play-all, record-all.
+ * ShadowingHeader — Title bar with controls: lang toggle, speed selector, play-all, record-all, play-back.
  */
 export default function ShadowingHeader({
   title,
@@ -12,6 +12,10 @@ export default function ShadowingHeader({
   onPlayAll,
   isRecordingAll,
   onRecordAll,
+  hasFullRecording,
+  onPlayBackAll,
+  isPlayingBack,
+  onStopPlayBack,
   speed,
   onSpeedChange,
   speedOptions,
@@ -44,7 +48,7 @@ export default function ShadowingHeader({
       </div>
 
       {/* Right: Controls */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap">
         {/* Speed selector */}
         <div className="relative">
           <select
@@ -62,18 +66,36 @@ export default function ShadowingHeader({
         {/* Record All */}
         <button
           onClick={onRecordAll}
-          className={`px-4 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${
+          className={`px-3 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${
             isRecordingAll
               ? 'bg-rose-500 hover:bg-rose-600 animate-pulse'
               : 'bg-indigo-500 hover:bg-indigo-600'
           }`}
         >
           {isRecordingAll ? (
-            <><MicOff className="w-4 h-4 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
+            <><MicOff className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
           ) : (
-            <><Mic className="w-4 h-4 mr-1" /> {isVi ? 'Ghi Hết' : 'Record All'}</>
+            <><Mic className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Ghi Hết' : 'Record All'}</>
           )}
         </button>
+
+        {/* Play Back Full Recording — only shown when has recording */}
+        {hasFullRecording && (
+          <button
+            onClick={isPlayingBack ? onStopPlayBack : onPlayBackAll}
+            className={`px-3 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${
+              isPlayingBack
+                ? 'bg-purple-500 hover:bg-purple-600 animate-pulse'
+                : 'bg-green-600 hover:bg-green-700'
+            }`}
+          >
+            {isPlayingBack ? (
+              <><Pause className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
+            ) : (
+              <><PlayCircle className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Nghe lại' : 'Play Back'}</>
+            )}
+          </button>
+        )}
 
         {/* Play All / Stop */}
         <button
@@ -85,9 +107,9 @@ export default function ShadowingHeader({
           }`}
         >
           {isPlayingAll ? (
-            <><Pause className="w-4 h-4 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
+            <><Pause className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
           ) : (
-            <><Play className="w-4 h-4 mr-1" /> {isVi ? 'Nghe Hết' : 'Play All'}</>
+            <><Play className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Nghe Hết' : 'Play All'}</>
           )}
         </button>
       </div>
