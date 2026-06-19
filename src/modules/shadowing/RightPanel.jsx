@@ -2,28 +2,24 @@ import React from 'react';
 import SentenceCard from './SentenceCard';
 
 /**
- * RightPanel — Clean scrollable list of sentences (right side).
- * Matches shadowingenglish.com: numbered sentences with IPA, time range, recording feedback.
+ * RightPanel — Clean numbered list of sentences (right side).
+ * MAIN purpose: navigation list + time ranges. IPA is NOT here —
+ * only in inline focus (LeftPanel). Matches shadowingenglish.com UX.
  */
-import { convertIpaWordsToUk } from './ipaUtils';
-
 export default function RightPanel({
   script,
-  ipaData,
+  transcriptSegments,
   scores,
-  transcriptSegments,  // [{ start, duration, text }] from cached video transcript
   activeSentenceId,
   isPlaying,
   onPlay,
   onPlayBack,
   onPractice,
   themeColor,
-  accent = 'US',                  // 'US' or 'UK'
   useTranscriptSource = false,
   onToggleSource = null,
+  hasTranscript = false,
 }) {
-  // Map sentence index → best matching transcript segment (by order)
-  // This aligns the script sentences to the video timeline.
   const segs = transcriptSegments || [];
   return (
     <div className="space-y-1.5">
@@ -31,13 +27,13 @@ export default function RightPanel({
         <h3 className="text-sm font-bold text-slate-500">
           {script.length} sentences
         </h3>
-        {onToggleSource && (
+        {onToggleSource && hasTranscript && (
           <button
             onClick={onToggleSource}
-            className={`text-[10px] font-bold px-2 py-1 rounded ${
+            className={`text-[10px] font-bold px-2 py-1 rounded transition-colors ${
               useTranscriptSource
                 ? 'bg-blue-500 text-white'
-                : 'bg-slate-100 text-slate-500'
+                : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
             }`}
             title="Toggle between lesson text and video transcript"
           >
@@ -47,23 +43,17 @@ export default function RightPanel({
       </div>
       <div className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-1">
         {script.map((s, idx) => {
-          // Match sentence to a transcript segment by index (assumes alignment)
           const timeRange = segs[idx] ? {
             start: segs[idx].start,
             duration: segs[idx].duration,
           } : null;
 
           const scoreData = scores?.[s.id];
-          // Convert IPA to UK if needed
-          const rawIpaWords = ipaData?.[s.id] || null;
-          const displayIpaWords = (accent === 'UK' && rawIpaWords)
-            ? convertIpaWordsToUk(rawIpaWords)
-            : rawIpaWords;
           return (
             <SentenceCard
               key={s.id}
               sentence={s}
-              ipaWords={displayIpaWords}
+              ipaWords={null}
               timeRange={timeRange}
               score={scoreData?.score}
               transcript={scoreData?.transcript}
