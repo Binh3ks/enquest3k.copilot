@@ -51,3 +51,21 @@ export function getActiveSegment(videoId, currentTime) {
   }
   return null;
 }
+
+/**
+ * Get cleaned transcript segments as a script-compatible array.
+ * Returns [{ id, text, start, duration, _isTranscript: true }]
+ */
+export function getCleanedTranscriptSentences(videoId) {
+  const transcript = getTranscript(videoId);
+  if (!transcript || !transcript.segments) return [];
+  return transcript.segments
+    .filter(s => s.text && s.text.trim().length > 0)
+    .map((s, i) => ({
+      id: i + 1,
+      text: s.text.trim(),
+      start: s.start,
+      duration: s.duration,
+      _isTranscript: true,
+    }));
+}

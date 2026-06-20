@@ -1,17 +1,41 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 
 /**
  * YouTubeEmbed — Embeds a YouTube video via the IFrame Player API.
- * View-only mode: student watches the video for context.
+ * Exposes player control via onPlayerReady callback.
  */
-export default function YouTubeEmbed({ videoId }) {
+export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded }) {
   const containerRef = useRef(null);
   const playerRef = useRef(null);
+  const readyFiredRef = useRef(false);
+
+  const seekTo = useCallback((seconds) => {
+    const p = playerRef.current;
+    if (p && typeof p.seekTo === 'function') {
+      p.seekTo(seconds, true);
+      p.playVideo();
+    }
+  }, []);
+
+  const playVideo = useCallback(() => {
+    const p = playerRef.current;
+    if (p && typeof p.playVideo === 'function') p.playVideo();
+  }, []);
+
+  const pauseVideo = useCallback(() => {
+    const p = playerRef.current;
+    if (p && typeof p.pauseVideo === 'function') p.pauseVideo();
+  }, []);
+
+  const getCurrentTime = useCallback(() => {
+    const p = playerRef.current;
+    if (p && typeof p.getCurrentTime === 'function') return p.getCurrentTime();
+    return 0;
+  }, []);
 
   useEffect(() => {
     if (!videoId || !containerRef.current) return;
 
-    // Load YouTube IFrame API if not already loaded
     const loadAPI = () => {
       if (window.YT && window.YT.Player) {
         createPlayer();
@@ -36,6 +60,7 @@ export default function YouTubeEmbed({ videoId }) {
       if (playerRef.current) {
         try { playerRef.current.destroy(); } catch { /* ignore */ }
       }
+      readyFiredRef.current = false;
       try {
         playerRef.current = new window.YT.Player(containerRef.current, {
           videoId,
@@ -45,8 +70,16 @@ export default function YouTubeEmbed({ videoId }) {
             rel: 0,
             modestbranding: 1,
             fs: 1,
-            cc_load_policy: 1,  // Enable captions by default if available
+            cc_load_policy: 1,
             cc_lang_pref: 'en',
+          },
+          events: {
+            onReady: () => {
+              if (onPlayerReady && !readyFiredRef.current) {
+                readyFiredRef.current = true;
+                onPlayerReady({ seekTo, playVideo, pauseVideo, getCurrentTime });
+              }
+            },
           },
         });
       } catch (err) {
@@ -59,6 +92,8 @@ export default function YouTubeEmbed({ videoId }) {
       if (typeof cleanup === 'function') cleanup();
       if (playerRef.current) {
         try { playerRef.current.destroy(); } catch { /* ignore */ }
+        playerRef.current = null;
+        if (onPlayerUnloaded) onPlayerUnloaded();
       }
     };
   }, [videoId]);
