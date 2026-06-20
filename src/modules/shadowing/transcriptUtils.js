@@ -1,40 +1,44 @@
 /**
- * transcriptUtils.js — Load video transcripts for shadowing station.
- * Tier 1 of transcript pipeline: pre-fetched YouTube transcripts cached in JSON.
+ * transcriptUtils.js — Load cleaned video transcripts for shadowing station.
+ * Tier 1 of transcript pipeline: pre-fetched + cleaned YouTube transcripts.
  */
 
-const transcriptModules = import.meta.glob('../../data/video_transcripts.json', { eager: true });
-
-let cache = null;
-
-function loadCache() {
-  if (cache) return cache;
-  try {
-    const mod = Object.values(transcriptModules)[0];
-    cache = mod.default || mod;
-  } catch {
-    cache = {};
+// CLEANED transcripts (use these for display + TTS in transcript mode)
+const cleanedTranscriptModule = import.meta.glob('../../data/video_transcripts_cleaned.json', { eager: true });
+let CLEANED = null;
+function getCleaned() {
+  if (!CLEANED) {
+    const mod = Object.values(cleanedTranscriptModule)[0];
+    CLEANED = mod?.default || {};
   }
-  return cache;
+  return CLEANED;
+}
+
+// Raw transcripts (fallback)
+const transcriptModules = import.meta.glob('../../data/video_transcripts.json', { eager: true });
+let RAW = null;
+function getRaw() {
+  if (!RAW) {
+    const mod = Object.values(transcriptModules)[0];
+    RAW = mod?.default || {};
+  }
+  return RAW;
 }
 
 /**
- * Get transcript for a videoId.
- * @param {string} videoId
- * @returns {{text: string, segments: Array}|null}
+ * Get transcript for a videoId (uses cleaned version).
  */
 export function getTranscript(videoId) {
-  const data = loadCache();
-  const entry = data[videoId];
+  const cleaned = getCleaned()[videoId];
+  if (cleaned && !cleaned.error) return cleaned;
+  // Fallback to raw
+  const entry = getRaw()[videoId];
   if (!entry || entry.error) return null;
   return entry;
 }
 
 /**
  * Find segment by current video time.
- * @param {string} videoId
- * @param {number} currentTime - seconds
- * @returns {{text: string, start: number, duration: number, index: number}|null}
  */
 export function getActiveSegment(videoId, currentTime) {
   const transcript = getTranscript(videoId);
