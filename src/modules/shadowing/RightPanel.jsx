@@ -9,6 +9,7 @@ import SentenceCard from './SentenceCard';
 export default function RightPanel({
   script,
   transcriptSegments,
+  transcriptIpa = null,
   scores,
   activeSentenceId,
   isPlaying,
@@ -49,11 +50,12 @@ export default function RightPanel({
           } : null;
 
           const scoreData = scores?.[s.id];
+          const ipa = transcriptIpa?.[s.id] || null;
           return (
             <SentenceCard
               key={s.id}
               sentence={s}
-              ipaWords={null}
+              ipaWords={ipa}
               timeRange={timeRange}
               score={scoreData?.score}
               transcript={scoreData?.transcript}

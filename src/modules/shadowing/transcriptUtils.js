@@ -3,7 +3,18 @@
  * Tier 1 of transcript pipeline: pre-fetched + cleaned YouTube transcripts.
  */
 
-// CLEANED transcripts (use these for display + TTS in transcript mode)
+// SENTENCE-SEGMENTED transcripts (cleaned + re-segmented by split_sentences.mjs)
+const sentencesModule = import.meta.glob('../../data/video_transcripts_sentences.json', { eager: true });
+let SENTENCES = null;
+function getSentences() {
+  if (!SENTENCES) {
+    const mod = Object.values(sentencesModule)[0];
+    SENTENCES = mod?.default || {};
+  }
+  return SENTENCES;
+}
+
+// CLEANED transcripts (fallback for getTranscript which needs raw segments)
 const cleanedTranscriptModule = import.meta.glob('../../data/video_transcripts_cleaned.json', { eager: true });
 let CLEANED = null;
 function getCleaned() {
@@ -54,18 +65,16 @@ export function getActiveSegment(videoId, currentTime) {
 
 /**
  * Get cleaned transcript segments as a script-compatible array.
- * Returns [{ id, text, start, duration, _isTranscript: true }]
+ * Uses the pre-segmented sentences file (already has id, text, start, duration).
  */
 export function getCleanedTranscriptSentences(videoId) {
-  const transcript = getTranscript(videoId);
-  if (!transcript || !transcript.segments) return [];
-  return transcript.segments
-    .filter(s => s.text && s.text.trim().length > 0)
-    .map((s, i) => ({
-      id: i + 1,
-      text: s.text.trim(),
-      start: s.start,
-      duration: s.duration,
-      _isTranscript: true,
-    }));
+  const entry = getSentences()[videoId];
+  if (!entry || entry.error || !entry.segments) return [];
+  return entry.segments.map(s => ({
+    id: s.id,
+    text: s.text,
+    start: s.start,
+    duration: s.duration,
+    _isTranscript: true,
+  }));
 }
