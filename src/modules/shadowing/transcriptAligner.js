@@ -68,14 +68,18 @@ export function alignTranscriptToScript(script, rawSegments) {
     }
 
     if (accumulated.length > 0) {
+      // Use CLEANED raw transcript text (preserves video's actual wording)
+      // But fall back to script text if alignment quality is poor
+      const rawText = cleanRawTranscript(accumulated.join(' '));
       aligned.push({
         id: scriptSent.id,
-        text: scriptSent.text,
+        text: rawText || scriptSent.text,
         vi: scriptSent.vi || null,
         start: startTime,
         duration: (endTime - startTime),
         _isTranscript: true,
-        _rawText: accumulated.join(' '),
+        _rawText: rawText,
+        _scriptText: scriptSent.text,
       });
     } else {
       aligned.push({
@@ -93,8 +97,11 @@ export function alignTranscriptToScript(script, rawSegments) {
 export function cleanRawTranscript(text) {
   if (!text) return '';
   let cleaned = text;
+  // Common ASR errors
   cleaned = cleaned.replace(/\bD hey\b/gi, 'Hey');
   cleaned = cleaned.replace(/\bD he\b/gi, 'He');
+  cleaned = cleaned.replace(/\bD it\b/gi, 'It');
+  cleaned = cleaned.replace(/\bD they\b/gi, 'They');
   cleaned = cleaned.replace(/\bIm\b/g, "I'm");
   cleaned = cleaned.replace(/\bIve\b/g, "I've");
   cleaned = cleaned.replace(/\bIll\b/g, "I'll");
@@ -103,6 +110,23 @@ export function cleanRawTranscript(text) {
   cleaned = cleaned.replace(/\bcant\b/g, "can't");
   cleaned = cleaned.replace(/\bwont\b/g, "won't");
   cleaned = cleaned.replace(/\bisnt\b/g, "isn't");
+  cleaned = cleaned.replace(/\bdidnt\b/g, "didn't");
+  cleaned = cleaned.replace(/\bdoesnt\b/g, "doesn't");
+  cleaned = cleaned.replace(/\bcouldnt\b/g, "couldn't");
+  cleaned = cleaned.replace(/\bwouldnt\b/g, "wouldn't");
+  cleaned = cleaned.replace(/\bshes\b/g, "she's");
+  cleaned = cleaned.replace(/\bhes\b/g, "he's");
+  cleaned = cleaned.replace(/\bwhos\b/g, "who's");
+  // Capitalize first letter
+  cleaned = cleaned.trim();
+  if (cleaned.length > 0) {
+    cleaned = cleaned[0].toUpperCase() + cleaned.slice(1);
+  }
+  // Normalize whitespace
   cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  // Add period at end if missing punctuation
+  if (cleaned.length > 0 && !/[.!?]$/.test(cleaned)) {
+    cleaned += '.';
+  }
   return cleaned;
 }
