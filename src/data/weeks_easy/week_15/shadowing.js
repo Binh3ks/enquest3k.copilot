@@ -1,5 +1,5 @@
 export default {
-  videoId: "bXtm-iBtsPo",
+  videoId: "N1o4oOXLOZc",
   content_en: "Today I am going to the park with my family. The park is busy and fun! I am **walking with my mom**. She is **holding my hand**. My dad is **jogging ahead of us**. I see a boy. He is running very fast! His dog is running too. An old man is **sitting on a bench**. He is **reading a book**. Near the fountain, some kids are playing. They are laughing. My family is **having a picnic** now. We are **eating yummy sandwiches**. I am **drinking apple juice**. My sister is **flying her red kite**. It is **going very high**! I am **relaxing under the trees**. The grass is soft. I see flowers everywhere. A girl is walking her small dog. The dog is cute! The park is my favorite place!",
   script: [
     { id: 1, text: "Today I am going to the park with my family.", vi: "Hôm nay tôi đang đi công viên với gia đình." },

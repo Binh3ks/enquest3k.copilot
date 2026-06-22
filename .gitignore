@@ -89,3 +89,4 @@ docs/ARCHITECTURE.md
 __pycache__/
 *.pyc
 *.bak
+.tmp/

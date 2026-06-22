@@ -1,5 +1,5 @@
 export default {
-  videoId: "yoMENNFt_SU",
+  videoId: "AgTkKGM0TWE",
   content_en: "Nova was a detective in the beautiful city of Hoi An, Vietnam. She was working on a difficult case. She opened her notebook and began the interview in a quiet tea shop near the river. The streets outside were calm and peaceful. She worked patiently and calmly.\\n\\nNova **asked one question at a time**. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a clue **in her notebook**. She wrote the answers carefully.\\n\\nShe asked about **yesterday morning** and what the suspect did **last night**. She also asked about events from **last week**. The suspect remembered everything clearly. The tea shop was quiet and the river sparkled in the sunlight.\\n\\nNova checked every clue in her notebook carefully. Then she wrote her final report and **solved the case**! The tea shop was warm and quiet. Well done, detective Nova!",
   script: [
     { id: 1, text: "Nova was a detective in the beautiful city of Hoi An, Vietnam.", vi: "Nova là một thám tử ở thành phố đẹp Hội An, Việt Nam." },

@@ -1,5 +1,5 @@
 export default {
-  videoId: "J7dITCQDK3c",
+  videoId: "MNQMpFVrMOs",
   content_en: "Alex loves watching the news on TV. Today his class is doing something exciting! They are making a school TV show. Alex has a special job. He is the reporter! He **picks up a toy microphone** and **stands next to a toy camera**. The classroom is now a studio. Alex speaks warmly into the microphone. He says: \\",
   script: [
     { id: 1, text: "Alex loves watching the news on TV.", vi: "Alex rất thích xem tin tức trên TV." },

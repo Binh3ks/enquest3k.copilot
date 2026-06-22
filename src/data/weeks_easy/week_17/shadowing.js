@@ -1,5 +1,5 @@
 export default {
-  videoId: "kqO42jnccO8",
+  videoId: "P9abGg_gF1s",
   content_en: "Today **it is raining**! I look out the window. The sky is gray. It is cold outside. I **pick up my coat**. I **put on my boots**. I carry my umbrella. Now I am ready! I am wearing my coat and boots. I walk to school. My feet stay dry. My body is warm. The rain **fall from the clouds**. I **put on my raincoat**. I love **rainy days**! I can **jump in puddles**. The sound of rain is nice. I wear my raincoat too. Rain helps the trees grow.",
   script: [
     { id: 1, text: "Today it is raining!", vi: "Hôm nay trời đang mưa!" },

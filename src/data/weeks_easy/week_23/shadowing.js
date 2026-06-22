@@ -1,6 +1,6 @@
 export default {
   title: "My Art Class Yesterday",
-  videoId: "ybt2jhCQ3lA",
+  videoId: "pcWBtzTnpb8",
   content_en: "Yesterday I went to art class. I picked up a brush and dipped it into red pigment. I used the brush to paint a big picture of a garden. I colored the flowers very carefully using blue and yellow. Then I folded a piece of paper into a butterfly shape. I looked at the symmetry - both wings were the same! I used scissors to cut small leaf shapes from green paper. I glued the leaves onto my picture to create a nice border. I worked very carefully to keep the texture smooth. My teacher was happy with my picture. She said it had good symmetry, nice texture, and bright pigment colors. I was very happy because I had painted, colored, folded, cut, and glued everything to create a beautiful piece of art.",
   script: [
     { id: 1, text: "Yesterday I went to art class.", vi: null },

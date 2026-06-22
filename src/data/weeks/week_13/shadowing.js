@@ -1,5 +1,5 @@
 export default {
-  videoId: "qD1pnquN_DM",
+  videoId: "ico9ztlb46k",
   content_en: "Today is a perfect school day! I **wake up** at 7 o'clock. My mom wakes me up. I **brush my teeth** with my blue toothbrush. Then I **eat breakfast** with my family. I eat rice and eggs. Yummy! At 8 o'clock, I **go to school** with my friends. At 12 o'clock, I **have lunch** at school. After lunch, I **play with** my friends. We play tag. At 4 o'clock, I go home. I **do homework** **every afternoon**. I write and read. At 7 o'clock, I **have dinner** with my family. After dinner, I **watch TV** and watch cartoons. At 9 o'clock, I **go to bed**. My mom says goodnight. I close my eyes and **fall asleep**. Tomorrow will be another perfect day!",
   script: [
     { id: 1, text: "Today is a perfect school day!", vi: null },

@@ -1,5 +1,5 @@
 export default {
-  videoId: "XPZXpuoIndo",
+  videoId: "z46K8WqBFnw",
   script: [
     { id: 1, text: "A very long time ago, there was a hard-working ant.", vi: "Rất lâu trước đây, có một con kiến chăm chỉ." },
     { id: 2, text: "There was also a lazy grasshopper who lived under a green leaf.", vi: "Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh." },
