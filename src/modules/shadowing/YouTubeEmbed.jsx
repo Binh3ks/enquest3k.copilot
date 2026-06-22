@@ -84,6 +84,7 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
           },
           events: {
             onReady: () => {
+              console.log('[YouTubeEmbed] onReady fired! videoId:', videoId);
               if (onPlayerReady && !readyFiredRef.current) {
                 readyFiredRef.current = true;
                 onPlayerReady({ seekTo, loadAndPlay, playVideo, pauseVideo, getCurrentTime });
