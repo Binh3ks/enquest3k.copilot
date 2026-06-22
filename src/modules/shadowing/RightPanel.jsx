@@ -20,6 +20,7 @@ export default function RightPanel({
   useTranscriptSource = false,
   onToggleSource = null,
   hasTranscript = false,
+  onCorrect = null,
 }) {
   const segs = transcriptSegments || [];
   return (
@@ -65,6 +66,7 @@ export default function RightPanel({
               onPlay={onPlay}
               onPlayBack={onPlayBack}
               onPractice={onPractice}
+              onCorrect={onCorrect}
               themeColor={themeColor}
             />
           );
