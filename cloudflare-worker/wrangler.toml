@@ -20,9 +20,9 @@ bucket_name = "engquest-audio"
 # Tạo KV namespace:
 #   wrangler kv namespace create TRANSCRIPT_CORRECTIONS
 # rồi paste ID vào binding below:
-# [[kv_namespaces]]
-# binding = "TRANSCRIPT_CORRECTIONS"
-# id = "YOUR_KV_NAMESPACE_ID"
+[[kv_namespaces]]
+binding = "TRANSCRIPT_CORRECTIONS"
+id = "89273d95b1624d0d833006b6f9a3ff2e"
 
 # ─── Secret (KHÔNG được đặt ở đây) ───────────────────────────────────────────
 # DEEPGRAM_API_KEY được set qua lệnh:
