@@ -13,9 +13,18 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
     const p = playerRef.current;
     if (p && typeof p.seekTo === 'function') {
       p.seekTo(seconds, true);
-      p.playVideo();
+      try { p.playVideo(); } catch {}
     }
   }, []);
+
+  // loadAndPlay: load video at specific time — bypasses autoplay policy
+  // because it's a "load" action, not "seek + play"
+  const loadAndPlay = useCallback((startSeconds) => {
+    const p = playerRef.current;
+    if (p && typeof p.loadVideoById === 'function') {
+      p.loadVideoById({ videoId, startSeconds });
+    }
+  }, [videoId]);
 
   const playVideo = useCallback(() => {
     const p = playerRef.current;
@@ -77,7 +86,7 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
             onReady: () => {
               if (onPlayerReady && !readyFiredRef.current) {
                 readyFiredRef.current = true;
-                onPlayerReady({ seekTo, playVideo, pauseVideo, getCurrentTime });
+                onPlayerReady({ seekTo, loadAndPlay, playVideo, pauseVideo, getCurrentTime });
               }
             },
           },
