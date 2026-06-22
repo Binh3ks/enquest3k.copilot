@@ -1,34 +1,39 @@
 {
+  "weekId": 9,
+  "theme": "City Sounds and Sights",
+  "grammar": "Plural review has have",
+  "topic": "City Explorer describing city scenes",
+  "science": "City sounds traffic",
   "videos": [
     {
       "id": 1,
-      "priority_search": "In The City City Places Song ESL kids",
-      "backup_search": "city vocabulary song kids simple English",
-      "target_grammar": "Adjectives describing city",
-      "target_channel": "English Singsing",
-      "purpose": "GRAMMAR"
+      "purpose": "GRAMMAR",
+      "query": "has have for kids song ESL English Singsing",
+      "backup_query": "has have grammar song kids"
     },
     {
       "id": 2,
-      "priority_search": "City Song What do you see in the city ESL kids",
-      "backup_search": "city buildings cars buses kids song",
-      "target_grammar": "Adjectives before nouns",
-      "target_channel": "Super Simple Songs",
-      "purpose": "VOCABULARY"
+      "purpose": "VOCABULARY",
+      "query": "city vocabulary traffic lights buildings for kids English Singsing",
+      "backup_query": "city vocabulary ESL kids"
     },
     {
       "id": 3,
-      "priority_search": "Adjectives Song Learn English Grammar for kids",
-      "backup_search": "adjectives describing words song ESL children",
-      "target_grammar": "Adjectives",
-      "target_channel": "Little Fox",
-      "purpose": "STORY"
+      "purpose": "STORY",
+      "query": "Little Fox city story level 1 ESL for kids",
+      "backup_query": "Vooks city story read aloud"
     },
     {
       "id": 4,
-      "priority_search": "City and Countryside Learning Videos for Kids",
-      "backup_search": "city life for kids English video",
-           et_grammar"           etul           et_grammar"           etul           et_grammar"     po           et_grammar"           etul           et_grammar"       "           et_grammar"           etul           et_gackup_search": "cars buses traffic kids song English",
-      "target_gram      "City vehicles",
-                                                                            ]
+      "purpose": "SOCIAL",
+      "query": "city sounds traffic for kids English educational",
+      "backup_query": "urban sounds kids"
+    },
+    {
+      "id": 5,
+      "purpose": "SHADOWING",
+      "query": "city vocabulary slow clear English Singsing for kids",
+      "backup_query": "city words clear English"
+    }
+  ]
 }

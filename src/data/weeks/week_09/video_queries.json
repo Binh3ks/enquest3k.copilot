@@ -1,39 +1,39 @@
 {
   "weekId": 9,
-  "theme": "City Sounds & Sights",
-  "grammar_focus": "Adjectives before nouns (It is a [adjective] [noun])",
+  "theme": "City Sounds and Sights",
+  "grammar": "Plural review has have",
+  "topic": "City Explorer describing city scenes",
+  "science": "City sounds traffic",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing adjectives song ESL for kids",
-      "backup_search": "adjectives describing words song kids"
+      "query": "has have for kids song ESL English Singsing",
+      "backup_query": "has have grammar song kids"
     },
     {
       "id": 2,
-      "purpose": "GRAMMAR",
-      "priority_search": "English Singsing city places vocabulary song",
-      "backup_search": "city places song kids English learning"
+      "purpose": "VOCABULARY",
+      "query": "city vocabulary traffic lights buildings for kids English Singsing",
+      "backup_query": "city vocabulary ESL kids"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox city adventure story level 1",
-      "backup_search": "Vooks city story animated read aloud kids"
+      "query": "Little Fox city story level 1 ESL for kids",
+      "backup_query": "Vooks city story read aloud"
     },
     {
       "id": 4,
-      "purpose": "VOCABULARY",
-      "priority_search": "Little Fox transportation song kids",
-      "backup_search": "city transportation song ESL kids"
+      "purpose": "SOCIAL",
+      "query": "city sounds traffic for kids English educational",
+      "backup_query": "urban sounds kids"
     },
     {
       "id": 5,
-      "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids cities towns community helpers",
-      "backup_search": "cities and communities kids educational video"
+      "purpose": "SHADOWING",
+      "query": "city vocabulary slow clear English Singsing for kids",
+      "backup_query": "city words clear English"
     }
-  ],
-  "topic": "City Explorer - describing city scenes",
-  "science": "City places, transportation, urban life"
+  ]
 }

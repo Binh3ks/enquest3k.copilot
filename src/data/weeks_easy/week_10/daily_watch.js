@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "Adjectives and Opposites Song | Children&#39;s Songs | Fun Kids English", videoId: "Qfl9m0sff-4", duration: "02:12", sim_duration: 132, thumb: "https://img.youtube.com/vi/Qfl9m0sff-4/mqdefault.jpg" },
-    { id: 2, title: "Farm Animals Vocabulary Chant for Children | Fun Kids English", videoId: "t1tSx5cI9eg", duration: "02:47", sim_duration: 167, thumb: "https://img.youtube.com/vi/t1tSx5cI9eg/mqdefault.jpg" },
-    { id: 3, title: "The Three Little Pigs | Fairy Tale Barn l The Big Bad Wolf Will Blow Down the House! | Little Fox", videoId: "9p1CUYFSDFI", duration: "13:45", sim_duration: 825, thumb: "https://img.youtube.com/vi/9p1CUYFSDFI/mqdefault.jpg" },
-    { id: 4, title: "Old MacDonald Had A Farm | Kids Songs | Super Simple Songs", videoId: "5oYKonYBujg", duration: "03:30", sim_duration: 210, thumb: "https://img.youtube.com/vi/5oYKonYBujg/mqdefault.jpg" },
-    { id: 5, title: "Let&#39;s Plant a Garden! | Squeaks Grows a Garden! | SciShow Kids", videoId: "0TJuJTFEBbs", duration: "04:40", sim_duration: 280, thumb: "https://img.youtube.com/vi/0TJuJTFEBbs/mqdefault.jpg" }
+    { id: 1, title: "Farm Animals Vocabulary Chant for Children | Fun Kids English", videoId: "t1tSx5cI9eg", duration: "02:47", sim_duration: 167, thumb: "https://img.youtube.com/vi/t1tSx5cI9eg/mqdefault.jpg" },
+    { id: 2, title: "The Animals On The Farm | Animals and Farm Song for Kids | Super Simple Songs", videoId: "zXEq-QO3xTg", duration: "03:24", sim_duration: 204, thumb: "https://img.youtube.com/vi/zXEq-QO3xTg/mqdefault.jpg" },
+    { id: 3, title: "The Rainy Day | Farm Animal Story | Friendship | Bedtime Story | Little Fox", videoId: "kqO42jnccO8", duration: "07:20", sim_duration: 440, thumb: "https://img.youtube.com/vi/kqO42jnccO8/mqdefault.jpg" },
+    { id: 4, title: "Farm animals for kids - Vocabulary fo kids", videoId: "hewioIU4a64", duration: "03:43", sim_duration: 223, thumb: "https://img.youtube.com/vi/hewioIU4a64/mqdefault.jpg" },
+    { id: 5, title: "🍪 Who Took The Cookie? (Farm Animals Version) | Kids Songs | Super Simple Songs", videoId: "Vu0-98fgnRo", duration: "02:16", sim_duration: 136, thumb: "https://img.youtube.com/vi/Vu0-98fgnRo/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

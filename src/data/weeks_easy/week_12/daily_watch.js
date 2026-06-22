@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "Can - Can&#39;t | Grammar | Exercise | Learn English For Kids", videoId: "-4THSMLLCiY", duration: "03:43", sim_duration: 223, thumb: "https://img.youtube.com/vi/-4THSMLLCiY/mqdefault.jpg" },
-    { id: 2, title: "[Can] Can you swim - Exciting song - Sing along", videoId: "x_maAPehJbk", duration: "03:49", sim_duration: 229, thumb: "https://img.youtube.com/vi/x_maAPehJbk/mqdefault.jpg" },
-    { id: 3, title: "This Is My Body | Early Learning | Body | Little Fox | Bedtime Stories", videoId: "RKCxrbuKNx8", duration: "02:19", sim_duration: 139, thumb: "https://img.youtube.com/vi/RKCxrbuKNx8/mqdefault.jpg" },
-    { id: 4, title: "Action Verbs (v1)- Kids vocabulary -Action Words - Learn English for kids - Educational video", videoId: "4c6FyuetSVo", duration: "04:23", sim_duration: 263, thumb: "https://img.youtube.com/vi/4c6FyuetSVo/mqdefault.jpg" },
-    { id: 5, title: "Basic Needs of Animals | Science for Kids", videoId: "2Ns9w8sWk7E", duration: "03:34", sim_duration: 214, thumb: "https://img.youtube.com/vi/2Ns9w8sWk7E/mqdefault.jpg" }
+    { id: 1, title: "Theme 20. Can - Can you swim? | ESL Song & Story - Learning English for Kids", videoId: "jANerjPKC9E", duration: "06:07", sim_duration: 367, thumb: "https://img.youtube.com/vi/jANerjPKC9E/mqdefault.jpg" },
+    { id: 2, title: "Hobbies and Interests- What do you like doing? - Kids vocabulary - Learn English for kids", videoId: "N1o4oOXLOZc", duration: "04:27", sim_duration: 267, thumb: "https://img.youtube.com/vi/N1o4oOXLOZc/mqdefault.jpg" },
+    { id: 3, title: "The Tale of Peter Rabbit Full Story | Stories for Kids | Bedtime Stories l Little Fox", videoId: "G6FWfjfvrNQ", duration: "11:42", sim_duration: 702, thumb: "https://img.youtube.com/vi/G6FWfjfvrNQ/mqdefault.jpg" },
+    { id: 4, title: "Ch.1 Hello | Ch.2 How are you? | Basic English Conversation Practice for Kids", videoId: "by1QAoRcc-U", duration: "08:43", sim_duration: 523, thumb: "https://img.youtube.com/vi/by1QAoRcc-U/mqdefault.jpg" },
+    { id: 5, title: "Speak fast and Clear || Improve your English", videoId: "8UPhoDi2-NU", duration: "02:13", sim_duration: 133, thumb: "https://img.youtube.com/vi/8UPhoDi2-NU/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "✅✅ Like  Don’t like + ing  ✅✅ song for kids ✅✅  English Grammar for kids ✅✅ Aprende con Víctor ✅✅", videoId: "Y0MzJLcwx8Q", duration: "01:55", sim_duration: 115, thumb: "https://img.youtube.com/vi/Y0MzJLcwx8Q/mqdefault.jpg" },
-    { id: 2, title: "Feel (Feelings or Emotions) (v1) - Kids vocabulary - Are you happy? - English video for kids", videoId: "o5jZIswSfSE", duration: "03:55", sim_duration: 235, thumb: "https://img.youtube.com/vi/o5jZIswSfSE/mqdefault.jpg" },
-    { id: 3, title: "Teddy&#39;s Day | Early Learning | Phonics | Little Fox | Bedtime Stories", videoId: "MvbnocOuOTw", duration: "01:06", sim_duration: 66, thumb: "https://img.youtube.com/vi/MvbnocOuOTw/mqdefault.jpg" },
-    { id: 4, title: "Hobbies and Interests- What do you like doing? - Kids vocabulary - Learn English for kids", videoId: "N1o4oOXLOZc", duration: "04:27", sim_duration: 267, thumb: "https://img.youtube.com/vi/N1o4oOXLOZc/mqdefault.jpg" },
-    { id: 5, title: "Emotions for Kids - Happiness, Sadness, Fear, Anger, Disgust and Surprise", videoId: "jetoWelJJJk", duration: "04:52", sim_duration: 292, thumb: "https://img.youtube.com/vi/jetoWelJJJk/mqdefault.jpg" }
+    { id: 1, title: "This That These Those Song | Demonstratives", videoId: "Ulp9Q4BjrEg", duration: "02:29", sim_duration: 149, thumb: "https://img.youtube.com/vi/Ulp9Q4BjrEg/mqdefault.jpg" },
+    { id: 2, title: "Can You Please Help Me? | Review Colors, Toys and Family Members | Super Simple Songs", videoId: "OjmWon9KebI", duration: "03:10", sim_duration: 190, thumb: "https://img.youtube.com/vi/OjmWon9KebI/mqdefault.jpg" },
+    { id: 3, title: "The Tale of Peter Rabbit Full Story | Stories for Kids | Bedtime Stories l Little Fox", videoId: "G6FWfjfvrNQ", duration: "11:42", sim_duration: 702, thumb: "https://img.youtube.com/vi/G6FWfjfvrNQ/mqdefault.jpg" },
+    { id: 4, title: "Easy Kids Experiment: States of Matter #kidsscience #balloonexperiment #stemactivity #kidsshow", videoId: "zPhJJ0gJhF8", duration: "01:01", sim_duration: 61, thumb: "https://img.youtube.com/vi/zPhJJ0gJhF8/mqdefault.jpg" },
+    { id: 5, title: "Toys Vocabulary Chant for Children | Fun Kids English", videoId: "8rRQX4KhcqE", duration: "03:20", sim_duration: 200, thumb: "https://img.youtube.com/vi/8rRQX4KhcqE/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

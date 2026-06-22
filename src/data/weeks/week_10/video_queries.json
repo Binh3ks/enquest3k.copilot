@@ -1,39 +1,39 @@
 {
   "weekId": 10,
   "theme": "The Farm Adventure",
-  "grammar_focus": "Contrast with but (The city is noisy, but the farm is quiet)",
+  "grammar": "Plural review has have",
+  "topic": "Farm Tour comparing city and farm",
+  "science": "Farm animals and their sounds",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing opposites adjectives song",
-      "backup_search": "opposites song kids noisy quiet big small"
+      "query": "has have farm animals for kids song ESL",
+      "backup_query": "has have animals song"
     },
     {
       "id": 2,
-      "purpose": "GRAMMAR",
-      "priority_search": "English Singsing farm animals song kids",
-      "backup_search": "farm animals song educational kids"
+      "purpose": "VOCABULARY",
+      "query": "farm animals vocabulary for kids English Singsing",
+      "backup_query": "farm animals song ESL"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox farm story level 1 animals",
-      "backup_search": "Vooks farm animals story read aloud kids"
+      "query": "Little Fox farm story level 1 ESL for kids",
+      "backup_query": "Vooks farm story read aloud"
     },
     {
       "id": 4,
-      "purpose": "VOCABULARY",
-      "priority_search": "Little Fox Old MacDonald farm song",
-      "backup_search": "farm animals vocabulary song kids"
+      "purpose": "SCIENCE",
+      "query": "farm animals and their sounds for kids",
+      "backup_query": "animal sounds science kids"
     },
     {
       "id": 5,
-      "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids farms how farms work",
-      "backup_search": "farm animals science kids educational"
+      "purpose": "SHADOWING",
+      "query": "farm animals vocabulary slow clear English Singsing kids",
+      "backup_query": "farm animals clear English"
     }
-  ],
-  "topic": "Farm Tour - comparing city and farm",
-  "science": "Farm animals, countryside, agriculture"
+  ]
 }

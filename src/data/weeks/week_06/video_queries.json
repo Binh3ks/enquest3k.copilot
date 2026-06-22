@@ -1,39 +1,39 @@
 {
   "weekId": 6,
   "theme": "Treasure Hunt",
-  "grammar_focus": "Prepositions of Place (In, On, Under)",
+  "grammar": "Prepositions of place",
+  "topic": "Interior Decorator positioning objects",
+  "science": "Where things are in space",
   "videos": [
     {
       "id": 1,
       "purpose": "GRAMMAR",
-      "priority_search": "English Singsing prepositions of place in on under ESL for kids",
-      "backup_search": "prepositions of place in on under song ESL kids cartoons"
+      "query": "prepositions of place in on under for kids song ESL",
+      "backup_query": "prepositions place kids song"
     },
     {
       "id": 2,
-      "purpose": "GRAMMAR",
-      "priority_search": "English Singsing In  On  Under ESL for kids",
-      "backup_search": "In  On  Under kids song ESL cartoons"
+      "purpose": "VOCABULARY",
+      "query": "furniture vocabulary for kids English room objects",
+      "backup_query": "house objects vocabulary ESL kids"
     },
     {
       "id": 3,
       "purpose": "STORY",
-      "priority_search": "Little Fox treasure hunt interior decorator story level 1 ESL for kids",
-      "backup_search": "Vooks treasure hunt interior decorator story read aloud cartoons for kids"
+      "query": "Little Fox treasure hunt story level 1 ESL for kids",
+      "backup_query": "Vooks hidden objects story read aloud"
     },
     {
       "id": 4,
-      "purpose": "VOCABULARY",
-      "priority_search": "Little Fox Where is it? song ESL for kids",
-      "backup_search": "Where is it? ESL kids cartoons song"
+      "purpose": "SCIENCE",
+      "query": "where things are in space prepositions science for kids",
+      "backup_query": "positional words science kids"
     },
     {
       "id": 5,
-      "purpose": "SCIENCE",
-      "priority_search": "SciShow Kids Spatial awareness, location for kids",
-      "backup_search": "Spatial awareness, location kids science cartoons"
+      "purpose": "SHADOWING",
+      "query": "furniture vocabulary slow clear English Singsing kids",
+      "backup_query": "house vocabulary clear English"
     }
-  ],
-  "topic": "Interior Decorator - positioning objects",
-  "science": "Spatial awareness, location"
+  ]
 }

@@ -1,44 +1,39 @@
 {
+  "weekId": 12,
+  "theme": "The Talent Show",
+  "grammar": "Can Cannot ability",
+  "topic": "Talent Show abilities and performances",
+  "science": "How skills are developed",
   "videos": [
     {
       "id": 1,
-      "priority_search": "English Singsing prepositions in on under ESL kids",
-      "backup_search": "prepositions song ESL cartoons kids",
-      "target_grammar": "Prepositions (In, On, Under, Next to)",
-      "target_channel": "English Singsing",
-      "purpose": "GRAMMAR"
+      "purpose": "GRAMMAR",
+      "query": "can cannot ability for kids song ESL English Singsing",
+      "backup_query": "can cannot kids song"
     },
     {
       "id": 2,
-      "priority_search": "Super Simple Songs where is it position words",
-      "backup_search": "position words song kids ESL",
-      "target_grammar": "Prepositions",
-      "target_channel": "Super Simple Songs",
-      "purpose": "VOCABULARY"
+      "purpose": "VOCABULARY",
+      "query": "abilities talents vocabulary for kids English Singsing",
+      "backup_query": "talent vocabulary ESL kids"
     },
     {
       "id": 3,
-      "priority_search": "Little Fox hide and seek story kids",
-      "backup_search": "hide and seek story ESL children",
-      "target_grammar": "Location words",
-      "target_channel": "Little Fox",
-      "purpose": "STORY"
+      "purpose": "STORY",
+      "query": "Little Fox talent show story level 1 ESL for kids",
+      "backup_query": "Vooks talent story read aloud"
     },
     {
       "id": 4,
-      "priority_search": "treasure hunt kids English video",
-      "backup_search": "treasure hunt story ESL children",
-      "target_grammar": "Prepositions",
-      "target_channel": "Kids Stories",
-      "purpose": "THEME"
+      "purpose": "SCIENCE",
+      "query": "how skills are developed for kids English",
+      "backup_query": "practicing skills science kids"
     },
     {
       "id": 5,
-      "priority_search": "in on under next to song ESL kids",
-      "backup_search": "position words educational video",
-      "target_grammar": "Prepositions",
-      "target_channel": "Educational Channels",
-      "purpose": "GRAMMAR"
+      "purpose": "SHADOWING",
+      "query": "abilities vocabulary slow clear English Singsing kids",
+      "backup_query": "ability words clear English"
     }
   ]
 }

@@ -1,10 +1,10 @@
 export default {
   videos: [
     { id: 1, title: "PLURAL NOUNS 🦸‍♀️ Grammar and Spelling for Kids 📝 Superlexia ⭐ Episode 4", videoId: "174ycaguljc", duration: "04:59", sim_duration: 299, thumb: "https://img.youtube.com/vi/174ycaguljc/mqdefault.jpg" },
-    { id: 2, title: "Learn Singular and Plural | Talking Flashcards", videoId: "1JdRn2HdAx8", duration: "01:17", sim_duration: 77, thumb: "https://img.youtube.com/vi/1JdRn2HdAx8/mqdefault.jpg" },
-    { id: 3, title: "Think Big! | Read Aloud Kids Book | Vooks Narrated Storybooks", videoId: "YB1lx8MOBNs", duration: "14:36", sim_duration: 876, thumb: "https://img.youtube.com/vi/YB1lx8MOBNs/mqdefault.jpg" },
-    { id: 4, title: "Magic e | Silent e | Long Vowels | CVCe | Phonics Songs and Stories | Learn to Read | Little Fox", videoId: "dcBfSesrnOI", duration: "13:43", sim_duration: 823, thumb: "https://img.youtube.com/vi/dcBfSesrnOI/mqdefault.jpg" },
-    { id: 5, title: "Science for Kids - Learning Video", videoId: "V4Ij8hE5TsI", duration: "05:00", sim_duration: 300, thumb: "https://img.youtube.com/vi/V4Ij8hE5TsI/mqdefault.jpg" }
+    { id: 2, title: "School Supplies - Kids vocabulary - Learn English for kids - English educational video", videoId: "AS5nhKzaOqo", duration: "03:30", sim_duration: 210, thumb: "https://img.youtube.com/vi/AS5nhKzaOqo/mqdefault.jpg" },
+    { id: 3, title: "This Is My Body | Early Learning | Body | Little Fox | Bedtime Stories", videoId: "RKCxrbuKNx8", duration: "02:19", sim_duration: 139, thumb: "https://img.youtube.com/vi/RKCxrbuKNx8/mqdefault.jpg" },
+    { id: 4, title: "Counting Numbers for Kids - Learn to Count - Count 1-8 - Preschool Activity - Toddler Learning", videoId: "WtB438gUmwU", duration: "01:01", sim_duration: 61, thumb: "https://img.youtube.com/vi/WtB438gUmwU/mqdefault.jpg" },
+    { id: 5, title: "What is In Your Bag? Song with Matt | School Classroom Items | Learn English Kids", videoId: "aVSnDZHNEQc", duration: "04:13", sim_duration: 253, thumb: "https://img.youtube.com/vi/aVSnDZHNEQc/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };

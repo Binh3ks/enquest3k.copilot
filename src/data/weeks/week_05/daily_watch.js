@@ -1,10 +1,10 @@
 export default {
   videos: [
-    { id: 1, title: "Articles A, An and The | English Grammar For Kids with Elvis | Grade 1 | #5", videoId: "drTyYqbz6Xk", duration: "03:30", sim_duration: 210, thumb: "https://img.youtube.com/vi/drTyYqbz6Xk/mqdefault.jpg" },
-    { id: 2, title: "[NEW] House (v2) - Kids vocabulary - Parts of the House - English educational video", videoId: "aEM9d_8_i0k", duration: "05:56", sim_duration: 356, thumb: "https://img.youtube.com/vi/aEM9d_8_i0k/mqdefault.jpg" },
-    { id: 3, title: "The Three Little Pigs | Fairy Tale Barn l The Big Bad Wolf Will Blow Down the House! | Little Fox", videoId: "9p1CUYFSDFI", duration: "13:45", sim_duration: 825, thumb: "https://img.youtube.com/vi/9p1CUYFSDFI/mqdefault.jpg" },
-    { id: 4, title: "Parts of the House | Kids Vocabulary | Fun Kids English", videoId: "aOSJZbHoiY8", duration: "03:37", sim_duration: 217, thumb: "https://img.youtube.com/vi/aOSJZbHoiY8/mqdefault.jpg" },
-    { id: 5, title: "House Vocabulary - Learning the Parts of the Home for kids", videoId: "uGw2aFLry0s", duration: "09:45", sim_duration: 585, thumb: "https://img.youtube.com/vi/uGw2aFLry0s/mqdefault.jpg" }
+    { id: 1, title: "Demonstrative Pronouns| Learn This, That, These, Those| Grit-original| English song for kids", videoId: "h-Ta1TG4RGA", duration: "05:54", sim_duration: 354, thumb: "https://img.youtube.com/vi/h-Ta1TG4RGA/mqdefault.jpg" },
+    { id: 2, title: "I See Something Blue | Colors Song for Children | Super Simple Songs", videoId: "jYAWf8Y91hA", duration: "03:03", sim_duration: 183, thumb: "https://img.youtube.com/vi/jYAWf8Y91hA/mqdefault.jpg" },
+    { id: 3, title: "The Carter Family 1 | Game Night | Family | Little Fox | Animated Stories for Kids", videoId: "L71cvdr1xpM", duration: "03:44", sim_duration: 224, thumb: "https://img.youtube.com/vi/L71cvdr1xpM/mqdefault.jpg" },
+    { id: 4, title: "The Science of Light and Color for Kids: Rainbows and the Electromagnetic Spectrum - FreeSchool", videoId: "9Vsl0Iom3S0", duration: "04:38", sim_duration: 278, thumb: "https://img.youtube.com/vi/9Vsl0Iom3S0/mqdefault.jpg" },
+    { id: 5, title: "Clothes - clothing - Kids vocabulary - Learn English for kids - English educational video", videoId: "Q_EwuVHDb5U", duration: "06:38", sim_duration: 398, thumb: "https://img.youtube.com/vi/Q_EwuVHDb5U/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Game", url: "#", description: "Review"}]
 };
