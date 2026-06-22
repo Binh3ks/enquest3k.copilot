@@ -1,10 +1,16 @@
 export default {
   videos: [
-    { id: 1, title: "Prepositions Vocabulary Chant for Children | Fun Kids English", videoId: "fpo3b33iCtU", duration: "03:18", sim_duration: 198, thumb: "https://img.youtube.com/vi/fpo3b33iCtU/mqdefault.jpg" },
-    { id: 2, title: "Learn Park and Playground Vocabulary | Talking Flashcards", videoId: "dQsDDD5W8yc", duration: "02:55", sim_duration: 175, thumb: "https://img.youtube.com/vi/dQsDDD5W8yc/mqdefault.jpg" },
-    { id: 3, title: "Where Does Kitty Go In The Rain? | Animated Read Aloud Kids Book | Vooks Narrated Storybooks", videoId: "OTOaOdCrrik", duration: "07:53", sim_duration: 473, thumb: "https://img.youtube.com/vi/OTOaOdCrrik/mqdefault.jpg" },
-    { id: 4, title: "Long Ago and Now | Culture and History | Time | Little Fox | Bedtime Stories", videoId: "U-r-xHln6nE", duration: "02:23", sim_duration: 143, thumb: "https://img.youtube.com/vi/U-r-xHln6nE/mqdefault.jpg" },
-    { id: 5, title: "Town (Introduction of my town / village) - Kids vocabulary", videoId: "EfD2k9beP-4", duration: "02:40", sim_duration: 160, thumb: "https://img.youtube.com/vi/EfD2k9beP-4/mqdefault.jpg" }
+    { id: 1, title: "Parts of the City I - Vocabulary for Kids", videoId: "EsWIJj04oQw", duration: "05:05", sim_duration: 305, thumb: "https://img.youtube.com/vi/EsWIJj04oQw/mqdefault.jpg" },
+    { id: 2, title: "Places in the City - Town Vocabulary for Kids in English", videoId: "ANvk3lbe-fk", duration: "02:00", sim_duration: 120, thumb: "https://img.youtube.com/vi/ANvk3lbe-fk/mqdefault.jpg" },
+    { id: 3, title: "Playground - Kids vocabulary - Learn English for kids", videoId: "EMQC0GaP3hU", duration: "03:00", sim_duration: 180, thumb: "https://img.youtube.com/vi/EMQC0GaP3hU/mqdefault.jpg" },
+    { id: 4, title: "Town - Kids vocabulary - Educational video for kids", videoId: "EfD2k9beP-4", duration: "02:40", sim_duration: 160, thumb: "https://img.youtube.com/vi/EfD2k9beP-4/mqdefault.jpg" },
+    { id: 5, title: "My city - English Educational Videos", videoId: "dCIwO1flbAg", duration: "02:30", sim_duration: 150, thumb: "https://img.youtube.com/vi/dCIwO1flbAg/mqdefault.jpg" }
   ],
-  bonus_games: [{title: "Game", url: "#", description: "Review"}]
+  bonus_games: [
+  {
+    "title": "Game",
+    "url": "#",
+    "description": "Review"
+  }
+]
 };
