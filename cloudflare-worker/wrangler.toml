@@ -15,6 +15,15 @@ bucket_name = "engquest-audio"
 #   { pattern = "api-tts.bkbacademy.vn/*", zone_name = "bkbacademy.vn" }
 # ]
 
+# ─── KV Namespace Binding ─────────────────────────────────────────────────────
+# Store: TRANSCRIPT_CORRECTIONS — community sentence corrections
+# Tạo KV namespace:
+#   wrangler kv namespace create TRANSCRIPT_CORRECTIONS
+# rồi paste ID vào binding below:
+# [[kv_namespaces]]
+# binding = "TRANSCRIPT_CORRECTIONS"
+# id = "YOUR_KV_NAMESPACE_ID"
+
 # ─── Secret (KHÔNG được đặt ở đây) ───────────────────────────────────────────
 # DEEPGRAM_API_KEY được set qua lệnh:
 #   wrangler secret put DEEPGRAM_API_KEY
