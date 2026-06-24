@@ -3,7 +3,7 @@ import { speakText } from '../utils/AudioHelper';
 
 const SPEED_OPTIONS = [1.25, 1.0, 0.85, 0.75, 0.65];
 const STORAGE_KEY = 'shadowing_speed';
-const DEFAULT_SPEED = 0.75;  // Default for new users
+const DEFAULT_SPEED = 0.85;  // Default for new users
 
 function getStoredSpeed() {
   try {
