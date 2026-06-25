@@ -1,6 +1,6 @@
 export default {
   title: "Counting in Class",
-  videoId: "0QrcDQSxfCY",
+  videoId: "d7hYjIV4AF0",
   content_en: "Today I am at school. I **look around** my classroom. There are desks **in neat rows** in my room. There are chairs too. I **sit on** a chair **at a desk**. I **open my bag** and **take out** my pencil. In my pencil case there are markers. The teacher **writes on** the board. There are words on the board! **On the wall** there are shelves. There are books **on the shelves**. We do art today. There are crayons and papers **on the desks**. I love my classroom! There are so many things here.",
   script: [
     { id: 1, text: "Today I am at school.", vi: "Hôm nay tôi đến trường." },
