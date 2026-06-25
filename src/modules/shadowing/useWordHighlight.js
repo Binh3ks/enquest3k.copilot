@@ -38,13 +38,17 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
       return;
     }
 
+    let lastT = -1;
     const interval = setInterval(() => {
       const t = ytPlayer.getCurrentTime();
       if (typeof t !== 'number') return;
+      // Skip if time didn't change (player paused)
+      if (Math.abs(t - lastT) < 0.001) return;
+      lastT = t;
 
       let idx = -1;
       for (let i = 0; i < words.length; i++) {
-        if (t >= words[i].start - 0.3 && t < words[i].end + 0.3) {
+        if (t >= words[i].start - 0.5 && t < words[i].end + 0.5) {
           idx = i;
           break;
         }
