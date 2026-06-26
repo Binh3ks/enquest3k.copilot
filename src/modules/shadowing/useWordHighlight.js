@@ -17,19 +17,24 @@ function splitWordsWithTiming(sentence, speed) {
   if (!sentence) return [];
   const text = sentence.text || '';
   const start = sentence.start || 0;
-  const dur = (sentence.duration || 0) / (speed || 1);
-  if (dur <= 0) return [];
+  const rawDur = (sentence.duration || 0) / (speed || 1);
+  if (rawDur <= 0) return [];
 
   const words = text.match(/[A-Za-z']+/g) || [];
   if (!words.length) return [];
 
-  // Safety cap: if duration per word exceeds 1.5s (normal speech ~0.3s/word),
-  // cap total duration to wordCount * 1s to prevent inflated bracket-tag
-  // durations from making highlights drag. This is a runtime guard for any
-  // remaining data issues in older transcripts.
-  const maxWordDur = 0.7;
-  const cappedDur = (dur / words.length > maxWordDur) ? words.length * maxWordDur : dur;
-  const wordDur = cappedDur / words.length;
+  // Use actual speech rate (~3 words/s = 0.33s/word) as the baseline.
+  // Transcript durations are often inflated by [Music]/[Applause] segments
+  // that mergeSegments accumulated into accEnd without contributing speech.
+  // Trust rawDur only if it implies a per-word rate ≤ 0.7s (normal-to-fast
+  // speech). Otherwise fall back to a realistic 0.4s/word rate.
+  const SPEECH_RATE_PER_WORD = 0.4;  // 2.5 words/second
+  const MAX_NORMAL_RATE = 0.7;
+  const impliedRate = rawDur / words.length;
+  const dur = (impliedRate > MAX_NORMAL_RATE)
+    ? words.length * SPEECH_RATE_PER_WORD
+    : rawDur;
+  const wordDur = dur / words.length;
 
   return words.map((w, i) => ({
     word: w,
