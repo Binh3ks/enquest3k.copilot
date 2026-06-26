@@ -17,13 +17,14 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
     }
   }, []);
 
-  // loadAndPlay: load video at specific time — bypasses autoplay policy
-  // because it's a "load" action, not "seek + play"
+  // loadAndPlay: load video at specific time and start playback.
+  // loadVideoById alone often stays paused under browser autoplay policy;
+  // explicitly call playVideo() right after to guarantee the seek advances.
   const loadAndPlay = useCallback((startSeconds) => {
     const p = playerRef.current;
-    if (p && typeof p.loadVideoById === 'function') {
-      p.loadVideoById({ videoId, startSeconds });
-    }
+    if (!p || typeof p.loadVideoById !== 'function') return;
+    p.loadVideoById({ videoId, startSeconds });
+    try { p.playVideo(); } catch { /* player not ready yet — YT will auto-play after load */ }
   }, [videoId]);
 
   const playVideo = useCallback(() => {
