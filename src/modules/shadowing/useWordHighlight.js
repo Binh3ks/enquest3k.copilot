@@ -23,7 +23,14 @@ function splitWordsWithTiming(sentence, speed) {
   const words = text.match(/[A-Za-z']+/g) || [];
   if (!words.length) return [];
 
-  const wordDur = dur / words.length;
+  // Safety cap: if duration per word exceeds 1.5s (normal speech ~0.3s/word),
+  // cap total duration to wordCount * 1s to prevent inflated bracket-tag
+  // durations from making highlights drag. This is a runtime guard for any
+  // remaining data issues in older transcripts.
+  const maxWordDur = 1.5;
+  const cappedDur = (dur / words.length > maxWordDur) ? words.length * maxWordDur : dur;
+  const wordDur = cappedDur / words.length;
+
   return words.map((w, i) => ({
     word: w,
     start: start + i * wordDur,
