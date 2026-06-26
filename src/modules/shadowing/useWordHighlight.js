@@ -14,13 +14,17 @@
 import { useState, useEffect, useRef } from 'react';
 
 // Compute the speech window for a sentence: [start, end) where the actual
-// speech happens.  Strategy:
-//   - If rawDur / words is between 0.25 and 0.8 s/word (normal speech range),
-//     trust it.
-//   - If rawDur is inflated (> 0.8 s/word, usually due to merged silence gaps
-//     between speech segments), use 0.5 s/word as a compromise — fast enough
-//     to highlight within the spoken portion, slow enough to feel natural.
-//   - If rawDur is too short (< 0.25 s/word), use 0.25 s/word minimum.
+// speech happens.  After the pipeline fix (each raw ASR segment = one
+// sentence, [Music] segments filtered), rawDur is now accurate for ESL
+// vocabulary videos where each word naturally takes 1-3 seconds (single
+// words like "Bear." or short utterances like "Look." have durations
+// that match the actual speech rate).
+//
+// Strategy:
+//   - Trust rawDur by default. Only override at extremes.
+//   - Cap per-word rate at MIN_RATE (0.25s) for unrealistically fast cases.
+//   - Use 0.5s/word as fallback only if rawDur is wildly inflated
+//     (>5s/word, indicating merged silence we missed).
 export function getSpeechWindow(sentence, speed) {
   if (!sentence) return { start: 0, end: 0, dur: 0 };
   const start = sentence.start || 0;
@@ -30,10 +34,10 @@ export function getSpeechWindow(sentence, speed) {
   const rawDur = (sentence.duration || 0) / (speed || 1);
   const perWord = rawDur / wordCount;
   const MIN_RATE = 0.25;
-  const MAX_NORMAL_RATE = 0.8;
+  const INFLATED_THRESHOLD = 5.0;
   let wordDur;
   if (perWord < MIN_RATE) wordDur = MIN_RATE;
-  else if (perWord <= MAX_NORMAL_RATE) wordDur = perWord;
+  else if (perWord <= INFLATED_THRESHOLD) wordDur = perWord;
   else wordDur = 0.5;
   const dur = wordDur * wordCount;
   return { start, end: start + dur, dur };
