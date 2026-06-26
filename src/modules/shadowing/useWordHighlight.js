@@ -14,18 +14,28 @@
 import { useState, useEffect, useRef } from 'react';
 
 // Compute the speech window for a sentence: [start, end) where the actual
-// speech happens.  Uses sentence.start as the speech start time (after
-// [Music]/title stripping at pipeline level) and a fixed speech rate of
-// 0.4s/word for the duration — ignoring the raw transcript duration which
-// is often inflated by [Music]/[Applause] segments.
+// speech happens.  Strategy:
+//   - If rawDur / words is between 0.25 and 0.8 s/word (normal speech range),
+//     trust it.
+//   - If rawDur is inflated (> 0.8 s/word, usually due to merged silence gaps
+//     between speech segments), use 0.5 s/word as a compromise — fast enough
+//     to highlight within the spoken portion, slow enough to feel natural.
+//   - If rawDur is too short (< 0.25 s/word), use 0.25 s/word minimum.
 export function getSpeechWindow(sentence, speed) {
   if (!sentence) return { start: 0, end: 0, dur: 0 };
   const start = sentence.start || 0;
   const text = sentence.text || '';
   const wordCount = (text.match(/[A-Za-z']+/g) || []).length;
   if (wordCount === 0) return { start, end: start, dur: 0 };
-  const SPEECH_RATE_PER_WORD = 0.4;
-  const dur = wordCount * SPEECH_RATE_PER_WORD;
+  const rawDur = (sentence.duration || 0) / (speed || 1);
+  const perWord = rawDur / wordCount;
+  const MIN_RATE = 0.25;
+  const MAX_NORMAL_RATE = 0.8;
+  let wordDur;
+  if (perWord < MIN_RATE) wordDur = MIN_RATE;
+  else if (perWord <= MAX_NORMAL_RATE) wordDur = perWord;
+  else wordDur = 0.5;
+  const dur = wordDur * wordCount;
   return { start, end: start + dur, dur };
 }
 
