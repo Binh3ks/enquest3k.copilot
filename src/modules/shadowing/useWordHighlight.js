@@ -63,6 +63,7 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
     }
 
     let lastIdx = -2;
+    let lastLogT = 0;
     const interval = setInterval(() => {
       const sentence = sentenceRef.current;
       if (!sentence) return;
@@ -84,6 +85,19 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
         if (words[i].start <= t + 0.1) {
           idx = i;
         }
+      }
+
+      // DEBUG (Jun 26): log every 0.5s with full word timing info
+      if (t - lastLogT >= 0.5) {
+        lastLogT = t;
+        const w = words[idx];
+        const fill = w && w.end > w.start ? Math.min(100, Math.max(0, ((t - w.start) / (w.end - w.start)) * 100)).toFixed(1) : 'n/a';
+        console.log(
+          `[WORD_DEBUG] t=${t.toFixed(2)} idx=${idx}/${words.length-1} ` +
+          `word="${w?.word}" wordStart=${w?.start?.toFixed(2)} wordEnd=${w?.end?.toFixed(2)} ` +
+          `fill=${fill}% ` +
+          `words=[${words.map((x,i) => `${i}:"${x.word}"[${x.start.toFixed(2)}-${x.end.toFixed(2)}]`).join(' ')}]`
+        );
       }
 
       // Update idx only on transition (avoids unnecessary re-renders), but
