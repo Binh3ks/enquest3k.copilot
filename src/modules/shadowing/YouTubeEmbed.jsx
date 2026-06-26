@@ -43,6 +43,14 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
     return 0;
   }, []);
 
+  // setPlaybackRate: change YouTube playback speed (e.g. 0.85x).
+  const setPlaybackRate = useCallback((rate) => {
+    const p = playerRef.current;
+    if (p && typeof p.setPlaybackRate === 'function') {
+      try { p.setPlaybackRate(rate); } catch { /* not ready */ }
+    }
+  }, []);
+
   useEffect(() => {
     if (!videoId || !containerRef.current) return;
 
@@ -88,7 +96,7 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
               console.log('[YouTubeEmbed] onReady fired! videoId:', videoId);
               if (onPlayerReady && !readyFiredRef.current) {
                 readyFiredRef.current = true;
-                onPlayerReady({ seekTo, loadAndPlay, playVideo, pauseVideo, getCurrentTime });
+                onPlayerReady({ seekTo, loadAndPlay, playVideo, pauseVideo, getCurrentTime, setPlaybackRate });
               }
             },
           },

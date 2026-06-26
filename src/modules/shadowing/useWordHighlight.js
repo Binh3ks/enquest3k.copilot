@@ -27,7 +27,7 @@ function splitWordsWithTiming(sentence, speed) {
   // cap total duration to wordCount * 1s to prevent inflated bracket-tag
   // durations from making highlights drag. This is a runtime guard for any
   // remaining data issues in older transcripts.
-  const maxWordDur = 1.5;
+  const maxWordDur = 0.7;
   const cappedDur = (dur / words.length > maxWordDur) ? words.length * maxWordDur : dur;
   const wordDur = cappedDur / words.length;
 
