@@ -25,8 +25,6 @@ export function getSpeechWindow(sentence) {
   return { start, end: start + dur, dur };
 }
 
-const TRIM_OFFSET = 0.3;  // seconds to trim from start/end to match speech
-
 function splitWordsWithTiming(sentence) {
   if (!sentence) return [];
   const text = sentence.text || '';
@@ -35,15 +33,14 @@ function splitWordsWithTiming(sentence) {
 
   const win = getSpeechWindow(sentence);
   if (win.dur <= 0) return [];
-  // Trim 0.3s from each end — ASR timestamps include pre/post silence
-  // that make highlights lag behind actual speech onset.
-  const trimmedDur = Math.max(0.5, win.dur - TRIM_OFFSET * 2);
-  const wordDur = trimmedDur / words.length;
-  const offset = TRIM_OFFSET;
+  // Distribute words evenly across full window — no trimming. The
+  // sentence sync useEffect in Shadowing.jsx uses the same window, so
+  // word timing stays in lockstep with sentence selection.
+  const wordDur = win.dur / words.length;
   return words.map((w, i) => ({
     word: w,
-    start: win.start + offset + i * wordDur,
-    end: win.start + offset + (i + 1) * wordDur,
+    start: win.start + i * wordDur,
+    end: win.start + (i + 1) * wordDur,
   }));
 }
 
@@ -77,13 +74,23 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
       const t = ytPlayer.getCurrentTime();
       if (typeof t !== 'number') return;
 
-      // Find active word: last one whose start <= t (same pattern as
-      // sentence sync — eliminates mid-word jumping when t is between
-      // word boundaries or slightly past end of previous word).
+      // Find active word: same matching as sync useEffect — word whose
+      // [start, end] window contains t. If no window contains t, pick
+      // last word whose start <= t.
       let idx = 0;
+      let found = false;
       for (let i = 0; i < words.length; i++) {
-        if (words[i].start <= t + 0.1) {
+        if (words[i].start <= t + 0.1 && words[i].end > t - 0.1) {
           idx = i;
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        for (let i = 0; i < words.length; i++) {
+          if (words[i].start <= t + 0.1) {
+            idx = i;
+          }
         }
       }
 
