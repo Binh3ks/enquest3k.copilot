@@ -14,42 +14,28 @@
 import { useState, useEffect, useRef } from 'react';
 
 // Compute the speech window for a sentence: [start, end) where the actual
-// speech happens.  After the pipeline fix (each raw ASR segment = one
-// sentence, [Music] segments filtered), rawDur is now accurate for ESL
-// vocabulary videos where each word naturally takes 1-3 seconds (single
-// words like "Bear." or short utterances like "Look." have durations
-// that match the actual speech rate).
+// speech happens.  Uses raw transcript duration directly (NOT divided by
+// speed) because getCurrentTime() returns YouTube's playback position,
+// which is already scaled by playbackRate.  When speed=0.85x, YouTube
+// runs slower so getCurrentTime() increments slower — the raw duration
+// in the transcript matches this slower timeline perfectly.
 //
-// Strategy:
-//   - Trust rawDur by default. Only override at extremes.
-//   - Cap per-word rate at MIN_RATE (0.25s) for unrealistically fast cases.
-//   - Use 0.5s/word as fallback only if rawDur is wildly inflated
-//     (>5s/word, indicating merged silence we missed).
-export function getSpeechWindow(sentence, speed) {
+// After the pipeline fix (each raw ASR segment = one sentence, [Music]
+// filtered), rawDur is accurate for ESL vocabulary videos.
+export function getSpeechWindow(sentence) {
   if (!sentence) return { start: 0, end: 0, dur: 0 };
   const start = sentence.start || 0;
-  const text = sentence.text || '';
-  const wordCount = (text.match(/[A-Za-z']+/g) || []).length;
-  if (wordCount === 0) return { start, end: start, dur: 0 };
-  const rawDur = (sentence.duration || 0) / (speed || 1);
-  const perWord = rawDur / wordCount;
-  const MIN_RATE = 0.25;
-  const INFLATED_THRESHOLD = 5.0;
-  let wordDur;
-  if (perWord < MIN_RATE) wordDur = MIN_RATE;
-  else if (perWord <= INFLATED_THRESHOLD) wordDur = perWord;
-  else wordDur = 0.5;
-  const dur = wordDur * wordCount;
+  const dur = sentence.duration || 0;
   return { start, end: start + dur, dur };
 }
 
-function splitWordsWithTiming(sentence, speed) {
+function splitWordsWithTiming(sentence) {
   if (!sentence) return [];
   const text = sentence.text || '';
   const words = text.match(/[A-Za-z']+/g) || [];
   if (!words.length) return [];
 
-  const win = getSpeechWindow(sentence, speed);
+  const win = getSpeechWindow(sentence);
   if (win.dur <= 0) return [];
   const wordDur = win.dur / words.length;
   return words.map((w, i) => ({
@@ -79,7 +65,7 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
       const sentence = sentenceRef.current;
       if (!sentence) return;
 
-      const words = splitWordsWithTiming(sentence, speed);
+      const words = splitWordsWithTiming(sentence);
       if (!words.length) {
         setState({ currentWordIdx: -1, currentTime: 0, words: [] });
         return;
