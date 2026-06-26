@@ -14,20 +14,18 @@
 import { useState, useEffect, useRef } from 'react';
 
 // Compute the speech window for a sentence: [start, end) where the actual
-// speech happens.  Uses raw transcript duration directly (NOT divided by
-// speed) because getCurrentTime() returns YouTube's playback position,
-// which is already scaled by playbackRate.  When speed=0.85x, YouTube
-// runs slower so getCurrentTime() increments slower — the raw duration
-// in the transcript matches this slower timeline perfectly.
-//
-// After the pipeline fix (each raw ASR segment = one sentence, [Music]
-// filtered), rawDur is accurate for ESL vocabulary videos.
+// speech happens.  Uses raw transcript duration directly — no speed
+// adjustment because YouTube getCurrentTime() already reflects playback
+// rate (e.g. at 0.85x, getCurrentTime() increments at 0.85 ticks/sec,
+// which matches our transcript timestamps on the same timeline).
 export function getSpeechWindow(sentence) {
   if (!sentence) return { start: 0, end: 0, dur: 0 };
   const start = sentence.start || 0;
   const dur = sentence.duration || 0;
   return { start, end: start + dur, dur };
 }
+
+const TRIM_OFFSET = 0.3;  // seconds to trim from start/end to match speech
 
 function splitWordsWithTiming(sentence) {
   if (!sentence) return [];
@@ -37,11 +35,15 @@ function splitWordsWithTiming(sentence) {
 
   const win = getSpeechWindow(sentence);
   if (win.dur <= 0) return [];
-  const wordDur = win.dur / words.length;
+  // Trim 0.3s from each end — ASR timestamps include pre/post silence
+  // that make highlights lag behind actual speech onset.
+  const trimmedDur = Math.max(0.5, win.dur - TRIM_OFFSET * 2);
+  const wordDur = trimmedDur / words.length;
+  const offset = TRIM_OFFSET;
   return words.map((w, i) => ({
     word: w,
-    start: win.start + i * wordDur,
-    end: win.start + (i + 1) * wordDur,
+    start: win.start + offset + i * wordDur,
+    end: win.start + offset + (i + 1) * wordDur,
   }));
 }
 
@@ -74,15 +76,15 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
       const t = ytPlayer.getCurrentTime();
       if (typeof t !== 'number') return;
 
-      let idx = -1;
+      // Find active word: last one whose start <= t (same pattern as
+      // sentence sync — eliminates mid-word jumping when t is between
+      // word boundaries or slightly past end of previous word).
+      let idx = 0;
       for (let i = 0; i < words.length; i++) {
-        if (t >= words[i].start - 0.5 && t < words[i].end + 0.5) {
+        if (words[i].start <= t + 0.1) {
           idx = i;
-          break;
         }
       }
-      if (idx === -1 && t >= words[words.length - 1].end) idx = words.length - 1;
-      if (idx === -1 && t < words[0].start) idx = 0;
 
       // Update idx only on transition (avoids unnecessary re-renders), but
       // always update currentTime so the karaoke underline can grow smoothly.
