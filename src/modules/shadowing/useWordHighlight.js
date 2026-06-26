@@ -1,5 +1,15 @@
-// useWordHighlight.js — returns the current word index in the active sentence
-// based on YouTube playback time. Words are interpolated from segment timing.
+// useWordHighlight.js — drives karaoke-style word highlighting from
+// YouTube playback time. Returns { currentWordIdx, currentTime, words }.
+//
+// words: [{ word, start, end }] — evenly distributed across the active
+//   sentence's [start, start+duration/speed] window.
+// currentTime: latest ytPlayer.getCurrentTime() reading (updates ~10x/s).
+// currentWordIdx: index of the word being spoken, or -1 if none.
+//
+// activeSentence is mirrored via ref so this effect does NOT re-mount on
+// every parent render (the parent's effectiveScript.find(...) returns a new
+// wrapper object every render, which would otherwise destroy/recreate the
+// 100ms poll interval before it could ever fire).
 
 import { useState, useEffect, useRef } from 'react';
 
@@ -22,29 +32,33 @@ function splitWordsWithTiming(sentence, speed) {
 }
 
 export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, activeSentence, speed) {
-  const [currentWordIdx, setCurrentWordIdx] = useState(-1);
-  const lastIdx = useRef(-1);
+  const [state, setState] = useState({ currentWordIdx: -1, currentTime: 0, words: [] });
+
+  // Mirror activeSentence via ref — `.find()` returns the same underlying
+  // segment object across renders, but Shadowing.jsx rebuilds the wrapper
+  // array each render. Reading through the ref keeps the poll interval stable.
+  const sentenceRef = useRef(activeSentence);
+  useEffect(() => { sentenceRef.current = activeSentence; }, [activeSentence]);
 
   useEffect(() => {
-    if (!videoPopupOpen || !ytPlayer || !useTranscriptSource || !activeSentence) {
-      setCurrentWordIdx(-1);
-      lastIdx.current = -1;
+    if (!videoPopupOpen || !ytPlayer || !useTranscriptSource) {
+      setState({ currentWordIdx: -1, currentTime: 0, words: [] });
       return;
     }
 
-    const words = splitWordsWithTiming(activeSentence, speed);
-    if (!words.length) {
-      setCurrentWordIdx(-1);
-      return;
-    }
-
-    let lastT = -1;
+    let lastIdx = -2;
     const interval = setInterval(() => {
+      const sentence = sentenceRef.current;
+      if (!sentence) return;
+
+      const words = splitWordsWithTiming(sentence, speed);
+      if (!words.length) {
+        setState({ currentWordIdx: -1, currentTime: 0, words: [] });
+        return;
+      }
+
       const t = ytPlayer.getCurrentTime();
       if (typeof t !== 'number') return;
-      // Skip if time didn't change (player paused)
-      if (Math.abs(t - lastT) < 0.001) return;
-      lastT = t;
 
       let idx = -1;
       for (let i = 0; i < words.length; i++) {
@@ -53,24 +67,26 @@ export function useWordHighlight(ytPlayer, videoPopupOpen, useTranscriptSource, 
           break;
         }
       }
-      if (idx === -1 && t >= words[words.length - 1].end) {
-        idx = words.length - 1;
-      }
-      if (idx === -1 && t < words[0].start) {
-        idx = 0;
-      }
-      if (idx !== lastIdx.current) {
-        setCurrentWordIdx(idx);
-        lastIdx.current = idx;
-      }
+      if (idx === -1 && t >= words[words.length - 1].end) idx = words.length - 1;
+      if (idx === -1 && t < words[0].start) idx = 0;
+
+      // Update idx only on transition (avoids unnecessary re-renders), but
+      // always update currentTime so the karaoke underline can grow smoothly.
+      setState(prev => {
+        const nextIdx = idx !== lastIdx ? idx : prev.currentWordIdx;
+        if (idx !== lastIdx) lastIdx = idx;
+        if (nextIdx === prev.currentWordIdx && prev.words === words && t === prev.currentTime) {
+          return prev;
+        }
+        return { currentWordIdx: nextIdx, currentTime: t, words };
+      });
     }, 100);
 
     return () => {
       clearInterval(interval);
-      setCurrentWordIdx(-1);
-      lastIdx.current = -1;
+      setState({ currentWordIdx: -1, currentTime: 0, words: [] });
     };
-  }, [ytPlayer, videoPopupOpen, useTranscriptSource, activeSentence, speed]);
+  }, [ytPlayer, videoPopupOpen, useTranscriptSource, speed]);
 
-  return currentWordIdx;
+  return state;
 }
