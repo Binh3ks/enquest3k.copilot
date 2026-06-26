@@ -5,6 +5,10 @@ import React, { useEffect, useRef, useCallback } from 'react';
  * Exposes player control via onPlayerReady callback.
  */
 export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded }) {
+  const onPlayerStateChange = useCallback((state) => {
+    // DEBUG: log YouTube player state changes to track playback timing
+    console.log('[YouTubeEmbed] state change:', state, 't=', playerRef.current?.getCurrentTime?.());
+  }, []);
   const containerRef = useRef(null);
   const playerRef = useRef(null);
   const readyFiredRef = useRef(false);
@@ -99,6 +103,7 @@ export default function YouTubeEmbed({ videoId, onPlayerReady, onPlayerUnloaded 
                 onPlayerReady({ seekTo, loadAndPlay, playVideo, pauseVideo, getCurrentTime, setPlaybackRate });
               }
             },
+            onStateChange: onPlayerStateChange,
           },
         });
       } catch (err) {
