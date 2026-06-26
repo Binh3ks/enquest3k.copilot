@@ -13,33 +13,35 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+// Compute the speech window for a sentence: [start, end) where the actual
+// speech happens.  Uses sentence.start as the speech start time (after
+// [Music]/title stripping at pipeline level) and a fixed speech rate of
+// 0.4s/word for the duration — ignoring the raw transcript duration which
+// is often inflated by [Music]/[Applause] segments.
+export function getSpeechWindow(sentence, speed) {
+  if (!sentence) return { start: 0, end: 0, dur: 0 };
+  const start = sentence.start || 0;
+  const text = sentence.text || '';
+  const wordCount = (text.match(/[A-Za-z']+/g) || []).length;
+  if (wordCount === 0) return { start, end: start, dur: 0 };
+  const SPEECH_RATE_PER_WORD = 0.4;
+  const dur = wordCount * SPEECH_RATE_PER_WORD;
+  return { start, end: start + dur, dur };
+}
+
 function splitWordsWithTiming(sentence, speed) {
   if (!sentence) return [];
   const text = sentence.text || '';
-  const start = sentence.start || 0;
-  const rawDur = (sentence.duration || 0) / (speed || 1);
-  if (rawDur <= 0) return [];
-
   const words = text.match(/[A-Za-z']+/g) || [];
   if (!words.length) return [];
 
-  // Use actual speech rate (~3 words/s = 0.33s/word) as the baseline.
-  // Transcript durations are often inflated by [Music]/[Applause] segments
-  // that mergeSegments accumulated into accEnd without contributing speech.
-  // Trust rawDur only if it implies a per-word rate ≤ 0.7s (normal-to-fast
-  // speech). Otherwise fall back to a realistic 0.4s/word rate.
-  const SPEECH_RATE_PER_WORD = 0.4;  // 2.5 words/second
-  const MAX_NORMAL_RATE = 0.7;
-  const impliedRate = rawDur / words.length;
-  const dur = (impliedRate > MAX_NORMAL_RATE)
-    ? words.length * SPEECH_RATE_PER_WORD
-    : rawDur;
-  const wordDur = dur / words.length;
-
+  const win = getSpeechWindow(sentence, speed);
+  if (win.dur <= 0) return [];
+  const wordDur = win.dur / words.length;
   return words.map((w, i) => ({
     word: w,
-    start: start + i * wordDur,
-    end: start + (i + 1) * wordDur,
+    start: win.start + i * wordDur,
+    end: win.start + (i + 1) * wordDur,
   }));
 }
 
