@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import SentenceCard from './SentenceCard';
 
 /**
@@ -23,6 +23,17 @@ export default function RightPanel({
   onCorrect = null,
 }) {
   const segs = transcriptSegments || [];
+  const scrollRef = useRef(null);
+
+  // Auto-scroll to active sentence when it changes
+  useEffect(() => {
+    if (!activeSentenceId || !scrollRef.current) return;
+    const activeEl = scrollRef.current.querySelector(`[data-sentence-id="${activeSentenceId}"]`);
+    if (activeEl) {
+      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [activeSentenceId]);
+
   return (
     <div className="space-y-1.5">
       <div className="flex items-center justify-between mb-2 gap-2 flex-wrap">
@@ -43,7 +54,7 @@ export default function RightPanel({
           </button>
         )}
       </div>
-      <div className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-1">
+      <div ref={scrollRef} className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-1">
         {script.map((s, idx) => {
           const timeRange = segs[idx] ? {
             start: segs[idx].start,
@@ -53,22 +64,23 @@ export default function RightPanel({
           const scoreData = scores?.[s.id];
           const ipa = transcriptIpa?.[s.id] || null;
           return (
-            <SentenceCard
-              key={s.id}
-              sentence={s}
-              ipaWords={ipa}
-              timeRange={timeRange}
-              score={scoreData?.score}
-              transcript={scoreData?.transcript}
-              isActive={activeSentenceId === s.id}
-              isPlaying={isPlaying && activeSentenceId === s.id}
-              isPracticed={!!scoreData}
-              onPlay={onPlay}
-              onPlayBack={onPlayBack}
-              onPractice={onPractice}
-              onCorrect={onCorrect}
-              themeColor={themeColor}
-            />
+            <div key={s.id} data-sentence-id={s.id}>
+              <SentenceCard
+                sentence={s}
+                ipaWords={ipa}
+                timeRange={timeRange}
+                score={scoreData?.score}
+                transcript={scoreData?.transcript}
+                isActive={activeSentenceId === s.id}
+                isPlaying={isPlaying && activeSentenceId === s.id}
+                isPracticed={!!scoreData}
+                onPlay={onPlay}
+                onPlayBack={onPlayBack}
+                onPractice={onPractice}
+                onCorrect={onCorrect}
+                themeColor={themeColor}
+              />
+            </div>
           );
         })}
       </div>
