@@ -23,7 +23,7 @@ export default function ShadowingHeader({
   themeColor,
 }) {
   return (
-    <div className={`bg-${themeColor}-100 p-4 rounded-xl border border-${themeColor}-200 mb-4 flex flex-col sm:flex-row justify-between items-center gap-3 sticky top-0 z-20 shadow-sm`}>
+    <div className={`bg-${themeColor}-100 p-4 rounded-xl border border-${themeColor}-200 mb-4 flex flex-col sm:flex-row justify-between items-center gap-3 relative z-10 shadow-sm`}>
       {/* Left: Title + progress */}
       <div className="flex-1 min-w-0">
         <h2 className={`text-xl font-black text-${themeColor}-800 uppercase flex items-center gap-2`}>
