@@ -36,6 +36,7 @@ export default defineConfig({
   plugins: [react(), copyDataDir()],
   publicDir: false, // Disable auto-copy public/ → dist/ (media served from R2 CDN)
   build: {
+    sourcemap: true,  // Generate source maps for debugging minified errors
     rollupOptions: {
       output: {
         // Remove hash from the main entry file so index.html always points to
