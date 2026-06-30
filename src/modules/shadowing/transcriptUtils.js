@@ -70,8 +70,10 @@ export function getActiveSegment(videoId, currentTime) {
 export function getCleanedTranscriptSentences(videoId) {
   const entry = getSentences()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
-  return entry.segments.map(s => ({
-    id: s.id,
+  return entry.segments.map((s, idx) => ({
+    // Assign a 1-based synthetic id when missing so RightPanel can highlight
+    // and auto-scroll by id, and IPA cache (transcriptIpa) keys correctly.
+    id: s.id ?? (idx + 1),
     text: s.text,
     start: s.start,
     duration: s.duration,
