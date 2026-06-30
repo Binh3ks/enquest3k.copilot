@@ -1,0 +1,4 @@
+# Test screenshots are local artifacts — keep folder structure but ignore PNGs
+pause_verify_*.png
+*.png
+!tests/e2e/screenshots/.gitignore
