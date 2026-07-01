@@ -45,9 +45,10 @@ export function useShadowingYouTubeBridge(ytPlayerRef, player) {
   useEffect(() => { ytPlayerRef.current = ytPlayer; }, [ytPlayer, ytPlayerRef]);
 
   const handleYtPlayerReady = useCallback((playerApi) => {
-    // Guard against StrictMode double-invocation: ignore if same player already set
-    if (ytPlayer && ytPlayer === playerApi) {
-      console.log('[YTBridge] onReady ignored - player already set');
+    // Guard against StrictMode double-invocation: if ytPlayer already set, skip
+    // This prevents double-initialization which causes playback issues
+    if (ytPlayer) {
+      console.log('[YTBridge] onReady ignored - ytPlayer already set');
       return;
     }
     
