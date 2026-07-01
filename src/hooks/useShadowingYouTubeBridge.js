@@ -45,6 +45,12 @@ export function useShadowingYouTubeBridge(ytPlayerRef, player) {
   useEffect(() => { ytPlayerRef.current = ytPlayer; }, [ytPlayer, ytPlayerRef]);
 
   const handleYtPlayerReady = useCallback((playerApi) => {
+    // Guard against StrictMode double-invocation: ignore if same player already set
+    if (ytPlayer && ytPlayer === playerApi) {
+      console.log('[YTBridge] onReady ignored - player already set');
+      return;
+    }
+    
     setYtPlayer(playerApi);
     // Sync playback rate to current speed on mount (player defaults to 1.0x)
     if (playerApi?.setPlaybackRate) {
