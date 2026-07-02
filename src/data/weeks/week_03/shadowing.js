@@ -10,10 +10,10 @@
 export default {
   title: "Finding Rora at the Park",
   videoId: "zT5IiE9m9oY",
-  content_en: "What does she **look like**? Rora? I **don't know**. Oh, **no**. Excuse me. I'm **looking for** my little sister. Don't worry. What's her name? Rora. She's **six years old**. What does she **look like**? She has **short curly hair**. What is she wearing? She's wearing **a pink shirt and blue pants**. And she is wearing a **white cap**.",
+  content_en: "What does she **look like**? Where is Rora? I **don't know**. Oh, **no**. Excuse me. I'm **looking for** my little sister. Don't worry. What's her name? Rora. She's **six years old**. What does she **look like**? She has **short curly hair**. What is she wearing? She's wearing **a pink shirt and blue pants**. And she is wearing a **white cap**.",
   script: [
     { id: 1, text: "What does she look like?",                         vi: "Cô ấy trông như thế nào?", start: 5.64,  duration: 1.94 },
-    { id: 2, text: "Rora?",                                              vi: "Rora hả?",                start: 18.12, duration: 2.54 },
+    { id: 2, text: "Where is Rora?",                                     vi: "Rora ở đâu?",             start: 18.12, duration: 2.54 },
     { id: 3, text: "I don't know.",                                     vi: "Tôi không biết.",          start: 20.66, duration: 1.00 },
     { id: 4, text: "Oh, no!",                                           vi: "Ôi không!",                start: 22.40, duration: 1.56 },
     { id: 5, text: "Excuse me.",                                        vi: "Xin lỗi.",                 start: 27.84, duration: 1.77 },
