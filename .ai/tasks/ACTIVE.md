@@ -1,2 +1,2 @@
 # 🛠️ Active Tasks
-- [ ] Thiet lap he thong Slash Commands cho AgentOS v2 (Dang thuc hien)
+- [ ] Chua co task nao duoc gan. Su dung `/agent-start` khi co task moi.
