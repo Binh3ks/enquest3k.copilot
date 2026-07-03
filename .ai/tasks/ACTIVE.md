@@ -1,2 +1,2 @@
 # 🛠️ Active Tasks
-- [ ] Trien khai Phase 2: Thiet lap Memory & Knowledge Engine tu dong (Dang thuc hien)
+- [ ] Trien khai Phase 3: Cau hinh Multi-Agent Adapter cho OpenHands (Dang thuc hien)
