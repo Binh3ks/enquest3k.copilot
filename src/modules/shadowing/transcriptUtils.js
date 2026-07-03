@@ -1,56 +1,56 @@
 /**
- * transcriptUtils.js — Load cleaned video transcripts for shadowing station.
- * Tier 1 of transcript pipeline: pre-fetched + cleaned YouTube transcripts.
+ * transcriptUtils.js — Load video transcripts for shadowing station.
+ * Per-video files (video_transcripts_by_id/{cleaned,sentences,raw}/<id>.json).
  */
 
-// SENTENCE-SEGMENTED transcripts (cleaned + re-segmented by split_sentences.mjs)
-const sentencesModule = import.meta.glob('../../data/video_transcripts_sentences.json', { eager: true });
-let SENTENCES = null;
-function getSentences() {
-  if (!SENTENCES) {
-    const mod = Object.values(sentencesModule)[0];
-    SENTENCES = mod?.default || {};
+const sentenceModules = import.meta.glob('../../data/video_transcripts_by_id/sentences/*.json', { eager: true });
+let SENTENCE_MAP = null;
+function getSentenceMap() {
+  if (!SENTENCE_MAP) {
+    SENTENCE_MAP = {};
+    for (const mod of Object.values(sentenceModules)) {
+      const entry = mod.default || mod;
+      const id = entry && entry.videoId;
+      if (id) SENTENCE_MAP[id] = entry;
+    }
   }
-  return SENTENCES;
+  return SENTENCE_MAP;
 }
 
-// CLEANED transcripts (fallback for getTranscript which needs raw segments)
-const cleanedTranscriptModule = import.meta.glob('../../data/video_transcripts_cleaned.json', { eager: true });
-let CLEANED = null;
-function getCleaned() {
-  if (!CLEANED) {
-    const mod = Object.values(cleanedTranscriptModule)[0];
-    CLEANED = mod?.default || {};
+const cleanedModules = import.meta.glob('../../data/video_transcripts_by_id/cleaned/*.json', { eager: true });
+let CLEANED_MAP = null;
+function getCleanedMap() {
+  if (!CLEANED_MAP) {
+    CLEANED_MAP = {};
+    for (const mod of Object.values(cleanedModules)) {
+      const entry = mod.default || mod;
+      const id = entry && entry.videoId;
+      if (id) CLEANED_MAP[id] = entry;
+    }
   }
-  return CLEANED;
+  return CLEANED_MAP;
 }
 
-// Raw transcripts (fallback)
-const transcriptModules = import.meta.glob('../../data/video_transcripts.json', { eager: true });
-let RAW = null;
-function getRaw() {
-  if (!RAW) {
-    const mod = Object.values(transcriptModules)[0];
-    RAW = mod?.default || {};
+const rawModules = import.meta.glob('../../data/video_transcripts_by_id/raw/*.json', { eager: true });
+let RAW_MAP = null;
+function getRawMap() {
+  if (!RAW_MAP) {
+    RAW_MAP = {};
+    for (const mod of Object.values(rawModules)) {
+      const entry = mod.default || mod;
+      const id = entry && entry.videoId;
+      if (id) RAW_MAP[id] = entry;
+    }
   }
-  return RAW;
-}
-
-/**
- * Get transcript for a videoId (uses cleaned version).
- */
-export function getTranscript(videoId) {
-  const cleaned = getCleaned()[videoId];
+  return RAW_MAP;
+}export function getTranscript(videoId) {
+  const cleaned = getCleanedMap()[videoId];
   if (cleaned && !cleaned.error) return cleaned;
-  // Fallback to raw
-  const entry = getRaw()[videoId];
+  const entry = getRawMap()[videoId];
   if (!entry || entry.error) return null;
   return entry;
 }
 
-/**
- * Find segment by current video time.
- */
 export function getActiveSegment(videoId, currentTime) {
   const transcript = getTranscript(videoId);
   if (!transcript) return null;
@@ -63,12 +63,8 @@ export function getActiveSegment(videoId, currentTime) {
   return null;
 }
 
-/**
- * Get cleaned transcript segments as a script-compatible array.
- * Uses the pre-segmented sentences file (already has id, text, start, duration).
- */
 export function getCleanedTranscriptSentences(videoId) {
-  const entry = getSentences()[videoId];
+  const entry = getSentenceMap()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
   return entry.segments
     .map((s, idx) => ({

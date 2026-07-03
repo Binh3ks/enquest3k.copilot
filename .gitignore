@@ -90,3 +90,6 @@ __pycache__/
 *.pyc
 *.bak
 .tmp/
+
+# Generated per-video transcript files (regenerate via tools/split_transcripts.py)
+src/data/video_transcripts_by_id/
