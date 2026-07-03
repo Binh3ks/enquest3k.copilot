@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Split monolithic transcripts into per-video files
+        run: python3 tools/split_transcripts.py
+
       - name: Build
         run: npm run build
         env:

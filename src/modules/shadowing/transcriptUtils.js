@@ -1,47 +1,39 @@
 /**
  * transcriptUtils.js — Load video transcripts for shadowing station.
  * Per-video files (video_transcripts_by_id/{cleaned,sentences,raw}/<id>.json).
+ *
+ * Map lazily built on first access. Keyed by videoId field injected by
+ * tools/split_transcripts.py.
  */
 
-const sentenceModules = import.meta.glob('../../data/video_transcripts_by_id/sentences/*.json', { eager: true });
+function buildMap(modules) {
+  const map = {};
+  for (const mod of Object.values(modules)) {
+    const entry = mod.default || mod;
+    const id = entry && entry.videoId;
+    if (id) map[id] = entry;
+  }
+  return map;
+}
+
+const sentenceModules = import.meta.glob('../../data/video_transcripts_by_id/sentences/*.json', { eager: true, import: 'default' });
 let SENTENCE_MAP = null;
 function getSentenceMap() {
-  if (!SENTENCE_MAP) {
-    SENTENCE_MAP = {};
-    for (const mod of Object.values(sentenceModules)) {
-      const entry = mod.default || mod;
-      const id = entry && entry.videoId;
-      if (id) SENTENCE_MAP[id] = entry;
-    }
-  }
+  if (!SENTENCE_MAP) SENTENCE_MAP = buildMap(sentenceModules);
   return SENTENCE_MAP;
 }
 
-const cleanedModules = import.meta.glob('../../data/video_transcripts_by_id/cleaned/*.json', { eager: true });
+const cleanedModules = import.meta.glob('../../data/video_transcripts_by_id/cleaned/*.json', { eager: true, import: 'default' });
 let CLEANED_MAP = null;
 function getCleanedMap() {
-  if (!CLEANED_MAP) {
-    CLEANED_MAP = {};
-    for (const mod of Object.values(cleanedModules)) {
-      const entry = mod.default || mod;
-      const id = entry && entry.videoId;
-      if (id) CLEANED_MAP[id] = entry;
-    }
-  }
+  if (!CLEANED_MAP) CLEANED_MAP = buildMap(cleanedModules);
   return CLEANED_MAP;
 }
 
-const rawModules = import.meta.glob('../../data/video_transcripts_by_id/raw/*.json', { eager: true });
+const rawModules = import.meta.glob('../../data/video_transcripts_by_id/raw/*.json', { eager: true, import: 'default' });
 let RAW_MAP = null;
 function getRawMap() {
-  if (!RAW_MAP) {
-    RAW_MAP = {};
-    for (const mod of Object.values(rawModules)) {
-      const entry = mod.default || mod;
-      const id = entry && entry.videoId;
-      if (id) RAW_MAP[id] = entry;
-    }
-  }
+  if (!RAW_MAP) RAW_MAP = buildMap(rawModules);
   return RAW_MAP;
 }export function getTranscript(videoId) {
   const cleaned = getCleanedMap()[videoId];
