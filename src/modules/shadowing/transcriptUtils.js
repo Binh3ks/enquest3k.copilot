@@ -1,41 +1,49 @@
 /**
  * transcriptUtils.js — Load video transcripts for shadowing station.
  * Per-video files (video_transcripts_by_id/{cleaned,sentences,raw}/<id>.json).
- *
- * Map lazily built on first access. Keyed by videoId field injected by
- * tools/split_transcripts.py.
  */
 
-function buildMap(modules) {
+function buildMap(modules, label) {
   const map = {};
+  let withId = 0;
   for (const mod of Object.values(modules)) {
-    const entry = mod.default || mod;
+    const entry = mod && (mod.default || mod);
     const id = entry && entry.videoId;
-    if (id) map[id] = entry;
+    if (id) { map[id] = entry; withId++; }
+  }
+  if (typeof window !== 'undefined') {
+    console.log(`[transcriptUtils] ${label}: ${Object.keys(modules).length} files, ${withId} mapped`);
   }
   return map;
 }
 
-const sentenceModules = import.meta.glob('../../data/video_transcripts_by_id/sentences/*.json', { eager: true, import: 'default' });
+// Side-effect: import.meta.glob wrapped in exported const so Vite keeps
+// the eager glob (otherwise tree-shaker may drop unused imports).
+export const _GLOBS = {
+  sentence: import.meta.glob('../../data/video_transcripts_by_id/sentences/*.json', { eager: true, import: 'default' }),
+  cleaned: import.meta.glob('../../data/video_transcripts_by_id/cleaned/*.json', { eager: true, import: 'default' }),
+  raw: import.meta.glob('../../data/video_transcripts_by_id/raw/*.json', { eager: true, import: 'default' }),
+};
+
 let SENTENCE_MAP = null;
 function getSentenceMap() {
-  if (!SENTENCE_MAP) SENTENCE_MAP = buildMap(sentenceModules);
+  if (!SENTENCE_MAP) SENTENCE_MAP = buildMap(_GLOBS.sentence, 'sentences');
   return SENTENCE_MAP;
 }
 
-const cleanedModules = import.meta.glob('../../data/video_transcripts_by_id/cleaned/*.json', { eager: true, import: 'default' });
 let CLEANED_MAP = null;
 function getCleanedMap() {
-  if (!CLEANED_MAP) CLEANED_MAP = buildMap(cleanedModules);
+  if (!CLEANED_MAP) CLEANED_MAP = buildMap(_GLOBS.cleaned, 'cleaned');
   return CLEANED_MAP;
 }
 
-const rawModules = import.meta.glob('../../data/video_transcripts_by_id/raw/*.json', { eager: true, import: 'default' });
 let RAW_MAP = null;
 function getRawMap() {
-  if (!RAW_MAP) RAW_MAP = buildMap(rawModules);
+  if (!RAW_MAP) RAW_MAP = buildMap(_GLOBS.raw, 'raw');
   return RAW_MAP;
-}export function getTranscript(videoId) {
+}
+
+export function getTranscript(videoId) {
   const cleaned = getCleanedMap()[videoId];
   if (cleaned && !cleaned.error) return cleaned;
   const entry = getRawMap()[videoId];
