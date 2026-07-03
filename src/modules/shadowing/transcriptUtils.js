@@ -70,13 +70,19 @@ export function getActiveSegment(videoId, currentTime) {
 export function getCleanedTranscriptSentences(videoId) {
   const entry = getSentences()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
-  return entry.segments.map((s, idx) => ({
-    // Assign a 1-based synthetic id when missing so RightPanel can highlight
-    // and auto-scroll by id, and IPA cache (transcriptIpa) keys correctly.
-    id: s.id ?? (idx + 1),
-    text: s.text,
-    start: s.start,
-    duration: s.duration,
-    _isTranscript: true,
-  }));
+  return entry.segments
+    .map((s, idx) => ({
+      id: s.id ?? (idx + 1),
+      text: (s.text || '').trim(),
+      start: s.start,
+      duration: s.duration,
+      _isTranscript: true,
+    }))
+    .filter((s) => {
+      const words = (s.text.match(/[A-Za-z']+/g) || []);
+      if (words.length === 0) return false;
+      const wps = s.duration > 0 ? words.length / s.duration : 0;
+      if (wps < 0.3) return false;
+      return true;
+    });
 }
