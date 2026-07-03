@@ -1,7 +1,7 @@
 #!/bin/bash
 # Merge missing mindmap easy branches into audio_tasks.json and generate
 
-cd /Users/binhnguyen/Downloads/engquest3k_new/Engquest3k
+cd "$(dirname "$0")/.."  # auto-cd to project root from tools/
 
 # Read the main tasks and remove closing bracket
 HEAD=$(head -n -1 tools/audio_tasks.json)
