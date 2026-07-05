@@ -76,6 +76,7 @@ logs/
 .env.local
 .DS_Store
 Thumbs.db
+.claude/settings.local.json
 
 # === Backup / Historical / Archives ===
 Production_FINAL/
