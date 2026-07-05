@@ -41,22 +41,21 @@ Read `.devin/workflows/MULTI_AGENT_ADAPTER.md` first (memory adapter). Then eith
 
 ---
 
+---
+
 ## Auto Status (REPLACED on git commit/push — manual sections above are preserved)
 
-Updated: 2026-07-05T04:17:40.376Z
+Updated: 2026-07-05T05:13:14.596Z
 Branch: `main`
 
 ### Recent commits
 ```
+28706c99 fix(pronunciation): correct evaluate-deepgram endpoint path in TellYourStory.jsx
+1b6a2786 fix(db): add ALTER TABLE for missing 'block' column in periodic_assessments
+3ee9867c docs(memory): update CURRENT.md with push status + OpenHands next steps
 94449097 feat(agentos): finalize core migration, refactor monolithic json to per-week, and establish multi-agent adapter
 34a3b4df fix(pronunciation): normalize MIME + loosen targetText validation
-13d47783 fix(shadowing): ensure blob MIME type + add backend diagnostic logs
-3d099d6b fix(shadowing): let axios set multipart Content-Type with boundary
-9364d063 fix(shadowing): remove /v2/ from corrections API URL
 ```
 
 ### Uncommitted
-```
-M .ai/memory/CURRENT.md
- M .ai/memory/HISTORY.md
-```
+_Working tree clean._
