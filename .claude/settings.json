@@ -17,6 +17,8 @@
       "TodoWrite(*)",
       "Task(*)",
       "NotebookEdit(*)",
+      "Edit(*)",
+      "Write(*)",
       "mcp__*(*)"
     ],
     "additionalDirectories": [
