@@ -1,11 +1,9 @@
 /**
  * transcriptUtils.js — Load video transcripts for shadowing station.
- * Per-video files (video_transcripts_by_id/{cleaned,sentences,raw}/<id>.json)
- * preferred; monolithic JSONs kept as fallback safety net.
+ * Source of truth: per-video files (video_transcripts_by_id/{cleaned,sentences,raw}/<id>.json)
+ * Monolithic JSONs (video_transcripts_cleaned.json, etc.) kept only for
+ * offline regeneration via tools/split_transcripts.py — NOT imported at runtime.
  */
-
-import MONO_CLEANED from '../../data/video_transcripts_cleaned.json';
-import MONO_SENTENCES from '../../data/video_transcripts_sentences.json';
 
 function buildMap(modules, label) {
   const map = {};
@@ -52,11 +50,6 @@ export function getTranscript(videoId) {
   if (cleaned && !cleaned.error) return cleaned;
   const entry = getRawMap()[videoId];
   if (entry && !entry.error) return entry;
-  // Fallback to monolithic JSON (safety net for CDN cache miss).
-  try {
-    const mono = MONO_CLEANED && MONO_CLEANED[videoId];
-    if (mono && !mono.error) return mono;
-  } catch {}
   return null;
 }
 
@@ -74,10 +67,6 @@ export function getActiveSegment(videoId, currentTime) {
 
 export function getCleanedTranscriptSentences(videoId) {
   let entry = getSentenceMap()[videoId];
-  if (!entry || entry.error || !entry.segments) {
-    // Fallback to monolithic
-    entry = MONO_SENTENCES && MONO_SENTENCES[videoId];
-  }
   if (!entry || entry.error || !entry.segments) return [];
   return entry.segments
     .map((s, idx) => ({

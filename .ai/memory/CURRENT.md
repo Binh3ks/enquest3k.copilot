@@ -1,43 +1,41 @@
 # 🧠 Current System State & Context
 
-- **Context Status:** Idle — no active work this session (just /clear + /start sequence).
-- **Branch:** `main` (clean working tree; only untracked `.devin/` + 19 stale .md/.py/.sh files modified pre-session)
+- **Context Status:** Active session — refactor audit complete.
+- **Branch:** `main` (clean working tree)
 - **Last meaningful commit:** `5c8a8252` feat(agentos): add prompt-based activation fallbacks for extension support
-- **Last production commit:** `ca554beb` fix(shadowing): restore Where is in W3 Rora dialogue + bump corrections v2 (W3 Rora task from prior session — DONE)
-- **Active Tasks:** Phase 3 Multi-Agent Adapter (in progress); Shadowing Challenge timing fix DONE 2026-07-03 (src/hooks/useShadowingChallenge.js).
+- **Last production commit:** `ca554beb` fix(shadowing): restore Where is in W3 Rora dialogue + bump corrections v2
+- **Active Tasks:** Phase 3 Multi-Agent Adapter (in progress)
 
 ## Pending (from plan files, no owner)
 - W35 writing.js fixes
 - W32 dictation sync
 - W21 dictation
 - W7 image path
-- Monolithic JSON refactor (`video_transcripts_cleaned.json` / `video_transcripts_sentences.json` — 72 videos packed into 1 line each, refactor to per-video files)
+- **Monolithic JSON refactor** — ✅ DONE 2026-07-05: transcriptUtils.js bỏ MONO_* imports + fallback chains; .gitignore đảo (track per-video, ignore monolithic); git rm --cached monolithic files; runtime 100% per-video.
 - Bold consistency audit W1-W35 (153 Pattern A + 449 Pattern C — auto-bold deferred, need SPAN TRACKING not regex)
 
 ## Next action for next session
-Ask user which pending item to tackle. Likely candidates: monolithic JSON refactor (data integrity risk) or W36 production.
+Phase 3 Multi-Agent Adapter is now BOOTED — `.devin/workflows/MULTI_AGENT_ADAPTER.md` exists. Next: continue OpenHands onboarding OR move to W36 production OR tackle one of the pending items (W35 writing, W32/W21 dictation sync, W7 image, bold audit).
 
 ## Notes
-- `.claude/memory/project_context.md` reference in MEMORY.md is stale (file does not exist in memory dir). Do not auto-recreate without user input.
+- System cleanup DONE 2026-07-05: secrets → settings.local.json, Bash(*) auto-approve removed, canonical memory = .ai/memory/, /start + /finish synced to AgentOS, ADR_LOG + BUG_DATABASE seeded
+- Lazy Loading + Ripgrep/Fetch workflow added to CLAUDE.md
+- Multi-Agent Adapter created at .devin/workflows/MULTI_AGENT_ADAPTER.md (OpenHands read-first file)
+- agent-finish.cjs now reads live git state (branch + recent commits) into CURRENT.md Auto Status
 - Stale modified files in working tree (19 × `.md`/`.py`/`.sh`) are leftover artifacts — not part of any current task.
 
 ---
 
-## Auto Status
-
-Updated: 2026-07-05T02:47:09.244Z
-Branch: unknown (session closed)
+---
 
 ---
 
-## Auto Status
+## Auto Status (REPLACED on git commit/push — manual sections above are preserved)
 
-Updated: 2026-07-05T02:55:31.374Z
-Branch: unknown (session closed)
+Updated: 2026-07-05T03:56:35.015Z
+Branch: `main`
 
----
-
-## Auto Status
-
-Updated: 2026-07-05T02:58:35.139Z
-Branch: unknown (session closed)
+Recent:
+34a3b4df fix(pronunciation): normalize MIME + loosen targetText validation
+13d47783 fix(shadowing): ensure blob MIME type + add backend diagnostic logs
+3d099d6b fix(shadowing): let axios set multipart Content-Type with boundary

@@ -91,5 +91,9 @@ __pycache__/
 *.bak
 .tmp/
 
-# Generated per-video transcript files (regenerate via tools/split_transcripts.py)
-src/data/video_transcripts_by_id/
+# Monolithic transcript JSONs: kept locally only for regeneration via
+# tools/split_transcripts.py → per-video files (src/data/video_transcripts_by_id/)
+# Runtime: transcriptUtils.js reads per-video files ONLY — do not import these.
+src/data/video_transcripts.json
+src/data/video_transcripts_cleaned.json
+src/data/video_transcripts_sentences.json
