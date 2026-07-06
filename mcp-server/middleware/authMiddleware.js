@@ -11,6 +11,9 @@ const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'sb_publishable_z9iUK
  * 2. Supabase JWT (new) — verified via Supabase /auth/v1/user endpoint
  */
 const authMiddleware = async (req, res, next) => {
+  // Allow CORS preflight to pass through — it has no Authorization header.
+  if (req.method === 'OPTIONS') return next();
+
   const authHeader = req.header('Authorization');
   if (!authHeader) {
     return res.status(401).json({ message: 'No token, authorization denied' });
