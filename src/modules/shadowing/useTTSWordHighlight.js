@@ -6,19 +6,41 @@
  * needed. Matches the same { currentWordIdx, currentTime, words } shape as
  * useWordHighlight so callers (LeftPanel, Shadowing.jsx) can swap freely.
  *
+ * Adaptive rate: if audio.duration is shorter than the default
+ * FAST_RATE × wordCount window, scale the per-word duration DOWN so the last
+ * word fits exactly at audio.duration. Without this, the highlight would
+ * freeze mid-sentence when Deepgram TTS audio ends before the synthetic window.
+ *
  * Safety guards:
  *   1. `if (!VoiceService._currentAudio)` early-returns inside the rAF tick
  *      so transient nulls (audio swap between sentences, race during initial
  *      load) never throw TypeError.
  *   2. useEffect on activeSentence?.id resets highlight state immediately
- *      when sentence changes, even if no audio is playing yet — prevents
- *      stale highlights bleeding across sentences.
- *   3. Bail-out when `!isAudioPlaying || !activeSentence || !VoiceService._currentAudio`.
+ *      when sentence changes, even if no audio is playing yet.
+ *   3. Bail-out when `!isAudioPlaying || !activeSentence`.
  */
 
 import { useState, useEffect, useRef } from 'react';
-import { splitWordsWithTiming } from './useWordHighlight';
 import { VoiceService } from '../../services/voiceService';
+
+const FAST_RATE = 0.4; // 2.5 words/sec — base; reduced if audio shorter than this.
+
+function buildWordTimings(sentence, audioDuration) {
+  if (!sentence) return [];
+  const text = sentence.text || '';
+  const words = text.match(/[A-Za-z']+/g) || [];
+  if (!words.length) return [];
+  const wordCount = words.length;
+  // Adaptive rate: shrink window to fit audio duration if needed.
+  const baseDur = FAST_RATE * wordCount;
+  const dur = audioDuration && audioDuration < baseDur ? audioDuration : baseDur;
+  const wordDur = dur / wordCount;
+  return words.map((w, i) => ({
+    word: w,
+    start: i * wordDur,
+    end: (i + 1) * wordDur,
+  }));
+}
 
 export function useTTSWordHighlight(activeSentence, isAudioPlaying) {
   const [state, setState] = useState({ currentWordIdx: -1, currentTime: 0, words: [] });
@@ -26,16 +48,24 @@ export function useTTSWordHighlight(activeSentence, isAudioPlaying) {
   const sentenceRef = useRef(activeSentence);
   useEffect(() => { sentenceRef.current = activeSentence; }, [activeSentence]);
 
-  // Reset highlight immediately when sentence changes (user advanced/seeked
-  // while paused). Without this, the previous word's highlight would persist
-  // until the new audio actually starts playing.
+  // Reset highlight immediately when sentence changes.
   useEffect(() => {
-    setState({ currentWordIdx: -1, currentTime: 0, words: [] });
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setState((prev) => (
+      prev.currentWordIdx === -1 && prev.currentTime === 0 && prev.words.length === 0
+        ? prev
+        : { currentWordIdx: -1, currentTime: 0, words: [] }
+    ));
   }, [activeSentence?.id]);
 
   useEffect(() => {
     if (!isAudioPlaying || !activeSentence) {
-      setState({ currentWordIdx: -1, currentTime: 0, words: [] });
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setState((prev) => (
+        prev.currentWordIdx === -1 && prev.currentTime === 0 && prev.words.length === 0
+          ? prev
+          : { currentWordIdx: -1, currentTime: 0, words: [] }
+      ));
       return;
     }
 
@@ -48,13 +78,17 @@ export function useTTSWordHighlight(activeSentence, isAudioPlaying) {
       rafId = requestAnimationFrame(tick);
 
       const audio = VoiceService._currentAudio;
-      // Guard #1: skip tick if audio not loaded / swapped mid-frame
       if (!audio) return;
 
       const sentence = sentenceRef.current;
       if (!sentence) return;
 
-      const words = splitWordsWithTiming({ ...sentence, start: 0 });
+      // audio.duration is sometimes Infinity right after play() resolves;
+      // fall back to FAST_RATE × wordCount in that case.
+      const audioDuration = (typeof audio.duration === 'number' && isFinite(audio.duration))
+        ? audio.duration : null;
+
+      const words = buildWordTimings(sentence, audioDuration);
       if (!words.length) {
         setState((prev) => (prev.words.length ? { currentWordIdx: -1, currentTime: 0, words: [] } : prev));
         return;
@@ -63,7 +97,6 @@ export function useTTSWordHighlight(activeSentence, isAudioPlaying) {
       const t = audio.currentTime;
       if (typeof t !== 'number') return;
 
-      // Match active word: same logic as useWordHighlight.js
       let idx = -1;
       let found = false;
       let bestStart = -Infinity;
