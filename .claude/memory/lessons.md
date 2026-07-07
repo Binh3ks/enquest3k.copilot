@@ -63,3 +63,19 @@ cat .ai/knowledge/LESSONS.md  # → same file
 **How to apply**: Luôn thêm `useEffect(() => { if (phase === ALL_DONE) stopRecording(); }, [phase])` khi có MediaRecorder trong state machine.
 
 **Related**: commit `dd5d6f1a`, `useShadowingChallenge.js:651-660`.
+
+---
+
+## Lesson-005 — 2026-07-07: Pause button flash + Retry wrong jumps to wrong sentence
+
+**Rule 1 (Pause flash at ALL_DONE)**: Khi derive `isPlaying` từ `challengeActive`, PHẢI guard `&& !challengeDone`. Vì `challengeActive = phase !== SETUP` vẫn true ở ALL_DONE → `isPlaying=true` → Pause icon flashes mặc dù mic đã released.
+
+**Rule 2 (Retry wrong flow)**: Modal "All done!" PHẢI close trước khi dispatch `RESET_FOR_RETRY`. Reducer `SKIP_SENTENCE` phải navigate theo `retryQueue` (không phải `currentIndex+1`) và transition về ALL_DONE khi queue exhausted để modal reopen.
+
+**Why**: Ảnh client hiển thị Pause nhấp nháy + Retry wrong chỉ active câu cuối. Modal không đóng → user không thấy UI luyện tập.
+
+**How to apply**: 
+- Modal handlers phải wrap: `setSavePracticeOpen(false); dispatch(retry);`
+- Reducer cần track `retryQueue`, `inRetryMode` để SKIP_SENTENCE biết next target
+
+**Related**: commit `0e2c3a5a`, `useShadowingChallenge.js:180-244,665-672`, `Shadowing.jsx:799,668-677`.
