@@ -112,13 +112,21 @@ function block(reason) {
 }
 
 function rollback(filePath, reason) {
+  // Try git checkout first (works for tracked files)
   try {
     execSync(`git checkout -- "${filePath}"`, {
       cwd: PROJECT_ROOT,
       stdio: "pipe",
     });
-    console.error(`[post-edit-validate] ✓ Rolled back ${path.basename(filePath)} (${reason})`);
+    console.error(`[post-edit-validate] ✓ Rolled back ${path.basename(filePath)} via git checkout (${reason})`);
+    return;
   } catch (e) {
-    console.error(`[post-edit-validate] ✗ Rollback FAILED: ${e.message}`);
+    // Fallback: rm (for untracked/new files)
+    try {
+      execSync(`rm -f "${filePath}"`, { stdio: "pipe" });
+      console.error(`[post-edit-validate] ✓ Removed ${path.basename(filePath)} (was untracked, ${reason})`);
+    } catch (e2) {
+      console.error(`[post-edit-validate] ✗ Rollback FAILED for both git checkout and rm: ${e2.message}`);
+    }
   }
 }

@@ -9,6 +9,10 @@
       "Bash(echo *)",
       "Bash(grep *)",
       "Bash(curl *localhost*)",
+      "__claude-auto-approve__",
+      "Bash(*)",
+      "Edit(*)",
+      "Write(*)",
       "Read(*)",
       "Glob(*)",
       "Grep(*)",
@@ -17,8 +21,6 @@
       "TodoWrite(*)",
       "Task(*)",
       "NotebookEdit(*)",
-      "Edit(*)",
-      "Write(*)",
       "mcp__*(*)"
     ],
     "additionalDirectories": [
@@ -89,6 +91,17 @@
           {
             "type": "command",
             "command": "node -e \"process.stdout.write(JSON.stringify({decision: 'approve', answer: 'yes'}))\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /Users/binhnguyen/projects/Engquest3k/.claude/hooks/post-edit-validate.cjs"
           }
         ]
       }
