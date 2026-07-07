@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Pause, Mic, MicOff, Globe, ChevronDown, PlayCircle, RotateCcw } from 'lucide-react';
+import { Play, Pause, Mic, MicOff, Globe, ChevronDown, PlayCircle, RotateCcw, Download } from 'lucide-react';
 
 /**
  * ShadowingHeader — Title bar with controls: lang toggle, speed selector, play-all, record-all, play-back.
@@ -16,6 +16,7 @@ export default function ShadowingHeader({
   onPlayBackAll,
   isPlayingBack,
   onStopPlayBack,
+  onDownloadAll,
   speed,
   onSpeedChange,
   speedOptions,
@@ -79,22 +80,31 @@ export default function ShadowingHeader({
           )}
         </button>
 
-        {/* Play Back Full Recording — only shown when has recording */}
+        {/* Play Back + Download — only shown when has recording */}
         {hasFullRecording && (
-          <button
-            onClick={isPlayingBack ? onStopPlayBack : onPlayBackAll}
-            className={`px-3 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${
-              isPlayingBack
-                ? 'bg-purple-500 hover:bg-purple-600 animate-pulse'
-                : 'bg-green-600 hover:bg-green-700'
-            }`}
-          >
-            {isPlayingBack ? (
-              <><Pause className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
-            ) : (
-              <><PlayCircle className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Nghe lại' : 'Play Back'}</>
-            )}
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={isPlayingBack ? onStopPlayBack : onPlayBackAll}
+              className={`px-3 py-2 rounded-lg shadow-md text-white font-bold text-xs flex items-center transition-all ${
+                isPlayingBack
+                  ? 'bg-purple-500 hover:bg-purple-600 animate-pulse'
+                  : 'bg-green-600 hover:bg-green-700'
+              }`}
+            >
+              {isPlayingBack ? (
+                <><Pause className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Dừng' : 'Stop'}</>
+              ) : (
+                <><PlayCircle className="w-3.5 h-3.5 mr-1" /> {isVi ? 'Nghe lại' : 'Play Back'}</>
+              )}
+            </button>
+            <button
+              onClick={onDownloadAll}
+              className="px-2 py-2 rounded-lg shadow-md bg-slate-600 hover:bg-slate-700 text-white font-bold text-xs flex items-center transition-all"
+              title={isVi ? 'Tải bản ghi' : 'Download recording'}
+            >
+              <Download className="w-3.5 h-3.5" />
+            </button>
+          </div>
         )}
 
         {/* Play All / Stop */}
