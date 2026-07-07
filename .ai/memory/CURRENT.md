@@ -43,19 +43,40 @@ Read `.devin/workflows/MULTI_AGENT_ADAPTER.md` first (memory adapter). Then eith
 
 ---
 
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
 ## Auto Status (REPLACED on git commit/push — manual sections above are preserved)
 
-Updated: 2026-07-05T05:13:14.596Z
+Updated: 2026-07-07T04:31:43.766Z
 Branch: `main`
 
 ### Recent commits
 ```
-28706c99 fix(pronunciation): correct evaluate-deepgram endpoint path in TellYourStory.jsx
-1b6a2786 fix(db): add ALTER TABLE for missing 'block' column in periodic_assessments
-3ee9867c docs(memory): update CURRENT.md with push status + OpenHands next steps
-94449097 feat(agentos): finalize core migration, refactor monolithic json to per-week, and establish multi-agent adapter
-34a3b4df fix(pronunciation): normalize MIME + loosen targetText validation
+ae53d994 fix(shadowing): inline Play/Pause button stops toggling when challenge reaches ALL_DONE
+46d3ba91 fix(shadowing): auto-open summary modal when whole-script challenge reaches ALL_DONE
+39a6d127 fix(shadowing): START_BATCH_EVAL reducer missing phase transition to BATCH_EVALUATING
+301caffb feat(agentos): Phase 3 Multi-Agent Adapter — standardized handover formats
+7f0984b0 fix(memory): pin all memory paths to absolute project root
 ```
 
 ### Uncommitted
-_Working tree clean._
+```
+M .ai/memory/CURRENT.md
+ M .ai/memory/HISTORY.md
+ M .ai/tasks/ACTIVE.md
+ M .claude/settings.json
+?? .claude/hooks/post-edit-validate.cjs
+?? .mcp.json
+```

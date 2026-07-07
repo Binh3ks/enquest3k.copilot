@@ -2,46 +2,24 @@
   "version": 1,
   "hooks": [
     {
-      "matcher": "tool == 'Write' && file_path matches 'src/data/weeks/week_\\\\d+/.*\\\\.js'",
-      "name": "week-data-validation",
-      "description": "Validate week data files after creation/edit",
+      "matcher": "tool == 'Edit' || tool == 'Write'",
+      "name": "post-edit-validate",
+      "description": "Enforce auto-lint + auto-build + auto-rollback after every Edit/Write",
       "hooks": [
         {
           "type": "command",
-          "command": "#!/bin/bash\n# Extract week number from path\necho \"Validating week data...\"\n# Note: Full validation happens at commit time via pre-commit hook"
-        }
-      ]
-    },
-    {
-      "matcher": "tool == 'Write' && (file_path matches 'src/modules/.*\\\\.(js|jsx)' || file_path matches 'src/components/.*\\\\.(js|jsx)' || file_path matches 'src/services/.*\\\\.(js|jsx)')",
-      "name": "app-code-validation",
-      "description": "Validate app code syntax",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\necho \"Checking app code syntax...\""
-        }
-      ]
-    },
-    {
-      "matcher": "tool == 'Write' && (file_path matches '.*master.*prompt.*\\\\.txt' || file_path matches 'Production_FINAL/.*\\\\.md' || file_path matches '.*\\\\.yaml' || file_path matches '.*\\\\.json')",
-      "name": "prompt-template-validation",
-      "description": "Validate prompt/template files",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "#!/bin/bash\necho \"Checking prompt/template syntax...\""
+          "command": "node /Users/binhnguyen/projects/Engquest3k/.claude/hooks/post-edit-validate.cjs"
         }
       ]
     },
     {
       "matcher": "tool == 'Write' && (file_path matches '.*secret.*' || file_path matches '.*\\\\.env' || file_path matches '.*api.*key.*' || content matches 'sk-[a-zA-Z0-9]{20,}' || content matches 'AIza[a-zA-Z0-9_-]{35,}')",
       "name": "secret-detection",
-      "description": "Detect potential secrets in code",
+      "description": "Detect potential secrets in code — block commit if found",
       "hooks": [
         {
           "type": "command",
-          "command": "#!/bin/bash\necho \"⚠️ POTENTIAL SECRET DETECTED in $file_path\"\necho \"Do NOT commit API keys or secrets to git!\"\necho \"Use environment variables instead.\""
+          "command": "node -e \"process.stdout.write(JSON.stringify({decision:'block',reason:'⚠️ SECRET DETECTED — use env vars, not hardcoded keys'}))\""
         }
       ]
     }
