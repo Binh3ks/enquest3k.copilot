@@ -2,9 +2,9 @@
 
 - **Context Status:** Session closed — all changes pushed to origin/main.
 - **Branch:** `main` (synced with origin/main, working tree clean)
-- **Last meaningful commit:** `94449097` feat(agentos): finalize core migration, refactor monolithic json to per-week, and establish multi-agent adapter
+- **Last meaningful commit:** `9a29e9ad` feat(agentos): self-improvement loop — PostToolUse hook + lessons.md
 - **Last production commit:** `ca554beb` fix(shadowing): restore Where is in W3 Rora dialogue + bump corrections v2
-- **Active Tasks:** Phase 3 Multi-Agent Adapter (BOOTED — adapter ready, awaiting OpenHands first task)
+- **Active Tasks:** None (self-improvement hooks live; awaiting next task)
 
 ## Pending (from plan files, no owner)
 - W35 writing.js fixes
@@ -57,26 +57,24 @@ Read `.devin/workflows/MULTI_AGENT_ADAPTER.md` first (memory adapter). Then eith
 
 ---
 
+---
+
 ## Auto Status (REPLACED on git commit/push — manual sections above are preserved)
 
-Updated: 2026-07-07T04:31:43.766Z
+Updated: 2026-07-07T05:12:11.830Z
 Branch: `main`
 
 ### Recent commits
 ```
+9a29e9ad feat(agentos): self-improvement loop — PostToolUse hook + lessons.md
 ae53d994 fix(shadowing): inline Play/Pause button stops toggling when challenge reaches ALL_DONE
 46d3ba91 fix(shadowing): auto-open summary modal when whole-script challenge reaches ALL_DONE
 39a6d127 fix(shadowing): START_BATCH_EVAL reducer missing phase transition to BATCH_EVALUATING
 301caffb feat(agentos): Phase 3 Multi-Agent Adapter — standardized handover formats
-7f0984b0 fix(memory): pin all memory paths to absolute project root
 ```
 
 ### Uncommitted
 ```
-M .ai/memory/CURRENT.md
- M .ai/memory/HISTORY.md
- M .ai/tasks/ACTIVE.md
- M .claude/settings.json
-?? .claude/hooks/post-edit-validate.cjs
+M .claude/settings.json
 ?? .mcp.json
 ```
