@@ -6,6 +6,14 @@
 - **Last production commit:** `ca554beb` fix(shadowing): restore Where is in W3 Rora dialogue + bump corrections v2
 - **Active Tasks:** None (self-improvement hooks live; awaiting next task)
 
+## Model Configuration (updated 2026-07-07)
+Settings in `.claude/settings.local.json`:
+- `ANTHROPIC_MODEL`: `claude-opus-4-7` (default session)
+- `DEFAULT_OPUS_MODEL`: `claude-opus-4-8` (hard tasks: multi-file bugs, architecture)
+- `DEFAULT_SONNET_MODEL`: `claude-sonnet-4-6` (routine: read/edit/grep)
+- `SMALL_FAST_MODEL` + `DEFAULT_HAIKU_MODEL`: `claude-haiku-4-6` (lightweight tasks)
+Use `/model opus-4-8`, `/model sonnet-4-6`, `/model haiku-4-6` to switch mid-session.
+
 ## Pending (from plan files, no owner)
 - W35 writing.js fixes
 - W32 dictation sync
@@ -59,22 +67,32 @@ Read `.devin/workflows/MULTI_AGENT_ADAPTER.md` first (memory adapter). Then eith
 
 ---
 
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
 ## Auto Status (REPLACED on git commit/push — manual sections above are preserved)
 
-Updated: 2026-07-07T05:12:11.830Z
+Updated: 2026-07-07T13:33:37.244Z
 Branch: `main`
 
-### Recent commits
-```
-9a29e9ad feat(agentos): self-improvement loop — PostToolUse hook + lessons.md
-ae53d994 fix(shadowing): inline Play/Pause button stops toggling when challenge reaches ALL_DONE
-46d3ba91 fix(shadowing): auto-open summary modal when whole-script challenge reaches ALL_DONE
-39a6d127 fix(shadowing): START_BATCH_EVAL reducer missing phase transition to BATCH_EVALUATING
-301caffb feat(agentos): Phase 3 Multi-Agent Adapter — standardized handover formats
-```
-
-### Uncommitted
-```
-M .claude/settings.json
-?? .mcp.json
-```
+Recent:
+553e343d docs: add model selection guide for cost optimization
+2cf3e9a6 feat(hooks): add TDZ forward-reference detector (Lesson-006)
+32ebfe95 docs(lessons): record TDZ gap + hook coverage limitation
