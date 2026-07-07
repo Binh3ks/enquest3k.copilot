@@ -51,3 +51,15 @@ cat .ai/knowledge/LESSONS.md  # → same file
 ```
 
 **Maintenance**: Append-only. Đánh dấu `[DEPRECATED]` nếu lesson sai.
+
+---
+
+## Lesson-004 — 2026-07-07: ALL_DONE missing mic cleanup (BUG-2026-07-07-001)
+
+**Rule**: Khi reducer có phase-guard trong MEDIA_STOPPED (`if phase !== RECORDING → return`), PHẢI có effect cleanup ở mọi phase-terminal (ALL_DONE, SCORED-end) để đảm bảo `stopRecording()` được gọi.
+
+**Why**: `handleNext()` + `handleSeeResults()` dispatch `FINISH` mà KHÔNG gọi `stopRecording()`. MEDIA_STOPPED reducer ignore action vì phase ≠ RECORDING nữa. Mic stream không bao giờ được release.
+
+**How to apply**: Luôn thêm `useEffect(() => { if (phase === ALL_DONE) stopRecording(); }, [phase])` khi có MediaRecorder trong state machine.
+
+**Related**: commit `dd5d6f1a`, `useShadowingChallenge.js:651-660`.
