@@ -49,10 +49,12 @@ process.stdin.on("end", () => {
 
     console.error(`[post-edit-validate] Checking ${path.relative(PROJECT_ROOT, filePath)}...`);
 
-    // Step 1: Lint
+    // Step 1: Lint ONLY the edited file (npm run lint lints everything — use npx eslint directly)
+    // --max-warnings 999: only fail on real errors (no-undef, no-unused-vars as error)
+    // Pre-existing warnings (react-hooks/exhaustive-deps etc.) must not roll back new code.
     const lintResult = spawnSync(
-      "npm",
-      ["run", "lint", "--", filePath],
+      "npx",
+      ["eslint", "--ext", "js,jsx", "--report-unused-disable-directives", "--max-warnings", "999", filePath],
       { cwd: PROJECT_ROOT, encoding: "utf8", timeout: 60000 }
     );
 
