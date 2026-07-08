@@ -56,10 +56,9 @@ export default function RightPanel({
       </div>
       <div ref={scrollRef} className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-1">
         {script.map((s, idx) => {
-          const timeRange = segs[idx] ? {
-            start: segs[idx].start,
-            duration: segs[idx].duration,
-          } : null;
+          const timeRange = (segs[idx] && segs[idx].start != null && segs[idx].duration != null)
+            ? { start: segs[idx].start, duration: segs[idx].duration }
+            : null;
 
           const scoreData = scores?.[s.id];
           const ipa = transcriptIpa?.[s.id] || null;
