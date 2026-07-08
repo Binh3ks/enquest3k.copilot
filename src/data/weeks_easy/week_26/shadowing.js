@@ -1,6 +1,6 @@
 export default {
   title: "Leo's Four Panels",
-  videoId: "l4dCByK0TN4",  // Speaking Story — Kids cartoon dialogues (was: Greeting song)
+  videoId: "OdNv-J31Kk8",  // Carter family camping - weekend adventure (was: 50-min Speaking Story)
   content_en: `Leo made a **comic strip** about his weekend. It had four panels.
 
 In Panel One, Leo drew the scene at the park. He wrote a caption: 'It was sunny. We visited the park.'
