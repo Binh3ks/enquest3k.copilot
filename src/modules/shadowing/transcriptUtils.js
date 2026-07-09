@@ -66,7 +66,7 @@ export function getActiveSegment(videoId, currentTime) {
 }
 
 export function getCleanedTranscriptSentences(videoId) {
-  let entry = getSentenceMap()[videoId];
+  let entry = getCleanedMap()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
   return entry.segments
     .map((s, idx) => ({
