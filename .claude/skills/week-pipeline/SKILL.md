@@ -1,6 +1,6 @@
 ---
 name: week-pipeline
-description: Chains subagents to produce and validate a week of EngQuest3K content. Content-writer creates files, quality-reviewer validates. Use when building a complete week from Syllabus. Invoked as: `/week-pipeline 36` or "build week 36 via pipeline"
+description: Chains subagents to produce and validate a week of EngQuest3K content. Content-writer creates files, quality-reviewer validates. Use when building a complete week from Syllabus. Audio is on-demand (no batch step).
 ---
 
 # Week Pipeline — Subagent Orchestration
@@ -9,45 +9,36 @@ Chain content-writer + quality-reviewer subagents to produce and validate a week
 
 ## When to invoke
 
-- User says "build week N", "produce W36", "run week pipeline for 38"
+- User says "build week N via pipeline", "produce W36 via pipeline"
 - For complete week production with isolated content creation + validation
 - NOT for: editing one file (use normal editing), or validation only (use `/content-check`)
 
 ## Orchestration sequence
 
-Run these steps **in order**. Each step is a subagent call.
-
 ### Step 0: Pre-flight (Claude main context)
 
-Read the Syllabus for the target week. Identify:
-- Week number: N
-- Golden standard to clone: W6 (for W1–15) or W16 (for W16+)
-- Grammar focus, vocab list, reading topic, writing task
+Read Syllabus for target week. Identify: grammar focus, vocab list, reading topic, writing task, question count (W17+: 4 questions).
 
-### Step 1: Content-writer agent
-
-Spawn with full context:
+### Step 1: Content-writer subagent
 
 ```python
-# Pseudocode — the actual call is Agent(subagent_type="content-writer", prompt=...)
+Agent(
+    subagent_type="content-writer",
+    prompt="""
+    Produce week N for EngQuest3K.
+    - Clone from src/data/weeks/week_16/ (ADV) and src/data/weeks_easy/week_16/ (Easy)
+    - Clone AI Tutor: cp src/data/weeks/week_16_real.js src/data/weeks/week_N_real.js
+    - Syllabus: production_kit/reference/Syllabus_V5_PublicationReady.docx
+    - W28+: ≥10 multi-word chunks per read.js passage, canonical-longest bold policy for W36+
+    - W17+: 4 comprehension questions per read.js (not 3)
+    - grammar.js: exactly 20 exercises, answer: not correct:
+    - voiceConfig in index.js: 5 distinct voices
+    - After each file edit, hook auto-validates (content_lint, sgmath types, dict lint)
+    """
+)
 ```
 
-Prompt should contain:
-- Week number N
-- Source of truth: `production_kit/reference/Syllabus_V5_PublicationReady.docx`
-- Golden standard week to clone from
-- Files to produce (full list per workflow)
-
-```bash
-# Verify files were created (quick)
-ls src/data/weeks/week_NN/ | wc -l
-```
-
-**Exit**: content-writer returns file list + any immediate validation results.
-
-### Step 2: Quality-reviewer agent
-
-Spawn AFTER content-writer completes:
+### Step 2: Quality-reviewer subagent
 
 ```python
 Agent(
@@ -56,44 +47,33 @@ Agent(
 )
 ```
 
-Quality-reviewer runs:
-```bash
-npm run content:lint -- --week N --errors-only
-npm run dict:lint -- --errors-only
-bash production_kit/tools/bug_prevention_check.sh N
-bash production_kit/tools/code_quality_gate.sh N
-node production_kit/tools/validate_sgmath_types.mjs N
-node tools/validate_barmodels.js N
-node tools/validate_video_thumbnails.js N
-```
+### Step 3: Post-validation (Claude main context)
 
-**Exit**: quality-reviewer returns pass/fail report.
+- Generate bar models: `python3 tools/generate_logiclab_barmodels.py N --skip-existing`
+- Validate: `node tools/validate_barmodels.js N`
+- Update videos: `node tools/update_videos.js N --reset`
+- Validate thumbnails: `node tools/validate_video_thumbnails.js N`
+- Generate images: `node tools/image_pipeline/orchestrator.mjs --week N`
+- Fetch transcripts: `node tools/fetch_video_transcripts.js --only N` (if new video)
+- Clean + split: `node tools/clean_transcripts.mjs && python3 tools/split_transcripts.py`
+- Build: `rm -rf node_modules/.vite dist && npm run build`
 
-### Step 3: Decision (Claude main context)
+**Audio is on-demand** (no batch generation for W16+). The Deepgram Worker generates + caches on first user play.
 
-If quality-reviewer reports:
-- **SHIP** → commit and report
-- **FAIL** → Claude fixes specific errors, then re-runs quality-reviewer on the specific validator that failed (Step 2 repeated, not the full pipeline)
+### Step 4: Decision
 
-### Step 4: Build + smoke (Claude main context)
-
-```bash
-npm run build
-TEST_WEEK=N npx playwright test --grep "Smoke" --project=chromium
-```
-
-**Do NOT spawn a subagent for this** — build verification is fast and benefits from full context.
+- Quality-reviewer **SHIP** → build + commit
+- Quality-reviewer **FAIL** → fix specific errors, re-run only the failing validator
 
 ## Context budget
 
-| Step | Estimated context | Notes |
+| Step | Context | Notes |
 |---|---|---|
-| Step 0 (pre-flight) | ~3K | Read Syllabus excerpt |
-| Step 1 (content-writer) | 80-120K | SEPARATE context — does not affect parent |
-| Step 2 (quality-reviewer) | 20-40K | SEPARATE context — runs bash validators |
-| Step 3 (decision) | ~2-3K | Parent reads quality-reviewer output |
-| Step 4 (build) | ~5K | npm run build output |
-| **Total parent context** | **~13K** | vs ~150K without subagents |
+| Step 0 (pre-flight) | ~3K | Read Syllabus |
+| Step 1 (content-writer) | 80-120K | SEPARATE context |
+| Step 2 (quality-reviewer) | 20-40K | SEPARATE context |
+| Step 3-4 (post-validation + decision) | ~10K | Parent runs scripts + reads results |
+| **Total parent** | **~16K** | vs ~150K without subagents |
 
 ## Report format
 
@@ -102,30 +82,15 @@ TEST_WEEK=N npx playwright test --grep "Smoke" --project=chromium
 
 | Step | Status | Detail |
 |---|---|---|
-| Pre-flight | ✅ | Syllabus read, golden standard identified |
-| Content-writer | ✅ | 16 files created (list) |
-| Quality-reviewer | ✅ / ❌ | 7/7 validators PASS / list failures |
-| Build | ✅ / ❌ | npm run build passed |
-| E2E smoke | ✅ / ❌ / ⏭ skipped | pass / fail / deferred |
+| Pre-flight | ✅ | Syllabus read |
+| Content-writer | ✅/❌ | 39 files created (19 ADV + 19 Easy + 1 Real) |
+| Quality-reviewer | ✅/❌ | 7/7 validators PASS |
+| Bar models | ✅/⏭ skipped | N images generated |
+| Daily watch | ✅ | N videos found |
+| Images | ✅/⏭ | N generated, R2 uploaded |
+| Transcripts | ✅/⏭ | fetched/cleaned |
+| Build | ✅/❌ | npm run build |
+| Audio | N/A | on-demand (no batch step) |
 
 **Decision: SHIP / FIX-THEN-SHIP / BLOCKER**
 ```
-
-## Error handling
-
-If content-writer fails (subagent error, API timeout):
-- Do NOT retry automatically — report error, wait for direction
-- The parent context is clean (subagent pollution is isolated)
-
-If quality-reviewer finds failures:
-- Identify the failing validator from the report
-- Fix ONLY the files that validator checks
-- Re-run ONLY that validator (not the full 7-validator chain)
-
-## Key principle: context isolation
-
-Each subagent runs in its own context. The parent orchestrator never reads:
-- The full content of files written by content-writer
-- The full output of all 7 validators (quality-reviewer summarizes)
-
-This keeps the orchestrator's context lean and prevents context collapse across long production sessions.

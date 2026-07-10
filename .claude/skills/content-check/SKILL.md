@@ -1,6 +1,6 @@
 ---
 name: content-check
-description: Runs the full content validation suite on a week (content lint, bug prevention, quality gate, sgmath, bar models, thumbnails) and produces a structured pass/fail report. Use before committing any week content changes, or when asked to check / validate a specific week.
+description: Runs the full content validation suite on a week (content lint, bug prevention, quality gate, sgmath, bar models, video thumbnails) and produces a structured pass/fail report. Use before committing any week content changes.
 ---
 
 # Content Check
@@ -9,10 +9,10 @@ Run the full EngQuest3K content validation suite for a specified week.
 
 ## When to invoke
 
-- User says "check week 40", "validate W38", "check content for week 35"
+- User says "check week 36", "validate W38", "check content for week 35"
 - Before committing any changes in `src/data/weeks/week_NN/` or `src/data/weeks_easy/week_NN/`
 - After a multi-file edit to a week's content
-- NOT for: checking app code (use `npm run build` instead)
+- NOT for: checking app code (use `npm run build` instead), image pipeline (it has its own state machine)
 
 ## Validation commands (run in order, collect all results)
 
@@ -37,11 +37,19 @@ node production_kit/tools/validate_sgmath_types.mjs NN
 # 6. Bar model paths (if singapore_math.js has bar models)
 node tools/validate_barmodels.js NN
 
-# 7. Video thumbnails (if daily_watch.js exists)
+# 7. Video thumbnails (if daily_watch.js has video IDs)
 node tools/validate_video_thumbnails.js NN
 ```
 
 **Run all steps even if an early step fails** — collect the full picture.
+
+## What this skill does NOT check
+
+| Subsystem | Why not | Run separately |
+|---|---|---|
+| **Audio** | On-demand via Deepgram Worker + R2 cache since W14. No batch validation needed. | First user play self-validates |
+| **Image pipeline** | Has its own state machine in `.ai/memory/image_pipeline_state.json`. Re-run with `--skip-existing` to retry incomplete slots. | `node tools/image_pipeline/orchestrator.mjs --week NN` |
+| **Shadowing transcripts** | Per-video JSONs in `src/data/video_transcripts_by_id/`. Each video's `videoId` must resolve in `cleaned/`. | `node tools/fetch_video_transcripts.js --only NN && node tools/clean_transcripts.mjs` |
 
 ## Report format
 
@@ -58,15 +66,21 @@ node tools/validate_video_thumbnails.js NN
 | 6 | barmodels | PASS / FAIL / SKIP |
 | 7 | thumbnails | PASS / FAIL / SKIP |
 
+**Not checked by this skill:**
+- Audio — on-demand (Deepgram Worker → R2 cache)
+- Images — pipeline orchestrator runs separately
+- Shadowing transcripts — fetched/cleaned separately per-week
+
 **Overall: SHIP / FIX-THEN-SHIP / BLOCKER**
 
 ### Errors (if any):
-- [E#] <validator>: <error message + file:line>
+- [E#] <validator>: <error details + file>
 ```
 
 ## Rules
 
 - Never skip a step, even if a prior step failed
 - SKIP is valid when the data file doesn't exist (e.g. no `singapore_math.js` in W1-W16)
-- Always run `dict:lint` even for per-week changes — a new vocab word might break dictionary rules
+- Always run `dict:lint` even for per-week changes
 - If overall is BLOCKER, list every failing check with its specific error message
+- For audio/video/image failures, see respective tool docs (not in this skill)

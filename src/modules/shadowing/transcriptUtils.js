@@ -69,8 +69,8 @@ export function getCleanedTranscriptSentences(videoId) {
   let entry = getCleanedMap()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
 
-  const MIN_WORDS = 6;
   const breaks = new Set(entry.speaker_breaks || []);
+  const MAX_WORDS = 14; // cap a single turn to avoid huge rows
 
   const merged = entry.segments.reduce((acc, seg, idx) => {
     const text = (seg.text || '').trim();
@@ -79,11 +79,11 @@ export function getCleanedTranscriptSentences(videoId) {
     if (words.length === 0) return acc;
 
     const last = acc[acc.length - 1];
-    const short = words.length < MIN_WORDS;
-    const lastShort = last ? (last.text.match(/[A-Za-z']+/g) || []).length < MIN_WORDS : false;
+    const lastWords = last ? (last.text.match(/[A-Za-z']+/g) || []).length : 0;
     const isBreak = breaks.has(idx);
+    const lastTooLong = lastWords >= MAX_WORDS;
 
-    if (last && lastShort && short && !isBreak) {
+    if (last && !isBreak && !lastTooLong) {
       last.text += ' ' + text;
       last.duration = (seg.start + seg.duration) - last.start;
     } else {
