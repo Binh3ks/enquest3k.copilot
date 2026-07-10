@@ -68,14 +68,38 @@ export function getActiveSegment(videoId, currentTime) {
 export function getCleanedTranscriptSentences(videoId) {
   let entry = getCleanedMap()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
-  return entry.segments
-    .map((s, idx) => ({
-      id: s.id ?? (idx + 1),
-      text: (s.text || '').trim(),
-      start: s.start,
-      duration: s.duration,
-      _isTranscript: true,
-    }))
+
+  const MIN_WORDS = 6;
+
+  const merged = entry.segments.reduce((acc, seg) => {
+    const text = (seg.text || '').trim();
+    if (!text) return acc;
+    const words = (text.match(/[A-Za-z']+/g) || []);
+    if (words.length === 0) return acc;
+
+    const last = acc[acc.length - 1];
+    const short = words.length < MIN_WORDS;
+    const lastShort = last ? (last.text.match(/[A-Za-z']+/g) || []).length < MIN_WORDS : false;
+    // A question mark ends a speaker turn — the next segment is a
+    // different speaker answering, so never merge across it.
+    const endsQuestion = last && /\?\s*$/.test(last.text);
+
+    if (last && lastShort && short && !endsQuestion) {
+      last.text += ' ' + text;
+      last.duration = (seg.start + seg.duration) - last.start;
+    } else {
+      acc.push({
+        text,
+        start: seg.start,
+        duration: seg.duration,
+        _isTranscript: true,
+      });
+    }
+    return acc;
+  }, []);
+
+  return merged
+    .map((s, idx) => ({ ...s, id: idx + 1 }))
     .filter((s) => {
       const words = (s.text.match(/[A-Za-z']+/g) || []);
       if (words.length === 0) return false;
