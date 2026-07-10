@@ -1,6 +1,6 @@
 export default {
   title: "Dictation: A Special Picnic Day",
-  image_url: "/images/week30/read_cover_w30.jpg",
+  image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week30/read_cover_w30.jpg",
   audio_url: "/audio/week30/dictation_main.mp3",
   content_en: `Last Sunday, the children **had a picnic** in the park. Tom's dad is a good cook and made **cheese sandwiches**, cookies, and cold lemonade. He put everything in a big **picnic basket** and said, 'A good cook always prepares the best food!'
 

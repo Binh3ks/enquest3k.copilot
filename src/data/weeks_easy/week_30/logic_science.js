@@ -1,6 +1,6 @@
 export default {
   title: "Logic & Science: Picnic and Healthy Eating",
-  image_url: "/images/week30/logic_cover_w30.jpg",
+  image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week30/logic_cover_w30.jpg",
   audio_url: "/audio/week30/logic_main.mp3",
   intro_en: "Use logic and science to answer questions about the picnic story and healthy eating.",
   intro_vi: "Dùng logic và khoa học để trả lời các câu hỏi về câu chuyện dã ngoại và ăn uống lành mạnh.",

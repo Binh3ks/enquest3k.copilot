@@ -1,6 +1,6 @@
 export default {
   title: "Math: Picnic Party Problems",
-  image_url: "/images/week30/math_cover_w30.jpg",
+  image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week30/math_cover_w30.jpg",
   audio_url: "/audio/week30_easy/math_main.mp3",
   intro_en: "Use the bar model to help you solve each problem.",
   intro_vi: "Dùng mô hình thanh để giúp bạn giải mỗi bài toán.",

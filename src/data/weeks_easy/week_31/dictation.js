@@ -1,6 +1,6 @@
 export default {
   title: "Dictation: My Day at the Market",
-  image_url: "/images/week31/read_cover_w31.jpg",
+  image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week31/read_cover_w31.jpg",
   audio_url: "/audio/week31_easy/dictation_main.mp3",
   content_en: `Last Saturday, Luna went to a **local market** with her mum. The market was colourful and fun.
 
