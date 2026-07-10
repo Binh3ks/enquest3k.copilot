@@ -66,39 +66,16 @@ export function getActiveSegment(videoId, currentTime) {
 }
 
 export function getCleanedTranscriptSentences(videoId) {
-  let entry = getCleanedMap()[videoId];
+  let entry = getSentenceMap()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
-
-  const breaks = new Set(entry.speaker_breaks || []);
-  const MAX_WORDS = 14; // cap a single turn to avoid huge rows
-
-  const merged = entry.segments.reduce((acc, seg, idx) => {
-    const text = (seg.text || '').trim();
-    if (!text) return acc;
-    const words = (text.match(/[A-Za-z']+/g) || []);
-    if (words.length === 0) return acc;
-
-    const last = acc[acc.length - 1];
-    const lastWords = last ? (last.text.match(/[A-Za-z']+/g) || []).length : 0;
-    const isBreak = breaks.has(idx);
-    const lastTooLong = lastWords >= MAX_WORDS;
-
-    if (last && !isBreak && !lastTooLong) {
-      last.text += ' ' + text;
-      last.duration = (seg.start + seg.duration) - last.start;
-    } else {
-      acc.push({
-        text,
-        start: seg.start,
-        duration: seg.duration,
-        _isTranscript: true,
-      });
-    }
-    return acc;
-  }, []);
-
-  return merged
-    .map((s, idx) => ({ ...s, id: idx + 1 }))
+  return entry.segments
+    .map((s, idx) => ({
+      id: s.id ?? (idx + 1),
+      text: (s.text || '').trim(),
+      start: s.start,
+      duration: s.duration,
+      _isTranscript: true,
+    }))
     .filter((s) => {
       const words = (s.text.match(/[A-Za-z']+/g) || []);
       if (words.length === 0) return false;
