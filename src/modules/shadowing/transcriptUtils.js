@@ -70,8 +70,9 @@ export function getCleanedTranscriptSentences(videoId) {
   if (!entry || entry.error || !entry.segments) return [];
 
   const MIN_WORDS = 6;
+  const breaks = new Set(entry.speaker_breaks || []);
 
-  const merged = entry.segments.reduce((acc, seg) => {
+  const merged = entry.segments.reduce((acc, seg, idx) => {
     const text = (seg.text || '').trim();
     if (!text) return acc;
     const words = (text.match(/[A-Za-z']+/g) || []);
@@ -80,11 +81,9 @@ export function getCleanedTranscriptSentences(videoId) {
     const last = acc[acc.length - 1];
     const short = words.length < MIN_WORDS;
     const lastShort = last ? (last.text.match(/[A-Za-z']+/g) || []).length < MIN_WORDS : false;
-    // A question mark ends a speaker turn — the next segment is a
-    // different speaker answering, so never merge across it.
-    const endsQuestion = last && /\?\s*$/.test(last.text);
+    const isBreak = breaks.has(idx);
 
-    if (last && lastShort && short && !endsQuestion) {
+    if (last && lastShort && short && !isBreak) {
       last.text += ' ' + text;
       last.duration = (seg.start + seg.duration) - last.start;
     } else {
