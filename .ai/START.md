@@ -7,7 +7,7 @@ Run this at the top of every agent session. The goal: be productive within the f
 Verify AgentOS is intact and points at the right workspace.
 
 ```
-Read .ai/architecture/PROJECT.md
+Read .ai/architecture/ARCHITECTURE.md (§1: project overview)
 Read .ai/memory/CURRENT.md
 ```
 
@@ -25,9 +25,9 @@ Load files in this order. Stop early if the answer is already clear — reading 
 | 3 | `.ai/tasks/ACTIVE.md` | What is in flight right now |
 | 4 | `.ai/decisions/DECISIONS.md` (tail) | The 3 most recent decisions — they may constrain current work |
 | 5 | `.ai/knowledge/README.md` | Index of long-lived facts; load only entries your task touches |
-| 6 | `.ai/architecture/RULES.md` | Hard constraints — the "never" rules |
-| 7 | `.ai/architecture/PATTERNS.md` | Conventions the project follows |
-| 8 | `.ai/architecture/ARCHITECTURE.md` | Module map — only if your task changes structure |
+| 6 | `.ai/architecture/ARCHITECTURE.md` §5 (Rules) | Hard constraints — the "never" rules |
+| 7 | `.ai/architecture/ARCHITECTURE.md` §4 (Patterns) | Conventions the project follows |
+| 8 | `.ai/architecture/ARCHITECTURE.md` §3 (Layers) | Module map — only if your task changes structure |
 
 **Skip order is itself a rule.** If the task line in `CURRENT.md` already names the file and the change is small, do not read 1–7 — read the file, do the work, log it, finish.
 
@@ -48,8 +48,8 @@ Match the read set to the task type.
 
 ### Tier 3 — New, undefined work
 1. Read all of Tier 1 + 2 above
-2. Read `architecture/STACK.md` and `architecture/STYLE.md`
-3. If the work crosses modules, also read `architecture/ARCHITECTURE.md` and `architecture/INDEX.md`
+2. Read `architecture/ARCHITECTURE.md` §2 (Tech Stack) and §6 (Style)
+3. If the work crosses modules, also read `architecture/ARCHITECTURE.md` §3 (Layers) and `architecture/INDEX.md`
 4. Design the task → write it to `tasks/BACKLOG.md` first → promote to `ACTIVE.md` only when you actually start coding
 
 ## 4. State assertion — log the session start
@@ -69,7 +69,7 @@ This makes the session reconstructable from log alone, even if `CURRENT.md` is l
 
 Pause for one beat. Ask:
 
-- Does the task conflict with any rule in `architecture/RULES.md`? → ask the human before coding.
+- Does the task conflict with any rule in `architecture/ARCHITECTURE.md` §5 (Rules)? → ask the human before coding.
 - Is there a decision in `DECISIONS.md` that already covers this? → cite it, do not re-decide.
 - Is the task in `BACKLOG.md` but not `ACTIVE.md`? → promote it first, then start.
 - Will the change require more than ~5 files? → use plan mode and get approval before editing.

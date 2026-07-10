@@ -42,7 +42,7 @@ Every agent run follows four phases. The first and last are mandatory; the middl
         └─────┬──────┘
               ↓
         ┌────────────┐
-        │    WORK    │  execute one task; obey RULES.md; ask if blocked
+        │    WORK    │  execute one task; obey ARCHITECTURE.md §5 (Rules); ask if blocked
         └─────┬──────┘
               ↓
         ┌────────────┐
@@ -52,7 +52,7 @@ Every agent run follows four phases. The first and last are mandatory; the middl
 
 - **BOOTSTRAP** — runs once per clone. Verifies the 10 expected subfolders exist and that all `WORKSPACE` / path references inside `.ai/` and the slash-command layer point at this repo.
 - **START** — runs at the top of every session. Loads context in priority order, picks up the current task, asserts state into `SESSION.md`. See `START.md`.
-- **WORK** — the actual implementation. Guided by `prompts/FEATURE.md` (new work) or `prompts/BUGFIX.md` (regression). Constrained by `architecture/RULES.md`. Outputs go to the codebase; side effects go to `.ai/`.
+- **WORK** — the actual implementation. Guided by `prompts/FEATURE.md` (new work) or `prompts/BUGFIX.md` (regression). Constrained by `architecture/ARCHITECTURE.md` §5 (Rules). Outputs go to the codebase; side effects go to `.ai/`.
 - **FINISH** — runs before any session ends, voluntary or forced. Updates memory, archives decisions, prunes knowledge, moves tasks. See `FINISH.md`.
 
 ## Why this exists
@@ -72,8 +72,8 @@ Without `.ai/`, every agent starts cold: it re-reads the project, re-learns the 
 | If you are... | Read first | Then |
 |---|---|---|
 | Starting a session | `START.md` | `memory/CURRENT.md` |
-| Doing new feature work | `prompts/FEATURE.md` | `architecture/PATTERNS.md` |
-| Fixing a regression | `prompts/BUGFIX.md` | `architecture/RULES.md` |
+| Doing new feature work | `prompts/FEATURE.md` | `architecture/ARCHITECTURE.md` §4 (Patterns) |
+| Fixing a regression | `prompts/BUGFIX.md` | `architecture/ARCHITECTURE.md` §5 (Rules) |
 | Closing a session | `FINISH.md` | the 6-step checklist inside |
 
 The cross-agent handoff contract is simple: **START before work, FINISH after.** Skip either, and the next agent pays the cost.
