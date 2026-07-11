@@ -16,7 +16,7 @@ import word_power from './word_power.js';
 import mindmap from './mindmap.js';
 import daily_watch from './daily_watch.js';
 import word_match from './word_match.js';
-import games from './games.js';
+import { week_36GamesAdvanced as games } from './games.js';
 
 const weekData = {
   weekId: 36,
