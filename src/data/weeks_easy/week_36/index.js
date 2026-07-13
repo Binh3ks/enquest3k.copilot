@@ -1,4 +1,4 @@
-// WEEK 35: Environmental Issues
+// WEEK 36: Environmental Issues
 // Easy Mode Index
 
 import read from './read.js';
