@@ -1,10 +1,13 @@
+// WEEK 36: Adventure Stories (Irregular Verbs)
+// Daily Watch Station — Advanced Mode
+// All videoIds verified 200 OK via img.youtube.com/vi/$id/mqdefault.jpg
 export default {
   videos: [
-    { id: 1, title: "Adventure Stories for Kids English Reading", videoId: "F6vfmC7n5jQ", duration: "05:32", sim_duration: 332, thumb: "https://img.youtube.com/vi/F6vfmC7n5jQ/mqdefault.jpg" },
-    { id: 2, title: "Marco Polo for Kids Famous Explorers", videoId: "aUld_Qb6HhU", duration: "04:18", sim_duration: 258, thumb: "https://img.youtube.com/vi/aUld_Qb6HhU/mqdefault.jpg" },
-    { id: 3, title: "Silk Road History for Kids", videoId: "iL_Zvgd_Hmw", duration: "05:05", sim_duration: 305, thumb: "https://img.youtube.com/vi/iL_Zvgd_Hmw/mqdefault.jpg" },
-    { id: 4, title: "Irregular Verbs Past Tense English Grammar", videoId: "Yd_3AfHHZmw", duration: "06:12", sim_duration: 372, thumb: "https://img.youtube.com/vi/Yd_3AfHHZmw/mqdefault.jpg" },
-    { id: 5, title: "Submarines and Underwater Exploration", videoId: "LnQEsA4nVy4", duration: "04:47", sim_duration: 287, thumb: "https://img.youtube.com/vi/LnQEsA4nVy4/mqdefault.jpg" }
+    { id: 1, title: "Irregular Verbs Past Tense | MightyOwl Language Arts | 2nd Grade", videoId: "_Itws1UmFE8", duration: "07:54", sim_duration: 474, thumb: "https://img.youtube.com/vi/_Itws1UmFE8/mqdefault.jpg" },
+    { id: 2, title: "Irregular Verbs for Kids | Flew Caught Ran | Grammar Song", videoId: "wSFDFyRDXzY", duration: "03:29", sim_duration: 209, thumb: "https://img.youtube.com/vi/wSFDFyRDXzY/mqdefault.jpg" },
+    { id: 3, title: "Past Tense Verbs Song | Eat Ate Drink Drank | English for Kids", videoId: "gf7OdFHCYfo", duration: "01:34", sim_duration: 94, thumb: "https://img.youtube.com/vi/gf7OdFHCYfo/mqdefault.jpg" },
+    { id: 4, title: "The Carter Family 37 | The Airplane Trip | Little Fox", videoId: "Rlmms56uisw", duration: "03:21", sim_duration: 201, thumb: "https://img.youtube.com/vi/Rlmms56uisw/mqdefault.jpg" },
+    { id: 5, title: "The Carter Family 4 | A Camping Trip | Little Fox | Bedtime Stories", videoId: "OdNv-J31Kk8", duration: "03:26", sim_duration: 206, thumb: "https://img.youtube.com/vi/OdNv-J31Kk8/mqdefault.jpg" }
   ],
   bonus_games: [{title: "Adventure Quiz", url: "#", description: "Review"}]
 };
