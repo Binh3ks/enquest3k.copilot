@@ -2,7 +2,7 @@
 // Shadowing Station — Easy Mode
 
 export default {
-  videoId: 'X2YgM1Zw4_E',
+  videoId: 'OdNv-J31Kk8',
   content_en: 'Last summer, my family went on a submarine trip. We dove down into the deep ocean. We saw beautiful things everywhere. We found an amazing cave! Our guide said it was very old. We took photos of everything. We wrote down what we found. We gave our photos to the museum. We came back up safely. We made great memories!',
   script: [
     { id: 1, text: 'Last summer, my family went on a submarine trip.', vi: 'Mùa hè năm ngoái, gia đình tôi đi phiêu lưu bằng tàu ngầm.' },
