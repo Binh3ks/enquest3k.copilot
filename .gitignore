@@ -36,6 +36,11 @@ public/audio copy/
 public/images/  # All images served from R2 (don't commit to Git)
 public/videos/week*/  # Week videos served from YouTube/R2 (don't commit to Git)
 
+# Design/source screenshots (archived locally, not in repo)
+Shadowing redesign/
+Shadowing format.jpg
+Shadowing*
+
 # Wrangler local development (Cloudflare Workers emulator)
 .wrangler/
 
