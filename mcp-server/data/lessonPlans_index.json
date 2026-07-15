@@ -1,0 +1,626 @@
+{
+  "1": {
+    "week": 1,
+    "unit_theme": "Introductions & Identity — Hello World!"
+  },
+  "2": {
+    "week": 2,
+    "unit_theme": "Identity & Family — My Family is My Team"
+  },
+  "3": {
+    "week": 3,
+    "unit_theme": "Identity & Environment — The Mirror Game"
+  },
+  "4": {
+    "week": 4,
+    "unit_theme": "My World — My Happy Jar"
+  },
+  "5": {
+    "week": 5,
+    "unit_theme": "My World — My House"
+  },
+  "6": {
+    "week": 6,
+    "unit_theme": "Daily Life — My Morning Routine"
+  },
+  "7": {
+    "week": 7,
+    "unit_theme": "Identity & Environment — Inside My Backpack"
+  },
+  "8": {
+    "week": 8,
+    "unit_theme": "Identity & Environment — The Busy Classroom"
+  },
+  "9": {
+    "week": 9,
+    "unit_theme": "Community & Routines — City Mission"
+  },
+  "10": {
+    "week": 10,
+    "unit_theme": "Community & Routines — The Hero Academy: Farm vs City"
+  },
+  "11": {
+    "week": 11,
+    "unit_theme": "Community & Routines — Weekend Adventures"
+  },
+  "12": {
+    "week": 12,
+    "unit_theme": "Community & Routines — The Talent Show"
+  },
+  "13": {
+    "week": 13,
+    "unit_theme": "Community & Routines — A Day in Hero Life"
+  },
+  "14": {
+    "week": 14,
+    "unit_theme": "Community & Routines — Hero Showcase Day"
+  },
+  "15": {
+    "week": 15,
+    "unit_theme": "Community & Routines — The Busy Park (Actions Now)"
+  },
+  "16": {
+    "week": 16,
+    "unit_theme": "Community & Routines — Sports Commentary"
+  },
+  "17": {
+    "week": 17,
+    "unit_theme": "The World Around Us — Weather Mission"
+  },
+  "18": {
+    "week": 18,
+    "unit_theme": "The World Around Us — Hero Certification Test"
+  },
+  "19": {
+    "week": 19,
+    "unit_theme": "The Time Detective Agency — The Baby Photo Mystery"
+  },
+  "20": {
+    "week": 20,
+    "unit_theme": "The Time Detective Agency — The Old Town Mystery"
+  },
+  "21": {
+    "week": 21,
+    "unit_theme": "The Time Detective Agency — The Diary Evidence"
+  },
+  "22": {
+    "week": 22,
+    "unit_theme": "The Time Detective Agency — Interrogation Room"
+  },
+  "23": {
+    "week": 23,
+    "unit_theme": "The Art Class — The Art Room Evidence"
+  },
+  "24": {
+    "week": 24,
+    "unit_theme": "The Time Detective Agency — The Emotion Case"
+  },
+  "25": {
+    "week": 25,
+    "unit_theme": "My Weekend — Routines and Sequences"
+  },
+  "26": {
+    "week": 26,
+    "unit_theme": "Memories — Review & Project 2 (My Weekend Comic)"
+  },
+  "27": {
+    "week": 27,
+    "unit_theme": "Memories — The Garden Mystery"
+  },
+  "28": {
+    "week": 28,
+    "unit_theme": "Memories — The Famous Case"
+  },
+  "29": {
+    "week": 29,
+    "unit_theme": "Adventure Stories — The Magic Trip"
+  },
+  "30": {
+    "week": 30,
+    "unit_theme": "Adventure Stories — The Picnic Mystery"
+  },
+  "31": {
+    "week": 31,
+    "unit_theme": "Adventure Stories — The Senses"
+  },
+  "32": {
+    "week": 32,
+    "unit_theme": "Adventure Stories — The Chore File"
+  },
+  "33": {
+    "week": 33,
+    "unit_theme": "Adventure Stories — The Accident File"
+  },
+  "34": {
+    "week": 34,
+    "unit_theme": "Adventure Stories — The Classic Story File"
+  },
+  "35": {
+    "week": 35,
+    "unit_theme": "Adventure Stories — My Best Day"
+  },
+  "36": {
+    "week": 36,
+    "unit_theme": "Adventure Stories — Review & Project 3 (My Adventure Book)"
+  },
+  "37": {
+    "week": 37,
+    "unit_theme": "Nature's Rules (Science CLIL) — The Life Investigation"
+  },
+  "38": {
+    "week": 38,
+    "unit_theme": "Nature's Rules — Animal Groups"
+  },
+  "39": {
+    "week": 39,
+    "unit_theme": "Nature's Rules — Oviparous vs Viviparous"
+  },
+  "40": {
+    "week": 40,
+    "unit_theme": "Nature's Rules — Habitats"
+  },
+  "41": {
+    "week": 41,
+    "unit_theme": "Nature's Rules — Life Cycles"
+  },
+  "42": {
+    "week": 42,
+    "unit_theme": "Nature's Rules — The Water Cycle"
+  },
+  "43": {
+    "week": 43,
+    "unit_theme": "The Math Bridge — The \"Plus\" Machine (Addition Language)"
+  },
+  "44": {
+    "week": 44,
+    "unit_theme": "The Math Bridge — Detective Max & The Subtraction Cave"
+  },
+  "45": {
+    "week": 45,
+    "unit_theme": "The Math Bridge — Detective Max & The Shape Detectives"
+  },
+  "46": {
+    "week": 46,
+    "unit_theme": "The Math Bridge — Detective Max & The Pattern Code"
+  },
+  "47": {
+    "week": 47,
+    "unit_theme": "The Math Bridge — Detective Max & The Big Numbers"
+  },
+  "48": {
+    "week": 48,
+    "unit_theme": "The Math Bridge — My Math Museum (Integration Project)"
+  },
+  "49": {
+    "week": 49,
+    "unit_theme": "Graduation Prep — The Hero Academy - Final Training"
+  },
+  "50": {
+    "week": 50,
+    "unit_theme": "Review Station 1 (Grammar Mix)"
+  },
+  "51": {
+    "week": 51,
+    "unit_theme": "Review Station 2 (Vocab & CLIL)"
+  },
+  "52": {
+    "week": 52,
+    "unit_theme": "Review & Project 3 (The Graduation Exhibition)"
+  },
+  "53": {
+    "week": 53,
+    "unit_theme": "Graduation Prep — Project 4 Prep (My Year in Review)"
+  },
+  "54": {
+    "week": 54,
+    "unit_theme": "PHASE 1 GRADUATION SHOWCASE — Tuần 54: Le Tot nghiep Giai doan 1 — Buoi Trinh dien va Mini Mock"
+  },
+  "55": {
+    "week": 55,
+    "unit_theme": "CAUSE & EFFECT (Sentences) — Tuần 55: Nguyên nhân & Kết quả - Câu"
+  },
+  "56": {
+    "week": 56,
+    "unit_theme": "CAUSE & EFFECT (Paragraph) — Tuần 56: Nguyên nhân & Kết quả - Đoạn văn"
+  },
+  "57": {
+    "week": 57,
+    "unit_theme": "PROBLEM & SOLUTION (Sentences) — Tuần 57: Vấn đề & Giải pháp - Câu"
+  },
+  "60": {
+    "week": 60,
+    "unit_theme": "FORMAL WRITING (Letters/Requests) — Tuần 60: Viết Trang trọng - Thư/Yêu cầu"
+  },
+  "58": {
+    "week": 58,
+    "unit_theme": "PROBLEM & SOLUTION (Paragraph) — Tuần 58: Vấn đề & Giải pháp - Đoạn văn"
+  },
+  "59": {
+    "week": 59,
+    "unit_theme": "INFORMAL WRITING (Letters/Messages) — Tuần 59: Viết Thân mật - Thư/Tin nhắn"
+  },
+  "61": {
+    "week": 61,
+    "unit_theme": "MAIN IDEA HUNTER — Tuần 61: Thợ săn Ý chính"
+  },
+  "62": {
+    "week": 62,
+    "unit_theme": "THE MOVIE TRAILER (Summarizing) — Tuần 62: Trailer Phim - Tóm tắt"
+  },
+  "63": {
+    "week": 63,
+    "unit_theme": "READING MAPS — Tuần 63: Đọc Bản đồ"
+  },
+  "64": {
+    "week": 64,
+    "unit_theme": "READING CHARTS & TABLES — Tuần 64: Đọc Biểu đồ & Bảng"
+  },
+  "65": {
+    "week": 65,
+    "unit_theme": "MAKING INFERENCES — Tuần 65: Suy luận"
+  },
+  "66": {
+    "week": 66,
+    "unit_theme": "REVIEW & MINI-PROJECT — Tuần 66: Ôn tập & Dự án nhỏ"
+  },
+  "67": {
+    "week": 67,
+    "unit_theme": "PERSUASIVE WRITING INTRO — Tuần 67: Giới thiệu Viết Thuyết phục"
+  },
+  "68": {
+    "week": 68,
+    "unit_theme": "OPINION PARAGRAPHS — Tuần 68: Đoạn văn Ý kiến"
+  },
+  "69": {
+    "week": 69,
+    "unit_theme": "REVIEW & APPLICATION — Tuần 69: Ôn tập & Ứng dụng"
+  },
+  "70": {
+    "week": 70,
+    "unit_theme": "CYCLE 2.1 CHECKPOINT — Tuần 70: Kiểm tra Mốc Chu trình 2.1"
+  },
+  "71": {
+    "week": 71,
+    "unit_theme": "INTRODUCTION TO GEOGRAPHY — Tuần 71: Giới thiệu Địa lý"
+  },
+  "72": {
+    "week": 72,
+    "unit_theme": "PHOTOSYNTHESIS (Science Integration) — Tuần 72: Quang hợp"
+  },
+  "73": {
+    "week": 73,
+    "unit_theme": "FOOD CHAINS — Tuần 73: Chuỗi Thức ăn"
+  },
+  "74": {
+    "week": 74,
+    "unit_theme": "ECOSYSTEMS — Tuần 74: Hệ sinh thái"
+  },
+  "75": {
+    "week": 75,
+    "unit_theme": "ANCIENT EGYPT + VIETNAMESE HISTORY (Parallel) — Tuần 75: Ai Cập Cổ đại + Lịch sử Việt Nam"
+  },
+  "76": {
+    "week": 76,
+    "unit_theme": "EXPLORERS + VIETNAMESE HEROES — Tuần 76: Các Nhà thám hiểm + Anh hùng Việt Nam"
+  },
+  "77": {
+    "week": 77,
+    "unit_theme": "WORLD LANDMARKS + VIETNAMESE LANDMARKS — Tuần 77: Địa danh Thế giới + Địa danh Việt Nam"
+  },
+  "78": {
+    "week": 78,
+    "unit_theme": "WEATHER SYSTEMS & CLIMATE ZONES — Tuần 78: Hệ thống Thời tiết & Vùng Khí hậu"
+  },
+  "79": {
+    "week": 79,
+    "unit_theme": "NATURAL DISASTERS — CAUSES & RESPONSES — Tuần 79: Thiên tai — Nguyên nhân & Phản ứng"
+  },
+  "80": {
+    "week": 80,
+    "unit_theme": "INTRODUCTION TO RATIOS — Tuần 80: Giới thiệu Tỷ số"
+  },
+  "81": {
+    "week": 81,
+    "unit_theme": "EQUIVALENT RATIOS — Tuần 81: Tỷ số Tương đương"
+  },
+  "82": {
+    "week": 82,
+    "unit_theme": "RATIOS IN WORD PROBLEMS — Tuần 82: Tỷ số trong Toán đố"
+  },
+  "83": {
+    "week": 83,
+    "unit_theme": "SCALE AND PROPORTION — Tuần 83: Tỷ lệ bản đồ"
+  },
+  "84": {
+    "week": 84,
+    "unit_theme": "REVIEW & APPLICATION — Tuần 84: Ôn tập & Ứng dụng"
+  },
+  "85": {
+    "week": 85,
+    "unit_theme": "BODY SYSTEMS OVERVIEW — Tuần 85: Tổng quan Hệ cơ quan"
+  },
+  "86": {
+    "week": 86,
+    "unit_theme": "THE HEART & CIRCULATORY SYSTEM — Tuần 86: Tim & Hệ tuần hoàn"
+  },
+  "87": {
+    "week": 87,
+    "unit_theme": "THE BRAIN & NERVOUS SYSTEM — Tuần 87: Não & Hệ thần kinh"
+  },
+  "88": {
+    "week": 88,
+    "unit_theme": "THE DIGESTIVE SYSTEM — Tuần 88: Hệ tiêu hóa"
+  },
+  "89": {
+    "week": 89,
+    "unit_theme": "FORCES AND MOTION — Tuần 89: Lực và Chuyển động"
+  },
+  "90": {
+    "week": 90,
+    "unit_theme": "SIMPLE MACHINES — Tuần 90: Máy đơn giản"
+  },
+  "91": {
+    "week": 91,
+    "unit_theme": "ENERGY — Tuần 91: Năng lượng"
+  },
+  "92": {
+    "week": 92,
+    "unit_theme": "ELECTRICITY — Tuần 92: Điện"
+  },
+  "93": {
+    "week": 93,
+    "unit_theme": "INTRODUCTION TO GOVERNMENT — Tuần 93: Giới thiệu về Chính quyền"
+  },
+  "94": {
+    "week": 94,
+    "unit_theme": "RIGHTS AND RESPONSIBILITIES — Tuần 94: Quyền và Trách nhiệm"
+  },
+  "95": {
+    "week": 95,
+    "unit_theme": "INTRODUCTION TO ECONOMICS — Tuần 95: Giới thiệu về Kinh tế"
+  },
+  "96": {
+    "week": 96,
+    "unit_theme": "SAVING AND SPENDING — Tuần 96: Tiết kiệm và Chi tiêu"
+  },
+  "97": {
+    "week": 97,
+    "unit_theme": "CYCLE 2.3 REVIEW — Tuần 97: Ôn tập Chu trình 2.3"
+  },
+  "98": {
+    "week": 98,
+    "unit_theme": "MY PASSION PROJECT — PART 1: PROJECT LAUNCH — Tuần 98: Dự án Đam mê của Tôi — Phần 1: Khởi động Dự án"
+  },
+  "99": {
+    "week": 99,
+    "unit_theme": "PASSION PROJECT: CHOOSING YOUR TOPIC — Tuần 99: Dự án Đam mê: Chọn Chủ đề"
+  },
+  "100": {
+    "week": 100,
+    "unit_theme": "PASSION PROJECT: BUILDING RESEARCH QUESTIONS — Tuần 100: Dự án Đam mê: Xây dựng Câu hỏi Nghiên cứu"
+  },
+  "101": {
+    "week": 101,
+    "unit_theme": "PASSION PROJECT: FINDING & EVALUATING SOURCES — Tuần 101: Dự án Đam mê: Tìm kiếm & Đánh giá Nguồn tài liệu"
+  },
+  "102": {
+    "week": 102,
+    "unit_theme": "PASSION PROJECT: NOTE-TAKING & PARAPHRASING — Tuần 102: Dự án Đam mê: Ghi chú & Diễn đạt lại"
+  },
+  "103": {
+    "week": 103,
+    "unit_theme": "PASSION PROJECT: ORGANIZING YOUR RESEARCH — Tuần 103: Dự án Đam mê: Tổ chức Nghiên cứu"
+  },
+  "104": {
+    "week": 104,
+    "unit_theme": "PASSION PROJECT: SYNTHESIZING INFORMATION — Tuần 104: Dự án Đam mê: Tổng hợp Thông tin"
+  },
+  "105": {
+    "week": 105,
+    "unit_theme": "PASSION PROJECT: QUOTING, PARAPHRASING & CITING — Tuần 105: Dự án Đam mê: Trích dẫn & Ghi nguồn"
+  },
+  "106": {
+    "week": 106,
+    "unit_theme": "PASSION PROJECT: RESEARCH CHECK-IN & PEER REVIEW — Tuần 106: Dự án Đam mê: Kiểm tra Nghiên cứu & Phản hồi từ Bạn"
+  },
+  "107": {
+    "week": 107,
+    "unit_theme": "PASSION PROJECT: INTRO TO REPORT WRITING — Tuần 107: Dự án Đam mê: Giới thiệu Viết Báo cáo"
+  },
+  "108": {
+    "week": 108,
+    "unit_theme": "PASSION PROJECT: WRITING THE INTRODUCTION — Tuần 108: Dự án Đam mê: Viết Phần Mở đầu"
+  },
+  "109": {
+    "week": 109,
+    "unit_theme": "PASSION PROJECT: PEEL BODY PARAGRAPHS — Tuần 109: Dự án Đam mê: Viết Đoạn văn PEEL"
+  },
+  "110": {
+    "week": 110,
+    "unit_theme": "PASSION PROJECT: BODY PARAGRAPHS 3-5 & TRANSITIONS — Tuần 110: Dự án Đam mê: Đoạn thân bài 3-5 & Từ Chuyển tiếp"
+  },
+  "111": {
+    "week": 111,
+    "unit_theme": "PASSION PROJECT: WRITING A POWERFUL CONCLUSION — Tuần 111: Dự án Đam mê: Viết Phần Kết luận"
+  },
+  "112": {
+    "week": 112,
+    "unit_theme": "PASSION PROJECT: FIRST DRAFT COMPLETE & PEER REVIEW — Tuần 112: Dự án Đam mê: Hoàn thành Bản nháp 1 & Phản hồi"
+  },
+  "113": {
+    "week": 113,
+    "unit_theme": "PASSION PROJECT: CONTENT REVISION & STRENGTHENING — Tuần 113: Dự án Đam mê: Chỉnh sửa Nội dung"
+  },
+  "114": {
+    "week": 114,
+    "unit_theme": "PASSION PROJECT: PROOFREADING & FINAL POLISH — Tuần 114: Dự án Đam mê: Đọc soát lỗi & Hoàn thiện"
+  },
+  "115": {
+    "week": 115,
+    "unit_theme": "PASSION PROJECT: CREATING VISUAL AIDS — Tuần 115: Dự án Đam mê: Tạo Phương tiện Trực quan"
+  },
+  "116": {
+    "week": 116,
+    "unit_theme": "PASSION PROJECT: ORAL PRESENTATION SKILLS — Tuần 116: Dự án Đam mê: Kỹ năng Thuyết trình"
+  },
+  "117": {
+    "week": 117,
+    "unit_theme": "PASSION PROJECT: REHEARSAL SESSION 1 — Tuần 117: Dự án Đam mê: Buổi Luyện tập 1"
+  },
+  "118": {
+    "week": 118,
+    "unit_theme": "PASSION PROJECT: FINAL REHEARSAL & FEEDBACK — Tuần 118: Dự án Đam mê: Luyện tập Cuối cùng & Phản hồi"
+  },
+  "119": {
+    "week": 119,
+    "unit_theme": "PASSION PROJECT: FINAL PRESENTATIONS — GROUP 1 — Tuần 119: Dự án Đam mê: Thuyết trình Cuối cùng — Nhóm 1"
+  },
+  "120": {
+    "week": 120,
+    "unit_theme": "PASSION PROJECT: FINAL PRESENTATIONS — GROUP 2 + PHASE 2 GRADUATION — Tuần 120: Dự án Đam mê: Thuyết trình Nhóm 2 + Tốt nghiệp Phase 2"
+  },
+  "121": {
+    "week": 121,
+    "unit_theme": "INTRODUCTION TO ARGUMENTATIVE WRITING — Tuần 121: Giới thiệu Viết Nghị luận"
+  },
+  "122": {
+    "week": 122,
+    "unit_theme": "RESEARCH - FINDING EVIDENCE — Tuần 122: Nghiên cứu - Tìm Bằng chứng"
+  },
+  "123": {
+    "week": 123,
+    "unit_theme": "ESSAY STRUCTURE - BODY PARAGRAPHS — Tuần 123: Cấu trúc Bài luận - Đoạn thân bài"
+  },
+  "124": {
+    "week": 124,
+    "unit_theme": "COUNTERARGUMENTS & REBUTTALS — Tuần 124: Phản biện & Bác bỏ"
+  },
+  "125": {
+    "week": 125,
+    "unit_theme": "INTRODUCTION & CONCLUSION — Tuần 125: Mở bài & Kết bài"
+  },
+  "126": {
+    "week": 126,
+    "unit_theme": "INTRODUCTION TO DEBATE — Tuần 126: Giới thiệu về Tranh luận"
+  },
+  "127": {
+    "week": 127,
+    "unit_theme": "DEBATE PRACTICE — Tuần 127: Luyện tập Tranh luận"
+  },
+  "128": {
+    "week": 128,
+    "unit_theme": "DEBATE SHOWCASE — Tuần 128: Trình diễn Tranh luận"
+  },
+  "129": {
+    "week": 129,
+    "unit_theme": "Topic introduction, initial research Week 130: Research - evidence gathering Week 131: Essay writing - body paragraphs Week 132: Essay writing - introduction, conclusion Week 133: Debate preparation - arguments Week 134: Debate preparation - rebuttals Week 135: Debate practice Week 136: Formal debate showcase — PROJECT CYCLE 3: SMARTPHONES"
+  },
+  "130": {
+    "week": 130,
+    "unit_theme": "SMARTPHONES DEBATE: RESEARCH — THE CASE FOR — Tuần 130: Tranh luận Điện thoại: Nghiên cứu — Lập luận ủng hộ"
+  },
+  "131": {
+    "week": 131,
+    "unit_theme": "SMARTPHONES DEBATE: RESEARCH — THE CASE AGAINST — Tuần 131: Tranh luận Điện thoại: Nghiên cứu — Lập luận phản đối"
+  },
+  "132": {
+    "week": 132,
+    "unit_theme": "SMARTPHONES DEBATE: WRITING INTRODUCTION & THESIS — Tuần 132: Tranh luận Điện thoại: Viết Mở bài & Luận điểm"
+  },
+  "133": {
+    "week": 133,
+    "unit_theme": "SMARTPHONES DEBATE: BODY PARAGRAPHS & COUNTERARGUMENTS — Tuần 133: Tranh luận Điện thoại: Thân bài & Phản luận"
+  },
+  "134": {
+    "week": 134,
+    "unit_theme": "SMARTPHONES DEBATE: ESSAY CONCLUSION & COMPLETE DRAFT — Tuần 134: Tranh luận Điện thoại: Kết luận & Bản nháp Hoàn chỉnh"
+  },
+  "135": {
+    "week": 135,
+    "unit_theme": "SMARTPHONES DEBATE: FORMAL DEBATE PREPARATION — Tuần 135: Tranh luận Điện thoại: Chuẩn bị Tranh luận Chính thức"
+  },
+  "136": {
+    "week": 136,
+    "unit_theme": "SMARTPHONES DEBATE: SHOWCASE DEBATE + CYCLE 3 REFLECTION — Tuần 136: Tranh luận Điện thoại: Tranh luận Chính thức + Phản ánh Chu kỳ 3"
+  },
+  "137": {
+    "week": 137,
+    "unit_theme": "B1 PRELIMINARY MOCK EXAM — BASELINE ASSESSMENT — Tuần 137: Kỳ thi Thử B1 — Đánh giá Năng lực Ban đầu"
+  },
+  "138": {
+    "week": 138,
+    "unit_theme": "FINAL CONSOLIDATION: GRAMMAR REVIEW — TENSE SYSTEM — Tuần 138: Ôn tập Tổng hợp: Ngữ pháp — Hệ thống Thì"
+  },
+  "139": {
+    "week": 139,
+    "unit_theme": "FINAL CONSOLIDATION: MODALS, PASSIVE VOICE & REPORTED SPEECH — Tuần 139: Ôn tập Tổng hợp: Động từ khuyết thiếu, Bị động & Câu tường thuật"
+  },
+  "140": {
+    "week": 140,
+    "unit_theme": "FINAL CONSOLIDATION: RELATIVE CLAUSES, GERUNDS & ARTICLES — Tuần 140: Ôn tập Tổng hợp: Mệnh đề quan hệ, Danh động từ & Mạo từ"
+  },
+  "141": {
+    "week": 141,
+    "unit_theme": "FINAL CONSOLIDATION: WRITING REVIEW — NARRATIVE WRITING — Tuần 141: Ôn tập Tổng hợp: Viết tường thuật"
+  },
+  "142": {
+    "week": 142,
+    "unit_theme": "FINAL CONSOLIDATION: WRITING REVIEW — REPORT & ARTICLE WRITING — Tuần 142: Ôn tập Tổng hợp: Viết báo cáo & Bài báo"
+  },
+  "143": {
+    "week": 143,
+    "unit_theme": "FINAL CONSOLIDATION: WRITING REVIEW — ARGUMENTATIVE & EMAIL — Tuần 143: Ôn tập Tổng hợp: Viết lập luận & Email"
+  },
+  "144": {
+    "week": 144,
+    "unit_theme": "FINAL CONSOLIDATION: SKILLS REVIEW — READING, LISTENING & SPEAKING — Tuần 144: Ôn tập Tổng hợp: Đọc hiểu, Nghe & Nói"
+  },
+  "145": {
+    "week": 145,
+    "unit_theme": "B1 EXAM PREPARATION: READING PARTS 1-3 — Tuần 145: Chuẩn bị B1: Đọc hiểu Phần 1-3"
+  },
+  "146": {
+    "week": 146,
+    "unit_theme": "B1 EXAM PREPARATION: READING PARTS 4-5 & USE OF ENGLISH — Tuần 146: Chuẩn bị B1: Đọc hiểu Phần 4-5 & Sử dụng Tiếng Anh"
+  },
+  "147": {
+    "week": 147,
+    "unit_theme": "B1 EXAM PREPARATION: WRITING PAPER (PARTS 1-2) — Tuần 147: Chuẩn bị B1: Bài thi Viết (Phần 1-2)"
+  },
+  "148": {
+    "week": 148,
+    "unit_theme": "B1 EXAM PREPARATION: LISTENING PAPER + SPEAKING TEST — Tuần 148: Chuẩn bị B1: Bài thi Nghe + Bài thi Nói"
+  },
+  "149": {
+    "week": 149,
+    "unit_theme": "PORTFOLIO BUILDING: SELECTING & POLISHING BEST WORK — Tuần 149: Xây dựng Hồ sơ: Chọn lọc & Hoàn thiện Tác phẩm"
+  },
+  "150": {
+    "week": 150,
+    "unit_theme": "PORTFOLIO BUILDING: REVISING YOUR RESEARCH/REPORT PIECE — Tuần 150: Xây dựng Hồ sơ: Chỉnh sửa Bài Nghiên cứu/Báo cáo"
+  },
+  "151": {
+    "week": 151,
+    "unit_theme": "PORTFOLIO BUILDING: ARGUMENTATIVE ESSAY + ORAL PRESENTATION — Tuần 151: Xây dựng Hồ sơ: Bài Lập luận + Thuyết trình"
+  },
+  "152": {
+    "week": 152,
+    "unit_theme": "PORTFOLIO PRESENTATIONS: SHOWCASE YOUR LEARNING JOURNEY — Tuần 152: Thuyết trình Hồ sơ: Hành trình Học tập của Bạn"
+  },
+  "153": {
+    "week": 153,
+    "unit_theme": "FINAL B1 MOCK EXAM 1: READING & WRITING — Tuần 153: Thi Thử B1 Lần 1: Đọc hiểu & Viết"
+  },
+  "154": {
+    "week": 154,
+    "unit_theme": "FINAL B1 MOCK EXAM 2: LISTENING & SPEAKING — Tuần 154: Thi Thử B1 Lần 2: Nghe & Nói"
+  },
+  "155": {
+    "week": 155,
+    "unit_theme": "FINAL B1 MOCK EXAM 3: COMPLETE EXAM SIMULATION — Tuần 155: Thi Thử B1 Lần 3: Mô phỏng Kỳ thi Hoàn chỉnh"
+  },
+  "156": {
+    "week": 156,
+    "unit_theme": "GRADUATION SHOWCASE: 3-YEAR PROGRAM COMPLETION — Tuần 156: Lễ Tốt nghiệp: Hoàn thành Chương trình 3 Năm"
+  }
+}

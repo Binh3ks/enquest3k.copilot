@@ -1,0 +1,1332 @@
+[
+  {
+    "text": "This is my family. We are a team. This is my father. He is the leader. This is my mother. She is kind. This is my brother. He is a good helper. This is my sister. She is funny. We love each other. We play together. We are a happy family!",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/read_explore_main.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Learning happens everywhere in our home. The kitchen is a great place to learn about measurements when we cook. We can measure water, flour, and sugar. The living room has books where we practice reading every day. Our bedroom is perfect for studying and doing homework quietly. We can organize our school supplies in drawers and on shelves. Parents help us create good study habits by setting up special learning spaces. When we have a quiet, clean place to focus, we learn much better. Every corner of our home can become a classroom!",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/explore_main.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_family.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A group of people who live together and love each other.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_family.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "happy family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_family.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_family.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_mother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A female parent.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_mother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my mother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_mother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my mother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_mother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "father",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_father.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A male parent.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_father.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my father",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_father.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my father.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_father.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "brother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_brother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A boy who has the same parents as you.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_brother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "big brother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_brother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my brother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_brother.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "sister",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_sister.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A girl who has the same parents as you.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_sister.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "little sister",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_sister.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my sister.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_sister.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A group of people who work together.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "family team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "We are a team.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "leader",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_leader.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A person who guides and helps others.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_leader.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "team leader",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_leader.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "My father is the leader.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_leader.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "helper",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A person who helps others.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "good helper",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "My brother is a good helper.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "love",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_love.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "To care very much about someone.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_love.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "love family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_love.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "I love my family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_love.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "together",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "With each other.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_def_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "play together",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_coll_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "We play together.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/vocab_ex_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "family team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_family_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A family working together like a team.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_def_family_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "strong family team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_coll_family_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "We are a family team.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_ex_family_team.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "good helper",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_good_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "Someone who helps others in a good way.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_def_good_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "very good helper",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_coll_good_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "My brother is a good helper.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_ex_good_helper.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "play together",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_play_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "To have fun with others at the same time.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_def_play_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "play together happily",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_coll_play_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "We play together every day.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/wordpower_ex_play_together.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_1.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "We are a team.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_2.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my father.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_3.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "He is the leader.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_4.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my mother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_5.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "She is kind.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_6.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my brother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_7.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "He is a good helper.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_8.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my sister.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_9.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "She is funny.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_10.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "We love each other.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_11.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "We play together.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_12.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "We are a happy family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/dictation_13.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We are a team.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my father.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "He is the leader.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my mother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "She is kind.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_6.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my brother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_7.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "He is a good helper.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_8.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my sister.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_9.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "She is funny.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_10.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We love each other.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_11.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We play together.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_12.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We are a happy family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_13.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my family. We are a team. This is my father. He is the leader. This is my mother. She is kind. This is my brother. He is a good helper. This is my sister. She is funny. We love each other. We play together. We are a happy family.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/shadowing_full.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "My family has 1 mother, 1 father, and 2 children. How many people total?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/logic_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Father is older than Mother. Mother is older than Brother. Who is oldest?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/logic_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Mother, Father, Mother, Father. What comes next?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/logic_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "I have 6 toys. I give 2 to my sister. How many toys do I have left?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/logic_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Mother is to Father as Sister is to...?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/logic_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "You want to know her specific NAME so you can introduce her to your friend. What do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/ask_ai_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "You want to understand the specific ACTIVITIES he did at his workplace. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/ask_ai_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "You want to know the specific OBJECT or THING she built. What question do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/ask_ai_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "You want to know the specific LOCATION or PLACE they have decided to visit. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/ask_ai_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "You want to know the exact TIME when this fun family activity will begin. What do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/ask_ai_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_stem_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "My... is...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_stem_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We... together.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_stem_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "I love my...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_stem_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_stem_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We are a...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_stem_6.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_1.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "father",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_2.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_3.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "brother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_4.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "sister",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_5.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_6.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "father is the leader",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_7.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mother is kind",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_8.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "brother is a good helper",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_9.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "sister is funny",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_10.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "family is happy",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_11.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "team is strong",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_12.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "play",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_13.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "love each other",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_14.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "are a team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_15.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "help",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_16.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "work",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_17.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "learn",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_18.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_19.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "father",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_20.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_21.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "brother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_22.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "sister",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_23.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_24.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_25.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_26.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my father",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_27.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my mother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_28.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my brother",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_29.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my sister",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_30.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_31.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_32.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "happy family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_33.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "strong team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_34.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "good team",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_35.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "loving family",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2/mindmap_branch_36.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my home. This is my mom. She is nice. This is my dad. He is big. This is my baby. She is small. This is my cat. It is soft. This is my dog. It is fun. This is my room. This is my bed. This is my toy. This is my book. I love my home!",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/read_explore_main.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "We learn at home every day. The kitchen is good for learning. We measure things when we cook. The room has books. We read books there. Our bed area is quiet. We can study there. Mom and dad help us learn. They make a good place for us. A clean, quiet space helps us focus. Every room can be a classroom!",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/explore_main.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "home",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "The place where you live.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my home",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "Your mother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my mom.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dad",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_dad.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "Your father.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_dad.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my dad",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_dad.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my dad.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_dad.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "baby",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_baby.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A very young child.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_baby.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "little baby",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_baby.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my baby.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_baby.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "cat",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_cat.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A small pet animal.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_cat.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my cat",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_cat.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my cat.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_cat.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dog",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_dog.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A pet that barks.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_dog.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my dog",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_dog.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my dog.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_dog.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "room",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_room.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A space in a house.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_room.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my room",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_room.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my room.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_room.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "bed",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "Where you sleep.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my bed",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my bed.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "toy",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_toy.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "A thing to play with.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_toy.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my toy",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_toy.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my toy.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_toy.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "book",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_book.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "You read it.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_def_book.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my book",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_coll_book.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my book.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/vocab_ex_book.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my home",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_my_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "The place where I live.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_def_my_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "love my home",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_coll_my_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_ex_my_home.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_my_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "My mother.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_def_my_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "love my mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_coll_my_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my mom.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_ex_my_mom.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my bed",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_my_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "Where I sleep.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_def_my_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "sleep in my bed",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_coll_my_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my bed.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/wordpower_ex_my_bed.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "This is my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_1.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my mom.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_2.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "She is nice.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_3.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my dad.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_4.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "He is big.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_5.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my baby.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_6.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "She is small.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_7.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my cat.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_8.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "It is soft.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_9.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my dog.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_10.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "It is fun.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_11.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my room.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_12.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my bed.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_13.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my toy.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_14.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my book.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_15.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "I love my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/dictation_16.mp3",
+    "voice": "en-US-Neural2-F"
+  },
+  {
+    "text": "This is my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my mom.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "She is nice.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my dad.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "He is big.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my baby.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_6.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "She is small.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_7.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my cat.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_8.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "It is soft.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_9.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my dog.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_10.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "It is fun.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_11.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my room.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_12.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my bed.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_13.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my toy.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_14.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my book.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_15.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "I love my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_16.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my home. This is my mom. She is nice. This is my dad. He is big. This is my baby. She is small. This is my cat. It is soft. This is my dog. It is fun. This is my room. This is my bed. This is my toy. This is my book. I love my home.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/shadowing_full.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Mom, Dad, and Baby are home. How many people?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/logic_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Dad is bigger than Mom. Mom is bigger than Baby. Who is biggest?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/logic_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Cat, Dog, Cat, Dog. What is next?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/logic_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "I have 5 toys. I give 2 to Baby. How many left?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/logic_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Book is to read as Bed is to...?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/logic_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "You see mom. You want to know her name. What do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/ask_ai_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Dad is working. You want to know what. How do you ask?",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/ask_ai_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Sister is playing. She has something. You want to know what. Ask her.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/ask_ai_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Family is going out. You want to know where. Ask them.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/ask_ai_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "Brother wants to play. You want to know when. Ask him.",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/ask_ai_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is my...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_stem_1.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "My... is...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_stem_2.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "I love my...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_stem_3.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "This is...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_stem_4.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "My... is...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_stem_5.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "I have a...",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_stem_6.mp3",
+    "voice": "en-GB-Neural2-A"
+  },
+  {
+    "text": "home",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_1.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_2.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dad",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_3.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "baby",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_4.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "cat",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_5.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dog",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_6.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mom is nice",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_7.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dad is big",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_8.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "baby is small",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_9.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "cat is soft",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_10.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dog is fun",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_11.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "home is good",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_12.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "home",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_13.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_14.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dad",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_15.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "baby",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_16.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "cat",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_17.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dog",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_18.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my room",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_19.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my bed",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_20.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my toy",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_21.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my book",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_22.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my cat",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_23.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "my dog",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_24.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "mom",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_25.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dad",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_26.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "baby",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_27.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "cat",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_28.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "dog",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_29.mp3",
+    "voice": "en-GB-Neural2-C"
+  },
+  {
+    "text": "room",
+    "output_path": "/Users/binhnguyen/Downloads/Engquest3k/public/audio/week2_easy/mindmap_branch_30.mp3",
+    "voice": "en-GB-Neural2-C"
+  }
+]

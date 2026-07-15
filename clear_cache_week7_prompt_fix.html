@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Cache - Week 7 PROMPT FIX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #status {
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .success {
+      background: rgba(76, 175, 80, 0.3);
+      border: 2px solid #4CAF50;
+    }
+    .info {
+      background: rgba(33, 150, 243, 0.3);
+      border: 2px solid #2196F3;
+    }
+    .warning {
+      background: rgba(255, 152, 0, 0.3);
+      border: 2px solid #FF9800;
+      color: #FFF;
+    }
+    .fix-list {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .fix-list h3 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    .fix-list li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Week 7 PROMPT FIX</h1>
+    <div class="subtitle">Forced AI to ALWAYS Ask Questions!</div>
+    
+    <div class="fix-list">
+      <h3>🔧 Problem Found:</h3>
+      <ul>
+        <li><strong>Issue:</strong> AI was responding with acknowledgments only: <code>"Yes! I see! Welcome to the classroom !"</code> (ends with !)</li>
+        <li><strong>Then:</strong> Fallback code at aiRouter.js:1160 added <code>"Is there a pen in your backpack?"</code> to EVERY response</li>
+        <li><strong>Result:</strong> AI asked the same irrelevant question repeatedly, ignoring mission_context</li>
+        <li><strong>Example Conversation:</strong>
+          <ul>
+            <li>Turn 3: "Yes! I see! Welcome to the classroom ! Is there a pen in your backpack?"</li>
+            <li>Turn 5: "Yes! I see! Welcome to the classroom ! Let's play a game ! Is there a pen in your backpack?"</li>
+            <li>Turn 9: "Great! I see! Let's start ! Is there a pen in your backpack?"</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>✅ Solution Applied:</h3>
+      <ul>
+        <li>✅ <strong>Removed fallback at aiRouter.js:1160</strong> - No more automatic "Is there a pen?" injection</li>
+        <li>✅ <strong>Added MANDATORY requirement in tutorPrompts.js:</strong> EVERY response MUST end with "?"</li>
+        <li>✅ <strong>Added GAME-SPECIFIC question templates:</strong>
+          <ul>
+            <li>Mission 2 (Pointing Game): "What is this?" / "Do you see the [item]?" / "What do you see?"</li>
+            <li>Mission 1 (Backpack): "Is there a [item]?" / "What is in your backpack?"</li>
+            <li>Mission 3 (Mystery Box): "What is in the box?" / "Is there a [item]?"</li>
+          </ul>
+        </li>
+        <li>✅ <strong>Strong enforcement with examples:</strong> Showed AI correct vs wrong formats</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>🎯 Expected Behavior Now:</h3>
+      <ul>
+        <li><strong>Mission 2 - Turn 3:</strong> "Yes! I see! Welcome to the classroom! (Point 👉) What is this?" ✅</li>
+        <li><strong>Mission 2 - Turn 5:</strong> "Great! Let's start the game! (Point at computer) Do you see this?" ✅</li>
+        <li><strong>Mission 2 - Turn 7:</strong> "There is a desk here! (Point at chair) What do you see?" ✅</li>
+        <li><strong>NO MORE:</strong> Repetitive "Is there a pen in your backpack?" ❌</li>
+        <li><strong>AI MUST:</strong> Follow mission_context and use phase_questions</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>📋 Technical Details:</h3>
+      <ul>
+        <li><strong>File 1:</strong> tutorPrompts.js - Added 40 lines of MANDATORY enforcement before OUTPUT FORMAT</li>
+        <li><strong>File 2:</strong> aiRouter.js:1160 - Removed hardcoded fallback, let forceRoleplayQuestion handle it with context</li>
+        <li><strong>Reasoning:</strong> AI was ignoring instructions because fallback was too generic and bypassed the prompt</li>
+        <li><strong>New approach:</strong> Force AI to generate proper questions at prompt level, not fix bad responses at code level</li>
+      </ul>
+    </div>
+
+    <button onclick="clearAll()">🧹 CLEAR ALL CACHE & TEST AGAIN</button>
+    
+    <div id="status" class="info">
+      Click above to clear cache and test Mission 2!<br>
+      <strong>Expected:</strong> AI should ask "What is this?" when pointing at classroom items, NOT ask about backpack!
+    </div>
+  </div>
+
+  <script>
+    function clearAll() {
+      const status = document.getElementById('status');
+      
+      status.className = 'info';
+      status.innerHTML = '🔄 Clearing all caches...';
+      
+      // Clear localStorage
+      localStorage.clear();
+      
+      // Clear sessionStorage
+      sessionStorage.clear();
+      
+      // Clear IndexedDB
+      if (window.indexedDB) {
+        indexedDB.databases().then((databases) => {
+          databases.forEach((db) => {
+            indexedDB.deleteDatabase(db.name);
+          });
+        });
+      }
+      
+      // Clear cookies
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      });
+      
+      setTimeout(() => {
+        status.className = 'success';
+        status.innerHTML = `
+          ✅ All caches cleared!<br><br>
+          <strong>Changes applied:</strong><br>
+          • Removed aiRouter.js:1160 fallback<br>
+          • Added MANDATORY "?" requirement in prompt<br>
+          • Added game-specific question templates<br>
+          • AI now MUST ask questions from mission_context<br><br>
+          <strong>Test Mission 2 now - should see pointing game questions!</strong><br><br>
+          <strong>Reloading in 3 seconds...</strong>
+        `;
+        
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 3000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

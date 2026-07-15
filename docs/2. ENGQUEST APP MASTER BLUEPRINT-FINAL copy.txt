@@ -1,0 +1,3120 @@
+📱 ENGQUEST APP MASTER BLUEPRINT V4.0
+(BẢN THIẾT KẾ TỔNG THỂ ỨNG DỤNG - PHIÊN BẢN SẢN XUẤT 4.0)
+	•	Tài liệu nguồn: 1. NEW-FINAL_Khung CT_SYLLABUS_3yrs.docx (156 Weeks).
+	•	Mục tiêu: Đồng bộ hóa hoàn hảo giữa lớp học Offline (Syllabus) và Ứng dụng Online (App) để đạt chuẩn B1+ sau 3 năm.
+
+📘 PHẦN I: TRIẾT LÝ & CƠ CHẾ VẬN HÀNH (PHILOSOPHY & MECHANICS)
+1. Mục tiêu Cốt lõi (Core Goal)
+	•	Trang bị cho học sinh năng lực tiếng Anh học thuật B1+ (IELTS 5.0 - 5.5) sau 3 năm.
+	•	App đóng vai trò là môi trường Pre-teach (Học trước từ vựng/khái niệm) và Review (Củng cố kỹ năng) cho lớp Offline.
+2. Chiến lược "Song Sinh" (Dual-Mode Strategy)
+Hệ thống chạy 2 chế độ nội dung song song dựa trên cùng một Topic của Syllabus tuần đó:
+Đặc điểm
+EASY MODE (Chế độ Cơ bản)
+ADVANCED MODE (Chế độ Nâng cao)
+Định vị
+= Syllabus Base Level (Chuẩn kiến thức lớp học)
+= Syllabus + Stretch (Mở rộng & Thử thách)
+Ngữ cảnh
+Personal & Immediate (Cá nhân & Cụ thể). Xoay quanh bản thân, gia đình, lớp học.
+Global & Abstract (Toàn cầu & Trừu tượng). Xoay quanh thế giới, lịch sử, khoa học, xã hội.
+Từ vựng
+Tier 1 & Basic Tier 2. 50% từ vựng cốt lõi giống Syllabus, 50% từ vựng sinh hoạt dễ hiểu.
+Tier 2 & 3. 100% từ vựng học thuật, chuyên ngành (CLIL).
+Ngữ pháp
+Câu đơn, Câu ghép (and, but, so).
+Câu phức (Because, Although, If), Mệnh đề quan hệ, Bị động.
+3. Chiến lược SCAFFOLDING (Giàn giáo Sư phạm) - CẬP NHẬT MỚI
+Nguyên tắc: Cung cấp hỗ trợ tối đa ở đầu giai đoạn, sau đó rút dần để học sinh tự chủ.
+Yếu tố
+Giai đoạn 1 (Weeks 1-54)
+Giai đoạn 2 (Weeks 55-120)
+Giai đoạn 3 (Weeks 121-156)
+Visuals
+Hình ảnh hoạt hình, trực quan cho mọi từ vựng.
+Hình ảnh thực tế (Real photos), sơ đồ (Diagrams).
+Hạn chế hình ảnh, tập trung vào văn bản (Text-heavy).
+Writing Support
+Photo Submission: Viết giấy & chụp ảnh.
+
+Sentence Frames: Điền từ ("I like ___").
+Dictation Mode: Nói để viết (Speech-to-Text).
+
+Sentence Starters: ("The main reason is...").
+Outlining: Kéo thả ý vào dàn bài.
+
+Free Writing: Tự viết với gợi ý tiêu chí.
+Speaking Support
+Shadow Asking: Nhại lại câu hỏi mẫu.
+Guided Asking: Tự lắp ghép câu từ từ khóa.
+Free Inquiry: Tự do hỏi/tranh biện.
+Dịch thuật
+Dịch song ngữ từng từ/câu (Bilingual).
+Dịch câu (Sentence level).
+Dịch từ khóa (Key terms only).
+
+⚙️ PHẦN II: CẤU TRÚC CHỨC NĂNG & QUY ĐỊNH UI/UX (FUNCTIONAL ARCHITECTURE)
+(Quy định cứng cho đội Dev và Content)
+NHÓM 1: ĐẦU VÀO & TỪ VỰNG (INPUT)
+1. Tab Read & Explore (Đọc hiểu & Dịch thuật)
+	•	Quy định Content:
+	•	10 Bold Words: Bắt buộc in đậm 10 từ vựng cốt lõi trong bài đọc để làm điểm neo kiến thức.
+	•	Độ dài:
+	•	Easy: 6-8 câu. Ngữ pháp chuẩn Syllabus.
+	•	Advanced: 8-12 câu. Ngữ pháp +1 level (xuất hiện câu phức sớm hơn).
+	•	Audio Emotion: Giọng đọc phải diễn cảm (như kể chuyện), có cảm xúc vui/buồn rõ ràng, không đọc đều đều như máy.
+	•	Quy định UI/UX:
+	•	Bấm từ in đậm -> Hiện Popup (Hình ảnh + Nghĩa + Loa).
+	•	Cơ chế dịch từng câu (Sentence-by-sentence translation) để tránh học vẹt.
+2. Tab New Words (Từ vựng Cốt lõi)
+	•	Số lượng: Cố định 10 từ/tuần.
+	•	Quy định Content: Phải có Hình ảnh minh họa (Visual) và Audio giọng người thật.
+	•	Morphing (Biến đổi):
+	•	Phase 1: Từ đơn + Hình ảnh cụ thể (Concrete Nouns/Verbs).
+	•	Phase 2: Từ trừu tượng + Định nghĩa đơn giản.
+	•	Phase 3: Thuật ngữ chuyên ngành (Terminology) + Định nghĩa học thuật.
+	•	Quy định UI/UX (3-Step Drill):
+	•	Listen & Type: Nghe và gõ lại.
+	•	Meaning Match: Chọn nghĩa tiếng Việt/Anh.
+	•	Context: Điền từ vào câu ví dụ.
+3. Tab Word Power (Từ vựng Mở rộng)
+	•	Morphing & Số lượng:
+	•	Phase 1 (3 từ/tuần): Collocations đơn giản (Ride a bike, Take a bath).
+	•	Phase 2 (5 từ/tuần): Synonyms & Antonyms (Big = Huge, Small >< Tiny).
+	•	Phase 3 (7 từ/tuần): Idioms & Phrasal Verbs (Figure out, Point out).
+	•	Số lượng (Tăng tiến):
+	•	Phase 1: 3 từ/tuần (Collocations đơn giản: Ride a bike).
+	•	Phase 2: 5 từ/tuần (Synonyms/Antonyms: Big = Huge).
+	•	Phase 3: 7 từ/tuần (Idioms/Phrasal Verbs: Figure out, Point out).
+	•	Quy định Content: Bắt buộc có Câu ví dụ đầy đủ (Full Sentence), không chỉ đưa cụm từ trơ trọi.
+	•	Ví dụ: "Make a decision" -> "I have to make a decision about my project."
+4. Tab Daily Watch (Video)
+	•	Nguồn: Youtube (Curated Whitelist).
+	•	Morphing Nguồn tin:
+	•	Phase 1: Educational Cartoons (English Singsing, Numberblocks, Peppa Pig topic-based).
+	•	Phase 2: Science/History Documentaries for Kids (SciShow Kids, NatGeo Kids).
+	•	Phase 3: Debate Snippets, News, TED Talks (Real-world content).
+	•	Danh sách whitelist bắt buộc tìm, trước khi tìm rộng hơn: English Singsing , Super Simple Songs, British Council: LearnEnglish Kids, , KidsTV123, Dream English Kids, Fun Kids English, Cocomelon, Little Baby Bum, ChuChu TV, Sesame Street, Peppa Pig, National Geographic Kids, Art for Kids Hub, Steve and Maggie, Numberblocks, SciShow Kids và Numberblocks (Toán), Alphablocks (Ngôn ngữ), BBC Learning English - Kids/LearnEnglish Kids (Toàn diện), SciShow Kids (Khoa học), Blippi, Steve and Maggie (Xã hội & Tổng hợp), Storyline Online (Đọc hiểu & Xã hội), và Khan Academy Kids (Toán, Khoa học, Ngôn ngữ), giúp trẻ học kiến thức tổng hợp một cách vui nhộn bằng tiếng Anh.
+
+NHÓM 2: KỸ NĂNG & TƯ DUY (LOGIC & SKILLS)
+5. Tab Logic Lab (Toán & Tư duy)
+	•	Yêu cầu bắt buộc: Luôn có context (ngữ cảnh) cho các câu hỏi, theo đúng văn phong bản xứ trong SGK, để giúp học sinh làm quen với tiếng Anh trong toán và khoa học. Nội dung là toán có lời văn và tư duy logic, các khái niệm đơn giản trong khoa học và xã hội.
+	•	Số lượng:
+	•	Phase 1: 5 câu/tuần.
+	•	Phase 2: 7 câu/tuần.
+	•	Phase 3: 10 câu/tuần.
+	•	Biến đổi nội dung (Content Morphing):
+	•	Phase 1 (Weeks 1-54): Vocab & Patterns (Math Bridge)
+	•	Nội dung: Nối hình với từ (Circle - Hình tròn), Quy luật màu sắc (Đỏ-Xanh-Đỏ-?), Đọc phép tính (One plus one equals two).
+	•	Quy định: CẤM tính toán đố mẹo phức tạp hoặc toán lời văn dài dòng ở Easy Mode. Mục tiêu là làm quen từ vựng Toán.
+	•	Phase 2 (Weeks 55-120): Word Problems (Toán đố)
+	•	Nội dung: Bài toán có lời văn (If Johnny has 5 apples...). Giải thích các bước giải (Step-by-step) + Logical problems.
+	•	Phase 3 (Weeks 121+): Data Analysis & Critical Logic
+	•	Nội dung: Đọc biểu đồ (Charts), tìm lỗi ngụy biện (Logical Fallacies), Thống kê (Mean/Median).
+6. Tab Ask AI (Luyện Nói & Hỏi đáp) - CẬP NHẬT VOICE-FIRST
+	•	Yêu cầu bắt buộc: luôn có context cho các câu gợi ý (không dung câu cụt lủn), sao cho học sinh có thể suy diễn ra được câu hỏi trong bối cảnh đó, nhưng tuyệt đối không lộ câu hỏi.
+	•	Cơ chế Nhập liệu: Mặc định là Microphone (Voice-First). Khuyến khích trẻ nói.
+	•	Số lượng: Tối thiểu 5 Prompts/tuần.
+	•	Lộ trình Scaffolding (Giàn giáo):
+	•	Phase 1 (Shadow Asking):
+	•	Prompt: "Bạn đang ở sở thú. Hãy bấm mic và hỏi người trông thú sư tử ăn gì: 'What do lions eat?'"
+	•	Mục tiêu: Luyện ngữ điệu câu hỏi (Mimicry).
+	•	Phase 2 (Guided Asking):
+	•	Prompt: "Bạn là nhà khoa học. Hãy hỏi AI tại sao núi lửa phun trào. Gợi ý: Why / volcanoes / erupt?"
+	•	Mục tiêu: Trẻ tự lắp ghép từ khóa thành câu hoàn chỉnh ("Why do volcanoes erupt?").
+	•	Phase 3 (Free Inquiry):
+	•	Prompt: "AI nói bài tập về nhà là tốt. Hãy hỏi AI về tác hại gây căng thẳng (stress) của nó."
+	•	Mục tiêu: Tự do phản biện và tìm kiếm thông tin.
+7. Tab Grammar
+	•	Số lượng: 20 câu/tuần.
+	•	Yêu cầu về nội dung: câu không được quá ngắn, phải có context tương tự cấu trúc trong bài đọc.
+	•	Quy định UI/UX: Chế độ "Strict Mode" (Trắc nghiệm hoặc Sắp xếp từ).
+8. Tab Dictation (Nghe chép)
+	•	Biến đổi:
+	•	Phase 1-2: Classic Dictation. Nghe từng câu (câu tối thiểu 5 từ, trích từ Read & Explore) -> Sắp xếp từ hoặc Gõ lại chính xác từng từ.
+	•	Phase 3: Note-Taking Drill. Nghe đoạn văn 30s-1p (tốc độ tự nhiên). Không chép nguyên văn. Điền Từ khóa (Keywords) vào biểu mẫu tóm tắt. (Main Idea: ___, Detail 1: ___, Detail 2: ___).
+
+NHÓM 3: ĐẦU RA (OUTPUT)
+9. Tab Shadowing (Luyện nói đuổi)
+	•	Mục đích: Luyện phát âm (Pronunciation), ngữ điệu (Intonation) và độ trôi chảy (Fluency) bằng cách nhại lại giọng bản xứ.
+	•	Nguồn dữ liệu: Sử dụng chính bài đọc của tuần trong Tab Read & Explore.
+	•	Quy trình 3 bước (UI/UX Flow):
+	•	Listen: Nghe giọng mẫu (Native Speaker). Text hiển thị dạng Karaoke.
+	•	Record: Bấm nút ghi âm và đọc lại.
+	•	Feedback: AI chấm điểm và chỉ ra từ phát âm sai (tô đỏ các âm tiết sai).
+	•	Phân hóa Dual-Mode:
+	•	Easy Mode: Có nút "Slow Mode" (0.8x). AI chấm tập trung vào Phát âm từ đơn.
+	•	Advanced Mode: Tốc độ chuẩn (1.0x). AI chấm tập trung vào Ngữ điệu và Nối âm.
+10. Tab Writing Challenge (Thử thách Viết) - CẬP NHẬT 3 CHẾ ĐỘ
+	•	Quy định Nội dung: Đề bài (Prompt) phải cụ thể, gắn liền với Topic tuần.
+	•	Model Sentence (Câu mẫu): Bắt buộc có cho Easy Mode và Advanced mode ở Phase 1 (từ tuần 1 tới tuần 54) (dạng điền khuyết hoặc sắp xếp lại câu).
+	•	Word Bank (Ngân hàng từ): Bắt buộc có cho Advanced Mode (gợi ý 5-7 từ vựng New Words phải sử dụng trong bài).
+	•	Quy định UI/UX - 3 Chế độ Nộp bài (Submission Modes):
+	•	Mode 1: Speech-to-Text (Dictation Draft): Trẻ bấm Mic nói ý tưởng -> App chuyển thành chữ -> Trẻ sửa lỗi chính tả -> Nộp. (Ưu tiên Phase 2).
+	•	Mode 2: Photo Submission (OCR): Viết ra giấy -> Chụp ảnh -> App quét chấm điểm. (Ưu tiên Phase 1 để luyện viết tay).
+	•	Mode 3: Drag & Drop Outlining: Kéo thả ý vào dàn bài thay vì viết full text. (Cho Essay Phase 3).
+	•	Quy định "Strict Mode":
+	•	Min Word Count: Bộ đếm từ tối thiểu (Phase 1: 40 từ, Phase 2: 100 từ, Phase 3: 150 từ). Không cho nộp nếu chưa đủ.
+	•	Auto-Correction: Gạch chân lỗi chính tả/ngữ pháp cơ bản ngay khi gõ.
+11. Tab Video Challenge (Thử thách Quay hình)
+	•	Mục đích: Luyện kỹ năng thuyết trình (Public Speaking) và sự tự tin.
+	•	Quy định Nội dung:
+	•	Đề bài thường là câu hỏi mở hoặc yêu cầu kể lại câu chuyện (Retell). Script lấy copy từ Writing challenge sang.
+	•	Phase 3: Yêu cầu tranh biện (Debate speech).
+	•	Quy định UI/UX:
+	•	Teleprompter: Tính năng chữ chạy trên màn hình (có thể bật/tắt) để học sinh vừa nhìn camera vừa đọc ý chính.
+	•	Filters/Stickers: Các hiệu ứng vui nhộn liên quan đến chủ đề (ví dụ: Topic Space thì có mũ phi hành gia).
+	•	Các kênh whitelist bắt buộc tìm trước khi mở rộng ra ngoài:
+🟦 1. GRAMMAR / ENGLISH SKILLS (12 kênh)
+	•	British Council | LearnEnglish Kids
+	•	Oxford Online Skills for Kids
+	•	Cambridge English TV
+	•	Maple Leaf Learning
+	•	Dream English Kids
+	•	English Singsing
+	•	WOW English TV
+	•	Busy Beavers
+	•	Learning Time Fun
+	•	English Tree TV
+	•	Fun Kids English
+	•	Pinkfong English
+👉 Tốt cho: phonics, can/should/must, tenses, sentence patterns
+
+🟨 2. MATH (ESL-friendly) (12 kênh)
+	•	Numberblocks ⭐
+	•	Math Antics
+	•	Jack Hartmann Kids Music Channel
+	•	Learn with Maths Antics Junior
+	•	Kids Learning Tube – Math
+	•	Homeschool Pop – Math
+	•	Maths for Kids
+	•	Khan Academy Kids
+	•	Mr DeMaio Math
+	•	Smile and Learn – Math
+	•	Peekaboo Kidz – Math
+	•	Educational Videos for Kids
+👉 Ngôn ngữ đơn giản, dễ dùng cho học sinh ESL
+
+🟩 3. SCIENCE (12 kênh)
+	•	SciShow Kids ⭐
+	•	National Geographic Kids
+	•	Peekaboo Kidz
+	•	Smile and Learn – Science
+	•	Homeschool Pop – Science
+	•	Free School
+	•	Kids Learning Tube
+	•	Dr Binocs Show
+	•	PBS Kids Science
+	•	Easy Science for Kids
+	•	Science Max – Experiments
+	•	MinuteEarth (chọn lọc cho kids)
+👉 Phù hợp dạy: can/cannot, why, how, must
+
+🟧 4. SOCIAL STUDIES / COMMUNITY (12 kênh)
+	•	Homeschool Pop – Social Studies
+	•	Kids Learning Tube – Geography & History
+	•	National Geographic Kids – People & Places
+	•	Free School – History & Civics
+	•	Peekaboo Kidz – Society
+	•	Smile and Learn – Social Skills
+	•	PBS Kids – Social Learning
+	•	SciShow Kids – Community topics
+	•	Learn Bright
+	•	Twinkl Kids TV
+	•	TeacherTube – ESL Social Topics
+	•	Cool School
+👉 Rất hợp bài: community helpers, rules, responsibility
+
+🟥 5. STORY / READING / LISTENING (12 kênh)
+	•	Storyline Online ⭐
+	•	Brightly Storytime (Penguin Random House)
+	•	Oxford Owl – Story Videos
+	•	Read Along – Kids Books
+	•	Vooks
+	•	Book Box Inc.
+	•	Kids Stories TV
+	•	Fairy Tales and Stories for Kids
+	•	English Fairy Tales
+	•	Storyberries
+	•	Speakaboos
+	•	Little Fox – Kids Stories ⭐
+👉 Tốt cho: listening, sight words, dictation, Ask-AI prompts
+12. Tab Explore (Đọc hiểu nâng cao)
+	•	Quy định Content:
+	•	10 Bold Words: Bắt buộc in đậm 10 từ vựng cốt lõi trong bài đọc để làm điểm neo kiến thức.
+	•	Độ dài:
+	•	Easy: 6-8 câu. Ngữ pháp chuẩn Syllabus.
+	•	Advanced: 8-12 câu. Ngữ pháp +1 level (xuất hiện câu phức sớm hơn).
+	•	Audio Emotion: Giọng đọc phải diễn cảm (như kể chuyện), có cảm xúc vui/buồn rõ ràng, không đọc đều đều như máy.
+	•	Quy định UI/UX:
+	•	Bấm từ in đậm -> Hiện Popup (Hình ảnh + Nghĩa + Loa).
+Based on a thorough re-examination of the code and the Blueprint, here is the definitive structure of a standard week, using Week 20 as the "golden standard."
+
+read.js (for Read & Explore station):
+
+Purpose: Provides the main reading passage for the ReadingExplore component.
+Schema: An object with title, image_url, content_en (with bolded keywords), content_vi, and an array of comprehension_questions.
+Blueprint Match: Aligns with "Tab Read & Explore," requiring a reading passage, 10 bold words, and comprehension checks.
+vocab.js (for New Words station):
+
+Purpose: Defines the 10 core vocabulary words for the week. This data is also used by other stations like Word Match.
+Schema: An array of 10 word objects, each containing id, word, definition_en, definition_vi, sentence_en, sentence_vi, image_url, audio_word, and audio_def.
+Blueprint Match: Aligns with "Tab New Words," specifying 10 words with visuals and audio.
+word_power.js (for Word Power station):
+
+Purpose: Defines advanced vocabulary (collocations, synonyms, idioms).
+Schema: An array of word objects, similar to vocab.js but focused on phrases, with examples.
+Blueprint Match: Aligns with "Tab Word Power," which details a phased approach to collocations, synonyms, and idioms.
+grammar.js (for Grammar station):
+
+Purpose: Provides multiple-choice or fill-in-the-blank grammar questions.
+Schema: An array of question objects, each with a question, an array of options, and the correct_answer.
+Blueprint Match: Aligns with "Tab Grammar," specifying 20 questions per week.
+logic_lab.js (for Logic Lab station):
+
+Purpose: Presents math and logic problems with a story context.
+Schema: An array of problem objects, each with a question_en, question_vi, image_url (optional), answer, and hint.
+Blueprint Match: Aligns with "Tab Logic Lab," which requires contextualized math/logic problems.
+ask_ai.js (for Ask AI station):
+
+Purpose: A structured speaking exercise where the user asks a specific question based on a given context.
+Schema: An array of prompt objects, each with a context_en, context_vi, an array of acceptable answers (the questions the user should ask), and a hint.
+Blueprint Match: Aligns with "Tab Ask AI," requiring context-based prompts to encourage speaking.
+dictation.js (for Dictation station):
+
+Purpose: Provides sentences for the user to listen to and type out.
+Schema: An array of sentence objects, each with an id, sentence, and audio_url.
+Blueprint Match: Aligns with "Tab Dictation," using sentences from the main reading passage.
+explore.js (for Explore station):
+
+Purpose: A non-fiction reading passage focused on critical thinking.
+Schema: An object with title_en, image_url, content_en (with bolded words), content_vi, an array of check_questions, and a final open-ended question for critical response.
+Blueprint Match: Aligns with "Tab Explore," which is a higher-level reading comprehension task.
+writing.js (for Writing Challenge station):
+
+Purpose: Provides a prompt for a written response.
+Schema: An object containing the prompt_en, prompt_vi, a model_sentence, and a word_bank.
+Blueprint Match: Aligns with "Tab Writing Challenge," requiring a specific prompt, model sentences, and a word bank.
+daily_watch.js (for Daily Watch station):
+
+Purpose: Contains links to curated YouTube videos.
+Schema: An array of video objects, each with a title, video_id, and description.
+Blueprint Match: Aligns with "Tab Daily Watch," which specifies using a whitelist of YouTube channels.
+mindmap.js (for Mindmap Speaking station):
+
+Purpose: Provides sentence stems and branches for a structured speaking exercise.
+Schema: An object with centerStems (an array of starting phrases) and branchLabels (an object mapping each stem to an array of possible endings).
+Blueprint Match: This is a new feature not yet in the Blueprint.
+word_match.js:
+
+Purpose: Placeholder file. The WordMatch component dynamically uses data from vocab.js.
+Schema: export default null; or a placeholder object.
+shadowing.js:
+
+Purpose: Placeholder file. The Shadowing component dynamically uses the reading passage and audio from read.js.
+Schema: export default null;
+Detailed Descriptions of New Features
+Here are the detailed descriptions of the three new features you asked for. You can add these to your Blueprint document.
+
+1. Feature: AI Tutor
+Nature: A global, persistent AI assistant accessible from anywhere in the app, separate from the weekly station flow. It is a comprehensive, multi-functional tool for advanced practice.
+Component: AITutor.jsx
+Data Source: Does not use a dedicated weekly data file. It dynamically pulls context from the current week's data (e.g., vocabulary from new_words) and the master syllabus_database.js.
+Core Functionality: The AI Tutor is organized into five distinct tabs:
+Chat: An open-ended conversational agent. Users can engage in free-form chat or select from predefined role-playing scenarios (e.g., "At the Doctor," "Ordering Food") that become available as they progress through the weeks.
+Pronunciation: An isolated practice tool where users can select a word from the current week's vocabulary list and have their pronunciation scored by the AI.
+Story Builder: A collaborative writing tool where the user and the AI build a story together, sentence by sentence. The AI provides guiding questions and hints to help the user continue the narrative.
+Debate: A formal debate feature where the user can choose a topic and argue a point against the AI. The AI acts as the opponent, providing counter-arguments.
+Quiz: A dynamic quiz generator that creates questions on Vocabulary, Math, or Science based on the current week's syllabus and content.
+2. Feature: Mindmap Speaking
+Nature: A structured speaking and production activity, integrated as a standard weekly station.
+Component: MindMapSpeaking.jsx
+Data Source: Requires a mindmap.js file in each week's data folder.
+Core Functionality: The interface presents a "mind map" with a central theme.
+The user is shown a "sentence stem" (e.g., "In the old castle, there was ___.").
+Several "branches" appear, each containing a phrase to complete the sentence (e.g., "a secret passage," "a huge dining hall").
+The user selects a branch, which forms a complete sentence.
+The user then records themselves speaking the full sentence aloud. The primary goal is to practice forming and speaking grammatically correct, contextually relevant sentences.
+3. Feature: Game Hub
+Nature: A self-contained station dedicated to a collection of mini-games for review and engagement.
+Component: GameHub.jsx
+Data Source: Does not require a dedicated weekly data file. The games and their logic are hardcoded within the component itself.
+Core Functionality: The Game Hub contains a variety of different game types that may use vocabulary or concepts from the current week. The games are designed to be fast, fun, and reinforce learning in a low-pressure environment. Examples of games found within the component include word scrambles, quick-fire quizzes, and other interactive challenges.
+PHẦN III: MA TRẬN NỘI DUNG 144 TUẦN (THE SMART CONTENT MATRIX)
+📱 PHẦN III: SMART CONTENT MATRIX (WEEKS 1-56)
+(MA TRẬN NỘI DUNG TÍCH HỢP NGỮ PHÁP - TOÁN - KHOA HỌC)
+🚀 GIAI ĐOẠN 1: FOUNDATION & FLUENCY (WEEKS 1-54)
+BLOCK A: THE "HERE & NOW" (WEEKS 1-18)
+Trọng tâm Ngữ pháp: Hiện tại đơn (To Be, Action Verbs) & Hiện tại Tiếp diễn.
+Tuần
+Syllabus Topic (Chủ đề)
+Grammar Topic (Ngữ pháp trọng tâm)
+Math/Sci/Soc Focus (AI & Video Keywords)
+App: EASY MODE (Personal - Concrete)
+App: ADVANCED MODE (Role - Abstract)
+W1
+Hello, World!
+Subject Pronouns + Be
+
+(I am, You are)
+Math: Numbers 1-10.
+
+Video: "Count to 10".
+Topic: The Superhero Me
+
+Task: Tạo hồ sơ: "I am [Name]."
+
+Vocab: boy, girl, ten.
+Topic: The Junior Scholar
+
+Task: Thẻ thư viện: "I am a student."
+
+Vocab: student, brave, smart.
+W2
+Family Squad
+Possessive Adjectives
+
+(My, Your)
+Soc: Family roles.
+
+Video: "Family Finger".
+Topic: My Home Team
+
+Task: "This is my mom."
+
+Vocab: mom, dad, baby.
+Topic: Family Roots
+
+Task: Cây gia phả: "He is my father."
+
+Vocab: parent, member, protect.
+W3
+Mirror Game
+Is vs Has
+
+(She is tall / She has hair)
+Sci: Body parts.
+
+Video: "Parts of the Body".
+Topic: Guess Who?
+
+Task: Chọn ảnh: "He has blue eyes."
+
+Vocab: eyes, hair, tall.
+Topic: The Detective
+
+Task: Mô tả: "He is short and has glasses."
+
+Vocab: straight, curly, glasses.
+W4
+Happy Jar
+Like + V-ing
+
+(I like playing)
+Soc: Emotions.
+
+Video: "Feelings Song".
+Topic: Mood Tracker
+
+Task: "I like pizza." (Noun)
+
+Vocab: happy, sad, pizza.
+Topic: Emotional IQ
+
+Task: "I like reading books." (V-ing)
+
+Vocab: excited, bored, hobby.
+W5
+Mystery House
+Articles: A / An
+
+(A bed, An apple)
+Math: Shapes in house.
+
+Video: "Rooms in House".
+Topic: Room Tour
+
+Task: "This is a kitchen."
+
+Vocab: bed, bath, room.
+Topic: Smart Home
+
+Task: "There is an oven."
+
+Vocab: fridge, sofa, upstairs.
+W6
+Treasure Hunt
+Prepositions of Place
+
+(In, On, Under)
+Math: Spatial awareness.
+
+Video: "Where is it?".
+Topic: Hide and Seek
+
+Task: "The cat is in the box."
+
+Vocab: in, on, box.
+Topic: Interior Decorator
+
+Task: "Put the lamp on the table."
+
+Vocab: under, next to, behind.
+W7
+Backpack
+There is (Singular)
+
+(There is a pen)
+Math: Counting 1-20.
+
+Video: "School Supplies".
+Topic: What's in my Bag?
+
+Task: Đếm: "One book."
+
+Vocab: pen, book, bag.
+Topic: Inventor's Kit
+
+Task: "There is a ruler."
+
+Vocab: eraser, sharpener, tool.
+W8
+Busy Class
+There are (Plural)
+
+(Plural nouns -s/es)
+Math: Singular vs Plural.
+
+Video: "Plural Song".
+Topic: Counting Challenge
+
+Task: "Two cats." (Thêm s)
+
+Vocab: pens, books, two.
+Topic: Class Inventory
+
+Task: "There are many boxes."
+
+Vocab: shelves, boxes, count.
+W9
+City Sounds
+Adj + Noun Order
+
+(A red car, NOT a car red)
+Soc: City life.
+
+Video: "Traffic Sounds".
+Topic: Noisy Street
+
+Task: "A big bus."
+
+Vocab: loud, car, bus.
+Topic: City Planner
+
+Task: "It is a noisy city."
+
+Vocab: noisy, quiet, modern.
+W10
+Farm Adventure
+Contrast: But
+
+(Big but quiet)
+Sci: Farm Animals.
+
+Video: "Farm Animals".
+Topic: Old McDonald
+
+Task: "A cow is big."
+
+Vocab: cow, pig, farm.
+Topic: Urban vs Rural
+
+Task: "The city is loud BUT the farm is quiet."
+
+Vocab: peaceful, crowded, air.
+W11
+Weekend Fun
+Preposition: At
+
+(At the park)
+Soc: Public places.
+
+Video: "Places in Town".
+Topic: Weekend Map
+
+Task: "I play at the park."
+
+Vocab: park, zoo, play.
+Topic: Local Guide
+
+Task: "We are at the library."
+
+Vocab: library, cinema, visit.
+W12
+Talent Show
+Modal: Can / Can't
+
+(I can run)
+Sci: Abilities.
+
+Video: "Action Verbs".
+Topic: My Superpower
+
+Task: "I can sing."
+
+Vocab: run, swim, fly.
+Topic: The Olympics
+
+Task: "He can jump high."
+
+Vocab: climb, dive, athlete.
+W13
+Routines
+Present Simple
+
+(I wake up)
+Math: Telling Time.
+
+Video: "Daily Routine".
+Topic: My Day
+
+Task: "I eat breakfast."
+
+Vocab: wake up, sleep, eat.
+Topic: Schedule Maker
+
+Task: "I go to school at 7."
+
+Vocab: brush teeth, get dressed.
+W14
+Review A
+Review All
+Review: Block A.
+
+Video: "All About Me".
+Topic: All About Me
+
+Task: Poster cá nhân.
+Topic: The Bio Writer
+
+Task: Viết tiểu sử.
+W15
+Busy City
+Present Continuous
+
+(Is/Am/Are + V-ing)
+Sci: Observation.
+
+Video: "Walking Walking".
+Topic: People Watcher
+
+Task: "He is running."
+
+Vocab: running, walking.
+Topic: Traffic Control
+
+Task: "The bus is stopping."
+
+Vocab: waiting, crossing, street.
+W16
+Sports Day
+Dynamic Verbs (V-ing)
+
+(Kicking, Throwing)
+Sci: Motion.
+
+Video: "Sports Ball".
+Topic: The Big Game
+
+Task: "I am kicking."
+
+Vocab: kick, hit, ball.
+Topic: Commentator
+
+Task: "They are playing soccer."
+
+Vocab: throw, catch, score.
+W17
+Weather
+Cause/Effect (So)
+
+(It is raining, so...)
+Sci: Weather types.
+
+Video: "The Weather".
+Topic: Dress Up
+
+Task: "It is hot."
+
+Vocab: rain, sun, hot.
+Topic: Forecaster
+
+Task: "It is cold so I wear a coat."
+
+Vocab: storm, wind, coat.
+W18
+Checkpoint 1
+Review Present Cont.
+Review: Action verbs.
+Topic: Block A Quiz
+
+Task: Game tổng hợp.
+Topic: The Reporter
+
+Task: Thuyết trình tranh động.
+BLOCK B: THE "FIRST STEPS BACK" (WEEKS 19-36)
+Trọng tâm Ngữ pháp: Quá khứ đơn (Từ To Be -> Có quy tắc -> Bất quy tắc).
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus
+App: EASY MODE
+App: ADVANCED MODE
+W19
+When I Was Small
+Was / Were (State)
+
+(I was small)
+Sci: Human Growth.
+
+Video: "Growing Up".
+Topic: Baby Album
+
+Task: "I was a baby."
+
+Vocab: baby, cute, small.
+Topic: Time Capsule
+
+Task: "It was noisy."
+
+Vocab: born, kindergarten, quiet.
+W20
+Old House
+There was / There were
+
+(Existence in past)
+Soc: Past vs Present.
+
+Video: "Long Ago".
+Topic: Grandma's House
+
+Task: "There was a cat."
+
+Vocab: old, house, dirty.
+Topic: Archaeologist
+
+Task: "There were many books."
+
+Vocab: ancient, dusty, empty.
+W21
+Yesterday
+Past Simple Regular (-ed)
+
+(Played, Watched)
+Math: Calendar.
+
+Video: "Days of Week".
+Topic: My Diary
+
+Task: "I played football."
+
+Vocab: played, cooked.
+Topic: Daily Log
+
+Task: "I cleaned my room."
+
+Vocab: finished, visited, watched.
+W22
+Time Detective
+Questions: Did you...?
+
+(Yes, I did)
+Logic: True/False.
+
+Video: "Yes No Game".
+Topic: Question Game
+
+Task: "Did you sleep?"
+
+Vocab: yes, no, ask.
+Topic: Interrogation
+
+Task: "Did you see the cat?"
+
+Vocab: confirm, deny, truth.
+W23
+Art Class
+Verbs: Painted, Colored
+
+(-ed pronunciation)
+Sci: Color Mixing.
+
+Video: "Mixing Colors".
+Topic: My Masterpiece
+
+Task: "I painted a sun."
+
+Vocab: paint, color, red.
+Topic: Art Critic
+
+Task: "She created a mess."
+
+Vocab: create, design, mix.
+W24
+Feelings
+Was + Adjective
+
+(I was sad because...)
+Soc: Memory.
+
+Video: "Emotions".
+Topic: Mood Rewind
+
+Task: "I was happy."
+
+Vocab: sad, glad, mad.
+Topic: Story Emotions
+
+Task: "He was tired."
+
+Vocab: tired, bored, scared.
+W25
+Sequencing
+First, Next, Then
+
+(Connectors)
+Logic: Algorithms.
+
+Video: "Sequencing".
+Topic: Sandwich Maker
+
+Task: "First, bread."
+
+Vocab: first, then, eat.
+Topic: The Algorithm
+
+Task: "Next, put cheese."
+
+Vocab: next, after that, finally.
+W26
+Review B1
+Review Regular Verbs
+Review: -ed endings.
+Topic: Comic Strip
+
+Task: Xếp truyện.
+Topic: The Editor
+
+Task: Sửa lỗi chính tả.
+W27
+Nature Seq.
+Present Simple (Facts)
+
+(It grows, It needs)
+Sci: Plant Cycle.
+
+Video: "Plant Growth".
+Topic: Garden Time
+
+Task: "It needs water."
+
+Vocab: seed, plant, sun.
+Topic: Botanist Journal
+
+Task: "The root grows down."
+
+Vocab: soil, root, sprout.
+W28
+Story Retell
+Narrative Structure
+
+(Beginning/Middle/End)
+Soc: Fables.
+
+Video: "Tortoise & Hare".
+Topic: Bedtime Story
+
+Task: Kể truyện Rùa.
+
+Vocab: rabbit, run, win.
+Topic: The Narrator
+
+Task: Dẫn chuyện.
+
+Vocab: race, fast, slow.
+W29
+Magic Trip
+Irregular 1: Go-Went
+
+(Movement)
+Soc: Transport.
+
+Video: "Transport".
+Topic: Holiday Snap
+
+Task: "I went to the zoo."
+
+Vocab: go-went, run-ran.
+Topic: Travel Blogger
+
+Task: "We flew to Hanoi."
+
+Vocab: come-came, fly-flew.
+W30
+The Picnic
+Irregular 2: Eat-Ate
+
+(Consumption)
+Sci: Nutrition.
+
+Video: "Healthy Food".
+Topic: Hungry Bear
+
+Task: "I ate an apple."
+
+Vocab: eat-ate, drink-drank.
+Topic: Food Critic
+
+Task: "We bought pizza."
+
+Vocab: buy-bought, give-gave.
+W31
+The Senses
+Irregular 3: See-Saw
+
+(Perception)
+Sci: 5 Senses.
+
+Video: "5 Senses".
+Topic: Forest Walk
+
+Task: "I saw a bird."
+
+Vocab: see-saw, hear-heard.
+Topic: Sensory Lab
+
+Task: "I felt cold."
+
+Vocab: feel-felt, smell-smelt.
+W32
+Busy Day
+Irregular 4: Do-Did
+
+(Tasks)
+Soc: Chores.
+
+Video: "Helping Out".
+Topic: Helper Hero
+
+Task: "I did homework."
+
+Vocab: do-did, have-had.
+Topic: Task Manager
+
+Task: "I made my bed."
+
+Vocab: make-made, take-took.
+W33
+Mistake
+Irregular 5: Break-Broke
+
+(Accidents)
+Soc: Problem Solving.
+
+Video: "Accidents".
+Topic: Oops!
+
+Task: "I broke a cup."
+
+Vocab: fall-fell, break-broke.
+Topic: Incident Report
+
+Task: "I lost my key."
+
+Vocab: lose-lost, hurt-hurt.
+W34
+Story 1
+Mixed Past Verbs
+
+(Regular + Irregular)
+Soc: Friendship.
+
+Video: "Lion & Mouse".
+Topic: Puppet Show
+
+Task: Diễn rối.
+
+Vocab: lion, mouse, help.
+Topic: Script Writer
+
+Task: Viết lời thoại.
+
+Vocab: trap, free, roar.
+W35
+Story 2
+Past + Adjectives
+
+(It was fun)
+Soc: Memory.
+
+Video: "Memories".
+Topic: Best Day Ever
+
+Task: "It was fun."
+
+Vocab: fun, play, happy.
+Topic: Memoir Writer
+
+Task: "The trip was long."
+
+Vocab: memory, unforgettable.
+W36
+Review B2
+Review Irregular Verbs
+Review: Verbs.
+
+Video: "Verb Rap".
+Topic: Adventure Book
+
+Task: Sách ảnh.
+Topic: Publisher
+
+Task: Xuất bản truyện.
+BLOCK C: CLIL FOUNDATIONS (WEEKS 37-54)
+Trọng tâm Ngữ pháp: Hiện tại đơn (cho sự thật hiển nhiên), Câu ghép (Because), Tương lai (Will/Going to).
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus
+App: EASY MODE
+App: ADVANCED MODE
+W37
+Living Things
+Because + Clause
+
+(Reasoning)
+Sci: Biology.
+
+Video: "Living Things".
+Topic: Pet or Toy?
+
+Task: "It eats because it lives."
+
+Vocab: cat, rock, tree.
+Topic: Biologist
+
+Task: Giải thích lý do.
+
+Vocab: breathe, grow, reproduce.
+W38
+Abilities
+Can / Cannot
+
+(Review)
+Sci: Zoology.
+
+Video: "Animals Move".
+Topic: Animal Zoo
+
+Task: "Fish can swim."
+
+Vocab: bird, fish, fly.
+Topic: Zoologist
+
+Task: "Penguins cannot fly."
+
+Vocab: hunt, dive, survive.
+W39
+Habitats
+I think...
+
+(Opinion)
+Sci: Ecology.
+
+Video: "Habitats".
+Topic: Animal Homes
+
+Task: "Fish live in water."
+
+Vocab: forest, water.
+Topic: Ecologist
+
+Task: "I think camels live here."
+
+Vocab: desert, ocean, rainforest.
+W40
+Beast Battle
+Comparisons (-er)
+
+(Faster, Bigger)
+Math: Statistics.
+
+Video: "Fastest Animals".
+Topic: Strongest Animal
+
+Task: "A lion is big."
+
+Vocab: big, fast, strong.
+Topic: Wildlife Expert
+
+Task: "A cheetah is faster."
+
+Vocab: predator, heavy, dangerous.
+W41
+Life Cycles
+Present Simple (3rd Person)
+
+(It changes, It becomes)
+Sci: Metamorphosis.
+
+Video: "Butterfly".
+Topic: Butterfly Story
+
+Task: "It is an egg."
+
+Vocab: egg, baby, butterfly.
+Topic: Metamorphosis
+
+Task: "The caterpillar eats."
+
+Vocab: caterpillar, chrysalis.
+W42
+Water
+Sequencing
+
+(Review)
+Sci: Water Cycle.
+
+Video: "Water Cycle".
+Topic: Little Raindrop
+
+Task: Giọt mưa rơi.
+
+Vocab: rain, cloud, sea.
+Topic: Hydrologist
+
+Task: Sơ đồ nước.
+
+Vocab: evaporation, vapor.
+W43
+Addition
+Math Language: Equals
+
+(One plus one is two)
+Math: Addition.
+
+Video: "Addition".
+Topic: Toy Shop Math
+
+Task: 1 + 1 = 2.
+
+Vocab: one, two, plus.
+Topic: The Accountant
+
+Task: Đọc phép tính.
+
+Vocab: add, equals, sum.
+W44
+Subtraction
+Math Language: Left
+
+(How many are left?)
+Math: Subtraction.
+
+Video: "Subtraction".
+Topic: Cookie Jar
+
+Task: 5 - 2 = 3.
+
+Vocab: eat, gone, minus.
+Topic: Inventory Check
+
+Task: Bài toán đố đơn giản.
+
+Vocab: subtract, take away.
+W45
+Shapes
+It has... (Description)
+
+(It has 3 sides)
+Math: Geometry.
+
+Video: "Shapes".
+Topic: Shape Hunter
+
+Task: Tìm hình tròn.
+
+Vocab: circle, square.
+Topic: The Architect
+
+Task: "It has 4 corners."
+
+Vocab: side, corner, triangle.
+W46
+Patterns
+If... Then...
+
+(Logic)
+Math: Patterns.
+
+Video: "Patterns".
+Topic: Bead Stringing
+
+Task: Đỏ-Xanh-Đỏ-?
+
+Vocab: red, blue, next.
+Topic: Code Breaker
+
+Task: "If square, then circle."
+
+Vocab: pattern, repeat, sequence.
+W47
+Numbers
+Number Words
+
+(Twenty, Thirty)
+Math: Place Value.
+
+Video: "Place Value".
+Topic: Star Counter
+
+Task: Đếm sao.
+
+Vocab: ten, twenty.
+Topic: Bank Teller
+
+Task: Đếm tiền chẵn.
+
+Vocab: hundred, fifty, value.
+W48
+Measuring
+Adjectives of Length
+
+(Long, Short, Tall)
+Math: Measurement.
+
+Video: "Measuring".
+Topic: Tailor Shop
+
+Task: Dài hay Ngắn?
+
+Vocab: long, short.
+Topic: Construction
+
+Task: "It is 5cm long."
+
+Vocab: measure, ruler, cm.
+W49
+Future
+Future: Want to be
+
+(I want to be a doctor)
+Soc: Careers.
+
+Video: "Jobs".
+Topic: Dream Job
+
+Task: Chọn nghề.
+
+Vocab: doctor, cook.
+Topic: Career Counselor
+
+Task: "I will be a pilot."
+
+Vocab: artist, scientist, pilot.
+
+
+BLOCK C: CLIL FOUNDATIONS (WEEKS 49-54)
+Mục tiêu: Hoàn thiện Phase 1, chuẩn bị tâm thế cho học thuật Phase 2.
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE (Personal)
+App: ADVANCED MODE (Role)
+W49
+Future Dreams
+Future: Want to be / Going to
+Soc: Occupations & Careers.
+
+Video: "Jobs and Aspirations".
+Topic: Dream Job
+
+Vocab: doctor, cook, pilot.
+
+Task: "I want to be a..."
+Topic: Career Path
+
+Vocab: artist, scientist, engineer.
+
+Task: "I am going to study..."
+W50
+Review C1
+Tenses Mixed (Past/Pres/Fut)
+Review: Grammar Logic.
+
+Video: "Grammar Review Quiz".
+Topic: Time Machine
+
+Vocab: before, now, soon.
+
+Task: Phân loại câu theo thì.
+Topic: Grammar Master
+
+Vocab: context, tense, correct.
+
+Task: Sửa lỗi thì trong đoạn văn.
+W51
+Review C2
+Complex Sentences (Review)
+Review: CLIL Vocab.
+
+Video: "General Science Review".
+Topic: Word Bingo
+
+Vocab: habitat, plus, cycle.
+
+Task: Game nối từ và hình.
+Topic: Crossword Scholar
+
+Vocab: environment, calculation.
+
+Task: Giải ô chữ định nghĩa.
+W52
+Experiences
+Present Perfect (Have you ever?)
+Soc: Life Experiences.
+
+Video: "Experiences Song".
+Topic: Have You Ever?
+
+Vocab: seen, eaten, been.
+
+Task: Trả lời Yes/No về trải nghiệm.
+Topic: Junior Interviewer
+
+Vocab: experience, travel, unique.
+
+Task: Phỏng vấn AI về trải nghiệm.
+W53
+Project Prep
+Review Sentences Structure
+Soc: Self-Reflection.
+
+Video: "Portfolio Tips for Kids".
+Topic: My Scrapbook
+
+Vocab: photo, best, memory.
+
+Task: Chọn và mô tả 3 ảnh đẹp nhất.
+Topic: Portfolio Curator
+
+Vocab: select, organize, showcase.
+
+Task: Viết lời giới thiệu hồ sơ.
+W54
+Graduation
+Speaking & Presentation
+Event: Achievement.
+
+Video: "Graduation Celebration".
+Topic: Party Time
+
+Vocab: party, cake, happy.
+
+Task: Ghi âm lời chúc mừng.
+Topic: Valedictorian
+
+Vocab: proud, achievement, future.
+
+Task: Thuyết trình bài diễn văn ngắn.
+
+🧠 GIAI ĐOẠN 2: ACADEMIC APPLICATION (WEEKS 55-120)
+Mục tiêu: Chuyển dịch sang tiếng Anh học thuật. Dùng tiếng Anh để học Toán, Khoa học, Xã hội.
+CYCLE 2.1: LOGIC & EXPLANATION (WEEKS 55-76)
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE (Functional)
+App: ADVANCED MODE (Academic)
+W55
+Cause & Effect
+Conjunctions: Because / So
+Math: Addition Regrouping.
+
+Video: "Addition Carrying Over".
+Topic: The Why Game
+
+Vocab: because, so, hot, wet.
+
+Task: Nối nguyên nhân - kết quả.
+Topic: Logic Lab
+
+Vocab: reason, result, therefore.
+
+Task: Viết câu ghép giải thích phép toán.
+W56
+Chain Reaction
+Sequence: Lead to / Cause
+Math: Subtraction Regrouping.
+
+Video: "Subtraction Borrowing".
+Topic: Domino Fall
+
+Vocab: start, stop, push, fall.
+
+Task: Xếp chuỗi sự kiện 3 bước.
+Topic: Butterfly Effect
+
+Vocab: lead to, consequence, trigger.
+
+Task: Giải thích chuỗi nhân quả tự nhiên.
+W57
+Problem / Sol.
+Modals: Can, Could, Should
+Math: Multiplication Concepts.
+
+Video: "Multiplication Groups".
+Topic: The Fixer
+
+Vocab: broken, fix, tape, help.
+
+Task: Chọn công cụ sửa đồ vật.
+Topic: Engineer Squad
+
+Vocab: solution, propose, alternative.
+
+Task: Đề xuất cách sửa lỗi kỹ thuật.
+W58
+Detailed Sol.
+First Conditional (If... will)
+Math: Division Concepts.
+
+Video: "Division Equal Shares".
+Topic: The Planner
+
+Vocab: plan, idea, step, success.
+
+Task: Lập kế hoạch 3 bước dọn nhà.
+Topic: Strategy Map
+
+Vocab: method, process, evaluate.
+
+Task: Viết giải pháp: "If we... we will..."
+W59
+Letter Writing
+Informal Tone & Contractions
+Math: Division with Remainders.
+
+Video: "Remainders Explained".
+Topic: Pen Pal
+
+Vocab: hi, friend, write, soon.
+
+Task: Viết thư hỏi thăm bạn.
+Topic: Email Etiquette
+
+Vocab: subject, attachment, regards.
+
+Task: Soạn email phản hồi giáo viên.
+W60
+Formal Request
+Polite Modals: May, Would
+Math: Order of Ops (PEMDAS).
+
+Video: "Order of Operations".
+Topic: Dear Teacher
+
+Vocab: sick, please, excuse, school.
+
+Task: Viết tin nhắn xin phép nghỉ.
+Topic: Dear Mayor
+
+Vocab: request, community, facility.
+
+Task: Viết thư kiến nghị sửa công viên.
+W61
+Main Idea
+Subject + Verb Identification
+Math: Two-Step Word Problems.
+
+Video: "Hidden Questions Math".
+Topic: Story Detective
+
+Vocab: about, story, cat, dog.
+
+Task: Chọn câu tóm tắt ý chính.
+Topic: Headline Hunter
+
+Vocab: topic, theme, essential.
+
+Task: Đặt tít báo cho đoạn văn dài.
+W62
+Summarizing
+Reported Speech (Basic)
+Math: Rounding & Estimation.
+
+Video: "Rounding to Tens".
+Topic: Movie Review
+
+Vocab: short, fun, character.
+
+Task: Tóm tắt phim trong 3 câu.
+Topic: The Abstract
+
+Vocab: condense, summarize, key.
+
+Task: Viết tóm tắt báo cáo khoa học.
+W63
+Maps / Coords
+Prepositions of Direction
+Math: Coordinates & Grids.
+
+Video: "Coordinate Plane Intro".
+Topic: Treasure Map
+
+Vocab: North, South, left, right.
+
+Task: Chỉ đường tìm kho báu.
+Topic: GPS Navigator
+
+Vocab: coordinate, axis, intersect.
+
+Task: Xác định vị trí điểm trên lưới A1-D4.
+W64
+Data Stories
+Quantifiers: Most, Few, Many
+Math: Pictographs.
+
+Video: "Reading Data Charts".
+Topic: Fruit Stall
+
+Vocab: apple, banana, more, less.
+
+Task: Đọc biểu đồ tranh trái cây.
+Topic: Data Analyst
+
+Vocab: trend, majority, minority.
+
+Task: Phân tích biểu đồ doanh số ảo.
+W65
+Review 2.1
+Logic Connectors Review
+Review: Math Vocabulary.
+
+Video: "Logic Puzzle Fun".
+Topic: Brain Gym
+
+Vocab: logic, solve, think.
+
+Task: Giải mê cung từ vựng.
+Topic: Critical Review
+
+Vocab: analysis, synthesis, logic.
+
+Task: Giải mã mật thư bằng logic.
+W66
+Micro-Debate
+Comparative Structures
+Soc: Communication Tech.
+
+Video: "Internet vs Books".
+Topic: Paper vs Email
+
+Vocab: fast, slow, paper, screen.
+
+Task: Chọn phe và nói "I like...".
+Topic: Tech Debate
+
+Vocab: efficient, personal, traditional.
+
+Task: Ghi âm lập luận so sánh 2 vật.
+W67
+OREO Structure
+Opinion Phrases
+Math: Measuring Mass.
+
+Video: "Grams and Kilograms".
+Topic: Pizza Lover
+
+Vocab: opinion, reason, yummy.
+
+Task: Xếp các câu vào đúng O-R-E-O.
+Topic: The Persuader
+
+Vocab: structure, convince, belief.
+
+Task: Viết đoạn văn thuyết phục dùng OREO.
+W68
+Strong Reasons
+Addition: Furthermore, Also
+Math: Bar Graphs (Scaled).
+
+Video: "Reading Bar Graphs".
+Topic: Convince Mom
+
+Vocab: please, good, park.
+
+Task: Chọn 2 lý do để được đi chơi.
+Topic: The Lawyer
+
+Vocab: furthermore, evidence, claim.
+
+Task: Nối lý do với dẫn chứng tương ứng.
+W69
+Environment
+Modals: Should, Must
+Math: Line Plots.
+
+Video: "Frequency Data".
+Topic: Earth Hero
+
+Vocab: trash, tree, clean.
+
+Task: Phân loại rác (Tái chế/Không).
+Topic: Eco-Warrior
+
+Vocab: pollution, conserve, sustain.
+
+Task: "We MUST..." - Viết 3 luật bảo vệ.
+W70
+Green Speech
+Presentation Connectors
+Math: Graph Choice.
+
+Video: "Which Graph is Best?".
+Topic: My Poster
+
+Vocab: picture, green, idea.
+
+Task: Quay video nói về poster xanh.
+Topic: Campaign Manager
+
+Vocab: audience, deliver, impact.
+
+Task: Thuyết trình 1 phút dùng biểu đồ.
+W71
+Solar System
+Superlatives: -est / Most
+Math: Large Numbers.
+
+Video: "Place Value Millions".
+Topic: Rocket Trip
+
+Vocab: sun, moon, star, big.
+
+Task: Xếp thứ tự hành tinh to/nhỏ.
+Topic: Astrophysicist
+
+Vocab: orbit, gravity, celestial.
+
+Task: So sánh đặc điểm các hành tinh.
+W72
+Photosynthesis
+Passive Voice (Intro)
+Math: Area vs Perimeter.
+
+Video: "Area and Perimeter Song".
+Topic: Magic Leaf
+
+Vocab: sun, water, food, green.
+
+Task: Quy trình cây ăn (kéo thả).
+Topic: Botanist
+
+Vocab: absorb, oxygen, glucose.
+
+Task: "Sunlight is absorbed by..."
+W73
+Water Cycle
+Advanced Sequencing
+Math: Volume Intro.
+
+Video: "Measuring Volume".
+Topic: Water's Trip
+
+Vocab: rain, cloud, river, sun.
+
+Task: Xếp vòng tròn nước 4 bước.
+Topic: Hydrologist
+
+Vocab: evaporation, precipitation.
+
+Task: Giải thích chu trình dùng từ nối.
+W74
+Food Chains
+Zero Conditional (Facts)
+Math: Multi-Set Data.
+
+Video: "Food Webs for Kids".
+Topic: Hungry Animals
+
+Vocab: eat, meat, grass, hunter.
+
+Task: Ai ăn ai? (Nối mắt xích).
+Topic: Ecosystem Manager
+
+Vocab: predator, prey, consumer.
+
+Task: "If plants die, animals..."
+W75
+Ancient Egypt
+Used to (Past Habits)
+Math: Timelines (BC/AD).
+
+Video: "Ancient Egypt History".
+Topic: Mummy Mystery
+
+Vocab: king, gold, sand, river.
+
+Task: Tìm đồ vật Ai Cập cổ đại.
+Topic: Egyptologist
+
+Vocab: pharaoh, civilization, hieroglyph.
+
+Task: "They used to build pyramids."
+W76
+Explorers
+Prepositions of Movement
+Math: Map Scales.
+
+Video: "Reading Map Scales".
+Topic: Captain's Log
+
+Vocab: boat, sea, map, new.
+
+Task: Di chuyển tàu qua các đảo.
+Topic: Navigator
+
+Vocab: voyage, discover, route.
+
+Task: Tính khoảng cách thực trên bản đồ.
+CYCLE 2.2: SYSTEMS & HISTORY (WEEKS 77-98)
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE (Descriptive)
+App: ADVANCED MODE (Technical)
+W77
+Landmarks
+Adj of Material & Shape
+Math: 3D Geometry.
+
+Video: "3D Shapes Faces Edges".
+Topic: Travel Photos
+
+Vocab: tall, old, bridge, tower.
+
+Task: Nối tên kỳ quan với ảnh.
+Topic: Civil Engineer
+
+Vocab: structure, material, steel.
+
+Task: Mô tả hình khối/chất liệu landmark.
+W78
+Cultures
+Comparative: Unlike, Similar
+Math: Surveys & Data.
+
+Video: "Collecting Survey Data".
+Topic: Holiday Food
+
+Vocab: yummy, spicy, celebrate.
+
+Task: Chọn món ăn ngày Tết/Giáng sinh.
+Topic: Anthropologist
+
+Vocab: tradition, ritual, heritage.
+
+Task: So sánh 2 nét văn hóa.
+W79
+Review 2.2
+Tenses & Modals Review
+Review: Science & Math Concepts.
+Topic: Science Quiz
+
+Vocab: true, false, fact.
+
+Task: Đố vui khoa học tổng hợp.
+Topic: Knowledge Check
+
+Vocab: review, concept, define.
+
+Task: Bài kiểm tra kiến thức hệ thống.
+W80
+Micro-Debate
+Expressing Strong Opinion
+Soc: Space Ethics.
+
+Video: "Ethics of Space Travel".
+Topic: Mars or Earth?
+
+Vocab: planet, home, stay, go.
+
+Task: Chọn hành tinh bạn muốn ở.
+Topic: Space Ethics
+
+Vocab: exploration, resource, ethical.
+
+Task: Ghi âm tranh luận về tiền vũ trụ.
+W81
+Essay Plan
+Transition Signals
+Math: Graphing Data.
+
+Video: "Making Graphs".
+Topic: Burger Builder
+
+Vocab: top, middle, bottom.
+
+Task: Xếp các phần bài văn (Intro-Body).
+Topic: Blueprint Design
+
+Vocab: introduction, body, conclusion.
+
+Task: Lập dàn ý bài luận từ gợi ý.
+W82
+Drafting
+Sensory Adjectives
+Math: Analyzing Data.
+
+Video: "Interpreting Graphs".
+Topic: Postcard Writer
+
+Vocab: beautiful, fun, nice.
+
+Task: Viết bưu thiếp kể về chuyến đi.
+Topic: Travel Journalist
+
+Vocab: vibrant, breathtaking, scenic.
+
+Task: Viết bài ký sự du lịch 5 câu hay.
+W83
+Landforms
+Relative Clauses (Defining)
+Math: Decimals Intro.
+
+Video: "Decimals on Number Line".
+Topic: Mountain & River
+
+Vocab: hill, lake, island, plain.
+
+Task: Nối định nghĩa với địa hình.
+Topic: The Geographer
+
+Vocab: plateau, valley, peninsula.
+
+Task: "An island is a land that..."
+W84
+Volcanoes
+Cause/Effect Verbs (Cause)
+Math: Adding Decimals.
+
+Video: "Decimal Addition".
+Topic: Boom!
+
+Vocab: fire, hot, smoke, run.
+
+Task: Xem video và kể lại sự việc.
+Topic: Volcanologist
+
+Vocab: magma, lava, eruption.
+
+Task: Giải thích tại sao núi lửa phun.
+W85
+Maps Adv.
+Complex Prepositions
+Math: Scaling Up.
+
+Video: "Ratios in Maps".
+Topic: City Guide
+
+Vocab: straight, turn, corner.
+
+Task: Viết hướng dẫn tìm đường.
+Topic: Cartographer
+
+Vocab: scale, intersection, landmark.
+
+Task: Vẽ bản đồ tỉ lệ chuẩn theo mô tả.
+W86
+Climate
+Generalization Adverbs
+Math: Graph Trends.
+
+Video: "Reading Line Graphs".
+Topic: Hot & Cold
+
+Vocab: winter, summer, coat.
+
+Task: Phân loại quần áo theo đới khí hậu.
+Topic: Climatologist
+
+Vocab: temperate, tropical, pattern.
+
+Task: Mô tả xu hướng nhiệt độ (tăng/giảm).
+W87
+Human Body
+Passive Voice (Process)
+Math: Elapsed Time.
+
+Video: "Elapsed Time Word Problems".
+Topic: My Body
+
+Vocab: heart, tummy, head.
+
+Task: Nối cơ quan với tên gọi.
+Topic: Doctor in Training
+
+Vocab: circulation, digest, nerve.
+
+Task: Mô tả quá trình tiêu hóa/tuần hoàn.
+W88
+Rome
+Past Ability: Could / Was able
+Math: Metric Conversions.
+
+Video: "Converting cm to m".
+Topic: Roman Soldier
+
+Vocab: sword, helmet, strong.
+
+Task: Trang bị cho lính La Mã.
+Topic: Classical Historian
+
+Vocab: aqueduct, empire, concrete.
+
+Task: "Romans were able to build..."
+W89
+Inventions
+Past Perfect (Intro)
+Math: Comparing Data Sets.
+
+Video: "Invention History".
+Topic: Old vs New
+
+Vocab: phone, car, light.
+
+Task: Xếp đồ xưa và đồ nay.
+Topic: Tech Historian
+
+Vocab: revolution, innovate, impact.
+
+Task: "Before the phone, people HAD..."
+W90
+Physics
+Conditionals Type 1
+Math: Averages (Mean).
+
+Video: "Calculating the Mean".
+Topic: Playground Physics
+
+Vocab: push, pull, swing.
+
+Task: Thí nghiệm ảo về lực đẩy.
+Topic: The Physicist
+
+Vocab: gravity, friction, force.
+
+Task: "If you push it, it will move."
+W91
+Sci. Method
+Impersonal: It was observed
+Math: Experiment Design.
+
+Video: "The Scientific Method Steps".
+Topic: Curious Kid
+
+Vocab: break, fall, try, guess.
+
+Task: Thí nghiệm thả trứng ảo.
+Topic: Lab Researcher
+
+Vocab: hypothesis, method, conclusion.
+
+Task: Viết báo cáo thí nghiệm khách quan.
+W92
+Helpers
+Relative Clauses: Who
+Math: Conducting Surveys.
+
+Video: "Conducting a Survey".
+Topic: Career Day
+
+Vocab: job, work, help, vet.
+
+Task: Ai làm việc này? (Nối).
+Topic: HR Manager
+
+Vocab: qualification, duty, salary.
+
+Task: "A vet is a person who..."
+W93
+Research 1
+Wh- Questions (Complex)
+Soc: Independent Study.
+
+Video: "How to Research".
+Topic: My Favorite Topic
+
+Vocab: like, interesting, pick.
+
+Task: Chọn 1 trong 3 chủ đề lớn.
+Topic: Thesis Proposal
+
+Vocab: objective, scope, inquiry.
+
+Task: Viết 3 câu hỏi cho đề tài đã chọn.
+W94
+Research 2
+Reporting: Says / Claims
+Soc: Information Literacy.
+
+Video: "Reliable Websites".
+Topic: Book Worm
+
+Vocab: read, find, page, book.
+
+Task: Tìm 1 thông tin trong trang sách ảo.
+Topic: Source Reviewer
+
+Vocab: credible, biased, verify.
+
+Task: Đánh giá nguồn tin (Thật/Giả).
+W95
+Review
+Imperatives (Giving advice)
+Soc: Peer Teaching.
+
+Video: "Being a Teacher".
+Topic: Teacher for a Day
+
+Vocab: teach, show, explain.
+
+Task: Dạy lại 1 từ mới cho AI.
+Topic: Peer Tutor
+
+Vocab: instruct, demonstrate, guide.
+
+Task: Quay video giảng 1 kiến thức cũ.
+W96
+Showcase
+Presentational Language
+Soc: Presentation.
+
+Video: "Power of Presentation".
+Topic: Mini Fair
+
+Vocab: show, look, poster.
+
+Task: Trình bày Poster nghiên cứu.
+Topic: Symposium
+
+Vocab: present, audience, visual.
+
+Task: Thuyết trình báo cáo khoa học.
+W97
+Government
+Modals of Prohibition
+Math: Percentages Intro.
+
+Video: "Percents for Kids".
+Topic: Class Rules
+
+Vocab: leader, rule, fair.
+
+Task: Chọn luật công bằng cho lớp.
+Topic: Civics 101
+
+Vocab: law, enforce, protect.
+
+Task: "Citizens must not..."
+W98
+Democracy
+Preferences: Rather / Prefer
+Math: Calculating %.
+
+Video: "Finding Simple Percents".
+Topic: Vote for Me
+
+Vocab: choose, hand, box.
+
+Task: Bỏ phiếu cho đại sứ lớp.
+Topic: Campaign Manager
+
+Vocab: election, candidate, ballot.
+
+Task: Viết diễn văn: "I would rather..."
+CYCLE 2.3: CITIZENSHIP & PASSION PROJECT (WEEKS 99-100)
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE
+App: ADVANCED MODE
+W99
+Good Citizen
+Gerunds as Subjects
+Math: Pie Charts.
+
+Video: "Pie Charts Intro".
+Topic: Superhero Citizen
+
+Vocab: help, kind, nice.
+
+Task: Việc tốt vs Việc xấu.
+Topic: Social Worker
+
+Vocab: volunteer, duty, community.
+
+Task: "Helping others is important."
+W100
+Rights
+Abstract Nouns
+Math: % Word Problems.
+
+Video: "Percent Word Problems".
+Topic: Fair Play
+
+Vocab: free, safe, play.
+
+Task: Trẻ em được quyền gì? (Chọn).
+Topic: Human Rights
+
+Vocab: freedom, justice, equality.
+
+Task: Giải thích quyền tự do ngôn luận.
+
+CYCLE 2.3: CITIZENSHIP & PASSION PROJECT (WEEKS 101-120)
+Mục tiêu: Hiểu về Kinh tế cơ bản và Thực hiện Dự án Nghiên cứu cá nhân.
+Tuần
+Syllabus Topic (ELA)
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video Keywords)
+App: EASY MODE (Social - Life)
+App: ADVANCED MODE (Econ - Academic)
+W101
+Need vs Want
+Conditionals Type 2
+
+(If I had money, I would buy...)
+Math: Budgeting.
+
+Video: "Needs vs Wants for Kids".
+Topic: Shopping Cart
+
+Task: Phân loại: Mua gạo (Need) hay Kẹo (Want)?
+
+Vocab: food, toy, water, home.
+Topic: Financial Planner
+
+Task: Quản lý ngân sách gia đình giả định.
+
+Vocab: budget, expense, saving, income.
+W102
+Goods/Svcs
+Passive with Modals
+
+(Services can be provided)
+Math: Total Costs (Decimals).
+
+Video: "Goods and Services".
+Topic: Supermarket Dash
+
+Task: Phân loại cái gì cầm được (Goods) và không.
+
+Vocab: buy, bag, apple, haircut.
+Topic: The Economist
+
+Task: Phân tích ngành nghề (Sản xuất vs Dịch vụ).
+
+Vocab: tangible, intangible, provide, sector.
+W103
+Market
+Contrast Connectors
+
+(However, On the other hand)
+Math: Profit & Loss.
+
+Video: "What is Profit?".
+Topic: Lemonade Stand
+
+Task: Bán nước chanh. Lời hay lỗ?
+
+Vocab: sell, coin, money, cost.
+Topic: Business Owner
+
+Task: Tính toán lợi nhuận kinh doanh.
+
+Vocab: profit, loss, invest, revenue.
+W104
+Supply/Demand
+Correlatives
+
+(The more..., the less...)
+Math: Sales Trends (Graphs).
+
+Video: "Supply and Demand".
+Topic: Toy Shop
+
+Task: Tại sao đồ chơi hiếm lại đắt?
+
+Vocab: many, few, cheap, expensive.
+Topic: Market Analyst
+
+Task: Giải thích quy luật giá cả thị trường.
+
+Vocab: shortage, surplus, equilibrium.
+W105
+Project Start
+Wh- Questions (Inquiry)
+
+(What causes...?)
+Soc: Research Questions.
+
+Video: "Asking Good Questions".
+Topic: My Obsession
+
+Task: Chọn chủ đề đam mê (Mèo, Lego...).
+
+Vocab: hobby, like, best, choose.
+Topic: Capstone Kickoff
+
+Task: Xác định phạm vi và mục tiêu nghiên cứu.
+
+Vocab: scope, objective, hypothesis.
+W106
+Sources
+Citation Phrases
+
+(According to...)
+Soc: Internet Safety.
+
+Video: "Reliable Sources".
+Topic: Fact Hunter
+
+Task: Tìm 1 sự thật thú vị trên mạng.
+
+Vocab: true, fact, search, google.
+Topic: The Researcher
+
+Task: Đánh giá độ tin cậy của trang web.
+
+Vocab: credible, source, data, verify.
+W107
+Notes
+Fragments (Note-taking)
+
+(Using keywords only)
+Soc: Notetaking Skills.
+
+Video: "How to Take Notes".
+Topic: Sticky Notes
+
+Task: Ghi lại 3 ý chính từ đoạn văn.
+
+Vocab: write, short, remember, point.
+Topic: Data Organizer
+
+Task: Tổng hợp thông tin, tránh đạo văn.
+
+Vocab: summarize, paraphrase, key point.
+W108
+Outline
+Future Plans
+
+(I will write about...)
+Soc: Logic Structuring.
+
+Video: "Making an Outline".
+Topic: Story Map
+
+Task: Sắp xếp thứ tự: Đầu-Giữa-Cuối.
+
+Vocab: start, middle, end, plan.
+Topic: Project Blueprint
+
+Task: Lập dàn ý chi tiết 4 phần.
+
+Vocab: hierarchy, structure, logical flow.
+W109
+Drafting 1
+Topic Sentences
+
+(The main idea is...)
+Math: Coordinates Review.
+
+Video: "Coordinate Plane".
+Topic: Writer's Block 1
+
+Task: Viết đoạn đầu tiên về chủ đề.
+
+Vocab: sentence, write, idea, first.
+Topic: The Draftsman
+
+Task: Triển khai luận điểm 1 với dẫn chứng.
+
+Vocab: elaborate, evidence, support.
+W110
+Drafting 2
+Linking Words (Add)
+
+(Also, In addition)
+Math: Plotting Points.
+
+Video: "Plotting Points".
+Topic: Writer's Block 2
+
+Task: Viết đoạn tiếp theo.
+
+Vocab: next, also, and, too.
+Topic: The Connector
+
+Task: Sử dụng từ nối nâng cao để chuyển ý.
+
+Vocab: furthermore, however, therefore.
+W111
+Intro/Conc
+Summary Phrases
+
+(In conclusion, To sum up)
+Math: Data Vis (Bar Graphs).
+
+Video: "Making Bar Graphs".
+Topic: The Bookend
+
+Task: Viết câu mở đầu và kết thúc.
+
+Vocab: hello, bye, finish, end.
+Topic: The Hooker
+
+Task: Viết câu dẫn (Hook) và kết luận ấn tượng.
+
+Vocab: thesis, summary, impression.
+W112
+Editing
+Self-Correction
+
+(Spelling/Punctuation)
+Math: Data Analysis (Mean).
+
+Video: "Finding the Mean".
+Topic: Magic Glasses
+
+Task: Tìm lỗi chính tả trong câu.
+
+Vocab: wrong, fix, spell, letter.
+Topic: Editor-in-Chief
+
+Task: Biên tập và chỉnh sửa ngữ pháp.
+
+Vocab: grammar, coherence, refine.
+W113
+Visuals
+Prepositions (Captions)
+
+(In this photo...)
+Math: Geometry Review.
+
+Video: "Geometry Review".
+Topic: Picture Perfect
+
+Task: Chọn ảnh minh họa phù hợp.
+
+Vocab: photo, picture, color, show.
+Topic: Graphic Designer
+
+Task: Thiết kế biểu đồ hoặc chú thích ảnh.
+
+Vocab: diagram, layout, caption.
+W114
+Assembly
+Imperatives (Layout)
+
+(Put this here)
+Math: Measurement (Layout).
+
+Video: "Design Layout".
+Topic: Poster Maker
+
+Task: Dán chữ và ảnh lên bìa ảo.
+
+Vocab: glue, stick, paper, move.
+Topic: Layout Artist
+
+Task: Dàn trang báo cáo thẩm mỹ.
+
+Vocab: format, align, aesthetic.
+W115
+Cue Cards
+Imperatives (Reminders)
+
+(Look up, Smile)
+Math: Logic Puzzles.
+
+Video: "Logic Puzzles".
+Topic: Cheat Sheet
+
+Task: Ghi từ khóa để nhớ khi nói.
+
+Vocab: card, word, look, say.
+Topic: Speech Writer
+
+Task: Soạn thẻ ghi chú diễn thuyết.
+
+Vocab: prompt, notes, memorize.
+W116
+Rehearsal
+Intonation (Rising/Falling)
+Math: Math Games.
+
+Video: "Math Games".
+Topic: Mirror Talk
+
+Task: Tập nói to, rõ ràng.
+
+Vocab: loud, clear, smile, voice.
+Topic: Voice Coach
+
+Task: Luyện ngữ điệu và cử chỉ.
+
+Vocab: intonation, pace, gesture.
+W117
+Showcase A
+Presentation Language
+
+(Welcome, Today I will...)
+Soc: Public Speaking.
+
+Video: "Giving a Speech".
+Topic: Show Time A
+
+Task: Trình bày sản phẩm (Quay video).
+
+Vocab: show, tell, project, like.
+Topic: Conference A
+
+Task: Thuyết trình và trả lời Q&A.
+
+Vocab: present, respond, audience.
+W118
+Showcase B
+Feedback Language
+
+(I like..., You should...)
+Soc: Peer Evaluation.
+
+Video: "Constructive Feedback".
+Topic: Show Time B
+
+Task: Xem bạn trình bày và vỗ tay.
+
+Vocab: watch, clap, good, job.
+Topic: Conference B
+
+Task: Đánh giá phản biện đồng đẳng.
+
+Vocab: evaluate, feedback, criteria.
+W119
+Reflection
+Past Tense (Reflection)
+
+(I learned, It was)
+Math: Assessment.
+
+Video: "Self Reflection".
+Topic: My Diary
+
+Task: Cảm xúc sau dự án (Vui/Mệt?).
+
+Vocab: happy, tired, proud, hard.
+Topic: Self-Evaluation
+
+Task: Phân tích điểm mạnh/yếu.
+
+Vocab: strength, weakness, growth.
+W120
+Graduation
+Celebration
+Event: Phase 2 Completion.
+
+Video: "Celebration Song".
+Topic: Party!
+
+Task: Nhận huy hiệu Phase 2.
+
+Vocab: yay, gift, done, win.
+Topic: Commencement
+
+Task: Tổng kết hành trình Phase 2.
+
+Vocab: achievement, milestone, transition.
+
+🎓 GIAI ĐOẠN 3: ADVANCED SYNTHESIS (WEEKS 121-156)
+Mục tiêu: Đỉnh cao của chương trình - Tranh biện và Tư duy phản biện.
+PROJECT 1: HOMEWORK DEBATE (WEEKS 121-132)
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE (Opinion)
+App: ADVANCED MODE (Argument)
+W121
+Homework?
+Modals of Possibility
+
+(It might cause stress)
+Math: Fractions Review.
+
+Video: "Equivalent Fractions".
+Topic: Yay or Nay?
+
+Task: Bình chọn: Thích/Ghét bài tập?
+
+Vocab: fun, boring, hard.
+Topic: Education Policy
+
+Task: Phân tích lợi/hại vĩ mô.
+
+Vocab: academic, burden, stress.
+W122
+Listening
+Reporting Verbs
+
+(Claim, Argue, State)
+Math: Adding Fractions.
+
+Video: "Adding Fractions".
+Topic: Listening Ears
+
+Task: Nghe bạn nói và chọn ý đúng.
+
+Vocab: listen, hear, yes, no.
+Topic: Active Listener
+
+Task: Nghe tranh luận, ghi chú T-Chart.
+
+Vocab: claim, counter-claim, point.
+W123
+Thesis
+Concession (Although)
+
+(Although it is good...)
+Math: Multiplying Fractions.
+
+Video: "Multiplying Fractions".
+Topic: My Big Opinion
+
+Task: "Tôi nghĩ BTVN là..."
+
+Vocab: think, believe, bad.
+Topic: The Thesis
+
+Task: Xây dựng câu luận đề vững chắc.
+
+Vocab: stance, position, assertion.
+W124
+Arguments
+Linking Words (Sequence)
+
+(Firstly, Furthermore)
+Math: Decimals to Fractions.
+
+Video: "Decimals to Fractions".
+Topic: Because...
+
+Task: Đưa ra 1 lý do đơn giản.
+
+Vocab: time, play, tired.
+Topic: The Lawyer's Case
+
+Task: Viết đoạn văn P.E.E.
+
+Vocab: evidence, prove, demonstrate.
+W125
+Structure
+Persuasive Verbs
+
+(Urge, Recommend)
+Math: Fraction Word Problems.
+
+Video: "Fraction Word Problems".
+Topic: Puzzle Pieces
+
+Task: Ghép các câu thành đoạn văn.
+
+Vocab: start, end, fix.
+Topic: Logical Flow
+
+Task: Hoàn thiện bài luận tranh biện.
+
+Vocab: coherence, transition, persuade.
+W126
+Speech
+Signposting
+
+(Moving on to...)
+Math: Logic Puzzles.
+
+Video: "Brain Teasers".
+Topic: Read Aloud
+
+Task: Đọc to bài viết của mình.
+
+Vocab: speak, say, tell.
+Topic: The Orator
+
+Task: Chuyển văn viết thành văn nói.
+
+Vocab: rhetoric, delivery, emphasize.
+W127
+Rebuttal
+Contrast Connectors
+
+(On the contrary)
+Math: Critical Thinking Math.
+
+Video: "Critical Thinking".
+Topic: Polite No
+
+Task: Cách từ chối lịch sự.
+
+Vocab: sorry, no, but.
+Topic: Counter-Attack
+
+Task: Kỹ thuật bẻ gãy lập luận.
+
+Vocab: refute, oppose, contradiction.
+W128
+Debate 1
+Spoken Interaction
+Soc: Live Debate.
+
+Video: "Kids Debate".
+Topic: Class Vote
+
+Task: Bình chọn ai nói hay hơn.
+
+Vocab: vote, win, best.
+Topic: The Arena
+
+Task: Thực chiến tranh biện ảo.
+
+Vocab: motion, opposition, proposition.
+W129
+Review
+Review Logic
+Math: Logic Games.
+
+Video: "Math Strategy Games".
+Topic: Math Fun
+
+Task: Game phân số.
+
+Vocab: number, math, solve.
+Topic: Logic Master
+
+Task: Ôn tập tư duy logic toán học.
+
+Vocab: deduce, grid, solution.
+W130
+Skills Rev
+Writing Fluency
+Soc: Writing Speed.
+
+Video: "Writing Fluency".
+Topic: Speed Writer
+
+Task: Viết nhanh câu đơn.
+
+Vocab: fast, write, quick.
+Topic: Fluency Drill
+
+Task: Tăng tốc độ viết luận.
+
+Vocab: fluency, stamina, accuracy.
+W131
+Skills Rev
+Speaking Fluency
+Soc: Speaking Speed.
+
+Video: "Speaking Clearly".
+Topic: Speed Talker
+
+Task: Trả lời nhanh câu hỏi.
+
+Vocab: speak, answer, fast.
+Topic: Eloquence
+
+Task: Tăng tốc độ phản xạ nói.
+
+Vocab: articulate, impromptu, respond.
+W132
+Consolidation
+Self-Correction
+Soc: Project Review.
+
+Video: "Reviewing Work".
+Topic: Project Wrap-up
+
+Task: Tổng kết điểm số.
+
+Vocab: finish, done, score.
+Topic: Project Review
+
+Task: Rút kinh nghiệm chiến thuật.
+
+Vocab: strategy, reflection, tactic.
+PROJECT 2: VIDEO GAMES DEBATE (WEEKS 133-144)
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE (Opinion)
+App: ADVANCED MODE (Argument)
+W133
+Data Search
+Citation
+
+(According to...)
+Math: Geometry (Angles).
+
+Video: "Types of Angles".
+Topic: Gamer's Life
+
+Task: Bạn chơi game bao lâu?
+
+Vocab: game, hour, play.
+Topic: Data Miner
+
+Task: Tìm thống kê về game thủ.
+
+Vocab: statistic, percent, data.
+W134
+Fallacies
+Qualifiers
+
+(Some, Many, Often)
+Math: Geometry (Triangles).
+
+Video: "Types of Triangles".
+Topic: Truth Detective
+
+Task: Tin đồn hay sự thật?
+
+Vocab: true, false, lie.
+Topic: Fallacy Hunter
+
+Task: Săn lỗi ngụy biện "Vơ đũa".
+
+Vocab: fallacy, assume, invalid.
+W135
+Counter-Arg
+Contrast Transitions
+
+(Nevertheless)
+Math: Perimeter/Area Complex.
+
+Video: "Area of Composite Shapes".
+Topic: On the Other Hand
+
+Task: Nhìn mặt tốt và xấu.
+
+Vocab: good, bad, side.
+Topic: The Refutation
+
+Task: Viết đoạn bác bỏ đối thủ.
+
+Vocab: nevertheless, despite, refute.
+W136
+Drafting
+Essay Structure
+Math: Symmetry.
+
+Video: "Symmetry Lines".
+Topic: Game Review
+
+Task: Viết về game yêu thích.
+
+Vocab: like, fun, hero.
+Topic: The Essayist
+
+Task: Viết bài luận 5 đoạn.
+
+Vocab: cite, argument, structure.
+W137
+Editing
+Strong Verbs/Adjectives
+Math: Geometry Problems.
+
+Video: "Geometry Word Problems".
+Topic: Power Up!
+
+Task: Đổi từ "bad" -> "not good".
+
+Vocab: better, strong, word.
+Topic: The Rhetoric
+
+Task: Tinh chỉnh từ ngữ học thuật.
+
+Vocab: synonym, precise, impact.
+W138
+Adv Rebuttal
+Polite Disagreement
+
+(I see your point, but...)
+Math: Logic Deduction.
+
+Video: "Logic Grid Puzzles".
+Topic: Smart No
+
+Task: Phản đối thông minh.
+
+Vocab: wrong, check, no.
+Topic: Evidence Checker
+
+Task: Tấn công nguồn tin.
+
+Vocab: biased, outdated, unreliable.
+W139
+Strategy
+Teamwork Language
+Math: Transformations.
+
+Video: "Translations Reflections".
+Topic: Team Plan
+
+Task: Phân vai.
+
+Vocab: you, me, help.
+Topic: War Room
+
+Task: Lên chiến thuật nhóm.
+
+Vocab: role, opener, closer.
+W140
+Debate 2
+Live Speaking
+Soc: Live Debate.
+
+Video: "Debate Competition".
+Topic: Game Talk
+
+Task: Thảo luận nhóm.
+
+Vocab: talk, share, idea.
+Topic: The Showdown
+
+Task: Tranh luận trực tiếp.
+
+Vocab: cross-examine, argue, judge.
+W141
+Math Rev
+Review Angles
+Math: Angles & Lines.
+
+Video: "Geometry Review".
+Topic: Shape Quiz
+
+Task: Hình học cơ bản.
+
+Vocab: shape, angle, line.
+Topic: Geometry Master
+
+Task: Ứng dụng hình học.
+
+Vocab: degree, protractor, acute.
+W142
+Math Rev
+Review Area/Vol
+Math: Area & Volume.
+
+Video: "Area and Volume".
+Topic: Measure It
+
+Task: Đo diện tích.
+
+Vocab: big, space, measure.
+Topic: Spatial Logic
+
+Task: Giải toán thể tích.
+
+Vocab: volume, surface area, formula.
+W143
+Analysis
+Persuasive Language
+Soc: Media Literacy.
+
+Video: "Analyzing Commercials".
+Topic: Ad Watcher
+
+Task: Quảng cáo bán gì?
+
+Vocab: buy, sell, ad.
+Topic: Media Analyst
+
+Task: Phân tích thủ thuật Media.
+
+Vocab: persuasion, technique, appeal.
+W144
+Prep
+Review Topics
+Soc: Capstone Intro.
+
+Video: "Project Intro".
+Topic: Ready Set Go
+
+Task: Chuẩn bị dự án cuối.
+
+Vocab: ready, start, go.
+Topic: Capstone Brief
+
+Task: Nhận đề tài tốt nghiệp.
+
+Vocab: brief, requirement, guideline.
+PROJECT 3: SMARTPHONE & GRADUATION (WEEKS 145-156)
+Tuần
+Syllabus Topic
+Grammar Topic
+Math/Sci/Soc Focus (AI & Video)
+App: EASY MODE (Opinion)
+App: ADVANCED MODE (Argument)
+W145
+Indep. Research
+Source Attribution
+Math: Mean/Median.
+
+Video: "Mean Median Mode".
+Topic: My Phone
+
+Task: Tìm bài báo về ĐT.
+
+Vocab: phone, read, news.
+Topic: Tech Ethics
+
+Task: Nghiên cứu độc lập.
+
+Vocab: ethical, privacy, addiction.
+W146
+Synthesis
+Comparison Connectors
+
+(Similarly, Likewise)
+Math: Mode/Range.
+
+Video: "Mode and Range".
+Topic: Idea Mixer
+
+Task: Kết hợp 2 ý tưởng.
+
+Vocab: mix, both, same.
+Topic: Synthesis Lab
+
+Task: Tổng hợp thông tin.
+
+Vocab: synthesize, compare, contrast.
+W147
+Adv Thesis
+Subordinating Conj.
+
+(While, Whereas)
+Math: Probability.
+
+Video: "Probability for Kids".
+Topic: Final Opinion
+
+Task: Ý kiến chốt.
+
+Vocab: agree, but, also.
+Topic: Nuanced Stance
+
+Task: Viết luận đề phức hợp.
+
+Vocab: nuance, complexity, perspective.
+W148
+Drafting
+Paragraph Structure
+Math: Interpreting Graphs.
+
+Video: "Analyzing Graphs".
+Topic: My Article
+
+Task: Tự viết bài báo.
+
+Vocab: write, story, news.
+Topic: Independent Writer
+
+Task: Viết độc lập không mẫu.
+
+Vocab: independence, coherence, style.
+W149
+Polish
+Final Proofreading
+Math: Data Project.
+
+Video: "Data Analysis Project".
+Topic: Shiny & New
+
+Task: Kiểm tra lỗi cuối.
+
+Vocab: check, perfect, fix.
+Topic: Final Polish
+
+Task: Hoàn thiện khóa luận.
+
+Vocab: polish, refine, submit.
+W150
+Mock Debate
+Speaking Review
+Soc: Simulation.
+
+Video: "Debate Practice".
+Topic: Practice Run
+
+Task: Tập dượt.
+
+Vocab: practice, speak, try.
+Topic: Simulation
+
+Task: Mô phỏng tranh luận.
+
+Vocab: simulate, dry run, feedback.
+W151
+Capstone
+Formal Speech
+Soc: Final Debate.
+
+Video: "Championship Debate".
+Topic: The Big Talk
+
+Task: Cổ vũ bạn bè.
+
+Vocab: go, win, team.
+Topic: Final Verdict
+
+Task: Tranh luận tốt nghiệp.
+
+Vocab: adjudicate, defend, conclude.
+W152
+Narrative Rev
+Narrative Tenses
+Math: Pre-Algebra Patterns.
+
+Video: "Number Sequences".
+Topic: Story Flash
+
+Task: Truyện nhanh.
+
+Vocab: once, end, fast.
+Topic: Narrative Sprint
+
+Task: Chạy nước rút viết truyện.
+
+Vocab: narrative, plot, climax.
+W153
+Expository Rev
+Explanatory Language
+Math: Volume/Surface Area.
+
+Video: "Surface Area".
+Topic: The Expert
+
+Task: Giải thích cách làm.
+
+Vocab: how to, make, cook.
+Topic: Exposition Mastery
+
+Task: Bậc thầy giải thích.
+
+Vocab: expository, inform, clarify.
+W154
+Impromptu
+Fillers & Fluency
+Soc: Speaking Skills.
+
+Video: "Impromptu Speaking".
+Topic: Surprise!
+
+Task: Nói bất ngờ.
+
+Vocab: surprise, talk, fast.
+Topic: On The Spot
+
+Task: Ứng biến tình huống.
+
+Vocab: improvise, spontaneous, adapt.
+W155
+Portfolio
+Reflection (Past/Present)
+Math: Math Fun Day.
+
+Video: "Math Puzzles".
+Topic: Best Memories
+
+Task: Kỷ niệm đẹp.
+
+Vocab: photo, look back, nice.
+Topic: Portfolio Curator
+
+Task: Tuyển tập hồ sơ.
+
+Vocab: curate, portfolio, showcase.
+W156
+Graduation
+Celebration
+Event: B1+ Achievement.
+
+Video: "Graduation Day".
+Topic: Hooray!
+
+Task: Ăn mừng.
+
+Vocab: party, gift, happy.
+Topic: B1+ Master
+
+Task: Thủ khoa.
+
+Vocab: graduate, honor, certify.
+
+
+
+
+🏭 PHẦN IV: QUY CHUẨN SẢN XUẤT (PRODUCTION SPECS)
+1. Quy tắc "Content Matching" & "Vocabulary Lag"
+	•	Matching: Content Writer phải luôn mở Syllabus tuần tương ứng ra xem trước khi viết bài cho App. Đảm bảo từ vựng và ngữ pháp khớp hoặc nâng cao hơn, không được thấp hơn Syllabus.
+	•	Vocabulary Lag (Độ trễ): Đảm bảo từ vựng Advanced Mode tuần này là tiền đề (Pre-teach) cho Easy Mode của 2-3 tuần sau trong Syllabus.
+2. Quy tắc "Audio First"
+	•	Tất cả bài đọc (Read & Explore) và từ vựng (New Words) BẮT BUỘC phải có file âm thanh chất lượng cao (Native Speaker).
+	•	Voice Acting: Audio phải được thu âm với cảm xúc và ngữ điệu rõ ràng (diễn cảm), không đọc đều đều như máy.
+	•	Lý do: Để học sinh Shadowing học được cả thái độ và cảm xúc của người nói, đặc biệt quan trọng trong các tuần kể chuyện (Narrative) hoặc tranh luận (Persuasive).
+3. Quy tắc "Smart Topic" (Tên Chủ đề Thông minh)
+	•	Cấm kỵ: Không dùng tên kỹ năng (Grammar, Writing) làm tên bài học hiển thị cho trẻ.
+	•	Yêu cầu: Dùng phép ẩn dụ, nhập vai (Role-play), hoặc tên nhiệm vụ (Mission).
+	•	Sai: "Luyện sửa lỗi".
+	•	Đúng: "Kỹ sư sửa máy" (Easy) / "Biên tập viên" (Adv).
+4. Quy tắc "Math Bridge" (Phase 1)
+	•	Tuyệt đối KHÔNG đưa bài tập tính toán đố mẹo vào Easy Mode ở Phase 1. Chỉ tập trung vào từ vựng Toán (Plus, Minus, Circle, Square) và logic hình ảnh đơn giản.
+5. Quy tắc "Voice-First for AI" (MỚI)
+	•	Trong Phase 1 & 2, giao diện mặc định của Ask AI là nút Microphone. Prompt phải đi kèm Audio mẫu (Phase 1) hoặc Từ khóa phát âm (Phase 2).
+6. Quy tắc "Hybrid Writing" (MỚI)
+	•	Các bài tập viết dài (trên 50 từ) phải luôn bật tùy chọn Mic (Dictation) hoặc Camera (Photo). Không ép buộc gõ phím là phương thức duy nhất.
+7. Quy tắc Scaffolding (Giàn giáo Sư phạm)
+	•	Easy Mode: Luôn cung cấp "phao cứu sinh" (Hints, Sentence Starters, Picture Cues).
+	•	Advanced Mode: Loại bỏ dần sự hỗ trợ. Yêu cầu tự tư duy (Open-ended tasks).
+8 . Quy tắc Content Morphing (Biến đổi Nội dung)
+	•	Toán: Từ "Vui chơi với từ vựng Toán" (Phase 1) -> "Giải toán đố thực tế" (Phase 2) -> "Phân tích số liệu/Logic" (Phase 3).
+	•	Viết: Từ "Điền từ" (Phase 1) -> "Viết câu" (Phase 2) -> "Viết luận" (Phase 3).
+	•	Nghe: Từ "Nghe chép từ" (Phase 1) -> "Nghe tóm tắt ý chính" (Phase 3).
+9. Quy tắc "Strict Mode" cho Writing (Phase 2 & 3)
+Advanced Mode: Các bài tập viết (Writing Challenge) phải có bộ đếm từ (Min Word Count) và kiểm tra lỗi chính tả tự động. Không cho nộp bài nếu viết quá ngắn hoặc quá ẩu.
+
+🏆 PHẦN V: QUY CHUẨN SỰ KIỆN ĐẶC BIỆT (SPECIAL EVENTS SPECS)
+Quy tắc "Graduation Events" (Sự kiện Tốt nghiệp Số)
+	•	Thời điểm: Tuần 54, 120, 156.
+	•	Cơ chế: Khi hoàn thành bài cuối cùng của các tuần này, App kích hoạt:
+	•	Celebration Mode: Hiệu ứng pháo hoa, nhạc chúc mừng.
+	•	Digital Certificate: Cấp chứng chỉ số có thể tải về/chia sẻ.
+	•	Level Up: Mở khóa danh hiệu mới (Ví dụ: Từ "Explorer" lên "Scholar").
+

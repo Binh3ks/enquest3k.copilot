@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>🧹 Clear All Cache & Storage - FINAL</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .code {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🧹 Clear All Cache & Storage</h1>
+        <p><strong>Vấn đề:</strong> Browser đang cache audio & chat messages cũ (giọng cũ + JSON hiển thị sai)</p>
+        
+        <p><strong>Giải pháp:</strong> Xóa toàn bộ:</p>
+        <ul>
+            <li>✅ localStorage (chat history, session data)</li>
+            <li>✅ sessionStorage (temporary data)</li>
+            <li>✅ IndexedDB (offline database)</li>
+            <li>✅ Service Worker cache</li>
+            <li>✅ Browser cache (audio files)</li>
+        </ul>
+
+        <button class="btn" onclick="clearEverything()">🧹 Clear Everything</button>
+        <button class="btn" onclick="window.location.href='http://localhost:5177/week/2/read_explore'">🔄 Go to Week 2 (Fresh Start)</button>
+        
+        <div id="result"></div>
+        
+        <div class="code">
+            <strong>Manual method (if button doesn't work):</strong><br>
+            1. Open DevTools (Cmd+Option+I)<br>
+            2. Application tab → Clear storage<br>
+            3. Check all boxes → Clear site data<br>
+            4. Hard reload (Cmd+Shift+R)
+        </div>
+    </div>
+
+    <script>
+        async function clearEverything() {
+            const result = document.getElementById('result');
+            let messages = [];
+            
+            try {
+                // 1. Clear localStorage
+                const localStorageKeys = Object.keys(localStorage);
+                localStorage.clear();
+                messages.push(`✅ Cleared ${localStorageKeys.length} localStorage items`);
+                
+                // 2. Clear sessionStorage
+                const sessionStorageKeys = Object.keys(sessionStorage);
+                sessionStorage.clear();
+                messages.push(`✅ Cleared ${sessionStorageKeys.length} sessionStorage items`);
+                
+                // 3. Clear IndexedDB
+                if (window.indexedDB) {
+                    const dbs = await indexedDB.databases();
+                    for (const db of dbs) {
+                        indexedDB.deleteDatabase(db.name);
+                        messages.push(`✅ Deleted IndexedDB: ${db.name}`);
+                    }
+                }
+                
+                // 4. Clear Service Worker cache
+                if ('serviceWorker' in navigator) {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (const registration of registrations) {
+                        await registration.unregister();
+                        messages.push(`✅ Unregistered Service Worker`);
+                    }
+                }
+                
+                // 5. Clear Cache API
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    for (const name of cacheNames) {
+                        await caches.delete(name);
+                        messages.push(`✅ Deleted cache: ${name}`);
+                    }
+                }
+                
+                messages.push('');
+                messages.push('🎉 <strong>All done! Reload page with Cmd+Shift+R now.</strong>');
+                
+                result.innerHTML = `<div class="result success">${messages.join('<br>')}</div>`;
+                
+                // Auto-reload after 2 seconds
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 2000);
+                
+            } catch (error) {
+                result.innerHTML = `<div class="result warning">⚠️ Error: ${error.message}<br><br>Try manual method below.</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

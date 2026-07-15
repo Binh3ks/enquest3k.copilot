@@ -1,0 +1,2479 @@
+{
+  "week": 27,
+  "unit_theme": "Memories — The Garden Mystery",
+  "quick_ref": {
+    "Week": "27",
+    "Block": "B",
+    "Theme": "Time Detective Agency — The Garden Mystery",
+    "Grammar Focus": "Present Simple for Facts (It grows, It needs) vs. Past Simple",
+    "Key Pattern": "\"A plant needs water.\" / \"Roots grow down.\"",
+    "Vocabulary": "10 Tier 1 (production) + 2 Tier 2 (reception)",
+    "Spiral Review": "W19–W26: Past Simple, Sequence words, Feelings",
+    "STEM/CLIL Topic": "Plant Growth & Life Cycle",
+    "VC Word Targets": "S1=95w (70%) S2=105w (65%) S3=115w (60%)",
+    "FK Target": "Grade 2 (FK 70–80)"
+  },
+  "methodology": [
+    {
+      "title": "2.1 Core Principle: Present Facts vs. Past Actions",
+      "content": [
+        "Problem: Students often confuse present facts with past events when storytelling.",
+        "Solution: Introduce the Present Simple specifically for universal, scientific facts (e.g., \"A seed needs water\"), explicitly contrasting it with the Past Simple used for specific historical actions (e.g., \"Yesterday, I planted a seed\")."
+      ]
+    },
+    {
+      "title": "2.2 Session Flow (120 Minutes)",
+      "content": [
+        "Session 1: Introduce plant vocabulary and Present Simple for general facts.",
+        "Session 2: Contrast Present Simple facts with Past Simple narratives.",
+        "Session 3: Mastery of explaining the plant growth process."
+      ]
+    },
+    {
+      "title": "2.3 Vocabulary Tiering System",
+      "content": []
+    },
+    {
+      "title": "2.4 Teacher Notes: Pull-Out Tasks & Communicative Task",
+      "content": [
+        "S1 pull-out: Show a plant part flashcard. Student states a fact about it (e.g., \"The stem grows up.\").",
+        "S2 pull-out: Ask a contrast question: \"What did you do yesterday? What does a plant do every day?\"",
+        "Communicative task (Step 5): Information Gap. Student A has half the facts about a sunflower, Student B has the other half. They ask questions to complete the growth chart."
+      ]
+    }
+  ],
+  "vocab_tiers": [
+    {
+      "Word": "seed",
+      "Vietnamese": "hạt giống",
+      "Key Collocation(s)": "plant a seed",
+      "Memory Trick": "S-E-E-D: Small Earth Energy Drops"
+    },
+    {
+      "Word": "soil",
+      "Vietnamese": "đất",
+      "Key Collocation(s)": "in the soil",
+      "Memory Trick": "S-O-I-L: Sand Outside Is Little"
+    },
+    {
+      "Word": "water",
+      "Vietnamese": "nước/tưới",
+      "Key Collocation(s)": "need water",
+      "Memory Trick": "W-A-T-E-R: We All Take Energy Regularly"
+    },
+    {
+      "Word": "sun",
+      "Vietnamese": "mặt trời",
+      "Key Collocation(s)": "the sun shines",
+      "Memory Trick": "S-U-N: Sky Up Now"
+    },
+    {
+      "Word": "root",
+      "Vietnamese": "rễ",
+      "Key Collocation(s)": "roots grow down",
+      "Memory Trick": "R-O-O-T: Reaching Out Of Topsoil"
+    },
+    {
+      "Word": "stem",
+      "Vietnamese": "thân cây",
+      "Key Collocation(s)": "a green stem",
+      "Memory Trick": "S-T-E-M: Stands Tall Every Morning"
+    },
+    {
+      "Word": "leaf",
+      "Vietnamese": "lá",
+      "Key Collocation(s)": "green leaf",
+      "Memory Trick": "L-E-A-F: Light Energy Absorbed Fast"
+    },
+    {
+      "Word": "flower",
+      "Vietnamese": "hoa",
+      "Key Collocation(s)": "a beautiful flower",
+      "Memory Trick": "F-L-O-W-E-R: Finds Light Outside When Everyone Rests"
+    },
+    {
+      "Word": "grow",
+      "Vietnamese": "lớn lên",
+      "Key Collocation(s)": "grow fast",
+      "Memory Trick": "G-R-O-W: Getting Really Old Wisely"
+    },
+    {
+      "Word": "plant",
+      "Vietnamese": "cây/trồng",
+      "Key Collocation(s)": "a green plant",
+      "Memory Trick": "P-L-A-N-T: Put Little Apples Near Trees"
+    },
+    {
+      "Word": "gardener",
+      "Vietnamese": "người làm vườn",
+      "Key Collocation(s)": "the gardener explains",
+      "Memory Trick": "Definition: a person who works in a garden"
+    },
+    {
+      "Word": "secret",
+      "Vietnamese": "bí mật",
+      "Key Collocation(s)": "that's the secret",
+      "Memory Trick": "Definition: something hidden"
+    }
+  ],
+  "sessions": [
+    {
+      "session": 1,
+      "session_label": "Session 1 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: _________________________________ Date: ____________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã trồng một cái cây. -> ____________________________________________________________",
+            "Error Correction: Then, I waters the seed yesterday. -> ____________________________________________________________",
+            "Fill-in: (Then) First, I dug a hole. ________________________________________, I put the seed in."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  The Garden Mystery: How Plants Grow Detective Luna is investigating the garden! \"How do plants grow?\" she asks. The gardener explains: \"First, you plant a seed in the soil. The seed is small and brown. Then, you water it. Plants need water to grow. Next, the sun shines on the soil. Plants need sunlight too. After that, roots grow down into the soil. A small stem grows up! Then, leaves appear on the stem. The plant has green leaves. Finally, a beautiful flower blooms! A plant needs three things: soil, water, and sun. That's the secret!\"",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: The gardener explains how plants sleep.",
+            "T / F: A plant needs three things to grow.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What do you plant in the soil first? -> ____________________________________________________________",
+            "What grows down into the soil? -> ____________________________________________________________",
+            "Fill-in from text: Finally, a beautiful ________________________________________ blooms!",
+            "Stage 3B — Inference: Why does the stem grow up? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: seed, soil, water, sun + Cambridge Preview (Tier 2)",
+          "content": [
+            "2. soil (Vietnamese: đất)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: in the soil",
+            "→ Collocation practice:",
+            "a. Put the seed in the ________________________________ (soil / water).",
+            "b. The ________________________________ (soil / flower) is brown.",
+            "→ Your turn: The dark soil ____________________________________________________________",
+            "3. water (Vietnamese: nước)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: need water",
+            "→ Collocation practice:",
+            "a. Plants need ________________________________ (water / fire).",
+            "b. I drink cold ________________________________ (water / stem).",
+            "→ Your turn: I drink ____________________________________________________________",
+            "4. sun (Vietnamese: mặt trời)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: the sun shines",
+            "→ Collocation practice:",
+            "a. The ________________________________ (sun / leaf) shines.",
+            "b. Plants need the ________________________________ (sun / soil).",
+            "→ Your turn: The bright sun ____________________________________________________________",
+            "5. root (Vietnamese: rễ)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: roots grow down",
+            "→ Collocation practice:",
+            "a. The ________________________________ (roots / flowers) grow down.",
+            "b. The tree has big ________________________________ (roots / suns).",
+            "→ Your turn: The long roots ____________________________________________________________",
+            "6. stem (Vietnamese: thân cây)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a green stem",
+            "→ Collocation practice:",
+            "a. A green ________________________________ (stem / root) grows up.",
+            "b. The ________________________________ (stem / soil) is tall.",
+            "→ Your turn: The green stem ____________________________________________________________",
+            "7. leaf (Vietnamese: lá)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: green leaf",
+            "→ Collocation practice:",
+            "a. The plant has a green ________________________________ (leaf / root).",
+            "b. A ________________________________ (leaf / sun) makes food.",
+            "→ Your turn: The big leaf ____________________________________________________________",
+            "8. flower (Vietnamese: hoa)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a beautiful flower",
+            "→ Collocation practice:",
+            "a. A beautiful ________________________________ (flower / dirt) blooms.",
+            "b. The ________________________________ (flower / stem) is red.",
+            "→ Your turn: A yellow flower ____________________________________________________________",
+            "9. grow (Vietnamese: lớn lên)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: grow fast",
+            "→ Collocation practice:",
+            "a. Plants ________________________________ (grow / sleep) fast.",
+            "b. The roots ________________________________ (grow / run) down.",
+            "→ Your turn: The plants grow ____________________________________________________________",
+            "10. plant (Vietnamese: cây/trồng)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a green plant",
+            "→ Collocation practice:",
+            "a. I see a green ________________________________ (plant / rock).",
+            "b. The ________________________________ (plant / water) is big.",
+            "→ Your turn: The green plant ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "A seed needs _________ a. water to grow.",
+            "The roots _________ b. grow down.",
+            "The sun _________ c. shines on the plant.",
+            "A green stem _________ d. grows up.",
+            "The leaves _________ e. appear on the stem.",
+            "Finally, a flower _________ f. blooms.",
+            "You put the seed _________ g. in the soil.",
+            "Plants are _________ h. living things.",
+            "A plant needs _________ i. soil, water, and sun.",
+            "The gardener _________ j. explains the secret.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "1. seed / a / you / First, / plant -> ____________________________________________________________",
+            "2. down / grow / Roots / the / into / soil. -> ____________________________________________________________",
+            "3. grows / stem / A / up. / green -> ____________________________________________________________",
+            "4. needs / plant / A / water. / sun / and -> ____________________________________________________________",
+            "5. leaves / plant / The / green / has -> ____________________________________________________________",
+            "6. flower / Finally, / blooms. / beautiful / a -> ____________________________________________________________",
+            "7. shines / The / bright / sun / the / on / garden. -> ____________________________________________________________",
+            "8. grow / fast. / Plants / very -> ____________________________________________________________",
+            "9. water / roots / The / drink / the -> ____________________________________________________________",
+            "10. in / We / plant / the / seeds / soil. -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: Name a plant part (e.g., \"Root\").",
+            "Student B: State what it does (e.g., \"Roots grow down\"). Goal: Build a full plant map verbally.",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "A plant ________________________________ (needs / needed / needing) water every day.",
+            "The roots ________________________________ (grows / grow / grew) down into the earth.",
+            "Yesterday, I ________________________________ (planted / plant / plants) a seed.",
+            "The sun ________________________________ (shines / shine / shined) brightly today.",
+            "First, you ________________________________ (puts / put / putting) the seed in the soil.",
+            "A green stem ________________________________ (grows / grow / grew) up to the sky.",
+            "Last week, I ________________________________ (water / waters / watered) my garden.",
+            "Leaves ________________________________ (makes / make / making) food for the plant.",
+            "Finally, a red flower ________________________________ (blooms / bloom / blooming).",
+            "We ________________________________ (watched / watch / watches) the plant grow last month.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: Roots grow. + Add: (down) -> ____________________________________________________________",
+            "Base: A stem grows. + Add: (up) -> ____________________________________________________________",
+            "Base: I planted a seed. + Add: (yesterday) -> ____________________________________________________________",
+            "Base: Plants need water. + Add: (and sun) -> ____________________________________________________________",
+            "Base: The sun shines. + Add: (brightly) -> ____________________________________________________________",
+            "Base: Leaves appear. + Add: (on the stem) -> ____________________________________________________________",
+            "Base: A flower blooms. + Add: (beautiful) -> ____________________________________________________________",
+            "Base: I watered the plant. + Add: (last night) -> ____________________________________________________________",
+            "Base: A plant has leaves. + Add: (green) -> ____________________________________________________________",
+            "Base: We need soil. + Add: (to plant seeds) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "Write a fact about what a plant needs: ____________________________________________________________",
+            "Write a past action you did in a garden: ____________________________________________________________",
+            "What do roots do? ____________________________________________________________",
+            "What does the sun do? ____________________________________________________________",
+            "Write a sentence starting with \"Finally,\": ____________________________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about a car. ☐ The story is about a girl growing a plant. ☐ The story is about a zoo.",
+            "B.",
+            "Stage 2 — Detail: What did she plant first? ________________________________ (a) a flower (b) a leaf (c) a seed Fill in: After that, a green ________________________________ grew up.",
+            "[O] C. Stage 3B — Inference: How did the girl feel when the flower bloomed? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'A plant need water to live.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Yesterday, I water the flowers.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The roots grows down.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "The plant life cycle starts with a ____________________________________________________________.",
+            "Leaves grow to catch ____________________________________________________________.",
+            "[O Bonus]: Why do flowers make new seeds? ____________________________________________________________ 🔍 YouTube: \"Plant life cycle for kids time lapse\"",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"đất\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact with \"grow\": ____________________________________________________________",
+            "4. Write a past tense sentence with \"watered\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 27 — Session 1 | Topic: How a Plant Grows",
+          "content": [
+            "First, ____________________________________________________________",
+            "Then, ____________________________________________________________",
+            "Next, ____________________________________________________________ ☐ Did I use present simple for scientific facts correctly?",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 1",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'A plant needs': ____________________________________________________________",
+            "Write a sentence with 'Roots grow': ____________________________________________________________",
+            "Write a sentence with 'The sun': ____________________________________________________________",
+            "Write a sentence with 'Leaves make': ____________________________________________________________",
+            "Write a past tense sentence about a garden: ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "A plant needing water. -> ____________________________________________________________",
+            "Roots grows down. -> ____________________________________________________________",
+            "The sun shine brightly. -> ____________________________________________________________",
+            "Yesterday I plant a seed. -> ____________________________________________________________",
+            "Leaves is green. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite sentence 1 perfectly: ____________________________________________________________",
+            "Rewrite sentence 2 perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1",
+            "\"Hello! My name is [1] _______________. I am [2] _______________ years old. Today, I will teach you how plants grow. It is a mystery! First, you plant a [3] _______________ in the [4] _______________. Then, you give it [5] _______________. Plants need [6] _______________ and [7] _______________ to live. Next, the [8] _______________ grow down into the dark [9] _______________. A strong green [10] _______________ grows up. Then, [11] _______________ appear to catch the sunlight. Finally, a beautiful [12] _______________ blooms! Plants are amazing living things. I love nature! Thank you for listening. Goodbye!\"",
+            "Word Bank (Choose the correct option): [1] (Max / Luna / Pip) [2] (eight / nine / ten) [3] (seed / rock / toy) [4] (soil / sky / fire) [5] (water / milk / juice) [6] (water / pizza / candy) [7] (sun / moon / stars) [8] (roots / clouds / birds) [9] (soil / wind / ocean) [10] (stem / rock / fish) [11] (leaves / stones / shoes) [12] (flower / tree / stick)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: _____________________________ Date: ___________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Cây cần nước và mặt trời. -> ____________________________________________________________",
+            "Error Correction: The root grow down. -> ____________________________________________________________",
+            "Fill-in: (needs) A plant ________________________________ soil to live."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Detective Luna's Garden Notebook Luna is writing notes in her detective book. She writes about the rules of nature. \"Rule number one: A seed needs wet soil to wake up. Rule number two: Roots drink water. They grow down into the earth. Rule number three: A stem carries the water. It grows up strong and tall. Rule number four: Leaves make food using the sun. Rule number five: Flowers make seeds to start again. Yesterday, I planted a sunflower seed. I was very excited. I watered it carefully.",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: Roots grow up.",
+            "T / F: Leaves use the sun to make food.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What does a seed need to wake up? -> ____________________________________________________________",
+            "What did Luna plant yesterday? -> ____________________________________________________________",
+            "Fill-in: A stem ________________________________ the water.",
+            "Stage 3B — Inference: Why was Luna excited yesterday? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words + Cambridge words (Tier 2 complete set)",
+          "content": [
+            "2. soil",
+            "→ Key Collocation: wet soil",
+            "→ Collocation practice:",
+            "a. Roots love wet ___________________ (soil/leaf).",
+            "b. Dig in the ___________________ (soil/stem).",
+            "→ Your turn: The dark soil ____________________________________________________________",
+            "3. water",
+            "→ Key Collocation: drink water",
+            "→ Collocation practice:",
+            "a. Roots ___________________ (drink/run) water.",
+            "b. I give ___________________ (water/sun) to the plant.",
+            "→ Your turn: The plant needs water ____________________________________________________________",
+            "4. sun",
+            "→ Key Collocation: warm sun",
+            "→ Collocation practice:",
+            "a. The ___________________ (sun/soil) is hot.",
+            "b. Leaves catch the ___________________ (sun/root).",
+            "→ Your turn: The warm sun ____________________________________________________________",
+            "5. root",
+            "→ Key Collocation: strong roots",
+            "→ Collocation practice:",
+            "a. The tree has strong ___________________ (roots/flowers).",
+            "b. The ___________________ (roots/leaves) drink water.",
+            "→ Your turn: The white roots ____________________________________________________________",
+            "6. stem",
+            "→ Key Collocation: tall stem",
+            "→ Collocation practice:",
+            "a. The ___________________ (stem/soil) holds the flower.",
+            "b. The ___________________ (stem/water) is green.",
+            "→ Your turn: The tall stem ____________________________________________________________",
+            "7. leaf",
+            "→ Key Collocation: catch sunlight",
+            "→ Collocation practice:",
+            "a. A ___________________ (leaf/root) catches sunlight.",
+            "b. The tree has many ___________________ (leaves/suns).",
+            "→ Your turn: The green leaf ____________________________________________________________",
+            "8. flower",
+            "→ Key Collocation: bloom brightly",
+            "→ Collocation practice:",
+            "a. The ___________________ (flower/soil) blooms brightly.",
+            "b. I smell the ___________________ (flower/root).",
+            "→ Your turn: The red flower ____________________________________________________________",
+            "9. grow",
+            "→ Key Collocation: grow tall",
+            "→ Collocation practice:",
+            "a. The trees ___________________ (grow/sleep) tall.",
+            "b. The stem will ___________________ (grow/sing) up.",
+            "→ Your turn: Plants grow ____________________________________________________________",
+            "10. plant",
+            "→ Key Collocation: living plant",
+            "→ Collocation practice:",
+            "a. A ___________________ (plant/rock) is living.",
+            "b. I water my ___________________ (plant/chair).",
+            "→ Your turn: A healthy plant ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "A seed needs _________ a. water to live.",
+            "The roots _________ b. grow down.",
+            "The stem _________ c. carries water.",
+            "The leaves _________ d. catch the sun.",
+            "The flower _________ e. blooms.",
+            "Yesterday, I _________ f. planted a seed.",
+            "I watered _________ g. the soil.",
+            "The sun _________ h. helps the plant.",
+            "Plants are _________ i. living things.",
+            "I am _________ j. waiting for it to grow.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "1. drink / Roots / water / soil. / the / from -> ____________________________________________________________",
+            "2. carries / stem / The / up. / water -> ____________________________________________________________",
+            "3. makes / food. / The / leaf / green -> ____________________________________________________________",
+            "4. beautiful / A / blooms / summer. / in / flower -> ____________________________________________________________",
+            "5. planted / Yesterday, / a / I / tree. -> ____________________________________________________________",
+            "6. watered / the / I / carefully. / soil -> ____________________________________________________________",
+            "7. grows / fast. / plant / The / very -> ____________________________________________________________",
+            "8. need / Plants / water / live. / to -> ____________________________________________________________",
+            "9. shines / sun / warm / The / brightly. -> ____________________________________________________________",
+            "10. secret / is / That / the / nature. / of -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: Name a past action you did for a plant (\"I watered the plant\").",
+            "Student B: State a fact about why (\"Because plants need water\").",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "A seed ________________________________ (rests / rest / resting) in the soil.",
+            "Yesterday, Luna ________________________________ (plants / planted / planting) a sunflower.",
+            "Roots ________________________________ (drinks / drink / drank) water every day.",
+            "The leaves ________________________________ (makes / make / making) food using the sun.",
+            "Last week, we ________________________________ (watch / watched / watches) a video about plants.",
+            "A stem ________________________________ (carries / carry / carried) water up.",
+            "Flowers ________________________________ (bloom / blooms / bloomed) beautifully.",
+            "I ________________________________ (am / was / were) excited yesterday.",
+            "Plants ________________________________ (is / are / was) living things.",
+            "The gardener ________________________________ (explains / explain / explained) the rules.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: Roots drink water. + Add: (from the soil) -> ____________________________________________________________",
+            "Base: A stem carries water. + Add: (up) -> ____________________________________________________________",
+            "Base: Leaves make food. + Add: (using the sun) -> ____________________________________________________________",
+            "Base: I planted a seed. + Add: (yesterday) -> ____________________________________________________________",
+            "Base: I watered the soil. + Add: (carefully) -> ____________________________________________________________",
+            "Base: The flower blooms. + Add: (brightly) -> ____________________________________________________________",
+            "Base: A plant needs water. + Add: (and sun) -> ____________________________________________________________",
+            "Base: The sun shines. + Add: (on the garden) -> ____________________________________________________________",
+            "Base: I was excited. + Add: (last week) -> ____________________________________________________________",
+            "Base: Plants grow. + Add: (fast) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "What does a root do? ____________________________________________________________",
+            "What does a leaf do? ____________________________________________________________",
+            "Write what you did in a garden yesterday: ____________________________________________________________",
+            "Write why a plant needs the sun: ____________________________________________________________",
+            "Write your best sentence connecting a fact and a past action: ____________________________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about cooking food. ☐ The story is about the rules of a plant. ☐ The story is about a computer.",
+            "B.",
+            "Stage 2 — Detail: What makes food for the plant? ____________ (a) roots (b) leaves (c) flowers Fill in: A stem _______________________ water up.",
+            "[O] C. Stage 3B — Inference: Why does the plant need leaves? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'The leaf make food.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I plant a tree last week.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The plant needs suns and water.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "Roots act like straws to ____________________________________________________________.",
+            "The stem carries water up to ____________________________________________________________.",
+            "[O Bonus]: What would happen if a plant had no roots? ____________________________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"hạt giống\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact about stems: ____________________________________________________________",
+            "4. Write a past action with \"planted\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 27 — Session 2 | Topic: How a Plant Grows",
+          "content": [
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 2",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'A seed needs': ____________________________________________________________",
+            "Write a sentence with 'A stem carries': ____________________________________________________________",
+            "Write a sentence with 'Leaves use': ____________________________________________________________",
+            "Write a sentence with 'Yesterday, I planted': ____________________________________________________________",
+            "Write a sentence with 'I watered': ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "Roots drinks water. -> ____________________________________________________________",
+            "The stem carry water. -> ____________________________________________________________",
+            "Yesterday I water the soil. -> ____________________________________________________________",
+            "Plants is living things. -> ____________________________________________________________",
+            "A flower bloom beautifully. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite sentence 4 perfectly: ____________________________________________________________",
+            "Rewrite sentence 5 perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2",
+            "\"Welcome back to the garden! Today we will look closely at a [1] _______________. Look at this diagram. Below the [2] _______________, the [3] _______________ grow down to find [4] _______________. They drink the water. Above the ground, a green [5] _______________ grows up. It carries the [6] _______________ to the rest of the [7] _______________. The green [8] _______________ catch the sunlight. They use the [9] _______________ to make food. Without the [10] _______________, the plant cannot [11] _______________. Finally, a [12] _______________ blooms at the top. Nature has many rules! Plants are incredible. Thank you for watching!\"",
+            "Word Bank (Choose the correct option): [1] (plant / rock / car) [2] (soil / sky / roof) [3] (roots / branches / fruits) [4] (water / fire / sand) [5] (stem / cloud / wheel) [6] (water / juice / milk) [7] (plant / house / table) [8] (leaves / stones / birds) [9] (sun / moon / rain) [10] (sun / wind / snow) [11] (grow / jump / read) [12] (flower / bug / shoe)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Session 3 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 3 | BLOCK B",
+          "content": [
+            "Name: _____________________________ Date: ___________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Cuối cùng, một bông hoa nở. -> ____________________________________________________________",
+            "Error Correction: I planted a seed tomorrow. -> ____________________________________________________________",
+            "Fill-in: (makes) A leaf ________________________________ food for the plant."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  My Sunflower Project Yesterday,",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: Max planted a sunflower seed.",
+            "T / F: Max knows the scientific facts.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What did Max put in the pot first? -> ____________________________________________________________",
+            "What will grow down? -> ____________________________________________________________",
+            "Fill-in: Finally, a big yellow ________________________________ will bloom!",
+            "Stage 3B — Inference: Why does Max know a strong stem will grow up? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Mastery Level: ALL 10 story words + ALL 2 Cambridge words",
+          "content": [
+            "2. soil",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "3. water",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "4. sun",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "5. root",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "6. stem",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "7. leaf",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "8. flower",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "9. grow",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "10. plant",
+            "→ Write 1 affirmative sentence: ____________________________________________________________",
+            "→ Write 1 negative sentence: ____________________________________________________________",
+            "→ Your best sentence: ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "I brought a _________ a. sunflower seed.",
+            "I put soil _________ b. in a pot.",
+            "I pushed _________ c. the seed down.",
+            "I poured _________ d. water carefully.",
+            "Max knows _________ e. the scientific facts.",
+            "Roots will _________ f. grow down.",
+            "A strong stem _________ g. will grow up.",
+            "Leaves will _________ h. make food.",
+            "I am excited _________ i. to see it grow.",
+            "A big flower _________ j. will bloom.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "1. seed / a / planted / Max / sunflower -> ____________________________________________________________",
+            "2. soil / put / He / the / pot. / a / in -> ____________________________________________________________",
+            "3. down / seed / pushed / the / He -> ____________________________________________________________",
+            "4. carefully. / water / poured / I -> ____________________________________________________________",
+            "5. knows / facts. / He / scientific / the -> ____________________________________________________________",
+            "6. down. / grow / roots / The / will -> ____________________________________________________________",
+            "7. up. / grow / stem / The / will -> ____________________________________________________________",
+            "8. food / make / leaves / The / will -> ____________________________________________________________",
+            "9. to / it / am / grow. / I / excited / see -> ____________________________________________________________",
+            "10. yellow / A / flower / bloom. / will -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: State a step in planting (\"First, I put soil in a pot\").",
+            "Student B: State the next step (\"Next, I plant the seed\").",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "Yesterday, Max ________________________________ (brings / brought / bringing) a seed.",
+            "He ________________________________ (puts / put / putting) soil in a pot.",
+            "He ________________________________ (pushes / pushed / pushing) the seed down.",
+            "He ________________________________ (pours / poured / pouring) water carefully.",
+            "Max ________________________________ (knows / know / knew) the facts now.",
+            "Roots ________________________________ (grows / grow / grew) down.",
+            "A strong stem ________________________________ (grows / grow / grew) up.",
+            "Leaves ________________________________ (makes / make / making) food.",
+            "I ________________________________ (am / was / were) excited yesterday.",
+            "Finally, a flower ________________________________ (blooms / bloom / bloomed) beautifully.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: I brought a seed. + Add: (sunflower) -> ____________________________________________________________",
+            "Base: I put soil. + Add: (in a pot) -> ____________________________________________________________",
+            "Base: I pushed the seed. + Add: (down) -> ____________________________________________________________",
+            "Base: I poured water. + Add: (carefully) -> ____________________________________________________________",
+            "Base: I know the facts. + Add: (scientific) -> ____________________________________________________________",
+            "Base: Roots grow. + Add: (down) -> ____________________________________________________________",
+            "Base: A stem grows. + Add: (up) -> ____________________________________________________________",
+            "Base: Leaves make food. + Add: (using the sun) -> ____________________________________________________________",
+            "Base: I was excited. + Add: (to see it) -> ____________________________________________________________",
+            "Base: A flower blooms. + Add: (yellow) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "Write what you put in a pot: ____________________________________________________________",
+            "Write what you poured: ____________________________________________________________",
+            "Write a fact about leaves: ____________________________________________________________",
+            "Write why you are excited: ____________________________________________________________",
+            "Write your best sentence summarizing the project: ____________________________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about a car. ☐ The story is about planting a sunflower. ☐ The story is about cooking.",
+            "B.",
+            "Stage 2 — Detail: What did Max push down? ____________ (a) water (b) a seed (c) a leaf Fill in: A strong _______________________ will grow up.",
+            "[O] C. Stage 3B — Inference: How do we know Max cares about his plant? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Mixed types — grammar + vocabulary + story facts)",
+          "content": [
+            "1. 'I bringed a seed yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'The stem grow up.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'Then, I woke up first.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "Leaves use sunlight, water, and air to ____________________________________________________________.",
+            "This food gives the plant energy to ____________________________________________________________.",
+            "[O Bonus]: Why do plants need air? ____________________________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"mặt trời\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact about a sunflower: ____________________________________________________________",
+            "4. Write a past action with \"poured\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 3 — FINAL)  📝  Week 27 — Session 3 | Topic: How a Plant Grows",
+          "content": [
+            "Write your full 6-sentence paragraph here:",
+            "☐ Did I check all spelling and grammar?",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 3",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'I planted': ____________________________________________________________",
+            "Write a sentence with 'Roots grow': ____________________________________________________________",
+            "Write a sentence with 'Leaves make': ____________________________________________________________",
+            "Write a sentence with 'A stem carries': ____________________________________________________________",
+            "Write a sentence with 'Finally, a flower': ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "I pours water yesterday. -> ____________________________________________________________",
+            "The roots grows down. -> ____________________________________________________________",
+            "The sun make food. -> ____________________________________________________________",
+            "A plant needing soil. -> ____________________________________________________________",
+            "The flower bloom beautifully. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite your best sentence perfectly: ____________________________________________________________",
+            "Rewrite your second best sentence perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 3",
+            "\"Hello everyone! Today I will tell you about my sunflower project. [1] __________________________________________________ and I put dark [2] _______________ inside it. [3] __________________________________________________. I pushed the small [4] _______________ down carefully. [5] __________________________________________________ to give it a drink. Now I am waiting for it to [6] _______________. I know the scientific facts. The white [7] _______________ will grow down. A tall green [8] _______________ will grow up to the sky. [9] __________________________________________________. It will be a big, beautiful sunflower. Wish me luck!\"",
+            "Word/Clause Bank (Choose the correct option): [1] (First, I got a pot / First, I went to sleep / First, I read a book) [2] (soil / water / rock) [3] (Then, I planted a seed / Then, I watched TV / Then, I played a game) [4] (seed / leaf / bug) [5] (Next, I poured water / Next, I ate an apple / Next, I drank some milk) [6] (grow / fly / jump) [7] (roots / clouds / birds) [8] (stem / dog / star) [9] (Finally, a flower will bloom / Finally, I will go home / Finally, the rain will fall)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_2": [
+    {
+      "session": 1,
+      "session_label": "Session 1 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: _________________________________ Date: ____________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã trồng một cái cây. -> ____________________________________________________________",
+            "Error Correction: Then, I waters the seed yesterday. -> ____________________________________________________________",
+            "Fill-in: (Then) First, I dug a hole. ________________________________________, I put the seed in."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  The Garden Mystery: How Plants Grow Detective Luna is investigating the garden! \"How do plants grow?\" she asks. The gardener explains: \"First, you plant a seed in the soil. The seed is small and brown. Then, you water it. Plants need water to grow. Next, the sun shines on the soil. Plants need sunlight too. After that, roots grow down into the soil. A small stem grows up! Then, leaves appear on the stem. The plant has green leaves. Finally, a beautiful flower blooms! A plant needs three things: soil, water, and sun. That's the secret!\"",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: The gardener explains how plants sleep.",
+            "T / F: A plant needs three things to grow.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What do you plant in the soil first? -> ____________________________________________________________",
+            "What grows down into the soil? -> ____________________________________________________________",
+            "Fill-in from text: Finally, a beautiful ________________________________________ blooms!",
+            "Stage 3B — Inference: Why does the stem grow up? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: seed, soil, water, sun + Cambridge Preview (Tier 2)",
+          "content": [
+            "2. soil (Vietnamese: đất)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: in the soil",
+            "→ Collocation practice:",
+            "a. Put the seed in the ________________________________ (soil / water).",
+            "b. The ________________________________ (soil / flower) is brown.",
+            "→ Your turn: The dark soil ____________________________________________________________",
+            "3. water (Vietnamese: nước)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: need water",
+            "→ Collocation practice:",
+            "a. Plants need ________________________________ (water / fire).",
+            "b. I drink cold ________________________________ (water / stem).",
+            "→ Your turn: I drink ____________________________________________________________",
+            "4. sun (Vietnamese: mặt trời)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: the sun shines",
+            "→ Collocation practice:",
+            "a. The ________________________________ (sun / leaf) shines.",
+            "b. Plants need the ________________________________ (sun / soil).",
+            "→ Your turn: The bright sun ____________________________________________________________",
+            "5. root (Vietnamese: rễ)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: roots grow down",
+            "→ Collocation practice:",
+            "a. The ________________________________ (roots / flowers) grow down.",
+            "b. The tree has big ________________________________ (roots / suns).",
+            "→ Your turn: The long roots ____________________________________________________________",
+            "6. stem (Vietnamese: thân cây)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a green stem",
+            "→ Collocation practice:",
+            "a. A green ________________________________ (stem / root) grows up.",
+            "b. The ________________________________ (stem / soil) is tall.",
+            "→ Your turn: The green stem ____________________________________________________________",
+            "7. leaf (Vietnamese: lá)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: green leaf",
+            "→ Collocation practice:",
+            "a. The plant has a green ________________________________ (leaf / root).",
+            "b. A ________________________________ (leaf / sun) makes food.",
+            "→ Your turn: The big leaf ____________________________________________________________",
+            "8. flower (Vietnamese: hoa)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a beautiful flower",
+            "→ Collocation practice:",
+            "a. A beautiful ________________________________ (flower / dirt) blooms.",
+            "b. The ________________________________ (flower / stem) is red.",
+            "→ Your turn: A yellow flower ____________________________________________________________",
+            "9. grow (Vietnamese: lớn lên)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: grow fast",
+            "→ Collocation practice:",
+            "a. Plants ________________________________ (grow / sleep) fast.",
+            "b. The roots ________________________________ (grow / run) down.",
+            "→ Your turn: The plants grow ____________________________________________________________",
+            "10. plant (Vietnamese: cây/trồng)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a green plant",
+            "→ Collocation practice:",
+            "a. I see a green ________________________________ (plant / rock).",
+            "b. The ________________________________ (plant / water) is big.",
+            "→ Your turn: The green plant ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "A seed needs _________ a. water to grow.",
+            "The roots _________ b. grow down.",
+            "The sun _________ c. shines on the plant.",
+            "A green stem _________ d. grows up.",
+            "The leaves _________ e. appear on the stem.",
+            "Finally, a flower _________ f. blooms.",
+            "You put the seed _________ g. in the soil.",
+            "Plants are _________ h. living things.",
+            "A plant needs _________ i. soil, water, and sun.",
+            "The gardener _________ j. explains the secret.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "seed / a / you / First, / plant -> ____________________________________________________________",
+            "down / grow / Roots / the / into / soil. -> ____________________________________________________________",
+            "grows / stem / A / up. / green -> ____________________________________________________________",
+            "needs / plant / A / water. / sun / and -> ____________________________________________________________",
+            "leaves / plant / The / green / has -> ____________________________________________________________",
+            "flower / Finally, / blooms. / beautiful / a -> ____________________________________________________________",
+            "shines / The / bright / sun / the / on / garden. -> ____________________________________________________________",
+            "grow / fast. / Plants / very -> ____________________________________________________________",
+            "water / roots / The / drink / the -> ____________________________________________________________",
+            "in / We / plant / the / seeds / soil. -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: Name a plant part (e.g., \"Root\").",
+            "Student B: State what it does (e.g., \"Roots grow down\"). Goal: Build a full plant map verbally.",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "A plant ________________________________ (needs / needed / needing) water every day.",
+            "The roots ________________________________ (grows / grow / grew) down into the earth.",
+            "Yesterday, I ________________________________ (planted / plant / plants) a seed.",
+            "The sun ________________________________ (shines / shine / shined) brightly today.",
+            "First, you ________________________________ (puts / put / putting) the seed in the soil.",
+            "A green stem ________________________________ (grows / grow / grew) up to the sky.",
+            "Last week, I ________________________________ (water / waters / watered) my garden.",
+            "Leaves ________________________________ (makes / make / making) food for the plant.",
+            "Finally, a red flower ________________________________ (blooms / bloom / blooming).",
+            "We ________________________________ (watched / watch / watches) the plant grow last month.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: Roots grow. + Add: (down) -> ____________________________________________________________",
+            "Base: A stem grows. + Add: (up) -> ____________________________________________________________",
+            "Base: I planted a seed. + Add: (yesterday) -> ____________________________________________________________",
+            "Base: Plants need water. + Add: (and sun) -> ____________________________________________________________",
+            "Base: The sun shines. + Add: (brightly) -> ____________________________________________________________",
+            "Base: Leaves appear. + Add: (on the stem) -> ____________________________________________________________",
+            "Base: A flower blooms. + Add: (beautiful) -> ____________________________________________________________",
+            "Base: I watered the plant. + Add: (last night) -> ____________________________________________________________",
+            "Base: A plant has leaves. + Add: (green) -> ____________________________________________________________",
+            "Base: We need soil. + Add: (to plant seeds) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "Write a fact about what a plant needs: ____________________________________________________________",
+            "Write a past action you did in a garden: ____________________________________________________________",
+            "What do roots do? ____________________________________________________________",
+            "What does the sun do? ____________________________________________________________",
+            "Write a sentence starting with \"Finally,\": ____________________________________________________________"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about a car. ☐ The story is about a girl growing a plant. ☐ The story is about a zoo.",
+            "B.",
+            "Stage 2 — Detail: What did she plant first? ________________________________ (a) a flower (b) a leaf (c) a seed Fill in: After that, a green ________________________________ grew up.",
+            "[O] C. Stage 3B — Inference: How did the girl feel when the flower bloomed? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'A plant need water to live.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Yesterday, I water the flowers.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The roots grows down.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "The plant life cycle starts with a ____________________________________________________________.",
+            "Leaves grow to catch ____________________________________________________________.",
+            "[O Bonus]: Why do flowers make new seeds? ____________________________________________________________ 🔍 YouTube: \"Plant life cycle for kids time lapse\"",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"đất\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact with \"grow\": ____________________________________________________________",
+            "4. Write a past tense sentence with \"watered\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 27 — Session 1 | Topic: How a Plant Grows",
+          "content": [
+            "First, ____________________________________________________________",
+            "Then, ____________________________________________________________",
+            "Next, ____________________________________________________________ ☐ Did I use present simple for scientific facts correctly?",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 1",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'A plant needs': ____________________________________________________________",
+            "Write a sentence with 'Roots grow': ____________________________________________________________",
+            "Write a sentence with 'The sun': ____________________________________________________________",
+            "Write a sentence with 'Leaves make': ____________________________________________________________",
+            "Write a past tense sentence about a garden: ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "A plant needing water. -> ____________________________________________________________",
+            "Roots grows down. -> ____________________________________________________________",
+            "The sun shine brightly. -> ____________________________________________________________",
+            "Yesterday I plant a seed. -> ____________________________________________________________",
+            "Leaves is green. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite sentence 1 perfectly: ____________________________________________________________",
+            "Rewrite sentence 2 perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1",
+            "\"Hello! My name is [1] _______________. I am [2] _______________ years old. Today, I will teach you how plants grow. It is a mystery! First, you plant a [3] _______________ in the [4] _______________. Then, you give it [5] _______________. Plants need [6] _______________ and [7] _______________ to live. Next, the [8] _______________ grow down into the dark [9] _______________. A strong green [10] _______________ grows up. Then, [11] _______________ appear to catch the sunlight. Finally, a beautiful [12] _______________ blooms! Plants are amazing living things. I love nature! Thank you for listening. Goodbye!\"",
+            "Word Bank (Choose the correct option): [1] (Max / Luna / Pip) [2] (eight / nine / ten) [3] (seed / rock / toy) [4] (soil / sky / fire) [5] (water / milk / juice) [6] (water / pizza / candy) [7] (sun / moon / stars) [8] (roots / clouds / birds) [9] (soil / wind / ocean) [10] (stem / rock / fish) [11] (leaves / stones / shoes) [12] (flower / tree / stick)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: _____________________________ Date: ___________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Cây cần nước và mặt trời. -> ____________________________________________________________",
+            "Error Correction: The root grow down. -> ____________________________________________________________",
+            "Fill-in: (needs) A plant ________________________________ soil to live."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Detective Luna's Garden Notebook Luna is writing notes in her detective book. She writes about the rules of nature. \"Rule number one: A seed needs wet soil to wake up. Rule number two: Roots drink water. They grow down into the earth. Rule number three: A stem carries the water. It grows up strong and tall. Rule number four: Leaves make food using the sun. Rule number five: Flowers make seeds to start again. Yesterday, I planted a sunflower seed. I was very excited. I watered it carefully.",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: Roots grow up.",
+            "T / F: Leaves use the sun to make food.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What does a seed need to wake up? -> ____________________________________________________________",
+            "What did Luna plant yesterday? -> ____________________________________________________________",
+            "Fill-in: A stem ________________________________ the water.",
+            "Stage 3B — Inference: Why was Luna excited yesterday? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words + Cambridge words (Tier 2 complete set)",
+          "content": [
+            "2. soil",
+            "→ Key Collocation: wet soil",
+            "→ Collocation practice:",
+            "a. Roots love wet ___________________ (soil/leaf).",
+            "b. Dig in the ___________________ (soil/stem).",
+            "→ Your turn: The dark soil ____________________________________________________________",
+            "3. water",
+            "→ Key Collocation: drink water",
+            "→ Collocation practice:",
+            "a. Roots ___________________ (drink/run) water.",
+            "b. I give ___________________ (water/sun) to the plant.",
+            "→ Your turn: The plant needs water ____________________________________________________________",
+            "4. sun",
+            "→ Key Collocation: warm sun",
+            "→ Collocation practice:",
+            "a. The ___________________ (sun/soil) is hot.",
+            "b. Leaves catch the ___________________ (sun/root).",
+            "→ Your turn: The warm sun ____________________________________________________________",
+            "5. root",
+            "→ Key Collocation: strong roots",
+            "→ Collocation practice:",
+            "a. The tree has strong ___________________ (roots/flowers).",
+            "b. The ___________________ (roots/leaves) drink water.",
+            "→ Your turn: The white roots ____________________________________________________________",
+            "6. stem",
+            "→ Key Collocation: tall stem",
+            "→ Collocation practice:",
+            "a. The ___________________ (stem/soil) holds the flower.",
+            "b. The ___________________ (stem/water) is green.",
+            "→ Your turn: The tall stem ____________________________________________________________",
+            "7. leaf",
+            "→ Key Collocation: catch sunlight",
+            "→ Collocation practice:",
+            "a. A ___________________ (leaf/root) catches sunlight.",
+            "b. The tree has many ___________________ (leaves/suns).",
+            "→ Your turn: The green leaf ____________________________________________________________",
+            "8. flower",
+            "→ Key Collocation: bloom brightly",
+            "→ Collocation practice:",
+            "a. The ___________________ (flower/soil) blooms brightly.",
+            "b. I smell the ___________________ (flower/root).",
+            "→ Your turn: The red flower ____________________________________________________________",
+            "9. grow",
+            "→ Key Collocation: grow tall",
+            "→ Collocation practice:",
+            "a. The trees ___________________ (grow/sleep) tall.",
+            "b. The stem will ___________________ (grow/sing) up.",
+            "→ Your turn: Plants grow ____________________________________________________________",
+            "10. plant",
+            "→ Key Collocation: living plant",
+            "→ Collocation practice:",
+            "a. A ___________________ (plant/rock) is living.",
+            "b. I water my ___________________ (plant/chair).",
+            "→ Your turn: A healthy plant ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "A seed needs _________ a. water to live.",
+            "The roots _________ b. grow down.",
+            "The stem _________ c. carries water.",
+            "The leaves _________ d. catch the sun.",
+            "The flower _________ e. blooms.",
+            "Yesterday, I _________ f. planted a seed.",
+            "I watered _________ g. the soil.",
+            "The sun _________ h. helps the plant.",
+            "Plants are _________ i. living things.",
+            "I am _________ j. waiting for it to grow.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "drink / Roots / water / soil. / the / from -> ____________________________________________________________",
+            "carries / stem / The / up. / water -> ____________________________________________________________",
+            "makes / food. / The / leaf / green -> ____________________________________________________________",
+            "beautiful / A / blooms / summer. / in / flower -> ____________________________________________________________",
+            "planted / Yesterday, / a / I / tree. -> ____________________________________________________________",
+            "watered / the / I / carefully. / soil -> ____________________________________________________________",
+            "grows / fast. / plant / The / very -> ____________________________________________________________",
+            "need / Plants / water / live. / to -> ____________________________________________________________",
+            "shines / sun / warm / The / brightly. -> ____________________________________________________________",
+            "secret / is / That / the / nature. / of -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: Name a past action you did for a plant (\"I watered the plant\").",
+            "Student B: State a fact about why (\"Because plants need water\").",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "A seed ________________________________ (rests / rest / resting) in the soil.",
+            "Yesterday, Luna ________________________________ (plants / planted / planting) a sunflower.",
+            "Roots ________________________________ (drinks / drink / drank) water every day.",
+            "The leaves ________________________________ (makes / make / making) food using the sun.",
+            "Last week, we ________________________________ (watch / watched / watches) a video about plants.",
+            "A stem ________________________________ (carries / carry / carried) water up.",
+            "Flowers ________________________________ (bloom / blooms / bloomed) beautifully.",
+            "I ________________________________ (am / was / were) excited yesterday.",
+            "Plants ________________________________ (is / are / was) living things.",
+            "The gardener ________________________________ (explains / explain / explained) the rules.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: Roots drink water. + Add: (from the soil) -> ____________________________________________________________",
+            "Base: A stem carries water. + Add: (up) -> ____________________________________________________________",
+            "Base: Leaves make food. + Add: (using the sun) -> ____________________________________________________________",
+            "Base: I planted a seed. + Add: (yesterday) -> ____________________________________________________________",
+            "Base: I watered the soil. + Add: (carefully) -> ____________________________________________________________",
+            "Base: The flower blooms. + Add: (brightly) -> ____________________________________________________________",
+            "Base: A plant needs water. + Add: (and sun) -> ____________________________________________________________",
+            "Base: The sun shines. + Add: (on the garden) -> ____________________________________________________________",
+            "Base: I was excited. + Add: (last week) -> ____________________________________________________________",
+            "Base: Plants grow. + Add: (fast) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "What does a root do? ____________________________________________________________",
+            "What does a leaf do? ____________________________________________________________",
+            "Write what you did in a garden yesterday: ____________________________________________________________",
+            "Write why a plant needs the sun: ____________________________________________________________",
+            "Write your best sentence connecting a fact and a past action: ____________________________________________________________"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about cooking food. ☐ The story is about the rules of a plant. ☐ The story is about a computer.",
+            "B.",
+            "Stage 2 — Detail: What makes food for the plant? ____________ (a) roots (b) leaves (c) flowers Fill in: A stem _______________________ water up.",
+            "[O] C. Stage 3B — Inference: Why does the plant need leaves? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'The leaf make food.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I plant a tree last week.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The plant needs suns and water.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "Roots act like straws to ____________________________________________________________.",
+            "The stem carries water up to ____________________________________________________________.",
+            "[O Bonus]: What would happen if a plant had no roots? ____________________________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"hạt giống\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact about stems: ____________________________________________________________",
+            "4. Write a past action with \"planted\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 27 — Session 2 | Topic: How a Plant Grows",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 2",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'A seed needs': ____________________________________________________________",
+            "Write a sentence with 'A stem carries': ____________________________________________________________",
+            "Write a sentence with 'Leaves use': ____________________________________________________________",
+            "Write a sentence with 'Yesterday, I planted': ____________________________________________________________",
+            "Write a sentence with 'I watered': ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "Roots drinks water. -> ____________________________________________________________",
+            "The stem carry water. -> ____________________________________________________________",
+            "Yesterday I water the soil. -> ____________________________________________________________",
+            "Plants is living things. -> ____________________________________________________________",
+            "A flower bloom beautifully. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite sentence 4 perfectly: ____________________________________________________________",
+            "Rewrite sentence 5 perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2",
+            "\"Welcome back to the garden! Today we will look closely at a [1] _______________. Look at this diagram. Below the [2] _______________, the [3] _______________ grow down to find [4] _______________. They drink the water. Above the ground, a green [5] _______________ grows up. It carries the [6] _______________ to the rest of the [7] _______________. The green [8] _______________ catch the sunlight. They use the [9] _______________ to make food. Without the [10] _______________, the plant cannot [11] _______________. Finally, a [12] _______________ blooms at the top. Nature has many rules! Plants are incredible. Thank you for watching!\"",
+            "Word Bank (Choose the correct option): [1] (plant / rock / car) [2] (soil / sky / roof) [3] (roots / branches / fruits) [4] (water / fire / sand) [5] (stem / cloud / wheel) [6] (water / juice / milk) [7] (plant / house / table) [8] (leaves / stones / birds) [9] (sun / moon / rain) [10] (sun / wind / snow) [11] (grow / jump / read) [12] (flower / bug / shoe)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_5": [
+    {
+      "session": 1,
+      "session_label": "Slot 1 — Activate / Khởi động — Spiral, Reading & Vocab S1",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: _________________________________ Date: ____________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã trồng một cái cây. -> ____________________________________________________________",
+            "Error Correction: Then, I waters the seed yesterday. -> ____________________________________________________________",
+            "Fill-in: (Then) First, I dug a hole. ________________________________________, I put the seed in."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  The Garden Mystery: How Plants Grow Detective Luna is investigating the garden! \"How do plants grow?\" she asks. The gardener explains: \"First, you plant a seed in the soil. The seed is small and brown. Then, you water it. Plants need water to grow. Next, the sun shines on the soil. Plants need sunlight too. After that, roots grow down into the soil. A small stem grows up! Then, leaves appear on the stem. The plant has green leaves. Finally, a beautiful flower blooms! A plant needs three things: soil, water, and sun. That's the secret!\"",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: The gardener explains how plants sleep.",
+            "T / F: A plant needs three things to grow.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What do you plant in the soil first? -> ____________________________________________________________",
+            "What grows down into the soil? -> ____________________________________________________________",
+            "Fill-in from text: Finally, a beautiful ________________________________________ blooms!",
+            "Stage 3B — Inference: Why does the stem grow up? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: seed, soil, water, sun + Cambridge Preview (Tier 2)",
+          "content": [
+            "2. soil (Vietnamese: đất)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: in the soil",
+            "→ Collocation practice:",
+            "a. Put the seed in the ________________________________ (soil / water).",
+            "b. The ________________________________ (soil / flower) is brown.",
+            "→ Your turn: The dark soil ____________________________________________________________",
+            "3. water (Vietnamese: nước)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: need water",
+            "→ Collocation practice:",
+            "a. Plants need ________________________________ (water / fire).",
+            "b. I drink cold ________________________________ (water / stem).",
+            "→ Your turn: I drink ____________________________________________________________",
+            "4. sun (Vietnamese: mặt trời)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: the sun shines",
+            "→ Collocation practice:",
+            "a. The ________________________________ (sun / leaf) shines.",
+            "b. Plants need the ________________________________ (sun / soil).",
+            "→ Your turn: The bright sun ____________________________________________________________",
+            "5. root (Vietnamese: rễ)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: roots grow down",
+            "→ Collocation practice:",
+            "a. The ________________________________ (roots / flowers) grow down.",
+            "b. The tree has big ________________________________ (roots / suns).",
+            "→ Your turn: The long roots ____________________________________________________________",
+            "6. stem (Vietnamese: thân cây)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a green stem",
+            "→ Collocation practice:",
+            "a. A green ________________________________ (stem / root) grows up.",
+            "b. The ________________________________ (stem / soil) is tall.",
+            "→ Your turn: The green stem ____________________________________________________________",
+            "7. leaf (Vietnamese: lá)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: green leaf",
+            "→ Collocation practice:",
+            "a. The plant has a green ________________________________ (leaf / root).",
+            "b. A ________________________________ (leaf / sun) makes food.",
+            "→ Your turn: The big leaf ____________________________________________________________",
+            "8. flower (Vietnamese: hoa)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a beautiful flower",
+            "→ Collocation practice:",
+            "a. A beautiful ________________________________ (flower / dirt) blooms.",
+            "b. The ________________________________ (flower / stem) is red.",
+            "→ Your turn: A yellow flower ____________________________________________________________",
+            "9. grow (Vietnamese: lớn lên)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: grow fast",
+            "→ Collocation practice:",
+            "a. Plants ________________________________ (grow / sleep) fast.",
+            "b. The roots ________________________________ (grow / run) down.",
+            "→ Your turn: The plants grow ____________________________________________________________",
+            "10. plant (Vietnamese: cây/trồng)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: a green plant",
+            "→ Collocation practice:",
+            "a. I see a green ________________________________ (plant / rock).",
+            "b. The ________________________________ (plant / water) is big.",
+            "→ Your turn: The green plant ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "A seed needs _________ a. water to grow.",
+            "The roots _________ b. grow down.",
+            "The sun _________ c. shines on the plant.",
+            "A green stem _________ d. grows up.",
+            "The leaves _________ e. appear on the stem.",
+            "Finally, a flower _________ f. blooms.",
+            "You put the seed _________ g. in the soil.",
+            "Plants are _________ h. living things.",
+            "A plant needs _________ i. soil, water, and sun.",
+            "The gardener _________ j. explains the secret.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "seed / a / you / First, / plant -> ____________________________________________________________",
+            "down / grow / Roots / the / into / soil. -> ____________________________________________________________",
+            "grows / stem / A / up. / green -> ____________________________________________________________",
+            "needs / plant / A / water. / sun / and -> ____________________________________________________________",
+            "leaves / plant / The / green / has -> ____________________________________________________________",
+            "flower / Finally, / blooms. / beautiful / a -> ____________________________________________________________",
+            "shines / The / bright / sun / the / on / garden. -> ____________________________________________________________",
+            "grow / fast. / Plants / very -> ____________________________________________________________",
+            "water / roots / The / drink / the -> ____________________________________________________________",
+            "in / We / plant / the / seeds / soil. -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: Name a plant part (e.g., \"Root\").",
+            "Student B: State what it does (e.g., \"Roots grow down\"). Goal: Build a full plant map verbally.",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "A plant ________________________________ (needs / needed / needing) water every day.",
+            "The roots ________________________________ (grows / grow / grew) down into the earth.",
+            "Yesterday, I ________________________________ (planted / plant / plants) a seed.",
+            "The sun ________________________________ (shines / shine / shined) brightly today.",
+            "First, you ________________________________ (puts / put / putting) the seed in the soil.",
+            "A green stem ________________________________ (grows / grow / grew) up to the sky.",
+            "Last week, I ________________________________ (water / waters / watered) my garden.",
+            "Leaves ________________________________ (makes / make / making) food for the plant.",
+            "Finally, a red flower ________________________________ (blooms / bloom / blooming).",
+            "We ________________________________ (watched / watch / watches) the plant grow last month.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: Roots grow. + Add: (down) -> ____________________________________________________________",
+            "Base: A stem grows. + Add: (up) -> ____________________________________________________________",
+            "Base: I planted a seed. + Add: (yesterday) -> ____________________________________________________________",
+            "Base: Plants need water. + Add: (and sun) -> ____________________________________________________________",
+            "Base: The sun shines. + Add: (brightly) -> ____________________________________________________________",
+            "Base: Leaves appear. + Add: (on the stem) -> ____________________________________________________________",
+            "Base: A flower blooms. + Add: (beautiful) -> ____________________________________________________________",
+            "Base: I watered the plant. + Add: (last night) -> ____________________________________________________________",
+            "Base: A plant has leaves. + Add: (green) -> ____________________________________________________________",
+            "Base: We need soil. + Add: (to plant seeds) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "Write a fact about what a plant needs: ____________________________________________________________",
+            "Write a past action you did in a garden: ____________________________________________________________",
+            "What do roots do? ____________________________________________________________",
+            "What does the sun do? ____________________________________________________________",
+            "Write a sentence starting with \"Finally,\": ____________________________________________________________"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Slot 2 — Drill / Luyện tập — Listening, Error Correction & Writing S1",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about a car. ☐ The story is about a girl growing a plant. ☐ The story is about a zoo.",
+            "B.",
+            "Stage 2 — Detail: What did she plant first? ________________________________ (a) a flower (b) a leaf (c) a seed Fill in: After that, a green ________________________________ grew up.",
+            "[O] C. Stage 3B — Inference: How did the girl feel when the flower bloomed? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'A plant need water to live.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Yesterday, I water the flowers.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The roots grows down.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "The plant life cycle starts with a ____________________________________________________________.",
+            "Leaves grow to catch ____________________________________________________________.",
+            "[O Bonus]: Why do flowers make new seeds? ____________________________________________________________ 🔍 YouTube: \"Plant life cycle for kids time lapse\"",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"đất\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact with \"grow\": ____________________________________________________________",
+            "4. Write a past tense sentence with \"watered\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 27 — Session 1 | Topic: How a Plant Grows",
+          "content": [
+            "First, ____________________________________________________________",
+            "Then, ____________________________________________________________",
+            "Next, ____________________________________________________________ ☐ Did I use present simple for scientific facts correctly?",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 1",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'A plant needs': ____________________________________________________________",
+            "Write a sentence with 'Roots grow': ____________________________________________________________",
+            "Write a sentence with 'The sun': ____________________________________________________________",
+            "Write a sentence with 'Leaves make': ____________________________________________________________",
+            "Write a past tense sentence about a garden: ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "A plant needing water. -> ____________________________________________________________",
+            "Roots grows down. -> ____________________________________________________________",
+            "The sun shine brightly. -> ____________________________________________________________",
+            "Yesterday I plant a seed. -> ____________________________________________________________",
+            "Leaves is green. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite sentence 1 perfectly: ____________________________________________________________",
+            "Rewrite sentence 2 perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1",
+            "\"Hello! My name is [1] _______________. I am [2] _______________ years old. Today, I will teach you how plants grow. It is a mystery! First, you plant a [3] _______________ in the [4] _______________. Then, you give it [5] _______________. Plants need [6] _______________ and [7] _______________ to live. Next, the [8] _______________ grow down into the dark [9] _______________. A strong green [10] _______________ grows up. Then, [11] _______________ appear to catch the sunlight. Finally, a beautiful [12] _______________ blooms! Plants are amazing living things. I love nature! Thank you for listening. Goodbye!\"",
+            "Word Bank (Choose the correct option): [1] (Max / Luna / Pip) [2] (eight / nine / ten) [3] (seed / rock / toy) [4] (soil / sky / fire) [5] (water / milk / juice) [6] (water / pizza / candy) [7] (sun / moon / stars) [8] (roots / clouds / birds) [9] (soil / wind / ocean) [10] (stem / rock / fish) [11] (leaves / stones / shoes) [12] (flower / tree / stick)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Slot 3 — Bridge / Kết nối — Spiral, Reading & Vocab S2",
+      "parts": [
+        {
+          "title": "WEEK 27 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: _____________________________ Date: ___________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Cây cần nước và mặt trời. -> ____________________________________________________________",
+            "Error Correction: The root grow down. -> ____________________________________________________________",
+            "Fill-in: (needs) A plant ________________________________ soil to live."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Detective Luna's Garden Notebook Luna is writing notes in her detective book. She writes about the rules of nature. \"Rule number one: A seed needs wet soil to wake up. Rule number two: Roots drink water. They grow down into the earth. Rule number three: A stem carries the water. It grows up strong and tall. Rule number four: Leaves make food using the sun. Rule number five: Flowers make seeds to start again. Yesterday, I planted a sunflower seed. I was very excited. I watered it carefully.",
+          "content": [
+            "📖 The Garden Mystery: How Plants Grow",
+            "Detective Luna is investigating the garden!",
+            "\"How do plants grow?\" she asks.",
+            "The gardener explains:",
+            "\"First, you plant a seed in the soil.",
+            "The seed is small and brown.",
+            "Then, you water it. Plants need water to grow.",
+            "Next, the sun shines on the soil. Plants need sunlight too.",
+            "After that, roots grow down into the soil.",
+            "A small stem grows up!",
+            "Then, leaves appear on the stem.",
+            "The plant has green leaves.",
+            "Finally, a flower blooms!",
+            "The flower is beautiful.",
+            "A plant needs three things: soil, water, and sun.",
+            "That's the secret!\"",
+            "",
+            "Stage 1 — Global:",
+            "T / F: Roots grow up.",
+            "T / F: Leaves use the sun to make food.",
+            "What is the main topic? ____________________________________________________________",
+            "Stage 2 — Detail:",
+            "What does a seed need to wake up? -> ____________________________________________________________",
+            "What did Luna plant yesterday? -> ____________________________________________________________",
+            "Fill-in: A stem ________________________________ the water.",
+            "Stage 3B — Inference: Why was Luna excited yesterday? ____________________________________________________________",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words + Cambridge words (Tier 2 complete set)",
+          "content": [
+            "2. soil",
+            "→ Key Collocation: wet soil",
+            "→ Collocation practice:",
+            "a. Roots love wet ___________________ (soil/leaf).",
+            "b. Dig in the ___________________ (soil/stem).",
+            "→ Your turn: The dark soil ____________________________________________________________",
+            "3. water",
+            "→ Key Collocation: drink water",
+            "→ Collocation practice:",
+            "a. Roots ___________________ (drink/run) water.",
+            "b. I give ___________________ (water/sun) to the plant.",
+            "→ Your turn: The plant needs water ____________________________________________________________",
+            "4. sun",
+            "→ Key Collocation: warm sun",
+            "→ Collocation practice:",
+            "a. The ___________________ (sun/soil) is hot.",
+            "b. Leaves catch the ___________________ (sun/root).",
+            "→ Your turn: The warm sun ____________________________________________________________",
+            "5. root",
+            "→ Key Collocation: strong roots",
+            "→ Collocation practice:",
+            "a. The tree has strong ___________________ (roots/flowers).",
+            "b. The ___________________ (roots/leaves) drink water.",
+            "→ Your turn: The white roots ____________________________________________________________",
+            "6. stem",
+            "→ Key Collocation: tall stem",
+            "→ Collocation practice:",
+            "a. The ___________________ (stem/soil) holds the flower.",
+            "b. The ___________________ (stem/water) is green.",
+            "→ Your turn: The tall stem ____________________________________________________________",
+            "7. leaf",
+            "→ Key Collocation: catch sunlight",
+            "→ Collocation practice:",
+            "a. A ___________________ (leaf/root) catches sunlight.",
+            "b. The tree has many ___________________ (leaves/suns).",
+            "→ Your turn: The green leaf ____________________________________________________________",
+            "8. flower",
+            "→ Key Collocation: bloom brightly",
+            "→ Collocation practice:",
+            "a. The ___________________ (flower/soil) blooms brightly.",
+            "b. I smell the ___________________ (flower/root).",
+            "→ Your turn: The red flower ____________________________________________________________",
+            "9. grow",
+            "→ Key Collocation: grow tall",
+            "→ Collocation practice:",
+            "a. The trees ___________________ (grow/sleep) tall.",
+            "b. The stem will ___________________ (grow/sing) up.",
+            "→ Your turn: Plants grow ____________________________________________________________",
+            "10. plant",
+            "→ Key Collocation: living plant",
+            "→ Collocation practice:",
+            "a. A ___________________ (plant/rock) is living.",
+            "b. I water my ___________________ (plant/chair).",
+            "→ Your turn: A healthy plant ____________________________________________________________",
+            "[ Sub-total: _____ / 9 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Match the sentence halves (10 items)",
+            "A seed needs _________ a. water to live.",
+            "The roots _________ b. grow down.",
+            "The stem _________ c. carries water.",
+            "The leaves _________ d. catch the sun.",
+            "The flower _________ e. blooms.",
+            "Yesterday, I _________ f. planted a seed.",
+            "I watered _________ g. the soil.",
+            "The sun _________ h. helps the plant.",
+            "Plants are _________ i. living things.",
+            "I am _________ j. waiting for it to grow.",
+            "[O] L2 — Older: Unscramble the sentence (10 items)",
+            "drink / Roots / water / soil. / the / from -> ____________________________________________________________",
+            "carries / stem / The / up. / water -> ____________________________________________________________",
+            "makes / food. / The / leaf / green -> ____________________________________________________________",
+            "beautiful / A / blooms / summer. / in / flower -> ____________________________________________________________",
+            "planted / Yesterday, / a / I / tree. -> ____________________________________________________________",
+            "watered / the / I / carefully. / soil -> ____________________________________________________________",
+            "grows / fast. / plant / The / very -> ____________________________________________________________",
+            "need / Plants / water / live. / to -> ____________________________________________________________",
+            "shines / sun / warm / The / brightly. -> ____________________________________________________________",
+            "secret / is / That / the / nature. / of -> ____________________________________________________________",
+            "⬛ SPEAKING CHECKPOINT",
+            "Student A: Name a past action you did for a plant (\"I watered the plant\").",
+            "Student B: State a fact about why (\"Because plants need water\").",
+            "[O] L3 — Older: Fill in the blank with 3 options (10 items)",
+            "A seed ________________________________ (rests / rest / resting) in the soil.",
+            "Yesterday, Luna ________________________________ (plants / planted / planting) a sunflower.",
+            "Roots ________________________________ (drinks / drink / drank) water every day.",
+            "The leaves ________________________________ (makes / make / making) food using the sun.",
+            "Last week, we ________________________________ (watch / watched / watches) a video about plants.",
+            "A stem ________________________________ (carries / carry / carried) water up.",
+            "Flowers ________________________________ (bloom / blooms / bloomed) beautifully.",
+            "I ________________________________ (am / was / were) excited yesterday.",
+            "Plants ________________________________ (is / are / was) living things.",
+            "The gardener ________________________________ (explains / explain / explained) the rules.",
+            "L4 — Sentence Expansion (10 items)",
+            "Base: Roots drink water. + Add: (from the soil) -> ____________________________________________________________",
+            "Base: A stem carries water. + Add: (up) -> ____________________________________________________________",
+            "Base: Leaves make food. + Add: (using the sun) -> ____________________________________________________________",
+            "Base: I planted a seed. + Add: (yesterday) -> ____________________________________________________________",
+            "Base: I watered the soil. + Add: (carefully) -> ____________________________________________________________",
+            "Base: The flower blooms. + Add: (brightly) -> ____________________________________________________________",
+            "Base: A plant needs water. + Add: (and sun) -> ____________________________________________________________",
+            "Base: The sun shines. + Add: (on the garden) -> ____________________________________________________________",
+            "Base: I was excited. + Add: (last week) -> ____________________________________________________________",
+            "Base: Plants grow. + Add: (fast) -> ____________________________________________________________",
+            "L5 — Write Your Own (5 items)",
+            "What does a root do? ____________________________________________________________",
+            "What does a leaf do? ____________________________________________________________",
+            "Write what you did in a garden yesterday: ____________________________________________________________",
+            "Write why a plant needs the sun: ____________________________________________________________",
+            "Write your best sentence connecting a fact and a past action: ____________________________________________________________"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "session_label": "Slot 4 — Challenge / Thử thách — Listening, Error Correction & Writing S2",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about cooking food. ☐ The story is about the rules of a plant. ☐ The story is about a computer.",
+            "B.",
+            "Stage 2 — Detail: What makes food for the plant? ____________ (a) roots (b) leaves (c) flowers Fill in: A stem _______________________ water up.",
+            "[O] C. Stage 3B — Inference: Why does the plant need leaves? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'The leaf make food.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I plant a tree last week.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The plant needs suns and water.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "Roots act like straws to ____________________________________________________________.",
+            "The stem carries water up to ____________________________________________________________.",
+            "[O Bonus]: What would happen if a plant had no roots? ____________________________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"hạt giống\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact about stems: ____________________________________________________________",
+            "4. Write a past action with \"planted\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 27 — Session 2 | Topic: How a Plant Grows",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 2",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'A seed needs': ____________________________________________________________",
+            "Write a sentence with 'A stem carries': ____________________________________________________________",
+            "Write a sentence with 'Leaves use': ____________________________________________________________",
+            "Write a sentence with 'Yesterday, I planted': ____________________________________________________________",
+            "Write a sentence with 'I watered': ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "Roots drinks water. -> ____________________________________________________________",
+            "The stem carry water. -> ____________________________________________________________",
+            "Yesterday I water the soil. -> ____________________________________________________________",
+            "Plants is living things. -> ____________________________________________________________",
+            "A flower bloom beautifully. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite sentence 4 perfectly: ____________________________________________________________",
+            "Rewrite sentence 5 perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2",
+            "\"Welcome back to the garden! Today we will look closely at a [1] _______________. Look at this diagram. Below the [2] _______________, the [3] _______________ grow down to find [4] _______________. They drink the water. Above the ground, a green [5] _______________ grows up. It carries the [6] _______________ to the rest of the [7] _______________. The green [8] _______________ catch the sunlight. They use the [9] _______________ to make food. Without the [10] _______________, the plant cannot [11] _______________. Finally, a [12] _______________ blooms at the top. Nature has many rules! Plants are incredible. Thank you for watching!\"",
+            "Word Bank (Choose the correct option): [1] (plant / rock / car) [2] (soil / sky / roof) [3] (roots / branches / fruits) [4] (water / fire / sand) [5] (stem / cloud / wheel) [6] (water / juice / milk) [7] (plant / house / table) [8] (leaves / stones / birds) [9] (sun / moon / rain) [10] (sun / wind / snow) [11] (grow / jump / read) [12] (flower / bug / shoe)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "session_label": "Slot 5 — Perform / Biểu diễn — Error Correction, Writing & Task Cards S3",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about a car. ☐ The story is about planting a sunflower. ☐ The story is about cooking.",
+            "B.",
+            "Stage 2 — Detail: What did Max push down? ____________ (a) water (b) a seed (c) a leaf Fill in: A strong _______________________ will grow up.",
+            "[O] C. Stage 3B — Inference: How do we know Max cares about his plant? ____________________________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Present Simple for General Facts",
+          "score": 0,
+          "content": [
+            "📌 RULE: Target Structure — Present Simple for General Facts",
+            "",
+            "┌─────────────────────────────────────┐",
+            "│  PATTERN                            │",
+            "├─────────────────────────────────────┤",
+            "│  Subject + verb (base / -s) for facts that are always true │",
+            "│  A plant needs water.                │",
+            "│  Plants grow from seeds.             │",
+            "│  The sun helps plants.               │",
+            "└─────────────────────────────────────┘",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Mixed types — grammar + vocabulary + story facts)",
+          "content": [
+            "1. 'I bringed a seed yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'The stem grow up.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'Then, I woke up first.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Write 2 sentences applying the CLIL concept:",
+          "content": [
+            "Write 2 sentences applying the CLIL concept:",
+            "Leaves use sunlight, water, and air to ____________________________________________________________.",
+            "This food gives the plant energy to ____________________________________________________________.",
+            "[O Bonus]: Why do plants need air? ____________________________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"mặt trời\" in English: ________________________________",
+            "2. Use it in 1 sentence: ____________________________________________________________",
+            "3. Write a fact about a sunflower: ____________________________________________________________",
+            "4. Write a past action with \"poured\": ____________________________________________________________",
+            "5. STEM fact I learned today: ____________________________________________________________",
+            "6. My best sentence this whole session: ____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 3 — FINAL)  📝  Week 27 — Session 3 | Topic: How a Plant Grows",
+          "content": [
+            "Write your full 6-sentence paragraph here:",
+            "☐ Did I check all spelling and grammar?",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 27, Session 3",
+          "content": [
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'I planted': ____________________________________________________________",
+            "Write a sentence with 'Roots grow': ____________________________________________________________",
+            "Write a sentence with 'Leaves make': ____________________________________________________________",
+            "Write a sentence with 'A stem carries': ____________________________________________________________",
+            "Write a sentence with 'Finally, a flower': ____________________________________________________________",
+            "Error correction (5 sentences):",
+            "I pours water yesterday. -> ____________________________________________________________",
+            "The roots grows down. -> ____________________________________________________________",
+            "The sun make food. -> ____________________________________________________________",
+            "A plant needing soil. -> ____________________________________________________________",
+            "The flower bloom beautifully. -> ____________________________________________________________",
+            "Portfolio — Review your draft from Part 8:",
+            "Rewrite your best sentence perfectly: ____________________________________________________________",
+            "Rewrite your second best sentence perfectly: ____________________________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 3",
+            "\"Hello everyone! Today I will tell you about my sunflower project. [1] __________________________________________________ and I put dark [2] _______________ inside it. [3] __________________________________________________. I pushed the small [4] _______________ down carefully. [5] __________________________________________________ to give it a drink. Now I am waiting for it to [6] _______________. I know the scientific facts. The white [7] _______________ will grow down. A tall green [8] _______________ will grow up to the sky. [9] __________________________________________________. It will be a big, beautiful sunflower. Wish me luck!\"",
+            "Word/Clause Bank (Choose the correct option): [1] (First, I got a pot / First, I went to sleep / First, I read a book) [2] (soil / water / rock) [3] (Then, I planted a seed / Then, I watched TV / Then, I played a game) [4] (seed / leaf / bug) [5] (Next, I poured water / Next, I ate an apple / Next, I drank some milk) [6] (grow / fly / jump) [7] (roots / clouds / birds) [8] (stem / dog / star) [9] (Finally, a flower will bloom / Finally, I will go home / Finally, the rain will fall)"
+          ]
+        }
+      ]
+    }
+  ],
+  "answer_key": [
+    "S1 ANSWER KEY",
+    "SPIRAL REVIEW: 1. First, I planted a tree. | 2. Then, I watered the seed yesterday. | 3. Then",
+    "PART 1 PART 1",
+    "PART 3  (Reading): F / T / How plants grow | A seed / Roots / flower | Inference: Because plants need sunlight to make food.",
+    "PART 3 PART 3",
+    "PART 3  (L1): 1-a, 2-b, 3-c, 4-d, 5-e, 6-f, 7-g, 8-h, 9-i, 10-j",
+    "PART 4 PART 3",
+    "PART 5  (L2): 1. First, you plant a seed. | 2. Roots grow down into the soil. | 3. A green stem grows up. | 4. A plant needs water and sun. | 5. The plant has green leaves. | 6. Finally, a beautiful flower blooms. | 7. The bright sun shines on the garden. | 8. Plants grow very fast. | 9. The roots drink the water. | 10. We plant seeds in the soil.",
+    "PART 6 PART 3",
+    "S2 ANSWER KEY",
+    "SPIRAL REVIEW: 1. A plant needs water and sun. | 2. The roots grow down. | 3. needs",
+    "PART 1 PART 1",
+    "PART 3  (Reading): F / T / The rules of nature (how plants grow) | Wet soil / A sunflower seed / carries | Inference: Because she planted a seed and wanted to see it grow.",
+    "PART 3 PART 3",
+    "PART 3  (L1): 1-a, 2-b, 3-c, 4-d, 5-e, 6-f, 7-g, 8-h, 9-i, 10-j",
+    "PART 4 PART 3",
+    "PART 5  (L2): 1. Roots drink water from the soil. | 2. The stem carries water up. | 3. The green leaf makes food. | 4. A beautiful flower blooms in summer. | 5. Yesterday, I planted a tree. | 6. I watered the soil carefully. | 7. The plant grows very fast. | 8. Plants need water to live. | 9. The warm sun shines brightly. | 10. That is the secret of nature.",
+    "PART 6 PART 3",
+    "S3 ANSWER KEY",
+    "SPIRAL REVIEW: 1. Finally, a flower bloomed/blooms. | 2. I planted a seed yesterday. | 3. makes",
+    "PART 1 PART 1",
+    "PART 3  (Reading): T / T / Max's sunflower project | Soil / Roots / flower | Inference: Because it is a scientific fact.",
+    "PART 3 PART 3",
+    "PART 3  (L1): 1-a, 2-b, 3-c, 4-d, 5-e, 6-f, 7-g, 8-h, 9-i, 10-j",
+    "PART 4 PART 3",
+    "PART 5  (L2): 1. Max planted a sunflower seed. | 2. He put the soil in a pot. | 3. He pushed the seed down. | 4. I poured water carefully. | 5. He knows the scientific facts. | 6. The roots will grow down. | 7. The stem will grow up. | 8. The leaves will make food. | 9. I am excited to see it grow. | 10. A yellow flower will bloom.",
+    "PART 6 PART 3"
+  ],
+  "answer_key_by_session": {
+    "s1": [
+      "S1 ANSWER KEY",
+      "SPIRAL REVIEW: 1. First, I planted a tree. | 2. Then, I watered the seed yesterday. | 3. Then",
+      "PART 1 PART 1",
+      "PART 3  (Reading): F / T / How plants grow | A seed / Roots / flower | Inference: Because plants need sunlight to make food.",
+      "PART 3 PART 3",
+      "PART 3  (L1): 1-a, 2-b, 3-c, 4-d, 5-e, 6-f, 7-g, 8-h, 9-i, 10-j",
+      "PART 4 PART 3",
+      "PART 5  (L2): 1. First, you plant a seed. | 2. Roots grow down into the soil. | 3. A green stem grows up. | 4. A plant needs water and sun. | 5. The plant has green leaves. | 6. Finally, a beautiful flower blooms. | 7. The bright sun shines on the garden. | 8. Plants grow very fast. | 9. The roots drink the water. | 10. We plant seeds in the soil.",
+      "PART 6 PART 3"
+    ],
+    "s2": [
+      "S2 ANSWER KEY",
+      "SPIRAL REVIEW: 1. A plant needs water and sun. | 2. The roots grow down. | 3. needs",
+      "PART 1 PART 1",
+      "PART 3  (Reading): F / T / The rules of nature (how plants grow) | Wet soil / A sunflower seed / carries | Inference: Because she planted a seed and wanted to see it grow.",
+      "PART 3 PART 3",
+      "PART 3  (L1): 1-a, 2-b, 3-c, 4-d, 5-e, 6-f, 7-g, 8-h, 9-i, 10-j",
+      "PART 4 PART 3",
+      "PART 5  (L2): 1. Roots drink water from the soil. | 2. The stem carries water up. | 3. The green leaf makes food. | 4. A beautiful flower blooms in summer. | 5. Yesterday, I planted a tree. | 6. I watered the soil carefully. | 7. The plant grows very fast. | 8. Plants need water to live. | 9. The warm sun shines brightly. | 10. That is the secret of nature.",
+      "PART 6 PART 3"
+    ],
+    "s3": [
+      "S3 ANSWER KEY",
+      "SPIRAL REVIEW: 1. Finally, a flower bloomed/blooms. | 2. I planted a seed yesterday. | 3. makes",
+      "PART 1 PART 1",
+      "PART 3  (Reading): T / T / Max's sunflower project | Soil / Roots / flower | Inference: Because it is a scientific fact.",
+      "PART 3 PART 3",
+      "PART 3  (L1): 1-a, 2-b, 3-c, 4-d, 5-e, 6-f, 7-g, 8-h, 9-i, 10-j",
+      "PART 4 PART 3",
+      "PART 5  (L2): 1. Max planted a sunflower seed. | 2. He put the soil in a pot. | 3. He pushed the seed down. | 4. I poured water carefully. | 5. He knows the scientific facts. | 6. The roots will grow down. | 7. The stem will grow up. | 8. The leaves will make food. | 9. I am excited to see it grow. | 10. A yellow flower will bloom.",
+      "PART 6 PART 3"
+    ]
+  },
+  "task_cards": [
+    "S1 Task — \"The Missing Plant Facts\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. (Student A and Student B ask each other to find the missing growth facts).",
+    "Plaintext",
+    "🃏 CARD A — Student A | Week 27 S1 — \"The Missing Plant Facts\"",
+    "You KNOW:",
+    "A sunflower needs 3 cups of water and full sun.",
+    "You DON'T KNOW. Ask your partner:",
+    "\"What does a rose need?\"",
+    "Write what you hear:",
+    "____________________________________________________________",
+    "Plaintext",
+    "🃏 CARD B — Student B | Week 27 S1 — \"The Missing Plant Facts\"",
+    "You KNOW:",
+    "A rose needs 2 cups of water and morning sun.",
+    "You DON'T KNOW. Ask your partner:",
+    "\"What does a sunflower need?\"",
+    "Write what you hear:",
+    "____________________________________________________________",
+    "S2 Task — \"Fact or Past Action?\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. (Students combine what Luna did yesterday with a scientific fact).",
+    "Plaintext",
+    "🃏 CARD A — Student A | Week 27 S2 — \"Fact or Past Action?\"",
+    "You KNOW Luna's past action:",
+    "Yesterday, Luna planted a tomato seed.",
+    "You DON'T KNOW the scientific fact. Ask your partner:",
+    "\"What does a tomato plant need?\"",
+    "Write what you hear:",
+    "____________________________________________________________",
+    "Plaintext",
+    "🃏 CARD B — Student B | Week 27 S2 — \"Fact or Past Action?\"",
+    "You KNOW the scientific fact:",
+    "A tomato plant needs wet soil and hot sun.",
+    "You DON'T KNOW Luna's past action. Ask your partner:",
+    "\"What did Luna plant yesterday?\"",
+    "Write what you hear:",
+    "____________________________________________________________",
+    "S3 Task — \"The Project Presentation\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. (Students practice presenting their 6-sentence paragraph from Part 8).",
+    "Plaintext",
+    "🃏 CARD A — Student A | Week 27 S3 — \"Project Presentation\"",
+    "You are the Presenter!",
+    "Stand up. Speak loudly and clearly. Look at your partner.",
+    "Read your full paragraph from Part 8:",
+    "\"First, I got a pot and put dark soil inside it...\"",
+    "Wait for Student B to clap!",
+    "Plaintext",
+    "🃏 CARD B — Student B | Week 27 S3 — \"Project Presentation\"",
+    "You are the Audience!",
+    "Sit quietly. Look at Student A. Listen to their presentation.",
+    "When they finish, clap your hands loudly!",
+    "Now switch. You are the Presenter! Read your paragraph!"
+  ],
+  "task_cards_by_session": {
+    "1": [
+      "S1 Task — \"The Missing Plant Facts\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. (Student A and Student B ask each other to find the missing growth facts).",
+      "Plaintext",
+      "🃏 CARD A — Student A | Week 27 S1 — \"The Missing Plant Facts\"",
+      "You KNOW:",
+      "A sunflower needs 3 cups of water and full sun.",
+      "You DON'T KNOW. Ask your partner:",
+      "\"What does a rose need?\"",
+      "Write what you hear:",
+      "____________________________________________________________",
+      "Plaintext",
+      "🃏 CARD B — Student B | Week 27 S1 — \"The Missing Plant Facts\"",
+      "You KNOW:",
+      "A rose needs 2 cups of water and morning sun.",
+      "You DON'T KNOW. Ask your partner:",
+      "\"What does a sunflower need?\"",
+      "Write what you hear:",
+      "____________________________________________________________"
+    ],
+    "2": [
+      "S2 Task — \"Fact or Past Action?\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. (Students combine what Luna did yesterday with a scientific fact).",
+      "Plaintext",
+      "🃏 CARD A — Student A | Week 27 S2 — \"Fact or Past Action?\"",
+      "You KNOW Luna's past action:",
+      "Yesterday, Luna planted a tomato seed.",
+      "You DON'T KNOW the scientific fact. Ask your partner:",
+      "\"What does a tomato plant need?\"",
+      "Write what you hear:",
+      "____________________________________________________________",
+      "Plaintext",
+      "🃏 CARD B — Student B | Week 27 S2 — \"Fact or Past Action?\"",
+      "You KNOW the scientific fact:",
+      "A tomato plant needs wet soil and hot sun.",
+      "You DON'T KNOW Luna's past action. Ask your partner:",
+      "\"What did Luna plant yesterday?\"",
+      "Write what you hear:",
+      "____________________________________________________________"
+    ],
+    "3": [
+      "S3 Task — \"The Project Presentation\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. (Students practice presenting their 6-sentence paragraph from Part 8).",
+      "Plaintext",
+      "🃏 CARD A — Student A | Week 27 S3 — \"Project Presentation\"",
+      "You are the Presenter!",
+      "Stand up. Speak loudly and clearly. Look at your partner.",
+      "Read your full paragraph from Part 8:",
+      "\"First, I got a pot and put dark soil inside it...\"",
+      "Wait for Student B to clap!",
+      "Plaintext",
+      "🃏 CARD B — Student B | Week 27 S3 — \"Project Presentation\"",
+      "You are the Audience!",
+      "Sit quietly. Look at Student A. Listen to their presentation.",
+      "When they finish, clap your hands loudly!",
+      "Now switch. You are the Presenter! Read your paragraph!"
+    ]
+  },
+  "games": [
+    {
+      "id": "w27_g1",
+      "name": "Vocab Slam",
+      "type": "Vocabulary",
+      "duration": "10–12 min",
+      "players": "2–4 per group",
+      "session_fit": "All formats — best after vocab intro (P3) in any session",
+      "materials": "Vocab flashcards W27: seed, soil, water, sun, root",
+      "instructions": [
+        "Round 1: Teacher calls a Vietnamese meaning — first student to say the English word AND use it correctly in a sentence wins the card.",
+        "Round 2: Reverse — teacher calls English word, student gives Vietnamese + memory trick.",
+        "Bonus round: Students chain all vocab words (seed, soil, water, sun, root) into one connected story using sequence connectors from this week.",
+        "Team variant: 2 teams, 10 cards per round. Team with highest score wins."
+      ]
+    },
+    {
+      "id": "w27_g2",
+      "name": "Grammar Relay",
+      "type": "Grammar & Error Correction",
+      "duration": "12–15 min",
+      "players": "3–6 (team relay)",
+      "session_fit": "Best in Drill slot (Slot 2) or after P4/P6 in 3-session mode",
+      "materials": "10 sentence cards — 5 correct, 5 with errors based on: Present Simple for Facts (It grows, It needs) vs. Past Simple",
+      "instructions": [
+        "Grammar focus this week: Present Simple for Facts (It grows, It needs) vs. Past Simple.",
+        "Speed Read: Display sentence for 5 sec. Teams write C (correct) or E (error) on whiteboards simultaneously — no copying allowed.",
+        "Fix-It: For error sentences, team that corrects fastest AND explains the rule earns double points.",
+        "Build: Each team member adds 1 original sentence using the grammar target. The chain must be logically connected — each sentence must link to the previous."
+      ]
+    },
+    {
+      "id": "w27_g3",
+      "name": "Story Race",
+      "type": "Speaking & Production",
+      "duration": "15–20 min",
+      "players": "Whole class (pairs)",
+      "session_fit": "All formats — best in final slot of the week (S3 / Slot 5 / Session B)",
+      "materials": "Story starter card: theme \"Memories — The Garden Mystery\"",
+      "instructions": [
+        "Give each pair a story starter connected to this week's theme: \"Memories — The Garden Mystery\".",
+        "Pair A adds 2 sentences — must include at least 2 vocab words from this week.",
+        "Pass to Pair B: they MUST correct any grammar mistake from Pair A first, then add 2 more sentences using different vocab words.",
+        "Final round: Each pair presents their story ending aloud. Class votes on most creative + most accurate (seed, soil, water, sun, root usage). Teacher scores grammar precision."
+      ]
+    }
+  ],
+  "video_prompts": {
+    "chanting": [
+      {
+        "title": "Chanting — W27 (10 prompts)",
+        "script": "[W27.CHANT.1] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated seed falling into the ground, bold text \"SEED\" pulses on screen in sync + Audio: \"Seed! Seed! Plant a small seed!\" (spoken rhythmically at ~120bpm, child-friendly voice, energetic)\n[W27.CHANT.2] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated dark brown earth, bold text \"SOIL\" pulses on screen in sync + Audio: \"Soil! Soil! Dig in the soil!\"\n[W27.CHANT.3] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated water drops falling, bold text \"WATER\" pulses on screen in sync + Audio: \"Water! Water! Plants need water!\"\n[W27.CHANT.4] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated bright yellow sun smiling, bold text \"SUN\" pulses on screen in sync + Audio: \"Sun! Sun! The warm bright sun!\"\n[W27.CHANT.5] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated white roots growing downward, bold text \"ROOT\" pulses on screen in sync + Audio: \"Root! Root! Roots grow down!\"\n[W27.CHANT.6] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated green stalk growing upward, bold text \"STEM\" pulses on screen in sync + Audio: \"Stem! Stem! The green stem!\"\n[W27.CHANT.7] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated green leaves opening, bold text \"LEAF\" pulses on screen in sync + Audio: \"Leaf! Leaf! A big green leaf!\"\n[W27.CHANT.8] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated flower blooming brightly, bold text \"FLOWER\" pulses on screen in sync + Audio: \"Flower! Flower! A beautiful flower!\"\n[W27.CHANT.9] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated plant growing fast, bold text \"GROW\" pulses on screen in sync + Audio: \"Grow! Grow! Watch it grow!\"\n[W27.CHANT.10] Bright, colorful, 2D cartoon educational style, 4-second looping clip, clean white background, no real people: Animated person planting a small tree, bold text \"PLANT\" pulses on screen in sync + Audio: \"Plant! Plant! Plant a green tree!\""
+      }
+    ],
+    "shadowing": [
+      {
+        "session": 2,
+        "title": "Shadowing — Session 2 (5 prompts)",
+        "sentences": [
+          "[W27.SHADOW.S2.1] Clean 2D educational animation, 8-second clip, medium shot: Character Luna examining a potted plant, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"Plants are living things. Plants are living things.\" (spoken at 85wpm, said TWICE)",
+          "[W27.SHADOW.S2.2] Clean 2D educational animation, 8-second clip, medium shot: Character Max pointing to the bottom of a plant, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"The roots drink water from the soil. The roots drink water from the soil.\" (85wpm, said TWICE)",
+          "[W27.SHADOW.S2.3] Clean 2D educational animation, 8-second clip, medium shot: Character Luna touching a plant stem, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"The stem carries water to the leaves. The stem carries water to the leaves.\" (85wpm, said TWICE)",
+          "[W27.SHADOW.S2.4] Clean 2D educational animation, 8-second clip, medium shot: Character Max pointing to the sun, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"The leaves use the sun to make food. The leaves use the sun to make food.\" (85wpm, said TWICE)",
+          "[W27.SHADOW.S2.5] Clean 2D educational animation, 8-second clip, medium shot: Character Luna pointing upward, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"Nature is full of rules! Nature is full of rules!\" (85wpm, said TWICE)"
+        ]
+      },
+      {
+        "session": 3,
+        "title": "Shadowing — Session 3 (5 prompts)",
+        "sentences": [
+          "[W27.SHADOW.S3.1] Clean 2D educational animation, 8-second clip, medium shot: Character Luna holding a seed packet, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"First, you buy a seed. First, you buy a seed.\" (spoken at 95wpm, said TWICE)",
+          "[W27.SHADOW.S3.2] Clean 2D educational animation, 8-second clip, medium shot: Character Max putting a seed in a pot, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"Next, you put it in the soil. Next, you put it in the soil.\" (95wpm, said TWICE)",
+          "[W27.SHADOW.S3.3] Clean 2D educational animation, 8-second clip, medium shot: Character Luna holding a watering can, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"You give it water every day. You give it water every day.\" (95wpm, said TWICE)",
+          "[W27.SHADOW.S3.4] Clean 2D educational animation, 8-second clip, medium shot: Character Max pointing down then up, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"The roots grow down and the stem grows up. The roots grow down and the stem grows up.\" (95wpm, said TWICE)",
+          "[W27.SHADOW.S3.5] Clean 2D educational animation, 8-second clip, medium shot: Character Luna smelling a flower, 🎤 mic icon visible from second 1, character points at camera with smile + Audio: \"Finally, a big yellow flower blooms. Finally, a big yellow flower blooms.\" (95wpm, said TWICE) (Lưu ý: Đại từ \"you\" được dùng phổ biến trong tiếng Anh khi miêu tả một quy trình chung/facts (ví dụ: you put it in the soil = chúng ta đặt nó vào đất)."
+        ]
+      }
+    ]
+  },
+  "teacher_contents": [
+    {
+      "session": 1,
+      "listening_script": {
+        "speed_note": "(Tốc độ đọc: 85wpm. Giáo viên đọc chậm, rõ ràng và lặp lại câu chính tả 2 lần)",
+        "text": "I have a big garden at home. Every morning, I go outside. First, I check the soil. If the soil is dry, I give the plants water. The sun shines brightly on my garden. I can see the strong green stems and big green leaves. Yesterday, I saw a small white flower. It was beautiful! Growing a plant takes a lot of time, but it is very fun.",
+        "dictation": [
+          "A plant needs water.",
+          "Roots grow down into the soil."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nStudent A: Name a plant part (e.g., \"Root\").\nStudent B: State what it does (e.g., \"Roots grow down\"). Goal: Build a full plant map verbally.\n[O] L3 — Older: Fill in the blank with 3 options (10 items)\nA plant ________________________________ (needs / needed / needing) water every day.\nThe roots ________________________________ (grows / grow / grew) down into the earth.\nYesterday, I ________________________________ (planted / plant / plants) a seed.\nThe sun ________________________________ (shines / shine / shined) brightly today.\nFirst, you ________________________________ (puts / put / putting) the seed in the soil.\nA green stem ________________________________ (grows / grow / grew) up to the sky.\nLast week, I ________________________________ (water / waters / watered) my garden.\nLeaves ________________________________ (makes / make / making) food for the plant.\nFinally, a red flower ________________________________ (blooms / bloom / blooming).\nWe ________________________________ (watched / watch / watches) the plant grow last month.\nL4 — Sentence Expansion (10 items)\nBase: Roots grow. + Add: (down) -> ____________________________________________________________\nBase: A stem grows. + Add: (up) -> ____________________________________________________________\nBase: I planted a seed. + Add: (yesterday) -> ____________________________________________________________\nBase: Plants need water. + Add: (and sun) -> ____________________________________________________________\nBase: The sun shines. + Add: (brightly) -> ____________________________________________________________\nBase: Leaves appear. + Add: (on the stem) -> ____________________________________________________________\nBase: A flower blooms. + Add: (beautiful) -> ____________________________________________________________\nBase: I watered the plant. + Add: (last night) -> ____________________________________________________________\nBase: A plant has leaves. + Add: (green) -> ____________________________________________________________\nBase: We need soil. + Add: (to plant seeds) -> ____________________________________________________________\nL5 — Write Your Own (5 items)\nWrite a fact about what a plant needs: ____________________________________________________________\nWrite a past action you did in a garden: ____________________________________________________________\nWhat do roots do? ____________________________________________________________\nWhat does the sun do? ____________________________________________________________\nWrite a sentence starting with \"Finally,\": ____________________________________________________________",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION The Plant Life Cycle Read this: A life cycle shows how a living thing grows and changes. For a plant, it starts with a seed. When the seed gets water, it germinates (wakes up). Roots push down. A shoot pushes up to become the stem. Leaves grow to catch sunlight. Flowers bloom to make new seeds. Then the cycle starts again! The diagram shows: A circle of arrows. Top: a brown seed in soil. Right: roots growing down. Bottom: a stem with leaves. Left: a fully grown plant with a flower dropping a new seed.\nWrite 2 sentences applying the CLIL concept:\nThe plant life cycle starts with a ____________________________________________________________.\nLeaves grow to catch ____________________________________________________________. [O Bonus]: Why do flowers make new seeds? ____________________________________________________________ 🔍 YouTube: \"Plant life cycle for kids time lapse\"",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 1 (teacher-led)\n\nActivity 1 — Pair Speaking (3–5 min, pairs):\n  Student A: Name a plant part (e.g., \"Root\").\n  Student B: State what it does (e.g., \"Roots grow down\"). Goal: Build a full plant map verbally.\n\nChallenge Extension (L3 — for advanced/older students):\n  [O] L3 — Older: Fill in the blank with 3 options (10 items)\n  A plant ________________________________ (needs / needed / needing) water every day.\n  The roots ________________________________ (grows / grow / grew) down into the earth.\n  Yesterday, I ________________________________ (planted / plant / plants) a seed.\n  The sun ________________________________ (shines / shine / shined) brightly today.\n  First, you ________________________________ (puts / put / putting) the seed in the soil.\n  A green stem ________________________________ (grows / grow / grew) up to the sky.\n  Last week, I ________________________________ (water / waters / watered) my garden.\n  Leaves ________________________________ (makes / make / making) food for the plant.\n  Finally, a red flower ________________________________ (blooms / bloom / blooming).\n  We ________________________________ (watched / watch / watches) the plant grow last month.\n  L4 — Sentence Expansion (10 items)\n",
+      "vc_answer_key": "[1] Max [2] eight [3] seed [4] soil [5] water [6] water [7] sun [8] roots [9] soil [10] stem [11] leaves [12] flower"
+    },
+    {
+      "session": 2,
+      "listening_script": {
+        "speed_note": "(Tốc độ đọc: 85wpm. Giáo viên đọc chậm, rõ ràng và lặp lại câu chính tả 2 lần)",
+        "text": "Inside a plant, roots and stems work as a team. Roots are like straws. They drink water from the soil. The stem is like an elevator. It carries the water up to the leaves. The leaves catch the sun. They use the sun to make food for the whole plant. Nature is amazing!",
+        "dictation": [
+          "The stem carries water.",
+          "Leaves catch the sun."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nStudent A: Name a past action you did for a plant (\"I watered the plant\").\nStudent B: State a fact about why (\"Because plants need water\").\n[O] L3 — Older: Fill in the blank with 3 options (10 items)\nA seed ________________________________ (rests / rest / resting) in the soil.\nYesterday, Luna ________________________________ (plants / planted / planting) a sunflower.\nRoots ________________________________ (drinks / drink / drank) water every day.\nThe leaves ________________________________ (makes / make / making) food using the sun.\nLast week, we ________________________________ (watch / watched / watches) a video about plants.\nA stem ________________________________ (carries / carry / carried) water up.\nFlowers ________________________________ (bloom / blooms / bloomed) beautifully.\nI ________________________________ (am / was / were) excited yesterday.\nPlants ________________________________ (is / are / was) living things.\nThe gardener ________________________________ (explains / explain / explained) the rules.\nL4 — Sentence Expansion (10 items)\nBase: Roots drink water. + Add: (from the soil) -> ____________________________________________________________\nBase: A stem carries water. + Add: (up) -> ____________________________________________________________\nBase: Leaves make food. + Add: (using the sun) -> ____________________________________________________________\nBase: I planted a seed. + Add: (yesterday) -> ____________________________________________________________\nBase: I watered the soil. + Add: (carefully) -> ____________________________________________________________\nBase: The flower blooms. + Add: (brightly) -> ____________________________________________________________\nBase: A plant needs water. + Add: (and sun) -> ____________________________________________________________\nBase: The sun shines. + Add: (on the garden) -> ____________________________________________________________\nBase: I was excited. + Add: (last week) -> ____________________________________________________________\nBase: Plants grow. + Add: (fast) -> ____________________________________________________________\nL5 — Write Your Own (5 items)\nWhat does a root do? ____________________________________________________________\nWhat does a leaf do? ____________________________________________________________\nWrite what you did in a garden yesterday: ____________________________________________________________\nWrite why a plant needs the sun: ____________________________________________________________\nWrite your best sentence connecting a fact and a past action: ____________________________________________________________",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION Roots and Stems Teamwork Read this: Inside a plant, roots and stems work as a team. Roots are like straws. They absorb (drink) water and minerals from the soil. The stem is like an elevator. It transports (carries) the water up to the leaves. Without this teamwork, the plant cannot survive.\nWrite 2 sentences applying the CLIL concept:\nRoots act like straws to ____________________________________________________________.\nThe stem carries water up to ____________________________________________________________. [O Bonus]: What would happen if a plant had no roots? ____________________________________________________________",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 2 (teacher-led)\n\nActivity 1 — Pair Speaking (3–5 min, pairs):\n  Student A: Name a past action you did for a plant (\"I watered the plant\").\n  Student B: State a fact about why (\"Because plants need water\").\n\nChallenge Extension (L3 — for advanced/older students):\n  [O] L3 — Older: Fill in the blank with 3 options (10 items)\n  A seed ________________________________ (rests / rest / resting) in the soil.\n  Yesterday, Luna ________________________________ (plants / planted / planting) a sunflower.\n  Roots ________________________________ (drinks / drink / drank) water every day.\n  The leaves ________________________________ (makes / make / making) food using the sun.\n  Last week, we ________________________________ (watch / watched / watches) a video about plants.\n  A stem ________________________________ (carries / carry / carried) water up.\n  Flowers ________________________________ (bloom / blooms / bloomed) beautifully.\n  I ________________________________ (am / was / were) excited yesterday.\n  Plants ________________________________ (is / are / was) living things.\n  The gardener ________________________________ (explains / explain / explained) the rules.\n  L4 — Sentence Expansion (10 items)\n",
+      "vc_answer_key": "[1] plant [2] soil [3] roots [4] water [5] stem [6] water [7] plant [8] leaves [9] sun [10] sun [11] grow [12] flower"
+    },
+    {
+      "session": 3,
+      "listening_script": {
+        "speed_note": "(Tốc độ đọc: 85wpm. Giáo viên đọc chậm, rõ ràng và lặp lại câu chính tả 2 lần)",
+        "text": "Max is planting a sunflower today. First, he puts soil in a pot. Next, he plants the seed. Then, he pours water carefully. He knows that roots will grow down and a strong stem will grow up. Finally, a big yellow flower will bloom. He is very excited to watch it grow!",
+        "dictation": [
+          "He pours water carefully.",
+          "A beautiful flower blooms."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nStudent A: State a step in planting (\"First, I put soil in a pot\").\nStudent B: State the next step (\"Next, I plant the seed\").\n[O] L3 — Older: Fill in the blank with 3 options (10 items)\nYesterday, Max ________________________________ (brings / brought / bringing) a seed.\nHe ________________________________ (puts / put / putting) soil in a pot.\nHe ________________________________ (pushes / pushed / pushing) the seed down.\nHe ________________________________ (pours / poured / pouring) water carefully.\nMax ________________________________ (knows / know / knew) the facts now.\nRoots ________________________________ (grows / grow / grew) down.\nA strong stem ________________________________ (grows / grow / grew) up.\nLeaves ________________________________ (makes / make / making) food.\nI ________________________________ (am / was / were) excited yesterday.\nFinally, a flower ________________________________ (blooms / bloom / bloomed) beautifully.\nL4 — Sentence Expansion (10 items)\nBase: I brought a seed. + Add: (sunflower) -> ____________________________________________________________\nBase: I put soil. + Add: (in a pot) -> ____________________________________________________________\nBase: I pushed the seed. + Add: (down) -> ____________________________________________________________\nBase: I poured water. + Add: (carefully) -> ____________________________________________________________\nBase: I know the facts. + Add: (scientific) -> ____________________________________________________________\nBase: Roots grow. + Add: (down) -> ____________________________________________________________\nBase: A stem grows. + Add: (up) -> ____________________________________________________________\nBase: Leaves make food. + Add: (using the sun) -> ____________________________________________________________\nBase: I was excited. + Add: (to see it) -> ____________________________________________________________\nBase: A flower blooms. + Add: (yellow) -> ____________________________________________________________\nL5 — Write Your Own (5 items)\nWrite what you put in a pot: ____________________________________________________________\nWrite what you poured: ____________________________________________________________\nWrite a fact about leaves: ____________________________________________________________\nWrite why you are excited: ____________________________________________________________\nWrite your best sentence summarizing the project: ____________________________________________________________",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION The Power of Leaves Read this: Leaves are the food factories of a plant. They use a process called photosynthesis. They take sunlight, water from the roots, and air to make sugars. This food gives the plant energy to grow bigger and make flowers.\nWrite 2 sentences applying the CLIL concept:\nLeaves use sunlight, water, and air to ____________________________________________________________.\nThis food gives the plant energy to ____________________________________________________________. \n[O Bonus]: Why do plants need air? ____________________________________________________________",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 3 (teacher-led)\n\nActivity 1 — Pair Speaking (3–5 min, pairs):\n  Student A: State a step in planting (\"First, I put soil in a pot\").\n  Student B: State the next step (\"Next, I plant the seed\").\n\nChallenge Extension (L3 — for advanced/older students):\n  [O] L3 — Older: Fill in the blank with 3 options (10 items)\n  Yesterday, Max ________________________________ (brings / brought / bringing) a seed.\n  He ________________________________ (puts / put / putting) soil in a pot.\n  He ________________________________ (pushes / pushed / pushing) the seed down.\n  He ________________________________ (pours / poured / pouring) water carefully.\n  Max ________________________________ (knows / know / knew) the facts now.\n  Roots ________________________________ (grows / grow / grew) down.\n  A strong stem ________________________________ (grows / grow / grew) up.\n  Leaves ________________________________ (makes / make / making) food.\n  I ________________________________ (am / was / were) excited yesterday.\n  Finally, a flower ________________________________ (blooms / bloom / bloomed) beautifully.\n  L4 — Sentence Expansion (10 items)\n",
+      "vc_answer_key": "[1] First, I got a pot [2] soil [3] Then, I planted a seed [4] seed [5] Next, I poured water [6] grow [7] roots [8] stem [9] Finally, a flower will bloom"
+    }
+  ]
+}

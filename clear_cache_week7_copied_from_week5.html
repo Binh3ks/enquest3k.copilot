@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Cache - Week 7 COPIED FROM WEEK 5</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #status {
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .success {
+      background: rgba(76, 175, 80, 0.3);
+      border: 2px solid #4CAF50;
+    }
+    .info {
+      background: rgba(33, 150, 243, 0.3);
+      border: 2px solid #2196F3;
+    }
+    .fix-list {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .fix-list h3 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    .fix-list li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✅ Week 7 FINAL SOLUTION</h1>
+    <div class="subtitle">Copied Week 5 Working Structure!</div>
+    
+    <div class="fix-list">
+      <h3>🎯 What Changed:</h3>
+      <ul>
+        <li><strong>STOPPED TRYING TO FIX PROMPTS!</strong> ✅</li>
+        <li><strong>COPIED ENTIRE Week 5 Mission 2 structure</strong> (đã work perfect) ✅</li>
+        <li><strong>Only changed content:</strong>
+          <ul>
+            <li>Vocab: bedroom/kitchen → whiteboard/computer/desk</li>
+            <li>Theme: House tour → Classroom tour</li>
+            <li>Questions: "What room?" → "What is this?" (pointing)</li>
+          </ul>
+        </li>
+        <li><strong>Kept 100% of Week 5 architecture:</strong>
+          <ul>
+            <li>story_character structure</li>
+            <li>story_arc phases</li>
+            <li>objectives format</li>
+            <li>mission_context style</li>
+            <li>minimum/maximum turns</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>💡 Why This Works:</h3>
+      <ul>
+        <li><strong>Week 5 was already tested and perfected</strong> through many iterations</li>
+        <li><strong>No need to reinvent the wheel</strong> - structure already works!</li>
+        <li><strong>AI already trained on Week 5 prompt patterns</strong></li>
+        <li><strong>Same story_arc logic</strong> → AI knows how to progress through phases</li>
+        <li><strong>Same objective format</strong> → AI knows what to ask</li>
+        <li><strong>Only content is different</strong> → AI just applies same pattern to new vocab</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>📋 Week 5 Structure Copied:</h3>
+      <ul>
+        <li>✅ <code>story_character</code> with name, personality, backstory, speaking_style, facts</li>
+        <li>✅ <code>opening_narrative</code> - exact greeting to start mission</li>
+        <li>✅ <code>mission_context</code> - detailed rules for AI</li>
+        <li>✅ <code>story_arc</code> - 4 phases with turn ranges and phase_questions</li>
+        <li>✅ <code>minimum_turns: 15, maximum_turns: 20</code></li>
+        <li>✅ <code>objectives</code> - 8 steps with question_variants, hints, target_keywords, ack_options, recast_templates</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>🎯 Expected Behavior:</h3>
+      <ul>
+        <li><strong>Opening:</strong> "Hi! I'm Ms. Nova! Welcome to my classroom! Look at the front! There is a whiteboard here. Do you see it?"</li>
+        <li><strong>Turn 3:</strong> "(Point at computer) What is this?" → Student: "computer" → AI: "Yes! A computer! Good! (Point at desk) What is this?"</li>
+        <li><strong>Turn 5:</strong> "(Point at chair) What do you see?" → Student: "chair" → AI: "A chair! Yes! (Point at book) What is on the desk?"</li>
+        <li><strong>NO MORE:</strong> Random "What do you think?" or "Is there a pen in your backpack?" ❌</li>
+        <li><strong>AI follows story_arc phases exactly like Week 5!</strong> ✅</li>
+      </ul>
+    </div>
+
+    <button onclick="clearAll()">🧹 CLEAR CACHE & TEST WEEK 7</button>
+    
+    <div id="status" class="info">
+      Click above to test Week 7 with Week 5's proven structure!<br>
+      <strong>This should work because Week 5 already works!</strong>
+    </div>
+  </div>
+
+  <script>
+    function clearAll() {
+      const status = document.getElementById('status');
+      
+      status.className = 'info';
+      status.innerHTML = '🔄 Clearing all caches...';
+      
+      localStorage.clear();
+      sessionStorage.clear();
+      
+      if (window.indexedDB) {
+        indexedDB.databases().then((databases) => {
+          databases.forEach((db) => {
+            indexedDB.deleteDatabase(db.name);
+          });
+        });
+      }
+      
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      });
+      
+      setTimeout(() => {
+        status.className = 'success';
+        status.innerHTML = `
+          ✅ All caches cleared!<br><br>
+          <strong>Week 7 Mission 2 now uses Week 5 structure!</strong><br><br>
+          Changes:<br>
+          • Copied story_character format ✅<br>
+          • Copied story_arc phases ✅<br>
+          • Copied objectives structure ✅<br>
+          • Only changed vocab and theme ✅<br><br>
+          <strong>Testing in 3 seconds...</strong>
+        `;
+        
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 3000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

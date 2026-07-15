@@ -1,0 +1,971 @@
+Running dict:lint...
+
+> engquest3k@0.0.0 dict:lint
+> node tools/dict_lint.mjs
+
+
+📖 dict:lint — 2225 entries checked
+
+[33m⚠  300 WARNING(S):[0m
+
+  [33m[W1] "a": example has only 4 word(s) — aim for 6+
+       Got: "I have a pen."[0m
+
+  [33m[W1] "abilities": example has only 4 word(s) — aim for 6+
+       Got: "Everyone has different abilities."[0m
+
+  [33m[W1] "act": example has only 4 word(s) — aim for 6+
+       Got: "We must act quickly."[0m
+
+  [33m[W1] "actions": example has only 4 word(s) — aim for 6+
+       Got: "Our actions have consequences."[0m
+
+  [33m[W1] "adaptation": example has only 4 word(s) — aim for 6+
+       Got: "Adaptation helps animals survive."[0m
+
+  [33m[W2] "aeroplane": example may not use the word (stem "aeroplane" not found)
+       Got: "The aero plane flew over the clouds."[0m
+
+  [33m[W1] "aeroplanes": example has only 4 word(s) — aim for 6+
+       Got: "Aeroplanes transport passengers worldwide."[0m
+
+  [33m[W1] "africa": example has only 4 word(s) — aim for 6+
+       Got: "Lions live in Africa."[0m
+
+  [33m[W1] "alex": example has only 4 word(s) — aim for 6+
+       Got: "Alex is my classmate."[0m
+
+  [33m[W1] "am": example has only 3 word(s) — aim for 6+
+       Got: "I am happy."[0m
+
+  [33m[W1] "an": example has only 4 word(s) — aim for 6+
+       Got: "I have an apple."[0m
+
+  [33m[W1] "anyone": example has only 3 word(s) — aim for 6+
+       Got: "Is anyone home?"[0m
+
+  [33m[W1] "are": example has only 3 word(s) — aim for 6+
+       Got: "We are students."[0m
+
+  [33m[W1] "asia": example has only 4 word(s) — aim for 6+
+       Got: "China is in Asia."[0m
+
+  [33m[W1] "asleep": example has only 4 word(s) — aim for 6+
+       Got: "The baby is asleep."[0m
+
+  [33m[W1] "astronauts": example has only 4 word(s) — aim for 6+
+       Got: "Astronauts travel to space."[0m
+
+  [33m[W1] "at": example has only 4 word(s) — aim for 6+
+       Got: "I am at school."[0m
+
+  [33m[W1] "athletes": example has only 4 word(s) — aim for 6+
+       Got: "Athletes train every day."[0m
+
+  [33m[W1] "backpack": example has only 4 word(s) — aim for 6+
+       Got: "I have a backpack."[0m
+
+  [33m[W1] "bad": example has only 3 word(s) — aim for 6+
+       Got: "Bad weather today."[0m
+
+  [33m[W1] "bang": example has only 4 word(s) — aim for 6+
+       Got: "Don't bang the door!"[0m
+
+  [33m[W1] "bean": example has only 4 word(s) — aim for 6+
+       Got: "I ate one bean."[0m
+
+  [33m[W1] "beans": example has only 4 word(s) — aim for 6+
+       Got: "Green beans are healthy."[0m
+
+  [33m[W1] "beat": example has only 4 word(s) — aim for 6+
+       Got: "Beat the eggs well."[0m
+
+  [33m[W1] "beating": example has only 4 word(s) — aim for 6+
+       Got: "They are beating now."[0m
+
+  [33m[W1] "beautiful": example has only 4 word(s) — aim for 6+
+       Got: "This is very beautiful."[0m
+
+  [33m[W1] "beautifully": example has only 3 word(s) — aim for 6+
+       Got: "She sings beautifully."[0m
+
+  [33m[W1] "begin": example has only 4 word(s) — aim for 6+
+       Got: "Let's begin the lesson."[0m
+
+  [33m[W1] "being": example has only 4 word(s) — aim for 6+
+       Got: "I like being helpful."[0m
+
+  [33m[W1] "ben": example has only 3 word(s) — aim for 6+
+       Got: "Ben plays soccer."[0m
+
+  [33m[W1] "best": example has only 4 word(s) — aim for 6+
+       Got: "You are the best!"[0m
+
+  [33m[W1] "bite": example has only 4 word(s) — aim for 6+
+       Got: "Don't bite your nails."[0m
+
+  [33m[W1] "black": example has only 4 word(s) — aim for 6+
+       Got: "I have black shoes."[0m
+
+  [33m[W1] "bloom": example has only 4 word(s) — aim for 6+
+       Got: "Flowers bloom in spring."[0m
+
+  [33m[W1] "blooming": example has only 4 word(s) — aim for 6+
+       Got: "They are blooming now."[0m
+
+  [33m[W1] "blooms": example has only 4 word(s) — aim for 6+
+       Got: "The rose blooms beautifully."[0m
+
+  [33m[W1] "blossoms": example has only 4 word(s) — aim for 6+
+       Got: "Spring brings beautiful blossoms."[0m
+
+  [33m[W1] "blowing": example has only 4 word(s) — aim for 6+
+       Got: "They are blowing now."[0m
+
+  [33m[W1] "book": example has only 4 word(s) — aim for 6+
+       Got: "I have a book."[0m
+
+  [33m[W1] "bottle": example has only 4 word(s) — aim for 6+
+       Got: "Fill the water bottle."[0m
+
+  [33m[W1] "bounces": example has only 4 word(s) — aim for 6+
+       Got: "The ball bounces high."[0m
+
+  [33m[W1] "bows": example has only 3 word(s) — aim for 6+
+       Got: "He bows politely."[0m
+
+  [33m[W1] "box": example has only 4 word(s) — aim for 6+
+       Got: "I have a box."[0m
+
+  [33m[W1] "brightly": example has only 4 word(s) — aim for 6+
+       Got: "The stars shine brightly."[0m
+
+  [33m[W1] "bringing": example has only 4 word(s) — aim for 6+
+       Got: "They are bringing now."[0m
+
+  [33m[W1] "brother": example has only 4 word(s) — aim for 6+
+       Got: "I have a brother."[0m
+
+  [33m[W1] "brushes": example has only 4 word(s) — aim for 6+
+       Got: "Artists use different brushes."[0m
+
+  [33m[W1] "brushing": example has only 4 word(s) — aim for 6+
+       Got: "They are brushing now."[0m
+
+  [33m[W1] "bubble": example has only 4 word(s) — aim for 6+
+       Got: "Blow a big bubble!"[0m
+
+  [33m[W1] "building": example has only 4 word(s) — aim for 6+
+       Got: "They are building now."[0m
+
+  [33m[W1] "calligraphy": example has only 4 word(s) — aim for 6+
+       Got: "Calligraphy is beautiful handwriting."[0m
+
+  [33m[W1] "cameras": example has only 3 word(s) — aim for 6+
+       Got: "Tourists carry cameras."[0m
+
+  [33m[W1] "cannot": example has only 4 word(s) — aim for 6+
+       Got: "I cannot swim yet."[0m
+
+  [33m[W1] "canvas": example has only 4 word(s) — aim for 6+
+       Got: "Artists paint on canvas."[0m
+
+  [33m[W1] "care": example has only 4 word(s) — aim for 6+
+       Got: "Take care of yourself."[0m
+
+  [33m[W1] "caring": example has only 4 word(s) — aim for 6+
+       Got: "They are caring now."[0m
+
+  [33m[W1] "carrot": example has only 3 word(s) — aim for 6+
+       Got: "Rabbits eat carrots."[0m
+
+  [33m[W1] "carrying": example has only 4 word(s) — aim for 6+
+       Got: "They are carrying now."[0m
+
+  [33m[W1] "cartoons": example has only 4 word(s) — aim for 6+
+       Got: "Children love watching cartoons."[0m
+
+  [33m[W1] "carts": example has only 4 word(s) — aim for 6+
+       Got: "Push the shopping carts."[0m
+
+  [33m[W1] "catching": example has only 4 word(s) — aim for 6+
+       Got: "They are catching now."[0m
+
+  [33m[W1] "change": example has only 4 word(s) — aim for 6+
+       Got: "People change over time."[0m
+
+  [33m[W1] "changes": example has only 4 word(s) — aim for 6+
+       Got: "Everything changes over time."[0m
+
+  [33m[W1] "charlie": example has only 4 word(s) — aim for 6+
+       Got: "Charlie loves playing soccer."[0m
+
+  [33m[W1] "cheering": example has only 4 word(s) — aim for 6+
+       Got: "They are cheering now."[0m
+
+  [33m[W1] "cheers": example has only 4 word(s) — aim for 6+
+       Got: "The crowd cheers loudly."[0m
+
+  [33m[W1] "cheese": example has only 4 word(s) — aim for 6+
+       Got: "This cheese tastes good."[0m
+
+  [33m[W1] "cherry": example has only 4 word(s) — aim for 6+
+       Got: "The cherry is sweet."[0m
+
+  [33m[W2] "chickens": example may not use the word (stem "chicken" not found)
+       Got: "The hen laid an egg."[0m
+
+  [33m[W1] "chimpanzees": example has only 4 word(s) — aim for 6+
+       Got: "Chimpanzees are very intelligent."[0m
+
+  [33m[W1] "clap": example has only 3 word(s) — aim for 6+
+       Got: "Clap your hands!"[0m
+
+  [33m[W1] "classroom": example has only 4 word(s) — aim for 6+
+       Got: "I have a classroom."[0m
+
+  [33m[W1] "climbing": example has only 4 word(s) — aim for 6+
+       Got: "Rock climbing is exciting."[0m
+
+  [33m[W1] "climbs": example has only 3 word(s) — aim for 6+
+       Got: "She climbs mountains."[0m
+
+  [33m[W1] "close": example has only 4 word(s) — aim for 6+
+       Got: "Close the door quietly."[0m
+
+  [33m[W1] "clue": example has only 4 word(s) — aim for 6+
+       Got: "I have no clue!"[0m
+
+  [33m[W1] "code": example has only 4 word(s) — aim for 6+
+       Got: "Enter the secret code."[0m
+
+  [33m[W1] "collect": example has only 3 word(s) — aim for 6+
+       Got: "I collect stamps."[0m
+
+  [33m[W1] "come": example has only 3 word(s) — aim for 6+
+       Got: "Come here, please."[0m
+
+  [33m[W1] "comes": example has only 4 word(s) — aim for 6+
+       Got: "Spring comes after winter."[0m
+
+  [33m[W1] "compare": example has only 4 word(s) — aim for 6+
+       Got: "Compare these two answers."[0m
+
+  [33m[W1] "complete": example has only 4 word(s) — aim for 6+
+       Got: "Complete your homework first."[0m
+
+  [33m[W1] "concerts": example has only 4 word(s) — aim for 6+
+       Got: "Music concerts are exciting."[0m
+
+  [33m[W1] "conduct": example has only 3 word(s) — aim for 6+
+       Got: "Conduct yourself properly."[0m
+
+  [33m[W1] "connect": example has only 4 word(s) — aim for 6+
+       Got: "Connect the two wires."[0m
+
+  [33m[W1] "contact": example has only 3 word(s) — aim for 6+
+       Got: "Stay in contact."[0m
+
+  [33m[W1] "cooked": example has only 3 word(s) — aim for 6+
+       Got: "She cooked dinner."[0m
+
+  [33m[W1] "cookies": example has only 4 word(s) — aim for 6+
+       Got: "Grandma bakes delicious cookies."[0m
+
+  [33m[W1] "correct": example has only 4 word(s) — aim for 6+
+       Got: "Your answer is correct!"[0m
+
+  [33m[W1] "couldn't": example has only 4 word(s) — aim for 6+
+       Got: "I couldn't find it."[0m
+
+  [33m[W1] "count": example has only 3 word(s) — aim for 6+
+       Got: "Count to ten."[0m
+
+  [33m[W1] "counting": example has only 4 word(s) — aim for 6+
+       Got: "She is counting money."[0m
+
+  [33m[W1] "countries": example has only 4 word(s) — aim for 6+
+       Got: "I love my countries."[0m
+
+  [33m[W1] "country": example has only 4 word(s) — aim for 6+
+       Got: "I love my country."[0m
+
+  [33m[W1] "counts": example has only 3 word(s) — aim for 6+
+       Got: "counts to ten."[0m
+
+  [33m[W1] "covers": example has only 4 word(s) — aim for 6+
+       Got: "Snow covers the mountains."[0m
+
+  [33m[W1] "cows": example has only 4 word(s) — aim for 6+
+       Got: "Cows give us milk."[0m
+
+  [33m[W1] "crayons": example has only 4 word(s) — aim for 6+
+       Got: "Children color with crayons."[0m
+
+  [33m[W1] "creates": example has only 3 word(s) — aim for 6+
+       Got: "Art creates beauty."[0m
+
+  [33m[W1] "cute": example has only 4 word(s) — aim for 6+
+       Got: "What a cute baby!"[0m
+
+  [33m[W1] "dances": example has only 4 word(s) — aim for 6+
+       Got: "She performs traditional dances."[0m
+
+  [33m[W1] "david": example has only 4 word(s) — aim for 6+
+       Got: "David is very smart."[0m
+
+  [33m[W1] "day": example has only 4 word(s) — aim for 6+
+       Got: "Have a nice day!"[0m
+
+  [33m[W1] "days": example has only 4 word(s) — aim for 6+
+       Got: "Have a nice days!"[0m
+
+  [33m[W1] "desk": example has only 4 word(s) — aim for 6+
+       Got: "I have a desk."[0m
+
+  [33m[W2] "diaries": example may not use the word (stem "diari" not found)
+       Got: "She writes in her diary daily."[0m
+
+  [33m[W1] "doing": example has only 4 word(s) — aim for 6+
+       Got: "They are doing now."[0m
+
+  [33m[W1] "door": example has only 4 word(s) — aim for 6+
+       Got: "I have a door."[0m
+
+  [33m[W1] "doors": example has only 4 word(s) — aim for 6+
+       Got: "Please close the doors."[0m
+
+  [33m[W1] "downstairs": example has only 4 word(s) — aim for 6+
+       Got: "I see a downstairs."[0m
+
+  [33m[W1] "drinking": example has only 4 word(s) — aim for 6+
+       Got: "She is drinking water."[0m
+
+  [33m[W1] "easily": example has only 4 word(s) — aim for 6+
+       Got: "He solves problems easily."[0m
+
+  [33m[W1] "eating": example has only 4 word(s) — aim for 6+
+       Got: "Healthy eating is important."[0m
+
+  [33m[W1] "engineers": example has only 3 word(s) — aim for 6+
+       Got: "Engineers design buildings."[0m
+
+  [33m[W1] "europe": example has only 4 word(s) — aim for 6+
+       Got: "Paris is in Europe."[0m
+
+  [33m[W1] "explore": example has only 3 word(s) — aim for 6+
+       Got: "Let's explore together."[0m
+
+  [33m[W1] "face": example has only 4 word(s) — aim for 6+
+       Got: "I have a face."[0m
+
+  [33m[W1] "families": example has only 4 word(s) — aim for 6+
+       Got: "Families gather for holidays."[0m
+
+  [33m[W1] "farmers": example has only 3 word(s) — aim for 6+
+       Got: "Farmers grow crops."[0m
+
+  [33m[W1] "farms": example has only 4 word(s) — aim for 6+
+       Got: "Farms produce our food."[0m
+
+  [33m[W1] "father": example has only 4 word(s) — aim for 6+
+       Got: "I have a father."[0m
+
+  [33m[W1] "fingers": example has only 4 word(s) — aim for 6+
+       Got: "She has ten fingers."[0m
+
+  [33m[W1] "finish": example has only 4 word(s) — aim for 6+
+       Got: "Finish your homework first."[0m
+
+  [33m[W1] "flowers": example has only 4 word(s) — aim for 6+
+       Got: "Fresh flowers smell wonderful."[0m
+
+  [33m[W1] "food": example has only 4 word(s) — aim for 6+
+       Got: "My mother makes food."[0m
+
+  [33m[W1] "foods": example has only 4 word(s) — aim for 6+
+       Got: "I love Chinese foods."[0m
+
+  [33m[W1] "foot": example has only 3 word(s) — aim for 6+
+       Got: "My foot hurts."[0m
+
+  [33m[W1] "foxes": example has only 4 word(s) — aim for 6+
+       Got: "Foxes are clever animals."[0m
+
+  [33m[W1] "friend": example has only 4 word(s) — aim for 6+
+       Got: "I have a friend."[0m
+
+  [33m[W1] "friendly": example has only 4 word(s) — aim for 6+
+       Got: "This is very friendly."[0m
+
+  [33m[W1] "from": example has only 4 word(s) — aim for 6+
+       Got: "I am from Vietnam."[0m
+
+  [33m[W1] "full": example has only 4 word(s) — aim for 6+
+       Got: "The box is full."[0m
+
+  [33m[W1] "get": example has only 4 word(s) — aim for 6+
+       Got: "I get a gift."[0m
+
+  [33m[W1] "give": example has only 4 word(s) — aim for 6+
+       Got: "Give me your hand."[0m
+
+  [33m[W1] "go": example has only 4 word(s) — aim for 6+
+       Got: "I go to school."[0m
+
+  [33m[W1] "going": example has only 4 word(s) — aim for 6+
+       Got: "They are going now."[0m
+
+  [33m[W1] "green": example has only 4 word(s) — aim for 6+
+       Got: "The grass is green."[0m
+
+  [33m[W1] "growing": example has only 4 word(s) — aim for 6+
+       Got: "They are growing now."[0m
+
+  [33m[W1] "happens": example has only 3 word(s) — aim for 6+
+       Got: "What happens next?"[0m
+
+  [33m[W1] "heading": example has only 4 word(s) — aim for 6+
+       Got: "They are heading now."[0m
+
+  [33m[W1] "hearing": example has only 4 word(s) — aim for 6+
+       Got: "They are hearing now."[0m
+
+  [33m[W1] "helper": example has only 4 word(s) — aim for 6+
+       Got: "I have a helper."[0m
+
+  [33m[W1] "hold": example has only 4 word(s) — aim for 6+
+       Got: "Hold my hand tight."[0m
+
+  [33m[W1] "holding": example has only 4 word(s) — aim for 6+
+       Got: "They are holding now."[0m
+
+  [33m[W1] "holds": example has only 4 word(s) — aim for 6+
+       Got: "holds my hand tight."[0m
+
+  [33m[W1] "hot": example has only 4 word(s) — aim for 6+
+       Got: "Today is very hot."[0m
+
+  [33m[W1] "huge": example has only 4 word(s) — aim for 6+
+       Got: "The elephant is huge!"[0m
+
+  [33m[W1] "i": example has only 4 word(s) — aim for 6+
+       Got: "I have a i."[0m
+
+  [33m[W1] "idea": example has only 4 word(s) — aim for 6+
+       Got: "I have an idea!"[0m
+
+  [33m[W1] "ideas": example has only 4 word(s) — aim for 6+
+       Got: "I have an ideas!"[0m
+
+  [33m[W1] "immediately": example has only 3 word(s) — aim for 6+
+       Got: "Come home immediately!"[0m
+
+  [33m[W1] "includes": example has only 4 word(s) — aim for 6+
+       Got: "The price includes breakfast."[0m
+
+  [33m[W1] "instead": example has only 4 word(s) — aim for 6+
+       Got: "Let's play outside instead."[0m
+
+  [33m[W1] "instructions": example has only 4 word(s) — aim for 6+
+       Got: "Follow the instructions carefully."[0m
+
+  [33m[W1] "international": example has only 4 word(s) — aim for 6+
+       Got: "The conference was international."[0m
+
+  [33m[W1] "is": example has only 4 word(s) — aim for 6+
+       Got: "She is my friend."[0m
+
+  [33m[W1] "jumps": example has only 4 word(s) — aim for 6+
+       Got: "Can you jumps high?"[0m
+
+  [33m[W1] "kind": example has only 4 word(s) — aim for 6+
+       Got: "My teacher is kind."[0m
+
+  [33m[W1] "later": example has only 4 word(s) — aim for 6+
+       Got: "I'll call you later."[0m
+
+  [33m[W1] "leader": example has only 4 word(s) — aim for 6+
+       Got: "I have a leader."[0m
+
+  [33m[W1] "library": example has only 4 word(s) — aim for 6+
+       Got: "I have a library."[0m
+
+  [33m[W1] "lighting": example has only 4 word(s) — aim for 6+
+       Got: "They are lighting now."[0m
+
+  [33m[W1] "look": example has only 4 word(s) — aim for 6+
+       Got: "Look at this picture."[0m
+
+  [33m[W1] "looking": example has only 4 word(s) — aim for 6+
+       Got: "They are looking now."[0m
+
+  [33m[W1] "looks": example has only 4 word(s) — aim for 6+
+       Got: "looks at this picture."[0m
+
+  [33m[W1] "loudly": example has only 4 word(s) — aim for 6+
+       Got: "Don't talk so loudly!"[0m
+
+  [33m[W1] "lucky": example has only 4 word(s) — aim for 6+
+       Got: "I am very lucky."[0m
+
+  [33m[W1] "make": example has only 4 word(s) — aim for 6+
+       Got: "My mother makes breakfast."[0m
+
+  [33m[W1] "makes": example has only 4 word(s) — aim for 6+
+       Got: "Mom makes delicious cookies."[0m
+
+  [33m[W1] "many": example has only 4 word(s) — aim for 6+
+       Got: "I have many friends."[0m
+
+  [33m[W1] "matters": example has only 4 word(s) — aim for 6+
+       Got: "Your health matters most."[0m
+
+  [33m[W1] "means": example has only 4 word(s) — aim for 6+
+       Got: "This word means "happy.""[0m
+
+  [33m[W1] "meet": example has only 4 word(s) — aim for 6+
+       Got: "Nice to meet you."[0m
+
+  [33m[W1] "might": example has only 4 word(s) — aim for 6+
+       Got: "It might rain tomorrow."[0m
+
+  [33m[W1] "minerals": example has only 4 word(s) — aim for 6+
+       Got: "Rocks contain various minerals."[0m
+
+  [33m[W1] "moments": example has only 4 word(s) — aim for 6+
+       Got: "These are precious moments."[0m
+
+  [33m[W1] "morning": example has only 4 word(s) — aim for 6+
+       Got: "I exercise every morning."[0m
+
+  [33m[W1] "most": example has only 4 word(s) — aim for 6+
+       Got: "Most children like chocolate."[0m
+
+  [33m[W1] "mostly": example has only 4 word(s) — aim for 6+
+       Got: "I mostly eat vegetables."[0m
+
+  [33m[W1] "mother": example has only 4 word(s) — aim for 6+
+       Got: "I have a mother."[0m
+
+  [33m[W1] "muscles": example has only 4 word(s) — aim for 6+
+       Got: "Exercise strengthens your muscles."[0m
+
+  [33m[W1] "my": example has only 4 word(s) — aim for 6+
+       Got: "This is my book."[0m
+
+  [33m[W1] "never": example has only 4 word(s) — aim for 6+
+       Got: "I never eat breakfast."[0m
+
+  [33m[W1] "night": example has only 4 word(s) — aim for 6+
+       Got: "Good night, sleep well."[0m
+
+  [33m[W1] "noodles": example has only 4 word(s) — aim for 6+
+       Got: "I love eating noodles."[0m
+
+  [33m[W1] "normal": example has only 4 word(s) — aim for 6+
+       Got: "This is perfectly normal."[0m
+
+  [33m[W1] "nose": example has only 4 word(s) — aim for 6+
+       Got: "My nose is running."[0m
+
+  [33m[W1] "notebook": example has only 4 word(s) — aim for 6+
+       Got: "I have a notebook."[0m
+
+  [33m[W1] "one": example has only 4 word(s) — aim for 6+
+       Got: "I have one brother."[0m
+
+  [33m[W1] "ours": example has only 4 word(s) — aim for 6+
+       Got: "This is ours classroom."[0m
+
+  [33m[W1] "out": example has only 4 word(s) — aim for 6+
+       Got: "Take the trash out."[0m
+
+  [33m[W1] "panel-by-panel": example has only 4 word(s) — aim for 6+
+       Got: "Read the comic panel-by-panel."[0m
+
+  [33m[W1] "pasta": example has only 4 word(s) — aim for 6+
+       Got: "Italian pasta is delicious."[0m
+
+  [33m[W1] "perfect": example has only 3 word(s) — aim for 6+
+       Got: "Practice makes perfect!"[0m
+
+  [33m[W1] "perfectly": example has only 4 word(s) — aim for 6+
+       Got: "You did it perfectly!"[0m
+
+  [33m[W1] "picks": example has only 4 word(s) — aim for 6+
+       Got: "She picks fresh flowers."[0m
+
+  [33m[W1] "picture": example has only 4 word(s) — aim for 6+
+       Got: "I have a picture."[0m
+
+  [33m[W1] "pink": example has only 4 word(s) — aim for 6+
+       Got: "She loves pink flowers."[0m
+
+  [33m[W1] "popular": example has only 4 word(s) — aim for 6+
+       Got: "Pizza is very popular."[0m
+
+  [33m[W1] "powerful": example has only 3 word(s) — aim for 6+
+       Got: "Knowledge is powerful."[0m
+
+  [33m[W1] "properly": example has only 4 word(s) — aim for 6+
+       Got: "Do your homework properly."[0m
+
+  [33m[W1] "protects": example has only 4 word(s) — aim for 6+
+       Got: "Sunscreen protects your skin."[0m
+
+  [33m[W1] "pulling": example has only 4 word(s) — aim for 6+
+       Got: "They are pulling now."[0m
+
+  [33m[W1] "pulls": example has only 4 word(s) — aim for 6+
+       Got: "pulls the rope harder."[0m
+
+  [33m[W1] "put": example has only 4 word(s) — aim for 6+
+       Got: "Put your toys away."[0m
+
+  [33m[W1] "quickly": example has only 4 word(s) — aim for 6+
+       Got: "Run quickly, we're late!"[0m
+
+  [33m[W1] "raining": example has only 4 word(s) — aim for 6+
+       Got: "They are raining now."[0m
+
+  [33m[W1] "read": example has only 4 word(s) — aim for 6+
+       Got: "She reads a book."[0m
+
+  [33m[W1] "real": example has only 4 word(s) — aim for 6+
+       Got: "Is this story real?"[0m
+
+  [33m[W1] "red": example has only 4 word(s) — aim for 6+
+       Got: "I like red apples."[0m
+
+  [33m[W1] "reflects": example has only 4 word(s) — aim for 6+
+       Got: "The mirror reflects light."[0m
+
+  [33m[W1] "regular": example has only 4 word(s) — aim for 6+
+       Got: "Exercise should be regular."[0m
+
+  [33m[W1] "repairs": example has only 4 word(s) — aim for 6+
+       Got: "Dad repairs broken things."[0m
+
+  [33m[W1] "room": example has only 4 word(s) — aim for 6+
+       Got: "My room is upstairs."[0m
+
+  [33m[W1] "rooms": example has only 4 word(s) — aim for 6+
+       Got: "My rooms is upstairs."[0m
+
+  [33m[W1] "rug": example has only 4 word(s) — aim for 6+
+       Got: "I see a rug."[0m
+
+  [33m[W1] "run": example has only 4 word(s) — aim for 6+
+       Got: "He runs very fast."[0m
+
+  [33m[W1] "running": example has only 4 word(s) — aim for 6+
+       Got: "Running is good exercise."[0m
+
+  [33m[W1] "runs": example has only 4 word(s) — aim for 6+
+       Got: "I can runs fast."[0m
+
+  [33m[W1] "sad": example has only 4 word(s) — aim for 6+
+       Got: "This is very sad."[0m
+
+  [33m[W1] "safe": example has only 4 word(s) — aim for 6+
+       Got: "This place is safe."[0m
+
+  [33m[W1] "sarah": example has only 4 word(s) — aim for 6+
+       Got: "Sarah is very kind."[0m
+
+  [33m[W1] "say": example has only 4 word(s) — aim for 6+
+       Got: "What did she say?"[0m
+
+  [33m[W1] "saying": example has only 4 word(s) — aim for 6+
+       Got: "They are saying now."[0m
+
+  [33m[W1] "says": example has only 4 word(s) — aim for 6+
+       Got: "What did she says?"[0m
+
+  [33m[W1] "scientist": example has only 4 word(s) — aim for 6+
+       Got: "I have a scientist."[0m
+
+  [33m[W1] "seeing": example has only 4 word(s) — aim for 6+
+       Got: "They are seeing now."[0m
+
+  [33m[W1] "senses": example has only 4 word(s) — aim for 6+
+       Got: "Humans have five senses."[0m
+
+  [33m[W1] "shape": example has only 4 word(s) — aim for 6+
+       Got: "What shape is this?"[0m
+
+  [33m[W1] "shapes": example has only 4 word(s) — aim for 6+
+       Got: "Cut out different shapes."[0m
+
+  [33m[W1] "sheep": example has only 4 word(s) — aim for 6+
+       Got: "Sheep have soft wool."[0m
+
+  [33m[W1] "shines": example has only 4 word(s) — aim for 6+
+       Got: "The sun shines brightly."[0m
+
+  [33m[W1] "short": example has only 4 word(s) — aim for 6+
+       Got: "She has short hair."[0m
+
+  [33m[W1] "showing": example has only 4 word(s) — aim for 6+
+       Got: "They are showing now."[0m
+
+  [33m[W1] "shows": example has only 4 word(s) — aim for 6+
+       Got: "shows me your drawing."[0m
+
+  [33m[W1] "simple": example has only 4 word(s) — aim for 6+
+       Got: "The answer is simple."[0m
+
+  [33m[W1] "simply": example has only 3 word(s) — aim for 6+
+       Got: "It's simply amazing!"[0m
+
+  [33m[W1] "sister": example has only 4 word(s) — aim for 6+
+       Got: "I have a sister."[0m
+
+  [33m[W1] "sits": example has only 4 word(s) — aim for 6+
+       Got: "Please sits down here."[0m
+
+  [33m[W1] "sleeping": example has only 4 word(s) — aim for 6+
+       Got: "The baby is sleeping."[0m
+
+  [33m[W1] "smiles": example has only 4 word(s) — aim for 6+
+       Got: "She smiles at everyone."[0m
+
+  [33m[W1] "smiling": example has only 4 word(s) — aim for 6+
+       Got: "She is smiling happily."[0m
+
+  [33m[W1] "smoothly": example has only 3 word(s) — aim for 6+
+       Got: "Everything went smoothly."[0m
+
+  [33m[W1] "snowing": example has only 4 word(s) — aim for 6+
+       Got: "They are snowing now."[0m
+
+  [33m[W1] "sometimes": example has only 4 word(s) — aim for 6+
+       Got: "Sometimes I feel sad."[0m
+
+  [33m[W1] "sound": example has only 4 word(s) — aim for 6+
+       Got: "What was that sound?"[0m
+
+  [33m[W1] "sounds": example has only 4 word(s) — aim for 6+
+       Got: "What was that sounds?"[0m
+
+  [33m[W1] "speak": example has only 4 word(s) — aim for 6+
+       Got: "Can you speak English?"[0m
+
+  [33m[W1] "speaking": example has only 4 word(s) — aim for 6+
+       Got: "He is speaking English."[0m
+
+  [33m[W1] "speaks": example has only 4 word(s) — aim for 6+
+       Got: "Can you speaks English?"[0m
+
+  [33m[W1] "specific": example has only 3 word(s) — aim for 6+
+       Got: "Be more specific."[0m
+
+  [33m[W1] "steps": example has only 4 word(s) — aim for 6+
+       Got: "Follow these steps carefully."[0m
+
+  [33m[W1] "still": example has only 4 word(s) — aim for 6+
+       Got: "Are you still hungry?"[0m
+
+  [33m[W2] "story": example may not use the word (stem "story" not found)
+       Got: "Grandma tells us bedtime stories."[0m
+
+  [33m[W2] "strawberry": example may not use the word (stem "strawberry" not found)
+       Got: "Strawberries are red and sweet."[0m
+
+  [33m[W1] "strong": example has only 4 word(s) — aim for 6+
+       Got: "This is very strong."[0m
+
+  [33m[W1] "student": example has only 4 word(s) — aim for 6+
+       Got: "I have a student."[0m
+
+  [33m[W1] "table": example has only 4 word(s) — aim for 6+
+       Got: "I have a table."[0m
+
+  [33m[W1] "talk": example has only 4 word(s) — aim for 6+
+       Got: "Don't talk during class."[0m
+
+  [33m[W1] "talking": example has only 4 word(s) — aim for 6+
+       Got: "They are talking loudly."[0m
+
+  [33m[W1] "teacher": example has only 4 word(s) — aim for 6+
+       Got: "I have a teacher."[0m
+
+  [33m[W1] "team": example has only 4 word(s) — aim for 6+
+       Got: "I have a team."[0m
+
+  [33m[W1] "telling": example has only 4 word(s) — aim for 6+
+       Got: "They are telling now."[0m
+
+  [33m[W1] "tells": example has only 4 word(s) — aim for 6+
+       Got: "tells me a story."[0m
+
+  [33m[W1] "thanks": example has only 4 word(s) — aim for 6+
+       Got: "Thanks for your help!"[0m
+
+  [33m[W2] "their": example may not use the word (stem "their" not found)
+       Got: "They are my best friends."[0m
+
+  [33m[W2] "them": example may not use the word (stem "them" not found)
+       Got: "They are my best friends."[0m
+
+  [33m[W1] "thing": example has only 4 word(s) — aim for 6+
+       Got: "What is that thing?"[0m
+
+  [33m[W1] "together": example has only 3 word(s) — aim for 6+
+       Got: "We work together."[0m
+
+  [33m[W1] "tom": example has only 4 word(s) — aim for 6+
+       Got: "Tom finished his homework."[0m
+
+  [33m[W1] "tools": example has only 4 word(s) — aim for 6+
+       Got: "Carpenters use many tools."[0m
+
+  [33m[W1] "tricks": example has only 4 word(s) — aim for 6+
+       Got: "Magicians know many tricks."[0m
+
+  [33m[W1] "truly": example has only 4 word(s) — aim for 6+
+       Got: "I am truly sorry."[0m
+
+  [33m[W1] "understanding": example has only 4 word(s) — aim for 6+
+       Got: "They are understanding now."[0m
+
+  [33m[W1] "unique": example has only 3 word(s) — aim for 6+
+       Got: "Everyone is unique."[0m
+
+  [33m[W1] "up": example has only 4 word(s) — aim for 6+
+       Got: "Go up the stairs."[0m
+
+  [33m[W1] "upstairs": example has only 4 word(s) — aim for 6+
+       Got: "I see a upstairs."[0m
+
+  [33m[W1] "us": example has only 3 word(s) — aim for 6+
+       Got: "Come with us."[0m
+
+  [33m[W1] "uses": example has only 3 word(s) — aim for 6+
+       Got: "Come with uses!"[0m
+
+  [33m[W1] "using": example has only 4 word(s) — aim for 6+
+       Got: "They are using now."[0m
+
+  [33m[W1] "vegetable": example has only 3 word(s) — aim for 6+
+       Got: "Eat your vegetables!"[0m
+
+  [33m[W1] "very": example has only 4 word(s) — aim for 6+
+       Got: "It is very big."[0m
+
+  [33m[W1] "villages": example has only 4 word(s) — aim for 6+
+       Got: "Small villages are peaceful."[0m
+
+  [33m[W1] "visiting": example has only 4 word(s) — aim for 6+
+       Got: "They are visiting now."[0m
+
+  [33m[W1] "wait": example has only 4 word(s) — aim for 6+
+       Got: "Wait for me here."[0m
+
+  [33m[W1] "walk": example has only 4 word(s) — aim for 6+
+       Got: "I walk to school."[0m
+
+  [33m[W1] "walks": example has only 4 word(s) — aim for 6+
+       Got: "I walks to school."[0m
+
+  [33m[W1] "want": example has only 4 word(s) — aim for 6+
+       Got: "I want to play."[0m
+
+  [33m[W1] "watching": example has only 4 word(s) — aim for 6+
+       Got: "We are watching TV."[0m
+
+  [33m[W1] "we": example has only 4 word(s) — aim for 6+
+       Got: "I have a we."[0m
+
+  [33m[W1] "well": example has only 4 word(s) — aim for 6+
+       Got: "She sings very well."[0m
+
+  [33m[W1] "wild": example has only 4 word(s) — aim for 6+
+       Got: "Tigers are wild animals."[0m
+
+  [33m[W1] "work": example has only 3 word(s) — aim for 6+
+       Got: "We work together."[0m
+
+  [33m[W1] "write": example has only 4 word(s) — aim for 6+
+       Got: "I write my name."[0m
+
+  [33m[W1] "writing": example has only 4 word(s) — aim for 6+
+       Got: "I enjoy writing stories."[0m
+
+  [33m[W1] "wrong": example has only 4 word(s) — aim for 6+
+       Got: "That answer is wrong."[0m
+
+  [33m[W1] "yellow": example has only 4 word(s) — aim for 6+
+       Got: "The sun is yellow."[0m
+
+  [33m[W1] "yesterday": example has only 3 word(s) — aim for 6+
+       Got: "It rained yesterday."[0m
+
+  [33m[W1] "yet": example has only 4 word(s) — aim for 6+
+       Got: "I haven't finished yet."[0m
+
+  [33m[W2] "your": example may not use the word (stem "your" not found)
+       Got: "You are my best friend."[0m
+
+[32mdict:lint PASSED (with warnings — please review).[0m
+
+[main 1ff36b06] chore: commit current workspace updates
+ 119 files changed, 2608 insertions(+), 1662 deletions(-)
+ create mode 100644 "public/images/week29_new/10_10_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/1_11_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/1_12_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/1_1_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/1_20_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/1_21_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/2_22_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/2_2_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/3_13_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/3_23_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/3_3_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/4_14_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/4_24_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/4_4_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/5_15_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/5_25_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/5_5_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/6_16_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/6_26_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/6_6_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/7_17_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/7_7_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/8_18_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/8_8_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week29_new/9_19_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week29_new/9_9_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/10_10_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/10_20_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/1_11_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/1_1_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/1_21_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/2_12_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/2_22_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/2_2_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/3_13_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/3_23_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/3_3_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/4_14_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/4_24_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/4_4_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/5_15_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/5_25_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/5_5_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/6_16_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/6_26_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/6_6_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/7_17_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/7_27_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/7_7_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/8_18_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/8_28_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/8_8_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+ create mode 100644 "public/images/week30/9_19_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221_s1.jpg"
+ create mode 100644 "public/images/week30/9_9_H\303\243y_t\341\272\241o_c\303\241c_h\303\254nh_\341\272\243nh_3D_s\341\273\221n_s1.jpg"
+To https://github.com/Binh3ks/enquest3k.copilot.git
+   3473413d..1ff36b06  main -> main
+EXIT:$?

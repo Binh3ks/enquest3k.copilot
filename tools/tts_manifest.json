@@ -1,0 +1,1872 @@
+{
+  "audio/week32/dictation_1.mp3": {
+    "text_hash": "f318d4c169978b74",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_2.mp3": {
+    "text_hash": "e88728503e11c84a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_3.mp3": {
+    "text_hash": "439b4bfb8b784cde",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_4.mp3": {
+    "text_hash": "7abb29d13af90b5f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_5.mp3": {
+    "text_hash": "97efda93ef5ba8ef",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_6.mp3": {
+    "text_hash": "98a9fb13c0aa7ce8",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_7.mp3": {
+    "text_hash": "f606672d0aa66348",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_8.mp3": {
+    "text_hash": "0d3846658c6c6a67",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_9.mp3": {
+    "text_hash": "8939b0a3f90871a6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_10.mp3": {
+    "text_hash": "65f7f372b5236faf",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_11.mp3": {
+    "text_hash": "bbd1ee3ac57431b6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_12.mp3": {
+    "text_hash": "ff8f5b8ebee77be9",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_13.mp3": {
+    "text_hash": "f9e84ca8eef25820",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_14.mp3": {
+    "text_hash": "b20f51397556f3be",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_15.mp3": {
+    "text_hash": "fa7cc1e6edfd1a34",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/dictation_16.mp3": {
+    "text_hash": "96e147644f686135",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/explore_main.mp3": {
+    "text_hash": "d5cfdd07dca87f7b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_stem_1.mp3": {
+    "text_hash": "aeed726816454402",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_stem_2.mp3": {
+    "text_hash": "715ac6395fd2b964",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_stem_3.mp3": {
+    "text_hash": "fe3a420ee23c2b56",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_stem_4.mp3": {
+    "text_hash": "76e4f9d619f35805",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_stem_5.mp3": {
+    "text_hash": "c36e1372d6d9cdcf",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_stem_6.mp3": {
+    "text_hash": "3a752712a274aaf7",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_1.mp3": {
+    "text_hash": "71e5fd3d6dfffc10",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_2.mp3": {
+    "text_hash": "1baec04ea3f287ec",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_3.mp3": {
+    "text_hash": "82e4d9d657733090",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_4.mp3": {
+    "text_hash": "3e8904699146a5c8",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_5.mp3": {
+    "text_hash": "cf75a7e2c320f6f0",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_6.mp3": {
+    "text_hash": "76531be0907a6b31",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_7.mp3": {
+    "text_hash": "47fb73939663bd0e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_8.mp3": {
+    "text_hash": "2c4129b8e14380f4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_9.mp3": {
+    "text_hash": "ae9b9acdb5214683",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_10.mp3": {
+    "text_hash": "e93b381458ad2c99",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_11.mp3": {
+    "text_hash": "0115418d22f8198a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_12.mp3": {
+    "text_hash": "3330ec851f271f78",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_13.mp3": {
+    "text_hash": "23bc0cdca609a877",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_14.mp3": {
+    "text_hash": "65b82580cb7a1642",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_15.mp3": {
+    "text_hash": "745526498a00c5e0",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_16.mp3": {
+    "text_hash": "e9130dca179323cc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_17.mp3": {
+    "text_hash": "776637d8b4e3ce8f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_18.mp3": {
+    "text_hash": "e2cf36b56674ccde",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_19.mp3": {
+    "text_hash": "560c21eea99ce1e5",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_20.mp3": {
+    "text_hash": "032f62f877adceb6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_21.mp3": {
+    "text_hash": "c32da71c8be6eb7f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_22.mp3": {
+    "text_hash": "322c335d824c94fd",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_23.mp3": {
+    "text_hash": "0e163e3f55928a3d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_24.mp3": {
+    "text_hash": "f4d40ce70c1653e3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_25.mp3": {
+    "text_hash": "59a8a13a1f177406",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_26.mp3": {
+    "text_hash": "6e3471cf2402a2d7",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_27.mp3": {
+    "text_hash": "50820040e2ee1ac4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_28.mp3": {
+    "text_hash": "ce3cb3e175581c68",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_29.mp3": {
+    "text_hash": "c4cdca7d8e43a54a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_30.mp3": {
+    "text_hash": "40df28827a062453",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_31.mp3": {
+    "text_hash": "06e574cb4a37664b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_32.mp3": {
+    "text_hash": "047a0aec3f8d97b5",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_33.mp3": {
+    "text_hash": "2fb35cc4d01d6371",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_34.mp3": {
+    "text_hash": "15456c51409a1aae",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_35.mp3": {
+    "text_hash": "0890b96a2cdfc62d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/mindmap_branch_36.mp3": {
+    "text_hash": "21d002a49444c8d9",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_1.mp3": {
+    "text_hash": "fb09d9db9cf0d1ed",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_2.mp3": {
+    "text_hash": "e88728503e11c84a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_3.mp3": {
+    "text_hash": "439b4bfb8b784cde",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_4.mp3": {
+    "text_hash": "e9c98ec8a6fbd8d6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_5.mp3": {
+    "text_hash": "97efda93ef5ba8ef",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_6.mp3": {
+    "text_hash": "68a6776aae792eaa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_7.mp3": {
+    "text_hash": "1ace9226013c4620",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_8.mp3": {
+    "text_hash": "faee4a9fa07143d8",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_9.mp3": {
+    "text_hash": "6acd047aff80eccf",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_10.mp3": {
+    "text_hash": "276d086983d22e5e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_11.mp3": {
+    "text_hash": "96de0165593ea3c2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_12.mp3": {
+    "text_hash": "8e81f63c8bd4974d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_13.mp3": {
+    "text_hash": "712cc679f18ac9d2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/shadowing_full.mp3": {
+    "text_hash": "bdaf03ca96e46544",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_tidy.mp3": {
+    "text_hash": "4970db842db9cffc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_tidy.mp3": {
+    "text_hash": "0030476a08723218",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_tidy.mp3": {
+    "text_hash": "d08f568a58e58452",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_tidy.mp3": {
+    "text_hash": "32f846d3ac7bc765",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_birdhouse.mp3": {
+    "text_hash": "c2ca91a8b415ea90",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_birdhouse.mp3": {
+    "text_hash": "01f1bac2cff051ab",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_birdhouse.mp3": {
+    "text_hash": "f94d4eccdf3f3a53",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_birdhouse.mp3": {
+    "text_hash": "f388f6b1aea58043",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_grandmother.mp3": {
+    "text_hash": "399b811e4ca9f69b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_grandmother.mp3": {
+    "text_hash": "21c38971963369d4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_grandmother.mp3": {
+    "text_hash": "cae8c09e41273510",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_grandmother.mp3": {
+    "text_hash": "521559c8d8895eb3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_letter.mp3": {
+    "text_hash": "68d3a223e5b8107f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_letter.mp3": {
+    "text_hash": "8f661a30867c8c1f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_letter.mp3": {
+    "text_hash": "1054f573d7c01816",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_letter.mp3": {
+    "text_hash": "2e58f6b224b12b7f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_grass.mp3": {
+    "text_hash": "9c0ba0ac0569bbb0",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_grass.mp3": {
+    "text_hash": "9fdcff845db8a886",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_grass.mp3": {
+    "text_hash": "4af7db880dce7732",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_grass.mp3": {
+    "text_hash": "2b601ef1a749357c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_café.mp3": {
+    "text_hash": "8ee18b026a12b351",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_café.mp3": {
+    "text_hash": "1f8b50701c85ea46",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_café.mp3": {
+    "text_hash": "0acbcf716bb3c192",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_café.mp3": {
+    "text_hash": "e2065f7ee02d64f4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_choose.mp3": {
+    "text_hash": "df68ced569d1868e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_choose.mp3": {
+    "text_hash": "2f2989a2f039b74c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_choose.mp3": {
+    "text_hash": "87f71cc3c572738d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_choose.mp3": {
+    "text_hash": "810c76a2621eeac0",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_saturday.mp3": {
+    "text_hash": "258e0590ac90b472",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_saturday.mp3": {
+    "text_hash": "04f788df51206dd4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_saturday.mp3": {
+    "text_hash": "12474a005a6110f6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_saturday.mp3": {
+    "text_hash": "dbd6e3630dd2be67",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_early.mp3": {
+    "text_hash": "ed3f45cf244aef4f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_early.mp3": {
+    "text_hash": "7724bc466687f951",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_early.mp3": {
+    "text_hash": "b5e56e8e60fc7522",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_early.mp3": {
+    "text_hash": "215366819def54fe",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_asleep.mp3": {
+    "text_hash": "86860502f4af337d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_asleep.mp3": {
+    "text_hash": "5bcb0fb490277c6c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_asleep.mp3": {
+    "text_hash": "1651dac957061fd8",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_asleep.mp3": {
+    "text_hash": "1e13ad59f3353faa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_wash.mp3": {
+    "text_hash": "4195dbb988da512d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_wash.mp3": {
+    "text_hash": "5fffecd26e4d0f41",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_wash.mp3": {
+    "text_hash": "23e807149680c09f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_wash.mp3": {
+    "text_hash": "4b84be1f03bf7e07",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_sweep.mp3": {
+    "text_hash": "e52a1fed6f3b6c95",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_sweep.mp3": {
+    "text_hash": "f270c1528e52fd30",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_sweep.mp3": {
+    "text_hash": "d8fc0e5251e505b3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_sweep.mp3": {
+    "text_hash": "96145e2ff2f4df3b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_polish.mp3": {
+    "text_hash": "248158173b660212",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_polish.mp3": {
+    "text_hash": "9ead1a9ad06bb18d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_polish.mp3": {
+    "text_hash": "5e7ee78b320181ca",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_polish.mp3": {
+    "text_hash": "6e8b3abb13d56cf3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_iron.mp3": {
+    "text_hash": "afc6eb2511d5c1fa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_iron.mp3": {
+    "text_hash": "8ef8e3b082bac548",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_iron.mp3": {
+    "text_hash": "d27565d18b3a827c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_iron.mp3": {
+    "text_hash": "26418f9897a2b741",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_hammer.mp3": {
+    "text_hash": "2c7f7dd8d4f55e97",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_hammer.mp3": {
+    "text_hash": "c45ab45eedc86224",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_hammer.mp3": {
+    "text_hash": "e1691077f8f1717b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_hammer.mp3": {
+    "text_hash": "b807042357f5a882",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_nail.mp3": {
+    "text_hash": "a99fab370f8a1f69",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_nail.mp3": {
+    "text_hash": "8a1edb3ad1e5e410",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_nail.mp3": {
+    "text_hash": "d125399daa95528f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_nail.mp3": {
+    "text_hash": "7cbeeb317c4deb6c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_shelf.mp3": {
+    "text_hash": "189998ad4f9b8573",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_shelf.mp3": {
+    "text_hash": "8511742bb221e09a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_shelf.mp3": {
+    "text_hash": "6be50eba8d3de23b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_shelf.mp3": {
+    "text_hash": "823f980f29aac4e6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_broom.mp3": {
+    "text_hash": "8e7ac2ab8be3207a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_def_broom.mp3": {
+    "text_hash": "c34e1af28b9883c6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_ex_broom.mp3": {
+    "text_hash": "1b33fa979522d452",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/vocab_coll_broom.mp3": {
+    "text_hash": "04a312996393aab4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_do_homework.mp3": {
+    "text_hash": "7dc913fc232508fa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_do_homework.mp3": {
+    "text_hash": "b7255c38adf59709",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_do_homework.mp3": {
+    "text_hash": "820202bc7590851b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_do_homework.mp3": {
+    "text_hash": "68a2f6cd9b7d8495",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_do_homework.mp3": {
+    "text_hash": "160331b3083599e2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_make_the_bed.mp3": {
+    "text_hash": "29cb2a4091853fda",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_make_the_bed.mp3": {
+    "text_hash": "0d707ca0fd4dc285",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_make_the_bed.mp3": {
+    "text_hash": "075ba3ef66c246a1",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_make_the_bed.mp3": {
+    "text_hash": "85886f7a54a6ab37",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_make_the_bed.mp3": {
+    "text_hash": "0e62f8d94bf22fe2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_write_a_letter.mp3": {
+    "text_hash": "47cb4e29d4b7bfec",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_write_a_letter.mp3": {
+    "text_hash": "3553edecba132137",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_write_a_letter.mp3": {
+    "text_hash": "ae845c0aee45354c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_write_a_letter.mp3": {
+    "text_hash": "195fa1e42faa9741",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_write_a_letter.mp3": {
+    "text_hash": "62eecff350aedc28",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_cut_the_grass.mp3": {
+    "text_hash": "e05e8fb1dad7db48",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_cut_the_grass.mp3": {
+    "text_hash": "590f21e9941c68af",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_cut_the_grass.mp3": {
+    "text_hash": "78bc53e95e4c1a17",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_cut_the_grass.mp3": {
+    "text_hash": "fb2ba0cd7299d89a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_cut_the_grass.mp3": {
+    "text_hash": "9bd915d55a27f601",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_build_a_birdhouse.mp3": {
+    "text_hash": "f2340fdd92ed3961",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_build_a_birdhouse.mp3": {
+    "text_hash": "de39c54e50047500",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_build_a_birdhouse.mp3": {
+    "text_hash": "dac5c4df09dafc00",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_build_a_birdhouse.mp3": {
+    "text_hash": "a95550a1bf895aca",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_build_a_birdhouse.mp3": {
+    "text_hash": "29e0d138d80fad41",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_keep_things_tidy.mp3": {
+    "text_hash": "986b935819355a9e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_keep_things_tidy.mp3": {
+    "text_hash": "40ad2fa9a847835c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_keep_things_tidy.mp3": {
+    "text_hash": "d08f568a58e58452",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_keep_things_tidy.mp3": {
+    "text_hash": "4706ca868671dc29",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_keep_things_tidy.mp3": {
+    "text_hash": "7931fff3a491157f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_get_dressed.mp3": {
+    "text_hash": "1d8dc9c2e4fefd76",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_get_dressed.mp3": {
+    "text_hash": "39f4d545ccb6c74d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_get_dressed.mp3": {
+    "text_hash": "d30b2d31597c8908",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_get_dressed.mp3": {
+    "text_hash": "30f3f4bf52620873",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_get_dressed.mp3": {
+    "text_hash": "3d782504d260f319",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_wake_up_early.mp3": {
+    "text_hash": "85c74b742ba64c9f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_def_wake_up_early.mp3": {
+    "text_hash": "95fc542efceeaaf0",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_ex_wake_up_early.mp3": {
+    "text_hash": "7148291d1187f785",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_coll_wake_up_early.mp3": {
+    "text_hash": "db11dfeca139d210",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/wordpower_model_wake_up_early.mp3": {
+    "text_hash": "5d3c0f60f188953c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_1.mp3": {
+    "text_hash": "05574cbd781337ba",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_2.mp3": {
+    "text_hash": "3c490df4c42881b9",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_3.mp3": {
+    "text_hash": "8114553b29edbc98",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_4.mp3": {
+    "text_hash": "060d8368146dd134",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_5.mp3": {
+    "text_hash": "34e60b654e9e704a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_6.mp3": {
+    "text_hash": "238294f242c129a2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_7.mp3": {
+    "text_hash": "4613ab4cd9b2722a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_8.mp3": {
+    "text_hash": "d28b4522486fb973",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_9.mp3": {
+    "text_hash": "7869f3f87f55229b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_10.mp3": {
+    "text_hash": "7cc3be9edd362b3c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_11.mp3": {
+    "text_hash": "3b8cfb8be1708dcf",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/dictation_12.mp3": {
+    "text_hash": "2f86656552d9d9f8",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/explore_main.mp3": {
+    "text_hash": "098523e98b9432df",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/mindmap_stem_1.mp3": {
+    "text_hash": "0fd53a8c5fded6c0",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_stem_2.mp3": {
+    "text_hash": "5f5c64c5f607a538",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_stem_3.mp3": {
+    "text_hash": "e610832504111ed2",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_stem_4.mp3": {
+    "text_hash": "f399f51228a6d46e",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_stem_5.mp3": {
+    "text_hash": "3ea4d1547230b330",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_stem_6.mp3": {
+    "text_hash": "fe25f1614a978fc3",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_1.mp3": {
+    "text_hash": "d72765a3ffeaf404",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_2.mp3": {
+    "text_hash": "d452fae38c05380f",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_3.mp3": {
+    "text_hash": "d5e9e503400fb95b",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_4.mp3": {
+    "text_hash": "aff8921358ac522d",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_5.mp3": {
+    "text_hash": "21575b89f29d036d",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_6.mp3": {
+    "text_hash": "453586bb8acc6c37",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_7.mp3": {
+    "text_hash": "9022610e3e0de016",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_8.mp3": {
+    "text_hash": "599beb640e34a109",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_9.mp3": {
+    "text_hash": "e27bbc68fe1aef6e",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_10.mp3": {
+    "text_hash": "f16708e3ca558364",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_11.mp3": {
+    "text_hash": "bc4ba5850843fe9e",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_12.mp3": {
+    "text_hash": "1b32782424005bec",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_13.mp3": {
+    "text_hash": "e05e8fb1dad7db48",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_14.mp3": {
+    "text_hash": "f2340fdd92ed3961",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_15.mp3": {
+    "text_hash": "9158f48bcd334a7a",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_16.mp3": {
+    "text_hash": "c1bfc91cc94839a9",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_17.mp3": {
+    "text_hash": "c560b4b9851bfada",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_18.mp3": {
+    "text_hash": "97f14447d38a4423",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_19.mp3": {
+    "text_hash": "118a1de593252b71",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_20.mp3": {
+    "text_hash": "7c170f396f26844f",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_21.mp3": {
+    "text_hash": "959ae2e915d7e176",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_22.mp3": {
+    "text_hash": "9f9de50f605c9eff",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_23.mp3": {
+    "text_hash": "3d6294b0d24be6a5",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_24.mp3": {
+    "text_hash": "ea5c38f372b7c70f",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_25.mp3": {
+    "text_hash": "f51d0c7a63343efc",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_26.mp3": {
+    "text_hash": "933ea1af9f258a40",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_27.mp3": {
+    "text_hash": "5d9dfa7d34038df4",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_28.mp3": {
+    "text_hash": "f1834a874f250d79",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_29.mp3": {
+    "text_hash": "0752fcea2216224c",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_30.mp3": {
+    "text_hash": "41afa620aa9974cd",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_31.mp3": {
+    "text_hash": "489f719cadf91909",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_32.mp3": {
+    "text_hash": "1a006cc7bad38f20",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_33.mp3": {
+    "text_hash": "d1c8cca103ed6ddf",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_34.mp3": {
+    "text_hash": "58f8ee6ff265f046",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_35.mp3": {
+    "text_hash": "8bcb0fd25ca28160",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/mindmap_branch_36.mp3": {
+    "text_hash": "e0e3c9748ca4464f",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/shadowing_1.mp3": {
+    "text_hash": "301862d57f9ae7c5",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_2.mp3": {
+    "text_hash": "7006f5c6121e067a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_3.mp3": {
+    "text_hash": "db150102a6582bec",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_4.mp3": {
+    "text_hash": "34e60b654e9e704a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_5.mp3": {
+    "text_hash": "238294f242c129a2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_6.mp3": {
+    "text_hash": "4613ab4cd9b2722a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_7.mp3": {
+    "text_hash": "d28b4522486fb973",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_8.mp3": {
+    "text_hash": "7869f3f87f55229b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_9.mp3": {
+    "text_hash": "7cc3be9edd362b3c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_10.mp3": {
+    "text_hash": "41404b74e72b621b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_11.mp3": {
+    "text_hash": "3b6153e305492fed",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/shadowing_full.mp3": {
+    "text_hash": "1272ebaec84fd1fc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_tidy.mp3": {
+    "text_hash": "4970db842db9cffc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_tidy.mp3": {
+    "text_hash": "dd659bf39a3f7506",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_tidy.mp3": {
+    "text_hash": "de19ed140be7efcb",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_tidy.mp3": {
+    "text_hash": "9640fd57f7acc80b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_birdhouse.mp3": {
+    "text_hash": "c2ca91a8b415ea90",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_birdhouse.mp3": {
+    "text_hash": "9e6196cd76e39ae9",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_birdhouse.mp3": {
+    "text_hash": "64da3c60a90cf581",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_birdhouse.mp3": {
+    "text_hash": "f388f6b1aea58043",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_grandmother.mp3": {
+    "text_hash": "399b811e4ca9f69b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_grandmother.mp3": {
+    "text_hash": "07fe6a53ef992e20",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_grandmother.mp3": {
+    "text_hash": "94015ca0527d47e1",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_grandmother.mp3": {
+    "text_hash": "521559c8d8895eb3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_letter.mp3": {
+    "text_hash": "68d3a223e5b8107f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_letter.mp3": {
+    "text_hash": "b7407105a9b77932",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_letter.mp3": {
+    "text_hash": "80b6bf001a175d74",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_letter.mp3": {
+    "text_hash": "2e58f6b224b12b7f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_grass.mp3": {
+    "text_hash": "9c0ba0ac0569bbb0",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_grass.mp3": {
+    "text_hash": "72689c3a0c71175a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_grass.mp3": {
+    "text_hash": "10945a633b4f9cd6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_grass.mp3": {
+    "text_hash": "2b601ef1a749357c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_café.mp3": {
+    "text_hash": "8ee18b026a12b351",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_café.mp3": {
+    "text_hash": "f839b3bacf921a58",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_café.mp3": {
+    "text_hash": "1161943ebb0ab18e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_café.mp3": {
+    "text_hash": "6c6f3753546e8697",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_choose.mp3": {
+    "text_hash": "df68ced569d1868e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_choose.mp3": {
+    "text_hash": "efc7641ccfbbfb4b",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_choose.mp3": {
+    "text_hash": "01c5a6dc346ac514",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_choose.mp3": {
+    "text_hash": "e653c39f06083bd4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_saturday.mp3": {
+    "text_hash": "258e0590ac90b472",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_saturday.mp3": {
+    "text_hash": "56ca38b190d0b1e2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_saturday.mp3": {
+    "text_hash": "a73133c0b3094919",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_saturday.mp3": {
+    "text_hash": "fd5832df2958468e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_early.mp3": {
+    "text_hash": "ed3f45cf244aef4f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_early.mp3": {
+    "text_hash": "ed144da4caa44478",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_early.mp3": {
+    "text_hash": "696e5d3899479f83",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_early.mp3": {
+    "text_hash": "3649084c63d31ac5",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_asleep.mp3": {
+    "text_hash": "86860502f4af337d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_asleep.mp3": {
+    "text_hash": "c5fc0e9905e32384",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_asleep.mp3": {
+    "text_hash": "23885d612d7ee8df",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_asleep.mp3": {
+    "text_hash": "1e13ad59f3353faa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_wash.mp3": {
+    "text_hash": "4195dbb988da512d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_wash.mp3": {
+    "text_hash": "90edc8dee12327c1",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_wash.mp3": {
+    "text_hash": "e4158c374bc2a59d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_wash.mp3": {
+    "text_hash": "4b84be1f03bf7e07",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_sweep.mp3": {
+    "text_hash": "e52a1fed6f3b6c95",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_sweep.mp3": {
+    "text_hash": "890f56bb46620645",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_sweep.mp3": {
+    "text_hash": "9bc4a8861cf84ad1",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_sweep.mp3": {
+    "text_hash": "eb374b5dfa96a114",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_polish.mp3": {
+    "text_hash": "248158173b660212",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_polish.mp3": {
+    "text_hash": "b2eaebe5a078a278",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_polish.mp3": {
+    "text_hash": "27d2d4342771a7da",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_polish.mp3": {
+    "text_hash": "6e8b3abb13d56cf3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_iron.mp3": {
+    "text_hash": "afc6eb2511d5c1fa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_iron.mp3": {
+    "text_hash": "3892c854d15554a4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_iron.mp3": {
+    "text_hash": "20fe7eb7943c3fac",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_iron.mp3": {
+    "text_hash": "940084c69a0f5ba1",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_hammer.mp3": {
+    "text_hash": "2c7f7dd8d4f55e97",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_hammer.mp3": {
+    "text_hash": "66f796d498c4a89a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_hammer.mp3": {
+    "text_hash": "8975ac02d7de11e8",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_hammer.mp3": {
+    "text_hash": "accde0cf2d811cc3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_nail.mp3": {
+    "text_hash": "a99fab370f8a1f69",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_nail.mp3": {
+    "text_hash": "6206f41a799df0b4",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_nail.mp3": {
+    "text_hash": "23b4088dc1d49289",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_nail.mp3": {
+    "text_hash": "98c1845421446d41",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_shelf.mp3": {
+    "text_hash": "189998ad4f9b8573",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_shelf.mp3": {
+    "text_hash": "32519542aa3b1c85",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_shelf.mp3": {
+    "text_hash": "d718e81006ad7bbc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_shelf.mp3": {
+    "text_hash": "0b6ff2a3c6ea7028",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_broom.mp3": {
+    "text_hash": "8e7ac2ab8be3207a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_def_broom.mp3": {
+    "text_hash": "cefd8e55aeca4a4e",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_ex_broom.mp3": {
+    "text_hash": "2f97af7e6468e80a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/vocab_coll_broom.mp3": {
+    "text_hash": "73c132437f3dee4f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_do_homework.mp3": {
+    "text_hash": "7dc913fc232508fa",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_do_homework.mp3": {
+    "text_hash": "77eac0b14721ddbc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_do_homework.mp3": {
+    "text_hash": "cb48b1ca746d2300",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_do_homework.mp3": {
+    "text_hash": "06fb94a9a2cf9da7",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_do_homework.mp3": {
+    "text_hash": "8f97b9731e39fb41",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_make_the_bed.mp3": {
+    "text_hash": "29cb2a4091853fda",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_make_the_bed.mp3": {
+    "text_hash": "0ed09e252423d956",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_make_the_bed.mp3": {
+    "text_hash": "0e62f8d94bf22fe2",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_make_the_bed.mp3": {
+    "text_hash": "db722844132bc10c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_make_the_bed.mp3": {
+    "text_hash": "bd7ab81da4b2afa6",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_tidy_your_room.mp3": {
+    "text_hash": "4f695e2647d8fe73",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_tidy_your_room.mp3": {
+    "text_hash": "8f34a3e337916d09",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_tidy_your_room.mp3": {
+    "text_hash": "331ec5e96d0769eb",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_tidy_your_room.mp3": {
+    "text_hash": "094d98526aa7c9cc",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_tidy_your_room.mp3": {
+    "text_hash": "daca6a0c8b587144",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_cut_the_grass.mp3": {
+    "text_hash": "e05e8fb1dad7db48",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_cut_the_grass.mp3": {
+    "text_hash": "4059c6b553515418",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_cut_the_grass.mp3": {
+    "text_hash": "ca639bfb03e91b23",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_cut_the_grass.mp3": {
+    "text_hash": "fb2ba0cd7299d89a",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_cut_the_grass.mp3": {
+    "text_hash": "1d4adc943b3a1f7d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_build_a_birdhouse.mp3": {
+    "text_hash": "f2340fdd92ed3961",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_build_a_birdhouse.mp3": {
+    "text_hash": "0ff568e59869bc17",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_build_a_birdhouse.mp3": {
+    "text_hash": "a646079dcf752995",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_build_a_birdhouse.mp3": {
+    "text_hash": "5dd512737f8ec45d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_build_a_birdhouse.mp3": {
+    "text_hash": "1441f425ee38e699",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_put_things_away.mp3": {
+    "text_hash": "e421e5c2cd81bf13",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_put_things_away.mp3": {
+    "text_hash": "2aa2c719e9de748c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_put_things_away.mp3": {
+    "text_hash": "909ec9d1773de754",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_put_things_away.mp3": {
+    "text_hash": "4e19dfdc2cc55799",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_put_things_away.mp3": {
+    "text_hash": "7394347e1d15737c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_wash_the_dishes.mp3": {
+    "text_hash": "1d7e5a9600372d2d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_wash_the_dishes.mp3": {
+    "text_hash": "2bf60c00afa53e0c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_wash_the_dishes.mp3": {
+    "text_hash": "9acf4df3ec14014c",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_wash_the_dishes.mp3": {
+    "text_hash": "866ad6703ea5c1af",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_wash_the_dishes.mp3": {
+    "text_hash": "a074e09502aefad3",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_set_the_table.mp3": {
+    "text_hash": "f121d960d05cfc44",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_def_set_the_table.mp3": {
+    "text_hash": "87f8a86d65f5f746",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_ex_set_the_table.mp3": {
+    "text_hash": "897dfabb1d384c46",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_coll_set_the_table.mp3": {
+    "text_hash": "239e1bea283160d1",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/wordpower_model_set_the_table.mp3": {
+    "text_hash": "d4aeb9c7cdd4b98f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/read_main.mp3": {
+    "text_hash": "4c90c6e2446889fd",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/read_q1.mp3": {
+    "text_hash": "c4e4dac4b2bffb48",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/read_q2.mp3": {
+    "text_hash": "88d07c4bcb05f97d",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/read_q3.mp3": {
+    "text_hash": "244bf2f138547a70",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32/read_q4.mp3": {
+    "text_hash": "434f2d80e27355bb",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/read_main.mp3": {
+    "text_hash": "941f96201fc0440f",
+    "generated_at": "2026-05-22",
+    "model": "aura-asteria-en"
+  },
+  "audio/week32_easy/read_q1.mp3": {
+    "text_hash": "b00ee8d48a31199a",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/read_q2.mp3": {
+    "text_hash": "db253dfb988e971d",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/read_q3.mp3": {
+    "text_hash": "6ebff66e74546e24",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  },
+  "audio/week32_easy/read_q4.mp3": {
+    "text_hash": "a46dff9860381730",
+    "generated_at": "2026-05-22",
+    "model": "aura-orion-en"
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Week 2 Cache - Jan 27, 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+            transform: scale(1.02);
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            color: #4CAF50;
+            background: rgba(76, 175, 80, 0.2);
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        .warning {
+            background: rgba(255, 152, 0, 0.2);
+            color: #FFB74D;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Clear Week 2 Cache</h1>
+        <div class="subtitle">Week 2 Complete Rebuild - Jan 27, 2026</div>
+        
+        <div class="info">
+            <strong>📦 What's New in Week 2:</strong><br>
+            ✅ Mission 1: Meet My Family (Story conversation)<br>
+            ✅ Mission 2: Family Photos (Guessing GAME) 📸<br>
+            ✅ Mission 3: Mixed Up Family (Grammar correction GAME) 🤔<br>
+            ✅ New FreeTalk knowledge base<br>
+            ✅ 3 Family-themed Roleplay scenarios<br>
+            ✅ Natural questions với {student_answer} placeholders<br>
+            ✅ Full scaffolding patterns
+        </div>
+
+        <div class="warning">
+            ⚠️ <strong>CRITICAL:</strong> Week 2 đã được tạo lại hoàn toàn theo Production Prompt V2.1<br>
+            - Mission 2 & 3 giờ là GAME-BASED (giống Week 3, 5, 6, 7)<br>
+            - Xóa cache để load structure mới
+        </div>
+
+        <button onclick="clearWeek2()">🗑️ Clear Week 2 Cache</button>
+        <button onclick="clearAll()">🧨 Clear ALL Cache (Complete Reset)</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function clearWeek2() {
+            const result = document.getElementById('result');
+            let cleared = [];
+
+            // Clear Week 2 specific data
+            const week2Keys = [
+                'week_2_real',
+                'week_02_real', 
+                'week2_data',
+                'week-2',
+                'WEEK_2_',
+                'week2Mission',
+                'aiTutor_week2',
+                'currentWeek_2'
+            ];
+
+            week2Keys.forEach(key => {
+                const pattern = new RegExp(key, 'i');
+                Object.keys(localStorage).forEach(storageKey => {
+                    if (pattern.test(storageKey)) {
+                        localStorage.removeItem(storageKey);
+                        cleared.push(storageKey);
+                    }
+                });
+            });
+
+            // Clear session storage too
+            Object.keys(sessionStorage).forEach(key => {
+                if (key.includes('week') && key.includes('2')) {
+                    sessionStorage.removeItem(key);
+                    cleared.push(`[Session] ${key}`);
+                }
+            });
+
+            result.style.display = 'block';
+            result.className = 'success';
+            result.innerHTML = `
+                <strong>✅ Week 2 Cache Cleared!</strong><br>
+                Cleared ${cleared.length} items:<br>
+                ${cleared.length > 0 ? cleared.join('<br>') : 'No cached items found'}
+                <br><br>
+                <strong>Next steps:</strong><br>
+                1. Close this tab<br>
+                2. Refresh your AI Tutor app<br>
+                3. Navigate to Week 2<br>
+                4. Test Mission 2 (Family Photos - GAME)<br>
+                5. Test Mission 3 (Mixed Up Family - GAME)
+            `;
+        }
+
+        function clearAll() {
+            const result = document.getElementById('result');
+            
+            const count = localStorage.length + sessionStorage.length;
+            
+            localStorage.clear();
+            sessionStorage.clear();
+
+            result.style.display = 'block';
+            result.className = 'success';
+            result.innerHTML = `
+                <strong>✅ Complete Cache Clear!</strong><br>
+                Cleared ${count} total items from localStorage and sessionStorage
+                <br><br>
+                <strong>⚠️ ALL data cleared including:</strong><br>
+                - All week data<br>
+                - Progress tracking<br>
+                - User settings<br>
+                - Mission attempts<br>
+                <br>
+                <strong>Next: Refresh app and test Week 2!</strong>
+            `;
+        }
+    </script>
+</body>
+</html>

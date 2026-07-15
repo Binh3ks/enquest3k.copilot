@@ -1,0 +1,1115 @@
+[
+  {
+    "weekId": 7,
+    "note": "School Supplies - There is/are",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "Sam school supplies story for kids English"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "there is there are song for kids ESL"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "query": "school supplies vocabulary backpack pencil case ruler"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "query": "how to use school supplies for kids"
+      },
+      {
+        "id": 5,
+        "purpose": "STORY",
+        "query": "back to school supplies story English for beginners"
+      }
+    ]
+  },
+  {
+    "weekId": "7_easy",
+    "note": "School Supplies Easy - There is/are",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "school supplies simple story for kids English"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "there is there are for beginners kids"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "query": "school supplies vocabulary simple for young learners"
+      },
+      {
+        "id": 4,
+        "purpose": "STORY",
+        "query": "what is in my backpack kids English"
+      },
+      {
+        "id": 5,
+        "purpose": "SCIENCE",
+        "query": "school supplies for kids beginners"
+      }
+    ]
+  },
+  {
+    "weekId": 11,
+    "note": "My Weekend Adventure - Places: park, library, supermarket, zoo",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "my weekend adventure story for kids English"
+      },
+      {
+        "id": 2,
+        "purpose": "VOCABULARY",
+        "query": "places in town park library supermarket zoo vocabulary"
+      },
+      {
+        "id": 3,
+        "purpose": "GRAMMAR",
+        "query": "go to the park library zoo song for kids"
+      },
+      {
+        "id": 4,
+        "purpose": "STORY",
+        "query": "Little Fox weekend story English"
+      },
+      {
+        "id": 5,
+        "purpose": "SCIENCE",
+        "query": "animals at the zoo for kids educational"
+      }
+    ]
+  },
+  {
+    "weekId": "11_easy",
+    "note": "My Weekend Adventure Easy - Places",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "weekend story for kids simple English"
+      },
+      {
+        "id": 2,
+        "purpose": "VOCABULARY",
+        "query": "places vocabulary park library store zoo for young learners"
+      },
+      {
+        "id": 3,
+        "purpose": "GRAMMAR",
+        "query": "I go to the park simple song for kids beginners"
+      },
+      {
+        "id": 4,
+        "purpose": "STORY",
+        "query": "weekend adventure kids simple English story"
+      },
+      {
+        "id": 5,
+        "purpose": "SCIENCE",
+        "query": "animals at the zoo for kids beginners"
+      }
+    ]
+  },
+  {
+    "weekId": 17,
+    "note": "Weather & Clothes - GRAMMAR: because/so cause-effect",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "GRAMMAR",
+        "query": "because so cause effect for kids English song"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "why because reason song for kids ESL"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "Little Fox weather story"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "weather vocabulary song kids"
+      },
+      {
+        "id": 5,
+        "purpose": "SCIENCE",
+        "query": "SciShow Kids weather"
+      }
+    ]
+  },
+  {
+    "weekId": 18,
+    "note": "Present Continuous - NO DUPLICATES with W15-16-12",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "GRAMMAR",
+        "query": "what are you doing present continuous song"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "English Singsing present continuous what is she doing he is -jumping -dancing"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "Vooks story for kids actions"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "verbs vocabulary song kids ESL activities"
+      },
+      {
+        "id": 5,
+        "purpose": "SCIENCE",
+        "query": "how cameras work for kids science"
+      }
+    ]
+  },
+  {
+    "weekId": 19,
+    "note": "When I Was Small - Past Simple was/were (Past State)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "GRAMMAR",
+        "query": "was were past simple song for kids"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past tense was were children ESL song"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "Little Fox story childhood memories kids"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "verb to be past was were kids lesson"
+      },
+      {
+        "id": 5,
+        "purpose": "SCIENCE",
+        "query": "how do you grow up body changes kids science"
+      }
+    ]
+  },
+  {
+    "weekId": 20,
+    "note": "The Old Town Mystery - There was/There were (Past Existence)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "GRAMMAR",
+        "query": "there was there were past simple song for kids",
+        "backup_query": "there was there were ESL kids grammar"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "English Singsing there was there were grammar kids ESL",
+        "backup_query": "there was there were grammar song children"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "old town history changed over time story for kids",
+        "backup_query": "Little Fox history past present story children"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "places in a town village vocabulary song kids ESL",
+        "backup_query": "community places vocabulary kids English"
+      },
+      {
+        "id": 5,
+        "purpose": "SOCIAL",
+        "query": "how towns cities changed history kids learn",
+        "backup_query": "buildings bridges history kids education"
+      }
+    ]
+  },
+  {
+    "weekId": 21,
+    "note": "Yesterday's Diary - Past Simple Regular Verbs (-ed)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "GRAMMAR",
+        "query": "past simple regular verbs ed song for kids",
+        "backup_query": "past tense ed verbs song children ESL"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "English Singsing past tense verbs walked played cooked kids",
+        "backup_query": "past simple regular verbs grammar song kids"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "diary story yesterday kids activities past tense",
+        "backup_query": "Little Fox diary activities past tense story children"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "daily activities verbs past tense song kids ESL",
+        "backup_query": "daily routine past tense vocabulary children"
+      },
+      {
+        "id": 5,
+        "purpose": "SOCIAL",
+        "query": "kids talking about yesterday activities past tense",
+        "backup_query": "what did you do yesterday kids English"
+      }
+    ]
+  },
+  {
+    "weekId": 22,
+    "note": "The Time Detective - Past Yes/No Questions with Did",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "GRAMMAR",
+        "query": "did you questions past simple for kids",
+        "backup_query": "past simple questions did ESL children"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "English Singsing did you do yesterday grammar",
+        "backup_query": "did and didn't song for kids"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "kids detective story yesterday clues",
+        "backup_query": "Little Fox detective mystery story children"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "yesterday last night last week vocabulary kids",
+        "backup_query": "time words past tense song kids"
+      },
+      {
+        "id": 5,
+        "purpose": "SOCIAL",
+        "query": "interview questions for kids in English",
+        "backup_query": "kids asking and answering questions practice"
+      }
+    ]
+  },
+  {
+    "weekId": 23,
+    "note": "The Art Class - Regular Past Tense Verbs (-ed)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "VOCABULARY",
+        "query": "art class for kids painting drawing vocabulary",
+        "backup_query": "art words for children painting coloring"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "regular past tense verbs -ed for kids ESL",
+        "backup_query": "painted colored folded cut glued past tense song"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "origami paper folding for beginners kids",
+        "backup_query": "kids paper folding butterfly origami easy"
+      },
+      {
+        "id": 4,
+        "purpose": "STEM",
+        "query": "symmetry for kids what is symmetry math",
+        "backup_query": "line of symmetry shapes for children"
+      },
+      {
+        "id": 5,
+        "purpose": "SOCIAL",
+        "query": "color mixing primary secondary colors for kids",
+        "backup_query": "pigment color mixing experiment for children"
+      }
+    ]
+  },
+  {
+    "weekId": 24,
+    "note": "Feelings in the Past - Was/Were + Adjective Emotions",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "VOCABULARY",
+        "query": "feelings emotions song for kids scared excited tired happy",
+        "backup_query": "emotion words for children ESL happy sad scared surprised"
+      },
+      {
+        "id": 2,
+        "purpose": "STEM",
+        "query": "all about emotions brain science for kids",
+        "backup_query": "why do we have feelings science children"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "Inside Out emotions characters Joy Sadness Fear Anger",
+        "backup_query": "Disney emotions movie clip feelings characters"
+      },
+      {
+        "id": 4,
+        "purpose": "SOCIAL",
+        "query": "how to deal with big feelings calm down strategies kids",
+        "backup_query": "mindfulness emotions regulation children calm"
+      },
+      {
+        "id": 5,
+        "purpose": "GRAMMAR",
+        "query": "was were past tense feelings adjectives ESL for kids",
+        "backup_query": "I was scared excited tired was were grammar English"
+      }
+    ]
+  },
+  {
+    "weekId": 25,
+    "note": "The Sequence Challenge - First Next Then Finally Sequence Connectors",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "VOCABULARY",
+        "query": "sequence words first next then finally English for kids",
+        "backup_query": "ordering steps connectors first then finally ESL children"
+      },
+      {
+        "id": 2,
+        "purpose": "STEM",
+        "query": "what is an algorithm steps computer science for kids",
+        "backup_query": "algorithm instructions steps order technology children"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "how to make a sandwich step by step for kids",
+        "backup_query": "making a sandwich instructions cooking children sequence"
+      },
+      {
+        "id": 4,
+        "purpose": "SOCIAL",
+        "query": "morning routine step by step healthy habits children",
+        "backup_query": "daily routine sequence wake up brush teeth kids"
+      },
+      {
+        "id": 5,
+        "purpose": "GRAMMAR",
+        "query": "first next then finally sequence connectors grammar lesson ESL",
+        "backup_query": "sequence connectors English grammar lesson for children"
+      }
+    ]
+  },
+  {
+    "weekId": 26,
+    "note": "My Weekend Comic Strip - Past Simple Review was/were and -ed verbs",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "VOCABULARY",
+        "query": "how to make a comic strip for kids beginners",
+        "backup_query": "comic strip drawing tutorial children easy"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple tense was were for kids ESL grammar",
+        "backup_query": "was were past tense to be English children lesson"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "what did you do last weekend ESL speaking practice",
+        "backup_query": "weekend activities past simple English for kids"
+      },
+      {
+        "id": 4,
+        "purpose": "STEM",
+        "query": "how to draw cartoon characters simple comic art kids",
+        "backup_query": "draw cartoon characters easy step by step children"
+      },
+      {
+        "id": 5,
+        "purpose": "GRAMMAR",
+        "query": "regular verbs past tense -ed endings song for kids",
+        "backup_query": "past tense regular verbs played visited watched -ed kids"
+      }
+    ]
+  },
+  {
+    "weekId": "26_easy",
+    "note": "My Weekend Comic Strip EASY - Past Simple was/were and -ed verbs",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "VOCABULARY",
+        "query": "comic strip for kids how to draw panels speech bubbles",
+        "backup_query": "simple comic strip drawing kids tutorial"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "was and were past tense song children ESL",
+        "backup_query": "past simple was were grammar lesson for young learners"
+      },
+      {
+        "id": 3,
+        "purpose": "STORY",
+        "query": "weekend activities vocabulary for kids ESL",
+        "backup_query": "what I did last weekend English practice children"
+      },
+      {
+        "id": 4,
+        "purpose": "STEM",
+        "query": "past tense regular verbs -ed song for kids",
+        "backup_query": "verbs in past tense played watched visited children"
+      },
+      {
+        "id": 5,
+        "purpose": "SOCIAL",
+        "query": "talking about the weekend in English for kids",
+        "backup_query": "my weekend ESL conversation practice children"
+      }
+    ]
+  },
+  {
+    "weekId": 27,
+    "note": "Maya's Growing Plant - Present Simple for facts with sequence words (First, Next, After that, Finally)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "SCIENCE",
+        "query": "photosynthesis for kids how plants make food",
+        "backup_query": "photosynthesis explained children science lesson"
+      },
+      {
+        "id": 2,
+        "purpose": "STEM",
+        "query": "plant life cycle seed sprout stem flower for kids science",
+        "backup_query": "how plants grow from seed biology for children"
+      },
+      {
+        "id": 3,
+        "purpose": "GRAMMAR",
+        "query": "present simple tense facts and habits English for kids",
+        "backup_query": "present simple facts English grammar lesson children"
+      },
+      {
+        "id": 4,
+        "purpose": "SEQUENCE",
+        "query": "how to use sequencers first then next after that finally English",
+        "backup_query": "sequence words first next finally English lesson"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "plant parts roots stem leaf flower science vocabulary children",
+        "backup_query": "parts of a plant vocabulary lesson kids"
+      }
+    ]
+  },
+  {
+    "weekId": "27_easy",
+    "note": "Maya's Growing Plant EASY - Present Simple facts, plant growth sequence",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "SCIENCE",
+        "query": "photosynthesis for kids simple explanation",
+        "backup_query": "how plants use sunlight to grow children"
+      },
+      {
+        "id": 2,
+        "purpose": "STEM",
+        "query": "seed grows into plant science for kids",
+        "backup_query": "plant life cycle simple for young learners"
+      },
+      {
+        "id": 3,
+        "purpose": "GRAMMAR",
+        "query": "sequence words first next after that finally kids English",
+        "backup_query": "sequencing steps for children first then finally"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "parts of a plant for kids seed soil stem leaf flower",
+        "backup_query": "plant vocabulary for young learners"
+      },
+      {
+        "id": 5,
+        "purpose": "SOCIAL",
+        "query": "nature science facts for kids plants grow",
+        "backup_query": "plants facts children simple English"
+      }
+    ]
+  },
+  {
+    "weekId": 28,
+    "note": "Tortoise and Hare - Past Simple irregular verbs",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "tortoise hare fable animation kids"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple irregular verbs song children"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "fast slow animals facts kids"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "irregular past tense verbs for kids ran slept won lost"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "what is a fable moral kids"
+      }
+    ]
+  },
+  {
+    "weekId": "28_easy",
+    "note": "Tortoise and Hare - Easy - Past Simple irregular verbs",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "tortoise hare fable animation kids"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple irregular verbs easy kids"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "fast slow animals facts kids"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "irregular verbs ran won lost for beginners"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "fable lesson moral story for kids"
+      }
+    ]
+  },
+  {
+    "weekId": 29,
+    "note": "Off We Go! - Irregular Verbs 1: go went, run ran, come came, fly flew",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "airport adventure kids animation travel story"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple irregular verbs go went run ran come came fly flew kids"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "how do airplanes fly kids explained"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "past tense irregular verbs song went ran came flew"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "airport vocabulary for kids ESL"
+      }
+    ]
+  },
+  {
+    "weekId": "29_easy",
+    "note": "Off We Go! - Easy - Irregular Verbs 1",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "airport adventure kids animation travel story"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple go went run ran come came fly flew easy kids"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "how planes fly simple kids explanation"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "past tense verbs song for beginners children"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "travel words for kids ESL airport"
+      }
+    ]
+  },
+  {
+    "weekId": 30,
+    "note": "The Perfect Picnic - Irregular Verbs 2: eat ate, drink drank, buy bought, give gave",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "picnic day story animation kids"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple irregular verbs eat ate drink drank buy bought give gave kids"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "healthy food and nutrition for kids"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "irregular past tense verbs song ate drank bought gave children"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "picnic food vocabulary for kids ESL"
+      }
+    ]
+  },
+  {
+    "weekId": "30_easy",
+    "note": "The Perfect Picnic - Easy - Irregular Verbs 2",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "picnic story animation kids simple"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "past simple irregular verbs ate drank bought gave easy beginners"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "healthy eating food groups for kids"
+      },
+      {
+        "id": 4,
+        "purpose": "GRAMMAR",
+        "query": "irregular verbs past tense song children beginners"
+      },
+      {
+        "id": 5,
+        "purpose": "VOCABULARY",
+        "query": "picnic words food drink for kids"
+      }
+    ]
+  },
+  {
+    "weekId": 31,
+    "note": "The Senses - GRAMMAR: Irregular Verbs 3 (see/hear/feel/smell)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "forest walk nature senses kids animation"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "irregular verbs past tense saw heard felt smelt kids"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "five senses for kids science education"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "senses vocabulary see hear smell touch feel kids"
+      },
+      {
+        "id": 5,
+        "purpose": "SONG",
+        "query": "five senses song for children ESL learning"
+      }
+    ]
+  },
+  {
+    "weekId": "31_easy",
+    "note": "The Senses Easy - forest walk, Grade 2-3",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "forest animals nature walk for young children"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "irregular verbs song saw heard felt smelt young learners"
+      },
+      {
+        "id": 3,
+        "purpose": "SCIENCE",
+        "query": "five senses for young children primary school"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "forest words birds trees nature kids vocabulary"
+      },
+      {
+        "id": 5,
+        "purpose": "SONG",
+        "query": "senses song birds singing forest children ESL"
+      }
+    ]
+  },
+  {
+    "weekId": 32,
+    "note": "A Busy Saturday - GRAMMAR: Irregular Verbs 4 (wake/make/do/write)",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "busy Saturday story for kids morning routine"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "irregular verbs past tense wake woke make made write wrote kids"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "query": "daily routine verbs wake up get dressed make bed kids vocabulary"
+      },
+      {
+        "id": 4,
+        "purpose": "VOCABULARY",
+        "query": "household chores garden grass birdhouse kids vocabulary"
+      },
+      {
+        "id": 5,
+        "purpose": "SONG",
+        "query": "past tense irregular verbs song wake made wrote children ESL"
+      }
+    ]
+  },
+  {
+    "weekId": "32_easy",
+    "note": "My Busy Saturday Easy - Grade 2-3 routine verbs",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "busy Saturday story simple English kids animation"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "irregular verbs song wake made wrote young learners ESL"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "query": "daily routine get dressed make bed letter grandmother kids"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "query": "birds birdhouse nature children science"
+      },
+      {
+        "id": 5,
+        "purpose": "SONG",
+        "query": "Saturday routine song children ESL young learners"
+      }
+    ]
+  },
+  {
+    "weekId": 33,
+    "note": "The Mistake - Irregular Verbs 5: Accidents",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "videoId": "rgbGxsquVvE",
+        "query": "accident corridor school running safety kids story",
+        "title": "Learn about School Safety for Kids"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "videoId": "kuyfFTp-R7s",
+        "query": "irregular verbs past tense hit fall break hurt kids ESL",
+        "title": "Past tense irregular verbs rap"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "videoId": "QkHQ0CYwjaI",
+        "query": "school safety rules corridor accident prevention kids",
+        "title": "Body Parts Song for Kids"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "videoId": "CNxNIsQ_SzY",
+        "query": "cold pack first aid body injury swelling science kids",
+        "title": "First Aid Training for Kids"
+      },
+      {
+        "id": 5,
+        "purpose": "SONG",
+        "videoId": "91xnjL0Qc8s",
+        "query": "past tense irregular verbs song hit fall break children ESL",
+        "title": "Past tense verbs song"
+      }
+    ]
+  },
+  {
+    "weekId": "33_easy",
+    "note": "The Mistake Easy - Irregular Verbs 5: Accidents",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "videoId": "rgbGxsquVvE",
+        "query": "accident safety simple English kids animation school",
+        "title": "School Safety for Kids"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "videoId": "kuyfFTp-R7s",
+        "query": "irregular verbs song hit fall break hurt young learners ESL",
+        "title": "Past tense verbs rap"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "videoId": "QkHQ0CYwjaI",
+        "query": "body parts accident safety simple vocabulary kids",
+        "title": "Body Parts Song"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "videoId": "CNxNIsQ_SzY",
+        "query": "first aid cold pack body safe kids science",
+        "title": "First Aid for Kids"
+      },
+      {
+        "id": 5,
+        "purpose": "SONG",
+        "videoId": "91xnjL0Qc8s",
+        "query": "past tense verbs song simple children ESL beginners",
+        "title": "Past tense verbs song"
+      }
+    ]
+  },
+  {
+    "weekId": 34,
+    "note": "The Ant and the Grasshopper - Fable Storytelling / Relative Clauses WHO, WHICH, THAT",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "videoId": "fX_qVLl4pgM",
+        "query": "ant grasshopper fable storytelling kids animation",
+        "title": "The Ant and the Grasshopper — Classic Fable"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "videoId": "bN5qXowAFBI",
+        "query": "relative clauses WHO WHICH THAT English grammar for kids",
+        "title": "Relative Clauses: WHO, WHICH, THAT"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "videoId": "0UD8d_7IXFI",
+        "query": "fable vocabulary ant grasshopper prepare future kids",
+        "title": "Fable Vocabulary — Ant and Grasshopper"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "videoId": "9tIqhM5Gwp0",
+        "query": "how do ants store food nature documentary kids",
+        "title": "How Do Ants Store Food?"
+      },
+      {
+        "id": 5,
+        "purpose": "STORY",
+        "videoId": "c4EFGW6lOGs",
+        "query": "fables for kids Aesop collection storytelling",
+        "title": "Fables for Kids — Aesop's Stories"
+      }
+    ]
+  },
+  {
+    "weekId": "34_easy",
+    "note": "The Ant and the Grasshopper Easy - Fable Storytelling / Relative Clauses",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "videoId": "COX-x-vgGdE",
+        "query": "ant grasshopper fable animated story kids simple English",
+        "title": "The Ant and the Grasshopper — Animated Story"
+      },
+      {
+        "id": 2,
+        "purpose": "STORY",
+        "videoId": "c0rS-Ii2h8E",
+        "query": "Aesop fables for kids ant grasshopper simple English",
+        "title": "Aesop's Fables for Kids"
+      },
+      {
+        "id": 3,
+        "purpose": "GRAMMAR",
+        "videoId": "hUCzH6i0xao",
+        "query": "relative clauses WHO WHICH THAT for kids beginners",
+        "title": "Relative Clauses for Kids"
+      },
+      {
+        "id": 4,
+        "purpose": "STORY",
+        "videoId": "0G5lAnKxG4Y",
+        "query": "fables tortoise hare slow steady kids ESL",
+        "title": "Fables: The Tortoise and the Hare"
+      },
+      {
+        "id": 5,
+        "purpose": "STORY",
+        "videoId": "Z8K7hP0HlBY",
+        "query": "Aesop fables collection children storytelling English",
+        "title": "Aesop's Fables Collection"
+      }
+    ]
+  },
+  {
+    "weekId": 35,
+    "note": "Environmental Issues - Modal Verbs: Must, Should, Can",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "environmental issues climate change for kids explained"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "modal verbs must should can English grammar for kids"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "query": "renewable energy solar wind power for kids"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "query": "greenhouse effect climate change science for kids"
+      },
+      {
+        "id": 5,
+        "purpose": "ENVIRONMENT",
+        "query": "recycling reduce reuse protect environment for kids"
+      }
+    ]
+  },
+  {
+    "weekId": "35_easy",
+    "note": "Environmental Issues Easy - Modal Verbs: Must, Should, Can",
+    "videos": [
+      {
+        "id": 1,
+        "purpose": "STORY",
+        "query": "environmental issues for kids simple explained"
+      },
+      {
+        "id": 2,
+        "purpose": "GRAMMAR",
+        "query": "modal verbs must should can easy for kids beginners"
+      },
+      {
+        "id": 3,
+        "purpose": "VOCABULARY",
+        "query": "renewable energy solar wind for young learners"
+      },
+      {
+        "id": 4,
+        "purpose": "SCIENCE",
+        "query": "climate change simple kids explanation"
+      },
+      {
+        "id": 5,
+        "purpose": "ENVIRONMENT",
+        "query": "protect planet recycle kids simple"
+      }
+    ]
+  }
+]

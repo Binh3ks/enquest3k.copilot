@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Cache - Week 7 FINAL FIX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #status {
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .success {
+      background: rgba(76, 175, 80, 0.3);
+      border: 2px solid #4CAF50;
+    }
+    .info {
+      background: rgba(33, 150, 243, 0.3);
+      border: 2px solid #2196F3;
+    }
+    .warning {
+      background: rgba(255, 152, 0, 0.3);
+      border: 2px solid #FF9800;
+      color: #FFF;
+    }
+    .fix-list {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .fix-list h3 {
+      color: #ffd700;
+      margin-top: 0;
+    }
+    .fix-list li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔧 Week 7 FINAL FIX</h1>
+    <div class="subtitle">Root Cause Found & Fixed!</div>
+    
+    <div class="fix-list">
+      <h3>🎯 What Was Fixed:</h3>
+      <ul>
+        <li>✅ <strong>responseParser.js line 704:</strong> Changed generic fallback from <code>"What do you think?"</code> to <code>"Is there a pen in your backpack?"</code></li>
+        <li>✅ <strong>aiRouter.js (3 providers):</strong> Replaced ALL fallback <code>backup_questions</code> arrays with Week 7 appropriate questions</li>
+        <li>✅ <strong>aiRouter.js line 1161:</strong> Changed Gemini missing question fallback from <code>"What do you think?"</code> to <code>"Is there a pen in your backpack?"</code></li>
+        <li>✅ <strong>aiRouter.js line 341:</strong> Changed encouragement-5 from <code>"What do you think about that?"</code> to <code>"Is there a book on the desk?"</code></li>
+        <li>✅ <strong>promptLibrary.js line 633:</strong> Changed silence fallback from <code>"What do you think?"</code> to <code>"Is there a pen in your backpack?"</code></li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>🔍 Root Cause Analysis:</h3>
+      <ul>
+        <li><strong>Problem:</strong> AI wasn't ignoring FORBIDDEN lists - it was using HARDCODED fallback strings!</li>
+        <li><strong>Discovery:</strong> <code>"What do you think?"</code> appeared in 5+ code locations as default fallback</li>
+        <li><strong>Impact:</strong> When AI couldn't find backup_questions or response ended without "?", code automatically added forbidden phrases</li>
+        <li><strong>Solution:</strong> Replaced ALL hardcoded fallbacks with Week 7 appropriate questions using "There is a..." vocabulary</li>
+      </ul>
+    </div>
+
+    <div class="fix-list">
+      <h3>📝 Test After Clearing Cache:</h3>
+      <ul>
+        <li>✅ Mission 2: Should NOT see "What do you think?" anymore</li>
+        <li>✅ Mission 3: Should NOT see "What do you think?" anymore</li>
+        <li>✅ Roleplay Classroom Helper: Should use opening_line exactly, NO "What can I do for you?"</li>
+        <li>✅ All roleplays: Should use backup_questions from week_07_real.js, NOT fallback array</li>
+        <li>✅ All responses: Should use Week 7 vocab (pen, ruler, book, notebook, etc.)</li>
+      </ul>
+    </div>
+
+    <button onclick="clearAll()">🧹 CLEAR ALL CACHE & RELOAD</button>
+    
+    <div id="status" class="info">
+      Click the button above to clear all cache and test Week 7 again!
+    </div>
+  </div>
+
+  <script>
+    function clearAll() {
+      const status = document.getElementById('status');
+      
+      status.className = 'info';
+      status.innerHTML = '🔄 Clearing all caches...';
+      
+      // Clear localStorage
+      localStorage.clear();
+      
+      // Clear sessionStorage
+      sessionStorage.clear();
+      
+      // Clear IndexedDB (if exists)
+      if (window.indexedDB) {
+        indexedDB.databases().then((databases) => {
+          databases.forEach((db) => {
+            indexedDB.deleteDatabase(db.name);
+          });
+        });
+      }
+      
+      // Clear all cookies
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      });
+      
+      setTimeout(() => {
+        status.className = 'success';
+        status.innerHTML = `
+          ✅ All caches cleared!<br>
+          <strong>Changes applied:</strong><br>
+          • responseParser.js: Generic fallback → Week 7 question<br>
+          • aiRouter.js: All 3 providers fallback arrays → Week 7 questions<br>
+          • aiRouter.js: Gemini missing question → Week 7 question<br>
+          • aiRouter.js: encouragement-5 → Week 7 question<br>
+          • promptLibrary.js: Silence fallback → Week 7 question<br><br>
+          <strong>Reloading in 3 seconds...</strong>
+        `;
+        
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 3000);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

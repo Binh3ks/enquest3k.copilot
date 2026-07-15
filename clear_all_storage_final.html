@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear All Storage - Final</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .count {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        .count-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        ul {
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        li {
+            padding: 5px 0;
+            border-bottom: 1px solid #e9ecef;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Clear All Storage - Final Cleanup</h1>
+        <p class="subtitle">Remove ALL old progress data and prepare for Universal Progress System</p>
+        
+        <div class="count">
+            <div>Current localStorage items:</div>
+            <div class="count-number" id="itemCount">0</div>
+        </div>
+
+        <button onclick="showCurrentStorage()">📋 Show Current Storage</button>
+        <button onclick="clearAllStorage()" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            🗑️ Clear ALL Storage (localStorage + sessionStorage)
+        </button>
+        <button onclick="window.location.reload()">🔄 Reload Page</button>
+        
+        <div id="status"></div>
+        <div id="storageList"></div>
+    </div>
+
+    <script>
+        function updateItemCount() {
+            const count = localStorage.length + sessionStorage.length;
+            document.getElementById('itemCount').textContent = count;
+        }
+
+        function showCurrentStorage() {
+            const status = document.getElementById('status');
+            const storageList = document.getElementById('storageList');
+            
+            const localItems = [];
+            const sessionItems = [];
+            
+            // Get all localStorage items
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                localItems.push(key);
+            }
+            
+            // Get all sessionStorage items
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                sessionItems.push(key);
+            }
+            
+            const totalItems = localItems.length + sessionItems.length;
+            
+            if (totalItems === 0) {
+                status.className = 'success';
+                status.textContent = '✅ Storage is completely empty! Ready for Universal Progress System.';
+                storageList.innerHTML = '';
+            } else {
+                status.className = 'info';
+                status.innerHTML = `📦 Found <strong>${totalItems}</strong> items in storage:`;
+                
+                let html = '';
+                if (localItems.length > 0) {
+                    html += '<h3>localStorage (' + localItems.length + '):</h3>';
+                    html += '<ul>' + localItems.map(key => '<li>' + key + '</li>').join('') + '</ul>';
+                }
+                if (sessionItems.length > 0) {
+                    html += '<h3>sessionStorage (' + sessionItems.length + '):</h3>';
+                    html += '<ul>' + sessionItems.map(key => '<li>' + key + '</li>').join('') + '</ul>';
+                }
+                storageList.innerHTML = html;
+            }
+            
+            updateItemCount();
+        }
+
+        function clearAllStorage() {
+            const status = document.getElementById('status');
+            
+            const beforeCount = localStorage.length + sessionStorage.length;
+            
+            // Clear everything
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Also clear cookies (optional but thorough)
+            document.cookie.split(";").forEach(function(c) { 
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+            });
+            
+            status.className = 'success';
+            status.innerHTML = `
+                ✅ <strong>Complete cleanup successful!</strong><br>
+                • Removed ${beforeCount} items from localStorage<br>
+                • Cleared sessionStorage<br>
+                • Cleared cookies<br>
+                <br>
+                <strong>Next steps:</strong><br>
+                1. Make sure backend is running (port 5001)<br>
+                2. Reload the app<br>
+                3. Complete a task in any module<br>
+                4. Check if progress saves to database
+            `;
+            
+            document.getElementById('storageList').innerHTML = '';
+            updateItemCount();
+        }
+
+        // Initial count on page load
+        updateItemCount();
+        
+        // Auto-show storage on load
+        showCurrentStorage();
+    </script>
+</body>
+</html>

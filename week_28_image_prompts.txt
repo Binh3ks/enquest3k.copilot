@@ -1,0 +1,208 @@
+=====================================
+WEEK 28 IMAGE PROMPTS — Total: 28
+Theme: The Tortoise and the Hare / Transport
+Read story: "The Great Transport Race"
+Explore topic: "Getting Around: Transport Around Us"
+=====================================
+
+========== VOCAB IMAGES (18) ==========
+
+[tortoise.jpg]
+Category: Vocab | Word: tortoise
+Prompt: A friendly cartoon tortoise with a detailed green-brown domed shell walking slowly along a sunny forest path. The tortoise has a calm, wise expression. Tall green trees line the path. Dappled sunlight falls on the ground.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[hare.jpg]
+Category: Vocab | Word: hare
+Prompt: A wild hare with very long upright ears and powerful long back legs, mid-sprint across an open field. Fur is light brown, eyes are bright and lively. Blades of grass and a blur of motion behind it show speed.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[race.jpg]
+Category: Vocab | Word: race
+Prompt: A tortoise and a hare stand side by side at a starting line in a forest clearing. A banner reads "START". Cheering forest animals — rabbits, birds, squirrels — line the path. The hare looks cocky; the tortoise looks calm and focused.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[boast.jpg]
+Category: Vocab | Word: boast
+Prompt: A hare standing tall with puffed chest and arms raised in a proud gesture, talking loudly to a group of smaller animals who look unimpressed. A speech bubble shows "I am the fastest!" Bold, expressive character design.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[steady.jpg]
+Category: Vocab | Word: steady
+Prompt: A tortoise walking at a calm, even, unwavering pace along a long winding path through green fields. The sun shines brightly. The tortoise's face shows quiet focus. A trail of steady footprints behind it.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[nap.jpg]
+Category: Vocab | Word: nap
+Prompt: A hare curled up and fast asleep under a large shady oak tree, one arm tucked under its head as a pillow. Soft "ZZZ" bubbles float above. The empty race path stretches ahead in the background. Peaceful afternoon scene.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[determined.jpg]
+Category: Vocab | Word: determined
+Prompt: A small tortoise with focused, serious eyes and a firm expression, moving forward with great purpose on a long race path. Sweat on its brow, legs pumping steadily. Motivational rays of golden light behind it showing inner strength.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[cheer.jpg]
+Category: Vocab | Word: cheer
+Prompt: A crowd of joyful forest animals — rabbits, foxes, owls, squirrels — cheering with paws raised high and jumping with excitement near a colorful FINISH banner. Confetti fills the air. All faces express pure happiness.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[confident.jpg]
+Category: Vocab | Word: confident
+Prompt: A hare standing proudly with a big wide smile, arms crossed, radiating self-assurance and certainty. Bold posture. Background shows trophies and a blue ribbon. The expression shows absolute belief in winning.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[moral.jpg]
+Category: Vocab | Word: moral
+Prompt: An open glowing storybook showing an illustration of a tortoise crossing a finish line inside its pages. Above the book, golden letters spell out "The Moral of the Story". A wise owl sits beside it, nodding knowingly.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[car.jpg]
+Category: Vocab | Word: car
+Prompt: A cheerful bright red family car with round headlights and a happy front grille driving on a smooth road. Green rolling hills and blue sky in the background. Simple, rounded, child-friendly vehicle design.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[bus.jpg]
+Category: Vocab | Word: bus
+Prompt: A large friendly yellow city bus with big windows showing happy passengers inside. The bus travels down a tree-lined city street. The front shows a route sign. Cheerful, rounded vehicle design.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[train.jpg]
+Category: Vocab | Word: train
+Prompt: A colorful passenger train with multiple carriages traveling along a railway track through rolling green hills. The engine is at the front with a friendly rounded face. Mountains and blue sky in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[boat.jpg]
+Category: Vocab | Word: boat
+Prompt: A small wooden rowing boat floating on calm blue water. Two oars rest in the oarlocks. A rope tied at the bow. Gentle ripples on the water. A peaceful river setting with green reeds and lily pads at the bank.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[bicycle.jpg]
+Category: Vocab | Word: bicycle
+Prompt: A bright blue bicycle with two wheels, handlebars, a seat, and pedals shown in clear profile. A yellow helmet hangs from the handlebar. Set against a sunny park path. Clean, cheerful, recognizable design.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[taxi.jpg]
+Category: Vocab | Word: taxi
+Prompt: A bright yellow taxi cab on a busy city street with a yellow "TAXI" sign on the roof. The driver is visible through the window, wearing a cap and smiling. Colorful city buildings and streets in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[motorbike.jpg]
+Category: Vocab | Word: motorbike
+Prompt: A modern red motorbike shown in profile on a city road. The rider wears a helmet and leans slightly forward in a riding position. City streets with trees and buildings behind. Clean, clear, child-friendly design.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[ship.jpg]
+Category: Vocab | Word: ship
+Prompt: A large ocean ship with several decks, a bright painted hull, and a tall smokestack sailing across deep blue ocean water. White foam at the bow. Seagulls soar overhead. The scale shows how enormous the ship is compared to waves.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== WORD POWER IMAGES (8) ==========
+
+[wordpower_run_a_race.jpg]
+Category: Word Power | Phrase: run a race
+Prompt: A tortoise and a hare racing side by side down a forest track, both giving full effort. A crowd of cheering animals lines the route. A colorful "RACE" banner stretches across the track overhead. Energy lines suggest speed and excitement.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_slow_and_steady.jpg]
+Category: Word Power | Phrase: slow and steady
+Prompt: A determined tortoise moving at a slow, even, unbroken pace on a long winding path while in the far background a hare has stopped to rest. A decorative label reads "Slow and Steady". The tortoise's expression is calm and focused.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_take_a_nap.jpg]
+Category: Word Power | Phrase: take a nap
+Prompt: A hare lying on its back under a large shady tree, taking an afternoon nap. ZZZ bubbles rise above it. A soft pillow under its head. A clock on the tree shows midday. The scene is peaceful and cozy.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_cross_finish_line.jpg]
+Category: Word Power | Phrase: cross the finish line
+Prompt: A triumphant tortoise breaking through a colorful FINISH tape with arms raised in joy. Confetti and streamers explode overhead. Cheering animals crowd around the finish line. Golden light shines on the winner.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_moral_of_story.jpg]
+Category: Word Power | Phrase: the moral of the story
+Prompt: A wise owl professor points to a large golden scroll reading "The Moral of the Story: Slow and steady wins the race." Small animal students sit attentively listening. Warm golden classroom light. Stars and a glowing book in the scene.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_never_give_up.jpg]
+Category: Word Power | Phrase: never give up
+Prompt: A small tortoise climbing a steep rocky hill, looking tired but deeply determined. At the very top sits a golden trophy glowing in light. Encouraging animals cheer from below. A banner stretching across reads "Never Give Up!" in bold letters.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w7.jpg]
+Category: Word Power | Phrase: go by car
+Prompt: A cheerful animal character opening the door of a bright red family car and climbing in, ready for a journey. The car is parked on a sunny tree-lined street. A suitcase sits on the ground nearby. Big smile on the driver's face.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w8.jpg]
+Category: Word Power | Phrase: take the bus
+Prompt: A group of happy animal characters lining up to board a yellow city bus at a bus stop sign. The friendly driver greets them. A route board is visible above the bus door. A lively and welcoming scene.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== COVER IMAGES (2) ==========
+
+[read_cover_w28.jpg]
+Category: Read Cover | Story: "The Great Transport Race"
+Prompt: A dramatic race scene with a tortoise and hare at the starting line, surrounded by different transport vehicles — a car, a bus, a bicycle, a train — as if all competing in a grand multi-mode race. A colorful banner overhead reads "The Great Transport Race". Forest setting with cheering animal crowd. Exciting storybook energy.
+Style: bright children's illustrated storybook cover, vibrant colors, flat design, fun and exciting, large bold title area at top
+
+---
+
+[explore_cover_w28.jpg]
+Category: Explore Cover | Topic: "Getting Around: Transport Around Us"
+Prompt: A colorful world map background with friendly transport icons floating around it — a red car, a yellow bus, a blue train, a wooden boat, a bicycle, a red motorbike, and a large ocean ship. Each icon is cheerful and well-drawn. Arrows and dotted travel routes connect the icons. Educational and inviting design.
+Style: bright educational infographic-style illustration, flat design, colorful, children's magazine cover feel
+
+---

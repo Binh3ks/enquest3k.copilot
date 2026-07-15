@@ -1,0 +1,208 @@
+=====================================
+WEEK 31 IMAGE PROMPTS — Total: 28
+Theme: A Day at the Market / Materials Around Us
+Read story: "A Day at the Market"
+Explore topic: "Materials Around Us"
+=====================================
+
+========== VOCAB IMAGES (18) ==========
+
+[vocab_market.jpg]
+Category: Vocab | Word: market
+Prompt: A vibrant outdoor market with rows of stalls selling fresh produce, colorful fabrics, pottery, and handcrafted goods. Sellers call out to shoppers. Bright canopy awnings in red, yellow, and green. A lively community atmosphere with people browsing and buying.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_colourful.jpg]
+Category: Vocab | Word: colorful
+Prompt: A market stall piled high with a rainbow of colorful fruits and vegetables — red peppers, orange mangoes, purple eggplants, yellow bananas, green apples. The colors are vivid and striking. The stall looks abundant and eye-catching.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_seller.jpg]
+Category: Vocab | Word: seller
+Prompt: A friendly market seller standing behind a stall of fresh bread and vegetables, wearing an apron and calling out prices to shoppers. The seller holds up a loaf of bread and smiles warmly. A price board is visible. An active, welcoming market scene.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_price.jpg]
+Category: Vocab | Word: price
+Prompt: A close-up of a market stall showing a clear price tag on a bunch of mangoes reading "2 for $1.00". Other price tags hang from baskets of fruit nearby. A shopper's hand reaches toward the fruit. Clean and easy-to-read price display.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_stall.jpg]
+Category: Vocab | Word: stall
+Prompt: A single market stall viewed head-on — a folding table covered with colorful goods under a striped canopy awning. Handmade pottery, fresh produce, and folded fabrics are laid out neatly. A sign with the stall name hangs above. Bright and inviting.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_fresh.jpg]
+Category: Vocab | Word: fresh
+Prompt: A market bakery stall with freshly baked loaves of bread just placed on a rack, steam rising gently. Next to it, a basket of crisp fresh vegetables with dew drops on the leaves. The scene conveys freshness, warmth, and wholesome goodness.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_texture.jpg]
+Category: Vocab | Word: texture
+Prompt: A side-by-side comparison panel showing different textures: rough grey stone bark on the left, smooth shiny silk fabric on the right, and soft fuzzy cotton in the center. Hands reach in to touch each surface. Labels indicate "rough", "smooth", "soft".
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_sweet.jpg]
+Category: Vocab | Word: sweet
+Prompt: A child at a market fruit stall taking a taste of a ripe mango slice handed by a seller. The child's eyes light up with delight and a huge smile spreads across the face. Sugar sparkles float around the fruit. The mango is golden-orange and glistening.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_cloth.jpg]
+Category: Vocab | Word: cloth
+Prompt: Colorful bolts of woven fabric and hanging cloth panels at a market textile stall. Various patterns — stripes, florals, solids — in bright colors. A hand reaches out to feel the softness of a cotton cloth. The fabric folds gracefully in the breeze.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_pot.jpg]
+Category: Vocab | Word: pot
+Prompt: A display of clay and metal cooking pots at a market stall, arranged from small to large. Some are dark clay with earthy patterns, others are shiny metal with lids. A vendor stands behind them. A cozy, traditional crafts market setting.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_sculpture.jpg]
+Category: Vocab | Word: sculpture
+Prompt: A beautiful stone sculpture of a dragon at a market art stall — detailed carving with scales and fierce but friendly expression. The sculpture sits on a wooden pedestal. Other smaller carvings of animals and figures are displayed on shelves behind it.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_wood.jpg]
+Category: Vocab | Word: wood
+Prompt: A wooden market stall showcasing handcrafted wooden items — a carved wooden bowl, a wooden shelf with spice jars, small figurines, and a smooth cutting board. The natural wood grain is clearly visible. Warm, earthy tones throughout.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_metal.jpg]
+Category: Vocab | Word: metal
+Prompt: A market stall displaying shiny metal kitchen items — polished copper pots, steel ladles, silver spoons, and a metal watering can. Light reflects brightly off the metal surfaces. A vendor polishes one pot to a shine. Clean and orderly display.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_plastic.jpg]
+Category: Vocab | Word: plastic
+Prompt: A market stall showing everyday plastic items — colorful plastic bottles, bright plastic storage containers, a plastic bag hanging from a hook. The items are lightweight and come in many colors. A recycling symbol is visible on one bottle.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_glass.jpg]
+Category: Vocab | Word: glass
+Prompt: A wooden shelf at a market stall lined with glass jars filled with golden honey, bright red jam, and green pickles. The glass is clear and transparent. Sunlight catches the jars and makes them glow with color. Beautiful and appetizing display.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_stone.jpg]
+Category: Vocab | Word: stone
+Prompt: A child at a market art stall touching a smooth stone sculpture with both hands, feeling the cold hard surface. The stone is grey with natural texture. Other stone items — bowls, small statues — are displayed on the table. A tactile, curious moment.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_cotton.jpg]
+Category: Vocab | Word: cotton
+Prompt: A cotton plant branch with two fluffy white cotton bolls open and ready for picking. Beside it, a soft folded cotton cloth showing the white fibrous texture. A label indicates "pure cotton." A warm, natural, earthy setting with blue sky behind.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_breeze.jpg]
+Category: Vocab | Word: breeze
+Prompt: A light breeze blowing gently through a market fabric stall, causing colorful hanging cloths and banners to billow softly. Leaves on a nearby tree flutter. A child lifts their face to feel the cool gentle wind with eyes closed and a peaceful smile.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== WORD POWER IMAGES (8) ==========
+
+[wordpower_hear_bird.jpg]
+Category: Word Power | Phrase: hear a bird sing
+Prompt: A child standing still with eyes closed and a gentle smile, listening as a colorful song bird perches on a branch above and sings. Musical notes float in the air around the bird. A peaceful garden or market courtyard with morning light.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_smell_air.jpg]
+Category: Word Power | Phrase: smell the fresh air
+Prompt: A person at a market flower stall bending forward and inhaling deeply with eyes closed, savoring the fragrant fresh air around colorful blooms. Scent swirls rise visually from the flowers. An expression of pleasure and refreshment.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_feel_bark.jpg]
+Category: Word Power | Phrase: feel the rough bark
+Prompt: A child pressing both palms flat against the rough bark of a large tree trunk, exploring its texture with curiosity. Close-up shows the ridged, grooved surface of the bark. The child's expression shows tactile interest and wonder.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_see_butterfly.jpg]
+Category: Word Power | Phrase: see a vivid butterfly
+Prompt: A child at the market gasping with delight as a large, vivid butterfly with brilliant blue and orange wings lands on a flower nearby. The child leans forward with sparkling eyes. The butterfly's colors are spectacularly detailed and bright.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_startled.jpg]
+Category: Word Power | Phrase: feel startled by a sound
+Prompt: A child walking through a quiet market suddenly jumping in surprise as a loud metallic clang (a pot falling from a stall) rings out. Arms fly up, eyes go wide, feet leave the ground slightly. A comic and relatable startle reaction.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_breathe_air.jpg]
+Category: Word Power | Phrase: breathe in the fragrant air
+Prompt: A person at a flower and spice market stall breathing in deeply with eyes closed and a serene smile, arms slightly open. Visible scent swirls rise from bundles of fresh flowers, herbs, and spices on the stall. The air itself seems sweet and fragrant.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w7.jpg]
+Category: Word Power | Phrase: made of wood
+Prompt: A market craftwork stall displaying a variety of wooden objects — a carved wooden chair, a smooth wooden bowl, a set of wooden kitchen spoons, and a small wooden figurine. Natural wood grain is clearly visible. A craftsperson works in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w8.jpg]
+Category: Word Power | Phrase: made of metal
+Prompt: A market hardware stall with various metal objects displayed — copper pots, a steel gate panel, iron cooking tools, and metal spoons. Sunlight glints off the polished surfaces. A label reads "Made of Metal" on a sign. Clean and clear concept display.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== COVER IMAGES (2) ==========
+
+[read_cover_w31.jpg]
+Category: Read Cover | Story: "A Day at the Market"
+Prompt: A young girl named Maya exploring a vibrant, colorful outdoor market on a sunny morning. She walks between stalls piled high with fresh fruits, colorful cloth, pottery, and handmade goods. Sellers smile and call out. The market is full of color, life, and energy. A warm golden morning light fills the whole scene.
+Style: bright children's illustrated storybook cover, vibrant colors, flat design, warm and lively, large title space at top
+
+---
+
+[explore_cover_w31.jpg]
+Category: Explore Cover | Topic: "Materials Around Us"
+Prompt: A flat-lay style illustration showing six objects made of different materials arranged together on a neutral background — a wooden bowl, a stone sculpture, a glass jar, a cotton cloth, a metal pot, and a plastic bottle. Each object is clearly labeled with its material. Light and shadows show the different textures and surfaces beautifully.
+Style: bright educational infographic-style illustration, flat design, clean and informative, children's science magazine cover feel
+
+---

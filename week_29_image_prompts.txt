@@ -1,0 +1,208 @@
+=====================================
+WEEK 29 IMAGE PROMPTS — Total: 28
+Theme: The Magic Carpet Trip / Jobs and Professions
+Read story: "The Magic Trip"
+Explore topic: "Amazing Jobs: People Who Help Every Day"
+=====================================
+
+========== VOCAB IMAGES (18) ==========
+
+[vocab_magic.jpg]
+Category: Vocab | Word: magic
+Prompt: A glowing magic carpet floating in a golden sky, surrounded by sparkling stars and swirling magical dust. Rays of soft golden light radiate from it. The word "MAGIC" feels present in every glowing detail of the scene. Enchanting and full of wonder.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_island.jpg]
+Category: Vocab | Word: island
+Prompt: A lush tropical island completely surrounded by clear blue-green ocean water. Palm trees with coconuts line the sandy white beach. A bright sun shines overhead. Colorful birds perch on the trees. Seen from a slightly elevated angle as if arriving from above.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_dolphin.jpg]
+Category: Vocab | Word: dolphin
+Prompt: A friendly bottlenose dolphin leaping joyfully out of sparkling blue ocean water. Water droplets fly around it as it arches through the air. The dolphin has a big smile. A clear blue sky and gentle waves in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_carpet.jpg]
+Category: Vocab | Word: carpet
+Prompt: A beautiful ornate flying carpet with colorful patterns — red, blue, gold — hovering in the sky. The edges of the carpet curl slightly as it floats. Golden sparkles trail behind it. Blue sky with white clouds in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_trip.jpg]
+Category: Vocab | Word: trip
+Prompt: A child waving goodbye at the front door with a backpack on, about to start an exciting journey. A map in hand and a big smile. The open road ahead stretches into colorful scenery — mountains, trees, sunshine. A sense of adventure begins.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_wonderful.jpg]
+Category: Vocab | Word: wonderful
+Prompt: A child with wide sparkling eyes and an expression of pure amazement, looking out at a breathtaking view — a colorful magical island with exotic birds and flowers. Hands pressed to cheeks, mouth slightly open in awe. Joyful wonder radiates from the scene.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_tiny.jpg]
+Category: Vocab | Word: tiny
+Prompt: A very tiny miniature car parked next to a regular-sized apple to show scale contrast. The tiny car has a cute face and tiny wheels. A ruler beside them shows the dramatic size difference. Playful and clear concept of "tiny."
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_photo.jpg]
+Category: Vocab | Word: photo
+Prompt: A child holding a camera up and taking a photo of a dolphin jumping out of the ocean. The camera screen shows the image being captured. The child smiles excitedly. Ocean waves and a sunny beach in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_adventure.jpg]
+Category: Vocab | Word: adventure
+Prompt: A child in explorer gear — hat, backpack, map in hand — standing at the entrance of a lush green jungle path, ready to start an adventure. Exotic colorful birds and flowers visible inside the forest. Golden light beckons from within.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_creature.jpg]
+Category: Vocab | Word: creature
+Prompt: A collection of amazing and colorful fantasy island creatures — a glowing sea turtle, a tiny lizard with rainbow scales, a curious bird with a bright feathered crest — gathered together on a magical island. Each creature is unique and wondrous.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_coast.jpg]
+Category: Vocab | Word: coast
+Prompt: A dramatic rocky coastline with ocean waves crashing against tall dark cliffs. A sandy beach stretches along the base. Seagulls fly over the foamy water. From above, the land edge meets the bright blue sea in a bold, clear vista.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_pilot.jpg]
+Category: Vocab | Word: pilot
+Prompt: A smiling airline pilot in a dark blue uniform with gold stripes and a captain's hat, standing confidently in front of an airplane cockpit. A large jet plane is visible behind through the window. Professional, friendly, and inspiring look.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_doctor.jpg]
+Category: Vocab | Word: doctor
+Prompt: A friendly doctor in a white lab coat with a stethoscope around the neck, smiling warmly at the viewer. A medical bag, health charts, and medicine bottles are visible in the background. Clean, trustworthy, and reassuring expression.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_farmer.jpg]
+Category: Vocab | Word: farmer
+Prompt: A cheerful farmer in a straw hat and overalls standing in a bright green field of crops. The sun shines over rows of vegetables and fruit trees. The farmer holds a basket of fresh produce and waves happily.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_teacher.jpg]
+Category: Vocab | Word: teacher
+Prompt: A friendly teacher standing at a green chalkboard covered in colorful letters and words, pointing with a ruler. Students sit at their desks looking engaged and happy. Bright classroom with drawings on the walls. Warm and encouraging atmosphere.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_driver.jpg]
+Category: Vocab | Word: driver
+Prompt: A bus driver in a uniform sitting at the steering wheel of a large bus, smiling at passengers. The dashboard and large windshield are visible. The driver looks experienced and friendly. A city road scene outside the bus windows.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_nurse.jpg]
+Category: Vocab | Word: nurse
+Prompt: A kind nurse in blue scrubs with a stethoscope, holding a clipboard and smiling warmly. A hospital room background with a patient resting comfortably in a bed. The nurse's expression conveys care, calm, and professionalism.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_station.jpg]
+Category: Vocab | Word: station
+Prompt: A busy train station interior with a large departures board showing departure times. Passengers with luggage walk across the platform. A colorful train is visible through arched windows. The station has a grand ceiling and warm lighting.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== WORD POWER IMAGES (8) ==========
+
+[wordpower_go_on_journey.jpg]
+Category: Word Power | Phrase: go on a journey
+Prompt: A character with a travel bag and a map stepping confidently onto an open road that winds into a colorful landscape — mountains, forests, and a bright sky ahead. The first step of an exciting journey. A sense of possibility and adventure.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_fly_above.jpg]
+Category: Word Power | Phrase: fly above the clouds
+Prompt: A magic carpet floating high above a sea of fluffy white clouds. The rider sits cross-legged on the carpet and looks down in wonder at the clouds below and the blue sky above. Soft golden sunlight. Endless sky.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_adventure.jpg]
+Category: Word Power | Phrase: go on an adventure
+Prompt: A child in explorer clothing — hat, backpack, binoculars — stepping into a magical golden archway of trees that leads into an enchanting forest. Colorful butterflies, exotic birds, and glowing flowers line the path. The start of an adventure.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_run_gate.jpg]
+Category: Word Power | Phrase: run to catch a flight
+Prompt: A person running through an airport terminal, pulling a wheeled suitcase, toward a departure gate. The departure board above shows "BOARDING NOW — GATE 7". The gate doors are still open. A look of urgency and determination on the face.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_destination.jpg]
+Category: Word Power | Phrase: reach your destination
+Prompt: A happy traveler arriving at a beautiful tropical destination — beach, palm trees, colorful buildings. They drop their bag and throw their arms wide in joy, taking in the view. A sign reads "Welcome!" Bright sunshine and ocean in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_board_plane.jpg]
+Category: Word Power | Phrase: board the aircraft
+Prompt: A line of cheerful passengers walking up a jet bridge stairway to board a large white airplane. The airplane's door is open at the top. Crew members welcome passengers at the entrance. A blue sky and airport tarmac visible behind.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w7.jpg]
+Category: Word Power | Phrase: work as a pilot
+Prompt: A confident pilot in a dark blue uniform sitting in the cockpit of an airplane, hands on the controls. The instrument panel glows with flight data. Through the cockpit window, a sky full of clouds stretches ahead. Composed and professional expression.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w8.jpg]
+Category: Word Power | Phrase: doctor's advice
+Prompt: A friendly doctor sitting across from a patient at a desk, holding a clipboard and giving advice. The doctor gestures toward a health chart on the wall. The patient listens attentively. A clean medical office with plants and soft lighting.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== COVER IMAGES (2) ==========
+
+[read_cover_w29.jpg]
+Category: Read Cover | Story: "The Magic Trip"
+Prompt: A girl named Lily sitting on a glowing ornate magic carpet, flying high over a turquoise tropical island surrounded by ocean. Dolphins leap through the waves far below. Golden stars and sparkles trail behind the carpet. The sky is a rich sunset orange and purple. The scene feels full of wonder and magic.
+Style: bright children's illustrated storybook cover, vibrant colors, flat design, magical and adventurous feel, large title area at top
+
+---
+
+[explore_cover_w29.jpg]
+Category: Explore Cover | Topic: "Amazing Jobs: People Who Help Every Day"
+Prompt: Six smiling community workers arranged together in a colorful illustrated scene — a pilot in uniform, a doctor with a stethoscope, a farmer with crops, a teacher at a chalkboard, a bus driver at the wheel, and a nurse in scrubs. Each figure is in their work environment. A globe sits at the center. The scene radiates teamwork and importance.
+Style: bright educational infographic-style illustration, flat design, colorful, children's magazine cover feel
+
+---

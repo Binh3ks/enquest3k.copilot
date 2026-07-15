@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Service Test - EngQuest</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .status {
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .demo-phrases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .demo-phrases button {
+            font-size: 14px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ EngQuest Voice Service Test</h1>
+        
+        <div id="browserCheck" class="status info">
+            Checking browser compatibility...
+        </div>
+
+        <div class="test-section">
+            <h2>Test Custom Text</h2>
+            <textarea id="customText" placeholder="Enter text to speak...">Hello! Welcome to EngQuest. I'm Ms. Nova, your English learning assistant.</textarea>
+            <br>
+            <button onclick="speakCustom()">🔊 Speak</button>
+            <button onclick="stopSpeaking()">⏹️ Stop</button>
+        </div>
+
+        <div class="test-section">
+            <h2>🎙️ Piper TTS Test (Local Server)</h2>
+            <p style="color: #666; font-size: 14px; margin-top: 0;">Server must be running at <code>http://localhost:8000</code></p>
+            <button onclick="testPiper('Hello from Piper TTS on macOS M4!')">Test Piper</button>
+            <button onclick="testPiper('This is EngQuest AI tutor speaking')">Story Mission</button>
+            <button onclick="testPiper('Great job! Keep going!')">Encouragement</button>
+            <div id="piperStatus" style="margin-top: 10px; padding: 10px; background: #f0f0f0; border-radius: 4px; display: none;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Quick Test Phrases</h2>
+            <div class="demo-phrases">
+                <button onclick="speak('Hello, how are you today?')">Greeting</button>
+                <button onclick="speak('Great job! Keep going!')">Encouragement</button>
+                <button onclick="speak('Let me help you with that.')">Support</button>
+                <button onclick="speak('Try to repeat after me.')">Instruction</button>
+                <button onclick="speak('What is your favorite color?')">Question</button>
+                <button onclick="speak('You are doing wonderful!')">Praise</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Week 1 Story Mission Sample</h2>
+            <button onclick="speak('Hi there! My name is Alex. What is your name?')">Story Turn 1</button>
+            <button onclick="speak('Nice to meet you! I am seven years old. How old are you?')">Story Turn 2</button>
+            <button onclick="speak('That is great! Do you like playing games?')">Story Turn 3</button>
+        </div>
+
+        <div id="output" class="status info" style="display:none;">
+            Output will appear here...
+        </div>
+    </div>
+
+    <script type="module">
+        // Inline Voice Service (same logic as voiceService.js)
+        const VoiceService = {
+            async speak(text) {
+                this.log(`Speaking: "${text.substring(0, 50)}${text.length > 50 ? '...' : ''}"`, 'info');
+                
+                // Check if running in Electron (mock for testing)
+                const isElectron = false; // In real app: window.electronAPI exists
+                
+                if (isElectron) {
+                    try {
+                        await this.usePiperTTS(text);
+                    } catch (err) {
+                        this.log('⚠️ Piper server error, falling back to Web Speech', 'error');
+                        this.webFallback(text);
+                    }
+                } else {
+                    this.webFallback(text);
+                }
+            },
+
+            async usePiperTTS(text) {
+                const response = await fetch(`http://localhost:8000/speak?text=${encodeURIComponent(text)}`);
+                if (!response.ok) {
+                    throw new Error(`Piper TTS server error: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                const audio = new Audio(data.audio_url);
+                return new Promise((resolve, reject) => {
+                    audio.onended = resolve;
+                    audio.onerror = reject;
+                    audio.play().catch(reject);
+                });
+            },
+
+            webFallback(text) {
+                if (!('speechSynthesis' in window)) {
+                    this.log('❌ Web Speech API not supported', 'error');
+                    return;
+                }
+
+                const synth = window.speechSynthesis;
+                
+                // Cancel any ongoing speech
+                synth.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                
+                // Select best English voice
+                const voices = synth.getVoices();
+                const preferredVoice = voices.find(v => 
+                    v.lang === 'en-US' && (v.name.includes('Google') || v.name.includes('Natural'))
+                ) || voices.find(v => v.lang.startsWith('en-')) || voices[0];
+                
+                utterance.voice = preferredVoice;
+                utterance.rate = 0.9; // Slightly slower for ESL learners
+                utterance.pitch = 1.0;
+                utterance.volume = 1.0;
+                
+                utterance.onend = () => this.log('✅ Speech completed', 'success');
+                utterance.onerror = (err) => this.log(`❌ Speech error: ${err.error}`, 'error');
+                
+                synth.speak(utterance);
+            },
+
+            stop() {
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                    this.log('⏹️ Speech stopped', 'info');
+                }
+            },
+
+            log(message, type = 'info') {
+                const output = document.getElementById('output');
+                output.style.display = 'block';
+                output.className = `status ${type}`;
+                output.textContent = message;
+                console.log(`[VoiceService] ${message}`);
+            }
+        };
+
+        // Global functions for buttons
+        window.speak = (text) => VoiceService.speak(text);
+        window.speakCustom = () => {
+            const text = document.getElementById('customText').value;
+            if (text.trim()) {
+                VoiceService.speak(text);
+            }
+        };
+        window.stopSpeaking = () => VoiceService.stop();
+
+        // Test Piper TTS
+        window.testPiper = async (text) => {
+            const status = document.getElementById('piperStatus');
+            status.style.display = 'block';
+            status.textContent = '🎙️ Generating audio with Piper TTS...';
+            status.className = 'status info';
+
+            try {
+                const response = await fetch(`http://localhost:8000/speak?text=${encodeURIComponent(text)}`);
+                const data = await response.json();
+                
+                if (data.error) {
+                    status.textContent = `❌ Error: ${data.error}`;
+                    status.className = 'status error';
+                    return;
+                }
+                
+                status.textContent = `✅ Playing Piper TTS audio...`;
+                status.className = 'status success';
+                
+                const audio = new Audio(data.audio_url);
+                audio.onended = () => {
+                    status.textContent = `✅ Piper TTS completed`;
+                };
+                audio.onerror = (err) => {
+                    status.textContent = `❌ Audio playback error`;
+                    status.className = 'status error';
+                };
+                await audio.play();
+            } catch (error) {
+                status.textContent = `❌ Server error: ${error.message}. Make sure server is running!`;
+                status.className = 'status error';
+            }
+        };
+
+        // Check browser compatibility
+        window.addEventListener('load', () => {
+            const check = document.getElementById('browserCheck');
+            
+            if ('speechSynthesis' in window) {
+                const voices = window.speechSynthesis.getVoices();
+                
+                // Load voices (some browsers need this)
+                if (voices.length === 0) {
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        const loadedVoices = window.speechSynthesis.getVoices();
+                        check.className = 'status success';
+                        check.textContent = `✅ Web Speech API ready! (${loadedVoices.length} voices available)`;
+                    };
+                } else {
+                    check.className = 'status success';
+                    check.textContent = `✅ Web Speech API ready! (${voices.length} voices available)`;
+                }
+            } else {
+                check.className = 'status error';
+                check.textContent = '❌ Web Speech API not supported in this browser';
+            }
+        });
+    </script>
+</body>
+</html>

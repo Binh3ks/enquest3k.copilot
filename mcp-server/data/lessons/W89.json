@@ -1,0 +1,915 @@
+{
+  "week": 89,
+  "unit_theme": "FORCES AND MOTION — Tuần 89: Lực và Chuyển động",
+  "quick_ref": {
+    "Week": "89",
+    "Block": "F",
+    "Phase": "2",
+    "Theme": "FORCES AND MOTION",
+    "Grammar Focus": "",
+    "Key Pattern": "[★ FILL-IN]",
+    "Vocabulary": "Forces, Motion, Science, Component, Force, Start, Stop, Change",
+    "Spiral Review": "[★ FILL-IN: spiral review topics]",
+    "VC Word Targets": "S1=95w (70%) S2=105w (65%) S3=115w (60%)",
+    "FK Target": "Grade 3 (FK 65–75)",
+    "Math/Science Topic": "What Makes Things Move?"
+  },
+  "methodology": [
+    {
+      "title": "2.1 Core Principle: Implicit Grammar through Context",
+      "content": [
+        "Phase 2 — Students encounter the grammar in authentic texts.",
+        "Week 89 grammar focus: ",
+        "[★ FILL-IN: methodology notes specific to this week's grammar]"
+      ]
+    }
+  ],
+  "vocab_tiers": [
+    {
+      "tier": "Tier 2",
+      "words": [
+        "Forces",
+        "Motion",
+        "Science",
+        "Component",
+        "Force",
+        "Start",
+        "Stop",
+        "Change",
+        "Types",
+        "Gravity"
+      ],
+      "note": "[★ FILL-IN: vocabulary tier notes for Phase 2]"
+    }
+  ],
+  "sessions": [
+    {
+      "session": 1,
+      "session_label": "Session 1 — Reading & Grammar",
+      "parts": [
+        {
+          "title": "WEEK 89 | SESSION 1 | BLOCK F",
+          "content": [
+            "Name: ________________________________________ Date: ___________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation drill: Write the English sentence.",
+            "Error Correction: Find the mistake."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Forces and Motion",
+          "content": [
+            "📖 Forces and Motion",
+            "",
+            "A FORCE is a push or a pull.",
+            "Forces make things START moving, STOP moving, or CHANGE direction.",
+            "TYPES OF FORCES:",
+            "1. GRAVITY",
+            "- Pulls everything toward Earth",
+            "- Why objects fall down",
+            "- The bigger an object, the more gravity it has",
+            "2. FRICTION",
+            "- A force that SLOWS DOWN movement",
+            "- Happens when two surfaces rub together",
+            "- Examples: brakes on a bike, shoes on floor",
+            "3. MAGNETIC FORCE",
+            "- Attracts or repels magnetic materials",
+            "- Works without touching!",
+            "NEWTON'S LAWS (simplified):",
+            "Law 1: Objects stay still (or keep moving) unless a force acts on them.",
+            "Example: A ball stays still until you kick it.",
+            "Law 2: More force = more movement.",
+            "Example: Kick harder = ball goes farther.",
+            "Law 3: Every action has an equal and opposite reaction.",
+            "Example: Push against a wall, wall pushes back!",
+            "Physics Vocabulary:",
+            "",
+            "Title: ________",
+            "(↑ Re-read the story above to answer:)",
+            "",
+            "Stage 1 — Global:",
+            "  T / F: The text is about forces and motion.",
+            "  T / F: [★ FILL-IN: second T/F statement]",
+            "  What is the main topic? ______",
+            "",
+            "Stage 2 — Detail:",
+            "  [★ FILL-IN: Who/What question 1]",
+            "  → ____________",
+            "  [★ FILL-IN: How/Why question 2]",
+            "  → ____________",
+            "  Fill-in from text: _______________ is/was _______________.",
+            "",
+            "Stage 3B — Inference: [★ FILL-IN: inference question about Forces and Motion]",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — ",
+          "content": [
+            "📌 RULE: ",
+            "",
+            "┌──────────────────────────────────────────────┐",
+            "│  [★ FILL-IN: grammar example 1]             │",
+            "│  [★ FILL-IN: grammar example 2]             │",
+            "└──────────────────────────────────────────────┘",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  This grammar structure appears in Cambridge exams.",
+            "  Pattern: [★ FILL-IN]",
+            "",
+            "📌 PRACTICE:",
+            "  1. Complete: _________________________________",
+            "  2. Rewrite: _________________________________",
+            "  [ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Forces, Motion, Science...",
+          "content": [
+            "KEY VOCABULARY:",
+            "1. Forces (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "2. Motion (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "3. Science (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "4. Component (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "5. Force (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "6. Start (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "7. Stop (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "8. Change (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Read the clue and write the word (10 items):",
+            "1. [★ FILL-IN: clue 1] → ____________________",
+            "2. [★ FILL-IN: clue 2] → ____________________",
+            "3. [★ FILL-IN: clue 3] → ____________________",
+            "4. [★ FILL-IN: clue 4] → ____________________",
+            "5. [★ FILL-IN: clue 5] → ____________________",
+            "",
+            "L2 — Complete the sentences using the grammar pattern:",
+            "1. _________________________________ because ___________________________.",
+            "2. _________________________________, so _______________________________.",
+            "3. Rewrite using the opposite connector: [★ FILL-IN sentence]",
+            "",
+            "L3 — Translation (English → Vietnamese meaning):",
+            "1. Forces → ____________________",
+            "2. Motion → ____________________",
+            "3. Science → ____________________",
+            "4. Component → ____________________",
+            "5. Force → ____________________",
+            "",
+            "L4 — Write 1 original sentence using today's grammar pattern:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global:",
+            "☐ The text is about forces and motion.",
+            "☐ [★ FILL-IN: incorrect option]",
+            "☐ [★ FILL-IN: incorrect option]",
+            "",
+            "B. Stage 2 — Detail (circle the correct answer):",
+            "1. [★ FILL-IN: comprehension Q1]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "2. [★ FILL-IN: comprehension Q2]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "3. [★ FILL-IN: comprehension Q3]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "",
+            "C. Stage 3 — Inference:",
+            "[★ FILL-IN: inference question about the listening text]",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake)",
+          "content": [
+            "Find the hidden mistake and write the correction:",
+            "",
+            "1. '[★ FILL-IN: sentence with grammar error 1]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "2. '[★ FILL-IN: sentence with grammar error 2]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "3. '[★ FILL-IN: sentence with grammar error 3]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — What Makes Things Move?",
+          "content": [
+            "📐 MATH/SCIENCE: What Makes Things Move?",
+            "",
+            "Reading Input (150 words):",
+            "Forces and Motion",
+            "A FORCE is a push or a pull.",
+            "Forces make things START moving, STOP moving, or CHANGE direction.",
+            "TYPES OF FORCES:",
+            "1. GRAVITY",
+            "- Pulls everything toward Earth",
+            "- Why objects fall down",
+            "",
+            "→ Show your working: ____________________",
+            "→ Answer: ____________________",
+            "[ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write the English: [★ FILL-IN: Vietnamese word]  → ____________________",
+            "2. Forces in a sentence: ____________________",
+            "3. Use the grammar pattern to write 1 sentence:",
+            "   [★ FILL-IN: grammar pattern]",
+            "   → ____________________",
+            "4. Translation: [★ FILL-IN: Vietnamese phrase] → ____________________",
+            "5. My best sentence this session:",
+            "   → ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT  📝  Week 89 — Session 1",
+          "content": [
+            "📝 Writing Task",
+            "",
+            "Sentence 1: [★ FILL-IN: guided sentence 1]",
+            "Sentence 2: [★ FILL-IN: guided sentence 2]",
+            "Sentence 3: [★ FILL-IN: guided sentence 3]",
+            "Sentence 4: [★ FILL-IN: guided sentence 4]",
+            "Sentence 5: [★ FILL-IN: guided sentence 5]",
+            "",
+            "Extension: Write 1 additional original sentence using today's vocabulary:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 89, Session 1",
+          "content": [
+            "Vocabulary (write 1 sentence for each word):",
+            "1. Forces:",
+            "   ____________________________________________________________",
+            "2. Motion:",
+            "   ____________________________________________________________",
+            "3. Science:",
+            "   ____________________________________________________________",
+            "4. Component:",
+            "   ____________________________________________________________",
+            "5. Force:",
+            "   ____________________________________________________________",
+            "6. Start:",
+            "   ____________________________________________________________",
+            "",
+            "Grammar Practice:",
+            "Pattern: [★ FILL-IN grammar pattern]",
+            "1. Write 3 sentences using today's grammar pattern:",
+            "   1. ____________________________________________________________",
+            "   2. ____________________________________________________________",
+            "   3. ____________________________________________________________",
+            "",
+            "Reading: Re-read today's passage and underline key words.",
+            "Cambridge: Complete Cambridge practice worksheet.",
+            "",
+            "[ Homework Sub-total: ___ / 10 ]"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 — What Makes Things Move?",
+      "parts": [
+        {
+          "title": "WEEK 89 | SESSION 2 | BLOCK F",
+          "content": [
+            "Name: ________________________________________ Date: ___________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation drill: Write the English sentence.",
+            "Error Correction: Find the mistake."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Forces and Motion",
+          "content": [
+            "📖 Forces and Motion",
+            "",
+            "A FORCE is a push or a pull.",
+            "Forces make things START moving, STOP moving, or CHANGE direction.",
+            "TYPES OF FORCES:",
+            "1. GRAVITY",
+            "- Pulls everything toward Earth",
+            "- Why objects fall down",
+            "- The bigger an object, the more gravity it has",
+            "2. FRICTION",
+            "- A force that SLOWS DOWN movement",
+            "- Happens when two surfaces rub together",
+            "- Examples: brakes on a bike, shoes on floor",
+            "3. MAGNETIC FORCE",
+            "- Attracts or repels magnetic materials",
+            "- Works without touching!",
+            "NEWTON'S LAWS (simplified):",
+            "Law 1: Objects stay still (or keep moving) unless a force acts on them.",
+            "Example: A ball stays still until you kick it.",
+            "Law 2: More force = more movement.",
+            "Example: Kick harder = ball goes farther.",
+            "Law 3: Every action has an equal and opposite reaction.",
+            "Example: Push against a wall, wall pushes back!",
+            "Physics Vocabulary:",
+            "",
+            "Title: ________",
+            "(↑ Re-read the story above to answer:)",
+            "",
+            "Stage 1 — Global:",
+            "  T / F: The text is about forces and motion.",
+            "  T / F: [★ FILL-IN: second T/F statement]",
+            "  What is the main topic? ______",
+            "",
+            "Stage 2 — Detail:",
+            "  [★ FILL-IN: Who/What question 1]",
+            "  → ____________",
+            "  [★ FILL-IN: How/Why question 2]",
+            "  → ____________",
+            "  Fill-in from text: _______________ is/was _______________.",
+            "",
+            "Stage 3B — Inference: [★ FILL-IN: inference question about Forces and Motion]",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — ",
+          "content": [
+            "📌 RULE: ",
+            "",
+            "┌──────────────────────────────────────────────┐",
+            "│  [★ FILL-IN: grammar example 1]             │",
+            "│  [★ FILL-IN: grammar example 2]             │",
+            "└──────────────────────────────────────────────┘",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  This grammar structure appears in Cambridge exams.",
+            "  Pattern: [★ FILL-IN]",
+            "",
+            "📌 PRACTICE:",
+            "  1. Complete: _________________________________",
+            "  2. Rewrite: _________________________________",
+            "  [ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Forces, Motion, Science...",
+          "content": [
+            "KEY VOCABULARY:",
+            "1. Forces (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "2. Motion (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "3. Science (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "4. Component (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "5. Force (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "6. Start (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "7. Stop (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "8. Change (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Read the clue and write the word (10 items):",
+            "1. [★ FILL-IN: clue 1] → ____________________",
+            "2. [★ FILL-IN: clue 2] → ____________________",
+            "3. [★ FILL-IN: clue 3] → ____________________",
+            "4. [★ FILL-IN: clue 4] → ____________________",
+            "5. [★ FILL-IN: clue 5] → ____________________",
+            "",
+            "L2 — Complete the sentences using the grammar pattern:",
+            "1. _________________________________ because ___________________________.",
+            "2. _________________________________, so _______________________________.",
+            "3. Rewrite using the opposite connector: [★ FILL-IN sentence]",
+            "",
+            "L3 — Translation (English → Vietnamese meaning):",
+            "1. Forces → ____________________",
+            "2. Motion → ____________________",
+            "3. Science → ____________________",
+            "4. Component → ____________________",
+            "5. Force → ____________________",
+            "",
+            "L4 — Write 1 original sentence using today's grammar pattern:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global:",
+            "☐ The text is about forces and motion.",
+            "☐ [★ FILL-IN: incorrect option]",
+            "☐ [★ FILL-IN: incorrect option]",
+            "",
+            "B. Stage 2 — Detail (circle the correct answer):",
+            "1. [★ FILL-IN: comprehension Q1]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "2. [★ FILL-IN: comprehension Q2]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "3. [★ FILL-IN: comprehension Q3]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "",
+            "C. Stage 3 — Inference:",
+            "[★ FILL-IN: inference question about the listening text]",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake)",
+          "content": [
+            "Find the hidden mistake and write the correction:",
+            "",
+            "1. '[★ FILL-IN: sentence with grammar error 1]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "2. '[★ FILL-IN: sentence with grammar error 2]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "3. '[★ FILL-IN: sentence with grammar error 3]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — What Makes Things Move?",
+          "content": [
+            "📐 MATH/SCIENCE: What Makes Things Move?",
+            "",
+            "Reading Input (150 words):",
+            "Forces and Motion",
+            "A FORCE is a push or a pull.",
+            "Forces make things START moving, STOP moving, or CHANGE direction.",
+            "TYPES OF FORCES:",
+            "1. GRAVITY",
+            "- Pulls everything toward Earth",
+            "- Why objects fall down",
+            "",
+            "→ Show your working: ____________________",
+            "→ Answer: ____________________",
+            "[ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write the English: [★ FILL-IN: Vietnamese word]  → ____________________",
+            "2. Forces in a sentence: ____________________",
+            "3. Use the grammar pattern to write 1 sentence:",
+            "   [★ FILL-IN: grammar pattern]",
+            "   → ____________________",
+            "4. Translation: [★ FILL-IN: Vietnamese phrase] → ____________________",
+            "5. My best sentence this session:",
+            "   → ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT  📝  Week 89 — Session 2",
+          "content": [
+            "📝 Writing Task",
+            "",
+            "Sentence 1: [★ FILL-IN: guided sentence 1]",
+            "Sentence 2: [★ FILL-IN: guided sentence 2]",
+            "Sentence 3: [★ FILL-IN: guided sentence 3]",
+            "Sentence 4: [★ FILL-IN: guided sentence 4]",
+            "Sentence 5: [★ FILL-IN: guided sentence 5]",
+            "",
+            "Extension: Write 1 additional original sentence using today's vocabulary:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 89, Session 2",
+          "content": [
+            "Vocabulary (write 1 sentence for each word):",
+            "1. Forces:",
+            "   ____________________________________________________________",
+            "2. Motion:",
+            "   ____________________________________________________________",
+            "3. Science:",
+            "   ____________________________________________________________",
+            "4. Component:",
+            "   ____________________________________________________________",
+            "5. Force:",
+            "   ____________________________________________________________",
+            "6. Start:",
+            "   ____________________________________________________________",
+            "",
+            "Grammar Practice:",
+            "Pattern: [★ FILL-IN grammar pattern]",
+            "1. Write 3 sentences using today's grammar pattern:",
+            "   1. ____________________________________________________________",
+            "   2. ____________________________________________________________",
+            "   3. ____________________________________________________________",
+            "",
+            "Reading: Re-read today's passage and underline key words.",
+            "Cambridge: Complete Cambridge practice worksheet.",
+            "",
+            "[ Homework Sub-total: ___ / 10 ]"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Session 3 — Production & Review",
+      "parts": [
+        {
+          "title": "WEEK 89 | SESSION 3 | BLOCK F",
+          "content": [
+            "Name: ________________________________________ Date: ___________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation drill: Write the English sentence.",
+            "Error Correction: Find the mistake."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Forces and Motion",
+          "content": [
+            "📖 Forces and Motion",
+            "",
+            "A FORCE is a push or a pull.",
+            "Forces make things START moving, STOP moving, or CHANGE direction.",
+            "TYPES OF FORCES:",
+            "1. GRAVITY",
+            "- Pulls everything toward Earth",
+            "- Why objects fall down",
+            "- The bigger an object, the more gravity it has",
+            "2. FRICTION",
+            "- A force that SLOWS DOWN movement",
+            "- Happens when two surfaces rub together",
+            "- Examples: brakes on a bike, shoes on floor",
+            "3. MAGNETIC FORCE",
+            "- Attracts or repels magnetic materials",
+            "- Works without touching!",
+            "NEWTON'S LAWS (simplified):",
+            "Law 1: Objects stay still (or keep moving) unless a force acts on them.",
+            "Example: A ball stays still until you kick it.",
+            "Law 2: More force = more movement.",
+            "Example: Kick harder = ball goes farther.",
+            "Law 3: Every action has an equal and opposite reaction.",
+            "Example: Push against a wall, wall pushes back!",
+            "Physics Vocabulary:",
+            "",
+            "Title: ________",
+            "(↑ Re-read the story above to answer:)",
+            "",
+            "Stage 1 — Global:",
+            "  T / F: The text is about forces and motion.",
+            "  T / F: [★ FILL-IN: second T/F statement]",
+            "  What is the main topic? ______",
+            "",
+            "Stage 2 — Detail:",
+            "  [★ FILL-IN: Who/What question 1]",
+            "  → ____________",
+            "  [★ FILL-IN: How/Why question 2]",
+            "  → ____________",
+            "  Fill-in from text: _______________ is/was _______________.",
+            "",
+            "Stage 3B — Inference: [★ FILL-IN: inference question about Forces and Motion]",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — ",
+          "content": [
+            "📌 RULE: ",
+            "",
+            "┌──────────────────────────────────────────────┐",
+            "│  [★ FILL-IN: grammar example 1]             │",
+            "│  [★ FILL-IN: grammar example 2]             │",
+            "└──────────────────────────────────────────────┘",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  This grammar structure appears in Cambridge exams.",
+            "  Pattern: [★ FILL-IN]",
+            "",
+            "📌 PRACTICE:",
+            "  1. Complete: _________________________________",
+            "  2. Rewrite: _________________________________",
+            "  [ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Forces, Motion, Science...",
+          "content": [
+            "KEY VOCABULARY:",
+            "1. Forces (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "2. Motion (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "3. Science (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "4. Component (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "5. Force (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "6. Start (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "7. Stop (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "8. Change (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Read the clue and write the word (10 items):",
+            "1. [★ FILL-IN: clue 1] → ____________________",
+            "2. [★ FILL-IN: clue 2] → ____________________",
+            "3. [★ FILL-IN: clue 3] → ____________________",
+            "4. [★ FILL-IN: clue 4] → ____________________",
+            "5. [★ FILL-IN: clue 5] → ____________________",
+            "",
+            "L2 — Complete the sentences using the grammar pattern:",
+            "1. _________________________________ because ___________________________.",
+            "2. _________________________________, so _______________________________.",
+            "3. Rewrite using the opposite connector: [★ FILL-IN sentence]",
+            "",
+            "L3 — Translation (English → Vietnamese meaning):",
+            "1. Forces → ____________________",
+            "2. Motion → ____________________",
+            "3. Science → ____________________",
+            "4. Component → ____________________",
+            "5. Force → ____________________",
+            "",
+            "L4 — Write 1 original sentence using today's grammar pattern:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global:",
+            "☐ The text is about forces and motion.",
+            "☐ [★ FILL-IN: incorrect option]",
+            "☐ [★ FILL-IN: incorrect option]",
+            "",
+            "B. Stage 2 — Detail (circle the correct answer):",
+            "1. [★ FILL-IN: comprehension Q1]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "2. [★ FILL-IN: comprehension Q2]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "3. [★ FILL-IN: comprehension Q3]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "",
+            "C. Stage 3 — Inference:",
+            "[★ FILL-IN: inference question about the listening text]",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake)",
+          "content": [
+            "Find the hidden mistake and write the correction:",
+            "",
+            "1. '[★ FILL-IN: sentence with grammar error 1]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "2. '[★ FILL-IN: sentence with grammar error 2]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "3. '[★ FILL-IN: sentence with grammar error 3]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — What Makes Things Move?",
+          "content": [
+            "📐 MATH/SCIENCE: What Makes Things Move?",
+            "",
+            "Reading Input (150 words):",
+            "Forces and Motion",
+            "A FORCE is a push or a pull.",
+            "Forces make things START moving, STOP moving, or CHANGE direction.",
+            "TYPES OF FORCES:",
+            "1. GRAVITY",
+            "- Pulls everything toward Earth",
+            "- Why objects fall down",
+            "",
+            "→ Show your working: ____________________",
+            "→ Answer: ____________________",
+            "[ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write the English: [★ FILL-IN: Vietnamese word]  → ____________________",
+            "2. Forces in a sentence: ____________________",
+            "3. Use the grammar pattern to write 1 sentence:",
+            "   [★ FILL-IN: grammar pattern]",
+            "   → ____________________",
+            "4. Translation: [★ FILL-IN: Vietnamese phrase] → ____________________",
+            "5. My best sentence this session:",
+            "   → ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT  📝  Week 89 — Session 3",
+          "content": [
+            "📝 Writing Task",
+            "",
+            "Sentence 1: [★ FILL-IN: guided sentence 1]",
+            "Sentence 2: [★ FILL-IN: guided sentence 2]",
+            "Sentence 3: [★ FILL-IN: guided sentence 3]",
+            "Sentence 4: [★ FILL-IN: guided sentence 4]",
+            "Sentence 5: [★ FILL-IN: guided sentence 5]",
+            "",
+            "Extension: Write 1 additional original sentence using today's vocabulary:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 89, Session 3",
+          "content": [
+            "Vocabulary (write 1 sentence for each word):",
+            "1. Forces:",
+            "   ____________________________________________________________",
+            "2. Motion:",
+            "   ____________________________________________________________",
+            "3. Science:",
+            "   ____________________________________________________________",
+            "4. Component:",
+            "   ____________________________________________________________",
+            "5. Force:",
+            "   ____________________________________________________________",
+            "6. Start:",
+            "   ____________________________________________________________",
+            "",
+            "Grammar Practice:",
+            "Pattern: [★ FILL-IN grammar pattern]",
+            "1. Write 3 sentences using today's grammar pattern:",
+            "   1. ____________________________________________________________",
+            "   2. ____________________________________________________________",
+            "   3. ____________________________________________________________",
+            "",
+            "Reading: Re-read today's passage and underline key words.",
+            "Cambridge: Complete Cambridge practice worksheet.",
+            "",
+            "[ Homework Sub-total: ___ / 10 ]"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_2": [],
+  "sessions_5": [],
+  "answer_key": {},
+  "answer_key_by_session": {},
+  "task_cards": [],
+  "task_cards_by_session": {},
+  "games": [],
+  "video_prompts": [],
+  "teacher_contents": [
+    {
+      "session": 1,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "A FORCE is a push or a pull.\nForces make things START moving, STOP moving, or CHANGE direction.\nTYPES OF FORCES:\n1. GRAVITY\n- Pulls everything toward Earth\n- Why objects fall down\n- The bigger an object, the more gravity it has\n2. FRICTION\n- A force that SLOWS DOWN movement\n- Happens when two surfaces rub together\n- Examples: brakes on a bike, shoes on floor\n3. MAGNETIC FORCE\n- Attracts or repels magnetic materials\n- Works without touching!\nNEWTON'S LAWS (simplified):\nLaw 1: Objects stay still (or keep moving) unless a force acts on them.\nExample: A ball stays still until you kick it.\nLaw 2: More force = more movement.\nExample: Kick harder = ball goes farther.\nLaw 3: Every action has an equal and opposite reaction.\nExample: Push against a wall, wall pushes back!\nPhysics Vocabulary:",
+        "dictation": [
+          "A FORCE is a push or a pull.",
+          "Forces make things START moving, STOP moving, or CHANGE direction.",
+          "TYPES OF FORCES:\n1."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nSession 1:\nActivity 1 — Pair Speaking: Students describe the reading passage to a partner.\n\nGrammar checkpoint: [★ FILL-IN]\n\nExpected output: Students can produce 2+ sentences using today's pattern.\n\n[★ FILL-IN: additional speaking guidance for Session 1]",
+      "stem_extension": "MATH/SCIENCE Extension Notes (teacher only):\n\nTopic: What Makes Things Move?\n\nReading Input (150 words):\nForces and Motion\nA FORCE is a push or a pull.\nForces make things START moving, STOP moving, or CHANGE direction.\nTYPES OF FORCES:\n1. GRAVITY\n- Pulls everything toward Earth\n- Why objects fall down\n- The bigger an object, the more gravity it has\n2. FRICTION\n- A force that \n\nWord Problem approach: Guide students step by step.\nAnswer: ",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 1 (teacher-led)\n\nActivity 1 — Warm-up (3 min):\n  Ask: \"What did we learn last session?\" → students recall vocabulary.\n\nActivity 2 — Grammar production (5 min):\n  Pattern: [★ FILL-IN]\n  Students take turns producing sentences with the pattern.\n\nActivity 3 — Pair work (5 min):\n  Student A asks, Student B answers using today's vocabulary.\n  Swap roles after 3 exchanges.\n\n[★ FILL-IN: additional in-class activities for Session 1]",
+      "vc_answer_key": "[1] Forces [2] Motion [3] Science [4] Component [5] Force [6] Start [7] Stop [8] Change",
+      "grammar_notes": "• Grammar: \n• [★ FILL-IN: grammar notes for teacher]"
+    },
+    {
+      "session": 2,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "A FORCE is a push or a pull.\nForces make things START moving, STOP moving, or CHANGE direction.\nTYPES OF FORCES:\n1. GRAVITY\n- Pulls everything toward Earth\n- Why objects fall down\n- The bigger an object, the more gravity it has\n2. FRICTION\n- A force that SLOWS DOWN movement\n- Happens when two surfaces rub together\n- Examples: brakes on a bike, shoes on floor\n3. MAGNETIC FORCE\n- Attracts or repels magnetic materials\n- Works without touching!\nNEWTON'S LAWS (simplified):\nLaw 1: Objects stay still (or keep moving) unless a force acts on them.\nExample: A ball stays still until you kick it.\nLaw 2: More force = more movement.\nExample: Kick harder = ball goes farther.\nLaw 3: Every action has an equal and opposite reaction.\nExample: Push against a wall, wall pushes back!\nPhysics Vocabulary:",
+        "dictation": [
+          "A FORCE is a push or a pull.",
+          "Forces make things START moving, STOP moving, or CHANGE direction.",
+          "TYPES OF FORCES:\n1."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nSession 2:\nActivity 1 — Grammar Drill: Students produce sentences using today's pattern.\n\nGrammar checkpoint: [★ FILL-IN]\n\nExpected output: Students can produce 2+ sentences using today's pattern.\n\n[★ FILL-IN: additional speaking guidance for Session 2]",
+      "stem_extension": "MATH/SCIENCE Extension Notes (teacher only):\n\nTopic: What Makes Things Move?\n\nReading Input (150 words):\nForces and Motion\nA FORCE is a push or a pull.\nForces make things START moving, STOP moving, or CHANGE direction.\nTYPES OF FORCES:\n1. GRAVITY\n- Pulls everything toward Earth\n- Why objects fall down\n- The bigger an object, the more gravity it has\n2. FRICTION\n- A force that \n\nWord Problem approach: Guide students step by step.\nAnswer: ",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 2 (teacher-led)\n\nActivity 1 — Warm-up (3 min):\n  Ask: \"What did we learn last session?\" → students recall vocabulary.\n\nActivity 2 — Grammar production (5 min):\n  Pattern: [★ FILL-IN]\n  Students take turns producing sentences with the pattern.\n\nActivity 3 — Pair work (5 min):\n  Student A asks, Student B answers using today's vocabulary.\n  Swap roles after 3 exchanges.\n\n[★ FILL-IN: additional in-class activities for Session 2]",
+      "vc_answer_key": "[1] Forces [2] Motion [3] Science [4] Component [5] Force [6] Start [7] Stop [8] Change",
+      "grammar_notes": "• Grammar: \n• [★ FILL-IN: grammar notes for teacher]"
+    },
+    {
+      "session": 3,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "A FORCE is a push or a pull.\nForces make things START moving, STOP moving, or CHANGE direction.\nTYPES OF FORCES:\n1. GRAVITY\n- Pulls everything toward Earth\n- Why objects fall down\n- The bigger an object, the more gravity it has\n2. FRICTION\n- A force that SLOWS DOWN movement\n- Happens when two surfaces rub together\n- Examples: brakes on a bike, shoes on floor\n3. MAGNETIC FORCE\n- Attracts or repels magnetic materials\n- Works without touching!\nNEWTON'S LAWS (simplified):\nLaw 1: Objects stay still (or keep moving) unless a force acts on them.\nExample: A ball stays still until you kick it.\nLaw 2: More force = more movement.\nExample: Kick harder = ball goes farther.\nLaw 3: Every action has an equal and opposite reaction.\nExample: Push against a wall, wall pushes back!\nPhysics Vocabulary:",
+        "dictation": [
+          "A FORCE is a push or a pull.",
+          "Forces make things START moving, STOP moving, or CHANGE direction.",
+          "TYPES OF FORCES:\n1."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nSession 3:\nActivity 1 — Production: Students present their portfolio sentence.\n\nGrammar checkpoint: [★ FILL-IN]\n\nExpected output: Students can produce 2+ sentences using today's pattern.\n\n[★ FILL-IN: additional speaking guidance for Session 3]",
+      "stem_extension": "MATH/SCIENCE Extension Notes (teacher only):\n\nTopic: What Makes Things Move?\n\nReading Input (150 words):\nForces and Motion\nA FORCE is a push or a pull.\nForces make things START moving, STOP moving, or CHANGE direction.\nTYPES OF FORCES:\n1. GRAVITY\n- Pulls everything toward Earth\n- Why objects fall down\n- The bigger an object, the more gravity it has\n2. FRICTION\n- A force that \n\nWord Problem approach: Guide students step by step.\nAnswer: ",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 3 (teacher-led)\n\nActivity 1 — Warm-up (3 min):\n  Ask: \"What did we learn last session?\" → students recall vocabulary.\n\nActivity 2 — Grammar production (5 min):\n  Pattern: [★ FILL-IN]\n  Students take turns producing sentences with the pattern.\n\nActivity 3 — Pair work (5 min):\n  Student A asks, Student B answers using today's vocabulary.\n  Swap roles after 3 exchanges.\n\n[★ FILL-IN: additional in-class activities for Session 3]",
+      "vc_answer_key": "[1] Forces [2] Motion [3] Science [4] Component [5] Force [6] Start [7] Stop [8] Change",
+      "grammar_notes": "• Grammar: \n• [★ FILL-IN: grammar notes for teacher]"
+    }
+  ]
+}

@@ -1,0 +1,2619 @@
+{
+  "week": 36,
+  "unit_theme": "Adventure Stories — Review & Project 3 (My Adventure Book)",
+  "quick_ref": {
+    "Week": "36",
+    "Block": "B",
+    "Theme": "Time Detective Agency — Case Closed!",
+    "Grammar Focus": "Review: Past Simple (Irregular & Regular verbs, was/were) + Sequence",
+    "Key Pattern": "\"First, I [went]. I was [scared].\"",
+    "Vocabulary": "5 Tier 1 (production) + 3 Tier 2 (reception)",
+    "Spiral Review": "W19–W35: Past Tenses, Feelings, Sequence Words",
+    "STEM/CLIL Topic": "Art & Storytelling (Creating a mini storybook)",
+    "VC Word Targets": "S1=95w (70%) S2=105w (65%) S3=115w (60%)",
+    "FK Target": "Grade 2 (FK 70–80)"
+  },
+  "methodology": [
+    {
+      "title": "2.1 Core Principle: Project-Based Synthesis",
+      "content": [
+        "Problem: Students have learned over 20 irregular verbs and multiple narrative structures, but often struggle to combine them into a cohesive story.",
+        "Solution: This week involves creating an 8-page \"Adventure Book.\" The physical pages force students to break down their narrative into Beginning, Middle (Events + Problem), and End, organically synthesizing all Block B grammar in a fun, personal project."
+      ]
+    },
+    {
+      "title": "2.2 Session Flow (120 Minutes)",
+      "content": [
+        "Session 1: Draft the Beginning and first Events (Pages 1–3). Focus on movement and perception irregular verbs.",
+        "Session 2: Draft the Problem and Solution (Pages 4–6). Focus on accident irregular verbs and feelings.",
+        "Session 3: Draft the Ending and Lesson (Pages 7–8). Finalize the book and practice the oral presentation."
+      ]
+    },
+    {
+      "title": "2.3 Vocabulary Tiering System",
+      "content": []
+    },
+    {
+      "title": "2.4 Teacher Notes: Pull-Out Tasks & Communicative Task",
+      "content": [
+        "S1 pull-out: Student picks a verb card (\"went\"), then makes a \"Once upon a time\" sentence.",
+        "S2 pull-out: Show a problem card (e.g., lost key). Student says \"I lost my key. I felt worried.\"",
+        "Communicative task (Step 5 - 10 min): Story Exchange. Student A reads their Page 1 and 2. Student B must guess what happens on Page 3."
+      ]
+    }
+  ],
+  "vocab_tiers": [
+    {
+      "Word": "went",
+      "Vietnamese": "đã đi",
+      "Key Collocation(s)": "went to the forest / went on an adventure",
+      "Memory Trick": "W-E-N-T: We Enjoy New Trips"
+    },
+    {
+      "Word": "saw",
+      "Vietnamese": "đã thấy",
+      "Key Collocation(s)": "saw the lion / saw beautiful coral",
+      "Memory Trick": "S-A-W: SEE → change E to A"
+    },
+    {
+      "Word": "lost",
+      "Vietnamese": "đã đánh mất",
+      "Key Collocation(s)": "lost the key / got lost in the forest",
+      "Memory Trick": "L-O-S-T: Look Out, Something's Taken away"
+    },
+    {
+      "Word": "found",
+      "Vietnamese": "đã tìm thấy",
+      "Key Collocation(s)": "found the clue / found a path home",
+      "Memory Trick": "F-O-U-N-D: Finally Obtained, Unexpected Nice Discovery"
+    },
+    {
+      "Word": "felt",
+      "Vietnamese": "đã cảm thấy",
+      "Key Collocation(s)": "felt nervous / felt proud at the end",
+      "Memory Trick": "F-E-L-T: FEEL → drop one E, add T"
+    },
+    {
+      "Word": "adventure",
+      "Vietnamese": "cuộc phiêu lưu",
+      "Key Collocation(s)": "went on an adventure / a thrilling adventure",
+      "Memory Trick": "A-D-V-E-N-T-U-R-E: A Daring Voyage, Exciting, Never Too Usual, Rather Exciting"
+    },
+    {
+      "Word": "story",
+      "Vietnamese": "câu chuyện",
+      "Key Collocation(s)": "told a story / write a story",
+      "Memory Trick": "S-T-O-R-Y: Something Told Or Read, Yet exciting!"
+    },
+    {
+      "Word": "page",
+      "Vietnamese": "trang giấy",
+      "Key Collocation(s)": "turn the page / read every page",
+      "Memory Trick": "P-A-G-E: Paper Always Gives Excitement"
+    },
+    {
+      "Word": "narrator",
+      "Vietnamese": "người kể chuyện",
+      "Key Collocation(s)": "The narrator told the whole story.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "audience",
+      "Vietnamese": "khán giả / người nghe",
+      "Key Collocation(s)": "The audience listened carefully.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "sequence",
+      "Vietnamese": "thứ tự / trình tự",
+      "Key Collocation(s)": "She used sequence words like First and Then.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "chapter",
+      "Vietnamese": "chương sách",
+      "Key Collocation(s)": "They read the first chapter together.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "clue",
+      "Vietnamese": "manh mối / gợi ý",
+      "Key Collocation(s)": "Max found a clue under the tree.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "cover",
+      "Vietnamese": "bìa sách",
+      "Key Collocation(s)": "The cover of the book showed a lion.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "title",
+      "Vietnamese": "tên sách / tiêu đề",
+      "Key Collocation(s)": "The title of the story was 'Case Closed'.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "author",
+      "Vietnamese": "tác giả",
+      "Key Collocation(s)": "The author wrote the story in two days.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "go → went",
+      "Vietnamese": "đi → đã đi",
+      "Key Collocation(s)": "Max went on his greatest adventure.",
+      "Memory Trick": "GO → WENT: completely different — memorise!"
+    },
+    {
+      "Word": "see → saw",
+      "Vietnamese": "nhìn thấy → đã thấy",
+      "Key Collocation(s)": "She saw a lion in the deep forest.",
+      "Memory Trick": "SEE → SAW: change EE to AW"
+    },
+    {
+      "Word": "lose → lost",
+      "Vietnamese": "mất → đã mất",
+      "Key Collocation(s)": "He lost his map in the cave.",
+      "Memory Trick": "LOSE → LOST: change SE to ST"
+    },
+    {
+      "Word": "find → found",
+      "Vietnamese": "tìm thấy → đã tìm",
+      "Key Collocation(s)": "Finally, she found the path home.",
+      "Memory Trick": "FIND → FOUND: change I to OU"
+    }
+  ],
+  "sessions": [
+    {
+      "session": 1,
+      "session_label": "Session 1 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã đi đến khu rừng.",
+            "→ ________________________________________",
+            "Error Correction: Yesterday, I go to the beach.",
+            "→ ________________________________________",
+            "Fill-in: (saw) Last weekend, I ____________________ a big bird."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Adventure Book - Part 1",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max went to the beach.",
+            "T / F: Max saw a huge bear.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "Who did Max go with?",
+            "→ ________________________________________",
+            "What did Max see first?",
+            "→ ________________________________________",
+            "Fill-in from text: Then, I ____________________ fast. I hid behind a rock.",
+            "Stage 3B — Inference: Why did Max hide behind a rock?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: went, saw, lost, found + Cambridge Preview (Tier 2)",
+          "content": [
+            "saw (Vietnamese: đã thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: saw a [thing]",
+            "→ Collocation practice:",
+            "a. I saw ____________________ (a bear / music).",
+            "b. She saw ____________________ (the ocean / loudly).",
+            "→ Your turn: I saw ________________________________________",
+            "lost (Vietnamese: đã đánh mất)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: lost my [thing]",
+            "→ Collocation practice:",
+            "a. I lost my ____________________ (map / sad).",
+            "b. He lost his ____________________ (keys / happy).",
+            "→ Your turn: I lost my ________________________________________",
+            "found (Vietnamese: đã tìm thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: found a [thing]",
+            "→ Collocation practice:",
+            "a. I found a ____________________ (coin / hungry).",
+            "b. We found the ____________________ (way / tired).",
+            "→ Your turn: I found ________________________________________",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: felt [emotion]",
+            "→ Collocation practice:",
+            "a. I felt ____________________ (scared / a map).",
+            "b. They felt ____________________ (happy / a key).",
+            "→ Your turn: I felt ________________________________________",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Match the sentence halves (10 items)",
+            "First, I went _________ a. a big tiger.",
+            "Then, she saw _________ b. my backpack.",
+            "Next, we lost _________ c. to the mountain.",
+            "After that, I found _________ d. very worried.",
+            "Finally, he felt _________ e. a secret cave.",
+            "Once upon a time, I went _________ f. our map.",
+            "Suddenly, I saw _________ g. a beautiful bird.",
+            "Oh no! I lost _________ h. to a magical island.",
+            "Luckily, I found _________ i. my phone.",
+            "In the end, I felt _________ j. very happy.",
+            "[O] L2 — Unscramble the sentence (10 items)",
+            "1. went / forest. / I / to / the / First,",
+            "→ ________________________________________",
+            "2. saw / a / Then, / bear. / I / big",
+            "→ ________________________________________",
+            "3. lost / my / I / Next, / map.",
+            "→ ________________________________________",
+            "4. found / a / I / river. / that, / After",
+            "→ ________________________________________",
+            "5. felt / tired. / Finally, / I / very",
+            "→ ________________________________________",
+            "6. upon / Once / a / went / I / beach. / to / the / time,",
+            "→ ________________________________________",
+            "7. saw / She / a / flower. / beautiful",
+            "→ ________________________________________",
+            "8. lost / He / book. / his / favorite",
+            "→ ________________________________________",
+            "9. found / We / way / home. / the",
+            "→ ________________________________________",
+            "10. felt / They / excited. / very",
+            "→ ________________________________________",
+            "⬛ SPEAKING CHECKPOINT Student A: Read your \"Once upon a time\" sentence. Student B: Add what you saw. Goal: Start a story together.",
+            "[O] L3 — Fill in the blank with 3 options (10 items)",
+            "First, I ____________________ (went / go / going) to the forest.",
+            "Then, I ____________________ (see / saw / seen) a tall tree.",
+            "Next, I ____________________ (lose / lost / losing) my bag.",
+            "After that, I ____________________ (find / found / finding) a coin.",
+            "Finally, I ____________________ (feel / felt / feeling) happy.",
+            "Yesterday, we ____________________ (went / lost / felt) to the park.",
+            "She ____________________ (saw / went / felt) a fast car.",
+            "He ____________________ (found / felt / lost) his keys in the sand.",
+            "I ____________________ (found / saw / felt) my lost book!",
+            "They ____________________ (felt / went / saw) tired after running.",
+            "[O] L4 — Sentence Expansion (10 items)",
+            "Base: I went. + Add: (to the magical forest)",
+            "→ ________________________________________",
+            "Base: I saw. + Add: (a huge bear)",
+            "→ ________________________________________",
+            "Base: I lost. + Add: (my green backpack)",
+            "→ ________________________________________",
+            "Base: I found. + Add: (a secret door)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (very brave)",
+            "→ ________________________________________",
+            "Base: She went. + Add: (to the beach)",
+            "→ ________________________________________",
+            "Base: He saw. + Add: (a small crab)",
+            "→ ________________________________________",
+            "Base: We lost. + Add: (our map)",
+            "→ ________________________________________",
+            "Base: They found. + Add: (the treasure)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (scared but excited)",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Where did you go in your story? ________________________________________",
+            "What did you see? ________________________________________",
+            "What did you lose? ________________________________________",
+            "What did you find? ________________________________________",
+            "How did you feel? ________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about school. ☐ The story is about a forest adventure. ☐ The story is about cooking.",
+            "B. Stage 2 — Detail:",
+            "Where did Leo go? ____________ (a) the beach (b) the forest (c) the city",
+            "Fill in: Leo saw a big ____________________.",
+            "[O] C. Stage 3B — Inference: Was Leo scared in the forest? Why?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'First, I go to the forest yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Then, I seed a big bear.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'I feeled very scared.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Storytelling Making a Book",
+          "content": [
+            "Art & Literacy: Parts of a Book",
+            "A storybook has special parts. Each part has a job! Here is what a book looks like:",
+            "• Cover: title + author + illustration  • Title page: inside first page  • Chapters: sections of the story  • Last page: the ending",
+            "1. What does the COVER of a book tell you? Name 2 things.",
+            "→ ____________________________________________________________",
+            "2. True or False: Every book has the author's name on the cover.",
+            "→ ____________ Because: ____________________________________________",
+            "3. Max WENT to the library. He FOUND a book about a forest adventure. Write a complete sentence:",
+            "→ ____________________________________________________________",
+            "4. Which part of a book tells you the MAIN IDEA before you read? (a) last page  (b) cover  (c) middle chapter)",
+            "→ ____________ Because: ____________________________________________",
+            "Challenge: Design YOUR book cover! Write: Title: __________ | Author: __________ | What the picture shows: __________",
+            "____________________________________________________________",
+            "5. Write 1 sentence using 'went': Last week, I went __________________ and found __________________.",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write 'đã đánh mất' in English: ____________________  |  Write 'câu chuyện' in English: ____________________",
+            "2. Past tense of 'go': ____________________  |  'see': ____________________  |  'lose': ____________________  |  'find': ____________________",
+            "3. Name 2 sequence words you can use in a story: ____________________, ____________________",
+            "4. Use 'went' in a sentence about an adventure:",
+            "1. ____________________________________________________________",
+            "5. My best sentence this session (use 1 Block B verb + sequence word):",
+            "2. ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 36 — Session 1 | Topic: My Adventure Book",
+          "content": [
+            "📝 Week 36 — Session 1 | Topic: My Adventure Book (Cover + Chapter 1 Opening)",
+            "Today's goal: Write your book cover details AND the opening sentence of Chapter 1.",
+            "Book Cover: Title: _____________________________ | Author (your name): _____________________________",
+            "Cover Illustration idea: ______________________________________________________________________",
+            "Chapter 1 Opening sentence (use 'went' or 'was'): _______________________________________________",
+            "Chapter 1 Sentence 2: __________________________________________________________________________",
+            "Extension: Write what the reader will FIND OUT in your book — tease the adventure!",
+            "____________________________________________________________",
+            "☐ Did I write a title and author name?  ☐ Did I use a past tense verb (went / saw / was)?",
+            "☐ Capital letter?  ☐ Full stop?  ☐ Is my opening sentence exciting?",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 1",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: Vietnamese: __________ | Sentence: ________________________________________",
+            "b. saw: Vietnamese: __________ | Sentence: ________________________________________",
+            "c. lost: Vietnamese: __________ | Sentence: ________________________________________",
+            "d. found: Vietnamese: __________ | Sentence: ________________________________________",
+            "e. felt: Vietnamese: __________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'First, I went': ________________________________________",
+            "Write a sentence with 'Then, I saw': ________________________________________",
+            "Write a sentence with 'Next, I lost': ________________________________________",
+            "Write a sentence with 'After that, I found': ________________________________________",
+            "Write a sentence with 'Finally, I felt': ________________________________________",
+            "Error correction (5 items):",
+            "I go to the park yesterday.",
+            "→ ________________________________________",
+            "She see a bird. → ________________________________________",
+            "He losed his map.",
+            "→ ________________________________________",
+            "We finded a coin.",
+            "→ ________________________________________",
+            "I feeled happy. → ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến khu rừng.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con gấu.",
+            "→ ________________________________________",
+            "Tôi đã đánh mất bản đồ.",
+            "→ ________________________________________",
+            "Tôi đã tìm thấy nó.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy vui.",
+            "→ ________________________________________",
+            "",
+            "Portfolio (Adventure Book — Part 1):",
+            "Write 1 sentence about an adventure you went on (use 'went' or 'saw'):",
+            "____________________________________________________________",
+            "Write 1 sentence about how you felt during the adventure (use 'felt'):",
+            "____________________________________________________________",
+            "",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1 [Target: 100 words. Scaffolding: 40.0% blank. 40 words blanked / 100 total words]",
+            "\"Hello everyone! My [1] ________________________________________. I am [2] ________________________________________ today. Today, I am [3] ________________________________________ book. My book [4] ________________________________________. Once upon a time, I went to [5] ________________________________________. I went [6] ________________________________________ and my [7] ________________________________________. First, I [8] ________________________________________ under the tall trees. Then, I [9] ________________________________________ bear looking at me. It was [10] ________________________________________! So, I [11] ________________________________________ very quickly. I hid [12] ________________________________________ rock. I really love [13] ________________________________________ story. [14] ________________________________________ is so [15] ________________________________________! Thank you for listening to my story today, my friends!\"",
+            "Phrase Bank (Choose the correct option): [1] (game is Max / name is Max / house is Max) [2] (ten days cold / nine years old / eight months new) [3] (eating an apple / making an adventure / doing an angry) [4] (has nine cages / has two books / has eight pages) [5] (the light city / the tall school / the dark forest) [6] (with my family / for my school / to my class) [7] (big cat / little dog / fast bird) [8] (flew fast / swam loudly / walked slowly) [9] (saw a big / ate a small / met a tiny) [10] (not happy / very scary / so funny) [11] (ran away / slept there / jumped up) [12] (inside a small / behind a huge / under a tiny) [13] (writing my adventure / singing my sad / eating my hot) [14] (Making a book / Breaking a toy / Losing a game) [15] (very bad / much fun / too sad)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Một ngày nọ, tôi đã đánh mất bản đồ.",
+            "→ ________________________________________",
+            "Error Correction: I lost my map and I am worried.",
+            "→ ________________________________________",
+            "Fill-in: (felt) I ____________________ very scared in the dark."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Adventure Book - Part 2",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max lost his backpack.",
+            "T / F: A magical bird helped Max.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "What did Max lose?",
+            "→ ________________________________________",
+            "How did Max feel?",
+            "→ ________________________________________",
+            "Fill-in from text: The bird ____________________ my map under a big rock!",
+            "Stage 3B — Inference: Why did Max give the bird some bread?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words + Cambridge words (Tier 2 complete set)",
+          "content": [
+            "went: I went to the forest.",
+            "saw: I saw a magical bird.",
+            "lost: I lost my map.",
+            "found: The bird found my map.",
+            "felt: I felt very happy.",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Write Yes or No (10 items)",
+            "\"I went to the mountain\" is correct. _________",
+            "\"I saw a loud noise\" is logical. _________",
+            "\"I lost my house\" is logical. _________",
+            "\"I found a coin\" is correct. _________",
+            "\"I felt a map\" is logical. _________",
+            "\"He went to sleep\" is correct. _________",
+            "\"She saw a beautiful flower\" is correct. _________",
+            "\"They lost their way\" is correct. _________",
+            "\"We found a secret cave\" is correct. _________",
+            "\"I felt happy because I lost my money\" is logical. _________",
+            "[O] L2 — Fix the mistakes (10 items)",
+            "1. One day, I lose my map.",
+            "→ ________________________________________",
+            "2. I feeled very worried.",
+            "→ ________________________________________",
+            "3. The bird finded it.",
+            "→ ________________________________________",
+            "4. I gived the bird some bread.",
+            "→ ________________________________________",
+            "5. I am scared yesterday.",
+            "→ ________________________________________",
+            "6. She see a bear last week.",
+            "→ ________________________________________",
+            "7. We go to the beach last summer.",
+            "→ ________________________________________",
+            "8. They was very tired.",
+            "→ ________________________________________",
+            "9. He find his key yesterday.",
+            "→ ________________________________________",
+            "10. First I walked, final I ran.",
+            "→ ________________________________________",
+            "⬛ SPEAKING CHECKPOINT Student A: State a problem (\"I lost my map!\"). Student B: State a feeling (\"You felt worried!\").",
+            "[O] L3 — Fill in the blank with 3 options (10 items)",
+            "One day, I ____________________ (lost / lose / losing) my way.",
+            "I ____________________ (felt / feel / feeling) very scared.",
+            "Then, my friend ____________________ (found / find / finding) me.",
+            "I ____________________ (was / were / am) so happy!",
+            "We ____________________ (went / go / going) back to the camp.",
+            "Yesterday, she ____________________ (lost / loses / lose) her book.",
+            "He ____________________ (found / finds / find) a cool shell.",
+            "They ____________________ (felt / feels / feel) tired after the long walk.",
+            "I ____________________ (saw / see / seeing) a monkey in the tree.",
+            "We ____________________ (went / goes / go) on a great adventure.",
+            "[O] L4 — Sentence Expansion (Mixed Review) (10 items)",
+            "Base: I lost. + Add: (my old map)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (worried in the dark)",
+            "→ ________________________________________",
+            "Base: A bird found. + Add: (the map)",
+            "→ ________________________________________",
+            "Base: I was. + Add: (very happy)",
+            "→ ________________________________________",
+            "Base: I gave. + Add: (the bird some food)",
+            "→ ________________________________________",
+            "Base: She lost. + Add: (her key)",
+            "→ ________________________________________",
+            "Base: He felt. + Add: (sad yesterday)",
+            "→ ________________________________________",
+            "Base: They found. + Add: (the treasure box)",
+            "→ ________________________________________",
+            "Base: We saw. + Add: (a beautiful river)",
+            "→ ________________________________________",
+            "Base: I went. + Add: (home quickly)",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Write Page 4 (The Problem): ________________________________________",
+            "Write Page 5 (Your Feeling): ________________________________________",
+            "Write Page 6 (The Solution): ________________________________________",
+            "What did you learn? ________________________________________",
+            "Was it a good adventure? ________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is about a funny joke. ☐ The story is about a forest problem. ☐ The story is about the city.",
+            "B. Stage 2 — Detail:",
+            "What did Leo lose? ____________ (a) his bag (b) his map (c) his shoe",
+            "Fill in: Leo felt very ____________________.",
+            "[O] C. Stage 3B — Inference: Why did Leo's dad smile at the end?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'One day, I loses my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I feeled very sad.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The bird find my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Emotions in Stories",
+          "content": [
+            "Art: How Illustrators Show Emotions",
+            "In a storybook, the PICTURES tell half the story! Illustrators draw faces, colours, and body language to show feelings.",
+            "• Happy: big smile, bright colours  • Sad: frown, drooping shoulders, grey/blue colours  • Scared: wide eyes, pale colour  • Excited: arms up, yellow/orange",
+            "1. The illustrator draws Max with big eyes and a pale face. What emotion is Max feeling?",
+            "→ ____________________________________________________________",
+            "2. True or False: Illustrators can use colours to show emotions without drawing a face.",
+            "→ ____________ Because: ____________________________________________",
+            "3. Max FELT nervous at first, then FELT proud. How would the illustrator draw these two emotions differently?",
+            "→ ____________________________________________________________",
+            "4. Write 1 sentence using 'felt': Max felt __________________ when he saw the forest.",
+            "5. Write 1 sentence using 'saw': The audience saw __________________ and clapped.",
+            "Challenge: Draw or describe the illustration for the most exciting moment of Max's story.",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write 'cảm thấy lo lắng' in English: ____________________  |  Write 'cuối cùng' in English: ____________________",
+            "2. Past tense of 'feel': ____________________  |  'hear': ____________________  |  'run': ____________________  |  'give': ____________________",
+            "3. Put these in order: Finally / First / Then → ____________________, ____________________, ____________________",
+            "4. Use 'felt' in a sentence about a story character:",
+            "1. ____________________________________________________________",
+            "5. My best sentence this session (use 2 Block B verbs in one sentence):",
+            "2. ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 36 — Session 2 | Topic: My Adventure Book",
+          "content": [
+            "📝 Week 36 — Session 2 | Topic: My Adventure Book (Chapter 2 — The Problem)",
+            "Today's goal: Write Chapter 2 — something goes WRONG in your adventure story!",
+            "Story Starter: Suddenly, Max _________________________ (lost / felt / heard / ran / saw).",
+            "Sentence 1 (problem): __________________________________________________________________________",
+            "Sentence 2 (how he felt): _______________________________________________________________________",
+            "Sentence 3 (what he tried to do): ______________________________________________________________",
+            "Extension: Write Max's exact words using speech marks: '___________________________!' said Max.",
+            "____________________________________________________________",
+            "☐ Did I use 'lost', 'felt', or 'heard'?  ☐ Is there a clear problem?",
+            "☐ Capital letter?  ☐ Full stop?  ☐ Did I use speech marks?",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 2",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. lost: Vietnamese: __________ | Sentence: ________________________________________",
+            "b. felt: Vietnamese: __________ | Sentence: ________________________________________",
+            "c. found: Vietnamese: __________ | Sentence: ________________________________________",
+            "d. went: Vietnamese: __________ | Sentence: ________________________________________",
+            "e. saw: Vietnamese: __________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'I lost': ________________________________________",
+            "Write a sentence with 'I felt': ________________________________________",
+            "Write a sentence with 'I found': ________________________________________",
+            "Write a sentence with 'I was happy': ________________________________________",
+            "Write a sentence with 'I was scared': ________________________________________",
+            "Error correction (5 items):",
+            "I lose my book yesterday.",
+            "→ ________________________________________",
+            "He feeled worried.",
+            "→ ________________________________________",
+            "We finded a rock.",
+            "→ ________________________________________",
+            "I am tired last night.",
+            "→ ________________________________________",
+            "She see a bird. → ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đánh mất một quyển sách.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy lo lắng.",
+            "→ ________________________________________",
+            "Một con chim đã tìm thấy bản đồ.",
+            "→ ________________________________________",
+            "Tôi đã vui vẻ. → ________________________________________",
+            "Cuộc phiêu lưu rất thú vị.",
+            "→ ________________________________________",
+            "",
+            "Portfolio (Adventure Book — Part 2):",
+            "Write 1 sentence about something you lost or found (use 'lost' or 'found'):",
+            "____________________________________________________________",
+            "Write 1 sentence about a feeling in your story (use 'saw' or 'felt'):",
+            "____________________________________________________________",
+            "",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2 [Target: 110 words. Scaffolding: 50.0% blank. 55 words blanked / 110 total words]",
+            "\"Hello again! My name is Max. [1] ________________________________________ about the middle of my adventure book! [2] ________________________________________ the big problem happens. One day, [3] ________________________________________ map. [4] ________________________________________ the dark forest. [5] ________________________________________ and very scared. [6] ________________________________________ the way home. But then, [7] ________________________________________ came to help me. [8] ________________________________________ my map hiding under a big rock! [9] ________________________________________ some fresh bread [10] ________________________________________. [11] ________________________________________ today! [12] ________________________________________ is getting very exciting. [13] ________________________________________ story so far? [14] ________________________________________ me today!\"",
+            "Phrase Bank (Choose the correct option): [1] (Let me ask you / Let me tell you / Let me sing you) [2] (The end is where / The start is where / The middle is where) [3] (I lost my old / I found my new / I broke my new) [4] (I slept everywhere in / I looked everywhere in / I swam everywhere in) [5] (I felt very worried / I was not worried / I felt very happy) [6] (I did not eat / I did not see / I did not know) [7] (a big scary bear / a magical blue bird / a tiny green frog) [8] (The bad dog lost / The old cat ate / The little bird found) [9] (I gave the bird / I took the bird / I asked the bird) [10] (to say please you / to say thank you / to say sorry you) [11] (I am sad again / I was angry again / I was happy again) [12] (Your boring homework / My adventure book / His old backpack) [13] (Do you hate my / Do you like my / Do you break my) [14] (Thank you for watching / Sorry you for watching / Angry you for watching)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Session 3 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 3 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Cuối cùng, tôi đã đi về nhà.",
+            "→ ________________________________________",
+            "Error Correction: Final, I went home and I am happy.",
+            "→ ________________________________________",
+            "Fill-in: (was) It ____________________ a great adventure."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Book Presentation",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max stayed in the forest.",
+            "T / F: The teacher is proud of Max.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "What did Max do finally?",
+            "→ ________________________________________",
+            "Why was Max happy?",
+            "→ ________________________________________",
+            "Fill-in from text: I learned to be very ____________________ in the forest.",
+            "Stage 3B — Inference: Why did the students clap?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Mastery Level: ALL 5 story words + ALL 3 Cambridge words",
+          "content": [
+            "Vocabulary Review — all 8 story words and Cambridge words studied this week.",
+            "☐ went (đã đi) — went to the forest",
+            "☐ saw (đã thấy) — saw a bear",
+            "☐ lost (đã đánh mất) — lost my map",
+            "☐ found (đã tìm thấy) — found my bag",
+            "☐ felt (đã cảm thấy) — felt worried",
+            "☐ adventure (cuộc phiêu lưu) — a great adventure",
+            "☐ story (câu chuyện) — my story",
+            "☐ page (trang giấy) — the first page",
+            "[ Sub-total: ___ / 16 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Logical Sequencing (10 items - Number the events 1 to 10) ___ Finally, I went home. ___ I lost my map. ___ Then, I saw a big bear! ___ I learned to be careful. ___ I was very scared. ___ First, I walked slowly. ___ Once upon a time, I went to the forest. ___ I felt very happy and safe. ___ A magical bird found my map. ___ It was a great adventure.",
+            "[O] L2 — Correct the False Fact (10 items)",
+            "1. Max went to the supermarket.",
+            "→ No, Max went ________________________________________",
+            "2. Max lost his shoe.",
+            "→ No, Max lost ________________________________________",
+            "3. Max felt angry.",
+            "→ No, Max felt ________________________________________",
+            "4. A dog found the map.",
+            "→ No, a bird ________________________________________",
+            "5. Max gave the bird some milk.",
+            "→ No, Max gave ________________________________________",
+            "6. Finally, Max stayed in the forest.",
+            "→ No, Max went ________________________________________",
+            "7. Max was sad at the end.",
+            "→ No, Max was ________________________________________",
+            "8. Max learned to be noisy.",
+            "→ No, Max learned ________________________________________",
+            "9. It was a bad adventure.",
+            "→ No, it was ________________________________________",
+            "10. The teacher was angry.",
+            "→ No, the teacher was ________________________________________",
+            "[O] L3 — Word Categories (10 items - Put the words in the correct box: Verbs / Feelings / Sequence) Words: went, scared, finally, saw, happy, first, lost, worried, then, found. Verbs: ________________________________________ Feelings: ________________________________________ Sequence: ________________________________________",
+            "[O] L4 — Complete the Dialogue (10 items) A: Where did you go in your story? B: 1., I went to the forest. A: What happened next? B: 2., I saw a bear! A: Oh no! Did you lose anything? B: Yes, one day I 3.____________________ my map. A: How did you feel? B: I 4.____________________ very worried. A: Did you find it? B: Yes, a bird 5.____________________ it. A: What happened 6.? B: 7., I went home. A: Were you happy? B: Yes, I 8.____________________ happy because I was safe. A: What did you 9.? B: I learned to be 10..",
+            "[O] L5 — Write Your Own Ending (5 items)",
+            "Write Page 7 (The End): Finally, ________________________________________",
+            "Write your feeling: I was ________________________________________",
+            "Write your reason: because ________________________________________",
+            "Write Page 8 (The Lesson): I learned ________________________________________",
+            "Concluding sentence: It was ________________________________________",
+            "[ Sub-total: ___ / 35 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+          "content": [
+            "A. Stage 1 — Global: ☐ The story is a sad story. ☐ The story is an adventure presentation. ☐ The story is about a zoo.",
+            "B. Stage 2 — Detail:",
+            "What did Leo find? ____________ (a) his way home (b) a coin (c) a map",
+            "Fill in: Finally, Leo went ____________________. He was tired but ____________________.",
+            "[O] C. Stage 3B — Inference: Why is it good to share your story?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Mixed types — grammar + vocabulary + story facts)",
+          "content": [
+            "1. 'Final, I went home.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I was happy because I find my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'It were a great adventure.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Presentation Skills",
+          "content": [
+            "Communication: Presentation Skills",
+            "When you present your story, you are a NARRATOR — the person who tells the story! Good presenters use these skills:",
+            "• Stand tall  • Speak clearly and at the right speed  • Make eye contact with the audience  • Use sequence words: First, Then, Finally",
+            "1. Name 3 things a good presenter does. (Use the box above.)",
+            "→ ____________________________________________________________",
+            "2. True or False: A good presenter reads from a paper and never looks up.",
+            "→ ____________ Because: ____________________________________________",
+            "3. Max STOOD at the front. He WENT through his story using sequence words. Write a sentence about him presenting:",
+            "→ ____________________________________________________________",
+            "4. Which sequence word comes LAST? (a) First  (b) Then  (c) Finally",
+            "→ ____________ Write a sentence using it: ____________________________________________________________",
+            "Challenge: Write your opening sentence for presenting Max's story to the class. Use 'First' and a past tense verb.",
+            "____________________________________________________________",
+            "5. Write 1 sentence using 'went': I went to the front and __________________.",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write all 5 sequence words from memory: ___________________________________________________",
+            "2. Choose the correct verb: Max (go/went/goes) to the forest last week.",
+            "3. Write 1 sentence using BOTH 'lost' and 'found': ___________________________________________________",
+            "4. Write your story title and one sentence using 'was': Title: ____________________ | Sentence: ____________________",
+            "5. My best sentence this whole week (use First/Then/Finally + 3 Block B verbs):",
+            "1. ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 3 — FINAL)  📝  Week 36 — Session 3 | Topic: My Adventure Book",
+          "content": [
+            "📝 Week 36 — Session 3 | Topic: My Adventure Book (Complete Story — Case Closed!)",
+            "Today's goal: Write your complete story with all 3 chapters. Use ALL Block B verbs reviewed this week.",
+            "Write your complete story here:",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "Checklist: ☐ Used at least 5 Block B past tense verbs (went/saw/heard/ran/felt/lost/found/gave)?",
+            "☐ Used sequence words (First, Then, Next, Finally)?  ☐ Used 'was' or 'were'?",
+            "☐ Beginning, Middle (problem), End (solution)?  ☐ At least 5 sentences?",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 3",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: ________________________________________",
+            "b. saw: ________________________________________",
+            "c. lost: ________________________________________",
+            "d. found: ________________________________________",
+            "e. felt: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write your full Page 1 sentence: ________________________________________",
+            "Write your full Page 4 sentence: ________________________________________",
+            "Write your full Page 7 sentence: ________________________________________",
+            "Write your feeling sentence: ________________________________________",
+            "Write your lesson sentence: ________________________________________",
+            "Error correction (5 items):",
+            "Once upon a time, I go to the forest.",
+            "→ ________________________________________",
+            "I feeled scared. → ________________________________________",
+            "The bird find my map.",
+            "→ ________________________________________",
+            "Final, I went home.",
+            "→ ________________________________________",
+            "I am happy yesterday.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Cuối cùng, tôi đã đi về nhà.",
+            "→ ________________________________________",
+            "Tôi đã an toàn. → ________________________________________",
+            "Tôi mệt nhưng rất vui.",
+            "→ ________________________________________",
+            "Tôi đã học được cách cẩn thận.",
+            "→ ________________________________________",
+            "Câu chuyện của tôi đã xong.",
+            "→ ________________________________________",
+            "",
+            "Portfolio (Adventure Book — Presentation):",
+            "Write 2 sentences for your adventure book using at least 3 different irregular past verbs:",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 3 [Target: 115 words. Scaffolding: 60.0% blank. 69 words blanked / 115 total words]",
+            "\"Hello! I am Max, your friend. [1] ________________________________________ end of my [2] ________________________________________! After [3] ________________________________________ my map, [4] ________________________________________ of the [5] ________________________________________. [6] ________________________________________ flew away [7] ________________________________________. [8] ________________________________________ back home. [9] ________________________________________ in my [10] ________________________________________! I was [11] ________________________________________ happy because [12] ________________________________________ great trip. [13] ________________________________________ my sofa [14] ________________________________________ cold water. [15] ________________________________________ be careful. [16] ________________________________________ bring a [17] ________________________________________ with you. [18] ________________________________________ is finished. [19] ________________________________________ to read [20] ________________________________________? [21] ________________________________________ it with [22] ________________________________________. Thanks for [23] ________________________________________!\"",
+            "Phrase Bank (Choose the correct option): [1] (Sing to the / Listen to the / Look at the) [2] (adventure book today / boring homework today / bad nightmare today) [3] (I finally lost / she finally ate / I finally found) [4] (he swam in / I walked out / we flew over) [5] (tall city school / cold blue ocean / dark green forest) [6] (The magical bird / The lazy cat / The scary dog) [7] (under the rock / into the sky / into the water) [8] (Finally, I went / Yesterday, I swam / Tomorrow, I flew) [9] (He was angry / She was sad / I was safe) [10] (scary dark cave / nice warm house / big dirty zoo) [11] (angry and very / tired but very / cold and very) [12] (I had a / you broke a / they lost a) [13] (I sat on / We jumped on / They slept on) [14] (and threw some / and spilled some / and drank some) [15] (I forgot to / I learned to / I refused to) [16] (You should never / You must not / You should always) [17] (very good map / broken toy car / bad old shoe) [18] (Your boring game / His sad song / My adventure book) [19] (Do you want / Does he want / Do they hate) [20] (your old pen / her lost bag / my fun story) [21] (I can share / We can break / You can hide) [22] (him yesterday morning / you tomorrow morning / them last night) [23] (listening to me / talking to her / shouting at him)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_2": [
+    {
+      "session": 1,
+      "session_label": "Session 1 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã đi đến khu rừng.",
+            "→ ________________________________________",
+            "Error Correction: Yesterday, I go to the beach.",
+            "→ ________________________________________",
+            "Fill-in: (saw) Last weekend, I ____________________ a big bird."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Adventure Book - Part 1",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max went to the beach.",
+            "T / F: Max saw a huge bear.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "Who did Max go with?",
+            "→ ________________________________________",
+            "What did Max see first?",
+            "→ ________________________________________",
+            "Fill-in from text: Then, I ____________________ fast. I hid behind a rock.",
+            "Stage 3B — Inference: Why did Max hide behind a rock?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: went, saw, lost, found + Cambridge Preview (Tier 2)",
+          "content": [
+            "saw (Vietnamese: đã thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: saw a [thing]",
+            "→ Collocation practice:",
+            "a. I saw ____________________ (a bear / music).",
+            "b. She saw ____________________ (the ocean / loudly).",
+            "→ Your turn: I saw ________________________________________",
+            "lost (Vietnamese: đã đánh mất)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: lost my [thing]",
+            "→ Collocation practice:",
+            "a. I lost my ____________________ (map / sad).",
+            "b. He lost his ____________________ (keys / happy).",
+            "→ Your turn: I lost my ________________________________________",
+            "found (Vietnamese: đã tìm thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: found a [thing]",
+            "→ Collocation practice:",
+            "a. I found a ____________________ (coin / hungry).",
+            "b. We found the ____________________ (way / tired).",
+            "→ Your turn: I found ________________________________________",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: felt [emotion]",
+            "→ Collocation practice:",
+            "a. I felt ____________________ (scared / a map).",
+            "b. They felt ____________________ (happy / a key).",
+            "→ Your turn: I felt ________________________________________"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Match the sentence halves (10 items)",
+            "First, I went _________ a. a big tiger.",
+            "Then, she saw _________ b. my backpack.",
+            "Next, we lost _________ c. to the mountain.",
+            "After that, I found _________ d. very worried.",
+            "Finally, he felt _________ e. a secret cave.",
+            "Once upon a time, I went _________ f. our map.",
+            "Suddenly, I saw _________ g. a beautiful bird.",
+            "Oh no! I lost _________ h. to a magical island.",
+            "Luckily, I found _________ i. my phone.",
+            "In the end, I felt _________ j. very happy.",
+            "[O] L2 — Unscramble the sentence (10 items)",
+            "went / forest. / I / to / the / First,",
+            "→ ________________________________________",
+            "saw / a / Then, / bear. / I / big",
+            "→ ________________________________________",
+            "lost / my / I / Next, / map.",
+            "→ ________________________________________",
+            "found / a / I / river. / that, / After",
+            "→ ________________________________________",
+            "felt / tired. / Finally, / I / very",
+            "→ ________________________________________",
+            "upon / Once / a / went / I / beach. / to / the / time,",
+            "→ ________________________________________",
+            "saw / She / a / flower. / beautiful",
+            "→ ________________________________________",
+            "lost / He / book. / his / favorite",
+            "→ ________________________________________",
+            "found / We / way / home. / the",
+            "→ ________________________________________",
+            "felt / They / excited. / very",
+            "→ ________________________________________",
+            "⬛ SPEAKING CHECKPOINT Student A: Read your \"Once upon a time\" sentence. Student B: Add what you saw. Goal: Start a story together.",
+            "[O] L3 — Fill in the blank with 3 options (10 items)",
+            "First, I ____________________ (went / go / going) to the forest.",
+            "Then, I ____________________ (see / saw / seen) a tall tree.",
+            "Next, I ____________________ (lose / lost / losing) my bag.",
+            "After that, I ____________________ (find / found / finding) a coin.",
+            "Finally, I ____________________ (feel / felt / feeling) happy.",
+            "Yesterday, we ____________________ (went / lost / felt) to the park.",
+            "She ____________________ (saw / went / felt) a fast car.",
+            "He ____________________ (found / felt / lost) his keys in the sand.",
+            "I ____________________ (found / saw / felt) my lost book!",
+            "They ____________________ (felt / went / saw) tired after running.",
+            "[O] L4 — Sentence Expansion (10 items)",
+            "Base: I went. + Add: (to the magical forest)",
+            "→ ________________________________________",
+            "Base: I saw. + Add: (a huge bear)",
+            "→ ________________________________________",
+            "Base: I lost. + Add: (my green backpack)",
+            "→ ________________________________________",
+            "Base: I found. + Add: (a secret door)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (very brave)",
+            "→ ________________________________________",
+            "Base: She went. + Add: (to the beach)",
+            "→ ________________________________________",
+            "Base: He saw. + Add: (a small crab)",
+            "→ ________________________________________",
+            "Base: We lost. + Add: (our map)",
+            "→ ________________________________________",
+            "Base: They found. + Add: (the treasure)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (scared but excited)",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Where did you go in your story? ________________________________________",
+            "What did you see? ________________________________________",
+            "What did you lose? ________________________________________",
+            "What did you find? ________________________________________",
+            "How did you feel? ________________________________________"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "— Cambridge Flyers Listening format",
+            "— Cambridge Flyers Listening format",
+            "A. Stage 1 — Global: ☐ The story is about school. ☐ The story is about a forest adventure. ☐ The story is about cooking.",
+            "B. Stage 2 — Detail:",
+            "Where did Leo go? ____________ (a) the beach (b) the forest (c) the city",
+            "Fill in: Leo saw a big ____________________.",
+            "[O] C. Stage 3B — Inference: Was Leo scared in the forest? Why?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'First, I go to the forest yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Then, I seed a big bear.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'I feeled very scared.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Storytelling Making a Book",
+          "content": [
+            "The cover tells you the ________________________________________",
+            "The last page is the ________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"đã đánh mất\" in English: ____________________",
+            "2. Make 1 sentence with \"went\": ________________________________________",
+            "3. Make 1 sentence with \"saw\": ________________________________________",
+            "4. Fill in: First I walked, ____________________ (Then/Finally) I ran.",
+            "5. My best sentence today: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 36 — Session 1 | Topic: My Adventure Book",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 1",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: Vietnamese: __________ | Sentence: ________________________________________",
+            "b. saw: Vietnamese: __________ | Sentence: ________________________________________",
+            "c. lost: Vietnamese: __________ | Sentence: ________________________________________",
+            "d. found: Vietnamese: __________ | Sentence: ________________________________________",
+            "e. felt: Vietnamese: __________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'First, I went': ________________________________________",
+            "Write a sentence with 'Then, I saw': ________________________________________",
+            "Write a sentence with 'Next, I lost': ________________________________________",
+            "Write a sentence with 'After that, I found': ________________________________________",
+            "Write a sentence with 'Finally, I felt': ________________________________________",
+            "Error correction (5 items):",
+            "I go to the park yesterday.",
+            "→ ________________________________________",
+            "She see a bird. → ________________________________________",
+            "He losed his map.",
+            "→ ________________________________________",
+            "We finded a coin.",
+            "→ ________________________________________",
+            "I feeled happy. → ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến khu rừng.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con gấu.",
+            "→ ________________________________________",
+            "Tôi đã đánh mất bản đồ.",
+            "→ ________________________________________",
+            "Tôi đã tìm thấy nó.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy vui.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1 [Target: 100 words. Scaffolding: 40.0% blank. 40 words blanked / 100 total words]",
+            "\"Hello everyone! My [1] ________________________________________. I am [2] ________________________________________ today. Today, I am [3] ________________________________________ book. My book [4] ________________________________________. Once upon a time, I went to [5] ________________________________________. I went [6] ________________________________________ and my [7] ________________________________________. First, I [8] ________________________________________ under the tall trees. Then, I [9] ________________________________________ bear looking at me. It was [10] ________________________________________! So, I [11] ________________________________________ very quickly. I hid [12] ________________________________________ rock. I really love [13] ________________________________________ story. [14] ________________________________________ is so [15] ________________________________________! Thank you for listening to my story today, my friends!\"",
+            "Phrase Bank (Choose the correct option): [1] (game is Max / name is Max / house is Max) [2] (ten days cold / nine years old / eight months new) [3] (eating an apple / making an adventure / doing an angry) [4] (has nine cages / has two books / has eight pages) [5] (the light city / the tall school / the dark forest) [6] (with my family / for my school / to my class) [7] (big cat / little dog / fast bird) [8] (flew fast / swam loudly / walked slowly) [9] (saw a big / ate a small / met a tiny) [10] (not happy / very scary / so funny) [11] (ran away / slept there / jumped up) [12] (inside a small / behind a huge / under a tiny) [13] (writing my adventure / singing my sad / eating my hot) [14] (Making a book / Breaking a toy / Losing a game) [15] (very bad / much fun / too sad)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Một ngày nọ, tôi đã đánh mất bản đồ.",
+            "→ ________________________________________",
+            "Error Correction: I lost my map and I am worried.",
+            "→ ________________________________________",
+            "Fill-in: (felt) I ____________________ very scared in the dark."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Adventure Book - Part 2",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max lost his backpack.",
+            "T / F: A magical bird helped Max.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "What did Max lose?",
+            "→ ________________________________________",
+            "How did Max feel?",
+            "→ ________________________________________",
+            "Fill-in from text: The bird ____________________ my map under a big rock!",
+            "Stage 3B — Inference: Why did Max give the bird some bread?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words + Cambridge words (Tier 2 complete set)",
+          "content": [
+            "went: I went to the forest.",
+            "saw: I saw a magical bird.",
+            "lost: I lost my map.",
+            "found: The bird found my map.",
+            "felt: I felt very happy."
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Write Yes or No (10 items)",
+            "\"I went to the mountain\" is correct. _________",
+            "\"I saw a loud noise\" is logical. _________",
+            "\"I lost my house\" is logical. _________",
+            "\"I found a coin\" is correct. _________",
+            "\"I felt a map\" is logical. _________",
+            "\"He went to sleep\" is correct. _________",
+            "\"She saw a beautiful flower\" is correct. _________",
+            "\"They lost their way\" is correct. _________",
+            "\"We found a secret cave\" is correct. _________",
+            "\"I felt happy because I lost my money\" is logical. _________",
+            "[O] L2 — Fix the mistakes (10 items)",
+            "One day, I lose my map.",
+            "→ ________________________________________",
+            "I feeled very worried.",
+            "→ ________________________________________",
+            "The bird finded it.",
+            "→ ________________________________________",
+            "I gived the bird some bread.",
+            "→ ________________________________________",
+            "I am scared yesterday.",
+            "→ ________________________________________",
+            "She see a bear last week.",
+            "→ ________________________________________",
+            "We go to the beach last summer.",
+            "→ ________________________________________",
+            "They was very tired.",
+            "→ ________________________________________",
+            "He find his key yesterday.",
+            "→ ________________________________________",
+            "First I walked, final I ran.",
+            "→ ________________________________________",
+            "⬛ SPEAKING CHECKPOINT Student A: State a problem (\"I lost my map!\"). Student B: State a feeling (\"You felt worried!\").",
+            "[O] L3 — Fill in the blank with 3 options (10 items)",
+            "One day, I ____________________ (lost / lose / losing) my way.",
+            "I ____________________ (felt / feel / feeling) very scared.",
+            "Then, my friend ____________________ (found / find / finding) me.",
+            "I ____________________ (was / were / am) so happy!",
+            "We ____________________ (went / go / going) back to the camp.",
+            "Yesterday, she ____________________ (lost / loses / lose) her book.",
+            "He ____________________ (found / finds / find) a cool shell.",
+            "They ____________________ (felt / feels / feel) tired after the long walk.",
+            "I ____________________ (saw / see / seeing) a monkey in the tree.",
+            "We ____________________ (went / goes / go) on a great adventure.",
+            "[O] L4 — Sentence Expansion (Mixed Review) (10 items)",
+            "Base: I lost. + Add: (my old map)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (worried in the dark)",
+            "→ ________________________________________",
+            "Base: A bird found. + Add: (the map)",
+            "→ ________________________________________",
+            "Base: I was. + Add: (very happy)",
+            "→ ________________________________________",
+            "Base: I gave. + Add: (the bird some food)",
+            "→ ________________________________________",
+            "Base: She lost. + Add: (her key)",
+            "→ ________________________________________",
+            "Base: He felt. + Add: (sad yesterday)",
+            "→ ________________________________________",
+            "Base: They found. + Add: (the treasure box)",
+            "→ ________________________________________",
+            "Base: We saw. + Add: (a beautiful river)",
+            "→ ________________________________________",
+            "Base: I went. + Add: (home quickly)",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Write Page 4 (The Problem): ________________________________________",
+            "Write Page 5 (Your Feeling): ________________________________________",
+            "Write Page 6 (The Solution): ________________________________________",
+            "What did you learn? ________________________________________",
+            "Was it a good adventure? ________________________________________"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "A. Stage 1 — Global: ☐ The story is about a funny joke. ☐ The story is about a forest problem. ☐ The story is about the city.",
+            "B. Stage 2 — Detail:",
+            "What did Leo lose? ____________ (a) his bag (b) his map (c) his shoe",
+            "Fill in: Leo felt very ____________________.",
+            "[O] C. Stage 3B — Inference: Why did Leo's dad smile at the end?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'One day, I loses my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I feeled very sad.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The bird find my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Emotions in Stories",
+          "content": [
+            "To show I was sad, I will draw ________________________________________",
+            "When the problem is fixed, the character feels ________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"cảm thấy lo lắng\" in English: ____________________",
+            "2. Make 1 sentence with \"lost\": ________________________________________",
+            "3. Make 1 sentence with \"found\": ________________________________________",
+            "4. Fill in: I lost my map. I ____________________ (was/were) scared.",
+            "5. My best sentence today: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 36 — Session 2 | Topic: My Adventure Book",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 2",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. lost: Vietnamese: __________ | Sentence: ________________________________________",
+            "b. felt: Vietnamese: __________ | Sentence: ________________________________________",
+            "c. found: Vietnamese: __________ | Sentence: ________________________________________",
+            "d. went: Vietnamese: __________ | Sentence: ________________________________________",
+            "e. saw: Vietnamese: __________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'I lost': ________________________________________",
+            "Write a sentence with 'I felt': ________________________________________",
+            "Write a sentence with 'I found': ________________________________________",
+            "Write a sentence with 'I was happy': ________________________________________",
+            "Write a sentence with 'I was scared': ________________________________________",
+            "Error correction (5 items):",
+            "I lose my book yesterday.",
+            "→ ________________________________________",
+            "He feeled worried.",
+            "→ ________________________________________",
+            "We finded a rock.",
+            "→ ________________________________________",
+            "I am tired last night.",
+            "→ ________________________________________",
+            "She see a bird. → ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đánh mất một quyển sách.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy lo lắng.",
+            "→ ________________________________________",
+            "Một con chim đã tìm thấy bản đồ.",
+            "→ ________________________________________",
+            "Tôi đã vui vẻ. → ________________________________________",
+            "Cuộc phiêu lưu rất thú vị.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2 [Target: 110 words. Scaffolding: 50.0% blank. 55 words blanked / 110 total words]",
+            "\"Hello again! My name is Max. [1] ________________________________________ about the middle of my adventure book! [2] ________________________________________ the big problem happens. One day, [3] ________________________________________ map. [4] ________________________________________ the dark forest. [5] ________________________________________ and very scared. [6] ________________________________________ the way home. But then, [7] ________________________________________ came to help me. [8] ________________________________________ my map hiding under a big rock! [9] ________________________________________ some fresh bread [10] ________________________________________. [11] ________________________________________ today! [12] ________________________________________ is getting very exciting. [13] ________________________________________ story so far? [14] ________________________________________ me today!\"",
+            "Phrase Bank (Choose the correct option): [1] (Let me ask you / Let me tell you / Let me sing you) [2] (The end is where / The start is where / The middle is where) [3] (I lost my old / I found my new / I broke my new) [4] (I slept everywhere in / I looked everywhere in / I swam everywhere in) [5] (I felt very worried / I was not worried / I felt very happy) [6] (I did not eat / I did not see / I did not know) [7] (a big scary bear / a magical blue bird / a tiny green frog) [8] (The bad dog lost / The old cat ate / The little bird found) [9] (I gave the bird / I took the bird / I asked the bird) [10] (to say please you / to say thank you / to say sorry you) [11] (I am sad again / I was angry again / I was happy again) [12] (Your boring homework / My adventure book / His old backpack) [13] (Do you hate my / Do you like my / Do you break my) [14] (Thank you for watching / Sorry you for watching / Angry you for watching)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_5": [
+    {
+      "session": 1,
+      "session_label": "Slot 1 — Activate / Khởi động — Spiral, Reading & Vocab S1",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã đi đến khu rừng.",
+            "→ ________________________________________",
+            "Error Correction: Yesterday, I go to the beach.",
+            "→ ________________________________________",
+            "Fill-in: (saw) Last weekend, I ____________________ a big bird."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Adventure Book - Part 1",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max went to the beach.",
+            "T / F: Max saw a huge bear.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "Who did Max go with?",
+            "→ ________________________________________",
+            "What did Max see first?",
+            "→ ________________________________________",
+            "Fill-in from text: Then, I ____________________ fast. I hid behind a rock.",
+            "Stage 3B — Inference: Why did Max hide behind a rock?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: went, saw, lost, found + Cambridge Preview (Tier 2)",
+          "content": [
+            "saw (Vietnamese: đã thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: saw a [thing]",
+            "→ Collocation practice:",
+            "a. I saw ____________________ (a bear / music).",
+            "b. She saw ____________________ (the ocean / loudly).",
+            "→ Your turn: I saw ________________________________________",
+            "lost (Vietnamese: đã đánh mất)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: lost my [thing]",
+            "→ Collocation practice:",
+            "a. I lost my ____________________ (map / sad).",
+            "b. He lost his ____________________ (keys / happy).",
+            "→ Your turn: I lost my ________________________________________",
+            "found (Vietnamese: đã tìm thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: found a [thing]",
+            "→ Collocation practice:",
+            "a. I found a ____________________ (coin / hungry).",
+            "b. We found the ____________________ (way / tired).",
+            "→ Your turn: I found ________________________________________",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Write 3 times: ____________________ ____________________ ____________________",
+            "→ Key Collocation: felt [emotion]",
+            "→ Collocation practice:",
+            "a. I felt ____________________ (scared / a map).",
+            "b. They felt ____________________ (happy / a key).",
+            "→ Your turn: I felt ________________________________________"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Match the sentence halves (10 items)",
+            "First, I went _________ a. a big tiger.",
+            "Then, she saw _________ b. my backpack.",
+            "Next, we lost _________ c. to the mountain.",
+            "After that, I found _________ d. very worried.",
+            "Finally, he felt _________ e. a secret cave.",
+            "Once upon a time, I went _________ f. our map.",
+            "Suddenly, I saw _________ g. a beautiful bird.",
+            "Oh no! I lost _________ h. to a magical island.",
+            "Luckily, I found _________ i. my phone.",
+            "In the end, I felt _________ j. very happy.",
+            "[O] L2 — Unscramble the sentence (10 items)",
+            "went / forest. / I / to / the / First,",
+            "→ ________________________________________",
+            "saw / a / Then, / bear. / I / big",
+            "→ ________________________________________",
+            "lost / my / I / Next, / map.",
+            "→ ________________________________________",
+            "found / a / I / river. / that, / After",
+            "→ ________________________________________",
+            "felt / tired. / Finally, / I / very",
+            "→ ________________________________________",
+            "upon / Once / a / went / I / beach. / to / the / time,",
+            "→ ________________________________________",
+            "saw / She / a / flower. / beautiful",
+            "→ ________________________________________",
+            "lost / He / book. / his / favorite",
+            "→ ________________________________________",
+            "found / We / way / home. / the",
+            "→ ________________________________________",
+            "felt / They / excited. / very",
+            "→ ________________________________________",
+            "⬛ SPEAKING CHECKPOINT Student A: Read your \"Once upon a time\" sentence. Student B: Add what you saw. Goal: Start a story together.",
+            "[O] L3 — Fill in the blank with 3 options (10 items)",
+            "First, I ____________________ (went / go / going) to the forest.",
+            "Then, I ____________________ (see / saw / seen) a tall tree.",
+            "Next, I ____________________ (lose / lost / losing) my bag.",
+            "After that, I ____________________ (find / found / finding) a coin.",
+            "Finally, I ____________________ (feel / felt / feeling) happy.",
+            "Yesterday, we ____________________ (went / lost / felt) to the park.",
+            "She ____________________ (saw / went / felt) a fast car.",
+            "He ____________________ (found / felt / lost) his keys in the sand.",
+            "I ____________________ (found / saw / felt) my lost book!",
+            "They ____________________ (felt / went / saw) tired after running.",
+            "[O] L4 — Sentence Expansion (10 items)",
+            "Base: I went. + Add: (to the magical forest)",
+            "→ ________________________________________",
+            "Base: I saw. + Add: (a huge bear)",
+            "→ ________________________________________",
+            "Base: I lost. + Add: (my green backpack)",
+            "→ ________________________________________",
+            "Base: I found. + Add: (a secret door)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (very brave)",
+            "→ ________________________________________",
+            "Base: She went. + Add: (to the beach)",
+            "→ ________________________________________",
+            "Base: He saw. + Add: (a small crab)",
+            "→ ________________________________________",
+            "Base: We lost. + Add: (our map)",
+            "→ ________________________________________",
+            "Base: They found. + Add: (the treasure)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (scared but excited)",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Where did you go in your story? ________________________________________",
+            "What did you see? ________________________________________",
+            "What did you lose? ________________________________________",
+            "What did you find? ________________________________________",
+            "How did you feel? ________________________________________"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Slot 2 — Drill / Luyện tập — Listening, Error Correction & Writing S1",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "— Cambridge Flyers Listening format",
+            "— Cambridge Flyers Listening format",
+            "A. Stage 1 — Global: ☐ The story is about school. ☐ The story is about a forest adventure. ☐ The story is about cooking.",
+            "B. Stage 2 — Detail:",
+            "Where did Leo go? ____________ (a) the beach (b) the forest (c) the city",
+            "Fill in: Leo saw a big ____________________.",
+            "[O] C. Stage 3B — Inference: Was Leo scared in the forest? Why?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'First, I go to the forest yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Then, I seed a big bear.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'I feeled very scared.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Storytelling Making a Book",
+          "content": [
+            "The cover tells you the ________________________________________",
+            "The last page is the ________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"đã đánh mất\" in English: ____________________",
+            "2. Make 1 sentence with \"went\": ________________________________________",
+            "3. Make 1 sentence with \"saw\": ________________________________________",
+            "4. Fill in: First I walked, ____________________ (Then/Finally) I ran.",
+            "5. My best sentence today: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 36 — Session 1 | Topic: My Adventure Book",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 1",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: Vietnamese: __________ | Sentence: ________________________________________",
+            "b. saw: Vietnamese: __________ | Sentence: ________________________________________",
+            "c. lost: Vietnamese: __________ | Sentence: ________________________________________",
+            "d. found: Vietnamese: __________ | Sentence: ________________________________________",
+            "e. felt: Vietnamese: __________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'First, I went': ________________________________________",
+            "Write a sentence with 'Then, I saw': ________________________________________",
+            "Write a sentence with 'Next, I lost': ________________________________________",
+            "Write a sentence with 'After that, I found': ________________________________________",
+            "Write a sentence with 'Finally, I felt': ________________________________________",
+            "Error correction (5 items):",
+            "I go to the park yesterday.",
+            "→ ________________________________________",
+            "She see a bird. → ________________________________________",
+            "He losed his map.",
+            "→ ________________________________________",
+            "We finded a coin.",
+            "→ ________________________________________",
+            "I feeled happy. → ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến khu rừng.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con gấu.",
+            "→ ________________________________________",
+            "Tôi đã đánh mất bản đồ.",
+            "→ ________________________________________",
+            "Tôi đã tìm thấy nó.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy vui.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1 [Target: 100 words. Scaffolding: 40.0% blank. 40 words blanked / 100 total words]",
+            "\"Hello everyone! My [1] ________________________________________. I am [2] ________________________________________ today. Today, I am [3] ________________________________________ book. My book [4] ________________________________________. Once upon a time, I went to [5] ________________________________________. I went [6] ________________________________________ and my [7] ________________________________________. First, I [8] ________________________________________ under the tall trees. Then, I [9] ________________________________________ bear looking at me. It was [10] ________________________________________! So, I [11] ________________________________________ very quickly. I hid [12] ________________________________________ rock. I really love [13] ________________________________________ story. [14] ________________________________________ is so [15] ________________________________________! Thank you for listening to my story today, my friends!\"",
+            "Phrase Bank (Choose the correct option): [1] (game is Max / name is Max / house is Max) [2] (ten days cold / nine years old / eight months new) [3] (eating an apple / making an adventure / doing an angry) [4] (has nine cages / has two books / has eight pages) [5] (the light city / the tall school / the dark forest) [6] (with my family / for my school / to my class) [7] (big cat / little dog / fast bird) [8] (flew fast / swam loudly / walked slowly) [9] (saw a big / ate a small / met a tiny) [10] (not happy / very scary / so funny) [11] (ran away / slept there / jumped up) [12] (inside a small / behind a huge / under a tiny) [13] (writing my adventure / singing my sad / eating my hot) [14] (Making a book / Breaking a toy / Losing a game) [15] (very bad / much fun / too sad)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Slot 3 — Bridge / Kết nối — Spiral, Reading & Vocab S2",
+      "parts": [
+        {
+          "title": "WEEK 36 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: ____________________ Date: ____________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Một ngày nọ, tôi đã đánh mất bản đồ.",
+            "→ ________________________________________",
+            "Error Correction: I lost my map and I am worried.",
+            "→ ________________________________________",
+            "Fill-in: (felt) I ____________________ very scared in the dark."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Max's Adventure Book - Part 2",
+          "content": [
+            "Stage 1 — Global:",
+            "T / F: Max lost his backpack.",
+            "T / F: A magical bird helped Max.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail:",
+            "What did Max lose?",
+            "→ ________________________________________",
+            "How did Max feel?",
+            "→ ________________________________________",
+            "Fill-in from text: The bird ____________________ my map under a big rock!",
+            "Stage 3B — Inference: Why did Max give the bird some bread?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words + Cambridge words (Tier 2 complete set)",
+          "content": [
+            "went: I went to the forest.",
+            "saw: I saw a magical bird.",
+            "lost: I lost my map.",
+            "found: The bird found my map.",
+            "felt: I felt very happy."
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Write Yes or No (10 items)",
+            "\"I went to the mountain\" is correct. _________",
+            "\"I saw a loud noise\" is logical. _________",
+            "\"I lost my house\" is logical. _________",
+            "\"I found a coin\" is correct. _________",
+            "\"I felt a map\" is logical. _________",
+            "\"He went to sleep\" is correct. _________",
+            "\"She saw a beautiful flower\" is correct. _________",
+            "\"They lost their way\" is correct. _________",
+            "\"We found a secret cave\" is correct. _________",
+            "\"I felt happy because I lost my money\" is logical. _________",
+            "[O] L2 — Fix the mistakes (10 items)",
+            "One day, I lose my map.",
+            "→ ________________________________________",
+            "I feeled very worried.",
+            "→ ________________________________________",
+            "The bird finded it.",
+            "→ ________________________________________",
+            "I gived the bird some bread.",
+            "→ ________________________________________",
+            "I am scared yesterday.",
+            "→ ________________________________________",
+            "She see a bear last week.",
+            "→ ________________________________________",
+            "We go to the beach last summer.",
+            "→ ________________________________________",
+            "They was very tired.",
+            "→ ________________________________________",
+            "He find his key yesterday.",
+            "→ ________________________________________",
+            "First I walked, final I ran.",
+            "→ ________________________________________",
+            "⬛ SPEAKING CHECKPOINT Student A: State a problem (\"I lost my map!\"). Student B: State a feeling (\"You felt worried!\").",
+            "[O] L3 — Fill in the blank with 3 options (10 items)",
+            "One day, I ____________________ (lost / lose / losing) my way.",
+            "I ____________________ (felt / feel / feeling) very scared.",
+            "Then, my friend ____________________ (found / find / finding) me.",
+            "I ____________________ (was / were / am) so happy!",
+            "We ____________________ (went / go / going) back to the camp.",
+            "Yesterday, she ____________________ (lost / loses / lose) her book.",
+            "He ____________________ (found / finds / find) a cool shell.",
+            "They ____________________ (felt / feels / feel) tired after the long walk.",
+            "I ____________________ (saw / see / seeing) a monkey in the tree.",
+            "We ____________________ (went / goes / go) on a great adventure.",
+            "[O] L4 — Sentence Expansion (Mixed Review) (10 items)",
+            "Base: I lost. + Add: (my old map)",
+            "→ ________________________________________",
+            "Base: I felt. + Add: (worried in the dark)",
+            "→ ________________________________________",
+            "Base: A bird found. + Add: (the map)",
+            "→ ________________________________________",
+            "Base: I was. + Add: (very happy)",
+            "→ ________________________________________",
+            "Base: I gave. + Add: (the bird some food)",
+            "→ ________________________________________",
+            "Base: She lost. + Add: (her key)",
+            "→ ________________________________________",
+            "Base: He felt. + Add: (sad yesterday)",
+            "→ ________________________________________",
+            "Base: They found. + Add: (the treasure box)",
+            "→ ________________________________________",
+            "Base: We saw. + Add: (a beautiful river)",
+            "→ ________________________________________",
+            "Base: I went. + Add: (home quickly)",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Write Page 4 (The Problem): ________________________________________",
+            "Write Page 5 (Your Feeling): ________________________________________",
+            "Write Page 6 (The Solution): ________________________________________",
+            "What did you learn? ________________________________________",
+            "Was it a good adventure? ________________________________________"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "session_label": "Slot 4 — Challenge / Thử thách — Listening, Error Correction & Writing S2",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "A. Stage 1 — Global: ☐ The story is about a funny joke. ☐ The story is about a forest problem. ☐ The story is about the city.",
+            "B. Stage 2 — Detail:",
+            "What did Leo lose? ____________ (a) his bag (b) his map (c) his shoe",
+            "Fill in: Leo felt very ____________________.",
+            "[O] C. Stage 3B — Inference: Why did Leo's dad smile at the end?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'One day, I loses my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I feeled very sad.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'The bird find my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Emotions in Stories",
+          "content": [
+            "To show I was sad, I will draw ________________________________________",
+            "When the problem is fixed, the character feels ________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"cảm thấy lo lắng\" in English: ____________________",
+            "2. Make 1 sentence with \"lost\": ________________________________________",
+            "3. Make 1 sentence with \"found\": ________________________________________",
+            "4. Fill in: I lost my map. I ____________________ (was/were) scared.",
+            "5. My best sentence today: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 36 — Session 2 | Topic: My Adventure Book",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 2",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. lost: Vietnamese: __________ | Sentence: ________________________________________",
+            "b. felt: Vietnamese: __________ | Sentence: ________________________________________",
+            "c. found: Vietnamese: __________ | Sentence: ________________________________________",
+            "d. went: Vietnamese: __________ | Sentence: ________________________________________",
+            "e. saw: Vietnamese: __________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with 'I lost': ________________________________________",
+            "Write a sentence with 'I felt': ________________________________________",
+            "Write a sentence with 'I found': ________________________________________",
+            "Write a sentence with 'I was happy': ________________________________________",
+            "Write a sentence with 'I was scared': ________________________________________",
+            "Error correction (5 items):",
+            "I lose my book yesterday.",
+            "→ ________________________________________",
+            "He feeled worried.",
+            "→ ________________________________________",
+            "We finded a rock.",
+            "→ ________________________________________",
+            "I am tired last night.",
+            "→ ________________________________________",
+            "She see a bird. → ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đánh mất một quyển sách.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy lo lắng.",
+            "→ ________________________________________",
+            "Một con chim đã tìm thấy bản đồ.",
+            "→ ________________________________________",
+            "Tôi đã vui vẻ. → ________________________________________",
+            "Cuộc phiêu lưu rất thú vị.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2 [Target: 110 words. Scaffolding: 50.0% blank. 55 words blanked / 110 total words]",
+            "\"Hello again! My name is Max. [1] ________________________________________ about the middle of my adventure book! [2] ________________________________________ the big problem happens. One day, [3] ________________________________________ map. [4] ________________________________________ the dark forest. [5] ________________________________________ and very scared. [6] ________________________________________ the way home. But then, [7] ________________________________________ came to help me. [8] ________________________________________ my map hiding under a big rock! [9] ________________________________________ some fresh bread [10] ________________________________________. [11] ________________________________________ today! [12] ________________________________________ is getting very exciting. [13] ________________________________________ story so far? [14] ________________________________________ me today!\"",
+            "Phrase Bank (Choose the correct option): [1] (Let me ask you / Let me tell you / Let me sing you) [2] (The end is where / The start is where / The middle is where) [3] (I lost my old / I found my new / I broke my new) [4] (I slept everywhere in / I looked everywhere in / I swam everywhere in) [5] (I felt very worried / I was not worried / I felt very happy) [6] (I did not eat / I did not see / I did not know) [7] (a big scary bear / a magical blue bird / a tiny green frog) [8] (The bad dog lost / The old cat ate / The little bird found) [9] (I gave the bird / I took the bird / I asked the bird) [10] (to say please you / to say thank you / to say sorry you) [11] (I am sad again / I was angry again / I was happy again) [12] (Your boring homework / My adventure book / His old backpack) [13] (Do you hate my / Do you like my / Do you break my) [14] (Thank you for watching / Sorry you for watching / Angry you for watching)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "session_label": "Slot 5 — Perform / Biểu diễn — Error Correction, Writing & Task Cards S3",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+          "content": [
+            "— Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+            "— Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+            "A. Stage 1 — Global: ☐ The story is a sad story. ☐ The story is an adventure presentation. ☐ The story is about a zoo.",
+            "B. Stage 2 — Detail:",
+            "What did Leo find? ____________ (a) his way home (b) a coin (c) a map",
+            "Fill in: Finally, Leo went ____________________. He was tired but ____________________.",
+            "[O] C. Stage 3B — Inference: Why is it good to share your story?",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Superlatives: Formal Introduction",
+          "score": 0,
+          "content": [
+            "📌 RULE: Superlatives — FORMAL INTRODUCTION (Rules Taught This Week)",
+            "",
+            "★ CAMBRIDGE INTEGRATION — Superlatives: Full Rules",
+            "",
+            "┌──────────────────────────────────────────────────────┐",
+            "│  RULE A: Short adjectives (1 syllable) → add -est    │",
+            "│    fast → the fastest  |  slow → the slowest         │",
+            "│    big  → the biggest  (double consonant!)           │",
+            "│    late → the latest   (drop e)                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE B: 2+ syllable adjectives → most + adjective   │",
+            "│    beautiful → the most beautiful                    │",
+            "│    dangerous → the most dangerous                    │",
+            "│    patient   → the most patient                      │",
+            "├──────────────────────────────────────────────────────┤",
+            "│  RULE C: Irregulars (must memorize!)                 │",
+            "│    good → better → the best                          │",
+            "│    bad  → worse  → the worst                         │",
+            "└──────────────────────────────────────────────────────┘",
+            "",
+            "📌 RULE: Always use 'the' before a superlative!",
+            "  ✎ 'It is THE fastest animal in Africa.'",
+            "",
+            "Full comparison table (W22 comparative → W36 superlative):",
+            "  big → bigger → the biggest",
+            "  fast → faster → the fastest",
+            "  good → better → the best",
+            "",
+            "REVIEW: Irregular verbs W29–33 | Adverbs W35 | Relative clause seeding W34",
+            "",
+            "📌 PRACTICE:",
+            "  1. Drill: 10 adjectives → write superlative form",
+            "  2. Write 5 original sentences using animals/transport vocabulary",
+            "  3. Pair: 'Which is the fastest / most beautiful / best...?'"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Mixed types — grammar + vocabulary + story facts)",
+          "content": [
+            "1. 'Final, I went home.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I was happy because I find my map.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'It were a great adventure.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Presentation Skills",
+          "content": [
+            "When I present, I will stand ________________________________________",
+            "A good presenter reads ________________________________________",
+            "[ Sub-total: ___ / 2 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write \"cuối cùng\" in English: ____________________",
+            "2. Make 1 sentence starting with \"Finally\": ________________________________________",
+            "3. Make 1 sentence with \"I was happy because\": ________________________________________",
+            "4. Fill in: I learned to be ____________________ (careful/carefully).",
+            "5. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 3 — FINAL)  📝  Week 36 — Session 3 | Topic: My Adventure Book",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 36, Session 3",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: ________________________________________",
+            "b. saw: ________________________________________",
+            "c. lost: ________________________________________",
+            "d. found: ________________________________________",
+            "e. felt: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write your full Page 1 sentence: ________________________________________",
+            "Write your full Page 4 sentence: ________________________________________",
+            "Write your full Page 7 sentence: ________________________________________",
+            "Write your feeling sentence: ________________________________________",
+            "Write your lesson sentence: ________________________________________",
+            "Error correction (5 items):",
+            "Once upon a time, I go to the forest.",
+            "→ ________________________________________",
+            "I feeled scared. → ________________________________________",
+            "The bird find my map.",
+            "→ ________________________________________",
+            "Final, I went home.",
+            "→ ________________________________________",
+            "I am happy yesterday.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Cuối cùng, tôi đã đi về nhà.",
+            "→ ________________________________________",
+            "Tôi đã an toàn. → ________________________________________",
+            "Tôi mệt nhưng rất vui.",
+            "→ ________________________________________",
+            "Tôi đã học được cách cẩn thận.",
+            "→ ________________________________________",
+            "Câu chuyện của tôi đã xong.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 3 [Target: 115 words. Scaffolding: 60.0% blank. 69 words blanked / 115 total words]",
+            "\"Hello! I am Max, your friend. [1] ________________________________________ end of my [2] ________________________________________! After [3] ________________________________________ my map, [4] ________________________________________ of the [5] ________________________________________. [6] ________________________________________ flew away [7] ________________________________________. [8] ________________________________________ back home. [9] ________________________________________ in my [10] ________________________________________! I was [11] ________________________________________ happy because [12] ________________________________________ great trip. [13] ________________________________________ my sofa [14] ________________________________________ cold water. [15] ________________________________________ be careful. [16] ________________________________________ bring a [17] ________________________________________ with you. [18] ________________________________________ is finished. [19] ________________________________________ to read [20] ________________________________________? [21] ________________________________________ it with [22] ________________________________________. Thanks for [23] ________________________________________!\"",
+            "Phrase Bank (Choose the correct option): [1] (Sing to the / Listen to the / Look at the) [2] (adventure book today / boring homework today / bad nightmare today) [3] (I finally lost / she finally ate / I finally found) [4] (he swam in / I walked out / we flew over) [5] (tall city school / cold blue ocean / dark green forest) [6] (The magical bird / The lazy cat / The scary dog) [7] (under the rock / into the sky / into the water) [8] (Finally, I went / Yesterday, I swam / Tomorrow, I flew) [9] (He was angry / She was sad / I was safe) [10] (scary dark cave / nice warm house / big dirty zoo) [11] (angry and very / tired but very / cold and very) [12] (I had a / you broke a / they lost a) [13] (I sat on / We jumped on / They slept on) [14] (and threw some / and spilled some / and drank some) [15] (I forgot to / I learned to / I refused to) [16] (You should never / You must not / You should always) [17] (very good map / broken toy car / bad old shoe) [18] (Your boring game / His sad song / My adventure book) [19] (Do you want / Does he want / Do they hate) [20] (your old pen / her lost bag / my fun story) [21] (I can share / We can break / You can hide) [22] (him yesterday morning / you tomorrow morning / them last night) [23] (listening to me / talking to her / shouting at him)"
+          ]
+        }
+      ]
+    }
+  ],
+  "answer_key": [
+    "(Chủ đề: Adventure Stories | Trọng tâm: Past Simple Irregular Verbs - found, took, lost, hid, stood | STEM: Map Reading & Navigation)",
+    "S1 ANSWER KEY",
+    "SPIRAL REVIEW SPIRAL REVIEW",
+    "PART 1 : 1. I went to the forest. | 2. Yesterday, I saw a bird. | 3. felt",
+    "PART 3 PART 1",
+    "PART 3  (Reading): Global: T / F / The Lost Map | Detail: 1. a map | 2. the gold | 3. hid | Inference: Because they didn't want anyone to see it.",
+    "PART 3 PART 3",
+    "PART 4  (ELA L1): 1-c, 2-d, 3-a, 4-b, 5-e, 6-h, 7-f, 8-g",
+    "PART 5 PART 3",
+    "PART 6  (ELA L2): 1. I found a secret map. | 2. He took the old bag. | 3. We lost our way. | 4. She hid behind a tree. | 5. They stood on the mountain. | 6. I found a coin. | 7. He took the boat. | 8. The dog hid the bone.",
+    "PART 7 PART 3",
+    "PART 9  (ELA L3): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. found | 7. took | 8. hid",
+    "S2 ANSWER KEY",
+    "SPIRAL REVIEW SPIRAL REVIEW",
+    "PART 1 : 1. I found a map. | 2. He hid behind the rock. | 3. took",
+    "PART 3 PART 1",
+    "PART 3  (Reading): Global: F / T / The Great Forest | Detail: 1. his way | 2. under a tree | 3. stood | Inference: To look for his friends from a high place.",
+    "PART 3 PART 3",
+    "PART 4  (ELA L1): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. went | 7. saw | 8. felt",
+    "PART 5 PART 3",
+    "PART 6  (ELA L2): 1. I lost my map in the forest. | 2. He stood on the big rock. | 3. We hid from the bear. | 4. She took my hand. | 5. They found the river. | 6. I lost my shoe. | 7. He stood up quickly. | 8. She hid the key.",
+    "PART 7 PART 3",
+    "PART 9  (ELA L3): 1. lost | 2. hid | 3. stood | 4. found | 5. took | 6. lost | 7. hid | 8. stood",
+    "S3 ANSWER KEY",
+    "SPIRAL REVIEW SPIRAL REVIEW",
+    "PART 1 : 1. I lost my way. | 2. She stood on the hill. | 3. hid",
+    "PART 3 PART 1",
+    "PART 3  (Reading): Global: F / T / The Winner | Detail: 1. the flag | 2. on the hill | 3. found | Inference: Because they found the treasure and won the game.",
+    "PART 3 PART 3",
+    "PART 4  (ELA L1): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. found | 7. took | 8. stood",
+    "PART 5 PART 3",
+    "PART 6  (ELA L2): 1. I found the red flag. | 2. He took the prize. | 3. We lost the old map. | 4. She hid in the cave. | 5. They stood on the top. | 6. I found my friends. | 7. He took the gold. | 8. We stood together.",
+    "PART 7 PART 3",
+    "PART 9  (ELA L3): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. found | 7. took | 8. stood"
+  ],
+  "answer_key_by_session": {
+    "s1": [
+      "(Chủ đề: Adventure Stories | Trọng tâm: Past Simple Irregular Verbs - found, took, lost, hid, stood | STEM: Map Reading & Navigation)",
+      "S1 ANSWER KEY",
+      "SPIRAL REVIEW SPIRAL REVIEW",
+      "PART 1 : 1. I went to the forest. | 2. Yesterday, I saw a bird. | 3. felt",
+      "PART 3 PART 1",
+      "PART 3  (Reading): Global: T / F / The Lost Map | Detail: 1. a map | 2. the gold | 3. hid | Inference: Because they didn't want anyone to see it.",
+      "PART 3 PART 3",
+      "PART 4  (ELA L1): 1-c, 2-d, 3-a, 4-b, 5-e, 6-h, 7-f, 8-g",
+      "PART 5 PART 3",
+      "PART 6  (ELA L2): 1. I found a secret map. | 2. He took the old bag. | 3. We lost our way. | 4. She hid behind a tree. | 5. They stood on the mountain. | 6. I found a coin. | 7. He took the boat. | 8. The dog hid the bone.",
+      "PART 7 PART 3",
+      "PART 9  (ELA L3): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. found | 7. took | 8. hid"
+    ],
+    "s2": [
+      "S2 ANSWER KEY",
+      "SPIRAL REVIEW SPIRAL REVIEW",
+      "PART 1 : 1. I found a map. | 2. He hid behind the rock. | 3. took",
+      "PART 3 PART 1",
+      "PART 3  (Reading): Global: F / T / The Great Forest | Detail: 1. his way | 2. under a tree | 3. stood | Inference: To look for his friends from a high place.",
+      "PART 3 PART 3",
+      "PART 4  (ELA L1): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. went | 7. saw | 8. felt",
+      "PART 5 PART 3",
+      "PART 6  (ELA L2): 1. I lost my map in the forest. | 2. He stood on the big rock. | 3. We hid from the bear. | 4. She took my hand. | 5. They found the river. | 6. I lost my shoe. | 7. He stood up quickly. | 8. She hid the key.",
+      "PART 7 PART 3",
+      "PART 9  (ELA L3): 1. lost | 2. hid | 3. stood | 4. found | 5. took | 6. lost | 7. hid | 8. stood"
+    ],
+    "s3": [
+      "S3 ANSWER KEY",
+      "SPIRAL REVIEW SPIRAL REVIEW",
+      "PART 1 : 1. I lost my way. | 2. She stood on the hill. | 3. hid",
+      "PART 3 PART 1",
+      "PART 3  (Reading): Global: F / T / The Winner | Detail: 1. the flag | 2. on the hill | 3. found | Inference: Because they found the treasure and won the game.",
+      "PART 3 PART 3",
+      "PART 4  (ELA L1): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. found | 7. took | 8. stood",
+      "PART 5 PART 3",
+      "PART 6  (ELA L2): 1. I found the red flag. | 2. He took the prize. | 3. We lost the old map. | 4. She hid in the cave. | 5. They stood on the top. | 6. I found my friends. | 7. He took the gold. | 8. We stood together.",
+      "PART 7 PART 3",
+      "PART 9  (ELA L3): 1. found | 2. took | 3. lost | 4. hid | 5. stood | 6. found | 7. took | 8. stood"
+    ]
+  },
+  "task_cards": [
+    "S1 Task — \"Story Exchange\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair.",
+    "🃏 CARD A — Student A | Week 36 S1 — \"Story Exchange\"",
+    "Read your Page 1 and 2 to Student B:",
+    "\"Once upon a time, I went to the forest. First, I walked slowly.\"",
+    "Listen to Student B guess your Page 3! If they say \"saw a bear\", say \"Yes!\"",
+    "Write Student B's guess here: ________________________________________",
+    "🃏 CARD B — Student B | Week 36 S1 — \"Story Exchange\"",
+    "Listen to Student A's story. Guess what happens on Page 3!",
+    "Say: \"Then, you saw a bear!\"",
+    "Now read your Page 1 and 2 to Student A:",
+    "\"Once upon a time, I went to the beach. First, I swam in the water.\"",
+    "S2 Task — \"The Treasure Hunt\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 36 S2 — \"The Treasure Hunt\"",
+    "You KNOW: I found a secret map in the forest.",
+    "You DON'T KNOW. Ask your partner: \"Where did you hide?\"",
+    "Write what you hear:",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 36 S2 — \"The Treasure Hunt\"",
+    "You KNOW: I hid behind a big rock.",
+    "You DON'T KNOW. Ask your partner: \"What did you find?\"",
+    "Write what you hear:",
+    "S3 Task — \"The Great Game\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 36 S3 — \"The Great Game\"",
+    "You KNOW: I took the red flag and stood on the hill.",
+    "You DON'T KNOW. Ask your partner: \"What did you lose?\"",
+    "Write what you hear:",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 36 S3 — \"The Great Game\"",
+    "You KNOW: I lost my old shoe!",
+    "You DON'T KNOW. Ask your partner: \"What did you take and where did you stand?\"",
+    "Write what you hear:"
+  ],
+  "task_cards_by_session": {
+    "1": [
+      "S1 Task — \"Story Exchange\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair.",
+      "🃏 CARD A — Student A | Week 36 S1 — \"Story Exchange\"",
+      "Read your Page 1 and 2 to Student B:",
+      "\"Once upon a time, I went to the forest. First, I walked slowly.\"",
+      "Listen to Student B guess your Page 3! If they say \"saw a bear\", say \"Yes!\"",
+      "Write Student B's guess here: ________________________________________",
+      "🃏 CARD B — Student B | Week 36 S1 — \"Story Exchange\"",
+      "Listen to Student A's story. Guess what happens on Page 3!",
+      "Say: \"Then, you saw a bear!\"",
+      "Now read your Page 1 and 2 to Student A:",
+      "\"Once upon a time, I went to the beach. First, I swam in the water.\""
+    ],
+    "2": [
+      "S2 Task — \"The Treasure Hunt\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 36 S2 — \"The Treasure Hunt\"",
+      "You KNOW: I found a secret map in the forest.",
+      "You DON'T KNOW. Ask your partner: \"Where did you hide?\"",
+      "Write what you hear:",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 36 S2 — \"The Treasure Hunt\"",
+      "You KNOW: I hid behind a big rock.",
+      "You DON'T KNOW. Ask your partner: \"What did you find?\"",
+      "Write what you hear:"
+    ],
+    "3": [
+      "S3 Task — \"The Great Game\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 36 S3 — \"The Great Game\"",
+      "You KNOW: I took the red flag and stood on the hill.",
+      "You DON'T KNOW. Ask your partner: \"What did you lose?\"",
+      "Write what you hear:",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 36 S3 — \"The Great Game\"",
+      "You KNOW: I lost my old shoe!",
+      "You DON'T KNOW. Ask your partner: \"What did you take and where did you stand?\"",
+      "Write what you hear:"
+    ]
+  },
+  "games": [
+    {
+      "id": "w36_g1",
+      "name": "Vocab Slam",
+      "type": "Vocabulary",
+      "duration": "10–12 min",
+      "players": "2–4 per group",
+      "session_fit": "All formats — best after vocab intro (P3) in any session",
+      "materials": "Vocab flashcards W36: went, saw, lost, found, felt",
+      "instructions": [
+        "Round 1: Teacher calls a Vietnamese meaning — first student to say the English word AND use it correctly in a sentence wins the card.",
+        "Round 2: Reverse — teacher calls English word, student gives Vietnamese + memory trick.",
+        "Bonus round: Students chain all vocab words (went, saw, lost, found, felt) into one connected story using sequence connectors from this week.",
+        "Team variant: 2 teams, 10 cards per round. Team with highest score wins."
+      ]
+    },
+    {
+      "id": "w36_g2",
+      "name": "Grammar Relay",
+      "type": "Grammar & Error Correction",
+      "duration": "12–15 min",
+      "players": "3–6 (team relay)",
+      "session_fit": "Best in Drill slot (Slot 2) or after P4/P6 in 3-session mode",
+      "materials": "10 sentence cards — 5 correct, 5 with errors based on: Review: Past Simple (Irregular & Regular verbs, was/were) + Sequence",
+      "instructions": [
+        "Grammar focus this week: Review: Past Simple (Irregular & Regular verbs, was/were) + Sequence.",
+        "Speed Read: Display sentence for 5 sec. Teams write C (correct) or E (error) on whiteboards simultaneously — no copying allowed.",
+        "Fix-It: For error sentences, team that corrects fastest AND explains the rule earns double points.",
+        "Build: Each team member adds 1 original sentence using the grammar target. The chain must be logically connected — each sentence must link to the previous."
+      ]
+    },
+    {
+      "id": "w36_g3",
+      "name": "Story Race",
+      "type": "Speaking & Production",
+      "duration": "15–20 min",
+      "players": "Whole class (pairs)",
+      "session_fit": "All formats — best in final slot of the week (S3 / Slot 5 / Session B)",
+      "materials": "Story starter card: theme \"Adventure Stories — Review & Project 3 (My Adventure Book) ═══════════════════════════════════════════════════════\"",
+      "instructions": [
+        "Give each pair a story starter connected to this week's theme: \"Adventure Stories — Review & Project 3 (My Adventure Book) ═══════════════════════════════════════════════════════\".",
+        "Pair A adds 2 sentences — must include at least 2 vocab words from this week.",
+        "Pass to Pair B: they MUST correct any grammar mistake from Pair A first, then add 2 more sentences using different vocab words.",
+        "Final round: Each pair presents their story ending aloud. Class votes on most creative + most accurate (went, saw, lost, found, felt usage). Teacher scores grammar precision."
+      ]
+    }
+  ],
+  "video_prompts": {
+    "chanting": [
+      {
+        "title": "Chanting — W36 (9 prompts)",
+        "script": "[W36.CHANT.1] Bright, colorful, 2D flat cartoon style, 4-second looping clip, clean white background, no real people: Animated book opening + bold text pulses on screen in sync + Audio: \"Adventure! Adventure! My adventure book!\" (120bpm, energetic child voice).\n[W36.CHANT.2] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated boy walking into a forest + bold text pulses progressively + Audio: \"Went! Went to the forest! I went to the forest!\" (120bpm, energetic child voice).\n[W36.CHANT.3] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated binoculars looking around + bold text pulses progressively + Audio: \"Saw! Saw a bear! I saw a big bear!\" (120bpm, energetic child voice).\n[W36.CHANT.4] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated empty pockets turned out + bold text pulses progressively + Audio: \"Lost! Lost my map! I lost my map!\" (120bpm, energetic child voice).\n[W36.CHANT.5] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated hand holding up a paper map + bold text pulses progressively + Audio: \"Found! Found my map! I found my map!\" (120bpm, energetic child voice).\n[W36.CHANT.6] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated happy face + bold text pulses progressively + Audio: \"Felt! Felt very happy! I felt very happy!\" (120bpm, energetic child voice).\n[W36.CHANT.7] Bright, colorful, 2D flat cartoon style, 4-second looping clip, clean white background, no real people: Split screen showing a boy walking and a bear + bold text pulses on screen in sync + Audio: \"Went to the forest! Saw a big bear!\" (120bpm, energetic child voice).\n[W36.CHANT.8] Bright, colorful, 2D flat cartoon style, 4-second looping clip, clean white background, no real people: Split screen showing empty pockets and a paper map + bold text pulses on screen in sync + Audio: \"Lost my map! Found my map!\" (120bpm, energetic child voice).\n[W36.CHANT.9] Bright, colorful, 2D flat cartoon style, 6-second clip, clean white background, no real people: Rapid flashes of walking, looking, losing, and finding + bold text pulses rapidly + Audio: \"Went! Saw! Lost! Found! Felt!\" (120bpm, energetic child voice)."
+      }
+    ],
+    "shadowing": [
+      {
+        "session": 2,
+        "title": "Shadowing — Session 2 (6 prompts)",
+        "sentences": [
+          "[W36.SHADOW.S2.1] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna holding a small book, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"One day, I went to the dark forest to explore. One day, I went to the dark forest to explore.\" (95wpm, said TWICE).",
+          "[W36.SHADOW.S2.2] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max looking surprised, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"First, I saw a big brown bear near the trees. First, I saw a big brown bear near the trees.\" (95wpm, said TWICE).",
+          "[W36.SHADOW.S2.3] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna checking her pockets, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Then, I lost my old paper map in the grass. Then, I lost my old paper map in the grass.\" (95wpm, said TWICE).",
+          "[W36.SHADOW.S2.4] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max looking worried, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"I felt very worried and completely scared in the dark. I felt very worried and completely scared in the dark.\" (95wpm, said TWICE).",
+          "[W36.SHADOW.S2.5] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna pointing up to a bird, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Luckily, a magical bird found my lost map very safely. Luckily, a magical bird found my lost map very safely.\" (95wpm, said TWICE).",
+          "[W36.SHADOW.S2.6] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max smiling brightly, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Finally, I felt very happy and safe on my way home. Finally, I felt very happy and safe on my way home.\" (95wpm, said TWICE)."
+        ]
+      },
+      {
+        "session": 3,
+        "title": "Shadowing — Session 3 (6 prompts)",
+        "sentences": [
+          "[W36.SHADOW.S3.1] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna standing confidently, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Last week, I went to the dark forest because I wanted an adventure. Last week, I went to the dark forest because I wanted an adventure.\" (110wpm, twice, real-time shadow).",
+          "[W36.SHADOW.S3.2] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max pointing ahead, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"First, I saw a big brown bear walking slowly near the tall trees. First, I saw a big brown bear walking slowly near the tall trees.\" (110wpm, twice, real-time shadow).",
+          "[W36.SHADOW.S3.3] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna looking frantic, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Then, I lost my old paper map because I ran away very fast. Then, I lost my old paper map because I ran away very fast.\" (110wpm, twice, real-time shadow).",
+          "[W36.SHADOW.S3.4] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max looking scared, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"I felt very worried and scared because it was getting dark outside. I felt very worried and scared because it was getting dark outside.\" (110wpm, twice, real-time shadow).",
+          "[W36.SHADOW.S3.5] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna pointing to a rock, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Suddenly, a magical bird found my map hiding safely under a big rock. Suddenly, a magical bird found my map hiding safely under a big rock.\" (110wpm, twice, real-time shadow).",
+          "[W36.SHADOW.S3.6] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max giving a thumbs up, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Finally, I went back home and felt very happy because I was safe. Finally, I went back home and felt very happy because I was safe.\" (110wpm, twice, real-time shadow)."
+        ]
+      }
+    ]
+  },
+  "teacher_contents": [
+    {
+      "session": 1,
+      "listening_script": {
+        "speed_note": "Reading speed: Block B: 85wpm S1 Listening Text: Leo is making an adventure book. On page one, he writes, \"Once upon a time, I went to the magical forest.\" On page two, he draws a big tree. He writes, \"First, I walked in the woods. Then, I saw a big bear!\" Leo loves writing his adventure. S1 Dictation sentences: 1. Once upon a time, I went to the forest. 2. I saw a big bear. S2 Listening Text: Leo is writing the middle of his book. He writes, \"One day, I lost my map.\" He draws a worried face because he felt very scared. Then he writes, \"But suddenly, a bird found my map!\" Leo's story is getting very exciting. S2 Dictation sentences: 1. One day, I lost my map. 2. I felt very worried. S3 Listening Text: Today is presentation day. Leo reads the end of his book to the class. \"Finally, I went home. I was tired but happy because I found my way back. It was a great adventure.\" The class claps loudly. Leo is a great storyteller. S3 Dictation sentences: 1. Finally, I found my way home. 2. It was a great adventure.",
+        "text": "Leo is making an adventure book. On page one, he writes, \"Once upon a time, I went to the magical forest.\" On page two, he draws a big tree. He writes, \"First, I walked in the woods. Then, I saw a big bear!\" Leo loves writing his adventure.",
+        "dictation": [
+          "Once upon a time, I went to the forest.",
+          "I saw a big bear."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nStudent A: Tells one event from an adventure story using a Past Simple irregular verb (e.g., \"I went to the forest and saw a deer\").\nStudent B: Continues the story adding a sequence word (e.g., \"Then, I heard a strange sound and felt scared\").\nGoal: Review saw / heard / felt / went in connected storytelling.\n\nPULL-OUT TASK (S1):\n— Ask: \"Tell me about a journey — where did you go? What did you see and hear?\"\n— Scaffold weaker students: \"First, I WENT to ___. I SAW ___. I HEARD ___.\"\n— Target elicitation: review ALL irregular forms from Block B — went/came/ran/flew/saw/heard/felt/ate/drank/had.\n\nCOMMUNICATIVE TASK TIP:\n— Quick fire review: point to a verb card and student gives the Past Simple instantly.\n— Stronger students: use 5 different irregular verbs in one connected adventure story.",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION — Storytelling Making a Book Read this: A storybook needs pages in the right order. The cover tells you the title. Page 1 is the beginning. The middle pages show the action. The last page is the end. Binding the pages together makes it a real book! Write 2 sentences applying the CLIL concept:\nThe cover tells you the ________________________________________\nThe last page is the ________________________________________",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 1 (teacher-led)\n\nChallenge Extension (L3 — for advanced/older students):\n  [O] L3 — Fill in the blank with 3 options (10 items)\n  First, I ____________________ (went / go / going) to the forest.\n  Then, I ____________________ (see / saw / seen) a tall tree.\n  Next, I ____________________ (lose / lost / losing) my bag.\n  After that, I ____________________ (find / found / finding) a coin.\n  Finally, I ____________________ (feel / felt / feeling) happy.\n  Yesterday, we ____________________ (went / lost / felt) to the park.\n  She ____________________ (saw / went / felt) a fast car.\n  He ____________________ (found / felt / lost) his keys in the sand.\n  I ____________________ (found / saw / felt) my lost book!\n  They ____________________ (felt / went / saw) tired after running.\n  [O] L4 — Sentence Expansion (10 items)\n",
+      "vc_answer_key": "[1] game is Max [2] ten days cold [3] eating an apple [4] has nine cages [5] the light city [6] with my family [7] big cat [8] flew fast [9] saw a big [10] not happy [11] ran away [12] inside a small [13] writing my adventure [14] Making a book [15] very bad",
+      "reading_passage": "Last week, Max went on a forest adventure with his family. First, he saw a beautiful deer drinking from a stream. Then, he heard a strange sound behind a bush. Suddenly, Max saw a huge bear! He ran very fast and hid behind a big rock. His heart felt like it was jumping. \"That was so scary!\" he said. Finally, they all walked home safely. It was an incredible adventure.",
+      "grammar_notes": "• Review week: went / saw / heard / ran / felt — five irregular verbs in a fast-paced adventure\n• Also: was/were review — 'he was scared / they were all safe' — connect to earlier blocks\n• Sequence words reinforced: First → Then → Suddenly → Finally — all appear naturally in this story\n• Error watch: students reverting to present tense in storytelling — all narrative verbs must be Past Simple\n• Challenge: students tell the same story using different sequence words (e.g., 'After that' instead of 'Then')"
+    },
+    {
+      "session": 2,
+      "listening_script": {
+        "speed_note": "Reading speed: Block B: 85wpm S1 Listening Text: Leo is making an adventure book. On page one, he writes, \"Once upon a time, I went to the magical forest.\" On page two, he draws a big tree. He writes, \"First, I walked in the woods. Then, I saw a big bear!\" Leo loves writing his adventure. S1 Dictation sentences: 1. Once upon a time, I went to the forest. 2. I saw a big bear. S2 Listening Text: Leo is writing the middle of his book. He writes, \"One day, I lost my map.\" He draws a worried face because he felt very scared. Then he writes, \"But suddenly, a bird found my map!\" Leo's story is getting very exciting. S2 Dictation sentences: 1. One day, I lost my map. 2. I felt very worried. S3 Listening Text: Today is presentation day. Leo reads the end of his book to the class. \"Finally, I went home. I was tired but happy because I found my way back. It was a great adventure.\" The class claps loudly. Leo is a great storyteller. S3 Dictation sentences: 1. Finally, I found my way home. 2. It was a great adventure.",
+        "text": "Leo is writing the middle of his book. He writes, \"One day, I lost my map.\" He draws a worried face because he felt very scared. Then he writes, \"But suddenly, a bird found my map!\" Leo's story is getting very exciting.",
+        "dictation": [
+          "One day, I lost my map.",
+          "I felt very worried."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance:\n\nStudent A: Starts an adventure story using was/were (e.g., \"It was a sunny day. We were at the beach\").\nStudent B: Continues with irregular verbs + sequence words (e.g., \"First, we went swimming. Then, we ate ice cream\").\nGoal: Blend was/were + irregular Past Simple + sequence words.\n\nPULL-OUT TASK (S2):\n— Ask: \"Describe your BEST day ever — use was/were AND at least 3 irregular verbs.\"\n— Scaffold: \"It WAS ___. We WERE at ___. First, we ___. Then, we ___. Finally, we ___.\"\n— Error focus: was vs were — \"It WAS sunny. We WERE happy.\" (not 'we was').\n\nDIFFERENTIATION:\n— Weaker students: fill in the frame — provide WAS/WERE and choose 2 irregular verbs.\n— Stronger students: retell a complete adventure with 5+ irregular verbs and all sequence words.",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION — Emotions in Stories Drawing the Problem Read this: In a book, the middle part has a problem. The character feels sad, scared, or worried. You can draw tears for \"sad\" or big eyes for \"scared.\" When the problem is fixed, the character feels happy again! Write 2 sentences applying the CLIL concept:\nTo show I was sad, I will draw ________________________________________\nWhen the problem is fixed, the character feels ________________________________________",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 2 (teacher-led)\n\nChallenge Extension (L3 — for advanced/older students):\n  [O] L3 — Fill in the blank with 3 options (10 items)\n  One day, I ____________________ (lost / lose / losing) my way.\n  I ____________________ (felt / feel / feeling) very scared.\n  Then, my friend ____________________ (found / find / finding) me.\n  I ____________________ (was / were / am) so happy!\n  We ____________________ (went / go / going) back to the camp.\n  Yesterday, she ____________________ (lost / loses / lose) her book.\n  He ____________________ (found / finds / find) a cool shell.\n  They ____________________ (felt / feels / feel) tired after the long walk.\n  I ____________________ (saw / see / seeing) a monkey in the tree.\n  We ____________________ (went / goes / go) on a great adventure.\n  [O] L4 — Sentence Expansion (Mixed Review) (10 items)\n",
+      "vc_answer_key": "[1] Let me ask you [2] The end is where [3] I lost my old [4] I slept everywhere in [5] I felt very worried [6] I did not eat [7] a big scary bear [8] The bad dog lost [9] I gave the bird [10] to say please you [11] I am sad again [12] Your boring homework [13] Do you hate my [14] Thank you for watching",
+      "reading_passage": "On the second day of the forest trip, Max lost his map. He felt very worried and did not eat much. Suddenly, a beautiful bird came and flew in circles. \"Where is my map?\" said Max. The bird seemed to understand! It flew fast and found the map under a big rock. \"The bird found my map!\" Max said. He gave the bird some bread to say thank you. The bird flew away happily.",
+      "grammar_notes": "• Review mix: lost (W33) / felt (W31) / came (W29) / flew (W29) / found (W33) / gave (W35)\n• Six different weeks' verbs in one story — demonstrates Block B mastery\n• 'gave' in reciprocal context: Max GAVE the bird bread as thanks — reinforces W35 new verb\n• Narrative coherence: students should produce tense-consistent stories — no switches to present\n• Assessment clue: if students use 'finded' or 'gived', those are the final persistent errors to address"
+    },
+    {
+      "session": 3,
+      "listening_script": {
+        "speed_note": "Reading speed: Block B: 85wpm S1 Listening Text: Leo is making an adventure book. On page one, he writes, \"Once upon a time, I went to the magical forest.\" On page two, he draws a big tree. He writes, \"First, I walked in the woods. Then, I saw a big bear!\" Leo loves writing his adventure. S1 Dictation sentences: 1. Once upon a time, I went to the forest. 2. I saw a big bear. S2 Listening Text: Leo is writing the middle of his book. He writes, \"One day, I lost my map.\" He draws a worried face because he felt very scared. Then he writes, \"But suddenly, a bird found my map!\" Leo's story is getting very exciting. S2 Dictation sentences: 1. One day, I lost my map. 2. I felt very worried. S3 Listening Text: Today is presentation day. Leo reads the end of his book to the class. \"Finally, I went home. I was tired but happy because I found my way back. It was a great adventure.\" The class claps loudly. Leo is a great storyteller. S3 Dictation sentences: 1. Finally, I found my way home. 2. It was a great adventure.",
+        "text": "Today is presentation day. Leo reads the end of his book to the class. \"Finally, I went home. I was tired but happy because I found my way back. It was a great adventure.\" The class claps loudly. Leo is a great storyteller.",
+        "dictation": [
+          "Finally, I found my way home.",
+          "It was a great adventure."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance:\n\nStudent A: Gives a one-sentence summary of their favourite story from Block B (e.g., \"In the forest story, Max saw a waterfall and heard a loud roar\").\nStudent B: Adds the moral or best moment (e.g., \"The best part was when the mouse came to help the lion\").\nGoal: W36 / Block B final mastery check — demonstrate control of all irregular verbs taught.\n\nPULL-OUT TASK (S3 — Block B Culminating Task):\n— Ask each student: \"Tell me about ONE adventure we read this month. Use as many past tense verbs as you can.\"\n— Assessment focus: fluency, accuracy of irregular forms, correct use of sequence words.\n— Note any persistent errors for feedback: common ones are 'goed', 'seed', 'heared', 'falled'.\n\nDIFFERENTIATION:\n— Weaker students: show a picture from any Block B story — retell with 2 sentences.\n— Stronger students: compare two stories — \"In week 30, they ATE a picnic. In week 31, Max SAW a waterfall.\"",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION — Presentation Skills Sharing Your Book Read this: When you present your book, stand tall and speak loudly. Show the pictures to the class. A good presenter smiles and reads clearly. This helps everyone enjoy the adventure with you! Write 2 sentences applying the CLIL concept:\nWhen I present, I will stand ________________________________________\nA good presenter reads ________________________________________",
+      "in_class_speaking": "Block B Grand Review Chain (Whole class): Teacher says a verb in present tense (e.g., 'go'). Students respond with Past Simple ('went') and use it in a sentence ('Max went to the forest.'). Continue through all Block B verbs: go/come/run/fly, eat/drink/have, see/hear/feel/smell, do/make/take, break/fall/lose/find, give. Goal: every student produces at least 3 irregular past simple forms fluently. Finish with a class 'story chain' — each student adds one sentence to the adventure using a past tense verb.",
+      "vc_answer_key": "[1] Sing to the [2] adventure book today [3] I finally lost [4] he swam in [5] tall city school [6] The magical bird [7] under the rock [8] Finally, I went [9] He was angry [10] scary dark cave [11] angry and very [12] I had a [13] I sat on [14] and threw some [15] I forgot to [16] You should never [17] very good map [18] Your boring game [19] Do you want [20] your old pen [21] I can share [22] him yesterday morning [23] listening to me",
+      "reading_passage": "Back at school, Max told his class about his forest adventure. He went to the front of the class. First, he felt a little nervous. Then he saw his friends' smiling faces and felt better. He told them everything: how he saw the deer, heard the bear, ran fast, lost the map, and how the bird found and gave it back. The students clapped. \"Amazing!\" said the teacher. \"Case closed!\"",
+      "grammar_notes": "• Block B Final Review — all major irregular verbs in one culminating story\n• Full list used: went / felt / saw / heard / ran / lost / found / gave — 8 irregular verbs\n• Tense consistency final check: entire story in Past Simple — no present-tense slippage\n• Sequence mastery: 'First... Then... Finally...' — review all connectors used in Block B\n• Celebration: students have now mastered 20+ irregular verbs across Weeks 29-36 — acknowledge this!"
+    }
+  ]
+}

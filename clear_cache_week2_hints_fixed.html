@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Cache - Week 2 Hints Fixed</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .problem {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .solution {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .code {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(102, 126, 234, 0.6);
+        }
+        .status {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Week 2 Hints Fixed - Jan 28, 2026</h1>
+        
+        <div class="problem">
+            <h2>❌ Vấn Đề Phát Hiện:</h2>
+            <ol>
+                <li><strong>Hints không khớp câu hỏi:</strong>
+                    <div class="code">
+AI asks: "Who is kind in your family? Say: My mother is kind OR My father is kind"
+Hints shown: <span class="highlight">I have am my is like</span> ❌
+                    </div>
+                </li>
+                <li><strong>Together AI trả về empty "" response:</strong>
+                    <div class="code">
+✅ Together AI JSON parsed successfully
+⚠️ Response too short (0 chars, min: 10)
+🚨 REPLACING SHORT RESPONSE "" with fallback!
+🚫 Banned phrase detected: /tell me more\.?/gi
+❌ Response too short after cleaning: !
+                    </div>
+                </li>
+                <li><strong>System log shows:</strong>
+                    <div class="code">
+🎯 Objectives for Week 2 Mission 2 : LEGACY (Step-based)
+⏩ Skipping TurnManager - Mission has story_character (uses story_arc)
+                    </div>
+                    → Objectives bị ignore hoàn toàn!
+                </li>
+            </ol>
+        </div>
+
+        <div class="solution">
+            <h2>✅ Giải Pháp Đã Triển Khai:</h2>
+            
+            <h3>1. Sửa default_hints trong week_02_real.js:</h3>
+            <div class="code">
+// Mission 2: Family Photos
+<span class="highlight">default_hints: ["My", "mother", "is", "kind", "father"]</span>
+// (trước: ["mother", "father", "brother", "sister", "kind", "happy"])
+
+// Mission 3: Mixed Up Family  
+<span class="highlight">default_hints: ["mother", "Your", "sister", "My", "Your", "brother"]</span>
+// (trước: ["My", "Your", "mother", "father", "brother", "sister"])
+            </div>
+
+            <h3>2. Inject objectives hints vào tutorPrompts.js:</h3>
+            <p>Thêm section mới sau "NEXT QUESTION TO ASK":</p>
+            <div class="code">
+${mission.objectives && mission.objectives.length > 0 ? `
+🎯 OBJECTIVES WITH HINTS (Use these hints in your response):
+Current Step: ${currentObjective.stepKey}
+Question Variants Available:
+  Option 1: ${variant.question}
+  Hints: [<span class="highlight">${variant.hints.join(', ')}</span>]
+Target Keywords: [${currentObjective.target_keywords.join(', ')}]
+` : ''}
+            </div>
+
+            <h3>3. Update HINTS INSTRUCTION:</h3>
+            <div class="code">
+🎯 USE THE HINTS FROM OBJECTIVES ABOVE!
+- If the current objective has hints in question_variants, USE THOSE EXACT HINTS!
+- Example: If hints are <span class="highlight">["My", "mother", "is", "kind", "father"]</span>, return those exact words
+- DON'T create new hints - use the ones provided in objectives section above!
+            </div>
+        </div>
+
+        <h2>📊 Objectives Structure (18 for Mission 2, 17 for Mission 3):</h2>
+        <div class="code">
+<strong>Mission 2 - Family Photos (Guessing Game):</strong>
+1. guess_kind_person: "Who is kind?" → Hints: ["My", "mother", "is", "kind", "father"]
+2. describe_mother: "What is your mother like?" → Hints: ["My", "mother", "is", "kind", "nice"]
+3. guess_strong_person: "Who is strong?" → Hints: ["My", "father", "is", "strong", "brother"]
+4. describe_father: "What is your father like?" → Hints: ["My", "father", "is", "strong", "kind"]
+5. family_happy: "Is your family happy?" → Hints: ["Yes", "My", "family", "is", "happy"]
+... (18 total objectives)
+
+<strong>Mission 3 - Mixed Up Family (Grammar Game):</strong>
+1. fix_my_mother_kind: "'Your mother is kind' → Fix to 'My mother is kind'"
+   Hints: ["My", "mother", "is", "kind"]
+2. fix_your_father_strong: "'My father is strong' → Fix to 'Your father is strong'"
+   Hints: ["Your", "father", "is", "strong"]
+... (17 total objectives - grammar fix steps)
+        </div>
+
+        <h2>🎯 Expected Result:</h2>
+        <ul>
+            <li>✅ AI sees objectives hints in prompt → Together AI includes them in response</li>
+            <li>✅ Hints shown match question: "Who is kind?" → ["My", "mother", "is", "kind", "father"]</li>
+            <li>✅ Together AI returns proper JSON with ai_response + suggested_hints</li>
+            <li>✅ No more empty "" responses → No fallback chain → No banned phrase detection</li>
+        </ul>
+
+        <h2>📋 Test Instructions:</h2>
+        <ol>
+            <li>Click button below to clear cache</li>
+            <li>Refresh app (F5)</li>
+            <li>Test Week 2 Mission 2 & 3</li>
+            <li>Check:
+                <ul>
+                    <li>Hints khớp với câu hỏi AI</li>
+                    <li>Together AI trả về response đầy đủ (không empty)</li>
+                    <li>Không có "! What do you want to talk about?" fallback</li>
+                    <li>Game flow mượt mà, AI hỏi đúng sequence</li>
+                </ul>
+            </li>
+        </ol>
+
+        <button onclick="clearAll()">🗑️ Clear All Cache & Reload</button>
+        <div id="status"></div>
+
+        <h2>📝 Files Modified:</h2>
+        <ul>
+            <li><code>src/data/weeks/week_02_real.js</code> - Updated default_hints (2 missions)</li>
+            <li><code>src/services/ai_tutor/tutorPrompts.js</code> - Added objectives hints injection (2 sections)</li>
+        </ul>
+
+        <div class="solution">
+            <h3>🎯 Root Cause Analysis:</h3>
+            <p><strong>Why objectives were ignored:</strong></p>
+            <ol>
+                <li>System detects <code>story_character</code> → Uses story_arc path</li>
+                <li>Story_arc uses <code>phase_questions</code> (no hints attached)</li>
+                <li>TurnManager skipped: "⏩ Skipping TurnManager - Mission has story_character"</li>
+                <li>Together AI doesn't see hints → Returns empty response</li>
+            </ol>
+            
+            <p><strong>Solution approach:</strong></p>
+            <ul>
+                <li>✅ Keep story_arc + story_character (working system)</li>
+                <li>✅ ALSO inject objectives hints into prompt (hybrid approach)</li>
+                <li>✅ Tell AI explicitly to use objectives hints if available</li>
+                <li>✅ Update default_hints as fallback</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function clearAll() {
+            const status = document.getElementById('status');
+            try {
+                // Clear all localStorage
+                localStorage.clear();
+                
+                // Clear all sessionStorage
+                sessionStorage.clear();
+                
+                // Clear all cookies
+                document.cookie.split(";").forEach(function(c) { 
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+                });
+                
+                // Clear IndexedDB
+                if (window.indexedDB) {
+                    indexedDB.databases().then(dbs => {
+                        dbs.forEach(db => {
+                            indexedDB.deleteDatabase(db.name);
+                        });
+                    });
+                }
+                
+                status.innerHTML = '<div class="status success">✅ Cache cleared successfully! Reloading in 2 seconds...</div>';
+                
+                setTimeout(() => {
+                    window.location.reload(true);
+                }, 2000);
+                
+            } catch (error) {
+                status.innerHTML = '<div class="status error">❌ Error: ' + error.message + '</div>';
+            }
+        }
+    </script>
+</body>
+</html>

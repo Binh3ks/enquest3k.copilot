@@ -1,0 +1,1122 @@
+/**
+ * AI Router - Multi-Layer LLM Switching Engine
+ *
+ * SMART PRIORITY SYSTEM:
+ * Layer 1: Groq (llama-3.3-70b-versatile) - Ultra-fast (< 500ms)
+ * Layer 2: Gemini 2.0 Flash - Auto-fallback on errors (400/429/500)
+ *
+ * V5 PEDAGOGICAL GUARDRAILS:
+ * - Grammar Guard: Validates AI responses against week grammar scope
+ * - Talk Ratio Guard: Enforces AI:Student word ratio ≤ 0.8
+ * - Auto-regeneration: If violations detected, retry with stricter instruction
+ * - Deterministic fallback: Safe responses on persistent errors
+ *
+ * CRITICAL FIXES:
+ * - Groq: Try first for speed
+ * - Gemini: Auto-fallback on Groq errors (rate limit, server errors)
+ * - JSON: Enforce strict format (no markdown, no backticks)
+ * - Roles: Only 'user'/'model' for Gemini (prevents 400 errors)
+ */
+
+import axios from 'axios';
+import { validateAIResponse, getRegenerationInstruction, getGrammarSummary } from './grammarGuard.js';
+import { enforceTalkRatio, getConciseInstruction, getTalkRatioSummary } from './talkRatioGuard.js';
+import { parseAIResponse, fix20QCorrectGuess, forceRoleplayQuestion } from './utils/responseParser.js';
+import { buildStudentContext } from '../../utils/progressReport.js';
+
+// ============================================
+// RATE LIMITER - FIX GROQ 429 ERRORS
+// ============================================
+
+class RateLimiter {
+  constructor(maxRequests = 20, windowMs = 60000) {
+    this.maxRequests = maxRequests; // 20 requests
+    this.windowMs = windowMs; // per 60 seconds
+    this.requests = [];
+    this.backoffMs = 0;
+  }
+  
+  async waitForSlot() {
+    // Apply exponential backoff if set
+    if (this.backoffMs > 0) {
+      console.log(`⏳ Rate limit backoff: waiting ${this.backoffMs}ms`);
+      await new Promise(resolve => setTimeout(resolve, this.backoffMs));
+      this.backoffMs = Math.min(this.backoffMs * 2, 10000); // Max 10s
+    }
+    
+    // Clean old requests outside window
+    const now = Date.now();
+    this.requests = this.requests.filter(t => now - t < this.windowMs);
+    
+    // If at limit, wait until oldest request expires
+    if (this.requests.length >= this.maxRequests) {
+      const oldestRequest = this.requests[0];
+      const waitTime = this.windowMs - (now - oldestRequest) + 100; // +100ms buffer
+      console.log(`⏳ Rate limit: waiting ${waitTime}ms (${this.requests.length}/${this.maxRequests})`);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
+      this.requests = this.requests.filter(t => Date.now() - t < this.windowMs);
+    }
+    
+    // Record this request
+    this.requests.push(Date.now());
+  }
+  
+  setBackoff(ms) {
+    this.backoffMs = ms;
+  }
+  
+  resetBackoff() {
+    this.backoffMs = 0;
+  }
+}
+
+// ============================================
+// 🔥 GROQ RATE LIMITER - Prevent 429 errors
+// ============================================
+
+class GroqRateLimiter {
+  constructor() {
+    this.requestsInWindow = 0;
+    this.windowStartTime = Date.now();
+    this.windowDuration = 60000; // 1 minute
+    this.maxRequests = 25; // Groq free tier = 30 req/min, use 25 for safety
+    this.backoffMs = 0; // Exponential backoff for 429 errors
+    this.lastRequestTime = 0; // Track last request time
+    this.minDelay = 2000; // Minimum 2s delay between requests
+  }
+
+  async waitForSlot() {
+    // Apply exponential backoff if set (for 429 errors)
+    if (this.backoffMs > 0) {
+      console.log(`⏳ Groq backoff: waiting ${this.backoffMs}ms before retry`);
+      await new Promise(resolve => setTimeout(resolve, this.backoffMs));
+      this.backoffMs = Math.min(this.backoffMs * 2, 15000); // Max 15s, exponential growth
+    }
+
+    const now = Date.now();
+    
+    // 🔥 CRITICAL: Enforce minimum 2s delay between requests
+    const timeSinceLastRequest = now - this.lastRequestTime;
+    if (this.lastRequestTime > 0 && timeSinceLastRequest < this.minDelay) {
+      const delayNeeded = this.minDelay - timeSinceLastRequest;
+      console.log(`⏳ Groq minimum delay: waiting ${delayNeeded}ms (${Math.ceil(delayNeeded/1000)}s)`);
+      await new Promise(resolve => setTimeout(resolve, delayNeeded));
+    }
+    
+    const elapsed = now - this.windowStartTime;
+
+    // Reset window if expired
+    if (elapsed >= this.windowDuration) {
+      this.requestsInWindow = 0;
+      this.windowStartTime = now;
+      this.backoffMs = 0; // Reset backoff on new window
+    }
+
+    // If quota available, use it
+    if (this.requestsInWindow < this.maxRequests) {
+      this.requestsInWindow++;
+      const remaining = this.maxRequests - this.requestsInWindow;
+      this.lastRequestTime = Date.now(); // Update AFTER delay
+      console.log(`✅ Groq quota OK (${this.requestsInWindow}/${this.maxRequests}, ${remaining} remaining)`);
+      return;
+    }
+
+    // Quota full - wait for window reset
+    const waitTime = this.windowDuration - elapsed;
+    console.warn(`⏳ Groq quota FULL (${this.requestsInWindow}/${this.maxRequests}), waiting ${Math.ceil(waitTime/1000)}s...`);
+    
+    await new Promise(resolve => setTimeout(resolve, waitTime));
+    
+    // Reset after waiting
+    this.requestsInWindow = 1;
+    this.windowStartTime = Date.now();
+    console.log('✅ Groq quota RESET, slot available');
+  }
+
+  setBackoff(ms) {
+    this.backoffMs = ms;
+    console.log(`🔄 Groq backoff set to ${ms}ms`);
+  }
+
+  resetBackoff() {
+    this.backoffMs = 0;
+    console.log('✅ Groq backoff reset');
+  }
+
+  reset() {
+    this.requestsInWindow = 0;
+    this.windowStartTime = Date.now();
+    this.backoffMs = 0;
+    console.log('🔄 Groq rate limiter manually reset');
+  }
+
+  getStatus() {
+    const now = Date.now();
+    const elapsed = now - this.windowStartTime;
+    const windowRemaining = Math.max(0, this.windowDuration - elapsed);
+    
+    return {
+      used: this.requestsInWindow,
+      limit: this.maxRequests,
+      available: this.maxRequests - this.requestsInWindow,
+      windowRemainingMs: windowRemaining
+    };
+  }
+}
+
+// Create global instance
+const groqLimiter = new GroqRateLimiter();
+
+// Export control functions
+export function resetGroqLimiter() {
+  groqLimiter.reset();
+}
+
+export function getGroqLimiterStatus() {
+  return groqLimiter.getStatus();
+}
+
+// ============================================
+// BACKEND PROXY CONFIGURATION
+// API keys are stored in mcp-server env vars — NOT in the browser bundle
+// ============================================
+import { generateConversation as proxyGenerateConversation } from '../aiProxy.js';
+
+// Provider config kept for UI/status display only (no actual keys here)
+const PROVIDERS = {
+  cerebras: { name: 'Cerebras',    model: 'llama3.1-8b',                           enabled: true, description: 'PRIMARY: Cerebras — server-side' },
+  gemini:   { name: 'Gemini',       model: 'gemini-2.5-flash',                      enabled: true, description: 'BACKUP 1: Gemini — server-side' },
+  groq:     { name: 'Groq',         model: 'llama-3.3-70b-versatile',               enabled: true, description: 'BACKUP 2: Groq — server-side' },
+  together: { name: 'Together AI',  model: 'Llama-3.3-70B-Instruct-Turbo',         enabled: true, description: 'BACKUP 3: Together — server-side' },
+};
+
+// ============================================
+// SMART FALLBACK GENERATOR
+// ============================================
+
+/**
+ * Generate contextual fallback based on conversation history
+ * CRITICAL: 
+ * 1. Check if student is asking US a question → Answer it!
+ * 2. Never repeat questions already asked
+ * 3. Filter by mission context (school, family, etc.)
+ */
+// 🔥 Track recently used fallbacks to avoid repetition
+const recentFallbacks = [];
+const MAX_RECENT = 5;
+
+function generateContextualFallback(chatHistory = [], userMessage = '', turnCount = 0, missionContext = {}) {
+  const userMsgLower = userMessage.toLowerCase().trim();
+  const missionId = missionContext?.missionId || missionContext?.mission?.mission_id || 0;
+  
+  // 🔥 Mission-specific context keywords
+  const missionKeywords = {
+    1: ['school', 'first day', 'classroom', 'teacher', 'desk', 'subject'],
+    2: ['classroom', 'desk', 'whiteboard', 'computer', 'walls', 'posters'],
+    3: ['friend', 'play', 'together', 'meet', 'playground'],
+    4: ['family', 'mom', 'dad', 'brother', 'sister', 'parents', 'home'],
+    5: ['weekend', 'activity', 'together', 'eat', 'dinner', 'homework']
+  };
+  
+  // 🎯 CRITICAL: Is student ASKING US a question?
+  const isStudentAsking = 
+    userMsgLower.endsWith('?') ||
+    userMsgLower.startsWith('how old are you') ||
+    userMsgLower.startsWith('what is your') ||
+    userMsgLower.startsWith('do you') ||
+    userMsgLower.startsWith('are you') ||
+    userMsgLower.startsWith('can you') ||
+    userMsgLower.includes('your name') ||
+    userMsgLower.includes('your age') ||
+    userMsgLower.includes('your favorite');
+  
+  // If student is asking US → Answer naturally
+  if (isStudentAsking) {
+    // Detect what they're asking about
+    if (userMsgLower.includes('how old') || userMsgLower.includes('your age')) {
+      return {
+        ai_response: "I am always learning, just like you! How old are YOU?",
+        suggested_hints: ['I', 'am', 'years', 'old', 'eight', 'nine', 'ten'],
+        pedagogy_note: 'Answering student question about age',
+        provider: 'fallback-answer',
+        grammarBlocked: true
+      };
+    }
+    
+    if (userMsgLower.includes('your name')) {
+      return {
+        ai_response: "I am Nova! What is your name?",
+        suggested_hints: ['My', 'name', 'is', 'I', 'am'],
+        pedagogy_note: 'Answering student question about name',
+        provider: 'fallback-answer',
+        grammarBlocked: true
+      };
+    }
+    
+    if (userMsgLower.includes('do you like') || userMsgLower.includes('your favorite')) {
+      return {
+        ai_response: "I love teaching students like you! What do YOU like?",
+        suggested_hints: ['I', 'like', 'love', 'my', 'favorite', 'is'],
+        pedagogy_note: 'Answering student question about preferences',
+        provider: 'fallback-answer',
+        grammarBlocked: true
+      };
+    }
+    
+    // Generic answer for other questions
+    return {
+      ai_response: "Good question! Let me think... What do you want to know?",
+      suggested_hints: ['I', 'want', 'to', 'know', 'about', 'tell', 'me'],
+      pedagogy_note: 'Generic answer to student question',
+      provider: 'fallback-answer',
+      grammarBlocked: true
+    };
+  }
+  
+  // Student is NOT asking → Continue with normal fallback logic
+  // Extract all AI questions from history (to avoid repeating)
+  const allHistory = chatHistory.map(m => m.content.toLowerCase()).join(' ');
+  const askedQuestions = [];
+  
+  // Detect common questions already asked
+  if (allHistory.includes('what is your name') || allHistory.includes('what\'s your name')) {
+    askedQuestions.push('name');
+  }
+  if (allHistory.includes('how old are you') || allHistory.includes('what is your age')) {
+    askedQuestions.push('age');
+  }
+  if (allHistory.includes('are you a student')) {
+    askedQuestions.push('student');
+  }
+  if (allHistory.includes('do you have friends')) {
+    askedQuestions.push('friends');
+  }
+  if (allHistory.includes('do you like your school') || allHistory.includes('like school')) {
+    askedQuestions.push('school');
+  }
+  if (allHistory.includes('what grade are you in')) {
+    askedQuestions.push('grade');
+  }
+  if (allHistory.includes('do you like learning') || allHistory.includes('what do you like about school')) {
+    askedQuestions.push('learning');
+  }
+  
+  // Safe fallback questions (DIVERSE pool with 20+ options)
+  const safeFallbacks = [
+    {
+      id: 'encouragement-1',
+      response: "Good! Can you say more about that?",
+      hints: ['I', 'think', 'like', 'have', 'my', 'Yes']
+    },
+    {
+      id: 'encouragement-2',
+      response: "That is great! Tell me more.",
+      hints: ['I', 'am', 'have', 'like', 'about', 'my']
+    },
+    {
+      id: 'encouragement-3',
+      response: "I see! What else can you tell me?",
+      hints: ['I', 'also', 'like', 'have', 'about', 'my']
+    },
+    {
+      id: 'encouragement-4',
+      response: "Interesting! Can you explain more?",
+      hints: ['I', 'mean', 'it', 'is', 'like', 'because']
+    },
+    {
+      id: 'encouragement-5',
+      response: "Nice! Is there a book on the desk?",
+      hints: ['There', 'is', 'a', 'book', 'on', 'the', 'desk']
+    },
+    {
+      id: 'repeat-request',
+      response: "Sorry, I did not hear you well. Can you say that again?",
+      hints: ['I', 'am', 'have', 'like', 'my', 'Yes']
+    },
+    {
+      id: 'sentence-help',
+      response: "Can you use a full sentence?",
+      hints: ['I', 'am', 'have', 'like', 'my', 'about']
+    },
+    {
+      id: 'example-request',
+      response: "Can you give me an example?",
+      hints: ['For', 'example', 'like', 'I', 'have', 'is']
+    },
+    {
+      id: 'reason-request',
+      response: "Why do you think that?",
+      hints: ['Because', 'I', 'think', 'it', 'is', 'like']
+    },
+    {
+      id: 'detail-request',
+      response: "What else can you remember?",
+      hints: ['I', 'remember', 'also', 'there', 'was', 'is']
+    }
+  ];
+  
+  // Conditional fallbacks (only use if NOT already asked) - EXPANDED TO 20+ OPTIONS
+  const conditionalFallbacks = [
+    {
+      id: 'school-excited',
+      condition: !askedQuestions.includes('school') && !allHistory.includes('excited'),
+      response: "Do you enjoy coming to school?",
+      hints: ['Yes', 'I', 'enjoy', 'like', 'school', 'No']
+    },
+    {
+      id: 'feeling',
+      condition: turnCount >= 5 && !allHistory.includes('feeling'),
+      response: "How are you feeling today?",
+      hints: ['I', 'am', 'feeling', 'good', 'happy', 'fine']
+    },
+    {
+      id: 'favorite-activity',
+      condition: !askedQuestions.includes('learning') && !allHistory.includes('favorite'),
+      response: "What activity do you enjoy most?",
+      hints: ['I', 'enjoy', 'like', 'playing', 'reading', 'drawing']
+    },
+    {
+      id: 'weekend',
+      condition: !allHistory.includes('weekend'),
+      response: "What do you do on weekends?",
+      hints: ['I', 'go', 'play', 'stay', 'home', 'park']
+    },
+    {
+      id: 'hobbies',
+      condition: !allHistory.includes('hobby'),
+      response: "Do you have any hobbies?",
+      hints: ['Yes', 'I', 'like', 'drawing', 'playing', 'reading']
+    },
+    {
+      id: 'favorite-color',
+      condition: !allHistory.includes('color'),
+      response: "What is your favorite color?",
+      hints: ['My', 'favorite', 'color', 'is', 'blue', 'red']
+    },
+    {
+      id: 'morning-routine',
+      condition: !allHistory.includes('morning'),
+      response: "What do you do in the morning?",
+      hints: ['I', 'wake', 'up', 'eat', 'breakfast', 'go']
+    },
+    {
+      id: 'after-school',
+      condition: !allHistory.includes('after school'),
+      response: "What do you do after school?",
+      hints: ['I', 'go', 'home', 'play', 'do', 'homework']
+    },
+    {
+      id: 'lunch',
+      condition: !allHistory.includes('lunch') && !allHistory.includes('eat'),
+      response: "What did you have for lunch?",
+      hints: ['I', 'had', 'ate', 'rice', 'sandwich', 'noodles']
+    },
+    {
+      id: 'books',
+      condition: !allHistory.includes('book') && !askedQuestions.includes('learning'),
+      response: "Do you like reading books?",
+      hints: ['Yes', 'I', 'like', 'reading', 'books', 'stories']
+    },
+    {
+      id: 'sports',
+      condition: !allHistory.includes('sport') && !askedQuestions.includes('friends'),
+      response: "Do you play any sports?",
+      hints: ['Yes', 'I', 'play', 'soccer', 'basketball', 'No']
+    },
+    {
+      id: 'music',
+      condition: !allHistory.includes('music'),
+      response: "Do you like music?",
+      hints: ['Yes', 'I', 'like', 'music', 'singing', 'No']
+    },
+    {
+      id: 'pets',
+      condition: !allHistory.includes('pet') && !allHistory.includes('dog') && !allHistory.includes('cat'),
+      response: "Do you have any pets?",
+      hints: ['Yes', 'I', 'have', 'dog', 'cat', 'No']
+    },
+    {
+      id: 'siblings',
+      condition: !allHistory.includes('brother') && !allHistory.includes('sister'),
+      response: "Do you have brothers or sisters?",
+      hints: ['Yes', 'I', 'have', 'brother', 'sister', 'No']
+    },
+    {
+      id: 'helping',
+      condition: !allHistory.includes('help'),
+      response: "Do you help at home?",
+      hints: ['Yes', 'I', 'help', 'my', 'parents', 'clean']
+    },
+    {
+      id: 'season',
+      condition: !allHistory.includes('season') && !allHistory.includes('weather'),
+      response: "What is your favorite season?",
+      hints: ['My', 'favorite', 'season', 'is', 'summer', 'winter']
+    },
+    {
+      id: 'birthday',
+      condition: !allHistory.includes('birthday') && askedQuestions.includes('age'),
+      response: "When is your birthday?",
+      hints: ['My', 'birthday', 'is', 'in', 'January', 'May']
+    },
+    {
+      id: 'nice-meet',
+      condition: askedQuestions.includes('name') && turnCount >= 6 && !allHistory.includes('nice to meet'),
+      response: "It is nice to meet you! Are you ready to learn?",
+      hints: ['Yes', 'I', 'am', 'ready', 'excited', 'No']
+    }
+  ];
+  
+  // Try conditional fallbacks first (filter by condition AND avoid recent usage)
+  let availableConditional = conditionalFallbacks.filter(fb => fb.condition);
+  
+  // 🔥 FIX: Filter by mission context if available
+  if (missionId && missionKeywords[missionId]) {
+    const keywords = missionKeywords[missionId];
+    const contextualFallbacks = availableConditional.filter(fb => {
+      const responseWords = fb.response.toLowerCase().split(' ');
+      return keywords.some(kw => responseWords.includes(kw) || fb.response.toLowerCase().includes(kw));
+    });
+    
+    // Use contextual fallbacks if found, otherwise use all available
+    if (contextualFallbacks.length > 0) {
+      availableConditional = contextualFallbacks;
+      console.log(`🎯 Using mission-${missionId} contextual fallbacks (${contextualFallbacks.length} options)`);
+    }
+  }
+  
+  if (availableConditional.length > 0) {
+    const selected = availableConditional[Math.floor(Math.random() * availableConditional.length)];
+    return {
+      ai_response: selected.response,
+      suggested_hints: selected.hints,
+      pedagogy_note: `Smart fallback - ${selected.id} (${availableConditional.length} options)`,
+      provider: 'fallback-smart',
+      grammarBlocked: true
+    };
+  }
+  
+  // Use safe fallback (random to avoid repetition)
+  const selected = safeFallbacks[Math.floor(Math.random() * safeFallbacks.length)];
+  return {
+    ai_response: selected.response,
+    suggested_hints: selected.hints,
+    pedagogy_note: 'Safe fallback - encouraging continuation',
+    provider: 'fallback-safe',
+    grammarBlocked: true
+  };
+}
+
+// ============================================
+// MAIN ROUTER FUNCTION
+// ============================================
+
+/**
+ * Send message to AI with automatic provider fallback + Grammar Guard
+ * @param {Object} params - Request parameters
+ * @param {string} params.systemPrompt - System instructions
+ * @param {Array} params.chatHistory - [{role, content}]
+ * @param {string} params.userMessage - Latest user input
+ * @param {string} params.preferredProvider - 'groq' | 'gemini' | 'auto'
+ * @param {number} params.weekId - Current week (for grammar validation)
+ * @param {boolean} params.skipGrammarGuard - Skip grammar validation (default: false)
+ * @param {Object} params.missionContext - Mission context for Story Mission (missionId, mission)
+ * @returns {Promise<AIResponse>}
+ */
+export async function sendToAI({ 
+  systemPrompt, 
+  chatHistory = [], 
+  userMessage,
+  preferredProvider = 'auto',
+  weekId = 1,
+  skipGrammarGuard = false,
+  turnCount = 0,
+  missionContext = {}
+}) {
+  const startTime = Date.now();
+  const maxRetries = 2; // Max regeneration attempts
+  let attempt = 0;
+  
+  // 🔥 DEBUG: Log the system prompt being sent
+  console.log('📝 sendToAI - System Prompt LENGTH:', systemPrompt?.length, 'chars');
+  console.log('📝 sendToAI - System Prompt Preview:', systemPrompt?.slice(0, 300));
+  console.log('📝 sendToAI - User Message:', userMessage);
+  console.log('📝 sendToAI - Chat History:', chatHistory.length, 'messages');
+
+  // Enhance system prompt with grammar scope reminder
+  const enhancedSystemPrompt = !skipGrammarGuard
+    ? `${systemPrompt}\n\n🎯 GRAMMAR SCOPE FOR THIS WEEK:\n${getGrammarSummary(weekId)}\n\nYOU MUST ONLY use the allowed grammar patterns above.`
+    : systemPrompt;
+
+  // Inject student profile so Nova personalises every response
+  const studentCtx = buildStudentContext(weekId);
+  const personalizedSystemPrompt = studentCtx
+    ? `${enhancedSystemPrompt}\n\n${studentCtx}`
+    : enhancedSystemPrompt;
+
+  // Build messages array
+  const messages = [
+    { role: 'system', content: personalizedSystemPrompt },
+    ...chatHistory,
+    { role: 'user', content: userMessage }
+  ];
+
+  // Grammar Guard retry loop
+  while (attempt < maxRetries) {
+    attempt++;
+
+    // Auto-select provider based on availability
+    if (preferredProvider === 'auto') {
+      // 🔥 NEW PRIORITY: Cerebras → Gemini → Groq → Together
+      if (PROVIDERS.cerebras.enabled) {
+        preferredProvider = 'cerebras';
+      } else if (PROVIDERS.gemini.enabled) {
+        preferredProvider = 'gemini';
+      } else if (PROVIDERS.groq.enabled) {
+        preferredProvider = 'groq';
+      } else {
+        preferredProvider = 'together';
+      }
+    }
+
+    // 🔥 LAYER 1: Try Cerebras first - ULTRA-FAST!
+    if (preferredProvider === 'cerebras' && PROVIDERS.cerebras.enabled) {
+      try {
+        console.log(`🚀 Layer 1: Trying Cerebras (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callCerebras(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        // Apply fixes
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        // Check for roleplay mode
+        const systemContent = messages[0]?.content || '';
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:');
+        
+        if (isRoleplay) {
+          let scenarioData = null;
+          try {
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+            }
+          } catch (err) {
+            scenarioData = { 
+              id: 'fallback', 
+              backup_questions: ["Is there a pen in your backpack?"]
+            };
+          }
+          
+          const mode = 'playing_roleplay';
+          fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        }
+        
+        // Grammar Guard
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ OpenRouter grammar violations:`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        // Talk Ratio Guard
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Cerebras succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'cerebras', latency: Date.now() - startTime };
+      } catch (cerebrasError) {
+        console.warn(`⚠️ Cerebras failed: ${cerebrasError.message}`);
+        console.log('🔄 Fallback to Layer 2: Gemini...');
+      }
+    }
+
+    // 🔥 LAYER 2: Fallback to Gemini
+    if (PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Layer 2: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callGemini(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        const systemContent = messages[0]?.content || '';
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:');
+        
+        if (isRoleplay) {
+          let scenarioData = null;
+          try {
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+            }
+          } catch (err) {
+            scenarioData = { 
+              id: 'fallback', 
+              backup_questions: ["Is there a pen in your backpack?"]
+            };
+          }
+          
+          const mode = 'playing_roleplay';
+          fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        }
+        
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ Gemini grammar violations:`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'gemini', latency: Date.now() - startTime };
+      } catch (geminiError) {
+        console.warn(`⚠️ Gemini failed: ${geminiError.message}`);
+        console.log('🔄 Fallback to Layer 3: Groq...');
+      }
+    }
+
+    // 🔥 LAYER 3: Try Groq
+    if (PROVIDERS.groq.enabled) {
+      try {
+        console.log(`🚀 Layer 3: Trying Groq (attempt ${attempt}/${maxRetries})...`);
+        const response = await callGroq(messages);
+        
+        // Groq returns plain text, need extraction
+        if (typeof response === 'string') {
+          console.log('🔧 Groq response needs extraction, returning raw for responseParser');
+        }
+        
+        console.log(`✅ Groq success in ${Date.now() - startTime}ms`);
+        return { raw: response, provider: 'groq', latency: Date.now() - startTime, format: 'raw' };
+      } catch (groqError) {
+        console.warn(`⚠️ Groq failed: ${groqError.message}`);
+        console.log('🔄 Fallback to Layer 4: Gemini...');
+      }
+    }
+
+    // 🔥 LAYER 4: Final fallback to Gemini
+    if (PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Layer 2: Trying Gemini (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callGemini(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        // 🎯 FIX: Auto-correct 20Q correct guess responses
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        // 🎯 FIX: Force roleplay responses to always have question + options
+        const systemContent = messages[0]?.content || '';
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:') ||
+                          systemContent.includes('backup_questions:');
+        
+        let scenarioData = null;
+        if (isRoleplay) {
+          try {
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+            } else {
+              scenarioData = {
+                id: 'fallback',
+                backup_questions: [
+                  "Is there a pen in your backpack?",
+                  "What is this? A book or a notebook?",
+                  "Where is the ruler? On the desk or in the backpack?",
+                  "What else do you need? A pencil or an eraser?",
+                  "Do you see a computer? Or a whiteboard?"
+                ]
+              };
+            }
+          } catch (err) {
+            scenarioData = { id: 'error', backup_questions: ["Is there a pen in your backpack?"] };
+          }
+        }
+        
+        const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+        fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        
+        // Grammar Guard validations
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'gemini', latency: Date.now() - startTime };
+      } catch (geminiError) {
+        console.warn(`⚠️ Gemini failed: ${geminiError.message}`);
+        console.log('🔄 Fallback to Layer 3: Together AI...');
+      }
+    }
+
+    // 🔥 LAYER 3: Fallback to Together AI (if both Groq and Gemini failed)
+    if (PROVIDERS.together.enabled) {
+      try {
+        console.log(`🚀 Layer 3: Trying Together AI (attempt ${attempt}/${maxRetries})...`);
+        const rawResponse = await callTogether(messages);
+        const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+        
+        // 🎯 FIX: Auto-correct 20Q correct guess responses
+        let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+        
+        // 🎯 FIX: Force roleplay responses to always have question + options
+        // VERSION 2.0: Extract scenario data from system prompt
+        const systemContent = messages[0]?.content || '';
+        console.log('🔍 SYSTEM CONTENT (first 300 chars):', systemContent.substring(0, 300));
+        
+        // Detect if this is roleplay mode
+        const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                          systemContent.includes('SCENARIO:') ||
+                          systemContent.includes('backup_questions:');
+        console.log('🔍 isRoleplay:', isRoleplay);
+        
+        // Extract scenario data if roleplay
+        let scenarioData = null;
+        if (isRoleplay) {
+          try {
+            // Try to extract backup_questions array from system prompt
+            const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+            if (backupMatch) {
+              scenarioData = {
+                id: 'extracted_from_prompt',
+                backup_questions: JSON.parse(backupMatch[1])
+              };
+              console.log('✅ Extracted backup_questions:', scenarioData.backup_questions.length, 'questions');
+            } else {
+              console.warn('⚠️ No backup_questions found in system prompt');
+              // Fallback: use generic backup questions
+              scenarioData = {
+                id: 'fallback',
+                backup_questions: [
+                  "Is there a pen in your backpack?",
+                  "What is this? A book or a notebook?",
+                  "Where is the ruler? On the desk or in the backpack?",
+                  "What else do you need? A pencil or an eraser?",
+                  "Do you see a computer? Or a whiteboard?"
+                ]
+              };
+            }
+          } catch (err) {
+            console.error('❌ Error extracting scenario data:', err);
+            scenarioData = { id: 'error', backup_questions: ["Is there a pen in your backpack?"] };
+          }
+        }
+        
+        const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+        console.log('🔍 MODE DETECTED:', mode);
+        
+        fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+        console.log('🔍 AFTER forceRoleplayQuestion:', fixedResponse.ai_response?.substring(0, 100));
+        
+        // Grammar Guard & Talk Ratio validations
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(fixedResponse, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            console.warn(`⚠️ Grammar violations (attempt ${attempt}):`, validation.violations);
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          fixedResponse.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Together AI succeeded in ${Date.now() - startTime}ms`);
+        return { ...fixedResponse, provider: 'together', latency: Date.now() - startTime };
+      } catch (togetherError) {
+        console.warn(`⚠️ Together AI failed: ${togetherError.message}`);
+        console.log('🔄 Fallback to Layer 2: Groq...');
+        
+        // LAYER 2: Fallback to Groq
+        if (PROVIDERS.groq.enabled) {
+          try {
+            const rawResponse = await callGroq(messages);
+            const response = typeof rawResponse === 'string' ? parseAIResponse(rawResponse) : rawResponse;
+            
+            // 🎯 FIX: Auto-correct 20Q correct guess responses
+            let fixedResponse = fix20QCorrectGuess(response, userMessage, messages);
+            
+            // 🎯 FIX: Force roleplay responses to always have question + options (GROQ)
+            // VERSION 2.0: Extract scenario data from system prompt
+            const systemContent = messages[0]?.content || '';
+            console.log('🔍 GROQ SYSTEM CONTENT (first 300 chars):', systemContent.substring(0, 300));
+            
+            const isRoleplay = systemContent.includes('ROLEPLAY_ACTOR') || 
+                              systemContent.includes('SCENARIO:') ||
+                              systemContent.includes('backup_questions:');
+            console.log('🔍 GROQ isRoleplay:', isRoleplay);
+            
+            let scenarioData = null;
+            if (isRoleplay) {
+              try {
+                const backupMatch = systemContent.match(/backup_questions:\s*(\[.*?\])/s);
+                if (backupMatch) {
+                  scenarioData = {
+                    id: 'extracted_from_prompt',
+                    backup_questions: JSON.parse(backupMatch[1])
+                  };
+                  console.log('✅ GROQ Extracted backup_questions:', scenarioData.backup_questions.length, 'questions');
+                } else {
+                  console.warn('⚠️ GROQ No backup_questions found, using fallback');
+                  scenarioData = {
+                    id: 'fallback',
+                    backup_questions: [
+                      "Is there a pen in your backpack?",
+                      "What is this? A book or a notebook?",
+                      "Where is the ruler? On the desk or in the backpack?",
+                      "What else do you need? A pencil or an eraser?",
+                      "Do you see a computer? Or a whiteboard?"
+                    ]
+                  };
+                }
+              } catch (err) {
+                console.error('❌ GROQ Error extracting scenario data:', err);
+                scenarioData = { id: 'error', backup_questions: ["Is there a pen in your backpack?"] };
+              }
+            }
+            
+            const mode = isRoleplay ? 'playing_roleplay' : 'idle';
+            console.log('🔍 GROQ MODE DETECTED:', mode);
+            
+            fixedResponse = forceRoleplayQuestion(fixedResponse, mode, scenarioData, userMessage);
+            console.log('🔍 GROQ AFTER forceRoleplayQuestion:', fixedResponse.ai_response?.substring(0, 100));
+            
+            if (!skipGrammarGuard) {
+              const validation = validateAIResponse(fixedResponse, weekId);
+              if (!validation.valid && attempt < maxRetries) {
+                console.warn(`⚠️ Groq grammar violations:`, validation.violations);
+                const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+                messages.push({ role: 'user', content: regenInstruction });
+                preferredProvider = 'groq';
+                continue;
+              }
+            }
+            
+            const talkRatioResult = enforceTalkRatio(fixedResponse.ai_response || '', userMessage, turnCount);
+            if (talkRatioResult.action === 'truncated') {
+              fixedResponse.ai_response = talkRatioResult.response;
+            }
+            
+            console.log(`✅ Groq succeeded (fallback) in ${Date.now() - startTime}ms`);
+            return { ...fixedResponse, provider: 'groq', fallback: true, latency: Date.now() - startTime };
+          } catch (groqError) {
+            console.warn(`⚠️ Groq also failed: ${groqError.message}`);
+            console.log('🔄 Fallback to Layer 3: Gemini...');
+            
+            // LAYER 3: Final fallback to Gemini
+            if (PROVIDERS.gemini.enabled) {
+              try {
+                const response = await callGemini(messages);
+                
+                if (!skipGrammarGuard) {
+                  const validation = validateAIResponse(response, weekId);
+                  if (!validation.valid && attempt < maxRetries) {
+                    const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+                    messages.push({ role: 'user', content: regenInstruction });
+                    preferredProvider = 'gemini';
+                    continue;
+                  }
+                }
+                
+                const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
+                if (talkRatioResult.action === 'truncated') {
+                  response.ai_response = talkRatioResult.response;
+                }
+                
+                console.log(`✅ Gemini succeeded (final fallback) in ${Date.now() - startTime}ms`);
+                return { ...response, provider: 'gemini', fallback: true, latency: Date.now() - startTime };
+              } catch (geminiError) {
+                console.error('❌ All 3 providers failed!');
+                const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
+                return { ...fallbackResponse, provider: 'fallback', latency: Date.now() - startTime };
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Direct Gemini usage (when preferred or only available)
+    if (preferredProvider === 'gemini' && PROVIDERS.gemini.enabled) {
+      try {
+        console.log(`🚀 Using Gemini (attempt ${attempt}/${maxRetries})...`);
+        const response = await callGemini(messages);
+        
+        if (!skipGrammarGuard) {
+          const validation = validateAIResponse(response, weekId);
+          if (!validation.valid && attempt < maxRetries) {
+            const regenInstruction = getRegenerationInstruction(validation.violations, weekId);
+            messages.push({ role: 'user', content: regenInstruction });
+            continue;
+          }
+        }
+        
+        const talkRatioResult = enforceTalkRatio(response.ai_response || '', userMessage, turnCount);
+        if (talkRatioResult.action === 'truncated') {
+          response.ai_response = talkRatioResult.response;
+        }
+        
+        console.log(`✅ Gemini succeeded in ${Date.now() - startTime}ms`);
+        return { ...response, provider: 'gemini', latency: Date.now() - startTime };
+      } catch (geminiError) {
+        console.error('❌ Gemini failed:', geminiError.message);
+        const fallbackResponse = generateContextualFallback(chatHistory, userMessage, turnCount, missionContext);
+        return { ...fallbackResponse, provider: 'fallback', latency: Date.now() - startTime };
+      }
+    }
+
+    // No provider available
+    throw new Error('No AI provider available or all failed');
+  }
+
+  // Should never reach here
+  throw new Error('Grammar guard retry loop exhausted');
+}
+
+// ============================================
+// PROVIDER CALL FUNCTIONS — ALL PROXIED THROUGH BACKEND
+// Keys stored in mcp-server .env, never in browser bundle
+// ============================================
+
+/**
+ * Single backend proxy function replaces all direct provider calls.
+ * mcp-server does its own failover: Cerebras → Groq → Together → Gemini.
+ */
+async function callBackendProxy(messages) {
+  return proxyGenerateConversation(messages);
+}
+
+// Named aliases so existing sendToAI call-sites need zero changes
+const callCerebras = callBackendProxy;
+const callGroq     = callBackendProxy;
+const callGemini   = callBackendProxy;
+const callTogether = callBackendProxy;
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
+
+/**
+ * Convert OpenAI-style messages to Gemini format
+ * 🔥 FIX: Ensure only "user" and "model" roles (Gemini 2.0 requirement)
+ */
+function convertToGeminiFormat(messages) {
+  const geminiMessages = [];
+  let systemInstruction = '';
+
+  messages.forEach((msg) => {
+    // Extract system prompt separately (will be used in systemInstruction field)
+    if (msg.role === 'system') {
+      systemInstruction = msg.content;
+    }
+    // Convert "user" role → Gemini "user"
+    else if (msg.role === 'user') {
+      geminiMessages.push({
+        role: 'user',
+        parts: [{ text: msg.content }]
+      });
+    }
+    // Convert "assistant" OR "ai" role → Gemini "model"
+    else if (msg.role === 'assistant' || msg.role === 'model' || msg.role === 'ai') {
+      geminiMessages.push({
+        role: 'model',
+        parts: [{ text: msg.content }]
+      });
+    }
+    // 🔥 Skip invalid roles (e.g., "system" in history)
+    else {
+      console.warn(`⚠️ Skipping invalid role in history: ${msg.role}`);
+    }
+  });
+
+  return { geminiMessages, systemInstruction };
+}
+
+/**
+ * Get provider status
+ */
+export function getProviderStatus() {
+  return {
+    groq: {
+      available: PROVIDERS.groq.enabled,
+      name: PROVIDERS.groq.name,
+      model: PROVIDERS.groq.model
+    },
+    gemini: {
+      available: PROVIDERS.gemini.enabled,
+      name: PROVIDERS.gemini.name,
+      model: PROVIDERS.gemini.model
+    }
+  };
+}
+
+/**
+ * Test provider connectivity
+ */
+export async function testProvider(provider = 'groq') {
+  try {
+    const testMessages = [
+      { role: 'system', content: 'You are a test assistant. Respond with JSON: {"status": "ok"}' },
+      { role: 'user', content: 'Test' }
+    ];
+
+    if (provider === 'groq') {
+      await callGroq(testMessages);
+    } else if (provider === 'gemini') {
+      await callGemini(testMessages);
+    }
+
+    return { success: true, provider };
+  } catch (error) {
+    return { success: false, provider, error: error.message };
+  }
+}
+
+// ============================================
+// EXPORTS
+// ============================================
+
+export default {
+  sendToAI,
+  getProviderStatus,
+  testProvider
+};

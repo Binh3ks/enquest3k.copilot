@@ -1,0 +1,243 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "engquest3k-lesson-plan-v1",
+  "title": "EngQuest3K Lesson Plan — Golden Schema (W28 Standard)",
+  "description": "Every W{N}.json in public/data/lessons/ MUST conform to this schema. W28 is the single source of truth for format.",
+  "type": "object",
+  "required": ["week", "unit_theme", "quick_ref", "methodology", "vocab_tiers",
+               "sessions", "sessions_2", "sessions_5",
+               "answer_key", "answer_key_by_session", "task_cards", "task_cards_by_session",
+               "games", "video_prompts", "teacher_contents"],
+
+  "properties": {
+    "week": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 156,
+      "description": "Week number (1-156)"
+    },
+    "unit_theme": {
+      "type": "string",
+      "minLength": 5,
+      "description": "E.g. 'Adventure Stories — The Magic Trip'"
+    },
+
+    "quick_ref": {
+      "type": "object",
+      "required": ["Week", "Block", "Theme", "Grammar Focus", "Key Pattern",
+                   "Vocabulary", "Spiral Review", "STEM/CLIL Topic", "FK Target"],
+      "properties": {
+        "Week":           {"type": "string"},
+        "Block":          {"type": "string", "pattern": "^[A-Z]$"},
+        "Theme":          {"type": "string"},
+        "Grammar Focus":  {"type": "string"},
+        "Key Pattern":    {"type": "string"},
+        "Vocabulary":     {"type": "string"},
+        "Spiral Review":  {"type": "string"},
+        "STEM/CLIL Topic":{"type": "string"},
+        "VC Word Targets":{"type": "string"},
+        "FK Target":      {"type": "string"}
+      },
+      "additionalProperties": false,
+      "_contract": "Block must be single uppercase letter (no parentheticals)"
+    },
+
+    "methodology": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "content"],
+        "properties": {
+          "title":   {"type": "string"},
+          "content": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+
+    "vocab_tiers": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["Word", "Vietnamese", "Key Collocation(s)", "Memory Trick"],
+        "properties": {
+          "Word":                {"type": "string"},
+          "Vietnamese":          {"type": "string"},
+          "Key Collocation(s)":  {"type": "string"},
+          "Memory Trick":        {"type": "string"}
+        },
+        "additionalProperties": false
+      },
+      "_contract": "Tier 2 Cambridge words: Memory Trick starts with 'Definition: ...'. Tier 1 story words: Memory Trick is mnemonic. No 'Base', 'POS', '☐' fields."
+    },
+
+    "sessions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/definitions/full_session"},
+      "_contract": "Always exactly 3 sessions. session field = 1, 2, 3."
+    },
+    "sessions_2": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/definitions/full_session"}
+    },
+    "sessions_5": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["session", "session_label", "parts"],
+        "properties": {
+          "session": {"type": "integer", "minimum": 1, "maximum": 5},
+          "session_label": {
+            "type": "string",
+            "pattern": "^Slot [1-5] —",
+            "_contract": "MUST start with 'Slot N —' (not 'Session N') to avoid collision with teacher_contents labels"
+          },
+          "parts": {"type": "array", "minItems": 3}
+        }
+      },
+      "_contract": "5 slots. Slot 1=first-half S1, Slot 2=second-half S1, Slot 3=first-half S2, Slot 4=second-half S2, Slot 5=second-half S3. Labels MUST use 'Slot N' NOT 'Session N'."
+    },
+
+    "answer_key": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "answer_key_by_session": {
+      "type": "object",
+      "required": ["s1", "s2", "s3"],
+      "properties": {
+        "s1": {"type": "array", "items": {"type": "string"}},
+        "s2": {"type": "array", "items": {"type": "string"}},
+        "s3": {"type": "array", "items": {"type": "string"}}
+      },
+      "_contract": "Keys are s1/s2/s3 (lowercase with prefix 's')"
+    },
+    "task_cards": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "task_cards_by_session": {
+      "type": "object",
+      "required": ["1", "2", "3"],
+      "properties": {
+        "1": {"type": "array", "items": {"type": "string"}},
+        "2": {"type": "array", "items": {"type": "string"}},
+        "3": {"type": "array", "items": {"type": "string"}}
+      },
+      "_contract": "Keys are '1'/'2'/'3' (numeric strings, no 's' prefix)"
+    },
+
+    "games": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type", "duration", "players", "session_fit", "materials", "instructions"],
+        "properties": {
+          "id":          {"type": "string"},
+          "name":        {"type": "string"},
+          "type":        {"type": "string"},
+          "duration":    {"type": "string"},
+          "players":     {"type": "string"},
+          "session_fit": {"type": ["string", "integer"]},
+          "materials":   {"type": "string"},
+          "instructions":{"type": "string"}
+        }
+      }
+    },
+
+    "video_prompts": {
+      "type": "object",
+      "required": ["chanting", "shadowing"],
+      "properties": {
+        "chanting":  {"type": ["string", "object", "array"]},
+        "shadowing": {"type": ["string", "object", "array"]}
+      }
+    },
+
+    "teacher_contents": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["session", "listening_script", "speaking_notes",
+                     "stem_extension", "in_class_speaking", "vc_answer_key"],
+        "properties": {
+          "session": {"type": "integer", "enum": [1, 2, 3]},
+          "listening_script": {
+            "type": "object",
+            "required": ["speed_note", "text"],
+            "properties": {
+              "speed_note": {"type": "string"},
+              "text":       {"type": "string", "minLength": 20},
+              "dictation":  {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "speaking_notes":    {"type": "string"},
+          "stem_extension":    {"type": "string"},
+          "in_class_speaking": {"type": "string"},
+          "vc_answer_key":     {"type": "string"}
+        }
+      },
+      "_contract": "Always exactly 3 entries, session 1/2/3. Corresponds to original sessions (not slots)."
+    }
+  },
+
+  "definitions": {
+    "part": {
+      "type": "object",
+      "required": ["title", "content"],
+      "properties": {
+        "title":   {"type": "string", "minLength": 3},
+        "content": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "full_session": {
+      "type": "object",
+      "required": ["session", "session_label", "parts"],
+      "properties": {
+        "session":       {"type": "integer", "minimum": 1, "maximum": 3},
+        "session_label": {"type": "string"},
+        "parts": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 12,
+          "items": {"$ref": "#/definitions/part"}
+        }
+      }
+    }
+  },
+
+  "_part_title_contracts": {
+    "header":  "WEEK {N} | SESSION {1-3} | BLOCK {Letter}  (no emoji, no 'Name:...' merged in)",
+    "spiral":  "SPIRAL REVIEW (5 min)  (optional — not all weeks have it)",
+    "part1":   "PART 1: READING INPUT  {Story Title}",
+    "part2":   "PART 2: VOCABULARY BUILDING — {tier description}",
+    "part3":   "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+    "part4_s1":"PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+    "part4_s2":"PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+    "part4_s3":"PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+    "part5":   "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)  [S3: Mixed types]",
+    "part6":   "PART 6: STEM/CLIL — {Topic}",
+    "part7":   "PART 7: QUICK PRODUCTION CHECK",
+    "part8":   "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART {1|2|3 — FINAL})  📝  Week {N} — Session {1-3} | Topic: {topic}",
+    "part9":   "PART 9: HOMEWORK — Week {N}, Session {1-3}",
+    "_forbidden_in_any_title": ["[ALL]", "[O]", "[Y]", "Station C", "Whole-class pause", "(80 mins)", "(40 mins)"]
+  },
+
+  "_sessions_5_slot_labels": {
+    "1": "Slot 1 — Activate / Khởi động — Spiral, Reading & Vocab S1",
+    "2": "Slot 2 — Drill / Luyện tập — Listening, Error Correction & Writing S1",
+    "3": "Slot 3 — Bridge / Kết nối — Spiral, Reading & Vocab S2",
+    "4": "Slot 4 — Challenge / Thử thách — Listening, Error Correction & Writing S2",
+    "5": "Slot 5 — Perform / Biểu diễn — Error Correction, Writing & Task Cards S3"
+  }
+}

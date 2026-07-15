@@ -1,0 +1,2514 @@
+{
+  "week": 35,
+  "unit_theme": "Adventure Stories — My Best Day",
+  "quick_ref": {
+    "Week": "35",
+    "Block": "B",
+    "Theme": "Time Detective Agency — Case File: My Best Day",
+    "Grammar Focus": "Past Simple (Irregular Verbs: went, saw, felt, made, gave)",
+    "Key Pattern": "\"First, I [went]. I [saw] the ocean.\"",
+    "Vocabulary": "5 Tier 1 (production) + 3 Tier 2 (reception)",
+    "Spiral Review": "W25 Sequence Words, W24 Feelings",
+    "STEM/CLIL Topic": "Ocean Animals & Beach Ecosystems",
+    "FK Target": "Grade 2 (FK 70–80)"
+  },
+  "methodology": [
+    {
+      "title": "2.1 Core Principle: Storytelling with Irregular Verbs",
+      "content": [
+        "Problem: Students often apply the regular \"-ed\" rule to irregular verbs.",
+        "Solution: This week anchors 5 high-frequency irregular verbs (went, saw, felt, made, gave) to a highly personal, emotional context: \"My Best Day Ever.\" By connecting the irregular form to a vivid memory, students memorize the chunk rather than analyzing the rule."
+      ]
+    },
+    {
+      "title": "2.2 Session Flow (120 Minutes)",
+      "content": [
+        "Session 1: Introduce the 5 irregular verbs through a recount of a beach trip. Focus on meaning and form recognition.",
+        "Session 2: Practice the verbs with sequence words (First, Then) to build narrative flow.",
+        "Session 3: Full production. Students write and present their own \"Best Day\" story using the target verbs without scaffolding."
+      ]
+    },
+    {
+      "title": "2.3 Teacher Notes: Pull-Out Tasks & Communicative Task",
+      "content": [
+        "S1 pull-out: Hand the student a base verb card (go). The student must physically step forward and say the past form (went) in a full sentence.",
+        "Communicative task (Step 5 - 10 min): Information Gap: The Mystery Trip. Student A has the morning events. Student B has the afternoon events. They ask questions to complete the itinerary."
+      ]
+    }
+  ],
+  "vocab_tiers": [
+    {
+      "Word": "went",
+      "Vietnamese": "đã đi",
+      "Key Collocation(s)": "went to the beach / went to the zoo",
+      "Memory Trick": "W-E-N-T: We Enjoy New Trips"
+    },
+    {
+      "Word": "saw",
+      "Vietnamese": "đã thấy",
+      "Key Collocation(s)": "saw a giraffe / saw the coral reef",
+      "Memory Trick": "S-A-W: SEE → change E to A"
+    },
+    {
+      "Word": "felt",
+      "Vietnamese": "đã cảm thấy",
+      "Key Collocation(s)": "felt happy / felt the breeze",
+      "Memory Trick": "F-E-L-T: FEEL → drop one E, add T"
+    },
+    {
+      "Word": "made",
+      "Vietnamese": "đã làm / tạo ra",
+      "Key Collocation(s)": "made a sandcastle / made a kite",
+      "Memory Trick": "M-A-D-E: My Art Displays Effort"
+    },
+    {
+      "Word": "gave",
+      "Vietnamese": "đã cho / tặng",
+      "Key Collocation(s)": "gave a gift / gave flowers",
+      "Memory Trick": "G-A-V-E: GIVE → change I to A"
+    },
+    {
+      "Word": "beach",
+      "Vietnamese": "bãi biển",
+      "Key Collocation(s)": "played at the beach / went to the beach",
+      "Memory Trick": "B-E-A-C-H: Best Escapes Are Cool Here"
+    },
+    {
+      "Word": "zoo",
+      "Vietnamese": "vườn thú",
+      "Key Collocation(s)": "visited the zoo / animals at the zoo",
+      "Memory Trick": "Z-O-O: Zebras, Ostriches, Orangutans!"
+    },
+    {
+      "Word": "park",
+      "Vietnamese": "công viên",
+      "Key Collocation(s)": "ran in the park / sat in the park",
+      "Memory Trick": "P-A-R-K: Plants And Recreation, Kids love it!"
+    },
+    {
+      "Word": "kite",
+      "Vietnamese": "cái diều",
+      "Key Collocation(s)": "Max flew a kite in the park.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "coral",
+      "Vietnamese": "san hô",
+      "Key Collocation(s)": "She saw colourful coral under the sea.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "shell",
+      "Vietnamese": "vỏ sò / mai",
+      "Key Collocation(s)": "He found a pretty shell on the beach.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "giraffe",
+      "Vietnamese": "hươu cao cổ",
+      "Key Collocation(s)": "We saw a tall giraffe at the zoo.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "penguin",
+      "Vietnamese": "chim cánh cụt",
+      "Key Collocation(s)": "She felt excited when she saw the penguins.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "dolphin",
+      "Vietnamese": "cá heo",
+      "Key Collocation(s)": "They saw a dolphin jump out of the water.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "sandcastle",
+      "Vietnamese": "lâu đài cát",
+      "Key Collocation(s)": "He made a big sandcastle on the beach.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "bucket",
+      "Vietnamese": "cái xô",
+      "Key Collocation(s)": "She used a bucket and spade to dig.",
+      "Memory Trick": "—"
+    },
+    {
+      "Word": "go → went",
+      "Vietnamese": "đi → đã đi",
+      "Key Collocation(s)": "Max went to the beach on his best day.",
+      "Memory Trick": "GO → WENT: completely different — memorise it!"
+    },
+    {
+      "Word": "see → saw",
+      "Vietnamese": "nhìn thấy → đã thấy",
+      "Key Collocation(s)": "He saw colourful coral under the sea.",
+      "Memory Trick": "SEE → SAW: change EE to AW"
+    },
+    {
+      "Word": "feel → felt",
+      "Vietnamese": "cảm thấy → đã cảm thấy",
+      "Key Collocation(s)": "She felt happy when the kite flew high.",
+      "Memory Trick": "FEEL → FELT: drop one E, add T"
+    },
+    {
+      "Word": "make → made",
+      "Vietnamese": "làm ra → đã làm",
+      "Key Collocation(s)": "They made a big sandcastle on the beach.",
+      "Memory Trick": "MAKE → MADE: change K to D"
+    },
+    {
+      "Word": "give → gave",
+      "Vietnamese": "cho/tặng → đã tặng",
+      "Key Collocation(s)": "He gave a shell to his mum as a gift.",
+      "Memory Trick": "GIVE → GAVE: change I to A"
+    }
+  ],
+  "sessions": [
+    {
+      "session": 1,
+      "session_label": "Session 1 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Đầu tiên, tôi đã chơi ở công viên.",
+            "→ ________________________________________",
+            "Error Correction: Yesterday, I am very happy.",
+            "→ ________________________________________",
+            "Fill-in: First, I woke up. Then ________________________________________, I brushed my teeth."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  My Best Day Ever",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Max went to the park.",
+            "T / F: Max made a sandcastle with his dad.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Max see first?",
+            "→ ________________________________________",
+            "What did Max's mom give him?",
+            "→ ________________________________________",
+            "Fill-in from text: Max was tired but ________________________________________.",
+            "Stage 3B — Inference: Why did Max put the shells in his pocket? Use the text.",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: went, saw, felt, made",
+          "content": [
+            "went (Vietnamese: đã đi)",
+            "→ Memory trick: W-E-N-T: We Enjoy New Trips",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: went to a place",
+            "→ Collocation practice:",
+            "a. I went ________________________________________ to the beach yesterday.",
+            "b. We went ________________________________________ to the supermarket.",
+            "→ Your turn: I went to ________________________________________.",
+            "saw (Vietnamese: đã thấy)",
+            "→ Memory trick: S-A-W: See A Whale",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: saw a thing",
+            "→ Collocation practice:",
+            "a. I saw ________________________________________ a big bird in the sky.",
+            "b. He saw ________________________________________ his friend at school.",
+            "→ Your turn: I saw ________________________________________.",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Memory trick: F-E-L-T: Friends Enjoy Laughing Together",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: felt an emotion",
+            "→ Collocation practice:",
+            "a. She felt ________________________________________ very happy.",
+            "b. They felt ________________________________________ tired after running.",
+            "→ Your turn: I felt ________________________________________.",
+            "made (Vietnamese: đã làm/chế tạo)",
+            "→ Memory trick: M-A-D-E: My Art Displays Energy",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: made a thing",
+            "→ Collocation practice:",
+            "a. Dad made ________________________________________ a sandwich for me.",
+            "b. We made ________________________________________ a big sandcastle.",
+            "→ Your turn: I made ________________________________________.",
+            "gave (Vietnamese: đã cho/tặng)",
+            "→ Memory trick: G-A-V-E: Good Apples Very Excellent",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: gave me a thing",
+            "→ Collocation practice:",
+            "a. Mom gave ________________________________________ me an apple.",
+            "b. The teacher gave ________________________________________ me a book.",
+            "→ Your turn: My friend gave me ________________________________________.",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Match the sentence halves (8 items)",
+            "Yesterday, I went _________ a. a beautiful butterfly.",
+            "I saw _________ b. me a new toy.",
+            "She felt _________ c. a paper boat.",
+            "My brother made _________ d. to the zoo.",
+            "My grandmother gave _________ e. very tired.",
+            "We went _________ f. a funny movie.",
+            "I saw _________ g. a birthday cake.",
+            "Dad made _________ h. to the library.",
+            "My teacher gave _________ i. us all a gold star.",
+            "I put _________ j. shells in my pocket.",
+            "[O] L2 — Unscramble the sentence (8 items)",
+            "1. went / beach. / I / to / the",
+            "→ ________________________________________",
+            "2. ocean. / saw / We / the / big",
+            "→ ________________________________________",
+            "3. felt / I / happy. / very",
+            "→ ________________________________________",
+            "4. made / a / sandcastle. / Dad",
+            "→ ________________________________________",
+            "5. gave / Mom / me / ice cream.",
+            "→ ________________________________________",
+            "6. went / park / They / to / the / yesterday.",
+            "→ ________________________________________",
+            "7. a / saw / dog. / small / She",
+            "→ ________________________________________",
+            "8. dinner / made / mother / My",
+            "→ ________________________________________",
+            "9. shells / the / I / found / on / beach.",
+            "→ ________________________________________",
+            "10. felt / tired / but / We / happy.",
+            "→ ________________________________________",
+            "[O] L3 — Fill in the blank with 3 options (8 items)",
+            "Last Sunday, I ________________________________________ (go / went / going) to the park.",
+            "I ________________________________________ (see / saw / seen) a tall tree.",
+            "She ________________________________________ (feel / felt / feeling) happy at the party.",
+            "My friend ________________________________________ (make / made / makes) a kite.",
+            "The teacher ________________________________________ (give / gave / gives) us a sticker.",
+            "We ________________________________________ (went / saw / made) to the cinema.",
+            "He ________________________________________ (saw / gave / felt) a fast car on the street.",
+            "I ________________________________________ (felt / made / went) my bed this morning.",
+            "Dad ________________________________________ (make / made / makes) a big sandcastle for us.",
+            "Mom ________________________________________ (give / gave / gives) me a beautiful shell.",
+            "[O] L4 — Sentence Expansion (8 items)",
+            "Base: I went. Add: to the zoo",
+            "→ ________________________________________",
+            "Base: I saw. Add: a big elephant",
+            "→ ________________________________________",
+            "Base: I felt. Add: excited",
+            "→ ________________________________________",
+            "Base: I made. Add: a drawing",
+            "→ ________________________________________",
+            "Base: She gave. Add: me an apple",
+            "→ ________________________________________",
+            "Base: We went. Add: to the library",
+            "→ ________________________________________",
+            "Base: He saw. Add: a small dog",
+            "→ ________________________________________",
+            "Base: They felt. Add: tired",
+            "→ ________________________________________",
+            "Base: Dad made. Add: a beautiful sandcastle",
+            "→ ________________________________________",
+            "Base: Mom gave. Add: me a pretty shell",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Where did you go last weekend? ________________________________________",
+            "What did you see? ________________________________________",
+            "How did you feel? ________________________________________",
+            "What did you make recently? ________________________________________",
+            "Who gave you a gift? ________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Sunday, Leo went to the beach with his friends. First, he saw a big ship on the water. Then, he made a large sandcastle. He felt very proud. Finally, his friend gave him a cool shell. It was a great trip.\")",
+            "A.",
+            "Stage 1 — Global (listen once, no stopping): ☐ The story is about a bad day. ☐ The story is about a trip to the zoo. ☐ The story is about a trip to the beach.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Leo make? ________________________________________",
+            "Fill in the key fact: Leo felt very proud because he made a ________________________________________.",
+            "C. Stage 3B — Inference: Why did his friend give him a shell? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'Yesterday, I go to the beach.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I feeled very happy.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'She gived me a book.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'We makings a sandcastle.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'He see a big bird yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Ocean Ecosystems",
+          "content": [
+            "Science: Ocean Animals and Coral Reefs",
+            "The ocean is full of amazing animals! Coral reefs are home to thousands of species.",
+            "• Crab: hard shell for protection, 8 legs for walking  • Starfish: can regenerate lost arms!  • Coral: actually an animal, not a plant!",
+            "1. What body part helps a crab survive dangerous predators?",
+            "→ ____________________________________________________________",
+            "2. True or False: A coral reef is made up of plants.",
+            "→ ____________ Because: ____________________________________________",
+            "3. Max WENT to the beach and SAW a crab. Write a past tense sentence about this:",
+            "→ ____________________________________________________________",
+            "4. If a starfish loses one arm, what can it do? (a) die  (b) grow a new arm  (c) swim away fast",
+            "→ ____________ Because: ____________________________________________",
+            "Challenge: Which ocean animal would you most like to see? Write 1 sentence using 'saw'.",
+            "____________________________________________________________",
+            "5. Write 1 sentence using 'felt': I felt __________________ when I saw the ocean.",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write đã thấy in English: ________________________________________",
+            "2. Make 1 past tense sentence with went: ________________________________________",
+            "3. Make 1 past tense sentence with made: ________________________________________",
+            "4. Order these 3 events by writing 1 or 2 or 3: I went home. I went to the beach. I made a sandcastle. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 35 — Session 1 | Topic: My Best Day",
+          "content": [
+            "📝 Week 35 — Session 1 | Topic: My Best Day (Beginning — The Beach)",
+            "Today's goal: Write 3 sentences about the BEGINNING of your best day.",
+            "Story Starter: One special day, I _________________________ (went / saw / felt / made / gave).",
+            "Sentence 1 (went + where): _____________________________________________________________________",
+            "Sentence 2 (saw + what): _______________________________________________________________________",
+            "Sentence 3 (felt + how): ________________________________________________________________________",
+            "Extension: Add a describing word to each sentence (e.g. beautiful, amazing, colourful).",
+            "____________________________________________________________",
+            "☐ Did I use 'went', 'saw', or 'felt'?  ☐ Capital letter?  ☐ Full stop?",
+            "☐ Did I describe WHERE I went?  ☐ Did I say HOW I felt?",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 1",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "b. saw: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "c. felt: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "d. made: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "e. gave: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write about where you went: ________________________________________",
+            "Write about what you saw: ________________________________________",
+            "Write about how you felt: ________________________________________",
+            "Write about what you made: ________________________________________",
+            "Write about what someone gave you: ________________________________________",
+            "Error correction (5 items):",
+            "I see a bird yesterday.",
+            "→ ________________________________________",
+            "We go to the park last week.",
+            "→ ________________________________________",
+            "He make a paper plane.",
+            "→ ________________________________________",
+            "I feel tired last night.",
+            "→ ________________________________________",
+            "She give me a pen.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến trường.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con chó.",
+            "→ ________________________________________",
+            "Cô ấy đã cảm thấy vui.",
+            "→ ________________________________________",
+            "Anh ấy đã làm một cái bánh.",
+            "→ ________________________________________",
+            "Mẹ đã cho tôi một quả táo.",
+            "→ ________________________________________",
+            "",
+            "Portfolio (My Best Day):",
+            "Write 1 sentence about what you did on your best day (use 'went' or 'saw'):",
+            "____________________________________________________________",
+            "Write 1 sentence about how you felt (use 'felt'):",
+            "____________________________________________________________",
+            "",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1 [Target: 100 words. Scaffolding: 40.0% blank. 40 words blanked / 100 total words]",
+            "\"Hello everyone! My [1] ________________________________________. I am [2] ________________________________________. Today I will [3] ________________________________________ my best day ever! [4] ________________________________________ family and I went to [5] ________________________________________. The [6] ________________________________________ brightly. First, I [7] ________________________________________ cool blue water. I [8] ________________________________________! Then, my dad and I [9] ________________________________________ sandcastle together. Next, my [10] ________________________________________ some delicious strawberry ice cream. After that, I [11] ________________________________________ crab in the white sand. Finally, we [12] ________________________________________. I was tired but very happy. It [13] ________________________________________! Thank you for listening!\"",
+            "Phrase Bank (Choose the correct option): [1] (game is Max / name is Max / house is Max) [2] (nine years old / ten days cold / two months new) [3] (ask you for / tell you about / talk you to) [4] (Next winter, his / Tomorrow morning, your / Last summer, my) [5] (the beautiful beach / the ugly zoo / the dark park) [6] (rain was falling / snow was snowing / sun was shining) [7] (ran into the / flew over the / slept under the) [8] (felt so sad / felt so angry / felt so happy) [9] (broke a tiny / made a big / painted a red) [10] (dad ate up / dog ran to / mom gave me) [11] (saw a small / caught a big / fed a tall) [12] (stayed at school / went back home / slept right there) [13] (is a bad nightmare / was a great adventure / will be a long week)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Sau đó, tôi đã ăn trưa.",
+            "→ ________________________________________",
+            "Error Correction: First I played, next I go home.",
+            "→ ________________________________________",
+            "Fill-in: I was hungry. ________________________________________, I ate an apple."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  A Trip to the City Zoo",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Luna went to the beach.",
+            "T / F: Luna saw a tall giraffe.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Luna see first?",
+            "→ ________________________________________",
+            "What did the zookeeper give them?",
+            "→ ________________________________________",
+            "Fill-in from text: She felt very ________________________________________ because the monkeys were jumping.",
+            "Stage 3B — Inference: Why did they make a drawing in their notebooks?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words",
+          "content": [
+            "went (Vietnamese: đã đi)",
+            "→ Sentence: I went to the zoo yesterday.",
+            "→ Your turn: I went ________________________________________.",
+            "saw (Vietnamese: đã thấy)",
+            "→ Sentence: I saw a big elephant.",
+            "→ Your turn: I saw ________________________________________.",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Sentence: I felt excited to see the animals.",
+            "→ Your turn: I felt ________________________________________.",
+            "made (Vietnamese: đã làm/chế tạo)",
+            "→ Sentence: I made a drawing of a lion.",
+            "→ Your turn: I made ________________________________________.",
+            "gave (Vietnamese: đã cho/tặng)",
+            "→ Sentence: The zookeeper gave me a ticket.",
+            "→ Your turn: My mom gave ________________________________________.",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Odd One Out (8 items - circle the wrong verb tense)",
+            "went / played / go / saw",
+            "make / felt / did / had",
+            "gave / read / see / went",
+            "feel / saw / played / watched",
+            "made / give / went / felt",
+            "saw / look / played / listened",
+            "went / walked / run / felt",
+            "gave / take / saw / made",
+            "see / made / walked / ran",
+            "felt / gave / go / went",
+            "[O] L2 — Find the Mistake (8 items)",
+            "1. I goed to the supermarket yesterday.",
+            "→ ________________________________________",
+            "2. She feeled sick this morning.",
+            "→ ________________________________________",
+            "3. They gived me a present.",
+            "→ ________________________________________",
+            "4. We maked a big cake.",
+            "→ ________________________________________",
+            "5. He seed a strange car outside.",
+            "→ ________________________________________",
+            "6. I go to the park last Sunday.",
+            "→ ________________________________________",
+            "7. Mom make dinner yesterday.",
+            "→ ________________________________________",
+            "8. The teacher give us homework last week.",
+            "→ ________________________________________",
+            "9. She sawed the beautiful sunset.",
+            "→ ________________________________________",
+            "10. I gived my friend a birthday card.",
+            "→ ________________________________________",
+            "[O] L3 — Sentence Transformation (8 items - Change from Present to Past)",
+            "I go to school.",
+            "→ Yesterday, ________________________________________.",
+            "I see my friend.",
+            "→ Yesterday, ________________________________________.",
+            "I feel happy.",
+            "→ Yesterday, ________________________________________.",
+            "I make a toy.",
+            "→ Yesterday, ________________________________________.",
+            "She gives me food.",
+            "→ Yesterday, ________________________________________.",
+            "We go home.",
+            "→ Yesterday, ________________________________________.",
+            "They see a bird.",
+            "→ Yesterday, ________________________________________.",
+            "He feels sad.",
+            "→ Yesterday, ________________________________________.",
+            "She goes to the park.",
+            "→ Yesterday, ________________________________________.",
+            "They make a kite.",
+            "→ Yesterday, ________________________________________.",
+            "[O] L4 — True/False with Justification (8 items)",
+            "\"I went to the moon yesterday\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I saw a dinosaur at the park\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I felt hot in the snow\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I made a sandcastle in my bedroom\" is logical. T / F. Why? ________________________________________",
+            "\"My dog gave me a book\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"We went to sleep in the morning\" is logical. T / F. Why? ________________________________________",
+            "\"I saw the sun at night\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I felt hungry after eating a big pizza\" is logical. T / F. Why? ________________________________________",
+            "\"I gave a sandwich to my teacher\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I saw a rainbow at night\" is a logical sentence. T / F. Why? ________________________________________",
+            "[O] L5 — Write Your Own Story (5 items) Write 5 sentences about a trip you took, using First, Then, Next, After that, Finally.",
+            "First, ________________________________________",
+            "Then, ________________________________________",
+            "Next, ________________________________________",
+            "After that, ________________________________________",
+            "Finally, ________________________________________",
+            "[ Sub-total: ___ / 45 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Friday, Anna went to the mountains. First, she saw a large forest. Then, she made a small fire with her dad. She felt very warm. Finally, her dad gave her some hot soup. It was a wonderful evening.\")",
+            "A.",
+            "Stage 1 — Global (listen once): ☐ The story is about the beach. ☐ The story is about the mountains. ☐ The story is about the city.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Anna make? ________________________________________",
+            "Fill in the key fact: Anna felt very ________________________________________ near the fire.",
+            "C. Stage 3B — Inference: Why did her dad give her hot soup? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'First I go to the park.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Then I see a big dog.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'Next I feel scary.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'After that I make a run.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'Finally my mom give me a hug.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Animal Diets",
+          "content": [
+            "Science: Zoo Animals and Their Adaptations",
+            "Animals at the zoo are adapted (specially designed by nature) for their home habitat!",
+            "• Giraffe: 1.8 m neck → reaches leaves high in trees  • Penguin: waterproof feathers → swims in icy water  • Elephant: big ears → fans itself to stay cool",
+            "1. Why does a giraffe have such a long neck?",
+            "→ ____________________________________________________________",
+            "2. True or False: A penguin's feathers get wet and heavy in water.",
+            "→ ____________ Because: ____________________________________________",
+            "3. Max WENT to the zoo and SAW a giraffe eating leaves. Write a complete past tense sentence:",
+            "→ ____________________________________________________________",
+            "4. Which animal FEELS the hottest in summer? (a) giraffe  (b) elephant  (c) penguin  Why?",
+            "→ ____________________________________________________________",
+            "Challenge: If you could GIVE one adaptation to a human, which would you choose? Write 1 sentence using 'gave'.",
+            "____________________________________________________________",
+            "5. Write 1 sentence using 'made': The zookeeper made __________________ for the animals.",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write đã đi in English: ________________________________________",
+            "2. Make 1 past tense sentence with saw: ________________________________________",
+            "3. Make 1 past tense sentence with gave: ________________________________________",
+            "4. Order these 3 events by writing 1 or 2 or 3: I felt full. I ate lunch. I saw the food. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 35 — Session 2 | Topic: A Zoo Trip",
+          "content": [
+            "📝 Week 35 — Session 2 | Topic: My Best Day (Middle — The Zoo)",
+            "Today's goal: Write 3 sentences about the MIDDLE of your best day — something special happened!",
+            "Story Starter: In the afternoon, I _________________________ (went / saw / made / gave / felt).",
+            "Sentence 1: ___________________________________________________________________________________",
+            "Sentence 2: ___________________________________________________________________________________",
+            "Sentence 3 (gave someone something OR made something): _________________________________________",
+            "Extension: Write 1 sentence about a problem that happened and how you solved it.",
+            "____________________________________________________________",
+            "☐ Did I use 'saw', 'made', or 'gave'?  ☐ Did I describe what made it special?",
+            "☐ Capital letter?  ☐ Full stop?  ☐ Did I use 'because' or 'so'?",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 2",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: ________________________________________",
+            "b. saw: ________________________________________",
+            "c. felt: ________________________________________",
+            "d. made: ________________________________________",
+            "e. gave: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with \"First, I went\": ________________________________________",
+            "Write a sentence with \"Then, I saw\": ________________________________________",
+            "Write a sentence with \"Next, I felt\": ________________________________________",
+            "Write a sentence with \"After that, I made\": ________________________________________",
+            "Write a sentence with \"Finally, he gave\": ________________________________________",
+            "Error correction (5 items):",
+            "She go to the zoo yesterday.",
+            "→ ________________________________________",
+            "I feeled very hot.",
+            "→ ________________________________________",
+            "We maked a drawing.",
+            "→ ________________________________________",
+            "They seed a giraffe.",
+            "→ ________________________________________",
+            "He gived me food.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Đầu tiên, tôi đã đi đến sở thú.",
+            "→ ________________________________________",
+            "Sau đó, tôi đã thấy một con khỉ.",
+            "→ ________________________________________",
+            "Tiếp theo, tôi đã cảm thấy vui.",
+            "→ ________________________________________",
+            "Sau đó, tôi đã làm một bức tranh.",
+            "→ ________________________________________",
+            "Cuối cùng, mẹ đã cho tôi nước.",
+            "→ ________________________________________",
+            "",
+            "Portfolio (At the Zoo):",
+            "Write 1 sentence about an animal you saw at the zoo (use 'saw'):",
+            "____________________________________________________________",
+            "Write 1 sentence about what you made or gave (use 'made' or 'gave'):",
+            "____________________________________________________________",
+            "",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2 [Target: 110 words. Scaffolding: 50.0% blank. 55 words blanked / 110 total words]",
+            "\"Hi everyone! My name is Luna and I [1] ________________________________________ [2] ____________________________________________________________ you today. [3] _______________________________________________ happy family [4] ________________________________________ huge city zoo. [5] ________________________________________ around the big park [6] ________________________________________ a very tall giraffe [7] _________________________________________________________. [8] ________________________________________ to the loud monkey area. [9] ________________________________________ excited because they [10] ________________________________________. [11] ________________________________________ brother and I [12] ________________________________________ drawing of the animals. [13] ________________________________________ nice zookeeper [14] ________________________________________ special food [15] ________________________________________ friendly birds. [16] _____________________________________________________ back to our car. [17] ________________________________________ incredible day! [18] ________________________________________ watching my new video today!\"",
+            "Phrase Bank (Choose the correct option): [1] (need to sleep my / like to eat my / want to share my) [2] (amazing memory with / boring homework with / terrible nightmare with) [3] (Next tomorrow, my / Last weekend, my / Every morning, my) [4] (flew over a / stayed in a / went to a) [5] (First, we walked / Last, we slept / Then, we flew) [6] (and I heard / and I saw / and I ate) [7] (drinking hot soup / wearing red shoes / eating green leaves) [8] (Then, we went / Now, we sleep / Soon, we fly) [9] (I felt so / He ran so / She cried so) [10] (was sleeping everywhere / am hiding everywhere / were jumping everywhere) [11] (Before, my big / Next, my little / After, my tall) [12] (cooked a hot / made a funny / broke a scary) [13] (Before this, the / Under there, the / After that, the) [14] (gave us some / took them some / bought him some) [15] (to drink the / to feed the / to drive the) [16] (Slowly, we swam / Quickly, we ran / Finally, we went) [17] (It was an / They are an / We were an) [18] (Sorry you for / Thank you for / Angry you for)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Session 3 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 3 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation: Cuối cùng, tôi đã đi ngủ.",
+            "→ ________________________________________",
+            "Error Correction: First I read a book. Next I reading another book.",
+            "→ ________________________________________",
+            "Fill-in: I was very tired. ________________________________________, I went to sleep early."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  A Perfect Saturday",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Max went to the park with his mom.",
+            "T / F: Max saw a kite in the sky.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Max and his dad make?",
+            "→ ________________________________________",
+            "What did his dad give him for lunch?",
+            "→ ________________________________________",
+            "Fill-in from text: I felt very relaxed and completely ________________________________________.",
+            "Stage 3B — Inference: How do we know Max stayed at the park for a long time?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Mastery Level: ALL 5 story words",
+          "content": [
+            "Vocabulary Review — all 5 story words and Cambridge words studied this week.",
+            "☐ went (đã đi) — went to the beach",
+            "☐ saw (đã thấy) — saw the ocean",
+            "☐ felt (đã cảm thấy) — felt happy",
+            "☐ made (đã làm) — made a sandcastle",
+            "☐ gave (đã cho) — gave me food",
+            "[ Sub-total: ___ / 16 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Logical Sequencing (8 items - Number the events 1 to 8) ___ I felt very happy playing in the water. ___ Finally, I went to sleep because I was tired. ___ First, I went to the beach. ___ Next, I made a big sandcastle. ___ Then, I saw the blue ocean. ___ After that, mom gave me ice cream. ___ We went back home in the evening. ___ I saw a small crab on the sand.",
+            "[O] L2 — Correct the False Fact (8 items)",
+            "1. Max went to the zoo.",
+            "→ No, Max went ________________________________________.",
+            "2. Max saw an airplane.",
+            "→ No, Max saw ________________________________________.",
+            "3. Max felt angry.",
+            "→ No, Max felt ________________________________________.",
+            "4. Max made a sandcastle.",
+            "→ No, Max made ________________________________________.",
+            "5. His dad gave him pizza.",
+            "→ No, his dad gave ________________________________________.",
+            "6. The kite was in the water.",
+            "→ No, the kite was ________________________________________.",
+            "7. The paper boat was in the sky.",
+            "→ No, the paper boat was ________________________________________.",
+            "8. Max went home quickly.",
+            "→ No, Max walked home ________________________________________.",
+            "[O] L3 — Word Categories (8 items - Put the words in the correct box: Nouns / Verbs / Adjectives) Words: went, beautiful, kite, saw, happy, park, felt, big Verbs: ________________________________________ Nouns: ________________________________________ Adjectives: ________________________________________",
+            "[O] L4 — Complete the Dialogue (8 items) A: Where did you go yesterday? B: I 1.________________________________________ to the park. A: What did you see there? B: I 2.________________________________________ a beautiful kite. A: Did you feel happy? B: Yes, I 3.________________________________________ very relaxed. A: What did you do next? B: My dad and I 4.________________________________________ a paper boat. A: Did you eat lunch? B: Yes, my dad 5.________________________________________ me a sandwich. A: 6.________________________________________ did you go home? B: We 7.________________________________________ home when the sun 8.________________________________________ down.",
+            "[O] L5 — Paragraph Writing (5 items) Write a short paragraph (5 sentences) about a perfect Saturday. Use went, saw, felt, made, gave.",
+            "[ Sub-total: ___ / 37 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+          "content": [
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Saturday, Tom went to the library. First, he saw many amazing books. Then, he read a story and felt very excited. Next, he made a special bookmark. Finally, the librarian gave him a sticker for reading well.\")",
+            "A.",
+            "Stage 1 — Global (listen once): ☐ The story is about the park. ☐ The story is about the library. ☐ The story is about the zoo.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Tom see? ________________________________________",
+            "Fill in the key fact: The librarian gave him a ________________________________________.",
+            "C. Stage 3B — Inference: Why did he feel excited? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Mixed types — grammar + vocabulary + story facts)",
+          "content": [
+            "1. 'I went to the park and see a bird.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'She feeled tired so she go home.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'We make a boat and gave it to him.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'First I played, finally I eating.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'He gived me a book yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Floating and Sinking",
+          "content": [
+            "Science: Why Things Float and Sink",
+            "Objects float when they are LESS DENSE than water. They sink when they are MORE DENSE than water!",
+            "• Density = how much 'stuff' is packed into a space  • Cork floats  • Iron sinks",
+            "• A steel ship FLOATS because it is shaped to trap air — air is very light!",
+            "1. A paper boat FLOATS. A metal coin SINKS. What is the difference?",
+            "→ ____________________________________________________________",
+            "2. True or False: A heavy steel ship sinks because steel is heavy.",
+            "→ ____________ Because: ____________________________________________",
+            "3. Max MADE a paper boat at the park. He WATCHED it FLOAT. Write a complete past tense sentence:",
+            "→ ____________________________________________________________",
+            "4. Which would float? (a) a large rock  (b) an empty plastic bottle  (c) a coin  Why?",
+            "→ ____________________________________________________________",
+            "Challenge: Write 1 sentence using 'felt' to describe how Max felt when his kite flew up.",
+            "____________________________________________________________",
+            "5. Write 1 sentence using 'gave': Max gave __________________ to his dad.",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write 3 irregular past tense verbs: ________________________________________",
+            "2. Make 1 past tense sentence with went: ________________________________________",
+            "3. Make 1 past tense sentence with felt: ________________________________________",
+            "4. Order these events: I slept. I brushed my teeth. I woke up. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 3 — FINAL)  📝  Week 35 — Session 3 | Topic: A Perfect Saturday",
+          "content": [
+            "📝 Week 35 — Session 3 | Topic: My Best Day (Full Story)",
+            "Today's goal: Write your complete Beginning-Middle-End story about your BEST DAY.",
+            "Write your full paragraph here:",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "Checklist: ☐ Used 'went', 'saw', 'felt', 'made', AND 'gave'?  ☐ Used sequence words?",
+            "☐ Beginning (where/when), Middle (what happened), End (how you felt or what you learned)?",
+            "☐ Capital letter?  ☐ Full stop?  ☐ At least 4 sentences?",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 3",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. Write a sentence with went: ________________________________________",
+            "b. Write a sentence with saw: ________________________________________",
+            "c. Write a sentence with felt: ________________________________________",
+            "d. Write a sentence with made: ________________________________________",
+            "e. Write a sentence with gave: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Where did you go? ________________________________________",
+            "What did you see? ________________________________________",
+            "How did you feel? ________________________________________",
+            "What did you make? ________________________________________",
+            "What did they give you? ________________________________________",
+            "Error correction (5 items):",
+            "I see a kite yesterday.",
+            "→ ________________________________________",
+            "We go to the park last Saturday.",
+            "→ ________________________________________",
+            "He make a boat. → ________________________________________",
+            "I feel relaxed last night.",
+            "→ ________________________________________",
+            "She give me a sandwich.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến công viên.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con diều.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy thư giãn.",
+            "→ ________________________________________",
+            "Chúng tôi đã làm một con thuyền.",
+            "→ ________________________________________",
+            "Bố đã cho tôi một cái bánh mì.",
+            "→ ________________________________________",
+            "",
+            "Portfolio (Mastery — Perfect Saturday):",
+            "Write 2 sentences about a perfect Saturday using at least 3 different irregular past verbs:",
+            "____________________________________________________________",
+            "____________________________________________________________",
+            "",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 3 [Target: 115 words. Scaffolding: 60.0% blank. 69 words blanked / 115 total words]",
+            "\"Hello everyone! I am Max and [1] ________________________________________ [2] ________________________________________. [3] ____________________________________________________________________, [4] __________________________________________________________________ I [5] __________________________________________________________________ [6] __________________________________________________________________ my house. First, [7] _____________________________________________________________________ [8] __________________________________________________________________ high [9] ________________________________________ blue sky. Then, [10] __________________________________________________________________ [11] __________________________________________________________________ [12] __________________________________________________________________ grass. I [13] __________________________________________________________________ [14] __________________________________________________________________. Next, [15] __________________________________________________________________ [16] __________________________________________________________________ and [17] __________________________________________________________________ the cool water. [18] __________________________________________________________________ very quickly. [19] ________________________________________ dad [20] __________________________________________________________________ [21] __________________________________________________________________ our lunch. [22] ________________________________________ a large tree [23] ________________________________________. Finally, the sun went down and we walked home slowly. I loved my fun day! Goodbye everyone!\"",
+            "Phrase Bank (Choose the correct option): [1] (he has a / I had the / you have to) [2] (worst Sunday now / best Saturday ever / bad Monday morning) [3] (At the night / On the evening / In the morning) [4] (my sister but / your brother or / my dad and) [5] (went to the / go from a / jump in the) [6] (small school by / big park near / tall mountain over) [7] (He sees an / We see the / I saw a) [8] (ugly bird sitting / beautiful kite flying / scary dog running) [9] (on the dark / in the bright / under the cold) [10] (they lost some / you hid the / we found a) [11] (bad hole under / big rock in / good spot on) [12] (the hard yellow / the soft green / the cold white) [13] (feel very angry / fall very sadly / felt very relaxed) [14] (and completely happy / but totally sad / or very tired) [15] (I break an / we made a / she broke the) [16] (big wooden table / fast metal car / small paper boat) [17] (took it out / threw it away / put it in) [18] (It floated away / They sank down / He ran off) [19] (Before this, his / After that, my / Under there, your) [20] (took you an / gave me a / stole him the) [21] (bad apple from / dirty water in / tasty sandwich for) [22] (We stood over / They jumped on / We sat under) [23] (and ate everything / but drank nothing / so spilled something)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_2": [
+    {
+      "session": 1,
+      "session_label": "Session 1 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________",
+            "[O] SPIRAL REVIEW (5 min)",
+            "Translation: Đầu tiên, tôi đã chơi ở công viên.",
+            "→ ________________________________________",
+            "Error Correction: Yesterday, I am very happy.",
+            "→ ________________________________________",
+            "Fill-in: First, I woke up. Then ________________________________________, I brushed my teeth."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  My Best Day Ever",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Max went to the park.",
+            "T / F: Max made a sandcastle with his dad.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Max see first?",
+            "→ ________________________________________",
+            "What did Max's mom give him?",
+            "→ ________________________________________",
+            "Fill-in from text: Max was tired but ________________________________________.",
+            "Stage 3B — Inference: Why did Max put the shells in his pocket? Use the text.",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: went, saw, felt, made",
+          "content": [
+            "went (Vietnamese: đã đi)",
+            "→ Memory trick: W-E-N-T: We Enjoy New Trips",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: went to a place",
+            "→ Collocation practice:",
+            "a. I went ________________________________________ to the beach yesterday.",
+            "b. We went ________________________________________ to the supermarket.",
+            "→ Your turn: I went to ________________________________________.",
+            "saw (Vietnamese: đã thấy)",
+            "→ Memory trick: S-A-W: See A Whale",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: saw a thing",
+            "→ Collocation practice:",
+            "a. I saw ________________________________________ a big bird in the sky.",
+            "b. He saw ________________________________________ his friend at school.",
+            "→ Your turn: I saw ________________________________________.",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Memory trick: F-E-L-T: Friends Enjoy Laughing Together",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: felt an emotion",
+            "→ Collocation practice:",
+            "a. She felt ________________________________________ very happy.",
+            "b. They felt ________________________________________ tired after running.",
+            "→ Your turn: I felt ________________________________________.",
+            "made (Vietnamese: đã làm/chế tạo)",
+            "→ Memory trick: M-A-D-E: My Art Displays Energy",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: made a thing",
+            "→ Collocation practice:",
+            "a. Dad made ________________________________________ a sandwich for me.",
+            "b. We made ________________________________________ a big sandcastle.",
+            "→ Your turn: I made ________________________________________.",
+            "gave (Vietnamese: đã cho/tặng)",
+            "→ Memory trick: G-A-V-E: Good Apples Very Excellent",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: gave me a thing",
+            "→ Collocation practice:",
+            "a. Mom gave ________________________________________ me an apple.",
+            "b. The teacher gave ________________________________________ me a book.",
+            "→ Your turn: My friend gave me ________________________________________."
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Match the sentence halves (8 items)",
+            "Yesterday, I went _________ a. a beautiful butterfly.",
+            "I saw _________ b. me a new toy.",
+            "She felt _________ c. a paper boat.",
+            "My brother made _________ d. to the zoo.",
+            "My grandmother gave _________ e. very tired.",
+            "We went _________ f. a funny movie.",
+            "I saw _________ g. a birthday cake.",
+            "Dad made _________ h. to the library.",
+            "[O] L2 — Unscramble the sentence (8 items)",
+            "went / beach. / I / to / the",
+            "→ ________________________________________",
+            "ocean. / saw / We / the / big",
+            "→ ________________________________________",
+            "felt / I / happy. / very",
+            "→ ________________________________________",
+            "made / a / sandcastle. / Dad",
+            "→ ________________________________________",
+            "gave / Mom / me / ice cream.",
+            "→ ________________________________________",
+            "went / park / They / to / the / yesterday.",
+            "→ ________________________________________",
+            "a / saw / dog. / small / She",
+            "→ ________________________________________",
+            "dinner / made / mother / My",
+            "→ ________________________________________",
+            "[O] L3 — Fill in the blank with 3 options (8 items)",
+            "Last Sunday, I ________________________________________ (go / went / going) to the park.",
+            "I ________________________________________ (see / saw / seen) a tall tree.",
+            "She ________________________________________ (feel / felt / feeling) happy at the party.",
+            "My friend ________________________________________ (make / made / makes) a kite.",
+            "The teacher ________________________________________ (give / gave / gives) us a sticker.",
+            "We ________________________________________ (went / saw / made) to the cinema.",
+            "He ________________________________________ (saw / gave / felt) a fast car on the street.",
+            "I ________________________________________ (felt / made / went) my bed this morning.",
+            "[O] L4 — Sentence Expansion (8 items)",
+            "Base: I went. Add: to the zoo",
+            "→ ________________________________________",
+            "Base: I saw. Add: a big elephant",
+            "→ ________________________________________",
+            "Base: I felt. Add: excited",
+            "→ ________________________________________",
+            "Base: I made. Add: a drawing",
+            "→ ________________________________________",
+            "Base: She gave. Add: me an apple",
+            "→ ________________________________________",
+            "Base: We went. Add: to the library",
+            "→ ________________________________________",
+            "Base: He saw. Add: a small dog",
+            "→ ________________________________________",
+            "Base: They felt. Add: tired",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Where did you go last weekend? ________________________________________",
+            "What did you see? ________________________________________",
+            "How did you feel? ________________________________________",
+            "What did you make recently? ________________________________________",
+            "Who gave you a gift? ________________________________________"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "— Cambridge Flyers Listening format",
+            "— Cambridge Flyers Listening format",
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Sunday, Leo went to the beach with his friends. First, he saw a big ship on the water. Then, he made a large sandcastle. He felt very proud. Finally, his friend gave him a cool shell. It was a great trip.\")",
+            "A.",
+            "Stage 1 — Global (listen once, no stopping): ☐ The story is about a bad day. ☐ The story is about a trip to the zoo. ☐ The story is about a trip to the beach.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Leo make? ________________________________________",
+            "Fill in the key fact: Leo felt very proud because he made a ________________________________________.",
+            "C. Stage 3B — Inference: Why did his friend give him a shell? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'Yesterday, I go to the beach.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I feeled very happy.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'She gived me a book.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'We makings a sandcastle.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'He see a big bird yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Ocean Ecosystems",
+          "content": [
+            "The diagram shows: A crab with a hard round shell in the middle, eight legs for walking, and two sharp claws at the front.",
+            "Inquiry task: Why does a crab need a hard shell? ________________________________________",
+            "🔍 YouTube: \"How crabs walk and eat for kids\"",
+            "[ Sub-total: ___ / 1 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write đã thấy in English: ________________________________________",
+            "2. Make 1 past tense sentence with went: ________________________________________",
+            "3. Make 1 past tense sentence with made: ________________________________________",
+            "4. Order these 3 events by writing 1 or 2 or 3: I went home. I went to the beach. I made a sandcastle. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 35 — Session 1 | Topic: My Best Day",
+          "content": [
+            "Check your sentences: ☐ Did I use the correct past tense verb? ☐ Did I start with a capital letter and end with a full stop?",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 1",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "b. saw: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "c. felt: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "d. made: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "e. gave: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write about where you went: ________________________________________",
+            "Write about what you saw: ________________________________________",
+            "Write about how you felt: ________________________________________",
+            "Write about what you made: ________________________________________",
+            "Write about what someone gave you: ________________________________________",
+            "Error correction (5 items):",
+            "I see a bird yesterday.",
+            "→ ________________________________________",
+            "We go to the park last week.",
+            "→ ________________________________________",
+            "He make a paper plane.",
+            "→ ________________________________________",
+            "I feel tired last night.",
+            "→ ________________________________________",
+            "She give me a pen.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến trường.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con chó.",
+            "→ ________________________________________",
+            "Cô ấy đã cảm thấy vui.",
+            "→ ________________________________________",
+            "Anh ấy đã làm một cái bánh.",
+            "→ ________________________________________",
+            "Mẹ đã cho tôi một quả táo.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1 [Target: 100 words. Scaffolding: 40.0% blank. 40 words blanked / 100 total words]",
+            "\"Hello everyone! My [1] ________________________________________. I am [2] ________________________________________. Today I will [3] ________________________________________ my best day ever! [4] ________________________________________ family and I went to [5] ________________________________________. The [6] ________________________________________ brightly. First, I [7] ________________________________________ cool blue water. I [8] ________________________________________! Then, my dad and I [9] ________________________________________ sandcastle together. Next, my [10] ________________________________________ some delicious strawberry ice cream. After that, I [11] ________________________________________ crab in the white sand. Finally, we [12] ________________________________________. I was tired but very happy. It [13] ________________________________________! Thank you for listening!\"",
+            "Phrase Bank (Choose the correct option): [1] (game is Max / name is Max / house is Max) [2] (nine years old / ten days cold / two months new) [3] (ask you for / tell you about / talk you to) [4] (Next winter, his / Tomorrow morning, your / Last summer, my) [5] (the beautiful beach / the ugly zoo / the dark park) [6] (rain was falling / snow was snowing / sun was shining) [7] (ran into the / flew over the / slept under the) [8] (felt so sad / felt so angry / felt so happy) [9] (broke a tiny / made a big / painted a red) [10] (dad ate up / dog ran to / mom gave me) [11] (saw a small / caught a big / fed a tall) [12] (stayed at school / went back home / slept right there) [13] (is a bad nightmare / was a great adventure / will be a long week)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 (120 min)",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________",
+            "[O] SPIRAL REVIEW (5 min)",
+            "Translation: Sau đó, tôi đã ăn trưa.",
+            "→ ________________________________________",
+            "Error Correction: First I played, next I go home.",
+            "→ ________________________________________",
+            "Fill-in: I was hungry. ________________________________________, I ate an apple."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  A Trip to the City Zoo",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Luna went to the beach.",
+            "T / F: Luna saw a tall giraffe.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Luna see first?",
+            "→ ________________________________________",
+            "What did the zookeeper give them?",
+            "→ ________________________________________",
+            "Fill-in from text: She felt very ________________________________________ because the monkeys were jumping.",
+            "Stage 3B — Inference: Why did they make a drawing in their notebooks?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words",
+          "content": [
+            "went (Vietnamese: đã đi)",
+            "→ Sentence: I went to the zoo yesterday.",
+            "→ Your turn: I went ________________________________________.",
+            "saw (Vietnamese: đã thấy)",
+            "→ Sentence: I saw a big elephant.",
+            "→ Your turn: I saw ________________________________________.",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Sentence: I felt excited to see the animals.",
+            "→ Your turn: I felt ________________________________________.",
+            "made (Vietnamese: đã làm/chế tạo)",
+            "→ Sentence: I made a drawing of a lion.",
+            "→ Your turn: I made ________________________________________.",
+            "gave (Vietnamese: đã cho/tặng)",
+            "→ Sentence: The zookeeper gave me a ticket.",
+            "→ Your turn: My mom gave ________________________________________."
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Odd One Out (8 items - circle the wrong verb tense)",
+            "went / played / go / saw",
+            "make / felt / did / had",
+            "gave / read / see / went",
+            "feel / saw / played / watched",
+            "made / give / went / felt",
+            "saw / look / played / listened",
+            "went / walked / run / felt",
+            "gave / take / saw / made",
+            "[O] L2 — Find the Mistake (8 items)",
+            "I goed to the supermarket yesterday.",
+            "→ ________________________________________",
+            "She feeled sick this morning.",
+            "→ ________________________________________",
+            "They gived me a present.",
+            "→ ________________________________________",
+            "We maked a big cake.",
+            "→ ________________________________________",
+            "He seed a strange car outside.",
+            "→ ________________________________________",
+            "I go to the park last Sunday.",
+            "→ ________________________________________",
+            "Mom make dinner yesterday.",
+            "→ ________________________________________",
+            "The teacher give us homework last week.",
+            "→ ________________________________________",
+            "[O] L3 — Sentence Transformation (8 items - Change from Present to Past)",
+            "I go to school.",
+            "→ Yesterday, ________________________________________.",
+            "I see my friend.",
+            "→ Yesterday, ________________________________________.",
+            "I feel happy.",
+            "→ Yesterday, ________________________________________.",
+            "I make a toy.",
+            "→ Yesterday, ________________________________________.",
+            "She gives me food.",
+            "→ Yesterday, ________________________________________.",
+            "We go home.",
+            "→ Yesterday, ________________________________________.",
+            "They see a bird.",
+            "→ Yesterday, ________________________________________.",
+            "He feels sad.",
+            "→ Yesterday, ________________________________________.",
+            "[O] L4 — True/False with Justification (8 items)",
+            "\"I went to the moon yesterday\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I saw a dinosaur at the park\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I felt hot in the snow\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I made a sandcastle in my bedroom\" is logical. T / F. Why? ________________________________________",
+            "\"My dog gave me a book\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"We went to sleep in the morning\" is logical. T / F. Why? ________________________________________",
+            "\"I saw the sun at night\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I felt hungry after eating a big pizza\" is logical. T / F. Why? ________________________________________",
+            "[O] L5 — Write Your Own Story (5 items) Write 5 sentences about a trip you took, using First, Then, Next, After that, Finally.",
+            "First, ________________________________________",
+            "Then, ________________________________________",
+            "Next, ________________________________________",
+            "After that, ________________________________________",
+            "Finally, ________________________________________"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Friday, Anna went to the mountains. First, she saw a large forest. Then, she made a small fire with her dad. She felt very warm. Finally, her dad gave her some hot soup. It was a wonderful evening.\")",
+            "A.",
+            "Stage 1 — Global (listen once): ☐ The story is about the beach. ☐ The story is about the mountains. ☐ The story is about the city.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Anna make? ________________________________________",
+            "Fill in the key fact: Anna felt very ________________________________________ near the fire.",
+            "C. Stage 3B — Inference: Why did her dad give her hot soup? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'First I go to the park.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Then I see a big dog.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'Next I feel scary.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'After that I make a run.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'Finally my mom give me a hug.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Animal Diets",
+          "content": [
+            "The diagram shows: A tall yellow giraffe with brown spots using its long neck to reach green leaves on a high tree branch.",
+            "Inquiry task: Why do giraffes need a long neck? ________________________________________ 🔍 YouTube: \"Giraffe eating leaves for kids\"",
+            "[ Sub-total: ___ / 1 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write đã đi in English: ________________________________________",
+            "2. Make 1 past tense sentence with saw: ________________________________________",
+            "3. Make 1 past tense sentence with gave: ________________________________________",
+            "4. Order these 3 events by writing 1 or 2 or 3: I felt full. I ate lunch. I saw the food. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 35 — Session 2 | Topic: A Zoo Trip",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 2",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: ________________________________________",
+            "b. saw: ________________________________________",
+            "c. felt: ________________________________________",
+            "d. made: ________________________________________",
+            "e. gave: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with \"First, I went\": ________________________________________",
+            "Write a sentence with \"Then, I saw\": ________________________________________",
+            "Write a sentence with \"Next, I felt\": ________________________________________",
+            "Write a sentence with \"After that, I made\": ________________________________________",
+            "Write a sentence with \"Finally, he gave\": ________________________________________",
+            "Error correction (5 items):",
+            "She go to the zoo yesterday.",
+            "→ ________________________________________",
+            "I feeled very hot.",
+            "→ ________________________________________",
+            "We maked a drawing.",
+            "→ ________________________________________",
+            "They seed a giraffe.",
+            "→ ________________________________________",
+            "He gived me food.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Đầu tiên, tôi đã đi đến sở thú.",
+            "→ ________________________________________",
+            "Sau đó, tôi đã thấy một con khỉ.",
+            "→ ________________________________________",
+            "Tiếp theo, tôi đã cảm thấy vui.",
+            "→ ________________________________________",
+            "Sau đó, tôi đã làm một bức tranh.",
+            "→ ________________________________________",
+            "Cuối cùng, mẹ đã cho tôi nước.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2 [Target: 110 words. Scaffolding: 50.0% blank. 55 words blanked / 110 total words]",
+            "\"Hi everyone! My name is Luna and I [1] ________________________________________ [2] ____________________________________________________________ you today. [3] _______________________________________________ happy family [4] ________________________________________ huge city zoo. [5] ________________________________________ around the big park [6] ________________________________________ a very tall giraffe [7] _________________________________________________________. [8] ________________________________________ to the loud monkey area. [9] ________________________________________ excited because they [10] ________________________________________. [11] ________________________________________ brother and I [12] ________________________________________ drawing of the animals. [13] ________________________________________ nice zookeeper [14] ________________________________________ special food [15] ________________________________________ friendly birds. [16] _____________________________________________________ back to our car. [17] ________________________________________ incredible day! [18] ________________________________________ watching my new video today!\"",
+            "Phrase Bank (Choose the correct option): [1] (need to sleep my / like to eat my / want to share my) [2] (amazing memory with / boring homework with / terrible nightmare with) [3] (Next tomorrow, my / Last weekend, my / Every morning, my) [4] (flew over a / stayed in a / went to a) [5] (First, we walked / Last, we slept / Then, we flew) [6] (and I heard / and I saw / and I ate) [7] (drinking hot soup / wearing red shoes / eating green leaves) [8] (Then, we went / Now, we sleep / Soon, we fly) [9] (I felt so / He ran so / She cried so) [10] (was sleeping everywhere / am hiding everywhere / were jumping everywhere) [11] (Before, my big / Next, my little / After, my tall) [12] (cooked a hot / made a funny / broke a scary) [13] (Before this, the / Under there, the / After that, the) [14] (gave us some / took them some / bought him some) [15] (to drink the / to feed the / to drive the) [16] (Slowly, we swam / Quickly, we ran / Finally, we went) [17] (It was an / They are an / We were an) [18] (Sorry you for / Thank you for / Angry you for)"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_5": [
+    {
+      "session": 1,
+      "session_label": "Slot 1 — Activate / Khởi động — Spiral, Reading & Vocab S1",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 1 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________",
+            "[O] SPIRAL REVIEW (5 min)",
+            "Translation: Đầu tiên, tôi đã chơi ở công viên.",
+            "→ ________________________________________",
+            "Error Correction: Yesterday, I am very happy.",
+            "→ ________________________________________",
+            "Fill-in: First, I woke up. Then ________________________________________, I brushed my teeth."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  My Best Day Ever",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Max went to the park.",
+            "T / F: Max made a sandcastle with his dad.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Max see first?",
+            "→ ________________________________________",
+            "What did Max's mom give him?",
+            "→ ________________________________________",
+            "Fill-in from text: Max was tired but ________________________________________.",
+            "Stage 3B — Inference: Why did Max put the shells in his pocket? Use the text.",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Story Words: went, saw, felt, made",
+          "content": [
+            "went (Vietnamese: đã đi)",
+            "→ Memory trick: W-E-N-T: We Enjoy New Trips",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: went to a place",
+            "→ Collocation practice:",
+            "a. I went ________________________________________ to the beach yesterday.",
+            "b. We went ________________________________________ to the supermarket.",
+            "→ Your turn: I went to ________________________________________.",
+            "saw (Vietnamese: đã thấy)",
+            "→ Memory trick: S-A-W: See A Whale",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: saw a thing",
+            "→ Collocation practice:",
+            "a. I saw ________________________________________ a big bird in the sky.",
+            "b. He saw ________________________________________ his friend at school.",
+            "→ Your turn: I saw ________________________________________.",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Memory trick: F-E-L-T: Friends Enjoy Laughing Together",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: felt an emotion",
+            "→ Collocation practice:",
+            "a. She felt ________________________________________ very happy.",
+            "b. They felt ________________________________________ tired after running.",
+            "→ Your turn: I felt ________________________________________.",
+            "made (Vietnamese: đã làm/chế tạo)",
+            "→ Memory trick: M-A-D-E: My Art Displays Energy",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: made a thing",
+            "→ Collocation practice:",
+            "a. Dad made ________________________________________ a sandwich for me.",
+            "b. We made ________________________________________ a big sandcastle.",
+            "→ Your turn: I made ________________________________________.",
+            "gave (Vietnamese: đã cho/tặng)",
+            "→ Memory trick: G-A-V-E: Good Apples Very Excellent",
+            "→ Write 3 times: ________________________________________ ________________________________________ ________________________________________",
+            "→ Key Collocation: gave me a thing",
+            "→ Collocation practice:",
+            "a. Mom gave ________________________________________ me an apple.",
+            "b. The teacher gave ________________________________________ me a book.",
+            "→ Your turn: My friend gave me ________________________________________."
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Match the sentence halves (8 items)",
+            "Yesterday, I went _________ a. a beautiful butterfly.",
+            "I saw _________ b. me a new toy.",
+            "She felt _________ c. a paper boat.",
+            "My brother made _________ d. to the zoo.",
+            "My grandmother gave _________ e. very tired.",
+            "We went _________ f. a funny movie.",
+            "I saw _________ g. a birthday cake.",
+            "Dad made _________ h. to the library.",
+            "[O] L2 — Unscramble the sentence (8 items)",
+            "went / beach. / I / to / the",
+            "→ ________________________________________",
+            "ocean. / saw / We / the / big",
+            "→ ________________________________________",
+            "felt / I / happy. / very",
+            "→ ________________________________________",
+            "made / a / sandcastle. / Dad",
+            "→ ________________________________________",
+            "gave / Mom / me / ice cream.",
+            "→ ________________________________________",
+            "went / park / They / to / the / yesterday.",
+            "→ ________________________________________",
+            "a / saw / dog. / small / She",
+            "→ ________________________________________",
+            "dinner / made / mother / My",
+            "→ ________________________________________",
+            "[O] L3 — Fill in the blank with 3 options (8 items)",
+            "Last Sunday, I ________________________________________ (go / went / going) to the park.",
+            "I ________________________________________ (see / saw / seen) a tall tree.",
+            "She ________________________________________ (feel / felt / feeling) happy at the party.",
+            "My friend ________________________________________ (make / made / makes) a kite.",
+            "The teacher ________________________________________ (give / gave / gives) us a sticker.",
+            "We ________________________________________ (went / saw / made) to the cinema.",
+            "He ________________________________________ (saw / gave / felt) a fast car on the street.",
+            "I ________________________________________ (felt / made / went) my bed this morning.",
+            "[O] L4 — Sentence Expansion (8 items)",
+            "Base: I went. Add: to the zoo",
+            "→ ________________________________________",
+            "Base: I saw. Add: a big elephant",
+            "→ ________________________________________",
+            "Base: I felt. Add: excited",
+            "→ ________________________________________",
+            "Base: I made. Add: a drawing",
+            "→ ________________________________________",
+            "Base: She gave. Add: me an apple",
+            "→ ________________________________________",
+            "Base: We went. Add: to the library",
+            "→ ________________________________________",
+            "Base: He saw. Add: a small dog",
+            "→ ________________________________________",
+            "Base: They felt. Add: tired",
+            "→ ________________________________________",
+            "[O] L5 — Write Your Own (5 items)",
+            "Where did you go last weekend? ________________________________________",
+            "What did you see? ________________________________________",
+            "How did you feel? ________________________________________",
+            "What did you make recently? ________________________________________",
+            "Who gave you a gift? ________________________________________"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Slot 2 — Drill / Luyện tập — Listening, Error Correction & Writing S1",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "— Cambridge Flyers Listening format",
+            "— Cambridge Flyers Listening format",
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Sunday, Leo went to the beach with his friends. First, he saw a big ship on the water. Then, he made a large sandcastle. He felt very proud. Finally, his friend gave him a cool shell. It was a great trip.\")",
+            "A.",
+            "Stage 1 — Global (listen once, no stopping): ☐ The story is about a bad day. ☐ The story is about a trip to the zoo. ☐ The story is about a trip to the beach.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Leo make? ________________________________________",
+            "Fill in the key fact: Leo felt very proud because he made a ________________________________________.",
+            "C. Stage 3B — Inference: Why did his friend give him a shell? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'Yesterday, I go to the beach.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'I feeled very happy.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'She gived me a book.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'We makings a sandcastle.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'He see a big bird yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Ocean Ecosystems",
+          "content": [
+            "The diagram shows: A crab with a hard round shell in the middle, eight legs for walking, and two sharp claws at the front.",
+            "Inquiry task: Why does a crab need a hard shell? ________________________________________",
+            "🔍 YouTube: \"How crabs walk and eat for kids\"",
+            "[ Sub-total: ___ / 1 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write đã thấy in English: ________________________________________",
+            "2. Make 1 past tense sentence with went: ________________________________________",
+            "3. Make 1 past tense sentence with made: ________________________________________",
+            "4. Order these 3 events by writing 1 or 2 or 3: I went home. I went to the beach. I made a sandcastle. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 1)  📝  Week 35 — Session 1 | Topic: My Best Day",
+          "content": [
+            "Check your sentences: ☐ Did I use the correct past tense verb? ☐ Did I start with a capital letter and end with a full stop?",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 1",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "b. saw: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "c. felt: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "d. made: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "e. gave: Vietnamese: ________________________________________ | Sentence: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write about where you went: ________________________________________",
+            "Write about what you saw: ________________________________________",
+            "Write about how you felt: ________________________________________",
+            "Write about what you made: ________________________________________",
+            "Write about what someone gave you: ________________________________________",
+            "Error correction (5 items):",
+            "I see a bird yesterday.",
+            "→ ________________________________________",
+            "We go to the park last week.",
+            "→ ________________________________________",
+            "He make a paper plane.",
+            "→ ________________________________________",
+            "I feel tired last night.",
+            "→ ________________________________________",
+            "She give me a pen.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến trường.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con chó.",
+            "→ ________________________________________",
+            "Cô ấy đã cảm thấy vui.",
+            "→ ________________________________________",
+            "Anh ấy đã làm một cái bánh.",
+            "→ ________________________________________",
+            "Mẹ đã cho tôi một quả táo.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 1 [Target: 100 words. Scaffolding: 40.0% blank. 40 words blanked / 100 total words]",
+            "\"Hello everyone! My [1] ________________________________________. I am [2] ________________________________________. Today I will [3] ________________________________________ my best day ever! [4] ________________________________________ family and I went to [5] ________________________________________. The [6] ________________________________________ brightly. First, I [7] ________________________________________ cool blue water. I [8] ________________________________________! Then, my dad and I [9] ________________________________________ sandcastle together. Next, my [10] ________________________________________ some delicious strawberry ice cream. After that, I [11] ________________________________________ crab in the white sand. Finally, we [12] ________________________________________. I was tired but very happy. It [13] ________________________________________! Thank you for listening!\"",
+            "Phrase Bank (Choose the correct option): [1] (game is Max / name is Max / house is Max) [2] (nine years old / ten days cold / two months new) [3] (ask you for / tell you about / talk you to) [4] (Next winter, his / Tomorrow morning, your / Last summer, my) [5] (the beautiful beach / the ugly zoo / the dark park) [6] (rain was falling / snow was snowing / sun was shining) [7] (ran into the / flew over the / slept under the) [8] (felt so sad / felt so angry / felt so happy) [9] (broke a tiny / made a big / painted a red) [10] (dad ate up / dog ran to / mom gave me) [11] (saw a small / caught a big / fed a tall) [12] (stayed at school / went back home / slept right there) [13] (is a bad nightmare / was a great adventure / will be a long week)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Slot 3 — Bridge / Kết nối — Spiral, Reading & Vocab S2",
+      "parts": [
+        {
+          "title": "WEEK 35 | SESSION 2 | BLOCK B",
+          "content": [
+            "Name: ________________________________________ Date: ________________________________________",
+            "[O] SPIRAL REVIEW (5 min)",
+            "Translation: Sau đó, tôi đã ăn trưa.",
+            "→ ________________________________________",
+            "Error Correction: First I played, next I go home.",
+            "→ ________________________________________",
+            "Fill-in: I was hungry. ________________________________________, I ate an apple."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  A Trip to the City Zoo",
+          "content": [
+            "📖 My First Cooking Lesson",
+            "Last Saturday, my aunt taught me to cook.",
+            "First, she carefully showed me how to wash vegetables. I slowly cut the carrots.",
+            "I accidentally spilled the salt! 'Don't worry,' she said kindly.",
+            "We quietly stirred the soup. Finally, we happily ate our meal together.",
+            "I learned that cooking is harder than it looks — but more delicious, too.",
+            "",
+            "Stage 1 — Global (read once, no re-reading):",
+            "T / F: Luna went to the beach.",
+            "T / F: Luna saw a tall giraffe.",
+            "What is the main topic? ________________________________________",
+            "Stage 2 — Detail (re-read):",
+            "What did Luna see first?",
+            "→ ________________________________________",
+            "What did the zookeeper give them?",
+            "→ ________________________________________",
+            "Fill-in from text: She felt very ________________________________________ because the monkeys were jumping.",
+            "Stage 3B — Inference: Why did they make a drawing in their notebooks?",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Deep review story words",
+          "content": [
+            "went (Vietnamese: đã đi)",
+            "→ Sentence: I went to the zoo yesterday.",
+            "→ Your turn: I went ________________________________________.",
+            "saw (Vietnamese: đã thấy)",
+            "→ Sentence: I saw a big elephant.",
+            "→ Your turn: I saw ________________________________________.",
+            "felt (Vietnamese: đã cảm thấy)",
+            "→ Sentence: I felt excited to see the animals.",
+            "→ Your turn: I felt ________________________________________.",
+            "made (Vietnamese: đã làm/chế tạo)",
+            "→ Sentence: I made a drawing of a lion.",
+            "→ Your turn: I made ________________________________________.",
+            "gave (Vietnamese: đã cho/tặng)",
+            "→ Sentence: The zookeeper gave me a ticket.",
+            "→ Your turn: My mom gave ________________________________________."
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "[O] L1 — Odd One Out (8 items - circle the wrong verb tense)",
+            "went / played / go / saw",
+            "make / felt / did / had",
+            "gave / read / see / went",
+            "feel / saw / played / watched",
+            "made / give / went / felt",
+            "saw / look / played / listened",
+            "went / walked / run / felt",
+            "gave / take / saw / made",
+            "[O] L2 — Find the Mistake (8 items)",
+            "I goed to the supermarket yesterday.",
+            "→ ________________________________________",
+            "She feeled sick this morning.",
+            "→ ________________________________________",
+            "They gived me a present.",
+            "→ ________________________________________",
+            "We maked a big cake.",
+            "→ ________________________________________",
+            "He seed a strange car outside.",
+            "→ ________________________________________",
+            "I go to the park last Sunday.",
+            "→ ________________________________________",
+            "Mom make dinner yesterday.",
+            "→ ________________________________________",
+            "The teacher give us homework last week.",
+            "→ ________________________________________",
+            "[O] L3 — Sentence Transformation (8 items - Change from Present to Past)",
+            "I go to school.",
+            "→ Yesterday, ________________________________________.",
+            "I see my friend.",
+            "→ Yesterday, ________________________________________.",
+            "I feel happy.",
+            "→ Yesterday, ________________________________________.",
+            "I make a toy.",
+            "→ Yesterday, ________________________________________.",
+            "She gives me food.",
+            "→ Yesterday, ________________________________________.",
+            "We go home.",
+            "→ Yesterday, ________________________________________.",
+            "They see a bird.",
+            "→ Yesterday, ________________________________________.",
+            "He feels sad.",
+            "→ Yesterday, ________________________________________.",
+            "[O] L4 — True/False with Justification (8 items)",
+            "\"I went to the moon yesterday\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I saw a dinosaur at the park\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I felt hot in the snow\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I made a sandcastle in my bedroom\" is logical. T / F. Why? ________________________________________",
+            "\"My dog gave me a book\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"We went to sleep in the morning\" is logical. T / F. Why? ________________________________________",
+            "\"I saw the sun at night\" is a logical sentence. T / F. Why? ________________________________________",
+            "\"I felt hungry after eating a big pizza\" is logical. T / F. Why? ________________________________________",
+            "[O] L5 — Write Your Own Story (5 items) Write 5 sentences about a trip you took, using First, Then, Next, After that, Finally.",
+            "First, ________________________________________",
+            "Then, ________________________________________",
+            "Next, ________________________________________",
+            "After that, ________________________________________",
+            "Finally, ________________________________________"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "session_label": "Slot 4 — Challenge / Thử thách — Listening, Error Correction & Writing S2",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 3 (matching)",
+          "content": [
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "— Cambridge Flyers Listening Part 3 (matching)",
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Friday, Anna went to the mountains. First, she saw a large forest. Then, she made a small fire with her dad. She felt very warm. Finally, her dad gave her some hot soup. It was a wonderful evening.\")",
+            "A.",
+            "Stage 1 — Global (listen once): ☐ The story is about the beach. ☐ The story is about the mountains. ☐ The story is about the city.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Anna make? ________________________________________",
+            "Fill in the key fact: Anna felt very ________________________________________ near the fire.",
+            "C. Stage 3B — Inference: Why did her dad give her hot soup? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake — story + grammar)",
+          "content": [
+            "1. 'First I go to the park.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'Then I see a big dog.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'Next I feel scary.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'After that I make a run.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'Finally my mom give me a hug.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Animal Diets",
+          "content": [
+            "The diagram shows: A tall yellow giraffe with brown spots using its long neck to reach green leaves on a high tree branch.",
+            "Inquiry task: Why do giraffes need a long neck? ________________________________________ 🔍 YouTube: \"Giraffe eating leaves for kids\"",
+            "[ Sub-total: ___ / 1 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write đã đi in English: ________________________________________",
+            "2. Make 1 past tense sentence with saw: ________________________________________",
+            "3. Make 1 past tense sentence with gave: ________________________________________",
+            "4. Order these 3 events by writing 1 or 2 or 3: I felt full. I ate lunch. I saw the food. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 2)  📝  Week 35 — Session 2 | Topic: A Zoo Trip",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 2",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. went: ________________________________________",
+            "b. saw: ________________________________________",
+            "c. felt: ________________________________________",
+            "d. made: ________________________________________",
+            "e. gave: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Write a sentence with \"First, I went\": ________________________________________",
+            "Write a sentence with \"Then, I saw\": ________________________________________",
+            "Write a sentence with \"Next, I felt\": ________________________________________",
+            "Write a sentence with \"After that, I made\": ________________________________________",
+            "Write a sentence with \"Finally, he gave\": ________________________________________",
+            "Error correction (5 items):",
+            "She go to the zoo yesterday.",
+            "→ ________________________________________",
+            "I feeled very hot.",
+            "→ ________________________________________",
+            "We maked a drawing.",
+            "→ ________________________________________",
+            "They seed a giraffe.",
+            "→ ________________________________________",
+            "He gived me food.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Đầu tiên, tôi đã đi đến sở thú.",
+            "→ ________________________________________",
+            "Sau đó, tôi đã thấy một con khỉ.",
+            "→ ________________________________________",
+            "Tiếp theo, tôi đã cảm thấy vui.",
+            "→ ________________________________________",
+            "Sau đó, tôi đã làm một bức tranh.",
+            "→ ________________________________________",
+            "Cuối cùng, mẹ đã cho tôi nước.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 2 [Target: 110 words. Scaffolding: 50.0% blank. 55 words blanked / 110 total words]",
+            "\"Hi everyone! My name is Luna and I [1] ________________________________________ [2] ____________________________________________________________ you today. [3] _______________________________________________ happy family [4] ________________________________________ huge city zoo. [5] ________________________________________ around the big park [6] ________________________________________ a very tall giraffe [7] _________________________________________________________. [8] ________________________________________ to the loud monkey area. [9] ________________________________________ excited because they [10] ________________________________________. [11] ________________________________________ brother and I [12] ________________________________________ drawing of the animals. [13] ________________________________________ nice zookeeper [14] ________________________________________ special food [15] ________________________________________ friendly birds. [16] _____________________________________________________ back to our car. [17] ________________________________________ incredible day! [18] ________________________________________ watching my new video today!\"",
+            "Phrase Bank (Choose the correct option): [1] (need to sleep my / like to eat my / want to share my) [2] (amazing memory with / boring homework with / terrible nightmare with) [3] (Next tomorrow, my / Last weekend, my / Every morning, my) [4] (flew over a / stayed in a / went to a) [5] (First, we walked / Last, we slept / Then, we flew) [6] (and I heard / and I saw / and I ate) [7] (drinking hot soup / wearing red shoes / eating green leaves) [8] (Then, we went / Now, we sleep / Soon, we fly) [9] (I felt so / He ran so / She cried so) [10] (was sleeping everywhere / am hiding everywhere / were jumping everywhere) [11] (Before, my big / Next, my little / After, my tall) [12] (cooked a hot / made a funny / broke a scary) [13] (Before this, the / Under there, the / After that, the) [14] (gave us some / took them some / bought him some) [15] (to drink the / to feed the / to drive the) [16] (Slowly, we swam / Quickly, we ran / Finally, we went) [17] (It was an / They are an / We were an) [18] (Sorry you for / Thank you for / Angry you for)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "session_label": "Slot 5 — Perform / Biểu diễn — Error Correction, Writing & Task Cards S3",
+      "parts": [
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+          "content": [
+            "— Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+            "— Cambridge Flyers Listening Part 1 (Multiple Choice + T/F)",
+            "[O] (Teacher reads Audio Script aloud at 85 wpm: \"Last Saturday, Tom went to the library. First, he saw many amazing books. Then, he read a story and felt very excited. Next, he made a special bookmark. Finally, the librarian gave him a sticker for reading well.\")",
+            "A.",
+            "Stage 1 — Global (listen once): ☐ The story is about the park. ☐ The story is about the library. ☐ The story is about the zoo.",
+            "B. Stage 2 — Detail (listen again):",
+            "What did Tom see? ________________________________________",
+            "Fill in the key fact: The librarian gave him a ________________________________________.",
+            "C. Stage 3B — Inference: Why did he feel excited? ________________________________________",
+            "→ ________________________________________",
+            "____________________________________________________________",
+            "→ ________________________________________",
+            "D. Dictation (teacher reads twice — students write 2 sentences):",
+            "1. ________________________________________________________________",
+            "2. ________________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — Adverbs of Manner — FORMAL TEACHING (Rules, Spelli",
+          "score": 0,
+          "content": [
+            "📌 NOTE: Topic: Adverbs of Manner — FORMAL TEACHING (Rules, Spelling, Position)",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  ▶ Cambridge expectation: ≥2 adverbs of manner in a Writing Part 7 response improves quality score.",
+            "  -> Drill: 10 sentences — teacher gives adjective, student writes correct adverb form.",
+            "  ▶ Definition connection: adverbs appear in Reading Part 1 definitions too.",
+            "",
+            "📌 PRACTICE:",
+            "  1. Teacher models → Students repeat",
+            "  2. Substitution drill with the pattern above",
+            "  3. Pair practice — ask & answer"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Mixed types — grammar + vocabulary + story facts)",
+          "content": [
+            "1. 'I went to the park and see a bird.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "2. 'She feeled tired so she go home.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "3. 'We make a boat and gave it to him.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "4. 'First I played, finally I eating.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "5. 'He gived me a book yesterday.'",
+            "→ Mistake: ____________________ | Correction: ________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Floating and Sinking",
+          "content": [
+            "The diagram shows: A small folded paper boat sitting on top of blue water, with arrows pointing up from the water to show it pushing up.",
+            "Inquiry task: Why does a paper boat float? ________________________________________ 🔍 YouTube: \"Why things float for kids\"",
+            "[ Sub-total: ___ / 1 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write 3 irregular past tense verbs: ________________________________________",
+            "2. Make 1 past tense sentence with went: ________________________________________",
+            "3. Make 1 past tense sentence with felt: ________________________________________",
+            "4. Order these events: I slept. I brushed my teeth. I woke up. ________________________________________",
+            "5. STEM fact I learned today: ________________________________________",
+            "6. My best sentence this whole session: ________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT (PART 3 — FINAL)  📝  Week 35 — Session 3 | Topic: A Perfect Saturday",
+          "content": [
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 35, Session 3",
+          "content": [
+            "Vocabulary (5 items):",
+            "a. Write a sentence with went: ________________________________________",
+            "b. Write a sentence with saw: ________________________________________",
+            "c. Write a sentence with felt: ________________________________________",
+            "d. Write a sentence with made: ________________________________________",
+            "e. Write a sentence with gave: ________________________________________",
+            "Grammar sentences (5 items):",
+            "Where did you go? ________________________________________",
+            "What did you see? ________________________________________",
+            "How did you feel? ________________________________________",
+            "What did you make? ________________________________________",
+            "What did they give you? ________________________________________",
+            "Error correction (5 items):",
+            "I see a kite yesterday.",
+            "→ ________________________________________",
+            "We go to the park last Saturday.",
+            "→ ________________________________________",
+            "He make a boat. → ________________________________________",
+            "I feel relaxed last night.",
+            "→ ________________________________________",
+            "She give me a sandwich.",
+            "→ ________________________________________",
+            "Translation (5 items):",
+            "Tôi đã đi đến công viên.",
+            "→ ________________________________________",
+            "Tôi đã thấy một con diều.",
+            "→ ________________________________________",
+            "Tôi đã cảm thấy thư giãn.",
+            "→ ________________________________________",
+            "Chúng tôi đã làm một con thuyền.",
+            "→ ________________________________________",
+            "Bố đã cho tôi một cái bánh mì.",
+            "→ ________________________________________",
+            "🎥 VIDEO CHALLENGE SCRIPT — Session 3 [Target: 115 words. Scaffolding: 60.0% blank. 69 words blanked / 115 total words]",
+            "\"Hello everyone! I am Max and [1] ________________________________________ [2] ________________________________________. [3] ____________________________________________________________________, [4] __________________________________________________________________ I [5] __________________________________________________________________ [6] __________________________________________________________________ my house. First, [7] _____________________________________________________________________ [8] __________________________________________________________________ high [9] ________________________________________ blue sky. Then, [10] __________________________________________________________________ [11] __________________________________________________________________ [12] __________________________________________________________________ grass. I [13] __________________________________________________________________ [14] __________________________________________________________________. Next, [15] __________________________________________________________________ [16] __________________________________________________________________ and [17] __________________________________________________________________ the cool water. [18] __________________________________________________________________ very quickly. [19] ________________________________________ dad [20] __________________________________________________________________ [21] __________________________________________________________________ our lunch. [22] ________________________________________ a large tree [23] ________________________________________. Finally, the sun went down and we walked home slowly. I loved my fun day! Goodbye everyone!\"",
+            "Phrase Bank (Choose the correct option): [1] (he has a / I had the / you have to) [2] (worst Sunday now / best Saturday ever / bad Monday morning) [3] (At the night / On the evening / In the morning) [4] (my sister but / your brother or / my dad and) [5] (went to the / go from a / jump in the) [6] (small school by / big park near / tall mountain over) [7] (He sees an / We see the / I saw a) [8] (ugly bird sitting / beautiful kite flying / scary dog running) [9] (on the dark / in the bright / under the cold) [10] (they lost some / you hid the / we found a) [11] (bad hole under / big rock in / good spot on) [12] (the hard yellow / the soft green / the cold white) [13] (feel very angry / fall very sadly / felt very relaxed) [14] (and completely happy / but totally sad / or very tired) [15] (I break an / we made a / she broke the) [16] (big wooden table / fast metal car / small paper boat) [17] (took it out / threw it away / put it in) [18] (It floated away / They sank down / He ran off) [19] (Before this, his / After that, my / Under there, your) [20] (took you an / gave me a / stole him the) [21] (bad apple from / dirty water in / tasty sandwich for) [22] (We stood over / They jumped on / We sat under) [23] (and ate everything / but drank nothing / so spilled something)"
+          ]
+        }
+      ]
+    }
+  ],
+  "answer_key": [
+    "S1 ANSWER KEY",
+    "SPIRAL REVIEW SPIRAL REVIEW",
+    "PART 1 : 1. First, I played at the park. | 2. Yesterday, I was very happy. | 3. next / after that",
+    "PART 3 PART 1",
+    "PART 3  (Reading): Global: F / T / Max's best day ever at the beach | Detail: 1. the ocean | 2. strawberry ice cream | 3. happy | Inference: Because they were beautiful and he wanted to keep them.",
+    "PART 3 PART 3",
+    "PART 4  (ELA L1): 1-d, 2-a, 3-e, 4-c, 5-b, 6-h, 7-f, 8-g (Note: combinations of saw/went may vary, ensure logical match)",
+    "PART 5 PART 3",
+    "PART 6  (ELA L2): 1. I went to the beach. | 2. We saw the big ocean. | 3. I felt very happy. | 4. Dad made a sandcastle. | 5. Mom gave me ice cream. | 6. They went to the park yesterday. | 7. She saw a small dog. | 8. My mother made dinner.",
+    "PART 7 PART 3",
+    "PART 9  (ELA L3): 1. went | 2. saw | 3. felt | 4. made | 5. gave | 6. went | 7. saw | 8. made",
+    "S2 ANSWER KEY",
+    "SPIRAL REVIEW SPIRAL REVIEW",
+    "PART 1 : 1. Then, I ate lunch. | 2. First I played, next I went home. | 3. So / Then",
+    "PART 3 PART 1",
+    "PART 3  (Reading): Global: F / T / A trip to the city zoo | Detail: 1. a very tall giraffe | 2. some special food | 3. excited | Inference: Because they liked the animals and wanted to remember them.",
+    "PART 3 PART 3",
+    "PART 3  (ELA L1): 1. go | 2. make | 3. see | 4. feel | 5. give | 6. look | 7. run | 8. take (Circle the present tense verbs)",
+    "PART 4 PART 3",
+    "PART 5  (ELA L2): 1. I went to the supermarket yesterday. | 2. She felt sick this morning. | 3. They gave me a present. | 4. We made a big cake. | 5. He saw a strange car outside. | 6. I went to the park last Sunday. | 7. Mom made dinner yesterday. | 8. The teacher gave us homework last week.",
+    "PART 6 PART 3",
+    "PART 7  (ELA L3): 1. Yesterday, I went to school. | 2. Yesterday, I saw my friend. | 3. Yesterday, I felt happy. | 4. Yesterday, I made a toy. | 5. Yesterday, she gave me food. | 6. Yesterday, we went home. | 7. Yesterday, they saw a bird. | 8. Yesterday, he felt sad.",
+    "PART 9 PART 3",
+    "S3 ANSWER KEY",
+    "SPIRAL REVIEW SPIRAL REVIEW",
+    "PART 1 : 1. Finally, I went to sleep. | 2. First I read a book. Next I read another book. | 3. So / Then",
+    "PART 3 PART 1",
+    "PART 3  (Reading): Global: F / T / A Perfect Saturday | Detail: 1. a small paper boat | 2. a tasty sandwich | 3. happy | Inference: Because they were there from the morning until the sun went down.",
+    "PART 3 PART 3",
+    "PART 3  (ELA L1): 6, 8, 1, 4, 2, 5, 7, 3 (1. First, I went to the beach. 2. Then, I saw the blue ocean. 3. I saw a small crab... 4. Next, I made... 5. After that, mom gave... 6. I felt very happy... 7. We went back home... 8. Finally, I went to sleep...)",
+    "PART 4 PART 3",
+    "PART 5  (ELA L2): 1. ...to the big park. | 2. ...a beautiful kite. | 3. ...very relaxed. | 4. ...a small paper boat. | 5. ...a tasty sandwich. | 6. ...flying high in the bright blue sky. | 7. ...in the water. | 8. ...slowly.",
+    "PART 6 PART 3",
+    "PART 7  (ELA L3): Verbs: went, saw, felt | Nouns: kite, park | Adjectives: beautiful, happy, big",
+    "PART 9 PART 3"
+  ],
+  "answer_key_by_session": {
+    "s1": [
+      "S1 ANSWER KEY",
+      "SPIRAL REVIEW SPIRAL REVIEW",
+      "PART 1 : 1. First, I played at the park. | 2. Yesterday, I was very happy. | 3. next / after that",
+      "PART 3 PART 1",
+      "PART 3  (Reading): Global: F / T / Max's best day ever at the beach | Detail: 1. the ocean | 2. strawberry ice cream | 3. happy | Inference: Because they were beautiful and he wanted to keep them.",
+      "PART 3 PART 3",
+      "PART 4  (ELA L1): 1-d, 2-a, 3-e, 4-c, 5-b, 6-h, 7-f, 8-g (Note: combinations of saw/went may vary, ensure logical match)",
+      "PART 5 PART 3",
+      "PART 6  (ELA L2): 1. I went to the beach. | 2. We saw the big ocean. | 3. I felt very happy. | 4. Dad made a sandcastle. | 5. Mom gave me ice cream. | 6. They went to the park yesterday. | 7. She saw a small dog. | 8. My mother made dinner.",
+      "PART 7 PART 3",
+      "PART 9  (ELA L3): 1. went | 2. saw | 3. felt | 4. made | 5. gave | 6. went | 7. saw | 8. made"
+    ],
+    "s2": [
+      "S2 ANSWER KEY",
+      "SPIRAL REVIEW SPIRAL REVIEW",
+      "PART 1 : 1. Then, I ate lunch. | 2. First I played, next I went home. | 3. So / Then",
+      "PART 3 PART 1",
+      "PART 3  (Reading): Global: F / T / A trip to the city zoo | Detail: 1. a very tall giraffe | 2. some special food | 3. excited | Inference: Because they liked the animals and wanted to remember them.",
+      "PART 3 PART 3",
+      "PART 3  (ELA L1): 1. go | 2. make | 3. see | 4. feel | 5. give | 6. look | 7. run | 8. take (Circle the present tense verbs)",
+      "PART 4 PART 3",
+      "PART 5  (ELA L2): 1. I went to the supermarket yesterday. | 2. She felt sick this morning. | 3. They gave me a present. | 4. We made a big cake. | 5. He saw a strange car outside. | 6. I went to the park last Sunday. | 7. Mom made dinner yesterday. | 8. The teacher gave us homework last week.",
+      "PART 6 PART 3",
+      "PART 7  (ELA L3): 1. Yesterday, I went to school. | 2. Yesterday, I saw my friend. | 3. Yesterday, I felt happy. | 4. Yesterday, I made a toy. | 5. Yesterday, she gave me food. | 6. Yesterday, we went home. | 7. Yesterday, they saw a bird. | 8. Yesterday, he felt sad.",
+      "PART 9 PART 3"
+    ],
+    "s3": [
+      "S3 ANSWER KEY",
+      "SPIRAL REVIEW SPIRAL REVIEW",
+      "PART 1 : 1. Finally, I went to sleep. | 2. First I read a book. Next I read another book. | 3. So / Then",
+      "PART 3 PART 1",
+      "PART 3  (Reading): Global: F / T / A Perfect Saturday | Detail: 1. a small paper boat | 2. a tasty sandwich | 3. happy | Inference: Because they were there from the morning until the sun went down.",
+      "PART 3 PART 3",
+      "PART 3  (ELA L1): 6, 8, 1, 4, 2, 5, 7, 3 (1. First, I went to the beach. 2. Then, I saw the blue ocean. 3. I saw a small crab... 4. Next, I made... 5. After that, mom gave... 6. I felt very happy... 7. We went back home... 8. Finally, I went to sleep...)",
+      "PART 4 PART 3",
+      "PART 5  (ELA L2): 1. ...to the big park. | 2. ...a beautiful kite. | 3. ...very relaxed. | 4. ...a small paper boat. | 5. ...a tasty sandwich. | 6. ...flying high in the bright blue sky. | 7. ...in the water. | 8. ...slowly.",
+      "PART 6 PART 3",
+      "PART 7  (ELA L3): Verbs: went, saw, felt | Nouns: kite, park | Adjectives: beautiful, happy, big",
+      "PART 9 PART 3"
+    ]
+  },
+  "task_cards": [
+    "S1 Task — \"The Mystery Trip\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. Instructions for teacher: Give Card A to Student A, Card B to Student B. Tell them not to show their card. They must ask each other \"What did you do?\" to complete the story.",
+    "🃏 CARD A — Student A | Week 35 S1 — \"The Mystery Trip\"",
+    "You KNOW:",
+    "Morning: I went to the zoo. I saw a tall giraffe.",
+    "You DON'T KNOW. Ask your partner: \"What did you do in the afternoon?\"",
+    "Write what you hear:",
+    "________________________________________________________________________________",
+    "🃏 CARD B — Student B | Week 35 S1 — \"The Mystery Trip\"",
+    "You DON'T KNOW. Ask your partner: \"What did you do in the morning?\"",
+    "Write what you hear:",
+    "________________________________________________________________________________",
+    "You KNOW:",
+    "Afternoon: I ate ice cream. I felt very happy.",
+    "S2 Task — \"The Zoo Trip\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 35 S2 — \"The Zoo Trip\"",
+    "You KNOW: I saw a tall giraffe.",
+    "You DON'T KNOW. Ask your partner: \"How did you feel at the zoo?\"",
+    "Write what you hear:",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 35 S2 — \"The Zoo Trip\"",
+    "You KNOW: I felt very excited.",
+    "You DON'T KNOW. Ask your partner: \"What did you see at the zoo?\"",
+    "Write what you hear:",
+    "S3 Task — \"The Perfect Weekend\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 35 S3 — \"The Perfect Weekend\"",
+    "You KNOW: I went to the park and made a paper boat.",
+    "You DON'T KNOW. Ask your partner: \"What did your dad give you?\"",
+    "Write what you hear:",
+    "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 35 S3 — \"The Perfect Weekend\"",
+    "You KNOW: My dad gave me a tasty sandwich.",
+    "You DON'T KNOW. Ask your partner: \"Where did you go and what did you make?\"",
+    "Write what you hear:"
+  ],
+  "task_cards_by_session": {
+    "1": [
+      "S1 Task — \"The Mystery Trip\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line. Instructions for teacher: Give Card A to Student A, Card B to Student B. Tell them not to show their card. They must ask each other \"What did you do?\" to complete the story.",
+      "🃏 CARD A — Student A | Week 35 S1 — \"The Mystery Trip\"",
+      "You KNOW:",
+      "Morning: I went to the zoo. I saw a tall giraffe.",
+      "You DON'T KNOW. Ask your partner: \"What did you do in the afternoon?\"",
+      "Write what you hear:",
+      "________________________________________________________________________________",
+      "🃏 CARD B — Student B | Week 35 S1 — \"The Mystery Trip\"",
+      "You DON'T KNOW. Ask your partner: \"What did you do in the morning?\"",
+      "Write what you hear:",
+      "________________________________________________________________________________",
+      "You KNOW:",
+      "Afternoon: I ate ice cream. I felt very happy."
+    ],
+    "2": [
+      "S2 Task — \"The Zoo Trip\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 35 S2 — \"The Zoo Trip\"",
+      "You KNOW: I saw a tall giraffe.",
+      "You DON'T KNOW. Ask your partner: \"How did you feel at the zoo?\"",
+      "Write what you hear:",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 35 S2 — \"The Zoo Trip\"",
+      "You KNOW: I felt very excited.",
+      "You DON'T KNOW. Ask your partner: \"What did you see at the zoo?\"",
+      "Write what you hear:"
+    ],
+    "3": [
+      "S3 Task — \"The Perfect Weekend\" Materials: Print 2 copies of Card A and 2 copies of Card B per pair. Cut along the dotted line.",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD A — Student A | Week 35 S3 — \"The Perfect Weekend\"",
+      "You KNOW: I went to the park and made a paper boat.",
+      "You DON'T KNOW. Ask your partner: \"What did your dad give you?\"",
+      "Write what you hear:",
+      "✂ - - - - - - - - - - - - - - - - - - - - - - - - - 🃏 CARD B — Student B | Week 35 S3 — \"The Perfect Weekend\"",
+      "You KNOW: My dad gave me a tasty sandwich.",
+      "You DON'T KNOW. Ask your partner: \"Where did you go and what did you make?\"",
+      "Write what you hear:"
+    ]
+  },
+  "games": [
+    {
+      "id": "w35_g1",
+      "name": "Vocab Slam",
+      "type": "Vocabulary",
+      "duration": "10–12 min",
+      "players": "2–4 per group",
+      "session_fit": "All formats — best after vocab intro (P3) in any session",
+      "materials": "Vocab flashcards W35: went, saw, felt, made, gave",
+      "instructions": [
+        "Round 1: Teacher calls a Vietnamese meaning — first student to say the English word AND use it correctly in a sentence wins the card.",
+        "Round 2: Reverse — teacher calls English word, student gives Vietnamese + memory trick.",
+        "Bonus round: Students chain all vocab words (went, saw, felt, made, gave) into one connected story using sequence connectors from this week.",
+        "Team variant: 2 teams, 10 cards per round. Team with highest score wins."
+      ]
+    },
+    {
+      "id": "w35_g2",
+      "name": "Grammar Relay",
+      "type": "Grammar & Error Correction",
+      "duration": "12–15 min",
+      "players": "3–6 (team relay)",
+      "session_fit": "Best in Drill slot (Slot 2) or after P4/P6 in 3-session mode",
+      "materials": "10 sentence cards — 5 correct, 5 with errors based on: Past Simple (Irregular Verbs: went, saw, felt, made, gave)",
+      "instructions": [
+        "Grammar focus this week: Past Simple (Irregular Verbs: went, saw, felt, made, gave).",
+        "Speed Read: Display sentence for 5 sec. Teams write C (correct) or E (error) on whiteboards simultaneously — no copying allowed.",
+        "Fix-It: For error sentences, team that corrects fastest AND explains the rule earns double points.",
+        "Build: Each team member adds 1 original sentence using the grammar target. The chain must be logically connected — each sentence must link to the previous."
+      ]
+    },
+    {
+      "id": "w35_g3",
+      "name": "Story Race",
+      "type": "Speaking & Production",
+      "duration": "15–20 min",
+      "players": "Whole class (pairs)",
+      "session_fit": "All formats — best in final slot of the week (S3 / Slot 5 / Session B)",
+      "materials": "Story starter card: theme \"Adventure Stories — My Best Day ═══════════════════════════════════════════════════════\"",
+      "instructions": [
+        "Give each pair a story starter connected to this week's theme: \"Adventure Stories — My Best Day ═══════════════════════════════════════════════════════\".",
+        "Pair A adds 2 sentences — must include at least 2 vocab words from this week.",
+        "Pass to Pair B: they MUST correct any grammar mistake from Pair A first, then add 2 more sentences using different vocab words.",
+        "Final round: Each pair presents their story ending aloud. Class votes on most creative + most accurate (went, saw, felt, made, gave usage). Teacher scores grammar precision."
+      ]
+    }
+  ],
+  "video_prompts": {
+    "chanting": [
+      {
+        "title": "Chanting — W35 (9 prompts)",
+        "script": "[W35.CHANT.1] Bright, colorful, 2D flat cartoon style, 4-second looping clip, clean white background, no real people: Animated diary opening + bold text pulses on screen in sync + Audio: \"Best day! Best day! My best day!\" (120bpm, energetic child voice).\n[W35.CHANT.2] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated boy walking + bold text pulses progressively + Audio: \"Went! Went to the beach! I went to the beach!\" (120bpm, energetic child voice).\n[W35.CHANT.3] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated binoculars looking around + bold text pulses progressively + Audio: \"Saw! Saw the ocean! I saw the ocean!\" (120bpm, energetic child voice).\n[W35.CHANT.4] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated happy face smiling + bold text pulses progressively + Audio: \"Felt! Felt very happy! I felt very happy!\" (120bpm, energetic child voice).\n[W35.CHANT.5] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated hands building a sandcastle + bold text pulses progressively + Audio: \"Made! Made a sandcastle! I made a sandcastle!\" (120bpm, energetic child voice).\n[W35.CHANT.6] Bright, colorful, 2D flat cartoon style, 7-second looping clip, clean white background, no real people: Animated hand giving an ice cream cone + bold text pulses progressively + Audio: \"Gave! Gave me ice cream! She gave me ice cream!\" (120bpm, energetic child voice).\n[W35.CHANT.7] Bright, colorful, 2D flat cartoon style, 4-second looping clip, clean white background, no real people: Split screen showing a boy walking and binoculars looking + bold text pulses on screen in sync + Audio: \"Went to the beach! Saw the ocean!\" (120bpm, energetic child voice).\n[W35.CHANT.8] Bright, colorful, 2D flat cartoon style, 4-second looping clip, clean white background, no real people: Split screen showing a sandcastle and an ice cream cone + bold text pulses on screen in sync + Audio: \"Made a sandcastle! Gave me ice cream!\" (120bpm, energetic child voice).\n[W35.CHANT.9] Bright, colorful, 2D flat cartoon style, 6-second clip, clean white background, no real people: Rapid flashes of walking, looking, smiling, building, and giving + bold text pulses rapidly + Audio: \"Went! Saw! Felt! Made! Gave!\" (120bpm, energetic child voice)."
+      }
+    ],
+    "shadowing": [
+      {
+        "session": 2,
+        "title": "Shadowing — Session 2 (6 prompts)",
+        "sentences": [
+          "[W35.SHADOW.S2.1] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna building a sandcastle, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"First, I made a big sandcastle on the beautiful beach. First, I made a big sandcastle on the beautiful beach.\" (95wpm, said TWICE).",
+          "[W35.SHADOW.S2.2] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max pointing at the ocean, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Then, I saw a small crab walking in the sand. Then, I saw a small crab walking in the sand.\" (95wpm, said TWICE).",
+          "[W35.SHADOW.S2.3] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna holding an ice cream cone, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Next, my mom gave me sweet strawberry ice cream today. Next, my mom gave me sweet strawberry ice cream today.\" (95wpm, said TWICE).",
+          "[W35.SHADOW.S2.4] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max jumping in the water, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"After that, I went into the cold blue ocean water. After that, I went into the cold blue ocean water.\" (95wpm, said TWICE).",
+          "[W35.SHADOW.S2.5] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna smiling brightly, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Finally, I felt very happy about my fun summer trip. Finally, I felt very happy about my fun summer trip.\" (95wpm, said TWICE).",
+          "[W35.SHADOW.S2.6] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max waving goodbye, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"I had the best day ever with my lovely family. I had the best day ever with my lovely family.\" (95wpm, said TWICE)."
+        ]
+      },
+      {
+        "session": 3,
+        "title": "Shadowing — Session 3 (6 prompts)",
+        "sentences": [
+          "[W35.SHADOW.S3.1] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna looking excited, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Last weekend, I went to the big city zoo with my whole family. Last weekend, I went to the big city zoo with my whole family.\" (110wpm, twice, real-time shadow).",
+          "[W35.SHADOW.S3.2] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max pointing up, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"First, I saw a tall giraffe eating green leaves from a high tree. First, I saw a tall giraffe eating green leaves from a high tree.\" (110wpm, twice, real-time shadow).",
+          "[W35.SHADOW.S3.3] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna taking a photo, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Then, my dad took a funny picture of the little monkeys playing together. Then, my dad took a funny picture of the little monkeys playing together.\" (110wpm, twice, real-time shadow).",
+          "[W35.SHADOW.S3.4] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max eating lunch, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Next, we ate a big lunch because we were very hungry and tired. Next, we ate a big lunch because we were very hungry and tired.\" (110wpm, twice, real-time shadow).",
+          "[W35.SHADOW.S3.5] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Luna holding a souvenir, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"After that, my mom gave me a beautiful toy from the gift shop. After that, my mom gave me a beautiful toy from the gift shop.\" (110wpm, twice, real-time shadow).",
+          "[W35.SHADOW.S3.6] Clean 2D flat cartoon style, 8-second clip, medium shot: Character Max resting, 🎤 mic icon bottom-right from second 1, character points at camera and makes natural gestures + Audio: \"Finally, I felt very tired because we walked around the zoo all day. Finally, I felt very tired because we walked around the zoo all day.\" (110wpm, twice, real-time shadow)."
+        ]
+      }
+    ]
+  },
+  "teacher_contents": [
+    {
+      "session": 1,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "Last Sunday, Leo went to the beach with his friends. First, he saw a big ship on the water. Then, he made a large sandcastle. He felt very proud. Finally, his friend gave him a cool shell. It was a great trip.",
+        "dictation": []
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nStudent A: Names one thing Max did at the beach on his best day (e.g., \"Max went to the beach and made a sandcastle\").\nStudent B: Adds what Max felt or what his mom gave (e.g., \"His mom gave him a shell. He felt very happy\").\nGoal: Use went / made / felt / gave correctly — W35 irregular verbs in a personal story.\n\nPULL-OUT TASK (S1):\n— Show a beach picture. Ask: \"What did Max do? What did his mom give him?\"\n— Scaffold weaker students: \"Max WENT to ___. He MADE ___. He FELT ___.\"\n— Target elicitation: went / made / felt / gave — confirm no 'maked', 'gived', or 'feeled'.\n\nCOMMUNICATIVE TASK TIP:\n— Model immediately: \"We say MADE (not 'maked'), GAVE (not 'gived'), FELT (not 'feeled').\"\n— Stronger students: chain all 5 verbs: \"Max WENT to the beach. He SAW shells. He MADE a castle. His mom GAVE him a bag. He FELT proud.\"",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION — Ocean Ecosystems Crabs on the Beach Read this: A crab is a small ocean animal. It lives on the beach and in the water. A crab has a hard shell to protect its body. It has two big claws to catch food. Crabs walk sideways on the sand! They eat tiny plants and animals in the ocean.\nThe diagram shows: A crab with a hard round shell in the middle, eight legs for walking, and two sharp claws at the front.\nInquiry task: Why does a crab need a hard shell? ________________________________________\n🔍 YouTube: \"How crabs walk and eat for kids\"",
+      "in_class_speaking": "",
+      "vc_answer_key": "[1] game is Max [2] nine years old [3] ask you for [4] Next winter, his [5] the beautiful beach [6] rain was falling [7] ran into the [8] felt so sad [9] broke a tiny [10] dad ate up [11] saw a small [12] stayed at school [13] is a bad nightmare",
+      "reading_passage": "Last summer, Max went to the beach with his mom. First, he saw beautiful white shells on the sand. He picked them up and made a big sandcastle near the water. \"Look, Mom!\" he said. His mom gave him a big bag for all the shells. Max felt very happy and proud. At sunset, he was tired but he smiled. \"Today was my best day ever,\" Max said.",
+      "grammar_notes": "• went (W29), saw (W31), felt (W31), made (W32), gave — five key irregular verbs; gave is the new focus\n• give→gave is highly irregular and very common — 'gived' ✗ is a very frequent student error\n• Contrast: gave (past) vs gives (present 3rd person) — 'Mom GIVES him things. Today, she GAVE him a bag.'\n• 'felt' returns: Max felt happy — reinforces W31 feel→felt in a new personal context\n• Tip: 'gave' appears in many high-frequency phrases: gave me a hug / gave me a gift / gave me advice"
+    },
+    {
+      "session": 2,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "Last Friday, Anna went to the mountains. First, she saw a large forest. Then, she made a small fire with her dad. She felt very warm. Finally, her dad gave her some hot soup. It was a wonderful evening.",
+        "dictation": []
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance:\n\nStudent A: Describes what Luna saw at the zoo (e.g., \"Luna saw a tall giraffe\").\nStudent B: Adds what the zookeeper gave them and how Luna felt (e.g., \"The zookeeper gave them food. She felt excited\").\nGoal: saw / gave / felt / went — perception + emotion + action verbs.\n\nPULL-OUT TASK (S2):\n— Ask: \"What was the best thing Luna saw? How did she feel?\"\n— Scaffold: \"First, she WENT to the zoo. She SAW ___. A zookeeper GAVE them ___. She FELT ___.\"\n— Error focus: 'gave' — confirm students don't say 'gived' or 'given' (given = past participle, not Past Simple).\n\nDIFFERENTIATION:\n— Weaker students: picture of a zoo — name one animal Luna SAW and one emotion she FELT.\n— Stronger students: full retell using all 5 verbs: went / saw / felt / made / gave.",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION — Animal Diets What Do Giraffes Eat? Read this: A giraffe is a very tall animal. It has a long neck and long legs. Giraffes eat leaves from high trees. They do not eat meat. An animal that only eats plants is called a herbivore. A giraffe uses its long, dark tongue to pull leaves off the branches.\nThe diagram shows: A tall yellow giraffe with brown spots using its long neck to reach green leaves on a high tree branch.\nInquiry task: Why do giraffes need a long neck? ________________________________________ 🔍 YouTube: \"Giraffe eating leaves for kids\"",
+      "in_class_speaking": "Best Day Retell (Pairs): Student A describes Luna's zoo day in 3 sentences using saw / felt / gave. Student B describes Max's beach day in 3 sentences using went / made / felt. Then swap. Goal: both students produce all five W35 verbs. Extension — stronger students: Tell your own best day using all 5 verbs.",
+      "vc_answer_key": "[1] need to sleep my [2] amazing memory with [3] Next tomorrow, my [4] flew over a [5] First, we walked [6] and I heard [7] drinking hot soup [8] Then, we went [9] I felt so [10] was sleeping everywhere [11] Before, my big [12] cooked a hot [13] Before this, the [14] gave us some [15] to drink the [16] Slowly, we swam [17] It was an [18] Sorry you for",
+      "reading_passage": "Last Saturday, Luna went to the zoo with her class. First, she saw a tall, beautiful giraffe. \"Wow!\" she said. Then, a kind zookeeper gave Luna and her classmates some special animal food to hold. Luna felt very excited! She also saw funny monkeys jumping everywhere. She felt so happy that she laughed and laughed. She made a drawing in her notebook to remember the day.",
+      "grammar_notes": "• Session 2: went / saw / felt / made / gave — same five verbs, zoo adventure context\n• 'gave' used naturally: the zookeeper GAVE them food — reinforces the form in a new subject\n• Two uses of 'felt': felt excited (first reaction) + felt happy (continued emotion) — shows flexibility\n• Question drill: 'What did the zookeeper give Luna?' → 'She gave her animal food.'\n• Common error: students say 'the zookeeper gived' — model and correct immediately"
+    },
+    {
+      "session": 3,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "Last Saturday, Tom went to the library. First, he saw many amazing books. Then, he read a story and felt very excited. Next, he made a special bookmark. Finally, the librarian gave him a sticker for reading well.",
+        "dictation": []
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance:\n\nStudent A: Describes what Max and his dad made at the park (e.g., \"Max and his dad made a kite\").\nStudent B: Continues with what happened later (e.g., \"His dad gave him lunch. Max felt completely relaxed\").\nGoal: W35 final mastery — went / saw / felt / made / gave in a complete best-day narrative.\n\nPULL-OUT TASK (S3 — Communicative Task):\n— Ask: \"Tell me about YOUR best day. Use went, saw, felt, made, and gave.\"\n— Target personal response: \"I WENT to ___. I SAW ___. We MADE ___. Someone GAVE me ___. I FELT ___.\"\n— Mastery check: all 5 verbs correct, personal context used.\n\nDIFFERENTIATION:\n— Weaker students: \"Tell me just ONE thing you made and ONE thing someone gave you.\"\n— Stronger students: compare Max's best day with their own — which was better and why?",
+      "stem_extension": "STEM/CLIL Extension Notes (teacher only):\n\nPART 6: STEM/CLIL CONNECTION — Floating and Sinking Paper Boats Read this: A paper boat can float on the water. It floats because it is very light. The water pushes up against the flat bottom of the boat. If you put heavy stones in the paper boat, it will sink. The paper will also get wet and tear after a long time.\nThe diagram shows: A small folded paper boat sitting on top of blue water, with arrows pointing up from the water to show it pushing up.\nInquiry task: Why does a paper boat float? ________________________________________ 🔍 YouTube: \"Why things float for kids\"",
+      "in_class_speaking": "Best Day Story Chain (Groups of 5 — one verb per student): Student 1 uses WENT, Student 2 uses SAW, Student 3 uses FELT, Student 4 uses MADE, Student 5 uses GAVE. Together they build a 'Best Day' story. Then rotate so each student uses a different verb. Goal: every student produces all five W35 irregular verbs by the end.",
+      "vc_answer_key": "[1] he has a [2] worst Sunday now [3] At the night [4] my sister but [5] went to the [6] small school by [7] He sees an [8] ugly bird sitting [9] on the dark [10] they lost some [11] bad hole under [12] the hard yellow [13] feel very angry [14] and completely happy [15] I break an [16] big wooden table [17] took it out [18] It floated away [19] Before this, his [20] took you an [21] bad apple from [22] We stood over [23] and ate everything",
+      "reading_passage": "On Sunday, Max went to the park with his dad. First, they saw a beautiful kite flying high in the sky. \"Let's make one!\" said Dad. They worked together and made a colorful kite. When the kite flew up, Max felt completely free and relaxed. At lunchtime, Dad gave Max a big sandwich and some juice. \"Today was perfect,\" Max said. He felt truly happy.",
+      "grammar_notes": "• Full W35 mastery: went / saw / felt / made / gave — all five in the park story\n• 'felt' used twice again: felt free/relaxed + felt happy — confirms dual use now fully expected\n• 'gave' in natural father-child context: Dad GAVE Max lunch — warm, relatable scene\n• Culminating drill: 'Tell me about Max's best day in one sentence using 5 verbs.' → 'Max WENT to the park, SAW a kite, MADE a kite with dad, who GAVE him lunch, and he FELT happy.'\n• Portfolio: students write 'My Best Day' — must include all 5 W35 verbs"
+    }
+  ]
+}

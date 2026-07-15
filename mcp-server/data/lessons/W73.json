@@ -1,0 +1,909 @@
+{
+  "week": 73,
+  "unit_theme": "FOOD CHAINS — Tuần 73: Chuỗi Thức ăn",
+  "quick_ref": {
+    "Week": "73",
+    "Block": "E",
+    "Phase": "2",
+    "Theme": "FOOD CHAINS",
+    "Grammar Focus": "",
+    "Key Pattern": "[★ FILL-IN]",
+    "Vocabulary": "Food, Chains, Science, Component, Chain, Parts, Producer, Primary",
+    "Spiral Review": "[★ FILL-IN: spiral review topics]",
+    "VC Word Targets": "S1=95w (70%) S2=105w (65%) S3=115w (60%)",
+    "FK Target": "Grade 3 (FK 65–75)",
+    "Math/Science Topic": "Who Eats Whom?"
+  },
+  "methodology": [
+    {
+      "title": "2.1 Core Principle: Implicit Grammar through Context",
+      "content": [
+        "Phase 2 — Students encounter the grammar in authentic texts.",
+        "Week 73 grammar focus: ",
+        "[★ FILL-IN: methodology notes specific to this week's grammar]"
+      ]
+    }
+  ],
+  "vocab_tiers": [
+    {
+      "tier": "Tier 2",
+      "words": [
+        "Food",
+        "Chains",
+        "Science",
+        "Component",
+        "Chain",
+        "Parts",
+        "Producer",
+        "Primary",
+        "Consumer",
+        "Secondary"
+      ],
+      "note": "[★ FILL-IN: vocabulary tier notes for Phase 2]"
+    }
+  ],
+  "sessions": [
+    {
+      "session": 1,
+      "session_label": "Session 1 — Reading & Grammar",
+      "parts": [
+        {
+          "title": "WEEK 73 | SESSION 1 | BLOCK E",
+          "content": [
+            "Name: ________________________________________ Date: ___________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation drill: Write the English sentence.",
+            "Error Correction: Find the mistake."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Food Chains: The Flow of Energy",
+          "content": [
+            "📖 Food Chains: The Flow of Energy",
+            "",
+            "A FOOD CHAIN shows how energy moves from one living thing to another.",
+            "THE PARTS OF A FOOD CHAIN:",
+            "1. PRODUCER (makes food)",
+            "- Plants make food through photosynthesis",
+            "- Example: grass, trees, algae",
+            "2. PRIMARY CONSUMER (eats producers)",
+            "- Herbivores eat plants",
+            "- Example: rabbit, deer, caterpillar",
+            "3. SECONDARY CONSUMER (eats primary consumers)",
+            "- Carnivores eat other animals",
+            "- Example: snake, frog, small birds",
+            "4. TERTIARY CONSUMER (top predator)",
+            "- Eats secondary consumers",
+            "- Example: eagle, lion, shark",
+            "EXAMPLE FOOD CHAIN:",
+            "Grass → Rabbit → Snake → Eagle",
+            "Energy flows from the sun to producers to consumers.",
+            "Each step is called a TROPHIC LEVEL.",
+            "If one part of the food chain disappears, the whole chain is affected!",
+            "Science Vocabulary:",
+            "",
+            "Title: ________",
+            "(↑ Re-read the story above to answer:)",
+            "",
+            "Stage 1 — Global:",
+            "  T / F: The text is about food chains: the flow of energy.",
+            "  T / F: [★ FILL-IN: second T/F statement]",
+            "  What is the main topic? ______",
+            "",
+            "Stage 2 — Detail:",
+            "  [★ FILL-IN: Who/What question 1]",
+            "  → ____________",
+            "  [★ FILL-IN: How/Why question 2]",
+            "  → ____________",
+            "  Fill-in from text: _______________ is/was _______________.",
+            "",
+            "Stage 3B — Inference: [★ FILL-IN: inference question about Food Chains: The Flow of Energy]",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — ",
+          "content": [
+            "📌 RULE: ",
+            "",
+            "┌──────────────────────────────────────────────┐",
+            "│  [★ FILL-IN: grammar example 1]             │",
+            "│  [★ FILL-IN: grammar example 2]             │",
+            "└──────────────────────────────────────────────┘",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  This grammar structure appears in Cambridge exams.",
+            "  Pattern: [★ FILL-IN]",
+            "",
+            "📌 PRACTICE:",
+            "  1. Complete: _________________________________",
+            "  2. Rewrite: _________________________________",
+            "  [ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Food, Chains, Science...",
+          "content": [
+            "KEY VOCABULARY:",
+            "1. Food (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "2. Chains (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "3. Science (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "4. Component (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "5. Chain (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "6. Parts (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "7. Producer (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "8. Primary (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Read the clue and write the word (10 items):",
+            "1. [★ FILL-IN: clue 1] → ____________________",
+            "2. [★ FILL-IN: clue 2] → ____________________",
+            "3. [★ FILL-IN: clue 3] → ____________________",
+            "4. [★ FILL-IN: clue 4] → ____________________",
+            "5. [★ FILL-IN: clue 5] → ____________________",
+            "",
+            "L2 — Complete the sentences using the grammar pattern:",
+            "1. _________________________________ because ___________________________.",
+            "2. _________________________________, so _______________________________.",
+            "3. Rewrite using the opposite connector: [★ FILL-IN sentence]",
+            "",
+            "L3 — Translation (English → Vietnamese meaning):",
+            "1. Food → ____________________",
+            "2. Chains → ____________________",
+            "3. Science → ____________________",
+            "4. Component → ____________________",
+            "5. Chain → ____________________",
+            "",
+            "L4 — Write 1 original sentence using today's grammar pattern:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global:",
+            "☐ The text is about food chains: the flow of energy.",
+            "☐ [★ FILL-IN: incorrect option]",
+            "☐ [★ FILL-IN: incorrect option]",
+            "",
+            "B. Stage 2 — Detail (circle the correct answer):",
+            "1. [★ FILL-IN: comprehension Q1]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "2. [★ FILL-IN: comprehension Q2]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "3. [★ FILL-IN: comprehension Q3]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "",
+            "C. Stage 3 — Inference:",
+            "[★ FILL-IN: inference question about the listening text]",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake)",
+          "content": [
+            "Find the hidden mistake and write the correction:",
+            "",
+            "1. '[★ FILL-IN: sentence with grammar error 1]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "2. '[★ FILL-IN: sentence with grammar error 2]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "3. '[★ FILL-IN: sentence with grammar error 3]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Who Eats Whom?",
+          "content": [
+            "📐 MATH/SCIENCE: Who Eats Whom?",
+            "",
+            "Reading Input (140 words):",
+            "Food Chains: The Flow of Energy",
+            "A FOOD CHAIN shows how energy moves from one living thing to another.",
+            "THE PARTS OF A FOOD CHAIN:",
+            "1. PRODUCER (makes food)",
+            "- Plants make food through photosynthesis",
+            "- Example: grass, trees, algae",
+            "2. PRIMARY CONSUMER (eats producers)",
+            "",
+            "→ Show your working: ____________________",
+            "→ Answer: ____________________",
+            "[ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write the English: [★ FILL-IN: Vietnamese word]  → ____________________",
+            "2. Food in a sentence: ____________________",
+            "3. Use the grammar pattern to write 1 sentence:",
+            "   [★ FILL-IN: grammar pattern]",
+            "   → ____________________",
+            "4. Translation: [★ FILL-IN: Vietnamese phrase] → ____________________",
+            "5. My best sentence this session:",
+            "   → ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT  📝  Week 73 — Session 1",
+          "content": [
+            "📝 Writing Task",
+            "",
+            "Sentence 1: [★ FILL-IN: guided sentence 1]",
+            "Sentence 2: [★ FILL-IN: guided sentence 2]",
+            "Sentence 3: [★ FILL-IN: guided sentence 3]",
+            "Sentence 4: [★ FILL-IN: guided sentence 4]",
+            "Sentence 5: [★ FILL-IN: guided sentence 5]",
+            "",
+            "Extension: Write 1 additional original sentence using today's vocabulary:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 73, Session 1",
+          "content": [
+            "Vocabulary (write 1 sentence for each word):",
+            "1. Food:",
+            "   ____________________________________________________________",
+            "2. Chains:",
+            "   ____________________________________________________________",
+            "3. Science:",
+            "   ____________________________________________________________",
+            "4. Component:",
+            "   ____________________________________________________________",
+            "5. Chain:",
+            "   ____________________________________________________________",
+            "6. Parts:",
+            "   ____________________________________________________________",
+            "",
+            "Grammar Practice:",
+            "Pattern: [★ FILL-IN grammar pattern]",
+            "1. Write 3 sentences using today's grammar pattern:",
+            "   1. ____________________________________________________________",
+            "   2. ____________________________________________________________",
+            "   3. ____________________________________________________________",
+            "",
+            "Reading: Re-read today's passage and underline key words.",
+            "Cambridge: Complete Cambridge practice worksheet.",
+            "",
+            "[ Homework Sub-total: ___ / 10 ]"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "session_label": "Session 2 — Who Eats Whom?",
+      "parts": [
+        {
+          "title": "WEEK 73 | SESSION 2 | BLOCK E",
+          "content": [
+            "Name: ________________________________________ Date: ___________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation drill: Write the English sentence.",
+            "Error Correction: Find the mistake."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Food Chains: The Flow of Energy",
+          "content": [
+            "📖 Food Chains: The Flow of Energy",
+            "",
+            "A FOOD CHAIN shows how energy moves from one living thing to another.",
+            "THE PARTS OF A FOOD CHAIN:",
+            "1. PRODUCER (makes food)",
+            "- Plants make food through photosynthesis",
+            "- Example: grass, trees, algae",
+            "2. PRIMARY CONSUMER (eats producers)",
+            "- Herbivores eat plants",
+            "- Example: rabbit, deer, caterpillar",
+            "3. SECONDARY CONSUMER (eats primary consumers)",
+            "- Carnivores eat other animals",
+            "- Example: snake, frog, small birds",
+            "4. TERTIARY CONSUMER (top predator)",
+            "- Eats secondary consumers",
+            "- Example: eagle, lion, shark",
+            "EXAMPLE FOOD CHAIN:",
+            "Grass → Rabbit → Snake → Eagle",
+            "Energy flows from the sun to producers to consumers.",
+            "Each step is called a TROPHIC LEVEL.",
+            "If one part of the food chain disappears, the whole chain is affected!",
+            "Science Vocabulary:",
+            "",
+            "Title: ________",
+            "(↑ Re-read the story above to answer:)",
+            "",
+            "Stage 1 — Global:",
+            "  T / F: The text is about food chains: the flow of energy.",
+            "  T / F: [★ FILL-IN: second T/F statement]",
+            "  What is the main topic? ______",
+            "",
+            "Stage 2 — Detail:",
+            "  [★ FILL-IN: Who/What question 1]",
+            "  → ____________",
+            "  [★ FILL-IN: How/Why question 2]",
+            "  → ____________",
+            "  Fill-in from text: _______________ is/was _______________.",
+            "",
+            "Stage 3B — Inference: [★ FILL-IN: inference question about Food Chains: The Flow of Energy]",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — ",
+          "content": [
+            "📌 RULE: ",
+            "",
+            "┌──────────────────────────────────────────────┐",
+            "│  [★ FILL-IN: grammar example 1]             │",
+            "│  [★ FILL-IN: grammar example 2]             │",
+            "└──────────────────────────────────────────────┘",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  This grammar structure appears in Cambridge exams.",
+            "  Pattern: [★ FILL-IN]",
+            "",
+            "📌 PRACTICE:",
+            "  1. Complete: _________________________________",
+            "  2. Rewrite: _________________________________",
+            "  [ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Food, Chains, Science...",
+          "content": [
+            "KEY VOCABULARY:",
+            "1. Food (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "2. Chains (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "3. Science (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "4. Component (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "5. Chain (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "6. Parts (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "7. Producer (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "8. Primary (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Read the clue and write the word (10 items):",
+            "1. [★ FILL-IN: clue 1] → ____________________",
+            "2. [★ FILL-IN: clue 2] → ____________________",
+            "3. [★ FILL-IN: clue 3] → ____________________",
+            "4. [★ FILL-IN: clue 4] → ____________________",
+            "5. [★ FILL-IN: clue 5] → ____________________",
+            "",
+            "L2 — Complete the sentences using the grammar pattern:",
+            "1. _________________________________ because ___________________________.",
+            "2. _________________________________, so _______________________________.",
+            "3. Rewrite using the opposite connector: [★ FILL-IN sentence]",
+            "",
+            "L3 — Translation (English → Vietnamese meaning):",
+            "1. Food → ____________________",
+            "2. Chains → ____________________",
+            "3. Science → ____________________",
+            "4. Component → ____________________",
+            "5. Chain → ____________________",
+            "",
+            "L4 — Write 1 original sentence using today's grammar pattern:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global:",
+            "☐ The text is about food chains: the flow of energy.",
+            "☐ [★ FILL-IN: incorrect option]",
+            "☐ [★ FILL-IN: incorrect option]",
+            "",
+            "B. Stage 2 — Detail (circle the correct answer):",
+            "1. [★ FILL-IN: comprehension Q1]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "2. [★ FILL-IN: comprehension Q2]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "3. [★ FILL-IN: comprehension Q3]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "",
+            "C. Stage 3 — Inference:",
+            "[★ FILL-IN: inference question about the listening text]",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake)",
+          "content": [
+            "Find the hidden mistake and write the correction:",
+            "",
+            "1. '[★ FILL-IN: sentence with grammar error 1]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "2. '[★ FILL-IN: sentence with grammar error 2]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "3. '[★ FILL-IN: sentence with grammar error 3]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Who Eats Whom?",
+          "content": [
+            "📐 MATH/SCIENCE: Who Eats Whom?",
+            "",
+            "Reading Input (140 words):",
+            "Food Chains: The Flow of Energy",
+            "A FOOD CHAIN shows how energy moves from one living thing to another.",
+            "THE PARTS OF A FOOD CHAIN:",
+            "1. PRODUCER (makes food)",
+            "- Plants make food through photosynthesis",
+            "- Example: grass, trees, algae",
+            "2. PRIMARY CONSUMER (eats producers)",
+            "",
+            "→ Show your working: ____________________",
+            "→ Answer: ____________________",
+            "[ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write the English: [★ FILL-IN: Vietnamese word]  → ____________________",
+            "2. Food in a sentence: ____________________",
+            "3. Use the grammar pattern to write 1 sentence:",
+            "   [★ FILL-IN: grammar pattern]",
+            "   → ____________________",
+            "4. Translation: [★ FILL-IN: Vietnamese phrase] → ____________________",
+            "5. My best sentence this session:",
+            "   → ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT  📝  Week 73 — Session 2",
+          "content": [
+            "📝 Writing Task",
+            "",
+            "Sentence 1: [★ FILL-IN: guided sentence 1]",
+            "Sentence 2: [★ FILL-IN: guided sentence 2]",
+            "Sentence 3: [★ FILL-IN: guided sentence 3]",
+            "Sentence 4: [★ FILL-IN: guided sentence 4]",
+            "Sentence 5: [★ FILL-IN: guided sentence 5]",
+            "",
+            "Extension: Write 1 additional original sentence using today's vocabulary:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 73, Session 2",
+          "content": [
+            "Vocabulary (write 1 sentence for each word):",
+            "1. Food:",
+            "   ____________________________________________________________",
+            "2. Chains:",
+            "   ____________________________________________________________",
+            "3. Science:",
+            "   ____________________________________________________________",
+            "4. Component:",
+            "   ____________________________________________________________",
+            "5. Chain:",
+            "   ____________________________________________________________",
+            "6. Parts:",
+            "   ____________________________________________________________",
+            "",
+            "Grammar Practice:",
+            "Pattern: [★ FILL-IN grammar pattern]",
+            "1. Write 3 sentences using today's grammar pattern:",
+            "   1. ____________________________________________________________",
+            "   2. ____________________________________________________________",
+            "   3. ____________________________________________________________",
+            "",
+            "Reading: Re-read today's passage and underline key words.",
+            "Cambridge: Complete Cambridge practice worksheet.",
+            "",
+            "[ Homework Sub-total: ___ / 10 ]"
+          ]
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "session_label": "Session 3 — Production & Review",
+      "parts": [
+        {
+          "title": "WEEK 73 | SESSION 3 | BLOCK E",
+          "content": [
+            "Name: ________________________________________ Date: ___________________________________"
+          ]
+        },
+        {
+          "title": "SPIRAL REVIEW (5 min)",
+          "content": [
+            "Translation drill: Write the English sentence.",
+            "Error Correction: Find the mistake."
+          ]
+        },
+        {
+          "title": "PART 1: READING INPUT  Food Chains: The Flow of Energy",
+          "content": [
+            "📖 Food Chains: The Flow of Energy",
+            "",
+            "A FOOD CHAIN shows how energy moves from one living thing to another.",
+            "THE PARTS OF A FOOD CHAIN:",
+            "1. PRODUCER (makes food)",
+            "- Plants make food through photosynthesis",
+            "- Example: grass, trees, algae",
+            "2. PRIMARY CONSUMER (eats producers)",
+            "- Herbivores eat plants",
+            "- Example: rabbit, deer, caterpillar",
+            "3. SECONDARY CONSUMER (eats primary consumers)",
+            "- Carnivores eat other animals",
+            "- Example: snake, frog, small birds",
+            "4. TERTIARY CONSUMER (top predator)",
+            "- Eats secondary consumers",
+            "- Example: eagle, lion, shark",
+            "EXAMPLE FOOD CHAIN:",
+            "Grass → Rabbit → Snake → Eagle",
+            "Energy flows from the sun to producers to consumers.",
+            "Each step is called a TROPHIC LEVEL.",
+            "If one part of the food chain disappears, the whole chain is affected!",
+            "Science Vocabulary:",
+            "",
+            "Title: ________",
+            "(↑ Re-read the story above to answer:)",
+            "",
+            "Stage 1 — Global:",
+            "  T / F: The text is about food chains: the flow of energy.",
+            "  T / F: [★ FILL-IN: second T/F statement]",
+            "  What is the main topic? ______",
+            "",
+            "Stage 2 — Detail:",
+            "  [★ FILL-IN: Who/What question 1]",
+            "  → ____________",
+            "  [★ FILL-IN: How/Why question 2]",
+            "  → ____________",
+            "  Fill-in from text: _______________ is/was _______________.",
+            "",
+            "Stage 3B — Inference: [★ FILL-IN: inference question about Food Chains: The Flow of Energy]",
+            "____________________________________________________________",
+            "[ Sub-total: ___ / 6 ]"
+          ]
+        },
+        {
+          "title": "GRAMMAR FOCUS — ",
+          "content": [
+            "📌 RULE: ",
+            "",
+            "┌──────────────────────────────────────────────┐",
+            "│  [★ FILL-IN: grammar example 1]             │",
+            "│  [★ FILL-IN: grammar example 2]             │",
+            "└──────────────────────────────────────────────┘",
+            "",
+            "★ CAMBRIDGE INTEGRATION:",
+            "  This grammar structure appears in Cambridge exams.",
+            "  Pattern: [★ FILL-IN]",
+            "",
+            "📌 PRACTICE:",
+            "  1. Complete: _________________________________",
+            "  2. Rewrite: _________________________________",
+            "  [ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 2: VOCABULARY BUILDING — Food, Chains, Science...",
+          "content": [
+            "KEY VOCABULARY:",
+            "1. Food (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "2. Chains (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "3. Science (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "4. Component (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "5. Chain (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "6. Parts (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "7. Producer (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "8. Primary (nghĩa)",
+            "   → Write 3 times: ______________________   ______________________   ______________________",
+            "   → Collocation: [★ FILL-IN]",
+            "   → Sentence: _________________________________",
+            "",
+            "[ Sub-total: ___ / 8 ]"
+          ]
+        },
+        {
+          "title": "PART 3: SENTENCE BUILDING (DIVERSE EXERCISES)",
+          "content": [
+            "L1 — Read the clue and write the word (10 items):",
+            "1. [★ FILL-IN: clue 1] → ____________________",
+            "2. [★ FILL-IN: clue 2] → ____________________",
+            "3. [★ FILL-IN: clue 3] → ____________________",
+            "4. [★ FILL-IN: clue 4] → ____________________",
+            "5. [★ FILL-IN: clue 5] → ____________________",
+            "",
+            "L2 — Complete the sentences using the grammar pattern:",
+            "1. _________________________________ because ___________________________.",
+            "2. _________________________________, so _______________________________.",
+            "3. Rewrite using the opposite connector: [★ FILL-IN sentence]",
+            "",
+            "L3 — Translation (English → Vietnamese meaning):",
+            "1. Food → ____________________",
+            "2. Chains → ____________________",
+            "3. Science → ____________________",
+            "4. Component → ____________________",
+            "5. Chain → ____________________",
+            "",
+            "L4 — Write 1 original sentence using today's grammar pattern:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 10 ]"
+          ]
+        },
+        {
+          "title": "PART 4: LISTENING PRACTICE — Cambridge Flyers Listening format",
+          "content": [
+            "A. Stage 1 — Global:",
+            "☐ The text is about food chains: the flow of energy.",
+            "☐ [★ FILL-IN: incorrect option]",
+            "☐ [★ FILL-IN: incorrect option]",
+            "",
+            "B. Stage 2 — Detail (circle the correct answer):",
+            "1. [★ FILL-IN: comprehension Q1]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "2. [★ FILL-IN: comprehension Q2]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "3. [★ FILL-IN: comprehension Q3]",
+            "   (a) [option A]  (b) [option B]  (c) [option C]  → ____________________",
+            "",
+            "C. Stage 3 — Inference:",
+            "[★ FILL-IN: inference question about the listening text]",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 7 ]"
+          ]
+        },
+        {
+          "title": "PART 5: ERROR CORRECTION (Find the hidden mistake)",
+          "content": [
+            "Find the hidden mistake and write the correction:",
+            "",
+            "1. '[★ FILL-IN: sentence with grammar error 1]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "2. '[★ FILL-IN: sentence with grammar error 2]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "3. '[★ FILL-IN: sentence with grammar error 3]'",
+            "   → Mistake: ____________________ | Correction: ____________________",
+            "[ Sub-total: ___ / 3 ]"
+          ]
+        },
+        {
+          "title": "PART 6: STEM/CLIL — Who Eats Whom?",
+          "content": [
+            "📐 MATH/SCIENCE: Who Eats Whom?",
+            "",
+            "Reading Input (140 words):",
+            "Food Chains: The Flow of Energy",
+            "A FOOD CHAIN shows how energy moves from one living thing to another.",
+            "THE PARTS OF A FOOD CHAIN:",
+            "1. PRODUCER (makes food)",
+            "- Plants make food through photosynthesis",
+            "- Example: grass, trees, algae",
+            "2. PRIMARY CONSUMER (eats producers)",
+            "",
+            "→ Show your working: ____________________",
+            "→ Answer: ____________________",
+            "[ Sub-total: ___ / 4 ]"
+          ]
+        },
+        {
+          "title": "PART 7: QUICK PRODUCTION CHECK",
+          "content": [
+            "1. Write the English: [★ FILL-IN: Vietnamese word]  → ____________________",
+            "2. Food in a sentence: ____________________",
+            "3. Use the grammar pattern to write 1 sentence:",
+            "   [★ FILL-IN: grammar pattern]",
+            "   → ____________________",
+            "4. Translation: [★ FILL-IN: Vietnamese phrase] → ____________________",
+            "5. My best sentence this session:",
+            "   → ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 8: MY PORTFOLIO ENTRY — PROJECT DRAFT  📝  Week 73 — Session 3",
+          "content": [
+            "📝 Writing Task",
+            "",
+            "Sentence 1: [★ FILL-IN: guided sentence 1]",
+            "Sentence 2: [★ FILL-IN: guided sentence 2]",
+            "Sentence 3: [★ FILL-IN: guided sentence 3]",
+            "Sentence 4: [★ FILL-IN: guided sentence 4]",
+            "Sentence 5: [★ FILL-IN: guided sentence 5]",
+            "",
+            "Extension: Write 1 additional original sentence using today's vocabulary:",
+            "→ ____________________________________________________________",
+            "[ Sub-total: ___ / 5 ]"
+          ]
+        },
+        {
+          "title": "PART 9: HOMEWORK — Week 73, Session 3",
+          "content": [
+            "Vocabulary (write 1 sentence for each word):",
+            "1. Food:",
+            "   ____________________________________________________________",
+            "2. Chains:",
+            "   ____________________________________________________________",
+            "3. Science:",
+            "   ____________________________________________________________",
+            "4. Component:",
+            "   ____________________________________________________________",
+            "5. Chain:",
+            "   ____________________________________________________________",
+            "6. Parts:",
+            "   ____________________________________________________________",
+            "",
+            "Grammar Practice:",
+            "Pattern: [★ FILL-IN grammar pattern]",
+            "1. Write 3 sentences using today's grammar pattern:",
+            "   1. ____________________________________________________________",
+            "   2. ____________________________________________________________",
+            "   3. ____________________________________________________________",
+            "",
+            "Reading: Re-read today's passage and underline key words.",
+            "Cambridge: Complete Cambridge practice worksheet.",
+            "",
+            "[ Homework Sub-total: ___ / 10 ]"
+          ]
+        }
+      ]
+    }
+  ],
+  "sessions_2": [],
+  "sessions_5": [],
+  "answer_key": {},
+  "answer_key_by_session": {},
+  "task_cards": [],
+  "task_cards_by_session": {},
+  "games": [],
+  "video_prompts": [],
+  "teacher_contents": [
+    {
+      "session": 1,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "A FOOD CHAIN shows how energy moves from one living thing to another.\nTHE PARTS OF A FOOD CHAIN:\n1. PRODUCER (makes food)\n- Plants make food through photosynthesis\n- Example: grass, trees, algae\n2. PRIMARY CONSUMER (eats producers)\n- Herbivores eat plants\n- Example: rabbit, deer, caterpillar\n3. SECONDARY CONSUMER (eats primary consumers)\n- Carnivores eat other animals\n- Example: snake, frog, small birds\n4. TERTIARY CONSUMER (top predator)\n- Eats secondary consumers\n- Example: eagle, lion, shark\nEXAMPLE FOOD CHAIN:\nGrass → Rabbit → Snake → Eagle\nEnergy flows from the sun to producers to consumers.\nEach step is called a TROPHIC LEVEL.\nIf one part of the food chain disappears, the whole chain is affected!\nScience Vocabulary:",
+        "dictation": [
+          "A FOOD CHAIN shows how energy moves from one living thing to another.",
+          "THE PARTS OF A FOOD CHAIN:\n1.",
+          "Each step is called a TROPHIC LEVEL."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nSession 1:\nActivity 1 — Pair Speaking: Students describe the reading passage to a partner.\n\nGrammar checkpoint: [★ FILL-IN]\n\nExpected output: Students can produce 2+ sentences using today's pattern.\n\n[★ FILL-IN: additional speaking guidance for Session 1]",
+      "stem_extension": "MATH/SCIENCE Extension Notes (teacher only):\n\nTopic: Who Eats Whom?\n\nReading Input (140 words):\nFood Chains: The Flow of Energy\nA FOOD CHAIN shows how energy moves from one living thing to another.\nTHE PARTS OF A FOOD CHAIN:\n1. PRODUCER (makes food)\n- Plants make food through photosynthesis\n- Example: grass, trees, algae\n2. PRIMARY CONSUMER (eats producers)\n- Herbivo\n\nWord Problem approach: Guide students step by step.\nAnswer: ",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 1 (teacher-led)\n\nActivity 1 — Warm-up (3 min):\n  Ask: \"What did we learn last session?\" → students recall vocabulary.\n\nActivity 2 — Grammar production (5 min):\n  Pattern: [★ FILL-IN]\n  Students take turns producing sentences with the pattern.\n\nActivity 3 — Pair work (5 min):\n  Student A asks, Student B answers using today's vocabulary.\n  Swap roles after 3 exchanges.\n\n[★ FILL-IN: additional in-class activities for Session 1]",
+      "vc_answer_key": "[1] Food [2] Chains [3] Science [4] Component [5] Chain [6] Parts [7] Producer [8] Primary",
+      "grammar_notes": "• Grammar: \n• [★ FILL-IN: grammar notes for teacher]"
+    },
+    {
+      "session": 2,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "A FOOD CHAIN shows how energy moves from one living thing to another.\nTHE PARTS OF A FOOD CHAIN:\n1. PRODUCER (makes food)\n- Plants make food through photosynthesis\n- Example: grass, trees, algae\n2. PRIMARY CONSUMER (eats producers)\n- Herbivores eat plants\n- Example: rabbit, deer, caterpillar\n3. SECONDARY CONSUMER (eats primary consumers)\n- Carnivores eat other animals\n- Example: snake, frog, small birds\n4. TERTIARY CONSUMER (top predator)\n- Eats secondary consumers\n- Example: eagle, lion, shark\nEXAMPLE FOOD CHAIN:\nGrass → Rabbit → Snake → Eagle\nEnergy flows from the sun to producers to consumers.\nEach step is called a TROPHIC LEVEL.\nIf one part of the food chain disappears, the whole chain is affected!\nScience Vocabulary:",
+        "dictation": [
+          "A FOOD CHAIN shows how energy moves from one living thing to another.",
+          "THE PARTS OF A FOOD CHAIN:\n1.",
+          "Each step is called a TROPHIC LEVEL."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nSession 2:\nActivity 1 — Grammar Drill: Students produce sentences using today's pattern.\n\nGrammar checkpoint: [★ FILL-IN]\n\nExpected output: Students can produce 2+ sentences using today's pattern.\n\n[★ FILL-IN: additional speaking guidance for Session 2]",
+      "stem_extension": "MATH/SCIENCE Extension Notes (teacher only):\n\nTopic: Who Eats Whom?\n\nReading Input (140 words):\nFood Chains: The Flow of Energy\nA FOOD CHAIN shows how energy moves from one living thing to another.\nTHE PARTS OF A FOOD CHAIN:\n1. PRODUCER (makes food)\n- Plants make food through photosynthesis\n- Example: grass, trees, algae\n2. PRIMARY CONSUMER (eats producers)\n- Herbivo\n\nWord Problem approach: Guide students step by step.\nAnswer: ",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 2 (teacher-led)\n\nActivity 1 — Warm-up (3 min):\n  Ask: \"What did we learn last session?\" → students recall vocabulary.\n\nActivity 2 — Grammar production (5 min):\n  Pattern: [★ FILL-IN]\n  Students take turns producing sentences with the pattern.\n\nActivity 3 — Pair work (5 min):\n  Student A asks, Student B answers using today's vocabulary.\n  Swap roles after 3 exchanges.\n\n[★ FILL-IN: additional in-class activities for Session 2]",
+      "vc_answer_key": "[1] Food [2] Chains [3] Science [4] Component [5] Chain [6] Parts [7] Producer [8] Primary",
+      "grammar_notes": "• Grammar: \n• [★ FILL-IN: grammar notes for teacher]"
+    },
+    {
+      "session": 3,
+      "listening_script": {
+        "speed_note": "Read aloud at a normal, clear pace (85 wpm). Pause 2–3 seconds between sentences. Read the full text twice before students answer questions.",
+        "text": "A FOOD CHAIN shows how energy moves from one living thing to another.\nTHE PARTS OF A FOOD CHAIN:\n1. PRODUCER (makes food)\n- Plants make food through photosynthesis\n- Example: grass, trees, algae\n2. PRIMARY CONSUMER (eats producers)\n- Herbivores eat plants\n- Example: rabbit, deer, caterpillar\n3. SECONDARY CONSUMER (eats primary consumers)\n- Carnivores eat other animals\n- Example: snake, frog, small birds\n4. TERTIARY CONSUMER (top predator)\n- Eats secondary consumers\n- Example: eagle, lion, shark\nEXAMPLE FOOD CHAIN:\nGrass → Rabbit → Snake → Eagle\nEnergy flows from the sun to producers to consumers.\nEach step is called a TROPHIC LEVEL.\nIf one part of the food chain disappears, the whole chain is affected!\nScience Vocabulary:",
+        "dictation": [
+          "A FOOD CHAIN shows how energy moves from one living thing to another.",
+          "THE PARTS OF A FOOD CHAIN:\n1.",
+          "Each step is called a TROPHIC LEVEL."
+        ]
+      },
+      "speaking_notes": "SPEAKING CHECKPOINT — Teacher Guidance (do NOT share with students):\n\nSession 3:\nActivity 1 — Production: Students present their portfolio sentence.\n\nGrammar checkpoint: [★ FILL-IN]\n\nExpected output: Students can produce 2+ sentences using today's pattern.\n\n[★ FILL-IN: additional speaking guidance for Session 3]",
+      "stem_extension": "MATH/SCIENCE Extension Notes (teacher only):\n\nTopic: Who Eats Whom?\n\nReading Input (140 words):\nFood Chains: The Flow of Energy\nA FOOD CHAIN shows how energy moves from one living thing to another.\nTHE PARTS OF A FOOD CHAIN:\n1. PRODUCER (makes food)\n- Plants make food through photosynthesis\n- Example: grass, trees, algae\n2. PRIMARY CONSUMER (eats producers)\n- Herbivo\n\nWord Problem approach: Guide students step by step.\nAnswer: ",
+      "in_class_speaking": "IN-CLASS SPEAKING ACTIVITIES — Session 3 (teacher-led)\n\nActivity 1 — Warm-up (3 min):\n  Ask: \"What did we learn last session?\" → students recall vocabulary.\n\nActivity 2 — Grammar production (5 min):\n  Pattern: [★ FILL-IN]\n  Students take turns producing sentences with the pattern.\n\nActivity 3 — Pair work (5 min):\n  Student A asks, Student B answers using today's vocabulary.\n  Swap roles after 3 exchanges.\n\n[★ FILL-IN: additional in-class activities for Session 3]",
+      "vc_answer_key": "[1] Food [2] Chains [3] Science [4] Component [5] Chain [6] Parts [7] Producer [8] Primary",
+      "grammar_notes": "• Grammar: \n• [★ FILL-IN: grammar notes for teacher]"
+    }
+  ]
+}

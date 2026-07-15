@@ -1,0 +1,209 @@
+=====================================
+WEEK 30 IMAGE PROMPTS — Total: 28
+Theme: A Special Picnic Day / Jobs in the Community
+Read story: "A Special Picnic Day"
+Explore topic: "Jobs That Help Our Community"
+NOTE: W30 vocab ids 1-12 have image_url: null in data — these need both prompts AND image_url updates
+=====================================
+
+========== VOCAB IMAGES (18) ==========
+
+[vocab_picnic.jpg]
+Category: Vocab | Word: picnic
+Prompt: A happy family — parents and two children — sitting on a colorful blanket spread on green grass in a sunny park. A picnic basket is open beside them. They share sandwiches, fruit, and drinks. Trees and flowers surround them. Blue sky overhead.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_basket.jpg]
+Category: Vocab | Word: basket
+Prompt: A wicker picnic basket open on green grass, filled with sandwiches, apples, a thermos, and a checkered cloth napkin. The lid is propped open. A sunny park setting with a blanket beside it. The basket looks full and ready for a picnic.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_sandwich.jpg]
+Category: Vocab | Word: sandwich
+Prompt: A tall, appetizing sandwich on a wooden board showing clearly layered bread, cheese, lettuce, tomato, and cucumber. A knife sits beside it. The sandwich looks fresh and delicious. A few crumbs and a sprig of parsley for garnish.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_lemonade.jpg]
+Category: Vocab | Word: lemonade
+Prompt: A tall glass of cold yellow lemonade filled with ice cubes and a lemon slice on the rim. A straw sticks out the top. Condensation droplets on the glass show it is very cold and refreshing. Bright sunny picnic setting in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_market.jpg]
+Category: Vocab | Word: market
+Prompt: A busy outdoor market with rows of colorful stalls selling fresh fruit, vegetables, flowers, and baked goods. Sellers call out to shoppers. Bright awnings in red, yellow, and green. Shoppers carry baskets. A lively, warm community atmosphere.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_watermelon.jpg]
+Category: Vocab | Word: watermelon
+Prompt: A large round watermelon with green striped skin, sliced open to reveal bright red juicy flesh with black seeds. A wedge-shaped slice sits in front showing the red interior. The cut surface glistens with juice.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_blanket.jpg]
+Category: Vocab | Word: blanket
+Prompt: A large colorful checkered picnic blanket spread flat on green grass in a sunny park. The corners are held down by a picnic basket and shoes. A few flowers and a butterfly nearby. Clean, inviting outdoor setting.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_thirsty.jpg]
+Category: Vocab | Word: thirsty
+Prompt: A child with a sun-flushed face and dry lips under a hot sun, desperately reaching for a bottle of water. Eyes look hopeful and thirsty. The sun blazes overhead. An empty cup lies beside the child. Clear visual of needing a drink.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_hungry.jpg]
+Category: Vocab | Word: hungry
+Prompt: A child sitting at a table with an empty plate, looking up with big hopeful eyes and a rumbling tummy (shown with a small "growl" graphic). The child holds a fork and spoon ready, waiting for food. A cheerful cartoon hunger expression.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_cheerful.jpg]
+Category: Vocab | Word: cheerful
+Prompt: A child with a huge bright smile, rosy cheeks, and sparkling eyes, sitting in a sunny park. Arms open wide, expressing happiness and positivity. Flowers, sunshine, and a blue sky complete the cheerful scene. Pure joy radiates from the image.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_delicious.jpg]
+Category: Vocab | Word: delicious
+Prompt: A child taking the first bite of a watermelon slice, eyes closed in pleasure with a big smile. Juice drips from the chin. Other picnic foods surround them — sandwiches, lemonade, fruit. The expression perfectly communicates deliciousness.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[vocab_refreshing.jpg]
+Category: Vocab | Word: refreshing
+Prompt: A person on a hot sunny day drinking ice cold lemonade from a tall glass through a straw, eyes closed in pure refreshing pleasure. A breeze of cool air radiates from the glass. Droplets of condensation show the cold. A relieved, energized expression.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[engineer.jpg]
+Category: Vocab | Word: engineer (collocation: civil engineer)
+Prompt: A civil engineer in an orange hard hat and safety vest, holding large blueprint plans and pointing at a bridge or building structure under construction. A construction site with cranes and scaffolding in the background. Confident and skilled expression.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[scientist.jpg]
+Category: Vocab | Word: scientist (collocation: research scientist)
+Prompt: A research scientist in a white lab coat and protective goggles, holding a glass beaker filled with colorful bubbling liquid. A laboratory background with equipment, test tubes in a rack, and charts on the wall. Curious and focused expression.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[artist.jpg]
+Category: Vocab | Word: artist (collocation: professional artist)
+Prompt: A professional artist standing at a canvas on an easel, holding a palette of colorful paints and a brush. A half-finished bright painting is on the canvas. The artist's apron has paint splashes. Surrounded by art, light, and creativity.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[dentist.jpg]
+Category: Vocab | Word: dentist (collocation: visit the dentist)
+Prompt: A friendly dentist in a white coat and blue gloves, holding a dental mirror and giving a reassuring smile to a child patient sitting in a dentist's chair. Bright examination light overhead. Clean dental office with a tooth-shaped chart on the wall.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[firefighter.jpg]
+Category: Vocab | Word: firefighter (collocation: brave firefighter)
+Prompt: A brave firefighter in full protective gear — yellow helmet, fire-resistant jacket, oxygen tank — holding a fire hose with a powerful stream of water. Flames visible in the background. An expression of courage and determination. Smoke in the air.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[chef.jpg]
+Category: Vocab | Word: chef (collocation: head chef)
+Prompt: A head chef in a tall white toque hat and clean white double-breasted chef's coat, proudly presenting a beautifully plated dish on a plate. A professional kitchen with stainless steel surfaces behind. The chef's expression is proud and skilled.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== WORD POWER IMAGES (8) ==========
+
+[wordpower_have_picnic.jpg]
+Category: Word Power | Phrase: have a picnic
+Prompt: A family spreading a checkered blanket on green grass in a park, with a picnic basket open beside them. Children help lay out food — sandwiches, fruit, lemonade. A bright sunny day, trees around, birds in the sky. Everyone looks happy and excited.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_eat_sandwich.jpg]
+Category: Word Power | Phrase: eat a delicious sandwich
+Prompt: A child taking a big, happy bite of a tall layered sandwich. Their eyes are wide with delight. Filling — cheese, lettuce, tomato — is clearly visible in the layers. The background is a sunny picnic setting on green grass.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_drink_lemonade.jpg]
+Category: Word Power | Phrase: drink cold lemonade
+Prompt: A child drinking cold lemonade from a tall glass through a colorful straw at a picnic. The glass has ice cubes and a lemon slice on the rim. The child's eyes squint with refreshing pleasure. Bright sunshine outdoors.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_buy_fruit.jpg]
+Category: Word Power | Phrase: buy fresh fruit
+Prompt: A parent and child at a colorful outdoor market stall piled with fresh fruit — mangoes, watermelons, bananas, oranges. The vendor hands over a bag of fruit with a smile. The child points happily at the watermelon. Bright market scene.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_give_food.jpg]
+Category: Word Power | Phrase: give food to a friend
+Prompt: A child at a picnic smiling and handing a sandwich to a friend sitting beside them on a blanket. The friend reaches out happily to accept. A warm gesture of sharing and friendship. Picnic food and sunshine in the background.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_outdoor_meals.jpg]
+Category: Word Power | Phrase: eat outdoor meals
+Prompt: A group of children and parents seated together at a long outdoor table in a park, eating a sunny meal together. Food is spread across the table — salads, bread, drinks, fruit. Laughter and conversation fill the scene. Trees and blue sky above.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w7.jpg]
+Category: Word Power | Phrase: civil engineer
+Prompt: A civil engineer in a hard hat pointing confidently at blueprint plans spread across a table, with a bridge or road under construction visible through a window behind. A compass, ruler, and technical drawings on the table. Expert and professional.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+[wordpower_w8.jpg]
+Category: Word Power | Phrase: head chef
+Prompt: A head chef in a white toque and chef's coat standing at the center of a busy restaurant kitchen, directing the cooking team with authority. Pots simmer on the stove. Sous chefs prepare plates around them. The head chef tastes a dish approvingly.
+Style: bright, friendly children's educational illustration, flat design, colorful, white background
+
+---
+
+========== COVER IMAGES (2) ==========
+
+[read_cover_w30.jpg]
+Category: Read Cover | Story: "A Special Picnic Day"
+Prompt: A sunny park scene with a family arranged around a colorful picnic blanket on green grass. A wicker basket is open with food spilling out — sandwiches, watermelon, lemonade. Everyone is laughing and enjoying the meal. Butterflies, flowers, and trees surround them. A warm, joyful, golden afternoon light fills the scene.
+Style: bright children's illustrated storybook cover, vibrant warm colors, flat design, cozy and heartwarming, large title space at top
+
+---
+
+[explore_cover_w30.jpg]
+Category: Explore Cover | Topic: "Jobs That Help Our Community"
+Prompt: Six community workers grouped together in a friendly colorful scene — a civil engineer with blueprints, a scientist with a beaker, an artist with a palette, a dentist with a mirror, a firefighter with a helmet, and a head chef with a plate of food. Each stands proudly in their work setting. Together they form a cheerful team portrait.
+Style: bright educational infographic-style illustration, flat design, colorful, children's magazine cover feel
+
+---
