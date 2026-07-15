@@ -1,4 +1,4 @@
-# Logs
+# ====== BUILD OUTPUT ======
 logs
 *.log
 npm-debug.log*
@@ -6,17 +6,16 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
 node_modules
 dist
 dist-ssr
 *.local
 
-# Environment variables
+# ====== ENV / SECRETS ======
 .env
 .env.local
 
-# Editor directories and files
+# ====== EDITOR / IDE ======
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -29,35 +28,42 @@ dist-ssr
 *.sln
 *.sw?
 
-# public/ large audio dirs (served from CDN/R2)
-public/audio/
+# ====== BINARY FILES (not code — use R2/CDN for assets) ======
+*.pdf
+*.zip
+*.tar
+*.gz
+*.docx
+*.pptx
+*.xlsx
+*.woff
+*.woff2
+*.ttf
+*.otf
+
+# ====== PUBLIC STATIC ASSETS (served from R2 CDN) ======
+public/images/     # → R2: engquest-images bucket
+public/audio/      # → R2: engquest-audio bucket
 public/audio_cache/
 public/audio copy/
-public/images/  # All images served from R2 (don't commit to Git)
-public/videos/week*/  # Week videos served from YouTube/R2 (don't commit to Git)
+public/videos/week*/  # Week videos served from YouTube/R2
 
 # Design/source screenshots (archived locally, not in repo)
 Shadowing redesign/
 Shadowing format.jpg
 Shadowing*
 
-# Wrangler local development (Cloudflare Workers emulator)
+# ====== WRANGLER / CLOUDFLARE ======
 .wrangler/
 
-# ====== BACKEND/SERVER CODE (NOT NEEDED FOR FRONTEND DEPLOY) ======
-# ESL TTS Server (134MB - HuggingFace Space deployment)
+# ====== BACKEND/SERVER (not needed for frontend deploy) ======
 esl_server/
-
-# MCP Server (47MB - VSCode extension development)
 mcp-server/node_modules/
 
-# ====== BACKUP & DOCUMENTATION FOLDERS ======
-# Backup files (not needed in repo)
+# ====== BACKUP & DOCUMENTATION ======
 Backup/
 _backup*/
 *.backup
-
-# Production documentation & planning
 Production_FINAL/
 !Production_FINAL/MASTER PROMPT/
 !Production_FINAL/1. FINAL MASS PRODUCTION/
@@ -65,40 +71,55 @@ Production_FINAL/
 !Production_FINAL/IMAGE PROMPTS/
 !Production_FINAL/IMAGE PROMPTS/**
 MASS_Final/
-
-# Debris/temp folders
+Production_FINAL_DEPRECATED/
 .debris/
 debris/
-
-# MacOS system folders
-Icon
-Icon?
-
-# ====== LARGE DOCUMENTATION FILES ======
-# Keep production docs but ignore large duplicates
 *MASTER PROMPT*.txt
 *_copy*.txt
 *SYLLABUS*.txt
+.gitignore.bak
 
-# Force rebuild Thu Mar  5 12:38:21 +07 2026
+# ====== LEGACY ROOT-LEVEL DOCS (should not be tracked) ======
+AI_TUTOR_*.md
+AI_TUTOR_*.txt
+AI_PROVIDER_*.md
+AI_TUTOR_FREE TALK*.txt
+AI_TUTOR_FREE TALK*.md
+0. *.txt
+0. ARTIFACT-*.txt
+2.*.txt
+*FINAL MASS PRODUCTION*.txt
+LEXIO_*.md
+LEXIO_*.docx
+~$*.docx
+20_QUESTIONS_FIX.md
+AGENTS.md
+AGENT_SELF_CHECK_WORKFLOW.md
+docs/*.zip
+docs/English-Dictionaries-*
+docs/ARCHITECTURE.md
+_update_*.py
 
-# BFG Repo Cleaner reports (local cleanup logs)
-..bfg-report/
+# ====== AI AGENT RUNTIME (local only) ======
+.ai/memory/SESSION.md
+.ai/memory/HISTORY.md
+.ai/context/README.md
+.ai/runtime/
+.ai/research/
+.ai/implementation/
+
+# ====== DEV TOOLS (not production code) ======
+.devin/
+.cocoindex_code/
+repair_log/
+cline_mcp_settings.json
+skills-lock.json
+
+# ====== MACOS ======
+Icon
+Icon?
+
+# ====== PID / TEMP ======
 API keys.txt
 .frontend.pid
 .server.pid
-_update_*.py
-docs/ARCHITECTURE.md
-
-# Python cache
-__pycache__/
-*.pyc
-*.bak
-.tmp/
-
-# Monolithic transcript JSONs: kept locally only for regeneration via
-# tools/split_transcripts.py → per-video files (src/data/video_transcripts_by_id/)
-# Runtime: transcriptUtils.js reads per-video files ONLY — do not import these.
-src/data/video_transcripts.json
-src/data/video_transcripts_cleaned.json
-src/data/video_transcripts_sentences.json
