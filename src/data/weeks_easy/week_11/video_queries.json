@@ -1,0 +1,39 @@
+{
+  "weekId": 11,
+  "theme": "Weekend Fun Spots",
+  "grammar": "Prepositions of place review",
+  "topic": "Weekend Adventure places to visit",
+  "science": "Places around us",
+  "videos": [
+    {
+      "id": 1,
+      "purpose": "GRAMMAR",
+      "query": "prepositions of place review for kids song ESL",
+      "backup_query": "place prepositions kids song"
+    },
+    {
+      "id": 2,
+      "purpose": "VOCABULARY",
+      "query": "places in town park library supermarket for kids English Singsing",
+      "backup_query": "places vocabulary ESL kids"
+    },
+    {
+      "id": 3,
+      "purpose": "STORY",
+      "query": "Little Fox weekend story level 1 ESL for kids",
+      "backup_query": "Vooks weekend story read aloud"
+    },
+    {
+      "id": 4,
+      "purpose": "SCIENCE",
+      "query": "places around us community helpers for kids",
+      "backup_query": "community helpers kids"
+    },
+    {
+      "id": 5,
+      "purpose": "SHADOWING",
+      "query": "places in town vocabulary slow clear English Singsing kids",
+      "backup_query": "town vocabulary clear English"
+    }
+  ]
+}
