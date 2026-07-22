@@ -56,6 +56,15 @@ export function getSpeechWindow(sentence) {
 
 export function splitWordsWithTiming(sentence) {
   if (!sentence) return [];
+  // Use real L3 timestamps if available in the sentence data (forced alignment)
+  if (sentence.words && sentence.words.length > 0) {
+    return sentence.words.map(w => ({
+      word: w.word,
+      start: w.start,
+      end: w.end,
+    }));
+  }
+  // Fallback: synthetic evenly-distributed timing (no L3 data available)
   const text = sentence.text || '';
   const words = text.match(/[A-Za-z']+/g) || [];
   if (!words.length) return [];

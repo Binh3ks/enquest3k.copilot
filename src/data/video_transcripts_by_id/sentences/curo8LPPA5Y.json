@@ -4,178 +4,682 @@
     {
       "id": 1,
       "text": "Welcome to intelligent kids channel.",
-      "start": 3.08,
-      "duration": 4.74
+      "start": 3.04,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "welcome",
+          "start": 3.04,
+          "end": 3.52
+        },
+        {
+          "word": "to",
+          "start": 3.52,
+          "end": 3.92
+        },
+        {
+          "word": "intelligent",
+          "start": 3.92,
+          "end": 4.42
+        },
+        {
+          "word": "kids",
+          "start": 4.72,
+          "end": 5.12
+        },
+        {
+          "word": "channel",
+          "start": 5.12,
+          "end": 5.62
+        }
+      ]
     },
     {
       "id": 2,
       "text": "Hi Anna. How are you today?",
-      "start": 7.82,
-      "duration": 3.15
+      "start": 7.6,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "hi",
+          "start": 7.6,
+          "end": 8.0
+        },
+        {
+          "word": "anna",
+          "start": 8.0,
+          "end": 8.5
+        },
+        {
+          "word": "how",
+          "start": 8.56,
+          "end": 8.8
+        },
+        {
+          "word": "are",
+          "start": 8.8,
+          "end": 8.96
+        },
+        {
+          "word": "you",
+          "start": 8.96,
+          "end": 9.12
+        },
+        {
+          "word": "today",
+          "start": 9.12,
+          "end": 9.62
+        }
+      ]
     },
     {
       "id": 3,
       "text": "Hi, John, thanks. How about you?",
-      "start": 10.97,
-      "duration": 7.19
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 4,
       "text": "I'm great, thanks. It's such a nice day, isn't it?",
-      "start": 18.16,
-      "duration": 5.77
+      "start": 11.44,
+      "duration": 8.17,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 11.44,
+          "end": 11.76
+        },
+        {
+          "word": "great",
+          "start": 16.7,
+          "end": 17.11
+        },
+        {
+          "word": "thanks",
+          "start": 17.11,
+          "end": 17.59
+        },
+        {
+          "word": "it's",
+          "start": 17.59,
+          "end": 17.82
+        },
+        {
+          "word": "such",
+          "start": 17.82,
+          "end": 18.07
+        },
+        {
+          "word": "a",
+          "start": 18.07,
+          "end": 18.14
+        },
+        {
+          "word": "nice",
+          "start": 18.14,
+          "end": 18.46
+        },
+        {
+          "word": "day",
+          "start": 18.46,
+          "end": 18.79
+        },
+        {
+          "word": "isn't",
+          "start": 18.79,
+          "end": 19.11
+        },
+        {
+          "word": "it",
+          "start": 19.11,
+          "end": 19.61
+        }
+      ]
     },
     {
       "id": 5,
       "text": "Yes, it's sunny and warm.",
-      "start": 23.93,
-      "duration": 6.27
+      "start": 20.46,
+      "duration": 2.16,
+      "words": [
+        {
+          "word": "yes",
+          "start": 20.46,
+          "end": 20.96
+        },
+        {
+          "word": "it's",
+          "start": 21.19,
+          "end": 21.51
+        },
+        {
+          "word": "sunny",
+          "start": 21.51,
+          "end": 21.82
+        },
+        {
+          "word": "and",
+          "start": 21.82,
+          "end": 22.14
+        },
+        {
+          "word": "warm",
+          "start": 22.14,
+          "end": 22.62
+        }
+      ]
     },
     {
       "id": 6,
       "text": "Perfect for a walk in the park.",
-      "start": 30.2,
-      "duration": 2.85
+      "start": 22.62,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "perfect",
+          "start": 22.62,
+          "end": 23.03
+        },
+        {
+          "word": "for",
+          "start": 23.03,
+          "end": 23.27
+        },
+        {
+          "word": "a",
+          "start": 23.27,
+          "end": 23.66
+        },
+        {
+          "word": "walk",
+          "start": 23.66,
+          "end": 23.98
+        },
+        {
+          "word": "in",
+          "start": 23.98,
+          "end": 24.14
+        },
+        {
+          "word": "the",
+          "start": 24.14,
+          "end": 24.3
+        },
+        {
+          "word": "park",
+          "start": 24.3,
+          "end": 24.8
+        }
+      ]
     },
     {
       "id": 7,
       "text": "Do you come here often?",
-      "start": 33.05,
-      "duration": 2.1
+      "start": 27.27,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "do",
+          "start": 27.27,
+          "end": 27.43
+        },
+        {
+          "word": "you",
+          "start": 27.43,
+          "end": 27.59
+        },
+        {
+          "word": "come",
+          "start": 27.59,
+          "end": 27.82
+        },
+        {
+          "word": "here",
+          "start": 27.82,
+          "end": 28.14
+        },
+        {
+          "word": "often",
+          "start": 28.14,
+          "end": 28.64
+        }
+      ]
     },
     {
       "id": 8,
       "text": "Not really. I usually stay at home.",
-      "start": 35.14,
-      "duration": 4.66
+      "start": 29.79,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "not",
+          "start": 29.79,
+          "end": 30.03
+        },
+        {
+          "word": "really",
+          "start": 30.03,
+          "end": 30.53
+        },
+        {
+          "word": "i",
+          "start": 30.67,
+          "end": 30.91
+        },
+        {
+          "word": "usually",
+          "start": 30.91,
+          "end": 31.41
+        },
+        {
+          "word": "stay",
+          "start": 31.47,
+          "end": 31.71
+        },
+        {
+          "word": "at",
+          "start": 31.71,
+          "end": 31.87
+        },
+        {
+          "word": "home",
+          "start": 31.87,
+          "end": 32.37
+        }
+      ]
     },
     {
       "id": 9,
       "text": "What about you?",
-      "start": 39.8,
-      "duration": 0.75
+      "start": 32.43,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what",
+          "start": 32.43,
+          "end": 32.67
+        },
+        {
+          "word": "about",
+          "start": 32.67,
+          "end": 32.91
+        },
+        {
+          "word": "you",
+          "start": 32.91,
+          "end": 33.41
+        }
+      ]
     },
     {
       "id": 10,
       "text": "I come here every weekend.",
-      "start": 40.55,
-      "duration": 3.76
+      "start": 35.39,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 35.39,
+          "end": 35.63
+        },
+        {
+          "word": "come",
+          "start": 35.63,
+          "end": 35.79
+        },
+        {
+          "word": "here",
+          "start": 35.79,
+          "end": 36.11
+        },
+        {
+          "word": "every",
+          "start": 36.11,
+          "end": 36.51
+        },
+        {
+          "word": "weekend",
+          "start": 36.51,
+          "end": 37.01
+        }
+      ]
     },
     {
       "id": 11,
       "text": "I like walking and watching the ducks.",
-      "start": 44.31,
-      "duration": 5.24
+      "start": 37.47,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "i",
+          "start": 37.47,
+          "end": 37.63
+        },
+        {
+          "word": "like",
+          "start": 37.63,
+          "end": 37.87
+        },
+        {
+          "word": "walking",
+          "start": 37.87,
+          "end": 38.37
+        },
+        {
+          "word": "and",
+          "start": 38.43,
+          "end": 38.75
+        },
+        {
+          "word": "watching",
+          "start": 38.75,
+          "end": 39.07
+        },
+        {
+          "word": "the",
+          "start": 39.07,
+          "end": 39.23
+        },
+        {
+          "word": "ducks",
+          "start": 39.23,
+          "end": 39.73
+        }
+      ]
     },
     {
       "id": 12,
       "text": "Oh, that sounds fun! I love ducks.",
-      "start": 49.54,
-      "duration": 5.83
+      "start": 40.67,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "oh",
+          "start": 40.67,
+          "end": 41.17
+        },
+        {
+          "word": "that",
+          "start": 41.55,
+          "end": 41.87
+        },
+        {
+          "word": "sounds",
+          "start": 41.87,
+          "end": 42.27
+        },
+        {
+          "word": "fun",
+          "start": 42.27,
+          "end": 42.77
+        },
+        {
+          "word": "i",
+          "start": 42.91,
+          "end": 43.15
+        },
+        {
+          "word": "love",
+          "start": 43.15,
+          "end": 43.39
+        },
+        {
+          "word": "ducks",
+          "start": 43.39,
+          "end": 43.89
+        }
+      ]
     },
     {
       "id": 13,
       "text": "Do you feed them?",
-      "start": 55.37,
-      "duration": 2.78
+      "start": 44.11,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "do",
+          "start": 44.11,
+          "end": 44.35
+        },
+        {
+          "word": "you",
+          "start": 44.35,
+          "end": 44.59
+        },
+        {
+          "word": "feed",
+          "start": 44.59,
+          "end": 44.91
+        },
+        {
+          "word": "them",
+          "start": 44.91,
+          "end": 45.41
+        }
+      ]
     },
     {
       "id": 14,
       "text": "Yes, sometimes. But I only give them bread once in a while.",
-      "start": 58.16,
-      "duration": 8.68
+      "start": 47.45,
+      "duration": 4.33,
+      "words": [
+        {
+          "word": "yes",
+          "start": 47.45,
+          "end": 47.93
+        },
+        {
+          "word": "sometimes",
+          "start": 47.93,
+          "end": 48.43
+        },
+        {
+          "word": "but",
+          "start": 48.89,
+          "end": 49.37
+        },
+        {
+          "word": "i",
+          "start": 49.37,
+          "end": 49.52
+        },
+        {
+          "word": "only",
+          "start": 49.52,
+          "end": 49.77
+        },
+        {
+          "word": "give",
+          "start": 49.77,
+          "end": 49.93
+        },
+        {
+          "word": "them",
+          "start": 49.93,
+          "end": 50.16
+        },
+        {
+          "word": "bread",
+          "start": 50.16,
+          "end": 50.65
+        },
+        {
+          "word": "once",
+          "start": 50.65,
+          "end": 51.05
+        },
+        {
+          "word": "in",
+          "start": 51.05,
+          "end": 51.2
+        },
+        {
+          "word": "a",
+          "start": 51.2,
+          "end": 51.28
+        },
+        {
+          "word": "while",
+          "start": 51.28,
+          "end": 51.78
+        }
+      ]
     },
     {
       "id": 15,
       "text": "That's nice. Bread isn't always good for them.",
-      "start": 66.84,
-      "duration": 6.83
+      "start": 52.73,
+      "duration": 7.99,
+      "words": [
+        {
+          "word": "that's",
+          "start": 52.73,
+          "end": 53.05
+        },
+        {
+          "word": "nice",
+          "start": 53.05,
+          "end": 53.55
+        },
+        {
+          "word": "bread",
+          "start": 53.69,
+          "end": 54.19
+        },
+        {
+          "word": "isn't",
+          "start": 54.48,
+          "end": 54.8
+        },
+        {
+          "word": "always",
+          "start": 54.8,
+          "end": 55.2
+        },
+        {
+          "word": "good",
+          "start": 55.2,
+          "end": 55.52
+        },
+        {
+          "word": "for",
+          "start": 55.52,
+          "end": 55.77
+        },
+        {
+          "word": "them",
+          "start": 60.25,
+          "end": 60.72
+        }
+      ]
     },
     {
       "id": 16,
       "text": "Yes, I know.",
-      "start": 73.66,
-      "duration": 1.61
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 17,
       "text": "I think they like it.",
-      "start": 75.27,
-      "duration": 2.18
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 18,
       "text": "I have some bread.",
-      "start": 77.45,
-      "duration": 2.46
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 19,
       "text": "Do you want to feed them together?",
-      "start": 79.91,
-      "duration": 4.52
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 20,
       "text": "Sure, let's go. Here you are.",
-      "start": 84.44,
-      "duration": 5.51
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 21,
       "text": "Thank you. Come on, ducks. Yum, yum.",
-      "start": 89.95,
-      "duration": 4.71
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 22,
       "text": "Oh, I think they really like you.",
-      "start": 94.67,
-      "duration": 4.55
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 23,
       "text": "They like you too. You're so nice.",
-      "start": 99.21,
-      "duration": 7.94
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 24,
       "text": "Thank you. It's a nice day for a walk.",
-      "start": 107.16,
-      "duration": 8.76
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 25,
       "text": "Yes, it is.",
-      "start": 115.92,
-      "duration": 2.19
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 26,
       "text": "I'm so happy.",
-      "start": 118.11,
-      "duration": 3.05
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 27,
       "text": "I have a good time with you.",
-      "start": 121.16,
-      "duration": 3.18
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 28,
       "text": "Me too. I have to go now.",
-      "start": 124.34,
-      "duration": 4.14
+      "start": 0,
+      "duration": 0,
+      "words": []
     },
     {
       "id": 29,
       "text": "Okay, see you next time. Bye.",
-      "start": 128.48,
-      "duration": 6.0
+      "start": 0,
+      "duration": 0,
+      "words": []
     }
   ],
-  "fetchedAt": "2026-07-22T07:34:00.000Z",
-  "videoId": "curo8LPPA5Y"
+  "fetchedAt": "2026-07-22T13:54:39.140911Z",
+  "videoId": "curo8LPPA5Y",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-22T14:00:10.200000Z",
+    "dgWordCount": 610,
+    "matchedSentences": 14
+  }
 }
