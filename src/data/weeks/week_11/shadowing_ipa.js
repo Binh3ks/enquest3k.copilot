@@ -15,24 +15,33 @@ export default {
     { word: "today?", ipa: "/tədˈeɪ/", stress: 1 },
   ],
   3: [
-    { word: "Hi", ipa: "/hˈaɪ/", stress: 1 },
-    { word: "John.", ipa: "/dʒˈɑːn/", stress: 1 },
-    { word: "I", ipa: "/ˈaɪ/", stress: 0 },
-  ],
-  4: [
+    { word: "Hi,", ipa: "/hˈaɪ/", stress: 1 },
+    { word: "John,", ipa: "/dʒˈɑːn/", stress: 1 },
+    { word: "thanks.", ipa: "/θˈæŋks/", stress: 1 },
     { word: "How", ipa: "/hˈaʊ/", stress: 0 },
     { word: "about", ipa: "/əbˈaʊt/", stress: 0 },
     { word: "you?", ipa: "/jˈuː/", stress: 0 },
-    { word: "I", ipa: "/ˈaɪ/", stress: 0 },
+  ],
+  4: [
+    { word: "I'm", ipa: "/aɪm/", stress: 1 },
+    { word: "great,", ipa: "/ɡɹˈeɪt/", stress: 1 },
+    { word: "thanks.", ipa: "/θˈæŋks/", stress: 1 },
+    { word: "It's", ipa: "/ɪts/", stress: 1 },
+    { word: "such", ipa: "/sˈʌtʃ/", stress: 0 },
+    { word: "a", ipa: "/ə/", stress: 0 },
+    { word: "nice", ipa: "/nˈaɪs/", stress: 1 },
+    { word: "day,", ipa: "/dˈeɪ/", stress: 1 },
+    { word: "isn't", ipa: "/ɪzənt/", stress: 1 },
+    { word: "it?", ipa: "/ˈɪt/", stress: 0 },
   ],
   5: [
-    { word: "It", ipa: "/ˈɪt/", stress: 0 },
+    { word: "Yes,", ipa: "/jˈɛs/", stress: 1 },
+    { word: "it's", ipa: "/ɪts/", stress: 1 },
+    { word: "sunny", ipa: "/sˈʌni/", stress: 1 },
+    { word: "and", ipa: "/ənd/", stress: 0 },
+    { word: "warm.", ipa: "/wˈɔːɹm/", stress: 1 },
   ],
   6: [
-    { word: "Yes,", ipa: "/jˈɛs/", stress: 1 },
-    { word: "it", ipa: "/ˈɪt/", stress: 0 },
-  ],
-  7: [
     { word: "Perfect", ipa: "/pɚfˈɛkt/", stress: 1 },
     { word: "for", ipa: "/fˈɔːɹ/", stress: 0 },
     { word: "a", ipa: "/ə/", stress: 0 },
@@ -41,14 +50,14 @@ export default {
     { word: "the", ipa: "/ðə/", stress: 0 },
     { word: "park.", ipa: "/pˈɑːɹk/", stress: 1 },
   ],
-  8: [
+  7: [
     { word: "Do", ipa: "/dˈuː/", stress: 0 },
     { word: "you", ipa: "/jˈuː/", stress: 0 },
     { word: "come", ipa: "/kˈʌm/", stress: 1 },
     { word: "here", ipa: "/hˈiːɹ/", stress: 0 },
     { word: "often?", ipa: "/ˈɔːfən/", stress: 1 },
   ],
-  9: [
+  8: [
     { word: "Not", ipa: "/nˈɑːt/", stress: 0 },
     { word: "really.", ipa: "/ɹˈɪli/", stress: 1 },
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
@@ -57,19 +66,19 @@ export default {
     { word: "at", ipa: "/ˈæt/", stress: 0 },
     { word: "home.", ipa: "/hˈoʊm/", stress: 1 },
   ],
-  10: [
-    { word: "What", ipa: "/wˈʌt/", stress: 0 },
-    { word: "about", ipa: "/əbˈaʊt/", stress: 0 },
-    { word: "you?", ipa: "/jˈuː/", stress: 0 },
+  9: [
+    { word: "What", ipa: "/wˈʌt/", stress: 1 },
+    { word: "about", ipa: "/əbˈaʊt/", stress: 1 },
+    { word: "you?", ipa: "/jˈuː/", stress: 1 },
   ],
-  11: [
+  10: [
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "come", ipa: "/kˈʌm/", stress: 1 },
     { word: "here", ipa: "/hˈiːɹ/", stress: 0 },
     { word: "every", ipa: "/ˈɛvɚi/", stress: 0 },
     { word: "weekend.", ipa: "/wˈiːkˌɛnd/", stress: 2 },
   ],
-  12: [
+  11: [
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "like", ipa: "/lˈaɪk/", stress: 1 },
     { word: "walking", ipa: "/wˈɔːkɪŋ/", stress: 1 },
@@ -78,8 +87,8 @@ export default {
     { word: "the", ipa: "/ðə/", stress: 0 },
     { word: "ducks.", ipa: "/dˈʌks/", stress: 1 },
   ],
-  13: [
-    { word: "Oh,", ipa: "/ˈoʊ/", stress: 1 },
+  12: [
+    { word: "Oh,", ipa: "/oʊ/", stress: 1 },
     { word: "that", ipa: "/ðˈæt/", stress: 0 },
     { word: "sounds", ipa: "/sˈaʊndz/", stress: 1 },
     { word: "fun!", ipa: "/fˈʌn/", stress: 1 },
@@ -87,54 +96,55 @@ export default {
     { word: "love", ipa: "/lˈʌv/", stress: 1 },
     { word: "ducks.", ipa: "/dˈʌks/", stress: 1 },
   ],
-  14: [
+  13: [
     { word: "Do", ipa: "/dˈuː/", stress: 0 },
     { word: "you", ipa: "/jˈuː/", stress: 0 },
     { word: "feed", ipa: "/fˈiːd/", stress: 1 },
     { word: "them?", ipa: "/ðˈɛm/", stress: 0 },
+  ],
+  14: [
     { word: "Yes,", ipa: "/jˈɛs/", stress: 1 },
     { word: "sometimes.", ipa: "/səmtˈaɪmz/", stress: 1 },
     { word: "But", ipa: "/bˈʌt/", stress: 0 },
-  ],
-  15: [
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "only", ipa: "/ˈoʊnli/", stress: 0 },
     { word: "give", ipa: "/ɡˈɪv/", stress: 1 },
     { word: "them", ipa: "/ðˈɛm/", stress: 0 },
-  ],
-  16: [
     { word: "bread", ipa: "/bɹˈɛd/", stress: 1 },
     { word: "once", ipa: "/wˈʌns/", stress: 1 },
     { word: "in", ipa: "/ɪn/", stress: 0 },
     { word: "a", ipa: "/ə/", stress: 0 },
     { word: "while.", ipa: "/wˈaɪl/", stress: 0 },
   ],
-  17: [
-    { word: "That", ipa: "/ðˈæt/", stress: 0 },
-  ],
-  18: [
+  15: [
+    { word: "That's", ipa: "/ðæts/", stress: 1 },
+    { word: "nice.", ipa: "/nˈaɪs/", stress: 1 },
+    { word: "Bread", ipa: "/bɹˈɛd/", stress: 1 },
+    { word: "isn't", ipa: "/ɪzənt/", stress: 1 },
     { word: "always", ipa: "/ˈɔːlwˌeɪz/", stress: 2 },
     { word: "good", ipa: "/ɡˈʊd/", stress: 1 },
     { word: "for", ipa: "/fˈɔːɹ/", stress: 0 },
     { word: "them.", ipa: "/ðˈɛm/", stress: 0 },
+  ],
+  16: [
     { word: "Yes,", ipa: "/jˈɛs/", stress: 1 },
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "know.", ipa: "/nˈoʊ/", stress: 1 },
   ],
-  19: [
+  17: [
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "think", ipa: "/θˈɪŋk/", stress: 1 },
     { word: "they", ipa: "/ðˈeɪ/", stress: 0 },
     { word: "like", ipa: "/lˈaɪk/", stress: 1 },
     { word: "it.", ipa: "/ˈɪt/", stress: 0 },
   ],
-  20: [
+  18: [
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "have", ipa: "/hˈæv/", stress: 0 },
     { word: "some", ipa: "/sˈʌm/", stress: 0 },
     { word: "bread.", ipa: "/bɹˈɛd/", stress: 1 },
   ],
-  21: [
+  19: [
     { word: "Do", ipa: "/dˈuː/", stress: 0 },
     { word: "you", ipa: "/jˈuː/", stress: 0 },
     { word: "want", ipa: "/wˈɑːnt/", stress: 1 },
@@ -143,11 +153,15 @@ export default {
     { word: "them", ipa: "/ðˈɛm/", stress: 0 },
     { word: "together?", ipa: "/təɡˈɛðɚ/", stress: 1 },
   ],
-  22: [
+  20: [
     { word: "Sure,", ipa: "/ʃˈʊɹ/", stress: 1 },
-    { word: "let", ipa: "/lˈɛt/", stress: 1 },
+    { word: "let's", ipa: "/lɛts/", stress: 1 },
+    { word: "go.", ipa: "/ɡˈoʊ/", stress: 1 },
+    { word: "Here", ipa: "/hˈiːɹ/", stress: 0 },
+    { word: "you", ipa: "/jˈuː/", stress: 0 },
+    { word: "are.", ipa: "/ˈɑːɹ/", stress: 0 },
   ],
-  23: [
+  21: [
     { word: "Thank", ipa: "/θˈæŋk/", stress: 1 },
     { word: "you.", ipa: "/jˈuː/", stress: 0 },
     { word: "Come", ipa: "/kˈʌm/", stress: 1 },
@@ -155,9 +169,9 @@ export default {
     { word: "ducks.", ipa: "/dˈʌks/", stress: 1 },
     { word: "Yum,", ipa: "/jˈʌm/", stress: 1 },
     { word: "yum.", ipa: "/jˈʌm/", stress: 1 },
-    { word: "Oh,", ipa: "/ˈoʊ/", stress: 1 },
   ],
-  24: [
+  22: [
+    { word: "Oh,", ipa: "/oʊ/", stress: 1 },
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "think", ipa: "/θˈɪŋk/", stress: 1 },
     { word: "they", ipa: "/ðˈeɪ/", stress: 0 },
@@ -165,32 +179,37 @@ export default {
     { word: "like", ipa: "/lˈaɪk/", stress: 1 },
     { word: "you.", ipa: "/jˈuː/", stress: 0 },
   ],
-  25: [
+  23: [
     { word: "They", ipa: "/ðˈeɪ/", stress: 0 },
     { word: "like", ipa: "/lˈaɪk/", stress: 1 },
     { word: "you", ipa: "/jˈuː/", stress: 0 },
     { word: "too.", ipa: "/tˈuː/", stress: 0 },
-    { word: "You", ipa: "/jˈuː/", stress: 0 },
+    { word: "You're", ipa: "/jʊr/", stress: 1 },
+    { word: "so", ipa: "/sˈoʊ/", stress: 0 },
+    { word: "nice.", ipa: "/nˈaɪs/", stress: 1 },
   ],
-  26: [
+  24: [
     { word: "Thank", ipa: "/θˈæŋk/", stress: 1 },
     { word: "you.", ipa: "/jˈuː/", stress: 0 },
-    { word: "It", ipa: "/ˈɪt/", stress: 0 },
-  ],
-  27: [
+    { word: "It's", ipa: "/ɪts/", stress: 1 },
+    { word: "a", ipa: "/ə/", stress: 0 },
     { word: "nice", ipa: "/nˈaɪs/", stress: 1 },
     { word: "day", ipa: "/dˈeɪ/", stress: 1 },
     { word: "for", ipa: "/fˈɔːɹ/", stress: 0 },
     { word: "a", ipa: "/ə/", stress: 0 },
     { word: "walk.", ipa: "/wˈɔːk/", stress: 1 },
+  ],
+  25: [
     { word: "Yes,", ipa: "/jˈɛs/", stress: 1 },
     { word: "it", ipa: "/ˈɪt/", stress: 0 },
     { word: "is.", ipa: "/ˈɪz/", stress: 0 },
   ],
-  28: [
-    { word: "I", ipa: "/ˈaɪ/", stress: 0 },
+  26: [
+    { word: "I'm", ipa: "/aɪm/", stress: 1 },
+    { word: "so", ipa: "/sˈoʊ/", stress: 0 },
+    { word: "happy.", ipa: "/hˈæpi/", stress: 1 },
   ],
-  29: [
+  27: [
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
     { word: "have", ipa: "/hˈæv/", stress: 0 },
     { word: "a", ipa: "/ə/", stress: 0 },
@@ -199,7 +218,7 @@ export default {
     { word: "with", ipa: "/wˈɪð/", stress: 0 },
     { word: "you.", ipa: "/jˈuː/", stress: 0 },
   ],
-  30: [
+  28: [
     { word: "Me", ipa: "/mˈiː/", stress: 0 },
     { word: "too.", ipa: "/tˈuː/", stress: 0 },
     { word: "I", ipa: "/ˈaɪ/", stress: 0 },
@@ -208,7 +227,7 @@ export default {
     { word: "go", ipa: "/ɡˈoʊ/", stress: 1 },
     { word: "now.", ipa: "/nˈaʊ/", stress: 1 },
   ],
-  31: [
+  29: [
     { word: "Okay,", ipa: "/ˌoʊkˈeɪ/", stress: 2 },
     { word: "see", ipa: "/sˈiː/", stress: 1 },
     { word: "you", ipa: "/jˈuː/", stress: 0 },
