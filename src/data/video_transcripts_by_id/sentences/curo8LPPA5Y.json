@@ -10,169 +10,169 @@
     {
       "id": 2,
       "text": "Hi Anna. How are you today?",
-      "start": 7.98,
+      "start": 7.82,
       "duration": 3.15
     },
     {
       "id": 3,
       "text": "Hi, John, thanks. How about you?",
-      "start": 11.29,
+      "start": 10.97,
       "duration": 7.19
     },
     {
       "id": 4,
       "text": "I'm great, thanks. It's such a nice day, isn't it?",
-      "start": 18.64,
+      "start": 18.16,
       "duration": 5.77
     },
     {
       "id": 5,
       "text": "Yes, it's sunny and warm.",
-      "start": 24.57,
+      "start": 23.93,
       "duration": 6.27
     },
     {
       "id": 6,
       "text": "Perfect for a walk in the park.",
-      "start": 31.0,
+      "start": 30.2,
       "duration": 2.85
     },
     {
       "id": 7,
       "text": "Do you come here often?",
-      "start": 34.01,
+      "start": 33.05,
       "duration": 2.1
     },
     {
       "id": 8,
       "text": "Not really. I usually stay at home.",
-      "start": 36.27,
+      "start": 35.14,
       "duration": 4.66
     },
     {
       "id": 9,
       "text": "What about you?",
-      "start": 41.09,
-      "duration": 1.3
+      "start": 39.8,
+      "duration": 0.75
     },
     {
       "id": 10,
       "text": "I come here every weekend.",
-      "start": 42.55,
+      "start": 40.55,
       "duration": 3.76
     },
     {
       "id": 11,
       "text": "I like walking and watching the ducks.",
-      "start": 46.47,
+      "start": 44.31,
       "duration": 5.24
     },
     {
       "id": 12,
       "text": "Oh, that sounds fun! I love ducks.",
-      "start": 51.87,
+      "start": 49.54,
       "duration": 5.83
     },
     {
       "id": 13,
       "text": "Do you feed them?",
-      "start": 57.86,
+      "start": 55.37,
       "duration": 2.78
     },
     {
       "id": 14,
       "text": "Yes, sometimes. But I only give them bread once in a while.",
-      "start": 60.8,
-      "duration": 8.55
+      "start": 58.16,
+      "duration": 8.68
     },
     {
       "id": 15,
       "text": "That's nice. Bread isn't always good for them.",
-      "start": 69.51,
-      "duration": 6.82
+      "start": 66.84,
+      "duration": 6.83
     },
     {
       "id": 16,
       "text": "Yes, I know.",
-      "start": 76.49,
+      "start": 73.66,
       "duration": 1.61
     },
     {
       "id": 17,
       "text": "I think they like it.",
-      "start": 78.26,
+      "start": 75.27,
       "duration": 2.18
     },
     {
       "id": 18,
       "text": "I have some bread.",
-      "start": 80.6,
+      "start": 77.45,
       "duration": 2.46
     },
     {
       "id": 19,
       "text": "Do you want to feed them together?",
-      "start": 83.22,
+      "start": 79.91,
       "duration": 4.52
     },
     {
       "id": 20,
       "text": "Sure, let's go. Here you are.",
-      "start": 87.9,
-      "duration": 5.52
+      "start": 84.44,
+      "duration": 5.51
     },
     {
       "id": 21,
       "text": "Thank you. Come on, ducks. Yum, yum.",
-      "start": 93.58,
-      "duration": 4.72
+      "start": 89.95,
+      "duration": 4.71
     },
     {
       "id": 22,
       "text": "Oh, I think they really like you.",
-      "start": 98.46,
+      "start": 94.67,
       "duration": 4.55
     },
     {
       "id": 23,
       "text": "They like you too. You're so nice.",
-      "start": 103.17,
+      "start": 99.21,
       "duration": 7.94
     },
     {
       "id": 24,
       "text": "Thank you. It's a nice day for a walk.",
-      "start": 111.27,
+      "start": 107.16,
       "duration": 8.76
     },
     {
       "id": 25,
       "text": "Yes, it is.",
-      "start": 120.19,
+      "start": 115.92,
       "duration": 2.19
     },
     {
       "id": 26,
       "text": "I'm so happy.",
-      "start": 122.54,
+      "start": 118.11,
       "duration": 3.05
     },
     {
       "id": 27,
       "text": "I have a good time with you.",
-      "start": 125.75,
+      "start": 121.16,
       "duration": 3.18
     },
     {
       "id": 28,
       "text": "Me too. I have to go now.",
-      "start": 129.09,
+      "start": 124.34,
       "duration": 4.14
     },
     {
       "id": 29,
       "text": "Okay, see you next time. Bye.",
-      "start": 133.39,
+      "start": 128.48,
       "duration": 6.0
     }
   ],
