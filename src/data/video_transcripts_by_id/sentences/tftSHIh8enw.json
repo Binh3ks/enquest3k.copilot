@@ -103,10 +103,10 @@
     },
     {
       "id": 5,
-      "text": "a race. Hoo",
+      "text": "a race.",
       "speaker": "Speaker2",
       "start": 44.51,
-      "duration": 1.69,
+      "duration": 0.74,
       "words": [
         {
           "word": "a",
@@ -119,23 +119,23 @@
           "start": 44.75,
           "end": 45.25,
           "confidence": 0.85
-        },
+        }
+      ],
+      "confidence": 0.925
+    },
+    {
+      "id": 6,
+      "text": "Hoo I can win you, I can win you slow, but the steady winner, it's not over until the end.",
+      "speaker": "Speaker2",
+      "start": 45.7,
+      "duration": 8.5,
+      "words": [
         {
           "word": "hoo",
           "start": 45.7,
           "end": 46.2,
           "confidence": 0.954
-        }
-      ],
-      "confidence": 0.94
-    },
-    {
-      "id": 6,
-      "text": "I can win you, I can win you slow, but the steady winner, it's not over until the end.",
-      "speaker": "Speaker2",
-      "start": 47.07,
-      "duration": 7.13,
-      "words": [
+        },
         {
           "word": "i",
           "start": 47.07,
@@ -251,7 +251,7 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.96
     },
     {
       "id": 7,
@@ -341,10 +341,10 @@
     },
     {
       "id": 9,
-      "text": "La la la. Enjoy your race, enjoy your race, la la la.",
+      "text": "La la la.",
       "speaker": "Speaker0",
       "start": 62.9,
-      "duration": 4.74,
+      "duration": 1.28,
       "words": [
         {
           "word": "la",
@@ -363,7 +363,17 @@
           "start": 64.02,
           "end": 64.18,
           "confidence": 0.829
-        },
+        }
+      ],
+      "confidence": 0.905
+    },
+    {
+      "id": 10,
+      "text": "Enjoy your race, enjoy your race, la la la.",
+      "speaker": "Speaker0",
+      "start": 64.18,
+      "duration": 3.46,
+      "words": [
         {
           "word": "enjoy",
           "start": 64.18,
@@ -419,14 +429,14 @@
           "confidence": 0.896
         }
       ],
-      "confidence": 0.919
+      "confidence": 0.911
     },
     {
-      "id": 10,
-      "text": "I can win you, I can win you fast. And the best winner, it's not over until the end.",
+      "id": 11,
+      "text": "I can win you, I can win you fast.",
       "speaker": "Speaker0",
       "start": 68.18,
-      "duration": 7.15,
+      "duration": 2.34,
       "words": [
         {
           "word": "i",
@@ -481,7 +491,17 @@
           "start": 70.02,
           "end": 70.52,
           "confidence": 0.756
-        },
+        }
+      ],
+      "confidence": 0.951
+    },
+    {
+      "id": 12,
+      "text": "And the best winner, it's not over until the end.",
+      "speaker": "Speaker0",
+      "start": 70.58,
+      "duration": 4.75,
+      "words": [
         {
           "word": "and",
           "start": 70.58,
@@ -546,7 +566,7 @@
       "confidence": 0.962
     },
     {
-      "id": 11,
+      "id": 13,
       "text": "Let's enjoy a race.",
       "speaker": "Speaker0",
       "start": 75.8,
@@ -580,7 +600,7 @@
       "confidence": 0.948
     },
     {
-      "id": 12,
+      "id": 14,
       "text": "Let's listen.",
       "speaker": "Speaker0",
       "start": 110.14,
@@ -602,11 +622,11 @@
       "confidence": 0.971
     },
     {
-      "id": 13,
-      "text": "And go slow and fast. Run or race, run or race, walk. Hurrah,",
+      "id": 15,
+      "text": "And go slow and fast.",
       "speaker": "Speaker3",
       "start": 118.4,
-      "duration": 4.34,
+      "duration": 1.12,
       "words": [
         {
           "word": "and",
@@ -637,7 +657,17 @@
           "start": 119.3,
           "end": 119.52,
           "confidence": 0.877
-        },
+        }
+      ],
+      "confidence": 0.731
+    },
+    {
+      "id": 16,
+      "text": "Run or race, run or race, walk.",
+      "speaker": "Speaker3",
+      "start": 119.52,
+      "duration": 2.5,
+      "words": [
         {
           "word": "run",
           "start": 119.52,
@@ -679,23 +709,23 @@
           "start": 121.52,
           "end": 122.02,
           "confidence": 0.527
-        },
-        {
-          "word": "hurrah",
-          "start": 122.24,
-          "end": 122.74,
-          "confidence": 0.73
         }
       ],
       "confidence": 0.731
     },
     {
-      "id": 14,
-      "text": "who will win, who will win, slow will win or fast will win, it's not all until",
+      "id": 17,
+      "text": "Hurrah, who will win, who will win, slow will win or fast will win, it's not all until the end.",
       "speaker": "Speaker3",
-      "start": 123.36,
-      "duration": 5.78,
+      "start": 122.24,
+      "duration": 8.34,
       "words": [
+        {
+          "word": "hurrah",
+          "start": 122.24,
+          "end": 122.74,
+          "confidence": 0.73
+        },
         {
           "word": "who",
           "start": 123.36,
@@ -797,17 +827,7 @@
           "start": 128.64,
           "end": 129.14,
           "confidence": 0.313
-        }
-      ],
-      "confidence": 0.8
-    },
-    {
-      "id": 15,
-      "text": "the end. Let's run or race.",
-      "speaker": "Speaker1",
-      "start": 129.84,
-      "duration": 2.5,
-      "words": [
+        },
         {
           "word": "the",
           "start": 129.84,
@@ -819,7 +839,17 @@
           "start": 130.08,
           "end": 130.58,
           "confidence": 0.981
-        },
+        }
+      ],
+      "confidence": 0.873
+    },
+    {
+      "id": 18,
+      "text": "Let's run or race.",
+      "speaker": "Speaker1",
+      "start": 130.96,
+      "duration": 1.38,
+      "words": [
         {
           "word": "let's",
           "start": 130.96,
@@ -845,10 +875,10 @@
           "confidence": 0.959
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.982
     },
     {
-      "id": 16,
+      "id": 19,
       "text": "I'm so slow but I'm so steady.",
       "speaker": "Speaker2",
       "start": 136.82,
@@ -900,7 +930,7 @@
       "confidence": 0.878
     },
     {
-      "id": 17,
+      "id": 20,
       "text": "Hoo Have a race, have a race.",
       "speaker": "Speaker2",
       "start": 139.47,
@@ -952,7 +982,7 @@
       "confidence": 0.621
     },
     {
-      "id": 18,
+      "id": 21,
       "text": "Hoo I can win you, I can win you slow but the steady winner, it's not over until the end.",
       "speaker": "Speaker2",
       "start": 143.15,
@@ -1082,7 +1112,7 @@
       "confidence": 0.931
     },
     {
-      "id": 19,
+      "id": 22,
       "text": "Let's have a race.",
       "speaker": "Speaker2",
       "start": 152.12,
@@ -1116,7 +1146,7 @@
       "confidence": 0.992
     },
     {
-      "id": 20,
+      "id": 23,
       "text": "I'm so fast and I'm the best.",
       "speaker": "Speaker0",
       "start": 158.04,
@@ -1168,7 +1198,7 @@
       "confidence": 0.933
     },
     {
-      "id": 21,
+      "id": 24,
       "text": "La la la.",
       "speaker": "Speaker0",
       "start": 160.6,
@@ -1196,11 +1226,11 @@
       "confidence": 0.729
     },
     {
-      "id": 22,
-      "text": "Enjoy a race, enjoy a race. La la la.",
+      "id": 25,
+      "text": "Enjoy a race, enjoy a race.",
       "speaker": "Speaker0",
       "start": 161.75,
-      "duration": 3.46,
+      "duration": 2.0,
       "words": [
         {
           "word": "enjoy",
@@ -1237,7 +1267,17 @@
           "start": 163.34,
           "end": 163.75,
           "confidence": 0.757
-        },
+        }
+      ],
+      "confidence": 0.895
+    },
+    {
+      "id": 26,
+      "text": "La la la.",
+      "speaker": "Speaker0",
+      "start": 163.75,
+      "duration": 1.46,
+      "words": [
         {
           "word": "la",
           "start": 163.75,
@@ -1260,11 +1300,11 @@
       "confidence": 0.895
     },
     {
-      "id": 23,
-      "text": "I can win you, I can win you fast. And the best winner, it's not over until",
+      "id": 27,
+      "text": "I can win you, I can win you fast.",
       "speaker": "Speaker0",
       "start": 165.75,
-      "duration": 5.86,
+      "duration": 2.34,
       "words": [
         {
           "word": "i",
@@ -1319,7 +1359,17 @@
           "start": 167.59,
           "end": 168.09,
           "confidence": 0.889
-        },
+        }
+      ],
+      "confidence": 0.959
+    },
+    {
+      "id": 28,
+      "text": "And the best winner, it's not over until the end. Let's enjoy a",
+      "speaker": "Speaker0",
+      "start": 168.15,
+      "duration": 6.44,
+      "words": [
         {
           "word": "and",
           "start": 168.15,
@@ -1367,17 +1417,7 @@
           "start": 171.11,
           "end": 171.61,
           "confidence": 0.798
-        }
-      ],
-      "confidence": 0.959
-    },
-    {
-      "id": 24,
-      "text": "the end. Let's enjoy a",
-      "speaker": "Speaker0",
-      "start": 172.15,
-      "duration": 2.44,
-      "words": [
+        },
         {
           "word": "the",
           "start": 172.15,
@@ -1409,21 +1449,31 @@
           "confidence": 0.836
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.953
     },
     {
-      "id": 25,
-      "text": "race. Sing along.",
+      "id": 29,
+      "text": "race.",
       "speaker": "Speaker3",
       "start": 175.05,
-      "duration": 33.56,
+      "duration": 0.5,
       "words": [
         {
           "word": "race",
           "start": 175.05,
           "end": 175.55,
           "confidence": 0.938
-        },
+        }
+      ],
+      "confidence": 0.938
+    },
+    {
+      "id": 30,
+      "text": "Sing along.",
+      "speaker": "Speaker3",
+      "start": 207.79,
+      "duration": 0.82,
+      "words": [
         {
           "word": "sing",
           "start": 207.79,
@@ -1437,10 +1487,10 @@
           "confidence": 0.935
         }
       ],
-      "confidence": 0.935
+      "confidence": 0.932
     },
     {
-      "id": 26,
+      "id": 31,
       "text": "Let's sing.",
       "speaker": "Speaker2",
       "start": 304.55,
@@ -1462,7 +1512,7 @@
       "confidence": 0.954
     }
   ],
-  "fetchedAt": "2026-07-23T04:08:50.586251+00:00",
+  "fetchedAt": "2026-07-23T06:28:10.723026+00:00",
   "videoId": "tftSHIh8enw",
   "speakerMap": {
     "0": "Speaker0",
@@ -1472,18 +1522,20 @@
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:08:50.586285+00:00",
+    "alignedAt": "2026-07-23T06:28:10.723060+00:00",
     "dgWordCount": 200,
     "dgUtteranceCount": 36,
     "matchedSegments": 36,
     "totalDuration": 305.53
   },
-  "repairedAt": "2026-07-23T04:33:44.517213Z",
+  "repairedAt": "2026-07-23T06:33:07.785810Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 36,
-    "afterSegments": 26,
+    "afterSegments": 31,
     "beforeAvgWords": 5.6,
-    "afterAvgWords": 7.7,
-    "merged": 10
+    "afterAvgWords": 6.5,
+    "merged": 5,
+    "danglingFragments": 0
   }
 }

@@ -18,7 +18,7 @@
           "word": "sing",
           "start": 2.4,
           "end": 2.64,
-          "confidence": 0.865
+          "confidence": 0.864
         },
         {
           "word": "sing",
@@ -31,34 +31,44 @@
     },
     {
       "id": 2,
-      "text": "Action verbs. Walk.",
+      "text": "Action verbs.",
       "speaker": "Speaker0",
       "start": 7.6,
-      "duration": 6.34,
+      "duration": 1.06,
       "words": [
         {
           "word": "action",
           "start": 7.6,
           "end": 8.1,
-          "confidence": 0.943
+          "confidence": 0.944
         },
         {
           "word": "verbs",
           "start": 8.16,
           "end": 8.66,
           "confidence": 0.991
-        },
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 3,
+      "text": "Walk.",
+      "speaker": "Speaker0",
+      "start": 13.44,
+      "duration": 0.5,
+      "words": [
         {
           "word": "walk",
           "start": 13.44,
           "end": 13.94,
-          "confidence": 0.661
+          "confidence": 0.663
         }
       ],
-      "confidence": 0.814
+      "confidence": 0.663
     },
     {
-      "id": 3,
+      "id": 4,
       "text": "You can walk.",
       "speaker": "Speaker0",
       "start": 14.93,
@@ -86,7 +96,7 @@
       "confidence": 0.998
     },
     {
-      "id": 4,
+      "id": 5,
       "text": "You can walk like a cat.",
       "speaker": "Speaker0",
       "start": 18.77,
@@ -132,43 +142,53 @@
       "confidence": 0.997
     },
     {
-      "id": 5,
-      "text": "Walk. Walk. Stomp",
+      "id": 6,
+      "text": "Walk.",
       "speaker": "Speaker0",
       "start": 22.36,
-      "duration": 6.48,
+      "duration": 0.5,
       "words": [
         {
           "word": "walk",
           "start": 22.36,
           "end": 22.86,
-          "confidence": 0.824
-        },
+          "confidence": 0.823
+        }
+      ],
+      "confidence": 0.823
+    },
+    {
+      "id": 7,
+      "text": "Walk.",
+      "speaker": "Speaker0",
+      "start": 24.2,
+      "duration": 0.5,
+      "words": [
         {
           "word": "walk",
           "start": 24.2,
           "end": 24.7,
           "confidence": 0.972
-        },
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 8,
+      "text": "Stomp you can stomp you can stomp like an elephant.",
+      "speaker": "Speaker0",
+      "start": 28.34,
+      "duration": 6.02,
+      "words": [
         {
           "word": "stomp",
           "start": 28.34,
           "end": 28.84,
           "confidence": 0.838
-        }
-      ],
-      "confidence": 0.878
-    },
-    {
-      "id": 6,
-      "text": "you can stomp",
-      "speaker": "Speaker0",
-      "start": 29.54,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "you",
-          "start": 29.54,
+          "start": 29.62,
           "end": 29.86,
           "confidence": 0.478
         },
@@ -183,17 +203,7 @@
           "start": 30.26,
           "end": 30.76,
           "confidence": 0.974
-        }
-      ],
-      "confidence": 0.817
-    },
-    {
-      "id": 7,
-      "text": "you can stomp like an elephant.",
-      "speaker": "Speaker0",
-      "start": 32.02,
-      "duration": 2.34,
-      "words": [
+        },
         {
           "word": "you",
           "start": 32.02,
@@ -228,17 +238,17 @@
           "word": "elephant",
           "start": 33.86,
           "end": 34.36,
-          "confidence": 0.908
+          "confidence": 0.909
         }
       ],
-      "confidence": 0.902
+      "confidence": 0.853
     },
     {
-      "id": 8,
-      "text": "Stomp stomp waddle",
+      "id": 9,
+      "text": "Stomp stomp waddle you can waddle.",
       "speaker": "Speaker0",
       "start": 36.18,
-      "duration": 6.66,
+      "duration": 8.98,
       "words": [
         {
           "word": "stomp",
@@ -257,17 +267,7 @@
           "start": 42.34,
           "end": 42.84,
           "confidence": 0.973
-        }
-      ],
-      "confidence": 0.863
-    },
-    {
-      "id": 9,
-      "text": "you can waddle.",
-      "speaker": "Speaker0",
-      "start": 43.85,
-      "duration": 1.31,
-      "words": [
+        },
         {
           "word": "you",
           "start": 43.85,
@@ -284,10 +284,10 @@
           "word": "waddle",
           "start": 44.66,
           "end": 45.16,
-          "confidence": 0.806
+          "confidence": 0.807
         }
       ],
-      "confidence": 0.832
+      "confidence": 0.855
     },
     {
       "id": 10,
@@ -300,7 +300,7 @@
           "word": "you",
           "start": 47.38,
           "end": 47.7,
-          "confidence": 0.587
+          "confidence": 0.589
         },
         {
           "word": "can",
@@ -337,10 +337,10 @@
     },
     {
       "id": 11,
-      "text": "Waddle waddle stand",
+      "text": "Waddle waddle stand You can stand.",
       "speaker": "Speaker0",
       "start": 50.57,
-      "duration": 7.33,
+      "duration": 9.09,
       "words": [
         {
           "word": "waddle",
@@ -359,17 +359,7 @@
           "start": 57.4,
           "end": 57.9,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.989
-    },
-    {
-      "id": 12,
-      "text": "You can stand.",
-      "speaker": "Speaker0",
-      "start": 58.52,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "you",
           "start": 58.52,
@@ -386,13 +376,13 @@
           "word": "stand",
           "start": 59.16,
           "end": 59.66,
-          "confidence": 0.888
+          "confidence": 0.887
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.978
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "You can stand like a flamingo.",
       "speaker": "Speaker0",
       "start": 61.8,
@@ -402,7 +392,7 @@
           "word": "you",
           "start": 61.8,
           "end": 62.04,
-          "confidence": 0.988
+          "confidence": 0.989
         },
         {
           "word": "can",
@@ -426,7 +416,7 @@
           "word": "a",
           "start": 63.24,
           "end": 63.48,
-          "confidence": 0.979
+          "confidence": 0.98
         },
         {
           "word": "flamingo",
@@ -438,17 +428,17 @@
       "confidence": 0.993
     },
     {
-      "id": 14,
-      "text": "Stand stand run",
+      "id": 13,
+      "text": "Stand stand run You can run.",
       "speaker": "Speaker0",
       "start": 65.88,
-      "duration": 6.92,
+      "duration": 8.75,
       "words": [
         {
           "word": "stand",
           "start": 65.88,
           "end": 66.38,
-          "confidence": 0.994
+          "confidence": 0.993
         },
         {
           "word": "stand",
@@ -461,17 +451,7 @@
           "start": 72.3,
           "end": 72.8,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 15,
-      "text": "You can run.",
-      "speaker": "Speaker0",
-      "start": 73.42,
-      "duration": 1.21,
-      "words": [
+        },
         {
           "word": "you",
           "start": 73.42,
@@ -491,10 +471,10 @@
           "confidence": 0.931
         }
       ],
-      "confidence": 0.92
+      "confidence": 0.977
     },
     {
-      "id": 16,
+      "id": 14,
       "text": "You can run like a cheetah.",
       "speaker": "Speaker0",
       "start": 76.13,
@@ -540,7 +520,7 @@
       "confidence": 0.994
     },
     {
-      "id": 17,
+      "id": 15,
       "text": "Run run Jump.",
       "speaker": "Speaker0",
       "start": 79.89,
@@ -562,13 +542,13 @@
           "word": "jump",
           "start": 86.9,
           "end": 87.4,
-          "confidence": 0.923
+          "confidence": 0.922
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.968
     },
     {
-      "id": 18,
+      "id": 16,
       "text": "You can jump.",
       "speaker": "Speaker0",
       "start": 87.86,
@@ -578,7 +558,7 @@
           "word": "you",
           "start": 87.86,
           "end": 88.18,
-          "confidence": 0.977
+          "confidence": 0.978
         },
         {
           "word": "can",
@@ -593,10 +573,10 @@
           "confidence": 0.978
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.984
     },
     {
-      "id": 19,
+      "id": 17,
       "text": "You can jump like a kangaroo.",
       "speaker": "Speaker0",
       "start": 90.74,
@@ -642,23 +622,33 @@
       "confidence": 0.954
     },
     {
-      "id": 20,
-      "text": "Jump. Jump jump jump",
+      "id": 18,
+      "text": "Jump.",
       "speaker": "Speaker0",
       "start": 94.58,
-      "duration": 7.65,
+      "duration": 0.5,
       "words": [
         {
           "word": "jump",
           "start": 94.58,
           "end": 95.08,
           "confidence": 0.906
-        },
+        }
+      ],
+      "confidence": 0.906
+    },
+    {
+      "id": 19,
+      "text": "Jump jump jump hop you can hop you can hop like a rabbit hop hop fly You can fly You can fly like a butterfly.",
+      "speaker": "Speaker0",
+      "start": 96.77,
+      "duration": 24.52,
+      "words": [
         {
           "word": "jump",
           "start": 96.77,
           "end": 97.09,
-          "confidence": 0.727
+          "confidence": 0.728
         },
         {
           "word": "jump",
@@ -670,29 +660,19 @@
           "word": "jump",
           "start": 101.73,
           "end": 102.23,
-          "confidence": 0.894
-        }
-      ],
-      "confidence": 0.857
-    },
-    {
-      "id": 21,
-      "text": "hop you can hop",
-      "speaker": "Speaker0",
-      "start": 102.61,
-      "duration": 1.45,
-      "words": [
+          "confidence": 0.895
+        },
         {
           "word": "hop",
           "start": 102.61,
           "end": 102.77,
-          "confidence": 0.52
+          "confidence": 0.509
         },
         {
           "word": "you",
           "start": 102.77,
           "end": 103.01,
-          "confidence": 0.639
+          "confidence": 0.642
         },
         {
           "word": "can",
@@ -705,22 +685,12 @@
           "start": 103.56,
           "end": 104.06,
           "confidence": 0.974
-        }
-      ],
-      "confidence": 0.782
-    },
-    {
-      "id": 22,
-      "text": "you can hop like a rabbit hop hop fly",
-      "speaker": "Speaker0",
-      "start": 105.73,
-      "duration": 9.72,
-      "words": [
+        },
         {
           "word": "you",
           "start": 105.73,
           "end": 105.97,
-          "confidence": 0.701
+          "confidence": 0.705
         },
         {
           "word": "can",
@@ -769,22 +739,12 @@
           "start": 114.95,
           "end": 115.45,
           "confidence": 0.983
-        }
-      ],
-      "confidence": 0.893
-    },
-    {
-      "id": 23,
-      "text": "You can fly",
-      "speaker": "Speaker0",
-      "start": 116.23,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "you",
           "start": 116.23,
           "end": 116.55,
-          "confidence": 0.568
+          "confidence": 0.574
         },
         {
           "word": "can",
@@ -797,22 +757,12 @@
           "start": 116.87,
           "end": 117.37,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.855
-    },
-    {
-      "id": 24,
-      "text": "You can fly like a butterfly.",
-      "speaker": "Speaker0",
-      "start": 119.11,
-      "duration": 2.18,
-      "words": [
+        },
         {
           "word": "you",
           "start": 119.11,
           "end": 119.35,
-          "confidence": 0.499
+          "confidence": 0.495
         },
         {
           "word": "can",
@@ -845,20 +795,20 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.908
+      "confidence": 0.865
     },
     {
-      "id": 25,
-      "text": "Fly fly dance",
+      "id": 20,
+      "text": "Fly fly dance You can dance You can dance like a bear.",
       "speaker": "Speaker0",
       "start": 123.7,
-      "duration": 6.42,
+      "duration": 12.42,
       "words": [
         {
           "word": "fly",
           "start": 123.7,
           "end": 124.2,
-          "confidence": 0.934
+          "confidence": 0.933
         },
         {
           "word": "fly",
@@ -871,17 +821,7 @@
           "start": 129.62,
           "end": 130.12,
           "confidence": 0.968
-        }
-      ],
-      "confidence": 0.958
-    },
-    {
-      "id": 26,
-      "text": "You can dance",
-      "speaker": "Speaker0",
-      "start": 131.47,
-      "duration": 1.13,
-      "words": [
+        },
         {
           "word": "you",
           "start": 131.47,
@@ -899,22 +839,12 @@
           "start": 132.1,
           "end": 132.6,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.943
-    },
-    {
-      "id": 27,
-      "text": "You can dance like a bear.",
-      "speaker": "Speaker0",
-      "start": 133.94,
-      "duration": 2.18,
-      "words": [
+        },
         {
           "word": "you",
           "start": 133.94,
           "end": 134.19,
-          "confidence": 0.502
+          "confidence": 0.506
         },
         {
           "word": "can",
@@ -947,14 +877,14 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.915
+      "confidence": 0.943
     },
     {
-      "id": 28,
-      "text": "Dance dance climb",
+      "id": 21,
+      "text": "Dance dance climb You can climb You can climb like a monkey.",
       "speaker": "Speaker0",
       "start": 137.38,
-      "duration": 10.24,
+      "duration": 15.68,
       "words": [
         {
           "word": "dance",
@@ -972,18 +902,8 @@
           "word": "climb",
           "start": 147.12,
           "end": 147.62,
-          "confidence": 0.96
-        }
-      ],
-      "confidence": 0.873
-    },
-    {
-      "id": 29,
-      "text": "You can climb",
-      "speaker": "Speaker0",
-      "start": 148.8,
-      "duration": 1.06,
-      "words": [
+          "confidence": 0.961
+        },
         {
           "word": "you",
           "start": 148.8,
@@ -1001,22 +921,12 @@
           "start": 149.36,
           "end": 149.86,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.899
-    },
-    {
-      "id": 30,
-      "text": "You can climb like a monkey.",
-      "speaker": "Speaker0",
-      "start": 150.88,
-      "duration": 2.18,
-      "words": [
+        },
         {
           "word": "you",
           "start": 150.88,
           "end": 151.12,
-          "confidence": 0.775
+          "confidence": 0.773
         },
         {
           "word": "can",
@@ -1049,20 +959,20 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.902
     },
     {
-      "id": 31,
-      "text": "Climb climb fart",
+      "id": 22,
+      "text": "Climb climb fart you can fart You can fart like a skunk.",
       "speaker": "Speaker0",
       "start": 155.15,
-      "duration": 11.29,
+      "duration": 17.7,
       "words": [
         {
           "word": "climb",
           "start": 155.15,
           "end": 155.47,
-          "confidence": 0.901
+          "confidence": 0.9
         },
         {
           "word": "climb",
@@ -1074,23 +984,13 @@
           "word": "fart",
           "start": 165.94,
           "end": 166.44,
-          "confidence": 0.858
-        }
-      ],
-      "confidence": 0.899
-    },
-    {
-      "id": 32,
-      "text": "you can fart",
-      "speaker": "Speaker0",
-      "start": 167.39,
-      "duration": 1.14,
-      "words": [
+          "confidence": 0.857
+        },
         {
           "word": "you",
           "start": 167.39,
           "end": 167.71,
-          "confidence": 0.479
+          "confidence": 0.476
         },
         {
           "word": "can",
@@ -1103,17 +1003,7 @@
           "start": 168.03,
           "end": 168.53,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.824
-    },
-    {
-      "id": 33,
-      "text": "You can fart like a skunk.",
-      "speaker": "Speaker0",
-      "start": 170.51,
-      "duration": 2.34,
-      "words": [
+        },
         {
           "word": "you",
           "start": 170.51,
@@ -1151,14 +1041,14 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.905
     },
     {
-      "id": 34,
-      "text": "Fart fart clap",
+      "id": 23,
+      "text": "Fart fart clap You can clap.",
       "speaker": "Speaker0",
       "start": 174.27,
-      "duration": 5.7,
+      "duration": 7.78,
       "words": [
         {
           "word": "fart",
@@ -1177,22 +1067,12 @@
           "start": 179.47,
           "end": 179.97,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.932
-    },
-    {
-      "id": 35,
-      "text": "You can clap.",
-      "speaker": "Speaker0",
-      "start": 180.91,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "you",
           "start": 180.91,
           "end": 181.23,
-          "confidence": 0.943
+          "confidence": 0.944
         },
         {
           "word": "can",
@@ -1204,23 +1084,23 @@
           "word": "clap",
           "start": 181.55,
           "end": 182.05,
-          "confidence": 0.92
+          "confidence": 0.919
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.937
     },
     {
-      "id": 36,
-      "text": "You can clap",
+      "id": 24,
+      "text": "You can clap like a seal.",
       "speaker": "Speaker0",
       "start": 183.08,
-      "duration": 1.06,
+      "duration": 2.5,
       "words": [
         {
           "word": "you",
           "start": 183.08,
           "end": 183.31,
-          "confidence": 0.876
+          "confidence": 0.877
         },
         {
           "word": "can",
@@ -1233,17 +1113,7 @@
           "start": 183.64,
           "end": 184.14,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.959
-    },
-    {
-      "id": 37,
-      "text": "like a seal.",
-      "speaker": "Speaker0",
-      "start": 184.44,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "like",
           "start": 184.44,
@@ -1263,14 +1133,14 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.976
     },
     {
-      "id": 38,
-      "text": "Clap clap. Swim.",
+      "id": 25,
+      "text": "Clap clap.",
       "speaker": "Speaker0",
       "start": 187.08,
-      "duration": 7.78,
+      "duration": 2.89,
       "words": [
         {
           "word": "clap",
@@ -1283,7 +1153,17 @@
           "start": 189.47,
           "end": 189.97,
           "confidence": 0.882
-        },
+        }
+      ],
+      "confidence": 0.848
+    },
+    {
+      "id": 26,
+      "text": "Swim.",
+      "speaker": "Speaker0",
+      "start": 194.36,
+      "duration": 0.5,
+      "words": [
         {
           "word": "swim",
           "start": 194.36,
@@ -1291,10 +1171,10 @@
           "confidence": 0.578
         }
       ],
-      "confidence": 0.758
+      "confidence": 0.578
     },
     {
-      "id": 39,
+      "id": 27,
       "text": "You can swim.",
       "speaker": "Speaker0",
       "start": 195.96,
@@ -1322,11 +1202,11 @@
       "confidence": 0.991
     },
     {
-      "id": 40,
-      "text": "You can swim like a fish. Swim swim review walk, stomp, waddle, stand, run jump hop fly dance climb fart clap swim.",
+      "id": 28,
+      "text": "You can swim like a fish.",
       "speaker": "Speaker0",
       "start": 197.79,
-      "duration": 56.49,
+      "duration": 1.92,
       "words": [
         {
           "word": "you",
@@ -1363,12 +1243,22 @@
           "start": 199.39,
           "end": 199.71,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.962
+    },
+    {
+      "id": 29,
+      "text": "Swim swim review walk, stomp, waddle, stand, run jump hop fly dance climb fart clap swim.",
+      "speaker": "Speaker0",
+      "start": 199.71,
+      "duration": 54.57,
+      "words": [
         {
           "word": "swim",
           "start": 199.71,
           "end": 200.21,
-          "confidence": 0.749
+          "confidence": 0.752
         },
         {
           "word": "swim",
@@ -1380,7 +1270,7 @@
           "word": "review",
           "start": 209.07,
           "end": 209.57,
-          "confidence": 0.602
+          "confidence": 0.605
         },
         {
           "word": "walk",
@@ -1458,31 +1348,33 @@
           "word": "swim",
           "start": 253.78,
           "end": 254.28,
-          "confidence": 0.969
+          "confidence": 0.955
         }
       ],
-      "confidence": 0.935
+      "confidence": 0.934
     }
   ],
-  "fetchedAt": "2026-07-23T04:01:42.531440+00:00",
+  "fetchedAt": "2026-07-23T06:24:53.199377+00:00",
   "videoId": "4c6FyuetSVo",
   "speakerMap": {
     "0": "Speaker0"
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:01:42.531471+00:00",
+    "alignedAt": "2026-07-23T06:24:53.199406+00:00",
     "dgWordCount": 177,
     "dgUtteranceCount": 77,
     "matchedSegments": 77,
     "totalDuration": 254.28
   },
-  "repairedAt": "2026-07-23T04:33:44.465851Z",
+  "repairedAt": "2026-07-23T06:33:07.707556Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 77,
-    "afterSegments": 40,
+    "afterSegments": 29,
     "beforeAvgWords": 2.3,
-    "afterAvgWords": 4.4,
-    "merged": 37
+    "afterAvgWords": 6.1,
+    "merged": 48,
+    "danglingFragments": 0
   }
 }

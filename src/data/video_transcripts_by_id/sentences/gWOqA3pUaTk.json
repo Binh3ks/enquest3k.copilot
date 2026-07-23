@@ -3,23 +3,43 @@
   "segments": [
     {
       "id": 1,
-      "text": "Hello? Hello. May I speak to Kate, please?",
+      "text": "Hello?",
       "speaker": "Speaker0",
       "start": 4.72,
-      "duration": 4.34,
+      "duration": 0.5,
       "words": [
         {
           "word": "hello",
           "start": 4.72,
           "end": 5.22,
-          "confidence": 0.978
-        },
+          "confidence": 0.979
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 2,
+      "text": "Hello.",
+      "speaker": "Speaker0",
+      "start": 6.08,
+      "duration": 0.5,
+      "words": [
         {
           "word": "hello",
           "start": 6.08,
           "end": 6.58,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 3,
+      "text": "May I speak to Kate, please?",
+      "speaker": "Speaker0",
+      "start": 7.2,
+      "duration": 1.86,
+      "words": [
         {
           "word": "may",
           "start": 7.2,
@@ -41,12 +61,12 @@
         {
           "word": "to",
           "start": 7.92,
-          "end": 8.24,
+          "end": 8.16,
           "confidence": 1.0
         },
         {
           "word": "kate",
-          "start": 8.24,
+          "start": 8.16,
           "end": 8.56,
           "confidence": 0.997
         },
@@ -57,10 +77,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.999
     },
     {
-      "id": 2,
+      "id": 4,
       "text": "Sorry. She's not here.",
       "speaker": "Speaker0",
       "start": 10.16,
@@ -94,7 +114,7 @@
       "confidence": 0.994
     },
     {
-      "id": 3,
+      "id": 5,
       "text": "Who's calling, please?",
       "speaker": "Speaker0",
       "start": 12.49,
@@ -104,7 +124,7 @@
           "word": "who's",
           "start": 12.49,
           "end": 12.74,
-          "confidence": 0.995
+          "confidence": 0.997
         },
         {
           "word": "calling",
@@ -122,7 +142,7 @@
       "confidence": 0.997
     },
     {
-      "id": 4,
+      "id": 6,
       "text": "This is Mike, Kate's friend.",
       "speaker": "Speaker0",
       "start": 14.82,
@@ -162,11 +182,11 @@
       "confidence": 0.985
     },
     {
-      "id": 5,
-      "text": "Hi, Mike. Can I take a message?",
+      "id": 7,
+      "text": "Hi, Mike.",
       "speaker": "Speaker0",
       "start": 17.86,
-      "duration": 2.57,
+      "duration": 0.82,
       "words": [
         {
           "word": "hi",
@@ -179,7 +199,17 @@
           "start": 18.18,
           "end": 18.68,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 8,
+      "text": "Can I take a message?",
+      "speaker": "Speaker0",
+      "start": 19.14,
+      "duration": 1.29,
+      "words": [
         {
           "word": "can",
           "start": 19.14,
@@ -211,10 +241,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.998
     },
     {
-      "id": 6,
+      "id": 9,
       "text": "No. Thank you.",
       "speaker": "Speaker0",
       "start": 21.78,
@@ -224,7 +254,7 @@
           "word": "no",
           "start": 21.78,
           "end": 22.1,
-          "confidence": 0.991
+          "confidence": 0.99
         },
         {
           "word": "thank",
@@ -242,7 +272,7 @@
       "confidence": 0.997
     },
     {
-      "id": 7,
+      "id": 10,
       "text": "I'll call back later.",
       "speaker": "Speaker0",
       "start": 23.14,
@@ -276,11 +306,11 @@
       "confidence": 0.997
     },
     {
-      "id": 8,
-      "text": "Okay. Bye. Bye.",
+      "id": 11,
+      "text": "Okay. Bye.",
       "speaker": "Speaker0",
       "start": 25.81,
-      "duration": 2.42,
+      "duration": 1.06,
       "words": [
         {
           "word": "okay",
@@ -293,7 +323,17 @@
           "start": 26.37,
           "end": 26.87,
           "confidence": 0.995
-        },
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 12,
+      "text": "Bye.",
+      "speaker": "Speaker0",
+      "start": 27.73,
+      "duration": 0.5,
+      "words": [
         {
           "word": "bye",
           "start": 27.73,
@@ -304,24 +344,44 @@
       "confidence": 0.997
     },
     {
-      "id": 9,
-      "text": "Hello? Hello? Can I speak to Kate?",
+      "id": 13,
+      "text": "Hello?",
       "speaker": "Speaker0",
       "start": 34.37,
-      "duration": 3.86,
+      "duration": 0.5,
       "words": [
         {
           "word": "hello",
           "start": 34.37,
           "end": 34.87,
           "confidence": 0.917
-        },
+        }
+      ],
+      "confidence": 0.917
+    },
+    {
+      "id": 14,
+      "text": "Hello?",
+      "speaker": "Speaker0",
+      "start": 35.65,
+      "duration": 0.5,
+      "words": [
         {
           "word": "hello",
           "start": 35.65,
           "end": 36.15,
           "confidence": 0.938
-        },
+        }
+      ],
+      "confidence": 0.938
+    },
+    {
+      "id": 15,
+      "text": "Can I speak to Kate?",
+      "speaker": "Speaker0",
+      "start": 36.61,
+      "duration": 1.62,
+      "words": [
         {
           "word": "can",
           "start": 36.61,
@@ -353,21 +413,31 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.949
+      "confidence": 0.991
     },
     {
-      "id": 10,
-      "text": "Speaking. Hi, Kate. This is Mike.",
+      "id": 16,
+      "text": "Speaking.",
       "speaker": "Speaker0",
       "start": 39.17,
-      "duration": 3.71,
+      "duration": 0.5,
       "words": [
         {
           "word": "speaking",
           "start": 39.17,
           "end": 39.67,
           "confidence": 0.996
-        },
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 17,
+      "text": "Hi, Kate. This is Mike.",
+      "speaker": "Speaker0",
+      "start": 40.7,
+      "duration": 2.18,
+      "words": [
         {
           "word": "hi",
           "start": 40.7,
@@ -399,10 +469,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.995
     },
     {
-      "id": 11,
+      "id": 18,
       "text": "Hi, Mike. What's up?",
       "speaker": "Speaker0",
       "start": 43.49,
@@ -436,7 +506,7 @@
       "confidence": 0.987
     },
     {
-      "id": 12,
+      "id": 19,
       "text": "Let's play badminton at the park.",
       "speaker": "Speaker0",
       "start": 45.81,
@@ -482,11 +552,11 @@
       "confidence": 0.999
     },
     {
-      "id": 13,
-      "text": "Sounds good. What time?",
+      "id": 20,
+      "text": "Sounds good.",
       "speaker": "Speaker0",
       "start": 49.09,
-      "duration": 2.11,
+      "duration": 0.9,
       "words": [
         {
           "word": "sounds",
@@ -499,7 +569,17 @@
           "start": 49.49,
           "end": 49.99,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 21,
+      "text": "What time?",
+      "speaker": "Speaker0",
+      "start": 50.38,
+      "duration": 0.82,
+      "words": [
         {
           "word": "what",
           "start": 50.38,
@@ -513,10 +593,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.98
     },
     {
-      "id": 14,
+      "id": 22,
       "text": "How about at two?",
       "speaker": "Speaker0",
       "start": 52.23,
@@ -550,18 +630,28 @@
       "confidence": 0.897
     },
     {
-      "id": 15,
-      "text": "Okay. See you at two.",
+      "id": 23,
+      "text": "Okay.",
       "speaker": "Speaker0",
       "start": 54.55,
-      "duration": 2.02,
+      "duration": 0.5,
       "words": [
         {
           "word": "okay",
           "start": 54.55,
           "end": 55.05,
           "confidence": 0.755
-        },
+        }
+      ],
+      "confidence": 0.755
+    },
+    {
+      "id": 24,
+      "text": "See you at two.",
+      "speaker": "Speaker0",
+      "start": 55.43,
+      "duration": 1.14,
+      "words": [
         {
           "word": "see",
           "start": 55.43,
@@ -587,21 +677,31 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.877
+      "confidence": 0.998
     },
     {
-      "id": 16,
-      "text": "Bye. Let's role play.",
+      "id": 25,
+      "text": "Bye.",
       "speaker": "Speaker0",
       "start": 57.11,
-      "duration": 6.98,
+      "duration": 0.5,
       "words": [
         {
           "word": "bye",
           "start": 57.11,
           "end": 57.61,
           "confidence": 0.896
-        },
+        }
+      ],
+      "confidence": 0.896
+    },
+    {
+      "id": 26,
+      "text": "Let's role play.",
+      "speaker": "Speaker0",
+      "start": 62.87,
+      "duration": 1.22,
+      "words": [
         {
           "word": "let's",
           "start": 62.87,
@@ -621,28 +721,30 @@
           "confidence": 0.939
         }
       ],
-      "confidence": 0.927
+      "confidence": 0.958
     }
   ],
-  "fetchedAt": "2026-07-23T04:11:01.750864+00:00",
+  "fetchedAt": "2026-07-23T06:28:49.909218+00:00",
   "videoId": "gWOqA3pUaTk",
   "speakerMap": {
     "0": "Speaker0"
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:11:01.750890+00:00",
+    "alignedAt": "2026-07-23T06:28:49.909248+00:00",
     "dgWordCount": 77,
     "dgUtteranceCount": 26,
     "matchedSegments": 26,
     "totalDuration": 64.09
   },
-  "repairedAt": "2026-07-23T04:33:44.526912Z",
+  "repairedAt": "2026-07-23T06:33:07.798644Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 26,
-    "afterSegments": 16,
+    "afterSegments": 26,
     "beforeAvgWords": 3.0,
-    "afterAvgWords": 4.8,
-    "merged": 10
+    "afterAvgWords": 3.0,
+    "merged": 0,
+    "danglingFragments": 0
   }
 }

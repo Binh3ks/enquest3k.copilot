@@ -3,10 +3,10 @@
   "segments": [
     {
       "id": 1,
-      "text": "What's wrong with you, John? You look sick.",
+      "text": "What's wrong with you, John?",
       "speaker": "Speaker0",
       "start": 17.57,
-      "duration": 2.98,
+      "duration": 1.54,
       "words": [
         {
           "word": "what's",
@@ -37,7 +37,17 @@
           "start": 18.61,
           "end": 19.11,
           "confidence": 0.992
-        },
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 2,
+      "text": "You look sick.",
+      "speaker": "Speaker0",
+      "start": 19.41,
+      "duration": 1.14,
+      "words": [
         {
           "word": "you",
           "start": 19.41,
@@ -60,7 +70,7 @@
       "confidence": 0.974
     },
     {
-      "id": 2,
+      "id": 3,
       "text": "I don't know what is wrong with me.",
       "speaker": "Speaker1",
       "start": 22.29,
@@ -118,7 +128,7 @@
       "confidence": 0.976
     },
     {
-      "id": 3,
+      "id": 4,
       "text": "Don't you have a cold?",
       "speaker": "Speaker0",
       "start": 29.02,
@@ -158,7 +168,7 @@
       "confidence": 0.965
     },
     {
-      "id": 4,
+      "id": 5,
       "text": "What is your symptom?",
       "speaker": "Speaker0",
       "start": 30.86,
@@ -192,7 +202,7 @@
       "confidence": 0.99
     },
     {
-      "id": 5,
+      "id": 6,
       "text": "I was shivering and it was cold last night.",
       "speaker": "Speaker1",
       "start": 37.1,
@@ -256,7 +266,7 @@
       "confidence": 0.984
     },
     {
-      "id": 6,
+      "id": 7,
       "text": "I think I have a headache too.",
       "speaker": "Speaker1",
       "start": 41.37,
@@ -308,7 +318,7 @@
       "confidence": 0.982
     },
     {
-      "id": 7,
+      "id": 8,
       "text": "I also snuffle and cough too.",
       "speaker": "Speaker1",
       "start": 44.33,
@@ -354,7 +364,7 @@
       "confidence": 0.967
     },
     {
-      "id": 8,
+      "id": 9,
       "text": "And I'm so tired.",
       "speaker": "Speaker1",
       "start": 49.6,
@@ -388,7 +398,7 @@
       "confidence": 0.938
     },
     {
-      "id": 9,
+      "id": 10,
       "text": "Oh, my goodness.",
       "speaker": "Speaker0",
       "start": 53.14,
@@ -416,7 +426,7 @@
       "confidence": 0.907
     },
     {
-      "id": 10,
+      "id": 11,
       "text": "I'm pretty sure you have a cold.",
       "speaker": "Speaker0",
       "start": 55.06,
@@ -468,18 +478,28 @@
       "confidence": 0.998
     },
     {
-      "id": 11,
-      "text": "What? It's not even winter yet, and the weather is warm, too.",
+      "id": 12,
+      "text": "What?",
       "speaker": "Speaker1",
       "start": 58.98,
-      "duration": 5.06,
+      "duration": 0.5,
       "words": [
         {
           "word": "what",
           "start": 58.98,
           "end": 59.48,
           "confidence": 0.872
-        },
+        }
+      ],
+      "confidence": 0.872
+    },
+    {
+      "id": 13,
+      "text": "It's not even winter yet, and the weather is warm, too.",
+      "speaker": "Speaker1",
+      "start": 60.02,
+      "duration": 4.02,
+      "words": [
         {
           "word": "it's",
           "start": 60.02,
@@ -547,14 +567,14 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.92
+      "confidence": 0.968
     },
     {
-      "id": 12,
-      "text": "John, listen. It's warm in afternoon.",
+      "id": 14,
+      "text": "John, listen.",
       "speaker": "Speaker0",
       "start": 65.72,
-      "duration": 2.83,
+      "duration": 0.9,
       "words": [
         {
           "word": "john",
@@ -567,7 +587,17 @@
           "start": 66.12,
           "end": 66.62,
           "confidence": 0.94
-        },
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 15,
+      "text": "It's warm in afternoon.",
+      "speaker": "Speaker0",
+      "start": 67.16,
+      "duration": 1.39,
+      "words": [
         {
           "word": "it's",
           "start": 67.16,
@@ -593,10 +623,10 @@
           "confidence": 0.921
         }
       ],
-      "confidence": 0.903
+      "confidence": 0.855
     },
     {
-      "id": 13,
+      "id": 16,
       "text": "But what about in morning?",
       "speaker": "Speaker0",
       "start": 70.28,
@@ -636,7 +666,7 @@
       "confidence": 0.982
     },
     {
-      "id": 14,
+      "id": 17,
       "text": "Isn't it cold?",
       "speaker": "Speaker0",
       "start": 73.0,
@@ -664,7 +694,7 @@
       "confidence": 0.999
     },
     {
-      "id": 15,
+      "id": 18,
       "text": "It's easy to catch a cold during the change of seasons.",
       "speaker": "Speaker0",
       "start": 75.33,
@@ -740,7 +770,7 @@
       "confidence": 0.997
     },
     {
-      "id": 16,
+      "id": 19,
       "text": "I did not know that.",
       "speaker": "Speaker1",
       "start": 80.27,
@@ -780,7 +810,7 @@
       "confidence": 0.972
     },
     {
-      "id": 17,
+      "id": 20,
       "text": "I thought I only catch a cold during the winter.",
       "speaker": "Speaker1",
       "start": 82.27,
@@ -850,7 +880,7 @@
       "confidence": 0.995
     },
     {
-      "id": 18,
+      "id": 21,
       "text": "You should drink lots of warm water and eat foods for vitamins.",
       "speaker": "Speaker0",
       "start": 86.67,
@@ -932,11 +962,11 @@
       "confidence": 0.985
     },
     {
-      "id": 19,
-      "text": "If you are not cured,",
+      "id": 22,
+      "text": "If you are not cured, you need to go to a hospital.",
       "speaker": "Speaker0",
       "start": 92.03,
-      "duration": 1.38,
+      "duration": 3.3,
       "words": [
         {
           "word": "if",
@@ -967,17 +997,7 @@
           "start": 92.91,
           "end": 93.41,
           "confidence": 0.976
-        }
-      ],
-      "confidence": 0.986
-    },
-    {
-      "id": 20,
-      "text": "you need to go to a hospital.",
-      "speaker": "Speaker0",
-      "start": 93.79,
-      "duration": 1.54,
-      "words": [
+        },
         {
           "word": "you",
           "start": 93.79,
@@ -1021,10 +1041,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.992
     },
     {
-      "id": 21,
+      "id": 23,
       "text": "Yeah, I should.",
       "speaker": "Speaker1",
       "start": 97.12,
@@ -1052,7 +1072,7 @@
       "confidence": 0.993
     },
     {
-      "id": 22,
+      "id": 24,
       "text": "When is the science homework due?",
       "speaker": "Speaker1",
       "start": 103.12,
@@ -1098,18 +1118,28 @@
       "confidence": 0.985
     },
     {
-      "id": 23,
-      "text": "Ouch. What's wrong?",
+      "id": 25,
+      "text": "Ouch.",
       "speaker": "Speaker1",
       "start": 106.65,
-      "duration": 6.1,
+      "duration": 0.5,
       "words": [
         {
           "word": "ouch",
           "start": 106.65,
           "end": 107.15,
           "confidence": 0.911
-        },
+        }
+      ],
+      "confidence": 0.911
+    },
+    {
+      "id": 26,
+      "text": "What's wrong?",
+      "speaker": "Speaker1",
+      "start": 111.77,
+      "duration": 0.98,
+      "words": [
         {
           "word": "what's",
           "start": 111.77,
@@ -1123,10 +1153,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.929
+      "confidence": 0.947
     },
     {
-      "id": 24,
+      "id": 27,
       "text": "It hurts so much.",
       "speaker": "Speaker1",
       "start": 114.09,
@@ -1160,7 +1190,7 @@
       "confidence": 0.893
     },
     {
-      "id": 25,
+      "id": 28,
       "text": "I'm scared that this could be a serious one.",
       "speaker": "Speaker1",
       "start": 116.89,
@@ -1224,18 +1254,28 @@
       "confidence": 0.996
     },
     {
-      "id": 26,
-      "text": "Where? Did you get hurt?",
+      "id": 29,
+      "text": "Where?",
       "speaker": "Speaker0",
       "start": 120.89,
-      "duration": 2.58,
+      "duration": 0.5,
       "words": [
         {
           "word": "where",
           "start": 120.89,
           "end": 121.39,
           "confidence": 0.976
-        },
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 30,
+      "text": "Did you get hurt?",
+      "speaker": "Speaker0",
+      "start": 122.25,
+      "duration": 1.22,
+      "words": [
         {
           "word": "did",
           "start": 122.25,
@@ -1261,10 +1301,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.999
     },
     {
-      "id": 27,
+      "id": 31,
       "text": "Look at this.",
       "speaker": "Speaker1",
       "start": 125.17,
@@ -1292,7 +1332,7 @@
       "confidence": 0.997
     },
     {
-      "id": 28,
+      "id": 32,
       "text": "John, I have a bandage.",
       "speaker": "Speaker0",
       "start": 127.97,
@@ -1332,7 +1372,7 @@
       "confidence": 0.965
     },
     {
-      "id": 29,
+      "id": 33,
       "text": "Don't be a crybaby.",
       "speaker": "Speaker0",
       "start": 131.01,
@@ -1366,7 +1406,7 @@
       "confidence": 0.985
     },
     {
-      "id": 30,
+      "id": 34,
       "text": "Achoo.",
       "speaker": "Speaker0",
       "start": 136.13,
@@ -1382,18 +1422,28 @@
       "confidence": 0.952
     },
     {
-      "id": 31,
-      "text": "Oops. What's wrong with you?",
+      "id": 35,
+      "text": "Oops.",
       "speaker": "Speaker1",
       "start": 139.07,
-      "duration": 2.1,
+      "duration": 0.5,
       "words": [
         {
           "word": "oops",
           "start": 139.07,
           "end": 139.57,
           "confidence": 0.768
-        },
+        }
+      ],
+      "confidence": 0.768
+    },
+    {
+      "id": 36,
+      "text": "What's wrong with you?",
+      "speaker": "Speaker1",
+      "start": 139.87,
+      "duration": 1.3,
+      "words": [
         {
           "word": "what's",
           "start": 139.87,
@@ -1419,14 +1469,14 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.883
+      "confidence": 0.999
     },
     {
-      "id": 32,
-      "text": "Oh, no. I think I caught a cold from you.",
+      "id": 37,
+      "text": "Oh, no.",
       "speaker": "Speaker0",
       "start": 147.07,
-      "duration": 3.46,
+      "duration": 0.82,
       "words": [
         {
           "word": "oh",
@@ -1439,7 +1489,17 @@
           "start": 147.39,
           "end": 147.89,
           "confidence": 0.989
-        },
+        }
+      ],
+      "confidence": 0.826
+    },
+    {
+      "id": 38,
+      "text": "I think I caught a cold from you.",
+      "speaker": "Speaker0",
+      "start": 148.35,
+      "duration": 2.18,
+      "words": [
         {
           "word": "i",
           "start": 148.35,
@@ -1489,21 +1549,31 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.911
+      "confidence": 0.996
     },
     {
-      "id": 33,
-      "text": "Achoo. Let's role play.",
+      "id": 39,
+      "text": "Achoo.",
       "speaker": "Speaker1",
       "start": 152.31,
-      "duration": 8.34,
+      "duration": 0.5,
       "words": [
         {
           "word": "achoo",
           "start": 152.31,
           "end": 152.81,
           "confidence": 0.802
-        },
+        }
+      ],
+      "confidence": 0.802
+    },
+    {
+      "id": 40,
+      "text": "Let's role play.",
+      "speaker": "Speaker1",
+      "start": 159.43,
+      "duration": 1.22,
+      "words": [
         {
           "word": "let's",
           "start": 159.43,
@@ -1523,10 +1593,10 @@
           "confidence": 0.924
         }
       ],
-      "confidence": 0.881
+      "confidence": 0.961
     }
   ],
-  "fetchedAt": "2026-07-23T04:07:22.607964+00:00",
+  "fetchedAt": "2026-07-23T06:27:40.107502+00:00",
   "videoId": "LlC-Trk54Zg",
   "speakerMap": {
     "0": "Speaker0",
@@ -1534,18 +1604,20 @@
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:07:22.607985+00:00",
+    "alignedAt": "2026-07-23T06:27:40.107538+00:00",
     "dgWordCount": 199,
     "dgUtteranceCount": 40,
     "matchedSegments": 40,
     "totalDuration": 160.65
   },
-  "repairedAt": "2026-07-23T04:33:44.510261Z",
+  "repairedAt": "2026-07-23T06:33:07.775080Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 40,
-    "afterSegments": 33,
+    "afterSegments": 40,
     "beforeAvgWords": 5.0,
-    "afterAvgWords": 6.0,
-    "merged": 7
+    "afterAvgWords": 5.0,
+    "merged": 0,
+    "danglingFragments": 0
   }
 }

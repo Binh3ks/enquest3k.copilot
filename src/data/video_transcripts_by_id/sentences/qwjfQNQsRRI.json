@@ -31,10 +31,10 @@
     },
     {
       "id": 2,
-      "text": "Tonight, I have a mystery for you. Shh. Can you hear that? The forest is whispering a secret.",
+      "text": "Tonight, I have a mystery for you.",
       "speaker": "Speaker0",
       "start": 2.64,
-      "duration": 7.7,
+      "duration": 3.06,
       "words": [
         {
           "word": "tonight",
@@ -77,13 +77,33 @@
           "start": 5.2,
           "end": 5.7,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 3,
+      "text": "Shh.",
+      "speaker": "Speaker0",
+      "start": 5.76,
+      "duration": 0.48,
+      "words": [
         {
           "word": "shh",
           "start": 5.76,
           "end": 6.24,
           "confidence": 0.693
-        },
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 4,
+      "text": "Can you hear that?",
+      "speaker": "Speaker0",
+      "start": 6.24,
+      "duration": 1.3,
+      "words": [
         {
           "word": "can",
           "start": 6.24,
@@ -107,7 +127,17 @@
           "start": 7.04,
           "end": 7.54,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 5,
+      "text": "The forest is whispering a secret.",
+      "speaker": "Speaker0",
+      "start": 7.76,
+      "duration": 2.58,
+      "words": [
         {
           "word": "the",
           "start": 7.76,
@@ -145,10 +175,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.981
     },
     {
-      "id": 3,
+      "id": 6,
       "text": "Welcome to the case of the whispering woods.",
       "speaker": "Speaker0",
       "start": 10.72,
@@ -206,11 +236,11 @@
       "confidence": 0.972
     },
     {
-      "id": 4,
-      "text": "Stay till the end,",
+      "id": 7,
+      "text": "Stay till the end, because you'll be the detective helping us solve this curious case.",
       "speaker": "Speaker0",
       "start": 14.08,
-      "duration": 1.38,
+      "duration": 6.24,
       "words": [
         {
           "word": "stay",
@@ -235,17 +265,7 @@
           "start": 14.96,
           "end": 15.46,
           "confidence": 0.915
-        }
-      ],
-      "confidence": 0.979
-    },
-    {
-      "id": 5,
-      "text": "because you'll be the detective helping us solve this curious case.",
-      "speaker": "Speaker0",
-      "start": 15.82,
-      "duration": 4.5,
-      "words": [
+        },
         {
           "word": "because",
           "start": 15.82,
@@ -313,14 +333,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.99
     },
     {
-      "id": 6,
-      "text": "Once upon a time,",
+      "id": 8,
+      "text": "Once upon a time, two curious siblings, Emma and Jack, went camping with their parents at the edge of an old forest.",
       "speaker": "Speaker0",
       "start": 20.86,
-      "duration": 1.46,
+      "duration": 9.46,
       "words": [
         {
           "word": "once",
@@ -345,17 +365,7 @@
           "start": 21.82,
           "end": 22.32,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 7,
-      "text": "two curious siblings,",
-      "speaker": "Speaker0",
-      "start": 22.79,
-      "duration": 1.53,
-      "words": [
+        },
         {
           "word": "two",
           "start": 22.79,
@@ -373,17 +383,7 @@
           "start": 23.82,
           "end": 24.32,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 8,
-      "text": "Emma and Jack,",
-      "speaker": "Speaker0",
-      "start": 24.86,
-      "duration": 1.23,
-      "words": [
+        },
         {
           "word": "emma",
           "start": 24.86,
@@ -401,17 +401,7 @@
           "start": 25.59,
           "end": 26.09,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 9,
-      "text": "went camping with their parents at the edge of an old forest.",
-      "speaker": "Speaker0",
-      "start": 26.39,
-      "duration": 3.93,
-      "words": [
+        },
         {
           "word": "went",
           "start": 26.39,
@@ -488,11 +478,11 @@
       "confidence": 1.0
     },
     {
-      "id": 10,
-      "text": "As a campfire",
+      "id": 9,
+      "text": "As a campfire crackled and the stars sparkled above, Emma froze.",
       "speaker": "Speaker0",
       "start": 30.79,
-      "duration": 0.98,
+      "duration": 5.46,
       "words": [
         {
           "word": "as",
@@ -504,24 +494,14 @@
           "word": "a",
           "start": 31.03,
           "end": 31.27,
-          "confidence": 0.679
+          "confidence": 0.683
         },
         {
           "word": "campfire",
           "start": 31.27,
           "end": 31.77,
           "confidence": 0.982
-        }
-      ],
-      "confidence": 0.887
-    },
-    {
-      "id": 11,
-      "text": "crackled and the stars sparkled above,",
-      "speaker": "Speaker0",
-      "start": 32.23,
-      "duration": 2.74,
-      "words": [
+        },
         {
           "word": "crackled",
           "start": 32.23,
@@ -557,17 +537,7 @@
           "start": 34.47,
           "end": 34.97,
           "confidence": 0.979
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 12,
-      "text": "Emma froze. Jack, did you hear that? A soft whisper drifted through the trees,",
-      "speaker": "Speaker0",
-      "start": 35.27,
-      "duration": 6.02,
-      "words": [
+        },
         {
           "word": "emma",
           "start": 35.27,
@@ -579,7 +549,17 @@
           "start": 35.75,
           "end": 36.25,
           "confidence": 0.984
-        },
+        }
+      ],
+      "confidence": 0.946
+    },
+    {
+      "id": 10,
+      "text": "Jack, did you hear that?",
+      "speaker": "Speaker0",
+      "start": 36.39,
+      "duration": 1.94,
+      "words": [
         {
           "word": "jack",
           "start": 36.39,
@@ -590,7 +570,7 @@
           "word": "did",
           "start": 36.95,
           "end": 37.19,
-          "confidence": 0.931
+          "confidence": 0.932
         },
         {
           "word": "you",
@@ -609,7 +589,17 @@
           "start": 37.83,
           "end": 38.33,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.957
+    },
+    {
+      "id": 11,
+      "text": "A soft whisper drifted through the trees, Find the glowing stone.",
+      "speaker": "Speaker0",
+      "start": 38.55,
+      "duration": 5.22,
+      "words": [
         {
           "word": "a",
           "start": 38.55,
@@ -651,17 +641,7 @@
           "start": 40.79,
           "end": 41.29,
           "confidence": 0.767
-        }
-      ],
-      "confidence": 0.957
-    },
-    {
-      "id": 13,
-      "text": "Find the glowing stone.",
-      "speaker": "Speaker0",
-      "start": 41.83,
-      "duration": 1.94,
-      "words": [
+        },
         {
           "word": "find",
           "start": 41.83,
@@ -672,7 +652,7 @@
           "word": "the",
           "start": 42.39,
           "end": 42.63,
-          "confidence": 0.84
+          "confidence": 0.841
         },
         {
           "word": "glowing",
@@ -687,14 +667,14 @@
           "confidence": 0.859
         }
       ],
-      "confidence": 0.913
+      "confidence": 0.935
     },
     {
-      "id": 14,
-      "text": "Jack's eyes grew wide. Who said that? But when they looked around,",
+      "id": 12,
+      "text": "Jack's eyes grew wide.",
       "speaker": "Speaker0",
       "start": 44.09,
-      "duration": 4.82,
+      "duration": 1.71,
       "words": [
         {
           "word": "jack's",
@@ -719,7 +699,17 @@
           "start": 45.3,
           "end": 45.8,
           "confidence": 0.997
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 13,
+      "text": "Who said that?",
+      "speaker": "Speaker0",
+      "start": 45.94,
+      "duration": 1.22,
+      "words": [
         {
           "word": "who",
           "start": 45.94,
@@ -737,7 +727,17 @@
           "start": 46.66,
           "end": 47.16,
           "confidence": 0.995
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 14,
+      "text": "But when they looked around, no one was there.",
+      "speaker": "Speaker0",
+      "start": 47.3,
+      "duration": 3.61,
+      "words": [
         {
           "word": "but",
           "start": 47.3,
@@ -767,17 +767,7 @@
           "start": 48.41,
           "end": 48.91,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 15,
-      "text": "no one was there. Just the quiet forest and the flickering",
-      "speaker": "Speaker0",
-      "start": 49.53,
-      "duration": 4.35,
-      "words": [
+        },
         {
           "word": "no",
           "start": 49.53,
@@ -801,7 +791,17 @@
           "start": 50.41,
           "end": 50.91,
           "confidence": 0.986
-        },
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 15,
+      "text": "Just the quiet forest and the flickering fire.",
+      "speaker": "Speaker0",
+      "start": 51.14,
+      "duration": 3.54,
+      "words": [
         {
           "word": "just",
           "start": 51.14,
@@ -843,23 +843,23 @@
           "start": 53.38,
           "end": 53.88,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.969
-    },
-    {
-      "id": 16,
-      "text": "fire. That night, while their parents slept,",
-      "speaker": "Speaker0",
-      "start": 54.18,
-      "duration": 3.46,
-      "words": [
+        },
         {
           "word": "fire",
           "start": 54.18,
           "end": 54.68,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 16,
+      "text": "That night, while their parents slept, Emma and Jack spotted a trail of glowing fireflies.",
+      "speaker": "Speaker0",
+      "start": 54.82,
+      "duration": 6.81,
+      "words": [
         {
           "word": "that",
           "start": 54.82,
@@ -895,17 +895,7 @@
           "start": 57.14,
           "end": 57.64,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 17,
-      "text": "Emma and Jack spotted a trail of glowing fireflies.",
-      "speaker": "Speaker0",
-      "start": 58.17,
-      "duration": 3.46,
-      "words": [
+        },
         {
           "word": "emma",
           "start": 58.17,
@@ -964,11 +954,11 @@
       "confidence": 1.0
     },
     {
-      "id": 18,
-      "text": "They twinkled like tiny lanterns,",
+      "id": 17,
+      "text": "They twinkled like tiny lanterns, leading deeper into the woods.",
       "speaker": "Speaker0",
       "start": 62.25,
-      "duration": 2.34,
+      "duration": 4.98,
       "words": [
         {
           "word": "they",
@@ -999,17 +989,7 @@
           "start": 64.09,
           "end": 64.59,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 19,
-      "text": "leading deeper into the woods. Do you think they're showing us something? Emma asked. Jack gulped but nodded.",
-      "speaker": "Speaker0",
-      "start": 65.29,
-      "duration": 7.78,
-      "words": [
+        },
         {
           "word": "leading",
           "start": 65.29,
@@ -1039,7 +1019,17 @@
           "start": 66.73,
           "end": 67.23,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 18,
+      "text": "Do you think they're showing us something?",
+      "speaker": "Speaker0",
+      "start": 67.37,
+      "duration": 2.58,
+      "words": [
         {
           "word": "do",
           "start": 67.37,
@@ -1081,7 +1071,17 @@
           "start": 69.45,
           "end": 69.95,
           "confidence": 0.997
-        },
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 19,
+      "text": "Emma asked.",
+      "speaker": "Speaker0",
+      "start": 70.17,
+      "duration": 1.06,
+      "words": [
         {
           "word": "emma",
           "start": 70.17,
@@ -1092,8 +1092,18 @@
           "word": "asked",
           "start": 70.73,
           "end": 71.23,
-          "confidence": 0.999
-        },
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 20,
+      "text": "Jack gulped but nodded.",
+      "speaker": "Speaker0",
+      "start": 71.37,
+      "duration": 1.7,
+      "words": [
         {
           "word": "jack",
           "start": 71.37,
@@ -1122,7 +1132,7 @@
       "confidence": 0.982
     },
     {
-      "id": 20,
+      "id": 21,
       "text": "Only one way to find out.",
       "speaker": "Speaker0",
       "start": 73.58,
@@ -1162,17 +1172,17 @@
           "word": "out",
           "start": 75.25,
           "end": 75.75,
-          "confidence": 0.888
+          "confidence": 0.889
         }
       ],
       "confidence": 0.981
     },
     {
-      "id": 21,
-      "text": "Step by step,",
+      "id": 22,
+      "text": "Step by step, the children followed the glowing trail.",
       "speaker": "Speaker0",
       "start": 76.38,
-      "duration": 1.06,
+      "duration": 4.26,
       "words": [
         {
           "word": "step",
@@ -1191,17 +1201,7 @@
           "start": 76.94,
           "end": 77.44,
           "confidence": 0.986
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 22,
-      "text": "the children followed the glowing trail. The whispers grew louder.",
-      "speaker": "Speaker0",
-      "start": 77.89,
-      "duration": 4.67,
-      "words": [
+        },
         {
           "word": "the",
           "start": 77.89,
@@ -1237,7 +1237,17 @@
           "start": 80.14,
           "end": 80.64,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.983
+    },
+    {
+      "id": 23,
+      "text": "The whispers grew louder.",
+      "speaker": "Speaker0",
+      "start": 80.78,
+      "duration": 1.78,
+      "words": [
         {
           "word": "the",
           "start": 80.78,
@@ -1260,13 +1270,13 @@
           "word": "louder",
           "start": 82.06,
           "end": 82.56,
-          "confidence": 0.779
+          "confidence": 0.781
         }
       ],
       "confidence": 0.971
     },
     {
-      "id": 23,
+      "id": 24,
       "text": "Find the stone!",
       "speaker": "Speaker0",
       "start": 83.02,
@@ -1282,7 +1292,7 @@
           "word": "the",
           "start": 83.66,
           "end": 83.89,
-          "confidence": 0.785
+          "confidence": 0.787
         },
         {
           "word": "stone",
@@ -1294,11 +1304,11 @@
       "confidence": 0.877
     },
     {
-      "id": 24,
-      "text": "Glowing stone. The forest seemed alive holding its breath,",
+      "id": 25,
+      "text": "Glowing stone.",
       "speaker": "Speaker0",
       "start": 84.69,
-      "duration": 4.57,
+      "duration": 0.98,
       "words": [
         {
           "word": "glowing",
@@ -1311,7 +1321,17 @@
           "start": 85.17,
           "end": 85.67,
           "confidence": 0.765
-        },
+        }
+      ],
+      "confidence": 0.882
+    },
+    {
+      "id": 26,
+      "text": "The forest seemed alive holding its breath, waiting for them. At last, they reached a small clearing.",
+      "speaker": "Speaker0",
+      "start": 86.04,
+      "duration": 7.94,
+      "words": [
         {
           "word": "the",
           "start": 86.04,
@@ -1353,17 +1373,7 @@
           "start": 88.76,
           "end": 89.26,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.935
-    },
-    {
-      "id": 25,
-      "text": "waiting for them. At last,",
-      "speaker": "Speaker0",
-      "start": 89.72,
-      "duration": 2.1,
-      "words": [
+        },
         {
           "word": "waiting",
           "start": 89.72,
@@ -1393,17 +1403,7 @@
           "start": 91.32,
           "end": 91.82,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 26,
-      "text": "they reached a small clearing.",
-      "speaker": "Speaker0",
-      "start": 92.12,
-      "duration": 1.86,
-      "words": [
+        },
         {
           "word": "they",
           "start": 92.12,
@@ -1435,14 +1435,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.996
     },
     {
       "id": 27,
-      "text": "There, half hidden under moss,",
+      "text": "There, half hidden under moss, stood a giant stone covered in strange carvings.",
       "speaker": "Speaker0",
       "start": 94.36,
-      "duration": 2.5,
+      "duration": 6.26,
       "words": [
         {
           "word": "there",
@@ -1473,17 +1473,7 @@
           "start": 96.36,
           "end": 96.86,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 28,
-      "text": "stood a giant stone covered in strange carvings.",
-      "speaker": "Speaker0",
-      "start": 97.32,
-      "duration": 3.3,
-      "words": [
+        },
         {
           "word": "stood",
           "start": 97.32,
@@ -1536,11 +1526,11 @@
       "confidence": 1.0
     },
     {
-      "id": 29,
-      "text": "As Emma touched it,",
+      "id": 28,
+      "text": "As Emma touched it, the carvings began to glow with a soft, golden light.",
       "speaker": "Speaker0",
       "start": 101.05,
-      "duration": 1.45,
+      "duration": 6.01,
       "words": [
         {
           "word": "as",
@@ -1565,17 +1555,7 @@
           "start": 102.0,
           "end": 102.5,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 30,
-      "text": "the carvings began to glow with a soft, golden light. The whispers surrounded them but then Jack noticed something. Wait. It's not a ghost. It's a wind.",
-      "speaker": "Speaker0",
-      "start": 102.81,
-      "duration": 12.11,
-      "words": [
+        },
         {
           "word": "the",
           "start": 102.81,
@@ -1635,7 +1615,17 @@
           "start": 106.56,
           "end": 107.06,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 29,
+      "text": "The whispers surrounded them but then Jack noticed something.",
+      "speaker": "Speaker0",
+      "start": 107.2,
+      "duration": 4.11,
+      "words": [
         {
           "word": "the",
           "start": 107.2,
@@ -1688,14 +1678,34 @@
           "word": "something",
           "start": 110.81,
           "end": 111.31,
-          "confidence": 0.948
-        },
+          "confidence": 0.949
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 30,
+      "text": "Wait.",
+      "speaker": "Speaker0",
+      "start": 111.6,
+      "duration": 0.5,
+      "words": [
         {
           "word": "wait",
           "start": 111.6,
           "end": 112.1,
-          "confidence": 0.734
-        },
+          "confidence": 0.736
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 31,
+      "text": "It's not a ghost.",
+      "speaker": "Speaker0",
+      "start": 112.33,
+      "duration": 1.13,
+      "words": [
         {
           "word": "it's",
           "start": 112.33,
@@ -1718,8 +1728,18 @@
           "word": "ghost",
           "start": 113.12,
           "end": 113.46,
-          "confidence": 0.986
-        },
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 32,
+      "text": "It's a wind.",
+      "speaker": "Speaker0",
+      "start": 113.86,
+      "duration": 1.06,
+      "words": [
         {
           "word": "it's",
           "start": 113.86,
@@ -1736,17 +1756,17 @@
           "word": "wind",
           "start": 114.42,
           "end": 114.92,
-          "confidence": 0.934
+          "confidence": 0.933
         }
       ],
       "confidence": 0.978
     },
     {
-      "id": 31,
-      "text": "Sure enough, tiny holes in the stone made the air whistle and",
+      "id": 33,
+      "text": "Sure enough, tiny holes in the stone made the air whistle and sounding just like a voice.",
       "speaker": "Speaker0",
       "start": 115.22,
-      "duration": 4.9,
+      "duration": 7.62,
       "words": [
         {
           "word": "sure",
@@ -1770,7 +1790,7 @@
           "word": "holes",
           "start": 117.14,
           "end": 117.46,
-          "confidence": 0.978
+          "confidence": 0.977
         },
         {
           "word": "in",
@@ -1819,22 +1839,12 @@
           "start": 119.62,
           "end": 120.12,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 32,
-      "text": "sounding just like a voice.",
-      "speaker": "Speaker0",
-      "start": 120.98,
-      "duration": 1.86,
-      "words": [
+        },
         {
           "word": "sounding",
           "start": 120.98,
           "end": 121.46,
-          "confidence": 0.501
+          "confidence": 0.498
         },
         {
           "word": "just",
@@ -1861,14 +1871,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.9
+      "confidence": 0.946
     },
     {
-      "id": 33,
-      "text": "The whispering woods weren't haunted at all. It was nature's music,",
+      "id": 34,
+      "text": "The whispering woods weren't haunted at all.",
       "speaker": "Speaker0",
       "start": 123.14,
-      "duration": 4.98,
+      "duration": 3.28,
       "words": [
         {
           "word": "the",
@@ -1911,7 +1921,17 @@
           "start": 126.1,
           "end": 126.42,
           "confidence": 0.835
-        },
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 35,
+      "text": "It was nature's music, waiting to be discovered.",
+      "speaker": "Speaker0",
+      "start": 126.42,
+      "duration": 3.8,
+      "words": [
         {
           "word": "it",
           "start": 126.42,
@@ -1935,17 +1955,7 @@
           "start": 127.62,
           "end": 128.12,
           "confidence": 0.946
-        }
-      ],
-      "confidence": 0.978
-    },
-    {
-      "id": 34,
-      "text": "waiting to be discovered.",
-      "speaker": "Speaker0",
-      "start": 128.75,
-      "duration": 1.47,
-      "words": [
+        },
         {
           "word": "waiting",
           "start": 128.75,
@@ -1971,14 +1981,14 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.987
     },
     {
-      "id": 35,
-      "text": "Emma smiled. So the forest wasn't trying to scare us. It was inviting us to listen.",
+      "id": 36,
+      "text": "Emma smiled.",
       "speaker": "Speaker0",
       "start": 130.51,
-      "duration": 6.83,
+      "duration": 0.99,
       "words": [
         {
           "word": "emma",
@@ -1990,8 +2000,18 @@
           "word": "smiled",
           "start": 131.0,
           "end": 131.5,
-          "confidence": 0.965
-        },
+          "confidence": 0.964
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 37,
+      "text": "So the forest wasn't trying to scare us.",
+      "speaker": "Speaker0",
+      "start": 131.88,
+      "duration": 3.13,
+      "words": [
         {
           "word": "so",
           "start": 131.88,
@@ -2039,7 +2059,17 @@
           "start": 134.51,
           "end": 135.01,
           "confidence": 0.981
-        },
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 38,
+      "text": "It was inviting us to listen.",
+      "speaker": "Speaker0",
+      "start": 135.07,
+      "duration": 2.27,
+      "words": [
         {
           "word": "it",
           "start": 135.07,
@@ -2077,14 +2107,14 @@
           "confidence": 0.973
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.994
     },
     {
-      "id": 36,
-      "text": "The children hurried back to their tent,",
+      "id": 39,
+      "text": "The children hurried back to their tent, safe and excited.",
       "speaker": "Speaker0",
       "start": 137.88,
-      "duration": 2.65,
+      "duration": 4.41,
       "words": [
         {
           "word": "the",
@@ -2127,17 +2157,7 @@
           "start": 140.03,
           "end": 140.53,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 37,
-      "text": "safe and excited.",
-      "speaker": "Speaker0",
-      "start": 141.07,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "safe",
           "start": 141.07,
@@ -2157,14 +2177,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.998
     },
     {
-      "id": 38,
-      "text": "From then on, they learned that mysteries don't always",
+      "id": 40,
+      "text": "From then on, they learned that mysteries don't always mean dangerous sometimes they readjust secrets of nature waiting for brave hearts to explore.",
       "speaker": "Speaker0",
       "start": 142.69,
-      "duration": 3.54,
+      "duration": 10.18,
       "words": [
         {
           "word": "from",
@@ -2206,7 +2226,7 @@
           "word": "mysteries",
           "start": 144.77,
           "end": 145.27,
-          "confidence": 0.985
+          "confidence": 0.984
         },
         {
           "word": "don't",
@@ -2219,17 +2239,7 @@
           "start": 145.73,
           "end": 146.23,
           "confidence": 0.957
-        }
-      ],
-      "confidence": 0.983
-    },
-    {
-      "id": 39,
-      "text": "mean dangerous sometimes they readjust secrets of nature waiting for brave hearts to explore.",
-      "speaker": "Speaker0",
-      "start": 146.53,
-      "duration": 6.34,
-      "words": [
+        },
         {
           "word": "mean",
           "start": 146.53,
@@ -2240,7 +2250,7 @@
           "word": "dangerous",
           "start": 146.93,
           "end": 147.43,
-          "confidence": 0.856
+          "confidence": 0.857
         },
         {
           "word": "sometimes",
@@ -2312,17 +2322,17 @@
           "word": "explore",
           "start": 152.37,
           "end": 152.87,
-          "confidence": 0.751
+          "confidence": 0.749
         }
       ],
-      "confidence": 0.902
+      "confidence": 0.943
     },
     {
-      "id": 40,
-      "text": "And that young detectives",
+      "id": 41,
+      "text": "And that young detectives was a case of the whispering woods.",
       "speaker": "Speaker0",
       "start": 153.17,
-      "duration": 1.7,
+      "duration": 4.5,
       "words": [
         {
           "word": "and",
@@ -2347,17 +2357,7 @@
           "start": 154.37,
           "end": 154.87,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.867
-    },
-    {
-      "id": 41,
-      "text": "was a case of the whispering woods. Did you solve the mystery before Emma and Jack? Tell me in the comments below.",
-      "speaker": "Speaker0",
-      "start": 155.41,
-      "duration": 7.9,
-      "words": [
+        },
         {
           "word": "was",
           "start": 155.41,
@@ -2368,7 +2368,7 @@
           "word": "a",
           "start": 155.65,
           "end": 155.81,
-          "confidence": 0.848
+          "confidence": 0.85
         },
         {
           "word": "case",
@@ -2399,7 +2399,17 @@
           "start": 157.17,
           "end": 157.67,
           "confidence": 0.995
-        },
+        }
+      ],
+      "confidence": 0.919
+    },
+    {
+      "id": 42,
+      "text": "Did you solve the mystery before Emma and Jack?",
+      "speaker": "Speaker0",
+      "start": 157.94,
+      "duration": 3.22,
+      "words": [
         {
           "word": "did",
           "start": 157.94,
@@ -2453,7 +2463,17 @@
           "start": 160.66,
           "end": 161.16,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 43,
+      "text": "Tell me in the comments below.",
+      "speaker": "Speaker0",
+      "start": 161.38,
+      "duration": 1.93,
+      "words": [
         {
           "word": "tell",
           "start": 161.38,
@@ -2494,11 +2514,11 @@
       "confidence": 0.972
     },
     {
-      "id": 42,
-      "text": "Don't forget to like this video,",
+      "id": 44,
+      "text": "Don't forget to like this video, share it with your friends, and subscribe for more curious adventures every week.",
       "speaker": "Speaker0",
       "start": 163.62,
-      "duration": 2.1,
+      "duration": 8.5,
       "words": [
         {
           "word": "don't",
@@ -2535,17 +2555,7 @@
           "start": 165.22,
           "end": 165.72,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 43,
-      "text": "share it with your friends, and subscribe for more curious",
-      "speaker": "Speaker0",
-      "start": 166.34,
-      "duration": 3.85,
-      "words": [
+        },
         {
           "word": "share",
           "start": 166.34,
@@ -2605,17 +2615,7 @@
           "start": 169.69,
           "end": 170.19,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 44,
-      "text": "adventures every week. Until next time stay curious,",
-      "speaker": "Speaker0",
-      "start": 170.58,
-      "duration": 3.75,
-      "words": [
+        },
         {
           "word": "adventures",
           "start": 170.58,
@@ -2633,22 +2633,32 @@
           "start": 171.62,
           "end": 172.12,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 45,
+      "text": "Until next time stay curious, and keep listening.",
+      "speaker": "Speaker0",
+      "start": 172.39,
+      "duration": 3.46,
+      "words": [
         {
           "word": "until",
           "start": 172.39,
           "end": 172.63,
-          "confidence": 0.996
+          "confidence": 0.995
         },
         {
           "word": "next",
           "start": 172.63,
-          "end": 173.03,
+          "end": 173.11,
           "confidence": 1.0
         },
         {
           "word": "time",
-          "start": 173.03,
+          "start": 173.11,
           "end": 173.51,
           "confidence": 1.0
         },
@@ -2656,24 +2666,14 @@
           "word": "stay",
           "start": 173.51,
           "end": 173.83,
-          "confidence": 0.986
+          "confidence": 0.984
         },
         {
           "word": "curious",
           "start": 173.83,
           "end": 174.33,
-          "confidence": 0.973
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 45,
-      "text": "and keep listening.",
-      "speaker": "Speaker0",
-      "start": 174.71,
-      "duration": 1.14,
-      "words": [
+          "confidence": 0.979
+        },
         {
           "word": "and",
           "start": 174.71,
@@ -2693,7 +2693,7 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.996
     },
     {
       "id": 46,
@@ -2748,25 +2748,27 @@
       "confidence": 0.998
     }
   ],
-  "fetchedAt": "2026-07-23T04:05:17.280644+00:00",
+  "fetchedAt": "2026-07-23T06:27:07.002301+00:00",
   "videoId": "qwjfQNQsRRI",
   "speakerMap": {
     "0": "Speaker0"
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:05:17.280667+00:00",
+    "alignedAt": "2026-07-23T06:27:07.002328+00:00",
     "dgWordCount": 381,
     "dgUtteranceCount": 51,
     "matchedSegments": 51,
     "totalDuration": 178.81
   },
-  "repairedAt": "2026-07-23T04:33:44.497079Z",
+  "repairedAt": "2026-07-23T06:33:07.756692Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 51,
     "afterSegments": 46,
     "beforeAvgWords": 7.5,
     "afterAvgWords": 8.3,
-    "merged": 5
+    "merged": 5,
+    "danglingFragments": 0
   }
 }

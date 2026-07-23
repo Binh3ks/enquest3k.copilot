@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
-repair_transcripts.py — Batch transcript repair & segmentation.
+repair_transcripts.py — Batch transcript repair & segmentation v3.
 
-Merges short Deepgram utterances into proper sentences, matching
-W11's golden standard format.
+Merges short Deepgram utterances into natural shadowing segments.
 
-Rules (frozen):
-1. Merge consecutive same-speaker utterances until ≥3 words OR sentence-ending punctuation
-2. Recompute L2 start/duration from first/last word
-3. Rebuild L3 words[] from merged utterances
-4. Regenerate top-level text from all segments
-5. SKIP W11 (golden standard)
+Core philosophy: ACCUMULATE until complete, NEVER flush incomplete.
+A segment is complete when it ends with sentence-ending punctuation
+(. ! ? ;) or is a natural short interjection.
+
+Rules:
+1. ACCUMULATE on comma, trailing conjunction, or continuation words.
+2. FLUSH only on: sentence-ender (. ! ? ;), speaker change, or max length.
+3. Never end a segment with a dangling auxiliary, preposition, or conjunction.
+4. SKIP W11 (golden standard).
 
 Usage:
     python3 tools/repair_transcripts.py [--weeks 1,2,3] [--dry-run]
@@ -19,29 +21,160 @@ Usage:
 import json
 import re
 import sys
-import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SENTENCES_DIR = ROOT / "src" / "data" / "video_transcripts_by_id" / "sentences"
-
-# W11 video ID — skip (golden standard)
 GOLDEN_VIDEO = "curo8LPPA5Y"
 
-# Minimum words per merged sentence
-MIN_WORDS = 3
+# Max words before force-flush (prevents runaway merging)
+MAX_WORDS = 20
 
 # Sentence-ending punctuation
-SENTENCE_ENDERS = re.compile(r'[.!?]$')
+SENTENCE_ENDERS = re.compile(r'[.!?;:]\s*$')
+
+# Discourse markers that start new natural segments
+# When a segment starts with one of these AND buffer has ≥6 words, flush first
+DISCOURSE_MARKERS = re.compile(
+    r'^(?:Then|So|Well|Okay|Now|Next|After that|Finally|Also|But|However|'
+    r'Meanwhile|Anyway|Actually|Honestly|Luckily|Unfortunately|'
+    r'On Monday|On Tuesday|On Wednesday|On Thursday|On Friday|On Saturday|On Sunday|'
+    r'In the morning|In the afternoon|In the evening|'
+    r'First|Second|Third|Last|Usually|Sometimes|Often|Always|Never|'
+    r'That\'s why|The thing is|You know|I mean|By the way)',
+    re.IGNORECASE
+)
+
+# Minimum buffer words before a discourse marker can trigger a flush
+DISCOURSE_MIN_WORDS = 6
+
+# Natural short completions (always flush-able)
+SHORT_COMPLETIONS = re.compile(
+    r'^(?:'
+    r'yes\.?|no\.?|ok\.?|okay\.?|sure\.?|right\.?|well\.?|oh\.?|wow\.?|'
+    r'hey\.?|hi\.?|hello\.?|bye\.?|thanks\.?|thank you\.?|sorry\.?|'
+    r'please\.?|great\.?|nice\.?|good\.?|perfect\.?|excellent\.?|'
+    r'wonderful\.?|fantastic\.?|exactly\.?|absolutely\.?|definitely\.?|'
+    r'certainly\.?|of course\.?|I see\.?|I know\.?|I understand\.?|'
+    r'me too\.?|you too\.?|no problem\.?|you\'re welcome\.?'
+    r')(?:\s*)?$',
+    re.IGNORECASE
+)
+
+
+def flush_buffer(buf_segs, buf_words, buf_text_parts, merged):
+    """Flush buffer into a merged segment."""
+    if not buf_segs:
+        return
+    first_seg = buf_segs[0]
+    last_seg = buf_segs[-1]
+
+    if buf_words:
+        start = buf_words[0]["start"]
+        end = buf_words[-1]["end"]
+        duration = round(end - start, 2)
+    else:
+        start = first_seg["start"]
+        duration = round(last_seg["start"] + last_seg["duration"] - start, 2)
+
+    merged_text = " ".join(buf_text_parts)
+    merged_text = re.sub(r'\s+', ' ', merged_text).strip()
+
+    confs = [s.get("confidence", 0.9) for s in buf_segs if s.get("confidence")]
+    avg_conf = round(sum(confs) / len(confs), 3) if confs else 0.9
+
+    merged.append({
+        "id": len(merged) + 1,
+        "text": merged_text,
+        "speaker": first_seg.get("speaker", "Speaker0"),
+        "start": round(start, 2),
+        "duration": duration,
+        "words": buf_words.copy(),
+        "confidence": avg_conf,
+    })
+
+    buf_segs.clear()
+    buf_words.clear()
+    buf_text_parts.clear()
+
+
+def pre_split_multi_sentence(segments: list) -> list:
+    """Split utterances that contain multiple sentences.
+
+    Deepgram sometimes outputs "Sentence A. Sentence B." as one utterance.
+    This splits them so the merge logic can handle each sentence separately.
+    """
+    result = []
+    SENTENCE_SPLIT = re.compile(r'(?<=[.!?])\s+(?=[A-Z])')
+
+    for seg in segments:
+        text = seg.get("text", "").strip()
+        words = seg.get("words", [])
+
+        # Only split if text contains multiple sentences AND has enough words
+        parts = SENTENCE_SPLIT.split(text)
+        if len(parts) <= 1 or len(words) <= 5:
+            result.append(seg)
+            continue
+
+        # Split words proportionally across parts
+        total_words = len(words)
+        word_idx = 0
+        for part in parts:
+            part_word_count = len(part.split())
+            part_words = words[word_idx:word_idx + part_word_count]
+            word_idx += part_word_count
+
+            if not part_words:
+                continue
+
+            # Estimate timing proportionally
+            ratio = part_word_count / total_words
+            dur = round(seg.get("duration", 0) * ratio, 2)
+
+            result.append({
+                "id": len(result) + 1,
+                "text": part.strip(),
+                "speaker": seg.get("speaker", "Speaker0"),
+                "start": round(seg["start"] + sum(
+                    round(seg.get("duration", 0) * len(p.split()) / total_words, 2)
+                    for p in parts[:parts.index(part)]
+                ), 2),
+                "duration": dur,
+                "words": part_words,
+                "confidence": seg.get("confidence", 0.9),
+            })
+        # Handle any remaining words
+        if word_idx < total_words:
+            remaining = words[word_idx:]
+            if remaining:
+                result.append({
+                    "id": len(result) + 1,
+                    "text": " ".join(w["word"] for w in remaining),
+                    "speaker": seg.get("speaker", "Speaker0"),
+                    "start": seg["start"],
+                    "duration": seg.get("duration", 0),
+                    "words": remaining,
+                    "confidence": seg.get("confidence", 0.9),
+                })
+
+    # Renumber
+    for i, seg in enumerate(result):
+        seg["id"] = i + 1
+
+    return result
 
 
 def merge_utterances(segments: list) -> list:
-    """Merge short same-speaker utterances into proper sentences.
+    """Merge utterances into natural shadowing segments.
 
-    Frozen logic from W11 golden standard:
-    - Accumulate words from consecutive same-speaker segments
-    - Flush when: ≥3 words AND (sentence-ender OR speaker change OR next segment has ≥3 words)
-    - Never merge across speaker boundaries
+    Strategy: ACCUMULATE until complete, NEVER flush incomplete.
+
+    Flush triggers (in order of priority):
+    1. Speaker changed
+    2. Buffer ends with sentence-ender (. ! ? ;)
+    3. Buffer is a natural short completion ("Yes." "OK." "I know.")
+    4. Buffer exceeds MAX_WORDS (safety valve)
     """
     if not segments:
         return []
@@ -51,85 +184,209 @@ def merge_utterances(segments: list) -> list:
     buf_words = []
     buf_text_parts = []
 
-    def flush():
-        """Flush accumulated buffer into a merged segment."""
-        if not buf_segs:
-            return
-        # Build merged segment
-        first_seg = buf_segs[0]
-        last_seg = buf_segs[-1]
-
-        # L2 from first/last word
-        if buf_words:
-            start = buf_words[0]["start"]
-            end = buf_words[-1]["end"]
-            duration = round(end - start, 2)
-        else:
-            start = first_seg["start"]
-            duration = round(last_seg["start"] + last_seg["duration"] - start, 2)
-
-        # Merge text — join with space, clean up double spaces
-        merged_text = " ".join(buf_text_parts)
-        merged_text = re.sub(r'\s+', ' ', merged_text).strip()
-
-        # Average confidence
-        confs = [s.get("confidence", 0.9) for s in buf_segs if s.get("confidence")]
-        avg_conf = round(sum(confs) / len(confs), 3) if confs else 0.9
-
-        merged.append({
-            "id": len(merged) + 1,  # will be renumbered
-            "text": merged_text,
-            "speaker": first_seg.get("speaker", "Speaker0"),
-            "start": round(start, 2),
-            "duration": duration,
-            "words": buf_words.copy(),
-            "confidence": avg_conf,
-        })
-
-        buf_segs.clear()
-        buf_words.clear()
-        buf_text_parts.clear()
+    def get_buf_text():
+        return " ".join(buf_text_parts).strip()
 
     for seg in segments:
         speaker = seg.get("speaker", "Speaker0")
         text = seg.get("text", "").strip()
         words = seg.get("words", [])
 
-        # Check if we should flush before adding this segment
         if buf_segs:
             buf_speaker = buf_segs[0].get("speaker", "Speaker0")
+            buf_text = get_buf_text()
             buf_word_count = len(buf_words)
-            buf_text = " ".join(buf_text_parts).strip()
-            has_sentence_ender = bool(SENTENCE_ENDERS.search(buf_text))
 
-            # Flush conditions:
-            # 1. Speaker changed
-            # 2. Buffer has ≥3 words AND sentence ends with punctuation
-            # 3. Buffer has ≥MIN_WORDS words AND next segment also has ≥MIN_WORDS (natural break)
             should_flush = False
+
+            # RULE 1: Speaker changed → always flush
             if speaker != buf_speaker:
                 should_flush = True
-            elif buf_word_count >= MIN_WORDS and has_sentence_ender:
+            # RULE 2: Buffer ends with sentence-ender → complete thought
+            elif SENTENCE_ENDERS.search(buf_text):
                 should_flush = True
-            elif buf_word_count >= MIN_WORDS and len(words) >= MIN_WORDS:
+            # RULE 3: Buffer is a natural short completion
+            elif SHORT_COMPLETIONS.match(buf_text):
+                should_flush = True
+            # RULE 4: Next segment starts with discourse marker AND buffer
+            # has enough words → natural breath group boundary
+            elif (buf_word_count >= DISCOURSE_MIN_WORDS
+                  and DISCOURSE_MARKERS.match(text)):
+                should_flush = True
+            # RULE 5: Buffer too long → force flush (safety valve)
+            elif buf_word_count >= MAX_WORDS:
                 should_flush = True
 
             if should_flush:
-                flush()
+                flush_buffer(buf_segs, buf_words, buf_text_parts, merged)
 
-        # Add current segment to buffer
         buf_segs.append(seg)
         buf_text_parts.append(text)
         buf_words.extend(words)
 
     # Flush remaining
-    flush()
+    flush_buffer(buf_segs, buf_words, buf_text_parts, merged)
 
     # Renumber IDs
     for i, seg in enumerate(merged):
         seg["id"] = i + 1
 
     return merged
+
+
+def fix_dangling(segments: list, max_passes: int = 5) -> list:
+    """Post-process: merge segments ending with dangling elements.
+
+    A dangling segment ends with: comma, conjunction, auxiliary, preposition.
+    These are merged FORWARD with the next segment to form a complete thought.
+    Runs multiple passes until no dangling segments remain.
+    """
+    if not segments:
+        return []
+
+    DANGLING = re.compile(
+        r'(?:[,]\s*$'
+        r'|\s+(?:and|but|or|so|because|then|that|which|who|where|when|if|'
+        r'although|while|until|since|after|before|however|also|too|just|'
+        r'only|very|really|quite|still|already|even|almost|enough|yet|'
+        r'maybe|perhaps)\s*$'
+        r'|\s+(?:is|are|was|were|have|has|had|do|does|did|can|could|'
+        r'will|would|shall|should|may|might|must|need|used|going)\s*$'
+        r'|\s+(?:in|on|at|to|for|with|from|by|about|into|through|'
+        r'between|under|over|behind|near|during|without|within|across|'
+        r'along|around|before|after|toward|upon|against)\s*$'
+        r')',
+        re.IGNORECASE
+    )
+
+    for pass_num in range(max_passes):
+        merged_any = False
+        new_segs = []
+        i = 0
+        while i < len(segments):
+            seg = segments[i]
+            text = seg.get("text", "").rstrip()
+
+            # Check if this segment is dangling AND there's a next segment
+            if DANGLING.search(text) and i + 1 < len(segments):
+                next_seg = segments[i + 1]
+                # Merge this segment FORWARD into the next
+                merged_text = re.sub(r'\s+', ' ', seg["text"] + " " + next_seg["text"]).strip()
+                merged_words = seg.get("words", []) + next_seg.get("words", [])
+                merged_duration = round(
+                    (next_seg.get("start", 0) + next_seg.get("duration", 0)) - seg["start"], 2
+                )
+                merged_conf = round(
+                    (seg.get("confidence", 0.9) + next_seg.get("confidence", 0.9)) / 2, 3
+                )
+                new_segs.append({
+                    "id": len(new_segs) + 1,
+                    "text": merged_text,
+                    "speaker": seg.get("speaker", "Speaker0"),
+                    "start": seg["start"],
+                    "duration": merged_duration,
+                    "words": merged_words,
+                    "confidence": merged_conf,
+                })
+                i += 2  # Skip both segments (consumed into merged)
+                merged_any = True
+            else:
+                new_segs.append(seg)
+                i += 1
+
+        segments = new_segs
+        if not merged_any:
+            break
+
+    # Renumber
+    for i, seg in enumerate(segments):
+        seg["id"] = i + 1
+
+    return segments
+
+
+def split_long_segments(segments: list, max_words: int = 25) -> list:
+    """Split segments that are too long at natural sentence boundaries.
+
+    Strategy:
+    1. First try to split at a period/!/? with ≥5 words after it
+    2. If no such split exists, try splitting at the LAST comma with
+       ≥5 words on each side
+    3. If neither works, keep the segment as-is
+    """
+    result = []
+    for seg in segments:
+        text = seg.get("text", "").rstrip()
+        words = seg.get("words", [])
+
+        if len(words) <= max_words:
+            result.append(seg)
+            continue
+
+        # Strategy 1: Split at sentence-ender with enough text after
+        split_pos = -1
+        for m in SENTENCE_ENDERS.finditer(text):
+            after = text[m.end():].strip()
+            if len(after.split()) >= 5:
+                split_pos = m.end()
+
+        # Strategy 2: Split at last comma with enough text on each side
+        if split_pos <= 0:
+            for m in re.finditer(r',\s', text):
+                before_words = len(text[:m.start()].split())
+                after_words = len(text[m.end():].split())
+                if before_words >= 5 and after_words >= 5:
+                    split_pos = m.end()
+
+        if split_pos <= 0:
+            result.append(seg)
+            continue
+
+        text_part1 = text[:split_pos].strip()
+        text_part2 = text[split_pos:].strip()
+
+        if not text_part2:
+            result.append(seg)
+            continue
+
+        # Split words proportionally
+        words1_count = len(text_part1.split())
+        total_words = len(words)
+        split_idx = min(words1_count, total_words - 1)
+        split_idx = max(1, split_idx)
+
+        words1 = words[:split_idx]
+        words2 = words[split_idx:]
+
+        if not words1 or not words2:
+            result.append(seg)
+            continue
+
+        total_duration = seg.get("duration", 0)
+        ratio = len(words1) / total_words
+        dur1 = round(total_duration * ratio, 2)
+        dur2 = round(total_duration - dur1, 2)
+
+        result.append({
+            "id": len(result) + 1,
+            "text": text_part1,
+            "speaker": seg.get("speaker", "Speaker0"),
+            "start": seg["start"],
+            "duration": dur1,
+            "words": words1,
+            "confidence": seg.get("confidence", 0.9),
+        })
+        result.append({
+            "id": len(result) + 1,
+            "text": text_part2,
+            "speaker": seg.get("speaker", "Speaker0"),
+            "start": round(seg["start"] + dur1, 2),
+            "duration": dur2,
+            "words": words2,
+            "confidence": seg.get("confidence", 0.9),
+        })
+
+    return result
 
 
 def repair_week(video_id: str) -> dict:
@@ -144,30 +401,44 @@ def repair_week(video_id: str) -> dict:
     if not segments:
         return {"status": "empty", "video_id": video_id}
 
-    # Count before
     before_count = len(segments)
     before_avg_words = sum(len(s.get("words", [])) for s in segments) / before_count
 
-    # Merge
+    # Pre-split multi-sentence utterances
+    segments = pre_split_multi_sentence(segments)
+
     merged = merge_utterances(segments)
 
-    # Count after
+    # Post-process: fix any remaining dangling fragments
+    merged = fix_dangling(merged)
+
+    # Final renumber
+    for i, seg in enumerate(merged):
+        seg["id"] = i + 1
+
     after_count = len(merged)
     after_avg_words = sum(len(s.get("words", [])) for s in merged) / after_count if merged else 0
 
-    # Update data
+    # Validate: no segment should end with dangling comma or conjunction
+    dangling_count = 0
+    for s in merged:
+        text = s["text"].rstrip()
+        if text.endswith(",") or re.search(r'\s+(and|but|or|so|because|then|which|who|where|when|if)\s*$', text, re.I):
+            dangling_count += 1
+
     data["segments"] = merged
     data["text"] = " ".join(s["text"] for s in merged)
     data["repairedAt"] = __import__("datetime").datetime.utcnow().isoformat() + "Z"
     data["repairInfo"] = {
+        "version": 3,
         "beforeSegments": before_count,
         "afterSegments": after_count,
         "beforeAvgWords": round(before_avg_words, 1),
         "afterAvgWords": round(after_avg_words, 1),
         "merged": before_count - after_count,
+        "danglingFragments": dangling_count,
     }
 
-    # Save
     json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 
     return {
@@ -177,6 +448,7 @@ def repair_week(video_id: str) -> dict:
         "after": after_count,
         "merged": before_count - after_count,
         "avg_words": round(after_avg_words, 1),
+        "dangling": dangling_count,
     }
 
 
@@ -188,10 +460,8 @@ def main():
         if idx + 1 < len(sys.argv):
             weeks_arg = [int(w.strip()) for w in sys.argv[idx + 1].split(",")]
 
-    # Build week list
     weeks = weeks_arg if weeks_arg else list(range(1, 36))
 
-    # Map weeks to video IDs
     import re as re_mod
     week_map = {}
     for w in weeks:
@@ -206,7 +476,7 @@ def main():
                     continue
                 week_map[w] = vid
 
-    print(f"\n=== Transcript Repair Pipeline ===")
+    print(f"\n=== Transcript Repair Pipeline v3 ===")
     print(f"Weeks to repair: {len(week_map)}")
     print(f"Skipping: W11 (golden standard)")
     print()
@@ -223,7 +493,6 @@ def main():
         print("\n[DRY RUN] No changes made.")
         return
 
-    # Process
     results = []
     for w, vid in sorted(week_map.items()):
         print(f"W{w:02d} ({vid}): ", end="", flush=True)
@@ -231,23 +500,25 @@ def main():
             result = repair_week(vid)
             results.append({"week": w, **result})
             if result["status"] == "success":
+                dangling = f", ⚠️{result['dangling']} dangling" if result["dangling"] else ""
                 print(f"{result['before']}→{result['after']} segments "
-                      f"({result['merged']} merged, avg {result['avg_words']} words)")
+                      f"({result['merged']} merged, avg {result['avg_words']} words{dangling})")
             else:
                 print(f"{result['status']}")
         except Exception as e:
             results.append({"week": w, "video_id": vid, "status": "error", "error": str(e)})
             print(f"ERROR: {e}")
 
-    # Summary
     success = [r for r in results if r["status"] == "success"]
     errors = [r for r in results if r["status"] != "success"]
     total_merged = sum(r.get("merged", 0) for r in success)
+    total_dangling = sum(r.get("dangling", 0) for r in success)
 
     print(f"\n=== Summary ===")
     print(f"Repaired: {len(success)}")
     print(f"Errors: {len(errors)}")
     print(f"Total utterances merged: {total_merged}")
+    print(f"Remaining dangling fragments: {total_dangling}")
     if success:
         avg_before = sum(r["before"] for r in success) / len(success)
         avg_after = sum(r["after"] for r in success) / len(success)

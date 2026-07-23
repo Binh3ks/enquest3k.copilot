@@ -31,10 +31,10 @@
     },
     {
       "id": 2,
-      "text": "Family Hello. Let me introduce my family.",
+      "text": "Family Hello.",
       "speaker": "Speaker0",
       "start": 8.12,
-      "duration": 5.9,
+      "duration": 2.62,
       "words": [
         {
           "word": "family",
@@ -47,7 +47,17 @@
           "start": 10.24,
           "end": 10.74,
           "confidence": 0.787
-        },
+        }
+      ],
+      "confidence": 0.615
+    },
+    {
+      "id": 3,
+      "text": "Let me introduce my family.",
+      "speaker": "Speaker0",
+      "start": 11.92,
+      "duration": 2.1,
+      "words": [
         {
           "word": "let",
           "start": 11.92,
@@ -79,14 +89,14 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.806
+      "confidence": 0.998
     },
     {
-      "id": 3,
-      "text": "It's me. Me",
+      "id": 4,
+      "text": "It's me.",
       "speaker": "Speaker0",
       "start": 15.01,
-      "duration": 2.49,
+      "duration": 0.89,
       "words": [
         {
           "word": "it's",
@@ -99,23 +109,23 @@
           "start": 15.4,
           "end": 15.9,
           "confidence": 0.949
-        },
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 5,
+      "text": "Me He is my father.",
+      "speaker": "Speaker0",
+      "start": 17.0,
+      "duration": 4.11,
+      "words": [
         {
           "word": "me",
           "start": 17.0,
           "end": 17.5,
           "confidence": 0.543
-        }
-      ],
-      "confidence": 0.758
-    },
-    {
-      "id": 4,
-      "text": "He is my father.",
-      "speaker": "Speaker0",
-      "start": 19.56,
-      "duration": 1.55,
-      "words": [
+        },
         {
           "word": "he",
           "start": 19.56,
@@ -141,10 +151,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.753
     },
     {
-      "id": 5,
+      "id": 6,
       "text": "She is my mother.",
       "speaker": "Speaker0",
       "start": 23.16,
@@ -178,11 +188,11 @@
       "confidence": 0.973
     },
     {
-      "id": 6,
-      "text": "Father father mother mother",
+      "id": 7,
+      "text": "Father father mother mother They are my parents.",
       "speaker": "Speaker0",
       "start": 25.88,
-      "duration": 6.47,
+      "duration": 8.65,
       "words": [
         {
           "word": "father",
@@ -207,17 +217,7 @@
           "start": 31.85,
           "end": 32.35,
           "confidence": 0.989
-        }
-      ],
-      "confidence": 0.879
-    },
-    {
-      "id": 7,
-      "text": "They are my parents.",
-      "speaker": "Speaker0",
-      "start": 32.91,
-      "duration": 1.62,
-      "words": [
+        },
         {
           "word": "they",
           "start": 32.91,
@@ -243,7 +243,7 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.912
+      "confidence": 0.886
     },
     {
       "id": 8,
@@ -327,23 +327,43 @@
     },
     {
       "id": 10,
-      "text": "Brother. Brother. Sister.",
+      "text": "Brother.",
       "speaker": "Speaker0",
       "start": 48.05,
-      "duration": 4.18,
+      "duration": 0.5,
       "words": [
         {
           "word": "brother",
           "start": 48.05,
           "end": 48.55,
           "confidence": 0.946
-        },
+        }
+      ],
+      "confidence": 0.946
+    },
+    {
+      "id": 11,
+      "text": "Brother.",
+      "speaker": "Speaker0",
+      "start": 49.98,
+      "duration": 0.5,
+      "words": [
         {
           "word": "brother",
           "start": 49.98,
           "end": 50.48,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 12,
+      "text": "Sister.",
+      "speaker": "Speaker0",
+      "start": 51.73,
+      "duration": 0.5,
+      "words": [
         {
           "word": "sister",
           "start": 51.73,
@@ -351,10 +371,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.999
     },
     {
-      "id": 11,
+      "id": 13,
       "text": "Sister He is my grandfather.",
       "speaker": "Speaker0",
       "start": 53.82,
@@ -394,7 +414,7 @@
       "confidence": 0.996
     },
     {
-      "id": 12,
+      "id": 14,
       "text": "He is my grandmother.",
       "speaker": "Speaker0",
       "start": 60.7,
@@ -428,11 +448,11 @@
       "confidence": 0.914
     },
     {
-      "id": 13,
-      "text": "Grandfather Grandfather Grandmother Grandmother",
+      "id": 15,
+      "text": "Grandfather Grandfather Grandmother Grandmother They are my grandparents.",
       "speaker": "Speaker0",
       "start": 64.3,
-      "duration": 6.32,
+      "duration": 9.43,
       "words": [
         {
           "word": "grandfather",
@@ -457,17 +477,7 @@
           "start": 70.12,
           "end": 70.62,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.955
-    },
-    {
-      "id": 14,
-      "text": "They are my grandparents.",
-      "speaker": "Speaker0",
-      "start": 72.19,
-      "duration": 1.54,
-      "words": [
+        },
         {
           "word": "they",
           "start": 72.19,
@@ -493,10 +503,10 @@
           "confidence": 0.958
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.961
     },
     {
-      "id": 15,
+      "id": 16,
       "text": "Grandparents Grandparents He is my uncle.",
       "speaker": "Speaker0",
       "start": 75.31,
@@ -542,7 +552,7 @@
       "confidence": 0.914
     },
     {
-      "id": 16,
+      "id": 17,
       "text": "Oh, he is my uncle too.",
       "speaker": "Speaker0",
       "start": 84.38,
@@ -588,7 +598,7 @@
       "confidence": 0.936
     },
     {
-      "id": 17,
+      "id": 18,
       "text": "Uncle Uncle She is my aunt.",
       "speaker": "Speaker0",
       "start": 88.62,
@@ -634,7 +644,7 @@
       "confidence": 0.741
     },
     {
-      "id": 18,
+      "id": 19,
       "text": "Aunt aunt She is my cousin.",
       "speaker": "Speaker0",
       "start": 97.61,
@@ -680,11 +690,11 @@
       "confidence": 0.875
     },
     {
-      "id": 19,
-      "text": "Cousin cousin my family",
+      "id": 20,
+      "text": "Cousin cousin my family They are my family members.",
       "speaker": "Speaker0",
       "start": 105.77,
-      "duration": 4.33,
+      "duration": 7.77,
       "words": [
         {
           "word": "cousin",
@@ -709,17 +719,7 @@
           "start": 109.6,
           "end": 110.1,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.935
-    },
-    {
-      "id": 20,
-      "text": "They are my family members.",
-      "speaker": "Speaker0",
-      "start": 111.68,
-      "duration": 1.86,
-      "words": [
+        },
         {
           "word": "they",
           "start": 111.68,
@@ -751,7 +751,7 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.951
     },
     {
       "id": 21,
@@ -783,17 +783,27 @@
     },
     {
       "id": 22,
-      "text": "Review. Grandfather grandmother grandparents father mother parents uncle uncle aunt brother me sister cousin my family",
+      "text": "Review.",
       "speaker": "Speaker0",
       "start": 116.88,
-      "duration": 52.93,
+      "duration": 0.5,
       "words": [
         {
           "word": "review",
           "start": 116.88,
           "end": 117.38,
           "confidence": 0.897
-        },
+        }
+      ],
+      "confidence": 0.897
+    },
+    {
+      "id": 23,
+      "text": "Grandfather grandmother grandparents father mother parents uncle uncle aunt brother me sister cousin my family",
+      "speaker": "Speaker0",
+      "start": 123.04,
+      "duration": 46.77,
+      "words": [
         {
           "word": "grandfather",
           "start": 123.04,
@@ -885,28 +895,30 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.989
     }
   ],
-  "fetchedAt": "2026-07-23T03:57:29.360419+00:00",
+  "fetchedAt": "2026-07-23T06:23:33.174399+00:00",
   "videoId": "FHaObkHEkHQ",
   "speakerMap": {
     "0": "Speaker0"
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T03:57:29.360442+00:00",
+    "alignedAt": "2026-07-23T06:23:33.174419+00:00",
     "dgWordCount": 111,
     "dgUtteranceCount": 60,
     "matchedSegments": 60,
     "totalDuration": 169.81
   },
-  "repairedAt": "2026-07-23T04:33:44.447177Z",
+  "repairedAt": "2026-07-23T06:33:07.682137Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 60,
-    "afterSegments": 22,
+    "afterSegments": 23,
     "beforeAvgWords": 1.9,
-    "afterAvgWords": 5.0,
-    "merged": 38
+    "afterAvgWords": 4.8,
+    "merged": 37,
+    "danglingFragments": 0
   }
 }

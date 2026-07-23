@@ -18,7 +18,7 @@
           "word": "sing",
           "start": 2.4,
           "end": 2.64,
-          "confidence": 0.551
+          "confidence": 0.55
         },
         {
           "word": "sing",
@@ -27,7 +27,7 @@
           "confidence": 0.91
         }
       ],
-      "confidence": 0.759
+      "confidence": 0.758
     },
     {
       "id": 2,
@@ -95,7 +95,7 @@
           "confidence": 0.861
         }
       ],
-      "confidence": 0.942
+      "confidence": 0.941
     },
     {
       "id": 4,
@@ -127,10 +127,10 @@
     },
     {
       "id": 5,
-      "text": "Oh, no. Excuse me.",
+      "text": "Oh, no.",
       "speaker": "Speaker0",
       "start": 22.68,
-      "duration": 6.66,
+      "duration": 0.81,
       "words": [
         {
           "word": "oh",
@@ -143,7 +143,17 @@
           "start": 22.99,
           "end": 23.49,
           "confidence": 0.988
-        },
+        }
+      ],
+      "confidence": 0.953
+    },
+    {
+      "id": 6,
+      "text": "Excuse me.",
+      "speaker": "Speaker0",
+      "start": 28.27,
+      "duration": 1.07,
+      "words": [
         {
           "word": "excuse",
           "start": 28.27,
@@ -157,10 +167,10 @@
           "confidence": 0.899
         }
       ],
-      "confidence": 0.927
+      "confidence": 0.901
     },
     {
-      "id": 6,
+      "id": 7,
       "text": "I'm looking for my little sister.",
       "speaker": "Speaker0",
       "start": 30.03,
@@ -206,18 +216,28 @@
       "confidence": 1.0
     },
     {
-      "id": 7,
-      "text": "Okay. Don't worry. What's her name?",
+      "id": 8,
+      "text": "Okay.",
       "speaker": "Speaker0",
       "start": 33.63,
-      "duration": 3.46,
+      "duration": 0.5,
       "words": [
         {
           "word": "okay",
           "start": 33.63,
           "end": 34.13,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 9,
+      "text": "Don't worry. What's her name?",
+      "speaker": "Speaker0",
+      "start": 34.91,
+      "duration": 2.18,
+      "words": [
         {
           "word": "don't",
           "start": 34.91,
@@ -252,7 +272,7 @@
       "confidence": 0.998
     },
     {
-      "id": 8,
+      "id": 10,
       "text": "Her name is Aurora.",
       "speaker": "Speaker0",
       "start": 38.19,
@@ -286,7 +306,7 @@
       "confidence": 0.948
     },
     {
-      "id": 9,
+      "id": 11,
       "text": "She's six years old.",
       "speaker": "Speaker0",
       "start": 40.27,
@@ -296,7 +316,7 @@
           "word": "she's",
           "start": 40.27,
           "end": 40.67,
-          "confidence": 0.988
+          "confidence": 0.987
         },
         {
           "word": "six",
@@ -320,7 +340,7 @@
       "confidence": 0.997
     },
     {
-      "id": 10,
+      "id": 12,
       "text": "What does she look like?",
       "speaker": "Speaker0",
       "start": 42.84,
@@ -360,7 +380,7 @@
       "confidence": 1.0
     },
     {
-      "id": 11,
+      "id": 13,
       "text": "She has short curly hair.",
       "speaker": "Speaker0",
       "start": 45.16,
@@ -400,7 +420,7 @@
       "confidence": 0.97
     },
     {
-      "id": 12,
+      "id": 14,
       "text": "What is she wearing?",
       "speaker": "Speaker0",
       "start": 47.96,
@@ -434,7 +454,7 @@
       "confidence": 1.0
     },
     {
-      "id": 13,
+      "id": 15,
       "text": "She's wearing a pink shirt and blue pants.",
       "speaker": "Speaker0",
       "start": 50.05,
@@ -486,13 +506,13 @@
           "word": "pants",
           "start": 52.36,
           "end": 52.86,
-          "confidence": 0.792
+          "confidence": 0.794
         }
       ],
       "confidence": 0.973
     },
     {
-      "id": 14,
+      "id": 16,
       "text": "And she's wearing a white cap.",
       "speaker": "Speaker0",
       "start": 53.96,
@@ -538,18 +558,28 @@
       "confidence": 0.999
     },
     {
-      "id": 15,
-      "text": "Listen. Where is Rora?",
+      "id": 17,
+      "text": "Listen.",
       "speaker": "Speaker0",
       "start": 76.05,
-      "duration": 12.6,
+      "duration": 0.5,
       "words": [
         {
           "word": "listen",
           "start": 76.05,
           "end": 76.55,
-          "confidence": 0.772
-        },
+          "confidence": 0.771
+        }
+      ],
+      "confidence": 0.771
+    },
+    {
+      "id": 18,
+      "text": "Where is Rora?",
+      "speaker": "Speaker0",
+      "start": 87.43,
+      "duration": 1.22,
+      "words": [
         {
           "word": "where",
           "start": 87.43,
@@ -569,10 +599,10 @@
           "confidence": 0.894
         }
       ],
-      "confidence": 0.863
+      "confidence": 0.953
     },
     {
-      "id": 16,
+      "id": 19,
       "text": "I don't know.",
       "speaker": "Speaker0",
       "start": 89.83,
@@ -600,11 +630,11 @@
       "confidence": 0.995
     },
     {
-      "id": 17,
-      "text": "Oh, no. Excuse me.",
+      "id": 20,
+      "text": "Oh, no.",
       "speaker": "Speaker0",
       "start": 91.67,
-      "duration": 6.74,
+      "duration": 0.82,
       "words": [
         {
           "word": "oh",
@@ -617,7 +647,17 @@
           "start": 91.99,
           "end": 92.49,
           "confidence": 0.986
-        },
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 21,
+      "text": "Excuse me.",
+      "speaker": "Speaker0",
+      "start": 97.43,
+      "duration": 0.98,
+      "words": [
         {
           "word": "excuse",
           "start": 97.43,
@@ -628,13 +668,13 @@
           "word": "me",
           "start": 97.91,
           "end": 98.41,
-          "confidence": 0.895
+          "confidence": 0.896
         }
       ],
-      "confidence": 0.92
+      "confidence": 0.895
     },
     {
-      "id": 18,
+      "id": 22,
       "text": "I'm looking for my little sister.",
       "speaker": "Speaker0",
       "start": 99.05,
@@ -680,18 +720,28 @@
       "confidence": 1.0
     },
     {
-      "id": 19,
-      "text": "Okay. Don't worry.",
+      "id": 23,
+      "text": "Okay.",
       "speaker": "Speaker0",
       "start": 102.73,
-      "duration": 2.02,
+      "duration": 0.5,
       "words": [
         {
           "word": "okay",
           "start": 102.73,
           "end": 103.23,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 24,
+      "text": "Don't worry.",
+      "speaker": "Speaker0",
+      "start": 103.92,
+      "duration": 0.83,
+      "words": [
         {
           "word": "don't",
           "start": 103.92,
@@ -705,10 +755,10 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.995
     },
     {
-      "id": 20,
+      "id": 25,
       "text": "What's her name?",
       "speaker": "Speaker0",
       "start": 105.05,
@@ -736,7 +786,7 @@
       "confidence": 0.999
     },
     {
-      "id": 21,
+      "id": 26,
       "text": "Her name is Aurora.",
       "speaker": "Speaker0",
       "start": 107.2,
@@ -764,13 +814,13 @@
           "word": "aurora",
           "start": 108.01,
           "end": 108.51,
-          "confidence": 0.813
+          "confidence": 0.812
         }
       ],
       "confidence": 0.953
     },
     {
-      "id": 22,
+      "id": 27,
       "text": "She's six years old.",
       "speaker": "Speaker0",
       "start": 109.28,
@@ -804,7 +854,7 @@
       "confidence": 0.997
     },
     {
-      "id": 23,
+      "id": 28,
       "text": "What does she look like?",
       "speaker": "Speaker0",
       "start": 111.81,
@@ -844,7 +894,7 @@
       "confidence": 1.0
     },
     {
-      "id": 24,
+      "id": 29,
       "text": "She has short curly hair.",
       "speaker": "Speaker0",
       "start": 114.21,
@@ -872,7 +922,7 @@
           "word": "curly",
           "start": 115.09,
           "end": 115.57,
-          "confidence": 0.909
+          "confidence": 0.91
         },
         {
           "word": "hair",
@@ -884,7 +934,7 @@
       "confidence": 0.982
     },
     {
-      "id": 25,
+      "id": 30,
       "text": "What is she wearing?",
       "speaker": "Speaker0",
       "start": 116.93,
@@ -918,11 +968,11 @@
       "confidence": 1.0
     },
     {
-      "id": 26,
+      "id": 31,
       "text": "She's wearing a pink shirt and blue pants.",
       "speaker": "Speaker0",
       "start": 119.09,
-      "duration": 2.74,
+      "duration": 2.82,
       "words": [
         {
           "word": "she's",
@@ -963,20 +1013,20 @@
         {
           "word": "blue",
           "start": 121.01,
-          "end": 121.33,
+          "end": 121.41,
           "confidence": 1.0
         },
         {
           "word": "pants",
-          "start": 121.33,
-          "end": 121.83,
-          "confidence": 0.764
+          "start": 121.41,
+          "end": 121.91,
+          "confidence": 0.766
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.97
     },
     {
-      "id": 27,
+      "id": 32,
       "text": "And she's wearing a white cap.",
       "speaker": "Speaker0",
       "start": 123.01,
@@ -1022,35 +1072,45 @@
       "confidence": 0.998
     },
     {
-      "id": 28,
-      "text": "Rora. Speak aloud.",
+      "id": 33,
+      "text": "Rora.",
       "speaker": "Speaker0",
       "start": 134.47,
-      "duration": 12.0,
+      "duration": 0.5,
       "words": [
         {
           "word": "rora",
           "start": 134.47,
           "end": 134.97,
           "confidence": 0.59
-        },
+        }
+      ],
+      "confidence": 0.59
+    },
+    {
+      "id": 34,
+      "text": "Speak aloud.",
+      "speaker": "Speaker0",
+      "start": 145.65,
+      "duration": 0.82,
+      "words": [
         {
           "word": "speak",
           "start": 145.65,
           "end": 145.97,
-          "confidence": 0.643
+          "confidence": 0.641
         },
         {
           "word": "aloud",
           "start": 145.97,
           "end": 146.47,
-          "confidence": 0.966
+          "confidence": 0.965
         }
       ],
-      "confidence": 0.697
+      "confidence": 0.803
     },
     {
-      "id": 29,
+      "id": 35,
       "text": "Your turn.",
       "speaker": "Speaker0",
       "start": 214.35,
@@ -1060,7 +1120,7 @@
           "word": "your",
           "start": 214.35,
           "end": 214.68,
-          "confidence": 0.98
+          "confidence": 0.981
         },
         {
           "word": "turn",
@@ -1069,28 +1129,30 @@
           "confidence": 0.975
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.978
     }
   ],
-  "fetchedAt": "2026-07-23T03:57:56.963094+00:00",
+  "fetchedAt": "2026-07-23T06:23:45.407772+00:00",
   "videoId": "zT5IiE9m9oY",
   "speakerMap": {
     "0": "Speaker0"
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T03:57:56.963129+00:00",
+    "alignedAt": "2026-07-23T06:23:45.407797+00:00",
     "dgWordCount": 130,
     "dgUtteranceCount": 35,
     "matchedSegments": 35,
     "totalDuration": 215.18
   },
-  "repairedAt": "2026-07-23T04:33:44.448574Z",
+  "repairedAt": "2026-07-23T06:33:07.684169Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 35,
-    "afterSegments": 29,
+    "afterSegments": 35,
     "beforeAvgWords": 3.7,
-    "afterAvgWords": 4.5,
-    "merged": 6
+    "afterAvgWords": 3.7,
+    "merged": 0,
+    "danglingFragments": 0
   }
 }

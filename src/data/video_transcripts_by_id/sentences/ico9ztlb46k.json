@@ -223,10 +223,10 @@
     },
     {
       "id": 8,
-      "text": "Eat breakfast. Eat breakfast,",
+      "text": "Eat breakfast.",
       "speaker": "Speaker0",
       "start": 36.37,
-      "duration": 4.83,
+      "duration": 0.82,
       "words": [
         {
           "word": "eat",
@@ -239,7 +239,17 @@
           "start": 36.69,
           "end": 37.19,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 9,
+      "text": "Eat breakfast, brush my teeth, brush my teeth, brush my hair, Brush my hair.",
+      "speaker": "Speaker0",
+      "start": 40.47,
+      "duration": 17.36,
+      "words": [
         {
           "word": "eat",
           "start": 40.47,
@@ -251,17 +261,7 @@
           "start": 40.7,
           "end": 41.2,
           "confidence": 0.972
-        }
-      ],
-      "confidence": 0.974
-    },
-    {
-      "id": 9,
-      "text": "brush my teeth,",
-      "speaker": "Speaker2",
-      "start": 44.55,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "brush",
           "start": 44.55,
@@ -279,17 +279,7 @@
           "start": 45.27,
           "end": 45.77,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.918
-    },
-    {
-      "id": 10,
-      "text": "brush my teeth,",
-      "speaker": "Speaker2",
-      "start": 48.62,
-      "duration": 1.15,
-      "words": [
+        },
         {
           "word": "brush",
           "start": 48.62,
@@ -307,17 +297,7 @@
           "start": 49.27,
           "end": 49.77,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 11,
-      "text": "brush my hair,",
-      "speaker": "Speaker3",
-      "start": 52.55,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "brush",
           "start": 52.55,
@@ -335,17 +315,7 @@
           "start": 53.27,
           "end": 53.77,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 12,
-      "text": "Brush my hair.",
-      "speaker": "Speaker3",
-      "start": 56.69,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "brush",
           "start": 56.69,
@@ -365,14 +335,14 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.974
     },
     {
-      "id": 13,
-      "text": "Get dressed. Get dressed.",
+      "id": 10,
+      "text": "Get dressed.",
       "speaker": "Speaker0",
       "start": 60.37,
-      "duration": 4.82,
+      "duration": 0.82,
       "words": [
         {
           "word": "get",
@@ -385,7 +355,17 @@
           "start": 60.69,
           "end": 61.19,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 11,
+      "text": "Get dressed.",
+      "speaker": "Speaker0",
+      "start": 64.37,
+      "duration": 0.82,
+      "words": [
         {
           "word": "get",
           "start": 64.37,
@@ -399,21 +379,31 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.944
     },
     {
-      "id": 14,
-      "text": "Sing. Sing. Dance.",
+      "id": 12,
+      "text": "Sing.",
       "speaker": "Speaker0",
       "start": 68.53,
-      "duration": 2.09,
+      "duration": 0.5,
       "words": [
         {
           "word": "sing",
           "start": 68.53,
           "end": 69.03,
           "confidence": 0.971
-        },
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 13,
+      "text": "Sing. Dance.",
+      "speaker": "Speaker0",
+      "start": 69.41,
+      "duration": 1.21,
+      "words": [
         {
           "word": "sing",
           "start": 69.41,
@@ -427,10 +417,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.999
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "Dance.",
       "speaker": "Speaker1",
       "start": 80.53,
@@ -446,7 +436,7 @@
       "confidence": 0.998
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "Go to school.",
       "speaker": "Speaker4",
       "start": 84.67,
@@ -474,7 +464,7 @@
       "confidence": 0.983
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "Go to school.",
       "speaker": "Speaker4",
       "start": 88.59,
@@ -502,7 +492,7 @@
       "confidence": 0.968
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "That was great, kids.",
       "speaker": "Speaker0",
       "start": 93.79,
@@ -536,7 +526,7 @@
       "confidence": 0.865
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "Let's do it one more time.",
       "speaker": "Speaker0",
       "start": 96.35,
@@ -582,7 +572,7 @@
       "confidence": 0.998
     },
     {
-      "id": 20,
+      "id": 19,
       "text": "In a big voice, repeat after me.",
       "speaker": "Speaker0",
       "start": 99.34,
@@ -634,7 +624,7 @@
       "confidence": 0.99
     },
     {
-      "id": 21,
+      "id": 20,
       "text": "Here we go.",
       "speaker": "Speaker0",
       "start": 104.47,
@@ -662,11 +652,11 @@
       "confidence": 0.99
     },
     {
-      "id": 22,
-      "text": "Wake up. Go to the toilet.",
+      "id": 21,
+      "text": "Wake up.",
       "speaker": "Speaker0",
       "start": 108.39,
-      "duration": 9.73,
+      "duration": 0.81,
       "words": [
         {
           "word": "wake",
@@ -679,7 +669,17 @@
           "start": 108.7,
           "end": 109.2,
           "confidence": 0.9
-        },
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": 22,
+      "text": "Go to the toilet.",
+      "speaker": "Speaker0",
+      "start": 116.66,
+      "duration": 1.46,
+      "words": [
         {
           "word": "go",
           "start": 116.66,
@@ -705,7 +705,7 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.99
     },
     {
       "id": 23,
@@ -737,10 +737,10 @@
     },
     {
       "id": 24,
-      "text": "Eat breakfast,",
+      "text": "Eat breakfast, brush my",
       "speaker": "Speaker0",
       "start": 132.4,
-      "duration": 0.73,
+      "duration": 8.96,
       "words": [
         {
           "word": "eat",
@@ -753,17 +753,7 @@
           "start": 132.63,
           "end": 133.13,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 25,
-      "text": "brush my",
-      "speaker": "Speaker2",
-      "start": 140.63,
-      "duration": 0.73,
-      "words": [
+        },
         {
           "word": "brush",
           "start": 140.63,
@@ -777,10 +767,10 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.992
     },
     {
-      "id": 26,
+      "id": 25,
       "text": "teeth.",
       "speaker": "Speaker0",
       "start": 146.96,
@@ -796,7 +786,7 @@
       "confidence": 0.925
     },
     {
-      "id": 27,
+      "id": 26,
       "text": "Brush my hair.",
       "speaker": "Speaker3",
       "start": 148.64,
@@ -824,11 +814,11 @@
       "confidence": 0.998
     },
     {
-      "id": 28,
-      "text": "Get dressed. Sing.",
+      "id": 27,
+      "text": "Get dressed.",
       "speaker": "Speaker0",
       "start": 153.41,
-      "duration": 11.53,
+      "duration": 2.34,
       "words": [
         {
           "word": "get",
@@ -841,7 +831,17 @@
           "start": 155.25,
           "end": 155.75,
           "confidence": 0.846
-        },
+        }
+      ],
+      "confidence": 0.764
+    },
+    {
+      "id": 28,
+      "text": "Sing.",
+      "speaker": "Speaker0",
+      "start": 164.44,
+      "duration": 0.5,
+      "words": [
         {
           "word": "sing",
           "start": 164.44,
@@ -849,36 +849,26 @@
           "confidence": 0.946
         }
       ],
-      "confidence": 0.825
+      "confidence": 0.946
     },
     {
       "id": 29,
-      "text": "Dance.",
-      "speaker": "Speaker1",
-      "start": 172.48,
-      "duration": 0.5,
+      "text": "Dance. Go to school.",
+      "speaker": "Speaker4",
+      "start": 179.92,
+      "duration": 1.78,
       "words": [
         {
           "word": "dance",
-          "start": 172.48,
-          "end": 172.98,
+          "start": 179.92,
+          "end": 180.42,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 30,
-      "text": "Go to school.",
-      "speaker": "Speaker4",
-      "start": 180.64,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "go",
           "start": 180.64,
           "end": 180.96,
-          "confidence": 0.99
+          "confidence": 0.989
         },
         {
           "word": "to",
@@ -896,7 +886,7 @@
       "confidence": 0.996
     },
     {
-      "id": 31,
+      "id": 30,
       "text": "Well done, kids.",
       "speaker": "Speaker0",
       "start": 189.29,
@@ -924,7 +914,7 @@
       "confidence": 0.863
     },
     {
-      "id": 32,
+      "id": 31,
       "text": "That was great.",
       "speaker": "Speaker0",
       "start": 191.46,
@@ -952,7 +942,7 @@
       "confidence": 0.994
     },
     {
-      "id": 33,
+      "id": 32,
       "text": "See you.",
       "speaker": "Speaker0",
       "start": 193.53,
@@ -974,7 +964,7 @@
       "confidence": 0.876
     }
   ],
-  "fetchedAt": "2026-07-23T04:02:00.725114+00:00",
+  "fetchedAt": "2026-07-23T06:25:01.179778+00:00",
   "videoId": "ico9ztlb46k",
   "speakerMap": {
     "0": "Speaker0",
@@ -985,18 +975,20 @@
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:02:00.725135+00:00",
+    "alignedAt": "2026-07-23T06:25:01.179808+00:00",
     "dgWordCount": 107,
-    "dgUtteranceCount": 43,
-    "matchedSegments": 43,
+    "dgUtteranceCount": 42,
+    "matchedSegments": 42,
     "totalDuration": 194.28
   },
-  "repairedAt": "2026-07-23T04:33:44.467833Z",
+  "repairedAt": "2026-07-23T06:33:07.709883Z",
   "repairInfo": {
-    "beforeSegments": 43,
-    "afterSegments": 33,
+    "version": 3,
+    "beforeSegments": 42,
+    "afterSegments": 32,
     "beforeAvgWords": 2.5,
-    "afterAvgWords": 3.2,
-    "merged": 10
+    "afterAvgWords": 3.3,
+    "merged": 10,
+    "danglingFragments": 0
   }
 }

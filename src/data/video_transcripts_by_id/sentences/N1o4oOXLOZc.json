@@ -12,7 +12,7 @@
           "word": "english",
           "start": 1.68,
           "end": 2.18,
-          "confidence": 0.893
+          "confidence": 0.89
         },
         {
           "word": "sing",
@@ -52,10 +52,10 @@
           "word": "interests",
           "start": 8.64,
           "end": 9.14,
-          "confidence": 0.902
+          "confidence": 0.904
         }
       ],
-      "confidence": 0.906
+      "confidence": 0.907
     },
     {
       "id": 3,
@@ -79,14 +79,14 @@
         {
           "word": "you",
           "start": 12.24,
-          "end": 12.4,
+          "end": 12.48,
           "confidence": 0.999
         },
         {
           "word": "like",
-          "start": 12.4,
+          "start": 12.48,
           "end": 12.8,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "doing",
@@ -99,16 +99,16 @@
     },
     {
       "id": 4,
-      "text": "Playing the guitar",
+      "text": "Playing the guitar I like playing the guitar in music class.",
       "speaker": "Speaker0",
       "start": 17.55,
-      "duration": 1.06,
+      "duration": 8.02,
       "words": [
         {
           "word": "playing",
           "start": 17.55,
           "end": 17.88,
-          "confidence": 0.743
+          "confidence": 0.742
         },
         {
           "word": "the",
@@ -121,17 +121,7 @@
           "start": 18.11,
           "end": 18.61,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.911
-    },
-    {
-      "id": 5,
-      "text": "I like playing the guitar in music class.",
-      "speaker": "Speaker0",
-      "start": 22.52,
-      "duration": 3.05,
-      "words": [
+        },
         {
           "word": "i",
           "start": 22.52,
@@ -142,19 +132,19 @@
           "word": "like",
           "start": 22.6,
           "end": 22.99,
-          "confidence": 0.997
+          "confidence": 0.996
         },
         {
           "word": "playing",
           "start": 22.99,
           "end": 23.39,
-          "confidence": 0.995
+          "confidence": 0.994
         },
         {
           "word": "the",
           "start": 23.39,
           "end": 23.64,
-          "confidence": 0.994
+          "confidence": 0.993
         },
         {
           "word": "guitar",
@@ -166,29 +156,29 @@
           "word": "in",
           "start": 24.27,
           "end": 24.59,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "music",
           "start": 24.59,
           "end": 25.07,
-          "confidence": 0.992
+          "confidence": 0.991
         },
         {
           "word": "class",
           "start": 25.07,
           "end": 25.57,
-          "confidence": 0.989
+          "confidence": 0.988
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.943
     },
     {
-      "id": 6,
-      "text": "Playing the guitar reading books",
+      "id": 5,
+      "text": "Playing the guitar reading books I like reading books in the library.",
       "speaker": "Speaker0",
       "start": 27.32,
-      "duration": 5.14,
+      "duration": 11.22,
       "words": [
         {
           "word": "playing",
@@ -200,7 +190,7 @@
           "word": "the",
           "start": 27.8,
           "end": 27.96,
-          "confidence": 0.996
+          "confidence": 0.997
         },
         {
           "word": "guitar",
@@ -212,24 +202,14 @@
           "word": "reading",
           "start": 31.48,
           "end": 31.96,
-          "confidence": 0.763
+          "confidence": 0.764
         },
         {
           "word": "books",
           "start": 31.96,
           "end": 32.46,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.929
-    },
-    {
-      "id": 7,
-      "text": "I like reading books in the library.",
-      "speaker": "Speaker0",
-      "start": 35.8,
-      "duration": 2.74,
-      "words": [
+        },
         {
           "word": "i",
           "start": 35.8,
@@ -246,7 +226,7 @@
           "word": "reading",
           "start": 36.28,
           "end": 36.78,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "books",
@@ -264,19 +244,19 @@
           "word": "the",
           "start": 37.72,
           "end": 38.04,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "library",
           "start": 38.04,
           "end": 38.54,
-          "confidence": 0.916
+          "confidence": 0.915
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.948
     },
     {
-      "id": 8,
+      "id": 6,
       "text": "Reading books sh drawing.",
       "speaker": "Speaker0",
       "start": 40.2,
@@ -286,31 +266,31 @@
           "word": "reading",
           "start": 40.2,
           "end": 40.52,
-          "confidence": 0.986
+          "confidence": 0.987
         },
         {
           "word": "books",
           "start": 40.52,
           "end": 41.02,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "sh",
           "start": 41.45,
           "end": 41.95,
-          "confidence": 0.757
+          "confidence": 0.753
         },
         {
           "word": "drawing",
           "start": 46.16,
           "end": 46.66,
-          "confidence": 0.576
+          "confidence": 0.575
         }
       ],
-      "confidence": 0.775
+      "confidence": 0.774
     },
     {
-      "id": 9,
+      "id": 7,
       "text": "I love drawing with crayons.",
       "speaker": "Speaker0",
       "start": 48.73,
@@ -320,7 +300,7 @@
           "word": "i",
           "start": 48.73,
           "end": 49.2,
-          "confidence": 0.994
+          "confidence": 0.995
         },
         {
           "word": "love",
@@ -332,13 +312,13 @@
           "word": "drawing",
           "start": 49.77,
           "end": 50.24,
-          "confidence": 0.993
+          "confidence": 0.992
         },
         {
           "word": "with",
           "start": 50.24,
           "end": 50.65,
-          "confidence": 0.998
+          "confidence": 0.996
         },
         {
           "word": "crayons",
@@ -350,7 +330,7 @@
       "confidence": 0.995
     },
     {
-      "id": 10,
+      "id": 8,
       "text": "Drawing, watching TV.",
       "speaker": "Speaker0",
       "start": 52.97,
@@ -366,19 +346,19 @@
           "word": "watching",
           "start": 57.5,
           "end": 57.98,
-          "confidence": 0.992
+          "confidence": 0.991
         },
         {
           "word": "tv",
           "start": 57.98,
           "end": 58.48,
-          "confidence": 0.941
+          "confidence": 0.94
         }
       ],
-      "confidence": 0.924
+      "confidence": 0.923
     },
     {
-      "id": 11,
+      "id": 9,
       "text": "I like watching TV on the weekend.",
       "speaker": "Speaker0",
       "start": 61.1,
@@ -400,7 +380,7 @@
           "word": "watching",
           "start": 61.82,
           "end": 62.3,
-          "confidence": 0.996
+          "confidence": 0.995
         },
         {
           "word": "tv",
@@ -418,7 +398,7 @@
           "word": "the",
           "start": 63.34,
           "end": 63.5,
-          "confidence": 0.991
+          "confidence": 0.992
         },
         {
           "word": "weekend",
@@ -430,45 +410,55 @@
       "confidence": 0.994
     },
     {
-      "id": 12,
-      "text": "Watching TV. Cooking.",
+      "id": 10,
+      "text": "Watching TV.",
       "speaker": "Speaker0",
       "start": 65.74,
-      "duration": 3.22,
+      "duration": 0.98,
       "words": [
         {
           "word": "watching",
           "start": 65.74,
           "end": 66.22,
-          "confidence": 0.997
+          "confidence": 0.996
         },
         {
           "word": "tv",
           "start": 66.22,
           "end": 66.72,
-          "confidence": 0.752
-        },
+          "confidence": 0.754
+        }
+      ],
+      "confidence": 0.875
+    },
+    {
+      "id": 11,
+      "text": "Cooking.",
+      "speaker": "Speaker0",
+      "start": 68.46,
+      "duration": 0.5,
+      "words": [
         {
           "word": "cooking",
           "start": 68.46,
           "end": 68.96,
-          "confidence": 0.957
+          "confidence": 0.956
         }
       ],
-      "confidence": 0.915
+      "confidence": 0.956
     },
     {
-      "id": 13,
-      "text": "I love cooking for my parents. Cooking singing",
+      "id": 12,
+      "text": "I love cooking for my parents.",
       "speaker": "Speaker0",
       "start": 70.83,
-      "duration": 11.54,
+      "duration": 1.76,
       "words": [
         {
           "word": "i",
           "start": 70.83,
           "end": 71.06,
-          "confidence": 0.99
+          "confidence": 0.991
         },
         {
           "word": "love",
@@ -480,26 +470,36 @@
           "word": "cooking",
           "start": 71.47,
           "end": 71.97,
-          "confidence": 0.998
+          "confidence": 0.996
         },
         {
           "word": "for",
           "start": 72.03,
           "end": 72.18,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "my",
           "start": 72.18,
           "end": 72.34,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "parents",
           "start": 72.34,
           "end": 72.59,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 13,
+      "text": "Cooking singing I love singing in front of people.",
+      "speaker": "Speaker0",
+      "start": 72.59,
+      "duration": 14.2,
+      "words": [
         {
           "word": "cooking",
           "start": 72.59,
@@ -510,18 +510,8 @@
           "word": "singing",
           "start": 81.87,
           "end": 82.37,
-          "confidence": 0.983
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 14,
-      "text": "I love singing in front of people.",
-      "speaker": "Speaker0",
-      "start": 84.21,
-      "duration": 2.58,
-      "words": [
+          "confidence": 0.984
+        },
         {
           "word": "i",
           "start": 84.21,
@@ -532,19 +522,19 @@
           "word": "love",
           "start": 84.53,
           "end": 84.93,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "singing",
           "start": 84.93,
           "end": 85.43,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "in",
           "start": 85.49,
           "end": 85.73,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "front",
@@ -562,13 +552,13 @@
           "word": "people",
           "start": 86.29,
           "end": 86.79,
-          "confidence": 0.998
+          "confidence": 0.997
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.993
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "Singing dancing I love dancing to hip hop music.",
       "speaker": "Speaker0",
       "start": 89.25,
@@ -578,19 +568,19 @@
           "word": "singing",
           "start": 89.25,
           "end": 89.41,
-          "confidence": 0.984
+          "confidence": 0.983
         },
         {
           "word": "dancing",
           "start": 89.41,
           "end": 89.91,
-          "confidence": 0.997
+          "confidence": 0.996
         },
         {
           "word": "i",
           "start": 96.17,
           "end": 96.42,
-          "confidence": 0.983
+          "confidence": 0.981
         },
         {
           "word": "love",
@@ -620,29 +610,29 @@
           "word": "hop",
           "start": 97.94,
           "end": 98.25,
-          "confidence": 0.981
+          "confidence": 0.98
         },
         {
           "word": "music",
           "start": 98.25,
           "end": 98.75,
-          "confidence": 0.999
+          "confidence": 0.998
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.991
     },
     {
-      "id": 16,
-      "text": "Dancing listening to music",
+      "id": 15,
+      "text": "Dancing listening to music I love listening to music before I go to sleep.",
       "speaker": "Speaker0",
       "start": 100.66,
-      "duration": 6.9,
+      "duration": 14.18,
       "words": [
         {
           "word": "dancing",
           "start": 100.66,
           "end": 101.16,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "listening",
@@ -661,22 +651,12 @@
           "start": 107.06,
           "end": 107.56,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 17,
-      "text": "I love listening to music",
-      "speaker": "Speaker0",
-      "start": 111.06,
-      "duration": 1.86,
-      "words": [
+        },
         {
           "word": "i",
           "start": 111.06,
           "end": 111.22,
-          "confidence": 0.984
+          "confidence": 0.978
         },
         {
           "word": "love",
@@ -688,47 +668,37 @@
           "word": "listening",
           "start": 111.62,
           "end": 112.1,
-          "confidence": 0.99
+          "confidence": 0.989
         },
         {
           "word": "to",
           "start": 112.1,
           "end": 112.42,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "music",
           "start": 112.42,
           "end": 112.92,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 18,
-      "text": "before I go to sleep.",
-      "speaker": "Speaker0",
-      "start": 113.3,
-      "duration": 1.54,
-      "words": [
+        },
         {
           "word": "before",
           "start": 113.3,
           "end": 113.8,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "i",
           "start": 113.86,
           "end": 114.02,
-          "confidence": 0.994
+          "confidence": 0.993
         },
         {
           "word": "go",
           "start": 114.02,
           "end": 114.18,
-          "confidence": 0.995
+          "confidence": 0.994
         },
         {
           "word": "to",
@@ -743,10 +713,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.994
     },
     {
-      "id": 19,
+      "id": 16,
       "text": "Listening to music.",
       "speaker": "Speaker0",
       "start": 116.58,
@@ -756,7 +726,7 @@
           "word": "listening",
           "start": 116.58,
           "end": 117.08,
-          "confidence": 0.995
+          "confidence": 0.994
         },
         {
           "word": "to",
@@ -771,10 +741,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.995
     },
     {
-      "id": 20,
+      "id": 17,
       "text": "Playing games I love playing games with my brother.",
       "speaker": "Speaker0",
       "start": 122.02,
@@ -784,7 +754,7 @@
           "word": "playing",
           "start": 122.02,
           "end": 122.5,
-          "confidence": 0.981
+          "confidence": 0.984
         },
         {
           "word": "games",
@@ -796,7 +766,7 @@
           "word": "i",
           "start": 124.58,
           "end": 124.89,
-          "confidence": 0.986
+          "confidence": 0.988
         },
         {
           "word": "love",
@@ -808,19 +778,19 @@
           "word": "playing",
           "start": 125.38,
           "end": 125.85,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "games",
           "start": 125.85,
           "end": 126.25,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "with",
           "start": 126.25,
           "end": 126.58,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "my",
@@ -838,17 +808,17 @@
       "confidence": 0.994
     },
     {
-      "id": 21,
-      "text": "Playing games swimming",
+      "id": 18,
+      "text": "Playing games swimming I enjoy swimming in the ocean.",
       "speaker": "Speaker0",
       "start": 128.97,
-      "duration": 5.38,
+      "duration": 10.19,
       "words": [
         {
           "word": "playing",
           "start": 128.97,
           "end": 129.46,
-          "confidence": 0.966
+          "confidence": 0.964
         },
         {
           "word": "games",
@@ -861,17 +831,7 @@
           "start": 133.85,
           "end": 134.35,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.988
-    },
-    {
-      "id": 22,
-      "text": "I enjoy swimming in the ocean.",
-      "speaker": "Speaker0",
-      "start": 136.74,
-      "duration": 2.42,
-      "words": [
+        },
         {
           "word": "i",
           "start": 136.74,
@@ -882,7 +842,7 @@
           "word": "enjoy",
           "start": 136.97,
           "end": 137.47,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "swimming",
@@ -894,7 +854,7 @@
           "word": "in",
           "start": 138.18,
           "end": 138.41,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "the",
@@ -909,10 +869,10 @@
           "confidence": 0.928
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.987
     },
     {
-      "id": 23,
+      "id": 19,
       "text": "Swimming hiking I like going hiking in the mountains.",
       "speaker": "Speaker0",
       "start": 141.19,
@@ -928,13 +888,13 @@
           "word": "hiking",
           "start": 146.15,
           "end": 146.65,
-          "confidence": 0.767
+          "confidence": 0.768
         },
         {
           "word": "i",
           "start": 148.31,
           "end": 148.71,
-          "confidence": 0.875
+          "confidence": 0.874
         },
         {
           "word": "like",
@@ -976,40 +936,30 @@
       "confidence": 0.867
     },
     {
-      "id": 24,
-      "text": "Hiking taking photographs",
+      "id": 20,
+      "text": "Hiking taking photographs I love taking photos of my pet.",
       "speaker": "Speaker0",
       "start": 152.88,
-      "duration": 7.15,
+      "duration": 13.11,
       "words": [
         {
           "word": "hiking",
           "start": 152.88,
           "end": 153.38,
-          "confidence": 0.599
+          "confidence": 0.598
         },
         {
           "word": "taking",
           "start": 158.97,
           "end": 159.47,
-          "confidence": 0.651
+          "confidence": 0.654
         },
         {
           "word": "photographs",
           "start": 159.53,
           "end": 160.03,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.71
-    },
-    {
-      "id": 25,
-      "text": "I love taking photos of my pet.",
-      "speaker": "Speaker0",
-      "start": 163.21,
-      "duration": 2.78,
-      "words": [
+        },
         {
           "word": "i",
           "start": 163.21,
@@ -1026,13 +976,13 @@
           "word": "taking",
           "start": 164.0,
           "end": 164.49,
-          "confidence": 0.997
+          "confidence": 0.996
         },
         {
           "word": "photos",
           "start": 164.49,
           "end": 164.99,
-          "confidence": 0.993
+          "confidence": 0.994
         },
         {
           "word": "of",
@@ -1050,17 +1000,17 @@
           "word": "pet",
           "start": 165.53,
           "end": 165.99,
-          "confidence": 0.979
+          "confidence": 0.98
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.797
     },
     {
-      "id": 26,
-      "text": "Taking photographs. Playing basketball.",
+      "id": 21,
+      "text": "Taking photographs.",
       "speaker": "Speaker0",
       "start": 167.83,
-      "duration": 7.38,
+      "duration": 1.14,
       "words": [
         {
           "word": "taking",
@@ -1072,25 +1022,35 @@
           "word": "photographs",
           "start": 168.47,
           "end": 168.97,
-          "confidence": 0.704
-        },
+          "confidence": 0.703
+        }
+      ],
+      "confidence": 0.774
+    },
+    {
+      "id": 22,
+      "text": "Playing basketball.",
+      "speaker": "Speaker0",
+      "start": 174.15,
+      "duration": 1.06,
+      "words": [
         {
           "word": "playing",
           "start": 174.15,
           "end": 174.65,
-          "confidence": 0.914
+          "confidence": 0.912
         },
         {
           "word": "basketball",
           "start": 174.71,
           "end": 175.21,
-          "confidence": 0.791
+          "confidence": 0.789
         }
       ],
-      "confidence": 0.813
+      "confidence": 0.851
     },
     {
-      "id": 27,
+      "id": 23,
       "text": "I love playing basketball after school.",
       "speaker": "Speaker0",
       "start": 177.51,
@@ -1124,29 +1084,29 @@
           "word": "after",
           "start": 179.59,
           "end": 180.07,
-          "confidence": 0.995
+          "confidence": 0.994
         },
         {
           "word": "school",
           "start": 180.07,
           "end": 180.57,
-          "confidence": 0.997
+          "confidence": 0.996
         }
       ],
       "confidence": 0.994
     },
     {
-      "id": 28,
-      "text": "Playing basketball riding a bicycle",
+      "id": 24,
+      "text": "Playing basketball riding a bicycle I enjoy riding a bicycle at the park.",
       "speaker": "Speaker0",
       "start": 182.83,
-      "duration": 8.11,
+      "duration": 14.21,
       "words": [
         {
           "word": "playing",
           "start": 182.83,
           "end": 183.31,
-          "confidence": 0.829
+          "confidence": 0.826
         },
         {
           "word": "basketball",
@@ -1158,7 +1118,7 @@
           "word": "riding",
           "start": 189.79,
           "end": 190.28,
-          "confidence": 0.596
+          "confidence": 0.592
         },
         {
           "word": "a",
@@ -1171,34 +1131,24 @@
           "start": 190.44,
           "end": 190.94,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.885
-    },
-    {
-      "id": 29,
-      "text": "I enjoy riding a bicycle",
-      "speaker": "Speaker0",
-      "start": 193.82,
-      "duration": 2.02,
-      "words": [
+        },
         {
           "word": "i",
           "start": 193.82,
           "end": 194.14,
-          "confidence": 0.959
+          "confidence": 0.961
         },
         {
           "word": "enjoy",
           "start": 194.14,
           "end": 194.64,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "riding",
           "start": 194.7,
           "end": 195.18,
-          "confidence": 0.998
+          "confidence": 0.997
         },
         {
           "word": "a",
@@ -1210,23 +1160,13 @@
           "word": "bicycle",
           "start": 195.34,
           "end": 195.84,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 30,
-      "text": "at the park.",
-      "speaker": "Speaker0",
-      "start": 196.14,
-      "duration": 0.9,
-      "words": [
+          "confidence": 0.999
+        },
         {
           "word": "at",
           "start": 196.14,
           "end": 196.38,
-          "confidence": 1.0
+          "confidence": 0.999
         },
         {
           "word": "the",
@@ -1241,10 +1181,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.939
     },
     {
-      "id": 31,
+      "id": 25,
       "text": "Riding a bicycle.",
       "speaker": "Speaker0",
       "start": 198.86,
@@ -1254,42 +1194,62 @@
           "word": "riding",
           "start": 198.86,
           "end": 199.36,
-          "confidence": 0.521
+          "confidence": 0.539
         },
         {
           "word": "a",
           "start": 199.42,
           "end": 199.58,
-          "confidence": 0.997
+          "confidence": 0.996
         },
         {
           "word": "bicycle",
           "start": 199.58,
           "end": 200.08,
-          "confidence": 0.99
+          "confidence": 0.991
         }
       ],
-      "confidence": 0.836
+      "confidence": 0.842
     },
     {
-      "id": 32,
-      "text": "Review. Cooking. Dancing drawing hiking",
+      "id": 26,
+      "text": "Review.",
       "speaker": "Speaker0",
       "start": 202.38,
-      "duration": 15.58,
+      "duration": 0.5,
       "words": [
         {
           "word": "review",
           "start": 202.38,
           "end": 202.88,
-          "confidence": 0.758
-        },
+          "confidence": 0.771
+        }
+      ],
+      "confidence": 0.771
+    },
+    {
+      "id": 27,
+      "text": "Cooking.",
+      "speaker": "Speaker0",
+      "start": 205.58,
+      "duration": 0.5,
+      "words": [
         {
           "word": "cooking",
           "start": 205.58,
           "end": 206.08,
-          "confidence": 0.574
-        },
+          "confidence": 0.612
+        }
+      ],
+      "confidence": 0.612
+    },
+    {
+      "id": 28,
+      "text": "Dancing drawing hiking listening to music playing basketball playing games playing the guitar reading books riding a bicycle singing swimming",
+      "speaker": "Speaker0",
+      "start": 208.25,
+      "duration": 42.5,
+      "words": [
         {
           "word": "dancing",
           "start": 208.25,
@@ -1300,35 +1260,25 @@
           "word": "drawing",
           "start": 213.46,
           "end": 213.96,
-          "confidence": 0.985
+          "confidence": 0.986
         },
         {
           "word": "hiking",
           "start": 217.46,
           "end": 217.96,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.862
-    },
-    {
-      "id": 33,
-      "text": "listening to music playing basketball playing games",
-      "speaker": "Speaker0",
-      "start": 221.64,
-      "duration": 9.22,
-      "words": [
+        },
         {
           "word": "listening",
           "start": 221.64,
-          "end": 222.12,
-          "confidence": 1.0
+          "end": 222.14,
+          "confidence": 0.999
         },
         {
           "word": "to",
-          "start": 222.12,
+          "start": 222.2,
           "end": 222.52,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "music",
@@ -1340,7 +1290,7 @@
           "word": "playing",
           "start": 225.48,
           "end": 225.96,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "basketball",
@@ -1359,28 +1309,18 @@
           "start": 230.36,
           "end": 230.86,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 34,
-      "text": "playing the guitar reading books",
-      "speaker": "Speaker0",
-      "start": 233.64,
-      "duration": 4.95,
-      "words": [
+        },
         {
           "word": "playing",
-          "start": 233.64,
+          "start": 233.72,
           "end": 234.12,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "the",
           "start": 234.12,
           "end": 234.36,
-          "confidence": 0.969
+          "confidence": 0.968
         },
         {
           "word": "guitar",
@@ -1392,24 +1332,14 @@
           "word": "reading",
           "start": 237.69,
           "end": 238.09,
-          "confidence": 0.997
+          "confidence": 0.996
         },
         {
           "word": "books",
           "start": 238.09,
           "end": 238.59,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 35,
-      "text": "riding a bicycle singing swimming taking photographs watching TV",
-      "speaker": "Speaker0",
-      "start": 241.78,
-      "duration": 17.62,
-      "words": [
+        },
         {
           "word": "riding",
           "start": 241.78,
@@ -1420,7 +1350,7 @@
           "word": "a",
           "start": 242.25,
           "end": 242.41,
-          "confidence": 0.996
+          "confidence": 0.997
         },
         {
           "word": "bicycle",
@@ -1432,25 +1362,35 @@
           "word": "singing",
           "start": 245.78,
           "end": 246.28,
-          "confidence": 0.997
+          "confidence": 0.998
         },
         {
           "word": "swimming",
           "start": 250.25,
           "end": 250.75,
-          "confidence": 1.0
-        },
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 29,
+      "text": "taking photographs watching TV",
+      "speaker": "Speaker0",
+      "start": 254.1,
+      "duration": 5.3,
+      "words": [
         {
           "word": "taking",
           "start": 254.1,
           "end": 254.6,
-          "confidence": 0.994
+          "confidence": 0.993
         },
         {
           "word": "photographs",
           "start": 254.74,
           "end": 255.24,
-          "confidence": 0.999
+          "confidence": 0.998
         },
         {
           "word": "watching",
@@ -1465,28 +1405,30 @@
           "confidence": 0.938
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.982
     }
   ],
-  "fetchedAt": "2026-07-23T04:02:44.703292+00:00",
+  "fetchedAt": "2026-07-23T06:25:47.590888+00:00",
   "videoId": "N1o4oOXLOZc",
   "speakerMap": {
     "0": "Speaker0"
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T04:02:44.703317+00:00",
+    "alignedAt": "2026-07-23T06:25:47.590926+00:00",
     "dgWordCount": 186,
     "dgUtteranceCount": 62,
     "matchedSegments": 62,
     "totalDuration": 259.4
   },
-  "repairedAt": "2026-07-23T04:33:44.482262Z",
+  "repairedAt": "2026-07-23T06:33:07.735909Z",
   "repairInfo": {
+    "version": 3,
     "beforeSegments": 62,
-    "afterSegments": 35,
+    "afterSegments": 29,
     "beforeAvgWords": 3.0,
-    "afterAvgWords": 5.3,
-    "merged": 27
+    "afterAvgWords": 6.4,
+    "merged": 33,
+    "danglingFragments": 0
   }
 }
