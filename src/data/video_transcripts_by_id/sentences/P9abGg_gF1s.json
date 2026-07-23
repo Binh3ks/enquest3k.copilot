@@ -1393,10 +1393,10 @@
     },
     {
       "id": 53,
-      "text": "Raining, raining, it's raining. How's the weather?",
+      "text": "Raining, raining, it's raining.",
       "speaker": "Speaker0",
       "start": 194.86,
-      "duration": 5.52,
+      "duration": 4.4,
       "words": [
         {
           "word": "raining",
@@ -1421,7 +1421,17 @@
           "start": 198.76,
           "end": 199.26,
           "confidence": 0.995
-        },
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 54,
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 199.48,
+      "duration": 0.9,
+      "words": [
         {
           "word": "how's",
           "start": 199.48,
@@ -1444,7 +1454,7 @@
       "confidence": 0.991
     },
     {
-      "id": 54,
+      "id": 55,
       "text": "Snowing, snowing, it's snowing.",
       "speaker": "Speaker0",
       "start": 201.56,
@@ -1478,7 +1488,7 @@
       "confidence": 0.987
     },
     {
-      "id": 55,
+      "id": 56,
       "text": "How's the weather?",
       "speaker": "Speaker0",
       "start": 205.96,
@@ -1506,7 +1516,7 @@
       "confidence": 0.987
     },
     {
-      "id": 56,
+      "id": 57,
       "text": "Sunny, it's sunny.",
       "speaker": "Speaker0",
       "start": 208.36,
@@ -1534,7 +1544,7 @@
       "confidence": 0.845
     },
     {
-      "id": 57,
+      "id": 58,
       "text": "How's the weather here?",
       "speaker": "Speaker1",
       "start": 226.73,
@@ -1568,7 +1578,7 @@
       "confidence": 0.951
     },
     {
-      "id": 58,
+      "id": 59,
       "text": "How's the weather here?",
       "speaker": "Speaker1",
       "start": 228.57,
@@ -1602,7 +1612,7 @@
       "confidence": 0.994
     },
     {
-      "id": 59,
+      "id": 60,
       "text": "It's windy and snowy.",
       "speaker": "Speaker1",
       "start": 230.41,
@@ -1636,7 +1646,7 @@
       "confidence": 0.994
     },
     {
-      "id": 60,
+      "id": 61,
       "text": "It's windy and snowy.",
       "speaker": "Speaker1",
       "start": 232.25,
@@ -1670,7 +1680,7 @@
       "confidence": 0.994
     },
     {
-      "id": 61,
+      "id": 62,
       "text": "Put on this hat.",
       "speaker": "Speaker1",
       "start": 234.25,
@@ -1704,7 +1714,7 @@
       "confidence": 0.974
     },
     {
-      "id": 62,
+      "id": 63,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 235.93,
@@ -1720,7 +1730,7 @@
       "confidence": 0.944
     },
     {
-      "id": 63,
+      "id": 64,
       "text": "Put on these gloves.",
       "speaker": "Speaker1",
       "start": 237.93,
@@ -1754,7 +1764,7 @@
       "confidence": 0.945
     },
     {
-      "id": 64,
+      "id": 65,
       "text": "Gloves.",
       "speaker": "Speaker1",
       "start": 238.94,
@@ -1770,7 +1780,7 @@
       "confidence": 0.945
     },
     {
-      "id": 65,
+      "id": 66,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 239.57,
@@ -1786,7 +1796,7 @@
       "confidence": 0.945
     },
     {
-      "id": 66,
+      "id": 67,
       "text": "How's the weather outside?",
       "speaker": "Speaker1",
       "start": 248.78,
@@ -1820,7 +1830,7 @@
       "confidence": 0.942
     },
     {
-      "id": 67,
+      "id": 68,
       "text": "How's the weather outside?",
       "speaker": "Speaker1",
       "start": 250.61,
@@ -1854,7 +1864,7 @@
       "confidence": 0.989
     },
     {
-      "id": 68,
+      "id": 69,
       "text": "It's rainy and cold.",
       "speaker": "Speaker1",
       "start": 252.61,
@@ -1888,7 +1898,7 @@
       "confidence": 0.979
     },
     {
-      "id": 69,
+      "id": 70,
       "text": "It's rainy and cold.",
       "speaker": "Speaker1",
       "start": 256.3,
@@ -1922,7 +1932,7 @@
       "confidence": 0.98
     },
     {
-      "id": 70,
+      "id": 71,
       "text": "Bring this umbrella.",
       "speaker": "Speaker1",
       "start": 259.9,
@@ -1950,7 +1960,7 @@
       "confidence": 0.916
     },
     {
-      "id": 71,
+      "id": 72,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 261.74,
@@ -1966,7 +1976,7 @@
       "confidence": 0.97
     },
     {
-      "id": 72,
+      "id": 73,
       "text": "Bring this umbrella.",
       "speaker": "Speaker1",
       "start": 263.66,
@@ -1994,7 +2004,7 @@
       "confidence": 0.997
     },
     {
-      "id": 73,
+      "id": 74,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 265.66,
@@ -2010,7 +2020,7 @@
       "confidence": 0.995
     },
     {
-      "id": 74,
+      "id": 75,
       "text": "Story.",
       "speaker": "Speaker0",
       "start": 277.11,
@@ -2026,7 +2036,7 @@
       "confidence": 0.897
     },
     {
-      "id": 75,
+      "id": 76,
       "text": "How's the weather?",
       "speaker": "Speaker1",
       "start": 285.68,
@@ -2054,7 +2064,7 @@
       "confidence": 0.967
     },
     {
-      "id": 76,
+      "id": 77,
       "text": "It's raining.",
       "speaker": "Speaker1",
       "start": 291.12,
@@ -2076,7 +2086,7 @@
       "confidence": 0.936
     },
     {
-      "id": 77,
+      "id": 78,
       "text": "Oh, no.",
       "speaker": "Speaker0",
       "start": 293.89,
@@ -2098,7 +2108,7 @@
       "confidence": 0.991
     },
     {
-      "id": 78,
+      "id": 79,
       "text": "How's the weather?",
       "speaker": "Speaker1",
       "start": 300.94,
@@ -2126,7 +2136,7 @@
       "confidence": 0.996
     },
     {
-      "id": 79,
+      "id": 80,
       "text": "It's sunny.",
       "speaker": "Speaker1",
       "start": 303.57,
@@ -2148,7 +2158,7 @@
       "confidence": 0.999
     },
     {
-      "id": 80,
+      "id": 81,
       "text": "Oh, no.",
       "speaker": "Speaker1",
       "start": 306.39,
@@ -2170,7 +2180,7 @@
       "confidence": 0.991
     },
     {
-      "id": 81,
+      "id": 82,
       "text": "Look. It's raining.",
       "speaker": "Speaker1",
       "start": 313.51,
@@ -2198,7 +2208,7 @@
       "confidence": 0.9
     },
     {
-      "id": 82,
+      "id": 83,
       "text": "Okay.",
       "speaker": "Speaker1",
       "start": 316.79,
@@ -2214,7 +2224,7 @@
       "confidence": 0.999
     },
     {
-      "id": 83,
+      "id": 84,
       "text": "Sounds good.",
       "speaker": "Speaker1",
       "start": 318.07,
@@ -2236,7 +2246,7 @@
       "confidence": 0.999
     },
     {
-      "id": 84,
+      "id": 85,
       "text": "It's sunny now.",
       "speaker": "Speaker0",
       "start": 324.44,
@@ -2264,7 +2274,7 @@
       "confidence": 0.999
     },
     {
-      "id": 85,
+      "id": 86,
       "text": "That's good.",
       "speaker": "Speaker1",
       "start": 328.27,
@@ -2286,7 +2296,7 @@
       "confidence": 1.0
     },
     {
-      "id": 86,
+      "id": 87,
       "text": "Story.",
       "speaker": "Speaker0",
       "start": 334.71,
@@ -2302,7 +2312,7 @@
       "confidence": 0.926
     },
     {
-      "id": 87,
+      "id": 88,
       "text": "Grumpy, happy, dopey.",
       "speaker": "Speaker1",
       "start": 341.91,
@@ -2330,7 +2340,7 @@
       "confidence": 0.937
     },
     {
-      "id": 88,
+      "id": 89,
       "text": "Coming.",
       "speaker": "Speaker1",
       "start": 345.6,
@@ -2346,7 +2356,7 @@
       "confidence": 0.977
     },
     {
-      "id": 89,
+      "id": 90,
       "text": "Let's play outside.",
       "speaker": "Speaker1",
       "start": 347.44,
@@ -2374,7 +2384,7 @@
       "confidence": 0.999
     },
     {
-      "id": 90,
+      "id": 91,
       "text": "Sorry. We can't.",
       "speaker": "Speaker0",
       "start": 350.0,
@@ -2402,7 +2412,7 @@
       "confidence": 0.922
     },
     {
-      "id": 91,
+      "id": 92,
       "text": "It's raining.",
       "speaker": "Speaker1",
       "start": 355.04,
@@ -2424,7 +2434,7 @@
       "confidence": 0.904
     },
     {
-      "id": 92,
+      "id": 93,
       "text": "It's not raining.",
       "speaker": "Speaker1",
       "start": 357.33,
@@ -2452,7 +2462,7 @@
       "confidence": 0.967
     },
     {
-      "id": 93,
+      "id": 94,
       "text": "It's snowing.",
       "speaker": "Speaker1",
       "start": 358.85,
@@ -2474,7 +2484,7 @@
       "confidence": 0.997
     },
     {
-      "id": 94,
+      "id": 95,
       "text": "Snow?",
       "speaker": "Speaker0",
       "start": 361.09,
@@ -2490,7 +2500,7 @@
       "confidence": 0.992
     },
     {
-      "id": 95,
+      "id": 96,
       "text": "Look. It's snowing.",
       "speaker": "Speaker0",
       "start": 363.25,
@@ -2518,7 +2528,7 @@
       "confidence": 0.912
     },
     {
-      "id": 96,
+      "id": 97,
       "text": "It's all white.",
       "speaker": "Speaker0",
       "start": 365.41,
@@ -2546,7 +2556,7 @@
       "confidence": 0.966
     },
     {
-      "id": 97,
+      "id": 98,
       "text": "A nice hat.",
       "speaker": "Speaker1",
       "start": 372.14,
@@ -2574,7 +2584,7 @@
       "confidence": 0.928
     },
     {
-      "id": 98,
+      "id": 99,
       "text": "What's that?",
       "speaker": "Speaker0",
       "start": 376.78,
@@ -2596,7 +2606,7 @@
       "confidence": 0.989
     },
     {
-      "id": 99,
+      "id": 100,
       "text": "It's an apple.",
       "speaker": "Speaker1",
       "start": 378.14,
@@ -2624,7 +2634,7 @@
       "confidence": 0.999
     },
     {
-      "id": 100,
+      "id": 101,
       "text": "Oh, no.",
       "speaker": "Speaker1",
       "start": 379.75,
@@ -2646,7 +2656,7 @@
       "confidence": 0.98
     },
     {
-      "id": 101,
+      "id": 102,
       "text": "No apples.",
       "speaker": "Speaker1",
       "start": 381.1,
@@ -2668,7 +2678,7 @@
       "confidence": 0.775
     },
     {
-      "id": 102,
+      "id": 103,
       "text": "Can you help me?",
       "speaker": "Speaker1",
       "start": 385.75,
@@ -2702,7 +2712,7 @@
       "confidence": 0.999
     },
     {
-      "id": 103,
+      "id": 104,
       "text": "Sure.",
       "speaker": "Speaker0",
       "start": 387.56,
@@ -2718,7 +2728,7 @@
       "confidence": 0.775
     },
     {
-      "id": 104,
+      "id": 105,
       "text": "Please.",
       "speaker": "Speaker0",
       "start": 388.44,
@@ -2734,7 +2744,7 @@
       "confidence": 0.981
     },
     {
-      "id": 105,
+      "id": 106,
       "text": "You can eat this apple.",
       "speaker": "Speaker0",
       "start": 390.52,
@@ -2774,7 +2784,7 @@
       "confidence": 0.973
     },
     {
-      "id": 106,
+      "id": 107,
       "text": "Oh.",
       "speaker": "Speaker1",
       "start": 393.8,
@@ -2804,14 +2814,14 @@
     "matchedSegments": 108,
     "totalDuration": 394.3
   },
-  "repairedAt": "2026-07-23T06:33:07.742988Z",
+  "repairedAt": "2026-07-23T07:58:35.796018Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 108,
-    "afterSegments": 106,
+    "beforeSegments": 106,
+    "afterSegments": 107,
     "beforeAvgWords": 2.7,
     "afterAvgWords": 2.7,
-    "merged": 2,
+    "merged": -1,
     "danglingFragments": 0
   }
 }

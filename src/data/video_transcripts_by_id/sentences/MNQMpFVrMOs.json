@@ -3,10 +3,10 @@
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing. Theme 18 doing dialogue.",
+      "text": "English sing sing.",
       "speaker": "Speaker0",
       "start": 1.76,
-      "duration": 5.7,
+      "duration": 1.38,
       "words": [
         {
           "word": "english",
@@ -25,7 +25,17 @@
           "start": 2.64,
           "end": 3.14,
           "confidence": 0.93
-        },
+        }
+      ],
+      "confidence": 0.797
+    },
+    {
+      "id": 2,
+      "text": "Theme 18 doing dialogue.",
+      "speaker": "Speaker0",
+      "start": 3.36,
+      "duration": 4.1,
+      "words": [
         {
           "word": "theme",
           "start": 3.36,
@@ -54,7 +64,7 @@
       "confidence": 0.797
     },
     {
-      "id": 2,
+      "id": 3,
       "text": "It's a beautiful park.",
       "speaker": "Speaker0",
       "start": 16.21,
@@ -88,7 +98,7 @@
       "confidence": 0.985
     },
     {
-      "id": 3,
+      "id": 4,
       "text": "Look at the sky and trees.",
       "speaker": "Speaker1",
       "start": 20.7,
@@ -134,7 +144,7 @@
       "confidence": 0.984
     },
     {
-      "id": 4,
+      "id": 5,
       "text": "What are you doing, Jinzu?",
       "speaker": "Speaker0",
       "start": 31.03,
@@ -174,7 +184,7 @@
       "confidence": 0.987
     },
     {
-      "id": 5,
+      "id": 6,
       "text": "I'm drawing trees.",
       "speaker": "Speaker1",
       "start": 33.75,
@@ -202,7 +212,7 @@
       "confidence": 0.998
     },
     {
-      "id": 6,
+      "id": 7,
       "text": "Trees are good.",
       "speaker": "Speaker1",
       "start": 37.03,
@@ -230,7 +240,7 @@
       "confidence": 0.997
     },
     {
-      "id": 7,
+      "id": 8,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 39.48,
@@ -246,7 +256,7 @@
       "confidence": 0.999
     },
     {
-      "id": 8,
+      "id": 9,
       "text": "I like trees.",
       "speaker": "Speaker1",
       "start": 40.45,
@@ -274,7 +284,7 @@
       "confidence": 1.0
     },
     {
-      "id": 9,
+      "id": 10,
       "text": "What are you doing, Sally?",
       "speaker": "Speaker0",
       "start": 47.41,
@@ -314,7 +324,7 @@
       "confidence": 0.99
     },
     {
-      "id": 10,
+      "id": 11,
       "text": "I'm jumping.",
       "speaker": "Speaker0",
       "start": 50.05,
@@ -336,7 +346,7 @@
       "confidence": 1.0
     },
     {
-      "id": 11,
+      "id": 12,
       "text": "Wow.",
       "speaker": "Speaker0",
       "start": 53.52,
@@ -352,7 +362,7 @@
       "confidence": 0.957
     },
     {
-      "id": 12,
+      "id": 13,
       "text": "You're jumping high.",
       "speaker": "Speaker0",
       "start": 54.32,
@@ -380,7 +390,7 @@
       "confidence": 0.999
     },
     {
-      "id": 13,
+      "id": 14,
       "text": "Wow. A big fire.",
       "speaker": "Speaker2",
       "start": 62.32,
@@ -414,7 +424,7 @@
       "confidence": 0.989
     },
     {
-      "id": 14,
+      "id": 15,
       "text": "Now, come to the fire, everyone.",
       "speaker": "Speaker0",
       "start": 64.94,
@@ -460,7 +470,7 @@
       "confidence": 0.884
     },
     {
-      "id": 15,
+      "id": 16,
       "text": "What are they doing?",
       "speaker": "Speaker0",
       "start": 71.67,
@@ -494,7 +504,7 @@
       "confidence": 0.981
     },
     {
-      "id": 16,
+      "id": 17,
       "text": "They are dancing.",
       "speaker": "Speaker1",
       "start": 74.47,
@@ -522,7 +532,7 @@
       "confidence": 0.999
     },
     {
-      "id": 17,
+      "id": 18,
       "text": "They are good dancers.",
       "speaker": "Speaker1",
       "start": 77.36,
@@ -556,7 +566,7 @@
       "confidence": 0.996
     },
     {
-      "id": 18,
+      "id": 19,
       "text": "That's right.",
       "speaker": "Speaker0",
       "start": 80.48,
@@ -578,7 +588,7 @@
       "confidence": 0.996
     },
     {
-      "id": 19,
+      "id": 20,
       "text": "Let's dance together.",
       "speaker": "Speaker0",
       "start": 81.6,
@@ -606,7 +616,7 @@
       "confidence": 0.999
     },
     {
-      "id": 20,
+      "id": 21,
       "text": "What is she doing?",
       "speaker": "Speaker2",
       "start": 93.14,
@@ -640,7 +650,7 @@
       "confidence": 0.932
     },
     {
-      "id": 21,
+      "id": 22,
       "text": "She is sleeping.",
       "speaker": "Speaker1",
       "start": 98.03,
@@ -668,7 +678,7 @@
       "confidence": 0.837
     },
     {
-      "id": 22,
+      "id": 23,
       "text": "Dial.",
       "speaker": "Speaker1",
       "start": 102.27,
@@ -684,7 +694,7 @@
       "confidence": 0.735
     },
     {
-      "id": 23,
+      "id": 24,
       "text": "Where are you going?",
       "speaker": "Speaker3",
       "start": 109.97,
@@ -718,7 +728,7 @@
       "confidence": 0.923
     },
     {
-      "id": 24,
+      "id": 25,
       "text": "I'm going to the library.",
       "speaker": "Speaker1",
       "start": 113.57,
@@ -758,7 +768,7 @@
       "confidence": 0.996
     },
     {
-      "id": 25,
+      "id": 26,
       "text": "I'm bored.",
       "speaker": "Speaker3",
       "start": 116.69,
@@ -780,7 +790,7 @@
       "confidence": 0.992
     },
     {
-      "id": 26,
+      "id": 27,
       "text": "Let's play outside.",
       "speaker": "Speaker3",
       "start": 118.21,
@@ -808,7 +818,7 @@
       "confidence": 0.999
     },
     {
-      "id": 27,
+      "id": 28,
       "text": "Sorry, but I want to read books.",
       "speaker": "Speaker1",
       "start": 121.33,
@@ -860,7 +870,7 @@
       "confidence": 0.979
     },
     {
-      "id": 28,
+      "id": 29,
       "text": "What are you doing, mom?",
       "speaker": "Speaker3",
       "start": 128.69,
@@ -900,7 +910,7 @@
       "confidence": 0.975
     },
     {
-      "id": 29,
+      "id": 30,
       "text": "I'm writing an email.",
       "speaker": "Speaker4",
       "start": 131.56,
@@ -934,7 +944,7 @@
       "confidence": 0.999
     },
     {
-      "id": 30,
+      "id": 31,
       "text": "I'm bored.",
       "speaker": "Speaker3",
       "start": 135.35,
@@ -956,7 +966,7 @@
       "confidence": 0.998
     },
     {
-      "id": 31,
+      "id": 32,
       "text": "Let's play outside.",
       "speaker": "Speaker3",
       "start": 136.95,
@@ -984,7 +994,7 @@
       "confidence": 1.0
     },
     {
-      "id": 32,
+      "id": 33,
       "text": "Sorry, but I'm busy.",
       "speaker": "Speaker4",
       "start": 140.07,
@@ -1018,7 +1028,7 @@
       "confidence": 0.985
     },
     {
-      "id": 33,
+      "id": 34,
       "text": "Let's do it later.",
       "speaker": "Speaker4",
       "start": 142.55,
@@ -1052,7 +1062,7 @@
       "confidence": 1.0
     },
     {
-      "id": 34,
+      "id": 35,
       "text": "What are you doing, dad?",
       "speaker": "Speaker3",
       "start": 149.84,
@@ -1092,7 +1102,7 @@
       "confidence": 0.982
     },
     {
-      "id": 35,
+      "id": 36,
       "text": "I'm making cookies.",
       "speaker": "Speaker4",
       "start": 154.97,
@@ -1120,7 +1130,7 @@
       "confidence": 0.999
     },
     {
-      "id": 36,
+      "id": 37,
       "text": "Wow.",
       "speaker": "Speaker3",
       "start": 158.18,
@@ -1136,7 +1146,7 @@
       "confidence": 0.983
     },
     {
-      "id": 37,
+      "id": 38,
       "text": "I want to make cookies too.",
       "speaker": "Speaker3",
       "start": 158.98,
@@ -1182,7 +1192,7 @@
       "confidence": 0.999
     },
     {
-      "id": 38,
+      "id": 39,
       "text": "Good.",
       "speaker": "Speaker4",
       "start": 162.42,
@@ -1198,7 +1208,7 @@
       "confidence": 1.0
     },
     {
-      "id": 39,
+      "id": 40,
       "text": "Show me how to make these cookies, please.",
       "speaker": "Speaker3",
       "start": 164.18,
@@ -1256,7 +1266,7 @@
       "confidence": 0.996
     },
     {
-      "id": 40,
+      "id": 41,
       "text": "Great idea.",
       "speaker": "Speaker4",
       "start": 167.7,
@@ -1278,7 +1288,7 @@
       "confidence": 1.0
     },
     {
-      "id": 41,
+      "id": 42,
       "text": "Dial.",
       "speaker": "Speaker3",
       "start": 174.59,
@@ -1294,7 +1304,7 @@
       "confidence": 0.734
     },
     {
-      "id": 42,
+      "id": 43,
       "text": "Look over there.",
       "speaker": "Speaker1",
       "start": 184.84,
@@ -1322,7 +1332,7 @@
       "confidence": 0.975
     },
     {
-      "id": 43,
+      "id": 44,
       "text": "What's he doing?",
       "speaker": "Speaker2",
       "start": 191.4,
@@ -1350,7 +1360,7 @@
       "confidence": 0.985
     },
     {
-      "id": 44,
+      "id": 45,
       "text": "He's dancing.",
       "speaker": "Speaker1",
       "start": 194.12,
@@ -1372,7 +1382,7 @@
       "confidence": 0.99
     },
     {
-      "id": 45,
+      "id": 46,
       "text": "Oh, now he's jumping.",
       "speaker": "Speaker0",
       "start": 200.81,
@@ -1406,7 +1416,7 @@
       "confidence": 0.932
     },
     {
-      "id": 46,
+      "id": 47,
       "text": "Wow. Great.",
       "speaker": "Speaker1",
       "start": 204.41,
@@ -1428,7 +1438,7 @@
       "confidence": 0.901
     },
     {
-      "id": 47,
+      "id": 48,
       "text": "What's she doing?",
       "speaker": "Speaker2",
       "start": 214.66,
@@ -1456,7 +1466,7 @@
       "confidence": 0.916
     },
     {
-      "id": 48,
+      "id": 49,
       "text": "She's jogging.",
       "speaker": "Speaker0",
       "start": 217.01,
@@ -1478,7 +1488,7 @@
       "confidence": 0.994
     },
     {
-      "id": 49,
+      "id": 50,
       "text": "Really?",
       "speaker": "Speaker1",
       "start": 219.81,
@@ -1494,7 +1504,7 @@
       "confidence": 0.996
     },
     {
-      "id": 50,
+      "id": 51,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 221.09,
@@ -1510,7 +1520,7 @@
       "confidence": 0.999
     },
     {
-      "id": 51,
+      "id": 52,
       "text": "Song.",
       "speaker": "Speaker2",
       "start": 227.25,
@@ -1526,7 +1536,7 @@
       "confidence": 0.709
     },
     {
-      "id": 52,
+      "id": 53,
       "text": "What are you doing?",
       "speaker": "Speaker0",
       "start": 236.14,
@@ -1560,7 +1570,7 @@
       "confidence": 0.991
     },
     {
-      "id": 53,
+      "id": 54,
       "text": "I'm washing washing.",
       "speaker": "Speaker0",
       "start": 238.29,
@@ -1588,7 +1598,7 @@
       "confidence": 0.938
     },
     {
-      "id": 54,
+      "id": 55,
       "text": "What are you doing?",
       "speaker": "Speaker0",
       "start": 240.29,
@@ -1622,7 +1632,7 @@
       "confidence": 0.999
     },
     {
-      "id": 55,
+      "id": 56,
       "text": "I'm eating eating.",
       "speaker": "Speaker0",
       "start": 242.46,
@@ -1650,7 +1660,7 @@
       "confidence": 0.987
     },
     {
-      "id": 56,
+      "id": 57,
       "text": "What are you doing?",
       "speaker": "Speaker0",
       "start": 244.22,
@@ -1684,7 +1694,7 @@
       "confidence": 0.987
     },
     {
-      "id": 57,
+      "id": 58,
       "text": "I'm dancing dancing.",
       "speaker": "Speaker4",
       "start": 246.46,
@@ -1712,7 +1722,7 @@
       "confidence": 0.887
     },
     {
-      "id": 58,
+      "id": 59,
       "text": "I'm dancing I'm dancing now.",
       "speaker": "Speaker4",
       "start": 249.07,
@@ -1752,7 +1762,7 @@
       "confidence": 0.957
     },
     {
-      "id": 59,
+      "id": 60,
       "text": "What is he doing?",
       "speaker": "Speaker2",
       "start": 254.11,
@@ -1786,7 +1796,7 @@
       "confidence": 0.996
     },
     {
-      "id": 60,
+      "id": 61,
       "text": "He's running running.",
       "speaker": "Speaker2",
       "start": 256.27,
@@ -1814,7 +1824,7 @@
       "confidence": 0.989
     },
     {
-      "id": 61,
+      "id": 62,
       "text": "What is he doing?",
       "speaker": "Speaker2",
       "start": 258.11,
@@ -1848,7 +1858,7 @@
       "confidence": 0.989
     },
     {
-      "id": 62,
+      "id": 63,
       "text": "He's drawing drawing.",
       "speaker": "Speaker0",
       "start": 260.27,
@@ -1876,7 +1886,7 @@
       "confidence": 0.956
     },
     {
-      "id": 63,
+      "id": 64,
       "text": "What is she doing?",
       "speaker": "Speaker4",
       "start": 262.1,
@@ -1910,7 +1920,7 @@
       "confidence": 0.965
     },
     {
-      "id": 64,
+      "id": 65,
       "text": "She's sleeping sleeping She's sleeping She's sleeping now.",
       "speaker": "Speaker4",
       "start": 264.43,
@@ -1968,7 +1978,7 @@
       "confidence": 0.921
     },
     {
-      "id": 65,
+      "id": 66,
       "text": "Song. What are you doing",
       "speaker": "Speaker2",
       "start": 287.38,
@@ -2008,11 +2018,11 @@
       "confidence": 0.881
     },
     {
-      "id": 66,
-      "text": "Sue Ho? I'm cleaning my room.",
+      "id": 67,
+      "text": "Sue Ho?",
       "speaker": "Speaker0",
       "start": 289.63,
-      "duration": 3.38,
+      "duration": 0.75,
       "words": [
         {
           "word": "sue",
@@ -2025,7 +2035,17 @@
           "start": 289.88,
           "end": 290.38,
           "confidence": 0.949
-        },
+        }
+      ],
+      "confidence": 0.949
+    },
+    {
+      "id": 68,
+      "text": "I'm cleaning my room.",
+      "speaker": "Speaker0",
+      "start": 290.6,
+      "duration": 2.41,
+      "words": [
         {
           "word": "i'm",
           "start": 290.6,
@@ -2054,7 +2074,7 @@
       "confidence": 0.949
     },
     {
-      "id": 67,
+      "id": 69,
       "text": "What are you doing, Hannah?",
       "speaker": "Speaker2",
       "start": 293.95,
@@ -2094,7 +2114,7 @@
       "confidence": 0.97
     },
     {
-      "id": 68,
+      "id": 70,
       "text": "I'm playing basketball.",
       "speaker": "Speaker2",
       "start": 296.68,
@@ -2122,7 +2142,7 @@
       "confidence": 0.997
     },
     {
-      "id": 69,
+      "id": 71,
       "text": "What are you doing, Suho?",
       "speaker": "Speaker2",
       "start": 306.14,
@@ -2162,7 +2182,7 @@
       "confidence": 0.899
     },
     {
-      "id": 70,
+      "id": 72,
       "text": "I'm cleaning my room.",
       "speaker": "Speaker0",
       "start": 308.86,
@@ -2196,7 +2216,7 @@
       "confidence": 0.994
     },
     {
-      "id": 71,
+      "id": 73,
       "text": "What are you doing, Hana?",
       "speaker": "Speaker2",
       "start": 312.22,
@@ -2236,7 +2256,7 @@
       "confidence": 0.967
     },
     {
-      "id": 72,
+      "id": 74,
       "text": "I'm playing basketball.",
       "speaker": "Speaker2",
       "start": 314.86,
@@ -2264,7 +2284,7 @@
       "confidence": 0.997
     },
     {
-      "id": 73,
+      "id": 75,
       "text": "What are you doing, Jenny?",
       "speaker": "Speaker2",
       "start": 329.5,
@@ -2304,7 +2324,7 @@
       "confidence": 0.884
     },
     {
-      "id": 74,
+      "id": 76,
       "text": "What are you doing, Jenny?",
       "speaker": "Speaker2",
       "start": 331.66,
@@ -2344,7 +2364,7 @@
       "confidence": 0.897
     },
     {
-      "id": 75,
+      "id": 77,
       "text": "I'm making a round butt.",
       "speaker": "Speaker2",
       "start": 333.42,
@@ -2384,7 +2404,7 @@
       "confidence": 0.897
     },
     {
-      "id": 76,
+      "id": 78,
       "text": "Making a round butt.",
       "speaker": "Speaker2",
       "start": 335.82,
@@ -2418,7 +2438,7 @@
       "confidence": 0.977
     },
     {
-      "id": 77,
+      "id": 79,
       "text": "What are you doing, mom?",
       "speaker": "Speaker2",
       "start": 337.82,
@@ -2458,7 +2478,7 @@
       "confidence": 0.985
     },
     {
-      "id": 78,
+      "id": 80,
       "text": "What are you doing, mom?",
       "speaker": "Speaker2",
       "start": 339.82,
@@ -2498,7 +2518,7 @@
       "confidence": 0.989
     },
     {
-      "id": 79,
+      "id": 81,
       "text": "I'm making salad.",
       "speaker": "Speaker2",
       "start": 341.66,
@@ -2526,7 +2546,7 @@
       "confidence": 0.989
     },
     {
-      "id": 80,
+      "id": 82,
       "text": "Making salad.",
       "speaker": "Speaker2",
       "start": 344.06,
@@ -2548,7 +2568,7 @@
       "confidence": 0.986
     },
     {
-      "id": 81,
+      "id": 83,
       "text": "Hey hey hey hey hey hey hey hey",
       "speaker": "Speaker1",
       "start": 357.75,
@@ -2606,7 +2626,7 @@
       "confidence": 0.766
     },
     {
-      "id": 82,
+      "id": 84,
       "text": "What is he doing?",
       "speaker": "Speaker0",
       "start": 362.32,
@@ -2640,7 +2660,7 @@
       "confidence": 0.905
     },
     {
-      "id": 83,
+      "id": 85,
       "text": "What is he doing?",
       "speaker": "Speaker0",
       "start": 364.16,
@@ -2674,7 +2694,7 @@
       "confidence": 0.978
     },
     {
-      "id": 84,
+      "id": 86,
       "text": "Running running",
       "speaker": "Speaker0",
       "start": 366.32,
@@ -2696,7 +2716,7 @@
       "confidence": 0.895
     },
     {
-      "id": 85,
+      "id": 87,
       "text": "He is running.",
       "speaker": "Speaker1",
       "start": 369.04,
@@ -2724,7 +2744,7 @@
       "confidence": 0.856
     },
     {
-      "id": 86,
+      "id": 88,
       "text": "Wow!",
       "speaker": "Speaker1",
       "start": 370.88,
@@ -2740,7 +2760,7 @@
       "confidence": 0.675
     },
     {
-      "id": 87,
+      "id": 89,
       "text": "He's a great runner.",
       "speaker": "Speaker0",
       "start": 372.96,
@@ -2774,7 +2794,7 @@
       "confidence": 0.969
     },
     {
-      "id": 88,
+      "id": 90,
       "text": "That's right.",
       "speaker": "Speaker0",
       "start": 375.25,
@@ -2796,7 +2816,7 @@
       "confidence": 0.96
     },
     {
-      "id": 89,
+      "id": 91,
       "text": "That's right. Yeah.",
       "speaker": "Speaker0",
       "start": 377.34,
@@ -2824,7 +2844,7 @@
       "confidence": 0.907
     },
     {
-      "id": 90,
+      "id": 92,
       "text": "Hey hey hey",
       "speaker": "Speaker1",
       "start": 383.98,
@@ -2852,7 +2872,7 @@
       "confidence": 0.732
     },
     {
-      "id": 91,
+      "id": 93,
       "text": "hey hey hey hey hey.",
       "speaker": "Speaker0",
       "start": 385.9,
@@ -2892,7 +2912,7 @@
       "confidence": 0.864
     },
     {
-      "id": 92,
+      "id": 94,
       "text": "What are they doing?",
       "speaker": "Speaker0",
       "start": 388.32,
@@ -2926,7 +2946,7 @@
       "confidence": 0.972
     },
     {
-      "id": 93,
+      "id": 95,
       "text": "What are they doing?",
       "speaker": "Speaker0",
       "start": 390.32,
@@ -2960,7 +2980,7 @@
       "confidence": 0.994
     },
     {
-      "id": 94,
+      "id": 96,
       "text": "Dancing dancing they're dancing.",
       "speaker": "Speaker0",
       "start": 392.56,
@@ -2994,7 +3014,7 @@
       "confidence": 0.816
     },
     {
-      "id": 95,
+      "id": 97,
       "text": "Wow.",
       "speaker": "Speaker0",
       "start": 397.04,
@@ -3010,7 +3030,7 @@
       "confidence": 0.791
     },
     {
-      "id": 96,
+      "id": 98,
       "text": "They're wonderful dancers.",
       "speaker": "Speaker0",
       "start": 399.12,
@@ -3038,7 +3058,7 @@
       "confidence": 0.922
     },
     {
-      "id": 97,
+      "id": 99,
       "text": "That's right.",
       "speaker": "Speaker0",
       "start": 401.41,
@@ -3060,7 +3080,7 @@
       "confidence": 0.976
     },
     {
-      "id": 98,
+      "id": 100,
       "text": "That's right. Yeah.",
       "speaker": "Speaker0",
       "start": 403.65,
@@ -3088,7 +3108,7 @@
       "confidence": 0.933
     },
     {
-      "id": 99,
+      "id": 101,
       "text": "Story.",
       "speaker": "Speaker0",
       "start": 412.85,
@@ -3104,7 +3124,7 @@
       "confidence": 0.897
     },
     {
-      "id": 100,
+      "id": 102,
       "text": "How beautiful.",
       "speaker": "Speaker0",
       "start": 421.91,
@@ -3126,7 +3146,7 @@
       "confidence": 0.958
     },
     {
-      "id": 101,
+      "id": 103,
       "text": "I want those red shoes.",
       "speaker": "Speaker0",
       "start": 423.35,
@@ -3166,7 +3186,7 @@
       "confidence": 0.996
     },
     {
-      "id": 102,
+      "id": 104,
       "text": "Grandma, please.",
       "speaker": "Speaker0",
       "start": 426.07,
@@ -3188,7 +3208,7 @@
       "confidence": 0.911
     },
     {
-      "id": 103,
+      "id": 105,
       "text": "Okay.",
       "speaker": "Speaker0",
       "start": 429.11,
@@ -3204,7 +3224,7 @@
       "confidence": 0.992
     },
     {
-      "id": 104,
+      "id": 106,
       "text": "How much?",
       "speaker": "Speaker0",
       "start": 430.31,
@@ -3226,7 +3246,7 @@
       "confidence": 0.999
     },
     {
-      "id": 105,
+      "id": 107,
       "text": "$10.",
       "speaker": "Speaker1",
       "start": 432.71,
@@ -3242,7 +3262,7 @@
       "confidence": 0.999
     },
     {
-      "id": 106,
+      "id": 108,
       "text": "Thank you, grandma.",
       "speaker": "Speaker0",
       "start": 438.15,
@@ -3270,7 +3290,7 @@
       "confidence": 0.991
     },
     {
-      "id": 107,
+      "id": 109,
       "text": "Karen, what are you doing?",
       "speaker": "Speaker0",
       "start": 449.4,
@@ -3310,7 +3330,7 @@
       "confidence": 0.96
     },
     {
-      "id": 108,
+      "id": 110,
       "text": "I'm dancing, grandma.",
       "speaker": "Speaker1",
       "start": 452.52,
@@ -3338,7 +3358,7 @@
       "confidence": 0.977
     },
     {
-      "id": 109,
+      "id": 111,
       "text": "She is dancing here.",
       "speaker": "Speaker4",
       "start": 470.5,
@@ -3372,7 +3392,7 @@
       "confidence": 0.993
     },
     {
-      "id": 110,
+      "id": 112,
       "text": "She is dancing there.",
       "speaker": "Speaker4",
       "start": 472.42,
@@ -3406,7 +3426,7 @@
       "confidence": 1.0
     },
     {
-      "id": 111,
+      "id": 113,
       "text": "She is a good dancer.",
       "speaker": "Speaker1",
       "start": 474.9,
@@ -3446,7 +3466,7 @@
       "confidence": 0.999
     },
     {
-      "id": 112,
+      "id": 114,
       "text": "That's right.",
       "speaker": "Speaker4",
       "start": 477.21,
@@ -3468,7 +3488,7 @@
       "confidence": 1.0
     },
     {
-      "id": 113,
+      "id": 115,
       "text": "Your grandma is in the hospital.",
       "speaker": "Speaker0",
       "start": 483.85,
@@ -3514,7 +3534,7 @@
       "confidence": 0.936
     },
     {
-      "id": 114,
+      "id": 116,
       "text": "Karen, go home, please.",
       "speaker": "Speaker0",
       "start": 486.97,
@@ -3548,7 +3568,7 @@
       "confidence": 0.982
     },
     {
-      "id": 115,
+      "id": 117,
       "text": "Sorry.",
       "speaker": "Speaker0",
       "start": 489.29,
@@ -3564,7 +3584,7 @@
       "confidence": 0.876
     },
     {
-      "id": 116,
+      "id": 118,
       "text": "I can't.",
       "speaker": "Speaker0",
       "start": 490.25,
@@ -3586,7 +3606,7 @@
       "confidence": 0.998
     },
     {
-      "id": 117,
+      "id": 119,
       "text": "Oh, I'm sleepy.",
       "speaker": "Speaker1",
       "start": 496.27,
@@ -3614,7 +3634,7 @@
       "confidence": 0.94
     },
     {
-      "id": 118,
+      "id": 120,
       "text": "Oh, Karen.",
       "speaker": "Speaker0",
       "start": 504.19,
@@ -3636,7 +3656,7 @@
       "confidence": 0.899
     },
     {
-      "id": 119,
+      "id": 121,
       "text": "Don't dance.",
       "speaker": "Speaker0",
       "start": 505.66,
@@ -3658,7 +3678,7 @@
       "confidence": 0.989
     },
     {
-      "id": 120,
+      "id": 122,
       "text": "Go to the hospital now.",
       "speaker": "Speaker0",
       "start": 507.1,
@@ -3698,7 +3718,7 @@
       "confidence": 0.999
     },
     {
-      "id": 121,
+      "id": 123,
       "text": "Thank you very much.",
       "speaker": "Speaker1",
       "start": 514.46,
@@ -3732,7 +3752,7 @@
       "confidence": 0.985
     },
     {
-      "id": 122,
+      "id": 124,
       "text": "I'm sorry, grandma.",
       "speaker": "Speaker1",
       "start": 518.21,
@@ -3760,7 +3780,7 @@
       "confidence": 0.954
     },
     {
-      "id": 123,
+      "id": 125,
       "text": "Story.",
       "speaker": "Speaker3",
       "start": 525.88,
@@ -3776,7 +3796,7 @@
       "confidence": 0.971
     },
     {
-      "id": 124,
+      "id": 126,
       "text": "Mom, where are you?",
       "speaker": "Speaker1",
       "start": 537.34,
@@ -3810,7 +3830,7 @@
       "confidence": 0.965
     },
     {
-      "id": 125,
+      "id": 127,
       "text": "I'm in the kitchen.",
       "speaker": "Speaker0",
       "start": 540.62,
@@ -3844,7 +3864,7 @@
       "confidence": 0.989
     },
     {
-      "id": 126,
+      "id": 128,
       "text": "What are you doing?",
       "speaker": "Speaker0",
       "start": 543.63,
@@ -3878,7 +3898,7 @@
       "confidence": 1.0
     },
     {
-      "id": 127,
+      "id": 129,
       "text": "I'm making soup.",
       "speaker": "Speaker0",
       "start": 545.79,
@@ -3906,7 +3926,7 @@
       "confidence": 1.0
     },
     {
-      "id": 128,
+      "id": 130,
       "text": "Can you help me?",
       "speaker": "Speaker0",
       "start": 548.43,
@@ -3940,7 +3960,7 @@
       "confidence": 0.998
     },
     {
-      "id": 129,
+      "id": 131,
       "text": "Yes. I can.",
       "speaker": "Speaker2",
       "start": 550.75,
@@ -3968,7 +3988,7 @@
       "confidence": 0.968
     },
     {
-      "id": 130,
+      "id": 132,
       "text": "Don't run.",
       "speaker": "Speaker0",
       "start": 553.39,
@@ -3990,7 +4010,7 @@
       "confidence": 0.997
     },
     {
-      "id": 131,
+      "id": 133,
       "text": "The soup is hot.",
       "speaker": "Speaker0",
       "start": 554.51,
@@ -4024,7 +4044,7 @@
       "confidence": 0.997
     },
     {
-      "id": 132,
+      "id": 134,
       "text": "Where are you?",
       "speaker": "Speaker1",
       "start": 559.22,
@@ -4052,7 +4072,7 @@
       "confidence": 0.86
     },
     {
-      "id": 133,
+      "id": 135,
       "text": "I'm in the bedroom.",
       "speaker": "Speaker1",
       "start": 561.78,
@@ -4086,7 +4106,7 @@
       "confidence": 1.0
     },
     {
-      "id": 134,
+      "id": 136,
       "text": "This is for you.",
       "speaker": "Speaker1",
       "start": 566.9,
@@ -4120,7 +4140,7 @@
       "confidence": 0.999
     },
     {
-      "id": 135,
+      "id": 137,
       "text": "Thank you.",
       "speaker": "Speaker1",
       "start": 569.06,
@@ -4142,7 +4162,7 @@
       "confidence": 1.0
     },
     {
-      "id": 136,
+      "id": 138,
       "text": "It's too hot.",
       "speaker": "Speaker1",
       "start": 571.3,
@@ -4170,7 +4190,7 @@
       "confidence": 0.997
     },
     {
-      "id": 137,
+      "id": 139,
       "text": "Are you okay?",
       "speaker": "Speaker1",
       "start": 577.49,
@@ -4198,7 +4218,7 @@
       "confidence": 0.999
     },
     {
-      "id": 138,
+      "id": 140,
       "text": "Yes. I'm okay.",
       "speaker": "Speaker0",
       "start": 579.8,
@@ -4226,7 +4246,7 @@
       "confidence": 0.999
     },
     {
-      "id": 139,
+      "id": 141,
       "text": "Thank you.",
       "speaker": "Speaker0",
       "start": 582.09,
@@ -4265,14 +4285,14 @@
     "matchedSegments": 150,
     "totalDuration": 582.83
   },
-  "repairedAt": "2026-07-23T06:33:07.747367Z",
+  "repairedAt": "2026-07-23T07:58:35.800076Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 150,
-    "afterSegments": 139,
-    "beforeAvgWords": 3.2,
+    "beforeSegments": 139,
+    "afterSegments": 141,
+    "beforeAvgWords": 3.4,
     "afterAvgWords": 3.4,
-    "merged": 11,
+    "merged": -2,
     "danglingFragments": 0
   }
 }

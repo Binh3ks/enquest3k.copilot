@@ -305,14 +305,16 @@ def fix_dangling(segments: list, max_passes: int = 5) -> list:
     return segments
 
 
-def split_long_segments(segments: list, max_words: int = 25) -> list:
-    """Split segments that are too long at natural sentence boundaries.
+def split_long_segments(segments: list, max_words: int = 15) -> list:
+    """Force-split segments exceeding max_words at clause boundaries.
 
-    Strategy:
-    1. First try to split at a period/!/? with ≥5 words after it
-    2. If no such split exists, try splitting at the LAST comma with
-       ≥5 words on each side
-    3. If neither works, keep the segment as-is
+    For ESL kids (A1+, ages 6-12), no segment can exceed 15 words.
+    If a segment is too long, force-split at:
+      1. Conjunctions: and, but, so, because, then, which, who, where, when, if
+      2. Commas already in the text
+      3. Fallback: hard split at max_words (last resort)
+
+    Each split produces a syntactically digestible chunk (S+V+O or clause).
     """
     result = []
     for seg in segments:
@@ -323,68 +325,79 @@ def split_long_segments(segments: list, max_words: int = 25) -> list:
             result.append(seg)
             continue
 
-        # Strategy 1: Split at sentence-ender with enough text after
-        split_pos = -1
-        for m in SENTENCE_ENDERS.finditer(text):
-            after = text[m.end():].strip()
-            if len(after.split()) >= 5:
-                split_pos = m.end()
+        # Recursive forced split
+        chunks = _force_split_text(text, words, max_words)
 
-        # Strategy 2: Split at last comma with enough text on each side
-        if split_pos <= 0:
-            for m in re.finditer(r',\s', text):
-                before_words = len(text[:m.start()].split())
-                after_words = len(text[m.end():].split())
-                if before_words >= 5 and after_words >= 5:
-                    split_pos = m.end()
+        for chunk_text, chunk_words in chunks:
+            if not chunk_words:
+                continue
+            result.append({
+                "id": len(result) + 1,
+                "text": chunk_text.strip(),
+                "speaker": seg.get("speaker", "Speaker0"),
+                "start": chunk_words[0]["start"],
+                "duration": round(chunk_words[-1]["end"] - chunk_words[0]["start"], 2),
+                "words": chunk_words,
+                "confidence": seg.get("confidence", 0.9),
+            })
 
-        if split_pos <= 0:
-            result.append(seg)
-            continue
+    return result
 
-        text_part1 = text[:split_pos].strip()
-        text_part2 = text[split_pos:].strip()
 
-        if not text_part2:
-            result.append(seg)
-            continue
+def _force_split_text(text: str, words: list, max_words: int) -> list:
+    """Recursively split text into chunks ≤ max_words at clause boundaries.
 
-        # Split words proportionally
-        words1_count = len(text_part1.split())
-        total_words = len(words)
-        split_idx = min(words1_count, total_words - 1)
-        split_idx = max(1, split_idx)
+    Returns list of (text_chunk, words_chunk) tuples.
+    """
+    if len(words) <= max_words:
+        return [(text, words)]
 
-        words1 = words[:split_idx]
-        words2 = words[split_idx:]
+    # Build word-level text for boundary detection
+    word_texts = [w["word"] for w in words]
 
-        if not words1 or not words2:
-            result.append(seg)
-            continue
+    # Strategy 1: Find conjunctions to split BEFORE
+    # But only if left side has ≥3 words (complete clause)
+    CONJUNCTIONS = {
+        "and", "but", "so", "because", "then", "which", "who",
+        "where", "when", "if", "although", "while", "until",
+        "since", "after", "before", "that",
+    }
 
-        total_duration = seg.get("duration", 0)
-        ratio = len(words1) / total_words
-        dur1 = round(total_duration * ratio, 2)
-        dur2 = round(total_duration - dur1, 2)
+    best_split_idx = -1
+    for i in range(3, min(max_words + 1, len(words))):
+        wt = word_texts[i].lower().rstrip(".,!?;:'")
+        if wt in CONJUNCTIONS:
+            # Prefer splits near the middle of the max_words window
+            # Score: closer to midpoint = better
+            distance_from_mid = abs(i - max_words // 2)
+            if best_split_idx < 0 or distance_from_mid < abs(best_split_idx - max_words // 2):
+                best_split_idx = i
 
-        result.append({
-            "id": len(result) + 1,
-            "text": text_part1,
-            "speaker": seg.get("speaker", "Speaker0"),
-            "start": seg["start"],
-            "duration": dur1,
-            "words": words1,
-            "confidence": seg.get("confidence", 0.9),
-        })
-        result.append({
-            "id": len(result) + 1,
-            "text": text_part2,
-            "speaker": seg.get("speaker", "Speaker0"),
-            "start": round(seg["start"] + dur1, 2),
-            "duration": dur2,
-            "words": words2,
-            "confidence": seg.get("confidence", 0.9),
-        })
+    # Strategy 2: If no conjunction found, split at comma positions
+    # But only if left side has ≥3 words
+    if best_split_idx < 0:
+        for i in range(3, min(max_words + 1, len(words))):
+            if word_texts[i - 1].endswith(","):
+                best_split_idx = i
+                break
+
+    # Strategy 3: Hard split at max_words (last resort)
+    if best_split_idx < 0:
+        best_split_idx = max_words
+
+    # Build split texts
+    part1_words = words[:best_split_idx]
+    part2_words = words[best_split_idx:]
+
+    part1_text = " ".join(w["word"] for w in part1_words)
+    part2_text = " ".join(w["word"] for w in part2_words)
+
+    # Recurse on each part if still too long
+    result = []
+    if len(part1_words) > 0:
+        result.extend(_force_split_text(part1_text, part1_words, max_words))
+    if len(part2_words) > 0:
+        result.extend(_force_split_text(part2_text, part2_words, max_words))
 
     return result
 
@@ -407,10 +420,12 @@ def repair_week(video_id: str) -> dict:
     # Pre-split multi-sentence utterances
     segments = pre_split_multi_sentence(segments)
 
+    # Merge short same-speaker utterances into complete thoughts
     merged = merge_utterances(segments)
 
-    # Post-process: fix any remaining dangling fragments
-    merged = fix_dangling(merged)
+    # Force-split long segments at clause boundaries (AFTER merge)
+    # merge may create long segments; split breaks them into ≤15 words
+    merged = split_long_segments(merged)
 
     # Final renumber
     for i, seg in enumerate(merged):

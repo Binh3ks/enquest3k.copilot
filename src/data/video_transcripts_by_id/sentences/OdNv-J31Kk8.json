@@ -1,5 +1,5 @@
 {
-  "text": "The Carter Family Episode four A Camping Trip Yay, said Harry. We're going camping. Mom put the tent and food in the car. Dad put the sleeping bags in the car. The kids played in the yard. Harry threw a stick. Rover ran after it. Everybody in the car, dad said. Rover looked for the stick. It's time to go camping, Rover, said Harry. Rover was still looking for the stick. Everybody pulled Rover into the car. Here we go. Said dad. Dad drove, and Rover barked loudly. Soon, they were in the woods. Mom and Harry set up the tent. Dad and Emmy made a campfire. Oliver found bugs. Grover sniffed all around. Dad cooked dinner over the fire. Everybody ate It's getting dark said dad we need to tie up our food There are bears in the woods Bears? Harry looked around. Bears? Emmy looked around. I like bears, said Oliver. Suddenly, the bushes moved. Is it a bear? Asked Emmy. A sound came from the bushes. It must be a bear, said Harry. Woof woof, Rover jumped out. Rover had a new stick.",
+  "text": "The Carter Family Episode four A Camping Trip Yay, said Harry. We're going camping. Mom put the tent and food in the car. Dad put the sleeping bags in the car. The kids played in the yard. Harry threw a stick. Rover ran after it. Everybody in the car, dad said. Rover looked for the stick. It's time to go camping, Rover, said Harry. Rover was still looking for the stick. Everybody pulled Rover into the car. Here we go. Said dad. Dad drove, and Rover barked loudly. Soon, they were in the woods. Mom and Harry set up the tent. Dad and Emmy made a campfire. Oliver found bugs. Grover sniffed all around. Dad cooked dinner over the fire. everybody ate it's getting dark said dad we need to tie up our food there are bears in the woods Bears? Harry looked around. Bears? Emmy looked around. I like bears, said Oliver. Suddenly, the bushes moved. Is it a bear? Asked Emmy. A sound came from the bushes. It must be a bear, said Harry. Woof woof, Rover jumped out. Rover had a new stick.",
   "segments": [
     {
       "id": 1,
@@ -923,10 +923,10 @@
     },
     {
       "id": 21,
-      "text": "Everybody ate It's getting dark said dad we need to tie up our food There are bears in the woods",
+      "text": "everybody ate it's getting dark said dad we need to tie up our food there",
       "speaker": "Speaker0",
       "start": 136.71,
-      "duration": 15.38,
+      "duration": 14.0,
       "words": [
         {
           "word": "everybody",
@@ -1017,7 +1017,17 @@
           "start": 150.47,
           "end": 150.71,
           "confidence": 0.804
-        },
+        }
+      ],
+      "confidence": 0.928
+    },
+    {
+      "id": 22,
+      "text": "are bears in the woods",
+      "speaker": "Speaker0",
+      "start": 150.71,
+      "duration": 1.38,
+      "words": [
         {
           "word": "are",
           "start": 150.71,
@@ -1052,7 +1062,7 @@
       "confidence": 0.928
     },
     {
-      "id": 22,
+      "id": 23,
       "text": "Bears?",
       "speaker": "Speaker0",
       "start": 154.84,
@@ -1068,7 +1078,7 @@
       "confidence": 0.977
     },
     {
-      "id": 23,
+      "id": 24,
       "text": "Harry looked around.",
       "speaker": "Speaker0",
       "start": 155.79,
@@ -1096,7 +1106,7 @@
       "confidence": 0.999
     },
     {
-      "id": 24,
+      "id": 25,
       "text": "Bears? Emmy looked around.",
       "speaker": "Speaker0",
       "start": 157.79,
@@ -1130,7 +1140,7 @@
       "confidence": 0.938
     },
     {
-      "id": 25,
+      "id": 26,
       "text": "I like bears, said Oliver.",
       "speaker": "Speaker0",
       "start": 161.08,
@@ -1170,7 +1180,7 @@
       "confidence": 0.962
     },
     {
-      "id": 26,
+      "id": 27,
       "text": "Suddenly, the bushes moved.",
       "speaker": "Speaker0",
       "start": 165.93,
@@ -1204,7 +1214,7 @@
       "confidence": 0.97
     },
     {
-      "id": 27,
+      "id": 28,
       "text": "Is it a bear?",
       "speaker": "Speaker0",
       "start": 168.41,
@@ -1238,7 +1248,7 @@
       "confidence": 0.897
     },
     {
-      "id": 28,
+      "id": 29,
       "text": "Asked Emmy.",
       "speaker": "Speaker0",
       "start": 169.61,
@@ -1260,7 +1270,7 @@
       "confidence": 0.897
     },
     {
-      "id": 29,
+      "id": 30,
       "text": "A sound came from the bushes.",
       "speaker": "Speaker0",
       "start": 174.81,
@@ -1306,7 +1316,7 @@
       "confidence": 0.988
     },
     {
-      "id": 30,
+      "id": 31,
       "text": "It must be a bear, said Harry.",
       "speaker": "Speaker0",
       "start": 177.61,
@@ -1358,7 +1368,7 @@
       "confidence": 0.967
     },
     {
-      "id": 31,
+      "id": 32,
       "text": "Woof woof, Rover jumped out.",
       "speaker": "Speaker0",
       "start": 187.6,
@@ -1398,7 +1408,7 @@
       "confidence": 0.815
     },
     {
-      "id": 32,
+      "id": 33,
       "text": "Rover had a new stick.",
       "speaker": "Speaker0",
       "start": 190.97,
@@ -1451,14 +1461,14 @@
     "matchedSegments": 37,
     "totalDuration": 192.75
   },
-  "repairedAt": "2026-07-23T06:33:07.781156Z",
+  "repairedAt": "2026-07-23T07:58:35.825937Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 37,
-    "afterSegments": 32,
-    "beforeAvgWords": 5.0,
-    "afterAvgWords": 5.8,
-    "merged": 5,
+    "beforeSegments": 32,
+    "afterSegments": 33,
+    "beforeAvgWords": 5.8,
+    "afterAvgWords": 5.6,
+    "merged": -1,
     "danglingFragments": 0
   }
 }

@@ -3326,14 +3326,14 @@
     "matchedSegments": 77,
     "totalDuration": 435.31
   },
-  "repairedAt": "2026-07-23T06:33:07.692520Z",
+  "repairedAt": "2026-07-23T07:58:35.758205Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 77,
+    "beforeSegments": 93,
     "afterSegments": 93,
-    "beforeAvgWords": 5.1,
+    "beforeAvgWords": 4.2,
     "afterAvgWords": 4.2,
-    "merged": -16,
+    "merged": 0,
     "danglingFragments": 0
   }
 }

@@ -8599,10 +8599,10 @@
     },
     {
       "id": 290,
-      "text": "That's true. Work, messages, photos, maps, music. Exactly.",
+      "text": "That's true.",
       "speaker": "Speaker0",
       "start": 447.8,
-      "duration": 5.5,
+      "duration": 0.74,
       "words": [
         {
           "word": "that's",
@@ -8615,7 +8615,17 @@
           "start": 448.04,
           "end": 448.54,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 291,
+      "text": "Work, messages, photos, maps, music.",
+      "speaker": "Speaker0",
+      "start": 448.6,
+      "duration": 3.9,
+      "words": [
         {
           "word": "work",
           "start": 448.6,
@@ -8645,7 +8655,17 @@
           "start": 452.0,
           "end": 452.5,
           "confidence": 0.936
-        },
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 292,
+      "text": "Exactly.",
+      "speaker": "Speaker0",
+      "start": 452.8,
+      "duration": 0.5,
+      "words": [
         {
           "word": "exactly",
           "start": 452.8,
@@ -8656,7 +8676,7 @@
       "confidence": 0.982
     },
     {
-      "id": 291,
+      "id": 293,
       "text": "It's difficult to ignore them.",
       "speaker": "Speaker1",
       "start": 453.68,
@@ -8696,7 +8716,7 @@
       "confidence": 0.999
     },
     {
-      "id": 292,
+      "id": 294,
       "text": "Do you think children use phones too much?",
       "speaker": "Speaker1",
       "start": 455.12,
@@ -8754,7 +8774,7 @@
       "confidence": 0.999
     },
     {
-      "id": 293,
+      "id": 295,
       "text": "Sometimes.",
       "speaker": "Speaker1",
       "start": 457.44,
@@ -8770,7 +8790,7 @@
       "confidence": 0.999
     },
     {
-      "id": 294,
+      "id": 296,
       "text": "I agree.",
       "speaker": "Speaker1",
       "start": 458.24,
@@ -8792,7 +8812,7 @@
       "confidence": 0.999
     },
     {
-      "id": 295,
+      "id": 297,
       "text": "When I was younger, I spent more time outside.",
       "speaker": "Speaker1",
       "start": 459.04,
@@ -8856,7 +8876,7 @@
       "confidence": 0.999
     },
     {
-      "id": 296,
+      "id": 298,
       "text": "Me too.",
       "speaker": "Speaker1",
       "start": 461.68,
@@ -8878,7 +8898,7 @@
       "confidence": 0.999
     },
     {
-      "id": 297,
+      "id": 299,
       "text": "I played with friends.",
       "speaker": "Speaker1",
       "start": 462.4,
@@ -8912,7 +8932,7 @@
       "confidence": 0.999
     },
     {
-      "id": 298,
+      "id": 300,
       "text": "Same here.",
       "speaker": "Speaker1",
       "start": 463.93,
@@ -8934,7 +8954,7 @@
       "confidence": 0.966
     },
     {
-      "id": 299,
+      "id": 301,
       "text": "Now many people stay home and look at screens.",
       "speaker": "Speaker1",
       "start": 464.88,
@@ -8998,7 +9018,7 @@
       "confidence": 0.966
     },
     {
-      "id": 300,
+      "id": 302,
       "text": "That's true.",
       "speaker": "Speaker1",
       "start": 467.69,
@@ -9020,7 +9040,7 @@
       "confidence": 0.999
     },
     {
-      "id": 301,
+      "id": 303,
       "text": "Do you miss the old days?",
       "speaker": "Speaker1",
       "start": 468.49,
@@ -9066,7 +9086,7 @@
       "confidence": 0.999
     },
     {
-      "id": 302,
+      "id": 304,
       "text": "Sometimes.",
       "speaker": "Speaker1",
       "start": 470.0,
@@ -9082,7 +9102,7 @@
       "confidence": 0.999
     },
     {
-      "id": 303,
+      "id": 305,
       "text": "Really? Yes. Life felt simpler.",
       "speaker": "Speaker0",
       "start": 470.96,
@@ -9122,7 +9142,7 @@
       "confidence": 0.953
     },
     {
-      "id": 304,
+      "id": 306,
       "text": "I understand that.",
       "speaker": "Speaker0",
       "start": 474.0,
@@ -9150,7 +9170,7 @@
       "confidence": 0.999
     },
     {
-      "id": 305,
+      "id": 307,
       "text": "But I also love modern technology.",
       "speaker": "Speaker0",
       "start": 475.05,
@@ -9196,7 +9216,7 @@
       "confidence": 0.999
     },
     {
-      "id": 306,
+      "id": 308,
       "text": "Me too.",
       "speaker": "Speaker0",
       "start": 477.29,
@@ -9218,7 +9238,7 @@
       "confidence": 0.994
     },
     {
-      "id": 307,
+      "id": 309,
       "text": "Imagine traveling without a phone.",
       "speaker": "Speaker0",
       "start": 478.17,
@@ -9258,7 +9278,7 @@
       "confidence": 0.994
     },
     {
-      "id": 308,
+      "id": 310,
       "text": "That sounds difficult.",
       "speaker": "Speaker0",
       "start": 480.17,
@@ -9286,7 +9306,7 @@
       "confidence": 0.994
     },
     {
-      "id": 309,
+      "id": 311,
       "text": "Very difficult.",
       "speaker": "Speaker0",
       "start": 481.77,
@@ -9308,7 +9328,7 @@
       "confidence": 1.0
     },
     {
-      "id": 310,
+      "id": 312,
       "text": "I'd get lost immediately.",
       "speaker": "Speaker1",
       "start": 482.97,
@@ -9342,7 +9362,7 @@
       "confidence": 1.0
     },
     {
-      "id": 311,
+      "id": 313,
       "text": "I believe that.",
       "speaker": "Speaker1",
       "start": 485.77,
@@ -9370,7 +9390,7 @@
       "confidence": 0.997
     },
     {
-      "id": 312,
+      "id": 314,
       "text": "Thank you for your confidence.",
       "speaker": "Speaker1",
       "start": 486.81,
@@ -9410,7 +9430,7 @@
       "confidence": 0.997
     },
     {
-      "id": 313,
+      "id": 315,
       "text": "You're welcome.",
       "speaker": "Speaker1",
       "start": 488.33,
@@ -9432,7 +9452,7 @@
       "confidence": 0.997
     },
     {
-      "id": 314,
+      "id": 316,
       "text": "Do you remember phone numbers?",
       "speaker": "Speaker1",
       "start": 489.29,
@@ -9472,7 +9492,7 @@
       "confidence": 0.997
     },
     {
-      "id": 315,
+      "id": 317,
       "text": "A few.",
       "speaker": "Speaker1",
       "start": 490.97,
@@ -9494,7 +9514,7 @@
       "confidence": 0.997
     },
     {
-      "id": 316,
+      "id": 318,
       "text": "Really?",
       "speaker": "Speaker0",
       "start": 492.06,
@@ -9510,7 +9530,7 @@
       "confidence": 0.962
     },
     {
-      "id": 317,
+      "id": 319,
       "text": "Yes.",
       "speaker": "Speaker0",
       "start": 492.77,
@@ -9526,7 +9546,7 @@
       "confidence": 0.962
     },
     {
-      "id": 318,
+      "id": 320,
       "text": "My parents' numbers, a few friends.",
       "speaker": "Speaker0",
       "start": 493.33,
@@ -9572,7 +9592,7 @@
       "confidence": 0.962
     },
     {
-      "id": 319,
+      "id": 321,
       "text": "I'm impressed.",
       "speaker": "Speaker1",
       "start": 495.81,
@@ -9594,7 +9614,7 @@
       "confidence": 1.0
     },
     {
-      "id": 320,
+      "id": 322,
       "text": "What about you? Honestly?",
       "speaker": "Speaker1",
       "start": 496.94,
@@ -9628,7 +9648,7 @@
       "confidence": 0.982
     },
     {
-      "id": 321,
+      "id": 323,
       "text": "Yes.",
       "speaker": "Speaker1",
       "start": 499.01,
@@ -9644,7 +9664,7 @@
       "confidence": 0.992
     },
     {
-      "id": 322,
+      "id": 324,
       "text": "I barely remember my own number.",
       "speaker": "Speaker1",
       "start": 499.65,
@@ -9690,7 +9710,7 @@
       "confidence": 0.992
     },
     {
-      "id": 323,
+      "id": 325,
       "text": "No way.",
       "speaker": "Speaker1",
       "start": 502.06,
@@ -9712,7 +9732,7 @@
       "confidence": 0.992
     },
     {
-      "id": 324,
+      "id": 326,
       "text": "Seriously.",
       "speaker": "Speaker1",
       "start": 503.01,
@@ -9728,7 +9748,7 @@
       "confidence": 0.992
     },
     {
-      "id": 325,
+      "id": 327,
       "text": "That's funny.",
       "speaker": "Speaker0",
       "start": 504.58,
@@ -9750,7 +9770,7 @@
       "confidence": 0.999
     },
     {
-      "id": 326,
+      "id": 328,
       "text": "My phone remembers everything for me.",
       "speaker": "Speaker0",
       "start": 505.62,
@@ -9796,7 +9816,7 @@
       "confidence": 0.999
     },
     {
-      "id": 327,
+      "id": 329,
       "text": "That's the problem.",
       "speaker": "Speaker0",
       "start": 507.94,
@@ -9824,7 +9844,7 @@
       "confidence": 0.999
     },
     {
-      "id": 328,
+      "id": 330,
       "text": "Maybe.",
       "speaker": "Speaker0",
       "start": 509.14,
@@ -9840,7 +9860,7 @@
       "confidence": 0.999
     },
     {
-      "id": 329,
+      "id": 331,
       "text": "We're becoming too dependent.",
       "speaker": "Speaker0",
       "start": 509.78,
@@ -9874,7 +9894,7 @@
       "confidence": 0.999
     },
     {
-      "id": 330,
+      "id": 332,
       "text": "You're probably right.",
       "speaker": "Speaker0",
       "start": 511.7,
@@ -9902,7 +9922,7 @@
       "confidence": 0.999
     },
     {
-      "id": 331,
+      "id": 333,
       "text": "If your phone disappeared forever, what would you miss most?",
       "speaker": "Speaker0",
       "start": 512.9,
@@ -9972,7 +9992,7 @@
       "confidence": 0.992
     },
     {
-      "id": 332,
+      "id": 334,
       "text": "The photos.",
       "speaker": "Speaker0",
       "start": 516.5,
@@ -9994,7 +10014,7 @@
       "confidence": 0.986
     },
     {
-      "id": 333,
+      "id": 335,
       "text": "Really?",
       "speaker": "Speaker0",
       "start": 517.46,
@@ -10010,7 +10030,7 @@
       "confidence": 0.986
     },
     {
-      "id": 334,
+      "id": 336,
       "text": "Definitely.",
       "speaker": "Speaker0",
       "start": 518.18,
@@ -10026,7 +10046,7 @@
       "confidence": 0.986
     },
     {
-      "id": 335,
+      "id": 337,
       "text": "Photos hold memories.",
       "speaker": "Speaker0",
       "start": 519.35,
@@ -10054,7 +10074,7 @@
       "confidence": 0.999
     },
     {
-      "id": 336,
+      "id": 338,
       "text": "That's a beautiful answer.",
       "speaker": "Speaker0",
       "start": 520.87,
@@ -10088,7 +10108,7 @@
       "confidence": 0.999
     },
     {
-      "id": 337,
+      "id": 339,
       "text": "Thank you.",
       "speaker": "Speaker0",
       "start": 522.46,
@@ -10110,7 +10130,7 @@
       "confidence": 0.999
     },
     {
-      "id": 338,
+      "id": 340,
       "text": "What about you?",
       "speaker": "Speaker0",
       "start": 523.26,
@@ -10138,7 +10158,7 @@
       "confidence": 0.999
     },
     {
-      "id": 339,
+      "id": 341,
       "text": "The messages.",
       "speaker": "Speaker0",
       "start": 524.23,
@@ -10160,7 +10180,7 @@
       "confidence": 0.999
     },
     {
-      "id": 340,
+      "id": 342,
       "text": "Why?",
       "speaker": "Speaker0",
       "start": 525.26,
@@ -10176,7 +10196,7 @@
       "confidence": 0.998
     },
     {
-      "id": 341,
+      "id": 343,
       "text": "Because they remind me of people I care about.",
       "speaker": "Speaker0",
       "start": 525.9,
@@ -10240,7 +10260,7 @@
       "confidence": 0.998
     },
     {
-      "id": 342,
+      "id": 344,
       "text": "I like that answer.",
       "speaker": "Speaker0",
       "start": 528.54,
@@ -10274,7 +10294,7 @@
       "confidence": 0.998
     },
     {
-      "id": 343,
+      "id": 345,
       "text": "Phones aren't just technology.",
       "speaker": "Speaker0",
       "start": 529.82,
@@ -10308,7 +10328,7 @@
       "confidence": 0.998
     },
     {
-      "id": 344,
+      "id": 346,
       "text": "They're connected to our lives.",
       "speaker": "Speaker1",
       "start": 532.03,
@@ -10348,7 +10368,7 @@
       "confidence": 1.0
     },
     {
-      "id": 345,
+      "id": 347,
       "text": "Exactly.",
       "speaker": "Speaker1",
       "start": 534.11,
@@ -10364,7 +10384,7 @@
       "confidence": 1.0
     },
     {
-      "id": 346,
+      "id": 348,
       "text": "Wow.",
       "speaker": "Speaker1",
       "start": 535.07,
@@ -10380,7 +10400,7 @@
       "confidence": 0.989
     },
     {
-      "id": 347,
+      "id": 349,
       "text": "This conversation became deep.",
       "speaker": "Speaker1",
       "start": 535.71,
@@ -10414,7 +10434,7 @@
       "confidence": 0.989
     },
     {
-      "id": 348,
+      "id": 350,
       "text": "A little.",
       "speaker": "Speaker1",
       "start": 537.71,
@@ -10436,7 +10456,7 @@
       "confidence": 0.989
     },
     {
-      "id": 349,
+      "id": 351,
       "text": "Quick.",
       "speaker": "Speaker1",
       "start": 538.51,
@@ -10452,7 +10472,7 @@
       "confidence": 0.989
     },
     {
-      "id": 350,
+      "id": 352,
       "text": "Say something funny.",
       "speaker": "Speaker1",
       "start": 539.07,
@@ -10480,7 +10500,7 @@
       "confidence": 0.989
     },
     {
-      "id": 351,
+      "id": 353,
       "text": "Why?",
       "speaker": "Speaker1",
       "start": 540.19,
@@ -10496,7 +10516,7 @@
       "confidence": 0.989
     },
     {
-      "id": 352,
+      "id": 354,
       "text": "Before everyone starts crying over their phones.",
       "speaker": "Speaker1",
       "start": 540.83,
@@ -10548,7 +10568,7 @@
       "confidence": 0.989
     },
     {
-      "id": 353,
+      "id": 355,
       "text": "Good idea.",
       "speaker": "Speaker1",
       "start": 544.35,
@@ -10570,7 +10590,7 @@
       "confidence": 0.979
     },
     {
-      "id": 354,
+      "id": 356,
       "text": "That's what I'm here for.",
       "speaker": "Speaker1",
       "start": 545.31,
@@ -10610,7 +10630,7 @@
       "confidence": 0.979
     },
     {
-      "id": 355,
+      "id": 357,
       "text": "Making jokes.",
       "speaker": "Speaker1",
       "start": 546.83,
@@ -10632,7 +10652,7 @@
       "confidence": 0.979
     },
     {
-      "id": 356,
+      "id": 358,
       "text": "And keeping conversations balanced.",
       "speaker": "Speaker1",
       "start": 547.79,
@@ -10666,7 +10686,7 @@
       "confidence": 0.979
     },
     {
-      "id": 357,
+      "id": 359,
       "text": "Mostly making jokes.",
       "speaker": "Speaker0",
       "start": 550.11,
@@ -10694,7 +10714,7 @@
       "confidence": 0.977
     },
     {
-      "id": 358,
+      "id": 360,
       "text": "Fair enough.",
       "speaker": "Speaker0",
       "start": 551.62,
@@ -10716,7 +10736,7 @@
       "confidence": 0.977
     },
     {
-      "id": 359,
+      "id": 361,
       "text": "You know, this conversation made me think.",
       "speaker": "Speaker0",
       "start": 552.43,
@@ -10768,7 +10788,7 @@
       "confidence": 0.977
     },
     {
-      "id": 360,
+      "id": 362,
       "text": "Uh-oh.",
       "speaker": "Speaker0",
       "start": 554.5,
@@ -10784,7 +10804,7 @@
       "confidence": 0.977
     },
     {
-      "id": 361,
+      "id": 363,
       "text": "That's always dangerous.",
       "speaker": "Speaker1",
       "start": 555.87,
@@ -10812,7 +10832,7 @@
       "confidence": 0.998
     },
     {
-      "id": 362,
+      "id": 364,
       "text": "Not this time. Good.",
       "speaker": "Speaker0",
       "start": 557.95,
@@ -10846,7 +10866,7 @@
       "confidence": 0.976
     },
     {
-      "id": 363,
+      "id": 365,
       "text": "What were you thinking about?",
       "speaker": "Speaker1",
       "start": 560.16,
@@ -10886,7 +10906,7 @@
       "confidence": 0.972
     },
     {
-      "id": 364,
+      "id": 366,
       "text": "How much phones have changed our lives?",
       "speaker": "Speaker1",
       "start": 561.28,
@@ -10938,7 +10958,7 @@
       "confidence": 0.972
     },
     {
-      "id": 365,
+      "id": 367,
       "text": "That's true.",
       "speaker": "Speaker1",
       "start": 563.76,
@@ -10960,7 +10980,7 @@
       "confidence": 0.972
     },
     {
-      "id": 366,
+      "id": 368,
       "text": "Sometimes I forget how much I use mine.",
       "speaker": "Speaker1",
       "start": 564.24,
@@ -11018,7 +11038,7 @@
       "confidence": 0.972
     },
     {
-      "id": 367,
+      "id": 369,
       "text": "Same here.",
       "speaker": "Speaker1",
       "start": 566.24,
@@ -11040,7 +11060,7 @@
       "confidence": 0.972
     },
     {
-      "id": 368,
+      "id": 370,
       "text": "From the moment I wake up To the moment I go to sleep.",
       "speaker": "Speaker1",
       "start": 566.88,
@@ -11128,7 +11148,7 @@
       "confidence": 0.972
     },
     {
-      "id": 369,
+      "id": 371,
       "text": "Exactly.",
       "speaker": "Speaker1",
       "start": 569.6,
@@ -11144,7 +11164,7 @@
       "confidence": 0.972
     },
     {
-      "id": 370,
+      "id": 372,
       "text": "My phone is basically my assistant.",
       "speaker": "Speaker1",
       "start": 570.4,
@@ -11190,7 +11210,7 @@
       "confidence": 0.972
     },
     {
-      "id": 371,
+      "id": 373,
       "text": "Mine too.",
       "speaker": "Speaker1",
       "start": 572.4,
@@ -11212,7 +11232,7 @@
       "confidence": 0.972
     },
     {
-      "id": 372,
+      "id": 374,
       "text": "It reminds me of meetings.",
       "speaker": "Speaker1",
       "start": 573.04,
@@ -11252,7 +11272,7 @@
       "confidence": 0.972
     },
     {
-      "id": 373,
+      "id": 375,
       "text": "Mine reminds me of birth days.",
       "speaker": "Speaker1",
       "start": 574.4,
@@ -11298,7 +11318,7 @@
       "confidence": 0.972
     },
     {
-      "id": 374,
+      "id": 376,
       "text": "Mine reminds me to drink water.",
       "speaker": "Speaker1",
       "start": 575.75,
@@ -11344,7 +11364,7 @@
       "confidence": 0.972
     },
     {
-      "id": 375,
+      "id": 377,
       "text": "Really?",
       "speaker": "Speaker1",
       "start": 577.66,
@@ -11360,7 +11380,7 @@
       "confidence": 0.972
     },
     {
-      "id": 376,
+      "id": 378,
       "text": "And I still ignore it.",
       "speaker": "Speaker1",
       "start": 577.89,
@@ -11400,7 +11420,7 @@
       "confidence": 0.972
     },
     {
-      "id": 377,
+      "id": 379,
       "text": "That's funny.",
       "speaker": "Speaker0",
       "start": 580.59,
@@ -11422,7 +11442,7 @@
       "confidence": 0.99
     },
     {
-      "id": 378,
+      "id": 380,
       "text": "Do you think you could live without your phone for one week?",
       "speaker": "Speaker0",
       "start": 581.3,
@@ -11504,7 +11524,7 @@
       "confidence": 0.99
     },
     {
-      "id": 379,
+      "id": 381,
       "text": "One week?",
       "speaker": "Speaker0",
       "start": 584.26,
@@ -11526,7 +11546,7 @@
       "confidence": 0.99
     },
     {
-      "id": 380,
+      "id": 382,
       "text": "Yes.",
       "speaker": "Speaker0",
       "start": 585.07,
@@ -11542,7 +11562,7 @@
       "confidence": 0.99
     },
     {
-      "id": 381,
+      "id": 383,
       "text": "Honestly?",
       "speaker": "Speaker0",
       "start": 585.62,
@@ -11558,7 +11578,7 @@
       "confidence": 0.99
     },
     {
-      "id": 382,
+      "id": 384,
       "text": "Yes.",
       "speaker": "Speaker0",
       "start": 586.35,
@@ -11574,7 +11594,7 @@
       "confidence": 0.99
     },
     {
-      "id": 383,
+      "id": 385,
       "text": "It would be difficult.",
       "speaker": "Speaker0",
       "start": 586.75,
@@ -11608,7 +11628,7 @@
       "confidence": 0.99
     },
     {
-      "id": 384,
+      "id": 386,
       "text": "Me too.",
       "speaker": "Speaker0",
       "start": 587.78,
@@ -11630,7 +11650,7 @@
       "confidence": 0.99
     },
     {
-      "id": 385,
+      "id": 387,
       "text": "But I think I could do it.",
       "speaker": "Speaker0",
       "start": 588.42,
@@ -11682,7 +11702,7 @@
       "confidence": 0.99
     },
     {
-      "id": 386,
+      "id": 388,
       "text": "Really?",
       "speaker": "Speaker0",
       "start": 590.18,
@@ -11698,7 +11718,7 @@
       "confidence": 0.99
     },
     {
-      "id": 387,
+      "id": 389,
       "text": "Maybe?",
       "speaker": "Speaker0",
       "start": 590.74,
@@ -11714,7 +11734,7 @@
       "confidence": 0.99
     },
     {
-      "id": 388,
+      "id": 390,
       "text": "That doesn't sound confident.",
       "speaker": "Speaker0",
       "start": 591.38,
@@ -11748,7 +11768,7 @@
       "confidence": 0.99
     },
     {
-      "id": 389,
+      "id": 391,
       "text": "Because I'm not confident.",
       "speaker": "Speaker0",
       "start": 592.74,
@@ -11782,7 +11802,7 @@
       "confidence": 0.99
     },
     {
-      "id": 390,
+      "id": 392,
       "text": "Fair enough.",
       "speaker": "Speaker1",
       "start": 595.22,
@@ -11804,7 +11824,7 @@
       "confidence": 0.998
     },
     {
-      "id": 391,
+      "id": 393,
       "text": "What about you?",
       "speaker": "Speaker1",
       "start": 595.94,
@@ -11832,7 +11852,7 @@
       "confidence": 0.998
     },
     {
-      "id": 392,
+      "id": 394,
       "text": "One week without my phone sounds impossible.",
       "speaker": "Speaker1",
       "start": 596.74,
@@ -11884,7 +11904,7 @@
       "confidence": 0.998
     },
     {
-      "id": 393,
+      "id": 395,
       "text": "Impossible?",
       "speaker": "Speaker1",
       "start": 599.7,
@@ -11900,7 +11920,7 @@
       "confidence": 0.998
     },
     {
-      "id": 394,
+      "id": 396,
       "text": "Almost.",
       "speaker": "Speaker1",
       "start": 600.58,
@@ -11916,7 +11936,7 @@
       "confidence": 0.993
     },
     {
-      "id": 395,
+      "id": 397,
       "text": "Why?",
       "speaker": "Speaker1",
       "start": 601.37,
@@ -11932,7 +11952,7 @@
       "confidence": 0.993
     },
     {
-      "id": 396,
+      "id": 398,
       "text": "Because everything is on my phone.",
       "speaker": "Speaker1",
       "start": 601.61,
@@ -11978,7 +11998,7 @@
       "confidence": 0.993
     },
     {
-      "id": 397,
+      "id": 399,
       "text": "That's true.",
       "speaker": "Speaker1",
       "start": 603.61,
@@ -12000,7 +12020,7 @@
       "confidence": 0.993
     },
     {
-      "id": 398,
+      "id": 400,
       "text": "Messages, photos, work, maps, music.",
       "speaker": "Speaker1",
       "start": 604.33,
@@ -12040,7 +12060,7 @@
       "confidence": 0.996
     },
     {
-      "id": 399,
+      "id": 401,
       "text": "I understand.",
       "speaker": "Speaker0",
       "start": 608.88,
@@ -12062,7 +12082,7 @@
       "confidence": 0.994
     },
     {
-      "id": 400,
+      "id": 402,
       "text": "But maybe that's a problem.",
       "speaker": "Speaker0",
       "start": 609.68,
@@ -12102,7 +12122,7 @@
       "confidence": 0.994
     },
     {
-      "id": 401,
+      "id": 403,
       "text": "What do you mean?",
       "speaker": "Speaker0",
       "start": 611.37,
@@ -12136,7 +12156,7 @@
       "confidence": 0.994
     },
     {
-      "id": 402,
+      "id": 404,
       "text": "Maybe we're a little too dependent on our phones.",
       "speaker": "Speaker0",
       "start": 612.25,
@@ -12200,7 +12220,7 @@
       "confidence": 0.994
     },
     {
-      "id": 403,
+      "id": 405,
       "text": "I think many people would agree.",
       "speaker": "Speaker0",
       "start": 614.99,
@@ -12246,7 +12266,7 @@
       "confidence": 0.994
     },
     {
-      "id": 404,
+      "id": 406,
       "text": "Including us.",
       "speaker": "Speaker0",
       "start": 616.75,
@@ -12268,7 +12288,7 @@
       "confidence": 0.994
     },
     {
-      "id": 405,
+      "id": 407,
       "text": "Especially us.",
       "speaker": "Speaker0",
       "start": 617.79,
@@ -12290,7 +12310,7 @@
       "confidence": 0.994
     },
     {
-      "id": 406,
+      "id": 408,
       "text": "You're right.",
       "speaker": "Speaker0",
       "start": 620.43,
@@ -12312,7 +12332,7 @@
       "confidence": 0.996
     },
     {
-      "id": 407,
+      "id": 409,
       "text": "Do you think phones make life better?",
       "speaker": "Speaker0",
       "start": 620.99,
@@ -12364,7 +12384,7 @@
       "confidence": 0.996
     },
     {
-      "id": 408,
+      "id": 410,
       "text": "Overall?",
       "speaker": "Speaker0",
       "start": 622.83,
@@ -12380,7 +12400,7 @@
       "confidence": 0.996
     },
     {
-      "id": 409,
+      "id": 411,
       "text": "Yes.",
       "speaker": "Speaker0",
       "start": 623.47,
@@ -12396,7 +12416,7 @@
       "confidence": 0.996
     },
     {
-      "id": 410,
+      "id": 412,
       "text": "Definitely.",
       "speaker": "Speaker0",
       "start": 623.87,
@@ -12412,7 +12432,7 @@
       "confidence": 0.996
     },
     {
-      "id": 411,
+      "id": 413,
       "text": "I agree.",
       "speaker": "Speaker0",
       "start": 624.51,
@@ -12434,7 +12454,7 @@
       "confidence": 0.996
     },
     {
-      "id": 412,
+      "id": 414,
       "text": "We can talk to friends anywhere.",
       "speaker": "Speaker0",
       "start": 625.07,
@@ -12480,7 +12500,7 @@
       "confidence": 0.996
     },
     {
-      "id": 413,
+      "id": 415,
       "text": "Stay connected with family.",
       "speaker": "Speaker0",
       "start": 626.67,
@@ -12514,7 +12534,7 @@
       "confidence": 0.996
     },
     {
-      "id": 414,
+      "id": 416,
       "text": "Learn new things.",
       "speaker": "Speaker0",
       "start": 628.11,
@@ -12542,7 +12562,7 @@
       "confidence": 0.996
     },
     {
-      "id": 415,
+      "id": 417,
       "text": "Take photos.",
       "speaker": "Speaker0",
       "start": 629.29,
@@ -12564,7 +12584,7 @@
       "confidence": 0.996
     },
     {
-      "id": 416,
+      "id": 418,
       "text": "Travel more easily.",
       "speaker": "Speaker0",
       "start": 630.33,
@@ -12592,7 +12612,7 @@
       "confidence": 0.996
     },
     {
-      "id": 417,
+      "id": 419,
       "text": "There are many benefits.",
       "speaker": "Speaker0",
       "start": 631.45,
@@ -12626,7 +12646,7 @@
       "confidence": 0.996
     },
     {
-      "id": 418,
+      "id": 420,
       "text": "Absolutely.",
       "speaker": "Speaker0",
       "start": 632.73,
@@ -12642,7 +12662,7 @@
       "confidence": 0.996
     },
     {
-      "id": 419,
+      "id": 421,
       "text": "But balance is important.",
       "speaker": "Speaker0",
       "start": 633.61,
@@ -12676,7 +12696,7 @@
       "confidence": 0.984
     },
     {
-      "id": 420,
+      "id": 422,
       "text": "Very important.",
       "speaker": "Speaker0",
       "start": 635.37,
@@ -12698,7 +12718,7 @@
       "confidence": 0.984
     },
     {
-      "id": 421,
+      "id": 423,
       "text": "Sometimes we need to put our phones down.",
       "speaker": "Speaker0",
       "start": 636.49,
@@ -12756,7 +12776,7 @@
       "confidence": 0.984
     },
     {
-      "id": 422,
+      "id": 424,
       "text": "And enjoy real life.",
       "speaker": "Speaker0",
       "start": 638.57,
@@ -12790,7 +12810,7 @@
       "confidence": 0.984
     },
     {
-      "id": 423,
+      "id": 425,
       "text": "Exactly.",
       "speaker": "Speaker0",
       "start": 639.92,
@@ -12806,7 +12826,7 @@
       "confidence": 0.984
     },
     {
-      "id": 424,
+      "id": 426,
       "text": "Spend time with friends.",
       "speaker": "Speaker0",
       "start": 640.97,
@@ -12840,7 +12860,7 @@
       "confidence": 0.995
     },
     {
-      "id": 425,
+      "id": 427,
       "text": "Talk to family.",
       "speaker": "Speaker0",
       "start": 642.25,
@@ -12868,7 +12888,7 @@
       "confidence": 0.995
     },
     {
-      "id": 426,
+      "id": 428,
       "text": "Go outside.",
       "speaker": "Speaker0",
       "start": 643.45,
@@ -12890,7 +12910,7 @@
       "confidence": 0.995
     },
     {
-      "id": 427,
+      "id": 429,
       "text": "Take a walk.",
       "speaker": "Speaker0",
       "start": 644.4,
@@ -12918,7 +12938,7 @@
       "confidence": 0.995
     },
     {
-      "id": 428,
+      "id": 430,
       "text": "Or eat pizza.",
       "speaker": "Speaker0",
       "start": 645.42,
@@ -12946,7 +12966,7 @@
       "confidence": 0.995
     },
     {
-      "id": 429,
+      "id": 431,
       "text": "Dave.",
       "speaker": "Speaker0",
       "start": 646.54,
@@ -12962,7 +12982,7 @@
       "confidence": 0.995
     },
     {
-      "id": 430,
+      "id": 432,
       "text": "What?",
       "speaker": "Speaker0",
       "start": 647.18,
@@ -12978,7 +12998,7 @@
       "confidence": 0.995
     },
     {
-      "id": 431,
+      "id": 433,
       "text": "You always find a way to mention food.",
       "speaker": "Speaker0",
       "start": 647.58,
@@ -13036,7 +13056,7 @@
       "confidence": 0.995
     },
     {
-      "id": 432,
+      "id": 434,
       "text": "It's a gift.",
       "speaker": "Speaker0",
       "start": 649.74,
@@ -13064,7 +13084,7 @@
       "confidence": 0.995
     },
     {
-      "id": 433,
+      "id": 435,
       "text": "A very strange gift.",
       "speaker": "Speaker0",
       "start": 650.54,
@@ -13098,7 +13118,7 @@
       "confidence": 0.995
     },
     {
-      "id": 434,
+      "id": 436,
       "text": "Thank you.",
       "speaker": "Speaker0",
       "start": 652.22,
@@ -13120,7 +13140,7 @@
       "confidence": 0.995
     },
     {
-      "id": 435,
+      "id": 437,
       "text": "That wasn't a compliment.",
       "speaker": "Speaker0",
       "start": 652.78,
@@ -13154,7 +13174,7 @@
       "confidence": 0.995
     },
     {
-      "id": 436,
+      "id": 438,
       "text": "I know.",
       "speaker": "Speaker0",
       "start": 654.06,
@@ -13176,7 +13196,7 @@
       "confidence": 0.995
     },
     {
-      "id": 437,
+      "id": 439,
       "text": "If you had one piece of advice, what would it be?",
       "speaker": "Speaker0",
       "start": 654.54,
@@ -13252,7 +13272,7 @@
       "confidence": 0.995
     },
     {
-      "id": 438,
+      "id": 440,
       "text": "Use your phone.",
       "speaker": "Speaker0",
       "start": 657.18,
@@ -13280,7 +13300,7 @@
       "confidence": 0.995
     },
     {
-      "id": 439,
+      "id": 441,
       "text": "Don't let your phone use you.",
       "speaker": "Speaker0",
       "start": 658.06,
@@ -13326,7 +13346,7 @@
       "confidence": 0.995
     },
     {
-      "id": 440,
+      "id": 442,
       "text": "Wow.",
       "speaker": "Speaker0",
       "start": 659.98,
@@ -13342,7 +13362,7 @@
       "confidence": 0.995
     },
     {
-      "id": 441,
+      "id": 443,
       "text": "That's actually very good.",
       "speaker": "Speaker0",
       "start": 660.75,
@@ -13376,7 +13396,7 @@
       "confidence": 0.995
     },
     {
-      "id": 442,
+      "id": 444,
       "text": "I'm surprised too.",
       "speaker": "Speaker0",
       "start": 662.2,
@@ -13404,7 +13424,7 @@
       "confidence": 0.995
     },
     {
-      "id": 443,
+      "id": 445,
       "text": "What about this?",
       "speaker": "Speaker1",
       "start": 663.71,
@@ -13432,7 +13452,7 @@
       "confidence": 0.991
     },
     {
-      "id": 444,
+      "id": 446,
       "text": "What?",
       "speaker": "Speaker1",
       "start": 664.51,
@@ -13448,7 +13468,7 @@
       "confidence": 0.991
     },
     {
-      "id": 445,
+      "id": 447,
       "text": "Enjoy technology, but don't forget real life.",
       "speaker": "Speaker1",
       "start": 664.91,
@@ -13500,7 +13520,7 @@
       "confidence": 0.991
     },
     {
-      "id": 446,
+      "id": 448,
       "text": "I love that.",
       "speaker": "Speaker1",
       "start": 667.96,
@@ -13528,7 +13548,7 @@
       "confidence": 0.991
     },
     {
-      "id": 447,
+      "id": 449,
       "text": "Thank you.",
       "speaker": "Speaker1",
       "start": 668.91,
@@ -13550,7 +13570,7 @@
       "confidence": 0.991
     },
     {
-      "id": 448,
+      "id": 450,
       "text": "You know what's funny?",
       "speaker": "Speaker1",
       "start": 669.48,
@@ -13584,7 +13604,7 @@
       "confidence": 0.991
     },
     {
-      "id": 449,
+      "id": 451,
       "text": "What?",
       "speaker": "Speaker1",
       "start": 670.36,
@@ -13600,7 +13620,7 @@
       "confidence": 0.991
     },
     {
-      "id": 450,
+      "id": 452,
       "text": "We spent an entire conversation",
       "speaker": "Speaker1",
       "start": 670.75,
@@ -13640,7 +13660,7 @@
       "confidence": 0.991
     },
     {
-      "id": 451,
+      "id": 453,
       "text": "talking about phones.",
       "speaker": "Speaker0",
       "start": 673.0,
@@ -13668,7 +13688,7 @@
       "confidence": 0.999
     },
     {
-      "id": 452,
+      "id": 454,
       "text": "And we probably checked our phones during the conversation.",
       "speaker": "Speaker0",
       "start": 674.36,
@@ -13732,7 +13752,7 @@
       "confidence": 0.999
     },
     {
-      "id": 453,
+      "id": 455,
       "text": "Probably.",
       "speaker": "Speaker0",
       "start": 677.48,
@@ -13748,7 +13768,7 @@
       "confidence": 0.999
     },
     {
-      "id": 454,
+      "id": 456,
       "text": "Actually What?",
       "speaker": "Speaker0",
       "start": 678.44,
@@ -13770,7 +13790,7 @@
       "confidence": 0.998
     },
     {
-      "id": 455,
+      "id": 457,
       "text": "I checked mine twice.",
       "speaker": "Speaker0",
       "start": 679.48,
@@ -13804,7 +13824,7 @@
       "confidence": 0.998
     },
     {
-      "id": 456,
+      "id": 458,
       "text": "Only twice?",
       "speaker": "Speaker0",
       "start": 680.84,
@@ -13826,7 +13846,7 @@
       "confidence": 0.998
     },
     {
-      "id": 457,
+      "id": 459,
       "text": "Yes.",
       "speaker": "Speaker0",
       "start": 681.88,
@@ -13842,7 +13862,7 @@
       "confidence": 0.998
     },
     {
-      "id": 458,
+      "id": 460,
       "text": "I'm proud of you.",
       "speaker": "Speaker0",
       "start": 682.44,
@@ -13876,7 +13896,7 @@
       "confidence": 0.998
     },
     {
-      "id": 459,
+      "id": 461,
       "text": "Thank you.",
       "speaker": "Speaker0",
       "start": 683.32,
@@ -13898,7 +13918,7 @@
       "confidence": 0.998
     },
     {
-      "id": 460,
+      "id": 462,
       "text": "How many times did you check yours?",
       "speaker": "Speaker0",
       "start": 684.2,
@@ -13950,7 +13970,7 @@
       "confidence": 0.998
     },
     {
-      "id": 461,
+      "id": 463,
       "text": "Let's not talk about that.",
       "speaker": "Speaker0",
       "start": 686.2,
@@ -13990,7 +14010,7 @@
       "confidence": 0.998
     },
     {
-      "id": 462,
+      "id": 464,
       "text": "That's what I thought.",
       "speaker": "Speaker0",
       "start": 689.57,
@@ -14024,7 +14044,7 @@
       "confidence": 0.981
     },
     {
-      "id": 463,
+      "id": 465,
       "text": "Some secrets should remain secret.",
       "speaker": "Speaker0",
       "start": 690.61,
@@ -14064,7 +14084,7 @@
       "confidence": 0.981
     },
     {
-      "id": 464,
+      "id": 466,
       "text": "Fair enough.",
       "speaker": "Speaker0",
       "start": 692.68,
@@ -14086,7 +14106,7 @@
       "confidence": 0.981
     },
     {
-      "id": 465,
+      "id": 467,
       "text": "Well, this was fun.",
       "speaker": "Speaker0",
       "start": 693.4,
@@ -14120,7 +14140,7 @@
       "confidence": 0.981
     },
     {
-      "id": 466,
+      "id": 468,
       "text": "It really was.",
       "speaker": "Speaker0",
       "start": 694.45,
@@ -14148,7 +14168,7 @@
       "confidence": 0.981
     },
     {
-      "id": 467,
+      "id": 469,
       "text": "And now I suddenly want to check my phone.",
       "speaker": "Speaker0",
       "start": 695.49,
@@ -14212,7 +14232,7 @@
       "confidence": 0.981
     },
     {
-      "id": 468,
+      "id": 470,
       "text": "Me too.",
       "speaker": "Speaker0",
       "start": 697.8,
@@ -14234,7 +14254,7 @@
       "confidence": 0.981
     },
     {
-      "id": 469,
+      "id": 471,
       "text": "We're hopeless.",
       "speaker": "Speaker0",
       "start": 698.37,
@@ -14256,7 +14276,7 @@
       "confidence": 0.981
     },
     {
-      "id": 470,
+      "id": 472,
       "text": "A little.",
       "speaker": "Speaker0",
       "start": 699.25,
@@ -14278,7 +14298,7 @@
       "confidence": 0.981
     },
     {
-      "id": 471,
+      "id": 473,
       "text": "Thank you everyone for listening.",
       "speaker": "Speaker0",
       "start": 699.88,
@@ -14318,7 +14338,7 @@
       "confidence": 0.981
     },
     {
-      "id": 472,
+      "id": 474,
       "text": "Thank you so much for listening today.",
       "speaker": "Speaker0",
       "start": 701.64,
@@ -14370,7 +14390,7 @@
       "confidence": 0.981
     },
     {
-      "id": 473,
+      "id": 475,
       "text": "Keep practicing your English every day.",
       "speaker": "Speaker0",
       "start": 703.84,
@@ -14416,7 +14436,7 @@
       "confidence": 0.981
     },
     {
-      "id": 474,
+      "id": 476,
       "text": "Don't forget to subscribe, like, and comment.",
       "speaker": "Speaker0",
       "start": 705.76,
@@ -14468,7 +14488,7 @@
       "confidence": 0.981
     },
     {
-      "id": 475,
+      "id": 477,
       "text": "See you in the next lesson.",
       "speaker": "Speaker0",
       "start": 708.48,
@@ -14528,14 +14548,14 @@
     "matchedSegments": 216,
     "totalDuration": 709.9
   },
-  "repairedAt": "2026-07-23T06:33:07.721335Z",
+  "repairedAt": "2026-07-23T07:58:35.777771Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 216,
-    "afterSegments": 475,
-    "beforeAvgWords": 7.5,
+    "beforeSegments": 475,
+    "afterSegments": 477,
+    "beforeAvgWords": 3.4,
     "afterAvgWords": 3.4,
-    "merged": -259,
+    "merged": -2,
     "danglingFragments": 0
   }
 }

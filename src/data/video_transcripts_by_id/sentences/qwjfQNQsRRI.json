@@ -1,5 +1,5 @@
 {
-  "text": "Hello, young adventurers. Tonight, I have a mystery for you. Shh. Can you hear that? The forest is whispering a secret. Welcome to the case of the whispering woods. Stay till the end, because you'll be the detective helping us solve this curious case. Once upon a time, two curious siblings, Emma and Jack, went camping with their parents at the edge of an old forest. As a campfire crackled and the stars sparkled above, Emma froze. Jack, did you hear that? A soft whisper drifted through the trees, Find the glowing stone. Jack's eyes grew wide. Who said that? But when they looked around, no one was there. Just the quiet forest and the flickering fire. That night, while their parents slept, Emma and Jack spotted a trail of glowing fireflies. They twinkled like tiny lanterns, leading deeper into the woods. Do you think they're showing us something? Emma asked. Jack gulped but nodded. Only one way to find out. Step by step, the children followed the glowing trail. The whispers grew louder. Find the stone! Glowing stone. The forest seemed alive holding its breath, waiting for them. At last, they reached a small clearing. There, half hidden under moss, stood a giant stone covered in strange carvings. As Emma touched it, the carvings began to glow with a soft, golden light. The whispers surrounded them but then Jack noticed something. Wait. It's not a ghost. It's a wind. Sure enough, tiny holes in the stone made the air whistle and sounding just like a voice. The whispering woods weren't haunted at all. It was nature's music, waiting to be discovered. Emma smiled. So the forest wasn't trying to scare us. It was inviting us to listen. The children hurried back to their tent, safe and excited. From then on, they learned that mysteries don't always mean dangerous sometimes they readjust secrets of nature waiting for brave hearts to explore. And that young detectives was a case of the whispering woods. Did you solve the mystery before Emma and Jack? Tell me in the comments below. Don't forget to like this video, share it with your friends, and subscribe for more curious adventures every week. Until next time stay curious, and keep listening. Because the world is full of secrets.",
+  "text": "Hello, young adventurers. Tonight, I have a mystery for you. Shh. Can you hear that? The forest is whispering a secret. Welcome to the case of the whispering woods. Stay till the end, because you'll be the detective helping us solve this curious case. once upon a time two curious siblings emma and jack went camping with their parents at the edge of an old forest As a campfire crackled and the stars sparkled above, Emma froze. Jack, did you hear that? A soft whisper drifted through the trees, Find the glowing stone. Jack's eyes grew wide. Who said that? But when they looked around, no one was there. Just the quiet forest and the flickering fire. That night, while their parents slept, Emma and Jack spotted a trail of glowing fireflies. They twinkled like tiny lanterns, leading deeper into the woods. Do you think they're showing us something? Emma asked. Jack gulped but nodded. Only one way to find out. Step by step, the children followed the glowing trail. The whispers grew louder. Find the stone! Glowing stone. The forest seemed alive holding its breath, waiting for them. At last, they reached a small clearing. There, half hidden under moss, stood a giant stone covered in strange carvings. As Emma touched it, the carvings began to glow with a soft, golden light. The whispers surrounded them but then Jack noticed something. Wait. It's not a ghost. It's a wind. sure enough tiny holes in the stone made the air whistle and sounding just like a voice The whispering woods weren't haunted at all. It was nature's music, waiting to be discovered. Emma smiled. So the forest wasn't trying to scare us. It was inviting us to listen. The children hurried back to their tent, safe and excited. from then on they learned that mysteries don't always mean dangerous sometimes they readjust secrets of nature waiting for brave hearts to explore And that young detectives was a case of the whispering woods. Did you solve the mystery before Emma and Jack? Tell me in the comments below. don't forget to like this video share it with your friends and subscribe for more curious adventures every week Until next time stay curious, and keep listening. Because the world is full of secrets.",
   "segments": [
     {
       "id": 1,
@@ -337,10 +337,10 @@
     },
     {
       "id": 8,
-      "text": "Once upon a time, two curious siblings, Emma and Jack, went camping with their parents at the edge of an old forest.",
+      "text": "once upon a time two curious siblings emma",
       "speaker": "Speaker0",
       "start": 20.86,
-      "duration": 9.46,
+      "duration": 4.41,
       "words": [
         {
           "word": "once",
@@ -389,7 +389,17 @@
           "start": 24.86,
           "end": 25.27,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 9,
+      "text": "and jack went camping with their parents at the edge of an old forest",
+      "speaker": "Speaker0",
+      "start": 25.27,
+      "duration": 5.05,
+      "words": [
         {
           "word": "and",
           "start": 25.27,
@@ -478,7 +488,7 @@
       "confidence": 1.0
     },
     {
-      "id": 9,
+      "id": 10,
       "text": "As a campfire crackled and the stars sparkled above, Emma froze.",
       "speaker": "Speaker0",
       "start": 30.79,
@@ -554,7 +564,7 @@
       "confidence": 0.946
     },
     {
-      "id": 10,
+      "id": 11,
       "text": "Jack, did you hear that?",
       "speaker": "Speaker0",
       "start": 36.39,
@@ -594,7 +604,7 @@
       "confidence": 0.957
     },
     {
-      "id": 11,
+      "id": 12,
       "text": "A soft whisper drifted through the trees, Find the glowing stone.",
       "speaker": "Speaker0",
       "start": 38.55,
@@ -670,7 +680,7 @@
       "confidence": 0.935
     },
     {
-      "id": 12,
+      "id": 13,
       "text": "Jack's eyes grew wide.",
       "speaker": "Speaker0",
       "start": 44.09,
@@ -704,7 +714,7 @@
       "confidence": 0.998
     },
     {
-      "id": 13,
+      "id": 14,
       "text": "Who said that?",
       "speaker": "Speaker0",
       "start": 45.94,
@@ -732,7 +742,7 @@
       "confidence": 0.998
     },
     {
-      "id": 14,
+      "id": 15,
       "text": "But when they looked around, no one was there.",
       "speaker": "Speaker0",
       "start": 47.3,
@@ -796,7 +806,7 @@
       "confidence": 0.984
     },
     {
-      "id": 15,
+      "id": 16,
       "text": "Just the quiet forest and the flickering fire.",
       "speaker": "Speaker0",
       "start": 51.14,
@@ -854,7 +864,7 @@
       "confidence": 0.984
     },
     {
-      "id": 16,
+      "id": 17,
       "text": "That night, while their parents slept, Emma and Jack spotted a trail of glowing fireflies.",
       "speaker": "Speaker0",
       "start": 54.82,
@@ -954,7 +964,7 @@
       "confidence": 1.0
     },
     {
-      "id": 17,
+      "id": 18,
       "text": "They twinkled like tiny lanterns, leading deeper into the woods.",
       "speaker": "Speaker0",
       "start": 62.25,
@@ -1024,7 +1034,7 @@
       "confidence": 0.99
     },
     {
-      "id": 18,
+      "id": 19,
       "text": "Do you think they're showing us something?",
       "speaker": "Speaker0",
       "start": 67.37,
@@ -1076,7 +1086,7 @@
       "confidence": 0.982
     },
     {
-      "id": 19,
+      "id": 20,
       "text": "Emma asked.",
       "speaker": "Speaker0",
       "start": 70.17,
@@ -1098,7 +1108,7 @@
       "confidence": 0.982
     },
     {
-      "id": 20,
+      "id": 21,
       "text": "Jack gulped but nodded.",
       "speaker": "Speaker0",
       "start": 71.37,
@@ -1132,7 +1142,7 @@
       "confidence": 0.982
     },
     {
-      "id": 21,
+      "id": 22,
       "text": "Only one way to find out.",
       "speaker": "Speaker0",
       "start": 73.58,
@@ -1178,7 +1188,7 @@
       "confidence": 0.981
     },
     {
-      "id": 22,
+      "id": 23,
       "text": "Step by step, the children followed the glowing trail.",
       "speaker": "Speaker0",
       "start": 76.38,
@@ -1242,7 +1252,7 @@
       "confidence": 0.983
     },
     {
-      "id": 23,
+      "id": 24,
       "text": "The whispers grew louder.",
       "speaker": "Speaker0",
       "start": 80.78,
@@ -1276,7 +1286,7 @@
       "confidence": 0.971
     },
     {
-      "id": 24,
+      "id": 25,
       "text": "Find the stone!",
       "speaker": "Speaker0",
       "start": 83.02,
@@ -1304,7 +1314,7 @@
       "confidence": 0.877
     },
     {
-      "id": 25,
+      "id": 26,
       "text": "Glowing stone.",
       "speaker": "Speaker0",
       "start": 84.69,
@@ -1326,11 +1336,11 @@
       "confidence": 0.882
     },
     {
-      "id": 26,
-      "text": "The forest seemed alive holding its breath, waiting for them. At last, they reached a small clearing.",
+      "id": 27,
+      "text": "The forest seemed alive holding its breath, waiting for them.",
       "speaker": "Speaker0",
       "start": 86.04,
-      "duration": 7.94,
+      "duration": 4.82,
       "words": [
         {
           "word": "the",
@@ -1391,7 +1401,17 @@
           "start": 90.36,
           "end": 90.86,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 28,
+      "text": "At last, they reached a small clearing.",
+      "speaker": "Speaker0",
+      "start": 91.0,
+      "duration": 2.98,
+      "words": [
         {
           "word": "at",
           "start": 91.0,
@@ -1438,7 +1458,7 @@
       "confidence": 0.996
     },
     {
-      "id": 27,
+      "id": 29,
       "text": "There, half hidden under moss, stood a giant stone covered in strange carvings.",
       "speaker": "Speaker0",
       "start": 94.36,
@@ -1526,7 +1546,7 @@
       "confidence": 1.0
     },
     {
-      "id": 28,
+      "id": 30,
       "text": "As Emma touched it, the carvings began to glow with a soft, golden light.",
       "speaker": "Speaker0",
       "start": 101.05,
@@ -1620,7 +1640,7 @@
       "confidence": 0.989
     },
     {
-      "id": 29,
+      "id": 31,
       "text": "The whispers surrounded them but then Jack noticed something.",
       "speaker": "Speaker0",
       "start": 107.2,
@@ -1684,7 +1704,7 @@
       "confidence": 0.978
     },
     {
-      "id": 30,
+      "id": 32,
       "text": "Wait.",
       "speaker": "Speaker0",
       "start": 111.6,
@@ -1700,7 +1720,7 @@
       "confidence": 0.978
     },
     {
-      "id": 31,
+      "id": 33,
       "text": "It's not a ghost.",
       "speaker": "Speaker0",
       "start": 112.33,
@@ -1734,7 +1754,7 @@
       "confidence": 0.978
     },
     {
-      "id": 32,
+      "id": 34,
       "text": "It's a wind.",
       "speaker": "Speaker0",
       "start": 113.86,
@@ -1762,11 +1782,11 @@
       "confidence": 0.978
     },
     {
-      "id": 33,
-      "text": "Sure enough, tiny holes in the stone made the air whistle and sounding just like a voice.",
+      "id": 35,
+      "text": "sure enough tiny holes in the stone made the air whistle",
       "speaker": "Speaker0",
       "start": 115.22,
-      "duration": 7.62,
+      "duration": 4.4,
       "words": [
         {
           "word": "sure",
@@ -1833,7 +1853,17 @@
           "start": 119.22,
           "end": 119.62,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.946
+    },
+    {
+      "id": 36,
+      "text": "and sounding just like a voice",
+      "speaker": "Speaker0",
+      "start": 119.62,
+      "duration": 3.22,
+      "words": [
         {
           "word": "and",
           "start": 119.62,
@@ -1874,7 +1904,7 @@
       "confidence": 0.946
     },
     {
-      "id": 34,
+      "id": 37,
       "text": "The whispering woods weren't haunted at all.",
       "speaker": "Speaker0",
       "start": 123.14,
@@ -1926,7 +1956,7 @@
       "confidence": 0.978
     },
     {
-      "id": 35,
+      "id": 38,
       "text": "It was nature's music, waiting to be discovered.",
       "speaker": "Speaker0",
       "start": 126.42,
@@ -1984,7 +2014,7 @@
       "confidence": 0.987
     },
     {
-      "id": 36,
+      "id": 39,
       "text": "Emma smiled.",
       "speaker": "Speaker0",
       "start": 130.51,
@@ -2006,7 +2036,7 @@
       "confidence": 0.974
     },
     {
-      "id": 37,
+      "id": 40,
       "text": "So the forest wasn't trying to scare us.",
       "speaker": "Speaker0",
       "start": 131.88,
@@ -2064,7 +2094,7 @@
       "confidence": 0.994
     },
     {
-      "id": 38,
+      "id": 41,
       "text": "It was inviting us to listen.",
       "speaker": "Speaker0",
       "start": 135.07,
@@ -2110,7 +2140,7 @@
       "confidence": 0.994
     },
     {
-      "id": 39,
+      "id": 42,
       "text": "The children hurried back to their tent, safe and excited.",
       "speaker": "Speaker0",
       "start": 137.88,
@@ -2180,11 +2210,11 @@
       "confidence": 0.998
     },
     {
-      "id": 40,
-      "text": "From then on, they learned that mysteries don't always mean dangerous sometimes they readjust secrets of nature waiting for brave hearts to explore.",
+      "id": 43,
+      "text": "from then on they learned",
       "speaker": "Speaker0",
       "start": 142.69,
-      "duration": 10.18,
+      "duration": 1.76,
       "words": [
         {
           "word": "from",
@@ -2215,7 +2245,17 @@
           "start": 144.13,
           "end": 144.45,
           "confidence": 0.986
-        },
+        }
+      ],
+      "confidence": 0.943
+    },
+    {
+      "id": 44,
+      "text": "that mysteries don't always mean dangerous sometimes they readjust secrets of nature waiting for brave",
+      "speaker": "Speaker0",
+      "start": 144.45,
+      "duration": 7.2,
+      "words": [
         {
           "word": "that",
           "start": 144.45,
@@ -2305,7 +2345,17 @@
           "start": 151.25,
           "end": 151.65,
           "confidence": 0.996
-        },
+        }
+      ],
+      "confidence": 0.943
+    },
+    {
+      "id": 45,
+      "text": "hearts to explore",
+      "speaker": "Speaker0",
+      "start": 151.65,
+      "duration": 1.22,
+      "words": [
         {
           "word": "hearts",
           "start": 151.65,
@@ -2328,7 +2378,7 @@
       "confidence": 0.943
     },
     {
-      "id": 41,
+      "id": 46,
       "text": "And that young detectives was a case of the whispering woods.",
       "speaker": "Speaker0",
       "start": 153.17,
@@ -2404,7 +2454,7 @@
       "confidence": 0.919
     },
     {
-      "id": 42,
+      "id": 47,
       "text": "Did you solve the mystery before Emma and Jack?",
       "speaker": "Speaker0",
       "start": 157.94,
@@ -2468,7 +2518,7 @@
       "confidence": 0.972
     },
     {
-      "id": 43,
+      "id": 48,
       "text": "Tell me in the comments below.",
       "speaker": "Speaker0",
       "start": 161.38,
@@ -2514,11 +2564,11 @@
       "confidence": 0.972
     },
     {
-      "id": 44,
-      "text": "Don't forget to like this video, share it with your friends, and subscribe for more curious adventures every week.",
+      "id": 49,
+      "text": "don't forget to like this video share it with your friends",
       "speaker": "Speaker0",
       "start": 163.62,
-      "duration": 8.5,
+      "duration": 4.18,
       "words": [
         {
           "word": "don't",
@@ -2585,7 +2635,17 @@
           "start": 167.3,
           "end": 167.8,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 50,
+      "text": "and subscribe for more curious adventures every week",
+      "speaker": "Speaker0",
+      "start": 167.94,
+      "duration": 4.18,
+      "words": [
         {
           "word": "and",
           "start": 167.94,
@@ -2638,7 +2698,7 @@
       "confidence": 0.998
     },
     {
-      "id": 45,
+      "id": 51,
       "text": "Until next time stay curious, and keep listening.",
       "speaker": "Speaker0",
       "start": 172.39,
@@ -2696,7 +2756,7 @@
       "confidence": 0.996
     },
     {
-      "id": 46,
+      "id": 52,
       "text": "Because the world is full of secrets.",
       "speaker": "Speaker0",
       "start": 176.23,
@@ -2761,14 +2821,14 @@
     "matchedSegments": 51,
     "totalDuration": 178.81
   },
-  "repairedAt": "2026-07-23T06:33:07.756692Z",
+  "repairedAt": "2026-07-23T07:58:35.807027Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 51,
-    "afterSegments": 46,
-    "beforeAvgWords": 7.5,
-    "afterAvgWords": 8.3,
-    "merged": 5,
+    "beforeSegments": 46,
+    "afterSegments": 52,
+    "beforeAvgWords": 8.3,
+    "afterAvgWords": 7.3,
+    "merged": -6,
     "danglingFragments": 0
   }
 }

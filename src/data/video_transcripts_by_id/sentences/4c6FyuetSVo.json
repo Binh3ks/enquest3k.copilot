@@ -1,5 +1,5 @@
 {
-  "text": "English sing sing. Action verbs. Walk. You can walk. You can walk like a cat. Walk. Walk. Stomp you can stomp you can stomp like an elephant. Stomp stomp waddle you can waddle. You can waddle like a duck. Waddle waddle stand You can stand. You can stand like a flamingo. Stand stand run You can run. You can run like a cheetah. Run run Jump. You can jump. You can jump like a kangaroo. Jump. Jump jump jump hop you can hop you can hop like a rabbit hop hop fly You can fly You can fly like a butterfly. Fly fly dance You can dance You can dance like a bear. Dance dance climb You can climb You can climb like a monkey. Climb climb fart you can fart You can fart like a skunk. Fart fart clap You can clap. You can clap like a seal. Clap clap. Swim. You can swim. You can swim like a fish. Swim swim review walk, stomp, waddle, stand, run jump hop fly dance climb fart clap swim.",
+  "text": "English sing sing. Action verbs. Walk. You can walk. You can walk like a cat. Walk. Walk. Stomp you can stomp you can stomp like an elephant. Stomp stomp waddle you can waddle. You can waddle like a duck. Waddle waddle stand You can stand. You can stand like a flamingo. Stand stand run You can run. You can run like a cheetah. Run run Jump. You can jump. You can jump like a kangaroo. Jump. jump jump jump hop you can hop you can hop like a rabbit hop hop fly you can fly you can fly like a butterfly Fly fly dance You can dance You can dance like a bear. Dance dance climb You can climb You can climb like a monkey. Climb climb fart you can fart You can fart like a skunk. Fart fart clap You can clap. You can clap like a seal. Clap clap. Swim. You can swim. You can swim like a fish. swim swim review walk stomp waddle stand run jump hop fly dance climb fart clap swim",
   "segments": [
     {
       "id": 1,
@@ -639,10 +639,10 @@
     },
     {
       "id": 19,
-      "text": "Jump jump jump hop you can hop you can hop like a rabbit hop hop fly You can fly You can fly like a butterfly.",
+      "text": "jump jump jump hop you can hop you can hop like a rabbit hop hop",
       "speaker": "Speaker0",
       "start": 96.77,
-      "duration": 24.52,
+      "duration": 15.48,
       "words": [
         {
           "word": "jump",
@@ -733,7 +733,17 @@
           "start": 111.75,
           "end": 112.25,
           "confidence": 0.866
-        },
+        }
+      ],
+      "confidence": 0.865
+    },
+    {
+      "id": 20,
+      "text": "fly you can fly you can fly like a butterfly",
+      "speaker": "Speaker0",
+      "start": 114.95,
+      "duration": 6.34,
+      "words": [
         {
           "word": "fly",
           "start": 114.95,
@@ -798,7 +808,7 @@
       "confidence": 0.865
     },
     {
-      "id": 20,
+      "id": 21,
       "text": "Fly fly dance You can dance You can dance like a bear.",
       "speaker": "Speaker0",
       "start": 123.7,
@@ -880,7 +890,7 @@
       "confidence": 0.943
     },
     {
-      "id": 21,
+      "id": 22,
       "text": "Dance dance climb You can climb You can climb like a monkey.",
       "speaker": "Speaker0",
       "start": 137.38,
@@ -962,7 +972,7 @@
       "confidence": 0.902
     },
     {
-      "id": 22,
+      "id": 23,
       "text": "Climb climb fart you can fart You can fart like a skunk.",
       "speaker": "Speaker0",
       "start": 155.15,
@@ -1044,7 +1054,7 @@
       "confidence": 0.905
     },
     {
-      "id": 23,
+      "id": 24,
       "text": "Fart fart clap You can clap.",
       "speaker": "Speaker0",
       "start": 174.27,
@@ -1090,7 +1100,7 @@
       "confidence": 0.937
     },
     {
-      "id": 24,
+      "id": 25,
       "text": "You can clap like a seal.",
       "speaker": "Speaker0",
       "start": 183.08,
@@ -1136,7 +1146,7 @@
       "confidence": 0.976
     },
     {
-      "id": 25,
+      "id": 26,
       "text": "Clap clap.",
       "speaker": "Speaker0",
       "start": 187.08,
@@ -1158,7 +1168,7 @@
       "confidence": 0.848
     },
     {
-      "id": 26,
+      "id": 27,
       "text": "Swim.",
       "speaker": "Speaker0",
       "start": 194.36,
@@ -1174,7 +1184,7 @@
       "confidence": 0.578
     },
     {
-      "id": 27,
+      "id": 28,
       "text": "You can swim.",
       "speaker": "Speaker0",
       "start": 195.96,
@@ -1202,7 +1212,7 @@
       "confidence": 0.991
     },
     {
-      "id": 28,
+      "id": 29,
       "text": "You can swim like a fish.",
       "speaker": "Speaker0",
       "start": 197.79,
@@ -1248,11 +1258,11 @@
       "confidence": 0.962
     },
     {
-      "id": 29,
-      "text": "Swim swim review walk, stomp, waddle, stand, run jump hop fly dance climb fart clap swim.",
+      "id": 30,
+      "text": "swim swim review walk stomp waddle stand run jump hop fly dance climb fart clap",
       "speaker": "Speaker0",
       "start": 199.71,
-      "duration": 54.57,
+      "duration": 51.07,
       "words": [
         {
           "word": "swim",
@@ -1343,7 +1353,17 @@
           "start": 250.28,
           "end": 250.78,
           "confidence": 0.996
-        },
+        }
+      ],
+      "confidence": 0.934
+    },
+    {
+      "id": 31,
+      "text": "swim",
+      "speaker": "Speaker0",
+      "start": 253.78,
+      "duration": 0.5,
+      "words": [
         {
           "word": "swim",
           "start": 253.78,
@@ -1367,14 +1387,14 @@
     "matchedSegments": 77,
     "totalDuration": 254.28
   },
-  "repairedAt": "2026-07-23T06:33:07.707556Z",
+  "repairedAt": "2026-07-23T07:58:35.769935Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 77,
-    "afterSegments": 29,
-    "beforeAvgWords": 2.3,
-    "afterAvgWords": 6.1,
-    "merged": 48,
+    "beforeSegments": 29,
+    "afterSegments": 31,
+    "beforeAvgWords": 6.1,
+    "afterAvgWords": 5.7,
+    "merged": -2,
     "danglingFragments": 0
   }
 }

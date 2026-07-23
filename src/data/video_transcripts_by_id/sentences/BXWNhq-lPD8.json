@@ -925,14 +925,14 @@
     "matchedSegments": 61,
     "totalDuration": 230.83
   },
-  "repairedAt": "2026-07-23T06:33:07.686166Z",
+  "repairedAt": "2026-07-23T07:58:35.753208Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 61,
+    "beforeSegments": 31,
     "afterSegments": 31,
-    "beforeAvgWords": 1.6,
+    "beforeAvgWords": 3.2,
     "afterAvgWords": 3.2,
-    "merged": 30,
+    "merged": 0,
     "danglingFragments": 0
   }
 }

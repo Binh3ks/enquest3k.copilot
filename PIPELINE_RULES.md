@@ -43,6 +43,64 @@ The karaoke highlighter in `useWordHighlight.js` must use `sentence.words[]` whe
 
 ---
 
+## Rule 4: VIDEO CURATION (MANDATORY)
+
+**Every video selected for the shadowing station MUST pass ALL four criteria:**
+
+### 4a. Exact Grammar Match
+The video's primary tense and structure MUST exactly match the lesson's target grammar.
+- Lesson = Present Simple → video MUST use Present Simple
+- Lesson = Past Simple → video MUST use Past Simple
+- **AUTOMATIC FAIL** if video tense doesn't match lesson grammar
+
+### 4b. Topic Alignment
+The video context MUST match the curriculum theme.
+- Example: "The Sequence" lesson → video MUST contain sequence words (First, Next, Then)
+- Example: "Prepositions" lesson → video MUST demonstrate prepositions (in, on, under)
+
+### 4c. Natural Speech Requirement
+Videos MUST contain natural phrasing, dialogues, or narratives.
+**AUTOMATIC FAIL for:**
+- Chanting or repetitive flashcard-style audio
+- Songs or music videos
+- List-reading (vocabulary lists without context)
+- Scripted recitation without natural flow
+
+### 4d. Age Appropriateness
+Content, speed, and vocabulary MUST be suitable for kids aged 6-12 (A1+ level).
+- Speed: natural conversational pace (not accelerated)
+- Vocabulary: simple, everyday words
+- Content: school, family, pets, food, weather — age-appropriate topics
+
+---
+
+## Rule 5: SEGMENTATION (MANDATORY)
+
+**All transcript segments MUST comply with these rules:**
+
+### 5a. Hard Length Cap
+No segment can exceed **15 words**. This is a hard limit for ESL shadowing.
+
+### 5b. Forced Clause Splitting
+If a sentence is long, force-split at:
+- **Conjunctions**: and, but, so, because, then, which, who, where, when, if
+- **Commas**: already present in the text
+- **Fallback**: hard split at 15 words if no clean boundary exists
+
+### 5c. Semantic Integrity
+Every forced split MUST result in a syntactically digestible chunk:
+- Complete clause (S + V + O)
+- Complete dependent clause
+- Natural interjection ("Yes." "OK." "I know.")
+
+**NEVER leave dangling:**
+- Auxiliary verbs: "is", "are", "was", "have", "can"
+- Prepositions: "in", "on", "at", "to", "for", "with"
+- Conjunctions: "and", "but", "so", "because"
+- Determiners: "the", "a", "an", "my", "this"
+
+---
+
 ## Frozen Script Parameters
 
 `tools/force_align_transcript.py` uses these Deepgram parameters **exactly**:

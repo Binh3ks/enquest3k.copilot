@@ -1,5 +1,5 @@
 {
-  "text": "English sing sing. Five zzz's. I can see. I can see with my eyes. See See eyes eyes I can hear I can hear with my ears Hear ear ears ears I can smell I can smell with my nose. Smell smell nose nose I can feel. Oh, it's too cold. Feel feel skin skin I can taste. I can taste with my tongue. Yummy. Taste taste tongue tongue Review. Ears, hear, eyes, see, nose smell skin feel tongue taste.",
+  "text": "English sing sing. Five zzz's. I can see. I can see with my eyes. see see eyes eyes i can hear i can hear with my ears hear ear ears ears i can smell I can smell with my nose. Smell smell nose nose I can feel. Oh, it's too cold. Feel feel skin skin I can taste. I can taste with my tongue. Yummy. Taste taste tongue tongue Review. Ears, hear, eyes, see, nose smell skin feel tongue taste.",
   "segments": [
     {
       "id": 1,
@@ -127,10 +127,10 @@
     },
     {
       "id": 5,
-      "text": "See See eyes eyes I can hear I can hear with my ears Hear ear ears ears I can smell",
+      "text": "see see eyes eyes i can hear i can hear with my ears hear ear",
       "speaker": "Speaker0",
       "start": 24.57,
-      "duration": 46.0,
+      "duration": 32.62,
       "words": [
         {
           "word": "see",
@@ -221,7 +221,17 @@
           "start": 56.87,
           "end": 57.19,
           "confidence": 0.903
-        },
+        }
+      ],
+      "confidence": 0.831
+    },
+    {
+      "id": 6,
+      "text": "ears ears i can smell",
+      "speaker": "Speaker0",
+      "start": 57.19,
+      "duration": 13.38,
+      "words": [
         {
           "word": "ears",
           "start": 57.19,
@@ -256,7 +266,7 @@
       "confidence": 0.831
     },
     {
-      "id": 6,
+      "id": 7,
       "text": "I can smell with my nose.",
       "speaker": "Speaker0",
       "start": 73.33,
@@ -302,7 +312,7 @@
       "confidence": 0.998
     },
     {
-      "id": 7,
+      "id": 8,
       "text": "Smell smell nose nose I can feel.",
       "speaker": "Speaker0",
       "start": 79.5,
@@ -354,11 +364,11 @@
       "confidence": 0.839
     },
     {
-      "id": 8,
-      "text": "Oh, it's too cold. Feel feel skin skin I can taste.",
+      "id": 9,
+      "text": "Oh, it's too cold.",
       "speaker": "Speaker0",
       "start": 100.44,
-      "duration": 22.0,
+      "duration": 1.87,
       "words": [
         {
           "word": "oh",
@@ -383,7 +393,17 @@
           "start": 101.81,
           "end": 102.31,
           "confidence": 0.997
-        },
+        }
+      ],
+      "confidence": 0.949
+    },
+    {
+      "id": 10,
+      "text": "Feel feel skin skin I can taste.",
+      "speaker": "Speaker0",
+      "start": 102.6,
+      "duration": 19.84,
+      "words": [
         {
           "word": "feel",
           "start": 102.6,
@@ -430,7 +450,7 @@
       "confidence": 0.949
     },
     {
-      "id": 9,
+      "id": 11,
       "text": "I can taste with my tongue.",
       "speaker": "Speaker0",
       "start": 124.66,
@@ -476,7 +496,7 @@
       "confidence": 0.997
     },
     {
-      "id": 10,
+      "id": 12,
       "text": "Yummy.",
       "speaker": "Speaker0",
       "start": 129.44,
@@ -492,11 +512,11 @@
       "confidence": 0.939
     },
     {
-      "id": 11,
-      "text": "Taste taste tongue tongue Review. Ears, hear, eyes, see, nose smell skin feel tongue taste.",
+      "id": 13,
+      "text": "Taste taste tongue tongue Review.",
       "speaker": "Speaker0",
       "start": 131.76,
-      "duration": 43.28,
+      "duration": 14.04,
       "words": [
         {
           "word": "taste",
@@ -527,7 +547,17 @@
           "start": 145.3,
           "end": 145.8,
           "confidence": 0.997
-        },
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 14,
+      "text": "Ears, hear, eyes, see, nose smell skin feel tongue taste.",
+      "speaker": "Speaker0",
+      "start": 145.94,
+      "duration": 29.1,
+      "words": [
         {
           "word": "ears",
           "start": 145.94,
@@ -605,14 +635,14 @@
     "matchedSegments": 39,
     "totalDuration": 175.04
   },
-  "repairedAt": "2026-07-23T06:33:07.794921Z",
+  "repairedAt": "2026-07-23T07:58:35.835445Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 39,
-    "afterSegments": 11,
-    "beforeAvgWords": 2.1,
-    "afterAvgWords": 7.3,
-    "merged": 28,
+    "beforeSegments": 11,
+    "afterSegments": 14,
+    "beforeAvgWords": 7.3,
+    "afterAvgWords": 5.7,
+    "merged": -3,
     "danglingFragments": 0
   }
 }

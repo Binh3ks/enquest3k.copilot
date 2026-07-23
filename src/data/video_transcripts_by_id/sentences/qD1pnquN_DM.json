@@ -1,5 +1,5 @@
 {
-  "text": "English Sing Sing. My day. Wake up. Get up. Get up. I get up at seven. Have breakfast have breakfast I have breakfast brush my teeth brush my teeth I brush my teeth. Wash my face. Wash my face. I wash my face. Duck dressed duck dressed I get dressed. Hurry up. Go to school go to school I go to school. Take classes. Take classes. I take classes at school. Have lunch have lunch I have lunch at the cafeteria. Play with friends play with friends I play with my friends. Come home I come home come home do my homework do my homework I do my homework. Have dinner have dinner I have dinner take a shower take a shower I take a shower. Go to bed go to bed I go to bed. Goodnight. Review get up have breakfast brush my teeth wash my face, get dressed, go to school, take classes, have lunch, play with friends, come home, do my homework, have dinner, take a shower, go to bed.",
+  "text": "English Sing Sing. My day. Wake up. Get up. Get up. I get up at seven. have breakfast have breakfast i have breakfast brush my teeth brush my teeth i brush my teeth Wash my face. Wash my face. I wash my face. Duck dressed duck dressed I get dressed. Hurry up. Go to school go to school I go to school. Take classes. Take classes. I take classes at school. Have lunch have lunch I have lunch at the cafeteria. Play with friends play with friends I play with my friends. Come home I come home come home do my homework do my homework I do my homework. have dinner have dinner i have dinner take a shower take a shower i take a shower Go to bed go to bed I go to bed. Goodnight. Review get up have breakfast brush my teeth wash my face get dressed go to school take classes have lunch play with friends come home do my homework have dinner take a shower go to bed",
   "segments": [
     {
       "id": 1,
@@ -159,10 +159,10 @@
     },
     {
       "id": 7,
-      "text": "Have breakfast have breakfast I have breakfast brush my teeth brush my teeth I brush my teeth.",
+      "text": "have breakfast have breakfast i have breakfast brush my teeth brush my teeth i brush",
       "speaker": "Speaker1",
       "start": 29.9,
-      "duration": 22.58,
+      "duration": 21.83,
       "words": [
         {
           "word": "have",
@@ -253,7 +253,17 @@
           "start": 51.34,
           "end": 51.73,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 8,
+      "text": "my teeth",
+      "speaker": "Speaker1",
+      "start": 51.73,
+      "duration": 0.75,
+      "words": [
         {
           "word": "my",
           "start": 51.73,
@@ -270,7 +280,7 @@
       "confidence": 0.945
     },
     {
-      "id": 8,
+      "id": 9,
       "text": "Wash my face.",
       "speaker": "Speaker1",
       "start": 56.13,
@@ -298,7 +308,7 @@
       "confidence": 0.953
     },
     {
-      "id": 9,
+      "id": 10,
       "text": "Wash my face.",
       "speaker": "Speaker1",
       "start": 59.73,
@@ -326,7 +336,7 @@
       "confidence": 0.994
     },
     {
-      "id": 10,
+      "id": 11,
       "text": "I wash my face.",
       "speaker": "Speaker1",
       "start": 63.41,
@@ -360,7 +370,7 @@
       "confidence": 0.999
     },
     {
-      "id": 11,
+      "id": 12,
       "text": "Duck dressed duck dressed I get dressed.",
       "speaker": "Speaker1",
       "start": 71.83,
@@ -412,7 +422,7 @@
       "confidence": 0.931
     },
     {
-      "id": 12,
+      "id": 13,
       "text": "Hurry up.",
       "speaker": "Speaker1",
       "start": 80.78,
@@ -434,7 +444,7 @@
       "confidence": 0.921
     },
     {
-      "id": 13,
+      "id": 14,
       "text": "Go to school go to school",
       "speaker": "Speaker0",
       "start": 86.38,
@@ -480,7 +490,7 @@
       "confidence": 0.98
     },
     {
-      "id": 14,
+      "id": 15,
       "text": "I go to school.",
       "speaker": "Speaker1",
       "start": 93.02,
@@ -514,7 +524,7 @@
       "confidence": 0.974
     },
     {
-      "id": 15,
+      "id": 16,
       "text": "Take classes.",
       "speaker": "Speaker1",
       "start": 101.67,
@@ -536,7 +546,7 @@
       "confidence": 0.802
     },
     {
-      "id": 16,
+      "id": 17,
       "text": "Take classes.",
       "speaker": "Speaker1",
       "start": 104.86,
@@ -558,7 +568,7 @@
       "confidence": 0.966
     },
     {
-      "id": 17,
+      "id": 18,
       "text": "I take classes at school.",
       "speaker": "Speaker1",
       "start": 107.75,
@@ -598,7 +608,7 @@
       "confidence": 0.997
     },
     {
-      "id": 18,
+      "id": 19,
       "text": "Have lunch have lunch I have lunch at the cafeteria.",
       "speaker": "Speaker1",
       "start": 115.16,
@@ -668,7 +678,7 @@
       "confidence": 0.874
     },
     {
-      "id": 19,
+      "id": 20,
       "text": "Play with friends play with friends I play with my friends.",
       "speaker": "Speaker1",
       "start": 129.75,
@@ -744,7 +754,7 @@
       "confidence": 0.941
     },
     {
-      "id": 20,
+      "id": 21,
       "text": "Come home",
       "speaker": "Speaker0",
       "start": 147.08,
@@ -766,7 +776,7 @@
       "confidence": 0.925
     },
     {
-      "id": 21,
+      "id": 22,
       "text": "I come home come home do my homework do my homework I do my homework.",
       "speaker": "Speaker1",
       "start": 149.88,
@@ -866,11 +876,11 @@
       "confidence": 0.968
     },
     {
-      "id": 22,
-      "text": "Have dinner have dinner I have dinner take a shower take a shower I take a shower.",
+      "id": 23,
+      "text": "have dinner have dinner i have dinner take a shower take a shower i take",
       "speaker": "Speaker1",
       "start": 170.66,
-      "duration": 22.63,
+      "duration": 21.9,
       "words": [
         {
           "word": "have",
@@ -961,7 +971,17 @@
           "start": 192.31,
           "end": 192.56,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 24,
+      "text": "a shower",
+      "speaker": "Speaker1",
+      "start": 192.56,
+      "duration": 0.73,
+      "words": [
         {
           "word": "a",
           "start": 192.56,
@@ -978,7 +998,7 @@
       "confidence": 0.981
     },
     {
-      "id": 23,
+      "id": 25,
       "text": "Go to bed go to bed I go to bed.",
       "speaker": "Speaker1",
       "start": 195.93,
@@ -1048,7 +1068,7 @@
       "confidence": 0.946
     },
     {
-      "id": 24,
+      "id": 26,
       "text": "Goodnight.",
       "speaker": "Speaker1",
       "start": 205.29,
@@ -1064,7 +1084,7 @@
       "confidence": 0.879
     },
     {
-      "id": 25,
+      "id": 27,
       "text": "Review",
       "speaker": "Speaker1",
       "start": 209.29,
@@ -1080,11 +1100,11 @@
       "confidence": 0.953
     },
     {
-      "id": 26,
-      "text": "get up have breakfast brush my teeth wash my face, get dressed, go to school, take classes, have lunch, play with friends, come home, do my homework, have dinner, take a shower, go to bed.",
+      "id": 28,
+      "text": "get up have breakfast brush my teeth wash my face get dressed go to school",
       "speaker": "Speaker0",
       "start": 212.88,
-      "duration": 47.72,
+      "duration": 18.24,
       "words": [
         {
           "word": "get",
@@ -1175,7 +1195,17 @@
           "start": 230.62,
           "end": 231.12,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 29,
+      "text": "take classes have lunch play with friends come home do my homework have dinner take",
+      "speaker": "Speaker0",
+      "start": 233.42,
+      "duration": 22.04,
+      "words": [
         {
           "word": "take",
           "start": 233.42,
@@ -1265,7 +1295,17 @@
           "start": 255.14,
           "end": 255.46,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 30,
+      "text": "a shower go to bed",
+      "speaker": "Speaker0",
+      "start": 255.46,
+      "duration": 5.14,
+      "words": [
         {
           "word": "a",
           "start": 255.46,
@@ -1314,14 +1354,14 @@
     "matchedSegments": 62,
     "totalDuration": 260.6
   },
-  "repairedAt": "2026-07-23T06:33:07.796880Z",
+  "repairedAt": "2026-07-23T07:58:35.836661Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 62,
-    "afterSegments": 26,
-    "beforeAvgWords": 2.8,
-    "afterAvgWords": 6.7,
-    "merged": 36,
+    "beforeSegments": 26,
+    "afterSegments": 30,
+    "beforeAvgWords": 6.7,
+    "afterAvgWords": 5.8,
+    "merged": -4,
     "danglingFragments": 0
   }
 }

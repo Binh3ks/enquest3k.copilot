@@ -829,14 +829,14 @@
     "matchedSegments": 42,
     "totalDuration": 163.73
   },
-  "repairedAt": "2026-07-23T06:33:07.705664Z",
+  "repairedAt": "2026-07-23T07:58:35.768631Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 42,
+    "beforeSegments": 40,
     "afterSegments": 40,
-    "beforeAvgWords": 1.6,
+    "beforeAvgWords": 1.7,
     "afterAvgWords": 1.7,
-    "merged": 2,
+    "merged": 0,
     "danglingFragments": 0
   }
 }

@@ -1356,14 +1356,14 @@
     "matchedSegments": 42,
     "totalDuration": 224.08
   },
-  "repairedAt": "2026-07-23T06:33:07.678454Z",
+  "repairedAt": "2026-07-23T07:58:35.747462Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 42,
+    "beforeSegments": 41,
     "afterSegments": 41,
-    "beforeAvgWords": 3.7,
+    "beforeAvgWords": 3.8,
     "afterAvgWords": 3.8,
-    "merged": 1,
+    "merged": 0,
     "danglingFragments": 0
   }
 }

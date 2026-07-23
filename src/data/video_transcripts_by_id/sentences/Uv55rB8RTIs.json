@@ -866,14 +866,14 @@
     "matchedSegments": 21,
     "totalDuration": 193.99
   },
-  "repairedAt": "2026-07-23T06:33:07.689940Z",
+  "repairedAt": "2026-07-23T07:58:35.756212Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 21,
+    "beforeSegments": 22,
     "afterSegments": 22,
-    "beforeAvgWords": 5.0,
+    "beforeAvgWords": 4.8,
     "afterAvgWords": 4.8,
-    "merged": -1,
+    "merged": 0,
     "danglingFragments": 0
   }
 }

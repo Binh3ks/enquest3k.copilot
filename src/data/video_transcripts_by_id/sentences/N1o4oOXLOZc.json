@@ -1,5 +1,5 @@
 {
-  "text": "English sing sing. Hobbies and interests. What do you like doing? Playing the guitar I like playing the guitar in music class. Playing the guitar reading books I like reading books in the library. Reading books sh drawing. I love drawing with crayons. Drawing, watching TV. I like watching TV on the weekend. Watching TV. Cooking. I love cooking for my parents. Cooking singing I love singing in front of people. Singing dancing I love dancing to hip hop music. Dancing listening to music I love listening to music before I go to sleep. Listening to music. Playing games I love playing games with my brother. Playing games swimming I enjoy swimming in the ocean. Swimming hiking I like going hiking in the mountains. Hiking taking photographs I love taking photos of my pet. Taking photographs. Playing basketball. I love playing basketball after school. Playing basketball riding a bicycle I enjoy riding a bicycle at the park. Riding a bicycle. Review. Cooking. Dancing drawing hiking listening to music playing basketball playing games playing the guitar reading books riding a bicycle singing swimming taking photographs watching TV",
+  "text": "English sing sing. Hobbies and interests. What do you like doing? Playing the guitar I like playing the guitar in music class. Playing the guitar reading books I like reading books in the library. Reading books sh drawing. I love drawing with crayons. Drawing, watching TV. I like watching TV on the weekend. Watching TV. Cooking. I love cooking for my parents. Cooking singing I love singing in front of people. Singing dancing I love dancing to hip hop music. Dancing listening to music I love listening to music before I go to sleep. Listening to music. Playing games I love playing games with my brother. Playing games swimming I enjoy swimming in the ocean. Swimming hiking I like going hiking in the mountains. Hiking taking photographs I love taking photos of my pet. Taking photographs. Playing basketball. I love playing basketball after school. Playing basketball riding a bicycle I enjoy riding a bicycle at the park. Riding a bicycle. Review. Cooking. dancing drawing hiking listening to music playing basketball playing games playing the guitar reading books riding a bicycle singing swimming taking photographs watching TV",
   "segments": [
     {
       "id": 1,
@@ -1245,10 +1245,10 @@
     },
     {
       "id": 28,
-      "text": "Dancing drawing hiking listening to music playing basketball playing games playing the guitar reading books riding a bicycle singing swimming",
+      "text": "dancing drawing hiking listening to music playing basketball playing games playing the guitar reading books",
       "speaker": "Speaker0",
       "start": 208.25,
-      "duration": 42.5,
+      "duration": 30.34,
       "words": [
         {
           "word": "dancing",
@@ -1339,7 +1339,17 @@
           "start": 238.09,
           "end": 238.59,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 29,
+      "text": "riding a bicycle singing swimming",
+      "speaker": "Speaker0",
+      "start": 241.78,
+      "duration": 8.97,
+      "words": [
         {
           "word": "riding",
           "start": 241.78,
@@ -1374,7 +1384,7 @@
       "confidence": 0.995
     },
     {
-      "id": 29,
+      "id": 30,
       "text": "taking photographs watching TV",
       "speaker": "Speaker0",
       "start": 254.1,
@@ -1421,14 +1431,14 @@
     "matchedSegments": 62,
     "totalDuration": 259.4
   },
-  "repairedAt": "2026-07-23T06:33:07.735909Z",
+  "repairedAt": "2026-07-23T07:58:35.790704Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 62,
-    "afterSegments": 29,
-    "beforeAvgWords": 3.0,
-    "afterAvgWords": 6.4,
-    "merged": 33,
+    "beforeSegments": 29,
+    "afterSegments": 30,
+    "beforeAvgWords": 6.4,
+    "afterAvgWords": 6.2,
+    "merged": -1,
     "danglingFragments": 0
   }
 }

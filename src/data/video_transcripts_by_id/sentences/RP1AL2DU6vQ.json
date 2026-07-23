@@ -253,10 +253,10 @@
     },
     {
       "id": 5,
-      "text": "Usually, I have cereal for breakfast with orange juice, but sometimes I have, toast with usually jam or honey.",
+      "text": "usually i have cereal for breakfast with orange juice",
       "speaker": "Speaker0",
       "start": 15.84,
-      "duration": 7.54,
+      "duration": 3.36,
       "words": [
         {
           "word": "usually",
@@ -311,7 +311,17 @@
           "start": 18.73,
           "end": 19.2,
           "confidence": 0.94
-        },
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 6,
+      "text": "but sometimes i have toast with usually jam or honey",
+      "speaker": "Speaker0",
+      "start": 19.2,
+      "duration": 4.18,
+      "words": [
         {
           "word": "but",
           "start": 19.2,
@@ -376,7 +386,7 @@
       "confidence": 0.945
     },
     {
-      "id": 6,
+      "id": 7,
       "text": "Then I pack my bag for school.",
       "speaker": "Speaker0",
       "start": 23.77,
@@ -428,11 +438,11 @@
       "confidence": 0.989
     },
     {
-      "id": 7,
-      "text": "I walk because my school's only, it's only in the center of the town where I live, so it's only fifteen minutes walk in the morning, which is good because it means I can sleep later.",
+      "id": 8,
+      "text": "i walk because my school's only it's only in the center of the town",
       "speaker": "Speaker0",
       "start": 27.25,
-      "duration": 11.7,
+      "duration": 4.32,
       "words": [
         {
           "word": "i",
@@ -517,7 +527,17 @@
           "start": 31.41,
           "end": 31.57,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 9,
+      "text": "where i live",
+      "speaker": "Speaker0",
+      "start": 31.57,
+      "duration": 0.82,
+      "words": [
         {
           "word": "where",
           "start": 31.57,
@@ -535,7 +555,17 @@
           "start": 31.89,
           "end": 32.39,
           "confidence": 0.756
-        },
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 10,
+      "text": "so it's only fifteen minutes walk in the morning",
+      "speaker": "Speaker0",
+      "start": 32.77,
+      "duration": 3.12,
+      "words": [
         {
           "word": "so",
           "start": 32.77,
@@ -589,7 +619,17 @@
           "start": 35.49,
           "end": 35.89,
           "confidence": 0.944
-        },
+        }
+      ],
+      "confidence": 0.958
+    },
+    {
+      "id": 11,
+      "text": "which is good because it means i can sleep later the school is quite old",
+      "speaker": "Speaker0",
+      "start": 35.89,
+      "duration": 5.91,
+      "words": [
         {
           "word": "which",
           "start": 35.89,
@@ -649,17 +689,7 @@
           "start": 38.45,
           "end": 38.95,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.962
-    },
-    {
-      "id": 8,
-      "text": "The school is quite old.",
-      "speaker": "Speaker0",
-      "start": 39.97,
-      "duration": 1.83,
-      "words": [
+        },
         {
           "word": "the",
           "start": 39.97,
@@ -691,14 +721,14 @@
           "confidence": 0.868
         }
       ],
-      "confidence": 0.956
+      "confidence": 0.958
     },
     {
-      "id": 9,
-      "text": "It's been, a school for about four hundred years and it's got about a thousand students there in seven age groups",
+      "id": 12,
+      "text": "it's been a school for about four hundred years",
       "speaker": "Speaker0",
       "start": 41.85,
-      "duration": 8.99,
+      "duration": 3.38,
       "words": [
         {
           "word": "it's",
@@ -753,7 +783,17 @@
           "start": 44.73,
           "end": 45.23,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 13,
+      "text": "and it's got about a thousand students there in seven age groups",
+      "speaker": "Speaker0",
+      "start": 45.53,
+      "duration": 5.31,
+      "words": [
         {
           "word": "and",
           "start": 45.53,
@@ -830,7 +870,7 @@
       "confidence": 0.95
     },
     {
-      "id": 10,
+      "id": 14,
       "text": "and it's only boys there.",
       "speaker": "Speaker0",
       "start": 51.3,
@@ -870,11 +910,11 @@
       "confidence": 0.886
     },
     {
-      "id": 11,
-      "text": "School starts at, 08:30, and then we have two lessons, which go until quarter past ten. 10:45, we have break for fifteen minutes.",
+      "id": 15,
+      "text": "school starts at 08:30 and",
       "speaker": "Speaker0",
       "start": 53.85,
-      "duration": 10.44,
+      "duration": 3.06,
       "words": [
         {
           "word": "school",
@@ -905,7 +945,17 @@
           "start": 56.75,
           "end": 56.91,
           "confidence": 0.592
-        },
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": 16,
+      "text": "then we have two lessons which go",
+      "speaker": "Speaker0",
+      "start": 56.91,
+      "duration": 2.48,
+      "words": [
         {
           "word": "then",
           "start": 56.91,
@@ -947,7 +997,17 @@
           "start": 59.07,
           "end": 59.39,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": 17,
+      "text": "until quarter past ten 10:45 we have break for fifteen minutes",
+      "speaker": "Speaker0",
+      "start": 59.39,
+      "duration": 4.9,
+      "words": [
         {
           "word": "until",
           "start": 59.39,
@@ -1018,7 +1078,7 @@
       "confidence": 0.92
     },
     {
-      "id": 12,
+      "id": 18,
       "text": "Then eleven till 12:40, we have two more lessons, and then lunchtime.",
       "speaker": "Speaker0",
       "start": 64.59,
@@ -1100,11 +1160,11 @@
       "confidence": 0.959
     },
     {
-      "id": 13,
-      "text": "I can go into town to get my lunch, but most people have to stay in the school and eat the school food, and British school food isn't very nice.",
+      "id": 19,
+      "text": "i can go into town to get my lunch",
       "speaker": "Speaker0",
       "start": 73.09,
-      "duration": 11.32,
+      "duration": 3.07,
       "words": [
         {
           "word": "i",
@@ -1159,7 +1219,17 @@
           "start": 75.66,
           "end": 76.16,
           "confidence": 0.936
-        },
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 20,
+      "text": "but most people have to stay in the school",
+      "speaker": "Speaker0",
+      "start": 76.3,
+      "duration": 2.23,
+      "words": [
         {
           "word": "but",
           "start": 76.3,
@@ -1213,7 +1283,17 @@
           "start": 78.14,
           "end": 78.53,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 21,
+      "text": "and eat the school food and british school food isn't very",
+      "speaker": "Speaker0",
+      "start": 78.53,
+      "duration": 4.12,
+      "words": [
         {
           "word": "and",
           "start": 78.53,
@@ -1279,7 +1359,17 @@
           "start": 82.3,
           "end": 82.65,
           "confidence": 0.999
-        },
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 22,
+      "text": "nice.",
+      "speaker": "Speaker0",
+      "start": 84.01,
+      "duration": 0.4,
+      "words": [
         {
           "word": "nice",
           "start": 84.01,
@@ -1287,10 +1377,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.919
     },
     {
-      "id": 14,
+      "id": 23,
       "text": "Then we have two more lessons after lunch, and we we finish school at 03:30.",
       "speaker": "Speaker0",
       "start": 84.41,
@@ -1390,11 +1480,11 @@
       "confidence": 0.919
     },
     {
-      "id": 15,
-      "text": "Usually I come home and I just sort of relax for a bit, and that's usually for maybe an hour.",
+      "id": 24,
+      "text": "usually i come home",
       "speaker": "Speaker0",
       "start": 89.45,
-      "duration": 6.5,
+      "duration": 1.28,
       "words": [
         {
           "word": "usually",
@@ -1419,7 +1509,17 @@
           "start": 90.25,
           "end": 90.73,
           "confidence": 1.0
-        },
+        }
+      ],
+      "confidence": 0.949
+    },
+    {
+      "id": 25,
+      "text": "and i just sort of relax for a bit",
+      "speaker": "Speaker0",
+      "start": 90.73,
+      "duration": 2.66,
+      "words": [
         {
           "word": "and",
           "start": 90.73,
@@ -1473,7 +1573,17 @@
           "start": 92.89,
           "end": 93.39,
           "confidence": 0.83
-        },
+        }
+      ],
+      "confidence": 0.949
+    },
+    {
+      "id": 26,
+      "text": "and that's usually for maybe an hour",
+      "speaker": "Speaker0",
+      "start": 93.69,
+      "duration": 2.26,
+      "words": [
         {
           "word": "and",
           "start": 93.69,
@@ -1520,7 +1630,7 @@
       "confidence": 0.949
     },
     {
-      "id": 16,
+      "id": 27,
       "text": "I I read or I watch television.",
       "speaker": "Speaker0",
       "start": 96.33,
@@ -1572,11 +1682,11 @@
       "confidence": 0.967
     },
     {
-      "id": 17,
-      "text": "And my mum gets home about usually between a half past five and six, and so we'll usually eat dinner about 06:30.",
+      "id": 28,
+      "text": "and my mum gets home about usually between a half past five",
       "speaker": "Speaker0",
       "start": 99.6,
-      "duration": 7.95,
+      "duration": 4.0,
       "words": [
         {
           "word": "and",
@@ -1649,7 +1759,17 @@
           "start": 103.36,
           "end": 103.6,
           "confidence": 0.998
-        },
+        }
+      ],
+      "confidence": 0.922
+    },
+    {
+      "id": 29,
+      "text": "and six and so we'll usually eat dinner about 06:30",
+      "speaker": "Speaker0",
+      "start": 103.6,
+      "duration": 3.95,
+      "words": [
         {
           "word": "and",
           "start": 103.6,
@@ -1717,24 +1837,24 @@
   "speakerMap": {
     "0": "Speaker0"
   },
-  "fetchedAt": "2026-07-23T06:27:45.063636+00:00",
-  "text": "My name's Fred. I live in London, and I'm 17 years old. I wake up at seven, and I usually get out of bed about 07:30. Then I I come down stairs and have breakfast. Usually, I have cereal for breakfast with orange juice, but sometimes I have, toast with usually jam or honey. Then I pack my bag for school. I walk because my school's only, it's only in the center of the town where I live, so it's only fifteen minutes walk in the morning, which is good because it means I can sleep later. The school is quite old. It's been, a school for about four hundred years and it's got about a thousand students there in seven age groups and it's only boys there. School starts at, 08:30, and then we have two lessons, which go until quarter past ten. 10:45, we have break for fifteen minutes. Then eleven till 12:40, we have two more lessons, and then lunchtime. I can go into town to get my lunch, but most people have to stay in the school and eat the school food, and British school food isn't very nice. Then we have two more lessons after lunch, and we we finish school at 03:30. Usually I come home and I just sort of relax for a bit, and that's usually for maybe an hour. I I read or I watch television. And my mum gets home about usually between a half past five and six, and so we'll usually eat dinner about 06:30.",
+  "fetchedAt": "2026-07-23T07:57:46.727301+00:00",
+  "text": "My name's Fred. I live in London, and I'm 17 years old. I wake up at seven, and I usually get out of bed about 07:30. Then I I come down stairs and have breakfast. usually i have cereal for breakfast with orange juice but sometimes i have toast with usually jam or honey Then I pack my bag for school. i walk because my school's only it's only in the center of the town where i live so it's only fifteen minutes walk in the morning which is good because it means i can sleep later the school is quite old it's been a school for about four hundred years and it's got about a thousand students there in seven age groups and it's only boys there. school starts at 08:30 and then we have two lessons which go until quarter past ten 10:45 we have break for fifteen minutes Then eleven till 12:40, we have two more lessons, and then lunchtime. i can go into town to get my lunch but most people have to stay in the school and eat the school food and british school food isn't very nice. Then we have two more lessons after lunch, and we we finish school at 03:30. usually i come home and i just sort of relax for a bit and that's usually for maybe an hour I I read or I watch television. and my mum gets home about usually between a half past five and six and so we'll usually eat dinner about 06:30",
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:27:45.063666+00:00",
+    "alignedAt": "2026-07-23T07:57:46.727333+00:00",
     "dgWordCount": 257,
     "dgUtteranceCount": 26,
     "matchedSegments": 26,
     "totalDuration": 107.55
   },
-  "repairedAt": "2026-07-23T06:33:07.778060Z",
+  "repairedAt": "2026-07-23T07:58:35.823557Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 26,
-    "afterSegments": 17,
-    "beforeAvgWords": 9.9,
-    "afterAvgWords": 15.1,
-    "merged": 9,
-    "danglingFragments": 0
+    "beforeSegments": 30,
+    "afterSegments": 29,
+    "beforeAvgWords": 8.6,
+    "afterAvgWords": 8.9,
+    "merged": 1,
+    "danglingFragments": 1
   }
 }

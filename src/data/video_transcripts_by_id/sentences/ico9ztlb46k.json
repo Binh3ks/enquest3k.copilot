@@ -737,10 +737,10 @@
     },
     {
       "id": 24,
-      "text": "Eat breakfast, brush my",
+      "text": "Eat breakfast, brush my teeth.",
       "speaker": "Speaker0",
       "start": 132.4,
-      "duration": 8.96,
+      "duration": 15.06,
       "words": [
         {
           "word": "eat",
@@ -765,17 +765,7 @@
           "start": 140.96,
           "end": 141.36,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 25,
-      "text": "teeth.",
-      "speaker": "Speaker0",
-      "start": 146.96,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "teeth",
           "start": 146.96,
@@ -783,10 +773,10 @@
           "confidence": 0.925
         }
       ],
-      "confidence": 0.925
+      "confidence": 0.959
     },
     {
-      "id": 26,
+      "id": 25,
       "text": "Brush my hair.",
       "speaker": "Speaker3",
       "start": 148.64,
@@ -814,7 +804,7 @@
       "confidence": 0.998
     },
     {
-      "id": 27,
+      "id": 26,
       "text": "Get dressed.",
       "speaker": "Speaker0",
       "start": 153.41,
@@ -836,7 +826,7 @@
       "confidence": 0.764
     },
     {
-      "id": 28,
+      "id": 27,
       "text": "Sing.",
       "speaker": "Speaker0",
       "start": 164.44,
@@ -852,7 +842,7 @@
       "confidence": 0.946
     },
     {
-      "id": 29,
+      "id": 28,
       "text": "Dance. Go to school.",
       "speaker": "Speaker4",
       "start": 179.92,
@@ -886,7 +876,7 @@
       "confidence": 0.996
     },
     {
-      "id": 30,
+      "id": 29,
       "text": "Well done, kids.",
       "speaker": "Speaker0",
       "start": 189.29,
@@ -914,7 +904,7 @@
       "confidence": 0.863
     },
     {
-      "id": 31,
+      "id": 30,
       "text": "That was great.",
       "speaker": "Speaker0",
       "start": 191.46,
@@ -942,7 +932,7 @@
       "confidence": 0.994
     },
     {
-      "id": 32,
+      "id": 31,
       "text": "See you.",
       "speaker": "Speaker0",
       "start": 193.53,
@@ -981,14 +971,14 @@
     "matchedSegments": 42,
     "totalDuration": 194.28
   },
-  "repairedAt": "2026-07-23T06:33:07.709883Z",
+  "repairedAt": "2026-07-23T07:58:35.771674Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 42,
-    "afterSegments": 32,
-    "beforeAvgWords": 2.5,
-    "afterAvgWords": 3.3,
-    "merged": 10,
+    "beforeSegments": 32,
+    "afterSegments": 31,
+    "beforeAvgWords": 3.3,
+    "afterAvgWords": 3.5,
+    "merged": 1,
     "danglingFragments": 0
   }
 }

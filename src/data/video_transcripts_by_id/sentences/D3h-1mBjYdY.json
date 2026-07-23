@@ -1,5 +1,5 @@
 {
-  "text": "Hey there, kids. Listen carefully and repeat. The moon. The moon. The sun. The sun. Star, star, tree, tree, mountain, mountain, river, river, the sea, the sea, rainbow, rainbow, the sky, the sky, flower, Flower. That was great, kids. Let's do it one more time. In a big voice, repeat after me. Here we go. The moon, the sun, star, tree, Mountain. River. The sea. Rainbow. The sky. Flower. Well done kids! That was great! See you!",
+  "text": "Hey there, kids. Listen carefully and repeat. The moon. The moon. The sun. The sun. star star tree tree mountain mountain river river the sea the sea rainbow rainbow the sky the sky flower flower That was great, kids. Let's do it one more time. In a big voice, repeat after me. Here we go. The moon, the sun, star, tree, Mountain. River. The sea. Rainbow. The sky. Flower. Well done kids! That was great! See you!",
   "segments": [
     {
       "id": 1,
@@ -153,10 +153,10 @@
     },
     {
       "id": 7,
-      "text": "Star, star, tree, tree, mountain, mountain, river, river, the sea, the sea, rainbow, rainbow, the sky, the sky, flower, Flower.",
+      "text": "star star tree tree mountain mountain river river the sea the sea rainbow rainbow the",
       "speaker": "Speaker0",
       "start": 32.25,
-      "duration": 56.99,
+      "duration": 44.48,
       "words": [
         {
           "word": "star",
@@ -247,7 +247,17 @@
           "start": 76.66,
           "end": 76.73,
           "confidence": 0.98
-        },
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 8,
+      "text": "sky the sky flower flower",
+      "speaker": "Speaker0",
+      "start": 76.73,
+      "duration": 12.51,
+      "words": [
         {
           "word": "sky",
           "start": 76.73,
@@ -282,7 +292,7 @@
       "confidence": 0.982
     },
     {
-      "id": 8,
+      "id": 9,
       "text": "That was great, kids.",
       "speaker": "Speaker0",
       "start": 93.78,
@@ -316,7 +326,7 @@
       "confidence": 0.914
     },
     {
-      "id": 9,
+      "id": 10,
       "text": "Let's do it one more time.",
       "speaker": "Speaker0",
       "start": 96.5,
@@ -362,7 +372,7 @@
       "confidence": 0.983
     },
     {
-      "id": 10,
+      "id": 11,
       "text": "In a big voice, repeat after me.",
       "speaker": "Speaker0",
       "start": 99.58,
@@ -414,7 +424,7 @@
       "confidence": 0.972
     },
     {
-      "id": 11,
+      "id": 12,
       "text": "Here we go.",
       "speaker": "Speaker0",
       "start": 104.62,
@@ -442,7 +452,7 @@
       "confidence": 0.992
     },
     {
-      "id": 12,
+      "id": 13,
       "text": "The moon, the sun, star, tree, Mountain.",
       "speaker": "Speaker0",
       "start": 108.39,
@@ -494,7 +504,7 @@
       "confidence": 0.907
     },
     {
-      "id": 13,
+      "id": 14,
       "text": "River.",
       "speaker": "Speaker0",
       "start": 148.61,
@@ -510,7 +520,7 @@
       "confidence": 0.947
     },
     {
-      "id": 14,
+      "id": 15,
       "text": "The sea.",
       "speaker": "Speaker0",
       "start": 155.29,
@@ -532,7 +542,7 @@
       "confidence": 0.692
     },
     {
-      "id": 15,
+      "id": 16,
       "text": "Rainbow.",
       "speaker": "Speaker0",
       "start": 164.66,
@@ -548,7 +558,7 @@
       "confidence": 0.963
     },
     {
-      "id": 16,
+      "id": 17,
       "text": "The sky.",
       "speaker": "Speaker0",
       "start": 171.27,
@@ -570,7 +580,7 @@
       "confidence": 0.772
     },
     {
-      "id": 17,
+      "id": 18,
       "text": "Flower.",
       "speaker": "Speaker0",
       "start": 180.63,
@@ -586,7 +596,7 @@
       "confidence": 0.74
     },
     {
-      "id": 18,
+      "id": 19,
       "text": "Well done kids!",
       "speaker": "Speaker0",
       "start": 189.41,
@@ -614,7 +624,7 @@
       "confidence": 0.804
     },
     {
-      "id": 19,
+      "id": 20,
       "text": "That was great!",
       "speaker": "Speaker0",
       "start": 191.56,
@@ -642,7 +652,7 @@
       "confidence": 0.92
     },
     {
-      "id": 20,
+      "id": 21,
       "text": "See you!",
       "speaker": "Speaker0",
       "start": 193.56,
@@ -677,14 +687,14 @@
     "matchedSegments": 45,
     "totalDuration": 194.38
   },
-  "repairedAt": "2026-07-23T06:33:07.783909Z",
+  "repairedAt": "2026-07-23T07:58:35.827622Z",
   "repairInfo": {
     "version": 3,
-    "beforeSegments": 45,
-    "afterSegments": 20,
-    "beforeAvgWords": 1.7,
-    "afterAvgWords": 3.9,
-    "merged": 25,
+    "beforeSegments": 20,
+    "afterSegments": 21,
+    "beforeAvgWords": 3.9,
+    "afterAvgWords": 3.7,
+    "merged": -1,
     "danglingFragments": 0
   }
 }
