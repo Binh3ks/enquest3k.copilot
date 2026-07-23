@@ -1,1 +1,1369 @@
-{"text":"What's your favorite subject. What class is next. I like math class. I don't like math. What's your favorite subject. My favorite subject is p e i like. Playing sports. I like basketball. I play basketball every day. I like basketball too but i can't play. Very well. Don't worry. I can help you. Really. How about playing basketball after. School. That's a good idea. That was a great time. Thank you jinsu. You're welcome. Listen. What class is next. Math i like math class. I don't like math. What's your favorite subject. My favorite subject is pe. I like playing sports. I like basketball. I play basketball every day. I like basketball too but i can't play. Very well. Don't worry. I can help you. Really. How about playing basketball after. School. That's a good idea. That was a great time. Thank you jinsu. You're welcome. Speak aloud. Uh. Oh. Your turn. Uh. Bye.","segments":[{"id":1,"text":"What's your favorite subject.","start":5.92,"duration":6.4},{"id":2,"text":"What class is next.","start":12.32,"duration":3.8},{"id":3,"text":"I like math class.","start":16.72,"duration":3.6},{"id":4,"text":"I don't like math.","start":21.28,"duration":5.68},{"id":5,"text":"What's your favorite subject.","start":23.68,"duration":6.72},{"id":6,"text":"My favorite subject is p e i like.","start":26.96,"duration":5.36},{"id":7,"text":"Playing sports.","start":30.4,"duration":3.92},{"id":8,"text":"I like basketball.","start":32.32,"duration":5.12},{"id":9,"text":"I play basketball every day.","start":34.32,"duration":6.4},{"id":10,"text":"I like basketball too but i can't play.","start":37.44,"duration":5.2},{"id":11,"text":"Very well.","start":40.72,"duration":3.04},{"id":12,"text":"Don't worry.","start":42.64,"duration":3.12},{"id":13,"text":"I can help you.","start":43.76,"duration":3.92},{"id":14,"text":"Really.","start":45.76,"duration":3.92},{"id":15,"text":"How about playing basketball after.","start":47.68,"duration":3.44},{"id":16,"text":"School.","start":49.68,"duration":5.16},{"id":17,"text":"That's a good idea.","start":51.12,"duration":3.72},{"id":18,"text":"That was a great time.","start":66.96,"duration":3.92},{"id":19,"text":"Thank you jinsu.","start":68.88,"duration":3.68},{"id":20,"text":"You're welcome.","start":70.88,"duration":7.92},{"id":21,"text":"Listen.","start":78.8,"duration":5.36},{"id":22,"text":"What class is next.","start":84.16,"duration":8.08},{"id":23,"text":"Math i like math class.","start":87.84,"duration":4.4},{"id":24,"text":"I don't like math.","start":93.28,"duration":5.6},{"id":25,"text":"What's your favorite subject.","start":95.6,"duration":6.32},{"id":26,"text":"My favorite subject is pe.","start":98.88,"duration":5.44},{"id":27,"text":"I like playing sports.","start":101.92,"duration":4.4},{"id":28,"text":"I like basketball.","start":104.32,"duration":5.04},{"id":29,"text":"I play basketball every day.","start":106.32,"duration":6.4},{"id":30,"text":"I like basketball too but i can't play.","start":109.36,"duration":5.28},{"id":31,"text":"Very well.","start":112.72,"duration":3.04},{"id":32,"text":"Don't worry.","start":114.64,"duration":3.04},{"id":33,"text":"I can help you.","start":115.76,"duration":3.84},{"id":34,"text":"Really.","start":117.68,"duration":4},{"id":35,"text":"How about playing basketball after.","start":119.6,"duration":3.52},{"id":36,"text":"School.","start":121.68,"duration":5.16},{"id":37,"text":"That's a good idea.","start":123.12,"duration":3.72},{"id":38,"text":"That was a great time.","start":138.88,"duration":3.92},{"id":39,"text":"Thank you jinsu.","start":140.88,"duration":3.65},{"id":40,"text":"You're welcome.","start":142.8,"duration":7.33},{"id":41,"text":"Speak aloud.","start":151.28,"duration":5.27},{"id":42,"text":"Uh.","start":175.68,"duration":3},{"id":43,"text":"Oh.","start":197.6,"duration":13.41},{"id":44,"text":"Your turn.","start":223.04,"duration":5.47},{"id":45,"text":"Uh.","start":247.6,"duration":3},{"id":46,"text":"Bye.","start":269.6,"duration":3}],"fetchedAt":"2026-07-01T07:32:49.818Z","videoId":"8wZi38lF28E"}
+{
+  "text": "What's your favorite subject. What class is next. I like math class. I don't like math. What's your favorite subject. My favorite subject is p e i like. Playing sports. I like basketball. I play basketball every day. I like basketball too but i can't play. Very well. Don't worry. I can help you. Really. How about playing basketball after. School. That's a good idea. That was a great time. Thank you jinsu. You're welcome. Listen. What class is next. Math i like math class. I don't like math. What's your favorite subject. My favorite subject is pe. I like playing sports. I like basketball. I play basketball every day. I like basketball too but i can't play. Very well. Don't worry. I can help you. Really. How about playing basketball after. School. That's a good idea. That was a great time. Thank you jinsu. You're welcome. Speak aloud. Uh. Oh. Your turn. Uh. Bye.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "English sing sing.",
+      "speaker": "Speaker0",
+      "start": 1.68,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.68,
+          "end": 2.18,
+          "confidence": 0.668
+        },
+        {
+          "word": "sing",
+          "start": 2.4,
+          "end": 2.64,
+          "confidence": 0.784
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.962
+        }
+      ],
+      "confidence": 0.805
+    },
+    {
+      "id": 2,
+      "text": "What's your favorite subject?",
+      "speaker": "Speaker1",
+      "start": 5.92,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "what's",
+          "start": 5.92,
+          "end": 6.24,
+          "confidence": 0.905
+        },
+        {
+          "word": "your",
+          "start": 6.24,
+          "end": 6.56,
+          "confidence": 0.996
+        },
+        {
+          "word": "favorite",
+          "start": 6.56,
+          "end": 7.06,
+          "confidence": 0.956
+        },
+        {
+          "word": "subject",
+          "start": 7.12,
+          "end": 7.62,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.964
+    },
+    {
+      "id": 3,
+      "text": "What class is next?",
+      "speaker": "Speaker1",
+      "start": 12.26,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "what",
+          "start": 12.26,
+          "end": 12.49,
+          "confidence": 0.835
+        },
+        {
+          "word": "class",
+          "start": 12.49,
+          "end": 12.97,
+          "confidence": 0.991
+        },
+        {
+          "word": "is",
+          "start": 12.97,
+          "end": 13.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 13.13,
+          "end": 13.63,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.957
+    },
+    {
+      "id": 4,
+      "text": "Math.",
+      "speaker": "Speaker0",
+      "start": 16.02,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "math",
+          "start": 16.02,
+          "end": 16.52,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 5,
+      "text": "I like math class.",
+      "speaker": "Speaker0",
+      "start": 16.82,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 16.82,
+          "end": 17.14,
+          "confidence": 0.927
+        },
+        {
+          "word": "like",
+          "start": 17.14,
+          "end": 17.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "math",
+          "start": 17.54,
+          "end": 17.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "class",
+          "start": 17.94,
+          "end": 18.44,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 6,
+      "text": "I don't like math.",
+      "speaker": "Speaker0",
+      "start": 21.3,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "i",
+          "start": 21.3,
+          "end": 21.54,
+          "confidence": 0.49
+        },
+        {
+          "word": "don't",
+          "start": 21.54,
+          "end": 21.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 21.86,
+          "end": 22.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "math",
+          "start": 22.18,
+          "end": 22.68,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.872
+    },
+    {
+      "id": 7,
+      "text": "What's your favorite subject?",
+      "speaker": "Speaker0",
+      "start": 23.7,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "what's",
+          "start": 23.7,
+          "end": 24.1,
+          "confidence": 0.997
+        },
+        {
+          "word": "your",
+          "start": 24.1,
+          "end": 24.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "favorite",
+          "start": 24.41,
+          "end": 24.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "subject",
+          "start": 24.89,
+          "end": 25.39,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 8,
+      "text": "My favorite subject is PE.",
+      "speaker": "Speaker1",
+      "start": 27.07,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "my",
+          "start": 27.07,
+          "end": 27.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "favorite",
+          "start": 27.31,
+          "end": 27.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "subject",
+          "start": 27.71,
+          "end": 28.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 28.19,
+          "end": 28.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "pe",
+          "start": 28.51,
+          "end": 29.01,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 9,
+      "text": "I like playing sports.",
+      "speaker": "Speaker1",
+      "start": 30.19,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 30.19,
+          "end": 30.27,
+          "confidence": 0.985
+        },
+        {
+          "word": "like",
+          "start": 30.27,
+          "end": 30.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "playing",
+          "start": 30.51,
+          "end": 30.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "sports",
+          "start": 30.83,
+          "end": 31.33,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 10,
+      "text": "I like basketball.",
+      "speaker": "Speaker1",
+      "start": 32.43,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 32.43,
+          "end": 32.67,
+          "confidence": 0.959
+        },
+        {
+          "word": "like",
+          "start": 32.67,
+          "end": 32.99,
+          "confidence": 0.998
+        },
+        {
+          "word": "basketball",
+          "start": 32.99,
+          "end": 33.49,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 11,
+      "text": "I play basketball every day.",
+      "speaker": "Speaker1",
+      "start": 34.35,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "i",
+          "start": 34.35,
+          "end": 34.67,
+          "confidence": 0.607
+        },
+        {
+          "word": "play",
+          "start": 34.67,
+          "end": 34.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "basketball",
+          "start": 34.99,
+          "end": 35.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "every",
+          "start": 35.55,
+          "end": 35.87,
+          "confidence": 0.625
+        },
+        {
+          "word": "day",
+          "start": 35.87,
+          "end": 36.37,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.846
+    },
+    {
+      "id": 12,
+      "text": "I like basketball",
+      "speaker": "Speaker0",
+      "start": 37.47,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 37.47,
+          "end": 37.71,
+          "confidence": 0.982
+        },
+        {
+          "word": "like",
+          "start": 37.71,
+          "end": 38.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "basketball",
+          "start": 38.11,
+          "end": 38.61,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 13,
+      "text": "too, but I can't play very well.",
+      "speaker": "Speaker0",
+      "start": 38.99,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "too",
+          "start": 38.99,
+          "end": 39.49,
+          "confidence": 0.98
+        },
+        {
+          "word": "but",
+          "start": 39.63,
+          "end": 39.87,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 39.87,
+          "end": 40.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 40.03,
+          "end": 40.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 40.51,
+          "end": 40.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "very",
+          "start": 40.83,
+          "end": 41.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "well",
+          "start": 41.15,
+          "end": 41.65,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 14,
+      "text": "Don't worry.",
+      "speaker": "Speaker0",
+      "start": 42.73,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "don't",
+          "start": 42.73,
+          "end": 43.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "worry",
+          "start": 43.05,
+          "end": 43.55,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 15,
+      "text": "I can help you.",
+      "speaker": "Speaker0",
+      "start": 44.01,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 44.01,
+          "end": 44.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 44.09,
+          "end": 44.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "start": 44.33,
+          "end": 44.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 44.57,
+          "end": 45.07,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 16,
+      "text": "Really?",
+      "speaker": "Speaker0",
+      "start": 45.77,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "really",
+          "start": 45.77,
+          "end": 46.27,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 17,
+      "text": "How about playing basketball after school?",
+      "speaker": "Speaker1",
+      "start": 47.69,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "how",
+          "start": 47.69,
+          "end": 48.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "about",
+          "start": 48.01,
+          "end": 48.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "playing",
+          "start": 48.33,
+          "end": 48.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "basketball",
+          "start": 48.73,
+          "end": 49.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "after",
+          "start": 49.45,
+          "end": 49.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "school",
+          "start": 49.77,
+          "end": 50.27,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 18,
+      "text": "That's a good idea.",
+      "speaker": "Speaker0",
+      "start": 51.2,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "that's",
+          "start": 51.2,
+          "end": 51.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 51.52,
+          "end": 51.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "good",
+          "start": 51.69,
+          "end": 52.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "idea",
+          "start": 52.01,
+          "end": 52.51,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 19,
+      "text": "That was a great time.",
+      "speaker": "Speaker0",
+      "start": 67.08,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "that",
+          "start": 67.08,
+          "end": 67.23,
+          "confidence": 0.818
+        },
+        {
+          "word": "was",
+          "start": 67.23,
+          "end": 67.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 67.47,
+          "end": 67.72,
+          "confidence": 0.998
+        },
+        {
+          "word": "great",
+          "start": 67.72,
+          "end": 68.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 68.03,
+          "end": 68.53,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.962
+    },
+    {
+      "id": 20,
+      "text": "Thank you, Jinsoo.",
+      "speaker": "Speaker0",
+      "start": 68.92,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "thank",
+          "start": 68.92,
+          "end": 69.23,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 69.23,
+          "end": 69.56,
+          "confidence": 0.983
+        },
+        {
+          "word": "jinsoo",
+          "start": 69.56,
+          "end": 70.06,
+          "confidence": 0.74
+        }
+      ],
+      "confidence": 0.907
+    },
+    {
+      "id": 21,
+      "text": "You're welcome.",
+      "speaker": "Speaker1",
+      "start": 70.92,
+      "duration": 0.81,
+      "words": [
+        {
+          "word": "you're",
+          "start": 70.92,
+          "end": 71.23,
+          "confidence": 0.995
+        },
+        {
+          "word": "welcome",
+          "start": 71.23,
+          "end": 71.73,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 22,
+      "text": "Listen.",
+      "speaker": "Speaker1",
+      "start": 78.83,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "listen",
+          "start": 78.83,
+          "end": 79.33,
+          "confidence": 0.814
+        }
+      ],
+      "confidence": 0.814
+    },
+    {
+      "id": 23,
+      "text": "What class is next?",
+      "speaker": "Speaker1",
+      "start": 84.25,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "what",
+          "start": 84.25,
+          "end": 84.57,
+          "confidence": 0.972
+        },
+        {
+          "word": "class",
+          "start": 84.57,
+          "end": 84.89,
+          "confidence": 0.989
+        },
+        {
+          "word": "is",
+          "start": 84.89,
+          "end": 85.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 85.13,
+          "end": 85.63,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 24,
+      "text": "Math.",
+      "speaker": "Speaker0",
+      "start": 87.85,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "math",
+          "start": 87.85,
+          "end": 88.35,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 25,
+      "text": "I like math class.",
+      "speaker": "Speaker0",
+      "start": 88.81,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 88.81,
+          "end": 89.13,
+          "confidence": 0.964
+        },
+        {
+          "word": "like",
+          "start": 89.13,
+          "end": 89.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "math",
+          "start": 89.53,
+          "end": 89.93,
+          "confidence": 0.995
+        },
+        {
+          "word": "class",
+          "start": 89.93,
+          "end": 90.43,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 26,
+      "text": "I don't like math.",
+      "speaker": "Speaker0",
+      "start": 93.37,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 93.37,
+          "end": 93.53,
+          "confidence": 0.642
+        },
+        {
+          "word": "don't",
+          "start": 93.53,
+          "end": 93.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 93.85,
+          "end": 94.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "math",
+          "start": 94.09,
+          "end": 94.59,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.91
+    },
+    {
+      "id": 27,
+      "text": "What's your favorite subject?",
+      "speaker": "Speaker0",
+      "start": 95.72,
+      "duration": 1.79,
+      "words": [
+        {
+          "word": "what's",
+          "start": 95.72,
+          "end": 96.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "your",
+          "start": 96.12,
+          "end": 96.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "favorite",
+          "start": 96.44,
+          "end": 96.94,
+          "confidence": 0.997
+        },
+        {
+          "word": "subject",
+          "start": 97.01,
+          "end": 97.51,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 28,
+      "text": "My favorite subject is PE.",
+      "speaker": "Speaker1",
+      "start": 99.01,
+      "duration": 1.93,
+      "words": [
+        {
+          "word": "my",
+          "start": 99.01,
+          "end": 99.25,
+          "confidence": 0.999
+        },
+        {
+          "word": "favorite",
+          "start": 99.25,
+          "end": 99.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "subject",
+          "start": 99.65,
+          "end": 100.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 100.12,
+          "end": 100.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "pe",
+          "start": 100.44,
+          "end": 100.94,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 29,
+      "text": "I like playing sports.",
+      "speaker": "Speaker1",
+      "start": 101.97,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "i",
+          "start": 101.97,
+          "end": 102.28,
+          "confidence": 0.967
+        },
+        {
+          "word": "like",
+          "start": 102.28,
+          "end": 102.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "playing",
+          "start": 102.53,
+          "end": 102.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "sports",
+          "start": 102.84,
+          "end": 103.34,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 30,
+      "text": "I like basketball.",
+      "speaker": "Speaker1",
+      "start": 104.36,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 104.36,
+          "end": 104.61,
+          "confidence": 0.869
+        },
+        {
+          "word": "like",
+          "start": 104.61,
+          "end": 104.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "basketball",
+          "start": 104.92,
+          "end": 105.42,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.956
+    },
+    {
+      "id": 31,
+      "text": "I play basketball every day.",
+      "speaker": "Speaker1",
+      "start": 106.36,
+      "duration": 1.95,
+      "words": [
+        {
+          "word": "i",
+          "start": 106.36,
+          "end": 106.61,
+          "confidence": 0.633
+        },
+        {
+          "word": "play",
+          "start": 106.61,
+          "end": 106.92,
+          "confidence": 0.999
+        },
+        {
+          "word": "basketball",
+          "start": 106.92,
+          "end": 107.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "every",
+          "start": 107.56,
+          "end": 107.81,
+          "confidence": 0.615
+        },
+        {
+          "word": "day",
+          "start": 107.81,
+          "end": 108.31,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.849
+    },
+    {
+      "id": 32,
+      "text": "I like basketball too, but I can't play very well.",
+      "speaker": "Speaker0",
+      "start": 109.52,
+      "duration": 4.1,
+      "words": [
+        {
+          "word": "i",
+          "start": 109.52,
+          "end": 109.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 109.76,
+          "end": 110.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "basketball",
+          "start": 110.16,
+          "end": 110.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "too",
+          "start": 110.96,
+          "end": 111.46,
+          "confidence": 0.972
+        },
+        {
+          "word": "but",
+          "start": 111.68,
+          "end": 111.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 111.84,
+          "end": 112.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 112.0,
+          "end": 112.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 112.48,
+          "end": 112.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "very",
+          "start": 112.8,
+          "end": 113.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "well",
+          "start": 113.12,
+          "end": 113.62,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 33,
+      "text": "Don't worry.",
+      "speaker": "Speaker0",
+      "start": 114.64,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "don't",
+          "start": 114.64,
+          "end": 114.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "worry",
+          "start": 114.96,
+          "end": 115.46,
+          "confidence": 0.947
+        }
+      ],
+      "confidence": 0.973
+    },
+    {
+      "id": 34,
+      "text": "I can help you.",
+      "speaker": "Speaker0",
+      "start": 115.92,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 115.92,
+          "end": 116.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 116.08,
+          "end": 116.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "start": 116.32,
+          "end": 116.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 116.56,
+          "end": 117.06,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 35,
+      "text": "Really?",
+      "speaker": "Speaker0",
+      "start": 117.76,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "really",
+          "start": 117.76,
+          "end": 118.26,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 36,
+      "text": "How about playing basketball after school?",
+      "speaker": "Speaker1",
+      "start": 119.68,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "how",
+          "start": 119.68,
+          "end": 119.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "about",
+          "start": 119.92,
+          "end": 120.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "playing",
+          "start": 120.32,
+          "end": 120.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "basketball",
+          "start": 120.64,
+          "end": 121.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "after",
+          "start": 121.36,
+          "end": 121.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "school",
+          "start": 121.76,
+          "end": 122.26,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 37,
+      "text": "That's a good idea.",
+      "speaker": "Speaker1",
+      "start": 123.19,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "that's",
+          "start": 123.19,
+          "end": 123.5,
+          "confidence": 0.785
+        },
+        {
+          "word": "a",
+          "start": 123.5,
+          "end": 123.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "good",
+          "start": 123.75,
+          "end": 123.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "idea",
+          "start": 123.98,
+          "end": 124.48,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.944
+    },
+    {
+      "id": 38,
+      "text": "That was a great time.",
+      "speaker": "Speaker0",
+      "start": 139.09,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "that",
+          "start": 139.09,
+          "end": 139.25,
+          "confidence": 0.85
+        },
+        {
+          "word": "was",
+          "start": 139.25,
+          "end": 139.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 139.49,
+          "end": 139.65,
+          "confidence": 0.997
+        },
+        {
+          "word": "great",
+          "start": 139.65,
+          "end": 140.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 140.05,
+          "end": 140.55,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 39,
+      "text": "Thank you, Jin Soo.",
+      "speaker": "Speaker0",
+      "start": 140.93,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "thank",
+          "start": 140.93,
+          "end": 141.17,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 141.17,
+          "end": 141.57,
+          "confidence": 0.973
+        },
+        {
+          "word": "jin",
+          "start": 141.57,
+          "end": 141.81,
+          "confidence": 0.881
+        },
+        {
+          "word": "soo",
+          "start": 141.81,
+          "end": 142.31,
+          "confidence": 0.824
+        }
+      ],
+      "confidence": 0.919
+    },
+    {
+      "id": 40,
+      "text": "You're welcome.",
+      "speaker": "Speaker1",
+      "start": 142.85,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "you're",
+          "start": 142.85,
+          "end": 143.17,
+          "confidence": 0.994
+        },
+        {
+          "word": "welcome",
+          "start": 143.17,
+          "end": 143.67,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 41,
+      "text": "Speak aloud.",
+      "speaker": "Speaker1",
+      "start": 151.49,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "speak",
+          "start": 151.49,
+          "end": 151.81,
+          "confidence": 0.805
+        },
+        {
+          "word": "aloud",
+          "start": 151.81,
+          "end": 152.31,
+          "confidence": 0.975
+        }
+      ],
+      "confidence": 0.89
+    },
+    {
+      "id": 42,
+      "text": "Your turn.",
+      "speaker": "Speaker1",
+      "start": 223.1,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "your",
+          "start": 223.1,
+          "end": 223.58,
+          "confidence": 0.895
+        },
+        {
+          "word": "turn",
+          "start": 223.58,
+          "end": 224.08,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.938
+    }
+  ],
+  "fetchedAt": "2026-07-23T03:57:08.043807+00:00",
+  "videoId": "8wZi38lF28E",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-23T03:57:08.043831+00:00",
+    "dgWordCount": 155,
+    "dgUtteranceCount": 42,
+    "matchedSegments": 42,
+    "totalDuration": 224.08
+  }
+}

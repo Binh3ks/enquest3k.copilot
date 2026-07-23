@@ -139,10 +139,12 @@ def map_utterances_to_segments(deepgram_data: dict) -> list:
         while dg_idx < len(words):
             w = words[dg_idx]
             if w["start"] >= u_start - 0.05 and w["end"] <= u_end + 0.05:
+                # Fix zero-duration artifacts (Deepgram punctuation/short connectors)
+                w_end = w["end"] if w["end"] > w["start"] else w["start"] + 0.05
                 matched_words.append({
                     "word": w["word"],
                     "start": round(w["start"], 2),
-                    "end": round(w["end"], 2),
+                    "end": round(w_end, 2),
                     "confidence": round(w.get("confidence", 0), 3),
                 })
                 dg_idx += 1

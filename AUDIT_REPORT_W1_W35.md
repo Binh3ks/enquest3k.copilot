@@ -10,106 +10,67 @@
 
 | Category | Count | Description |
 |----------|-------|-------------|
-| 🟢 GREEN | 0 | All segments have physical L3 `words[]` |
-| 🟡 YELLOW | 1 | Has transcript text but missing/guesswork L3 |
-| 🔴 RED | 34 | Missing file, corrupted, or no transcript |
+| 🟢 GREEN | 35 | All segments have physical L3 `words[]` |
+| 🟡 YELLOW | 0 | Has transcript text but missing/guesswork L3 |
+| 🔴 RED | 0 | Missing file, corrupted, or no transcript |
 | **Total** | **35** | |
 
 ---
 
 ## Phase 3 Queue (weeks needing re-run)
 
-These weeks must be re-run through `force_align_transcript.py`:
-
-| Week | Video ID | Status | Issue |
-|------|----------|--------|-------|
-| W11 | `curo8LPPA5Y` | YELLOW | 82/82 segments have words[], but only 78 have valid physical L3 timestamps (610  |
-| W01 | `8wZi38lF28E` | RED | No segments have words[] arrays |
-| W02 | `FHaObkHEkHQ` | RED | No segments have words[] arrays |
-| W03 | `zT5IiE9m9oY` | RED | No segments have words[] arrays |
-| W04 | `BXWNhq-lPD8` | RED | No segments have words[] arrays |
-| W05 | `O07X1XLK4tM` | RED | No segments have words[] arrays |
-| W06 | `Uv55rB8RTIs` | RED | File not found |
-| W07 | `vb4ZF3pYtuw` | RED | No segments have words[] arrays |
-| W08 | `d7hYjIV4AF0` | RED | No segments have words[] arrays |
-| W09 | `jWY6N9QXmEY` | RED | No segments have words[] arrays |
-| W10 | `t1tSx5cI9eg` | RED | No segments have words[] arrays |
-| W12 | `4c6FyuetSVo` | RED | No segments have words[] arrays |
-| W13 | `ico9ztlb46k` | RED | No segments have words[] arrays |
-| W14 | `vGiVWmh_17s` | RED | File not found |
-| W15 | `N1o4oOXLOZc` | RED | No segments have words[] arrays |
-| W16 | `tgUSHk6JaTY` | RED | No segments have words[] arrays |
-| W17 | `P9abGg_gF1s` | RED | No segments have words[] arrays |
-| W18 | `MNQMpFVrMOs` | RED | No segments have words[] arrays |
-| W19 | `wy398w9QcB4` | RED | No segments have words[] arrays |
-| W20 | `qwjfQNQsRRI` | RED | No segments have words[] arrays |
-| W21 | `tGWiowdjnHk` | RED | No segments have words[] arrays |
-| W22 | `kTf0V4HyFtM` | RED | File not found |
-| W23 | `pcWBtzTnpb8` | RED | No segments have words[] arrays |
-| W24 | `LlC-Trk54Zg` | RED | No segments have words[] arrays |
-| W25 | `RP1AL2DU6vQ` | RED | File not found |
-| W26 | `OdNv-J31Kk8` | RED | No segments have words[] arrays |
-| W27 | `D3h-1mBjYdY` | RED | No segments have words[] arrays |
-| W28 | `tftSHIh8enw` | RED | No segments have words[] arrays |
-| W29 | `aSdnkKnL6Ys` | RED | No segments have words[] arrays |
-| W30 | `aqMpREQdnCY` | RED | No segments have words[] arrays |
-| W31 | `LNajQTnZviQ` | RED | No segments have words[] arrays |
-| W32 | `qD1pnquN_DM` | RED | No segments have words[] arrays |
-| W33 | `gWOqA3pUaTk` | RED | No segments have words[] arrays |
-| W34 | `XPZXpuoIndo` | RED | No segments have words[] arrays |
-| W35 | `X2YgM1Zw4_E` | RED | No segments have words[] arrays |
+No weeks need re-running — all GREEN.
 
 ---
 
 ## 🟢 GREEN (Pass)
 
-No GREEN weeks.
+| Week | Video ID | Segments | Words | Engine |
+|------|----------|----------|-------|--------|
+| W01 | `8wZi38lF28E` | 42 | 155 | deepgram-nova-2 |
+| W02 | `FHaObkHEkHQ` | 60 | 111 | deepgram-nova-2 |
+| W03 | `zT5IiE9m9oY` | 35 | 130 | deepgram-nova-2 |
+| W04 | `BXWNhq-lPD8` | 61 | 100 | deepgram-nova-2 |
+| W05 | `O07X1XLK4tM` | 34 | 145 | deepgram-nova-2 |
+| W06 | `Uv55rB8RTIs` | 21 | 105 | deepgram-nova-2 |
+| W07 | `vb4ZF3pYtuw` | 76 | 395 | deepgram-nova-2 |
+| W08 | `d7hYjIV4AF0` | 140 | 298 | deepgram-nova-2 |
+| W09 | `jWY6N9QXmEY` | 95 | 321 | deepgram-nova-2 |
+| W10 | `t1tSx5cI9eg` | 42 | 69 | deepgram-nova-2 |
+| W11 | `curo8LPPA5Y` | 82 | 610 | deepgram-nova-2 |
+| W12 | `4c6FyuetSVo` | 77 | 177 | deepgram-nova-2 |
+| W13 | `ico9ztlb46k` | 43 | 107 | deepgram-nova-2 |
+| W14 | `vGiVWmh_17s` | 218 | 1627 | deepgram-nova-2 |
+| W15 | `N1o4oOXLOZc` | 62 | 186 | deepgram-nova-2 |
+| W16 | `tgUSHk6JaTY` | 103 | 245 | deepgram-nova-2 |
+| W17 | `P9abGg_gF1s` | 108 | 288 | deepgram-nova-2 |
+| W18 | `MNQMpFVrMOs` | 150 | 476 | deepgram-nova-2 |
+| W19 | `wy398w9QcB4` | 53 | 205 | deepgram-nova-2 |
+| W20 | `qwjfQNQsRRI` | 51 | 381 | deepgram-nova-2 |
+| W21 | `tGWiowdjnHk` | 112 | 447 | deepgram-nova-2 |
+| W22 | `kTf0V4HyFtM` | 85 | 396 | deepgram-nova-2 |
+| W23 | `pcWBtzTnpb8` | 51 | 200 | deepgram-nova-2 |
+| W24 | `LlC-Trk54Zg` | 40 | 199 | deepgram-nova-2 |
+| W25 | `RP1AL2DU6vQ` | 26 | 257 | deepgram-nova-2 |
+| W26 | `OdNv-J31Kk8` | 37 | 186 | deepgram-nova-2 |
+| W27 | `D3h-1mBjYdY` | 45 | 77 | deepgram-nova-2 |
+| W28 | `tftSHIh8enw` | 36 | 200 | deepgram-nova-2 |
+| W29 | `aSdnkKnL6Ys` | 84 | 308 | deepgram-nova-2 |
+| W30 | `aqMpREQdnCY` | 24 | 97 | deepgram-nova-2 |
+| W31 | `LNajQTnZviQ` | 39 | 80 | deepgram-nova-2 |
+| W32 | `qD1pnquN_DM` | 62 | 173 | deepgram-nova-2 |
+| W33 | `gWOqA3pUaTk` | 26 | 77 | deepgram-nova-2 |
+| W34 | `XPZXpuoIndo` | 134 | 1172 | deepgram-nova-2 |
+| W35 | `X2YgM1Zw4_E` | 46 | 466 | deepgram-nova-2 |
 
 ---
 
 ## 🟡 YELLOW (Warning)
 
-| Week | Video ID | Segments | Words | L3 Valid | Engine |
-|------|----------|----------|-------|----------|--------|
-| W11 | `curo8LPPA5Y` | 82 | 610 | 78 | deepgram-nova-2 |
+No YELLOW weeks.
 
 ---
 
 ## 🔴 RED (Fail)
 
-| Week | Video ID | Reason |
-|------|----------|--------|
-| W01 | `8wZi38lF28E` | No segments have words[] arrays |
-| W02 | `FHaObkHEkHQ` | No segments have words[] arrays |
-| W03 | `zT5IiE9m9oY` | No segments have words[] arrays |
-| W04 | `BXWNhq-lPD8` | No segments have words[] arrays |
-| W05 | `O07X1XLK4tM` | No segments have words[] arrays |
-| W06 | `Uv55rB8RTIs` | File not found |
-| W07 | `vb4ZF3pYtuw` | No segments have words[] arrays |
-| W08 | `d7hYjIV4AF0` | No segments have words[] arrays |
-| W09 | `jWY6N9QXmEY` | No segments have words[] arrays |
-| W10 | `t1tSx5cI9eg` | No segments have words[] arrays |
-| W12 | `4c6FyuetSVo` | No segments have words[] arrays |
-| W13 | `ico9ztlb46k` | No segments have words[] arrays |
-| W14 | `vGiVWmh_17s` | File not found |
-| W15 | `N1o4oOXLOZc` | No segments have words[] arrays |
-| W16 | `tgUSHk6JaTY` | No segments have words[] arrays |
-| W17 | `P9abGg_gF1s` | No segments have words[] arrays |
-| W18 | `MNQMpFVrMOs` | No segments have words[] arrays |
-| W19 | `wy398w9QcB4` | No segments have words[] arrays |
-| W20 | `qwjfQNQsRRI` | No segments have words[] arrays |
-| W21 | `tGWiowdjnHk` | No segments have words[] arrays |
-| W22 | `kTf0V4HyFtM` | File not found |
-| W23 | `pcWBtzTnpb8` | No segments have words[] arrays |
-| W24 | `LlC-Trk54Zg` | No segments have words[] arrays |
-| W25 | `RP1AL2DU6vQ` | File not found |
-| W26 | `OdNv-J31Kk8` | No segments have words[] arrays |
-| W27 | `D3h-1mBjYdY` | No segments have words[] arrays |
-| W28 | `tftSHIh8enw` | No segments have words[] arrays |
-| W29 | `aSdnkKnL6Ys` | No segments have words[] arrays |
-| W30 | `aqMpREQdnCY` | No segments have words[] arrays |
-| W31 | `LNajQTnZviQ` | No segments have words[] arrays |
-| W32 | `qD1pnquN_DM` | No segments have words[] arrays |
-| W33 | `gWOqA3pUaTk` | No segments have words[] arrays |
-| W34 | `XPZXpuoIndo` | No segments have words[] arrays |
-| W35 | `X2YgM1Zw4_E` | No segments have words[] arrays |
+No RED weeks.

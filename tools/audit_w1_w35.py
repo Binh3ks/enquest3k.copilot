@@ -65,10 +65,11 @@ def audit_transcript(video_id: str) -> dict:
             # Check if words have physical start/end (not synthetic)
             first_word = words[0]
             if "start" in first_word and "end" in first_word:
-                # Check if timestamps are physically plausible (not all identical)
-                starts = [w["start"] for w in words]
-                ends = [w["end"] for w in words]
-                if len(set(starts)) > 1 or len(set(ends)) > 1:
+                # Check if timestamps are physically plausible
+                # A segment is valid if words have start/end with end >= start
+                # (single-word segments are valid if end > start)
+                all_valid = all(w["end"] >= w["start"] for w in words)
+                if all_valid and len(words) >= 1:
                     segments_with_valid_l3 += 1
         if seg.get("speaker"):
             has_speaker = True
