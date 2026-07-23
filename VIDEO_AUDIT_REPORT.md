@@ -9,22 +9,9 @@
 
 | Category | Count |
 |----------|-------|
-| ✅ PASS | 27 |
-| ⚠️ FLAGGED | 8 |
+| ✅ PASS | 35 |
+| ⚠️ FLAGGED | 0 |
 | Total | 35 |
-
-## ⚠️ FLAGGED WEEKS (Need Replacement)
-
-| Week | Grammar Focus | Words | Vocab Rich. | Tense | Reasons |
-|------|--------------|-------|-------------|-------|---------|
-| W07 | There is... (Singular Items) | 395 | 0.21 | Present | CHANTING: low vocab richness (0.21) |
-| W10 | Contrast with  | 69 | 0.57 | Mixed | TOO SHORT: 69 words (need ≥80) |
-| W12 | I can / I can | 177 | 0.25 | Present | CHANTING: low vocab richness (0.25) |
-| W16 | Present Continuous (is/are + verb-i | 245 | 0.17 | Present | CHANTING: low vocab richness (0.17); CHANTING: 4x consecutive identical sentences |
-| W27 | Present Simple for Facts: It grows, | 77 | 0.69 | Mixed | TOO SHORT: 77 words (need ≥80) |
-| W28 | Past Simple: Regular & Irregular Ve | 200 | 0.27 | Present | GRAMMAR MISMATCH: lesson=Past, video=Present (21%) |
-| W31 | Past Simple: Irregular Verbs 3 — se | 80 | 0.45 | Present | GRAMMAR MISMATCH: lesson=Past, video=Present (28%) |
-| W33 |  | 77 | 0.74 | Present | TOO SHORT: 77 words (need ≥80) |
 
 ## ✅ PASSED WEEKS
 
@@ -33,15 +20,19 @@
 | W01 | Subject Pronouns & Verb to be | 155 | 0.39 | Present |
 | W02 | This is my... (Possession) | 111 | 0.41 | Present |
 | W03 | is vs has (Describing People) | 130 | 0.42 | Present |
-| W04 | I like + V-ing (Expressing Preferen | 100 | 0.43 | Past |
+| W04 | I like + V-ing (Expressing Preferen | 191 | 0.32 | Present |
 | W05 | Articles  | 145 | 0.71 | Present |
 | W06 | Prepositions (In, On, Under, Next t | 105 | 0.33 | Present |
+| W07 | There is... (Singular Items) | 1189 | 0.46 | Present |
 | W08 | There are... (Plural) | 298 | 0.33 | Present |
 | W09 | It is a [adjective] [noun] | 321 | 0.33 | Present |
+| W10 | Contrast with  | 537 | 0.42 | Present |
 | W11 | Preposition  | 610 | 0.48 | Present |
+| W12 | I can / I can | 334 | 0.28 | Present |
 | W13 | Present Simple (Daily Routines) | 107 | 0.50 | Present |
 | W14 | Review: Present Simple, Can/Can | 1627 | 0.34 | Mixed |
 | W15 | Present Continuous (S + am/is/are + | 186 | 0.40 | Present |
+| W16 | Present Continuous (is/are + verb-i | 558 | 0.46 | Present |
 | W17 | Cause and Effect:  | 288 | 0.35 | Present |
 | W18 | Present Continuous: Describing What | 476 | 0.38 | Present |
 | W19 | Was/Were (Past State) | 205 | 0.37 | Mixed |
@@ -49,12 +40,16 @@
 | W21 | Past Simple: verb + -ed | 447 | 0.31 | Past |
 | W22 | Past Questions: Did + subject + bas | 396 | 0.36 | Mixed |
 | W23 | Regular Past Tense: verb + -ed | 200 | 0.34 | Past |
-| W24 | Was / Were + Adjectives | 199 | 0.60 | Present |
+| W24 | Was / Were + Adjectives | 785 | 0.40 | Mixed |
 | W25 | Sequence Connectors: First, Next, T | 257 | 0.53 | Present |
 | W26 | Past Simple: Regular Verbs (-ed) &  | 186 | 0.61 | Past |
+| W27 | Present Simple for Facts: It grows, | 879 | 0.32 | Present |
+| W28 | Past Simple: Regular & Irregular Ve | 594 | 0.46 | Past |
 | W29 | Past Simple: Irregular Verbs 1 — go | 308 | 0.35 | Past |
 | W30 | Past Simple: Irregular Verbs 2 — ea | 97 | 0.63 | Past |
-| W32 | Irregular Verbs — Group 4: Task Ver | 173 | 0.28 | Present |
+| W31 | Past Simple: Irregular Verbs 3 — se | 797 | 0.47 | Past |
+| W32 | Irregular Verbs — Group 4: Task Ver | 350 | 0.50 | Mixed |
+| W33 |  | 479 | 0.30 | Present |
 | W34 |  | 1172 | 0.38 | Mixed |
 | W35 |  | 466 | 0.56 | Present |
 
@@ -82,10 +77,10 @@
 - **Status:** PASS
 
 ### W04 — I like + V-ing (Expressing Preferences)
-- **Video ID:** `BXWNhq-lPD8`
-- **Total Words:** 100
-- **Vocab Richness:** 0.43
-- **Dominant Tense:** Past
+- **Video ID:** `VnVMqbj96Z0`
+- **Total Words:** 191
+- **Vocab Richness:** 0.32
+- **Dominant Tense:** Present
 - **Status:** PASS
 
 ### W05 — Articles 
@@ -103,12 +98,11 @@
 - **Status:** PASS
 
 ### W07 — There is... (Singular Items)
-- **Video ID:** `vb4ZF3pYtuw`
-- **Total Words:** 395
-- **Vocab Richness:** 0.21
+- **Video ID:** `SkSf67TWpW0`
+- **Total Words:** 1189
+- **Vocab Richness:** 0.46
 - **Dominant Tense:** Present
-- **Status:** FLAGGED
-- ⚠️ **CHANTING: low vocab richness (0.21)**
+- **Status:** PASS
 
 ### W08 — There are... (Plural)
 - **Video ID:** `d7hYjIV4AF0`
@@ -125,12 +119,11 @@
 - **Status:** PASS
 
 ### W10 — Contrast with 
-- **Video ID:** `t1tSx5cI9eg`
-- **Total Words:** 69
-- **Vocab Richness:** 0.57
-- **Dominant Tense:** Mixed
-- **Status:** FLAGGED
-- ⚠️ **TOO SHORT: 69 words (need ≥80)**
+- **Video ID:** `bgfdqVmVjfk`
+- **Total Words:** 537
+- **Vocab Richness:** 0.42
+- **Dominant Tense:** Present
+- **Status:** PASS
 
 ### W11 — Preposition 
 - **Video ID:** `curo8LPPA5Y`
@@ -140,12 +133,11 @@
 - **Status:** PASS
 
 ### W12 — I can / I can
-- **Video ID:** `4c6FyuetSVo`
-- **Total Words:** 177
-- **Vocab Richness:** 0.25
+- **Video ID:** `X7OAJEQJU3w`
+- **Total Words:** 334
+- **Vocab Richness:** 0.28
 - **Dominant Tense:** Present
-- **Status:** FLAGGED
-- ⚠️ **CHANTING: low vocab richness (0.25)**
+- **Status:** PASS
 
 ### W13 — Present Simple (Daily Routines)
 - **Video ID:** `ico9ztlb46k`
@@ -169,13 +161,11 @@
 - **Status:** PASS
 
 ### W16 — Present Continuous (is/are + verb-ing)
-- **Video ID:** `tgUSHk6JaTY`
-- **Total Words:** 245
-- **Vocab Richness:** 0.17
+- **Video ID:** `UdEasleUc54`
+- **Total Words:** 558
+- **Vocab Richness:** 0.46
 - **Dominant Tense:** Present
-- **Status:** FLAGGED
-- ⚠️ **CHANTING: low vocab richness (0.17)**
-- ⚠️ **CHANTING: 4x consecutive identical sentences**
+- **Status:** PASS
 
 ### W17 — Cause and Effect: 
 - **Video ID:** `P9abGg_gF1s`
@@ -227,10 +217,10 @@
 - **Status:** PASS
 
 ### W24 — Was / Were + Adjectives
-- **Video ID:** `LlC-Trk54Zg`
-- **Total Words:** 199
-- **Vocab Richness:** 0.60
-- **Dominant Tense:** Present
+- **Video ID:** `jGn6bIbXlGY`
+- **Total Words:** 785
+- **Vocab Richness:** 0.40
+- **Dominant Tense:** Mixed
 - **Status:** PASS
 
 ### W25 — Sequence Connectors: First, Next, Then, Finally
@@ -248,20 +238,18 @@
 - **Status:** PASS
 
 ### W27 — Present Simple for Facts: It grows, It needs
-- **Video ID:** `D3h-1mBjYdY`
-- **Total Words:** 77
-- **Vocab Richness:** 0.69
-- **Dominant Tense:** Mixed
-- **Status:** FLAGGED
-- ⚠️ **TOO SHORT: 77 words (need ≥80)**
+- **Video ID:** `FqmiLz29f9E`
+- **Total Words:** 879
+- **Vocab Richness:** 0.32
+- **Dominant Tense:** Present
+- **Status:** PASS
 
 ### W28 — Past Simple: Regular & Irregular Verbs
-- **Video ID:** `tftSHIh8enw`
-- **Total Words:** 200
-- **Vocab Richness:** 0.27
-- **Dominant Tense:** Present
-- **Status:** FLAGGED
-- ⚠️ **GRAMMAR MISMATCH: lesson=Past, video=Present (21%)**
+- **Video ID:** `g-uW_KheiEc`
+- **Total Words:** 594
+- **Vocab Richness:** 0.46
+- **Dominant Tense:** Past
+- **Status:** PASS
 
 ### W29 — Past Simple: Irregular Verbs 1 — go, run, come, fly
 - **Video ID:** `aSdnkKnL6Ys`
@@ -278,27 +266,25 @@
 - **Status:** PASS
 
 ### W31 — Past Simple: Irregular Verbs 3 — see, hear, feel, smell
-- **Video ID:** `LNajQTnZviQ`
-- **Total Words:** 80
-- **Vocab Richness:** 0.45
-- **Dominant Tense:** Present
-- **Status:** FLAGGED
-- ⚠️ **GRAMMAR MISMATCH: lesson=Past, video=Present (28%)**
+- **Video ID:** `ofu_89J_HVI`
+- **Total Words:** 797
+- **Vocab Richness:** 0.47
+- **Dominant Tense:** Past
+- **Status:** PASS
 
 ### W32 — Irregular Verbs — Group 4: Task Verbs
-- **Video ID:** `qD1pnquN_DM`
-- **Total Words:** 173
-- **Vocab Richness:** 0.28
-- **Dominant Tense:** Present
+- **Video ID:** `7J7f8qbD4Fk`
+- **Total Words:** 350
+- **Vocab Richness:** 0.50
+- **Dominant Tense:** Mixed
 - **Status:** PASS
 
 ### W33 — 
-- **Video ID:** `gWOqA3pUaTk`
-- **Total Words:** 77
-- **Vocab Richness:** 0.74
+- **Video ID:** `4BrS0a5PUFo`
+- **Total Words:** 479
+- **Vocab Richness:** 0.30
 - **Dominant Tense:** Present
-- **Status:** FLAGGED
-- ⚠️ **TOO SHORT: 77 words (need ≥80)**
+- **Status:** PASS
 
 ### W34 — 
 - **Video ID:** `XPZXpuoIndo`

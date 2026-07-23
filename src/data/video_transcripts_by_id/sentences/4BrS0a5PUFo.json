@@ -1,0 +1,4458 @@
+{
+  "videoId": "4BrS0a5PUFo",
+  "text": "It's Steve and Maggie. Wow. English team. Hey. Hello boys and girls. Where am I? Can you see me? Where am I? Where am I? Boo. I'm here. Hey. Look. This is my head. Yeah. So come on. Say with me. It's a head. What is it? It's a head. What is it? It's a head. What is it? It's a head. Yeah. It's my head. Hey. But where's my body? I need more than just my head. Where is it? Look over there. Can you see my hands? Wow. Look. They're playing basketball. Hey. I found my hands. Super. Yeah. Ow. Ow. Hey. Don't be naughty hands. No. I like playing basketball. Do you like playing basketball? Yeah? Then catch. So look. Here's one hand. Here's the other hand. They are hands. So say with me. What are they? They are hands. What are they? They are hands. What are they? They are hands. Yeah. So look. I've got my head and hands. But what else is missing? Yeah. My arms, my body, my legs and feet. Oh dear. Oh. Hey. Look. Look. What can you see? What are they? Yeah. They're my feet. Hey. Come here. Hey. What are they? Yeah. They are my feet. Hey. Where are you going? Come back here, you naughty naughty feet. Look. My feet are playing football. Wow. I like football. Yeah. Woah. Oh. Oh. Oh. Hey. Oh. Sorry. Oh dear. But look. I've got my feet back. There's one foot. There's the other foot. Yeah. I've got two feet. So come on. What are they? They are feet. What are they? They are feet. What are they? They are feet. Yeah. Super. Now, where are my legs? Oh look. There they are sitting on the bench. Stop being such lazy legs and come here. Oh what lazy legs. Come on. Hurry up. Quick quick. Yeah. Oh great. Look. I've got two legs again. So hey. What are they? They are legs. Say it with me. What are they? They are legs. And again, what are they? They are legs. That's right. Super. So I've got two legs. I've got two feet. I've got two hands and a head. But I haven't got any arms. Oh. Listen. What's that over there? Oh look. There are my arms dancing to the music. Wow. Hey. Look. My arms arms are dancing. Yeah. Come on. Let's dance. Yeah. Look. My legs are dancing. My feet are dancing. My hands are dancing and my arms are dancing. Hey. Dance with me and say, they are arms. What are they? They are arms. What are they? They are arms. Yes. Super. Hey, Steve. Yes, Maggie? Catch. Oh. Got it. Oh. But I haven't got a body. Uh-oh. Where is my body? There's it. Oh. There it is. Hey. Stop. Stop. My body. My body. My body.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "It's Steve and Maggie.",
+      "speaker": "Speaker0",
+      "start": 0.72,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "it's",
+          "start": 0.72,
+          "end": 1.04,
+          "confidence": 0.657
+        },
+        {
+          "word": "steve",
+          "start": 1.04,
+          "end": 1.52,
+          "confidence": 0.969
+        },
+        {
+          "word": "and",
+          "start": 1.52,
+          "end": 1.92,
+          "confidence": 0.963
+        },
+        {
+          "word": "maggie",
+          "start": 1.92,
+          "end": 2.42,
+          "confidence": 0.825
+        }
+      ],
+      "confidence": 0.854
+    },
+    {
+      "id": 2,
+      "text": "Wow. English team.",
+      "speaker": "Speaker0",
+      "start": 2.72,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "wow",
+          "start": 2.72,
+          "end": 3.22,
+          "confidence": 0.899
+        },
+        {
+          "word": "english",
+          "start": 3.28,
+          "end": 3.78,
+          "confidence": 0.845
+        },
+        {
+          "word": "team",
+          "start": 4.0,
+          "end": 4.5,
+          "confidence": 0.76
+        }
+      ],
+      "confidence": 0.835
+    },
+    {
+      "id": 3,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 10.64,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 10.64,
+          "end": 11.14,
+          "confidence": 0.754
+        }
+      ],
+      "confidence": 0.754
+    },
+    {
+      "id": 4,
+      "text": "Hello boys and girls.",
+      "speaker": "Speaker0",
+      "start": 11.44,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "hello",
+          "start": 11.44,
+          "end": 11.94,
+          "confidence": 0.806
+        },
+        {
+          "word": "boys",
+          "start": 12.0,
+          "end": 12.32,
+          "confidence": 0.939
+        },
+        {
+          "word": "and",
+          "start": 12.32,
+          "end": 12.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "girls",
+          "start": 12.48,
+          "end": 12.98,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 5,
+      "text": "Where am I?",
+      "speaker": "Speaker0",
+      "start": 13.44,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "where",
+          "start": 13.44,
+          "end": 13.84,
+          "confidence": 0.991
+        },
+        {
+          "word": "am",
+          "start": 13.84,
+          "end": 14.08,
+          "confidence": 0.984
+        },
+        {
+          "word": "i",
+          "start": 14.08,
+          "end": 14.58,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 6,
+      "text": "Can you see me?",
+      "speaker": "Speaker0",
+      "start": 14.82,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "can",
+          "start": 14.82,
+          "end": 15.06,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 15.06,
+          "end": 15.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "see",
+          "start": 15.22,
+          "end": 15.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "me",
+          "start": 15.38,
+          "end": 15.88,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 7,
+      "text": "Where am I?",
+      "speaker": "Speaker0",
+      "start": 16.27,
+      "duration": 0.97,
+      "words": [
+        {
+          "word": "where",
+          "start": 16.27,
+          "end": 16.59,
+          "confidence": 0.993
+        },
+        {
+          "word": "am",
+          "start": 16.59,
+          "end": 16.74,
+          "confidence": 0.982
+        },
+        {
+          "word": "i",
+          "start": 16.74,
+          "end": 17.24,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 8,
+      "text": "Where am I? Boo.",
+      "speaker": "Speaker0",
+      "start": 17.55,
+      "duration": 1.93,
+      "words": [
+        {
+          "word": "where",
+          "start": 17.55,
+          "end": 18.02,
+          "confidence": 0.982
+        },
+        {
+          "word": "am",
+          "start": 18.02,
+          "end": 18.52,
+          "confidence": 0.956
+        },
+        {
+          "word": "i",
+          "start": 18.9,
+          "end": 18.98,
+          "confidence": 0.996
+        },
+        {
+          "word": "boo",
+          "start": 18.98,
+          "end": 19.48,
+          "confidence": 0.908
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 9,
+      "text": "I'm here. Hey. Look.",
+      "speaker": "Speaker0",
+      "start": 20.34,
+      "duration": 1.95,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 20.34,
+          "end": 20.74,
+          "confidence": 0.973
+        },
+        {
+          "word": "here",
+          "start": 20.74,
+          "end": 21.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "hey",
+          "start": 21.39,
+          "end": 21.79,
+          "confidence": 0.682
+        },
+        {
+          "word": "look",
+          "start": 21.79,
+          "end": 22.29,
+          "confidence": 0.924
+        }
+      ],
+      "confidence": 0.894
+    },
+    {
+      "id": 10,
+      "text": "This is my head. Yeah.",
+      "speaker": "Speaker0",
+      "start": 22.66,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "this",
+          "start": 22.66,
+          "end": 23.16,
+          "confidence": 0.998
+        },
+        {
+          "word": "is",
+          "start": 23.3,
+          "end": 23.55,
+          "confidence": 0.99
+        },
+        {
+          "word": "my",
+          "start": 23.55,
+          "end": 24.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "head",
+          "start": 24.11,
+          "end": 24.61,
+          "confidence": 0.997
+        },
+        {
+          "word": "yeah",
+          "start": 24.74,
+          "end": 25.24,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 11,
+      "text": "So come on.",
+      "speaker": "Speaker0",
+      "start": 25.55,
+      "duration": 0.79,
+      "words": [
+        {
+          "word": "so",
+          "start": 25.55,
+          "end": 25.86,
+          "confidence": 0.991
+        },
+        {
+          "word": "come",
+          "start": 25.86,
+          "end": 26.11,
+          "confidence": 0.986
+        },
+        {
+          "word": "on",
+          "start": 26.11,
+          "end": 26.34,
+          "confidence": 0.882
+        }
+      ],
+      "confidence": 0.906
+    },
+    {
+      "id": 12,
+      "text": "Say with me.",
+      "speaker": "Speaker0",
+      "start": 26.34,
+      "duration": 0.96,
+      "words": [
+        {
+          "word": "say",
+          "start": 26.34,
+          "end": 26.66,
+          "confidence": 0.995
+        },
+        {
+          "word": "with",
+          "start": 26.66,
+          "end": 26.82,
+          "confidence": 0.532
+        },
+        {
+          "word": "me",
+          "start": 26.82,
+          "end": 27.3,
+          "confidence": 0.979
+        }
+      ],
+      "confidence": 0.906
+    },
+    {
+      "id": 13,
+      "text": "It's a head.",
+      "speaker": "Speaker0",
+      "start": 27.46,
+      "duration": 1.44,
+      "words": [
+        {
+          "word": "it's",
+          "start": 27.46,
+          "end": 27.96,
+          "confidence": 0.977
+        },
+        {
+          "word": "a",
+          "start": 28.34,
+          "end": 28.58,
+          "confidence": 0.986
+        },
+        {
+          "word": "head",
+          "start": 28.58,
+          "end": 28.9,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.948
+    },
+    {
+      "id": 14,
+      "text": "What is it?",
+      "speaker": "Speaker0",
+      "start": 28.9,
+      "duration": 0.8,
+      "words": [
+        {
+          "word": "what",
+          "start": 28.9,
+          "end": 29.14,
+          "confidence": 0.997
+        },
+        {
+          "word": "is",
+          "start": 29.14,
+          "end": 29.22,
+          "confidence": 0.983
+        },
+        {
+          "word": "it",
+          "start": 29.22,
+          "end": 29.7,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 15,
+      "text": "It's a head.",
+      "speaker": "Speaker0",
+      "start": 29.7,
+      "duration": 1.44,
+      "words": [
+        {
+          "word": "it's",
+          "start": 29.7,
+          "end": 30.2,
+          "confidence": 0.98
+        },
+        {
+          "word": "a",
+          "start": 30.5,
+          "end": 30.74,
+          "confidence": 0.988
+        },
+        {
+          "word": "head",
+          "start": 30.74,
+          "end": 31.14,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 16,
+      "text": "What is it?",
+      "speaker": "Speaker0",
+      "start": 31.14,
+      "duration": 0.8,
+      "words": [
+        {
+          "word": "what",
+          "start": 31.14,
+          "end": 31.38,
+          "confidence": 0.997
+        },
+        {
+          "word": "is",
+          "start": 31.38,
+          "end": 31.54,
+          "confidence": 0.986
+        },
+        {
+          "word": "it",
+          "start": 31.54,
+          "end": 31.94,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 17,
+      "text": "It's a head.",
+      "speaker": "Speaker0",
+      "start": 31.94,
+      "duration": 1.44,
+      "words": [
+        {
+          "word": "it's",
+          "start": 31.94,
+          "end": 32.1,
+          "confidence": 0.991
+        },
+        {
+          "word": "a",
+          "start": 32.1,
+          "end": 32.6,
+          "confidence": 0.992
+        },
+        {
+          "word": "head",
+          "start": 32.98,
+          "end": 33.38,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 18,
+      "text": "What is it?",
+      "speaker": "Speaker0",
+      "start": 33.38,
+      "duration": 0.72,
+      "words": [
+        {
+          "word": "what",
+          "start": 33.38,
+          "end": 33.62,
+          "confidence": 0.997
+        },
+        {
+          "word": "is",
+          "start": 33.62,
+          "end": 33.78,
+          "confidence": 0.986
+        },
+        {
+          "word": "it",
+          "start": 33.78,
+          "end": 34.1,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 19,
+      "text": "It's a head. Yeah.",
+      "speaker": "Speaker0",
+      "start": 34.1,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "it's",
+          "start": 34.1,
+          "end": 34.42,
+          "confidence": 0.994
+        },
+        {
+          "word": "a",
+          "start": 34.42,
+          "end": 34.92,
+          "confidence": 0.99
+        },
+        {
+          "word": "head",
+          "start": 35.38,
+          "end": 35.88,
+          "confidence": 0.996
+        },
+        {
+          "word": "yeah",
+          "start": 35.94,
+          "end": 36.44,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 20,
+      "text": "It's my head. Hey. But where's my body?",
+      "speaker": "Speaker0",
+      "start": 37.22,
+      "duration": 5.55,
+      "words": [
+        {
+          "word": "it's",
+          "start": 37.22,
+          "end": 37.72,
+          "confidence": 0.986
+        },
+        {
+          "word": "my",
+          "start": 37.94,
+          "end": 38.42,
+          "confidence": 0.996
+        },
+        {
+          "word": "head",
+          "start": 38.42,
+          "end": 38.92,
+          "confidence": 0.989
+        },
+        {
+          "word": "hey",
+          "start": 39.06,
+          "end": 39.56,
+          "confidence": 0.914
+        },
+        {
+          "word": "but",
+          "start": 39.7,
+          "end": 40.2,
+          "confidence": 0.97
+        },
+        {
+          "word": "where's",
+          "start": 41.23,
+          "end": 41.73,
+          "confidence": 0.811
+        },
+        {
+          "word": "my",
+          "start": 41.8,
+          "end": 42.27,
+          "confidence": 0.994
+        },
+        {
+          "word": "body",
+          "start": 42.27,
+          "end": 42.77,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 21,
+      "text": "I need more than just my head.",
+      "speaker": "Speaker0",
+      "start": 43.32,
+      "duration": 2.41,
+      "words": [
+        {
+          "word": "i",
+          "start": 43.32,
+          "end": 43.55,
+          "confidence": 0.998
+        },
+        {
+          "word": "need",
+          "start": 43.55,
+          "end": 43.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "more",
+          "start": 43.88,
+          "end": 44.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "than",
+          "start": 44.2,
+          "end": 44.44,
+          "confidence": 0.984
+        },
+        {
+          "word": "just",
+          "start": 44.44,
+          "end": 44.84,
+          "confidence": 0.996
+        },
+        {
+          "word": "my",
+          "start": 44.84,
+          "end": 45.23,
+          "confidence": 0.997
+        },
+        {
+          "word": "head",
+          "start": 45.23,
+          "end": 45.73,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 22,
+      "text": "Where is it?",
+      "speaker": "Speaker0",
+      "start": 46.12,
+      "duration": 0.97,
+      "words": [
+        {
+          "word": "where",
+          "start": 46.12,
+          "end": 46.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 46.36,
+          "end": 46.59,
+          "confidence": 0.997
+        },
+        {
+          "word": "it",
+          "start": 46.59,
+          "end": 47.09,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 23,
+      "text": "Look over there.",
+      "speaker": "Speaker0",
+      "start": 47.64,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "look",
+          "start": 47.64,
+          "end": 47.95,
+          "confidence": 0.993
+        },
+        {
+          "word": "over",
+          "start": 47.95,
+          "end": 48.2,
+          "confidence": 0.994
+        },
+        {
+          "word": "there",
+          "start": 48.2,
+          "end": 48.7,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 24,
+      "text": "Can you see my hands?",
+      "speaker": "Speaker0",
+      "start": 50.12,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "can",
+          "start": 50.12,
+          "end": 50.36,
+          "confidence": 0.394
+        },
+        {
+          "word": "you",
+          "start": 50.36,
+          "end": 50.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "see",
+          "start": 50.52,
+          "end": 51.0,
+          "confidence": 0.998
+        },
+        {
+          "word": "my",
+          "start": 51.0,
+          "end": 51.32,
+          "confidence": 0.951
+        },
+        {
+          "word": "hands",
+          "start": 51.32,
+          "end": 51.82,
+          "confidence": 0.949
+        }
+      ],
+      "confidence": 0.858
+    },
+    {
+      "id": 25,
+      "text": "Wow.",
+      "speaker": "Speaker0",
+      "start": 52.44,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "wow",
+          "start": 52.44,
+          "end": 52.94,
+          "confidence": 0.979
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 26,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 53.55,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 53.55,
+          "end": 54.05,
+          "confidence": 0.918
+        }
+      ],
+      "confidence": 0.918
+    },
+    {
+      "id": 27,
+      "text": "They're playing basketball.",
+      "speaker": "Speaker0",
+      "start": 54.39,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "they're",
+          "start": 54.39,
+          "end": 54.63,
+          "confidence": 0.995
+        },
+        {
+          "word": "playing",
+          "start": 54.63,
+          "end": 55.13,
+          "confidence": 0.999
+        },
+        {
+          "word": "basketball",
+          "start": 55.67,
+          "end": 56.17,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 28,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 56.95,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 56.95,
+          "end": 57.45,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.969
+    },
+    {
+      "id": 29,
+      "text": "I found my hands.",
+      "speaker": "Speaker0",
+      "start": 58.07,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "i",
+          "start": 58.07,
+          "end": 58.39,
+          "confidence": 0.996
+        },
+        {
+          "word": "found",
+          "start": 58.39,
+          "end": 58.89,
+          "confidence": 0.552
+        },
+        {
+          "word": "my",
+          "start": 59.11,
+          "end": 59.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 59.67,
+          "end": 60.17,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.886
+    },
+    {
+      "id": 30,
+      "text": "Super.",
+      "speaker": "Speaker0",
+      "start": 60.63,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "super",
+          "start": 60.63,
+          "end": 61.13,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 31,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 61.59,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 61.59,
+          "end": 62.09,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 32,
+      "text": "Ow.",
+      "speaker": "Speaker0",
+      "start": 63.19,
+      "duration": 0.08,
+      "words": [
+        {
+          "word": "ow",
+          "start": 63.19,
+          "end": 63.27,
+          "confidence": 0.881
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 33,
+      "text": "Ow.",
+      "speaker": "Speaker0",
+      "start": 63.27,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "ow",
+          "start": 63.27,
+          "end": 63.77,
+          "confidence": 0.898
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 34,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 63.83,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 63.83,
+          "end": 64.33,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 35,
+      "text": "Don't be naughty hands.",
+      "speaker": "Speaker0",
+      "start": 64.47,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "don't",
+          "start": 64.47,
+          "end": 64.87,
+          "confidence": 0.999
+        },
+        {
+          "word": "be",
+          "start": 64.87,
+          "end": 65.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "naughty",
+          "start": 65.19,
+          "end": 65.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 65.91,
+          "end": 66.41,
+          "confidence": 0.88
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 36,
+      "text": "No.",
+      "speaker": "Speaker0",
+      "start": 66.85,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "no",
+          "start": 66.85,
+          "end": 67.35,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 37,
+      "text": "I like playing basketball.",
+      "speaker": "Speaker0",
+      "start": 67.73,
+      "duration": 1.79,
+      "words": [
+        {
+          "word": "i",
+          "start": 67.73,
+          "end": 68.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 68.22,
+          "end": 68.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "playing",
+          "start": 68.53,
+          "end": 69.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "basketball",
+          "start": 69.02,
+          "end": 69.52,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 38,
+      "text": "Do you like playing basketball?",
+      "speaker": "Speaker0",
+      "start": 69.81,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "do",
+          "start": 69.81,
+          "end": 70.06,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 70.06,
+          "end": 70.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 70.45,
+          "end": 70.77,
+          "confidence": 0.86
+        },
+        {
+          "word": "playing",
+          "start": 70.77,
+          "end": 71.09,
+          "confidence": 0.995
+        },
+        {
+          "word": "basketball",
+          "start": 71.09,
+          "end": 71.59,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 39,
+      "text": "Yeah? Then catch. So look.",
+      "speaker": "Speaker0",
+      "start": 71.97,
+      "duration": 3.76,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 71.97,
+          "end": 72.47,
+          "confidence": 0.811
+        },
+        {
+          "word": "then",
+          "start": 72.69,
+          "end": 73.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "catch",
+          "start": 73.33,
+          "end": 73.83,
+          "confidence": 0.955
+        },
+        {
+          "word": "so",
+          "start": 74.06,
+          "end": 74.56,
+          "confidence": 0.487
+        },
+        {
+          "word": "look",
+          "start": 75.25,
+          "end": 75.73,
+          "confidence": 0.848
+        }
+      ],
+      "confidence": 0.897
+    },
+    {
+      "id": 40,
+      "text": "Here's one hand.",
+      "speaker": "Speaker0",
+      "start": 75.73,
+      "duration": 1.15,
+      "words": [
+        {
+          "word": "here's",
+          "start": 75.73,
+          "end": 76.13,
+          "confidence": 0.989
+        },
+        {
+          "word": "one",
+          "start": 76.13,
+          "end": 76.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "hand",
+          "start": 76.38,
+          "end": 76.88,
+          "confidence": 0.977
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 41,
+      "text": "Here's the other hand.",
+      "speaker": "Speaker0",
+      "start": 77.02,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "here's",
+          "start": 77.02,
+          "end": 77.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 77.42,
+          "end": 77.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "other",
+          "start": 77.73,
+          "end": 78.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "hand",
+          "start": 78.06,
+          "end": 78.56,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 42,
+      "text": "They are hands.",
+      "speaker": "Speaker0",
+      "start": 78.85,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "they",
+          "start": 78.85,
+          "end": 79.35,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 79.41,
+          "end": 79.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 79.89,
+          "end": 80.39,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 43,
+      "text": "So say with me.",
+      "speaker": "Speaker0",
+      "start": 80.9,
+      "duration": 1.04,
+      "words": [
+        {
+          "word": "so",
+          "start": 80.9,
+          "end": 81.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "say",
+          "start": 81.22,
+          "end": 81.3,
+          "confidence": 0.826
+        },
+        {
+          "word": "with",
+          "start": 81.3,
+          "end": 81.54,
+          "confidence": 0.981
+        },
+        {
+          "word": "me",
+          "start": 81.54,
+          "end": 81.94,
+          "confidence": 0.779
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 44,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 81.94,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "what",
+          "start": 81.94,
+          "end": 82.18,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 82.18,
+          "end": 82.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 82.34,
+          "end": 82.84,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 45,
+      "text": "They are hands.",
+      "speaker": "Speaker0",
+      "start": 83.06,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "they",
+          "start": 83.06,
+          "end": 83.56,
+          "confidence": 0.994
+        },
+        {
+          "word": "are",
+          "start": 83.7,
+          "end": 84.2,
+          "confidence": 0.997
+        },
+        {
+          "word": "hands",
+          "start": 84.42,
+          "end": 84.92,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 46,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 85.14,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what",
+          "start": 85.14,
+          "end": 85.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 85.38,
+          "end": 85.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 85.62,
+          "end": 86.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 47,
+      "text": "They are hands.",
+      "speaker": "Speaker0",
+      "start": 86.34,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "they",
+          "start": 86.34,
+          "end": 86.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 86.82,
+          "end": 87.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 87.62,
+          "end": 88.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 48,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 88.34,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "what",
+          "start": 88.34,
+          "end": 88.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 88.58,
+          "end": 88.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 88.74,
+          "end": 89.24,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 49,
+      "text": "They are hands.",
+      "speaker": "Speaker0",
+      "start": 89.38,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "they",
+          "start": 89.38,
+          "end": 89.88,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 90.1,
+          "end": 90.6,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 90.74,
+          "end": 91.24,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 50,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 91.46,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 91.46,
+          "end": 91.96,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 51,
+      "text": "So look.",
+      "speaker": "Speaker0",
+      "start": 92.5,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "so",
+          "start": 92.5,
+          "end": 92.82,
+          "confidence": 0.998
+        },
+        {
+          "word": "look",
+          "start": 92.82,
+          "end": 93.32,
+          "confidence": 0.742
+        }
+      ],
+      "confidence": 0.956
+    },
+    {
+      "id": 52,
+      "text": "I've got my head and hands.",
+      "speaker": "Speaker0",
+      "start": 93.38,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "i've",
+          "start": 93.38,
+          "end": 93.62,
+          "confidence": 0.997
+        },
+        {
+          "word": "got",
+          "start": 93.62,
+          "end": 93.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 93.86,
+          "end": 94.1,
+          "confidence": 0.998
+        },
+        {
+          "word": "head",
+          "start": 94.1,
+          "end": 94.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 94.9,
+          "end": 95.3,
+          "confidence": 0.995
+        },
+        {
+          "word": "hands",
+          "start": 95.3,
+          "end": 95.8,
+          "confidence": 0.831
+        }
+      ],
+      "confidence": 0.934
+    },
+    {
+      "id": 53,
+      "text": "But what else is missing?",
+      "speaker": "Speaker0",
+      "start": 96.27,
+      "duration": 1.85,
+      "words": [
+        {
+          "word": "but",
+          "start": 96.27,
+          "end": 96.59,
+          "confidence": 0.998
+        },
+        {
+          "word": "what",
+          "start": 96.59,
+          "end": 96.91,
+          "confidence": 0.992
+        },
+        {
+          "word": "else",
+          "start": 96.91,
+          "end": 97.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 97.23,
+          "end": 97.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "missing",
+          "start": 97.62,
+          "end": 98.12,
+          "confidence": 0.951
+        }
+      ],
+      "confidence": 0.988
+    },
+    {
+      "id": 54,
+      "text": "Yeah. My arms, my body, my legs and feet.",
+      "speaker": "Speaker0",
+      "start": 98.91,
+      "duration": 6.01,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 98.91,
+          "end": 99.41,
+          "confidence": 0.93
+        },
+        {
+          "word": "my",
+          "start": 99.7,
+          "end": 100.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "arms",
+          "start": 100.11,
+          "end": 100.61,
+          "confidence": 0.922
+        },
+        {
+          "word": "my",
+          "start": 101.23,
+          "end": 101.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "body",
+          "start": 101.62,
+          "end": 102.12,
+          "confidence": 0.993
+        },
+        {
+          "word": "my",
+          "start": 102.51,
+          "end": 103.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "legs",
+          "start": 103.06,
+          "end": 103.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 103.78,
+          "end": 104.28,
+          "confidence": 0.97
+        },
+        {
+          "word": "feet",
+          "start": 104.42,
+          "end": 104.92,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 55,
+      "text": "Oh dear.",
+      "speaker": "Speaker0",
+      "start": 105.31,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "oh",
+          "start": 105.31,
+          "end": 105.81,
+          "confidence": 0.993
+        },
+        {
+          "word": "dear",
+          "start": 105.95,
+          "end": 106.45,
+          "confidence": 0.9
+        }
+      ],
+      "confidence": 0.946
+    },
+    {
+      "id": 56,
+      "text": "Oh.",
+      "speaker": "Speaker0",
+      "start": 106.98,
+      "duration": 0.49,
+      "words": [
+        {
+          "word": "oh",
+          "start": 106.98,
+          "end": 107.47,
+          "confidence": 0.748
+        }
+      ],
+      "confidence": 0.93
+    },
+    {
+      "id": 57,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 107.47,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 107.47,
+          "end": 107.97,
+          "confidence": 0.923
+        }
+      ],
+      "confidence": 0.93
+    },
+    {
+      "id": 58,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 108.11,
+      "duration": 0.48,
+      "words": [
+        {
+          "word": "look",
+          "start": 108.11,
+          "end": 108.59,
+          "confidence": 0.844
+        }
+      ],
+      "confidence": 0.93
+    },
+    {
+      "id": 59,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 108.59,
+      "duration": 0.43,
+      "words": [
+        {
+          "word": "look",
+          "start": 108.59,
+          "end": 109.02,
+          "confidence": 0.97
+        }
+      ],
+      "confidence": 0.93
+    },
+    {
+      "id": 60,
+      "text": "What can you see?",
+      "speaker": "Speaker0",
+      "start": 109.1,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "what",
+          "start": 109.1,
+          "end": 109.42,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 109.42,
+          "end": 109.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 109.5,
+          "end": 109.82,
+          "confidence": 0.999
+        },
+        {
+          "word": "see",
+          "start": 109.82,
+          "end": 110.32,
+          "confidence": 0.956
+        }
+      ],
+      "confidence": 0.93
+    },
+    {
+      "id": 61,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 110.86,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what",
+          "start": 110.86,
+          "end": 111.1,
+          "confidence": 0.992
+        },
+        {
+          "word": "are",
+          "start": 111.1,
+          "end": 111.34,
+          "confidence": 0.996
+        },
+        {
+          "word": "they",
+          "start": 111.34,
+          "end": 111.84,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 62,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 112.38,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 112.38,
+          "end": 112.88,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 63,
+      "text": "They're my feet.",
+      "speaker": "Speaker0",
+      "start": 113.18,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "they're",
+          "start": 113.18,
+          "end": 113.68,
+          "confidence": 0.983
+        },
+        {
+          "word": "my",
+          "start": 113.74,
+          "end": 114.22,
+          "confidence": 0.997
+        },
+        {
+          "word": "feet",
+          "start": 114.22,
+          "end": 114.72,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 64,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 114.86,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 114.86,
+          "end": 115.36,
+          "confidence": 0.959
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 65,
+      "text": "Come here.",
+      "speaker": "Speaker0",
+      "start": 115.5,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "come",
+          "start": 115.5,
+          "end": 115.9,
+          "confidence": 0.997
+        },
+        {
+          "word": "here",
+          "start": 115.9,
+          "end": 116.4,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 66,
+      "text": "Hey. What are they? Yeah.",
+      "speaker": "Speaker0",
+      "start": 117.18,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "hey",
+          "start": 117.18,
+          "end": 117.5,
+          "confidence": 0.98
+        },
+        {
+          "word": "what",
+          "start": 117.5,
+          "end": 117.74,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 117.74,
+          "end": 117.9,
+          "confidence": 0.998
+        },
+        {
+          "word": "they",
+          "start": 117.9,
+          "end": 118.4,
+          "confidence": 0.996
+        },
+        {
+          "word": "yeah",
+          "start": 118.54,
+          "end": 119.04,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 67,
+      "text": "They are my feet.",
+      "speaker": "Speaker0",
+      "start": 119.42,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "they",
+          "start": 119.42,
+          "end": 119.9,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 119.9,
+          "end": 120.38,
+          "confidence": 0.998
+        },
+        {
+          "word": "my",
+          "start": 120.38,
+          "end": 120.88,
+          "confidence": 0.997
+        },
+        {
+          "word": "feet",
+          "start": 120.94,
+          "end": 121.44,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 68,
+      "text": "Hey. Where are you going?",
+      "speaker": "Speaker0",
+      "start": 122.06,
+      "duration": 2.0,
+      "words": [
+        {
+          "word": "hey",
+          "start": 122.06,
+          "end": 122.56,
+          "confidence": 0.973
+        },
+        {
+          "word": "where",
+          "start": 122.78,
+          "end": 123.1,
+          "confidence": 0.994
+        },
+        {
+          "word": "are",
+          "start": 123.1,
+          "end": 123.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 123.26,
+          "end": 123.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "going",
+          "start": 123.58,
+          "end": 124.06,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 69,
+      "text": "Come back here, you naughty naughty feet.",
+      "speaker": "Speaker0",
+      "start": 124.55,
+      "duration": 3.29,
+      "words": [
+        {
+          "word": "come",
+          "start": 124.55,
+          "end": 124.78,
+          "confidence": 0.999
+        },
+        {
+          "word": "back",
+          "start": 124.78,
+          "end": 125.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "here",
+          "start": 125.19,
+          "end": 125.51,
+          "confidence": 0.715
+        },
+        {
+          "word": "you",
+          "start": 125.51,
+          "end": 125.91,
+          "confidence": 0.999
+        },
+        {
+          "word": "naughty",
+          "start": 125.91,
+          "end": 126.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "naughty",
+          "start": 126.62,
+          "end": 127.12,
+          "confidence": 0.938
+        },
+        {
+          "word": "feet",
+          "start": 127.34,
+          "end": 127.84,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 70,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 129.67,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 129.67,
+          "end": 130.17,
+          "confidence": 0.65
+        }
+      ],
+      "confidence": 0.94
+    },
+    {
+      "id": 71,
+      "text": "My feet are playing football.",
+      "speaker": "Speaker0",
+      "start": 130.22,
+      "duration": 2.19,
+      "words": [
+        {
+          "word": "my",
+          "start": 130.22,
+          "end": 130.47,
+          "confidence": 0.997
+        },
+        {
+          "word": "feet",
+          "start": 130.47,
+          "end": 130.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 130.94,
+          "end": 131.26,
+          "confidence": 0.997
+        },
+        {
+          "word": "playing",
+          "start": 131.26,
+          "end": 131.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "football",
+          "start": 131.91,
+          "end": 132.41,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.94
+    },
+    {
+      "id": 72,
+      "text": "Wow.",
+      "speaker": "Speaker0",
+      "start": 133.1,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "wow",
+          "start": 133.1,
+          "end": 133.6,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 73,
+      "text": "I like football. Yeah.",
+      "speaker": "Speaker0",
+      "start": 133.91,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "i",
+          "start": 133.91,
+          "end": 134.31,
+          "confidence": 0.998
+        },
+        {
+          "word": "like",
+          "start": 134.31,
+          "end": 134.81,
+          "confidence": 0.998
+        },
+        {
+          "word": "football",
+          "start": 134.94,
+          "end": 135.44,
+          "confidence": 0.994
+        },
+        {
+          "word": "yeah",
+          "start": 135.75,
+          "end": 136.25,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 74,
+      "text": "Woah.",
+      "speaker": "Speaker0",
+      "start": 136.87,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "woah",
+          "start": 136.87,
+          "end": 137.37,
+          "confidence": 0.75
+        }
+      ],
+      "confidence": 0.75
+    },
+    {
+      "id": 75,
+      "text": "Oh. Oh. Oh. Hey.",
+      "speaker": "Speaker0",
+      "start": 137.67,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "oh",
+          "start": 137.67,
+          "end": 138.17,
+          "confidence": 0.898
+        },
+        {
+          "word": "oh",
+          "start": 138.47,
+          "end": 138.97,
+          "confidence": 0.927
+        },
+        {
+          "word": "oh",
+          "start": 139.1,
+          "end": 139.26,
+          "confidence": 0.726
+        },
+        {
+          "word": "hey",
+          "start": 139.26,
+          "end": 139.76,
+          "confidence": 0.784
+        }
+      ],
+      "confidence": 0.834
+    },
+    {
+      "id": 76,
+      "text": "Oh. Sorry.",
+      "speaker": "Speaker0",
+      "start": 141.08,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "oh",
+          "start": 141.08,
+          "end": 141.48,
+          "confidence": 0.95
+        },
+        {
+          "word": "sorry",
+          "start": 141.48,
+          "end": 141.98,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.951
+    },
+    {
+      "id": 77,
+      "text": "Oh dear.",
+      "speaker": "Speaker0",
+      "start": 142.28,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "oh",
+          "start": 142.28,
+          "end": 142.76,
+          "confidence": 0.995
+        },
+        {
+          "word": "dear",
+          "start": 142.76,
+          "end": 143.26,
+          "confidence": 0.91
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 78,
+      "text": "But look.",
+      "speaker": "Speaker0",
+      "start": 143.88,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "but",
+          "start": 143.88,
+          "end": 144.2,
+          "confidence": 0.994
+        },
+        {
+          "word": "look",
+          "start": 144.2,
+          "end": 144.7,
+          "confidence": 0.769
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 79,
+      "text": "I've got my feet back.",
+      "speaker": "Speaker0",
+      "start": 144.92,
+      "duration": 1.6,
+      "words": [
+        {
+          "word": "i've",
+          "start": 144.92,
+          "end": 145.16,
+          "confidence": 0.997
+        },
+        {
+          "word": "got",
+          "start": 145.16,
+          "end": 145.4,
+          "confidence": 0.998
+        },
+        {
+          "word": "my",
+          "start": 145.4,
+          "end": 145.8,
+          "confidence": 0.996
+        },
+        {
+          "word": "feet",
+          "start": 145.8,
+          "end": 146.04,
+          "confidence": 0.981
+        },
+        {
+          "word": "back",
+          "start": 146.04,
+          "end": 146.52,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 80,
+      "text": "There's one foot.",
+      "speaker": "Speaker0",
+      "start": 146.52,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "there's",
+          "start": 146.52,
+          "end": 147.02,
+          "confidence": 0.997
+        },
+        {
+          "word": "one",
+          "start": 147.08,
+          "end": 147.48,
+          "confidence": 0.996
+        },
+        {
+          "word": "foot",
+          "start": 147.48,
+          "end": 147.98,
+          "confidence": 0.978
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 81,
+      "text": "There's the other foot.",
+      "speaker": "Speaker0",
+      "start": 148.2,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "there's",
+          "start": 148.2,
+          "end": 148.68,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 148.68,
+          "end": 149.0,
+          "confidence": 0.995
+        },
+        {
+          "word": "other",
+          "start": 149.0,
+          "end": 149.32,
+          "confidence": 0.996
+        },
+        {
+          "word": "foot",
+          "start": 149.32,
+          "end": 149.82,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 82,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 149.96,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 149.96,
+          "end": 150.46,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 83,
+      "text": "I've got two feet.",
+      "speaker": "Speaker0",
+      "start": 150.76,
+      "duration": 1.76,
+      "words": [
+        {
+          "word": "i've",
+          "start": 150.76,
+          "end": 151.0,
+          "confidence": 0.998
+        },
+        {
+          "word": "got",
+          "start": 151.0,
+          "end": 151.48,
+          "confidence": 0.998
+        },
+        {
+          "word": "two",
+          "start": 151.48,
+          "end": 151.98,
+          "confidence": 0.997
+        },
+        {
+          "word": "feet",
+          "start": 152.12,
+          "end": 152.52,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 84,
+      "text": "So come on.",
+      "speaker": "Speaker0",
+      "start": 152.52,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "so",
+          "start": 152.52,
+          "end": 152.76,
+          "confidence": 0.998
+        },
+        {
+          "word": "come",
+          "start": 152.76,
+          "end": 153.0,
+          "confidence": 0.938
+        },
+        {
+          "word": "on",
+          "start": 153.0,
+          "end": 153.5,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 85,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 153.56,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what",
+          "start": 153.56,
+          "end": 153.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 153.8,
+          "end": 154.04,
+          "confidence": 0.997
+        },
+        {
+          "word": "they",
+          "start": 154.04,
+          "end": 154.54,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 86,
+      "text": "They are feet.",
+      "speaker": "Speaker0",
+      "start": 154.76,
+      "duration": 1.58,
+      "words": [
+        {
+          "word": "they",
+          "start": 154.76,
+          "end": 155.26,
+          "confidence": 0.993
+        },
+        {
+          "word": "are",
+          "start": 155.32,
+          "end": 155.82,
+          "confidence": 0.993
+        },
+        {
+          "word": "feet",
+          "start": 156.11,
+          "end": 156.34,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 87,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 156.34,
+      "duration": 0.97,
+      "words": [
+        {
+          "word": "what",
+          "start": 156.34,
+          "end": 156.67,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 156.67,
+          "end": 156.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "they",
+          "start": 156.83,
+          "end": 157.31,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 88,
+      "text": "They are feet.",
+      "speaker": "Speaker0",
+      "start": 157.31,
+      "duration": 1.84,
+      "words": [
+        {
+          "word": "they",
+          "start": 157.31,
+          "end": 157.81,
+          "confidence": 0.994
+        },
+        {
+          "word": "are",
+          "start": 158.03,
+          "end": 158.53,
+          "confidence": 0.995
+        },
+        {
+          "word": "feet",
+          "start": 158.75,
+          "end": 159.15,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 89,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 159.15,
+      "duration": 0.79,
+      "words": [
+        {
+          "word": "what",
+          "start": 159.15,
+          "end": 159.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 159.39,
+          "end": 159.54,
+          "confidence": 0.996
+        },
+        {
+          "word": "they",
+          "start": 159.54,
+          "end": 159.94,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 90,
+      "text": "They are feet.",
+      "speaker": "Speaker0",
+      "start": 159.94,
+      "duration": 1.87,
+      "words": [
+        {
+          "word": "they",
+          "start": 159.94,
+          "end": 160.44,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 160.59,
+          "end": 161.09,
+          "confidence": 0.997
+        },
+        {
+          "word": "feet",
+          "start": 161.31,
+          "end": 161.81,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 91,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 161.94,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 161.94,
+          "end": 162.44,
+          "confidence": 0.978
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 92,
+      "text": "Super.",
+      "speaker": "Speaker0",
+      "start": 163.31,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "super",
+          "start": 163.31,
+          "end": 163.81,
+          "confidence": 0.977
+        }
+      ],
+      "confidence": 0.977
+    },
+    {
+      "id": 93,
+      "text": "Now, where are my legs?",
+      "speaker": "Speaker0",
+      "start": 164.11,
+      "duration": 2.65,
+      "words": [
+        {
+          "word": "now",
+          "start": 164.11,
+          "end": 164.61,
+          "confidence": 0.898
+        },
+        {
+          "word": "where",
+          "start": 165.39,
+          "end": 165.71,
+          "confidence": 0.995
+        },
+        {
+          "word": "are",
+          "start": 165.71,
+          "end": 165.87,
+          "confidence": 0.994
+        },
+        {
+          "word": "my",
+          "start": 165.87,
+          "end": 166.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "legs",
+          "start": 166.26,
+          "end": 166.76,
+          "confidence": 0.979
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 94,
+      "text": "Oh look.",
+      "speaker": "Speaker0",
+      "start": 167.15,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "oh",
+          "start": 167.15,
+          "end": 167.47,
+          "confidence": 0.993
+        },
+        {
+          "word": "look",
+          "start": 167.47,
+          "end": 167.97,
+          "confidence": 0.751
+        }
+      ],
+      "confidence": 0.872
+    },
+    {
+      "id": 95,
+      "text": "There they are sitting on the bench.",
+      "speaker": "Speaker0",
+      "start": 168.64,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "there",
+          "start": 168.64,
+          "end": 168.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 168.96,
+          "end": 169.2,
+          "confidence": 0.992
+        },
+        {
+          "word": "are",
+          "start": 169.2,
+          "end": 169.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "sitting",
+          "start": 170.08,
+          "end": 170.56,
+          "confidence": 0.438
+        },
+        {
+          "word": "on",
+          "start": 170.56,
+          "end": 170.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 170.8,
+          "end": 171.2,
+          "confidence": 0.997
+        },
+        {
+          "word": "bench",
+          "start": 171.2,
+          "end": 171.7,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.927
+    },
+    {
+      "id": 96,
+      "text": "Stop being such lazy legs and come here.",
+      "speaker": "Speaker0",
+      "start": 172.08,
+      "duration": 3.94,
+      "words": [
+        {
+          "word": "stop",
+          "start": 172.08,
+          "end": 172.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "being",
+          "start": 172.48,
+          "end": 172.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "such",
+          "start": 172.88,
+          "end": 173.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "lazy",
+          "start": 173.52,
+          "end": 174.02,
+          "confidence": 0.997
+        },
+        {
+          "word": "legs",
+          "start": 174.16,
+          "end": 174.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 174.48,
+          "end": 174.98,
+          "confidence": 0.998
+        },
+        {
+          "word": "come",
+          "start": 175.04,
+          "end": 175.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 175.52,
+          "end": 176.02,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 97,
+      "text": "Oh what lazy legs.",
+      "speaker": "Speaker0",
+      "start": 176.72,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "oh",
+          "start": 176.72,
+          "end": 177.2,
+          "confidence": 0.86
+        },
+        {
+          "word": "what",
+          "start": 177.2,
+          "end": 177.7,
+          "confidence": 0.418
+        },
+        {
+          "word": "lazy",
+          "start": 177.84,
+          "end": 178.34,
+          "confidence": 0.955
+        },
+        {
+          "word": "legs",
+          "start": 178.64,
+          "end": 179.14,
+          "confidence": 0.817
+        }
+      ],
+      "confidence": 0.883
+    },
+    {
+      "id": 98,
+      "text": "Come on.",
+      "speaker": "Speaker0",
+      "start": 179.36,
+      "duration": 0.56,
+      "words": [
+        {
+          "word": "come",
+          "start": 179.36,
+          "end": 179.6,
+          "confidence": 0.997
+        },
+        {
+          "word": "on",
+          "start": 179.6,
+          "end": 179.92,
+          "confidence": 0.793
+        }
+      ],
+      "confidence": 0.883
+    },
+    {
+      "id": 99,
+      "text": "Hurry up.",
+      "speaker": "Speaker0",
+      "start": 179.92,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "hurry",
+          "start": 179.92,
+          "end": 180.4,
+          "confidence": 0.999
+        },
+        {
+          "word": "up",
+          "start": 180.4,
+          "end": 180.9,
+          "confidence": 0.968
+        }
+      ],
+      "confidence": 0.883
+    },
+    {
+      "id": 100,
+      "text": "Quick quick.",
+      "speaker": "Speaker0",
+      "start": 181.04,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "quick",
+          "start": 181.04,
+          "end": 181.52,
+          "confidence": 0.995
+        },
+        {
+          "word": "quick",
+          "start": 181.52,
+          "end": 182.02,
+          "confidence": 0.91
+        }
+      ],
+      "confidence": 0.883
+    },
+    {
+      "id": 101,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 182.24,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 182.24,
+          "end": 182.74,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.883
+    },
+    {
+      "id": 102,
+      "text": "Oh great.",
+      "speaker": "Speaker0",
+      "start": 183.61,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "oh",
+          "start": 183.61,
+          "end": 184.11,
+          "confidence": 0.997
+        },
+        {
+          "word": "great",
+          "start": 184.25,
+          "end": 184.75,
+          "confidence": 0.804
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 103,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 185.04,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 185.04,
+          "end": 185.54,
+          "confidence": 0.878
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 104,
+      "text": "I've got two legs again.",
+      "speaker": "Speaker0",
+      "start": 185.76,
+      "duration": 1.95,
+      "words": [
+        {
+          "word": "i've",
+          "start": 185.76,
+          "end": 186.0,
+          "confidence": 0.985
+        },
+        {
+          "word": "got",
+          "start": 186.0,
+          "end": 186.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "two",
+          "start": 186.49,
+          "end": 186.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "legs",
+          "start": 186.81,
+          "end": 187.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "again",
+          "start": 187.21,
+          "end": 187.71,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 105,
+      "text": "So hey.",
+      "speaker": "Speaker0",
+      "start": 187.84,
+      "duration": 0.72,
+      "words": [
+        {
+          "word": "so",
+          "start": 187.84,
+          "end": 188.17,
+          "confidence": 0.992
+        },
+        {
+          "word": "hey",
+          "start": 188.17,
+          "end": 188.56,
+          "confidence": 0.626
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 106,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 188.56,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what",
+          "start": 188.56,
+          "end": 188.89,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 188.89,
+          "end": 189.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 189.04,
+          "end": 189.54,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 107,
+      "text": "They are legs.",
+      "speaker": "Speaker0",
+      "start": 189.69,
+      "duration": 1.59,
+      "words": [
+        {
+          "word": "they",
+          "start": 189.69,
+          "end": 190.19,
+          "confidence": 0.994
+        },
+        {
+          "word": "are",
+          "start": 190.32,
+          "end": 190.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "legs",
+          "start": 190.89,
+          "end": 191.28,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 108,
+      "text": "Say it with me.",
+      "speaker": "Speaker0",
+      "start": 191.28,
+      "duration": 0.81,
+      "words": [
+        {
+          "word": "say",
+          "start": 191.28,
+          "end": 191.53,
+          "confidence": 0.997
+        },
+        {
+          "word": "it",
+          "start": 191.53,
+          "end": 191.69,
+          "confidence": 0.983
+        },
+        {
+          "word": "with",
+          "start": 191.69,
+          "end": 191.84,
+          "confidence": 0.999
+        },
+        {
+          "word": "me",
+          "start": 191.84,
+          "end": 192.09,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 109,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 192.09,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "what",
+          "start": 192.09,
+          "end": 192.32,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 192.32,
+          "end": 192.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 192.49,
+          "end": 192.99,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 110,
+      "text": "They are legs.",
+      "speaker": "Speaker0",
+      "start": 193.12,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "they",
+          "start": 193.12,
+          "end": 193.62,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 193.69,
+          "end": 194.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "legs",
+          "start": 194.32,
+          "end": 194.81,
+          "confidence": 0.954
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 111,
+      "text": "And again, what are they?",
+      "speaker": "Speaker0",
+      "start": 194.81,
+      "duration": 1.53,
+      "words": [
+        {
+          "word": "and",
+          "start": 194.81,
+          "end": 195.04,
+          "confidence": 0.998
+        },
+        {
+          "word": "again",
+          "start": 195.04,
+          "end": 195.44,
+          "confidence": 0.72
+        },
+        {
+          "word": "what",
+          "start": 195.44,
+          "end": 195.69,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 195.69,
+          "end": 195.84,
+          "confidence": 0.999
+        },
+        {
+          "word": "they",
+          "start": 195.84,
+          "end": 196.34,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 112,
+      "text": "They are legs. That's right. Super.",
+      "speaker": "Speaker0",
+      "start": 196.49,
+      "duration": 3.69,
+      "words": [
+        {
+          "word": "they",
+          "start": 196.49,
+          "end": 196.99,
+          "confidence": 0.995
+        },
+        {
+          "word": "are",
+          "start": 197.04,
+          "end": 197.54,
+          "confidence": 0.998
+        },
+        {
+          "word": "legs",
+          "start": 197.84,
+          "end": 198.34,
+          "confidence": 0.997
+        },
+        {
+          "word": "that's",
+          "start": 198.64,
+          "end": 198.96,
+          "confidence": 0.993
+        },
+        {
+          "word": "right",
+          "start": 198.96,
+          "end": 199.46,
+          "confidence": 0.987
+        },
+        {
+          "word": "super",
+          "start": 199.68,
+          "end": 200.18,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 113,
+      "text": "So I've got two legs.",
+      "speaker": "Speaker0",
+      "start": 200.64,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "so",
+          "start": 200.64,
+          "end": 200.88,
+          "confidence": 0.995
+        },
+        {
+          "word": "i've",
+          "start": 200.88,
+          "end": 201.12,
+          "confidence": 0.937
+        },
+        {
+          "word": "got",
+          "start": 201.12,
+          "end": 201.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "two",
+          "start": 201.44,
+          "end": 201.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "legs",
+          "start": 201.68,
+          "end": 202.18,
+          "confidence": 0.95
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 114,
+      "text": "I've got two feet.",
+      "speaker": "Speaker0",
+      "start": 202.48,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "i've",
+          "start": 202.48,
+          "end": 202.72,
+          "confidence": 0.998
+        },
+        {
+          "word": "got",
+          "start": 202.72,
+          "end": 203.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "two",
+          "start": 203.04,
+          "end": 203.36,
+          "confidence": 0.997
+        },
+        {
+          "word": "feet",
+          "start": 203.36,
+          "end": 203.86,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 115,
+      "text": "I've got two hands and a head.",
+      "speaker": "Speaker0",
+      "start": 204.08,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "i've",
+          "start": 204.08,
+          "end": 204.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "got",
+          "start": 204.32,
+          "end": 204.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "two",
+          "start": 204.64,
+          "end": 204.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 204.96,
+          "end": 205.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 205.52,
+          "end": 205.84,
+          "confidence": 0.992
+        },
+        {
+          "word": "a",
+          "start": 205.84,
+          "end": 206.0,
+          "confidence": 0.961
+        },
+        {
+          "word": "head",
+          "start": 206.0,
+          "end": 206.5,
+          "confidence": 0.821
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 116,
+      "text": "But I haven't got any arms.",
+      "speaker": "Speaker0",
+      "start": 206.96,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "but",
+          "start": 206.96,
+          "end": 207.2,
+          "confidence": 0.994
+        },
+        {
+          "word": "i",
+          "start": 207.2,
+          "end": 207.36,
+          "confidence": 0.984
+        },
+        {
+          "word": "haven't",
+          "start": 207.36,
+          "end": 207.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "got",
+          "start": 207.76,
+          "end": 208.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "any",
+          "start": 208.08,
+          "end": 208.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "arms",
+          "start": 208.88,
+          "end": 209.38,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 117,
+      "text": "Oh.",
+      "speaker": "Speaker0",
+      "start": 209.84,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "oh",
+          "start": 209.84,
+          "end": 210.34,
+          "confidence": 0.618
+        }
+      ],
+      "confidence": 0.618
+    },
+    {
+      "id": 118,
+      "text": "Listen.",
+      "speaker": "Speaker0",
+      "start": 211.1,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "listen",
+          "start": 211.1,
+          "end": 211.6,
+          "confidence": 0.966
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 119,
+      "text": "What's that over there?",
+      "speaker": "Speaker0",
+      "start": 212.06,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "what's",
+          "start": 212.06,
+          "end": 212.38,
+          "confidence": 0.992
+        },
+        {
+          "word": "that",
+          "start": 212.38,
+          "end": 212.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "over",
+          "start": 212.94,
+          "end": 213.19,
+          "confidence": 0.751
+        },
+        {
+          "word": "there",
+          "start": 213.19,
+          "end": 213.69,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.929
+    },
+    {
+      "id": 120,
+      "text": "Oh look.",
+      "speaker": "Speaker0",
+      "start": 214.31,
+      "duration": 0.66,
+      "words": [
+        {
+          "word": "oh",
+          "start": 214.31,
+          "end": 214.47,
+          "confidence": 0.947
+        },
+        {
+          "word": "look",
+          "start": 214.47,
+          "end": 214.97,
+          "confidence": 0.662
+        }
+      ],
+      "confidence": 0.804
+    },
+    {
+      "id": 121,
+      "text": "There are my arms dancing to the music.",
+      "speaker": "Speaker0",
+      "start": 215.26,
+      "duration": 3.15,
+      "words": [
+        {
+          "word": "there",
+          "start": 215.26,
+          "end": 215.5,
+          "confidence": 0.965
+        },
+        {
+          "word": "are",
+          "start": 215.5,
+          "end": 215.59,
+          "confidence": 0.942
+        },
+        {
+          "word": "my",
+          "start": 215.59,
+          "end": 215.91,
+          "confidence": 0.987
+        },
+        {
+          "word": "arms",
+          "start": 215.91,
+          "end": 216.41,
+          "confidence": 0.991
+        },
+        {
+          "word": "dancing",
+          "start": 216.78,
+          "end": 217.26,
+          "confidence": 0.855
+        },
+        {
+          "word": "to",
+          "start": 217.26,
+          "end": 217.75,
+          "confidence": 0.985
+        },
+        {
+          "word": "the",
+          "start": 217.75,
+          "end": 217.91,
+          "confidence": 0.993
+        },
+        {
+          "word": "music",
+          "start": 217.91,
+          "end": 218.41,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.964
+    },
+    {
+      "id": 122,
+      "text": "Wow.",
+      "speaker": "Speaker0",
+      "start": 219.99,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "wow",
+          "start": 219.99,
+          "end": 220.49,
+          "confidence": 0.802
+        }
+      ],
+      "confidence": 0.802
+    },
+    {
+      "id": 123,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 220.78,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 220.78,
+          "end": 221.28,
+          "confidence": 0.886
+        }
+      ],
+      "confidence": 0.886
+    },
+    {
+      "id": 124,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 221.59,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 221.59,
+          "end": 222.09,
+          "confidence": 0.854
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 125,
+      "text": "My arms arms are dancing.",
+      "speaker": "Speaker0",
+      "start": 222.22,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "my",
+          "start": 222.22,
+          "end": 222.54,
+          "confidence": 0.993
+        },
+        {
+          "word": "arms",
+          "start": 222.54,
+          "end": 222.78,
+          "confidence": 0.797
+        },
+        {
+          "word": "arms",
+          "start": 222.94,
+          "end": 223.26,
+          "confidence": 0.982
+        },
+        {
+          "word": "are",
+          "start": 223.26,
+          "end": 223.66,
+          "confidence": 0.985
+        },
+        {
+          "word": "dancing",
+          "start": 223.66,
+          "end": 224.16,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 126,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 224.7,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 224.7,
+          "end": 225.2,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 127,
+      "text": "Come on. Let's dance.",
+      "speaker": "Speaker0",
+      "start": 225.58,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "come",
+          "start": 225.58,
+          "end": 225.82,
+          "confidence": 0.991
+        },
+        {
+          "word": "on",
+          "start": 225.82,
+          "end": 226.14,
+          "confidence": 0.945
+        },
+        {
+          "word": "let's",
+          "start": 226.14,
+          "end": 226.64,
+          "confidence": 0.993
+        },
+        {
+          "word": "dance",
+          "start": 226.86,
+          "end": 227.36,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 128,
+      "text": "Yeah.",
+      "speaker": "Speaker0",
+      "start": 227.9,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 227.9,
+          "end": 228.4,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 129,
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 229.18,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 229.18,
+          "end": 229.68,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 130,
+      "text": "My legs are dancing.",
+      "speaker": "Speaker0",
+      "start": 230.54,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "my",
+          "start": 230.54,
+          "end": 230.78,
+          "confidence": 0.696
+        },
+        {
+          "word": "legs",
+          "start": 230.78,
+          "end": 231.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 231.42,
+          "end": 231.58,
+          "confidence": 0.996
+        },
+        {
+          "word": "dancing",
+          "start": 231.58,
+          "end": 232.08,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.922
+    },
+    {
+      "id": 131,
+      "text": "My feet are dancing.",
+      "speaker": "Speaker0",
+      "start": 232.7,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "my",
+          "start": 232.7,
+          "end": 233.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "feet",
+          "start": 233.02,
+          "end": 233.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 233.74,
+          "end": 233.9,
+          "confidence": 0.999
+        },
+        {
+          "word": "dancing",
+          "start": 233.9,
+          "end": 234.4,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 132,
+      "text": "My hands are dancing and my arms are dancing.",
+      "speaker": "Speaker0",
+      "start": 234.94,
+      "duration": 3.87,
+      "words": [
+        {
+          "word": "my",
+          "start": 234.94,
+          "end": 235.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "hands",
+          "start": 235.26,
+          "end": 235.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 235.66,
+          "end": 235.82,
+          "confidence": 0.994
+        },
+        {
+          "word": "dancing",
+          "start": 235.82,
+          "end": 236.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 236.8,
+          "end": 237.3,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 237.36,
+          "end": 237.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "arms",
+          "start": 237.68,
+          "end": 238.16,
+          "confidence": 0.995
+        },
+        {
+          "word": "are",
+          "start": 238.16,
+          "end": 238.31,
+          "confidence": 0.927
+        },
+        {
+          "word": "dancing",
+          "start": 238.31,
+          "end": 238.81,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 133,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 239.03,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 239.03,
+          "end": 239.53,
+          "confidence": 0.898
+        }
+      ],
+      "confidence": 0.969
+    },
+    {
+      "id": 134,
+      "text": "Dance with me and say, they are arms.",
+      "speaker": "Speaker0",
+      "start": 240.08,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "dance",
+          "start": 240.08,
+          "end": 240.4,
+          "confidence": 0.993
+        },
+        {
+          "word": "with",
+          "start": 240.4,
+          "end": 240.64,
+          "confidence": 0.993
+        },
+        {
+          "word": "me",
+          "start": 240.64,
+          "end": 241.03,
+          "confidence": 0.996
+        },
+        {
+          "word": "and",
+          "start": 241.03,
+          "end": 241.28,
+          "confidence": 0.975
+        },
+        {
+          "word": "say",
+          "start": 241.28,
+          "end": 241.78,
+          "confidence": 0.854
+        },
+        {
+          "word": "they",
+          "start": 242.24,
+          "end": 242.72,
+          "confidence": 0.977
+        },
+        {
+          "word": "are",
+          "start": 242.72,
+          "end": 243.22,
+          "confidence": 0.995
+        },
+        {
+          "word": "arms",
+          "start": 243.36,
+          "end": 243.86,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 135,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 243.92,
+      "duration": 0.88,
+      "words": [
+        {
+          "word": "what",
+          "start": 243.92,
+          "end": 244.16,
+          "confidence": 0.993
+        },
+        {
+          "word": "are",
+          "start": 244.16,
+          "end": 244.31,
+          "confidence": 0.998
+        },
+        {
+          "word": "they",
+          "start": 244.31,
+          "end": 244.8,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 136,
+      "text": "They are arms.",
+      "speaker": "Speaker0",
+      "start": 244.8,
+      "duration": 1.84,
+      "words": [
+        {
+          "word": "they",
+          "start": 244.8,
+          "end": 245.3,
+          "confidence": 0.99
+        },
+        {
+          "word": "are",
+          "start": 245.59,
+          "end": 246.09,
+          "confidence": 0.996
+        },
+        {
+          "word": "arms",
+          "start": 246.16,
+          "end": 246.64,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 137,
+      "text": "What are they?",
+      "speaker": "Speaker0",
+      "start": 246.64,
+      "duration": 0.87,
+      "words": [
+        {
+          "word": "what",
+          "start": 246.64,
+          "end": 246.88,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 246.88,
+          "end": 247.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "they",
+          "start": 247.03,
+          "end": 247.51,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 138,
+      "text": "They are arms.",
+      "speaker": "Speaker0",
+      "start": 247.51,
+      "duration": 1.95,
+      "words": [
+        {
+          "word": "they",
+          "start": 247.51,
+          "end": 248.01,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 248.24,
+          "end": 248.74,
+          "confidence": 0.997
+        },
+        {
+          "word": "arms",
+          "start": 248.96,
+          "end": 249.46,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 139,
+      "text": "Yes.",
+      "speaker": "Speaker0",
+      "start": 249.75,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 249.75,
+          "end": 250.25,
+          "confidence": 0.781
+        }
+      ],
+      "confidence": 0.781
+    },
+    {
+      "id": 140,
+      "text": "Super.",
+      "speaker": "Speaker0",
+      "start": 250.72,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "super",
+          "start": 250.72,
+          "end": 251.22,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 141,
+      "text": "Hey, Steve. Yes, Maggie? Catch.",
+      "speaker": "Speaker0",
+      "start": 252.52,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "hey",
+          "start": 252.52,
+          "end": 252.76,
+          "confidence": 0.671
+        },
+        {
+          "word": "steve",
+          "start": 252.76,
+          "end": 253.26,
+          "confidence": 0.974
+        },
+        {
+          "word": "yes",
+          "start": 253.4,
+          "end": 253.72,
+          "confidence": 0.92
+        },
+        {
+          "word": "maggie",
+          "start": 253.72,
+          "end": 254.2,
+          "confidence": 0.812
+        },
+        {
+          "word": "catch",
+          "start": 254.2,
+          "end": 254.7,
+          "confidence": 0.836
+        }
+      ],
+      "confidence": 0.843
+    },
+    {
+      "id": 142,
+      "text": "Oh.",
+      "speaker": "Speaker0",
+      "start": 256.24,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "oh",
+          "start": 256.24,
+          "end": 256.74,
+          "confidence": 0.87
+        }
+      ],
+      "confidence": 0.87
+    },
+    {
+      "id": 143,
+      "text": "Got it.",
+      "speaker": "Speaker0",
+      "start": 258.28,
+      "duration": 0.74,
+      "words": [
+        {
+          "word": "got",
+          "start": 258.28,
+          "end": 258.52,
+          "confidence": 0.4
+        },
+        {
+          "word": "it",
+          "start": 258.52,
+          "end": 259.02,
+          "confidence": 0.951
+        }
+      ],
+      "confidence": 0.675
+    },
+    {
+      "id": 144,
+      "text": "Oh.",
+      "speaker": "Speaker0",
+      "start": 259.4,
+      "duration": 0.4,
+      "words": [
+        {
+          "word": "oh",
+          "start": 259.4,
+          "end": 259.8,
+          "confidence": 0.671
+        }
+      ],
+      "confidence": 0.853
+    },
+    {
+      "id": 145,
+      "text": "But I haven't got a body.",
+      "speaker": "Speaker0",
+      "start": 259.8,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "but",
+          "start": 259.8,
+          "end": 260.04,
+          "confidence": 0.503
+        },
+        {
+          "word": "i",
+          "start": 260.04,
+          "end": 260.28,
+          "confidence": 0.896
+        },
+        {
+          "word": "haven't",
+          "start": 260.28,
+          "end": 260.78,
+          "confidence": 0.981
+        },
+        {
+          "word": "got",
+          "start": 260.84,
+          "end": 261.34,
+          "confidence": 0.945
+        },
+        {
+          "word": "a",
+          "start": 261.56,
+          "end": 261.64,
+          "confidence": 0.981
+        },
+        {
+          "word": "body",
+          "start": 261.64,
+          "end": 262.14,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.853
+    },
+    {
+      "id": 146,
+      "text": "Uh-oh.",
+      "speaker": "Speaker0",
+      "start": 263.8,
+      "duration": 0.16,
+      "words": [
+        {
+          "word": "uh-oh",
+          "start": 263.8,
+          "end": 263.96,
+          "confidence": 0.685
+        }
+      ],
+      "confidence": 0.824
+    },
+    {
+      "id": 147,
+      "text": "Where is my body?",
+      "speaker": "Speaker0",
+      "start": 263.96,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "where",
+          "start": 263.96,
+          "end": 264.46,
+          "confidence": 0.861
+        },
+        {
+          "word": "is",
+          "start": 264.52,
+          "end": 264.92,
+          "confidence": 0.827
+        },
+        {
+          "word": "my",
+          "start": 265.24,
+          "end": 265.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "body",
+          "start": 265.4,
+          "end": 265.9,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.824
+    },
+    {
+      "id": 148,
+      "text": "There's it.",
+      "speaker": "Speaker0",
+      "start": 265.96,
+      "duration": 0.79,
+      "words": [
+        {
+          "word": "there's",
+          "start": 265.96,
+          "end": 266.46,
+          "confidence": 0.567
+        },
+        {
+          "word": "it",
+          "start": 266.51,
+          "end": 266.75,
+          "confidence": 0.574
+        }
+      ],
+      "confidence": 0.824
+    },
+    {
+      "id": 149,
+      "text": "Oh.",
+      "speaker": "Speaker0",
+      "start": 266.75,
+      "duration": 0.17,
+      "words": [
+        {
+          "word": "oh",
+          "start": 266.75,
+          "end": 266.92,
+          "confidence": 0.621
+        }
+      ],
+      "confidence": 0.824
+    },
+    {
+      "id": 150,
+      "text": "There it is.",
+      "speaker": "Speaker0",
+      "start": 266.92,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "there",
+          "start": 266.92,
+          "end": 267.24,
+          "confidence": 0.969
+        },
+        {
+          "word": "it",
+          "start": 267.24,
+          "end": 267.4,
+          "confidence": 0.984
+        },
+        {
+          "word": "is",
+          "start": 267.4,
+          "end": 267.9,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.824
+    },
+    {
+      "id": 151,
+      "text": "Hey.",
+      "speaker": "Speaker0",
+      "start": 267.96,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hey",
+          "start": 267.96,
+          "end": 268.46,
+          "confidence": 0.817
+        }
+      ],
+      "confidence": 0.824
+    },
+    {
+      "id": 152,
+      "text": "Stop.",
+      "speaker": "Speaker0",
+      "start": 268.92,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "stop",
+          "start": 268.92,
+          "end": 269.42,
+          "confidence": 0.696
+        }
+      ],
+      "confidence": 0.882
+    },
+    {
+      "id": 153,
+      "text": "Stop.",
+      "speaker": "Speaker0",
+      "start": 269.48,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "stop",
+          "start": 269.48,
+          "end": 269.98,
+          "confidence": 0.945
+        }
+      ],
+      "confidence": 0.882
+    },
+    {
+      "id": 154,
+      "text": "My body.",
+      "speaker": "Speaker0",
+      "start": 270.04,
+      "duration": 0.71,
+      "words": [
+        {
+          "word": "my",
+          "start": 270.04,
+          "end": 270.36,
+          "confidence": 0.981
+        },
+        {
+          "word": "body",
+          "start": 270.36,
+          "end": 270.75,
+          "confidence": 0.729
+        }
+      ],
+      "confidence": 0.882
+    },
+    {
+      "id": 155,
+      "text": "My body.",
+      "speaker": "Speaker0",
+      "start": 270.75,
+      "duration": 0.73,
+      "words": [
+        {
+          "word": "my",
+          "start": 270.75,
+          "end": 271.0,
+          "confidence": 0.954
+        },
+        {
+          "word": "body",
+          "start": 271.0,
+          "end": 271.48,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.882
+    },
+    {
+      "id": 156,
+      "text": "My body.",
+      "speaker": "Speaker0",
+      "start": 271.48,
+      "duration": 0.75,
+      "words": [
+        {
+          "word": "my",
+          "start": 271.48,
+          "end": 271.73,
+          "confidence": 0.838
+        },
+        {
+          "word": "body",
+          "start": 271.73,
+          "end": 272.23,
+          "confidence": 0.939
+        }
+      ],
+      "confidence": 0.882
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-23T14:45:57.191588Z",
+    "dgWordCount": 479,
+    "dgUtteranceCount": 99,
+    "matchedSegments": 99,
+    "totalDuration": 272.23
+  },
+  "fetchedAt": "2026-07-23T14:45:57.191605Z",
+  "repairedAt": "2026-07-23T14:45:57.200404Z",
+  "repairInfo": {
+    "version": 4,
+    "beforeSegments": 99,
+    "afterSegments": 156
+  }
+}

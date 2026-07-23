@@ -1,0 +1,4410 @@
+{
+  "videoId": "g-uW_KheiEc",
+  "text": "And what did you do? Did you have a good weekend, Monica? Oh, yeah. It was great. So what did you do? On Saturday, I went to the theater with my parents. What play did you see? I saw Cinderella, and it was an amazing show. What did you like the most? I liked the costumes and the songs. What about Sunday? Did you do anything special? I read a book in the morning. then i did my homework though i didn't feel like it but i knew i had to The weather was so beautiful and warm, so we went on a picnic in the park in the afternoon. We ate some sandwiches and drank some fresh orange juice. After lunch, we stood on the stream bank and fed the ducks. Then we took a nice stroll through the park. A moment later, it started to rain. So we ran as fast as we could. As soon as I got home, I took a hot bath. I enjoy spending time with my family. How about you? How was your weekend? Well, on Saturday, I went shopping with my mom. I needed a dress for my cousin's birthday party, so I trade many dresses. So did you finally find the right dress? Yeah, I did. I found the perfect dress for the party. So how was the party? It was great fun. There were lots of beautiful decorations in the room. The cake looked amazing. My cousin threw out the candles and cut the cake. We sang the birthday song. Then we played lots of games, and I won many times. Where was the party held? It was held at a party center. How was the food? The food was delicious, but I ate too much and felt a little sick. And I also drank too much juice. So were you able to stay until the end of the party? Yes. I was because I only started to feel sick at the end of the party. when i got home my mom made me some tea and i felt much better after drinking it Anyway, I loved the party. It was awesome. I had a wonderful time this weekend too. We went to visit our grandparents on Saturday morning. We traveled by train. it was a journey of around three hours and there was a lot to see outside the window in the afternoon i went fishing in a boat with my grandpa for the first time Really? Where did you go? We went to a lake, not far away from his house. He taught me cool stuff about fishing, and I tried to do everything he said. So did you catch any fish? Yes, we did. We caught a lot of fish. I was so excited. We took the fish home, and later we had grilled fish for dinner. It was such a delicious meal. I was really sad yesterday when I had to say goodbye to my grandparents. Did you have a good day at school today? It was okay. Did you like your lessons at school? I enjoyed the grammar lesson and the PE, but I didn't like math. We had a test. So how was the test? I didn't do so well on the test. I made a few mistakes. What was the best thing that happened at school today? the time i spent with my friends during recess was the best thing that happened today Thanks for watching. Please subscribe to our YouTube channel and visit our website kidspages.com.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "And what did you do?",
+      "speaker": "Speaker0",
+      "start": 3.28,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "and",
+          "start": 3.28,
+          "end": 3.44,
+          "confidence": 0.707
+        },
+        {
+          "word": "what",
+          "start": 3.44,
+          "end": 3.68,
+          "confidence": 0.973
+        },
+        {
+          "word": "did",
+          "start": 3.68,
+          "end": 3.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 3.84,
+          "end": 4.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 4.0,
+          "end": 4.5,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.936
+    },
+    {
+      "id": 2,
+      "text": "Did you have a good weekend, Monica?",
+      "speaker": "Speaker1",
+      "start": 16.55,
+      "duration": 2.25,
+      "words": [
+        {
+          "word": "did",
+          "start": 16.55,
+          "end": 16.86,
+          "confidence": 0.977
+        },
+        {
+          "word": "you",
+          "start": 16.86,
+          "end": 17.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 17.02,
+          "end": 17.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 17.27,
+          "end": 17.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "good",
+          "start": 17.34,
+          "end": 17.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "weekend",
+          "start": 17.66,
+          "end": 18.16,
+          "confidence": 0.944
+        },
+        {
+          "word": "monica",
+          "start": 18.3,
+          "end": 18.8,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.987
+    },
+    {
+      "id": 3,
+      "text": "Oh, yeah. It was great.",
+      "speaker": "Speaker1",
+      "start": 19.59,
+      "duration": 1.93,
+      "words": [
+        {
+          "word": "oh",
+          "start": 19.59,
+          "end": 19.9,
+          "confidence": 0.731
+        },
+        {
+          "word": "yeah",
+          "start": 19.9,
+          "end": 20.4,
+          "confidence": 0.9
+        },
+        {
+          "word": "it",
+          "start": 20.46,
+          "end": 20.7,
+          "confidence": 0.998
+        },
+        {
+          "word": "was",
+          "start": 20.7,
+          "end": 21.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "great",
+          "start": 21.02,
+          "end": 21.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.926
+    },
+    {
+      "id": 4,
+      "text": "So what did you do?",
+      "speaker": "Speaker1",
+      "start": 22.7,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "so",
+          "start": 22.7,
+          "end": 22.95,
+          "confidence": 0.708
+        },
+        {
+          "word": "what",
+          "start": 22.95,
+          "end": 23.18,
+          "confidence": 0.921
+        },
+        {
+          "word": "did",
+          "start": 23.18,
+          "end": 23.43,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 23.43,
+          "end": 23.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "do",
+          "start": 23.59,
+          "end": 24.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.925
+    },
+    {
+      "id": 5,
+      "text": "On Saturday, I went to the theater with my parents.",
+      "speaker": "Speaker1",
+      "start": 26.88,
+      "duration": 3.46,
+      "words": [
+        {
+          "word": "on",
+          "start": 26.88,
+          "end": 27.12,
+          "confidence": 0.926
+        },
+        {
+          "word": "saturday",
+          "start": 27.12,
+          "end": 27.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 28.16,
+          "end": 28.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "went",
+          "start": 28.24,
+          "end": 28.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 28.48,
+          "end": 28.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 28.72,
+          "end": 28.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "theater",
+          "start": 28.88,
+          "end": 29.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "with",
+          "start": 29.36,
+          "end": 29.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 29.6,
+          "end": 29.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "parents",
+          "start": 29.84,
+          "end": 30.34,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 6,
+      "text": "What play did you see?",
+      "speaker": "Speaker1",
+      "start": 31.76,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "what",
+          "start": 31.76,
+          "end": 32.16,
+          "confidence": 0.994
+        },
+        {
+          "word": "play",
+          "start": 32.16,
+          "end": 32.48,
+          "confidence": 0.986
+        },
+        {
+          "word": "did",
+          "start": 32.48,
+          "end": 32.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 32.72,
+          "end": 32.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "see",
+          "start": 32.88,
+          "end": 33.38,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 7,
+      "text": "I saw Cinderella, and it was an amazing show.",
+      "speaker": "Speaker1",
+      "start": 34.56,
+      "duration": 3.38,
+      "words": [
+        {
+          "word": "i",
+          "start": 34.56,
+          "end": 34.8,
+          "confidence": 0.992
+        },
+        {
+          "word": "saw",
+          "start": 34.8,
+          "end": 35.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "cinderella",
+          "start": 35.12,
+          "end": 35.62,
+          "confidence": 0.952
+        },
+        {
+          "word": "and",
+          "start": 36.0,
+          "end": 36.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 36.24,
+          "end": 36.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 36.4,
+          "end": 36.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "an",
+          "start": 36.64,
+          "end": 36.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "amazing",
+          "start": 36.88,
+          "end": 37.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "show",
+          "start": 37.44,
+          "end": 37.94,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 8,
+      "text": "What did you like the most?",
+      "speaker": "Speaker1",
+      "start": 38.98,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "what",
+          "start": 38.98,
+          "end": 39.3,
+          "confidence": 0.997
+        },
+        {
+          "word": "did",
+          "start": 39.3,
+          "end": 39.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 39.53,
+          "end": 39.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 39.7,
+          "end": 39.94,
+          "confidence": 0.995
+        },
+        {
+          "word": "the",
+          "start": 39.94,
+          "end": 40.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "most",
+          "start": 40.17,
+          "end": 40.67,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 9,
+      "text": "I liked the costumes and the songs.",
+      "speaker": "Speaker1",
+      "start": 41.94,
+      "duration": 2.65,
+      "words": [
+        {
+          "word": "i",
+          "start": 41.94,
+          "end": 42.17,
+          "confidence": 0.857
+        },
+        {
+          "word": "liked",
+          "start": 42.17,
+          "end": 42.5,
+          "confidence": 0.6
+        },
+        {
+          "word": "the",
+          "start": 42.5,
+          "end": 42.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "costumes",
+          "start": 42.73,
+          "end": 43.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 43.53,
+          "end": 43.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 43.77,
+          "end": 44.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "songs",
+          "start": 44.09,
+          "end": 44.59,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.922
+    },
+    {
+      "id": 10,
+      "text": "What about Sunday?",
+      "speaker": "Speaker1",
+      "start": 45.45,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "what",
+          "start": 45.45,
+          "end": 45.77,
+          "confidence": 0.927
+        },
+        {
+          "word": "about",
+          "start": 45.77,
+          "end": 46.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "sunday",
+          "start": 46.17,
+          "end": 46.67,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 11,
+      "text": "Did you do anything special?",
+      "speaker": "Speaker1",
+      "start": 47.14,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "did",
+          "start": 47.14,
+          "end": 47.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 47.38,
+          "end": 47.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 47.53,
+          "end": 47.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "anything",
+          "start": 47.7,
+          "end": 48.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "special",
+          "start": 48.18,
+          "end": 48.68,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 12,
+      "text": "I read a book in the morning.",
+      "speaker": "Speaker1",
+      "start": 49.62,
+      "duration": 1.93,
+      "words": [
+        {
+          "word": "i",
+          "start": 49.62,
+          "end": 49.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "read",
+          "start": 49.94,
+          "end": 50.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 50.17,
+          "end": 50.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "book",
+          "start": 50.34,
+          "end": 50.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 50.66,
+          "end": 50.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 50.9,
+          "end": 51.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "morning",
+          "start": 51.05,
+          "end": 51.55,
+          "confidence": 0.884
+        }
+      ],
+      "confidence": 0.983
+    },
+    {
+      "id": 13,
+      "text": "then i did my homework though i didn't feel like it",
+      "speaker": "Speaker1",
+      "start": 52.56,
+      "duration": 3.54,
+      "words": [
+        {
+          "word": "then",
+          "start": 52.56,
+          "end": 52.72,
+          "confidence": 0.99
+        },
+        {
+          "word": "i",
+          "start": 52.72,
+          "end": 52.88,
+          "confidence": 0.918
+        },
+        {
+          "word": "did",
+          "start": 52.88,
+          "end": 53.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 53.2,
+          "end": 53.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "homework",
+          "start": 53.52,
+          "end": 54.02,
+          "confidence": 0.923
+        },
+        {
+          "word": "though",
+          "start": 54.32,
+          "end": 54.64,
+          "confidence": 0.98
+        },
+        {
+          "word": "i",
+          "start": 54.64,
+          "end": 54.8,
+          "confidence": 0.978
+        },
+        {
+          "word": "didn't",
+          "start": 54.8,
+          "end": 55.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "feel",
+          "start": 55.12,
+          "end": 55.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 55.44,
+          "end": 55.6,
+          "confidence": 0.998
+        },
+        {
+          "word": "it",
+          "start": 55.6,
+          "end": 56.1,
+          "confidence": 0.804
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 14,
+      "text": "but i knew i had to",
+      "speaker": "Speaker1",
+      "start": 56.16,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "but",
+          "start": 56.16,
+          "end": 56.4,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 56.4,
+          "end": 56.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "knew",
+          "start": 56.56,
+          "end": 56.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 56.8,
+          "end": 56.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "had",
+          "start": 56.96,
+          "end": 57.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 57.2,
+          "end": 57.7,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 15,
+      "text": "The weather was so beautiful and warm,",
+      "speaker": "Speaker1",
+      "start": 59.6,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "the",
+          "start": 59.6,
+          "end": 59.84,
+          "confidence": 0.879
+        },
+        {
+          "word": "weather",
+          "start": 59.84,
+          "end": 60.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 60.32,
+          "end": 60.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 60.56,
+          "end": 60.88,
+          "confidence": 0.998
+        },
+        {
+          "word": "beautiful",
+          "start": 60.88,
+          "end": 61.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 61.36,
+          "end": 61.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "warm",
+          "start": 61.6,
+          "end": 62.1,
+          "confidence": 0.912
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 16,
+      "text": "so we went on a picnic in the park in the afternoon.",
+      "speaker": "Speaker1",
+      "start": 62.56,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "so",
+          "start": 62.56,
+          "end": 62.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "we",
+          "start": 62.8,
+          "end": 63.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "went",
+          "start": 63.04,
+          "end": 63.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 63.36,
+          "end": 63.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 63.52,
+          "end": 63.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "picnic",
+          "start": 63.68,
+          "end": 64.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 64.16,
+          "end": 64.32,
+          "confidence": 0.995
+        },
+        {
+          "word": "the",
+          "start": 64.32,
+          "end": 64.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "park",
+          "start": 64.48,
+          "end": 64.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 64.8,
+          "end": 64.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 64.96,
+          "end": 65.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "afternoon",
+          "start": 65.12,
+          "end": 65.62,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 17,
+      "text": "We ate some sandwiches and drank some fresh orange juice.",
+      "speaker": "Speaker1",
+      "start": 67.38,
+      "duration": 4.09,
+      "words": [
+        {
+          "word": "we",
+          "start": 67.38,
+          "end": 67.77,
+          "confidence": 0.933
+        },
+        {
+          "word": "ate",
+          "start": 67.77,
+          "end": 68.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "some",
+          "start": 68.09,
+          "end": 68.41,
+          "confidence": 0.995
+        },
+        {
+          "word": "sandwiches",
+          "start": 68.41,
+          "end": 68.91,
+          "confidence": 0.996
+        },
+        {
+          "word": "and",
+          "start": 69.22,
+          "end": 69.45,
+          "confidence": 0.982
+        },
+        {
+          "word": "drank",
+          "start": 69.45,
+          "end": 69.85,
+          "confidence": 0.859
+        },
+        {
+          "word": "some",
+          "start": 69.85,
+          "end": 70.09,
+          "confidence": 0.992
+        },
+        {
+          "word": "fresh",
+          "start": 70.09,
+          "end": 70.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "orange",
+          "start": 70.49,
+          "end": 70.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "juice",
+          "start": 70.97,
+          "end": 71.47,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 18,
+      "text": "After lunch, we stood on the stream bank and fed the ducks.",
+      "speaker": "Speaker1",
+      "start": 72.73,
+      "duration": 4.43,
+      "words": [
+        {
+          "word": "after",
+          "start": 72.73,
+          "end": 73.22,
+          "confidence": 0.779
+        },
+        {
+          "word": "lunch",
+          "start": 73.22,
+          "end": 73.72,
+          "confidence": 0.989
+        },
+        {
+          "word": "we",
+          "start": 74.02,
+          "end": 74.25,
+          "confidence": 0.994
+        },
+        {
+          "word": "stood",
+          "start": 74.25,
+          "end": 74.58,
+          "confidence": 0.994
+        },
+        {
+          "word": "on",
+          "start": 74.58,
+          "end": 74.73,
+          "confidence": 0.98
+        },
+        {
+          "word": "the",
+          "start": 74.73,
+          "end": 74.89,
+          "confidence": 0.987
+        },
+        {
+          "word": "stream",
+          "start": 74.89,
+          "end": 75.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "bank",
+          "start": 75.38,
+          "end": 75.88,
+          "confidence": 0.954
+        },
+        {
+          "word": "and",
+          "start": 75.94,
+          "end": 76.17,
+          "confidence": 0.992
+        },
+        {
+          "word": "fed",
+          "start": 76.17,
+          "end": 76.49,
+          "confidence": 0.989
+        },
+        {
+          "word": "the",
+          "start": 76.49,
+          "end": 76.66,
+          "confidence": 0.994
+        },
+        {
+          "word": "ducks",
+          "start": 76.66,
+          "end": 77.16,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.936
+    },
+    {
+      "id": 19,
+      "text": "Then we took a nice stroll through the park.",
+      "speaker": "Speaker1",
+      "start": 79.67,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "then",
+          "start": 79.67,
+          "end": 79.99,
+          "confidence": 0.989
+        },
+        {
+          "word": "we",
+          "start": 79.99,
+          "end": 80.15,
+          "confidence": 0.931
+        },
+        {
+          "word": "took",
+          "start": 80.15,
+          "end": 80.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 80.47,
+          "end": 80.63,
+          "confidence": 0.997
+        },
+        {
+          "word": "nice",
+          "start": 80.63,
+          "end": 81.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "stroll",
+          "start": 81.11,
+          "end": 81.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "through",
+          "start": 81.59,
+          "end": 81.83,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 81.83,
+          "end": 82.07,
+          "confidence": 0.998
+        },
+        {
+          "word": "park",
+          "start": 82.07,
+          "end": 82.57,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 20,
+      "text": "A moment later, it started to rain.",
+      "speaker": "Speaker1",
+      "start": 83.75,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "a",
+          "start": 83.75,
+          "end": 83.91,
+          "confidence": 0.967
+        },
+        {
+          "word": "moment",
+          "start": 83.91,
+          "end": 84.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "later",
+          "start": 84.47,
+          "end": 84.97,
+          "confidence": 0.961
+        },
+        {
+          "word": "it",
+          "start": 85.35,
+          "end": 85.67,
+          "confidence": 0.996
+        },
+        {
+          "word": "started",
+          "start": 85.67,
+          "end": 86.15,
+          "confidence": 0.995
+        },
+        {
+          "word": "to",
+          "start": 86.15,
+          "end": 86.31,
+          "confidence": 0.995
+        },
+        {
+          "word": "rain",
+          "start": 86.31,
+          "end": 86.81,
+          "confidence": 0.807
+        }
+      ],
+      "confidence": 0.962
+    },
+    {
+      "id": 21,
+      "text": "So we ran as fast as we could.",
+      "speaker": "Speaker1",
+      "start": 87.91,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "so",
+          "start": 87.91,
+          "end": 88.15,
+          "confidence": 0.941
+        },
+        {
+          "word": "we",
+          "start": 88.15,
+          "end": 88.39,
+          "confidence": 0.952
+        },
+        {
+          "word": "ran",
+          "start": 88.39,
+          "end": 88.71,
+          "confidence": 0.98
+        },
+        {
+          "word": "as",
+          "start": 88.71,
+          "end": 88.95,
+          "confidence": 0.994
+        },
+        {
+          "word": "fast",
+          "start": 88.95,
+          "end": 89.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "as",
+          "start": 89.27,
+          "end": 89.51,
+          "confidence": 0.992
+        },
+        {
+          "word": "we",
+          "start": 89.51,
+          "end": 89.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "could",
+          "start": 89.75,
+          "end": 90.25,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 22,
+      "text": "As soon as I got home, I took a hot bath.",
+      "speaker": "Speaker1",
+      "start": 92.34,
+      "duration": 3.55,
+      "words": [
+        {
+          "word": "as",
+          "start": 92.34,
+          "end": 92.58,
+          "confidence": 0.996
+        },
+        {
+          "word": "soon",
+          "start": 92.58,
+          "end": 92.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "as",
+          "start": 92.83,
+          "end": 93.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 93.06,
+          "end": 93.22,
+          "confidence": 0.995
+        },
+        {
+          "word": "got",
+          "start": 93.22,
+          "end": 93.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "home",
+          "start": 93.47,
+          "end": 93.97,
+          "confidence": 0.992
+        },
+        {
+          "word": "i",
+          "start": 94.34,
+          "end": 94.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "took",
+          "start": 94.58,
+          "end": 94.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 94.91,
+          "end": 95.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "hot",
+          "start": 95.06,
+          "end": 95.39,
+          "confidence": 0.768
+        },
+        {
+          "word": "bath",
+          "start": 95.39,
+          "end": 95.89,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 23,
+      "text": "I enjoy spending time with my family.",
+      "speaker": "Speaker1",
+      "start": 99.39,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "i",
+          "start": 99.39,
+          "end": 99.62,
+          "confidence": 0.988
+        },
+        {
+          "word": "enjoy",
+          "start": 99.62,
+          "end": 100.12,
+          "confidence": 0.588
+        },
+        {
+          "word": "spending",
+          "start": 100.27,
+          "end": 100.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 100.75,
+          "end": 101.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 101.06,
+          "end": 101.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 101.31,
+          "end": 101.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "family",
+          "start": 101.55,
+          "end": 102.05,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.939
+    },
+    {
+      "id": 24,
+      "text": "How about you?",
+      "speaker": "Speaker1",
+      "start": 103.7,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "how",
+          "start": 103.7,
+          "end": 104.03,
+          "confidence": 0.854
+        },
+        {
+          "word": "about",
+          "start": 104.03,
+          "end": 104.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 104.42,
+          "end": 104.92,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 25,
+      "text": "How was your weekend?",
+      "speaker": "Speaker1",
+      "start": 105.39,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "how",
+          "start": 105.39,
+          "end": 105.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 105.62,
+          "end": 105.78,
+          "confidence": 0.977
+        },
+        {
+          "word": "your",
+          "start": 105.78,
+          "end": 106.1,
+          "confidence": 0.999
+        },
+        {
+          "word": "weekend",
+          "start": 106.1,
+          "end": 106.6,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 26,
+      "text": "Well, on Saturday, I went shopping with my mom.",
+      "speaker": "Speaker1",
+      "start": 108.15,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "well",
+          "start": 108.15,
+          "end": 108.65,
+          "confidence": 0.998
+        },
+        {
+          "word": "on",
+          "start": 108.79,
+          "end": 109.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "saturday",
+          "start": 109.03,
+          "end": 109.53,
+          "confidence": 0.973
+        },
+        {
+          "word": "i",
+          "start": 109.83,
+          "end": 109.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "went",
+          "start": 109.99,
+          "end": 110.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "shopping",
+          "start": 110.39,
+          "end": 110.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 110.79,
+          "end": 111.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 111.03,
+          "end": 111.27,
+          "confidence": 0.998
+        },
+        {
+          "word": "mom",
+          "start": 111.27,
+          "end": 111.77,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 27,
+      "text": "I needed a dress for my cousin's birthday party,",
+      "speaker": "Speaker1",
+      "start": 112.39,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 112.39,
+          "end": 112.71,
+          "confidence": 0.831
+        },
+        {
+          "word": "needed",
+          "start": 112.71,
+          "end": 113.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 113.11,
+          "end": 113.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "dress",
+          "start": 113.19,
+          "end": 113.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 113.59,
+          "end": 113.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 113.91,
+          "end": 114.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "cousin's",
+          "start": 114.07,
+          "end": 114.55,
+          "confidence": 0.99
+        },
+        {
+          "word": "birthday",
+          "start": 114.55,
+          "end": 115.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "party",
+          "start": 115.11,
+          "end": 115.61,
+          "confidence": 0.891
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 28,
+      "text": "so I trade many dresses.",
+      "speaker": "Speaker1",
+      "start": 116.07,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "so",
+          "start": 116.07,
+          "end": 116.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 116.31,
+          "end": 116.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "trade",
+          "start": 116.47,
+          "end": 116.95,
+          "confidence": 0.511
+        },
+        {
+          "word": "many",
+          "start": 116.95,
+          "end": 117.35,
+          "confidence": 0.999
+        },
+        {
+          "word": "dresses",
+          "start": 117.35,
+          "end": 117.85,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.901
+    },
+    {
+      "id": 29,
+      "text": "So did you finally find the right dress?",
+      "speaker": "Speaker1",
+      "start": 119.99,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "so",
+          "start": 119.99,
+          "end": 120.23,
+          "confidence": 0.974
+        },
+        {
+          "word": "did",
+          "start": 120.23,
+          "end": 120.55,
+          "confidence": 0.857
+        },
+        {
+          "word": "you",
+          "start": 120.55,
+          "end": 120.71,
+          "confidence": 0.999
+        },
+        {
+          "word": "finally",
+          "start": 120.71,
+          "end": 121.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "find",
+          "start": 121.19,
+          "end": 121.51,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 121.51,
+          "end": 121.67,
+          "confidence": 0.674
+        },
+        {
+          "word": "right",
+          "start": 121.67,
+          "end": 121.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "dress",
+          "start": 121.91,
+          "end": 122.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.938
+    },
+    {
+      "id": 30,
+      "text": "Yeah, I did.",
+      "speaker": "Speaker1",
+      "start": 123.31,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 123.31,
+          "end": 123.81,
+          "confidence": 0.646
+        },
+        {
+          "word": "i",
+          "start": 124.03,
+          "end": 124.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "did",
+          "start": 124.19,
+          "end": 124.69,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.879
+    },
+    {
+      "id": 31,
+      "text": "I found the perfect dress for the party.",
+      "speaker": "Speaker1",
+      "start": 124.98,
+      "duration": 2.27,
+      "words": [
+        {
+          "word": "i",
+          "start": 124.98,
+          "end": 125.15,
+          "confidence": 0.996
+        },
+        {
+          "word": "found",
+          "start": 125.15,
+          "end": 125.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 125.47,
+          "end": 125.62,
+          "confidence": 0.991
+        },
+        {
+          "word": "perfect",
+          "start": 125.62,
+          "end": 126.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "dress",
+          "start": 126.03,
+          "end": 126.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "for",
+          "start": 126.34,
+          "end": 126.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 126.58,
+          "end": 126.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "party",
+          "start": 126.75,
+          "end": 127.25,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 32,
+      "text": "So how was the party?",
+      "speaker": "Speaker1",
+      "start": 129.38,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "so",
+          "start": 129.38,
+          "end": 129.78,
+          "confidence": 0.594
+        },
+        {
+          "word": "how",
+          "start": 129.78,
+          "end": 130.03,
+          "confidence": 0.826
+        },
+        {
+          "word": "was",
+          "start": 130.03,
+          "end": 130.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 130.34,
+          "end": 130.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "party",
+          "start": 130.5,
+          "end": 131.0,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.883
+    },
+    {
+      "id": 33,
+      "text": "It was great fun.",
+      "speaker": "Speaker1",
+      "start": 132.5,
+      "duration": 1.47,
+      "words": [
+        {
+          "word": "it",
+          "start": 132.5,
+          "end": 132.75,
+          "confidence": 0.896
+        },
+        {
+          "word": "was",
+          "start": 132.75,
+          "end": 133.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 133.06,
+          "end": 133.47,
+          "confidence": 0.992
+        },
+        {
+          "word": "fun",
+          "start": 133.47,
+          "end": 133.97,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.969
+    },
+    {
+      "id": 34,
+      "text": "There were lots of beautiful decorations in the room.",
+      "speaker": "Speaker1",
+      "start": 134.59,
+      "duration": 2.97,
+      "words": [
+        {
+          "word": "there",
+          "start": 134.59,
+          "end": 134.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "were",
+          "start": 134.82,
+          "end": 135.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "lots",
+          "start": 135.15,
+          "end": 135.47,
+          "confidence": 0.998
+        },
+        {
+          "word": "of",
+          "start": 135.47,
+          "end": 135.62,
+          "confidence": 0.998
+        },
+        {
+          "word": "beautiful",
+          "start": 135.62,
+          "end": 136.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "decorations",
+          "start": 136.19,
+          "end": 136.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "in",
+          "start": 136.75,
+          "end": 136.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 136.91,
+          "end": 137.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "room",
+          "start": 137.06,
+          "end": 137.56,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 35,
+      "text": "The cake looked amazing.",
+      "speaker": "Speaker1",
+      "start": 138.73,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "the",
+          "start": 138.73,
+          "end": 139.05,
+          "confidence": 0.984
+        },
+        {
+          "word": "cake",
+          "start": 139.05,
+          "end": 139.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "looked",
+          "start": 139.53,
+          "end": 139.93,
+          "confidence": 0.997
+        },
+        {
+          "word": "amazing",
+          "start": 139.93,
+          "end": 140.43,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 36,
+      "text": "My cousin threw out the candles and cut the cake.",
+      "speaker": "Speaker1",
+      "start": 141.05,
+      "duration": 3.14,
+      "words": [
+        {
+          "word": "my",
+          "start": 141.05,
+          "end": 141.37,
+          "confidence": 0.993
+        },
+        {
+          "word": "cousin",
+          "start": 141.37,
+          "end": 141.85,
+          "confidence": 0.997
+        },
+        {
+          "word": "threw",
+          "start": 141.85,
+          "end": 142.01,
+          "confidence": 0.502
+        },
+        {
+          "word": "out",
+          "start": 142.01,
+          "end": 142.17,
+          "confidence": 0.522
+        },
+        {
+          "word": "the",
+          "start": 142.17,
+          "end": 142.33,
+          "confidence": 0.987
+        },
+        {
+          "word": "candles",
+          "start": 142.33,
+          "end": 142.83,
+          "confidence": 0.996
+        },
+        {
+          "word": "and",
+          "start": 142.97,
+          "end": 143.21,
+          "confidence": 0.993
+        },
+        {
+          "word": "cut",
+          "start": 143.21,
+          "end": 143.45,
+          "confidence": 0.742
+        },
+        {
+          "word": "the",
+          "start": 143.45,
+          "end": 143.69,
+          "confidence": 0.76
+        },
+        {
+          "word": "cake",
+          "start": 143.69,
+          "end": 144.19,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.849
+    },
+    {
+      "id": 37,
+      "text": "We sang the birthday song.",
+      "speaker": "Speaker1",
+      "start": 145.77,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "we",
+          "start": 145.77,
+          "end": 146.17,
+          "confidence": 0.792
+        },
+        {
+          "word": "sang",
+          "start": 146.17,
+          "end": 146.57,
+          "confidence": 0.99
+        },
+        {
+          "word": "the",
+          "start": 146.57,
+          "end": 146.81,
+          "confidence": 0.993
+        },
+        {
+          "word": "birthday",
+          "start": 146.81,
+          "end": 147.31,
+          "confidence": 0.968
+        },
+        {
+          "word": "song",
+          "start": 147.53,
+          "end": 148.03,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.948
+    },
+    {
+      "id": 38,
+      "text": "Then we played lots of games, and I won many times.",
+      "speaker": "Speaker1",
+      "start": 157.07,
+      "duration": 3.54,
+      "words": [
+        {
+          "word": "then",
+          "start": 157.07,
+          "end": 157.39,
+          "confidence": 0.966
+        },
+        {
+          "word": "we",
+          "start": 157.39,
+          "end": 157.63,
+          "confidence": 0.945
+        },
+        {
+          "word": "played",
+          "start": 157.63,
+          "end": 157.96,
+          "confidence": 0.997
+        },
+        {
+          "word": "lots",
+          "start": 157.96,
+          "end": 158.35,
+          "confidence": 0.997
+        },
+        {
+          "word": "of",
+          "start": 158.35,
+          "end": 158.51,
+          "confidence": 0.999
+        },
+        {
+          "word": "games",
+          "start": 158.51,
+          "end": 159.0,
+          "confidence": 0.757
+        },
+        {
+          "word": "and",
+          "start": 159.0,
+          "end": 159.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 159.24,
+          "end": 159.39,
+          "confidence": 0.984
+        },
+        {
+          "word": "won",
+          "start": 159.39,
+          "end": 159.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "many",
+          "start": 159.72,
+          "end": 160.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "times",
+          "start": 160.11,
+          "end": 160.61,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 39,
+      "text": "Where was the party held?",
+      "speaker": "Speaker2",
+      "start": 163.79,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "where",
+          "start": 163.79,
+          "end": 164.11,
+          "confidence": 0.977
+        },
+        {
+          "word": "was",
+          "start": 164.11,
+          "end": 164.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 164.28,
+          "end": 164.44,
+          "confidence": 0.998
+        },
+        {
+          "word": "party",
+          "start": 164.44,
+          "end": 164.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "held",
+          "start": 164.83,
+          "end": 165.33,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 40,
+      "text": "It was held at a party center.",
+      "speaker": "Speaker1",
+      "start": 166.84,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "it",
+          "start": 166.84,
+          "end": 167.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 167.08,
+          "end": 167.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "held",
+          "start": 167.32,
+          "end": 167.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "at",
+          "start": 167.64,
+          "end": 167.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 167.8,
+          "end": 167.96,
+          "confidence": 0.987
+        },
+        {
+          "word": "party",
+          "start": 167.96,
+          "end": 168.44,
+          "confidence": 0.787
+        },
+        {
+          "word": "center",
+          "start": 168.44,
+          "end": 168.94,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.963
+    },
+    {
+      "id": 41,
+      "text": "How was the food?",
+      "speaker": "Speaker2",
+      "start": 169.8,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "how",
+          "start": 169.8,
+          "end": 170.04,
+          "confidence": 0.998
+        },
+        {
+          "word": "was",
+          "start": 170.04,
+          "end": 170.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 170.28,
+          "end": 170.44,
+          "confidence": 0.998
+        },
+        {
+          "word": "food",
+          "start": 170.44,
+          "end": 170.94,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 42,
+      "text": "The food was delicious, but I ate too much and felt a little sick.",
+      "speaker": "Speaker1",
+      "start": 172.36,
+      "duration": 4.26,
+      "words": [
+        {
+          "word": "the",
+          "start": 172.36,
+          "end": 172.6,
+          "confidence": 0.999
+        },
+        {
+          "word": "food",
+          "start": 172.6,
+          "end": 172.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 172.84,
+          "end": 173.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "delicious",
+          "start": 173.16,
+          "end": 173.66,
+          "confidence": 0.934
+        },
+        {
+          "word": "but",
+          "start": 173.8,
+          "end": 174.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 174.12,
+          "end": 174.28,
+          "confidence": 0.998
+        },
+        {
+          "word": "ate",
+          "start": 174.28,
+          "end": 174.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "too",
+          "start": 174.52,
+          "end": 174.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "much",
+          "start": 174.76,
+          "end": 175.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 175.08,
+          "end": 175.32,
+          "confidence": 0.931
+        },
+        {
+          "word": "felt",
+          "start": 175.32,
+          "end": 175.64,
+          "confidence": 0.996
+        },
+        {
+          "word": "a",
+          "start": 175.64,
+          "end": 175.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "little",
+          "start": 175.72,
+          "end": 176.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "sick",
+          "start": 176.12,
+          "end": 176.62,
+          "confidence": 0.852
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 43,
+      "text": "And I also drank too much juice.",
+      "speaker": "Speaker1",
+      "start": 177.48,
+      "duration": 2.24,
+      "words": [
+        {
+          "word": "and",
+          "start": 177.48,
+          "end": 177.8,
+          "confidence": 0.848
+        },
+        {
+          "word": "i",
+          "start": 177.8,
+          "end": 178.04,
+          "confidence": 0.922
+        },
+        {
+          "word": "also",
+          "start": 178.04,
+          "end": 178.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "drank",
+          "start": 178.36,
+          "end": 178.76,
+          "confidence": 0.989
+        },
+        {
+          "word": "too",
+          "start": 178.76,
+          "end": 178.92,
+          "confidence": 0.996
+        },
+        {
+          "word": "much",
+          "start": 178.92,
+          "end": 179.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "juice",
+          "start": 179.24,
+          "end": 179.72,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 44,
+      "text": "So were you able to stay until the end of the party?",
+      "speaker": "Speaker2",
+      "start": 181.24,
+      "duration": 2.57,
+      "words": [
+        {
+          "word": "so",
+          "start": 181.24,
+          "end": 181.47,
+          "confidence": 0.874
+        },
+        {
+          "word": "were",
+          "start": 181.47,
+          "end": 181.72,
+          "confidence": 0.963
+        },
+        {
+          "word": "you",
+          "start": 181.72,
+          "end": 181.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "able",
+          "start": 181.79,
+          "end": 182.11,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 182.11,
+          "end": 182.28,
+          "confidence": 0.996
+        },
+        {
+          "word": "stay",
+          "start": 182.28,
+          "end": 182.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "until",
+          "start": 182.44,
+          "end": 182.75,
+          "confidence": 0.992
+        },
+        {
+          "word": "the",
+          "start": 182.75,
+          "end": 182.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "end",
+          "start": 182.91,
+          "end": 183.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "of",
+          "start": 183.07,
+          "end": 183.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 183.24,
+          "end": 183.31,
+          "confidence": 0.997
+        },
+        {
+          "word": "party",
+          "start": 183.31,
+          "end": 183.81,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 45,
+      "text": "Yes.",
+      "speaker": "Speaker1",
+      "start": 184.19,
+      "duration": 0.25,
+      "words": [
+        {
+          "word": "yes",
+          "start": 184.19,
+          "end": 184.44,
+          "confidence": 0.824
+        }
+      ],
+      "confidence": 0.938
+    },
+    {
+      "id": 46,
+      "text": "I was because I only started to feel sick at the end of the party.",
+      "speaker": "Speaker1",
+      "start": 184.44,
+      "duration": 4.65,
+      "words": [
+        {
+          "word": "i",
+          "start": 184.44,
+          "end": 184.75,
+          "confidence": 0.998
+        },
+        {
+          "word": "was",
+          "start": 184.75,
+          "end": 185.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "because",
+          "start": 185.24,
+          "end": 185.63,
+          "confidence": 0.565
+        },
+        {
+          "word": "i",
+          "start": 185.63,
+          "end": 185.79,
+          "confidence": 0.998
+        },
+        {
+          "word": "only",
+          "start": 185.79,
+          "end": 186.11,
+          "confidence": 0.999
+        },
+        {
+          "word": "started",
+          "start": 186.11,
+          "end": 186.51,
+          "confidence": 0.998
+        },
+        {
+          "word": "to",
+          "start": 186.51,
+          "end": 186.59,
+          "confidence": 0.995
+        },
+        {
+          "word": "feel",
+          "start": 186.59,
+          "end": 186.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "sick",
+          "start": 186.91,
+          "end": 187.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "at",
+          "start": 187.72,
+          "end": 187.96,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 187.96,
+          "end": 188.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "end",
+          "start": 188.03,
+          "end": 188.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 188.28,
+          "end": 188.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 188.44,
+          "end": 188.59,
+          "confidence": 0.998
+        },
+        {
+          "word": "party",
+          "start": 188.59,
+          "end": 189.09,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 47,
+      "text": "when i got home my mom made me some tea",
+      "speaker": "Speaker1",
+      "start": 190.03,
+      "duration": 3.04,
+      "words": [
+        {
+          "word": "when",
+          "start": 190.03,
+          "end": 190.28,
+          "confidence": 0.955
+        },
+        {
+          "word": "i",
+          "start": 190.28,
+          "end": 190.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "got",
+          "start": 190.44,
+          "end": 190.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "home",
+          "start": 190.75,
+          "end": 191.25,
+          "confidence": 0.984
+        },
+        {
+          "word": "my",
+          "start": 191.63,
+          "end": 191.79,
+          "confidence": 0.996
+        },
+        {
+          "word": "mom",
+          "start": 191.79,
+          "end": 192.11,
+          "confidence": 0.922
+        },
+        {
+          "word": "made",
+          "start": 192.11,
+          "end": 192.28,
+          "confidence": 0.935
+        },
+        {
+          "word": "me",
+          "start": 192.28,
+          "end": 192.51,
+          "confidence": 0.995
+        },
+        {
+          "word": "some",
+          "start": 192.51,
+          "end": 192.75,
+          "confidence": 0.997
+        },
+        {
+          "word": "tea",
+          "start": 192.75,
+          "end": 193.07,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 48,
+      "text": "and i felt much better after drinking it",
+      "speaker": "Speaker1",
+      "start": 193.07,
+      "duration": 2.62,
+      "words": [
+        {
+          "word": "and",
+          "start": 193.07,
+          "end": 193.31,
+          "confidence": 0.609
+        },
+        {
+          "word": "i",
+          "start": 193.31,
+          "end": 193.47,
+          "confidence": 0.996
+        },
+        {
+          "word": "felt",
+          "start": 193.47,
+          "end": 193.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "much",
+          "start": 193.88,
+          "end": 194.11,
+          "confidence": 0.997
+        },
+        {
+          "word": "better",
+          "start": 194.11,
+          "end": 194.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "after",
+          "start": 194.51,
+          "end": 194.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "drinking",
+          "start": 194.83,
+          "end": 195.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 195.31,
+          "end": 195.69,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 49,
+      "text": "Anyway, I loved the party.",
+      "speaker": "Speaker1",
+      "start": 196.97,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "anyway",
+          "start": 196.97,
+          "end": 197.47,
+          "confidence": 0.983
+        },
+        {
+          "word": "i",
+          "start": 197.77,
+          "end": 198.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "loved",
+          "start": 198.01,
+          "end": 198.33,
+          "confidence": 0.757
+        },
+        {
+          "word": "the",
+          "start": 198.33,
+          "end": 198.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "party",
+          "start": 198.49,
+          "end": 198.99,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 50,
+      "text": "It was awesome.",
+      "speaker": "Speaker1",
+      "start": 199.29,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "it",
+          "start": 199.29,
+          "end": 199.53,
+          "confidence": 0.992
+        },
+        {
+          "word": "was",
+          "start": 199.53,
+          "end": 199.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "awesome",
+          "start": 199.85,
+          "end": 200.35,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 51,
+      "text": "I had a wonderful time this weekend too.",
+      "speaker": "Speaker2",
+      "start": 203.13,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "i",
+          "start": 203.13,
+          "end": 203.29,
+          "confidence": 0.99
+        },
+        {
+          "word": "had",
+          "start": 203.29,
+          "end": 203.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 203.45,
+          "end": 203.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "wonderful",
+          "start": 203.53,
+          "end": 204.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 204.17,
+          "end": 204.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 204.41,
+          "end": 204.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "weekend",
+          "start": 204.57,
+          "end": 205.05,
+          "confidence": 0.996
+        },
+        {
+          "word": "too",
+          "start": 205.05,
+          "end": 205.55,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 52,
+      "text": "We went to visit our grandparents on Saturday morning.",
+      "speaker": "Speaker2",
+      "start": 205.85,
+      "duration": 3.04,
+      "words": [
+        {
+          "word": "we",
+          "start": 205.85,
+          "end": 206.09,
+          "confidence": 0.984
+        },
+        {
+          "word": "went",
+          "start": 206.09,
+          "end": 206.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 206.33,
+          "end": 206.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "visit",
+          "start": 206.41,
+          "end": 206.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "our",
+          "start": 206.73,
+          "end": 206.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "grandparents",
+          "start": 206.89,
+          "end": 207.39,
+          "confidence": 0.996
+        },
+        {
+          "word": "on",
+          "start": 207.53,
+          "end": 207.91,
+          "confidence": 0.993
+        },
+        {
+          "word": "saturday",
+          "start": 208.0,
+          "end": 208.39,
+          "confidence": 0.984
+        },
+        {
+          "word": "morning",
+          "start": 208.39,
+          "end": 208.89,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 53,
+      "text": "We traveled by train.",
+      "speaker": "Speaker2",
+      "start": 209.11,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "we",
+          "start": 209.11,
+          "end": 209.35,
+          "confidence": 0.991
+        },
+        {
+          "word": "traveled",
+          "start": 209.35,
+          "end": 209.75,
+          "confidence": 0.692
+        },
+        {
+          "word": "by",
+          "start": 209.75,
+          "end": 210.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "train",
+          "start": 210.0,
+          "end": 210.5,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 54,
+      "text": "it was a journey of around three hours",
+      "speaker": "Speaker2",
+      "start": 213.91,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "it",
+          "start": 213.91,
+          "end": 214.07,
+          "confidence": 0.985
+        },
+        {
+          "word": "was",
+          "start": 214.07,
+          "end": 214.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 214.23,
+          "end": 214.39,
+          "confidence": 0.997
+        },
+        {
+          "word": "journey",
+          "start": 214.39,
+          "end": 214.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 214.72,
+          "end": 214.95,
+          "confidence": 0.963
+        },
+        {
+          "word": "around",
+          "start": 214.95,
+          "end": 215.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "three",
+          "start": 215.28,
+          "end": 215.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "hours",
+          "start": 215.51,
+          "end": 216.0,
+          "confidence": 0.963
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 55,
+      "text": "and there was a lot to see outside the window",
+      "speaker": "Speaker2",
+      "start": 216.0,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "and",
+          "start": 216.0,
+          "end": 216.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "there",
+          "start": 216.23,
+          "end": 216.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 216.39,
+          "end": 216.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 216.63,
+          "end": 216.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "lot",
+          "start": 216.72,
+          "end": 217.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 217.03,
+          "end": 217.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "see",
+          "start": 217.19,
+          "end": 217.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "outside",
+          "start": 217.44,
+          "end": 217.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 217.83,
+          "end": 218.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "window",
+          "start": 218.0,
+          "end": 218.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 56,
+      "text": "in the afternoon i went fishing in a boat with my grandpa for the first",
+      "speaker": "Speaker2",
+      "start": 219.44,
+      "duration": 4.13,
+      "words": [
+        {
+          "word": "in",
+          "start": 219.44,
+          "end": 219.67,
+          "confidence": 0.922
+        },
+        {
+          "word": "the",
+          "start": 219.67,
+          "end": 219.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "afternoon",
+          "start": 219.83,
+          "end": 220.33,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 220.63,
+          "end": 220.79,
+          "confidence": 0.99
+        },
+        {
+          "word": "went",
+          "start": 220.79,
+          "end": 221.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "fishing",
+          "start": 221.03,
+          "end": 221.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 221.35,
+          "end": 221.51,
+          "confidence": 0.997
+        },
+        {
+          "word": "a",
+          "start": 221.51,
+          "end": 221.59,
+          "confidence": 0.997
+        },
+        {
+          "word": "boat",
+          "start": 221.59,
+          "end": 221.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 221.83,
+          "end": 222.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 222.0,
+          "end": 222.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "grandpa",
+          "start": 222.16,
+          "end": 222.66,
+          "confidence": 0.869
+        },
+        {
+          "word": "for",
+          "start": 222.93,
+          "end": 223.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 223.09,
+          "end": 223.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "first",
+          "start": 223.17,
+          "end": 223.57,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 57,
+      "text": "time",
+      "speaker": "Speaker2",
+      "start": 223.57,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "time",
+          "start": 223.57,
+          "end": 224.07,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 58,
+      "text": "Really?",
+      "speaker": "Speaker1",
+      "start": 225.01,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "really",
+          "start": 225.01,
+          "end": 225.51,
+          "confidence": 0.953
+        }
+      ],
+      "confidence": 0.953
+    },
+    {
+      "id": 59,
+      "text": "Where did you go?",
+      "speaker": "Speaker1",
+      "start": 225.97,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "where",
+          "start": 225.97,
+          "end": 226.29,
+          "confidence": 0.964
+        },
+        {
+          "word": "did",
+          "start": 226.29,
+          "end": 226.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 226.53,
+          "end": 226.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "go",
+          "start": 226.69,
+          "end": 227.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 60,
+      "text": "We went to a lake, not far away from his house.",
+      "speaker": "Speaker2",
+      "start": 228.13,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "we",
+          "start": 228.13,
+          "end": 228.37,
+          "confidence": 0.979
+        },
+        {
+          "word": "went",
+          "start": 228.37,
+          "end": 228.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 228.61,
+          "end": 228.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 228.77,
+          "end": 228.85,
+          "confidence": 0.994
+        },
+        {
+          "word": "lake",
+          "start": 228.85,
+          "end": 229.35,
+          "confidence": 0.913
+        },
+        {
+          "word": "not",
+          "start": 229.41,
+          "end": 229.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "far",
+          "start": 229.73,
+          "end": 229.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "away",
+          "start": 229.97,
+          "end": 230.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "from",
+          "start": 230.21,
+          "end": 230.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "his",
+          "start": 230.45,
+          "end": 230.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "house",
+          "start": 230.61,
+          "end": 231.11,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 61,
+      "text": "He taught me cool stuff about fishing, and I tried to do everything he said.",
+      "speaker": "Speaker2",
+      "start": 231.73,
+      "duration": 4.26,
+      "words": [
+        {
+          "word": "he",
+          "start": 231.73,
+          "end": 231.97,
+          "confidence": 0.996
+        },
+        {
+          "word": "taught",
+          "start": 231.97,
+          "end": 232.21,
+          "confidence": 0.998
+        },
+        {
+          "word": "me",
+          "start": 232.21,
+          "end": 232.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "cool",
+          "start": 232.45,
+          "end": 232.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "stuff",
+          "start": 232.77,
+          "end": 233.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "about",
+          "start": 233.01,
+          "end": 233.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "fishing",
+          "start": 233.33,
+          "end": 233.81,
+          "confidence": 0.962
+        },
+        {
+          "word": "and",
+          "start": 233.81,
+          "end": 234.05,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 234.05,
+          "end": 234.29,
+          "confidence": 0.99
+        },
+        {
+          "word": "tried",
+          "start": 234.29,
+          "end": 234.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "to",
+          "start": 234.53,
+          "end": 234.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 234.69,
+          "end": 234.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "everything",
+          "start": 234.85,
+          "end": 235.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "he",
+          "start": 235.25,
+          "end": 235.49,
+          "confidence": 0.997
+        },
+        {
+          "word": "said",
+          "start": 235.49,
+          "end": 235.99,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 62,
+      "text": "So did you catch any fish?",
+      "speaker": "Speaker1",
+      "start": 237.73,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "so",
+          "start": 237.73,
+          "end": 237.97,
+          "confidence": 0.735
+        },
+        {
+          "word": "did",
+          "start": 237.97,
+          "end": 238.13,
+          "confidence": 0.919
+        },
+        {
+          "word": "you",
+          "start": 238.13,
+          "end": 238.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "catch",
+          "start": 238.29,
+          "end": 238.61,
+          "confidence": 0.969
+        },
+        {
+          "word": "any",
+          "start": 238.61,
+          "end": 238.85,
+          "confidence": 0.997
+        },
+        {
+          "word": "fish",
+          "start": 238.85,
+          "end": 239.35,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.936
+    },
+    {
+      "id": 63,
+      "text": "Yes, we did.",
+      "speaker": "Speaker2",
+      "start": 241.89,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "yes",
+          "start": 241.89,
+          "end": 242.29,
+          "confidence": 0.632
+        },
+        {
+          "word": "we",
+          "start": 242.29,
+          "end": 242.53,
+          "confidence": 0.928
+        },
+        {
+          "word": "did",
+          "start": 242.53,
+          "end": 243.03,
+          "confidence": 0.939
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 64,
+      "text": "We caught a lot of fish.",
+      "speaker": "Speaker2",
+      "start": 243.17,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "we",
+          "start": 243.17,
+          "end": 243.5,
+          "confidence": 0.993
+        },
+        {
+          "word": "caught",
+          "start": 243.5,
+          "end": 243.73,
+          "confidence": 0.997
+        },
+        {
+          "word": "a",
+          "start": 243.73,
+          "end": 243.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "lot",
+          "start": 243.81,
+          "end": 243.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "of",
+          "start": 243.97,
+          "end": 244.13,
+          "confidence": 0.999
+        },
+        {
+          "word": "fish",
+          "start": 244.13,
+          "end": 244.63,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 65,
+      "text": "I was so excited.",
+      "speaker": "Speaker2",
+      "start": 244.85,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 244.85,
+          "end": 245.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 245.01,
+          "end": 245.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 245.17,
+          "end": 245.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "excited",
+          "start": 245.41,
+          "end": 245.91,
+          "confidence": 0.959
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 66,
+      "text": "We took the fish home, and later we had grilled fish for dinner.",
+      "speaker": "Speaker2",
+      "start": 246.85,
+      "duration": 3.67,
+      "words": [
+        {
+          "word": "we",
+          "start": 246.85,
+          "end": 247.17,
+          "confidence": 0.987
+        },
+        {
+          "word": "took",
+          "start": 247.17,
+          "end": 247.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 247.33,
+          "end": 247.57,
+          "confidence": 1.0
+        },
+        {
+          "word": "fish",
+          "start": 247.57,
+          "end": 247.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "home",
+          "start": 247.81,
+          "end": 248.31,
+          "confidence": 0.949
+        },
+        {
+          "word": "and",
+          "start": 248.42,
+          "end": 248.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "later",
+          "start": 248.58,
+          "end": 248.82,
+          "confidence": 0.998
+        },
+        {
+          "word": "we",
+          "start": 248.82,
+          "end": 249.06,
+          "confidence": 0.965
+        },
+        {
+          "word": "had",
+          "start": 249.06,
+          "end": 249.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "grilled",
+          "start": 249.22,
+          "end": 249.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "fish",
+          "start": 249.54,
+          "end": 249.86,
+          "confidence": 0.997
+        },
+        {
+          "word": "for",
+          "start": 249.86,
+          "end": 250.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "dinner",
+          "start": 250.02,
+          "end": 250.52,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 67,
+      "text": "It was such a delicious meal.",
+      "speaker": "Speaker2",
+      "start": 250.74,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "it",
+          "start": 250.74,
+          "end": 250.9,
+          "confidence": 0.992
+        },
+        {
+          "word": "was",
+          "start": 250.9,
+          "end": 251.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "such",
+          "start": 251.06,
+          "end": 251.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 251.3,
+          "end": 251.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "delicious",
+          "start": 251.46,
+          "end": 251.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "meal",
+          "start": 252.02,
+          "end": 252.52,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 68,
+      "text": "I was really sad yesterday when I had to say goodbye to my grandparents.",
+      "speaker": "Speaker2",
+      "start": 254.66,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 254.66,
+          "end": 254.82,
+          "confidence": 0.891
+        },
+        {
+          "word": "was",
+          "start": 254.82,
+          "end": 255.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "really",
+          "start": 255.06,
+          "end": 255.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "sad",
+          "start": 255.38,
+          "end": 255.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "yesterday",
+          "start": 255.7,
+          "end": 256.18,
+          "confidence": 0.999
+        },
+        {
+          "word": "when",
+          "start": 256.18,
+          "end": 256.42,
+          "confidence": 0.941
+        },
+        {
+          "word": "i",
+          "start": 256.42,
+          "end": 256.58,
+          "confidence": 0.988
+        },
+        {
+          "word": "had",
+          "start": 256.58,
+          "end": 256.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 256.74,
+          "end": 256.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "say",
+          "start": 256.82,
+          "end": 256.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "goodbye",
+          "start": 256.98,
+          "end": 257.46,
+          "confidence": 0.996
+        },
+        {
+          "word": "to",
+          "start": 257.46,
+          "end": 257.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 257.62,
+          "end": 257.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "grandparents",
+          "start": 257.78,
+          "end": 258.28,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 69,
+      "text": "Did you have a good day at school today?",
+      "speaker": "Speaker0",
+      "start": 272.5,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "did",
+          "start": 272.5,
+          "end": 272.74,
+          "confidence": 0.903
+        },
+        {
+          "word": "you",
+          "start": 272.74,
+          "end": 272.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 272.9,
+          "end": 273.06,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 273.06,
+          "end": 273.13,
+          "confidence": 0.998
+        },
+        {
+          "word": "good",
+          "start": 273.13,
+          "end": 273.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "day",
+          "start": 273.38,
+          "end": 273.54,
+          "confidence": 0.999
+        },
+        {
+          "word": "at",
+          "start": 273.54,
+          "end": 273.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "school",
+          "start": 273.69,
+          "end": 274.1,
+          "confidence": 0.999
+        },
+        {
+          "word": "today",
+          "start": 274.1,
+          "end": 274.6,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.988
+    },
+    {
+      "id": 70,
+      "text": "It was okay.",
+      "speaker": "Speaker1",
+      "start": 275.69,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "it",
+          "start": 275.69,
+          "end": 276.01,
+          "confidence": 0.997
+        },
+        {
+          "word": "was",
+          "start": 276.01,
+          "end": 276.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "okay",
+          "start": 276.25,
+          "end": 276.75,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 71,
+      "text": "Did you like your lessons at school?",
+      "speaker": "Speaker1",
+      "start": 277.93,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "did",
+          "start": 277.93,
+          "end": 278.17,
+          "confidence": 0.913
+        },
+        {
+          "word": "you",
+          "start": 278.17,
+          "end": 278.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 278.33,
+          "end": 278.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "your",
+          "start": 278.49,
+          "end": 278.73,
+          "confidence": 0.998
+        },
+        {
+          "word": "lessons",
+          "start": 278.73,
+          "end": 279.13,
+          "confidence": 0.995
+        },
+        {
+          "word": "at",
+          "start": 279.13,
+          "end": 279.37,
+          "confidence": 0.997
+        },
+        {
+          "word": "school",
+          "start": 279.37,
+          "end": 279.87,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 72,
+      "text": "I enjoyed the grammar lesson and the PE,",
+      "speaker": "Speaker1",
+      "start": 281.61,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "i",
+          "start": 281.61,
+          "end": 281.93,
+          "confidence": 0.995
+        },
+        {
+          "word": "enjoyed",
+          "start": 281.93,
+          "end": 282.25,
+          "confidence": 0.923
+        },
+        {
+          "word": "the",
+          "start": 282.25,
+          "end": 282.41,
+          "confidence": 0.995
+        },
+        {
+          "word": "grammar",
+          "start": 282.41,
+          "end": 282.89,
+          "confidence": 0.994
+        },
+        {
+          "word": "lesson",
+          "start": 282.89,
+          "end": 283.21,
+          "confidence": 0.997
+        },
+        {
+          "word": "and",
+          "start": 283.21,
+          "end": 283.37,
+          "confidence": 0.985
+        },
+        {
+          "word": "the",
+          "start": 283.37,
+          "end": 283.53,
+          "confidence": 0.997
+        },
+        {
+          "word": "pe",
+          "start": 283.53,
+          "end": 284.03,
+          "confidence": 0.673
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 73,
+      "text": "but I didn't like math.",
+      "speaker": "Speaker1",
+      "start": 284.41,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "but",
+          "start": 284.41,
+          "end": 284.65,
+          "confidence": 0.998
+        },
+        {
+          "word": "i",
+          "start": 284.65,
+          "end": 284.81,
+          "confidence": 0.989
+        },
+        {
+          "word": "didn't",
+          "start": 284.81,
+          "end": 285.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 285.13,
+          "end": 285.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "math",
+          "start": 285.45,
+          "end": 285.95,
+          "confidence": 0.978
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 74,
+      "text": "We had a test.",
+      "speaker": "Speaker1",
+      "start": 286.33,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "we",
+          "start": 286.33,
+          "end": 286.57,
+          "confidence": 0.996
+        },
+        {
+          "word": "had",
+          "start": 286.57,
+          "end": 286.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 286.81,
+          "end": 286.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "test",
+          "start": 286.97,
+          "end": 287.47,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 75,
+      "text": "So how was the test?",
+      "speaker": "Speaker1",
+      "start": 288.57,
+      "duration": 2.25,
+      "words": [
+        {
+          "word": "so",
+          "start": 288.57,
+          "end": 289.07,
+          "confidence": 0.996
+        },
+        {
+          "word": "how",
+          "start": 289.6,
+          "end": 289.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 289.85,
+          "end": 290.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 290.08,
+          "end": 290.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "test",
+          "start": 290.32,
+          "end": 290.82,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 76,
+      "text": "I didn't do so well on the test.",
+      "speaker": "Speaker1",
+      "start": 292.64,
+      "duration": 2.35,
+      "words": [
+        {
+          "word": "i",
+          "start": 292.64,
+          "end": 293.04,
+          "confidence": 0.998
+        },
+        {
+          "word": "didn't",
+          "start": 293.04,
+          "end": 293.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 293.37,
+          "end": 293.6,
+          "confidence": 0.999
+        },
+        {
+          "word": "so",
+          "start": 293.6,
+          "end": 293.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "well",
+          "start": 293.85,
+          "end": 294.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 294.16,
+          "end": 294.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 294.32,
+          "end": 294.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "test",
+          "start": 294.49,
+          "end": 294.99,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 77,
+      "text": "I made a few mistakes.",
+      "speaker": "Speaker1",
+      "start": 295.2,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "i",
+          "start": 295.2,
+          "end": 295.37,
+          "confidence": 0.998
+        },
+        {
+          "word": "made",
+          "start": 295.37,
+          "end": 295.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 295.6,
+          "end": 295.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "few",
+          "start": 295.69,
+          "end": 296.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "mistakes",
+          "start": 296.0,
+          "end": 296.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 78,
+      "text": "What was the best thing that happened at school today?",
+      "speaker": "Speaker0",
+      "start": 297.37,
+      "duration": 2.82,
+      "words": [
+        {
+          "word": "what",
+          "start": 297.37,
+          "end": 297.6,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 297.6,
+          "end": 297.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 297.93,
+          "end": 298.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "best",
+          "start": 298.08,
+          "end": 298.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "thing",
+          "start": 298.25,
+          "end": 298.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "that",
+          "start": 298.49,
+          "end": 298.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "happened",
+          "start": 298.72,
+          "end": 299.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "at",
+          "start": 299.12,
+          "end": 299.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "school",
+          "start": 299.37,
+          "end": 299.69,
+          "confidence": 0.998
+        },
+        {
+          "word": "today",
+          "start": 299.69,
+          "end": 300.19,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 79,
+      "text": "the time i spent with my friends during recess was the best thing",
+      "speaker": "Speaker1",
+      "start": 301.93,
+      "duration": 4.0,
+      "words": [
+        {
+          "word": "the",
+          "start": 301.93,
+          "end": 302.25,
+          "confidence": 0.589
+        },
+        {
+          "word": "time",
+          "start": 302.25,
+          "end": 302.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 302.57,
+          "end": 302.65,
+          "confidence": 0.985
+        },
+        {
+          "word": "spent",
+          "start": 302.65,
+          "end": 303.05,
+          "confidence": 0.918
+        },
+        {
+          "word": "with",
+          "start": 303.05,
+          "end": 303.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 303.29,
+          "end": 303.45,
+          "confidence": 0.993
+        },
+        {
+          "word": "friends",
+          "start": 303.45,
+          "end": 303.93,
+          "confidence": 0.992
+        },
+        {
+          "word": "during",
+          "start": 303.93,
+          "end": 304.43,
+          "confidence": 0.996
+        },
+        {
+          "word": "recess",
+          "start": 304.49,
+          "end": 304.97,
+          "confidence": 0.996
+        },
+        {
+          "word": "was",
+          "start": 304.97,
+          "end": 305.21,
+          "confidence": 0.982
+        },
+        {
+          "word": "the",
+          "start": 305.21,
+          "end": 305.37,
+          "confidence": 0.994
+        },
+        {
+          "word": "best",
+          "start": 305.37,
+          "end": 305.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "thing",
+          "start": 305.61,
+          "end": 305.93,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.962
+    },
+    {
+      "id": 80,
+      "text": "that happened today",
+      "speaker": "Speaker1",
+      "start": 305.93,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "that",
+          "start": 305.93,
+          "end": 306.09,
+          "confidence": 0.993
+        },
+        {
+          "word": "happened",
+          "start": 306.09,
+          "end": 306.49,
+          "confidence": 0.973
+        },
+        {
+          "word": "today",
+          "start": 306.49,
+          "end": 306.99,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.962
+    },
+    {
+      "id": 81,
+      "text": "Thanks for watching.",
+      "speaker": "Speaker1",
+      "start": 317.17,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 317.17,
+          "end": 317.41,
+          "confidence": 0.724
+        },
+        {
+          "word": "for",
+          "start": 317.41,
+          "end": 317.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "watching",
+          "start": 317.49,
+          "end": 317.99,
+          "confidence": 0.85
+        }
+      ],
+      "confidence": 0.858
+    },
+    {
+      "id": 82,
+      "text": "Please subscribe to our YouTube channel and visit our website kidspages.com.",
+      "speaker": "Speaker1",
+      "start": 318.69,
+      "duration": 5.14,
+      "words": [
+        {
+          "word": "please",
+          "start": 318.69,
+          "end": 319.09,
+          "confidence": 0.993
+        },
+        {
+          "word": "subscribe",
+          "start": 319.09,
+          "end": 319.57,
+          "confidence": 0.997
+        },
+        {
+          "word": "to",
+          "start": 319.57,
+          "end": 319.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "our",
+          "start": 319.73,
+          "end": 320.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "youtube",
+          "start": 320.05,
+          "end": 320.45,
+          "confidence": 0.729
+        },
+        {
+          "word": "channel",
+          "start": 320.45,
+          "end": 320.85,
+          "confidence": 0.993
+        },
+        {
+          "word": "and",
+          "start": 320.85,
+          "end": 321.01,
+          "confidence": 0.973
+        },
+        {
+          "word": "visit",
+          "start": 321.01,
+          "end": 321.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "our",
+          "start": 321.25,
+          "end": 321.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "website",
+          "start": 321.49,
+          "end": 321.99,
+          "confidence": 0.997
+        },
+        {
+          "word": "kidspages.com",
+          "start": 322.29,
+          "end": 323.83,
+          "confidence": 0.863
+        }
+      ],
+      "confidence": 0.959
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-23T14:44:42.549924Z",
+    "dgWordCount": 594,
+    "dgUtteranceCount": 83,
+    "matchedSegments": 83,
+    "totalDuration": 323.83
+  },
+  "fetchedAt": "2026-07-23T14:44:42.549940Z",
+  "repairedAt": "2026-07-23T14:44:42.557381Z",
+  "repairInfo": {
+    "version": 4,
+    "beforeSegments": 83,
+    "afterSegments": 82
+  }
+}

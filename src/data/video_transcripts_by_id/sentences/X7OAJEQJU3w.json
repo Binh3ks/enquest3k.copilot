@@ -1,0 +1,2938 @@
+{
+  "videoId": "X7OAJEQJU3w",
+  "text": "Today, learn about English conversation. Can you fly a kite? Yes, I can. Can you play baseball? No, I can't. I can't play baseball. Can you swim? Yes, I can. I can swim. Can you play the piano? Yes, I can. I can play the piano. Can you play the drums? No, I can't. I can't play the drums. Can you play the violin? Yes, I can. I can play the violin. Can you cook? No, I can't. I can't cook. Can you play the flute? Yes, I can. I can play the flute. Can you ride a roller coaster? No, I can't. I can't ride a roller coaster. Can you play badminton? Yes, I can. I can play badminton. Can you dive? Yes, I can. I can dive. Can you play soccer? Yes, I can. I can play soccer. Can you drive? No, I can't. I can't drive. Can you ride a bicycle? Yes, I can. I can ride a bicycle. Can you play the guitar? No, I can't. Can you dance? Yes, I can. I can dance. Can you ride a horse? No, I can't. I can't ride a horse. Can you jump? Yes, I can. I can jump. Can you fly? No, I can't. I can't fly. Can you stop? Yes, I can. I can stomp. Can you play computer games? Yes, I can. I can play computer games. Can you go surfing? Yes, I can. I can go surfing. Can you play basketball? No, I can't. Can you sing? Yes, I can. Can you climb? No, I can't. I can't climb. Can you run? Yes, I can. I can run. Can you paint? No, I can't. I can't paint. Can you take a photo? Yes. I can. Can you play volleyball? No. I can't. I can't play volleyball. Can you read? Yes, I can. I can read. Can you play boxing? Yes, I can. I can play boxing. Thanks for watching. Please like, share, and subscribe to my YouTube channel.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Today, learn about English conversation.",
+      "speaker": "Speaker0",
+      "start": 0.24,
+      "duration": 3.94,
+      "words": [
+        {
+          "word": "today",
+          "start": 0.24,
+          "end": 0.74,
+          "confidence": 0.992
+        },
+        {
+          "word": "learn",
+          "start": 0.88,
+          "end": 1.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "about",
+          "start": 1.2,
+          "end": 1.7,
+          "confidence": 0.993
+        },
+        {
+          "word": "english",
+          "start": 3.12,
+          "end": 3.62,
+          "confidence": 0.997
+        },
+        {
+          "word": "conversation",
+          "start": 3.68,
+          "end": 4.18,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 2,
+      "text": "Can you fly a kite?",
+      "speaker": "Speaker0",
+      "start": 6.48,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "can",
+          "start": 6.48,
+          "end": 6.8,
+          "confidence": 0.99
+        },
+        {
+          "word": "you",
+          "start": 6.8,
+          "end": 7.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 7.12,
+          "end": 7.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 7.36,
+          "end": 7.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "kite",
+          "start": 7.52,
+          "end": 8.02,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 3,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 9.76,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "yes",
+          "start": 9.76,
+          "end": 10.26,
+          "confidence": 0.861
+        },
+        {
+          "word": "i",
+          "start": 10.56,
+          "end": 10.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 10.8,
+          "end": 11.3,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.953
+    },
+    {
+      "id": 4,
+      "text": "Can you play baseball?",
+      "speaker": "Speaker0",
+      "start": 16.09,
+      "duration": 1.71,
+      "words": [
+        {
+          "word": "can",
+          "start": 16.09,
+          "end": 16.41,
+          "confidence": 0.985
+        },
+        {
+          "word": "you",
+          "start": 16.41,
+          "end": 16.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 16.98,
+          "end": 17.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "baseball",
+          "start": 17.3,
+          "end": 17.8,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 5,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 20.26,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "no",
+          "start": 20.26,
+          "end": 20.76,
+          "confidence": 0.962
+        },
+        {
+          "word": "i",
+          "start": 20.89,
+          "end": 21.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 21.05,
+          "end": 21.55,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.987
+    },
+    {
+      "id": 6,
+      "text": "I can't play baseball.",
+      "speaker": "Speaker0",
+      "start": 24.1,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "i",
+          "start": 24.1,
+          "end": 24.34,
+          "confidence": 0.989
+        },
+        {
+          "word": "can't",
+          "start": 24.34,
+          "end": 24.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 24.73,
+          "end": 25.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "baseball",
+          "start": 25.38,
+          "end": 25.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 7,
+      "text": "Can you swim?",
+      "speaker": "Speaker0",
+      "start": 31.51,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 31.51,
+          "end": 31.75,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 31.75,
+          "end": 32.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "swim",
+          "start": 32.39,
+          "end": 32.89,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 8,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 35.59,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "yes",
+          "start": 35.59,
+          "end": 36.09,
+          "confidence": 0.982
+        },
+        {
+          "word": "i",
+          "start": 36.23,
+          "end": 36.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 36.47,
+          "end": 36.97,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 9,
+      "text": "I can swim.",
+      "speaker": "Speaker0",
+      "start": 39.19,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "i",
+          "start": 39.19,
+          "end": 39.51,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 39.51,
+          "end": 40.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "swim",
+          "start": 40.07,
+          "end": 40.57,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 10,
+      "text": "Can you play the piano?",
+      "speaker": "Speaker0",
+      "start": 48.88,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "can",
+          "start": 48.88,
+          "end": 49.2,
+          "confidence": 0.923
+        },
+        {
+          "word": "you",
+          "start": 49.2,
+          "end": 49.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 49.45,
+          "end": 49.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 49.68,
+          "end": 50.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "piano",
+          "start": 50.0,
+          "end": 50.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 11,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 53.6,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "yes",
+          "start": 53.6,
+          "end": 54.1,
+          "confidence": 0.853
+        },
+        {
+          "word": "i",
+          "start": 54.16,
+          "end": 54.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 54.41,
+          "end": 54.91,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 12,
+      "text": "I can play the piano.",
+      "speaker": "Speaker0",
+      "start": 57.28,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "i",
+          "start": 57.28,
+          "end": 57.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 57.45,
+          "end": 57.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 57.68,
+          "end": 57.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 57.92,
+          "end": 58.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "piano",
+          "start": 58.16,
+          "end": 58.66,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 13,
+      "text": "Can you play the drums?",
+      "speaker": "Speaker0",
+      "start": 65.18,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "can",
+          "start": 65.18,
+          "end": 65.42,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 65.42,
+          "end": 65.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 65.66,
+          "end": 65.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 65.98,
+          "end": 66.14,
+          "confidence": 0.999
+        },
+        {
+          "word": "drums",
+          "start": 66.14,
+          "end": 66.64,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 14,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 69.82,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "no",
+          "start": 69.82,
+          "end": 70.32,
+          "confidence": 0.74
+        },
+        {
+          "word": "i",
+          "start": 70.46,
+          "end": 70.7,
+          "confidence": 0.998
+        },
+        {
+          "word": "can't",
+          "start": 70.7,
+          "end": 71.2,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.912
+    },
+    {
+      "id": 15,
+      "text": "I can't play the drums.",
+      "speaker": "Speaker0",
+      "start": 73.6,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "i",
+          "start": 73.6,
+          "end": 73.84,
+          "confidence": 0.938
+        },
+        {
+          "word": "can't",
+          "start": 73.84,
+          "end": 74.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 74.24,
+          "end": 74.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 74.48,
+          "end": 74.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "drums",
+          "start": 74.64,
+          "end": 75.14,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.987
+    },
+    {
+      "id": 16,
+      "text": "Can you play the violin?",
+      "speaker": "Speaker0",
+      "start": 81.12,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "can",
+          "start": 81.12,
+          "end": 81.36,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 81.36,
+          "end": 81.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 81.6,
+          "end": 81.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 81.92,
+          "end": 82.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "violin",
+          "start": 82.08,
+          "end": 82.58,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 17,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 86.14,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "yes",
+          "start": 86.14,
+          "end": 86.64,
+          "confidence": 0.715
+        },
+        {
+          "word": "i",
+          "start": 86.7,
+          "end": 86.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 86.94,
+          "end": 87.44,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.903
+    },
+    {
+      "id": 18,
+      "text": "I can play the violin.",
+      "speaker": "Speaker0",
+      "start": 90.3,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 90.3,
+          "end": 90.54,
+          "confidence": 0.902
+        },
+        {
+          "word": "can",
+          "start": 90.54,
+          "end": 90.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 90.78,
+          "end": 91.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 91.02,
+          "end": 91.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "violin",
+          "start": 91.26,
+          "end": 91.76,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 19,
+      "text": "Can you cook?",
+      "speaker": "Speaker0",
+      "start": 98.46,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 98.46,
+          "end": 98.78,
+          "confidence": 0.724
+        },
+        {
+          "word": "you",
+          "start": 98.78,
+          "end": 99.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "cook",
+          "start": 99.34,
+          "end": 99.84,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.908
+    },
+    {
+      "id": 20,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 102.84,
+      "duration": 1.47,
+      "words": [
+        {
+          "word": "no",
+          "start": 102.84,
+          "end": 103.34,
+          "confidence": 0.86
+        },
+        {
+          "word": "i",
+          "start": 103.65,
+          "end": 103.81,
+          "confidence": 0.994
+        },
+        {
+          "word": "can't",
+          "start": 103.81,
+          "end": 104.31,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.928
+    },
+    {
+      "id": 21,
+      "text": "I can't cook.",
+      "speaker": "Speaker0",
+      "start": 107.01,
+      "duration": 1.61,
+      "words": [
+        {
+          "word": "i",
+          "start": 107.01,
+          "end": 107.33,
+          "confidence": 0.863
+        },
+        {
+          "word": "can't",
+          "start": 107.33,
+          "end": 107.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "cook",
+          "start": 108.12,
+          "end": 108.62,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.954
+    },
+    {
+      "id": 22,
+      "text": "Can you play the flute?",
+      "speaker": "Speaker0",
+      "start": 114.53,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 114.53,
+          "end": 114.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 114.77,
+          "end": 115.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 115.01,
+          "end": 115.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 115.25,
+          "end": 115.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "flute",
+          "start": 115.41,
+          "end": 115.91,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 23,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 118.78,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "yes",
+          "start": 118.78,
+          "end": 119.28,
+          "confidence": 0.904
+        },
+        {
+          "word": "i",
+          "start": 119.58,
+          "end": 119.9,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 119.9,
+          "end": 120.4,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 24,
+      "text": "I can play the flute.",
+      "speaker": "Speaker0",
+      "start": 122.22,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 122.22,
+          "end": 122.46,
+          "confidence": 0.993
+        },
+        {
+          "word": "can",
+          "start": 122.46,
+          "end": 122.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 122.78,
+          "end": 123.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 123.1,
+          "end": 123.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "flute",
+          "start": 123.42,
+          "end": 123.92,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 25,
+      "text": "Can you ride a roller coaster?",
+      "speaker": "Speaker0",
+      "start": 131.04,
+      "duration": 2.27,
+      "words": [
+        {
+          "word": "can",
+          "start": 131.04,
+          "end": 131.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 131.36,
+          "end": 131.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "ride",
+          "start": 131.6,
+          "end": 132.1,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 132.16,
+          "end": 132.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "roller",
+          "start": 132.41,
+          "end": 132.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "coaster",
+          "start": 132.81,
+          "end": 133.31,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 26,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 136.16,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "no",
+          "start": 136.16,
+          "end": 136.66,
+          "confidence": 0.911
+        },
+        {
+          "word": "i",
+          "start": 136.81,
+          "end": 136.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 136.97,
+          "end": 137.47,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 27,
+      "text": "I can't ride a roller coaster.",
+      "speaker": "Speaker0",
+      "start": 140.56,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "i",
+          "start": 140.56,
+          "end": 140.72,
+          "confidence": 0.997
+        },
+        {
+          "word": "can't",
+          "start": 140.72,
+          "end": 141.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "ride",
+          "start": 141.12,
+          "end": 141.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 141.69,
+          "end": 141.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "roller",
+          "start": 141.92,
+          "end": 142.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "coaster",
+          "start": 142.32,
+          "end": 142.82,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 28,
+      "text": "Can you play badminton?",
+      "speaker": "Speaker0",
+      "start": 147.48,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "can",
+          "start": 147.48,
+          "end": 147.88,
+          "confidence": 0.938
+        },
+        {
+          "word": "you",
+          "start": 147.88,
+          "end": 148.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 148.12,
+          "end": 148.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "badminton",
+          "start": 148.52,
+          "end": 149.02,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 29,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 152.84,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "yes",
+          "start": 152.84,
+          "end": 153.34,
+          "confidence": 0.875
+        },
+        {
+          "word": "i",
+          "start": 153.4,
+          "end": 153.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 153.64,
+          "end": 154.14,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.958
+    },
+    {
+      "id": 30,
+      "text": "I can play badminton.",
+      "speaker": "Speaker0",
+      "start": 156.99,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "i",
+          "start": 156.99,
+          "end": 157.22,
+          "confidence": 0.968
+        },
+        {
+          "word": "can",
+          "start": 157.22,
+          "end": 157.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 157.38,
+          "end": 157.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "badminton",
+          "start": 157.78,
+          "end": 158.28,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 31,
+      "text": "Can you dive?",
+      "speaker": "Speaker0",
+      "start": 164.67,
+      "duration": 1.05,
+      "words": [
+        {
+          "word": "can",
+          "start": 164.67,
+          "end": 164.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 164.99,
+          "end": 165.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "dive",
+          "start": 165.22,
+          "end": 165.72,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 32,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 169.4,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "yes",
+          "start": 169.4,
+          "end": 169.9,
+          "confidence": 0.871
+        },
+        {
+          "word": "i",
+          "start": 170.04,
+          "end": 170.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 170.28,
+          "end": 170.78,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.956
+    },
+    {
+      "id": 33,
+      "text": "I can dive.",
+      "speaker": "Speaker0",
+      "start": 173.4,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "i",
+          "start": 173.4,
+          "end": 173.56,
+          "confidence": 0.88
+        },
+        {
+          "word": "can",
+          "start": 173.56,
+          "end": 173.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "dive",
+          "start": 173.88,
+          "end": 174.38,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 34,
+      "text": "Can you play soccer?",
+      "speaker": "Speaker0",
+      "start": 181.48,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 181.48,
+          "end": 181.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 181.8,
+          "end": 182.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 182.04,
+          "end": 182.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "soccer",
+          "start": 182.36,
+          "end": 182.86,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 35,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 186.38,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "yes",
+          "start": 186.38,
+          "end": 186.87,
+          "confidence": 0.76
+        },
+        {
+          "word": "i",
+          "start": 186.87,
+          "end": 187.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 187.1,
+          "end": 187.6,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": 36,
+      "text": "I can play soccer.",
+      "speaker": "Speaker0",
+      "start": 190.47,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "i",
+          "start": 190.47,
+          "end": 190.71,
+          "confidence": 0.907
+        },
+        {
+          "word": "can",
+          "start": 190.71,
+          "end": 190.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 190.94,
+          "end": 191.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "soccer",
+          "start": 191.26,
+          "end": 191.76,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.977
+    },
+    {
+      "id": 37,
+      "text": "Can you drive?",
+      "speaker": "Speaker0",
+      "start": 197.76,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "can",
+          "start": 197.76,
+          "end": 198.0,
+          "confidence": 0.702
+        },
+        {
+          "word": "you",
+          "start": 198.0,
+          "end": 198.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "drive",
+          "start": 198.24,
+          "end": 198.74,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.901
+    },
+    {
+      "id": 38,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 203.2,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "no",
+          "start": 203.2,
+          "end": 203.7,
+          "confidence": 0.603
+        },
+        {
+          "word": "i",
+          "start": 203.84,
+          "end": 204.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 204.08,
+          "end": 204.58,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.867
+    },
+    {
+      "id": 39,
+      "text": "I can't drive.",
+      "speaker": "Speaker0",
+      "start": 207.44,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "i",
+          "start": 207.44,
+          "end": 207.6,
+          "confidence": 0.981
+        },
+        {
+          "word": "can't",
+          "start": 207.6,
+          "end": 208.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "drive",
+          "start": 208.48,
+          "end": 208.98,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 40,
+      "text": "Can you ride a bicycle?",
+      "speaker": "Speaker0",
+      "start": 214.69,
+      "duration": 1.47,
+      "words": [
+        {
+          "word": "can",
+          "start": 214.69,
+          "end": 214.94,
+          "confidence": 0.923
+        },
+        {
+          "word": "you",
+          "start": 214.94,
+          "end": 215.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "ride",
+          "start": 215.18,
+          "end": 215.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 215.42,
+          "end": 215.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "bicycle",
+          "start": 215.66,
+          "end": 216.16,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 41,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 218.94,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "yes",
+          "start": 218.94,
+          "end": 219.44,
+          "confidence": 0.755
+        },
+        {
+          "word": "i",
+          "start": 219.58,
+          "end": 219.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 219.81,
+          "end": 220.31,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.918
+    },
+    {
+      "id": 42,
+      "text": "I can ride a bicycle.",
+      "speaker": "Speaker0",
+      "start": 222.78,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 222.78,
+          "end": 223.02,
+          "confidence": 0.943
+        },
+        {
+          "word": "can",
+          "start": 223.02,
+          "end": 223.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "ride",
+          "start": 223.26,
+          "end": 223.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 223.58,
+          "end": 223.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "bicycle",
+          "start": 223.74,
+          "end": 224.24,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.988
+    },
+    {
+      "id": 43,
+      "text": "Can you play the guitar?",
+      "speaker": "Speaker0",
+      "start": 231.5,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 231.5,
+          "end": 231.74,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 231.74,
+          "end": 231.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 231.98,
+          "end": 232.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 232.22,
+          "end": 232.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "guitar",
+          "start": 232.38,
+          "end": 232.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 44,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 236.3,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "no",
+          "start": 236.3,
+          "end": 236.8,
+          "confidence": 0.982
+        },
+        {
+          "word": "i",
+          "start": 236.86,
+          "end": 237.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 237.1,
+          "end": 237.6,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 45,
+      "text": "Can you dance?",
+      "speaker": "Speaker0",
+      "start": 240.43,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "can",
+          "start": 240.43,
+          "end": 240.75,
+          "confidence": 0.928
+        },
+        {
+          "word": "you",
+          "start": 240.75,
+          "end": 240.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "dance",
+          "start": 240.99,
+          "end": 241.49,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 46,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 245.39,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "yes",
+          "start": 245.39,
+          "end": 245.89,
+          "confidence": 0.982
+        },
+        {
+          "word": "i",
+          "start": 246.03,
+          "end": 246.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 246.26,
+          "end": 246.76,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 47,
+      "text": "I can dance.",
+      "speaker": "Speaker0",
+      "start": 249.39,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "i",
+          "start": 249.39,
+          "end": 249.54,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 249.54,
+          "end": 249.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "dance",
+          "start": 249.78,
+          "end": 250.28,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 48,
+      "text": "Can you ride a horse?",
+      "speaker": "Speaker0",
+      "start": 256.52,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "can",
+          "start": 256.52,
+          "end": 256.84,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 256.84,
+          "end": 257.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "ride",
+          "start": 257.08,
+          "end": 257.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 257.32,
+          "end": 257.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "horse",
+          "start": 257.48,
+          "end": 257.98,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 49,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 261.24,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "no",
+          "start": 261.24,
+          "end": 261.74,
+          "confidence": 0.837
+        },
+        {
+          "word": "i",
+          "start": 261.8,
+          "end": 262.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 262.04,
+          "end": 262.54,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.944
+    },
+    {
+      "id": 50,
+      "text": "I can't ride a horse.",
+      "speaker": "Speaker0",
+      "start": 265.32,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 265.32,
+          "end": 265.48,
+          "confidence": 0.998
+        },
+        {
+          "word": "can't",
+          "start": 265.48,
+          "end": 265.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "ride",
+          "start": 265.88,
+          "end": 266.12,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 266.12,
+          "end": 266.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "horse",
+          "start": 266.28,
+          "end": 266.78,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 51,
+      "text": "Can you jump?",
+      "speaker": "Speaker0",
+      "start": 273.0,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "can",
+          "start": 273.0,
+          "end": 273.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 273.32,
+          "end": 273.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "jump",
+          "start": 273.56,
+          "end": 274.06,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 52,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 278.12,
+      "duration": 1.55,
+      "words": [
+        {
+          "word": "yes",
+          "start": 278.12,
+          "end": 278.62,
+          "confidence": 0.846
+        },
+        {
+          "word": "i",
+          "start": 278.93,
+          "end": 279.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 279.17,
+          "end": 279.67,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.923
+    },
+    {
+      "id": 53,
+      "text": "I can jump.",
+      "speaker": "Speaker0",
+      "start": 282.94,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 282.94,
+          "end": 283.18,
+          "confidence": 0.971
+        },
+        {
+          "word": "can",
+          "start": 283.18,
+          "end": 283.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "jump",
+          "start": 283.5,
+          "end": 284.0,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 54,
+      "text": "Can you fly?",
+      "speaker": "Speaker0",
+      "start": 290.06,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "can",
+          "start": 290.06,
+          "end": 290.38,
+          "confidence": 0.982
+        },
+        {
+          "word": "you",
+          "start": 290.38,
+          "end": 290.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 290.62,
+          "end": 291.12,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 55,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 295.04,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "no",
+          "start": 295.04,
+          "end": 295.54,
+          "confidence": 0.83
+        },
+        {
+          "word": "i",
+          "start": 295.68,
+          "end": 295.91,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 295.91,
+          "end": 296.41,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.941
+    },
+    {
+      "id": 56,
+      "text": "I can't fly.",
+      "speaker": "Speaker0",
+      "start": 299.27,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 299.27,
+          "end": 299.44,
+          "confidence": 0.911
+        },
+        {
+          "word": "can't",
+          "start": 299.44,
+          "end": 299.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 299.91,
+          "end": 300.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 57,
+      "text": "Can you stop?",
+      "speaker": "Speaker0",
+      "start": 307.19,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "can",
+          "start": 307.19,
+          "end": 307.51,
+          "confidence": 0.577
+        },
+        {
+          "word": "you",
+          "start": 307.51,
+          "end": 307.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "stop",
+          "start": 307.75,
+          "end": 308.25,
+          "confidence": 0.783
+        }
+      ],
+      "confidence": 0.787
+    },
+    {
+      "id": 58,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 311.34,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "yes",
+          "start": 311.34,
+          "end": 311.84,
+          "confidence": 0.836
+        },
+        {
+          "word": "i",
+          "start": 311.98,
+          "end": 312.3,
+          "confidence": 0.996
+        },
+        {
+          "word": "can",
+          "start": 312.3,
+          "end": 312.8,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.941
+    },
+    {
+      "id": 59,
+      "text": "I can stomp.",
+      "speaker": "Speaker0",
+      "start": 315.02,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "i",
+          "start": 315.02,
+          "end": 315.18,
+          "confidence": 0.995
+        },
+        {
+          "word": "can",
+          "start": 315.18,
+          "end": 315.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "stomp",
+          "start": 315.5,
+          "end": 316.0,
+          "confidence": 0.895
+        }
+      ],
+      "confidence": 0.963
+    },
+    {
+      "id": 60,
+      "text": "Can you play computer games?",
+      "speaker": "Speaker0",
+      "start": 323.38,
+      "duration": 1.93,
+      "words": [
+        {
+          "word": "can",
+          "start": 323.38,
+          "end": 323.69,
+          "confidence": 0.644
+        },
+        {
+          "word": "you",
+          "start": 323.69,
+          "end": 323.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 323.94,
+          "end": 324.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "computer",
+          "start": 324.25,
+          "end": 324.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "games",
+          "start": 324.81,
+          "end": 325.31,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.929
+    },
+    {
+      "id": 61,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 327.86,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "yes",
+          "start": 327.86,
+          "end": 328.36,
+          "confidence": 0.855
+        },
+        {
+          "word": "i",
+          "start": 328.5,
+          "end": 328.74,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 328.74,
+          "end": 329.24,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 62,
+      "text": "I can play computer games.",
+      "speaker": "Speaker0",
+      "start": 332.42,
+      "duration": 1.77,
+      "words": [
+        {
+          "word": "i",
+          "start": 332.42,
+          "end": 332.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 332.57,
+          "end": 332.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 332.81,
+          "end": 333.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "computer",
+          "start": 333.13,
+          "end": 333.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "games",
+          "start": 333.69,
+          "end": 334.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 63,
+      "text": "Can you go surfing?",
+      "speaker": "Speaker0",
+      "start": 340.24,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "can",
+          "start": 340.24,
+          "end": 340.48,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 340.48,
+          "end": 340.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "go",
+          "start": 340.72,
+          "end": 341.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "surfing",
+          "start": 341.04,
+          "end": 341.54,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 64,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 344.88,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "yes",
+          "start": 344.88,
+          "end": 345.36,
+          "confidence": 0.807
+        },
+        {
+          "word": "i",
+          "start": 345.36,
+          "end": 345.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 345.6,
+          "end": 346.1,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 65,
+      "text": "I can go surfing.",
+      "speaker": "Speaker0",
+      "start": 348.65,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "i",
+          "start": 348.65,
+          "end": 348.89,
+          "confidence": 0.994
+        },
+        {
+          "word": "can",
+          "start": 348.89,
+          "end": 349.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "go",
+          "start": 349.13,
+          "end": 349.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "surfing",
+          "start": 349.46,
+          "end": 349.96,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 66,
+      "text": "Can you play basketball?",
+      "speaker": "Speaker0",
+      "start": 356.25,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 356.25,
+          "end": 356.5,
+          "confidence": 0.743
+        },
+        {
+          "word": "you",
+          "start": 356.5,
+          "end": 356.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 356.81,
+          "end": 357.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "basketball",
+          "start": 357.13,
+          "end": 357.63,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.936
+    },
+    {
+      "id": 67,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 360.03,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "no",
+          "start": 360.03,
+          "end": 360.53,
+          "confidence": 0.948
+        },
+        {
+          "word": "i",
+          "start": 361.95,
+          "end": 362.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "can't",
+          "start": 362.19,
+          "end": 362.69,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 68,
+      "text": "Can you sing?",
+      "speaker": "Speaker0",
+      "start": 365.95,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "can",
+          "start": 365.95,
+          "end": 366.19,
+          "confidence": 0.827
+        },
+        {
+          "word": "you",
+          "start": 366.19,
+          "end": 366.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "sing",
+          "start": 366.43,
+          "end": 366.93,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.942
+    },
+    {
+      "id": 69,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 370.83,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "yes",
+          "start": 370.83,
+          "end": 371.33,
+          "confidence": 0.98
+        },
+        {
+          "word": "i",
+          "start": 371.47,
+          "end": 371.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 371.71,
+          "end": 372.21,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 70,
+      "text": "Can you climb?",
+      "speaker": "Speaker0",
+      "start": 375.4,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "can",
+          "start": 375.4,
+          "end": 375.72,
+          "confidence": 0.989
+        },
+        {
+          "word": "you",
+          "start": 375.72,
+          "end": 376.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "climb",
+          "start": 376.04,
+          "end": 376.54,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 71,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 379.96,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "no",
+          "start": 379.96,
+          "end": 380.46,
+          "confidence": 0.976
+        },
+        {
+          "word": "i",
+          "start": 380.6,
+          "end": 380.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 380.76,
+          "end": 381.26,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 72,
+      "text": "I can't climb.",
+      "speaker": "Speaker0",
+      "start": 385.0,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 385.0,
+          "end": 385.25,
+          "confidence": 0.995
+        },
+        {
+          "word": "can't",
+          "start": 385.25,
+          "end": 385.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "climb",
+          "start": 385.64,
+          "end": 386.14,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 73,
+      "text": "Can you run?",
+      "speaker": "Speaker0",
+      "start": 392.74,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "can",
+          "start": 392.74,
+          "end": 393.06,
+          "confidence": 0.792
+        },
+        {
+          "word": "you",
+          "start": 393.06,
+          "end": 393.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "run",
+          "start": 393.38,
+          "end": 393.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.931
+    },
+    {
+      "id": 74,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 397.14,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "yes",
+          "start": 397.14,
+          "end": 397.64,
+          "confidence": 0.903
+        },
+        {
+          "word": "i",
+          "start": 397.7,
+          "end": 397.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 397.94,
+          "end": 398.44,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 75,
+      "text": "I can run.",
+      "speaker": "Speaker0",
+      "start": 400.26,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "i",
+          "start": 400.26,
+          "end": 400.42,
+          "confidence": 0.841
+        },
+        {
+          "word": "can",
+          "start": 400.42,
+          "end": 400.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "run",
+          "start": 400.74,
+          "end": 401.24,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.947
+    },
+    {
+      "id": 76,
+      "text": "Can you paint?",
+      "speaker": "Speaker0",
+      "start": 408.45,
+      "duration": 1.15,
+      "words": [
+        {
+          "word": "can",
+          "start": 408.45,
+          "end": 408.86,
+          "confidence": 0.909
+        },
+        {
+          "word": "you",
+          "start": 408.86,
+          "end": 409.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "paint",
+          "start": 409.1,
+          "end": 409.6,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 77,
+      "text": "No, I can't.",
+      "speaker": "Speaker0",
+      "start": 413.1,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "no",
+          "start": 413.1,
+          "end": 413.6,
+          "confidence": 0.767
+        },
+        {
+          "word": "i",
+          "start": 413.74,
+          "end": 413.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "can't",
+          "start": 413.89,
+          "end": 414.39,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.921
+    },
+    {
+      "id": 78,
+      "text": "I can't paint.",
+      "speaker": "Speaker0",
+      "start": 417.4,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 417.4,
+          "end": 417.72,
+          "confidence": 0.971
+        },
+        {
+          "word": "can't",
+          "start": 417.72,
+          "end": 418.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "paint",
+          "start": 418.6,
+          "end": 419.1,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 79,
+      "text": "Can you take a photo?",
+      "speaker": "Speaker0",
+      "start": 425.08,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 425.08,
+          "end": 425.32,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 425.32,
+          "end": 425.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "take",
+          "start": 425.56,
+          "end": 425.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 425.8,
+          "end": 425.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "photo",
+          "start": 425.96,
+          "end": 426.46,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 80,
+      "text": "Yes. I can.",
+      "speaker": "Speaker0",
+      "start": 429.85,
+      "duration": 1.53,
+      "words": [
+        {
+          "word": "yes",
+          "start": 429.85,
+          "end": 430.35,
+          "confidence": 0.751
+        },
+        {
+          "word": "i",
+          "start": 430.64,
+          "end": 430.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 430.88,
+          "end": 431.38,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.916
+    },
+    {
+      "id": 81,
+      "text": "Can you play volleyball?",
+      "speaker": "Speaker0",
+      "start": 433.6,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "can",
+          "start": 433.6,
+          "end": 433.93,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 433.93,
+          "end": 434.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 434.16,
+          "end": 434.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "volleyball",
+          "start": 434.56,
+          "end": 435.06,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 82,
+      "text": "No. I can't.",
+      "speaker": "Speaker0",
+      "start": 437.85,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "no",
+          "start": 437.85,
+          "end": 438.32,
+          "confidence": 0.863
+        },
+        {
+          "word": "i",
+          "start": 438.32,
+          "end": 438.56,
+          "confidence": 0.997
+        },
+        {
+          "word": "can't",
+          "start": 438.56,
+          "end": 439.06,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.953
+    },
+    {
+      "id": 83,
+      "text": "I can't play volleyball.",
+      "speaker": "Speaker0",
+      "start": 441.85,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "i",
+          "start": 441.85,
+          "end": 442.09,
+          "confidence": 0.867
+        },
+        {
+          "word": "can't",
+          "start": 442.09,
+          "end": 442.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 442.33,
+          "end": 442.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "volleyball",
+          "start": 442.73,
+          "end": 443.23,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 84,
+      "text": "Can you read?",
+      "speaker": "Speaker0",
+      "start": 449.69,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "can",
+          "start": 449.69,
+          "end": 450.01,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 450.01,
+          "end": 450.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "read",
+          "start": 450.25,
+          "end": 450.75,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 85,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 454.4,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "yes",
+          "start": 454.4,
+          "end": 454.9,
+          "confidence": 0.838
+        },
+        {
+          "word": "i",
+          "start": 455.04,
+          "end": 455.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 455.36,
+          "end": 455.86,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.944
+    },
+    {
+      "id": 86,
+      "text": "I can read.",
+      "speaker": "Speaker0",
+      "start": 458.15,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 458.15,
+          "end": 458.4,
+          "confidence": 0.542
+        },
+        {
+          "word": "can",
+          "start": 458.4,
+          "end": 458.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "read",
+          "start": 458.71,
+          "end": 459.21,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.847
+    },
+    {
+      "id": 87,
+      "text": "Can you play boxing?",
+      "speaker": "Speaker0",
+      "start": 466.09,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "can",
+          "start": 466.09,
+          "end": 466.33,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 466.33,
+          "end": 466.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 466.65,
+          "end": 466.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "boxing",
+          "start": 466.97,
+          "end": 467.47,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 88,
+      "text": "Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 470.89,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "yes",
+          "start": 470.89,
+          "end": 471.39,
+          "confidence": 0.91
+        },
+        {
+          "word": "i",
+          "start": 471.45,
+          "end": 471.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 471.69,
+          "end": 472.19,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.969
+    },
+    {
+      "id": 89,
+      "text": "I can play boxing.",
+      "speaker": "Speaker0",
+      "start": 474.89,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 474.89,
+          "end": 475.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 475.05,
+          "end": 475.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 475.29,
+          "end": 475.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "boxing",
+          "start": 475.61,
+          "end": 476.11,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 90,
+      "text": "Thanks for watching.",
+      "speaker": "Speaker0",
+      "start": 482.67,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 482.67,
+          "end": 483.15,
+          "confidence": 0.869
+        },
+        {
+          "word": "for",
+          "start": 483.15,
+          "end": 483.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "watching",
+          "start": 483.46,
+          "end": 483.96,
+          "confidence": 0.975
+        }
+      ],
+      "confidence": 0.948
+    },
+    {
+      "id": 91,
+      "text": "Please like, share, and subscribe to my YouTube channel.",
+      "speaker": "Speaker0",
+      "start": 484.35,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "please",
+          "start": 484.35,
+          "end": 484.75,
+          "confidence": 0.997
+        },
+        {
+          "word": "like",
+          "start": 484.75,
+          "end": 485.25,
+          "confidence": 0.942
+        },
+        {
+          "word": "share",
+          "start": 485.46,
+          "end": 485.87,
+          "confidence": 0.821
+        },
+        {
+          "word": "and",
+          "start": 485.87,
+          "end": 486.26,
+          "confidence": 0.998
+        },
+        {
+          "word": "subscribe",
+          "start": 486.26,
+          "end": 486.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 487.23,
+          "end": 487.38,
+          "confidence": 0.992
+        },
+        {
+          "word": "my",
+          "start": 487.38,
+          "end": 487.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "youtube",
+          "start": 487.62,
+          "end": 488.12,
+          "confidence": 0.875
+        },
+        {
+          "word": "channel",
+          "start": 488.19,
+          "end": 488.69,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.958
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-23T14:42:57.051280Z",
+    "dgWordCount": 334,
+    "dgUtteranceCount": 98,
+    "matchedSegments": 98,
+    "totalDuration": 488.69
+  },
+  "fetchedAt": "2026-07-23T14:42:57.051301Z",
+  "repairedAt": "2026-07-23T14:42:57.057399Z",
+  "repairInfo": {
+    "version": 4,
+    "beforeSegments": 98,
+    "afterSegments": 91
+  }
+}

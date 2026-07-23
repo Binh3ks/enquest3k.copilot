@@ -1,0 +1,4412 @@
+{
+  "videoId": "bgfdqVmVjfk",
+  "text": "Hello. How can I help you? Hello. I would like a table for four, please. Of course. Please follow me. Here is a table for four. Thank you. Could you give us the menu, please? Yes. Of course. Here you are. Thank you. Can I get you anything to drink? Just water for me. I'll have a lemonade. I'll have a little shake. I'll have an orange juice. Great. I'll be right back. Are you ready to order? Yes. We are. I'll have the grilled chicken and a salad. Would you like a starter, sir? Yes. I'd like the vegetable soup. For starter, I'd like the vegetable soup. For the main course, I'd like the grilled fish. I'll have the chicken soup and the lasagna. I'll have the chicken soup, the grilled chicken, and some salad. Excellent. I'll be right back. It smells so great. i'm so hungry and i want to eat but the soup is so hot i can barely touch it Wait for it to cool down before you eat it. The grilled chicken tastes delicious, doesn't it Paul? Yes, dad. It does indeed. What about your lasagna, Amy? I love it. It's my favorite dish. Great. How's your fish, mom? It's excellent. I'm so glad we came to this restaurant. Could you please pass me the salt, Paul? Here you are, mom. Thank you. Did you enjoy your meal? Yes. It was wonderful. Thank you. Would you like something for dessert? Yes. For dessert, I'll have ice cream, please. I'll have the chocolate cake. I'll have ice cream. I'll have the cheesecake, please. Everything looks great. Let's eat the desserts. Dad, I'm thirsty. I would like to drink some water. Excuse me. Yes, sir. How can I help you? Could you bring my son a glass of water, please? Yes. Of course. Thank you. Can I bring you anything else? No. Thank you. Just the bill. Okay, sir. I'll be right back with the bill. May I take your order? Yes. I'd like a hamburger, French fries, and a salad, please. Anything else? A Coke, please. For here or to go? For here. It costs $6. Here you are. Thank you. And here's your order. Thank you. Hi. What will you have? Hi. I'll have a double cheeseburger with fries, please. Would you like your cheeseburger with everything on it? No onions, please. Would you like anything to drink? Yes. A bottle of mineral water, please. Is that it? Yes. That's it. For hero to go? To go. It costs $7.25. Here you are. Here is your order. Thank you. How's your phone? The taco is very spicy, but I really like it. What about your hamburger? My hamburger has a sweet flavor. It's really yummy. I actually don't like spicy food. I can't stand the sweet flavor. I like it spicy and salty. So do you often eat fast food? Pretty often, about three times a week. And you? I rarely eat fast food, once a month. What is your favorite thing here? My favorite food is taco, but I'm also crazy about fried chicken sandwich. It's so tasty. How about you? I prefer the chicken hamburger with fries and coke. Great.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Hello.",
+      "speaker": "Speaker0",
+      "start": 7.84,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hello",
+          "start": 7.84,
+          "end": 8.34,
+          "confidence": 0.983
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 2,
+      "text": "How can I help you?",
+      "speaker": "Speaker0",
+      "start": 8.56,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how",
+          "start": 8.56,
+          "end": 8.8,
+          "confidence": 0.982
+        },
+        {
+          "word": "can",
+          "start": 8.8,
+          "end": 8.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 8.96,
+          "end": 9.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "start": 9.12,
+          "end": 9.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 9.36,
+          "end": 9.86,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 3,
+      "text": "Hello.",
+      "speaker": "Speaker0",
+      "start": 10.0,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hello",
+          "start": 10.0,
+          "end": 10.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 4,
+      "text": "I would like a table for four, please.",
+      "speaker": "Speaker1",
+      "start": 11.12,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "i",
+          "start": 11.12,
+          "end": 11.36,
+          "confidence": 0.852
+        },
+        {
+          "word": "would",
+          "start": 11.36,
+          "end": 11.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 11.52,
+          "end": 11.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 11.76,
+          "end": 11.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "table",
+          "start": 11.92,
+          "end": 12.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 12.24,
+          "end": 12.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "four",
+          "start": 12.48,
+          "end": 12.8,
+          "confidence": 0.983
+        },
+        {
+          "word": "please",
+          "start": 12.8,
+          "end": 13.3,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 5,
+      "text": "Of course. Please follow me.",
+      "speaker": "Speaker0",
+      "start": 13.84,
+      "duration": 2.13,
+      "words": [
+        {
+          "word": "of",
+          "start": 13.84,
+          "end": 14.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "course",
+          "start": 14.08,
+          "end": 14.58,
+          "confidence": 0.993
+        },
+        {
+          "word": "please",
+          "start": 14.8,
+          "end": 15.2,
+          "confidence": 0.998
+        },
+        {
+          "word": "follow",
+          "start": 15.2,
+          "end": 15.6,
+          "confidence": 0.98
+        },
+        {
+          "word": "me",
+          "start": 15.6,
+          "end": 15.97,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 6,
+      "text": "Here is a table for four.",
+      "speaker": "Speaker0",
+      "start": 18.54,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "here",
+          "start": 18.54,
+          "end": 18.86,
+          "confidence": 0.746
+        },
+        {
+          "word": "is",
+          "start": 18.86,
+          "end": 19.02,
+          "confidence": 0.831
+        },
+        {
+          "word": "a",
+          "start": 19.02,
+          "end": 19.18,
+          "confidence": 0.997
+        },
+        {
+          "word": "table",
+          "start": 19.18,
+          "end": 19.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 19.41,
+          "end": 19.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "four",
+          "start": 19.66,
+          "end": 20.16,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.929
+    },
+    {
+      "id": 7,
+      "text": "Thank you.",
+      "speaker": "Speaker1",
+      "start": 20.54,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "thank",
+          "start": 20.54,
+          "end": 20.86,
+          "confidence": 0.622
+        },
+        {
+          "word": "you",
+          "start": 20.86,
+          "end": 21.36,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.811
+    },
+    {
+      "id": 8,
+      "text": "Could you give us the menu, please?",
+      "speaker": "Speaker1",
+      "start": 23.5,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "could",
+          "start": 23.5,
+          "end": 23.73,
+          "confidence": 0.9
+        },
+        {
+          "word": "you",
+          "start": 23.73,
+          "end": 23.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "give",
+          "start": 23.89,
+          "end": 24.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "us",
+          "start": 24.14,
+          "end": 24.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 24.38,
+          "end": 24.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "menu",
+          "start": 24.54,
+          "end": 24.94,
+          "confidence": 0.99
+        },
+        {
+          "word": "please",
+          "start": 24.94,
+          "end": 25.44,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 9,
+      "text": "Yes. Of course.",
+      "speaker": "Speaker0",
+      "start": 25.98,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "yes",
+          "start": 25.98,
+          "end": 26.48,
+          "confidence": 0.979
+        },
+        {
+          "word": "of",
+          "start": 26.54,
+          "end": 26.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "course",
+          "start": 26.7,
+          "end": 27.2,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 10,
+      "text": "Here you are.",
+      "speaker": "Speaker0",
+      "start": 28.54,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "here",
+          "start": 28.54,
+          "end": 28.86,
+          "confidence": 0.922
+        },
+        {
+          "word": "you",
+          "start": 28.86,
+          "end": 29.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 29.02,
+          "end": 29.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 11,
+      "text": "Thank you.",
+      "speaker": "Speaker0",
+      "start": 29.79,
+      "duration": 0.66,
+      "words": [
+        {
+          "word": "thank",
+          "start": 29.79,
+          "end": 29.95,
+          "confidence": 0.989
+        },
+        {
+          "word": "you",
+          "start": 29.95,
+          "end": 30.45,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 12,
+      "text": "Can I get you anything to drink?",
+      "speaker": "Speaker0",
+      "start": 30.59,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "can",
+          "start": 30.59,
+          "end": 30.75,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 30.75,
+          "end": 30.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "get",
+          "start": 30.91,
+          "end": 31.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 31.07,
+          "end": 31.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "anything",
+          "start": 31.23,
+          "end": 31.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 31.63,
+          "end": 31.79,
+          "confidence": 0.998
+        },
+        {
+          "word": "drink",
+          "start": 31.79,
+          "end": 32.29,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 13,
+      "text": "Just water for me.",
+      "speaker": "Speaker2",
+      "start": 32.75,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "just",
+          "start": 32.75,
+          "end": 33.15,
+          "confidence": 0.898
+        },
+        {
+          "word": "water",
+          "start": 33.15,
+          "end": 33.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 33.47,
+          "end": 33.71,
+          "confidence": 0.998
+        },
+        {
+          "word": "me",
+          "start": 33.71,
+          "end": 34.21,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 14,
+      "text": "I'll have a lemonade.",
+      "speaker": "Speaker2",
+      "start": 34.43,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 34.43,
+          "end": 34.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 34.67,
+          "end": 34.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 34.83,
+          "end": 34.99,
+          "confidence": 0.99
+        },
+        {
+          "word": "lemonade",
+          "start": 34.99,
+          "end": 35.49,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 15,
+      "text": "I'll have a little shake.",
+      "speaker": "Speaker2",
+      "start": 36.19,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 36.19,
+          "end": 36.43,
+          "confidence": 0.997
+        },
+        {
+          "word": "have",
+          "start": 36.43,
+          "end": 36.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 36.75,
+          "end": 36.91,
+          "confidence": 0.997
+        },
+        {
+          "word": "little",
+          "start": 36.91,
+          "end": 37.23,
+          "confidence": 0.864
+        },
+        {
+          "word": "shake",
+          "start": 37.23,
+          "end": 37.73,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 16,
+      "text": "I'll have an orange juice.",
+      "speaker": "Speaker2",
+      "start": 37.95,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 37.95,
+          "end": 38.19,
+          "confidence": 0.834
+        },
+        {
+          "word": "have",
+          "start": 38.19,
+          "end": 38.35,
+          "confidence": 0.997
+        },
+        {
+          "word": "an",
+          "start": 38.35,
+          "end": 38.51,
+          "confidence": 0.985
+        },
+        {
+          "word": "orange",
+          "start": 38.51,
+          "end": 38.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "juice",
+          "start": 38.99,
+          "end": 39.49,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 17,
+      "text": "Great. I'll be right back.",
+      "speaker": "Speaker0",
+      "start": 39.95,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "great",
+          "start": 39.95,
+          "end": 40.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "i'll",
+          "start": 40.59,
+          "end": 40.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "be",
+          "start": 40.83,
+          "end": 40.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "right",
+          "start": 40.99,
+          "end": 41.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "back",
+          "start": 41.23,
+          "end": 41.73,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 18,
+      "text": "Are you ready to order?",
+      "speaker": "Speaker0",
+      "start": 51.87,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "are",
+          "start": 51.87,
+          "end": 52.02,
+          "confidence": 0.974
+        },
+        {
+          "word": "you",
+          "start": 52.02,
+          "end": 52.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "ready",
+          "start": 52.19,
+          "end": 52.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 52.51,
+          "end": 52.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "order",
+          "start": 52.59,
+          "end": 53.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 19,
+      "text": "Yes. We are.",
+      "speaker": "Speaker1",
+      "start": 53.39,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "yes",
+          "start": 53.39,
+          "end": 53.87,
+          "confidence": 0.9
+        },
+        {
+          "word": "we",
+          "start": 53.87,
+          "end": 54.1,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 54.1,
+          "end": 54.6,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 20,
+      "text": "I'll have the grilled chicken and a salad.",
+      "speaker": "Speaker1",
+      "start": 54.98,
+      "duration": 2.16,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 54.98,
+          "end": 55.3,
+          "confidence": 0.98
+        },
+        {
+          "word": "have",
+          "start": 55.3,
+          "end": 55.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 55.38,
+          "end": 55.62,
+          "confidence": 0.997
+        },
+        {
+          "word": "grilled",
+          "start": 55.62,
+          "end": 55.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "chicken",
+          "start": 55.94,
+          "end": 56.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 56.26,
+          "end": 56.42,
+          "confidence": 0.994
+        },
+        {
+          "word": "a",
+          "start": 56.42,
+          "end": 56.66,
+          "confidence": 0.994
+        },
+        {
+          "word": "salad",
+          "start": 56.66,
+          "end": 57.14,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 21,
+      "text": "Would you like a starter, sir?",
+      "speaker": "Speaker1",
+      "start": 57.14,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "would",
+          "start": 57.14,
+          "end": 57.46,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 57.46,
+          "end": 57.54,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 57.54,
+          "end": 57.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 57.78,
+          "end": 57.86,
+          "confidence": 0.996
+        },
+        {
+          "word": "starter",
+          "start": 57.86,
+          "end": 58.36,
+          "confidence": 0.985
+        },
+        {
+          "word": "sir",
+          "start": 58.5,
+          "end": 59.0,
+          "confidence": 0.831
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 22,
+      "text": "Yes.",
+      "speaker": "Speaker4",
+      "start": 59.54,
+      "duration": 0.4,
+      "words": [
+        {
+          "word": "yes",
+          "start": 59.54,
+          "end": 59.94,
+          "confidence": 0.965
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 23,
+      "text": "I'd like the vegetable soup.",
+      "speaker": "Speaker4",
+      "start": 59.94,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i'd",
+          "start": 59.94,
+          "end": 60.18,
+          "confidence": 0.991
+        },
+        {
+          "word": "like",
+          "start": 60.18,
+          "end": 60.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 60.42,
+          "end": 60.58,
+          "confidence": 0.998
+        },
+        {
+          "word": "vegetable",
+          "start": 60.58,
+          "end": 61.08,
+          "confidence": 0.996
+        },
+        {
+          "word": "soup",
+          "start": 61.14,
+          "end": 61.64,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 24,
+      "text": "For starter, I'd like the vegetable soup.",
+      "speaker": "Speaker4",
+      "start": 61.7,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "for",
+          "start": 61.7,
+          "end": 62.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "starter",
+          "start": 62.02,
+          "end": 62.52,
+          "confidence": 0.969
+        },
+        {
+          "word": "i'd",
+          "start": 62.58,
+          "end": 62.82,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 62.82,
+          "end": 62.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 62.98,
+          "end": 63.14,
+          "confidence": 0.998
+        },
+        {
+          "word": "vegetable",
+          "start": 63.14,
+          "end": 63.64,
+          "confidence": 0.995
+        },
+        {
+          "word": "soup",
+          "start": 63.78,
+          "end": 64.28,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 25,
+      "text": "For the main course, I'd like the grilled fish.",
+      "speaker": "Speaker4",
+      "start": 64.66,
+      "duration": 2.74,
+      "words": [
+        {
+          "word": "for",
+          "start": 64.66,
+          "end": 64.9,
+          "confidence": 0.952
+        },
+        {
+          "word": "the",
+          "start": 64.9,
+          "end": 65.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "main",
+          "start": 65.06,
+          "end": 65.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "course",
+          "start": 65.3,
+          "end": 65.8,
+          "confidence": 0.993
+        },
+        {
+          "word": "i'd",
+          "start": 65.94,
+          "end": 66.18,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 66.18,
+          "end": 66.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 66.34,
+          "end": 66.5,
+          "confidence": 0.998
+        },
+        {
+          "word": "grilled",
+          "start": 66.5,
+          "end": 66.9,
+          "confidence": 0.999
+        },
+        {
+          "word": "fish",
+          "start": 66.9,
+          "end": 67.4,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 26,
+      "text": "I'll have the chicken soup and the lasagna.",
+      "speaker": "Speaker2",
+      "start": 67.78,
+      "duration": 2.7,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 67.78,
+          "end": 68.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 68.02,
+          "end": 68.34,
+          "confidence": 0.996
+        },
+        {
+          "word": "the",
+          "start": 68.34,
+          "end": 68.62,
+          "confidence": 0.972
+        },
+        {
+          "word": "chicken",
+          "start": 68.7,
+          "end": 69.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "soup",
+          "start": 69.03,
+          "end": 69.53,
+          "confidence": 0.995
+        },
+        {
+          "word": "and",
+          "start": 69.58,
+          "end": 69.83,
+          "confidence": 0.905
+        },
+        {
+          "word": "the",
+          "start": 69.83,
+          "end": 69.98,
+          "confidence": 0.796
+        },
+        {
+          "word": "lasagna",
+          "start": 69.98,
+          "end": 70.48,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.957
+    },
+    {
+      "id": 27,
+      "text": "I'll have the chicken soup, the grilled chicken, and some salad.",
+      "speaker": "Speaker3",
+      "start": 71.27,
+      "duration": 3.29,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 71.27,
+          "end": 71.5,
+          "confidence": 0.994
+        },
+        {
+          "word": "have",
+          "start": 71.5,
+          "end": 71.58,
+          "confidence": 0.995
+        },
+        {
+          "word": "the",
+          "start": 71.58,
+          "end": 71.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "chicken",
+          "start": 71.83,
+          "end": 72.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "soup",
+          "start": 72.22,
+          "end": 72.7,
+          "confidence": 0.985
+        },
+        {
+          "word": "the",
+          "start": 72.7,
+          "end": 72.86,
+          "confidence": 0.971
+        },
+        {
+          "word": "grilled",
+          "start": 72.86,
+          "end": 73.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "chicken",
+          "start": 73.27,
+          "end": 73.67,
+          "confidence": 0.83
+        },
+        {
+          "word": "and",
+          "start": 73.67,
+          "end": 73.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "some",
+          "start": 73.83,
+          "end": 74.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "salad",
+          "start": 74.06,
+          "end": 74.56,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 28,
+      "text": "Excellent.",
+      "speaker": "Speaker3",
+      "start": 74.86,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "excellent",
+          "start": 74.86,
+          "end": 75.36,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 29,
+      "text": "I'll be right back.",
+      "speaker": "Speaker3",
+      "start": 75.58,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 75.58,
+          "end": 75.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "be",
+          "start": 75.83,
+          "end": 75.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "right",
+          "start": 75.98,
+          "end": 76.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "back",
+          "start": 76.22,
+          "end": 76.72,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 30,
+      "text": "It smells so great.",
+      "speaker": "Speaker2",
+      "start": 80.7,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "it",
+          "start": 80.7,
+          "end": 80.86,
+          "confidence": 0.612
+        },
+        {
+          "word": "smells",
+          "start": 80.86,
+          "end": 81.27,
+          "confidence": 0.985
+        },
+        {
+          "word": "so",
+          "start": 81.27,
+          "end": 81.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 81.5,
+          "end": 82.0,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.899
+    },
+    {
+      "id": 31,
+      "text": "i'm so hungry and i want to eat",
+      "speaker": "Speaker3",
+      "start": 82.39,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 82.39,
+          "end": 82.62,
+          "confidence": 0.8
+        },
+        {
+          "word": "so",
+          "start": 82.62,
+          "end": 82.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "hungry",
+          "start": 82.86,
+          "end": 83.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 83.27,
+          "end": 83.42,
+          "confidence": 0.656
+        },
+        {
+          "word": "i",
+          "start": 83.42,
+          "end": 83.58,
+          "confidence": 0.994
+        },
+        {
+          "word": "want",
+          "start": 83.58,
+          "end": 83.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 83.83,
+          "end": 83.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "eat",
+          "start": 83.91,
+          "end": 84.09,
+          "confidence": 0.867
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 32,
+      "text": "but the soup is so hot i can barely touch it",
+      "speaker": "Speaker3",
+      "start": 84.25,
+      "duration": 3.12,
+      "words": [
+        {
+          "word": "but",
+          "start": 84.25,
+          "end": 84.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 84.49,
+          "end": 84.57,
+          "confidence": 0.967
+        },
+        {
+          "word": "soup",
+          "start": 84.57,
+          "end": 84.97,
+          "confidence": 0.998
+        },
+        {
+          "word": "is",
+          "start": 84.97,
+          "end": 85.13,
+          "confidence": 0.996
+        },
+        {
+          "word": "so",
+          "start": 85.13,
+          "end": 85.37,
+          "confidence": 0.995
+        },
+        {
+          "word": "hot",
+          "start": 85.37,
+          "end": 85.87,
+          "confidence": 0.714
+        },
+        {
+          "word": "i",
+          "start": 85.93,
+          "end": 86.09,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 86.09,
+          "end": 86.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "barely",
+          "start": 86.25,
+          "end": 86.65,
+          "confidence": 0.999
+        },
+        {
+          "word": "touch",
+          "start": 86.65,
+          "end": 87.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 87.21,
+          "end": 87.37,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 33,
+      "text": "Wait for it to cool down before you eat it.",
+      "speaker": "Speaker3",
+      "start": 87.37,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "wait",
+          "start": 87.37,
+          "end": 87.69,
+          "confidence": 0.885
+        },
+        {
+          "word": "for",
+          "start": 87.69,
+          "end": 87.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 87.85,
+          "end": 87.93,
+          "confidence": 0.979
+        },
+        {
+          "word": "to",
+          "start": 87.93,
+          "end": 88.09,
+          "confidence": 0.992
+        },
+        {
+          "word": "cool",
+          "start": 88.09,
+          "end": 88.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "down",
+          "start": 88.33,
+          "end": 88.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "before",
+          "start": 88.57,
+          "end": 88.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 88.97,
+          "end": 89.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "eat",
+          "start": 89.21,
+          "end": 89.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 89.37,
+          "end": 89.87,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 34,
+      "text": "The grilled chicken tastes delicious, doesn't it Paul?",
+      "speaker": "Speaker1",
+      "start": 94.89,
+      "duration": 3.19,
+      "words": [
+        {
+          "word": "the",
+          "start": 94.89,
+          "end": 95.05,
+          "confidence": 0.909
+        },
+        {
+          "word": "grilled",
+          "start": 95.05,
+          "end": 95.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "chicken",
+          "start": 95.45,
+          "end": 95.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "tastes",
+          "start": 95.85,
+          "end": 96.17,
+          "confidence": 0.982
+        },
+        {
+          "word": "delicious",
+          "start": 96.17,
+          "end": 96.67,
+          "confidence": 0.751
+        },
+        {
+          "word": "doesn't",
+          "start": 97.13,
+          "end": 97.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 97.45,
+          "end": 97.61,
+          "confidence": 0.994
+        },
+        {
+          "word": "paul",
+          "start": 97.61,
+          "end": 98.08,
+          "confidence": 0.867
+        }
+      ],
+      "confidence": 0.941
+    },
+    {
+      "id": 35,
+      "text": "Yes, dad. It does indeed.",
+      "speaker": "Speaker3",
+      "start": 98.48,
+      "duration": 1.71,
+      "words": [
+        {
+          "word": "yes",
+          "start": 98.48,
+          "end": 98.81,
+          "confidence": 0.94
+        },
+        {
+          "word": "dad",
+          "start": 98.81,
+          "end": 99.28,
+          "confidence": 0.923
+        },
+        {
+          "word": "it",
+          "start": 99.28,
+          "end": 99.44,
+          "confidence": 0.997
+        },
+        {
+          "word": "does",
+          "start": 99.44,
+          "end": 99.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "indeed",
+          "start": 99.69,
+          "end": 100.19,
+          "confidence": 0.918
+        }
+      ],
+      "confidence": 0.956
+    },
+    {
+      "id": 36,
+      "text": "What about your lasagna, Amy?",
+      "speaker": "Speaker1",
+      "start": 101.28,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "what",
+          "start": 101.28,
+          "end": 101.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "about",
+          "start": 101.53,
+          "end": 101.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 101.77,
+          "end": 102.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "lasagna",
+          "start": 102.08,
+          "end": 102.56,
+          "confidence": 0.921
+        },
+        {
+          "word": "amy",
+          "start": 102.56,
+          "end": 103.06,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 37,
+      "text": "I love it.",
+      "speaker": "Speaker2",
+      "start": 103.69,
+      "duration": 1.12,
+      "words": [
+        {
+          "word": "i",
+          "start": 103.69,
+          "end": 104.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "love",
+          "start": 104.0,
+          "end": 104.33,
+          "confidence": 0.998
+        },
+        {
+          "word": "it",
+          "start": 104.33,
+          "end": 104.81,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 38,
+      "text": "It's my favorite dish.",
+      "speaker": "Speaker2",
+      "start": 104.81,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "it's",
+          "start": 104.81,
+          "end": 104.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 104.97,
+          "end": 105.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "favorite",
+          "start": 105.2,
+          "end": 105.69,
+          "confidence": 0.996
+        },
+        {
+          "word": "dish",
+          "start": 105.69,
+          "end": 106.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 39,
+      "text": "Great.",
+      "speaker": "Speaker1",
+      "start": 106.89,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "great",
+          "start": 106.89,
+          "end": 107.39,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 40,
+      "text": "How's your fish, mom?",
+      "speaker": "Speaker3",
+      "start": 107.92,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "how's",
+          "start": 107.92,
+          "end": 108.24,
+          "confidence": 0.997
+        },
+        {
+          "word": "your",
+          "start": 108.24,
+          "end": 108.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "fish",
+          "start": 108.48,
+          "end": 108.81,
+          "confidence": 0.917
+        },
+        {
+          "word": "mom",
+          "start": 108.81,
+          "end": 109.31,
+          "confidence": 0.972
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 41,
+      "text": "It's excellent.",
+      "speaker": "Speaker4",
+      "start": 110.08,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "it's",
+          "start": 110.08,
+          "end": 110.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "excellent",
+          "start": 110.48,
+          "end": 110.98,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 42,
+      "text": "I'm so glad we came to this restaurant.",
+      "speaker": "Speaker4",
+      "start": 111.69,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 111.69,
+          "end": 111.92,
+          "confidence": 0.999
+        },
+        {
+          "word": "so",
+          "start": 111.92,
+          "end": 112.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "glad",
+          "start": 112.17,
+          "end": 112.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "we",
+          "start": 112.48,
+          "end": 112.64,
+          "confidence": 0.997
+        },
+        {
+          "word": "came",
+          "start": 112.64,
+          "end": 112.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 112.88,
+          "end": 113.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 113.05,
+          "end": 113.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "restaurant",
+          "start": 113.28,
+          "end": 113.78,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 43,
+      "text": "Could you please pass me the salt, Paul?",
+      "speaker": "Speaker4",
+      "start": 114.96,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "could",
+          "start": 114.96,
+          "end": 115.2,
+          "confidence": 0.977
+        },
+        {
+          "word": "you",
+          "start": 115.2,
+          "end": 115.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "please",
+          "start": 115.44,
+          "end": 115.84,
+          "confidence": 0.993
+        },
+        {
+          "word": "pass",
+          "start": 115.84,
+          "end": 116.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "me",
+          "start": 116.16,
+          "end": 116.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 116.32,
+          "end": 116.56,
+          "confidence": 0.964
+        },
+        {
+          "word": "salt",
+          "start": 116.56,
+          "end": 116.88,
+          "confidence": 0.66
+        },
+        {
+          "word": "paul",
+          "start": 116.88,
+          "end": 117.38,
+          "confidence": 0.983
+        }
+      ],
+      "confidence": 0.947
+    },
+    {
+      "id": 44,
+      "text": "Here you are, mom.",
+      "speaker": "Speaker3",
+      "start": 117.84,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "here",
+          "start": 117.84,
+          "end": 118.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 118.16,
+          "end": 118.24,
+          "confidence": 0.971
+        },
+        {
+          "word": "are",
+          "start": 118.24,
+          "end": 118.56,
+          "confidence": 0.949
+        },
+        {
+          "word": "mom",
+          "start": 118.56,
+          "end": 119.06,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 45,
+      "text": "Thank you.",
+      "speaker": "Speaker3",
+      "start": 119.2,
+      "duration": 0.74,
+      "words": [
+        {
+          "word": "thank",
+          "start": 119.2,
+          "end": 119.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 119.44,
+          "end": 119.94,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 46,
+      "text": "Did you enjoy your meal?",
+      "speaker": "Speaker0",
+      "start": 130.07,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "did",
+          "start": 130.07,
+          "end": 130.31,
+          "confidence": 0.962
+        },
+        {
+          "word": "you",
+          "start": 130.31,
+          "end": 130.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "enjoy",
+          "start": 130.47,
+          "end": 130.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 130.79,
+          "end": 130.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "meal",
+          "start": 130.96,
+          "end": 131.46,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 47,
+      "text": "Yes. It was wonderful.",
+      "speaker": "Speaker1",
+      "start": 132.0,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "yes",
+          "start": 132.0,
+          "end": 132.47,
+          "confidence": 0.828
+        },
+        {
+          "word": "it",
+          "start": 132.47,
+          "end": 132.72,
+          "confidence": 0.998
+        },
+        {
+          "word": "was",
+          "start": 132.72,
+          "end": 132.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "wonderful",
+          "start": 132.88,
+          "end": 133.38,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 48,
+      "text": "Thank you.",
+      "speaker": "Speaker0",
+      "start": 133.68,
+      "duration": 0.73,
+      "words": [
+        {
+          "word": "thank",
+          "start": 133.68,
+          "end": 133.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 133.91,
+          "end": 134.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 49,
+      "text": "Would you like something for dessert?",
+      "speaker": "Speaker0",
+      "start": 134.63,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "would",
+          "start": 134.63,
+          "end": 134.88,
+          "confidence": 0.992
+        },
+        {
+          "word": "you",
+          "start": 134.88,
+          "end": 135.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 135.03,
+          "end": 135.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "something",
+          "start": 135.28,
+          "end": 135.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 135.59,
+          "end": 135.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "dessert",
+          "start": 135.83,
+          "end": 136.33,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 50,
+      "text": "Yes.",
+      "speaker": "Speaker4",
+      "start": 136.79,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 136.79,
+          "end": 137.29,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 51,
+      "text": "For dessert, I'll have ice cream, please.",
+      "speaker": "Speaker4",
+      "start": 137.35,
+      "duration": 2.43,
+      "words": [
+        {
+          "word": "for",
+          "start": 137.35,
+          "end": 137.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "dessert",
+          "start": 137.68,
+          "end": 138.18,
+          "confidence": 0.975
+        },
+        {
+          "word": "i'll",
+          "start": 138.31,
+          "end": 138.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 138.56,
+          "end": 138.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "ice",
+          "start": 138.72,
+          "end": 138.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "cream",
+          "start": 138.96,
+          "end": 139.28,
+          "confidence": 0.977
+        },
+        {
+          "word": "please",
+          "start": 139.28,
+          "end": 139.78,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 52,
+      "text": "I'll have the chocolate cake.",
+      "speaker": "Speaker4",
+      "start": 140.47,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 140.47,
+          "end": 140.79,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 140.79,
+          "end": 141.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 141.11,
+          "end": 141.35,
+          "confidence": 0.984
+        },
+        {
+          "word": "chocolate",
+          "start": 141.35,
+          "end": 141.85,
+          "confidence": 0.997
+        },
+        {
+          "word": "cake",
+          "start": 141.91,
+          "end": 142.41,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 53,
+      "text": "I'll have ice cream.",
+      "speaker": "Speaker4",
+      "start": 142.56,
+      "duration": 1.64,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 142.56,
+          "end": 142.88,
+          "confidence": 0.983
+        },
+        {
+          "word": "have",
+          "start": 142.88,
+          "end": 143.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "ice",
+          "start": 143.03,
+          "end": 143.4,
+          "confidence": 0.998
+        },
+        {
+          "word": "cream",
+          "start": 143.8,
+          "end": 144.2,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 54,
+      "text": "I'll have the cheesecake, please.",
+      "speaker": "Speaker4",
+      "start": 144.2,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 144.2,
+          "end": 144.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 144.36,
+          "end": 144.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 144.6,
+          "end": 144.84,
+          "confidence": 0.999
+        },
+        {
+          "word": "cheesecake",
+          "start": 144.84,
+          "end": 145.34,
+          "confidence": 0.97
+        },
+        {
+          "word": "please",
+          "start": 145.4,
+          "end": 145.9,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 55,
+      "text": "Everything looks great.",
+      "speaker": "Speaker4",
+      "start": 147.96,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "everything",
+          "start": 147.96,
+          "end": 148.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "looks",
+          "start": 148.44,
+          "end": 148.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "great",
+          "start": 148.76,
+          "end": 149.26,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 56,
+      "text": "Let's eat the desserts.",
+      "speaker": "Speaker4",
+      "start": 149.8,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "let's",
+          "start": 149.8,
+          "end": 150.12,
+          "confidence": 0.994
+        },
+        {
+          "word": "eat",
+          "start": 150.12,
+          "end": 150.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 150.36,
+          "end": 150.52,
+          "confidence": 0.998
+        },
+        {
+          "word": "desserts",
+          "start": 150.52,
+          "end": 151.02,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 57,
+      "text": "Dad, I'm thirsty.",
+      "speaker": "Speaker3",
+      "start": 152.92,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "dad",
+          "start": 152.92,
+          "end": 153.42,
+          "confidence": 0.843
+        },
+        {
+          "word": "i'm",
+          "start": 153.48,
+          "end": 153.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "thirsty",
+          "start": 153.72,
+          "end": 154.22,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 58,
+      "text": "I would like to drink some water.",
+      "speaker": "Speaker3",
+      "start": 154.52,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 154.52,
+          "end": 154.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "would",
+          "start": 154.68,
+          "end": 154.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 154.84,
+          "end": 155.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 155.08,
+          "end": 155.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "drink",
+          "start": 155.24,
+          "end": 155.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "some",
+          "start": 155.48,
+          "end": 155.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "water",
+          "start": 155.72,
+          "end": 156.22,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 59,
+      "text": "Excuse me.",
+      "speaker": "Speaker0",
+      "start": 156.6,
+      "duration": 0.77,
+      "words": [
+        {
+          "word": "excuse",
+          "start": 156.6,
+          "end": 157.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 157.0,
+          "end": 157.37,
+          "confidence": 0.942
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 60,
+      "text": "Yes, sir.",
+      "speaker": "Speaker1",
+      "start": 158.0,
+      "duration": 0.81,
+      "words": [
+        {
+          "word": "yes",
+          "start": 158.0,
+          "end": 158.41,
+          "confidence": 0.822
+        },
+        {
+          "word": "sir",
+          "start": 158.41,
+          "end": 158.81,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 61,
+      "text": "How can I help you?",
+      "speaker": "Speaker1",
+      "start": 158.81,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how",
+          "start": 158.81,
+          "end": 159.04,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 159.04,
+          "end": 159.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 159.21,
+          "end": 159.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "start": 159.37,
+          "end": 159.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 159.61,
+          "end": 160.11,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 62,
+      "text": "Could you bring my son a glass of water, please?",
+      "speaker": "Speaker1",
+      "start": 160.33,
+      "duration": 2.73,
+      "words": [
+        {
+          "word": "could",
+          "start": 160.33,
+          "end": 160.56,
+          "confidence": 0.965
+        },
+        {
+          "word": "you",
+          "start": 160.56,
+          "end": 160.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "bring",
+          "start": 160.72,
+          "end": 161.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 161.04,
+          "end": 161.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "son",
+          "start": 161.21,
+          "end": 161.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 161.53,
+          "end": 161.61,
+          "confidence": 0.997
+        },
+        {
+          "word": "glass",
+          "start": 161.61,
+          "end": 161.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 161.93,
+          "end": 162.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "water",
+          "start": 162.17,
+          "end": 162.56,
+          "confidence": 0.981
+        },
+        {
+          "word": "please",
+          "start": 162.56,
+          "end": 163.06,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 63,
+      "text": "Yes. Of course. Thank you.",
+      "speaker": "Speaker0",
+      "start": 163.44,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "yes",
+          "start": 163.44,
+          "end": 163.94,
+          "confidence": 0.914
+        },
+        {
+          "word": "of",
+          "start": 164.0,
+          "end": 164.17,
+          "confidence": 0.996
+        },
+        {
+          "word": "course",
+          "start": 164.17,
+          "end": 164.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "thank",
+          "start": 164.81,
+          "end": 165.12,
+          "confidence": 0.901
+        },
+        {
+          "word": "you",
+          "start": 165.12,
+          "end": 165.62,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.962
+    },
+    {
+      "id": 64,
+      "text": "Can I bring you anything else?",
+      "speaker": "Speaker0",
+      "start": 167.04,
+      "duration": 1.71,
+      "words": [
+        {
+          "word": "can",
+          "start": 167.04,
+          "end": 167.28,
+          "confidence": 0.618
+        },
+        {
+          "word": "i",
+          "start": 167.28,
+          "end": 167.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "bring",
+          "start": 167.44,
+          "end": 167.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 167.69,
+          "end": 167.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "anything",
+          "start": 167.93,
+          "end": 168.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "else",
+          "start": 168.25,
+          "end": 168.75,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 65,
+      "text": "No.",
+      "speaker": "Speaker0",
+      "start": 169.04,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "no",
+          "start": 169.04,
+          "end": 169.54,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 66,
+      "text": "Thank you.",
+      "speaker": "Speaker0",
+      "start": 169.61,
+      "duration": 0.72,
+      "words": [
+        {
+          "word": "thank",
+          "start": 169.61,
+          "end": 169.84,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 169.84,
+          "end": 170.33,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 67,
+      "text": "Just the bill.",
+      "speaker": "Speaker0",
+      "start": 170.33,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "just",
+          "start": 170.33,
+          "end": 170.65,
+          "confidence": 0.993
+        },
+        {
+          "word": "the",
+          "start": 170.65,
+          "end": 170.81,
+          "confidence": 0.997
+        },
+        {
+          "word": "bill",
+          "start": 170.81,
+          "end": 171.31,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 68,
+      "text": "Okay, sir.",
+      "speaker": "Speaker0",
+      "start": 171.53,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "okay",
+          "start": 171.53,
+          "end": 171.93,
+          "confidence": 0.993
+        },
+        {
+          "word": "sir",
+          "start": 171.93,
+          "end": 172.43,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 69,
+      "text": "I'll be right back with the bill.",
+      "speaker": "Speaker0",
+      "start": 172.56,
+      "duration": 1.64,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 172.56,
+          "end": 172.72,
+          "confidence": 0.996
+        },
+        {
+          "word": "be",
+          "start": 172.72,
+          "end": 172.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "right",
+          "start": 172.98,
+          "end": 173.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "back",
+          "start": 173.22,
+          "end": 173.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 173.46,
+          "end": 173.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 173.58,
+          "end": 173.7,
+          "confidence": 0.997
+        },
+        {
+          "word": "bill",
+          "start": 173.7,
+          "end": 174.2,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 70,
+      "text": "May I take your order?",
+      "speaker": "Speaker1",
+      "start": 184.82,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "may",
+          "start": 184.82,
+          "end": 185.06,
+          "confidence": 0.901
+        },
+        {
+          "word": "i",
+          "start": 185.06,
+          "end": 185.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "take",
+          "start": 185.22,
+          "end": 185.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 185.38,
+          "end": 185.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "order",
+          "start": 185.62,
+          "end": 186.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 71,
+      "text": "Yes.",
+      "speaker": "Speaker2",
+      "start": 187.06,
+      "duration": 0.33,
+      "words": [
+        {
+          "word": "yes",
+          "start": 187.06,
+          "end": 187.39,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 72,
+      "text": "I'd like a hamburger, French fries, and a salad, please.",
+      "speaker": "Speaker2",
+      "start": 187.39,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "i'd",
+          "start": 187.39,
+          "end": 187.62,
+          "confidence": 0.995
+        },
+        {
+          "word": "like",
+          "start": 187.62,
+          "end": 187.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 187.78,
+          "end": 188.03,
+          "confidence": 0.993
+        },
+        {
+          "word": "hamburger",
+          "start": 188.03,
+          "end": 188.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "french",
+          "start": 188.67,
+          "end": 188.99,
+          "confidence": 0.604
+        },
+        {
+          "word": "fries",
+          "start": 188.99,
+          "end": 189.39,
+          "confidence": 0.956
+        },
+        {
+          "word": "and",
+          "start": 189.39,
+          "end": 189.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 189.55,
+          "end": 189.71,
+          "confidence": 0.978
+        },
+        {
+          "word": "salad",
+          "start": 189.71,
+          "end": 190.11,
+          "confidence": 0.992
+        },
+        {
+          "word": "please",
+          "start": 190.11,
+          "end": 190.61,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 73,
+      "text": "Anything else?",
+      "speaker": "Speaker1",
+      "start": 191.39,
+      "duration": 1.05,
+      "words": [
+        {
+          "word": "anything",
+          "start": 191.39,
+          "end": 191.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "else",
+          "start": 191.94,
+          "end": 192.44,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 74,
+      "text": "A Coke, please.",
+      "speaker": "Speaker2",
+      "start": 192.91,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "a",
+          "start": 192.91,
+          "end": 193.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "coke",
+          "start": 193.15,
+          "end": 193.55,
+          "confidence": 0.94
+        },
+        {
+          "word": "please",
+          "start": 193.55,
+          "end": 194.05,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 75,
+      "text": "For here or to go?",
+      "speaker": "Speaker5",
+      "start": 195.31,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "for",
+          "start": 195.31,
+          "end": 195.62,
+          "confidence": 0.993
+        },
+        {
+          "word": "here",
+          "start": 195.62,
+          "end": 195.87,
+          "confidence": 0.475
+        },
+        {
+          "word": "or",
+          "start": 195.87,
+          "end": 196.03,
+          "confidence": 0.982
+        },
+        {
+          "word": "to",
+          "start": 196.03,
+          "end": 196.19,
+          "confidence": 0.872
+        },
+        {
+          "word": "go",
+          "start": 196.19,
+          "end": 196.69,
+          "confidence": 0.888
+        }
+      ],
+      "confidence": 0.842
+    },
+    {
+      "id": 76,
+      "text": "For here.",
+      "speaker": "Speaker2",
+      "start": 197.31,
+      "duration": 0.81,
+      "words": [
+        {
+          "word": "for",
+          "start": 197.31,
+          "end": 197.62,
+          "confidence": 0.998
+        },
+        {
+          "word": "here",
+          "start": 197.62,
+          "end": 198.12,
+          "confidence": 0.973
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 77,
+      "text": "It costs $6.",
+      "speaker": "Speaker1",
+      "start": 198.91,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "it",
+          "start": 198.91,
+          "end": 199.15,
+          "confidence": 0.998
+        },
+        {
+          "word": "costs",
+          "start": 199.15,
+          "end": 199.55,
+          "confidence": 0.706
+        },
+        {
+          "word": "$6",
+          "start": 199.55,
+          "end": 200.37,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.901
+    },
+    {
+      "id": 78,
+      "text": "Here you are.",
+      "speaker": "Speaker2",
+      "start": 201.42,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "here",
+          "start": 201.42,
+          "end": 201.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 201.74,
+          "end": 201.9,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 201.9,
+          "end": 202.4,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 79,
+      "text": "Thank you.",
+      "speaker": "Speaker1",
+      "start": 203.1,
+      "duration": 0.74,
+      "words": [
+        {
+          "word": "thank",
+          "start": 203.1,
+          "end": 203.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 203.34,
+          "end": 203.84,
+          "confidence": 0.93
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 80,
+      "text": "And here's your order.",
+      "speaker": "Speaker1",
+      "start": 204.14,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "and",
+          "start": 204.14,
+          "end": 204.38,
+          "confidence": 0.997
+        },
+        {
+          "word": "here's",
+          "start": 204.38,
+          "end": 204.78,
+          "confidence": 0.98
+        },
+        {
+          "word": "your",
+          "start": 204.78,
+          "end": 204.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "order",
+          "start": 204.94,
+          "end": 205.44,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 81,
+      "text": "Thank you.",
+      "speaker": "Speaker2",
+      "start": 205.82,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "thank",
+          "start": 205.82,
+          "end": 206.22,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 206.22,
+          "end": 206.72,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 82,
+      "text": "Hi. What will you have?",
+      "speaker": "Speaker1",
+      "start": 209.9,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "hi",
+          "start": 209.9,
+          "end": 210.3,
+          "confidence": 0.986
+        },
+        {
+          "word": "what",
+          "start": 210.3,
+          "end": 210.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "will",
+          "start": 210.62,
+          "end": 210.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 210.78,
+          "end": 211.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 211.02,
+          "end": 211.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 83,
+      "text": "Hi.",
+      "speaker": "Speaker6",
+      "start": 211.82,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hi",
+          "start": 211.82,
+          "end": 212.32,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 84,
+      "text": "I'll have a double cheeseburger with fries, please.",
+      "speaker": "Speaker6",
+      "start": 212.46,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 212.46,
+          "end": 212.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 212.78,
+          "end": 212.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 212.94,
+          "end": 213.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "double",
+          "start": 213.02,
+          "end": 213.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "cheeseburger",
+          "start": 213.34,
+          "end": 213.84,
+          "confidence": 0.998
+        },
+        {
+          "word": "with",
+          "start": 213.98,
+          "end": 214.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "fries",
+          "start": 214.3,
+          "end": 214.8,
+          "confidence": 0.991
+        },
+        {
+          "word": "please",
+          "start": 214.86,
+          "end": 215.36,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 85,
+      "text": "Would you like your cheeseburger with everything on it?",
+      "speaker": "Speaker1",
+      "start": 215.94,
+      "duration": 2.65,
+      "words": [
+        {
+          "word": "would",
+          "start": 215.94,
+          "end": 216.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 216.09,
+          "end": 216.25,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 216.25,
+          "end": 216.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 216.5,
+          "end": 216.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "cheeseburger",
+          "start": 216.74,
+          "end": 217.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 217.29,
+          "end": 217.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "everything",
+          "start": 217.53,
+          "end": 217.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 217.94,
+          "end": 218.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 218.09,
+          "end": 218.59,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 86,
+      "text": "No onions, please.",
+      "speaker": "Speaker1",
+      "start": 218.66,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "no",
+          "start": 218.66,
+          "end": 218.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "onions",
+          "start": 218.89,
+          "end": 219.39,
+          "confidence": 0.994
+        },
+        {
+          "word": "please",
+          "start": 219.45,
+          "end": 219.95,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 87,
+      "text": "Would you like anything to drink?",
+      "speaker": "Speaker1",
+      "start": 220.33,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "would",
+          "start": 220.33,
+          "end": 220.57,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 220.57,
+          "end": 220.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 220.74,
+          "end": 220.97,
+          "confidence": 0.905
+        },
+        {
+          "word": "anything",
+          "start": 220.97,
+          "end": 221.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 221.38,
+          "end": 221.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "drink",
+          "start": 221.53,
+          "end": 222.03,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 88,
+      "text": "Yes.",
+      "speaker": "Speaker6",
+      "start": 222.33,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 222.33,
+          "end": 222.83,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 89,
+      "text": "A bottle of mineral water, please.",
+      "speaker": "Speaker6",
+      "start": 222.89,
+      "duration": 2.11,
+      "words": [
+        {
+          "word": "a",
+          "start": 222.89,
+          "end": 223.13,
+          "confidence": 0.998
+        },
+        {
+          "word": "bottle",
+          "start": 223.13,
+          "end": 223.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 223.45,
+          "end": 223.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "mineral",
+          "start": 223.69,
+          "end": 224.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "water",
+          "start": 224.09,
+          "end": 224.5,
+          "confidence": 0.997
+        },
+        {
+          "word": "please",
+          "start": 224.5,
+          "end": 225.0,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 90,
+      "text": "Is that it?",
+      "speaker": "Speaker1",
+      "start": 225.53,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "is",
+          "start": 225.53,
+          "end": 225.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "that",
+          "start": 225.69,
+          "end": 225.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 225.94,
+          "end": 226.44,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 91,
+      "text": "Yes.",
+      "speaker": "Speaker5",
+      "start": 227.13,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 227.13,
+          "end": 227.63,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.915
+    },
+    {
+      "id": 92,
+      "text": "That's it.",
+      "speaker": "Speaker5",
+      "start": 227.69,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "that's",
+          "start": 227.69,
+          "end": 228.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 228.01,
+          "end": 228.51,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.915
+    },
+    {
+      "id": 93,
+      "text": "For hero to go?",
+      "speaker": "Speaker5",
+      "start": 228.74,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "for",
+          "start": 228.74,
+          "end": 228.97,
+          "confidence": 0.994
+        },
+        {
+          "word": "hero",
+          "start": 228.97,
+          "end": 229.38,
+          "confidence": 0.48
+        },
+        {
+          "word": "to",
+          "start": 229.38,
+          "end": 229.45,
+          "confidence": 0.954
+        },
+        {
+          "word": "go",
+          "start": 229.45,
+          "end": 229.95,
+          "confidence": 0.978
+        }
+      ],
+      "confidence": 0.915
+    },
+    {
+      "id": 94,
+      "text": "To go.",
+      "speaker": "Speaker6",
+      "start": 230.25,
+      "duration": 0.75,
+      "words": [
+        {
+          "word": "to",
+          "start": 230.25,
+          "end": 230.5,
+          "confidence": 0.994
+        },
+        {
+          "word": "go",
+          "start": 230.5,
+          "end": 231.0,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 95,
+      "text": "It costs $7.25.",
+      "speaker": "Speaker1",
+      "start": 231.79,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "it",
+          "start": 231.79,
+          "end": 232.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "costs",
+          "start": 232.11,
+          "end": 232.51,
+          "confidence": 0.774
+        },
+        {
+          "word": "$7.25",
+          "start": 232.51,
+          "end": 234.13,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.922
+    },
+    {
+      "id": 96,
+      "text": "Here you are.",
+      "speaker": "Speaker6",
+      "start": 234.51,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "here",
+          "start": 234.51,
+          "end": 234.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 234.83,
+          "end": 235.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 235.07,
+          "end": 235.57,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 97,
+      "text": "Here is your order.",
+      "speaker": "Speaker1",
+      "start": 236.35,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "here",
+          "start": 236.35,
+          "end": 236.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 236.59,
+          "end": 236.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "your",
+          "start": 236.83,
+          "end": 236.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "order",
+          "start": 236.99,
+          "end": 237.49,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 98,
+      "text": "Thank you.",
+      "speaker": "Speaker6",
+      "start": 237.79,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "thank",
+          "start": 237.79,
+          "end": 238.11,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 238.11,
+          "end": 238.61,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 99,
+      "text": "How's your phone?",
+      "speaker": "Speaker3",
+      "start": 240.59,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "how's",
+          "start": 240.59,
+          "end": 240.83,
+          "confidence": 0.659
+        },
+        {
+          "word": "your",
+          "start": 240.83,
+          "end": 241.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "phone",
+          "start": 241.15,
+          "end": 241.65,
+          "confidence": 0.979
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 100,
+      "text": "The taco is very spicy, but I really like it.",
+      "speaker": "Speaker3",
+      "start": 241.87,
+      "duration": 2.97,
+      "words": [
+        {
+          "word": "the",
+          "start": 241.87,
+          "end": 242.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "taco",
+          "start": 242.11,
+          "end": 242.51,
+          "confidence": 0.992
+        },
+        {
+          "word": "is",
+          "start": 242.51,
+          "end": 242.75,
+          "confidence": 0.99
+        },
+        {
+          "word": "very",
+          "start": 242.75,
+          "end": 243.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "spicy",
+          "start": 243.07,
+          "end": 243.57,
+          "confidence": 0.947
+        },
+        {
+          "word": "but",
+          "start": 243.71,
+          "end": 243.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 243.95,
+          "end": 244.11,
+          "confidence": 0.996
+        },
+        {
+          "word": "really",
+          "start": 244.11,
+          "end": 244.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 244.43,
+          "end": 244.59,
+          "confidence": 0.998
+        },
+        {
+          "word": "it",
+          "start": 244.59,
+          "end": 244.84,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 101,
+      "text": "What about your hamburger?",
+      "speaker": "Speaker3",
+      "start": 245.17,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "what",
+          "start": 245.17,
+          "end": 245.32,
+          "confidence": 0.97
+        },
+        {
+          "word": "about",
+          "start": 245.32,
+          "end": 245.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 245.56,
+          "end": 245.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "hamburger",
+          "start": 245.88,
+          "end": 246.38,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 102,
+      "text": "My hamburger has a sweet flavor.",
+      "speaker": "Speaker2",
+      "start": 247.0,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "my",
+          "start": 247.0,
+          "end": 247.25,
+          "confidence": 0.998
+        },
+        {
+          "word": "hamburger",
+          "start": 247.25,
+          "end": 247.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "has",
+          "start": 247.81,
+          "end": 248.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 248.04,
+          "end": 248.21,
+          "confidence": 0.997
+        },
+        {
+          "word": "sweet",
+          "start": 248.21,
+          "end": 248.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "flavor",
+          "start": 248.6,
+          "end": 249.1,
+          "confidence": 0.97
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 103,
+      "text": "It's really yummy.",
+      "speaker": "Speaker2",
+      "start": 249.65,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "it's",
+          "start": 249.65,
+          "end": 249.97,
+          "confidence": 0.997
+        },
+        {
+          "word": "really",
+          "start": 249.97,
+          "end": 250.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "yummy",
+          "start": 250.44,
+          "end": 250.94,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 104,
+      "text": "I actually don't like spicy food.",
+      "speaker": "Speaker3",
+      "start": 251.56,
+      "duration": 2.19,
+      "words": [
+        {
+          "word": "i",
+          "start": 251.56,
+          "end": 251.72,
+          "confidence": 0.993
+        },
+        {
+          "word": "actually",
+          "start": 251.72,
+          "end": 252.21,
+          "confidence": 0.984
+        },
+        {
+          "word": "don't",
+          "start": 252.21,
+          "end": 252.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 252.44,
+          "end": 252.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "spicy",
+          "start": 252.76,
+          "end": 253.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "food",
+          "start": 253.25,
+          "end": 253.75,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 105,
+      "text": "I can't stand the sweet flavor.",
+      "speaker": "Speaker3",
+      "start": 253.81,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "i",
+          "start": 253.81,
+          "end": 253.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 253.97,
+          "end": 254.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "stand",
+          "start": 254.28,
+          "end": 254.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 254.53,
+          "end": 254.69,
+          "confidence": 0.91
+        },
+        {
+          "word": "sweet",
+          "start": 254.69,
+          "end": 255.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "flavor",
+          "start": 255.0,
+          "end": 255.5,
+          "confidence": 0.965
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 106,
+      "text": "I like it spicy and salty.",
+      "speaker": "Speaker3",
+      "start": 255.65,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 255.65,
+          "end": 255.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 255.81,
+          "end": 255.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 255.97,
+          "end": 256.2,
+          "confidence": 0.994
+        },
+        {
+          "word": "spicy",
+          "start": 256.2,
+          "end": 256.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 256.61,
+          "end": 256.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "salty",
+          "start": 256.85,
+          "end": 257.35,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 107,
+      "text": "So do you often eat fast food?",
+      "speaker": "Speaker2",
+      "start": 257.73,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "so",
+          "start": 257.73,
+          "end": 258.12,
+          "confidence": 0.995
+        },
+        {
+          "word": "do",
+          "start": 258.12,
+          "end": 258.37,
+          "confidence": 0.554
+        },
+        {
+          "word": "you",
+          "start": 258.37,
+          "end": 258.52,
+          "confidence": 0.997
+        },
+        {
+          "word": "often",
+          "start": 258.52,
+          "end": 258.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "eat",
+          "start": 258.85,
+          "end": 259.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "fast",
+          "start": 259.08,
+          "end": 259.41,
+          "confidence": 0.997
+        },
+        {
+          "word": "food",
+          "start": 259.41,
+          "end": 259.91,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 108,
+      "text": "Pretty often, about three times a week.",
+      "speaker": "Speaker3",
+      "start": 260.37,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "pretty",
+          "start": 260.37,
+          "end": 260.69,
+          "confidence": 0.996
+        },
+        {
+          "word": "often",
+          "start": 260.69,
+          "end": 261.19,
+          "confidence": 0.76
+        },
+        {
+          "word": "about",
+          "start": 261.25,
+          "end": 261.57,
+          "confidence": 0.997
+        },
+        {
+          "word": "three",
+          "start": 261.57,
+          "end": 261.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "times",
+          "start": 261.81,
+          "end": 262.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 262.05,
+          "end": 262.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "week",
+          "start": 262.21,
+          "end": 262.71,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.963
+    },
+    {
+      "id": 109,
+      "text": "And you?",
+      "speaker": "Speaker3",
+      "start": 262.93,
+      "duration": 0.74,
+      "words": [
+        {
+          "word": "and",
+          "start": 262.93,
+          "end": 263.17,
+          "confidence": 0.97
+        },
+        {
+          "word": "you",
+          "start": 263.17,
+          "end": 263.67,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.963
+    },
+    {
+      "id": 110,
+      "text": "I rarely eat fast food, once a month.",
+      "speaker": "Speaker2",
+      "start": 264.29,
+      "duration": 3.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 264.29,
+          "end": 264.69,
+          "confidence": 0.998
+        },
+        {
+          "word": "rarely",
+          "start": 264.69,
+          "end": 265.09,
+          "confidence": 0.997
+        },
+        {
+          "word": "eat",
+          "start": 265.09,
+          "end": 265.33,
+          "confidence": 0.995
+        },
+        {
+          "word": "fast",
+          "start": 265.33,
+          "end": 265.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "food",
+          "start": 265.57,
+          "end": 266.07,
+          "confidence": 0.781
+        },
+        {
+          "word": "once",
+          "start": 266.45,
+          "end": 266.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 266.77,
+          "end": 266.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "month",
+          "start": 266.93,
+          "end": 267.43,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 111,
+      "text": "What is your favorite thing here?",
+      "speaker": "Speaker3",
+      "start": 267.89,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "what",
+          "start": 267.89,
+          "end": 268.13,
+          "confidence": 0.701
+        },
+        {
+          "word": "is",
+          "start": 268.13,
+          "end": 268.37,
+          "confidence": 0.987
+        },
+        {
+          "word": "your",
+          "start": 268.37,
+          "end": 268.53,
+          "confidence": 0.997
+        },
+        {
+          "word": "favorite",
+          "start": 268.53,
+          "end": 268.93,
+          "confidence": 0.994
+        },
+        {
+          "word": "thing",
+          "start": 268.93,
+          "end": 269.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "here",
+          "start": 269.17,
+          "end": 269.67,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 112,
+      "text": "My favorite food is taco, but I'm also crazy about fried chicken sandwich.",
+      "speaker": "Speaker3",
+      "start": 269.89,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "my",
+          "start": 269.89,
+          "end": 270.13,
+          "confidence": 0.998
+        },
+        {
+          "word": "favorite",
+          "start": 270.13,
+          "end": 270.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "food",
+          "start": 270.53,
+          "end": 270.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "is",
+          "start": 270.77,
+          "end": 271.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "taco",
+          "start": 271.01,
+          "end": 271.51,
+          "confidence": 0.841
+        },
+        {
+          "word": "but",
+          "start": 271.57,
+          "end": 271.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "i'm",
+          "start": 271.81,
+          "end": 271.97,
+          "confidence": 0.991
+        },
+        {
+          "word": "also",
+          "start": 271.97,
+          "end": 272.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "crazy",
+          "start": 272.29,
+          "end": 272.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "about",
+          "start": 272.77,
+          "end": 273.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "fried",
+          "start": 273.01,
+          "end": 273.33,
+          "confidence": 0.992
+        },
+        {
+          "word": "chicken",
+          "start": 273.33,
+          "end": 273.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "sandwich",
+          "start": 273.73,
+          "end": 274.23,
+          "confidence": 0.934
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 113,
+      "text": "It's so tasty.",
+      "speaker": "Speaker3",
+      "start": 274.69,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "it's",
+          "start": 274.69,
+          "end": 274.94,
+          "confidence": 0.995
+        },
+        {
+          "word": "so",
+          "start": 274.94,
+          "end": 275.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "tasty",
+          "start": 275.25,
+          "end": 275.75,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 114,
+      "text": "How about you?",
+      "speaker": "Speaker2",
+      "start": 276.29,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "how",
+          "start": 276.29,
+          "end": 276.53,
+          "confidence": 0.969
+        },
+        {
+          "word": "about",
+          "start": 276.53,
+          "end": 276.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 276.77,
+          "end": 277.27,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 115,
+      "text": "I prefer the chicken hamburger with fries and coke.",
+      "speaker": "Speaker2",
+      "start": 277.41,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 277.41,
+          "end": 277.57,
+          "confidence": 0.997
+        },
+        {
+          "word": "prefer",
+          "start": 277.57,
+          "end": 277.97,
+          "confidence": 0.985
+        },
+        {
+          "word": "the",
+          "start": 277.97,
+          "end": 278.13,
+          "confidence": 0.997
+        },
+        {
+          "word": "chicken",
+          "start": 278.13,
+          "end": 278.53,
+          "confidence": 0.99
+        },
+        {
+          "word": "hamburger",
+          "start": 278.53,
+          "end": 279.03,
+          "confidence": 0.984
+        },
+        {
+          "word": "with",
+          "start": 279.18,
+          "end": 279.41,
+          "confidence": 0.997
+        },
+        {
+          "word": "fries",
+          "start": 279.41,
+          "end": 279.81,
+          "confidence": 0.946
+        },
+        {
+          "word": "and",
+          "start": 279.81,
+          "end": 279.97,
+          "confidence": 0.996
+        },
+        {
+          "word": "coke",
+          "start": 279.97,
+          "end": 280.47,
+          "confidence": 0.919
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 116,
+      "text": "Great.",
+      "speaker": "Speaker2",
+      "start": 280.94,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "great",
+          "start": 280.94,
+          "end": 281.44,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.995
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3",
+    "4": "Speaker4",
+    "5": "Speaker5",
+    "6": "Speaker6"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-23T14:48:12.421980Z",
+    "dgWordCount": 537,
+    "dgUtteranceCount": 78,
+    "matchedSegments": 78,
+    "totalDuration": 281.44
+  },
+  "fetchedAt": "2026-07-23T14:48:12.422004Z",
+  "repairedAt": "2026-07-23T14:48:12.434683Z",
+  "repairInfo": {
+    "version": 4,
+    "beforeSegments": 78,
+    "afterSegments": 116
+  }
+}
