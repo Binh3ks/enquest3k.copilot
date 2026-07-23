@@ -1,0 +1,1623 @@
+{
+  "text": "What's wrong with you, John? You look sick. I don't know what is wrong with me. Don't you have a cold? What is your symptom? I was shivering and it was cold last night. I think I have a headache too. I also snuffle and cough too. And I'm so tired. Oh, my goodness. I'm pretty sure you have a cold. What? It's not even winter yet, and the weather is warm, too. John, listen. It's warm in afternoon. But what about in morning? Isn't it cold? It's easy to catch a cold during the change of seasons. I did not know that. I thought I only catch a cold during the winter. You should drink lots of warm water and eat foods for vitamins. If you are not cured, you need to go to a hospital. Yeah, I should. When is the science homework due? Ouch. What's wrong? It hurts so much. I'm scared that this could be a serious one. Where? Did you get hurt? Look at this. John, I have a bandage. Don't be a crybaby. Achoo. Oops. What's wrong with you? Oh, no. I think I caught a cold from you. Achoo. Let's role play.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "What's wrong with you, John?",
+      "speaker": "Speaker0",
+      "start": 17.57,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "what's",
+          "start": 17.57,
+          "end": 17.81,
+          "confidence": 0.93
+        },
+        {
+          "word": "wrong",
+          "start": 17.81,
+          "end": 18.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 18.05,
+          "end": 18.3,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 18.3,
+          "end": 18.61,
+          "confidence": 0.88
+        },
+        {
+          "word": "john",
+          "start": 18.61,
+          "end": 19.11,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 2,
+      "text": "You look sick.",
+      "speaker": "Speaker0",
+      "start": 19.41,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "you",
+          "start": 19.41,
+          "end": 19.73,
+          "confidence": 0.997
+        },
+        {
+          "word": "look",
+          "start": 19.73,
+          "end": 20.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "sick",
+          "start": 20.05,
+          "end": 20.55,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 3,
+      "text": "I don't know what is wrong with me.",
+      "speaker": "Speaker1",
+      "start": 22.29,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "i",
+          "start": 22.29,
+          "end": 22.54,
+          "confidence": 0.94
+        },
+        {
+          "word": "don't",
+          "start": 22.54,
+          "end": 22.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "know",
+          "start": 22.77,
+          "end": 23.02,
+          "confidence": 0.999
+        },
+        {
+          "word": "what",
+          "start": 23.02,
+          "end": 23.25,
+          "confidence": 0.998
+        },
+        {
+          "word": "is",
+          "start": 23.25,
+          "end": 23.49,
+          "confidence": 0.916
+        },
+        {
+          "word": "wrong",
+          "start": 23.49,
+          "end": 23.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 23.81,
+          "end": 23.97,
+          "confidence": 0.998
+        },
+        {
+          "word": "me",
+          "start": 23.97,
+          "end": 24.47,
+          "confidence": 0.958
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 4,
+      "text": "Don't you have a cold?",
+      "speaker": "Speaker0",
+      "start": 29.02,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "don't",
+          "start": 29.02,
+          "end": 29.34,
+          "confidence": 0.84
+        },
+        {
+          "word": "you",
+          "start": 29.34,
+          "end": 29.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 29.5,
+          "end": 29.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 29.66,
+          "end": 29.82,
+          "confidence": 0.992
+        },
+        {
+          "word": "cold",
+          "start": 29.82,
+          "end": 30.32,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 5,
+      "text": "What is your symptom?",
+      "speaker": "Speaker0",
+      "start": 30.86,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "what",
+          "start": 30.86,
+          "end": 31.18,
+          "confidence": 0.996
+        },
+        {
+          "word": "is",
+          "start": 31.18,
+          "end": 31.42,
+          "confidence": 0.977
+        },
+        {
+          "word": "your",
+          "start": 31.42,
+          "end": 31.74,
+          "confidence": 0.996
+        },
+        {
+          "word": "symptom",
+          "start": 31.74,
+          "end": 32.24,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 6,
+      "text": "I was shivering and it was cold last night.",
+      "speaker": "Speaker1",
+      "start": 37.1,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "i",
+          "start": 37.1,
+          "end": 37.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 37.34,
+          "end": 37.66,
+          "confidence": 0.998
+        },
+        {
+          "word": "shivering",
+          "start": 37.66,
+          "end": 38.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 38.14,
+          "end": 38.38,
+          "confidence": 0.875
+        },
+        {
+          "word": "it",
+          "start": 38.38,
+          "end": 38.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 38.54,
+          "end": 38.86,
+          "confidence": 0.998
+        },
+        {
+          "word": "cold",
+          "start": 38.86,
+          "end": 39.26,
+          "confidence": 0.996
+        },
+        {
+          "word": "last",
+          "start": 39.26,
+          "end": 39.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "night",
+          "start": 39.58,
+          "end": 40.08,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 7,
+      "text": "I think I have a headache too.",
+      "speaker": "Speaker1",
+      "start": 41.37,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "i",
+          "start": 41.37,
+          "end": 41.45,
+          "confidence": 0.996
+        },
+        {
+          "word": "think",
+          "start": 41.45,
+          "end": 41.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 41.77,
+          "end": 41.92,
+          "confidence": 0.996
+        },
+        {
+          "word": "have",
+          "start": 41.92,
+          "end": 42.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 42.09,
+          "end": 42.16,
+          "confidence": 0.997
+        },
+        {
+          "word": "headache",
+          "start": 42.16,
+          "end": 42.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "too",
+          "start": 42.65,
+          "end": 43.15,
+          "confidence": 0.889
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 8,
+      "text": "I also snuffle and cough too.",
+      "speaker": "Speaker1",
+      "start": 44.33,
+      "duration": 2.74,
+      "words": [
+        {
+          "word": "i",
+          "start": 44.33,
+          "end": 44.57,
+          "confidence": 0.955
+        },
+        {
+          "word": "also",
+          "start": 44.57,
+          "end": 45.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "snuffle",
+          "start": 45.2,
+          "end": 45.7,
+          "confidence": 0.994
+        },
+        {
+          "word": "and",
+          "start": 45.77,
+          "end": 46.09,
+          "confidence": 0.994
+        },
+        {
+          "word": "cough",
+          "start": 46.09,
+          "end": 46.57,
+          "confidence": 0.997
+        },
+        {
+          "word": "too",
+          "start": 46.57,
+          "end": 47.07,
+          "confidence": 0.865
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 9,
+      "text": "And I'm so tired.",
+      "speaker": "Speaker1",
+      "start": 49.6,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "and",
+          "start": 49.6,
+          "end": 49.77,
+          "confidence": 0.767
+        },
+        {
+          "word": "i'm",
+          "start": 49.77,
+          "end": 50.01,
+          "confidence": 0.987
+        },
+        {
+          "word": "so",
+          "start": 50.01,
+          "end": 50.41,
+          "confidence": 0.998
+        },
+        {
+          "word": "tired",
+          "start": 50.41,
+          "end": 50.91,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.938
+    },
+    {
+      "id": 10,
+      "text": "Oh, my goodness.",
+      "speaker": "Speaker0",
+      "start": 53.14,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "oh",
+          "start": 53.14,
+          "end": 53.46,
+          "confidence": 0.77
+        },
+        {
+          "word": "my",
+          "start": 53.46,
+          "end": 53.78,
+          "confidence": 0.998
+        },
+        {
+          "word": "goodness",
+          "start": 53.78,
+          "end": 54.28,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.907
+    },
+    {
+      "id": 11,
+      "text": "I'm pretty sure you have a cold.",
+      "speaker": "Speaker0",
+      "start": 55.06,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 55.06,
+          "end": 55.38,
+          "confidence": 0.994
+        },
+        {
+          "word": "pretty",
+          "start": 55.38,
+          "end": 55.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "sure",
+          "start": 55.7,
+          "end": 56.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 56.1,
+          "end": 56.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 56.34,
+          "end": 56.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 56.58,
+          "end": 56.74,
+          "confidence": 0.996
+        },
+        {
+          "word": "cold",
+          "start": 56.74,
+          "end": 57.24,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 12,
+      "text": "What?",
+      "speaker": "Speaker1",
+      "start": 58.98,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "what",
+          "start": 58.98,
+          "end": 59.48,
+          "confidence": 0.872
+        }
+      ],
+      "confidence": 0.872
+    },
+    {
+      "id": 13,
+      "text": "It's not even winter yet, and the weather is warm, too.",
+      "speaker": "Speaker1",
+      "start": 60.02,
+      "duration": 4.02,
+      "words": [
+        {
+          "word": "it's",
+          "start": 60.02,
+          "end": 60.34,
+          "confidence": 0.972
+        },
+        {
+          "word": "not",
+          "start": 60.34,
+          "end": 60.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "even",
+          "start": 60.66,
+          "end": 61.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "winter",
+          "start": 61.06,
+          "end": 61.46,
+          "confidence": 0.999
+        },
+        {
+          "word": "yet",
+          "start": 61.46,
+          "end": 61.96,
+          "confidence": 0.804
+        },
+        {
+          "word": "and",
+          "start": 62.1,
+          "end": 62.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 62.34,
+          "end": 62.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "weather",
+          "start": 62.5,
+          "end": 62.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 62.9,
+          "end": 63.14,
+          "confidence": 0.998
+        },
+        {
+          "word": "warm",
+          "start": 63.14,
+          "end": 63.54,
+          "confidence": 0.886
+        },
+        {
+          "word": "too",
+          "start": 63.54,
+          "end": 64.04,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 14,
+      "text": "John, listen.",
+      "speaker": "Speaker0",
+      "start": 65.72,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "john",
+          "start": 65.72,
+          "end": 66.12,
+          "confidence": 0.965
+        },
+        {
+          "word": "listen",
+          "start": 66.12,
+          "end": 66.62,
+          "confidence": 0.94
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 15,
+      "text": "It's warm in afternoon.",
+      "speaker": "Speaker0",
+      "start": 67.16,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "it's",
+          "start": 67.16,
+          "end": 67.48,
+          "confidence": 0.995
+        },
+        {
+          "word": "warm",
+          "start": 67.48,
+          "end": 67.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 67.88,
+          "end": 68.05,
+          "confidence": 0.502
+        },
+        {
+          "word": "afternoon",
+          "start": 68.05,
+          "end": 68.55,
+          "confidence": 0.921
+        }
+      ],
+      "confidence": 0.855
+    },
+    {
+      "id": 16,
+      "text": "But what about in morning?",
+      "speaker": "Speaker0",
+      "start": 70.28,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "but",
+          "start": 70.28,
+          "end": 70.6,
+          "confidence": 0.998
+        },
+        {
+          "word": "what",
+          "start": 70.6,
+          "end": 70.84,
+          "confidence": 0.964
+        },
+        {
+          "word": "about",
+          "start": 70.84,
+          "end": 71.16,
+          "confidence": 0.998
+        },
+        {
+          "word": "in",
+          "start": 71.16,
+          "end": 71.41,
+          "confidence": 0.991
+        },
+        {
+          "word": "morning",
+          "start": 71.41,
+          "end": 71.91,
+          "confidence": 0.957
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 17,
+      "text": "Isn't it cold?",
+      "speaker": "Speaker0",
+      "start": 73.0,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "isn't",
+          "start": 73.0,
+          "end": 73.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 73.41,
+          "end": 73.64,
+          "confidence": 0.997
+        },
+        {
+          "word": "cold",
+          "start": 73.64,
+          "end": 74.14,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 18,
+      "text": "It's easy to catch a cold during the change of seasons.",
+      "speaker": "Speaker0",
+      "start": 75.33,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "it's",
+          "start": 75.33,
+          "end": 75.72,
+          "confidence": 0.991
+        },
+        {
+          "word": "easy",
+          "start": 75.72,
+          "end": 76.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 76.05,
+          "end": 76.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "catch",
+          "start": 76.2,
+          "end": 76.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 76.44,
+          "end": 76.6,
+          "confidence": 0.994
+        },
+        {
+          "word": "cold",
+          "start": 76.6,
+          "end": 77.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "during",
+          "start": 77.0,
+          "end": 77.33,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 77.33,
+          "end": 77.56,
+          "confidence": 0.991
+        },
+        {
+          "word": "change",
+          "start": 77.56,
+          "end": 77.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 77.88,
+          "end": 78.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "seasons",
+          "start": 78.05,
+          "end": 78.55,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 19,
+      "text": "I did not know that.",
+      "speaker": "Speaker1",
+      "start": 80.27,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 80.27,
+          "end": 80.59,
+          "confidence": 0.878
+        },
+        {
+          "word": "did",
+          "start": 80.59,
+          "end": 80.91,
+          "confidence": 0.99
+        },
+        {
+          "word": "not",
+          "start": 80.91,
+          "end": 81.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "know",
+          "start": 81.23,
+          "end": 81.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 81.47,
+          "end": 81.97,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 20,
+      "text": "I thought I only catch a cold during the winter.",
+      "speaker": "Speaker1",
+      "start": 82.27,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "i",
+          "start": 82.27,
+          "end": 82.51,
+          "confidence": 0.999
+        },
+        {
+          "word": "thought",
+          "start": 82.51,
+          "end": 82.75,
+          "confidence": 0.998
+        },
+        {
+          "word": "i",
+          "start": 82.75,
+          "end": 82.91,
+          "confidence": 0.995
+        },
+        {
+          "word": "only",
+          "start": 82.91,
+          "end": 83.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "catch",
+          "start": 83.23,
+          "end": 83.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 83.47,
+          "end": 83.63,
+          "confidence": 0.993
+        },
+        {
+          "word": "cold",
+          "start": 83.63,
+          "end": 83.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "during",
+          "start": 83.95,
+          "end": 84.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 84.27,
+          "end": 84.35,
+          "confidence": 0.987
+        },
+        {
+          "word": "winter",
+          "start": 84.35,
+          "end": 84.85,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 21,
+      "text": "You should drink lots of warm water and eat foods for vitamins.",
+      "speaker": "Speaker0",
+      "start": 86.67,
+      "duration": 3.86,
+      "words": [
+        {
+          "word": "you",
+          "start": 86.67,
+          "end": 86.99,
+          "confidence": 0.912
+        },
+        {
+          "word": "should",
+          "start": 86.99,
+          "end": 87.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "drink",
+          "start": 87.23,
+          "end": 87.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "lots",
+          "start": 87.63,
+          "end": 87.87,
+          "confidence": 0.999
+        },
+        {
+          "word": "of",
+          "start": 87.87,
+          "end": 88.11,
+          "confidence": 0.999
+        },
+        {
+          "word": "warm",
+          "start": 88.11,
+          "end": 88.51,
+          "confidence": 0.992
+        },
+        {
+          "word": "water",
+          "start": 88.51,
+          "end": 88.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 88.91,
+          "end": 89.15,
+          "confidence": 0.983
+        },
+        {
+          "word": "eat",
+          "start": 89.15,
+          "end": 89.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "foods",
+          "start": 89.39,
+          "end": 89.71,
+          "confidence": 0.937
+        },
+        {
+          "word": "for",
+          "start": 89.71,
+          "end": 90.03,
+          "confidence": 0.997
+        },
+        {
+          "word": "vitamins",
+          "start": 90.03,
+          "end": 90.53,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 22,
+      "text": "If you are not cured, you need to go to a hospital.",
+      "speaker": "Speaker0",
+      "start": 92.03,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "if",
+          "start": 92.03,
+          "end": 92.27,
+          "confidence": 0.989
+        },
+        {
+          "word": "you",
+          "start": 92.27,
+          "end": 92.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 92.43,
+          "end": 92.67,
+          "confidence": 0.966
+        },
+        {
+          "word": "not",
+          "start": 92.67,
+          "end": 92.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "cured",
+          "start": 92.91,
+          "end": 93.41,
+          "confidence": 0.976
+        },
+        {
+          "word": "you",
+          "start": 93.79,
+          "end": 94.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "need",
+          "start": 94.03,
+          "end": 94.27,
+          "confidence": 0.996
+        },
+        {
+          "word": "to",
+          "start": 94.27,
+          "end": 94.35,
+          "confidence": 0.998
+        },
+        {
+          "word": "go",
+          "start": 94.35,
+          "end": 94.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 94.51,
+          "end": 94.67,
+          "confidence": 0.996
+        },
+        {
+          "word": "a",
+          "start": 94.67,
+          "end": 94.83,
+          "confidence": 0.99
+        },
+        {
+          "word": "hospital",
+          "start": 94.83,
+          "end": 95.33,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 23,
+      "text": "Yeah, I should.",
+      "speaker": "Speaker1",
+      "start": 97.12,
+      "duration": 1.07,
+      "words": [
+        {
+          "word": "yeah",
+          "start": 97.12,
+          "end": 97.36,
+          "confidence": 0.98
+        },
+        {
+          "word": "i",
+          "start": 97.36,
+          "end": 97.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "should",
+          "start": 97.69,
+          "end": 98.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 24,
+      "text": "When is the science homework due?",
+      "speaker": "Speaker1",
+      "start": 103.12,
+      "duration": 2.27,
+      "words": [
+        {
+          "word": "when",
+          "start": 103.12,
+          "end": 103.53,
+          "confidence": 0.925
+        },
+        {
+          "word": "is",
+          "start": 103.53,
+          "end": 103.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 103.77,
+          "end": 104.0,
+          "confidence": 0.989
+        },
+        {
+          "word": "science",
+          "start": 104.0,
+          "end": 104.41,
+          "confidence": 0.997
+        },
+        {
+          "word": "homework",
+          "start": 104.41,
+          "end": 104.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "due",
+          "start": 104.89,
+          "end": 105.39,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 25,
+      "text": "Ouch.",
+      "speaker": "Speaker1",
+      "start": 106.65,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "ouch",
+          "start": 106.65,
+          "end": 107.15,
+          "confidence": 0.911
+        }
+      ],
+      "confidence": 0.911
+    },
+    {
+      "id": 26,
+      "text": "What's wrong?",
+      "speaker": "Speaker1",
+      "start": 111.77,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what's",
+          "start": 111.77,
+          "end": 112.25,
+          "confidence": 0.895
+        },
+        {
+          "word": "wrong",
+          "start": 112.25,
+          "end": 112.75,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.947
+    },
+    {
+      "id": 27,
+      "text": "It hurts so much.",
+      "speaker": "Speaker1",
+      "start": 114.09,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "it",
+          "start": 114.09,
+          "end": 114.41,
+          "confidence": 0.659
+        },
+        {
+          "word": "hurts",
+          "start": 114.41,
+          "end": 114.81,
+          "confidence": 0.926
+        },
+        {
+          "word": "so",
+          "start": 114.81,
+          "end": 115.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "much",
+          "start": 115.05,
+          "end": 115.55,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.893
+    },
+    {
+      "id": 28,
+      "text": "I'm scared that this could be a serious one.",
+      "speaker": "Speaker1",
+      "start": 116.89,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 116.89,
+          "end": 117.29,
+          "confidence": 0.984
+        },
+        {
+          "word": "scared",
+          "start": 117.29,
+          "end": 117.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 117.69,
+          "end": 117.93,
+          "confidence": 0.994
+        },
+        {
+          "word": "this",
+          "start": 117.93,
+          "end": 118.17,
+          "confidence": 0.998
+        },
+        {
+          "word": "could",
+          "start": 118.17,
+          "end": 118.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "be",
+          "start": 118.49,
+          "end": 118.65,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 118.65,
+          "end": 118.89,
+          "confidence": 0.993
+        },
+        {
+          "word": "serious",
+          "start": 118.89,
+          "end": 119.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "one",
+          "start": 119.37,
+          "end": 119.87,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 29,
+      "text": "Where?",
+      "speaker": "Speaker0",
+      "start": 120.89,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "where",
+          "start": 120.89,
+          "end": 121.39,
+          "confidence": 0.976
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 30,
+      "text": "Did you get hurt?",
+      "speaker": "Speaker0",
+      "start": 122.25,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "did",
+          "start": 122.25,
+          "end": 122.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 122.49,
+          "end": 122.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "get",
+          "start": 122.73,
+          "end": 122.97,
+          "confidence": 0.998
+        },
+        {
+          "word": "hurt",
+          "start": 122.97,
+          "end": 123.47,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 31,
+      "text": "Look at this.",
+      "speaker": "Speaker1",
+      "start": 125.17,
+      "duration": 0.99,
+      "words": [
+        {
+          "word": "look",
+          "start": 125.17,
+          "end": 125.49,
+          "confidence": 0.992
+        },
+        {
+          "word": "at",
+          "start": 125.49,
+          "end": 125.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 125.66,
+          "end": 126.16,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 32,
+      "text": "John, I have a bandage.",
+      "speaker": "Speaker0",
+      "start": 127.97,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "john",
+          "start": 127.97,
+          "end": 128.47,
+          "confidence": 0.941
+        },
+        {
+          "word": "i",
+          "start": 128.62,
+          "end": 128.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 128.85,
+          "end": 129.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 129.09,
+          "end": 129.25,
+          "confidence": 0.998
+        },
+        {
+          "word": "bandage",
+          "start": 129.25,
+          "end": 129.75,
+          "confidence": 0.887
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 33,
+      "text": "Don't be a crybaby.",
+      "speaker": "Speaker0",
+      "start": 131.01,
+      "duration": 1.23,
+      "words": [
+        {
+          "word": "don't",
+          "start": 131.01,
+          "end": 131.33,
+          "confidence": 0.966
+        },
+        {
+          "word": "be",
+          "start": 131.33,
+          "end": 131.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 131.5,
+          "end": 131.74,
+          "confidence": 0.995
+        },
+        {
+          "word": "crybaby",
+          "start": 131.74,
+          "end": 132.24,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 34,
+      "text": "Achoo.",
+      "speaker": "Speaker0",
+      "start": 136.13,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "achoo",
+          "start": 136.13,
+          "end": 136.63,
+          "confidence": 0.952
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 35,
+      "text": "Oops.",
+      "speaker": "Speaker1",
+      "start": 139.07,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "oops",
+          "start": 139.07,
+          "end": 139.57,
+          "confidence": 0.768
+        }
+      ],
+      "confidence": 0.768
+    },
+    {
+      "id": 36,
+      "text": "What's wrong with you?",
+      "speaker": "Speaker1",
+      "start": 139.87,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "what's",
+          "start": 139.87,
+          "end": 140.27,
+          "confidence": 0.996
+        },
+        {
+          "word": "wrong",
+          "start": 140.27,
+          "end": 140.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 140.51,
+          "end": 140.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 140.67,
+          "end": 141.17,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 37,
+      "text": "Oh, no.",
+      "speaker": "Speaker0",
+      "start": 147.07,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "oh",
+          "start": 147.07,
+          "end": 147.39,
+          "confidence": 0.664
+        },
+        {
+          "word": "no",
+          "start": 147.39,
+          "end": 147.89,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.826
+    },
+    {
+      "id": 38,
+      "text": "I think I caught a cold from you.",
+      "speaker": "Speaker0",
+      "start": 148.35,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "i",
+          "start": 148.35,
+          "end": 148.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "think",
+          "start": 148.59,
+          "end": 148.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "i",
+          "start": 148.91,
+          "end": 149.07,
+          "confidence": 0.994
+        },
+        {
+          "word": "caught",
+          "start": 149.07,
+          "end": 149.31,
+          "confidence": 0.987
+        },
+        {
+          "word": "a",
+          "start": 149.31,
+          "end": 149.47,
+          "confidence": 0.997
+        },
+        {
+          "word": "cold",
+          "start": 149.47,
+          "end": 149.79,
+          "confidence": 0.995
+        },
+        {
+          "word": "from",
+          "start": 149.79,
+          "end": 150.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 150.03,
+          "end": 150.53,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 39,
+      "text": "Achoo.",
+      "speaker": "Speaker1",
+      "start": 152.31,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "achoo",
+          "start": 152.31,
+          "end": 152.81,
+          "confidence": 0.802
+        }
+      ],
+      "confidence": 0.802
+    },
+    {
+      "id": 40,
+      "text": "Let's role play.",
+      "speaker": "Speaker1",
+      "start": 159.43,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "let's",
+          "start": 159.43,
+          "end": 159.91,
+          "confidence": 0.971
+        },
+        {
+          "word": "role",
+          "start": 159.91,
+          "end": 160.15,
+          "confidence": 0.987
+        },
+        {
+          "word": "play",
+          "start": 160.15,
+          "end": 160.65,
+          "confidence": 0.924
+        }
+      ],
+      "confidence": 0.961
+    }
+  ],
+  "fetchedAt": "2026-07-23T06:27:40.107502+00:00",
+  "videoId": "LlC-Trk54Zg",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-23T06:27:40.107538+00:00",
+    "dgWordCount": 199,
+    "dgUtteranceCount": 40,
+    "matchedSegments": 40,
+    "totalDuration": 160.65
+  },
+  "repairedAt": "2026-07-23T07:58:35.821539Z",
+  "repairInfo": {
+    "version": 3,
+    "beforeSegments": 40,
+    "afterSegments": 40,
+    "beforeAvgWords": 5.0,
+    "afterAvgWords": 5.0,
+    "merged": 0,
+    "danglingFragments": 0
+  }
+}

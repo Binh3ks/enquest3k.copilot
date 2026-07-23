@@ -20,7 +20,7 @@
 | W01 | Subject Pronouns & Verb to be | 155 | 0.39 | Present |
 | W02 | This is my... (Possession) | 111 | 0.41 | Present |
 | W03 | is vs has (Describing People) | 130 | 0.42 | Present |
-| W04 | I like + V-ing (Expressing Preferen | 191 | 0.32 | Present |
+| W04 | I like + V-ing (Expressing Preferen | 100 | 0.43 | Past |
 | W05 | Articles  | 145 | 0.71 | Present |
 | W06 | Prepositions (In, On, Under, Next t | 105 | 0.33 | Present |
 | W07 | There is... (Singular Items) | 1189 | 0.46 | Present |
@@ -40,8 +40,8 @@
 | W21 | Past Simple: verb + -ed | 447 | 0.31 | Past |
 | W22 | Past Questions: Did + subject + bas | 396 | 0.36 | Mixed |
 | W23 | Regular Past Tense: verb + -ed | 200 | 0.34 | Past |
-| W24 | Was / Were + Adjectives | 785 | 0.40 | Mixed |
-| W25 | Sequence Connectors: First, Next, T | 257 | 0.53 | Present |
+| W24 | Was / Were + Adjectives | 199 | 0.60 | Present |
+| W25 | Sequence Connectors: First, Next, T | 915 | 0.48 | Present |
 | W26 | Past Simple: Regular Verbs (-ed) &  | 186 | 0.61 | Past |
 | W27 | Present Simple for Facts: It grows, | 879 | 0.32 | Present |
 | W28 | Past Simple: Regular & Irregular Ve | 594 | 0.46 | Past |
@@ -50,7 +50,7 @@
 | W31 | Past Simple: Irregular Verbs 3 — se | 797 | 0.47 | Past |
 | W32 | Irregular Verbs — Group 4: Task Ver | 350 | 0.50 | Mixed |
 | W33 |  | 479 | 0.30 | Present |
-| W34 |  | 1172 | 0.38 | Mixed |
+| W34 |  | 258 | 0.34 | Mixed |
 | W35 |  | 466 | 0.56 | Present |
 
 ## Detailed Audit
@@ -77,10 +77,10 @@
 - **Status:** PASS
 
 ### W04 — I like + V-ing (Expressing Preferences)
-- **Video ID:** `VnVMqbj96Z0`
-- **Total Words:** 191
-- **Vocab Richness:** 0.32
-- **Dominant Tense:** Present
+- **Video ID:** `BXWNhq-lPD8`
+- **Total Words:** 100
+- **Vocab Richness:** 0.43
+- **Dominant Tense:** Past
 - **Status:** PASS
 
 ### W05 — Articles 
@@ -217,16 +217,16 @@
 - **Status:** PASS
 
 ### W24 — Was / Were + Adjectives
-- **Video ID:** `jGn6bIbXlGY`
-- **Total Words:** 785
-- **Vocab Richness:** 0.40
-- **Dominant Tense:** Mixed
+- **Video ID:** `LlC-Trk54Zg`
+- **Total Words:** 199
+- **Vocab Richness:** 0.60
+- **Dominant Tense:** Present
 - **Status:** PASS
 
 ### W25 — Sequence Connectors: First, Next, Then, Finally
-- **Video ID:** `RP1AL2DU6vQ`
-- **Total Words:** 257
-- **Vocab Richness:** 0.53
+- **Video ID:** `uBq47oC3C1g`
+- **Total Words:** 915
+- **Vocab Richness:** 0.48
 - **Dominant Tense:** Present
 - **Status:** PASS
 
@@ -287,9 +287,9 @@
 - **Status:** PASS
 
 ### W34 — 
-- **Video ID:** `XPZXpuoIndo`
-- **Total Words:** 1172
-- **Vocab Richness:** 0.38
+- **Video ID:** `z46K8WqBFnw`
+- **Total Words:** 258
+- **Vocab Richness:** 0.34
 - **Dominant Tense:** Mixed
 - **Status:** PASS
 
